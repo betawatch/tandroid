@@ -5,39 +5,26 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.Region;
-import android.net.Uri;
 import android.text.Layout;
-import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.Theme;
@@ -47,9 +34,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LetterDrawable;
 import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.spoilers.SpoilerEffect;
-import org.telegram.ui.FilteredSearchView;
 
 /* loaded from: classes4.dex */
 public class SharedLinkCell extends FrameLayout {
@@ -292,516 +277,64 @@ public class SharedLinkCell extends FrameLayout {
     }
 
     private void gatherRichMessageLinks(ArrayList arrayList) {
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            gatherRichMessageLinks((TL_iv.PageBlock) it.next());
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            gatherRichMessageLinks((TL_iv.PageBlock) obj);
         }
     }
 
+    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
+        java.lang.NullPointerException
+        */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0340  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x03cf  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x03e0  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x04ea  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x050a  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x05db  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x05ff  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x0685  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0721  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x072f  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0751  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x06a9  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0680  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x05e6  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0436 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x03e8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x03e3  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x03d4  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x037b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x0376  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0205 A[Catch: Exception -> 0x0122, TryCatch #2 {Exception -> 0x0122, blocks: (B:48:0x010c, B:50:0x0110, B:53:0x0115, B:56:0x011b, B:59:0x0125, B:61:0x0158, B:64:0x0205, B:66:0x020d, B:68:0x021d, B:70:0x022d, B:71:0x0241, B:72:0x0254, B:74:0x025a, B:83:0x026f, B:88:0x029a, B:91:0x0166, B:94:0x017b, B:96:0x017f, B:98:0x0193, B:100:0x0199, B:102:0x01a7, B:104:0x01ae, B:106:0x01b4, B:108:0x01be, B:109:0x01c4, B:110:0x01e0, B:112:0x01e4, B:114:0x01f2, B:115:0x018f), top: B:47:0x010c }] */
-    /* JADX WARN: Type inference failed for: r2v117, types: [android.text.Spannable, android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r2v83, types: [android.text.Spannable, android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r4v3, types: [java.lang.CharSequence] */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x02c5  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x031e  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0382  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0410  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0421  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x04b5  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x052e  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0550  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0616  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x063a  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x06c2  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x06e9  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0709  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x0727  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0745  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x0763  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0771  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x0797  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x06e4  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x06bd  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0621  */
+    /* JADX WARN: Removed duplicated region for block: B:293:0x0477 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x0429 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x0424  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x0415  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x03ba A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:335:0x03b5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0216 A[Catch: Exception -> 0x012d, TryCatch #3 {Exception -> 0x012d, blocks: (B:52:0x0117, B:54:0x011b, B:57:0x0120, B:60:0x0126, B:63:0x0136, B:65:0x0169, B:68:0x0216, B:70:0x021e, B:72:0x022e, B:74:0x023e, B:75:0x0252, B:111:0x0177, B:114:0x018c, B:116:0x0190, B:118:0x01a4, B:120:0x01aa, B:122:0x01b8, B:124:0x01bf, B:126:0x01c5, B:128:0x01cf, B:129:0x01d5, B:130:0x01f1, B:132:0x01f5, B:134:0x0203, B:135:0x01a0), top: B:51:0x0117 }] */
+    /* JADX WARN: Type inference failed for: r2v48, types: [android.text.Spannable, android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r2v86, types: [android.text.Spannable, android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r5v6, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r6v17 */
+    /* JADX WARN: Type inference failed for: r6v18, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r6v26 */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    protected void onMeasure(int i, int i2) {
-        String str;
-        String str2;
-        String str3;
-        boolean z;
-        MessageObject messageObject;
-        SpannableStringBuilder spannableStringBuilder;
-        MessageObject messageObject2;
-        int i3;
-        String str4;
-        MessageObject messageObject3;
-        TLRPC.PhotoSize photoSize;
-        StaticLayout staticLayout;
-        boolean z2;
-        int i4;
-        StaticLayout staticLayout2;
-        int i5;
-        StaticLayout staticLayout3;
-        StaticLayout staticLayout4;
-        StaticLayout staticLayout5;
-        int i6;
-        TLRPC.PhotoSize photoSize2;
-        TLRPC.Message message;
-        TL_iv.RichMessage richMessage;
-        int lastIndexOf;
-        int i7;
-        String str5;
-        int lastIndexOf2;
-        String str6;
-        int i8;
-        int i9 = 0;
-        this.drawLinkImageView = false;
-        this.descriptionLayout = null;
-        this.titleLayout = null;
-        this.descriptionLayout2 = null;
-        this.captionLayout = null;
-        this.linkLayout.clear();
-        this.links.clear();
-        int size = (View.MeasureSpec.getSize(i) - AndroidUtilities.dp(AndroidUtilities.leftBaseline)) - AndroidUtilities.dp(8.0f);
-        MessageObject messageObject4 = this.message;
-        TLRPC.MessageMedia messageMedia = messageObject4.messageOwner.media;
-        int i10 = 1;
-        if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
-            TLRPC.WebPage webPage = messageMedia.webpage;
-            if (webPage instanceof TLRPC.TL_webPage) {
-                if (messageObject4.photoThumbs == null && webPage.photo != null) {
-                    messageObject4.generateThumbs(true);
-                }
-                boolean z3 = (webPage.photo == null || this.message.photoThumbs == null) ? false : true;
-                str2 = webPage.title;
-                if (str2 == null) {
-                    str2 = webPage.site_name;
-                }
-                str3 = webPage.description;
-                str = webPage.url;
-                z = z3;
-                messageObject = this.message;
-                int i11 = 46;
-                if (messageObject != null || messageObject.messageOwner.entities.isEmpty()) {
-                    spannableStringBuilder = null;
-                } else {
-                    SpannableStringBuilder spannableStringBuilder2 = null;
-                    int i12 = 0;
-                    while (i12 < this.message.messageOwner.entities.size()) {
-                        TLRPC.MessageEntity messageEntity = this.message.messageOwner.entities.get(i12);
-                        if (messageEntity.length > 0 && (i7 = messageEntity.offset) >= 0 && i7 < this.message.messageOwner.message.length()) {
-                            if (messageEntity.offset + messageEntity.length > this.message.messageOwner.message.length()) {
-                                messageEntity.length = this.message.messageOwner.message.length() - messageEntity.offset;
-                            }
-                            if (i12 == 0 && str != null && (messageEntity.offset != 0 || messageEntity.length != this.message.messageOwner.message.length())) {
-                                if (this.message.messageOwner.entities.size() != i10) {
-                                    spannableStringBuilder2 = SpannableStringBuilder.valueOf(this.message.messageOwner.message);
-                                    MediaDataController.addTextStyleRuns(this.message, spannableStringBuilder2);
-                                } else if (str3 == null) {
-                                    spannableStringBuilder2 = SpannableStringBuilder.valueOf(this.message.messageOwner.message);
-                                    MediaDataController.addTextStyleRuns(this.message, spannableStringBuilder2);
-                                }
-                            }
-                            SpannableStringBuilder spannableStringBuilder3 = spannableStringBuilder2;
-                            try {
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            if (!(messageEntity instanceof TLRPC.TL_messageEntityTextUrl) && !(messageEntity instanceof TLRPC.TL_messageEntityUrl)) {
-                                if (!(messageEntity instanceof TLRPC.TL_messageEntityEmail) || (str2 != null && str2.length() != 0)) {
-                                    str5 = null;
-                                    if (str5 != null) {
-                                        if (AndroidUtilities.charSequenceContains(str5, "://") || str5.toString().toLowerCase().indexOf("http") == 0 || str5.toString().toLowerCase().indexOf("mailto") == 0) {
-                                            i8 = 0;
-                                        } else {
-                                            str5 = "http://" + ((Object) str5);
-                                            i8 = 7;
-                                        }
-                                        SpannableString valueOf = SpannableString.valueOf(str5);
-                                        int i13 = messageEntity.offset;
-                                        int i14 = messageEntity.length + i13;
-                                        Iterator<TLRPC.MessageEntity> it = this.message.messageOwner.entities.iterator();
-                                        while (it.hasNext()) {
-                                            TLRPC.MessageEntity next = it.next();
-                                            int i15 = next.offset;
-                                            int i16 = next.length + i15;
-                                            if ((next instanceof TLRPC.TL_messageEntitySpoiler) && i13 <= i16 && i14 >= i15) {
-                                                TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
-                                                textStyleRun.flags |= 256;
-                                                valueOf.setSpan(new TextStyleSpan(textStyleRun), Math.max(i13, i15), Math.min(i14, i16) + i8, 33);
-                                            }
-                                        }
-                                        this.links.add(valueOf);
-                                    }
-                                    spannableStringBuilder2 = spannableStringBuilder3;
-                                }
-                                StringBuilder sb = new StringBuilder();
-                                sb.append("mailto:");
-                                String str7 = this.message.messageOwner.message;
-                                int i17 = messageEntity.offset;
-                                sb.append(str7.substring(i17, messageEntity.length + i17));
-                                str5 = sb.toString();
-                                String str8 = this.message.messageOwner.message;
-                                int i18 = messageEntity.offset;
-                                str2 = str8.substring(i18, messageEntity.length + i18);
-                                if (messageEntity.offset != 0 || messageEntity.length != this.message.messageOwner.message.length()) {
-                                    ?? valueOf2 = SpannableStringBuilder.valueOf(this.message.messageOwner.message);
-                                    MediaDataController.addTextStyleRuns(this.message, valueOf2);
-                                    str6 = valueOf2;
-                                    str3 = str6;
-                                }
-                                if (str5 != null) {
-                                }
-                                spannableStringBuilder2 = spannableStringBuilder3;
-                            }
-                            if (messageEntity instanceof TLRPC.TL_messageEntityUrl) {
-                                String str9 = this.message.messageOwner.message;
-                                int i19 = messageEntity.offset;
-                                str5 = str9.substring(i19, messageEntity.length + i19);
-                            } else {
-                                str5 = messageEntity.url;
-                            }
-                            if (str2 == null || str2.length() == 0) {
-                                str2 = Uri.parse(str5.toString()).getHost();
-                                if (str2 == null) {
-                                    str2 = str5.toString();
-                                }
-                                if (str2 != null && (lastIndexOf2 = str2.lastIndexOf(i11)) >= 0) {
-                                    String substring = str2.substring(i9, lastIndexOf2);
-                                    int lastIndexOf3 = substring.lastIndexOf(i11);
-                                    if (lastIndexOf3 >= 0) {
-                                        substring = substring.substring(lastIndexOf3 + i10);
-                                    }
-                                    str2 = substring.substring(i9, i10).toUpperCase() + substring.substring(i10);
-                                }
-                                if (messageEntity.offset != 0 || messageEntity.length != this.message.messageOwner.message.length()) {
-                                    ?? valueOf3 = SpannableStringBuilder.valueOf(this.message.messageOwner.message);
-                                    MediaDataController.addTextStyleRuns(this.message, valueOf3);
-                                    str6 = valueOf3;
-                                    str3 = str6;
-                                }
-                            }
-                            if (str5 != null) {
-                            }
-                            spannableStringBuilder2 = spannableStringBuilder3;
-                        }
-                        i12++;
-                        i9 = 0;
-                        i11 = 46;
-                        i10 = 1;
-                    }
-                    spannableStringBuilder = spannableStringBuilder2;
-                }
-                if (str != null && this.links.isEmpty()) {
-                    this.links.add(str);
-                }
-                messageObject2 = this.message;
-                if (messageObject2 != null && (message = messageObject2.messageOwner) != null && (richMessage = message.rich_message) != null) {
-                    gatherRichMessageLinks(richMessage.blocks);
-                    if (!this.links.isEmpty()) {
-                        String charSequence = ((CharSequence) this.links.get(0)).toString();
-                        if (str2 == null || str2.length() == 0) {
-                            String host = Uri.parse(charSequence.toString()).getHost();
-                            str2 = host == null ? charSequence.toString() : host;
-                            if (str2 != null && (lastIndexOf = str2.lastIndexOf(46)) >= 0) {
-                                String substring2 = str2.substring(0, lastIndexOf);
-                                int lastIndexOf4 = substring2.lastIndexOf(46);
-                                if (lastIndexOf4 >= 0) {
-                                    substring2 = substring2.substring(lastIndexOf4 + 1);
-                                }
-                                str2 = substring2.substring(0, 1).toUpperCase() + substring2.substring(1);
-                            }
-                        }
-                    }
-                }
-                if (this.viewType != 1) {
-                    String stringForMessageListDate = LocaleController.stringForMessageListDate(this.message.messageOwner.date);
-                    int ceil = (int) Math.ceil(this.description2TextPaint.measureText(stringForMessageListDate));
-                    this.dateLayout = ChatMessageCell.generateStaticLayout(stringForMessageListDate, this.description2TextPaint, ceil, ceil, 0, 1);
-                    this.dateLayoutX = (size - ceil) - AndroidUtilities.dp(8.0f);
-                    i3 = ceil + AndroidUtilities.dp(12.0f);
-                } else {
-                    i3 = 0;
-                }
-                if (str2 != null) {
-                    try {
-                        ?? highlightText = AndroidUtilities.highlightText(str2, this.message.highlightedWords, (Theme.ResourcesProvider) null);
-                        int i20 = size - i3;
-                        StaticLayout generateStaticLayout = ChatMessageCell.generateStaticLayout(highlightText != 0 ? highlightText : str2, this.titleTextPaint, i20 - AndroidUtilities.dp(4.0f), i20 - AndroidUtilities.dp(4.0f), 0, 3);
-                        this.titleLayout = generateStaticLayout;
-                        if (generateStaticLayout.getLineCount() > 0) {
-                            int i21 = this.titleY;
-                            StaticLayout staticLayout6 = this.titleLayout;
-                            this.descriptionY = i21 + staticLayout6.getLineBottom(staticLayout6.getLineCount() - 1) + AndroidUtilities.dp(4.0f);
-                        }
-                    } catch (Exception e2) {
-                        FileLog.e(e2);
-                    }
-                    this.letterDrawable.setTitle(str2);
-                }
-                this.description2Y = this.descriptionY;
-                StaticLayout staticLayout7 = this.titleLayout;
-                int max = Math.max(1, 4 - (staticLayout7 == null ? staticLayout7.getLineCount() : 0));
-                if (this.viewType != 1) {
-                    spannableStringBuilder = null;
-                    str4 = null;
-                } else {
-                    str4 = str3;
-                }
-                if (str4 != null) {
-                    try {
-                        StaticLayout generateStaticLayout2 = ChatMessageCell.generateStaticLayout(str4, this.descriptionTextPaint, size, size, 0, max);
-                        this.descriptionLayout = generateStaticLayout2;
-                        if (generateStaticLayout2.getLineCount() > 0) {
-                            int i22 = this.descriptionY;
-                            StaticLayout staticLayout8 = this.descriptionLayout;
-                            this.description2Y = i22 + staticLayout8.getLineBottom(staticLayout8.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                        }
-                        this.spoilersPool.addAll(this.descriptionLayoutSpoilers);
-                        this.descriptionLayoutSpoilers.clear();
-                        if (!this.message.isSpoilersRevealed) {
-                            SpoilerEffect.addSpoilers(this, this.descriptionLayout, this.spoilersPool, this.descriptionLayoutSpoilers);
-                        }
-                    } catch (Exception e3) {
-                        FileLog.e(e3);
-                    }
-                }
-                if (spannableStringBuilder != null) {
-                    try {
-                        this.descriptionLayout2 = ChatMessageCell.generateStaticLayout(spannableStringBuilder, this.descriptionTextPaint, size, size, 0, max);
-                        if (this.descriptionLayout != null) {
-                            this.description2Y += AndroidUtilities.dp(10.0f);
-                        }
-                        this.spoilersPool.addAll(this.descriptionLayout2Spoilers);
-                        this.descriptionLayout2Spoilers.clear();
-                        if (!this.message.isSpoilersRevealed) {
-                            SpoilerEffect.addSpoilers(this, this.descriptionLayout2, this.spoilersPool, this.descriptionLayout2Spoilers);
-                        }
-                    } catch (Exception e4) {
-                        FileLog.e(e4);
-                    }
-                }
-                messageObject3 = this.message;
-                if (messageObject3 != null || TextUtils.isEmpty(messageObject3.messageOwner.message)) {
-                    photoSize = null;
-                } else {
-                    photoSize = null;
-                    CharSequence highlightText2 = AndroidUtilities.highlightText(Emoji.replaceEmoji(this.message.messageOwner.message.replace("\n", " ").replaceAll(" +", " ").trim(), Theme.chat_msgTextPaint.getFontMetricsInt(), false), this.message.highlightedWords, (Theme.ResourcesProvider) null);
-                    if (highlightText2 != null) {
-                        this.captionLayout = new StaticLayout(TextUtils.ellipsize(AndroidUtilities.ellipsizeCenterEnd(highlightText2, this.message.highlightedWords.get(0), size, this.captionTextPaint, NotificationCenter.dialogIsTranslatable), this.captionTextPaint, size, TextUtils.TruncateAt.END), this.captionTextPaint, size + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    }
-                }
-                staticLayout = this.captionLayout;
-                if (staticLayout != null) {
-                    int i23 = this.descriptionY;
-                    this.captionY = i23;
-                    int lineBottom = i23 + staticLayout.getLineBottom(staticLayout.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                    this.descriptionY = lineBottom;
-                    this.description2Y = lineBottom;
-                }
-                if (!this.links.isEmpty()) {
-                    for (int i24 = 0; i24 < this.linkSpoilers.size(); i24++) {
-                        this.spoilersPool.addAll((Collection) this.linkSpoilers.get(i24));
-                    }
-                    this.linkSpoilers.clear();
-                    int i25 = 0;
-                    while (i25 < this.links.size()) {
-                        try {
-                            CharSequence ellipsize = TextUtils.ellipsize(AndroidUtilities.replaceNewLines(SpannableStringBuilder.valueOf((CharSequence) this.links.get(i25))), this.descriptionTextPaint, Math.min((int) Math.ceil(this.descriptionTextPaint.measureText(r0, 0, r0.length())), size), TextUtils.TruncateAt.MIDDLE);
-                            photoSize2 = photoSize;
-                            try {
-                                StaticLayout staticLayout9 = new StaticLayout(ellipsize, this.descriptionTextPaint, size, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                                this.linkY = this.description2Y;
-                                StaticLayout staticLayout10 = this.descriptionLayout2;
-                                if (staticLayout10 != null && staticLayout10.getLineCount() != 0) {
-                                    int i26 = this.linkY;
-                                    StaticLayout staticLayout11 = this.descriptionLayout2;
-                                    this.linkY = i26 + staticLayout11.getLineBottom(staticLayout11.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                                }
-                                if (!this.message.isSpoilersRevealed) {
-                                    ArrayList arrayList = new ArrayList();
-                                    if (ellipsize instanceof Spannable) {
-                                        SpoilerEffect.addSpoilers(this, staticLayout9, (Spannable) ellipsize, this.spoilersPool, arrayList);
-                                    }
-                                    this.linkSpoilers.put(i25, arrayList);
-                                }
-                                this.linkLayout.add(staticLayout9);
-                            } catch (Exception e5) {
-                                e = e5;
-                                FileLog.e(e);
-                                i25++;
-                                photoSize = photoSize2;
-                            }
-                        } catch (Exception e6) {
-                            e = e6;
-                            photoSize2 = photoSize;
-                        }
-                        i25++;
-                        photoSize = photoSize2;
-                    }
-                }
-                TLRPC.PhotoSize photoSize3 = photoSize;
-                int dp = AndroidUtilities.dp(52.0f);
-                int size2 = !LocaleController.isRTL ? (View.MeasureSpec.getSize(i) - AndroidUtilities.dp(10.0f)) - dp : AndroidUtilities.dp(10.0f);
-                this.letterDrawable.setBounds(size2, AndroidUtilities.dp(11.0f), size2 + dp, AndroidUtilities.dp(63.0f));
-                if (z) {
-                    z2 = true;
-                } else {
-                    TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.message.photoThumbs, dp, true);
-                    TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.message.photoThumbs, 80);
-                    if (closestPhotoSizeWithSize2 == closestPhotoSizeWithSize) {
-                        closestPhotoSizeWithSize2 = photoSize3;
-                    }
-                    if (closestPhotoSizeWithSize != null) {
-                        closestPhotoSizeWithSize.size = -1;
-                    }
-                    if (closestPhotoSizeWithSize2 != null) {
-                        closestPhotoSizeWithSize2.size = -1;
-                    }
-                    float f = dp;
-                    this.linkImageView.setImageCoords(size2, AndroidUtilities.dp(11.0f), f, f);
-                    FileLoader.getAttachFileName(closestPhotoSizeWithSize);
-                    Locale locale = Locale.US;
-                    this.linkImageView.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize, this.message.photoThumbsObject), String.format(locale, "%d_%d", Integer.valueOf(dp), Integer.valueOf(dp)), ImageLocation.getForObject(closestPhotoSizeWithSize2, this.message.photoThumbsObject), String.format(locale, "%d_%d_b", Integer.valueOf(dp), Integer.valueOf(dp)), 0L, null, this.message, 0);
-                    z2 = true;
-                    this.drawLinkImageView = true;
-                }
-                if (this.viewType != z2) {
-                    StaticLayout generateStaticLayout3 = ChatMessageCell.generateStaticLayout(FilteredSearchView.createFromInfoString(this.message, z2, 2, this.description2TextPaint), this.description2TextPaint, size, size, 0, max);
-                    this.fromInfoLayout = generateStaticLayout3;
-                    i4 = 0;
-                    this.fromInfoLayoutEmojis = AnimatedEmojiSpan.update(0, this, this.fromInfoLayoutEmojis, generateStaticLayout3);
-                } else {
-                    i4 = 0;
-                }
-                staticLayout2 = this.titleLayout;
-                if (staticLayout2 != null || staticLayout2.getLineCount() == 0) {
-                    i5 = 0;
-                } else {
-                    StaticLayout staticLayout12 = this.titleLayout;
-                    i5 = staticLayout12.getLineBottom(staticLayout12.getLineCount() - 1) + AndroidUtilities.dp(4.0f);
-                }
-                staticLayout3 = this.captionLayout;
-                if (staticLayout3 != null && staticLayout3.getLineCount() != 0) {
-                    StaticLayout staticLayout13 = this.captionLayout;
-                    i5 += staticLayout13.getLineBottom(staticLayout13.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                }
-                staticLayout4 = this.descriptionLayout;
-                if (staticLayout4 != null && staticLayout4.getLineCount() != 0) {
-                    StaticLayout staticLayout14 = this.descriptionLayout;
-                    i5 += staticLayout14.getLineBottom(staticLayout14.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                }
-                staticLayout5 = this.descriptionLayout2;
-                if (staticLayout5 != null && staticLayout5.getLineCount() != 0) {
-                    StaticLayout staticLayout15 = this.descriptionLayout2;
-                    i5 += staticLayout15.getLineBottom(staticLayout15.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                    if (this.descriptionLayout != null) {
-                        i5 += AndroidUtilities.dp(10.0f);
-                    }
-                }
-                int i27 = 0;
-                while (i4 < this.linkLayout.size()) {
-                    StaticLayout staticLayout16 = (StaticLayout) this.linkLayout.get(i4);
-                    if (staticLayout16.getLineCount() > 0) {
-                        i6 = 1;
-                        i27 += staticLayout16.getLineBottom(staticLayout16.getLineCount() - 1);
-                    } else {
-                        i6 = 1;
-                    }
-                    i4 += i6;
-                }
-                int i28 = i5 + i27;
-                if (this.fromInfoLayout != null) {
-                    this.fromInfoLayoutY = this.linkY + i27 + AndroidUtilities.dp(5.0f);
-                    StaticLayout staticLayout17 = this.fromInfoLayout;
-                    i28 += staticLayout17.getLineBottom(staticLayout17.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-                }
-                this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-                setMeasuredDimension(View.MeasureSpec.getSize(i), Math.max(AndroidUtilities.dp(76.0f), i28 + AndroidUtilities.dp(17.0f)) + (this.needDivider ? 1 : 0));
-            }
-        }
-        str = null;
-        str2 = null;
-        str3 = null;
-        z = false;
-        messageObject = this.message;
-        int i112 = 46;
-        if (messageObject != null) {
-        }
-        spannableStringBuilder = null;
-        if (str != null) {
-            this.links.add(str);
-        }
-        messageObject2 = this.message;
-        if (messageObject2 != null) {
-            gatherRichMessageLinks(richMessage.blocks);
-            if (!this.links.isEmpty()) {
-            }
-        }
-        if (this.viewType != 1) {
-        }
-        if (str2 != null) {
-        }
-        this.description2Y = this.descriptionY;
-        StaticLayout staticLayout72 = this.titleLayout;
-        int max2 = Math.max(1, 4 - (staticLayout72 == null ? staticLayout72.getLineCount() : 0));
-        if (this.viewType != 1) {
-        }
-        if (str4 != null) {
-        }
-        if (spannableStringBuilder != null) {
-        }
-        messageObject3 = this.message;
-        if (messageObject3 != null) {
-        }
-        photoSize = null;
-        staticLayout = this.captionLayout;
-        if (staticLayout != null) {
-        }
-        if (!this.links.isEmpty()) {
-        }
-        TLRPC.PhotoSize photoSize32 = photoSize;
-        int dp2 = AndroidUtilities.dp(52.0f);
-        if (!LocaleController.isRTL) {
-        }
-        this.letterDrawable.setBounds(size2, AndroidUtilities.dp(11.0f), size2 + dp2, AndroidUtilities.dp(63.0f));
-        if (z) {
-        }
-        if (this.viewType != z2) {
-        }
-        staticLayout2 = this.titleLayout;
-        if (staticLayout2 != null) {
-        }
-        i5 = 0;
-        staticLayout3 = this.captionLayout;
-        if (staticLayout3 != null) {
-            StaticLayout staticLayout132 = this.captionLayout;
-            i5 += staticLayout132.getLineBottom(staticLayout132.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-        }
-        staticLayout4 = this.descriptionLayout;
-        if (staticLayout4 != null) {
-            StaticLayout staticLayout142 = this.descriptionLayout;
-            i5 += staticLayout142.getLineBottom(staticLayout142.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-        }
-        staticLayout5 = this.descriptionLayout2;
-        if (staticLayout5 != null) {
-            StaticLayout staticLayout152 = this.descriptionLayout2;
-            i5 += staticLayout152.getLineBottom(staticLayout152.getLineCount() - 1) + AndroidUtilities.dp(5.0f);
-            if (this.descriptionLayout != null) {
-            }
-        }
-        int i272 = 0;
-        while (i4 < this.linkLayout.size()) {
-        }
-        int i282 = i5 + i272;
-        if (this.fromInfoLayout != null) {
-        }
-        this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-        setMeasuredDimension(View.MeasureSpec.getSize(i), Math.max(AndroidUtilities.dp(76.0f), i282 + AndroidUtilities.dp(17.0f)) + (this.needDivider ? 1 : 0));
+    protected void onMeasure(int r31, int r32) {
+        /*
+            Method dump skipped, instructions count: 2026
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.Cells.SharedLinkCell.onMeasure(int, int):void");
     }
 
     public void setLink(MessageObject messageObject, boolean z) {
@@ -1000,7 +533,7 @@ public class SharedLinkCell extends FrameLayout {
         this.spoilerPressed.setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Cells.SharedLinkCell$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SharedLinkCell.this.lambda$startSpoilerRipples$1();
+                SharedLinkCell.$r8$lambda$KtNjZWwSpUwdIZT146obVDMUTAs(SharedLinkCell.this);
             }
         });
         int i4 = i - dp;
@@ -1055,23 +588,22 @@ public class SharedLinkCell extends FrameLayout {
         this.spoilerPressed = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startSpoilerRipples$1() {
-        post(new Runnable() { // from class: org.telegram.ui.Cells.SharedLinkCell$$ExternalSyntheticLambda1
+    public static /* synthetic */ void $r8$lambda$KtNjZWwSpUwdIZT146obVDMUTAs(final SharedLinkCell sharedLinkCell) {
+        sharedLinkCell.getClass();
+        sharedLinkCell.post(new Runnable() { // from class: org.telegram.ui.Cells.SharedLinkCell$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SharedLinkCell.this.lambda$startSpoilerRipples$0();
+                SharedLinkCell.$r8$lambda$dNONtQFtBlY2WaZBv6WDIvsAgZs(SharedLinkCell.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startSpoilerRipples$0() {
-        this.message.isSpoilersRevealed = true;
-        this.linkSpoilers.clear();
-        this.descriptionLayoutSpoilers.clear();
-        this.descriptionLayout2Spoilers.clear();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$dNONtQFtBlY2WaZBv6WDIvsAgZs(SharedLinkCell sharedLinkCell) {
+        sharedLinkCell.message.isSpoilersRevealed = true;
+        sharedLinkCell.linkSpoilers.clear();
+        sharedLinkCell.descriptionLayoutSpoilers.clear();
+        sharedLinkCell.descriptionLayout2Spoilers.clear();
+        sharedLinkCell.invalidate();
     }
 
     private int getYOffsetForType(int i) {
@@ -1109,106 +641,112 @@ public class SharedLinkCell extends FrameLayout {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        SharedLinkCell sharedLinkCell;
+        Canvas canvas2 = canvas;
         if (this.viewType == 1) {
             this.description2TextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText3, this.resourcesProvider));
         }
         if (this.dateLayout != null) {
-            canvas.save();
-            canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline) + (LocaleController.isRTL ? 0 : this.dateLayoutX), this.titleY);
-            this.dateLayout.draw(canvas);
-            canvas.restore();
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline) + (LocaleController.isRTL ? 0 : this.dateLayoutX), this.titleY);
+            this.dateLayout.draw(canvas2);
+            canvas2.restore();
         }
         if (this.titleLayout != null) {
-            canvas.save();
+            canvas2.save();
             float dp = AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline);
             if (LocaleController.isRTL) {
-                dp += this.dateLayout == null ? 0.0f : r1.getWidth() + AndroidUtilities.dp(4.0f);
+                dp += this.dateLayout == null ? 0.0f : r2.getWidth() + AndroidUtilities.dp(4.0f);
             }
-            canvas.translate(dp, this.titleY);
-            this.titleLayout.draw(canvas);
-            canvas.restore();
+            canvas2.translate(dp, this.titleY);
+            this.titleLayout.draw(canvas2);
+            canvas2.restore();
         }
         if (this.captionLayout != null) {
             this.captionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
-            canvas.save();
-            canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.captionY);
-            this.captionLayout.draw(canvas);
-            canvas.restore();
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.captionY);
+            this.captionLayout.draw(canvas2);
+            canvas2.restore();
         }
         if (this.descriptionLayout != null) {
             this.descriptionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
-            canvas.save();
-            canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.descriptionY);
-            SpoilerEffect.renderWithRipple(this, false, this.descriptionTextPaint.getColor(), -AndroidUtilities.dp(2.0f), this.patchedDescriptionLayout, 0, this.descriptionLayout, this.descriptionLayoutSpoilers, canvas, false);
-            canvas.restore();
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.descriptionY);
+            SpoilerEffect.renderWithRipple(this, false, this.descriptionTextPaint.getColor(), -AndroidUtilities.dp(2.0f), this.patchedDescriptionLayout, 0, this.descriptionLayout, this.descriptionLayoutSpoilers, canvas2, false);
+            canvas2.restore();
         }
         if (this.descriptionLayout2 != null) {
             this.descriptionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
-            canvas.save();
-            canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.description2Y);
-            SpoilerEffect.renderWithRipple(this, false, this.descriptionTextPaint.getColor(), -AndroidUtilities.dp(2.0f), this.patchedDescriptionLayout2, 0, this.descriptionLayout2, this.descriptionLayout2Spoilers, canvas, false);
-            canvas.restore();
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.description2Y);
+            SpoilerEffect.renderWithRipple(this, false, this.descriptionTextPaint.getColor(), -AndroidUtilities.dp(2.0f), this.patchedDescriptionLayout2, 0, this.descriptionLayout2, this.descriptionLayout2Spoilers, canvas2, false);
+            sharedLinkCell = this;
+            canvas2.restore();
+        } else {
+            sharedLinkCell = this;
         }
-        if (!this.linkLayout.isEmpty()) {
-            this.descriptionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText, this.resourcesProvider));
+        if (!sharedLinkCell.linkLayout.isEmpty()) {
+            sharedLinkCell.descriptionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText, sharedLinkCell.resourcesProvider));
             int i = 0;
-            for (int i2 = 0; i2 < this.linkLayout.size(); i2++) {
-                StaticLayout staticLayout = (StaticLayout) this.linkLayout.get(i2);
-                List list = (List) this.linkSpoilers.get(i2);
+            for (int i2 = 0; i2 < sharedLinkCell.linkLayout.size(); i2++) {
+                StaticLayout staticLayout = (StaticLayout) sharedLinkCell.linkLayout.get(i2);
+                List list = (List) sharedLinkCell.linkSpoilers.get(i2);
                 if (staticLayout.getLineCount() > 0) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.linkY + i);
-                    this.path.rewind();
+                    canvas2.save();
+                    canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), sharedLinkCell.linkY + i);
+                    sharedLinkCell.path.rewind();
                     if (list != null) {
                         Iterator it = list.iterator();
                         while (it.hasNext()) {
                             Rect bounds = ((SpoilerEffect) it.next()).getBounds();
-                            this.path.addRect(bounds.left, bounds.top, bounds.right, bounds.bottom, Path.Direction.CW);
+                            sharedLinkCell.path.addRect(bounds.left, bounds.top, bounds.right, bounds.bottom, Path.Direction.CW);
                         }
                     }
-                    canvas.save();
-                    canvas.clipPath(this.path, Region.Op.DIFFERENCE);
-                    staticLayout.draw(canvas);
-                    canvas.restore();
-                    canvas.save();
-                    canvas.clipPath(this.path);
-                    this.path.rewind();
+                    canvas2.save();
+                    canvas2.clipPath(sharedLinkCell.path, Region.Op.DIFFERENCE);
+                    staticLayout.draw(canvas2);
+                    canvas2.restore();
+                    canvas2.save();
+                    canvas2.clipPath(sharedLinkCell.path);
+                    sharedLinkCell.path.rewind();
                     if (list != null && !list.isEmpty()) {
-                        ((SpoilerEffect) list.get(0)).getRipplePath(this.path);
+                        ((SpoilerEffect) list.get(0)).getRipplePath(sharedLinkCell.path);
                     }
-                    canvas.clipPath(this.path);
-                    staticLayout.draw(canvas);
-                    canvas.restore();
+                    canvas2.clipPath(sharedLinkCell.path);
+                    staticLayout.draw(canvas2);
+                    canvas2.restore();
                     if (list != null) {
                         Iterator it2 = list.iterator();
                         while (it2.hasNext()) {
-                            ((SpoilerEffect) it2.next()).draw(canvas);
+                            ((SpoilerEffect) it2.next()).draw(canvas2);
                         }
                     }
-                    canvas.restore();
+                    canvas2.restore();
                     i += staticLayout.getLineBottom(staticLayout.getLineCount() - 1);
                 }
             }
-            if (this.linksCollector.draw(canvas)) {
-                invalidate();
+            if (sharedLinkCell.linksCollector.draw(canvas2)) {
+                sharedLinkCell.invalidate();
             }
         }
-        if (this.fromInfoLayout != null) {
-            canvas.save();
-            canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.fromInfoLayoutY);
-            this.fromInfoLayout.draw(canvas);
-            AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.fromInfoLayout, this.fromInfoLayoutEmojis, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
-            canvas.restore();
+        if (sharedLinkCell.fromInfoLayout != null) {
+            canvas2.save();
+            canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), sharedLinkCell.fromInfoLayoutY);
+            sharedLinkCell.fromInfoLayout.draw(canvas2);
+            AnimatedEmojiSpan.drawAnimatedEmojis(canvas, sharedLinkCell.fromInfoLayout, sharedLinkCell.fromInfoLayoutEmojis, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
+            canvas2 = canvas;
+            canvas2.restore();
         }
-        this.letterDrawable.draw(canvas);
-        if (this.drawLinkImageView) {
-            this.linkImageView.draw(canvas);
+        sharedLinkCell.letterDrawable.draw(canvas2);
+        if (sharedLinkCell.drawLinkImageView) {
+            sharedLinkCell.linkImageView.draw(canvas2);
         }
-        if (this.needDivider) {
+        if (sharedLinkCell.needDivider) {
             if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas2.drawLine(0.0f, sharedLinkCell.getMeasuredHeight() - 1, sharedLinkCell.getMeasuredWidth() - AndroidUtilities.dp(AndroidUtilities.leftBaseline), sharedLinkCell.getMeasuredHeight() - 1, Theme.dividerPaint);
             } else {
-                canvas.drawLine(AndroidUtilities.dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(AndroidUtilities.dp(AndroidUtilities.leftBaseline), sharedLinkCell.getMeasuredHeight() - 1, sharedLinkCell.getMeasuredWidth(), sharedLinkCell.getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
     }

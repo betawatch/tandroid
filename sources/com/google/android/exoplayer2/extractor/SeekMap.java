@@ -71,11 +71,13 @@ public interface SeekMap {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || SeekPoints.class != obj.getClass()) {
-                return false;
+            if (obj != null && SeekPoints.class == obj.getClass()) {
+                SeekPoints seekPoints = (SeekPoints) obj;
+                if (this.first.equals(seekPoints.first) && this.second.equals(seekPoints.second)) {
+                    return true;
+                }
             }
-            SeekPoints seekPoints = (SeekPoints) obj;
-            return this.first.equals(seekPoints.first) && this.second.equals(seekPoints.second);
+            return false;
         }
 
         public int hashCode() {

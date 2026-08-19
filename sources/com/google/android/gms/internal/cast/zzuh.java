@@ -7,7 +7,7 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 final class zzuh extends zzul {
-    private static final Class zza = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
+    private static final Class zza = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
     /* synthetic */ zzuh(zzug zzugVar) {
         super(null);

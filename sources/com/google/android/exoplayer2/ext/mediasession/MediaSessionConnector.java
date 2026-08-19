@@ -204,7 +204,7 @@ public final class MediaSessionConnector {
         this.commandReceivers = new ArrayList<>();
         this.customCommandReceivers = new ArrayList<>();
         this.customActionProviders = new CustomActionProvider[0];
-        this.customActionMap = Collections.emptyMap();
+        this.customActionMap = Collections.EMPTY_MAP;
         this.mediaMetadataProvider = new DefaultMediaMetadataProvider(mediaSessionCompat.getController(), null);
         this.enabledPlaybackActions = DEFAULT_PLAYBACK_ACTIONS;
         mediaSessionCompat.setFlags(3);
@@ -512,20 +512,29 @@ public final class MediaSessionConnector {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean canDispatchPlaybackAction(long j) {
-        return this.player != null && ((j & this.enabledPlaybackActions) != 0 || this.dispatchUnsupportedActionsEnabled);
+        if (this.player != null) {
+            return (j & this.enabledPlaybackActions) != 0 || this.dispatchUnsupportedActionsEnabled;
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean canDispatchToPlaybackPreparer(long j) {
         PlaybackPreparer playbackPreparer = this.playbackPreparer;
-        return playbackPreparer != null && ((j & playbackPreparer.getSupportedPrepareActions()) != 0 || this.dispatchUnsupportedActionsEnabled);
+        if (playbackPreparer != null) {
+            return (j & playbackPreparer.getSupportedPrepareActions()) != 0 || this.dispatchUnsupportedActionsEnabled;
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean canDispatchToQueueNavigator(long j) {
         QueueNavigator queueNavigator;
         Player player = this.player;
-        return (player == null || (queueNavigator = this.queueNavigator) == null || ((j & queueNavigator.getSupportedQueueNavigatorActions(player)) == 0 && !this.dispatchUnsupportedActionsEnabled)) ? false : true;
+        if (player == null || (queueNavigator = this.queueNavigator) == null) {
+            return false;
+        }
+        return (j & queueNavigator.getSupportedQueueNavigatorActions(player)) != 0 || this.dispatchUnsupportedActionsEnabled;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

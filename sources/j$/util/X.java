@@ -3,21 +3,21 @@ package j$.util;
 import java.util.Comparator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class X implements Z {
-    public final /* synthetic */ Spliterator.OfInt a;
+    public final /* synthetic */ Spliterator.OfLong a;
 
-    private /* synthetic */ X(Spliterator.OfInt ofInt) {
-        this.a = ofInt;
+    public /* synthetic */ X(Spliterator.OfLong ofLong) {
+        this.a = ofLong;
     }
 
-    public static /* synthetic */ Z a(Spliterator.OfInt ofInt) {
-        if (ofInt == null) {
+    public static /* synthetic */ Z a(Spliterator.OfLong ofLong) {
+        if (ofLong == null) {
             return null;
         }
-        return ofInt instanceof Y ? ((Y) ofInt).a : new X(ofInt);
+        return ofLong instanceof Y ? ((Y) ofLong).a : new X(ofLong);
     }
 
     @Override // j$.util.Spliterator
@@ -26,11 +26,11 @@ public final /* synthetic */ class X implements Z {
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Spliterator.OfInt ofInt = this.a;
+        Spliterator.OfLong ofLong = this.a;
         if (obj instanceof X) {
             obj = ((X) obj).a;
         }
-        return ofInt.equals(obj);
+        return ofLong.equals(obj);
     }
 
     @Override // j$.util.Spliterator
@@ -38,19 +38,19 @@ public final /* synthetic */ class X implements Z {
         return this.a.estimateSize();
     }
 
-    @Override // j$.util.f0
+    @Override // j$.util.c0
     public final /* synthetic */ void forEachRemaining(Object obj) {
-        this.a.forEachRemaining((Spliterator.OfInt) obj);
+        this.a.forEachRemaining((Spliterator.OfLong) obj);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining((Consumer<? super Integer>) consumer);
+        this.a.forEachRemaining((Consumer<? super Long>) consumer);
     }
 
     @Override // j$.util.Z
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining(intConsumer);
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining(longConsumer);
     }
 
     @Override // j$.util.Spliterator
@@ -72,33 +72,33 @@ public final /* synthetic */ class X implements Z {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.f0
+    @Override // j$.util.c0
     public final /* synthetic */ boolean tryAdvance(Object obj) {
-        return this.a.tryAdvance((Spliterator.OfInt) obj);
+        return this.a.tryAdvance((Spliterator.OfLong) obj);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return this.a.tryAdvance((Consumer<? super Integer>) consumer);
+        return this.a.tryAdvance((Consumer<? super Long>) consumer);
     }
 
     @Override // j$.util.Z
-    public final /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return this.a.tryAdvance(intConsumer);
+    public final /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
+        return this.a.tryAdvance(longConsumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ Spliterator trySplit() {
-        return g0.a(this.a.trySplit());
+        return d0.a(this.a.trySplit());
     }
 
-    @Override // j$.util.Z, j$.util.f0, j$.util.Spliterator
+    @Override // j$.util.Z, j$.util.c0, j$.util.Spliterator
     public final /* synthetic */ Z trySplit() {
         return a(this.a.trySplit());
     }
 
-    @Override // j$.util.f0, j$.util.Spliterator
-    public final /* synthetic */ f0 trySplit() {
-        return d0.a(this.a.trySplit());
+    @Override // j$.util.c0, j$.util.Spliterator
+    public final /* synthetic */ c0 trySplit() {
+        return a0.a(this.a.trySplit());
     }
 }

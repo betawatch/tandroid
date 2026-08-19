@@ -36,11 +36,13 @@ final class AutoValue_HeartBeatResult extends HeartBeatResult {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof HeartBeatResult)) {
-            return false;
+        if (obj instanceof HeartBeatResult) {
+            HeartBeatResult heartBeatResult = (HeartBeatResult) obj;
+            if (this.userAgent.equals(heartBeatResult.getUserAgent()) && this.usedDates.equals(heartBeatResult.getUsedDates())) {
+                return true;
+            }
         }
-        HeartBeatResult heartBeatResult = (HeartBeatResult) obj;
-        return this.userAgent.equals(heartBeatResult.getUserAgent()) && this.usedDates.equals(heartBeatResult.getUsedDates());
+        return false;
     }
 
     public int hashCode() {

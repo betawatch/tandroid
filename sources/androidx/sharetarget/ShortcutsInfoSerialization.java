@@ -70,36 +70,34 @@ abstract class ShortcutsInfoSerialization {
     }
 
     static Map loadFromXml(File file, Context context) {
-        FileInputStream fileInputStream;
         ShortcutContainer parseShortcutContainer;
         ShortcutInfoCompat shortcutInfoCompat;
         ArrayMap arrayMap = new ArrayMap();
         try {
-            fileInputStream = new FileInputStream(file);
+            FileInputStream fileInputStream = new FileInputStream(file);
             try {
+                if (file.exists()) {
+                    XmlPullParser newPullParser = Xml.newPullParser();
+                    newPullParser.setInput(fileInputStream, "UTF_8");
+                    while (true) {
+                        int next = newPullParser.next();
+                        if (next == 1) {
+                            break;
+                        }
+                        if (next == 2 && newPullParser.getName().equals("target") && (parseShortcutContainer = parseShortcutContainer(newPullParser, context)) != null && (shortcutInfoCompat = parseShortcutContainer.mShortcutInfo) != null) {
+                            arrayMap.put(shortcutInfoCompat.getId(), parseShortcutContainer);
+                        }
+                    }
+                }
+                fileInputStream.close();
+                return arrayMap;
             } finally {
             }
         } catch (Exception e) {
             file.delete();
             Log.e("ShortcutInfoCompatSaver", "Failed to load saved values from file " + file.getAbsolutePath() + ". Old state removed, new added", e);
-        }
-        if (file.exists()) {
-            XmlPullParser newPullParser = Xml.newPullParser();
-            newPullParser.setInput(fileInputStream, "UTF_8");
-            while (true) {
-                int next = newPullParser.next();
-                if (next == 1) {
-                    break;
-                }
-                if (next == 2 && newPullParser.getName().equals("target") && (parseShortcutContainer = parseShortcutContainer(newPullParser, context)) != null && (shortcutInfoCompat = parseShortcutContainer.mShortcutInfo) != null) {
-                    arrayMap.put(shortcutInfoCompat.getId(), parseShortcutContainer);
-                }
-            }
-            fileInputStream.close();
             return arrayMap;
         }
-        fileInputStream.close();
-        return arrayMap;
     }
 
     private static ShortcutContainer parseShortcutContainer(XmlPullParser xmlPullParser, Context context) {
@@ -124,7 +122,7 @@ abstract class ShortcutsInfoSerialization {
             if (next != 1) {
                 if (next == 2) {
                     String name = xmlPullParser.getName();
-                    name.hashCode();
+                    name.getClass();
                     if (name.equals("intent")) {
                         Intent parseIntent = parseIntent(xmlPullParser);
                         if (parseIntent != null) {

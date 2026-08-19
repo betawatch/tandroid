@@ -84,28 +84,27 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BaseLocationAdapter.this.lambda$searchDelayed$1(str, location);
+                BaseLocationAdapter.$r8$lambda$UzOocwjEU5x3EeNBE12gwv-Gt9I(BaseLocationAdapter.this, str, location);
             }
         };
         this.searchRunnable = runnable;
         dispatchQueue.postRunnable(runnable, 400L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDelayed$1(final String str, final Location location) {
+    public static /* synthetic */ void $r8$lambda$UzOocwjEU5x3EeNBE12gwv-Gt9I(final BaseLocationAdapter baseLocationAdapter, final String str, final Location location) {
+        baseLocationAdapter.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                BaseLocationAdapter.this.lambda$searchDelayed$0(str, location);
+                BaseLocationAdapter.$r8$lambda$y90nmaRIn-FalsuFNKur0trYb3U(BaseLocationAdapter.this, str, location);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDelayed$0(String str, Location location) {
-        this.searchRunnable = null;
-        this.lastSearchLocation = null;
-        searchPlacesWithQuery(str, location, true);
+    public static /* synthetic */ void $r8$lambda$y90nmaRIn-FalsuFNKur0trYb3U(BaseLocationAdapter baseLocationAdapter, String str, Location location) {
+        baseLocationAdapter.searchRunnable = null;
+        baseLocationAdapter.lastSearchLocation = null;
+        baseLocationAdapter.searchPlacesWithQuery(str, location, true);
     }
 
     private void searchBotUser() {
@@ -124,32 +123,32 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BaseLocationAdapter.this.lambda$searchBotUser$3(tLObject, tL_error);
+                BaseLocationAdapter.$r8$lambda$4Nt7Zy6Elg7WbJ6IxBLzGtKqjZs(BaseLocationAdapter.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchBotUser$3(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$4Nt7Zy6Elg7WbJ6IxBLzGtKqjZs(final BaseLocationAdapter baseLocationAdapter, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        baseLocationAdapter.getClass();
         if (tLObject != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BaseLocationAdapter.this.lambda$searchBotUser$2(tLObject);
+                    BaseLocationAdapter.$r8$lambda$A9lpV6QD6dmFP1uGkItVajDxhWE(BaseLocationAdapter.this, tLObject);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchBotUser$2(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$A9lpV6QD6dmFP1uGkItVajDxhWE(BaseLocationAdapter baseLocationAdapter, TLObject tLObject) {
+        baseLocationAdapter.getClass();
         TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-        MessagesController.getInstance(this.currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
-        MessagesController.getInstance(this.currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
-        MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-        Location location = this.lastSearchLocation;
-        this.lastSearchLocation = null;
-        searchPlacesWithQuery(this.lastSearchQuery, location, false);
+        MessagesController.getInstance(baseLocationAdapter.currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
+        MessagesController.getInstance(baseLocationAdapter.currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
+        MessagesStorage.getInstance(baseLocationAdapter.currentAccount).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+        Location location = baseLocationAdapter.lastSearchLocation;
+        baseLocationAdapter.lastSearchLocation = null;
+        baseLocationAdapter.searchPlacesWithQuery(baseLocationAdapter.lastSearchQuery, location, false);
     }
 
     public boolean isSearching() {
@@ -164,39 +163,35 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
         searchPlacesWithQuery(str, location, z, false);
     }
 
-    public void searchPlacesWithQuery(final String str, final Location location, boolean z, boolean z2) {
+    public void searchPlacesWithQuery(final String str, Location location, boolean z, boolean z2) {
+        Location location2;
         String str2;
+        final BaseLocationAdapter baseLocationAdapter;
+        final String str3;
+        final Location location3;
         final Locale locale;
-        if (location != null || this.stories) {
-            Location location2 = this.lastSearchLocation;
-            if (location2 == null || location == null || location.distanceTo(location2) >= 200.0f) {
-                Locale locale2 = null;
-                this.lastSearchLocation = location == null ? null : new Location(location);
-                this.lastSearchQuery = str;
-                if (this.searching) {
-                    this.searching = false;
-                    if (this.currentRequestNum != 0) {
-                        ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.currentRequestNum, true);
-                        this.currentRequestNum = 0;
-                    }
+        if ((location != null || this.stories) && ((location2 = this.lastSearchLocation) == null || location == null || location.distanceTo(location2) >= 200.0f)) {
+            Locale locale2 = null;
+            this.lastSearchLocation = location == null ? null : new Location(location);
+            this.lastSearchQuery = str;
+            if (this.searching) {
+                this.searching = false;
+                if (this.currentRequestNum != 0) {
+                    ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.currentRequestNum, true);
+                    this.currentRequestNum = 0;
                 }
-                getItemCount();
-                this.searching = true;
-                this.searched = true;
-                MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
-                if (this.stories) {
-                    str2 = MessagesController.getInstance(this.currentAccount).storyVenueSearchBot;
-                } else {
-                    str2 = MessagesController.getInstance(this.currentAccount).venueSearchBot;
-                }
-                TLObject userOrChat = messagesController.getUserOrChat(str2);
-                if (!(userOrChat instanceof TLRPC.User)) {
-                    if (z) {
-                        searchBotUser();
-                        return;
-                    }
-                    return;
-                }
+            }
+            getItemCount();
+            this.searching = true;
+            this.searched = true;
+            MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
+            if (this.stories) {
+                str2 = MessagesController.getInstance(this.currentAccount).storyVenueSearchBot;
+            } else {
+                str2 = MessagesController.getInstance(this.currentAccount).venueSearchBot;
+            }
+            TLObject userOrChat = messagesController.getUserOrChat(str2);
+            if (userOrChat instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) userOrChat;
                 TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
                 tL_messages_getInlineBotResults.query = str == null ? "" : str;
@@ -220,10 +215,13 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
                     if (this.stories) {
                         if (currentLocale.getLanguage().contains("en")) {
                             locale = currentLocale;
+                            baseLocationAdapter = this;
+                            str3 = str;
+                            location3 = location;
                             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    BaseLocationAdapter.this.lambda$searchPlacesWithQuery$5(currentLocale, str, locale, location, str);
+                                    BaseLocationAdapter.$r8$lambda$X38L9THsqmGcopAt-ll3U7NJl_0(BaseLocationAdapter.this, currentLocale, str3, locale, location3, str);
                                 }
                             });
                         } else {
@@ -231,221 +229,224 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
                         }
                     }
                     locale = locale2;
+                    baseLocationAdapter = this;
+                    str3 = str;
+                    location3 = location;
                     Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BaseLocationAdapter.this.lambda$searchPlacesWithQuery$5(currentLocale, str, locale, location, str);
+                            BaseLocationAdapter.$r8$lambda$X38L9THsqmGcopAt-ll3U7NJl_0(BaseLocationAdapter.this, currentLocale, str3, locale, location3, str);
                         }
                     });
                 } else {
-                    this.searchingLocations = false;
+                    baseLocationAdapter = this;
+                    str3 = str;
+                    location3 = location;
+                    baseLocationAdapter.searchingLocations = false;
                 }
-                if (location == null) {
+                if (location3 == null) {
                     return;
                 }
-                this.currentRequestNum = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda2
+                baseLocationAdapter.currentRequestNum = ConnectionsManager.getInstance(baseLocationAdapter.currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda2
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        BaseLocationAdapter.this.lambda$searchPlacesWithQuery$7(str, tLObject, tL_error);
+                        BaseLocationAdapter.$r8$lambda$ZC2XbztLqEWm164HtZHxnT-S-S8(BaseLocationAdapter.this, str3, tLObject, tL_error);
                     }
                 });
                 update(true);
+                return;
+            }
+            if (z) {
+                searchBotUser();
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0349  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0367 A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0379 A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x038a A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0437 A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x042e  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0114 A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x013d A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01bd A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01c9 A[Catch: Exception -> 0x04a1, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01e1 A[Catch: Exception -> 0x04a1, TRY_ENTER, TRY_LEAVE, TryCatch #1 {Exception -> 0x04a1, blocks: (B:3:0x0009, B:6:0x0012, B:8:0x0023, B:9:0x0032, B:10:0x003d, B:12:0x0043, B:14:0x004b, B:16:0x0051, B:17:0x0059, B:19:0x005f, B:21:0x0070, B:23:0x0095, B:26:0x009d, B:28:0x00a7, B:29:0x00aa, B:33:0x00be, B:35:0x00c8, B:37:0x00ce, B:38:0x00d1, B:40:0x010e, B:42:0x0114, B:44:0x011a, B:45:0x011d, B:47:0x0122, B:49:0x0128, B:50:0x012b, B:52:0x0133, B:54:0x013d, B:56:0x014d, B:58:0x0159, B:60:0x0165, B:64:0x01b7, B:66:0x01bd, B:67:0x01c0, B:69:0x01c9, B:70:0x01cc, B:71:0x01d8, B:74:0x01e1, B:80:0x01f4, B:82:0x01fa, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026d, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a0, B:112:0x02a6, B:114:0x02b2, B:116:0x02b9, B:118:0x02c5, B:120:0x02d3, B:121:0x02db, B:123:0x02e1, B:125:0x02eb, B:127:0x02f9, B:128:0x02fd, B:130:0x0303, B:132:0x030d, B:134:0x031b, B:135:0x031f, B:137:0x0325, B:139:0x032b, B:141:0x0335, B:143:0x033b, B:144:0x033e, B:145:0x0343, B:148:0x034a, B:150:0x034f, B:155:0x0361, B:157:0x0367, B:159:0x0379, B:162:0x038a, B:164:0x0396, B:166:0x03cd, B:168:0x03e1, B:169:0x03e7, B:171:0x03ed, B:172:0x03f1, B:174:0x03f7, B:175:0x03fb, B:177:0x0405, B:178:0x040f, B:180:0x0415, B:181:0x0421, B:183:0x0431, B:185:0x0437, B:187:0x0443, B:189:0x047a, B:190:0x0487, B:152:0x035d, B:215:0x024f, B:217:0x0178, B:219:0x018c, B:221:0x0196, B:223:0x01b0, B:229:0x00d7, B:231:0x00e1, B:233:0x00e7, B:234:0x00ea, B:235:0x00ee, B:237:0x00f8, B:239:0x00fe, B:241:0x0104, B:242:0x0107), top: B:2:0x0009 }] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x037d A[Catch: Exception -> 0x049d, TryCatch #0 {Exception -> 0x049d, blocks: (B:3:0x000c, B:6:0x0015, B:8:0x0026, B:9:0x0035, B:10:0x0040, B:12:0x0046, B:14:0x004e, B:16:0x0054, B:17:0x005c, B:19:0x0062, B:21:0x0073, B:23:0x009b, B:26:0x00a3, B:28:0x00ad, B:29:0x00b0, B:33:0x00c4, B:35:0x00ce, B:37:0x00d4, B:38:0x00d7, B:40:0x0115, B:42:0x011b, B:44:0x0121, B:45:0x0124, B:47:0x0129, B:49:0x012f, B:50:0x0132, B:53:0x013b, B:55:0x0145, B:57:0x0155, B:59:0x0161, B:61:0x016d, B:65:0x01bb, B:67:0x01c1, B:68:0x01c4, B:70:0x01cd, B:71:0x01d0, B:72:0x01da, B:75:0x01e3, B:81:0x01f6, B:83:0x01fc, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026c, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a5, B:112:0x02ab, B:114:0x02b7, B:116:0x02bd, B:118:0x02c7, B:120:0x02d5, B:121:0x02dc, B:123:0x02e2, B:125:0x02ec, B:127:0x02fa, B:128:0x02fe, B:130:0x0304, B:132:0x030e, B:134:0x031c, B:135:0x0320, B:137:0x0326, B:139:0x032c, B:141:0x0336, B:143:0x033c, B:144:0x033f, B:145:0x0345, B:148:0x034c, B:150:0x0351, B:155:0x0363, B:157:0x0369, B:159:0x037d, B:167:0x038c, B:169:0x0398, B:171:0x03cf, B:173:0x03e2, B:174:0x03e9, B:176:0x03ef, B:177:0x03f3, B:179:0x03f9, B:180:0x03fd, B:182:0x0407, B:183:0x0411, B:185:0x0417, B:187:0x0421, B:191:0x042e, B:193:0x0434, B:195:0x0440, B:197:0x0477, B:198:0x0484, B:152:0x035f, B:214:0x024f, B:216:0x017e, B:218:0x0192, B:220:0x019c, B:222:0x01b6, B:228:0x00dd, B:230:0x00e7, B:232:0x00ed, B:233:0x00f0, B:234:0x00f4, B:236:0x00fe, B:238:0x0104, B:240:0x010a, B:241:0x010d), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x01d4  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x011b A[Catch: Exception -> 0x049d, TryCatch #0 {Exception -> 0x049d, blocks: (B:3:0x000c, B:6:0x0015, B:8:0x0026, B:9:0x0035, B:10:0x0040, B:12:0x0046, B:14:0x004e, B:16:0x0054, B:17:0x005c, B:19:0x0062, B:21:0x0073, B:23:0x009b, B:26:0x00a3, B:28:0x00ad, B:29:0x00b0, B:33:0x00c4, B:35:0x00ce, B:37:0x00d4, B:38:0x00d7, B:40:0x0115, B:42:0x011b, B:44:0x0121, B:45:0x0124, B:47:0x0129, B:49:0x012f, B:50:0x0132, B:53:0x013b, B:55:0x0145, B:57:0x0155, B:59:0x0161, B:61:0x016d, B:65:0x01bb, B:67:0x01c1, B:68:0x01c4, B:70:0x01cd, B:71:0x01d0, B:72:0x01da, B:75:0x01e3, B:81:0x01f6, B:83:0x01fc, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026c, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a5, B:112:0x02ab, B:114:0x02b7, B:116:0x02bd, B:118:0x02c7, B:120:0x02d5, B:121:0x02dc, B:123:0x02e2, B:125:0x02ec, B:127:0x02fa, B:128:0x02fe, B:130:0x0304, B:132:0x030e, B:134:0x031c, B:135:0x0320, B:137:0x0326, B:139:0x032c, B:141:0x0336, B:143:0x033c, B:144:0x033f, B:145:0x0345, B:148:0x034c, B:150:0x0351, B:155:0x0363, B:157:0x0369, B:159:0x037d, B:167:0x038c, B:169:0x0398, B:171:0x03cf, B:173:0x03e2, B:174:0x03e9, B:176:0x03ef, B:177:0x03f3, B:179:0x03f9, B:180:0x03fd, B:182:0x0407, B:183:0x0411, B:185:0x0417, B:187:0x0421, B:191:0x042e, B:193:0x0434, B:195:0x0440, B:197:0x0477, B:198:0x0484, B:152:0x035f, B:214:0x024f, B:216:0x017e, B:218:0x0192, B:220:0x019c, B:222:0x01b6, B:228:0x00dd, B:230:0x00e7, B:232:0x00ed, B:233:0x00f0, B:234:0x00f4, B:236:0x00fe, B:238:0x0104, B:240:0x010a, B:241:0x010d), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0145 A[Catch: Exception -> 0x049d, TryCatch #0 {Exception -> 0x049d, blocks: (B:3:0x000c, B:6:0x0015, B:8:0x0026, B:9:0x0035, B:10:0x0040, B:12:0x0046, B:14:0x004e, B:16:0x0054, B:17:0x005c, B:19:0x0062, B:21:0x0073, B:23:0x009b, B:26:0x00a3, B:28:0x00ad, B:29:0x00b0, B:33:0x00c4, B:35:0x00ce, B:37:0x00d4, B:38:0x00d7, B:40:0x0115, B:42:0x011b, B:44:0x0121, B:45:0x0124, B:47:0x0129, B:49:0x012f, B:50:0x0132, B:53:0x013b, B:55:0x0145, B:57:0x0155, B:59:0x0161, B:61:0x016d, B:65:0x01bb, B:67:0x01c1, B:68:0x01c4, B:70:0x01cd, B:71:0x01d0, B:72:0x01da, B:75:0x01e3, B:81:0x01f6, B:83:0x01fc, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026c, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a5, B:112:0x02ab, B:114:0x02b7, B:116:0x02bd, B:118:0x02c7, B:120:0x02d5, B:121:0x02dc, B:123:0x02e2, B:125:0x02ec, B:127:0x02fa, B:128:0x02fe, B:130:0x0304, B:132:0x030e, B:134:0x031c, B:135:0x0320, B:137:0x0326, B:139:0x032c, B:141:0x0336, B:143:0x033c, B:144:0x033f, B:145:0x0345, B:148:0x034c, B:150:0x0351, B:155:0x0363, B:157:0x0369, B:159:0x037d, B:167:0x038c, B:169:0x0398, B:171:0x03cf, B:173:0x03e2, B:174:0x03e9, B:176:0x03ef, B:177:0x03f3, B:179:0x03f9, B:180:0x03fd, B:182:0x0407, B:183:0x0411, B:185:0x0417, B:187:0x0421, B:191:0x042e, B:193:0x0434, B:195:0x0440, B:197:0x0477, B:198:0x0484, B:152:0x035f, B:214:0x024f, B:216:0x017e, B:218:0x0192, B:220:0x019c, B:222:0x01b6, B:228:0x00dd, B:230:0x00e7, B:232:0x00ed, B:233:0x00f0, B:234:0x00f4, B:236:0x00fe, B:238:0x0104, B:240:0x010a, B:241:0x010d), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01c1 A[Catch: Exception -> 0x049d, TryCatch #0 {Exception -> 0x049d, blocks: (B:3:0x000c, B:6:0x0015, B:8:0x0026, B:9:0x0035, B:10:0x0040, B:12:0x0046, B:14:0x004e, B:16:0x0054, B:17:0x005c, B:19:0x0062, B:21:0x0073, B:23:0x009b, B:26:0x00a3, B:28:0x00ad, B:29:0x00b0, B:33:0x00c4, B:35:0x00ce, B:37:0x00d4, B:38:0x00d7, B:40:0x0115, B:42:0x011b, B:44:0x0121, B:45:0x0124, B:47:0x0129, B:49:0x012f, B:50:0x0132, B:53:0x013b, B:55:0x0145, B:57:0x0155, B:59:0x0161, B:61:0x016d, B:65:0x01bb, B:67:0x01c1, B:68:0x01c4, B:70:0x01cd, B:71:0x01d0, B:72:0x01da, B:75:0x01e3, B:81:0x01f6, B:83:0x01fc, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026c, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a5, B:112:0x02ab, B:114:0x02b7, B:116:0x02bd, B:118:0x02c7, B:120:0x02d5, B:121:0x02dc, B:123:0x02e2, B:125:0x02ec, B:127:0x02fa, B:128:0x02fe, B:130:0x0304, B:132:0x030e, B:134:0x031c, B:135:0x0320, B:137:0x0326, B:139:0x032c, B:141:0x0336, B:143:0x033c, B:144:0x033f, B:145:0x0345, B:148:0x034c, B:150:0x0351, B:155:0x0363, B:157:0x0369, B:159:0x037d, B:167:0x038c, B:169:0x0398, B:171:0x03cf, B:173:0x03e2, B:174:0x03e9, B:176:0x03ef, B:177:0x03f3, B:179:0x03f9, B:180:0x03fd, B:182:0x0407, B:183:0x0411, B:185:0x0417, B:187:0x0421, B:191:0x042e, B:193:0x0434, B:195:0x0440, B:197:0x0477, B:198:0x0484, B:152:0x035f, B:214:0x024f, B:216:0x017e, B:218:0x0192, B:220:0x019c, B:222:0x01b6, B:228:0x00dd, B:230:0x00e7, B:232:0x00ed, B:233:0x00f0, B:234:0x00f4, B:236:0x00fe, B:238:0x0104, B:240:0x010a, B:241:0x010d), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01cd A[Catch: Exception -> 0x049d, TryCatch #0 {Exception -> 0x049d, blocks: (B:3:0x000c, B:6:0x0015, B:8:0x0026, B:9:0x0035, B:10:0x0040, B:12:0x0046, B:14:0x004e, B:16:0x0054, B:17:0x005c, B:19:0x0062, B:21:0x0073, B:23:0x009b, B:26:0x00a3, B:28:0x00ad, B:29:0x00b0, B:33:0x00c4, B:35:0x00ce, B:37:0x00d4, B:38:0x00d7, B:40:0x0115, B:42:0x011b, B:44:0x0121, B:45:0x0124, B:47:0x0129, B:49:0x012f, B:50:0x0132, B:53:0x013b, B:55:0x0145, B:57:0x0155, B:59:0x0161, B:61:0x016d, B:65:0x01bb, B:67:0x01c1, B:68:0x01c4, B:70:0x01cd, B:71:0x01d0, B:72:0x01da, B:75:0x01e3, B:81:0x01f6, B:83:0x01fc, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026c, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a5, B:112:0x02ab, B:114:0x02b7, B:116:0x02bd, B:118:0x02c7, B:120:0x02d5, B:121:0x02dc, B:123:0x02e2, B:125:0x02ec, B:127:0x02fa, B:128:0x02fe, B:130:0x0304, B:132:0x030e, B:134:0x031c, B:135:0x0320, B:137:0x0326, B:139:0x032c, B:141:0x0336, B:143:0x033c, B:144:0x033f, B:145:0x0345, B:148:0x034c, B:150:0x0351, B:155:0x0363, B:157:0x0369, B:159:0x037d, B:167:0x038c, B:169:0x0398, B:171:0x03cf, B:173:0x03e2, B:174:0x03e9, B:176:0x03ef, B:177:0x03f3, B:179:0x03f9, B:180:0x03fd, B:182:0x0407, B:183:0x0411, B:185:0x0417, B:187:0x0421, B:191:0x042e, B:193:0x0434, B:195:0x0440, B:197:0x0477, B:198:0x0484, B:152:0x035f, B:214:0x024f, B:216:0x017e, B:218:0x0192, B:220:0x019c, B:222:0x01b6, B:228:0x00dd, B:230:0x00e7, B:232:0x00ed, B:233:0x00f0, B:234:0x00f4, B:236:0x00fe, B:238:0x0104, B:240:0x010a, B:241:0x010d), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01e3 A[Catch: Exception -> 0x049d, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x049d, blocks: (B:3:0x000c, B:6:0x0015, B:8:0x0026, B:9:0x0035, B:10:0x0040, B:12:0x0046, B:14:0x004e, B:16:0x0054, B:17:0x005c, B:19:0x0062, B:21:0x0073, B:23:0x009b, B:26:0x00a3, B:28:0x00ad, B:29:0x00b0, B:33:0x00c4, B:35:0x00ce, B:37:0x00d4, B:38:0x00d7, B:40:0x0115, B:42:0x011b, B:44:0x0121, B:45:0x0124, B:47:0x0129, B:49:0x012f, B:50:0x0132, B:53:0x013b, B:55:0x0145, B:57:0x0155, B:59:0x0161, B:61:0x016d, B:65:0x01bb, B:67:0x01c1, B:68:0x01c4, B:70:0x01cd, B:71:0x01d0, B:72:0x01da, B:75:0x01e3, B:81:0x01f6, B:83:0x01fc, B:91:0x022a, B:93:0x0230, B:95:0x024c, B:96:0x0251, B:98:0x0259, B:100:0x026c, B:101:0x0273, B:103:0x0279, B:104:0x027d, B:106:0x0283, B:107:0x0287, B:109:0x0296, B:110:0x02a5, B:112:0x02ab, B:114:0x02b7, B:116:0x02bd, B:118:0x02c7, B:120:0x02d5, B:121:0x02dc, B:123:0x02e2, B:125:0x02ec, B:127:0x02fa, B:128:0x02fe, B:130:0x0304, B:132:0x030e, B:134:0x031c, B:135:0x0320, B:137:0x0326, B:139:0x032c, B:141:0x0336, B:143:0x033c, B:144:0x033f, B:145:0x0345, B:148:0x034c, B:150:0x0351, B:155:0x0363, B:157:0x0369, B:159:0x037d, B:167:0x038c, B:169:0x0398, B:171:0x03cf, B:173:0x03e2, B:174:0x03e9, B:176:0x03ef, B:177:0x03f3, B:179:0x03f9, B:180:0x03fd, B:182:0x0407, B:183:0x0411, B:185:0x0417, B:187:0x0421, B:191:0x042e, B:193:0x0434, B:195:0x0440, B:197:0x0477, B:198:0x0484, B:152:0x035f, B:214:0x024f, B:216:0x017e, B:218:0x0192, B:220:0x019c, B:222:0x01b6, B:228:0x00dd, B:230:0x00e7, B:232:0x00ed, B:233:0x00f0, B:234:0x00f4, B:236:0x00fe, B:238:0x0104, B:240:0x010a, B:241:0x010d), top: B:2:0x000c }] */
     /* JADX WARN: Removed duplicated region for block: B:89:0x0227  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$searchPlacesWithQuery$5(Locale locale, String str, Locale locale2, final Location location, final String str2) {
+    public static /* synthetic */ void $r8$lambda$X38L9THsqmGcopAt-ll3U7NJl_0(final BaseLocationAdapter baseLocationAdapter, Locale locale, String str, Locale locale2, final Location location, final String str2) {
         List<Address> list;
         List<Address> list2;
         HashSet hashSet;
         int i;
         HashSet hashSet2;
-        HashSet hashSet3;
         boolean z;
         boolean z2;
         String countryName;
-        int i2;
+        StringBuilder sb;
+        HashSet hashSet3;
         boolean z3;
-        String str3;
-        Address address;
+        StringBuilder sb2;
         boolean z4;
-        String str4;
-        String str5;
-        String str6;
-        String[] strArr;
-        BaseLocationAdapter baseLocationAdapter = this;
+        String str3;
+        int i2;
+        BaseLocationAdapter baseLocationAdapter2 = baseLocationAdapter;
+        baseLocationAdapter2.getClass();
         final ArrayList arrayList = new ArrayList();
         try {
-            int i3 = baseLocationAdapter.biz ? 10 : 5;
-            List<Address> fromLocationName = baseLocationAdapter.stories ? new Geocoder(ApplicationLoader.applicationContext, locale2).getFromLocationName(str, 5) : null;
+            int i3 = baseLocationAdapter2.biz ? 10 : 5;
+            List<Address> fromLocationName = new Geocoder(ApplicationLoader.applicationContext, locale).getFromLocationName(str, 5);
+            List<Address> fromLocationName2 = baseLocationAdapter2.stories ? new Geocoder(ApplicationLoader.applicationContext, locale2).getFromLocationName(str, 5) : null;
             HashSet hashSet4 = new HashSet();
             HashSet hashSet5 = new HashSet();
             int i4 = 0;
-            for (List<Address> fromLocationName2 = new Geocoder(ApplicationLoader.applicationContext, locale).getFromLocationName(str, 5); i4 < fromLocationName2.size(); fromLocationName2 = list2) {
-                Address address2 = fromLocationName2.get(i4);
-                Address address3 = (fromLocationName == null || i4 >= fromLocationName.size()) ? null : fromLocationName.get(i4);
-                if (address2.hasLatitude() && address2.hasLongitude()) {
-                    double latitude = address2.getLatitude();
-                    double longitude = address2.getLongitude();
-                    StringBuilder sb = new StringBuilder();
-                    list = fromLocationName;
-                    StringBuilder sb2 = new StringBuilder();
-                    list2 = fromLocationName2;
+            while (i4 < fromLocationName.size()) {
+                Address address = fromLocationName.get(i4);
+                Address address2 = (fromLocationName2 == null || i4 >= fromLocationName2.size()) ? null : fromLocationName2.get(i4);
+                if (address.hasLatitude() && address.hasLongitude()) {
+                    double latitude = address.getLatitude();
+                    double longitude = address.getLongitude();
                     StringBuilder sb3 = new StringBuilder();
-                    String locality = address2.getLocality();
+                    list = fromLocationName2;
+                    StringBuilder sb4 = new StringBuilder();
+                    list2 = fromLocationName;
+                    StringBuilder sb5 = new StringBuilder();
+                    String locality = address.getLocality();
                     if (TextUtils.isEmpty(locality)) {
-                        locality = address2.getAdminArea();
+                        locality = address.getAdminArea();
                     }
-                    String str7 = locality;
-                    if (address3 != null && TextUtils.isEmpty(address3.getLocality())) {
-                        address3.getAdminArea();
+                    String str4 = locality;
+                    if (address2 != null && TextUtils.isEmpty(address2.getLocality())) {
+                        address2.getAdminArea();
                     }
                     i = i4;
-                    String thoroughfare = address2.getThoroughfare();
-                    HashSet hashSet6 = hashSet4;
+                    String thoroughfare = address.getThoroughfare();
+                    Address address3 = address2;
                     if (TextUtils.isEmpty(thoroughfare)) {
-                        hashSet3 = hashSet5;
+                        hashSet2 = hashSet4;
                     } else {
-                        hashSet3 = hashSet5;
-                        if (!TextUtils.equals(thoroughfare, address2.getAdminArea())) {
-                            if (sb3.length() > 0) {
-                                sb3.append(", ");
+                        hashSet2 = hashSet4;
+                        if (!TextUtils.equals(thoroughfare, address.getAdminArea())) {
+                            if (sb5.length() > 0) {
+                                sb5.append(", ");
                             }
-                            sb3.append(thoroughfare);
+                            sb5.append(thoroughfare);
                             z = false;
-                            if (TextUtils.isEmpty(str7)) {
+                            if (TextUtils.isEmpty(str4)) {
                                 z2 = true;
                             } else {
-                                if (sb2.length() > 0) {
-                                    sb2.append(", ");
+                                if (sb4.length() > 0) {
+                                    sb4.append(", ");
                                 }
-                                sb2.append(str7);
-                                if (sb3 != null) {
-                                    if (sb3.length() > 0) {
-                                        sb3.append(", ");
+                                sb4.append(str4);
+                                if (sb5 != null) {
+                                    if (sb5.length() > 0) {
+                                        sb5.append(", ");
                                     }
-                                    sb3.append(str7);
+                                    sb5.append(str4);
                                 }
                                 z2 = false;
                             }
-                            countryName = address2.getCountryName();
+                            boolean z5 = z;
+                            countryName = address.getCountryName();
                             if (TextUtils.isEmpty(countryName)) {
-                                i2 = i3;
-                                z3 = z;
-                                str3 = str7;
-                                address = address3;
+                                sb = sb5;
+                                hashSet3 = hashSet5;
+                                z3 = z2;
                             } else {
-                                i2 = i3;
-                                str3 = str7;
-                                if (!"US".equals(address2.getCountryCode()) && !"AE".equals(address2.getCountryCode()) && (!"GB".equals(address2.getCountryCode()) || !"en".equals(locale.getLanguage()))) {
-                                    z3 = z;
-                                    address = address3;
-                                    str6 = countryName;
-                                    if (sb2.length() > 0) {
-                                        sb2.append(", ");
+                                sb = sb5;
+                                z3 = z2;
+                                if (!"US".equals(address.getCountryCode()) && !"AE".equals(address.getCountryCode()) && (!"GB".equals(address.getCountryCode()) || !"en".equals(locale.getLanguage()))) {
+                                    str3 = countryName;
+                                    hashSet3 = hashSet5;
+                                    if (sb4.length() > 0) {
+                                        sb4.append(", ");
                                     }
-                                    sb2.append(str6);
-                                    if (sb.length() > 0) {
-                                        sb.append(", ");
+                                    sb4.append(str3);
+                                    if (sb3.length() > 0) {
+                                        sb3.append(", ");
                                     }
-                                    sb.append(countryName);
+                                    sb3.append(countryName);
                                 }
                                 String[] split = countryName.split(" ");
                                 int length = split.length;
-                                address = address3;
-                                str6 = "";
-                                z3 = z;
+                                str3 = "";
+                                hashSet3 = hashSet5;
                                 int i5 = 0;
                                 while (i5 < length) {
                                     int i6 = length;
-                                    String str8 = split[i5];
-                                    if (str8.length() > 0) {
-                                        strArr = split;
-                                        str6 = str6 + str8.charAt(0);
+                                    String str5 = split[i5];
+                                    if (str5.length() > 0) {
+                                        i2 = i5;
+                                        str3 = str3 + str5.charAt(0);
                                     } else {
-                                        strArr = split;
+                                        i2 = i5;
                                     }
-                                    i5++;
+                                    i5 = i2 + 1;
                                     length = i6;
-                                    split = strArr;
                                 }
-                                if (sb2.length() > 0) {
+                                if (sb4.length() > 0) {
                                 }
-                                sb2.append(str6);
-                                if (sb.length() > 0) {
+                                sb4.append(str3);
+                                if (sb3.length() > 0) {
                                 }
-                                sb.append(countryName);
+                                sb3.append(countryName);
                             }
-                            if (baseLocationAdapter.biz) {
-                                StringBuilder sb4 = new StringBuilder();
+                            if (baseLocationAdapter2.biz) {
+                                StringBuilder sb6 = new StringBuilder();
                                 try {
-                                    String addressLine = address2.getAddressLine(0);
+                                    String addressLine = address.getAddressLine(0);
                                     if (!TextUtils.isEmpty(addressLine)) {
-                                        sb4.append(addressLine);
+                                        sb6.append(addressLine);
                                     }
                                 } catch (Exception unused) {
                                 }
-                                if (sb4.length() > 0) {
+                                if (sb6.length() > 0) {
                                     TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
                                     TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
                                     tL_messageMediaVenue.geo = tL_geoPoint;
                                     tL_geoPoint.lat = latitude;
                                     tL_geoPoint._long = longitude;
                                     tL_messageMediaVenue.query_id = -1L;
-                                    tL_messageMediaVenue.title = sb4.toString();
+                                    tL_messageMediaVenue.title = sb6.toString();
                                     tL_messageMediaVenue.icon = "pin";
                                     tL_messageMediaVenue.address = LocaleController.getString(R.string.PassportAddress);
                                     arrayList.add(tL_messageMediaVenue);
                                 }
+                                hashSet4 = hashSet2;
                                 hashSet = hashSet3;
-                                hashSet2 = hashSet6;
-                                i3 = i2;
                             } else {
-                                if (sb3 != null && sb3.length() > 0) {
+                                if (sb == null || sb.length() <= 0) {
+                                    sb2 = sb4;
+                                } else {
                                     TLRPC.TL_messageMediaVenue tL_messageMediaVenue2 = new TLRPC.TL_messageMediaVenue();
                                     TLRPC.TL_geoPoint tL_geoPoint2 = new TLRPC.TL_geoPoint();
                                     tL_messageMediaVenue2.geo = tL_geoPoint2;
                                     tL_geoPoint2.lat = latitude;
                                     tL_geoPoint2._long = longitude;
                                     tL_messageMediaVenue2.query_id = -1L;
-                                    tL_messageMediaVenue2.title = sb3.toString();
+                                    tL_messageMediaVenue2.title = sb.toString();
                                     tL_messageMediaVenue2.icon = "pin";
-                                    tL_messageMediaVenue2.address = LocaleController.getString(z3 ? R.string.PassportCity : R.string.PassportStreet1);
-                                    if (address != null) {
+                                    tL_messageMediaVenue2.address = LocaleController.getString(z5 ? R.string.PassportCity : R.string.PassportStreet1);
+                                    if (address3 != null) {
                                         TL_stories.TL_geoPointAddress tL_geoPointAddress = new TL_stories.TL_geoPointAddress();
                                         tL_messageMediaVenue2.geoAddress = tL_geoPointAddress;
-                                        tL_geoPointAddress.country_iso2 = address.getCountryCode();
-                                        String locality2 = TextUtils.isEmpty(null) ? address.getLocality() : null;
+                                        tL_geoPointAddress.country_iso2 = address3.getCountryCode();
+                                        String locality2 = TextUtils.isEmpty(null) ? address3.getLocality() : null;
                                         if (TextUtils.isEmpty(locality2)) {
-                                            locality2 = address.getAdminArea();
+                                            locality2 = address3.getAdminArea();
                                         }
                                         if (TextUtils.isEmpty(locality2)) {
-                                            locality2 = address.getSubAdminArea();
+                                            locality2 = address3.getSubAdminArea();
                                         }
-                                        String adminArea = address.getAdminArea();
-                                        StringBuilder sb5 = new StringBuilder();
-                                        if (!TextUtils.isEmpty(adminArea)) {
+                                        String adminArea = address3.getAdminArea();
+                                        StringBuilder sb7 = new StringBuilder();
+                                        if (TextUtils.isEmpty(adminArea)) {
+                                            sb2 = sb4;
+                                        } else {
                                             TL_stories.TL_geoPointAddress tL_geoPointAddress2 = tL_messageMediaVenue2.geoAddress;
                                             tL_geoPointAddress2.state = adminArea;
+                                            sb2 = sb4;
                                             tL_geoPointAddress2.flags |= 1;
                                         }
                                         if (!TextUtils.isEmpty(locality2)) {
@@ -453,268 +454,221 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
                                             tL_geoPointAddress3.city = locality2;
                                             tL_geoPointAddress3.flags |= 2;
                                         }
-                                        if (!z3) {
-                                            if (TextUtils.isEmpty(null)) {
-                                                str4 = str3;
-                                                if (!TextUtils.equals(address.getThoroughfare(), str4) && !TextUtils.equals(address.getThoroughfare(), address.getCountryName())) {
-                                                    str5 = address.getThoroughfare();
-                                                    if (TextUtils.isEmpty(str5) && !TextUtils.equals(address.getSubLocality(), str4) && !TextUtils.equals(address.getSubLocality(), address.getCountryName())) {
-                                                        str5 = address.getSubLocality();
-                                                    }
-                                                    if (TextUtils.isEmpty(str5) && !TextUtils.equals(address.getLocality(), str4) && !TextUtils.equals(address.getLocality(), address.getCountryName())) {
-                                                        str5 = address.getLocality();
-                                                    }
-                                                    if (!TextUtils.isEmpty(str5) || TextUtils.equals(str5, adminArea) || TextUtils.equals(str5, address.getCountryName())) {
-                                                        sb5 = null;
-                                                    } else {
-                                                        if (sb5.length() > 0) {
-                                                            sb5.append(", ");
-                                                        }
-                                                        sb5.append(str5);
-                                                    }
-                                                    if (!TextUtils.isEmpty(sb5)) {
-                                                        int i7 = 0;
-                                                        while (true) {
-                                                            String[] strArr2 = LocationController.unnamedRoads;
-                                                            if (i7 >= strArr2.length) {
-                                                                break;
-                                                            }
-                                                            if (strArr2[i7].equalsIgnoreCase(sb5.toString())) {
-                                                                z4 = true;
-                                                                break;
-                                                            }
-                                                            i7++;
-                                                        }
-                                                    }
-                                                    z4 = false;
-                                                    if (!TextUtils.isEmpty(sb5)) {
-                                                        TL_stories.TL_geoPointAddress tL_geoPointAddress4 = tL_messageMediaVenue2.geoAddress;
-                                                        tL_geoPointAddress4.flags |= 4;
-                                                        tL_geoPointAddress4.street = sb5.toString();
-                                                    }
-                                                    if (!z4) {
-                                                        arrayList.add(tL_messageMediaVenue2);
-                                                        i3 = i2;
-                                                        if (arrayList.size() >= i3) {
-                                                            break;
-                                                        }
-                                                        if (z2) {
-                                                            String sb6 = sb2.toString();
-                                                            hashSet = hashSet3;
-                                                            if (!hashSet.contains(sb6)) {
-                                                                TLRPC.TL_messageMediaVenue tL_messageMediaVenue3 = new TLRPC.TL_messageMediaVenue();
-                                                                TLRPC.TL_geoPoint tL_geoPoint3 = new TLRPC.TL_geoPoint();
-                                                                tL_messageMediaVenue3.geo = tL_geoPoint3;
-                                                                tL_geoPoint3.lat = latitude;
-                                                                tL_geoPoint3._long = longitude;
-                                                                tL_messageMediaVenue3.query_id = -1L;
-                                                                tL_messageMediaVenue3.title = sb2.toString();
-                                                                tL_messageMediaVenue3.icon = "https://ss3.4sqi.net/img/categories_v2/travel/hotel_64.png";
-                                                                tL_messageMediaVenue3.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
-                                                                hashSet.add(tL_messageMediaVenue3.title);
-                                                                tL_messageMediaVenue3.address = LocaleController.getString(R.string.PassportCity);
-                                                                if (address != null) {
-                                                                    TL_stories.TL_geoPointAddress tL_geoPointAddress5 = new TL_stories.TL_geoPointAddress();
-                                                                    tL_messageMediaVenue3.geoAddress = tL_geoPointAddress5;
-                                                                    tL_geoPointAddress5.country_iso2 = address.getCountryCode();
-                                                                    String locality3 = TextUtils.isEmpty(null) ? address.getLocality() : null;
-                                                                    if (TextUtils.isEmpty(locality3)) {
-                                                                        locality3 = address.getAdminArea();
-                                                                    }
-                                                                    if (TextUtils.isEmpty(locality3)) {
-                                                                        locality3 = address.getSubAdminArea();
-                                                                    }
-                                                                    String adminArea2 = address.getAdminArea();
-                                                                    if (!TextUtils.isEmpty(adminArea2)) {
-                                                                        TL_stories.TL_geoPointAddress tL_geoPointAddress6 = tL_messageMediaVenue3.geoAddress;
-                                                                        tL_geoPointAddress6.state = adminArea2;
-                                                                        tL_geoPointAddress6.flags |= 1;
-                                                                    }
-                                                                    if (!TextUtils.isEmpty(locality3)) {
-                                                                        TL_stories.TL_geoPointAddress tL_geoPointAddress7 = tL_messageMediaVenue3.geoAddress;
-                                                                        tL_geoPointAddress7.city = locality3;
-                                                                        tL_geoPointAddress7.flags |= 2;
-                                                                    }
-                                                                }
-                                                                arrayList.add(tL_messageMediaVenue3);
-                                                                if (arrayList.size() >= i3) {
-                                                                    break;
-                                                                }
-                                                                if (sb.length() > 0) {
-                                                                    hashSet2 = hashSet6;
-                                                                    if (!hashSet2.contains(sb.toString())) {
-                                                                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue4 = new TLRPC.TL_messageMediaVenue();
-                                                                        TLRPC.TL_geoPoint tL_geoPoint4 = new TLRPC.TL_geoPoint();
-                                                                        tL_messageMediaVenue4.geo = tL_geoPoint4;
-                                                                        tL_geoPoint4.lat = latitude;
-                                                                        tL_geoPoint4._long = longitude;
-                                                                        tL_messageMediaVenue4.query_id = -1L;
-                                                                        tL_messageMediaVenue4.title = sb.toString();
-                                                                        tL_messageMediaVenue4.icon = "https://ss3.4sqi.net/img/categories_v2/building/government_capitolbuilding_64.png";
-                                                                        tL_messageMediaVenue4.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
-                                                                        hashSet2.add(tL_messageMediaVenue4.title);
-                                                                        tL_messageMediaVenue4.address = LocaleController.getString(R.string.Country);
-                                                                        if (address != null) {
-                                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress8 = new TL_stories.TL_geoPointAddress();
-                                                                            tL_messageMediaVenue4.geoAddress = tL_geoPointAddress8;
-                                                                            tL_geoPointAddress8.country_iso2 = address.getCountryCode();
-                                                                        }
-                                                                        arrayList.add(tL_messageMediaVenue4);
-                                                                        if (arrayList.size() >= i3) {
-                                                                            break;
-                                                                        }
-                                                                    } else {
-                                                                        continue;
-                                                                    }
-                                                                } else {
-                                                                    hashSet2 = hashSet6;
-                                                                }
-                                                                i4 = i + 1;
-                                                                baseLocationAdapter = this;
-                                                                hashSet5 = hashSet;
-                                                                hashSet4 = hashSet2;
-                                                                fromLocationName = list;
-                                                            }
-                                                        } else {
-                                                            hashSet = hashSet3;
-                                                        }
-                                                        if (sb.length() > 0) {
-                                                        }
-                                                        i4 = i + 1;
-                                                        baseLocationAdapter = this;
-                                                        hashSet5 = hashSet;
-                                                        hashSet4 = hashSet2;
-                                                        fromLocationName = list;
-                                                    }
-                                                }
+                                        if (!z5) {
+                                            String thoroughfare2 = (!TextUtils.isEmpty(null) || TextUtils.equals(address3.getThoroughfare(), str4) || TextUtils.equals(address3.getThoroughfare(), address3.getCountryName())) ? null : address3.getThoroughfare();
+                                            if (TextUtils.isEmpty(thoroughfare2) && !TextUtils.equals(address3.getSubLocality(), str4) && !TextUtils.equals(address3.getSubLocality(), address3.getCountryName())) {
+                                                thoroughfare2 = address3.getSubLocality();
+                                            }
+                                            if (TextUtils.isEmpty(thoroughfare2) && !TextUtils.equals(address3.getLocality(), str4) && !TextUtils.equals(address3.getLocality(), address3.getCountryName())) {
+                                                thoroughfare2 = address3.getLocality();
+                                            }
+                                            if (TextUtils.isEmpty(thoroughfare2) || TextUtils.equals(thoroughfare2, adminArea) || TextUtils.equals(thoroughfare2, address3.getCountryName())) {
+                                                sb7 = null;
                                             } else {
-                                                str4 = str3;
+                                                if (sb7.length() > 0) {
+                                                    sb7.append(", ");
+                                                }
+                                                sb7.append(thoroughfare2);
                                             }
-                                            str5 = null;
-                                            if (TextUtils.isEmpty(str5)) {
-                                                str5 = address.getSubLocality();
-                                            }
-                                            if (TextUtils.isEmpty(str5)) {
-                                                str5 = address.getLocality();
-                                            }
-                                            if (TextUtils.isEmpty(str5)) {
-                                            }
-                                            sb5 = null;
-                                            if (!TextUtils.isEmpty(sb5)) {
+                                            if (!TextUtils.isEmpty(sb7)) {
+                                                int i7 = 0;
+                                                while (true) {
+                                                    String[] strArr = LocationController.unnamedRoads;
+                                                    if (i7 >= strArr.length) {
+                                                        break;
+                                                    }
+                                                    if (strArr[i7].equalsIgnoreCase(sb7.toString())) {
+                                                        z4 = true;
+                                                        break;
+                                                    }
+                                                    i7++;
+                                                }
                                             }
                                             z4 = false;
-                                            if (!TextUtils.isEmpty(sb5)) {
+                                            if (!TextUtils.isEmpty(sb7)) {
+                                                TL_stories.TL_geoPointAddress tL_geoPointAddress4 = tL_messageMediaVenue2.geoAddress;
+                                                tL_geoPointAddress4.flags |= 4;
+                                                tL_geoPointAddress4.street = sb7.toString();
                                             }
                                             if (!z4) {
+                                                arrayList.add(tL_messageMediaVenue2);
+                                                if (arrayList.size() >= i3) {
+                                                    break;
+                                                }
                                             }
                                         }
+                                    } else {
+                                        sb2 = sb4;
                                     }
                                     z4 = false;
                                     if (!z4) {
                                     }
                                 }
-                                i3 = i2;
-                                if (z2) {
+                                if (!z3) {
+                                    hashSet = hashSet3;
+                                    if (!hashSet.contains(sb2.toString())) {
+                                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue3 = new TLRPC.TL_messageMediaVenue();
+                                        TLRPC.TL_geoPoint tL_geoPoint3 = new TLRPC.TL_geoPoint();
+                                        tL_messageMediaVenue3.geo = tL_geoPoint3;
+                                        tL_geoPoint3.lat = latitude;
+                                        tL_geoPoint3._long = longitude;
+                                        tL_messageMediaVenue3.query_id = -1L;
+                                        tL_messageMediaVenue3.title = sb2.toString();
+                                        tL_messageMediaVenue3.icon = "https://ss3.4sqi.net/img/categories_v2/travel/hotel_64.png";
+                                        tL_messageMediaVenue3.emoji = LocationController.countryCodeToEmoji(address.getCountryCode());
+                                        hashSet.add(tL_messageMediaVenue3.title);
+                                        tL_messageMediaVenue3.address = LocaleController.getString(R.string.PassportCity);
+                                        if (address3 != null) {
+                                            TL_stories.TL_geoPointAddress tL_geoPointAddress5 = new TL_stories.TL_geoPointAddress();
+                                            tL_messageMediaVenue3.geoAddress = tL_geoPointAddress5;
+                                            tL_geoPointAddress5.country_iso2 = address3.getCountryCode();
+                                            String locality3 = TextUtils.isEmpty(null) ? address3.getLocality() : null;
+                                            if (TextUtils.isEmpty(locality3)) {
+                                                locality3 = address3.getAdminArea();
+                                            }
+                                            if (TextUtils.isEmpty(locality3)) {
+                                                locality3 = address3.getSubAdminArea();
+                                            }
+                                            String adminArea2 = address3.getAdminArea();
+                                            if (!TextUtils.isEmpty(adminArea2)) {
+                                                TL_stories.TL_geoPointAddress tL_geoPointAddress6 = tL_messageMediaVenue3.geoAddress;
+                                                tL_geoPointAddress6.state = adminArea2;
+                                                tL_geoPointAddress6.flags |= 1;
+                                            }
+                                            if (!TextUtils.isEmpty(locality3)) {
+                                                TL_stories.TL_geoPointAddress tL_geoPointAddress7 = tL_messageMediaVenue3.geoAddress;
+                                                tL_geoPointAddress7.city = locality3;
+                                                tL_geoPointAddress7.flags |= 2;
+                                            }
+                                        }
+                                        arrayList.add(tL_messageMediaVenue3);
+                                        if (arrayList.size() >= i3) {
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    hashSet = hashSet3;
                                 }
-                                if (sb.length() > 0) {
+                                if (sb3.length() > 0) {
+                                    hashSet4 = hashSet2;
+                                    if (hashSet4.contains(sb3.toString())) {
+                                        continue;
+                                    } else {
+                                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue4 = new TLRPC.TL_messageMediaVenue();
+                                        TLRPC.TL_geoPoint tL_geoPoint4 = new TLRPC.TL_geoPoint();
+                                        tL_messageMediaVenue4.geo = tL_geoPoint4;
+                                        tL_geoPoint4.lat = latitude;
+                                        tL_geoPoint4._long = longitude;
+                                        tL_messageMediaVenue4.query_id = -1L;
+                                        tL_messageMediaVenue4.title = sb3.toString();
+                                        tL_messageMediaVenue4.icon = "https://ss3.4sqi.net/img/categories_v2/building/government_capitolbuilding_64.png";
+                                        tL_messageMediaVenue4.emoji = LocationController.countryCodeToEmoji(address.getCountryCode());
+                                        hashSet4.add(tL_messageMediaVenue4.title);
+                                        tL_messageMediaVenue4.address = LocaleController.getString(R.string.Country);
+                                        if (address3 != null) {
+                                            TL_stories.TL_geoPointAddress tL_geoPointAddress8 = new TL_stories.TL_geoPointAddress();
+                                            tL_messageMediaVenue4.geoAddress = tL_geoPointAddress8;
+                                            tL_geoPointAddress8.country_iso2 = address3.getCountryCode();
+                                        }
+                                        arrayList.add(tL_messageMediaVenue4);
+                                        if (arrayList.size() >= i3) {
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    hashSet4 = hashSet2;
                                 }
-                                i4 = i + 1;
-                                baseLocationAdapter = this;
-                                hashSet5 = hashSet;
-                                hashSet4 = hashSet2;
-                                fromLocationName = list;
                             }
                         }
                     }
-                    String subLocality = address2.getSubLocality();
+                    String subLocality = address.getSubLocality();
                     if (!TextUtils.isEmpty(subLocality)) {
-                        if (sb3.length() > 0) {
-                            sb3.append(", ");
+                        if (sb5.length() > 0) {
+                            sb5.append(", ");
                         }
-                        sb3.append(subLocality);
+                        sb5.append(subLocality);
                     } else {
-                        String locality4 = address2.getLocality();
-                        if (!TextUtils.isEmpty(locality4) && !TextUtils.equals(locality4, str7)) {
-                            if (sb3.length() > 0) {
-                                sb3.append(", ");
+                        String locality4 = address.getLocality();
+                        if (!TextUtils.isEmpty(locality4) && !TextUtils.equals(locality4, str4)) {
+                            if (sb5.length() > 0) {
+                                sb5.append(", ");
                             }
-                            sb3.append(locality4);
+                            sb5.append(locality4);
                         } else {
-                            sb3 = null;
+                            sb5 = null;
                             z = true;
-                            if (TextUtils.isEmpty(str7)) {
+                            if (TextUtils.isEmpty(str4)) {
                             }
-                            countryName = address2.getCountryName();
+                            boolean z52 = z;
+                            countryName = address.getCountryName();
                             if (TextUtils.isEmpty(countryName)) {
                             }
-                            if (baseLocationAdapter.biz) {
+                            if (baseLocationAdapter2.biz) {
                             }
                         }
                     }
                     z = false;
-                    if (TextUtils.isEmpty(str7)) {
+                    if (TextUtils.isEmpty(str4)) {
                     }
-                    countryName = address2.getCountryName();
+                    boolean z522 = z;
+                    countryName = address.getCountryName();
                     if (TextUtils.isEmpty(countryName)) {
                     }
-                    if (baseLocationAdapter.biz) {
+                    if (baseLocationAdapter2.biz) {
                     }
                 } else {
-                    list = fromLocationName;
-                    list2 = fromLocationName2;
+                    list = fromLocationName2;
+                    list2 = fromLocationName;
                     hashSet = hashSet5;
                     i = i4;
-                    hashSet2 = hashSet4;
                 }
                 i4 = i + 1;
-                baseLocationAdapter = this;
+                baseLocationAdapter2 = baseLocationAdapter;
                 hashSet5 = hashSet;
-                hashSet4 = hashSet2;
-                fromLocationName = list;
+                fromLocationName2 = list;
+                fromLocationName = list2;
             }
         } catch (Exception unused2) {
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                BaseLocationAdapter.this.lambda$searchPlacesWithQuery$4(location, str2, arrayList);
+                BaseLocationAdapter.$r8$lambda$gr5_sHZ3bA1F39V-YaMSAd-JTd0(BaseLocationAdapter.this, location, str2, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchPlacesWithQuery$4(Location location, String str, ArrayList arrayList) {
-        this.searchingLocations = false;
+    public static /* synthetic */ void $r8$lambda$gr5_sHZ3bA1F39V-YaMSAd-JTd0(BaseLocationAdapter baseLocationAdapter, Location location, String str, ArrayList arrayList) {
+        baseLocationAdapter.searchingLocations = false;
         if (location == null) {
-            this.currentRequestNum = 0;
-            this.searching = false;
-            this.places.clear();
-            this.searchInProgress = false;
-            this.lastFoundQuery = str;
+            baseLocationAdapter.currentRequestNum = 0;
+            baseLocationAdapter.searching = false;
+            baseLocationAdapter.places.clear();
+            baseLocationAdapter.searchInProgress = false;
+            baseLocationAdapter.lastFoundQuery = str;
         }
-        this.locations.clear();
-        this.locations.addAll(arrayList);
-        update(true);
+        baseLocationAdapter.locations.clear();
+        baseLocationAdapter.locations.addAll(arrayList);
+        baseLocationAdapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchPlacesWithQuery$7(final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$ZC2XbztLqEWm164HtZHxnT-S-S8(final BaseLocationAdapter baseLocationAdapter, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        baseLocationAdapter.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.BaseLocationAdapter$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                BaseLocationAdapter.this.lambda$searchPlacesWithQuery$6(tL_error, str, tLObject);
+                BaseLocationAdapter.$r8$lambda$9fAnmZcQFtCjpcrhZURpZa-sDmY(BaseLocationAdapter.this, tL_error, str, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchPlacesWithQuery$6(TLRPC.TL_error tL_error, String str, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$9fAnmZcQFtCjpcrhZURpZa-sDmY(BaseLocationAdapter baseLocationAdapter, TLRPC.TL_error tL_error, String str, TLObject tLObject) {
         if (tL_error == null) {
-            this.currentRequestNum = 0;
-            this.searching = false;
-            this.places.clear();
-            this.searchInProgress = false;
-            this.lastFoundQuery = str;
+            baseLocationAdapter.currentRequestNum = 0;
+            baseLocationAdapter.searching = false;
+            baseLocationAdapter.places.clear();
+            baseLocationAdapter.searchInProgress = false;
+            baseLocationAdapter.lastFoundQuery = str;
             TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
             int size = messages_botresults.results.size();
             for (int i = 0; i < size; i++) {
@@ -733,16 +687,16 @@ public abstract class BaseLocationAdapter extends AdapterWithDiffUtils {
                         tL_messageMediaVenue.provider = tL_botInlineMessageMediaVenue.provider;
                         tL_messageMediaVenue.query_id = messages_botresults.query_id;
                         tL_messageMediaVenue.result_id = botInlineResult.id;
-                        this.places.add(tL_messageMediaVenue);
+                        baseLocationAdapter.places.add(tL_messageMediaVenue);
                     }
                 }
             }
         }
-        BaseLocationAdapterDelegate baseLocationAdapterDelegate = this.delegate;
+        BaseLocationAdapterDelegate baseLocationAdapterDelegate = baseLocationAdapter.delegate;
         if (baseLocationAdapterDelegate != null) {
-            baseLocationAdapterDelegate.didLoadSearchResult(this.places);
+            baseLocationAdapterDelegate.didLoadSearchResult(baseLocationAdapter.places);
         }
-        update(true);
+        baseLocationAdapter.update(true);
     }
 
     protected void update(boolean z) {

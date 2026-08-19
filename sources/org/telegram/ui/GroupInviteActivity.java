@@ -109,63 +109,57 @@ public class GroupInviteActivity extends BaseFragment implements NotificationCen
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.GroupInviteActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                GroupInviteActivity.this.lambda$createView$1(view, i);
+                GroupInviteActivity.$r8$lambda$wnfB-ykg4qtvDlfNrCL3sGcC48E(GroupInviteActivity.this, view, i);
             }
         });
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view, int i) {
-        if (getParentActivity() == null) {
+    public static /* synthetic */ void $r8$lambda$wnfB-ykg4qtvDlfNrCL3sGcC48E(final GroupInviteActivity groupInviteActivity, View view, int i) {
+        if (groupInviteActivity.getParentActivity() == null) {
             return;
         }
-        if (i == this.copyLinkRow || i == this.linkRow) {
-            if (this.invite == null) {
+        if (i == groupInviteActivity.copyLinkRow || i == groupInviteActivity.linkRow) {
+            if (groupInviteActivity.invite == null) {
                 return;
             }
             try {
-                ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.invite.link));
-                BulletinFactory.createCopyLinkBulletin(this).show();
+                ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", groupInviteActivity.invite.link));
+                BulletinFactory.createCopyLinkBulletin(groupInviteActivity).show();
                 return;
             } catch (Exception e) {
                 FileLog.e(e);
                 return;
             }
         }
-        if (i == this.shareLinkRow) {
-            if (this.invite == null) {
+        if (i == groupInviteActivity.shareLinkRow) {
+            if (groupInviteActivity.invite == null) {
                 return;
             }
             try {
                 Intent intent = new Intent("android.intent.action.SEND");
                 intent.setType("text/plain");
-                intent.putExtra("android.intent.extra.TEXT", this.invite.link);
-                getParentActivity().startActivityForResult(Intent.createChooser(intent, LocaleController.getString(R.string.InviteToGroupByLink)), 500);
+                intent.putExtra("android.intent.extra.TEXT", groupInviteActivity.invite.link);
+                groupInviteActivity.getParentActivity().startActivityForResult(Intent.createChooser(intent, LocaleController.getString(R.string.InviteToGroupByLink)), 500);
                 return;
             } catch (Exception e2) {
                 FileLog.e(e2);
                 return;
             }
         }
-        if (i == this.revokeLinkRow) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+        if (i == groupInviteActivity.revokeLinkRow) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(groupInviteActivity.getParentActivity());
             builder.setMessage(LocaleController.getString(R.string.RevokeAlert));
             builder.setTitle(LocaleController.getString(R.string.RevokeLink));
             builder.setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.GroupInviteActivity$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    GroupInviteActivity.this.lambda$createView$0(alertDialog, i2);
+                    GroupInviteActivity.this.generateLink(true);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            showDialog(builder.create());
+            groupInviteActivity.showDialog(builder.create());
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(AlertDialog alertDialog, int i) {
-        generateLink(true);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -198,14 +192,15 @@ public class GroupInviteActivity extends BaseFragment implements NotificationCen
         }
     }
 
-    private void generateLink(final boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void generateLink(final boolean z) {
         this.loading = true;
         TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
         tL_messages_exportChatInvite.peer = getMessagesController().getInputPeer(-this.chatId);
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new RequestDelegate() { // from class: org.telegram.ui.GroupInviteActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                GroupInviteActivity.this.lambda$generateLink$3(z, tLObject, tL_error);
+                GroupInviteActivity.$r8$lambda$flaz-jxHjB3Lw9JnjaScZFlylto(GroupInviteActivity.this, z, tLObject, tL_error);
             }
         }), this.classGuid);
         ListAdapter listAdapter = this.listAdapter;
@@ -214,36 +209,37 @@ public class GroupInviteActivity extends BaseFragment implements NotificationCen
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$generateLink$3(final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$flaz-jxHjB3Lw9JnjaScZFlylto(final GroupInviteActivity groupInviteActivity, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        groupInviteActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupInviteActivity$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                GroupInviteActivity.this.lambda$generateLink$2(tL_error, tLObject, z);
+                GroupInviteActivity.$r8$lambda$7E07p2dQ7ZU3MsHU3mFMECwV_Wo(GroupInviteActivity.this, tL_error, tLObject, z);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$generateLink$2(TLRPC.TL_error tL_error, TLObject tLObject, boolean z) {
+    public static /* synthetic */ void $r8$lambda$7E07p2dQ7ZU3MsHU3mFMECwV_Wo(GroupInviteActivity groupInviteActivity, TLRPC.TL_error tL_error, TLObject tLObject, boolean z) {
         if (tL_error == null) {
-            this.invite = (TLRPC.TL_chatInviteExported) tLObject;
+            groupInviteActivity.getClass();
+            groupInviteActivity.invite = (TLRPC.TL_chatInviteExported) tLObject;
             if (z) {
-                if (getParentActivity() == null) {
+                if (groupInviteActivity.getParentActivity() == null) {
                     return;
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(groupInviteActivity.getParentActivity());
                 builder.setMessage(LocaleController.getString(R.string.RevokeAlertNewLink));
                 builder.setTitle(LocaleController.getString(R.string.RevokeLink));
                 builder.setNegativeButton(LocaleController.getString(R.string.OK), null);
-                showDialog(builder.create());
+                groupInviteActivity.showDialog(builder.create());
             }
         }
-        this.loading = false;
-        this.listAdapter.notifyDataSetChanged();
+        groupInviteActivity.loading = false;
+        groupInviteActivity.listAdapter.notifyDataSetChanged();
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
         private Context mContext;
 
         public ListAdapter(Context context) {

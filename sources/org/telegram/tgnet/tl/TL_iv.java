@@ -3,7 +3,6 @@ package org.telegram.tgnet.tl;
 import android.graphics.Bitmap;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
@@ -1378,11 +1377,14 @@ public class TL_iv {
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockList, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.ordered = inputSerializedData.readBool(z);
-            Iterator it = Vector.deserialize(inputSerializedData, new TL_iv$pageBlockList_layer82$$ExternalSyntheticLambda0(), z).iterator();
-            while (it.hasNext()) {
-                RichText richText = (RichText) it.next();
+            ArrayList deserialize = Vector.deserialize(inputSerializedData, new TL_iv$pageBlockList_layer82$$ExternalSyntheticLambda0(), z);
+            int size = deserialize.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = deserialize.get(i);
+                i++;
                 TL_pageListItemText tL_pageListItemText = new TL_pageListItemText();
-                tL_pageListItemText.text = richText;
+                tL_pageListItemText.text = (RichText) obj;
                 this.items.add(tL_pageListItemText);
             }
         }
@@ -1392,11 +1394,15 @@ public class TL_iv {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeBool(this.ordered);
             ArrayList arrayList = new ArrayList(this.items.size());
-            Iterator<PageListItem> it = this.items.iterator();
-            while (it.hasNext()) {
-                PageListItem next = it.next();
-                if (next instanceof TL_pageListItemText) {
-                    arrayList.add(((TL_pageListItemText) next).text);
+            ArrayList<PageListItem> arrayList2 = this.items;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                PageListItem pageListItem = arrayList2.get(i);
+                i++;
+                PageListItem pageListItem2 = pageListItem;
+                if (pageListItem2 instanceof TL_pageListItemText) {
+                    arrayList.add(((TL_pageListItemText) pageListItem2).text);
                 }
             }
             Vector.serialize(outputSerializedData, arrayList);

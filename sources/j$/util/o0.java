@@ -5,50 +5,96 @@ import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class o0 extends T implements Z {
+public final class o0 implements W {
+    public final int[] a;
+    public int b;
+    public final int c;
+    public final int d;
+
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        T.b(this, consumer);
+        j$.com.android.tools.r8.a.j(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return T.d(this);
+        return j$.com.android.tools.r8.a.n(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return T.e(this, i);
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return T.g(this, consumer);
+        return j$.com.android.tools.r8.a.A(this, consumer);
     }
 
-    @Override // j$.util.T, j$.util.W, j$.util.f0, j$.util.Spliterator
-    public final /* bridge */ /* synthetic */ Z trySplit() {
-        return null;
+    public o0(int[] iArr, int i, int i2, int i3) {
+        this.a = iArr;
+        this.b = i;
+        this.c = i2;
+        this.d = i3 | 16448;
     }
 
-    @Override // j$.util.T, j$.util.W, j$.util.f0, j$.util.Spliterator
-    public final /* bridge */ /* synthetic */ f0 trySplit() {
-        return null;
+    @Override // j$.util.c0, j$.util.Spliterator
+    public final W trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
+            return null;
+        }
+        this.b = i2;
+        return new o0(this.a, i, i2, this.d);
+    }
+
+    @Override // j$.util.c0
+    public final void forEachRemaining(IntConsumer intConsumer) {
+        int i;
+        intConsumer.getClass();
+        int[] iArr = this.a;
+        int length = iArr.length;
+        int i2 = this.c;
+        if (length < i2 || (i = this.b) < 0) {
+            return;
+        }
+        this.b = i2;
+        if (i < i2) {
+            do {
+                intConsumer.accept(iArr[i]);
+                i++;
+            } while (i < i2);
+        }
+    }
+
+    @Override // j$.util.c0
+    public final boolean tryAdvance(IntConsumer intConsumer) {
+        intConsumer.getClass();
+        int i = this.b;
+        if (i < 0 || i >= this.c) {
+            return false;
+        }
+        this.b = i + 1;
+        intConsumer.accept(this.a[i]);
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.c - this.b;
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.d;
     }
 
     @Override // j$.util.Spliterator
     public final Comparator getComparator() {
+        if (j$.com.android.tools.r8.a.p(this, 4)) {
+            return null;
+        }
         throw new IllegalStateException();
-    }
-
-    @Override // j$.util.Z
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
-        return false;
-    }
-
-    @Override // j$.util.Z
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
     }
 }

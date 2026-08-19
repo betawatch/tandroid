@@ -21,13 +21,13 @@ public abstract class CastMediaRouteButton extends MediaRouteButton {
     }
 
     public boolean isConnected() {
+        Field declaredField;
         try {
-            Field declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
+            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
             declaredField.setAccessible(true);
-            return ((Integer) declaredField.get(this)).intValue() > 0;
         } catch (Exception unused) {
-            return false;
         }
+        return ((Integer) declaredField.get(this)).intValue() > 0;
     }
 
     @Override // android.view.View

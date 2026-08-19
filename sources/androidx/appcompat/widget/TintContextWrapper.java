@@ -48,10 +48,7 @@ public class TintContextWrapper extends ContextWrapper {
     }
 
     private static boolean shouldWrap(Context context) {
-        if ((context instanceof TintContextWrapper) || (context.getResources() instanceof TintResources) || (context.getResources() instanceof VectorEnabledTintResources)) {
-            return false;
-        }
-        return VectorEnabledTintResources.shouldBeUsed();
+        return ((context instanceof TintContextWrapper) || (context.getResources() instanceof TintResources) || (context.getResources() instanceof VectorEnabledTintResources) || !VectorEnabledTintResources.shouldBeUsed()) ? false : true;
     }
 
     private TintContextWrapper(Context context) {

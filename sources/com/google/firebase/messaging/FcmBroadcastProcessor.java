@@ -42,39 +42,28 @@ public class FcmBroadcastProcessor {
         return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                Integer lambda$startMessagingService$0;
-                lambda$startMessagingService$0 = FcmBroadcastProcessor.lambda$startMessagingService$0(context, intent);
-                return lambda$startMessagingService$0;
+                Integer valueOf;
+                valueOf = Integer.valueOf(ServiceStarter.getInstance().startMessagingService(context, intent));
+                return valueOf;
             }
         }).continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                Task lambda$startMessagingService$2;
-                lambda$startMessagingService$2 = FcmBroadcastProcessor.lambda$startMessagingService$2(context, intent, z2, task);
-                return lambda$startMessagingService$2;
+                return FcmBroadcastProcessor.$r8$lambda$-7tuBEF0Y9HKY-iHL1KguBHpRmY(context, intent, z2, task);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$startMessagingService$0(Context context, Intent intent) {
-        return Integer.valueOf(ServiceStarter.getInstance().startMessagingService(context, intent));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Task lambda$startMessagingService$2(Context context, Intent intent, boolean z, Task task) {
+    public static /* synthetic */ Task $r8$lambda$-7tuBEF0Y9HKY-iHL1KguBHpRmY(Context context, Intent intent, boolean z, Task task) {
         return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent, z).continueWith(new CredentialManager$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                Integer lambda$startMessagingService$1;
-                lambda$startMessagingService$1 = FcmBroadcastProcessor.lambda$startMessagingService$1(task2);
-                return lambda$startMessagingService$1;
+                return FcmBroadcastProcessor.$r8$lambda$gHDK62Zf5oWXQUZhN2QtKJuRFrs(task2);
             }
         }) : task;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$startMessagingService$1(Task task) {
+    public static /* synthetic */ Integer $r8$lambda$gHDK62Zf5oWXQUZhN2QtKJuRFrs(Task task) {
         return 403;
     }
 
@@ -94,15 +83,12 @@ public class FcmBroadcastProcessor {
         return serviceConnection.sendIntent(intent).continueWith(new CredentialManager$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                Integer lambda$bindToMessagingService$3;
-                lambda$bindToMessagingService$3 = FcmBroadcastProcessor.lambda$bindToMessagingService$3(task);
-                return lambda$bindToMessagingService$3;
+                return FcmBroadcastProcessor.$r8$lambda$cemJXu5yEt_ArhTsgQ0nOTd237E(task);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$bindToMessagingService$3(Task task) {
+    public static /* synthetic */ Integer $r8$lambda$cemJXu5yEt_ArhTsgQ0nOTd237E(Task task) {
         return -1;
     }
 

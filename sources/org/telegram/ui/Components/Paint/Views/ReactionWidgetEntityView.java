@@ -89,8 +89,9 @@ public class ReactionWidgetEntityView extends EntityView {
         return ((TLRPC.TL_availableReaction) list.get(0)).reaction;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.Components.Paint.Views.EntityView
-    protected void updatePosition() {
+    public void updatePosition() {
         Size size = this.baseSize;
         float f = size.width / 2.0f;
         float f2 = size.height / 2.0f;
@@ -223,7 +224,7 @@ public class ReactionWidgetEntityView extends EntityView {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Views.ReactionWidgetEntityView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ReactionWidgetEntityView.this.lambda$mirror$0(zArr, valueAnimator);
+                ReactionWidgetEntityView.$r8$lambda$pEh038D7gHJFeACKq1NerdieuD4(ReactionWidgetEntityView.this, zArr, valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Paint.Views.ReactionWidgetEntityView.1
@@ -244,24 +245,24 @@ public class ReactionWidgetEntityView extends EntityView {
         ofFloat.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$mirror$0(boolean[] zArr, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$pEh038D7gHJFeACKq1NerdieuD4(ReactionWidgetEntityView reactionWidgetEntityView, boolean[] zArr, ValueAnimator valueAnimator) {
+        reactionWidgetEntityView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         if (floatValue < 0.5f) {
             float f = floatValue / 0.5f;
-            setRotationY(90.0f * f);
-            this.drawScale = ((1.0f - f) * 0.3f) + 0.7f;
-            invalidate();
+            reactionWidgetEntityView.setRotationY(90.0f * f);
+            reactionWidgetEntityView.drawScale = ((1.0f - f) * 0.3f) + 0.7f;
+            reactionWidgetEntityView.invalidate();
             return;
         }
         if (!zArr[0]) {
             zArr[0] = true;
-            this.storyReactionWidgetBackground.setMirror(this.mirror, false);
+            reactionWidgetEntityView.storyReactionWidgetBackground.setMirror(reactionWidgetEntityView.mirror, false);
         }
         float f2 = (floatValue - 0.5f) / 0.5f;
-        setRotationY((1.0f - f2) * (-90.0f));
-        this.drawScale = (f2 * 0.3f) + 0.7f;
-        invalidate();
+        reactionWidgetEntityView.setRotationY((1.0f - f2) * (-90.0f));
+        reactionWidgetEntityView.drawScale = (f2 * 0.3f) + 0.7f;
+        reactionWidgetEntityView.invalidate();
     }
 
     public void changeStyle(boolean z) {

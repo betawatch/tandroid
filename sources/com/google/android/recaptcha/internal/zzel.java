@@ -37,7 +37,14 @@ final class zzel extends SuspendLambda implements Function2 {
         return ((zzel) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x003c, code lost:
+    
+        if (r11 != r0) goto L15;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         Object obj2;
         zzhk zzhkVar;
@@ -57,19 +64,16 @@ final class zzel extends SuspendLambda implements Function2 {
             RecaptchaAction recaptchaAction = this.zzd;
             this.zze = zzhkVar;
             this.zza = 1;
-            zzhf zzhfVar = new zzhf(9, new zzeo(zzeqVar, j, recaptchaAction, null), null);
-            if (zzhfVar != coroutine_suspended) {
-                obj = zzhfVar;
+            obj = new zzhf(9, new zzeo(zzeqVar, j, recaptchaAction, null), null);
+        } else {
+            if (i != 1) {
+                ResultKt.throwOnFailure(obj);
+                obj2 = Result.constructor-impl(obj);
+                return Result.box-impl(obj2);
             }
-            return coroutine_suspended;
-        }
-        if (i != 1) {
+            zzhkVar = (zzhk) this.zze;
             ResultKt.throwOnFailure(obj);
-            obj2 = Result.constructor-impl(obj);
-            return Result.box-impl(obj2);
         }
-        zzhkVar = (zzhk) this.zze;
-        ResultKt.throwOnFailure(obj);
         this.zze = null;
         this.zza = 2;
         obj = ((zzhf) obj).zza(zzhkVar, this);

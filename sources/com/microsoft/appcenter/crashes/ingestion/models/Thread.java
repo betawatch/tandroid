@@ -55,20 +55,25 @@ public class Thread implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            Thread thread = (Thread) obj;
+            if (this.id != thread.id) {
+                return false;
+            }
+            String str = this.name;
+            if (str == null ? thread.name != null : !str.equals(thread.name)) {
+                return false;
+            }
+            List list = this.frames;
+            List list2 = thread.frames;
+            if (list != null) {
+                return list.equals(list2);
+            }
+            if (list2 == null) {
+                return true;
+            }
         }
-        Thread thread = (Thread) obj;
-        if (this.id != thread.id) {
-            return false;
-        }
-        String str = this.name;
-        if (str == null ? thread.name != null : !str.equals(thread.name)) {
-            return false;
-        }
-        List list = this.frames;
-        List list2 = thread.frames;
-        return list != null ? list.equals(list2) : list2 == null;
+        return false;
     }
 
     public int hashCode() {

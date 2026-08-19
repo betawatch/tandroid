@@ -56,14 +56,14 @@ abstract class WavHeaderReader {
         int readLittleEndianUnsignedShort4 = parsableByteArray.readLittleEndianUnsignedShort();
         int i = ((int) skipToChunk.size) - 16;
         if (i > 0) {
-            byte[] bArr2 = new byte[i];
-            extractorInput.peekFully(bArr2, 0, i);
-            bArr = bArr2;
+            bArr = new byte[i];
+            extractorInput.peekFully(bArr, 0, i);
         } else {
             bArr = Util.EMPTY_BYTE_ARRAY;
         }
+        byte[] bArr2 = bArr;
         extractorInput.skipFully((int) (extractorInput.getPeekPosition() - extractorInput.getPosition()));
-        return new WavFormat(readLittleEndianUnsignedShort, readLittleEndianUnsignedShort2, readLittleEndianUnsignedIntToInt, readLittleEndianUnsignedIntToInt2, readLittleEndianUnsignedShort3, readLittleEndianUnsignedShort4, bArr);
+        return new WavFormat(readLittleEndianUnsignedShort, readLittleEndianUnsignedShort2, readLittleEndianUnsignedIntToInt, readLittleEndianUnsignedIntToInt2, readLittleEndianUnsignedShort3, readLittleEndianUnsignedShort4, bArr2);
     }
 
     public static Pair skipToSampleData(ExtractorInput extractorInput) {

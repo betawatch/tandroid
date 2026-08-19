@@ -34,7 +34,7 @@ public class DownscaleScrollableNoiseSuppressor {
 
     public static float convertRadiusToSigma(float f) {
         if (f > 0.0f) {
-            return 0.5f + (f * 0.57735f);
+            return (f * 0.57735f) + 0.5f;
         }
         return 0.0f;
     }
@@ -183,10 +183,10 @@ public class DownscaleScrollableNoiseSuppressor {
             this.renderNodeDownsampled[i + 1].setRenderEffect(renderEffect);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x009e A[EDGE_INSN: B:15:0x009e->B:16:0x009e BREAK  A[LOOP:0: B:7:0x007f->B:13:0x009a], SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x00e3  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x0151 A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0084  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x00a0 A[EDGE_INSN: B:15:0x00a0->B:16:0x00a0 BREAK  A[LOOP:0: B:7:0x007e->B:13:0x009d], SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x00e5  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x0150 A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:9:0x0085  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -198,10 +198,9 @@ public class DownscaleScrollableNoiseSuppressor {
             boolean z;
             int i;
             RenderNode[] renderNodeArr;
-            int i2;
             RecordingCanvas beginRecording;
             RecordingCanvas beginRecording2;
-            int i3;
+            int i2;
             RenderNode[] renderNodeArr2;
             RecordingCanvas beginRecording3;
             RecordingCanvas beginRecording4;
@@ -245,7 +244,6 @@ public class DownscaleScrollableNoiseSuppressor {
                         return;
                     }
                     this.lastHash = calcHash;
-                    i2 = 0;
                     this.renderNodeOriginalWithOffset.setPosition(0, 0, width, height);
                     beginRecording = this.renderNodeOriginalWithOffset.beginRecording(width, height);
                     beginRecording.drawRenderNode(renderNode);
@@ -255,35 +253,34 @@ public class DownscaleScrollableNoiseSuppressor {
                     beginRecording2.scale(f4, f6);
                     beginRecording2.drawRenderNode(this.renderNodeOriginalWithOffset);
                     this.renderNodeDownsampled[0].endRecording();
-                    i3 = 0;
+                    i2 = 0;
                     while (true) {
                         renderNodeArr2 = this.renderNodeDownsampled;
-                        if (i3 < renderNodeArr2.length) {
+                        if (i2 < renderNodeArr2.length) {
                             return;
                         }
-                        renderNodeArr2[i3].setPosition(i2, i2, round, round2);
-                        beginRecording3 = this.renderNodeDownsampled[i3].beginRecording(round, round2);
-                        if (i3 > 0) {
-                            beginRecording3.drawRenderNode(this.renderNodeDownsampled[i2]);
+                        renderNodeArr2[i2].setPosition(0, 0, round, round2);
+                        beginRecording3 = this.renderNodeDownsampled[i2].beginRecording(round, round2);
+                        if (i2 > 0) {
+                            beginRecording3.drawRenderNode(this.renderNodeDownsampled[0]);
                         } else {
                             beginRecording3.scale(f4, f6);
                             beginRecording3.drawRenderNode(this.renderNodeOriginalWithOffset);
                         }
-                        this.renderNodeDownsampled[i3].endRecording();
+                        this.renderNodeDownsampled[i2].endRecording();
                         if (this.simpleMode) {
-                            this.renderNodeDownsampled[i3].setScaleX(f7);
-                            this.renderNodeDownsampled[i3].setScaleY(f8);
-                            this.renderNodeDownsampled[i3].setPivotX(0.0f);
-                            this.renderNodeDownsampled[i3].setPivotY(0.0f);
+                            this.renderNodeDownsampled[i2].setScaleX(f7);
+                            this.renderNodeDownsampled[i2].setScaleY(f8);
+                            this.renderNodeDownsampled[i2].setPivotX(0.0f);
+                            this.renderNodeDownsampled[i2].setPivotY(0.0f);
                         } else {
-                            this.renderNodeRestored[i3].setPosition(0, 0, width, height);
-                            beginRecording4 = this.renderNodeRestored[i3].beginRecording(width, height);
+                            this.renderNodeRestored[i2].setPosition(0, 0, width, height);
+                            beginRecording4 = this.renderNodeRestored[i2].beginRecording(width, height);
                             beginRecording4.scale(f7, f8);
-                            beginRecording4.drawRenderNode(this.renderNodeDownsampled[i3]);
-                            this.renderNodeRestored[i3].endRecording();
+                            beginRecording4.drawRenderNode(this.renderNodeDownsampled[i2]);
+                            this.renderNodeRestored[i2].endRecording();
                         }
-                        i3++;
-                        i2 = 0;
+                        i2++;
                     }
                 }
             }
@@ -298,7 +295,6 @@ public class DownscaleScrollableNoiseSuppressor {
             if (this.lastHash != calcHash) {
             }
             this.lastHash = calcHash;
-            i2 = 0;
             this.renderNodeOriginalWithOffset.setPosition(0, 0, width, height);
             beginRecording = this.renderNodeOriginalWithOffset.beginRecording(width, height);
             beginRecording.drawRenderNode(renderNode);
@@ -308,13 +304,12 @@ public class DownscaleScrollableNoiseSuppressor {
             beginRecording2.scale(f4, f6);
             beginRecording2.drawRenderNode(this.renderNodeOriginalWithOffset);
             this.renderNodeDownsampled[0].endRecording();
-            i3 = 0;
+            i2 = 0;
             while (true) {
                 renderNodeArr2 = this.renderNodeDownsampled;
-                if (i3 < renderNodeArr2.length) {
+                if (i2 < renderNodeArr2.length) {
                 }
-                i3++;
-                i2 = 0;
+                i2++;
             }
         }
 

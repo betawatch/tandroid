@@ -45,22 +45,15 @@ final class AutoValue_Event extends Event {
     }
 
     public boolean equals(Object obj) {
+        ProductData productData;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Event)) {
-            return false;
-        }
-        Event event = (Event) obj;
-        Integer num = this.code;
-        if (num != null ? num.equals(event.getCode()) : event.getCode() == null) {
-            if (this.payload.equals(event.getPayload()) && this.priority.equals(event.getPriority())) {
-                ProductData productData = this.productData;
-                if (productData == null) {
-                    if (event.getProductData() == null) {
-                        return true;
-                    }
-                } else if (productData.equals(event.getProductData())) {
+        if (obj instanceof Event) {
+            Event event = (Event) obj;
+            Integer num = this.code;
+            if (num != null ? num.equals(event.getCode()) : event.getCode() == null) {
+                if (this.payload.equals(event.getPayload()) && this.priority.equals(event.getPriority()) && ((productData = this.productData) != null ? productData.equals(event.getProductData()) : event.getProductData() == null)) {
                     return true;
                 }
             }

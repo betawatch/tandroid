@@ -57,11 +57,13 @@ public final class SmtaMetadataEntry implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || SmtaMetadataEntry.class != obj.getClass()) {
-            return false;
+        if (obj != null && SmtaMetadataEntry.class == obj.getClass()) {
+            SmtaMetadataEntry smtaMetadataEntry = (SmtaMetadataEntry) obj;
+            if (this.captureFrameRate == smtaMetadataEntry.captureFrameRate && this.svcTemporalLayerCount == smtaMetadataEntry.svcTemporalLayerCount) {
+                return true;
+            }
         }
-        SmtaMetadataEntry smtaMetadataEntry = (SmtaMetadataEntry) obj;
-        return this.captureFrameRate == smtaMetadataEntry.captureFrameRate && this.svcTemporalLayerCount == smtaMetadataEntry.svcTemporalLayerCount;
+        return false;
     }
 
     public int hashCode() {

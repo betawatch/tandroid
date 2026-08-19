@@ -1,19 +1,17 @@
 package j$.time.format;
 
+import j$.util.concurrent.ConcurrentHashMap;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: classes2.dex */
-final class t {
-    private final Map a;
+public final class t {
+    public final Map a;
 
-    t(Map map) {
-        Comparator comparator;
-        Comparator comparator2;
+    public t(Map map) {
         this.a = map;
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
@@ -23,21 +21,19 @@ final class t {
                 String str = (String) entry2.getValue();
                 String str2 = (String) entry2.getValue();
                 Long l = (Long) entry2.getKey();
-                int i = u.d;
+                ConcurrentHashMap concurrentHashMap = u.a;
                 hashMap2.put(str, new AbstractMap.SimpleImmutableEntry(str2, l));
             }
             ArrayList arrayList2 = new ArrayList(hashMap2.values());
-            comparator2 = u.b;
-            Collections.sort(arrayList2, comparator2);
+            Collections.sort(arrayList2, u.b);
             hashMap.put((TextStyle) entry.getKey(), arrayList2);
             arrayList.addAll(arrayList2);
             hashMap.put(null, arrayList);
         }
-        comparator = u.b;
-        Collections.sort(arrayList, comparator);
+        Collections.sort(arrayList, u.b);
     }
 
-    final String a(long j, TextStyle textStyle) {
+    public final String a(long j, TextStyle textStyle) {
         Map map = (Map) this.a.get(textStyle);
         if (map != null) {
             return (String) map.get(Long.valueOf(j));

@@ -34,7 +34,7 @@ public interface Collector<T, A, R> {
                 Collections.addAll(noneOf, characteristicsArr);
                 set = Collections.unmodifiableSet(noneOf);
             }
-            return new l(supplier, biConsumer, binaryOperator, function, set);
+            return new i(supplier, biConsumer, binaryOperator, function, set);
         }
     }
 
@@ -44,7 +44,7 @@ public interface Collector<T, A, R> {
         public static final Characteristics CONCURRENT;
         public static final Characteristics IDENTITY_FINISH;
         public static final Characteristics UNORDERED;
-        private static final /* synthetic */ Characteristics[] a;
+        public static final /* synthetic */ Characteristics[] a;
 
         public static Characteristics valueOf(String str) {
             return (Characteristics) Enum.valueOf(Characteristics.class, str);

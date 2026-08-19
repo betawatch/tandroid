@@ -219,14 +219,17 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
                 animatorSet2.setDuration(250L);
                 AnimatorSet animatorSet3 = this.animatorSet;
                 TextView textView = this.delButton;
+                float[] fArr = {this.isInstalled ? 1.0f : 0.0f};
                 Property property = View.ALPHA;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, this.isInstalled ? 1.0f : 0.0f);
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr);
                 TextView textView2 = this.delButton;
+                float[] fArr2 = {this.isInstalled ? 1.0f : 0.0f};
                 Property property2 = View.SCALE_X;
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, this.isInstalled ? 1.0f : 0.0f);
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, fArr2);
                 TextView textView3 = this.delButton;
+                float[] fArr3 = {this.isInstalled ? 1.0f : 0.0f};
                 Property property3 = View.SCALE_Y;
-                animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, this.isInstalled ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property, this.isInstalled ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property2, this.isInstalled ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property3, this.isInstalled ? 0.0f : 1.0f));
+                animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property, this.isInstalled ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property2, this.isInstalled ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property3, this.isInstalled ? 0.0f : 1.0f));
                 this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.FeaturedStickerSetInfoCell.1
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {

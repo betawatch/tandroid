@@ -29,6 +29,10 @@ public final class SeekParameters {
         this.toleranceAfterUs = j2;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0051 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public long resolveSeekPositionUs(long j, long j2, long j3) {
         long j4 = this.toleranceBeforeUs;
         if (j4 == 0 && this.toleranceAfterUs == 0) {
@@ -41,18 +45,28 @@ public final class SeekParameters {
         if (subtractWithOverflowDefault <= j3 && j3 <= addWithOverflowDefault) {
             z = true;
         }
-        return (z2 && z) ? Math.abs(j2 - j) <= Math.abs(j3 - j) ? j2 : j3 : z2 ? j2 : z ? j3 : subtractWithOverflowDefault;
+        if (!z2 || !z) {
+            if (!z2) {
+                return z ? j3 : subtractWithOverflowDefault;
+            }
+            return j2;
+        }
+        if (Math.abs(j2 - j) <= Math.abs(j3 - j)) {
+            return j2;
+        }
     }
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || SeekParameters.class != obj.getClass()) {
-            return false;
+        if (obj != null && SeekParameters.class == obj.getClass()) {
+            SeekParameters seekParameters = (SeekParameters) obj;
+            if (this.toleranceBeforeUs == seekParameters.toleranceBeforeUs && this.toleranceAfterUs == seekParameters.toleranceAfterUs) {
+                return true;
+            }
         }
-        SeekParameters seekParameters = (SeekParameters) obj;
-        return this.toleranceBeforeUs == seekParameters.toleranceBeforeUs && this.toleranceAfterUs == seekParameters.toleranceAfterUs;
+        return false;
     }
 
     public int hashCode() {

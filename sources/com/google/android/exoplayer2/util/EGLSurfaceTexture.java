@@ -34,11 +34,11 @@ public final class EGLSurfaceTexture implements SurfaceTexture.OnFrameAvailableL
         this.textureIdHolder = new int[1];
     }
 
-    public void init(int i, EGLContext eGLContext) {
+    public void init(int i) {
         EGLDisplay defaultDisplay = getDefaultDisplay();
         this.display = defaultDisplay;
         EGLConfig chooseEGLConfig = chooseEGLConfig(defaultDisplay);
-        EGLContext createEGLContext = createEGLContext(this.display, chooseEGLConfig, i, eGLContext);
+        EGLContext createEGLContext = createEGLContext(this.display, chooseEGLConfig, i);
         this.context = createEGLContext;
         this.surface = createEGLSurface(this.display, chooseEGLConfig, createEGLContext, i);
         generateTextureIds(this.textureIdHolder);
@@ -122,17 +122,14 @@ public final class EGLSurfaceTexture implements SurfaceTexture.OnFrameAvailableL
         return eGLConfigArr[0];
     }
 
-    private static EGLContext createEGLContext(EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i, EGLContext eGLContext) {
+    private static EGLContext createEGLContext(EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i) {
         int[] iArr;
         if (i == 0) {
             iArr = new int[]{12440, 2, 12344};
         } else {
             iArr = new int[]{12440, 2, 12992, 1, 12344};
         }
-        if (eGLContext == null) {
-            eGLContext = EGL14.EGL_NO_CONTEXT;
-        }
-        EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, iArr, 0);
+        EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, EGL14.EGL_NO_CONTEXT, iArr, 0);
         GlUtil.checkGlException(eglCreateContext != null, "eglCreateContext failed");
         return eglCreateContext;
     }

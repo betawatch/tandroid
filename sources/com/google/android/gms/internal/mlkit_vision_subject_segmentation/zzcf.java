@@ -173,118 +173,121 @@ final class zzcf implements ObjectEncoderContext {
     }
 
     final ObjectEncoderContext zzc(FieldDescriptor fieldDescriptor, Object obj, boolean z) {
-        if (obj == null) {
-            return this;
-        }
-        if (obj instanceof CharSequence) {
-            CharSequence charSequence = (CharSequence) obj;
-            if (z && charSequence.length() == 0) {
-                return this;
+        if (obj != null) {
+            if (obj instanceof CharSequence) {
+                CharSequence charSequence = (CharSequence) obj;
+                if (!z || charSequence.length() != 0) {
+                    zzn((zzh(fieldDescriptor) << 3) | 2);
+                    byte[] bytes = charSequence.toString().getBytes(zza);
+                    zzn(bytes.length);
+                    this.zze.write(bytes);
+                    return this;
+                }
+            } else if (obj instanceof Collection) {
+                Iterator it = ((Collection) obj).iterator();
+                while (it.hasNext()) {
+                    zzc(fieldDescriptor, it.next(), false);
+                }
+            } else if (obj instanceof Map) {
+                Iterator it2 = ((Map) obj).entrySet().iterator();
+                while (it2.hasNext()) {
+                    zzk(zzd, fieldDescriptor, (Map.Entry) it2.next(), false);
+                }
+            } else {
+                if (obj instanceof Double) {
+                    zza(fieldDescriptor, ((Double) obj).doubleValue(), z);
+                    return this;
+                }
+                if (obj instanceof Float) {
+                    zzb(fieldDescriptor, ((Float) obj).floatValue(), z);
+                    return this;
+                }
+                if (obj instanceof Number) {
+                    zze(fieldDescriptor, ((Number) obj).longValue(), z);
+                    return this;
+                }
+                if (obj instanceof Boolean) {
+                    zzd(fieldDescriptor, ((Boolean) obj).booleanValue() ? 1 : 0, z);
+                    return this;
+                }
+                if (!(obj instanceof byte[])) {
+                    ObjectEncoder objectEncoder = (ObjectEncoder) this.zzf.get(obj.getClass());
+                    if (objectEncoder != null) {
+                        zzk(objectEncoder, fieldDescriptor, obj, z);
+                        return this;
+                    }
+                    ValueEncoder valueEncoder = (ValueEncoder) this.zzg.get(obj.getClass());
+                    if (valueEncoder != null) {
+                        zzl(valueEncoder, fieldDescriptor, obj, z);
+                        return this;
+                    }
+                    if (obj instanceof zzcb) {
+                        zzd(fieldDescriptor, ((zzcb) obj).zza(), true);
+                        return this;
+                    }
+                    if (obj instanceof Enum) {
+                        zzd(fieldDescriptor, ((Enum) obj).ordinal(), true);
+                        return this;
+                    }
+                    zzk(this.zzh, fieldDescriptor, obj, z);
+                    return this;
+                }
+                byte[] bArr = (byte[]) obj;
+                if (!z || bArr.length != 0) {
+                    zzn((zzh(fieldDescriptor) << 3) | 2);
+                    zzn(bArr.length);
+                    this.zze.write(bArr);
+                    return this;
+                }
             }
-            zzn((zzh(fieldDescriptor) << 3) | 2);
-            byte[] bytes = charSequence.toString().getBytes(zza);
-            zzn(bytes.length);
-            this.zze.write(bytes);
-            return this;
         }
-        if (obj instanceof Collection) {
-            Iterator it = ((Collection) obj).iterator();
-            while (it.hasNext()) {
-                zzc(fieldDescriptor, it.next(), false);
-            }
-            return this;
-        }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                zzk(zzd, fieldDescriptor, (Map.Entry) it2.next(), false);
-            }
-            return this;
-        }
-        if (obj instanceof Double) {
-            zza(fieldDescriptor, ((Double) obj).doubleValue(), z);
-            return this;
-        }
-        if (obj instanceof Float) {
-            zzb(fieldDescriptor, ((Float) obj).floatValue(), z);
-            return this;
-        }
-        if (obj instanceof Number) {
-            zze(fieldDescriptor, ((Number) obj).longValue(), z);
-            return this;
-        }
-        if (obj instanceof Boolean) {
-            zzd(fieldDescriptor, ((Boolean) obj).booleanValue() ? 1 : 0, z);
-            return this;
-        }
-        if (obj instanceof byte[]) {
-            byte[] bArr = (byte[]) obj;
-            if (z && bArr.length == 0) {
-                return this;
-            }
-            zzn((zzh(fieldDescriptor) << 3) | 2);
-            zzn(bArr.length);
-            this.zze.write(bArr);
-            return this;
-        }
-        ObjectEncoder objectEncoder = (ObjectEncoder) this.zzf.get(obj.getClass());
-        if (objectEncoder != null) {
-            zzk(objectEncoder, fieldDescriptor, obj, z);
-            return this;
-        }
-        ValueEncoder valueEncoder = (ValueEncoder) this.zzg.get(obj.getClass());
-        if (valueEncoder != null) {
-            zzl(valueEncoder, fieldDescriptor, obj, z);
-            return this;
-        }
-        if (obj instanceof zzcb) {
-            zzd(fieldDescriptor, ((zzcb) obj).zza(), true);
-            return this;
-        }
-        if (obj instanceof Enum) {
-            zzd(fieldDescriptor, ((Enum) obj).ordinal(), true);
-            return this;
-        }
-        zzk(this.zzh, fieldDescriptor, obj, z);
         return this;
     }
 
     final zzcf zzd(FieldDescriptor fieldDescriptor, int i, boolean z) {
-        if (z && i == 0) {
-            return this;
-        }
-        zzcd zzj = zzj(fieldDescriptor);
-        zzcc zzccVar = zzcc.zza;
-        int ordinal = zzj.zzb().ordinal();
-        if (ordinal == 0) {
-            zzn(zzj.zza() << 3);
-            zzn(i);
-        } else if (ordinal == 1) {
-            zzn(zzj.zza() << 3);
-            zzn((i + i) ^ (i >> 31));
-        } else if (ordinal == 2) {
-            zzn((zzj.zza() << 3) | 5);
-            this.zze.write(zzm(4).putInt(i).array());
+        if (!z || i != 0) {
+            zzcd zzj = zzj(fieldDescriptor);
+            zzcc zzccVar = zzcc.zza;
+            int ordinal = zzj.zzb().ordinal();
+            if (ordinal == 0) {
+                zzn(zzj.zza() << 3);
+                zzn(i);
+                return this;
+            }
+            if (ordinal == 1) {
+                zzn(zzj.zza() << 3);
+                zzn((i + i) ^ (i >> 31));
+                return this;
+            }
+            if (ordinal == 2) {
+                zzn((zzj.zza() << 3) | 5);
+                this.zze.write(zzm(4).putInt(i).array());
+                return this;
+            }
         }
         return this;
     }
 
     final zzcf zze(FieldDescriptor fieldDescriptor, long j, boolean z) {
-        if (z && j == 0) {
-            return this;
-        }
-        zzcd zzj = zzj(fieldDescriptor);
-        zzcc zzccVar = zzcc.zza;
-        int ordinal = zzj.zzb().ordinal();
-        if (ordinal == 0) {
-            zzn(zzj.zza() << 3);
-            zzo(j);
-        } else if (ordinal == 1) {
-            zzn(zzj.zza() << 3);
-            zzo((j >> 63) ^ (j + j));
-        } else if (ordinal == 2) {
-            zzn((zzj.zza() << 3) | 1);
-            this.zze.write(zzm(8).putLong(j).array());
+        if (!z || j != 0) {
+            zzcd zzj = zzj(fieldDescriptor);
+            zzcc zzccVar = zzcc.zza;
+            int ordinal = zzj.zzb().ordinal();
+            if (ordinal == 0) {
+                zzn(zzj.zza() << 3);
+                zzo(j);
+                return this;
+            }
+            if (ordinal == 1) {
+                zzn(zzj.zza() << 3);
+                zzo((j >> 63) ^ (j + j));
+                return this;
+            }
+            if (ordinal == 2) {
+                zzn((zzj.zza() << 3) | 1);
+                this.zze.write(zzm(8).putLong(j).array());
+                return this;
+            }
         }
         return this;
     }

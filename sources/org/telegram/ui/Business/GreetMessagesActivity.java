@@ -93,7 +93,7 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
         BusinessRecipientsHelper businessRecipientsHelper = new BusinessRecipientsHelper(this, new Runnable() { // from class: org.telegram.ui.Business.GreetMessagesActivity$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                GreetMessagesActivity.this.lambda$createView$0();
+                GreetMessagesActivity.$r8$lambda$hOVqMCyHftDSOLCor86N2KpZlT8(GreetMessagesActivity.this);
             }
         });
         this.recipientsHelper = businessRecipientsHelper;
@@ -122,10 +122,9 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
         return frameLayout;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0() {
-        this.listView.adapter.update(true);
-        checkDone(true);
+    public static /* synthetic */ void $r8$lambda$hOVqMCyHftDSOLCor86N2KpZlT8(GreetMessagesActivity greetMessagesActivity) {
+        greetMessagesActivity.listView.adapter.update(true);
+        greetMessagesActivity.checkDone(true);
     }
 
     private void setValue() {
@@ -236,33 +235,35 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
             getConnectionsManager().sendRequest(updatebusinessgreetingmessage, new RequestDelegate() { // from class: org.telegram.ui.Business.GreetMessagesActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    GreetMessagesActivity.this.lambda$processDone$2(tLObject, tL_error);
+                    GreetMessagesActivity.$r8$lambda$2NWW-qTskuEvgkOmKq6Cb3MRL1A(GreetMessagesActivity.this, tLObject, tL_error);
                 }
             });
             getMessagesStorage().updateUserInfo(userFull, false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$2(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$2NWW-qTskuEvgkOmKq6Cb3MRL1A(final GreetMessagesActivity greetMessagesActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        greetMessagesActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.GreetMessagesActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                GreetMessagesActivity.this.lambda$processDone$1(tL_error, tLObject);
+                GreetMessagesActivity.$r8$lambda$ocAK9ho0b_IiRnb9-Dtq-SL9xco(GreetMessagesActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$1(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$ocAK9ho0b_IiRnb9-Dtq-SL9xco(GreetMessagesActivity greetMessagesActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
+            greetMessagesActivity.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
-        } else if (tLObject instanceof TLRPC.TL_boolFalse) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+            return;
+        }
+        greetMessagesActivity.getClass();
+        if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+            greetMessagesActivity.finishFragment();
         } else {
-            finishFragment();
+            greetMessagesActivity.doneButtonDrawable.animateToProgress(0.0f);
+            BulletinFactory.of(greetMessagesActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         }
     }
 
@@ -282,28 +283,18 @@ public class GreetMessagesActivity extends BaseFragment implements NotificationC
             builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.GreetMessagesActivity$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    GreetMessagesActivity.this.lambda$onBackPressed$3(alertDialog, i);
+                    GreetMessagesActivity.this.processDone();
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.GreetMessagesActivity$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    GreetMessagesActivity.this.lambda$onBackPressed$4(alertDialog, i);
+                    GreetMessagesActivity.this.finishFragment();
                 }
             });
             showDialog(builder.create());
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$3(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

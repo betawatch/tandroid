@@ -47,15 +47,13 @@ public class TabCallbackDelegateImpl implements TabCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onTabSelected", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.TabCallbackDelegateImpl$TabCallbackStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onTabSelected$0;
-                    lambda$onTabSelected$0 = TabCallbackDelegateImpl.TabCallbackStub.this.lambda$onTabSelected$0(str);
-                    return lambda$onTabSelected$0;
+                    return TabCallbackDelegateImpl.TabCallbackStub.$r8$lambda$yKaF6NpaWih2D-zb-YbQfKX2X_A(TabCallbackDelegateImpl.TabCallbackStub.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onTabSelected$0(String str) {
+        public static /* synthetic */ Object $r8$lambda$yKaF6NpaWih2D-zb-YbQfKX2X_A(TabCallbackStub tabCallbackStub, String str) {
+            tabCallbackStub.getClass();
             throw null;
         }
     }

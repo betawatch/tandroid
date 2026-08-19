@@ -1,10 +1,10 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-final class c {
+public final class c {
     volatile long value;
 
-    c(long j) {
+    public c(long j) {
         this.value = j;
     }
 }

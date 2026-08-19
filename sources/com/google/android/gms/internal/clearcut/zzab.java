@@ -51,16 +51,15 @@ public final class zzab {
         try {
             HashMap hashMap = new HashMap();
             Cursor query = this.zzdf.query(this.uri, zzdl, null, null, null);
-            if (query != null) {
-                while (query.moveToNext()) {
-                    try {
-                        hashMap.put(query.getString(0), query.getString(1));
-                    } catch (Throwable th) {
-                        query.close();
-                        throw th;
-                    }
+            if (query == null) {
+                return hashMap;
+            }
+            while (query.moveToNext()) {
+                try {
+                    hashMap.put(query.getString(0), query.getString(1));
+                } finally {
+                    query.close();
                 }
-                query.close();
             }
             return hashMap;
         } catch (SQLiteException | SecurityException unused) {
@@ -98,7 +97,7 @@ public final class zzab {
                 }
             }
         }
-        return zzi != null ? zzi : Collections.emptyMap();
+        return zzi != null ? zzi : Collections.EMPTY_MAP;
     }
 
     public final void zzh() {

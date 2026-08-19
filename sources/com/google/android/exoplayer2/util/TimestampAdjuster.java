@@ -12,11 +12,8 @@ public final class TimestampAdjuster {
     }
 
     public synchronized void sharedInitializeOrWait(boolean z, long j) {
-        try {
-            Assertions.checkState(this.firstSampleTimestampUs == 9223372036854775806L);
-            if (this.timestampOffsetUs != -9223372036854775807L) {
-                return;
-            }
+        Assertions.checkState(this.firstSampleTimestampUs == 9223372036854775806L);
+        if (this.timestampOffsetUs == -9223372036854775807L) {
             if (z) {
                 this.nextSampleTimestampUs.set(Long.valueOf(j));
             } else {
@@ -24,33 +21,23 @@ public final class TimestampAdjuster {
                     wait();
                 }
             }
-        } catch (Throwable th) {
-            throw th;
         }
     }
 
     public synchronized long getFirstSampleTimestampUs() {
-        long j;
-        j = this.firstSampleTimestampUs;
+        long j = this.firstSampleTimestampUs;
         if (j == Long.MAX_VALUE || j == 9223372036854775806L) {
-            j = -9223372036854775807L;
+            return -9223372036854775807L;
         }
         return j;
     }
 
     public synchronized long getLastAdjustedTimestampUs() {
-        long firstSampleTimestampUs;
-        try {
-            long j = this.lastUnadjustedTimestampUs;
-            if (j != -9223372036854775807L) {
-                firstSampleTimestampUs = j + this.timestampOffsetUs;
-            } else {
-                firstSampleTimestampUs = getFirstSampleTimestampUs();
-            }
-        } catch (Throwable th) {
-            throw th;
+        long j = this.lastUnadjustedTimestampUs;
+        if (j != -9223372036854775807L) {
+            return j + this.timestampOffsetUs;
         }
-        return firstSampleTimestampUs;
+        return getFirstSampleTimestampUs();
     }
 
     public synchronized long getTimestampOffsetUs() {

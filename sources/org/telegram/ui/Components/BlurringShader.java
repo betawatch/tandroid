@@ -28,7 +28,6 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
-import java.util.Iterator;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLContext;
 import org.telegram.messenger.AndroidUtilities;
@@ -86,7 +85,7 @@ public class BlurringShader {
         this.invalidateViews = new Runnable() { // from class: org.telegram.ui.Components.BlurringShader$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BlurringShader.this.lambda$new$0();
+                BlurringShader.$r8$lambda$HxR6Sw23apEPPF-4dQweOVHm5gs(BlurringShader.this);
             }
         };
         this.iMatrix = new Matrix();
@@ -357,9 +356,8 @@ public class BlurringShader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        BlurManager blurManager = this.currentManager;
+    public static /* synthetic */ void $r8$lambda$HxR6Sw23apEPPF-4dQweOVHm5gs(BlurringShader blurringShader) {
+        BlurManager blurManager = blurringShader.currentManager;
         if (blurManager != null) {
             blurManager.invalidate();
         }
@@ -542,13 +540,21 @@ public class BlurringShader {
         }
 
         public void invalidate() {
-            Iterator it = this.holders.iterator();
-            while (it.hasNext()) {
-                ((StoryBlurDrawer) it.next()).view.invalidate();
+            ArrayList arrayList = this.holders;
+            int size = arrayList.size();
+            int i = 0;
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList.get(i2);
+                i2++;
+                ((StoryBlurDrawer) obj).view.invalidate();
             }
-            Iterator it2 = this.invalidateHolders.iterator();
-            while (it2.hasNext()) {
-                ((Runnable) it2.next()).run();
+            ArrayList arrayList2 = this.invalidateHolders;
+            int size2 = arrayList2.size();
+            while (i < size2) {
+                Object obj2 = arrayList2.get(i);
+                i++;
+                ((Runnable) obj2).run();
             }
         }
 
@@ -660,7 +666,7 @@ public class BlurringShader {
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.BlurringShader$ThumbBlurer$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BlurringShader.ThumbBlurer.this.lambda$getBitmap$1(bitmap, i, i2, str, z);
+                    BlurringShader.ThumbBlurer.$r8$lambda$goVMWQSWSY2-TeqR9_KANkBXgrU(BlurringShader.ThumbBlurer.this, bitmap, i, i2, str, z);
                 }
             };
             this.generate = runnable;
@@ -668,10 +674,10 @@ public class BlurringShader {
             return this.thumbBitmap;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$getBitmap$1(final Bitmap bitmap, int i, int i2, final String str, final boolean z) {
+        public static /* synthetic */ void $r8$lambda$goVMWQSWSY2-TeqR9_KANkBXgrU(final ThumbBlurer thumbBlurer, final Bitmap bitmap, int i, int i2, final String str, final boolean z) {
             int i3;
             int i4;
+            thumbBlurer.getClass();
             if (bitmap == null || bitmap.isRecycled()) {
                 return;
             }
@@ -685,13 +691,13 @@ public class BlurringShader {
                 i4 = round2;
                 i3 = round;
             }
-            int i5 = this.padding * 2;
+            int i5 = thumbBlurer.padding * 2;
             final Bitmap createBitmap = Bitmap.createBitmap(i5 + i3, i5 + i4, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
             Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-            int i6 = this.padding;
+            int i6 = thumbBlurer.padding;
             Rect rect2 = new Rect(i6, i6, i6 + round, i6 + round2);
-            float f = this.padding;
+            float f = thumbBlurer.padding;
             canvas.translate((i3 / 2.0f) + f, f + (i4 / 2.0f));
             if (i2 == 1) {
                 canvas.scale(-1.0f, 1.0f);
@@ -699,40 +705,39 @@ public class BlurringShader {
                 canvas.scale(1.0f, -1.0f);
             }
             canvas.rotate(i);
-            float f2 = -this.padding;
+            float f2 = -thumbBlurer.padding;
             canvas.translate(f2 - (round / 2.0f), f2 - (round2 / 2.0f));
             try {
                 canvas.drawBitmap(bitmap, rect, rect2, (Paint) null);
             } catch (Exception unused) {
             }
             Utilities.stackBlurBitmap(createBitmap, 6);
-            int i7 = this.padding;
+            int i7 = thumbBlurer.padding;
             if (i7 > 0) {
-                canvas.drawRect(0.0f, 0.0f, round + i7, i7, this.clearPaint);
-                float f3 = this.padding;
-                canvas.drawRect(0.0f, f3, f3, r0 + round2, this.clearPaint);
-                int i8 = this.padding;
-                canvas.drawRect(i8 + round, i8, r2 + i8, i8 + round2, this.clearPaint);
-                canvas.drawRect(0.0f, round2 + this.padding, round + r0 + r0, r3 + r0, this.clearPaint);
+                canvas.drawRect(0.0f, 0.0f, round + i7, i7, thumbBlurer.clearPaint);
+                float f3 = thumbBlurer.padding;
+                canvas.drawRect(0.0f, f3, f3, r0 + round2, thumbBlurer.clearPaint);
+                int i8 = thumbBlurer.padding;
+                canvas.drawRect(i8 + round, i8, r2 + i8, i8 + round2, thumbBlurer.clearPaint);
+                canvas.drawRect(0.0f, round2 + thumbBlurer.padding, round + r0 + r0, r4 + r0, thumbBlurer.clearPaint);
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BlurringShader$ThumbBlurer$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BlurringShader.ThumbBlurer.this.lambda$getBitmap$0(str, createBitmap, z, bitmap);
+                    BlurringShader.ThumbBlurer.$r8$lambda$pX34Wo8bHwIinFkvrf5xK3rG080(BlurringShader.ThumbBlurer.this, str, createBitmap, z, bitmap);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$getBitmap$0(String str, Bitmap bitmap, boolean z, Bitmap bitmap2) {
-            if (TextUtils.equals(this.thumbKey, str)) {
-                this.generate = null;
-                Bitmap bitmap3 = this.thumbBitmap;
+        public static /* synthetic */ void $r8$lambda$pX34Wo8bHwIinFkvrf5xK3rG080(ThumbBlurer thumbBlurer, String str, Bitmap bitmap, boolean z, Bitmap bitmap2) {
+            if (TextUtils.equals(thumbBlurer.thumbKey, str)) {
+                thumbBlurer.generate = null;
+                Bitmap bitmap3 = thumbBlurer.thumbBitmap;
                 if (bitmap3 != null) {
                     bitmap3.recycle();
                 }
-                this.thumbBitmap = bitmap;
-                Runnable runnable = this.invalidate;
+                thumbBlurer.thumbBitmap = bitmap;
+                Runnable runnable = thumbBlurer.invalidate;
                 if (runnable != null) {
                     runnable.run();
                 }
@@ -894,9 +899,9 @@ public class BlurringShader {
             drawRect(canvas, f, f2, f3, true);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:26:0x00aa, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:26:0x00a9, code lost:
         
-            if (r7 != r8) goto L26;
+            if (r7 != r8) goto L27;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1095,16 +1100,16 @@ public class BlurringShader {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.BlurringShader$StoryBlurDrawer$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    BlurringShader.StoryBlurDrawer.this.lambda$animateOldPaint$0(valueAnimator2);
+                    BlurringShader.StoryBlurDrawer.$r8$lambda$7azbTGo0Fg41h7AotXRnLHSNsqc(BlurringShader.StoryBlurDrawer.this, valueAnimator2);
                 }
             });
             this.crossfadeAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$animateOldPaint$0(ValueAnimator valueAnimator) {
-            this.oldPaintAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.view.invalidate();
+        public static /* synthetic */ void $r8$lambda$7azbTGo0Fg41h7AotXRnLHSNsqc(StoryBlurDrawer storyBlurDrawer, ValueAnimator valueAnimator) {
+            storyBlurDrawer.getClass();
+            storyBlurDrawer.oldPaintAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            storyBlurDrawer.view.invalidate();
         }
 
         /* JADX INFO: Access modifiers changed from: private */

@@ -5,44 +5,44 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 
 /* loaded from: classes2.dex */
-final class g extends i {
-    private final boolean g;
+public final class g extends i {
+    public final boolean g;
 
-    g(j$.time.temporal.p pVar, int i, int i2, boolean z, int i3) {
-        super(pVar, i, i2, x.NOT_NEGATIVE, i3);
+    public g(j$.time.temporal.o oVar, int i, int i2, boolean z, int i3) {
+        super(oVar, i, i2, x.NOT_NEGATIVE, i3);
         this.g = z;
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.p, java.lang.Enum] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.o, java.lang.Enum] */
     @Override // j$.time.format.i
-    final i b() {
+    public final i a() {
         if (this.e == -1) {
             return this;
         }
         return new g(this.a, this.b, this.c, this.g, -1);
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [j$.time.temporal.p, java.lang.Enum] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [j$.time.temporal.o, java.lang.Enum] */
     @Override // j$.time.format.i
-    final i c(int i) {
+    public final i b(int i) {
         return new g(this.a, this.b, this.c, this.g, this.e + i);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.p, java.lang.Enum] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.o, java.lang.Enum] */
     @Override // j$.time.format.i, j$.time.format.f
-    public final boolean k(r rVar, StringBuilder sb) {
+    public final boolean l(r rVar, StringBuilder sb) {
         ?? r0 = this.a;
-        Long e = rVar.e(r0);
-        if (e == null) {
+        Long a = rVar.a(r0);
+        if (a == null) {
             return false;
         }
-        v b = rVar.b();
-        long longValue = e.longValue();
-        j$.time.temporal.u k = r0.k();
-        k.b(longValue, r0);
-        BigDecimal valueOf = BigDecimal.valueOf(k.e());
-        BigDecimal add = BigDecimal.valueOf(k.d()).subtract(valueOf).add(BigDecimal.ONE);
+        v vVar = rVar.b.c;
+        long longValue = a.longValue();
+        j$.time.temporal.s l = r0.l();
+        l.b(longValue, r0);
+        BigDecimal valueOf = BigDecimal.valueOf(l.a);
+        BigDecimal add = BigDecimal.valueOf(l.d).subtract(valueOf).add(BigDecimal.ONE);
         BigDecimal subtract = BigDecimal.valueOf(longValue).subtract(valueOf);
         RoundingMode roundingMode = RoundingMode.FLOOR;
         BigDecimal divide = subtract.divide(add, 9, roundingMode);
@@ -55,7 +55,7 @@ final class g extends i {
         int i = this.b;
         if (scale != 0) {
             String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i), this.c), roundingMode).toPlainString().substring(2);
-            b.getClass();
+            vVar.getClass();
             if (z) {
                 sb.append('.');
             }
@@ -66,11 +66,11 @@ final class g extends i {
             return true;
         }
         if (z) {
-            b.getClass();
+            vVar.getClass();
             sb.append('.');
         }
         for (int i2 = 0; i2 < i; i2++) {
-            b.getClass();
+            vVar.getClass();
             sb.append('0');
         }
         return true;

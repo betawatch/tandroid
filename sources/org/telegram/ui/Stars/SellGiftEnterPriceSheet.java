@@ -97,7 +97,8 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         editTextBoldCursor.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Stars.SellGiftEnterPriceSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                SellGiftEnterPriceSheet.this.lambda$new$0(view, z);
+                SellGiftEnterPriceSheet sellGiftEnterPriceSheet = SellGiftEnterPriceSheet.this;
+                sellGiftEnterPriceSheet.starsCountEditOutline.animateSelection(z, !TextUtils.isEmpty(sellGiftEnterPriceSheet.starsCountEditField.getText()));
             }
         });
         outlineTextContainerView.addView(editTextBoldCursor, LayoutHelper.createFrame(-1, -2, 48));
@@ -130,7 +131,7 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         textCheckbox2Cell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.SellGiftEnterPriceSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SellGiftEnterPriceSheet.this.lambda$new$1(view);
+                SellGiftEnterPriceSheet.$r8$lambda$rNAybA0P1_q4PTytCX4sdqeYDNs(SellGiftEnterPriceSheet.this, view);
             }
         });
         linearLayout3.addView(textCheckbox2Cell, LayoutHelper.createLinear(-1, -2, 55, 0, 16, 0, 16));
@@ -142,7 +143,7 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.SellGiftEnterPriceSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SellGiftEnterPriceSheet.this.lambda$new$2(callback, view);
+                SellGiftEnterPriceSheet.$r8$lambda$HLzrb40PgDmxwfavqQ0pDGAfwt0(SellGiftEnterPriceSheet.this, callback, view);
             }
         });
         round.setText(LocaleController.getString(R.string.ResellGiftButton), false);
@@ -176,30 +177,23 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, boolean z) {
-        this.starsCountEditOutline.animateSelection(z, !TextUtils.isEmpty(this.starsCountEditField.getText()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        AmountUtils$Currency amountUtils$Currency = this.inputAmount.currency;
+    public static /* synthetic */ void $r8$lambda$rNAybA0P1_q4PTytCX4sdqeYDNs(SellGiftEnterPriceSheet sellGiftEnterPriceSheet, View view) {
+        AmountUtils$Currency amountUtils$Currency = sellGiftEnterPriceSheet.inputAmount.currency;
         AmountUtils$Currency amountUtils$Currency2 = AmountUtils$Currency.TON;
         if (amountUtils$Currency == amountUtils$Currency2) {
             amountUtils$Currency2 = AmountUtils$Currency.STARS;
         }
-        setAmount(AmountUtils$Amount.fromNano(0L, amountUtils$Currency2), true, false, true);
-        this.starsCountEditField.setText("");
+        sellGiftEnterPriceSheet.setAmount(AmountUtils$Amount.fromNano(0L, amountUtils$Currency2), true, false, true);
+        sellGiftEnterPriceSheet.starsCountEditField.setText("");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Utilities.Callback callback, View view) {
-        if (!this.buttonView.isEnabled() || this.buttonView.isLoading()) {
+    public static /* synthetic */ void $r8$lambda$HLzrb40PgDmxwfavqQ0pDGAfwt0(SellGiftEnterPriceSheet sellGiftEnterPriceSheet, Utilities.Callback callback, View view) {
+        if (!sellGiftEnterPriceSheet.buttonView.isEnabled() || sellGiftEnterPriceSheet.buttonView.isLoading()) {
             return;
         }
-        AndroidUtilities.hideKeyboard(this.starsCountEditField);
-        this.buttonView.setLoading(true);
-        callback.run(this.inputAmount);
+        AndroidUtilities.hideKeyboard(sellGiftEnterPriceSheet.starsCountEditField);
+        sellGiftEnterPriceSheet.buttonView.setLoading(true);
+        callback.run(sellGiftEnterPriceSheet.inputAmount);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -336,13 +330,8 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.SellGiftEnterPriceSheet$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SellGiftEnterPriceSheet.this.lambda$show$3();
+                AndroidUtilities.showKeyboard(SellGiftEnterPriceSheet.this.starsCountEditField);
             }
         }, 50L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$3() {
-        AndroidUtilities.showKeyboard(this.starsCountEditField);
     }
 }

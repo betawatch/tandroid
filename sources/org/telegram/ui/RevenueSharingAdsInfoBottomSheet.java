@@ -73,7 +73,7 @@ public class RevenueSharingAdsInfoBottomSheet extends BottomSheetWithRecyclerLis
             imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.RevenueSharingAdsInfoBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    RevenueSharingAdsInfoBottomSheet.this.lambda$new$0(callback, resourcesProvider, imageView, view);
+                    callback.run(ItemOptions.makeOptions((ViewGroup) RevenueSharingAdsInfoBottomSheet.this.container, resourcesProvider, (View) imageView, true).setGravity(5).setDrawScrim(false).translate(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(-32.0f)));
                 }
             });
             frameLayout.addView(imageView, LayoutHelper.createFrame(24, 24.0f, 53, 12.0f, 14.0f, 14.0f, 12.0f));
@@ -100,7 +100,7 @@ public class RevenueSharingAdsInfoBottomSheet extends BottomSheetWithRecyclerLis
         linearLayout.addView(new FeatureCell(context, R.drawable.menu_feature_noads, LocaleController.getString(R.string.RevenueSharingAdsInfo3Title), AndroidUtilities.replaceSingleTag(formatString, i3, 0, new Runnable() { // from class: org.telegram.ui.RevenueSharingAdsInfoBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                RevenueSharingAdsInfoBottomSheet.this.lambda$new$1();
+                RevenueSharingAdsInfoBottomSheet.$r8$lambda$R4U02FYSqLTAVF-0U1LqkNW4QiA(RevenueSharingAdsInfoBottomSheet.this);
             }
         })), LayoutHelper.createLinear(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         View view = new View(getContext());
@@ -120,7 +120,7 @@ public class RevenueSharingAdsInfoBottomSheet extends BottomSheetWithRecyclerLis
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.RevenueSharingAdsInfo4SubtitleLearnMore), i3, 0, new Runnable() { // from class: org.telegram.ui.RevenueSharingAdsInfoBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RevenueSharingAdsInfoBottomSheet.this.lambda$new$2();
+                RevenueSharingAdsInfoBottomSheet.$r8$lambda$-PJkIyHBIsVcimj9JbbgcGzI7QU(RevenueSharingAdsInfoBottomSheet.this);
             }
         });
         SpannableString spannableString = new SpannableString(">");
@@ -151,37 +151,26 @@ public class RevenueSharingAdsInfoBottomSheet extends BottomSheetWithRecyclerLis
         textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.RevenueSharingAdsInfoBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                RevenueSharingAdsInfoBottomSheet.this.lambda$new$3(view2);
+                RevenueSharingAdsInfoBottomSheet.this.dismiss();
             }
         });
         linearLayout.addView(textView4, LayoutHelper.createLinear(-1, 48, 0, 14, 22, 14, 14));
         this.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Utilities.Callback callback, Theme.ResourcesProvider resourcesProvider, ImageView imageView, View view) {
-        callback.run(ItemOptions.makeOptions((ViewGroup) this.container, resourcesProvider, (View) imageView, true).setGravity(5).setDrawScrim(false).translate(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(-32.0f)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
+    public static /* synthetic */ void $r8$lambda$R4U02FYSqLTAVF-0U1LqkNW4QiA(RevenueSharingAdsInfoBottomSheet revenueSharingAdsInfoBottomSheet) {
+        revenueSharingAdsInfoBottomSheet.getClass();
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
             return;
         }
         safeLastFragment.presentFragment(new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(3)));
-        lambda$new$0();
+        revenueSharingAdsInfoBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        lambda$new$0();
-        Browser.openUrl(getContext(), LocaleController.getString(R.string.PromoteUrl));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$-PJkIyHBIsVcimj9JbbgcGzI7QU(RevenueSharingAdsInfoBottomSheet revenueSharingAdsInfoBottomSheet) {
+        revenueSharingAdsInfoBottomSheet.dismiss();
+        Browser.openUrl(revenueSharingAdsInfoBottomSheet.getContext(), LocaleController.getString(R.string.PromoteUrl));
     }
 
     public static RevenueSharingAdsInfoBottomSheet showAlert(Context context, BaseFragment baseFragment, boolean z, Theme.ResourcesProvider resourcesProvider) {
@@ -194,9 +183,9 @@ public class RevenueSharingAdsInfoBottomSheet extends BottomSheetWithRecyclerLis
             if (baseFragment.getParentActivity() != null) {
                 baseFragment.showDialog(revenueSharingAdsInfoBottomSheet);
             }
-        } else {
-            revenueSharingAdsInfoBottomSheet.show();
+            return revenueSharingAdsInfoBottomSheet;
         }
+        revenueSharingAdsInfoBottomSheet.show();
         return revenueSharingAdsInfoBottomSheet;
     }
 

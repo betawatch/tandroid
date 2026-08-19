@@ -84,7 +84,7 @@ public class Frame {
         this.zzd.getPixels(new int[i], 0, width, 0, 0, width, height);
         byte[] bArr = new byte[i];
         for (int i2 = 0; i2 < i; i2++) {
-            bArr[i2] = (byte) ((Color.red(r9[i2]) * 0.299f) + (Color.green(r9[i2]) * 0.587f) + (Color.blue(r9[i2]) * 0.114f));
+            bArr[i2] = (byte) ((Color.red(r2[i2]) * 0.299f) + (Color.green(r2[i2]) * 0.587f) + (Color.blue(r2[i2]) * 0.114f));
         }
         return ByteBuffer.wrap(bArr);
     }

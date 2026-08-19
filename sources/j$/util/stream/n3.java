@@ -1,82 +1,84 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import j$.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class n3 extends c3 implements j$.util.Z {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.T.b(this, consumer);
+public abstract class n3 {
+    public final long a;
+    public final long b;
+    public Spliterator c;
+    public long d;
+    public long e;
+
+    public abstract Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4);
+
+    public n3(Spliterator spliterator, long j, long j2, long j3, long j4) {
+        this.c = spliterator;
+        this.a = j;
+        this.b = j2;
+        this.d = j3;
+        this.e = j4;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.T.g(this, consumer);
-    }
-
-    @Override // j$.util.stream.c3
-    final c3 e(Spliterator spliterator) {
-        return new n3(this.b, spliterator, this.a);
-    }
-
-    @Override // j$.util.stream.c3
-    final void d() {
-        R2 r2 = new R2();
-        this.h = r2;
-        Objects.requireNonNull(r2);
-        this.e = this.b.V(new m3(r2, 0));
-        this.f = new a(4, this);
-    }
-
-    @Override // j$.util.stream.c3, j$.util.Spliterator
     public final Spliterator trySplit() {
-        return (j$.util.Z) super.trySplit();
-    }
-
-    @Override // j$.util.stream.c3, j$.util.Spliterator
-    public final j$.util.Z trySplit() {
-        return (j$.util.Z) super.trySplit();
-    }
-
-    @Override // j$.util.stream.c3, j$.util.Spliterator
-    public final j$.util.f0 trySplit() {
-        return (j$.util.Z) super.trySplit();
-    }
-
-    @Override // j$.util.f0
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        int i;
-        Objects.requireNonNull(intConsumer);
-        boolean a = a();
-        if (a) {
-            R2 r2 = (R2) this.h;
-            long j = this.g;
-            int u = r2.u(j);
-            if (r2.c == 0 && u == 0) {
-                i = ((int[]) r2.e)[(int) j];
-            } else {
-                i = ((int[][]) r2.f)[u][(int) (j - r2.d[u])];
+        long j = this.e;
+        if (this.a >= j || this.d >= j) {
+            return null;
+        }
+        while (true) {
+            Spliterator trySplit = this.c.trySplit();
+            if (trySplit == null) {
+                return null;
             }
-            intConsumer.accept(i);
+            long estimateSize = trySplit.estimateSize() + this.d;
+            long min = Math.min(estimateSize, this.b);
+            long j2 = this.a;
+            if (j2 >= min) {
+                this.d = min;
+            } else {
+                long j3 = this.b;
+                if (min >= j3) {
+                    this.c = trySplit;
+                    this.e = min;
+                } else {
+                    long j4 = this.d;
+                    if (j4 >= j2 && estimateSize <= j3) {
+                        this.d = min;
+                        return trySplit;
+                    }
+                    this.d = min;
+                    return a(trySplit, j2, j3, j4, min);
+                }
+            }
         }
-        return a;
     }
 
-    @Override // j$.util.f0
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        if (this.h == null && !this.i) {
-            Objects.requireNonNull(intConsumer);
-            c();
-            Objects.requireNonNull(intConsumer);
-            m3 m3Var = new m3(intConsumer, 1);
-            this.b.U(this.d, m3Var);
-            this.i = true;
-            return;
+    public final long estimateSize() {
+        long j = this.e;
+        long j2 = this.a;
+        if (j2 < j) {
+            return j - Math.max(j2, this.d);
         }
-        while (tryAdvance(intConsumer)) {
-        }
+        return 0L;
+    }
+
+    public final int characteristics() {
+        return this.c.characteristics();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
+        return (j$.util.c0) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.T trySplit() {
+        return (j$.util.T) trySplit();
     }
 }

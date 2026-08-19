@@ -68,7 +68,7 @@ public class Texture {
         }
         if (!this.bitmap.isRecycled() && Build.VERSION.SDK_INT <= 28) {
             int pixel = this.bitmap.getPixel(0, 0);
-            int i6 = ((-16711936) & pixel) | ((pixel & NotificationCenter.didReceiveSmsCode) << 16) | ((pixel >> 16) & NotificationCenter.didReceiveSmsCode);
+            int i6 = ((pixel >> 16) & NotificationCenter.didReceiveSmsCode) | ((-16711936) & pixel) | ((pixel & NotificationCenter.didReceiveSmsCode) << 16);
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(4);
             allocateDirect.putInt(i6).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);

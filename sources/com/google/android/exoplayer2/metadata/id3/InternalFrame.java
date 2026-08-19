@@ -39,11 +39,13 @@ public final class InternalFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || InternalFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && InternalFrame.class == obj.getClass()) {
+            InternalFrame internalFrame = (InternalFrame) obj;
+            if (Util.areEqual(this.description, internalFrame.description) && Util.areEqual(this.domain, internalFrame.domain) && Util.areEqual(this.text, internalFrame.text)) {
+                return true;
+            }
         }
-        InternalFrame internalFrame = (InternalFrame) obj;
-        return Util.areEqual(this.description, internalFrame.description) && Util.areEqual(this.domain, internalFrame.domain) && Util.areEqual(this.text, internalFrame.text);
+        return false;
     }
 
     public int hashCode() {

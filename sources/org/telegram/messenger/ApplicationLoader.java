@@ -332,7 +332,7 @@ public class ApplicationLoader extends Application {
             ContactsController.getInstance(i2).checkAppAccount();
             DownloadController.getInstance(i2);
         }
-        BillingController.getInstance().lambda$onBillingServiceDisconnected$12();
+        BillingController.getInstance().startConnection();
     }
 
     @Override // android.app.Application
@@ -435,13 +435,12 @@ public class ApplicationLoader extends Application {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ApplicationLoader.lambda$initPushServices$0();
+                ApplicationLoader.$r8$lambda$EdRXsD8RsitwzrcDYxwbFEKwcLo();
             }
         }, 1000L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$initPushServices$0() {
+    public static /* synthetic */ void $r8$lambda$EdRXsD8RsitwzrcDYxwbFEKwcLo() {
         if (getPushProvider().hasServices()) {
             getPushProvider().onRequestPushToken();
             return;
@@ -500,7 +499,9 @@ public class ApplicationLoader extends Application {
         try {
             ensureCurrentNetworkGet(false);
             if (currentNetworkInfo != null) {
-                return currentNetworkInfo.isRoaming();
+                if (currentNetworkInfo.isRoaming()) {
+                    return true;
+                }
             }
             return false;
         } catch (Exception e) {

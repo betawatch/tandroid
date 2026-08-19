@@ -19,14 +19,12 @@ final class zzvf {
     public final zzvi zzb(Class cls) {
         zzty.zzc(cls, "messageType");
         zzvi zzviVar = (zzvi) this.zzc.get(cls);
-        if (zzviVar == null) {
-            zzviVar = this.zzb.zza(cls);
-            zzty.zzc(cls, "messageType");
-            zzvi zzviVar2 = (zzvi) this.zzc.putIfAbsent(cls, zzviVar);
-            if (zzviVar2 != null) {
-                return zzviVar2;
-            }
+        if (zzviVar != null) {
+            return zzviVar;
         }
-        return zzviVar;
+        zzvi zza2 = this.zzb.zza(cls);
+        zzty.zzc(cls, "messageType");
+        zzvi zzviVar2 = (zzvi) this.zzc.putIfAbsent(cls, zza2);
+        return zzviVar2 == null ? zza2 : zzviVar2;
     }
 }

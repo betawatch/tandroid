@@ -179,8 +179,7 @@ final class zzn implements ServiceConnection {
                                     zzn.this.zze(zzrVar.zza);
                                 }
                             }, 30L, TimeUnit.SECONDS);
-                        } catch (Throwable th) {
-                            throw th;
+                        } finally {
                         }
                     }
                     if (Log.isLoggable("MessengerIpcClient", 3)) {

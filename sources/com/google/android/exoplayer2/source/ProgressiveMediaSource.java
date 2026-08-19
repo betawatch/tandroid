@@ -52,20 +52,17 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
             this(factory, new DefaultExtractorsFactory());
         }
 
+        public static /* synthetic */ ProgressiveMediaExtractor $r8$lambda$ynE478wrfTfYlYvAxVK-MNZ7MWE(ExtractorsFactory extractorsFactory, PlayerId playerId) {
+            return new BundledExtractorsAdapter(extractorsFactory);
+        }
+
         public Factory(DataSource.Factory factory, final ExtractorsFactory extractorsFactory) {
             this(factory, new ProgressiveMediaExtractor.Factory() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaSource$Factory$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor.Factory
                 public final ProgressiveMediaExtractor createProgressiveMediaExtractor(PlayerId playerId) {
-                    ProgressiveMediaExtractor lambda$new$0;
-                    lambda$new$0 = ProgressiveMediaSource.Factory.lambda$new$0(ExtractorsFactory.this, playerId);
-                    return lambda$new$0;
+                    return ProgressiveMediaSource.Factory.$r8$lambda$ynE478wrfTfYlYvAxVK-MNZ7MWE(ExtractorsFactory.this, playerId);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ ProgressiveMediaExtractor lambda$new$0(ExtractorsFactory extractorsFactory, PlayerId playerId) {
-            return new BundledExtractorsAdapter(extractorsFactory);
         }
 
         public Factory(DataSource.Factory factory, ProgressiveMediaExtractor.Factory factory2) {

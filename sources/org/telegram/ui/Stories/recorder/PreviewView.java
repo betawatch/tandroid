@@ -38,7 +38,6 @@ import com.google.zxing.common.detector.MathUtils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatThemeController;
@@ -69,7 +68,7 @@ import org.telegram.ui.Stories.recorder.PreviewView;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.TimelineView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class PreviewView extends FrameLayout {
     private boolean allowCropping;
     private boolean allowRotation;
@@ -166,25 +165,25 @@ public abstract class PreviewView extends FrameLayout {
         this.slowerSeek = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.this.lambda$new$0();
+                PreviewView.$r8$lambda$n8Q808FVPSY0qkobHNtVJv4cS8Y(PreviewView.this);
             }
         };
         this.updateProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.this.lambda$new$10();
+                PreviewView.$r8$lambda$euKzbLKgVXX741x5sHwEjL7vfec(PreviewView.this);
             }
         };
         this.updateAudioProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.this.lambda$new$11();
+                PreviewView.$r8$lambda$mySK8_QmHv1RuhFIVbbzfsoNLHs(PreviewView.this);
             }
         };
         this.updateRoundProgressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.this.lambda$new$12();
+                PreviewView.$r8$lambda$CxvBV3dFONwihCq5bSofn-gACbo(PreviewView.this);
             }
         };
         this.wallpaperDrawableCrossfade = new AnimatedFloat(this, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -404,6 +403,7 @@ public abstract class PreviewView extends FrameLayout {
                     inputDocument.file_reference = document.file_reference;
                     inputDocument.access_hash = document.access_hash;
                 }
+                int i = 0;
                 if (!TextUtils.isEmpty(messageObject.messageOwner.attachPath)) {
                     this.entry.audioPath = messageObject.messageOwner.attachPath;
                 } else {
@@ -430,20 +430,23 @@ public abstract class PreviewView extends FrameLayout {
                 storyEntry3.audioAuthor = null;
                 storyEntry3.audioTitle = null;
                 if (document != null) {
-                    Iterator<TLRPC.DocumentAttribute> it = document.attributes.iterator();
+                    ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
+                    int size = arrayList.size();
                     while (true) {
-                        if (!it.hasNext()) {
+                        if (i >= size) {
                             break;
                         }
-                        TLRPC.DocumentAttribute next = it.next();
-                        if (next instanceof TLRPC.TL_documentAttributeAudio) {
-                            this.entry.audioAuthor = next.performer;
-                            if (!TextUtils.isEmpty(next.title)) {
-                                this.entry.audioTitle = next.title;
+                        TLRPC.DocumentAttribute documentAttribute = arrayList.get(i);
+                        i++;
+                        TLRPC.DocumentAttribute documentAttribute2 = documentAttribute;
+                        if (documentAttribute2 instanceof TLRPC.TL_documentAttributeAudio) {
+                            this.entry.audioAuthor = documentAttribute2.performer;
+                            if (!TextUtils.isEmpty(documentAttribute2.title)) {
+                                this.entry.audioTitle = documentAttribute2.title;
                             }
-                            this.entry.audioDuration = (long) (next.duration * 1000.0d);
-                        } else if (next instanceof TLRPC.TL_documentAttributeFilename) {
-                            this.entry.audioTitle = next.file_name;
+                            this.entry.audioDuration = (long) (documentAttribute2.duration * 1000.0d);
+                        } else if (documentAttribute2 instanceof TLRPC.TL_documentAttributeFilename) {
+                            this.entry.audioTitle = documentAttribute2.file_name;
                         }
                     }
                 }
@@ -472,10 +475,9 @@ public abstract class PreviewView extends FrameLayout {
         setupAudio(this.entry, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        seekTo(this.finalSeekPosition);
-        this.slowerSeekScheduled = false;
+    public static /* synthetic */ void $r8$lambda$n8Q808FVPSY0qkobHNtVJv4cS8Y(PreviewView previewView) {
+        previewView.seekTo(previewView.finalSeekPosition);
+        previewView.slowerSeekScheduled = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -556,13 +558,12 @@ public abstract class PreviewView extends FrameLayout {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.lambda$getCoverBitmap$2(dp, dp2, dp3, bitmapArr, callback);
+                PreviewView.$r8$lambda$xW4_UpPPqR_o185V2LHvtWoY7CI(dp, dp2, dp3, bitmapArr, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getCoverBitmap$2(int i, int i2, int i3, Bitmap[] bitmapArr, final Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$xW4_UpPPqR_o185V2LHvtWoY7CI(int i, int i2, int i3, Bitmap[] bitmapArr, final Utilities.Callback callback) {
         final Bitmap createBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         Path path = new Path();
@@ -800,26 +801,26 @@ public abstract class PreviewView extends FrameLayout {
         Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.this.lambda$setupImage$5(storyEntry);
+                PreviewView.$r8$lambda$jQudLc4HYUyzgS-w_VphDvRmb78(PreviewView.this, storyEntry);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0097  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$setupImage$5(final StoryEntry storyEntry) {
+    public static /* synthetic */ void $r8$lambda$jQudLc4HYUyzgS-w_VphDvRmb78(final PreviewView previewView, final StoryEntry storyEntry) {
         long j;
         final long j2;
         String str;
         Uri withAppendedId;
         Bitmap loadThumbnail;
+        previewView.getClass();
         final Bitmap[] bitmapArr = new Bitmap[1];
         final boolean[] zArr = {true};
         if (storyEntry != null) {
-            int measuredWidth = getMeasuredWidth() <= 0 ? AndroidUtilities.displaySize.x : getMeasuredWidth();
+            int measuredWidth = previewView.getMeasuredWidth() <= 0 ? AndroidUtilities.displaySize.x : previewView.getMeasuredWidth();
             int i = (int) ((measuredWidth * 16) / 9.0f);
             if (storyEntry.isVideo) {
                 Bitmap bitmap = storyEntry.blurredVideoThumb;
@@ -835,14 +836,14 @@ public abstract class PreviewView extends FrameLayout {
                             } else {
                                 withAppendedId = ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, j);
                             }
-                            loadThumbnail = getContext().getContentResolver().loadThumbnail(withAppendedId, new Size(measuredWidth, i), null);
+                            loadThumbnail = previewView.getContext().getContentResolver().loadThumbnail(withAppendedId, new Size(measuredWidth, i), null);
                             bitmapArr[0] = loadThumbnail;
                         } catch (Exception unused) {
                         }
                     }
                     j2 = j;
                     if (j2 >= 0 && storyEntry.isVideo && storyEntry.thumbPath == null) {
-                        invalidate();
+                        previewView.invalidate();
                         return;
                     }
                     if (bitmapArr[0] == null) {
@@ -854,9 +855,7 @@ public abstract class PreviewView extends FrameLayout {
                         StoryEntry.DecodeBitmap decodeBitmap = new StoryEntry.DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda12
                             @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                             public final Bitmap decode(BitmapFactory.Options options) {
-                                Bitmap lambda$setupImage$3;
-                                lambda$setupImage$3 = PreviewView.this.lambda$setupImage$3(storyEntry, j2, path, options);
-                                return lambda$setupImage$3;
+                                return PreviewView.$r8$lambda$2kpkN-KXknCFiM3yMPiPYaQSS3U(PreviewView.this, storyEntry, j2, path, options);
                             }
                         };
                         boolean z = storyEntry.isVideo;
@@ -875,52 +874,51 @@ public abstract class PreviewView extends FrameLayout {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                PreviewView.this.lambda$setupImage$4(bitmapArr, storyEntry, zArr);
+                PreviewView.$r8$lambda$SUOc28zjcoBM39n4SezQqEJpZT8(PreviewView.this, bitmapArr, storyEntry, zArr);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bitmap lambda$setupImage$3(StoryEntry storyEntry, long j, String str, BitmapFactory.Options options) {
+    public static /* synthetic */ Bitmap $r8$lambda$2kpkN-KXknCFiM3yMPiPYaQSS3U(PreviewView previewView, StoryEntry storyEntry, long j, String str, BitmapFactory.Options options) {
+        previewView.getClass();
         if (storyEntry.isVideo) {
             String str2 = storyEntry.thumbPath;
             if (str2 != null) {
                 return BitmapFactory.decodeFile(str2, options);
             }
             try {
-                return MediaStore.Video.Thumbnails.getThumbnail(getContext().getContentResolver(), j, 1, options);
+                return MediaStore.Video.Thumbnails.getThumbnail(previewView.getContext().getContentResolver(), j, 1, options);
             } catch (Throwable unused) {
-                invalidate();
+                previewView.invalidate();
                 return null;
             }
         }
         return BitmapFactory.decodeFile(str, options);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupImage$4(Bitmap[] bitmapArr, StoryEntry storyEntry, boolean[] zArr) {
+    public static /* synthetic */ void $r8$lambda$SUOc28zjcoBM39n4SezQqEJpZT8(PreviewView previewView, Bitmap[] bitmapArr, StoryEntry storyEntry, boolean[] zArr) {
         BlurringShader.BlurManager blurManager;
-        Bitmap bitmap = this.bitmap;
+        Bitmap bitmap = previewView.bitmap;
         if (bitmap != null && !bitmap.isRecycled()) {
-            this.bitmap.recycle();
+            previewView.bitmap.recycle();
         }
         Bitmap bitmap2 = bitmapArr[0];
-        this.bitmap = bitmap2;
+        previewView.bitmap = bitmap2;
         if (storyEntry != null && !storyEntry.isDraft && storyEntry.isVideo && bitmap2 != null) {
             storyEntry.width = bitmap2.getWidth();
-            storyEntry.height = this.bitmap.getHeight();
+            storyEntry.height = previewView.bitmap.getHeight();
             storyEntry.setupMatrix();
         }
-        if (zArr[0] && storyEntry != null && (blurManager = this.blurManager) != null && this.bitmap != null) {
+        if (zArr[0] && storyEntry != null && (blurManager = previewView.blurManager) != null && previewView.bitmap != null) {
             blurManager.resetBitmap();
-            this.blurManager.setFallbackBlur(storyEntry.buildBitmap(0.2f, this.bitmap), 0);
-            Runnable runnable = this.invalidateBlur;
+            previewView.blurManager.setFallbackBlur(storyEntry.buildBitmap(0.2f, previewView.bitmap), 0);
+            Runnable runnable = previewView.invalidateBlur;
             if (runnable != null) {
                 runnable.run();
             }
         }
-        setupGradient();
-        invalidate();
+        previewView.setupGradient();
+        previewView.invalidate();
     }
 
     private void setupCollage(StoryEntry storyEntry) {
@@ -943,7 +941,7 @@ public abstract class PreviewView extends FrameLayout {
                 DominantColors.getColors(true, bitmap, true, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda9
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        PreviewView.this.lambda$setupGradient$6(measuredHeight, (int[]) obj);
+                        PreviewView.$r8$lambda$MVTr9TWLg-KtcZwpWdE4hXMAVwI(PreviewView.this, measuredHeight, (int[]) obj);
                     }
                 });
             } else {
@@ -952,7 +950,7 @@ public abstract class PreviewView extends FrameLayout {
                     DominantColors.getColors(true, bitmap2, true, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda10
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            PreviewView.this.lambda$setupGradient$7(measuredHeight, (int[]) obj);
+                            PreviewView.$r8$lambda$NUtN6UZyT8eMGfag-UPyrwaYpEA(PreviewView.this, measuredHeight, (int[]) obj);
                         }
                     });
                 } else {
@@ -980,45 +978,43 @@ public abstract class PreviewView extends FrameLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupGradient$6(int i, int[] iArr) {
-        StoryEntry storyEntry = this.entry;
+    public static /* synthetic */ void $r8$lambda$MVTr9TWLg-KtcZwpWdE4hXMAVwI(PreviewView previewView, int i, int[] iArr) {
+        StoryEntry storyEntry = previewView.entry;
         int i2 = iArr[0];
-        this.gradientTop = i2;
+        previewView.gradientTop = i2;
         storyEntry.gradientTopColor = i2;
         int i3 = iArr[1];
-        this.gradientBottom = i3;
+        previewView.gradientBottom = i3;
         storyEntry.gradientBottomColor = i3;
-        this.gradientPaint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        invalidate();
-        VideoEditTextureView videoEditTextureView = this.textureView;
+        previewView.gradientPaint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        previewView.invalidate();
+        VideoEditTextureView videoEditTextureView = previewView.textureView;
         if (videoEditTextureView != null) {
-            videoEditTextureView.updateUiBlurGradient(this.gradientTop, this.gradientBottom);
+            videoEditTextureView.updateUiBlurGradient(previewView.gradientTop, previewView.gradientBottom);
         }
-        PhotoFilterView photoFilterView = this.photoFilterView;
+        PhotoFilterView photoFilterView = previewView.photoFilterView;
         if (photoFilterView != null) {
-            photoFilterView.updateUiBlurGradient(this.gradientTop, this.gradientBottom);
+            photoFilterView.updateUiBlurGradient(previewView.gradientTop, previewView.gradientBottom);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupGradient$7(int i, int[] iArr) {
-        StoryEntry storyEntry = this.entry;
+    public static /* synthetic */ void $r8$lambda$NUtN6UZyT8eMGfag-UPyrwaYpEA(PreviewView previewView, int i, int[] iArr) {
+        StoryEntry storyEntry = previewView.entry;
         int i2 = iArr[0];
-        this.gradientTop = i2;
+        previewView.gradientTop = i2;
         storyEntry.gradientTopColor = i2;
         int i3 = iArr[1];
-        this.gradientBottom = i3;
+        previewView.gradientBottom = i3;
         storyEntry.gradientBottomColor = i3;
-        this.gradientPaint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        invalidate();
-        VideoEditTextureView videoEditTextureView = this.textureView;
+        previewView.gradientPaint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        previewView.invalidate();
+        VideoEditTextureView videoEditTextureView = previewView.textureView;
         if (videoEditTextureView != null) {
-            videoEditTextureView.updateUiBlurGradient(this.gradientTop, this.gradientBottom);
+            videoEditTextureView.updateUiBlurGradient(previewView.gradientTop, previewView.gradientBottom);
         }
-        PhotoFilterView photoFilterView = this.photoFilterView;
+        PhotoFilterView photoFilterView = previewView.photoFilterView;
         if (photoFilterView != null) {
-            photoFilterView.updateUiBlurGradient(this.gradientTop, this.gradientBottom);
+            photoFilterView.updateUiBlurGradient(previewView.gradientTop, previewView.gradientBottom);
         }
     }
 
@@ -1041,7 +1037,7 @@ public abstract class PreviewView extends FrameLayout {
                     this.textureView.animate().alpha(0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda8
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PreviewView.this.lambda$setupVideoPlayer$8();
+                            PreviewView.$r8$lambda$gcmx4tJ_q80-XzT55TXXqAt5v-I(PreviewView.this);
                         }
                     }).start();
                 }
@@ -1088,7 +1084,7 @@ public abstract class PreviewView extends FrameLayout {
         storyEntry.detectHDR(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                PreviewView.this.lambda$setupVideoPlayer$9((StoryEntry.HDRInfo) obj);
+                PreviewView.$r8$lambda$z4tam59nbvyNSyWBG8zNmsnMtUA(PreviewView.this, (StoryEntry.HDRInfo) obj);
             }
         });
         this.videoPlayer.preparePlayer(Uri.fromFile(storyEntry.getOriginalFile()), "other");
@@ -1112,13 +1108,12 @@ public abstract class PreviewView extends FrameLayout {
         timelineView2.setProgress(j);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupVideoPlayer$8() {
-        VideoEditTextureView videoEditTextureView = this.textureView;
+    public static /* synthetic */ void $r8$lambda$gcmx4tJ_q80-XzT55TXXqAt5v-I(PreviewView previewView) {
+        VideoEditTextureView videoEditTextureView = previewView.textureView;
         if (videoEditTextureView != null) {
             videoEditTextureView.release();
-            removeView(this.textureView);
-            this.textureView = null;
+            previewView.removeView(previewView.textureView);
+            previewView.textureView = null;
         }
     }
 
@@ -1207,7 +1202,7 @@ public abstract class PreviewView extends FrameLayout {
                         duration.withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$3$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                PreviewView.3.this.lambda$onRenderedFirstFrame$0(storyEntry);
+                                PreviewView.3.$r8$lambda$z5mfAMt55rD9EjhnDdQwm29EQvs(PreviewView.3.this, storyEntry);
                             }
                         }).start();
                         return;
@@ -1228,8 +1223,7 @@ public abstract class PreviewView extends FrameLayout {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onRenderedFirstFrame$0(StoryEntry storyEntry) {
+        public static /* synthetic */ void $r8$lambda$z5mfAMt55rD9EjhnDdQwm29EQvs(3 r3, StoryEntry storyEntry) {
             if (PreviewView.this.bitmap != null) {
                 PreviewView.this.bitmap.recycle();
                 if (storyEntry.blurredVideoThumb == PreviewView.this.bitmap) {
@@ -1246,9 +1240,8 @@ public abstract class PreviewView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupVideoPlayer$9(StoryEntry.HDRInfo hDRInfo) {
-        VideoEditTextureView videoEditTextureView = this.textureView;
+    public static /* synthetic */ void $r8$lambda$z4tam59nbvyNSyWBG8zNmsnMtUA(PreviewView previewView, StoryEntry.HDRInfo hDRInfo) {
+        VideoEditTextureView videoEditTextureView = previewView.textureView;
         if (videoEditTextureView != null) {
             videoEditTextureView.setHDRInfo(hDRInfo);
         }
@@ -1488,91 +1481,88 @@ public abstract class PreviewView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$10() {
-        VideoPlayer videoPlayer = this.videoPlayer;
-        if (videoPlayer == null || this.timelineView == null) {
+    public static /* synthetic */ void $r8$lambda$euKzbLKgVXX741x5sHwEjL7vfec(PreviewView previewView) {
+        VideoPlayer videoPlayer = previewView.videoPlayer;
+        if (videoPlayer == null || previewView.timelineView == null) {
             return;
         }
         long currentPosition = videoPlayer.getCurrentPosition();
-        if (getDuration() > 1) {
-            float duration = currentPosition / getDuration();
-            if (!this.timelineView.isDragging()) {
-                StoryEntry storyEntry = this.entry;
-                if ((duration < storyEntry.left || duration > storyEntry.right) && System.currentTimeMillis() - this.seekedLastTime > 500) {
-                    this.seekedLastTime = System.currentTimeMillis();
-                    VideoPlayer videoPlayer2 = this.videoPlayer;
-                    long duration2 = (long) (this.entry.left * getDuration());
+        if (previewView.getDuration() > 1) {
+            float duration = currentPosition / previewView.getDuration();
+            if (!previewView.timelineView.isDragging()) {
+                StoryEntry storyEntry = previewView.entry;
+                if ((duration < storyEntry.left || duration > storyEntry.right) && System.currentTimeMillis() - previewView.seekedLastTime > 500) {
+                    previewView.seekedLastTime = System.currentTimeMillis();
+                    VideoPlayer videoPlayer2 = previewView.videoPlayer;
+                    long duration2 = (long) (previewView.entry.left * previewView.getDuration());
                     videoPlayer2.seekTo(duration2);
-                    updateAudioPlayer(true);
-                    updateRoundPlayer(true);
+                    previewView.updateAudioPlayer(true);
+                    previewView.updateRoundPlayer(true);
                     currentPosition = duration2;
-                    this.timelineView.setProgress(this.videoPlayer.getCurrentPosition());
+                    previewView.timelineView.setProgress(previewView.videoPlayer.getCurrentPosition());
                 }
             }
-            updateAudioPlayer(currentPosition < this.lastPos);
-            updateRoundPlayer(currentPosition < this.lastPos);
-            this.timelineView.setProgress(this.videoPlayer.getCurrentPosition());
+            previewView.updateAudioPlayer(currentPosition < previewView.lastPos);
+            previewView.updateRoundPlayer(currentPosition < previewView.lastPos);
+            previewView.timelineView.setProgress(previewView.videoPlayer.getCurrentPosition());
         } else {
-            this.timelineView.setProgress(this.videoPlayer.getCurrentPosition());
+            previewView.timelineView.setProgress(previewView.videoPlayer.getCurrentPosition());
         }
-        if (this.videoPlayer.isPlaying()) {
-            AndroidUtilities.cancelRunOnUIThread(this.updateProgressRunnable);
-            AndroidUtilities.runOnUIThread(this.updateProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+        if (previewView.videoPlayer.isPlaying()) {
+            AndroidUtilities.cancelRunOnUIThread(previewView.updateProgressRunnable);
+            AndroidUtilities.runOnUIThread(previewView.updateProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
         }
-        this.lastPos = currentPosition;
+        previewView.lastPos = currentPosition;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$11() {
-        if (this.audioPlayer == null || this.videoPlayer != null || this.roundPlayer != null || this.timelineView == null || isCollage()) {
+    public static /* synthetic */ void $r8$lambda$mySK8_QmHv1RuhFIVbbzfsoNLHs(PreviewView previewView) {
+        if (previewView.audioPlayer == null || previewView.videoPlayer != null || previewView.roundPlayer != null || previewView.timelineView == null || previewView.isCollage()) {
             return;
         }
-        long currentPosition = this.audioPlayer.getCurrentPosition();
-        StoryEntry storyEntry = this.entry;
+        long currentPosition = previewView.audioPlayer.getCurrentPosition();
+        StoryEntry storyEntry = previewView.entry;
         if (storyEntry != null) {
             float f = currentPosition;
             float f2 = storyEntry.audioLeft;
             float f3 = storyEntry.audioDuration;
-            if ((f < f2 * f3 || f > storyEntry.audioRight * f3) && System.currentTimeMillis() - this.seekedLastTime > 500) {
-                this.seekedLastTime = System.currentTimeMillis();
-                VideoPlayer videoPlayer = this.audioPlayer;
-                long j = (long) (this.entry.audioLeft * r1.audioDuration);
+            if ((f < f2 * f3 || f > storyEntry.audioRight * f3) && System.currentTimeMillis() - previewView.seekedLastTime > 500) {
+                previewView.seekedLastTime = System.currentTimeMillis();
+                VideoPlayer videoPlayer = previewView.audioPlayer;
+                long j = (long) (previewView.entry.audioLeft * r1.audioDuration);
                 videoPlayer.seekTo(j);
                 currentPosition = j;
             }
         }
-        this.timelineView.setProgress(currentPosition);
-        if (this.audioPlayer.isPlaying()) {
-            AndroidUtilities.cancelRunOnUIThread(this.updateAudioProgressRunnable);
-            AndroidUtilities.runOnUIThread(this.updateAudioProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+        previewView.timelineView.setProgress(currentPosition);
+        if (previewView.audioPlayer.isPlaying()) {
+            AndroidUtilities.cancelRunOnUIThread(previewView.updateAudioProgressRunnable);
+            AndroidUtilities.runOnUIThread(previewView.updateAudioProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$12() {
-        if (this.roundPlayer == null || this.videoPlayer != null || isCollage() || this.timelineView == null) {
+    public static /* synthetic */ void $r8$lambda$CxvBV3dFONwihCq5bSofn-gACbo(PreviewView previewView) {
+        if (previewView.roundPlayer == null || previewView.videoPlayer != null || previewView.isCollage() || previewView.timelineView == null) {
             return;
         }
-        long currentPosition = this.roundPlayer.getCurrentPosition();
-        StoryEntry storyEntry = this.entry;
+        long currentPosition = previewView.roundPlayer.getCurrentPosition();
+        StoryEntry storyEntry = previewView.entry;
         if (storyEntry != null) {
             float f = currentPosition;
             float f2 = storyEntry.roundLeft;
             float f3 = storyEntry.roundDuration;
-            if ((f < f2 * f3 || f > storyEntry.roundRight * f3) && System.currentTimeMillis() - this.seekedLastTime > 500) {
-                this.seekedLastTime = System.currentTimeMillis();
-                VideoPlayer videoPlayer = this.roundPlayer;
-                long j = (long) (this.entry.roundLeft * r1.roundDuration);
+            if ((f < f2 * f3 || f > storyEntry.roundRight * f3) && System.currentTimeMillis() - previewView.seekedLastTime > 500) {
+                previewView.seekedLastTime = System.currentTimeMillis();
+                VideoPlayer videoPlayer = previewView.roundPlayer;
+                long j = (long) (previewView.entry.roundLeft * r1.roundDuration);
                 videoPlayer.seekTo(j);
-                updateAudioPlayer(true);
+                previewView.updateAudioPlayer(true);
                 currentPosition = j;
             }
         }
-        this.timelineView.setProgress(currentPosition);
-        if (this.roundPlayer.isPlaying()) {
-            AndroidUtilities.cancelRunOnUIThread(this.updateRoundProgressRunnable);
-            AndroidUtilities.runOnUIThread(this.updateRoundProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
+        previewView.timelineView.setProgress(currentPosition);
+        if (previewView.roundPlayer.isPlaying()) {
+            AndroidUtilities.cancelRunOnUIThread(previewView.updateRoundProgressRunnable);
+            AndroidUtilities.runOnUIThread(previewView.updateRoundProgressRunnable, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
         }
     }
 
@@ -1996,6 +1986,7 @@ public abstract class PreviewView extends FrameLayout {
     private boolean touchEvent(MotionEvent motionEvent) {
         double d;
         float f;
+        float f2;
         if (!this.allowCropping) {
             return false;
         }
@@ -2035,25 +2026,30 @@ public abstract class PreviewView extends FrameLayout {
         }
         if (motionEvent.getActionMasked() == 2 && this.moving && this.entry != null) {
             PointF pointF3 = this.touch;
-            float f2 = pointF3.x * width;
-            float f3 = pointF3.y * width;
+            float f3 = pointF3.x * width;
+            float f4 = pointF3.y * width;
             PointF pointF4 = this.lastTouch;
-            float f4 = pointF4.x * width;
-            float f5 = pointF4.y * width;
+            float f5 = pointF4.x * width;
+            float f6 = pointF4.y * width;
             if (motionEvent.getPointerCount() > 1) {
-                float f6 = this.lastTouchDistance;
-                if (f6 != 0.0f) {
-                    float f7 = f / f6;
-                    this.touchMatrix.postScale(f7, f7, f2, f3);
+                float f7 = this.lastTouchDistance;
+                if (f7 != 0.0f) {
+                    float f8 = f / f7;
+                    this.touchMatrix.postScale(f8, f8, f3, f4);
                 }
                 float degrees = (float) Math.toDegrees(d - this.lastTouchRotation);
-                float f8 = this.rotationDiff + degrees;
-                this.rotationDiff = f8;
-                if (!this.allowRotation) {
-                    boolean z2 = Math.abs(f8) > 20.0f;
+                float f9 = this.rotationDiff + degrees;
+                this.rotationDiff = f9;
+                if (this.allowRotation) {
+                    f2 = 90.0f;
+                } else {
+                    boolean z2 = Math.abs(f9) > 20.0f;
                     this.allowRotation = z2;
-                    if (!z2) {
+                    if (z2) {
+                        f2 = 90.0f;
+                    } else {
                         extractPointsData(this.touchMatrix);
+                        f2 = 90.0f;
                         this.allowRotation = (((float) Math.round(this.angle / 90.0f)) * 90.0f) - this.angle > 20.0f;
                     }
                     if (!this.snappedRotation) {
@@ -2062,17 +2058,19 @@ public abstract class PreviewView extends FrameLayout {
                     }
                 }
                 if (this.allowRotation) {
-                    this.touchMatrix.postRotate(degrees, f2, f3);
+                    this.touchMatrix.postRotate(degrees, f3, f4);
                 }
                 this.allowWithSingleTouch = true;
+            } else {
+                f2 = 90.0f;
             }
             if (motionEvent.getPointerCount() > 1 || this.allowWithSingleTouch) {
-                this.touchMatrix.postTranslate(f2 - f4, f3 - f5);
+                this.touchMatrix.postTranslate(f3 - f5, f4 - f6);
             }
             this.finalMatrix.set(this.touchMatrix);
             this.matrix.set(this.touchMatrix);
             extractPointsData(this.matrix);
-            float round = (Math.round(this.angle / 90.0f) * 90.0f) - this.angle;
+            float round = (Math.round(this.angle / f2) * f2) - this.angle;
             if (this.allowRotation && !this.doNotSpanRotation) {
                 if (Math.abs(round) < 3.5f) {
                     this.finalMatrix.postRotate(round, this.cx, this.cy);
@@ -2202,15 +2200,15 @@ public abstract class PreviewView extends FrameLayout {
         return getBackgroundDrawable(drawable, i, wallPaper, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00f5 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0098  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2400,7 +2398,7 @@ public abstract class PreviewView extends FrameLayout {
         emojiThemes.loadWallpaper(z ? 1 : 0, new ResultCallback() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.ResultCallback
             public final void onComplete(Object obj) {
-                PreviewView.lambda$getBackgroundDrawableFromTheme$13(EmojiThemes.this, z, z, motionBackgroundDrawable, patternColor, (Pair) obj);
+                PreviewView.$r8$lambda$YvX6qPvkc_kWlwMcyzka-Jt4bas(EmojiThemes.this, z, z, motionBackgroundDrawable, patternColor, (Pair) obj);
             }
 
             @Override // org.telegram.tgnet.ResultCallback
@@ -2416,8 +2414,7 @@ public abstract class PreviewView extends FrameLayout {
         return motionBackgroundDrawable;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getBackgroundDrawableFromTheme$13(EmojiThemes emojiThemes, boolean z, boolean z2, MotionBackgroundDrawable motionBackgroundDrawable, int i, Pair pair) {
+    public static /* synthetic */ void $r8$lambda$YvX6qPvkc_kWlwMcyzka-Jt4bas(EmojiThemes emojiThemes, boolean z, boolean z2, MotionBackgroundDrawable motionBackgroundDrawable, int i, Pair pair) {
         if (pair == null) {
             return;
         }

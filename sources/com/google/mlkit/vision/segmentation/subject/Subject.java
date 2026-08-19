@@ -3,7 +3,7 @@ package com.google.mlkit.vision.segmentation.subject;
 import android.graphics.Bitmap;
 import java.nio.FloatBuffer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Subject {
     private final FloatBuffer zza;
     private final Bitmap zzb;

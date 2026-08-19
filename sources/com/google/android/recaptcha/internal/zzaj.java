@@ -79,13 +79,18 @@ public final class zzaj extends zzg {
         zzyn zzf = zzyo.zzf();
         zzf.zzq(str);
         List list = this.zza;
-        ArrayList<zzar> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         for (Object obj : list) {
             if (((zzar) obj).zzi()) {
                 arrayList.add(obj);
             }
         }
-        for (zzar zzarVar : arrayList) {
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj2 = arrayList.get(i);
+            i++;
+            zzar zzarVar = (zzar) obj2;
             if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
                 int zza = zzarVar.zza();
                 zzys zzf2 = zzyt.zzf();

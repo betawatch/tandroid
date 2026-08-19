@@ -32,7 +32,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BotAdView extends FrameLayout {
     public final TextView channelTitleView;
     public final ImageView closeView;
@@ -43,8 +43,7 @@ public class BotAdView extends FrameLayout {
     public final LinkSpanDrawable.LinksTextView textView;
     public final TextView titleView;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$P25H35BgaKK2z3c9Musq0lGku4E(View view) {
     }
 
     public BotAdView(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -111,7 +110,7 @@ public class BotAdView extends FrameLayout {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotAdView.lambda$new$0(view);
+                BotAdView.$r8$lambda$P25H35BgaKK2z3c9Musq0lGku4E(view);
             }
         });
         imageView.setVisibility(8);
@@ -172,31 +171,31 @@ public class BotAdView extends FrameLayout {
         this.textView.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
             public final void run(ClickableSpan clickableSpan) {
-                BotAdView.this.lambda$set$1(chatActivity, messageObject, clickableSpan);
+                BotAdView.$r8$lambda$S9BNqyvfPAXS4TKUxMYl96TORbs(BotAdView.this, chatActivity, messageObject, clickableSpan);
             }
         });
         this.removeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotAdView.lambda$set$2(runnable, view);
+                BotAdView.$r8$lambda$puxQK1w-OL9Nff1GJAcexXGGA-U(runnable, view);
             }
         });
         setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotAdView.this.lambda$set$3(chatActivity, messageObject, str, view);
+                BotAdView.$r8$lambda$pf5881vKpvzId0H2abS4VU4l_Dg(BotAdView.this, chatActivity, messageObject, str, view);
             }
         });
         this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotAdView.lambda$set$4(runnable2, view);
+                BotAdView.$r8$lambda$Va83yWJilzRQbxEY2IMw9hPpCRQ(runnable2, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$set$1(ChatActivity chatActivity, MessageObject messageObject, ClickableSpan clickableSpan) {
+    public static /* synthetic */ void $r8$lambda$S9BNqyvfPAXS4TKUxMYl96TORbs(BotAdView botAdView, ChatActivity chatActivity, MessageObject messageObject, ClickableSpan clickableSpan) {
+        botAdView.getClass();
         if (chatActivity != null) {
             chatActivity.logSponsoredClicked(messageObject, false, false);
         }
@@ -210,26 +209,24 @@ public class BotAdView extends FrameLayout {
                 return;
             }
         }
-        clickableSpan.onClick(this.textView);
+        clickableSpan.onClick(botAdView.textView);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$set$2(Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$puxQK1w-OL9Nff1GJAcexXGGA-U(Runnable runnable, View view) {
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$set$3(ChatActivity chatActivity, MessageObject messageObject, String str, View view) {
+    public static /* synthetic */ void $r8$lambda$pf5881vKpvzId0H2abS4VU4l_Dg(BotAdView botAdView, ChatActivity chatActivity, MessageObject messageObject, String str, View view) {
         if (chatActivity != null) {
+            botAdView.getClass();
             chatActivity.logSponsoredClicked(messageObject, false, false);
         }
-        Browser.openUrl(getContext(), Uri.parse(str), true, false, false, null, null, false, MessagesController.getInstance(UserConfig.selectedAccount).sponsoredLinksInappAllow, false);
+        Browser.openUrl(botAdView.getContext(), Uri.parse(str), true, false, false, null, null, false, MessagesController.getInstance(UserConfig.selectedAccount).sponsoredLinksInappAllow, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$set$4(Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$Va83yWJilzRQbxEY2IMw9hPpCRQ(Runnable runnable, View view) {
         if (runnable != null) {
             runnable.run();
         }

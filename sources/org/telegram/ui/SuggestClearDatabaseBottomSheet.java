@@ -67,7 +67,7 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SuggestClearDatabaseBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SuggestClearDatabaseBottomSheet.this.lambda$new$1(baseFragment, view);
+                SuggestClearDatabaseBottomSheet.$r8$lambda$nYsqJ1RXmHGX4Nf_7a3E266jF0o(SuggestClearDatabaseBottomSheet.this, baseFragment, view);
             }
         });
         ScrollView scrollView = new ScrollView(parentActivity);
@@ -75,8 +75,8 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         setCustomView(scrollView);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(final BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$nYsqJ1RXmHGX4Nf_7a3E266jF0o(final SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet, final BaseFragment baseFragment, View view) {
+        suggestClearDatabaseBottomSheet.getClass();
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
         builder.setTitle(LocaleController.getString(R.string.LocalDatabaseClearTextTitle));
         builder.setMessage(LocaleController.getString(R.string.LocalDatabaseClearText));
@@ -84,7 +84,7 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         builder.setPositiveButton(LocaleController.getString(R.string.CacheClear), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SuggestClearDatabaseBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                SuggestClearDatabaseBottomSheet.this.lambda$new$0(baseFragment, alertDialog, i);
+                SuggestClearDatabaseBottomSheet.$r8$lambda$mTqBTGq3KzrFVzvYRtiCazGxjOc(SuggestClearDatabaseBottomSheet.this, baseFragment, alertDialog, i);
             }
         });
         AlertDialog create = builder.create();
@@ -95,26 +95,25 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(BaseFragment baseFragment, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$mTqBTGq3KzrFVzvYRtiCazGxjOc(SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet, BaseFragment baseFragment, AlertDialog alertDialog, int i) {
+        suggestClearDatabaseBottomSheet.getClass();
         if (baseFragment.getParentActivity() == null) {
             return;
         }
-        MessagesController.getInstance(this.currentAccount).clearQueryTime();
+        MessagesController.getInstance(suggestClearDatabaseBottomSheet.currentAccount).clearQueryTime();
         baseFragment.getMessagesStorage().clearLocalDatabase();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         dialog = null;
     }
 
     public static void dismissDialog() {
         SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet = dialog;
         if (suggestClearDatabaseBottomSheet != null) {
-            suggestClearDatabaseBottomSheet.lambda$new$0();
+            suggestClearDatabaseBottomSheet.dismiss();
             dialog = null;
         }
     }

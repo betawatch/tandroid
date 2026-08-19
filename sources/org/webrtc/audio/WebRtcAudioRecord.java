@@ -25,7 +25,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
     private static final int AUDIO_RECORD_STOP = 1;
@@ -486,9 +486,7 @@ public class WebRtcAudioRecord {
         Callable callable = new Callable() { // from class: org.webrtc.audio.WebRtcAudioRecord$$ExternalSyntheticLambda20
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                String lambda$scheduleLogRecordingConfigurationsTask$0;
-                lambda$scheduleLogRecordingConfigurationsTask$0 = WebRtcAudioRecord.this.lambda$scheduleLogRecordingConfigurationsTask$0(audioRecord);
-                return lambda$scheduleLogRecordingConfigurationsTask$0;
+                return WebRtcAudioRecord.$r8$lambda$diScS9KLur04ciuoTfC5OpQrgtU(WebRtcAudioRecord.this, audioRecord);
             }
         };
         ScheduledFuture<String> scheduledFuture = this.future;
@@ -498,10 +496,9 @@ public class WebRtcAudioRecord {
         this.future = this.executor.schedule(callable, 100L, TimeUnit.MILLISECONDS);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$scheduleLogRecordingConfigurationsTask$0(AudioRecord audioRecord) {
-        if (this.audioRecord == audioRecord) {
-            logRecordingConfigurations(audioRecord, true);
+    public static /* synthetic */ String $r8$lambda$diScS9KLur04ciuoTfC5OpQrgtU(WebRtcAudioRecord webRtcAudioRecord, AudioRecord audioRecord) {
+        if (webRtcAudioRecord.audioRecord == audioRecord) {
+            webRtcAudioRecord.logRecordingConfigurations(audioRecord, true);
             return "Scheduled task is done";
         }
         Logging.d(TAG, "audio record has changed");
@@ -672,14 +669,12 @@ public class WebRtcAudioRecord {
         int type2;
         id = audioDeviceInfo.getId();
         id2 = audioDeviceInfo2.getId();
-        if (id == id2) {
-            type = audioDeviceInfo.getType();
-            type2 = audioDeviceInfo2.getType();
-            if (type == type2) {
-                return true;
-            }
+        if (id != id2) {
+            return false;
         }
-        return false;
+        type = audioDeviceInfo.getType();
+        type2 = audioDeviceInfo2.getType();
+        return type == type2;
     }
 
     private static String audioStateToString(int i) {

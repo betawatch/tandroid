@@ -1,59 +1,76 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import java.util.function.DoubleConsumer;
+import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-final class w extends f2 {
-    boolean b;
-    p c;
-    final /* synthetic */ x d;
+public abstract class w extends x {
+    public final /* synthetic */ int l;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    w(x xVar, m2 m2Var) {
-        super(m2Var);
-        this.d = xVar;
-        m2 m2Var2 = this.a;
-        Objects.requireNonNull(m2Var2);
-        this.c = new p(m2Var2);
+    public /* synthetic */ w(a aVar, int i, int i2) {
+        super(aVar, i);
+        this.l = i2;
     }
 
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public final void l(long j) {
-        this.a.l(-1L);
+    @Override // j$.util.stream.a
+    public final boolean L() {
+        switch (this.l) {
+            case 0:
+                return true;
+            default:
+                return false;
+        }
     }
 
-    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        D d2 = (D) ((a) this.d.n).apply(d);
-        if (d2 != null) {
-            try {
-                boolean z = this.b;
-                p pVar = this.c;
-                if (!z) {
-                    d2.sequential().forEach(pVar);
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final A sequential() {
+        switch (this.l) {
+            case 0:
+                this.a.k = false;
+                break;
+            default:
+                this.a.k = false;
+                break;
+        }
+        return this;
+    }
+
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final A parallel() {
+        switch (this.l) {
+            case 0:
+                this.a.k = true;
+                break;
+            default:
+                this.a.k = true;
+                break;
+        }
+        return this;
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        switch (this.l) {
+            case 0:
+                if (!S2.ORDERED.q(this.f)) {
+                    break;
                 } else {
-                    j$.util.W spliterator = d2.sequential().spliterator();
-                    while (!this.a.n() && spliterator.tryAdvance((DoubleConsumer) pVar)) {
-                    }
+                    break;
                 }
-            } catch (Throwable th) {
-                try {
-                    d2.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
+            default:
+                if (!S2.ORDERED.q(this.f)) {
+                    break;
+                } else {
+                    break;
                 }
-                throw th;
-            }
         }
-        if (d2 != null) {
-            d2.close();
-        }
+        return new q(this, S2.r, 1);
     }
 
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public final boolean n() {
-        this.b = true;
-        return this.a.n();
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
+        switch (this.l) {
+        }
+        return spliterator();
     }
 }

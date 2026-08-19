@@ -36,9 +36,17 @@ final class zzfc extends SuspendLambda implements Function2 {
         return ((zzfc) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0041, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x003f, code lost:
     
-        if (((com.google.android.recaptcha.internal.zzhg) r10).zza(r1, r9) == r0) goto L15;
+        if (((com.google.android.recaptcha.internal.zzhg) r10).zza(r1, r9) == r0) goto L14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0045, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0031, code lost:
+    
+        if (r10 != r0) goto L9;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -56,18 +64,15 @@ final class zzfc extends SuspendLambda implements Function2 {
             long j = this.zzf;
             this.zza = zzhkVar;
             this.zzb = 1;
-            zzhg zzhgVar = new zzhg(new zzfb(zzfpVar, zzxnVar, j, null));
-            if (zzhgVar != coroutine_suspended) {
-                obj = zzhgVar;
+            obj = new zzhg(new zzfb(zzfpVar, zzxnVar, j, null));
+        } else {
+            if (i != 1) {
+                ResultKt.throwOnFailure(obj);
+                return Unit.INSTANCE;
             }
-            return coroutine_suspended;
-        }
-        if (i != 1) {
+            zzhkVar = (zzhk) this.zza;
             ResultKt.throwOnFailure(obj);
-            return Unit.INSTANCE;
         }
-        zzhkVar = (zzhk) this.zza;
-        ResultKt.throwOnFailure(obj);
         this.zza = null;
         this.zzb = 2;
     }

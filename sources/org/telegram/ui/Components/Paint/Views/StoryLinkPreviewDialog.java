@@ -85,15 +85,19 @@ public class StoryLinkPreviewDialog extends Dialog {
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.1
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
-                if (StoryLinkPreviewDialog.this.openProgress > 0.0f && StoryLinkPreviewDialog.this.blurBitmapPaint != null) {
+                Canvas canvas2;
+                if (StoryLinkPreviewDialog.this.openProgress <= 0.0f || StoryLinkPreviewDialog.this.blurBitmapPaint == null) {
+                    canvas2 = canvas;
+                } else {
                     StoryLinkPreviewDialog.this.blurMatrix.reset();
                     float width = getWidth() / StoryLinkPreviewDialog.this.blurBitmap.getWidth();
                     StoryLinkPreviewDialog.this.blurMatrix.postScale(width, width);
                     StoryLinkPreviewDialog.this.blurBitmapShader.setLocalMatrix(StoryLinkPreviewDialog.this.blurMatrix);
                     StoryLinkPreviewDialog.this.blurBitmapPaint.setAlpha((int) (StoryLinkPreviewDialog.this.openProgress * 255.0f));
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), StoryLinkPreviewDialog.this.blurBitmapPaint);
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), StoryLinkPreviewDialog.this.blurBitmapPaint);
                 }
-                super.dispatchDraw(canvas);
+                super.dispatchDraw(canvas2);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -109,7 +113,7 @@ public class StoryLinkPreviewDialog extends Dialog {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryLinkPreviewDialog.this.lambda$new$0(view);
+                StoryLinkPreviewDialog.this.onBackPressed();
             }
         });
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.2
@@ -207,7 +211,7 @@ public class StoryLinkPreviewDialog extends Dialog {
         toggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryLinkPreviewDialog.this.lambda$new$1(i, view);
+                StoryLinkPreviewDialog.$r8$lambda$EhR8HWrum4XC8mMTxOzkxYiikxE(StoryLinkPreviewDialog.this, i, view);
             }
         });
         makeOptions.addView(toggleButton);
@@ -216,7 +220,7 @@ public class StoryLinkPreviewDialog extends Dialog {
         toggleButton2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryLinkPreviewDialog.this.lambda$new$2(i, view);
+                StoryLinkPreviewDialog.$r8$lambda$ALT2h9uMvRgCMrKTv_S0I2-OkCY(StoryLinkPreviewDialog.this, i, view);
             }
         });
         makeOptions.addView(toggleButton2);
@@ -230,7 +234,7 @@ public class StoryLinkPreviewDialog extends Dialog {
         makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.DoNotLinkPreview), true, new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkPreviewDialog.this.lambda$new$3();
+                StoryLinkPreviewDialog.$r8$lambda$8auzwqAe7X70owiPMRuwoOCdpGc(StoryLinkPreviewDialog.this);
             }
         });
         linearLayout.addView(makeOptions.getLayout(), LayoutHelper.createLinear(-2, -2, 0.0f, 85));
@@ -267,37 +271,29 @@ public class StoryLinkPreviewDialog extends Dialog {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onBackPressed();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, View view) {
-        LinkPreview.WebPagePreview webPagePreview = this.link;
+    public static /* synthetic */ void $r8$lambda$EhR8HWrum4XC8mMTxOzkxYiikxE(StoryLinkPreviewDialog storyLinkPreviewDialog, int i, View view) {
+        LinkPreview.WebPagePreview webPagePreview = storyLinkPreviewDialog.link;
         boolean z = webPagePreview.captionAbove;
         webPagePreview.captionAbove = !z;
-        this.captionButton.setState(z, true);
-        this.linkView.set(i, this.link, true);
+        storyLinkPreviewDialog.captionButton.setState(z, true);
+        storyLinkPreviewDialog.linkView.set(i, storyLinkPreviewDialog.link, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(int i, View view) {
-        LinkPreview.WebPagePreview webPagePreview = this.link;
+    public static /* synthetic */ void $r8$lambda$ALT2h9uMvRgCMrKTv_S0I2-OkCY(StoryLinkPreviewDialog storyLinkPreviewDialog, int i, View view) {
+        LinkPreview.WebPagePreview webPagePreview = storyLinkPreviewDialog.link;
         boolean z = webPagePreview.largePhoto;
         webPagePreview.largePhoto = !z;
-        this.photoButton.setState(z, true);
-        this.linkView.set(i, this.link, true);
+        storyLinkPreviewDialog.photoButton.setState(z, true);
+        storyLinkPreviewDialog.linkView.set(i, storyLinkPreviewDialog.link, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        Utilities.Callback callback = this.whenDone;
+    public static /* synthetic */ void $r8$lambda$8auzwqAe7X70owiPMRuwoOCdpGc(StoryLinkPreviewDialog storyLinkPreviewDialog) {
+        Utilities.Callback callback = storyLinkPreviewDialog.whenDone;
         if (callback != null) {
             callback.run(null);
-            this.whenDone = null;
+            storyLinkPreviewDialog.whenDone = null;
         }
-        dismiss();
+        storyLinkPreviewDialog.dismiss();
     }
 
     @Override // android.app.Dialog
@@ -334,7 +330,7 @@ public class StoryLinkPreviewDialog extends Dialog {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StoryLinkPreviewDialog.this.lambda$animateOpenTo$4(valueAnimator2);
+                StoryLinkPreviewDialog.$r8$lambda$bUrScP378Y3i95ZEa8b2EOdDu2c(StoryLinkPreviewDialog.this, valueAnimator2);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.7
@@ -356,14 +352,14 @@ public class StoryLinkPreviewDialog extends Dialog {
         this.openAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$4(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$bUrScP378Y3i95ZEa8b2EOdDu2c(StoryLinkPreviewDialog storyLinkPreviewDialog, ValueAnimator valueAnimator) {
+        storyLinkPreviewDialog.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.openProgress = floatValue;
-        this.containerView.setAlpha(floatValue);
-        this.containerView.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, this.openProgress));
-        this.containerView.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, this.openProgress));
-        this.windowView.invalidate();
+        storyLinkPreviewDialog.openProgress = floatValue;
+        storyLinkPreviewDialog.containerView.setAlpha(floatValue);
+        storyLinkPreviewDialog.containerView.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, storyLinkPreviewDialog.openProgress));
+        storyLinkPreviewDialog.containerView.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, storyLinkPreviewDialog.openProgress));
+        storyLinkPreviewDialog.windowView.invalidate();
     }
 
     private void prepareBlur(final View view) {
@@ -373,29 +369,29 @@ public class StoryLinkPreviewDialog extends Dialog {
         AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                StoryLinkPreviewDialog.this.lambda$prepareBlur$5(view, (Bitmap) obj);
+                StoryLinkPreviewDialog.$r8$lambda$R8S2bWp07ZAq7fxHtzr9OTH6tdY(StoryLinkPreviewDialog.this, view, (Bitmap) obj);
             }
         }, 14.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$5(View view, Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$R8S2bWp07ZAq7fxHtzr9OTH6tdY(StoryLinkPreviewDialog storyLinkPreviewDialog, View view, Bitmap bitmap) {
         if (view != null) {
+            storyLinkPreviewDialog.getClass();
             view.setVisibility(0);
         }
-        this.blurBitmap = bitmap;
+        storyLinkPreviewDialog.blurBitmap = bitmap;
         Paint paint = new Paint(1);
-        this.blurBitmapPaint = paint;
-        Bitmap bitmap2 = this.blurBitmap;
+        storyLinkPreviewDialog.blurBitmapPaint = paint;
+        Bitmap bitmap2 = storyLinkPreviewDialog.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap2, tileMode, tileMode);
-        this.blurBitmapShader = bitmapShader;
+        storyLinkPreviewDialog.blurBitmapShader = bitmapShader;
         paint.setShader(bitmapShader);
         ColorMatrix colorMatrix = new ColorMatrix();
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? 0.08f : 0.25f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.02f : -0.07f);
-        this.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        this.blurMatrix = new Matrix();
+        storyLinkPreviewDialog.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        storyLinkPreviewDialog.blurMatrix = new Matrix();
     }
 
     @Override // android.app.Dialog
@@ -426,23 +422,18 @@ public class StoryLinkPreviewDialog extends Dialog {
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkPreviewDialog.this.lambda$dismiss$7();
+                StoryLinkPreviewDialog.$r8$lambda$gn54f_OwkNLlbATnsZrijKtc5Yg(StoryLinkPreviewDialog.this);
             }
         });
         this.windowView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$6() {
-        super.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$7() {
+    public static /* synthetic */ void $r8$lambda$gn54f_OwkNLlbATnsZrijKtc5Yg(final StoryLinkPreviewDialog storyLinkPreviewDialog) {
+        storyLinkPreviewDialog.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkPreviewDialog.this.lambda$dismiss$6();
+                super/*android.app.Dialog*/.dismiss();
             }
         });
     }

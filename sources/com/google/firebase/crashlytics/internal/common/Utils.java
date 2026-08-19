@@ -21,9 +21,7 @@ public abstract class Utils {
         Continuation continuation = new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.Utils$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task3) {
-                Void lambda$race$0;
-                lambda$race$0 = Utils.lambda$race$0(TaskCompletionSource.this, task3);
-                return lambda$race$0;
+                return Utils.$r8$lambda$fNSdSg4hoY-BdxTuelQo0-XNfdA(TaskCompletionSource.this, task3);
             }
         };
         task.continueWith(continuation);
@@ -31,8 +29,7 @@ public abstract class Utils {
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Void lambda$race$0(TaskCompletionSource taskCompletionSource, Task task) {
+    public static /* synthetic */ Void $r8$lambda$fNSdSg4hoY-BdxTuelQo0-XNfdA(TaskCompletionSource taskCompletionSource, Task task) {
         if (task.isSuccessful()) {
             taskCompletionSource.trySetResult(task.getResult());
             return null;
@@ -49,9 +46,7 @@ public abstract class Utils {
         Continuation continuation = new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.Utils$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task3) {
-                Void lambda$race$1;
-                lambda$race$1 = Utils.lambda$race$1(TaskCompletionSource.this, task3);
-                return lambda$race$1;
+                return Utils.$r8$lambda$NExQHcMqHF6e6danWK4vMHi41Y4(TaskCompletionSource.this, task3);
             }
         };
         task.continueWith(executor, continuation);
@@ -59,8 +54,7 @@ public abstract class Utils {
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Void lambda$race$1(TaskCompletionSource taskCompletionSource, Task task) {
+    public static /* synthetic */ Void $r8$lambda$NExQHcMqHF6e6danWK4vMHi41Y4(TaskCompletionSource taskCompletionSource, Task task) {
         if (task.isSuccessful()) {
             taskCompletionSource.trySetResult(task.getResult());
             return null;
@@ -77,21 +71,18 @@ public abstract class Utils {
         executor.execute(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.Utils$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                Utils.lambda$callTask$3(callable, executor, taskCompletionSource);
+                Utils.$r8$lambda$kWusQ-GH24kVwU03QEe1Xf63uWY(callable, executor, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$callTask$3(Callable callable, Executor executor, final TaskCompletionSource taskCompletionSource) {
+    public static /* synthetic */ void $r8$lambda$kWusQ-GH24kVwU03QEe1Xf63uWY(Callable callable, Executor executor, final TaskCompletionSource taskCompletionSource) {
         try {
             ((Task) callable.call()).continueWith(executor, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.Utils$$ExternalSyntheticLambda4
                 @Override // com.google.android.gms.tasks.Continuation
                 public final Object then(Task task) {
-                    Object lambda$callTask$2;
-                    lambda$callTask$2 = Utils.lambda$callTask$2(TaskCompletionSource.this, task);
-                    return lambda$callTask$2;
+                    return Utils.$r8$lambda$-YlsqxsjAEowli87HCBuZ6Mr9C4(TaskCompletionSource.this, task);
                 }
             });
         } catch (Exception e) {
@@ -99,8 +90,7 @@ public abstract class Utils {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$callTask$2(TaskCompletionSource taskCompletionSource, Task task) {
+    public static /* synthetic */ Object $r8$lambda$-YlsqxsjAEowli87HCBuZ6Mr9C4(TaskCompletionSource taskCompletionSource, Task task) {
         if (task.isSuccessful()) {
             taskCompletionSource.setResult(task.getResult());
             return null;
@@ -117,9 +107,7 @@ public abstract class Utils {
         task.continueWith(TASK_CONTINUATION_EXECUTOR_SERVICE, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.Utils$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                Object lambda$awaitEvenIfOnMainThread$4;
-                lambda$awaitEvenIfOnMainThread$4 = Utils.lambda$awaitEvenIfOnMainThread$4(countDownLatch, task2);
-                return lambda$awaitEvenIfOnMainThread$4;
+                return Utils.$r8$lambda$BTAbU8pxKqAfoQOJygHsdSswNMI(countDownLatch, task2);
             }
         });
         if (Looper.getMainLooper() == Looper.myLooper()) {
@@ -139,8 +127,7 @@ public abstract class Utils {
         throw new TimeoutException();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$awaitEvenIfOnMainThread$4(CountDownLatch countDownLatch, Task task) {
+    public static /* synthetic */ Object $r8$lambda$BTAbU8pxKqAfoQOJygHsdSswNMI(CountDownLatch countDownLatch, Task task) {
         countDownLatch.countDown();
         return null;
     }

@@ -299,14 +299,13 @@ public class LiteMode {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.LiteMode$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LiteMode.lambda$onPowerSaverApplied$0(z);
+                    LiteMode.$r8$lambda$wUa83SN3wAsqe5yQuuAFmvxX3L4(z);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPowerSaverApplied$0(boolean z) {
+    public static /* synthetic */ void $r8$lambda$wUa83SN3wAsqe5yQuuAFmvxX3L4(boolean z) {
         Iterator<Utilities.Callback<Boolean>> it = onPowerSaverAppliedListeners.iterator();
         while (it.hasNext()) {
             Utilities.Callback<Boolean> next = it.next();

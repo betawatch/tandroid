@@ -27,7 +27,6 @@ import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
@@ -64,7 +63,7 @@ import org.telegram.ui.web.AddressBarList;
 import org.telegram.ui.web.BrowserHistory;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AddressBarList extends FrameLayout {
     private int backgroundColor;
     private final BookmarksList bookmarksList;
@@ -175,7 +174,7 @@ public class AddressBarList extends FrameLayout {
         this.bookmarksList = new BookmarksList(i, new Runnable() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                AddressBarList.this.lambda$new$0();
+                AddressBarList.this.listView.adapter.update(true);
             }
         });
         this.space = new View(context) { // from class: org.telegram.ui.web.AddressBarList.2
@@ -191,24 +190,18 @@ public class AddressBarList extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.listView.adapter.update(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void clearRecentSearches(View view) {
         new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.WebRecentClearTitle)).setMessage(LocaleController.getString(R.string.WebRecentClearText)).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                AddressBarList.this.lambda$clearRecentSearches$1(alertDialog, i);
+                AddressBarList.$r8$lambda$TtOs0I5Kdv2a3yBWwbVCj04LQtk(AddressBarList.this, alertDialog, i);
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clearRecentSearches$1(AlertDialog alertDialog, int i) {
-        clearRecentSearches(getContext());
-        this.listView.adapter.update(true);
+    public static /* synthetic */ void $r8$lambda$TtOs0I5Kdv2a3yBWwbVCj04LQtk(AddressBarList addressBarList, AlertDialog alertDialog, int i) {
+        clearRecentSearches(addressBarList.getContext());
+        addressBarList.listView.adapter.update(true);
     }
 
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
@@ -227,7 +220,7 @@ public class AddressBarList extends FrameLayout {
             arrayList.add(Address2View.Factory.as(1, str, new View.OnClickListener() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddressBarList.this.lambda$fillItems$2(str, view);
+                    AddressBarList.$r8$lambda$YpiGxkAnpjQUmTwsml7BUKmG9Gg(AddressBarList.this, str, view);
                 }
             }, i == 0, i == this.suggestions.size() - 1, this));
             i++;
@@ -245,7 +238,7 @@ public class AddressBarList extends FrameLayout {
                 arrayList.add(Address2View.Factory.as(0, str2, new View.OnClickListener() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        AddressBarList.this.lambda$fillItems$3(str2, view);
+                        AddressBarList.$r8$lambda$stNW-dA-RcmIlhL7aOAk6Qpq-vU(AddressBarList.this, str2, view);
                     }
                 }, i2 == 0, i2 == recentSearches.size() - 1, this));
                 i2++;
@@ -270,17 +263,15 @@ public class AddressBarList extends FrameLayout {
         arrayList.add(UItem.asFlicker(arrayList.size(), 32));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$2(String str, View view) {
-        Utilities.Callback callback = this.onQueryInsertClick;
+    public static /* synthetic */ void $r8$lambda$YpiGxkAnpjQUmTwsml7BUKmG9Gg(AddressBarList addressBarList, String str, View view) {
+        Utilities.Callback callback = addressBarList.onQueryInsertClick;
         if (callback != null) {
             callback.run(str);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$3(String str, View view) {
-        Utilities.Callback callback = this.onQueryInsertClick;
+    public static /* synthetic */ void $r8$lambda$stNW-dA-RcmIlhL7aOAk6Qpq-vU(AddressBarList addressBarList, String str, View view) {
+        Utilities.Callback callback = addressBarList.onQueryInsertClick;
         if (callback != null) {
             callback.run(str);
         }
@@ -295,13 +286,14 @@ public class AddressBarList extends FrameLayout {
             }
         }
         CharSequence charSequence = messageObject.messageText;
-        if (charSequence != null && charSequence.length() > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(messageObject.messageText);
-            for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
-                String url = uRLSpan.getURL();
-                if (url != null && !url.startsWith("@") && !url.startsWith("#") && !url.startsWith("$")) {
-                    return url;
-                }
+        if (charSequence == null || charSequence.length() <= 0) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(messageObject.messageText);
+        for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
+            String url = uRLSpan.getURL();
+            if (url != null && !url.startsWith("@") && !url.startsWith("#") && !url.startsWith("$")) {
+                return url;
             }
         }
         return null;
@@ -419,7 +411,7 @@ public class AddressBarList extends FrameLayout {
         this.currentView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddressBarList.this.lambda$setCurrent$4(runnable, view);
+                AddressBarList.$r8$lambda$YSiTCFOjsMYnhC4NSL3EwrnOBBU(AddressBarList.this, runnable, view);
             }
         });
         this.currentCopyView.setOnClickListener(onClickListener);
@@ -429,13 +421,12 @@ public class AddressBarList extends FrameLayout {
         this.listView.scrollToPosition(0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCurrent$4(Runnable runnable, View view) {
-        this.hideCurrent = true;
+    public static /* synthetic */ void $r8$lambda$YSiTCFOjsMYnhC4NSL3EwrnOBBU(AddressBarList addressBarList, Runnable runnable, View view) {
+        addressBarList.hideCurrent = true;
         if (runnable != null) {
             runnable.run();
         }
-        this.listView.adapter.update(true);
+        addressBarList.listView.adapter.update(true);
     }
 
     public void setInput(String str) {
@@ -457,28 +448,27 @@ public class AddressBarList extends FrameLayout {
         this.lastTask = new HttpGetTask(new Utilities.Callback() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                AddressBarList.this.lambda$setInput$6(z, (String) obj);
+                AddressBarList.$r8$lambda$BBrE1eH0RTg_UqaYE-TTgoD4liM(AddressBarList.this, z, (String) obj);
             }
         }).execute(SearchEngine.getCurrent().getAutocompleteURL(str));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setInput$6(final boolean z, final String str) {
+    public static /* synthetic */ void $r8$lambda$BBrE1eH0RTg_UqaYE-TTgoD4liM(final AddressBarList addressBarList, final boolean z, final String str) {
+        addressBarList.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                AddressBarList.this.lambda$setInput$5(str, z);
+                AddressBarList.$r8$lambda$jiACZx8TMSkFPdxybqDOf4xwq64(AddressBarList.this, str, z);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setInput$5(String str, boolean z) {
-        this.suggestions.clear();
-        this.suggestions.addAll(SearchEngine.getCurrent().extractSuggestions(str));
-        this.listView.adapter.update(true);
-        if (z != (!this.suggestions.isEmpty())) {
-            this.listView.layoutManager.scrollToPositionWithOffset(0, 0);
+    public static /* synthetic */ void $r8$lambda$jiACZx8TMSkFPdxybqDOf4xwq64(AddressBarList addressBarList, String str, boolean z) {
+        addressBarList.suggestions.clear();
+        addressBarList.suggestions.addAll(SearchEngine.getCurrent().extractSuggestions(str));
+        addressBarList.listView.adapter.update(true);
+        if (z != (!addressBarList.suggestions.isEmpty())) {
+            addressBarList.listView.layoutManager.scrollToPositionWithOffset(0, 0);
         }
     }
 
@@ -905,7 +895,7 @@ public class AddressBarList extends FrameLayout {
                     MessageObject messageObject = (MessageObject) obj;
                     boolean z2 = uItem.accent;
                     CharSequence charSequence = uItem.subtext;
-                    bookmarkView.set(messageObject, z2, charSequence == null ? null : charSequence.toString(), uItem.checked, z);
+                    bookmarkView.set(messageObject, z2, charSequence != null ? charSequence.toString() : null, uItem.checked, z);
                     return;
                 }
                 if (obj instanceof BrowserHistory.Entry) {
@@ -966,6 +956,7 @@ public class AddressBarList extends FrameLayout {
     }
 
     public static ArrayList getRecentSearches(Context context) {
+        int i = 0;
         SharedPreferences sharedPreferences = context.getSharedPreferences("webhistory", 0);
         ArrayList arrayList = new ArrayList();
         String string = sharedPreferences.getString("queries_json", null);
@@ -973,8 +964,8 @@ public class AddressBarList extends FrameLayout {
             try {
                 ArrayList arrayList2 = new ArrayList();
                 JSONArray jSONArray = new JSONArray(string);
-                for (int i = 0; i < jSONArray.length(); i++) {
-                    JSONObject jSONObject = jSONArray.getJSONObject(i);
+                for (int i2 = 0; i2 < jSONArray.length(); i2++) {
+                    JSONObject jSONObject = jSONArray.getJSONObject(i2);
                     QueryEntry queryEntry = new QueryEntry(jSONObject.optString("name"), jSONObject.optLong("usage", System.currentTimeMillis()));
                     queryEntry.rank = jSONObject.optDouble("rank", 0.0d);
                     arrayList2.add(queryEntry);
@@ -982,14 +973,14 @@ public class AddressBarList extends FrameLayout {
                 Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda10
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$getRecentSearches$7;
-                        lambda$getRecentSearches$7 = AddressBarList.lambda$getRecentSearches$7((AddressBarList.QueryEntry) obj, (AddressBarList.QueryEntry) obj2);
-                        return lambda$getRecentSearches$7;
+                        return AddressBarList.$r8$lambda$A9HCdiFsN75Rds5ZIjcYL6l3kAw((AddressBarList.QueryEntry) obj, (AddressBarList.QueryEntry) obj2);
                     }
                 });
-                Iterator it = arrayList2.iterator();
-                while (it.hasNext()) {
-                    QueryEntry queryEntry2 = (QueryEntry) it.next();
+                int size = arrayList2.size();
+                while (i < size) {
+                    Object obj = arrayList2.get(i);
+                    i++;
+                    QueryEntry queryEntry2 = (QueryEntry) obj;
                     if (arrayList.size() >= 20) {
                         break;
                     }
@@ -1001,8 +992,7 @@ public class AddressBarList extends FrameLayout {
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getRecentSearches$7(QueryEntry queryEntry, QueryEntry queryEntry2) {
+    public static /* synthetic */ int $r8$lambda$A9HCdiFsN75Rds5ZIjcYL6l3kAw(QueryEntry queryEntry, QueryEntry queryEntry2) {
         return (int) (queryEntry2.rank - queryEntry.rank);
     }
 
@@ -1023,9 +1013,7 @@ public class AddressBarList extends FrameLayout {
                 Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.web.AddressBarList$$ExternalSyntheticLambda4
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$pushRecentSearch$8;
-                        lambda$pushRecentSearch$8 = AddressBarList.lambda$pushRecentSearch$8((AddressBarList.QueryEntry) obj, (AddressBarList.QueryEntry) obj2);
-                        return lambda$pushRecentSearch$8;
+                        return AddressBarList.$r8$lambda$M1RWMsq_-khurYUX4HFPRF86Yew((AddressBarList.QueryEntry) obj, (AddressBarList.QueryEntry) obj2);
                     }
                 });
             } catch (Exception e) {
@@ -1069,8 +1057,7 @@ public class AddressBarList extends FrameLayout {
         sharedPreferences.edit().putString("queries_json", jSONArray2.toString()).apply();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$pushRecentSearch$8(QueryEntry queryEntry, QueryEntry queryEntry2) {
+    public static /* synthetic */ int $r8$lambda$M1RWMsq_-khurYUX4HFPRF86Yew(QueryEntry queryEntry, QueryEntry queryEntry2) {
         return (int) (queryEntry2.rank - queryEntry.rank);
     }
 

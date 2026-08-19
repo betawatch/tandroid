@@ -30,11 +30,13 @@ final class AutoValue_CrashlyticsReport_CustomAttribute extends CrashlyticsRepor
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.CustomAttribute)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.CustomAttribute) {
+            CrashlyticsReport.CustomAttribute customAttribute = (CrashlyticsReport.CustomAttribute) obj;
+            if (this.key.equals(customAttribute.getKey()) && this.value.equals(customAttribute.getValue())) {
+                return true;
+            }
         }
-        CrashlyticsReport.CustomAttribute customAttribute = (CrashlyticsReport.CustomAttribute) obj;
-        return this.key.equals(customAttribute.getKey()) && this.value.equals(customAttribute.getValue());
+        return false;
     }
 
     public int hashCode() {

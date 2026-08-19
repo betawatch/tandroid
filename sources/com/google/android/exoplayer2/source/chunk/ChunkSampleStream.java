@@ -312,8 +312,8 @@ public class ChunkSampleStream implements SampleStream, SequenceableLoader, Load
         this.callback.onContinueLoadingRequested(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00e3  */
     @Override // com.google.android.exoplayer2.upstream.Loader.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -374,7 +374,7 @@ public class ChunkSampleStream implements SampleStream, SequenceableLoader, Load
         }
         boolean isPendingReset = isPendingReset();
         if (isPendingReset) {
-            list = Collections.emptyList();
+            list = Collections.EMPTY_LIST;
             j2 = this.pendingResetPositionUs;
         } else {
             list = this.readOnlyMediaChunks;

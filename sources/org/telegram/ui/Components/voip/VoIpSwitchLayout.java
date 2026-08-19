@@ -151,12 +151,13 @@ public class VoIpSwitchLayout extends FrameLayout {
         setType(type, z, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x01da  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01bf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void setType(Type type, boolean z, boolean z2) {
         boolean z3;
+        boolean z4 = false;
         if (this.type == type && z == this.voIpButtonView.isSelectedState) {
             if (getVisibility() != 0) {
                 setVisibility(0);
@@ -198,7 +199,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                             attachNewButton(R.raw.bt_to_speaker, dp, z, type);
                             z3 = true;
                         } else if (type3 != Type.BLUETOOTH) {
-                            lambda$setType$2(dp);
+                            attachBtToSpeaker(dp);
                         }
                     } else {
                         z3 = z == this.voIpButtonView.isSelectedState;
@@ -207,7 +208,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                         rLottieDrawable.setOnAnimationEndListener(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$$ExternalSyntheticLambda1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                VoIpSwitchLayout.this.lambda$setType$3(dp);
+                                VoIpSwitchLayout.$r8$lambda$_YKZF8lJ5R1Qs_sORWrR9dvjg-c(VoIpSwitchLayout.this, dp);
                             }
                         });
                         rLottieDrawable.start();
@@ -219,7 +220,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                             attachNewButton(R.raw.speaker_to_bt, dp, z, type);
                             z3 = true;
                         } else if (type4 != Type.SPEAKER) {
-                            lambda$setType$0(dp);
+                            attachSpeakerToBt(dp);
                         }
                     } else {
                         z3 = z == this.voIpButtonView.isSelectedState;
@@ -228,7 +229,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                         rLottieDrawable2.setOnAnimationEndListener(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                VoIpSwitchLayout.this.lambda$setType$1(dp);
+                                VoIpSwitchLayout.$r8$lambda$JZ1cT82p8BnKKERcqKeCv0YrUsc(VoIpSwitchLayout.this, dp);
                             }
                         });
                         rLottieDrawable2.start();
@@ -243,7 +244,11 @@ public class VoIpSwitchLayout extends FrameLayout {
                 this.voIpButtonView.selectedIcon.setMasterParent(this.voIpButtonView);
             }
             if (!z3) {
-                this.voIpButtonView.setSelectedState(z, (this.type == null || z2) ? false : true, type);
+                VoIpButtonView voIpButtonView4 = this.voIpButtonView;
+                if (this.type != null && !z2) {
+                    z4 = true;
+                }
+                voIpButtonView4.setSelectedState(z, z4, type);
             }
             setText(type, z);
             this.type = type;
@@ -255,29 +260,28 @@ public class VoIpSwitchLayout extends FrameLayout {
         this.type = type;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setType$1(final int i) {
+    public static /* synthetic */ void $r8$lambda$JZ1cT82p8BnKKERcqKeCv0YrUsc(final VoIpSwitchLayout voIpSwitchLayout, final int i) {
+        voIpSwitchLayout.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                VoIpSwitchLayout.this.lambda$setType$0(i);
+                VoIpSwitchLayout.this.attachSpeakerToBt(i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setType$3(final int i) {
+    public static /* synthetic */ void $r8$lambda$_YKZF8lJ5R1Qs_sORWrR9dvjg-c(final VoIpSwitchLayout voIpSwitchLayout, final int i) {
+        voIpSwitchLayout.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                VoIpSwitchLayout.this.lambda$setType$2(i);
+                VoIpSwitchLayout.this.attachBtToSpeaker(i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: attachSpeakerToBt, reason: merged with bridge method [inline-methods] */
-    public void lambda$setType$0(int i) {
+    public void attachSpeakerToBt(int i) {
         VoIpButtonView voIpButtonView = this.voIpButtonView;
         int i2 = R.raw.speaker_to_bt;
         voIpButtonView.unSelectedIcon = new RLottieDrawable(i2, "" + i2, i, i, true, null);
@@ -286,8 +290,7 @@ public class VoIpSwitchLayout extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: attachBtToSpeaker, reason: merged with bridge method [inline-methods] */
-    public void lambda$setType$2(int i) {
+    public void attachBtToSpeaker(int i) {
         VoIpButtonView voIpButtonView = this.voIpButtonView;
         int i2 = R.raw.bt_to_speaker;
         voIpButtonView.unSelectedIcon = new RLottieDrawable(i2, "" + i2, i, i, true, null);
@@ -339,7 +342,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                     ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$VoIpButtonView$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                            VoIpSwitchLayout.VoIpButtonView.this.lambda$setSelectedState$0(valueAnimator3);
+                            VoIpSwitchLayout.VoIpButtonView.$r8$lambda$0Dj_SqmMUUpru5LtmlpbNO-IVwc(VoIpSwitchLayout.VoIpButtonView.this, valueAnimator3);
                         }
                     });
                     this.animator.setDuration(200L);
@@ -361,7 +364,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$VoIpButtonView$$ExternalSyntheticLambda2
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                                VoIpSwitchLayout.VoIpButtonView.this.lambda$setSelectedState$1(valueAnimator4);
+                                VoIpSwitchLayout.VoIpButtonView.$r8$lambda$lliQ3V_1TW7-lBvdzvaDB0vqZl0(VoIpSwitchLayout.VoIpButtonView.this, valueAnimator4);
                             }
                         });
                         this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout.VoIpButtonView.1
@@ -380,7 +383,7 @@ public class VoIpSwitchLayout extends FrameLayout {
                         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$VoIpButtonView$$ExternalSyntheticLambda3
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                                VoIpSwitchLayout.VoIpButtonView.this.lambda$setSelectedState$2(valueAnimator4);
+                                VoIpSwitchLayout.VoIpButtonView.$r8$lambda$amuTGMSctaaJ9GKO-zGhs_MJ5zo(VoIpSwitchLayout.VoIpButtonView.this, valueAnimator4);
                             }
                         });
                         this.animator.setDuration(200L);
@@ -410,22 +413,22 @@ public class VoIpSwitchLayout extends FrameLayout {
             invalidate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSelectedState$0(ValueAnimator valueAnimator) {
-            this.singleIconBackgroundAlphaPercent = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$0Dj_SqmMUUpru5LtmlpbNO-IVwc(VoIpButtonView voIpButtonView, ValueAnimator valueAnimator) {
+            voIpButtonView.getClass();
+            voIpButtonView.singleIconBackgroundAlphaPercent = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+            voIpButtonView.invalidate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSelectedState$1(ValueAnimator valueAnimator) {
-            this.selectedRadius = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$lliQ3V_1TW7-lBvdzvaDB0vqZl0(VoIpButtonView voIpButtonView, ValueAnimator valueAnimator) {
+            voIpButtonView.getClass();
+            voIpButtonView.selectedRadius = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+            voIpButtonView.invalidate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSelectedState$2(ValueAnimator valueAnimator) {
-            this.unselectedRadius = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$amuTGMSctaaJ9GKO-zGhs_MJ5zo(VoIpButtonView voIpButtonView, ValueAnimator valueAnimator) {
+            voIpButtonView.getClass();
+            voIpButtonView.unselectedRadius = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+            voIpButtonView.invalidate();
         }
 
         public void setOnBtnClickedListener(OnBtnClickedListener onBtnClickedListener) {
@@ -469,17 +472,17 @@ public class VoIpSwitchLayout extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpSwitchLayout$VoIpButtonView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    VoIpSwitchLayout.VoIpButtonView.this.lambda$setPressedBtn$3(valueAnimator2);
+                    VoIpSwitchLayout.VoIpButtonView.$r8$lambda$GkSpuHUy_D0sU8qwY00R0yn1nT4(VoIpSwitchLayout.VoIpButtonView.this, valueAnimator2);
                 }
             });
             this.pressedScaleAnimator.setDuration(150L);
             this.pressedScaleAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setPressedBtn$3(ValueAnimator valueAnimator) {
-            this.pressedScale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$GkSpuHUy_D0sU8qwY00R0yn1nT4(VoIpButtonView voIpButtonView, ValueAnimator valueAnimator) {
+            voIpButtonView.getClass();
+            voIpButtonView.pressedScale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            voIpButtonView.invalidate();
         }
 
         @Override // android.view.View

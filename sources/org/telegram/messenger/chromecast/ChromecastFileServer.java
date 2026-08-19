@@ -63,17 +63,14 @@ public class ChromecastFileServer extends NanoHTTPD {
         this.assetDataSourceFactory = new DataSource.Factory() { // from class: org.telegram.messenger.chromecast.ChromecastFileServer$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.upstream.DataSource.Factory
             public final DataSource createDataSource() {
-                DataSource lambda$new$0;
-                lambda$new$0 = ChromecastFileServer.lambda$new$0();
-                return lambda$new$0;
+                return ChromecastFileServer.$r8$lambda$c82v5Wmfp8Lb7nt2OzxOZO4a2yk();
             }
         };
         this.fileDataSourceFactory = new FileDataSource.Factory();
         this.mediaDataSourceFactory = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ DataSource lambda$new$0() {
+    public static /* synthetic */ DataSource $r8$lambda$c82v5Wmfp8Lb7nt2OzxOZO4a2yk() {
         return new AssetDataSource(ApplicationLoader.applicationContext);
     }
 
@@ -333,6 +330,7 @@ public class ChromecastFileServer extends NanoHTTPD {
                         }
                     }
                 }
+                return ipAddress;
             } catch (SocketException e) {
                 FileLog.e(e);
             }
@@ -340,7 +338,7 @@ public class ChromecastFileServer extends NanoHTTPD {
         return ipAddress;
     }
 
-    private static class DataSourceInputStream extends InputStream {
+    private static class DataSourceInputStream extends InputStream implements AutoCloseable {
         private long availableBytes;
         private final DataSource dataSource;
         private final byte[] tmpByte = new byte[1];

@@ -7,7 +7,7 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 final class zzjw extends zzju {
-    private static final Class zza = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
+    private static final Class zza = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
     private zzjw() {
         super();
@@ -36,9 +36,7 @@ final class zzjw extends zzju {
         zzma.zza(obj, j, unmodifiableList);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private static List zza(Object obj, long j, int i) {
-        zzjs zzjsVar;
         List arrayList;
         List zzc = zzc(obj, j);
         if (zzc.isEmpty()) {
@@ -56,25 +54,23 @@ final class zzjw extends zzju {
             ArrayList arrayList2 = new ArrayList(zzc.size() + i);
             arrayList2.addAll(zzc);
             zzma.zza(obj, j, arrayList2);
-            zzjsVar = arrayList2;
-        } else if (zzc instanceof zzlz) {
-            zzjs zzjsVar2 = new zzjs(zzc.size() + i);
-            zzjsVar2.addAll((zzlz) zzc);
-            zzma.zza(obj, j, zzjsVar2);
-            zzjsVar = zzjsVar2;
-        } else {
-            if (!(zzc instanceof zzkw) || !(zzc instanceof zzjl)) {
-                return zzc;
-            }
-            zzjl zzjlVar = (zzjl) zzc;
-            if (zzjlVar.zza()) {
-                return zzc;
-            }
-            zzjl zza2 = zzjlVar.zza(zzc.size() + i);
-            zzma.zza(obj, j, zza2);
-            return zza2;
+            return arrayList2;
         }
-        return zzjsVar;
+        if (zzc instanceof zzlz) {
+            zzjs zzjsVar = new zzjs(zzc.size() + i);
+            zzjsVar.addAll((zzlz) zzc);
+            zzma.zza(obj, j, zzjsVar);
+            return zzjsVar;
+        }
+        if ((zzc instanceof zzkw) && (zzc instanceof zzjl)) {
+            zzjl zzjlVar = (zzjl) zzc;
+            if (!zzjlVar.zza()) {
+                zzjl zza2 = zzjlVar.zza(zzc.size() + i);
+                zzma.zza(obj, j, zza2);
+                return zza2;
+            }
+        }
+        return zzc;
     }
 
     @Override // com.google.android.gms.internal.vision.zzju

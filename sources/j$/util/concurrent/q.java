@@ -3,20 +3,26 @@ package j$.util.concurrent;
 import java.util.concurrent.locks.LockSupport;
 
 /* loaded from: classes2.dex */
-final class q extends l {
-    private static final j$.sun.misc.a h;
-    private static final long i;
-    r e;
-    volatile r f;
-    volatile Thread g;
+public final class q extends l {
+    public static final j$.sun.misc.a h;
+    public static final long i;
+    public r e;
+    public volatile r f;
+    public volatile Thread g;
     volatile int lockState;
 
-    static int i(Object obj, Object obj2) {
+    static {
+        j$.sun.misc.a aVar = j$.sun.misc.a.b;
+        h = aVar;
+        i = aVar.h(q.class, "lockState");
+    }
+
+    public static int i(Object obj, Object obj2) {
         int compareTo;
         return (obj == null || obj2 == null || (compareTo = obj.getClass().getName().compareTo(obj2.getClass().getName())) == 0) ? System.identityHashCode(obj) <= System.identityHashCode(obj2) ? -1 : 1 : compareTo;
     }
 
-    q(r rVar) {
+    public q(r rVar) {
         super(-2, null, null);
         int i2;
         this.f = rVar;
@@ -71,7 +77,7 @@ final class q extends l {
         this.e = rVar2;
     }
 
-    private final void d() {
+    public final void d() {
         if (h.c(this, i, 0, 1)) {
             return;
         }
@@ -97,79 +103,58 @@ final class q extends l {
     }
 
     @Override // j$.util.concurrent.l
-    final l a(int i2, Object obj) {
+    public final l a(int i2, Object obj) {
         Object obj2;
         Thread thread;
-        Thread thread2;
-        r rVar = null;
-        if (obj != null) {
-            l lVar = this.f;
-            while (lVar != null) {
-                int i3 = this.lockState;
-                if ((i3 & 3) != 0) {
-                    if (lVar.a == i2 && ((obj2 = lVar.b) == obj || (obj2 != null && obj.equals(obj2)))) {
-                        return lVar;
-                    }
+        l lVar = this.f;
+        while (true) {
+            r rVar = null;
+            if (lVar == null) {
+                return null;
+            }
+            int i3 = this.lockState;
+            if ((i3 & 3) != 0) {
+                if (lVar.a != i2 || ((obj2 = lVar.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
                     lVar = lVar.d;
-                } else {
-                    j$.sun.misc.a aVar = h;
-                    long j = i;
-                    if (aVar.c(this, j, i3, i3 + 4)) {
-                        try {
-                            r rVar2 = this.e;
-                            if (rVar2 != null) {
-                                rVar = rVar2.b(i2, obj, null);
-                            }
-                            if (aVar.f(this, j) == 6 && (thread2 = this.g) != null) {
-                                LockSupport.unpark(thread2);
-                            }
-                            return rVar;
-                        } catch (Throwable th) {
-                            if (h.f(this, i) == 6 && (thread = this.g) != null) {
-                                LockSupport.unpark(thread);
-                            }
-                            throw th;
+                }
+            } else {
+                j$.sun.misc.a aVar = h;
+                long j = i;
+                if (aVar.c(this, j, i3, i3 + 4)) {
+                    try {
+                        r rVar2 = this.e;
+                        if (rVar2 != null) {
+                            rVar = rVar2.b(i2, obj, null);
                         }
+                        if (aVar.e(this, j) == 6 && (thread = this.g) != null) {
+                            LockSupport.unpark(thread);
+                        }
+                        return rVar;
+                    } finally {
                     }
                 }
             }
         }
-        return null;
+        return lVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00b3, code lost:
-    
-        return null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0070, code lost:
-    
-        return r3;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    final r e(int i2, Object obj, Object obj2) {
+    public final r e(int i2, Object obj, Object obj2) {
         int i3;
-        r rVar;
-        r rVar2 = this.e;
+        r b;
+        r b2;
+        r rVar = this.e;
         Class<?> cls = null;
         boolean z = false;
-        while (true) {
-            if (rVar2 == null) {
-                r rVar3 = new r(i2, obj, obj2, null, null);
-                this.e = rVar3;
-                this.f = rVar3;
-                break;
-            }
-            int i4 = rVar2.a;
+        while (rVar != null) {
+            int i4 = rVar.a;
             if (i4 > i2) {
                 i3 = -1;
             } else if (i4 < i2) {
                 i3 = 1;
             } else {
-                Object obj3 = rVar2.b;
+                Object obj3 = rVar.b;
                 if (obj3 == obj || (obj3 != null && obj.equals(obj3))) {
-                    break;
+                    return rVar;
                 }
                 if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
                     int i5 = ConcurrentHashMap.g;
@@ -179,41 +164,49 @@ final class q extends l {
                     }
                 }
                 if (!z) {
-                    r rVar4 = rVar2.f;
-                    if ((rVar4 == null || (r3 = rVar4.b(i2, obj, cls)) == null) && ((rVar = rVar2.g) == null || (r3 = rVar.b(i2, obj, cls)) == null)) {
-                        z = true;
+                    r rVar2 = rVar.f;
+                    if (rVar2 != null && (b2 = rVar2.b(i2, obj, cls)) != null) {
+                        return b2;
                     }
+                    r rVar3 = rVar.g;
+                    if (rVar3 != null && (b = rVar3.b(i2, obj, cls)) != null) {
+                        return b;
+                    }
+                    z = true;
                 }
                 i3 = i(obj, obj3);
             }
-            r rVar5 = i3 <= 0 ? rVar2.f : rVar2.g;
-            if (rVar5 == null) {
-                r rVar6 = this.f;
-                r rVar7 = new r(i2, obj, obj2, rVar6, rVar2);
-                this.f = rVar7;
-                if (rVar6 != null) {
-                    rVar6.h = rVar7;
+            r rVar4 = i3 <= 0 ? rVar.f : rVar.g;
+            if (rVar4 == null) {
+                r rVar5 = this.f;
+                r rVar6 = new r(i2, obj, obj2, rVar5, rVar);
+                this.f = rVar6;
+                if (rVar5 != null) {
+                    rVar5.h = rVar6;
                 }
                 if (i3 <= 0) {
-                    rVar2.f = rVar7;
+                    rVar.f = rVar6;
                 } else {
-                    rVar2.g = rVar7;
+                    rVar.g = rVar6;
                 }
-                if (!rVar2.i) {
-                    rVar7.i = true;
-                } else {
-                    d();
-                    try {
-                        this.e = c(this.e, rVar7);
-                    } finally {
-                        this.lockState = 0;
-                    }
+                if (!rVar.i) {
+                    rVar6.i = true;
+                    return null;
                 }
-            } else {
-                rVar2 = rVar5;
+                d();
+                try {
+                    this.e = c(this.e, rVar6);
+                    return null;
+                } finally {
+                    this.lockState = 0;
+                }
             }
+            rVar = rVar4;
         }
-        return rVar2;
+        r rVar7 = new r(i2, obj, obj2, null, null);
+        this.e = rVar7;
+        this.f = rVar7;
+        return null;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x0091 A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:21:0x0030, B:25:0x0039, B:29:0x003f, B:31:0x004d, B:32:0x0068, B:34:0x006e, B:35:0x0070, B:41:0x0091, B:44:0x00a2, B:45:0x0099, B:47:0x009d, B:48:0x00a0, B:49:0x00a8, B:52:0x00b1, B:54:0x00b5, B:56:0x00b9, B:58:0x00bd, B:59:0x00c6, B:61:0x00c0, B:63:0x00c4, B:66:0x00ad, B:68:0x007a, B:70:0x007e, B:71:0x0081, B:72:0x0055, B:74:0x005b, B:76:0x005f, B:77:0x0062, B:78:0x0064), top: B:20:0x0030 }] */
@@ -225,7 +218,7 @@ final class q extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    final boolean f(r rVar) {
+    public final boolean f(r rVar) {
         r rVar2;
         r rVar3;
         r rVar4 = (r) rVar.d;
@@ -361,7 +354,7 @@ final class q extends l {
         }
     }
 
-    static r g(r rVar, r rVar2) {
+    public static r g(r rVar, r rVar2) {
         r rVar3;
         if (rVar2 != null && (rVar3 = rVar2.g) != null) {
             r rVar4 = rVar3.f;
@@ -385,7 +378,7 @@ final class q extends l {
         return rVar;
     }
 
-    static r h(r rVar, r rVar2) {
+    public static r h(r rVar, r rVar2) {
         r rVar3;
         if (rVar2 != null && (rVar3 = rVar2.f) != null) {
             r rVar4 = rVar3.g;
@@ -409,7 +402,7 @@ final class q extends l {
         return rVar;
     }
 
-    static r c(r rVar, r rVar2) {
+    public static r c(r rVar, r rVar2) {
         r rVar3;
         rVar2.i = true;
         while (true) {
@@ -470,7 +463,7 @@ final class q extends l {
         return rVar;
     }
 
-    static r b(r rVar, r rVar2) {
+    public static r b(r rVar, r rVar2) {
         while (rVar2 != null && rVar2 != rVar) {
             r rVar3 = rVar2.e;
             if (rVar3 == null) {
@@ -562,11 +555,5 @@ final class q extends l {
             }
         }
         return rVar;
-    }
-
-    static {
-        j$.sun.misc.a h2 = j$.sun.misc.a.h();
-        h = h2;
-        i = h2.j(q.class, "lockState");
     }
 }

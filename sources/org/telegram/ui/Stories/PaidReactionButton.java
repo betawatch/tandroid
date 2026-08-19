@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import androidx.core.graphics.ColorUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -39,7 +38,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.PaidReactionButton;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaidReactionButton extends View {
     private float accumulatedRippleIntensity;
     private final AnimatedFloat animatedFilled;
@@ -85,7 +84,7 @@ public class PaidReactionButton extends View {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.PaidReactionButton$PaidReactionButtonEffectsView$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    PaidReactionButton.PaidReactionButtonEffectsView.this.lambda$focusTo$0(valueAnimator2);
+                    PaidReactionButton.PaidReactionButtonEffectsView.$r8$lambda$wLzUhkXaYEUt0hNtllAzyVWPbAM(PaidReactionButton.PaidReactionButtonEffectsView.this, valueAnimator2);
                 }
             });
             this.focusAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.PaidReactionButton.PaidReactionButtonEffectsView.1
@@ -105,10 +104,10 @@ public class PaidReactionButton extends View {
             this.focusAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$focusTo$0(ValueAnimator valueAnimator) {
-            this.focus = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$wLzUhkXaYEUt0hNtllAzyVWPbAM(PaidReactionButtonEffectsView paidReactionButtonEffectsView, ValueAnimator valueAnimator) {
+            paidReactionButtonEffectsView.getClass();
+            paidReactionButtonEffectsView.focus = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            paidReactionButtonEffectsView.invalidate();
         }
 
         public void showCounter(long j) {
@@ -146,16 +145,15 @@ public class PaidReactionButton extends View {
             this.hideCounterRunnable = new Runnable() { // from class: org.telegram.ui.Stories.PaidReactionButton$PaidReactionButtonEffectsView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PaidReactionButton.PaidReactionButtonEffectsView.this.lambda$new$1();
+                    PaidReactionButton.PaidReactionButtonEffectsView.$r8$lambda$vpIAAgrDJtdfYngYmN-4gFB_tSY(PaidReactionButton.PaidReactionButtonEffectsView.this);
                 }
             };
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1() {
-            this.counterShown = false;
-            invalidate();
-            hide();
+        public static /* synthetic */ void $r8$lambda$vpIAAgrDJtdfYngYmN-4gFB_tSY(PaidReactionButtonEffectsView paidReactionButtonEffectsView) {
+            paidReactionButtonEffectsView.counterShown = false;
+            paidReactionButtonEffectsView.invalidate();
+            paidReactionButtonEffectsView.hide();
         }
 
         public void updatePosition(PaidReactionButton paidReactionButton) {
@@ -216,11 +214,14 @@ public class PaidReactionButton extends View {
             invalidate();
         }
 
-        /* renamed from: clearEffects, reason: merged with bridge method [inline-methods] */
-        public void lambda$hide$2() {
-            Iterator it = this.effects.iterator();
-            while (it.hasNext()) {
-                ((RLottieDrawable) it.next()).recycle(true);
+        public void clearEffects() {
+            ArrayList arrayList = this.effects;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((RLottieDrawable) obj).recycle(true);
             }
             this.effects.clear();
         }
@@ -234,7 +235,7 @@ public class PaidReactionButton extends View {
             focusTo(0.0f, new Runnable() { // from class: org.telegram.ui.Stories.PaidReactionButton$PaidReactionButtonEffectsView$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PaidReactionButton.PaidReactionButtonEffectsView.this.lambda$hide$2();
+                    PaidReactionButton.PaidReactionButtonEffectsView.this.clearEffects();
                 }
             });
         }

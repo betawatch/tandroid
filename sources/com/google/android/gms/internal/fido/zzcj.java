@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.fido;
 
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import j$.util.Map;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public final class zzcj extends zzcd implements NavigableMap, Map {
         boolean equals = comparator2 == null ? true : comparator.equals(comparator2);
         Collection entrySet = map.entrySet();
         Map.Entry[] entryArr = zzcd.zza;
-        if (!(entrySet instanceof Collection)) {
+        if (!OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(entrySet)) {
             Iterator it = entrySet.iterator();
             Collection arrayList = new ArrayList();
             it.getClass();

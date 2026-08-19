@@ -354,19 +354,24 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
                 throw new FileNotFoundException("Failed to open " + uri);
             }
             try {
-                return Drawable.createFromStream(openInputStream, null);
+                Drawable createFromStream = Drawable.createFromStream(openInputStream, null);
+                try {
+                    return createFromStream;
+                } catch (IOException e) {
+                    return createFromStream;
+                }
             } finally {
                 try {
                     openInputStream.close();
-                } catch (IOException e) {
-                    Log.e("SuggestionsAdapter", "Error closing icon stream for " + uri, e);
+                } catch (IOException e2) {
+                    Log.e("SuggestionsAdapter", "Error closing icon stream for " + uri, e2);
                 }
             }
-        } catch (FileNotFoundException e2) {
-            Log.w("SuggestionsAdapter", "Icon not found: " + uri + ", " + e2.getMessage());
+        } catch (FileNotFoundException e3) {
+            Log.w("SuggestionsAdapter", "Icon not found: " + uri + ", " + e3.getMessage());
             return null;
         }
-        Log.w("SuggestionsAdapter", "Icon not found: " + uri + ", " + e2.getMessage());
+        Log.w("SuggestionsAdapter", "Icon not found: " + uri + ", " + e3.getMessage());
         return null;
     }
 

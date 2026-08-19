@@ -76,12 +76,11 @@ public class ThemePreviewMessagesCell extends LinearLayout {
     protected void dispatchSetPressed(boolean z) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.progress = -1;
+    public static /* synthetic */ void $r8$lambda$fQsvt3AUQGxg48itN5KCo1gLV0U(ThemePreviewMessagesCell themePreviewMessagesCell) {
+        themePreviewMessagesCell.progress = -1;
         int i = 0;
         while (true) {
-            ChatMessageCell[] chatMessageCellArr = this.cells;
+            ChatMessageCell[] chatMessageCellArr = themePreviewMessagesCell.cells;
             if (i >= chatMessageCellArr.length) {
                 return;
             }
@@ -101,14 +100,15 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         this(context, iNavigationLayout, i, j, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0409  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0470 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0412  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x046d A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public ThemePreviewMessagesCell(Context context, INavigationLayout iNavigationLayout, int i, long j, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         MessageObject messageObject;
+        MessageObject messageObject2;
         int i2;
         ChatMessageCell[] chatMessageCellArr;
         this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell$$ExternalSyntheticLambda0
@@ -122,7 +122,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         this.cancelProgress = new Runnable() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ThemePreviewMessagesCell.this.lambda$new$0();
+                ThemePreviewMessagesCell.$r8$lambda$fQsvt3AUQGxg48itN5KCo1gLV0U(ThemePreviewMessagesCell.this);
             }
         };
         this.overrideDrawableUpdate = new AnimatedFloat(this, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -132,9 +132,9 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         setWillNotDraw(false);
         setOrientation(1);
         setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f));
-        this.shadowDrawable = Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow, resourcesProvider);
+        Theme.ResourcesProvider resourcesProvider2 = resourcesProvider;
+        this.shadowDrawable = Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow, resourcesProvider2);
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-        MessageObject messageObject2 = null;
         if (i == 3) {
             boolean z = j < 0;
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -346,7 +346,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 if (i2 < chatMessageCellArr.length) {
                     return;
                 }
-                chatMessageCellArr[i2] = new ChatMessageCell(context, i3, false, null, resourcesProvider, context, i) { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.1
+                chatMessageCellArr[i2] = new ChatMessageCell(context, i3, false, null, resourcesProvider2, context, i) { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.1
                     private final AnimatedColor color1;
                     private final AnimatedColor color2;
                     private GestureDetector gestureDetector;
@@ -392,7 +392,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell$1$1$1$$ExternalSyntheticLambda0
                                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                        ThemePreviewMessagesCell.1.1.1.this.lambda$onPreDraw$0(valueAnimator);
+                                        ThemePreviewMessagesCell.1.1.1.$r8$lambda$IBmVgRqswjD3cp0lQBxIf3nCYWI(ThemePreviewMessagesCell.1.1.1.this, valueAnimator);
                                     }
                                 });
                                 ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.1.1.1.1
@@ -408,10 +408,9 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                                 return false;
                             }
 
-                            /* JADX INFO: Access modifiers changed from: private */
-                            public /* synthetic */ void lambda$onPreDraw$0(ValueAnimator valueAnimator) {
-                                getTransitionParams().animateChangeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                invalidate();
+                            public static /* synthetic */ void $r8$lambda$IBmVgRqswjD3cp0lQBxIf3nCYWI(1 r1, ValueAnimator valueAnimator) {
+                                1.this.getTransitionParams().animateChangeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                1.this.invalidate();
                             }
                         }
                     }
@@ -979,14 +978,17 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     addView(this.cells[i2], LayoutHelper.createLinear(-1, -2));
                 }
                 i2++;
+                resourcesProvider2 = resourcesProvider;
             }
         }
+        messageObject2 = null;
         i2 = 0;
         while (true) {
             chatMessageCellArr = this.cells;
             if (i2 < chatMessageCellArr.length) {
             }
             i2++;
+            resourcesProvider2 = resourcesProvider;
         }
     }
 

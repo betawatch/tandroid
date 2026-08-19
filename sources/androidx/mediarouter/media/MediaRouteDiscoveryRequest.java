@@ -43,11 +43,13 @@ public final class MediaRouteDiscoveryRequest {
     }
 
     public boolean equals(Object obj) {
-        if (!(obj instanceof MediaRouteDiscoveryRequest)) {
-            return false;
+        if (obj instanceof MediaRouteDiscoveryRequest) {
+            MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest = (MediaRouteDiscoveryRequest) obj;
+            if (getSelector().equals(mediaRouteDiscoveryRequest.getSelector()) && isActiveScan() == mediaRouteDiscoveryRequest.isActiveScan()) {
+                return true;
+            }
         }
-        MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest = (MediaRouteDiscoveryRequest) obj;
-        return getSelector().equals(mediaRouteDiscoveryRequest.getSelector()) && isActiveScan() == mediaRouteDiscoveryRequest.isActiveScan();
+        return false;
     }
 
     public int hashCode() {

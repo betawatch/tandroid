@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
@@ -30,7 +29,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.recorder.CollageLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DraftsController {
     public final int currentAccount;
     public final ArrayList drafts = new ArrayList();
@@ -50,20 +49,19 @@ public class DraftsController {
         messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DraftsController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DraftsController.lambda$loadInternal$1(MessagesStorage.this, z, callback);
+                DraftsController.$r8$lambda$4bqFG92252BDPlMBAIVVPuoFYXc(MessagesStorage.this, z, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x009b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x009c, code lost:
     
         if (r1 == null) goto L33;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$loadInternal$1(MessagesStorage messagesStorage, boolean z, final Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$4bqFG92252BDPlMBAIVVPuoFYXc(MessagesStorage messagesStorage, boolean z, final Utilities.Callback callback) {
         SQLiteDatabase database;
         final ArrayList arrayList = new ArrayList();
         SQLiteCursor sQLiteCursor = null;
@@ -127,14 +125,14 @@ public class DraftsController {
         loadInternal(false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DraftsController$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                DraftsController.this.lambda$load$2((ArrayList) obj);
+                DraftsController.$r8$lambda$j3wTQb-Gdd0HWEyy7GVZqMLcbDE(DraftsController.this, (ArrayList) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$2(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$j3wTQb-Gdd0HWEyy7GVZqMLcbDE(DraftsController draftsController, ArrayList arrayList) {
         File file;
+        draftsController.getClass();
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -143,20 +141,20 @@ public class DraftsController {
             if (entry != null) {
                 if (entry.isCollage() || ((file = entry.file) != null && file.exists())) {
                     if (entry.isEdit) {
-                        this.drafts.add(entry);
+                        draftsController.drafts.add(entry);
                         arrayList2.add(Long.valueOf(entry.draftId));
                     } else {
-                        this.drafts.add(entry);
+                        draftsController.drafts.add(entry);
                         arrayList2.add(Long.valueOf(entry.draftId));
                     }
                 }
                 arrayList3.add(entry);
             }
         }
-        delete(arrayList3);
-        this.loading = false;
-        this.loaded = true;
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+        draftsController.delete(arrayList3);
+        draftsController.loading = false;
+        draftsController.loaded = true;
+        NotificationCenter.getInstance(draftsController.currentAccount).postNotificationName(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
     private void loadFailed() {
@@ -167,14 +165,14 @@ public class DraftsController {
         loadInternal(true, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DraftsController$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                DraftsController.this.lambda$loadFailed$3((ArrayList) obj);
+                DraftsController.$r8$lambda$aLqKF7gpNk8SRJAVgsVvIgFVOA4(DraftsController.this, (ArrayList) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadFailed$3(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$aLqKF7gpNk8SRJAVgsVvIgFVOA4(DraftsController draftsController, ArrayList arrayList) {
         File file;
+        draftsController.getClass();
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -190,10 +188,10 @@ public class DraftsController {
                 }
             }
         }
-        delete(arrayList3);
-        this.loadingFailed = false;
-        this.loadedFailed = true;
-        MessagesController.getInstance(this.currentAccount).getStoriesController().putUploadingDrafts(arrayList4);
+        draftsController.delete(arrayList3);
+        draftsController.loadingFailed = false;
+        draftsController.loadedFailed = true;
+        MessagesController.getInstance(draftsController.currentAccount).getStoriesController().putUploadingDrafts(arrayList4);
     }
 
     public void edit(StoryEntry storyEntry) {
@@ -210,44 +208,42 @@ public class DraftsController {
         messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DraftsController$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                DraftsController.lambda$edit$4(MessagesStorage.this, storyDraft);
+                DraftsController.$r8$lambda$RiC0JImjTCT65pJVD7o8arqUXPQ(MessagesStorage.this, storyDraft);
             }
         });
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$edit$4(MessagesStorage messagesStorage, StoryDraft storyDraft) {
-        SQLiteDatabase database;
+    public static /* synthetic */ void $r8$lambda$RiC0JImjTCT65pJVD7o8arqUXPQ(MessagesStorage messagesStorage, StoryDraft storyDraft) {
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                database = messagesStorage.getDatabase();
-            } catch (Exception e) {
-                FileLog.e(e);
-                if (sQLitePreparedStatement == null) {
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                if (database == null) {
                     return;
                 }
+                sQLitePreparedStatement = database.executeFast("REPLACE INTO story_drafts VALUES (?, ?, ?, ?)");
+                sQLitePreparedStatement.requery();
+                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyDraft.getObjectSize());
+                storyDraft.toStream(nativeByteBuffer);
+                int i = 1;
+                sQLitePreparedStatement.bindLong(1, storyDraft.id);
+                sQLitePreparedStatement.bindLong(2, storyDraft.date);
+                sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
+                if (!storyDraft.isEdit) {
+                    i = storyDraft.isError ? 2 : 0;
+                }
+                sQLitePreparedStatement.bindInteger(4, i);
+                sQLitePreparedStatement.step();
+                nativeByteBuffer.reuse();
+                sQLitePreparedStatement.dispose();
+                sQLitePreparedStatement.dispose();
+            } catch (Exception e) {
+                FileLog.e(e);
+                if (sQLitePreparedStatement != null) {
+                    sQLitePreparedStatement.dispose();
+                }
             }
-            if (database == null) {
-                return;
-            }
-            sQLitePreparedStatement = database.executeFast("REPLACE INTO story_drafts VALUES (?, ?, ?, ?)");
-            sQLitePreparedStatement.requery();
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyDraft.getObjectSize());
-            storyDraft.toStream(nativeByteBuffer);
-            int i = 1;
-            sQLitePreparedStatement.bindLong(1, storyDraft.id);
-            sQLitePreparedStatement.bindLong(2, storyDraft.date);
-            sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
-            if (!storyDraft.isEdit) {
-                i = storyDraft.isError ? 2 : 0;
-            }
-            sQLitePreparedStatement.bindInteger(4, i);
-            sQLitePreparedStatement.step();
-            nativeByteBuffer.reuse();
-            sQLitePreparedStatement.dispose();
-            sQLitePreparedStatement.dispose();
         } catch (Throwable th) {
             if (sQLitePreparedStatement != null) {
                 sQLitePreparedStatement.dispose();
@@ -354,44 +350,42 @@ public class DraftsController {
         messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DraftsController$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                DraftsController.lambda$append$5(MessagesStorage.this, storyDraft);
+                DraftsController.$r8$lambda$6IXZXV8p4lXLYDofSjSWK6WcFX8(MessagesStorage.this, storyDraft);
             }
         });
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$append$5(MessagesStorage messagesStorage, StoryDraft storyDraft) {
-        SQLiteDatabase database;
+    public static /* synthetic */ void $r8$lambda$6IXZXV8p4lXLYDofSjSWK6WcFX8(MessagesStorage messagesStorage, StoryDraft storyDraft) {
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                database = messagesStorage.getDatabase();
-            } catch (Exception e) {
-                FileLog.e(e);
-                if (sQLitePreparedStatement == null) {
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                if (database == null) {
                     return;
                 }
+                sQLitePreparedStatement = database.executeFast("INSERT INTO story_drafts VALUES (?, ?, ?, ?)");
+                sQLitePreparedStatement.requery();
+                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyDraft.getObjectSize());
+                storyDraft.toStream(nativeByteBuffer);
+                int i = 1;
+                sQLitePreparedStatement.bindLong(1, storyDraft.id);
+                sQLitePreparedStatement.bindLong(2, storyDraft.date);
+                sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
+                if (!storyDraft.isEdit) {
+                    i = storyDraft.isError ? 2 : 0;
+                }
+                sQLitePreparedStatement.bindInteger(4, i);
+                sQLitePreparedStatement.step();
+                nativeByteBuffer.reuse();
+                sQLitePreparedStatement.dispose();
+                sQLitePreparedStatement.dispose();
+            } catch (Exception e) {
+                FileLog.e(e);
+                if (sQLitePreparedStatement != null) {
+                    sQLitePreparedStatement.dispose();
+                }
             }
-            if (database == null) {
-                return;
-            }
-            sQLitePreparedStatement = database.executeFast("INSERT INTO story_drafts VALUES (?, ?, ?, ?)");
-            sQLitePreparedStatement.requery();
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyDraft.getObjectSize());
-            storyDraft.toStream(nativeByteBuffer);
-            int i = 1;
-            sQLitePreparedStatement.bindLong(1, storyDraft.id);
-            sQLitePreparedStatement.bindLong(2, storyDraft.date);
-            sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
-            if (!storyDraft.isEdit) {
-                i = storyDraft.isError ? 2 : 0;
-            }
-            sQLitePreparedStatement.bindInteger(4, i);
-            sQLitePreparedStatement.step();
-            nativeByteBuffer.reuse();
-            sQLitePreparedStatement.dispose();
-            sQLitePreparedStatement.dispose();
         } catch (Throwable th) {
             if (sQLitePreparedStatement != null) {
                 sQLitePreparedStatement.dispose();
@@ -405,9 +399,13 @@ public class DraftsController {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        Iterator it = this.drafts.iterator();
-        while (it.hasNext()) {
-            StoryEntry storyEntry2 = (StoryEntry) it.next();
+        ArrayList arrayList2 = this.drafts;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            StoryEntry storyEntry2 = (StoryEntry) obj;
             if (storyEntry2.isEdit && storyEntry2.editStoryId == storyItem.id) {
                 arrayList.add(storyEntry2);
             }
@@ -420,9 +418,9 @@ public class DraftsController {
         storyDraft.isEdit = true;
         storyEntry.editStoryPeerId = j;
         storyDraft.editStoryPeerId = j;
-        int i = storyItem.id;
-        storyEntry.editStoryId = i;
-        storyDraft.editStoryId = i;
+        int i2 = storyItem.id;
+        storyEntry.editStoryId = i2;
+        storyDraft.editStoryId = i2;
         long j2 = storyItem.expire_date * 1000;
         storyEntry.editExpireDate = j2;
         storyDraft.editExpireDate = j2;
@@ -451,9 +449,13 @@ public class DraftsController {
         if (storyItem == null) {
             return null;
         }
-        Iterator it = this.drafts.iterator();
-        while (it.hasNext()) {
-            StoryEntry storyEntry = (StoryEntry) it.next();
+        ArrayList arrayList = this.drafts;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            StoryEntry storyEntry = (StoryEntry) obj;
             if (storyEntry.isEdit && storyItem.id == storyEntry.editStoryId && j == storyEntry.editStoryPeerId && ((document = (messageMedia = storyItem.media).document) == null || document.id == storyEntry.editDocumentId)) {
                 TLRPC.Photo photo = messageMedia.photo;
                 if (photo == null || photo.id == storyEntry.editPhotoId) {
@@ -526,14 +528,13 @@ public class DraftsController {
         messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DraftsController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DraftsController.lambda$delete$6(MessagesStorage.this, arrayList2);
+                DraftsController.$r8$lambda$7lUpiEDGEIx33GdseJFk8T5hmiA(MessagesStorage.this, arrayList2);
             }
         });
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$delete$6(MessagesStorage messagesStorage, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$7lUpiEDGEIx33GdseJFk8T5hmiA(MessagesStorage messagesStorage, ArrayList arrayList) {
         try {
             SQLiteDatabase database = messagesStorage.getDatabase();
             if (database == null) {
@@ -814,13 +815,14 @@ public class DraftsController {
             abstractSerializedData.writeInt32(this.resultHeight);
             abstractSerializedData.writeInt64(this.duration);
             int i = 0;
+            int i2 = 0;
             while (true) {
                 float[] fArr = this.matrixValues;
-                if (i >= fArr.length) {
+                if (i2 >= fArr.length) {
                     break;
                 }
-                abstractSerializedData.writeFloat(fArr[i]);
-                i++;
+                abstractSerializedData.writeFloat(fArr[i2]);
+                i2++;
             }
             abstractSerializedData.writeInt32(this.gradientTopColor);
             abstractSerializedData.writeInt32(this.gradientBottomColor);
@@ -829,16 +831,16 @@ public class DraftsController {
             ArrayList arrayList2 = this.captionEntities;
             abstractSerializedData.writeInt32(arrayList2 == null ? 0 : arrayList2.size());
             if (this.captionEntities != null) {
-                for (int i2 = 0; i2 < this.captionEntities.size(); i2++) {
-                    ((TLRPC.MessageEntity) this.captionEntities.get(i2)).serializeToStream(abstractSerializedData);
+                for (int i3 = 0; i3 < this.captionEntities.size(); i3++) {
+                    ((TLRPC.MessageEntity) this.captionEntities.get(i3)).serializeToStream(abstractSerializedData);
                 }
             }
             abstractSerializedData.writeInt32(Vector.constructor);
             ArrayList arrayList3 = this.privacyRules;
             abstractSerializedData.writeInt32(arrayList3 == null ? 0 : arrayList3.size());
             if (this.privacyRules != null) {
-                for (int i3 = 0; i3 < this.privacyRules.size(); i3++) {
-                    ((TLRPC.InputPrivacyRule) this.privacyRules.get(i3)).serializeToStream(abstractSerializedData);
+                for (int i4 = 0; i4 < this.privacyRules.size(); i4++) {
+                    ((TLRPC.InputPrivacyRule) this.privacyRules.get(i4)).serializeToStream(abstractSerializedData);
                 }
             }
             abstractSerializedData.writeBool(false);
@@ -848,16 +850,16 @@ public class DraftsController {
             ArrayList arrayList4 = this.mediaEntities;
             abstractSerializedData.writeInt32(arrayList4 == null ? 0 : arrayList4.size());
             if (this.mediaEntities != null) {
-                for (int i4 = 0; i4 < this.mediaEntities.size(); i4++) {
-                    ((VideoEditedInfo.MediaEntity) this.mediaEntities.get(i4)).serializeTo(abstractSerializedData, true);
+                for (int i5 = 0; i5 < this.mediaEntities.size(); i5++) {
+                    ((VideoEditedInfo.MediaEntity) this.mediaEntities.get(i5)).serializeTo(abstractSerializedData, true);
                 }
             }
             abstractSerializedData.writeInt32(Vector.constructor);
             List list = this.stickers;
             abstractSerializedData.writeInt32(list == null ? 0 : list.size());
             if (this.stickers != null) {
-                for (int i5 = 0; i5 < this.stickers.size(); i5++) {
-                    ((TLRPC.InputDocument) this.stickers.get(i5)).serializeToStream(abstractSerializedData);
+                for (int i6 = 0; i6 < this.stickers.size(); i6++) {
+                    ((TLRPC.InputDocument) this.stickers.get(i6)).serializeToStream(abstractSerializedData);
                 }
             }
             String str = this.filterFilePath;
@@ -945,9 +947,12 @@ public class DraftsController {
             } else {
                 abstractSerializedData.writeInt32(-559038737);
                 abstractSerializedData.writeString(this.collage.toString());
-                Iterator it = this.collageParts.iterator();
-                while (it.hasNext()) {
-                    ((VideoEditedInfo.Part) it.next()).serializeToStream(abstractSerializedData);
+                ArrayList arrayList5 = this.collageParts;
+                int size = arrayList5.size();
+                while (i < size) {
+                    Object obj = arrayList5.get(i);
+                    i++;
+                    ((VideoEditedInfo.Part) obj).serializeToStream(abstractSerializedData);
                 }
             }
             MediaController.CropState cropState = this.crop;

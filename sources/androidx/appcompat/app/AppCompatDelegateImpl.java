@@ -1062,8 +1062,8 @@ class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Cal
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:38:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1401,9 +1401,9 @@ class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Cal
             AudioManager audioManager = (AudioManager) this.mContext.getApplicationContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
             if (audioManager != null) {
                 audioManager.playSoundEffect(0);
-            } else {
-                Log.w("AppCompatDelegate", "Couldn't get audio manager");
+                return z2;
             }
+            Log.w("AppCompatDelegate", "Couldn't get audio manager");
         }
         return z2;
     }
@@ -1673,11 +1673,11 @@ class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Cal
         }
         if (calculateNightMode == 3) {
             getAutoBatteryNightModeManager(this.mContext).setup();
-        } else {
-            AutoNightModeManager autoNightModeManager2 = this.mAutoBatteryNightModeManager;
-            if (autoNightModeManager2 != null) {
-                autoNightModeManager2.cleanup();
-            }
+            return updateAppConfiguration;
+        }
+        AutoNightModeManager autoNightModeManager2 = this.mAutoBatteryNightModeManager;
+        if (autoNightModeManager2 != null) {
+            autoNightModeManager2.cleanup();
         }
         return updateAppConfiguration;
     }
@@ -1796,7 +1796,7 @@ class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Cal
                 if (!z2 || i4 == 0) {
                     z3 = z2;
                 } else {
-                    updateResourcesConfiguration(i3, configurationLocales2, (i4 & activityHandlesConfigChangesFlags) == i4, null);
+                    updateResourcesConfiguration(i3, configurationLocales2, (activityHandlesConfigChangesFlags & i4) == i4, null);
                 }
                 if (z3 && configurationLocales2 != null) {
                     setDefaultLocalesForLocaleList(getConfigurationLocales(this.mContext.getResources().getConfiguration()));

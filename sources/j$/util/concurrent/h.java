@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-final class h extends a implements Iterator, Enumeration {
+public final class h extends a implements Iterator, Enumeration {
     public final /* synthetic */ int k;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

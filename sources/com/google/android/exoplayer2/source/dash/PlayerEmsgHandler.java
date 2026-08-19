@@ -159,7 +159,10 @@ public final class PlayerEmsgHandler implements Handler.Callback {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean isPlayerEmsgEvent(String str, String str2) {
-        return "urn:mpeg:dash:event:2012".equals(str) && ("1".equals(str2) || "2".equals(str2) || "3".equals(str2));
+        if ("urn:mpeg:dash:event:2012".equals(str)) {
+            return "1".equals(str2) || "2".equals(str2) || "3".equals(str2);
+        }
+        return false;
     }
 
     public final class PlayerTrackEmsgHandler implements TrackOutput {

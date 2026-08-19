@@ -34,7 +34,6 @@ public interface CoroutineContext {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static CoroutineContext plus$lambda$0(CoroutineContext acc, Element element) {
-            CombinedContext combinedContext;
             Intrinsics.checkNotNullParameter(acc, "acc");
             Intrinsics.checkNotNullParameter(element, "element");
             CoroutineContext minusKey = acc.minusKey(element.getKey());
@@ -45,15 +44,13 @@ public interface CoroutineContext {
             ContinuationInterceptor.Key key = ContinuationInterceptor.Key;
             ContinuationInterceptor continuationInterceptor = (ContinuationInterceptor) minusKey.get(key);
             if (continuationInterceptor == null) {
-                combinedContext = new CombinedContext(minusKey, element);
-            } else {
-                CoroutineContext minusKey2 = minusKey.minusKey(key);
-                if (minusKey2 == emptyCoroutineContext) {
-                    return new CombinedContext(element, continuationInterceptor);
-                }
-                combinedContext = new CombinedContext(new CombinedContext(minusKey2, element), continuationInterceptor);
+                return new CombinedContext(minusKey, element);
             }
-            return combinedContext;
+            CoroutineContext minusKey2 = minusKey.minusKey(key);
+            if (minusKey2 == emptyCoroutineContext) {
+                return new CombinedContext(element, continuationInterceptor);
+            }
+            return new CombinedContext(new CombinedContext(minusKey2, element), continuationInterceptor);
         }
     }
 

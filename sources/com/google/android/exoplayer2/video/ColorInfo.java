@@ -20,9 +20,7 @@ public final class ColorInfo implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.video.ColorInfo$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            ColorInfo lambda$static$0;
-            lambda$static$0 = ColorInfo.lambda$static$0(bundle);
-            return lambda$static$0;
+            return ColorInfo.$r8$lambda$i3UxFzeQygsllLIxlpjjvKbToow(bundle);
         }
     };
 
@@ -60,11 +58,13 @@ public final class ColorInfo implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || ColorInfo.class != obj.getClass()) {
-            return false;
+        if (obj != null && ColorInfo.class == obj.getClass()) {
+            ColorInfo colorInfo = (ColorInfo) obj;
+            if (this.colorSpace == colorInfo.colorSpace && this.colorRange == colorInfo.colorRange && this.colorTransfer == colorInfo.colorTransfer && Arrays.equals(this.hdrStaticInfo, colorInfo.hdrStaticInfo)) {
+                return true;
+            }
         }
-        ColorInfo colorInfo = (ColorInfo) obj;
-        return this.colorSpace == colorInfo.colorSpace && this.colorRange == colorInfo.colorRange && this.colorTransfer == colorInfo.colorTransfer && Arrays.equals(this.hdrStaticInfo, colorInfo.hdrStaticInfo);
+        return false;
     }
 
     public String toString() {
@@ -98,8 +98,7 @@ public final class ColorInfo implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ColorInfo lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ ColorInfo $r8$lambda$i3UxFzeQygsllLIxlpjjvKbToow(Bundle bundle) {
         return new ColorInfo(bundle.getInt(FIELD_COLOR_SPACE, -1), bundle.getInt(FIELD_COLOR_RANGE, -1), bundle.getInt(FIELD_COLOR_TRANSFER, -1), bundle.getByteArray(FIELD_HDR_STATIC_INFO));
     }
 }

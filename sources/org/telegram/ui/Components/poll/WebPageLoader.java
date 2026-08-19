@@ -3,7 +3,6 @@ package org.telegram.ui.Components.poll;
 import androidx.collection.LongSparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.MessagesController;
@@ -50,32 +49,34 @@ public class WebPageLoader {
         ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getwebpagepreview, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.poll.WebPageLoader$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                WebPageLoader.this.lambda$get$0(str, (TL_account.webPagePreview) obj, (TLRPC.TL_error) obj2);
+                WebPageLoader.$r8$lambda$89_4_9FqSd-KxcmvKG9V1pe3W8o(WebPageLoader.this, str, (TL_account.webPagePreview) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0044 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0042 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0030  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$get$0(String str, TL_account.webPagePreview webpagepreview, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$89_4_9FqSd-KxcmvKG9V1pe3W8o(WebPageLoader webPageLoader, String str, TL_account.webPagePreview webpagepreview, TLRPC.TL_error tL_error) {
         TLRPC.WebPage webPage;
         ArrayList arrayList;
+        int i = 0;
         if (webpagepreview != null) {
-            MessagesController.getInstance(this.currentAccount).putUsers(webpagepreview.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(webpagepreview.chats, false);
+            MessagesController.getInstance(webPageLoader.currentAccount).putUsers(webpagepreview.users, false);
+            MessagesController.getInstance(webPageLoader.currentAccount).putChats(webpagepreview.chats, false);
             TLRPC.MessageMedia messageMedia = webpagepreview.media;
             if (messageMedia != null) {
                 webPage = messageMedia.webpage;
-                this.pages.put(str, webPage);
-                arrayList = (ArrayList) this.callbacks.remove(str);
+                webPageLoader.pages.put(str, webPage);
+                arrayList = (ArrayList) webPageLoader.callbacks.remove(str);
                 if (arrayList == null) {
-                    Iterator it = arrayList.iterator();
-                    while (it.hasNext()) {
-                        ((Utilities.Callback2) it.next()).run(webPage, tL_error);
+                    int size = arrayList.size();
+                    while (i < size) {
+                        Object obj = arrayList.get(i);
+                        i++;
+                        ((Utilities.Callback2) obj).run(webPage, tL_error);
                     }
                     return;
                 }
@@ -83,8 +84,8 @@ public class WebPageLoader {
             }
         }
         webPage = null;
-        this.pages.put(str, webPage);
-        arrayList = (ArrayList) this.callbacks.remove(str);
+        webPageLoader.pages.put(str, webPage);
+        arrayList = (ArrayList) webPageLoader.callbacks.remove(str);
         if (arrayList == null) {
         }
     }

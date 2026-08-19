@@ -6,7 +6,6 @@ import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.core.view.ViewPropertyAnimatorListener;
 import androidx.core.view.ViewPropertyAnimatorListenerAdapter;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /* loaded from: classes.dex */
 public class ViewPropertyAnimatorCompatSet {
@@ -69,9 +68,13 @@ public class ViewPropertyAnimatorCompatSet {
         if (this.mIsStarted) {
             return;
         }
-        Iterator it = this.mAnimators.iterator();
-        while (it.hasNext()) {
-            ViewPropertyAnimatorCompat viewPropertyAnimatorCompat = (ViewPropertyAnimatorCompat) it.next();
+        ArrayList arrayList = this.mAnimators;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ViewPropertyAnimatorCompat viewPropertyAnimatorCompat = (ViewPropertyAnimatorCompat) obj;
             long j = this.mDuration;
             if (j >= 0) {
                 viewPropertyAnimatorCompat.setDuration(j);
@@ -94,9 +97,13 @@ public class ViewPropertyAnimatorCompatSet {
 
     public void cancel() {
         if (this.mIsStarted) {
-            Iterator it = this.mAnimators.iterator();
-            while (it.hasNext()) {
-                ((ViewPropertyAnimatorCompat) it.next()).cancel();
+            ArrayList arrayList = this.mAnimators;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((ViewPropertyAnimatorCompat) obj).cancel();
             }
             this.mIsStarted = false;
         }

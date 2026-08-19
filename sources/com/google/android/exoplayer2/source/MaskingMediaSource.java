@@ -57,12 +57,12 @@ public final class MaskingMediaSource extends WrappingMediaSource {
         maskingMediaPeriod.setMediaSource(this.mediaSource);
         if (this.isPrepared) {
             maskingMediaPeriod.createPeriod(mediaPeriodId.copyWithPeriodUid(getInternalPeriodUid(mediaPeriodId.periodUid)));
-        } else {
-            this.unpreparedMaskingMediaPeriod = maskingMediaPeriod;
-            if (!this.hasStartedPreparing) {
-                this.hasStartedPreparing = true;
-                prepareChildSource();
-            }
+            return maskingMediaPeriod;
+        }
+        this.unpreparedMaskingMediaPeriod = maskingMediaPeriod;
+        if (!this.hasStartedPreparing) {
+            this.hasStartedPreparing = true;
+            prepareChildSource();
         }
         return maskingMediaPeriod;
     }

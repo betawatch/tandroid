@@ -180,7 +180,8 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
 
     protected abstract void openBotApp(TLRPC.User user);
 
-    protected abstract void openPublicPosts();
+    /* JADX INFO: Access modifiers changed from: protected */
+    public abstract void openPublicPosts();
 
     protected abstract void openSponsoredOptions(ProfileSearchCell profileSearchCell, TLRPC.TL_sponsoredPeer tL_sponsoredPeer);
 
@@ -419,51 +420,46 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
 
     private void searchForumMessagesInternal(final String str, final int i) {
         DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
-        if (dialogsSearchAdapterDelegate == null || dialogsSearchAdapterDelegate.getSearchForumDialogId() == 0 || this.needMessagesSearch == 0) {
-            return;
-        }
-        if (TextUtils.isEmpty(this.lastMessagesSearchString) && TextUtils.isEmpty(str)) {
-            return;
-        }
-        if (this.reqForumId != 0) {
-            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.reqForumId, true);
-            this.reqForumId = 0;
-        }
-        if (TextUtils.isEmpty(str)) {
-            this.filteredRecentQuery = null;
-            this.searchResultMessages.clear();
-            this.searchForumResultMessages.clear();
-            this.lastForumReqId = 0;
-            this.lastMessagesSearchString = null;
-            this.searchWas = false;
-            notifyDataSetChanged();
-            return;
-        }
-        if (this.dialogsType == 15) {
-            return;
-        }
-        long searchForumDialogId = this.delegate.getSearchForumDialogId();
-        final TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
-        tL_messages_search.limit = 20;
-        tL_messages_search.q = str;
-        tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        tL_messages_search.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(searchForumDialogId);
-        if (str.equals(this.lastMessagesSearchString) && !this.searchForumResultMessages.isEmpty()) {
-            tL_messages_search.add_offset = this.searchForumResultMessages.size();
-        }
-        this.lastMessagesSearchString = str;
-        final int i2 = this.lastForumReqId + 1;
-        this.lastForumReqId = i2;
-        this.reqForumId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda23
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                DialogsSearchAdapter.this.lambda$searchForumMessagesInternal$1(str, i2, i, tL_messages_search, tLObject, tL_error);
+        if (dialogsSearchAdapterDelegate != null && dialogsSearchAdapterDelegate.getSearchForumDialogId() != 0 && this.needMessagesSearch != 0 && (!TextUtils.isEmpty(this.lastMessagesSearchString) || !TextUtils.isEmpty(str))) {
+            if (this.reqForumId != 0) {
+                ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.reqForumId, true);
+                this.reqForumId = 0;
             }
-        }, 2);
+            if (TextUtils.isEmpty(str)) {
+                this.filteredRecentQuery = null;
+                this.searchResultMessages.clear();
+                this.searchForumResultMessages.clear();
+                this.lastForumReqId = 0;
+                this.lastMessagesSearchString = null;
+                this.searchWas = false;
+                notifyDataSetChanged();
+                return;
+            }
+            if (this.dialogsType != 15) {
+                long searchForumDialogId = this.delegate.getSearchForumDialogId();
+                final TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
+                tL_messages_search.limit = 20;
+                tL_messages_search.q = str;
+                tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+                tL_messages_search.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(searchForumDialogId);
+                if (str.equals(this.lastMessagesSearchString) && !this.searchForumResultMessages.isEmpty()) {
+                    tL_messages_search.add_offset = this.searchForumResultMessages.size();
+                }
+                this.lastMessagesSearchString = str;
+                final int i2 = this.lastForumReqId + 1;
+                this.lastForumReqId = i2;
+                this.reqForumId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda23
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        DialogsSearchAdapter.$r8$lambda$w7EuHJ7qQrrPagAvdzGuQ-5HZK4(DialogsSearchAdapter.this, str, i2, i, tL_messages_search, tLObject, tL_error);
+                    }
+                }, 2);
+            }
+        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchForumMessagesInternal$1(final String str, final int i, final int i2, final TLRPC.TL_messages_search tL_messages_search, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$w7EuHJ7qQrrPagAvdzGuQ-5HZK4(final DialogsSearchAdapter dialogsSearchAdapter, final String str, final int i, final int i2, final TLRPC.TL_messages_search tL_messages_search, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        dialogsSearchAdapter.getClass();
         final ArrayList arrayList = new ArrayList();
         if (tL_error == null) {
             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
@@ -478,7 +474,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 longSparseArray2.put(user.id, user);
             }
             for (int i5 = 0; i5 < messages_messages.messages.size(); i5++) {
-                MessageObject messageObject = new MessageObject(this.currentAccount, messages_messages.messages.get(i5), longSparseArray2, longSparseArray, false, true);
+                MessageObject messageObject = new MessageObject(dialogsSearchAdapter.currentAccount, messages_messages.messages.get(i5), longSparseArray2, longSparseArray, false, true);
                 arrayList.add(messageObject);
                 messageObject.setQuery(str);
             }
@@ -486,53 +482,52 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchForumMessagesInternal$0(i, i2, tL_error, str, tLObject, tL_messages_search, arrayList);
+                DialogsSearchAdapter.$r8$lambda$SHKztY9NDQlXE7Rn5Y4Uo2HZC9U(DialogsSearchAdapter.this, i, i2, tL_error, str, tLObject, tL_messages_search, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchForumMessagesInternal$0(int i, int i2, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLRPC.TL_messages_search tL_messages_search, ArrayList arrayList) {
-        if (i == this.lastForumReqId && (i2 <= 0 || i2 == this.lastSearchId)) {
-            this.waitingResponseCount--;
+    public static /* synthetic */ void $r8$lambda$SHKztY9NDQlXE7Rn5Y4Uo2HZC9U(DialogsSearchAdapter dialogsSearchAdapter, int i, int i2, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLRPC.TL_messages_search tL_messages_search, ArrayList arrayList) {
+        if (i == dialogsSearchAdapter.lastForumReqId && (i2 <= 0 || i2 == dialogsSearchAdapter.lastSearchId)) {
+            dialogsSearchAdapter.waitingResponseCount--;
             if (tL_error == null) {
-                this.currentMessagesQuery = str;
+                dialogsSearchAdapter.currentMessagesQuery = str;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                MessagesController.getInstance(this.currentAccount).putUsers(messages_messages.users, false);
-                MessagesController.getInstance(this.currentAccount).putChats(messages_messages.chats, false);
+                MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putUsers(messages_messages.users, false);
+                MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putChats(messages_messages.chats, false);
                 if (tL_messages_search.add_offset == 0) {
-                    this.searchForumResultMessages.clear();
+                    dialogsSearchAdapter.searchForumResultMessages.clear();
                 }
-                this.nextSearchRate = messages_messages.next_rate;
+                dialogsSearchAdapter.nextSearchRate = messages_messages.next_rate;
                 for (int i3 = 0; i3 < messages_messages.messages.size(); i3++) {
                     TLRPC.Message message = messages_messages.messages.get(i3);
-                    int i4 = MessagesController.getInstance(this.currentAccount).deletedHistory.get(MessageObject.getDialogId(message));
+                    int i4 = MessagesController.getInstance(dialogsSearchAdapter.currentAccount).deletedHistory.get(MessageObject.getDialogId(message));
                     if (i4 == 0 || message.id > i4) {
-                        this.searchForumResultMessages.add((MessageObject) arrayList.get(i3));
+                        dialogsSearchAdapter.searchForumResultMessages.add((MessageObject) arrayList.get(i3));
                     }
                 }
-                this.searchWas = true;
-                this.localMessagesSearchEndReached = messages_messages.messages.size() != 20;
+                dialogsSearchAdapter.searchWas = true;
+                dialogsSearchAdapter.localMessagesSearchEndReached = messages_messages.messages.size() != 20;
                 if (i2 > 0) {
-                    this.lastMessagesSearchId = i2;
-                    if (this.lastLocalSearchId != i2) {
-                        this.searchResult.clear();
+                    dialogsSearchAdapter.lastMessagesSearchId = i2;
+                    if (dialogsSearchAdapter.lastLocalSearchId != i2) {
+                        dialogsSearchAdapter.searchResult.clear();
                     }
-                    if (this.lastGlobalSearchId != i2) {
-                        this.searchAdapterHelper.clear();
+                    if (dialogsSearchAdapter.lastGlobalSearchId != i2) {
+                        dialogsSearchAdapter.searchAdapterHelper.clear();
                     }
                 }
-                this.searchAdapterHelper.mergeResults(this.searchResult, this.filtered2RecentSearchObjects);
-                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+                dialogsSearchAdapter.searchAdapterHelper.mergeResults(dialogsSearchAdapter.searchResult, dialogsSearchAdapter.filtered2RecentSearchObjects);
+                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
                 if (dialogsSearchAdapterDelegate != null) {
-                    dialogsSearchAdapterDelegate.searchStateChanged(this.waitingResponseCount > 0, true);
-                    this.delegate.runResultsEnterAnimation();
+                    dialogsSearchAdapterDelegate.searchStateChanged(dialogsSearchAdapter.waitingResponseCount > 0, true);
+                    dialogsSearchAdapter.delegate.runResultsEnterAnimation();
                 }
-                notifyDataSetChanged();
+                dialogsSearchAdapter.notifyDataSetChanged();
             }
         }
-        this.reqForumId = 0;
+        dialogsSearchAdapter.reqForumId = 0;
     }
 
     private void searchTopics(String str) {
@@ -555,10 +550,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
     }
 
     private void searchMessagesInternal(final String str, final int i) {
-        if (this.needMessagesSearch != 0) {
-            if (TextUtils.isEmpty(this.lastMessagesSearchString) && TextUtils.isEmpty(str)) {
-                return;
-            }
+        if (this.needMessagesSearch != 0 && (!TextUtils.isEmpty(this.lastMessagesSearchString) || !TextUtils.isEmpty(str))) {
             if (this.reqId != 0) {
                 ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.reqId, true);
                 this.reqId = 0;
@@ -583,49 +575,48 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 if (dialogsSearchAdapterDelegate != null) {
                     dialogsSearchAdapterDelegate.searchStateChanged(i2 > 0, true);
                     this.delegate.runResultsEnterAnimation();
-                    return;
                 }
-                return;
-            }
-            final TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-            int i3 = this.currentMessagesFilter.flags;
-            tL_messages_searchGlobal.broadcasts_only = (i3 & 2) != 0;
-            tL_messages_searchGlobal.groups_only = (i3 & 4) != 0;
-            tL_messages_searchGlobal.users_only = (i3 & 8) != 0;
-            tL_messages_searchGlobal.limit = 20;
-            tL_messages_searchGlobal.q = str;
-            tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-            tL_messages_searchGlobal.flags |= 1;
-            tL_messages_searchGlobal.folder_id = this.folderId;
-            if (!str.equals(this.lastMessagesSearchString)) {
-                this.forceLoadingMessages = false;
-            }
-            if (str.equals(this.lastMessagesSearchString) && this.lastMessagesSearchFilterFlags == this.currentMessagesFilter.flags && !this.searchResultMessages.isEmpty() && this.lastMessagesSearchId == this.lastSearchId) {
-                ArrayList arrayList = this.searchResultMessages;
-                MessageObject messageObject = (MessageObject) arrayList.get(arrayList.size() - 1);
-                tL_messages_searchGlobal.offset_id = messageObject.getId();
-                tL_messages_searchGlobal.offset_rate = this.nextSearchRate;
-                tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
             } else {
-                tL_messages_searchGlobal.offset_rate = 0;
-                tL_messages_searchGlobal.offset_id = 0;
-                tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-            }
-            this.lastMessagesSearchString = str;
-            this.lastMessagesSearchFilterFlags = this.currentMessagesFilter.flags;
-            final int i4 = this.lastReqId + 1;
-            this.lastReqId = i4;
-            this.reqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_searchGlobal, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda24
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    DialogsSearchAdapter.this.lambda$searchMessagesInternal$4(str, i4, i, tL_messages_searchGlobal, tLObject, tL_error);
+                final TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
+                int i3 = this.currentMessagesFilter.flags;
+                tL_messages_searchGlobal.broadcasts_only = (i3 & 2) != 0;
+                tL_messages_searchGlobal.groups_only = (i3 & 4) != 0;
+                tL_messages_searchGlobal.users_only = (i3 & 8) != 0;
+                tL_messages_searchGlobal.limit = 20;
+                tL_messages_searchGlobal.q = str;
+                tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+                tL_messages_searchGlobal.flags |= 1;
+                tL_messages_searchGlobal.folder_id = this.folderId;
+                if (!str.equals(this.lastMessagesSearchString)) {
+                    this.forceLoadingMessages = false;
                 }
-            }, 2);
+                if (str.equals(this.lastMessagesSearchString) && this.lastMessagesSearchFilterFlags == this.currentMessagesFilter.flags && !this.searchResultMessages.isEmpty() && this.lastMessagesSearchId == this.lastSearchId) {
+                    ArrayList arrayList = this.searchResultMessages;
+                    MessageObject messageObject = (MessageObject) arrayList.get(arrayList.size() - 1);
+                    tL_messages_searchGlobal.offset_id = messageObject.getId();
+                    tL_messages_searchGlobal.offset_rate = this.nextSearchRate;
+                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
+                } else {
+                    tL_messages_searchGlobal.offset_rate = 0;
+                    tL_messages_searchGlobal.offset_id = 0;
+                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                }
+                this.lastMessagesSearchString = str;
+                this.lastMessagesSearchFilterFlags = this.currentMessagesFilter.flags;
+                final int i4 = this.lastReqId + 1;
+                this.lastReqId = i4;
+                this.reqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_searchGlobal, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda24
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        DialogsSearchAdapter.$r8$lambda$-yt0In8I2Y6ix78uslnPeXTE5Z0(DialogsSearchAdapter.this, str, i4, i, tL_messages_searchGlobal, tLObject, tL_error);
+                    }
+                }, 2);
+            }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchMessagesInternal$4(final String str, final int i, final int i2, final TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$-yt0In8I2Y6ix78uslnPeXTE5Z0(final DialogsSearchAdapter dialogsSearchAdapter, final String str, final int i, final int i2, final TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        dialogsSearchAdapter.getClass();
         final ArrayList arrayList = new ArrayList();
         if (tL_error == null) {
             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
@@ -640,7 +631,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 longSparseArray2.put(user.id, user);
             }
             for (int i5 = 0; i5 < messages_messages.messages.size(); i5++) {
-                MessageObject messageObject = new MessageObject(this.currentAccount, messages_messages.messages.get(i5), longSparseArray2, longSparseArray, false, true);
+                MessageObject messageObject = new MessageObject(dialogsSearchAdapter.currentAccount, messages_messages.messages.get(i5), longSparseArray2, longSparseArray, false, true);
                 arrayList.add(messageObject);
                 messageObject.setQuery(str);
             }
@@ -651,7 +642,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             for (int i6 = 0; i6 < messages_messages2.messages.size(); i6++) {
                 TLRPC.Message message = messages_messages2.messages.get(i6);
                 long dialogId = MessageObject.getDialogId(message);
-                if ((message.out ? MessagesController.getInstance(this.currentAccount).dialogs_read_outbox_max : MessagesController.getInstance(this.currentAccount).dialogs_read_inbox_max).get(Long.valueOf(dialogId)) == null) {
+                if ((message.out ? MessagesController.getInstance(dialogsSearchAdapter.currentAccount).dialogs_read_outbox_max : MessagesController.getInstance(dialogsSearchAdapter.currentAccount).dialogs_read_inbox_max).get(Long.valueOf(dialogId)) == null) {
                     hashSet.add(new Pair(Boolean.valueOf(message.out), Long.valueOf(dialogId)));
                 }
             }
@@ -659,93 +650,91 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchMessagesInternal$2(i, i2, tL_error, str, tLObject, tL_messages_searchGlobal, arrayList);
+                DialogsSearchAdapter.$r8$lambda$gWG4GhmJ11VaBp5jmaeCKnQArbw(DialogsSearchAdapter.this, i, i2, tL_error, str, tLObject, tL_messages_searchGlobal, arrayList);
             }
         };
         if (hashSet.isEmpty()) {
             AndroidUtilities.runOnUIThread(runnable);
         } else {
-            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda29
+            MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda29
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsSearchAdapter.this.lambda$searchMessagesInternal$3(hashSet, runnable);
+                    DialogsSearchAdapter.$r8$lambda$jln6D114Kt3wEF3JuIqft4ufT4U(DialogsSearchAdapter.this, hashSet, runnable);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchMessagesInternal$2(int i, int i2, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$gWG4GhmJ11VaBp5jmaeCKnQArbw(DialogsSearchAdapter dialogsSearchAdapter, int i, int i2, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, ArrayList arrayList) {
         int i3;
-        if (i == this.lastReqId && (i2 <= 0 || i2 == this.lastSearchId)) {
-            this.waitingResponseCount--;
+        if (i == dialogsSearchAdapter.lastReqId && (i2 <= 0 || i2 == dialogsSearchAdapter.lastSearchId)) {
+            dialogsSearchAdapter.waitingResponseCount--;
             if (tL_error == null) {
-                this.currentMessagesQuery = str;
+                dialogsSearchAdapter.currentMessagesQuery = str;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                MessagesController.getInstance(this.currentAccount).putUsers(messages_messages.users, false);
-                MessagesController.getInstance(this.currentAccount).putChats(messages_messages.chats, false);
+                MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putUsers(messages_messages.users, false);
+                MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putChats(messages_messages.chats, false);
                 if (tL_messages_searchGlobal.offset_id == 0) {
-                    this.searchResultMessages.clear();
+                    dialogsSearchAdapter.searchResultMessages.clear();
                 }
-                this.nextSearchRate = messages_messages.next_rate;
+                dialogsSearchAdapter.nextSearchRate = messages_messages.next_rate;
                 for (int i4 = 0; i4 < messages_messages.messages.size(); i4++) {
                     TLRPC.Message message = messages_messages.messages.get(i4);
-                    int i5 = MessagesController.getInstance(this.currentAccount).deletedHistory.get(MessageObject.getDialogId(message));
+                    int i5 = MessagesController.getInstance(dialogsSearchAdapter.currentAccount).deletedHistory.get(MessageObject.getDialogId(message));
                     if (i5 == 0 || message.id > i5) {
                         MessageObject messageObject = (MessageObject) arrayList.get(i4);
-                        if (!this.searchForumResultMessages.isEmpty()) {
-                            while (i3 < this.searchForumResultMessages.size()) {
-                                MessageObject messageObject2 = (MessageObject) this.searchForumResultMessages.get(i3);
+                        if (!dialogsSearchAdapter.searchForumResultMessages.isEmpty()) {
+                            while (i3 < dialogsSearchAdapter.searchForumResultMessages.size()) {
+                                MessageObject messageObject2 = (MessageObject) dialogsSearchAdapter.searchForumResultMessages.get(i3);
                                 i3 = (messageObject2 == null || messageObject == null || messageObject.getId() != messageObject2.getId() || messageObject.getDialogId() != messageObject2.getDialogId()) ? i3 + 1 : 0;
                             }
                         }
-                        this.searchResultMessages.add(messageObject);
-                        Integer num = (message.out ? MessagesController.getInstance(this.currentAccount).dialogs_read_outbox_max : MessagesController.getInstance(this.currentAccount).dialogs_read_inbox_max).get(Long.valueOf(MessageObject.getDialogId(message)));
+                        dialogsSearchAdapter.searchResultMessages.add(messageObject);
+                        Integer num = (message.out ? MessagesController.getInstance(dialogsSearchAdapter.currentAccount).dialogs_read_outbox_max : MessagesController.getInstance(dialogsSearchAdapter.currentAccount).dialogs_read_inbox_max).get(Long.valueOf(MessageObject.getDialogId(message)));
                         if (num != null) {
                             message.unread = num.intValue() < message.id;
                         }
                     }
                 }
-                this.searchWas = true;
-                this.messagesSearchEndReached = messages_messages.messages.size() != 20;
+                dialogsSearchAdapter.searchWas = true;
+                dialogsSearchAdapter.messagesSearchEndReached = messages_messages.messages.size() != 20;
                 if (i2 > 0) {
-                    this.lastMessagesSearchId = i2;
-                    if (this.lastLocalSearchId != i2) {
-                        this.searchResult.clear();
+                    dialogsSearchAdapter.lastMessagesSearchId = i2;
+                    if (dialogsSearchAdapter.lastLocalSearchId != i2) {
+                        dialogsSearchAdapter.searchResult.clear();
                     }
-                    if (this.lastGlobalSearchId != i2) {
-                        this.searchAdapterHelper.clear();
+                    if (dialogsSearchAdapter.lastGlobalSearchId != i2) {
+                        dialogsSearchAdapter.searchAdapterHelper.clear();
                     }
                 }
-                this.searchAdapterHelper.mergeResults(this.searchResult, this.filtered2RecentSearchObjects);
-                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+                dialogsSearchAdapter.searchAdapterHelper.mergeResults(dialogsSearchAdapter.searchResult, dialogsSearchAdapter.filtered2RecentSearchObjects);
+                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
                 if (dialogsSearchAdapterDelegate != null) {
-                    dialogsSearchAdapterDelegate.searchStateChanged(this.waitingResponseCount > 0, true);
-                    this.delegate.runResultsEnterAnimation();
+                    dialogsSearchAdapterDelegate.searchStateChanged(dialogsSearchAdapter.waitingResponseCount > 0, true);
+                    dialogsSearchAdapter.delegate.runResultsEnterAnimation();
                 }
-                this.globalSearchCollapsed = true;
-                this.phoneCollapsed = true;
-                this.forceLoadingMessages = false;
-                EmptyLayout emptyLayout = this.messagesEmptyLayout;
+                dialogsSearchAdapter.globalSearchCollapsed = true;
+                dialogsSearchAdapter.phoneCollapsed = true;
+                dialogsSearchAdapter.forceLoadingMessages = false;
+                EmptyLayout emptyLayout = dialogsSearchAdapter.messagesEmptyLayout;
                 if (emptyLayout != null) {
-                    emptyLayout.setQuery(this.lastMessagesSearchString);
+                    emptyLayout.setQuery(dialogsSearchAdapter.lastMessagesSearchString);
                 }
-                notifyDataSetChanged();
+                dialogsSearchAdapter.notifyDataSetChanged();
             }
         }
-        this.reqId = 0;
+        dialogsSearchAdapter.reqId = 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchMessagesInternal$3(HashSet hashSet, Runnable runnable) {
-        MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
+    public static /* synthetic */ void $r8$lambda$jln6D114Kt3wEF3JuIqft4ufT4U(DialogsSearchAdapter dialogsSearchAdapter, HashSet hashSet, Runnable runnable) {
+        MessagesController messagesController = MessagesController.getInstance(dialogsSearchAdapter.currentAccount);
         Iterator it = hashSet.iterator();
         while (it.hasNext()) {
             Pair pair = (Pair) it.next();
             boolean booleanValue = ((Boolean) pair.first).booleanValue();
             Long l = (Long) pair.second;
-            (booleanValue ? messagesController.dialogs_read_outbox_max : messagesController.dialogs_read_inbox_max).put(l, Integer.valueOf(MessagesStorage.getInstance(this.currentAccount).getDialogReadMaxSync(booleanValue, l.longValue())));
+            (booleanValue ? messagesController.dialogs_read_outbox_max : messagesController.dialogs_read_inbox_max).put(l, Integer.valueOf(MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).getDialogReadMaxSync(booleanValue, l.longValue())));
         }
         AndroidUtilities.runOnUIThread(runnable);
     }
@@ -775,7 +764,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         loadRecentSearch(this.currentAccount, i, new OnRecentSearchLoaded() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Adapters.DialogsSearchAdapter.OnRecentSearchLoaded
             public final void setRecentSearch(ArrayList arrayList, LongSparseArray longSparseArray) {
-                DialogsSearchAdapter.this.lambda$loadRecentSearch$5(arrayList, longSparseArray);
+                DialogsSearchAdapter.this.setRecentSearch(arrayList, longSparseArray);
             }
         });
     }
@@ -784,13 +773,12 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         MessagesStorage.getInstance(i).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.lambda$loadRecentSearch$8(i, i2, onRecentSearchLoaded);
+                DialogsSearchAdapter.$r8$lambda$IeZY6DzfyevAnT9a9okTeQwCnus(i, i2, onRecentSearchLoaded);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$loadRecentSearch$8(int i, int i2, final OnRecentSearchLoaded onRecentSearchLoaded) {
+    public static /* synthetic */ void $r8$lambda$IeZY6DzfyevAnT9a9okTeQwCnus(int i, int i2, final OnRecentSearchLoaded onRecentSearchLoaded) {
         try {
             SQLiteCursor queryFinalized = MessagesStorage.getInstance(i).getDatabase().queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
             ArrayList<Long> arrayList = new ArrayList<>();
@@ -879,9 +867,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             Collections.sort(arrayList4, new Comparator() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda1
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$loadRecentSearch$6;
-                    lambda$loadRecentSearch$6 = DialogsSearchAdapter.lambda$loadRecentSearch$6((DialogsSearchAdapter.RecentSearchObject) obj, (DialogsSearchAdapter.RecentSearchObject) obj2);
-                    return lambda$loadRecentSearch$6;
+                    return DialogsSearchAdapter.$r8$lambda$lqxExGyE7S05spp6PXDQg3CKK0w((DialogsSearchAdapter.RecentSearchObject) obj, (DialogsSearchAdapter.RecentSearchObject) obj2);
                 }
             });
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda2
@@ -895,8 +881,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$loadRecentSearch$6(RecentSearchObject recentSearchObject, RecentSearchObject recentSearchObject2) {
+    public static /* synthetic */ int $r8$lambda$lqxExGyE7S05spp6PXDQg3CKK0w(RecentSearchObject recentSearchObject, RecentSearchObject recentSearchObject2) {
         int i = recentSearchObject.date;
         int i2 = recentSearchObject2.date;
         if (i < i2) {
@@ -923,15 +908,15 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$putRecentSearch$9(j);
+                DialogsSearchAdapter.$r8$lambda$CE8rcqC5tSOwpAR4nKuV7OhDTaI(DialogsSearchAdapter.this, j);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$putRecentSearch$9(long j) {
+    public static /* synthetic */ void $r8$lambda$CE8rcqC5tSOwpAR4nKuV7OhDTaI(DialogsSearchAdapter dialogsSearchAdapter, long j) {
+        dialogsSearchAdapter.getClass();
         try {
-            SQLitePreparedStatement executeFast = MessagesStorage.getInstance(this.currentAccount).getDatabase().executeFast("REPLACE INTO search_recent VALUES(?, ?)");
+            SQLitePreparedStatement executeFast = MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).getDatabase().executeFast("REPLACE INTO search_recent VALUES(?, ?)");
             executeFast.requery();
             executeFast.bindLong(1, j);
             executeFast.bindInteger(2, (int) (System.currentTimeMillis() / 1000));
@@ -977,16 +962,16 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$clearRecentSearch$10(sb);
+                DialogsSearchAdapter.$r8$lambda$vR29a6QaR2LB4NwIE2WBZxkXR9w(DialogsSearchAdapter.this, sb);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clearRecentSearch$10(StringBuilder sb) {
+    public static /* synthetic */ void $r8$lambda$vR29a6QaR2LB4NwIE2WBZxkXR9w(DialogsSearchAdapter dialogsSearchAdapter, StringBuilder sb) {
+        dialogsSearchAdapter.getClass();
         try {
             sb.insert(0, "DELETE FROM search_recent WHERE ");
-            MessagesStorage.getInstance(this.currentAccount).getDatabase().executeFast(sb.toString()).stepThis().dispose();
+            MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).getDatabase().executeFast(sb.toString()).stepThis().dispose();
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -1005,15 +990,15 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$removeRecentSearch$11(j);
+                DialogsSearchAdapter.$r8$lambda$DTzXG3o_XzmlQMKeFw1Lfyc0vdk(DialogsSearchAdapter.this, j);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeRecentSearch$11(long j) {
+    public static /* synthetic */ void $r8$lambda$DTzXG3o_XzmlQMKeFw1Lfyc0vdk(DialogsSearchAdapter dialogsSearchAdapter, long j) {
+        dialogsSearchAdapter.getClass();
         try {
-            MessagesStorage.getInstance(this.currentAccount).getDatabase().executeFast("DELETE FROM search_recent WHERE did = " + j).stepThis().dispose();
+            MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).getDatabase().executeFast("DELETE FROM search_recent WHERE did = " + j).stepThis().dispose();
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -1024,8 +1009,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setRecentSearch, reason: merged with bridge method [inline-methods] */
-    public void lambda$loadRecentSearch$5(ArrayList arrayList, LongSparseArray longSparseArray) {
+    public void setRecentSearch(ArrayList arrayList, LongSparseArray longSparseArray) {
         this.recentSearchObjects = arrayList;
         this.recentSearchObjectsById = longSparseArray;
         for (int i = 0; i < this.recentSearchObjects.size(); i++) {
@@ -1055,38 +1039,37 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda35
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsSearchAdapter.this.lambda$searchDialogsInternal$13(lowerCase, i, str);
+                    DialogsSearchAdapter.$r8$lambda$Ck-M8b2VOUBpJQiKB2SbRIDGEw4(DialogsSearchAdapter.this, lowerCase, i, str);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogsInternal$13(String str, int i, String str2) {
+    public static /* synthetic */ void $r8$lambda$Ck-M8b2VOUBpJQiKB2SbRIDGEw4(final DialogsSearchAdapter dialogsSearchAdapter, String str, int i, String str2) {
+        dialogsSearchAdapter.getClass();
         ArrayList<Object> arrayList = new ArrayList<>();
         ArrayList<CharSequence> arrayList2 = new ArrayList<>();
         ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
         ArrayList arrayList4 = new ArrayList();
-        MessagesStorage.getInstance(this.currentAccount).localSearch(this.dialogsType, str, arrayList, arrayList2, arrayList3, this.filterDialogIds, -1);
-        updateSearchResults(arrayList, arrayList2, arrayList3, arrayList4, i);
-        FiltersView.fillTipDates(str, this.localTipDates);
-        this.localTipArchive = false;
+        MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).localSearch(dialogsSearchAdapter.dialogsType, str, arrayList, arrayList2, arrayList3, dialogsSearchAdapter.filterDialogIds, -1);
+        dialogsSearchAdapter.updateSearchResults(arrayList, arrayList2, arrayList3, arrayList4, i);
+        FiltersView.fillTipDates(str, dialogsSearchAdapter.localTipDates);
+        dialogsSearchAdapter.localTipArchive = false;
         if (str.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str2))) {
-            this.localTipArchive = true;
+            dialogsSearchAdapter.localTipArchive = true;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchDialogsInternal$12();
+                DialogsSearchAdapter.$r8$lambda$t-FcNmQj_r90HTeslPs3PrhW-s4(DialogsSearchAdapter.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogsInternal$12() {
-        FilteredSearchView.Delegate delegate = this.filtersDelegate;
+    public static /* synthetic */ void $r8$lambda$t-FcNmQj_r90HTeslPs3PrhW-s4(DialogsSearchAdapter dialogsSearchAdapter) {
+        FilteredSearchView.Delegate delegate = dialogsSearchAdapter.filtersDelegate;
         if (delegate != null) {
-            delegate.updateFiltersView(false, null, this.localTipDates, this.localTipArchive);
+            delegate.updateFiltersView(false, null, dialogsSearchAdapter.localTipDates, dialogsSearchAdapter.localTipArchive);
         }
     }
 
@@ -1094,65 +1077,64 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$updateSearchResults$15(i, arrayList, arrayList2, arrayList3);
+                DialogsSearchAdapter.$r8$lambda$d32xhfCOplTUigxjxJh_f70AMGc(DialogsSearchAdapter.this, i, arrayList, arrayList2, arrayList3);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSearchResults$15(int i, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
+    public static /* synthetic */ void $r8$lambda$d32xhfCOplTUigxjxJh_f70AMGc(final DialogsSearchAdapter dialogsSearchAdapter, int i, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
         final long j;
-        this.waitingResponseCount--;
-        if (i != this.lastSearchId) {
+        dialogsSearchAdapter.waitingResponseCount--;
+        if (i != dialogsSearchAdapter.lastSearchId) {
             return;
         }
-        this.lastLocalSearchId = i;
-        if (this.lastGlobalSearchId != i) {
-            this.searchAdapterHelper.clear();
+        dialogsSearchAdapter.lastLocalSearchId = i;
+        if (dialogsSearchAdapter.lastGlobalSearchId != i) {
+            dialogsSearchAdapter.searchAdapterHelper.clear();
         }
-        if (this.lastMessagesSearchId != i) {
-            this.searchResultMessages.clear();
+        if (dialogsSearchAdapter.lastMessagesSearchId != i) {
+            dialogsSearchAdapter.searchResultMessages.clear();
         }
-        this.searchWas = true;
+        dialogsSearchAdapter.searchWas = true;
         int i2 = 0;
         while (i2 < arrayList.size()) {
-            if (!filter(arrayList.get(i2))) {
+            if (!dialogsSearchAdapter.filter(arrayList.get(i2))) {
                 arrayList.remove(i2);
                 i2--;
             }
             i2++;
         }
-        int size = this.filtered2RecentSearchObjects.size();
+        int size = dialogsSearchAdapter.filtered2RecentSearchObjects.size();
         int i3 = 0;
         while (i3 < arrayList.size()) {
             final Object obj = arrayList.get(i3);
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
-                MessagesController.getInstance(this.currentAccount).putUser(user, true);
+                MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putUser(user, true);
                 j = user.id;
             } else if (obj instanceof TLRPC.Chat) {
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                MessagesController.getInstance(this.currentAccount).putChat(chat, true);
+                MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putChat(chat, true);
                 j = -chat.id;
             } else {
                 if (obj instanceof TLRPC.EncryptedChat) {
-                    MessagesController.getInstance(this.currentAccount).putEncryptedChat((TLRPC.EncryptedChat) obj, true);
+                    MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putEncryptedChat((TLRPC.EncryptedChat) obj, true);
                 }
                 j = 0;
             }
-            if (j != 0 && ((TLRPC.Dialog) MessagesController.getInstance(this.currentAccount).dialogs_dict.get(j)) == null) {
-                MessagesStorage.getInstance(this.currentAccount).getDialogFolderId(j, new MessagesStorage.IntCallback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda39
+            if (j != 0 && ((TLRPC.Dialog) MessagesController.getInstance(dialogsSearchAdapter.currentAccount).dialogs_dict.get(j)) == null) {
+                MessagesStorage.getInstance(dialogsSearchAdapter.currentAccount).getDialogFolderId(j, new MessagesStorage.IntCallback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda39
                     @Override // org.telegram.messenger.MessagesStorage.IntCallback
                     public final void run(int i4) {
-                        DialogsSearchAdapter.this.lambda$updateSearchResults$14(j, obj, i4);
+                        DialogsSearchAdapter.$r8$lambda$1_Rg7fKTgHrwTTMYVSFglpO6mw8(DialogsSearchAdapter.this, j, obj, i4);
                     }
                 });
             }
-            if (recentSearchAvailable() && !(obj instanceof TLRPC.EncryptedChat)) {
-                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+            if (dialogsSearchAdapter.recentSearchAvailable() && !(obj instanceof TLRPC.EncryptedChat)) {
+                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
                 boolean z = dialogsSearchAdapterDelegate != null && dialogsSearchAdapterDelegate.getSearchForumDialogId() == j;
                 for (int i4 = 0; !z && i4 < size; i4++) {
-                    RecentSearchObject recentSearchObject = (RecentSearchObject) this.filtered2RecentSearchObjects.get(i4);
+                    RecentSearchObject recentSearchObject = (RecentSearchObject) dialogsSearchAdapter.filtered2RecentSearchObjects.get(i4);
                     if (recentSearchObject != null && recentSearchObject.did == j) {
                         z = true;
                     }
@@ -1165,20 +1147,20 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             }
             i3++;
         }
-        MessagesController.getInstance(this.currentAccount).putUsers(arrayList3, true);
-        this.searchResult = arrayList;
-        this.searchResultNames = arrayList2;
-        this.searchAdapterHelper.mergeResults(arrayList, this.filtered2RecentSearchObjects);
-        notifyDataSetChanged();
-        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate2 = this.delegate;
+        MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putUsers(arrayList3, true);
+        dialogsSearchAdapter.searchResult = arrayList;
+        dialogsSearchAdapter.searchResultNames = arrayList2;
+        dialogsSearchAdapter.searchAdapterHelper.mergeResults(arrayList, dialogsSearchAdapter.filtered2RecentSearchObjects);
+        dialogsSearchAdapter.notifyDataSetChanged();
+        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate2 = dialogsSearchAdapter.delegate;
         if (dialogsSearchAdapterDelegate2 != null) {
-            dialogsSearchAdapterDelegate2.searchStateChanged(this.waitingResponseCount > 0, true);
-            this.delegate.runResultsEnterAnimation();
+            dialogsSearchAdapterDelegate2.searchStateChanged(dialogsSearchAdapter.waitingResponseCount > 0, true);
+            dialogsSearchAdapter.delegate.runResultsEnterAnimation();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSearchResults$14(long j, Object obj, int i) {
+    public static /* synthetic */ void $r8$lambda$1_Rg7fKTgHrwTTMYVSFglpO6mw8(DialogsSearchAdapter dialogsSearchAdapter, long j, Object obj, int i) {
+        dialogsSearchAdapter.getClass();
         if (i != -1) {
             TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
             tL_dialog.id = j;
@@ -1188,9 +1170,9 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             if (obj instanceof TLRPC.Chat) {
                 tL_dialog.flags = ChatObject.isChannel((TLRPC.Chat) obj) ? 1 : 0;
             }
-            MessagesController.getInstance(this.currentAccount).dialogs_dict.put(j, tL_dialog);
-            MessagesController.getInstance(this.currentAccount).getAllDialogs().add(tL_dialog);
-            MessagesController.getInstance(this.currentAccount).sortDialogs(null);
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).dialogs_dict.put(j, tL_dialog);
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).getAllDialogs().add(tL_dialog);
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).sortDialogs(null);
         }
     }
 
@@ -1247,7 +1229,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 this.sponsoredReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_getSponsoredPeers, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda8
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        DialogsSearchAdapter.this.lambda$searchDialogs$17(tLObject, tL_error);
+                        DialogsSearchAdapter.$r8$lambda$kMWPmDpvnbv3zVHm83cjZR0JrpY(DialogsSearchAdapter.this, tLObject, tL_error);
                     }
                 });
             }
@@ -1348,7 +1330,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchDialogs$19(trim, i4, str);
+                DialogsSearchAdapter.$r8$lambda$rOjakSgd_QB9gmSuL6Su3Ygpfsk(DialogsSearchAdapter.this, trim, i4, str);
             }
         };
         this.searchRunnable = runnable3;
@@ -1358,7 +1340,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsSearchAdapter.this.lambda$searchDialogs$22(i4, str2);
+                    DialogsSearchAdapter.$r8$lambda$JlRRQZw6T6QgTJ8KvLuHH-lGSUk(DialogsSearchAdapter.this, i4, str2);
                 }
             };
             this.searchHashtagRunnable = runnable4;
@@ -1366,141 +1348,152 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$17(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$kMWPmDpvnbv3zVHm83cjZR0JrpY(final DialogsSearchAdapter dialogsSearchAdapter, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        dialogsSearchAdapter.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchDialogs$16(tLObject);
+                DialogsSearchAdapter.$r8$lambda$ZE5LTthMendYCC-TCgBFodqtguw(DialogsSearchAdapter.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$16(TLObject tLObject) {
-        this.sponsoredReqId = 0;
+    public static /* synthetic */ void $r8$lambda$ZE5LTthMendYCC-TCgBFodqtguw(DialogsSearchAdapter dialogsSearchAdapter, TLObject tLObject) {
+        dialogsSearchAdapter.sponsoredReqId = 0;
         if (tLObject instanceof TLRPC.TL_contacts_sponsoredPeersEmpty) {
-            if (this.sponsoredPeers.isEmpty()) {
+            if (dialogsSearchAdapter.sponsoredPeers.isEmpty()) {
                 return;
             }
-            this.sponsoredPeers.clear();
-            notifyDataSetChanged();
+            dialogsSearchAdapter.sponsoredPeers.clear();
+            dialogsSearchAdapter.notifyDataSetChanged();
             return;
         }
         if (tLObject instanceof TLRPC.TL_contacts_sponsoredPeers) {
             TLRPC.TL_contacts_sponsoredPeers tL_contacts_sponsoredPeers = (TLRPC.TL_contacts_sponsoredPeers) tLObject;
-            MessagesController.getInstance(this.currentAccount).putUsers(tL_contacts_sponsoredPeers.users, true);
-            MessagesController.getInstance(this.currentAccount).putChats(tL_contacts_sponsoredPeers.chats, true);
-            this.sponsoredPeers.addAll(tL_contacts_sponsoredPeers.peers);
-            notifyDataSetChanged();
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putUsers(tL_contacts_sponsoredPeers.users, true);
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putChats(tL_contacts_sponsoredPeers.chats, true);
+            dialogsSearchAdapter.sponsoredPeers.addAll(tL_contacts_sponsoredPeers.peers);
+            dialogsSearchAdapter.notifyDataSetChanged();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$19(final String str, final int i, final String str2) {
-        this.searchRunnable = null;
-        searchDialogsInternal(str, i);
-        if (this.dialogsType == 15) {
-            this.waitingResponseCount -= 2;
+    public static /* synthetic */ void $r8$lambda$rOjakSgd_QB9gmSuL6Su3Ygpfsk(final DialogsSearchAdapter dialogsSearchAdapter, final String str, final int i, final String str2) {
+        dialogsSearchAdapter.searchRunnable = null;
+        dialogsSearchAdapter.searchDialogsInternal(str, i);
+        if (dialogsSearchAdapter.dialogsType == 15) {
+            dialogsSearchAdapter.waitingResponseCount -= 2;
             return;
         }
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchDialogs$18(i, str, str2);
+                DialogsSearchAdapter.$r8$lambda$hPyOeHBX3zNauHXU_eIJ8na7b9k(DialogsSearchAdapter.this, i, str, str2);
             }
         };
-        this.searchRunnable2 = runnable;
+        dialogsSearchAdapter.searchRunnable2 = runnable;
         AndroidUtilities.runOnUIThread(runnable);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$18(int i, String str, String str2) {
-        String str3;
+    public static /* synthetic */ void $r8$lambda$hPyOeHBX3zNauHXU_eIJ8na7b9k(DialogsSearchAdapter dialogsSearchAdapter, int i, String str, String str2) {
         int i2;
-        this.searchRunnable2 = null;
-        if (i != this.lastSearchId) {
+        long j;
+        boolean z;
+        long j2;
+        boolean z2;
+        boolean z3;
+        dialogsSearchAdapter.searchRunnable2 = null;
+        if (i != dialogsSearchAdapter.lastSearchId) {
             return;
         }
-        if (this.needMessagesSearch != 2 && (i2 = this.dialogsType) != 6 && i2 != 5 && this.delegate.getSearchForumDialogId() == 0) {
-            SearchAdapterHelper searchAdapterHelper = this.searchAdapterHelper;
-            int i3 = this.dialogsType;
-            boolean z = i3 != 4;
-            boolean z2 = (i3 == 4 || i3 == 11) ? false : true;
-            boolean z3 = i3 == 2 || i3 == 1;
-            boolean z4 = i3 == 0;
-            DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
-            str3 = str2;
-            searchAdapterHelper.queryServerSearch(str, true, z, true, z2, z3, 0L, z4, 0, i, dialogsSearchAdapterDelegate != null ? dialogsSearchAdapterDelegate.getSearchForumDialogId() : 0L);
+        if (dialogsSearchAdapter.needMessagesSearch != 2 && (i2 = dialogsSearchAdapter.dialogsType) != 6 && i2 != 5 && dialogsSearchAdapter.delegate.getSearchForumDialogId() == 0) {
+            SearchAdapterHelper searchAdapterHelper = dialogsSearchAdapter.searchAdapterHelper;
+            int i3 = dialogsSearchAdapter.dialogsType;
+            boolean z4 = i3 != 4;
+            if (i3 == 4 || i3 == 11) {
+                j = 0;
+                z = false;
+            } else {
+                j = 0;
+                z = true;
+            }
+            boolean z5 = i3 == 2 || i3 == 1;
+            boolean z6 = i3 == 0;
+            DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
+            if (dialogsSearchAdapterDelegate != null) {
+                j2 = dialogsSearchAdapterDelegate.getSearchForumDialogId();
+                z3 = z6;
+                z2 = z4;
+            } else {
+                j2 = j;
+                z2 = z4;
+                z3 = z6;
+            }
+            searchAdapterHelper.queryServerSearch(str, true, z2, true, z, z5, 0L, z3, 0, i, j2);
         } else {
-            str3 = str2;
-            this.waitingResponseCount -= 2;
+            dialogsSearchAdapter.waitingResponseCount -= 2;
         }
-        if (this.needMessagesSearch == 0 || this.dialogsType == 15) {
-            this.waitingResponseCount--;
+        if (dialogsSearchAdapter.needMessagesSearch == 0 || dialogsSearchAdapter.dialogsType == 15) {
+            dialogsSearchAdapter.waitingResponseCount--;
             return;
         }
-        searchTopics(str3);
-        String str4 = str3;
-        searchMessagesInternal(str4, i);
-        searchForumMessagesInternal(str4, i);
+        dialogsSearchAdapter.searchTopics(str2);
+        dialogsSearchAdapter.searchMessagesInternal(str2, i);
+        dialogsSearchAdapter.searchForumMessagesInternal(str2, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$22(final int i, final String str) {
-        this.searchHashtagRunnable = null;
-        if (i != this.lastSearchId) {
+    public static /* synthetic */ void $r8$lambda$JlRRQZw6T6QgTJ8KvLuHH-lGSUk(final DialogsSearchAdapter dialogsSearchAdapter, final int i, final String str) {
+        dialogsSearchAdapter.searchHashtagRunnable = null;
+        if (i != dialogsSearchAdapter.lastSearchId) {
             return;
         }
-        if (this.searchHashtagRequest >= 0) {
-            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.searchHashtagRequest, true);
+        if (dialogsSearchAdapter.searchHashtagRequest >= 0) {
+            ConnectionsManager.getInstance(dialogsSearchAdapter.currentAccount).cancelRequest(dialogsSearchAdapter.searchHashtagRequest, true);
         }
         TLRPC.TL_channels_searchPosts tL_channels_searchPosts = new TLRPC.TL_channels_searchPosts();
         tL_channels_searchPosts.flags = 1 | tL_channels_searchPosts.flags;
         tL_channels_searchPosts.hashtag = str;
         tL_channels_searchPosts.limit = 3;
         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        this.searchHashtagRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda32
+        dialogsSearchAdapter.searchHashtagRequest = ConnectionsManager.getInstance(dialogsSearchAdapter.currentAccount).sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda32
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                DialogsSearchAdapter.this.lambda$searchDialogs$21(i, str, tLObject, tL_error);
+                DialogsSearchAdapter.$r8$lambda$nImDgWWS38mUhCab77wlf_Qszy0(DialogsSearchAdapter.this, i, str, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$21(final int i, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$nImDgWWS38mUhCab77wlf_Qszy0(final DialogsSearchAdapter dialogsSearchAdapter, final int i, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        dialogsSearchAdapter.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsSearchAdapter.this.lambda$searchDialogs$20(i, tLObject, str);
+                DialogsSearchAdapter.$r8$lambda$PBgtg9A0ryyXt5gGwsRRpMyF3GQ(DialogsSearchAdapter.this, i, tLObject, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchDialogs$20(int i, TLObject tLObject, String str) {
+    public static /* synthetic */ void $r8$lambda$PBgtg9A0ryyXt5gGwsRRpMyF3GQ(DialogsSearchAdapter dialogsSearchAdapter, int i, TLObject tLObject, String str) {
         int i2;
-        if (i == this.lastSearchId && (tLObject instanceof TLRPC.messages_Messages)) {
+        if (i == dialogsSearchAdapter.lastSearchId && (tLObject instanceof TLRPC.messages_Messages)) {
             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
             if (messages_messages instanceof TLRPC.TL_messages_messages) {
                 i2 = ((TLRPC.TL_messages_messages) messages_messages).messages.size();
             } else {
                 i2 = messages_messages instanceof TLRPC.TL_messages_messagesSlice ? ((TLRPC.TL_messages_messagesSlice) messages_messages).count : 0;
             }
-            this.publicPostsTotalCount = i2;
-            this.publicPostsLastRate = messages_messages.next_rate;
-            this.publicPostsHashtag = str;
-            MessagesController.getInstance(this.currentAccount).putUsers(messages_messages.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(messages_messages.chats, false);
+            dialogsSearchAdapter.publicPostsTotalCount = i2;
+            dialogsSearchAdapter.publicPostsLastRate = messages_messages.next_rate;
+            dialogsSearchAdapter.publicPostsHashtag = str;
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putUsers(messages_messages.users, false);
+            MessagesController.getInstance(dialogsSearchAdapter.currentAccount).putChats(messages_messages.chats, false);
             for (int i3 = 0; i3 < messages_messages.messages.size(); i3++) {
-                this.publicPosts.add(new MessageObject(this.currentAccount, messages_messages.messages.get(i3), false, true));
+                dialogsSearchAdapter.publicPosts.add(new MessageObject(dialogsSearchAdapter.currentAccount, messages_messages.messages.get(i3), false, true));
             }
-            DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+            DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
             if (dialogsSearchAdapterDelegate != null) {
-                dialogsSearchAdapterDelegate.searchStateChanged(this.waitingResponseCount > 0, true);
+                dialogsSearchAdapterDelegate.searchStateChanged(dialogsSearchAdapter.waitingResponseCount > 0, true);
             }
-            notifyDataSetChanged();
+            dialogsSearchAdapter.notifyDataSetChanged();
         }
     }
 
@@ -1588,7 +1581,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
     public Object getItem(int i) {
         int i2;
         int i3;
-        Object chat;
+        TLRPC.Chat chat;
         int i4;
         if (!this.publicPosts.isEmpty()) {
             if (i > 0 && i - 1 < this.publicPosts.size()) {
@@ -1607,15 +1600,11 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             ArrayList arrayList = this.searchWas ? this.filtered2RecentSearchObjects : this.filteredRecentSearchObjects;
             if (i > hasHints && (i3 = (i - 1) - (hasHints == true ? 1 : 0)) < arrayList.size()) {
                 TLObject tLObject = ((RecentSearchObject) arrayList.get(i3)).object;
-                if (tLObject instanceof TLRPC.User) {
-                    chat = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(((TLRPC.User) tLObject).id));
-                    if (chat == null) {
-                        return tLObject;
-                    }
-                } else if (!(tLObject instanceof TLRPC.Chat) || (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(((TLRPC.Chat) tLObject).id))) == null) {
-                    return tLObject;
+                if (!(tLObject instanceof TLRPC.User)) {
+                    return (!(tLObject instanceof TLRPC.Chat) || (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(((TLRPC.Chat) tLObject).id))) == null) ? tLObject : chat;
                 }
-                return chat;
+                TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(((TLRPC.User) tLObject).id));
+                return user != null ? user : tLObject;
             }
             i -= getRecentItemsCount();
         }
@@ -1764,12 +1753,12 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         return (itemViewType == 1 || itemViewType == 4 || itemViewType == 10) ? false : true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreateViewHolder$23(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$-pvv1W5vFLs_XyTXnspTPmObJts(DialogsSearchAdapter dialogsSearchAdapter, View view, int i) {
+        dialogsSearchAdapter.getClass();
         if (view instanceof HintDialogCell) {
             HintDialogCell hintDialogCell = (HintDialogCell) view;
             if (hintDialogCell.isBlocked()) {
-                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+                DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
                 if (dialogsSearchAdapterDelegate != null) {
                     dialogsSearchAdapterDelegate.didPressedBlockedDialog(view, hintDialogCell.getDialogId());
                     return;
@@ -1777,15 +1766,14 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 return;
             }
         }
-        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate2 = this.delegate;
+        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate2 = dialogsSearchAdapter.delegate;
         if (dialogsSearchAdapterDelegate2 != null) {
             dialogsSearchAdapterDelegate2.didPressedOnSubDialog(((Long) view.getTag()).longValue());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$onCreateViewHolder$24(View view, int i) {
-        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+    public static /* synthetic */ boolean $r8$lambda$VSrE8fb5RTQtdpCm6YYi7QrhjEc(DialogsSearchAdapter dialogsSearchAdapter, View view, int i) {
+        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
         if (dialogsSearchAdapterDelegate == null) {
             return true;
         }
@@ -1793,20 +1781,21 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreateViewHolder$25() {
-        this.currentMessagesFilter = Filter.All;
-        this.searchResultMessages.clear();
-        int i = this.messagesSectionPosition;
-        if (i >= 0 && i < getItemCount()) {
-            notifyItemChanged(this.messagesSectionPosition);
+    public static /* synthetic */ void $r8$lambda$cgtB9Jcvb3YvksHGO4J3OFBkQhw(DialogsSearchAdapter dialogsSearchAdapter) {
+        dialogsSearchAdapter.getClass();
+        dialogsSearchAdapter.currentMessagesFilter = Filter.All;
+        dialogsSearchAdapter.searchResultMessages.clear();
+        int i = dialogsSearchAdapter.messagesSectionPosition;
+        if (i >= 0 && i < dialogsSearchAdapter.getItemCount()) {
+            dialogsSearchAdapter.notifyItemChanged(dialogsSearchAdapter.messagesSectionPosition);
         }
-        loadMoreSearchMessages();
+        dialogsSearchAdapter.loadMoreSearchMessages();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view;
+        View view2;
         switch (i) {
             case 0:
                 view = new ProfileSearchCell(this.mContext).showPremiumBlock(this.dialogsType == 3);
@@ -1824,16 +1813,19 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 };
                 break;
             case 3:
-                view = new TopicSearchCell(this.mContext);
+                view2 = new TopicSearchCell(this.mContext);
+                view = view2;
                 break;
             case 4:
                 FlickerLoadingView flickerLoadingView = new FlickerLoadingView(this.mContext);
                 flickerLoadingView.setViewType(1);
                 flickerLoadingView.setIsSingleCell(true);
-                view = flickerLoadingView;
+                view2 = flickerLoadingView;
+                view = view2;
                 break;
             case 5:
-                view = new HashtagSearchCell(this.mContext);
+                view2 = new HashtagSearchCell(this.mContext);
+                view = view2;
                 break;
             case 6:
                 RecyclerListView recyclerListView = new RecyclerListView(this.mContext) { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter.4
@@ -1865,38 +1857,40 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 recyclerListView.setAdapter(new CategoryAdapterRecycler(this.mContext, this.currentAccount, false, this.dialogsType == 3, this.resourcesProvider));
                 recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                    public final void onItemClick(View view2, int i2) {
-                        DialogsSearchAdapter.this.lambda$onCreateViewHolder$23(view2, i2);
+                    public final void onItemClick(View view3, int i2) {
+                        DialogsSearchAdapter.$r8$lambda$-pvv1W5vFLs_XyTXnspTPmObJts(DialogsSearchAdapter.this, view3, i2);
                     }
                 });
                 recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda7
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
-                    public final boolean onItemClick(View view2, int i2) {
-                        boolean lambda$onCreateViewHolder$24;
-                        lambda$onCreateViewHolder$24 = DialogsSearchAdapter.this.lambda$onCreateViewHolder$24(view2, i2);
-                        return lambda$onCreateViewHolder$24;
+                    public final boolean onItemClick(View view3, int i2) {
+                        return DialogsSearchAdapter.$r8$lambda$VSrE8fb5RTQtdpCm6YYi7QrhjEc(DialogsSearchAdapter.this, view3, i2);
                     }
                 });
                 this.innerListView = recyclerListView;
-                view = recyclerListView;
+                view2 = recyclerListView;
+                view = view2;
                 break;
             case 7:
             default:
-                view = new TextCell(this.mContext, 16, false);
+                view2 = new TextCell(this.mContext, 16, false);
+                view = view2;
                 break;
             case 8:
-                view = new ProfileSearchCell(this.mContext);
+                view2 = new ProfileSearchCell(this.mContext);
+                view = view2;
                 break;
             case 10:
                 EmptyLayout emptyLayout = new EmptyLayout(this.mContext, this.resourcesProvider, new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsSearchAdapter.this.lambda$onCreateViewHolder$25();
+                        DialogsSearchAdapter.$r8$lambda$cgtB9Jcvb3YvksHGO4J3OFBkQhw(DialogsSearchAdapter.this);
                     }
                 });
                 this.messagesEmptyLayout = emptyLayout;
                 emptyLayout.setQuery(this.lastMessagesSearchString);
-                view = emptyLayout;
+                view2 = emptyLayout;
+                view = view2;
                 break;
         }
         if (i == 5) {
@@ -1908,186 +1902,199 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
     }
 
     private boolean hasHints() {
-        return (this.searchWas || MediaDataController.getInstance(this.currentAccount).hints.isEmpty() || (this.dialogsType == 14 && !this.dialogsActivity.allowUsers)) ? false : true;
+        if (this.searchWas || MediaDataController.getInstance(this.currentAccount).hints.isEmpty()) {
+            return false;
+        }
+        return this.dialogsType != 14 || this.dialogsActivity.allowUsers;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:227:0x05a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x04fb, code lost:
     
-        if (r9.startsWith("@" + r8) != false) goto L245;
+        if (r30.publicPosts.isEmpty() != false) goto L215;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:272:0x0654, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:226:0x05a4, code lost:
     
-        if (r12 != null) goto L297;
+        if (r2.toString().startsWith("@" + r7) != false) goto L257;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0493  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x04a1  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x04c6  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x04ee  */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x050f  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x051b  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0531  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x053c  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0552  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x0573  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x05b1  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x06a0  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x06c2  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x075f  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x076a  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0789  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x076d  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0764  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x0712  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0724  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x072f  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x0516  */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x04bd  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x036c  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0371  */
-    /* JADX WARN: Type inference failed for: r2v15 */
-    /* JADX WARN: Type inference failed for: r2v16, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r2v20, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r2v21 */
-    /* JADX WARN: Type inference failed for: r2v6 */
-    /* JADX WARN: Type inference failed for: r2v7 */
-    /* JADX WARN: Type inference failed for: r2v84 */
-    /* JADX WARN: Type inference failed for: r5v24 */
-    /* JADX WARN: Type inference failed for: r5v4 */
-    /* JADX WARN: Type inference failed for: r5v9, types: [org.telegram.tgnet.TLRPC$Chat] */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0486  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0494  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0515  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x052c  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0537  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x054c  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x0571  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x05af  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x060a  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x0674  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x067a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x06cd  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x06ee  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x078c  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x0797  */
+    /* JADX WARN: Removed duplicated region for block: B:311:0x07b7  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x07b9  */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x079a  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0791  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x073f  */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x0751  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x075c  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0503  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x04b0  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0361  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0365  */
+    /* JADX WARN: Type inference failed for: r2v21, types: [android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r5v25 */
+    /* JADX WARN: Type inference failed for: r5v5 */
+    /* JADX WARN: Type inference failed for: r5v7, types: [org.telegram.tgnet.TLRPC$Chat] */
     /* JADX WARN: Type inference failed for: r6v20, types: [boolean] */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-        boolean z;
+        char c;
+        int i2;
         Object obj;
         TLRPC.User user;
-        TLRPC.EncryptedChat encryptedChat;
-        ?? r5;
+        TLRPC.Chat chat;
         String str;
         ArrayList<TLRPC.TL_username> arrayList;
-        TLRPC.Chat chat;
+        TLRPC.EncryptedChat encryptedChat;
+        ?? r5;
         String publicUsername;
-        TLRPC.Chat chat2;
-        boolean z2;
-        ArrayList globalSearch;
+        boolean z;
         int size;
         int size2;
+        boolean z2;
         int size3;
-        ArrayList arrayList2;
         int size4;
-        int i2;
-        int size5;
-        boolean z3;
-        SpannableStringBuilder spannableStringBuilder;
-        ?? r2;
         CharSequence charSequence;
+        CharSequence charSequence2;
+        CharSequence charSequence3;
+        boolean z3;
+        CharSequence charSequence4;
+        CharSequence charSequence5;
+        CharSequence charSequence6;
         boolean z4;
-        SpannableStringBuilder spannableStringBuilder2;
+        CharSequence charSequence7;
+        CharSequence charSequence8;
         int i3;
+        CharSequence charSequence9;
+        CharSequence charSequence10;
         String formatPluralStringSpaced;
-        boolean z5;
-        CharSequence concat;
         String str2;
+        CharSequence charSequence11;
+        CharSequence charSequence12;
         String str3;
-        int indexOfIgnoreCase;
-        int i4;
-        TLRPC.Chat chat3;
-        int i5;
         String str4;
         String str5;
-        CharSequence charSequence2;
+        TLRPC.Chat chat2;
+        TLRPC.Chat chat3;
+        int i4;
+        String str6;
+        String str7;
+        CharSequence charSequence13;
         final Runnable runnable;
-        final int i6 = i;
+        final int i5 = i;
         switch (viewHolder.getItemViewType()) {
             case 0:
                 ProfileSearchCell profileSearchCell = (ProfileSearchCell) viewHolder.itemView;
                 profileSearchCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 long dialogId = profileSearchCell.getDialogId();
-                boolean isGlobalSearch = isGlobalSearch(i6);
-                Object item = getItem(i6);
-                boolean z6 = item instanceof TLRPC.TL_sponsoredPeer;
-                if (z6) {
+                boolean isGlobalSearch = isGlobalSearch(i5);
+                Object item = getItem(i5);
+                boolean z5 = item instanceof TLRPC.TL_sponsoredPeer;
+                if (z5) {
                     TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) item;
                     seenSponsoredPeer(tL_sponsoredPeer);
                     long peerDialogId = DialogObject.getPeerDialogId(tL_sponsoredPeer.peer);
                     if (peerDialogId >= 0) {
+                        c = 2;
                         user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId));
                         if (user != null) {
                             arrayList = user.usernames;
                             publicUsername = DialogObject.getPublicUsername(user, this.currentMessagesQuery);
+                        } else {
                             obj = item;
-                            z = z6;
-                            str = publicUsername;
                             chat3 = null;
+                        }
+                    } else {
+                        c = 2;
+                        TLRPC.Chat chat4 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-peerDialogId));
+                        if (chat4 != null) {
+                            arrayList = chat4.usernames;
+                            chat2 = chat4;
+                            obj = item;
+                            str = DialogObject.getPublicUsername(chat4, this.currentMessagesQuery);
+                            user = null;
+                            i2 = 1;
+                            chat = chat2;
                             encryptedChat = null;
-                            r5 = chat3;
+                            r5 = chat;
                             if (!this.publicPosts.isEmpty()) {
-                                i6 -= this.publicPosts.size() + 1;
+                                i5 -= this.publicPosts.size() + i2;
                             }
                             if (isRecentSearchDisplayed()) {
-                                z2 = false;
-                            } else {
-                                if (i6 < getRecentItemsCount()) {
-                                    profileSearchCell.useSeparator = i6 != getRecentItemsCount() - 1;
-                                    z2 = true;
+                                if (i5 < getRecentItemsCount()) {
+                                    profileSearchCell.useSeparator = i5 != getRecentItemsCount() - i2;
+                                    z = true;
                                 } else {
-                                    z2 = false;
+                                    z = false;
                                 }
-                                i6 -= getRecentItemsCount();
+                                i5 -= getRecentItemsCount();
+                            } else {
+                                z = false;
                             }
                             if (!this.searchTopics.isEmpty()) {
-                                i6 -= this.searchTopics.size() + 1;
+                                i5 -= this.searchTopics.size() + i2;
                             }
-                            globalSearch = this.searchAdapterHelper.getGlobalSearch();
+                            ArrayList globalSearch = this.searchAdapterHelper.getGlobalSearch();
                             ArrayList phoneSearch = this.searchAdapterHelper.getPhoneSearch();
                             size = this.searchResult.size();
                             size2 = this.searchAdapterHelper.getLocalServerSearch().size();
                             if (size + size2 > 0) {
                                 if (getRecentItemsCount() <= 0) {
-                                    i4 = (this.searchTopics.isEmpty() && this.publicPosts.isEmpty()) ? -1 : -1;
+                                    z2 = isGlobalSearch;
+                                    if (this.searchTopics.isEmpty()) {
+                                        break;
+                                    }
+                                } else {
+                                    z2 = isGlobalSearch;
                                 }
-                                i6 += i4;
+                                i5--;
+                            } else {
+                                z2 = isGlobalSearch;
                             }
                             size3 = phoneSearch.size();
-                            String str6 = str;
-                            if (size3 <= 3) {
-                                arrayList2 = phoneSearch;
-                                if (this.phoneCollapsed) {
-                                    size3 = 3;
-                                }
-                            } else {
-                                arrayList2 = phoneSearch;
+                            if (size3 > 3 && this.phoneCollapsed) {
+                                size3 = 3;
                             }
-                            int i7 = (size3 > 0 || !(arrayList2.get(size3 + (-1)) instanceof String)) ? size3 : size3 - 2;
+                            int i6 = (size3 > 0 || !(phoneSearch.get(size3 + (-1)) instanceof String)) ? size3 : size3 - 2;
                             size4 = globalSearch.size();
+                            int i7 = i6;
                             if (size4 > 3 && this.globalSearchCollapsed) {
                                 size4 = 3;
                             }
-                            if (globalSearch.isEmpty() || !this.sponsoredPeers.isEmpty()) {
-                                i2 = 1;
-                                size5 = size4 + this.sponsoredPeers.size() + 1;
+                            int size5 = (globalSearch.isEmpty() || !this.sponsoredPeers.isEmpty()) ? size4 + this.sponsoredPeers.size() + 1 : 0;
+                            if (!z) {
+                                profileSearchCell.useSeparator = (i5 == (getItemCount() - getRecentItemsCount()) + (-1) || i5 == ((size + i7) + size2) + (-1) || i5 == (((size + size5) + size3) + size2) + (-1)) ? false : true;
+                            }
+                            if (i5 >= 0 || i5 >= this.searchResult.size() || user != null) {
+                                charSequence = null;
                             } else {
-                                i2 = 1;
-                                size5 = 0;
-                            }
-                            if (!z2) {
-                                profileSearchCell.useSeparator = (i6 == (getItemCount() - getRecentItemsCount()) - i2 || i6 == ((i7 + size) + size2) - i2 || i6 == (((size + size5) + size3) + size2) - i2) ? false : true;
-                            }
-                            if (i6 < 0 && i6 < this.searchResult.size() && user == null) {
-                                ?? r22 = (CharSequence) this.searchResultNames.get(i6);
+                                charSequence = (CharSequence) this.searchResultNames.get(i5);
                                 String publicUsername2 = UserObject.getPublicUsername(user);
-                                if (r22 != 0 && user != null && publicUsername2 != null) {
-                                    String charSequence3 = r22.toString();
-                                    z3 = r22;
+                                if (charSequence != null && user != null && publicUsername2 != null) {
                                     break;
                                 }
-                                spannableStringBuilder = r22;
-                                r2 = 0;
-                                if (r2 == 0) {
-                                    String lastFoundUsername = z2 ? this.filteredRecentQuery : this.searchAdapterHelper.getLastFoundUsername();
+                                charSequence2 = charSequence;
+                                charSequence = null;
+                                if (charSequence == null) {
+                                    String lastFoundUsername = z ? this.filteredRecentQuery : this.searchAdapterHelper.getLastFoundUsername();
                                     if (!TextUtils.isEmpty(lastFoundUsername)) {
                                         if (user != null) {
                                             str2 = ContactsController.formatName(user.first_name, user.last_name);
@@ -2098,110 +2105,346 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                         } else {
                                             str2 = r5.title;
                                         }
-                                        if (str2 != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str2, lastFoundUsername)) != -1) {
-                                            spannableStringBuilder = new SpannableStringBuilder(str2);
-                                            spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase, lastFoundUsername.length() + indexOfIgnoreCase, 33);
-                                        }
-                                        if (arrayList != null && arrayList.size() > 1) {
-                                            String substring = lastFoundUsername.startsWith("@") ? lastFoundUsername.substring(1) : lastFoundUsername;
-                                            Iterator<TLRPC.TL_username> it = arrayList.iterator();
-                                            while (true) {
-                                                if (it.hasNext()) {
-                                                    TLRPC.TL_username next = it.next();
-                                                    if (next.active && next.username.startsWith(substring)) {
-                                                        str3 = next.username;
-                                                    }
-                                                } else {
-                                                    str3 = null;
-                                                }
-                                            }
-                                            if (str3 == null) {
-                                                Iterator<TLRPC.TL_username> it2 = arrayList.iterator();
-                                                while (true) {
-                                                    if (!it2.hasNext()) {
-                                                        break;
-                                                    } else {
-                                                        TLRPC.TL_username next2 = it2.next();
-                                                        if (next2.active && next2.username.contains(substring)) {
-                                                            str3 = next2.username;
-                                                            break;
+                                        if (str2 != null) {
+                                            int indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str2, lastFoundUsername);
+                                            charSequence3 = charSequence;
+                                            if (indexOfIgnoreCase != -1) {
+                                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str2);
+                                                z3 = z5;
+                                                spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase, lastFoundUsername.length() + indexOfIgnoreCase, 33);
+                                                charSequence11 = spannableStringBuilder;
+                                                if (arrayList != null) {
+                                                    int i8 = 1;
+                                                    if (arrayList.size() > 1) {
+                                                        String substring = lastFoundUsername.startsWith("@") ? lastFoundUsername.substring(1) : lastFoundUsername;
+                                                        int size6 = arrayList.size();
+                                                        int i9 = 0;
+                                                        CharSequence charSequence14 = charSequence11;
+                                                        while (true) {
+                                                            if (i9 < size6) {
+                                                                TLRPC.TL_username tL_username = arrayList.get(i9);
+                                                                i9 += i8;
+                                                                TLRPC.TL_username tL_username2 = tL_username;
+                                                                charSequence12 = charSequence14;
+                                                                if (tL_username2.active && tL_username2.username.startsWith(substring)) {
+                                                                    str4 = tL_username2.username;
+                                                                } else {
+                                                                    charSequence14 = charSequence12;
+                                                                    i8 = 1;
+                                                                }
+                                                            } else {
+                                                                charSequence12 = charSequence14;
+                                                                str4 = null;
+                                                            }
                                                         }
+                                                        if (str4 == null) {
+                                                            int size7 = arrayList.size();
+                                                            int i10 = 0;
+                                                            while (i10 < size7) {
+                                                                TLRPC.TL_username tL_username3 = arrayList.get(i10);
+                                                                i10++;
+                                                                TLRPC.TL_username tL_username4 = tL_username3;
+                                                                String str8 = str4;
+                                                                if (tL_username4.active && tL_username4.username.contains(substring)) {
+                                                                    str5 = tL_username4.username;
+                                                                    if (str5 != null) {
+                                                                        str = str5;
+                                                                    }
+                                                                    if (str == null && (user == null || z2)) {
+                                                                        if (lastFoundUsername.startsWith("@")) {
+                                                                            lastFoundUsername = lastFoundUsername.substring(1);
+                                                                        }
+                                                                        try {
+                                                                            ?? spannableStringBuilder2 = new SpannableStringBuilder();
+                                                                            spannableStringBuilder2.append("@");
+                                                                            spannableStringBuilder2.append(str);
+                                                                            int indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(str, lastFoundUsername);
+                                                                            str3 = spannableStringBuilder2;
+                                                                            if (indexOfIgnoreCase2 != -1) {
+                                                                                int length = lastFoundUsername.length();
+                                                                                if (indexOfIgnoreCase2 == 0) {
+                                                                                    length++;
+                                                                                } else {
+                                                                                    indexOfIgnoreCase2++;
+                                                                                }
+                                                                                spannableStringBuilder2.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase2, length + indexOfIgnoreCase2, 33);
+                                                                                str3 = spannableStringBuilder2;
+                                                                            }
+                                                                        } catch (Exception e) {
+                                                                            FileLog.e(e);
+                                                                            str3 = str;
+                                                                        }
+                                                                        charSequence6 = charSequence12;
+                                                                        charSequence5 = str3;
+                                                                        profileSearchCell.setChecked(false, false);
+                                                                        if (user == null) {
+                                                                        }
+                                                                        z4 = false;
+                                                                        charSequence8 = charSequence5;
+                                                                        charSequence7 = charSequence6;
+                                                                        CharSequence charSequence15 = charSequence7;
+                                                                        if (r5 == 0) {
+                                                                        }
+                                                                        if (user != null) {
+                                                                            String formatPluralStringSpaced2 = LocaleController.formatPluralStringSpaced("BotUsersShort", i3);
+                                                                            if (!(charSequence8 instanceof SpannableStringBuilder)) {
+                                                                            }
+                                                                        }
+                                                                        charSequence9 = charSequence8;
+                                                                        charSequence10 = charSequence9;
+                                                                        profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                                                            @Override // org.telegram.messenger.Utilities.Callback
+                                                                            public final void run(Object obj2) {
+                                                                                DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                                                            }
+                                                                        });
+                                                                        profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                                                            @Override // org.telegram.messenger.Utilities.Callback2
+                                                                            public final void run(Object obj2, Object obj3) {
+                                                                                DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                                                            }
+                                                                        });
+                                                                        profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                                                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence15, charSequence10, true, z4);
+                                                                        profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
+                                                                    } else {
+                                                                        charSequence4 = charSequence12;
+                                                                        charSequence5 = charSequence3;
+                                                                        charSequence6 = charSequence4;
+                                                                        profileSearchCell.setChecked(false, false);
+                                                                        if (user == null && user.id == this.selfUserId && this.dialogsType != 16) {
+                                                                            charSequence8 = null;
+                                                                            z4 = true;
+                                                                            charSequence7 = LocaleController.getString(R.string.SavedMessages);
+                                                                        } else {
+                                                                            z4 = false;
+                                                                            charSequence8 = charSequence5;
+                                                                            charSequence7 = charSequence6;
+                                                                        }
+                                                                        CharSequence charSequence152 = charSequence7;
+                                                                        if (r5 == 0 && r5.participants_count != 0) {
+                                                                            if (ChatObject.isChannel(r5) && !r5.megagroup) {
+                                                                                formatPluralStringSpaced = LocaleController.formatPluralStringSpaced("Subscribers", r5.participants_count);
+                                                                            } else {
+                                                                                formatPluralStringSpaced = LocaleController.formatPluralStringSpaced("Members", r5.participants_count);
+                                                                            }
+                                                                            if (charSequence8 instanceof SpannableStringBuilder) {
+                                                                                ((SpannableStringBuilder) charSequence8).append((CharSequence) ", ").append((CharSequence) formatPluralStringSpaced);
+                                                                            } else if (TextUtils.isEmpty(charSequence8)) {
+                                                                                charSequence8 = formatPluralStringSpaced;
+                                                                            } else {
+                                                                                CharSequence[] charSequenceArr = new CharSequence[3];
+                                                                                charSequenceArr[0] = charSequence8;
+                                                                                charSequenceArr[1] = ", ";
+                                                                                charSequenceArr[c] = formatPluralStringSpaced;
+                                                                                charSequence10 = TextUtils.concat(charSequenceArr);
+                                                                                profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                                                                    @Override // org.telegram.messenger.Utilities.Callback
+                                                                                    public final void run(Object obj2) {
+                                                                                        DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                                                                    }
+                                                                                });
+                                                                                profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                                                                    @Override // org.telegram.messenger.Utilities.Callback2
+                                                                                    public final void run(Object obj2, Object obj3) {
+                                                                                        DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                                                                    }
+                                                                                });
+                                                                                profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                                                                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence152, charSequence10, true, z4);
+                                                                                profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
+                                                                            }
+                                                                        } else if (user != null && user.bot && (i3 = user.bot_active_users) != 0) {
+                                                                            String formatPluralStringSpaced22 = LocaleController.formatPluralStringSpaced("BotUsersShort", i3);
+                                                                            if (!(charSequence8 instanceof SpannableStringBuilder)) {
+                                                                                ((SpannableStringBuilder) charSequence8).append((CharSequence) ", ").append((CharSequence) formatPluralStringSpaced22);
+                                                                            } else {
+                                                                                if (TextUtils.isEmpty(charSequence8)) {
+                                                                                    charSequence9 = formatPluralStringSpaced22;
+                                                                                } else {
+                                                                                    CharSequence[] charSequenceArr2 = new CharSequence[3];
+                                                                                    charSequenceArr2[0] = charSequence8;
+                                                                                    charSequenceArr2[1] = ", ";
+                                                                                    charSequenceArr2[c] = formatPluralStringSpaced22;
+                                                                                    charSequence9 = TextUtils.concat(charSequenceArr2);
+                                                                                }
+                                                                                charSequence10 = charSequence9;
+                                                                                profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                                                                    @Override // org.telegram.messenger.Utilities.Callback
+                                                                                    public final void run(Object obj2) {
+                                                                                        DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                                                                    }
+                                                                                });
+                                                                                profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                                                                    @Override // org.telegram.messenger.Utilities.Callback2
+                                                                                    public final void run(Object obj2, Object obj3) {
+                                                                                        DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                                                                    }
+                                                                                });
+                                                                                profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                                                                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence152, charSequence10, true, z4);
+                                                                                profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
+                                                                                break;
+                                                                            }
+                                                                        }
+                                                                        charSequence9 = charSequence8;
+                                                                        charSequence10 = charSequence9;
+                                                                        profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                                                            @Override // org.telegram.messenger.Utilities.Callback
+                                                                            public final void run(Object obj2) {
+                                                                                DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                                                            }
+                                                                        });
+                                                                        profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                                                            @Override // org.telegram.messenger.Utilities.Callback2
+                                                                            public final void run(Object obj2, Object obj3) {
+                                                                                DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                                                            }
+                                                                        });
+                                                                        profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                                                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence152, charSequence10, true, z4);
+                                                                        profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
+                                                                    }
+                                                                } else {
+                                                                    str4 = str8;
+                                                                }
+                                                            }
+                                                        }
+                                                        str5 = str4;
+                                                        if (str5 != null) {
+                                                        }
+                                                        if (str == null) {
+                                                        }
+                                                        charSequence4 = charSequence12;
+                                                        charSequence5 = charSequence3;
+                                                        charSequence6 = charSequence4;
+                                                        profileSearchCell.setChecked(false, false);
+                                                        if (user == null) {
+                                                        }
+                                                        z4 = false;
+                                                        charSequence8 = charSequence5;
+                                                        charSequence7 = charSequence6;
+                                                        CharSequence charSequence1522 = charSequence7;
+                                                        if (r5 == 0) {
+                                                        }
+                                                        if (user != null) {
+                                                        }
+                                                        charSequence9 = charSequence8;
+                                                        charSequence10 = charSequence9;
+                                                        profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                                            @Override // org.telegram.messenger.Utilities.Callback
+                                                            public final void run(Object obj2) {
+                                                                DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                                            }
+                                                        });
+                                                        profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                                            @Override // org.telegram.messenger.Utilities.Callback2
+                                                            public final void run(Object obj2, Object obj3) {
+                                                                DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                                            }
+                                                        });
+                                                        profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence1522, charSequence10, true, z4);
+                                                        profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                                                     }
                                                 }
-                                            }
-                                        }
-                                        str3 = str6;
-                                        if (str3 != null && (user == null || isGlobalSearch)) {
-                                            if (lastFoundUsername.startsWith("@")) {
-                                                lastFoundUsername = lastFoundUsername.substring(1);
-                                            }
-                                            try {
-                                                r2 = new SpannableStringBuilder();
-                                                r2.append("@");
-                                                r2.append(str3);
-                                                int indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(str3, lastFoundUsername);
-                                                if (indexOfIgnoreCase2 != -1) {
-                                                    int length = lastFoundUsername.length();
-                                                    if (indexOfIgnoreCase2 == 0) {
-                                                        length++;
-                                                    } else {
-                                                        indexOfIgnoreCase2++;
-                                                    }
-                                                    r2.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase2, length + indexOfIgnoreCase2, 33);
+                                                charSequence12 = charSequence11;
+                                                if (str == null) {
                                                 }
-                                            } catch (Exception e) {
-                                                FileLog.e(e);
-                                                r2 = str3;
+                                                charSequence4 = charSequence12;
+                                                charSequence5 = charSequence3;
+                                                charSequence6 = charSequence4;
+                                                profileSearchCell.setChecked(false, false);
+                                                if (user == null) {
+                                                }
+                                                z4 = false;
+                                                charSequence8 = charSequence5;
+                                                charSequence7 = charSequence6;
+                                                CharSequence charSequence15222 = charSequence7;
+                                                if (r5 == 0) {
+                                                }
+                                                if (user != null) {
+                                                }
+                                                charSequence9 = charSequence8;
+                                                charSequence10 = charSequence9;
+                                                profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                                    @Override // org.telegram.messenger.Utilities.Callback
+                                                    public final void run(Object obj2) {
+                                                        DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                                    }
+                                                });
+                                                profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                                    @Override // org.telegram.messenger.Utilities.Callback2
+                                                    public final void run(Object obj2, Object obj3) {
+                                                        DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                                    }
+                                                });
+                                                profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence15222, charSequence10, true, z4);
+                                                profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                                             }
-                                        }
-                                    }
-                                }
-                                profileSearchCell.setChecked(false, false);
-                                if (user == null && user.id == this.selfUserId && this.dialogsType != 16) {
-                                    charSequence = LocaleController.getString(R.string.SavedMessages);
-                                    spannableStringBuilder2 = null;
-                                    z4 = true;
-                                } else {
-                                    charSequence = spannableStringBuilder;
-                                    z4 = false;
-                                    spannableStringBuilder2 = r2;
-                                }
-                                if (r5 == 0 && r5.participants_count != 0) {
-                                    if (ChatObject.isChannel(r5) && !r5.megagroup) {
-                                        formatPluralStringSpaced = LocaleController.formatPluralStringSpaced("Subscribers", r5.participants_count);
-                                    } else {
-                                        formatPluralStringSpaced = LocaleController.formatPluralStringSpaced("Members", r5.participants_count);
-                                    }
-                                    if (spannableStringBuilder2 instanceof SpannableStringBuilder) {
-                                        spannableStringBuilder2.append((CharSequence) ", ").append((CharSequence) formatPluralStringSpaced);
-                                        z5 = true;
-                                        concat = spannableStringBuilder2;
-                                    } else {
-                                        if (!TextUtils.isEmpty(spannableStringBuilder2)) {
-                                            concat = TextUtils.concat(spannableStringBuilder2, ", ", formatPluralStringSpaced);
-                                            z5 = true;
-                                        }
-                                        z5 = true;
-                                        concat = formatPluralStringSpaced;
-                                    }
-                                } else {
-                                    if (user != null && user.bot && (i3 = user.bot_active_users) != 0) {
-                                        formatPluralStringSpaced = LocaleController.formatPluralStringSpaced("BotUsersShort", i3);
-                                        if (!(spannableStringBuilder2 instanceof SpannableStringBuilder)) {
-                                            spannableStringBuilder2.append((CharSequence) ", ").append((CharSequence) formatPluralStringSpaced);
                                         } else {
-                                            if (!TextUtils.isEmpty(spannableStringBuilder2)) {
-                                                z5 = true;
-                                                concat = TextUtils.concat(spannableStringBuilder2, ", ", formatPluralStringSpaced);
-                                            }
-                                            z5 = true;
-                                            concat = formatPluralStringSpaced;
+                                            charSequence3 = charSequence;
                                         }
+                                        z3 = z5;
+                                        charSequence11 = charSequence2;
+                                        if (arrayList != null) {
+                                        }
+                                        charSequence12 = charSequence11;
+                                        if (str == null) {
+                                        }
+                                        charSequence4 = charSequence12;
+                                        charSequence5 = charSequence3;
+                                        charSequence6 = charSequence4;
+                                        profileSearchCell.setChecked(false, false);
+                                        if (user == null) {
+                                        }
+                                        z4 = false;
+                                        charSequence8 = charSequence5;
+                                        charSequence7 = charSequence6;
+                                        CharSequence charSequence152222 = charSequence7;
+                                        if (r5 == 0) {
+                                        }
+                                        if (user != null) {
+                                        }
+                                        charSequence9 = charSequence8;
+                                        charSequence10 = charSequence9;
+                                        profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                            @Override // org.telegram.messenger.Utilities.Callback
+                                            public final void run(Object obj2) {
+                                                DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                            }
+                                        });
+                                        profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                            @Override // org.telegram.messenger.Utilities.Callback2
+                                            public final void run(Object obj2, Object obj3) {
+                                                DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                            }
+                                        });
+                                        profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence152222, charSequence10, true, z4);
+                                        profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                                     }
-                                    z5 = true;
-                                    concat = spannableStringBuilder2;
                                 }
-                                profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                charSequence3 = charSequence;
+                                z3 = z5;
+                                charSequence4 = charSequence2;
+                                charSequence5 = charSequence3;
+                                charSequence6 = charSequence4;
+                                profileSearchCell.setChecked(false, false);
+                                if (user == null) {
+                                }
+                                z4 = false;
+                                charSequence8 = charSequence5;
+                                charSequence7 = charSequence6;
+                                CharSequence charSequence1522222 = charSequence7;
+                                if (r5 == 0) {
+                                }
+                                if (user != null) {
+                                }
+                                charSequence9 = charSequence8;
+                                charSequence10 = charSequence9;
+                                profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj2) {
                                         DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
@@ -2213,37 +2456,32 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                         DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
                                     }
                                 });
-                                profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                                boolean isSelected = this.delegate.isSelected(profileSearchCell.getDialogId());
-                                if (dialogId != profileSearchCell.getDialogId()) {
-                                    z5 = false;
-                                }
-                                profileSearchCell.setChecked(isSelected, z5);
-                                break;
-                            } else {
-                                z3 = false;
+                                profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence1522222, charSequence10, true, z4);
+                                profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                             }
-                            spannableStringBuilder = null;
-                            r2 = z3;
-                            if (r2 == 0) {
+                            charSequence2 = null;
+                            if (charSequence == null) {
                             }
+                            charSequence3 = charSequence;
+                            z3 = z5;
+                            charSequence4 = charSequence2;
+                            charSequence5 = charSequence3;
+                            charSequence6 = charSequence4;
                             profileSearchCell.setChecked(false, false);
                             if (user == null) {
                             }
-                            charSequence = spannableStringBuilder;
                             z4 = false;
-                            spannableStringBuilder2 = r2;
+                            charSequence8 = charSequence5;
+                            charSequence7 = charSequence6;
+                            CharSequence charSequence15222222 = charSequence7;
                             if (r5 == 0) {
                             }
                             if (user != null) {
-                                formatPluralStringSpaced = LocaleController.formatPluralStringSpaced("BotUsersShort", i3);
-                                if (!(spannableStringBuilder2 instanceof SpannableStringBuilder)) {
-                                }
                             }
-                            z5 = true;
-                            concat = spannableStringBuilder2;
-                            profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                            charSequence9 = charSequence8;
+                            charSequence10 = charSequence9;
+                            profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj2) {
                                     DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
@@ -2255,296 +2493,74 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                     DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
                                 }
                             });
-                            profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                            profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                            boolean isSelected2 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                            if (dialogId != profileSearchCell.getDialogId()) {
-                            }
-                            profileSearchCell.setChecked(isSelected2, z5);
+                            profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                            profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence15222222, charSequence10, true, z4);
+                            profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                         } else {
+                            chat3 = chat4;
                             obj = item;
-                            z = z6;
-                            chat2 = null;
-                            str = null;
-                            arrayList = null;
-                            chat3 = chat2;
-                            encryptedChat = null;
-                            r5 = chat3;
-                            if (!this.publicPosts.isEmpty()) {
-                            }
-                            if (isRecentSearchDisplayed()) {
-                            }
-                            if (!this.searchTopics.isEmpty()) {
-                            }
-                            globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                            ArrayList phoneSearch2 = this.searchAdapterHelper.getPhoneSearch();
-                            size = this.searchResult.size();
-                            size2 = this.searchAdapterHelper.getLocalServerSearch().size();
-                            if (size + size2 > 0) {
-                            }
-                            size3 = phoneSearch2.size();
-                            String str62 = str;
-                            if (size3 <= 3) {
-                            }
-                            if (size3 > 0) {
-                            }
-                            size4 = globalSearch.size();
-                            if (size4 > 3) {
-                                size4 = 3;
-                            }
-                            if (globalSearch.isEmpty()) {
-                            }
-                            i2 = 1;
-                            size5 = size4 + this.sponsoredPeers.size() + 1;
-                            if (!z2) {
-                            }
-                            if (i6 < 0) {
-                            }
-                            z3 = false;
-                            spannableStringBuilder = null;
-                            r2 = z3;
-                            if (r2 == 0) {
-                            }
-                            profileSearchCell.setChecked(false, false);
-                            if (user == null) {
-                            }
-                            charSequence = spannableStringBuilder;
-                            z4 = false;
-                            spannableStringBuilder2 = r2;
-                            if (r5 == 0) {
-                            }
-                            if (user != null) {
-                            }
-                            z5 = true;
-                            concat = spannableStringBuilder2;
-                            profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
-                                @Override // org.telegram.messenger.Utilities.Callback
-                                public final void run(Object obj2) {
-                                    DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
-                                }
-                            });
-                            profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
-                                @Override // org.telegram.messenger.Utilities.Callback2
-                                public final void run(Object obj2, Object obj3) {
-                                    DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
-                                }
-                            });
-                            profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                            profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                            boolean isSelected22 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                            if (dialogId != profileSearchCell.getDialogId()) {
-                            }
-                            profileSearchCell.setChecked(isSelected22, z5);
-                        }
-                    } else {
-                        TLRPC.Chat chat4 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-peerDialogId));
-                        if (chat4 != null) {
-                            arrayList = chat4.usernames;
-                            chat = chat4;
-                            obj = item;
-                            z = z6;
-                            str = DialogObject.getPublicUsername(chat4, this.currentMessagesQuery);
                             user = null;
-                            chat3 = chat;
-                            encryptedChat = null;
-                            r5 = chat3;
-                            if (!this.publicPosts.isEmpty()) {
-                            }
-                            if (isRecentSearchDisplayed()) {
-                            }
-                            if (!this.searchTopics.isEmpty()) {
-                            }
-                            globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                            ArrayList phoneSearch22 = this.searchAdapterHelper.getPhoneSearch();
-                            size = this.searchResult.size();
-                            size2 = this.searchAdapterHelper.getLocalServerSearch().size();
-                            if (size + size2 > 0) {
-                            }
-                            size3 = phoneSearch22.size();
-                            String str622 = str;
-                            if (size3 <= 3) {
-                            }
-                            if (size3 > 0) {
-                            }
-                            size4 = globalSearch.size();
-                            if (size4 > 3) {
-                            }
-                            if (globalSearch.isEmpty()) {
-                            }
-                            i2 = 1;
-                            size5 = size4 + this.sponsoredPeers.size() + 1;
-                            if (!z2) {
-                            }
-                            if (i6 < 0) {
-                            }
-                            z3 = false;
-                            spannableStringBuilder = null;
-                            r2 = z3;
-                            if (r2 == 0) {
-                            }
-                            profileSearchCell.setChecked(false, false);
-                            if (user == null) {
-                            }
-                            charSequence = spannableStringBuilder;
-                            z4 = false;
-                            spannableStringBuilder2 = r2;
-                            if (r5 == 0) {
-                            }
-                            if (user != null) {
-                            }
-                            z5 = true;
-                            concat = spannableStringBuilder2;
-                            profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
-                                @Override // org.telegram.messenger.Utilities.Callback
-                                public final void run(Object obj2) {
-                                    DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
-                                }
-                            });
-                            profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
-                                @Override // org.telegram.messenger.Utilities.Callback2
-                                public final void run(Object obj2, Object obj3) {
-                                    DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
-                                }
-                            });
-                            profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                            profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                            boolean isSelected222 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                            if (dialogId != profileSearchCell.getDialogId()) {
-                            }
-                            profileSearchCell.setChecked(isSelected222, z5);
-                        } else {
-                            chat2 = chat4;
-                            obj = item;
-                            z = z6;
-                            user = null;
-                            str = null;
-                            arrayList = null;
-                            chat3 = chat2;
-                            encryptedChat = null;
-                            r5 = chat3;
-                            if (!this.publicPosts.isEmpty()) {
-                            }
-                            if (isRecentSearchDisplayed()) {
-                            }
-                            if (!this.searchTopics.isEmpty()) {
-                            }
-                            globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                            ArrayList phoneSearch222 = this.searchAdapterHelper.getPhoneSearch();
-                            size = this.searchResult.size();
-                            size2 = this.searchAdapterHelper.getLocalServerSearch().size();
-                            if (size + size2 > 0) {
-                            }
-                            size3 = phoneSearch222.size();
-                            String str6222 = str;
-                            if (size3 <= 3) {
-                            }
-                            if (size3 > 0) {
-                            }
-                            size4 = globalSearch.size();
-                            if (size4 > 3) {
-                            }
-                            if (globalSearch.isEmpty()) {
-                            }
-                            i2 = 1;
-                            size5 = size4 + this.sponsoredPeers.size() + 1;
-                            if (!z2) {
-                            }
-                            if (i6 < 0) {
-                            }
-                            z3 = false;
-                            spannableStringBuilder = null;
-                            r2 = z3;
-                            if (r2 == 0) {
-                            }
-                            profileSearchCell.setChecked(false, false);
-                            if (user == null) {
-                            }
-                            charSequence = spannableStringBuilder;
-                            z4 = false;
-                            spannableStringBuilder2 = r2;
-                            if (r5 == 0) {
-                            }
-                            if (user != null) {
-                            }
-                            z5 = true;
-                            concat = spannableStringBuilder2;
-                            profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
-                                @Override // org.telegram.messenger.Utilities.Callback
-                                public final void run(Object obj2) {
-                                    DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
-                                }
-                            });
-                            profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
-                                @Override // org.telegram.messenger.Utilities.Callback2
-                                public final void run(Object obj2, Object obj3) {
-                                    DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
-                                }
-                            });
-                            profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                            profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                            boolean isSelected2222 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                            if (dialogId != profileSearchCell.getDialogId()) {
-                            }
-                            profileSearchCell.setChecked(isSelected2222, z5);
                         }
                     }
-                } else if (item instanceof TLRPC.User) {
-                    user = (TLRPC.User) item;
-                    arrayList = user.usernames;
-                    publicUsername = DialogObject.getPublicUsername(user, this.currentMessagesQuery);
-                    obj = item;
-                    z = z6;
-                    str = publicUsername;
-                    chat3 = null;
+                    str = null;
+                    arrayList = null;
+                    chat2 = chat3;
+                    i2 = 1;
+                    chat = chat2;
                     encryptedChat = null;
-                    r5 = chat3;
+                    r5 = chat;
                     if (!this.publicPosts.isEmpty()) {
                     }
                     if (isRecentSearchDisplayed()) {
                     }
                     if (!this.searchTopics.isEmpty()) {
                     }
-                    globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                    ArrayList phoneSearch2222 = this.searchAdapterHelper.getPhoneSearch();
+                    ArrayList globalSearch2 = this.searchAdapterHelper.getGlobalSearch();
+                    ArrayList phoneSearch2 = this.searchAdapterHelper.getPhoneSearch();
                     size = this.searchResult.size();
                     size2 = this.searchAdapterHelper.getLocalServerSearch().size();
                     if (size + size2 > 0) {
                     }
-                    size3 = phoneSearch2222.size();
-                    String str62222 = str;
-                    if (size3 <= 3) {
+                    size3 = phoneSearch2.size();
+                    if (size3 > 3) {
+                        size3 = 3;
                     }
                     if (size3 > 0) {
                     }
-                    size4 = globalSearch.size();
+                    size4 = globalSearch2.size();
+                    int i72 = i6;
                     if (size4 > 3) {
+                        size4 = 3;
                     }
-                    if (globalSearch.isEmpty()) {
+                    if (globalSearch2.isEmpty()) {
                     }
-                    i2 = 1;
-                    size5 = size4 + this.sponsoredPeers.size() + 1;
-                    if (!z2) {
+                    if (!z) {
                     }
-                    if (i6 < 0) {
+                    if (i5 >= 0) {
                     }
-                    z3 = false;
-                    spannableStringBuilder = null;
-                    r2 = z3;
-                    if (r2 == 0) {
+                    charSequence = null;
+                    charSequence2 = null;
+                    if (charSequence == null) {
                     }
+                    charSequence3 = charSequence;
+                    z3 = z5;
+                    charSequence4 = charSequence2;
+                    charSequence5 = charSequence3;
+                    charSequence6 = charSequence4;
                     profileSearchCell.setChecked(false, false);
                     if (user == null) {
                     }
-                    charSequence = spannableStringBuilder;
                     z4 = false;
-                    spannableStringBuilder2 = r2;
+                    charSequence8 = charSequence5;
+                    charSequence7 = charSequence6;
+                    CharSequence charSequence152222222 = charSequence7;
                     if (r5 == 0) {
                     }
                     if (user != null) {
                     }
-                    z5 = true;
-                    concat = spannableStringBuilder2;
-                    profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                    charSequence9 = charSequence8;
+                    charSequence10 = charSequence9;
+                    profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj2) {
                             DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
@@ -2556,221 +2572,162 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                             DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
                         }
                     });
-                    profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                    profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                    boolean isSelected22222 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                    if (dialogId != profileSearchCell.getDialogId()) {
-                    }
-                    profileSearchCell.setChecked(isSelected22222, z5);
-                } else if (item instanceof TLRPC.Chat) {
-                    TLRPC.Chat chat5 = (TLRPC.Chat) item;
-                    z = z6;
-                    TLRPC.Chat chat6 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(chat5.id));
-                    if (chat6 == null) {
-                        chat6 = chat5;
-                    }
-                    arrayList = chat6.usernames;
-                    str = DialogObject.getPublicUsername(chat6, this.currentMessagesQuery);
-                    chat = chat6;
-                    obj = item;
-                    user = null;
-                    chat3 = chat;
-                    encryptedChat = null;
-                    r5 = chat3;
-                    if (!this.publicPosts.isEmpty()) {
-                    }
-                    if (isRecentSearchDisplayed()) {
-                    }
-                    if (!this.searchTopics.isEmpty()) {
-                    }
-                    globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                    ArrayList phoneSearch22222 = this.searchAdapterHelper.getPhoneSearch();
-                    size = this.searchResult.size();
-                    size2 = this.searchAdapterHelper.getLocalServerSearch().size();
-                    if (size + size2 > 0) {
-                    }
-                    size3 = phoneSearch22222.size();
-                    String str622222 = str;
-                    if (size3 <= 3) {
-                    }
-                    if (size3 > 0) {
-                    }
-                    size4 = globalSearch.size();
-                    if (size4 > 3) {
-                    }
-                    if (globalSearch.isEmpty()) {
-                    }
-                    i2 = 1;
-                    size5 = size4 + this.sponsoredPeers.size() + 1;
-                    if (!z2) {
-                    }
-                    if (i6 < 0) {
-                    }
-                    z3 = false;
-                    spannableStringBuilder = null;
-                    r2 = z3;
-                    if (r2 == 0) {
-                    }
-                    profileSearchCell.setChecked(false, false);
-                    if (user == null) {
-                    }
-                    charSequence = spannableStringBuilder;
-                    z4 = false;
-                    spannableStringBuilder2 = r2;
-                    if (r5 == 0) {
-                    }
-                    if (user != null) {
-                    }
-                    z5 = true;
-                    concat = spannableStringBuilder2;
-                    profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj2) {
-                            DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
-                        }
-                    });
-                    profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
-                        @Override // org.telegram.messenger.Utilities.Callback2
-                        public final void run(Object obj2, Object obj3) {
-                            DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
-                        }
-                    });
-                    profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                    profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                    boolean isSelected222222 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                    if (dialogId != profileSearchCell.getDialogId()) {
-                    }
-                    profileSearchCell.setChecked(isSelected222222, z5);
+                    profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                    profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence152222222, charSequence10, true, z4);
+                    profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                 } else {
-                    z = z6;
-                    if (item instanceof TLRPC.EncryptedChat) {
-                        TLRPC.EncryptedChat encryptedChat2 = MessagesController.getInstance(this.currentAccount).getEncryptedChat(Integer.valueOf(((TLRPC.EncryptedChat) item).id));
-                        obj = item;
-                        encryptedChat = encryptedChat2;
-                        user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(encryptedChat2.user_id));
-                        r5 = 0;
-                        str = null;
-                        arrayList = null;
-                        if (!this.publicPosts.isEmpty()) {
-                        }
-                        if (isRecentSearchDisplayed()) {
-                        }
-                        if (!this.searchTopics.isEmpty()) {
-                        }
-                        globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                        ArrayList phoneSearch222222 = this.searchAdapterHelper.getPhoneSearch();
-                        size = this.searchResult.size();
-                        size2 = this.searchAdapterHelper.getLocalServerSearch().size();
-                        if (size + size2 > 0) {
-                        }
-                        size3 = phoneSearch222222.size();
-                        String str6222222 = str;
-                        if (size3 <= 3) {
-                        }
-                        if (size3 > 0) {
-                        }
-                        size4 = globalSearch.size();
-                        if (size4 > 3) {
-                        }
-                        if (globalSearch.isEmpty()) {
-                        }
-                        i2 = 1;
-                        size5 = size4 + this.sponsoredPeers.size() + 1;
-                        if (!z2) {
-                        }
-                        if (i6 < 0) {
-                        }
-                        z3 = false;
-                        spannableStringBuilder = null;
-                        r2 = z3;
-                        if (r2 == 0) {
-                        }
-                        profileSearchCell.setChecked(false, false);
-                        if (user == null) {
-                        }
-                        charSequence = spannableStringBuilder;
-                        z4 = false;
-                        spannableStringBuilder2 = r2;
-                        if (r5 == 0) {
-                        }
-                        if (user != null) {
-                        }
-                        z5 = true;
-                        concat = spannableStringBuilder2;
-                        profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
-                            @Override // org.telegram.messenger.Utilities.Callback
-                            public final void run(Object obj2) {
-                                DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
-                            }
-                        });
-                        profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
-                            @Override // org.telegram.messenger.Utilities.Callback2
-                            public final void run(Object obj2, Object obj3) {
-                                DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
-                            }
-                        });
-                        profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                        boolean isSelected2222222 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                        if (dialogId != profileSearchCell.getDialogId()) {
-                        }
-                        profileSearchCell.setChecked(isSelected2222222, z5);
+                    c = 2;
+                    if (item instanceof TLRPC.User) {
+                        user = (TLRPC.User) item;
+                        arrayList = user.usernames;
+                        publicUsername = DialogObject.getPublicUsername(user, this.currentMessagesQuery);
                     } else {
-                        obj = item;
-                        user = null;
-                        chat2 = null;
-                        str = null;
-                        arrayList = null;
-                        chat3 = chat2;
+                        if (item instanceof TLRPC.Chat) {
+                            TLRPC.Chat chat5 = (TLRPC.Chat) item;
+                            i2 = 1;
+                            TLRPC.Chat chat6 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(chat5.id));
+                            if (chat6 == null) {
+                                chat6 = chat5;
+                            }
+                            arrayList = chat6.usernames;
+                            str = DialogObject.getPublicUsername(chat6, this.currentMessagesQuery);
+                            chat = chat6;
+                            obj = item;
+                            user = null;
+                        } else {
+                            i2 = 1;
+                            if (item instanceof TLRPC.EncryptedChat) {
+                                TLRPC.EncryptedChat encryptedChat2 = MessagesController.getInstance(this.currentAccount).getEncryptedChat(Integer.valueOf(((TLRPC.EncryptedChat) item).id));
+                                obj = item;
+                                encryptedChat = encryptedChat2;
+                                user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(encryptedChat2.user_id));
+                                r5 = 0;
+                                str = null;
+                                arrayList = null;
+                                if (!this.publicPosts.isEmpty()) {
+                                }
+                                if (isRecentSearchDisplayed()) {
+                                }
+                                if (!this.searchTopics.isEmpty()) {
+                                }
+                                ArrayList globalSearch22 = this.searchAdapterHelper.getGlobalSearch();
+                                ArrayList phoneSearch22 = this.searchAdapterHelper.getPhoneSearch();
+                                size = this.searchResult.size();
+                                size2 = this.searchAdapterHelper.getLocalServerSearch().size();
+                                if (size + size2 > 0) {
+                                }
+                                size3 = phoneSearch22.size();
+                                if (size3 > 3) {
+                                }
+                                if (size3 > 0) {
+                                }
+                                size4 = globalSearch22.size();
+                                int i722 = i6;
+                                if (size4 > 3) {
+                                }
+                                if (globalSearch22.isEmpty()) {
+                                }
+                                if (!z) {
+                                }
+                                if (i5 >= 0) {
+                                }
+                                charSequence = null;
+                                charSequence2 = null;
+                                if (charSequence == null) {
+                                }
+                                charSequence3 = charSequence;
+                                z3 = z5;
+                                charSequence4 = charSequence2;
+                                charSequence5 = charSequence3;
+                                charSequence6 = charSequence4;
+                                profileSearchCell.setChecked(false, false);
+                                if (user == null) {
+                                }
+                                z4 = false;
+                                charSequence8 = charSequence5;
+                                charSequence7 = charSequence6;
+                                CharSequence charSequence1522222222 = charSequence7;
+                                if (r5 == 0) {
+                                }
+                                if (user != null) {
+                                }
+                                charSequence9 = charSequence8;
+                                charSequence10 = charSequence9;
+                                profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                                    @Override // org.telegram.messenger.Utilities.Callback
+                                    public final void run(Object obj2) {
+                                        DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                                    }
+                                });
+                                profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                                    @Override // org.telegram.messenger.Utilities.Callback2
+                                    public final void run(Object obj2, Object obj3) {
+                                        DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                                    }
+                                });
+                                profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence1522222222, charSequence10, true, z4);
+                                profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
+                            } else {
+                                obj = item;
+                                user = null;
+                                chat = null;
+                                str = null;
+                                arrayList = null;
+                            }
+                        }
                         encryptedChat = null;
-                        r5 = chat3;
+                        r5 = chat;
                         if (!this.publicPosts.isEmpty()) {
                         }
                         if (isRecentSearchDisplayed()) {
                         }
                         if (!this.searchTopics.isEmpty()) {
                         }
-                        globalSearch = this.searchAdapterHelper.getGlobalSearch();
-                        ArrayList phoneSearch2222222 = this.searchAdapterHelper.getPhoneSearch();
+                        ArrayList globalSearch222 = this.searchAdapterHelper.getGlobalSearch();
+                        ArrayList phoneSearch222 = this.searchAdapterHelper.getPhoneSearch();
                         size = this.searchResult.size();
                         size2 = this.searchAdapterHelper.getLocalServerSearch().size();
                         if (size + size2 > 0) {
                         }
-                        size3 = phoneSearch2222222.size();
-                        String str62222222 = str;
-                        if (size3 <= 3) {
+                        size3 = phoneSearch222.size();
+                        if (size3 > 3) {
                         }
                         if (size3 > 0) {
                         }
-                        size4 = globalSearch.size();
+                        size4 = globalSearch222.size();
+                        int i7222 = i6;
                         if (size4 > 3) {
                         }
-                        if (globalSearch.isEmpty()) {
+                        if (globalSearch222.isEmpty()) {
                         }
-                        i2 = 1;
-                        size5 = size4 + this.sponsoredPeers.size() + 1;
-                        if (!z2) {
+                        if (!z) {
                         }
-                        if (i6 < 0) {
+                        if (i5 >= 0) {
                         }
-                        z3 = false;
-                        spannableStringBuilder = null;
-                        r2 = z3;
-                        if (r2 == 0) {
+                        charSequence = null;
+                        charSequence2 = null;
+                        if (charSequence == null) {
                         }
+                        charSequence3 = charSequence;
+                        z3 = z5;
+                        charSequence4 = charSequence2;
+                        charSequence5 = charSequence3;
+                        charSequence6 = charSequence4;
                         profileSearchCell.setChecked(false, false);
                         if (user == null) {
                         }
-                        charSequence = spannableStringBuilder;
                         z4 = false;
-                        spannableStringBuilder2 = r2;
+                        charSequence8 = charSequence5;
+                        charSequence7 = charSequence6;
+                        CharSequence charSequence15222222222 = charSequence7;
                         if (r5 == 0) {
                         }
                         if (user != null) {
                         }
-                        z5 = true;
-                        concat = spannableStringBuilder2;
-                        profileSearchCell.allowBotOpenButton(z2, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                        charSequence9 = charSequence8;
+                        charSequence10 = charSequence9;
+                        profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj2) {
                                 DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
@@ -2782,14 +2739,82 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                 DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
                             }
                         });
-                        profileSearchCell.setAd(z ? (TLRPC.TL_sponsoredPeer) obj : null);
-                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence, concat, true, z4);
-                        boolean isSelected22222222 = this.delegate.isSelected(profileSearchCell.getDialogId());
-                        if (dialogId != profileSearchCell.getDialogId()) {
-                        }
-                        profileSearchCell.setChecked(isSelected22222222, z5);
+                        profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                        profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence15222222222, charSequence10, true, z4);
+                        profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                     }
                 }
+                obj = item;
+                str = publicUsername;
+                chat2 = null;
+                i2 = 1;
+                chat = chat2;
+                encryptedChat = null;
+                r5 = chat;
+                if (!this.publicPosts.isEmpty()) {
+                }
+                if (isRecentSearchDisplayed()) {
+                }
+                if (!this.searchTopics.isEmpty()) {
+                }
+                ArrayList globalSearch2222 = this.searchAdapterHelper.getGlobalSearch();
+                ArrayList phoneSearch2222 = this.searchAdapterHelper.getPhoneSearch();
+                size = this.searchResult.size();
+                size2 = this.searchAdapterHelper.getLocalServerSearch().size();
+                if (size + size2 > 0) {
+                }
+                size3 = phoneSearch2222.size();
+                if (size3 > 3) {
+                }
+                if (size3 > 0) {
+                }
+                size4 = globalSearch2222.size();
+                int i72222 = i6;
+                if (size4 > 3) {
+                }
+                if (globalSearch2222.isEmpty()) {
+                }
+                if (!z) {
+                }
+                if (i5 >= 0) {
+                }
+                charSequence = null;
+                charSequence2 = null;
+                if (charSequence == null) {
+                }
+                charSequence3 = charSequence;
+                z3 = z5;
+                charSequence4 = charSequence2;
+                charSequence5 = charSequence3;
+                charSequence6 = charSequence4;
+                profileSearchCell.setChecked(false, false);
+                if (user == null) {
+                }
+                z4 = false;
+                charSequence8 = charSequence5;
+                charSequence7 = charSequence6;
+                CharSequence charSequence152222222222 = charSequence7;
+                if (r5 == 0) {
+                }
+                if (user != null) {
+                }
+                charSequence9 = charSequence8;
+                charSequence10 = charSequence9;
+                profileSearchCell.allowBotOpenButton(z, new Utilities.Callback() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda21
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj2) {
+                        DialogsSearchAdapter.this.openBotApp((TLRPC.User) obj2);
+                    }
+                });
+                profileSearchCell.setOnSponsoredOptionsClick(new Utilities.Callback2() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda12
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj2, Object obj3) {
+                        DialogsSearchAdapter.this.openSponsoredOptions((ProfileSearchCell) obj2, (TLRPC.TL_sponsoredPeer) obj3);
+                    }
+                });
+                profileSearchCell.setAd(z3 ? (TLRPC.TL_sponsoredPeer) obj : null);
+                profileSearchCell.setData(user != null ? user : r5, encryptedChat, charSequence152222222222, charSequence10, true, z4);
+                profileSearchCell.setChecked(this.delegate.isSelected(profileSearchCell.getDialogId()), dialogId == profileSearchCell.getDialogId());
                 break;
             case 1:
                 final GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
@@ -2797,42 +2822,42 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                     graySectionCell.setText(LocaleController.getString(R.string.Hashtags), LocaleController.getString(R.string.ClearButton), new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda11
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            DialogsSearchAdapter.this.lambda$onBindViewHolder$26(view);
+                            DialogsSearchAdapter.$r8$lambda$lFfdgXM7h_Er3kieMFs3_DbSLTk(DialogsSearchAdapter.this, view);
                         }
                     });
                     break;
                 } else {
                     if (this.publicPosts.isEmpty()) {
-                        i5 = i6;
-                    } else if (i6 == 0) {
+                        i4 = i5;
+                    } else if (i5 == 0) {
                         graySectionCell.setText(LocaleController.getString(R.string.PublicPostsTabs), AndroidUtilities.replaceArrows(LocaleController.getString(R.string.PublicPostsMore), false, AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f)), new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda13
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                DialogsSearchAdapter.this.lambda$onBindViewHolder$27(view);
+                                DialogsSearchAdapter.this.openPublicPosts();
                             }
                         });
                         break;
                     } else {
-                        i5 = i6 - (this.publicPosts.size() + 1);
+                        i4 = i5 - (this.publicPosts.size() + 1);
                     }
-                    final ArrayList globalSearch2 = this.searchAdapterHelper.getGlobalSearch();
+                    final ArrayList globalSearch3 = this.searchAdapterHelper.getGlobalSearch();
                     if (isRecentSearchDisplayed() || !this.searchTopics.isEmpty() || !this.searchContacts.isEmpty() || !this.publicPosts.isEmpty()) {
                         ?? hasHints = hasHints();
-                        if (i5 < hasHints) {
+                        if (i4 < hasHints) {
                             graySectionCell.setText(LocaleController.getString(R.string.ChatHints));
                             break;
-                        } else if (i5 != hasHints || !isRecentSearchDisplayed()) {
-                            if (i5 == getRecentItemsCount() + (this.searchTopics.isEmpty() ? 0 : this.searchTopics.size() + 1) + (this.searchContacts.isEmpty() ? 0 : this.searchContacts.size() + 1) && !this.searchResult.isEmpty()) {
+                        } else if (i4 != hasHints || !isRecentSearchDisplayed()) {
+                            if (i4 == getRecentItemsCount() + (this.searchTopics.isEmpty() ? 0 : this.searchTopics.size() + 1) + (this.searchContacts.isEmpty() ? 0 : this.searchContacts.size() + 1) && !this.searchResult.isEmpty()) {
                                 graySectionCell.setText(LocaleController.getString(R.string.SearchAllChatsShort));
                                 break;
                             } else {
-                                i5 -= getRecentItemsCount();
+                                i4 -= getRecentItemsCount();
                             }
                         } else if (!this.searchWas) {
                             graySectionCell.setText(LocaleController.getString(R.string.Recent), LocaleController.getString(R.string.ClearButton), new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda14
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
-                                    DialogsSearchAdapter.this.lambda$onBindViewHolder$28(view);
+                                    DialogsSearchAdapter.$r8$lambda$Of9yzltizLBeIutylE8YpEJvqbk(DialogsSearchAdapter.this, view);
                                 }
                             });
                             break;
@@ -2840,24 +2865,24 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                             graySectionCell.setText(LocaleController.getString(R.string.Recent), LocaleController.getString(R.string.Clear), new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda15
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
-                                    DialogsSearchAdapter.this.lambda$onBindViewHolder$29(view);
+                                    DialogsSearchAdapter.$r8$lambda$Vl0WDwJ4Z_SnbE4wiDe99XNNBqA(DialogsSearchAdapter.this, view);
                                 }
                             });
                             break;
                         }
                     }
-                    int size6 = this.searchResult.size();
-                    int size7 = this.searchAdapterHelper.getLocalServerSearch().size();
-                    int size8 = this.searchAdapterHelper.getPhoneSearch().size();
-                    if (size8 > 3 && this.phoneCollapsed) {
-                        size8 = 3;
+                    int size8 = this.searchResult.size();
+                    int size9 = this.searchAdapterHelper.getLocalServerSearch().size();
+                    int size10 = this.searchAdapterHelper.getPhoneSearch().size();
+                    if (size10 > 3 && this.phoneCollapsed) {
+                        size10 = 3;
                     }
-                    int size9 = globalSearch2.size();
-                    if (size9 > 3 && this.globalSearchCollapsed) {
-                        size9 = 3;
+                    int size11 = globalSearch3.size();
+                    if (size11 > 3 && this.globalSearchCollapsed) {
+                        size11 = 3;
                     }
-                    int size10 = (globalSearch2.isEmpty() && this.sponsoredPeers.isEmpty()) ? 0 : size9 + this.sponsoredPeers.size() + 1;
-                    int size11 = this.searchForumResultMessages.isEmpty() ? 0 : this.searchForumResultMessages.size() + 1;
+                    int size12 = (globalSearch3.isEmpty() && this.sponsoredPeers.isEmpty()) ? 0 : size11 + this.sponsoredPeers.size() + 1;
+                    int size13 = this.searchForumResultMessages.isEmpty() ? 0 : this.searchForumResultMessages.size() + 1;
                     if (!this.searchResultMessages.isEmpty()) {
                         this.searchResultMessages.size();
                     }
@@ -2865,68 +2890,67 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                         this.searchResultMessages.isEmpty();
                     }
                     if (this.searchTopics.isEmpty()) {
-                        str4 = null;
+                        str6 = null;
                     } else {
-                        str4 = i5 == 0 ? LocaleController.getString(R.string.Topics) : null;
-                        i5 -= this.searchTopics.size() + 1;
+                        str6 = i4 == 0 ? LocaleController.getString(R.string.Topics) : null;
+                        i4 -= this.searchTopics.size() + 1;
                     }
                     if (!this.searchContacts.isEmpty()) {
-                        if (i5 == 0) {
-                            str4 = LocaleController.getString(R.string.InviteToTelegramShort);
+                        if (i4 == 0) {
+                            str6 = LocaleController.getString(R.string.InviteToTelegramShort);
                         }
-                        i5 -= this.searchContacts.size() + 1;
+                        i4 -= this.searchContacts.size() + 1;
                     }
-                    if (str4 == null) {
-                        int i8 = i5 - (size6 + size7);
-                        if (i8 < 0 || i8 >= size8) {
-                            int i9 = i8 - size8;
-                            if (i9 >= 0 && i9 < size10) {
-                                str4 = LocaleController.getString(R.string.GlobalSearch);
+                    if (str6 == null) {
+                        int i11 = i4 - (size8 + size9);
+                        if (i11 < 0 || i11 >= size10) {
+                            int i12 = i11 - size10;
+                            if (i12 >= 0 && i12 < size12) {
+                                str6 = LocaleController.getString(R.string.GlobalSearch);
                                 if (this.searchAdapterHelper.getGlobalSearch().size() > 3) {
                                     r10 = this.globalSearchCollapsed;
-                                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda17
+                                    runnable = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda17
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            DialogsSearchAdapter.this.lambda$onBindViewHolder$33(globalSearch2, i6, graySectionCell);
+                                            DialogsSearchAdapter.$r8$lambda$9VVDhfzZXUG7hTG8p1Q9cXSS63s(DialogsSearchAdapter.this, globalSearch3, i5, graySectionCell);
                                         }
                                     };
-                                    charSequence2 = null;
-                                    runnable = runnable2;
-                                    str5 = str4;
+                                    str7 = str6;
+                                    charSequence13 = null;
                                 }
-                            } else if (this.delegate != null && size11 > 0 && i9 - size10 <= 1) {
+                            } else if (this.delegate != null && size13 > 0 && i12 - size12 <= 1) {
                                 TLRPC.Chat chat7 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.delegate.getSearchForumDialogId()));
-                                str4 = LocaleController.formatString(R.string.SearchMessagesIn, chat7 == null ? "null" : chat7.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat7) : chat7.title);
+                                str6 = LocaleController.formatString(R.string.SearchMessagesIn, chat7 == null ? "null" : chat7.monoforum ? ForumUtilities.getMonoForumTitle(this.currentAccount, chat7) : chat7.title);
                             } else {
-                                this.messagesSectionPosition = i9;
+                                this.messagesSectionPosition = i12;
                                 CharSequence filterFromString = getFilterFromString(this.currentMessagesFilter);
-                                Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda18
+                                Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda18
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        DialogsSearchAdapter.this.lambda$onBindViewHolder$35(graySectionCell);
+                                        DialogsSearchAdapter.$r8$lambda$HMqTfP94m2GjNNYvXK2dAnEU1nE(DialogsSearchAdapter.this, graySectionCell);
                                     }
                                 };
-                                str5 = LocaleController.getString(R.string.SearchMessages);
-                                runnable = runnable3;
-                                charSequence2 = filterFromString;
+                                str7 = LocaleController.getString(R.string.SearchMessages);
+                                runnable = runnable2;
+                                charSequence13 = filterFromString;
                             }
                         } else {
-                            str4 = LocaleController.getString(R.string.PhoneNumberSearch);
+                            str6 = LocaleController.getString(R.string.PhoneNumberSearch);
                             if (this.searchAdapterHelper.getPhoneSearch().size() > 3) {
                                 r10 = this.phoneCollapsed;
-                                str5 = str4;
+                                str7 = str6;
                                 runnable = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda16
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        DialogsSearchAdapter.this.lambda$onBindViewHolder$30(graySectionCell);
+                                        DialogsSearchAdapter.$r8$lambda$h6PEjSb9nWmEDkkDfhHDVeCoAPA(DialogsSearchAdapter.this, graySectionCell);
                                     }
                                 };
-                                charSequence2 = null;
+                                charSequence13 = null;
                             }
                         }
                         if (runnable == null) {
-                            if (charSequence2 != null) {
-                                graySectionCell.setText(str5, charSequence2, new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda19
+                            if (charSequence13 != null) {
+                                graySectionCell.setText(str7, charSequence13, new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda19
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
                                         runnable.run();
@@ -2935,7 +2959,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                 graySectionCell.setRightTextMargin(6);
                                 break;
                             } else {
-                                graySectionCell.setText(str5, LocaleController.getString(r10 ? R.string.ShowMore : R.string.ShowLess), new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda20
+                                graySectionCell.setText(str7, LocaleController.getString(r10 ? R.string.ShowMore : R.string.ShowLess), new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda20
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
                                         runnable.run();
@@ -2945,12 +2969,12 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                                 break;
                             }
                         } else {
-                            graySectionCell.setText(str5);
+                            graySectionCell.setText(str7);
                             break;
                         }
                     }
-                    str5 = str4;
-                    charSequence2 = null;
+                    str7 = str6;
+                    charSequence13 = null;
                     runnable = null;
                     if (runnable == null) {
                     }
@@ -2960,8 +2984,8 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
             case 9:
                 DialogCell dialogCell = (DialogCell) viewHolder.itemView;
                 dialogCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                dialogCell.useSeparator = i6 != getItemCount() - 1;
-                MessageObject messageObject = (MessageObject) getItem(i6);
+                dialogCell.useSeparator = i5 != getItemCount() - 1;
+                MessageObject messageObject = (MessageObject) getItem(i5);
                 dialogCell.useFromUserAsAvatar = this.searchForumResultMessages.contains(messageObject);
                 if (messageObject == null) {
                     dialogCell.setDialog(0L, null, 0, false, false);
@@ -2971,94 +2995,85 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                     break;
                 }
             case 3:
-                ((TopicSearchCell) viewHolder.itemView).setTopic((TLRPC.TL_forumTopic) getItem(i6));
+                ((TopicSearchCell) viewHolder.itemView).setTopic((TLRPC.TL_forumTopic) getItem(i5));
                 break;
             case 5:
                 HashtagSearchCell hashtagSearchCell = (HashtagSearchCell) viewHolder.itemView;
                 hashtagSearchCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                hashtagSearchCell.setText((CharSequence) this.searchResultHashtags.get(i6 - 1));
-                hashtagSearchCell.setNeedDivider(i6 != this.searchResultHashtags.size());
+                hashtagSearchCell.setText((CharSequence) this.searchResultHashtags.get(i5 - 1));
+                hashtagSearchCell.setNeedDivider(i5 != this.searchResultHashtags.size());
                 break;
             case 6:
-                ((CategoryAdapterRecycler) ((RecyclerListView) viewHolder.itemView).getAdapter()).setIndex(i6 / 2);
+                ((CategoryAdapterRecycler) ((RecyclerListView) viewHolder.itemView).getAdapter()).setIndex(i5 / 2);
                 break;
             case 7:
-                String str7 = (String) getItem(i6);
+                String str9 = (String) getItem(i5);
                 TextCell textCell = (TextCell) viewHolder.itemView;
                 textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText2);
-                textCell.setText(LocaleController.formatString("AddContactByPhone", R.string.AddContactByPhone, PhoneFormat.getInstance().format("+" + str7)), false);
+                textCell.setText(LocaleController.formatString("AddContactByPhone", R.string.AddContactByPhone, PhoneFormat.getInstance().format("+" + str9)), false);
                 break;
             case 8:
                 ProfileSearchCell profileSearchCell2 = (ProfileSearchCell) viewHolder.itemView;
-                ContactsController.Contact contact = (ContactsController.Contact) getItem(i6);
+                ContactsController.Contact contact = (ContactsController.Contact) getItem(i5);
                 profileSearchCell2.setData(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), PhoneFormat.getInstance().format("+" + contact.shortPhones.get(0)), false, false);
                 break;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$26(View view) {
-        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$lFfdgXM7h_Er3kieMFs3_DbSLTk(DialogsSearchAdapter dialogsSearchAdapter, View view) {
+        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
         if (dialogsSearchAdapterDelegate != null) {
             dialogsSearchAdapterDelegate.needClearList();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$27(View view) {
-        openPublicPosts();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$28(View view) {
-        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$Of9yzltizLBeIutylE8YpEJvqbk(DialogsSearchAdapter dialogsSearchAdapter, View view) {
+        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
         if (dialogsSearchAdapterDelegate != null) {
             dialogsSearchAdapterDelegate.needClearList();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$29(View view) {
-        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$Vl0WDwJ4Z_SnbE4wiDe99XNNBqA(DialogsSearchAdapter dialogsSearchAdapter, View view) {
+        DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = dialogsSearchAdapter.delegate;
         if (dialogsSearchAdapterDelegate != null) {
             dialogsSearchAdapterDelegate.needClearList();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$30(GraySectionCell graySectionCell) {
-        boolean z = this.phoneCollapsed;
-        this.phoneCollapsed = !z;
+    public static /* synthetic */ void $r8$lambda$h6PEjSb9nWmEDkkDfhHDVeCoAPA(DialogsSearchAdapter dialogsSearchAdapter, GraySectionCell graySectionCell) {
+        boolean z = dialogsSearchAdapter.phoneCollapsed;
+        dialogsSearchAdapter.phoneCollapsed = !z;
         graySectionCell.setRightText(LocaleController.getString(!z ? R.string.ShowMore : R.string.ShowLess));
-        notifyDataSetChanged();
+        dialogsSearchAdapter.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$33(ArrayList arrayList, int i, GraySectionCell graySectionCell) {
+    public static /* synthetic */ void $r8$lambda$9VVDhfzZXUG7hTG8p1Q9cXSS63s(final DialogsSearchAdapter dialogsSearchAdapter, ArrayList arrayList, int i, GraySectionCell graySectionCell) {
+        dialogsSearchAdapter.getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (elapsedRealtime - this.lastShowMoreUpdate < 300) {
+        if (elapsedRealtime - dialogsSearchAdapter.lastShowMoreUpdate < 300) {
             return;
         }
-        this.lastShowMoreUpdate = elapsedRealtime;
-        int size = this.sponsoredPeers.size();
+        dialogsSearchAdapter.lastShowMoreUpdate = elapsedRealtime;
+        int size = dialogsSearchAdapter.sponsoredPeers.size();
         int size2 = arrayList.size();
-        int i2 = (arrayList.isEmpty() && this.sponsoredPeers.isEmpty()) ? 0 : size2 + size;
+        int i2 = (arrayList.isEmpty() && dialogsSearchAdapter.sponsoredPeers.isEmpty()) ? 0 : size2 + size;
         int min = size + Math.min(3, size2);
-        boolean z = getItemCount() > ((this.globalSearchCollapsed ? min : i2) + i) + 1;
-        DefaultItemAnimator defaultItemAnimator = this.itemAnimator;
+        boolean z = dialogsSearchAdapter.getItemCount() > ((dialogsSearchAdapter.globalSearchCollapsed ? min : i2) + i) + 1;
+        DefaultItemAnimator defaultItemAnimator = dialogsSearchAdapter.itemAnimator;
         if (defaultItemAnimator != null) {
             defaultItemAnimator.setAddDuration(z ? 45L : 200L);
-            this.itemAnimator.setRemoveDuration(z ? 80L : 200L);
-            this.itemAnimator.setRemoveDelay(z ? 270L : 0L);
+            dialogsSearchAdapter.itemAnimator.setRemoveDuration(z ? 80L : 200L);
+            dialogsSearchAdapter.itemAnimator.setRemoveDelay(z ? 270L : 0L);
         }
-        this.globalSearchCollapsed = !this.globalSearchCollapsed;
+        dialogsSearchAdapter.globalSearchCollapsed = !dialogsSearchAdapter.globalSearchCollapsed;
         graySectionCell.setRightTextMargin(16);
-        graySectionCell.setRightText(LocaleController.getString(this.globalSearchCollapsed ? R.string.ShowMore : R.string.ShowLess), this.globalSearchCollapsed);
-        this.showMoreHeader = null;
+        graySectionCell.setRightText(LocaleController.getString(dialogsSearchAdapter.globalSearchCollapsed ? R.string.ShowMore : R.string.ShowLess), dialogsSearchAdapter.globalSearchCollapsed);
+        dialogsSearchAdapter.showMoreHeader = null;
         final View view = (View) graySectionCell.getParent();
         if (view instanceof RecyclerView) {
             RecyclerView recyclerView = (RecyclerView) view;
-            int i3 = (!this.globalSearchCollapsed ? i + min : i2 + i) + 1;
+            int i3 = (!dialogsSearchAdapter.globalSearchCollapsed ? i + min : i2 + i) + 1;
             int i4 = 0;
             while (true) {
                 if (i4 >= recyclerView.getChildCount()) {
@@ -3066,7 +3081,7 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
                 }
                 View childAt = recyclerView.getChildAt(i4);
                 if (recyclerView.getChildAdapterPosition(childAt) == i3) {
-                    this.showMoreHeader = childAt;
+                    dialogsSearchAdapter.showMoreHeader = childAt;
                     break;
                 }
                 i4++;
@@ -3075,82 +3090,75 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
         final int i5 = i + min;
         int i6 = i5 + 1;
         int max = Math.max(0, size2 - 3);
-        if (!this.globalSearchCollapsed) {
-            notifyItemChanged(i5);
-            notifyItemRangeInserted(i6, max);
+        if (!dialogsSearchAdapter.globalSearchCollapsed) {
+            dialogsSearchAdapter.notifyItemChanged(i5);
+            dialogsSearchAdapter.notifyItemRangeInserted(i6, max);
         } else {
-            notifyItemRangeRemoved(i6, max);
+            dialogsSearchAdapter.notifyItemRangeRemoved(i6, max);
             if (z) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda30
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsSearchAdapter.this.lambda$onBindViewHolder$31(i5);
+                        DialogsSearchAdapter.this.notifyItemChanged(i5);
                     }
                 }, 350L);
             } else {
-                notifyItemChanged(i5);
+                dialogsSearchAdapter.notifyItemChanged(i5);
             }
         }
-        Runnable runnable = this.cancelShowMoreAnimation;
+        Runnable runnable = dialogsSearchAdapter.cancelShowMoreAnimation;
         if (runnable != null) {
             AndroidUtilities.cancelRunOnUIThread(runnable);
         }
         if (z) {
-            this.showMoreAnimation = true;
+            dialogsSearchAdapter.showMoreAnimation = true;
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda31
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsSearchAdapter.this.lambda$onBindViewHolder$32(view);
+                    DialogsSearchAdapter.$r8$lambda$MQRSXaDH6_oZG5VWNgZFlIjyCrw(DialogsSearchAdapter.this, view);
                 }
             };
-            this.cancelShowMoreAnimation = runnable2;
+            dialogsSearchAdapter.cancelShowMoreAnimation = runnable2;
             AndroidUtilities.runOnUIThread(runnable2, 400L);
             return;
         }
-        this.showMoreAnimation = false;
+        dialogsSearchAdapter.showMoreAnimation = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$31(int i) {
-        notifyItemChanged(i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$32(View view) {
-        this.showMoreAnimation = false;
-        this.showMoreHeader = null;
+    public static /* synthetic */ void $r8$lambda$MQRSXaDH6_oZG5VWNgZFlIjyCrw(DialogsSearchAdapter dialogsSearchAdapter, View view) {
+        dialogsSearchAdapter.showMoreAnimation = false;
+        dialogsSearchAdapter.showMoreHeader = null;
         if (view != null) {
             view.invalidate();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$35(final GraySectionCell graySectionCell) {
-        ItemOptions makeOptions = ItemOptions.makeOptions(this.dialogsActivity, graySectionCell);
+    public static /* synthetic */ void $r8$lambda$HMqTfP94m2GjNNYvXK2dAnEU1nE(final DialogsSearchAdapter dialogsSearchAdapter, final GraySectionCell graySectionCell) {
+        ItemOptions makeOptions = ItemOptions.makeOptions(dialogsSearchAdapter.dialogsActivity, graySectionCell);
         for (final Filter filter : Filter.values()) {
-            final boolean z = filter.flags == this.currentMessagesFilter.flags;
+            final boolean z = filter.flags == dialogsSearchAdapter.currentMessagesFilter.flags;
             makeOptions.addChecked(z, LocaleController.getString(filter.strResId), new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda25
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsSearchAdapter.this.lambda$onBindViewHolder$34(z, graySectionCell, filter);
+                    DialogsSearchAdapter.$r8$lambda$kFfnIS3dApWvkB9HeCFeOnXJSMY(DialogsSearchAdapter.this, z, graySectionCell, filter);
                 }
             });
         }
         makeOptions.setGravity(5).setOnTopOfScrim().setDrawScrim(false).setDimAlpha(0).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBindViewHolder$34(boolean z, GraySectionCell graySectionCell, Filter filter) {
+    public static /* synthetic */ void $r8$lambda$kFfnIS3dApWvkB9HeCFeOnXJSMY(DialogsSearchAdapter dialogsSearchAdapter, boolean z, GraySectionCell graySectionCell, Filter filter) {
         if (z) {
+            dialogsSearchAdapter.getClass();
             return;
         }
-        this.currentMessagesFilter = filter;
-        graySectionCell.setRightText(getFilterFromString(filter));
+        dialogsSearchAdapter.currentMessagesFilter = filter;
+        graySectionCell.setRightText(dialogsSearchAdapter.getFilterFromString(filter));
         graySectionCell.setRightTextMargin(6);
-        this.searchResultMessages.clear();
-        this.forceLoadingMessages = true;
-        notifyDataSetChanged();
-        loadMoreSearchMessages();
+        dialogsSearchAdapter.searchResultMessages.clear();
+        dialogsSearchAdapter.forceLoadingMessages = true;
+        dialogsSearchAdapter.notifyDataSetChanged();
+        dialogsSearchAdapter.loadMoreSearchMessages();
     }
 
     private CharSequence getFilterFromString(Filter filter) {
@@ -3359,14 +3367,13 @@ public abstract class DialogsSearchAdapter extends RecyclerListView.SelectionAda
     }
 
     private boolean wordStartsWith(String str, String str2) {
-        if (str2 == null || str == null) {
-            return false;
-        }
-        String[] split = str.toLowerCase().split(" ");
-        for (int i = 0; i < split.length; i++) {
-            String str3 = split[i];
-            if (str3 != null && (str3.startsWith(str2) || str2.startsWith(split[i]))) {
-                return true;
+        if (str2 != null && str != null) {
+            String[] split = str.toLowerCase().split(" ");
+            for (int i = 0; i < split.length; i++) {
+                String str3 = split[i];
+                if (str3 != null && (str3.startsWith(str2) || str2.startsWith(split[i]))) {
+                    return true;
+                }
             }
         }
         return false;

@@ -37,18 +37,30 @@ final class JobSupport$children$1 extends RestrictedSuspendLambda implements Fun
         return ((JobSupport$children$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x006a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x006c -> B:6:0x0082). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x007f -> B:6:0x0082). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x007e, code lost:
+    
+        if (r4.yield(r6, r5) == r0) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0080, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0045, code lost:
+    
+        if (r6.yield(r1, r5) == r0) goto L26;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0069  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x006b -> B:6:0x0081). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x007e -> B:6:0x0081). Please report as a decompilation issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         NodeList list;
-        SequenceScope sequenceScope;
         LockFreeLinkedListHead lockFreeLinkedListHead;
         LockFreeLinkedListNode lockFreeLinkedListNode;
+        SequenceScope sequenceScope;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -58,16 +70,13 @@ final class JobSupport$children$1 extends RestrictedSuspendLambda implements Fun
             if (state$kotlinx_coroutines_core instanceof ChildHandleNode) {
                 ChildJob childJob = ((ChildHandleNode) state$kotlinx_coroutines_core).childJob;
                 this.label = 1;
-                if (sequenceScope2.yield(childJob, this) == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             } else if ((state$kotlinx_coroutines_core instanceof Incomplete) && (list = ((Incomplete) state$kotlinx_coroutines_core).getList()) != null) {
                 Object next = list.getNext();
                 Intrinsics.checkNotNull(next, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
                 LockFreeLinkedListNode lockFreeLinkedListNode2 = (LockFreeLinkedListNode) next;
-                sequenceScope = sequenceScope2;
                 lockFreeLinkedListHead = list;
                 lockFreeLinkedListNode = lockFreeLinkedListNode2;
+                sequenceScope = sequenceScope2;
                 if (!Intrinsics.areEqual(lockFreeLinkedListNode, lockFreeLinkedListHead)) {
                 }
             }
@@ -89,9 +98,6 @@ final class JobSupport$children$1 extends RestrictedSuspendLambda implements Fun
                     this.L$1 = lockFreeLinkedListHead;
                     this.L$2 = lockFreeLinkedListNode;
                     this.label = 2;
-                    if (sequenceScope.yield(childJob2, this) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
                 }
                 lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode();
                 if (!Intrinsics.areEqual(lockFreeLinkedListNode, lockFreeLinkedListHead)) {

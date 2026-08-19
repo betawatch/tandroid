@@ -45,23 +45,23 @@ public class PhotoEditRadioCell extends FrameLayout {
             radioButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.PhotoEditRadioCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PhotoEditRadioCell.this.lambda$new$0(view);
+                    PhotoEditRadioCell.$r8$lambda$k8_GxOPRgx8gM-S6SfrRCpRMl24(PhotoEditRadioCell.this, view);
                 }
             });
         }
         addView(this.tintButtonsContainer, LayoutHelper.createFrame(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$k8_GxOPRgx8gM-S6SfrRCpRMl24(PhotoEditRadioCell photoEditRadioCell, View view) {
+        photoEditRadioCell.getClass();
         RadioButton radioButton = (RadioButton) view;
-        if (this.currentType == 0) {
-            this.currentColor = this.tintShadowColors[((Integer) radioButton.getTag()).intValue()];
+        if (photoEditRadioCell.currentType == 0) {
+            photoEditRadioCell.currentColor = photoEditRadioCell.tintShadowColors[((Integer) radioButton.getTag()).intValue()];
         } else {
-            this.currentColor = this.tintHighlighsColors[((Integer) radioButton.getTag()).intValue()];
+            photoEditRadioCell.currentColor = photoEditRadioCell.tintHighlighsColors[((Integer) radioButton.getTag()).intValue()];
         }
-        updateSelectedTintButton(true);
-        this.onClickListener.onClick(this);
+        photoEditRadioCell.updateSelectedTintButton(true);
+        photoEditRadioCell.onClickListener.onClick(photoEditRadioCell);
     }
 
     public int getCurrentColor() {

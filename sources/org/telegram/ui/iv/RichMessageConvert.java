@@ -216,9 +216,12 @@ public abstract class RichMessageConvert {
             return null;
         }
         ArrayList arrayList2 = new ArrayList();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            TL_iv.PageListItem pageListItem = (TL_iv.PageListItem) it.next();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            TL_iv.PageListItem pageListItem = (TL_iv.PageListItem) obj;
             CharSequence listItemText = listItemText(pageListItem);
             if (listItemText != null) {
                 arrayList2.add(prefixed(pageListItem.checkbox ? pageListItem.checked ? "☑  " : "☐  " : "•  ", listItemText));
@@ -235,10 +238,13 @@ public abstract class RichMessageConvert {
             return null;
         }
         ArrayList arrayList2 = new ArrayList();
-        Iterator it = arrayList.iterator();
+        int size = arrayList.size();
         int i = 1;
-        while (it.hasNext()) {
-            TL_iv.PageListOrderedItem pageListOrderedItem = (TL_iv.PageListOrderedItem) it.next();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            TL_iv.PageListOrderedItem pageListOrderedItem = (TL_iv.PageListOrderedItem) obj;
             CharSequence orderedItemText = orderedItemText(pageListOrderedItem);
             if (orderedItemText != null) {
                 arrayList2.add(prefixed((!TextUtils.isEmpty(pageListOrderedItem.num) ? pageListOrderedItem.num : String.valueOf(i)) + ".  ", orderedItemText));
@@ -259,17 +265,20 @@ public abstract class RichMessageConvert {
         }
         ArrayList<TL_iv.pageTableRow> arrayList2 = pageblocktable.rows;
         if (arrayList2 != null) {
-            Iterator<TL_iv.pageTableRow> it = arrayList2.iterator();
-            while (it.hasNext()) {
-                TL_iv.pageTableRow next = it.next();
-                ArrayList<TL_iv.pageTableCell> arrayList3 = next.cells;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                TL_iv.pageTableRow pagetablerow = arrayList2.get(i);
+                i++;
+                TL_iv.pageTableRow pagetablerow2 = pagetablerow;
+                ArrayList<TL_iv.pageTableCell> arrayList3 = pagetablerow2.cells;
                 if (arrayList3 != null && !arrayList3.isEmpty()) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    for (int i = 0; i < next.cells.size(); i++) {
-                        if (i > 0) {
+                    for (int i2 = 0; i2 < pagetablerow2.cells.size(); i2++) {
+                        if (i2 > 0) {
                             spannableStringBuilder.append((CharSequence) "  |  ");
                         }
-                        spannableStringBuilder.append(RichTextStyle.toSpannable(next.cells.get(i).text));
+                        spannableStringBuilder.append(RichTextStyle.toSpannable(pagetablerow2.cells.get(i2).text));
                     }
                     arrayList.add(spannableStringBuilder);
                 }
@@ -395,6 +404,7 @@ public abstract class RichMessageConvert {
     }
 
     private static boolean rowLossy(BlockRow blockRow, Map map) {
+        int i = 0;
         if (blockRow == null) {
             return false;
         }
@@ -413,9 +423,12 @@ public abstract class RichMessageConvert {
             return true;
         }
         if (map != null && !blockRow.quoteIds.isEmpty()) {
-            Iterator it = blockRow.quoteIds.iterator();
-            while (it.hasNext()) {
-                if (hasText((TL_iv.RichText) map.get((Long) it.next()))) {
+            ArrayList arrayList = blockRow.quoteIds;
+            int size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                if (hasText((TL_iv.RichText) map.get((Long) obj))) {
                     return true;
                 }
             }
@@ -508,9 +521,13 @@ public abstract class RichMessageConvert {
             return false;
         }
         if (richText instanceof TL_iv.textConcat) {
-            Iterator<TL_iv.RichText> it = ((TL_iv.textConcat) richText).texts.iterator();
-            while (it.hasNext()) {
-                if (inlineLossy(it.next())) {
+            ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                TL_iv.RichText richText2 = arrayList.get(i);
+                i++;
+                if (inlineLossy(richText2)) {
                     return true;
                 }
             }

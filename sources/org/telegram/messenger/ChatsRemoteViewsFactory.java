@@ -87,34 +87,40 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:114|(1:116)(2:124|(1:126)(8:127|(1:129)(1:131)|130|118|119|120|96|97))|117|118|119|120|96|97) */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x03e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x03ee, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x03e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x03ef, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r10 = r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:230:0x0134, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:234:0x0134, code lost:
     
         if (r13.local_id != 0) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:231:0x0136, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:235:0x0136, code lost:
     
         r14 = r13;
         r13 = r12;
         r12 = r0;
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:240:0x0152, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:244:0x0152, code lost:
     
         if (r13.local_id != 0) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0290, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0297, code lost:
     
-        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L105;
+        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L108;
      */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0545  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0564  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x05bc  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x05ef  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x05c7  */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -126,7 +132,10 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         TLRPC.FileLocation fileLocation;
         String str2;
         TLRPC.FileLocation fileLocation2;
+        char c;
         Bitmap decodeFile;
+        MessageObject messageObject;
+        TLRPC.Dialog dialog;
         int i2;
         int i3;
         TLRPC.Chat chat2;
@@ -134,10 +143,10 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         CharSequence charSequence;
         String str3;
         SpannableStringBuilder valueOf;
-        char c;
         int i4;
-        String charSequence2;
         char c2;
+        String charSequence2;
+        char c3;
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence3;
         CharSequence charSequence4;
@@ -236,7 +245,25 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             try {
                 decodeFile = BitmapFactory.decodeFile(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(fileLocation, true).toString());
             } catch (Throwable th) {
+                th = th;
+                c = 1;
                 FileLog.e(th);
+                messageObject = (MessageObject) this.messageObjects.get(l.longValue());
+                dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
+                if (messageObject != null) {
+                }
+                if (dialog == null) {
+                }
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
+                Bundle bundle2 = new Bundle();
+                if (DialogObject.isUserDialog(l.longValue())) {
+                }
+                bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
+                Intent intent2 = new Intent();
+                intent2.putExtras(bundle2);
+                remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent2);
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
+                return remoteViews3;
             }
         } else {
             decodeFile = null;
@@ -259,6 +286,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             }
             avatarDrawable.setBounds(0, 0, dp, dp);
             avatarDrawable.draw(canvas);
+            c = 1;
         } else {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -270,14 +298,36 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             canvas.save();
             canvas.scale(width, width);
             this.roundPaint.setShader(bitmapShader);
-            this.bitmapRect.set(0.0f, 0.0f, decodeFile.getWidth(), decodeFile.getHeight());
-            canvas.drawRoundRect(this.bitmapRect, decodeFile.getWidth(), decodeFile.getHeight(), this.roundPaint);
-            canvas.restore();
+            c = 1;
+            try {
+                this.bitmapRect.set(0.0f, 0.0f, decodeFile.getWidth(), decodeFile.getHeight());
+                canvas.drawRoundRect(this.bitmapRect, decodeFile.getWidth(), decodeFile.getHeight(), this.roundPaint);
+                canvas.restore();
+            } catch (Throwable th2) {
+                th = th2;
+                FileLog.e(th);
+                messageObject = (MessageObject) this.messageObjects.get(l.longValue());
+                dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
+                if (messageObject != null) {
+                }
+                if (dialog == null) {
+                }
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
+                Bundle bundle22 = new Bundle();
+                if (DialogObject.isUserDialog(l.longValue())) {
+                }
+                bundle22.putInt("currentAccount", this.accountInstance.getCurrentAccount());
+                Intent intent22 = new Intent();
+                intent22.putExtras(bundle22);
+                remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent22);
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
+                return remoteViews3;
+            }
         }
         canvas.setBitmap(null);
         remoteViews3.setImageViewBitmap(R.id.shortcut_widget_item_avatar, createBitmap);
-        MessageObject messageObject = (MessageObject) this.messageObjects.get(l.longValue());
-        TLRPC.Dialog dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
+        messageObject = (MessageObject) this.messageObjects.get(l.longValue());
+        dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
         if (messageObject != null) {
             long fromChatId = messageObject.getFromChatId();
             if (DialogObject.isUserDialog(fromChatId)) {
@@ -313,7 +363,6 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                     }
                     String str5 = str3;
                     CharSequence charSequence6 = messageObject.caption;
-                    char c3 = ' ';
                     try {
                         if (charSequence6 != null) {
                             String charSequence7 = charSequence6.toString();
@@ -329,45 +378,44 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             } else if (messageObject.isPhoto()) {
                                 str4 = "🖼 ";
                             }
-                            valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", str4 + charSequence7.replace('\n', ' '), str5));
+                            Object[] objArr = new Object[2];
+                            objArr[0] = str4 + charSequence7.replace('\n', ' ');
+                            objArr[c] = str5;
+                            valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
                         } else if (messageObject.messageOwner.media != null && !messageObject.isMediaEmpty()) {
                             color = this.mContext.getResources().getColor(R.color.widget_action_text);
                             TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
                             if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
-                                c = 1;
                                 charSequence2 = String.format("📊 \u2068%s\u2069", ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text);
+                            } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
+                                charSequence2 = String.format("🎮 \u2068%s\u2069", messageMedia.game.title);
                             } else {
-                                c = 1;
-                                if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
-                                    charSequence2 = String.format("🎮 \u2068%s\u2069", messageMedia.game.title);
+                                if (messageObject.type == 14) {
+                                    i4 = 2;
+                                    c2 = 1;
+                                    charSequence2 = String.format("🎧 \u2068%s - %s\u2069", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
                                 } else {
-                                    if (messageObject.type == 14) {
-                                        i4 = 2;
-                                        charSequence2 = String.format("🎧 \u2068%s - %s\u2069", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
-                                    } else {
-                                        i4 = 2;
-                                        charSequence2 = messageObject.messageText.toString();
-                                    }
-                                    c3 = ' ';
-                                    c2 = '\n';
-                                    String replace = charSequence2.replace(c2, c3);
-                                    Object[] objArr = new Object[i4];
-                                    objArr[0] = replace;
-                                    objArr[c] = str5;
-                                    SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
-                                    valueOf2.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf2.length(), 33);
-                                    spannableStringBuilder = valueOf2;
-                                    spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
-                                    charSequence3 = spannableStringBuilder;
+                                    i4 = 2;
+                                    c2 = 1;
+                                    charSequence2 = messageObject.messageText.toString();
                                 }
+                                c3 = '\n';
+                                Object[] objArr2 = new Object[i4];
+                                objArr2[0] = charSequence2.replace(c3, ' ');
+                                objArr2[c2] = str5;
+                                SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
+                                valueOf2.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf2.length(), 33);
+                                spannableStringBuilder = valueOf2;
+                                spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
+                                charSequence3 = spannableStringBuilder;
                             }
-                            c2 = '\n';
+                            c3 = '\n';
                             i4 = 2;
-                            String replace2 = charSequence2.replace(c2, c3);
-                            Object[] objArr2 = new Object[i4];
-                            objArr2[0] = replace2;
-                            objArr2[c] = str5;
-                            SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
+                            c2 = 1;
+                            Object[] objArr22 = new Object[i4];
+                            objArr22[0] = charSequence2.replace(c3, ' ');
+                            objArr22[c2] = str5;
+                            SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr22));
                             valueOf22.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf22.length(), 33);
                             spannableStringBuilder = valueOf22;
                             spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
@@ -442,7 +490,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, "");
         }
-        if (dialog != null && (i3 = dialog.unread_count) > 0) {
+        if (dialog == null && (i3 = dialog.unread_count) > 0) {
             int i6 = R.id.shortcut_widget_item_badge;
             remoteViews3.setTextViewText(i6, String.format("%d", Integer.valueOf(i3)));
             remoteViews3.setViewVisibility(i6, 0);
@@ -456,16 +504,16 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         } else {
             remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
         }
-        Bundle bundle2 = new Bundle();
+        Bundle bundle222 = new Bundle();
         if (DialogObject.isUserDialog(l.longValue())) {
-            bundle2.putLong("userId", l.longValue());
+            bundle222.putLong("userId", l.longValue());
         } else {
-            bundle2.putLong("chatId", -l.longValue());
+            bundle222.putLong("chatId", -l.longValue());
         }
-        bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
-        Intent intent2 = new Intent();
-        intent2.putExtras(bundle2);
-        remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent2);
+        bundle222.putInt("currentAccount", this.accountInstance.getCurrentAccount());
+        Intent intent222 = new Intent();
+        intent222.putExtras(bundle222);
+        remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent222);
         remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
         return remoteViews3;
     }

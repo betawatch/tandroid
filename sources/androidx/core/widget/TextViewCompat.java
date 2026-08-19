@@ -82,12 +82,14 @@ public abstract class TextViewCompat {
             Method declaredMethod;
             Context context = this.mTextView.getContext();
             PackageManager packageManager = context.getPackageManager();
-            if (!this.mInitializedMenuBuilderReferences) {
+            boolean z = this.mInitializedMenuBuilderReferences;
+            Class<?> cls = Integer.TYPE;
+            if (!z) {
                 this.mInitializedMenuBuilderReferences = true;
                 try {
-                    Class<?> cls = Class.forName("com.android.internal.view.menu.MenuBuilder");
-                    this.mMenuBuilderClass = cls;
-                    this.mMenuBuilderRemoveItemAtMethod = cls.getDeclaredMethod("removeItemAt", Integer.TYPE);
+                    Class<?> cls2 = Class.forName("com.android.internal.view.menu.MenuBuilder");
+                    this.mMenuBuilderClass = cls2;
+                    this.mMenuBuilderRemoveItemAtMethod = cls2.getDeclaredMethod("removeItemAt", cls);
                     this.mCanUseMenuBuilderReferences = true;
                 } catch (ClassNotFoundException | NoSuchMethodException unused) {
                     this.mMenuBuilderClass = null;
@@ -99,7 +101,7 @@ public abstract class TextViewCompat {
                 if (this.mCanUseMenuBuilderReferences && this.mMenuBuilderClass.isInstance(menu)) {
                     declaredMethod = this.mMenuBuilderRemoveItemAtMethod;
                 } else {
-                    declaredMethod = menu.getClass().getDeclaredMethod("removeItemAt", Integer.TYPE);
+                    declaredMethod = menu.getClass().getDeclaredMethod("removeItemAt", cls);
                 }
                 for (int size = menu.size() - 1; size >= 0; size--) {
                     MenuItem item = menu.getItem(size);
@@ -118,12 +120,11 @@ public abstract class TextViewCompat {
 
         private List getSupportedActivities(Context context, PackageManager packageManager) {
             ArrayList arrayList = new ArrayList();
-            if (!(context instanceof Activity)) {
-                return arrayList;
-            }
-            for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(createProcessTextIntent(), 0)) {
-                if (isSupportedActivity(resolveInfo, context)) {
-                    arrayList.add(resolveInfo);
+            if (context instanceof Activity) {
+                for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(createProcessTextIntent(), 0)) {
+                    if (isSupportedActivity(resolveInfo, context)) {
+                        arrayList.add(resolveInfo);
+                    }
                 }
             }
             return arrayList;
@@ -139,11 +140,13 @@ public abstract class TextViewCompat {
                 return false;
             }
             String str = activityInfo.permission;
-            if (str == null) {
-                return true;
+            if (str != null) {
+                checkSelfPermission = context.checkSelfPermission(str);
+                if (checkSelfPermission != 0) {
+                    return false;
+                }
             }
-            checkSelfPermission = context.checkSelfPermission(str);
-            return checkSelfPermission == 0;
+            return true;
         }
 
         private Intent createProcessTextIntentForResolveInfo(ResolveInfo resolveInfo, TextView textView) {

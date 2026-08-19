@@ -1,7 +1,6 @@
 package com.google.android.exoplayer2;
 
 import android.content.Context;
-import android.opengl.EGLContext;
 import android.os.Looper;
 import com.google.android.exoplayer2.DefaultLivePlaybackSpeedControl;
 import com.google.android.exoplayer2.ExoPlayer;
@@ -65,7 +64,6 @@ public interface ExoPlayer extends Player {
         Clock clock;
         final Context context;
         long detachSurfaceTimeoutMs;
-        public EGLContext eglContext;
         long foregroundModeTimeoutMs;
         boolean handleAudioBecomingNoisy;
         boolean handleAudioFocus;
@@ -88,46 +86,37 @@ public interface ExoPlayer extends Player {
         int videoScalingMode;
         int wakeMode;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ LoadControl lambda$setLoadControl$19(LoadControl loadControl) {
-            return loadControl;
+        public static /* synthetic */ TrackSelector $r8$lambda$C4W3_CpBDGRsHmoIhfOUQmtXsl4(TrackSelector trackSelector) {
+            return trackSelector;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ RenderersFactory lambda$setRenderersFactory$16(RenderersFactory renderersFactory) {
+        public static /* synthetic */ RenderersFactory $r8$lambda$GYdozbRODnlGDQgrVACU4rpd-6I(RenderersFactory renderersFactory) {
             return renderersFactory;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ TrackSelector lambda$setTrackSelector$18(TrackSelector trackSelector) {
-            return trackSelector;
+        public static /* synthetic */ LoadControl $r8$lambda$riCuehVJ3XIhWdU_TuhRzEblprE(LoadControl loadControl) {
+            return loadControl;
         }
 
         public Builder(final Context context) {
             this(context, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    RenderersFactory lambda$new$0;
-                    lambda$new$0 = ExoPlayer.Builder.lambda$new$0(context);
-                    return lambda$new$0;
+                    return ExoPlayer.Builder.$r8$lambda$4qhvUKIRrN-DysIrv45HiMI7TtI(context);
                 }
             }, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda2
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    MediaSource.Factory lambda$new$1;
-                    lambda$new$1 = ExoPlayer.Builder.lambda$new$1(context);
-                    return lambda$new$1;
+                    return ExoPlayer.Builder.$r8$lambda$Z9NUWa_6QXYrw0QqdfsKlmwIjME(context);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ RenderersFactory lambda$new$0(Context context) {
+        public static /* synthetic */ RenderersFactory $r8$lambda$4qhvUKIRrN-DysIrv45HiMI7TtI(Context context) {
             return new DefaultRenderersFactory(context);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ MediaSource.Factory lambda$new$1(Context context) {
+        public static /* synthetic */ MediaSource.Factory $r8$lambda$Z9NUWa_6QXYrw0QqdfsKlmwIjME(Context context) {
             return new DefaultMediaSourceFactory(context, new DefaultExtractorsFactory());
         }
 
@@ -135,9 +124,7 @@ public interface ExoPlayer extends Player {
             this(context, supplier, supplier2, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda5
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    TrackSelector lambda$new$14;
-                    lambda$new$14 = ExoPlayer.Builder.lambda$new$14(context);
-                    return lambda$new$14;
+                    return ExoPlayer.Builder.$r8$lambda$jNFyOnL11Ub_hDLTi6yxZquXOOw(context);
                 }
             }, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda6
                 @Override // com.google.common.base.Supplier
@@ -159,8 +146,7 @@ public interface ExoPlayer extends Player {
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ TrackSelector lambda$new$14(Context context) {
+        public static /* synthetic */ TrackSelector $r8$lambda$jNFyOnL11Ub_hDLTi6yxZquXOOw(Context context) {
             return new DefaultTrackSelector(context);
         }
 
@@ -194,9 +180,7 @@ public interface ExoPlayer extends Player {
             this.renderersFactorySupplier = new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda4
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    RenderersFactory lambda$setRenderersFactory$16;
-                    lambda$setRenderersFactory$16 = ExoPlayer.Builder.lambda$setRenderersFactory$16(RenderersFactory.this);
-                    return lambda$setRenderersFactory$16;
+                    return ExoPlayer.Builder.$r8$lambda$GYdozbRODnlGDQgrVACU4rpd-6I(RenderersFactory.this);
                 }
             };
             return this;
@@ -208,9 +192,7 @@ public interface ExoPlayer extends Player {
             this.trackSelectorSupplier = new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda3
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    TrackSelector lambda$setTrackSelector$18;
-                    lambda$setTrackSelector$18 = ExoPlayer.Builder.lambda$setTrackSelector$18(TrackSelector.this);
-                    return lambda$setTrackSelector$18;
+                    return ExoPlayer.Builder.$r8$lambda$C4W3_CpBDGRsHmoIhfOUQmtXsl4(TrackSelector.this);
                 }
             };
             return this;
@@ -222,9 +204,7 @@ public interface ExoPlayer extends Player {
             this.loadControlSupplier = new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    LoadControl lambda$setLoadControl$19;
-                    lambda$setLoadControl$19 = ExoPlayer.Builder.lambda$setLoadControl$19(LoadControl.this);
-                    return lambda$setLoadControl$19;
+                    return ExoPlayer.Builder.$r8$lambda$riCuehVJ3XIhWdU_TuhRzEblprE(LoadControl.this);
                 }
             };
             return this;

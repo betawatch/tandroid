@@ -239,14 +239,13 @@ public class MP3Info extends AudioInfo {
                 readFirstFrame = readNextFrame(mP3Input, stopReadCondition, readFirstFrame);
                 if (readFirstFrame != null) {
                     int bitrate2 = readFirstFrame.getHeader().getBitrate();
-                    int i2 = duration;
                     if (bitrate2 != bitrate) {
                         z = true;
                     }
                     j2 += bitrate2;
                     size += readFirstFrame.getSize();
                     i++;
-                    duration = i2;
+                    duration = duration;
                 } else {
                     return (((size * 1000) * i) * 8) / j2;
                 }

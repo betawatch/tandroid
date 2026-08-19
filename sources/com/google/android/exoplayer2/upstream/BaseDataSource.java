@@ -15,9 +15,9 @@ public abstract class BaseDataSource implements DataSource {
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
     public /* synthetic */ Map getResponseHeaders() {
-        Map emptyMap;
-        emptyMap = Collections.emptyMap();
-        return emptyMap;
+        Map map;
+        map = Collections.EMPTY_MAP;
+        return map;
     }
 
     protected BaseDataSource(boolean z) {

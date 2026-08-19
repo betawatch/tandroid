@@ -1,13 +1,13 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-final class m extends l {
+public final class m extends l {
     @Override // j$.util.concurrent.l
-    final l a(int i, Object obj) {
+    public final l a(int i, Object obj) {
         return null;
     }
 
-    m() {
+    public m() {
         super(-3, null, null);
     }
 }

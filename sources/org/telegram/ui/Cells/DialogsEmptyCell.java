@@ -41,8 +41,7 @@ public class DialogsEmptyCell extends LinearLayout {
     private ValueAnimator utyanAnimator;
     private float utyanCollapseProgress;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$ugpKNg-6fsNS82BgCbqgLN-nBV0(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -55,9 +54,7 @@ public class DialogsEmptyCell extends LinearLayout {
         setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.DialogsEmptyCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$new$0;
-                lambda$new$0 = DialogsEmptyCell.lambda$new$0(view, motionEvent);
-                return lambda$new$0;
+                return DialogsEmptyCell.$r8$lambda$ugpKNg-6fsNS82BgCbqgLN-nBV0(view, motionEvent);
             }
         });
         RLottieImageView rLottieImageView = new RLottieImageView(context);
@@ -67,7 +64,7 @@ public class DialogsEmptyCell extends LinearLayout {
         rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsEmptyCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogsEmptyCell.this.lambda$new$1(view);
+                DialogsEmptyCell.$r8$lambda$5F9aEcnZSKZXQ4f12J2yt8LgzqI(DialogsEmptyCell.this, view);
             }
         });
         TextView textView = new TextView(context);
@@ -82,9 +79,7 @@ public class DialogsEmptyCell extends LinearLayout {
         textViewSwitcher.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.DialogsEmptyCell$$ExternalSyntheticLambda2
             @Override // android.widget.ViewSwitcher.ViewFactory
             public final View makeView() {
-                View lambda$new$2;
-                lambda$new$2 = DialogsEmptyCell.lambda$new$2(context);
-                return lambda$new$2;
+                return DialogsEmptyCell.$r8$lambda$orrQ6KUp7SgjvkysqPE4x0aE658(context);
             }
         });
         textViewSwitcher.setInAnimation(context, R.anim.alpha_in);
@@ -92,17 +87,15 @@ public class DialogsEmptyCell extends LinearLayout {
         addView(textViewSwitcher, LayoutHelper.createFrame(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        if (this.imageView.isPlaying()) {
+    public static /* synthetic */ void $r8$lambda$5F9aEcnZSKZXQ4f12J2yt8LgzqI(DialogsEmptyCell dialogsEmptyCell, View view) {
+        if (dialogsEmptyCell.imageView.isPlaying()) {
             return;
         }
-        this.imageView.setProgress(0.0f);
-        this.imageView.playAnimation();
+        dialogsEmptyCell.imageView.setProgress(0.0f);
+        dialogsEmptyCell.imageView.playAnimation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ View lambda$new$2(Context context) {
+    public static /* synthetic */ View $r8$lambda$orrQ6KUp7SgjvkysqPE4x0aE658(Context context) {
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_chats_message));
         textView.setTextSize(1, 14.0f);
@@ -191,7 +184,7 @@ public class DialogsEmptyCell extends LinearLayout {
         this.utyanAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.DialogsEmptyCell$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DialogsEmptyCell.this.lambda$startUtyanExpandAnimation$3(valueAnimator2);
+                DialogsEmptyCell.$r8$lambda$v1YSkfnRmjhrxkw9PdyP7_xh4Zc(DialogsEmptyCell.this, valueAnimator2);
             }
         });
         this.utyanAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.DialogsEmptyCell.1
@@ -208,13 +201,13 @@ public class DialogsEmptyCell extends LinearLayout {
         this.utyanAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startUtyanExpandAnimation$3(ValueAnimator valueAnimator) {
-        this.utyanCollapseProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        requestLayout();
-        Consumer consumer = this.onUtyanAnimationUpdateListener;
+    public static /* synthetic */ void $r8$lambda$v1YSkfnRmjhrxkw9PdyP7_xh4Zc(DialogsEmptyCell dialogsEmptyCell, ValueAnimator valueAnimator) {
+        dialogsEmptyCell.getClass();
+        dialogsEmptyCell.utyanCollapseProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        dialogsEmptyCell.requestLayout();
+        Consumer consumer = dialogsEmptyCell.onUtyanAnimationUpdateListener;
         if (consumer != null) {
-            consumer.accept(Float.valueOf(this.utyanCollapseProgress));
+            consumer.accept(Float.valueOf(dialogsEmptyCell.utyanCollapseProgress));
         }
     }
 
@@ -237,7 +230,7 @@ public class DialogsEmptyCell extends LinearLayout {
         this.utyanAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.DialogsEmptyCell$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DialogsEmptyCell.this.lambda$startUtyanCollapseAnimation$4(valueAnimator2);
+                DialogsEmptyCell.$r8$lambda$xuaoQTE62Pw4hGVHrziwdLj26rw(DialogsEmptyCell.this, valueAnimator2);
             }
         });
         this.utyanAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.DialogsEmptyCell.2
@@ -254,13 +247,13 @@ public class DialogsEmptyCell extends LinearLayout {
         this.utyanAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startUtyanCollapseAnimation$4(ValueAnimator valueAnimator) {
-        this.utyanCollapseProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        requestLayout();
-        Consumer consumer = this.onUtyanAnimationUpdateListener;
+    public static /* synthetic */ void $r8$lambda$xuaoQTE62Pw4hGVHrziwdLj26rw(DialogsEmptyCell dialogsEmptyCell, ValueAnimator valueAnimator) {
+        dialogsEmptyCell.getClass();
+        dialogsEmptyCell.utyanCollapseProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        dialogsEmptyCell.requestLayout();
+        Consumer consumer = dialogsEmptyCell.onUtyanAnimationUpdateListener;
         if (consumer != null) {
-            consumer.accept(Float.valueOf(this.utyanCollapseProgress));
+            consumer.accept(Float.valueOf(dialogsEmptyCell.utyanCollapseProgress));
         }
     }
 

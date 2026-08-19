@@ -35,21 +35,18 @@ final class SingleProcessDataStore$transformAndWrite$newData$1 extends SuspendLa
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            Function2 function2 = this.$transform;
-            Object obj2 = this.$curData;
-            this.label = 1;
-            obj = function2.invoke(obj2, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
-        } else {
+        if (i != 0) {
             if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.throwOnFailure(obj);
+            return obj;
         }
-        return obj;
+        ResultKt.throwOnFailure(obj);
+        Function2 function2 = this.$transform;
+        Object obj2 = this.$curData;
+        this.label = 1;
+        Object invoke = function2.invoke(obj2, this);
+        return invoke == coroutine_suspended ? coroutine_suspended : invoke;
     }
 }

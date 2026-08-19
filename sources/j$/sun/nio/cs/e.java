@@ -5,18 +5,10 @@ import java.nio.charset.CoderResult;
 
 /* loaded from: classes2.dex */
 public final class e {
-    private CoderResult a = CoderResult.UNDERFLOW;
-    private boolean b;
+    public CoderResult a;
+    public boolean b;
 
-    public final CoderResult a() {
-        return this.a;
-    }
-
-    public final CoderResult d() {
-        return CoderResult.unmappableForLength(this.b ? 2 : 1);
-    }
-
-    public final int b(char c, CharBuffer charBuffer) {
+    public final int a(char c, CharBuffer charBuffer) {
         if (Character.isHighSurrogate(c)) {
             if (!charBuffer.hasRemaining()) {
                 this.a = CoderResult.UNDERFLOW;
@@ -41,7 +33,7 @@ public final class e {
         return c;
     }
 
-    public final int c(char c, char[] cArr, int i, int i2) {
+    public final int b(char c, char[] cArr, int i, int i2) {
         if (!Character.isHighSurrogate(c)) {
             if (Character.isLowSurrogate(c)) {
                 this.a = CoderResult.malformedForLength(1);

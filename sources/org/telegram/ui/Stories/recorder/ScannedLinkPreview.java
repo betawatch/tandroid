@@ -39,7 +39,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.ScannedLinkPreview;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ScannedLinkPreview extends View {
     private final AnimatedFloat animatedAlpha;
     private final Paint backgroundPaint;
@@ -124,7 +124,7 @@ public class ScannedLinkPreview extends View {
             this.currentCancel = ResolvedLink.resolve(this.currentAccount, str, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.ScannedLinkPreview$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ScannedLinkPreview.this.lambda$setLink$0((ScannedLinkPreview.ResolvedLink) obj);
+                    ScannedLinkPreview.$r8$lambda$wiYEV2WTsyApUEs3rpLBoo8cfSQ(ScannedLinkPreview.this, (ScannedLinkPreview.ResolvedLink) obj);
                 }
             });
             return;
@@ -142,14 +142,13 @@ public class ScannedLinkPreview extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setLink$0(ResolvedLink resolvedLink) {
-        this.currentCancel = null;
-        this.resolved = resolvedLink;
-        this.hasResolved = resolvedLink != null;
-        setup();
-        invalidate();
-        Runnable runnable = this.resolvedListener;
+    public static /* synthetic */ void $r8$lambda$wiYEV2WTsyApUEs3rpLBoo8cfSQ(ScannedLinkPreview scannedLinkPreview, ResolvedLink resolvedLink) {
+        scannedLinkPreview.currentCancel = null;
+        scannedLinkPreview.resolved = resolvedLink;
+        scannedLinkPreview.hasResolved = resolvedLink != null;
+        scannedLinkPreview.setup();
+        scannedLinkPreview.invalidate();
+        Runnable runnable = scannedLinkPreview.resolvedListener;
         if (runnable != null) {
             runnable.run();
         }
@@ -183,7 +182,10 @@ public class ScannedLinkPreview extends View {
         int height;
         float f = this.animatedAlpha.set(this.hasResolved);
         Text text = this.title;
-        if (text == null || this.subtitle == null || f <= 0.0f) {
+        if (text == null || this.subtitle == null) {
+            return;
+        }
+        if (f <= 0.0f) {
             return;
         }
         text.ellipsize(getWidth() * 0.7f);
@@ -211,7 +213,7 @@ public class ScannedLinkPreview extends View {
             canvas.clipPath(this.clipPath);
             int i = this.blurLocation[0];
             int[] iArr = this.thisLocation;
-            canvas.translate(i - iArr[0], r3[1] - iArr[1]);
+            canvas.translate(i - iArr[0], r4[1] - iArr[1]);
             float width2 = this.blurView.getWidth();
             width = m.getWidth();
             float f2 = width2 / width;
@@ -241,7 +243,7 @@ public class ScannedLinkPreview extends View {
         }
         float centerY = this.bounds.centerY() - (((this.title.getHeight() + dp4) + this.subtitle.getHeight()) / 2.0f);
         Text text2 = this.title;
-        text2.draw(canvas, this.bounds.left + (this.hasImage ? dp5 + dp3 + dp5 : 0.0f) + dp, centerY + (text2.getHeight() / 2.0f), -1, f);
+        text2.draw(canvas, this.bounds.left + (this.hasImage ? dp5 + dp3 + dp5 : 0.0f) + dp, (text2.getHeight() / 2.0f) + centerY, -1, f);
         this.subtitle.draw(canvas, this.bounds.left + (this.hasImage ? dp3 + dp5 + dp5 : 0.0f) + dp, centerY + this.title.getHeight() + dp4 + (this.subtitle.getHeight() / 2.0f), Theme.blendOver(-16777216, -1610612737), f);
         canvas.restore();
     }
@@ -286,7 +288,7 @@ public class ScannedLinkPreview extends View {
                 callback.run(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.ScannedLinkPreview$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        ScannedLinkPreview.this.lambda$dispatchTouchEvent$1((BaseFragment) obj);
+                        ScannedLinkPreview.$r8$lambda$nRxLRc5cdHGIpB86bm4Y8RKUdWA(ScannedLinkPreview.this, (BaseFragment) obj);
                     }
                 });
             }
@@ -299,9 +301,8 @@ public class ScannedLinkPreview extends View {
         return this.touch || this.bounce.isPressed();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dispatchTouchEvent$1(BaseFragment baseFragment) {
-        ResolvedLink resolvedLink = this.resolved;
+    public static /* synthetic */ void $r8$lambda$nRxLRc5cdHGIpB86bm4Y8RKUdWA(ScannedLinkPreview scannedLinkPreview, BaseFragment baseFragment) {
+        ResolvedLink resolvedLink = scannedLinkPreview.resolved;
         if (resolvedLink != null || baseFragment == null) {
             resolvedLink.open(baseFragment);
         }
@@ -353,7 +354,7 @@ public class ScannedLinkPreview extends View {
                 return messagesController.getUserNameResolver().resolve(str3, queryParameter, new Consumer() { // from class: org.telegram.ui.Stories.recorder.ScannedLinkPreview$ResolvedLink$$ExternalSyntheticLambda0
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj) {
-                        ScannedLinkPreview.ResolvedLink.lambda$resolve$0(Utilities.Callback.this, messagesController, str, (Long) obj);
+                        ScannedLinkPreview.ResolvedLink.$r8$lambda$ZU95PTWNI-Uggcw96yv0AFkIIfE(Utilities.Callback.this, messagesController, str, (Long) obj);
                     }
                 });
             } catch (Exception e) {
@@ -363,8 +364,7 @@ public class ScannedLinkPreview extends View {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$resolve$0(Utilities.Callback callback, MessagesController messagesController, String str, Long l) {
+        public static /* synthetic */ void $r8$lambda$ZU95PTWNI-Uggcw96yv0AFkIIfE(Utilities.Callback callback, MessagesController messagesController, String str, Long l) {
             if (l == null) {
                 callback.run(null);
                 return;

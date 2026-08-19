@@ -31,9 +31,7 @@ abstract class FontProvider {
     private static final Comparator sByteArrayComparator = new Comparator() { // from class: androidx.core.provider.FontProvider$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$0;
-            lambda$static$0 = FontProvider.lambda$static$0((byte[]) obj, (byte[]) obj2);
-            return lambda$static$0;
+            return FontProvider.$r8$lambda$YnOn4sMaJN6i8fkk9HOHIkI5PVE((byte[]) obj, (byte[]) obj2);
         }
     };
 
@@ -116,13 +114,19 @@ abstract class FontProvider {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r16v1 */
+    /* JADX WARN: Type inference failed for: r16v10 */
+    /* JADX WARN: Type inference failed for: r16v2, types: [androidx.core.provider.FontProvider$ContentQueryWrapper] */
     static FontsContractCompat.FontInfo[] query(Context context, FontRequest fontRequest, String str, CancellationSignal cancellationSignal) {
-        ArrayList arrayList;
+        ?? r16;
+        ContentQueryWrapper contentQueryWrapper;
+        ContentQueryWrapper contentQueryWrapper2;
         Uri withAppendedId;
         boolean z;
         Trace.beginSection("FontProvider.query");
         try {
-            ArrayList arrayList2 = new ArrayList();
+            ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
             ContentQueryWrapper make = ContentQueryWrapper.-CC.make(context, build);
@@ -131,59 +135,65 @@ abstract class FontProvider {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
                 Trace.beginSection("ContentQueryWrapper.query");
                 try {
-                    cursor = make.query(build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null, cancellationSignal);
-                    Trace.endSection();
-                    if (cursor != null && cursor.getCount() > 0) {
-                        int columnIndex = cursor.getColumnIndex("result_code");
-                        ArrayList arrayList3 = new ArrayList();
-                        int columnIndex2 = cursor.getColumnIndex("_id");
-                        int columnIndex3 = cursor.getColumnIndex("file_id");
-                        int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
-                        int columnIndex5 = cursor.getColumnIndex("font_weight");
-                        int columnIndex6 = cursor.getColumnIndex("font_italic");
-                        while (cursor.moveToNext()) {
-                            int i = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                            int i2 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
-                            if (columnIndex3 == -1) {
-                                arrayList = arrayList3;
-                                withAppendedId = ContentUris.withAppendedId(build, cursor.getLong(columnIndex2));
-                            } else {
-                                arrayList = arrayList3;
-                                withAppendedId = ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
-                            }
-                            int i3 = columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400;
-                            if (columnIndex6 != -1) {
-                                z = true;
-                                if (cursor.getInt(columnIndex6) == 1) {
-                                    FontsContractCompat.FontInfo create = FontsContractCompat.FontInfo.create(withAppendedId, i2, i3, z, i);
-                                    arrayList3 = arrayList;
-                                    arrayList3.add(create);
+                    try {
+                        cursor = make.query(build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null, cancellationSignal);
+                        if (cursor == null || cursor.getCount() <= 0) {
+                            contentQueryWrapper = make;
+                        } else {
+                            int columnIndex = cursor.getColumnIndex("result_code");
+                            ArrayList arrayList2 = new ArrayList();
+                            int columnIndex2 = cursor.getColumnIndex("_id");
+                            int columnIndex3 = cursor.getColumnIndex("file_id");
+                            int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
+                            int columnIndex5 = cursor.getColumnIndex("font_weight");
+                            int columnIndex6 = cursor.getColumnIndex("font_italic");
+                            while (cursor.moveToNext()) {
+                                int i = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
+                                int i2 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
+                                if (columnIndex3 == -1) {
+                                    contentQueryWrapper2 = make;
+                                    withAppendedId = ContentUris.withAppendedId(build, cursor.getLong(columnIndex2));
+                                } else {
+                                    contentQueryWrapper2 = make;
+                                    withAppendedId = ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
                                 }
+                                int i3 = columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400;
+                                if (columnIndex6 != -1) {
+                                    z = true;
+                                    if (cursor.getInt(columnIndex6) == 1) {
+                                        arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i2, i3, z, i));
+                                        make = contentQueryWrapper2;
+                                    }
+                                }
+                                z = false;
+                                arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i2, i3, z, i));
+                                make = contentQueryWrapper2;
                             }
-                            z = false;
-                            FontsContractCompat.FontInfo create2 = FontsContractCompat.FontInfo.create(withAppendedId, i2, i3, z, i);
-                            arrayList3 = arrayList;
-                            arrayList3.add(create2);
+                            contentQueryWrapper = make;
+                            arrayList = arrayList2;
                         }
-                        arrayList2 = arrayList3;
+                        if (cursor != null) {
+                            cursor.close();
+                        }
+                        contentQueryWrapper.close();
+                        return (FontsContractCompat.FontInfo[]) arrayList.toArray(new FontsContractCompat.FontInfo[0]);
+                    } finally {
                     }
+                } catch (Throwable th) {
+                    th = th;
+                    r16 = context;
                     if (cursor != null) {
                         cursor.close();
                     }
-                    make.close();
-                    return (FontsContractCompat.FontInfo[]) arrayList2.toArray(new FontsContractCompat.FontInfo[0]);
-                } finally {
-                    Trace.endSection();
+                    r16.close();
+                    throw th;
                 }
-            } catch (Throwable th) {
-                if (cursor != null) {
-                    cursor.close();
-                }
-                make.close();
-                throw th;
+            } catch (Throwable th2) {
+                th = th2;
+                r16 = make;
             }
-        } catch (Throwable th2) {
-            throw th2;
+        } finally {
+            Trace.endSection();
         }
     }
 
@@ -194,8 +204,7 @@ abstract class FontProvider {
         return FontResourcesParserCompat.readCerts(resources, fontRequest.getCertificatesArrayResId());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(byte[] bArr, byte[] bArr2) {
+    public static /* synthetic */ int $r8$lambda$YnOn4sMaJN6i8fkk9HOHIkI5PVE(byte[] bArr, byte[] bArr2) {
         if (bArr.length != bArr2.length) {
             return bArr.length - bArr2.length;
         }
@@ -299,7 +308,7 @@ abstract class FontProvider {
         public void close() {
             ContentProviderClient contentProviderClient = this.mClient;
             if (contentProviderClient != null) {
-                contentProviderClient.release();
+                FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableDispatcher0.m(contentProviderClient);
             }
         }
     }

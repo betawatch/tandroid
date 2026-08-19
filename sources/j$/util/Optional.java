@@ -4,10 +4,10 @@ import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
 public final class Optional<T> {
-    private static final Optional b = new Optional();
-    private final Object a;
+    public static final Optional b = new Optional();
+    public final Object a;
 
-    private Optional() {
+    public Optional() {
         this.a = null;
     }
 
@@ -15,7 +15,7 @@ public final class Optional<T> {
         return b;
     }
 
-    private Optional(Object obj) {
+    public Optional(Object obj) {
         this.a = Objects.requireNonNull(obj);
     }
 

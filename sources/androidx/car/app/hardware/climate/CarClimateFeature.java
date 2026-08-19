@@ -24,11 +24,13 @@ public final class CarClimateFeature {
         if (this == obj) {
             return true;
         }
-        if (obj == null || CarClimateFeature.class != obj.getClass()) {
-            return false;
+        if (obj != null && CarClimateFeature.class == obj.getClass()) {
+            CarClimateFeature carClimateFeature = (CarClimateFeature) obj;
+            if (Integer.valueOf(this.mFeature).equals(Integer.valueOf(carClimateFeature.mFeature)) && Objects.equals(this.mCarZones, carClimateFeature.mCarZones)) {
+                return true;
+            }
         }
-        CarClimateFeature carClimateFeature = (CarClimateFeature) obj;
-        return Integer.valueOf(this.mFeature).equals(Integer.valueOf(carClimateFeature.mFeature)) && Objects.equals(this.mCarZones, carClimateFeature.mCarZones);
+        return false;
     }
 
     public int hashCode() {

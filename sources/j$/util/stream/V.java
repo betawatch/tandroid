@@ -1,37 +1,57 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class V extends Z {
-    public final /* synthetic */ int m;
-    final /* synthetic */ Object n;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ V(b bVar, int i, Object obj, int i2) {
-        super(bVar, i, 1);
-        this.m = i2;
-        this.n = obj;
+public final class V extends X {
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final IntStream sequential() {
+        this.a.k = false;
+        return this;
     }
 
-    @Override // j$.util.stream.b
-    final m2 Q(int i, m2 m2Var) {
-        switch (this.m) {
-            case 0:
-                return new U(this, m2Var, 1);
-            case 1:
-                return new X(this, m2Var);
-            case 2:
-                return new n(this, m2Var, 4);
-            default:
-                return new a2(this, m2Var);
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final IntStream parallel() {
+        this.a.k = true;
+        return this;
+    }
+
+    @Override // j$.util.stream.X, j$.util.stream.IntStream
+    public final void forEach(IntConsumer intConsumer) {
+        if (this.a.k) {
+            super.forEach(intConsumer);
+        } else {
+            X.T(O()).forEachRemaining(intConsumer);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public V(a0 a0Var, IntConsumer intConsumer) {
-        super(a0Var, 0, 1);
-        this.m = 0;
-        this.n = intConsumer;
+    @Override // j$.util.stream.X, j$.util.stream.IntStream
+    public final void forEachOrdered(IntConsumer intConsumer) {
+        if (this.a.k) {
+            super.forEachOrdered(intConsumer);
+        } else {
+            X.T(O()).forEachRemaining(intConsumer);
+        }
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        return !S2.ORDERED.q(this.f) ? this : new r(this, S2.r, 2);
+    }
+
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
+        return spliterator();
+    }
+
+    @Override // j$.util.stream.a
+    public final boolean L() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.stream.a
+    public final f2 M(int i, f2 f2Var) {
+        throw new UnsupportedOperationException();
     }
 }

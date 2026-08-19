@@ -29,14 +29,19 @@ public final class ProcessDetailsProvider {
             runningAppProcesses = CollectionsKt.emptyList();
         }
         List filterNotNull = CollectionsKt.filterNotNull(runningAppProcesses);
-        ArrayList<ActivityManager.RunningAppProcessInfo> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         for (Object obj : filterNotNull) {
             if (((ActivityManager.RunningAppProcessInfo) obj).uid == i) {
                 arrayList.add(obj);
             }
         }
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList, 10));
-        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : arrayList) {
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj2 = arrayList.get(i2);
+            i2++;
+            ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj2;
             String str2 = runningAppProcessInfo.processName;
             Intrinsics.checkNotNullExpressionValue(str2, "runningAppProcessInfo.processName");
             arrayList2.add(new ProcessDetails(str2, runningAppProcessInfo.pid, runningAppProcessInfo.importance, Intrinsics.areEqual(runningAppProcessInfo.processName, str)));

@@ -85,38 +85,38 @@ public class AudioTrackJNI {
         Thread thread = new Thread(new Runnable() { // from class: org.telegram.messenger.voip.AudioTrackJNI$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AudioTrackJNI.this.lambda$startThread$0();
+                AudioTrackJNI.$r8$lambda$5btg7YbwPgTwQrACptyq6bfRxXI(AudioTrackJNI.this);
             }
         });
         this.thread = thread;
         thread.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startThread$0() {
+    public static /* synthetic */ void $r8$lambda$5btg7YbwPgTwQrACptyq6bfRxXI(AudioTrackJNI audioTrackJNI) {
+        audioTrackJNI.getClass();
         try {
-            this.audioTrack.play();
-            ByteBuffer allocateDirect = this.needResampling ? ByteBuffer.allocateDirect(1920) : null;
-            ByteBuffer allocateDirect2 = this.needResampling ? ByteBuffer.allocateDirect(1764) : null;
-            while (this.running) {
+            audioTrackJNI.audioTrack.play();
+            ByteBuffer allocateDirect = audioTrackJNI.needResampling ? ByteBuffer.allocateDirect(1920) : null;
+            ByteBuffer allocateDirect2 = audioTrackJNI.needResampling ? ByteBuffer.allocateDirect(1764) : null;
+            while (audioTrackJNI.running) {
                 try {
-                    if (this.needResampling) {
-                        nativeCallback(this.buffer);
+                    if (audioTrackJNI.needResampling) {
+                        audioTrackJNI.nativeCallback(audioTrackJNI.buffer);
                         allocateDirect.rewind();
-                        allocateDirect.put(this.buffer);
+                        allocateDirect.put(audioTrackJNI.buffer);
                         Resampler.convert48to44(allocateDirect, allocateDirect2);
                         allocateDirect2.rewind();
-                        allocateDirect2.get(this.buffer, 0, 1764);
-                        this.audioTrack.write(this.buffer, 0, 1764);
+                        allocateDirect2.get(audioTrackJNI.buffer, 0, 1764);
+                        audioTrackJNI.audioTrack.write(audioTrackJNI.buffer, 0, 1764);
                     } else {
-                        nativeCallback(this.buffer);
-                        this.audioTrack.write(this.buffer, 0, 1920);
+                        audioTrackJNI.nativeCallback(audioTrackJNI.buffer);
+                        audioTrackJNI.audioTrack.write(audioTrackJNI.buffer, 0, 1920);
                     }
                 } catch (Exception e) {
                     VLog.e(e);
                 }
-                if (!this.running) {
-                    this.audioTrack.stop();
+                if (!audioTrackJNI.running) {
+                    audioTrackJNI.audioTrack.stop();
                     break;
                 }
                 continue;

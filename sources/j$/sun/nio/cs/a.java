@@ -6,8 +6,8 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CoderResult;
 
 /* loaded from: classes2.dex */
-final class a extends CharsetDecoder {
-    a(c cVar) {
+public final class a extends CharsetDecoder {
+    public a(c cVar) {
         super(cVar, 1.0f, 1.0f);
     }
 
@@ -17,7 +17,7 @@ final class a extends CharsetDecoder {
     /* JADX WARN: Type inference failed for: r9v11, types: [java.nio.ByteBuffer] */
     /* JADX WARN: Type inference failed for: r9v5 */
     @Override // java.nio.charset.CharsetDecoder
-    protected final CoderResult decodeLoop(ByteBuffer byteBuffer, CharBuffer charBuffer) {
+    public final CoderResult decodeLoop(ByteBuffer byteBuffer, CharBuffer charBuffer) {
         CoderResult coderResult;
         CoderResult coderResult2;
         if (byteBuffer.hasArray() && charBuffer.hasArray()) {

@@ -52,9 +52,10 @@ abstract class SmallSortedMap extends AbstractMap {
 
     private SmallSortedMap(int i) {
         this.maxArraySize = i;
-        this.entryList = Collections.emptyList();
-        this.overflowEntries = Collections.emptyMap();
-        this.overflowEntriesDescending = Collections.emptyMap();
+        this.entryList = Collections.EMPTY_LIST;
+        Map map = Collections.EMPTY_MAP;
+        this.overflowEntries = map;
+        this.overflowEntriesDescending = map;
     }
 
     public void makeImmutable() {
@@ -64,13 +65,13 @@ abstract class SmallSortedMap extends AbstractMap {
             return;
         }
         if (this.overflowEntries.isEmpty()) {
-            unmodifiableMap = Collections.emptyMap();
+            unmodifiableMap = Collections.EMPTY_MAP;
         } else {
             unmodifiableMap = DesugarCollections.unmodifiableMap(this.overflowEntries);
         }
         this.overflowEntries = unmodifiableMap;
         if (this.overflowEntriesDescending.isEmpty()) {
-            unmodifiableMap2 = Collections.emptyMap();
+            unmodifiableMap2 = Collections.EMPTY_MAP;
         } else {
             unmodifiableMap2 = DesugarCollections.unmodifiableMap(this.overflowEntriesDescending);
         }
@@ -339,7 +340,10 @@ abstract class SmallSortedMap extends AbstractMap {
             Map.Entry entry = (Map.Entry) obj;
             Object obj2 = SmallSortedMap.this.get(entry.getKey());
             Object value = entry.getValue();
-            return obj2 == value || (obj2 != null && obj2.equals(value));
+            if (obj2 != value) {
+                return obj2 != null && obj2.equals(value);
+            }
+            return true;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -389,10 +393,7 @@ abstract class SmallSortedMap extends AbstractMap {
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            if (this.pos + 1 >= SmallSortedMap.this.entryList.size()) {
-                return !SmallSortedMap.this.overflowEntries.isEmpty() && getOverflowIterator().hasNext();
-            }
-            return true;
+            return this.pos + 1 < SmallSortedMap.this.entryList.size() || (!SmallSortedMap.this.overflowEntries.isEmpty() && getOverflowIterator().hasNext());
         }
 
         @Override // java.util.Iterator

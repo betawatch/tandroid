@@ -252,7 +252,6 @@ public abstract class Sets {
                         return true;
                     }
                 }
-                return false;
             } catch (ClassCastException | NullPointerException unused) {
             }
         }

@@ -194,7 +194,7 @@ public final class CharacterReader {
         return i4 > i ? cacheString(this.charBuf, this.stringCache, i, i4 - i) : "";
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002a, code lost:
     
         return cacheString(r6.charBuf, r6.stringCache, r0, r3 - r0);
      */
@@ -217,7 +217,7 @@ public final class CharacterReader {
         return "";
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x003e, code lost:
     
         return cacheString(r6.charBuf, r6.stringCache, r0, r3 - r0);
      */
@@ -373,7 +373,10 @@ public final class CharacterReader {
             return false;
         }
         char c = this.charBuf[this.bufPos];
-        return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || Character.isLetter(c);
+        if (c < 'A' || c > 'Z') {
+            return (c >= 'a' && c <= 'z') || Character.isLetter(c);
+        }
+        return true;
     }
 
     boolean matchesDigit() {

@@ -1,19 +1,19 @@
 package j$.util.stream;
 
-import java.util.function.DoubleBinaryOperator;
+import java.util.function.IntBinaryOperator;
 
 /* loaded from: classes2.dex */
-final class G1 extends w0 {
-    final /* synthetic */ DoubleBinaryOperator h;
-    final /* synthetic */ double i;
+public final class G1 extends q1 {
+    public final /* synthetic */ IntBinaryOperator h;
+    public final /* synthetic */ int i;
 
-    @Override // j$.util.stream.w0
-    public final S1 e0() {
-        return new B1(this.i, this.h);
+    @Override // j$.util.stream.q1
+    public final L1 Y() {
+        return new F1(this.i, this.h);
     }
 
-    G1(b3 b3Var, DoubleBinaryOperator doubleBinaryOperator, double d) {
-        this.h = doubleBinaryOperator;
-        this.i = d;
+    public G1(T2 t2, IntBinaryOperator intBinaryOperator, int i) {
+        this.h = intBinaryOperator;
+        this.i = i;
     }
 }

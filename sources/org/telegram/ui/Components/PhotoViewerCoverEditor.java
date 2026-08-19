@@ -11,7 +11,6 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.PhotoViewerCoverEditor;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.GallerySheet;
@@ -65,39 +64,33 @@ public class PhotoViewerCoverEditor extends FrameLayout {
         editCoverButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoViewerCoverEditor$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoViewerCoverEditor.this.lambda$new$1(context, resourcesProvider, view);
+                PhotoViewerCoverEditor.$r8$lambda$kgNoaoyXofcOM8WB0XqmSoHuVYo(PhotoViewerCoverEditor.this, context, resourcesProvider, view);
             }
         });
         addView(this.openGalleryButton, LayoutHelper.createFrame(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
         this.timelineView.setDelegate(new 2());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
-        if (this.gallerySheet == null) {
-            GallerySheet gallerySheet = new GallerySheet(context, resourcesProvider, LocaleController.getString(R.string.VideoChooseCover), true, this.aspectRatio);
-            this.gallerySheet = gallerySheet;
+    public static /* synthetic */ void $r8$lambda$kgNoaoyXofcOM8WB0XqmSoHuVYo(final PhotoViewerCoverEditor photoViewerCoverEditor, Context context, Theme.ResourcesProvider resourcesProvider, View view) {
+        if (photoViewerCoverEditor.gallerySheet == null) {
+            GallerySheet gallerySheet = new GallerySheet(context, resourcesProvider, LocaleController.getString(R.string.VideoChooseCover), true, photoViewerCoverEditor.aspectRatio);
+            photoViewerCoverEditor.gallerySheet = gallerySheet;
             gallerySheet.setOnDismissListener(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerCoverEditor$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoViewerCoverEditor.this.lambda$new$0();
+                    PhotoViewerCoverEditor.this.gallerySheet = null;
                 }
             });
-            this.gallerySheet.setOnGalleryImage(this.onGalleryListener);
+            photoViewerCoverEditor.gallerySheet.setOnGalleryImage(photoViewerCoverEditor.onGalleryListener);
         }
-        this.gallerySheet.show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.gallerySheet = null;
+        photoViewerCoverEditor.gallerySheet.show();
     }
 
     class 2 implements TimelineView.TimelineDelegate {
         private Runnable betterSeek = new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerCoverEditor$2$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PhotoViewerCoverEditor.2.this.lambda$$0();
+                PhotoViewerCoverEditor.this.videoPlayer.seekTo(PhotoViewerCoverEditor.this.time, false);
             }
         };
 
@@ -204,11 +197,6 @@ public class PhotoViewerCoverEditor extends FrameLayout {
         2() {
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$$0() {
-            PhotoViewerCoverEditor.this.videoPlayer.seekTo(PhotoViewerCoverEditor.this.time, false);
-        }
-
         @Override // org.telegram.ui.Stories.recorder.TimelineView.TimelineDelegate
         public void onVideoLeftChange(boolean z, float f) {
             if (PhotoViewerCoverEditor.this.videoPlayer == null) {
@@ -255,7 +243,7 @@ public class PhotoViewerCoverEditor extends FrameLayout {
     public void closeGallery() {
         GallerySheet gallerySheet = this.gallerySheet;
         if (gallerySheet != null) {
-            gallerySheet.lambda$new$0();
+            gallerySheet.dismiss();
             this.gallerySheet = null;
         }
     }

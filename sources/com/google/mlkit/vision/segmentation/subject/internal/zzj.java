@@ -49,7 +49,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class zzj extends MLTask {
     private static final Feature[] zza = {OptionalModuleUtils.FEATURE_SUBJECT_SEGMENTATION};
     private static final ImageUtils zzb = ImageUtils.getInstance();

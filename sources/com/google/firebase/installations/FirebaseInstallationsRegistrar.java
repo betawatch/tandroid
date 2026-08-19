@@ -27,15 +27,12 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         return Arrays.asList(Component.builder(FirebaseInstallationsApi.class).name(LIBRARY_NAME).add(Dependency.required(FirebaseApp.class)).add(Dependency.optionalProvider(HeartBeatController.class)).add(Dependency.required(Qualified.qualified(Background.class, ExecutorService.class))).add(Dependency.required(Qualified.qualified(Blocking.class, Executor.class))).factory(new ComponentFactory() { // from class: com.google.firebase.installations.FirebaseInstallationsRegistrar$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                FirebaseInstallationsApi lambda$getComponents$0;
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(componentContainer);
-                return lambda$getComponents$0;
+                return FirebaseInstallationsRegistrar.$r8$lambda$vJ_ijnislX2JLJx5rFvt8ObqNeg(componentContainer);
             }
         }).build(), HeartBeatConsumerComponent.create(), LibraryVersionComponent.create(LIBRARY_NAME, "17.2.0"));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseInstallationsApi lambda$getComponents$0(ComponentContainer componentContainer) {
+    public static /* synthetic */ FirebaseInstallationsApi $r8$lambda$vJ_ijnislX2JLJx5rFvt8ObqNeg(ComponentContainer componentContainer) {
         return new FirebaseInstallations((FirebaseApp) componentContainer.get(FirebaseApp.class), componentContainer.getProvider(HeartBeatController.class), (ExecutorService) componentContainer.get(Qualified.qualified(Background.class, ExecutorService.class)), FirebaseExecutors.newSequentialExecutor((Executor) componentContainer.get(Qualified.qualified(Blocking.class, Executor.class))));
     }
 }

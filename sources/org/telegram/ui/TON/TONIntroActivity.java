@@ -67,7 +67,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.TON.TONIntroActivity;
 import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TONIntroActivity extends GradientHeaderActivity implements NotificationCenter.NotificationCenterDelegate {
     private FrameLayout aboveTitleView;
     private UniversalAdapter adapter;
@@ -219,7 +219,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         configureHeader(LocaleController.getString(R.string.TONBalanceTitle), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.TONBalanceText), new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                TONIntroActivity.lambda$createView$0(context);
+                new ExplainStarsSheet(context).show();
             }
         }), true), this.aboveTitleView, null);
         this.listView.setOverScrollMode(2);
@@ -232,7 +232,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                TONIntroActivity.this.lambda$createView$1(view, i);
+                TONIntroActivity.$r8$lambda$b8e3RIZz4s2nNCUZBryAqyBsftM(TONIntroActivity.this, view, i);
             }
         });
         FireworksOverlay fireworksOverlay = new FireworksOverlay(getContext());
@@ -283,7 +283,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             this.buyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TONIntroActivity.this.lambda$createView$2(view);
+                    Browser.openUrlInSystemBrowser(TONIntroActivity.this.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                 }
             });
             this.oneButtonsLayout.addView(this.buyButton, LayoutHelper.createFrame(-1, 48, 119));
@@ -307,7 +307,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.topUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TONIntroActivity.this.lambda$createView$3(view);
+                Browser.openUrlInSystemBrowser(TONIntroActivity.this.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
             }
         });
         if (this.allowTopUp) {
@@ -321,7 +321,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.withdrawButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TONIntroActivity.this.lambda$createView$4(view);
+                r0.presentFragment(new BotStarsActivity(1, TONIntroActivity.this.getUserConfig().getClientUserId()));
             }
         });
         this.twoButtonsLayout.addView(this.withdrawButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 0, 0));
@@ -340,34 +340,13 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$0(Context context) {
-        new ExplainStarsSheet(context).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$b8e3RIZz4s2nNCUZBryAqyBsftM(TONIntroActivity tONIntroActivity, View view, int i) {
         UItem item;
-        UniversalAdapter universalAdapter = this.adapter;
+        UniversalAdapter universalAdapter = tONIntroActivity.adapter;
         if (universalAdapter == null || (item = universalAdapter.getItem(i)) == null) {
             return;
         }
-        onItemClick(item, i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(View view) {
-        Browser.openUrlInSystemBrowser(getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(View view) {
-        Browser.openUrlInSystemBrowser(getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(View view) {
-        presentFragment(new BotStarsActivity(1, getUserConfig().getClientUserId()));
+        tONIntroActivity.onItemClick(item, i);
     }
 
     private void updateBalance() {
@@ -400,13 +379,13 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             this.oneButtonsLayout.animate().alpha(z ? 0.0f : 1.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TONIntroActivity.this.lambda$updateButtonsLayouts$5(z);
+                    TONIntroActivity.$r8$lambda$fL8Wa5lj42_4-kZTkCddQBvA1JU(TONIntroActivity.this, z);
                 }
             }).start();
             this.twoButtonsLayout.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TONIntroActivity.this.lambda$updateButtonsLayouts$6(z);
+                    TONIntroActivity.$r8$lambda$HK2sp5G-J6niPU1VJyccWP_ccL0(TONIntroActivity.this, z);
                 }
             }).start();
             return;
@@ -419,19 +398,20 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.oneButtonsLayout.setVisibility(z ? 8 : 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateButtonsLayouts$5(boolean z) {
+    public static /* synthetic */ void $r8$lambda$fL8Wa5lj42_4-kZTkCddQBvA1JU(TONIntroActivity tONIntroActivity, boolean z) {
         if (z) {
-            this.oneButtonsLayout.setVisibility(8);
+            tONIntroActivity.oneButtonsLayout.setVisibility(8);
+        } else {
+            tONIntroActivity.getClass();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateButtonsLayouts$6(boolean z) {
+    public static /* synthetic */ void $r8$lambda$HK2sp5G-J6niPU1VJyccWP_ccL0(TONIntroActivity tONIntroActivity, boolean z) {
         if (z) {
-            return;
+            tONIntroActivity.getClass();
+        } else {
+            tONIntroActivity.twoButtonsLayout.setVisibility(8);
         }
-        this.twoButtonsLayout.setVisibility(8);
     }
 
     @Override // org.telegram.ui.GradientHeaderActivity
@@ -476,14 +456,14 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$NestedFrameLayout$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TONIntroActivity.NestedFrameLayout.this.lambda$onNestedScroll$0();
+                        TONIntroActivity.NestedFrameLayout.$r8$lambda$l479CCcg83tB2FopnHtELNIqwWc(TONIntroActivity.NestedFrameLayout.this);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onNestedScroll$0() {
+        public static /* synthetic */ void $r8$lambda$l479CCcg83tB2FopnHtELNIqwWc(NestedFrameLayout nestedFrameLayout) {
+            nestedFrameLayout.getClass();
             try {
                 RecyclerListView currentListView = TONIntroActivity.this.transactionsLayout.getCurrentListView();
                 if (currentListView == null || currentListView.getAdapter() == null) {
@@ -569,10 +549,12 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
 
     public boolean attachedTransactionsLayout() {
         StarsIntroActivity.StarsTransactionsLayout starsTransactionsLayout = this.transactionsLayout;
-        if (starsTransactionsLayout == null || !(starsTransactionsLayout.getParent() instanceof View)) {
-            return false;
+        if (starsTransactionsLayout != null && (starsTransactionsLayout.getParent() instanceof View)) {
+            if (this.listView.getHeight() - ((View) this.transactionsLayout.getParent()).getBottom() >= 0) {
+                return true;
+            }
         }
-        return this.listView.getHeight() - ((View) this.transactionsLayout.getParent()).getBottom() >= 0;
+        return false;
     }
 
     @Override // org.telegram.ui.GradientHeaderActivity
@@ -625,9 +607,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                     this.drawable.getPaint = new Utilities.CallbackReturn() { // from class: org.telegram.ui.TON.TONIntroActivity$4$$ExternalSyntheticLambda0
                         @Override // org.telegram.messenger.Utilities.CallbackReturn
                         public final Object run(Object obj) {
-                            Paint lambda$configure$0;
-                            lambda$configure$0 = TONIntroActivity.4.this.lambda$configure$0((Integer) obj);
-                            return lambda$configure$0;
+                            return TONIntroActivity.4.$r8$lambda$x-SfyRSAjxu8EQXAvDOHBgRHNlk(TONIntroActivity.4.this, (Integer) obj);
                         }
                     };
                     StarParticlesView.Drawable drawable2 = this.drawable;
@@ -641,9 +621,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Paint lambda$configure$0(Integer num) {
-            return this.paints[num.intValue() % this.paints.length];
+        public static /* synthetic */ Paint $r8$lambda$x-SfyRSAjxu8EQXAvDOHBgRHNlk(4 r1, Integer num) {
+            return r1.paints[num.intValue() % r1.paints.length];
         }
 
         @Override // org.telegram.ui.Components.Premium.StarParticlesView
@@ -778,7 +757,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 }
                 runnable.run();
                 this.whenPurchased = null;
-                lambda$new$0();
+                dismiss();
             }
         }
 
@@ -823,7 +802,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$StarsNeededSheet$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i2) {
-                    TONIntroActivity.StarsNeededSheet.this.lambda$new$0(view, i2);
+                    TONIntroActivity.StarsNeededSheet.$r8$lambda$9Mu6DZDKPvv5J6Suhu4Yy_HwfUw(TONIntroActivity.StarsNeededSheet.this, view, i2);
                 }
             });
             DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
@@ -851,7 +830,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$StarsNeededSheet$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        TONIntroActivity.StarsNeededSheet.this.lambda$new$1(view);
+                        Browser.openUrlInSystemBrowser(TONIntroActivity.StarsNeededSheet.this.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                     }
                 });
             } else {
@@ -859,7 +838,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$StarsNeededSheet$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        TONIntroActivity.StarsNeededSheet.this.lambda$new$2(view);
+                        TONIntroActivity.StarsNeededSheet.this.dismiss();
                     }
                 });
             }
@@ -869,24 +848,13 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$9Mu6DZDKPvv5J6Suhu4Yy_HwfUw(StarsNeededSheet starsNeededSheet, View view, int i) {
             UItem item;
-            UniversalAdapter universalAdapter = this.adapter;
+            UniversalAdapter universalAdapter = starsNeededSheet.adapter;
             if (universalAdapter == null || (item = universalAdapter.getItem(i - 1)) == null) {
                 return;
             }
-            onItemClick(item, this.adapter);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(View view) {
-            Browser.openUrlInSystemBrowser(getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(View view) {
-            lambda$new$0();
+            starsNeededSheet.onItemClick(item, starsNeededSheet.adapter);
         }
 
         @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -916,9 +884,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         }
 
         @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-        /* renamed from: dismiss */
-        public void lambda$new$0() {
-            super.lambda$new$0();
+        public void dismiss() {
+            super.dismiss();
             HeaderView headerView = this.headerView;
             if (headerView != null) {
                 headerView.iconView.setPaused(true);

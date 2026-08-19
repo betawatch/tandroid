@@ -14,11 +14,13 @@ public final class AuxEffectInfo {
         if (this == obj) {
             return true;
         }
-        if (obj == null || AuxEffectInfo.class != obj.getClass()) {
-            return false;
+        if (obj != null && AuxEffectInfo.class == obj.getClass()) {
+            AuxEffectInfo auxEffectInfo = (AuxEffectInfo) obj;
+            if (this.effectId == auxEffectInfo.effectId && Float.compare(auxEffectInfo.sendLevel, this.sendLevel) == 0) {
+                return true;
+            }
         }
-        AuxEffectInfo auxEffectInfo = (AuxEffectInfo) obj;
-        return this.effectId == auxEffectInfo.effectId && Float.compare(auxEffectInfo.sendLevel, this.sendLevel) == 0;
+        return false;
     }
 
     public int hashCode() {

@@ -13,7 +13,7 @@ public abstract class SequencesKt__SequenceBuilderKt {
         return new Sequence() { // from class: kotlin.sequences.SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1
             @Override // kotlin.sequences.Sequence
             public Iterator iterator() {
-                return SequencesKt.iterator(Function2.this);
+                return SequencesKt__SequenceBuilderKt.iterator(Function2.this);
             }
         };
     }

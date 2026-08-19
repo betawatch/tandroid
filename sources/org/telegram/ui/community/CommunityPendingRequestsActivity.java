@@ -39,7 +39,7 @@ import org.telegram.ui.community.CommunityUtils;
 import org.telegram.ui.community.cells.CommunityPendingRequestCell;
 import org.telegram.ui.community.sheet.CommunityInviteOnlySheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityPendingRequestsActivity extends BaseFragment implements FactorAnimator.Target {
     private final BoolAnimator animatorIsRequestsEmpty;
     private ButtonWithCounterView buttonAddAllView;
@@ -178,7 +178,7 @@ public class CommunityPendingRequestsActivity extends BaseFragment implements Fa
         this.buttonDeclineAllView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunityPendingRequestsActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityPendingRequestsActivity.this.lambda$createView$0(view);
+                CommunityPendingRequestsActivity.this.pendingRequestsList.onResolveAllJoinRequests(false);
             }
         });
         this.buttonsLayout.addView(this.buttonDeclineAllView, LayoutHelper.createLinear(0, 48, 1.0f, 0, 4, 0, 4, 0));
@@ -189,7 +189,7 @@ public class CommunityPendingRequestsActivity extends BaseFragment implements Fa
         this.buttonAddAllView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunityPendingRequestsActivity$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityPendingRequestsActivity.this.lambda$createView$1(view);
+                CommunityPendingRequestsActivity.this.pendingRequestsList.onResolveAllJoinRequests(true);
             }
         });
         this.buttonsLayout.addView(this.buttonAddAllView, LayoutHelper.createLinear(0, 48, 1.0f, 0, 4, 0, 4, 0));
@@ -263,16 +263,6 @@ public class CommunityPendingRequestsActivity extends BaseFragment implements Fa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view) {
-        this.pendingRequestsList.onResolveAllJoinRequests(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view) {
-        this.pendingRequestsList.onResolveAllJoinRequests(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         this.pendingRequestsList.fillItems(arrayList);
     }
@@ -298,16 +288,16 @@ public class CommunityPendingRequestsActivity extends BaseFragment implements Fa
                 new CommunityInviteOnlySheet(getContext(), chat, data.requestFromUser, new Runnable() { // from class: org.telegram.ui.community.CommunityPendingRequestsActivity$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CommunityPendingRequestsActivity.this.lambda$onClick$2(data);
+                        CommunityPendingRequestsActivity.$r8$lambda$agN6v2Z85kITDOXEQ-078tXVcec(CommunityPendingRequestsActivity.this, data);
                     }
                 }).show();
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$2(CommunityPendingRequestCell.Data data) {
-        presentFragment(ChatActivity.of(data.requestFromUser.id));
+    public static /* synthetic */ void $r8$lambda$agN6v2Z85kITDOXEQ-078tXVcec(CommunityPendingRequestsActivity communityPendingRequestsActivity, CommunityPendingRequestCell.Data data) {
+        communityPendingRequestsActivity.getClass();
+        communityPendingRequestsActivity.presentFragment(ChatActivity.of(data.requestFromUser.id));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

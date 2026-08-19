@@ -14,14 +14,10 @@ final class Protobuf {
     }
 
     public Schema schemaFor(Class cls) {
+        Schema registerSchema;
         Internal.checkNotNull(cls, "messageType");
         Schema schema = (Schema) this.schemaCache.get(cls);
-        if (schema != null) {
-            return schema;
-        }
-        Schema createSchema = this.schemaFactory.createSchema(cls);
-        Schema registerSchema = registerSchema(cls, createSchema);
-        return registerSchema != null ? registerSchema : createSchema;
+        return (schema != null || (registerSchema = registerSchema(cls, (schema = this.schemaFactory.createSchema(cls)))) == null) ? schema : registerSchema;
     }
 
     public Schema schemaFor(Object obj) {

@@ -20,9 +20,7 @@ public final class TrackSelectionOverride implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.trackselection.TrackSelectionOverride$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            TrackSelectionOverride lambda$static$0;
-            lambda$static$0 = TrackSelectionOverride.lambda$static$0(bundle);
-            return lambda$static$0;
+            return TrackSelectionOverride.$r8$lambda$BS012SxU3aJ7SgDeDI8bFkc99rg(bundle);
         }
     };
 
@@ -46,11 +44,13 @@ public final class TrackSelectionOverride implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || TrackSelectionOverride.class != obj.getClass()) {
-            return false;
+        if (obj != null && TrackSelectionOverride.class == obj.getClass()) {
+            TrackSelectionOverride trackSelectionOverride = (TrackSelectionOverride) obj;
+            if (this.mediaTrackGroup.equals(trackSelectionOverride.mediaTrackGroup) && this.trackIndices.equals(trackSelectionOverride.trackIndices)) {
+                return true;
+            }
         }
-        TrackSelectionOverride trackSelectionOverride = (TrackSelectionOverride) obj;
-        return this.mediaTrackGroup.equals(trackSelectionOverride.mediaTrackGroup) && this.trackIndices.equals(trackSelectionOverride.trackIndices);
+        return false;
     }
 
     public int hashCode() {
@@ -65,8 +65,7 @@ public final class TrackSelectionOverride implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ TrackSelectionOverride lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ TrackSelectionOverride $r8$lambda$BS012SxU3aJ7SgDeDI8bFkc99rg(Bundle bundle) {
         return new TrackSelectionOverride((TrackGroup) TrackGroup.CREATOR.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP))), Ints.asList((int[]) Assertions.checkNotNull(bundle.getIntArray(FIELD_TRACKS))));
     }
 }

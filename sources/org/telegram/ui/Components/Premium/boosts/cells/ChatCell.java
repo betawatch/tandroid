@@ -86,14 +86,13 @@ public class ChatCell extends BaseCell {
         this.deleteImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.cells.ChatCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatCell.this.lambda$setChat$0(chat, view);
+                ChatCell.$r8$lambda$zXU8z5sobWHrkNDI40VTPJIlM6o(ChatCell.this, chat, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setChat$0(TLRPC.Chat chat, View view) {
-        ChatDeleteListener chatDeleteListener = this.chatDeleteListener;
+    public static /* synthetic */ void $r8$lambda$zXU8z5sobWHrkNDI40VTPJIlM6o(ChatCell chatCell, TLRPC.Chat chat, View view) {
+        ChatDeleteListener chatDeleteListener = chatCell.chatDeleteListener;
         if (chatDeleteListener != null) {
             chatDeleteListener.onChatDeleted(chat);
         }

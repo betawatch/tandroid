@@ -12,7 +12,10 @@ class RequestLimiter {
     private final Utils utils = Utils.getInstance();
 
     private static boolean isRetryableError(int i) {
-        return i == 429 || (i >= 500 && i < 600);
+        if (i != 429) {
+            return i >= 500 && i < 600;
+        }
+        return true;
     }
 
     private static boolean isSuccessfulOrRequiresNewFidCreation(int i) {

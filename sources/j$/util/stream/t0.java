@@ -1,16 +1,6 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-enum t0 {
-    ANY(true, true),
-    ALL(false, false),
-    NONE(true, false);
-
-    private final boolean a;
-    private final boolean b;
-
-    t0(boolean z, boolean z2) {
-        this.a = z;
-        this.b = z2;
-    }
+public interface t0 extends f2 {
+    B0 a();
 }

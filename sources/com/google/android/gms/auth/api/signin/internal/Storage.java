@@ -54,27 +54,25 @@ public class Storage {
     public GoogleSignInAccount getSavedDefaultGoogleSignInAccount() {
         String zaa2;
         String zaa3 = zaa("defaultGoogleSignInAccount");
-        if (TextUtils.isEmpty(zaa3) || (zaa2 = zaa(zae("googleSignInAccount", zaa3))) == null) {
-            return null;
+        if (!TextUtils.isEmpty(zaa3) && (zaa2 = zaa(zae("googleSignInAccount", zaa3))) != null) {
+            try {
+                return GoogleSignInAccount.zab(zaa2);
+            } catch (JSONException unused) {
+            }
         }
-        try {
-            return GoogleSignInAccount.zab(zaa2);
-        } catch (JSONException unused) {
-            return null;
-        }
+        return null;
     }
 
     public GoogleSignInOptions getSavedDefaultGoogleSignInOptions() {
         String zaa2;
         String zaa3 = zaa("defaultGoogleSignInAccount");
-        if (TextUtils.isEmpty(zaa3) || (zaa2 = zaa(zae("googleSignInOptions", zaa3))) == null) {
-            return null;
+        if (!TextUtils.isEmpty(zaa3) && (zaa2 = zaa(zae("googleSignInOptions", zaa3))) != null) {
+            try {
+                return GoogleSignInOptions.zab(zaa2);
+            } catch (JSONException unused) {
+            }
         }
-        try {
-            return GoogleSignInOptions.zab(zaa2);
-        } catch (JSONException unused) {
-            return null;
-        }
+        return null;
     }
 
     public String getSavedRefreshToken() {

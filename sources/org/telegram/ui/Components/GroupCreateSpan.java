@@ -68,14 +68,14 @@ public class GroupCreateSpan extends View {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0303  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0312  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x031e  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0330  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x038f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0341  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0315  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0305  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0307  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0316  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0322  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0334  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0392  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0345  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0319  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0309  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

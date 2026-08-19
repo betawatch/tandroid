@@ -12,6 +12,7 @@ import com.google.android.datatransport.runtime.scheduling.persistence.EventStor
 import com.google.android.datatransport.runtime.util.PriorityMapping;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.util.Iterator;
 import java.util.zip.Adler32;
 
 /* loaded from: classes.dex */
@@ -38,10 +39,17 @@ public class JobInfoScheduler implements WorkScheduler {
     }
 
     private boolean isJobServiceOn(JobScheduler jobScheduler, int i, int i2) {
-        for (JobInfo jobInfo : jobScheduler.getAllPendingJobs()) {
-            int i3 = jobInfo.getExtras().getInt("attemptNumber");
-            if (jobInfo.getId() == i) {
-                return i3 >= i2;
+        Iterator<JobInfo> it = jobScheduler.getAllPendingJobs().iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                break;
+            }
+            JobInfo next = it.next();
+            int i3 = next.getExtras().getInt("attemptNumber");
+            if (next.getId() == i) {
+                if (i3 >= i2) {
+                    return true;
+                }
             }
         }
         return false;

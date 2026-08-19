@@ -37,43 +37,50 @@ final class zzew extends SuspendLambda implements Function2 {
         return ((zzew) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0057  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         Ref$ObjectRef ref$ObjectRef;
-        Object zzc;
         Ref$ObjectRef ref$ObjectRef2;
-        Exception e;
+        long j;
+        zzev zzevVar;
+        Object zzc;
         zzcg zzcgVar;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.zzb != 0) {
             ref$ObjectRef2 = (Ref$ObjectRef) this.zza;
             try {
                 ResultKt.throwOnFailure(obj);
-                ref$ObjectRef = ref$ObjectRef2;
                 zzc = obj;
-            } catch (Exception e2) {
-                e = e2;
+            } catch (Exception e) {
+                e = e;
                 zzcgVar = (zzcg) ref$ObjectRef2.element;
                 if (zzcgVar != null) {
                 }
             }
         } else {
             ResultKt.throwOnFailure(obj);
-            ref$ObjectRef = new Ref$ObjectRef();
+            Ref$ObjectRef ref$ObjectRef3 = new Ref$ObjectRef();
             try {
-                long j = this.zzc;
-                zzev zzevVar = new zzev(this.zze, this.zzd, this.zzf, ref$ObjectRef, null);
+                j = this.zzc;
+                zzevVar = new zzev(this.zze, this.zzd, this.zzf, ref$ObjectRef3, null);
+                ref$ObjectRef = ref$ObjectRef3;
+            } catch (Exception e2) {
+                e = e2;
+                ref$ObjectRef = ref$ObjectRef3;
+            }
+            try {
                 this.zza = ref$ObjectRef;
                 this.zzb = 1;
                 zzc = zzcx.zzc(j, 20, 100L, 1000L, 2.0d, zzevVar, this);
                 if (zzc == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+                ref$ObjectRef2 = ref$ObjectRef;
             } catch (Exception e3) {
                 e = e3;
                 ref$ObjectRef2 = ref$ObjectRef;

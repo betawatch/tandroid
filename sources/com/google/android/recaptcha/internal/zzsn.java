@@ -126,14 +126,15 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
                 throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
-        if (zzsnVar == null) {
-            zzsnVar = (zzsn) ((zzsn) zzvc.zze(cls)).zzh(6, null, null);
-            if (zzsnVar == null) {
-                throw new IllegalStateException();
-            }
-            map.put(cls, zzsnVar);
+        if (zzsnVar != null) {
+            return zzsnVar;
         }
-        return zzsnVar;
+        zzsn zzsnVar2 = (zzsn) ((zzsn) zzvc.zze(cls)).zzh(6, null, null);
+        if (zzsnVar2 == null) {
+            throw new IllegalStateException();
+        }
+        map.put(cls, zzsnVar2);
+        return zzsnVar2;
     }
 
     protected static zzsn zzw(zzsn zzsnVar, InputStream inputStream) {
@@ -312,22 +313,22 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
 
     @Override // com.google.android.recaptcha.internal.zzts
     public final int zzo() {
-        int i;
         if (zzL()) {
-            i = zzf(null);
-            if (i < 0) {
-                throw new IllegalStateException("serialized size must be non-negative, was " + i);
+            int zzf = zzf(null);
+            if (zzf >= 0) {
+                return zzf;
             }
-        } else {
-            i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (i == Integer.MAX_VALUE) {
-                i = zzf(null);
-                if (i < 0) {
-                    throw new IllegalStateException("serialized size must be non-negative, was " + i);
-                }
-                this.zzd = (this.zzd & TLObject.FLAG_31) | i;
-            }
+            throw new IllegalStateException("serialized size must be non-negative, was " + zzf);
         }
-        return i;
+        int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        int zzf2 = zzf(null);
+        if (zzf2 >= 0) {
+            this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
+            return zzf2;
+        }
+        throw new IllegalStateException("serialized size must be non-negative, was " + zzf2);
     }
 }

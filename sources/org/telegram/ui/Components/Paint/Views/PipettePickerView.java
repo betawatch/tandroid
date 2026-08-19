@@ -71,17 +71,17 @@ public abstract class PipettePickerView extends View {
         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Views.PipettePickerView$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PipettePickerView.this.lambda$animateShow$0(valueAnimator);
+                PipettePickerView.$r8$lambda$SKofo7W1VzmsMKlGdurz36W18z0(PipettePickerView.this, valueAnimator);
             }
         });
         duration.start();
         onStartPipette();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateShow$0(ValueAnimator valueAnimator) {
-        this.appearProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$SKofo7W1VzmsMKlGdurz36W18z0(PipettePickerView pipettePickerView, ValueAnimator valueAnimator) {
+        pipettePickerView.getClass();
+        pipettePickerView.appearProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        pipettePickerView.invalidate();
     }
 
     public void animateDisappear(final boolean z) {
@@ -94,7 +94,7 @@ public abstract class PipettePickerView extends View {
         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Views.PipettePickerView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PipettePickerView.this.lambda$animateDisappear$1(valueAnimator);
+                PipettePickerView.$r8$lambda$4JiBxyuwTe_nlj7n5iApwKawiRU(PipettePickerView.this, valueAnimator);
             }
         });
         duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Paint.Views.PipettePickerView.1
@@ -112,10 +112,10 @@ public abstract class PipettePickerView extends View {
         duration.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateDisappear$1(ValueAnimator valueAnimator) {
-        this.appearProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$4JiBxyuwTe_nlj7n5iApwKawiRU(PipettePickerView pipettePickerView, ValueAnimator valueAnimator) {
+        pipettePickerView.getClass();
+        pipettePickerView.appearProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        pipettePickerView.invalidate();
     }
 
     @Override // android.view.View

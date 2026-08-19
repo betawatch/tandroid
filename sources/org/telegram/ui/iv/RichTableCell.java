@@ -90,7 +90,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         this.focusInvalidator = new ViewTreeObserver.OnGlobalFocusChangeListener() { // from class: org.telegram.ui.iv.RichTableCell$$ExternalSyntheticLambda0
             @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
             public final void onGlobalFocusChanged(View view, View view2) {
-                RichTableCell.this.lambda$new$1(view, view2);
+                RichTableCell.this.invalidateGridForFocus();
             }
         };
         this.resourcesProvider = resourcesProvider;
@@ -112,7 +112,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         richEditText.setDelegate(new EditTextCaption.EditTextCaptionDelegate() { // from class: org.telegram.ui.iv.RichTableCell$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.EditTextCaption.EditTextCaptionDelegate
             public final void onSpansChanged() {
-                RichTableCell.this.lambda$new$0();
+                RichTableCell.$r8$lambda$Su1cq-ipSUeadHDEPTbq-vFgQHo(RichTableCell.this);
             }
         });
         addView(richEditText);
@@ -229,14 +229,14 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
                 RichTableCell.this.post(new Runnable() { // from class: org.telegram.ui.iv.RichTableCell$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RichTableCell.1.this.lambda$onSelectionChanged$0(richEditText, i2, selectionHelper, titleChildPos, i);
+                        RichTableCell.1.$r8$lambda$AjNvT1ALaMA8P9LXxyAqKnmip3w(RichTableCell.1.this, richEditText, i2, selectionHelper, titleChildPos, i);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSelectionChanged$0(RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2, int i3) {
+        public static /* synthetic */ void $r8$lambda$AjNvT1ALaMA8P9LXxyAqKnmip3w(1 r2, RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2, int i3) {
+            r2.getClass();
             if (richEditText.length() < i || richEditText.getSelectionStart() == richEditText.getSelectionEnd() || !articleTextSelectionHelper.selectRangeOf(RichTableCell.this, i2, i3, i)) {
                 return;
             }
@@ -246,13 +246,12 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
+    public static /* synthetic */ void $r8$lambda$Su1cq-ipSUeadHDEPTbq-vFgQHo(RichTableCell richTableCell) {
         BlockRow blockRow;
-        rememberTitleAutoBoldState();
-        persistTitle();
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        richTableCell.rememberTitleAutoBoldState();
+        richTableCell.persistTitle();
+        Delegate delegate = richTableCell.delegate;
+        if (delegate == null || (blockRow = richTableCell.currentRow) == null) {
             return;
         }
         delegate.onSpansChanged(blockRow);
@@ -431,11 +430,13 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         }
         int left = i - (this.titleEditText.getLeft() + this.titleEditText.getPaddingLeft());
         int top = i2 - (this.titleEditText.getTop() + this.titleEditText.getPaddingTop());
-        if (top < 0 || top >= layout.getHeight() || (lineForVertical = layout.getLineForVertical(top)) < 0 || lineForVertical >= layout.getLineCount()) {
-            return false;
+        if (top >= 0 && top < layout.getHeight() && (lineForVertical = layout.getLineForVertical(top)) >= 0 && lineForVertical < layout.getLineCount()) {
+            float f = left;
+            if (f >= layout.getLineLeft(lineForVertical) && f <= layout.getLineRight(lineForVertical)) {
+                return true;
+            }
         }
-        float f = left;
-        return f >= layout.getLineLeft(lineForVertical) && f <= layout.getLineRight(lineForVertical);
+        return false;
     }
 
     public Set<TL_iv.pageTableCell> getSelectedCells() {
@@ -760,11 +761,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view, View view2) {
-        invalidateGridForFocus();
-    }
-
-    private void invalidateGridForFocus() {
+    public void invalidateGridForFocus() {
         updateHandleOverlayLayer();
         RichTableCellGrid richTableCellGrid = this.grid;
         if (richTableCellGrid != null) {
@@ -789,11 +786,15 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         }
         int paddingTop = top2 - hostForAnchor.editText.getPaddingTop();
         int paddingLeft = left2 - hostForAnchor.editText.getPaddingLeft();
-        if (paddingTop < 0 || paddingTop >= layout.getHeight() || (lineForVertical = layout.getLineForVertical(paddingTop)) < 0 || lineForVertical >= layout.getLineCount()) {
-            return false;
+        if (paddingTop >= 0 && paddingTop < layout.getHeight() && (lineForVertical = layout.getLineForVertical(paddingTop)) >= 0 && lineForVertical < layout.getLineCount()) {
+            float lineLeft = layout.getLineLeft(lineForVertical);
+            float lineRight = layout.getLineRight(lineForVertical);
+            float f = paddingLeft;
+            if (f >= lineLeft && f <= lineRight) {
+                return true;
+            }
         }
-        float f = paddingLeft;
-        return f >= layout.getLineLeft(lineForVertical) && f <= layout.getLineRight(lineForVertical);
+        return false;
     }
 
     public void applyHeaderToggle(boolean z) {
@@ -959,9 +960,9 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
             this.grid.invalidate();
             focusCellAt(i2, i);
             notifyCellSelectionChanged();
-        } else {
-            this.selectedCells.addAll(hashSet);
+            return mergeCells;
         }
+        this.selectedCells.addAll(hashSet);
         return mergeCells;
     }
 
@@ -982,9 +983,9 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
             this.grid.invalidate();
             focusCellAt(anchorRowOf, anchorColOf);
             notifyCellSelectionChanged();
-        } else {
-            this.selectedCells.add(pagetablecell);
+            return unmergeCell;
         }
+        this.selectedCells.add(pagetablecell);
         return unmergeCell;
     }
 
@@ -1135,14 +1136,13 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         post(new Runnable() { // from class: org.telegram.ui.iv.RichTableCell$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RichTableCell.this.lambda$focusCellAt$2(pagetablecell);
+                RichTableCell.$r8$lambda$-OiBw7tU0oyPrRYM2QMmv9Rm2Nc(RichTableCell.this, pagetablecell);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$focusCellAt$2(TL_iv.pageTableCell pagetablecell) {
-        RichTableCellHost hostForAnchor = this.grid.hostForAnchor(pagetablecell);
+    public static /* synthetic */ void $r8$lambda$-OiBw7tU0oyPrRYM2QMmv9Rm2Nc(RichTableCell richTableCell, TL_iv.pageTableCell pagetablecell) {
+        RichTableCellHost hostForAnchor = richTableCell.grid.hostForAnchor(pagetablecell);
         if (hostForAnchor == null) {
             return;
         }
@@ -1205,7 +1205,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
                 richTableCellHost.editText.setDelegate(new EditTextCaption.EditTextCaptionDelegate() { // from class: org.telegram.ui.iv.RichTableCell$$ExternalSyntheticLambda3
                     @Override // org.telegram.ui.Components.EditTextCaption.EditTextCaptionDelegate
                     public final void onSpansChanged() {
-                        RichTableCell.this.lambda$wireCellListeners$3(richTableCellHost);
+                        RichTableCell.$r8$lambda$kFWEEX_IFW3G8zNagGHVmYMiA7I(RichTableCell.this, richTableCellHost);
                     }
                 });
             }
@@ -1306,14 +1306,14 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
                 RichTableCell.this.post(new Runnable() { // from class: org.telegram.ui.iv.RichTableCell$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RichTableCell.3.this.lambda$onSelectionChanged$0(richEditText, i2, selectionHelper, childPosForAnchor, i);
+                        RichTableCell.3.$r8$lambda$h4CWbDdD6LfyxuGhoQ-xoD0zeLU(RichTableCell.3.this, richEditText, i2, selectionHelper, childPosForAnchor, i);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSelectionChanged$0(RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2, int i3) {
+        public static /* synthetic */ void $r8$lambda$h4CWbDdD6LfyxuGhoQ-xoD0zeLU(3 r2, RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2, int i3) {
+            r2.getClass();
             if (richEditText.length() < i || richEditText.getSelectionStart() == richEditText.getSelectionEnd() || !articleTextSelectionHelper.selectRangeOf(RichTableCell.this, i2, i3, i)) {
                 return;
             }
@@ -1323,15 +1323,15 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$wireCellListeners$3(RichTableCellHost richTableCellHost) {
+    public static /* synthetic */ void $r8$lambda$kFWEEX_IFW3G8zNagGHVmYMiA7I(RichTableCell richTableCell, RichTableCellHost richTableCellHost) {
         BlockRow blockRow;
+        richTableCell.getClass();
         TL_iv.pageTableCell pagetablecell = richTableCellHost.cell;
         if (pagetablecell != null) {
             TableModel.applyStyledText(pagetablecell, richTableCellHost.editText.getText());
         }
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richTableCell.delegate;
+        if (delegate == null || (blockRow = richTableCell.currentRow) == null) {
             return;
         }
         delegate.onSpansChanged(blockRow);
@@ -1429,13 +1429,14 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
                 public CharSequence getText() {
                     TL_iv.RichText richText;
                     BlockRow blockRow = RichTableCell.this.currentRow;
-                    if (blockRow != null) {
-                        TL_iv.PageBlock pageBlock = blockRow.block;
-                        if ((pageBlock instanceof TL_iv.pageBlockTable) && (richText = ((TL_iv.pageBlockTable) pageBlock).title) != null) {
-                            return RichTextStyle.toSpannable(richText);
-                        }
+                    if (blockRow == null) {
+                        return "";
                     }
-                    return "";
+                    TL_iv.PageBlock pageBlock = blockRow.block;
+                    if (!(pageBlock instanceof TL_iv.pageBlockTable) || (richText = ((TL_iv.pageBlockTable) pageBlock).title) == null) {
+                        return "";
+                    }
+                    return RichTextStyle.toSpannable(richText);
                 }
             });
         }

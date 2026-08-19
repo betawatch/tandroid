@@ -56,7 +56,16 @@ final class TtmlNode {
 
     public boolean isActive(long j) {
         long j2 = this.startTimeUs;
-        return (j2 == -9223372036854775807L && this.endTimeUs == -9223372036854775807L) || (j2 <= j && this.endTimeUs == -9223372036854775807L) || ((j2 == -9223372036854775807L && j < this.endTimeUs) || (j2 <= j && j < this.endTimeUs));
+        if (j2 == -9223372036854775807L && this.endTimeUs == -9223372036854775807L) {
+            return true;
+        }
+        if (j2 <= j && this.endTimeUs == -9223372036854775807L) {
+            return true;
+        }
+        if (j2 != -9223372036854775807L || j >= this.endTimeUs) {
+            return j2 <= j && j < this.endTimeUs;
+        }
+        return true;
     }
 
     public void addChild(TtmlNode ttmlNode) {
@@ -121,13 +130,18 @@ final class TtmlNode {
     }
 
     public List getCues(long j, Map map, Map map2, Map map3) {
-        List<Pair> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         traverseForImage(j, this.regionId, arrayList);
         TreeMap treeMap = new TreeMap();
         traverseForText(j, false, this.regionId, treeMap);
         traverseForStyle(j, map, map2, this.regionId, treeMap);
         ArrayList arrayList2 = new ArrayList();
-        for (Pair pair : arrayList) {
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            Pair pair = (Pair) obj;
             String str = (String) map3.get(pair.second);
             if (str != null) {
                 byte[] decode = Base64.decode(str, 0);
@@ -173,12 +187,13 @@ final class TtmlNode {
         if (!"".equals(this.regionId)) {
             str = this.regionId;
         }
+        String str2 = str;
         if (this.isTextNode && z) {
-            getRegionOutputText(str, map).append((CharSequence) Assertions.checkNotNull(this.text));
+            getRegionOutputText(str2, map).append((CharSequence) Assertions.checkNotNull(this.text));
             return;
         }
         if ("br".equals(this.tag) && z) {
-            getRegionOutputText(str, map).append('\n');
+            getRegionOutputText(str2, map).append('\n');
             return;
         }
         if (isActive(j)) {
@@ -186,13 +201,20 @@ final class TtmlNode {
                 this.nodeStartsByRegion.put((String) entry.getKey(), Integer.valueOf(((CharSequence) Assertions.checkNotNull(((Cue.Builder) entry.getValue()).getText())).length()));
             }
             boolean equals = "p".equals(this.tag);
-            for (int i = 0; i < getChildCount(); i++) {
-                getChild(i).traverseForText(j, z || equals, str, map);
+            int i = 0;
+            while (i < getChildCount()) {
+                long j2 = j;
+                Map map2 = map;
+                getChild(i).traverseForText(j2, z || equals, str2, map2);
+                i++;
+                j = j2;
+                map = map2;
             }
+            Map map3 = map;
             if (equals) {
-                TtmlRenderUtil.endParagraph(getRegionOutputText(str, map));
+                TtmlRenderUtil.endParagraph(getRegionOutputText(str2, map3));
             }
-            for (Map.Entry entry2 : map.entrySet()) {
+            for (Map.Entry entry2 : map3.entrySet()) {
                 this.nodeEndsByRegion.put((String) entry2.getKey(), Integer.valueOf(((CharSequence) Assertions.checkNotNull(((Cue.Builder) entry2.getValue()).getText())).length()));
             }
         }
@@ -208,7 +230,6 @@ final class TtmlNode {
     }
 
     private void traverseForStyle(long j, Map map, Map map2, String str, Map map3) {
-        int i;
         if (isActive(j)) {
             String str2 = "".equals(this.regionId) ? str : this.regionId;
             Iterator it = this.nodeEndsByRegion.entrySet().iterator();
@@ -224,7 +245,7 @@ final class TtmlNode {
                     applyStyleToOutput(map, (Cue.Builder) Assertions.checkNotNull((Cue.Builder) map3.get(str3)), intValue, intValue2, ((TtmlRegion) Assertions.checkNotNull((TtmlRegion) map2.get(str2))).verticalType);
                 }
             }
-            for (i = 0; i < getChildCount(); i++) {
+            for (int i = 0; i < getChildCount(); i++) {
                 getChild(i).traverseForStyle(j, map, map2, str2, map3);
             }
         }

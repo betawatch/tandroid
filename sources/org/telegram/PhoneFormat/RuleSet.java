@@ -1,7 +1,6 @@
 package org.telegram.PhoneFormat;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,15 +16,20 @@ public class RuleSet {
         int length = str.length();
         int i = this.matchLen;
         if (length >= i) {
+            int i2 = 0;
             Matcher matcher = pattern.matcher(str.substring(0, i));
             int parseInt = matcher.find() ? Integer.parseInt(matcher.group(0)) : 0;
-            Iterator it = this.rules.iterator();
-            while (it.hasNext()) {
-                PhoneRule phoneRule = (PhoneRule) it.next();
+            ArrayList arrayList = this.rules;
+            int size = arrayList.size();
+            int i3 = 0;
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                PhoneRule phoneRule = (PhoneRule) obj;
                 if (parseInt >= phoneRule.minVal && parseInt <= phoneRule.maxVal && str.length() <= phoneRule.maxLen) {
                     if (z) {
-                        int i2 = phoneRule.flag12;
-                        if (((i2 & 3) == 0 && str3 == null && str2 == null) || ((str3 != null && (i2 & 1) != 0) || (str2 != null && (i2 & 2) != 0))) {
+                        int i4 = phoneRule.flag12;
+                        if (((i4 & 3) == 0 && str3 == null && str2 == null) || ((str3 != null && (i4 & 1) != 0) || (str2 != null && (i4 & 2) != 0))) {
                             return phoneRule.format(str, str2, str3);
                         }
                     } else if ((str3 == null && str2 == null) || ((str3 != null && (phoneRule.flag12 & 1) != 0) || (str2 != null && (phoneRule.flag12 & 2) != 0))) {
@@ -35,17 +39,23 @@ public class RuleSet {
             }
             if (!z) {
                 if (str2 != null) {
-                    Iterator it2 = this.rules.iterator();
-                    while (it2.hasNext()) {
-                        PhoneRule phoneRule2 = (PhoneRule) it2.next();
+                    ArrayList arrayList2 = this.rules;
+                    int size2 = arrayList2.size();
+                    while (i2 < size2) {
+                        Object obj2 = arrayList2.get(i2);
+                        i2++;
+                        PhoneRule phoneRule2 = (PhoneRule) obj2;
                         if (parseInt >= phoneRule2.minVal && parseInt <= phoneRule2.maxVal && str.length() <= phoneRule2.maxLen && (str3 == null || (phoneRule2.flag12 & 1) != 0)) {
                             return phoneRule2.format(str, str2, str3);
                         }
                     }
                 } else if (str3 != null) {
-                    Iterator it3 = this.rules.iterator();
-                    while (it3.hasNext()) {
-                        PhoneRule phoneRule3 = (PhoneRule) it3.next();
+                    ArrayList arrayList3 = this.rules;
+                    int size3 = arrayList3.size();
+                    while (i2 < size3) {
+                        Object obj3 = arrayList3.get(i2);
+                        i2++;
+                        PhoneRule phoneRule3 = (PhoneRule) obj3;
                         if (parseInt >= phoneRule3.minVal && parseInt <= phoneRule3.maxVal && str.length() <= phoneRule3.maxLen && (str2 == null || (phoneRule3.flag12 & 2) != 0)) {
                             return phoneRule3.format(str, str2, str3);
                         }

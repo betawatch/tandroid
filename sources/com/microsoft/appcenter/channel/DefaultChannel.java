@@ -100,7 +100,10 @@ public class DefaultChannel implements Channel {
     @Override // com.microsoft.appcenter.channel.Channel
     public void addGroup(String str, int i, long j, int i2, Ingestion ingestion, Channel.GroupListener groupListener) {
         AppCenterLog.debug("AppCenter", "addGroup(" + str + ")");
-        Ingestion ingestion2 = ingestion == null ? this.mIngestion : ingestion;
+        if (ingestion == null) {
+            ingestion = this.mIngestion;
+        }
+        Ingestion ingestion2 = ingestion;
         this.mIngestions.add(ingestion2);
         GroupState groupState = new GroupState(str, i, j, i2, ingestion2, groupListener);
         this.mGroupStates.put(str, groupState);
@@ -207,10 +210,15 @@ public class DefaultChannel implements Channel {
     }
 
     private void deleteLogsOnSuspended(GroupState groupState) {
-        ArrayList<Log> arrayList = new ArrayList();
-        this.mPersistence.getLogs(groupState.mName, Collections.emptyList(), 100, arrayList);
+        ArrayList arrayList = new ArrayList();
+        this.mPersistence.getLogs(groupState.mName, Collections.EMPTY_LIST, 100, arrayList);
         if (arrayList.size() > 0 && groupState.mListener != null) {
-            for (Log log : arrayList) {
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                Log log = (Log) obj;
                 groupState.mListener.onBeforeSending(log);
                 groupState.mListener.onFailure(log, new CancellationException());
             }
@@ -249,9 +257,12 @@ public class DefaultChannel implements Channel {
             }
             AppCenterLog.debug("AppCenter", "ingestLogs(" + groupState.mName + "," + logs + ") pendingLogCount=" + groupState.mPendingLogCount);
             if (groupState.mListener != null) {
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    groupState.mListener.onBeforeSending((Log) it.next());
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    groupState.mListener.onBeforeSending((Log) obj);
                 }
             }
             groupState.mSendingBatches.put(logs, arrayList);

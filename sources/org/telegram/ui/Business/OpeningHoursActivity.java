@@ -286,16 +286,13 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         Collections.sort(arrayList3, new Comparator() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda3
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$adaptWeeklyOpen$0;
-                lambda$adaptWeeklyOpen$0 = OpeningHoursActivity.lambda$adaptWeeklyOpen$0((TL_account.TL_businessWeeklyOpen) obj, (TL_account.TL_businessWeeklyOpen) obj2);
-                return lambda$adaptWeeklyOpen$0;
+                return OpeningHoursActivity.$r8$lambda$e8LPlc3wp-Ocbipb8BSgQa5RZ4c((TL_account.TL_businessWeeklyOpen) obj, (TL_account.TL_businessWeeklyOpen) obj2);
             }
         });
         return arrayList3;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$adaptWeeklyOpen$0(TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen, TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2) {
+    public static /* synthetic */ int $r8$lambda$e8LPlc3wp-Ocbipb8BSgQa5RZ4c(TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen, TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2) {
         return tL_businessWeeklyOpen.start_minute - tL_businessWeeklyOpen2.start_minute;
     }
 
@@ -441,41 +438,41 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         getConnectionsManager().sendRequest(updatebusinessworkhours, new RequestDelegate() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                OpeningHoursActivity.this.lambda$processDone$2(tLObject, tL_error);
+                OpeningHoursActivity.$r8$lambda$3isW3ifjsjw1qx1oPEfKAkqa4Yo(OpeningHoursActivity.this, tLObject, tL_error);
             }
         });
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$2(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$3isW3ifjsjw1qx1oPEfKAkqa4Yo(final OpeningHoursActivity openingHoursActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        openingHoursActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                OpeningHoursActivity.this.lambda$processDone$1(tL_error, tLObject);
+                OpeningHoursActivity.$r8$lambda$Ra-jLrQn80CHNvZkSsV72oNMisg(OpeningHoursActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$1(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$Ra-jLrQn80CHNvZkSsV72oNMisg(OpeningHoursActivity openingHoursActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
+            openingHoursActivity.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
-        } else {
-            if (tLObject instanceof TLRPC.TL_boolFalse) {
-                if (getContext() == null) {
-                    return;
-                }
-                this.doneButtonDrawable.animateToProgress(0.0f);
-                BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
-                return;
-            }
-            if (this.isFinished || this.finishing) {
-                return;
-            }
-            finishFragment();
+            return;
         }
+        openingHoursActivity.getClass();
+        if (tLObject instanceof TLRPC.TL_boolFalse) {
+            if (openingHoursActivity.getContext() == null) {
+                return;
+            }
+            openingHoursActivity.doneButtonDrawable.animateToProgress(0.0f);
+            BulletinFactory.of(openingHoursActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+            return;
+        }
+        if (openingHoursActivity.isFinished || openingHoursActivity.finishing) {
+            return;
+        }
+        openingHoursActivity.finishFragment();
     }
 
     public static class Period {
@@ -505,18 +502,20 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
     }
 
     public static boolean is24x7(TL_account.TL_businessWorkHours tL_businessWorkHours) {
-        if (tL_businessWorkHours == null || tL_businessWorkHours.weekly_open.isEmpty()) {
-            return false;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < tL_businessWorkHours.weekly_open.size(); i2++) {
-            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = tL_businessWorkHours.weekly_open.get(i2);
-            if (tL_businessWeeklyOpen.start_minute > i + 1) {
-                return false;
+        if (tL_businessWorkHours != null && !tL_businessWorkHours.weekly_open.isEmpty()) {
+            int i = 0;
+            for (int i2 = 0; i2 < tL_businessWorkHours.weekly_open.size(); i2++) {
+                TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = tL_businessWorkHours.weekly_open.get(i2);
+                if (tL_businessWeeklyOpen.start_minute > i + 1) {
+                    return false;
+                }
+                i = tL_businessWeeklyOpen.end_minute;
             }
-            i = tL_businessWeeklyOpen.end_minute;
+            if (i >= 10079) {
+                return true;
+            }
         }
-        return i >= 10079;
+        return false;
     }
 
     public static boolean isFull(ArrayList arrayList) {
@@ -607,7 +606,7 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
             presentFragment(new TimezoneSelector().setValue(this.timezoneId).whenSelected(new Utilities.Callback() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    OpeningHoursActivity.this.lambda$onClick$3(view, (String) obj);
+                    OpeningHoursActivity.$r8$lambda$vLsdgdtD8U6Yn7KfGlYyOsn1s24(OpeningHoursActivity.this, view, (String) obj);
                 }
             }));
             return;
@@ -650,33 +649,32 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         presentFragment(new OpeningHoursDayActivity(charSequence, arrayListArr[i10], max, i9, maxPeriodsFor(i10)).onApplied(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                OpeningHoursActivity.this.lambda$onClick$4();
+                OpeningHoursActivity.$r8$lambda$f3Q3a1G9bipddOoqNCkaJIiNeY0(OpeningHoursActivity.this);
             }
         }).onDone(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                OpeningHoursActivity.this.lambda$onClick$5(uItem);
+                OpeningHoursActivity.$r8$lambda$LLuwiBV7Nwzy7aoFu9-A7bfKPN4(OpeningHoursActivity.this, uItem);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$3(View view, String str) {
-        TimezonesController timezonesController = TimezonesController.getInstance(this.currentAccount);
-        this.timezoneId = str;
+    public static /* synthetic */ void $r8$lambda$vLsdgdtD8U6Yn7KfGlYyOsn1s24(OpeningHoursActivity openingHoursActivity, View view, String str) {
+        openingHoursActivity.getClass();
+        TimezonesController timezonesController = TimezonesController.getInstance(openingHoursActivity.currentAccount);
+        openingHoursActivity.timezoneId = str;
         ((TextCell) view).setValue(timezonesController.getTimezoneName(str, false), true);
-        checkDone(true);
+        openingHoursActivity.checkDone(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$4() {
-        this.listView.adapter.update(true);
-        checkDone(true);
+    public static /* synthetic */ void $r8$lambda$f3Q3a1G9bipddOoqNCkaJIiNeY0(OpeningHoursActivity openingHoursActivity) {
+        openingHoursActivity.listView.adapter.update(true);
+        openingHoursActivity.checkDone(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$5(UItem uItem) {
-        adaptPrevDay(uItem.id);
+    public static /* synthetic */ void $r8$lambda$LLuwiBV7Nwzy7aoFu9-A7bfKPN4(OpeningHoursActivity openingHoursActivity, UItem uItem) {
+        openingHoursActivity.getClass();
+        openingHoursActivity.adaptPrevDay(uItem.id);
     }
 
     private void adaptPrevDay(int i) {

@@ -74,7 +74,7 @@ public class GuardBotReplaceSheet extends BottomSheetWithRecyclerListView {
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GuardBotReplaceSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GuardBotReplaceSheet.this.lambda$new$0(runnable, view);
+                GuardBotReplaceSheet.$r8$lambda$Dfm0AiOLq1tqqgqeVh6n3ovgaYo(GuardBotReplaceSheet.this, runnable, view);
             }
         });
         linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 14.0f, 0.0f, 14.0f, 10.0f));
@@ -86,7 +86,7 @@ public class GuardBotReplaceSheet extends BottomSheetWithRecyclerListView {
         buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GuardBotReplaceSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GuardBotReplaceSheet.this.lambda$new$1(view);
+                GuardBotReplaceSheet.this.dismiss();
             }
         });
         linearLayout.addView(buttonWithCounterView2, LayoutHelper.createLinear(-1, 48, 14.0f, 0.0f, 14.0f, 14.0f));
@@ -96,17 +96,12 @@ public class GuardBotReplaceSheet extends BottomSheetWithRecyclerListView {
         this.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$Dfm0AiOLq1tqqgqeVh6n3ovgaYo(GuardBotReplaceSheet guardBotReplaceSheet, Runnable runnable, View view) {
         if (runnable != null) {
+            guardBotReplaceSheet.getClass();
             runnable.run();
         }
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        lambda$new$0();
+        guardBotReplaceSheet.dismiss();
     }
 
     private View buildAvatar(Context context, TLObject tLObject, int i) {

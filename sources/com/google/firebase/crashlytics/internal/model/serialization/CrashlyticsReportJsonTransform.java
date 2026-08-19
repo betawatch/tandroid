@@ -62,7 +62,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "ndkPayload":
                     builder.setNdkPayload(parseNdkPayload(jsonReader));
@@ -111,7 +111,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "startedAt":
                     builder.setStartedAt(jsonReader.nextLong());
@@ -170,7 +170,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             if (nextName.equals("files")) {
                 builder.setFiles(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda4
                     @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
@@ -195,7 +195,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "buildIdMappingForArch":
                     builder.setBuildIdMappingForArch(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda0
@@ -246,7 +246,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             if (nextName.equals("filename")) {
                 builder.setFilename(jsonReader.nextString());
             } else if (nextName.equals("contents")) {
@@ -278,7 +278,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "identifier":
                     builder.setIdentifier(jsonReader.nextString());
@@ -312,7 +312,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "buildVersion":
                     builder.setBuildVersion(jsonReader.nextString());
@@ -340,7 +340,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "simulator":
                     builder.setSimulator(jsonReader.nextBoolean());
@@ -384,7 +384,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "device":
                     builder.setDevice(parseEventDevice(jsonReader));
@@ -418,7 +418,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "appProcessDetails":
                     builder.setAppProcessDetails(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda2
@@ -477,7 +477,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "pid":
                     builder.setPid(jsonReader.nextInt());
@@ -505,7 +505,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "appExitInfo":
                     builder.setAppExitInfo(parseAppExitInfo(jsonReader));
@@ -550,7 +550,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "frames":
                     builder.setFrames(parseArray(jsonReader, new CrashlyticsReportJsonTransform$$ExternalSyntheticLambda8()));
@@ -581,7 +581,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "address":
                     builder.setAddress(jsonReader.nextLong());
@@ -607,7 +607,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "name":
                     builder.setName(jsonReader.nextString());
@@ -636,7 +636,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "frames":
                     builder.setFrames(parseArray(jsonReader, new CrashlyticsReportJsonTransform$$ExternalSyntheticLambda8()));
@@ -662,7 +662,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "offset":
                     builder.setOffset(jsonReader.nextLong());
@@ -693,7 +693,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "batteryLevel":
                     builder.setBatteryLevel(Double.valueOf(jsonReader.nextDouble()));
@@ -741,7 +741,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             if (nextName.equals("assignments")) {
                 builder.setRolloutAssignments(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5
                     @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
@@ -765,7 +765,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "parameterKey":
                     builder.setParameterKey(jsonReader.nextString());
@@ -793,7 +793,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             if (nextName.equals("variantId")) {
                 builder.setVariantId(jsonReader.nextString());
             } else if (nextName.equals("rolloutId")) {
@@ -812,7 +812,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             if (nextName.equals("key")) {
                 builder.setKey(jsonReader.nextString());
             } else if (nextName.equals("value")) {
@@ -831,7 +831,7 @@ public class CrashlyticsReportJsonTransform {
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
-            nextName.hashCode();
+            nextName.getClass();
             switch (nextName) {
                 case "libraryName":
                     builder.setLibraryName(jsonReader.nextString());

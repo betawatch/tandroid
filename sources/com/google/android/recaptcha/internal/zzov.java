@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.io.Closeable;
 
 /* loaded from: classes.dex */
-public final class zzov implements Closeable {
+public final class zzov implements Closeable, AutoCloseable {
     private static final ThreadLocal zza = new zzou();
     private int zzb = 0;
 

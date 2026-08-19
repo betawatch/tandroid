@@ -59,7 +59,7 @@ public final class EventMessage implements Metadata.Entry {
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
     public Format getWrappedMetadataFormat() {
         String str = this.schemeIdUri;
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "urn:scte:scte35:2014:bin":
                 return SCTE35_FORMAT;
@@ -97,11 +97,13 @@ public final class EventMessage implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || EventMessage.class != obj.getClass()) {
-            return false;
+        if (obj != null && EventMessage.class == obj.getClass()) {
+            EventMessage eventMessage = (EventMessage) obj;
+            if (this.durationMs == eventMessage.durationMs && this.id == eventMessage.id && Util.areEqual(this.schemeIdUri, eventMessage.schemeIdUri) && Util.areEqual(this.value, eventMessage.value) && Arrays.equals(this.messageData, eventMessage.messageData)) {
+                return true;
+            }
         }
-        EventMessage eventMessage = (EventMessage) obj;
-        return this.durationMs == eventMessage.durationMs && this.id == eventMessage.id && Util.areEqual(this.schemeIdUri, eventMessage.schemeIdUri) && Util.areEqual(this.value, eventMessage.value) && Arrays.equals(this.messageData, eventMessage.messageData);
+        return false;
     }
 
     public String toString() {

@@ -82,9 +82,10 @@ public final class ListTemplate implements Template {
         this.mTitle = null;
         this.mHeaderAction = null;
         this.mSingleList = null;
-        this.mSectionedLists = Collections.emptyList();
+        List list = Collections.EMPTY_LIST;
+        this.mSectionedLists = list;
         this.mActionStrip = null;
-        this.mActions = Collections.emptyList();
+        this.mActions = list;
     }
 
     public Builder toBuilder() {

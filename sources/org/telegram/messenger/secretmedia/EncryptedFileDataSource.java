@@ -20,9 +20,9 @@ public final class EncryptedFileDataSource extends BaseDataSource {
 
     @Override // com.google.android.exoplayer2.upstream.BaseDataSource, com.google.android.exoplayer2.upstream.DataSource
     public /* bridge */ /* synthetic */ Map getResponseHeaders() {
-        Map emptyMap;
-        emptyMap = Collections.emptyMap();
-        return emptyMap;
+        Map map;
+        map = Collections.EMPTY_MAP;
+        return map;
     }
 
     public static class EncryptedFileDataSourceException extends IOException {

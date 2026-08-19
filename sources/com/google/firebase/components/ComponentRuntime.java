@@ -26,7 +26,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
     private static final Provider EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda0
         @Override // com.google.firebase.inject.Provider
         public final Object get() {
-            return Collections.emptySet();
+            return Collections.EMPTY_SET;
         }
     };
     private final ComponentRegistrarProcessor componentRegistrarProcessor;
@@ -104,6 +104,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
     }
 
     private void discoverComponents(List list) {
+        int i;
         ArrayList arrayList = new ArrayList();
         synchronized (this) {
             Iterator it = this.unprocessedRegistrarProviders.iterator();
@@ -120,10 +121,13 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                 }
             }
             Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
+            while (true) {
+                i = 0;
+                if (!it2.hasNext()) {
+                    break;
+                }
                 Object[] array = ((Component) it2.next()).getProvidedInterfaces().toArray();
                 int length = array.length;
-                int i = 0;
                 while (true) {
                     if (i < length) {
                         Object obj = array[i];
@@ -151,9 +155,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                 this.components.put(component, new Lazy(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda1
                     @Override // com.google.firebase.inject.Provider
                     public final Object get() {
-                        Object lambda$discoverComponents$0;
-                        lambda$discoverComponents$0 = ComponentRuntime.this.lambda$discoverComponents$0(component);
-                        return lambda$discoverComponents$0;
+                        return ComponentRuntime.$r8$lambda$KkGLnATw7zawFxzXHI2bmfEwUaI(ComponentRuntime.this, component);
                     }
                 }));
             }
@@ -161,16 +163,18 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             arrayList.addAll(processSetComponents());
             processDependencies();
         }
-        Iterator it4 = arrayList.iterator();
-        while (it4.hasNext()) {
-            ((Runnable) it4.next()).run();
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj2 = arrayList.get(i);
+            i++;
+            ((Runnable) obj2).run();
         }
         maybeInitializeEagerComponents();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$discoverComponents$0(Component component) {
-        return component.getFactory().create(new RestrictedComponentContainer(component, this));
+    public static /* synthetic */ Object $r8$lambda$KkGLnATw7zawFxzXHI2bmfEwUaI(ComponentRuntime componentRuntime, Component component) {
+        componentRuntime.getClass();
+        return component.getFactory().create(new RestrictedComponentContainer(component, componentRuntime));
     }
 
     private void maybeInitializeEagerComponents() {
@@ -299,7 +303,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
         for (Component component : this.components.keySet()) {
             for (Dependency dependency : component.getDependencies()) {
                 if (dependency.isSet() && !this.lazySetMap.containsKey(dependency.getInterface())) {
-                    this.lazySetMap.put(dependency.getInterface(), LazySet.fromCollection(Collections.emptySet()));
+                    this.lazySetMap.put(dependency.getInterface(), LazySet.fromCollection(Collections.EMPTY_SET));
                 } else if (this.lazyInstanceMap.containsKey(dependency.getInterface())) {
                     continue;
                 } else {
@@ -320,8 +324,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
         private final List additionalComponents = new ArrayList();
         private ComponentRegistrarProcessor componentRegistrarProcessor = ComponentRegistrarProcessor.NOOP;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ ComponentRegistrar lambda$addComponentRegistrar$0(ComponentRegistrar componentRegistrar) {
+        public static /* synthetic */ ComponentRegistrar $r8$lambda$rq5ahKBnCKJMyE365M3jifpISoo(ComponentRegistrar componentRegistrar) {
             return componentRegistrar;
         }
 
@@ -338,9 +341,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             this.lazyRegistrars.add(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$Builder$$ExternalSyntheticLambda0
                 @Override // com.google.firebase.inject.Provider
                 public final Object get() {
-                    ComponentRegistrar lambda$addComponentRegistrar$0;
-                    lambda$addComponentRegistrar$0 = ComponentRuntime.Builder.lambda$addComponentRegistrar$0(ComponentRegistrar.this);
-                    return lambda$addComponentRegistrar$0;
+                    return ComponentRuntime.Builder.$r8$lambda$rq5ahKBnCKJMyE365M3jifpISoo(ComponentRegistrar.this);
                 }
             });
             return this;

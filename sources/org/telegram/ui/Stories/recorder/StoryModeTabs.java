@@ -21,7 +21,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Stories.recorder.FlashViews;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StoryModeTabs extends FrameLayout implements FlashViews.Invertable {
     private ValueAnimator animator;
     private float invert;
@@ -78,7 +78,7 @@ public abstract class StoryModeTabs extends FrameLayout implements FlashViews.In
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryModeTabs$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryModeTabs.this.lambda$new$0(view);
+                StoryModeTabs.this.switchModeInternal(-1);
             }
         });
         ScaleStateListAnimator.apply(frameLayout);
@@ -95,7 +95,7 @@ public abstract class StoryModeTabs extends FrameLayout implements FlashViews.In
         frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryModeTabs$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryModeTabs.this.lambda$new$1(view);
+                StoryModeTabs.this.switchModeInternal(0);
             }
         });
         ScaleStateListAnimator.apply(frameLayout2);
@@ -112,26 +112,11 @@ public abstract class StoryModeTabs extends FrameLayout implements FlashViews.In
         frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryModeTabs$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryModeTabs.this.lambda$new$2(view);
+                StoryModeTabs.this.switchModeInternal(1);
             }
         });
         ScaleStateListAnimator.apply(frameLayout3);
         addView(linearLayout, LayoutHelper.createFrame(-2, -1, 113));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        switchModeInternal(-1);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        switchModeInternal(0);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        switchModeInternal(1);
     }
 
     public void setOnSwitchModeListener(Utilities.Callback<Integer> callback) {
@@ -142,7 +127,8 @@ public abstract class StoryModeTabs extends FrameLayout implements FlashViews.In
         this.onSwitchingModeListener = callback;
     }
 
-    private void switchModeInternal(int i) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void switchModeInternal(int i) {
         if (this.toMode == i) {
             return;
         }
@@ -167,7 +153,7 @@ public abstract class StoryModeTabs extends FrameLayout implements FlashViews.In
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.StoryModeTabs$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StoryModeTabs.this.lambda$switchMode$3(valueAnimator2);
+                StoryModeTabs.$r8$lambda$RG7RZmiENLtsV0KunoZaZobhJxU(StoryModeTabs.this, valueAnimator2);
             }
         });
         this.animator.setDuration(320L);
@@ -175,15 +161,15 @@ public abstract class StoryModeTabs extends FrameLayout implements FlashViews.In
         this.animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchMode$3(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$RG7RZmiENLtsV0KunoZaZobhJxU(StoryModeTabs storyModeTabs, ValueAnimator valueAnimator) {
+        storyModeTabs.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.mode = floatValue;
-        Utilities.Callback callback = this.onSwitchingModeListener;
+        storyModeTabs.mode = floatValue;
+        Utilities.Callback callback = storyModeTabs.onSwitchingModeListener;
         if (callback != null) {
             callback.run(Float.valueOf(Utilities.clamp(floatValue, 1.0f, -1.0f)));
         }
-        this.layout.invalidate();
+        storyModeTabs.layout.invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.View

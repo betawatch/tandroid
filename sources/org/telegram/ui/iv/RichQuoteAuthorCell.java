@@ -145,13 +145,13 @@ public class RichQuoteAuthorCell extends RichBlockCell implements Theme.Colorabl
             richEditText.post(new Runnable() { // from class: org.telegram.ui.iv.RichQuoteAuthorCell$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichQuoteAuthorCell.1.this.lambda$onSelectionChanged$0(richEditText, i2, selectionHelper, i);
+                    RichQuoteAuthorCell.1.$r8$lambda$lsMMXJGkHCkQyF1-Y50cn_0jhYY(RichQuoteAuthorCell.1.this, richEditText, i2, selectionHelper, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSelectionChanged$0(RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2) {
+        public static /* synthetic */ void $r8$lambda$lsMMXJGkHCkQyF1-Y50cn_0jhYY(1 r3, RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2) {
+            r3.getClass();
             if (richEditText.length() < i || richEditText.getSelectionStart() == richEditText.getSelectionEnd()) {
                 return;
             }

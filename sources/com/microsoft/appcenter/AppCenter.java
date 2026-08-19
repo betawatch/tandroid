@@ -248,11 +248,12 @@ public class AppCenter {
         if (httpClient == null) {
             httpClient = HttpUtils.createHttpClient(this.mApplication);
         }
+        HttpClient httpClient2 = httpClient;
         DefaultLogSerializer defaultLogSerializer = new DefaultLogSerializer();
         this.mLogSerializer = defaultLogSerializer;
         defaultLogSerializer.addLogFactory("startService", new StartServiceLogFactory());
         this.mLogSerializer.addLogFactory("customProperties", new CustomPropertiesLogFactory());
-        DefaultChannel defaultChannel = new DefaultChannel(this.mApplication, this.mAppSecret, this.mLogSerializer, httpClient, this.mHandler);
+        DefaultChannel defaultChannel = new DefaultChannel(this.mApplication, this.mAppSecret, this.mLogSerializer, httpClient2, this.mHandler);
         this.mChannel = defaultChannel;
         if (z) {
             applyStorageMaxSize();
@@ -261,7 +262,7 @@ public class AppCenter {
         }
         this.mChannel.setEnabled(isInstanceEnabled);
         this.mChannel.addGroup("group_core", 50, 3000L, 3, null, null);
-        this.mOneCollectorChannelListener = new OneCollectorChannelListener(this.mChannel, this.mLogSerializer, httpClient, IdHelper.getInstallId());
+        this.mOneCollectorChannelListener = new OneCollectorChannelListener(this.mChannel, this.mLogSerializer, httpClient2, IdHelper.getInstallId());
         if (this.mLogUrl != null) {
             if (this.mAppSecret != null) {
                 AppCenterLog.info("AppCenter", "The log url of App Center endpoint has been changed to " + this.mLogUrl);

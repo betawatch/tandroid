@@ -41,7 +41,7 @@ final class SsaSubtitle implements Subtitle {
     public List getCues(long j) {
         int binarySearchFloor = Util.binarySearchFloor(this.cueTimesUs, (Comparable) Long.valueOf(j), true, false);
         if (binarySearchFloor == -1) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         return (List) this.cues.get(binarySearchFloor);
     }

@@ -1,93 +1,78 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
 import j$.util.function.Consumer$-CC;
-import java.util.concurrent.CountedCompleter;
 import java.util.function.Consumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-abstract class u1 extends CountedCompleter implements m2 {
-    protected final Spliterator a;
-    protected final b b;
-    protected final long c;
-    protected long d;
-    protected long e;
-    protected int f;
-    protected int g;
+public final class u1 implements L1, c2 {
+    public double a;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ DoubleBinaryOperator c;
 
-    public /* synthetic */ void accept(double d) {
-        w0.a();
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // j$.util.stream.c2
+    public final /* synthetic */ void E(Double d) {
+        q1.e(this, d);
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(int i) {
+        q1.k();
         throw null;
     }
 
-    public /* synthetic */ void accept(int i) {
-        w0.k();
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(long j) {
+        q1.l();
         throw null;
     }
 
-    public /* synthetic */ void accept(long j) {
-        w0.l();
-        throw null;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        E((Double) obj);
     }
 
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    abstract u1 b(Spliterator spliterator, long j, long j2);
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void k() {
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ boolean n() {
-        return false;
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void x() {
     }
 
-    u1(Spliterator spliterator, b bVar, int i) {
-        this.a = spliterator;
-        this.b = bVar;
-        this.c = e.g(spliterator.estimateSize());
-        this.d = 0L;
-        this.e = i;
+    public u1(double d, DoubleBinaryOperator doubleBinaryOperator) {
+        this.b = d;
+        this.c = doubleBinaryOperator;
     }
 
-    u1(u1 u1Var, Spliterator spliterator, long j, long j2, int i) {
-        super(u1Var);
-        this.a = spliterator;
-        this.b = u1Var.b;
-        this.c = u1Var.c;
-        this.d = j;
-        this.e = j2;
-        if (j < 0 || j2 < 0 || (j + j2) - 1 >= i) {
-            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j), Long.valueOf(j), Long.valueOf(j2), Integer.valueOf(i)));
-        }
+    @Override // j$.util.stream.L1
+    public final void n(L1 l1) {
+        accept(((u1) l1).a);
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.a;
-        u1 u1Var = this;
-        while (spliterator.estimateSize() > u1Var.c && (trySplit = spliterator.trySplit()) != null) {
-            u1Var.setPendingCount(1);
-            long estimateSize = trySplit.estimateSize();
-            u1Var.b(trySplit, u1Var.d, estimateSize).fork();
-            u1Var = u1Var.b(spliterator, u1Var.d + estimateSize, u1Var.e - estimateSize);
-        }
-        u1Var.b.U(spliterator, u1Var);
-        u1Var.propagateCompletion();
+    @Override // j$.util.stream.f2
+    public final void y(long j) {
+        this.a = this.b;
     }
 
-    @Override // j$.util.stream.m2
-    public final void l(long j) {
-        long j2 = this.e;
-        if (j > j2) {
-            throw new IllegalStateException("size passed to Sink.begin exceeds array length");
-        }
-        int i = (int) this.d;
-        this.f = i;
-        this.g = i + ((int) j2);
+    @Override // j$.util.stream.f2
+    public final void accept(double d) {
+        this.a = this.c.applyAsDouble(this.a, d);
+    }
+
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return Double.valueOf(this.a);
     }
 }

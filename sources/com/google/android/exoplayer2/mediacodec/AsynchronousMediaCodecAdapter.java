@@ -37,27 +37,21 @@ final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
             this(new Supplier() { // from class: com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecAdapter$Factory$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    HandlerThread lambda$new$0;
-                    lambda$new$0 = AsynchronousMediaCodecAdapter.Factory.lambda$new$0(i);
-                    return lambda$new$0;
+                    return AsynchronousMediaCodecAdapter.Factory.$r8$lambda$MT5kCqvAOwG_5ldfcQx2Q3orEOg(i);
                 }
             }, new Supplier() { // from class: com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecAdapter$Factory$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    HandlerThread lambda$new$1;
-                    lambda$new$1 = AsynchronousMediaCodecAdapter.Factory.lambda$new$1(i);
-                    return lambda$new$1;
+                    return AsynchronousMediaCodecAdapter.Factory.$r8$lambda$vAGmYvMPglRJC_dQ6nvB9nx5Eho(i);
                 }
             }, z);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ HandlerThread lambda$new$0(int i) {
+        public static /* synthetic */ HandlerThread $r8$lambda$MT5kCqvAOwG_5ldfcQx2Q3orEOg(int i) {
             return new HandlerThread(AsynchronousMediaCodecAdapter.createCallbackThreadLabel(i));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ HandlerThread lambda$new$1(int i) {
+        public static /* synthetic */ HandlerThread $r8$lambda$vAGmYvMPglRJC_dQ6nvB9nx5Eho(int i) {
             return new HandlerThread(AsynchronousMediaCodecAdapter.createQueueingThreadLabel(i));
         }
 
@@ -69,6 +63,7 @@ final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
 
         @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter.Factory
         public AsynchronousMediaCodecAdapter createAdapter(MediaCodecAdapter.Configuration configuration) {
+            Exception exc;
             MediaCodec mediaCodec;
             AsynchronousMediaCodecAdapter asynchronousMediaCodecAdapter;
             String str = configuration.codecInfo.name;
@@ -79,10 +74,10 @@ final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
                 try {
                     asynchronousMediaCodecAdapter = new AsynchronousMediaCodecAdapter(mediaCodec, (HandlerThread) this.callbackThreadSupplier.get(), (HandlerThread) this.queueingThreadSupplier.get(), this.synchronizeCodecInteractionsWithQueueing);
                 } catch (Exception e) {
-                    e = e;
+                    exc = e;
                 }
             } catch (Exception e2) {
-                e = e2;
+                exc = e2;
                 mediaCodec = null;
             }
             try {
@@ -90,14 +85,17 @@ final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
                 asynchronousMediaCodecAdapter.initialize(configuration.mediaFormat, configuration.surface, configuration.crypto, configuration.flags);
                 return asynchronousMediaCodecAdapter;
             } catch (Exception e3) {
-                e = e3;
+                exc = e3;
                 asynchronousMediaCodecAdapter2 = asynchronousMediaCodecAdapter;
                 if (asynchronousMediaCodecAdapter2 != null) {
                     asynchronousMediaCodecAdapter2.release();
-                } else if (mediaCodec != null) {
-                    mediaCodec.release();
+                    throw exc;
                 }
-                throw e;
+                if (mediaCodec != null) {
+                    mediaCodec.release();
+                    throw exc;
+                }
+                throw exc;
             }
         }
     }
@@ -204,14 +202,14 @@ final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecAdapter$$ExternalSyntheticLambda2
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                AsynchronousMediaCodecAdapter.this.lambda$setOnFrameRenderedListener$0(onFrameRenderedListener, mediaCodec, j, j2);
+                AsynchronousMediaCodecAdapter.$r8$lambda$l5mCRm8JiOmXKGaE47APX_hYhIY(AsynchronousMediaCodecAdapter.this, onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOnFrameRenderedListener$0(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
-        onFrameRenderedListener.onFrameRendered(this, j, j2);
+    public static /* synthetic */ void $r8$lambda$l5mCRm8JiOmXKGaE47APX_hYhIY(AsynchronousMediaCodecAdapter asynchronousMediaCodecAdapter, MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+        asynchronousMediaCodecAdapter.getClass();
+        onFrameRenderedListener.onFrameRendered(asynchronousMediaCodecAdapter, j, j2);
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter

@@ -241,26 +241,25 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:105:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:110:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x016c  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0156  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x024f  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x02a1  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x023d  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x02dd  */
+    /* JADX WARN: Removed duplicated region for block: B:111:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0230  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x02af  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x023f  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -347,7 +346,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                                 }
                                 float interpolation2 = (this.overshootInterpolator.getInterpolation(this.wavesEnter) * 0.35f) + 0.65f;
                                 this.blobDrawable.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
-                                this.blobDrawable2.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
+                                this.blobDrawable2.update(this.amplitude, this.stub ? 0.1f : 0.8f);
                                 for (i2 = 3; i < i2; i2 = 3) {
                                     if (i != 0 || this.previousState != null) {
                                         if (i == 0) {
@@ -394,9 +393,10 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                                                 return;
                                             }
                                             if (this.progressToPrepareRemove != 1.0f) {
-                                                f3 = this.previousState != null ? this.progressToState : 1.0f;
+                                                float f14 = this.previousState != null ? this.progressToState : 1.0f;
                                                 weavingState.update(16L, this.amplitude);
                                                 this.currentState.setToPaint(this.paint);
+                                                f3 = f14;
                                                 this.blobDrawable.maxRadius = AndroidUtilities.dp(40.0f);
                                                 this.blobDrawable.minRadius = AndroidUtilities.dp(32.0f);
                                                 this.blobDrawable2.maxRadius = AndroidUtilities.dp(38.0f);
@@ -435,7 +435,6 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                                             canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(32.0f), this.paint);
                                             canvas.restore();
                                         }
-                                        i++;
                                     }
                                     i++;
                                 }
@@ -447,18 +446,18 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                             }
                         }
                         if (!z2) {
-                            float f14 = this.wavesEnter;
-                            if (f14 != 0.0f) {
-                                float f15 = f14 - 0.045714285f;
-                                this.wavesEnter = f15;
-                                if (f15 < 0.0f) {
+                            float f15 = this.wavesEnter;
+                            if (f15 != 0.0f) {
+                                float f16 = f15 - 0.045714285f;
+                                this.wavesEnter = f16;
+                                if (f16 < 0.0f) {
                                     this.wavesEnter = 0.0f;
                                 }
                             }
                         }
                         float interpolation22 = (this.overshootInterpolator.getInterpolation(this.wavesEnter) * 0.35f) + 0.65f;
                         this.blobDrawable.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
-                        this.blobDrawable2.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
+                        this.blobDrawable2.update(this.amplitude, this.stub ? 0.1f : 0.8f);
                         while (i < i2) {
                         }
                         if (this.removed) {
@@ -469,11 +468,11 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                     }
                 }
                 if (!z) {
-                    float f16 = this.progressToPrepareRemove;
-                    if (f16 != 0.0f) {
-                        float f17 = f16 - 0.045714285f;
-                        this.progressToPrepareRemove = f17;
-                        if (f17 < 0.0f) {
+                    float f17 = this.progressToPrepareRemove;
+                    if (f17 != 0.0f) {
+                        float f18 = f17 - 0.045714285f;
+                        this.progressToPrepareRemove = f18;
+                        if (f18 < 0.0f) {
                             this.progressToPrepareRemove = 0.0f;
                         }
                     }
@@ -487,7 +486,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                 }
                 float interpolation222 = (this.overshootInterpolator.getInterpolation(this.wavesEnter) * 0.35f) + 0.65f;
                 this.blobDrawable.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
-                this.blobDrawable2.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
+                this.blobDrawable2.update(this.amplitude, this.stub ? 0.1f : 0.8f);
                 while (i < i2) {
                 }
                 if (this.removed) {
@@ -495,11 +494,11 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
             }
         }
         if (!z3) {
-            float f18 = this.pressedProgress;
-            if (f18 != 0.0f) {
-                float f19 = f18 - 0.10666667f;
-                this.pressedProgress = f19;
-                if (f19 < 0.0f) {
+            float f19 = this.pressedProgress;
+            if (f19 != 0.0f) {
+                float f20 = f19 - 0.10666667f;
+                this.pressedProgress = f20;
+                if (f20 < 0.0f) {
                     this.pressedProgress = 0.0f;
                 }
             }
@@ -530,7 +529,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
         }
         float interpolation2222 = (this.overshootInterpolator.getInterpolation(this.wavesEnter) * 0.35f) + 0.65f;
         this.blobDrawable.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
-        this.blobDrawable2.update(this.amplitude, !this.stub ? 0.1f : 0.8f);
+        this.blobDrawable2.update(this.amplitude, this.stub ? 0.1f : 0.8f);
         while (i < i2) {
         }
         if (this.removed) {

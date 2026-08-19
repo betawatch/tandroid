@@ -4,7 +4,7 @@ import android.util.Log;
 import java.io.Writer;
 
 /* loaded from: classes.dex */
-final class LogWriter extends Writer {
+final class LogWriter extends Writer implements AutoCloseable {
     private StringBuilder mBuilder = new StringBuilder(128);
     private final String mTag;
 

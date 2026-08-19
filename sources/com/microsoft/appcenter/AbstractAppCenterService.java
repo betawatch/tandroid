@@ -132,18 +132,23 @@ public abstract class AbstractAppCenterService implements AppCenterService {
 
     @Override // com.microsoft.appcenter.AppCenterService
     public synchronized void onStarted(Context context, Channel channel, String str, String str2, boolean z) {
+        Channel channel2;
         try {
             String groupName = getGroupName();
             boolean isInstanceEnabled = isInstanceEnabled();
             if (groupName != null) {
                 channel.removeGroup(groupName);
                 if (isInstanceEnabled) {
-                    channel.addGroup(groupName, getTriggerCount(), getTriggerInterval(), getTriggerMaxParallelRequests(), null, getChannelListener());
+                    channel2 = channel;
+                    channel2.addGroup(groupName, getTriggerCount(), getTriggerInterval(), getTriggerMaxParallelRequests(), null, getChannelListener());
                 } else {
-                    channel.clear(groupName);
+                    channel2 = channel;
+                    channel2.clear(groupName);
                 }
+            } else {
+                channel2 = channel;
             }
-            this.mChannel = channel;
+            this.mChannel = channel2;
             applyEnabledState(isInstanceEnabled);
         } catch (Throwable th) {
             throw th;

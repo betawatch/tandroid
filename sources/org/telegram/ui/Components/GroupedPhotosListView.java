@@ -122,23 +122,36 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
         this.imagesToDraw.clear();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:138:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0265  */
-    /* JADX WARN: Type inference failed for: r3v12 */
-    /* JADX WARN: Type inference failed for: r3v13, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r3v21 */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:139:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x018f  */
+    /* JADX WARN: Type inference failed for: r13v10, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r15v0 */
+    /* JADX WARN: Type inference failed for: r15v12, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r15v13, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r15v20 */
+    /* JADX WARN: Type inference failed for: r15v21, types: [int] */
+    /* JADX WARN: Type inference failed for: r15v22 */
+    /* JADX WARN: Type inference failed for: r15v25 */
+    /* JADX WARN: Type inference failed for: r15v26 */
+    /* JADX WARN: Type inference failed for: r15v27 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void fillList() {
         ArrayList arrayList;
+        ?? r15;
+        long j;
         boolean z;
         Object obj;
-        TL_iv.PageBlock pageBlock;
-        boolean z2;
         int i;
-        ?? r3;
-        int i2 = 0;
+        int i2;
+        Object obj2;
+        boolean z2;
+        Object obj3;
+        boolean z3;
+        boolean z4;
+        Object obj4;
         if (this.ignoreChanges) {
             this.ignoreChanges = false;
             return;
@@ -154,314 +167,335 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
             if (currentIndex >= imagesArrLocations.size()) {
                 currentIndex = imagesArrLocations.size() - 1;
             }
-            ImageLocation imageLocation = (ImageLocation) imagesArrLocations.get(currentIndex);
-            int size = imagesArrLocations.size();
+            Object obj5 = (ImageLocation) imagesArrLocations.get(currentIndex);
+            i = imagesArrLocations.size();
             this.hasPhotos = true;
             arrayList = imagesArrLocations;
-            i2 = size;
             z = false;
-            obj = imageLocation;
-        } else if (imagesArr != null && !imagesArr.isEmpty()) {
-            if (currentIndex >= imagesArr.size()) {
-                currentIndex = imagesArr.size() - 1;
-            }
-            MessageObject messageObject = (MessageObject) imagesArr.get(currentIndex);
-            long groupIdForUse = messageObject.getGroupIdForUse();
-            if (groupIdForUse != this.currentGroupId) {
-                this.currentGroupId = groupIdForUse;
-                z = true;
-            } else {
-                z = false;
-            }
-            boolean z3 = imagesArr.size() > 1 && this.delegate.forceAll();
-            if (this.currentGroupId != 0 || z3) {
-                this.hasPhotos = true;
-                int min = Math.min(currentIndex + 10, imagesArr.size());
-                int i3 = 0;
-                for (int i4 = currentIndex; i4 < min; i4++) {
-                    MessageObject messageObject2 = (MessageObject) imagesArr.get(i4);
-                    if (slideshowMessageId == 0 && !z3 && messageObject2.getGroupIdForUse() != this.currentGroupId) {
-                        break;
-                    }
-                    i3++;
-                }
-                int max = Math.max(currentIndex - 10, 0);
-                int i5 = currentIndex - 1;
-                int i6 = i3;
-                while (true) {
-                    if (i5 < max) {
-                        arrayList = imagesArrLocations;
-                        break;
-                    }
-                    MessageObject messageObject3 = (MessageObject) imagesArr.get(i5);
-                    if (slideshowMessageId == 0 && !z3) {
-                        arrayList = imagesArrLocations;
-                        if (messageObject3.getGroupIdForUse() != this.currentGroupId) {
-                            break;
-                        }
-                    } else {
-                        arrayList = imagesArrLocations;
-                    }
-                    i6++;
-                    i5--;
-                    imagesArrLocations = arrayList;
-                }
-                i2 = i6;
-                obj = messageObject;
-            } else {
-                arrayList = imagesArrLocations;
-                obj = messageObject;
-            }
+            z4 = false;
+            j = 0;
+            obj4 = obj5;
         } else {
-            arrayList = imagesArrLocations;
-            if (pageBlockArr == null || pageBlockArr.isEmpty()) {
-                z = false;
-                i2 = 0;
-                obj = null;
-            } else {
-                TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) pageBlockArr.get(currentIndex);
-                long j = pageBlock2.groupId;
-                if (j != this.currentGroupId) {
-                    this.currentGroupId = j;
+            if (imagesArr != null && !imagesArr.isEmpty()) {
+                if (currentIndex >= imagesArr.size()) {
+                    currentIndex = imagesArr.size() - 1;
+                }
+                ?? r13 = (MessageObject) imagesArr.get(currentIndex);
+                long groupIdForUse = r13.getGroupIdForUse();
+                j = 0;
+                if (groupIdForUse != this.currentGroupId) {
+                    this.currentGroupId = groupIdForUse;
                     z = true;
                 } else {
                     z = false;
                 }
-                if (this.currentGroupId != 0) {
+                boolean z5 = imagesArr.size() > 1 && this.delegate.forceAll();
+                if (this.currentGroupId != 0 || z5) {
                     this.hasPhotos = true;
-                    int size2 = pageBlockArr.size();
-                    int i7 = currentIndex;
-                    i2 = 0;
-                    TL_iv.PageBlock pageBlock3 = pageBlock2;
-                    while (true) {
-                        if (i7 >= size2) {
-                            pageBlock = pageBlock3;
-                            break;
-                        }
-                        pageBlock = pageBlock3;
-                        if (((TL_iv.PageBlock) pageBlockArr.get(i7)).groupId != this.currentGroupId) {
-                            break;
-                        }
-                        i2++;
-                        i7++;
-                        pageBlock3 = pageBlock;
-                    }
-                    for (int i8 = currentIndex - 1; i8 >= 0 && ((TL_iv.PageBlock) pageBlockArr.get(i8)).groupId == this.currentGroupId; i8--) {
-                        i2++;
-                    }
-                    obj = pageBlock;
-                } else {
-                    i2 = 0;
-                    obj = pageBlock2;
-                }
-            }
-        }
-        if (obj == null) {
-            return;
-        }
-        if (this.animationsEnabled) {
-            if (!this.hasPhotos) {
-                ValueAnimator valueAnimator = this.showAnimator;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    this.showAnimator = null;
-                }
-                if (this.drawAlpha > 0.0f && this.currentPhotos.size() > 1) {
-                    if (this.hideAnimator == null) {
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.drawAlpha, 0.0f);
-                        this.hideAnimator = ofFloat;
-                        ofFloat.setDuration((long) (this.drawAlpha * 200.0f));
-                        this.hideAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.GroupedPhotosListView.1
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationEnd(Animator animator) {
-                                if (GroupedPhotosListView.this.hideAnimator == animator) {
-                                    GroupedPhotosListView.this.hideAnimator = null;
-                                    GroupedPhotosListView.this.fillList();
-                                }
-                            }
-                        });
-                        this.hideAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.GroupedPhotosListView$$ExternalSyntheticLambda0
-                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                GroupedPhotosListView.this.lambda$fillList$0(valueAnimator2);
-                            }
-                        });
-                        this.hideAnimator.start();
-                        return;
-                    }
-                    return;
-                }
-            } else {
-                ValueAnimator valueAnimator2 = this.hideAnimator;
-                if (valueAnimator2 != null) {
-                    this.hideAnimator = null;
-                    valueAnimator2.cancel();
-                }
-                float f = this.drawAlpha;
-                if (f < 1.0f && this.showAnimator == null) {
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f, 1.0f);
-                    this.showAnimator = ofFloat2;
-                    ofFloat2.setDuration((long) ((1.0f - this.drawAlpha) * 200.0f));
-                    this.showAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.GroupedPhotosListView.2
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationStart(Animator animator) {
-                            if (GroupedPhotosListView.this.delegate != null) {
-                                GroupedPhotosListView.this.delegate.onShowAnimationStart();
-                            }
-                        }
-
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationEnd(Animator animator) {
-                            if (GroupedPhotosListView.this.showAnimator == animator) {
-                                GroupedPhotosListView.this.showAnimator = null;
-                            }
-                        }
-                    });
-                    this.showAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.GroupedPhotosListView$$ExternalSyntheticLambda1
-                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                        public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                            GroupedPhotosListView.this.lambda$fillList$1(valueAnimator3);
-                        }
-                    });
-                }
-            }
-        }
-        if (!z) {
-            if (i2 == this.currentPhotos.size() && this.currentObjects.contains(obj)) {
-                int indexOf = this.currentObjects.indexOf(obj);
-                int i9 = this.currentImage;
-                if (i9 != indexOf && indexOf != -1) {
-                    boolean z4 = this.animateAllLine;
-                    if (!z4 && !this.moving && (indexOf == i9 - 1 || indexOf == i9 + 1)) {
-                        this.animateToItemFast = true;
-                        z4 = true;
-                    }
-                    if (z4) {
-                        this.animateToItem = indexOf;
-                        this.nextImage = indexOf;
-                        this.animateToDX = (i9 - indexOf) * (this.itemWidth + this.itemSpacing);
-                        this.moving = true;
-                        this.animateAllLine = false;
-                        this.lastUpdateTime = System.currentTimeMillis();
-                        invalidate();
-                        z2 = false;
-                    } else {
-                        fillImages(true, (i9 - indexOf) * (this.itemWidth + this.itemSpacing));
-                        this.currentImage = indexOf;
-                        z2 = false;
-                        this.moving = false;
-                    }
-                    this.drawDx = z2 ? 1 : 0;
-                }
-            } else {
-                z2 = false;
-                z = true;
-            }
-            if (z) {
-                return;
-            }
-            int size3 = this.currentPhotos.size();
-            this.animateAllLine = z2;
-            this.currentPhotos.clear();
-            this.currentObjects.clear();
-            if (arrayList != null && !arrayList.isEmpty()) {
-                ArrayList arrayList2 = arrayList;
-                this.currentObjects.addAll(arrayList2);
-                this.currentPhotos.addAll(arrayList2);
-                this.currentImage = currentIndex;
-                this.animateToItem = -1;
-                this.animateToItemFast = false;
-            } else if (imagesArr != null && !imagesArr.isEmpty()) {
-                boolean z5 = this.delegate.forceAll() && imagesArr.size() > 1;
-                if (this.currentGroupId != 0 || z5 || slideshowMessageId != 0) {
-                    int min2 = Math.min(currentIndex + 10, imagesArr.size());
-                    int i10 = currentIndex;
-                    while (true) {
-                        if (i10 >= min2) {
-                            i = currentIndex;
-                            r3 = 0;
-                            break;
-                        }
-                        MessageObject messageObject4 = (MessageObject) imagesArr.get(i10);
+                    int min = Math.min(currentIndex + 10, imagesArr.size());
+                    int i3 = 0;
+                    for (int i4 = currentIndex; i4 < min; i4++) {
+                        MessageObject messageObject = (MessageObject) imagesArr.get(i4);
                         if (slideshowMessageId == 0 && !z5) {
-                            i = currentIndex;
-                            if (messageObject4.getGroupIdForUse() != this.currentGroupId) {
-                                r3 = 0;
+                            if (messageObject.getGroupIdForUse() != this.currentGroupId) {
+                                break;
+                            }
+                        }
+                        i3++;
+                    }
+                    int max = Math.max(currentIndex - 10, 0);
+                    int i5 = currentIndex - 1;
+                    i = i3;
+                    while (true) {
+                        if (i5 < max) {
+                            arrayList = imagesArrLocations;
+                            z3 = false;
+                            break;
+                        }
+                        MessageObject messageObject2 = (MessageObject) imagesArr.get(i5);
+                        if (slideshowMessageId == 0 && !z5) {
+                            long groupIdForUse2 = messageObject2.getGroupIdForUse();
+                            arrayList = imagesArrLocations;
+                            z3 = false;
+                            if (groupIdForUse2 != this.currentGroupId) {
                                 break;
                             }
                         } else {
-                            i = currentIndex;
+                            arrayList = imagesArrLocations;
                         }
-                        this.currentObjects.add(messageObject4);
-                        this.currentPhotos.add(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject4.photoThumbs, 56, true), messageObject4.photoThumbsObject));
-                        i10++;
-                        currentIndex = i;
+                        i++;
+                        i5--;
+                        imagesArrLocations = arrayList;
                     }
-                    this.currentImage = r3;
-                    this.animateToItem = -1;
-                    this.animateToItemFast = r3;
-                    int max2 = Math.max(i - 10, (int) r3);
-                    for (int i11 = i - 1; i11 >= max2; i11--) {
-                        MessageObject messageObject5 = (MessageObject) imagesArr.get(i11);
-                        if (slideshowMessageId == 0 && !z5 && messageObject5.getGroupIdForUse() != this.currentGroupId) {
-                            break;
-                        }
-                        this.currentObjects.add(0, messageObject5);
-                        this.currentPhotos.add(0, ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject5.photoThumbs, 56, true), messageObject5.photoThumbsObject));
-                        this.currentImage++;
-                    }
+                    obj3 = r13;
+                    r15 = z3;
+                } else {
+                    arrayList = imagesArrLocations;
+                    i = 0;
+                    z4 = false;
+                    obj4 = r13;
                 }
             } else {
-                int i12 = currentIndex;
-                if (pageBlockArr != null && !pageBlockArr.isEmpty() && this.currentGroupId != 0) {
-                    int size4 = pageBlockArr.size();
-                    for (int i13 = i12; i13 < size4; i13++) {
-                        TL_iv.PageBlock pageBlock4 = (TL_iv.PageBlock) pageBlockArr.get(i13);
-                        if (pageBlock4.groupId != this.currentGroupId) {
+                arrayList = imagesArrLocations;
+                r15 = 0;
+                r15 = 0;
+                j = 0;
+                if (pageBlockArr == null || pageBlockArr.isEmpty()) {
+                    currentIndex = currentIndex;
+                    z = false;
+                    obj = null;
+                } else {
+                    TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) pageBlockArr.get(currentIndex);
+                    long j2 = pageBlock.groupId;
+                    if (j2 != this.currentGroupId) {
+                        this.currentGroupId = j2;
+                        z = true;
+                    } else {
+                        z = false;
+                    }
+                    if (this.currentGroupId != 0) {
+                        this.hasPhotos = true;
+                        int size = pageBlockArr.size();
+                        int i6 = currentIndex;
+                        int i7 = 0;
+                        Object obj6 = pageBlock;
+                        while (true) {
+                            if (i6 >= size) {
+                                i2 = currentIndex;
+                                obj2 = obj6;
+                                break;
+                            }
+                            i2 = currentIndex;
+                            obj2 = obj6;
+                            if (((TL_iv.PageBlock) pageBlockArr.get(i6)).groupId != this.currentGroupId) {
+                                break;
+                            }
+                            i7++;
+                            i6++;
+                            obj6 = obj2;
+                            currentIndex = i2;
+                        }
+                        int i8 = i2 - 1;
+                        while (true) {
+                            if (i8 < 0) {
+                                z2 = z;
+                                break;
+                            }
+                            z2 = z;
+                            if (((TL_iv.PageBlock) pageBlockArr.get(i8)).groupId != this.currentGroupId) {
+                                break;
+                            }
+                            i7++;
+                            i8--;
+                            z = z2;
+                        }
+                        z = z2;
+                        obj3 = obj2;
+                        currentIndex = i2;
+                        i = i7;
+                    } else {
+                        obj = pageBlock;
+                    }
+                }
+                i = 0;
+                obj3 = obj;
+            }
+            if (obj3 != null) {
+                return;
+            }
+            if (this.animationsEnabled) {
+                if (!this.hasPhotos) {
+                    ValueAnimator valueAnimator = this.showAnimator;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        this.showAnimator = null;
+                    }
+                    if (this.drawAlpha > 0.0f && this.currentPhotos.size() > 1) {
+                        if (this.hideAnimator == null) {
+                            float[] fArr = new float[2];
+                            fArr[r15] = this.drawAlpha;
+                            fArr[1] = 0.0f;
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
+                            this.hideAnimator = ofFloat;
+                            ofFloat.setDuration((long) (this.drawAlpha * 200.0f));
+                            this.hideAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.GroupedPhotosListView.1
+                                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                                public void onAnimationEnd(Animator animator) {
+                                    if (GroupedPhotosListView.this.hideAnimator == animator) {
+                                        GroupedPhotosListView.this.hideAnimator = null;
+                                        GroupedPhotosListView.this.fillList();
+                                    }
+                                }
+                            });
+                            this.hideAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.GroupedPhotosListView$$ExternalSyntheticLambda0
+                                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                    GroupedPhotosListView.$r8$lambda$KepaK_8oXCcSf_cbb0QgwVgL6ns(GroupedPhotosListView.this, valueAnimator2);
+                                }
+                            });
+                            this.hideAnimator.start();
+                            return;
+                        }
+                        return;
+                    }
+                } else {
+                    ValueAnimator valueAnimator2 = this.hideAnimator;
+                    if (valueAnimator2 != null) {
+                        this.hideAnimator = null;
+                        valueAnimator2.cancel();
+                    }
+                    float f = this.drawAlpha;
+                    if (f < 1.0f && this.showAnimator == null) {
+                        float[] fArr2 = new float[2];
+                        fArr2[r15] = f;
+                        fArr2[1] = 1.0f;
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(fArr2);
+                        this.showAnimator = ofFloat2;
+                        ofFloat2.setDuration((long) ((1.0f - this.drawAlpha) * 200.0f));
+                        this.showAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.GroupedPhotosListView.2
+                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                            public void onAnimationStart(Animator animator) {
+                                if (GroupedPhotosListView.this.delegate != null) {
+                                    GroupedPhotosListView.this.delegate.onShowAnimationStart();
+                                }
+                            }
+
+                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                            public void onAnimationEnd(Animator animator) {
+                                if (GroupedPhotosListView.this.showAnimator == animator) {
+                                    GroupedPhotosListView.this.showAnimator = null;
+                                }
+                            }
+                        });
+                        this.showAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.GroupedPhotosListView$$ExternalSyntheticLambda1
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
+                                GroupedPhotosListView.$r8$lambda$OIrEb7L_MZwr_NKa3XEvCI9sUdo(GroupedPhotosListView.this, valueAnimator3);
+                            }
+                        });
+                    }
+                }
+            }
+            if (!z) {
+                if (i == this.currentPhotos.size() && this.currentObjects.contains(obj3)) {
+                    int indexOf = this.currentObjects.indexOf(obj3);
+                    int i9 = this.currentImage;
+                    if (i9 != indexOf && indexOf != -1) {
+                        boolean z6 = this.animateAllLine;
+                        if (!z6 && !this.moving && (indexOf == i9 - 1 || indexOf == i9 + 1)) {
+                            this.animateToItemFast = true;
+                            z6 = true;
+                        }
+                        if (z6) {
+                            this.animateToItem = indexOf;
+                            this.nextImage = indexOf;
+                            this.animateToDX = (i9 - indexOf) * (this.itemWidth + this.itemSpacing);
+                            this.moving = true;
+                            this.animateAllLine = r15;
+                            this.lastUpdateTime = System.currentTimeMillis();
+                            invalidate();
+                            r15 = 0;
+                        } else {
+                            fillImages(true, (i9 - indexOf) * (this.itemWidth + this.itemSpacing));
+                            this.currentImage = indexOf;
+                            r15 = 0;
+                            this.moving = false;
+                        }
+                        this.drawDx = r15;
+                    }
+                } else {
+                    z = true;
+                }
+            }
+            if (z) {
+                int size2 = this.currentPhotos.size();
+                this.animateAllLine = r15;
+                this.currentPhotos.clear();
+                this.currentObjects.clear();
+                if (arrayList != null && !arrayList.isEmpty()) {
+                    ArrayList arrayList2 = arrayList;
+                    this.currentObjects.addAll(arrayList2);
+                    this.currentPhotos.addAll(arrayList2);
+                    this.currentImage = currentIndex;
+                    this.animateToItem = -1;
+                    this.animateToItemFast = false;
+                } else if (imagesArr != null && !imagesArr.isEmpty()) {
+                    boolean z7 = this.delegate.forceAll() && imagesArr.size() > 1;
+                    if (this.currentGroupId != j || z7 || slideshowMessageId != 0) {
+                        int min2 = Math.min(currentIndex + 10, imagesArr.size());
+                        for (int i10 = currentIndex; i10 < min2; i10++) {
+                            MessageObject messageObject3 = (MessageObject) imagesArr.get(i10);
+                            if (slideshowMessageId == 0 && !z7 && messageObject3.getGroupIdForUse() != this.currentGroupId) {
+                                break;
+                            }
+                            this.currentObjects.add(messageObject3);
+                            this.currentPhotos.add(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject3.photoThumbs, 56, true), messageObject3.photoThumbsObject));
+                        }
+                        this.currentImage = 0;
+                        this.animateToItem = -1;
+                        this.animateToItemFast = false;
+                        int max2 = Math.max(currentIndex - 10, 0);
+                        for (int i11 = currentIndex - 1; i11 >= max2; i11--) {
+                            MessageObject messageObject4 = (MessageObject) imagesArr.get(i11);
+                            if (slideshowMessageId == 0 && !z7 && messageObject4.getGroupIdForUse() != this.currentGroupId) {
+                                break;
+                            }
+                            this.currentObjects.add(0, messageObject4);
+                            this.currentPhotos.add(0, ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject4.photoThumbs, 56, true), messageObject4.photoThumbsObject));
+                            this.currentImage++;
+                        }
+                    }
+                } else if (pageBlockArr != null && !pageBlockArr.isEmpty() && this.currentGroupId != j) {
+                    int size3 = pageBlockArr.size();
+                    for (int i12 = currentIndex; i12 < size3; i12++) {
+                        TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) pageBlockArr.get(i12);
+                        if (pageBlock2.groupId != this.currentGroupId) {
                             break;
                         }
-                        this.currentObjects.add(pageBlock4);
-                        this.currentPhotos.add(ImageLocation.getForObject(pageBlock4.thumb, pageBlock4.thumbObject));
+                        this.currentObjects.add(pageBlock2);
+                        this.currentPhotos.add(ImageLocation.getForObject(pageBlock2.thumb, pageBlock2.thumbObject));
                     }
                     this.currentImage = 0;
                     this.animateToItem = -1;
                     this.animateToItemFast = false;
-                    for (int i14 = i12 - 1; i14 >= 0; i14--) {
-                        TL_iv.PageBlock pageBlock5 = (TL_iv.PageBlock) pageBlockArr.get(i14);
-                        if (pageBlock5.groupId != this.currentGroupId) {
+                    for (int i13 = currentIndex - 1; i13 >= 0; i13--) {
+                        TL_iv.PageBlock pageBlock3 = (TL_iv.PageBlock) pageBlockArr.get(i13);
+                        if (pageBlock3.groupId != this.currentGroupId) {
                             break;
                         }
-                        this.currentObjects.add(0, pageBlock5);
-                        this.currentPhotos.add(0, ImageLocation.getForObject(pageBlock5.thumb, pageBlock5.thumbObject));
+                        this.currentObjects.add(0, pageBlock3);
+                        this.currentPhotos.add(0, ImageLocation.getForObject(pageBlock3.thumb, pageBlock3.thumbObject));
                         this.currentImage++;
                     }
                 }
+                if (this.currentPhotos.size() == 1) {
+                    this.currentPhotos.clear();
+                    this.currentObjects.clear();
+                }
+                if (this.currentPhotos.size() != size2) {
+                    requestLayout();
+                }
+                fillImages(false, 0);
+                return;
             }
-            if (this.currentPhotos.size() == 1) {
-                this.currentPhotos.clear();
-                this.currentObjects.clear();
-            }
-            if (this.currentPhotos.size() != size3) {
-                requestLayout();
-            }
-            fillImages(false, 0);
             return;
         }
-        z2 = false;
-        if (z) {
+        obj3 = obj4;
+        r15 = z4;
+        if (obj3 != null) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillList$0(ValueAnimator valueAnimator) {
-        this.drawAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$KepaK_8oXCcSf_cbb0QgwVgL6ns(GroupedPhotosListView groupedPhotosListView, ValueAnimator valueAnimator) {
+        groupedPhotosListView.getClass();
+        groupedPhotosListView.drawAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        groupedPhotosListView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillList$1(ValueAnimator valueAnimator) {
-        this.drawAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$OIrEb7L_MZwr_NKa3XEvCI9sUdo(GroupedPhotosListView groupedPhotosListView, ValueAnimator valueAnimator) {
+        groupedPhotosListView.getClass();
+        groupedPhotosListView.drawAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        groupedPhotosListView.invalidate();
     }
 
     public int getCount() {
@@ -922,7 +956,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                                     this.currentItemProgress = 0.0f;
                                 }
                             }
-                            this.drawDx = this.animateToDXStart + ((int) Math.ceil(r5 * (this.animateToDX - r1)));
+                            this.drawDx = this.animateToDXStart + ((int) Math.ceil(r6 * (this.animateToDX - r1)));
                         } else {
                             this.currentItemProgress = cubicBezierInterpolator.getInterpolation(this.moveLineProgress);
                             this.drawDx = (int) Math.ceil(this.nextItemProgress * this.animateToDX);
@@ -973,8 +1007,14 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
     }
 
     public boolean hasPhotos() {
-        ValueAnimator valueAnimator;
-        return this.hasPhotos && this.hideAnimator == null && (this.drawAlpha > 0.0f || !this.animateBackground || ((valueAnimator = this.showAnimator) != null && valueAnimator.isStarted()));
+        if (!this.hasPhotos || this.hideAnimator != null) {
+            return false;
+        }
+        if (this.drawAlpha > 0.0f || !this.animateBackground) {
+            return true;
+        }
+        ValueAnimator valueAnimator = this.showAnimator;
+        return valueAnimator != null && valueAnimator.isStarted();
     }
 
     public void setAnimationsEnabled(boolean z) {

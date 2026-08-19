@@ -98,7 +98,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                StickerEmptyView.this.lambda$new$0(view2);
+                StickerEmptyView.this.stickerView.getImageReceiver().startAnimation();
             }
         });
         SpoilersTextView spoilersTextView = new SpoilersTextView(context);
@@ -133,11 +133,6 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
             this.progressBar.setScaleX(0.5f);
             addView(this.progressBar, LayoutHelper.createFrame(-2, -2, 17));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.stickerView.getImageReceiver().startAnimation();
     }
 
     public void createButtonLayout(CharSequence charSequence, final Runnable runnable) {
@@ -508,7 +503,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
                 this.visibilityAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerEmptyView$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StickerEmptyView.this.lambda$setVisibility$2(valueAnimator2);
+                        StickerEmptyView.$r8$lambda$vjFuOerJO4DZOynBWrGEgXpQeaU(StickerEmptyView.this, valueAnimator2);
                     }
                 });
                 this.visibilityAnimator.start();
@@ -516,11 +511,11 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVisibility$2(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$vjFuOerJO4DZOynBWrGEgXpQeaU(StickerEmptyView stickerEmptyView, ValueAnimator valueAnimator) {
+        stickerEmptyView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.visibilityFactor = floatValue;
-        onVisibilityChange(floatValue);
+        stickerEmptyView.visibilityFactor = floatValue;
+        stickerEmptyView.onVisibilityChange(floatValue);
     }
 
     protected void onVisibilityChange(float f) {

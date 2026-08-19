@@ -1,46 +1,31 @@
 package j$.util.stream;
 
-import j$.util.stream.Collector;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.stream.Collector;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class X2 {
-    public static Set a(Set set) {
-        if (set == null || set.isEmpty()) {
-            return set;
+public final class X2 extends Y2 implements LongConsumer {
+    public final long[] c;
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    }
+
+    public X2(int i) {
+        this.c = new long[i];
+    }
+
+    @Override // j$.util.stream.Y2
+    public final void b(Object obj, long j) {
+        LongConsumer longConsumer = (LongConsumer) obj;
+        for (int i = 0; i < j; i++) {
+            longConsumer.accept(this.c[i]);
         }
-        HashSet hashSet = new HashSet();
-        Object next = set.iterator().next();
-        if (next instanceof Collector.Characteristics) {
-            Iterator it = set.iterator();
-            while (it.hasNext()) {
-                try {
-                    Collector.Characteristics characteristics = (Collector.Characteristics) it.next();
-                    hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? Collector.Characteristics.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-                } catch (ClassCastException e) {
-                    j$.util.f.a("java.util.stream.Collector.Characteristics", e);
-                    throw null;
-                }
-            }
-            return hashSet;
-        }
-        if (!(next instanceof Collector.Characteristics)) {
-            j$.util.f.a("java.util.stream.Collector.Characteristics", next.getClass());
-            throw null;
-        }
-        Iterator it2 = set.iterator();
-        while (it2.hasNext()) {
-            try {
-                Collector.Characteristics characteristics2 = (Collector.Characteristics) it2.next();
-                hashSet.add(characteristics2 == null ? null : characteristics2 == Collector.Characteristics.CONCURRENT ? Collector.Characteristics.CONCURRENT : characteristics2 == Collector.Characteristics.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-            } catch (ClassCastException e2) {
-                j$.util.f.a("java.util.stream.Collector.Characteristics", e2);
-                throw null;
-            }
-        }
-        return hashSet;
+    }
+
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        int i = this.b;
+        this.b = i + 1;
+        this.c[i] = j;
     }
 }

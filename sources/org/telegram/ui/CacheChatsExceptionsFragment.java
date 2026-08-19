@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CacheByChatsController;
@@ -92,7 +91,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                CacheChatsExceptionsFragment.this.lambda$createView$3(view, i, f, f2);
+                CacheChatsExceptionsFragment.$r8$lambda$ahpzqgAYT8EcHLiqTiKMnhi1XDQ(CacheChatsExceptionsFragment.this, view, i, f, f2);
             }
         });
         frameLayout.addView(this.recyclerListView);
@@ -101,13 +100,12 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(View view, int i, float f, float f2) {
-        if (((Item) this.items.get(i)).viewType == 1) {
+    public static /* synthetic */ void $r8$lambda$ahpzqgAYT8EcHLiqTiKMnhi1XDQ(final CacheChatsExceptionsFragment cacheChatsExceptionsFragment, View view, int i, float f, float f2) {
+        if (((Item) cacheChatsExceptionsFragment.items.get(i)).viewType == 1) {
             Bundle bundle = new Bundle();
             bundle.putBoolean("onlySelect", true);
             bundle.putBoolean("checkCanWrite", false);
-            int i2 = this.currentType;
+            int i2 = cacheChatsExceptionsFragment.currentType;
             if (i2 == 1) {
                 bundle.putInt("dialogsType", 6);
             } else if (i2 == 2) {
@@ -125,9 +123,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i3, int i4, TopicsFragment topicsFragment) {
-                    boolean lambda$createView$0;
-                    lambda$createView$0 = CacheChatsExceptionsFragment.this.lambda$createView$0(dialogsActivity, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
-                    return lambda$createView$0;
+                    return CacheChatsExceptionsFragment.$r8$lambda$-ZbRlHZg-Nb8zBrVy_2YDlhOFLI(CacheChatsExceptionsFragment.this, dialogsActivity, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
                 }
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -135,27 +131,27 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                     return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                 }
             });
-            presentFragment(dialogsActivity);
+            cacheChatsExceptionsFragment.presentFragment(dialogsActivity);
             return;
         }
-        if (((Item) this.items.get(i)).viewType == 2) {
-            final CacheByChatsController.KeepMediaException keepMediaException = ((Item) this.items.get(i)).exception;
-            KeepMediaPopupView keepMediaPopupView = new KeepMediaPopupView(this, view.getContext());
+        if (((Item) cacheChatsExceptionsFragment.items.get(i)).viewType == 2) {
+            final CacheByChatsController.KeepMediaException keepMediaException = ((Item) cacheChatsExceptionsFragment.items.get(i)).exception;
+            KeepMediaPopupView keepMediaPopupView = new KeepMediaPopupView(cacheChatsExceptionsFragment, view.getContext());
             keepMediaPopupView.updateForDialog(false);
-            keepMediaPopupView.setParentWindow(AlertsCreator.createSimplePopup(this, keepMediaPopupView, view, f, f2));
+            keepMediaPopupView.setParentWindow(AlertsCreator.createSimplePopup(cacheChatsExceptionsFragment, keepMediaPopupView, view, f, f2));
             keepMediaPopupView.setCallback(new KeepMediaPopupView.Callback() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.KeepMediaPopupView.Callback
                 public final void onKeepMediaChange(int i3, int i4) {
-                    CacheChatsExceptionsFragment.this.lambda$createView$1(keepMediaException, i3, i4);
+                    CacheChatsExceptionsFragment.$r8$lambda$-zMD6Dd4_Zo-t_McJfsgLFFYkog(CacheChatsExceptionsFragment.this, keepMediaException, i3, i4);
                 }
             });
             return;
         }
-        if (((Item) this.items.get(i)).viewType == 4) {
-            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda4
+        if (((Item) cacheChatsExceptionsFragment.items.get(i)).viewType == 4) {
+            AlertDialog create = AlertsCreator.createSimpleAlert(cacheChatsExceptionsFragment.getContext(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CacheChatsExceptionsFragment.this.lambda$createView$2();
+                    CacheChatsExceptionsFragment.$r8$lambda$wYSHLtrdb74JT_xBF51_bQT2SEg(CacheChatsExceptionsFragment.this);
                 }
             }, null).create();
             create.show();
@@ -163,8 +159,8 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$0(DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$-ZbRlHZg-Nb8zBrVy_2YDlhOFLI(CacheChatsExceptionsFragment cacheChatsExceptionsFragment, DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        cacheChatsExceptionsFragment.getClass();
         dialogsActivity.finishFragment();
         CacheByChatsController.KeepMediaException keepMediaException = null;
         int i3 = 0;
@@ -176,35 +172,35 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
             }
             int i5 = 0;
             while (true) {
-                if (i5 >= this.exceptionsDialogs.size()) {
+                if (i5 >= cacheChatsExceptionsFragment.exceptionsDialogs.size()) {
                     z3 = false;
                     break;
                 }
-                if (((CacheByChatsController.KeepMediaException) this.exceptionsDialogs.get(i5)).dialogId == ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId) {
-                    keepMediaException = (CacheByChatsController.KeepMediaException) this.exceptionsDialogs.get(i5);
+                if (((CacheByChatsController.KeepMediaException) cacheChatsExceptionsFragment.exceptionsDialogs.get(i5)).dialogId == ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId) {
+                    keepMediaException = (CacheByChatsController.KeepMediaException) cacheChatsExceptionsFragment.exceptionsDialogs.get(i5);
                     break;
                 }
                 i5++;
             }
             if (!z3) {
                 int i6 = CacheByChatsController.KEEP_MEDIA_FOREVER;
-                if (getMessagesController().getCacheByChatsController().getKeepMedia(this.currentType) == CacheByChatsController.KEEP_MEDIA_FOREVER) {
+                if (cacheChatsExceptionsFragment.getMessagesController().getCacheByChatsController().getKeepMedia(cacheChatsExceptionsFragment.currentType) == CacheByChatsController.KEEP_MEDIA_FOREVER) {
                     i6 = CacheByChatsController.KEEP_MEDIA_ONE_DAY;
                 }
-                ArrayList arrayList2 = this.exceptionsDialogs;
+                ArrayList arrayList2 = cacheChatsExceptionsFragment.exceptionsDialogs;
                 CacheByChatsController.KeepMediaException keepMediaException2 = new CacheByChatsController.KeepMediaException(((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId, i6);
                 arrayList2.add(keepMediaException2);
                 keepMediaException = keepMediaException2;
             }
             i4++;
         }
-        getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(this.currentType, this.exceptionsDialogs);
-        updateRows();
+        cacheChatsExceptionsFragment.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(cacheChatsExceptionsFragment.currentType, cacheChatsExceptionsFragment.exceptionsDialogs);
+        cacheChatsExceptionsFragment.updateRows();
         if (keepMediaException != null) {
             int i7 = 0;
             while (true) {
-                if (i7 < this.items.size()) {
-                    if (((Item) this.items.get(i7)).exception != null && ((Item) this.items.get(i7)).exception.dialogId == keepMediaException.dialogId) {
+                if (i7 < cacheChatsExceptionsFragment.items.size()) {
+                    if (((Item) cacheChatsExceptionsFragment.items.get(i7)).exception != null && ((Item) cacheChatsExceptionsFragment.items.get(i7)).exception.dialogId == keepMediaException.dialogId) {
                         i3 = i7;
                         break;
                     }
@@ -213,48 +209,46 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                     break;
                 }
             }
-            this.recyclerListView.scrollToPosition(i3);
-            showPopupFor(keepMediaException);
+            cacheChatsExceptionsFragment.recyclerListView.scrollToPosition(i3);
+            cacheChatsExceptionsFragment.showPopupFor(keepMediaException);
         }
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(CacheByChatsController.KeepMediaException keepMediaException, int i, int i2) {
+    public static /* synthetic */ void $r8$lambda$-zMD6Dd4_Zo-t_McJfsgLFFYkog(CacheChatsExceptionsFragment cacheChatsExceptionsFragment, CacheByChatsController.KeepMediaException keepMediaException, int i, int i2) {
+        cacheChatsExceptionsFragment.getClass();
         if (i2 == CacheByChatsController.KEEP_MEDIA_DELETE) {
-            this.exceptionsDialogs.remove(keepMediaException);
-            updateRows();
+            cacheChatsExceptionsFragment.exceptionsDialogs.remove(keepMediaException);
+            cacheChatsExceptionsFragment.updateRows();
         } else {
             keepMediaException.keepMedia = i2;
-            AndroidUtilities.updateVisibleRows(this.recyclerListView);
+            AndroidUtilities.updateVisibleRows(cacheChatsExceptionsFragment.recyclerListView);
         }
-        getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(this.currentType, this.exceptionsDialogs);
+        cacheChatsExceptionsFragment.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(cacheChatsExceptionsFragment.currentType, cacheChatsExceptionsFragment.exceptionsDialogs);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2() {
-        this.exceptionsDialogs.clear();
-        getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(this.currentType, this.exceptionsDialogs);
-        updateRows();
-        finishFragment();
+    public static /* synthetic */ void $r8$lambda$wYSHLtrdb74JT_xBF51_bQT2SEg(CacheChatsExceptionsFragment cacheChatsExceptionsFragment) {
+        cacheChatsExceptionsFragment.exceptionsDialogs.clear();
+        cacheChatsExceptionsFragment.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(cacheChatsExceptionsFragment.currentType, cacheChatsExceptionsFragment.exceptionsDialogs);
+        cacheChatsExceptionsFragment.updateRows();
+        cacheChatsExceptionsFragment.finishFragment();
     }
 
     public void showPopupFor(final CacheByChatsController.KeepMediaException keepMediaException) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                CacheChatsExceptionsFragment.this.lambda$showPopupFor$5(keepMediaException);
+                CacheChatsExceptionsFragment.$r8$lambda$JtV_44DlczAJRntA2IitmLrw0bo(CacheChatsExceptionsFragment.this, keepMediaException);
             }
         }, 150L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPopupFor$5(final CacheByChatsController.KeepMediaException keepMediaException) {
+    public static /* synthetic */ void $r8$lambda$JtV_44DlczAJRntA2IitmLrw0bo(final CacheChatsExceptionsFragment cacheChatsExceptionsFragment, final CacheByChatsController.KeepMediaException keepMediaException) {
         int i = 0;
         int i2 = 0;
         while (true) {
-            if (i2 < this.items.size()) {
-                if (((Item) this.items.get(i2)).exception != null && ((Item) this.items.get(i2)).exception.dialogId == keepMediaException.dialogId) {
+            if (i2 < cacheChatsExceptionsFragment.items.size()) {
+                if (((Item) cacheChatsExceptionsFragment.items.get(i2)).exception != null && ((Item) cacheChatsExceptionsFragment.items.get(i2)).exception.dialogId == keepMediaException.dialogId) {
                     i = i2;
                     break;
                 }
@@ -263,25 +257,25 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                 break;
             }
         }
-        RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.recyclerListView.findViewHolderForAdapterPosition(i);
+        RecyclerView.ViewHolder findViewHolderForAdapterPosition = cacheChatsExceptionsFragment.recyclerListView.findViewHolderForAdapterPosition(i);
         if (findViewHolderForAdapterPosition != null) {
-            KeepMediaPopupView keepMediaPopupView = new KeepMediaPopupView(this, getContext());
+            KeepMediaPopupView keepMediaPopupView = new KeepMediaPopupView(cacheChatsExceptionsFragment, cacheChatsExceptionsFragment.getContext());
             keepMediaPopupView.updateForDialog(true);
-            keepMediaPopupView.setParentWindow(AlertsCreator.createSimplePopup(this, keepMediaPopupView, findViewHolderForAdapterPosition.itemView, r2.getMeasuredWidth() / 2.0f, findViewHolderForAdapterPosition.itemView.getMeasuredHeight() / 2.0f));
+            keepMediaPopupView.setParentWindow(AlertsCreator.createSimplePopup(cacheChatsExceptionsFragment, keepMediaPopupView, findViewHolderForAdapterPosition.itemView, r2.getMeasuredWidth() / 2.0f, findViewHolderForAdapterPosition.itemView.getMeasuredHeight() / 2.0f));
             keepMediaPopupView.setCallback(new KeepMediaPopupView.Callback() { // from class: org.telegram.ui.CacheChatsExceptionsFragment$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.KeepMediaPopupView.Callback
                 public final void onKeepMediaChange(int i3, int i4) {
-                    CacheChatsExceptionsFragment.this.lambda$showPopupFor$4(keepMediaException, i3, i4);
+                    CacheChatsExceptionsFragment.$r8$lambda$GfPdSETVFtRW-sTy2iU8CXPsUNU(CacheChatsExceptionsFragment.this, keepMediaException, i3, i4);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPopupFor$4(CacheByChatsController.KeepMediaException keepMediaException, int i, int i2) {
+    public static /* synthetic */ void $r8$lambda$GfPdSETVFtRW-sTy2iU8CXPsUNU(CacheChatsExceptionsFragment cacheChatsExceptionsFragment, CacheByChatsController.KeepMediaException keepMediaException, int i, int i2) {
+        cacheChatsExceptionsFragment.getClass();
         keepMediaException.keepMedia = i2;
-        getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(this.currentType, this.exceptionsDialogs);
-        AndroidUtilities.updateVisibleRows(this.recyclerListView);
+        cacheChatsExceptionsFragment.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(cacheChatsExceptionsFragment.currentType, cacheChatsExceptionsFragment.exceptionsDialogs);
+        AndroidUtilities.updateVisibleRows(cacheChatsExceptionsFragment.recyclerListView);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -294,8 +288,8 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
     /* JADX WARN: Multi-variable type inference failed */
     private void updateRows() {
         ArrayList arrayList;
-        boolean z = false;
-        int i = 1;
+        int i = 0;
+        int i2 = 1;
         CacheByChatsController.KeepMediaException keepMediaException = null;
         Object[] objArr = 0;
         Object[] objArr2 = 0;
@@ -312,18 +306,22 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
             arrayList = null;
         }
         this.items.clear();
-        this.items.add(new Item(i, keepMediaException));
-        Iterator it = this.exceptionsDialogs.iterator();
-        while (it.hasNext()) {
-            this.items.add(new Item(2, (CacheByChatsController.KeepMediaException) it.next()));
+        this.items.add(new Item(i2, keepMediaException));
+        ArrayList arrayList2 = this.exceptionsDialogs;
+        int size = arrayList2.size();
+        boolean z = false;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            this.items.add(new Item(2, (CacheByChatsController.KeepMediaException) obj));
             z = true;
         }
-        int i2 = 3;
+        int i3 = 3;
         if (z) {
-            this.items.add(new Item(i2, objArr6 == true ? 1 : 0));
+            this.items.add(new Item(i3, objArr6 == true ? 1 : 0));
             this.items.add(new Item(4, objArr4 == true ? 1 : 0));
         }
-        this.items.add(new Item(i2, objArr2 == true ? 1 : 0));
+        this.items.add(new Item(i3, objArr2 == true ? 1 : 0));
         Adapter adapter = this.adapter;
         if (adapter != null) {
             if (arrayList != null) {
@@ -353,20 +351,22 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
                 textCell.setColors(Theme.key_windowBackgroundWhiteBlueIcon, Theme.key_windowBackgroundWhiteBlueButton);
                 textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 view = textCell;
-            } else if (i == 2) {
-                View userCell = new UserCell(viewGroup.getContext(), 4, 0, false, false);
-                userCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                view = userCell;
-            } else if (i == 3) {
-                view = new ShadowSectionCell(viewGroup.getContext());
-            } else if (i == 4) {
-                TextCell textCell2 = new TextCell(viewGroup.getContext());
-                textCell2.setText(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                textCell2.setColors(-1, Theme.key_text_RedRegular);
-                textCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                view = textCell2;
             } else {
-                view2 = null;
+                if (i == 2) {
+                    View userCell = new UserCell(viewGroup.getContext(), 4, 0, false, false);
+                    userCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                    view2 = userCell;
+                } else if (i == 3) {
+                    view = new ShadowSectionCell(viewGroup.getContext());
+                } else if (i != 4) {
+                    view2 = null;
+                } else {
+                    TextCell textCell2 = new TextCell(viewGroup.getContext());
+                    textCell2.setText(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
+                    textCell2.setColors(-1, Theme.key_text_RedRegular);
+                    textCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                    view = textCell2;
+                }
                 view2.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
                 return new RecyclerListView.Holder(view2);
             }
@@ -414,7 +414,8 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
         }
     }
 
-    private class Item extends AdapterWithDiffUtils.Item {
+    /* JADX INFO: Access modifiers changed from: private */
+    class Item extends AdapterWithDiffUtils.Item {
         final CacheByChatsController.KeepMediaException exception;
 
         private Item(int i, CacheByChatsController.KeepMediaException keepMediaException) {

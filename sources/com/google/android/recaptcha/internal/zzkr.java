@@ -4,9 +4,14 @@ import java.math.BigInteger;
 
 /* loaded from: classes.dex */
 public final class zzkr {
-    private static final zzkq zza = new zzkq(11, ((long) Math.pow(2.0d, 32.0d)) ^ 20919936621L, (long) Math.pow(2.0d, 48.0d));
+    private static final zzkq zza;
     private final zzkq zzb;
     private long zzc;
+
+    static {
+        long pow = (long) Math.pow(2.0d, 32.0d);
+        zza = new zzkq(11L, 20919936621L ^ pow, (long) Math.pow(2.0d, 48.0d));
+    }
 
     public zzkr(long j, long j2, zzkq zzkqVar) {
         this.zzb = zzkqVar;

@@ -27,12 +27,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.audioinfo.AudioInfo;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
@@ -110,13 +108,13 @@ public class TelegramMediaSession {
         NotificationCenter.getGlobalInstance().addObserver(new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.TelegramMediaSession$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i2, int i3, Object[] objArr) {
-                TelegramMediaSession.this.lambda$new$0(i2, i3, objArr);
+                TelegramMediaSession.$r8$lambda$jezY6QMUp6T-oucBD3AhEsJ7cOI(TelegramMediaSession.this, i2, i3, objArr);
             }
         }, NotificationCenter.activeAccountChanged);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i, int i2, Object[] objArr) {
+    public static /* synthetic */ void $r8$lambda$jezY6QMUp6T-oucBD3AhEsJ7cOI(final TelegramMediaSession telegramMediaSession, int i, int i2, Object[] objArr) {
+        telegramMediaSession.getClass();
         if (i == NotificationCenter.activeAccountChanged) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.TelegramMediaSession$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
@@ -163,16 +161,13 @@ public class TelegramMediaSession {
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.TelegramMediaSession$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$getMusicDialogsSortedByVisibleOrder$1;
-                lambda$getMusicDialogsSortedByVisibleOrder$1 = TelegramMediaSession.lambda$getMusicDialogsSortedByVisibleOrder$1(hashMap, (Long) obj, (Long) obj2);
-                return lambda$getMusicDialogsSortedByVisibleOrder$1;
+                return TelegramMediaSession.$r8$lambda$cihtYxXuxHQw1A0I58GMvv0fQng(hashMap, (Long) obj, (Long) obj2);
             }
         });
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getMusicDialogsSortedByVisibleOrder$1(HashMap hashMap, Long l, Long l2) {
+    public static /* synthetic */ int $r8$lambda$cihtYxXuxHQw1A0I58GMvv0fQng(HashMap hashMap, Long l, Long l2) {
         Integer num = (Integer) hashMap.get(l);
         Integer num2 = (Integer) hashMap.get(l2);
         if (num == null && num2 == null) {
@@ -217,7 +212,13 @@ public class TelegramMediaSession {
     public boolean isPasscodeLocked() {
         int i;
         int elapsedRealtime = (int) (SystemClock.elapsedRealtime() / 1000);
-        return SharedConfig.passcodeHash.length() > 0 && (SharedConfig.appLocked || (!(SharedConfig.autoLockIn == 0 || (i = SharedConfig.lastPauseTime) == 0 || i + SharedConfig.autoLockIn > elapsedRealtime) || elapsedRealtime + 5 < SharedConfig.lastPauseTime));
+        if (SharedConfig.passcodeHash.length() <= 0) {
+            return false;
+        }
+        if (SharedConfig.appLocked) {
+            return true;
+        }
+        return !(SharedConfig.autoLockIn == 0 || (i = SharedConfig.lastPauseTime) == 0 || i + SharedConfig.autoLockIn > elapsedRealtime) || elapsedRealtime + 5 < SharedConfig.lastPauseTime;
     }
 
     public boolean isChatsLoaded() {
@@ -249,7 +250,7 @@ public class TelegramMediaSession {
             loadBrowseChildren(MEDIA_ID_ROOT, new BrowseChildrenCallback() { // from class: org.telegram.messenger.TelegramMediaSession$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
                 public final void onResult(List list) {
-                    TelegramMediaSession.lambda$ensureLoaded$2(runnable, list);
+                    TelegramMediaSession.$r8$lambda$Ihmoqjmr_ZUGE1ktuid1SDG-9ao(runnable, list);
                 }
             });
         } else if (runnable != null) {
@@ -257,8 +258,7 @@ public class TelegramMediaSession {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$ensureLoaded$2(Runnable runnable, List list) {
+    public static /* synthetic */ void $r8$lambda$Ihmoqjmr_ZUGE1ktuid1SDG-9ao(Runnable runnable, List list) {
         if (runnable != null) {
             runnable.run();
         }
@@ -274,13 +274,14 @@ public class TelegramMediaSession {
         messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.TelegramMediaSession$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                TelegramMediaSession.this.lambda$loadBrowseChildren$4(messagesStorage, browseChildrenCallback, str);
+                TelegramMediaSession.$r8$lambda$bgd7n7Ed71BUsZ2_VqWE3jntVXk(TelegramMediaSession.this, messagesStorage, browseChildrenCallback, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadBrowseChildren$4(MessagesStorage messagesStorage, final BrowseChildrenCallback browseChildrenCallback, final String str) {
+    public static /* synthetic */ void $r8$lambda$bgd7n7Ed71BUsZ2_VqWE3jntVXk(final TelegramMediaSession telegramMediaSession, MessagesStorage messagesStorage, final BrowseChildrenCallback browseChildrenCallback, final String str) {
+        int i = 0;
+        telegramMediaSession.getClass();
         try {
             ArrayList<Long> arrayList = new ArrayList<>();
             ArrayList arrayList2 = new ArrayList();
@@ -288,7 +289,7 @@ public class TelegramMediaSession {
             while (queryFinalized.next()) {
                 long longValue = queryFinalized.longValue(0);
                 if (!DialogObject.isEncryptedDialog(longValue)) {
-                    this.dialogs.add(Long.valueOf(longValue));
+                    telegramMediaSession.dialogs.add(Long.valueOf(longValue));
                     if (DialogObject.isUserDialog(longValue)) {
                         arrayList.add(Long.valueOf(longValue));
                     } else {
@@ -297,27 +298,27 @@ public class TelegramMediaSession {
                 }
             }
             queryFinalized.dispose();
-            if (!this.dialogs.isEmpty()) {
-                SQLiteCursor queryFinalized2 = messagesStorage.getDatabase().queryFinalized(String.format(Locale.US, "SELECT uid, data, mid FROM media_v4 WHERE uid IN (%s) AND mid > 0 AND type = %d ORDER BY date DESC, mid DESC", TextUtils.join(",", this.dialogs), 4), new Object[0]);
+            if (!telegramMediaSession.dialogs.isEmpty()) {
+                SQLiteCursor queryFinalized2 = messagesStorage.getDatabase().queryFinalized(String.format(Locale.US, "SELECT uid, data, mid FROM media_v4 WHERE uid IN (%s) AND mid > 0 AND type = %d ORDER BY date DESC, mid DESC", TextUtils.join(",", telegramMediaSession.dialogs), 4), new Object[0]);
                 while (queryFinalized2.next()) {
                     NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(1);
                     if (byteBufferValue != null) {
                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        TLdeserialize.readAttachPath(byteBufferValue, UserConfig.getInstance(this.currentAccount).clientUserId);
+                        TLdeserialize.readAttachPath(byteBufferValue, UserConfig.getInstance(telegramMediaSession.currentAccount).clientUserId);
                         byteBufferValue.reuse();
                         if (MessageObject.isMusicMessage(TLdeserialize)) {
                             long longValue2 = queryFinalized2.longValue(0);
                             TLdeserialize.id = queryFinalized2.intValue(2);
                             TLdeserialize.dialog_id = longValue2;
-                            ArrayList arrayList3 = (ArrayList) this.musicObjects.get(longValue2);
-                            ArrayList arrayList4 = (ArrayList) this.musicQueues.get(longValue2);
+                            ArrayList arrayList3 = (ArrayList) telegramMediaSession.musicObjects.get(longValue2);
+                            ArrayList arrayList4 = (ArrayList) telegramMediaSession.musicQueues.get(longValue2);
                             if (arrayList3 == null) {
                                 arrayList3 = new ArrayList();
-                                this.musicObjects.put(longValue2, arrayList3);
+                                telegramMediaSession.musicObjects.put(longValue2, arrayList3);
                                 arrayList4 = new ArrayList();
-                                this.musicQueues.put(longValue2, arrayList4);
+                                telegramMediaSession.musicQueues.put(longValue2, arrayList4);
                             }
-                            MessageObject messageObject = new MessageObject(this.currentAccount, TLdeserialize, false, true);
+                            MessageObject messageObject = new MessageObject(telegramMediaSession.currentAccount, TLdeserialize, false, true);
                             arrayList3.add(0, messageObject);
                             MediaDescriptionCompat.Builder mediaId = new MediaDescriptionCompat.Builder().setMediaId(longValue2 + "_" + arrayList3.size());
                             mediaId.setTitle(messageObject.getMusicTitle());
@@ -330,19 +331,24 @@ public class TelegramMediaSession {
                 if (!arrayList.isEmpty()) {
                     ArrayList<TLRPC.User> arrayList5 = new ArrayList<>();
                     messagesStorage.getUsersInternal(arrayList, arrayList5);
-                    Iterator<TLRPC.User> it = arrayList5.iterator();
-                    while (it.hasNext()) {
-                        TLRPC.User next = it.next();
-                        this.users.put(next.id, next);
+                    int size = arrayList5.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        TLRPC.User user = arrayList5.get(i2);
+                        i2++;
+                        TLRPC.User user2 = user;
+                        telegramMediaSession.users.put(user2.id, user2);
                     }
                 }
                 if (!arrayList2.isEmpty()) {
                     ArrayList<TLRPC.Chat> arrayList6 = new ArrayList<>();
                     messagesStorage.getChatsInternal(TextUtils.join(",", arrayList2), arrayList6);
-                    Iterator<TLRPC.Chat> it2 = arrayList6.iterator();
-                    while (it2.hasNext()) {
-                        TLRPC.Chat next2 = it2.next();
-                        this.chats.put(next2.id, next2);
+                    int size2 = arrayList6.size();
+                    while (i < size2) {
+                        TLRPC.Chat chat = arrayList6.get(i);
+                        i++;
+                        TLRPC.Chat chat2 = chat;
+                        telegramMediaSession.chats.put(chat2.id, chat2);
                     }
                 }
             }
@@ -352,20 +358,19 @@ public class TelegramMediaSession {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.TelegramMediaSession$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                TelegramMediaSession.this.lambda$loadBrowseChildren$3(browseChildrenCallback, str);
+                TelegramMediaSession.$r8$lambda$GzkJi0uM7IIIMjultw5U6iEZojg(TelegramMediaSession.this, browseChildrenCallback, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadBrowseChildren$3(BrowseChildrenCallback browseChildrenCallback, String str) {
-        this.chatsLoaded = true;
-        this.loadingChats = false;
-        if (this.lastSelectedDialog == 0 && !this.dialogs.isEmpty()) {
-            this.lastSelectedDialog = this.dialogs.get(0).longValue();
+    public static /* synthetic */ void $r8$lambda$GzkJi0uM7IIIMjultw5U6iEZojg(TelegramMediaSession telegramMediaSession, BrowseChildrenCallback browseChildrenCallback, String str) {
+        telegramMediaSession.chatsLoaded = true;
+        telegramMediaSession.loadingChats = false;
+        if (telegramMediaSession.lastSelectedDialog == 0 && !telegramMediaSession.dialogs.isEmpty()) {
+            telegramMediaSession.lastSelectedDialog = telegramMediaSession.dialogs.get(0).longValue();
         }
-        applyQueueFor(this.lastSelectedDialog);
-        browseChildrenCallback.onResult(loadChildrenSync(str));
+        telegramMediaSession.applyQueueFor(telegramMediaSession.lastSelectedDialog);
+        browseChildrenCallback.onResult(telegramMediaSession.loadChildrenSync(str));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0060, code lost:
@@ -560,7 +565,7 @@ public class TelegramMediaSession {
 
         @Override // android.support.v4.media.session.MediaSessionCompat.Callback
         public void onPause() {
-            MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+            MediaController.getInstance().pauseMessage(MediaController.getInstance().getPlayingMessageObject());
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.Callback
@@ -614,16 +619,11 @@ public class TelegramMediaSession {
             notifyPlayStateForNotificationRefresh();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$notifyPlayStateForNotificationRefresh$0() {
-            NotificationCenter.getInstance(TelegramMediaSession.this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagePlayingPlayStateChanged, 0);
-        }
-
         private void notifyPlayStateForNotificationRefresh() {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.TelegramMediaSession$SessionCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TelegramMediaSession.SessionCallback.this.lambda$notifyPlayStateForNotificationRefresh$0();
+                    NotificationCenter.getInstance(TelegramMediaSession.this.currentAccount).postNotificationName(NotificationCenter.messagePlayingPlayStateChanged, 0);
                 }
             });
         }

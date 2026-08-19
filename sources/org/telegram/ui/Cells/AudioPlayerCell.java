@@ -60,8 +60,7 @@ public class AudioPlayerCell extends FrameLayout implements DownloadController.F
     private final int titleY;
     private int viewType;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$rQ-9o2aGm7Anfro19pIupw3ws-o(View view) {
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -86,7 +85,7 @@ public class AudioPlayerCell extends FrameLayout implements DownloadController.F
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.AudioPlayerCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AudioPlayerCell.lambda$new$0(view);
+                AudioPlayerCell.$r8$lambda$rQ-9o2aGm7Anfro19pIupw3ws-o(view);
             }
         });
         RadialProgress2 radialProgress2 = new RadialProgress2(this, resourcesProvider);
@@ -273,7 +272,7 @@ public class AudioPlayerCell extends FrameLayout implements DownloadController.F
             return;
         }
         if (i == 1) {
-            if (MediaController.getInstance().lambda$startAudioAgain$7(this.currentMessageObject)) {
+            if (MediaController.getInstance().pauseMessage(this.currentMessageObject)) {
                 this.buttonState = 0;
                 this.radialProgress.setIcon(getIconForCurrentState(), false, true);
                 invalidate();

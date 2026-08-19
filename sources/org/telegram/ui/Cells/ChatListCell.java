@@ -25,7 +25,8 @@ public abstract class ChatListCell extends LinearLayout {
 
     protected abstract void didSelectChatType(boolean z);
 
-    private class ListView extends FrameLayout {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListView extends FrameLayout {
         private RadioButton button;
         private boolean isThreeLines;
         private RectF rect;
@@ -128,19 +129,18 @@ public abstract class ChatListCell extends LinearLayout {
             this.listView[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.ChatListCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatListCell.this.lambda$new$0(z, view);
+                    ChatListCell.$r8$lambda$3Cqz9x1Ry6v-rpGHY_qD7qAvgEg(ChatListCell.this, z, view);
                 }
             });
             i++;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(boolean z, View view) {
+    public static /* synthetic */ void $r8$lambda$3Cqz9x1Ry6v-rpGHY_qD7qAvgEg(ChatListCell chatListCell, boolean z, View view) {
         for (int i = 0; i < 2; i++) {
-            this.listView[i].button.setChecked(this.listView[i] == view, true);
+            chatListCell.listView[i].button.setChecked(chatListCell.listView[i] == view, true);
         }
-        didSelectChatType(z);
+        chatListCell.didSelectChatType(z);
     }
 
     @Override // android.view.View

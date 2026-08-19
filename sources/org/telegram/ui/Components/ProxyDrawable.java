@@ -72,7 +72,7 @@ public class ProxyDrawable extends Drawable {
             int width = getBounds().width();
             int height = getBounds().height();
             int dp = AndroidUtilities.dp(4.0f);
-            this.circleRect.set((width / 2) - dp, (height / 2) - dp, r0 + dp + dp, r1 + dp + dp);
+            this.circleRect.set((width / 2) - dp, (height / 2) - dp, r1 + dp + dp, r2 + dp + dp);
             canvas.drawArc(this.circleRect, this.radOffset - 90, 90.0f, false, this.outerPaint);
             invalidateSelf();
         }

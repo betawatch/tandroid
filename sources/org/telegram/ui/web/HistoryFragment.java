@@ -34,7 +34,7 @@ import org.telegram.ui.web.BrowserHistory;
 import org.telegram.ui.web.HistoryFragment;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HistoryFragment extends UniversalFragment {
     private final Runnable closeToTabs;
     private StickerEmptyView emptyView;
@@ -46,14 +46,13 @@ public class HistoryFragment extends UniversalFragment {
     private ArrayList history = BrowserHistory.getHistory(new Utilities.Callback() { // from class: org.telegram.ui.web.HistoryFragment$$ExternalSyntheticLambda0
         @Override // org.telegram.messenger.Utilities.Callback
         public final void run(Object obj) {
-            HistoryFragment.this.lambda$new$0((ArrayList) obj);
+            HistoryFragment.$r8$lambda$_dpVtfuRJU9WAuTiBmNjhSK750U(HistoryFragment.this, (ArrayList) obj);
         }
     });
     private final ArrayList searchResults = new ArrayList();
     public HashSet selected = new HashSet();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$1(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$Qov0B6kozvKjSbGfcOAhy0fAaYk(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -65,11 +64,10 @@ public class HistoryFragment extends UniversalFragment {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ArrayList arrayList) {
-        this.history = arrayList;
-        if (this.listView.isAttachedToWindow()) {
-            this.listView.adapter.update(true);
+    public static /* synthetic */ void $r8$lambda$_dpVtfuRJU9WAuTiBmNjhSK750U(HistoryFragment historyFragment, ArrayList arrayList) {
+        historyFragment.history = arrayList;
+        if (historyFragment.listView.isAttachedToWindow()) {
+            historyFragment.listView.adapter.update(true);
         }
     }
 
@@ -103,9 +101,7 @@ public class HistoryFragment extends UniversalFragment {
         this.selectedCount.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.web.HistoryFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$createView$1;
-                lambda$createView$1 = HistoryFragment.lambda$createView$1(view, motionEvent);
-                return lambda$createView$1;
+                return HistoryFragment.$r8$lambda$Qov0B6kozvKjSbGfcOAhy0fAaYk(view, motionEvent);
             }
         });
         createActionMode.addView(this.selectedCount, LayoutHelper.createLinear(0, -1, 1.0f, 65, 0, 0, 0));
@@ -151,7 +147,7 @@ public class HistoryFragment extends UniversalFragment {
                     AndroidUtilities.forEachViews((RecyclerView) HistoryFragment.this.listView, new Consumer() { // from class: org.telegram.ui.web.HistoryFragment$1$$ExternalSyntheticLambda0
                         @Override // com.google.android.exoplayer2.util.Consumer
                         public final void accept(Object obj) {
-                            HistoryFragment.1.lambda$onItemClick$0((View) obj);
+                            HistoryFragment.1.$r8$lambda$KfK5-PG5YTgdWSPyA_5pT_hC880((View) obj);
                         }
                     });
                     return;
@@ -160,8 +156,7 @@ public class HistoryFragment extends UniversalFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onItemClick$0(View view) {
+        public static /* synthetic */ void $r8$lambda$KfK5-PG5YTgdWSPyA_5pT_hC880(View view) {
             if (view instanceof AddressBarList.BookmarkView) {
                 ((AddressBarList.BookmarkView) view).setChecked(false);
             }
@@ -172,7 +167,7 @@ public class HistoryFragment extends UniversalFragment {
         private Runnable applySearch = new Runnable() { // from class: org.telegram.ui.web.HistoryFragment$2$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                HistoryFragment.2.this.lambda$$2();
+                HistoryFragment.2.$r8$lambda$hUDy5exlCpUDZv43fdW_K2nVzU4(HistoryFragment.2.this);
             }
         };
 
@@ -220,38 +215,37 @@ public class HistoryFragment extends UniversalFragment {
             AndroidUtilities.runOnUIThread(this.applySearch, 500L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$$2() {
+        public static /* synthetic */ void $r8$lambda$hUDy5exlCpUDZv43fdW_K2nVzU4(final 2 r4) {
+            r4.getClass();
             final ArrayList arrayList = new ArrayList(HistoryFragment.this.history);
             final String str = HistoryFragment.this.query;
             Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.HistoryFragment$2$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    HistoryFragment.2.this.lambda$$1(arrayList, str);
+                    HistoryFragment.2.$r8$lambda$GodrlLc5_hYhlWaCdGnbmQJlnJU(HistoryFragment.2.this, arrayList, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$$1(ArrayList arrayList, String str) {
+        public static /* synthetic */ void $r8$lambda$GodrlLc5_hYhlWaCdGnbmQJlnJU(final 2 r4, ArrayList arrayList, String str) {
             WebMetadataCache.WebMetadata webMetadata;
+            r4.getClass();
             final ArrayList arrayList2 = new ArrayList();
             for (int i = 0; i < arrayList.size(); i++) {
                 BrowserHistory.Entry entry = (BrowserHistory.Entry) arrayList.get(i);
-                if (matches(entry.url, str) || ((webMetadata = entry.meta) != null && (matches(webMetadata.title, str) || matches(entry.meta.sitename, str)))) {
+                if (r4.matches(entry.url, str) || ((webMetadata = entry.meta) != null && (r4.matches(webMetadata.title, str) || r4.matches(entry.meta.sitename, str)))) {
                     arrayList2.add(entry);
                 }
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.HistoryFragment$2$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    HistoryFragment.2.this.lambda$$0(arrayList2);
+                    HistoryFragment.2.$r8$lambda$fSEN-qpFyOH68rKlgcgyhcCWg8Q(HistoryFragment.2.this, arrayList2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$$0(ArrayList arrayList) {
+        public static /* synthetic */ void $r8$lambda$fSEN-qpFyOH68rKlgcgyhcCWg8Q(2 r1, ArrayList arrayList) {
             HistoryFragment.this.searchResults.clear();
             HistoryFragment.this.searchResults.addAll(arrayList);
             HistoryFragment.this.searchLoading = false;
@@ -279,7 +273,6 @@ public class HistoryFragment extends UniversalFragment {
                                 }
                             }
                         }
-                        return true;
                     }
                 }
             }

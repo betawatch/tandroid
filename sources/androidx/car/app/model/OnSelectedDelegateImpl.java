@@ -47,15 +47,13 @@ public class OnSelectedDelegateImpl implements OnSelectedDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onSelectedListener", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.OnSelectedDelegateImpl$OnSelectedListenerStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onSelected$0;
-                    lambda$onSelected$0 = OnSelectedDelegateImpl.OnSelectedListenerStub.this.lambda$onSelected$0(i);
-                    return lambda$onSelected$0;
+                    return OnSelectedDelegateImpl.OnSelectedListenerStub.$r8$lambda$RU_djcpI4ucKClcsLCOI3qeLGLM(OnSelectedDelegateImpl.OnSelectedListenerStub.this, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSelected$0(int i) {
+        public static /* synthetic */ Object $r8$lambda$RU_djcpI4ucKClcsLCOI3qeLGLM(OnSelectedListenerStub onSelectedListenerStub, int i) {
+            onSelectedListenerStub.getClass();
             throw null;
         }
     }

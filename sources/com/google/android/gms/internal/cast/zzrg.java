@@ -372,8 +372,8 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
     static {
         boolean z;
         Throwable th;
-        Throwable th2;
         zza zzgVar;
+        Throwable th2;
         try {
             z = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -384,8 +384,8 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
         Object[] objArr = 0;
         try {
             zzgVar = new zzj(null);
-            th2 = null;
             th = null;
+            th2 = null;
         } catch (Error | RuntimeException e) {
             try {
                 th = null;
@@ -393,8 +393,8 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
                 zzgVar = new zze(AtomicReferenceFieldUpdater.newUpdater(zzk.class, Thread.class, "thread"), AtomicReferenceFieldUpdater.newUpdater(zzk.class, zzk.class, "next"), AtomicReferenceFieldUpdater.newUpdater(zzrg.class, zzk.class, "waiters"), AtomicReferenceFieldUpdater.newUpdater(zzrg.class, zzd.class, "listeners"), AtomicReferenceFieldUpdater.newUpdater(zzrg.class, Object.class, "value"));
             } catch (Error | RuntimeException e2) {
                 th = e2;
-                th2 = e;
                 zzgVar = new zzg(objArr == true ? 1 : 0);
+                th2 = e;
             }
         }
         zzc = zzgVar;

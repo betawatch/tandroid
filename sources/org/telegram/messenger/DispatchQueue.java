@@ -131,9 +131,7 @@ public class DispatchQueue extends Thread {
         this.handler = new Handler(Looper.myLooper(), new Handler.Callback() { // from class: org.telegram.messenger.DispatchQueue$$ExternalSyntheticLambda0
             @Override // android.os.Handler.Callback
             public final boolean handleMessage(Message message) {
-                boolean lambda$run$0;
-                lambda$run$0 = DispatchQueue.this.lambda$run$0(message);
-                return lambda$run$0;
+                return DispatchQueue.$r8$lambda$dDxIPiVp7GAX-22bRxD0uMTa364(DispatchQueue.this, message);
             }
         });
         this.syncLatch.countDown();
@@ -144,9 +142,8 @@ public class DispatchQueue extends Thread {
         Looper.loop();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$run$0(Message message) {
-        handleMessage(message);
+    public static /* synthetic */ boolean $r8$lambda$dDxIPiVp7GAX-22bRxD0uMTa364(DispatchQueue dispatchQueue, Message message) {
+        dispatchQueue.handleMessage(message);
         return true;
     }
 

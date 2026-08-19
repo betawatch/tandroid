@@ -22,7 +22,7 @@ public final class LoadEventInfo {
     }
 
     public LoadEventInfo(long j, DataSpec dataSpec, long j2) {
-        this(j, dataSpec, dataSpec.uri, Collections.emptyMap(), j2, 0L, 0L);
+        this(j, dataSpec, dataSpec.uri, Collections.EMPTY_MAP, j2, 0L, 0L);
     }
 
     public LoadEventInfo(long j, DataSpec dataSpec, Uri uri, Map map, long j2, long j3, long j4) {

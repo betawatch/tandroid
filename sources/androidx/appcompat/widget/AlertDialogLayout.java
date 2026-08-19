@@ -113,18 +113,26 @@ public class AlertDialogLayout extends LinearLayoutCompat {
     }
 
     private void forceUniformWidth(int i, int i2) {
+        int i3;
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30);
-        for (int i3 = 0; i3 < i; i3++) {
-            View childAt = getChildAt(i3);
+        int i4 = 0;
+        while (i4 < i) {
+            View childAt = getChildAt(i4);
             if (childAt.getVisibility() != 8) {
                 LinearLayoutCompat.LayoutParams layoutParams = (LinearLayoutCompat.LayoutParams) childAt.getLayoutParams();
                 if (((LinearLayout.LayoutParams) layoutParams).width == -1) {
-                    int i4 = ((LinearLayout.LayoutParams) layoutParams).height;
+                    int i5 = ((LinearLayout.LayoutParams) layoutParams).height;
                     ((LinearLayout.LayoutParams) layoutParams).height = childAt.getMeasuredHeight();
-                    measureChildWithMargins(childAt, makeMeasureSpec, 0, i2, 0);
-                    ((LinearLayout.LayoutParams) layoutParams).height = i4;
+                    i3 = i2;
+                    measureChildWithMargins(childAt, makeMeasureSpec, 0, i3, 0);
+                    ((LinearLayout.LayoutParams) layoutParams).height = i5;
+                    i4++;
+                    i2 = i3;
                 }
             }
+            i3 = i2;
+            i4++;
+            i2 = i3;
         }
     }
 
@@ -142,7 +150,7 @@ public class AlertDialogLayout extends LinearLayoutCompat {
         return 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00a0  */
     @Override // androidx.appcompat.widget.LinearLayoutCompat, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -189,19 +197,21 @@ public class AlertDialogLayout extends LinearLayoutCompat {
                     i6 = ((LinearLayout.LayoutParams) layoutParams).rightMargin;
                 } else {
                     i7 = ((LinearLayout.LayoutParams) layoutParams).leftMargin + paddingLeft;
+                    int i13 = i7;
                     if (hasDividerBeforeChildAt(i11)) {
                         paddingTop += intrinsicHeight;
                     }
-                    int i13 = paddingTop + ((LinearLayout.LayoutParams) layoutParams).topMargin;
-                    setChildFrame(childAt, i7, i13, measuredWidth, measuredHeight2);
-                    paddingTop = i13 + measuredHeight2 + ((LinearLayout.LayoutParams) layoutParams).bottomMargin;
+                    int i14 = paddingTop + ((LinearLayout.LayoutParams) layoutParams).topMargin;
+                    setChildFrame(childAt, i13, i14, measuredWidth, measuredHeight2);
+                    paddingTop = i14 + measuredHeight2 + ((LinearLayout.LayoutParams) layoutParams).bottomMargin;
                 }
                 i7 = i5 - i6;
+                int i132 = i7;
                 if (hasDividerBeforeChildAt(i11)) {
                 }
-                int i132 = paddingTop + ((LinearLayout.LayoutParams) layoutParams).topMargin;
-                setChildFrame(childAt, i7, i132, measuredWidth, measuredHeight2);
-                paddingTop = i132 + measuredHeight2 + ((LinearLayout.LayoutParams) layoutParams).bottomMargin;
+                int i142 = paddingTop + ((LinearLayout.LayoutParams) layoutParams).topMargin;
+                setChildFrame(childAt, i132, i142, measuredWidth, measuredHeight2);
+                paddingTop = i142 + measuredHeight2 + ((LinearLayout.LayoutParams) layoutParams).bottomMargin;
             }
         }
     }

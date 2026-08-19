@@ -1,5 +1,27 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public interface C0 extends H0 {
+public abstract /* synthetic */ class C0 {
+    public static final /* synthetic */ int[] a;
+
+    static {
+        int[] iArr = new int[T2.values().length];
+        a = iArr;
+        try {
+            iArr[T2.REFERENCE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            a[T2.INT_VALUE.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[T2.LONG_VALUE.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[T2.DOUBLE_VALUE.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+    }
 }

@@ -97,9 +97,9 @@ abstract class CompactHashing {
         int next2 = getNext(i3, i);
         if (i5 == -1) {
             tableSet(obj3, i4, next2);
-        } else {
-            iArr[i5] = maskCombine(iArr[i5], next2, i);
+            return i2;
         }
+        iArr[i5] = maskCombine(iArr[i5], next2, i);
         return i2;
     }
 }

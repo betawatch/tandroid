@@ -114,7 +114,8 @@ public abstract class JobIntentService extends Service {
                                 this.mLaunchWakeLock.acquire(60000L);
                             }
                         }
-                    } finally {
+                    } catch (Throwable th) {
+                        throw th;
                     }
                 }
             }
@@ -401,19 +402,19 @@ public abstract class JobIntentService extends Service {
         WorkEnqueuer compatWorkEnqueuer;
         HashMap<ComponentName, WorkEnqueuer> hashMap = sClassWorkEnqueuer;
         WorkEnqueuer workEnqueuer = hashMap.get(componentName);
-        if (workEnqueuer == null) {
-            if (Build.VERSION.SDK_INT < 26) {
-                compatWorkEnqueuer = new CompatWorkEnqueuer(context, componentName);
-            } else {
-                if (!z) {
-                    throw new IllegalArgumentException("Can't be here without a job id");
-                }
-                compatWorkEnqueuer = new JobWorkEnqueuer(context, componentName, i);
-            }
-            workEnqueuer = compatWorkEnqueuer;
-            hashMap.put(componentName, workEnqueuer);
+        if (workEnqueuer != null) {
+            return workEnqueuer;
         }
-        return workEnqueuer;
+        if (Build.VERSION.SDK_INT < 26) {
+            compatWorkEnqueuer = new CompatWorkEnqueuer(context, componentName);
+        } else {
+            if (!z) {
+                throw new IllegalArgumentException("Can't be here without a job id");
+            }
+            compatWorkEnqueuer = new JobWorkEnqueuer(context, componentName, i);
+        }
+        hashMap.put(componentName, compatWorkEnqueuer);
+        return compatWorkEnqueuer;
     }
 
     public void setInterruptIfStopped(boolean z) {
@@ -456,7 +457,8 @@ public abstract class JobIntentService extends Service {
                     } else if (!this.mDestroyed) {
                         this.mCompatWorkEnqueuer.serviceProcessingFinished();
                     }
-                } finally {
+                } catch (Throwable th) {
+                    throw th;
                 }
             }
         }

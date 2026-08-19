@@ -148,7 +148,7 @@ public class RoundView extends EntityView {
             float y = view.getY() + (view.getHeight() / 2.0f);
             float min = Math.min(view.getWidth() / 2.0f, view.getHeight() / 2.0f);
             if (f2 < 1.0f) {
-                canvas.saveLayerAlpha(view.getX(), view.getY(), view.getWidth() + view.getX(), view.getHeight() + view.getY(), 128, 31);
+                canvas.saveLayerAlpha(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight(), 128, 31);
                 this.clipPath.rewind();
                 this.clipPath.addCircle(x, y, min, Path.Direction.CW);
                 canvas.clipPath(this.clipPath);
@@ -192,8 +192,9 @@ public class RoundView extends EntityView {
         return this.mirrored;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.Components.Paint.Views.EntityView
-    protected void updatePosition() {
+    public void updatePosition() {
         Size size = this.baseSize;
         float f = size.width / 2.0f;
         float f2 = size.height / 2.0f;

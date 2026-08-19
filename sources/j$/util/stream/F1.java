@@ -2,74 +2,77 @@ package j$.util.stream;
 
 import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
-import java.util.function.ObjDoubleConsumer;
-import java.util.function.Supplier;
+import java.util.function.IntBinaryOperator;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class F1 extends T1 implements S1, j2 {
-    final /* synthetic */ Supplier b;
-    final /* synthetic */ ObjDoubleConsumer c;
-    final /* synthetic */ q d;
+public final class F1 implements L1, d2 {
+    public int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ IntBinaryOperator c;
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(int i) {
-        w0.k();
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void A(Integer num) {
+        q1.g(this, num);
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(double d) {
+        q1.a();
         throw null;
     }
 
-    @Override // j$.util.stream.m2
+    @Override // j$.util.stream.f2
     public final /* synthetic */ void accept(long j) {
-        w0.l();
+        q1.l();
         throw null;
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void p(Object obj) {
-        p((Double) obj);
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        A((Integer) obj);
     }
 
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void k() {
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void x() {
     }
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ boolean n() {
-        return false;
+    public F1(int i, IntBinaryOperator intBinaryOperator) {
+        this.b = i;
+        this.c = intBinaryOperator;
     }
 
-    @Override // j$.util.stream.j2
-    public final /* synthetic */ void p(Double d) {
-        w0.e(this, d);
+    @Override // j$.util.stream.L1
+    public final void n(L1 l1) {
+        accept(((F1) l1).a);
     }
 
-    @Override // j$.util.stream.S1
-    public final void g(S1 s1) {
-        this.a = this.d.apply(this.a, ((F1) s1).a);
+    @Override // j$.util.stream.f2
+    public final void y(long j) {
+        this.a = this.b;
     }
 
-    @Override // j$.util.stream.m2
-    public final void l(long j) {
-        this.a = this.b.get();
+    @Override // j$.util.stream.f2
+    public final void accept(int i) {
+        this.a = this.c.applyAsInt(this.a, i);
     }
 
-    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        this.c.accept(this.a, d);
-    }
-
-    F1(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, q qVar) {
-        this.b = supplier;
-        this.c = objDoubleConsumer;
-        this.d = qVar;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return Integer.valueOf(this.a);
     }
 }

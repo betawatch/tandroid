@@ -48,7 +48,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DispatchQueue;
@@ -85,7 +84,7 @@ import org.telegram.ui.Components.StickerEmptyView;
 import org.telegram.ui.Stories.recorder.GalleryListView;
 import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class GalleryListView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final MediaController.AlbumEntry draftsAlbum = new MediaController.AlbumEntry(-1, null, null);
     private final float ASPECT_RATIO;
@@ -181,9 +180,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         recyclerListView.setItemSelectorColorProvider(new GenericProvider() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
-                Integer lambda$new$0;
-                lambda$new$0 = GalleryListView.lambda$new$0((Integer) obj);
-                return lambda$new$0;
+                return GalleryListView.$r8$lambda$hAV_pIipD4P-a7H1B-5IHRHUEIM((Integer) obj);
             }
         });
         Adapter adapter = new Adapter();
@@ -224,15 +221,13 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                GalleryListView.this.lambda$new$1(view, i2);
+                GalleryListView.$r8$lambda$a3WsMhdqvAigk-NfonHvbBHPiqI(GalleryListView.this, view, i2);
             }
         });
         recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
-                boolean lambda$new$2;
-                lambda$new$2 = GalleryListView.this.lambda$new$2(view, i2);
-                return lambda$new$2;
+                return GalleryListView.$r8$lambda$apkF4A67bFI-t27trYh_odJudp4(GalleryListView.this, view, i2);
             }
         });
         recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView.5
@@ -280,7 +275,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GalleryListView.this.lambda$new$3(view);
+                GalleryListView.this.dropDownContainer.toggleSubMenu();
             }
         });
         TextView textView = new TextView(context);
@@ -375,7 +370,8 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         this.keyboardNotifier = new KeyboardNotifier(this, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                GalleryListView.this.lambda$new$4((Integer) obj);
+                Integer num = (Integer) obj;
+                GalleryListView.this.searchEmptyView.animate().translationY(((-num.intValue()) / 2.0f) + AndroidUtilities.dp(80.0f)).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
             }
         });
         frameLayout.addView(stickerEmptyView, LayoutHelper.createFrame(-1, -1, 119));
@@ -387,14 +383,18 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         recyclerListView2.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                GalleryListView.this.lambda$new$5(view, i2);
+                GalleryListView.$r8$lambda$C-GTSaKpFTocqzb4mNOYkeFAM2E(GalleryListView.this, view, i2);
             }
         });
         arrayList.clear();
         if (!z) {
-            Iterator it = MessagesController.getInstance(i).getStoriesController().getDraftsController().drafts.iterator();
-            while (it.hasNext()) {
-                StoryEntry storyEntry = (StoryEntry) it.next();
+            ArrayList arrayList2 = MessagesController.getInstance(i).getStoriesController().getDraftsController().drafts;
+            int size = arrayList2.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList2.get(i2);
+                i2++;
+                StoryEntry storyEntry = (StoryEntry) obj;
                 if (!storyEntry.isEdit && !storyEntry.isError) {
                     this.drafts.add(storyEntry);
                 }
@@ -419,7 +419,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                 round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        GalleryListView.this.lambda$new$6(view);
+                        GalleryListView.$r8$lambda$urItoZuaELpxCukBK6VyPLm032Q(GalleryListView.this, view);
                     }
                 });
             }
@@ -435,7 +435,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             round2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GalleryListView.this.lambda$new$7(view);
+                    GalleryListView.$r8$lambda$xwcTpau67eJie-G40XCykcSsCxA(GalleryListView.this, view);
                 }
             });
         } else {
@@ -452,7 +452,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GalleryListView.this.lambda$new$8(view);
+                    GalleryListView.this.selectMultiple(false);
                 }
             });
             imageView.setAlpha(0.0f);
@@ -463,8 +463,8 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         if (albumEntry != null && (albumEntry != draftsAlbum || this.drafts.size() > 0)) {
             this.selectedAlbum = albumEntry;
         } else {
-            ArrayList arrayList2 = this.dropDownAlbums;
-            if (arrayList2 == null || arrayList2.isEmpty()) {
+            ArrayList arrayList3 = this.dropDownAlbums;
+            if (arrayList3 == null || arrayList3.isEmpty()) {
                 this.selectedAlbum = MediaController.allMediaAlbumEntry;
             } else {
                 this.selectedAlbum = (MediaController.AlbumEntry) this.dropDownAlbums.get(0);
@@ -482,108 +482,117 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$new$0(Integer num) {
+    public static /* synthetic */ Integer $r8$lambda$hAV_pIipD4P-a7H1B-5IHRHUEIM(Integer num) {
         return 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view, int i) {
-        if (i < 2 || this.onSelectListener == null || !(view instanceof Cell)) {
+    public static /* synthetic */ void $r8$lambda$a3WsMhdqvAigk-NfonHvbBHPiqI(GalleryListView galleryListView, View view, int i) {
+        if (i < 2) {
+            galleryListView.getClass();
+            return;
+        }
+        if (galleryListView.onSelectListener == null || !(view instanceof Cell)) {
             return;
         }
         Cell cell = (Cell) view;
         int i2 = i - 2;
-        if (this.containsDraftFolder) {
+        if (galleryListView.containsDraftFolder) {
             if (i2 == 0) {
-                selectAlbum(draftsAlbum, true);
+                galleryListView.selectAlbum(draftsAlbum, true);
                 return;
             }
             i2 = i - 3;
-        } else if (this.containsDrafts) {
-            if (i2 >= 0 && i2 < this.drafts.size()) {
-                StoryEntry storyEntry = (StoryEntry) this.drafts.get(i2);
-                this.onSelectListener.run(storyEntry, storyEntry.isVideo ? prepareBlurredThumb(cell) : null);
+        } else if (galleryListView.containsDrafts) {
+            if (i2 >= 0 && i2 < galleryListView.drafts.size()) {
+                StoryEntry storyEntry = (StoryEntry) galleryListView.drafts.get(i2);
+                galleryListView.onSelectListener.run(storyEntry, storyEntry.isVideo ? galleryListView.prepareBlurredThumb(cell) : null);
                 return;
             }
-            i2 -= this.drafts.size();
+            i2 -= galleryListView.drafts.size();
         }
-        if (i2 < 0 || i2 >= this.photos.size()) {
+        if (i2 < 0 || i2 >= galleryListView.photos.size()) {
             return;
         }
-        MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.photos.get(i2);
-        if (isMultiple()) {
-            if (this.selectedPhotos.contains(photoEntry)) {
-                this.selectedPhotos.remove(photoEntry);
-            } else {
-                if (this.selectedPhotos.size() + 1 > this.maxCount) {
-                    int i3 = -this.shiftDp;
-                    this.shiftDp = i3;
-                    AndroidUtilities.shakeViewSpring(cell, i3);
-                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    return;
-                }
-                this.selectedPhotos.add(photoEntry);
+        MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) galleryListView.photos.get(i2);
+        if (!galleryListView.isMultiple()) {
+            Utilities.Callback2 callback2 = galleryListView.onSelectListener;
+            if (photoEntry.isVideo && !photoEntry.isLivePhoto()) {
+                r2 = galleryListView.prepareBlurredThumb(cell);
             }
-            AndroidUtilities.updateVisibleRows(this.listView);
-            updateSelectButtonVisible();
+            callback2.run(photoEntry, r2);
             return;
         }
-        Utilities.Callback2 callback2 = this.onSelectListener;
-        if (photoEntry.isVideo && !photoEntry.isLivePhoto()) {
-            r2 = prepareBlurredThumb(cell);
+        if (galleryListView.selectedPhotos.contains(photoEntry)) {
+            galleryListView.selectedPhotos.remove(photoEntry);
+        } else {
+            if (galleryListView.selectedPhotos.size() + 1 > galleryListView.maxCount) {
+                int i3 = -galleryListView.shiftDp;
+                galleryListView.shiftDp = i3;
+                AndroidUtilities.shakeViewSpring(cell, i3);
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                return;
+            }
+            galleryListView.selectedPhotos.add(photoEntry);
         }
-        callback2.run(photoEntry, r2);
+        AndroidUtilities.updateVisibleRows(galleryListView.listView);
+        galleryListView.updateSelectButtonVisible();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$2(View view, int i) {
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x005d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static /* synthetic */ boolean $r8$lambda$apkF4A67bFI-t27trYh_odJudp4(GalleryListView galleryListView, View view, int i) {
+        MediaController.PhotoEntry photoEntry;
         boolean z = false;
-        if (i >= 2 && this.onSelectListener != null && (view instanceof Cell)) {
+        if (i < 2) {
+            galleryListView.getClass();
+            return false;
+        }
+        if (galleryListView.onSelectListener != null && (view instanceof Cell)) {
             int i2 = i - 2;
-            if (this.containsDraftFolder) {
-                if (i2 == 0) {
-                    return false;
-                }
-                i2 = i - 3;
-            } else if (this.containsDrafts) {
-                if (i2 >= 0 && i2 < this.drafts.size()) {
-                    return false;
-                }
-                i2 -= this.drafts.size();
-            }
-            if (i2 >= 0 && i2 < this.photos.size()) {
-                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.photos.get(i2);
-                if (this.selectedPhotos.isEmpty() && !this.multipleOnClick) {
-                    z = true;
-                    if (this.selectedPhotos.contains(photoEntry)) {
-                        this.selectedPhotos.remove(photoEntry);
-                    } else {
-                        if (this.selectedPhotos.size() + 1 > this.maxCount) {
-                            int i3 = -this.shiftDp;
-                            this.shiftDp = i3;
-                            AndroidUtilities.shakeViewSpring(view, i3);
-                            BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                            return true;
-                        }
-                        this.selectedPhotos.add(photoEntry);
+            if (!galleryListView.containsDraftFolder) {
+                if (galleryListView.containsDrafts) {
+                    if (i2 < 0 || i2 >= galleryListView.drafts.size()) {
+                        i2 -= galleryListView.drafts.size();
                     }
-                    AndroidUtilities.updateVisibleRows(this.listView);
-                    updateSelectButtonVisible();
+                }
+                if (i2 >= 0) {
+                    photoEntry = (MediaController.PhotoEntry) galleryListView.photos.get(i2);
+                    if (galleryListView.selectedPhotos.isEmpty()) {
+                        z = true;
+                        if (!galleryListView.selectedPhotos.contains(photoEntry)) {
+                        }
+                        AndroidUtilities.updateVisibleRows(galleryListView.listView);
+                        galleryListView.updateSelectButtonVisible();
+                    }
+                }
+            } else if (i2 != 0) {
+                i2 = i - 3;
+                if (i2 >= 0 && i2 < galleryListView.photos.size()) {
+                    photoEntry = (MediaController.PhotoEntry) galleryListView.photos.get(i2);
+                    if (galleryListView.selectedPhotos.isEmpty() && !galleryListView.multipleOnClick) {
+                        z = true;
+                        if (!galleryListView.selectedPhotos.contains(photoEntry)) {
+                            galleryListView.selectedPhotos.remove(photoEntry);
+                        } else {
+                            if (galleryListView.selectedPhotos.size() + 1 > galleryListView.maxCount) {
+                                int i3 = -galleryListView.shiftDp;
+                                galleryListView.shiftDp = i3;
+                                AndroidUtilities.shakeViewSpring(view, i3);
+                                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                                return true;
+                            }
+                            galleryListView.selectedPhotos.add(photoEntry);
+                        }
+                        AndroidUtilities.updateVisibleRows(galleryListView.listView);
+                        galleryListView.updateSelectButtonVisible();
+                    }
                 }
             }
         }
         return z;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        this.dropDownContainer.toggleSubMenu();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(Integer num) {
-        this.searchEmptyView.animate().translationY(((-num.intValue()) / 2.0f) + AndroidUtilities.dp(80.0f)).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
     }
 
     class 12 extends ActionBarMenuItem.ActionBarMenuItemSearchListener {
@@ -623,7 +632,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$12$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    GalleryListView.12.this.lambda$onSearchCollapse$0(valueAnimator);
+                    GalleryListView.this.invalidate();
                 }
             });
             arrayList.add(ofFloat);
@@ -643,11 +652,6 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                 }
             });
             this.animatorSet.start();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSearchCollapse$0(ValueAnimator valueAnimator) {
-            GalleryListView.this.invalidate();
         }
 
         @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
@@ -683,7 +687,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$12$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    GalleryListView.12.this.lambda$onSearchExpand$1(valueAnimator);
+                    GalleryListView.this.invalidate();
                 }
             });
             arrayList.add(ofFloat);
@@ -702,49 +706,36 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             this.animatorSet.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSearchExpand$1(ValueAnimator valueAnimator) {
-            GalleryListView.this.invalidate();
-        }
-
         @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
         public void onTextChanged(EditText editText) {
             GalleryListView.this.searchAdapterImages.load(editText.getText().toString());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$C-GTSaKpFTocqzb4mNOYkeFAM2E(GalleryListView galleryListView, View view, int i) {
         Utilities.Callback2 callback2;
-        ActionBarMenuItem actionBarMenuItem = this.searchItem;
+        ActionBarMenuItem actionBarMenuItem = galleryListView.searchItem;
         if (actionBarMenuItem != null) {
             AndroidUtilities.hideKeyboard(actionBarMenuItem.getSearchContainer());
         }
-        if (i < 0 || i >= this.searchAdapterImages.results.size() || (callback2 = this.onSelectListener) == null) {
+        if (i < 0 || i >= galleryListView.searchAdapterImages.results.size() || (callback2 = galleryListView.onSelectListener) == null) {
             return;
         }
-        callback2.run(this.searchAdapterImages.results.get(i), null);
+        callback2.run(galleryListView.searchAdapterImages.results.get(i), null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(View view) {
-        if (this.buttonsLayout.getAlpha() < 0.25f) {
+    public static /* synthetic */ void $r8$lambda$urItoZuaELpxCukBK6VyPLm032Q(GalleryListView galleryListView, View view) {
+        if (galleryListView.buttonsLayout.getAlpha() < 0.25f) {
             return;
         }
-        selectMultiple(false);
+        galleryListView.selectMultiple(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(View view) {
-        if (this.buttonsLayout.getAlpha() < 0.25f) {
+    public static /* synthetic */ void $r8$lambda$xwcTpau67eJie-G40XCykcSsCxA(GalleryListView galleryListView, View view) {
+        if (galleryListView.buttonsLayout.getAlpha() < 0.25f) {
             return;
         }
-        selectMultiple(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(View view) {
-        selectMultiple(false);
+        galleryListView.selectMultiple(true);
     }
 
     public void setMultipleOnClick(boolean z) {
@@ -794,18 +785,23 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         return true;
     }
 
-    private void selectMultiple(boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void selectMultiple(boolean z) {
         if (this.onSelectMultipleListener == null || this.selectedPhotos.isEmpty()) {
             return;
         }
+        int i = 0;
         if (this.selectedPhotos.size() == 1) {
             this.onSelectListener.run((MediaController.PhotoEntry) this.selectedPhotos.get(0), null);
             return;
         }
         ArrayList arrayList = new ArrayList();
-        Iterator it = this.selectedPhotos.iterator();
-        while (it.hasNext()) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) it.next();
+        ArrayList arrayList2 = this.selectedPhotos;
+        int size = arrayList2.size();
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
             arrayList.add((!photoEntry.isVideo || photoEntry.isLivePhoto()) ? null : prepareBlurredThumb(findCell(photoEntry)));
         }
         this.onSelectMultipleListener.run(Boolean.valueOf(z), new ArrayList(this.selectedPhotos), arrayList);
@@ -964,9 +960,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda9
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$updateAlbumsDropDown$9;
-                lambda$updateAlbumsDropDown$9 = GalleryListView.lambda$updateAlbumsDropDown$9(arrayList, (MediaController.AlbumEntry) obj, (MediaController.AlbumEntry) obj2);
-                return lambda$updateAlbumsDropDown$9;
+                return GalleryListView.$r8$lambda$loNHKpXmiTQFIt6B9vuy9b9fjLQ(arrayList, (MediaController.AlbumEntry) obj, (MediaController.AlbumEntry) obj2);
             }
         });
         if (!this.drafts.isEmpty()) {
@@ -993,14 +987,13 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             albumButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GalleryListView.this.lambda$updateAlbumsDropDown$10(albumEntry, view);
+                    GalleryListView.$r8$lambda$DeqbRmWZXqyf8_-QICAVqgY-KYM(GalleryListView.this, albumEntry, view);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateAlbumsDropDown$9(ArrayList arrayList, MediaController.AlbumEntry albumEntry, MediaController.AlbumEntry albumEntry2) {
+    public static /* synthetic */ int $r8$lambda$loNHKpXmiTQFIt6B9vuy9b9fjLQ(ArrayList arrayList, MediaController.AlbumEntry albumEntry, MediaController.AlbumEntry albumEntry2) {
         int indexOf;
         int indexOf2;
         int i = albumEntry.bucketId;
@@ -1013,10 +1006,9 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         return 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateAlbumsDropDown$10(MediaController.AlbumEntry albumEntry, View view) {
-        selectAlbum(albumEntry, false);
-        this.dropDownContainer.closeSubMenu();
+    public static /* synthetic */ void $r8$lambda$DeqbRmWZXqyf8_-QICAVqgY-KYM(GalleryListView galleryListView, MediaController.AlbumEntry albumEntry, View view) {
+        galleryListView.selectAlbum(albumEntry, false);
+        galleryListView.dropDownContainer.closeSubMenu();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1112,7 +1104,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             this.unload = new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Cell$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GalleryListView.Cell.this.lambda$new$0();
+                    GalleryListView.Cell.this.loadBitmap(null);
                 }
             };
             this.clipPath = new Path();
@@ -1167,11 +1159,6 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         protected void onDetachedFromWindow() {
             super.onDetachedFromWindow();
             AndroidUtilities.runOnUIThread(this.unload, 250L);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            loadBitmap(null);
         }
 
         public void set(StoryEntry storyEntry, int i) {
@@ -1263,7 +1250,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                 this.checkBox.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.7f).scaleY(z ? 1.0f : 0.7f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Cell$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GalleryListView.Cell.this.lambda$setCheckbox$1(z);
+                        GalleryListView.Cell.$r8$lambda$djyHlxKzUEr9cxym1gQawI3susQ(GalleryListView.Cell.this, z);
                     }
                 }).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(320L).start();
             }
@@ -1275,12 +1262,12 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setCheckbox$1(boolean z) {
+        public static /* synthetic */ void $r8$lambda$djyHlxKzUEr9cxym1gQawI3susQ(Cell cell, boolean z) {
             if (z) {
-                return;
+                cell.getClass();
+            } else {
+                cell.checkBoxContainer.setVisibility(8);
             }
-            this.checkBoxContainer.setVisibility(8);
         }
 
         private static Bitmap getBitmap(String str) {
@@ -1416,7 +1403,8 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             return new Pair(bitmap, iArr);
         }
 
-        private void loadBitmap(final Object obj) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public void loadBitmap(final Object obj) {
             final String str;
             if (obj == null) {
                 releaseBitmap(this.currentKey);
@@ -1469,27 +1457,26 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Cell$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GalleryListView.Cell.this.lambda$loadBitmap$3(obj, str);
+                    GalleryListView.Cell.$r8$lambda$_7dMz2ydq9aw3dMFIaBmuW4r2oo(GalleryListView.Cell.this, obj, str);
                 }
             };
             this.loadingBitmap = runnable;
             queue.postRunnable(runnable);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadBitmap$3(Object obj, final String str) {
-            final Pair thumbnail = getThumbnail(obj);
+        public static /* synthetic */ void $r8$lambda$_7dMz2ydq9aw3dMFIaBmuW4r2oo(final Cell cell, Object obj, final String str) {
+            final Pair thumbnail = cell.getThumbnail(obj);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Cell$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GalleryListView.Cell.this.lambda$loadBitmap$2(str, thumbnail);
+                    GalleryListView.Cell.$r8$lambda$TCRvr-1gvx9HPeuwmGvtXOUcKvQ(GalleryListView.Cell.this, str, thumbnail);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadBitmap$2(String str, Pair pair) {
-            afterLoad(str, (Bitmap) pair.first, (int[]) pair.second);
+        public static /* synthetic */ void $r8$lambda$TCRvr-1gvx9HPeuwmGvtXOUcKvQ(Cell cell, String str, Pair pair) {
+            cell.getClass();
+            cell.afterLoad(str, (Bitmap) pair.first, (int[]) pair.second);
         }
 
         private void afterLoad(String str, Bitmap bitmap, int[] iArr) {
@@ -1767,13 +1754,13 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                 cell.accessibilityClick = new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Adapter$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GalleryListView.Adapter.this.lambda$onBindViewHolder$0(cell);
+                        GalleryListView.Adapter.$r8$lambda$-hbmyvvmFyTNXCfIAv27hg0IUK4(GalleryListView.Adapter.this, cell);
                     }
                 };
                 cell.accessibilityLongClick = new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Adapter$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GalleryListView.Adapter.this.lambda$onBindViewHolder$1(cell);
+                        GalleryListView.Adapter.$r8$lambda$jtTmvJRlTE_bQhczXBweajrZHqc(GalleryListView.Adapter.this, cell);
                     }
                 };
                 int i2 = i - 2;
@@ -1804,31 +1791,28 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                     cell.checkBoxContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$Adapter$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            GalleryListView.Adapter.this.lambda$onBindViewHolder$2(photoEntry, cell, view);
+                            GalleryListView.Adapter.$r8$lambda$BQ5Nfqo1h2A3r3I69wlwOEICoew(GalleryListView.Adapter.this, photoEntry, cell, view);
                         }
                     });
                 }
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(Cell cell) {
+        public static /* synthetic */ void $r8$lambda$-hbmyvvmFyTNXCfIAv27hg0IUK4(Adapter adapter, Cell cell) {
             int childAdapterPosition = GalleryListView.this.listView.getChildAdapterPosition(cell);
             if (childAdapterPosition != -1) {
                 GalleryListView.this.listView.clickItem(cell, childAdapterPosition);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$1(Cell cell) {
+        public static /* synthetic */ void $r8$lambda$jtTmvJRlTE_bQhczXBweajrZHqc(Adapter adapter, Cell cell) {
             int childAdapterPosition = GalleryListView.this.listView.getChildAdapterPosition(cell);
             if (childAdapterPosition != -1) {
                 GalleryListView.this.listView.longClickItem(cell, childAdapterPosition);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$2(MediaController.PhotoEntry photoEntry, Cell cell, View view) {
+        public static /* synthetic */ void $r8$lambda$BQ5Nfqo1h2A3r3I69wlwOEICoew(Adapter adapter, MediaController.PhotoEntry photoEntry, Cell cell, View view) {
             if (!GalleryListView.this.selectedPhotos.contains(photoEntry)) {
                 if (GalleryListView.this.selectedPhotos.size() + 1 > GalleryListView.this.maxCount) {
                     GalleryListView galleryListView = GalleryListView.this;
@@ -2008,9 +1992,13 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
     public void updateDrafts() {
         this.drafts.clear();
         if (!this.onlyPhotos) {
-            Iterator it = MessagesController.getInstance(this.currentAccount).getStoriesController().getDraftsController().drafts.iterator();
-            while (it.hasNext()) {
-                StoryEntry storyEntry = (StoryEntry) it.next();
+            ArrayList arrayList = MessagesController.getInstance(this.currentAccount).getStoriesController().getDraftsController().drafts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                StoryEntry storyEntry = (StoryEntry) obj;
                 if (!storyEntry.isEdit && !storyEntry.isError) {
                     this.drafts.add(storyEntry);
                 }
@@ -2154,7 +2142,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                 this.currentReqId = ConnectionsManager.getInstance(GalleryListView.this.currentAccount).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$SearchAdapter$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        GalleryListView.SearchAdapter.this.lambda$loadInternal$1(messagesController, tLObject, tL_error);
+                        GalleryListView.SearchAdapter.$r8$lambda$WPR6tKYcnM800-8bBkCaGEGnL9Y(GalleryListView.SearchAdapter.this, messagesController, tLObject, tL_error);
                     }
                 });
             } else {
@@ -2176,70 +2164,69 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
                 this.currentReqId = ConnectionsManager.getInstance(GalleryListView.this.currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$SearchAdapter$$ExternalSyntheticLambda2
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        GalleryListView.SearchAdapter.this.lambda$loadInternal$3(isEmpty, tLObject, tL_error);
+                        GalleryListView.SearchAdapter.$r8$lambda$BM4SAfJY7pLCeWc9RBL59E-2DWQ(GalleryListView.SearchAdapter.this, isEmpty, tLObject, tL_error);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadInternal$1(final MessagesController messagesController, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$WPR6tKYcnM800-8bBkCaGEGnL9Y(final SearchAdapter searchAdapter, final MessagesController messagesController, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            searchAdapter.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$SearchAdapter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GalleryListView.SearchAdapter.this.lambda$loadInternal$0(tLObject, messagesController);
+                    GalleryListView.SearchAdapter.$r8$lambda$j_zera_FcbQ1H6WLFBTpEr3jOf8(GalleryListView.SearchAdapter.this, tLObject, messagesController);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadInternal$0(TLObject tLObject, MessagesController messagesController) {
-            this.triedResolvingBot = true;
-            this.loading = false;
+        public static /* synthetic */ void $r8$lambda$j_zera_FcbQ1H6WLFBTpEr3jOf8(SearchAdapter searchAdapter, TLObject tLObject, MessagesController messagesController) {
+            searchAdapter.triedResolvingBot = true;
+            searchAdapter.loading = false;
             if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
                 TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                 messagesController.putUsers(tL_contacts_resolvedPeer.users, false);
                 messagesController.putChats(tL_contacts_resolvedPeer.chats, false);
                 MessagesStorage.getInstance(GalleryListView.this.currentAccount).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-                loadInternal();
+                searchAdapter.loadInternal();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadInternal$3(final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$BM4SAfJY7pLCeWc9RBL59E-2DWQ(final SearchAdapter searchAdapter, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            searchAdapter.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$SearchAdapter$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GalleryListView.SearchAdapter.this.lambda$loadInternal$2(tLObject, z);
+                    GalleryListView.SearchAdapter.$r8$lambda$ZMRu6P_EXiJat8geFFHyU6ebArY(GalleryListView.SearchAdapter.this, tLObject, z);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadInternal$2(TLObject tLObject, boolean z) {
+        public static /* synthetic */ void $r8$lambda$ZMRu6P_EXiJat8geFFHyU6ebArY(SearchAdapter searchAdapter, TLObject tLObject, boolean z) {
+            searchAdapter.getClass();
             if (tLObject instanceof TLRPC.messages_BotResults) {
                 TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                this.lastOffset = messages_botresults.next_offset;
+                searchAdapter.lastOffset = messages_botresults.next_offset;
                 if (z) {
-                    this.results.clear();
+                    searchAdapter.results.clear();
                 }
                 for (int i = 0; i < messages_botresults.results.size(); i++) {
                     TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i);
                     TLRPC.Document document = botInlineResult.document;
                     if (document != null) {
-                        this.results.add(document);
+                        searchAdapter.results.add(document);
                     } else {
                         TLRPC.Photo photo = botInlineResult.photo;
                         if (photo != null) {
-                            this.results.add(photo);
+                            searchAdapter.results.add(photo);
                         } else if (botInlineResult.content != null) {
-                            this.results.add(botInlineResult);
+                            searchAdapter.results.add(botInlineResult);
                         }
                     }
                 }
-                this.loading = false;
-                onLoadingUpdate(false);
-                notifyDataSetChanged();
+                searchAdapter.loading = false;
+                searchAdapter.onLoadingUpdate(false);
+                searchAdapter.notifyDataSetChanged();
             }
         }
     }

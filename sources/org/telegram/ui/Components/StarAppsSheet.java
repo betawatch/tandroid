@@ -31,16 +31,15 @@ public class StarAppsSheet extends BottomSheetWithRecyclerListView {
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.StarAppsSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                StarAppsSheet.this.lambda$new$0(view, i2);
+                StarAppsSheet.$r8$lambda$FVOAvvo4ZVgEI5DyLsXrg4gvCwo(StarAppsSheet.this, view, i2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i) {
-        Object object = this.adapter.getObject(i - 1);
+    public static /* synthetic */ void $r8$lambda$FVOAvvo4ZVgEI5DyLsXrg4gvCwo(StarAppsSheet starAppsSheet, View view, int i) {
+        Object object = starAppsSheet.adapter.getObject(i - 1);
         if (object instanceof TLRPC.User) {
-            MessagesController.getInstance(this.currentAccount).openApp(this.attachedFragment, (TLRPC.User) object, null, 0, null);
+            MessagesController.getInstance(starAppsSheet.currentAccount).openApp(starAppsSheet.attachedFragment, (TLRPC.User) object, null, 0, null);
         }
     }
 

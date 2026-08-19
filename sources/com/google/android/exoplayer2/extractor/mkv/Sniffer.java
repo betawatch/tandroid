@@ -8,7 +8,7 @@ final class Sniffer {
     private int peekLength;
     private final ParsableByteArray scratch = new ParsableByteArray(8);
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0098, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0098, code lost:
     
         return false;
      */
@@ -36,31 +36,29 @@ final class Sniffer {
         }
         long readUint = readUint(extractorInput);
         long j2 = this.peekLength;
-        if (readUint == Long.MIN_VALUE) {
-            return false;
-        }
-        if (length != -1 && j2 + readUint >= length) {
-            return false;
-        }
-        while (true) {
-            long j3 = this.peekLength;
-            long j4 = j2 + readUint;
-            if (j3 >= j4) {
-                return j3 == j4;
-            }
-            if (readUint(extractorInput) == Long.MIN_VALUE) {
-                return false;
-            }
-            long readUint2 = readUint(extractorInput);
-            if (readUint2 < 0 || readUint2 > 2147483647L) {
-                break;
-            }
-            if (readUint2 != 0) {
-                int i3 = (int) readUint2;
-                extractorInput.advancePeekPosition(i3);
-                this.peekLength += i3;
+        if (readUint != Long.MIN_VALUE && (length == -1 || j2 + readUint < length)) {
+            while (true) {
+                long j3 = this.peekLength;
+                long j4 = j2 + readUint;
+                if (j3 < j4) {
+                    if (readUint(extractorInput) == Long.MIN_VALUE) {
+                        return false;
+                    }
+                    long readUint2 = readUint(extractorInput);
+                    if (readUint2 < 0 || readUint2 > 2147483647L) {
+                        break;
+                    }
+                    if (readUint2 != 0) {
+                        int i3 = (int) readUint2;
+                        extractorInput.advancePeekPosition(i3);
+                        this.peekLength += i3;
+                    }
+                } else if (j3 == j4) {
+                    return true;
+                }
             }
         }
+        return false;
     }
 
     private long readUint(ExtractorInput extractorInput) {

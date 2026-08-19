@@ -666,8 +666,9 @@ public class PhotoAttachPhotoCell extends FrameLayout {
             this.animatorSet.setDuration(180L);
             AnimatorSet animatorSet3 = this.animatorSet;
             FrameLayout frameLayout = this.videoInfoContainer;
+            float[] fArr = {z ? 1.0f : 0.0f};
             Property property = View.ALPHA;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, z ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.checkBox, (Property<CheckBox2, Float>) property, z ? 1.0f : 0.0f));
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, fArr), ObjectAnimator.ofFloat(this.checkBox, (Property<CheckBox2, Float>) property, z ? 1.0f : 0.0f));
             this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.PhotoAttachPhotoCell.6
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
@@ -692,7 +693,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x007c A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0077  */
     @Override // android.view.View
     /*

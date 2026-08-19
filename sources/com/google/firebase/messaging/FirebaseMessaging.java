@@ -123,7 +123,7 @@ public class FirebaseMessaging {
         executor2.execute(new Runnable() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseMessaging.this.lambda$new$1();
+                FirebaseMessaging.$r8$lambda$bTZfnbXKrjIXUCiyu8l-9-JPAxs(FirebaseMessaging.this);
             }
         });
         Task createInstance = TopicsSubscriber.createInstance(this, metadata, gmsRpc, applicationContext, FcmExecutors.newTopicsSyncExecutor());
@@ -131,34 +131,27 @@ public class FirebaseMessaging {
         createInstance.addOnSuccessListener(executor2, new OnSuccessListener() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                FirebaseMessaging.this.lambda$new$2((TopicsSubscriber) obj);
+                FirebaseMessaging.$r8$lambda$ssvggG6aCg9AxxngyeNF7gHjciA(FirebaseMessaging.this, (TopicsSubscriber) obj);
             }
         });
         executor2.execute(new Runnable() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseMessaging.this.lambda$new$3();
+                ProxyNotificationInitializer.initialize(FirebaseMessaging.this.context);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        if (isAutoInitEnabled()) {
-            startSyncIfNecessary();
+    public static /* synthetic */ void $r8$lambda$bTZfnbXKrjIXUCiyu8l-9-JPAxs(FirebaseMessaging firebaseMessaging) {
+        if (firebaseMessaging.isAutoInitEnabled()) {
+            firebaseMessaging.startSyncIfNecessary();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(TopicsSubscriber topicsSubscriber) {
-        if (isAutoInitEnabled()) {
+    public static /* synthetic */ void $r8$lambda$ssvggG6aCg9AxxngyeNF7gHjciA(FirebaseMessaging firebaseMessaging, TopicsSubscriber topicsSubscriber) {
+        if (firebaseMessaging.isAutoInitEnabled()) {
             topicsSubscriber.startTopicsSyncIfNecessary();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        ProxyNotificationInitializer.initialize(this.context);
     }
 
     public boolean isAutoInitEnabled() {
@@ -170,16 +163,16 @@ public class FirebaseMessaging {
         this.initExecutor.execute(new Runnable() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseMessaging.this.lambda$getToken$4(taskCompletionSource);
+                FirebaseMessaging.$r8$lambda$2qw-XzcEnBhCYM_NFRv12nL9Swg(FirebaseMessaging.this, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getToken$4(TaskCompletionSource taskCompletionSource) {
+    public static /* synthetic */ void $r8$lambda$2qw-XzcEnBhCYM_NFRv12nL9Swg(FirebaseMessaging firebaseMessaging, TaskCompletionSource taskCompletionSource) {
+        firebaseMessaging.getClass();
         try {
-            taskCompletionSource.setResult(blockingGetToken());
+            taskCompletionSource.setResult(firebaseMessaging.blockingGetToken());
         } catch (Exception e) {
             taskCompletionSource.setException(e);
         }
@@ -246,9 +239,14 @@ public class FirebaseMessaging {
             return (String) Tasks.await(this.requestDeduplicator.getOrStartGetTokenRequest(defaultSenderId, new RequestDeduplicator.GetTokenRequest() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda5
                 @Override // com.google.firebase.messaging.RequestDeduplicator.GetTokenRequest
                 public final Task start() {
-                    Task lambda$blockingGetToken$10;
-                    lambda$blockingGetToken$10 = FirebaseMessaging.this.lambda$blockingGetToken$10(defaultSenderId, tokenWithoutTriggeringSync);
-                    return lambda$blockingGetToken$10;
+                    Task onSuccessTask;
+                    onSuccessTask = r0.gmsRpc.getToken().onSuccessTask(r0.fileExecutor, new SuccessContinuation() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda6
+                        @Override // com.google.android.gms.tasks.SuccessContinuation
+                        public final Task then(Object obj) {
+                            return FirebaseMessaging.$r8$lambda$iYz0ZfMWZsQuwME2NEL9R0ImLwk(FirebaseMessaging.this, r2, r3, (String) obj);
+                        }
+                    });
+                    return onSuccessTask;
                 }
             }));
         } catch (InterruptedException | ExecutionException e) {
@@ -256,23 +254,10 @@ public class FirebaseMessaging {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Task lambda$blockingGetToken$10(final String str, final Store.Token token) {
-        return this.gmsRpc.getToken().onSuccessTask(this.fileExecutor, new SuccessContinuation() { // from class: com.google.firebase.messaging.FirebaseMessaging$$ExternalSyntheticLambda6
-            @Override // com.google.android.gms.tasks.SuccessContinuation
-            public final Task then(Object obj) {
-                Task lambda$blockingGetToken$9;
-                lambda$blockingGetToken$9 = FirebaseMessaging.this.lambda$blockingGetToken$9(str, token, (String) obj);
-                return lambda$blockingGetToken$9;
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Task lambda$blockingGetToken$9(String str, Store.Token token, String str2) {
-        getStore(this.context).saveToken(getSubtype(), str, str2, this.metadata.getAppVersionCode());
+    public static /* synthetic */ Task $r8$lambda$iYz0ZfMWZsQuwME2NEL9R0ImLwk(FirebaseMessaging firebaseMessaging, String str, Store.Token token, String str2) {
+        getStore(firebaseMessaging.context).saveToken(firebaseMessaging.getSubtype(), str, str2, firebaseMessaging.metadata.getAppVersionCode());
         if (token == null || !str2.equals(token.token)) {
-            invokeOnTokenRefresh(str2);
+            firebaseMessaging.invokeOnTokenRefresh(str2);
         }
         return Tasks.forResult(str2);
     }
@@ -321,7 +306,7 @@ public class FirebaseMessaging {
                     EventHandler eventHandler = new EventHandler() { // from class: com.google.firebase.messaging.FirebaseMessaging$AutoInit$$ExternalSyntheticLambda0
                         @Override // com.google.firebase.events.EventHandler
                         public final void handle(Event event) {
-                            FirebaseMessaging.AutoInit.this.lambda$initialize$0(event);
+                            FirebaseMessaging.AutoInit.$r8$lambda$RHbnQNQxeZwzPe_AKfWLj3vsXZc(FirebaseMessaging.AutoInit.this, event);
                         }
                     };
                     this.dataCollectionDefaultChangeEventHandler = eventHandler;
@@ -333,9 +318,8 @@ public class FirebaseMessaging {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$initialize$0(Event event) {
-            if (isEnabled()) {
+        public static /* synthetic */ void $r8$lambda$RHbnQNQxeZwzPe_AKfWLj3vsXZc(AutoInit autoInit, Event event) {
+            if (autoInit.isEnabled()) {
                 FirebaseMessaging.this.startSyncIfNecessary();
             }
         }

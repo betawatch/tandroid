@@ -66,11 +66,13 @@ public final class MotionPhotoMetadata implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || MotionPhotoMetadata.class != obj.getClass()) {
-            return false;
+        if (obj != null && MotionPhotoMetadata.class == obj.getClass()) {
+            MotionPhotoMetadata motionPhotoMetadata = (MotionPhotoMetadata) obj;
+            if (this.photoStartPosition == motionPhotoMetadata.photoStartPosition && this.photoSize == motionPhotoMetadata.photoSize && this.photoPresentationTimestampUs == motionPhotoMetadata.photoPresentationTimestampUs && this.videoStartPosition == motionPhotoMetadata.videoStartPosition && this.videoSize == motionPhotoMetadata.videoSize) {
+                return true;
+            }
         }
-        MotionPhotoMetadata motionPhotoMetadata = (MotionPhotoMetadata) obj;
-        return this.photoStartPosition == motionPhotoMetadata.photoStartPosition && this.photoSize == motionPhotoMetadata.photoSize && this.photoPresentationTimestampUs == motionPhotoMetadata.photoPresentationTimestampUs && this.videoStartPosition == motionPhotoMetadata.videoStartPosition && this.videoSize == motionPhotoMetadata.videoSize;
+        return false;
     }
 
     public int hashCode() {

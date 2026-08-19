@@ -317,19 +317,18 @@ public abstract class NotificationCompat {
         }
 
         public Builder setShortcutInfo(ShortcutInfoCompat shortcutInfoCompat) {
-            if (shortcutInfoCompat == null) {
-                return this;
-            }
-            this.mShortcutId = shortcutInfoCompat.getId();
-            if (this.mLocusId == null) {
-                if (shortcutInfoCompat.getLocusId() != null) {
-                    this.mLocusId = shortcutInfoCompat.getLocusId();
-                } else if (shortcutInfoCompat.getId() != null) {
-                    this.mLocusId = new LocusIdCompat(shortcutInfoCompat.getId());
+            if (shortcutInfoCompat != null) {
+                this.mShortcutId = shortcutInfoCompat.getId();
+                if (this.mLocusId == null) {
+                    if (shortcutInfoCompat.getLocusId() != null) {
+                        this.mLocusId = shortcutInfoCompat.getLocusId();
+                    } else if (shortcutInfoCompat.getId() != null) {
+                        this.mLocusId = new LocusIdCompat(shortcutInfoCompat.getId());
+                    }
                 }
-            }
-            if (this.mContentTitle == null) {
-                setContentTitle(shortcutInfoCompat.getShortLabel());
+                if (this.mContentTitle == null) {
+                    setContentTitle(shortcutInfoCompat.getShortLabel());
+                }
             }
             return this;
         }
@@ -905,9 +904,13 @@ public abstract class NotificationCompat {
             if (this.mSummaryTextSet) {
                 bigContentTitle.setSummaryText(this.mSummaryText);
             }
-            Iterator it = this.mTexts.iterator();
-            while (it.hasNext()) {
-                bigContentTitle.addLine((CharSequence) it.next());
+            ArrayList arrayList = this.mTexts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                bigContentTitle.addLine((CharSequence) obj);
             }
         }
     }
@@ -1064,9 +1067,12 @@ public abstract class NotificationCompat {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = this.mRemoteInputs;
                 if (arrayList3 != null) {
-                    Iterator it = arrayList3.iterator();
-                    while (it.hasNext()) {
-                        RemoteInput remoteInput = (RemoteInput) it.next();
+                    int size = arrayList3.size();
+                    int i = 0;
+                    while (i < size) {
+                        Object obj = arrayList3.get(i);
+                        i++;
+                        RemoteInput remoteInput = (RemoteInput) obj;
                         if (remoteInput.isDataOnly()) {
                             arrayList.add(remoteInput);
                         } else {
@@ -1100,55 +1106,59 @@ public abstract class NotificationCompat {
             Bundle bundle = new Bundle();
             if (!this.mActions.isEmpty()) {
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>(this.mActions.size());
-                Iterator it = this.mActions.iterator();
-                while (it.hasNext()) {
-                    arrayList.add(getActionFromActionCompat((Action) it.next()));
+                ArrayList arrayList2 = this.mActions;
+                int size = arrayList2.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList2.get(i);
+                    i++;
+                    arrayList.add(getActionFromActionCompat((Action) obj));
                 }
                 bundle.putParcelableArrayList("actions", arrayList);
             }
-            int i = this.mFlags;
-            if (i != 1) {
-                bundle.putInt("flags", i);
+            int i2 = this.mFlags;
+            if (i2 != 1) {
+                bundle.putInt("flags", i2);
             }
             PendingIntent pendingIntent = this.mDisplayIntent;
             if (pendingIntent != null) {
                 bundle.putParcelable("displayIntent", pendingIntent);
             }
             if (!this.mPages.isEmpty()) {
-                ArrayList arrayList2 = this.mPages;
-                bundle.putParcelableArray("pages", (Parcelable[]) arrayList2.toArray(new Notification[arrayList2.size()]));
+                ArrayList arrayList3 = this.mPages;
+                bundle.putParcelableArray("pages", (Parcelable[]) arrayList3.toArray(new Notification[arrayList3.size()]));
             }
             Bitmap bitmap = this.mBackground;
             if (bitmap != null) {
                 bundle.putParcelable("background", bitmap);
             }
-            int i2 = this.mContentIcon;
-            if (i2 != 0) {
-                bundle.putInt("contentIcon", i2);
+            int i3 = this.mContentIcon;
+            if (i3 != 0) {
+                bundle.putInt("contentIcon", i3);
             }
-            int i3 = this.mContentIconGravity;
-            if (i3 != 8388613) {
-                bundle.putInt("contentIconGravity", i3);
+            int i4 = this.mContentIconGravity;
+            if (i4 != 8388613) {
+                bundle.putInt("contentIconGravity", i4);
             }
-            int i4 = this.mContentActionIndex;
-            if (i4 != -1) {
-                bundle.putInt("contentActionIndex", i4);
+            int i5 = this.mContentActionIndex;
+            if (i5 != -1) {
+                bundle.putInt("contentActionIndex", i5);
             }
-            int i5 = this.mCustomSizePreset;
-            if (i5 != 0) {
-                bundle.putInt("customSizePreset", i5);
-            }
-            int i6 = this.mCustomContentHeight;
+            int i6 = this.mCustomSizePreset;
             if (i6 != 0) {
-                bundle.putInt("customContentHeight", i6);
+                bundle.putInt("customSizePreset", i6);
             }
-            int i7 = this.mGravity;
-            if (i7 != 80) {
-                bundle.putInt("gravity", i7);
+            int i7 = this.mCustomContentHeight;
+            if (i7 != 0) {
+                bundle.putInt("customContentHeight", i7);
             }
-            int i8 = this.mHintScreenTimeout;
-            if (i8 != 0) {
-                bundle.putInt("hintScreenTimeout", i8);
+            int i8 = this.mGravity;
+            if (i8 != 80) {
+                bundle.putInt("gravity", i8);
+            }
+            int i9 = this.mHintScreenTimeout;
+            if (i9 != 0) {
+                bundle.putInt("hintScreenTimeout", i9);
             }
             String str = this.mDismissalId;
             if (str != null) {
@@ -1387,9 +1397,9 @@ public abstract class NotificationCompat {
             private Builder setFlag(int i, boolean z) {
                 if (z) {
                     this.mFlags = i | this.mFlags;
-                } else {
-                    this.mFlags = (~i) & this.mFlags;
+                    return this;
                 }
+                this.mFlags = (~i) & this.mFlags;
                 return this;
             }
         }

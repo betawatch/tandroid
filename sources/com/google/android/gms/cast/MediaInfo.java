@@ -298,67 +298,95 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
         return jSONObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00aa A[LOOP:0: B:4:0x0022->B:10:0x00aa, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x00b0 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0188 A[LOOP:2: B:35:0x00d0->B:41:0x0188, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x018e A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00ba A[LOOP:0: B:4:0x0023->B:10:0x00ba, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00c1 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x019f A[LOOP:1: B:17:0x00e7->B:23:0x019f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x01a5 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     final void zzr(JSONObject jSONObject) {
+        char c;
         AdBreakClipInfo adBreakClipInfo;
         AdBreakInfo adBreakInfo;
+        int i = 0;
         if (jSONObject.has("breaks")) {
             JSONArray jSONArray = jSONObject.getJSONArray("breaks");
             ArrayList arrayList = new ArrayList(jSONArray.length());
-            int i = 0;
+            int i2 = 0;
             while (true) {
-                if (i >= jSONArray.length()) {
+                if (i2 >= jSONArray.length()) {
+                    c = 0;
                     break;
                 }
-                JSONObject jSONObject2 = jSONArray.getJSONObject(i);
+                JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
                 Parcelable.Creator<AdBreakInfo> creator = AdBreakInfo.CREATOR;
-                if (jSONObject2 != null && jSONObject2.has("id") && jSONObject2.has("position")) {
-                    try {
-                        String string = jSONObject2.getString("id");
-                        long secToMillisec = CastUtils.secToMillisec(jSONObject2.getLong("position"));
-                        boolean optBoolean = jSONObject2.optBoolean("isWatched");
-                        long secToMillisec2 = CastUtils.secToMillisec(jSONObject2.optLong("duration"));
-                        JSONArray optJSONArray = jSONObject2.optJSONArray("breakClipIds");
-                        String[] strArr = new String[0];
-                        if (optJSONArray != null) {
-                            strArr = new String[optJSONArray.length()];
-                            for (int i2 = 0; i2 < optJSONArray.length(); i2++) {
-                                strArr[i2] = optJSONArray.getString(i2);
+                if (jSONObject2 != null) {
+                    if (!jSONObject2.has("id")) {
+                        c = 0;
+                    } else if (jSONObject2.has("position")) {
+                        try {
+                            String string = jSONObject2.getString("id");
+                            long secToMillisec = CastUtils.secToMillisec(jSONObject2.getLong("position"));
+                            boolean optBoolean = jSONObject2.optBoolean("isWatched");
+                            long secToMillisec2 = CastUtils.secToMillisec(jSONObject2.optLong("duration"));
+                            JSONArray optJSONArray = jSONObject2.optJSONArray("breakClipIds");
+                            String[] strArr = new String[i];
+                            if (optJSONArray != null) {
+                                strArr = new String[optJSONArray.length()];
+                                c = 0;
+                                for (int i3 = 0; i3 < optJSONArray.length(); i3++) {
+                                    try {
+                                        strArr[i3] = optJSONArray.getString(i3);
+                                    } catch (JSONException e) {
+                                        e = e;
+                                        Object[] objArr = new Object[1];
+                                        objArr[c] = e.getMessage();
+                                        Log.d("AdBreakInfo", String.format(Locale.ROOT, "Error while creating an AdBreakInfo from JSON: %s", objArr));
+                                        adBreakInfo = null;
+                                        if (adBreakInfo != null) {
+                                        }
+                                    }
+                                }
+                            } else {
+                                c = 0;
                             }
+                            adBreakInfo = new AdBreakInfo(secToMillisec, string, secToMillisec2, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
+                        } catch (JSONException e2) {
+                            e = e2;
+                            c = 0;
                         }
-                        adBreakInfo = new AdBreakInfo(secToMillisec, string, secToMillisec2, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
-                    } catch (JSONException e) {
-                        Log.d("AdBreakInfo", String.format(Locale.ROOT, "Error while creating an AdBreakInfo from JSON: %s", e.getMessage()));
+                        if (adBreakInfo != null) {
+                            arrayList.clear();
+                            break;
+                        } else {
+                            arrayList.add(adBreakInfo);
+                            i2++;
+                            i = 0;
+                        }
                     }
+                    adBreakInfo = null;
                     if (adBreakInfo != null) {
-                        arrayList.clear();
-                        break;
-                    } else {
-                        arrayList.add(adBreakInfo);
-                        i++;
                     }
                 }
                 adBreakInfo = null;
+                c = 0;
                 if (adBreakInfo != null) {
                 }
             }
             this.zzj = new ArrayList(arrayList);
+        } else {
+            c = 0;
         }
         if (jSONObject.has("breakClips")) {
             JSONArray jSONArray2 = jSONObject.getJSONArray("breakClips");
             ArrayList arrayList2 = new ArrayList(jSONArray2.length());
-            int i3 = 0;
+            int i4 = 0;
             while (true) {
-                if (i3 >= jSONArray2.length()) {
+                if (i4 >= jSONArray2.length()) {
                     break;
                 }
-                JSONObject jSONObject3 = jSONArray2.getJSONObject(i3);
+                JSONObject jSONObject3 = jSONArray2.getJSONObject(i4);
                 Parcelable.Creator<AdBreakClipInfo> creator2 = AdBreakClipInfo.CREATOR;
                 if (jSONObject3 != null && jSONObject3.has("id")) {
                     try {
@@ -374,15 +402,17 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
                         String optStringOrNull4 = CastUtils.optStringOrNull(jSONObject3, "title");
                         JSONObject optJSONObject = jSONObject3.optJSONObject("customData");
                         adBreakClipInfo = new AdBreakClipInfo(string2, optStringOrNull4, secToMillisec3, optStringOrNull2, str, optStringOrNull, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), CastUtils.optStringOrNull(jSONObject3, "contentId"), CastUtils.optStringOrNull(jSONObject3, "posterUrl"), jSONObject3.has("whenSkippable") ? CastUtils.secToMillisec(((Integer) jSONObject3.get("whenSkippable")).intValue()) : -1L, CastUtils.optStringOrNull(jSONObject3, "hlsSegmentFormat"), VastAdsRequest.fromJson(jSONObject3.optJSONObject("vastAdsRequest")));
-                    } catch (JSONException e2) {
-                        Log.d("AdBreakClipInfo", String.format(Locale.ROOT, "Error while creating an AdBreakClipInfo from JSON: %s", e2.getMessage()));
+                    } catch (JSONException e3) {
+                        Object[] objArr2 = new Object[1];
+                        objArr2[c] = e3.getMessage();
+                        Log.d("AdBreakClipInfo", String.format(Locale.ROOT, "Error while creating an AdBreakClipInfo from JSON: %s", objArr2));
                     }
                     if (adBreakClipInfo != null) {
                         arrayList2.clear();
                         break;
                     } else {
                         arrayList2.add(adBreakClipInfo);
-                        i3++;
+                        i4++;
                     }
                 }
                 adBreakClipInfo = null;
@@ -420,35 +450,30 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
 
     MediaInfo(JSONObject jSONObject) {
         this(jSONObject.optString("contentId"), -1, null, null, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
-        MediaInfo mediaInfo;
         int i;
         zzfq zzfqVar;
         String optString = jSONObject.optString("streamType", "NONE");
         if ("NONE".equals(optString)) {
-            mediaInfo = this;
-            mediaInfo.zzd = 0;
+            this.zzd = 0;
+        } else if ("BUFFERED".equals(optString)) {
+            this.zzd = 1;
+        } else if ("LIVE".equals(optString)) {
+            this.zzd = 2;
         } else {
-            mediaInfo = this;
-            if ("BUFFERED".equals(optString)) {
-                mediaInfo.zzd = 1;
-            } else if ("LIVE".equals(optString)) {
-                mediaInfo.zzd = 2;
-            } else {
-                mediaInfo.zzd = -1;
-            }
+            this.zzd = -1;
         }
-        mediaInfo.zze = CastUtils.optStringOrNull(jSONObject, "contentType");
+        this.zze = CastUtils.optStringOrNull(jSONObject, "contentType");
         if (jSONObject.has("metadata")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("metadata");
             MediaMetadata mediaMetadata = new MediaMetadata(jSONObject2.getInt("metadataType"));
-            mediaInfo.zzf = mediaMetadata;
+            this.zzf = mediaMetadata;
             mediaMetadata.zzc(jSONObject2);
         }
-        mediaInfo.zzg = -1L;
-        if (mediaInfo.zzd != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
+        this.zzg = -1L;
+        if (this.zzd != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
             double optDouble = jSONObject.optDouble("duration", 0.0d);
             if (!Double.isNaN(optDouble) && !Double.isInfinite(optDouble) && optDouble >= 0.0d) {
-                mediaInfo.zzg = CastUtils.secToMillisec(optDouble);
+                this.zzg = CastUtils.secToMillisec(optDouble);
             }
         }
         if (jSONObject.has("tracks")) {
@@ -459,7 +484,14 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
                 Parcelable.Creator<MediaTrack> creator = MediaTrack.CREATOR;
                 long j = jSONObject3.getLong("trackId");
                 String optString2 = jSONObject3.optString(TeXSymbolParser.TYPE_ATTR);
-                int i3 = "TEXT".equals(optString2) ? 1 : "AUDIO".equals(optString2) ? 2 : "VIDEO".equals(optString2) ? 3 : 0;
+                int i3 = 3;
+                if ("TEXT".equals(optString2)) {
+                    i3 = 1;
+                } else if ("AUDIO".equals(optString2)) {
+                    i3 = 2;
+                } else if (!"VIDEO".equals(optString2)) {
+                    i3 = 0;
+                }
                 String optStringOrNull = CastUtils.optStringOrNull(jSONObject3, "trackContentId");
                 String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject3, "trackContentType");
                 String optStringOrNull3 = CastUtils.optStringOrNull(jSONObject3, "name");
@@ -482,33 +514,33 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
                 }
                 arrayList.add(new MediaTrack(j, i3, optStringOrNull, optStringOrNull2, optStringOrNull3, optStringOrNull4, i, zzfqVar, jSONObject3.optJSONObject("customData")));
             }
-            mediaInfo.zzh = new ArrayList(arrayList);
+            this.zzh = new ArrayList(arrayList);
         } else {
-            mediaInfo.zzh = null;
+            this.zzh = null;
         }
         if (jSONObject.has("textTrackStyle")) {
             JSONObject jSONObject4 = jSONObject.getJSONObject("textTrackStyle");
             TextTrackStyle textTrackStyle = new TextTrackStyle();
             textTrackStyle.fromJson(jSONObject4);
-            mediaInfo.zzi = textTrackStyle;
+            this.zzi = textTrackStyle;
         } else {
-            mediaInfo.zzi = null;
+            this.zzi = null;
         }
         zzr(jSONObject);
-        mediaInfo.zzs = jSONObject.optJSONObject("customData");
-        mediaInfo.zzl = CastUtils.optStringOrNull(jSONObject, "entity");
-        mediaInfo.zzo = CastUtils.optStringOrNull(jSONObject, "atvEntity");
-        mediaInfo.zzm = VastAdsRequest.fromJson(jSONObject.optJSONObject("vmapAdsRequest"));
+        this.zzs = jSONObject.optJSONObject("customData");
+        this.zzl = CastUtils.optStringOrNull(jSONObject, "entity");
+        this.zzo = CastUtils.optStringOrNull(jSONObject, "atvEntity");
+        this.zzm = VastAdsRequest.fromJson(jSONObject.optJSONObject("vmapAdsRequest"));
         if (jSONObject.has("startAbsoluteTime") && !jSONObject.isNull("startAbsoluteTime")) {
             double optDouble2 = jSONObject.optDouble("startAbsoluteTime");
             if (!Double.isNaN(optDouble2) && !Double.isInfinite(optDouble2) && optDouble2 >= 0.0d) {
-                mediaInfo.zzn = CastUtils.secToMillisec(optDouble2);
+                this.zzn = CastUtils.secToMillisec(optDouble2);
             }
         }
         if (jSONObject.has("contentUrl")) {
-            mediaInfo.zzp = jSONObject.optString("contentUrl");
+            this.zzp = jSONObject.optString("contentUrl");
         }
-        mediaInfo.zzq = CastUtils.optStringOrNull(jSONObject, "hlsSegmentFormat");
-        mediaInfo.zzr = CastUtils.optStringOrNull(jSONObject, "hlsVideoSegmentFormat");
+        this.zzq = CastUtils.optStringOrNull(jSONObject, "hlsSegmentFormat");
+        this.zzr = CastUtils.optStringOrNull(jSONObject, "hlsVideoSegmentFormat");
     }
 }

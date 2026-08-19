@@ -127,12 +127,12 @@ public class OldVideoPlayerRewinder {
         onRewindCanceled();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0048, code lost:
     
         if (r0 != 2) goto L30;
      */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0074  */
     /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -196,7 +196,7 @@ public class OldVideoPlayerRewinder {
                 Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.video.OldVideoPlayerRewinder$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        OldVideoPlayerRewinder.this.lambda$incrementRewindCount$0();
+                        OldVideoPlayerRewinder.$r8$lambda$tiX-pNlTfN5uHqqpmyXCUMARuOM(OldVideoPlayerRewinder.this);
                     }
                 };
                 this.updateRewindRunnable = runnable2;
@@ -205,10 +205,9 @@ public class OldVideoPlayerRewinder {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$incrementRewindCount$0() {
-        this.updateRewindRunnable = null;
-        incrementRewindCount();
+    public static /* synthetic */ void $r8$lambda$tiX-pNlTfN5uHqqpmyXCUMARuOM(OldVideoPlayerRewinder oldVideoPlayerRewinder) {
+        oldVideoPlayerRewinder.updateRewindRunnable = null;
+        oldVideoPlayerRewinder.incrementRewindCount();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

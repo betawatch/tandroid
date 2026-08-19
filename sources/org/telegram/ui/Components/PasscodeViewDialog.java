@@ -33,9 +33,9 @@ public class PasscodeViewDialog extends Dialog {
         ViewCompat.setOnApplyWindowInsetsListener(frameLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.PasscodeViewDialog$$ExternalSyntheticLambda0
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                WindowInsetsCompat lambda$new$0;
-                lambda$new$0 = PasscodeViewDialog.lambda$new$0(view, windowInsetsCompat);
-                return lambda$new$0;
+                WindowInsetsCompat windowInsetsCompat2;
+                windowInsetsCompat2 = WindowInsetsCompat.CONSUMED;
+                return windowInsetsCompat2;
             }
         });
         PasscodeView passcodeView = new PasscodeView(context) { // from class: org.telegram.ui.Components.PasscodeViewDialog.1
@@ -64,11 +64,6 @@ public class PasscodeViewDialog extends Dialog {
         };
         this.passcodeView = passcodeView;
         frameLayout.addView(passcodeView, LayoutHelper.createFrame(-1, -1, 119));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsetsCompat lambda$new$0(View view, WindowInsetsCompat windowInsetsCompat) {
-        return WindowInsetsCompat.CONSUMED;
     }
 
     @Override // android.app.Dialog

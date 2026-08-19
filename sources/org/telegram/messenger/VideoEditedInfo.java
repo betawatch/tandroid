@@ -10,7 +10,6 @@ import android.view.View;
 import java.io.File;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.video.MediaCodecPlayer;
@@ -808,21 +807,24 @@ public class VideoEditedInfo {
                 return null;
             }
             ArrayList<StoryEntry> arrayList2 = new ArrayList<>();
-            Iterator<Part> it = arrayList.iterator();
-            while (it.hasNext()) {
-                Part next = it.next();
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Part part = arrayList.get(i);
+                i++;
+                Part part2 = part;
                 StoryEntry storyEntry = new StoryEntry();
-                storyEntry.isVideo = next.isVideo;
-                storyEntry.muted = next.muted;
-                storyEntry.file = new File(next.path);
-                storyEntry.videoVolume = next.volume;
-                storyEntry.videoLoop = next.loop;
-                storyEntry.videoOffset = next.offset;
-                storyEntry.videoLeft = next.left;
-                storyEntry.videoRight = next.right;
-                storyEntry.width = next.width;
-                storyEntry.height = next.height;
-                storyEntry.duration = next.duration;
+                storyEntry.isVideo = part2.isVideo;
+                storyEntry.muted = part2.muted;
+                storyEntry.file = new File(part2.path);
+                storyEntry.videoVolume = part2.volume;
+                storyEntry.videoLoop = part2.loop;
+                storyEntry.videoOffset = part2.offset;
+                storyEntry.videoLeft = part2.left;
+                storyEntry.videoRight = part2.right;
+                storyEntry.width = part2.width;
+                storyEntry.height = part2.height;
+                storyEntry.duration = part2.duration;
                 arrayList2.add(storyEntry);
             }
             return arrayList2;

@@ -180,68 +180,62 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$setHelperShape$2(shape);
+                Painting.$r8$lambda$HnpW7_pJL_0aYt1ui_aPbxF2g6w(Painting.this, shape);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setHelperShape$2(Shape shape) {
-        if (shape != null && this.helperTexture == 0) {
-            this.helperTexture = Texture.generateTexture(this.size);
+    public static /* synthetic */ void $r8$lambda$HnpW7_pJL_0aYt1ui_aPbxF2g6w(final Painting painting, Shape shape) {
+        if (shape != null && painting.helperTexture == 0) {
+            painting.helperTexture = Texture.generateTexture(painting.size);
         }
-        if (this.helperShown != (shape != null)) {
-            this.helperShown = shape != null;
-            ValueAnimator valueAnimator = this.helperAnimator;
+        if (painting.helperShown != (shape != null)) {
+            painting.helperShown = shape != null;
+            ValueAnimator valueAnimator = painting.helperAnimator;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
-                this.helperAnimator = null;
+                painting.helperAnimator = null;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.helperAlpha, this.helperShown ? 1.0f : 0.0f);
-            this.helperAnimator = ofFloat;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(painting.helperAlpha, painting.helperShown ? 1.0f : 0.0f);
+            painting.helperAnimator = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda12
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    Painting.this.lambda$setHelperShape$1(valueAnimator2);
+                    r0.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda14
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            Painting.$r8$lambda$9XyceSV8btCEil5MQI-4naFiOdQ(Painting.this, valueAnimator2);
+                        }
+                    });
                 }
             });
-            this.helperAnimator.addListener(new 1());
-            this.helperAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-            this.helperAnimator.start();
-            this.helperShape = shape;
-            PaintingDelegate paintingDelegate = this.delegate;
+            painting.helperAnimator.addListener(painting.new 1());
+            painting.helperAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+            painting.helperAnimator.start();
+            painting.helperShape = shape;
+            PaintingDelegate paintingDelegate = painting.delegate;
             if (paintingDelegate != null) {
                 paintingDelegate.contentChanged();
             }
-            if (this.helperShown) {
+            if (painting.helperShown) {
                 BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();
                 return;
             }
             return;
         }
-        if (shape != this.helperShape) {
-            this.helperShape = shape;
-            PaintingDelegate paintingDelegate2 = this.delegate;
+        if (shape != painting.helperShape) {
+            painting.helperShape = shape;
+            PaintingDelegate paintingDelegate2 = painting.delegate;
             if (paintingDelegate2 != null) {
                 paintingDelegate2.contentChanged();
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setHelperShape$1(final ValueAnimator valueAnimator) {
-        this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda14
-            @Override // java.lang.Runnable
-            public final void run() {
-                Painting.this.lambda$setHelperShape$0(valueAnimator);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setHelperShape$0(ValueAnimator valueAnimator) {
-        this.helperAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        PaintingDelegate paintingDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$9XyceSV8btCEil5MQI-4naFiOdQ(Painting painting, ValueAnimator valueAnimator) {
+        painting.getClass();
+        painting.helperAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        PaintingDelegate paintingDelegate = painting.delegate;
         if (paintingDelegate != null) {
             paintingDelegate.contentChanged();
         }
@@ -257,13 +251,12 @@ public class Painting {
             Painting.this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Painting.1.this.lambda$onAnimationEnd$0();
+                    Painting.1.$r8$lambda$Bvg8vy1mCO7AEU9TV83zkXlvZ-A(Painting.1.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAnimationEnd$0() {
+        public static /* synthetic */ void $r8$lambda$Bvg8vy1mCO7AEU9TV83zkXlvZ-A(1 r1) {
             if (Painting.this.delegate != null) {
                 Painting.this.delegate.contentChanged();
             }
@@ -283,7 +276,12 @@ public class Painting {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                Painting.this.lambda$applyHelperShape$4(valueAnimator2);
+                r0.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda11
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Painting.$r8$lambda$IGldvW9jX_bPArw7im2mBZZaeTc(Painting.this, valueAnimator2);
+                    }
+                });
             }
         });
         this.helperApplyAnimator.addListener(new 2());
@@ -294,20 +292,10 @@ public class Painting {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$applyHelperShape$4(final ValueAnimator valueAnimator) {
-        this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                Painting.this.lambda$applyHelperShape$3(valueAnimator);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$applyHelperShape$3(ValueAnimator valueAnimator) {
-        this.helperApplyAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        PaintingDelegate paintingDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$IGldvW9jX_bPArw7im2mBZZaeTc(Painting painting, ValueAnimator valueAnimator) {
+        painting.getClass();
+        painting.helperApplyAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        PaintingDelegate paintingDelegate = painting.delegate;
         if (paintingDelegate != null) {
             paintingDelegate.contentChanged();
         }
@@ -322,13 +310,12 @@ public class Painting {
             Painting.this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Painting.2.this.lambda$onAnimationEnd$0();
+                    Painting.2.$r8$lambda$hGEJGcoJEtkqnGrNzN9mvQO9YpQ(Painting.2.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAnimationEnd$0() {
+        public static /* synthetic */ void $r8$lambda$hGEJGcoJEtkqnGrNzN9mvQO9YpQ(2 r8) {
             if (Painting.this.helperShape == null) {
                 Painting.this.helperApplyAnimator = null;
                 return;
@@ -357,19 +344,18 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$paintShape$5(shape, runnable);
+                Painting.$r8$lambda$6zDD4jlqPTunAMqdAHpiFV8uMrg(Painting.this, shape, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$paintShape$5(Shape shape, Runnable runnable) {
-        this.activeShape = shape;
-        if (this.activeStrokeBounds == null) {
-            this.activeStrokeBounds = new RectF();
+    public static /* synthetic */ void $r8$lambda$6zDD4jlqPTunAMqdAHpiFV8uMrg(Painting painting, Shape shape, Runnable runnable) {
+        painting.activeShape = shape;
+        if (painting.activeStrokeBounds == null) {
+            painting.activeStrokeBounds = new RectF();
         }
-        this.activeShape.getBounds(this.activeStrokeBounds);
-        PaintingDelegate paintingDelegate = this.delegate;
+        painting.activeShape.getBounds(painting.activeStrokeBounds);
+        PaintingDelegate paintingDelegate = painting.delegate;
         if (paintingDelegate != null) {
             paintingDelegate.contentChanged();
         }
@@ -385,14 +371,13 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$paintStroke$6(path, z, z2, runnable);
+                Painting.$r8$lambda$yYL8uXL_KDMVVUwpVkzxx_aYrtE(Painting.this, path, z, z2, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$paintStroke$6(Path path, boolean z, boolean z2, Runnable runnable) {
-        paintStrokeInternal(path, z, z2);
+    public static /* synthetic */ void $r8$lambda$yYL8uXL_KDMVVUwpVkzxx_aYrtE(Painting painting, Path path, boolean z, boolean z2, Runnable runnable) {
+        painting.paintStrokeInternal(path, z, z2);
         if (runnable != null) {
             runnable.run();
         }
@@ -462,33 +447,23 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$commitShape$7(shape, i);
+                Painting.$r8$lambda$PSP75msXOeHsFeQNbu5ktyDEClQ(Painting.this, shape, i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$commitShape$7(Shape shape, int i) {
-        commitShapeInternal(shape, i, this.activeStrokeBounds);
-        this.activeStrokeBounds = null;
+    public static /* synthetic */ void $r8$lambda$PSP75msXOeHsFeQNbu5ktyDEClQ(Painting painting, Shape shape, int i) {
+        painting.commitShapeInternal(shape, i, painting.activeStrokeBounds);
+        painting.activeStrokeBounds = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public Slice commitShapeInternal(Shape shape, int i, RectF rectF) {
-        RectF rectF2;
-        boolean z;
         Brush brush = shape.brush;
         if (brush == null) {
             brush = this.brush;
         }
-        if (this.blurManager == null || !(brush instanceof Brush.Blurer)) {
-            rectF2 = rectF;
-            z = false;
-        } else {
-            rectF2 = rectF;
-            z = true;
-        }
-        Slice registerUndo = registerUndo(rectF2, z);
+        Slice registerUndo = registerUndo(rectF, this.blurManager != null && (brush instanceof Brush.Blurer));
         beginSuppressingChanges();
         GLES20.glBindFramebuffer(36160, getReusableFramebuffer());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, getTexture(), 0);
@@ -563,16 +538,15 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$commitPath$8(path, i, z, runnable);
+                Painting.$r8$lambda$or8U5pfVR601M6r9_0wpQULHpqI(Painting.this, path, i, z, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$commitPath$8(Path path, int i, boolean z, Runnable runnable) {
-        commitPathInternal(path, i, z ? this.activeStrokeBounds : null);
+    public static /* synthetic */ void $r8$lambda$or8U5pfVR601M6r9_0wpQULHpqI(Painting painting, Path path, int i, boolean z, Runnable runnable) {
+        painting.commitPathInternal(path, i, z ? painting.activeStrokeBounds : null);
         if (z) {
-            this.activeStrokeBounds = null;
+            painting.activeStrokeBounds = null;
         }
         if (runnable != null) {
             runnable.run();
@@ -674,14 +648,13 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$clearStroke$9(runnable);
+                Painting.$r8$lambda$w92sp96oNqgdnWgKuIR4acJZNdg(Painting.this, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clearStroke$9(Runnable runnable) {
-        clearStrokeInternal();
+    public static /* synthetic */ void $r8$lambda$w92sp96oNqgdnWgKuIR4acJZNdg(Painting painting, Runnable runnable) {
+        painting.clearStrokeInternal();
         if (runnable != null) {
             runnable.run();
         }
@@ -691,15 +664,14 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$clearShape$10();
+                Painting.$r8$lambda$aPEe6Qt50ZlzdFIQGSCmLJ_dW4Q(Painting.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clearShape$10() {
-        this.activeShape = null;
-        PaintingDelegate paintingDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$aPEe6Qt50ZlzdFIQGSCmLJ_dW4Q(Painting painting) {
+        painting.activeShape = null;
+        PaintingDelegate paintingDelegate = painting.delegate;
         if (paintingDelegate != null) {
             paintingDelegate.contentChanged();
         }
@@ -735,7 +707,7 @@ public class Painting {
         this.delegate.requestUndoStore().registerUndo(UUID.randomUUID(), new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$registerUndo$11(slice);
+                Painting.this.restoreSlice(slice);
             }
         });
         return slice;
@@ -750,33 +722,26 @@ public class Painting {
         this.delegate.requestUndoStore().registerUndo(UUID.randomUUID(), new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$registerDoubleUndo$12(slice, slice2, z);
+                Painting.$r8$lambda$hh3hQW4dPckP-JR7byoIR2JGsJ4(Painting.this, slice, slice2, z);
             }
         });
         return slice;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$registerDoubleUndo$12(Slice slice, Slice slice2, boolean z) {
-        lambda$registerUndo$11(slice);
-        lambda$registerUndo$11(slice2);
-        this.hasBlur = z;
+    public static /* synthetic */ void $r8$lambda$hh3hQW4dPckP-JR7byoIR2JGsJ4(Painting painting, Slice slice, Slice slice2, boolean z) {
+        painting.restoreSlice(slice);
+        painting.restoreSlice(slice2);
+        painting.hasBlur = z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: restoreSlice, reason: merged with bridge method [inline-methods] */
-    public void lambda$registerUndo$11(final Slice slice) {
+    public void restoreSlice(final Slice slice) {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$restoreSlice$13(slice);
+                Painting.this.restoreSliceInternal(slice, true);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$restoreSlice$13(Slice slice) {
-        restoreSliceInternal(slice, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -910,8 +875,8 @@ public class Painting {
         Utils.HasGLError();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x012b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1180,23 +1145,22 @@ public class Painting {
         this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                Painting.this.lambda$onPause$14(runnable);
+                Painting.$r8$lambda$lAmJn3eH4Lar4LAspVh7gM2wKoQ(Painting.this, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onPause$14(Runnable runnable) {
-        this.paused = true;
-        this.backupSlice = new Slice(getPaintingData(getBounds(), true, false, false).data, 0, getBounds(), this.delegate.requestDispatchQueue());
-        cleanResources(false);
+    public static /* synthetic */ void $r8$lambda$lAmJn3eH4Lar4LAspVh7gM2wKoQ(Painting painting, Runnable runnable) {
+        painting.paused = true;
+        painting.backupSlice = new Slice(painting.getPaintingData(painting.getBounds(), true, false, false).data, 0, painting.getBounds(), painting.delegate.requestDispatchQueue());
+        painting.cleanResources(false);
         if (runnable != null) {
             runnable.run();
         }
     }
 
     public void onResume() {
-        lambda$registerUndo$11(this.backupSlice);
+        restoreSlice(this.backupSlice);
         this.backupSlice = null;
         this.paused = false;
     }

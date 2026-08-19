@@ -148,7 +148,7 @@ public class FileStore {
     }
 
     private static List safeArrayToList(Object[] objArr) {
-        return objArr == null ? Collections.emptyList() : Arrays.asList(objArr);
+        return objArr == null ? Collections.EMPTY_LIST : Arrays.asList(objArr);
     }
 
     private static boolean useV2FileSystem() {

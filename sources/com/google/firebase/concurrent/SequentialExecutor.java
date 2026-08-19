@@ -123,40 +123,40 @@ final class SequentialExecutor implements Executor {
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:10:0x0054, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:10:0x004e, code lost:
         
             r1 = r1 | java.lang.Thread.interrupted();
             r2 = null;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:12:0x0056, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:12:0x0050, code lost:
         
             r8.task.run();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:16:0x0060, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:16:0x005a, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:17:0x0080, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:17:0x007a, code lost:
         
             r8.task = null;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:18:0x0082, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:18:0x007c, code lost:
         
             throw r0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:20:0x0062, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:20:0x005c, code lost:
         
             r3 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x0063, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x005d, code lost:
         
             com.google.firebase.concurrent.SequentialExecutor.log.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + r8.task, (java.lang.Throwable) r3);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:28:0x004e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:26:0x0045, code lost:
         
-            return;
+            if (r1 == false) goto L50;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:29:?, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:30:?, code lost:
         
             return;
          */
@@ -184,11 +184,9 @@ final class SequentialExecutor implements Executor {
                             SequentialExecutor.this.workerRunningState = WorkerRunningState.IDLE;
                         }
                     }
-                    if (z2) {
-                        Thread.currentThread().interrupt();
+                    if (!z2) {
                         return;
                     }
-                    return;
                 } finally {
                     if (z2) {
                         Thread.currentThread().interrupt();

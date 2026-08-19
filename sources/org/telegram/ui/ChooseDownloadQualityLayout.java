@@ -102,16 +102,11 @@ public class ChooseDownloadQualityLayout {
             addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChooseDownloadQualityLayout$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChooseDownloadQualityLayout.this.lambda$update$1(messageObject, quality, view);
+                    ChooseDownloadQualityLayout.this.callback.onQualitySelected(messageObject, quality);
                 }
             });
             addItem.setSelectorColor(268435455);
         }
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$update$1(MessageObject messageObject, VideoPlayer.Quality quality, View view) {
-        this.callback.onQualitySelected(messageObject, quality);
     }
 }

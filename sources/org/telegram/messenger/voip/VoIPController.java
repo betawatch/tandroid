@@ -7,7 +7,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.util.Locale;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -177,13 +176,17 @@ public class VoIPController {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x005c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void setConfig(double d, double d2, int i, long j) {
         boolean z;
         boolean z2;
+        long j2;
+        boolean z3;
+        long j3;
+        boolean z4;
         String logFilePath;
         ensureNativeInstance();
         try {
@@ -192,29 +195,42 @@ public class VoIPController {
                 z2 = NoiseSuppressor.isAvailable();
             } catch (Throwable unused) {
                 z2 = false;
-                boolean z3 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
-                long j2 = this.nativeInst;
+                boolean z5 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
+                j2 = this.nativeInst;
+                z3 = true;
                 if (z) {
                 }
+                j3 = j2;
+                z4 = true;
                 if (z2) {
+                    z3 = false;
                 }
                 if (BuildVars.DEBUG_VERSION) {
                 }
-                nativeSetConfig(j2, d, d2, i, r9, r10, true, logFilePath, (BuildVars.DEBUG_VERSION || !z3) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
+                nativeSetConfig(j3, d, d2, i, z4, z3, true, logFilePath, (BuildVars.DEBUG_VERSION || !z5) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
             }
         } catch (Throwable unused2) {
             z = false;
         }
-        boolean z32 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
-        long j22 = this.nativeInst;
-        boolean z4 = z || !VoIPServerConfig.getBoolean("use_system_aec", true);
-        boolean z5 = z2 || !VoIPServerConfig.getBoolean("use_system_ns", true);
+        boolean z52 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
+        j2 = this.nativeInst;
+        z3 = true;
+        if (z || !VoIPServerConfig.getBoolean("use_system_aec", true)) {
+            j3 = j2;
+            z4 = true;
+        } else {
+            j3 = j2;
+            z4 = false;
+        }
+        if (z2 && VoIPServerConfig.getBoolean("use_system_ns", true)) {
+            z3 = false;
+        }
         if (BuildVars.DEBUG_VERSION) {
             logFilePath = getLogFilePath(j);
         } else {
             logFilePath = getLogFilePath("voip" + j);
         }
-        nativeSetConfig(j22, d, d2, i, z4, z5, true, logFilePath, (BuildVars.DEBUG_VERSION || !z32) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
+        nativeSetConfig(j3, d, d2, i, z4, z3, true, logFilePath, (BuildVars.DEBUG_VERSION || !z52) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
     }
 
     public void debugCtl(int i, int i2) {
@@ -254,10 +270,13 @@ public class VoIPController {
         if (!BuildVars.DEBUG_VERSION) {
             ArrayList arrayList = new ArrayList(Arrays.asList(logsDir.listFiles()));
             while (arrayList.size() > 20) {
+                int i = 0;
                 File file = (File) arrayList.get(0);
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    File file2 = (File) it.next();
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    File file2 = (File) obj;
                     if (file2.getName().endsWith(".log") && file2.lastModified() < file.lastModified()) {
                         file = file2;
                     }

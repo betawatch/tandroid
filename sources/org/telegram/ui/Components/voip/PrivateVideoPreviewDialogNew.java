@@ -274,7 +274,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
         this.positiveButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PrivateVideoPreviewDialogNew.this.lambda$new$0(view);
+                PrivateVideoPreviewDialogNew.$r8$lambda$RLegXFaKsgMU3GGsBD57VOWsCBI(PrivateVideoPreviewDialogNew.this, view);
             }
         });
         addView(this.positiveButton, LayoutHelper.createFrame(52, 52.0f, 81, 0.0f, 0.0f, 0.0f, 80.0f));
@@ -329,7 +329,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             this.titles[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PrivateVideoPreviewDialogNew.this.lambda$new$1(i2, view);
+                    PrivateVideoPreviewDialogNew.$r8$lambda$MBG85S5Kzwmwx6RBBk0DcI9GZus(PrivateVideoPreviewDialogNew.this, i2, view);
                 }
             });
         }
@@ -353,7 +353,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PrivateVideoPreviewDialogNew.this.lambda$new$2(f, f2, valueAnimator);
+                PrivateVideoPreviewDialogNew.$r8$lambda$u9rHohmza0jyF5FyIewKzGYZwIo(PrivateVideoPreviewDialogNew.this, f, f2, valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew.7
@@ -369,7 +369,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PrivateVideoPreviewDialogNew.this.lambda$new$3(valueAnimator);
+                PrivateVideoPreviewDialogNew.$r8$lambda$lGQXoL9JY4rq7fqfrWu84XbvE8s(PrivateVideoPreviewDialogNew.this, valueAnimator);
             }
         });
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
@@ -414,7 +414,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PrivateVideoPreviewDialogNew.1.this.lambda$onScroll$0(x);
+                        PrivateVideoPreviewDialogNew.1.$r8$lambda$JBoHgmrClHdlhYHuBzdBpFLtNo8(PrivateVideoPreviewDialogNew.1.this, x);
                     }
                 };
                 if (PrivateVideoPreviewDialogNew.this.scrollAnimator != null) {
@@ -427,8 +427,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             return super.onScroll(motionEvent, motionEvent2, f, f2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onScroll$0(float f) {
+        public static /* synthetic */ void $r8$lambda$JBoHgmrClHdlhYHuBzdBpFLtNo8(1 r2, float f) {
             if (f > 0.0f) {
                 if (PrivateVideoPreviewDialogNew.this.realCurrentPage < 2) {
                     PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew = PrivateVideoPreviewDialogNew.this;
@@ -438,46 +437,44 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                 PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew2 = PrivateVideoPreviewDialogNew.this;
                 privateVideoPreviewDialogNew2.setCurrentPage(privateVideoPreviewDialogNew2.realCurrentPage - 1, true);
             }
-            this.lockDragging = false;
+            r2.lockDragging = false;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        if (this.isDismissed) {
+    public static /* synthetic */ void $r8$lambda$RLegXFaKsgMU3GGsBD57VOWsCBI(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, View view) {
+        if (privateVideoPreviewDialogNew.isDismissed) {
             return;
         }
-        if (this.realCurrentPage == 0) {
-            ((Activity) getContext()).startActivityForResult(((MediaProjectionManager) getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+        if (privateVideoPreviewDialogNew.realCurrentPage == 0) {
+            ((Activity) privateVideoPreviewDialogNew.getContext()).startActivityForResult(((MediaProjectionManager) privateVideoPreviewDialogNew.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
         } else {
-            dismiss(false, true);
+            privateVideoPreviewDialogNew.dismiss(false, true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, View view) {
-        if (this.scrollAnimator != null || view.getAlpha() == 0.0f) {
+    public static /* synthetic */ void $r8$lambda$MBG85S5Kzwmwx6RBBk0DcI9GZus(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, int i, View view) {
+        if (privateVideoPreviewDialogNew.scrollAnimator != null || view.getAlpha() == 0.0f) {
             return;
         }
-        setCurrentPage(i, true);
+        privateVideoPreviewDialogNew.setCurrentPage(i, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(float f, float f2, ValueAnimator valueAnimator) {
-        this.openProgress1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+    public static /* synthetic */ void $r8$lambda$u9rHohmza0jyF5FyIewKzGYZwIo(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, float f, float f2, ValueAnimator valueAnimator) {
+        privateVideoPreviewDialogNew.getClass();
+        privateVideoPreviewDialogNew.openProgress1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         float dp = f + AndroidUtilities.dp(28.0f);
         float dp2 = f2 + AndroidUtilities.dp(52.0f);
-        float f3 = this.openProgress1;
-        this.openTranslationX = dp - (dp * f3);
-        this.openTranslationY = dp2 - (f3 * dp2);
-        invalidate();
+        float f3 = privateVideoPreviewDialogNew.openProgress1;
+        privateVideoPreviewDialogNew.openTranslationX = dp - (dp * f3);
+        privateVideoPreviewDialogNew.openTranslationY = dp2 - (f3 * dp2);
+        privateVideoPreviewDialogNew.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(ValueAnimator valueAnimator) {
-        this.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.positiveButton.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (((AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f)) * this.openProgress2));
-        this.positiveButton.requestLayout();
+    public static /* synthetic */ void $r8$lambda$lGQXoL9JY4rq7fqfrWu84XbvE8s(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, ValueAnimator valueAnimator) {
+        privateVideoPreviewDialogNew.getClass();
+        privateVideoPreviewDialogNew.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        privateVideoPreviewDialogNew.positiveButton.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (((AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f)) * privateVideoPreviewDialogNew.openProgress2));
+        privateVideoPreviewDialogNew.positiveButton.requestLayout();
     }
 
     private void showStub(boolean z, boolean z2) {
@@ -555,7 +552,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             this.scrollAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda7
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PrivateVideoPreviewDialogNew.this.lambda$setCurrentPage$4(valueAnimator);
+                    PrivateVideoPreviewDialogNew.$r8$lambda$HZG_n9vJ9URYhqGO0twk4YJRQ2E(PrivateVideoPreviewDialogNew.this, valueAnimator);
                 }
             });
             this.scrollAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew.8
@@ -583,10 +580,10 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
         showStub(true, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCurrentPage$4(ValueAnimator valueAnimator) {
-        this.pageOffset = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateTitlesLayout();
+    public static /* synthetic */ void $r8$lambda$HZG_n9vJ9URYhqGO0twk4YJRQ2E(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, ValueAnimator valueAnimator) {
+        privateVideoPreviewDialogNew.getClass();
+        privateVideoPreviewDialogNew.pageOffset = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        privateVideoPreviewDialogNew.updateTitlesLayout();
     }
 
     private void createPages(FrameLayout frameLayout) {
@@ -666,7 +663,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda4
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PrivateVideoPreviewDialogNew.this.lambda$dismiss$5(valueAnimator);
+                    PrivateVideoPreviewDialogNew.$r8$lambda$mSaqhRgFoktgoSDDXthmHRJXKTE(PrivateVideoPreviewDialogNew.this, valueAnimator);
                 }
             });
             ofFloat.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -700,7 +697,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda5
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PrivateVideoPreviewDialogNew.this.lambda$dismiss$6(valueAnimator);
+                    PrivateVideoPreviewDialogNew.$r8$lambda$-YNA4YQHVAO3gE5tqZaYvDVzSHo(PrivateVideoPreviewDialogNew.this, valueAnimator);
                 }
             });
             ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew.11
@@ -715,7 +712,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialogNew$$ExternalSyntheticLambda6
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PrivateVideoPreviewDialogNew.this.lambda$dismiss$7(valueAnimator);
+                    PrivateVideoPreviewDialogNew.$r8$lambda$QFp1801ceVBAt2E4S6CMNBXYbRU(PrivateVideoPreviewDialogNew.this, valueAnimator);
                 }
             });
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
@@ -738,28 +735,28 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$5(ValueAnimator valueAnimator) {
-        this.closeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$mSaqhRgFoktgoSDDXthmHRJXKTE(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, ValueAnimator valueAnimator) {
+        privateVideoPreviewDialogNew.getClass();
+        privateVideoPreviewDialogNew.closeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        privateVideoPreviewDialogNew.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$6(ValueAnimator valueAnimator) {
-        this.openProgress1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        float dp = this.startLocationX + AndroidUtilities.dp(28.0f);
-        float dp2 = this.startLocationY + AndroidUtilities.dp(52.0f);
-        float f = this.openProgress1;
-        this.openTranslationX = dp - (dp * f);
-        this.openTranslationY = dp2 - (f * dp2);
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$-YNA4YQHVAO3gE5tqZaYvDVzSHo(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, ValueAnimator valueAnimator) {
+        privateVideoPreviewDialogNew.getClass();
+        privateVideoPreviewDialogNew.openProgress1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        float dp = privateVideoPreviewDialogNew.startLocationX + AndroidUtilities.dp(28.0f);
+        float dp2 = privateVideoPreviewDialogNew.startLocationY + AndroidUtilities.dp(52.0f);
+        float f = privateVideoPreviewDialogNew.openProgress1;
+        privateVideoPreviewDialogNew.openTranslationX = dp - (dp * f);
+        privateVideoPreviewDialogNew.openTranslationY = dp2 - (f * dp2);
+        privateVideoPreviewDialogNew.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$7(ValueAnimator valueAnimator) {
-        this.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.positiveButton.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (((AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f)) * this.openProgress2));
-        this.positiveButton.requestLayout();
+    public static /* synthetic */ void $r8$lambda$QFp1801ceVBAt2E4S6CMNBXYbRU(PrivateVideoPreviewDialogNew privateVideoPreviewDialogNew, ValueAnimator valueAnimator) {
+        privateVideoPreviewDialogNew.getClass();
+        privateVideoPreviewDialogNew.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        privateVideoPreviewDialogNew.positiveButton.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (((AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f)) * privateVideoPreviewDialogNew.openProgress2));
+        privateVideoPreviewDialogNew.positiveButton.requestLayout();
     }
 
     public void setBottomPadding(int i) {

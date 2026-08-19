@@ -49,14 +49,7 @@ public interface LoadErrorHandlingPolicy {
         }
 
         public boolean isFallbackAvailable(int i) {
-            if (i == 1) {
-                if (this.numberOfLocations - this.numberOfExcludedLocations > 1) {
-                    return true;
-                }
-            } else if (this.numberOfTracks - this.numberOfExcludedTracks > 1) {
-                return true;
-            }
-            return false;
+            return i == 1 ? this.numberOfLocations - this.numberOfExcludedLocations > 1 : this.numberOfTracks - this.numberOfExcludedTracks > 1;
         }
     }
 

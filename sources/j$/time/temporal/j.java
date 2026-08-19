@@ -1,18 +1,18 @@
 package j$.time.temporal;
 
 /* loaded from: classes2.dex */
-enum j implements p {
+public enum j implements o {
     JULIAN_DAY("JulianDay", 2440588),
     MODIFIED_JULIAN_DAY("ModifiedJulianDay", 40587),
     RATA_DIE("RataDie", 719163);
 
     private static final long serialVersionUID = -7501623920830201812L;
-    private final transient String a;
-    private final transient u b;
-    private final transient long c;
+    public final transient String a;
+    public final transient s b;
+    public final transient long c;
 
-    @Override // j$.time.temporal.p
-    public final boolean v() {
+    @Override // j$.time.temporal.o
+    public final boolean u() {
         return true;
     }
 
@@ -22,39 +22,39 @@ enum j implements p {
 
     j(String str, long j) {
         this.a = str;
-        this.b = u.j((-365243219162L) + j, 365241780471L + j);
+        this.b = s.e((-365243219162L) + j, 365241780471L + j);
         this.c = j;
     }
 
-    @Override // j$.time.temporal.p
-    public final u k() {
+    @Override // j$.time.temporal.o
+    public final s l() {
         return this.b;
     }
 
-    @Override // j$.time.temporal.p
-    public final boolean n(m mVar) {
-        return mVar.g(a.EPOCH_DAY);
+    @Override // j$.time.temporal.o
+    public final boolean p(l lVar) {
+        return lVar.h(a.EPOCH_DAY);
     }
 
-    @Override // j$.time.temporal.p
-    public final u r(m mVar) {
-        if (!mVar.g(a.EPOCH_DAY)) {
-            throw new j$.time.c("Unsupported field: " + this);
+    @Override // j$.time.temporal.o
+    public final s r(l lVar) {
+        if (lVar.h(a.EPOCH_DAY)) {
+            return this.b;
         }
-        return this.b;
+        throw new j$.time.b("Unsupported field: " + this);
     }
 
-    @Override // j$.time.temporal.p
-    public final long l(m mVar) {
-        return mVar.r(a.EPOCH_DAY) + this.c;
+    @Override // j$.time.temporal.o
+    public final long o(l lVar) {
+        return lVar.u(a.EPOCH_DAY) + this.c;
     }
 
-    @Override // j$.time.temporal.p
-    public final Temporal o(Temporal temporal, long j) {
-        if (!this.b.i(j)) {
-            throw new j$.time.c("Invalid value: " + this.a + " " + j);
+    @Override // j$.time.temporal.o
+    public final Temporal q(Temporal temporal, long j) {
+        if (!this.b.d(j)) {
+            throw new j$.time.b("Invalid value: " + this.a + " " + j);
         }
-        return temporal.d(j$.com.android.tools.r8.a.m(j, this.c), a.EPOCH_DAY);
+        return temporal.e(j$.com.android.tools.r8.a.U(j, this.c), a.EPOCH_DAY);
     }
 
     @Override // java.lang.Enum

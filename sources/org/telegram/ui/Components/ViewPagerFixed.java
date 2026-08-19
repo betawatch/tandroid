@@ -35,7 +35,6 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.Emoji;
@@ -60,9 +59,7 @@ public class ViewPagerFixed extends FrameLayout {
     private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda1
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
-            float lambda$static$0;
-            lambda$static$0 = ViewPagerFixed.lambda$static$0(f);
-            return lambda$static$0;
+            return ViewPagerFixed.$r8$lambda$aoN7Ghc9HAnODMyle0hchIDeT6c(f);
         }
     };
     public Adapter adapter;
@@ -94,8 +91,7 @@ public class ViewPagerFixed extends FrameLayout {
     private int[] viewTypes;
     protected SparseArray viewsByType;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ float lambda$static$0(float f) {
+    public static /* synthetic */ float $r8$lambda$aoN7Ghc9HAnODMyle0hchIDeT6c(float f) {
         float f2 = f - 1.0f;
         return (f2 * f2 * f2 * f2 * f2) + 1.0f;
     }
@@ -282,7 +278,7 @@ public class ViewPagerFixed extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ViewPagerFixed.this.lambda$scrollToPosition$1(valueAnimator2);
+                ViewPagerFixed.$r8$lambda$F0emwZw1q7uCmV7JFgxhrQLYLUo(ViewPagerFixed.this, valueAnimator2);
             }
         });
         this.manualScrolling.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ViewPagerFixed.2
@@ -317,27 +313,27 @@ public class ViewPagerFixed extends FrameLayout {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scrollToPosition$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$F0emwZw1q7uCmV7JFgxhrQLYLUo(ViewPagerFixed viewPagerFixed, ValueAnimator valueAnimator) {
+        viewPagerFixed.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        View view = this.viewPages[1];
+        View view = viewPagerFixed.viewPages[1];
         if (view == null) {
             return;
         }
-        if (this.animatingForward) {
-            setTranslationX(view, r0[0].getMeasuredWidth() * (1.0f - floatValue));
-            setTranslationX(this.viewPages[0], (-r0.getMeasuredWidth()) * floatValue);
+        if (viewPagerFixed.animatingForward) {
+            viewPagerFixed.setTranslationX(view, r0[0].getMeasuredWidth() * (1.0f - floatValue));
+            viewPagerFixed.setTranslationX(viewPagerFixed.viewPages[0], (-r0.getMeasuredWidth()) * floatValue);
         } else {
-            setTranslationX(view, (-r0[0].getMeasuredWidth()) * (1.0f - floatValue));
-            setTranslationX(this.viewPages[0], r0.getMeasuredWidth() * floatValue);
+            viewPagerFixed.setTranslationX(view, (-r0[0].getMeasuredWidth()) * (1.0f - floatValue));
+            viewPagerFixed.setTranslationX(viewPagerFixed.viewPages[0], r0.getMeasuredWidth() * floatValue);
         }
-        this.currentProgress = floatValue;
-        onTabAnimationUpdate(true);
-        TabsView tabsView = this.tabsView;
+        viewPagerFixed.currentProgress = floatValue;
+        viewPagerFixed.onTabAnimationUpdate(true);
+        TabsView tabsView = viewPagerFixed.tabsView;
         if (tabsView != null) {
             tabsView.listView.invalidate();
-            this.tabsView.listView.invalidateViews();
-            this.tabsView.invalidate();
+            viewPagerFixed.tabsView.listView.invalidateViews();
+            viewPagerFixed.tabsView.invalidate();
         }
     }
 
@@ -649,7 +645,7 @@ public class ViewPagerFixed extends FrameLayout {
         return onTouchEventInternal(motionEvent);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x02a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x02a1, code lost:
     
         r6 = true;
      */
@@ -831,7 +827,7 @@ public class ViewPagerFixed extends FrameLayout {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda2
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            ViewPagerFixed.this.lambda$onTouchEventInternal$2(valueAnimator);
+                            ViewPagerFixed.$r8$lambda$gpYeciBFOqS8xuCbDrugNu_ZM9E(ViewPagerFixed.this, valueAnimator);
                         }
                     });
                     this.tabsAnimation.playTogether(ofFloat);
@@ -901,11 +897,11 @@ public class ViewPagerFixed extends FrameLayout {
         return this.startedTracking || this.maybeStartTracking;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEventInternal$2(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$gpYeciBFOqS8xuCbDrugNu_ZM9E(ViewPagerFixed viewPagerFixed, ValueAnimator valueAnimator) {
+        viewPagerFixed.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.backProgress = floatValue;
-        onBackProgress(floatValue);
+        viewPagerFixed.backProgress = floatValue;
+        viewPagerFixed.onBackProgress(floatValue);
     }
 
     protected void swapViews() {
@@ -1099,7 +1095,7 @@ public class ViewPagerFixed extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ViewPagerFixed.this.lambda$rebuild$3(valueAnimator);
+                    ViewPagerFixed.$r8$lambda$6FfcHuGVodImZgtR-LY8DDgqWvE(ViewPagerFixed.this, valueAnimator);
                 }
             });
             this.tabsAnimation.playTogether(ofFloat);
@@ -1138,12 +1134,11 @@ public class ViewPagerFixed extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$rebuild$3(ValueAnimator valueAnimator) {
-        this.updateTabProgress.onAnimationUpdate(valueAnimator);
-        this.tabsView.indicatorProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.tabsView.listView.invalidateViews();
-        this.tabsView.invalidate();
+    public static /* synthetic */ void $r8$lambda$6FfcHuGVodImZgtR-LY8DDgqWvE(ViewPagerFixed viewPagerFixed, ValueAnimator valueAnimator) {
+        viewPagerFixed.updateTabProgress.onAnimationUpdate(valueAnimator);
+        viewPagerFixed.tabsView.indicatorProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        viewPagerFixed.tabsView.listView.invalidateViews();
+        viewPagerFixed.tabsView.invalidate();
     }
 
     public void clearViews() {
@@ -1273,7 +1268,7 @@ public class ViewPagerFixed extends FrameLayout {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ViewPagerFixed.this.lambda$cancelTouches$4(valueAnimator);
+                        ViewPagerFixed.$r8$lambda$007gxCYopFSzYO9mQ5jqlAtITkc(ViewPagerFixed.this, valueAnimator);
                     }
                 });
                 this.tabsAnimation.playTogether(ofFloat);
@@ -1341,11 +1336,11 @@ public class ViewPagerFixed extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$cancelTouches$4(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$007gxCYopFSzYO9mQ5jqlAtITkc(ViewPagerFixed viewPagerFixed, ValueAnimator valueAnimator) {
+        viewPagerFixed.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.backProgress = floatValue;
-        onBackProgress(floatValue);
+        viewPagerFixed.backProgress = floatValue;
+        viewPagerFixed.onBackProgress(floatValue);
     }
 
     public static class TabsView extends FrameLayout {
@@ -1428,8 +1423,7 @@ public class ViewPagerFixed extends FrameLayout {
             void onSamePageSelected();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setIsEditing$5(TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$j6saSZONxGTLgsxkbyYqIhznOiw(TLObject tLObject, TLRPC.TL_error tL_error) {
         }
 
         static /* synthetic */ float access$3116(TabsView tabsView, float f) {
@@ -1442,7 +1436,8 @@ public class ViewPagerFixed extends FrameLayout {
             this.onTabLongClick = callback2Return;
         }
 
-        private static class Tab {
+        /* JADX INFO: Access modifiers changed from: private */
+        static class Tab {
             public float alpha = 1.0f;
             public int counter;
             public int id;
@@ -1517,26 +1512,29 @@ public class ViewPagerFixed extends FrameLayout {
                 String str;
                 int i8;
                 int i9;
+                float f;
                 int i10;
-                int i11;
+                float f2;
                 String str2;
+                int i11;
+                float f3;
                 int i12;
-                int i13;
-                canvas.save();
-                float f = this.shakeAlpha.set(this.reordering);
-                if (f > 0.0f) {
+                Canvas canvas2 = canvas;
+                canvas2.save();
+                float f4 = this.shakeAlpha.set(this.reordering);
+                if (f4 > 0.0f) {
                     if (this.shaker == null) {
                         this.shaker = new Shaker(this);
                     }
-                    canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    this.shaker.concat(canvas, f);
-                    canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
+                    canvas2.translate(getWidth() / 2.0f, getHeight() / 2.0f);
+                    this.shaker.concat(canvas2, f4);
+                    canvas2.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 if (this.currentTab.id != Integer.MAX_VALUE && TabsView.this.editingAnimationProgress != 0.0f) {
-                    canvas.save();
-                    float f2 = TabsView.this.editingAnimationProgress * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f);
-                    canvas.translate(AndroidUtilities.dp(0.66f) * f2, 0.0f);
-                    canvas.rotate(f2, getMeasuredWidth() / 2, getMeasuredHeight() / 2);
+                    canvas2.save();
+                    float f5 = TabsView.this.editingAnimationProgress * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f);
+                    canvas2.translate(AndroidUtilities.dp(0.66f) * f5, 0.0f);
+                    canvas2.rotate(f5, getMeasuredWidth() / 2, getMeasuredHeight() / 2);
                 }
                 if (TabsView.this.manualScrollingToId != -1) {
                     i = TabsView.this.manualScrollingToId;
@@ -1545,9 +1543,9 @@ public class ViewPagerFixed extends FrameLayout {
                     i = TabsView.this.selectedTabId;
                     i2 = TabsView.this.previousId;
                 }
-                int i14 = i;
-                int i15 = i2;
-                if (this.currentTab.id == i14) {
+                int i13 = i;
+                int i14 = i2;
+                if (this.currentTab.id == i13) {
                     i3 = TabsView.this.activeTextColorKey;
                     i4 = TabsView.this.unactiveTextColorKey;
                     i5 = Theme.key_chats_tabUnreadActiveBackground;
@@ -1558,42 +1556,46 @@ public class ViewPagerFixed extends FrameLayout {
                     i5 = Theme.key_chats_tabUnreadUnactiveBackground;
                     i6 = Theme.key_chats_tabUnreadActiveBackground;
                 }
-                int i16 = i5;
-                int i17 = i6;
+                int i15 = i5;
+                int i16 = i6;
                 if (TabsView.this.selectorType == 9) {
                     TabsView.this.textPaint.setColor(Theme.getColor(TabsView.this.unactiveTextColorKey, TabsView.this.resourcesProvider));
-                } else if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToId != -1) && ((i7 = this.currentTab.id) == i14 || i7 == i15)) {
+                } else if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToId != -1) && ((i7 = this.currentTab.id) == i13 || i7 == i14)) {
                     TabsView.this.textPaint.setColor(ColorUtils.blendARGB(Theme.getColor(i4, TabsView.this.resourcesProvider), Theme.getColor(i3, TabsView.this.resourcesProvider), TabsView.this.animatingIndicatorProgress));
                 } else {
                     TabsView.this.textPaint.setColor(Theme.getColor(i3, TabsView.this.resourcesProvider));
                 }
-                int i18 = this.currentTab.counter;
-                if (i18 > 0) {
-                    String format = String.format("%d", Integer.valueOf(i18));
-                    int ceil = (int) Math.ceil(TabsView.this.textCounterPaint.measureText(format));
-                    i9 = ceil;
-                    str = format;
-                    i8 = Math.max(AndroidUtilities.dp(10.0f), ceil) + AndroidUtilities.dp(10.0f);
+                int i17 = this.currentTab.counter;
+                if (i17 > 0) {
+                    str = String.format("%d", Integer.valueOf(i17));
+                    i8 = (int) Math.ceil(TabsView.this.textCounterPaint.measureText(str));
+                    i9 = Math.max(AndroidUtilities.dp(10.0f), i8) + AndroidUtilities.dp(10.0f);
                 } else {
                     str = null;
                     i8 = 0;
                     i9 = 0;
                 }
-                if (this.currentTab.id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != 0.0f)) {
-                    i8 = (int) (i8 + ((AndroidUtilities.dp(20.0f) - i8) * TabsView.this.editingStartAnimationProgress));
+                if (this.currentTab.id == Integer.MAX_VALUE || (!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == 0.0f)) {
+                    f = 2.0f;
+                } else {
+                    f = 2.0f;
+                    i9 = (int) (i9 + ((AndroidUtilities.dp(20.0f) - i9) * TabsView.this.editingStartAnimationProgress));
                 }
-                int i19 = i8;
-                int i20 = this.currentTab.titleWidth;
-                if (i19 != 0) {
-                    i10 = AndroidUtilities.dp((str != null ? 1.0f : TabsView.this.editingStartAnimationProgress) * 6.0f) + i19;
+                int i18 = i9;
+                int i19 = this.currentTab.titleWidth;
+                if (i18 != 0) {
+                    i10 = AndroidUtilities.dp((str != null ? 1.0f : TabsView.this.editingStartAnimationProgress) * 6.0f) + i18;
                 } else {
                     i10 = 0;
                 }
-                this.tabWidth = i20 + i10;
+                this.tabWidth = i19 + i10;
                 int measuredWidth = (getMeasuredWidth() - this.tabWidth) / 2;
                 CharSequence charSequence = this.currentTab.title;
-                if ((charSequence == null && this.currentText != null) || !TextUtils.equals(charSequence, this.currentText)) {
+                if ((charSequence != null || this.currentText == null) && TextUtils.equals(charSequence, this.currentText)) {
+                    f2 = 0.0f;
+                } else {
                     Tab tab = this.currentTab;
+                    f2 = 0.0f;
                     CharSequence replaceEmoji = Emoji.replaceEmoji(tab.title, TabsView.this.textPaint.getFontMetricsInt(), false);
                     tab.title = replaceEmoji;
                     this.currentText = replaceEmoji;
@@ -1605,54 +1607,55 @@ public class ViewPagerFixed extends FrameLayout {
                 }
                 Text text2 = this.text;
                 if (text2 != null) {
-                    i11 = i9;
                     str2 = str;
-                    i12 = i17;
-                    text2.ellipsize(AndroidUtilities.dp(400.0f)).draw(canvas, measuredWidth + this.textOffsetX, getMeasuredHeight() / 2, TabsView.this.textPaint.getColor(), 1.0f);
+                    i11 = i8;
+                    f3 = 1.0f;
+                    text2.ellipsize(AndroidUtilities.dp(400.0f)).draw(canvas2, measuredWidth + this.textOffsetX, getMeasuredHeight() / 2, TabsView.this.textPaint.getColor(), 1.0f);
+                    canvas2 = canvas2;
                 } else {
-                    i11 = i9;
                     str2 = str;
-                    i12 = i17;
+                    i11 = i8;
+                    f3 = 1.0f;
                 }
-                if (str2 != null || (this.currentTab.id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != 0.0f))) {
+                if (str2 != null || (this.currentTab.id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != f2))) {
                     TabsView.this.textCounterPaint.setColor(Theme.getColor(TabsView.this.backgroundColorKey, TabsView.this.resourcesProvider));
-                    if (!Theme.hasThemeKey(i16) || !Theme.hasThemeKey(i12)) {
+                    if (!Theme.hasThemeKey(i15) || !Theme.hasThemeKey(i16)) {
                         TabsView.this.counterPaint.setColor(TabsView.this.textPaint.getColor());
                     } else {
-                        int color = Theme.getColor(i16, TabsView.this.resourcesProvider);
-                        if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToPosition != -1) && ((i13 = this.currentTab.id) == i14 || i13 == i15)) {
-                            TabsView.this.counterPaint.setColor(ColorUtils.blendARGB(Theme.getColor(i12, TabsView.this.resourcesProvider), color, TabsView.this.animatingIndicatorProgress));
+                        int color = Theme.getColor(i15, TabsView.this.resourcesProvider);
+                        if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToPosition != -1) && ((i12 = this.currentTab.id) == i13 || i12 == i14)) {
+                            TabsView.this.counterPaint.setColor(ColorUtils.blendARGB(Theme.getColor(i16, TabsView.this.resourcesProvider), color, TabsView.this.animatingIndicatorProgress));
                         } else {
                             TabsView.this.counterPaint.setColor(color);
                         }
                     }
                     int dp = measuredWidth + this.currentTab.titleWidth + AndroidUtilities.dp(6.0f);
                     int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2;
-                    if (this.currentTab.id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == 0.0f) || str2 != null)) {
+                    if (this.currentTab.id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == f2) || str2 != null)) {
                         TabsView.this.counterPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
                     } else {
                         TabsView.this.counterPaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
                     }
-                    this.rect.set(dp, measuredHeight, dp + i19, AndroidUtilities.dp(20.0f) + measuredHeight);
+                    this.rect.set(dp, measuredHeight, dp + i18, AndroidUtilities.dp(20.0f) + measuredHeight);
                     RectF rectF = this.rect;
-                    float f3 = AndroidUtilities.density * 11.5f;
-                    canvas.drawRoundRect(rectF, f3, f3, TabsView.this.counterPaint);
+                    float f6 = AndroidUtilities.density * 11.5f;
+                    canvas2.drawRoundRect(rectF, f6, f6, TabsView.this.counterPaint);
                     if (str2 != null) {
                         if (this.currentTab.id != Integer.MAX_VALUE) {
-                            TabsView.this.textCounterPaint.setAlpha((int) ((1.0f - TabsView.this.editingStartAnimationProgress) * 255.0f));
+                            TabsView.this.textCounterPaint.setAlpha((int) ((f3 - TabsView.this.editingStartAnimationProgress) * 255.0f));
                         }
                         RectF rectF2 = this.rect;
-                        canvas.drawText(str2, rectF2.left + ((rectF2.width() - i11) / 2.0f), measuredHeight + AndroidUtilities.dp(14.5f), TabsView.this.textCounterPaint);
+                        canvas2.drawText(str2, rectF2.left + ((rectF2.width() - i11) / f), measuredHeight + AndroidUtilities.dp(14.5f), TabsView.this.textCounterPaint);
                     }
-                    if (this.currentTab.id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != 0.0f)) {
+                    if (this.currentTab.id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != f2)) {
                         TabsView.this.deletePaint.setColor(TabsView.this.textCounterPaint.getColor());
                         TabsView.this.deletePaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
                         float dp2 = AndroidUtilities.dp(3.0f);
-                        canvas.drawLine(this.rect.centerX() - dp2, this.rect.centerY() - dp2, this.rect.centerX() + dp2, this.rect.centerY() + dp2, TabsView.this.deletePaint);
+                        canvas2.drawLine(this.rect.centerX() - dp2, this.rect.centerY() - dp2, this.rect.centerX() + dp2, this.rect.centerY() + dp2, TabsView.this.deletePaint);
                         canvas.drawLine(this.rect.centerX() - dp2, this.rect.centerY() + dp2, this.rect.centerX() + dp2, this.rect.centerY() - dp2, TabsView.this.deletePaint);
                     }
                 }
-                if (this.currentTab.id != Integer.MAX_VALUE && TabsView.this.editingAnimationProgress != 0.0f) {
+                if (this.currentTab.id != Integer.MAX_VALUE && TabsView.this.editingAnimationProgress != f2) {
                     canvas.restore();
                 }
                 canvas.restore();
@@ -1857,15 +1860,13 @@ public class ViewPagerFixed extends FrameLayout {
 
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public final void onItemClick(View view, int i3, float f, float f2) {
-                    ViewPagerFixed.TabsView.this.lambda$new$0(view, i3, f, f2);
+                    ViewPagerFixed.TabsView.$r8$lambda$5v7s2GIhG_3NHaS5AJTMTk81JS0(ViewPagerFixed.TabsView.this, view, i3, f, f2);
                 }
             });
             this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
                 public final boolean onItemClick(View view, int i3) {
-                    boolean lambda$new$1;
-                    lambda$new$1 = ViewPagerFixed.TabsView.this.lambda$new$1(view, i3);
-                    return lambda$new$1;
+                    return ViewPagerFixed.TabsView.$r8$lambda$rPtelePJIPOnYWG5guhZ_Qnk1Vo(ViewPagerFixed.TabsView.this, view, i3);
                 }
             });
             this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ViewPagerFixed.TabsView.4
@@ -1881,26 +1882,24 @@ public class ViewPagerFixed extends FrameLayout {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, int i, float f, float f2) {
+        public static /* synthetic */ void $r8$lambda$5v7s2GIhG_3NHaS5AJTMTk81JS0(TabsView tabsView, View view, int i, float f, float f2) {
             TabsViewDelegate tabsViewDelegate;
-            TabsViewDelegate tabsViewDelegate2 = this.delegate;
+            TabsViewDelegate tabsViewDelegate2 = tabsView.delegate;
             if (tabsViewDelegate2 == null || tabsViewDelegate2.canPerformActions()) {
                 TabView tabView = (TabView) view;
-                if (i == this.currentPosition && (tabsViewDelegate = this.delegate) != null) {
+                if (i == tabsView.currentPosition && (tabsViewDelegate = tabsView.delegate) != null) {
                     tabsViewDelegate.onSamePageSelected();
                     return;
                 }
-                Utilities.Callback2Return callback2Return = this.preTabClick;
+                Utilities.Callback2Return callback2Return = tabsView.preTabClick;
                 if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(tabView.currentTab.id), Integer.valueOf(i))).booleanValue()) {
-                    scrollToTab(tabView.currentTab.id, i);
+                    tabsView.scrollToTab(tabView.currentTab.id, i);
                 }
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$new$1(View view, int i) {
-            Utilities.Callback2Return callback2Return = this.onTabLongClick;
+        public static /* synthetic */ boolean $r8$lambda$rPtelePJIPOnYWG5guhZ_Qnk1Vo(TabsView tabsView, View view, int i) {
+            Utilities.Callback2Return callback2Return = tabsView.onTabLongClick;
             if (callback2Return == null) {
                 return false;
             }
@@ -1963,7 +1962,7 @@ public class ViewPagerFixed extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ViewPagerFixed.TabsView.this.lambda$scrollToTab$2(valueAnimator2);
+                    ViewPagerFixed.TabsView.$r8$lambda$ViMoUHix2_q7ZVkoX1eCmvzGjuI(ViewPagerFixed.TabsView.this, valueAnimator2);
                 }
             });
             this.tabsAnimator.setDuration(250L);
@@ -1982,11 +1981,11 @@ public class ViewPagerFixed extends FrameLayout {
             this.tabsAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$scrollToTab$2(ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$ViMoUHix2_q7ZVkoX1eCmvzGjuI(TabsView tabsView, ValueAnimator valueAnimator) {
+            tabsView.getClass();
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            setAnimationIdicatorProgress(floatValue);
-            TabsViewDelegate tabsViewDelegate = this.delegate;
+            tabsView.setAnimationIdicatorProgress(floatValue);
+            TabsViewDelegate tabsViewDelegate = tabsView.delegate;
             if (tabsViewDelegate != null) {
                 tabsViewDelegate.onPageScrolled(floatValue);
             }
@@ -2066,15 +2065,19 @@ public class ViewPagerFixed extends FrameLayout {
                     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2) {
                         int adapterPosition = viewHolder.getAdapterPosition();
                         int adapterPosition2 = viewHolder2.getAdapterPosition();
+                        int i = 0;
                         if (!TabsView.this.delegate.canReorder(adapterPosition) || !TabsView.this.delegate.canReorder(adapterPosition2)) {
                             return false;
                         }
                         Utilities.swapItems(TabsView.this.tabs, adapterPosition, adapterPosition2);
                         TabsView.this.adapter.notifyItemMoved(adapterPosition, adapterPosition2);
                         ArrayList arrayList = new ArrayList();
-                        Iterator it = TabsView.this.tabs.iterator();
-                        while (it.hasNext()) {
-                            arrayList.add(Integer.valueOf(((Tab) it.next()).id));
+                        ArrayList arrayList2 = TabsView.this.tabs;
+                        int size = arrayList2.size();
+                        while (i < size) {
+                            Object obj = arrayList2.get(i);
+                            i++;
+                            arrayList.add(Integer.valueOf(((Tab) obj).id));
                         }
                         TabsView.this.delegate.applyReorder(arrayList);
                         return true;
@@ -2109,17 +2112,16 @@ public class ViewPagerFixed extends FrameLayout {
             AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda3
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    ViewPagerFixed.TabsView.this.lambda$setReordering$3(z, (View) obj);
+                    ViewPagerFixed.TabsView.$r8$lambda$z8tM7X5AdiIwLr3LDj3CLgW0ILg(ViewPagerFixed.TabsView.this, z, (View) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setReordering$3(boolean z, View view) {
+        public static /* synthetic */ void $r8$lambda$z8tM7X5AdiIwLr3LDj3CLgW0ILg(TabsView tabsView, boolean z, View view) {
             TabsViewDelegate tabsViewDelegate;
-            int childAdapterPosition = this.listView.getChildAdapterPosition(view);
+            int childAdapterPosition = tabsView.listView.getChildAdapterPosition(view);
             if (view instanceof TabView) {
-                ((TabView) view).setReordering(z && (tabsViewDelegate = this.delegate) != null && tabsViewDelegate.canReorder(childAdapterPosition));
+                ((TabView) view).setReordering(z && (tabsViewDelegate = tabsView.delegate) != null && tabsViewDelegate.canReorder(childAdapterPosition));
             }
         }
 
@@ -2155,10 +2157,10 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:20:0x00fe  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x0090  */
-        /* JADX WARN: Removed duplicated region for block: B:42:0x00b5  */
-        /* JADX WARN: Removed duplicated region for block: B:44:0x00c7  */
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0095  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x0090  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x00b5  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x00c7  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x0095  */
         @Override // android.view.ViewGroup
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2231,10 +2233,11 @@ public class ViewPagerFixed extends FrameLayout {
                                             this.selectorDrawable.setBounds((int) ((x - AndroidUtilities.dp(12.5f)) - f8), dp2, (int) (x + i3 + AndroidUtilities.dp(12.5f) + f8), AndroidUtilities.dp(28.0f) + dp2);
                                             this.selectorDrawable.setAlpha(31);
                                             this.selectorDrawable.draw(canvas);
-                                        } else {
-                                            this.selectorDrawable.setBounds(x, (int) ((measuredHeight - AndroidUtilities.dpr(4.0f)) + (this.hideProgress * AndroidUtilities.dpr(4.0f))), i3 + x, (int) (measuredHeight + (this.hideProgress * AndroidUtilities.dpr(4.0f))));
-                                            this.selectorDrawable.draw(canvas);
+                                            return drawChild;
                                         }
+                                        this.selectorDrawable.setBounds(x, (int) ((measuredHeight - AndroidUtilities.dpr(4.0f)) + (this.hideProgress * AndroidUtilities.dpr(4.0f))), i3 + x, (int) (measuredHeight + (this.hideProgress * AndroidUtilities.dpr(4.0f))));
+                                        this.selectorDrawable.draw(canvas);
+                                        return drawChild;
                                     }
                                 }
                             }
@@ -2350,17 +2353,12 @@ public class ViewPagerFixed extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ViewPagerFixed.TabsView.this.lambda$scrollToChild$4(i);
+                        ViewPagerFixed.TabsView.this.listView.smoothScrollToPosition(i);
                     }
                 }, 100L);
             } else {
                 this.listView.smoothScrollToPosition(i);
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$scrollToChild$4(int i) {
-            this.listView.smoothScrollToPosition(i);
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -2466,7 +2464,7 @@ public class ViewPagerFixed extends FrameLayout {
             ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_updateDialogFiltersOrder, new RequestDelegate() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ViewPagerFixed.TabsView.lambda$setIsEditing$5(tLObject, tL_error);
+                    ViewPagerFixed.TabsView.$r8$lambda$j6saSZONxGTLgsxkbyYqIhznOiw(tLObject, tL_error);
                 }
             });
             this.orderChanged = false;

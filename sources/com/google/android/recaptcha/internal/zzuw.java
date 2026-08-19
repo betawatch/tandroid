@@ -122,7 +122,7 @@ public final class zzuw {
             int i7 = i5 & 7;
             if (i7 != 0) {
                 if (i7 == 1) {
-                    ((Long) this.zzd[i4]).longValue();
+                    ((Long) this.zzd[i4]).getClass();
                     i = zzqv.zzA(i6 << 3) + 8;
                 } else if (i7 == 2) {
                     int i8 = i6 << 3;
@@ -138,7 +138,7 @@ public final class zzuw {
                     if (i7 != 5) {
                         throw new IllegalStateException(new zzsw("Protocol message tag had invalid wire type."));
                     }
-                    ((Integer) this.zzd[i4]).intValue();
+                    ((Integer) this.zzd[i4]).getClass();
                     i = zzqv.zzA(i6 << 3) + 4;
                 }
                 i3 += i;

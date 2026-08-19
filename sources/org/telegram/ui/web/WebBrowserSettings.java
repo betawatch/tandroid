@@ -19,7 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
@@ -53,7 +52,7 @@ import org.telegram.ui.Components.UniversalFragment;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.web.BrowserHistory;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebBrowserSettings extends UniversalFragment implements NotificationCenter.NotificationCenterDelegate {
     private Drawable addIcon;
     private long cacheSize;
@@ -109,7 +108,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         if (BrowserHistory.getHistory(new Utilities.Callback() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                WebBrowserSettings.this.lambda$loadSizes$0((ArrayList) obj);
+                WebBrowserSettings.$r8$lambda$FGZh9CsE5KdIm2lhgFznM7nJ4Eo(WebBrowserSettings.this, (ArrayList) obj);
             }
         }) != null) {
             this.historySize = r0.size();
@@ -121,23 +120,23 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                WebBrowserSettings.this.lambda$loadSizes$2();
+                WebBrowserSettings.$r8$lambda$5ZXuj-1IWvMVOF94z4lGAmnIrqU(WebBrowserSettings.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadSizes$0(ArrayList arrayList) {
-        this.historySize = arrayList.size();
-        UniversalRecyclerView universalRecyclerView = this.listView;
+    public static /* synthetic */ void $r8$lambda$FGZh9CsE5KdIm2lhgFznM7nJ4Eo(WebBrowserSettings webBrowserSettings, ArrayList arrayList) {
+        webBrowserSettings.getClass();
+        webBrowserSettings.historySize = arrayList.size();
+        UniversalRecyclerView universalRecyclerView = webBrowserSettings.listView;
         if (universalRecyclerView == null || universalRecyclerView.adapter == null || !universalRecyclerView.isAttachedToWindow()) {
             return;
         }
-        this.listView.adapter.update(true);
+        webBrowserSettings.listView.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadSizes$2() {
+    public static /* synthetic */ void $r8$lambda$5ZXuj-1IWvMVOF94z4lGAmnIrqU(final WebBrowserSettings webBrowserSettings) {
+        webBrowserSettings.getClass();
         File databasePath = ApplicationLoader.applicationContext.getDatabasePath("webview.db");
         long length = (databasePath == null || !databasePath.exists()) ? 0L : databasePath.length();
         File databasePath2 = ApplicationLoader.applicationContext.getDatabasePath("webviewCache.db");
@@ -158,20 +157,19 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                WebBrowserSettings.this.lambda$loadSizes$1(j, directorySize);
+                WebBrowserSettings.$r8$lambda$bkn4AKR21laSr-08IBSt5cP7zeA(WebBrowserSettings.this, j, directorySize);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadSizes$1(long j, long j2) {
-        this.cacheSize = j;
-        this.cookiesSize = j2;
-        UniversalRecyclerView universalRecyclerView = this.listView;
+    public static /* synthetic */ void $r8$lambda$bkn4AKR21laSr-08IBSt5cP7zeA(WebBrowserSettings webBrowserSettings, long j, long j2) {
+        webBrowserSettings.cacheSize = j;
+        webBrowserSettings.cookiesSize = j2;
+        UniversalRecyclerView universalRecyclerView = webBrowserSettings.listView;
         if (universalRecyclerView == null || universalRecyclerView.adapter == null || !universalRecyclerView.isAttachedToWindow()) {
             return;
         }
-        this.listView.adapter.update(true);
+        webBrowserSettings.listView.adapter.update(true);
     }
 
     @Override // org.telegram.ui.Components.UniversalFragment, org.telegram.ui.ActionBar.BaseFragment
@@ -329,7 +327,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             title.setMessage(LocaleController.formatString(i3, str)).setPositiveButton(LocaleController.getString(R.string.Clear), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i4) {
-                    WebBrowserSettings.this.lambda$onClick$3(alertDialog, i4);
+                    WebBrowserSettings.$r8$lambda$-4cXdBhfJxlXcc150MTcRMne2X4(WebBrowserSettings.this, alertDialog, i4);
                 }
             }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
             return;
@@ -343,21 +341,25 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             title2.setMessage(LocaleController.formatString(i4, str)).setPositiveButton(LocaleController.getString(R.string.Clear), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i5) {
-                    WebBrowserSettings.this.lambda$onClick$4(alertDialog, i5);
+                    WebBrowserSettings.$r8$lambda$4_bnm7-nv_IlzPly8S5gOyPazIM(WebBrowserSettings.this, alertDialog, i5);
                 }
             }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
             return;
         }
         if (i2 == 7) {
-            Iterator it = BrowserHistory.getHistory().iterator();
+            ArrayList history = BrowserHistory.getHistory();
+            int size = history.size();
             long j = Long.MAX_VALUE;
-            while (it.hasNext()) {
-                j = Math.min(j, ((BrowserHistory.Entry) it.next()).time);
+            int i5 = 0;
+            while (i5 < size) {
+                Object obj = history.get(i5);
+                i5++;
+                j = Math.min(j, ((BrowserHistory.Entry) obj).time);
             }
             new AlertDialog.Builder(getContext(), getResourceProvider()).setTitle(LocaleController.getString(R.string.BrowserSettingsHistoryClear)).setMessage(LocaleController.formatString(R.string.BrowserSettingsHistoryClearText, LocaleController.formatDateChat(j / 1000))).setPositiveButton(LocaleController.getString(R.string.Clear), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i5) {
-                    WebBrowserSettings.this.lambda$onClick$5(alertDialog, i5);
+                public final void onClick(AlertDialog alertDialog, int i6) {
+                    WebBrowserSettings.$r8$lambda$qQ17F-8WGwfx1djKxEAjvx0xSu4(WebBrowserSettings.this, alertDialog, i6);
                 }
             }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
             return;
@@ -366,8 +368,8 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             final HistoryFragment[] historyFragmentArr = {null};
             HistoryFragment historyFragment = new HistoryFragment(null, new Utilities.Callback() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    WebBrowserSettings.this.lambda$onClick$6(historyFragmentArr, (BrowserHistory.Entry) obj);
+                public final void run(Object obj2) {
+                    WebBrowserSettings.$r8$lambda$1QFZFYTQK5c6YQ97NrrM-u56oCE(WebBrowserSettings.this, historyFragmentArr, (BrowserHistory.Entry) obj2);
                 }
             });
             historyFragmentArr[0] = historyFragment;
@@ -377,8 +379,8 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         if (i2 == 5) {
             new AlertDialog.Builder(getContext(), getResourceProvider()).setTitle(LocaleController.getString(R.string.WebBrowserDeleteAllExceptionsTitle)).setMessage(LocaleController.getString(R.string.WebBrowserDeleteAllExceptionsMessage)).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i5) {
-                    WebBrowserSettings.this.lambda$onClick$7(alertDialog, i5);
+                public final void onClick(AlertDialog alertDialog, int i6) {
+                    WebBrowserSettings.$r8$lambda$tk4nHUdVUYA3jWdrrvMr4snR1sM(WebBrowserSettings.this, alertDialog, i6);
                 }
             }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
             return;
@@ -389,14 +391,14 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             ItemOptions.makeOptions((ViewGroup) this.fragmentView, websiteView).setDimAlpha(40).add(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new Runnable() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WebBrowserSettings.this.lambda$onClick$8(str2);
+                    WebBrowserSettings.$r8$lambda$tn2_Oj9BsPqKFNmwMQbchcWh6qs(WebBrowserSettings.this, str2);
                 }
             }).show();
             return;
         }
-        int i5 = uItem.id;
-        if (i5 != 6) {
-            if (i5 == 15 || i5 == 16) {
+        int i6 = uItem.id;
+        if (i6 != 6) {
+            if (i6 == 15 || i6 == 16) {
                 final boolean isWebBrowserInAppEnabled2 = getMessagesController().isWebBrowserInAppEnabled();
                 if (getMessagesController().isWebBrowserExceptionsLimitReached(isWebBrowserInAppEnabled2)) {
                     AlertsCreator.showSimpleAlert(this, LocaleController.getString(R.string.WebBrowserExceptionsLimitTitle), LocaleController.getString(R.string.WebBrowserExceptionsLimitMessage));
@@ -404,8 +406,8 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
                 } else {
                     AlertsCreator.showAddBrowserException(getContext(), getResourceProvider(), isWebBrowserInAppEnabled2, new Utilities.Callback() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda10
                         @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            WebBrowserSettings.this.lambda$onClick$10(isWebBrowserInAppEnabled2, (String) obj);
+                        public final void run(Object obj2) {
+                            WebBrowserSettings.$r8$lambda$ojzhbiKbHihKejgts0kOJz4qM7w(WebBrowserSettings.this, isWebBrowserInAppEnabled2, (String) obj2);
                         }
                     });
                     return;
@@ -420,37 +422,37 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         ArrayList searchEngines = SearchEngine.getSearchEngines();
-        int size = searchEngines.size();
-        CharSequence[] charSequenceArr = new CharSequence[size];
-        final int i6 = 0;
-        while (i6 < size) {
-            charSequenceArr[i6] = ((SearchEngine) searchEngines.get(i6)).name;
+        int size2 = searchEngines.size();
+        CharSequence[] charSequenceArr = new CharSequence[size2];
+        final int i7 = 0;
+        while (i7 < size2) {
+            charSequenceArr[i7] = ((SearchEngine) searchEngines.get(i7)).name;
             RadioColorCell radioColorCell = new RadioColorCell(getParentActivity());
             radioColorCell.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
-            radioColorCell.setTextAndValue(charSequenceArr[i6], i6 == SharedConfig.searchEngineType);
+            radioColorCell.setTextAndValue(charSequenceArr[i7], i7 == SharedConfig.searchEngineType);
             radioColorCell.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 2));
             linearLayout.addView(radioColorCell);
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.web.WebBrowserSettings$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    WebBrowserSettings.lambda$onClick$9(i6, view, atomicReference, view2);
+                    WebBrowserSettings.$r8$lambda$gflDPD9fbUbhkMtt-bL08jP0MXU(i7, view, atomicReference, view2);
                 }
             });
-            i6++;
+            i7++;
         }
         AlertDialog create = new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString(R.string.SearchEngine)).setView(linearLayout).setNegativeButton(LocaleController.getString(R.string.Cancel), null).create();
         atomicReference.set(create);
         showDialog(create);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$3(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$-4cXdBhfJxlXcc150MTcRMne2X4(WebBrowserSettings webBrowserSettings, AlertDialog alertDialog, int i) {
+        webBrowserSettings.getClass();
         ApplicationLoader.applicationContext.deleteDatabase("webview.db");
         ApplicationLoader.applicationContext.deleteDatabase("webviewCache.db");
         WebStorage.getInstance().deleteAllData();
         try {
-            WebView webView = new WebView(getContext());
+            WebView webView = new WebView(webBrowserSettings.getContext());
             webView.clearCache(true);
             webView.clearHistory();
             webView.destroy();
@@ -473,11 +475,11 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             FileLog.e(e2);
         }
         WebMetadataCache.getInstance().clear();
-        loadSizes();
+        webBrowserSettings.loadSizes();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$4(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$4_bnm7-nv_IlzPly8S5gOyPazIM(WebBrowserSettings webBrowserSettings, AlertDialog alertDialog, int i) {
+        webBrowserSettings.getClass();
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.removeAllCookies(null);
         cookieManager.flush();
@@ -489,50 +491,46 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         } catch (Exception e) {
             FileLog.e(e);
         }
-        loadSizes();
+        webBrowserSettings.loadSizes();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$5(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$qQ17F-8WGwfx1djKxEAjvx0xSu4(WebBrowserSettings webBrowserSettings, AlertDialog alertDialog, int i) {
+        webBrowserSettings.getClass();
         BrowserHistory.clearHistory();
-        this.historySize = 0L;
-        this.listView.adapter.update(true);
+        webBrowserSettings.historySize = 0L;
+        webBrowserSettings.listView.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$6(HistoryFragment[] historyFragmentArr, BrowserHistory.Entry entry) {
+    public static /* synthetic */ void $r8$lambda$1QFZFYTQK5c6YQ97NrrM-u56oCE(WebBrowserSettings webBrowserSettings, HistoryFragment[] historyFragmentArr, BrowserHistory.Entry entry) {
+        webBrowserSettings.getClass();
         historyFragmentArr[0].finishFragment();
-        if (this.whenHistoryClicked != null) {
-            finishFragment();
-            this.whenHistoryClicked.run(entry);
+        if (webBrowserSettings.whenHistoryClicked != null) {
+            webBrowserSettings.finishFragment();
+            webBrowserSettings.whenHistoryClicked.run(entry);
         } else {
-            Browser.openUrl(getContext(), entry.url);
+            Browser.openUrl(webBrowserSettings.getContext(), entry.url);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$7(AlertDialog alertDialog, int i) {
-        getMessagesController().clearAllWebBrowserExceptions();
-        this.listView.adapter.update(true);
+    public static /* synthetic */ void $r8$lambda$tk4nHUdVUYA3jWdrrvMr4snR1sM(WebBrowserSettings webBrowserSettings, AlertDialog alertDialog, int i) {
+        webBrowserSettings.getMessagesController().clearAllWebBrowserExceptions();
+        webBrowserSettings.listView.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$8(String str) {
-        getMessagesController().removeWebBrowserException(str);
-        this.listView.adapter.update(true);
+    public static /* synthetic */ void $r8$lambda$tn2_Oj9BsPqKFNmwMQbchcWh6qs(WebBrowserSettings webBrowserSettings, String str) {
+        webBrowserSettings.getMessagesController().removeWebBrowserException(str);
+        webBrowserSettings.listView.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onClick$9(int i, View view, AtomicReference atomicReference, View view2) {
+    public static /* synthetic */ void $r8$lambda$gflDPD9fbUbhkMtt-bL08jP0MXU(int i, View view, AtomicReference atomicReference, View view2) {
         SharedConfig.setSearchEngineType(i);
         ((TextCell) view).setValue(SearchEngine.getCurrent().name, true);
         ((Dialog) atomicReference.get()).dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$10(boolean z, String str) {
-        getMessagesController().addWebBrowserException(str, z);
-        this.listView.adapter.update(true);
+    public static /* synthetic */ void $r8$lambda$ojzhbiKbHihKejgts0kOJz4qM7w(WebBrowserSettings webBrowserSettings, boolean z, String str) {
+        webBrowserSettings.getMessagesController().addWebBrowserException(str, z);
+        webBrowserSettings.listView.adapter.update(true);
     }
 
     public static class WebsiteView extends FrameLayout {
@@ -686,15 +684,13 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         }
         if (file.isDirectory()) {
             File[] listFiles = file.listFiles();
-            if (listFiles == null) {
-                return 0L;
+            if (listFiles != null) {
+                for (File file2 : listFiles) {
+                    j += getDirectorySize(file2, bool);
+                }
+                return j;
             }
-            for (File file2 : listFiles) {
-                j += getDirectorySize(file2, bool);
-            }
-            return j;
-        }
-        if (bool == null || bool.booleanValue() == file.getName().startsWith("Cookies")) {
+        } else if (bool == null || bool.booleanValue() == file.getName().startsWith("Cookies")) {
             return file.length();
         }
         return 0L;

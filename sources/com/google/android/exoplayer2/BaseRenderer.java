@@ -234,20 +234,22 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     protected final int readSource(FormatHolder formatHolder, DecoderInputBuffer decoderInputBuffer, int i) {
         int readData = ((SampleStream) Assertions.checkNotNull(this.stream)).readData(formatHolder, decoderInputBuffer, i);
-        if (readData == -4) {
-            if (decoderInputBuffer.isEndOfStream()) {
-                this.readingPositionUs = Long.MIN_VALUE;
-                return this.streamIsFinal ? -4 : -3;
+        if (readData != -4) {
+            if (readData == -5) {
+                Format format = (Format) Assertions.checkNotNull(formatHolder.format);
+                if (format.subsampleOffsetUs != Long.MAX_VALUE) {
+                    formatHolder.format = format.buildUpon().setSubsampleOffsetUs(format.subsampleOffsetUs + this.streamOffsetUs).build();
+                }
             }
-            long j = decoderInputBuffer.timeUs + this.streamOffsetUs;
-            decoderInputBuffer.timeUs = j;
-            this.readingPositionUs = Math.max(this.readingPositionUs, j);
-        } else if (readData == -5) {
-            Format format = (Format) Assertions.checkNotNull(formatHolder.format);
-            if (format.subsampleOffsetUs != Long.MAX_VALUE) {
-                formatHolder.format = format.buildUpon().setSubsampleOffsetUs(format.subsampleOffsetUs + this.streamOffsetUs).build();
-            }
+            return readData;
         }
+        if (decoderInputBuffer.isEndOfStream()) {
+            this.readingPositionUs = Long.MIN_VALUE;
+            return this.streamIsFinal ? -4 : -3;
+        }
+        long j = decoderInputBuffer.timeUs + this.streamOffsetUs;
+        decoderInputBuffer.timeUs = j;
+        this.readingPositionUs = Math.max(this.readingPositionUs, j);
         return readData;
     }
 

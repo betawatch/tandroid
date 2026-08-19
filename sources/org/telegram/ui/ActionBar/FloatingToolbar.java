@@ -75,9 +75,7 @@ public final class FloatingToolbar {
     private static final MenuItem.OnMenuItemClickListener NO_OP_MENUITEM_CLICK_LISTENER = new MenuItem.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$$ExternalSyntheticLambda1
         @Override // android.view.MenuItem.OnMenuItemClickListener
         public final boolean onMenuItemClick(MenuItem menuItem) {
-            boolean lambda$static$0;
-            lambda$static$0 = FloatingToolbar.lambda$static$0(menuItem);
-            return lambda$static$0;
+            return FloatingToolbar.$r8$lambda$UV4UHvSG7impHUqxEN2IE95BRm0(menuItem);
         }
     };
     public static final List STYLE_BUTTONS;
@@ -107,8 +105,7 @@ public final class FloatingToolbar {
         void removeStyle(int i, int i2, int i3);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$0(MenuItem menuItem) {
+    public static /* synthetic */ boolean $r8$lambda$UV4UHvSG7impHUqxEN2IE95BRm0(MenuItem menuItem) {
         return false;
     }
 
@@ -141,8 +138,7 @@ public final class FloatingToolbar {
         this.quoteShowCallback = callback0Return;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$new$1(MenuItem menuItem, MenuItem menuItem2) {
+    public static /* synthetic */ int $r8$lambda$oeoem8jsMsNfzaGiZfcK-WwEphE(MenuItem menuItem, MenuItem menuItem2) {
         return menuItem.getOrder() - menuItem2.getOrder();
     }
 
@@ -174,9 +170,7 @@ public final class FloatingToolbar {
         this.mMenuItemComparator = new Comparator() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$new$1;
-                lambda$new$1 = FloatingToolbar.lambda$new$1((MenuItem) obj, (MenuItem) obj2);
-                return lambda$new$1;
+                return FloatingToolbar.$r8$lambda$oeoem8jsMsNfzaGiZfcK-WwEphE((MenuItem) obj, (MenuItem) obj2);
             }
         };
         this.mWindowView = view;
@@ -194,9 +188,9 @@ public final class FloatingToolbar {
     public FloatingToolbar setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener onMenuItemClickListener) {
         if (onMenuItemClickListener != null) {
             this.mMenuItemClickListener = onMenuItemClickListener;
-        } else {
-            this.mMenuItemClickListener = NO_OP_MENUITEM_CLICK_LISTENER;
+            return this;
         }
+        this.mMenuItemClickListener = NO_OP_MENUITEM_CLICK_LISTENER;
         return this;
     }
 
@@ -440,7 +434,7 @@ public final class FloatingToolbar {
             imageButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
-                    FloatingToolbar.FloatingToolbarPopup.this.lambda$new$0(view3);
+                    FloatingToolbar.FloatingToolbarPopup.this.onBackPressed();
                 }
             });
             frameLayout.addView(imageButton, LayoutHelper.createFrame(-2, -2, 19));
@@ -463,11 +457,6 @@ public final class FloatingToolbar {
             this.mHideAnimation = FloatingToolbar.createExitAnimation(viewGroup2, 0, new 5(FloatingToolbar.this));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            onBackPressed();
-        }
-
         class 4 extends AnimatorListenerAdapter {
             final /* synthetic */ FloatingToolbar val$this$0;
 
@@ -480,13 +469,12 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.4.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.4.$r8$lambda$cco5EnXFNcOVHG9m7zX5jqw3AJ8(FloatingToolbar.FloatingToolbarPopup.4.this);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onAnimationEnd$0() {
+            public static /* synthetic */ void $r8$lambda$cco5EnXFNcOVHG9m7zX5jqw3AJ8(4 r1) {
                 FloatingToolbarPopup.this.mPopupWindow.dismiss();
                 FloatingToolbarPopup.this.mContentContainer.removeAllViews();
             }
@@ -504,18 +492,14 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.5.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.this.mPopupWindow.dismiss();
                     }
                 });
             }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onAnimationEnd$0() {
-                FloatingToolbarPopup.this.mPopupWindow.dismiss();
-            }
         }
 
-        private void onBackPressed() {
+        /* JADX INFO: Access modifiers changed from: private */
+        public void onBackPressed() {
             if (this.mIsOverflowOpen) {
                 this.mOverflowButtonIcon.setImageDrawable(this.mToOverflow);
                 this.mToOverflow.start();
@@ -533,7 +517,7 @@ public final class FloatingToolbar {
                 this.mOverflowButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FloatingToolbar.FloatingToolbarPopup.this.lambda$updateOverflowButtonClickListener$1(view);
+                        FloatingToolbar.FloatingToolbarPopup.this.onBackPressed();
                     }
                 });
                 this.mOverflowButtonIcon.setClickable(false);
@@ -546,19 +530,9 @@ public final class FloatingToolbar {
             this.mOverflowButtonIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FloatingToolbar.FloatingToolbarPopup.this.lambda$updateOverflowButtonClickListener$2(view);
+                    FloatingToolbar.FloatingToolbarPopup.this.onBackPressed();
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateOverflowButtonClickListener$1(View view) {
-            onBackPressed();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateOverflowButtonClickListener$2(View view) {
-            onBackPressed();
         }
 
         public void layoutMenuItems(List list, MenuItem.OnMenuItemClickListener onMenuItemClickListener, int i) {
@@ -1005,7 +979,7 @@ public final class FloatingToolbar {
                     if (createMenuItemButton instanceof LinearLayout) {
                         ((LinearLayout) createMenuItemButton).setGravity(17);
                     }
-                    createMenuItemButton.setPaddingRelative((int) ((z ? 1.5d : 1.0d) * createMenuItemButton.getPaddingStart()), createMenuItemButton.getPaddingTop(), (int) (createMenuItemButton.getPaddingEnd() * (!hasNext ? 1.5d : 1.0d)), createMenuItemButton.getPaddingBottom());
+                    createMenuItemButton.setPaddingRelative((int) ((z ? 1.5d : 1.0d) * createMenuItemButton.getPaddingStart()), createMenuItemButton.getPaddingTop(), (int) (createMenuItemButton.getPaddingEnd() * (hasNext ? 1.0d : 1.5d)), createMenuItemButton.getPaddingBottom());
                     createMenuItemButton.measure(0, 0);
                     int min = Math.min(createMenuItemButton.getMeasuredWidth(), i);
                     boolean z3 = min <= i2 - this.mOverflowButtonSize.getWidth();
@@ -1037,9 +1011,7 @@ public final class FloatingToolbar {
                 Collections.sort(list, new Comparator() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda0
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$layoutOverflowPanelItems$3;
-                        lambda$layoutOverflowPanelItems$3 = FloatingToolbar.FloatingToolbarPopup.lambda$layoutOverflowPanelItems$3((MenuItem) obj, (MenuItem) obj2);
-                        return lambda$layoutOverflowPanelItems$3;
+                        return FloatingToolbar.FloatingToolbarPopup.$r8$lambda$XSUKhezwtykLqi5URcVn9bL2ahs((MenuItem) obj, (MenuItem) obj2);
                     }
                 });
             }
@@ -1066,8 +1038,7 @@ public final class FloatingToolbar {
             setSize(this.mOverflowPanel, size2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$layoutOverflowPanelItems$3(MenuItem menuItem, MenuItem menuItem2) {
+        public static /* synthetic */ int $r8$lambda$XSUKhezwtykLqi5URcVn9bL2ahs(MenuItem menuItem, MenuItem menuItem2) {
             List list = FloatingToolbar.premiumOptions;
             return (list.contains(Integer.valueOf(menuItem.getItemId())) ? 1 : 0) - (list.contains(Integer.valueOf(menuItem2.getItemId())) ? 1 : 0);
         }
@@ -1182,24 +1153,24 @@ public final class FloatingToolbar {
             overflowPanel.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda4
                 @Override // android.widget.AdapterView.OnItemClickListener
                 public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-                    FloatingToolbar.FloatingToolbarPopup.this.lambda$createOverflowPanel$4(overflowPanel, adapterView, view, i, j);
+                    FloatingToolbar.FloatingToolbarPopup.$r8$lambda$8oCyUbqeLXvygnXItlA5PaejVkw(FloatingToolbar.FloatingToolbarPopup.this, overflowPanel, adapterView, view, i, j);
                 }
             });
             return overflowPanel;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createOverflowPanel$4(OverflowPanel overflowPanel, AdapterView adapterView, View view, int i, long j) {
+        public static /* synthetic */ void $r8$lambda$8oCyUbqeLXvygnXItlA5PaejVkw(FloatingToolbarPopup floatingToolbarPopup, OverflowPanel overflowPanel, AdapterView adapterView, View view, int i, long j) {
+            floatingToolbarPopup.getClass();
             MenuItem menuItem = (MenuItem) overflowPanel.getAdapter().getItem(i);
             if (FloatingToolbar.this.premiumLockClickListener != null && FloatingToolbar.premiumOptions.contains(Integer.valueOf(menuItem.getItemId()))) {
-                int i2 = -this.shiftDp;
-                this.shiftDp = i2;
+                int i2 = -floatingToolbarPopup.shiftDp;
+                floatingToolbarPopup.shiftDp = i2;
                 AndroidUtilities.shakeViewSpring(view, i2);
                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                 FloatingToolbar.this.premiumLockClickListener.run();
                 return;
             }
-            MenuItem.OnMenuItemClickListener onMenuItemClickListener = this.mOnMenuItemClickListener;
+            MenuItem.OnMenuItemClickListener onMenuItemClickListener = floatingToolbarPopup.mOnMenuItemClickListener;
             if (onMenuItemClickListener != null) {
                 onMenuItemClickListener.onMenuItemClick(menuItem);
             }
@@ -1230,13 +1201,12 @@ public final class FloatingToolbar {
                 FloatingToolbarPopup.this.mContentContainer.post(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$14$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.14.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.14.$r8$lambda$5Su373lkHwAC9hTmvad-hNQz8Ig(FloatingToolbar.FloatingToolbarPopup.14.this);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onAnimationEnd$0() {
+            public static /* synthetic */ void $r8$lambda$5Su373lkHwAC9hTmvad-hNQz8Ig(14 r1) {
                 FloatingToolbarPopup.this.setPanelsStatesAtRestingPosition();
                 FloatingToolbarPopup.this.setContentAreaAsTouchableSurface();
             }
@@ -1422,10 +1392,8 @@ public final class FloatingToolbar {
     /* JADX INFO: Access modifiers changed from: private */
     public View createMenuItemButton(Context context, MenuItem menuItem, int i, boolean z, boolean z2, boolean z3) {
         int themedColor;
-        int i2;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
-        boolean z4 = false;
         linearLayout.setOrientation(0);
         linearLayout.setMinimumWidth(AndroidUtilities.dp(48.0f));
         linearLayout.setMinimumHeight(AndroidUtilities.dp(z ? 42.0f : 48.0f));
@@ -1440,15 +1408,15 @@ public final class FloatingToolbar {
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
         int themedColor2 = getThemedColor(Theme.key_listSelector);
-        int i3 = this.currentStyle;
-        if (i3 == 0) {
+        int i2 = this.currentStyle;
+        if (i2 == 0) {
             themedColor = getThemedColor(Theme.key_dialogTextBlack);
             textView.setTextColor(themedColor);
-        } else if (i3 == 2) {
+        } else if (i2 == 2) {
             themedColor = -328966;
             textView.setTextColor(-328966);
             themedColor2 = 553648127;
-        } else if (i3 == 1) {
+        } else if (i2 == 1) {
             themedColor = getThemedColor(Theme.key_windowBackgroundWhiteBlackText);
             textView.setTextColor(themedColor);
         } else {
@@ -1469,13 +1437,7 @@ public final class FloatingToolbar {
         imageView.setVisibility(8);
         linearLayout.addView(imageView, LayoutHelper.createLinear(-2, -1, 0.0f, 0, 12, 0, 0, 0));
         if (menuItem != null) {
-            if (this.premiumLockClickListener != null) {
-                i2 = i;
-                z4 = true;
-            } else {
-                i2 = i;
-            }
-            updateMenuItemButton(linearLayout, menuItem, i2, z4);
+            updateMenuItemButton(linearLayout, menuItem, i, this.premiumLockClickListener != null);
         }
         return linearLayout;
     }
@@ -1596,9 +1558,10 @@ public final class FloatingToolbar {
                         }
                     }
                 }
-                if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    this.downRootView = null;
+                if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
+                    return dispatchTouchEvent;
                 }
+                this.downRootView = null;
                 return dispatchTouchEvent;
             }
 

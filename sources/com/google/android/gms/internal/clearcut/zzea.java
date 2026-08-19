@@ -36,14 +36,16 @@ final class zzea {
     public final zzef zze(Class cls) {
         zzci.zza((Object) cls, "messageType");
         zzef zzefVar = (zzef) this.zzne.get(cls);
-        if (zzefVar != null) {
-            return zzefVar;
+        if (zzefVar == null) {
+            zzefVar = this.zznd.zzd(cls);
+            zzci.zza((Object) cls, "messageType");
+            zzci.zza((Object) zzefVar, "schema");
+            zzef zzefVar2 = (zzef) this.zzne.putIfAbsent(cls, zzefVar);
+            if (zzefVar2 != null) {
+                return zzefVar2;
+            }
         }
-        zzef zzd = this.zznd.zzd(cls);
-        zzci.zza((Object) cls, "messageType");
-        zzci.zza((Object) zzd, "schema");
-        zzef zzefVar2 = (zzef) this.zzne.putIfAbsent(cls, zzd);
-        return zzefVar2 != null ? zzefVar2 : zzd;
+        return zzefVar;
     }
 
     public final zzef zzp(Object obj) {

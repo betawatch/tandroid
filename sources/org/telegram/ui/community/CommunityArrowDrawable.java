@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.utils.DrawableUtils;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityArrowDrawable extends Drawable {
     private int alpha = NotificationCenter.didReceiveSmsCode;
     private final Drawable arrowDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();

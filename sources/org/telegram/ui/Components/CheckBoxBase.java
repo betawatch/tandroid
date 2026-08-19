@@ -85,11 +85,6 @@ public class CheckBoxBase {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Paint lambda$new$0(Void r0) {
-        return paint;
-    }
-
     public CheckBoxBase(View view, int i, Theme.ResourcesProvider resourcesProvider) {
         int i2 = Theme.key_chat_serviceBackground;
         this.backgroundColorKey = i2;
@@ -102,9 +97,9 @@ public class CheckBoxBase {
         this.circlePaintProvider = new GenericProvider() { // from class: org.telegram.ui.Components.CheckBoxBase$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
-                Paint lambda$new$0;
-                lambda$new$0 = CheckBoxBase.lambda$new$0((Void) obj);
-                return lambda$new$0;
+                Paint paint2;
+                paint2 = CheckBoxBase.paint;
+                return paint2;
             }
         };
         this.animationDuration = 200L;
@@ -395,50 +390,50 @@ public class CheckBoxBase {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0665  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x066a  */
-    /* JADX WARN: Removed duplicated region for block: B:219:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x021b  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x0146  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x023d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x035a  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0661  */
+    /* JADX WARN: Removed duplicated region for block: B:202:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x0221  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x01ac  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01f4  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0247  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0360  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x003a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void draw(Canvas canvas) {
         float f;
         float f2;
-        float f3;
         boolean z;
-        int i;
+        float f3;
         float f4;
+        int i;
         int i2;
-        float f5;
         int i3;
-        int i4;
+        float f5;
         float f6;
+        float f7;
+        Canvas canvas2;
+        int i4;
         int i5;
+        char c;
         int i6;
         int i7;
-        int i8;
-        float f7;
         float f8;
-        float f9;
-        boolean z2;
+        int i8;
         int i9;
-        float f10;
-        float f11;
+        boolean z2;
         int i10;
+        float f9;
+        float f10;
         int i11;
-        MessageDrawable messageDrawable;
         int i12;
         int i13;
         int i14;
@@ -449,39 +444,47 @@ public class CheckBoxBase {
         if (i17 == 12 || i17 == 13) {
             dp = AndroidUtilities.dp(10.0f);
         } else if (i17 != 0 && i17 != 11) {
-            f = dp;
-            f2 = dp - AndroidUtilities.dp(0.2f);
-            float f12 = !this.forbidden ? 1.0f : this.progress;
-            f3 = f12 < 0.5f ? 1.0f : f12 / 0.5f;
+            f = dp - AndroidUtilities.dp(0.2f);
+            float f11 = !this.forbidden ? 1.0f : this.progress;
+            f2 = f11 < 0.5f ? 1.0f : f11 / 0.5f;
             int centerX = this.bounds.centerX();
             int centerY = this.bounds.centerY();
-            z = !this.cutCheck && f3 > 0.0f && f12 >= 0.5f && !this.forbidden && this.checkedText == null;
+            z = !this.cutCheck && f2 > 0.0f && f11 >= 0.5f && !this.forbidden && this.checkedText == null;
             if (z) {
+                f3 = dp;
+                f4 = f11;
                 i = centerX;
-                f4 = f12;
                 i2 = centerY;
-                f5 = f;
                 i3 = 12;
-                i4 = 13;
-                f6 = 1.0f;
+                f5 = 2.0f;
+                f6 = 0.0f;
+                f7 = 1.0f;
+                canvas2 = canvas;
             } else {
-                float f13 = centerX;
-                float f14 = centerY;
+                float f12 = centerX;
+                float f13 = f11;
+                float f14 = f12 - dp;
+                float f15 = centerY;
+                float f16 = f15 - dp;
+                float f17 = f12 + dp;
+                float f18 = f15 + dp;
+                f3 = dp;
+                f4 = f13;
                 i = centerX;
                 i2 = centerY;
-                f6 = 1.0f;
-                f5 = f;
-                f4 = f12;
                 i3 = 12;
-                i4 = 13;
-                canvas.saveLayerAlpha(f13 - f, f14 - f, f13 + f, f14 + f, NotificationCenter.didReceiveSmsCode, 31);
+                f5 = 2.0f;
+                f6 = 0.0f;
+                f7 = 1.0f;
+                canvas2 = canvas;
+                canvas2.saveLayerAlpha(f14, f16, f17, f18, NotificationCenter.didReceiveSmsCode, 31);
             }
-            i5 = this.backgroundColorKey;
-            if (i5 < 0) {
+            i4 = this.backgroundColorKey;
+            if (i4 < 0) {
                 if (this.drawUnchecked) {
                     int i18 = this.backgroundType;
-                    if (i18 == i3 || i18 == i4) {
-                        paint.setColor(getThemedColor(i5));
+                    if (i18 == i3 || i18 == 13) {
+                        paint.setColor(getThemedColor(i4));
                         paint.setAlpha((int) (this.backgroundAlpha * 255.0f));
                         this.backgroundPaint.setColor(getThemedColor(this.checkColorKey));
                     } else if (i18 == 6 || i18 == 7) {
@@ -490,7 +493,7 @@ public class CheckBoxBase {
                     } else if (i18 == 10 || i18 == 14) {
                         this.backgroundPaint.setColor(getThemedColor(this.background2ColorKey));
                     } else {
-                        paint.setColor((16777215 & Theme.getServiceMessageColor()) | 671088640);
+                        paint.setColor((Theme.getServiceMessageColor() & 16777215) | 671088640);
                         this.backgroundPaint.setColor(getThemedColor(this.checkColorKey));
                     }
                 } else {
@@ -501,311 +504,346 @@ public class CheckBoxBase {
                     }
                     paint2.setColor(AndroidUtilities.getOffsetColor(16777215, getThemedColor(i19), f4, this.backgroundAlpha));
                 }
-            } else if (this.drawUnchecked) {
-                paint.setColor(Color.argb((int) (this.backgroundAlpha * 25.0f), 0, 0, 0));
-                if (this.backgroundType == 8) {
-                    this.backgroundPaint.setColor(getThemedColor(this.background2ColorKey));
-                } else {
-                    this.backgroundPaint.setColor(AndroidUtilities.getOffsetColor(-1, getThemedColor(this.checkColorKey), f4, this.backgroundAlpha));
-                }
-            } else if (this.backgroundColor != 0) {
-                this.backgroundPaint.setColor(0);
             } else {
-                Paint paint3 = this.backgroundPaint;
-                int i20 = this.background2ColorKey;
-                if (i20 < 0) {
-                    i20 = this.checkColorKey;
-                }
-                paint3.setColor(AndroidUtilities.getOffsetColor(16777215, getThemedColor(i20), f4, this.backgroundAlpha));
-            }
-            if (this.drawUnchecked && (i16 = this.backgroundType) >= 0 && i16 != i3 && i16 != i4) {
-                if (i16 != 8 || i16 == 10 || i16 == 14) {
-                    if (this.customRadius <= 0.0f) {
-                        float dp2 = f5 - AndroidUtilities.dp(1.5f);
-                        float lerp = AndroidUtilities.lerp(dp2, this.customRadius, this.customRadiusFactor);
-                        float f15 = i;
-                        float f16 = i2;
-                        i7 = 7;
-                        i6 = -1;
-                        canvas.drawRoundRect(f15 - dp2, f16 - dp2, f15 + dp2, f16 + dp2, lerp, lerp, this.backgroundPaint);
+                if (this.drawUnchecked) {
+                    paint.setColor(Color.argb((int) (this.backgroundAlpha * 25.0f), 0, 0, 0));
+                    if (this.backgroundType == 8) {
+                        this.backgroundPaint.setColor(getThemedColor(this.background2ColorKey));
                     } else {
-                        i6 = -1;
-                        i7 = 7;
-                        canvas.drawCircle(i, i2, f5 - AndroidUtilities.dp(1.5f), this.backgroundPaint);
+                        i5 = -1;
+                        this.backgroundPaint.setColor(AndroidUtilities.getOffsetColor(-1, getThemedColor(this.checkColorKey), f4, this.backgroundAlpha));
+                    }
+                } else {
+                    i5 = -1;
+                    if (this.backgroundColor != 0) {
+                        this.backgroundPaint.setColor(0);
+                    } else {
+                        Paint paint3 = this.backgroundPaint;
+                        int i20 = this.background2ColorKey;
+                        if (i20 < 0) {
+                            i20 = this.checkColorKey;
+                        }
+                        c = 0;
+                        paint3.setColor(AndroidUtilities.getOffsetColor(16777215, getThemedColor(i20), f4, this.backgroundAlpha));
+                        if (this.drawUnchecked && (i16 = this.backgroundType) >= 0 && i16 != i3 && i16 != 13) {
+                            if (i16 != 8 || i16 == 10 || i16 == 14) {
+                                if (this.customRadius <= f6) {
+                                    float dp2 = f3 - AndroidUtilities.dp(1.5f);
+                                    float lerp = AndroidUtilities.lerp(dp2, this.customRadius, this.customRadiusFactor);
+                                    float f19 = i;
+                                    float f20 = i2;
+                                    i6 = 8;
+                                    i7 = 10;
+                                    f8 = 1.5f;
+                                    canvas2.drawRoundRect(f19 - dp2, f20 - dp2, f19 + dp2, f20 + dp2, lerp, lerp, this.backgroundPaint);
+                                } else {
+                                    i6 = 8;
+                                    i7 = 10;
+                                    f8 = 1.5f;
+                                    canvas2.drawCircle(i, i2, f3 - AndroidUtilities.dp(1.5f), this.backgroundPaint);
+                                }
+                                paint.setColor(getThemedColor(this.checkColorKey));
+                                i8 = this.backgroundType;
+                                if (i8 != i5 || i8 == 7 || i8 == i6 || i8 == 9 || i8 == i7 || i8 == 14) {
+                                    i9 = 6;
+                                } else {
+                                    if (i8 != 12 && i8 != 13) {
+                                        if (i8 == 0 || i8 == 11) {
+                                            i9 = 6;
+                                            canvas2.drawCircle(i, i2, f3, this.backgroundPaint);
+                                        } else {
+                                            float f21 = i;
+                                            float f22 = i2;
+                                            this.rect.set(f21 - f, f22 - f, f21 + f, f22 + f);
+                                            int i21 = this.backgroundType;
+                                            i9 = 6;
+                                            if (i21 == 6) {
+                                                i12 = (int) ((-360.0f) * f4);
+                                                i13 = 0;
+                                            } else if (i21 == 1) {
+                                                i12 = (int) ((-270.0f) * f4);
+                                                i13 = -90;
+                                            } else {
+                                                i12 = (int) (270.0f * f4);
+                                                if (LocaleController.isRTL) {
+                                                    i12 = -i12;
+                                                }
+                                                i13 = 90;
+                                            }
+                                            if (i21 == 6) {
+                                                int themedColor = getThemedColor(this.strokeBackgroundKey);
+                                                int alpha = Color.alpha(themedColor);
+                                                this.backgroundPaint.setColor(themedColor);
+                                                this.backgroundPaint.setAlpha((int) (alpha * f4));
+                                                i15 = i13;
+                                                i14 = i12;
+                                                canvas2.drawArc(this.rect, i13, i12, false, this.backgroundPaint);
+                                                int themedColor2 = getThemedColor(Theme.key_chat_attachPhotoBackground);
+                                                int alpha2 = Color.alpha(themedColor2);
+                                                this.backgroundPaint.setColor(themedColor2);
+                                                this.backgroundPaint.setAlpha((int) (alpha2 * f4));
+                                            } else {
+                                                i14 = i12;
+                                                i15 = i13;
+                                            }
+                                            canvas2 = canvas;
+                                            canvas2.drawArc(this.rect, i15, i14, false, this.backgroundPaint);
+                                        }
+                                        if (f2 > f6) {
+                                            float f23 = f4 < 0.5f ? 0.0f : (f4 - 0.5f) / 0.5f;
+                                            int i22 = this.backgroundType;
+                                            if (i22 == 9) {
+                                                paint.setColor(getThemedColor(this.background2ColorKey));
+                                            } else if (i22 == 11 || i22 == i9 || i22 == 7 || i22 == 10 || ((!this.drawUnchecked && this.backgroundColorKey >= 0) || i22 == 14)) {
+                                                paint.setColor(getThemedColor(this.backgroundColorKey));
+                                            } else {
+                                                int i23 = this.backgroundColor;
+                                                if (i23 != 0) {
+                                                    paint.setColor(i23);
+                                                } else {
+                                                    paint.setColor(getThemedColor(this.enabled ? Theme.key_checkbox : Theme.key_checkboxDisabled));
+                                                }
+                                            }
+                                            if (this.forbidden) {
+                                                paint.setColor(this.backgroundPaint.getColor());
+                                            } else if (this.alpha < f7) {
+                                                paint.setColor(ColorUtils.blendARGB(this.backgroundPaint.getColor(), paint.getColor(), this.alpha));
+                                            }
+                                            if (!this.useDefaultCheck && (i11 = this.checkColorKey) >= 0) {
+                                                this.checkPaint.setColor(getThemedColor(i11));
+                                            } else {
+                                                this.checkPaint.setColor(getThemedColor(Theme.key_checkboxCheck));
+                                            }
+                                            if (this.alpha < f7 && Theme.isCurrentThemeDark()) {
+                                                this.checkPaint.setColor(ColorUtils.blendARGB(paint.getColor(), this.checkPaint.getColor(), this.alpha));
+                                            }
+                                            if (this.backgroundType != -1) {
+                                                float dp3 = AndroidUtilities.dp(this.size) / f5;
+                                                int save = canvas2.save();
+                                                canvas2.translate(i - dp3, i2 - dp3);
+                                                boolean z3 = f2 < f7;
+                                                if (z3) {
+                                                    canvas2.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.didReceiveSmsCode, 31);
+                                                }
+                                                Paint paint4 = (Paint) this.circlePaintProvider.provide(null);
+                                                int i24 = this.backgroundType;
+                                                if (i24 == 12 || i24 == 13) {
+                                                    canvas2 = canvas;
+                                                    int alpha3 = paint4.getAlpha();
+                                                    paint4.setAlpha((int) (f2 * 255.0f));
+                                                    canvas2.drawCircle(dp3, dp3, f3 * f2, paint4);
+                                                    if (paint4 != paint) {
+                                                        paint4.setAlpha(alpha3);
+                                                    }
+                                                } else if (this.customRadius > 0.0f) {
+                                                    float dp4 = f3 - AndroidUtilities.dp(0.5f);
+                                                    float lerp2 = AndroidUtilities.lerp(dp4, this.customRadius, this.customRadiusFactor);
+                                                    float f24 = dp3 - dp4;
+                                                    float f25 = dp3 + dp4;
+                                                    canvas.drawRoundRect(f24, f24, f25, f25, lerp2, lerp2, paint4);
+                                                    float f26 = dp4 * (f7 - f2);
+                                                    float lerp3 = AndroidUtilities.lerp(f26, this.customRadius, this.customRadiusFactor);
+                                                    if (!z3 || f26 <= 0.0f) {
+                                                        canvas2 = canvas;
+                                                    } else {
+                                                        float f27 = dp3 - f26;
+                                                        float f28 = dp3 + f26;
+                                                        canvas2 = canvas;
+                                                        canvas2.drawRoundRect(f27, f27, f28, f28, lerp3, lerp3, Theme.PAINT_CLEAR);
+                                                    }
+                                                } else {
+                                                    canvas2 = canvas;
+                                                    float dp5 = f3 - AndroidUtilities.dp(0.5f);
+                                                    canvas2.drawCircle(dp3, dp3, dp5, paint4);
+                                                    float f29 = dp5 * (f7 - f2);
+                                                    if (z3 && f29 > 0.0f) {
+                                                        canvas2.drawCircle(dp3, dp3, f29, Theme.PAINT_CLEAR);
+                                                    }
+                                                }
+                                                canvas2.restoreToCount(save);
+                                            }
+                                            if (this.forbidden) {
+                                                if (forbidPaint == null) {
+                                                    Paint paint5 = new Paint(1);
+                                                    forbidPaint = paint5;
+                                                    paint5.setStyle(Paint.Style.STROKE);
+                                                    forbidPaint.setStrokeCap(Paint.Cap.ROUND);
+                                                    forbidPaint.setStrokeJoin(Paint.Join.ROUND);
+                                                    Paint paint6 = forbidPaint;
+                                                    float dp6 = AndroidUtilities.dp(0.66f);
+                                                    float dp7 = AndroidUtilities.dp(4.0f);
+                                                    float[] fArr = new float[2];
+                                                    fArr[c] = dp6;
+                                                    fArr[1] = dp7;
+                                                    paint6.setPathEffect(new DashPathEffect(fArr, 0.0f));
+                                                }
+                                                forbidPaint.setStrokeWidth(AndroidUtilities.dp(1.66f));
+                                                forbidPaint.setColor(getThemedColor(Theme.key_switchTrack));
+                                                canvas2.drawCircle(i, i2, AndroidUtilities.dp(9.0f), forbidPaint);
+                                            } else if (f23 != 0.0f) {
+                                                if (this.checkedText != null) {
+                                                    if (this.textPaint == null) {
+                                                        i10 = 1;
+                                                        TextPaint textPaint = new TextPaint(1);
+                                                        this.textPaint = textPaint;
+                                                        textPaint.setTypeface(AndroidUtilities.bold());
+                                                    } else {
+                                                        i10 = 1;
+                                                    }
+                                                    int length = this.checkedText.length();
+                                                    if (length == 0 || length == i10 || length == 2) {
+                                                        f9 = 14.0f;
+                                                        f10 = 18.0f;
+                                                    } else if (length != 3) {
+                                                        f9 = 8.0f;
+                                                        f10 = 15.75f;
+                                                    } else {
+                                                        f10 = 16.5f;
+                                                        f9 = 10.0f;
+                                                    }
+                                                    this.textPaint.setTextSize(AndroidUtilities.dp(f9));
+                                                    this.textPaint.setColor(getThemedColor(this.checkColorKey));
+                                                    canvas2.save();
+                                                    float f30 = i;
+                                                    canvas2.scale(f23, 1.0f, f30, i2);
+                                                    String str = this.checkedText;
+                                                    canvas2.drawText(str, f30 - (this.textPaint.measureText(str) / f5), AndroidUtilities.dp(f10), this.textPaint);
+                                                    canvas2.restore();
+                                                } else {
+                                                    this.path.reset();
+                                                    int i25 = this.backgroundType;
+                                                    float f31 = i25 == -1 ? 1.4f : i25 == 5 ? 0.8f : 1.0f;
+                                                    float dp8 = AndroidUtilities.dp(f31 * 9.0f) * f23;
+                                                    float dp9 = AndroidUtilities.dp(f31 * 4.0f) * f23;
+                                                    int dp10 = i - AndroidUtilities.dp(f8);
+                                                    int dp11 = AndroidUtilities.dp(4.0f) + i2;
+                                                    float sqrt = (float) Math.sqrt((dp9 * dp9) / f5);
+                                                    float f32 = dp10;
+                                                    float f33 = dp11;
+                                                    this.path.moveTo(f32 - sqrt, f33 - sqrt);
+                                                    this.path.lineTo(f32, f33);
+                                                    float sqrt2 = (float) Math.sqrt((dp8 * dp8) / f5);
+                                                    this.path.lineTo(f32 + sqrt2, f33 - sqrt2);
+                                                    if (z || this.checkScale != 1.0f) {
+                                                        canvas2.save();
+                                                        float f34 = this.checkScale;
+                                                        canvas2.scale(f34, f34, i, i2);
+                                                        z2 = true;
+                                                    } else {
+                                                        z2 = false;
+                                                    }
+                                                    canvas2.drawPath(this.path, this.checkPaint);
+                                                    if (z2) {
+                                                        canvas2.restore();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        if (z) {
+                                            canvas2.restore();
+                                            return;
+                                        }
+                                        return;
+                                    }
+                                    i9 = 6;
+                                    this.backgroundPaint.setStyle(Paint.Style.FILL);
+                                    MessageDrawable messageDrawable = this.messageDrawable;
+                                    if (messageDrawable != null && messageDrawable.hasGradient()) {
+                                        Shader gradientShader = this.messageDrawable.getGradientShader();
+                                        Matrix matrix = this.messageDrawable.getMatrix();
+                                        matrix.reset();
+                                        this.messageDrawable.applyMatrixScale();
+                                        matrix.postTranslate(0.0f, (-this.messageDrawable.getTopY()) + this.bounds.top);
+                                        gradientShader.setLocalMatrix(matrix);
+                                        this.backgroundPaint.setShader(gradientShader);
+                                    } else {
+                                        this.backgroundPaint.setShader(null);
+                                    }
+                                    canvas2.drawCircle(i, i2, (f3 - AndroidUtilities.dp(f7)) * this.backgroundAlpha, this.backgroundPaint);
+                                    this.backgroundPaint.setStyle(Paint.Style.STROKE);
+                                }
+                                f6 = 0.0f;
+                                if (f2 > f6) {
+                                }
+                                if (z) {
+                                }
+                            } else if (i16 == 6 || i16 == 7) {
+                                float f35 = i;
+                                float f36 = i2;
+                                canvas2.drawCircle(f35, f36, f3 - AndroidUtilities.dp(f7), paint);
+                                canvas2.drawCircle(f35, f36, f3 - AndroidUtilities.dp(1.5f), this.backgroundPaint);
+                            } else {
+                                canvas2.drawCircle(i, i2, f3, paint);
+                            }
+                        }
+                        i6 = 8;
+                        i7 = 10;
+                        f8 = 1.5f;
+                        paint.setColor(getThemedColor(this.checkColorKey));
+                        i8 = this.backgroundType;
+                        if (i8 != i5) {
+                        }
+                        i9 = 6;
+                        f6 = 0.0f;
+                        if (f2 > f6) {
+                        }
+                        if (z) {
+                        }
+                    }
+                }
+                c = 0;
+                if (this.drawUnchecked) {
+                    if (i16 != 8) {
+                    }
+                    if (this.customRadius <= f6) {
                     }
                     paint.setColor(getThemedColor(this.checkColorKey));
                     i8 = this.backgroundType;
-                    if (i8 != i6 && i8 != i7 && i8 != 8 && i8 != 9 && i8 != 10 && i8 != 14) {
-                        if (i8 != 12 || i8 == 13) {
-                            this.backgroundPaint.setStyle(Paint.Style.FILL);
-                            messageDrawable = this.messageDrawable;
-                            if (messageDrawable == null && messageDrawable.hasGradient()) {
-                                Shader gradientShader = this.messageDrawable.getGradientShader();
-                                Matrix matrix = this.messageDrawable.getMatrix();
-                                matrix.reset();
-                                this.messageDrawable.applyMatrixScale();
-                                matrix.postTranslate(0.0f, (-this.messageDrawable.getTopY()) + this.bounds.top);
-                                gradientShader.setLocalMatrix(matrix);
-                                this.backgroundPaint.setShader(gradientShader);
-                            } else {
-                                this.backgroundPaint.setShader(null);
-                            }
-                            canvas.drawCircle(i, i2, (f5 - AndroidUtilities.dp(f6)) * this.backgroundAlpha, this.backgroundPaint);
-                            this.backgroundPaint.setStyle(Paint.Style.STROKE);
-                        } else if (i8 == 0 || i8 == 11) {
-                            canvas.drawCircle(i, i2, f5, this.backgroundPaint);
-                        } else {
-                            float f17 = i;
-                            float f18 = i2;
-                            this.rect.set(f17 - f2, f18 - f2, f17 + f2, f18 + f2);
-                            int i21 = this.backgroundType;
-                            if (i21 == 6) {
-                                i12 = (int) (f4 * (-360.0f));
-                                i13 = 0;
-                            } else if (i21 == 1) {
-                                i13 = -90;
-                                i12 = (int) (f4 * (-270.0f));
-                            } else {
-                                int i22 = (int) (f4 * 270.0f);
-                                if (LocaleController.isRTL) {
-                                    i22 = -i22;
-                                }
-                                i12 = i22;
-                                i13 = 90;
-                            }
-                            if (i21 == 6) {
-                                int themedColor = getThemedColor(this.strokeBackgroundKey);
-                                int alpha = Color.alpha(themedColor);
-                                this.backgroundPaint.setColor(themedColor);
-                                this.backgroundPaint.setAlpha((int) (alpha * f4));
-                                i14 = i13;
-                                i15 = i12;
-                                canvas.drawArc(this.rect, i13, i12, false, this.backgroundPaint);
-                                int themedColor2 = getThemedColor(Theme.key_chat_attachPhotoBackground);
-                                int alpha2 = Color.alpha(themedColor2);
-                                this.backgroundPaint.setColor(themedColor2);
-                                this.backgroundPaint.setAlpha((int) (alpha2 * f4));
-                            } else {
-                                i14 = i13;
-                                i15 = i12;
-                            }
-                            canvas.drawArc(this.rect, i14, i15, false, this.backgroundPaint);
-                        }
+                    if (i8 != i5) {
                     }
-                    if (f3 > 0.0f) {
-                        float f19 = f4 < 0.5f ? 0.0f : (f4 - 0.5f) / 0.5f;
-                        int i23 = this.backgroundType;
-                        if (i23 == 9) {
-                            paint.setColor(getThemedColor(this.background2ColorKey));
-                        } else if (i23 == 11 || i23 == 6 || i23 == 7 || i23 == 10 || ((!this.drawUnchecked && this.backgroundColorKey >= 0) || i23 == 14)) {
-                            paint.setColor(getThemedColor(this.backgroundColorKey));
-                        } else {
-                            int i24 = this.backgroundColor;
-                            if (i24 != 0) {
-                                paint.setColor(i24);
-                            } else {
-                                paint.setColor(getThemedColor(this.enabled ? Theme.key_checkbox : Theme.key_checkboxDisabled));
-                            }
-                        }
-                        if (this.forbidden) {
-                            paint.setColor(this.backgroundPaint.getColor());
-                            f7 = 1.0f;
-                        } else {
-                            f7 = 1.0f;
-                            if (this.alpha < 1.0f) {
-                                paint.setColor(ColorUtils.blendARGB(this.backgroundPaint.getColor(), paint.getColor(), this.alpha));
-                            }
-                        }
-                        if (!this.useDefaultCheck && (i11 = this.checkColorKey) >= 0) {
-                            this.checkPaint.setColor(getThemedColor(i11));
-                        } else {
-                            this.checkPaint.setColor(getThemedColor(Theme.key_checkboxCheck));
-                        }
-                        if (this.alpha < f7 && Theme.isCurrentThemeDark()) {
-                            this.checkPaint.setColor(ColorUtils.blendARGB(paint.getColor(), this.checkPaint.getColor(), this.alpha));
-                        }
-                        if (this.backgroundType != -1) {
-                            float dp3 = AndroidUtilities.dp(this.size) / 2.0f;
-                            int save = canvas.save();
-                            canvas.translate(i - dp3, i2 - dp3);
-                            boolean z3 = f3 < f7;
-                            if (z3) {
-                                i10 = save;
-                                canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.didReceiveSmsCode, 31);
-                            } else {
-                                i10 = save;
-                            }
-                            Paint paint4 = (Paint) this.circlePaintProvider.provide(null);
-                            int i25 = this.backgroundType;
-                            if (i25 == 12 || i25 == 13) {
-                                int alpha3 = paint4.getAlpha();
-                                paint4.setAlpha((int) (f3 * 255.0f));
-                                canvas.drawCircle(dp3, dp3, f5 * f3, paint4);
-                                if (paint4 != paint) {
-                                    paint4.setAlpha(alpha3);
-                                }
-                            } else if (this.customRadius > 0.0f) {
-                                float dp4 = f5 - AndroidUtilities.dp(0.5f);
-                                float lerp2 = AndroidUtilities.lerp(dp4, this.customRadius, this.customRadiusFactor);
-                                float f20 = dp3 - dp4;
-                                float f21 = dp3 + dp4;
-                                canvas.drawRoundRect(f20, f20, f21, f21, lerp2, lerp2, paint4);
-                                float f22 = dp4 * (f7 - f3);
-                                float lerp3 = AndroidUtilities.lerp(f22, this.customRadius, this.customRadiusFactor);
-                                if (z3 && f22 > 0.0f) {
-                                    float f23 = dp3 - f22;
-                                    float f24 = dp3 + f22;
-                                    canvas.drawRoundRect(f23, f23, f24, f24, lerp3, lerp3, Theme.PAINT_CLEAR);
-                                }
-                            } else {
-                                float dp5 = f5 - AndroidUtilities.dp(0.5f);
-                                canvas.drawCircle(dp3, dp3, dp5, paint4);
-                                float f25 = dp5 * (f7 - f3);
-                                if (z3 && f25 > 0.0f) {
-                                    canvas.drawCircle(dp3, dp3, f25, Theme.PAINT_CLEAR);
-                                }
-                            }
-                            canvas.restoreToCount(i10);
-                        }
-                        if (this.forbidden) {
-                            if (forbidPaint == null) {
-                                Paint paint5 = new Paint(1);
-                                forbidPaint = paint5;
-                                paint5.setStyle(Paint.Style.STROKE);
-                                forbidPaint.setStrokeCap(Paint.Cap.ROUND);
-                                forbidPaint.setStrokeJoin(Paint.Join.ROUND);
-                                forbidPaint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.dp(0.66f), AndroidUtilities.dp(4.0f)}, 0.0f));
-                            }
-                            forbidPaint.setStrokeWidth(AndroidUtilities.dp(1.66f));
-                            forbidPaint.setColor(getThemedColor(Theme.key_switchTrack));
-                            canvas.drawCircle(i, i2, AndroidUtilities.dp(9.0f), forbidPaint);
-                        } else if (f19 != 0.0f) {
-                            if (this.checkedText != null) {
-                                if (this.textPaint == null) {
-                                    i9 = 1;
-                                    TextPaint textPaint = new TextPaint(1);
-                                    this.textPaint = textPaint;
-                                    textPaint.setTypeface(AndroidUtilities.bold());
-                                } else {
-                                    i9 = 1;
-                                }
-                                int length = this.checkedText.length();
-                                if (length == 0 || length == i9 || length == 2) {
-                                    f10 = 14.0f;
-                                    f11 = 18.0f;
-                                } else if (length != 3) {
-                                    f10 = 8.0f;
-                                    f11 = 15.75f;
-                                } else {
-                                    f11 = 16.5f;
-                                    f10 = 10.0f;
-                                }
-                                this.textPaint.setTextSize(AndroidUtilities.dp(f10));
-                                this.textPaint.setColor(getThemedColor(this.checkColorKey));
-                                canvas.save();
-                                float f26 = i;
-                                canvas.scale(f19, f7, f26, i2);
-                                String str = this.checkedText;
-                                canvas.drawText(str, f26 - (this.textPaint.measureText(str) / 2.0f), AndroidUtilities.dp(f11), this.textPaint);
-                                canvas.restore();
-                            } else {
-                                this.path.reset();
-                                int i26 = this.backgroundType;
-                                if (i26 == -1) {
-                                    f9 = 1.4f;
-                                } else if (i26 == 5) {
-                                    f9 = 0.8f;
-                                } else {
-                                    f8 = 9.0f;
-                                    f9 = 1.0f;
-                                    float dp6 = AndroidUtilities.dp(f8 * f9) * f19;
-                                    float dp7 = AndroidUtilities.dp(f9 * 4.0f) * f19;
-                                    int dp8 = i - AndroidUtilities.dp(1.5f);
-                                    int dp9 = AndroidUtilities.dp(4.0f) + i2;
-                                    float sqrt = (float) Math.sqrt((dp7 * dp7) / 2.0f);
-                                    float f27 = dp8;
-                                    float f28 = dp9;
-                                    this.path.moveTo(f27 - sqrt, f28 - sqrt);
-                                    this.path.lineTo(f27, f28);
-                                    float sqrt2 = (float) Math.sqrt((dp6 * dp6) / 2.0f);
-                                    this.path.lineTo(f27 + sqrt2, f28 - sqrt2);
-                                    if (z && this.checkScale == f7) {
-                                        z2 = false;
-                                    } else {
-                                        canvas.save();
-                                        float f29 = this.checkScale;
-                                        canvas.scale(f29, f29, i, i2);
-                                        z2 = true;
-                                    }
-                                    canvas.drawPath(this.path, this.checkPaint);
-                                    if (z2) {
-                                        canvas.restore();
-                                    }
-                                }
-                                f8 = 9.0f;
-                                float dp62 = AndroidUtilities.dp(f8 * f9) * f19;
-                                float dp72 = AndroidUtilities.dp(f9 * 4.0f) * f19;
-                                int dp82 = i - AndroidUtilities.dp(1.5f);
-                                int dp92 = AndroidUtilities.dp(4.0f) + i2;
-                                float sqrt3 = (float) Math.sqrt((dp72 * dp72) / 2.0f);
-                                float f272 = dp82;
-                                float f282 = dp92;
-                                this.path.moveTo(f272 - sqrt3, f282 - sqrt3);
-                                this.path.lineTo(f272, f282);
-                                float sqrt22 = (float) Math.sqrt((dp62 * dp62) / 2.0f);
-                                this.path.lineTo(f272 + sqrt22, f282 - sqrt22);
-                                if (z) {
-                                }
-                                canvas.save();
-                                float f292 = this.checkScale;
-                                canvas.scale(f292, f292, i, i2);
-                                z2 = true;
-                                canvas.drawPath(this.path, this.checkPaint);
-                                if (z2) {
-                                }
-                            }
-                        }
+                    i9 = 6;
+                    f6 = 0.0f;
+                    if (f2 > f6) {
                     }
                     if (z) {
-                        return;
                     }
-                    canvas.restore();
-                    return;
                 }
-                if (i16 == 6 || i16 == 7) {
-                    float f30 = i;
-                    float f31 = i2;
-                    canvas.drawCircle(f30, f31, f5 - AndroidUtilities.dp(f6), paint);
-                    canvas.drawCircle(f30, f31, f5 - AndroidUtilities.dp(1.5f), this.backgroundPaint);
-                } else {
-                    canvas.drawCircle(i, i2, f5, paint);
+                i6 = 8;
+                i7 = 10;
+                f8 = 1.5f;
+                paint.setColor(getThemedColor(this.checkColorKey));
+                i8 = this.backgroundType;
+                if (i8 != i5) {
+                }
+                i9 = 6;
+                f6 = 0.0f;
+                if (f2 > f6) {
+                }
+                if (z) {
                 }
             }
-            i6 = -1;
-            i7 = 7;
+            i5 = -1;
+            c = 0;
+            if (this.drawUnchecked) {
+            }
+            i6 = 8;
+            i7 = 10;
+            f8 = 1.5f;
             paint.setColor(getThemedColor(this.checkColorKey));
             i8 = this.backgroundType;
-            if (i8 != i6) {
-                if (i8 != 12) {
-                }
-                this.backgroundPaint.setStyle(Paint.Style.FILL);
-                messageDrawable = this.messageDrawable;
-                if (messageDrawable == null) {
-                }
-                this.backgroundPaint.setShader(null);
-                canvas.drawCircle(i, i2, (f5 - AndroidUtilities.dp(f6)) * this.backgroundAlpha, this.backgroundPaint);
-                this.backgroundPaint.setStyle(Paint.Style.STROKE);
+            if (i8 != i5) {
             }
-            if (f3 > 0.0f) {
+            i9 = 6;
+            f6 = 0.0f;
+            if (f2 > f6) {
             }
             if (z) {
             }
         }
         f = dp;
-        f2 = f;
         if (!this.forbidden) {
         }
-        if (f12 < 0.5f) {
+        if (f11 < 0.5f) {
         }
         int centerX2 = this.bounds.centerX();
         int centerY2 = this.bounds.centerY();
@@ -813,30 +851,23 @@ public class CheckBoxBase {
         }
         if (z) {
         }
-        i5 = this.backgroundColorKey;
-        if (i5 < 0) {
+        i4 = this.backgroundColorKey;
+        if (i4 < 0) {
         }
+        i5 = -1;
+        c = 0;
         if (this.drawUnchecked) {
-            if (i16 != 8) {
-            }
-            if (this.customRadius <= 0.0f) {
-            }
-            paint.setColor(getThemedColor(this.checkColorKey));
-            i8 = this.backgroundType;
-            if (i8 != i6) {
-            }
-            if (f3 > 0.0f) {
-            }
-            if (z) {
-            }
         }
-        i6 = -1;
-        i7 = 7;
+        i6 = 8;
+        i7 = 10;
+        f8 = 1.5f;
         paint.setColor(getThemedColor(this.checkColorKey));
         i8 = this.backgroundType;
-        if (i8 != i6) {
+        if (i8 != i5) {
         }
-        if (f3 > 0.0f) {
+        i9 = 6;
+        f6 = 0.0f;
+        if (f2 > f6) {
         }
         if (z) {
         }

@@ -21,15 +21,10 @@ public abstract class LibraryVersionComponent {
         return Component.intoSetBuilder(LibraryVersion.class).add(Dependency.required(Context.class)).factory(new ComponentFactory() { // from class: com.google.firebase.platforminfo.LibraryVersionComponent$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                LibraryVersion lambda$fromContext$0;
-                lambda$fromContext$0 = LibraryVersionComponent.lambda$fromContext$0(str, versionExtractor, componentContainer);
-                return lambda$fromContext$0;
+                LibraryVersion create;
+                create = LibraryVersion.create(str, versionExtractor.extract((Context) componentContainer.get(Context.class)));
+                return create;
             }
         }).build();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ LibraryVersion lambda$fromContext$0(String str, VersionExtractor versionExtractor, ComponentContainer componentContainer) {
-        return LibraryVersion.create(str, versionExtractor.extract((Context) componentContainer.get(Context.class)));
     }
 }

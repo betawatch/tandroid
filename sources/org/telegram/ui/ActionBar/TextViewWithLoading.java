@@ -45,16 +45,21 @@ public abstract class TextViewWithLoading extends TextView {
 
     @Override // android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
+        Canvas canvas2;
         float f = this.animatedLoading.set(this.loading);
         if (f < 1.0f) {
             if (f <= 0.0f) {
                 canvas.save();
+                canvas2 = canvas;
             } else {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f) * 255.0f), 31);
+                canvas2 = canvas;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f) * 255.0f), 31);
             }
-            canvas.translate(0.0f, AndroidUtilities.dp(6.0f) * f);
-            super.onDraw(canvas);
-            canvas.restore();
+            canvas2.translate(0.0f, AndroidUtilities.dp(6.0f) * f);
+            super.onDraw(canvas2);
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
         }
         if (f > 0.0f) {
             int width = getWidth() / 2;
@@ -63,7 +68,7 @@ public abstract class TextViewWithLoading extends TextView {
             this.spinner.setAlpha((int) (f * 255.0f));
             CircularProgressDrawable circularProgressDrawable = this.spinner;
             circularProgressDrawable.setBounds(dp - (circularProgressDrawable.getIntrinsicWidth() / 2), height - (this.spinner.getIntrinsicWidth() / 2), dp + (this.spinner.getIntrinsicWidth() / 2), height + (this.spinner.getIntrinsicHeight() / 2));
-            this.spinner.draw(canvas);
+            this.spinner.draw(canvas2);
             invalidate();
         }
     }

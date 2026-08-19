@@ -115,7 +115,7 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
             balanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MessageSuggestionOfferSheet.this.lambda$new$0(context, resourcesProvider, view);
+                    MessageSuggestionOfferSheet.$r8$lambda$Iv_NvSsw0utf8b5gfnNggrLo0pI(MessageSuggestionOfferSheet.this, context, resourcesProvider, view);
                 }
             });
         } else {
@@ -152,7 +152,7 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessageSuggestionOfferSheet.this.lambda$new$1(view);
+                MessageSuggestionOfferSheet.this.dismiss();
             }
         });
         linearLayout2.addView(imageView, LayoutHelper.createLinear(48, 48, 0.0f, 21, 0, 0, 6, 0));
@@ -167,7 +167,7 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
             horizontalRoundTabsLayout.setTabs(arrayList, new MessagesStorage.IntCallback() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.MessagesStorage.IntCallback
                 public final void run(int i6) {
-                    MessageSuggestionOfferSheet.this.lambda$new$2(i6);
+                    MessageSuggestionOfferSheet.$r8$lambda$CfDFHtBQZhtIh_tUnEXEtDV4KL4(MessageSuggestionOfferSheet.this, i6);
                 }
             });
             linearLayout.addView(horizontalRoundTabsLayout, LayoutHelper.createLinear(-1, -2, 18.0f, 0.0f, 18.0f, 12.0f));
@@ -196,7 +196,8 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
         editTextBoldCursor.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z3) {
-                MessageSuggestionOfferSheet.this.lambda$new$3(view, z3);
+                MessageSuggestionOfferSheet messageSuggestionOfferSheet = MessageSuggestionOfferSheet.this;
+                messageSuggestionOfferSheet.starsCountEditOutline.animateSelection(z3, !TextUtils.isEmpty(messageSuggestionOfferSheet.starsCountEditField.getText()));
             }
         });
         outlineTextContainerView.addView(editTextBoldCursor, LayoutHelper.createFrame(-1, -2, 48));
@@ -247,7 +248,12 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
         outlineTextContainerView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessageSuggestionOfferSheet.this.lambda$new$5(context, resourcesProvider, view);
+                AlertsCreator.createSuggestedMessageDatePickerDialog(context, r0.selectedTime, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda7
+                    @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                    public final void didSelectDate(boolean z3, int i7, int i8) {
+                        MessageSuggestionOfferSheet.$r8$lambda$cAMTukSpGgubjMgjuZiXo7Rujlg(MessageSuggestionOfferSheet.this, z3, i7, i8);
+                    }
+                }, resourcesProvider, 0).show();
             }
         });
         linearLayout3.addView(outlineTextContainerView2, LayoutHelper.createLinear(-1, 58, 18.0f, 24.0f, 18.0f, 0.0f));
@@ -272,7 +278,7 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessageSuggestionOfferSheet.this.lambda$new$6(chatActivity, i, context, resourcesProvider, j, callback, view);
+                MessageSuggestionOfferSheet.$r8$lambda$knv52gY02EmZTgxWFRw6qUuxx34(MessageSuggestionOfferSheet.this, chatActivity, i, context, resourcesProvider, j, callback, view);
             }
         });
         if (i2 == 1) {
@@ -312,79 +318,57 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
-        if (this.inputAmount.currency == AmountUtils$Currency.STARS) {
+    public static /* synthetic */ void $r8$lambda$Iv_NvSsw0utf8b5gfnNggrLo0pI(MessageSuggestionOfferSheet messageSuggestionOfferSheet, Context context, Theme.ResourcesProvider resourcesProvider, View view) {
+        if (messageSuggestionOfferSheet.inputAmount.currency == AmountUtils$Currency.STARS) {
             new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(int i) {
+    public static /* synthetic */ void $r8$lambda$CfDFHtBQZhtIh_tUnEXEtDV4KL4(MessageSuggestionOfferSheet messageSuggestionOfferSheet, int i) {
         AmountUtils$Currency amountUtils$Currency;
+        messageSuggestionOfferSheet.getClass();
         if (i == 0) {
             amountUtils$Currency = AmountUtils$Currency.STARS;
         } else {
             amountUtils$Currency = AmountUtils$Currency.TON;
         }
-        setAmount(AmountUtils$Amount.fromNano(0L, amountUtils$Currency), true, false, true);
-        this.starsCountEditField.setText("");
+        messageSuggestionOfferSheet.setAmount(AmountUtils$Amount.fromNano(0L, amountUtils$Currency), true, false, true);
+        messageSuggestionOfferSheet.starsCountEditField.setText("");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view, boolean z) {
-        this.starsCountEditOutline.animateSelection(z, !TextUtils.isEmpty(this.starsCountEditField.getText()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
-        AlertsCreator.createSuggestedMessageDatePickerDialog(context, this.selectedTime, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda7
-            @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-            public final void didSelectDate(boolean z, int i, int i2) {
-                MessageSuggestionOfferSheet.this.lambda$new$4(z, i, i2);
-            }
-        }, resourcesProvider, 0).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(boolean z, int i, int i2) {
+    public static /* synthetic */ void $r8$lambda$cAMTukSpGgubjMgjuZiXo7Rujlg(MessageSuggestionOfferSheet messageSuggestionOfferSheet, boolean z, int i, int i2) {
         if (z) {
-            setSelectedTime(i, true);
+            messageSuggestionOfferSheet.setSelectedTime(i, true);
+        } else {
+            messageSuggestionOfferSheet.getClass();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(ChatActivity chatActivity, int i, Context context, Theme.ResourcesProvider resourcesProvider, long j, Utilities.Callback callback, View view) {
-        if (chatActivity == null || !this.buttonView.isEnabled()) {
+    public static /* synthetic */ void $r8$lambda$knv52gY02EmZTgxWFRw6qUuxx34(MessageSuggestionOfferSheet messageSuggestionOfferSheet, ChatActivity chatActivity, int i, Context context, Theme.ResourcesProvider resourcesProvider, long j, Utilities.Callback callback, View view) {
+        if (chatActivity == null) {
+            messageSuggestionOfferSheet.getClass();
             return;
         }
-        if (MessagesController.getInstance(i).isFrozen()) {
-            AccountFrozenAlert.show(i);
-            return;
-        }
-        StarsController starsController = StarsController.getInstance(i, this.inputAmount.currency);
-        AmountUtils$Amount of = starsController.balanceAvailable() ? AmountUtils$Amount.of(starsController.getBalance()) : null;
-        if (!this.isMonoForumAdmin && (of == null || of.asNano() < this.inputAmount.asNano())) {
-            AmountUtils$Amount amountUtils$Amount = this.inputAmount;
+        if (messageSuggestionOfferSheet.buttonView.isEnabled()) {
+            if (MessagesController.getInstance(i).isFrozen()) {
+                AccountFrozenAlert.show(i);
+                return;
+            }
+            StarsController starsController = StarsController.getInstance(i, messageSuggestionOfferSheet.inputAmount.currency);
+            AmountUtils$Amount of = starsController.balanceAvailable() ? AmountUtils$Amount.of(starsController.getBalance()) : null;
+            if (messageSuggestionOfferSheet.isMonoForumAdmin || (of != null && of.asNano() >= messageSuggestionOfferSheet.inputAmount.asNano())) {
+                callback.run(MessageSuggestionParams.of(messageSuggestionOfferSheet.inputAmount, messageSuggestionOfferSheet.selectedTime));
+                messageSuggestionOfferSheet.dismiss();
+                return;
+            }
+            AmountUtils$Amount amountUtils$Amount = messageSuggestionOfferSheet.inputAmount;
             AmountUtils$Currency amountUtils$Currency = amountUtils$Amount.currency;
             if (amountUtils$Currency == AmountUtils$Currency.STARS) {
                 new StarsIntroActivity.StarsNeededSheet(context, resourcesProvider, amountUtils$Amount.asDecimal(), 13, ForumUtilities.getMonoForumTitle(i, j, true), null, j).show();
-                return;
-            } else {
-                if (amountUtils$Currency == AmountUtils$Currency.TON) {
-                    new TONIntroActivity.StarsNeededSheet(context, resourcesProvider, amountUtils$Amount, true, null).show();
-                    return;
-                }
-                return;
+            } else if (amountUtils$Currency == AmountUtils$Currency.TON) {
+                new TONIntroActivity.StarsNeededSheet(context, resourcesProvider, amountUtils$Amount, true, null).show();
             }
         }
-        callback.run(MessageSuggestionParams.of(this.inputAmount, this.selectedTime));
-        lambda$new$0();
     }
 
     private void setSelectedTime(long j, boolean z) {
@@ -578,14 +562,9 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSuggestionOfferSheet.this.lambda$show$7();
+                AndroidUtilities.showKeyboard(MessageSuggestionOfferSheet.this.starsCountEditField);
             }
         }, 50L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$7() {
-        AndroidUtilities.showKeyboard(this.starsCountEditField);
     }
 
     public static String formatDateTime(long j) {

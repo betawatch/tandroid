@@ -123,7 +123,7 @@ public abstract class ShortcutManagerCompat {
             } catch (Exception unused) {
             }
         }
-        return Collections.emptyList();
+        return Collections.EMPTY_LIST;
     }
 
     public static boolean addDynamicShortcuts(Context context, List list) {
@@ -257,7 +257,13 @@ public abstract class ShortcutManagerCompat {
     }
 
     static void convertUriIconsToBitmapIcons(Context context, List list) {
-        for (ShortcutInfoCompat shortcutInfoCompat : new ArrayList(list)) {
+        ArrayList arrayList = new ArrayList(list);
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ShortcutInfoCompat shortcutInfoCompat = (ShortcutInfoCompat) obj;
             if (!convertUriIconToBitmapIcon(context, shortcutInfoCompat)) {
                 list.remove(shortcutInfoCompat);
             }

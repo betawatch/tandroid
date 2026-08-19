@@ -38,12 +38,17 @@ public abstract class TypedProperty implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            String str = this.name;
+            String str2 = ((TypedProperty) obj).name;
+            if (str != null) {
+                return str.equals(str2);
+            }
+            if (str2 == null) {
+                return true;
+            }
         }
-        String str = this.name;
-        String str2 = ((TypedProperty) obj).name;
-        return str != null ? str.equals(str2) : str2 == null;
+        return false;
     }
 
     public int hashCode() {

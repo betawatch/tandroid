@@ -21,8 +21,8 @@ final class zzvc {
     private static final boolean zzg;
     private static final boolean zzh;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x012b  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x006d  */
     static {
         boolean z;
@@ -37,7 +37,8 @@ final class zzvc {
         Class<?> cls = Long.TYPE;
         boolean zzv = zzv(cls);
         zze = zzv;
-        boolean zzv2 = zzv(Integer.TYPE);
+        Class<?> cls2 = Integer.TYPE;
+        boolean zzv2 = zzv(cls2);
         zzvb zzvbVar3 = null;
         if (zzg2 != null) {
             if (zzv) {
@@ -49,9 +50,9 @@ final class zzvc {
         zzf = zzvbVar3;
         if (zzvbVar3 != null) {
             try {
-                Class<?> cls2 = zzvbVar3.zza.getClass();
-                cls2.getMethod("objectFieldOffset", Field.class);
-                cls2.getMethod("getLong", Object.class, cls);
+                Class<?> cls3 = zzvbVar3.zza.getClass();
+                cls3.getMethod("objectFieldOffset", Field.class);
+                cls3.getMethod("getLong", Object.class, cls);
             } catch (Throwable th) {
                 zzh(th);
             }
@@ -61,17 +62,16 @@ final class zzvc {
                 zzvbVar = zzf;
                 if (zzvbVar != null) {
                     try {
-                        Class<?> cls3 = zzvbVar.zza.getClass();
-                        cls3.getMethod("objectFieldOffset", Field.class);
-                        cls3.getMethod("arrayBaseOffset", Class.class);
-                        cls3.getMethod("arrayIndexScale", Class.class);
-                        Class<?> cls4 = Long.TYPE;
-                        cls3.getMethod("getInt", Object.class, cls4);
-                        cls3.getMethod("putInt", Object.class, cls4, Integer.TYPE);
-                        cls3.getMethod("getLong", Object.class, cls4);
-                        cls3.getMethod("putLong", Object.class, cls4, cls4);
-                        cls3.getMethod("getObject", Object.class, cls4);
-                        cls3.getMethod("putObject", Object.class, cls4, Object.class);
+                        Class<?> cls4 = zzvbVar.zza.getClass();
+                        cls4.getMethod("objectFieldOffset", Field.class);
+                        cls4.getMethod("arrayBaseOffset", Class.class);
+                        cls4.getMethod("arrayIndexScale", Class.class);
+                        cls4.getMethod("getInt", Object.class, cls);
+                        cls4.getMethod("putInt", Object.class, cls, cls2);
+                        cls4.getMethod("getLong", Object.class, cls);
+                        cls4.getMethod("putLong", Object.class, cls, cls);
+                        cls4.getMethod("getObject", Object.class, cls);
+                        cls4.getMethod("putObject", Object.class, cls, Object.class);
                         z2 = true;
                     } catch (Throwable th2) {
                         zzh(th2);

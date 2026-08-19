@@ -78,20 +78,23 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
     }
 
     public final boolean dispatchHoverEvent(MotionEvent motionEvent) {
-        if (!this.mManager.isEnabled() || !this.mManager.isTouchExplorationEnabled()) {
-            return false;
+        if (this.mManager.isEnabled() && this.mManager.isTouchExplorationEnabled()) {
+            int action = motionEvent.getAction();
+            if (action == 7 || action == 9) {
+                int virtualViewAt = getVirtualViewAt(motionEvent.getX(), motionEvent.getY());
+                updateHoveredVirtualView(virtualViewAt);
+                if (virtualViewAt != Integer.MIN_VALUE) {
+                    return true;
+                }
+            } else {
+                if (action != 10 || this.mHoveredVirtualViewId == Integer.MIN_VALUE) {
+                    return false;
+                }
+                updateHoveredVirtualView(TLObject.FLAG_31);
+                return true;
+            }
         }
-        int action = motionEvent.getAction();
-        if (action == 7 || action == 9) {
-            int virtualViewAt = getVirtualViewAt(motionEvent.getX(), motionEvent.getY());
-            updateHoveredVirtualView(virtualViewAt);
-            return virtualViewAt != Integer.MIN_VALUE;
-        }
-        if (action != 10 || this.mHoveredVirtualViewId == Integer.MIN_VALUE) {
-            return false;
-        }
-        updateHoveredVirtualView(TLObject.FLAG_31);
-        return true;
+        return false;
     }
 
     public final boolean sendEventForVirtualView(int i, int i2) {

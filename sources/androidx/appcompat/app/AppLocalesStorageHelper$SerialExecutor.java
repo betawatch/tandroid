@@ -22,7 +22,7 @@ class AppLocalesStorageHelper$SerialExecutor implements Executor {
                 this.mTasks.add(new Runnable() { // from class: androidx.appcompat.app.AppLocalesStorageHelper$SerialExecutor$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AppLocalesStorageHelper$SerialExecutor.this.lambda$execute$0(runnable);
+                        AppLocalesStorageHelper$SerialExecutor.$r8$lambda$ryxIdFHRlGAin6xhl7ifa8d_Mk4(AppLocalesStorageHelper$SerialExecutor.this, runnable);
                     }
                 });
                 if (this.mActive == null) {
@@ -34,12 +34,12 @@ class AppLocalesStorageHelper$SerialExecutor implements Executor {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$execute$0(Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$ryxIdFHRlGAin6xhl7ifa8d_Mk4(AppLocalesStorageHelper$SerialExecutor appLocalesStorageHelper$SerialExecutor, Runnable runnable) {
+        appLocalesStorageHelper$SerialExecutor.getClass();
         try {
             runnable.run();
         } finally {
-            scheduleNext();
+            appLocalesStorageHelper$SerialExecutor.scheduleNext();
         }
     }
 

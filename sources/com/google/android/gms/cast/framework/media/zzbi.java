@@ -15,19 +15,21 @@ final class zzbi implements com.google.android.gms.cast.internal.zzas {
         this.zza = zzbkVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004e A[LOOP:0: B:16:0x0048->B:18:0x004e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[LOOP:0: B:15:0x0047->B:17:0x004d, LOOP_END] */
     @Override // com.google.android.gms.cast.internal.zzas
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void zza(String str, long j, int i, Object obj, long j2, long j3) {
+        int i2;
         Logger logger;
         List list;
         Iterator it;
         try {
             zzbk zzbkVar = this.zza;
+            i2 = i;
             try {
-                Status status = new Status(i);
+                Status status = new Status(i2);
                 Object obj2 = obj;
                 if (true != (obj2 instanceof zzap)) {
                     obj2 = null;
@@ -44,11 +46,13 @@ final class zzbi implements com.google.android.gms.cast.internal.zzas {
             }
         } catch (IllegalStateException e2) {
             e = e2;
+            i2 = i;
         }
         list = this.zza.zzg.zzj;
         it = list.iterator();
         while (it.hasNext()) {
-            ((RemoteMediaClient.Callback) it.next()).zza(str, j, i, j2, j3);
+            ((RemoteMediaClient.Callback) it.next()).zza(str, j, i2, j2, j3);
+            i2 = i;
         }
     }
 

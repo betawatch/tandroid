@@ -157,8 +157,8 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
                 }
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:12:0x0044  */
-            /* JADX WARN: Removed duplicated region for block: B:9:0x002e  */
+            /* JADX WARN: Removed duplicated region for block: B:12:0x0041  */
+            /* JADX WARN: Removed duplicated region for block: B:9:0x002c  */
             @Override // android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -227,7 +227,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
         this.positiveButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallRecordAlert$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                GroupCallRecordAlert.this.lambda$new$0(view3);
+                GroupCallRecordAlert.$r8$lambda$9kVTlylpn4aLmDOlTZsFb_CExr4(GroupCallRecordAlert.this, view3);
             }
         });
         this.containerView.addView(this.positiveButton, LayoutHelper.createFrame(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
@@ -258,7 +258,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
             this.titles[i3].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallRecordAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
-                    GroupCallRecordAlert.this.lambda$new$1(i3, view3);
+                    GroupCallRecordAlert.this.viewPager.setCurrentItem(i3, true);
                 }
             });
             i3++;
@@ -268,15 +268,9 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onStartRecord(this.currentPage);
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, View view) {
-        this.viewPager.setCurrentItem(i, true);
+    public static /* synthetic */ void $r8$lambda$9kVTlylpn4aLmDOlTZsFb_CExr4(GroupCallRecordAlert groupCallRecordAlert, View view) {
+        groupCallRecordAlert.onStartRecord(groupCallRecordAlert.currentPage);
+        groupCallRecordAlert.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -355,7 +349,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallRecordAlert$Adapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GroupCallRecordAlert.Adapter.this.lambda$instantiateItem$0(i, view);
+                    GroupCallRecordAlert.Adapter.$r8$lambda$c97y0sQiQgEJHv2QJ3p1dYJ8jQg(GroupCallRecordAlert.Adapter.this, i, view);
                 }
             });
             imageView.setFocusable(true);
@@ -387,8 +381,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
             return imageView;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$instantiateItem$0(int i, View view) {
+        public static /* synthetic */ void $r8$lambda$c97y0sQiQgEJHv2QJ3p1dYJ8jQg(Adapter adapter, int i, View view) {
             GroupCallRecordAlert.this.onStartRecord(i);
             GroupCallRecordAlert.this.dismiss();
         }

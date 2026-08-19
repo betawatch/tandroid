@@ -134,11 +134,22 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         if (newFamily == null) {
             return null;
         }
-        for (FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry : fontFamilyFilesResourceEntry.getEntries()) {
-            if (!addFontFromAssetManager(context, newFamily, fontFileResourceEntry.getFileName(), fontFileResourceEntry.getTtcIndex(), fontFileResourceEntry.getWeight(), fontFileResourceEntry.isItalic() ? 1 : 0, FontVariationAxis.fromFontVariationSettings(fontFileResourceEntry.getVariationSettings()))) {
+        FontResourcesParserCompat.FontFileResourceEntry[] entries = fontFamilyFilesResourceEntry.getEntries();
+        int length = entries.length;
+        int i2 = 0;
+        while (i2 < length) {
+            FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry = entries[i2];
+            String fileName = fontFileResourceEntry.getFileName();
+            int ttcIndex = fontFileResourceEntry.getTtcIndex();
+            int weight = fontFileResourceEntry.getWeight();
+            boolean isItalic = fontFileResourceEntry.isItalic();
+            Context context2 = context;
+            if (!addFontFromAssetManager(context2, newFamily, fileName, ttcIndex, weight, isItalic ? 1 : 0, FontVariationAxis.fromFontVariationSettings(fontFileResourceEntry.getVariationSettings()))) {
                 abortCreation(newFamily);
                 return null;
             }
+            i2++;
+            context = context2;
         }
         if (freeze(newFamily)) {
             return createFromFamiliesWithDefault(newFamily);
@@ -149,6 +160,7 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
     @Override // androidx.core.graphics.TypefaceCompatApi21Impl, androidx.core.graphics.TypefaceCompatBaseImpl
     public Typeface createFromFontInfo(Context context, CancellationSignal cancellationSignal, FontsContractCompat.FontInfo[] fontInfoArr, int i) {
         Typeface createFromFamiliesWithDefault;
+        Object obj;
         if (fontInfoArr.length < 1) {
             return null;
         }
@@ -171,31 +183,42 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
             } catch (IOException unused) {
                 return null;
             }
-        }
-        Map readFontInfoIntoByteBuffer = TypefaceCompatUtil.readFontInfoIntoByteBuffer(context, fontInfoArr, cancellationSignal);
-        Object newFamily = newFamily();
-        if (newFamily == null) {
-            return null;
-        }
-        boolean z = false;
-        for (FontsContractCompat.FontInfo fontInfo : fontInfoArr) {
-            ByteBuffer byteBuffer = (ByteBuffer) readFontInfoIntoByteBuffer.get(fontInfo.getUri());
-            if (byteBuffer != null) {
-                if (!addFontFromBuffer(newFamily, byteBuffer, fontInfo.getTtcIndex(), fontInfo.getWeight(), fontInfo.isItalic() ? 1 : 0)) {
-                    abortCreation(newFamily);
-                    return null;
-                }
-                z = true;
+        } else {
+            Map readFontInfoIntoByteBuffer = TypefaceCompatUtil.readFontInfoIntoByteBuffer(context, fontInfoArr, cancellationSignal);
+            Object newFamily = newFamily();
+            if (newFamily == null) {
+                return null;
             }
-        }
-        if (!z) {
-            abortCreation(newFamily);
+            int length = fontInfoArr.length;
+            int i2 = 0;
+            boolean z = false;
+            while (i2 < length) {
+                FontsContractCompat.FontInfo fontInfo = fontInfoArr[i2];
+                ByteBuffer byteBuffer = (ByteBuffer) readFontInfoIntoByteBuffer.get(fontInfo.getUri());
+                if (byteBuffer == null) {
+                    obj = newFamily;
+                } else {
+                    boolean addFontFromBuffer = addFontFromBuffer(newFamily, byteBuffer, fontInfo.getTtcIndex(), fontInfo.getWeight(), fontInfo.isItalic() ? 1 : 0);
+                    obj = newFamily;
+                    if (!addFontFromBuffer) {
+                        abortCreation(obj);
+                        return null;
+                    }
+                    z = true;
+                }
+                i2++;
+                newFamily = obj;
+            }
+            Object obj2 = newFamily;
+            if (!z) {
+                abortCreation(obj2);
+                return null;
+            }
+            if (freeze(obj2) && (createFromFamiliesWithDefault = createFromFamiliesWithDefault(obj2)) != null) {
+                return Typeface.create(createFromFamiliesWithDefault, i);
+            }
             return null;
         }
-        if (freeze(newFamily) && (createFromFamiliesWithDefault = createFromFamiliesWithDefault(newFamily)) != null) {
-            return Typeface.create(createFromFamiliesWithDefault, i);
-        }
-        return null;
     }
 
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl

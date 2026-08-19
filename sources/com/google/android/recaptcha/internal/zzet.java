@@ -36,7 +36,14 @@ final class zzet extends SuspendLambda implements Function2 {
         return ((zzet) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x003a, code lost:
+    
+        if (r8 != r0) goto L19;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -51,9 +58,6 @@ final class zzet extends SuspendLambda implements Function2 {
                 this.zze = zzgrVar;
                 this.zza = 1;
                 obj = zzb.zzb(str, j, this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             } else {
                 if (i != 1) {
                     ResultKt.throwOnFailure(obj);

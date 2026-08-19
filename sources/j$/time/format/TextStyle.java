@@ -9,13 +9,9 @@ public enum TextStyle {
     NARROW(1),
     NARROW_STANDALONE(1);
 
-    private final int a;
+    public final int a;
 
     TextStyle(int i) {
         this.a = i;
-    }
-
-    final int k() {
-        return this.a;
     }
 }

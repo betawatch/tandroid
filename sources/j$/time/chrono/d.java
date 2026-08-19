@@ -7,193 +7,189 @@ import java.io.Serializable;
 import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
-abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
+public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable {
     private static final long serialVersionUID = 6282433883239719096L;
 
     @Override // java.lang.Comparable
-    /* renamed from: D */
+    /* renamed from: F */
     public final /* synthetic */ int compareTo(b bVar) {
-        return h.b(this, bVar);
+        return j$.com.android.tools.r8.a.e(this, bVar);
     }
 
-    abstract b J(long j);
+    public abstract b J(long j);
 
-    abstract b K(long j);
+    public abstract b K(long j);
 
-    abstract b L(long j);
+    public abstract b L(long j);
 
-    @Override // j$.time.chrono.b, j$.time.temporal.m
-    public /* synthetic */ boolean g(j$.time.temporal.p pVar) {
-        return h.h(this, pVar);
+    @Override // j$.time.chrono.b, j$.time.temporal.l
+    public /* synthetic */ boolean h(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.q(this, oVar);
+    }
+
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ int o(j$.time.temporal.o oVar) {
+        return j$.time.temporal.p.a(this, oVar);
+    }
+
+    @Override // j$.time.temporal.l
+    public /* synthetic */ j$.time.temporal.s q(j$.time.temporal.o oVar) {
+        return j$.time.temporal.p.d(this, oVar);
+    }
+
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ Object r(j$.time.format.a aVar) {
+        return j$.com.android.tools.r8.a.s(this, aVar);
     }
 
     @Override // j$.time.temporal.m
-    public final /* synthetic */ int l(j$.time.temporal.p pVar) {
-        return j$.time.temporal.l.a(this, pVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public /* synthetic */ j$.time.temporal.u o(j$.time.temporal.p pVar) {
-        return j$.time.temporal.l.d(this, pVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final /* synthetic */ Object v(j$.time.temporal.r rVar) {
-        return h.j(this, rVar);
-    }
-
-    @Override // j$.time.temporal.n
     public final /* synthetic */ Temporal x(Temporal temporal) {
-        return h.a(this, temporal);
+        return j$.com.android.tools.r8.a.a(this, temporal);
     }
 
-    static b G(l lVar, Temporal temporal) {
+    public static b E(k kVar, Temporal temporal) {
         b bVar = (b) temporal;
-        a aVar = (a) lVar;
-        if (aVar.equals(bVar.a())) {
+        if (kVar.equals(bVar.b())) {
             return bVar;
         }
-        throw new ClassCastException("Chronology mismatch, expected: " + aVar.getId() + ", actual: " + bVar.a().getId());
+        throw new ClassCastException("Chronology mismatch, expected: " + kVar.getId() + ", actual: " + bVar.b().getId());
     }
 
-    d() {
+    @Override // j$.time.chrono.b
+    public ChronoLocalDateTime w(j$.time.h hVar) {
+        return new f(this, hVar);
     }
 
     @Override // j$.time.temporal.Temporal
-    public b e(long j, j$.time.temporal.s sVar) {
-        boolean z = sVar instanceof ChronoUnit;
+    public b f(long j, j$.time.temporal.q qVar) {
+        boolean z = qVar instanceof ChronoUnit;
         if (!z) {
             if (!z) {
-                return G(a(), sVar.k(this, j));
+                return E(b(), qVar.l(this, j));
             }
-            throw new j$.time.temporal.t("Unsupported unit: " + sVar);
+            throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
-        switch (c.a[((ChronoUnit) sVar).ordinal()]) {
+        switch (c.a[((ChronoUnit) qVar).ordinal()]) {
             case 1:
                 return J(j);
             case 2:
-                return J(j$.com.android.tools.r8.a.l(j, 7));
+                return J(j$.com.android.tools.r8.a.T(j, 7));
             case 3:
                 return K(j);
             case 4:
                 return L(j);
             case 5:
-                return L(j$.com.android.tools.r8.a.l(j, 10));
+                return L(j$.com.android.tools.r8.a.T(j, 10));
             case 6:
-                return L(j$.com.android.tools.r8.a.l(j, 100));
+                return L(j$.com.android.tools.r8.a.T(j, 100));
             case 7:
-                return L(j$.com.android.tools.r8.a.l(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return L(j$.com.android.tools.r8.a.T(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return d(j$.com.android.tools.r8.a.f(r(aVar), j), (j$.time.temporal.p) aVar);
+                return e(j$.com.android.tools.r8.a.O(u(aVar), j), (j$.time.temporal.o) aVar);
             default:
-                throw new j$.time.temporal.t("Unsupported unit: " + sVar);
+                throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
     }
 
-    public m H() {
-        return a().E(j$.time.temporal.l.a(this, j$.time.temporal.a.ERA));
+    public l H() {
+        return b().C(j$.time.temporal.p.a(this, j$.time.temporal.a.ERA));
     }
 
     @Override // j$.time.chrono.b, j$.time.temporal.Temporal
-    public long f(Temporal temporal, j$.time.temporal.s sVar) {
+    public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         Objects.requireNonNull(temporal, "endExclusive");
-        b m = a().m(temporal);
-        if (!(sVar instanceof ChronoUnit)) {
-            Objects.requireNonNull(sVar, "unit");
-            return sVar.between(this, m);
+        b a = b().a(temporal);
+        if (!(qVar instanceof ChronoUnit)) {
+            Objects.requireNonNull(qVar, "unit");
+            return qVar.between(this, a);
         }
-        switch (c.a[((ChronoUnit) sVar).ordinal()]) {
+        switch (c.a[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return m.s() - s();
+                return a.v() - v();
             case 2:
-                return (m.s() - s()) / 7;
+                return (a.v() - v()) / 7;
             case 3:
-                return I(m);
+                return I(a);
             case 4:
-                return I(m) / 12;
+                return I(a) / 12;
             case 5:
-                return I(m) / 120;
+                return I(a) / 120;
             case 6:
-                return I(m) / 1200;
+                return I(a) / 1200;
             case 7:
-                return I(m) / 12000;
+                return I(a) / 12000;
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return m.r(aVar) - r(aVar);
+                return a.u(aVar) - u(aVar);
             default:
-                throw new j$.time.temporal.t("Unsupported unit: " + sVar);
+                throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
     }
 
-    private long I(b bVar) {
-        if (a().A(j$.time.temporal.a.MONTH_OF_YEAR).d() != 12) {
+    public final long I(b bVar) {
+        if (b().y(j$.time.temporal.a.MONTH_OF_YEAR).d != 12) {
             throw new IllegalStateException("ChronoLocalDateImpl only supports Chronologies with 12 months per year");
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.PROLEPTIC_MONTH;
-        long r = r(aVar) * 32;
+        long u = u(aVar) * 32;
         j$.time.temporal.a aVar2 = j$.time.temporal.a.DAY_OF_MONTH;
-        return (((bVar.r(aVar) * 32) + bVar.l(aVar2)) - (r + j$.time.temporal.l.a(this, aVar2))) / 32;
+        return (((bVar.u(aVar) * 32) + bVar.o(aVar2)) - (u + j$.time.temporal.p.a(this, aVar2))) / 32;
     }
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof b) && h.b(this, (b) obj) == 0;
+        return (obj instanceof b) && j$.com.android.tools.r8.a.e(this, (b) obj) == 0;
     }
 
     @Override // j$.time.chrono.b
     public int hashCode() {
-        long s = s();
-        return ((a) a()).hashCode() ^ ((int) (s ^ (s >>> 32)));
+        long v = v();
+        return b().hashCode() ^ ((int) (v ^ (v >>> 32)));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: M, reason: merged with bridge method [inline-methods] */
-    public b n(j$.time.temporal.n nVar) {
-        return G(a(), nVar.x(this));
+    public b p(j$.time.temporal.m mVar) {
+        return E(b(), mVar.x(this));
     }
 
     @Override // j$.time.chrono.b
-    public String toString() {
-        long r = r(j$.time.temporal.a.YEAR_OF_ERA);
-        long r2 = r(j$.time.temporal.a.MONTH_OF_YEAR);
-        long r3 = r(j$.time.temporal.a.DAY_OF_MONTH);
+    public final String toString() {
+        long u = u(j$.time.temporal.a.YEAR_OF_ERA);
+        long u2 = u(j$.time.temporal.a.MONTH_OF_YEAR);
+        long u3 = u(j$.time.temporal.a.DAY_OF_MONTH);
         StringBuilder sb = new StringBuilder(30);
-        sb.append(((a) a()).getId());
+        sb.append(b().toString());
         sb.append(" ");
         sb.append(H());
         sb.append(" ");
-        sb.append(r);
-        sb.append(r2 < 10 ? "-0" : "-");
-        sb.append(r2);
-        sb.append(r3 < 10 ? "-0" : "-");
-        sb.append(r3);
+        sb.append(u);
+        sb.append(u2 < 10 ? "-0" : "-");
+        sb.append(u2);
+        sb.append(u3 < 10 ? "-0" : "-");
+        sb.append(u3);
         return sb.toString();
     }
 
     @Override // j$.time.temporal.Temporal
-    public b d(long j, j$.time.temporal.p pVar) {
-        if (pVar instanceof j$.time.temporal.a) {
-            throw new j$.time.temporal.t(j$.time.d.a("Unsupported field: ", pVar));
+    public b e(long j, j$.time.temporal.o oVar) {
+        if (oVar instanceof j$.time.temporal.a) {
+            throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
-        return G(a(), pVar.o(this, j));
+        return E(b(), oVar.q(this, j));
     }
 
     @Override // j$.time.temporal.Temporal
-    /* renamed from: C, reason: merged with bridge method [inline-methods] */
-    public b k(long j, j$.time.temporal.s sVar) {
-        return G(a(), j$.time.temporal.l.b(this, j, sVar));
+    /* renamed from: D, reason: merged with bridge method [inline-methods] */
+    public b l(long j, j$.time.temporal.q qVar) {
+        return E(b(), j$.time.temporal.p.b(this, j, qVar));
     }
 
     @Override // j$.time.chrono.b
-    public ChronoLocalDateTime t(j$.time.i iVar) {
-        return f.H(this, iVar);
-    }
-
-    @Override // j$.time.chrono.b
-    public long s() {
-        return r(j$.time.temporal.a.EPOCH_DAY);
+    public long v() {
+        return u(j$.time.temporal.a.EPOCH_DAY);
     }
 }

@@ -67,25 +67,30 @@ public class SdkExtension implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            SdkExtension sdkExtension = (SdkExtension) obj;
+            String str = this.libVer;
+            if (str == null ? sdkExtension.libVer != null : !str.equals(sdkExtension.libVer)) {
+                return false;
+            }
+            String str2 = this.epoch;
+            if (str2 == null ? sdkExtension.epoch != null : !str2.equals(sdkExtension.epoch)) {
+                return false;
+            }
+            Long l = this.seq;
+            if (l == null ? sdkExtension.seq != null : !l.equals(sdkExtension.seq)) {
+                return false;
+            }
+            UUID uuid = this.installId;
+            UUID uuid2 = sdkExtension.installId;
+            if (uuid != null) {
+                return uuid.equals(uuid2);
+            }
+            if (uuid2 == null) {
+                return true;
+            }
         }
-        SdkExtension sdkExtension = (SdkExtension) obj;
-        String str = this.libVer;
-        if (str == null ? sdkExtension.libVer != null : !str.equals(sdkExtension.libVer)) {
-            return false;
-        }
-        String str2 = this.epoch;
-        if (str2 == null ? sdkExtension.epoch != null : !str2.equals(sdkExtension.epoch)) {
-            return false;
-        }
-        Long l = this.seq;
-        if (l == null ? sdkExtension.seq != null : !l.equals(sdkExtension.seq)) {
-            return false;
-        }
-        UUID uuid = this.installId;
-        UUID uuid2 = sdkExtension.installId;
-        return uuid != null ? uuid.equals(uuid2) : uuid2 == null;
+        return false;
     }
 
     public int hashCode() {

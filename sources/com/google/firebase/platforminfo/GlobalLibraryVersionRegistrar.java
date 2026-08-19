@@ -21,17 +21,20 @@ public class GlobalLibraryVersionRegistrar {
     }
 
     public static GlobalLibraryVersionRegistrar getInstance() {
-        GlobalLibraryVersionRegistrar globalLibraryVersionRegistrar = INSTANCE;
-        if (globalLibraryVersionRegistrar == null) {
-            synchronized (GlobalLibraryVersionRegistrar.class) {
-                try {
-                    globalLibraryVersionRegistrar = INSTANCE;
-                    if (globalLibraryVersionRegistrar == null) {
-                        globalLibraryVersionRegistrar = new GlobalLibraryVersionRegistrar();
-                        INSTANCE = globalLibraryVersionRegistrar;
-                    }
-                } finally {
+        GlobalLibraryVersionRegistrar globalLibraryVersionRegistrar;
+        GlobalLibraryVersionRegistrar globalLibraryVersionRegistrar2 = INSTANCE;
+        if (globalLibraryVersionRegistrar2 != null) {
+            return globalLibraryVersionRegistrar2;
+        }
+        synchronized (GlobalLibraryVersionRegistrar.class) {
+            try {
+                globalLibraryVersionRegistrar = INSTANCE;
+                if (globalLibraryVersionRegistrar == null) {
+                    globalLibraryVersionRegistrar = new GlobalLibraryVersionRegistrar();
+                    INSTANCE = globalLibraryVersionRegistrar;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return globalLibraryVersionRegistrar;

@@ -1,13 +1,13 @@
 package j$.util;
 
-import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public interface Z extends f0 {
-    void forEachRemaining(IntConsumer intConsumer);
+public interface Z extends c0 {
+    void forEachRemaining(LongConsumer longConsumer);
 
-    boolean tryAdvance(IntConsumer intConsumer);
+    boolean tryAdvance(LongConsumer longConsumer);
 
-    @Override // j$.util.f0, j$.util.Spliterator
+    @Override // j$.util.c0, j$.util.Spliterator
     Z trySplit();
 }

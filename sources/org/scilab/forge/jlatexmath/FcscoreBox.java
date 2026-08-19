@@ -35,7 +35,6 @@ public class FcscoreBox extends Box {
 
     @Override // org.scilab.forge.jlatexmath.Box
     public void draw(Graphics2D graphics2D, float f, float f2) {
-        Graphics2D graphics2D2;
         AffineTransform transform = graphics2D.getTransform();
         Stroke stroke = graphics2D.getStroke();
         double scaleX = transform.getScaleX();
@@ -50,40 +49,30 @@ public class FcscoreBox extends Box {
         int i = 0;
         graphics2D.setStroke(new BasicStroke((float) (this.thickness * scaleX), 0, 0));
         float f3 = this.thickness / 2.0f;
-        Line2D.Float r15 = new Line2D.Float();
+        Line2D.Float r10 = new Line2D.Float();
         float f4 = this.space;
-        int round = (int) Math.round((f4 + this.thickness) * scaleX);
         float f5 = (float) (((f + f4) * scaleX) + ((f4 / 2.0f) * scaleX));
+        int round = (int) Math.round((f4 + this.thickness) * scaleX);
         while (i < this.N) {
-            double d = (f3 * scaleX) + f5;
-            float f6 = f3;
+            double d = f5 + (f3 * scaleX);
+            double d2 = scaleX;
             int i2 = round;
-            AffineTransform affineTransform = transform;
-            Line2D.Float r3 = r15;
-            r15.setLine(d, (f2 - this.height) * scaleX, d, f2 * scaleX);
-            graphics2D.draw(r3);
+            r10.setLine(d, (f2 - this.height) * scaleX, d, f2 * d2);
+            graphics2D.draw(r10);
             f5 += i2;
             i++;
-            r15 = r3;
             round = i2;
-            f3 = f6;
-            stroke = stroke;
-            transform = affineTransform;
+            scaleX = d2;
         }
-        AffineTransform affineTransform2 = transform;
-        Stroke stroke2 = stroke;
-        float f7 = f5;
-        Line2D.Float r32 = r15;
+        double d3 = scaleX;
+        float f6 = f5;
         if (this.strike) {
-            float f8 = this.space;
-            float f9 = this.height;
-            r32.setLine((f + f8) * scaleX, (f2 - (f9 / 2.0f)) * scaleX, f7 - ((f8 * scaleX) / 2.0d), (f2 - (f9 / 2.0f)) * scaleX);
-            graphics2D2 = graphics2D;
-            graphics2D2.draw(r32);
-        } else {
-            graphics2D2 = graphics2D;
+            float f7 = this.space;
+            float f8 = this.height;
+            r10.setLine((f + f7) * d3, (f2 - (f8 / 2.0f)) * d3, f6 - ((f7 * d3) / 2.0d), (f2 - (f8 / 2.0f)) * d3);
+            graphics2D.draw(r10);
         }
-        graphics2D2.setTransform(affineTransform2);
-        graphics2D2.setStroke(stroke2);
+        graphics2D.setTransform(transform);
+        graphics2D.setStroke(stroke);
     }
 }

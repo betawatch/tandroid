@@ -5,7 +5,7 @@ import android.os.Handler;
 import java.util.concurrent.Callable;
 import org.webrtc.VideoFrame;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextureBufferImpl implements VideoFrame.TextureBuffer {
     private final int height;
     private final int id;
@@ -69,15 +69,15 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
         this.refCountDelegate = new RefCountDelegate(new Runnable() { // from class: org.webrtc.TextureBufferImpl$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                TextureBufferImpl.this.lambda$new$0(refCountMonitor);
+                TextureBufferImpl.$r8$lambda$H-35TZ4MlCTttXlwV_K3ZnKf910(TextureBufferImpl.this, refCountMonitor);
             }
         });
         this.refCountMonitor = refCountMonitor;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(RefCountMonitor refCountMonitor) {
-        refCountMonitor.onDestroy(this);
+    public static /* synthetic */ void $r8$lambda$H-35TZ4MlCTttXlwV_K3ZnKf910(TextureBufferImpl textureBufferImpl, RefCountMonitor refCountMonitor) {
+        textureBufferImpl.getClass();
+        refCountMonitor.onDestroy(textureBufferImpl);
     }
 
     @Override // org.webrtc.VideoFrame.TextureBuffer
@@ -110,16 +110,11 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
         return (VideoFrame.I420Buffer) ThreadUtils.invokeAtFrontUninterruptibly(this.toI420Handler, new Callable() { // from class: org.webrtc.TextureBufferImpl$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                VideoFrame.I420Buffer lambda$toI420$1;
-                lambda$toI420$1 = TextureBufferImpl.this.lambda$toI420$1();
-                return lambda$toI420$1;
+                VideoFrame.I420Buffer convert;
+                convert = r0.yuvConverter.convert(TextureBufferImpl.this);
+                return convert;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ VideoFrame.I420Buffer lambda$toI420$1() {
-        return this.yuvConverter.convert(this);
     }
 
     @Override // org.webrtc.VideoFrame.Buffer, org.webrtc.RefCounted
@@ -137,7 +132,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
     @Override // org.webrtc.VideoFrame.Buffer
     public VideoFrame.Buffer cropAndScale(int i, int i2, int i3, int i4, int i5, int i6) {
         Matrix matrix = new Matrix();
-        matrix.preTranslate(i / this.width, (r0 - (i2 + i4)) / this.height);
+        matrix.preTranslate(i / this.width, (r1 - (i2 + i4)) / this.height);
         matrix.preScale(i3 / this.width, i4 / this.height);
         return applyTransformMatrix(matrix, Math.round((this.unscaledWidth * i3) / this.width), Math.round((this.unscaledHeight * i4) / this.height), i5, i6);
     }

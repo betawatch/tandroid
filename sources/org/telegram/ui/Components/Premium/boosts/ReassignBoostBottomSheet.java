@@ -78,12 +78,16 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
         this.topPadding = 0.3f;
         this.myBoosts = tL_premium_myBoosts;
         this.currentChat = chat;
-        Iterator<TL_stories.TL_myBoost> it = tL_premium_myBoosts.my_boosts.iterator();
-        while (it.hasNext()) {
-            TL_stories.TL_myBoost next = it.next();
-            TLRPC.Peer peer = next.peer;
+        ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i);
+            i++;
+            TL_stories.TL_myBoost tL_myBoost2 = tL_myBoost;
+            TLRPC.Peer peer = tL_myBoost2.peer;
             if (peer != null && DialogObject.getPeerDialogId(peer) != (-chat.id)) {
-                this.allUsedBoosts.add(next);
+                this.allUsedBoosts.add(tL_myBoost2);
             }
         }
         SelectorBtnCell selectorBtnCell = new SelectorBtnCell(getContext(), this.resourcesProvider, this.recyclerListView);
@@ -99,20 +103,20 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
         gradientButtonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ReassignBoostBottomSheet.this.lambda$new$3(chat, view);
+                ReassignBoostBottomSheet.$r8$lambda$LaVYreQxl216RF4nDb6eGL7VfsE(ReassignBoostBottomSheet.this, chat, view);
             }
         });
         selectorBtnCell.addView(gradientButtonWithCounterView, LayoutHelper.createLinear(-1, 48, 87));
         ViewGroup viewGroup = this.containerView;
-        int i = this.backgroundPaddingLeft;
-        viewGroup.addView(selectorBtnCell, LayoutHelper.createFrameMarginPx(-1, -2.0f, 87, i, 0, i, 0));
-        RecyclerListView recyclerListView = this.recyclerListView;
         int i2 = this.backgroundPaddingLeft;
-        recyclerListView.setPadding(i2, 0, i2, AndroidUtilities.dp(64.0f));
+        viewGroup.addView(selectorBtnCell, LayoutHelper.createFrameMarginPx(-1, -2.0f, 87, i2, 0, i2, 0));
+        RecyclerListView recyclerListView = this.recyclerListView;
+        int i3 = this.backgroundPaddingLeft;
+        recyclerListView.setPadding(i3, 0, i3, AndroidUtilities.dp(64.0f));
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i3) {
-                ReassignBoostBottomSheet.this.lambda$new$4(chat, view, i3);
+            public final void onItemClick(View view, int i4) {
+                ReassignBoostBottomSheet.$r8$lambda$7cpvv40vUA6PdKgxhwXexC8OBUQ(ReassignBoostBottomSheet.this, chat, view, i4);
             }
         });
         fixNavigationBar();
@@ -130,13 +134,13 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Components.Bulletin.Delegate
-            public /* synthetic */ boolean clipWithGradient(int i3) {
-                return Bulletin.Delegate.-CC.$default$clipWithGradient(this, i3);
+            public /* synthetic */ boolean clipWithGradient(int i4) {
+                return Bulletin.Delegate.-CC.$default$clipWithGradient(this, i4);
             }
 
             @Override // org.telegram.ui.Components.Bulletin.Delegate
-            public /* synthetic */ int getBottomOffset(int i3) {
-                return Bulletin.Delegate.-CC.$default$getBottomOffset(this, i3);
+            public /* synthetic */ int getBottomOffset(int i4) {
+                return Bulletin.Delegate.-CC.$default$getBottomOffset(this, i4);
             }
 
             @Override // org.telegram.ui.Components.Bulletin.Delegate
@@ -155,75 +159,67 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Components.Bulletin.Delegate
-            public int getTopOffset(int i3) {
+            public int getTopOffset(int i4) {
                 return AndroidUtilities.statusBarHeight;
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(final TLRPC.Chat chat, View view) {
-        if (this.selectedBoosts.isEmpty() || this.actionButton.isLoading()) {
+    public static /* synthetic */ void $r8$lambda$LaVYreQxl216RF4nDb6eGL7VfsE(final ReassignBoostBottomSheet reassignBoostBottomSheet, final TLRPC.Chat chat, View view) {
+        if (reassignBoostBottomSheet.selectedBoosts.isEmpty() || reassignBoostBottomSheet.actionButton.isLoading()) {
             return;
         }
-        this.actionButton.setLoading(true);
+        reassignBoostBottomSheet.actionButton.setLoading(true);
         final ArrayList arrayList = new ArrayList();
         final HashSet hashSet = new HashSet();
-        for (TL_stories.TL_myBoost tL_myBoost : this.selectedBoosts) {
+        for (TL_stories.TL_myBoost tL_myBoost : reassignBoostBottomSheet.selectedBoosts) {
             arrayList.add(Integer.valueOf(tL_myBoost.slot));
             hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_myBoost.peer)));
         }
         BoostRepository.applyBoost(chat.id, arrayList, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ReassignBoostBottomSheet.this.lambda$new$1(chat, arrayList, hashSet, (TL_stories.TL_premium_myBoosts) obj);
+                MessagesController.getInstance(r0.currentAccount).getBoostsController().getBoostsStats(-chat.id, new Consumer() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda4
+                    @Override // com.google.android.exoplayer2.util.Consumer
+                    public final void accept(Object obj2) {
+                        ReassignBoostBottomSheet.$r8$lambda$PKawwpZhA1iVaKkYrGH58Adn50U(ReassignBoostBottomSheet.this, r2, r3, r4, (TL_stories.TL_premium_boostsStatus) obj2);
+                    }
+                });
             }
         }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ReassignBoostBottomSheet.this.lambda$new$2((TLRPC.TL_error) obj);
+                ReassignBoostBottomSheet.$r8$lambda$Xi7OdF22Ep2bfMug90Fs6De0CP4(ReassignBoostBottomSheet.this, (TLRPC.TL_error) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(TLRPC.Chat chat, final List list, final HashSet hashSet, final TL_stories.TL_premium_myBoosts tL_premium_myBoosts) {
-        MessagesController.getInstance(this.currentAccount).getBoostsController().getBoostsStats(-chat.id, new Consumer() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda4
-            @Override // com.google.android.exoplayer2.util.Consumer
-            public final void accept(Object obj) {
-                ReassignBoostBottomSheet.this.lambda$new$0(tL_premium_myBoosts, list, hashSet, (TL_stories.TL_premium_boostsStatus) obj);
-            }
-        });
+    public static /* synthetic */ void $r8$lambda$PKawwpZhA1iVaKkYrGH58Adn50U(ReassignBoostBottomSheet reassignBoostBottomSheet, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, List list, HashSet hashSet, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+        reassignBoostBottomSheet.dismiss();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationName(NotificationCenter.boostedChannelByUser, tL_premium_myBoosts, Integer.valueOf(list.size()), Integer.valueOf(hashSet.size()), tL_premium_boostsStatus);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TL_stories.TL_premium_myBoosts tL_premium_myBoosts, List list, HashSet hashSet, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        lambda$new$0();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostedChannelByUser, tL_premium_myBoosts, Integer.valueOf(list.size()), Integer.valueOf(hashSet.size()), tL_premium_boostsStatus);
+    public static /* synthetic */ void $r8$lambda$Xi7OdF22Ep2bfMug90Fs6De0CP4(ReassignBoostBottomSheet reassignBoostBottomSheet, TLRPC.TL_error tL_error) {
+        reassignBoostBottomSheet.actionButton.setLoading(false);
+        BoostDialogs.showToastError(reassignBoostBottomSheet.getContext(), tL_error);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(TLRPC.TL_error tL_error) {
-        this.actionButton.setLoading(false);
-        BoostDialogs.showToastError(getContext(), tL_error);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(TLRPC.Chat chat, View view, int i) {
+    public static /* synthetic */ void $r8$lambda$7cpvv40vUA6PdKgxhwXexC8OBUQ(ReassignBoostBottomSheet reassignBoostBottomSheet, TLRPC.Chat chat, View view, int i) {
+        reassignBoostBottomSheet.getClass();
         if (view instanceof SelectorUserCell) {
             SelectorUserCell selectorUserCell = (SelectorUserCell) view;
             if (selectorUserCell.getBoost().cooldown_until_date > 0) {
-                BulletinFactory.of(this.container, this.resourcesProvider).createSimpleBulletin(R.raw.chats_infotip, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", BoostRepository.boostsPerSentGift(), new Object[0])), 5).show(true);
+                BulletinFactory.of(reassignBoostBottomSheet.container, reassignBoostBottomSheet.resourcesProvider).createSimpleBulletin(R.raw.chats_infotip, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", BoostRepository.boostsPerSentGift(), new Object[0])), 5).show(true);
                 return;
             }
-            if (this.selectedBoosts.contains(selectorUserCell.getBoost())) {
-                this.selectedBoosts.remove(selectorUserCell.getBoost());
+            if (reassignBoostBottomSheet.selectedBoosts.contains(selectorUserCell.getBoost())) {
+                reassignBoostBottomSheet.selectedBoosts.remove(selectorUserCell.getBoost());
             } else {
-                this.selectedBoosts.add(selectorUserCell.getBoost());
+                reassignBoostBottomSheet.selectedBoosts.add(selectorUserCell.getBoost());
             }
-            selectorUserCell.setChecked(this.selectedBoosts.contains(selectorUserCell.getBoost()), true);
-            updateActionButton(true);
-            this.topCell.showBoosts(this.selectedBoosts, chat);
+            selectorUserCell.setChecked(reassignBoostBottomSheet.selectedBoosts.contains(selectorUserCell.getBoost()), true);
+            reassignBoostBottomSheet.updateActionButton(true);
+            reassignBoostBottomSheet.topCell.showBoosts(reassignBoostBottomSheet.selectedBoosts, chat);
         }
     }
 
@@ -418,7 +414,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                 SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), Theme.key_chat_messageLinkIn, 2, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$TopCell$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ReassignBoostBottomSheet.TopCell.lambda$setData$0(BottomSheet.this);
+                        ReassignBoostBottomSheet.TopCell.$r8$lambda$gWjA69fY9828v8mIfgoMFjI1LEs(BottomSheet.this);
                     }
                 });
                 final int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
@@ -427,7 +423,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                 this.description.post(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$TopCell$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ReassignBoostBottomSheet.TopCell.this.lambda$setData$1(indexOf);
+                        ReassignBoostBottomSheet.TopCell.$r8$lambda$obDywsXXdigYdh_1vzUK2-wRSoI(ReassignBoostBottomSheet.TopCell.this, indexOf);
                     }
                 });
             } catch (Exception e) {
@@ -435,10 +431,9 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setData$0(BottomSheet bottomSheet) {
-            bottomSheet.lambda$new$0();
-            NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
+        public static /* synthetic */ void $r8$lambda$gWjA69fY9828v8mIfgoMFjI1LEs(BottomSheet bottomSheet) {
+            bottomSheet.dismiss();
+            NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationName(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$TopCell$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -447,11 +442,11 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             }, 220L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setData$1(int i) {
+        public static /* synthetic */ void $r8$lambda$obDywsXXdigYdh_1vzUK2-wRSoI(TopCell topCell, int i) {
+            topCell.getClass();
             try {
-                if (this.description.getLayout().getLineForOffset(i) == 0) {
-                    this.description.getEditableText().insert(i, "\n");
+                if (topCell.description.getLayout().getLineForOffset(i) == 0) {
+                    topCell.description.getEditableText().insert(i, "\n");
                 }
             } catch (Exception e) {
                 FileLog.e(e);
@@ -469,9 +464,8 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
 
         public void showChats(List list, TLRPC.Chat chat) {
             float f;
-            float f2;
             final AvatarHolderView avatarHolderView;
-            ArrayList<TLRPC.Chat> arrayList = new ArrayList();
+            ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
             Iterator it = list.iterator();
@@ -486,53 +480,61 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                     arrayList.add(chat3);
                 }
             }
-            ArrayList<AvatarHolderView> arrayList3 = new ArrayList();
-            for (int i = 0; i < this.avatarsWrapper.getChildCount(); i++) {
-                AvatarHolderView avatarHolderView2 = (AvatarHolderView) this.avatarsWrapper.getChildAt(i);
+            ArrayList arrayList3 = new ArrayList();
+            int i = 0;
+            for (int i2 = 0; i2 < this.avatarsWrapper.getChildCount(); i2++) {
+                AvatarHolderView avatarHolderView2 = (AvatarHolderView) this.avatarsWrapper.getChildAt(i2);
                 if (avatarHolderView2.getTag() == null) {
                     arrayList3.add(avatarHolderView2);
                 }
             }
-            Iterator it2 = arrayList2.iterator();
+            int size = arrayList2.size();
+            int i3 = 0;
             while (true) {
                 f = 0.0f;
-                f2 = 0.1f;
-                if (!it2.hasNext()) {
+                if (i3 >= size) {
                     break;
                 }
-                TLRPC.Chat chat4 = (TLRPC.Chat) it2.next();
+                Object obj = arrayList2.get(i3);
+                i3++;
                 AvatarHolderView avatarHolderView3 = new AvatarHolderView(getContext());
                 avatarHolderView3.setLayerType(2, null);
-                avatarHolderView3.setChat(chat4);
-                int size = arrayList3.size();
+                avatarHolderView3.setChat((TLRPC.Chat) obj);
+                int size2 = arrayList3.size();
                 this.avatarsWrapper.addView(avatarHolderView3, 0, LayoutHelper.createFrame(70, 70, 17));
-                avatarHolderView3.setTranslationX((-size) * AndroidUtilities.dp(23.0f));
+                avatarHolderView3.setTranslationX((-size2) * AndroidUtilities.dp(23.0f));
                 avatarHolderView3.setAlpha(0.0f);
                 avatarHolderView3.setScaleX(0.1f);
                 avatarHolderView3.setScaleY(0.1f);
                 avatarHolderView3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(cubicBezierInterpolator).setDuration(NotificationCenter.dialogPhotosUpdate).start();
-                if (size == 0) {
+                if (size2 == 0) {
                     avatarHolderView3.boostIconView.setScaleY(1.0f);
                     avatarHolderView3.boostIconView.setScaleX(1.0f);
                     avatarHolderView3.boostIconView.setAlpha(1.0f);
                 }
             }
-            for (TLRPC.Chat chat5 : arrayList) {
-                Iterator it3 = arrayList3.iterator();
+            int size3 = arrayList.size();
+            int i4 = 0;
+            while (i4 < size3) {
+                Object obj2 = arrayList.get(i4);
+                i4++;
+                TLRPC.Chat chat4 = (TLRPC.Chat) obj2;
+                int size4 = arrayList3.size();
                 while (true) {
-                    if (it3.hasNext()) {
-                        avatarHolderView = (AvatarHolderView) it3.next();
-                        if (avatarHolderView.chat == chat5) {
-                            break;
-                        }
-                    } else {
+                    if (i >= size4) {
                         avatarHolderView = null;
+                        break;
+                    }
+                    Object obj3 = arrayList3.get(i);
+                    i++;
+                    avatarHolderView = (AvatarHolderView) obj3;
+                    if (avatarHolderView.chat == chat4) {
                         break;
                     }
                 }
                 if (avatarHolderView != null) {
                     avatarHolderView.setTag("REMOVED");
-                    ViewPropertyAnimator interpolator = avatarHolderView.animate().alpha(f).translationXBy(AndroidUtilities.dp(23.0f)).scaleX(f2).scaleY(f2).setInterpolator(cubicBezierInterpolator);
+                    ViewPropertyAnimator interpolator = avatarHolderView.animate().alpha(f).translationXBy(AndroidUtilities.dp(23.0f)).scaleX(0.1f).scaleY(0.1f).setInterpolator(cubicBezierInterpolator);
                     long j = NotificationCenter.dialogPhotosUpdate;
                     interpolator.setDuration(j).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet.TopCell.1
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -541,22 +543,29 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                             TopCell.this.avatarsWrapper.removeView(avatarHolderView);
                         }
                     }).start();
-                    int i2 = 0;
-                    for (AvatarHolderView avatarHolderView4 : arrayList3) {
-                        int size2 = arrayList3.size() - 1;
+                    int size5 = arrayList3.size();
+                    int i5 = 0;
+                    int i6 = 0;
+                    while (i5 < size5) {
+                        Object obj4 = arrayList3.get(i5);
+                        i5++;
+                        AvatarHolderView avatarHolderView4 = (AvatarHolderView) obj4;
+                        int size6 = arrayList3.size() - 1;
                         if (avatarHolderView4 != avatarHolderView) {
-                            i2++;
-                            avatarHolderView4.animate().translationX((-(size2 - i2)) * AndroidUtilities.dp(23.0f)).setInterpolator(cubicBezierInterpolator).setDuration(j).start();
+                            i6++;
+                            avatarHolderView4.animate().translationX((-(size6 - i6)) * AndroidUtilities.dp(23.0f)).setInterpolator(cubicBezierInterpolator).setDuration(j).start();
                         }
                     }
                     if (arrayList3.get(arrayList3.size() - 1) == avatarHolderView && arrayList3.size() > 1) {
                         ((AvatarHolderView) arrayList3.get(arrayList3.size() - 2)).boostIconView.setScaleY(0.1f);
                         ((AvatarHolderView) arrayList3.get(arrayList3.size() - 2)).boostIconView.setScaleX(0.1f);
                         ((AvatarHolderView) arrayList3.get(arrayList3.size() - 2)).boostIconView.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(j).setInterpolator(cubicBezierInterpolator).start();
+                        i = 0;
+                        f = 0.0f;
                     }
-                    f = 0.0f;
-                    f2 = 0.1f;
                 }
+                i = 0;
+                f = 0.0f;
             }
             AvatarHolderView avatarHolderView5 = this.toAvatar;
             if (avatarHolderView5.chat == null) {

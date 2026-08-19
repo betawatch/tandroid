@@ -44,11 +44,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_ProcessDetails
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Application.ProcessDetails)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Event.Application.ProcessDetails) {
+            CrashlyticsReport.Session.Event.Application.ProcessDetails processDetails = (CrashlyticsReport.Session.Event.Application.ProcessDetails) obj;
+            if (this.processName.equals(processDetails.getProcessName()) && this.pid == processDetails.getPid() && this.importance == processDetails.getImportance() && this.defaultProcess == processDetails.isDefaultProcess()) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Event.Application.ProcessDetails processDetails = (CrashlyticsReport.Session.Event.Application.ProcessDetails) obj;
-        return this.processName.equals(processDetails.getProcessName()) && this.pid == processDetails.getPid() && this.importance == processDetails.getImportance() && this.defaultProcess == processDetails.isDefaultProcess();
+        return false;
     }
 
     public int hashCode() {

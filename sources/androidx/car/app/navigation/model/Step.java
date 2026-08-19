@@ -79,7 +79,7 @@ public final class Step {
 
     private Step() {
         this.mManeuver = null;
-        this.mLanes = Collections.emptyList();
+        this.mLanes = Collections.EMPTY_LIST;
         this.mLanesImage = null;
         this.mCue = null;
         this.mRoad = null;

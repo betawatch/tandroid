@@ -499,78 +499,75 @@ abstract class Utf8 {
             }
             int i3 = i + i2;
             char[] cArr = new char[i2];
-            int i4 = 0;
-            while (i < i3) {
-                byte b = UnsafeUtil.getByte(bArr, i);
+            int i4 = i;
+            int i5 = 0;
+            while (i4 < i3) {
+                byte b = UnsafeUtil.getByte(bArr, i4);
                 if (!DecodeUtil.isOneByte(b)) {
                     break;
                 }
-                i++;
-                DecodeUtil.handleOneByte(b, cArr, i4);
                 i4++;
+                DecodeUtil.handleOneByte(b, cArr, i5);
+                i5++;
             }
-            int i5 = i4;
-            while (i < i3) {
-                int i6 = i + 1;
-                byte b2 = UnsafeUtil.getByte(bArr, i);
+            int i6 = i5;
+            while (i4 < i3) {
+                int i7 = i4 + 1;
+                byte b2 = UnsafeUtil.getByte(bArr, i4);
                 if (DecodeUtil.isOneByte(b2)) {
-                    int i7 = i5 + 1;
-                    DecodeUtil.handleOneByte(b2, cArr, i5);
-                    while (i6 < i3) {
-                        byte b3 = UnsafeUtil.getByte(bArr, i6);
+                    int i8 = i6 + 1;
+                    DecodeUtil.handleOneByte(b2, cArr, i6);
+                    while (i7 < i3) {
+                        byte b3 = UnsafeUtil.getByte(bArr, i7);
                         if (!DecodeUtil.isOneByte(b3)) {
                             break;
                         }
-                        i6++;
-                        DecodeUtil.handleOneByte(b3, cArr, i7);
                         i7++;
+                        DecodeUtil.handleOneByte(b3, cArr, i8);
+                        i8++;
                     }
-                    i5 = i7;
-                    i = i6;
+                    i6 = i8;
+                    i4 = i7;
                 } else if (DecodeUtil.isTwoBytes(b2)) {
-                    if (i6 >= i3) {
+                    if (i7 >= i3) {
                         throw InvalidProtocolBufferException.invalidUtf8();
                     }
-                    i += 2;
-                    DecodeUtil.handleTwoBytes(b2, UnsafeUtil.getByte(bArr, i6), cArr, i5);
-                    i5++;
+                    i4 += 2;
+                    DecodeUtil.handleTwoBytes(b2, UnsafeUtil.getByte(bArr, i7), cArr, i6);
+                    i6++;
                 } else if (DecodeUtil.isThreeBytes(b2)) {
-                    if (i6 >= i3 - 1) {
+                    if (i7 >= i3 - 1) {
                         throw InvalidProtocolBufferException.invalidUtf8();
                     }
-                    int i8 = i + 2;
-                    i += 3;
-                    DecodeUtil.handleThreeBytes(b2, UnsafeUtil.getByte(bArr, i6), UnsafeUtil.getByte(bArr, i8), cArr, i5);
-                    i5++;
+                    int i9 = i4 + 2;
+                    i4 += 3;
+                    DecodeUtil.handleThreeBytes(b2, UnsafeUtil.getByte(bArr, i7), UnsafeUtil.getByte(bArr, i9), cArr, i6);
+                    i6++;
                 } else {
-                    if (i6 >= i3 - 2) {
+                    if (i7 >= i3 - 2) {
                         throw InvalidProtocolBufferException.invalidUtf8();
                     }
-                    byte b4 = UnsafeUtil.getByte(bArr, i6);
-                    int i9 = i + 3;
-                    byte b5 = UnsafeUtil.getByte(bArr, i + 2);
-                    i += 4;
-                    DecodeUtil.handleFourBytes(b2, b4, b5, UnsafeUtil.getByte(bArr, i9), cArr, i5);
-                    i5 += 2;
+                    byte b4 = UnsafeUtil.getByte(bArr, i7);
+                    int i10 = i4 + 3;
+                    byte b5 = UnsafeUtil.getByte(bArr, i4 + 2);
+                    i4 += 4;
+                    DecodeUtil.handleFourBytes(b2, b4, b5, UnsafeUtil.getByte(bArr, i10), cArr, i6);
+                    i6 += 2;
                 }
             }
-            return new String(cArr, 0, i5);
+            return new String(cArr, 0, i6);
         }
 
         @Override // androidx.datastore.preferences.protobuf.Utf8.Processor
         int encodeUtf8(CharSequence charSequence, byte[] bArr, int i, int i2) {
             long j;
-            String str;
-            String str2;
-            int i3;
             long j2;
             long j3;
+            int i3;
             char charAt;
             long j4 = i;
             long j5 = i2 + j4;
             int length = charSequence.length();
-            String str3 = " at index ";
-            String str4 = "Failed writing ";
             if (length > i2 || bArr.length - i2 < i) {
                 throw new ArrayIndexOutOfBoundsException("Failed writing " + charSequence.charAt(length - 1) + " at index " + (i + i2));
             }
@@ -589,63 +586,54 @@ abstract class Utf8 {
             }
             while (i4 < length) {
                 char charAt2 = charSequence.charAt(i4);
-                if (charAt2 >= 128 || j4 >= j5) {
-                    if (charAt2 >= 2048 || j4 > j5 - 2) {
-                        str = str3;
-                        str2 = str4;
-                        if ((charAt2 >= 55296 && 57343 >= charAt2) || j4 > j5 - 3) {
-                            if (j4 <= j5 - 4) {
-                                int i5 = i4 + 1;
-                                if (i5 != length) {
-                                    char charAt3 = charSequence.charAt(i5);
-                                    if (Character.isSurrogatePair(charAt2, charAt3)) {
-                                        int codePoint = Character.toCodePoint(charAt2, charAt3);
-                                        j2 = 1;
-                                        UnsafeUtil.putByte(bArr, j4, (byte) ((codePoint >>> 18) | NotificationCenter.appConfigUpdated));
-                                        j3 = j5;
-                                        UnsafeUtil.putByte(bArr, j4 + 1, (byte) (((codePoint >>> 12) & 63) | 128));
-                                        long j6 = j4 + 3;
-                                        UnsafeUtil.putByte(bArr, j4 + 2, (byte) (((codePoint >>> 6) & 63) | 128));
-                                        j4 += 4;
-                                        UnsafeUtil.putByte(bArr, j6, (byte) ((codePoint & 63) | 128));
-                                        i4 = i5;
-                                    } else {
-                                        i4 = i5;
-                                    }
-                                }
-                                throw new UnpairedSurrogateException(i4 - 1, length);
-                            }
-                            if (55296 <= charAt2 && charAt2 <= 57343 && ((i3 = i4 + 1) == length || !Character.isSurrogatePair(charAt2, charSequence.charAt(i3)))) {
-                                throw new UnpairedSurrogateException(i4, length);
-                            }
-                            throw new ArrayIndexOutOfBoundsException(str2 + charAt2 + str + j4);
-                        }
-                        UnsafeUtil.putByte(bArr, j4, (byte) ((charAt2 >>> '\f') | 480));
-                        long j7 = j4 + 2;
-                        UnsafeUtil.putByte(bArr, j4 + 1, (byte) (((charAt2 >>> 6) & 63) | 128));
-                        j4 += 3;
-                        UnsafeUtil.putByte(bArr, j7, (byte) ((charAt2 & '?') | 128));
-                    } else {
-                        str = str3;
-                        str2 = str4;
-                        long j8 = j4 + j;
-                        UnsafeUtil.putByte(bArr, j4, (byte) ((charAt2 >>> 6) | 960));
-                        j4 += 2;
-                        UnsafeUtil.putByte(bArr, j8, (byte) ((charAt2 & '?') | 128));
-                    }
-                    j3 = j5;
-                    j2 = 1;
-                } else {
+                if (charAt2 < 128 && j4 < j5) {
                     UnsafeUtil.putByte(bArr, j4, (byte) charAt2);
                     j3 = j5;
-                    str2 = str4;
                     j2 = j;
                     j4 += j;
-                    str = str3;
+                } else if (charAt2 >= 2048 || j4 > j5 - 2) {
+                    j2 = j;
+                    if ((charAt2 >= 55296 && 57343 >= charAt2) || j4 > j5 - 3) {
+                        j3 = j5;
+                        if (j4 <= j3 - 4) {
+                            int i5 = i4 + 1;
+                            if (i5 != length) {
+                                char charAt3 = charSequence.charAt(i5);
+                                if (Character.isSurrogatePair(charAt2, charAt3)) {
+                                    int codePoint = Character.toCodePoint(charAt2, charAt3);
+                                    UnsafeUtil.putByte(bArr, j4, (byte) ((codePoint >>> 18) | NotificationCenter.appConfigUpdated));
+                                    UnsafeUtil.putByte(bArr, j4 + j2, (byte) (((codePoint >>> 12) & 63) | 128));
+                                    long j6 = j4 + 3;
+                                    UnsafeUtil.putByte(bArr, j4 + 2, (byte) (((codePoint >>> 6) & 63) | 128));
+                                    j4 += 4;
+                                    UnsafeUtil.putByte(bArr, j6, (byte) ((codePoint & 63) | 128));
+                                    i4 = i5;
+                                } else {
+                                    i4 = i5;
+                                }
+                            }
+                            throw new UnpairedSurrogateException(i4 - 1, length);
+                        }
+                        if (55296 > charAt2 || charAt2 > 57343 || ((i3 = i4 + 1) != length && Character.isSurrogatePair(charAt2, charSequence.charAt(i3)))) {
+                            throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + j4);
+                        }
+                        throw new UnpairedSurrogateException(i4, length);
+                    }
+                    UnsafeUtil.putByte(bArr, j4, (byte) ((charAt2 >>> '\f') | 480));
+                    j3 = j5;
+                    long j7 = j4 + 2;
+                    UnsafeUtil.putByte(bArr, j4 + j2, (byte) (((charAt2 >>> 6) & 63) | 128));
+                    j4 += 3;
+                    UnsafeUtil.putByte(bArr, j7, (byte) ((charAt2 & '?') | 128));
+                } else {
+                    j2 = j;
+                    long j8 = j4 + j2;
+                    UnsafeUtil.putByte(bArr, j4, (byte) ((charAt2 >>> 6) | 960));
+                    j4 += 2;
+                    UnsafeUtil.putByte(bArr, j8, (byte) ((charAt2 & '?') | 128));
+                    j3 = j5;
                 }
                 i4++;
-                str3 = str;
-                str4 = str2;
                 j = j2;
                 j5 = j3;
             }

@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import java.lang.reflect.Proxy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
@@ -27,7 +28,7 @@ public final class zzjo implements zzjt {
             throw new zzdm(4, 5, null);
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
-        if (true != (zza3 instanceof Object)) {
+        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza3)) {
             zza3 = null;
         }
         if (zza3 == null) {

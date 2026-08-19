@@ -17,9 +17,7 @@ public class OggExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ogg.OggExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = OggExtractor.lambda$static$0();
-            return lambda$static$0;
+            return OggExtractor.$r8$lambda$HTG9nvxjB8tiQQ5ZaM-YGLg8_aw();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -37,8 +35,7 @@ public class OggExtractor implements Extractor {
     public void release() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$HTG9nvxjB8tiQQ5ZaM-YGLg8_aw() {
         return new Extractor[]{new OggExtractor()};
     }
 

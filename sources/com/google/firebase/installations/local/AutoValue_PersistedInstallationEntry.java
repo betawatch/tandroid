@@ -65,22 +65,15 @@ final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEn
     public boolean equals(Object obj) {
         String str;
         String str2;
+        String str3;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof PersistedInstallationEntry)) {
-            return false;
-        }
-        PersistedInstallationEntry persistedInstallationEntry = (PersistedInstallationEntry) obj;
-        String str3 = this.firebaseInstallationId;
-        if (str3 != null ? str3.equals(persistedInstallationEntry.getFirebaseInstallationId()) : persistedInstallationEntry.getFirebaseInstallationId() == null) {
-            if (this.registrationStatus.equals(persistedInstallationEntry.getRegistrationStatus()) && ((str = this.authToken) != null ? str.equals(persistedInstallationEntry.getAuthToken()) : persistedInstallationEntry.getAuthToken() == null) && ((str2 = this.refreshToken) != null ? str2.equals(persistedInstallationEntry.getRefreshToken()) : persistedInstallationEntry.getRefreshToken() == null) && this.expiresInSecs == persistedInstallationEntry.getExpiresInSecs() && this.tokenCreationEpochInSecs == persistedInstallationEntry.getTokenCreationEpochInSecs()) {
-                String str4 = this.fisError;
-                if (str4 == null) {
-                    if (persistedInstallationEntry.getFisError() == null) {
-                        return true;
-                    }
-                } else if (str4.equals(persistedInstallationEntry.getFisError())) {
+        if (obj instanceof PersistedInstallationEntry) {
+            PersistedInstallationEntry persistedInstallationEntry = (PersistedInstallationEntry) obj;
+            String str4 = this.firebaseInstallationId;
+            if (str4 != null ? str4.equals(persistedInstallationEntry.getFirebaseInstallationId()) : persistedInstallationEntry.getFirebaseInstallationId() == null) {
+                if (this.registrationStatus.equals(persistedInstallationEntry.getRegistrationStatus()) && ((str = this.authToken) != null ? str.equals(persistedInstallationEntry.getAuthToken()) : persistedInstallationEntry.getAuthToken() == null) && ((str2 = this.refreshToken) != null ? str2.equals(persistedInstallationEntry.getRefreshToken()) : persistedInstallationEntry.getRefreshToken() == null) && this.expiresInSecs == persistedInstallationEntry.getExpiresInSecs() && this.tokenCreationEpochInSecs == persistedInstallationEntry.getTokenCreationEpochInSecs() && ((str3 = this.fisError) != null ? str3.equals(persistedInstallationEntry.getFisError()) : persistedInstallationEntry.getFisError() == null)) {
                     return true;
                 }
             }

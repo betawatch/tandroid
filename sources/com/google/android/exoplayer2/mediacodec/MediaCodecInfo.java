@@ -56,34 +56,26 @@ public final class MediaCodecInfo {
 
     public boolean isFormatSupported(Format format) {
         int i;
+        int i2;
+        int i3;
         if (!isSampleMimeTypeSupported(format) || !isCodecProfileAndLevelSupported(format, true)) {
             return false;
         }
-        if (this.isVideo) {
-            int i2 = format.width;
-            if (i2 <= 0 || (i = format.height) <= 0) {
-                return true;
-            }
-            if (Util.SDK_INT >= 21) {
-                return isVideoSizeAndRateSupportedV21(i2, i, format.frameRate);
-            }
-            boolean z = i2 * i <= MediaCodecUtil.maxH264DecodableFrameSize();
-            if (!z) {
-                logNoSupport("legacyFrameSize, " + format.width + "x" + format.height);
-            }
-            return z;
+        if (!this.isVideo) {
+            return Util.SDK_INT < 21 || (((i = format.sampleRate) == -1 || isAudioSampleRateSupportedV21(i)) && ((i2 = format.channelCount) == -1 || isAudioChannelCountSupportedV21(i2)));
+        }
+        int i4 = format.width;
+        if (i4 <= 0 || (i3 = format.height) <= 0) {
+            return true;
         }
         if (Util.SDK_INT >= 21) {
-            int i3 = format.sampleRate;
-            if (i3 != -1 && !isAudioSampleRateSupportedV21(i3)) {
-                return false;
-            }
-            int i4 = format.channelCount;
-            if (i4 != -1 && !isAudioChannelCountSupportedV21(i4)) {
-                return false;
-            }
+            return isVideoSizeAndRateSupportedV21(i4, i3, format.frameRate);
         }
-        return true;
+        boolean z = i4 * i3 <= MediaCodecUtil.maxH264DecodableFrameSize();
+        if (!z) {
+            logNoSupport("legacyFrameSize, " + format.width + "x" + format.height);
+        }
+        return z;
     }
 
     public boolean isFormatFunctionallySupported(Format format) {
@@ -143,6 +135,8 @@ public final class MediaCodecInfo {
     }
 
     public DecoderReuseEvaluation canReuseCodec(Format format, Format format2) {
+        Format format3;
+        Format format4;
         int i = !Util.areEqual(format.sampleMimeType, format2.sampleMimeType) ? 8 : 0;
         if (this.isVideo) {
             if (format.rotationDegrees != format2.rotationDegrees) {
@@ -160,38 +154,42 @@ public final class MediaCodecInfo {
             if (i == 0) {
                 return new DecoderReuseEvaluation(this.name, format, format2, format.initializationDataEquals(format2) ? 3 : 2, 0);
             }
+            format3 = format;
+            format4 = format2;
         } else {
-            if (format.channelCount != format2.channelCount) {
+            format3 = format;
+            format4 = format2;
+            if (format3.channelCount != format4.channelCount) {
                 i |= 4096;
             }
-            if (format.sampleRate != format2.sampleRate) {
+            if (format3.sampleRate != format4.sampleRate) {
                 i |= 8192;
             }
-            if (format.pcmEncoding != format2.pcmEncoding) {
+            if (format3.pcmEncoding != format4.pcmEncoding) {
                 i |= 16384;
             }
             if (i == 0 && MediaController.AUDIO_MIME_TYPE.equals(this.mimeType)) {
-                Pair codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format);
-                Pair codecProfileAndLevel2 = MediaCodecUtil.getCodecProfileAndLevel(format2);
+                Pair codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format3);
+                Pair codecProfileAndLevel2 = MediaCodecUtil.getCodecProfileAndLevel(format4);
                 if (codecProfileAndLevel != null && codecProfileAndLevel2 != null) {
                     int intValue = ((Integer) codecProfileAndLevel.first).intValue();
                     int intValue2 = ((Integer) codecProfileAndLevel2.first).intValue();
                     if (intValue == 42 && intValue2 == 42) {
-                        return new DecoderReuseEvaluation(this.name, format, format2, 3, 0);
+                        return new DecoderReuseEvaluation(this.name, format3, format4, 3, 0);
                     }
                 }
             }
-            if (!format.initializationDataEquals(format2)) {
+            if (!format3.initializationDataEquals(format4)) {
                 i |= 32;
             }
             if (needsAdaptationFlushWorkaround(this.mimeType)) {
                 i |= 2;
             }
             if (i == 0) {
-                return new DecoderReuseEvaluation(this.name, format, format2, 1, 0);
+                return new DecoderReuseEvaluation(this.name, format3, format4, 1, 0);
             }
         }
-        return new DecoderReuseEvaluation(this.name, format, format2, 0, i);
+        return new DecoderReuseEvaluation(this.name, format3, format4, 0, i);
     }
 
     public boolean isVideoSizeAndRateSupportedV21(int i, int i2, double d) {
@@ -343,11 +341,12 @@ public final class MediaCodecInfo {
     }
 
     private static boolean needsDisableAdaptationWorkaround(String str) {
-        if (Util.SDK_INT <= 22) {
-            String str2 = Util.MODEL;
-            if (("ODROID-XU3".equals(str2) || "Nexus 10".equals(str2)) && ("OMX.Exynos.AVC.Decoder".equals(str) || "OMX.Exynos.AVC.Decoder.secure".equals(str))) {
-                return true;
-            }
+        if (Util.SDK_INT > 22) {
+            return false;
+        }
+        String str2 = Util.MODEL;
+        if ("ODROID-XU3".equals(str2) || "Nexus 10".equals(str2)) {
+            return "OMX.Exynos.AVC.Decoder".equals(str) || "OMX.Exynos.AVC.Decoder.secure".equals(str);
         }
         return false;
     }
@@ -365,13 +364,11 @@ public final class MediaCodecInfo {
     }
 
     private static boolean needsProfileExcludedWorkaround(String str, int i) {
-        if ("video/hevc".equals(str) && 2 == i) {
-            String str2 = Util.DEVICE;
-            if ("sailfish".equals(str2) || "marlin".equals(str2)) {
-                return true;
-            }
+        if (!"video/hevc".equals(str) || 2 != i) {
+            return false;
         }
-        return false;
+        String str2 = Util.DEVICE;
+        return "sailfish".equals(str2) || "marlin".equals(str2);
     }
 
     private static final class Api29 {

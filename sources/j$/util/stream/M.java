@@ -1,51 +1,36 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.IntConsumer;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class M extends P implements k2 {
-    final IntConsumer b;
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void p(Object obj) {
-        m((Integer) obj);
-    }
-
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
-    }
+public final class M extends N {
+    public final Consumer b;
 
     @Override // java.util.function.Supplier
     public final /* bridge */ /* synthetic */ Object get() {
         return null;
     }
 
-    @Override // j$.util.stream.k2
-    public final /* synthetic */ void m(Integer num) {
-        w0.g(this, num);
-    }
-
-    @Override // j$.util.stream.G3
-    public final Object b(b bVar, Spliterator spliterator) {
-        bVar.U(spliterator, this);
+    @Override // j$.util.stream.y3
+    public final Object b(a aVar, Spliterator spliterator) {
+        aVar.Q(spliterator, this);
         return null;
     }
 
-    @Override // j$.util.stream.G3
-    public final /* bridge */ /* synthetic */ Object c(b bVar, Spliterator spliterator) {
-        e(bVar, spliterator);
+    @Override // j$.util.stream.y3
+    public final /* bridge */ /* synthetic */ Object c(a aVar, Spliterator spliterator) {
+        e(aVar, spliterator);
         return null;
     }
 
-    M(IntConsumer intConsumer, boolean z) {
+    public M(Consumer consumer, boolean z) {
         super(z);
-        this.b = intConsumer;
+        this.b = consumer;
     }
 
-    @Override // j$.util.stream.P, j$.util.stream.m2
-    public final void accept(int i) {
-        this.b.accept(i);
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        this.b.accept(obj);
     }
 }

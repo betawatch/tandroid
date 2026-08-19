@@ -161,7 +161,8 @@ final class zzcc extends BillingClientImpl {
     public final void consumeAsync(final ConsumeParams consumeParams, final ConsumeResponseListener consumeResponseListener) {
         zzaU(4, new Consumer() { // from class: com.android.billingclient.api.zzbq
             @Override // java.util.function.Consumer
-            public final void accept(Object obj) {
+            /* renamed from: accept */
+            public final void s(Object obj) {
                 ConsumeResponseListener.this.onConsumeResponse((BillingResult) obj, consumeParams.getPurchaseToken());
             }
 
@@ -180,7 +181,8 @@ final class zzcc extends BillingClientImpl {
     public final BillingResult launchBillingFlow(final Activity activity, final BillingFlowParams billingFlowParams) {
         Consumer consumer = new Consumer() { // from class: com.android.billingclient.api.zzbx
             @Override // java.util.function.Consumer
-            public final void accept(Object obj) {
+            /* renamed from: accept */
+            public final void s(Object obj) {
                 zzcc.this.zzaC((BillingResult) obj);
             }
 
@@ -197,7 +199,7 @@ final class zzcc extends BillingClientImpl {
         int zzaL = zzaL(zzaR(2));
         if (zzaP(zzaL)) {
             BillingResult zzaQ = zzaQ(2, zzaL);
-            consumer.accept(zzaQ);
+            consumer.s(zzaQ);
             return zzaQ;
         }
         try {
@@ -214,7 +216,8 @@ final class zzcc extends BillingClientImpl {
     public final void queryProductDetailsAsync(final QueryProductDetailsParams queryProductDetailsParams, final ProductDetailsResponseListener productDetailsResponseListener) {
         zzaU(7, new Consumer() { // from class: com.android.billingclient.api.zzbn
             @Override // java.util.function.Consumer
-            public final void accept(Object obj) {
+            /* renamed from: accept */
+            public final void s(Object obj) {
                 ArrayList arrayList = new ArrayList();
                 ProductDetailsResponseListener.this.onProductDetailsResponse((BillingResult) obj, arrayList);
             }

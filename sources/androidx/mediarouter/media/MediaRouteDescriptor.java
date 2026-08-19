@@ -321,9 +321,9 @@ public final class MediaRouteDescriptor {
         public Builder setExtras(Bundle bundle) {
             if (bundle == null) {
                 this.mBundle.putBundle("extras", null);
-            } else {
-                this.mBundle.putBundle("extras", new Bundle(bundle));
+                return this;
             }
+            this.mBundle.putBundle("extras", new Bundle(bundle));
             return this;
         }
 

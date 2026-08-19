@@ -34,7 +34,6 @@ final class zzp implements ServiceConnection, zzt {
         Context context;
         ConnectionTracker connectionTracker;
         Context context2;
-        ConnectionResult connectionResult;
         ConnectionTracker connectionTracker2;
         Context context3;
         Handler handler;
@@ -58,21 +57,24 @@ final class zzp implements ServiceConnection, zzt {
                     handler2 = zzpVar.zza.zzd;
                     j = zzpVar.zza.zzh;
                     handler2.sendMessageDelayed(obtainMessage, j);
-                    connectionResult = ConnectionResult.RESULT_SUCCESS;
-                } else {
-                    zzpVar.zzc = 2;
-                    try {
-                        zzs zzsVar2 = zzpVar.zza;
-                        connectionTracker2 = zzsVar2.zzf;
-                        context3 = zzsVar2.zzc;
-                        connectionTracker2.unbindService(context3, zzpVar);
-                    } catch (IllegalArgumentException unused) {
-                    }
-                    connectionResult = new ConnectionResult(16);
+                    ConnectionResult connectionResult = ConnectionResult.RESULT_SUCCESS;
+                    StrictMode.setVmPolicy(zza);
+                    return connectionResult;
                 }
-                return connectionResult;
-            } finally {
+                zzpVar.zzc = 2;
+                try {
+                    zzs zzsVar2 = zzpVar.zza;
+                    connectionTracker2 = zzsVar2.zzf;
+                    context3 = zzsVar2.zzc;
+                    connectionTracker2.unbindService(context3, zzpVar);
+                } catch (IllegalArgumentException unused) {
+                }
+                ConnectionResult connectionResult2 = new ConnectionResult(16);
                 StrictMode.setVmPolicy(zza);
+                return connectionResult2;
+            } catch (Throwable th) {
+                StrictMode.setVmPolicy(zza);
+                throw th;
             }
         } catch (zzaj e) {
             return e.zza;

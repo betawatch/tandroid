@@ -70,7 +70,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x010d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x010c, code lost:
     
         r4 = null;
      */
@@ -296,7 +296,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0048, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0049, code lost:
     
         r2 = null;
      */
@@ -388,7 +388,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.MessageContainsEmojiButton$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                MessageContainsEmojiButton.this.lambda$didReceivedNotification$0(z, valueAnimator2);
+                MessageContainsEmojiButton.$r8$lambda$npMqoLsKjbjExLw5C4ubJUmDm9s(MessageContainsEmojiButton.this, z, valueAnimator2);
             }
         });
         this.loadAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -397,12 +397,12 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         this.loadAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$0(boolean z, ValueAnimator valueAnimator) {
-        this.loadT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$npMqoLsKjbjExLw5C4ubJUmDm9s(MessageContainsEmojiButton messageContainsEmojiButton, boolean z, ValueAnimator valueAnimator) {
+        messageContainsEmojiButton.getClass();
+        messageContainsEmojiButton.loadT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        messageContainsEmojiButton.invalidate();
         if (z) {
-            requestLayout();
+            messageContainsEmojiButton.requestLayout();
         }
     }
 

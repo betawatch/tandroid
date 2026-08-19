@@ -79,10 +79,12 @@ class TwilightManager {
         if (j2 == -1 || j3 == -1) {
             j = currentTimeMillis + 43200000;
         } else {
-            if (currentTimeMillis <= j3) {
-                j4 = currentTimeMillis > j2 ? j3 : j2;
+            if (currentTimeMillis > j3) {
+                j2 = j4;
+            } else if (currentTimeMillis > j2) {
+                j2 = j3;
             }
-            j = j4 + 60000;
+            j = j2 + 60000;
         }
         twilightState.isNight = z;
         twilightState.nextUpdate = j;

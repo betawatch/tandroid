@@ -77,17 +77,17 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
                     jsonReader.endArray();
                 }
                 jsonReader.endArray();
-            } else {
-                jsonReader.beginObject();
-                while (jsonReader.hasNext()) {
-                    JsonReaderInternalAccess.INSTANCE.promoteNameToValue(jsonReader);
-                    Object read2 = this.keyTypeAdapter.read(jsonReader);
-                    if (map.put(read2, this.valueTypeAdapter.read(jsonReader)) != null) {
-                        throw new JsonSyntaxException("duplicate key: " + read2);
-                    }
-                }
-                jsonReader.endObject();
+                return map;
             }
+            jsonReader.beginObject();
+            while (jsonReader.hasNext()) {
+                JsonReaderInternalAccess.INSTANCE.promoteNameToValue(jsonReader);
+                Object read2 = this.keyTypeAdapter.read(jsonReader);
+                if (map.put(read2, this.valueTypeAdapter.read(jsonReader)) != null) {
+                    throw new JsonSyntaxException("duplicate key: " + read2);
+                }
+            }
+            jsonReader.endObject();
             return map;
         }
 

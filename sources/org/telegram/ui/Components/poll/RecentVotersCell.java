@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
@@ -87,7 +86,7 @@ public class RecentVotersCell extends FrameLayout {
         final VotesList votesList = new VotesList(baseFragment.getCurrentAccount(), baseFragment.getMessagesController().getInputPeer(j), i, bArr, new Runnable() { // from class: org.telegram.ui.Components.poll.RecentVotersCell$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RecentVotersCell.this.lambda$createListView$0();
+                RecentVotersCell.this.listView.adapter.update(true);
             }
         }, callback);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.poll.RecentVotersCell$$ExternalSyntheticLambda1
@@ -123,11 +122,6 @@ public class RecentVotersCell extends FrameLayout {
             }
         });
         return this.listView;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createListView$0() {
-        this.listView.adapter.update(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -170,43 +164,46 @@ public class RecentVotersCell extends FrameLayout {
             ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_getPollVotes, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.poll.RecentVotersCell$VotesList$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    RecentVotersCell.VotesList.this.lambda$load$0((TLRPC.TL_messages_votesList) obj, (TLRPC.TL_error) obj2);
+                    RecentVotersCell.VotesList.$r8$lambda$Tr7iptCM8TYxXZb72A_eJ6F0Hso(RecentVotersCell.VotesList.this, (TLRPC.TL_messages_votesList) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$load$0(TLRPC.TL_messages_votesList tL_messages_votesList, TLRPC.TL_error tL_error) {
-            this.loading = false;
+        public static /* synthetic */ void $r8$lambda$Tr7iptCM8TYxXZb72A_eJ6F0Hso(VotesList votesList, TLRPC.TL_messages_votesList tL_messages_votesList, TLRPC.TL_error tL_error) {
+            votesList.loading = false;
             if (tL_messages_votesList != null) {
-                MessagesController.getInstance(this.currentAccount).putUsers(tL_messages_votesList.users, false);
-                MessagesController.getInstance(this.currentAccount).putChats(tL_messages_votesList.chats, false);
+                MessagesController.getInstance(votesList.currentAccount).putUsers(tL_messages_votesList.users, false);
+                MessagesController.getInstance(votesList.currentAccount).putChats(tL_messages_votesList.chats, false);
                 String str = tL_messages_votesList.next_offset;
-                this.nextOffset = str;
-                this.completed = str == null;
-                this.count = tL_messages_votesList.count;
-                this.votes.addAll(tL_messages_votesList.votes);
-                Runnable runnable = this.onUpdate;
+                votesList.nextOffset = str;
+                votesList.completed = str == null;
+                votesList.count = tL_messages_votesList.count;
+                votesList.votes.addAll(tL_messages_votesList.votes);
+                Runnable runnable = votesList.onUpdate;
                 if (runnable != null) {
                     runnable.run();
                     return;
                 }
                 return;
             }
-            this.nextOffset = null;
-            this.completed = true;
+            votesList.nextOffset = null;
+            votesList.completed = true;
         }
 
         public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
             arrayList.clear();
-            Iterator it = this.votes.iterator();
-            while (it.hasNext()) {
-                TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) it.next();
+            ArrayList arrayList2 = this.votes;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) obj;
                 final long peerDialogId = DialogObject.getPeerDialogId(messagePeerVote.peer);
                 arrayList.add(Factory.of(MessagesController.getInstance(this.currentAccount).getUserOrChat(peerDialogId), peerDialogId, messagePeerVote.date, new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.RecentVotersCell$VotesList$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        RecentVotersCell.VotesList.this.lambda$fillItems$1(peerDialogId, view);
+                        RecentVotersCell.VotesList.$r8$lambda$FWhD4i-E8bM0SvRU6HI1zX8FouU(RecentVotersCell.VotesList.this, peerDialogId, view);
                     }
                 }));
             }
@@ -224,9 +221,8 @@ public class RecentVotersCell extends FrameLayout {
             arrayList.add(FlickerFactory.of());
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fillItems$1(long j, View view) {
-            Utilities.Callback callback = this.onClick;
+        public static /* synthetic */ void $r8$lambda$FWhD4i-E8bM0SvRU6HI1zX8FouU(VotesList votesList, long j, View view) {
+            Utilities.Callback callback = votesList.onClick;
             if (callback != null) {
                 callback.run(Long.valueOf(j));
             }

@@ -202,18 +202,18 @@ public class TopicCreateFragment extends BaseFragment {
                 }
             }
         });
-        4 r3 = new 4(context);
-        r3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda0
+        4 r4 = new 4(context);
+        r4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicCreateFragment.this.lambda$createView$0(view);
+                TopicCreateFragment.$r8$lambda$a2RNku4DYrZTpVveSVV7P8P92z0(TopicCreateFragment.this, view);
             }
         });
         for (int i2 = 0; i2 < 2; i2++) {
             this.backupImageView[i2] = new BackupImageView(context);
-            r3.addView(this.backupImageView[i2], LayoutHelper.createFrame(28, 28, 17));
+            r4.addView(this.backupImageView[i2], LayoutHelper.createFrame(28, 28, 17));
         }
-        frameLayout.addView(r3, LayoutHelper.createFrame(40, 40.0f, 16, 10.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(r4, LayoutHelper.createFrame(40, 40.0f, 16, 10.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout2.addView(headerCell);
@@ -272,7 +272,7 @@ public class TopicCreateFragment extends BaseFragment {
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(R.drawable.msg_filled_general);
             imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_inMenu), PorterDuff.Mode.MULTIPLY));
-            r3.addView(imageView, LayoutHelper.createFrame(22, 22, 17));
+            r4.addView(imageView, LayoutHelper.createFrame(22, 22, 17));
             frameLayout2.addView(new View(context), LayoutHelper.createFrame(-1, 8.0f));
             FrameLayout frameLayout3 = new FrameLayout(context);
             frameLayout3.setBackground(Theme.createRoundRectDrawableShadowed(AndroidUtilities.dp(16.0f), getThemedColor(i3)));
@@ -284,7 +284,8 @@ public class TopicCreateFragment extends BaseFragment {
             this.checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicCreateFragment.this.lambda$createView$1(view);
+                    TopicCreateFragment topicCreateFragment = TopicCreateFragment.this;
+                    topicCreateFragment.checkBoxCell.setChecked(!topicCreateFragment.isChecked());
                 }
             });
             frameLayout3.addView(this.checkBoxCell, LayoutHelper.createFrame(-1, 50, 119));
@@ -305,12 +306,10 @@ public class TopicCreateFragment extends BaseFragment {
     }
 
     class 1 extends ActionBar.ActionBarMenuOnItemClick {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onItemClick$2(TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$amldw3qyO9IcHiCsIMINuL4IC4E(TLObject tLObject, TLRPC.TL_error tL_error) {
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onItemClick$3(TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$otLZCyN9xeFR8YST98V_B6y2Ojk(TLObject tLObject, TLRPC.TL_error tL_error) {
         }
 
         1() {
@@ -318,7 +317,7 @@ public class TopicCreateFragment extends BaseFragment {
 
         /* JADX WARN: Code restructure failed: missing block: B:41:0x0100, code lost:
         
-            if (r12.topicForEdit.icon_emoji_id != r12.selectedEmojiDocumentId) goto L43;
+            if (r12.topicForEdit.icon_emoji_id != r12.selectedEmojiDocumentId) goto L44;
          */
         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
         /*
@@ -361,7 +360,7 @@ public class TopicCreateFragment extends BaseFragment {
                 ConnectionsManager.getInstance(((BaseFragment) topicCreateFragment).currentAccount).sendRequest(tL_messages_createForumTopic, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda0
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        TopicCreateFragment.1.this.lambda$onItemClick$1(obj, alertDialog, tLObject, tL_error);
+                        TopicCreateFragment.1.$r8$lambda$PwIO4Da7WdhSX3-3G__7E4krU8w(TopicCreateFragment.1.this, obj, alertDialog, tLObject, tL_error);
                     }
                 });
                 return;
@@ -397,7 +396,7 @@ public class TopicCreateFragment extends BaseFragment {
                 ConnectionsManager.getInstance(((BaseFragment) topicCreateFragment3).currentAccount).sendRequest(tL_messages_editForumTopic, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        TopicCreateFragment.1.lambda$onItemClick$2(tLObject, tL_error);
+                        TopicCreateFragment.1.$r8$lambda$otLZCyN9xeFR8YST98V_B6y2Ojk(tLObject, tL_error);
                     }
                 });
                 TopicCreateFragment topicCreateFragment4 = TopicCreateFragment.this;
@@ -410,7 +409,7 @@ public class TopicCreateFragment extends BaseFragment {
                     ConnectionsManager.getInstance(((BaseFragment) TopicCreateFragment.this).currentAccount).sendRequest(tL_messages_editForumTopic2, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda2
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            TopicCreateFragment.1.lambda$onItemClick$3(tLObject, tL_error);
+                            TopicCreateFragment.1.$r8$lambda$amldw3qyO9IcHiCsIMINuL4IC4E(tLObject, tL_error);
                         }
                     });
                 }
@@ -434,18 +433,18 @@ public class TopicCreateFragment extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$1(final String str, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$PwIO4Da7WdhSX3-3G__7E4krU8w(final 1 r0, final String str, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            r0.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicCreateFragment.1.this.lambda$onItemClick$0(tLObject, str, alertDialog);
+                    TopicCreateFragment.1.$r8$lambda$wSDO2KTp9gW8_7FbW7aysWR26V8(TopicCreateFragment.1.this, tLObject, str, alertDialog);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$0(TLObject tLObject, String str, AlertDialog alertDialog) {
+        public static /* synthetic */ void $r8$lambda$wSDO2KTp9gW8_7FbW7aysWR26V8(1 r17, TLObject tLObject, String str, AlertDialog alertDialog) {
+            r17.getClass();
             if (tLObject != null) {
                 TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                 for (int i = 0; i < updates.updates.size(); i++) {
@@ -557,7 +556,7 @@ public class TopicCreateFragment extends BaseFragment {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicCreateFragment$4$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            TopicCreateFragment.4.this.lambda$setPressed$0(valueAnimator2);
+                            TopicCreateFragment.4.$r8$lambda$2_nAxGvF0zBLtqa9kS8rv7Tx-VE(TopicCreateFragment.4.this, valueAnimator2);
                         }
                     });
                     this.backAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.TopicCreateFragment.4.1
@@ -574,10 +573,10 @@ public class TopicCreateFragment extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setPressed$0(ValueAnimator valueAnimator) {
-            this.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$2_nAxGvF0zBLtqa9kS8rv7Tx-VE(4 r0, ValueAnimator valueAnimator) {
+            r0.getClass();
+            r0.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            r0.invalidate();
         }
 
         public void updatePressedProgress() {
@@ -591,16 +590,10 @@ public class TopicCreateFragment extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view) {
-        if (this.selectedEmojiDocumentId == 0 && this.topicForEdit == null) {
-            this.iconColor = this.forumBubbleDrawable.moveNexColor();
+    public static /* synthetic */ void $r8$lambda$a2RNku4DYrZTpVveSVV7P8P92z0(TopicCreateFragment topicCreateFragment, View view) {
+        if (topicCreateFragment.selectedEmojiDocumentId == 0 && topicCreateFragment.topicForEdit == null) {
+            topicCreateFragment.iconColor = topicCreateFragment.forumBubbleDrawable.moveNexColor();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view) {
-        this.checkBoxCell.setChecked(!r2.isChecked());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -619,7 +612,7 @@ public class TopicCreateFragment extends BaseFragment {
                 BulletinFactory.of(this).createEmojiBulletin(findDocument, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiHint)), LocaleController.getString(R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicCreateFragment.this.lambda$selectEmoji$2();
+                        TopicCreateFragment.$r8$lambda$ctetwWiUVV4z_Iz0z1lb0rzXQcc(TopicCreateFragment.this);
                     }
                 }).show();
                 return;
@@ -648,9 +641,9 @@ public class TopicCreateFragment extends BaseFragment {
         AndroidUtilities.updateViewVisibilityAnimated(this.backupImageView[1], false, 0.5f, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$selectEmoji$2() {
-        new PremiumFeatureBottomSheet(this, 11, false).show();
+    public static /* synthetic */ void $r8$lambda$ctetwWiUVV4z_Iz0z1lb0rzXQcc(TopicCreateFragment topicCreateFragment) {
+        topicCreateFragment.getClass();
+        new PremiumFeatureBottomSheet(topicCreateFragment, 11, false).show();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

@@ -47,15 +47,13 @@ public class OnItemVisibilityChangedDelegateImpl implements OnItemVisibilityChan
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onItemVisibilityChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.OnItemVisibilityChangedDelegateImpl$OnItemVisibilityChangedListenerStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onItemVisibilityChanged$0;
-                    lambda$onItemVisibilityChanged$0 = OnItemVisibilityChangedDelegateImpl.OnItemVisibilityChangedListenerStub.this.lambda$onItemVisibilityChanged$0(i, i2);
-                    return lambda$onItemVisibilityChanged$0;
+                    return OnItemVisibilityChangedDelegateImpl.OnItemVisibilityChangedListenerStub.$r8$lambda$DQ2dP-NndKRSDvlhWIUdtzTOBak(OnItemVisibilityChangedDelegateImpl.OnItemVisibilityChangedListenerStub.this, i, i2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onItemVisibilityChanged$0(int i, int i2) {
+        public static /* synthetic */ Object $r8$lambda$DQ2dP-NndKRSDvlhWIUdtzTOBak(OnItemVisibilityChangedListenerStub onItemVisibilityChangedListenerStub, int i, int i2) {
+            onItemVisibilityChangedListenerStub.getClass();
             throw null;
         }
     }

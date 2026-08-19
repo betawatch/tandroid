@@ -130,7 +130,7 @@ public class PhotoView extends EntityView {
         }, 1920, 1920, false, false);
         this.bitmap = scaledBitmap;
         if (scaledBitmap != null) {
-            lambda$segmentImage$2(scaledBitmap);
+            segmentImage(scaledBitmap);
         }
         updatePosition();
     }
@@ -167,8 +167,7 @@ public class PhotoView extends EntityView {
         return round + "_" + round;
     }
 
-    /* renamed from: segmentImage, reason: merged with bridge method [inline-methods] */
-    public void lambda$segmentImage$2(final Bitmap bitmap) {
+    public void segmentImage(final Bitmap bitmap) {
         if (this.segmentingLoaded || this.segmentingLoading || bitmap == null || Build.VERSION.SDK_INT < 24) {
             return;
         }
@@ -177,35 +176,33 @@ public class PhotoView extends EntityView {
         client.process(InputImage.fromBitmap(bitmap, this.orientation)).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                PhotoView.this.lambda$segmentImage$1((SubjectSegmentationResult) obj);
+                PhotoView.$r8$lambda$Ceqiw0USeBo7tDnkmcAzX_vJjUw(PhotoView.this, (SubjectSegmentationResult) obj);
             }
         }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.OnFailureListener
             public final void onFailure(Exception exc) {
-                PhotoView.this.lambda$segmentImage$3(bitmap, exc);
+                PhotoView.$r8$lambda$3hhWBZgOCx86xUh2CNUyePzNRGc(PhotoView.this, bitmap, exc);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$segmentImage$1(SubjectSegmentationResult subjectSegmentationResult) {
-        this.segmentingLoaded = true;
-        this.segmentingLoading = false;
+    public static /* synthetic */ void $r8$lambda$Ceqiw0USeBo7tDnkmcAzX_vJjUw(PhotoView photoView, SubjectSegmentationResult subjectSegmentationResult) {
+        photoView.segmentingLoaded = true;
+        photoView.segmentingLoading = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$segmentImage$3(final Bitmap bitmap, Exception exc) {
-        this.segmentingLoading = false;
+    public static /* synthetic */ void $r8$lambda$3hhWBZgOCx86xUh2CNUyePzNRGc(final PhotoView photoView, final Bitmap bitmap, Exception exc) {
+        photoView.segmentingLoading = false;
         FileLog.e(exc);
-        if (isWaitingMlKitError(exc) && isAttachedToWindow()) {
+        if (isWaitingMlKitError(exc) && photoView.isAttachedToWindow()) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.PhotoView$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoView.this.lambda$segmentImage$2(bitmap);
+                    PhotoView.this.segmentImage(bitmap);
                 }
             }, 2000L);
         } else {
-            this.segmentingLoaded = true;
+            photoView.segmentingLoaded = true;
         }
     }
 
@@ -395,7 +392,7 @@ public class PhotoView extends EntityView {
                     canvas.scale(f7, f7);
                     MediaController.CropState cropState2 = this.crop;
                     canvas.translate(cropState2.cropPx * f5, cropState2.cropPy * f6);
-                    canvas.rotate(this.crop.cropRotate + r2.transformRotation);
+                    canvas.rotate(this.crop.cropRotate + r3.transformRotation);
                     if (this.crop.mirrored) {
                         canvas.scale(-1.0f, 1.0f);
                     }
@@ -584,6 +581,7 @@ public class PhotoView extends EntityView {
 
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
+            Canvas canvas2;
             super.onDraw(canvas);
             int saveCount = canvas.getSaveCount();
             float showAlpha = getShowAlpha();
@@ -591,7 +589,11 @@ public class PhotoView extends EntityView {
                 return;
             }
             if (showAlpha < 1.0f) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha * 255.0f), 31);
+                int i = (int) (showAlpha * 255.0f);
+                canvas2 = canvas;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i, 31);
+            } else {
+                canvas2 = canvas;
             }
             float dp = AndroidUtilities.dp(2.0f);
             float dpf2 = AndroidUtilities.dpf2(5.66f);
@@ -617,20 +619,20 @@ public class PhotoView extends EntityView {
             float f9 = f2 - f5;
             rectF.set(f9, dp2, f2, f8);
             this.path.arcTo(rectF, 270.0f, 90.0f);
-            canvas.drawPath(this.path, this.paint);
+            canvas2.drawPath(this.path, this.paint);
             this.path.rewind();
             float f10 = f3 - f7;
             rectF.set(dp2, f10, f6, f3);
             this.path.arcTo(rectF, 180.0f, -90.0f);
             rectF.set(f9, f10, f2, f3);
             this.path.arcTo(rectF, 90.0f, -90.0f);
-            canvas.drawPath(this.path, this.paint);
+            canvas2.drawPath(this.path, this.paint);
             float f11 = dp2 + f4;
-            canvas.drawCircle(dp2, f11, dpf2, this.dotStrokePaint);
-            canvas.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
-            canvas.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
+            canvas2.drawCircle(dp2, f11, dpf2, this.dotStrokePaint);
+            canvas2.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
+            canvas2.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
+            canvas2.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             float f12 = dp2 + min2;
             float f13 = f3 - min2;
             canvas.drawLine(dp2, f12, dp2, f13, this.paint);

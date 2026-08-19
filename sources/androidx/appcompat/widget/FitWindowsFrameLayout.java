@@ -9,11 +9,12 @@ import android.widget.FrameLayout;
 public class FitWindowsFrameLayout extends FrameLayout {
     private FitWindowsViewGroup$OnFitSystemWindowsListener mListener;
 
-    public void setOnFitSystemWindowsListener(FitWindowsViewGroup$OnFitSystemWindowsListener fitWindowsViewGroup$OnFitSystemWindowsListener) {
-    }
-
     public FitWindowsFrameLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
+    }
+
+    public void setOnFitSystemWindowsListener(FitWindowsViewGroup$OnFitSystemWindowsListener fitWindowsViewGroup$OnFitSystemWindowsListener) {
+        this.mListener = fitWindowsViewGroup$OnFitSystemWindowsListener;
     }
 
     @Override // android.view.View

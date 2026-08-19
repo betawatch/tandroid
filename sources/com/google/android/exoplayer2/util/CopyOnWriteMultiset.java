@@ -14,8 +14,8 @@ import java.util.Set;
 public final class CopyOnWriteMultiset implements Iterable {
     private final Object lock = new Object();
     private final Map elementCounts = new HashMap();
-    private Set elementSet = Collections.emptySet();
-    private List elements = Collections.emptyList();
+    private Set elementSet = Collections.EMPTY_SET;
+    private List elements = Collections.EMPTY_LIST;
 
     public void add(Object obj) {
         synchronized (this.lock) {

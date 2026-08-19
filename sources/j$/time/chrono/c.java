@@ -3,8 +3,8 @@ package j$.time.chrono;
 import j$.time.temporal.ChronoUnit;
 
 /* loaded from: classes2.dex */
-abstract /* synthetic */ class c {
-    static final /* synthetic */ int[] a;
+public abstract /* synthetic */ class c {
+    public static final /* synthetic */ int[] a;
 
     static {
         int[] iArr = new int[ChronoUnit.values().length];

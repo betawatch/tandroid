@@ -34,22 +34,15 @@ final class AutoValue_TokenResult extends TokenResult {
     }
 
     public boolean equals(Object obj) {
+        TokenResult.ResponseCode responseCode;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof TokenResult)) {
-            return false;
-        }
-        TokenResult tokenResult = (TokenResult) obj;
-        String str = this.token;
-        if (str != null ? str.equals(tokenResult.getToken()) : tokenResult.getToken() == null) {
-            if (this.tokenExpirationTimestamp == tokenResult.getTokenExpirationTimestamp()) {
-                TokenResult.ResponseCode responseCode = this.responseCode;
-                if (responseCode == null) {
-                    if (tokenResult.getResponseCode() == null) {
-                        return true;
-                    }
-                } else if (responseCode.equals(tokenResult.getResponseCode())) {
+        if (obj instanceof TokenResult) {
+            TokenResult tokenResult = (TokenResult) obj;
+            String str = this.token;
+            if (str != null ? str.equals(tokenResult.getToken()) : tokenResult.getToken() == null) {
+                if (this.tokenExpirationTimestamp == tokenResult.getTokenExpirationTimestamp() && ((responseCode = this.responseCode) != null ? responseCode.equals(tokenResult.getResponseCode()) : tokenResult.getResponseCode() == null)) {
                     return true;
                 }
             }

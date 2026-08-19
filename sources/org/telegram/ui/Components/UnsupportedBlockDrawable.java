@@ -230,13 +230,12 @@ public class UnsupportedBlockDrawable extends Drawable {
         TextPaint textPaint = this.buttonTextPaint;
         CharSequence charSequence = this.buttonText;
         float measureText = textPaint.measureText(charSequence, 0, charSequence.length());
-        int i2 = (int) ((this.buttonPaddingH * 2) + measureText);
         CharSequence charSequence2 = this.buttonText;
         TextPaint textPaint2 = this.buttonTextPaint;
         int ceil = (int) Math.ceil(measureText);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         this.buttonLayout = new StaticLayout(charSequence2, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
-        int dp = (((i - this.textLeft) - i2) - this.buttonGap) - AndroidUtilities.dp(11.0f);
+        int dp = (((i - this.textLeft) - ((int) ((this.buttonPaddingH * 2) + measureText))) - this.buttonGap) - AndroidUtilities.dp(11.0f);
         this.titleLayout = new StaticLayout(TextUtils.ellipsize(this.title, this.titlePaint, dp, TextUtils.TruncateAt.END), this.titlePaint, dp, alignment, 1.0f, 0.0f, false);
         this.subtitleLayout = new StaticLayout(this.subtitle, this.subtitlePaint, dp, alignment, 1.0f, 0.0f, false);
         int max = Math.max(this.titleLayout.getHeight() + this.titleSubtitleGap + this.subtitleLayout.getHeight(), this.buttonHeight) + (this.paddingV * 2);

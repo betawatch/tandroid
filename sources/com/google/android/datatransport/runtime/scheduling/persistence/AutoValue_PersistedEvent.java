@@ -44,11 +44,13 @@ final class AutoValue_PersistedEvent extends PersistedEvent {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof PersistedEvent)) {
-            return false;
+        if (obj instanceof PersistedEvent) {
+            PersistedEvent persistedEvent = (PersistedEvent) obj;
+            if (this.id == persistedEvent.getId() && this.transportContext.equals(persistedEvent.getTransportContext()) && this.event.equals(persistedEvent.getEvent())) {
+                return true;
+            }
         }
-        PersistedEvent persistedEvent = (PersistedEvent) obj;
-        return this.id == persistedEvent.getId() && this.transportContext.equals(persistedEvent.getTransportContext()) && this.event.equals(persistedEvent.getEvent());
+        return false;
     }
 
     public int hashCode() {

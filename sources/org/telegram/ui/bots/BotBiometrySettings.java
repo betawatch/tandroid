@@ -21,7 +21,7 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.bots.BotBiometry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BotBiometrySettings extends BaseFragment {
     private final ArrayList biometryBots = new ArrayList();
     private final HashMap botName = new HashMap();
@@ -70,19 +70,18 @@ public class BotBiometrySettings extends BaseFragment {
         BotBiometry.getBots(getContext(), this.currentAccount, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotBiometrySettings$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BotBiometrySettings.this.lambda$createView$0((ArrayList) obj);
+                BotBiometrySettings.$r8$lambda$buU3pTP4agEiSbcLsjY6rWpN0ys(BotBiometrySettings.this, (ArrayList) obj);
             }
         });
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$buU3pTP4agEiSbcLsjY6rWpN0ys(BotBiometrySettings botBiometrySettings, ArrayList arrayList) {
         UniversalAdapter universalAdapter;
-        this.biometryBots.clear();
-        this.biometryBots.addAll(arrayList);
-        UniversalRecyclerView universalRecyclerView = this.listView;
+        botBiometrySettings.biometryBots.clear();
+        botBiometrySettings.biometryBots.addAll(arrayList);
+        UniversalRecyclerView universalRecyclerView = botBiometrySettings.listView;
         if (universalRecyclerView == null || (universalAdapter = universalRecyclerView.adapter) == null) {
             return;
         }

@@ -78,20 +78,13 @@ final class AutoValue_CrashlyticsReport_ApplicationExitInfo extends CrashlyticsR
 
     public boolean equals(Object obj) {
         String str;
+        List list;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.ApplicationExitInfo)) {
-            return false;
-        }
-        CrashlyticsReport.ApplicationExitInfo applicationExitInfo = (CrashlyticsReport.ApplicationExitInfo) obj;
-        if (this.pid == applicationExitInfo.getPid() && this.processName.equals(applicationExitInfo.getProcessName()) && this.reasonCode == applicationExitInfo.getReasonCode() && this.importance == applicationExitInfo.getImportance() && this.pss == applicationExitInfo.getPss() && this.rss == applicationExitInfo.getRss() && this.timestamp == applicationExitInfo.getTimestamp() && ((str = this.traceFile) != null ? str.equals(applicationExitInfo.getTraceFile()) : applicationExitInfo.getTraceFile() == null)) {
-            List list = this.buildIdMappingForArch;
-            if (list == null) {
-                if (applicationExitInfo.getBuildIdMappingForArch() == null) {
-                    return true;
-                }
-            } else if (list.equals(applicationExitInfo.getBuildIdMappingForArch())) {
+        if (obj instanceof CrashlyticsReport.ApplicationExitInfo) {
+            CrashlyticsReport.ApplicationExitInfo applicationExitInfo = (CrashlyticsReport.ApplicationExitInfo) obj;
+            if (this.pid == applicationExitInfo.getPid() && this.processName.equals(applicationExitInfo.getProcessName()) && this.reasonCode == applicationExitInfo.getReasonCode() && this.importance == applicationExitInfo.getImportance() && this.pss == applicationExitInfo.getPss() && this.rss == applicationExitInfo.getRss() && this.timestamp == applicationExitInfo.getTimestamp() && ((str = this.traceFile) != null ? str.equals(applicationExitInfo.getTraceFile()) : applicationExitInfo.getTraceFile() == null) && ((list = this.buildIdMappingForArch) != null ? list.equals(applicationExitInfo.getBuildIdMappingForArch()) : applicationExitInfo.getBuildIdMappingForArch() == null)) {
                 return true;
             }
         }

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
     MediaCodecWrapperFactoryImpl() {
     }

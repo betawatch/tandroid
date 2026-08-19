@@ -1,100 +1,90 @@
 package j$.util;
 
-import java.util.Comparator;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class r0 implements Z {
-    private final int[] a;
-    private int b;
-    private final int c;
-    private final int d;
+public final class r0 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public String[] d;
+    public int e;
+    public int f;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        T.b(this, consumer);
+    public r0(CharSequence charSequence) {
+        Objects.requireNonNull("", "The prefix must not be null");
+        Objects.requireNonNull(charSequence, "The delimiter must not be null");
+        Objects.requireNonNull("", "The suffix must not be null");
+        this.a = "";
+        this.b = charSequence.toString();
+        this.c = "";
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return T.d(this);
+    public static int c(String str, char[] cArr, int i) {
+        int length = str.length();
+        str.getChars(0, length, cArr, i);
+        return length;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return T.e(this, i);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return T.g(this, consumer);
-    }
-
-    public r0(int[] iArr, int i, int i2, int i3) {
-        this.a = iArr;
-        this.b = i;
-        this.c = i2;
-        this.d = i3 | 16448;
-    }
-
-    @Override // j$.util.f0, j$.util.Spliterator
-    public final Z trySplit() {
-        int i = this.b;
-        int i2 = (this.c + i) >>> 1;
-        if (i >= i2) {
-            return null;
+    public final String toString() {
+        String[] strArr = this.d;
+        int i = this.e;
+        String str = this.a;
+        int length = str.length();
+        String str2 = this.c;
+        int length2 = str2.length() + length;
+        if (length2 == 0) {
+            b();
+            return i == 0 ? "" : strArr[0];
         }
-        this.b = i2;
-        return new r0(this.a, i, i2, this.d);
+        char[] cArr = new char[this.f + length2];
+        int c = c(str, cArr, 0);
+        if (i > 0) {
+            int c2 = c(strArr[0], cArr, c) + c;
+            for (int i2 = 1; i2 < i; i2++) {
+                int c3 = c(this.b, cArr, c2) + c2;
+                c2 = c(strArr[i2], cArr, c3) + c3;
+            }
+            c = c2;
+        }
+        c(str2, cArr, c);
+        return new String(cArr);
     }
 
-    @Override // j$.util.f0
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        int i;
-        intConsumer.getClass();
-        int[] iArr = this.a;
-        int length = iArr.length;
-        int i2 = this.c;
-        if (length < i2 || (i = this.b) < 0) {
-            return;
+    public final void a(CharSequence charSequence) {
+        String valueOf = String.valueOf(charSequence);
+        String[] strArr = this.d;
+        if (strArr == null) {
+            this.d = new String[8];
+        } else {
+            int i = this.e;
+            if (i == strArr.length) {
+                this.d = (String[]) Arrays.copyOf(strArr, i * 2);
+            }
+            this.f = this.b.length() + this.f;
         }
-        this.b = i2;
-        if (i < i2) {
+        this.f = valueOf.length() + this.f;
+        String[] strArr2 = this.d;
+        int i2 = this.e;
+        this.e = i2 + 1;
+        strArr2[i2] = valueOf;
+    }
+
+    public final void b() {
+        String[] strArr;
+        if (this.e > 1) {
+            char[] cArr = new char[this.f];
+            int c = c(this.d[0], cArr, 0);
+            int i = 1;
             do {
-                intConsumer.accept(iArr[i]);
+                int c2 = c(this.b, cArr, c) + c;
+                c = c(this.d[i], cArr, c2) + c2;
+                strArr = this.d;
+                strArr[i] = null;
                 i++;
-            } while (i < i2);
+            } while (i < this.e);
+            this.e = 1;
+            strArr[0] = new String(cArr);
         }
-    }
-
-    @Override // j$.util.f0
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        intConsumer.getClass();
-        int i = this.b;
-        if (i < 0 || i >= this.c) {
-            return false;
-        }
-        this.b = i + 1;
-        intConsumer.accept(this.a[i]);
-        return true;
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.c - this.b;
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.d;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        if (T.e(this, 4)) {
-            return null;
-        }
-        throw new IllegalStateException();
     }
 }

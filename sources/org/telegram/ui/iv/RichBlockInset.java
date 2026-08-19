@@ -36,7 +36,7 @@ class RichBlockInset {
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichBlockInset$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    RichBlockInset.this.lambda$apply$0(applier, valueAnimator2);
+                    RichBlockInset.$r8$lambda$KfrOuEFUlBLg4raSGc-YP-QEdYY(RichBlockInset.this, applier, valueAnimator2);
                 }
             });
             ofInt.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -49,10 +49,10 @@ class RichBlockInset {
         applier.apply(insetFor);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$apply$0(Applier applier, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$KfrOuEFUlBLg4raSGc-YP-QEdYY(RichBlockInset richBlockInset, Applier applier, ValueAnimator valueAnimator) {
+        richBlockInset.getClass();
         int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        this.currentPx = intValue;
+        richBlockInset.currentPx = intValue;
         applier.apply(intValue);
     }
 }

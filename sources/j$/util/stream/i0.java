@@ -1,76 +1,26 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-abstract class i0 extends j0 {
-    public final /* synthetic */ int l;
+public final /* synthetic */ class i0 implements Supplier {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i0(b bVar, int i, int i2) {
-        super(bVar, i);
-        this.l = i2;
+    public /* synthetic */ i0(o0 o0Var, int i) {
+        this.a = i;
+        this.b = o0Var;
     }
 
-    @Override // j$.util.stream.b
-    final boolean P() {
-        switch (this.l) {
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        switch (this.a) {
             case 0:
-                return true;
+                return new l0(this.b);
+            case 1:
+                return new k0(this.b);
             default:
-                return false;
+                return new m0(this.b);
         }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        switch (this.l) {
-            case 0:
-                if (!K()) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!K()) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return new v(this, a3.r, 4);
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ LongStream parallel() {
-        switch (this.l) {
-            case 0:
-                parallel();
-                break;
-            default:
-                parallel();
-                break;
-        }
-        return this;
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ LongStream sequential() {
-        switch (this.l) {
-            case 0:
-                sequential();
-                break;
-            default:
-                sequential();
-                break;
-        }
-        return this;
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        switch (this.l) {
-        }
-        return spliterator();
     }
 }

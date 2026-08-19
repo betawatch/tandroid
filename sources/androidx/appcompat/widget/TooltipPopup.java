@@ -132,12 +132,11 @@ class TooltipPopup {
     private static View getAppRootView(View view) {
         View rootView = view.getRootView();
         ViewGroup.LayoutParams layoutParams = rootView.getLayoutParams();
-        if ((layoutParams instanceof WindowManager.LayoutParams) && ((WindowManager.LayoutParams) layoutParams).type == 2) {
-            return rootView;
-        }
-        for (Context context = view.getContext(); context instanceof ContextWrapper; context = ((ContextWrapper) context).getBaseContext()) {
-            if (context instanceof Activity) {
-                return ((Activity) context).getWindow().getDecorView();
+        if (!(layoutParams instanceof WindowManager.LayoutParams) || ((WindowManager.LayoutParams) layoutParams).type != 2) {
+            for (Context context = view.getContext(); context instanceof ContextWrapper; context = ((ContextWrapper) context).getBaseContext()) {
+                if (context instanceof Activity) {
+                    return ((Activity) context).getWindow().getDecorView();
+                }
             }
         }
         return rootView;

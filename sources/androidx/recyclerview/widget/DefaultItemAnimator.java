@@ -10,7 +10,6 @@ import android.view.animation.Interpolator;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.ConnectionsManager;
@@ -128,55 +127,67 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         if (isEmpty && isEmpty2 && isEmpty4 && isEmpty3) {
             return;
         }
-        Iterator it = this.mPendingRemovals.iterator();
-        while (it.hasNext()) {
-            animateRemoveImpl((RecyclerView.ViewHolder) it.next());
+        ArrayList arrayList = this.mPendingRemovals;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            animateRemoveImpl((RecyclerView.ViewHolder) obj);
         }
         this.mPendingRemovals.clear();
         if (!isEmpty2) {
-            final ArrayList arrayList = new ArrayList();
-            arrayList.addAll(this.mPendingMoves);
-            this.mMovesList.add(arrayList);
+            final ArrayList arrayList2 = new ArrayList();
+            arrayList2.addAll(this.mPendingMoves);
+            this.mMovesList.add(arrayList2);
             this.mPendingMoves.clear();
             Runnable runnable = new Runnable() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    Iterator it2 = arrayList.iterator();
-                    while (it2.hasNext()) {
-                        MoveInfo moveInfo = (MoveInfo) it2.next();
+                    ArrayList arrayList3 = arrayList2;
+                    int size2 = arrayList3.size();
+                    int i2 = 0;
+                    while (i2 < size2) {
+                        Object obj2 = arrayList3.get(i2);
+                        i2++;
+                        MoveInfo moveInfo = (MoveInfo) obj2;
                         DefaultItemAnimator.this.animateMoveImpl(moveInfo.holder, moveInfo);
                         DefaultItemAnimator.this.currentMoves.add(moveInfo);
                     }
-                    arrayList.clear();
-                    DefaultItemAnimator.this.mMovesList.remove(arrayList);
+                    arrayList2.clear();
+                    DefaultItemAnimator.this.mMovesList.remove(arrayList2);
                 }
             };
             if (this.delayAnimations && !isEmpty) {
-                ViewCompat.postOnAnimationDelayed(((MoveInfo) arrayList.get(0)).holder.itemView, runnable, getMoveAnimationDelay());
+                ViewCompat.postOnAnimationDelayed(((MoveInfo) arrayList2.get(0)).holder.itemView, runnable, getMoveAnimationDelay());
             } else {
                 runnable.run();
             }
         }
         if (!isEmpty3) {
-            final ArrayList arrayList2 = new ArrayList();
-            arrayList2.addAll(this.mPendingChanges);
-            this.mChangesList.add(arrayList2);
+            final ArrayList arrayList3 = new ArrayList();
+            arrayList3.addAll(this.mPendingChanges);
+            this.mChangesList.add(arrayList3);
             this.mPendingChanges.clear();
             Runnable runnable2 = new Runnable() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    Iterator it2 = arrayList2.iterator();
-                    while (it2.hasNext()) {
-                        ChangeInfo changeInfo = (ChangeInfo) it2.next();
+                    ArrayList arrayList4 = arrayList3;
+                    int size2 = arrayList4.size();
+                    int i2 = 0;
+                    while (i2 < size2) {
+                        Object obj2 = arrayList4.get(i2);
+                        i2++;
+                        ChangeInfo changeInfo = (ChangeInfo) obj2;
                         DefaultItemAnimator.this.animateChangeImpl(changeInfo);
                         DefaultItemAnimator.this.currentChanges.add(changeInfo);
                     }
-                    arrayList2.clear();
-                    DefaultItemAnimator.this.mChangesList.remove(arrayList2);
+                    arrayList3.clear();
+                    DefaultItemAnimator.this.mChangesList.remove(arrayList3);
                 }
             };
             if (this.delayAnimations && !isEmpty) {
-                ViewCompat.postOnAnimationDelayed(((ChangeInfo) arrayList2.get(0)).oldHolder.itemView, runnable2, getRemoveDuration());
+                ViewCompat.postOnAnimationDelayed(((ChangeInfo) arrayList3.get(0)).oldHolder.itemView, runnable2, getRemoveDuration());
             } else {
                 runnable2.run();
             }
@@ -184,29 +195,32 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         if (isEmpty4) {
             return;
         }
-        final ArrayList arrayList3 = new ArrayList();
-        arrayList3.addAll(this.mPendingAdditions);
-        this.mAdditionsList.add(arrayList3);
+        final ArrayList arrayList4 = new ArrayList();
+        arrayList4.addAll(this.mPendingAdditions);
+        this.mAdditionsList.add(arrayList4);
         this.mPendingAdditions.clear();
         Runnable runnable3 = new Runnable() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.3
             @Override // java.lang.Runnable
             public void run() {
-                int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                for (int size = arrayList3.size() - 1; size >= 0; size--) {
-                    i = Math.min(i, ((RecyclerView.ViewHolder) arrayList3.get(size)).getAdapterPosition());
+                int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                for (int size2 = arrayList4.size() - 1; size2 >= 0; size2--) {
+                    i2 = Math.min(i2, ((RecyclerView.ViewHolder) arrayList4.get(size2)).getAdapterPosition());
                 }
-                for (int size2 = arrayList3.size() - 1; size2 >= 0; size2--) {
-                    DefaultItemAnimator.this.animateAddImpl((RecyclerView.ViewHolder) arrayList3.get(size2), (r2.getAdapterPosition() - i) * DefaultItemAnimator.this.delayIncrement);
+                for (int size3 = arrayList4.size() - 1; size3 >= 0; size3--) {
+                    DefaultItemAnimator.this.animateAddImpl((RecyclerView.ViewHolder) arrayList4.get(size3), (r2.getAdapterPosition() - i2) * DefaultItemAnimator.this.delayIncrement);
                 }
-                arrayList3.clear();
-                DefaultItemAnimator.this.mAdditionsList.remove(arrayList3);
+                arrayList4.clear();
+                DefaultItemAnimator.this.mAdditionsList.remove(arrayList4);
             }
         };
         if (this.delayAnimations && (!isEmpty || !isEmpty2 || !isEmpty3)) {
-            ViewCompat.postOnAnimationDelayed(((RecyclerView.ViewHolder) arrayList3.get(0)).itemView, runnable3, getAddAnimationDelay(!isEmpty ? getRemoveDuration() : 0L, !isEmpty2 ? getMoveDuration() : 0L, !isEmpty3 ? getChangeDuration() : 0L));
-        } else {
-            runnable3.run();
+            long removeDuration = !isEmpty ? getRemoveDuration() : 0L;
+            long moveDuration = !isEmpty2 ? getMoveDuration() : 0L;
+            long changeDuration = isEmpty3 ? 0L : getChangeDuration();
+            ViewCompat.postOnAnimationDelayed(((RecyclerView.ViewHolder) arrayList4.get(0)).itemView, runnable3, getAddAnimationDelay(removeDuration, moveDuration, changeDuration));
+            return;
         }
+        runnable3.run();
     }
 
     protected long getAddAnimationDelay(long j, long j2, long j3) {
@@ -244,7 +258,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         animate.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.DefaultItemAnimator$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                DefaultItemAnimator.this.lambda$animateRemoveImpl$0(viewHolder, valueAnimator);
+                DefaultItemAnimator.$r8$lambda$MkILGoL4kS9tLwOMM3XE4CL40ZY(DefaultItemAnimator.this, viewHolder, valueAnimator);
             }
         });
         animate.setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.4
@@ -274,10 +288,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateRemoveImpl$0(RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
-        onRemoveAnimationUpdate(viewHolder);
-        Runnable runnable = this.animationUpdatesListener;
+    public static /* synthetic */ void $r8$lambda$MkILGoL4kS9tLwOMM3XE4CL40ZY(DefaultItemAnimator defaultItemAnimator, RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
+        defaultItemAnimator.onRemoveAnimationUpdate(viewHolder);
+        Runnable runnable = defaultItemAnimator.animationUpdatesListener;
         if (runnable != null) {
             runnable.run();
         }
@@ -306,7 +319,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         animate.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.DefaultItemAnimator$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                DefaultItemAnimator.this.lambda$animateAddImpl$1(viewHolder, valueAnimator);
+                DefaultItemAnimator.$r8$lambda$AGX9fyeFLP5amPUCxD1gHzWcUIg(DefaultItemAnimator.this, viewHolder, valueAnimator);
             }
         });
         animate.setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.5
@@ -338,10 +351,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateAddImpl$1(RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
-        onAddAnimationUpdate(viewHolder);
-        Runnable runnable = this.animationUpdatesListener;
+    public static /* synthetic */ void $r8$lambda$AGX9fyeFLP5amPUCxD1gHzWcUIg(DefaultItemAnimator defaultItemAnimator, RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
+        defaultItemAnimator.onAddAnimationUpdate(viewHolder);
+        Runnable runnable = defaultItemAnimator.animationUpdatesListener;
         if (runnable != null) {
             runnable.run();
         }
@@ -393,7 +405,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         animate.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.DefaultItemAnimator$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                DefaultItemAnimator.this.lambda$animateMoveImpl$2(viewHolder, valueAnimator);
+                DefaultItemAnimator.$r8$lambda$peGZ6oBEIUJsZaZI13zIJIwl_zc(DefaultItemAnimator.this, viewHolder, valueAnimator);
             }
         });
         Interpolator interpolator = this.translationInterpolator;
@@ -434,10 +446,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateMoveImpl$2(RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
-        onMoveAnimationUpdate(viewHolder);
-        Runnable runnable = this.animationUpdatesListener;
+    public static /* synthetic */ void $r8$lambda$peGZ6oBEIUJsZaZI13zIJIwl_zc(DefaultItemAnimator defaultItemAnimator, RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
+        defaultItemAnimator.onMoveAnimationUpdate(viewHolder);
+        Runnable runnable = defaultItemAnimator.animationUpdatesListener;
         if (runnable != null) {
             runnable.run();
         }
@@ -496,7 +507,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             startDelay.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.DefaultItemAnimator$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    DefaultItemAnimator.this.lambda$animateChangeImpl$3(changeInfo, valueAnimator);
+                    DefaultItemAnimator.$r8$lambda$RTOpgVvHkG65oKFbVR4j864cZhk(DefaultItemAnimator.this, changeInfo, valueAnimator);
                 }
             });
             startDelay.setStartDelay(j).setInterpolator(getChangeInterpolator()).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.7
@@ -535,7 +546,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             animate.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.DefaultItemAnimator$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    DefaultItemAnimator.this.lambda$animateChangeImpl$4(changeInfo, valueAnimator);
+                    DefaultItemAnimator.$r8$lambda$vhgJESq6-k-43LeMe8cK4oUhx7I(DefaultItemAnimator.this, changeInfo, valueAnimator);
                 }
             });
             animate.setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.8
@@ -569,19 +580,19 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateChangeImpl$3(ChangeInfo changeInfo, ValueAnimator valueAnimator) {
-        onChangeAnimationUpdate(changeInfo.oldHolder);
-        Runnable runnable = this.animationUpdatesListener;
+    public static /* synthetic */ void $r8$lambda$RTOpgVvHkG65oKFbVR4j864cZhk(DefaultItemAnimator defaultItemAnimator, ChangeInfo changeInfo, ValueAnimator valueAnimator) {
+        defaultItemAnimator.getClass();
+        defaultItemAnimator.onChangeAnimationUpdate(changeInfo.oldHolder);
+        Runnable runnable = defaultItemAnimator.animationUpdatesListener;
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateChangeImpl$4(ChangeInfo changeInfo, ValueAnimator valueAnimator) {
-        onChangeAnimationUpdate(changeInfo.newHolder);
-        Runnable runnable = this.animationUpdatesListener;
+    public static /* synthetic */ void $r8$lambda$vhgJESq6-k-43LeMe8cK4oUhx7I(DefaultItemAnimator defaultItemAnimator, ChangeInfo changeInfo, ValueAnimator valueAnimator) {
+        defaultItemAnimator.getClass();
+        defaultItemAnimator.onChangeAnimationUpdate(changeInfo.newHolder);
+        Runnable runnable = defaultItemAnimator.animationUpdatesListener;
         if (runnable != null) {
             runnable.run();
         }

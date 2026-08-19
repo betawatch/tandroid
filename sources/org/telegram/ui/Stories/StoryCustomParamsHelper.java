@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StoryCustomParamsHelper {
     public static boolean isEmpty(TL_stories.StoryItem storyItem) {
         return storyItem.detectedLng == null && storyItem.translatedLng == null && !storyItem.translated && storyItem.translatedText == null;

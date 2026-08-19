@@ -260,9 +260,7 @@ public abstract class CodeFieldContainer extends LinearLayout {
                 this.codeField[i6].setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.CodeFieldContainer$$ExternalSyntheticLambda0
                     @Override // android.widget.TextView.OnEditorActionListener
                     public final boolean onEditorAction(TextView textView, int i8, KeyEvent keyEvent) {
-                        boolean lambda$setNumbersCount$0;
-                        lambda$setNumbersCount$0 = CodeFieldContainer.this.lambda$setNumbersCount$0(textView, i8, keyEvent);
-                        return lambda$setNumbersCount$0;
+                        return CodeFieldContainer.$r8$lambda$bc3bVopa_Atk62RspIDNvpQvmQI(CodeFieldContainer.this, textView, i8, keyEvent);
                     }
                 });
                 i6++;
@@ -279,13 +277,13 @@ public abstract class CodeFieldContainer extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setNumbersCount$0(TextView textView, int i, KeyEvent keyEvent) {
-        if (i != 5) {
-            return false;
+    public static /* synthetic */ boolean $r8$lambda$bc3bVopa_Atk62RspIDNvpQvmQI(CodeFieldContainer codeFieldContainer, TextView textView, int i, KeyEvent keyEvent) {
+        if (i == 5) {
+            codeFieldContainer.processNextPressed();
+            return true;
         }
-        processNextPressed();
-        return true;
+        codeFieldContainer.getClass();
+        return false;
     }
 
     public String getCode() {

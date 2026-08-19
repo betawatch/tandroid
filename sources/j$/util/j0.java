@@ -1,75 +1,100 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import java.util.Comparator;
 import java.util.function.Consumer;
-import java.util.function.LongConsumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class j0 implements P, LongConsumer, y {
-    boolean a = false;
-    long b;
-    final /* synthetic */ c0 c;
+public final class j0 implements T {
+    public final double[] a;
+    public int b;
+    public final int c;
+    public final int d;
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.i(this, consumer);
     }
 
-    @Override // j$.util.Q
-    public final void forEachRemaining(LongConsumer longConsumer) {
-        Objects.requireNonNull(longConsumer);
-        while (hasNext()) {
-            longConsumer.accept(nextLong());
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.com.android.tools.r8.a.n(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.com.android.tools.r8.a.p(this, i);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.com.android.tools.r8.a.z(this, consumer);
+    }
+
+    public j0(double[] dArr, int i, int i2, int i3) {
+        this.a = dArr;
+        this.b = i;
+        this.c = i2;
+        this.d = i3 | 16448;
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public final T trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
+            return null;
         }
+        this.b = i2;
+        return new j0(this.a, i, i2, this.d);
     }
 
-    @Override // java.util.Iterator
-    public final Long next() {
-        if (w0.a) {
-            w0.a(j0.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
-            throw null;
-        }
-        return Long.valueOf(nextLong());
-    }
-
-    @Override // j$.util.P, java.util.Iterator, j$.util.y
-    public final void forEachRemaining(Consumer consumer) {
-        if (consumer instanceof LongConsumer) {
-            forEachRemaining((LongConsumer) consumer);
+    @Override // j$.util.c0
+    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
+        int i;
+        doubleConsumer.getClass();
+        double[] dArr = this.a;
+        int length = dArr.length;
+        int i2 = this.c;
+        if (length < i2 || (i = this.b) < 0) {
             return;
         }
-        Objects.requireNonNull(consumer);
-        if (w0.a) {
-            w0.a(j0.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
-            throw null;
+        this.b = i2;
+        if (i < i2) {
+            do {
+                doubleConsumer.accept(dArr[i]);
+                i++;
+            } while (i < i2);
         }
-        Objects.requireNonNull(consumer);
-        forEachRemaining((LongConsumer) new M(consumer));
     }
 
-    j0(c0 c0Var) {
-        this.c = c0Var;
-    }
-
-    @Override // java.util.function.LongConsumer
-    public final void accept(long j) {
-        this.a = true;
-        this.b = j;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance((LongConsumer) this);
+    @Override // j$.util.c0
+    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        doubleConsumer.getClass();
+        int i = this.b;
+        if (i < 0 || i >= this.c) {
+            return false;
         }
-        return this.a;
+        this.b = i + 1;
+        doubleConsumer.accept(this.a[i]);
+        return true;
     }
 
-    @Override // j$.util.P
-    public final long nextLong() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.c - this.b;
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.d;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        if (j$.com.android.tools.r8.a.p(this, 4)) {
+            return null;
         }
-        this.a = false;
-        return this.b;
+        throw new IllegalStateException();
     }
 }

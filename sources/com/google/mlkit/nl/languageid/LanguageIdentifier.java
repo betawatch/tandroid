@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.OptionalModuleApi;
 import com.google.android.gms.tasks.Task;
 import java.io.Closeable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface LanguageIdentifier extends Closeable, LifecycleObserver, OptionalModuleApi {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)

@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
-public final class zzhs implements Closeable {
+public final class zzhs implements Closeable, AutoCloseable {
     private final InputStream zza;
     private zzhr zzb;
     private final byte[] zzc = new byte[8];
@@ -45,7 +45,7 @@ public final class zzhs implements Closeable {
             throw new IOException(String.format("invalid additional information %s for major type %s", Byte.valueOf(this.zzb.zza()), Integer.valueOf(this.zzb.zzc())));
         }
         zzk(this.zzc, 8);
-        return (r4[7] & 255) | ((r4[1] & 255) << 48) | ((this.zzc[0] & 255) << 56) | ((r4[2] & 255) << 40) | ((r4[3] & 255) << 32) | ((r4[4] & 255) << 24) | ((r4[5] & 255) << 16) | ((r4[6] & 255) << 8);
+        return ((r4[1] & 255) << 48) | ((this.zzc[0] & 255) << 56) | ((r4[2] & 255) << 40) | ((r4[3] & 255) << 32) | ((r4[4] & 255) << 24) | ((r4[5] & 255) << 16) | ((r4[6] & 255) << 8) | (r4[7] & 255);
     }
 
     private final void zzi() {

@@ -66,6 +66,6 @@ public final class LongMessageTemplate implements Template {
         this.mMessage = null;
         this.mActionStrip = null;
         this.mHeaderAction = null;
-        this.mActionList = Collections.emptyList();
+        this.mActionList = Collections.EMPTY_LIST;
     }
 }

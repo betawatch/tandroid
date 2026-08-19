@@ -69,11 +69,13 @@ public final class Dependency {
     }
 
     public boolean equals(Object obj) {
-        if (!(obj instanceof Dependency)) {
-            return false;
+        if (obj instanceof Dependency) {
+            Dependency dependency = (Dependency) obj;
+            if (this.anInterface.equals(dependency.anInterface) && this.type == dependency.type && this.injection == dependency.injection) {
+                return true;
+            }
         }
-        Dependency dependency = (Dependency) obj;
-        return this.anInterface.equals(dependency.anInterface) && this.type == dependency.type && this.injection == dependency.injection;
+        return false;
     }
 
     public int hashCode() {

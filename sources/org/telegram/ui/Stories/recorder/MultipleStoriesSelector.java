@@ -24,7 +24,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -48,7 +47,7 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Stories.recorder.MultipleStoriesSelector;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MultipleStoriesSelector extends FrameLayout {
     private AnimatedFloat animatedHint;
     private final BlurringShader.StoryBlurDrawer backgroundBlur;
@@ -90,7 +89,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         this.hideHint = new Runnable() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MultipleStoriesSelector.this.lambda$new$2();
+                MultipleStoriesSelector.$r8$lambda$cdCj-hFGO0deaP4r_YAigmZnDGw(MultipleStoriesSelector.this);
             }
         };
         this.buttonBounce = new ButtonBounce(this);
@@ -117,7 +116,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         path.lineTo(AndroidUtilities.dp(4.33f), -AndroidUtilities.dp(4.33f));
         this.backgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 0, !customBlur());
         setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(44.0f));
-        1 r11 = new 1(context, UserConfig.selectedAccount, 0, false, new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda2
+        1 r0 = new 1(context, UserConfig.selectedAccount, 0, false, new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 MultipleStoriesSelector.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -128,14 +127,14 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
                 MultipleStoriesSelector.this.onItemClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
         }, null, resourcesProvider, -1, 0);
-        this.listView = r11;
-        r11.adapter.setApplyBackground(false);
-        r11.setClipToPadding(false);
-        r11.setClipChildren(false);
-        r11.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        addView(r11, LayoutHelper.createFrame(-2, 120, 85));
-        r11.allowReorder(true);
-        r11.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda4
+        this.listView = r0;
+        r0.adapter.setApplyBackground(false);
+        r0.setClipToPadding(false);
+        r0.setClipChildren(false);
+        r0.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
+        addView(r0, LayoutHelper.createFrame(-2, 120, 85));
+        r0.allowReorder(true);
+        r0.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 MultipleStoriesSelector.this.whenReordered(((Integer) obj).intValue(), (ArrayList) obj2);
@@ -164,13 +163,13 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             AndroidUtilities.forEachViews((RecyclerView) MultipleStoriesSelector.this.listView, new Consumer() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$1$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    MultipleStoriesSelector.1.this.lambda$swappedElements$0((View) obj);
+                    MultipleStoriesSelector.1.$r8$lambda$OBw0HtHC8Ji9WLVn6rrf-E0aP7c(MultipleStoriesSelector.1.this, (View) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$swappedElements$0(View view) {
+        public static /* synthetic */ void $r8$lambda$OBw0HtHC8Ji9WLVn6rrf-E0aP7c(1 r2, View view) {
+            r2.getClass();
             if (view instanceof EntryView) {
                 MultipleStoriesSelector multipleStoriesSelector = MultipleStoriesSelector.this;
                 ((EntryView) view).setPosition(multipleStoriesSelector.getPositionOf(multipleStoriesSelector.listView.getChildAdapterPosition(view)));
@@ -187,9 +186,12 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void whenReordered(int i, ArrayList arrayList) {
         this.selectedOrder.clear();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            this.selectedOrder.add(Integer.valueOf(((UItem) it.next()).id));
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            this.selectedOrder.add(Integer.valueOf(((UItem) obj).id));
         }
         updateItemsAnimated();
     }
@@ -198,22 +200,22 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda6
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
-                MultipleStoriesSelector.this.lambda$updateItemsAnimated$0((View) obj);
+                MultipleStoriesSelector.$r8$lambda$lLhX0fiLt76UPkXm4nBQnMwwJto(MultipleStoriesSelector.this, (View) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateItemsAnimated$0(View view) {
+    public static /* synthetic */ void $r8$lambda$lLhX0fiLt76UPkXm4nBQnMwwJto(MultipleStoriesSelector multipleStoriesSelector, View view) {
         int childAdapterPosition;
         UItem item;
-        if (!(view instanceof EntryView) || (item = this.listView.adapter.getItem((childAdapterPosition = this.listView.getChildAdapterPosition(view)))) == null) {
+        multipleStoriesSelector.getClass();
+        if (!(view instanceof EntryView) || (item = multipleStoriesSelector.listView.adapter.getItem((childAdapterPosition = multipleStoriesSelector.listView.getChildAdapterPosition(view)))) == null) {
             return;
         }
         EntryView entryView = (EntryView) view;
-        entryView.setPosition(getPositionOf(childAdapterPosition));
-        entryView.setSelected(this.selectedStory == item.id, true);
-        entryView.setChecked(this.selectedStories.contains(Integer.valueOf(item.id)), true);
+        entryView.setPosition(multipleStoriesSelector.getPositionOf(childAdapterPosition));
+        entryView.setSelected(multipleStoriesSelector.selectedStory == item.id, true);
+        entryView.setChecked(multipleStoriesSelector.selectedStories.contains(Integer.valueOf(item.id)), true);
         view.setPressed(false);
     }
 
@@ -227,7 +229,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             arrayList.add(EntryView.Factory.asStoryEntry(intValue, i, (StoryEntry) this.stories.get(intValue)).setChecked(this.selectedStory == intValue).setCollapsed(this.selectedStories.contains(num)).setClickCallback(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MultipleStoriesSelector.this.lambda$fillItems$1(intValue, view);
+                    MultipleStoriesSelector.$r8$lambda$iP6saSPjNR4ILdhYQAD3QBdWUOQ(MultipleStoriesSelector.this, intValue, view);
                 }
             }));
             if (this.selectedStories.contains(num)) {
@@ -237,18 +239,17 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         universalAdapter.reorderSectionEnd();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$1(int i, View view) {
-        if (this.selectedStories.contains(Integer.valueOf(i))) {
-            if (this.selectedStories.size() <= 1) {
+    public static /* synthetic */ void $r8$lambda$iP6saSPjNR4ILdhYQAD3QBdWUOQ(MultipleStoriesSelector multipleStoriesSelector, int i, View view) {
+        if (multipleStoriesSelector.selectedStories.contains(Integer.valueOf(i))) {
+            if (multipleStoriesSelector.selectedStories.size() <= 1) {
                 return;
             } else {
-                this.selectedStories.remove(Integer.valueOf(i));
+                multipleStoriesSelector.selectedStories.remove(Integer.valueOf(i));
             }
         } else {
-            this.selectedStories.add(Integer.valueOf(i));
+            multipleStoriesSelector.selectedStories.add(Integer.valueOf(i));
         }
-        updateItemsAnimated();
+        multipleStoriesSelector.updateItemsAnimated();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -266,11 +267,10 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         this.listView.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        if (this.hintShown) {
-            this.hintShown = false;
-            invalidate();
+    public static /* synthetic */ void $r8$lambda$cdCj-hFGO0deaP4r_YAigmZnDGw(MultipleStoriesSelector multipleStoriesSelector) {
+        if (multipleStoriesSelector.hintShown) {
+            multipleStoriesSelector.hintShown = false;
+            multipleStoriesSelector.invalidate();
         }
     }
 
@@ -294,20 +294,20 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
-                MultipleStoriesSelector.this.lambda$setSelected$3(i, (View) obj);
+                MultipleStoriesSelector.$r8$lambda$lHkKEmnJSDx2_w_YKtBtEdPF-jM(MultipleStoriesSelector.this, i, (View) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSelected$3(int i, View view) {
+    public static /* synthetic */ void $r8$lambda$lHkKEmnJSDx2_w_YKtBtEdPF-jM(MultipleStoriesSelector multipleStoriesSelector, int i, View view) {
         int childAdapterPosition;
         UItem item;
-        if (!(view instanceof EntryView) || (item = this.listView.adapter.getItem((childAdapterPosition = this.listView.getChildAdapterPosition(view)))) == null) {
+        multipleStoriesSelector.getClass();
+        if (!(view instanceof EntryView) || (item = multipleStoriesSelector.listView.adapter.getItem((childAdapterPosition = multipleStoriesSelector.listView.getChildAdapterPosition(view)))) == null) {
             return;
         }
         EntryView entryView = (EntryView) view;
-        entryView.setPosition(getPositionOf(childAdapterPosition));
+        entryView.setPosition(multipleStoriesSelector.getPositionOf(childAdapterPosition));
         entryView.setSelected(i == item.id, true);
         view.setPressed(false);
     }
@@ -333,8 +333,8 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        this.listView.setPivotX(r1.getWidth() - AndroidUtilities.dp(15.0f));
-        this.listView.setPivotY(r1.getHeight());
+        this.listView.setPivotX(r2.getWidth() - AndroidUtilities.dp(15.0f));
+        this.listView.setPivotY(r2.getHeight());
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -419,7 +419,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
                 canvas.save();
                 RectF rectF16 = this.hintBounds;
                 canvas.scale(lerp, lerp, rectF16.right, rectF16.bottom);
-                this.hint.draw(canvas, AndroidUtilities.dp(11.0f) + (this.buttonBounds.right - dp), (this.buttonBounds.top - AndroidUtilities.dp(9.66f)) - (dp2 / 2.0f), -1, f);
+                this.hint.draw(canvas, (this.buttonBounds.right - dp) + AndroidUtilities.dp(11.0f), (this.buttonBounds.top - AndroidUtilities.dp(9.66f)) - (dp2 / 2.0f), -1, f);
                 canvas.restore();
             }
         }
@@ -487,7 +487,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             }).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$$ExternalSyntheticLambda5
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    MultipleStoriesSelector.this.lambda$showList$4(valueAnimator);
+                    MultipleStoriesSelector.this.invalidate();
                 }
             }).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(360L).start();
         } else {
@@ -501,11 +501,6 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             this.hintShown = false;
             invalidate();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showList$4(ValueAnimator valueAnimator) {
-        invalidate();
     }
 
     public boolean onBackPressed() {
@@ -676,7 +671,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
                 Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$EntryView$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MultipleStoriesSelector.EntryView.this.lambda$set$1(storyEntry);
+                        MultipleStoriesSelector.EntryView.$r8$lambda$oYbL-qD-9yWkVkEsTrwDgEu53VM(MultipleStoriesSelector.EntryView.this, storyEntry);
                     }
                 });
                 return;
@@ -716,13 +711,13 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$EntryView$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MultipleStoriesSelector.EntryView.this.lambda$set$3(storyEntry);
+                    MultipleStoriesSelector.EntryView.$r8$lambda$Slf_HtS-QFxJS0VJP-c1V0kTEeY(MultipleStoriesSelector.EntryView.this, storyEntry);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$set$1(StoryEntry storyEntry) {
+        public static /* synthetic */ void $r8$lambda$oYbL-qD-9yWkVkEsTrwDgEu53VM(final EntryView entryView, StoryEntry storyEntry) {
+            entryView.getClass();
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeFile(storyEntry.draftThumbFile.getPath(), options);
@@ -734,18 +729,13 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$EntryView$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MultipleStoriesSelector.EntryView.this.lambda$set$0(decodeFile);
+                    MultipleStoriesSelector.EntryView.this.imageReceiver.setImageBitmap(decodeFile);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$set$0(Bitmap bitmap) {
-            this.imageReceiver.setImageBitmap(bitmap);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$set$3(StoryEntry storyEntry) {
+        public static /* synthetic */ void $r8$lambda$Slf_HtS-QFxJS0VJP-c1V0kTEeY(final EntryView entryView, StoryEntry storyEntry) {
+            entryView.getClass();
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeFile(storyEntry.file.getPath(), options);
@@ -757,14 +747,9 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.MultipleStoriesSelector$EntryView$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MultipleStoriesSelector.EntryView.this.lambda$set$2(decodeFile);
+                    MultipleStoriesSelector.EntryView.this.imageReceiver.setImageBitmap(decodeFile);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$set$2(Bitmap bitmap) {
-            this.imageReceiver.setImageBitmap(bitmap);
         }
 
         @Override // android.view.View

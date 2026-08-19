@@ -57,7 +57,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && SharingLocationsAlert.this.scrollOffsetY != 0 && motionEvent.getY() < SharingLocationsAlert.this.scrollOffsetY) {
-                    SharingLocationsAlert.this.lambda$new$0();
+                    SharingLocationsAlert.this.dismiss();
                     return true;
                 }
                 return super.onInterceptTouchEvent(motionEvent);
@@ -149,7 +149,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SharingLocationsAlert$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                SharingLocationsAlert.this.lambda$new$0(view, i3);
+                SharingLocationsAlert.$r8$lambda$60muj1sC5cT5RVBFGHgk4U7XODQ(SharingLocationsAlert.this, view, i3);
             }
         });
         this.containerView.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
@@ -165,7 +165,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
         pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharingLocationsAlert$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SharingLocationsAlert.this.lambda$new$1(view2);
+                SharingLocationsAlert.$r8$lambda$nlYHrikSIiFwip_42nHbm-fAH6g(SharingLocationsAlert.this, view2);
             }
         });
         pickerBottomLayout.doneButtonTextView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
@@ -174,34 +174,29 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
         pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharingLocationsAlert$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SharingLocationsAlert.this.lambda$new$2(view2);
+                SharingLocationsAlert.this.dismiss();
             }
         });
         pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
         this.adapter.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$60muj1sC5cT5RVBFGHgk4U7XODQ(SharingLocationsAlert sharingLocationsAlert, View view, int i) {
+        sharingLocationsAlert.getClass();
         int i2 = i - 1;
         if (i2 < 0 || i2 >= LocationController.getLocationsCount()) {
             return;
         }
-        this.delegate.didSelectLocation(getLocation(i2));
-        lambda$new$0();
+        sharingLocationsAlert.delegate.didSelectLocation(sharingLocationsAlert.getLocation(i2));
+        sharingLocationsAlert.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$nlYHrikSIiFwip_42nHbm-fAH6g(SharingLocationsAlert sharingLocationsAlert, View view) {
         for (int i = 0; i < 4; i++) {
+            sharingLocationsAlert.getClass();
             LocationController.getInstance(i).removeAllLocationSharings();
         }
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        lambda$new$0();
+        sharingLocationsAlert.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -233,7 +228,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.liveLocationsChanged) {
             if (LocationController.getLocationsCount() == 0) {
-                lambda$new$0();
+                dismiss();
             } else {
                 this.adapter.notifyDataSetChanged();
             }
@@ -254,9 +249,8 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.liveLocationsChanged);
     }
 

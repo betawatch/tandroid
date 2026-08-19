@@ -8,7 +8,7 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BotWebViewMenuContainer$ActionBarColorsAnimating {
     public float progress;
     SparseIntArray fromColors = new SparseIntArray();

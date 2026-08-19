@@ -1,16 +1,50 @@
 package j$.util.stream;
 
-import java.util.function.Consumer;
+import j$.util.Spliterator;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class j1 extends k1 implements j$.util.c0 {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.T.c(this, consumer);
+public final class j1 extends m1 implements d2 {
+    public final int[] h;
+
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void A(Integer num) {
+        q1.g(this, num);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.T.h(this, consumer);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        A((Integer) obj);
+    }
+
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
+    }
+
+    public j1(Spliterator spliterator, a aVar, int[] iArr) {
+        super(spliterator, aVar, iArr.length);
+        this.h = iArr;
+    }
+
+    public j1(j1 j1Var, Spliterator spliterator, long j, long j2) {
+        super(j1Var, spliterator, j, j2, j1Var.h.length);
+        this.h = j1Var.h;
+    }
+
+    @Override // j$.util.stream.m1
+    public final m1 b(Spliterator spliterator, long j, long j2) {
+        return new j1(this, spliterator, j, j2);
+    }
+
+    @Override // j$.util.stream.m1, j$.util.stream.f2
+    public final void accept(int i) {
+        int i2 = this.f;
+        if (i2 >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
+        }
+        int[] iArr = this.h;
+        this.f = i2 + 1;
+        iArr[i2] = i;
     }
 }

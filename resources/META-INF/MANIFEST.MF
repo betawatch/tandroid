@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Built-By: Signflinger
-Created-By: Android Gradle 8.6.1
+Created-By: Android Gradle 8.10.1
 
 Name: AndroidManifest.xml
-SHA-256-Digest: 2PgALOSsJvT3TFtTxQ3ULYBgUD+LC60euiQWBDwWDAk=
+SHA-256-Digest: 9MSrwqaYakG4h51Q0bmS2Nu1si7si5NlX8ktOvTW998=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: hv7NAjXUWDmEUIHB+RyaWLQLCueH8kK9uo+RUNpF0Os=
@@ -154,7 +154,7 @@ Name: META-INF/androidx.viewpager_viewpager.version
 SHA-256-Digest: WYVJhIUxBN9cNT4vaBoV/HkkdC+aLkaMKa8kjc5FzgM=
 
 Name: META-INF/com/android/build/gradle/app-metadata.properties
-SHA-256-Digest: 5b7NnKVHLe2yV4/dvvxlKBxFQ6tjoAGCf3rX67hz0AU=
+SHA-256-Digest: 7E0i32ezb9WoZh2qq9AsiUHUEYlFKJXxXa4YwDP14n4=
 
 Name: META-INF/kotlinx_coroutines_android.version
 SHA-256-Digest: pYCnifkV3/qkC1jOX6PK90EDmB4N5oHWjNZsGgZEdco=
@@ -179,7 +179,7 @@ Name: META-INF/services/kotlinx.coroutines.internal.MainDispatcherFact
 SHA-256-Digest: oep36o+T9Bkla25m8pcT+VDY1ukEQrYI2ICkgAO163I=
 
 Name: META-INF/version-control-info.textproto
-SHA-256-Digest: vzGC9JWhKv5uXfDKnN4cuSoOCFxMELHi37/EhAErtOA=
+SHA-256-Digest: Y1+2URtxiYIpLhqD4suVeR7HPM45Z39iXwhES3M3zPU=
 
 Name: META-INF/versions/9/OSGI-INF/MANIFEST.MF
 SHA-256-Digest: qETWKwKp7v2dES50/WYIQ9kc2LgdzmzmCp6rpgX6k5w=
@@ -209,10 +209,10 @@ Name: assets/day.attheme
 SHA-256-Digest: iJcTtt/cA0lO2c8nJ3/qkEvJMZOXLxtWmnkHMxiYvPw=
 
 Name: assets/dexopt/baseline.prof
-SHA-256-Digest: U6jJ1weNOp/JUi2IuRdPvRLWs/VALVw9KfgwJ3iau+g=
+SHA-256-Digest: J4Tb39w0sKAR16C+cz3HHkpG0K9m3ezxtUWyMZIMk/U=
 
 Name: assets/dexopt/baseline.profm
-SHA-256-Digest: 69ToHGupEmFnhGJktOYClD6i30CFHdU8Sx4gOm2JJmo=
+SHA-256-Digest: jCnHnpj/BMNZLiyeOHvV5WJ9Epx6Brx7IpePZDkYp8E=
 
 Name: assets/emoji/0_0.png
 SHA-256-Digest: wHNq13eMg7AQ+EnoYdcBcvsR8PQjTOnk7D0z1/1QZfM=
@@ -12456,19 +12456,19 @@ Name: car-app-api.level
 SHA-256-Digest: EBWbryYrQ6ktldtZ2uH3LGRRJzAWYeCjzk44spWpfFg=
 
 Name: classes.dex
-SHA-256-Digest: llhk0HrtMWn9brpQtZk6M2ui7kpgYZP9J28kRl1kC0w=
+SHA-256-Digest: anqOcIXCU7bGQYTbkp7iapBpUyee5gdP1nb4V+iEclc=
 
 Name: classes2.dex
-SHA-256-Digest: MJIyFR+1+dkB+VFA9xIP+Tnsm2IhRsgBHsKtZw9TpHs=
+SHA-256-Digest: cLKPnaBsK827a1YK9vBo2orc79OYyhATmKhQhfXMRxs=
 
 Name: classes3.dex
-SHA-256-Digest: hLNCRF7ynBjhByaBwUEfB/QJBrZhwJ8IlLCf/Edc9KA=
+SHA-256-Digest: DTic4woayne2KWz7D1WmSVNzjjw2vKJmspwlouSzFDM=
 
 Name: classes4.dex
-SHA-256-Digest: cwBrmHT3saBb+v+qTbGXOODflXHbet3InfudNjc2zgc=
+SHA-256-Digest: iFoC2BZV6xE5eBbR/0qQWUVW7VqWxRxVTg3OkEyJGCU=
 
 Name: classes5.dex
-SHA-256-Digest: j4IOgbNQH3+EKG1Xotr1tHw1HbyyhG6GvfgsQrzS5bc=
+SHA-256-Digest: S9U1VYOuha048gxM4ug9iIjk13W19rKCPB1XZkagXZc=
 
 Name: client_analytics.proto
 SHA-256-Digest: DHZzJ3Z3KyYFKFWPm2daSVKcrXhcQhyhG0hxebgWJhA=
@@ -12555,25 +12555,25 @@ Name: lib/arm64-v8a/liblanguage_id_l2c_jni.so
 SHA-256-Digest: uT5lpIIA30Xbv8guF1YK5omxtGKrTs3OX9LAk4AuGpQ=
 
 Name: lib/arm64-v8a/libtmessages.49.so
-SHA-256-Digest: OzQHhENVxXF8R8pVnt166dca7Pcvugbb+s/u4nn1Qa4=
+SHA-256-Digest: 3ao1nreSusoR6dT7DD023RcPCbslz6KFHpeWASiMFXk=
 
 Name: lib/armeabi-v7a/liblanguage_id_l2c_jni.so
 SHA-256-Digest: j44kxjqsegNaodVgozdNX1IFOVBnzdYmAdiZcNX97/E=
 
 Name: lib/armeabi-v7a/libtmessages.49.so
-SHA-256-Digest: D3Uon2p5rwP4p89Py+L97tn6J6NHuDuB5/KKbySuIRQ=
+SHA-256-Digest: RCKpN2URE/k2GDRx9e4eJLMaQg3QWWXIvM2qcqdAGwo=
 
 Name: lib/x86/liblanguage_id_l2c_jni.so
 SHA-256-Digest: qAeifCg3sqi9ut1U8cXYt2XHgTFo1A+U75ai2uFE4Ws=
 
 Name: lib/x86/libtmessages.49.so
-SHA-256-Digest: kFZXdGwI8QTtM9DJEhRpzboQ3a9U+sCnti5VkmnC0A4=
+SHA-256-Digest: 9Uj5Whz+bTJ7DBPj/+TnAiuQJ0dnHOeYaOJFbDDrbBU=
 
 Name: lib/x86_64/liblanguage_id_l2c_jni.so
 SHA-256-Digest: mtvZSIjLfEfmsLlKIUUZnL47nk7qSOr8mvR6bD0PTUo=
 
 Name: lib/x86_64/libtmessages.49.so
-SHA-256-Digest: kbNcUzBKf6Di6NvrgDf9oKF2YFSF2fTWjNK2PhO2tdQ=
+SHA-256-Digest: gtbsuGsmrGcNblNFrZCXN89b7LfetbTZxmAZbzFu5xY=
 
 Name: messaging_event.proto
 SHA-256-Digest: CxNKn/4hQW/iJfN09E9uyli0dRn+rkyQuC4lZ36NVs4=
@@ -34527,7 +34527,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: xqWCaouE8r0YBVgJc0Xzan/HN/Oq7BrXyFux9BXwV7A=
 
 Name: resources.arsc
-SHA-256-Digest: Xo+forIjJsvxjb7CNxcICuF3gZYCas+P7S84m0za+Ls=
+SHA-256-Digest: p6LJZJ7AvcuOWjinyo/OqU8Oscckzq0BOrPoiBmhGDk=
 
 Name: version.txt
 SHA-256-Digest: cZQJx0x+5QAGq9BLLED2ycADi2VSsLq3f+qG6DWbzDg=

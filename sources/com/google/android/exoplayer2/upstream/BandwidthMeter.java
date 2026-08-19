@@ -57,16 +57,11 @@ public interface BandwidthMeter {
                         handlerAndListener.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.upstream.BandwidthMeter$EventListener$EventDispatcher$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                BandwidthMeter.EventListener.EventDispatcher.lambda$bandwidthSample$0(BandwidthMeter.EventListener.EventDispatcher.HandlerAndListener.this, i, j, j2);
+                                BandwidthMeter.EventListener.EventDispatcher.HandlerAndListener.this.listener.onBandwidthSample(i, j, j2);
                             }
                         });
                     }
                 }
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$bandwidthSample$0(HandlerAndListener handlerAndListener, int i, long j, long j2) {
-                handlerAndListener.listener.onBandwidthSample(i, j, j2);
             }
 
             /* JADX INFO: Access modifiers changed from: private */

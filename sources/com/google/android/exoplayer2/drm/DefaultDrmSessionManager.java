@@ -236,14 +236,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             }
         }
         if (defaultDrmSession == null) {
-            defaultDrmSession = createAndAcquireSessionWithRetry(list, false, eventDispatcher, z);
+            DefaultDrmSession createAndAcquireSessionWithRetry = createAndAcquireSessionWithRetry(list, false, eventDispatcher, z);
             if (!this.multiSession) {
-                this.noMultiSessionDrmSession = defaultDrmSession;
+                this.noMultiSessionDrmSession = createAndAcquireSessionWithRetry;
             }
-            this.sessions.add(defaultDrmSession);
-        } else {
-            defaultDrmSession.acquire(eventDispatcher);
+            this.sessions.add(createAndAcquireSessionWithRetry);
+            return createAndAcquireSessionWithRetry;
         }
+        defaultDrmSession.acquire(eventDispatcher);
         return defaultDrmSession;
     }
 
@@ -252,15 +252,13 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         int cryptoType = ((ExoMediaDrm) Assertions.checkNotNull(this.exoMediaDrm)).getCryptoType();
         DrmInitData drmInitData = format.drmInitData;
         if (drmInitData == null) {
-            if (Util.linearSearch(this.useDrmSessionsForClearContentTrackTypes, MimeTypes.getTrackType(format.sampleMimeType)) != -1) {
-                return cryptoType;
+            if (Util.linearSearch(this.useDrmSessionsForClearContentTrackTypes, MimeTypes.getTrackType(format.sampleMimeType)) == -1) {
+                return 0;
             }
-            return 0;
+        } else if (!canAcquireSession(drmInitData)) {
+            return 1;
         }
-        if (canAcquireSession(drmInitData)) {
-            return cryptoType;
-        }
-        return 1;
+        return cryptoType;
     }
 
     private DrmSession maybeAcquirePlaceholderSession(int i, boolean z) {
@@ -297,17 +295,13 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     private synchronized void initPlaybackLooper(Looper looper) {
-        try {
-            Looper looper2 = this.playbackLooper;
-            if (looper2 == null) {
-                this.playbackLooper = looper;
-                this.playbackHandler = new Handler(looper);
-            } else {
-                Assertions.checkState(looper2 == looper);
-                Assertions.checkNotNull(this.playbackHandler);
-            }
-        } catch (Throwable th) {
-            throw th;
+        Looper looper2 = this.playbackLooper;
+        if (looper2 == null) {
+            this.playbackLooper = looper;
+            this.playbackHandler = new Handler(looper);
+        } else {
+            Assertions.checkState(looper2 == looper);
+            Assertions.checkNotNull(this.playbackHandler);
         }
     }
 
@@ -336,7 +330,10 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     private static boolean acquisitionFailedIndicatingResourceShortage(DrmSession drmSession) {
-        return drmSession.getState() == 1 && (Util.SDK_INT < 19 || (((DrmSession.DrmSessionException) Assertions.checkNotNull(drmSession.getError())).getCause() instanceof ResourceBusyException));
+        if (drmSession.getState() == 1) {
+            return Util.SDK_INT < 19 || (((DrmSession.DrmSessionException) Assertions.checkNotNull(drmSession.getError())).getCause() instanceof ResourceBusyException);
+        }
+        return false;
     }
 
     private void undoAcquisition(DrmSession drmSession, DrmSessionEventListener.EventDispatcher eventDispatcher) {
@@ -527,19 +524,18 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.lambda$acquire$0(format);
+                    DefaultDrmSessionManager.PreacquiredSessionReference.$r8$lambda$YpXXpl9LmBj2CPJf8j0JHYUxFMw(DefaultDrmSessionManager.PreacquiredSessionReference.this, format);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$acquire$0(Format format) {
-            if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || this.isReleased) {
+        public static /* synthetic */ void $r8$lambda$YpXXpl9LmBj2CPJf8j0JHYUxFMw(PreacquiredSessionReference preacquiredSessionReference, Format format) {
+            if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || preacquiredSessionReference.isReleased) {
                 return;
             }
             DefaultDrmSessionManager defaultDrmSessionManager = DefaultDrmSessionManager.this;
-            this.session = defaultDrmSessionManager.acquireSession((Looper) Assertions.checkNotNull(defaultDrmSessionManager.playbackLooper), this.eventDispatcher, format, false);
-            DefaultDrmSessionManager.this.preacquiredSessionReferences.add(this);
+            preacquiredSessionReference.session = defaultDrmSessionManager.acquireSession((Looper) Assertions.checkNotNull(defaultDrmSessionManager.playbackLooper), preacquiredSessionReference.eventDispatcher, format, false);
+            DefaultDrmSessionManager.this.preacquiredSessionReferences.add(preacquiredSessionReference);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionManager.DrmSessionReference
@@ -547,22 +543,21 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             Util.postOrRun((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.lambda$release$1();
+                    DefaultDrmSessionManager.PreacquiredSessionReference.$r8$lambda$tU__DaGLzLY9x7h4BLJsd4gjVTk(DefaultDrmSessionManager.PreacquiredSessionReference.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$release$1() {
-            if (this.isReleased) {
+        public static /* synthetic */ void $r8$lambda$tU__DaGLzLY9x7h4BLJsd4gjVTk(PreacquiredSessionReference preacquiredSessionReference) {
+            if (preacquiredSessionReference.isReleased) {
                 return;
             }
-            DrmSession drmSession = this.session;
+            DrmSession drmSession = preacquiredSessionReference.session;
             if (drmSession != null) {
-                drmSession.release(this.eventDispatcher);
+                drmSession.release(preacquiredSessionReference.eventDispatcher);
             }
-            DefaultDrmSessionManager.this.preacquiredSessionReferences.remove(this);
-            this.isReleased = true;
+            DefaultDrmSessionManager.this.preacquiredSessionReferences.remove(preacquiredSessionReference);
+            preacquiredSessionReference.isReleased = true;
         }
     }
 }

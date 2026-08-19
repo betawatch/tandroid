@@ -11,7 +11,7 @@ import com.google.mlkit.common.sdkinternal.MLTaskInput;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class InputImage implements MLTaskInput {
     private volatile Bitmap zza;
     private volatile ByteBuffer zzb;

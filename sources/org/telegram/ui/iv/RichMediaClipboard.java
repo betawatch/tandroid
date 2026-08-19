@@ -40,18 +40,20 @@ public abstract class RichMediaClipboard {
     }
 
     public static synchronized TLRPC.Photo photo(long j) {
-        TLRPC.Photo photo;
         synchronized (RichMediaClipboard.class) {
-            photo = j == 0 ? null : (TLRPC.Photo) photos.get(Long.valueOf(j));
+            if (j == 0) {
+                return null;
+            }
+            return (TLRPC.Photo) photos.get(Long.valueOf(j));
         }
-        return photo;
     }
 
     public static synchronized TLRPC.Document document(long j) {
-        TLRPC.Document document;
         synchronized (RichMediaClipboard.class) {
-            document = j == 0 ? null : (TLRPC.Document) documents.get(Long.valueOf(j));
+            if (j == 0) {
+                return null;
+            }
+            return (TLRPC.Document) documents.get(Long.valueOf(j));
         }
-        return document;
     }
 }

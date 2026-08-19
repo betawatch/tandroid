@@ -53,31 +53,30 @@ public abstract class zzbe extends zzaz implements List, RandomAccess {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (int i = 0; i < size; i++) {
-                        if (zzo.zza(get(i), list.get(i))) {
-                        }
-                    }
-                    return true;
-                }
-                Iterator it = iterator();
-                Iterator it2 = list.iterator();
-                while (true) {
-                    if (it.hasNext()) {
-                        if (!it2.hasNext() || !zzo.zza(it.next(), it2.next())) {
-                            break;
-                        }
-                    } else if (!it2.hasNext()) {
-                        return true;
-                    }
+        if (!(obj instanceof List)) {
+            return false;
+        }
+        List list = (List) obj;
+        int size = size();
+        if (size != list.size()) {
+            return false;
+        }
+        if (list instanceof RandomAccess) {
+            for (int i = 0; i < size; i++) {
+                if (!zzo.zza(get(i), list.get(i))) {
+                    return false;
                 }
             }
+            return true;
         }
-        return false;
+        Iterator it = iterator();
+        Iterator it2 = list.iterator();
+        while (it.hasNext()) {
+            if (!it2.hasNext() || !zzo.zza(it.next(), it2.next())) {
+                return false;
+            }
+        }
+        return !it2.hasNext();
     }
 
     @Override // java.util.Collection, java.util.List

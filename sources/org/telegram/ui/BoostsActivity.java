@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
@@ -444,7 +443,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             getMessagesController().getBoostsController().getBoostsStats(this.dialogId, new Consumer() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda2
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    BoostsActivity.this.lambda$loadStatistic$1((TL_stories.TL_premium_boostsStatus) obj);
+                    BoostsActivity.$r8$lambda$RBc6oB6A0494Oclaf7eJ79oyb9Y(BoostsActivity.this, (TL_stories.TL_premium_boostsStatus) obj);
                 }
             });
         } else {
@@ -453,30 +452,29 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadStatistic$1(final TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+    public static /* synthetic */ void $r8$lambda$RBc6oB6A0494Oclaf7eJ79oyb9Y(final BoostsActivity boostsActivity, final TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+        boostsActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                BoostsActivity.this.lambda$loadStatistic$0(tL_premium_boostsStatus);
+                BoostsActivity.$r8$lambda$egbWcQ_PpcqChbRkszTFuN5T-Mc(BoostsActivity.this, tL_premium_boostsStatus);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadStatistic$0(TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        this.boostsStatus = tL_premium_boostsStatus;
-        loadCanApplyBoosts();
-        this.progressLayout.animate().cancel();
-        this.progressLayout.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.BoostsActivity.2
+    public static /* synthetic */ void $r8$lambda$egbWcQ_PpcqChbRkszTFuN5T-Mc(BoostsActivity boostsActivity, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+        boostsActivity.boostsStatus = tL_premium_boostsStatus;
+        boostsActivity.loadCanApplyBoosts();
+        boostsActivity.progressLayout.animate().cancel();
+        boostsActivity.progressLayout.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.BoostsActivity.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 BoostsActivity.this.progressLayout.setVisibility(8);
             }
         });
-        resetHeader(true);
-        updateRows(true);
-        loadUsers(null);
+        boostsActivity.resetHeader(true);
+        boostsActivity.updateRows(true);
+        boostsActivity.loadUsers(null);
     }
 
     private void loadCanApplyBoosts() {
@@ -486,14 +484,9 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         getMessagesController().getBoostsController().userCanBoostChannel(this.dialogId, this.boostsStatus, new Consumer() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda1
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
-                BoostsActivity.this.lambda$loadCanApplyBoosts$2((ChannelBoostsController.CanApplyBoost) obj);
+                BoostsActivity.this.canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadCanApplyBoosts$2(ChannelBoostsController.CanApplyBoost canApplyBoost) {
-        this.canApplyBoost = canApplyBoost;
     }
 
     private void loadUsers(Boolean bool) {
@@ -505,69 +498,66 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BoostsActivity.this.lambda$loadUsers$5();
+                    BoostsActivity.$r8$lambda$_bV1Ovp_8Jef1ctwVgC9zwVQaVg(BoostsActivity.this);
                 }
             });
         } else if (bool.booleanValue()) {
             loadOnlyGifts(null, new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BoostsActivity.this.lambda$loadUsers$6();
+                    BoostsActivity.$r8$lambda$1GqR-zFvE_EsK6vcE35-EIohDiE(BoostsActivity.this);
                 }
             });
         } else {
             loadOnlyBoosts(null, new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BoostsActivity.this.lambda$loadUsers$7();
+                    BoostsActivity.$r8$lambda$v5FB1CrVqCijxtKTEj5SbIFfKsg(BoostsActivity.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$5() {
+    public static /* synthetic */ void $r8$lambda$_bV1Ovp_8Jef1ctwVgC9zwVQaVg(final BoostsActivity boostsActivity) {
+        boostsActivity.getClass();
         CountDownLatch countDownLatch = new CountDownLatch(2);
-        loadOnlyBoosts(countDownLatch, null);
-        loadOnlyGifts(countDownLatch, null);
+        boostsActivity.loadOnlyBoosts(countDownLatch, null);
+        boostsActivity.loadOnlyGifts(countDownLatch, null);
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {
         }
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda8
+        NotificationCenter.getInstance(boostsActivity.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                BoostsActivity.this.lambda$loadUsers$4();
+                BoostsActivity.$r8$lambda$QsylhBcLa5kv2j-ebMnFzOYukB0(BoostsActivity.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$4() {
+    public static /* synthetic */ void $r8$lambda$QsylhBcLa5kv2j-ebMnFzOYukB0(final BoostsActivity boostsActivity) {
+        boostsActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                BoostsActivity.this.lambda$loadUsers$3();
+                BoostsActivity.$r8$lambda$_mmSA6T7SB8qHk_ns7v8BAgxDuU(BoostsActivity.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$3() {
-        this.usersLoading = false;
-        updateRows(true);
+    public static /* synthetic */ void $r8$lambda$_mmSA6T7SB8qHk_ns7v8BAgxDuU(BoostsActivity boostsActivity) {
+        boostsActivity.usersLoading = false;
+        boostsActivity.updateRows(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$6() {
-        this.usersLoading = false;
-        updateRows(true);
+    public static /* synthetic */ void $r8$lambda$1GqR-zFvE_EsK6vcE35-EIohDiE(BoostsActivity boostsActivity) {
+        boostsActivity.usersLoading = false;
+        boostsActivity.updateRows(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$7() {
-        this.usersLoading = false;
-        updateRows(true);
+    public static /* synthetic */ void $r8$lambda$v5FB1CrVqCijxtKTEj5SbIFfKsg(BoostsActivity boostsActivity) {
+        boostsActivity.usersLoading = false;
+        boostsActivity.updateRows(true);
     }
 
     private void loadOnlyBoosts(final CountDownLatch countDownLatch, final Runnable runnable) {
@@ -578,52 +568,56 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_premium_getBoostsList, new RequestDelegate() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BoostsActivity.this.lambda$loadOnlyBoosts$9(countDownLatch, runnable, tLObject, tL_error);
+                BoostsActivity.$r8$lambda$nYiFDvUtO1qJs0rfZORNXIw0EqY(BoostsActivity.this, countDownLatch, runnable, tLObject, tL_error);
             }
         }, 2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadOnlyBoosts$9(final CountDownLatch countDownLatch, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$nYiFDvUtO1qJs0rfZORNXIw0EqY(final BoostsActivity boostsActivity, final CountDownLatch countDownLatch, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        boostsActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                BoostsActivity.this.lambda$loadOnlyBoosts$8(countDownLatch, tLObject, runnable);
+                BoostsActivity.$r8$lambda$VOpzH1C0C93t57xstJQK6-Zvi5g(BoostsActivity.this, countDownLatch, tLObject, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadOnlyBoosts$8(CountDownLatch countDownLatch, TLObject tLObject, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$VOpzH1C0C93t57xstJQK6-Zvi5g(BoostsActivity boostsActivity, CountDownLatch countDownLatch, TLObject tLObject, Runnable runnable) {
+        boostsActivity.getClass();
         if (countDownLatch != null) {
             countDownLatch.countDown();
         }
         if (tLObject != null) {
-            this.limitBoosts = 20;
+            boostsActivity.limitBoosts = 20;
             TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject;
             boolean z = false;
-            MessagesController.getInstance(this.currentAccount).putUsers(tL_premium_boostsList.users, false);
-            this.lastBoostsOffset = tL_premium_boostsList.next_offset;
-            this.boosters.addAll(tL_premium_boostsList.boosts);
-            Iterator it = this.boosters.iterator();
+            MessagesController.getInstance(boostsActivity.currentAccount).putUsers(tL_premium_boostsList.users, false);
+            boostsActivity.lastBoostsOffset = tL_premium_boostsList.next_offset;
+            boostsActivity.boosters.addAll(tL_premium_boostsList.boosts);
+            ArrayList arrayList = boostsActivity.boosters;
+            int size = arrayList.size();
             int i = 0;
+            int i2 = 0;
             while (true) {
-                int i2 = 1;
-                if (!it.hasNext()) {
+                int i3 = 1;
+                if (i >= size) {
                     break;
                 }
-                int i3 = ((TL_stories.Boost) it.next()).multiplier;
-                if (i3 > 0) {
-                    i2 = i3;
+                Object obj = arrayList.get(i);
+                i++;
+                int i4 = ((TL_stories.Boost) obj).multiplier;
+                if (i4 > 0) {
+                    i3 = i4;
                 }
-                i += i2;
+                i2 += i3;
             }
-            this.nextBoostRemaining = Math.max(0, tL_premium_boostsList.count - i);
-            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && this.nextBoostRemaining > 0) {
+            boostsActivity.nextBoostRemaining = Math.max(0, tL_premium_boostsList.count - i2);
+            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && boostsActivity.nextBoostRemaining > 0) {
                 z = true;
             }
-            this.hasBoostsNext = z;
-            this.totalBoosts = tL_premium_boostsList.count;
+            boostsActivity.hasBoostsNext = z;
+            boostsActivity.totalBoosts = tL_premium_boostsList.count;
             if (runnable != null) {
                 runnable.run();
             }
@@ -639,52 +633,56 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_premium_getBoostsList, new RequestDelegate() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BoostsActivity.this.lambda$loadOnlyGifts$11(countDownLatch, runnable, tLObject, tL_error);
+                BoostsActivity.$r8$lambda$QJViKzQEB04toTRzTkswgiJLfkE(BoostsActivity.this, countDownLatch, runnable, tLObject, tL_error);
             }
         }, 2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadOnlyGifts$11(final CountDownLatch countDownLatch, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$QJViKzQEB04toTRzTkswgiJLfkE(final BoostsActivity boostsActivity, final CountDownLatch countDownLatch, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        boostsActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                BoostsActivity.this.lambda$loadOnlyGifts$10(countDownLatch, tLObject, runnable);
+                BoostsActivity.$r8$lambda$YveK_pj_5XbE4NYhSeSateiIjXU(BoostsActivity.this, countDownLatch, tLObject, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadOnlyGifts$10(CountDownLatch countDownLatch, TLObject tLObject, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$YveK_pj_5XbE4NYhSeSateiIjXU(BoostsActivity boostsActivity, CountDownLatch countDownLatch, TLObject tLObject, Runnable runnable) {
+        boostsActivity.getClass();
         if (countDownLatch != null) {
             countDownLatch.countDown();
         }
         if (tLObject != null) {
-            this.limitGifts = 20;
+            boostsActivity.limitGifts = 20;
             TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject;
             boolean z = false;
-            MessagesController.getInstance(this.currentAccount).putUsers(tL_premium_boostsList.users, false);
-            this.lastGiftsOffset = tL_premium_boostsList.next_offset;
-            this.gifts.addAll(tL_premium_boostsList.boosts);
-            Iterator it = this.gifts.iterator();
+            MessagesController.getInstance(boostsActivity.currentAccount).putUsers(tL_premium_boostsList.users, false);
+            boostsActivity.lastGiftsOffset = tL_premium_boostsList.next_offset;
+            boostsActivity.gifts.addAll(tL_premium_boostsList.boosts);
+            ArrayList arrayList = boostsActivity.gifts;
+            int size = arrayList.size();
             int i = 0;
+            int i2 = 0;
             while (true) {
-                int i2 = 1;
-                if (!it.hasNext()) {
+                int i3 = 1;
+                if (i >= size) {
                     break;
                 }
-                int i3 = ((TL_stories.Boost) it.next()).multiplier;
-                if (i3 > 0) {
-                    i2 = i3;
+                Object obj = arrayList.get(i);
+                i++;
+                int i4 = ((TL_stories.Boost) obj).multiplier;
+                if (i4 > 0) {
+                    i3 = i4;
                 }
-                i += i2;
+                i2 += i3;
             }
-            this.nextGiftsRemaining = Math.max(0, tL_premium_boostsList.count - i);
-            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && this.nextGiftsRemaining > 0) {
+            boostsActivity.nextGiftsRemaining = Math.max(0, tL_premium_boostsList.count - i2);
+            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && boostsActivity.nextGiftsRemaining > 0) {
                 z = true;
             }
-            this.hasGiftsNext = z;
-            this.totalGifts = tL_premium_boostsList.count;
+            boostsActivity.hasGiftsNext = z;
+            boostsActivity.totalGifts = tL_premium_boostsList.count;
             if (runnable != null) {
                 runnable.run();
             }
@@ -745,7 +743,8 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         super.onFragmentDestroy();
     }
 
-    private class ItemInternal extends AdapterWithDiffUtils.Item {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ItemInternal extends AdapterWithDiffUtils.Item {
         TL_stories.Boost booster;
         boolean isLast;
         TL_stories.PrepaidGiveaway prepaidGiveaway;
@@ -876,19 +875,19 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             headerButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.BoostsActivity$5$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BoostsActivity.5.this.lambda$new$0(view);
+                    BoostsActivity.5.$r8$lambda$9yNix3p-fTtmaRwFH07EZl4b6A0(BoostsActivity.5.this, view);
                 }
             });
             headerButtonView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.BoostsActivity$5$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BoostsActivity.5.this.lambda$new$2(view);
+                    BoostsActivity.5.$r8$lambda$IgjlIhIJ0NwaCnG-MnBI5HBGMvw(BoostsActivity.5.this, view);
                 }
             });
             headerButtonView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.BoostsActivity$5$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BoostsActivity.5.this.lambda$new$3(view);
+                    BoostsActivity.5.$r8$lambda$QdyQf0St96BWAacDQy0mO6yszQk(BoostsActivity.5.this, view);
                 }
             });
             LinearLayout linearLayout = new LinearLayout(getContext());
@@ -901,34 +900,27 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             addView(linearLayout, LayoutHelper.createFrame(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
+        public static /* synthetic */ void $r8$lambda$9yNix3p-fTtmaRwFH07EZl4b6A0(5 r7, View view) {
             BoostsActivity boostsActivity = BoostsActivity.this;
             LimitReachedBottomSheet.openBoostsForUsers(boostsActivity, true, boostsActivity.dialogId, BoostsActivity.this.canApplyBoost, BoostsActivity.this.boostsStatus, null);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(View view) {
+        public static /* synthetic */ void $r8$lambda$IgjlIhIJ0NwaCnG-MnBI5HBGMvw(final 5 r3, View view) {
             BoostsActivity.this.updateDialogVisibility(true);
             BoostsActivity boostsActivity = BoostsActivity.this;
             BoostPagerBottomSheet.show(boostsActivity, boostsActivity.dialogId, ((BaseFragment) BoostsActivity.this).resourceProvider);
             BoostPagerBottomSheet.getInstance().setOnHideListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.BoostsActivity$5$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    BoostsActivity.5.this.lambda$new$1(dialogInterface);
+                    BoostsActivity.this.updateDialogVisibility(false);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(DialogInterface dialogInterface) {
-            BoostsActivity.this.updateDialogVisibility(false);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$3(View view) {
+        public static /* synthetic */ void $r8$lambda$QdyQf0St96BWAacDQy0mO6yszQk(5 r6, View view) {
+            r6.getClass();
             BoostsActivity boostsActivity = BoostsActivity.this;
-            Context context = getContext();
+            Context context = r6.getContext();
             BoostsActivity boostsActivity2 = BoostsActivity.this;
             LimitReachedBottomSheet limitReachedBottomSheet = new LimitReachedBottomSheet(boostsActivity, context, 31, boostsActivity2.currentAccount, boostsActivity2.getResourceProvider());
             limitReachedBottomSheet.setBoostsStats(BoostsActivity.this.boostsStatus, true);
@@ -985,7 +977,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.BoostsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                BoostsActivity.this.lambda$createView$12(context, view, i);
+                BoostsActivity.$r8$lambda$Ul0nbs6xmuX4DwkQ17srWMhUu0A(BoostsActivity.this, context, view, i);
             }
         });
         createEmptyView(getContext());
@@ -994,21 +986,29 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
         return createView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$12(Context context, View view, int i) {
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static /* synthetic */ void $r8$lambda$Ul0nbs6xmuX4DwkQ17srWMhUu0A(BoostsActivity boostsActivity, Context context, View view, int i) {
+        BoostsActivity boostsActivity2;
+        boostsActivity.getClass();
         if (view instanceof GiftedUserCell) {
             GiftedUserCell giftedUserCell = (GiftedUserCell) view;
             TL_stories.Boost boost = giftedUserCell.getBoost();
             boolean z = boost.giveaway;
             if (z && boost.stars > 0) {
-                StarsIntroActivity.showBoostsSheet(context, this.currentAccount, this.dialogId, boost, getResourceProvider());
+                StarsIntroActivity.showBoostsSheet(context, boostsActivity.currentAccount, boostsActivity.dialogId, boost, boostsActivity.getResourceProvider());
             } else {
                 boolean z2 = boost.gift;
                 if (((z2 || z) && boost.user_id >= 0) || boost.unclaimed) {
                     TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
                     tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
                     tL_payments_checkedGiftCode.to_id = boost.user_id;
-                    tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-this.currentChat.id);
+                    tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-boostsActivity.currentChat.id);
                     int i2 = boost.date;
                     tL_payments_checkedGiftCode.date = i2;
                     tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
@@ -1021,27 +1021,38 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                     } else {
                         tL_payments_checkedGiftCode.boost = boost;
                     }
-                    new GiftInfoBottomSheet(this, false, true, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
-                } else if (z && boost.user_id == -1) {
-                    Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(getParentActivity(), getResourceProvider());
+                    boostsActivity2 = boostsActivity;
+                    new GiftInfoBottomSheet(boostsActivity2, false, true, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                    if (view instanceof TextCell) {
+                        BoostPagerBottomSheet.show(boostsActivity2, boostsActivity2.dialogId, boostsActivity2.resourceProvider);
+                    }
+                    if (view instanceof GiveawayCell) {
+                        BoostPagerBottomSheet.show(boostsActivity2, boostsActivity2.resourceProvider, boostsActivity2.dialogId, ((GiveawayCell) view).getPrepaidGiveaway());
+                    }
+                    if (((ItemInternal) boostsActivity2.items.get(i)).viewType != 9) {
+                        boostsActivity2.loadUsers(Boolean.valueOf(boostsActivity2.selectedTab == 1));
+                        return;
+                    }
+                    return;
+                }
+                if (z && boost.user_id == -1) {
+                    Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(boostsActivity.getParentActivity(), boostsActivity.getResourceProvider());
                     lottieLayout.setAnimation(R.raw.chats_infotip, 36, 36, new String[0]);
                     lottieLayout.textView.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
                     lottieLayout.textView.setSingleLine(false);
                     lottieLayout.textView.setMaxLines(2);
-                    Bulletin.make(this, lottieLayout, 2750).show();
+                    Bulletin.make(boostsActivity, lottieLayout, 2750).show();
                 } else if (!z2 && !z) {
-                    presentFragment(ProfileActivity.of(giftedUserCell.getDialogId()));
+                    boostsActivity.presentFragment(ProfileActivity.of(giftedUserCell.getDialogId()));
                 }
             }
         }
+        boostsActivity2 = boostsActivity;
         if (view instanceof TextCell) {
-            BoostPagerBottomSheet.show(this, this.dialogId, this.resourceProvider);
         }
         if (view instanceof GiveawayCell) {
-            BoostPagerBottomSheet.show(this, this.resourceProvider, this.dialogId, ((GiveawayCell) view).getPrepaidGiveaway());
         }
-        if (((ItemInternal) this.items.get(i)).viewType == 9) {
-            loadUsers(Boolean.valueOf(this.selectedTab == 1));
+        if (((ItemInternal) boostsActivity2.items.get(i)).viewType != 9) {
         }
     }
 }

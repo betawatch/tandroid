@@ -38,30 +38,62 @@ final class zzfz extends SuspendLambda implements Function2 {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        zzcg zzcgVar;
+        zzfz zzfzVar;
         zzdr zzdrVar;
+        zzcg e;
+        zzcx zzcxVar;
+        zzfw zzfwVar;
+        zzfy zzfyVar;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        try {
-            if (this.zza != 0) {
+        if (this.zza != 0) {
+            try {
                 ResultKt.throwOnFailure(obj);
-            } else {
-                ResultKt.throwOnFailure(obj);
-                zzcx zzcxVar = zzcx.zza;
-                zzgb zzgbVar = this.zzb;
-                zzfw zzfwVar = new zzfw(zzgbVar);
-                zzfy zzfyVar = new zzfy(this.zzd, zzgbVar, this.zze, this.zzc, null);
+                zzfzVar = this;
+            } catch (zzcg e2) {
+                zzcgVar = e2;
+                zzfzVar = this;
+                zzgb zzgbVar = zzfzVar.zzb;
+                zzdrVar = zzdv.zzd;
+                zzgbVar.zzf = zzdrVar;
+                zzfzVar.zzc.completeExceptionally(zzcgVar);
+                return Unit.INSTANCE;
+            }
+        } else {
+            ResultKt.throwOnFailure(obj);
+            try {
+                zzcxVar = zzcx.zza;
+                zzgb zzgbVar2 = this.zzb;
+                zzfwVar = new zzfw(zzgbVar2);
+                zzfyVar = new zzfy(this.zzd, zzgbVar2, this.zze, this.zzc, null);
                 this.zza = 1;
-                obj = zzcxVar.zzb(zzfwVar, 100L, 1000L, 2.0d, zzfyVar, this);
+                zzfzVar = this;
+            } catch (zzcg e3) {
+                e = e3;
+                zzfzVar = this;
+                zzcgVar = e;
+                zzgb zzgbVar3 = zzfzVar.zzb;
+                zzdrVar = zzdv.zzd;
+                zzgbVar3.zzf = zzdrVar;
+                zzfzVar.zzc.completeExceptionally(zzcgVar);
+                return Unit.INSTANCE;
+            }
+            try {
+                obj = zzcxVar.zzb(zzfwVar, 100L, 1000L, 2.0d, zzfyVar, zzfzVar);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+            } catch (zzcg e4) {
+                e = e4;
+                zzcgVar = e;
+                zzgb zzgbVar32 = zzfzVar.zzb;
+                zzdrVar = zzdv.zzd;
+                zzgbVar32.zzf = zzdrVar;
+                zzfzVar.zzc.completeExceptionally(zzcgVar);
+                return Unit.INSTANCE;
             }
-            ((Boolean) obj).booleanValue();
-        } catch (zzcg e) {
-            zzgb zzgbVar2 = this.zzb;
-            zzdrVar = zzdv.zzd;
-            zzgbVar2.zzf = zzdrVar;
-            this.zzc.completeExceptionally(e);
         }
+        ((Boolean) obj).getClass();
         return Unit.INSTANCE;
     }
 }

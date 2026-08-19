@@ -181,10 +181,11 @@ public final class ParsableByteArray {
         int i = this.position;
         this.position = i + 1;
         this.position = i + 2;
+        long j = ((bArr[i] & 255) << 24) | ((bArr[r2] & 255) << 16);
         this.position = i + 3;
-        long j = ((bArr[i] & 255) << 24) | ((bArr[r2] & 255) << 16) | ((bArr[r7] & 255) << 8);
+        long j2 = j | ((bArr[r7] & 255) << 8);
         this.position = i + 4;
-        return (bArr[r4] & 255) | j;
+        return (bArr[r2] & 255) | j2;
     }
 
     public long readLittleEndianUnsignedInt() {
@@ -192,10 +193,11 @@ public final class ParsableByteArray {
         int i = this.position;
         this.position = i + 1;
         this.position = i + 2;
+        long j = (bArr[i] & 255) | ((bArr[r2] & 255) << 8);
         this.position = i + 3;
-        long j = (bArr[i] & 255) | ((bArr[r2] & 255) << 8) | ((bArr[r7] & 255) << 16);
+        long j2 = j | ((bArr[r7] & 255) << 16);
         this.position = i + 4;
-        return ((bArr[r4] & 255) << 24) | j;
+        return ((bArr[r2] & 255) << 24) | j2;
     }
 
     public int readInt() {
@@ -235,18 +237,19 @@ public final class ParsableByteArray {
         int i = this.position;
         this.position = i + 1;
         this.position = i + 2;
+        long j = ((bArr[i] & 255) << 56) | ((bArr[r2] & 255) << 48);
         this.position = i + 3;
-        long j = ((bArr[i] & 255) << 56) | ((bArr[r2] & 255) << 48) | ((bArr[r7] & 255) << 40);
+        long j2 = j | ((bArr[r7] & 255) << 40);
         this.position = i + 4;
-        long j2 = j | ((bArr[r4] & 255) << 32);
+        long j3 = j2 | ((bArr[r2] & 255) << 32);
         this.position = i + 5;
-        long j3 = j2 | ((bArr[r7] & 255) << 24);
+        long j4 = j3 | ((bArr[r7] & 255) << 24);
         this.position = i + 6;
-        long j4 = j3 | ((bArr[r4] & 255) << 16);
+        long j5 = j4 | ((bArr[r2] & 255) << 16);
         this.position = i + 7;
-        long j5 = j4 | ((bArr[r7] & 255) << 8);
+        long j6 = j5 | ((bArr[r7] & 255) << 8);
         this.position = i + 8;
-        return (bArr[r4] & 255) | j5;
+        return (bArr[r2] & 255) | j6;
     }
 
     public long readLittleEndianLong() {
@@ -450,22 +453,23 @@ public final class ParsableByteArray {
                 return i3;
             }
             if ((charset.equals(Charsets.UTF_8) || charset.equals(Charsets.US_ASCII)) && Util.isLinebreak(this.data[i2])) {
-                return i2;
+                break;
             }
             if (charset.equals(Charsets.UTF_16) || charset.equals(Charsets.UTF_16BE)) {
                 byte[] bArr = this.data;
                 if (bArr[i2] == 0 && Util.isLinebreak(bArr[i2 + 1])) {
-                    return i2;
+                    break;
                 }
             }
             if (charset.equals(Charsets.UTF_16LE)) {
                 byte[] bArr2 = this.data;
                 if (bArr2[i2 + 1] == 0 && Util.isLinebreak(bArr2[i2])) {
-                    return i2;
+                    break;
                 }
             }
             i2 += i;
         }
+        return i2;
     }
 
     private void skipLineTerminator(Charset charset) {

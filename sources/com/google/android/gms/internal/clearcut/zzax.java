@@ -83,15 +83,12 @@ abstract class zzax {
                 break;
             }
             int zza2 = zza(bArr, i2, zzayVar);
-            int i8 = zzayVar.zzfd;
-            i7 = i8;
-            if (i8 == i6) {
+            i7 = zzayVar.zzfd;
+            if (i7 == i6) {
                 i2 = zza2;
                 break;
             }
-            int zza3 = zza(i7, bArr, zza2, i3, zzeb, zzayVar);
-            i7 = i8;
-            i2 = zza3;
+            i2 = zza(i7, bArr, zza2, i3, zzeb, zzayVar);
         }
         if (i2 > i3 || i7 != i6) {
             throw zzco.zzbo();

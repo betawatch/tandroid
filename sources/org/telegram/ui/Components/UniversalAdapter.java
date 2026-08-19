@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import me.vkryl.core.BitwiseUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -165,9 +164,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         } else {
             arrayList.clear();
         }
-        Iterator it = this.whiteSections.iterator();
-        while (it.hasNext()) {
-            Section section = (Section) it.next();
+        ArrayList arrayList2 = this.whiteSections;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            Section section = (Section) obj;
             this.listView.forcedSections.add(Long.valueOf(AndroidUtilities.pack(section.start, section.end)));
         }
     }
@@ -251,17 +254,16 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
             this.listView.post(new Runnable() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UniversalAdapter.this.lambda$update$0(z);
+                    UniversalAdapter.this.updateInternal(z);
                 }
             });
         } else {
-            lambda$update$0(z);
+            updateInternal(z);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: updateInternal, reason: merged with bridge method [inline-methods] */
-    public void lambda$update$0(boolean z) {
+    public void updateInternal(boolean z) {
         RecyclerListView recyclerListView = this.listView;
         if (recyclerListView == null || !recyclerListView.isComputingLayout()) {
             this.oldItems.clear();
@@ -360,38 +362,41 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        HeaderCell headerCell;
+        View universalChartCell;
         View view;
+        View view2;
         boolean z = this.dialog;
         int i2 = z ? Theme.key_dialogBackground : Theme.key_windowBackgroundWhite;
         if (i >= UItem.factoryViewTypeStartsWith) {
             UItem.UItemFactory findFactory = UItem.findFactory(i);
             if (findFactory != null) {
-                view = findFactory.createView(this.context, this.listView, this.currentAccount, this.classGuid, this.resourcesProvider);
+                universalChartCell = findFactory.createView(this.context, this.listView, this.currentAccount, this.classGuid, this.resourcesProvider);
             } else {
-                view = new View(this.context);
+                universalChartCell = new View(this.context);
             }
         } else {
             switch (i) {
                 case -4:
                 case -1:
-                    View view2 = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.1
+                    View view3 = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.1
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i3, int i4) {
                             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i4);
                         }
                     };
-                    view = view2;
+                    universalChartCell = view3;
                     if (i == -4) {
-                        view2.setTag(-33024);
-                        view = view2;
+                        view3.setTag(-33024);
+                        universalChartCell = view3;
                         break;
                     }
                     break;
                 case -3:
-                    view = new FullscreenCustomFrameLayout(this.context);
+                    universalChartCell = new FullscreenCustomFrameLayout(this.context);
                     break;
                 case -2:
-                    view = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.2
+                    universalChartCell = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.2
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i3, int i4) {
                             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30);
@@ -406,66 +411,70 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     break;
                 case 0:
                     if (z) {
-                        view = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 0, false, this.resourcesProvider);
+                        headerCell = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 0, false, this.resourcesProvider);
+                        universalChartCell = headerCell;
                         break;
                     } else {
-                        view = new HeaderCell(this.context, this.resourcesProvider);
+                        universalChartCell = new HeaderCell(this.context, this.resourcesProvider);
                         break;
                     }
                 case 1:
-                    view = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlackText, 17, 15, false, this.resourcesProvider);
+                    view2 = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlackText, 17, 15, false, this.resourcesProvider);
+                    universalChartCell = view2;
                     break;
                 case 2:
-                    view = new TopViewCell(this.context, this.resourcesProvider);
+                    universalChartCell = new TopViewCell(this.context, this.resourcesProvider);
                     break;
                 case 3:
-                    view = new TextCell(this.context, this.resourcesProvider);
+                    universalChartCell = new TextCell(this.context, this.resourcesProvider);
                     break;
                 case 4:
                 case 9:
                     TextCheckCell textCheckCell = new TextCheckCell(this.context, this.resourcesProvider);
-                    view = textCheckCell;
+                    view2 = textCheckCell;
                     if (i == 9) {
                         textCheckCell.setDrawCheckRipple(true);
                         textCheckCell.setColors(Theme.key_windowBackgroundCheckText, Theme.key_switchTrackBlue, Theme.key_switchTrackBlueChecked, Theme.key_switchTrackBlueThumb, Theme.key_switchTrackBlueThumbChecked);
                         textCheckCell.setTypeface(AndroidUtilities.bold());
                         textCheckCell.setHeight(56);
-                        view = textCheckCell;
-                        break;
+                        view2 = textCheckCell;
                     }
+                    universalChartCell = view2;
                     break;
                 case 5:
                 case 6:
                     view = new NotificationsCheckCell(this.context, 21, 60, i == 6, this.resourcesProvider);
+                    universalChartCell = view;
                     break;
                 case 7:
                 case 8:
                 default:
-                    view = new TextInfoPrivacyCell(this.context, this.resourcesProvider);
+                    universalChartCell = new TextInfoPrivacyCell(this.context, this.resourcesProvider);
                     break;
                 case 10:
-                    view = new DialogRadioCell(this.context);
+                    universalChartCell = new DialogRadioCell(this.context);
                     break;
                 case 11:
                 case 12:
                     UserCell userCell = new UserCell(this.context, 6, i == 12 ? 3 : 0, false);
                     userCell.setSelfAsSavedMessages(true);
-                    view = userCell;
+                    universalChartCell = userCell;
                     break;
                 case 13:
-                    view = new UserCell(this.context, 6, 0, false, true);
+                    view2 = new UserCell(this.context, 6, 0, false, true);
+                    universalChartCell = view2;
                     break;
                 case 14:
-                    view = new SlideChooseView(this.context, this.resourcesProvider);
+                    universalChartCell = new SlideChooseView(this.context, this.resourcesProvider);
                     break;
                 case 15:
-                    view = new SlideIntChooseView(this.context, this.resourcesProvider);
+                    universalChartCell = new SlideIntChooseView(this.context, this.resourcesProvider);
                     break;
                 case 16:
-                    view = new QuickRepliesActivity.QuickReplyView(this.context, this.onReordered != null, this.resourcesProvider);
+                    universalChartCell = new QuickRepliesActivity.QuickReplyView(this.context, this.onReordered != null, this.resourcesProvider);
                     break;
                 case 17:
-                    view = new QuickRepliesActivity.LargeQuickReplyView(this.context, this.resourcesProvider);
+                    universalChartCell = new QuickRepliesActivity.LargeQuickReplyView(this.context, this.resourcesProvider);
                     break;
                 case 18:
                 case 19:
@@ -476,54 +485,55 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     if (this.chartSharedUI == null) {
                         this.chartSharedUI = new BaseChartView.SharedUiComponents();
                     }
-                    view = new StatisticActivity.UniversalChartCell(this.context, this.currentAccount, i - 18, this.chartSharedUI, this.classGuid);
+                    universalChartCell = new StatisticActivity.UniversalChartCell(this.context, this.currentAccount, i - 18, this.chartSharedUI, this.classGuid);
                     break;
                 case 24:
-                    view = new ChannelMonetizationLayout.ProceedOverviewCell(this.context, this.resourcesProvider);
+                    universalChartCell = new ChannelMonetizationLayout.ProceedOverviewCell(this.context, this.resourcesProvider);
                     break;
                 case 25:
-                    view = new ChannelMonetizationLayout.TransactionCell(this.context, this.resourcesProvider);
+                    universalChartCell = new ChannelMonetizationLayout.TransactionCell(this.context, this.resourcesProvider);
                     break;
                 case 26:
-                    HeaderCell headerCell = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlackText, 23, 20, 0, false, this.resourcesProvider);
+                    headerCell = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlackText, 23, 20, 0, false, this.resourcesProvider);
                     headerCell.setTextSize(20.0f);
-                    view = headerCell;
+                    universalChartCell = headerCell;
                     break;
                 case 27:
                     StoryPrivacyBottomSheet.UserCell userCell2 = new StoryPrivacyBottomSheet.UserCell(this.context, this.resourcesProvider);
                     userCell2.setIsSendAs(false, false);
-                    view = userCell2;
+                    universalChartCell = userCell2;
                     break;
                 case 28:
-                    view = new SpaceView(this.context);
+                    universalChartCell = new SpaceView(this.context);
                     break;
                 case 29:
-                    view = new BusinessLinksActivity.BusinessLinkView(this.context, this.resourcesProvider);
+                    universalChartCell = new BusinessLinksActivity.BusinessLinkView(this.context, this.resourcesProvider);
                     break;
                 case 30:
-                    view = new TextRightIconCell(this.context, this.resourcesProvider);
+                    universalChartCell = new TextRightIconCell(this.context, this.resourcesProvider);
                     break;
                 case 31:
                     RecyclerListView recyclerListView = this.listView;
                     if (recyclerListView != null && recyclerListView.hasSections()) {
                         GraySectionCell graySectionCell = new GraySectionCell(this.context, 28, this.resourcesProvider);
                         graySectionCell.setNoBackground(true);
-                        view = graySectionCell;
+                        universalChartCell = graySectionCell;
                         break;
                     } else {
-                        view = new GraySectionCell(this.context, this.resourcesProvider);
+                        universalChartCell = new GraySectionCell(this.context, this.resourcesProvider);
                         break;
                     }
+                    break;
                 case 32:
-                    view = new ProfileSearchCell(this.context);
+                    universalChartCell = new ProfileSearchCell(this.context);
                     break;
                 case 33:
-                    view = new DialogCell(null, this.context, false, true);
+                    universalChartCell = new DialogCell(null, this.context, false, true);
                     break;
                 case 34:
                     FlickerLoadingView flickerLoadingView = new FlickerLoadingView(this.context, this.resourcesProvider);
                     flickerLoadingView.setIsSingleCell(true);
-                    view = flickerLoadingView;
+                    universalChartCell = flickerLoadingView;
                     break;
                 case 35:
                 case 36:
@@ -532,29 +542,31 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     CheckBoxCell checkBoxCell = new CheckBoxCell(this.context, i == 35 ? 4 : i == 36 ? 6 : i == 37 ? 7 : i == 41 ? 8 : 0, 21, true, this.resourcesProvider);
                     checkBoxCell.getCheckBoxRound().setColor(Theme.key_switch2TrackChecked, Theme.key_radioBackground, Theme.key_checkboxCheck);
                     view = checkBoxCell;
+                    universalChartCell = view;
                     break;
                 case 38:
-                    view = new CollapseTextCell(this.context, this.resourcesProvider);
+                    universalChartCell = new CollapseTextCell(this.context, this.resourcesProvider);
                     break;
                 case 39:
                 case 40:
-                    view = new TextCheckCell2(this.context);
+                    universalChartCell = new TextCheckCell2(this.context);
                     break;
                 case 42:
-                    view = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 0, false, true, this.resourcesProvider);
+                    view2 = new HeaderCell(this.context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 0, false, true, this.resourcesProvider);
+                    universalChartCell = view2;
                     break;
                 case 43:
-                    view = new TextSettingsCell(this.context, this.resourcesProvider);
+                    universalChartCell = new TextSettingsCell(this.context, this.resourcesProvider);
                     break;
                 case 44:
-                    view = new RadioButtonCell(this.context);
+                    universalChartCell = new RadioButtonCell(this.context);
                     break;
             }
         }
         if (shouldApplyBackground(i)) {
-            view.setBackgroundColor(getThemedColor(i2));
+            universalChartCell.setBackgroundColor(getThemedColor(i2));
         }
-        return new RecyclerListView.Holder(view);
+        return new RecyclerListView.Holder(universalChartCell);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -581,11 +593,11 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x026b  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0267  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0244  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0206  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0258  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -598,8 +610,6 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         CharSequence charSequence;
         String formatPluralStringSpaced;
         int i3;
-        boolean z = false;
-        z = false;
         final UItem item = getItem(i);
         UItem item2 = getItem(i + 1);
         UItem item3 = getItem(i - 1);
@@ -742,10 +752,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 case 5:
                     NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) viewHolder.itemView;
                     CharSequence charSequence2 = item.subtext;
-                    if (charSequence2 != null && charSequence2.toString().contains("\n")) {
-                        z = true;
-                    }
-                    notificationsCheckCell.setTextAndValueAndCheck(item.text, item.subtext, item.checked, 0, z, hasDivider);
+                    notificationsCheckCell.setTextAndValueAndCheck(item.text, item.subtext, item.checked, 0, charSequence2 != null && charSequence2.toString().contains("\n"), hasDivider);
                     break;
                 case 6:
                     ((NotificationsCheckCell) viewHolder.itemView).setTextAndValueAndCheck(item.text, item.subtext, item.checked, hasDivider);
@@ -789,17 +796,17 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     } else {
                         textInfoPrivacyCell = null;
                     }
-                    boolean z2 = (item3 == null || isShadow(item3.viewType)) ? false : true;
-                    boolean z3 = (item2 == null || isShadow(item2.viewType)) ? false : true;
+                    boolean z = (item3 == null || isShadow(item3.viewType)) ? false : true;
+                    boolean z2 = (item2 == null || isShadow(item2.viewType)) ? false : true;
                     if (this.listView.hasSections()) {
                         textInfoPrivacyCell.setBackground(null);
                         break;
                     } else {
-                        if (z2 && z3) {
+                        if (z && z2) {
                             i2 = R.drawable.greydivider;
-                        } else if (z2) {
+                        } else if (z) {
                             i2 = R.drawable.greydivider_bottom;
-                        } else if (z3) {
+                        } else if (z2) {
                             i2 = R.drawable.greydivider_top;
                         } else {
                             i2 = R.drawable.field_carret_empty;
@@ -853,7 +860,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     slideChooseView.setCallback(new SlideChooseView.Callback() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda2
                         @Override // org.telegram.ui.Components.SlideChooseView.Callback
                         public final void onOptionSelected(int i9) {
-                            UniversalAdapter.lambda$onBindViewHolder$1(UItem.this, i9);
+                            UniversalAdapter.$r8$lambda$zkYqYy_dtBSQIc15WzODxdmLimw(UItem.this, i9);
                         }
 
                         @Override // org.telegram.ui.Components.SlideChooseView.Callback
@@ -895,9 +902,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     ((StatisticActivity.UniversalChartCell) viewHolder.itemView).set(item.intValue, (StatisticActivity.ChartViewData) item.object, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda1
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
-                            StatisticActivity.BaseChartCell lambda$onBindViewHolder$2;
-                            lambda$onBindViewHolder$2 = UniversalAdapter.this.lambda$onBindViewHolder$2(item);
-                            return lambda$onBindViewHolder$2;
+                            return UniversalAdapter.$r8$lambda$2uPIrsaVq0AF0234k0rcGHRdLO0(UniversalAdapter.this, item);
                         }
                     });
                     break;
@@ -911,12 +916,12 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     StoryPrivacyBottomSheet.UserCell userCell3 = (StoryPrivacyBottomSheet.UserCell) viewHolder.itemView;
                     long j = userCell3.dialogId;
                     Object obj6 = item.object;
-                    boolean z4 = j == (obj6 instanceof TLRPC.User ? ((TLRPC.User) obj6).id : obj6 instanceof TLRPC.Chat ? -((TLRPC.Chat) obj6).id : 0L);
+                    boolean z3 = j == (obj6 instanceof TLRPC.User ? ((TLRPC.User) obj6).id : obj6 instanceof TLRPC.Chat ? -((TLRPC.Chat) obj6).id : 0L);
                     userCell3.setIsSendAs(false, true);
                     userCell3.set(item.object);
                     userCell3.checkBox.setVisibility(8);
                     userCell3.radioButton.setVisibility(0);
-                    userCell3.setChecked(item.checked, z4);
+                    userCell3.setChecked(item.checked, z3);
                     userCell3.setDivider(hasDivider);
                     break;
                 case 28:
@@ -981,9 +986,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                                     str = UserObject.getUserName((TLRPC.User) obj8);
                                 }
                                 String str2 = str;
-                                boolean z5 = item.locked;
+                                boolean z4 = item.locked;
                                 Object obj9 = item.object2;
-                                profileSearchCell.allowBotOpenButton(z5, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
+                                profileSearchCell.allowBotOpenButton(z4, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
                                 profileSearchCell.setRectangularAvatar(item.red);
                                 CharSequence charSequence4 = item.subtext;
                                 profileSearchCell.setData(obj8, null, str2, charSequence4 == null ? charSequence4 : charSequence, false, false);
@@ -996,9 +1001,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         if (!(obj8 instanceof TLRPC.Chat)) {
                         }
                         String str22 = str;
-                        boolean z52 = item.locked;
+                        boolean z42 = item.locked;
                         Object obj92 = item.object2;
-                        profileSearchCell.allowBotOpenButton(z52, obj92 instanceof Utilities.Callback ? (Utilities.Callback) obj92 : null);
+                        profileSearchCell.allowBotOpenButton(z42, obj92 instanceof Utilities.Callback ? (Utilities.Callback) obj92 : null);
                         profileSearchCell.setRectangularAvatar(item.red);
                         CharSequence charSequence42 = item.subtext;
                         profileSearchCell.setData(obj8, null, str22, charSequence42 == null ? charSequence42 : charSequence, false, false);
@@ -1010,9 +1015,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                             if (!(obj8 instanceof TLRPC.Chat)) {
                             }
                             String str222 = str;
-                            boolean z522 = item.locked;
+                            boolean z422 = item.locked;
                             Object obj922 = item.object2;
-                            profileSearchCell.allowBotOpenButton(z522, obj922 instanceof Utilities.Callback ? (Utilities.Callback) obj922 : null);
+                            profileSearchCell.allowBotOpenButton(z422, obj922 instanceof Utilities.Callback ? (Utilities.Callback) obj922 : null);
                             profileSearchCell.setRectangularAvatar(item.red);
                             CharSequence charSequence422 = item.subtext;
                             profileSearchCell.setData(obj8, null, str222, charSequence422 == null ? charSequence422 : charSequence, false, false);
@@ -1023,9 +1028,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         if (!(obj8 instanceof TLRPC.Chat)) {
                         }
                         String str2222 = str;
-                        boolean z5222 = item.locked;
+                        boolean z4222 = item.locked;
                         Object obj9222 = item.object2;
-                        profileSearchCell.allowBotOpenButton(z5222, obj9222 instanceof Utilities.Callback ? (Utilities.Callback) obj9222 : null);
+                        profileSearchCell.allowBotOpenButton(z4222, obj9222 instanceof Utilities.Callback ? (Utilities.Callback) obj9222 : null);
                         profileSearchCell.setRectangularAvatar(item.red);
                         CharSequence charSequence4222 = item.subtext;
                         profileSearchCell.setData(obj8, null, str2222, charSequence4222 == null ? charSequence4222 : charSequence, false, false);
@@ -1089,7 +1094,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                             textCheckCell2.setCollapseArrow(item.animatedText.toString(), item.collapsed, new Runnable() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda0
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    UniversalAdapter.lambda$onBindViewHolder$3(UItem.this, textCheckCell2);
+                                    UItem.this.clickCallback.onClick(textCheckCell2);
                                 }
                             });
                             break;
@@ -1128,26 +1133,20 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onBindViewHolder$1(UItem uItem, int i) {
+    public static /* synthetic */ void $r8$lambda$zkYqYy_dtBSQIc15WzODxdmLimw(UItem uItem, int i) {
         Utilities.Callback callback = uItem.intCallback;
         if (callback != null) {
             callback.run(Integer.valueOf(i));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ StatisticActivity.BaseChartCell lambda$onBindViewHolder$2(UItem uItem) {
-        View findViewByItemObject = findViewByItemObject(uItem.object);
+    public static /* synthetic */ StatisticActivity.BaseChartCell $r8$lambda$2uPIrsaVq0AF0234k0rcGHRdLO0(UniversalAdapter universalAdapter, UItem uItem) {
+        universalAdapter.getClass();
+        View findViewByItemObject = universalAdapter.findViewByItemObject(uItem.object);
         if (findViewByItemObject instanceof StatisticActivity.UniversalChartCell) {
             return (StatisticActivity.UniversalChartCell) findViewByItemObject;
         }
         return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onBindViewHolder$3(UItem uItem, TextCheckCell2 textCheckCell2) {
-        uItem.clickCallback.onClick(textCheckCell2);
     }
 
     private View findViewByItemObject(Object obj) {
@@ -1217,15 +1216,17 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
 
     @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
     public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-        UItem.UItemFactory findFactory;
         int itemViewType = viewHolder.getItemViewType();
         UItem item = getItem(viewHolder.getAdapterPosition());
-        if (itemViewType < UItem.factoryViewTypeStartsWith ? itemViewType == 3 || itemViewType == 5 || itemViewType == 6 || itemViewType == 30 || itemViewType == 4 || itemViewType == 10 || itemViewType == 44 || itemViewType == 11 || itemViewType == 12 || itemViewType == 17 || itemViewType == 16 || itemViewType == 29 || itemViewType == 25 || itemViewType == 27 || itemViewType == 32 || itemViewType == 33 || itemViewType == 35 || itemViewType == 36 || itemViewType == 37 || itemViewType == 41 || itemViewType == 39 || itemViewType == 40 || itemViewType == 38 : (findFactory = UItem.findFactory(itemViewType)) != null && findFactory.isClickable()) {
-            if (item == null || item.enabled) {
-                return true;
+        if (itemViewType >= UItem.factoryViewTypeStartsWith) {
+            UItem.UItemFactory findFactory = UItem.findFactory(itemViewType);
+            if (findFactory == null || !findFactory.isClickable()) {
+                return false;
             }
+        } else if (itemViewType != 3 && itemViewType != 5 && itemViewType != 6 && itemViewType != 30 && itemViewType != 4 && itemViewType != 10 && itemViewType != 44 && itemViewType != 11 && itemViewType != 12 && itemViewType != 17 && itemViewType != 16 && itemViewType != 29 && itemViewType != 25 && itemViewType != 27 && itemViewType != 32 && itemViewType != 33 && itemViewType != 35 && itemViewType != 36 && itemViewType != 37 && itemViewType != 41 && itemViewType != 39 && itemViewType != 40 && itemViewType != 38) {
+            return false;
         }
-        return false;
+        return item == null || item.enabled;
     }
 
     public UItem getItem(int i) {

@@ -30,7 +30,7 @@ public final class MediaRouteSelector {
             ArrayList<String> stringArrayList = this.mBundle.getStringArrayList("controlCategories");
             this.mControlCategories = stringArrayList;
             if (stringArrayList == null || stringArrayList.isEmpty()) {
-                this.mControlCategories = Collections.emptyList();
+                this.mControlCategories = Collections.EMPTY_LIST;
             }
         }
     }

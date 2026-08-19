@@ -42,19 +42,22 @@ final class zzeb extends SuspendLambda implements Function2 {
         return ((zzeb) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x00b0, code lost:
+    
+        if (r15 == r0) goto L33;
+     */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x005e, code lost:
     
         if (r15 != r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0063, code lost:
-    
-        return r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x004e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x004e, code lost:
     
         if (r15 != r0) goto L15;
      */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x00b5 A[RETURN] */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x009f, code lost:
+    
+        if (r15 != r0) goto L28;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -69,61 +72,49 @@ final class zzeb extends SuspendLambda implements Function2 {
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
-            if (zzeqVar == null) {
+            if (zzeqVar != null) {
+                String str = this.zzc;
+                this.zzh = zzgrVar;
+                this.zza = 1;
+                obj = new zzhf(45, new zzeg(zzeqVar, str, null), null);
+            } else {
                 zzdw zzdwVar = this.zzd;
                 if (zzdwVar == null) {
-                    String str = this.zzc;
+                    String str2 = this.zzc;
                     zzdq zzdqVar = this.zze;
-                    zzfp zzfpVar = new zzfp(str);
+                    zzfp zzfpVar = new zzfp(str2);
                     zzdwVar = Intrinsics.areEqual(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
                 }
                 zzdw zzdwVar2 = zzdwVar;
-                String str2 = this.zzc;
+                String str3 = this.zzc;
                 long j = this.zzf;
                 zzhh zzhhVar = this.zzg;
                 this.zzh = zzgrVar;
                 this.zza = 3;
-                zzhg zzhgVar = new zzhg(new zzee(zzehVar, j, zzdwVar2, str2, zzhhVar, null));
-                if (zzhgVar == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                obj = zzhgVar;
-                this.zzh = null;
-                this.zza = 4;
-                obj = ((zzhg) obj).zza(zzgrVar.zza(), this);
-                if (obj == coroutine_suspended) {
-                }
-                return (zzeq) obj;
+                obj = new zzhg(new zzee(zzehVar, j, zzdwVar2, str3, zzhhVar, null));
             }
-            String str3 = this.zzc;
-            this.zzh = zzgrVar;
-            this.zza = 1;
-            obj = new zzhf(45, new zzeg(zzeqVar, str3, null), null);
-        } else {
-            if (i != 1) {
-                if (i == 2) {
-                    ResultKt.throwOnFailure(obj);
-                    return (zzeq) obj;
-                }
-                if (i != 3) {
-                    ResultKt.throwOnFailure(obj);
-                    return (zzeq) obj;
-                }
-                zzgrVar = (zzgr) this.zzh;
-                ResultKt.throwOnFailure(obj);
-                this.zzh = null;
-                this.zza = 4;
-                obj = ((zzhg) obj).zza(zzgrVar.zza(), this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                return (zzeq) obj;
-            }
+            return coroutine_suspended;
+        }
+        if (i == 1) {
             zzgrVar = (zzgr) this.zzh;
             ResultKt.throwOnFailure(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
+        } else {
+            if (i == 2) {
+                ResultKt.throwOnFailure(obj);
+                return (zzeq) obj;
+            }
+            if (i != 3) {
+                ResultKt.throwOnFailure(obj);
+                return (zzeq) obj;
+            }
+            zzgrVar = (zzgr) this.zzh;
+            ResultKt.throwOnFailure(obj);
+            this.zzh = null;
+            this.zza = 4;
+            obj = ((zzhg) obj).zza(zzgrVar.zza(), this);
         }
     }
 }

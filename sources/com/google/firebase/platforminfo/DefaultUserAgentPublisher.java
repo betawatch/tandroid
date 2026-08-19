@@ -44,15 +44,12 @@ public class DefaultUserAgentPublisher implements UserAgentPublisher {
         return Component.builder(UserAgentPublisher.class).add(Dependency.setOf(LibraryVersion.class)).factory(new ComponentFactory() { // from class: com.google.firebase.platforminfo.DefaultUserAgentPublisher$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                UserAgentPublisher lambda$component$0;
-                lambda$component$0 = DefaultUserAgentPublisher.lambda$component$0(componentContainer);
-                return lambda$component$0;
+                return DefaultUserAgentPublisher.$r8$lambda$l1TCuYGXPzjNfiAA4kssoT8wtDA(componentContainer);
             }
         }).build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ UserAgentPublisher lambda$component$0(ComponentContainer componentContainer) {
+    public static /* synthetic */ UserAgentPublisher $r8$lambda$l1TCuYGXPzjNfiAA4kssoT8wtDA(ComponentContainer componentContainer) {
         return new DefaultUserAgentPublisher(componentContainer.setOf(LibraryVersion.class), GlobalLibraryVersionRegistrar.getInstance());
     }
 }

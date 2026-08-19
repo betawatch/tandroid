@@ -1,34 +1,31 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import java.util.function.BinaryOperator;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.IntBinaryOperator;
+import java.util.function.LongBinaryOperator;
 
 /* loaded from: classes2.dex */
-final class t1 extends u1 {
-    private final Object[] h;
+public final class t1 extends q1 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object i;
 
-    t1(Spliterator spliterator, b bVar, Object[] objArr) {
-        super(spliterator, bVar, objArr.length);
-        this.h = objArr;
+    public /* synthetic */ t1(T2 t2, Object obj, int i) {
+        this.h = i;
+        this.i = obj;
     }
 
-    t1(t1 t1Var, Spliterator spliterator, long j, long j2) {
-        super(t1Var, spliterator, j, j2, t1Var.h.length);
-        this.h = t1Var.h;
-    }
-
-    @Override // j$.util.stream.u1
-    final u1 b(Spliterator spliterator, long j, long j2) {
-        return new t1(this, spliterator, j, j2);
-    }
-
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        int i = this.f;
-        if (i >= this.g) {
-            throw new IndexOutOfBoundsException(Integer.toString(this.f));
+    @Override // j$.util.stream.q1
+    public final L1 Y() {
+        switch (this.h) {
+            case 0:
+                return new K1((LongBinaryOperator) this.i);
+            case 1:
+                return new w1((DoubleBinaryOperator) this.i);
+            case 2:
+                return new B1((BinaryOperator) this.i);
+            default:
+                return new H1((IntBinaryOperator) this.i);
         }
-        Object[] objArr = this.h;
-        this.f = i + 1;
-        objArr[i] = obj;
     }
 }

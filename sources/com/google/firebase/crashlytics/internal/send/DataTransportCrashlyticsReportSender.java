@@ -24,16 +24,11 @@ public class DataTransportCrashlyticsReportSender {
     private static final Transformer DEFAULT_TRANSFORM = new Transformer() { // from class: com.google.firebase.crashlytics.internal.send.DataTransportCrashlyticsReportSender$$ExternalSyntheticLambda0
         @Override // com.google.android.datatransport.Transformer
         public final Object apply(Object obj) {
-            byte[] lambda$static$0;
-            lambda$static$0 = DataTransportCrashlyticsReportSender.lambda$static$0((CrashlyticsReport) obj);
-            return lambda$static$0;
+            byte[] bytes;
+            bytes = DataTransportCrashlyticsReportSender.TRANSFORM.reportToJson((CrashlyticsReport) obj).getBytes(Charset.forName("UTF-8"));
+            return bytes;
         }
     };
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ byte[] lambda$static$0(CrashlyticsReport crashlyticsReport) {
-        return TRANSFORM.reportToJson(crashlyticsReport).getBytes(Charset.forName("UTF-8"));
-    }
 
     public static DataTransportCrashlyticsReportSender create(Context context, SettingsProvider settingsProvider, OnDemandCounter onDemandCounter) {
         TransportRuntime.initialize(context);

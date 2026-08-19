@@ -41,9 +41,7 @@ public final class AmrExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.amr.AmrExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = AmrExtractor.lambda$static$0();
-            return lambda$static$0;
+            return AmrExtractor.$r8$lambda$2GugIB3gTFjbkdLe5Ec_orWdrkw();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -61,15 +59,14 @@ public final class AmrExtractor implements Extractor {
     public void release() {
     }
 
+    public static /* synthetic */ Extractor[] $r8$lambda$2GugIB3gTFjbkdLe5Ec_orWdrkw() {
+        return new Extractor[]{new AmrExtractor()};
+    }
+
     static {
         int[] iArr = {18, 24, 33, 37, 41, 47, 51, 59, 61, 6, 1, 1, 1, 1, 1, 1};
         frameSizeBytesByTypeWb = iArr;
         MAX_FRAME_SIZE_BYTES = iArr[8];
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
-        return new Extractor[]{new AmrExtractor()};
     }
 
     public AmrExtractor() {
@@ -207,15 +204,24 @@ public final class AmrExtractor implements Extractor {
     }
 
     private boolean isValidFrameType(int i) {
-        return i >= 0 && i <= 15 && (isWideBandValidFrameType(i) || isNarrowBandValidFrameType(i));
+        if (i < 0 || i > 15) {
+            return false;
+        }
+        return isWideBandValidFrameType(i) || isNarrowBandValidFrameType(i);
     }
 
     private boolean isWideBandValidFrameType(int i) {
-        return this.isWideBand && (i < 10 || i > 13);
+        if (this.isWideBand) {
+            return i < 10 || i > 13;
+        }
+        return false;
     }
 
     private boolean isNarrowBandValidFrameType(int i) {
-        return !this.isWideBand && (i < 12 || i > 14);
+        if (this.isWideBand) {
+            return false;
+        }
+        return i < 12 || i > 14;
     }
 
     private void maybeOutputSeekMap(long j, int i) {

@@ -4,22 +4,18 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 /* loaded from: classes2.dex */
-final class a extends b implements Serializable {
-    static final a b;
+public final class a extends j$.com.android.tools.r8.a implements Serializable {
+    public static final a b;
     private static final long serialVersionUID = 6740630888130243051L;
-    private final ZoneId a;
+    public final ZoneId a;
+
+    public a(ZoneId zoneId) {
+        this.a = zoneId;
+    }
 
     static {
         System.currentTimeMillis();
         b = new a(ZoneOffset.UTC);
-    }
-
-    a(ZoneId zoneId) {
-        this.a = zoneId;
-    }
-
-    public final ZoneId a() {
-        return this.a;
     }
 
     public final boolean equals(Object obj) {

@@ -169,7 +169,7 @@ public abstract class WebvttCueParser {
         while (!arrayDeque.isEmpty()) {
             applySpansForTag(str, (StartTag) arrayDeque.pop(), arrayList, spannableStringBuilder, list);
         }
-        applySpansForTag(str, StartTag.buildWholeCueVirtualTag(), Collections.emptyList(), spannableStringBuilder, list);
+        applySpansForTag(str, StartTag.buildWholeCueVirtualTag(), Collections.EMPTY_LIST, spannableStringBuilder, list);
         return SpannedString.valueOf(spannableStringBuilder);
     }
 
@@ -237,7 +237,7 @@ public abstract class WebvttCueParser {
     }
 
     private static int parseLineAnchor(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "center":
             case "middle":
@@ -262,7 +262,7 @@ public abstract class WebvttCueParser {
     }
 
     private static int parsePositionAnchor(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "line-left":
             case "start":
@@ -280,7 +280,7 @@ public abstract class WebvttCueParser {
     }
 
     private static int parseVerticalAttribute(String str) {
-        str.hashCode();
+        str.getClass();
         if (str.equals("lr")) {
             return 2;
         }
@@ -292,7 +292,7 @@ public abstract class WebvttCueParser {
     }
 
     private static int parseTextAlignment(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "center":
             case "middle":
@@ -317,7 +317,7 @@ public abstract class WebvttCueParser {
     }
 
     private static void applyEntity(String str, SpannableStringBuilder spannableStringBuilder) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "gt":
                 spannableStringBuilder.append('>');
@@ -338,7 +338,7 @@ public abstract class WebvttCueParser {
     }
 
     private static boolean isSupportedTag(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "b":
             case "c":
@@ -360,7 +360,7 @@ public abstract class WebvttCueParser {
         i = startTag.position;
         length = spannableStringBuilder.length();
         String str2 = startTag.name;
-        str2.hashCode();
+        str2.getClass();
         switch (str2) {
             case "":
             case "v":
@@ -614,7 +614,8 @@ public abstract class WebvttCueParser {
         }
     }
 
-    private static final class StartTag {
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class StartTag {
         public final Set classes;
         public final String name;
         public final int position;
@@ -649,7 +650,7 @@ public abstract class WebvttCueParser {
         }
 
         public static StartTag buildWholeCueVirtualTag() {
-            return new StartTag("", 0, "", Collections.emptySet());
+            return new StartTag("", 0, "", Collections.EMPTY_SET);
         }
     }
 
@@ -658,18 +659,13 @@ public abstract class WebvttCueParser {
         private static final Comparator BY_START_POSITION_ASC = new Comparator() { // from class: com.google.android.exoplayer2.text.webvtt.WebvttCueParser$Element$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$static$0;
-                lambda$static$0 = WebvttCueParser.Element.lambda$static$0((WebvttCueParser.Element) obj, (WebvttCueParser.Element) obj2);
-                return lambda$static$0;
+                int compare;
+                compare = Integer.compare(((WebvttCueParser.Element) obj).startTag.position, ((WebvttCueParser.Element) obj2).startTag.position);
+                return compare;
             }
         };
         private final int endPosition;
         private final StartTag startTag;
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$static$0(Element element, Element element2) {
-            return Integer.compare(element.startTag.position, element2.startTag.position);
-        }
 
         private Element(StartTag startTag, int i) {
             this.startTag = startTag;

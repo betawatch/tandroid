@@ -9,7 +9,7 @@ public class MonoScaleAtom extends ScaleAtom {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MonoScaleAtom(Atom atom, float f) {
-        super(atom, r4, r4);
+        super(atom, r2, r2);
         double d = f;
         this.factor = f;
     }

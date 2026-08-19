@@ -335,8 +335,24 @@ public class SvgHelper {
             setupGradient(i, null, f, z);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r16v1, types: [android.graphics.LinearGradient] */
+        /* JADX WARN: Type inference failed for: r28v1 */
+        /* JADX WARN: Type inference failed for: r28v10 */
+        /* JADX WARN: Type inference failed for: r28v11 */
+        /* JADX WARN: Type inference failed for: r28v12 */
+        /* JADX WARN: Type inference failed for: r28v13 */
+        /* JADX WARN: Type inference failed for: r28v14 */
+        /* JADX WARN: Type inference failed for: r28v2 */
+        /* JADX WARN: Type inference failed for: r28v3 */
+        /* JADX WARN: Type inference failed for: r28v4 */
+        /* JADX WARN: Type inference failed for: r28v5 */
+        /* JADX WARN: Type inference failed for: r28v6 */
+        /* JADX WARN: Type inference failed for: r28v7 */
+        /* JADX WARN: Type inference failed for: r28v8 */
+        /* JADX WARN: Type inference failed for: r28v9 */
         public void setupGradient(int i, Theme.ResourcesProvider resourcesProvider, float f, boolean z) {
-            Shader bitmapShader;
+            BitmapShader bitmapShader;
             Integer num = this.overrideColor;
             int color = num == null ? Theme.getColor(i, resourcesProvider) : num.intValue();
             this.currentResourcesProvider = resourcesProvider;
@@ -776,16 +792,16 @@ public class SvgHelper {
         float floatValue6 = ((Float) parseNumbers6.numbers.get(0)).floatValue();
         if (parseNumbers6.numbers.size() > 2) {
             matrix6.postRotate(floatValue6, ((Float) parseNumbers6.numbers.get(1)).floatValue(), ((Float) parseNumbers6.numbers.get(2)).floatValue());
-        } else {
-            matrix6.postRotate(floatValue6);
+            return matrix6;
         }
+        matrix6.postRotate(floatValue6);
         return matrix6;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:40:0x007c, code lost:
     
-        if (r4 != 'T') goto L44;
+        if (r5 != 'T') goto L44;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -795,12 +811,11 @@ public class SvgHelper {
         float f;
         float f2;
         float nextFloat;
-        String str2 = str;
         if (ApplicationLoader.isAndroidTestEnvironment()) {
             return new Path();
         }
         int length = str.length();
-        ParserHelper parserHelper = new ParserHelper(str2, 0);
+        ParserHelper parserHelper = new ParserHelper(str, 0);
         parserHelper.skipWhitespace();
         Path path = new Path();
         char c2 = 0;
@@ -815,7 +830,7 @@ public class SvgHelper {
             if (i >= length) {
                 return path;
             }
-            char charAt = str2.charAt(i);
+            char charAt = str.charAt(i);
             switch (charAt) {
                 case '+':
                 case '-':
@@ -884,6 +899,7 @@ public class SvgHelper {
                 case 'a':
                     float nextFloat2 = parserHelper.nextFloat();
                     float nextFloat3 = parserHelper.nextFloat();
+                    float f9 = f5;
                     float nextFloat4 = parserHelper.nextFloat();
                     boolean z2 = ((int) parserHelper.nextFloat()) == 1;
                     boolean z3 = ((int) parserHelper.nextFloat()) == 1;
@@ -893,17 +909,18 @@ public class SvgHelper {
                         nextFloat5 += f3;
                         nextFloat6 += f4;
                     }
-                    float f9 = nextFloat5;
-                    float f10 = nextFloat6;
-                    float f11 = f5;
+                    float f10 = f3;
+                    float f11 = f4;
+                    float f12 = nextFloat5;
                     boolean z4 = z2;
-                    f = f6;
-                    drawArc(path, f3, f4, f9, f10, nextFloat2, nextFloat3, nextFloat4, z4, z3);
-                    f3 = f9;
+                    float f13 = nextFloat6;
+                    drawArc(path, f10, f11, f12, f13, nextFloat2, nextFloat3, nextFloat4, z4, z3);
+                    f4 = f13;
+                    f3 = f12;
+                    f = f9;
+                    f2 = f6;
                     f6 = f7;
                     f5 = f8;
-                    f4 = f10;
-                    f2 = f11;
                     z = false;
                     break;
                 case 'C':
@@ -922,16 +939,19 @@ public class SvgHelper {
                         nextFloat10 += f4;
                         nextFloat12 += f4;
                     }
-                    float f12 = nextFloat10;
-                    float f13 = nextFloat9;
-                    path.cubicTo(nextFloat7, nextFloat8, f13, f12, nextFloat11, nextFloat12);
-                    f2 = f5;
-                    f3 = nextFloat11;
-                    f4 = nextFloat12;
-                    f5 = f12;
-                    z = true;
-                    f = f6;
-                    f6 = f13;
+                    float f14 = nextFloat7;
+                    float f15 = nextFloat8;
+                    float f16 = nextFloat9;
+                    float f17 = nextFloat10;
+                    float f18 = nextFloat11;
+                    float f19 = nextFloat12;
+                    path.cubicTo(f14, f15, f16, f17, f18, f19);
+                    f = f5;
+                    f5 = f17;
+                    f2 = f6;
+                    f3 = f18;
+                    f4 = f19;
+                    f6 = f16;
                     break;
                 case 'H':
                 case 'h':
@@ -943,157 +963,150 @@ public class SvgHelper {
                         path.lineTo(nextFloat13, f4);
                         f3 = nextFloat13;
                     }
-                    f2 = f5;
-                    f = f6;
+                    f = f5;
+                    f2 = f6;
                     f6 = f7;
                     f5 = f8;
                     z = false;
                     break;
                 case 'L':
                 case 'l':
-                    nextFloat = parserHelper.nextFloat();
-                    f2 = parserHelper.nextFloat();
+                    float nextFloat14 = parserHelper.nextFloat();
+                    float nextFloat15 = parserHelper.nextFloat();
                     if (c2 == 'l') {
-                        path.rLineTo(nextFloat, f2);
-                        f3 += nextFloat;
-                        f4 += f2;
-                        f2 = f5;
-                        f = f6;
-                        f6 = f7;
-                        f5 = f8;
-                        z = false;
-                        break;
+                        path.rLineTo(nextFloat14, nextFloat15);
+                        f3 += nextFloat14;
+                        f4 += nextFloat15;
                     } else {
-                        path.lineTo(nextFloat, f2);
-                        f3 = nextFloat;
-                        f4 = f2;
-                        f2 = f5;
-                        f = f6;
-                        f6 = f7;
-                        f5 = f8;
-                        z = false;
+                        path.lineTo(nextFloat14, nextFloat15);
+                        f3 = nextFloat14;
+                        f4 = nextFloat15;
                     }
+                    f = f5;
+                    f2 = f6;
+                    f6 = f7;
+                    f5 = f8;
+                    z = false;
+                    break;
                 case 'M':
                 case 'm':
-                    nextFloat = parserHelper.nextFloat();
                     f2 = parserHelper.nextFloat();
+                    f = parserHelper.nextFloat();
                     if (c2 == 'm') {
-                        f6 += nextFloat;
-                        f5 += f2;
-                        path.rMoveTo(nextFloat, f2);
-                        f3 += nextFloat;
-                        f4 += f2;
-                        f2 = f5;
-                        f = f6;
+                        f6 += f2;
+                        f5 += f;
+                        path.rMoveTo(f2, f);
+                        f3 = f2 + f3;
+                        f4 += f;
+                        f = f5;
+                        f2 = f6;
                         f6 = f7;
                         f5 = f8;
                         z = false;
                         break;
                     } else {
-                        path.moveTo(nextFloat, f2);
-                        f3 = nextFloat;
-                        f = f3;
-                        f4 = f2;
+                        path.moveTo(f2, f);
+                        f3 = f2;
+                        f4 = f;
                         f6 = f7;
                         f5 = f8;
                         z = false;
                     }
                 case 'Q':
                 case 'q':
-                    float nextFloat14 = parserHelper.nextFloat();
-                    float nextFloat15 = parserHelper.nextFloat();
                     float nextFloat16 = parserHelper.nextFloat();
                     float nextFloat17 = parserHelper.nextFloat();
+                    float nextFloat18 = parserHelper.nextFloat();
+                    nextFloat = parserHelper.nextFloat();
                     if (c2 == 'q') {
-                        nextFloat14 += f3;
-                        nextFloat15 += f4;
                         nextFloat16 += f3;
                         nextFloat17 += f4;
+                        nextFloat18 += f3;
+                        nextFloat += f4;
                     }
-                    f3 = nextFloat16;
-                    f4 = nextFloat17;
-                    path.quadTo(nextFloat14, nextFloat15, f3, f4);
-                    f = f6;
-                    z = true;
-                    f6 = nextFloat14;
-                    f2 = f5;
-                    f5 = nextFloat15;
+                    path.quadTo(nextFloat16, nextFloat17, nextFloat18, nextFloat);
+                    float f20 = f6;
+                    f6 = nextFloat16;
+                    f2 = f20;
+                    float f21 = f5;
+                    f5 = nextFloat17;
+                    f = f21;
+                    f3 = nextFloat18;
+                    f4 = nextFloat;
                     break;
                 case 'S':
                 case 's':
-                    float nextFloat18 = parserHelper.nextFloat();
                     float nextFloat19 = parserHelper.nextFloat();
                     float nextFloat20 = parserHelper.nextFloat();
                     float nextFloat21 = parserHelper.nextFloat();
+                    float nextFloat22 = parserHelper.nextFloat();
                     if (c2 == 's') {
-                        nextFloat18 += f3;
-                        nextFloat20 += f3;
-                        nextFloat19 += f4;
-                        nextFloat21 += f4;
+                        nextFloat19 += f3;
+                        nextFloat21 += f3;
+                        nextFloat20 += f4;
+                        nextFloat22 += f4;
                     }
-                    float f14 = nextFloat20;
-                    float f15 = nextFloat21;
-                    float f16 = nextFloat19;
-                    path.cubicTo((f3 * 2.0f) - f7, (f4 * 2.0f) - f8, nextFloat18, f16, f14, f15);
-                    f3 = f14;
-                    f4 = f15;
-                    z = true;
-                    f = f6;
-                    f6 = nextFloat18;
-                    f2 = f5;
-                    f5 = f16;
+                    float f22 = (f3 * 2.0f) - f7;
+                    float f23 = (f4 * 2.0f) - f8;
+                    float f24 = nextFloat19;
+                    float f25 = nextFloat20;
+                    float f26 = nextFloat21;
+                    nextFloat = nextFloat22;
+                    path.cubicTo(f22, f23, f24, f25, f26, nextFloat);
+                    float f27 = f5;
+                    f5 = f25;
+                    f = f27;
+                    f3 = f26;
+                    f2 = f6;
+                    f6 = f24;
+                    f4 = nextFloat;
                     break;
                 case 'T':
                 case 't':
-                    float nextFloat22 = parserHelper.nextFloat();
                     float nextFloat23 = parserHelper.nextFloat();
+                    float nextFloat24 = parserHelper.nextFloat();
                     if (c2 == 't') {
-                        nextFloat22 += f3;
-                        nextFloat23 += f4;
+                        nextFloat23 += f3;
+                        nextFloat24 += f4;
                     }
-                    float f17 = (f3 * 2.0f) - f7;
-                    float f18 = (f4 * 2.0f) - f8;
-                    path.quadTo(f17, f18, nextFloat22, nextFloat23);
-                    f = f6;
-                    f6 = f17;
-                    f3 = nextFloat22;
-                    f2 = f5;
-                    f5 = f18;
-                    f4 = nextFloat23;
+                    float f28 = (f3 * 2.0f) - f7;
+                    float f29 = (f4 * 2.0f) - f8;
+                    path.quadTo(f28, f29, nextFloat23, nextFloat24);
+                    f3 = nextFloat23;
+                    f2 = f6;
+                    f6 = f28;
+                    f = f5;
+                    f5 = f29;
+                    f4 = nextFloat24;
                     break;
                 case 'V':
                 case 'v':
-                    f2 = parserHelper.nextFloat();
+                    float nextFloat25 = parserHelper.nextFloat();
                     if (c2 == 'v') {
-                        path.rLineTo(0.0f, f2);
-                        f4 += f2;
-                        f2 = f5;
-                        f = f6;
-                        f6 = f7;
-                        f5 = f8;
-                        z = false;
-                        break;
+                        path.rLineTo(0.0f, nextFloat25);
+                        f4 += nextFloat25;
                     } else {
-                        path.lineTo(f3, f2);
-                        f4 = f2;
-                        f2 = f5;
-                        f = f6;
-                        f6 = f7;
-                        f5 = f8;
-                        z = false;
+                        path.lineTo(f3, nextFloat25);
+                        f4 = nextFloat25;
                     }
+                    f = f5;
+                    f2 = f6;
+                    f6 = f7;
+                    f5 = f8;
+                    z = false;
+                    break;
                 case 'Z':
                 case 'z':
                     path.close();
                     path.moveTo(f6, f5);
-                    f2 = f5;
-                    f4 = f2;
-                    f3 = f6;
-                    f = f3;
+                    f4 = f5;
+                    f = f4;
+                    f2 = f6;
+                    f3 = f2;
                     break;
                 default:
-                    f2 = f5;
-                    f = f6;
+                    f = f5;
+                    f2 = f6;
                     f6 = f7;
                     f5 = f8;
                     z = false;
@@ -1107,86 +1120,86 @@ public class SvgHelper {
                 f8 = f4;
             }
             parserHelper.skipWhitespace();
-            str2 = str;
-            f5 = f2;
-            f6 = f;
+            f6 = f2;
+            f5 = f;
             c2 = c;
         }
     }
 
     private static void drawArc(Path path, float f, float f2, float f3, float f4, float f5, float f6, float f7, boolean z, boolean z2) {
-        if (f == f3 && f2 == f4) {
+        float f8 = f3;
+        if (f == f8 && f2 == f4) {
             return;
         }
-        if (f5 == 0.0f || f6 == 0.0f) {
-            path.lineTo(f3, f4);
+        if (f5 == 0.0f) {
+            f8 = f3;
+        } else if (f6 != 0.0f) {
+            float abs = Math.abs(f5);
+            float abs2 = Math.abs(f6);
+            double radians = Math.toRadians(f7 % 360.0d);
+            double cos = Math.cos(radians);
+            double sin = Math.sin(radians);
+            double d = (f - f8) / 2.0d;
+            double d2 = (f2 - f4) / 2.0d;
+            double d3 = (cos * d) + (sin * d2);
+            double d4 = ((-sin) * d) + (d2 * cos);
+            double d5 = abs * abs;
+            double d6 = abs2 * abs2;
+            double d7 = d3 * d3;
+            double d8 = d4 * d4;
+            double d9 = (d7 / d5) + (d8 / d6);
+            if (d9 > 0.99999d) {
+                double sqrt = Math.sqrt(d9) * 1.00001d;
+                abs = (float) (abs * sqrt);
+                abs2 = (float) (sqrt * abs2);
+                d5 = abs * abs;
+                d6 = abs2 * abs2;
+            }
+            double d10 = z == z2 ? -1.0d : 1.0d;
+            double d11 = d5 * d6;
+            double d12 = d5 * d8;
+            double d13 = d6 * d7;
+            double d14 = ((d11 - d12) - d13) / (d12 + d13);
+            if (d14 < 0.0d) {
+                d14 = 0.0d;
+            }
+            double sqrt2 = d10 * Math.sqrt(d14);
+            double d15 = abs;
+            double d16 = abs2;
+            double d17 = ((d15 * d4) / d16) * sqrt2;
+            double d18 = sqrt2 * (-((d16 * d3) / d15));
+            double d19 = ((f + f8) / 2.0d) + ((cos * d17) - (sin * d18));
+            double d20 = ((f2 + f4) / 2.0d) + (sin * d17) + (cos * d18);
+            double d21 = (d3 - d17) / d15;
+            double d22 = (d4 - d18) / d16;
+            double d23 = ((-d3) - d17) / d15;
+            double d24 = ((-d4) - d18) / d16;
+            double d25 = (d21 * d21) + (d22 * d22);
+            double acos = (d22 < 0.0d ? -1.0d : 1.0d) * Math.acos(d21 / Math.sqrt(d25));
+            double checkedArcCos = ((d21 * d24) - (d22 * d23) < 0.0d ? -1.0d : 1.0d) * checkedArcCos(((d21 * d23) + (d22 * d24)) / Math.sqrt(d25 * ((d23 * d23) + (d24 * d24))));
+            if (checkedArcCos == 0.0d) {
+                path.lineTo(f8, f4);
+                return;
+            }
+            if (!z2 && checkedArcCos > 0.0d) {
+                checkedArcCos -= 6.283185307179586d;
+            } else if (z2 && checkedArcCos < 0.0d) {
+                checkedArcCos += 6.283185307179586d;
+            }
+            float[] arcToBeziers = arcToBeziers(acos % 6.283185307179586d, checkedArcCos % 6.283185307179586d);
+            Matrix matrix = new Matrix();
+            matrix.postScale(abs, abs2);
+            matrix.postRotate(f7);
+            matrix.postTranslate((float) d19, (float) d20);
+            matrix.mapPoints(arcToBeziers);
+            arcToBeziers[arcToBeziers.length - 2] = f3;
+            arcToBeziers[arcToBeziers.length - 1] = f4;
+            for (int i = 0; i < arcToBeziers.length; i += 6) {
+                path.cubicTo(arcToBeziers[i], arcToBeziers[i + 1], arcToBeziers[i + 2], arcToBeziers[i + 3], arcToBeziers[i + 4], arcToBeziers[i + 5]);
+            }
             return;
         }
-        float abs = Math.abs(f5);
-        float abs2 = Math.abs(f6);
-        double radians = Math.toRadians(f7 % 360.0d);
-        double cos = Math.cos(radians);
-        double sin = Math.sin(radians);
-        double d = (f - f3) / 2.0d;
-        double d2 = (f2 - f4) / 2.0d;
-        double d3 = (cos * d) + (sin * d2);
-        double d4 = ((-sin) * d) + (d2 * cos);
-        double d5 = abs * abs;
-        double d6 = abs2 * abs2;
-        double d7 = d3 * d3;
-        double d8 = d4 * d4;
-        double d9 = (d7 / d5) + (d8 / d6);
-        if (d9 > 0.99999d) {
-            double sqrt = Math.sqrt(d9) * 1.00001d;
-            abs = (float) (abs * sqrt);
-            abs2 = (float) (sqrt * abs2);
-            d5 = abs * abs;
-            d6 = abs2 * abs2;
-        }
-        double d10 = z == z2 ? -1.0d : 1.0d;
-        double d11 = d5 * d6;
-        double d12 = d5 * d8;
-        double d13 = d6 * d7;
-        double d14 = ((d11 - d12) - d13) / (d12 + d13);
-        if (d14 < 0.0d) {
-            d14 = 0.0d;
-        }
-        double sqrt2 = d10 * Math.sqrt(d14);
-        double d15 = abs;
-        double d16 = abs2;
-        double d17 = ((d15 * d4) / d16) * sqrt2;
-        float f8 = abs;
-        float f9 = abs2;
-        double d18 = sqrt2 * (-((d16 * d3) / d15));
-        double d19 = ((f + f3) / 2.0d) + ((cos * d17) - (sin * d18));
-        double d20 = ((f2 + f4) / 2.0d) + (sin * d17) + (cos * d18);
-        double d21 = (d3 - d17) / d15;
-        double d22 = (d4 - d18) / d16;
-        double d23 = ((-d3) - d17) / d15;
-        double d24 = ((-d4) - d18) / d16;
-        double d25 = (d21 * d21) + (d22 * d22);
-        double acos = (d22 < 0.0d ? -1.0d : 1.0d) * Math.acos(d21 / Math.sqrt(d25));
-        double checkedArcCos = ((d21 * d24) - (d22 * d23) < 0.0d ? -1.0d : 1.0d) * checkedArcCos(((d21 * d23) + (d22 * d24)) / Math.sqrt(d25 * ((d23 * d23) + (d24 * d24))));
-        if (checkedArcCos == 0.0d) {
-            path.lineTo(f3, f4);
-            return;
-        }
-        if (!z2 && checkedArcCos > 0.0d) {
-            checkedArcCos -= 6.283185307179586d;
-        } else if (z2 && checkedArcCos < 0.0d) {
-            checkedArcCos += 6.283185307179586d;
-        }
-        float[] arcToBeziers = arcToBeziers(acos % 6.283185307179586d, checkedArcCos % 6.283185307179586d);
-        Matrix matrix = new Matrix();
-        matrix.postScale(f8, f9);
-        matrix.postRotate(f7);
-        matrix.postTranslate((float) d19, (float) d20);
-        matrix.mapPoints(arcToBeziers);
-        arcToBeziers[arcToBeziers.length - 2] = f3;
-        arcToBeziers[arcToBeziers.length - 1] = f4;
-        for (int i = 0; i < arcToBeziers.length; i += 6) {
-            path.cubicTo(arcToBeziers[i], arcToBeziers[i + 1], arcToBeziers[i + 2], arcToBeziers[i + 3], arcToBeziers[i + 4], arcToBeziers[i + 5]);
-        }
+        path.lineTo(f8, f4);
     }
 
     private static float[] arcToBeziers(double d, double d2) {
@@ -1201,20 +1214,21 @@ public class SvgHelper {
             double d5 = d + (i * d3);
             double cos = Math.cos(d5);
             double sin2 = Math.sin(d5);
-            double d6 = d3;
-            fArr[i2] = (float) (cos - (sin * sin2));
-            fArr[i2 + 1] = (float) (sin2 + (cos * sin));
-            double d7 = d5 + d6;
-            double cos2 = Math.cos(d7);
-            double sin3 = Math.sin(d7);
-            fArr[i2 + 2] = (float) ((sin * sin3) + cos2);
-            fArr[i2 + 3] = (float) (sin3 - (sin * cos2));
+            float[] fArr2 = fArr;
+            fArr2[i2] = (float) (cos - (sin * sin2));
+            fArr2[i2 + 1] = (float) (sin2 + (cos * sin));
+            double d6 = d5 + d3;
+            double cos2 = Math.cos(d6);
+            double sin3 = Math.sin(d6);
+            fArr2[i2 + 2] = (float) ((sin * sin3) + cos2);
+            fArr2[i2 + 3] = (float) (sin3 - (sin * cos2));
             int i3 = i2 + 5;
-            fArr[i2 + 4] = (float) cos2;
+            fArr2[i2 + 4] = (float) cos2;
             i2 += 6;
-            fArr[i3] = (float) sin3;
+            fArr2[i3] = (float) sin3;
             i++;
-            d3 = d6;
+            fArr = fArr2;
+            ceil = ceil;
         }
         return fArr;
     }
@@ -1287,7 +1301,7 @@ public class SvgHelper {
     public static Integer getColorByName(String str) {
         char c;
         String lowerCase = str.toLowerCase();
-        lowerCase.hashCode();
+        lowerCase.getClass();
         switch (lowerCase.hashCode()) {
             case -734239628:
                 if (lowerCase.equals("yellow")) {
@@ -1676,7 +1690,7 @@ public class SvgHelper {
                 return;
             }
             if (!this.boundsMode || str2.equals("style")) {
-                str2.hashCode();
+                str2.getClass();
                 switch (str2) {
                     case "ellipse":
                         Float floatAttr = SvgHelper.getFloatAttr("cx", attributes);
@@ -1942,7 +1956,7 @@ public class SvgHelper {
                 }
                 return;
             }
-            str2.hashCode();
+            str2.getClass();
             switch (str2) {
                 case "g":
                 case "defs":
@@ -2383,11 +2397,11 @@ public class SvgHelper {
 
     private static List<String> splitSvgTransforms(String str) {
         if (str == null) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         String trim = str.trim();
         if (trim.isEmpty()) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         String[] split = SPLIT_BOUNDARY.split(trim);
         ArrayList arrayList = new ArrayList(split.length);

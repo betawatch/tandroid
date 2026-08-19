@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 /* loaded from: classes3.dex */
-public abstract class BasicContainer implements Container, Iterator, Closeable {
+public abstract class BasicContainer implements Container, Iterator, Closeable, AutoCloseable {
     private static final Box EOF = new AbstractBox("eof ") { // from class: com.googlecode.mp4parser.BasicContainer.1
         @Override // com.googlecode.mp4parser.AbstractBox
         protected void _parseDetails(ByteBuffer byteBuffer) {

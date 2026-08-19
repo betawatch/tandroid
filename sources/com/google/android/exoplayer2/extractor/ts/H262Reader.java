@@ -86,8 +86,8 @@ public final class H262Reader implements ElementaryStreamReader {
         this.pesTimeUs = j;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x012c  */
     @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -143,7 +143,7 @@ public final class H262Reader implements ElementaryStreamReader {
                 if (this.sampleHasPicture && this.hasOutputFormat) {
                     long j2 = this.sampleTimeUs;
                     if (j2 != -9223372036854775807L) {
-                        i = i4;
+                        i = limit;
                         this.output.sampleMetadata(j2, this.sampleIsKeyframe ? 1 : 0, ((int) (this.totalBytesWritten - this.samplePosition)) - i6, i6, null);
                         if (this.startedFirstSample || this.sampleHasPicture) {
                             this.samplePosition = this.totalBytesWritten - i6;
@@ -157,10 +157,10 @@ public final class H262Reader implements ElementaryStreamReader {
                             this.pesTimeUs = -9223372036854775807L;
                             this.startedFirstSample = true;
                         }
-                        this.sampleHasPicture = i == 0;
+                        this.sampleHasPicture = i4 == 0;
                     }
                 }
-                i = i4;
+                i = limit;
                 if (this.startedFirstSample) {
                 }
                 this.samplePosition = this.totalBytesWritten - i6;
@@ -171,10 +171,14 @@ public final class H262Reader implements ElementaryStreamReader {
                 this.sampleIsKeyframe = false;
                 this.pesTimeUs = -9223372036854775807L;
                 this.startedFirstSample = true;
-                this.sampleHasPicture = i == 0;
-            } else if (i4 == 184) {
-                this.sampleIsKeyframe = true;
+                this.sampleHasPicture = i4 == 0;
+            } else {
+                if (i4 == 184) {
+                    this.sampleIsKeyframe = true;
+                }
+                i = limit;
             }
+            limit = i;
             position = i3;
         }
         if (!this.hasOutputFormat) {

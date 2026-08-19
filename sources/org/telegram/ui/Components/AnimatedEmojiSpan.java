@@ -102,7 +102,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    AnimatedEmojiSpan.this.lambda$getExtraScale$0(valueAnimator2);
+                    AnimatedEmojiSpan.$r8$lambda$U3691NvJj6VN3wSM_tKS0ewk72w(AnimatedEmojiSpan.this, valueAnimator2);
                 }
             });
             this.scaleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan.1
@@ -128,7 +128,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                    AnimatedEmojiSpan.this.lambda$getExtraScale$1(valueAnimator3);
+                    AnimatedEmojiSpan.$r8$lambda$TMqaSNcQHPensSaV3C1Lnj9NAEg(AnimatedEmojiSpan.this, valueAnimator3);
                 }
             });
             this.scaleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan.2
@@ -148,19 +148,19 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         return this.extraScale;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getExtraScale$0(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$U3691NvJj6VN3wSM_tKS0ewk72w(AnimatedEmojiSpan animatedEmojiSpan, ValueAnimator valueAnimator) {
+        animatedEmojiSpan.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.extraScale = floatValue;
-        this.scale = AndroidUtilities.lerp(0.2f, 1.0f, floatValue);
+        animatedEmojiSpan.extraScale = floatValue;
+        animatedEmojiSpan.scale = AndroidUtilities.lerp(0.2f, 1.0f, floatValue);
         lockPositionChanging = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getExtraScale$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$TMqaSNcQHPensSaV3C1Lnj9NAEg(AnimatedEmojiSpan animatedEmojiSpan, ValueAnimator valueAnimator) {
+        animatedEmojiSpan.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.extraScale = floatValue;
-        this.scale = AndroidUtilities.lerp(0.0f, 1.0f, floatValue);
+        animatedEmojiSpan.extraScale = floatValue;
+        animatedEmojiSpan.scale = AndroidUtilities.lerp(0.0f, 1.0f, floatValue);
     }
 
     public AnimatedEmojiSpan(TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
@@ -355,7 +355,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AnimatedEmojiSpan.this.lambda$animateChanges$2(f4, f2, f3, f, valueAnimator);
+                AnimatedEmojiSpan.$r8$lambda$ccEuweyqzEp3QxMhza_oTsktDNs(AnimatedEmojiSpan.this, f4, f2, f3, f, valueAnimator);
             }
         });
         this.moveAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.AnimatedEmojiSpan.3
@@ -370,19 +370,19 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateChanges$2(float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$ccEuweyqzEp3QxMhza_oTsktDNs(AnimatedEmojiSpan animatedEmojiSpan, float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+        animatedEmojiSpan.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.lastDrawnCy = AndroidUtilities.lerp(f, f2, floatValue);
-        this.lastDrawnCx = AndroidUtilities.lerp(f3, f4, floatValue);
+        animatedEmojiSpan.lastDrawnCy = AndroidUtilities.lerp(f, f2, floatValue);
+        animatedEmojiSpan.lastDrawnCx = AndroidUtilities.lerp(f3, f4, floatValue);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0026, code lost:
     
         if (r3 != 0.0f) goto L12;
      */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0033 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
     @Override // android.text.style.ReplacementSpan
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -619,7 +619,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         if (layoutArr == null || layoutArr.length <= 0) {
             if (emojiGroupedSpans2 != null) {
                 emojiGroupedSpans2.holders.clear();
-                emojiGroupedSpans.release();
+                emojiGroupedSpans2.release();
             }
             return null;
         }
@@ -989,12 +989,23 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
                     @Override // org.telegram.ui.Components.DrawingInBackgroundThreadDrawable
                     public void drawInUiThread(Canvas canvas, float f) {
+                        Canvas canvas2;
+                        float f2;
                         long currentTimeMillis = System.currentTimeMillis();
-                        for (int i = 0; i < SpansChunk.this.holders.size(); i++) {
+                        int i = 0;
+                        while (i < SpansChunk.this.holders.size()) {
                             AnimatedEmojiHolder animatedEmojiHolder = (AnimatedEmojiHolder) SpansChunk.this.holders.get(i);
                             if (animatedEmojiHolder.span.spanDrawn) {
-                                animatedEmojiHolder.draw(canvas, currentTimeMillis, 0.0f, 0.0f, f, null);
+                                canvas2 = canvas;
+                                f2 = f;
+                                animatedEmojiHolder.draw(canvas2, currentTimeMillis, 0.0f, 0.0f, f2, null);
+                            } else {
+                                canvas2 = canvas;
+                                f2 = f;
                             }
+                            i++;
+                            canvas = canvas2;
+                            f = f2;
                         }
                     }
 
@@ -1120,16 +1131,13 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r8v2, types: [android.text.SpannableString] */
     public static CharSequence cloneSpans(CharSequence charSequence, int i, Paint.FontMetricsInt fontMetricsInt, float f) {
+        AnimatedEmojiSpan[] animatedEmojiSpanArr;
         if (!(charSequence instanceof Spanned)) {
             return charSequence;
         }
         Spanned spanned = (Spanned) charSequence;
         CharacterStyle[] characterStyleArr = (CharacterStyle[]) spanned.getSpans(0, spanned.length(), CharacterStyle.class);
-        if (characterStyleArr != null && characterStyleArr.length > 0) {
-            AnimatedEmojiSpan[] animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spanned.getSpans(0, spanned.length(), AnimatedEmojiSpan.class);
-            if (animatedEmojiSpanArr != null && animatedEmojiSpanArr.length <= 0) {
-                return charSequence;
-            }
+        if (characterStyleArr != null && characterStyleArr.length > 0 && ((animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spanned.getSpans(0, spanned.length(), AnimatedEmojiSpan.class)) == null || animatedEmojiSpanArr.length > 0)) {
             charSequence = new SpannableString(spanned);
             for (int i2 = 0; i2 < characterStyleArr.length; i2++) {
                 CharacterStyle characterStyle = characterStyleArr[i2];
@@ -1211,14 +1219,18 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
         @Override // android.widget.TextView, android.view.View
         protected void onDraw(Canvas canvas) {
+            Canvas canvas2;
             super.onDraw(canvas);
             float paddingTop = ((getGravity() & 16) == 0 || getLayout() == null) ? 0.0f : getPaddingTop() + ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f);
             float paddingRight = LocaleController.isRTL ? getPaddingRight() : getPaddingLeft();
-            if (paddingTop != 0.0f || paddingRight != 0.0f) {
+            if (paddingTop == 0.0f && paddingRight == 0.0f) {
+                canvas2 = canvas;
+            } else {
                 canvas.save();
-                canvas.translate(paddingRight, paddingTop);
+                canvas2 = canvas;
+                canvas2.translate(paddingRight, paddingTop);
             }
-            AnimatedEmojiSpan.drawAnimatedEmojis(canvas, getLayout(), this.stack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.emojiColorFilter);
+            AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, getLayout(), this.stack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.emojiColorFilter);
             if (paddingTop == 0.0f && paddingRight == 0.0f) {
                 return;
             }

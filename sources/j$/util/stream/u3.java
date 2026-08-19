@@ -1,84 +1,98 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import j$.util.Spliterator;
-import java.util.Comparator;
-import java.util.function.Consumer;
+import java.util.concurrent.atomic.AtomicLong;
 
 /* loaded from: classes2.dex */
-final class u3 extends v3 implements Spliterator {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.T.d(this);
+public abstract class u3 {
+    public final Spliterator a;
+    public final boolean b;
+    public final int c;
+    public final long d;
+    public final AtomicLong e;
+
+    public abstract Spliterator c(Spliterator spliterator);
+
+    public u3(Spliterator spliterator, long j, long j2) {
+        this.a = spliterator;
+        this.b = j2 < 0;
+        this.d = j2 >= 0 ? j2 : 0L;
+        this.c = 128;
+        this.e = new AtomicLong(j2 >= 0 ? j + j2 : j);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.T.e(this, i);
+    public u3(Spliterator spliterator, u3 u3Var) {
+        this.a = spliterator;
+        this.b = u3Var.b;
+        this.e = u3Var.e;
+        this.d = u3Var.d;
+        this.c = u3Var.c;
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    u3(Spliterator spliterator, long j, long j2) {
-        super(spliterator, j, j2, 0L, Math.min(spliterator.estimateSize(), j2));
-    }
-
-    @Override // j$.util.stream.v3
-    protected final Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4) {
-        return new u3(spliterator, j, j2, j3, j4);
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        long j;
-        Objects.requireNonNull(consumer);
-        long j2 = this.e;
-        long j3 = this.a;
-        if (j3 >= j2) {
-            return false;
-        }
-        while (true) {
-            j = this.d;
-            if (j3 <= j) {
-                break;
+    public final long b(long j) {
+        AtomicLong atomicLong;
+        long j2;
+        boolean z;
+        long min;
+        do {
+            atomicLong = this.e;
+            j2 = atomicLong.get();
+            z = this.b;
+            if (j2 != 0) {
+                min = Math.min(j2, j);
+                if (min <= 0) {
+                    break;
+                }
+            } else {
+                if (z) {
+                    return j;
+                }
+                return 0L;
             }
-            this.c.tryAdvance(new b0(16));
-            this.d++;
-        }
-        if (j >= this.e) {
-            return false;
-        }
-        this.d = j + 1;
-        return this.c.tryAdvance(consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        Objects.requireNonNull(consumer);
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 >= j) {
-            return;
+        } while (!atomicLong.compareAndSet(j2, j2 - min));
+        if (z) {
+            return Math.max(j - min, 0L);
         }
         long j3 = this.d;
-        if (j3 >= j) {
-            return;
+        return j2 > j3 ? Math.max(min - (j2 - j3), 0L) : min;
+    }
+
+    public final t3 d() {
+        if (this.e.get() > 0) {
+            return t3.MAYBE_MORE;
         }
-        if (j3 >= j2 && this.c.estimateSize() + j3 <= this.b) {
-            this.c.forEachRemaining(consumer);
-            this.d = this.e;
-            return;
+        return this.b ? t3.UNLIMITED : t3.NO_MORE;
+    }
+
+    public final Spliterator trySplit() {
+        Spliterator trySplit;
+        if (this.e.get() == 0 || (trySplit = this.a.trySplit()) == null) {
+            return null;
         }
-        while (j2 > this.d) {
-            this.c.tryAdvance(new b0(17));
-            this.d++;
-        }
-        while (this.d < this.e) {
-            this.c.tryAdvance(consumer);
-            this.d++;
-        }
+        return c(trySplit);
+    }
+
+    public final long estimateSize() {
+        return this.a.estimateSize();
+    }
+
+    public final int characteristics() {
+        return this.a.characteristics() & (-16465);
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
+        return (j$.util.c0) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ j$.util.T trySplit() {
+        return (j$.util.T) trySplit();
     }
 }

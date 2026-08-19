@@ -38,7 +38,6 @@ public abstract class DispatchedTaskKt {
 
     public static final void resume(DispatchedTask dispatchedTask, Continuation continuation, boolean z) {
         Object successfulResult$kotlinx_coroutines_core;
-        boolean clearThreadContext;
         Object takeState$kotlinx_coroutines_core = dispatchedTask.takeState$kotlinx_coroutines_core();
         Throwable exceptionalResult$kotlinx_coroutines_core = dispatchedTask.getExceptionalResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core);
         if (exceptionalResult$kotlinx_coroutines_core != null) {
@@ -60,16 +59,16 @@ public abstract class DispatchedTaskKt {
             try {
                 dispatchedContinuation.continuation.resumeWith(obj);
                 Unit unit = Unit.INSTANCE;
-                if (updateUndispatchedCompletion != null) {
-                    if (!clearThreadContext) {
-                        return;
-                    }
+                if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {
+                    ThreadContextKt.restoreThreadContext(context, updateThreadContext);
+                    return;
                 }
                 return;
-            } finally {
+            } catch (Throwable th) {
                 if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {
                     ThreadContextKt.restoreThreadContext(context, updateThreadContext);
                 }
+                throw th;
             }
         }
         continuation.resumeWith(obj);

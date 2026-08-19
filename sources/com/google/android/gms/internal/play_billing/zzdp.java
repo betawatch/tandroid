@@ -17,48 +17,46 @@ final class zzdp extends zzcr {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0194  */
-    /* JADX WARN: Type inference failed for: r15v0 */
-    /* JADX WARN: Type inference failed for: r5v11, types: [java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r5v2, types: [int[]] */
-    /* JADX WARN: Type inference failed for: r5v9 */
-    /* JADX WARN: Type inference failed for: r6v5, types: [java.lang.Object[]] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x01a8  */
+    /* JADX WARN: Type inference failed for: r4v6 */
+    /* JADX WARN: Type inference failed for: r4v7, types: [java.lang.Object[]] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     static zzdp zzg(int i, Object[] objArr, zzcq zzcqVar) {
-        short[] sArr;
         char c;
         char c2;
-        Object[] objArr2;
+        char c3;
+        short[] sArr;
         boolean z;
         int i2 = i;
-        Object[] objArr3 = objArr;
+        Object[] objArr2 = objArr;
         if (i2 == 0) {
             return (zzdp) zza;
         }
         Object obj = null;
         int i3 = 1;
         if (i2 == 1) {
-            Object obj2 = objArr3[0];
+            Object obj2 = objArr2[0];
             Objects.requireNonNull(obj2);
-            Object obj3 = objArr3[1];
+            Object obj3 = objArr2[1];
             Objects.requireNonNull(obj3);
             zzbw.zzb(obj2, obj3);
-            return new zzdp(null, objArr3, 1);
+            return new zzdp(null, objArr2, 1);
         }
-        zzbe.zzb(i2, objArr3.length >> 1, "index");
-        int zzh = zzcv.zzh(i);
+        zzbe.zzb(i2, objArr2.length >> 1, "index");
+        int zzh = zzcv.zzh(i2);
         if (i2 == 1) {
-            Object obj4 = objArr3[0];
+            Object obj4 = objArr2[0];
             Objects.requireNonNull(obj4);
-            Object obj5 = objArr3[1];
+            Object obj5 = objArr2[1];
             Objects.requireNonNull(obj5);
             zzbw.zzb(obj4, obj5);
             i2 = 1;
+            c = 0;
+            c2 = 1;
         } else {
             int i4 = zzh - 1;
-            char c3 = 65535;
             if (zzh <= 128) {
                 byte[] bArr = new byte[zzh];
                 Arrays.fill(bArr, (byte) -1);
@@ -67,9 +65,9 @@ final class zzdp extends zzcr {
                 while (i5 < i2) {
                     int i7 = i6 + i6;
                     int i8 = i5 + i5;
-                    Object obj6 = objArr3[i8];
+                    Object obj6 = objArr2[i8];
                     Objects.requireNonNull(obj6);
-                    Object obj7 = objArr3[i8 ^ i3];
+                    Object obj7 = objArr2[i8 ^ i3];
                     Objects.requireNonNull(obj7);
                     zzbw.zzb(obj6, obj7);
                     int zza2 = zzcg.zza(obj6.hashCode());
@@ -79,17 +77,17 @@ final class zzdp extends zzcr {
                         if (i10 == 255) {
                             bArr[i9] = (byte) i7;
                             if (i6 < i5) {
-                                objArr3[i7] = obj6;
-                                objArr3[i7 ^ 1] = obj7;
+                                objArr2[i7] = obj6;
+                                objArr2[i7 ^ 1] = obj7;
                             }
                             i6++;
                         } else {
-                            if (obj6.equals(objArr3[i10])) {
+                            if (obj6.equals(objArr2[i10])) {
                                 int i11 = i10 ^ 1;
-                                Object obj8 = objArr3[i11];
+                                Object obj8 = objArr2[i11];
                                 Objects.requireNonNull(obj8);
                                 zzcp zzcpVar = new zzcp(obj6, obj7, obj8);
-                                objArr3[i11] = obj7;
+                                objArr2[i11] = obj7;
                                 obj = zzcpVar;
                                 break;
                             }
@@ -99,135 +97,121 @@ final class zzdp extends zzcr {
                     i5++;
                     i3 = 1;
                 }
+                c = 0;
+                c2 = 1;
                 if (i6 == i2) {
                     obj = bArr;
                 } else {
                     sArr = new Object[]{bArr, Integer.valueOf(i6), obj};
+                    obj = sArr;
                 }
-            } else if (zzh <= 32768) {
-                sArr = new short[zzh];
-                Arrays.fill(sArr, (short) -1);
-                int i12 = 0;
-                for (int i13 = 0; i13 < i2; i13++) {
-                    int i14 = i12 + i12;
-                    int i15 = i13 + i13;
-                    Object obj9 = objArr3[i15];
-                    Objects.requireNonNull(obj9);
-                    Object obj10 = objArr3[i15 ^ 1];
-                    Objects.requireNonNull(obj10);
-                    zzbw.zzb(obj9, obj10);
-                    int zza3 = zzcg.zza(obj9.hashCode());
-                    while (true) {
-                        int i16 = zza3 & i4;
-                        char c4 = (char) sArr[i16];
-                        if (c4 == 65535) {
-                            sArr[i16] = (short) i14;
-                            if (i12 < i13) {
-                                objArr3[i14] = obj9;
-                                objArr3[i14 ^ 1] = obj10;
+            } else {
+                c = 0;
+                c2 = 1;
+                if (zzh > 32768) {
+                    int[] iArr = new int[zzh];
+                    Arrays.fill(iArr, -1);
+                    int i12 = 0;
+                    for (int i13 = 0; i13 < i2; i13++) {
+                        int i14 = i12 + i12;
+                        int i15 = i13 + i13;
+                        Object obj9 = objArr2[i15];
+                        Objects.requireNonNull(obj9);
+                        Object obj10 = objArr2[i15 ^ 1];
+                        Objects.requireNonNull(obj10);
+                        zzbw.zzb(obj9, obj10);
+                        int zza3 = zzcg.zza(obj9.hashCode());
+                        while (true) {
+                            int i16 = zza3 & i4;
+                            int i17 = iArr[i16];
+                            if (i17 == -1) {
+                                iArr[i16] = i14;
+                                if (i12 < i13) {
+                                    objArr2[i14] = obj9;
+                                    objArr2[i14 ^ 1] = obj10;
+                                }
+                                i12++;
+                            } else {
+                                if (obj9.equals(objArr2[i17])) {
+                                    int i18 = i17 ^ 1;
+                                    Object obj11 = objArr2[i18];
+                                    Objects.requireNonNull(obj11);
+                                    zzcp zzcpVar2 = new zzcp(obj9, obj10, obj11);
+                                    objArr2[i18] = obj10;
+                                    obj = zzcpVar2;
+                                    break;
+                                }
+                                zza3 = i16 + 1;
                             }
-                            i12++;
-                        } else {
-                            if (obj9.equals(objArr3[c4])) {
-                                int i17 = c4 ^ 1;
-                                Object obj11 = objArr3[i17];
-                                Objects.requireNonNull(obj11);
-                                zzcp zzcpVar2 = new zzcp(obj9, obj10, obj11);
-                                objArr3[i17] = obj10;
-                                obj = zzcpVar2;
-                                break;
-                            }
-                            zza3 = i16 + 1;
                         }
                     }
-                }
-                if (i12 != i2) {
-                    Integer valueOf = Integer.valueOf(i12);
-                    c = 1;
-                    c2 = 2;
-                    objArr2 = new Object[]{sArr, valueOf, obj};
-                    obj = objArr2;
+                    c3 = 2;
+                    obj = i12 == i2 ? iArr : new Object[]{iArr, Integer.valueOf(i12), obj};
                     z = obj instanceof Object[];
                     Object obj12 = obj;
                     if (z) {
-                        Object[] objArr4 = (Object[]) obj;
-                        zzcp zzcpVar3 = (zzcp) objArr4[c2];
+                        Object[] objArr3 = (Object[]) obj;
+                        zzcp zzcpVar3 = (zzcp) objArr3[c3];
                         if (zzcqVar == null) {
                             throw zzcpVar3.zza();
                         }
                         zzcqVar.zzc = zzcpVar3;
-                        Object obj13 = objArr4[0];
-                        int intValue = ((Integer) objArr4[c]).intValue();
-                        objArr3 = Arrays.copyOf(objArr3, intValue + intValue);
+                        Object obj13 = objArr3[c];
+                        int intValue = ((Integer) objArr3[c2]).intValue();
+                        objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
                         obj12 = obj13;
                         i2 = intValue;
                     }
-                    return new zzdp(obj12, objArr3, i2);
+                    return new zzdp(obj12, objArr2, i2);
                 }
-            } else {
-                int i18 = 1;
-                sArr = new int[zzh];
-                Arrays.fill((int[]) sArr, -1);
+                sArr = new short[zzh];
+                Arrays.fill(sArr, (short) -1);
                 int i19 = 0;
-                int i20 = 0;
-                while (i19 < i2) {
-                    int i21 = i20 + i20;
-                    int i22 = i19 + i19;
-                    Object obj14 = objArr3[i22];
+                for (int i20 = 0; i20 < i2; i20++) {
+                    int i21 = i19 + i19;
+                    int i22 = i20 + i20;
+                    Object obj14 = objArr2[i22];
                     Objects.requireNonNull(obj14);
-                    Object obj15 = objArr3[i22 ^ i18];
+                    Object obj15 = objArr2[i22 ^ 1];
                     Objects.requireNonNull(obj15);
                     zzbw.zzb(obj14, obj15);
                     int zza4 = zzcg.zza(obj14.hashCode());
                     while (true) {
                         int i23 = zza4 & i4;
-                        ?? r15 = sArr[i23];
-                        if (r15 == c3) {
-                            sArr[i23] = i21;
-                            if (i20 < i19) {
-                                objArr3[i21] = obj14;
-                                objArr3[i21 ^ 1] = obj15;
+                        char c4 = (char) sArr[i23];
+                        if (c4 == 65535) {
+                            sArr[i23] = (short) i21;
+                            if (i19 < i20) {
+                                objArr2[i21] = obj14;
+                                objArr2[i21 ^ 1] = obj15;
                             }
-                            i20++;
+                            i19++;
                         } else {
-                            if (obj14.equals(objArr3[r15])) {
-                                int i24 = r15 ^ 1;
-                                Object obj16 = objArr3[i24];
+                            if (obj14.equals(objArr2[c4])) {
+                                int i24 = c4 ^ 1;
+                                Object obj16 = objArr2[i24];
                                 Objects.requireNonNull(obj16);
                                 zzcp zzcpVar4 = new zzcp(obj14, obj15, obj16);
-                                objArr3[i24] = obj15;
+                                objArr2[i24] = obj15;
                                 obj = zzcpVar4;
                                 break;
                             }
                             zza4 = i23 + 1;
-                            c3 = 65535;
                         }
                     }
-                    i19++;
-                    i18 = 1;
-                    c3 = 65535;
                 }
-                if (i20 != i2) {
-                    c = 1;
-                    c2 = 2;
-                    objArr2 = new Object[]{sArr, Integer.valueOf(i20), obj};
-                    obj = objArr2;
-                    z = obj instanceof Object[];
-                    Object obj122 = obj;
-                    if (z) {
-                    }
-                    return new zzdp(obj122, objArr3, i2);
+                if (i19 != i2) {
+                    obj = new Object[]{sArr, Integer.valueOf(i19), obj};
                 }
+                obj = sArr;
             }
-            obj = sArr;
         }
-        c2 = 2;
-        c = 1;
+        c3 = 2;
         z = obj instanceof Object[];
-        Object obj1222 = obj;
+        Object obj122 = obj;
         if (z) {
         }
-        return new zzdp(obj1222, objArr3, i2);
+        return new zzdp(obj122, objArr2, i2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */

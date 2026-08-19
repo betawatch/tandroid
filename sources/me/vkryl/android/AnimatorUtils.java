@@ -23,29 +23,23 @@ public abstract class AnimatorUtils {
     public static final Interpolator QUADRATIC_EASE_IN_OUT_INTERPOLATOR = new Interpolator() { // from class: me.vkryl.android.AnimatorUtils$$ExternalSyntheticLambda0
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
-            float lambda$static$0;
-            lambda$static$0 = AnimatorUtils.lambda$static$0(f);
-            return lambda$static$0;
+            return AnimatorUtils.$r8$lambda$U8unIFNBgpUICoxvqzSjoUxGuKM(f);
         }
     };
     public static final Interpolator QUADRATIC_OUT_INTERPOLATOR = new Interpolator() { // from class: me.vkryl.android.AnimatorUtils$$ExternalSyntheticLambda1
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
-            float lambda$static$1;
-            lambda$static$1 = AnimatorUtils.lambda$static$1(f);
-            return lambda$static$1;
+            return AnimatorUtils.$r8$lambda$JI7rc6j6ef3U4gcSi5NiklRZPkY(f);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ float lambda$static$0(float f) {
-        return f < 0.5f ? 2.0f * f * f : ((4.0f - r1) * f) - 1.0f;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ float lambda$static$1(float f) {
+    public static /* synthetic */ float $r8$lambda$JI7rc6j6ef3U4gcSi5NiklRZPkY(float f) {
         float f2 = 1.0f - f;
         return 1.0f - (f2 * f2);
+    }
+
+    public static /* synthetic */ float $r8$lambda$U8unIFNBgpUICoxvqzSjoUxGuKM(float f) {
+        return f < 0.5f ? 2.0f * f * f : ((4.0f - r1) * f) - 1.0f;
     }
 
     public static ValueAnimator simpleValueAnimator() {

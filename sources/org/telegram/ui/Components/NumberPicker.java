@@ -821,27 +821,26 @@ public class NumberPicker extends LinearLayout {
             i3 = 3;
         }
         if (this.drawDividers) {
-            canvas.drawRect(0.0f, this.mTopSelectionDividerTop, getRight(), this.mSelectionDividerHeight + r1, this.mSelectionDivider);
+            canvas.drawRect(0.0f, this.mTopSelectionDividerTop, getRight(), this.mSelectionDividerHeight + r2, this.mSelectionDivider);
             canvas.drawRect(0.0f, r1 - this.mSelectionDividerHeight, getRight(), this.mBottomSelectionDividerBottom, this.mSelectionDivider);
         }
     }
 
     private int makeMeasureSpec(int i, int i2) {
-        if (i2 == -1) {
-            return i;
+        if (i2 != -1) {
+            int size = View.MeasureSpec.getSize(i);
+            int mode = View.MeasureSpec.getMode(i);
+            if (mode == Integer.MIN_VALUE) {
+                return View.MeasureSpec.makeMeasureSpec(Math.min(size, i2), TLObject.FLAG_30);
+            }
+            if (mode == 0) {
+                return View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30);
+            }
+            if (mode != 1073741824) {
+                throw new IllegalArgumentException("Unknown measure mode: " + mode);
+            }
         }
-        int size = View.MeasureSpec.getSize(i);
-        int mode = View.MeasureSpec.getMode(i);
-        if (mode == Integer.MIN_VALUE) {
-            return View.MeasureSpec.makeMeasureSpec(Math.min(size, i2), TLObject.FLAG_30);
-        }
-        if (mode == 0) {
-            return View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_30);
-        }
-        if (mode == 1073741824) {
-            return i;
-        }
-        throw new IllegalArgumentException("Unknown measure mode: " + mode);
+        return i;
     }
 
     private int resolveSizeAndStateRespectingMinSize(int i, int i2, int i3) {

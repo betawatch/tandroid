@@ -233,11 +233,13 @@ public final class IcyHeaders implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || IcyHeaders.class != obj.getClass()) {
-            return false;
+        if (obj != null && IcyHeaders.class == obj.getClass()) {
+            IcyHeaders icyHeaders = (IcyHeaders) obj;
+            if (this.bitrate == icyHeaders.bitrate && Util.areEqual(this.genre, icyHeaders.genre) && Util.areEqual(this.name, icyHeaders.name) && Util.areEqual(this.url, icyHeaders.url) && this.isPublic == icyHeaders.isPublic && this.metadataInterval == icyHeaders.metadataInterval) {
+                return true;
+            }
         }
-        IcyHeaders icyHeaders = (IcyHeaders) obj;
-        return this.bitrate == icyHeaders.bitrate && Util.areEqual(this.genre, icyHeaders.genre) && Util.areEqual(this.name, icyHeaders.name) && Util.areEqual(this.url, icyHeaders.url) && this.isPublic == icyHeaders.isPublic && this.metadataInterval == icyHeaders.metadataInterval;
+        return false;
     }
 
     public int hashCode() {

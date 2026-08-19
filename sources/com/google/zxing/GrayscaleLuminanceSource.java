@@ -1,6 +1,6 @@
 package com.google.zxing;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class GrayscaleLuminanceSource extends LuminanceSource {
     private final int dataHeight;
     private final int dataWidth;

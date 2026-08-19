@@ -1,50 +1,75 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 import java.util.function.LongConsumer;
+import java.util.function.ObjLongConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class s1 extends u1 implements l2 {
-    private final long[] h;
+public final class s1 extends M1 implements L1, e2 {
+    public final /* synthetic */ Supplier b;
+    public final /* synthetic */ ObjLongConsumer c;
+    public final /* synthetic */ n d;
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(double d) {
+        q1.a();
+        throw null;
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(int i) {
+        q1.k();
+        throw null;
+    }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void p(Object obj) {
-        j((Long) obj);
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        s((Long) obj);
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    @Override // j$.util.stream.l2
-    public final /* synthetic */ void j(Long l) {
-        w0.i(this, l);
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void s(Long l) {
+        q1.i(this, l);
     }
 
-    s1(Spliterator spliterator, b bVar, long[] jArr) {
-        super(spliterator, bVar, jArr.length);
-        this.h = jArr;
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void x() {
     }
 
-    s1(s1 s1Var, Spliterator spliterator, long j, long j2) {
-        super(s1Var, spliterator, j, j2, s1Var.h.length);
-        this.h = s1Var.h;
+    @Override // j$.util.stream.L1
+    public final void n(L1 l1) {
+        this.a = this.d.apply(this.a, ((s1) l1).a);
     }
 
-    @Override // j$.util.stream.u1
-    final u1 b(Spliterator spliterator, long j, long j2) {
-        return new s1(this, spliterator, j, j2);
+    @Override // j$.util.stream.f2
+    public final void y(long j) {
+        this.a = this.b.get();
     }
 
-    @Override // j$.util.stream.u1, j$.util.stream.m2
+    @Override // j$.util.stream.f2
     public final void accept(long j) {
-        int i = this.f;
-        if (i >= this.g) {
-            throw new IndexOutOfBoundsException(Integer.toString(this.f));
-        }
-        long[] jArr = this.h;
-        this.f = i + 1;
-        jArr[i] = j;
+        this.c.accept(this.a, j);
+    }
+
+    public s1(Supplier supplier, ObjLongConsumer objLongConsumer, n nVar) {
+        this.b = supplier;
+        this.c = objLongConsumer;
+        this.d = nVar;
     }
 }

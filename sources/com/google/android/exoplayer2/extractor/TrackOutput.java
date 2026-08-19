@@ -36,11 +36,13 @@ public interface TrackOutput {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || CryptoData.class != obj.getClass()) {
-                return false;
+            if (obj != null && CryptoData.class == obj.getClass()) {
+                CryptoData cryptoData = (CryptoData) obj;
+                if (this.cryptoMode == cryptoData.cryptoMode && this.encryptedBlocks == cryptoData.encryptedBlocks && this.clearBlocks == cryptoData.clearBlocks && Arrays.equals(this.encryptionKey, cryptoData.encryptionKey)) {
+                    return true;
+                }
             }
-            CryptoData cryptoData = (CryptoData) obj;
-            return this.cryptoMode == cryptoData.cryptoMode && this.encryptedBlocks == cryptoData.encryptedBlocks && this.clearBlocks == cryptoData.clearBlocks && Arrays.equals(this.encryptionKey, cryptoData.encryptionKey);
+            return false;
         }
 
         public int hashCode() {

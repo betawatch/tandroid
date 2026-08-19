@@ -56,7 +56,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.Weather;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StoryMediaAreasView extends FrameLayout implements View.OnClickListener {
     private final Path clipPath;
     private final Paint cutPaint;
@@ -216,22 +216,22 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
         setMeasuredDimension(size, size2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x021c  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0228  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0288  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x02a5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x027a  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x028b  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x02a8  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x028b  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0251  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x021f  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x02ab  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0322  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x02ad  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x028e  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x022a  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x021c  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -251,7 +251,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoryMediaAreasView$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StoryMediaAreasView.this.lambda$onClick$0();
+                        StoryMediaAreasView.$r8$lambda$wc8LwHVmh144RDVgKzunkNgkFJ8(StoryMediaAreasView.this);
                     }
                 }, 200L);
                 TL_stories.MediaArea mediaArea = this.selectedArea.mediaArea;
@@ -373,7 +373,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
                     duration.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Stories.StoryMediaAreasView$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryMediaAreasView.this.lambda$onClick$1(duration);
+                            StoryMediaAreasView.$r8$lambda$qdQ5l8e3zN3QaCKysaiqxcg4kAQ(StoryMediaAreasView.this, duration);
                         }
                     });
                     float f = !z ? 100 : 50;
@@ -390,7 +390,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
                     duration.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.StoryMediaAreasView$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            StoryMediaAreasView.this.lambda$onClick$2(view2);
+                            r0.onClick(StoryMediaAreasView.this.selectedArea);
                         }
                     });
                     duration.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
@@ -417,7 +417,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
             duration.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Stories.StoryMediaAreasView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryMediaAreasView.this.lambda$onClick$1(duration);
+                    StoryMediaAreasView.$r8$lambda$qdQ5l8e3zN3QaCKysaiqxcg4kAQ(StoryMediaAreasView.this, duration);
                 }
             });
             float f2 = !z ? 100 : 50;
@@ -432,7 +432,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
             duration.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.StoryMediaAreasView$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    StoryMediaAreasView.this.lambda$onClick$2(view2);
+                    r0.onClick(StoryMediaAreasView.this.selectedArea);
                 }
             });
             duration.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
@@ -442,29 +442,22 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$0() {
-        HintView2 hintView2 = this.hintView;
+    public static /* synthetic */ void $r8$lambda$wc8LwHVmh144RDVgKzunkNgkFJ8(StoryMediaAreasView storyMediaAreasView) {
+        HintView2 hintView2 = storyMediaAreasView.hintView;
         if (hintView2 != null) {
             hintView2.hide();
-            this.hintView = null;
+            storyMediaAreasView.hintView = null;
         }
-        onHintVisible(false);
+        storyMediaAreasView.onHintVisible(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$1(HintView2 hintView2) {
-        this.hintsContainer.removeView(hintView2);
-        if (hintView2 == this.hintView) {
-            this.selectedArea = null;
-            invalidate();
-            onHintVisible(false);
+    public static /* synthetic */ void $r8$lambda$qdQ5l8e3zN3QaCKysaiqxcg4kAQ(StoryMediaAreasView storyMediaAreasView, HintView2 hintView2) {
+        storyMediaAreasView.hintsContainer.removeView(hintView2);
+        if (hintView2 == storyMediaAreasView.hintView) {
+            storyMediaAreasView.selectedArea = null;
+            storyMediaAreasView.invalidate();
+            storyMediaAreasView.onHintVisible(false);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$2(View view) {
-        onClick(this.selectedArea);
     }
 
     public void closeHint() {
@@ -551,6 +544,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
     }
 
     private void drawHighlight(Canvas canvas) {
+        Canvas canvas2;
         float measuredHeight;
         AnimatedFloat animatedFloat = this.parentHighlightAlpha;
         AreaView areaView = this.selectedArea;
@@ -559,8 +553,9 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
         boolean z = areaView2 != null && areaView2.scaleOnTap;
         float f2 = this.parentHighlightScaleAlpha.set(z);
         if (f > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReceiveSmsCode, 31);
-            canvas.drawColor(Theme.multAlpha(402653184, f));
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReceiveSmsCode, 31);
+            canvas2.drawColor(Theme.multAlpha(402653184, f));
             for (int i = 0; i < getChildCount(); i++) {
                 View childAt = getChildAt(i);
                 if (childAt != this.hintsContainer) {
@@ -568,50 +563,52 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
                     AreaView areaView3 = this.selectedArea;
                     float f3 = animatedFloat2.set(childAt == areaView3 && areaView3.supportsBounds);
                     if (f3 > 0.0f) {
-                        canvas.save();
+                        canvas2.save();
                         this.rectF.set(childAt.getX(), childAt.getY(), childAt.getX() + childAt.getMeasuredWidth(), childAt.getY() + childAt.getMeasuredHeight());
-                        canvas.rotate(childAt.getRotation(), this.rectF.centerX(), this.rectF.centerY());
+                        canvas2.rotate(childAt.getRotation(), this.rectF.centerX(), this.rectF.centerY());
                         this.cutPaint.setAlpha((int) (f3 * 255.0f));
                         RectF rectF = this.rectF;
-                        canvas.drawRoundRect(rectF, rectF.height() * 0.2f, this.rectF.height() * 0.2f, this.cutPaint);
-                        canvas.restore();
+                        canvas2.drawRoundRect(rectF, rectF.height() * 0.2f, this.rectF.height() * 0.2f, this.cutPaint);
+                        canvas2.restore();
                     }
                 }
             }
-            canvas.restore();
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
         }
         if ((z || f2 > 0.0f) && this.lastSelectedArea != null) {
             if (this.parentBitmap == null) {
                 this.parentBitmap = getPlayingBitmap();
             }
             if (this.parentBitmap != null) {
-                canvas.drawColor(Theme.multAlpha(805306368, f2));
-                canvas.save();
+                canvas2.drawColor(Theme.multAlpha(805306368, f2));
+                canvas2.save();
                 this.clipPath.rewind();
                 this.rectF.set(this.lastSelectedArea.getX(), this.lastSelectedArea.getY(), this.lastSelectedArea.getX() + this.lastSelectedArea.getMeasuredWidth(), this.lastSelectedArea.getY() + this.lastSelectedArea.getMeasuredHeight());
                 float lerp = AndroidUtilities.lerp(1.0f, (this.lastSelectedArea.bounceOnTap ? this.lastSelectedArea.bounce.getScale(0.05f) : 1.0f) * 1.05f, f2);
-                canvas.scale(lerp, lerp, this.rectF.centerX(), this.rectF.centerY());
-                canvas.rotate(this.lastSelectedArea.getRotation(), this.rectF.centerX(), this.rectF.centerY());
+                canvas2.scale(lerp, lerp, this.rectF.centerX(), this.rectF.centerY());
+                canvas2.rotate(this.lastSelectedArea.getRotation(), this.rectF.centerX(), this.rectF.centerY());
                 TL_stories.MediaAreaCoordinates mediaAreaCoordinates = this.lastSelectedArea.mediaArea.coordinates;
                 if ((mediaAreaCoordinates.flags & 1) != 0) {
-                    measuredHeight = (float) ((mediaAreaCoordinates.radius / 100.0d) * r3.getMeasuredWidth());
+                    measuredHeight = (float) ((mediaAreaCoordinates.radius / 100.0d) * r4.getMeasuredWidth());
                 } else {
-                    measuredHeight = r3.getMeasuredHeight() * 0.2f;
+                    measuredHeight = r4.getMeasuredHeight() * 0.2f;
                 }
                 this.clipPath.addRoundRect(this.rectF, measuredHeight, measuredHeight, Path.Direction.CW);
-                canvas.clipPath(this.clipPath);
+                canvas2.clipPath(this.clipPath);
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
                 this.rect.set(0, 0, this.parentBitmap.getWidth(), this.parentBitmap.getHeight());
-                canvas.rotate(-this.lastSelectedArea.getRotation(), this.rectF.centerX(), this.rectF.centerY());
-                canvas.drawBitmap(this.parentBitmap, this.rect, rectF2, (Paint) null);
-                canvas.restore();
-                canvas.save();
-                canvas.translate(this.lastSelectedArea.getX(), this.lastSelectedArea.getY());
-                canvas.rotate(this.lastSelectedArea.getRotation(), this.lastSelectedArea.getPivotX(), this.lastSelectedArea.getPivotY());
-                canvas.scale(this.lastSelectedArea.getScaleX() * lerp, this.lastSelectedArea.getScaleY() * lerp, this.lastSelectedArea.getPivotX(), this.lastSelectedArea.getPivotY());
-                this.lastSelectedArea.drawAbove(canvas);
-                canvas.restore();
+                canvas2.rotate(-this.lastSelectedArea.getRotation(), this.rectF.centerX(), this.rectF.centerY());
+                canvas2.drawBitmap(this.parentBitmap, this.rect, rectF2, (Paint) null);
+                canvas2.restore();
+                canvas2.save();
+                canvas2.translate(this.lastSelectedArea.getX(), this.lastSelectedArea.getY());
+                canvas2.rotate(this.lastSelectedArea.getRotation(), this.lastSelectedArea.getPivotX(), this.lastSelectedArea.getPivotY());
+                canvas2.scale(this.lastSelectedArea.getScaleX() * lerp, this.lastSelectedArea.getScaleY() * lerp, this.lastSelectedArea.getPivotX(), this.lastSelectedArea.getPivotY());
+                this.lastSelectedArea.drawAbove(canvas2);
+                canvas2.restore();
             }
         } else {
             Bitmap bitmap = this.parentBitmap;
@@ -652,15 +649,31 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
 
     public boolean hasSelectedForScale() {
         AreaView areaView = this.selectedArea;
-        return areaView != null && (areaView.scaleOnTap || this.selectedArea.supportsBounds);
+        if (areaView != null) {
+            return areaView.scaleOnTap || this.selectedArea.supportsBounds;
+        }
+        return false;
     }
 
     public boolean hasAreaAboveAt(float f, float f2) {
-        for (int i = 0; i < getChildCount(); i++) {
+        float f3;
+        float f4;
+        int i = 0;
+        while (i < getChildCount()) {
             View childAt = getChildAt(i);
-            if ((childAt instanceof StoryReactionWidgetView) && rotatedRectContainsPoint(childAt.getTranslationX(), childAt.getTranslationY(), childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), childAt.getRotation(), f, f2)) {
-                return true;
+            if (childAt instanceof StoryReactionWidgetView) {
+                f3 = f;
+                f4 = f2;
+                if (rotatedRectContainsPoint(childAt.getTranslationX(), childAt.getTranslationY(), childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), childAt.getRotation(), f3, f4)) {
+                    return true;
+                }
+            } else {
+                f3 = f;
+                f4 = f2;
             }
+            i++;
+            f = f3;
+            f2 = f4;
         }
         return false;
     }

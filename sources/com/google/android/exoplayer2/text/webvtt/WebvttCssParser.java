@@ -29,7 +29,7 @@ final class WebvttCssParser {
         while (true) {
             String parseSelector = parseSelector(this.styleInput, this.stringBuilder);
             if (parseSelector == null || !"{".equals(parseNextToken(this.styleInput, this.stringBuilder))) {
-                return arrayList;
+                break;
             }
             WebvttCssStyle webvttCssStyle = new WebvttCssStyle();
             applySelectorToStyle(webvttCssStyle, parseSelector);
@@ -50,6 +50,7 @@ final class WebvttCssParser {
                 arrayList.add(webvttCssStyle);
             }
         }
+        return arrayList;
     }
 
     private static String parseSelector(ParsableByteArray parsableByteArray, StringBuilder sb) {
@@ -274,7 +275,7 @@ final class WebvttCssParser {
             return;
         }
         String str2 = (String) Assertions.checkNotNull(matcher.group(2));
-        str2.hashCode();
+        str2.getClass();
         switch (str2) {
             case "%":
                 webvttCssStyle.setFontSizeUnit(3);

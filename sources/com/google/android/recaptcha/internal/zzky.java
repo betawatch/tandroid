@@ -3,7 +3,6 @@ package com.google.android.recaptcha.internal;
 import java.net.ConnectException;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /* loaded from: classes.dex */
 public final class zzky implements zzlb {
@@ -24,6 +23,7 @@ public final class zzky implements zzlb {
     @Override // com.google.android.recaptcha.internal.zzlb
     public final Object zza(Object... objArr) {
         ArrayList arrayList = new ArrayList(objArr.length);
+        int i = 0;
         for (Object obj : objArr) {
             if (true != (obj instanceof Integer)) {
                 obj = null;
@@ -35,9 +35,11 @@ public final class zzky implements zzlb {
             arrayList.add(Integer.valueOf(num.intValue()));
         }
         ArrayList arrayList2 = new ArrayList();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            int intValue = ((Number) it.next()).intValue();
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj2 = arrayList.get(i);
+            i++;
+            int intValue = ((Number) obj2).intValue();
             if (zzb(intValue)) {
                 arrayList2.add(Integer.valueOf(intValue));
             }

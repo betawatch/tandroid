@@ -19,7 +19,7 @@ import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.UserListPoller;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UserListPoller {
     private static UserListPoller[] istances = new UserListPoller[4];
     final int currentAccount;
@@ -59,13 +59,13 @@ public class UserListPoller {
             ConnectionsManager.getInstance(UserListPoller.this.currentAccount).sendRequestTyped(tL_stories_getPeerMaxIDs, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Stories.UserListPoller$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    UserListPoller.1.this.lambda$run$0(arrayList, (Vector) obj, (TLRPC.TL_error) obj2);
+                    UserListPoller.1.$r8$lambda$TSLJOqgHbjqw1E-o52kACYthvjA(UserListPoller.1.this, arrayList, (Vector) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$run$0(ArrayList arrayList, Vector vector, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$TSLJOqgHbjqw1E-o52kACYthvjA(1 r9, ArrayList arrayList, Vector vector, TLRPC.TL_error tL_error) {
+            r9.getClass();
             if (vector != null) {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
@@ -97,7 +97,7 @@ public class UserListPoller {
                     }
                 }
                 MessagesStorage.getInstance(UserListPoller.this.currentAccount).putUsersAndChats(arrayList2, arrayList3, true, true);
-                NotificationCenter.getInstance(UserListPoller.this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
+                NotificationCenter.getInstance(UserListPoller.this.currentAccount).postNotificationName(NotificationCenter.updateInterfaces, 0);
             }
         }
     }

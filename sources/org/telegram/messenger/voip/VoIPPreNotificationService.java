@@ -149,10 +149,10 @@ public class VoIPPreNotificationService {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ee  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x027c  */
-    /* JADX WARN: Type inference failed for: r9v10 */
-    /* JADX WARN: Type inference failed for: r9v8 */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00ed  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0279  */
+    /* JADX WARN: Type inference failed for: r12v2 */
+    /* JADX WARN: Type inference failed for: r12v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -325,10 +325,10 @@ public class VoIPPreNotificationService {
         return contentIntent.build();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00f3 A[Catch: all -> 0x002d, TryCatch #1 {all -> 0x002d, Exception -> 0x0080, blocks: (B:13:0x0027, B:15:0x002b, B:17:0x0030, B:19:0x0046, B:22:0x0052, B:24:0x0069, B:26:0x008a, B:28:0x00a8, B:29:0x00dc, B:31:0x00f3, B:35:0x0115, B:37:0x011b, B:39:0x0129, B:42:0x0140, B:43:0x014f, B:50:0x0123, B:52:0x0109, B:54:0x008f, B:56:0x0093, B:58:0x009d, B:59:0x00a3, B:60:0x0082, B:63:0x00d0, B:65:0x00d7, B:66:0x004c), top: B:12:0x0027 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0109 A[Catch: all -> 0x002d, TryCatch #1 {all -> 0x002d, Exception -> 0x0080, blocks: (B:13:0x0027, B:15:0x002b, B:17:0x0030, B:19:0x0046, B:22:0x0052, B:24:0x0069, B:26:0x008a, B:28:0x00a8, B:29:0x00dc, B:31:0x00f3, B:35:0x0115, B:37:0x011b, B:39:0x0129, B:42:0x0140, B:43:0x014f, B:50:0x0123, B:52:0x0109, B:54:0x008f, B:56:0x0093, B:58:0x009d, B:59:0x00a3, B:60:0x0082, B:63:0x00d0, B:65:0x00d7, B:66:0x004c), top: B:12:0x0027 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00f4 A[Catch: all -> 0x002e, TryCatch #0 {all -> 0x002e, Exception -> 0x0081, blocks: (B:11:0x0028, B:13:0x002c, B:16:0x0031, B:18:0x0047, B:21:0x0053, B:23:0x006a, B:25:0x008b, B:27:0x00a9, B:28:0x00dd, B:30:0x00f4, B:34:0x0116, B:36:0x011c, B:38:0x012a, B:41:0x0141, B:42:0x0150, B:49:0x0124, B:51:0x010a, B:53:0x0090, B:55:0x0094, B:57:0x009e, B:58:0x00a4, B:59:0x0083, B:62:0x00d1, B:64:0x00d8, B:65:0x004d), top: B:10:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x010a A[Catch: all -> 0x002e, TryCatch #0 {all -> 0x002e, Exception -> 0x0081, blocks: (B:11:0x0028, B:13:0x002c, B:16:0x0031, B:18:0x0047, B:21:0x0053, B:23:0x006a, B:25:0x008b, B:27:0x00a9, B:28:0x00dd, B:30:0x00f4, B:34:0x0116, B:36:0x011c, B:38:0x012a, B:41:0x0141, B:42:0x0150, B:49:0x0124, B:51:0x010a, B:53:0x0090, B:55:0x0094, B:57:0x009e, B:58:0x00a4, B:59:0x0083, B:62:0x00d1, B:64:0x00d8, B:65:0x004d), top: B:10:0x0028 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -361,7 +361,7 @@ public class VoIPPreNotificationService {
                 mediaPlayer2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda1
                     @Override // android.media.MediaPlayer.OnPreparedListener
                     public final void onPrepared(MediaPlayer mediaPlayer3) {
-                        VoIPPreNotificationService.lambda$startRinging$0(mediaPlayer3);
+                        VoIPPreNotificationService.$r8$lambda$8xuOUE_SZMGh3Mddxb6Oo8iQDH4(mediaPlayer3);
                     }
                 });
                 ringtonePlayer.setLooping(true);
@@ -417,8 +417,7 @@ public class VoIPPreNotificationService {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$startRinging$0(MediaPlayer mediaPlayer) {
+    public static /* synthetic */ void $r8$lambda$8xuOUE_SZMGh3Mddxb6Oo8iQDH4(MediaPlayer mediaPlayer) {
         try {
             ringtonePlayer.start();
         } catch (Throwable th) {
@@ -465,14 +464,13 @@ public class VoIPPreNotificationService {
             acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPPreNotificationService.lambda$show$1(intent, phoneCall, context, intExtra, longExtra, z);
+                    VoIPPreNotificationService.$r8$lambda$lDZeK9o170qagGUvU23zy7BTSdM(intent, phoneCall, context, intExtra, longExtra, z);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$1(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i, long j, boolean z) {
+    public static /* synthetic */ void $r8$lambda$lDZeK9o170qagGUvU23zy7BTSdM(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i, long j, boolean z) {
         pendingVoIP = intent;
         pendingCall = phoneCall;
         ((NotificationManager) context.getSystemService("notification")).notify(203, makeNotification(context, i, j, phoneCall.id, z));
@@ -514,23 +512,17 @@ public class VoIPPreNotificationService {
         ConnectionsManager.getInstance(i).sendRequest(receivedcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                VoIPPreNotificationService.lambda$acknowledge$3(context, runnable, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        VoIPPreNotificationService.$r8$lambda$FKGlbdAziKn85Rug4hrUyX7sDaA(TLObject.this, tL_error, r3, r4);
+                    }
+                });
             }
         }, 2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$acknowledge$3(final Context context, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                VoIPPreNotificationService.lambda$acknowledge$2(TLObject.this, tL_error, context, runnable);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$acknowledge$2(TLObject tLObject, TLRPC.TL_error tL_error, Context context, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$FKGlbdAziKn85Rug4hrUyX7sDaA(TLObject tLObject, TLRPC.TL_error tL_error, Context context, Runnable runnable) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.w("(VoIPPreNotification) receivedCall response = " + tLObject);
         }
@@ -643,14 +635,13 @@ public class VoIPPreNotificationService {
         ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                VoIPPreNotificationService.lambda$decline$4(intExtra, tLObject, tL_error);
+                VoIPPreNotificationService.$r8$lambda$-xd9f9h0l8PWlBVsXRSKf-IBo_k(intExtra, tLObject, tL_error);
             }
         }, 2);
         dismiss(context, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$decline$4(int i, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$-xd9f9h0l8PWlBVsXRSKf-IBo_k(int i, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.e("(VoIPPreNotification) error on phone.discardCall: " + tL_error);
@@ -685,13 +676,12 @@ public class VoIPPreNotificationService {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                VoIPPreNotificationService.lambda$dismiss$5();
+                VoIPPreNotificationService.$r8$lambda$_XVfSiPmqqB3fzeto3OEFrjZsNA();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dismiss$5() {
+    public static /* synthetic */ void $r8$lambda$_XVfSiPmqqB3fzeto3OEFrjZsNA() {
         LaunchActivity launchActivity = LaunchActivity.instance;
         if (launchActivity != null && launchActivity.voipLaunchedInBackground && VoIPService.getSharedInstance() == null) {
             launchActivity.voipLaunchedInBackground = false;

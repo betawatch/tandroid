@@ -245,25 +245,24 @@ class AppCompatTextViewAutoSizeHelper {
 
     private int[] cleanupAutoSizePresetSizes(int[] iArr) {
         int length = iArr.length;
-        if (length == 0) {
-            return iArr;
-        }
-        Arrays.sort(iArr);
-        ArrayList arrayList = new ArrayList();
-        for (int i : iArr) {
-            if (i > 0 && Collections.binarySearch(arrayList, Integer.valueOf(i)) < 0) {
-                arrayList.add(Integer.valueOf(i));
+        if (length != 0) {
+            Arrays.sort(iArr);
+            ArrayList arrayList = new ArrayList();
+            for (int i : iArr) {
+                if (i > 0 && Collections.binarySearch(arrayList, Integer.valueOf(i)) < 0) {
+                    arrayList.add(Integer.valueOf(i));
+                }
+            }
+            if (length != arrayList.size()) {
+                int size = arrayList.size();
+                int[] iArr2 = new int[size];
+                for (int i2 = 0; i2 < size; i2++) {
+                    iArr2[i2] = ((Integer) arrayList.get(i2)).intValue();
+                }
+                return iArr2;
             }
         }
-        if (length == arrayList.size()) {
-            return iArr;
-        }
-        int size = arrayList.size();
-        int[] iArr2 = new int[size];
-        for (int i2 = 0; i2 < size; i2++) {
-            iArr2[i2] = ((Integer) arrayList.get(i2)).intValue();
-        }
-        return iArr2;
+        return iArr;
     }
 
     private void validateAndSetAutoSizeTextTypeUniformConfiguration(float f, float f2, float f3) {
@@ -438,10 +437,11 @@ class AppCompatTextViewAutoSizeHelper {
     private static Method getTextViewMethod(String str) {
         try {
             Method method = (Method) sTextViewMethodByNameCache.get(str);
-            if (method == null && (method = TextView.class.getDeclaredMethod(str, null)) != null) {
-                method.setAccessible(true);
-                sTextViewMethodByNameCache.put(str, method);
+            if (method != null || (method = TextView.class.getDeclaredMethod(str, null)) == null) {
+                return method;
             }
+            method.setAccessible(true);
+            sTextViewMethodByNameCache.put(str, method);
             return method;
         } catch (Exception e) {
             Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e);

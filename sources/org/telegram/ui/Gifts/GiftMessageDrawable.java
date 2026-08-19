@@ -95,7 +95,7 @@ public class GiftMessageDrawable extends Drawable {
 
             @Override // me.vkryl.android.animator.FactorAnimator.Target
             public final void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
-                GiftMessageDrawable.this.lambda$new$0(i, f, f2, factorAnimator);
+                GiftMessageDrawable.this.invalidateSelf();
             }
         }, CubicBezierInterpolator.EASE_OUT_QUINT, 320L, true);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -193,8 +193,8 @@ public class GiftMessageDrawable extends Drawable {
                 for (int i5 = 0; i5 < staticLayout2.getLineCount(); i5++) {
                     f = Math.max(f, staticLayout2.getLineWidth(i5));
                 }
-                staticLayout = staticLayout2;
                 f2 = f;
+                staticLayout = staticLayout2;
             }
         }
         this.textLayout = staticLayout;
@@ -216,11 +216,6 @@ public class GiftMessageDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public int getMinimumHeight() {
         return this.measuredHeight;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i, float f, float f2, FactorAnimator factorAnimator) {
-        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable

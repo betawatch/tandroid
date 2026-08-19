@@ -155,24 +155,24 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             usersSelectActivity.setDelegate(new UsersSelectActivity.FilterUsersActivityDelegate() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.UsersSelectActivity.FilterUsersActivityDelegate
                 public final void didSelectChats(ArrayList arrayList, int i) {
-                    AutoDeleteMessagesActivity.2.this.lambda$run$1(arrayList, i);
+                    AutoDeleteMessagesActivity.2.$r8$lambda$JYU_t0RW1tD3T6UIrI6n8VEZGgw(AutoDeleteMessagesActivity.2.this, arrayList, i);
                 }
             });
             AutoDeleteMessagesActivity.this.presentFragment(usersSelectActivity);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$run$1(final ArrayList arrayList, int i) {
+        public static /* synthetic */ void $r8$lambda$JYU_t0RW1tD3T6UIrI6n8VEZGgw(final 2 r0, final ArrayList arrayList, int i) {
+            r0.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AutoDeleteMessagesActivity.2.this.lambda$run$0(arrayList);
+                    AutoDeleteMessagesActivity.2.$r8$lambda$s7Sv-MV_DYjxhRNn1Kfm-L1wxAQ(AutoDeleteMessagesActivity.2.this, arrayList);
                 }
             }, 100L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$run$0(ArrayList arrayList) {
+        public static /* synthetic */ void $r8$lambda$s7Sv-MV_DYjxhRNn1Kfm-L1wxAQ(2 r8, ArrayList arrayList) {
+            r8.getClass();
             if (arrayList.isEmpty()) {
                 return;
             }
@@ -193,7 +193,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             ((RadioCellInternal) this.arrayList.get(i)).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AutoDeleteMessagesActivity.this.lambda$updateItems$2(view);
+                    AutoDeleteMessagesActivity.$r8$lambda$3TA4oINobzzVm0IF7AwpD1XFii4(AutoDeleteMessagesActivity.this, view);
                 }
             });
         }
@@ -208,26 +208,20 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AutoDeleteMessagesActivity.3.this.lambda$didSelectDate$0(i);
+                    AutoDeleteMessagesActivity.this.selectDate(i, true);
                 }
             }, 50L);
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didSelectDate$0(int i) {
-            AutoDeleteMessagesActivity.this.selectDate(i, true);
-        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateItems$2(final View view) {
-        if (view == this.customTimeButton) {
-            AlertsCreator.createAutoDeleteDatePickerDialog(getContext(), 1, null, new 3());
+    public static /* synthetic */ void $r8$lambda$3TA4oINobzzVm0IF7AwpD1XFii4(final AutoDeleteMessagesActivity autoDeleteMessagesActivity, final View view) {
+        if (view == autoDeleteMessagesActivity.customTimeButton) {
+            AlertsCreator.createAutoDeleteDatePickerDialog(autoDeleteMessagesActivity.getContext(), 1, null, autoDeleteMessagesActivity.new 3());
             return;
         }
         int i = ((RadioCellInternal) view).time;
-        if (getSelectedTime() == 0 && i > 0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        if (autoDeleteMessagesActivity.getSelectedTime() == 0 && i > 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(autoDeleteMessagesActivity.getContext());
             builder.setTitle(LocaleController.getString(R.string.MessageLifetime));
             builder.setMessage(LocaleController.formatString("AutoDeleteConfirmMessage", R.string.AutoDeleteConfirmMessage, LocaleController.formatTTLString(i * 60)));
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda1
@@ -239,19 +233,19 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda2
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    AutoDeleteMessagesActivity.this.lambda$updateItems$1(view, alertDialog, i2);
+                    AutoDeleteMessagesActivity.$r8$lambda$cHFMImCrx51TXzpC0eWB8V7bdI0(AutoDeleteMessagesActivity.this, view, alertDialog, i2);
                 }
             });
             builder.show();
             return;
         }
-        selectRadioButton(view, true);
+        autoDeleteMessagesActivity.selectRadioButton(view, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateItems$1(View view, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$cHFMImCrx51TXzpC0eWB8V7bdI0(AutoDeleteMessagesActivity autoDeleteMessagesActivity, View view, AlertDialog alertDialog, int i) {
+        autoDeleteMessagesActivity.getClass();
         alertDialog.dismiss();
-        selectRadioButton(view, true);
+        autoDeleteMessagesActivity.selectRadioButton(view, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -327,7 +321,8 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         BulletinFactory.of(this).createSimpleBulletin(R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i * 60)))).show();
     }
 
-    private class RadioCellInternal extends RadioCell {
+    /* JADX INFO: Access modifiers changed from: private */
+    class RadioCellInternal extends RadioCell {
         boolean custom;
         int time;
 
@@ -351,7 +346,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
                         }
                     });
                     getUserConfig().setGlobalTtl(this.startFromTtl);
-                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateGlobalAutoDeleteTimer, new Object[0]);
+                    NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.didUpdateGlobalAutoDeleteTimer, new Object[0]);
                     return;
                 }
                 return;

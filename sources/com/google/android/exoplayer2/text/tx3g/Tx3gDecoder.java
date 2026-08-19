@@ -113,11 +113,11 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
             Log.w("Tx3gDecoder", "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
             readUnsignedShort2 = spannableStringBuilder.length();
         }
-        if (readUnsignedShort >= readUnsignedShort2) {
-            Log.w("Tx3gDecoder", "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + readUnsignedShort2 + ").");
+        int i = readUnsignedShort2;
+        if (readUnsignedShort >= i) {
+            Log.w("Tx3gDecoder", "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
             return;
         }
-        int i = readUnsignedShort2;
         attachFontFace(spannableStringBuilder, readUnsignedByte, this.defaultFontFace, readUnsignedShort, i, 0);
         attachColor(spannableStringBuilder, readInt, this.defaultColorRgba, readUnsignedShort, i, 0);
     }

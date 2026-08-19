@@ -1,40 +1,19 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
-
 /* loaded from: classes2.dex */
 public final class B {
-    private static final B c = new B();
-    private final boolean a;
-    private final double b;
+    public static final B c = new B();
+    public final boolean a;
+    public final long b;
 
-    private B() {
+    public B() {
         this.a = false;
-        this.b = Double.NaN;
+        this.b = 0L;
     }
 
-    public static B a() {
-        return c;
-    }
-
-    private B(double d) {
+    public B(long j) {
         this.a = true;
-        this.b = d;
-    }
-
-    public static B d(double d) {
-        return new B(d);
-    }
-
-    public final double b() {
-        if (!this.a) {
-            throw new NoSuchElementException("No value present");
-        }
-        return this.b;
-    }
-
-    public final boolean c() {
-        return this.a;
+        this.b = j;
     }
 
     public final boolean equals(Object obj) {
@@ -46,28 +25,21 @@ public final class B {
         }
         B b = (B) obj;
         boolean z = this.a;
-        if (z && b.a) {
-            if (Double.compare(this.b, b.b) == 0) {
-                return true;
-            }
-        } else if (z == b.a) {
-            return true;
-        }
-        return false;
+        return (z && b.a) ? this.b == b.b : z == b.a;
     }
 
     public final int hashCode() {
         if (!this.a) {
             return 0;
         }
-        long doubleToLongBits = Double.doubleToLongBits(this.b);
-        return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+        long j = this.b;
+        return (int) (j ^ (j >>> 32));
     }
 
     public final String toString() {
         if (this.a) {
-            return "OptionalDouble[" + this.b + "]";
+            return "OptionalLong[" + this.b + "]";
         }
-        return "OptionalDouble.empty";
+        return "OptionalLong.empty";
     }
 }

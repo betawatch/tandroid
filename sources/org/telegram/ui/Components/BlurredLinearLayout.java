@@ -30,8 +30,11 @@ public class BlurredLinearLayout extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
         SizeNotifierFrameLayout sizeNotifierFrameLayout;
-        if (SharedConfig.chatBlurEnabled() && this.sizeNotifierFrameLayout != null && this.drawBlur && this.backgroundColor != 0) {
+        if (!SharedConfig.chatBlurEnabled() || this.sizeNotifierFrameLayout == null || !this.drawBlur || this.backgroundColor == 0) {
+            canvas2 = canvas;
+        } else {
             if (this.backgroundPaint == null) {
                 this.backgroundPaint = new Paint();
             }
@@ -47,9 +50,10 @@ public class BlurredLinearLayout extends LinearLayout {
                 f += view.getY();
                 view = (View) view.getParent();
             }
-            sizeNotifierFrameLayout.drawBlurRect(canvas, f, this.blurBounds, this.backgroundPaint, this.isTopView);
+            canvas2 = canvas;
+            sizeNotifierFrameLayout.drawBlurRect(canvas2, f, this.blurBounds, this.backgroundPaint, this.isTopView);
         }
-        super.dispatchDraw(canvas);
+        super.dispatchDraw(canvas2);
     }
 
     @Override // android.view.View

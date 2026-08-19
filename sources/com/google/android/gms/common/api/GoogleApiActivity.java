@@ -28,6 +28,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
     }
 
     private final void zab() {
+        GoogleApiActivity googleApiActivity;
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
             Log.e("GoogleApiActivity", "Activity started without extras");
@@ -47,23 +48,33 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             return;
         }
         try {
-            startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
-            this.zaa = 1;
-        } catch (ActivityNotFoundException e) {
-            if (extras.getBoolean("notify_manager", true)) {
-                GoogleApiManager.zak(this).zax(new ConnectionResult(22, null), getIntent().getIntExtra("failing_client_id", -1));
-            } else {
-                String str = "Activity not found while launching " + pendingIntent.toString() + ".";
-                if (Build.FINGERPRINT.contains("generic")) {
-                    str = str.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+            googleApiActivity = this;
+            try {
+                googleApiActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
+                googleApiActivity.zaa = 1;
+            } catch (ActivityNotFoundException e) {
+                e = e;
+                if (extras.getBoolean("notify_manager", true)) {
+                    GoogleApiManager.zak(this).zax(new ConnectionResult(22, null), getIntent().getIntExtra("failing_client_id", -1));
+                } else {
+                    String str = "Activity not found while launching " + pendingIntent.toString() + ".";
+                    if (Build.FINGERPRINT.contains("generic")) {
+                        str = str.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                    }
+                    Log.e("GoogleApiActivity", str, e);
                 }
-                Log.e("GoogleApiActivity", str, e);
+                googleApiActivity.zaa = 1;
+                finish();
+            } catch (IntentSender.SendIntentException e2) {
+                e = e2;
+                Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
+                finish();
             }
-            this.zaa = 1;
-            finish();
-        } catch (IntentSender.SendIntentException e2) {
-            Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e2);
-            finish();
+        } catch (ActivityNotFoundException e3) {
+            e = e3;
+            googleApiActivity = this;
+        } catch (IntentSender.SendIntentException e4) {
+            e = e4;
         }
     }
 

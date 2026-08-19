@@ -83,7 +83,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         this.exceptionsView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.KeepMediaPopupView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                KeepMediaPopupView.this.lambda$new$2(baseFragment, view2);
+                KeepMediaPopupView.$r8$lambda$kOpnOPEQm90Q6sfj_wssXLIvSp4(KeepMediaPopupView.this, baseFragment, view2);
             }
         });
         for (int i2 = 0; i2 < this.checkItems.size(); i2++) {
@@ -91,7 +91,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
             ((CheckItem) this.checkItems.get(i2)).item.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.KeepMediaPopupView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    KeepMediaPopupView.this.lambda$new$3(i3, view2);
+                    KeepMediaPopupView.$r8$lambda$gJbfQ1tfCIXv-9LvH3NBBOEW7Eo(KeepMediaPopupView.this, i3, view2);
                 }
             });
         }
@@ -107,15 +107,14 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         addView((View) linksTextView, LayoutHelper.createLinear(-1, -2, 0.0f, 0, 0, 8, 0, 0));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(BaseFragment baseFragment, View view) {
-        this.window.dismiss();
-        if (this.exceptions.isEmpty()) {
+    public static /* synthetic */ void $r8$lambda$kOpnOPEQm90Q6sfj_wssXLIvSp4(final KeepMediaPopupView keepMediaPopupView, BaseFragment baseFragment, View view) {
+        keepMediaPopupView.window.dismiss();
+        if (keepMediaPopupView.exceptions.isEmpty()) {
             Bundle bundle = new Bundle();
             bundle.putBoolean("onlySelect", true);
             bundle.putBoolean("onlySelect", true);
             bundle.putBoolean("checkCanWrite", false);
-            int i = this.currentType;
+            int i = keepMediaPopupView.currentType;
             if (i == 1) {
                 bundle.putInt("dialogsType", 6);
             } else if (i == 2) {
@@ -133,9 +132,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
-                    boolean lambda$new$1;
-                    lambda$new$1 = KeepMediaPopupView.this.lambda$new$1(dialogsActivity, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
-                    return lambda$new$1;
+                    return KeepMediaPopupView.$r8$lambda$M1LuTvYvWSvGUaoqf7ir8pzWm-A(KeepMediaPopupView.this, dialogsActivity, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
                 }
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -147,26 +144,26 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
             return;
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putInt(TeXSymbolParser.TYPE_ATTR, this.currentType);
+        bundle2.putInt(TeXSymbolParser.TYPE_ATTR, keepMediaPopupView.currentType);
         CacheChatsExceptionsFragment cacheChatsExceptionsFragment = new CacheChatsExceptionsFragment(bundle2);
-        cacheChatsExceptionsFragment.setExceptions(this.exceptions);
+        cacheChatsExceptionsFragment.setExceptions(keepMediaPopupView.exceptions);
         baseFragment.presentFragment(cacheChatsExceptionsFragment);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(final DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$M1LuTvYvWSvGUaoqf7ir8pzWm-A(KeepMediaPopupView keepMediaPopupView, final DialogsActivity dialogsActivity, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        keepMediaPopupView.getClass();
         final CacheByChatsController.KeepMediaException keepMediaException = null;
         int i3 = 0;
         while (i3 < arrayList.size()) {
-            ArrayList arrayList2 = this.exceptions;
+            ArrayList arrayList2 = keepMediaPopupView.exceptions;
             CacheByChatsController.KeepMediaException keepMediaException2 = new CacheByChatsController.KeepMediaException(((MessagesStorage.TopicKey) arrayList.get(i3)).dialogId, CacheByChatsController.KEEP_MEDIA_ONE_DAY);
             arrayList2.add(keepMediaException2);
             i3++;
             keepMediaException = keepMediaException2;
         }
-        this.cacheByChatsController.saveKeepMediaExceptions(this.currentType, this.exceptions);
+        keepMediaPopupView.cacheByChatsController.saveKeepMediaExceptions(keepMediaPopupView.currentType, keepMediaPopupView.exceptions);
         Bundle bundle = new Bundle();
-        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.currentType);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, keepMediaPopupView.currentType);
         final CacheChatsExceptionsFragment cacheChatsExceptionsFragment = new CacheChatsExceptionsFragment(bundle) { // from class: org.telegram.ui.KeepMediaPopupView.1
             @Override // org.telegram.ui.ActionBar.BaseFragment
             public void onTransitionAnimationEnd(boolean z3, boolean z4) {
@@ -177,8 +174,8 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
                 dialogsActivity.removeSelfFromStack();
             }
         };
-        cacheChatsExceptionsFragment.setExceptions(this.exceptions);
-        this.parentFragment.presentFragment(cacheChatsExceptionsFragment);
+        cacheChatsExceptionsFragment.setExceptions(keepMediaPopupView.exceptions);
+        keepMediaPopupView.parentFragment.presentFragment(cacheChatsExceptionsFragment);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.KeepMediaPopupView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
@@ -188,20 +185,19 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(int i, View view) {
-        this.window.dismiss();
-        int i2 = this.currentType;
+    public static /* synthetic */ void $r8$lambda$gJbfQ1tfCIXv-9LvH3NBBOEW7Eo(KeepMediaPopupView keepMediaPopupView, int i, View view) {
+        keepMediaPopupView.window.dismiss();
+        int i2 = keepMediaPopupView.currentType;
         if (i2 >= 0) {
-            this.cacheByChatsController.setKeepMedia(i2, i);
-            Callback callback = this.callback;
+            keepMediaPopupView.cacheByChatsController.setKeepMedia(i2, i);
+            Callback callback = keepMediaPopupView.callback;
             if (callback != null) {
-                callback.onKeepMediaChange(this.currentType, i);
+                callback.onKeepMediaChange(keepMediaPopupView.currentType, i);
                 return;
             }
             return;
         }
-        Callback callback2 = this.callback;
+        Callback callback2 = keepMediaPopupView.callback;
         if (callback2 != null) {
             callback2.onKeepMediaChange(i2, i);
         }

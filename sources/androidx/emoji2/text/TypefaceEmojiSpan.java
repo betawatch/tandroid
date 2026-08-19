@@ -14,10 +14,17 @@ public final class TypefaceEmojiSpan extends EmojiSpan {
 
     @Override // android.text.style.ReplacementSpan
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        Canvas canvas2;
+        float f2;
         if (EmojiCompat.get().isEmojiSpanIndicatorEnabled()) {
-            canvas.drawRect(f, i3, f + getWidth(), i5, getDebugPaint());
+            canvas2 = canvas;
+            f2 = f;
+            canvas2.drawRect(f2, i3, f + getWidth(), i5, getDebugPaint());
+        } else {
+            canvas2 = canvas;
+            f2 = f;
         }
-        getMetadata().draw(canvas, f, i4, paint);
+        getMetadata().draw(canvas2, f2, i4, paint);
     }
 
     private static Paint getDebugPaint() {

@@ -139,8 +139,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         void startMusicSelectActivity();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$qP60ZdA4oSS_tOn_64X7emq6heE(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -168,7 +167,8 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         }
     }
 
-    private static class HistoryEntry {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class HistoryEntry {
         File dir;
         int scrollItem;
         int scrollOffset;
@@ -191,7 +191,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatAttachAlertDocumentLayout.1.this.lambda$onReceive$0();
+                    ChatAttachAlertDocumentLayout.1.$r8$lambda$KcR2_ph3HsH0mQCoBqCxlmKd7Xo(ChatAttachAlertDocumentLayout.1.this);
                 }
             };
             if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
@@ -201,8 +201,8 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onReceive$0() {
+        public static /* synthetic */ void $r8$lambda$KcR2_ph3HsH0mQCoBqCxlmKd7Xo(1 r2) {
+            r2.getClass();
             try {
                 if (ChatAttachAlertDocumentLayout.this.currentDir == null) {
                     ChatAttachAlertDocumentLayout.this.listRoots();
@@ -315,9 +315,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$new$0;
-                lambda$new$0 = ChatAttachAlertDocumentLayout.lambda$new$0(view, motionEvent);
-                return lambda$new$0;
+                return ChatAttachAlertDocumentLayout.$r8$lambda$qP60ZdA4oSS_tOn_64X7emq6heE(view, motionEvent);
             }
         });
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout.4
@@ -448,15 +446,13 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i4) {
-                ChatAttachAlertDocumentLayout.this.lambda$new$1(view, i4);
+                ChatAttachAlertDocumentLayout.$r8$lambda$89TLNu9HHXMzEaDt8bFSZt-A_Zw(ChatAttachAlertDocumentLayout.this, view, i4);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i4) {
-                boolean lambda$new$2;
-                lambda$new$2 = ChatAttachAlertDocumentLayout.this.lambda$new$2(view, i4);
-                return lambda$new$2;
+                return ChatAttachAlertDocumentLayout.$r8$lambda$Ty8xMzF9TiVzkZ5oa27eFdjqgEE(ChatAttachAlertDocumentLayout.this, view, i4);
             }
         });
         FiltersView filtersView = new FiltersView(context, resourcesProvider);
@@ -464,7 +460,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         filtersView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i4) {
-                ChatAttachAlertDocumentLayout.this.lambda$new$3(view, i4);
+                ChatAttachAlertDocumentLayout.$r8$lambda$bJTrGtwpS0xdIrP5Jvx4bcV6Jkc(ChatAttachAlertDocumentLayout.this, view, i4);
             }
         });
         this.filtersView.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
@@ -476,24 +472,23 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         updateEmptyView();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$new$1(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$89TLNu9HHXMzEaDt8bFSZt-A_Zw(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, View view, int i) {
         Object item;
         int i2;
-        RecyclerView.Adapter adapter = this.listView.getAdapter();
-        ListAdapter listAdapter = this.listAdapter;
+        RecyclerView.Adapter adapter = chatAttachAlertDocumentLayout.listView.getAdapter();
+        ListAdapter listAdapter = chatAttachAlertDocumentLayout.listAdapter;
         if (adapter == listAdapter) {
             item = listAdapter.getItem(i);
         } else {
-            item = this.searchAdapter.getItem(i);
+            item = chatAttachAlertDocumentLayout.searchAdapter.getItem(i);
         }
         if (item instanceof ListItem) {
             ListItem listItem = (ListItem) item;
             File file = listItem.file;
             boolean isExternalStorageManager = Build.VERSION.SDK_INT >= 30 ? Environment.isExternalStorageManager() : false;
             if (!BuildVars.NO_SCOPED_STORAGE && (((i2 = listItem.icon) == R.drawable.files_storage || i2 == R.drawable.files_internal) && !isExternalStorageManager)) {
-                this.delegate.startDocumentSelectActivity();
+                chatAttachAlertDocumentLayout.delegate.startDocumentSelectActivity();
                 return;
             }
             Object[] objArr = 0;
@@ -502,7 +497,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 if (i3 == R.drawable.files_gallery) {
                     final HashMap hashMap = new HashMap();
                     final ArrayList arrayList = new ArrayList();
-                    BaseFragment baseFragment = this.parentAlert.baseFragment;
+                    BaseFragment baseFragment = chatAttachAlertDocumentLayout.parentAlert.baseFragment;
                     ChatActivity chatActivity = baseFragment instanceof ChatActivity ? (ChatActivity) baseFragment : null;
                     PhotoPickerActivity photoPickerActivity = new PhotoPickerActivity(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, chatActivity != null, chatActivity, false);
                     photoPickerActivity.setDocumentsPicker(true);
@@ -533,79 +528,77 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                             ChatAttachAlertDocumentLayout.this.delegate.startDocumentSelectActivity();
                         }
                     });
-                    photoPickerActivity.setMaxSelectedPhotos(this.maxSelectedFiles, false);
-                    this.parentAlert.presentFragment(photoPickerActivity);
-                    this.parentAlert.dismiss(true);
+                    photoPickerActivity.setMaxSelectedPhotos(chatAttachAlertDocumentLayout.maxSelectedFiles, false);
+                    chatAttachAlertDocumentLayout.parentAlert.presentFragment(photoPickerActivity);
+                    chatAttachAlertDocumentLayout.parentAlert.dismiss(true);
                     return;
                 }
                 if (i3 == R.drawable.files_music) {
-                    DocumentSelectActivityDelegate documentSelectActivityDelegate = this.delegate;
+                    DocumentSelectActivityDelegate documentSelectActivityDelegate = chatAttachAlertDocumentLayout.delegate;
                     if (documentSelectActivityDelegate != null) {
                         documentSelectActivityDelegate.startMusicSelectActivity();
                         return;
                     }
                     return;
                 }
-                int topForScroll = getTopForScroll();
-                prepareAnimation();
-                HistoryEntry historyEntry = (HistoryEntry) this.listAdapter.history.remove(this.listAdapter.history.size() - 1);
-                this.parentAlert.actionBar.setTitle(historyEntry.title);
+                int topForScroll = chatAttachAlertDocumentLayout.getTopForScroll();
+                chatAttachAlertDocumentLayout.prepareAnimation();
+                HistoryEntry historyEntry = (HistoryEntry) chatAttachAlertDocumentLayout.listAdapter.history.remove(chatAttachAlertDocumentLayout.listAdapter.history.size() - 1);
+                chatAttachAlertDocumentLayout.parentAlert.actionBar.setTitle(historyEntry.title);
                 File file2 = historyEntry.dir;
                 if (file2 != null) {
-                    listFiles(file2);
+                    chatAttachAlertDocumentLayout.listFiles(file2);
                 } else {
-                    listRoots();
+                    chatAttachAlertDocumentLayout.listRoots();
                 }
-                updateSearchButton();
-                this.layoutManager.scrollToPositionWithOffset(0, topForScroll);
-                runAnimation(2);
+                chatAttachAlertDocumentLayout.updateSearchButton();
+                chatAttachAlertDocumentLayout.layoutManager.scrollToPositionWithOffset(0, topForScroll);
+                chatAttachAlertDocumentLayout.runAnimation(2);
                 return;
             }
             if (file.isDirectory()) {
                 HistoryEntry historyEntry2 = new HistoryEntry(objArr == true ? 1 : 0);
-                View childAt = this.listView.getChildAt(0);
-                RecyclerView.ViewHolder findContainingViewHolder = this.listView.findContainingViewHolder(childAt);
+                View childAt = chatAttachAlertDocumentLayout.listView.getChildAt(0);
+                RecyclerView.ViewHolder findContainingViewHolder = chatAttachAlertDocumentLayout.listView.findContainingViewHolder(childAt);
                 if (findContainingViewHolder != null) {
                     historyEntry2.scrollItem = findContainingViewHolder.getAdapterPosition();
                     historyEntry2.scrollOffset = childAt.getTop();
-                    historyEntry2.dir = this.currentDir;
-                    historyEntry2.title = this.parentAlert.actionBar.getTitle();
-                    prepareAnimation();
-                    this.listAdapter.history.add(historyEntry2);
-                    if (listFiles(file)) {
-                        runAnimation(1);
-                        this.parentAlert.actionBar.setTitle(listItem.title);
+                    historyEntry2.dir = chatAttachAlertDocumentLayout.currentDir;
+                    historyEntry2.title = chatAttachAlertDocumentLayout.parentAlert.actionBar.getTitle();
+                    chatAttachAlertDocumentLayout.prepareAnimation();
+                    chatAttachAlertDocumentLayout.listAdapter.history.add(historyEntry2);
+                    if (chatAttachAlertDocumentLayout.listFiles(file)) {
+                        chatAttachAlertDocumentLayout.runAnimation(1);
+                        chatAttachAlertDocumentLayout.parentAlert.actionBar.setTitle(listItem.title);
                         return;
                     } else {
-                        this.listAdapter.history.remove(historyEntry2);
+                        chatAttachAlertDocumentLayout.listAdapter.history.remove(historyEntry2);
                         return;
                     }
                 }
                 return;
             }
-            onItemClick(view, listItem);
+            chatAttachAlertDocumentLayout.onItemClick(view, listItem);
             return;
         }
-        onItemClick(view, item);
+        chatAttachAlertDocumentLayout.onItemClick(view, item);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$2(View view, int i) {
+    public static /* synthetic */ boolean $r8$lambda$Ty8xMzF9TiVzkZ5oa27eFdjqgEE(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, View view, int i) {
         Object item;
-        RecyclerView.Adapter adapter = this.listView.getAdapter();
-        ListAdapter listAdapter = this.listAdapter;
+        RecyclerView.Adapter adapter = chatAttachAlertDocumentLayout.listView.getAdapter();
+        ListAdapter listAdapter = chatAttachAlertDocumentLayout.listAdapter;
         if (adapter == listAdapter) {
             item = listAdapter.getItem(i);
         } else {
-            item = this.searchAdapter.getItem(i);
+            item = chatAttachAlertDocumentLayout.searchAdapter.getItem(i);
         }
-        return onItemClick(view, item);
+        return chatAttachAlertDocumentLayout.onItemClick(view, item);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view, int i) {
-        this.filtersView.cancelClickRunnables(true);
-        this.searchAdapter.addSearchFilter(this.filtersView.getFilterAt(i));
+    public static /* synthetic */ void $r8$lambda$bJTrGtwpS0xdIrP5Jvx4bcV6Jkc(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, View view, int i) {
+        chatAttachAlertDocumentLayout.filtersView.cancelClickRunnables(true);
+        chatAttachAlertDocumentLayout.searchAdapter.addSearchFilter(chatAttachAlertDocumentLayout.filtersView.getFilterAt(i));
     }
 
     private void runAnimation(final int i) {
@@ -655,7 +648,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         this.listAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ChatAttachAlertDocumentLayout.this.lambda$runAnimation$4(i, dp, valueAnimator2);
+                ChatAttachAlertDocumentLayout.$r8$lambda$JsIjcTPif45BLVVOp1dAphW0WOM(ChatAttachAlertDocumentLayout.this, i, dp, valueAnimator2);
             }
         });
         this.listAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout.9
@@ -680,27 +673,27 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         this.listAnimation.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runAnimation$4(int i, float f, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$JsIjcTPif45BLVVOp1dAphW0WOM(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, int i, float f, ValueAnimator valueAnimator) {
+        chatAttachAlertDocumentLayout.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         if (i == 1) {
-            this.listView.setTranslationX(f * floatValue);
-            this.listView.setAlpha(1.0f - floatValue);
-            this.listView.invalidate();
-            this.backgroundListView.setAlpha(floatValue);
+            chatAttachAlertDocumentLayout.listView.setTranslationX(f * floatValue);
+            chatAttachAlertDocumentLayout.listView.setAlpha(1.0f - floatValue);
+            chatAttachAlertDocumentLayout.listView.invalidate();
+            chatAttachAlertDocumentLayout.backgroundListView.setAlpha(floatValue);
             float f2 = (floatValue * 0.05f) + 0.95f;
-            this.backgroundListView.setScaleX(f2);
-            this.backgroundListView.setScaleY(f2);
+            chatAttachAlertDocumentLayout.backgroundListView.setScaleX(f2);
+            chatAttachAlertDocumentLayout.backgroundListView.setScaleY(f2);
             return;
         }
-        this.backgroundListView.setTranslationX(f * floatValue);
-        this.backgroundListView.setAlpha(Math.max(0.0f, 1.0f - floatValue));
-        this.backgroundListView.invalidate();
-        this.listView.setAlpha(floatValue);
+        chatAttachAlertDocumentLayout.backgroundListView.setTranslationX(f * floatValue);
+        chatAttachAlertDocumentLayout.backgroundListView.setAlpha(Math.max(0.0f, 1.0f - floatValue));
+        chatAttachAlertDocumentLayout.backgroundListView.invalidate();
+        chatAttachAlertDocumentLayout.listView.setAlpha(floatValue);
         float f3 = (floatValue * 0.05f) + 0.95f;
-        this.listView.setScaleX(f3);
-        this.listView.setScaleY(f3);
-        this.backgroundListView.invalidate();
+        chatAttachAlertDocumentLayout.listView.setScaleX(f3);
+        chatAttachAlertDocumentLayout.listView.setScaleY(f3);
+        chatAttachAlertDocumentLayout.backgroundListView.invalidate();
     }
 
     private void prepareAnimation() {
@@ -849,16 +842,15 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         return AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), (1 ^ (TextUtils.isEmpty(charSequence) ? 1 : 0)) + arrayList2.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ChatAttachAlertDocumentLayout.this.lambda$sendSelectedItems$5(arrayList2, charSequence, entities, arrayList, z, i, j, z2, (Long) obj);
+                ChatAttachAlertDocumentLayout.$r8$lambda$8uIcy68L7bm04k5YJ4hZk9ijWEM(ChatAttachAlertDocumentLayout.this, arrayList2, charSequence, entities, arrayList, z, i, j, z2, (Long) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSelectedItems$5(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, Long l) {
-        this.sendPressed = true;
-        this.delegate.didSelectFiles(arrayList, str, arrayList2, arrayList3, z, i, 0, j, z2, l.longValue());
-        this.parentAlert.dismiss(true);
+    public static /* synthetic */ void $r8$lambda$8uIcy68L7bm04k5YJ4hZk9ijWEM(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, Long l) {
+        chatAttachAlertDocumentLayout.sendPressed = true;
+        chatAttachAlertDocumentLayout.delegate.didSelectFiles(arrayList, str, arrayList2, arrayList3, z, i, 0, j, z2, l.longValue());
+        chatAttachAlertDocumentLayout.parentAlert.dismiss(true);
     }
 
     private boolean onItemClick(View view, Object obj) {
@@ -1011,14 +1003,9 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), arrayList2.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj2) {
-                ChatAttachAlertDocumentLayout.this.lambda$sendSelectedPhotos$6(arrayList2, z, i, (Long) obj2);
+                ChatAttachAlertDocumentLayout.this.delegate.didSelectPhotos(arrayList2, z, i, 0, ((Long) obj2).longValue());
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSelectedPhotos$6(ArrayList arrayList, boolean z, int i, Long l) {
-        this.delegate.didSelectPhotos(arrayList, z, i, 0, l.longValue());
     }
 
     public void loadRecentFiles() {
@@ -1092,16 +1079,13 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         Collections.sort(this.listAdapter.recentItems, new Comparator() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda7
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$sortRecentItems$7;
-                lambda$sortRecentItems$7 = ChatAttachAlertDocumentLayout.this.lambda$sortRecentItems$7((ChatAttachAlertDocumentLayout.ListItem) obj, (ChatAttachAlertDocumentLayout.ListItem) obj2);
-                return lambda$sortRecentItems$7;
+                return ChatAttachAlertDocumentLayout.$r8$lambda$Fo4Kacz55YTZm6elg6YaTjUeKRo(ChatAttachAlertDocumentLayout.this, (ChatAttachAlertDocumentLayout.ListItem) obj, (ChatAttachAlertDocumentLayout.ListItem) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$sortRecentItems$7(ListItem listItem, ListItem listItem2) {
-        if (this.sortByName) {
+    public static /* synthetic */ int $r8$lambda$Fo4Kacz55YTZm6elg6YaTjUeKRo(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, ListItem listItem, ListItem listItem2) {
+        if (chatAttachAlertDocumentLayout.sortByName) {
             return listItem.file.getName().compareToIgnoreCase(listItem2.file.getName());
         }
         long lastModified = listItem.file.lastModified();
@@ -1119,15 +1103,13 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         Collections.sort(this.listAdapter.items, new Comparator() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda6
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$sortFileItems$8;
-                lambda$sortFileItems$8 = ChatAttachAlertDocumentLayout.this.lambda$sortFileItems$8((ChatAttachAlertDocumentLayout.ListItem) obj, (ChatAttachAlertDocumentLayout.ListItem) obj2);
-                return lambda$sortFileItems$8;
+                return ChatAttachAlertDocumentLayout.$r8$lambda$DF2sUiPliJSWPwf2eemJDoU4Xvg(ChatAttachAlertDocumentLayout.this, (ChatAttachAlertDocumentLayout.ListItem) obj, (ChatAttachAlertDocumentLayout.ListItem) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$sortFileItems$8(ListItem listItem, ListItem listItem2) {
+    public static /* synthetic */ int $r8$lambda$DF2sUiPliJSWPwf2eemJDoU4Xvg(ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout, ListItem listItem, ListItem listItem2) {
+        chatAttachAlertDocumentLayout.getClass();
         File file = listItem.file;
         if (file == null) {
             return -1;
@@ -1139,7 +1121,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         if (isDirectory != listItem2.file.isDirectory()) {
             return isDirectory ? -1 : 1;
         }
-        if (isDirectory || this.sortByName) {
+        if (isDirectory || chatAttachAlertDocumentLayout.sortByName) {
             return listItem.file.getName().compareToIgnoreCase(listItem2.file.getName());
         }
         long lastModified = listItem.file.lastModified();
@@ -1518,7 +1500,8 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         this.listAdapter.notifyDataSetChanged();
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
         private Context mContext;
         private ArrayList items = new ArrayList();
         private ArrayList history = new ArrayList();
@@ -1686,7 +1669,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatAttachAlertDocumentLayout.SearchAdapter.this.lambda$search$1(str);
+                        ChatAttachAlertDocumentLayout.SearchAdapter.$r8$lambda$GnbHCg5vkJILxeAdIKOCe8A1dec(ChatAttachAlertDocumentLayout.SearchAdapter.this, str);
                     }
                 };
                 this.localSearchRunnable = runnable2;
@@ -1718,26 +1701,26 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             searchGlobal(j2, j3, j4, FiltersView.filters[2], str, z);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$search$1(final String str) {
+        public static /* synthetic */ void $r8$lambda$GnbHCg5vkJILxeAdIKOCe8A1dec(final SearchAdapter searchAdapter, final String str) {
+            searchAdapter.getClass();
             final ArrayList arrayList = new ArrayList(ChatAttachAlertDocumentLayout.this.listAdapter.items);
             if (ChatAttachAlertDocumentLayout.this.listAdapter.history.isEmpty()) {
                 arrayList.addAll(0, ChatAttachAlertDocumentLayout.this.listAdapter.recentItems);
             }
-            final boolean z = !this.currentSearchFilters.isEmpty();
+            final boolean z = !searchAdapter.currentSearchFilters.isEmpty();
             Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatAttachAlertDocumentLayout.SearchAdapter.this.lambda$search$0(str, z, arrayList);
+                    ChatAttachAlertDocumentLayout.SearchAdapter.$r8$lambda$kcgaKq2sjB-kOLhfYcjrN2VE7mo(ChatAttachAlertDocumentLayout.SearchAdapter.this, str, z, arrayList);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$search$0(String str, boolean z, ArrayList arrayList) {
+        public static /* synthetic */ void $r8$lambda$kcgaKq2sjB-kOLhfYcjrN2VE7mo(SearchAdapter searchAdapter, String str, boolean z, ArrayList arrayList) {
+            searchAdapter.getClass();
             String lowerCase = str.trim().toLowerCase();
             if (lowerCase.length() == 0) {
-                updateSearchResults(new ArrayList(), str);
+                searchAdapter.updateSearchResults(new ArrayList(), str);
                 return;
             }
             String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -1771,7 +1754,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                     }
                 }
             }
-            updateSearchResults(arrayList2, str);
+            searchAdapter.updateSearchResults(arrayList2, str);
         }
 
         public void loadMore() {
@@ -1899,7 +1882,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         private void searchGlobal(final long j, final long j2, final long j3, FiltersView.MediaFilterData mediaFilterData, final String str, boolean z) {
             final String format = String.format(Locale.ENGLISH, "%d%d%d%d%s", Long.valueOf(j), Long.valueOf(j2), Long.valueOf(j3), Integer.valueOf(mediaFilterData.filterType), str);
             String str2 = this.lastSearchFilterQueryString;
-            boolean z2 = str2 != null && str2.equals(format);
+            final boolean z2 = str2 != null && str2.equals(format);
             boolean z3 = !z2 && z;
             this.currentSearchFilter = mediaFilterData;
             this.currentSearchDialogId = j;
@@ -1943,11 +1926,10 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             final int i = this.requestIndex + 1;
             this.requestIndex = i;
             final AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
-            final boolean z4 = z2;
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatAttachAlertDocumentLayout.SearchAdapter.this.lambda$searchGlobal$4(j, str, accountInstance, j2, j3, z4, format, i);
+                    ChatAttachAlertDocumentLayout.SearchAdapter.$r8$lambda$KeqFGStBfiRHBNclSveLJyMOpTQ(ChatAttachAlertDocumentLayout.SearchAdapter.this, j, str, accountInstance, j2, j3, z2, format, i);
                 }
             };
             this.searchRunnable = runnable2;
@@ -1955,17 +1937,17 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             ChatAttachAlertDocumentLayout.this.loadingView.setViewType(3);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
-        public /* synthetic */ void lambda$searchGlobal$4(final long j, final String str, final AccountInstance accountInstance, final long j2, long j3, final boolean z, String str2, final int i) {
+        public static /* synthetic */ void $r8$lambda$KeqFGStBfiRHBNclSveLJyMOpTQ(final SearchAdapter searchAdapter, final long j, final String str, final AccountInstance accountInstance, final long j2, long j3, final boolean z, String str2, final int i) {
             long j4;
             TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal;
+            searchAdapter.getClass();
             ArrayList<Object> arrayList = null;
             if (j != 0) {
                 TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
                 tL_messages_search.q = str;
                 tL_messages_search.limit = 20;
-                tL_messages_search.filter = this.currentSearchFilter.filter;
+                tL_messages_search.filter = searchAdapter.currentSearchFilter.filter;
                 tL_messages_search.peer = accountInstance.getMessagesController().getInputPeer(j);
                 if (j2 > 0) {
                     tL_messages_search.min_date = (int) (j2 / 1000);
@@ -1973,8 +1955,8 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 if (j3 > 0) {
                     tL_messages_search.max_date = (int) (j3 / 1000);
                 }
-                if (z && str.equals(this.lastMessagesSearchString) && !this.messages.isEmpty()) {
-                    tL_messages_search.offset_id = ((MessageObject) this.messages.get(r0.size() - 1)).getId();
+                if (z && str.equals(searchAdapter.lastMessagesSearchString) && !searchAdapter.messages.isEmpty()) {
+                    tL_messages_search.offset_id = ((MessageObject) searchAdapter.messages.get(r0.size() - 1)).getId();
                     tL_messages_searchGlobal = tL_messages_search;
                 } else {
                     tL_messages_search.offset_id = 0;
@@ -1982,23 +1964,24 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 }
             } else {
                 if (!TextUtils.isEmpty(str)) {
-                    arrayList = new ArrayList<>();
-                    accountInstance.getMessagesStorage().localSearch(0, str, arrayList, new ArrayList<>(), new ArrayList<>(), null, -1);
+                    ArrayList<Object> arrayList2 = new ArrayList<>();
+                    accountInstance.getMessagesStorage().localSearch(0, str, arrayList2, new ArrayList<>(), new ArrayList<>(), null, -1);
+                    arrayList = arrayList2;
                 }
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = new TLRPC.TL_messages_searchGlobal();
                 tL_messages_searchGlobal2.limit = 20;
                 tL_messages_searchGlobal2.q = str;
-                tL_messages_searchGlobal2.filter = this.currentSearchFilter.filter;
+                tL_messages_searchGlobal2.filter = searchAdapter.currentSearchFilter.filter;
                 if (j2 > 0) {
                     tL_messages_searchGlobal2.min_date = (int) (j2 / 1000);
                 }
                 if (j3 > 0) {
                     tL_messages_searchGlobal2.max_date = (int) (j3 / 1000);
                 }
-                if (z && str.equals(this.lastMessagesSearchString) && !this.messages.isEmpty()) {
-                    MessageObject messageObject = (MessageObject) this.messages.get(r0.size() - 1);
+                if (z && str.equals(searchAdapter.lastMessagesSearchString) && !searchAdapter.messages.isEmpty()) {
+                    MessageObject messageObject = (MessageObject) searchAdapter.messages.get(r0.size() - 1);
                     tL_messages_searchGlobal2.offset_id = messageObject.getId();
-                    tL_messages_searchGlobal2.offset_rate = this.nextSearchRate;
+                    tL_messages_searchGlobal2.offset_rate = searchAdapter.nextSearchRate;
                     TLRPC.Peer peer = messageObject.messageOwner.peer_id;
                     long j5 = peer.channel_id;
                     if (j5 == 0) {
@@ -2020,21 +2003,21 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 }
             }
             TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal3 = tL_messages_searchGlobal;
-            final ArrayList<Object> arrayList2 = arrayList;
-            this.lastMessagesSearchString = str;
-            this.lastSearchFilterQueryString = str2;
+            searchAdapter.lastMessagesSearchString = str;
+            searchAdapter.lastSearchFilterQueryString = str2;
             final ArrayList arrayList3 = new ArrayList();
-            FiltersView.fillTipDates(this.lastMessagesSearchString, arrayList3);
+            FiltersView.fillTipDates(searchAdapter.lastMessagesSearchString, arrayList3);
+            final ArrayList<Object> arrayList4 = arrayList;
             accountInstance.getConnectionsManager().sendRequest(tL_messages_searchGlobal3, new RequestDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ChatAttachAlertDocumentLayout.SearchAdapter.this.lambda$searchGlobal$3(accountInstance, str, i, z, j, j2, arrayList2, arrayList3, tLObject, tL_error);
+                    ChatAttachAlertDocumentLayout.SearchAdapter.$r8$lambda$NKYEcEfBAJnp_84U8739SOLvYLA(ChatAttachAlertDocumentLayout.SearchAdapter.this, accountInstance, str, i, z, j, j2, arrayList4, arrayList3, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchGlobal$3(final AccountInstance accountInstance, final String str, final int i, final boolean z, final long j, final long j2, final ArrayList arrayList, final ArrayList arrayList2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$NKYEcEfBAJnp_84U8739SOLvYLA(final SearchAdapter searchAdapter, final AccountInstance accountInstance, final String str, final int i, final boolean z, final long j, final long j2, final ArrayList arrayList, final ArrayList arrayList2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+            searchAdapter.getClass();
             final ArrayList arrayList3 = new ArrayList();
             if (tL_error == null) {
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
@@ -2048,17 +2031,16 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatAttachAlertDocumentLayout.SearchAdapter.this.lambda$searchGlobal$2(i, tL_error, tLObject, accountInstance, z, str, arrayList3, j, j2, arrayList, arrayList2);
+                    ChatAttachAlertDocumentLayout.SearchAdapter.$r8$lambda$02JwIZyJ8dsgvm7_5_03zIq29Og(ChatAttachAlertDocumentLayout.SearchAdapter.this, i, tL_error, tLObject, accountInstance, z, str, arrayList3, j, j2, arrayList, arrayList2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchGlobal$2(int i, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z, String str, ArrayList arrayList, long j, long j2, ArrayList arrayList2, ArrayList arrayList3) {
-            if (i != this.requestIndex) {
+        public static /* synthetic */ void $r8$lambda$02JwIZyJ8dsgvm7_5_03zIq29Og(SearchAdapter searchAdapter, int i, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z, String str, ArrayList arrayList, long j, long j2, ArrayList arrayList2, ArrayList arrayList3) {
+            if (i != searchAdapter.requestIndex) {
                 return;
             }
-            this.isLoading = false;
+            searchAdapter.isLoading = false;
             if (tL_error != null) {
                 ChatAttachAlertDocumentLayout.this.emptyView.title.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
                 ChatAttachAlertDocumentLayout.this.emptyView.subtitle.setVisibility(0);
@@ -2068,37 +2050,37 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             }
             ChatAttachAlertDocumentLayout.this.emptyView.showProgress(false);
             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-            this.nextSearchRate = messages_messages.next_rate;
+            searchAdapter.nextSearchRate = messages_messages.next_rate;
             accountInstance.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
             accountInstance.getMessagesController().putUsers(messages_messages.users, false);
             accountInstance.getMessagesController().putChats(messages_messages.chats, false);
             if (!z) {
-                this.messages.clear();
-                this.messagesById.clear();
-                this.sections.clear();
-                this.sectionArrays.clear();
+                searchAdapter.messages.clear();
+                searchAdapter.messagesById.clear();
+                searchAdapter.sections.clear();
+                searchAdapter.sectionArrays.clear();
             }
             int i2 = messages_messages.count;
-            this.currentDataQuery = str;
+            searchAdapter.currentDataQuery = str;
             int size = arrayList.size();
             for (int i3 = 0; i3 < size; i3++) {
                 MessageObject messageObject = (MessageObject) arrayList.get(i3);
-                ArrayList arrayList4 = (ArrayList) this.sectionArrays.get(messageObject.monthKey);
+                ArrayList arrayList4 = (ArrayList) searchAdapter.sectionArrays.get(messageObject.monthKey);
                 if (arrayList4 == null) {
                     arrayList4 = new ArrayList();
-                    this.sectionArrays.put(messageObject.monthKey, arrayList4);
-                    this.sections.add(messageObject.monthKey);
+                    searchAdapter.sectionArrays.put(messageObject.monthKey, arrayList4);
+                    searchAdapter.sections.add(messageObject.monthKey);
                 }
                 arrayList4.add(messageObject);
-                this.messages.add(messageObject);
-                this.messagesById.put(messageObject.getId(), messageObject);
+                searchAdapter.messages.add(messageObject);
+                searchAdapter.messagesById.put(messageObject.getId(), messageObject);
             }
-            if (this.messages.size() > i2) {
-                i2 = this.messages.size();
+            if (searchAdapter.messages.size() > i2) {
+                i2 = searchAdapter.messages.size();
             }
-            this.endReached = this.messages.size() >= i2;
-            if (this.messages.isEmpty()) {
-                if (!TextUtils.isEmpty(this.currentDataQuery) || j != 0 || j2 != 0) {
+            searchAdapter.endReached = searchAdapter.messages.size() >= i2;
+            if (searchAdapter.messages.isEmpty()) {
+                if (!TextUtils.isEmpty(searchAdapter.currentDataQuery) || j != 0 || j2 != 0) {
                     ChatAttachAlertDocumentLayout.this.emptyView.title.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
                     ChatAttachAlertDocumentLayout.this.emptyView.subtitle.setVisibility(0);
                     ChatAttachAlertDocumentLayout.this.emptyView.subtitle.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
@@ -2109,30 +2091,30 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 }
             }
             if (!z) {
-                this.localTipChats.clear();
+                searchAdapter.localTipChats.clear();
                 if (arrayList2 != null) {
-                    this.localTipChats.addAll(arrayList2);
+                    searchAdapter.localTipChats.addAll(arrayList2);
                 }
                 if (str.length() >= 3 && (LocaleController.getString(R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
                     int i4 = 0;
                     while (true) {
-                        if (i4 < this.localTipChats.size()) {
-                            if ((this.localTipChats.get(i4) instanceof TLRPC.User) && UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == ((TLRPC.User) this.localTipChats.get(i4)).id) {
+                        if (i4 < searchAdapter.localTipChats.size()) {
+                            if ((searchAdapter.localTipChats.get(i4) instanceof TLRPC.User) && UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == ((TLRPC.User) searchAdapter.localTipChats.get(i4)).id) {
                                 break;
                             } else {
                                 i4++;
                             }
                         } else {
-                            this.localTipChats.add(0, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
+                            searchAdapter.localTipChats.add(0, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
                             break;
                         }
                     }
                 }
-                this.localTipDates.clear();
-                this.localTipDates.addAll(arrayList3);
-                updateFiltersView(TextUtils.isEmpty(this.currentDataQuery), this.localTipChats, this.localTipDates, true);
+                searchAdapter.localTipDates.clear();
+                searchAdapter.localTipDates.addAll(arrayList3);
+                searchAdapter.updateFiltersView(TextUtils.isEmpty(searchAdapter.currentDataQuery), searchAdapter.localTipChats, searchAdapter.localTipDates, true);
             }
-            this.firstLoading = false;
+            searchAdapter.firstLoading = false;
             final View view = null;
             final int i5 = -1;
             for (int i6 = 0; i6 < size; i6++) {
@@ -2194,25 +2176,24 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                     }
                 });
             }
-            notifyDataSetChanged();
+            searchAdapter.notifyDataSetChanged();
         }
 
         private void updateSearchResults(final ArrayList arrayList, String str) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatAttachAlertDocumentLayout.SearchAdapter.this.lambda$updateSearchResults$5(arrayList);
+                    ChatAttachAlertDocumentLayout.SearchAdapter.$r8$lambda$p_3c5_k-yxC2C-kh8RSXS4WIGAE(ChatAttachAlertDocumentLayout.SearchAdapter.this, arrayList);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateSearchResults$5(ArrayList arrayList) {
+        public static /* synthetic */ void $r8$lambda$p_3c5_k-yxC2C-kh8RSXS4WIGAE(SearchAdapter searchAdapter, ArrayList arrayList) {
             if (ChatAttachAlertDocumentLayout.this.searching && ChatAttachAlertDocumentLayout.this.listView.getAdapter() != ChatAttachAlertDocumentLayout.this.searchAdapter) {
                 ChatAttachAlertDocumentLayout.this.listView.setAdapter(ChatAttachAlertDocumentLayout.this.searchAdapter);
             }
-            this.searchResult = arrayList;
-            notifyDataSetChanged();
+            searchAdapter.searchResult = arrayList;
+            searchAdapter.notifyDataSetChanged();
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
@@ -2226,7 +2207,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             if (this.sections.isEmpty()) {
                 return 2;
             }
-            return 2 + this.sections.size() + (!this.endReached ? 1 : 0);
+            return this.sections.size() + (!this.endReached ? 1 : 0) + 2;
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter

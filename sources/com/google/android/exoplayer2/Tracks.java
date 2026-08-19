@@ -23,9 +23,7 @@ public final class Tracks implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Tracks$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            Tracks lambda$static$0;
-            lambda$static$0 = Tracks.lambda$static$0(bundle);
-            return lambda$static$0;
+            return Tracks.$r8$lambda$vYA5RM9DVNv_S8EIm2h75eWpGro(bundle);
         }
     };
 
@@ -42,9 +40,7 @@ public final class Tracks implements Bundleable {
         public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Tracks$Group$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.Bundleable.Creator
             public final Bundleable fromBundle(Bundle bundle) {
-                Tracks.Group lambda$static$0;
-                lambda$static$0 = Tracks.Group.lambda$static$0(bundle);
-                return lambda$static$0;
+                return Tracks.Group.$r8$lambda$-5U4Vd2ct8VgoPhf6SgLr2Y-c2Y(bundle);
             }
         };
 
@@ -82,11 +78,13 @@ public final class Tracks implements Bundleable {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || Group.class != obj.getClass()) {
-                return false;
+            if (obj != null && Group.class == obj.getClass()) {
+                Group group = (Group) obj;
+                if (this.adaptiveSupported == group.adaptiveSupported && this.mediaTrackGroup.equals(group.mediaTrackGroup) && Arrays.equals(this.trackSupport, group.trackSupport) && Arrays.equals(this.trackSelected, group.trackSelected)) {
+                    return true;
+                }
             }
-            Group group = (Group) obj;
-            return this.adaptiveSupported == group.adaptiveSupported && this.mediaTrackGroup.equals(group.mediaTrackGroup) && Arrays.equals(this.trackSupport, group.trackSupport) && Arrays.equals(this.trackSelected, group.trackSelected);
+            return false;
         }
 
         public int hashCode() {
@@ -103,8 +101,7 @@ public final class Tracks implements Bundleable {
             return bundle;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ Group lambda$static$0(Bundle bundle) {
+        public static /* synthetic */ Group $r8$lambda$-5U4Vd2ct8VgoPhf6SgLr2Y-c2Y(Bundle bundle) {
             TrackGroup trackGroup = (TrackGroup) TrackGroup.CREATOR.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP)));
             return new Group(trackGroup, bundle.getBoolean(FIELD_ADAPTIVE_SUPPORTED, false), (int[]) MoreObjects.firstNonNull(bundle.getIntArray(FIELD_TRACK_SUPPORT), new int[trackGroup.length]), (boolean[]) MoreObjects.firstNonNull(bundle.getBooleanArray(FIELD_TRACK_SELECTED), new boolean[trackGroup.length]));
         }
@@ -149,8 +146,7 @@ public final class Tracks implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Tracks lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ Tracks $r8$lambda$vYA5RM9DVNv_S8EIm2h75eWpGro(Bundle bundle) {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_TRACK_GROUPS);
         if (parcelableArrayList == null) {

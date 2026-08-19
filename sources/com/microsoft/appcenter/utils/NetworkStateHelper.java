@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /* loaded from: classes3.dex */
-public class NetworkStateHelper implements Closeable {
+public class NetworkStateHelper implements Closeable, AutoCloseable {
     private static NetworkStateHelper sSharedInstance;
     private final ConnectivityManager mConnectivityManager;
     private final Context mContext;

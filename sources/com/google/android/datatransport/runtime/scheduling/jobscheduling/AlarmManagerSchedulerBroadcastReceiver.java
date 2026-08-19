@@ -10,8 +10,7 @@ import com.google.android.datatransport.runtime.util.PriorityMapping;
 
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onReceive$0() {
+    public static /* synthetic */ void $r8$lambda$a3lqwlC30QrIt23aPM9gZcB4sXs() {
     }
 
     @Override // android.content.BroadcastReceiver
@@ -28,7 +27,7 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         TransportRuntime.getInstance().getUploader().upload(priority.build(), i, new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AlarmManagerSchedulerBroadcastReceiver.lambda$onReceive$0();
+                AlarmManagerSchedulerBroadcastReceiver.$r8$lambda$a3lqwlC30QrIt23aPM9gZcB4sXs();
             }
         });
     }

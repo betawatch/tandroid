@@ -85,34 +85,34 @@ public class GiftAuctionController extends BaseController {
         getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                GiftAuctionController.this.lambda$subscribeToGiftAuctionStateInternal$1(j, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
+                GiftAuctionController.$r8$lambda$o24ijBfJ9O3RMzGX3olh6sMS_ys(GiftAuctionController.this, j, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$subscribeToGiftAuctionStateInternal$1(final long j, final TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$o24ijBfJ9O3RMzGX3olh6sMS_ys(final GiftAuctionController giftAuctionController, final long j, final TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, TLRPC.TL_error tL_error) {
         if (tL_StarGiftAuctionState != null) {
-            getMessagesController().putUsers(tL_StarGiftAuctionState.users, false);
-            getMessagesController().putChats(tL_StarGiftAuctionState.chats, false);
+            giftAuctionController.getMessagesController().putUsers(tL_StarGiftAuctionState.users, false);
+            giftAuctionController.getMessagesController().putChats(tL_StarGiftAuctionState.chats, false);
         }
-        if (tL_StarGiftAuctionState != null && !this.upgrades.get(j, Boolean.FALSE).booleanValue()) {
-            this.upgrades.put(j, Boolean.TRUE);
-            requestAuctionUpgrades(j, new Utilities.Callback() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda5
+        if (tL_StarGiftAuctionState != null && !giftAuctionController.upgrades.get(j, Boolean.FALSE).booleanValue()) {
+            giftAuctionController.upgrades.put(j, Boolean.TRUE);
+            giftAuctionController.requestAuctionUpgrades(j, new Utilities.Callback() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    GiftAuctionController.this.lambda$subscribeToGiftAuctionStateInternal$0(j, tL_StarGiftAuctionState, (ArrayList) obj);
+                    GiftAuctionController.$r8$lambda$UphVxDqyZ9lNTPIjrH00quo9Pxs(GiftAuctionController.this, j, tL_StarGiftAuctionState, (ArrayList) obj);
                 }
             });
         } else if (tL_StarGiftAuctionState != null) {
-            onGiftAuctionStateReceivedInternal(j, tL_StarGiftAuctionState);
+            giftAuctionController.onGiftAuctionStateReceivedInternal(j, tL_StarGiftAuctionState);
+        } else {
+            giftAuctionController.getClass();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$subscribeToGiftAuctionStateInternal$0(long j, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, ArrayList arrayList) {
-        getOrCreateAuction(j).previewAttributes = arrayList;
-        onGiftAuctionStateReceivedInternal(j, tL_StarGiftAuctionState);
+    public static /* synthetic */ void $r8$lambda$UphVxDqyZ9lNTPIjrH00quo9Pxs(GiftAuctionController giftAuctionController, long j, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, ArrayList arrayList) {
+        giftAuctionController.getOrCreateAuction(j).previewAttributes = arrayList;
+        giftAuctionController.onGiftAuctionStateReceivedInternal(j, tL_StarGiftAuctionState);
     }
 
     private void onGiftAuctionStateReceivedInternal(final long j, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
@@ -124,16 +124,16 @@ public class GiftAuctionController extends BaseController {
         auctionInternal.resubscribe = new Runnable() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                GiftAuctionController.this.lambda$onGiftAuctionStateReceivedInternal$2(auctionInternal, j);
+                GiftAuctionController.$r8$lambda$jyZvpOXy0oHOoMpq_STmT2tjNYw(GiftAuctionController.this, auctionInternal, j);
             }
         };
         AndroidUtilities.runOnUIThread(auctionInternal.resubscribe, tL_StarGiftAuctionState.timeout * 1000);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onGiftAuctionStateReceivedInternal$2(AuctionInternal auctionInternal, long j) {
+    public static /* synthetic */ void $r8$lambda$jyZvpOXy0oHOoMpq_STmT2tjNYw(GiftAuctionController giftAuctionController, AuctionInternal auctionInternal, long j) {
+        giftAuctionController.getClass();
         auctionInternal.resubscribe = null;
-        subscribeToGiftAuctionStateInternal(j);
+        giftAuctionController.subscribeToGiftAuctionStateInternal(j);
     }
 
     public int requestGiftAuctionById(long j, Utilities.Callback2<TL_payments.TL_StarGiftAuctionState, TLRPC.TL_error> callback2) {
@@ -155,37 +155,38 @@ public class GiftAuctionController extends BaseController {
         return getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                GiftAuctionController.this.lambda$requestGiftAuctionInternal$4(callback2, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
+                GiftAuctionController.$r8$lambda$dHsfylGoTS0XXPpluVLbwicI43U(GiftAuctionController.this, callback2, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestGiftAuctionInternal$4(final Utilities.Callback2 callback2, final TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$dHsfylGoTS0XXPpluVLbwicI43U(final GiftAuctionController giftAuctionController, final Utilities.Callback2 callback2, final TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, final TLRPC.TL_error tL_error) {
         if (tL_StarGiftAuctionState != null) {
-            getMessagesController().putUsers(tL_StarGiftAuctionState.users, false);
-            getMessagesController().putChats(tL_StarGiftAuctionState.chats, false);
+            giftAuctionController.getMessagesController().putUsers(tL_StarGiftAuctionState.users, false);
+            giftAuctionController.getMessagesController().putChats(tL_StarGiftAuctionState.chats, false);
         }
-        if (tL_StarGiftAuctionState != null && !this.upgrades.get(tL_StarGiftAuctionState.gift.id, Boolean.FALSE).booleanValue()) {
-            this.upgrades.put(tL_StarGiftAuctionState.gift.id, Boolean.TRUE);
-            requestAuctionUpgrades(tL_StarGiftAuctionState.gift.id, new Utilities.Callback() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda1
+        if (tL_StarGiftAuctionState == null) {
+            giftAuctionController.getClass();
+        } else if (!giftAuctionController.upgrades.get(tL_StarGiftAuctionState.gift.id, Boolean.FALSE).booleanValue()) {
+            giftAuctionController.upgrades.put(tL_StarGiftAuctionState.gift.id, Boolean.TRUE);
+            giftAuctionController.requestAuctionUpgrades(tL_StarGiftAuctionState.gift.id, new Utilities.Callback() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    GiftAuctionController.this.lambda$requestGiftAuctionInternal$3(tL_StarGiftAuctionState, callback2, tL_error, (ArrayList) obj);
+                    GiftAuctionController.$r8$lambda$MQtnDqAHlP6QhNkJzGCbhnA80y4(GiftAuctionController.this, tL_StarGiftAuctionState, callback2, tL_error, (ArrayList) obj);
                 }
             });
-        } else {
-            if (tL_StarGiftAuctionState != null) {
-                onGiftAuctionStateReceivedInternal(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
-            }
-            callback2.run(tL_StarGiftAuctionState, tL_error);
+            return;
         }
+        if (tL_StarGiftAuctionState != null) {
+            giftAuctionController.onGiftAuctionStateReceivedInternal(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
+        }
+        callback2.run(tL_StarGiftAuctionState, tL_error);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestGiftAuctionInternal$3(TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, Utilities.Callback2 callback2, TLRPC.TL_error tL_error, ArrayList arrayList) {
-        getOrCreateAuction(tL_StarGiftAuctionState.gift.id).previewAttributes = arrayList;
-        onGiftAuctionStateReceivedInternal(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
+    public static /* synthetic */ void $r8$lambda$MQtnDqAHlP6QhNkJzGCbhnA80y4(GiftAuctionController giftAuctionController, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, Utilities.Callback2 callback2, TLRPC.TL_error tL_error, ArrayList arrayList) {
+        giftAuctionController.getClass();
+        giftAuctionController.getOrCreateAuction(tL_StarGiftAuctionState.gift.id).previewAttributes = arrayList;
+        giftAuctionController.onGiftAuctionStateReceivedInternal(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
         callback2.run(tL_StarGiftAuctionState, tL_error);
     }
 
@@ -195,13 +196,12 @@ public class GiftAuctionController extends BaseController {
         getConnectionsManager().sendRequestTyped(getstargiftupgradeattributes, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                GiftAuctionController.lambda$requestAuctionUpgrades$5(Utilities.Callback.this, (TL_stars.starGiftUpgradeAttributes) obj, (TLRPC.TL_error) obj2);
+                GiftAuctionController.$r8$lambda$m0WTiozIdKGkc19Ify0S1ASljAE(Utilities.Callback.this, (TL_stars.starGiftUpgradeAttributes) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$requestAuctionUpgrades$5(Utilities.Callback callback, TL_stars.starGiftUpgradeAttributes stargiftupgradeattributes, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$m0WTiozIdKGkc19Ify0S1ASljAE(Utilities.Callback callback, TL_stars.starGiftUpgradeAttributes stargiftupgradeattributes, TLRPC.TL_error tL_error) {
         if (stargiftupgradeattributes != null) {
             callback.run(stargiftupgradeattributes.attributes);
         } else {
@@ -212,16 +212,19 @@ public class GiftAuctionController extends BaseController {
     public static ArrayList<TL_stars.StarGiftAttribute> filterAttributes(ArrayList<TL_stars.StarGiftAttribute> arrayList, boolean z) {
         boolean z2;
         ArrayList<TL_stars.StarGiftAttribute> arrayList2 = new ArrayList<>();
-        Iterator<TL_stars.StarGiftAttribute> it = arrayList.iterator();
-        while (it.hasNext()) {
-            TL_stars.StarGiftAttribute next = it.next();
-            if (next.rarity instanceof TL_stars.TL_starGiftAttributeRarity) {
-                z2 = z && (next instanceof TL_stars.starGiftAttributeModel);
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            TL_stars.StarGiftAttribute starGiftAttribute = arrayList.get(i);
+            i++;
+            TL_stars.StarGiftAttribute starGiftAttribute2 = starGiftAttribute;
+            if (starGiftAttribute2.rarity instanceof TL_stars.TL_starGiftAttributeRarity) {
+                z2 = z && (starGiftAttribute2 instanceof TL_stars.starGiftAttributeModel);
             } else {
                 z2 = !z;
             }
             if (!z2) {
-                arrayList2.add(next);
+                arrayList2.add(starGiftAttribute2);
             }
         }
         return arrayList2;
@@ -241,7 +244,7 @@ public class GiftAuctionController extends BaseController {
             StarsController.getInstance(this.currentAccount).getBalance(new Runnable() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GiftAuctionController.this.lambda$sendBid$6(callback2, j, params, j2);
+                    GiftAuctionController.$r8$lambda$7E4L5Qs-sfAIusB7dvKoHXdRpHQ(GiftAuctionController.this, callback2, j, params, j2);
                 }
             });
             return;
@@ -269,22 +272,21 @@ public class GiftAuctionController extends BaseController {
         getConnectionsManager().sendRequestTyped(tL_payments_getPaymentForm, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda12
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                GiftAuctionController.this.lambda$sendBid$9(callback2, auctionInternal, tL_payments_getPaymentForm, (TLRPC.PaymentForm) obj, (TLRPC.TL_error) obj2);
+                GiftAuctionController.$r8$lambda$7jXKEvcmoYmxDOfNBPZeoKppzZU(GiftAuctionController.this, callback2, auctionInternal, tL_payments_getPaymentForm, (TLRPC.PaymentForm) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendBid$6(Utilities.Callback2 callback2, long j, AuctionBidSheet.Params params, long j2) {
-        if (StarsController.getInstance(this.currentAccount).balanceAvailable()) {
-            sendBid(j, params, j2, callback2);
+    public static /* synthetic */ void $r8$lambda$7E4L5Qs-sfAIusB7dvKoHXdRpHQ(GiftAuctionController giftAuctionController, Utilities.Callback2 callback2, long j, AuctionBidSheet.Params params, long j2) {
+        if (StarsController.getInstance(giftAuctionController.currentAccount).balanceAvailable()) {
+            giftAuctionController.sendBid(j, params, j2, callback2);
         } else if (callback2 != null) {
             callback2.run(Boolean.FALSE, "NO_BALANCE");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendBid$9(final Utilities.Callback2 callback2, final AuctionInternal auctionInternal, TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm, TLRPC.PaymentForm paymentForm, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$7jXKEvcmoYmxDOfNBPZeoKppzZU(final GiftAuctionController giftAuctionController, final Utilities.Callback2 callback2, final AuctionInternal auctionInternal, TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm, TLRPC.PaymentForm paymentForm, TLRPC.TL_error tL_error) {
+        giftAuctionController.getClass();
         if (tL_error != null) {
             callback2.run(Boolean.FALSE, tL_error.text);
             auctionInternal.pendingBid = false;
@@ -295,24 +297,24 @@ public class GiftAuctionController extends BaseController {
             TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
             tL_payments_sendStarsForm.form_id = ((TLRPC.TL_payments_paymentFormStarGift) paymentForm).form_id;
             tL_payments_sendStarsForm.invoice = tL_payments_getPaymentForm.invoice;
-            getConnectionsManager().sendRequestTyped(tL_payments_sendStarsForm, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda0
+            giftAuctionController.getConnectionsManager().sendRequestTyped(tL_payments_sendStarsForm, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    GiftAuctionController.this.lambda$sendBid$8(auctionInternal, callback2, (TLRPC.payments_PaymentResult) obj, (TLRPC.TL_error) obj2);
+                    GiftAuctionController.$r8$lambda$_M0c0sp4nkrCsx-e1dpd9cCfnJg(GiftAuctionController.this, auctionInternal, callback2, (TLRPC.payments_PaymentResult) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendBid$8(AuctionInternal auctionInternal, Utilities.Callback2 callback2, TLRPC.payments_PaymentResult payments_paymentresult, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$_M0c0sp4nkrCsx-e1dpd9cCfnJg(final GiftAuctionController giftAuctionController, AuctionInternal auctionInternal, Utilities.Callback2 callback2, TLRPC.payments_PaymentResult payments_paymentresult, TLRPC.TL_error tL_error) {
+        giftAuctionController.getClass();
         auctionInternal.pendingBid = false;
         if (payments_paymentresult instanceof TLRPC.TL_payments_paymentResult) {
             final TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) payments_paymentresult;
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GiftAuctionController.this.lambda$sendBid$7(tL_payments_paymentResult);
+                    MessagesController.getInstance(GiftAuctionController.this.currentAccount).processUpdates(tL_payments_paymentResult.updates, false);
                 }
             });
             callback2.run(Boolean.TRUE, null);
@@ -323,23 +325,23 @@ public class GiftAuctionController extends BaseController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendBid$7(TLRPC.TL_payments_paymentResult tL_payments_paymentResult) {
-        MessagesController.getInstance(this.currentAccount).processUpdates(tL_payments_paymentResult.updates, false);
-    }
-
     private long calculateUserAuctionsHash() {
-        ArrayList<Long> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         int size = this.auctions.size();
-        for (int i = 0; i < size; i++) {
-            AuctionInternal valueAt = this.auctions.valueAt(i);
+        int i = 0;
+        for (int i2 = 0; i2 < size; i2++) {
+            AuctionInternal valueAt = this.auctions.valueAt(i2);
             if (valueAt.internalState != null && !valueAt.internalState.isFinished() && valueAt.internalState.auctionStateActive != null && valueAt.internalState.auctionUserState.bid_date > 0) {
                 arrayList.add(Long.valueOf(valueAt.internalState.auctionStateActive.version | (valueAt.internalState.auctionUserState.bid_date << 32)));
             }
         }
         Collections.sort(arrayList);
+        int size2 = arrayList.size();
         long j = 0;
-        for (Long l : arrayList) {
+        while (i < size2) {
+            Object obj = arrayList.get(i);
+            i++;
+            Long l = (Long) obj;
             j = MediaDataController.calcHash(MediaDataController.calcHash(j, l.longValue() & 4294967295L), l.longValue() >> 32);
         }
         return j;
@@ -351,24 +353,28 @@ public class GiftAuctionController extends BaseController {
         getConnectionsManager().sendRequestTyped(tL_getStarGiftActiveAuctions, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda13
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                GiftAuctionController.this.lambda$requestUserAuctions$10((TL_payments.StarGiftActiveAuctions) obj, (TLRPC.TL_error) obj2);
+                GiftAuctionController.$r8$lambda$PglGSUwSyzkx1OEnojobOvuosKI(GiftAuctionController.this, (TL_payments.StarGiftActiveAuctions) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestUserAuctions$10(TL_payments.StarGiftActiveAuctions starGiftActiveAuctions, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$PglGSUwSyzkx1OEnojobOvuosKI(GiftAuctionController giftAuctionController, TL_payments.StarGiftActiveAuctions starGiftActiveAuctions, TLRPC.TL_error tL_error) {
+        giftAuctionController.getClass();
         if (starGiftActiveAuctions == null || tL_error != null) {
             return;
         }
         if (starGiftActiveAuctions instanceof TL_payments.TL_starGiftActiveAuctions) {
             TL_payments.TL_starGiftActiveAuctions tL_starGiftActiveAuctions = (TL_payments.TL_starGiftActiveAuctions) starGiftActiveAuctions;
-            getMessagesController().putUsers(tL_starGiftActiveAuctions.users, false);
-            getMessagesController().putChats(tL_starGiftActiveAuctions.chats, false);
-            Iterator<TL_stars.TL_StarGiftActiveAuctionState> it = tL_starGiftActiveAuctions.auctions.iterator();
-            while (it.hasNext()) {
-                TL_stars.TL_StarGiftActiveAuctionState next = it.next();
-                applyGiftAuctionStateAndPerformUpdate(next.gift, next.state, next.user_state);
+            int i = 0;
+            giftAuctionController.getMessagesController().putUsers(tL_starGiftActiveAuctions.users, false);
+            giftAuctionController.getMessagesController().putChats(tL_starGiftActiveAuctions.chats, false);
+            ArrayList<TL_stars.TL_StarGiftActiveAuctionState> arrayList = tL_starGiftActiveAuctions.auctions;
+            int size = arrayList.size();
+            while (i < size) {
+                TL_stars.TL_StarGiftActiveAuctionState tL_StarGiftActiveAuctionState = arrayList.get(i);
+                i++;
+                TL_stars.TL_StarGiftActiveAuctionState tL_StarGiftActiveAuctionState2 = tL_StarGiftActiveAuctionState;
+                giftAuctionController.applyGiftAuctionStateAndPerformUpdate(tL_StarGiftActiveAuctionState2.gift, tL_StarGiftActiveAuctionState2.state, tL_StarGiftActiveAuctionState2.user_state);
             }
             return;
         }
@@ -387,7 +393,7 @@ public class GiftAuctionController extends BaseController {
             getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionAcquiredGifts, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda9
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    GiftAuctionController.this.lambda$getOrRequestAcquiredGifts$11(callback, auctionInternal, (TL_payments.TL_StarGiftAuctionAcquiredGifts) obj, (TLRPC.TL_error) obj2);
+                    GiftAuctionController.$r8$lambda$DM8rh9wttkTxtpCMSXC3uBjY2fQ(GiftAuctionController.this, callback, auctionInternal, (TL_payments.TL_StarGiftAuctionAcquiredGifts) obj, (TLRPC.TL_error) obj2);
                 }
             });
             return;
@@ -395,16 +401,16 @@ public class GiftAuctionController extends BaseController {
         callback.run(auctionInternal.acquiredGifts);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getOrRequestAcquiredGifts$11(Utilities.Callback callback, AuctionInternal auctionInternal, TL_payments.TL_StarGiftAuctionAcquiredGifts tL_StarGiftAuctionAcquiredGifts, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$DM8rh9wttkTxtpCMSXC3uBjY2fQ(GiftAuctionController giftAuctionController, Utilities.Callback callback, AuctionInternal auctionInternal, TL_payments.TL_StarGiftAuctionAcquiredGifts tL_StarGiftAuctionAcquiredGifts, TLRPC.TL_error tL_error) {
         if (tL_StarGiftAuctionAcquiredGifts == null) {
+            giftAuctionController.getClass();
             callback.run(null);
-            return;
+        } else {
+            giftAuctionController.getMessagesController().putUsers(tL_StarGiftAuctionAcquiredGifts.users, false);
+            giftAuctionController.getMessagesController().putChats(tL_StarGiftAuctionAcquiredGifts.chats, false);
+            auctionInternal.acquiredGifts = tL_StarGiftAuctionAcquiredGifts.gifts;
+            callback.run(auctionInternal.acquiredGifts);
         }
-        getMessagesController().putUsers(tL_StarGiftAuctionAcquiredGifts.users, false);
-        getMessagesController().putChats(tL_StarGiftAuctionAcquiredGifts.chats, false);
-        auctionInternal.acquiredGifts = tL_StarGiftAuctionAcquiredGifts.gifts;
-        callback.run(auctionInternal.acquiredGifts);
     }
 
     public void getOrRequestAuction(final long j, final Utilities.Callback2<Auction, TLRPC.TL_error> callback2) {
@@ -415,15 +421,11 @@ public class GiftAuctionController extends BaseController {
             requestGiftAuctionById(j, new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda10
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    GiftAuctionController.this.lambda$getOrRequestAuction$12(callback2, j, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
+                    TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                    callback2.run(GiftAuctionController.this.getAuction(j), tL_error);
                 }
             });
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getOrRequestAuction$12(Utilities.Callback2 callback2, long j, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, TLRPC.TL_error tL_error) {
-        callback2.run(getAuction(j), tL_error);
     }
 
     public void processUpdate(TL_update.TL_updateStarGiftAuctionState tL_updateStarGiftAuctionState) {
@@ -445,18 +447,21 @@ public class GiftAuctionController extends BaseController {
     }
 
     private void applyGiftAuctionStateAndPerformUpdate(TL_stars.StarGift starGift, TL_stars.StarGiftAuctionState starGiftAuctionState, TL_stars.TL_StarGiftAuctionUserState tL_StarGiftAuctionUserState) {
-        boolean applyAuctionState;
+        TL_stars.StarGift starGift2;
+        boolean applyGift;
         AuctionInternal orCreateAuction = getOrCreateAuction(starGift.id);
         if (orCreateAuction.internalState == null) {
-            orCreateAuction.internalState = new Auction(this.currentAccount, starGift, starGiftAuctionState, tL_StarGiftAuctionUserState);
+            starGift2 = starGift;
+            orCreateAuction.internalState = new Auction(this.currentAccount, starGift2, starGiftAuctionState, tL_StarGiftAuctionUserState);
             orCreateAuction.internalState.previewAttributes = orCreateAuction.previewAttributes;
-            applyAuctionState = true;
+            applyGift = true;
         } else {
-            applyAuctionState = orCreateAuction.internalState.applyAuctionState(starGiftAuctionState) | orCreateAuction.internalState.applyGift(starGift) | orCreateAuction.internalState.applyUserState(tL_StarGiftAuctionUserState);
+            starGift2 = starGift;
+            applyGift = orCreateAuction.internalState.applyGift(starGift2) | orCreateAuction.internalState.applyAuctionState(starGiftAuctionState) | orCreateAuction.internalState.applyUserState(tL_StarGiftAuctionUserState);
         }
-        if (applyAuctionState) {
+        if (applyGift) {
             updateActiveAuctions();
-            performAuctionUpdate(starGift.id);
+            performAuctionUpdate(starGift2.id);
         }
     }
 
@@ -516,17 +521,12 @@ public class GiftAuctionController extends BaseController {
         List.-EL.sort(this.activeAuctions, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda4
             @Override // java.util.function.ToIntFunction
             public final int applyAsInt(Object obj) {
-                int lambda$updateActiveAuctions$13;
-                lambda$updateActiveAuctions$13 = GiftAuctionController.lambda$updateActiveAuctions$13((GiftAuctionController.Auction) obj);
-                return lambda$updateActiveAuctions$13;
+                int i2;
+                i2 = ((GiftAuctionController.Auction) obj).auctionUserState.bid_date;
+                return i2;
             }
         }));
         performUpdateActiveAuctions();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateActiveAuctions$13(Auction auction) {
-        return auction.auctionUserState.bid_date;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -570,7 +570,7 @@ public class GiftAuctionController extends BaseController {
         while (it.hasNext()) {
             ((OnActiveAuctionsUpdateListeners) it.next()).onActiveAuctionsUpdate(this.activeAuctions);
         }
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.activeAuctionsUpdated, new Object[0]);
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.activeAuctionsUpdated, new Object[0]);
     }
 
     public static class Auction {
@@ -680,11 +680,14 @@ public class GiftAuctionController extends BaseController {
             if (tL_starGiftAuctionState == null || (arrayList = tL_starGiftAuctionState.bid_levels) == null) {
                 return getMinimumBid();
             }
-            Iterator<TL_stars.TL_AuctionBidLevel> it = arrayList.iterator();
-            while (it.hasNext()) {
-                TL_stars.TL_AuctionBidLevel next = it.next();
-                if (i <= next.pos) {
-                    return next.amount;
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i2 < size) {
+                TL_stars.TL_AuctionBidLevel tL_AuctionBidLevel = arrayList.get(i2);
+                i2++;
+                TL_stars.TL_AuctionBidLevel tL_AuctionBidLevel2 = tL_AuctionBidLevel;
+                if (i <= tL_AuctionBidLevel2.pos) {
+                    return tL_AuctionBidLevel2.amount;
                 }
             }
             return getMinimumBid();
@@ -700,17 +703,20 @@ public class GiftAuctionController extends BaseController {
             if (tL_starGiftAuctionState == null || (arrayList = tL_starGiftAuctionState.bid_levels) == null) {
                 return -1;
             }
-            Iterator<TL_stars.TL_AuctionBidLevel> it = arrayList.iterator();
+            int size = arrayList.size();
             int i2 = 0;
-            while (it.hasNext()) {
-                TL_stars.TL_AuctionBidLevel next = it.next();
-                long j2 = next.amount;
-                if (j > j2 || (j == j2 && i <= next.date)) {
-                    return next.pos;
+            int i3 = 0;
+            while (i2 < size) {
+                TL_stars.TL_AuctionBidLevel tL_AuctionBidLevel = arrayList.get(i2);
+                i2++;
+                TL_stars.TL_AuctionBidLevel tL_AuctionBidLevel2 = tL_AuctionBidLevel;
+                long j2 = tL_AuctionBidLevel2.amount;
+                if (j > j2 || (j == j2 && i <= tL_AuctionBidLevel2.date)) {
+                    return tL_AuctionBidLevel2.pos;
                 }
-                i2 = next.pos;
+                i3 = tL_AuctionBidLevel2.pos;
             }
-            return i2 + 1;
+            return i3 + 1;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -797,19 +803,22 @@ public class GiftAuctionController extends BaseController {
     }
 
     public static GiftAuctionController getInstance(int i) {
-        GiftAuctionController giftAuctionController = Instance[i];
-        if (giftAuctionController == null) {
-            synchronized (GiftAuctionController.class) {
-                try {
-                    giftAuctionController = Instance[i];
-                    if (giftAuctionController == null) {
-                        GiftAuctionController[] giftAuctionControllerArr = Instance;
-                        GiftAuctionController giftAuctionController2 = new GiftAuctionController(i);
-                        giftAuctionControllerArr[i] = giftAuctionController2;
-                        giftAuctionController = giftAuctionController2;
-                    }
-                } finally {
+        GiftAuctionController giftAuctionController;
+        GiftAuctionController giftAuctionController2 = Instance[i];
+        if (giftAuctionController2 != null) {
+            return giftAuctionController2;
+        }
+        synchronized (GiftAuctionController.class) {
+            try {
+                giftAuctionController = Instance[i];
+                if (giftAuctionController == null) {
+                    GiftAuctionController[] giftAuctionControllerArr = Instance;
+                    GiftAuctionController giftAuctionController3 = new GiftAuctionController(i);
+                    giftAuctionControllerArr[i] = giftAuctionController3;
+                    giftAuctionController = giftAuctionController3;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return giftAuctionController;

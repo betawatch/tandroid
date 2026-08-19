@@ -103,15 +103,13 @@ public class SwipeGestureSettingsView extends FrameLayout {
         this.picker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.SwipeGestureSettingsView$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i3) {
-                String lambda$new$0;
-                lambda$new$0 = SwipeGestureSettingsView.this.lambda$new$0(i3);
-                return lambda$new$0;
+                return SwipeGestureSettingsView.$r8$lambda$wmjRpP-KY79yrqKxg2ozJCgEyaA(SwipeGestureSettingsView.this, i3);
             }
         });
         this.picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.SwipeGestureSettingsView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
             public final void onValueChange(NumberPicker numberPicker2, int i3, int i4) {
-                SwipeGestureSettingsView.this.lambda$new$1(numberPicker2, i3, i4);
+                SwipeGestureSettingsView.$r8$lambda$NlDmQiN0aDbkcQrUsXScxNXMR9E(SwipeGestureSettingsView.this, numberPicker2, i3, i4);
             }
         });
         this.picker.setImportantForAccessibility(2);
@@ -134,16 +132,14 @@ public class SwipeGestureSettingsView extends FrameLayout {
         this.currentIconValue = this.picker.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$new$0(int i) {
-        return this.strings[i];
+    public static /* synthetic */ String $r8$lambda$wmjRpP-KY79yrqKxg2ozJCgEyaA(SwipeGestureSettingsView swipeGestureSettingsView, int i) {
+        return swipeGestureSettingsView.strings[i];
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(NumberPicker numberPicker, int i, int i2) {
-        swapIcons();
+    public static /* synthetic */ void $r8$lambda$NlDmQiN0aDbkcQrUsXScxNXMR9E(SwipeGestureSettingsView swipeGestureSettingsView, NumberPicker numberPicker, int i, int i2) {
+        swipeGestureSettingsView.swapIcons();
         SharedConfig.updateChatListSwipeSetting(i2);
-        invalidate();
+        swipeGestureSettingsView.invalidate();
         try {
             numberPicker.performHapticFeedback(3, 2);
         } catch (Exception unused) {
@@ -171,7 +167,7 @@ public class SwipeGestureSettingsView extends FrameLayout {
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.SwipeGestureSettingsView$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SwipeGestureSettingsView.this.lambda$swapIcons$2();
+                    SwipeGestureSettingsView.$r8$lambda$YgpkfuTuKiC_0DdKcX7K-XwRWws(SwipeGestureSettingsView.this);
                 }
             };
             this.swapIconRunnable = runnable;
@@ -179,10 +175,9 @@ public class SwipeGestureSettingsView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$swapIcons$2() {
-        this.swapIconRunnable = null;
-        swapIcons();
+    public static /* synthetic */ void $r8$lambda$YgpkfuTuKiC_0DdKcX7K-XwRWws(SwipeGestureSettingsView swipeGestureSettingsView) {
+        swipeGestureSettingsView.swapIconRunnable = null;
+        swipeGestureSettingsView.swapIcons();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -190,9 +185,9 @@ public class SwipeGestureSettingsView extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(102.0f), TLObject.FLAG_30));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00d3  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: classes.dex */
-public abstract class zzrq implements Closeable {
+public abstract class zzrq implements Closeable, AutoCloseable {
     private static final Map zza = new HashMap();
 
     static void zza() {

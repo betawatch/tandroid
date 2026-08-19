@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Paint.Views.RoundView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class RoundVideoRecorder extends FrameLayout {
     public final long MAX_DURATION;
     private float alpha;
@@ -82,8 +82,9 @@ public abstract class RoundVideoRecorder extends FrameLayout {
                 canvas.restore();
             }
 
+            /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.messenger.camera.CameraView
-            protected void receivedAmplitude(double d) {
+            public void receivedAmplitude(double d) {
                 RoundVideoRecorder.this.receivedAmplitude(d);
             }
         };
@@ -94,60 +95,58 @@ public abstract class RoundVideoRecorder extends FrameLayout {
         cameraView.setDelegate(new CameraView.CameraViewDelegate() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
             public final void onCameraInit() {
-                RoundVideoRecorder.this.lambda$new$2();
+                RoundVideoRecorder.$r8$lambda$bSeAFNTGYJhd7BXrVHF38bofQCI(RoundVideoRecorder.this);
             }
         });
         cameraView.initTexture();
         setWillNotDraw(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        if (this.recordingStarted > 0) {
+    public static /* synthetic */ void $r8$lambda$bSeAFNTGYJhd7BXrVHF38bofQCI(final RoundVideoRecorder roundVideoRecorder) {
+        if (roundVideoRecorder.recordingStarted > 0) {
             return;
         }
-        CameraController.getInstance().recordVideo(this.cameraView.getCameraSessionObject(), this.file, false, new CameraController.VideoTakeCallback() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda3
+        CameraController.getInstance().recordVideo(roundVideoRecorder.cameraView.getCameraSessionObject(), roundVideoRecorder.file, false, new CameraController.VideoTakeCallback() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
             public final void onFinishVideoRecording(String str, long j) {
-                RoundVideoRecorder.this.lambda$new$0(str, j);
+                RoundVideoRecorder.$r8$lambda$5M3sg-eIAnsDtyLJD8aVEiZA-Ns(RoundVideoRecorder.this, str, j);
             }
         }, new Runnable() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RoundVideoRecorder.this.lambda$new$1();
+                RoundVideoRecorder.$r8$lambda$1xHNCiJfl2EirUmIErIRACeZg70(RoundVideoRecorder.this);
             }
-        }, this.cameraView, true);
+        }, roundVideoRecorder.cameraView, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(String str, long j) {
-        this.recordingStopped = System.currentTimeMillis();
-        AndroidUtilities.cancelRunOnUIThread(this.stopRunnable);
-        if (this.cancelled) {
+    public static /* synthetic */ void $r8$lambda$5M3sg-eIAnsDtyLJD8aVEiZA-Ns(RoundVideoRecorder roundVideoRecorder, String str, long j) {
+        roundVideoRecorder.getClass();
+        roundVideoRecorder.recordingStopped = System.currentTimeMillis();
+        AndroidUtilities.cancelRunOnUIThread(roundVideoRecorder.stopRunnable);
+        if (roundVideoRecorder.cancelled) {
             return;
         }
         if (j > 1000) {
-            this.cameraView.destroy(true, null);
-            Utilities.Callback3 callback3 = this.onDoneCallback;
+            roundVideoRecorder.cameraView.destroy(true, null);
+            Utilities.Callback3 callback3 = roundVideoRecorder.onDoneCallback;
             if (callback3 != null) {
-                callback3.run(this.file, str, Long.valueOf(j));
+                callback3.run(roundVideoRecorder.file, str, Long.valueOf(j));
                 return;
             }
             return;
         }
-        destroy(false);
+        roundVideoRecorder.destroy(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        this.cameraView.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(280L).start();
-        this.recordingStarted = System.currentTimeMillis();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$1xHNCiJfl2EirUmIErIRACeZg70(RoundVideoRecorder roundVideoRecorder) {
+        roundVideoRecorder.cameraView.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(280L).start();
+        roundVideoRecorder.recordingStarted = System.currentTimeMillis();
+        roundVideoRecorder.invalidate();
         try {
-            performHapticFeedback(3);
+            roundVideoRecorder.performHapticFeedback(3);
         } catch (Exception unused) {
         }
-        AndroidUtilities.runOnUIThread(this.stopRunnable, 59500L);
+        AndroidUtilities.runOnUIThread(roundVideoRecorder.stopRunnable, 59500L);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -249,38 +248,38 @@ public abstract class RoundVideoRecorder extends FrameLayout {
         post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                RoundVideoRecorder.this.lambda$hideTo$5(roundView);
+                RoundVideoRecorder.$r8$lambda$Bm6feqWbg2rU00RJeTfOrkBzelY(RoundVideoRecorder.this, roundView);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideTo$5(final RoundView roundView) {
+    public static /* synthetic */ void $r8$lambda$Bm6feqWbg2rU00RJeTfOrkBzelY(final RoundVideoRecorder roundVideoRecorder, final RoundView roundView) {
+        roundVideoRecorder.getClass();
         if (roundView.getWidth() <= 0) {
-            this.cameraView.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda6
+            roundVideoRecorder.cameraView.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RoundVideoRecorder.this.lambda$hideTo$3();
+                    RoundVideoRecorder.$r8$lambda$d_WviE3E0VioCHM-97QIf2y9hxI(RoundVideoRecorder.this);
                 }
             }).start();
             return;
         }
-        final float width = roundView.getWidth() / this.cameraView.getWidth();
-        ValueAnimator valueAnimator = this.cameraViewAnimator;
+        final float width = roundView.getWidth() / roundVideoRecorder.cameraView.getWidth();
+        ValueAnimator valueAnimator = roundVideoRecorder.cameraViewAnimator;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        this.cameraViewAnimator = ValueAnimator.ofFloat(0.0f, 1.0f);
-        final float scaleX = this.cameraView.getScaleX();
-        final float x = (roundView.getX() + (roundView.getWidth() / 2.0f)) - (this.cameraView.getX() + (this.cameraView.getWidth() / 2.0f));
-        final float y = (roundView.getY() + (roundView.getHeight() / 2.0f)) - (this.cameraView.getY() + (this.cameraView.getHeight() / 2.0f));
-        this.cameraViewAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda7
+        roundVideoRecorder.cameraViewAnimator = ValueAnimator.ofFloat(0.0f, 1.0f);
+        final float scaleX = roundVideoRecorder.cameraView.getScaleX();
+        final float x = (roundView.getX() + (roundView.getWidth() / 2.0f)) - (roundVideoRecorder.cameraView.getX() + (roundVideoRecorder.cameraView.getWidth() / 2.0f));
+        final float y = (roundView.getY() + (roundView.getHeight() / 2.0f)) - (roundVideoRecorder.cameraView.getY() + (roundVideoRecorder.cameraView.getHeight() / 2.0f));
+        roundVideoRecorder.cameraViewAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda7
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                RoundVideoRecorder.this.lambda$hideTo$4(scaleX, width, x, y, valueAnimator2);
+                RoundVideoRecorder.$r8$lambda$OIpBb4N7bl3W4ACqFGTAhOYjrTI(RoundVideoRecorder.this, scaleX, width, x, y, valueAnimator2);
             }
         });
-        this.cameraViewAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder.2
+        roundVideoRecorder.cameraViewAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 RoundView roundView2 = roundView;
@@ -292,30 +291,29 @@ public abstract class RoundVideoRecorder extends FrameLayout {
                 }
             }
         });
-        this.cameraViewAnimator.setDuration(320L);
-        this.cameraViewAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-        this.roundView = roundView;
-        this.cameraViewAnimator.start();
+        roundVideoRecorder.cameraViewAnimator.setDuration(320L);
+        roundVideoRecorder.cameraViewAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+        roundVideoRecorder.roundView = roundView;
+        roundVideoRecorder.cameraViewAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideTo$3() {
-        if (getParent() instanceof ViewGroup) {
-            ((ViewGroup) getParent()).removeView(this);
+    public static /* synthetic */ void $r8$lambda$d_WviE3E0VioCHM-97QIf2y9hxI(RoundVideoRecorder roundVideoRecorder) {
+        if (roundVideoRecorder.getParent() instanceof ViewGroup) {
+            ((ViewGroup) roundVideoRecorder.getParent()).removeView(roundVideoRecorder);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideTo$4(float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$OIpBb4N7bl3W4ACqFGTAhOYjrTI(RoundVideoRecorder roundVideoRecorder, float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+        roundVideoRecorder.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.cameraView.setScaleX(AndroidUtilities.lerp(f, f2, floatValue));
-        this.cameraView.setScaleY(AndroidUtilities.lerp(f, f2, floatValue));
-        this.cameraView.setTranslationX(f3 * floatValue);
-        this.cameraView.setTranslationY(f4 * floatValue);
+        roundVideoRecorder.cameraView.setScaleX(AndroidUtilities.lerp(f, f2, floatValue));
+        roundVideoRecorder.cameraView.setScaleY(AndroidUtilities.lerp(f, f2, floatValue));
+        roundVideoRecorder.cameraView.setTranslationX(f3 * floatValue);
+        roundVideoRecorder.cameraView.setTranslationY(f4 * floatValue);
         float f5 = 1.0f - floatValue;
-        this.cameraView.setAlpha(f5);
-        this.alpha = f5;
-        invalidate();
+        roundVideoRecorder.cameraView.setAlpha(f5);
+        roundVideoRecorder.alpha = f5;
+        roundVideoRecorder.invalidate();
     }
 
     public void stop() {
@@ -362,7 +360,7 @@ public abstract class RoundVideoRecorder extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                RoundVideoRecorder.this.lambda$destroy$6(valueAnimator2);
+                RoundVideoRecorder.$r8$lambda$Fv81bCr7jia5zJ3bSbYBnttNJ2c(RoundVideoRecorder.this, valueAnimator2);
             }
         });
         this.destroyAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.RoundVideoRecorder.3
@@ -378,12 +376,12 @@ public abstract class RoundVideoRecorder extends FrameLayout {
         this.destroyAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$destroy$6(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$Fv81bCr7jia5zJ3bSbYBnttNJ2c(RoundVideoRecorder roundVideoRecorder, ValueAnimator valueAnimator) {
+        roundVideoRecorder.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.destroyT = floatValue;
-        this.cameraView.setScaleX(1.0f - floatValue);
-        this.cameraView.setScaleY(1.0f - this.destroyT);
-        invalidate();
+        roundVideoRecorder.destroyT = floatValue;
+        roundVideoRecorder.cameraView.setScaleX(1.0f - floatValue);
+        roundVideoRecorder.cameraView.setScaleY(1.0f - roundVideoRecorder.destroyT);
+        roundVideoRecorder.invalidate();
     }
 }

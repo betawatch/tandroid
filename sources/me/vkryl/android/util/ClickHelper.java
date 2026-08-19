@@ -129,7 +129,7 @@ public class ClickHelper {
             Runnable runnable = new Runnable() { // from class: me.vkryl.android.util.ClickHelper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ClickHelper.this.lambda$scheduleLongPress$0(view);
+                    ClickHelper.$r8$lambda$3tzcHsM9ABuTHt50RGYGJT8fSbg(ClickHelper.this, view);
                 }
             };
             this.longPressCallback = runnable;
@@ -137,16 +137,15 @@ public class ClickHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scheduleLongPress$0(View view) {
-        if ((this.flags & 2) != 0) {
-            if (this.delegate.onLongPressRequestedAt(view, this.startX, this.startY)) {
-                this.flags &= -3;
-                this.longPressCallback = null;
-                onLongPress(view, this.startX, this.startY);
+    public static /* synthetic */ void $r8$lambda$3tzcHsM9ABuTHt50RGYGJT8fSbg(ClickHelper clickHelper, View view) {
+        if ((clickHelper.flags & 2) != 0) {
+            if (clickHelper.delegate.onLongPressRequestedAt(view, clickHelper.startX, clickHelper.startY)) {
+                clickHelper.flags &= -3;
+                clickHelper.longPressCallback = null;
+                clickHelper.onLongPress(view, clickHelper.startX, clickHelper.startY);
                 return;
             }
-            this.flags |= 8;
+            clickHelper.flags |= 8;
         }
     }
 

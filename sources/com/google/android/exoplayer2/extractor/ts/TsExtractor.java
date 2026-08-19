@@ -29,9 +29,7 @@ public final class TsExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.TsExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = TsExtractor.lambda$static$0();
-            return lambda$static$0;
+            return TsExtractor.$r8$lambda$hi0KLYFjwPKvdFapAA8mnUbTXWE();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -71,8 +69,7 @@ public final class TsExtractor implements Extractor {
         return i;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$hi0KLYFjwPKvdFapAA8mnUbTXWE() {
         return new Extractor[]{new TsExtractor()};
     }
 
@@ -172,6 +169,7 @@ public final class TsExtractor implements Extractor {
 
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
+        long j;
         long length = extractorInput.getLength();
         if (this.tracksEnded) {
             if (length != -1 && this.mode != 2 && !this.durationReader.isDurationReadFinished()) {
@@ -214,6 +212,7 @@ public final class TsExtractor implements Extractor {
         }
         if (this.mode != 2) {
             int i3 = readInt & 15;
+            j = -1;
             int i4 = this.continuityCounters.get(i2, i3 - 1);
             this.continuityCounters.put(i2, i3);
             if (i4 == i3) {
@@ -223,6 +222,8 @@ public final class TsExtractor implements Extractor {
             if (i3 != ((i4 + 1) & 15)) {
                 tsPayloadReader.seek();
             }
+        } else {
+            j = -1;
         }
         if (z) {
             int readUnsignedByte = this.tsPacketBuffer.readUnsignedByte();
@@ -235,7 +236,7 @@ public final class TsExtractor implements Extractor {
             tsPayloadReader.consume(this.tsPacketBuffer, i);
             this.tsPacketBuffer.setLimit(limit);
         }
-        if (this.mode != 2 && !z2 && this.tracksEnded && length != -1) {
+        if (this.mode != 2 && !z2 && this.tracksEnded && length != j) {
             this.pendingSeekToStart = true;
         }
         this.tsPacketBuffer.setPosition(findEndOfFirstTsPacketInBuffer);
@@ -285,12 +286,12 @@ public final class TsExtractor implements Extractor {
         if (i > limit) {
             int i2 = this.bytesSinceLastSync + (findSyncBytePosition - position);
             this.bytesSinceLastSync = i2;
-            if (this.mode == 2 && i2 > 376) {
-                throw ParserException.createForMalformedContainer("Cannot find sync byte. Most likely not a Transport Stream.", null);
+            if (this.mode != 2 || i2 <= 376) {
+                return i;
             }
-        } else {
-            this.bytesSinceLastSync = 0;
+            throw ParserException.createForMalformedContainer("Cannot find sync byte. Most likely not a Transport Stream.", null);
         }
+        this.bytesSinceLastSync = 0;
         return i;
     }
 

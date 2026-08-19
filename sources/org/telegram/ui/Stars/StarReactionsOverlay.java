@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
@@ -83,31 +82,29 @@ public class StarReactionsOverlay extends View {
         this.hideCounterRunnable = new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                StarReactionsOverlay.this.lambda$new$0();
+                StarReactionsOverlay.$r8$lambda$rXmZ6C4ZBLu_m1as3w83eY2vTg0(StarReactionsOverlay.this);
             }
         };
         this.longPressRunnable = new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                StarReactionsOverlay.this.lambda$new$1(chatActivity);
+                StarReactionsOverlay.$r8$lambda$-0uHECMoW-tP0e3UehsS-AglCpI(StarReactionsOverlay.this, chatActivity);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.counterShown = false;
-        invalidate();
-        checkBalance();
-        hide();
+    public static /* synthetic */ void $r8$lambda$rXmZ6C4ZBLu_m1as3w83eY2vTg0(StarReactionsOverlay starReactionsOverlay) {
+        starReactionsOverlay.counterShown = false;
+        starReactionsOverlay.invalidate();
+        starReactionsOverlay.checkBalance();
+        starReactionsOverlay.hide();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(ChatActivity chatActivity) {
+    public static /* synthetic */ void $r8$lambda$-0uHECMoW-tP0e3UehsS-AglCpI(StarReactionsOverlay starReactionsOverlay, ChatActivity chatActivity) {
         MessageObject messageObject;
         TLRPC.TL_messageReactions tL_messageReactions;
         TLRPC.TL_messageReactions tL_messageReactions2;
-        BaseCell baseCell = this.cell;
+        BaseCell baseCell = starReactionsOverlay.cell;
         if (baseCell == null) {
             return;
         }
@@ -115,8 +112,8 @@ public class StarReactionsOverlay extends View {
             baseCell.performHapticFeedback(0);
         } catch (Exception unused) {
         }
-        onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-        BaseCell baseCell2 = this.cell;
+        starReactionsOverlay.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+        BaseCell baseCell2 = starReactionsOverlay.cell;
         ArrayList<TLRPC.MessageReactor> arrayList = null;
         if (baseCell2 instanceof ChatMessageCell) {
             messageObject = ((ChatMessageCell) baseCell2).getPrimaryMessageObject();
@@ -136,11 +133,12 @@ public class StarReactionsOverlay extends View {
                 arrayList = tL_messageReactions.top_reactors;
             }
         }
+        MessageObject messageObject2 = messageObject;
         ArrayList<TLRPC.MessageReactor> arrayList2 = arrayList;
-        StarsController.getInstance(messageObject.currentAccount).commitPaidReaction();
+        StarsController.getInstance(messageObject2.currentAccount).commitPaidReaction();
         TLRPC.ChatFull currentChatInfo = chatActivity.getCurrentChatInfo();
-        StarsReactionsSheet starsReactionsSheet = new StarsReactionsSheet(getContext(), chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, messageObject, arrayList2, currentChatInfo == null || currentChatInfo.paid_reactions_available, false, 0L, chatActivity.getResourceProvider());
-        starsReactionsSheet.setMessageCell(chatActivity, messageObject.getId(), this.cell);
+        StarsReactionsSheet starsReactionsSheet = new StarsReactionsSheet(starReactionsOverlay.getContext(), chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, messageObject2, arrayList2, currentChatInfo == null || currentChatInfo.paid_reactions_available, false, 0L, chatActivity.getResourceProvider());
+        starsReactionsSheet.setMessageCell(chatActivity, messageObject2.getId(), starReactionsOverlay.cell);
         starsReactionsSheet.show();
     }
 
@@ -175,15 +173,10 @@ public class StarReactionsOverlay extends View {
             new StarsIntroActivity.StarsNeededSheet(this.chatActivity.getContext(), this.chatActivity.getResourceProvider(), pendingPaidReactions, 5, str, new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StarReactionsOverlay.this.lambda$checkBalance$2(starsController, messageObject, pendingPaidReactions);
+                    starsController.sendPaidReaction(messageObject, StarReactionsOverlay.this.chatActivity, pendingPaidReactions, true, true, null);
                 }
             }, 0L).show();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkBalance$2(StarsController starsController, MessageObject messageObject, long j) {
-        starsController.sendPaidReaction(messageObject, this.chatActivity, j, true, true, null);
     }
 
     public void setMessageCell(BaseCell baseCell) {
@@ -225,9 +218,9 @@ public class StarReactionsOverlay extends View {
 
     @Override // android.view.View
     protected void dispatchDraw(Canvas canvas) {
-        Integer num;
         float f;
-        float f2;
+        char c;
+        Integer num;
         BaseCell baseCell = this.cell;
         if (baseCell instanceof ChatMessageCell) {
             if (!((ChatMessageCell) baseCell).isCellAttachedToWindow()) {
@@ -237,7 +230,6 @@ public class StarReactionsOverlay extends View {
             return;
         }
         MessageObject messageObject = getMessageObject();
-        int i = 0;
         if ((messageObject != null ? messageObject.getId() : 0) != this.messageId) {
             setMessageCell(null);
             return;
@@ -260,26 +252,30 @@ public class StarReactionsOverlay extends View {
         ReactionsLayoutInBubble.ReactionButton reactionButton = reactionsLayoutInBubble.getReactionButton("stars");
         if (reactionButton != null) {
             int[] iArr2 = this.pos;
-            int i2 = iArr2[0];
+            int i = iArr2[0];
             int[] iArr3 = this.pos2;
-            int i3 = (i2 - iArr3[0]) + reactionsLayoutInBubble.x + reactionButton.x;
-            int i4 = (iArr2[1] - iArr3[1]) + reactionsLayoutInBubble.y + reactionButton.y;
+            int i2 = (i - iArr3[0]) + reactionsLayoutInBubble.x + reactionButton.x;
+            int i3 = (iArr2[1] - iArr3[1]) + reactionsLayoutInBubble.y + reactionButton.y;
+            float f2 = i2;
             float f3 = i3;
-            float f4 = i4;
-            this.reactionBounds.set(f3, f4, i3 + reactionButton.width, i4 + reactionButton.height);
-            AndroidUtilities.scaleRect(this.reactionBounds, lerp, (reactionButton.width * 0.1f) + f3, (reactionButton.height / 2.0f) + f4);
+            f = 12.0f;
+            this.reactionBounds.set(f2, f3, i2 + reactionButton.width, i3 + reactionButton.height);
+            AndroidUtilities.scaleRect(this.reactionBounds, lerp, (reactionButton.width * 0.1f) + f2, (reactionButton.height / 2.0f) + f3);
             this.shadowPaint.setColor(0);
+            c = 0;
             this.shadowPaint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(3.0f), Theme.multAlpha(1426063360, this.focus));
             RectF rectF = this.reactionBounds;
             canvas.drawRoundRect(rectF, rectF.height() / 2.0f, this.reactionBounds.height() / 2.0f, this.shadowPaint);
-            canvas.scale(lerp, lerp, f3 + (reactionButton.width * 0.1f), f4 + (reactionButton.height / 2.0f));
+            canvas.scale(lerp, lerp, f2 + (reactionButton.width * 0.1f), f3 + (reactionButton.height / 2.0f));
             num = Integer.valueOf(reactionButton.reaction.hashCode());
         } else {
+            f = 12.0f;
+            c = 0;
             num = null;
         }
-        int i5 = this.pos[0];
+        int i4 = this.pos[c];
         int[] iArr4 = this.pos2;
-        canvas.translate(i5 - iArr4[0], (r5[1] - iArr4[1]) + this.cell.getPaddingTop());
+        canvas.translate(i4 - iArr4[c], (r3[1] - iArr4[1]) + this.cell.getPaddingTop());
         BaseCell baseCell2 = this.cell;
         if (baseCell2 instanceof ChatMessageCell) {
             ChatMessageCell chatMessageCell = (ChatMessageCell) baseCell2;
@@ -300,35 +296,29 @@ public class StarReactionsOverlay extends View {
             this.clickBounds.set(this.reactionBounds);
             this.clickBounds.inset(-AndroidUtilities.dp(42.0f), -AndroidUtilities.dp(42.0f));
             int dp = (int) (AndroidUtilities.dp(90.0f) * lerp);
-            while (i < this.effects.size()) {
-                RLottieDrawable rLottieDrawable = (RLottieDrawable) this.effects.get(i);
+            int i5 = 0;
+            while (i5 < this.effects.size()) {
+                RLottieDrawable rLottieDrawable = (RLottieDrawable) this.effects.get(i5);
                 if (rLottieDrawable.getCurrentFrame() >= rLottieDrawable.getFramesCount()) {
-                    this.effects.remove(i);
-                    i--;
+                    this.effects.remove(i5);
+                    i5--;
                 } else {
-                    float f5 = dp / 2.0f;
-                    rLottieDrawable.setBounds((int) ((this.reactionBounds.left + (AndroidUtilities.dp(15.0f) * lerp)) - f5), (int) (this.reactionBounds.centerY() - f5), (int) (this.reactionBounds.left + (AndroidUtilities.dp(15.0f) * lerp) + f5), (int) (this.reactionBounds.centerY() + f5));
+                    float f4 = dp / 2.0f;
+                    rLottieDrawable.setBounds((int) ((this.reactionBounds.left + (AndroidUtilities.dp(15.0f) * lerp)) - f4), (int) (this.reactionBounds.centerY() - f4), (int) (this.reactionBounds.left + (AndroidUtilities.dp(15.0f) * lerp) + f4), (int) (this.reactionBounds.centerY() + f4));
                     rLottieDrawable.setAlpha((int) (this.focus * 255.0f));
                     rLottieDrawable.draw(canvas);
                 }
-                i++;
+                i5++;
             }
             float centerX = this.reactionBounds.centerX();
             float dp2 = this.reactionBounds.top - AndroidUtilities.dp(36.0f);
             canvas.save();
-            float f6 = this.counterAlpha.set(this.counterShown);
-            if (this.counterShown) {
-                f2 = AndroidUtilities.dp(60.0f);
-                f = 1.0f;
-            } else {
-                f = 1.0f;
-                f2 = -AndroidUtilities.dp(30.0f);
-            }
-            canvas.translate(0.0f, f2 * (f - f6));
-            float lerp2 = AndroidUtilities.lerp(this.counterShown ? 1.8f : 1.3f, f, f6);
+            float f5 = this.counterAlpha.set(this.counterShown);
+            canvas.translate(0.0f, (this.counterShown ? AndroidUtilities.dp(60.0f) : -AndroidUtilities.dp(30.0f)) * (1.0f - f5));
+            float lerp2 = AndroidUtilities.lerp(this.counterShown ? 1.8f : 1.3f, 1.0f, f5);
             canvas.scale(lerp2, lerp2, centerX, dp2);
-            this.counter.setAlpha((int) (255.0f * f6));
-            this.counter.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(3.5f), Theme.multAlpha(-1442840576, f6));
+            this.counter.setAlpha((int) (255.0f * f5));
+            this.counter.setShadowLayer(AndroidUtilities.dp(f), 0.0f, AndroidUtilities.dp(3.5f), Theme.multAlpha(-1442840576, f5));
             this.counter.setBounds(centerX - AndroidUtilities.dp(100.0f), this.reactionBounds.top - AndroidUtilities.dp(48.0f), centerX + AndroidUtilities.dp(100.0f), this.reactionBounds.top - AndroidUtilities.dp(24.0f));
             this.counter.draw(canvas);
             canvas.restore();
@@ -391,7 +381,7 @@ public class StarReactionsOverlay extends View {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StarReactionsOverlay.this.lambda$focusTo$3(valueAnimator2);
+                StarReactionsOverlay.$r8$lambda$OSWZhIXfQa9ypI8eE36I7qWE3V0(StarReactionsOverlay.this, valueAnimator2);
             }
         });
         this.focusAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarReactionsOverlay.1
@@ -411,10 +401,10 @@ public class StarReactionsOverlay extends View {
         this.focusAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$focusTo$3(ValueAnimator valueAnimator) {
-        this.focus = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$OSWZhIXfQa9ypI8eE36I7qWE3V0(StarReactionsOverlay starReactionsOverlay, ValueAnimator valueAnimator) {
+        starReactionsOverlay.getClass();
+        starReactionsOverlay.focus = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        starReactionsOverlay.invalidate();
     }
 
     public void tap(float f, float f2, boolean z, boolean z2) {
@@ -450,7 +440,7 @@ public class StarReactionsOverlay extends View {
                 this.accumulatedRippleIntensity += 0.5f;
                 return;
             }
-            this.accumulatedRippleIntensity *= Utilities.clamp(1.0f - ((r0 - 100) / 200.0f), 1.0f, 0.0f);
+            this.accumulatedRippleIntensity *= Utilities.clamp(1.0f - ((r1 - 100) / 200.0f), 1.0f, 0.0f);
             if (getMeasuredWidth() == 0 && this.chatActivity.getLayoutContainer() != null) {
                 this.chatActivity.getLayoutContainer().getLocationInWindow(this.pos2);
             } else {
@@ -472,15 +462,14 @@ public class StarReactionsOverlay extends View {
         focusTo(0.0f, new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                StarReactionsOverlay.this.lambda$hide$4();
+                StarReactionsOverlay.$r8$lambda$iQ5dtsasBSzNkUVm6jAs-rkCkto(StarReactionsOverlay.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hide$4() {
-        setMessageCell(null);
-        clearEffects();
+    public static /* synthetic */ void $r8$lambda$iQ5dtsasBSzNkUVm6jAs-rkCkto(StarReactionsOverlay starReactionsOverlay) {
+        starReactionsOverlay.setMessageCell(null);
+        starReactionsOverlay.clearEffects();
     }
 
     public boolean isShowing(MessageObject messageObject) {
@@ -508,9 +497,13 @@ public class StarReactionsOverlay extends View {
     }
 
     public void clearEffects() {
-        Iterator it = this.effects.iterator();
-        while (it.hasNext()) {
-            ((RLottieDrawable) it.next()).recycle(true);
+        ArrayList arrayList = this.effects;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((RLottieDrawable) obj).recycle(true);
         }
         this.effects.clear();
     }

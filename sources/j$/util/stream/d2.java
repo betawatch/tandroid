@@ -1,41 +1,11 @@
 package j$.util.stream;
 
+import java.util.function.IntConsumer;
+
 /* loaded from: classes2.dex */
-abstract class d2 extends e2 {
-    public final /* synthetic */ int l;
+public interface d2 extends f2, IntConsumer {
+    void A(Integer num);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d2(b bVar, int i, int i2) {
-        super(bVar, i);
-        this.l = i2;
-    }
-
-    @Override // j$.util.stream.b
-    final boolean P() {
-        switch (this.l) {
-            case 0:
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        switch (this.l) {
-            case 0:
-                if (!K()) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!K()) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return new b2(this, a3.r, 1);
-    }
+    @Override // j$.util.stream.f2
+    void accept(int i);
 }

@@ -45,7 +45,7 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.DownloadsInfoBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DownloadsInfoBottomSheet.this.lambda$new$0(view);
+                DownloadsInfoBottomSheet.this.dismiss();
             }
         });
         int dp = AndroidUtilities.dp(8.0f);
@@ -99,31 +99,24 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.DownloadsInfoBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DownloadsInfoBottomSheet.this.lambda$new$1(baseFragment, view);
+                DownloadsInfoBottomSheet.$r8$lambda$nBRcZ_f5zj5hhAEmowDcgtkn4gs(DownloadsInfoBottomSheet.this, baseFragment, view);
             }
         });
         textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.DownloadsInfoBottomSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DownloadsInfoBottomSheet.this.lambda$new$2(view);
+                DownloadsInfoBottomSheet.$r8$lambda$cSwXXXPeBxdrgqrqbP1BaMvCESs(DownloadsInfoBottomSheet.this, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(BaseFragment baseFragment, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$nBRcZ_f5zj5hhAEmowDcgtkn4gs(DownloadsInfoBottomSheet downloadsInfoBottomSheet, BaseFragment baseFragment, View view) {
+        downloadsInfoBottomSheet.dismiss();
         baseFragment.presentFragment(new CacheControlActivity());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        dismiss();
-        DownloadController.getInstance(this.currentAccount).clearRecentDownloadedFiles();
+    public static /* synthetic */ void $r8$lambda$cSwXXXPeBxdrgqrqbP1BaMvCESs(DownloadsInfoBottomSheet downloadsInfoBottomSheet, View view) {
+        downloadsInfoBottomSheet.dismiss();
+        DownloadController.getInstance(downloadsInfoBottomSheet.currentAccount).clearRecentDownloadedFiles();
     }
 }

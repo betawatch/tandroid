@@ -57,15 +57,16 @@ public class HintEditText extends EditTextBoldCursor {
     @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
         float measureText;
+        Canvas canvas2;
         if (this.hintText != null && length() < this.hintText.length()) {
+            int i = 0;
             float f = 0.0f;
-            for (int i = 0; i < this.hintText.length(); i++) {
+            while (i < this.hintText.length()) {
                 if (i < length()) {
                     measureText = getPaint().measureText(getText(), i, i + 1);
                 } else {
                     measureText = this.hintPaint.measureText(this.hintText, i, i + 1);
                 }
-                float f2 = measureText;
                 if (shouldDrawBehindText(i) || i >= length()) {
                     int color = this.hintPaint.getColor();
                     canvas.save();
@@ -74,13 +75,17 @@ public class HintEditText extends EditTextBoldCursor {
                     textPaint.getTextBounds(str, 0, str.length(), this.rect);
                     float height = (getHeight() + this.rect.height()) / 2.0f;
                     onPreDrawHintCharacter(i, canvas, f, height);
-                    canvas.drawText(this.hintText, i, i + 1, f, height, (Paint) this.hintPaint);
-                    f += f2;
-                    canvas.restore();
+                    canvas2 = canvas;
+                    canvas2.drawText(this.hintText, i, i + 1, f, height, (Paint) this.hintPaint);
+                    f += measureText;
+                    canvas2.restore();
                     this.hintPaint.setColor(color);
                 } else {
-                    f += f2;
+                    f += measureText;
+                    canvas2 = canvas;
                 }
+                i++;
+                canvas = canvas2;
             }
         }
         super.onDraw(canvas);

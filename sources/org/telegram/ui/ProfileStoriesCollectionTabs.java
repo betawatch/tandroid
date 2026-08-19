@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -104,26 +103,21 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
         createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                Boolean lambda$new$0;
-                lambda$new$0 = ProfileStoriesCollectionTabs.this.lambda$new$0(delegate, (Integer) obj, (Integer) obj2);
-                return lambda$new$0;
+                return ProfileStoriesCollectionTabs.$r8$lambda$jugj-49GTYchGqFg_rZSVDI7n38(ProfileStoriesCollectionTabs.this, delegate, (Integer) obj, (Integer) obj2);
             }
         });
         createTabsView.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                Boolean lambda$new$1;
-                lambda$new$1 = ProfileStoriesCollectionTabs.this.lambda$new$1(delegate, (Integer) obj, (View) obj2);
-                return lambda$new$1;
+                return ProfileStoriesCollectionTabs.$r8$lambda$iIn89rVPExoQELe6HNJwIo4tUPM(ProfileStoriesCollectionTabs.this, delegate, (Integer) obj, (View) obj2);
             }
         });
         addView(createTabsView, LayoutHelper.createFrame(-1, 42, 48));
         setVisibility(!storiesCollections.collections.isEmpty(), false, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$new$0(Delegate delegate, Integer num, Integer num2) {
-        if (this.reorderingCollections) {
+    public static /* synthetic */ Boolean $r8$lambda$jugj-49GTYchGqFg_rZSVDI7n38(ProfileStoriesCollectionTabs profileStoriesCollectionTabs, Delegate delegate, Integer num, Integer num2) {
+        if (profileStoriesCollectionTabs.reorderingCollections) {
             return Boolean.TRUE;
         }
         if (num.intValue() == -1) {
@@ -135,9 +129,9 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
         return Boolean.FALSE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$new$1(Delegate delegate, Integer num, View view) {
-        if (num.intValue() == -1 || num.intValue() == 0 || this.reorderingCollections) {
+    public static /* synthetic */ Boolean $r8$lambda$iIn89rVPExoQELe6HNJwIo4tUPM(ProfileStoriesCollectionTabs profileStoriesCollectionTabs, Delegate delegate, Integer num, View view) {
+        profileStoriesCollectionTabs.getClass();
+        if (num.intValue() == -1 || num.intValue() == 0 || profileStoriesCollectionTabs.reorderingCollections) {
             return Boolean.FALSE;
         }
         if (delegate != null) {
@@ -151,7 +145,7 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ProfileStoriesCollectionTabs.this.lambda$setInitialTabId$2(i);
+                    ProfileStoriesCollectionTabs.this.scrollToAlbumId(i);
                 }
             }, 500L);
         } else {
@@ -199,7 +193,7 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileStoriesCollectionTabs.this.lambda$didReceivedNotification$3(i4);
+                            ProfileStoriesCollectionTabs.this.scrollToAlbumId(i4);
                         }
                     }, 500L);
                     this.initialAlbumId = 0;
@@ -218,8 +212,7 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
         this.tabsView.selectTabWithId(i, f);
     }
 
-    /* renamed from: scrollToAlbumId, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public void lambda$setInitialTabId$2(int i) {
+    public void scrollToAlbumId(int i) {
         this.tabsView.scrollToTab(i, this.adapter.getItemPosition(i));
     }
 
@@ -251,7 +244,7 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileStoriesCollectionTabs.lambda$setReorderingAlbums$4(BaseFragment.this);
+                        ((ProfileActivity) BaseFragment.this).scrollToSharedMedia(true);
                     }
                 });
             }
@@ -265,11 +258,6 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
         this.viewPager.fillTabs(true);
         int itemPosition = this.adapter.getItemPosition(itemId);
         this.tabsView.selectTab(itemPosition, itemPosition, 0.0f);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setReorderingAlbums$4(BaseFragment baseFragment) {
-        ((ProfileActivity) baseFragment).scrollToSharedMedia(true);
     }
 
     private void setVisibility(boolean z, boolean z2, boolean z3) {
@@ -293,7 +281,7 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
                 this.visibilityAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda6
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        ProfileStoriesCollectionTabs.this.lambda$setVisibility$5(valueAnimator2);
+                        ProfileStoriesCollectionTabs.$r8$lambda$KixG3VjeET89lijEJDg_qjQ1W18(ProfileStoriesCollectionTabs.this, valueAnimator2);
                     }
                 });
                 this.visibilityAnimator.start();
@@ -301,11 +289,11 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVisibility$5(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$KixG3VjeET89lijEJDg_qjQ1W18(ProfileStoriesCollectionTabs profileStoriesCollectionTabs, ValueAnimator valueAnimator) {
+        profileStoriesCollectionTabs.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.visibilityFactor = floatValue;
-        onVisibilityChange(floatValue);
+        profileStoriesCollectionTabs.visibilityFactor = floatValue;
+        profileStoriesCollectionTabs.onVisibilityChange(floatValue);
     }
 
     protected void onVisibilityChange(float f) {
@@ -365,9 +353,12 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
         @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
         public void applyReorder(ArrayList arrayList) {
             ArrayList arrayList2 = new ArrayList();
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                Integer num = (Integer) it.next();
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                Integer num = (Integer) obj;
                 int intValue = num.intValue();
                 if (intValue != -1 && intValue != -2 && intValue != 0) {
                     arrayList2.add(num);

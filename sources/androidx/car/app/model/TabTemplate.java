@@ -78,7 +78,7 @@ public class TabTemplate implements Template {
     private TabTemplate() {
         this.mIsLoading = false;
         this.mHeaderAction = null;
-        this.mTabs = Collections.emptyList();
+        this.mTabs = Collections.EMPTY_LIST;
         this.mTabContents = null;
         this.mTabCallbackDelegate = null;
         this.mActiveTabContentId = null;

@@ -1,63 +1,84 @@
 package j$.time.chrono;
 
+import j$.time.Instant;
+import j$.time.LocalDate;
+import j$.time.LocalDateTime;
+import j$.time.ZoneId;
+import j$.time.ZonedDateTime;
 import j$.time.temporal.Temporal;
+import j$.util.Objects;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-public final class r implements m {
-    public static final r AH;
-    private static final /* synthetic */ r[] a;
+public final class r extends a implements Serializable {
+    public static final r c = new r();
+    private static final long serialVersionUID = -1440403870442975015L;
 
-    @Override // j$.time.temporal.m
-    public final /* synthetic */ boolean g(j$.time.temporal.p pVar) {
-        return h.i(this, pVar);
-    }
-
-    @Override // j$.time.chrono.m
-    public final int getValue() {
-        return 1;
-    }
-
-    @Override // j$.time.temporal.m
-    public final /* synthetic */ int l(j$.time.temporal.p pVar) {
-        return h.f(this, (j$.time.temporal.a) pVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final /* synthetic */ long r(j$.time.temporal.p pVar) {
-        return h.g(this, pVar);
-    }
-
-    @Override // j$.time.temporal.m
-    public final /* synthetic */ Object v(j$.time.temporal.r rVar) {
-        return h.m(this, rVar);
-    }
-
-    public static r valueOf(String str) {
-        return (r) Enum.valueOf(r.class, str);
-    }
-
-    public static r[] values() {
-        return (r[]) a.clone();
-    }
-
-    static {
-        r rVar = new r("AH", 0);
-        AH = rVar;
-        a = new r[]{rVar};
-    }
-
-    @Override // j$.time.temporal.m
-    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
-        if (pVar == j$.time.temporal.a.ERA) {
-            return j$.time.temporal.u.j(1L, 1L);
+    @Override // j$.time.chrono.k
+    public final l C(int i) {
+        if (i == 0) {
+            return s.BCE;
         }
-        return j$.time.temporal.l.d(this, pVar);
+        if (i == 1) {
+            return s.CE;
+        }
+        throw new j$.time.b("Invalid era: " + i);
     }
 
-    @Override // j$.time.temporal.n
-    public final Temporal x(Temporal temporal) {
-        return temporal.d(1, j$.time.temporal.a.ERA);
+    @Override // j$.time.chrono.k
+    public final String getId() {
+        return "ISO";
+    }
+
+    @Override // j$.time.chrono.k
+    public final String m() {
+        return "iso8601";
+    }
+
+    @Override // j$.time.chrono.k
+    public final b a(j$.time.temporal.l lVar) {
+        return LocalDate.I(lVar);
+    }
+
+    private r() {
+    }
+
+    @Override // j$.time.chrono.a, j$.time.chrono.k
+    public final ChronoLocalDateTime s(Temporal temporal) {
+        return LocalDateTime.H(temporal);
+    }
+
+    @Override // j$.time.chrono.a, j$.time.chrono.k
+    public final ChronoZonedDateTime n(Temporal temporal) {
+        return ZonedDateTime.E(temporal);
+    }
+
+    @Override // j$.time.chrono.k
+    public final ChronoZonedDateTime A(Instant instant, ZoneId zoneId) {
+        Objects.requireNonNull(instant, "instant");
+        Objects.requireNonNull(zoneId, "zone");
+        return ZonedDateTime.x(instant.a, instant.b, zoneId);
+    }
+
+    public static boolean o(long j) {
+        if ((3 & j) == 0) {
+            return j % 100 != 0 || j % 400 == 0;
+        }
+        return false;
+    }
+
+    @Override // j$.time.chrono.k
+    public final j$.time.temporal.s y(j$.time.temporal.a aVar) {
+        return aVar.b;
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
+    }
+
+    public Object writeReplace() {
+        return new D((byte) 1, this);
     }
 }

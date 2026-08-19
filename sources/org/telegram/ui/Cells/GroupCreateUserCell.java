@@ -86,7 +86,7 @@ public class GroupCreateUserCell extends FrameLayout {
         return this.premiumBlocked;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0043  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -309,7 +309,7 @@ public class GroupCreateUserCell extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.GroupCreateUserCell$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    GroupCreateUserCell.this.lambda$setChecked$1(valueAnimator2);
+                    GroupCreateUserCell.$r8$lambda$0ODu9SijOg8zq0-OeAD5ZPfb--w(GroupCreateUserCell.this, valueAnimator2);
                 }
             });
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.GroupCreateUserCell.3
@@ -329,18 +329,18 @@ public class GroupCreateUserCell extends FrameLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setChecked$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$0ODu9SijOg8zq0-OeAD5ZPfb--w(GroupCreateUserCell groupCreateUserCell, ValueAnimator valueAnimator) {
+        groupCreateUserCell.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         float f = 0.18f * floatValue;
-        float f2 = this.isChecked ? 1.0f - f : 0.82f + f;
-        this.avatarImageView.setScaleX(f2);
-        this.avatarImageView.setScaleY(f2);
-        if (!this.isChecked) {
+        float f2 = groupCreateUserCell.isChecked ? 1.0f - f : 0.82f + f;
+        groupCreateUserCell.avatarImageView.setScaleX(f2);
+        groupCreateUserCell.avatarImageView.setScaleY(f2);
+        if (!groupCreateUserCell.isChecked) {
             floatValue = 1.0f - floatValue;
         }
-        this.checkProgress = floatValue;
-        invalidate();
+        groupCreateUserCell.checkProgress = floatValue;
+        groupCreateUserCell.invalidate();
     }
 
     public void setCheckBoxEnabled(boolean z) {
@@ -407,7 +407,7 @@ public class GroupCreateUserCell extends FrameLayout {
                 }
             }
             String str4 = (String) this.currentObject;
-            str4.hashCode();
+            str4.getClass();
             switch (str4) {
                 case "archived":
                     this.avatarDrawable.setAvatarType(11);
@@ -684,7 +684,7 @@ public class GroupCreateUserCell extends FrameLayout {
                 this.lockDrawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             }
-            this.lockDrawable.setBounds((int) (x - (((r4.getIntrinsicWidth() / 2.0f) * 0.875f) * f)), (int) (y - (((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f) * f)), (int) (x + ((this.lockDrawable.getIntrinsicWidth() / 2.0f) * 0.875f * f)), (int) (y + ((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f * f)));
+            this.lockDrawable.setBounds((int) (x - (((r2.getIntrinsicWidth() / 2.0f) * 0.875f) * f)), (int) (y - (((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f) * f)), (int) (x + ((this.lockDrawable.getIntrinsicWidth() / 2.0f) * 0.875f * f)), (int) (y + ((this.lockDrawable.getIntrinsicHeight() / 2.0f) * 0.875f * f)));
             this.lockDrawable.setAlpha((int) (f * 255.0f));
             this.lockDrawable.draw(canvas);
             canvas.restore();

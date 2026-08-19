@@ -63,7 +63,7 @@ class RichCaptionController {
         richEditText.setDelegate(new EditTextCaption.EditTextCaptionDelegate() { // from class: org.telegram.ui.iv.RichCaptionController$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.EditTextCaption.EditTextCaptionDelegate
             public final void onSpansChanged() {
-                RichCaptionController.this.lambda$new$0(host);
+                RichCaptionController.$r8$lambda$n1sUuvU1MNhRn1Nf4OolbWszShQ(RichCaptionController.this, host);
             }
         });
         applyColors();
@@ -140,13 +140,13 @@ class RichCaptionController {
             richEditText.post(new Runnable() { // from class: org.telegram.ui.iv.RichCaptionController$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichCaptionController.1.this.lambda$onSelectionChanged$0(richEditText, i2, selectionHelper, host, i);
+                    RichCaptionController.1.$r8$lambda$I_EWBiPSH2lv4l0Ypt9TL6n5u80(RichCaptionController.1.this, richEditText, i2, selectionHelper, host, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSelectionChanged$0(RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, Host host, int i2) {
+        public static /* synthetic */ void $r8$lambda$I_EWBiPSH2lv4l0Ypt9TL6n5u80(1 r2, RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, Host host, int i2) {
+            r2.getClass();
             if (richEditText.length() < i || richEditText.getSelectionStart() == richEditText.getSelectionEnd() || !articleTextSelectionHelper.selectRangeOf(host.cell(), 0, i2, i)) {
                 return;
             }
@@ -156,9 +156,8 @@ class RichCaptionController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Host host) {
-        persist();
+    public static /* synthetic */ void $r8$lambda$n1sUuvU1MNhRn1Nf4OolbWszShQ(RichCaptionController richCaptionController, Host host) {
+        richCaptionController.persist();
         host.onCaptionSpansChanged();
     }
 
@@ -265,7 +264,10 @@ class RichCaptionController {
                 TL_iv.PageCaption pageCaption;
                 TL_iv.RichText richText;
                 BlockRow currentRow = RichCaptionController.this.host.currentRow();
-                return (currentRow == null || (pageBlock = currentRow.block) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : RichTextStyle.toSpannable(richText);
+                if (currentRow == null || (pageBlock = currentRow.block) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) {
+                    return "";
+                }
+                return RichTextStyle.toSpannable(richText);
             }
         });
     }
@@ -289,10 +291,12 @@ class RichCaptionController {
         }
         int left = i - (this.editText.getLeft() + this.editText.getPaddingLeft());
         int top = i2 - (this.editText.getTop() + this.editText.getPaddingTop());
-        if (top < 0 || top >= layout.getHeight() || (lineForVertical = layout.getLineForVertical(top)) < 0 || lineForVertical >= layout.getLineCount()) {
-            return false;
+        if (top >= 0 && top < layout.getHeight() && (lineForVertical = layout.getLineForVertical(top)) >= 0 && lineForVertical < layout.getLineCount()) {
+            float f = left;
+            if (f >= layout.getLineLeft(lineForVertical) && f <= layout.getLineRight(lineForVertical)) {
+                return true;
+            }
         }
-        float f = left;
-        return f >= layout.getLineLeft(lineForVertical) && f <= layout.getLineRight(lineForVertical);
+        return false;
     }
 }

@@ -37,7 +37,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Stories.recorder.PreviewButtons;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PreviewButtons extends FrameLayout {
     private ValueAnimator appearAnimator;
     private float appearT;
@@ -179,7 +179,7 @@ public class PreviewButtons extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PreviewButtons$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    PreviewButtons.this.lambda$appear$0(valueAnimator2);
+                    PreviewButtons.$r8$lambda$uYCx0sJmNoLWHUcTtdSx8XLuaNw(PreviewButtons.this, valueAnimator2);
                 }
             });
             if (this.appearing) {
@@ -196,10 +196,10 @@ public class PreviewButtons extends FrameLayout {
         updateAppearT();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$appear$0(ValueAnimator valueAnimator) {
-        this.appearT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateAppearT();
+    public static /* synthetic */ void $r8$lambda$uYCx0sJmNoLWHUcTtdSx8XLuaNw(PreviewButtons previewButtons, ValueAnimator valueAnimator) {
+        previewButtons.getClass();
+        previewButtons.appearT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        previewButtons.updateAppearT();
     }
 
     private void updateAppearT() {
@@ -276,13 +276,12 @@ public class PreviewButtons extends FrameLayout {
             setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PreviewButtons$ShareButtonView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PreviewButtons.ShareButtonView.this.lambda$new$0(view);
+                    PreviewButtons.ShareButtonView.$r8$lambda$kNWOefqax4KpCR-rV9EFj9AC7OM(PreviewButtons.ShareButtonView.this, view);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
+        public static /* synthetic */ void $r8$lambda$kNWOefqax4KpCR-rV9EFj9AC7OM(ShareButtonView shareButtonView, View view) {
             if (!PreviewButtons.this.appearing || PreviewButtons.this.onClickListener == null) {
                 return;
             }
@@ -345,7 +344,7 @@ public class PreviewButtons extends FrameLayout {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PreviewButtons$ShareButtonView$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            PreviewButtons.ShareButtonView.this.lambda$setPressed$1(valueAnimator2);
+                            PreviewButtons.ShareButtonView.$r8$lambda$pQGkthRlZddhm3uQx96bemXWEMA(PreviewButtons.ShareButtonView.this, valueAnimator2);
                         }
                     });
                     this.backAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.PreviewButtons.ShareButtonView.1
@@ -362,10 +361,10 @@ public class PreviewButtons extends FrameLayout {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setPressed$1(ValueAnimator valueAnimator) {
-            this.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$pQGkthRlZddhm3uQx96bemXWEMA(ShareButtonView shareButtonView, ValueAnimator valueAnimator) {
+            shareButtonView.getClass();
+            shareButtonView.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            shareButtonView.invalidate();
         }
 
         @Override // android.view.View
@@ -389,13 +388,12 @@ public class PreviewButtons extends FrameLayout {
             setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PreviewButtons$ButtonView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PreviewButtons.ButtonView.this.lambda$new$0(i, view);
+                    PreviewButtons.ButtonView.$r8$lambda$WOftaA4x1I8-qtFMw7cFnCLuWlQ(PreviewButtons.ButtonView.this, i, view);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(int i, View view) {
+        public static /* synthetic */ void $r8$lambda$WOftaA4x1I8-qtFMw7cFnCLuWlQ(ButtonView buttonView, int i, View view) {
             if (!PreviewButtons.this.appearing || PreviewButtons.this.onClickListener == null) {
                 return;
             }

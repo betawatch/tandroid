@@ -58,7 +58,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -252,8 +251,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         void didShare();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$15(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$fa9TxitH_bTtIw4ogWXMyiVk3as(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -329,7 +327,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.leftTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$SwitchView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
-                    ShareAlert.SwitchView.this.lambda$new$0(view3);
+                    ShareAlert.SwitchView.this.switchToTab(0);
                 }
             });
             SimpleTextView simpleTextView2 = new SimpleTextView(context);
@@ -343,22 +341,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.rightTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$SwitchView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
-                    ShareAlert.SwitchView.this.lambda$new$1(view3);
+                    ShareAlert.SwitchView.this.switchToTab(1);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            switchToTab(0);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(View view) {
-            switchToTab(1);
-        }
-
-        private void switchToTab(int i) {
+        public void switchToTab(int i) {
             if (this.currentTab == i) {
                 return;
             }
@@ -422,7 +411,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this(context, chatActivity, arrayList, str, str2, z, str3, str4, z2, z3, false, null, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:122:0x08d9  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x08e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -590,7 +579,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_exportMessageLink, new RequestDelegate() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ShareAlert.this.lambda$new$1(context, tLObject, tL_error);
+                    ShareAlert.$r8$lambda$RULzyCWd2fKBeF5-C4-3IOjnhE8(ShareAlert.this, context, tLObject, tL_error);
                 }
             });
         }
@@ -820,10 +809,12 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
 
             private void onMeasureInternal(int i6, int i7) {
+                int i8;
                 int size2 = View.MeasureSpec.getSize(i6);
                 int size3 = View.MeasureSpec.getSize(i7);
-                int i8 = size2 - (((BottomSheet) ShareAlert.this).backgroundPaddingLeft * 2);
+                int i9 = size2 - (((BottomSheet) ShareAlert.this).backgroundPaddingLeft * 2);
                 ShareAlert.this.keyboardSize2 = measureKeyboardHeight();
+                int i10 = 0;
                 if (!ShareAlert.this.commentTextView.isWaitingForKeyboardOpen() && ShareAlert.this.keyboardSize2 <= AndroidUtilities.dp(20.0f) && !ShareAlert.this.commentTextView.isPopupShowing() && !ShareAlert.this.commentTextView.isAnimatePopupClosing()) {
                     this.ignoreLayout = true;
                     ShareAlert.this.commentTextView.hideEmojiView();
@@ -842,30 +833,37 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         size3 -= ((BottomSheet) ShareAlert.this).keyboardVisible ? 0 : ShareAlert.this.commentTextView.getEmojiPadding();
                         i7 = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
                     }
-                    int i9 = ShareAlert.this.commentTextView.isPopupShowing() ? 8 : 0;
+                    int i11 = ShareAlert.this.commentTextView.isPopupShowing() ? 8 : 0;
                     if (ShareAlert.this.pickerBottomLayout != null) {
-                        ShareAlert.this.pickerBottomLayout.setVisibility(i9);
+                        ShareAlert.this.pickerBottomLayout.setVisibility(i11);
                     }
                 }
+                int i12 = i7;
                 this.ignoreLayout = false;
                 int childCount = getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
+                while (i10 < childCount) {
                     View childAt = getChildAt(i10);
                     if (childAt != null && childAt.getVisibility() != 8) {
                         if (ShareAlert.this.commentTextView != null && ShareAlert.this.commentTextView.isPopupView(childAt)) {
                             if (AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
                                 if (AndroidUtilities.isTablet()) {
-                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(200.0f), (size3 - ShareAlert.this.systemInsets.top) + getPaddingTop()), TLObject.FLAG_30));
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(200.0f), (size3 - ShareAlert.this.systemInsets.top) + getPaddingTop()), TLObject.FLAG_30));
                                 } else {
-                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size3 - ShareAlert.this.systemInsets.top) + getPaddingTop(), TLObject.FLAG_30));
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size3 - ShareAlert.this.systemInsets.top) + getPaddingTop(), TLObject.FLAG_30));
                                 }
                             } else {
-                                childAt.measure(View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
+                                childAt.measure(View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
                             }
                         } else {
-                            measureChildWithMargins(childAt, i6, 0, i7, 0);
+                            i8 = i6;
+                            measureChildWithMargins(childAt, i8, 0, i12, 0);
+                            i10++;
+                            i6 = i8;
                         }
                     }
+                    i8 = i6;
+                    i10++;
+                    i6 = i8;
                 }
                 ShareAlert.this.updateBottomOverlay();
             }
@@ -970,11 +968,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 if (!this.fullHeight) {
                     if (motionEvent.getAction() == 0 && motionEvent.getY() < this.topOffset - AndroidUtilities.dp(30.0f)) {
-                        ShareAlert.this.lambda$new$0();
+                        ShareAlert.this.dismiss();
                         return true;
                     }
                 } else if (motionEvent.getAction() == 0 && ShareAlert.this.scrollOffsetY != 0 && motionEvent.getY() < ShareAlert.this.scrollOffsetY - AndroidUtilities.dp(30.0f)) {
-                    ShareAlert.this.lambda$new$0();
+                    ShareAlert.this.dismiss();
                     return true;
                 }
                 return super.onInterceptTouchEvent(motionEvent);
@@ -1146,15 +1144,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.searchView.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda13
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i8, KeyEvent keyEvent) {
-                boolean lambda$new$2;
-                lambda$new$2 = ShareAlert.this.lambda$new$2(textView, i8, keyEvent);
-                return lambda$new$2;
+                return ShareAlert.$r8$lambda$6psQtn38yqc0ja4cbkfiOK3dSik(ShareAlert.this, textView, i8, keyEvent);
             }
         });
         this.searchView.setCloseButtonOnClickListener(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                ShareAlert.this.lambda$new$3();
+                ShareAlert.$r8$lambda$O2yH0haBtpzxOMJ85TtMKC2r24Q(ShareAlert.this);
             }
         });
         this.frameLayout.addView(this.searchView, LayoutHelper.createFrame(-1, 40.0f, 83, 11.0f, 7.0f, 11.0f, 11.0f));
@@ -1171,7 +1167,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.topicsBackActionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ShareAlert.8
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i9) {
-                ShareAlert.this.lambda$openCrafting$8();
+                ShareAlert.this.onBackPressed();
             }
         });
         this.topicsBackActionBar.setVisibility(8);
@@ -1214,9 +1210,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.topicsGridView.setItemSelectorColorProvider(new GenericProvider() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda15
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
-                Integer lambda$new$4;
-                lambda$new$4 = ShareAlert.lambda$new$4((Integer) obj);
-                return lambda$new$4;
+                return ShareAlert.$r8$lambda$ecX7uqh2NAahRSKkgn7yzUDSRcY((Integer) obj);
             }
         });
         this.topicsGridView.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
@@ -1238,7 +1232,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.topicsGridView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda16
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i10) {
-                ShareAlert.this.lambda$new$5(view, i10);
+                ShareAlert.$r8$lambda$ZOGEhZqp47NkJpRfaBR3ylvcyQM(ShareAlert.this, view, i10);
             }
         });
         this.topicsGridView.setVisibility(8);
@@ -1266,9 +1260,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.gridView.setItemSelectorColorProvider(new GenericProvider() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda17
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
-                Integer lambda$new$6;
-                lambda$new$6 = ShareAlert.lambda$new$6((Integer) obj);
-                return lambda$new$6;
+                return ShareAlert.$r8$lambda$1PcynxTGhKcpqzn9H9A8Iu69dXA((Integer) obj);
             }
         });
         this.gridView.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
@@ -1316,7 +1308,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.gridView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i10) {
-                ShareAlert.this.lambda$new$7(view, i10);
+                ShareAlert.$r8$lambda$2yfJKqnhklW5mQrM1DngP5MHPY4(ShareAlert.this, view, i10);
             }
         });
         this.gridView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ShareAlert.15
@@ -1359,9 +1351,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         recyclerListView8.setItemSelectorColorProvider(new GenericProvider() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda19
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
-                Integer lambda$new$8;
-                lambda$new$8 = ShareAlert.lambda$new$8((Integer) obj);
-                return lambda$new$8;
+                return ShareAlert.$r8$lambda$qkwDv7PSB2Nua20LSuVOwcrHWOU((Integer) obj);
             }
         });
         this.searchGridView.setSelectorDrawableColor(0);
@@ -1380,7 +1370,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.searchGridView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda20
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i10) {
-                ShareAlert.this.lambda$new$9(view, i10);
+                ShareAlert.$r8$lambda$Dcwj_BA7YuJb6yzmAzXXXc2ln-w(ShareAlert.this, view, i10);
             }
         });
         this.searchGridView.setHasFixedSize(true);
@@ -1477,7 +1467,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.linkContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view3) {
-                        ShareAlert.this.lambda$new$10(view3);
+                        ShareAlert.$r8$lambda$LxttCDT1_OV5SgcamMYMGjr0ROA(ShareAlert.this, view3);
                     }
                 });
                 SimpleTextView simpleTextView = new SimpleTextView(context);
@@ -1502,7 +1492,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.linkCopyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view3) {
-                        ShareAlert.this.lambda$new$11(view3);
+                        ShareAlert.$r8$lambda$as_bWnnP3rv08oThGgAnVo9Js3k(ShareAlert.this, view3);
                     }
                 });
                 ScaleStateListAnimator.apply(this.linkCopyButton);
@@ -1516,7 +1506,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda5
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view3) {
-                                ShareAlert.this.lambda$new$12(messageObject3, view3);
+                                ShareAlert.$r8$lambda$nWJZ8gvozx1KIcw9vJ6X9l6UVw4(ShareAlert.this, messageObject3, view3);
                             }
                         });
                         linearLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
@@ -1567,7 +1557,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view3) {
-                        ShareAlert.this.lambda$new$13(view3);
+                        ShareAlert.$r8$lambda$B9-kV7A2GUs-vS4lKeoQfg70Z2c(ShareAlert.this, view3);
                     }
                 });
                 this.pickerBottomLayout.addView(textView4, LayoutHelper.createFrame(-1, -1, 119));
@@ -1585,7 +1575,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         this.sharesCountLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda7
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view3) {
-                                ShareAlert.this.lambda$new$14(messageObject4, view3);
+                                ShareAlert.$r8$lambda$IYxbsSQKcooVsktziueDlFj8_Ck(ShareAlert.this, messageObject4, view3);
                             }
                         });
                         ImageView imageView2 = new ImageView(context);
@@ -1620,9 +1610,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.frameLayout2.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda8
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view3, MotionEvent motionEvent) {
-                boolean lambda$new$15;
-                lambda$new$15 = ShareAlert.lambda$new$15(view3, motionEvent);
-                return lambda$new$15;
+                return ShareAlert.$r8$lambda$fa9TxitH_bTtIw4ogWXMyiVk3as(view3, motionEvent);
             }
         });
         AndroidUtilities.setLightNavigationBar(this.container, AndroidUtilities.computePerceivedBrightness(getThemedColor(i7)) > 0.721f);
@@ -1696,15 +1684,15 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.writeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                ShareAlert.this.lambda$new$16(view3);
+                ShareAlert.this.sendInternal(true);
             }
         });
         this.writeButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda10
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view3) {
-                boolean lambda$new$17;
-                lambda$new$17 = ShareAlert.this.lambda$new$17(view3);
-                return lambda$new$17;
+                boolean onSendLongClick;
+                onSendLongClick = r0.onSendLongClick(ShareAlert.this.writeButton);
+                return onSendLongClick;
             }
         });
         this.textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -1735,7 +1723,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.timestampLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
-                    ShareAlert.this.lambda$new$18(view3);
+                    ShareAlert.$r8$lambda$a4V2Uih3sSl5ErnnX2PuvYULYjs(ShareAlert.this, view3);
                 }
             });
             this.timestampFrameLayout.addView(this.timestampLayout, LayoutHelper.createFrame(-2, -2, 17));
@@ -1830,159 +1818,157 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(final Context context, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$RULzyCWd2fKBeF5-C4-3IOjnhE8(final ShareAlert shareAlert, final Context context, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        shareAlert.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
-                ShareAlert.this.lambda$new$0(tLObject, context);
+                ShareAlert.$r8$lambda$bmyCcpxlhi4PUq-hpdEmLs_u_es(ShareAlert.this, tLObject, context);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLObject tLObject, Context context) {
+    public static /* synthetic */ void $r8$lambda$bmyCcpxlhi4PUq-hpdEmLs_u_es(ShareAlert shareAlert, TLObject tLObject, Context context) {
         if (tLObject != null) {
-            this.exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject;
-            updateLinkTextView();
-            if (this.copyLinkOnEnd) {
-                copyLink(context);
+            shareAlert.getClass();
+            shareAlert.exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject;
+            shareAlert.updateLinkTextView();
+            if (shareAlert.copyLinkOnEnd) {
+                shareAlert.copyLink(context);
             }
         }
-        this.loadingLink = false;
+        shareAlert.loadingLink = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$2(TextView textView, int i, KeyEvent keyEvent) {
+    public static /* synthetic */ boolean $r8$lambda$6psQtn38yqc0ja4cbkfiOK3dSik(ShareAlert shareAlert, TextView textView, int i, KeyEvent keyEvent) {
+        shareAlert.getClass();
         if (keyEvent == null) {
             return false;
         }
         if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
             return false;
         }
-        AndroidUtilities.hideKeyboard(this.searchView.editText);
+        AndroidUtilities.hideKeyboard(shareAlert.searchView.editText);
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        this.updateSearchAdapter = true;
-        this.searchView.editText.setText("");
-        AndroidUtilities.showKeyboard(this.searchView.editText);
+    public static /* synthetic */ void $r8$lambda$O2yH0haBtpzxOMJ85TtMKC2r24Q(ShareAlert shareAlert) {
+        shareAlert.updateSearchAdapter = true;
+        shareAlert.searchView.editText.setText("");
+        AndroidUtilities.showKeyboard(shareAlert.searchView.editText);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$new$4(Integer num) {
+    public static /* synthetic */ Integer $r8$lambda$ecX7uqh2NAahRSKkgn7yzUDSRcY(Integer num) {
         return 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view, int i) {
-        if (this.shareTopicsAdapter.isBotForum && i == 1) {
-            onTopicCreateCellClick();
+    public static /* synthetic */ void $r8$lambda$ZOGEhZqp47NkJpRfaBR3ylvcyQM(ShareAlert shareAlert, View view, int i) {
+        if (shareAlert.shareTopicsAdapter.isBotForum && i == 1) {
+            shareAlert.onTopicCreateCellClick();
             return;
         }
-        TLRPC.TL_forumTopic itemTopic = this.shareTopicsAdapter.getItemTopic(i);
+        TLRPC.TL_forumTopic itemTopic = shareAlert.shareTopicsAdapter.getItemTopic(i);
         if (itemTopic != null) {
-            onTopicCellClick(itemTopic);
+            shareAlert.onTopicCellClick(itemTopic);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$new$6(Integer num) {
+    public static /* synthetic */ Integer $r8$lambda$1PcynxTGhKcpqzn9H9A8Iu69dXA(Integer num) {
         return 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(View view, int i) {
-        TLRPC.Dialog item;
-        if (i >= 0 && (item = this.listAdapter.getItem(i)) != null) {
-            selectDialog(view, item);
+    public static /* synthetic */ void $r8$lambda$2yfJKqnhklW5mQrM1DngP5MHPY4(ShareAlert shareAlert, View view, int i) {
+        if (i < 0) {
+            shareAlert.getClass();
+            return;
         }
+        TLRPC.Dialog item = shareAlert.listAdapter.getItem(i);
+        if (item == null) {
+            return;
+        }
+        shareAlert.selectDialog(view, item);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Integer lambda$new$8(Integer num) {
+    public static /* synthetic */ Integer $r8$lambda$qkwDv7PSB2Nua20LSuVOwcrHWOU(Integer num) {
         return 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(View view, int i) {
-        TLRPC.Dialog item;
-        if (i >= 0 && (item = this.searchAdapter.getItem(i)) != null) {
-            selectDialog(view, item);
+    public static /* synthetic */ void $r8$lambda$Dcwj_BA7YuJb6yzmAzXXXc2ln-w(ShareAlert shareAlert, View view, int i) {
+        if (i < 0) {
+            shareAlert.getClass();
+            return;
         }
+        TLRPC.Dialog item = shareAlert.searchAdapter.getItem(i);
+        if (item == null) {
+            return;
+        }
+        shareAlert.selectDialog(view, item);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$10(View view) {
-        if (this.selectedDialogs.size() == 0) {
-            if (this.isChannel || this.linkToCopy[0] != null) {
-                lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$LxttCDT1_OV5SgcamMYMGjr0ROA(ShareAlert shareAlert, View view) {
+        if (shareAlert.selectedDialogs.size() == 0) {
+            if (shareAlert.isChannel || shareAlert.linkToCopy[0] != null) {
+                shareAlert.dismiss();
                 PhotoViewer.getInstance().closePhoto(true, false);
-                if (this.linkToCopy[0] == null && this.loadingLink) {
-                    this.copyLinkOnEnd = true;
-                    Toast.makeText(getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                if (shareAlert.linkToCopy[0] == null && shareAlert.loadingLink) {
+                    shareAlert.copyLinkOnEnd = true;
+                    Toast.makeText(shareAlert.getContext(), LocaleController.getString(R.string.Loading), 0).show();
                 } else {
-                    copyLink(getContext());
+                    shareAlert.copyLink(shareAlert.getContext());
                 }
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$11(View view) {
-        if (this.selectedDialogs.size() == 0) {
-            if (this.isChannel || this.linkToCopy[0] != null) {
-                lambda$new$0();
-                if (this.linkToCopy[0] == null && this.loadingLink) {
-                    this.copyLinkOnEnd = true;
-                    Toast.makeText(getContext(), LocaleController.getString(R.string.Loading), 0).show();
+    public static /* synthetic */ void $r8$lambda$as_bWnnP3rv08oThGgAnVo9Js3k(ShareAlert shareAlert, View view) {
+        if (shareAlert.selectedDialogs.size() == 0) {
+            if (shareAlert.isChannel || shareAlert.linkToCopy[0] != null) {
+                shareAlert.dismiss();
+                if (shareAlert.linkToCopy[0] == null && shareAlert.loadingLink) {
+                    shareAlert.copyLinkOnEnd = true;
+                    Toast.makeText(shareAlert.getContext(), LocaleController.getString(R.string.Loading), 0).show();
                 } else {
-                    copyLink(getContext());
+                    shareAlert.copyLink(shareAlert.getContext());
                 }
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$12(MessageObject messageObject, View view) {
-        BaseFragment baseFragment = this.parentFragment;
+    public static /* synthetic */ void $r8$lambda$nWJZ8gvozx1KIcw9vJ6X9l6UVw4(ShareAlert shareAlert, MessageObject messageObject, View view) {
+        BaseFragment baseFragment = shareAlert.parentFragment;
         if (baseFragment == null) {
             baseFragment = LaunchActivity.getSafeLastFragment();
         }
         if (baseFragment == null) {
             return;
         }
-        lambda$new$0();
+        shareAlert.dismiss();
         baseFragment.presentFragment(new MessageStatisticActivity(messageObject));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$13(View view) {
-        if (this.selectedDialogs.size() == 0) {
-            if (this.isChannel || this.linkToCopy[0] != null) {
-                lambda$new$0();
-                if (this.linkToCopy[0] == null && this.loadingLink) {
-                    this.copyLinkOnEnd = true;
-                    Toast.makeText(getContext(), LocaleController.getString(R.string.Loading), 0).show();
+    public static /* synthetic */ void $r8$lambda$B9-kV7A2GUs-vS4lKeoQfg70Z2c(ShareAlert shareAlert, View view) {
+        if (shareAlert.selectedDialogs.size() == 0) {
+            if (shareAlert.isChannel || shareAlert.linkToCopy[0] != null) {
+                shareAlert.dismiss();
+                if (shareAlert.linkToCopy[0] == null && shareAlert.loadingLink) {
+                    shareAlert.copyLinkOnEnd = true;
+                    Toast.makeText(shareAlert.getContext(), LocaleController.getString(R.string.Loading), 0).show();
                 } else {
-                    copyLink(getContext());
+                    shareAlert.copyLink(shareAlert.getContext());
                 }
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$14(MessageObject messageObject, View view) {
-        BaseFragment baseFragment = this.parentFragment;
+    public static /* synthetic */ void $r8$lambda$IYxbsSQKcooVsktziueDlFj8_Ck(ShareAlert shareAlert, MessageObject messageObject, View view) {
+        BaseFragment baseFragment = shareAlert.parentFragment;
         if (baseFragment == null) {
             baseFragment = LaunchActivity.getSafeLastFragment();
         }
         if (baseFragment == null) {
             return;
         }
-        lambda$new$0();
+        shareAlert.dismiss();
         baseFragment.presentFragment(new MessageStatisticActivity(messageObject));
     }
 
@@ -2018,7 +2004,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ShareAlert.this.topBackgroundAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$21$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ShareAlert.21.this.lambda$onDraw$0(valueAnimator);
+                        ShareAlert.21.$r8$lambda$xaJhQ_cJNoTkaDGCAq-Z56_zdBo(ShareAlert.21.this, valueAnimator);
                     }
                 });
                 ShareAlert.this.topBackgroundAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -2029,11 +2015,10 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             ShareAlert.this.shadow[1].setTranslationY((-(ShareAlert.this.frameLayout2.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + ShareAlert.this.captionEditTextTopOffset + ShareAlert.this.currentPanTranslationY + ((ShareAlert.this.frameLayout2.getMeasuredHeight() - AndroidUtilities.dp(48.0f)) * (1.0f - getAlpha())));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDraw$0(ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$xaJhQ_cJNoTkaDGCAq-Z56_zdBo(21 r1, ValueAnimator valueAnimator) {
             ShareAlert.this.captionEditTextTopOffset = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             ShareAlert.this.frameLayout2.invalidate();
-            invalidate();
+            r1.invalidate();
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -2072,7 +2057,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$22$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ShareAlert.22.lambda$dispatchDraw$0(EditTextCaption.this, valueAnimator);
+                        EditTextCaption.this.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                     }
                 });
                 ValueAnimator valueAnimator = this.messageEditTextAnimator;
@@ -2086,11 +2071,6 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.shouldAnimateEditTextWithBounds = false;
             }
             super.dispatchDraw(canvas);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$dispatchDraw$0(EditTextCaption editTextCaption, ValueAnimator valueAnimator) {
-            editTextCaption.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
         @Override // org.telegram.ui.Components.EditTextEmoji
@@ -2159,31 +2139,15 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$23$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.23.this.lambda$afterTextChanged$0();
+                    ShareAlert.this.updateSelectedCount(1);
                 }
             });
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$afterTextChanged$0() {
-            ShareAlert.this.updateSelectedCount(1);
-        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$16(View view) {
-        sendInternal(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$17(View view) {
-        return onSendLongClick(this.writeButton);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$18(View view) {
-        this.timestampCheckbox.setChecked(!r3.isChecked(), true);
-        updateLinkTextView();
+    public static /* synthetic */ void $r8$lambda$a4V2Uih3sSl5ErnnX2PuvYULYjs(ShareAlert shareAlert, View view) {
+        shareAlert.timestampCheckbox.setChecked(!r3.isChecked(), true);
+        shareAlert.updateLinkTextView();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2216,23 +2180,23 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             createSimpleBulletin = BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, str)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda31
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.this.lambda$showPremiumBlockedToast$20();
+                    ShareAlert.$r8$lambda$9EDos9WlIJ5zJdEPwty4rLuXI-Q(ShareAlert.this);
                 }
             });
         }
         createSimpleBulletin.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPremiumBlockedToast$20() {
+    public static /* synthetic */ void $r8$lambda$9EDos9WlIJ5zJdEPwty4rLuXI-Q(ShareAlert shareAlert) {
+        shareAlert.getClass();
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
-                ShareAlert.lambda$showPremiumBlockedToast$19();
+                ShareAlert.$r8$lambda$zIySNlfjdaZnyQ7LG4nDjEIRPKc();
             }
         };
-        if (isKeyboardVisible()) {
-            FragmentSearchField fragmentSearchField = this.searchView;
+        if (shareAlert.isKeyboardVisible()) {
+            FragmentSearchField fragmentSearchField = shareAlert.searchView;
             if (fragmentSearchField != null) {
                 AndroidUtilities.hideKeyboard(fragmentSearchField.editText);
             }
@@ -2242,8 +2206,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showPremiumBlockedToast$19() {
+    public static /* synthetic */ void $r8$lambda$zIySNlfjdaZnyQ7LG4nDjEIRPKc() {
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         if (lastFragment != null) {
             BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
@@ -2330,7 +2293,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 atomicReference.set(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda22
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ShareAlert.this.lambda$selectDialog$21(atomicReference, r3, dialog);
+                        ShareAlert.$r8$lambda$COFwo-GZ-Z9KjzGXTzvz6Krgets(ShareAlert.this, atomicReference, r3, dialog);
                     }
                 });
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
@@ -2432,13 +2395,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$27$$ExternalSyntheticLambda0
                         @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                         public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                            ShareAlert.27.this.lambda$didReceivedNotification$0(view, iArr, dynamicAnimation, f, f2);
+                            ShareAlert.this.invalidateTopicsAnimation(view, iArr, f / 1000.0f);
                         }
                     });
                     ShareAlert.this.topicsAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ShareAlert$27$$ExternalSyntheticLambda1
                         @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                         public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
-                            ShareAlert.27.this.lambda$didReceivedNotification$1(dynamicAnimation, z2, f, f2);
+                            ShareAlert.27.$r8$lambda$XS5XOBr6YCBBLkwDHsPDCTlKMKo(ShareAlert.27.this, dynamicAnimation, z2, f, f2);
                         }
                     });
                     ShareAlert.this.topicsAnimation.start();
@@ -2450,13 +2413,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didReceivedNotification$0(View view, int[] iArr, DynamicAnimation dynamicAnimation, float f, float f2) {
-            ShareAlert.this.invalidateTopicsAnimation(view, iArr, f / 1000.0f);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didReceivedNotification$1(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        public static /* synthetic */ void $r8$lambda$XS5XOBr6YCBBLkwDHsPDCTlKMKo(27 r0, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
             ShareAlert.this.gridView.setVisibility(8);
             ShareAlert.this.searchGridView.setVisibility(8);
             ShareAlert.this.searchView.setVisibility(8);
@@ -2464,10 +2421,10 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$selectDialog$21(AtomicReference atomicReference, NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, TLRPC.Dialog dialog) {
+    public static /* synthetic */ void $r8$lambda$COFwo-GZ-Z9KjzGXTzvz6Krgets(ShareAlert shareAlert, AtomicReference atomicReference, NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, TLRPC.Dialog dialog) {
+        shareAlert.getClass();
         atomicReference.set(null);
-        notificationCenterDelegate.didReceivedNotification(NotificationCenter.topicsDidLoaded, this.currentAccount, Long.valueOf(-dialog.id));
+        notificationCenterDelegate.didReceivedNotification(NotificationCenter.topicsDidLoaded, shareAlert.currentAccount, Long.valueOf(-dialog.id));
     }
 
     private boolean isBotForumWithNotEmptyTopics(TLRPC.User user) {
@@ -2514,31 +2471,25 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         spring.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda0
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
             public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                ShareAlert.this.lambda$collapseTopics$22(view, iArr, dynamicAnimation, f, f2);
+                ShareAlert.this.invalidateTopicsAnimation(view, iArr, f / 1000.0f);
             }
         });
         this.topicsAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda1
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                ShareAlert.this.lambda$collapseTopics$23(dynamicAnimation, z, f, f2);
+                ShareAlert.$r8$lambda$4HfY0SuagTUcljb7OhWfrpRAA0c(ShareAlert.this, dynamicAnimation, z, f, f2);
             }
         });
         this.topicsAnimation.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$collapseTopics$22(View view, int[] iArr, DynamicAnimation dynamicAnimation, float f, float f2) {
-        invalidateTopicsAnimation(view, iArr, f / 1000.0f);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$collapseTopics$23(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-        this.topicsGridView.setVisibility(8);
-        this.topicsBackActionBar.setVisibility(8);
-        this.shareTopicsAdapter.topics = null;
-        this.shareTopicsAdapter.notifyDataSetChanged();
-        this.topicsAnimation = null;
-        this.searchWasVisibleBeforeTopics = false;
+    public static /* synthetic */ void $r8$lambda$4HfY0SuagTUcljb7OhWfrpRAA0c(ShareAlert shareAlert, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        shareAlert.topicsGridView.setVisibility(8);
+        shareAlert.topicsBackActionBar.setVisibility(8);
+        shareAlert.shareTopicsAdapter.topics = null;
+        shareAlert.shareTopicsAdapter.notifyDataSetChanged();
+        shareAlert.topicsAnimation = null;
+        shareAlert.searchWasVisibleBeforeTopics = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2599,7 +2550,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         return this.containerView.getMeasuredHeight() - this.containerViewTop;
     }
 
-    private boolean onSendLongClick(View view) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean onSendLongClick(View view) {
         int measuredHeight;
         ChatActivity chatActivity;
         if (this.parentActivity == null) {
@@ -2632,7 +2584,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda23
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
                 public final void onDispatchKeyEvent(KeyEvent keyEvent) {
-                    ShareAlert.this.lambda$onSendLongClick$24(keyEvent);
+                    ShareAlert.$r8$lambda$p6H-5T_-k0OHxSJVpqrjSh2ZXW4(ShareAlert.this, keyEvent);
                 }
             });
             actionBarPopupWindowLayout.setShownFromBottom(false);
@@ -2654,13 +2606,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda24
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    ShareAlert.this.lambda$onSendLongClick$25(actionBarMenuSubItem, actionBarMenuSubItem2, view2);
+                    ShareAlert.$r8$lambda$SE9rtxXfJ8_P-ziRbK7KjLWryKg(ShareAlert.this, actionBarMenuSubItem, actionBarMenuSubItem2, view2);
                 }
             });
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda25
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    ShareAlert.this.lambda$onSendLongClick$26(actionBarMenuSubItem, actionBarMenuSubItem2, view2);
+                    ShareAlert.$r8$lambda$Uncoq7-WccoWl08COl-4PU4d9VI(ShareAlert.this, actionBarMenuSubItem, actionBarMenuSubItem2, view2);
                 }
             });
             actionBarPopupWindowLayout.setupRadialSelectors(getThemedColor(Theme.key_dialogButtonSelector));
@@ -2690,7 +2642,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         actionBarPopupWindowLayout2.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda26
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
             public final void onDispatchKeyEvent(KeyEvent keyEvent) {
-                ShareAlert.this.lambda$onSendLongClick$27(keyEvent);
+                ShareAlert.$r8$lambda$FVbC3P8nOT93TNtUuci6WSt2K_0(ShareAlert.this, keyEvent);
             }
         });
         actionBarPopupWindowLayout2.setShownFromBottom(false);
@@ -2705,7 +2657,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda27
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ShareAlert.this.lambda$onSendLongClick$28(view2);
+                ShareAlert.$r8$lambda$AsyASwfrhaTV3oPW4aC7U8rvKUI(ShareAlert.this, view2);
             }
         });
         ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(getContext(), true, true, this.resourcesProvider);
@@ -2719,7 +2671,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda28
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ShareAlert.this.lambda$onSendLongClick$29(view2);
+                ShareAlert.$r8$lambda$-s8FT6P7I734RLBE1VAIu__BFzc(ShareAlert.this, view2);
             }
         });
         actionBarPopupWindowLayout2.setupRadialSelectors(getThemedColor(Theme.key_dialogButtonSelector));
@@ -2752,70 +2704,66 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$24(KeyEvent keyEvent) {
+    public static /* synthetic */ void $r8$lambda$p6H-5T_-k0OHxSJVpqrjSh2ZXW4(ShareAlert shareAlert, KeyEvent keyEvent) {
         ActionBarPopupWindow actionBarPopupWindow;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = this.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
+        shareAlert.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = shareAlert.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
+            shareAlert.sendPopupWindow.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$25(ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, View view) {
-        this.showSendersName = true;
+    public static /* synthetic */ void $r8$lambda$SE9rtxXfJ8_P-ziRbK7KjLWryKg(ShareAlert shareAlert, ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, View view) {
+        shareAlert.showSendersName = true;
         actionBarMenuSubItem.setChecked(true);
-        actionBarMenuSubItem2.setChecked(!this.showSendersName);
+        actionBarMenuSubItem2.setChecked(!shareAlert.showSendersName);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$26(ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, View view) {
-        this.showSendersName = false;
+    public static /* synthetic */ void $r8$lambda$Uncoq7-WccoWl08COl-4PU4d9VI(ShareAlert shareAlert, ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, View view) {
+        shareAlert.showSendersName = false;
         actionBarMenuSubItem.setChecked(false);
-        actionBarMenuSubItem2.setChecked(!this.showSendersName);
+        actionBarMenuSubItem2.setChecked(!shareAlert.showSendersName);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$27(KeyEvent keyEvent) {
+    public static /* synthetic */ void $r8$lambda$FVbC3P8nOT93TNtUuci6WSt2K_0(ShareAlert shareAlert, KeyEvent keyEvent) {
         ActionBarPopupWindow actionBarPopupWindow;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = this.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
+        shareAlert.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = shareAlert.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
+            shareAlert.sendPopupWindow.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$28(View view) {
-        ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
+    public static /* synthetic */ void $r8$lambda$AsyASwfrhaTV3oPW4aC7U8rvKUI(ShareAlert shareAlert, View view) {
+        ActionBarPopupWindow actionBarPopupWindow = shareAlert.sendPopupWindow;
         if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
+            shareAlert.sendPopupWindow.dismiss();
         }
-        sendInternal(false);
+        shareAlert.sendInternal(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$29(View view) {
-        ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
+    public static /* synthetic */ void $r8$lambda$-s8FT6P7I734RLBE1VAIu__BFzc(ShareAlert shareAlert, View view) {
+        ActionBarPopupWindow actionBarPopupWindow = shareAlert.sendPopupWindow;
         if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
+            shareAlert.sendPopupWindow.dismiss();
         }
-        sendInternal(true);
+        shareAlert.sendInternal(true);
     }
 
-    protected void sendInternal(final boolean z) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void sendInternal(final boolean z) {
         int i;
-        int i2;
-        int i3 = 0;
-        for (int i4 = 0; i4 < this.selectedDialogs.size(); i4++) {
-            if (AlertsCreator.checkSlowMode(getContext(), this.currentAccount, this.selectedDialogs.keyAt(i4), this.frameLayout2.getTag() != null && this.commentTextView.length() > 0)) {
+        for (int i2 = 0; i2 < this.selectedDialogs.size(); i2++) {
+            if (AlertsCreator.checkSlowMode(getContext(), this.currentAccount, this.selectedDialogs.keyAt(i2), this.frameLayout2.getTag() != null && this.commentTextView.length() > 0)) {
                 return;
             }
         }
+        int i3 = 0;
         final CharSequence[] charSequenceArr = {this.commentTextView.getText()};
         final ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
         CheckBox2 checkBox2 = this.timestampCheckbox;
-        final int i5 = (checkBox2 == null || !checkBox2.isChecked()) ? -1 : this.timestamp;
+        final int i4 = (checkBox2 == null || !checkBox2.isChecked()) ? -1 : this.timestamp;
         ArrayList arrayList = new ArrayList();
         if (this.sendingMessageObjects != null) {
-            i2 = 0;
+            i = 0;
             while (i3 < this.selectedDialogs.size()) {
                 long keyAt = this.selectedDialogs.keyAt(i3);
                 long sendPaidMessagesStars = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(keyAt);
@@ -2823,10 +2771,10 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(keyAt));
                 }
                 if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && sendPaidMessagesStars > 0) {
-                    i2++;
+                    i++;
                 }
                 if (sendPaidMessagesStars > 0) {
-                    i2++;
+                    i++;
                 }
                 if (sendPaidMessagesStars > 0 && !arrayList.contains(Long.valueOf(keyAt))) {
                     arrayList.add(Long.valueOf(keyAt));
@@ -2835,9 +2783,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
         } else {
             SwitchView switchView = this.switchView;
-            int i6 = switchView != null ? switchView.currentTab : 0;
+            int i5 = switchView != null ? switchView.currentTab : 0;
             if (this.storyItem != null) {
-                i = 0;
+                int i6 = 0;
                 for (int i7 = 0; i7 < this.selectedDialogs.size(); i7++) {
                     long keyAt2 = this.selectedDialogs.keyAt(i7);
                     long sendPaidMessagesStars2 = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(keyAt2);
@@ -2845,17 +2793,18 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         sendPaidMessagesStars2 = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(keyAt2));
                     }
                     if (this.storyItem != null && this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && charSequenceArr[0] != null && sendPaidMessagesStars2 > 0) {
-                        i++;
+                        i6++;
                     }
                     if (sendPaidMessagesStars2 > 0) {
-                        i++;
+                        i6++;
                     }
                     if (sendPaidMessagesStars2 > 0 && !arrayList.contains(Long.valueOf(keyAt2))) {
                         arrayList.add(Long.valueOf(keyAt2));
                     }
                 }
-            } else if (this.sendingText[i6] != null) {
-                i2 = 0;
+                i = i6;
+            } else if (this.sendingText[i5] != null) {
+                i = 0;
                 while (i3 < this.selectedDialogs.size()) {
                     long keyAt3 = this.selectedDialogs.keyAt(i3);
                     long sendPaidMessagesStars3 = MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(keyAt3);
@@ -2863,10 +2812,10 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         sendPaidMessagesStars3 = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(this.currentAccount).isUserContactBlocked(keyAt3));
                     }
                     if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0 && sendPaidMessagesStars3 > 0) {
-                        i2++;
+                        i++;
                     }
                     if (sendPaidMessagesStars3 > 0) {
-                        i2++;
+                        i++;
                     }
                     if (sendPaidMessagesStars3 > 0 && !arrayList.contains(Long.valueOf(keyAt3))) {
                         arrayList.add(Long.valueOf(keyAt3));
@@ -2876,207 +2825,208 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             } else {
                 i = 0;
             }
-            AlertsCreator.ensurePaidMessagesMultiConfirmation(this.currentAccount, arrayList, i, new Utilities.Callback() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda29
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    ShareAlert.this.lambda$sendInternal$30(charSequenceArr, entities, z, i5, (HashMap) obj);
-                }
-            });
         }
-        i = i2;
         AlertsCreator.ensurePaidMessagesMultiConfirmation(this.currentAccount, arrayList, i, new Utilities.Callback() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda29
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ShareAlert.this.lambda$sendInternal$30(charSequenceArr, entities, z, i5, (HashMap) obj);
+                ShareAlert.$r8$lambda$UKHS_kMY01m5e2Q2ET4xtfgWj2g(ShareAlert.this, charSequenceArr, entities, z, i4, (HashMap) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v29, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r10v30 */
-    /* JADX WARN: Type inference failed for: r10v38 */
-    /* JADX WARN: Type inference failed for: r13v2, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r13v5, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r13v6, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r14v6, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r14v7, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r14v8, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r14v9, types: [org.telegram.messenger.MessageObject] */
     /* JADX WARN: Type inference failed for: r8v0 */
-    /* JADX WARN: Type inference failed for: r8v16, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r8v19 */
-    public /* synthetic */ void lambda$sendInternal$30(CharSequence[] charSequenceArr, ArrayList arrayList, boolean z, int i, HashMap hashMap) {
+    /* JADX WARN: Type inference failed for: r8v13, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v20 */
+    public static /* synthetic */ void $r8$lambda$UKHS_kMY01m5e2Q2ET4xtfgWj2g(ShareAlert shareAlert, CharSequence[] charSequenceArr, ArrayList arrayList, boolean z, int i, HashMap hashMap) {
         boolean z2;
-        long j;
-        char c;
-        MessageObject messageObject;
         boolean z3;
         Long l;
-        long j2;
-        long j3;
-        long j4;
+        char c;
+        MessageObject messageObject;
+        int i2;
+        MessageObject messageObject2;
+        long longValue;
+        Long l2;
+        long j;
         SendMessagesHelper.SendMessageParams of;
-        long j5;
-        long j6 = 0;
-        Long l2 = 0L;
+        long j2;
+        int i3;
+        long longValue2;
+        HashMap hashMap2 = hashMap;
+        long j3 = 0;
         ?? r8 = 0;
-        if (this.sendingMessageObjects != null) {
+        if (shareAlert.sendingMessageObjects != null) {
             ArrayList arrayList2 = new ArrayList();
-            int i2 = 0;
+            int i4 = 0;
             boolean z4 = false;
-            while (i2 < this.selectedDialogs.size()) {
-                long keyAt = this.selectedDialogs.keyAt(i2);
-                boolean isMonoForum = MessagesController.getInstance(this.currentAccount).isMonoForum(keyAt);
-                Long l3 = hashMap == null ? l2 : (Long) hashMap.get(Long.valueOf(keyAt));
-                if (l3 != null && l3.longValue() > j6) {
+            while (i4 < shareAlert.selectedDialogs.size()) {
+                long keyAt = shareAlert.selectedDialogs.keyAt(i4);
+                boolean isMonoForum = MessagesController.getInstance(shareAlert.currentAccount).isMonoForum(keyAt);
+                Long l3 = hashMap2 == null ? 0L : (Long) hashMap2.get(Long.valueOf(keyAt));
+                if (l3 != null && l3.longValue() > j3) {
                     z4 = true;
                 }
-                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt));
-                if (tL_forumTopic != null && isMonoForum) {
-                    j6 = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
-                }
-                MessageObject messageObject2 = (tL_forumTopic == null || isMonoForum) ? null : new MessageObject(this.currentAccount, tL_forumTopic.topicStartMessage, false, false);
-                if (messageObject2 != null) {
-                    messageObject2.isTopicMainMessage = true;
-                }
-                if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
-                    j5 = keyAt;
+                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) shareAlert.selectedDialogTopics.get(shareAlert.selectedDialogs.get(keyAt));
+                if (tL_forumTopic == null || !isMonoForum) {
+                    j2 = j3;
                 } else {
-                    CharSequence charSequence = charSequenceArr[0];
-                    j5 = keyAt;
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(charSequence == null ? null : charSequence.toString(), keyAt, messageObject2, messageObject2, null, true, arrayList, null, null, z, 0, 0, null, false);
-                    of2.payStars = l3 == null ? 0L : l3.longValue();
-                    of2.monoForumPeer = j6;
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of2);
+                    j2 = j3;
+                    j3 = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
                 }
-                int sendMessage = SendMessagesHelper.getInstance(this.currentAccount).sendMessage(this.sendingMessageObjects, j5, !this.showSendersName, false, z, 0, 0, messageObject2, i, l3 == null ? 0L : l3.longValue(), j6, null);
+                MessageObject messageObject3 = (tL_forumTopic == null || isMonoForum) ? null : new MessageObject(shareAlert.currentAccount, tL_forumTopic.topicStartMessage, r8, r8);
+                if (messageObject3 != null) {
+                    messageObject3.isTopicMainMessage = true;
+                }
+                if (shareAlert.frameLayout2.getTag() == null || shareAlert.commentTextView.length() <= 0) {
+                    i3 = i4;
+                } else {
+                    CharSequence charSequence = charSequenceArr[r8];
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(charSequence == null ? null : charSequence.toString(), keyAt, messageObject3, messageObject3, null, true, arrayList, null, null, z, 0, 0, null, false);
+                    if (l3 == null) {
+                        i3 = i4;
+                        longValue2 = j2;
+                    } else {
+                        i3 = i4;
+                        longValue2 = l3.longValue();
+                    }
+                    of2.payStars = longValue2;
+                    of2.monoForumPeer = j3;
+                    SendMessagesHelper.getInstance(shareAlert.currentAccount).sendMessage(of2);
+                }
+                int sendMessage = SendMessagesHelper.getInstance(shareAlert.currentAccount).sendMessage(shareAlert.sendingMessageObjects, keyAt, !shareAlert.showSendersName, false, z, 0, 0, messageObject3, i, l3 == null ? j2 : l3.longValue(), j3, null);
                 if (sendMessage != 0) {
-                    arrayList2.add(Long.valueOf(j5));
+                    arrayList2.add(Long.valueOf(keyAt));
                 }
-                if (this.selectedDialogs.size() == 1) {
-                    AlertsCreator.showSendMediaAlert(sendMessage, this.parentFragment, null);
+                if (shareAlert.selectedDialogs.size() == 1) {
+                    AlertsCreator.showSendMediaAlert(sendMessage, shareAlert.parentFragment, null);
                     if (sendMessage != 0) {
                         break;
                     }
                 }
-                i2++;
-                j6 = 0;
+                i4 = i3 + 1;
+                j3 = j2;
+                r8 = 0;
             }
-            Iterator it = arrayList2.iterator();
-            while (it.hasNext()) {
-                long longValue = ((Long) it.next()).longValue();
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.selectedDialogs.get(longValue);
-                this.selectedDialogs.remove(longValue);
+            int size = arrayList2.size();
+            int i5 = 0;
+            while (i5 < size) {
+                Object obj = arrayList2.get(i5);
+                i5++;
+                long longValue3 = ((Long) obj).longValue();
+                TLRPC.Dialog dialog = (TLRPC.Dialog) shareAlert.selectedDialogs.get(longValue3);
+                shareAlert.selectedDialogs.remove(longValue3);
                 if (dialog != null) {
-                    this.selectedDialogTopics.remove(dialog);
+                    shareAlert.selectedDialogTopics.remove(dialog);
                 }
             }
-            if (!this.selectedDialogs.isEmpty()) {
-                onSend(this.selectedDialogs, this.sendingMessageObjects.size(), this.selectedDialogs.size() == 1 ? (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.valueAt(0)) : null, true ^ z4);
+            if (!shareAlert.selectedDialogs.isEmpty()) {
+                shareAlert.onSend(shareAlert.selectedDialogs, shareAlert.sendingMessageObjects.size(), shareAlert.selectedDialogs.size() == 1 ? (TLRPC.TL_forumTopic) shareAlert.selectedDialogTopics.get(shareAlert.selectedDialogs.valueAt(0)) : null, !z4);
             }
         } else {
-            SwitchView switchView = this.switchView;
-            int i3 = switchView != null ? switchView.currentTab : 0;
-            if (this.storyItem != null) {
-                int i4 = 0;
-                z2 = false;
-                while (i4 < this.selectedDialogs.size()) {
-                    long keyAt2 = this.selectedDialogs.keyAt(i4);
-                    boolean isMonoForum2 = MessagesController.getInstance(this.currentAccount).isMonoForum(keyAt2);
-                    Long l4 = hashMap == null ? l2 : (Long) hashMap.get(Long.valueOf(keyAt2));
-                    if (l4 != null && l4.longValue() > 0) {
-                        z2 = true;
+            SwitchView switchView = shareAlert.switchView;
+            int i6 = switchView != null ? switchView.currentTab : 0;
+            if (shareAlert.storyItem != null) {
+                z3 = false;
+                for (int i7 = 0; i7 < shareAlert.selectedDialogs.size(); i7++) {
+                    long keyAt2 = shareAlert.selectedDialogs.keyAt(i7);
+                    boolean isMonoForum2 = MessagesController.getInstance(shareAlert.currentAccount).isMonoForum(keyAt2);
+                    if (hashMap2 == null) {
+                        l2 = 0L;
+                    } else {
+                        l2 = (Long) hashMap2.get(Long.valueOf(keyAt2));
                     }
-                    TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt2));
+                    if (l2 != null && l2.longValue() > 0) {
+                        z3 = true;
+                    }
+                    TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) shareAlert.selectedDialogTopics.get(shareAlert.selectedDialogs.get(keyAt2));
                     long peerDialogId = (tL_forumTopic2 == null || !isMonoForum2) ? 0L : DialogObject.getPeerDialogId(tL_forumTopic2.from_id);
-                    Object messageObject3 = (tL_forumTopic2 == null || isMonoForum2) ? r3 : new MessageObject(this.currentAccount, tL_forumTopic2.topicStartMessage, r8, r8);
-                    if (this.storyItem == null) {
-                        if (this.frameLayout2.getTag() != null && this.commentTextView.length() > 0) {
-                            CharSequence charSequence2 = charSequenceArr[r8];
-                            ?? charSequence3 = charSequence2 == null ? r3 : charSequence2.toString();
-                            j3 = peerDialogId;
-                            of = SendMessagesHelper.SendMessageParams.of(charSequence3, keyAt2, messageObject3, messageObject3, null, true, arrayList, null, null, z, 0, 0, null, false);
+                    MessageObject messageObject4 = (tL_forumTopic2 == null || isMonoForum2) ? null : new MessageObject(shareAlert.currentAccount, tL_forumTopic2.topicStartMessage, false, false);
+                    if (shareAlert.storyItem == null) {
+                        if (shareAlert.frameLayout2.getTag() != null && shareAlert.commentTextView.length() > 0) {
+                            CharSequence charSequence2 = charSequenceArr[0];
+                            of = SendMessagesHelper.SendMessageParams.of(charSequence2 == null ? null : charSequence2.toString(), keyAt2, messageObject4, messageObject4, null, true, arrayList, null, null, z, 0, 0, null, false);
+                            j = peerDialogId;
                         } else {
-                            j3 = peerDialogId;
-                            of = SendMessagesHelper.SendMessageParams.of(this.sendingText[i3], keyAt2, messageObject3, messageObject3, null, true, null, null, null, z, 0, 0, null, false);
+                            j = peerDialogId;
+                            of = SendMessagesHelper.SendMessageParams.of(shareAlert.sendingText[i6], keyAt2, messageObject4, messageObject4, null, true, null, null, null, z, 0, 0, null, false);
                         }
                     } else {
-                        j3 = peerDialogId;
-                        if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0 || charSequenceArr[r8] == null) {
-                            j4 = keyAt2;
-                        } else {
-                            j4 = keyAt2;
-                            SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequenceArr[r8].toString(), keyAt2, null, messageObject3, null, true, null, null, null, z, 0, 0, null, false));
+                        j = peerDialogId;
+                        if (shareAlert.frameLayout2.getTag() != null && shareAlert.commentTextView.length() > 0 && charSequenceArr[0] != null) {
+                            MessageObject messageObject5 = messageObject4;
+                            messageObject4 = messageObject5;
+                            SendMessagesHelper.getInstance(shareAlert.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequenceArr[0].toString(), keyAt2, null, messageObject5, null, true, null, null, null, z, 0, 0, null, false));
                         }
-                        of = SendMessagesHelper.SendMessageParams.of(null, j4, messageObject3, messageObject3, null, true, null, null, null, z, 0, 0, null, false);
-                        of.sendingStory = this.storyItem;
+                        of = SendMessagesHelper.SendMessageParams.of(null, keyAt2, messageObject4, messageObject4, null, true, null, null, null, z, 0, 0, null, false);
+                        of.sendingStory = shareAlert.storyItem;
                     }
-                    of.payStars = l4 == null ? 0L : l4.longValue();
-                    of.monoForumPeer = j3;
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of);
-                    i4++;
-                    r3 = null;
-                    r8 = 0;
+                    of.payStars = l2 == null ? 0L : l2.longValue();
+                    of.monoForumPeer = j;
+                    SendMessagesHelper.getInstance(shareAlert.currentAccount).sendMessage(of);
                 }
-            } else if (this.sendingText[i3] != null) {
-                int i5 = 0;
-                z2 = false;
-                while (i5 < this.selectedDialogs.size()) {
-                    long keyAt3 = this.selectedDialogs.keyAt(i5);
-                    boolean isMonoForum3 = MessagesController.getInstance(this.currentAccount).isMonoForum(keyAt3);
-                    Long l5 = hashMap == null ? l2 : (Long) hashMap.get(Long.valueOf(keyAt3));
-                    if (l5 != null) {
-                        j = 0;
-                        if (l5.longValue() > 0) {
-                            z2 = true;
-                        }
+            } else if (shareAlert.sendingText[i6] != null) {
+                int i8 = 0;
+                z3 = false;
+                while (i8 < shareAlert.selectedDialogs.size()) {
+                    long keyAt3 = shareAlert.selectedDialogs.keyAt(i8);
+                    boolean isMonoForum3 = MessagesController.getInstance(shareAlert.currentAccount).isMonoForum(keyAt3);
+                    if (hashMap2 == null) {
+                        l = 0L;
                     } else {
-                        j = 0;
+                        l = (Long) hashMap2.get(Long.valueOf(keyAt3));
                     }
-                    TLRPC.TL_forumTopic tL_forumTopic3 = (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(this.selectedDialogs.get(keyAt3));
-                    long peerDialogId2 = (tL_forumTopic3 == null || !isMonoForum3) ? j : DialogObject.getPeerDialogId(tL_forumTopic3.from_id);
+                    if (l != null && l.longValue() > 0) {
+                        z3 = true;
+                    }
+                    TLRPC.TL_forumTopic tL_forumTopic3 = (TLRPC.TL_forumTopic) shareAlert.selectedDialogTopics.get(shareAlert.selectedDialogs.get(keyAt3));
+                    long peerDialogId2 = (tL_forumTopic3 == null || !isMonoForum3) ? 0L : DialogObject.getPeerDialogId(tL_forumTopic3.from_id);
                     if (tL_forumTopic3 == null || isMonoForum3) {
                         c = 0;
                         messageObject = null;
                     } else {
                         c = 0;
-                        messageObject = new MessageObject(this.currentAccount, tL_forumTopic3.topicStartMessage, false, false);
+                        messageObject = new MessageObject(shareAlert.currentAccount, tL_forumTopic3.topicStartMessage, false, false);
                     }
-                    if (this.frameLayout2.getTag() == null || this.commentTextView.length() <= 0) {
-                        z3 = z2;
-                        l = l2;
-                        j2 = peerDialogId2;
+                    if (shareAlert.frameLayout2.getTag() == null || shareAlert.commentTextView.length() <= 0) {
+                        i2 = i6;
+                        messageObject2 = messageObject;
                     } else {
-                        CharSequence charSequence4 = charSequenceArr[c];
-                        z3 = z2;
-                        l = l2;
-                        j2 = peerDialogId2;
-                        SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(charSequence4 == null ? null : charSequence4.toString(), keyAt3, messageObject, messageObject, null, true, arrayList, null, null, z, 0, 0, null, false);
-                        of3.payStars = l5 == null ? j : l5.longValue();
-                        of3.monoForumPeer = j2;
-                        SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of3);
+                        CharSequence charSequence3 = charSequenceArr[c];
+                        SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(charSequence3 == null ? null : charSequence3.toString(), keyAt3, messageObject, messageObject, null, true, arrayList, null, null, z, 0, 0, null, false);
+                        messageObject2 = messageObject;
+                        if (l == null) {
+                            i2 = i6;
+                            longValue = 0;
+                        } else {
+                            i2 = i6;
+                            longValue = l.longValue();
+                        }
+                        of3.payStars = longValue;
+                        of3.monoForumPeer = peerDialogId2;
+                        SendMessagesHelper.getInstance(shareAlert.currentAccount).sendMessage(of3);
                     }
-                    SendMessagesHelper.SendMessageParams of4 = SendMessagesHelper.SendMessageParams.of(this.sendingText[i3], keyAt3, messageObject, messageObject, null, true, null, null, null, z, 0, 0, null, false);
-                    of4.payStars = l5 == null ? j : l5.longValue();
-                    of4.monoForumPeer = j2;
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of4);
-                    i5++;
-                    z2 = z3;
-                    l2 = l;
+                    SendMessagesHelper.SendMessageParams of4 = SendMessagesHelper.SendMessageParams.of(shareAlert.sendingText[i2], keyAt3, messageObject2, messageObject2, null, true, null, null, null, z, 0, 0, null, false);
+                    of4.payStars = l == null ? 0L : l.longValue();
+                    of4.monoForumPeer = peerDialogId2;
+                    SendMessagesHelper.getInstance(shareAlert.currentAccount).sendMessage(of4);
+                    i8++;
+                    i6 = i2;
+                    hashMap2 = hashMap;
                 }
             } else {
                 z2 = false;
+                LongSparseArray longSparseArray = shareAlert.selectedDialogs;
+                shareAlert.onSend(longSparseArray, 1, (TLRPC.TL_forumTopic) shareAlert.selectedDialogTopics.get(longSparseArray.valueAt(0)), !z2);
             }
-            LongSparseArray longSparseArray = this.selectedDialogs;
-            onSend(longSparseArray, 1, (TLRPC.TL_forumTopic) this.selectedDialogTopics.get(longSparseArray.valueAt(0)), !z2);
+            z2 = z3;
+            LongSparseArray longSparseArray2 = shareAlert.selectedDialogs;
+            shareAlert.onSend(longSparseArray2, 1, (TLRPC.TL_forumTopic) shareAlert.selectedDialogTopics.get(longSparseArray2.valueAt(0)), !z2);
         }
-        ShareAlertDelegate shareAlertDelegate = this.delegate;
+        ShareAlertDelegate shareAlertDelegate = shareAlert.delegate;
         if (shareAlertDelegate != null) {
             shareAlertDelegate.didShare();
         }
-        lambda$new$0();
+        shareAlert.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3115,8 +3065,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void onBackPressed() {
         if (this.selectedTopicDialog != null) {
             collapseTopics();
             return;
@@ -3125,7 +3074,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         if (editTextEmoji != null && editTextEmoji.isPopupShowing()) {
             this.commentTextView.hidePopup(true);
         } else {
-            super.lambda$openCrafting$8();
+            super.onBackPressed();
         }
     }
 
@@ -3275,20 +3224,15 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ((LaunchActivity) this.parentActivity).showBulletin(new Function() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda21
                     @Override // androidx.arch.core.util.Function
                     public final Object apply(Object obj) {
-                        Bulletin lambda$copyLink$31;
-                        lambda$copyLink$31 = ShareAlert.lambda$copyLink$31(z, (BulletinFactory) obj);
-                        return lambda$copyLink$31;
+                        Bulletin createCopyLinkBulletin;
+                        createCopyLinkBulletin = ((BulletinFactory) obj).createCopyLinkBulletin(z);
+                        return createCopyLinkBulletin;
                     }
                 });
             }
         } catch (Exception e) {
             FileLog.e(e);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Bulletin lambda$copyLink$31(boolean z, BulletinFactory bulletinFactory) {
-        return bulletinFactory.createCopyLinkBulletin(z);
     }
 
     private boolean showCommentTextView(final boolean z) {
@@ -3408,18 +3352,18 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         EditTextEmoji editTextEmoji = this.commentTextView;
         if (editTextEmoji != null) {
             AndroidUtilities.hideKeyboard(editTextEmoji.getEditText());
         }
         this.fullyShown = false;
-        super.lambda$new$0();
+        super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);
     }
 
-    private class ShareDialogsAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ShareDialogsAdapter extends RecyclerListView.SelectionAdapter {
         private Context context;
         private ArrayList dialogs = new ArrayList();
         private LongSparseArray dialogsMap = new LongSparseArray();
@@ -3556,7 +3500,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         }
     }
 
-    private class ShareTopicsAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ShareTopicsAdapter extends RecyclerListView.SelectionAdapter {
         private Context context;
         private boolean isBotForum;
         private boolean isBotForumWithManageTopics;
@@ -3700,71 +3645,53 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             MessagesStorage.getInstance(((BottomSheet) ShareAlert.this).currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$ShareSearchAdapter$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.ShareSearchAdapter.this.lambda$searchDialogsInternal$1(str, i);
+                    ShareAlert.ShareSearchAdapter.$r8$lambda$wFSR2UrlZTa-dZk4YqMnzcdAzU4(ShareAlert.ShareSearchAdapter.this, str, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:130:0x02ad, code lost:
-        
-            if (r2.post_messages != false) goto L121;
-         */
-        /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:190:0x0416 A[Catch: Exception -> 0x0020, LOOP:7: B:174:0x0356->B:190:0x0416, LOOP_END, TryCatch #0 {Exception -> 0x0020, blocks: (B:3:0x0004, B:5:0x0013, B:8:0x0023, B:10:0x0031, B:14:0x003d, B:16:0x0044, B:17:0x0046, B:18:0x006b, B:20:0x0071, B:35:0x0089, B:38:0x0093, B:23:0x009b, B:26:0x00a1, B:29:0x00ac, B:42:0x00b4, B:45:0x00c5, B:46:0x00ea, B:48:0x00f0, B:51:0x0104, B:53:0x010b, B:56:0x0116, B:58:0x0120, B:61:0x0139, B:63:0x013f, B:67:0x0157, B:73:0x0167, B:75:0x016e, B:77:0x0185, B:79:0x0194, B:80:0x01c8, B:83:0x019f, B:71:0x01dd, B:95:0x01ef, B:96:0x01fc, B:98:0x0202, B:99:0x0228, B:101:0x022e, B:106:0x0245, B:108:0x024d, B:111:0x0264, B:113:0x026a, B:140:0x0281, B:117:0x0284, B:119:0x028a, B:121:0x0297, B:123:0x029d, B:125:0x02a3, B:127:0x02a7, B:129:0x02ab, B:131:0x02af, B:134:0x02b7, B:147:0x02da, B:148:0x02e2, B:149:0x02e8, B:151:0x02ee, B:153:0x02f8, B:155:0x02fc, B:157:0x02ff, B:161:0x0302, B:162:0x0319, B:164:0x031f, B:167:0x032b, B:170:0x0344, B:172:0x034c, B:175:0x0358, B:177:0x0360, B:180:0x0377, B:182:0x037d, B:186:0x0395, B:192:0x03a3, B:199:0x03aa, B:201:0x03be, B:202:0x03c5, B:204:0x03d3, B:205:0x0408, B:207:0x03df, B:190:0x0416, B:217:0x0424), top: B:2:0x0004 }] */
-        /* JADX WARN: Removed duplicated region for block: B:191:0x03a3 A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:71:0x01dd A[Catch: Exception -> 0x0020, LOOP:2: B:55:0x0114->B:71:0x01dd, LOOP_END, TryCatch #0 {Exception -> 0x0020, blocks: (B:3:0x0004, B:5:0x0013, B:8:0x0023, B:10:0x0031, B:14:0x003d, B:16:0x0044, B:17:0x0046, B:18:0x006b, B:20:0x0071, B:35:0x0089, B:38:0x0093, B:23:0x009b, B:26:0x00a1, B:29:0x00ac, B:42:0x00b4, B:45:0x00c5, B:46:0x00ea, B:48:0x00f0, B:51:0x0104, B:53:0x010b, B:56:0x0116, B:58:0x0120, B:61:0x0139, B:63:0x013f, B:67:0x0157, B:73:0x0167, B:75:0x016e, B:77:0x0185, B:79:0x0194, B:80:0x01c8, B:83:0x019f, B:71:0x01dd, B:95:0x01ef, B:96:0x01fc, B:98:0x0202, B:99:0x0228, B:101:0x022e, B:106:0x0245, B:108:0x024d, B:111:0x0264, B:113:0x026a, B:140:0x0281, B:117:0x0284, B:119:0x028a, B:121:0x0297, B:123:0x029d, B:125:0x02a3, B:127:0x02a7, B:129:0x02ab, B:131:0x02af, B:134:0x02b7, B:147:0x02da, B:148:0x02e2, B:149:0x02e8, B:151:0x02ee, B:153:0x02f8, B:155:0x02fc, B:157:0x02ff, B:161:0x0302, B:162:0x0319, B:164:0x031f, B:167:0x032b, B:170:0x0344, B:172:0x034c, B:175:0x0358, B:177:0x0360, B:180:0x0377, B:182:0x037d, B:186:0x0395, B:192:0x03a3, B:199:0x03aa, B:201:0x03be, B:202:0x03c5, B:204:0x03d3, B:205:0x0408, B:207:0x03df, B:190:0x0416, B:217:0x0424), top: B:2:0x0004 }] */
-        /* JADX WARN: Removed duplicated region for block: B:72:0x0167 A[SYNTHETIC] */
-        /* JADX WARN: Type inference failed for: r12v10 */
-        /* JADX WARN: Type inference failed for: r12v12 */
-        /* JADX WARN: Type inference failed for: r12v20 */
-        /* JADX WARN: Type inference failed for: r12v21 */
-        /* JADX WARN: Type inference failed for: r12v26 */
-        /* JADX WARN: Type inference failed for: r12v28 */
-        /* JADX WARN: Type inference failed for: r12v4 */
-        /* JADX WARN: Type inference failed for: r12v5 */
+        /* JADX WARN: Removed duplicated region for block: B:197:0x0400 A[Catch: Exception -> 0x041d, LOOP:7: B:181:0x034d->B:197:0x0400, LOOP_END, TryCatch #0 {Exception -> 0x041d, blocks: (B:3:0x0007, B:5:0x0016, B:8:0x0023, B:10:0x0031, B:14:0x003d, B:16:0x0044, B:17:0x0046, B:18:0x006b, B:20:0x0071, B:35:0x0089, B:38:0x0093, B:23:0x009b, B:26:0x00a1, B:29:0x00ac, B:42:0x00b4, B:45:0x00c7, B:46:0x00ec, B:48:0x00f2, B:51:0x0106, B:53:0x010d, B:56:0x0118, B:58:0x0122, B:61:0x013b, B:63:0x0141, B:67:0x0159, B:73:0x0166, B:75:0x016d, B:77:0x0185, B:79:0x0194, B:80:0x01c8, B:83:0x019f, B:71:0x01dd, B:94:0x01ed, B:95:0x01fa, B:97:0x0200, B:98:0x0226, B:100:0x022c, B:105:0x0243, B:107:0x024b, B:110:0x0262, B:112:0x0268, B:147:0x027f, B:116:0x0284, B:119:0x028a, B:122:0x0297, B:125:0x029d, B:127:0x02a3, B:129:0x02a7, B:131:0x02ab, B:137:0x02af, B:134:0x02b3, B:154:0x02d4, B:155:0x02d7, B:156:0x02dd, B:158:0x02e3, B:160:0x02ed, B:162:0x02f1, B:164:0x02f4, B:168:0x02f9, B:169:0x0310, B:171:0x0316, B:174:0x0324, B:177:0x0338, B:179:0x0343, B:182:0x034f, B:184:0x0357, B:187:0x036e, B:189:0x0374, B:193:0x038c, B:199:0x0397, B:201:0x039e, B:203:0x03b2, B:204:0x03b9, B:206:0x03c4, B:207:0x03f9, B:208:0x03d0, B:197:0x0400, B:220:0x040c), top: B:2:0x0007 }] */
+        /* JADX WARN: Removed duplicated region for block: B:198:0x0397 A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:71:0x01dd A[Catch: Exception -> 0x041d, LOOP:2: B:55:0x0116->B:71:0x01dd, LOOP_END, TryCatch #0 {Exception -> 0x041d, blocks: (B:3:0x0007, B:5:0x0016, B:8:0x0023, B:10:0x0031, B:14:0x003d, B:16:0x0044, B:17:0x0046, B:18:0x006b, B:20:0x0071, B:35:0x0089, B:38:0x0093, B:23:0x009b, B:26:0x00a1, B:29:0x00ac, B:42:0x00b4, B:45:0x00c7, B:46:0x00ec, B:48:0x00f2, B:51:0x0106, B:53:0x010d, B:56:0x0118, B:58:0x0122, B:61:0x013b, B:63:0x0141, B:67:0x0159, B:73:0x0166, B:75:0x016d, B:77:0x0185, B:79:0x0194, B:80:0x01c8, B:83:0x019f, B:71:0x01dd, B:94:0x01ed, B:95:0x01fa, B:97:0x0200, B:98:0x0226, B:100:0x022c, B:105:0x0243, B:107:0x024b, B:110:0x0262, B:112:0x0268, B:147:0x027f, B:116:0x0284, B:119:0x028a, B:122:0x0297, B:125:0x029d, B:127:0x02a3, B:129:0x02a7, B:131:0x02ab, B:137:0x02af, B:134:0x02b3, B:154:0x02d4, B:155:0x02d7, B:156:0x02dd, B:158:0x02e3, B:160:0x02ed, B:162:0x02f1, B:164:0x02f4, B:168:0x02f9, B:169:0x0310, B:171:0x0316, B:174:0x0324, B:177:0x0338, B:179:0x0343, B:182:0x034f, B:184:0x0357, B:187:0x036e, B:189:0x0374, B:193:0x038c, B:199:0x0397, B:201:0x039e, B:203:0x03b2, B:204:0x03b9, B:206:0x03c4, B:207:0x03f9, B:208:0x03d0, B:197:0x0400, B:220:0x040c), top: B:2:0x0007 }] */
+        /* JADX WARN: Removed duplicated region for block: B:72:0x0166 A[SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public /* synthetic */ void lambda$searchDialogsInternal$1(String str, int i) {
-            LongSparseArray longSparseArray;
+        public static /* synthetic */ void $r8$lambda$wFSR2UrlZTa-dZk4YqMnzcdAzU4(ShareSearchAdapter shareSearchAdapter, String str, int i) {
             String str2;
             int i2;
-            LongSparseArray longSparseArray2;
+            TLRPC.TL_chatAdminRights tL_chatAdminRights;
+            int i3;
             String str3;
-            ?? r12;
-            LongSparseArray longSparseArray3;
-            LongSparseArray longSparseArray4;
-            String str4;
-            ?? r122;
-            boolean z;
-            int i3 = 0;
+            char c;
+            int i4 = 0;
+            shareSearchAdapter.getClass();
             try {
                 String lowerCase = str.trim().toLowerCase();
                 if (lowerCase.length() == 0) {
-                    this.lastSearchId = -1;
-                    updateSearchResults(new ArrayList(), this.lastSearchId);
+                    shareSearchAdapter.lastSearchId = -1;
+                    shareSearchAdapter.updateSearchResults(new ArrayList(), shareSearchAdapter.lastSearchId);
                     return;
                 }
                 String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
                 if (lowerCase.equals(translitString) || translitString.length() == 0) {
                     translitString = null;
                 }
-                int i4 = (translitString != null ? 1 : 0) + 1;
-                String[] strArr = new String[i4];
+                int i5 = (translitString != null ? 1 : 0) + 1;
+                String[] strArr = new String[i5];
                 strArr[0] = lowerCase;
                 if (translitString != null) {
                     strArr[1] = translitString;
                 }
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
-                LongSparseArray longSparseArray5 = new LongSparseArray();
+                LongSparseArray longSparseArray = new LongSparseArray();
                 SQLiteCursor queryFinalized = MessagesStorage.getInstance(((BottomSheet) ShareAlert.this).currentAccount).getDatabase().queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
                 while (queryFinalized.next()) {
                     long longValue = queryFinalized.longValue(0);
                     DialogSearchResult dialogSearchResult = new DialogSearchResult();
                     dialogSearchResult.date = queryFinalized.intValue(1);
-                    longSparseArray5.put(longValue, dialogSearchResult);
+                    longSparseArray.put(longValue, dialogSearchResult);
                     if (DialogObject.isUserDialog(longValue)) {
                         if (!arrayList.contains(Long.valueOf(longValue))) {
                             arrayList.add(Long.valueOf(longValue));
@@ -3777,93 +3704,88 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     }
                 }
                 queryFinalized.dispose();
-                String str5 = ";;;";
-                String str6 = " ";
+                String str4 = ";;;";
                 if (arrayList.isEmpty()) {
-                    longSparseArray = longSparseArray5;
                     str2 = ";;;";
                     i2 = 0;
                 } else {
                     SQLiteCursor queryFinalized2 = MessagesStorage.getInstance(((BottomSheet) ShareAlert.this).currentAccount).getDatabase().queryFinalized(String.format(Locale.US, "SELECT data, status, name FROM users WHERE uid IN(%s)", TextUtils.join(",", arrayList)), new Object[0]);
-                    i2 = 0;
+                    int i6 = 0;
                     while (queryFinalized2.next()) {
                         String stringValue = queryFinalized2.stringValue(2);
                         String translitString2 = LocaleController.getInstance().getTranslitString(stringValue);
                         if (stringValue.equals(translitString2)) {
                             translitString2 = null;
                         }
-                        int lastIndexOf = stringValue.lastIndexOf(str5);
+                        int lastIndexOf = stringValue.lastIndexOf(str4);
                         String substring = lastIndexOf != -1 ? stringValue.substring(lastIndexOf + 3) : null;
-                        boolean z2 = false;
+                        char c2 = 0;
                         while (true) {
-                            if (i3 >= i4) {
-                                longSparseArray4 = longSparseArray5;
-                                str4 = str5;
+                            if (i4 >= i5) {
+                                i3 = i6;
                                 break;
                             }
-                            boolean z3 = z2;
-                            String str7 = strArr[i3];
-                            if (stringValue.startsWith(str7)) {
-                                str4 = str5;
+                            int i7 = i4;
+                            String str5 = strArr[i7];
+                            if (stringValue.startsWith(str5)) {
+                                i3 = i6;
                             } else {
-                                str4 = str5;
-                                if (!stringValue.contains(" " + str7)) {
+                                i3 = i6;
+                                if (!stringValue.contains(" " + str5)) {
                                     if (translitString2 != null) {
-                                        if (!translitString2.startsWith(str7)) {
-                                            if (translitString2.contains(" " + str7)) {
+                                        if (!translitString2.startsWith(str5)) {
+                                            if (translitString2.contains(" " + str5)) {
                                             }
                                         }
                                     }
-                                    r122 = (substring == null || !substring.startsWith(str7)) ? z3 : 2;
-                                    if (r122 == 0) {
+                                    if (substring != null && substring.startsWith(str5)) {
+                                        c2 = 2;
+                                    }
+                                    if (c2 == 0) {
                                         NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(0);
                                         if (byteBufferValue != null) {
                                             TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                                             byteBufferValue.reuse();
-                                            DialogSearchResult dialogSearchResult2 = (DialogSearchResult) longSparseArray5.get(TLdeserialize.id);
+                                            String str6 = str4;
+                                            DialogSearchResult dialogSearchResult2 = (DialogSearchResult) longSparseArray.get(TLdeserialize.id);
                                             TLRPC.UserStatus userStatus = TLdeserialize.status;
                                             if (userStatus != null) {
-                                                longSparseArray4 = longSparseArray5;
-                                                z = true;
+                                                str3 = str6;
+                                                c = 1;
                                                 userStatus.expires = queryFinalized2.intValue(1);
                                             } else {
-                                                longSparseArray4 = longSparseArray5;
-                                                z = true;
+                                                str3 = str6;
+                                                c = 1;
                                             }
-                                            if (r122 == z) {
-                                                dialogSearchResult2.name = AndroidUtilities.generateSearchName(TLdeserialize.first_name, TLdeserialize.last_name, str7);
+                                            if (c2 == c) {
+                                                dialogSearchResult2.name = AndroidUtilities.generateSearchName(TLdeserialize.first_name, TLdeserialize.last_name, str5);
                                             } else {
-                                                dialogSearchResult2.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize), null, "@" + str7);
+                                                dialogSearchResult2.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize), null, "@" + str5);
                                             }
                                             dialogSearchResult2.object = TLdeserialize;
                                             dialogSearchResult2.dialog.id = TLdeserialize.id;
-                                            i2++;
-                                        } else {
-                                            longSparseArray4 = longSparseArray5;
+                                            i6 = i3 + 1;
                                         }
                                     } else {
-                                        i3++;
-                                        z2 = r122;
-                                        substring = substring;
-                                        str5 = str4;
+                                        i4 = i7 + 1;
+                                        i6 = i3;
                                     }
                                 }
                             }
-                            r122 = 1;
-                            if (r122 == 0) {
+                            c2 = 1;
+                            if (c2 == 0) {
                             }
                         }
-                        str5 = str4;
-                        longSparseArray5 = longSparseArray4;
-                        i3 = 0;
+                        str3 = str4;
+                        i6 = i3;
+                        str4 = str3;
+                        i4 = 0;
                     }
-                    longSparseArray = longSparseArray5;
-                    str2 = str5;
+                    str2 = str4;
                     queryFinalized2.dispose();
+                    i2 = i6;
                 }
-                if (arrayList2.isEmpty()) {
-                    longSparseArray2 = longSparseArray;
-                } else {
+                if (!arrayList2.isEmpty()) {
                     SQLiteCursor queryFinalized3 = MessagesStorage.getInstance(((BottomSheet) ShareAlert.this).currentAccount).getDatabase().queryFinalized(String.format(Locale.US, "SELECT data, name FROM chats WHERE uid IN(%s)", TextUtils.join(",", arrayList2)), new Object[0]);
                     while (queryFinalized3.next()) {
                         String stringValue2 = queryFinalized3.stringValue(1);
@@ -3871,13 +3793,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         if (stringValue2.equals(translitString3)) {
                             translitString3 = null;
                         }
-                        for (int i5 = 0; i5 < i4; i5++) {
-                            String str8 = strArr[i5];
-                            if (!stringValue2.startsWith(str8)) {
-                                if (!stringValue2.contains(" " + str8)) {
+                        for (int i8 = 0; i8 < i5; i8++) {
+                            String str7 = strArr[i8];
+                            if (!stringValue2.startsWith(str7)) {
+                                if (!stringValue2.contains(" " + str7)) {
                                     if (translitString3 != null) {
-                                        if (!translitString3.startsWith(str8)) {
-                                            if (translitString3.contains(" " + str8)) {
+                                        if (!translitString3.startsWith(str7)) {
+                                            if (translitString3.contains(" " + str7)) {
                                             }
                                         }
                                     }
@@ -3887,73 +3809,55 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                             if (byteBufferValue2 != null) {
                                 TLRPC.Chat TLdeserialize2 = TLRPC.Chat.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
                                 byteBufferValue2.reuse();
-                                if (TLdeserialize2 != null) {
-                                    if (!ChatObject.isNotInChat(TLdeserialize2)) {
-                                        if (ChatObject.isChannel(TLdeserialize2)) {
-                                            if (!TLdeserialize2.creator) {
-                                                TLRPC.TL_chatAdminRights tL_chatAdminRights = TLdeserialize2.admin_rights;
-                                                if (tL_chatAdminRights != null) {
-                                                }
-                                                if (TLdeserialize2.megagroup) {
-                                                }
-                                            }
-                                        }
-                                        longSparseArray3 = longSparseArray;
-                                        DialogSearchResult dialogSearchResult3 = (DialogSearchResult) longSparseArray3.get(-TLdeserialize2.id);
-                                        dialogSearchResult3.name = AndroidUtilities.generateSearchName(TLdeserialize2.title, null, str8);
-                                        dialogSearchResult3.object = TLdeserialize2;
-                                        dialogSearchResult3.dialog.id = -TLdeserialize2.id;
-                                        i2++;
-                                        longSparseArray = longSparseArray3;
-                                    }
+                                if (TLdeserialize2 != null && !ChatObject.isNotInChat(TLdeserialize2) && (!ChatObject.isChannel(TLdeserialize2) || TLdeserialize2.creator || (((tL_chatAdminRights = TLdeserialize2.admin_rights) != null && tL_chatAdminRights.post_messages) || TLdeserialize2.megagroup))) {
+                                    DialogSearchResult dialogSearchResult3 = (DialogSearchResult) longSparseArray.get(-TLdeserialize2.id);
+                                    dialogSearchResult3.name = AndroidUtilities.generateSearchName(TLdeserialize2.title, null, str7);
+                                    dialogSearchResult3.object = TLdeserialize2;
+                                    dialogSearchResult3.dialog.id = -TLdeserialize2.id;
+                                    i2++;
                                 }
                             }
-                            longSparseArray3 = longSparseArray;
-                            longSparseArray = longSparseArray3;
                         }
-                        longSparseArray3 = longSparseArray;
-                        longSparseArray = longSparseArray3;
                     }
-                    longSparseArray2 = longSparseArray;
                     queryFinalized3.dispose();
                 }
                 ArrayList arrayList3 = new ArrayList(i2);
-                for (int i6 = 0; i6 < longSparseArray2.size(); i6++) {
-                    DialogSearchResult dialogSearchResult4 = (DialogSearchResult) longSparseArray2.valueAt(i6);
+                for (int i9 = 0; i9 < longSparseArray.size(); i9++) {
+                    DialogSearchResult dialogSearchResult4 = (DialogSearchResult) longSparseArray.valueAt(i9);
                     if (dialogSearchResult4.object != null && dialogSearchResult4.name != null) {
                         arrayList3.add(dialogSearchResult4);
                     }
                 }
                 SQLiteCursor queryFinalized4 = MessagesStorage.getInstance(((BottomSheet) ShareAlert.this).currentAccount).getDatabase().queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
                 while (queryFinalized4.next()) {
-                    if (longSparseArray2.indexOfKey(queryFinalized4.longValue(3)) < 0) {
+                    if (longSparseArray.indexOfKey(queryFinalized4.longValue(3)) < 0) {
                         String stringValue3 = queryFinalized4.stringValue(2);
                         String translitString4 = LocaleController.getInstance().getTranslitString(stringValue3);
                         if (stringValue3.equals(translitString4)) {
-                            str3 = str2;
                             translitString4 = null;
-                        } else {
-                            str3 = str2;
                         }
-                        int lastIndexOf2 = stringValue3.lastIndexOf(str3);
+                        String str8 = str2;
+                        int lastIndexOf2 = stringValue3.lastIndexOf(str8);
                         String substring2 = lastIndexOf2 != -1 ? stringValue3.substring(lastIndexOf2 + 3) : null;
-                        int i7 = 0;
-                        boolean z4 = false;
+                        int i10 = 0;
+                        char c3 = 0;
                         while (true) {
-                            if (i7 >= i4) {
+                            if (i10 >= i5) {
                                 break;
                             }
-                            String str9 = strArr[i7];
+                            String str9 = strArr[i10];
                             if (!stringValue3.startsWith(str9)) {
-                                if (!stringValue3.contains(str6 + str9)) {
+                                if (!stringValue3.contains(" " + str9)) {
                                     if (translitString4 != null) {
                                         if (!translitString4.startsWith(str9)) {
-                                            if (translitString4.contains(str6 + str9)) {
+                                            if (translitString4.contains(" " + str9)) {
                                             }
                                         }
                                     }
-                                    r12 = (substring2 == null || !substring2.startsWith(str9)) ? z4 : 2;
-                                    if (r12 == 0) {
+                                    if (substring2 != null && substring2.startsWith(str9)) {
+                                        c3 = 2;
+                                    }
+                                    if (c3 == 0) {
                                         NativeByteBuffer byteBufferValue3 = queryFinalized4.byteBufferValue(0);
                                         if (byteBufferValue3 != null) {
                                             TLRPC.User TLdeserialize3 = TLRPC.User.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(false), false);
@@ -3963,51 +3867,41 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                                             if (userStatus2 != null) {
                                                 userStatus2.expires = queryFinalized4.intValue(1);
                                             }
-                                            int i8 = i4;
-                                            String str10 = str6;
                                             dialogSearchResult5.dialog.id = TLdeserialize3.id;
                                             dialogSearchResult5.object = TLdeserialize3;
-                                            if (r12 == 1) {
+                                            if (c3 == 1) {
                                                 dialogSearchResult5.name = AndroidUtilities.generateSearchName(TLdeserialize3.first_name, TLdeserialize3.last_name, str9);
                                             } else {
                                                 dialogSearchResult5.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize3), null, "@" + str9);
                                             }
                                             arrayList3.add(dialogSearchResult5);
-                                            str2 = str3;
-                                            i4 = i8;
-                                            str6 = str10;
                                         }
                                     } else {
-                                        i7++;
-                                        z4 = r12;
-                                        i4 = i4;
+                                        i10++;
                                     }
                                 }
                             }
-                            r12 = 1;
-                            if (r12 == 0) {
+                            c3 = 1;
+                            if (c3 == 0) {
                             }
                         }
-                        str2 = str3;
+                        str2 = str8;
                     }
                 }
                 queryFinalized4.dispose();
                 Collections.sort(arrayList3, new Comparator() { // from class: org.telegram.ui.Components.ShareAlert$ShareSearchAdapter$$ExternalSyntheticLambda4
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$searchDialogsInternal$0;
-                        lambda$searchDialogsInternal$0 = ShareAlert.ShareSearchAdapter.lambda$searchDialogsInternal$0(obj, obj2);
-                        return lambda$searchDialogsInternal$0;
+                        return ShareAlert.ShareSearchAdapter.$r8$lambda$N2leCj1fsSDLiXy7aIlYyot2xnY(obj, obj2);
                     }
                 });
-                updateSearchResults(arrayList3, i);
+                shareSearchAdapter.updateSearchResults(arrayList3, i);
             } catch (Exception e) {
                 FileLog.e(e);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$searchDialogsInternal$0(Object obj, Object obj2) {
+        public static /* synthetic */ int $r8$lambda$N2leCj1fsSDLiXy7aIlYyot2xnY(Object obj, Object obj2) {
             int i = ((DialogSearchResult) obj).date;
             int i2 = ((DialogSearchResult) obj2).date;
             if (i < i2) {
@@ -4020,21 +3914,20 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$ShareSearchAdapter$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.ShareSearchAdapter.this.lambda$updateSearchResults$2(i, arrayList);
+                    ShareAlert.ShareSearchAdapter.$r8$lambda$ryGJYuyvUmdNaKf2jinZWkvtsYg(ShareAlert.ShareSearchAdapter.this, i, arrayList);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateSearchResults$2(int i, ArrayList arrayList) {
-            if (i != this.lastSearchId) {
+        public static /* synthetic */ void $r8$lambda$ryGJYuyvUmdNaKf2jinZWkvtsYg(ShareSearchAdapter shareSearchAdapter, int i, ArrayList arrayList) {
+            if (i != shareSearchAdapter.lastSearchId) {
                 return;
             }
-            getItemCount();
-            this.internalDialogsIsSearching = false;
-            this.lastLocalSearchId = i;
-            if (this.lastGlobalSearchId != i) {
-                this.searchAdapterHelper.clear();
+            shareSearchAdapter.getItemCount();
+            shareSearchAdapter.internalDialogsIsSearching = false;
+            shareSearchAdapter.lastLocalSearchId = i;
+            if (shareSearchAdapter.lastGlobalSearchId != i) {
+                shareSearchAdapter.searchAdapterHelper.clear();
             }
             if (ShareAlert.this.gridView.getAdapter() != ShareAlert.this.searchAdapter) {
                 ShareAlert shareAlert = ShareAlert.this;
@@ -4049,23 +3942,23 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     MessagesController.getInstance(((BottomSheet) ShareAlert.this).currentAccount).putChat((TLRPC.Chat) tLObject, true);
                 }
             }
-            boolean z = !this.searchResult.isEmpty() && arrayList.isEmpty();
-            if (this.searchResult.isEmpty()) {
+            boolean z = !shareSearchAdapter.searchResult.isEmpty() && arrayList.isEmpty();
+            if (shareSearchAdapter.searchResult.isEmpty()) {
                 arrayList.isEmpty();
             }
             if (z) {
                 ShareAlert shareAlert2 = ShareAlert.this;
                 shareAlert2.topBeforeSwitch = shareAlert2.getCurrentTop();
             }
-            this.searchResult = arrayList;
-            this.searchAdapterHelper.mergeResults(arrayList, null);
-            int i3 = this.lastItemCont;
-            if (getItemCount() == 0 && !this.searchAdapterHelper.isSearchInProgress() && !this.internalDialogsIsSearching) {
+            shareSearchAdapter.searchResult = arrayList;
+            shareSearchAdapter.searchAdapterHelper.mergeResults(arrayList, null);
+            int i3 = shareSearchAdapter.lastItemCont;
+            if (shareSearchAdapter.getItemCount() == 0 && !shareSearchAdapter.searchAdapterHelper.isSearchInProgress() && !shareSearchAdapter.internalDialogsIsSearching) {
                 ShareAlert.this.searchEmptyView.showProgress(false, true);
             } else {
                 ShareAlert.this.recyclerItemsEnterAnimator.showItemsAnimated(i3);
             }
-            notifyDataSetChanged();
+            shareSearchAdapter.notifyDataSetChanged();
             ShareAlert.this.checkCurrentList(true);
         }
 
@@ -4100,7 +3993,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$ShareSearchAdapter$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ShareAlert.ShareSearchAdapter.this.lambda$searchDialogs$4(str, i);
+                            ShareAlert.ShareSearchAdapter.$r8$lambda$0cxqHqtisHdwDC_zPNU6q9eFmKQ(ShareAlert.ShareSearchAdapter.this, str, i);
                         }
                     };
                     this.searchRunnable = runnable2;
@@ -4110,27 +4003,25 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchDialogs$4(final String str, final int i) {
-            this.searchRunnable = null;
-            searchDialogsInternal(str, i);
+        public static /* synthetic */ void $r8$lambda$0cxqHqtisHdwDC_zPNU6q9eFmKQ(final ShareSearchAdapter shareSearchAdapter, final String str, final int i) {
+            shareSearchAdapter.searchRunnable = null;
+            shareSearchAdapter.searchDialogsInternal(str, i);
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$ShareSearchAdapter$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.ShareSearchAdapter.this.lambda$searchDialogs$3(i, str);
+                    ShareAlert.ShareSearchAdapter.$r8$lambda$IHKfdo-1KUm5Zj03fXogqdkP1n0(ShareAlert.ShareSearchAdapter.this, i, str);
                 }
             };
-            this.searchRunnable2 = runnable;
+            shareSearchAdapter.searchRunnable2 = runnable;
             AndroidUtilities.runOnUIThread(runnable);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchDialogs$3(int i, String str) {
-            this.searchRunnable2 = null;
-            if (i != this.lastSearchId) {
+        public static /* synthetic */ void $r8$lambda$IHKfdo-1KUm5Zj03fXogqdkP1n0(ShareSearchAdapter shareSearchAdapter, int i, String str) {
+            shareSearchAdapter.searchRunnable2 = null;
+            if (i != shareSearchAdapter.lastSearchId) {
                 return;
             }
-            this.searchAdapterHelper.queryServerSearch(str, true, true, true, true, false, 0L, false, 0, i);
+            shareSearchAdapter.searchAdapterHelper.queryServerSearch(str, true, true, true, true, false, 0L, false, 0, i);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -4190,10 +4081,12 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
                     if (tLObject instanceof TLRPC.User) {
                         tL_dialog.id = ((TLRPC.User) tLObject).id;
-                    } else if (tLObject instanceof TLRPC.Chat) {
-                        tL_dialog.id = -((TLRPC.Chat) tLObject).id;
+                        return tL_dialog;
                     }
-                    return tL_dialog;
+                    if (tLObject instanceof TLRPC.Chat) {
+                        tL_dialog.id = -((TLRPC.Chat) tLObject).id;
+                        return tL_dialog;
+                    }
                 }
                 return null;
             }
@@ -4211,10 +4104,12 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 TLRPC.TL_dialog tL_dialog2 = new TLRPC.TL_dialog();
                 if (tLObject2 instanceof TLRPC.User) {
                     tL_dialog2.id = ((TLRPC.User) tLObject2).id;
-                } else if (tLObject2 instanceof TLRPC.Chat) {
-                    tL_dialog2.id = -((TLRPC.Chat) tLObject2).id;
+                    return tL_dialog2;
                 }
-                return tL_dialog2;
+                if (tLObject2 instanceof TLRPC.Chat) {
+                    tL_dialog2.id = -((TLRPC.Chat) tLObject2).id;
+                    return tL_dialog2;
+                }
             }
             return null;
         }
@@ -4227,9 +4122,34 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             View view;
+            View view2;
             if (i == 0) {
                 view = new ProfileSearchCell(this.context, ((BottomSheet) ShareAlert.this).resourcesProvider).useCustomPaints().showPremiumBlock(true);
-            } else if (i == 2) {
+            } else if (i != 2) {
+                if (i == 3) {
+                    GraySectionCell graySectionCell = new GraySectionCell(this.context, ((BottomSheet) ShareAlert.this).resourcesProvider);
+                    graySectionCell.setTextColor(Theme.key_graySectionText);
+                    graySectionCell.setBackgroundColor(ShareAlert.this.getThemedColor(Theme.key_graySection));
+                    graySectionCell.setText(LocaleController.getString(R.string.Recent));
+                    view2 = graySectionCell;
+                } else if (i == 4) {
+                    view2 = new View(this.context) { // from class: org.telegram.ui.Components.ShareAlert.ShareSearchAdapter.6
+                        @Override // android.view.View
+                        protected void onMeasure(int i2, int i3) {
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(ShareAlert.this.searchLayoutManager.lastItemHeight, TLObject.FLAG_30));
+                        }
+                    };
+                } else if (i == 5) {
+                    View shareDialogCell = new ShareDialogCell(this.context, 0, ((BottomSheet) ShareAlert.this).resourcesProvider);
+                    shareDialogCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(100.0f)));
+                    view2 = shareDialogCell;
+                } else {
+                    View view3 = new View(this.context);
+                    view3.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp((!ShareAlert.this.darkTheme || ShareAlert.this.linkToCopy[1] == null) ? 56.0f : 109.0f)));
+                    view2 = view3;
+                }
+                view = view2;
+            } else {
                 RecyclerListView recyclerListView = new RecyclerListView(this.context, ((BottomSheet) ShareAlert.this).resourcesProvider) { // from class: org.telegram.ui.Components.ShareAlert.ShareSearchAdapter.3
                     @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
                     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
@@ -4302,38 +4222,17 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 recyclerListView.setAdapter(categoryAdapterRecycler);
                 recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ShareAlert$ShareSearchAdapter$$ExternalSyntheticLambda1
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                    public final void onItemClick(View view2, int i2) {
-                        ShareAlert.ShareSearchAdapter.this.lambda$onCreateViewHolder$5(view2, i2);
+                    public final void onItemClick(View view4, int i2) {
+                        ShareAlert.ShareSearchAdapter.$r8$lambda$OM-TumkQWqmSerVEXR5Az7T29lI(ShareAlert.ShareSearchAdapter.this, view4, i2);
                     }
                 });
                 view = recyclerListView;
-            } else if (i == 3) {
-                GraySectionCell graySectionCell = new GraySectionCell(this.context, ((BottomSheet) ShareAlert.this).resourcesProvider);
-                graySectionCell.setTextColor(Theme.key_graySectionText);
-                graySectionCell.setBackgroundColor(ShareAlert.this.getThemedColor(Theme.key_graySection));
-                graySectionCell.setText(LocaleController.getString(R.string.Recent));
-                view = graySectionCell;
-            } else if (i == 4) {
-                view = new View(this.context) { // from class: org.telegram.ui.Components.ShareAlert.ShareSearchAdapter.6
-                    @Override // android.view.View
-                    protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(ShareAlert.this.searchLayoutManager.lastItemHeight, TLObject.FLAG_30));
-                    }
-                };
-            } else if (i == 5) {
-                View shareDialogCell = new ShareDialogCell(this.context, 0, ((BottomSheet) ShareAlert.this).resourcesProvider);
-                shareDialogCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(100.0f)));
-                view = shareDialogCell;
-            } else {
-                View view2 = new View(this.context);
-                view2.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp((!ShareAlert.this.darkTheme || ShareAlert.this.linkToCopy[1] == null) ? 56.0f : 109.0f)));
-                view = view2;
             }
             return new RecyclerListView.Holder(view);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$5(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$OM-TumkQWqmSerVEXR5Az7T29lI(ShareSearchAdapter shareSearchAdapter, View view, int i) {
+            shareSearchAdapter.getClass();
             HintDialogCell hintDialogCell = (HintDialogCell) view;
             TLRPC.TL_topPeer tL_topPeer = MediaDataController.getInstance(((BottomSheet) ShareAlert.this).currentAccount).hints.get(i);
             TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
@@ -4360,8 +4259,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r3v27, types: [java.lang.CharSequence] */
-        /* JADX WARN: Type inference failed for: r7v2, types: [android.text.SpannableStringBuilder] */
-        /* JADX WARN: Type inference failed for: r7v5, types: [android.text.SpannableStringBuilder] */
+        /* JADX WARN: Type inference failed for: r7v1, types: [android.text.SpannableStringBuilder] */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
             long j;
@@ -4370,55 +4268,58 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             long j2;
             int indexOfIgnoreCase;
             TLObject tLObject;
+            CharSequence charSequence;
             int indexOfIgnoreCase2;
             if (viewHolder.getItemViewType() == 0 || viewHolder.getItemViewType() == 5) {
                 TLObject tLObject2 = null;
                 r6 = null;
-                r6 = null;
-                String str3 = null;
+                String formatName = null;
                 TLRPC.TL_encryptedChat tL_encryptedChat = null;
                 if (TextUtils.isEmpty(this.lastSearchText)) {
                     int i2 = this.recentDialogsStartRow;
                     long j3 = 0;
                     if (i2 < 0 || i < i2) {
                         tLObject = null;
+                        charSequence = null;
                     } else {
                         TLObject tLObject3 = ((DialogsSearchAdapter.RecentSearchObject) ShareAlert.this.recentSearchObjects.get(i - i2)).object;
                         if (tLObject3 instanceof TLRPC.User) {
                             TLRPC.User user = (TLRPC.User) tLObject3;
                             j3 = user.id;
-                            str3 = ContactsController.formatName(user.first_name, user.last_name);
+                            formatName = ContactsController.formatName(user.first_name, user.last_name);
                         } else if (tLObject3 instanceof TLRPC.Chat) {
                             TLRPC.Chat chat = (TLRPC.Chat) tLObject3;
                             j3 = -chat.id;
-                            str3 = chat.title;
+                            formatName = chat.title;
                         } else if (tLObject3 instanceof TLRPC.TL_encryptedChat) {
                             tL_encryptedChat = (TLRPC.TL_encryptedChat) tLObject3;
                             TLRPC.User user2 = MessagesController.getInstance(((BottomSheet) ShareAlert.this).currentAccount).getUser(Long.valueOf(tL_encryptedChat.user_id));
                             if (user2 != null) {
                                 j3 = user2.id;
-                                str3 = ContactsController.formatName(user2.first_name, user2.last_name);
+                                formatName = ContactsController.formatName(user2.first_name, user2.last_name);
                             }
                         }
                         String lastFoundUsername = this.searchAdapterHelper.getLastFoundUsername();
-                        if (TextUtils.isEmpty(lastFoundUsername) || str3 == null || (indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(str3.toString(), lastFoundUsername)) == -1) {
+                        if (TextUtils.isEmpty(lastFoundUsername) || formatName == null || (indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(formatName.toString(), lastFoundUsername)) == -1) {
                             tLObject = tLObject3;
+                            charSequence = formatName;
                         } else {
-                            ?? spannableStringBuilder = new SpannableStringBuilder(str3);
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatName);
                             spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4, ((BottomSheet) ShareAlert.this).resourcesProvider), indexOfIgnoreCase2, lastFoundUsername.length() + indexOfIgnoreCase2, 33);
                             tLObject = tLObject3;
-                            str3 = spannableStringBuilder;
+                            charSequence = spannableStringBuilder;
                         }
                     }
                     TLRPC.TL_encryptedChat tL_encryptedChat2 = tL_encryptedChat;
                     View view = viewHolder.itemView;
                     if (view instanceof ProfileSearchCell) {
-                        ((ProfileSearchCell) view).setData(tLObject, tL_encryptedChat2, str3, null, false, false);
-                        ((ProfileSearchCell) viewHolder.itemView).useSeparator = i < getItemCount() - 2;
+                        ((ProfileSearchCell) view).setData(tLObject, tL_encryptedChat2, charSequence, null, false, false);
+                        ((ProfileSearchCell) viewHolder.itemView).useSeparator = i < getItemCount() + (-2);
                         return;
                     } else {
+                        CharSequence charSequence2 = charSequence;
                         if (view instanceof ShareDialogCell) {
-                            ((ShareDialogCell) view).setDialog(j3, ShareAlert.this.selectedDialogs.indexOfKey(j3) >= 0, str3);
+                            ((ShareDialogCell) view).setDialog(j3, ShareAlert.this.selectedDialogs.indexOfKey(j3) >= 0, charSequence2);
                             return;
                         }
                         return;
@@ -4455,7 +4356,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 View view2 = viewHolder.itemView;
                 if (view2 instanceof ProfileSearchCell) {
                     ((ProfileSearchCell) view2).setData(tLObject4, null, str2, null, false, false);
-                    ((ProfileSearchCell) viewHolder.itemView).useSeparator = i3 < getItemCount() - 2;
+                    ((ProfileSearchCell) viewHolder.itemView).useSeparator = i3 < getItemCount() + (-2);
                     return;
                 } else {
                     if (view2 instanceof ShareDialogCell) {

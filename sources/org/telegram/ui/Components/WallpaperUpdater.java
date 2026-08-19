@@ -63,27 +63,27 @@ public class WallpaperUpdater {
         builder.setItems(charSequenceArr, iArr, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.WallpaperUpdater$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                WallpaperUpdater.this.lambda$showAlert$0(z, dialogInterface, i);
+                WallpaperUpdater.$r8$lambda$MAOIoA4JBqd4Y8Y0TRMJNGj7hXs(WallpaperUpdater.this, z, dialogInterface, i);
             }
         });
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAlert$0(boolean z, DialogInterface dialogInterface, int i) {
+    public static /* synthetic */ void $r8$lambda$MAOIoA4JBqd4Y8Y0TRMJNGj7hXs(WallpaperUpdater wallpaperUpdater, boolean z, DialogInterface dialogInterface, int i) {
+        wallpaperUpdater.getClass();
         try {
             if (i != 0) {
                 if (i == 1) {
-                    openGallery();
+                    wallpaperUpdater.openGallery();
                     return;
                 }
                 if (z) {
                     if (i == 2) {
-                        this.delegate.needOpenColorPicker();
+                        wallpaperUpdater.delegate.needOpenColorPicker();
                         return;
                     } else {
                         if (i == 3) {
-                            this.delegate.didSelectWallpaper(null, null, false);
+                            wallpaperUpdater.delegate.didSelectWallpaper(null, null, false);
                             return;
                         }
                         return;
@@ -96,15 +96,15 @@ public class WallpaperUpdater {
                 File generatePicturePath = AndroidUtilities.generatePicturePath();
                 if (generatePicturePath != null) {
                     if (Build.VERSION.SDK_INT >= 24) {
-                        intent.putExtra("output", FileProvider.getUriForFile(this.parentActivity, ApplicationLoader.getApplicationId() + ".provider", generatePicturePath));
+                        intent.putExtra("output", FileProvider.getUriForFile(wallpaperUpdater.parentActivity, ApplicationLoader.getApplicationId() + ".provider", generatePicturePath));
                         intent.addFlags(2);
                         intent.addFlags(1);
                     } else {
                         intent.putExtra("output", Uri.fromFile(generatePicturePath));
                     }
-                    this.currentPicturePath = generatePicturePath.getAbsolutePath();
+                    wallpaperUpdater.currentPicturePath = generatePicturePath.getAbsolutePath();
                 }
-                this.parentActivity.startActivityForResult(intent, 10);
+                wallpaperUpdater.parentActivity.startActivityForResult(intent, 10);
             } catch (Exception e) {
                 FileLog.e(e);
             }

@@ -172,11 +172,6 @@ public class EditTextBoldCursor extends EditTextEffects {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(long j) {
-        invalidate();
-    }
-
     public void setHintText2(CharSequence charSequence, boolean z) {
         AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.hintAnimatedDrawable2;
         if (animatedTextDrawable != null) {
@@ -238,7 +233,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         this.invalidateCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
-                EditTextBoldCursor.this.lambda$new$0(j);
+                EditTextBoldCursor.this.invalidate();
             }
         };
         this.rect = new Rect();
@@ -922,7 +917,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                             callback2.run(canvas, new Runnable() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda4
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    EditTextBoldCursor.this.lambda$drawHint$1(canvas);
+                                    EditTextBoldCursor.this.hintLayout.draw(canvas);
                                 }
                             });
                         } else {
@@ -936,12 +931,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$drawHint$1(Canvas canvas) {
-        this.hintLayout.draw(canvas);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:132:0x014c A[Catch: all -> 0x00c0, TryCatch #0 {all -> 0x00c0, blocks: (B:113:0x009e, B:115:0x00a2, B:117:0x00a6, B:119:0x00b8, B:122:0x00c9, B:125:0x00cf, B:127:0x00d6, B:129:0x00de, B:130:0x0104, B:132:0x014c, B:134:0x014f, B:135:0x0154, B:138:0x00f1, B:140:0x00f9, B:142:0x00c5), top: B:112:0x009e }] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x014c A[Catch: all -> 0x00c0, TryCatch #0 {all -> 0x00c0, blocks: (B:114:0x009e, B:116:0x00a2, B:118:0x00a6, B:120:0x00b8, B:123:0x00c9, B:126:0x00cf, B:128:0x00d6, B:130:0x00de, B:131:0x0104, B:133:0x014c, B:135:0x014f, B:136:0x0154, B:139:0x00f1, B:141:0x00f9, B:143:0x00c5), top: B:113:0x009e }] */
     /* JADX WARN: Removed duplicated region for block: B:40:0x0209 A[Catch: all -> 0x01ab, TryCatch #2 {all -> 0x01ab, blocks: (B:33:0x0189, B:35:0x0190, B:37:0x0198, B:38:0x01c1, B:40:0x0209, B:42:0x020c, B:43:0x0211, B:46:0x01ae, B:48:0x01b6), top: B:32:0x0189 }] */
     @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     /*
@@ -1281,7 +1271,8 @@ public class EditTextBoldCursor extends EditTextEffects {
             if (i6 < 0) {
                 i6 = getMeasuredWidth() / 2;
             }
-            int max = Math.max(i6, getMeasuredWidth() - i6) * 2;
+            int i7 = i6;
+            int max = Math.max(i7, getMeasuredWidth() - i7) * 2;
             if (this.lineActiveness < 1.0f) {
                 canvas.drawRect(getScrollX(), measuredHeight - dp, getScrollX() + getMeasuredWidth(), measuredHeight, this.linePaint);
             }
@@ -1295,7 +1286,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 if (z5) {
                     interpolation = 1.0f;
                 }
-                float f4 = i6;
+                float f4 = i7;
                 canvas.drawRect(getScrollX() + Math.max(0.0f, f4 - (this.activeLineWidth / 2.0f)), measuredHeight - ((int) (interpolation * AndroidUtilities.dp(2.0f))), getScrollX() + Math.min(f4 + (this.activeLineWidth / 2.0f), getMeasuredWidth()), measuredHeight, this.activeLinePaint);
             }
         }
@@ -1453,9 +1444,7 @@ public class EditTextBoldCursor extends EditTextEffects {
             this.floatingToolbarPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda6
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public final boolean onPreDraw() {
-                    boolean lambda$startActionMode$2;
-                    lambda$startActionMode$2 = EditTextBoldCursor.this.lambda$startActionMode$2();
-                    return lambda$startActionMode$2;
+                    return EditTextBoldCursor.$r8$lambda$ORqNHs4RTfN0BrsU5GD-NmUYeTI(EditTextBoldCursor.this);
                 }
             };
             FloatingActionMode floatingActionMode2 = this.floatingActionMode;
@@ -1470,9 +1459,8 @@ public class EditTextBoldCursor extends EditTextEffects {
         return super.startActionMode(callback);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$startActionMode$2() {
-        FloatingActionMode floatingActionMode = this.floatingActionMode;
+    public static /* synthetic */ boolean $r8$lambda$ORqNHs4RTfN0BrsU5GD-NmUYeTI(EditTextBoldCursor editTextBoldCursor) {
+        FloatingActionMode floatingActionMode = editTextBoldCursor.floatingActionMode;
         if (floatingActionMode == null) {
             return true;
         }

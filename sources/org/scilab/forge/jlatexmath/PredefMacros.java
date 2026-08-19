@@ -209,9 +209,9 @@ public class PredefMacros {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final Atom sfrac_macro(TeXParser teXParser, String[] strArr) {
-        double d;
         float f;
         float f2;
+        double d;
         double d2;
         float f3;
         SymbolAtom symbolAtom;
@@ -222,9 +222,9 @@ public class PredefMacros {
         }
         SymbolAtom symbolAtom2 = SymbolAtom.get("slash");
         if (teXParser.isMathMode()) {
-            d = 0.75d;
             f = -0.13f;
             f2 = -0.065f;
+            d = 0.75d;
             d2 = 0.75d;
             f3 = 0.45f;
             symbolAtom = symbolAtom2;
@@ -234,19 +234,17 @@ public class PredefMacros {
             f = -0.24f;
             d = 0.6d;
             d2 = 0.5d;
-            f2 = -0.24f;
             f3 = 0.75f;
+            f2 = -0.24f;
             symbolAtom = vRowAtom;
         }
-        double d3 = d;
-        double d4 = d2;
-        VRowAtom vRowAtom2 = new VRowAtom(new ScaleAtom(teXFormula.root, d3, d4));
+        VRowAtom vRowAtom2 = new VRowAtom(new ScaleAtom(teXFormula.root, d, d2));
         vRowAtom2.setRaise(1, f3);
         RowAtom rowAtom = new RowAtom(vRowAtom2);
         rowAtom.add(new SpaceAtom(0, f, 0.0f, 0.0f));
         rowAtom.add(symbolAtom);
         rowAtom.add(new SpaceAtom(0, f2, 0.0f, 0.0f));
-        rowAtom.add(new ScaleAtom(teXFormula2.root, d3, d4));
+        rowAtom.add(new ScaleAtom(teXFormula2.root, d, d2));
         return rowAtom;
     }
 

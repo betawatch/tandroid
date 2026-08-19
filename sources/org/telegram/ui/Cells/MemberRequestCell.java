@@ -70,7 +70,7 @@ public class MemberRequestCell extends FrameLayout {
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.MemberRequestCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MemberRequestCell.this.lambda$new$0(onClickListener, view);
+                MemberRequestCell.$r8$lambda$nX4cCNLzQwEtuNG7lopzxZZbENY(MemberRequestCell.this, onClickListener, view);
             }
         });
         boolean z4 = LocaleController.isRTL;
@@ -88,7 +88,7 @@ public class MemberRequestCell extends FrameLayout {
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.MemberRequestCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MemberRequestCell.this.lambda$new$1(onClickListener, view);
+                MemberRequestCell.$r8$lambda$JFD_BLMi_pnFLJJBwGLc3DkMXBg(MemberRequestCell.this, onClickListener, view);
             }
         });
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, AndroidUtilities.dp(32.0f), LocaleController.isRTL ? 5 : 3);
@@ -98,22 +98,26 @@ public class MemberRequestCell extends FrameLayout {
         addView(textView2, layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(OnClickListener onClickListener, View view) {
-        TLRPC.TL_chatInviteImporter tL_chatInviteImporter;
-        if (onClickListener == null || (tL_chatInviteImporter = this.importer) == null) {
+    public static /* synthetic */ void $r8$lambda$nX4cCNLzQwEtuNG7lopzxZZbENY(MemberRequestCell memberRequestCell, OnClickListener onClickListener, View view) {
+        if (onClickListener == null) {
+            memberRequestCell.getClass();
             return;
         }
-        onClickListener.onAddClicked(tL_chatInviteImporter);
+        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = memberRequestCell.importer;
+        if (tL_chatInviteImporter != null) {
+            onClickListener.onAddClicked(tL_chatInviteImporter);
+        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(OnClickListener onClickListener, View view) {
-        TLRPC.TL_chatInviteImporter tL_chatInviteImporter;
-        if (onClickListener == null || (tL_chatInviteImporter = this.importer) == null) {
+    public static /* synthetic */ void $r8$lambda$JFD_BLMi_pnFLJJBwGLc3DkMXBg(MemberRequestCell memberRequestCell, OnClickListener onClickListener, View view) {
+        if (onClickListener == null) {
+            memberRequestCell.getClass();
             return;
         }
-        onClickListener.onDismissClicked(tL_chatInviteImporter);
+        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = memberRequestCell.importer;
+        if (tL_chatInviteImporter != null) {
+            onClickListener.onDismissClicked(tL_chatInviteImporter);
+        }
     }
 
     public void setData(LongSparseArray longSparseArray, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z) {

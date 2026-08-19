@@ -47,8 +47,7 @@ public class SessionBottomSheet extends BottomSheet {
         void onSessionTerminated(TLRPC.TL_authorization tL_authorization);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$uploadSessionSettings$0(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$vKDcJ0X1ZP1ewonnzJv9wWdCnF4(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
     public SessionBottomSheet(BaseFragment baseFragment, final TLRPC.TL_authorization tL_authorization, boolean z, Callback callback) {
@@ -254,7 +253,7 @@ public class SessionBottomSheet extends BottomSheet {
             builder.setPositiveButton(string, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SessionBottomSheet$8$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    SessionBottomSheet.8.this.lambda$onClick$0(callback, tL_authorization, alertDialog, i);
+                    SessionBottomSheet.8.$r8$lambda$WrVZXdYBdI5X4sFunptVFy3l05c(SessionBottomSheet.8.this, callback, tL_authorization, alertDialog, i);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -266,10 +265,10 @@ public class SessionBottomSheet extends BottomSheet {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onClick$0(Callback callback, TLRPC.TL_authorization tL_authorization, AlertDialog alertDialog, int i) {
+        public static /* synthetic */ void $r8$lambda$WrVZXdYBdI5X4sFunptVFy3l05c(8 r0, Callback callback, TLRPC.TL_authorization tL_authorization, AlertDialog alertDialog, int i) {
+            r0.getClass();
             callback.onSessionTerminated(tL_authorization);
-            SessionBottomSheet.this.lambda$new$0();
+            SessionBottomSheet.this.dismiss();
         }
     }
 
@@ -293,7 +292,7 @@ public class SessionBottomSheet extends BottomSheet {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(changeauthorizationsettings, new RequestDelegate() { // from class: org.telegram.ui.SessionBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SessionBottomSheet.lambda$uploadSessionSettings$0(tLObject, tL_error);
+                SessionBottomSheet.$r8$lambda$vKDcJ0X1ZP1ewonnzJv9wWdCnF4(tLObject, tL_error);
             }
         });
     }
@@ -304,16 +303,16 @@ public class SessionBottomSheet extends BottomSheet {
         builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SessionBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                SessionBottomSheet.this.lambda$copyText$1(str, dialogInterface, i);
+                SessionBottomSheet.$r8$lambda$XhaS2-mAf-Ci-dXA5zSoAZS5EfI(SessionBottomSheet.this, str, dialogInterface, i);
             }
         });
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$copyText$1(String str, DialogInterface dialogInterface, int i) {
+    public static /* synthetic */ void $r8$lambda$XhaS2-mAf-Ci-dXA5zSoAZS5EfI(SessionBottomSheet sessionBottomSheet, String str, DialogInterface dialogInterface, int i) {
+        sessionBottomSheet.getClass();
         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", str));
-        BulletinFactory.of(getContainer(), null).createCopyBulletin(LocaleController.getString(R.string.TextCopied)).show();
+        BulletinFactory.of(sessionBottomSheet.getContainer(), null).createCopyBulletin(LocaleController.getString(R.string.TextCopied)).show();
     }
 
     private void setAnimation(TLRPC.TL_authorization tL_authorization, RLottieImageView rLottieImageView) {

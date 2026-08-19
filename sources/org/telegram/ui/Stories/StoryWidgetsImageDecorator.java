@@ -14,7 +14,7 @@ import org.telegram.ui.Components.Reactions.ReactionImageHolder;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Stories.recorder.Weather;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoryWidgetsImageDecorator extends ImageReceiver.Decorator {
     ArrayList drawingObjects;
     float imageH;
@@ -112,7 +112,6 @@ public class StoryWidgetsImageDecorator extends ImageReceiver.Decorator {
 
         @Override // org.telegram.ui.Stories.StoryWidgetsImageDecorator.DrawingObject
         public void draw(Canvas canvas, ImageReceiver imageReceiver, float f) {
-            Canvas canvas2;
             if (this.imageHolder.isLoaded()) {
                 StoryWidgetsImageDecorator storyWidgetsImageDecorator = StoryWidgetsImageDecorator.this;
                 double d = storyWidgetsImageDecorator.imageX;
@@ -129,20 +128,17 @@ public class StoryWidgetsImageDecorator extends ImageReceiver.Decorator {
                 canvas.save();
                 double d5 = this.mediaArea.coordinates.rotation;
                 if (d5 != 0.0d) {
-                    canvas2 = canvas;
-                    canvas2.rotate((float) d5, f2, f3);
-                } else {
-                    canvas2 = canvas;
+                    canvas.rotate((float) d5, f2, f3);
                 }
                 Rect rect = AndroidUtilities.rectTmp2;
                 float height = (this.storyReactionWidgetBackground.getBounds().height() * 0.61f) / 2.0f;
                 rect.set((int) (this.storyReactionWidgetBackground.getBounds().centerX() - height), (int) (this.storyReactionWidgetBackground.getBounds().centerY() - height), (int) (this.storyReactionWidgetBackground.getBounds().centerX() + height), (int) (this.storyReactionWidgetBackground.getBounds().centerY() + height));
                 this.storyReactionWidgetBackground.updateShadowLayer(1.0f);
-                this.storyReactionWidgetBackground.draw(canvas2);
+                this.storyReactionWidgetBackground.draw(canvas);
                 this.imageHolder.setBounds(rect);
                 this.imageHolder.setAlpha(f);
                 this.imageHolder.setColor(this.storyReactionWidgetBackground.isDarkStyle() ? -1 : -16777216);
-                this.imageHolder.draw(canvas2);
+                this.imageHolder.draw(canvas);
                 canvas.restore();
             }
         }

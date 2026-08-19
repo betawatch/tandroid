@@ -53,8 +53,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$new$0(StickerView stickerView, StickerView stickerView2) {
+    public static /* synthetic */ int $r8$lambda$lz8HK1mQJjBpR5yE6PkdsLHYANo(StickerView stickerView, StickerView stickerView2) {
         return (int) ((stickerView.progress * 100.0f) - (stickerView2.progress * 100.0f));
     }
 
@@ -90,9 +89,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
         this.comparator = new Comparator() { // from class: org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$new$0;
-                lambda$new$0 = PremiumStickersPreviewRecycler.lambda$new$0((PremiumStickersPreviewRecycler.StickerView) obj, (PremiumStickersPreviewRecycler.StickerView) obj2);
-                return lambda$new$0;
+                return PremiumStickersPreviewRecycler.$r8$lambda$lz8HK1mQJjBpR5yE6PkdsLHYANo((PremiumStickersPreviewRecycler.StickerView) obj, (PremiumStickersPreviewRecycler.StickerView) obj2);
             }
         };
         this.selectStickerOnNextLayout = -1;
@@ -141,20 +138,21 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
         setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                PremiumStickersPreviewRecycler.this.lambda$new$1(view, i2);
+                PremiumStickersPreviewRecycler.$r8$lambda$jLjmT5YXAroozP1EJKf9h693CHo(PremiumStickersPreviewRecycler.this, view, i2);
             }
         });
         MediaDataController.getInstance(i).preloadPremiumPreviewStickers();
         setStickers();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view, int i) {
-        if (view != null) {
-            drawEffectForView(view, true);
-            this.haptic = false;
-            smoothScrollBy(0, view.getTop() - ((getMeasuredHeight() - view.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
+    public static /* synthetic */ void $r8$lambda$jLjmT5YXAroozP1EJKf9h693CHo(PremiumStickersPreviewRecycler premiumStickersPreviewRecycler, View view, int i) {
+        if (view == null) {
+            premiumStickersPreviewRecycler.getClass();
+            return;
         }
+        premiumStickersPreviewRecycler.drawEffectForView(view, true);
+        premiumStickersPreviewRecycler.haptic = false;
+        premiumStickersPreviewRecycler.smoothScrollBy(0, view.getTop() - ((premiumStickersPreviewRecycler.getMeasuredHeight() - view.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
     }
 
     @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -196,7 +194,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PremiumStickersPreviewRecycler.this.lambda$onLayout$2();
+                    PremiumStickersPreviewRecycler.$r8$lambda$IAlhQFwWgG_CVyqgyd12BBGJWNU(PremiumStickersPreviewRecycler.this);
                 }
             });
         }
@@ -210,13 +208,12 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLayout$2() {
-        int size = 1073741823 - (1073741823 % this.premiumStickers.size());
-        LinearLayoutManager linearLayoutManager = this.layoutManager;
-        this.selectStickerOnNextLayout = size;
-        linearLayoutManager.scrollToPositionWithOffset(size, (getMeasuredHeight() - getChildAt(0).getMeasuredHeight()) >> 1);
-        drawEffectForView(null, false);
+    public static /* synthetic */ void $r8$lambda$IAlhQFwWgG_CVyqgyd12BBGJWNU(PremiumStickersPreviewRecycler premiumStickersPreviewRecycler) {
+        int size = 1073741823 - (1073741823 % premiumStickersPreviewRecycler.premiumStickers.size());
+        LinearLayoutManager linearLayoutManager = premiumStickersPreviewRecycler.layoutManager;
+        premiumStickersPreviewRecycler.selectStickerOnNextLayout = size;
+        linearLayoutManager.scrollToPositionWithOffset(size, (premiumStickersPreviewRecycler.getMeasuredHeight() - premiumStickersPreviewRecycler.getChildAt(0).getMeasuredHeight()) >> 1);
+        premiumStickersPreviewRecycler.drawEffectForView(null, false);
     }
 
     @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View

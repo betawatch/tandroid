@@ -42,25 +42,23 @@ public class FragmentContextViewWavesDrawable {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void draw(float f, float f2, float f3, float f4, Canvas canvas, FragmentContextView fragmentContextView, float f5) {
         long j;
-        boolean z;
         long j2;
-        int i;
         float f6;
         checkColors();
-        boolean z2 = fragmentContextView != null && this.parents.size() > 0;
+        boolean z = fragmentContextView != null && this.parents.size() > 0;
         if (f2 > f4) {
             return;
         }
         WeavingState weavingState = this.currentState;
-        boolean z3 = (weavingState == null || this.previousState == null || ((weavingState.currentState != 1 || this.previousState.currentState != 0) && (this.previousState.currentState != 1 || this.currentState.currentState != 0))) ? false : true;
-        if (z2) {
+        boolean z2 = (weavingState == null || this.previousState == null || ((weavingState.currentState != 1 || this.previousState.currentState != 0) && (this.previousState.currentState != 1 || this.currentState.currentState != 0))) ? false : true;
+        if (z) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             j = elapsedRealtime - this.lastUpdateTime;
             this.lastUpdateTime = elapsedRealtime;
@@ -111,7 +109,7 @@ public class FragmentContextViewWavesDrawable {
                         fragmentContextView.invalidate();
                     }
                 }
-                for (i = 0; i < 2; i++) {
+                for (int i = 0; i < 2; i++) {
                     if (i != 0 || this.previousState != null) {
                         if (i == 0) {
                             f6 = 1.0f - this.progressToState;
@@ -121,20 +119,21 @@ public class FragmentContextViewWavesDrawable {
                             if (weavingState2 == null) {
                                 return;
                             }
-                            f6 = this.previousState != null ? this.progressToState : 1.0f;
+                            float f16 = this.previousState != null ? this.progressToState : 1.0f;
                             if (z) {
                                 weavingState2.update((int) (f4 - f2), (int) (f3 - f), j2, this.amplitude);
                             }
                             this.currentState.setToPaint(this.paint);
+                            f6 = f16;
                         }
-                        if (i == 1 && z3) {
+                        if (i == 1 && z2) {
                             this.paint.setAlpha(NotificationCenter.didReceiveSmsCode);
                         } else if (i == 1) {
                             this.paint.setAlpha((int) (255.0f * f6));
                         } else {
                             this.paint.setAlpha(NotificationCenter.didReceiveSmsCode);
                         }
-                        if (i == 1 && z3) {
+                        if (i == 1 && z2) {
                             this.path.rewind();
                             this.path.addCircle(f3 - AndroidUtilities.dp(18.0f), f2 + ((f4 - f2) / 2.0f), (f3 - f) * 1.1f * f6, Path.Direction.CW);
                             canvas.save();
@@ -150,7 +149,6 @@ public class FragmentContextViewWavesDrawable {
         } else {
             j = 0;
         }
-        z = z2;
         j2 = j;
         if (z) {
         }

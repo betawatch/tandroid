@@ -256,65 +256,69 @@ public class EphemeralMessagesHelper extends BaseController {
     public long getEphemeralCommandBotId(String str, LongSparseArray longSparseArray) {
         String substring;
         String str2;
-        if (str == null || longSparseArray == null || longSparseArray.isEmpty() || !str.startsWith("/") || str.length() < 2) {
-            return 0L;
-        }
-        int indexOf = str.indexOf(32);
-        if (indexOf != -1) {
-            substring = str.substring(1, indexOf);
-        } else {
-            substring = str.substring(1);
-        }
-        int indexOf2 = substring.indexOf(64);
-        int i = 0;
-        if (indexOf2 != -1) {
-            String substring2 = substring.substring(0, indexOf2);
-            str2 = substring.substring(indexOf2 + 1);
-            substring = substring2;
-        } else {
-            str2 = null;
-        }
-        if (substring.isEmpty()) {
-            return 0L;
-        }
-        if (str2 != null) {
-            while (i < longSparseArray.size()) {
-                TL_bots.BotInfo botInfo = (TL_bots.BotInfo) longSparseArray.valueAt(i);
-                if (UserObject.hasPublicUsername(getMessagesController().getUser(Long.valueOf(botInfo.user_id)), str2)) {
-                    Iterator<TLRPC.BotCommand> it = botInfo.commands.iterator();
-                    while (it.hasNext()) {
-                        TLRPC.BotCommand next = it.next();
-                        if (next.command.equalsIgnoreCase(substring)) {
-                            if (next.ephemeral) {
-                                return botInfo.user_id;
+        if (str != null && longSparseArray != null && !longSparseArray.isEmpty() && str.startsWith("/") && str.length() >= 2) {
+            int indexOf = str.indexOf(32);
+            if (indexOf != -1) {
+                substring = str.substring(1, indexOf);
+            } else {
+                substring = str.substring(1);
+            }
+            int indexOf2 = substring.indexOf(64);
+            if (indexOf2 != -1) {
+                String substring2 = substring.substring(0, indexOf2);
+                str2 = substring.substring(indexOf2 + 1);
+                substring = substring2;
+            } else {
+                str2 = null;
+            }
+            if (substring.isEmpty()) {
+                return 0L;
+            }
+            if (str2 != null) {
+                for (int i = 0; i < longSparseArray.size(); i++) {
+                    TL_bots.BotInfo botInfo = (TL_bots.BotInfo) longSparseArray.valueAt(i);
+                    if (UserObject.hasPublicUsername(getMessagesController().getUser(Long.valueOf(botInfo.user_id)), str2)) {
+                        ArrayList<TLRPC.BotCommand> arrayList = botInfo.commands;
+                        int size = arrayList.size();
+                        int i2 = 0;
+                        while (i2 < size) {
+                            TLRPC.BotCommand botCommand = arrayList.get(i2);
+                            i2++;
+                            TLRPC.BotCommand botCommand2 = botCommand;
+                            if (botCommand2.command.equalsIgnoreCase(substring)) {
+                                if (botCommand2.ephemeral) {
+                                    return botInfo.user_id;
+                                }
+                                return 0L;
                             }
-                            return 0L;
                         }
                     }
                 }
-                i++;
+                return 0L;
             }
-            return 0L;
-        }
-        long j = 0;
-        boolean z = false;
-        while (i < longSparseArray.size()) {
-            TL_bots.BotInfo botInfo2 = (TL_bots.BotInfo) longSparseArray.valueAt(i);
-            Iterator<TLRPC.BotCommand> it2 = botInfo2.commands.iterator();
-            while (it2.hasNext()) {
-                TLRPC.BotCommand next2 = it2.next();
-                if (next2.command.equalsIgnoreCase(substring)) {
-                    if (j != 0) {
-                        return 0L;
+            long j = 0;
+            boolean z = false;
+            for (int i3 = 0; i3 < longSparseArray.size(); i3++) {
+                TL_bots.BotInfo botInfo2 = (TL_bots.BotInfo) longSparseArray.valueAt(i3);
+                ArrayList<TLRPC.BotCommand> arrayList2 = botInfo2.commands;
+                int size2 = arrayList2.size();
+                int i4 = 0;
+                while (i4 < size2) {
+                    TLRPC.BotCommand botCommand3 = arrayList2.get(i4);
+                    i4++;
+                    TLRPC.BotCommand botCommand4 = botCommand3;
+                    if (botCommand4.command.equalsIgnoreCase(substring)) {
+                        if (j != 0) {
+                            return 0L;
+                        }
+                        j = botInfo2.user_id;
+                        z = botCommand4.ephemeral;
                     }
-                    j = botInfo2.user_id;
-                    z = next2.ephemeral;
                 }
             }
-            i++;
-        }
-        if (z) {
-            return j;
+            if (z) {
+                return j;
+            }
         }
         return 0L;
     }
@@ -332,10 +336,17 @@ public class EphemeralMessagesHelper extends BaseController {
             }
 
             public void build(int i, AbstractMap abstractMap, AbstractMap abstractMap2, int i2) {
-                Iterator it = this.messages.iterator();
-                while (it.hasNext()) {
-                    TLRPC.TL_message convertEphemeralToFakeDefault = EphemeralMessagesHelper.convertEphemeralToFakeDefault((TL_ephemeral.EphemeralMessage) it.next());
-                    MessageObject messageObject = new MessageObject(i, (TLRPC.Message) convertEphemeralToFakeDefault, (AbstractMap<Long, TLRPC.User>) abstractMap, (AbstractMap<Long, TLRPC.Chat>) abstractMap2, true, true);
+                ArrayList arrayList = this.messages;
+                int size = arrayList.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj = arrayList.get(i3);
+                    i3++;
+                    TLRPC.TL_message convertEphemeralToFakeDefault = EphemeralMessagesHelper.convertEphemeralToFakeDefault((TL_ephemeral.EphemeralMessage) obj);
+                    int i4 = i;
+                    AbstractMap abstractMap3 = abstractMap;
+                    AbstractMap abstractMap4 = abstractMap2;
+                    MessageObject messageObject = new MessageObject(i4, (TLRPC.Message) convertEphemeralToFakeDefault, (AbstractMap<Long, TLRPC.User>) abstractMap3, (AbstractMap<Long, TLRPC.Chat>) abstractMap4, true, true);
                     long dialogId = MessageObject.getDialogId(convertEphemeralToFakeDefault);
                     if (i2 != 0) {
                         convertEphemeralToFakeDefault.edit_date = i2;
@@ -347,12 +358,15 @@ public class EphemeralMessagesHelper extends BaseController {
                         this.convertedByDialog.put(dialogId, tL_messages_messages);
                     }
                     tL_messages_messages.messages.add(convertEphemeralToFakeDefault);
-                    ArrayList arrayList = (ArrayList) this.objectsByDialog.get(dialogId);
-                    if (arrayList == null) {
-                        arrayList = new ArrayList();
-                        this.objectsByDialog.put(dialogId, arrayList);
+                    ArrayList arrayList2 = (ArrayList) this.objectsByDialog.get(dialogId);
+                    if (arrayList2 == null) {
+                        arrayList2 = new ArrayList();
+                        this.objectsByDialog.put(dialogId, arrayList2);
                     }
-                    arrayList.add(messageObject);
+                    arrayList2.add(messageObject);
+                    i = i4;
+                    abstractMap = abstractMap3;
+                    abstractMap2 = abstractMap4;
                 }
             }
 
@@ -453,19 +467,22 @@ public class EphemeralMessagesHelper extends BaseController {
     }
 
     public static EphemeralMessagesHelper getInstance(int i) {
-        EphemeralMessagesHelper ephemeralMessagesHelper = Instance[i];
-        if (ephemeralMessagesHelper == null) {
-            synchronized (EphemeralMessagesHelper.class) {
-                try {
-                    ephemeralMessagesHelper = Instance[i];
-                    if (ephemeralMessagesHelper == null) {
-                        EphemeralMessagesHelper[] ephemeralMessagesHelperArr = Instance;
-                        EphemeralMessagesHelper ephemeralMessagesHelper2 = new EphemeralMessagesHelper(i);
-                        ephemeralMessagesHelperArr[i] = ephemeralMessagesHelper2;
-                        ephemeralMessagesHelper = ephemeralMessagesHelper2;
-                    }
-                } finally {
+        EphemeralMessagesHelper ephemeralMessagesHelper;
+        EphemeralMessagesHelper ephemeralMessagesHelper2 = Instance[i];
+        if (ephemeralMessagesHelper2 != null) {
+            return ephemeralMessagesHelper2;
+        }
+        synchronized (EphemeralMessagesHelper.class) {
+            try {
+                ephemeralMessagesHelper = Instance[i];
+                if (ephemeralMessagesHelper == null) {
+                    EphemeralMessagesHelper[] ephemeralMessagesHelperArr = Instance;
+                    EphemeralMessagesHelper ephemeralMessagesHelper3 = new EphemeralMessagesHelper(i);
+                    ephemeralMessagesHelperArr[i] = ephemeralMessagesHelper3;
+                    ephemeralMessagesHelper = ephemeralMessagesHelper3;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return ephemeralMessagesHelper;

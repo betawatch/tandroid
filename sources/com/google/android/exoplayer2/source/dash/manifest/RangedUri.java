@@ -25,25 +25,34 @@ public final class RangedUri {
     }
 
     public RangedUri attemptMerge(RangedUri rangedUri, String str) {
+        String str2;
+        RangedUri rangedUri2;
         String resolveUriString = resolveUriString(str);
-        if (rangedUri != null && resolveUriString.equals(rangedUri.resolveUriString(str))) {
-            long j = this.length;
-            if (j != -1) {
-                long j2 = this.start;
-                if (j2 + j == rangedUri.start) {
-                    long j3 = rangedUri.length;
-                    return new RangedUri(resolveUriString, j2, j3 == -1 ? -1L : j + j3);
-                }
-            }
-            long j4 = rangedUri.length;
-            if (j4 != -1) {
-                long j5 = rangedUri.start;
-                if (j5 + j4 == this.start) {
-                    return new RangedUri(resolveUriString, j5, j == -1 ? -1L : j4 + j);
-                }
-            }
+        if (rangedUri == null || !resolveUriString.equals(rangedUri.resolveUriString(str))) {
+            return null;
         }
-        return null;
+        long j = this.length;
+        if (j != -1) {
+            str2 = resolveUriString;
+            rangedUri2 = null;
+            long j2 = this.start;
+            if (j2 + j == rangedUri.start) {
+                long j3 = rangedUri.length;
+                return new RangedUri(str2, j2, j3 != -1 ? j + j3 : -1L);
+            }
+        } else {
+            str2 = resolveUriString;
+            rangedUri2 = null;
+        }
+        long j4 = rangedUri.length;
+        if (j4 == -1) {
+            return rangedUri2;
+        }
+        long j5 = rangedUri.start;
+        if (j5 + j4 == this.start) {
+            return new RangedUri(str2, j5, j == -1 ? -1L : j4 + j);
+        }
+        return rangedUri2;
     }
 
     public int hashCode() {
@@ -57,11 +66,13 @@ public final class RangedUri {
         if (this == obj) {
             return true;
         }
-        if (obj == null || RangedUri.class != obj.getClass()) {
-            return false;
+        if (obj != null && RangedUri.class == obj.getClass()) {
+            RangedUri rangedUri = (RangedUri) obj;
+            if (this.start == rangedUri.start && this.length == rangedUri.length && this.referenceUri.equals(rangedUri.referenceUri)) {
+                return true;
+            }
         }
-        RangedUri rangedUri = (RangedUri) obj;
-        return this.start == rangedUri.start && this.length == rangedUri.length && this.referenceUri.equals(rangedUri.referenceUri);
+        return false;
     }
 
     public String toString() {

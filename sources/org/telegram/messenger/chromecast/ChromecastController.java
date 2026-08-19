@@ -28,7 +28,7 @@ public class ChromecastController implements SessionManagerListener {
         sharedInstance.addCastStateListener(new CastStateListener() { // from class: org.telegram.messenger.chromecast.ChromecastController$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.cast.framework.CastStateListener
             public final void onCastStateChanged(int i) {
-                ChromecastController.lambda$new$0(i);
+                Log.d("CAST_STATE", "onCastStateChanged " + i);
             }
         });
         this.state = new ChromecastControllerState();
@@ -36,11 +36,6 @@ public class ChromecastController implements SessionManagerListener {
         this.sessionManager = sessionManager;
         sessionManager.addSessionManagerListener(this, CastSession.class);
         tryInitClient(sessionManager.getCurrentCastSession());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(int i) {
-        Log.d("CAST_STATE", "onCastStateChanged " + i);
     }
 
     public boolean isCasting() {
@@ -100,17 +95,20 @@ public class ChromecastController implements SessionManagerListener {
     }
 
     public static ChromecastController getInstance() {
-        ChromecastController chromecastController = Instance;
-        if (chromecastController == null) {
-            synchronized (ChromecastController.class) {
-                try {
-                    chromecastController = Instance;
-                    if (chromecastController == null) {
-                        chromecastController = new ChromecastController();
-                        Instance = chromecastController;
-                    }
-                } finally {
+        ChromecastController chromecastController;
+        ChromecastController chromecastController2 = Instance;
+        if (chromecastController2 != null) {
+            return chromecastController2;
+        }
+        synchronized (ChromecastController.class) {
+            try {
+                chromecastController = Instance;
+                if (chromecastController == null) {
+                    chromecastController = new ChromecastController();
+                    Instance = chromecastController;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return chromecastController;

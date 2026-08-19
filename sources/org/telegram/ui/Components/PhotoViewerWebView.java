@@ -83,13 +83,12 @@ public abstract class PhotoViewerWebView extends FrameLayout {
     public void showControls() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        if (this.isYouTube) {
-            runJsCode("pollPosition();");
+    public static /* synthetic */ void $r8$lambda$409kiaar7EZyRtl7vZWqg2zHetk(PhotoViewerWebView photoViewerWebView) {
+        if (photoViewerWebView.isYouTube) {
+            photoViewerWebView.runJsCode("pollPosition();");
         }
-        if (this.isPlaying) {
-            AndroidUtilities.runOnUIThread(this.progressRunnable, 500L);
+        if (photoViewerWebView.isPlaying) {
+            AndroidUtilities.runOnUIThread(photoViewerWebView.progressRunnable, 500L);
         }
     }
 
@@ -103,13 +102,12 @@ public abstract class PhotoViewerWebView extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoViewerWebView.YoutubeProxy.this.lambda$onPlayerLoaded$0();
+                    PhotoViewerWebView.YoutubeProxy.$r8$lambda$V4YoBIad235lmaYXoh4Mrz9eFxo(PhotoViewerWebView.YoutubeProxy.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onPlayerLoaded$0() {
+        public static /* synthetic */ void $r8$lambda$V4YoBIad235lmaYXoh4Mrz9eFxo(YoutubeProxy youtubeProxy) {
             PhotoViewerWebView.this.progressBar.setVisibility(4);
             if (PhotoViewerWebView.this.setPlaybackSpeed) {
                 PhotoViewerWebView.this.setPlaybackSpeed = false;
@@ -129,13 +127,12 @@ public abstract class PhotoViewerWebView extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoViewerWebView.YoutubeProxy.this.lambda$onPlayerError$2(parseInt);
+                    PhotoViewerWebView.YoutubeProxy.$r8$lambda$-L7ZujLweiIYoSKzRI9Fp6Ljv5M(PhotoViewerWebView.YoutubeProxy.this, parseInt);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onPlayerError$2(int i) {
+        public static /* synthetic */ void $r8$lambda$-L7ZujLweiIYoSKzRI9Fp6Ljv5M(final YoutubeProxy youtubeProxy, int i) {
             PhotoViewerWebView.this.errorButton.setVisibility(8);
             PhotoViewerWebView.this.webView.setVisibility(8);
             if (PhotoViewerWebView.this.errorLayout.getVisibility() == 8) {
@@ -180,7 +177,7 @@ public abstract class PhotoViewerWebView extends FrameLayout {
                 PhotoViewerWebView.this.errorButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PhotoViewerWebView.YoutubeProxy.this.lambda$onPlayerError$1(view);
+                        PhotoViewerWebView.YoutubeProxy.$r8$lambda$HlR0a-Bk4wXDwLYWN5pxqpHYeQ0(PhotoViewerWebView.YoutubeProxy.this, view);
                     }
                 });
                 return;
@@ -188,8 +185,8 @@ public abstract class PhotoViewerWebView extends FrameLayout {
             PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(R.string.YouTubeVideoErrorHTML));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onPlayerError$1(View view) {
+        public static /* synthetic */ void $r8$lambda$HlR0a-Bk4wXDwLYWN5pxqpHYeQ0(YoutubeProxy youtubeProxy, View view) {
+            youtubeProxy.getClass();
             view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(PhotoViewerWebView.this.currentWebpage.url)));
         }
 
@@ -218,26 +215,16 @@ public abstract class PhotoViewerWebView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PhotoViewerWebView.YoutubeProxy.this.lambda$onPlayerStateChange$3();
+                        PhotoViewerWebView.this.progressBarBlackBackground.setVisibility(4);
                     }
                 }, 300L);
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoViewerWebView.YoutubeProxy.this.lambda$onPlayerStateChange$4(z2, i);
+                    PhotoViewerWebView.this.photoViewer.updateWebPlayerState(z2, i);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onPlayerStateChange$3() {
-            PhotoViewerWebView.this.progressBarBlackBackground.setVisibility(4);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onPlayerStateChange$4(boolean z, int i) {
-            PhotoViewerWebView.this.photoViewer.updateWebPlayerState(z, i);
         }
 
         @JavascriptInterface
@@ -268,7 +255,7 @@ public abstract class PhotoViewerWebView extends FrameLayout {
         this.progressRunnable = new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PhotoViewerWebView.this.lambda$new$0();
+                PhotoViewerWebView.$r8$lambda$409kiaar7EZyRtl7vZWqg2zHetk(PhotoViewerWebView.this);
             }
         };
         this.photoViewer = photoViewer;
@@ -373,16 +360,16 @@ public abstract class PhotoViewerWebView extends FrameLayout {
             Utilities.externalNetworkQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoViewerWebView.2.this.lambda$shouldInterceptRequest$0(uri, webResourceRequest);
+                    PhotoViewerWebView.2.$r8$lambda$5oTX3ciEI7nGbMYoR33CmCaXIjI(PhotoViewerWebView.2.this, uri, webResourceRequest);
                 }
             });
             return null;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$shouldInterceptRequest$0(String str, WebResourceRequest webResourceRequest) {
+        public static /* synthetic */ void $r8$lambda$5oTX3ciEI7nGbMYoR33CmCaXIjI(2 r9, String str, WebResourceRequest webResourceRequest) {
             JSONObject optJSONObject;
             String optString;
+            r9.getClass();
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -494,7 +481,7 @@ public abstract class PhotoViewerWebView extends FrameLayout {
         return Math.min(25, (((int) ceil) - ((this.youtubeStoryboards.size() - 1) * 25)) + 1);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0049 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0049 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -583,7 +570,7 @@ public abstract class PhotoViewerWebView extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoViewerWebView.this.lambda$seekTo$1(j, z);
+                    PhotoViewerWebView.$r8$lambda$bMyoKEu8UHKXcUPDple45jAYiyY(PhotoViewerWebView.this, j, z);
                 }
             }, 100L);
             return;
@@ -591,9 +578,9 @@ public abstract class PhotoViewerWebView extends FrameLayout {
         runJsCode("seekTo(" + Math.round(j / 1000.0f) + ", " + z + ");");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$seekTo$1(long j, boolean z) {
-        runJsCode("seekTo(" + Math.round(j / 1000.0f) + ", " + z + ");");
+    public static /* synthetic */ void $r8$lambda$bMyoKEu8UHKXcUPDple45jAYiyY(final PhotoViewerWebView photoViewerWebView, long j, boolean z) {
+        photoViewerWebView.getClass();
+        photoViewerWebView.runJsCode("seekTo(" + Math.round(j / 1000.0f) + ", " + z + ");");
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
@@ -719,8 +706,8 @@ public abstract class PhotoViewerWebView extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x00a9 A[Catch: Exception -> 0x0088, LOOP:0: B:9:0x00a2->B:11:0x00a9, LOOP_END, TryCatch #0 {Exception -> 0x0088, blocks: (B:3:0x0013, B:5:0x0017, B:8:0x008b, B:9:0x00a2, B:11:0x00a9, B:13:0x00ad, B:41:0x0084, B:42:0x00db, B:27:0x002d, B:29:0x0033, B:31:0x0049, B:33:0x0051, B:35:0x0059, B:37:0x005f, B:38:0x007b), top: B:2:0x0013, inners: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00ad A[EDGE_INSN: B:12:0x00ad->B:13:0x00ad BREAK  A[LOOP:0: B:9:0x00a2->B:11:0x00a9], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00ab A[Catch: Exception -> 0x0089, LOOP:0: B:9:0x00a4->B:11:0x00ab, LOOP_END, TryCatch #0 {Exception -> 0x0089, blocks: (B:3:0x0013, B:5:0x0017, B:8:0x008d, B:9:0x00a4, B:11:0x00ab, B:13:0x00af, B:41:0x0085, B:42:0x00dc, B:27:0x002d, B:29:0x0033, B:31:0x004a, B:33:0x0052, B:35:0x005a, B:37:0x0060, B:38:0x007c), top: B:2:0x0013, inners: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00af A[EDGE_INSN: B:12:0x00af->B:13:0x00af BREAK  A[LOOP:0: B:9:0x00a4->B:11:0x00ab], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

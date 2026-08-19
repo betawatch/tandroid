@@ -31,13 +31,12 @@ final class AutoValue_CrashlyticsReport_FilesPayload_File extends CrashlyticsRep
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.FilesPayload.File)) {
-            return false;
-        }
-        CrashlyticsReport.FilesPayload.File file = (CrashlyticsReport.FilesPayload.File) obj;
-        if (this.filename.equals(file.getFilename())) {
-            if (Arrays.equals(this.contents, file instanceof AutoValue_CrashlyticsReport_FilesPayload_File ? ((AutoValue_CrashlyticsReport_FilesPayload_File) file).contents : file.getContents())) {
-                return true;
+        if (obj instanceof CrashlyticsReport.FilesPayload.File) {
+            CrashlyticsReport.FilesPayload.File file = (CrashlyticsReport.FilesPayload.File) obj;
+            if (this.filename.equals(file.getFilename())) {
+                if (Arrays.equals(this.contents, file instanceof AutoValue_CrashlyticsReport_FilesPayload_File ? ((AutoValue_CrashlyticsReport_FilesPayload_File) file).contents : file.getContents())) {
+                    return true;
+                }
             }
         }
         return false;

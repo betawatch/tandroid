@@ -22,7 +22,6 @@ import java.io.FileOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -56,7 +55,7 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Stories.recorder.CollageLayout;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoryEntry {
     public HashSet albums;
     public boolean allowScreenshots;
@@ -214,12 +213,7 @@ public class StoryEntry {
 
     public static boolean isAnimated(TLRPC.Document document, String str) {
         if (document != null) {
-            if ("video/webm".equals(document.mime_type) || "video/mp4".equals(document.mime_type)) {
-                return true;
-            }
-            if (MessageObject.isAnimatedStickerDocument(document, true) && RLottieNative.getFramesCount(str, null) > 1) {
-                return true;
-            }
+            return "video/webm".equals(document.mime_type) || "video/mp4".equals(document.mime_type) || (MessageObject.isAnimatedStickerDocument(document, true) && RLottieNative.getFramesCount(str, null) > 1);
         }
         return false;
     }
@@ -246,48 +240,49 @@ public class StoryEntry {
         drawable.setCallback(callback);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x02af A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0280 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x024b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x029a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x026d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0240 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public Bitmap buildBitmap(float f, Bitmap bitmap) {
         Bitmap bitmap2;
-        Matrix matrix;
         boolean z;
-        Canvas canvas;
-        Matrix matrix2;
-        Paint paint;
-        Bitmap scaledBitmap;
         boolean z2;
-        Paint paint2;
-        Matrix matrix3;
-        Matrix matrix4 = new Matrix();
-        Paint paint3 = new Paint(7);
-        int i = (int) (this.resultWidth * f);
-        int i2 = (int) (this.resultHeight * f);
-        Bitmap createBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
-        Canvas canvas2 = new Canvas(createBitmap);
+        float f2;
+        int i;
+        Object obj;
+        Bitmap scaledBitmap;
+        RectF rectF;
+        int width;
+        int height;
+        Matrix matrix = new Matrix();
+        Paint paint = new Paint(7);
+        int i2 = (int) (this.resultWidth * f);
+        int i3 = (int) (this.resultHeight * f);
+        Bitmap createBitmap = Bitmap.createBitmap(i2, i3, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        Object obj2 = null;
+        boolean z3 = true;
         if (this.backgroundFile != null) {
             try {
                 Bitmap scaledBitmap2 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda4
                     @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                     public final Bitmap decode(BitmapFactory.Options options) {
-                        Bitmap lambda$buildBitmap$0;
-                        lambda$buildBitmap$0 = StoryEntry.this.lambda$buildBitmap$0(options);
-                        return lambda$buildBitmap$0;
+                        Bitmap decodeFile;
+                        decodeFile = BitmapFactory.decodeFile(StoryEntry.this.backgroundFile.getPath(), options);
+                        return decodeFile;
                     }
-                }, i, i2, false, true);
-                canvas2.save();
-                float width = this.resultWidth / scaledBitmap2.getWidth();
-                canvas2.scale(width, width);
-                matrix4.postScale(f, f);
-                canvas2.drawBitmap(scaledBitmap2, 0.0f, 0.0f, paint3);
-                canvas2.restore();
+                }, i2, i3, false, true);
+                canvas.save();
+                float width2 = this.resultWidth / scaledBitmap2.getWidth();
+                canvas.scale(width2, width2);
+                matrix.postScale(f, f);
+                canvas.drawBitmap(scaledBitmap2, 0.0f, 0.0f, paint);
+                canvas.restore();
                 scaledBitmap2.recycle();
             } catch (Exception e) {
                 FileLog.e(e);
@@ -299,297 +294,230 @@ public class StoryEntry {
                 if (drawable == null) {
                     drawable = PreviewView.getBackgroundDrawableFromTheme(this.currentAccount, str, this.isDark);
                 }
-                drawBackgroundDrawable(canvas2, drawable, canvas2.getWidth(), canvas2.getHeight());
+                drawBackgroundDrawable(canvas, drawable, canvas.getWidth(), canvas.getHeight());
             } else {
-                matrix = matrix4;
+                bitmap2 = createBitmap;
                 long j = this.backgroundWallpaperPeerId;
                 if (j != Long.MIN_VALUE) {
                     Drawable drawable2 = this.backgroundDrawable;
                     if (drawable2 == null) {
                         drawable2 = PreviewView.getBackgroundDrawable((Drawable) null, this.currentAccount, j, this.isDark);
                     }
-                    drawBackgroundDrawable(canvas2, drawable2, canvas2.getWidth(), canvas2.getHeight());
-                    canvas = canvas2;
-                    bitmap2 = createBitmap;
-                    z = true;
-                    Matrix matrix5 = matrix;
-                    matrix5.set(this.matrix);
-                    if (bitmap != null) {
-                        float width2 = this.width / bitmap.getWidth();
-                        matrix5.preScale(width2, width2);
-                        matrix5.postScale(f, f);
-                        canvas.drawBitmap(bitmap, matrix5, paint3);
-                    } else {
-                        if (isCollage()) {
-                            int i3 = 0;
-                            while (i3 < this.collageContent.size()) {
-                                StoryEntry storyEntry = (StoryEntry) this.collageContent.get(i3);
-                                final File file = storyEntry.filterFile;
-                                if (file == null) {
-                                    file = storyEntry.file;
-                                }
-                                if (file != null) {
-                                    try {
-                                        Bitmap scaledBitmap3 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda5
-                                            @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
-                                            public final Bitmap decode(BitmapFactory.Options options) {
-                                                Bitmap lambda$buildBitmap$1;
-                                                lambda$buildBitmap$1 = StoryEntry.lambda$buildBitmap$1(file, options);
-                                                return lambda$buildBitmap$1;
-                                            }
-                                        }, i, i2, z, z);
-                                        canvas.save();
-                                        RectF rectF = new RectF();
-                                        int width3 = scaledBitmap3.getWidth();
-                                        int height = scaledBitmap3.getHeight();
-                                        try {
-                                            if ((((Integer) AndroidUtilities.getImageOrientation(file).first).intValue() / 90) % 2 == z) {
-                                                width3 = scaledBitmap3.getHeight();
-                                                height = scaledBitmap3.getWidth();
-                                            }
-                                            ((CollageLayout.Part) this.collage.parts.get(i3)).bounds(rectF, i, i2);
-                                            canvas.translate(rectF.centerX(), rectF.centerY());
-                                            matrix3 = matrix5;
-                                            try {
-                                                paint2 = paint3;
-                                            } catch (Exception e2) {
-                                                e = e2;
-                                                paint2 = paint3;
-                                            }
-                                        } catch (Exception e3) {
-                                            e = e3;
-                                            paint2 = paint3;
-                                            matrix3 = matrix5;
-                                        }
-                                        try {
-                                            canvas.clipRect((-rectF.width()) / 2.0f, (-rectF.height()) / 2.0f, rectF.width() / 2.0f, rectF.height() / 2.0f);
-                                            float max = Math.max(rectF.width() / width3, rectF.height() / height);
-                                            canvas.scale(max, max);
-                                            canvas.rotate(((Integer) r3.first).intValue());
-                                            canvas.translate((-scaledBitmap3.getWidth()) / 2.0f, (-scaledBitmap3.getHeight()) / 2.0f);
-                                        } catch (Exception e4) {
-                                            e = e4;
-                                            FileLog.e(e);
-                                            z = true;
-                                            i3 += z ? 1 : 0;
-                                            matrix5 = matrix3;
-                                            paint3 = paint2;
-                                        }
-                                        try {
-                                            canvas.drawBitmap(scaledBitmap3, 0.0f, 0.0f, (Paint) null);
-                                            canvas.restore();
-                                        } catch (Exception e5) {
-                                            e = e5;
-                                            FileLog.e(e);
-                                            z = true;
-                                            i3 += z ? 1 : 0;
-                                            matrix5 = matrix3;
-                                            paint3 = paint2;
-                                        }
-                                    } catch (Exception e6) {
-                                        e = e6;
-                                        paint2 = paint3;
-                                        matrix3 = matrix5;
-                                    }
-                                    z = true;
-                                } else {
-                                    paint2 = paint3;
-                                    matrix3 = matrix5;
-                                }
-                                i3 += z ? 1 : 0;
-                                matrix5 = matrix3;
-                                paint3 = paint2;
+                    drawBackgroundDrawable(canvas, drawable2, canvas.getWidth(), canvas.getHeight());
+                } else {
+                    Paint paint2 = new Paint(1);
+                    paint2.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, canvas.getHeight(), new int[]{this.gradientTopColor, this.gradientBottomColor}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+                    canvas.drawRect(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), paint2);
+                }
+                matrix.set(this.matrix);
+                if (bitmap == null) {
+                    float width3 = this.width / bitmap.getWidth();
+                    matrix.preScale(width3, width3);
+                    matrix.postScale(f, f);
+                    canvas.drawBitmap(bitmap, matrix, paint);
+                } else {
+                    if (isCollage()) {
+                        for (int i4 = 0; i4 < this.collageContent.size(); i4 = i + 1) {
+                            StoryEntry storyEntry = (StoryEntry) this.collageContent.get(i4);
+                            final File file = storyEntry.filterFile;
+                            if (file == null) {
+                                file = storyEntry.file;
                             }
-                            paint = paint3;
-                            matrix2 = matrix5;
-                        } else {
-                            final File file2 = this.filterFile;
-                            if (file2 == null) {
-                                file2 = this.file;
-                            }
-                            if (file2 != null) {
+                            if (file != null) {
                                 try {
-                                    matrix2 = matrix5;
-                                } catch (Exception e7) {
-                                    e = e7;
-                                    matrix2 = matrix5;
-                                }
-                                try {
-                                    scaledBitmap = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda6
+                                    scaledBitmap = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda5
                                         @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                         public final Bitmap decode(BitmapFactory.Options options) {
-                                            Bitmap lambda$buildBitmap$2;
-                                            lambda$buildBitmap$2 = StoryEntry.lambda$buildBitmap$2(file2, options);
-                                            return lambda$buildBitmap$2;
+                                            Bitmap decodeFile;
+                                            decodeFile = BitmapFactory.decodeFile(file.getPath(), options);
+                                            return decodeFile;
                                         }
-                                    }, i, i2, this.orientation, true, true);
-                                    float width4 = this.width / scaledBitmap.getWidth();
-                                    matrix2.preScale(width4, width4);
-                                    matrix2.postScale(f, f);
-                                    paint = paint3;
-                                } catch (Exception e8) {
-                                    e = e8;
-                                    paint = paint3;
-                                    FileLog.e(e);
-                                    if (this.paintFile != null) {
-                                    }
-                                    if (this.messageFile != null) {
-                                    }
-                                    if (this.paintEntitiesFile != null) {
-                                    }
-                                    return bitmap2;
+                                    }, i2, i3, z3, z3);
+                                    canvas.save();
+                                    rectF = new RectF();
+                                    width = scaledBitmap.getWidth();
+                                    height = scaledBitmap.getHeight();
+                                } catch (Exception e2) {
+                                    e = e2;
+                                    i = i4;
+                                    obj = obj2;
                                 }
                                 try {
-                                    canvas.drawBitmap(scaledBitmap, matrix2, paint);
-                                    scaledBitmap.recycle();
-                                } catch (Exception e9) {
-                                    e = e9;
+                                    if ((((Integer) AndroidUtilities.getImageOrientation(file).first).intValue() / 90) % 2 == z3) {
+                                        width = scaledBitmap.getHeight();
+                                        height = scaledBitmap.getWidth();
+                                    }
+                                    int i5 = height;
+                                    try {
+                                        ((CollageLayout.Part) this.collage.parts.get(i4)).bounds(rectF, i2, i3);
+                                        canvas.translate(rectF.centerX(), rectF.centerY());
+                                        i = i4;
+                                    } catch (Exception e3) {
+                                        e = e3;
+                                        i = i4;
+                                    }
+                                    try {
+                                        canvas.clipRect((-rectF.width()) / 2.0f, (-rectF.height()) / 2.0f, rectF.width() / 2.0f, rectF.height() / 2.0f);
+                                        float max = Math.max(rectF.width() / width, rectF.height() / i5);
+                                        canvas.scale(max, max);
+                                        canvas.rotate(((Integer) r12.first).intValue());
+                                        canvas.translate((-scaledBitmap.getWidth()) / 2.0f, (-scaledBitmap.getHeight()) / 2.0f);
+                                        obj = null;
+                                    } catch (Exception e4) {
+                                        e = e4;
+                                        obj = null;
+                                        FileLog.e(e);
+                                        obj2 = obj;
+                                        z3 = true;
+                                    }
+                                    try {
+                                        canvas.drawBitmap(scaledBitmap, 0.0f, 0.0f, (Paint) null);
+                                        canvas.restore();
+                                    } catch (Exception e5) {
+                                        e = e5;
+                                        FileLog.e(e);
+                                        obj2 = obj;
+                                        z3 = true;
+                                    }
+                                } catch (Exception e6) {
+                                    e = e6;
+                                    i = i4;
+                                    obj = obj2;
                                     FileLog.e(e);
-                                    if (this.paintFile != null) {
-                                    }
-                                    if (this.messageFile != null) {
-                                    }
-                                    if (this.paintEntitiesFile != null) {
-                                    }
-                                    return bitmap2;
+                                    obj2 = obj;
+                                    z3 = true;
                                 }
                             } else {
-                                matrix2 = matrix5;
-                                paint = paint3;
+                                i = i4;
+                                obj = obj2;
                             }
+                            obj2 = obj;
+                            z3 = true;
                         }
-                        if (this.paintFile != null) {
+                    } else {
+                        final File file2 = this.filterFile;
+                        if (file2 == null) {
+                            file2 = this.file;
+                        }
+                        if (file2 != null) {
                             try {
-                                z2 = false;
-                            } catch (Exception e10) {
-                                e = e10;
-                                z2 = false;
+                                z = false;
+                                z2 = true;
+                                f2 = 0.0f;
+                            } catch (Exception e7) {
+                                e = e7;
+                                z = false;
+                                z2 = true;
+                                f2 = 0.0f;
                             }
                             try {
-                                Bitmap scaledBitmap4 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda7
+                                Bitmap scaledBitmap3 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda6
                                     @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                                     public final Bitmap decode(BitmapFactory.Options options) {
-                                        Bitmap lambda$buildBitmap$3;
-                                        lambda$buildBitmap$3 = StoryEntry.this.lambda$buildBitmap$3(options);
-                                        return lambda$buildBitmap$3;
+                                        Bitmap decodeFile;
+                                        decodeFile = BitmapFactory.decodeFile(file2.getPath(), options);
+                                        return decodeFile;
                                     }
-                                }, i, i2, false, true);
-                                canvas.save();
-                                float width5 = this.resultWidth / scaledBitmap4.getWidth();
-                                canvas.scale(width5, width5);
-                                matrix2.postScale(f, f);
-                                canvas.drawBitmap(scaledBitmap4, 0.0f, 0.0f, paint);
-                                canvas.restore();
-                                scaledBitmap4.recycle();
-                            } catch (Exception e11) {
-                                e = e11;
+                                }, i2, i3, this.orientation, true, true);
+                                float width4 = this.width / scaledBitmap3.getWidth();
+                                matrix.preScale(width4, width4);
+                                matrix.postScale(f, f);
+                                canvas.drawBitmap(scaledBitmap3, matrix, paint);
+                                scaledBitmap3.recycle();
+                            } catch (Exception e8) {
+                                e = e8;
                                 FileLog.e(e);
+                                if (this.paintFile != null) {
+                                }
                                 if (this.messageFile != null) {
                                 }
                                 if (this.paintEntitiesFile != null) {
                                 }
                                 return bitmap2;
                             }
-                        } else {
-                            z2 = false;
-                        }
-                        if (this.messageFile != null) {
-                            try {
-                                Bitmap scaledBitmap5 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda8
-                                    @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
-                                    public final Bitmap decode(BitmapFactory.Options options) {
-                                        Bitmap lambda$buildBitmap$4;
-                                        lambda$buildBitmap$4 = StoryEntry.this.lambda$buildBitmap$4(options);
-                                        return lambda$buildBitmap$4;
-                                    }
-                                }, i, i2, z2, true);
-                                canvas.save();
-                                float width6 = this.resultWidth / scaledBitmap5.getWidth();
-                                canvas.scale(width6, width6);
-                                matrix2.postScale(f, f);
-                                canvas.drawBitmap(scaledBitmap5, 0.0f, 0.0f, paint);
-                                canvas.restore();
-                                scaledBitmap5.recycle();
-                            } catch (Exception e12) {
-                                FileLog.e(e12);
+                            if (this.paintFile != null) {
+                                try {
+                                    Bitmap scaledBitmap4 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda7
+                                        @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
+                                        public final Bitmap decode(BitmapFactory.Options options) {
+                                            Bitmap decodeFile;
+                                            decodeFile = BitmapFactory.decodeFile(StoryEntry.this.paintFile.getPath(), options);
+                                            return decodeFile;
+                                        }
+                                    }, i2, i3, z, z2);
+                                    canvas.save();
+                                    float width5 = this.resultWidth / scaledBitmap4.getWidth();
+                                    canvas.scale(width5, width5);
+                                    matrix.postScale(f, f);
+                                    canvas.drawBitmap(scaledBitmap4, f2, f2, paint);
+                                    canvas.restore();
+                                    scaledBitmap4.recycle();
+                                } catch (Exception e9) {
+                                    FileLog.e(e9);
+                                }
                             }
-                        }
-                        if (this.paintEntitiesFile != null) {
-                            try {
-                                Bitmap scaledBitmap6 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda9
-                                    @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
-                                    public final Bitmap decode(BitmapFactory.Options options) {
-                                        Bitmap lambda$buildBitmap$5;
-                                        lambda$buildBitmap$5 = StoryEntry.this.lambda$buildBitmap$5(options);
-                                        return lambda$buildBitmap$5;
-                                    }
-                                }, i, i2, z2, true);
-                                canvas.save();
-                                float width7 = this.resultWidth / scaledBitmap6.getWidth();
-                                canvas.scale(width7, width7);
-                                matrix2.postScale(f, f);
-                                canvas.drawBitmap(scaledBitmap6, 0.0f, 0.0f, paint);
-                                canvas.restore();
-                                scaledBitmap6.recycle();
-                            } catch (Exception e13) {
-                                FileLog.e(e13);
+                            if (this.messageFile != null) {
+                                try {
+                                    Bitmap scaledBitmap5 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda8
+                                        @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
+                                        public final Bitmap decode(BitmapFactory.Options options) {
+                                            Bitmap decodeFile;
+                                            decodeFile = BitmapFactory.decodeFile(StoryEntry.this.messageFile.getPath(), options);
+                                            return decodeFile;
+                                        }
+                                    }, i2, i3, z, z2);
+                                    canvas.save();
+                                    float width6 = this.resultWidth / scaledBitmap5.getWidth();
+                                    canvas.scale(width6, width6);
+                                    matrix.postScale(f, f);
+                                    canvas.drawBitmap(scaledBitmap5, f2, f2, paint);
+                                    canvas.restore();
+                                    scaledBitmap5.recycle();
+                                } catch (Exception e10) {
+                                    FileLog.e(e10);
+                                }
+                            }
+                            if (this.paintEntitiesFile != null) {
+                                try {
+                                    Bitmap scaledBitmap6 = getScaledBitmap(new DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda9
+                                        @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
+                                        public final Bitmap decode(BitmapFactory.Options options) {
+                                            Bitmap decodeFile;
+                                            decodeFile = BitmapFactory.decodeFile(StoryEntry.this.paintEntitiesFile.getPath(), options);
+                                            return decodeFile;
+                                        }
+                                    }, i2, i3, z, z2);
+                                    canvas.save();
+                                    float width7 = this.resultWidth / scaledBitmap6.getWidth();
+                                    canvas.scale(width7, width7);
+                                    matrix.postScale(f, f);
+                                    canvas.drawBitmap(scaledBitmap6, f2, f2, paint);
+                                    canvas.restore();
+                                    scaledBitmap6.recycle();
+                                } catch (Exception e11) {
+                                    FileLog.e(e11);
+                                }
                             }
                         }
                     }
-                    return bitmap2;
-                }
-                Paint paint4 = new Paint(1);
-                paint4.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, canvas2.getHeight(), new int[]{this.gradientTopColor, this.gradientBottomColor}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-                bitmap2 = createBitmap;
-                z = true;
-                canvas = canvas2;
-                canvas2.drawRect(0.0f, 0.0f, canvas2.getWidth(), canvas2.getHeight(), paint4);
-                Matrix matrix52 = matrix;
-                matrix52.set(this.matrix);
-                if (bitmap != null) {
+                    z = false;
+                    z2 = true;
+                    f2 = 0.0f;
+                    if (this.paintFile != null) {
+                    }
+                    if (this.messageFile != null) {
+                    }
+                    if (this.paintEntitiesFile != null) {
+                    }
                 }
                 return bitmap2;
             }
         }
-        matrix = matrix4;
-        canvas = canvas2;
         bitmap2 = createBitmap;
-        z = true;
-        Matrix matrix522 = matrix;
-        matrix522.set(this.matrix);
-        if (bitmap != null) {
+        matrix.set(this.matrix);
+        if (bitmap == null) {
         }
         return bitmap2;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bitmap lambda$buildBitmap$0(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(this.backgroundFile.getPath(), options);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Bitmap lambda$buildBitmap$1(File file, BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(file.getPath(), options);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Bitmap lambda$buildBitmap$2(File file, BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(file.getPath(), options);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bitmap lambda$buildBitmap$3(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(this.paintFile.getPath(), options);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bitmap lambda$buildBitmap$4(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(this.messageFile.getPath(), options);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bitmap lambda$buildBitmap$5(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(this.paintEntitiesFile.getPath(), options);
     }
 
     public void buildPhoto(File file) {
@@ -730,20 +658,20 @@ public class StoryEntry {
         Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                StoryEntry.this.lambda$updateFilter$6(createBitmap, z, runnable);
+                StoryEntry.$r8$lambda$g6zd4WjZ6N6os63CZGZgQgxCQmc(StoryEntry.this, createBitmap, z, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateFilter$6(Bitmap bitmap, boolean z, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$g6zd4WjZ6N6os63CZGZgQgxCQmc(StoryEntry storyEntry, Bitmap bitmap, boolean z, Runnable runnable) {
+        storyEntry.getClass();
         try {
-            bitmap.compress(z ? Bitmap.CompressFormat.WEBP : Bitmap.CompressFormat.JPEG, 90, new FileOutputStream(this.filterFile));
+            bitmap.compress(z ? Bitmap.CompressFormat.WEBP : Bitmap.CompressFormat.JPEG, 90, new FileOutputStream(storyEntry.filterFile));
         } catch (Exception e) {
             FileLog.e((Throwable) e, false);
             if (z) {
                 try {
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 90, new FileOutputStream(this.filterFile));
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 90, new FileOutputStream(storyEntry.filterFile));
                 } catch (Exception e2) {
                     FileLog.e((Throwable) e2, false);
                 }
@@ -816,9 +744,12 @@ public class StoryEntry {
             }
             ArrayList arrayList = this.mediaEntities;
             if (arrayList != null) {
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) it.next();
+                int size = arrayList.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) obj;
                     if (mediaEntity.type == 2 && !TextUtils.isEmpty(mediaEntity.segmentedPath)) {
                         try {
                             new File(mediaEntity.segmentedPath).delete();
@@ -844,8 +775,8 @@ public class StoryEntry {
         }
         this.thumbPathBitmap = null;
         if (this.collageContent != null) {
-            for (int i = 0; i < this.collageContent.size(); i++) {
-                ((StoryEntry) this.collageContent.get(i)).destroy(z);
+            for (int i2 = 0; i2 < this.collageContent.size(); i2++) {
+                ((StoryEntry) this.collageContent.get(i2)).destroy(z);
             }
         }
         cancelCheckStickers();
@@ -1013,9 +944,9 @@ public class StoryEntry {
                 storyEntry.duration = duration;
                 storyEntry.left = 0.0f;
                 storyEntry.right = Math.min(1.0f, 59500.0f / duration);
-            } else {
-                storyEntry.file = null;
+                return storyEntry;
             }
+            storyEntry.file = null;
         }
         return storyEntry;
     }
@@ -1155,9 +1086,12 @@ public class StoryEntry {
         StoryEntry storyEntry = new StoryEntry();
         storyEntry.collage = collageLayout;
         storyEntry.collageContent = arrayList;
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            StoryEntry storyEntry2 = (StoryEntry) it.next();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            StoryEntry storyEntry2 = (StoryEntry) obj;
             if (storyEntry2.isVideo) {
                 storyEntry.isVideo = true;
                 storyEntry2.videoLeft = 0.0f;
@@ -1289,7 +1223,7 @@ public class StoryEntry {
                     DominantColors.getColors(true, bitmap, true, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda1
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            StoryEntry.this.lambda$setupGradient$7(bitmap, runnable, (int[]) obj);
+                            StoryEntry.$r8$lambda$sszhObw9gQqDSz3_tfBkPZcUeUs(StoryEntry.this, bitmap, runnable, (int[]) obj);
                         }
                     });
                     return;
@@ -1301,27 +1235,27 @@ public class StoryEntry {
                 DominantColors.getColors(true, bitmap2, true, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        StoryEntry.this.lambda$setupGradient$8(runnable, (int[]) obj);
+                        StoryEntry.$r8$lambda$bn3NXI1ZgknZFF3FZZLeS1gFIKc(StoryEntry.this, runnable, (int[]) obj);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupGradient$7(Bitmap bitmap, Runnable runnable, int[] iArr) {
-        this.gradientTopColor = iArr[0];
-        this.gradientBottomColor = iArr[1];
+    public static /* synthetic */ void $r8$lambda$sszhObw9gQqDSz3_tfBkPZcUeUs(StoryEntry storyEntry, Bitmap bitmap, Runnable runnable, int[] iArr) {
+        storyEntry.getClass();
+        storyEntry.gradientTopColor = iArr[0];
+        storyEntry.gradientBottomColor = iArr[1];
         bitmap.recycle();
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupGradient$8(Runnable runnable, int[] iArr) {
-        this.gradientTopColor = iArr[0];
-        this.gradientBottomColor = iArr[1];
+    public static /* synthetic */ void $r8$lambda$bn3NXI1ZgknZFF3FZZLeS1gFIKc(StoryEntry storyEntry, Runnable runnable, int[] iArr) {
+        storyEntry.getClass();
+        storyEntry.gradientTopColor = iArr[0];
+        storyEntry.gradientBottomColor = iArr[1];
         if (runnable != null) {
             runnable.run();
         }
@@ -1422,7 +1356,7 @@ public class StoryEntry {
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                StoryEntry.this.lambda$getVideoEditedInfo$9(absolutePath, iArr, callback);
+                StoryEntry.$r8$lambda$TD6AEcXvX7Srlmbowqorv2rdYU8(StoryEntry.this, absolutePath, iArr, callback);
             }
         };
         if (isCollage()) {
@@ -1434,7 +1368,7 @@ public class StoryEntry {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryEntry.lambda$getVideoEditedInfo$10(strArr, iArr, runnable);
+                    StoryEntry.$r8$lambda$H6dmbGYF3l9IaDiz6ctKYYobTL8(strArr, iArr, runnable);
                 }
             });
             return;
@@ -1445,35 +1379,39 @@ public class StoryEntry {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryEntry.lambda$getVideoEditedInfo$11(absolutePath, iArr, runnable);
+                    StoryEntry.$r8$lambda$EUeGHoSOs8zXahaxowCLuq3i09o(absolutePath, iArr, runnable);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getVideoEditedInfo$9(String str, int[][] iArr, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$TD6AEcXvX7Srlmbowqorv2rdYU8(StoryEntry storyEntry, String str, int[][] iArr, Utilities.Callback callback) {
+        int i;
+        float f;
         long j;
+        VideoEditedInfo.Part part;
         long j2;
         long j3;
         ArrayList arrayList;
+        storyEntry.getClass();
         VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
         videoEditedInfo.isStory = true;
-        videoEditedInfo.fromCamera = this.fromCamera;
-        videoEditedInfo.originalWidth = this.width;
-        videoEditedInfo.originalHeight = this.height;
-        videoEditedInfo.resultWidth = this.resultWidth;
-        videoEditedInfo.resultHeight = this.resultHeight;
-        File file = this.paintFile;
+        videoEditedInfo.fromCamera = storyEntry.fromCamera;
+        videoEditedInfo.originalWidth = storyEntry.width;
+        videoEditedInfo.originalHeight = storyEntry.height;
+        videoEditedInfo.resultWidth = storyEntry.resultWidth;
+        videoEditedInfo.resultHeight = storyEntry.resultHeight;
+        File file = storyEntry.paintFile;
         videoEditedInfo.paintPath = file == null ? null : file.getPath();
-        File file2 = this.messageFile;
+        File file2 = storyEntry.messageFile;
         videoEditedInfo.messagePath = file2 == null ? null : file2.getPath();
-        File file3 = this.messageVideoMaskFile;
+        File file3 = storyEntry.messageVideoMaskFile;
         videoEditedInfo.messageVideoMaskPath = file3 == null ? null : file3.getPath();
-        File file4 = this.backgroundFile;
+        File file4 = storyEntry.backgroundFile;
         videoEditedInfo.backgroundPath = file4 == null ? null : file4.getPath();
         int extractRealEncoderBitrate = MediaController.extractRealEncoderBitrate(videoEditedInfo.resultWidth, videoEditedInfo.resultHeight, videoEditedInfo.bitrate, true);
-        if (this.isVideo && str != null && !isCollage()) {
+        int i2 = 0;
+        if (storyEntry.isVideo && str != null && !storyEntry.isCollage()) {
             videoEditedInfo.originalPath = str;
             videoEditedInfo.isPhoto = false;
             videoEditedInfo.framerate = Math.min(59, iArr[0][7]);
@@ -1482,94 +1420,111 @@ public class StoryEntry {
                 videoBitrate = iArr[0][3];
             }
             videoEditedInfo.originalBitrate = videoBitrate;
-            if (videoBitrate < 1000000 && (arrayList = this.mediaEntities) != null && !arrayList.isEmpty()) {
+            if (videoBitrate < 1000000 && (arrayList = storyEntry.mediaEntities) != null && !arrayList.isEmpty()) {
                 videoEditedInfo.bitrate = 2000000;
                 videoEditedInfo.originalBitrate = -1;
             } else {
-                int i = videoEditedInfo.originalBitrate;
-                if (i < 500000) {
+                int i3 = videoEditedInfo.originalBitrate;
+                if (i3 < 500000) {
                     videoEditedInfo.bitrate = 2500000;
                     videoEditedInfo.originalBitrate = -1;
                 } else {
-                    videoEditedInfo.bitrate = Utilities.clamp(i, 3000000, 500000);
+                    videoEditedInfo.bitrate = Utilities.clamp(i3, 3000000, 500000);
                 }
             }
             FileLog.d("story bitrate, original = " + videoEditedInfo.originalBitrate + " => " + videoEditedInfo.bitrate);
-            int i2 = iArr[0][4];
-            long j4 = (long) i2;
-            this.duration = j4;
+            int i4 = iArr[0][4];
+            long j4 = (long) i4;
+            storyEntry.duration = j4;
             videoEditedInfo.originalDuration = j4 * 1000;
-            float f = j4;
-            long j5 = ((long) (this.left * f)) * 1000;
+            float f2 = j4;
+            long j5 = ((long) (storyEntry.left * f2)) * 1000;
             videoEditedInfo.startTime = j5;
-            long j6 = ((long) (this.right * f)) * 1000;
+            long j6 = ((long) (storyEntry.right * f2)) * 1000;
             videoEditedInfo.endTime = j6;
             videoEditedInfo.estimatedDuration = j6 - j5;
-            videoEditedInfo.volume = this.videoVolume;
-            videoEditedInfo.muted = this.muted;
-            videoEditedInfo.estimatedSize = (long) (r1[5] + (((i2 / 1000.0f) * extractRealEncoderBitrate) / 8.0f));
-            videoEditedInfo.estimatedSize = Math.max(this.file.length(), videoEditedInfo.estimatedSize);
-            videoEditedInfo.filterState = this.filterState;
-            File file5 = this.paintBlurFile;
-            videoEditedInfo.blurPath = file5 != null ? file5.getPath() : null;
+            videoEditedInfo.volume = storyEntry.videoVolume;
+            videoEditedInfo.muted = storyEntry.muted;
+            videoEditedInfo.estimatedSize = (long) (r1[5] + (((i4 / 1000.0f) * extractRealEncoderBitrate) / 8.0f));
+            videoEditedInfo.estimatedSize = Math.max(storyEntry.file.length(), videoEditedInfo.estimatedSize);
+            videoEditedInfo.filterState = storyEntry.filterState;
+            File file5 = storyEntry.paintBlurFile;
+            videoEditedInfo.blurPath = file5 == null ? null : file5.getPath();
             j = 0;
         } else {
-            File file6 = this.filterFile;
+            File file6 = storyEntry.filterFile;
             if (file6 != null) {
                 videoEditedInfo.originalPath = file6.getAbsolutePath();
             } else {
                 videoEditedInfo.originalPath = str;
             }
             videoEditedInfo.isPhoto = true;
-            videoEditedInfo.collage = this.collage;
-            if (isCollage()) {
+            videoEditedInfo.collage = storyEntry.collage;
+            if (storyEntry.isCollage()) {
                 boolean z = false;
-                for (int i3 = 0; i3 < this.collageContent.size(); i3++) {
-                    StoryEntry storyEntry = (StoryEntry) this.collageContent.get(i3);
-                    if (storyEntry.isVideo) {
-                        storyEntry.width = Math.max(storyEntry.width, iArr[i3][1]);
-                        storyEntry.height = Math.max(storyEntry.height, iArr[i3][2]);
-                        storyEntry.duration = Math.max(storyEntry.duration, iArr[i3][4]);
+                for (int i5 = 0; i5 < storyEntry.collageContent.size(); i5++) {
+                    StoryEntry storyEntry2 = (StoryEntry) storyEntry.collageContent.get(i5);
+                    if (storyEntry2.isVideo) {
+                        storyEntry2.width = Math.max(storyEntry2.width, iArr[i5][1]);
+                        storyEntry2.height = Math.max(storyEntry2.height, iArr[i5][2]);
+                        storyEntry2.duration = Math.max(storyEntry2.duration, iArr[i5][4]);
                         z = true;
                     }
                 }
-                ArrayList<VideoEditedInfo.Part> parts = VideoEditedInfo.Part.toParts(this);
+                ArrayList<VideoEditedInfo.Part> parts = VideoEditedInfo.Part.toParts(storyEntry);
                 videoEditedInfo.collageParts = parts;
                 if (!z) {
-                    long j7 = this.averageDuration;
-                    this.duration = j7;
+                    long j7 = storyEntry.averageDuration;
+                    storyEntry.duration = j7;
                     videoEditedInfo.originalDuration = j7;
                     videoEditedInfo.estimatedDuration = j7;
+                    i = extractRealEncoderBitrate;
+                    f = 1000.0f;
                 } else {
-                    Iterator<VideoEditedInfo.Part> it = parts.iterator();
-                    VideoEditedInfo.Part part = null;
+                    int size = parts.size();
+                    int i6 = 0;
                     long j8 = 0;
-                    while (it.hasNext()) {
-                        VideoEditedInfo.Part next = it.next();
-                        if (next.isVideo) {
-                            long j9 = next.duration;
+                    VideoEditedInfo.Part part2 = null;
+                    while (i6 < size) {
+                        VideoEditedInfo.Part part3 = parts.get(i6);
+                        i6++;
+                        VideoEditedInfo.Part part4 = part3;
+                        int i7 = extractRealEncoderBitrate;
+                        if (part4.isVideo) {
+                            long j9 = part4.duration;
                             if (j9 > j8) {
-                                part = next;
                                 j8 = j9;
+                                part2 = part4;
                             }
                         }
+                        extractRealEncoderBitrate = i7;
                     }
-                    if (part != null) {
-                        float f2 = part.duration;
-                        float f3 = part.right;
-                        float f4 = part.left;
-                        long j10 = (long) ((f3 - f4) * f2);
-                        this.duration = j10;
+                    i = extractRealEncoderBitrate;
+                    f = 1000.0f;
+                    if (part2 != null) {
+                        float f3 = part2.duration;
+                        float f4 = part2.right;
+                        float f5 = part2.left;
+                        long j10 = (long) ((f4 - f5) * f3);
+                        storyEntry.duration = j10;
                         videoEditedInfo.originalDuration = j10;
                         videoEditedInfo.estimatedDuration = j10;
-                        j = -(part.offset + ((long) (f4 * f2)));
-                        part.offset = j;
-                        Iterator<VideoEditedInfo.Part> it2 = videoEditedInfo.collageParts.iterator();
-                        while (it2.hasNext()) {
-                            VideoEditedInfo.Part next2 = it2.next();
-                            if (next2.isVideo && next2 != part) {
-                                next2.offset += j;
+                        j = -(part2.offset + ((long) (f5 * f3)));
+                        part2.offset = j;
+                        ArrayList<VideoEditedInfo.Part> arrayList2 = videoEditedInfo.collageParts;
+                        int size2 = arrayList2.size();
+                        int i8 = 0;
+                        while (i8 < size2) {
+                            VideoEditedInfo.Part part5 = arrayList2.get(i8);
+                            i8++;
+                            VideoEditedInfo.Part part6 = part5;
+                            if (!part6.isVideo || part6 == part2) {
+                                part = part2;
+                            } else {
+                                part = part2;
+                                part6.offset += j;
                             }
+                            part2 = part;
                         }
                         videoEditedInfo.startTime = -1L;
                         videoEditedInfo.endTime = -1L;
@@ -1578,25 +1533,29 @@ public class StoryEntry {
                         videoEditedInfo.volume = 1.0f;
                         videoEditedInfo.bitrate = -1;
                         videoEditedInfo.framerate = 30;
-                        videoEditedInfo.estimatedSize = (long) (((this.duration / 1000.0f) * extractRealEncoderBitrate) / 8.0f);
+                        videoEditedInfo.estimatedSize = (long) (((storyEntry.duration / f) * i) / 8.0f);
                         videoEditedInfo.filterState = null;
                     }
                 }
-            } else if (this.round != null) {
-                long j11 = (long) ((this.roundRight - this.roundLeft) * this.roundDuration);
-                this.duration = j11;
-                videoEditedInfo.originalDuration = j11;
-                videoEditedInfo.estimatedDuration = j11;
-            } else if (this.audioPath != null) {
-                long j12 = (long) ((this.audioRight - this.audioLeft) * this.audioDuration);
-                this.duration = j12;
-                videoEditedInfo.originalDuration = j12;
-                videoEditedInfo.estimatedDuration = j12;
             } else {
-                long j13 = this.averageDuration;
-                this.duration = j13;
-                videoEditedInfo.originalDuration = j13;
-                videoEditedInfo.estimatedDuration = j13;
+                i = extractRealEncoderBitrate;
+                f = 1000.0f;
+                if (storyEntry.round != null) {
+                    long j11 = (long) ((storyEntry.roundRight - storyEntry.roundLeft) * storyEntry.roundDuration);
+                    storyEntry.duration = j11;
+                    videoEditedInfo.originalDuration = j11;
+                    videoEditedInfo.estimatedDuration = j11;
+                } else if (storyEntry.audioPath != null) {
+                    long j12 = (long) ((storyEntry.audioRight - storyEntry.audioLeft) * storyEntry.audioDuration);
+                    storyEntry.duration = j12;
+                    videoEditedInfo.originalDuration = j12;
+                    videoEditedInfo.estimatedDuration = j12;
+                } else {
+                    long j13 = storyEntry.averageDuration;
+                    storyEntry.duration = j13;
+                    videoEditedInfo.originalDuration = j13;
+                    videoEditedInfo.estimatedDuration = j13;
+                }
             }
             j = 0;
             videoEditedInfo.startTime = -1L;
@@ -1606,53 +1565,56 @@ public class StoryEntry {
             videoEditedInfo.volume = 1.0f;
             videoEditedInfo.bitrate = -1;
             videoEditedInfo.framerate = 30;
-            videoEditedInfo.estimatedSize = (long) (((this.duration / 1000.0f) * extractRealEncoderBitrate) / 8.0f);
+            videoEditedInfo.estimatedSize = (long) (((storyEntry.duration / f) * i) / 8.0f);
             videoEditedInfo.filterState = null;
         }
-        videoEditedInfo.account = this.currentAccount;
-        videoEditedInfo.wallpaperPeerId = this.backgroundWallpaperPeerId;
-        videoEditedInfo.isDark = this.isDark;
+        videoEditedInfo.account = storyEntry.currentAccount;
+        videoEditedInfo.wallpaperPeerId = storyEntry.backgroundWallpaperPeerId;
+        videoEditedInfo.isDark = storyEntry.isDark;
         videoEditedInfo.avatarStartTime = -1L;
-        MediaController.CropState cropState = this.crop;
+        MediaController.CropState cropState = storyEntry.crop;
         if (cropState != null) {
             videoEditedInfo.cropState = cropState.clone();
         } else {
             videoEditedInfo.cropState = new MediaController.CropState();
         }
         videoEditedInfo.cropState.useMatrix = new Matrix();
-        videoEditedInfo.cropState.useMatrix.set(this.matrix);
-        videoEditedInfo.mediaEntities = this.mediaEntities;
-        videoEditedInfo.gradientTopColor = Integer.valueOf(this.gradientTopColor);
-        videoEditedInfo.gradientBottomColor = Integer.valueOf(this.gradientBottomColor);
+        videoEditedInfo.cropState.useMatrix.set(storyEntry.matrix);
+        videoEditedInfo.mediaEntities = storyEntry.mediaEntities;
+        videoEditedInfo.gradientTopColor = Integer.valueOf(storyEntry.gradientTopColor);
+        videoEditedInfo.gradientBottomColor = Integer.valueOf(storyEntry.gradientBottomColor);
         videoEditedInfo.forceFragmenting = true;
-        videoEditedInfo.hdrInfo = this.hdrInfo;
+        videoEditedInfo.hdrInfo = storyEntry.hdrInfo;
         videoEditedInfo.mixedSoundInfos.clear();
-        if (isCollage() && !this.muted) {
-            Iterator<VideoEditedInfo.Part> it3 = videoEditedInfo.collageParts.iterator();
-            while (it3.hasNext()) {
-                VideoEditedInfo.Part next3 = it3.next();
-                if (next3.isVideo && next3.volume > 0.0f && !next3.muted) {
-                    MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo = new MediaCodecVideoConvertor.MixedSoundInfo(next3.path);
-                    mixedSoundInfo.volume = next3.volume;
-                    float f5 = next3.left;
-                    float f6 = next3.duration;
-                    mixedSoundInfo.audioOffset = ((long) (f5 * f6)) * 1000;
-                    mixedSoundInfo.startTime = next3.offset * 1000;
-                    mixedSoundInfo.duration = ((long) ((next3.right - f5) * f6)) * 1000;
+        if (storyEntry.isCollage() && !storyEntry.muted) {
+            ArrayList<VideoEditedInfo.Part> arrayList3 = videoEditedInfo.collageParts;
+            int size3 = arrayList3.size();
+            while (i2 < size3) {
+                VideoEditedInfo.Part part7 = arrayList3.get(i2);
+                i2++;
+                VideoEditedInfo.Part part8 = part7;
+                if (part8.isVideo && part8.volume > 0.0f && !part8.muted) {
+                    MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo = new MediaCodecVideoConvertor.MixedSoundInfo(part8.path);
+                    mixedSoundInfo.volume = part8.volume;
+                    float f6 = part8.left;
+                    float f7 = part8.duration;
+                    mixedSoundInfo.audioOffset = ((long) (f6 * f7)) * 1000;
+                    mixedSoundInfo.startTime = part8.offset * 1000;
+                    mixedSoundInfo.duration = ((long) ((part8.right - f6) * f7)) * 1000;
                     videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo);
                 }
             }
         }
-        File file7 = this.round;
+        File file7 = storyEntry.round;
         if (file7 != null) {
             MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo2 = new MediaCodecVideoConvertor.MixedSoundInfo(file7.getAbsolutePath());
-            mixedSoundInfo2.volume = this.roundVolume;
-            float f7 = this.roundLeft;
-            float f8 = this.roundDuration;
-            long j14 = ((long) (f7 * f8)) * 1000;
+            mixedSoundInfo2.volume = storyEntry.roundVolume;
+            float f8 = storyEntry.roundLeft;
+            float f9 = storyEntry.roundDuration;
+            long j14 = ((long) (f8 * f9)) * 1000;
             mixedSoundInfo2.audioOffset = j14;
-            if (this.isVideo) {
-                mixedSoundInfo2.startTime = ((long) (this.roundOffset - (this.left * this.duration))) * 1000;
+            if (storyEntry.isVideo) {
+                mixedSoundInfo2.startTime = ((long) (storyEntry.roundOffset - (storyEntry.left * storyEntry.duration))) * 1000;
                 j3 = 0;
             } else {
                 j3 = 0;
@@ -1664,19 +1626,19 @@ public class StoryEntry {
                 mixedSoundInfo2.audioOffset = j14 - j15;
                 mixedSoundInfo2.startTime = j3;
             }
-            mixedSoundInfo2.duration = ((long) ((this.roundRight - f7) * f8)) * 1000;
+            mixedSoundInfo2.duration = ((long) ((storyEntry.roundRight - f8) * f9)) * 1000;
             videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo2);
         }
-        String str2 = this.audioPath;
+        String str2 = storyEntry.audioPath;
         if (str2 != null) {
             MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo3 = new MediaCodecVideoConvertor.MixedSoundInfo(str2);
-            mixedSoundInfo3.volume = this.audioVolume;
-            float f9 = this.audioLeft;
-            float f10 = this.audioDuration;
-            long j16 = ((long) (f9 * f10)) * 1000;
+            mixedSoundInfo3.volume = storyEntry.audioVolume;
+            float f10 = storyEntry.audioLeft;
+            float f11 = storyEntry.audioDuration;
+            long j16 = ((long) (f10 * f11)) * 1000;
             mixedSoundInfo3.audioOffset = j16;
-            if (this.isVideo) {
-                mixedSoundInfo3.startTime = ((long) (this.audioOffset - (this.left * this.duration))) * 1000;
+            if (storyEntry.isVideo) {
+                mixedSoundInfo3.startTime = ((long) (storyEntry.audioOffset - (storyEntry.left * storyEntry.duration))) * 1000;
                 j2 = 0;
             } else {
                 j2 = 0;
@@ -1688,14 +1650,13 @@ public class StoryEntry {
                 mixedSoundInfo3.audioOffset = j16 - j17;
                 mixedSoundInfo3.startTime = j2;
             }
-            mixedSoundInfo3.duration = ((long) ((this.audioRight - f9) * f10)) * 1000;
+            mixedSoundInfo3.duration = ((long) ((storyEntry.audioRight - f10) * f11)) * 1000;
             videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo3);
         }
         callback.run(videoEditedInfo);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getVideoEditedInfo$10(String[] strArr, int[][] iArr, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$H6dmbGYF3l9IaDiz6ctKYYobTL8(String[] strArr, int[][] iArr, Runnable runnable) {
         for (int i = 0; i < strArr.length; i++) {
             String str = strArr[i];
             if (str != null) {
@@ -1705,8 +1666,7 @@ public class StoryEntry {
         AndroidUtilities.runOnUIThread(runnable);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getVideoEditedInfo$11(String str, int[][] iArr, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$EUeGHoSOs8zXahaxowCLuq3i09o(String str, int[][] iArr, Runnable runnable) {
         AnimatedFileNative.getVideoInfo(str, iArr[0], 0L);
         AndroidUtilities.runOnUIThread(runnable);
     }
@@ -1773,25 +1733,24 @@ public class StoryEntry {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                StoryEntry.this.lambda$detectHDR$13(callback);
+                StoryEntry.$r8$lambda$TSN5EM8OSuSg-WH-tNytlut3uso(StoryEntry.this, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$detectHDR$13(final Utilities.Callback callback) {
-        Runnable runnable;
+    public static /* synthetic */ void $r8$lambda$TSN5EM8OSuSg-WH-tNytlut3uso(final StoryEntry storyEntry, final Utilities.Callback callback) {
+        storyEntry.getClass();
         try {
             try {
-                HDRInfo hDRInfo = this.hdrInfo;
+                HDRInfo hDRInfo = storyEntry.hdrInfo;
                 if (hDRInfo == null) {
                     hDRInfo = new HDRInfo();
-                    this.hdrInfo = hDRInfo;
+                    storyEntry.hdrInfo = hDRInfo;
                     hDRInfo.maxlum = 1000.0f;
                     hDRInfo.minlum = 0.001f;
                 }
                 MediaExtractor mediaExtractor = new MediaExtractor();
-                mediaExtractor.setDataSource(this.file.getAbsolutePath());
+                mediaExtractor.setDataSource(storyEntry.file.getAbsolutePath());
                 int findTrack = MediaController.findTrack(mediaExtractor, false);
                 mediaExtractor.selectTrack(findTrack);
                 MediaFormat trackFormat = mediaExtractor.getTrackFormat(findTrack);
@@ -1804,39 +1763,33 @@ public class StoryEntry {
                 if (trackFormat.containsKey("color-range")) {
                     hDRInfo.colorRange = trackFormat.getInteger("color-range");
                 }
-                this.hdrInfo = this.hdrInfo;
-                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
+                storyEntry.hdrInfo = storyEntry.hdrInfo;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StoryEntry.this.lambda$detectHDR$12(callback);
+                        callback.run(StoryEntry.this.hdrInfo);
                     }
-                };
+                });
             } catch (Exception e) {
                 FileLog.e(e);
-                this.hdrInfo = this.hdrInfo;
-                runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
+                storyEntry.hdrInfo = storyEntry.hdrInfo;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StoryEntry.this.lambda$detectHDR$12(callback);
+                        callback.run(StoryEntry.this.hdrInfo);
                     }
-                };
+                });
             }
-            AndroidUtilities.runOnUIThread(runnable);
         } catch (Throwable th) {
-            this.hdrInfo = this.hdrInfo;
+            storyEntry.hdrInfo = storyEntry.hdrInfo;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryEntry.this.lambda$detectHDR$12(callback);
+                    callback.run(StoryEntry.this.hdrInfo);
                 }
             });
             throw th;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$detectHDR$12(Utilities.Callback callback) {
-        callback.run(this.hdrInfo);
     }
 
     public void checkStickers(final TL_stories.StoryItem storyItem) {
@@ -1881,32 +1834,31 @@ public class StoryEntry {
         final RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda14
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                StoryEntry.this.lambda$checkStickers$15(tLObject, tL_error);
+                StoryEntry.$r8$lambda$-LXUfdVqgqjkn3OPlMUMJMISS-M(StoryEntry.this, tLObject, tL_error);
             }
         };
         this.checkStickersReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda15
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                StoryEntry.this.lambda$checkStickers$16(storyItem, tL_messages_getAttachedStickers, requestDelegate, tLObject, tL_error);
+                StoryEntry.$r8$lambda$Ae-fTtakoYm6_u-moVGWyXi9PQI(StoryEntry.this, storyItem, tL_messages_getAttachedStickers, requestDelegate, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkStickers$15(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$-LXUfdVqgqjkn3OPlMUMJMISS-M(final StoryEntry storyEntry, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        storyEntry.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryEntry$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                StoryEntry.this.lambda$checkStickers$14(tLObject);
+                StoryEntry.$r8$lambda$jL_8R1zwjTR3nzIiM0RSM6HP65k(StoryEntry.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkStickers$14(TLObject tLObject) {
-        this.checkStickersReqId = 0;
+    public static /* synthetic */ void $r8$lambda$jL_8R1zwjTR3nzIiM0RSM6HP65k(StoryEntry storyEntry, TLObject tLObject) {
+        storyEntry.checkStickersReqId = 0;
         if (tLObject instanceof Vector) {
-            this.editStickers = new ArrayList();
+            storyEntry.editStickers = new ArrayList();
             Vector vector = (Vector) tLObject;
             for (int i = 0; i < vector.objects.size(); i++) {
                 TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) vector.objects.get(i);
@@ -1925,16 +1877,16 @@ public class StoryEntry {
                     tL_inputDocument.id = document.id;
                     tL_inputDocument.access_hash = document.access_hash;
                     tL_inputDocument.file_reference = document.file_reference;
-                    this.editStickers.add(tL_inputDocument);
+                    storyEntry.editStickers.add(tL_inputDocument);
                 }
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkStickers$16(TL_stories.StoryItem storyItem, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Ae-fTtakoYm6_u-moVGWyXi9PQI(StoryEntry storyEntry, TL_stories.StoryItem storyItem, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
+        storyEntry.getClass();
         if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && storyItem != null) {
-            FileRefController.getInstance(this.currentAccount).requestReference(storyItem, tL_messages_getAttachedStickers, requestDelegate);
+            FileRefController.getInstance(storyEntry.currentAccount).requestReference(storyItem, tL_messages_getAttachedStickers, requestDelegate);
         } else {
             requestDelegate.run(tLObject, tL_error);
         }

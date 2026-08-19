@@ -47,11 +47,13 @@ final class AutoValue_CrashlyticsReportWithSessionId extends CrashlyticsReportWi
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReportWithSessionId)) {
-            return false;
+        if (obj instanceof CrashlyticsReportWithSessionId) {
+            CrashlyticsReportWithSessionId crashlyticsReportWithSessionId = (CrashlyticsReportWithSessionId) obj;
+            if (this.report.equals(crashlyticsReportWithSessionId.getReport()) && this.sessionId.equals(crashlyticsReportWithSessionId.getSessionId()) && this.reportFile.equals(crashlyticsReportWithSessionId.getReportFile())) {
+                return true;
+            }
         }
-        CrashlyticsReportWithSessionId crashlyticsReportWithSessionId = (CrashlyticsReportWithSessionId) obj;
-        return this.report.equals(crashlyticsReportWithSessionId.getReport()) && this.sessionId.equals(crashlyticsReportWithSessionId.getSessionId()) && this.reportFile.equals(crashlyticsReportWithSessionId.getReportFile());
+        return false;
     }
 
     public int hashCode() {

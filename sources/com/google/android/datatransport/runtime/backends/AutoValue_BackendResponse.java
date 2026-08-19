@@ -33,11 +33,13 @@ final class AutoValue_BackendResponse extends BackendResponse {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof BackendResponse)) {
-            return false;
+        if (obj instanceof BackendResponse) {
+            BackendResponse backendResponse = (BackendResponse) obj;
+            if (this.status.equals(backendResponse.getStatus()) && this.nextRequestWaitMillis == backendResponse.getNextRequestWaitMillis()) {
+                return true;
+            }
         }
-        BackendResponse backendResponse = (BackendResponse) obj;
-        return this.status.equals(backendResponse.getStatus()) && this.nextRequestWaitMillis == backendResponse.getNextRequestWaitMillis();
+        return false;
     }
 
     public int hashCode() {

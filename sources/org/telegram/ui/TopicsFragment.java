@@ -271,13 +271,11 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         void onTopicSelected(TLRPC.TL_forumTopic tL_forumTopic);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$chekActionMode$23(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$B9FQdM7bbI9iAujI-rU2_EznkL8(View view, MotionEvent motionEvent) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onDialogAnimationFinished$11() {
+    public static /* synthetic */ void $r8$lambda$FLNt20XBT5wm3vti4JCLvSVO00E() {
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -502,6 +500,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
+                int i4;
                 int size = View.MeasureSpec.getSize(i2);
                 int size2 = View.MeasureSpec.getSize(i3);
                 if (TopicsFragment.this.bottomOverlayContainer != null) {
@@ -510,23 +509,30 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     TopicsFragment.this.bottomOverlayContainer.setPadding(0, 0, 0, TopicsFragment.this.navigationBarHeight);
                     this.ignoreLayout = false;
                 }
-                int i4 = 0;
-                for (int i5 = 0; i5 < getChildCount(); i5++) {
-                    View childAt = getChildAt(i5);
+                int i5 = 0;
+                for (int i6 = 0; i6 < getChildCount(); i6++) {
+                    View childAt = getChildAt(i6);
                     if (childAt instanceof ActionBar) {
                         childAt.measure(i2, View.MeasureSpec.makeMeasureSpec(0, 0));
-                        i4 = childAt.getMeasuredHeight();
+                        i5 = childAt.getMeasuredHeight();
                     }
                 }
-                for (int i6 = 0; i6 < getChildCount(); i6++) {
-                    View childAt2 = getChildAt(i6);
+                int i7 = 0;
+                while (i7 < getChildCount()) {
+                    View childAt2 = getChildAt(i7);
                     if (!(childAt2 instanceof ActionBar)) {
                         if (childAt2.getFitsSystemWindows()) {
                             measureChildWithMargins(childAt2, i2, 0, i3, 0);
                         } else {
+                            i4 = i5;
                             measureChildWithMargins(childAt2, i2, 0, i3, i4);
+                            i7++;
+                            i5 = i4;
                         }
                     }
+                    i4 = i5;
+                    i7++;
+                    i5 = i4;
                 }
                 setMeasuredDimension(size, size2);
             }
@@ -622,6 +628,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
+                Canvas canvas2;
                 if (Build.VERSION.SDK_INT >= 31 && TopicsFragment.this.scrollableViewNoiseSuppressor != null) {
                     TopicsFragment.this.blur3_InvalidateBlur();
                     DialogsActivity dialogsActivity3 = TopicsFragment.this.parentDialogsActivity;
@@ -642,12 +649,15 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 if (TopicsFragment.this.isInPreviewMode()) {
                     this.actionBarPaint.setColor(TopicsFragment.this.getThemedColor(Theme.key_windowBackgroundWhite));
                     this.actionBarPaint.setAlpha((int) (TopicsFragment.this.searchAnimationProgress * 255.0f));
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.statusBarHeight, this.actionBarPaint);
-                    canvas.drawLine(0.0f, 0.0f, 0.0f, getHeight(), Theme.dividerPaint);
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.statusBarHeight, this.actionBarPaint);
+                    canvas2.drawLine(0.0f, 0.0f, 0.0f, getHeight(), Theme.dividerPaint);
+                } else {
+                    canvas2 = canvas;
                 }
                 TopicsFragment topicsFragment = TopicsFragment.this;
                 if (topicsFragment.parentDialogsActivity == null) {
-                    AndroidUtilities.drawNavigationBarProtection(canvas, this, topicsFragment.getThemedColor(Theme.key_windowBackgroundWhite), TopicsFragment.this.navigationBarHeight);
+                    AndroidUtilities.drawNavigationBarProtection(canvas2, this, topicsFragment.getThemedColor(Theme.key_windowBackgroundWhite), TopicsFragment.this.navigationBarHeight);
                 }
             }
 
@@ -683,7 +693,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicsFragment.this.lambda$createView$0(view);
+                TopicsFragment.$r8$lambda$S111Dcy9MRnX_17OpZ2lfk0MYxY(TopicsFragment.this, view);
             }
         });
         ActionBarMenu createMenu = this.actionBar.createMenu();
@@ -693,7 +703,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicsFragment.this.lambda$createView$1(view);
+                    TopicsFragment.this.openParentSearch();
                 }
             });
         } else {
@@ -767,11 +777,16 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
             @Override // org.telegram.ui.Components.RecyclerListView
             public boolean emptyViewIsVisible() {
-                if (getAdapter() == null || isFastScrollAnimationRunning()) {
-                    return false;
+                if (getAdapter() != null && !isFastScrollAnimationRunning()) {
+                    ArrayList arrayList = TopicsFragment.this.forumTopics;
+                    if (arrayList != null && arrayList.size() == 1 && TopicsFragment.this.forumTopics.get(0) != null && ((Item) TopicsFragment.this.forumTopics.get(0)).topic != null && ((Item) TopicsFragment.this.forumTopics.get(0)).topic.id == 1) {
+                        return getAdapter().getItemCount() <= 2;
+                    }
+                    if (getAdapter().getItemCount() <= 1) {
+                        return true;
+                    }
                 }
-                ArrayList arrayList = TopicsFragment.this.forumTopics;
-                return (arrayList == null || arrayList.size() != 1 || TopicsFragment.this.forumTopics.get(0) == null || ((Item) TopicsFragment.this.forumTopics.get(0)).topic == null || ((Item) TopicsFragment.this.forumTopics.get(0)).topic.id != 1) ? getAdapter().getItemCount() <= 1 : getAdapter().getItemCount() <= 2;
+                return false;
             }
         };
         this.iBlur3FactoryLiquidGlass.setSourceRootView(new ViewPositionWatcher(this.contentView), this.contentView);
@@ -789,7 +804,12 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.recyclerListView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsFragment.this.lambda$createView$2();
+                r0.recyclerListView.postOnAnimation(new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda15
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        TopicsFragment.this.blur3_InvalidateBlur();
+                    }
+                });
             }
         });
         SpannableString spannableString = new SpannableString("#");
@@ -828,15 +848,13 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i6) {
-                TopicsFragment.this.lambda$createView$3(view, i6);
+                TopicsFragment.$r8$lambda$8ZkSAjx5noI49mzpLT6uIwbKE0c(TopicsFragment.this, view, i6);
             }
         });
         this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda9
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public final boolean onItemClick(View view, int i6, float f, float f2) {
-                boolean lambda$createView$4;
-                lambda$createView$4 = TopicsFragment.this.lambda$createView$4(view, i6, f, f2);
-                return lambda$createView$4;
+                return TopicsFragment.$r8$lambda$Ga2OcqfDJI8nYL6iPccEEq3fm7A(TopicsFragment.this, view, i6, f, f2);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
@@ -861,9 +879,9 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             }
         });
         TopicsRecyclerView topicsRecyclerView4 = this.recyclerListView;
-        10 r1 = new 10(context);
-        this.layoutManager = r1;
-        topicsRecyclerView4.setLayoutManager(r1);
+        10 r3 = new 10(context);
+        this.layoutManager = r3;
+        topicsRecyclerView4.setLayoutManager(r3);
         this.scrollHelper = new RecyclerAnimationScrollHelper(this.recyclerListView, this.layoutManager);
         this.recyclerListView.setAdapter(this.adapter);
         this.recyclerListView.setClipToPadding(false);
@@ -910,7 +928,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicsFragment.this.lambda$createView$5(view);
+                r0.presentFragment(TopicCreateFragment.create(TopicsFragment.this.chatId, 0L));
             }
         });
         this.floatingButton.imageView.setImageResource(R.drawable.ic_chatlist_add_2);
@@ -982,7 +1000,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.closeReportSpam.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicsFragment.this.lambda$createView$6(view);
+                TopicsFragment.$r8$lambda$pb-22A5HFBaW9vBbpqS1_J7Hhe4(TopicsFragment.this, view);
             }
         });
         this.closeReportSpam.setVisibility(8);
@@ -1019,7 +1037,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.topPanelLayout.setOnAnimatedHeightChangedListener(new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsFragment.this.lambda$createView$7();
+                TopicsFragment.$r8$lambda$ZmPTMaDMoHaZqIijTWJigwcixAY(TopicsFragment.this);
             }
         });
         this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2.0f, 48, 0.0f, -14.0f, 0.0f, 0.0f));
@@ -1033,7 +1051,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             this.pendingRequestsDelegate.setDelegate(new ChatActivityMemberRequestsDelegate.ChangeVisibilityDelegate() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda13
                 @Override // org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.ChangeVisibilityDelegate
                 public final void setVisible(boolean z, boolean z2) {
-                    TopicsFragment.this.lambda$createView$8(z, z2);
+                    r0.topPanelLayout.setViewVisible(TopicsFragment.this.pendingRequestsDelegate.getView(), z, z2);
                 }
             });
             this.pendingRequestsDelegate.setChatInfo(this.chatFull, false);
@@ -1082,7 +1100,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.blurredView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                TopicsFragment.this.lambda$createView$9(view2);
+                TopicsFragment.this.finishPreviewFragment();
             }
         });
         this.blurredView.setFitsSystemWindows(true);
@@ -1115,7 +1133,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             getMessagesController().getBoostsController().getBoostsStats(-this.chatId, new Consumer() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda3
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    TopicsFragment.this.lambda$createView$10((TL_stories.TL_premium_boostsStatus) obj);
+                    TopicsFragment.this.boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 }
             });
         }
@@ -1133,8 +1151,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
     class 2 extends ActionBar.ActionBarMenuOnItemClick {
         final /* synthetic */ Context val$context;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onItemClick$0() {
+        public static /* synthetic */ void $r8$lambda$1OkCq9MtFhXJWecrxhBTGxZpKV8() {
         }
 
         2(Context context) {
@@ -1196,7 +1213,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                         inviteMembersBottomSheet.setDelegate(new GroupCreateActivity.ContactsAddActivityDelegate() { // from class: org.telegram.ui.TopicsFragment$2$$ExternalSyntheticLambda3
                             @Override // org.telegram.ui.GroupCreateActivity.ContactsAddActivityDelegate
                             public final void didSelectUsers(ArrayList arrayList, int i4) {
-                                TopicsFragment.2.this.lambda$onItemClick$2(j, arrayList, i4);
+                                TopicsFragment.2.$r8$lambda$1IbtibxGg361Q3tcogayJrGYI6U(TopicsFragment.2.this, j, arrayList, i4);
                             }
 
                             @Override // org.telegram.ui.GroupCreateActivity.ContactsAddActivityDelegate
@@ -1244,7 +1261,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     topicsFragment4.deleteTopics(topicsFragment4.selectedTopics, new Runnable() { // from class: org.telegram.ui.TopicsFragment$2$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            TopicsFragment.2.this.lambda$onItemClick$5();
+                            TopicsFragment.this.clearSelectedTopics();
                         }
                     });
                     break;
@@ -1278,7 +1295,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     AlertsCreator.createClearOrDeleteDialogAlert(TopicsFragment.this, false, chat, null, false, true, false, false, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.TopicsFragment$2$$ExternalSyntheticLambda0
                         @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                         public final void run(boolean z) {
-                            TopicsFragment.2.this.lambda$onItemClick$4(chat, z);
+                            TopicsFragment.2.$r8$lambda$GZ1AmcvX6GM3GWSuG8oFUyNlZH4(TopicsFragment.2.this, chat, z);
                         }
                     });
                     break;
@@ -1332,7 +1349,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                         TopicsFragment.this.presentFragment(boostsActivity);
                         break;
                     } else {
-                        TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.openBoostForUsersDialog, Long.valueOf(-TopicsFragment.this.chatId));
+                        TopicsFragment.this.getNotificationCenter().postNotificationName(NotificationCenter.openBoostForUsersDialog, Long.valueOf(-TopicsFragment.this.chatId));
                         break;
                     }
                 case 15:
@@ -1343,29 +1360,33 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             super.onItemClick(i);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$2(final long j, final ArrayList arrayList, int i) {
+        public static /* synthetic */ void $r8$lambda$1IbtibxGg361Q3tcogayJrGYI6U(2 r20, final long j, final ArrayList arrayList, int i) {
+            final 2 r1 = r20;
+            r1.getClass();
             final int size = arrayList.size();
             final int[] iArr = new int[1];
             final TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
             tL_messages_invitedUsers.updates = new TLRPC.TL_updates();
-            for (int i2 = 0; i2 < size; i2++) {
+            int i2 = 0;
+            while (i2 < size) {
                 TopicsFragment.this.getMessagesController().addUserToChat(j, (TLRPC.User) arrayList.get(i2), i, null, TopicsFragment.this, false, new Runnable() { // from class: org.telegram.ui.TopicsFragment$2$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicsFragment.2.lambda$onItemClick$0();
+                        TopicsFragment.2.$r8$lambda$1OkCq9MtFhXJWecrxhBTGxZpKV8();
                     }
                 }, null, new Utilities.Callback() { // from class: org.telegram.ui.TopicsFragment$2$$ExternalSyntheticLambda5
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        TopicsFragment.2.this.lambda$onItemClick$1(tL_messages_invitedUsers, iArr, size, arrayList, j, (TLRPC.TL_messages_invitedUsers) obj);
+                        TopicsFragment.2.$r8$lambda$W9AZuw9G8Xt_g04gluVKdQ9ETUM(TopicsFragment.2.this, tL_messages_invitedUsers, iArr, size, arrayList, j, (TLRPC.TL_messages_invitedUsers) obj);
                     }
                 });
+                i2++;
+                r1 = r20;
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i, ArrayList arrayList, long j, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2) {
+        public static /* synthetic */ void $r8$lambda$W9AZuw9G8Xt_g04gluVKdQ9ETUM(2 r1, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i, ArrayList arrayList, long j, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2) {
+            r1.getClass();
             if (tL_messages_invitedUsers2 != null) {
                 tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
             }
@@ -1380,44 +1401,22 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$4(TLRPC.Chat chat, boolean z) {
+        public static /* synthetic */ void $r8$lambda$GZ1AmcvX6GM3GWSuG8oFUyNlZH4(2 r4, TLRPC.Chat chat, boolean z) {
             NotificationCenter notificationCenter = TopicsFragment.this.getNotificationCenter();
             TopicsFragment topicsFragment = TopicsFragment.this;
             int i = NotificationCenter.closeChats;
             notificationCenter.removeObserver(topicsFragment, i);
-            TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, new Object[0]);
+            TopicsFragment.this.getNotificationCenter().postNotificationName(i, new Object[0]);
             TopicsFragment.this.finishFragment();
-            TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-chat.id), null, chat, Boolean.valueOf(z));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$5() {
-            TopicsFragment.this.clearSelectedTopics();
+            TopicsFragment.this.getNotificationCenter().postNotificationName(NotificationCenter.needDeleteDialog, Long.valueOf(-chat.id), null, chat, Boolean.valueOf(z));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view) {
-        if (this.searching) {
+    public static /* synthetic */ void $r8$lambda$S111Dcy9MRnX_17OpZ2lfk0MYxY(TopicsFragment topicsFragment, View view) {
+        if (topicsFragment.searching) {
             return;
         }
-        openProfile(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view) {
-        openParentSearch();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2() {
-        this.recyclerListView.postOnAnimation(new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda15
-            @Override // java.lang.Runnable
-            public final void run() {
-                TopicsFragment.this.blur3_InvalidateBlur();
-            }
-        });
+        topicsFragment.openProfile(false);
     }
 
     class 7 extends DefaultItemAnimator {
@@ -1450,19 +1449,18 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.TopicsFragment$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsFragment.7.this.lambda$onAllAnimationsDone$0();
+                    TopicsFragment.7.$r8$lambda$ejqAi4kczZnGuly4Cz_S56Fw62w(TopicsFragment.7.this);
                 }
             };
             this.finishRunnable = runnable2;
             AndroidUtilities.runOnUIThread(runnable2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAllAnimationsDone$0() {
-            this.finishRunnable = null;
-            if (this.scrollAnimationIndex != -1) {
-                TopicsFragment.this.getNotificationCenter().onAnimationFinish(this.scrollAnimationIndex);
-                this.scrollAnimationIndex = -1;
+        public static /* synthetic */ void $r8$lambda$ejqAi4kczZnGuly4Cz_S56Fw62w(7 r3) {
+            r3.finishRunnable = null;
+            if (r3.scrollAnimationIndex != -1) {
+                TopicsFragment.this.getNotificationCenter().onAnimationFinish(r3.scrollAnimationIndex);
+                r3.scrollAnimationIndex = -1;
             }
         }
 
@@ -1476,19 +1474,18 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.TopicsFragment$7$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsFragment.7.this.lambda$endAnimations$1();
+                    TopicsFragment.7.$r8$lambda$M1OPIVENa3kqYReMX0IG4cDWhc0(TopicsFragment.7.this);
                 }
             };
             this.finishRunnable = runnable2;
             AndroidUtilities.runOnUIThread(runnable2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$endAnimations$1() {
-            this.finishRunnable = null;
-            if (this.scrollAnimationIndex != -1) {
-                TopicsFragment.this.getNotificationCenter().onAnimationFinish(this.scrollAnimationIndex);
-                this.scrollAnimationIndex = -1;
+        public static /* synthetic */ void $r8$lambda$M1OPIVENa3kqYReMX0IG4cDWhc0(7 r3) {
+            r3.finishRunnable = null;
+            if (r3.scrollAnimationIndex != -1) {
+                TopicsFragment.this.getNotificationCenter().onAnimationFinish(r3.scrollAnimationIndex);
+                r3.scrollAnimationIndex = -1;
             }
         }
 
@@ -1507,43 +1504,42 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$8ZkSAjx5noI49mzpLT6uIwbKE0c(TopicsFragment topicsFragment, View view, int i) {
         long peerDialogId;
-        if (getParentLayout() == null || getParentLayout().isInPreviewMode() || !(view instanceof TopicDialogCell)) {
+        if (topicsFragment.getParentLayout() == null || topicsFragment.getParentLayout().isInPreviewMode() || !(view instanceof TopicDialogCell)) {
             return;
         }
         TLRPC.TL_forumTopic tL_forumTopic = ((TopicDialogCell) view).forumTopic;
-        boolean isMonoForum = getMessagesController().isMonoForum(-this.chatId);
+        boolean isMonoForum = topicsFragment.getMessagesController().isMonoForum(-topicsFragment.chatId);
         if (tL_forumTopic == null) {
             peerDialogId = 0;
         } else {
             peerDialogId = isMonoForum ? DialogObject.getPeerDialogId(tL_forumTopic.from_id) : tL_forumTopic.id;
         }
         long j = peerDialogId;
-        if (this.openedForSelect) {
-            OnTopicSelectedListener onTopicSelectedListener = this.onTopicSelectedListener;
+        if (topicsFragment.openedForSelect) {
+            OnTopicSelectedListener onTopicSelectedListener = topicsFragment.onTopicSelectedListener;
             if (onTopicSelectedListener != null) {
                 onTopicSelectedListener.onTopicSelected(tL_forumTopic);
             }
-            DialogsActivity dialogsActivity = this.dialogsActivity;
+            DialogsActivity dialogsActivity = topicsFragment.dialogsActivity;
             if (dialogsActivity != null) {
-                dialogsActivity.didSelectResult(-this.chatId, j, true, false, this);
+                dialogsActivity.didSelectResult(-topicsFragment.chatId, j, true, false, topicsFragment);
                 return;
             }
             return;
         }
-        if (this.selectedTopics.size() > 0) {
-            toggleSelection(view);
+        if (topicsFragment.selectedTopics.size() > 0) {
+            topicsFragment.toggleSelection(view);
             return;
         }
-        if (this.inPreviewMode && AndroidUtilities.isTablet()) {
-            for (BaseFragment baseFragment : getParentLayout().getFragmentStack()) {
+        if (topicsFragment.inPreviewMode && AndroidUtilities.isTablet()) {
+            for (BaseFragment baseFragment : topicsFragment.getParentLayout().getFragmentStack()) {
                 if (baseFragment instanceof DialogsActivity) {
                     DialogsActivity dialogsActivity2 = (DialogsActivity) baseFragment;
                     if (dialogsActivity2.isMainDialogList()) {
                         MessagesStorage.TopicKey openedDialogId = dialogsActivity2.getOpenedDialogId();
-                        if (openedDialogId.dialogId == (-this.chatId) && openedDialogId.topicId == j) {
+                        if (openedDialogId.dialogId == (-topicsFragment.chatId) && openedDialogId.topicId == j) {
                             return;
                         }
                     } else {
@@ -1551,27 +1547,26 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     }
                 }
             }
-            this.selectedTopicForTablet = j;
-            updateTopicsList(false, false);
+            topicsFragment.selectedTopicForTablet = j;
+            topicsFragment.updateTopicsList(false, false);
         }
-        ForumUtilities.openTopic(this, this.chatId, tL_forumTopic, 0);
+        ForumUtilities.openTopic(topicsFragment, topicsFragment.chatId, tL_forumTopic, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$4(View view, int i, float f, float f2) {
-        if (this.openedForSelect || getParentLayout() == null || getParentLayout().isInPreviewMode()) {
+    public static /* synthetic */ boolean $r8$lambda$Ga2OcqfDJI8nYL6iPccEEq3fm7A(TopicsFragment topicsFragment, View view, int i, float f, float f2) {
+        if (topicsFragment.openedForSelect || topicsFragment.getParentLayout() == null || topicsFragment.getParentLayout().isInPreviewMode()) {
             return false;
         }
-        if (!this.actionBar.isActionModeShowed() && !AndroidUtilities.isTablet() && (view instanceof TopicDialogCell)) {
+        if (!topicsFragment.actionBar.isActionModeShowed() && !AndroidUtilities.isTablet() && (view instanceof TopicDialogCell)) {
             TopicDialogCell topicDialogCell = (TopicDialogCell) view;
             if (topicDialogCell.isPointInsideAvatar(f, f2)) {
-                showChatPreview(topicDialogCell);
-                this.recyclerListView.cancelClickRunnables(true);
-                this.recyclerListView.dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                topicsFragment.showChatPreview(topicDialogCell);
+                topicsFragment.recyclerListView.cancelClickRunnables(true);
+                topicsFragment.recyclerListView.dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
                 return false;
             }
         }
-        toggleSelection(view);
+        topicsFragment.toggleSelection(view);
         try {
             view.performHapticFeedback(0);
         } catch (Exception unused) {
@@ -1762,21 +1757,11 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicsFragment$10$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicsFragment.10.this.lambda$onLayoutChildren$0();
+                        TopicsFragment.this.adapter.notifyDataSetChanged();
                     }
                 });
             }
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLayoutChildren$0() {
-            TopicsFragment.this.adapter.notifyDataSetChanged();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(View view) {
-        presentFragment(TopicCreateFragment.create(this.chatId, 0L));
     }
 
     class 15 implements View.OnClickListener {
@@ -1792,14 +1777,13 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 AlertsCreator.showBlockReportSpamAlert(topicsFragment, -topicsFragment.chatId, null, topicsFragment.getCurrentChat(), null, false, TopicsFragment.this.chatFull, new MessagesStorage.IntCallback() { // from class: org.telegram.ui.TopicsFragment$15$$ExternalSyntheticLambda0
                     @Override // org.telegram.messenger.MessagesStorage.IntCallback
                     public final void run(int i) {
-                        TopicsFragment.15.this.lambda$onClick$0(i);
+                        TopicsFragment.15.$r8$lambda$6JnyDAez3HvSahR66LSvJ-VnllM(TopicsFragment.15.this, i);
                     }
                 }, TopicsFragment.this.getResourceProvider());
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onClick$0(int i) {
+        public static /* synthetic */ void $r8$lambda$6JnyDAez3HvSahR66LSvJ-VnllM(15 r0, int i) {
             if (i == 0) {
                 TopicsFragment.this.updateChatInfo();
             } else {
@@ -1808,31 +1792,14 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(View view) {
-        getMessagesController().hidePeerSettingsBar(-this.chatId, null, getCurrentChat());
-        updateChatInfo();
+    public static /* synthetic */ void $r8$lambda$pb-22A5HFBaW9vBbpqS1_J7Hhe4(TopicsFragment topicsFragment, View view) {
+        topicsFragment.getMessagesController().hidePeerSettingsBar(-topicsFragment.chatId, null, topicsFragment.getCurrentChat());
+        topicsFragment.updateChatInfo();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$7() {
-        blur3_InvalidateBlur();
-        checkUi_listViewPadding();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$8(boolean z, boolean z2) {
-        this.topPanelLayout.setViewVisible(this.pendingRequestsDelegate.getView(), z, z2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$9(View view) {
-        finishPreviewFragment();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$10(TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        this.boostsStatus = tL_premium_boostsStatus;
+    public static /* synthetic */ void $r8$lambda$ZmPTMaDMoHaZqIijTWJigwcixAY(TopicsFragment topicsFragment) {
+        topicsFragment.blur3_InvalidateBlur();
+        topicsFragment.checkUi_listViewPadding();
     }
 
     private void updateTopicsEmptyViewText() {
@@ -1897,7 +1864,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         presentFragment(chatActivity);
     }
 
-    private void openParentSearch() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void openParentSearch() {
         ActionBarMenuItem actionBarMenuItem;
         DialogsActivity dialogsActivity = this.parentDialogsActivity;
         if (dialogsActivity == null || (actionBarMenuItem = dialogsActivity.searchItem) == null) {
@@ -2003,6 +1971,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
         @Override // org.telegram.ui.Components.BlurredRecyclerView, org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
+            Canvas canvas2;
             if (TopicsFragment.this.generalTopicViewMoving != null) {
                 canvas.save();
                 canvas.translate(TopicsFragment.this.generalTopicViewMoving.getLeft(), TopicsFragment.this.generalTopicViewMoving.getY());
@@ -2012,7 +1981,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             super.dispatchDraw(canvas);
             if (drawMovingViewsOverlayed()) {
                 this.paint.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
-                for (int i = 0; i < getChildCount(); i++) {
+                int i = 0;
+                while (i < getChildCount()) {
                     View childAt = getChildAt(i);
                     if (((childAt instanceof DialogCell) && ((DialogCell) childAt).isMoving()) || ((childAt instanceof DialogsAdapter.LastEmptyView) && ((DialogsAdapter.LastEmptyView) childAt).moving)) {
                         if (childAt.getAlpha() != 1.0f) {
@@ -2022,17 +1992,25 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                             canvas.save();
                         }
                         canvas.translate(childAt.getX(), childAt.getY());
-                        canvas.drawRect(0.0f, 0.0f, childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), this.paint);
-                        childAt.draw(canvas);
-                        canvas.restore();
+                        canvas2 = canvas;
+                        canvas2.drawRect(0.0f, 0.0f, childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), this.paint);
+                        childAt.draw(canvas2);
+                        canvas2.restore();
+                    } else {
+                        canvas2 = canvas;
                     }
+                    i++;
+                    canvas = canvas2;
                 }
                 invalidate();
             }
         }
 
         private boolean drawMovingViewsOverlayed() {
-            return (getItemAnimator() == null || !getItemAnimator().isRunning() || (TopicsFragment.this.dialogRemoveFinished == 0 && TopicsFragment.this.dialogInsertFinished == 0 && TopicsFragment.this.dialogChangeFinished == 0)) ? false : true;
+            if (getItemAnimator() == null || !getItemAnimator().isRunning()) {
+                return false;
+            }
+            return (TopicsFragment.this.dialogRemoveFinished == 0 && TopicsFragment.this.dialogInsertFinished == 0 && TopicsFragment.this.dialogChangeFinished == 0) ? false : true;
         }
 
         @Override // org.telegram.ui.Components.BlurredRecyclerView, org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
@@ -2176,7 +2154,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicsFragment$TopicsRecyclerView$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            TopicsFragment.TopicsRecyclerView.this.lambda$onTouchEvent$0(valueAnimator);
+                            TopicsFragment.TopicsRecyclerView.$r8$lambda$oW1oWjNQhpWBFgOrlCbUS6sCuPI(TopicsFragment.TopicsRecyclerView.this, valueAnimator);
                         }
                     });
                     ofFloat.setDuration(Math.max(100L, (long) (350.0f - ((getViewOffset() / PullForegroundDrawable.getMaxOverscroll()) * 120.0f))));
@@ -2195,9 +2173,9 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             return onTouchEvent;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onTouchEvent$0(ValueAnimator valueAnimator) {
-            setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        public static /* synthetic */ void $r8$lambda$oW1oWjNQhpWBFgOrlCbUS6sCuPI(TopicsRecyclerView topicsRecyclerView, ValueAnimator valueAnimator) {
+            topicsRecyclerView.getClass();
+            topicsRecyclerView.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
@@ -2229,7 +2207,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsFragment.lambda$onDialogAnimationFinished$11();
+                TopicsFragment.$r8$lambda$FLNt20XBT5wm3vti4JCLvSVO00E();
             }
         });
     }
@@ -2247,7 +2225,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda24
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                TopicsFragment.this.lambda$deleteTopics$14(hashSet, arrayList, runnable, alertDialog, i);
+                TopicsFragment.$r8$lambda$81kpvZ8HG4iqv5D0rbiFicllQTc(TopicsFragment.this, hashSet, arrayList, runnable, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda25
@@ -2264,36 +2242,34 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteTopics$14(HashSet hashSet, final ArrayList arrayList, final Runnable runnable, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$81kpvZ8HG4iqv5D0rbiFicllQTc(final TopicsFragment topicsFragment, HashSet hashSet, final ArrayList arrayList, final Runnable runnable, AlertDialog alertDialog, int i) {
+        topicsFragment.getClass();
         HashSet hashSet2 = new HashSet();
-        this.excludeTopics = hashSet2;
+        topicsFragment.excludeTopics = hashSet2;
         hashSet2.addAll(hashSet);
-        updateTopicsList(true, false);
-        BulletinFactory.of(this).createUndoBulletin(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda27
+        topicsFragment.updateTopicsList(true, false);
+        BulletinFactory.of(topicsFragment).createUndoBulletin(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsFragment.this.lambda$deleteTopics$12();
+                TopicsFragment.$r8$lambda$t3qhKIogwlM86ZsX5kevouWTvMk(TopicsFragment.this);
             }
         }, new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsFragment.this.lambda$deleteTopics$13(arrayList, runnable);
+                TopicsFragment.$r8$lambda$mX-zQLUD3Wyi0RKcvyxfgUj-_n4(TopicsFragment.this, arrayList, runnable);
             }
         }).show();
-        clearSelectedTopics();
+        topicsFragment.clearSelectedTopics();
         alertDialog.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteTopics$12() {
-        this.excludeTopics = null;
-        updateTopicsList(true, false);
+    public static /* synthetic */ void $r8$lambda$t3qhKIogwlM86ZsX5kevouWTvMk(TopicsFragment topicsFragment) {
+        topicsFragment.excludeTopics = null;
+        topicsFragment.updateTopicsList(true, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteTopics$13(ArrayList arrayList, Runnable runnable) {
-        this.topicsController.deleteTopics(this.chatId, arrayList);
+    public static /* synthetic */ void $r8$lambda$mX-zQLUD3Wyi0RKcvyxfgUj-_n4(TopicsFragment topicsFragment, ArrayList arrayList, Runnable runnable) {
+        topicsFragment.topicsController.deleteTopics(topicsFragment.chatId, arrayList);
         runnable.run();
     }
 
@@ -2308,7 +2284,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         ChatNotificationsPopupWrapper chatNotificationsPopupWrapper = new ChatNotificationsPopupWrapper(getContext(), this.currentAccount, actionBarPopupWindowLayoutArr[0].getSwipeBack(), false, false, new 19(tL_forumTopic), getResourceProvider());
         final int addViewToSwipeBack = actionBarPopupWindowLayoutArr[0].addViewToSwipeBack(chatNotificationsPopupWrapper.windowLayout);
         chatNotificationsPopupWrapper.type = 1;
-        chatNotificationsPopupWrapper.lambda$update$11(-this.chatId, tL_forumTopic.id, null);
+        chatNotificationsPopupWrapper.update(-this.chatId, tL_forumTopic.id, null);
         if (ChatObject.canManageTopics(getCurrentChat())) {
             ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getParentActivity(), true, false);
             if (tL_forumTopic.pinned) {
@@ -2320,7 +2296,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicsFragment.this.lambda$showChatPreview$16(tL_forumTopic, view);
+                    TopicsFragment.$r8$lambda$TQ77CltlaViQKgCjScddtwp-e4Y(TopicsFragment.this, tL_forumTopic, view);
                 }
             });
             actionBarPopupWindowLayoutArr[0].addView(actionBarMenuSubItem);
@@ -2335,7 +2311,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicsFragment.this.lambda$showChatPreview$17(tL_forumTopic, actionBarPopupWindowLayoutArr, addViewToSwipeBack, view);
+                TopicsFragment.$r8$lambda$St_2sxa7nlOL1jZ_rAd5C5pyI-Q(TopicsFragment.this, tL_forumTopic, actionBarPopupWindowLayoutArr, addViewToSwipeBack, view);
             }
         });
         actionBarPopupWindowLayoutArr[0].addView(actionBarMenuSubItem2);
@@ -2350,7 +2326,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda18
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicsFragment.this.lambda$showChatPreview$18(tL_forumTopic, view);
+                    TopicsFragment.$r8$lambda$Zu232ARvmJzUdx0XWdLbUJwSeVU(TopicsFragment.this, tL_forumTopic, view);
                 }
             });
             actionBarPopupWindowLayoutArr[0].addView(actionBarMenuSubItem3);
@@ -2364,7 +2340,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda19
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicsFragment.this.lambda$showChatPreview$19(tL_forumTopic, view);
+                    TopicsFragment.$r8$lambda$7UnXqQTiHfWMVrlXZlSr9HPMAQI(TopicsFragment.this, tL_forumTopic, view);
                 }
             });
             actionBarPopupWindowLayoutArr[0].addView(actionBarMenuSubItem4);
@@ -2437,13 +2413,13 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicsFragment$19$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsFragment.19.this.lambda$showCustomize$0(tL_forumTopic);
+                    TopicsFragment.19.$r8$lambda$b0cESwS-tEUbi-wVePcR1zFz5PM(TopicsFragment.19.this, tL_forumTopic);
                 }
             }, 500L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$showCustomize$0(TLRPC.TL_forumTopic tL_forumTopic) {
+        public static /* synthetic */ void $r8$lambda$b0cESwS-tEUbi-wVePcR1zFz5PM(19 r4, TLRPC.TL_forumTopic tL_forumTopic) {
+            r4.getClass();
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", -TopicsFragment.this.chatId);
             bundle.putLong("topic_id", tL_forumTopic.id);
@@ -2463,21 +2439,19 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showChatPreview$16(TLRPC.TL_forumTopic tL_forumTopic, View view) {
-        this.scrollToTop = true;
-        this.updateAnimated = true;
-        this.topicsController.pinTopic(this.chatId, tL_forumTopic.id, !tL_forumTopic.pinned, this);
-        finishPreviewFragment();
+    public static /* synthetic */ void $r8$lambda$TQ77CltlaViQKgCjScddtwp-e4Y(TopicsFragment topicsFragment, TLRPC.TL_forumTopic tL_forumTopic, View view) {
+        topicsFragment.scrollToTop = true;
+        topicsFragment.updateAnimated = true;
+        topicsFragment.topicsController.pinTopic(topicsFragment.chatId, tL_forumTopic.id, !tL_forumTopic.pinned, topicsFragment);
+        topicsFragment.finishPreviewFragment();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showChatPreview$17(TLRPC.TL_forumTopic tL_forumTopic, ActionBarPopupWindow.ActionBarPopupWindowLayout[] actionBarPopupWindowLayoutArr, int i, View view) {
-        if (getMessagesController().isDialogMuted(-this.chatId, tL_forumTopic.id)) {
-            getNotificationsController().muteDialog(-this.chatId, tL_forumTopic.id, false);
-            finishPreviewFragment();
-            if (BulletinFactory.canShowBulletin(this)) {
-                BulletinFactory.createMuteBulletin(this, 4, 0, getResourceProvider()).show();
+    public static /* synthetic */ void $r8$lambda$St_2sxa7nlOL1jZ_rAd5C5pyI-Q(TopicsFragment topicsFragment, TLRPC.TL_forumTopic tL_forumTopic, ActionBarPopupWindow.ActionBarPopupWindowLayout[] actionBarPopupWindowLayoutArr, int i, View view) {
+        if (topicsFragment.getMessagesController().isDialogMuted(-topicsFragment.chatId, tL_forumTopic.id)) {
+            topicsFragment.getNotificationsController().muteDialog(-topicsFragment.chatId, tL_forumTopic.id, false);
+            topicsFragment.finishPreviewFragment();
+            if (BulletinFactory.canShowBulletin(topicsFragment)) {
+                BulletinFactory.createMuteBulletin(topicsFragment, 4, 0, topicsFragment.getResourceProvider()).show();
                 return;
             }
             return;
@@ -2485,18 +2459,17 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         actionBarPopupWindowLayoutArr[0].getSwipeBack().openForeground(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showChatPreview$18(TLRPC.TL_forumTopic tL_forumTopic, View view) {
-        this.updateAnimated = true;
-        this.topicsController.toggleCloseTopic(this.chatId, tL_forumTopic.id, !tL_forumTopic.closed);
-        finishPreviewFragment();
+    public static /* synthetic */ void $r8$lambda$Zu232ARvmJzUdx0XWdLbUJwSeVU(TopicsFragment topicsFragment, TLRPC.TL_forumTopic tL_forumTopic, View view) {
+        topicsFragment.updateAnimated = true;
+        topicsFragment.topicsController.toggleCloseTopic(topicsFragment.chatId, tL_forumTopic.id, !tL_forumTopic.closed);
+        topicsFragment.finishPreviewFragment();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showChatPreview$19(TLRPC.TL_forumTopic tL_forumTopic, View view) {
+    public static /* synthetic */ void $r8$lambda$7UnXqQTiHfWMVrlXZlSr9HPMAQI(final TopicsFragment topicsFragment, TLRPC.TL_forumTopic tL_forumTopic, View view) {
+        topicsFragment.getClass();
         HashSet hashSet = new HashSet();
         hashSet.add(Integer.valueOf(tL_forumTopic.id));
-        deleteTopics(hashSet, new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda26
+        topicsFragment.deleteTopics(hashSet, new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
                 TopicsFragment.this.finishPreviewFragment();
@@ -2543,7 +2516,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.searchAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda20
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                TopicsFragment.this.lambda$animateToSearchView$20(valueAnimator2);
+                TopicsFragment.$r8$lambda$S-wwa1EtsQjUi88bNwtORNR-Brg(TopicsFragment.this, valueAnimator2);
             }
         });
         this.searchContainer.setVisibility(0);
@@ -2570,12 +2543,12 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.searchAnimator.setDuration(200L);
         this.searchAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.searchAnimator.start();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, Boolean.TRUE);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needCheckSystemBarColors, Boolean.TRUE);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateToSearchView$20(ValueAnimator valueAnimator) {
-        updateSearchProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public static /* synthetic */ void $r8$lambda$S-wwa1EtsQjUi88bNwtORNR-Brg(TopicsFragment topicsFragment, ValueAnimator valueAnimator) {
+        topicsFragment.getClass();
+        topicsFragment.updateSearchProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2628,34 +2601,31 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         getMessagesController().addUserToChat(this.chatId, getUserConfig().getCurrentUser(), 0, null, this, false, new Runnable() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsFragment.this.lambda$joinToGroup$21();
+                TopicsFragment.$r8$lambda$xS7PRMK4ZC4UrRJrj5WpBWdA_4Q(TopicsFragment.this);
             }
         }, new MessagesController.ErrorDelegate() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda23
             @Override // org.telegram.messenger.MessagesController.ErrorDelegate
             public final boolean run(TLRPC.TL_error tL_error) {
-                boolean lambda$joinToGroup$22;
-                lambda$joinToGroup$22 = TopicsFragment.this.lambda$joinToGroup$22(tL_error);
-                return lambda$joinToGroup$22;
+                return TopicsFragment.$r8$lambda$4vMQ7Il3iclNMqdUdT4RRb-PHeM(TopicsFragment.this, tL_error);
             }
         });
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.closeSearchByActiveAction, new Object[0]);
         updateChatInfo();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$joinToGroup$21() {
-        this.joinRequested = false;
-        updateChatInfo(true);
+    public static /* synthetic */ void $r8$lambda$xS7PRMK4ZC4UrRJrj5WpBWdA_4Q(TopicsFragment topicsFragment) {
+        topicsFragment.joinRequested = false;
+        topicsFragment.updateChatInfo(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$joinToGroup$22(TLRPC.TL_error tL_error) {
+    public static /* synthetic */ boolean $r8$lambda$4vMQ7Il3iclNMqdUdT4RRb-PHeM(TopicsFragment topicsFragment, TLRPC.TL_error tL_error) {
+        topicsFragment.getClass();
         if (tL_error == null || !"INVITE_REQUEST_SENT".equals(tL_error.text)) {
             return true;
         }
-        MessagesController.getNotificationsSettings(this.currentAccount).edit().putLong("dialog_join_requested_time_" + (-this.chatId), System.currentTimeMillis()).commit();
-        JoinGroupAlert.showBulletin(getContext(), this, ChatObject.isChannelAndNotMegaGroup(getCurrentChat()));
-        updateChatInfo(true);
+        MessagesController.getNotificationsSettings(topicsFragment.currentAccount).edit().putLong("dialog_join_requested_time_" + (-topicsFragment.chatId), System.currentTimeMillis()).commit();
+        JoinGroupAlert.showBulletin(topicsFragment.getContext(), topicsFragment, ChatObject.isChannelAndNotMegaGroup(topicsFragment.getCurrentChat()));
+        topicsFragment.updateChatInfo(true);
         return false;
     }
 
@@ -2685,7 +2655,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 ((View) this.fragmentView.getParent()).invalidate();
             }
             this.actionBar.showActionMode(true);
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needCheckSystemBarColors, new Object[0]);
             Iterator it = this.selectedTopics.iterator();
             int i2 = 0;
             int i3 = 0;
@@ -2814,9 +2784,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.selectedDialogsCountTextView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda21
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$chekActionMode$23;
-                lambda$chekActionMode$23 = TopicsFragment.lambda$chekActionMode$23(view, motionEvent);
-                return lambda$chekActionMode$23;
+                return TopicsFragment.$r8$lambda$B9FQdM7bbI9iAujI-rU2_EznkL8(view, motionEvent);
             }
         });
         this.pinItem = createActionMode.addItemWithWidth(4, R.drawable.msg_pin, AndroidUtilities.dp(54.0f));
@@ -3346,7 +3314,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.dialogsActivity = dialogsActivity;
     }
 
-    private class Adapter extends AdapterWithDiffUtils {
+    /* JADX INFO: Access modifiers changed from: private */
+    class Adapter extends AdapterWithDiffUtils {
         private Adapter() {
         }
 
@@ -3425,14 +3394,14 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             return new RecyclerListView.Holder(topicDialogCell);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:44:0x0108  */
-        /* JADX WARN: Removed duplicated region for block: B:47:0x0125  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x010a  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x0127  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x0129  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            boolean z;
             int i2;
             if (viewHolder.getItemViewType() == 0) {
                 TLRPC.TL_forumTopic tL_forumTopic = ((Item) getArray().get(i)).topic;
@@ -3443,7 +3412,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 TLRPC.TL_forumTopic tL_forumTopic3 = topicDialogCell.forumTopic;
                 int i4 = tL_forumTopic3 == null ? 0 : tL_forumTopic3.id;
                 int i5 = tL_forumTopic.id;
-                boolean z2 = i4 == i5 && topicDialogCell.position == i && TopicsFragment.this.animatedUpdateEnabled;
+                boolean z = i4 == i5 && topicDialogCell.position == i && TopicsFragment.this.animatedUpdateEnabled;
                 if (message != null) {
                     MessageObject messageObject = new MessageObject(((BaseFragment) TopicsFragment.this).currentAccount, message, false, false);
                     if (TopicsFragment.this.getMessagesController().isMonoForum(-TopicsFragment.this.chatId)) {
@@ -3459,36 +3428,36 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                         topicDialogCell.useSeparator = i3 < getItemCount();
                     } else {
                         TopicsFragment topicsFragment = TopicsFragment.this;
-                        z = z2;
+                        long j = -topicsFragment.chatId;
+                        boolean isInPreviewMode = topicsFragment.isInPreviewMode();
                         i2 = i5;
-                        topicDialogCell.setForumTopic(tL_forumTopic, -topicsFragment.chatId, messageObject, topicsFragment.isInPreviewMode(), z);
-                        topicDialogCell.drawDivider = i != TopicsFragment.this.forumTopics.size() - 1 || TopicsFragment.this.recyclerListView.emptyViewIsVisible();
-                        boolean z3 = tL_forumTopic.pinned;
-                        topicDialogCell.fullSeparator = z3 && (tL_forumTopic2 == null || !tL_forumTopic2.pinned);
-                        topicDialogCell.setPinForced(z3 && !tL_forumTopic.hidden);
+                        topicDialogCell.setForumTopic(tL_forumTopic, j, messageObject, isInPreviewMode, z);
+                        topicDialogCell.drawDivider = i != TopicsFragment.this.forumTopics.size() + (-1) || TopicsFragment.this.recyclerListView.emptyViewIsVisible();
+                        boolean z2 = tL_forumTopic.pinned;
+                        topicDialogCell.fullSeparator = z2 && (tL_forumTopic2 == null || !tL_forumTopic2.pinned);
+                        topicDialogCell.setPinForced(z2 && !tL_forumTopic.hidden);
                         topicDialogCell.position = i;
                         if (!TopicsFragment.this.getMessagesController().isMonoForum(-TopicsFragment.this.chatId)) {
                             topicDialogCell.setTopicIcon(tL_forumTopic);
                         }
                         topicDialogCell.setChecked(TopicsFragment.this.selectedTopics.contains(Integer.valueOf(i2)), z);
-                        topicDialogCell.setDialogSelected(TopicsFragment.this.selectedTopicForTablet == ((long) i2));
+                        topicDialogCell.setDialogSelected(TopicsFragment.this.selectedTopicForTablet != ((long) i2));
                         topicDialogCell.onReorderStateChanged(TopicsFragment.this.reordering, true);
                         return;
                     }
                 }
-                z = z2;
                 i2 = i5;
                 if (!TopicsFragment.this.getMessagesController().isMonoForum(-TopicsFragment.this.chatId)) {
                 }
                 topicDialogCell.setChecked(TopicsFragment.this.selectedTopics.contains(Integer.valueOf(i2)), z);
-                topicDialogCell.setDialogSelected(TopicsFragment.this.selectedTopicForTablet == ((long) i2));
+                topicDialogCell.setDialogSelected(TopicsFragment.this.selectedTopicForTablet != ((long) i2));
                 topicDialogCell.onReorderStateChanged(TopicsFragment.this.reordering, true);
                 return;
             }
             if (viewHolder.getItemViewType() == 3) {
                 TopicDialogCell topicDialogCell2 = (TopicDialogCell) viewHolder.itemView;
                 topicDialogCell2.setCurrentDialogId(-TopicsFragment.this.chatId);
-                topicDialogCell2.drawDivider = i != TopicsFragment.this.forumTopics.size() - 1 || TopicsFragment.this.recyclerListView.emptyViewIsVisible();
+                topicDialogCell2.drawDivider = i != TopicsFragment.this.forumTopics.size() + (-1) || TopicsFragment.this.recyclerListView.emptyViewIsVisible();
                 topicDialogCell2.position = i;
             }
         }
@@ -3710,7 +3679,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicsFragment$TopicDialogCell$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        TopicsFragment.TopicDialogCell.this.lambda$updateHidden$0(valueAnimator2);
+                        TopicsFragment.TopicDialogCell.$r8$lambda$Lq6SoYo5B6rbgChsAv6Faj5VQvA(TopicsFragment.TopicDialogCell.this, valueAnimator2);
                     }
                 });
                 this.hiddenAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT);
@@ -3721,10 +3690,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             setHiddenT();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateHidden$0(ValueAnimator valueAnimator) {
-            this.hiddenT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            setHiddenT();
+        public static /* synthetic */ void $r8$lambda$Lq6SoYo5B6rbgChsAv6Faj5VQvA(TopicDialogCell topicDialogCell, ValueAnimator valueAnimator) {
+            topicDialogCell.getClass();
+            topicDialogCell.hiddenT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            topicDialogCell.setHiddenT();
         }
 
         private void setHiddenT() {
@@ -3893,7 +3862,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             this.recyclerView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
-                    TopicsFragment.MessagesSearchContainer.this.lambda$new$0(view, i);
+                    TopicsFragment.MessagesSearchContainer.$r8$lambda$9LTiEpv8cROFUgbLVwHPA2y6hWQ(TopicsFragment.MessagesSearchContainer.this, view, i);
                 }
             });
             this.recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.TopicsFragment.MessagesSearchContainer.2
@@ -3942,8 +3911,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             setAdapter(viewPagerAdapter);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$9LTiEpv8cROFUgbLVwHPA2y6hWQ(MessagesSearchContainer messagesSearchContainer, View view, int i) {
+            messagesSearchContainer.getClass();
             if (view instanceof TopicSearchCell) {
                 TopicsFragment topicsFragment = TopicsFragment.this;
                 ForumUtilities.openTopic(topicsFragment, topicsFragment.chatId, ((TopicSearchCell) view).getTopic(), 0);
@@ -4154,15 +4123,15 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsFragment.MessagesSearchContainer.this.lambda$searchMessages$1(str);
+                    TopicsFragment.MessagesSearchContainer.$r8$lambda$vYgTj_U5gOB_15pPDre66b__wUI(TopicsFragment.MessagesSearchContainer.this, str);
                 }
             };
             this.searchRunnable = runnable2;
             AndroidUtilities.runOnUIThread(runnable2, 200L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchMessages$1(String str) {
+        public static /* synthetic */ void $r8$lambda$vYgTj_U5gOB_15pPDre66b__wUI(MessagesSearchContainer messagesSearchContainer, String str) {
+            messagesSearchContainer.getClass();
             String lowerCase = str.trim().toLowerCase();
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < TopicsFragment.this.forumTopics.size(); i++) {
@@ -4171,14 +4140,14 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     ((Item) TopicsFragment.this.forumTopics.get(i)).topic.searchQuery = lowerCase;
                 }
             }
-            this.searchResultTopics.clear();
-            this.searchResultTopics.addAll(arrayList);
-            updateRows();
-            if (!this.searchResultTopics.isEmpty()) {
-                this.isLoading = false;
-                this.itemsEnterAnimator.showItemsAnimated(0);
+            messagesSearchContainer.searchResultTopics.clear();
+            messagesSearchContainer.searchResultTopics.addAll(arrayList);
+            messagesSearchContainer.updateRows();
+            if (!messagesSearchContainer.searchResultTopics.isEmpty()) {
+                messagesSearchContainer.isLoading = false;
+                messagesSearchContainer.itemsEnterAnimator.showItemsAnimated(0);
             }
-            loadMessages(str);
+            messagesSearchContainer.loadMessages(str);
         }
 
         public void setSearchString(String str) {
@@ -4206,47 +4175,46 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             ConnectionsManager.getInstance(((BaseFragment) TopicsFragment.this).currentAccount).sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.ui.TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    TopicsFragment.MessagesSearchContainer.this.lambda$loadMessages$3(str, tLObject, tL_error);
+                    TopicsFragment.MessagesSearchContainer.$r8$lambda$4ehGlp7vGjmNoJ4rkpW1wFpt6kw(TopicsFragment.MessagesSearchContainer.this, str, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadMessages$3(final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$4ehGlp7vGjmNoJ4rkpW1wFpt6kw(final MessagesSearchContainer messagesSearchContainer, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            messagesSearchContainer.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsFragment.MessagesSearchContainer.this.lambda$loadMessages$2(str, tLObject);
+                    TopicsFragment.MessagesSearchContainer.$r8$lambda$QVPO434hR4QBV7H0G7otBMxcZDg(TopicsFragment.MessagesSearchContainer.this, str, tLObject);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadMessages$2(String str, TLObject tLObject) {
-            if (str.equals(this.searchString)) {
-                int i = this.rowCount;
+        public static /* synthetic */ void $r8$lambda$QVPO434hR4QBV7H0G7otBMxcZDg(MessagesSearchContainer messagesSearchContainer, String str, TLObject tLObject) {
+            if (str.equals(messagesSearchContainer.searchString)) {
+                int i = messagesSearchContainer.rowCount;
                 boolean z = false;
-                this.messagesIsLoading = false;
-                this.isLoading = false;
+                messagesSearchContainer.messagesIsLoading = false;
+                messagesSearchContainer.isLoading = false;
                 if (tLObject instanceof TLRPC.messages_Messages) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     for (int i2 = 0; i2 < messages_messages.messages.size(); i2++) {
                         MessageObject messageObject = new MessageObject(((BaseFragment) TopicsFragment.this).currentAccount, messages_messages.messages.get(i2), false, false);
                         messageObject.setQuery(str);
-                        this.searchResultMessages.add(messageObject);
+                        messagesSearchContainer.searchResultMessages.add(messageObject);
                     }
-                    updateRows();
-                    if (this.searchResultMessages.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
+                    messagesSearchContainer.updateRows();
+                    if (messagesSearchContainer.searchResultMessages.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
                         z = true;
                     }
-                    this.canLoadMore = z;
+                    messagesSearchContainer.canLoadMore = z;
                 } else {
-                    this.canLoadMore = false;
+                    messagesSearchContainer.canLoadMore = false;
                 }
-                if (this.rowCount == 0) {
-                    this.emptyView.showProgress(this.isLoading, true);
+                if (messagesSearchContainer.rowCount == 0) {
+                    messagesSearchContainer.emptyView.showProgress(messagesSearchContainer.isLoading, true);
                 }
-                this.itemsEnterAnimator.showItemsAnimated(i);
+                messagesSearchContainer.itemsEnterAnimator.showItemsAnimated(i);
             }
         }
 
@@ -4286,7 +4254,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             }
 
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r9v5, types: [org.telegram.ui.Cells.DialogCell, org.telegram.ui.TopicsFragment$TopicDialogCell] */
+            /* JADX WARN: Type inference failed for: r1v3, types: [org.telegram.ui.Cells.DialogCell, org.telegram.ui.TopicsFragment$TopicDialogCell] */
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 FrameLayout frameLayout;
@@ -4545,7 +4513,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (dialogsActivity2 == null || (rightSlidingDialogContainer = dialogsActivity2.rightSlidingDialogContainer) == null || !rightSlidingDialogContainer.hasFragment()) {
                 return;
             }
-            this.parentDialogsActivity.rightSlidingDialogContainer.lambda$presentFragment$1();
+            this.parentDialogsActivity.rightSlidingDialogContainer.finishPreview();
         }
     }
 
@@ -4598,7 +4566,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
     }
 
-    private class Item extends AdapterWithDiffUtils.Item {
+    /* JADX INFO: Access modifiers changed from: private */
+    class Item extends AdapterWithDiffUtils.Item {
         TLRPC.TL_forumTopic topic;
 
         public Item(int i, TLRPC.TL_forumTopic tL_forumTopic) {
@@ -4613,7 +4582,9 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (obj != null && getClass() == obj.getClass()) {
                 Item item = (Item) obj;
                 int i = this.viewType;
-                return i == item.viewType && i == 0 && this.topic.id == item.topic.id;
+                if (i == item.viewType && i == 0 && this.topic.id == item.topic.id) {
+                    return true;
+                }
             }
             return false;
         }
@@ -4658,7 +4629,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                TopicsFragment.this.lambda$getThemeDescriptions$24();
+                TopicsFragment.$r8$lambda$upOyBqIWAKPYclEGCxOfgWAwIjI(TopicsFragment.this);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -4683,14 +4654,13 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$24() {
+    public static /* synthetic */ void $r8$lambda$upOyBqIWAKPYclEGCxOfgWAwIjI(TopicsFragment topicsFragment) {
         ViewGroup viewGroup;
         for (int i = 0; i < 2; i++) {
             if (i == 0) {
-                viewGroup = this.recyclerListView;
+                viewGroup = topicsFragment.recyclerListView;
             } else {
-                MessagesSearchContainer messagesSearchContainer = this.searchContainer;
+                MessagesSearchContainer messagesSearchContainer = topicsFragment.searchContainer;
                 viewGroup = messagesSearchContainer != null ? messagesSearchContainer.recyclerView : null;
             }
             if (viewGroup != null) {
@@ -4707,18 +4677,18 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 }
             }
         }
-        ActionBar actionBar = this.actionBar;
+        ActionBar actionBar = topicsFragment.actionBar;
         if (actionBar != null) {
-            actionBar.setPopupBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), true);
-            this.actionBar.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false, true);
-            this.actionBar.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true, true);
-            this.actionBar.setPopupItemsSelectorColor(getThemedColor(Theme.key_dialogButtonSelector), true);
+            actionBar.setPopupBackgroundColor(topicsFragment.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), true);
+            topicsFragment.actionBar.setPopupItemsColor(topicsFragment.getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false, true);
+            topicsFragment.actionBar.setPopupItemsColor(topicsFragment.getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true, true);
+            topicsFragment.actionBar.setPopupItemsSelectorColor(topicsFragment.getThemedColor(Theme.key_dialogButtonSelector), true);
         }
-        View view = this.blurredView;
+        View view = topicsFragment.blurredView;
         if (view != null && Build.VERSION.SDK_INT >= 23) {
-            view.setForeground(new ColorDrawable(ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundWhite), 100)));
+            view.setForeground(new ColorDrawable(ColorUtils.setAlphaComponent(topicsFragment.getThemedColor(Theme.key_windowBackgroundWhite), 100)));
         }
-        updateColors();
+        topicsFragment.updateColors();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

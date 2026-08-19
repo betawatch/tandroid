@@ -54,21 +54,26 @@ public class ProtocolExtension implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            ProtocolExtension protocolExtension = (ProtocolExtension) obj;
+            List list = this.ticketKeys;
+            if (list == null ? protocolExtension.ticketKeys != null : !list.equals(protocolExtension.ticketKeys)) {
+                return false;
+            }
+            String str = this.devMake;
+            if (str == null ? protocolExtension.devMake != null : !str.equals(protocolExtension.devMake)) {
+                return false;
+            }
+            String str2 = this.devModel;
+            String str3 = protocolExtension.devModel;
+            if (str2 != null) {
+                return str2.equals(str3);
+            }
+            if (str3 == null) {
+                return true;
+            }
         }
-        ProtocolExtension protocolExtension = (ProtocolExtension) obj;
-        List list = this.ticketKeys;
-        if (list == null ? protocolExtension.ticketKeys != null : !list.equals(protocolExtension.ticketKeys)) {
-            return false;
-        }
-        String str = this.devMake;
-        if (str == null ? protocolExtension.devMake != null : !str.equals(protocolExtension.devMake)) {
-            return false;
-        }
-        String str2 = this.devModel;
-        String str3 = protocolExtension.devModel;
-        return str2 != null ? str2.equals(str3) : str3 == null;
+        return false;
     }
 
     public int hashCode() {

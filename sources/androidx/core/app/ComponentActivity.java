@@ -63,31 +63,50 @@ public abstract class ComponentActivity extends Activity implements LifecycleOwn
         return !shouldSkipDump(strArr);
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x003a, code lost:
+    
+        if (r4.equals("--list-dumpables") == false) goto L40;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x004a, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT < 33) goto L33;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x004c, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x004d, code lost:
+    
+        return false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
+    
+        if (r4.equals("--dump-dumpable") == false) goto L40;
+     */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private final boolean shouldSkipDump(String[] strArr) {
-        if (strArr == null || strArr.length == 0) {
-            return false;
+        if (strArr != null && strArr.length != 0) {
+            String str = strArr[0];
+            switch (str.hashCode()) {
+                case -645125871:
+                    if (str.equals("--translation") && Build.VERSION.SDK_INT >= 31) {
+                        return true;
+                    }
+                    break;
+                case 100470631:
+                    break;
+                case 472614934:
+                    break;
+                case 1159329357:
+                    return str.equals("--contentcapture") && Build.VERSION.SDK_INT >= 29;
+                case 1455016274:
+                    return str.equals("--autofill") && Build.VERSION.SDK_INT >= 26;
+            }
         }
-        String str = strArr[0];
-        switch (str.hashCode()) {
-            case -645125871:
-                return str.equals("--translation") && Build.VERSION.SDK_INT >= 31;
-            case 100470631:
-                if (!str.equals("--dump-dumpable")) {
-                    return false;
-                }
-                break;
-            case 472614934:
-                if (!str.equals("--list-dumpables")) {
-                    return false;
-                }
-                break;
-            case 1159329357:
-                return str.equals("--contentcapture") && Build.VERSION.SDK_INT >= 29;
-            case 1455016274:
-                return str.equals("--autofill") && Build.VERSION.SDK_INT >= 26;
-            default:
-                return false;
-        }
-        return Build.VERSION.SDK_INT >= 33;
+        return false;
     }
 }

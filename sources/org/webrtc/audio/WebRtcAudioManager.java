@@ -7,7 +7,7 @@ import android.media.AudioTrack;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 class WebRtcAudioManager {
     private static final int BITS_PER_SAMPLE = 16;
     private static final int DEFAULT_FRAME_PER_BUFFER = 256;

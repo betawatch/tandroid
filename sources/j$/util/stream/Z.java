@@ -1,76 +1,66 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import java.util.function.LongConsumer;
+import java.util.function.LongFunction;
+import java.util.function.LongPredicate;
+import java.util.function.LongToDoubleFunction;
+import java.util.function.LongToIntFunction;
+import java.util.function.LongUnaryOperator;
 
 /* loaded from: classes2.dex */
-abstract class Z extends a0 {
-    public final /* synthetic */ int l;
+public final class Z extends a2 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ Z(b bVar, int i, int i2) {
-        super(bVar, i);
-        this.l = i2;
+    public /* synthetic */ Z(a aVar, f2 f2Var, int i) {
+        super(f2Var);
+        this.b = i;
+        this.c = aVar;
     }
 
-    @Override // j$.util.stream.b
-    final boolean P() {
-        switch (this.l) {
-            case 0:
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        switch (this.l) {
-            case 0:
-                if (!K()) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!K()) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return new u(this, a3.r, 2);
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ IntStream parallel() {
-        switch (this.l) {
-            case 0:
-                parallel();
+    @Override // j$.util.stream.a2, j$.util.stream.f2
+    public void y(long j) {
+        switch (this.b) {
+            case 4:
+                this.a.y(-1L);
                 break;
             default:
-                parallel();
+                super.y(j);
                 break;
         }
-        return this;
     }
 
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ IntStream sequential() {
-        switch (this.l) {
+    @Override // j$.util.stream.e2, j$.util.stream.f2
+    public final void accept(long j) {
+        switch (this.b) {
             case 0:
-                sequential();
-                break;
+                this.a.accept((f2) ((LongFunction) ((p) this.c).n).apply(j));
+                return;
+            case 1:
+                ((s) this.c).getClass();
+                LongUnaryOperator longUnaryOperator = null;
+                longUnaryOperator.applyAsLong(j);
+                throw null;
+            case 2:
+                ((r) this.c).getClass();
+                LongToIntFunction longToIntFunction = null;
+                longToIntFunction.applyAsInt(j);
+                throw null;
+            case 3:
+                ((q) this.c).getClass();
+                LongToDoubleFunction longToDoubleFunction = null;
+                longToDoubleFunction.applyAsDouble(j);
+                throw null;
+            case 4:
+                ((s) this.c).getClass();
+                LongPredicate longPredicate = null;
+                longPredicate.test(j);
+                throw null;
             default:
-                sequential();
-                break;
+                ((LongConsumer) ((c0) this.c).n).accept(j);
+                this.a.accept(j);
+                return;
         }
-        return this;
-    }
-
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        switch (this.l) {
-        }
-        return spliterator();
     }
 }

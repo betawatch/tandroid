@@ -121,24 +121,25 @@ public final class LinkedTreeMap extends AbstractMap implements Serializable {
         } else {
             i = 0;
         }
+        Node node4 = node2;
         if (!z) {
             return null;
         }
-        Node node4 = this.header;
-        if (node2 == null) {
+        Node node5 = this.header;
+        if (node4 == null) {
             if (comparator == NATURAL_ORDER && !(obj instanceof Comparable)) {
                 throw new ClassCastException(obj.getClass().getName() + " is not Comparable");
             }
-            node = new Node(this.allowNullValues, node2, obj, node4, node4.prev);
+            node = new Node(this.allowNullValues, node4, obj, node5, node5.prev);
             this.root = node;
         } else {
-            node = new Node(this.allowNullValues, node2, obj, node4, node4.prev);
+            node = new Node(this.allowNullValues, node4, obj, node5, node5.prev);
             if (i < 0) {
-                node2.left = node;
+                node4.left = node;
             } else {
-                node2.right = node;
+                node4.right = node;
             }
-            rebalance(node2, true);
+            rebalance(node4, true);
         }
         this.size++;
         this.modCount++;
@@ -146,14 +147,13 @@ public final class LinkedTreeMap extends AbstractMap implements Serializable {
     }
 
     Node findByObject(Object obj) {
-        if (obj == null) {
-            return null;
+        if (obj != null) {
+            try {
+                return find(obj, false);
+            } catch (ClassCastException unused) {
+            }
         }
-        try {
-            return find(obj, false);
-        } catch (ClassCastException unused) {
-            return null;
-        }
+        return null;
     }
 
     Node findByEntry(Map.Entry entry) {
@@ -397,27 +397,21 @@ public final class LinkedTreeMap extends AbstractMap implements Serializable {
 
         @Override // java.util.Map.Entry
         public boolean equals(Object obj) {
-            if (!(obj instanceof Map.Entry)) {
-                return false;
-            }
-            Map.Entry entry = (Map.Entry) obj;
-            Object obj2 = this.key;
-            if (obj2 == null) {
-                if (entry.getKey() != null) {
-                    return false;
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Object obj2 = this.key;
+                if (obj2 != null ? obj2.equals(entry.getKey()) : entry.getKey() == null) {
+                    Object obj3 = this.value;
+                    if (obj3 == null) {
+                        if (entry.getValue() == null) {
+                            return true;
+                        }
+                    } else if (obj3.equals(entry.getValue())) {
+                        return true;
+                    }
                 }
-            } else if (!obj2.equals(entry.getKey())) {
-                return false;
             }
-            Object obj3 = this.value;
-            if (obj3 == null) {
-                if (entry.getValue() != null) {
-                    return false;
-                }
-            } else if (!obj3.equals(entry.getValue())) {
-                return false;
-            }
-            return true;
+            return false;
         }
 
         @Override // java.util.Map.Entry

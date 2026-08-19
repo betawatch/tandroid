@@ -339,9 +339,12 @@ public abstract class MarkdownParser {
     private static TL_iv.RichText combineParagraphs(ArrayList arrayList) {
         TL_iv.RichText richText;
         TL_iv.textConcat textconcat = new TL_iv.textConcat();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) it.next();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) obj;
             if (pageBlock instanceof TL_iv.pageBlockParagraph) {
                 richText = ((TL_iv.pageBlockParagraph) pageBlock).text;
             } else if (pageBlock instanceof TL_iv.pageBlockHeader) {
@@ -384,15 +387,14 @@ public abstract class MarkdownParser {
         while (true) {
             TL_iv.RichText richText3 = richText2.text;
             if (richText3 == null) {
-                break;
+                return richText;
             }
             if (richText3 instanceof TL_iv.textConcat) {
                 richText2.text = pairHtml(richText3);
-                break;
+                return richText;
             }
             richText2 = richText3;
         }
-        return richText;
     }
 
     private static TL_iv.RichText pairHtmlConcat(TL_iv.textConcat textconcat) {
@@ -401,15 +403,19 @@ public abstract class MarkdownParser {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         MarkwonHtmlParserImpl create = MarkwonHtmlParserImpl.create();
-        Iterator<TL_iv.RichText> it = textconcat.texts.iterator();
-        while (it.hasNext()) {
-            TL_iv.RichText next = it.next();
-            if (next instanceof TL_iv.textPlain) {
-                TL_iv.textPlain textplain = (TL_iv.textPlain) next;
+        ArrayList<TL_iv.RichText> arrayList3 = textconcat.texts;
+        int size = arrayList3.size();
+        int i = 0;
+        while (i < size) {
+            TL_iv.RichText richText = arrayList3.get(i);
+            i++;
+            TL_iv.RichText richText2 = richText;
+            if (richText2 instanceof TL_iv.textPlain) {
+                TL_iv.textPlain textplain = (TL_iv.textPlain) richText2;
                 if (looksLikeHtmlTag(textplain.text)) {
                     int length = sb.length();
                     try {
-                        create.processFragment(sb, ((TL_iv.textPlain) next).text);
+                        create.processFragment(sb, ((TL_iv.textPlain) richText2).text);
                     } catch (Throwable th) {
                         FileLog.e(th);
                         sb.append(textplain.text);
@@ -421,19 +427,19 @@ public abstract class MarkdownParser {
                     }
                 }
             }
-            String richTextToString = richTextToString(next);
+            String richTextToString = richTextToString(richText2);
             int length3 = sb.length();
             sb.append(richTextToString);
             int length4 = sb.length();
-            arrayList.add(next);
+            arrayList.add(richText2);
             arrayList2.add(new int[]{length3, length4});
         }
-        final ArrayList<HtmlTag> arrayList3 = new ArrayList();
+        final ArrayList arrayList4 = new ArrayList();
         try {
             create.flushInlineTags(sb.length(), new MarkwonHtmlParser.FlushAction() { // from class: org.telegram.ui.Components.MarkdownParser$$ExternalSyntheticLambda1
                 @Override // io.noties.markwon.html.MarkwonHtmlParser.FlushAction
                 public final void apply(List list) {
-                    arrayList3.addAll(list);
+                    arrayList4.addAll(list);
                 }
             });
         } catch (Throwable th2) {
@@ -443,53 +449,56 @@ public abstract class MarkdownParser {
             create.flushBlockTags(sb.length(), new MarkwonHtmlParser.FlushAction() { // from class: org.telegram.ui.Components.MarkdownParser$$ExternalSyntheticLambda2
                 @Override // io.noties.markwon.html.MarkwonHtmlParser.FlushAction
                 public final void apply(List list) {
-                    MarkdownParser.flattenBlocks(list, arrayList3);
+                    MarkdownParser.flattenBlocks(list, arrayList4);
                 }
             });
         } catch (Throwable th3) {
             FileLog.e(th3);
         }
-        Collections.sort(arrayList3, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.MarkdownParser$$ExternalSyntheticLambda3
+        Collections.sort(arrayList4, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.MarkdownParser$$ExternalSyntheticLambda3
             @Override // java.util.function.ToIntFunction
             public final int applyAsInt(Object obj) {
-                int lambda$pairHtmlConcat$3;
-                lambda$pairHtmlConcat$3 = MarkdownParser.lambda$pairHtmlConcat$3((HtmlTag) obj);
-                return lambda$pairHtmlConcat$3;
+                return MarkdownParser.$r8$lambda$TSB6PtQnqwUe3b0sV6pwV-mIyyw((HtmlTag) obj);
             }
         }));
-        for (HtmlTag htmlTag : arrayList3) {
+        int size2 = arrayList4.size();
+        int i2 = 0;
+        while (i2 < size2) {
+            Object obj = arrayList4.get(i2);
+            i2++;
+            HtmlTag htmlTag = (HtmlTag) obj;
             if (htmlTag.isClosed()) {
                 int start = htmlTag.start();
                 int end = htmlTag.end();
-                int i = -1;
-                int i2 = -1;
-                for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                    int i4 = ((int[]) arrayList2.get(i3))[0];
-                    int i5 = ((int[]) arrayList2.get(i3))[1];
-                    if (i4 >= start && i5 <= end) {
-                        if (i == -1) {
-                            i = i3;
+                int i3 = -1;
+                int i4 = -1;
+                for (int i5 = 0; i5 < arrayList2.size(); i5++) {
+                    int i6 = ((int[]) arrayList2.get(i5))[0];
+                    int i7 = ((int[]) arrayList2.get(i5))[1];
+                    if (i6 >= start && i7 <= end) {
+                        if (i3 == -1) {
+                            i3 = i5;
                         }
-                        i2 = i3;
+                        i4 = i5;
                     }
                 }
-                if (i != -1) {
-                    if (i == i2) {
-                        textconcat2 = (TL_iv.RichText) arrayList.get(i);
+                if (i3 != -1) {
+                    if (i3 == i4) {
+                        textconcat2 = (TL_iv.RichText) arrayList.get(i3);
                     } else {
                         textconcat2 = new TL_iv.textConcat();
-                        for (int i6 = i; i6 <= i2; i6++) {
-                            textconcat2.texts.add((TL_iv.RichText) arrayList.get(i6));
+                        for (int i8 = i3; i8 <= i4; i8++) {
+                            textconcat2.texts.add((TL_iv.RichText) arrayList.get(i8));
                         }
                     }
                     TL_iv.RichText wrapByTag = wrapByTag(htmlTag.name(), textconcat2);
-                    while (i2 >= i) {
-                        arrayList.remove(i2);
-                        arrayList2.remove(i2);
-                        i2--;
+                    while (i4 >= i3) {
+                        arrayList.remove(i4);
+                        arrayList2.remove(i4);
+                        i4--;
                     }
-                    arrayList.add(i, wrapByTag);
-                    arrayList2.add(i, new int[]{start, end});
+                    arrayList.add(i3, wrapByTag);
+                    arrayList2.add(i3, new int[]{start, end});
                 }
             }
         }
@@ -497,9 +506,9 @@ public abstract class MarkdownParser {
             return new TL_iv.textEmpty();
         }
         if (arrayList.size() == 1) {
-            TL_iv.RichText richText = (TL_iv.RichText) arrayList.get(0);
-            if ((richText instanceof TL_iv.textPlain) || (richText instanceof TL_iv.textEmpty)) {
-                return richText;
+            TL_iv.RichText richText3 = (TL_iv.RichText) arrayList.get(0);
+            if ((richText3 instanceof TL_iv.textPlain) || (richText3 instanceof TL_iv.textEmpty)) {
+                return richText3;
             }
         }
         TL_iv.textConcat textconcat3 = new TL_iv.textConcat();
@@ -507,8 +516,7 @@ public abstract class MarkdownParser {
         return textconcat3;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$pairHtmlConcat$3(HtmlTag htmlTag) {
+    public static /* synthetic */ int $r8$lambda$TSB6PtQnqwUe3b0sV6pwV-mIyyw(HtmlTag htmlTag) {
         return htmlTag.end() - htmlTag.start();
     }
 
@@ -538,7 +546,7 @@ public abstract class MarkdownParser {
             return 0;
         }
         String lowerCase = str.toLowerCase();
-        lowerCase.hashCode();
+        lowerCase.getClass();
         switch (lowerCase) {
         }
         return 0;
@@ -648,11 +656,15 @@ public abstract class MarkdownParser {
             return str.length();
         }
         if (richText instanceof TL_iv.textConcat) {
-            Iterator<TL_iv.RichText> it = richText.texts.iterator();
-            while (it.hasNext()) {
-                i += richTextLength(it.next());
+            ArrayList<TL_iv.RichText> arrayList = richText.texts;
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i < size) {
+                TL_iv.RichText richText2 = arrayList.get(i);
+                i++;
+                i2 += richTextLength(richText2);
             }
-            return i;
+            return i2;
         }
         return richTextLength(richText.text);
     }
@@ -681,13 +693,10 @@ public abstract class MarkdownParser {
         String richTextToString = richTextToString(richText);
         ArrayList arrayList = new ArrayList();
         int i2 = 0;
-        while (true) {
-            if (i2 >= richTextToString.length()) {
-                break;
-            }
+        while (i2 < richTextToString.length()) {
             if (richTextToString.length() - i2 <= 8192) {
                 arrayList.add(plain(richTextToString.substring(i2)));
-                break;
+                return arrayList;
             }
             int i3 = i2 + 8192;
             int i4 = i2 + 8191;
@@ -716,9 +725,13 @@ public abstract class MarkdownParser {
         }
         if (richText instanceof TL_iv.textConcat) {
             StringBuilder sb = new StringBuilder();
-            Iterator<TL_iv.RichText> it = richText.texts.iterator();
-            while (it.hasNext()) {
-                sb.append(richTextToString(it.next()));
+            ArrayList<TL_iv.RichText> arrayList = richText.texts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                TL_iv.RichText richText2 = arrayList.get(i);
+                i++;
+                sb.append(richTextToString(richText2));
             }
             return sb.toString();
         }
@@ -775,7 +788,7 @@ public abstract class MarkdownParser {
             } catch (Throwable th) {
                 FileLog.e(th);
             }
-            ArrayList<HtmlTag.Block> arrayList2 = new ArrayList();
+            ArrayList arrayList2 = new ArrayList();
             flattenBlockTags(arrayList, arrayList2);
             HashMap hashMap = new HashMap();
             for (Item item : this.items) {
@@ -789,11 +802,16 @@ public abstract class MarkdownParser {
                 treeSet.add(num);
                 treeSet.add(Integer.valueOf(num.intValue() + 1));
             }
-            for (HtmlTag.Block block : arrayList2) {
+            int size = arrayList2.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList2.get(i2);
+                i2++;
+                HtmlTag.Block block = (HtmlTag.Block) obj;
                 treeSet.add(Integer.valueOf(block.start()));
                 treeSet.add(Integer.valueOf(block.end()));
             }
-            ArrayList<Item> arrayList3 = new ArrayList();
+            ArrayList arrayList3 = new ArrayList();
             Iterator it = treeSet.iterator();
             Integer num2 = null;
             while (it.hasNext()) {
@@ -816,19 +834,22 @@ public abstract class MarkdownParser {
             }
             Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.Components.MarkdownParser$BlockVisitor$$ExternalSyntheticLambda1
                 @Override // java.util.Comparator
-                public final int compare(Object obj, Object obj2) {
-                    int lambda$finish$0;
-                    lambda$finish$0 = MarkdownParser.BlockVisitor.lambda$finish$0((HtmlTag.Block) obj, (HtmlTag.Block) obj2);
-                    return lambda$finish$0;
+                public final int compare(Object obj2, Object obj3) {
+                    return MarkdownParser.BlockVisitor.$r8$lambda$rwbGcvNvTfWRyBs26W2mPxgJxss((HtmlTag.Block) obj2, (HtmlTag.Block) obj3);
                 }
             });
             Scope scope = new Scope(null, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
             ArrayDeque arrayDeque = new ArrayDeque();
             arrayDeque.push(scope);
-            for (Item item2 : arrayList3) {
-                while (i < arrayList2.size() && ((HtmlTag.Block) arrayList2.get(i)).start() <= item2.start) {
-                    int i2 = i + 1;
-                    HtmlTag.Block block2 = (HtmlTag.Block) arrayList2.get(i);
+            int size2 = arrayList3.size();
+            int i3 = 0;
+            while (i < size2) {
+                Object obj2 = arrayList3.get(i);
+                i++;
+                Item item2 = (Item) obj2;
+                while (i3 < arrayList2.size() && ((HtmlTag.Block) arrayList2.get(i3)).start() <= item2.start) {
+                    int i4 = i3 + 1;
+                    HtmlTag.Block block2 = (HtmlTag.Block) arrayList2.get(i3);
                     if (block2.end() >= item2.start) {
                         while (arrayDeque.peek() != scope && ((Scope) arrayDeque.peek()).end <= block2.start()) {
                             arrayDeque.pop();
@@ -837,7 +858,7 @@ public abstract class MarkdownParser {
                         ((Scope) arrayDeque.peek()).children.add(scope2);
                         arrayDeque.push(scope2);
                     }
-                    i = i2;
+                    i3 = i4;
                 }
                 while (arrayDeque.peek() != scope && ((Scope) arrayDeque.peek()).end <= item2.start) {
                     arrayDeque.pop();
@@ -849,8 +870,7 @@ public abstract class MarkdownParser {
             materialize(scope.children, this.blocks);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$finish$0(HtmlTag.Block block, HtmlTag.Block block2) {
+        public static /* synthetic */ int $r8$lambda$rwbGcvNvTfWRyBs26W2mPxgJxss(HtmlTag.Block block, HtmlTag.Block block2) {
             int compare = Integer.compare(block.start(), block2.start());
             return compare != 0 ? compare : Integer.compare(block2.end(), block.end());
         }

@@ -1,50 +1,32 @@
 package j$.util.stream;
 
+import java.util.function.DoublePredicate;
+
 /* loaded from: classes2.dex */
-final class L3 extends i2 implements a4 {
-    long b;
-    boolean c;
-    final /* synthetic */ boolean d;
-    final /* synthetic */ M3 e;
+public final class L3 extends Y1 {
+    public final boolean b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    L3(M3 m3, m2 m2Var, boolean z) {
-        super(m2Var);
-        this.e = m3;
-        this.d = z;
+    public L3(x2 x2Var, f2 f2Var) {
+        super(f2Var);
+        this.b = true;
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        boolean z;
-        boolean z2;
-        if (!this.c) {
-            boolean test = this.e.m.test(obj);
-            this.c = !test;
-            if (test) {
-                z = false;
-                z2 = this.d;
-                if (z2 && !z) {
-                    this.b++;
-                }
-                if (!z2 || z) {
-                    this.a.accept((m2) obj);
-                }
-                return;
-            }
-        }
-        z = true;
-        z2 = this.d;
-        if (z2) {
-            this.b++;
-        }
-        if (z2) {
-        }
-        this.a.accept((m2) obj);
+    @Override // j$.util.stream.Y1, j$.util.stream.f2
+    public final void y(long j) {
+        this.a.y(-1L);
     }
 
-    @Override // j$.util.stream.a4
-    public final long f() {
-        return this.b;
+    @Override // j$.util.stream.c2, j$.util.stream.f2
+    public final void accept(double d) {
+        if (this.b) {
+            DoublePredicate doublePredicate = null;
+            doublePredicate.test(d);
+            throw null;
+        }
+    }
+
+    @Override // j$.util.stream.Y1, j$.util.stream.f2
+    public final boolean C() {
+        return !this.b || this.a.C();
     }
 }

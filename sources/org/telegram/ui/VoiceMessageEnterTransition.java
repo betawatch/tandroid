@@ -65,7 +65,7 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.VoiceMessageEnterTransition$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoiceMessageEnterTransition.this.lambda$new$0(messageEnterTransitionContainer, valueAnimator);
+                VoiceMessageEnterTransition.$r8$lambda$Pxvumdlmt-5wFXfBgrdT9AxDtmo(VoiceMessageEnterTransition.this, messageEnterTransitionContainer, valueAnimator);
             }
         });
         ofFloat.setInterpolator(new LinearInterpolator());
@@ -85,9 +85,9 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(MessageEnterTransitionContainer messageEnterTransitionContainer, ValueAnimator valueAnimator) {
-        this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+    public static /* synthetic */ void $r8$lambda$Pxvumdlmt-5wFXfBgrdT9AxDtmo(VoiceMessageEnterTransition voiceMessageEnterTransition, MessageEnterTransitionContainer messageEnterTransitionContainer, ValueAnimator valueAnimator) {
+        voiceMessageEnterTransition.getClass();
+        voiceMessageEnterTransition.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         messageEnterTransitionContainer.invalidate();
     }
 
@@ -151,7 +151,7 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         this.messageView.drawVoiceOnce(canvas, interpolation, new Runnable() { // from class: org.telegram.ui.VoiceMessageEnterTransition$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                VoiceMessageEnterTransition.this.lambda$onDraw$1(canvas, centerX2, centerY2, f7, f3, f5, x, y, f);
+                VoiceMessageEnterTransition.$r8$lambda$qwHxLyFNZ1HF4MLinIXpYaL4uaY(VoiceMessageEnterTransition.this, canvas, centerX2, centerY2, f7, f3, f5, x, y, f);
             }
         });
         this.messageView.getRadialProgress().setDrawBackground(true);
@@ -159,13 +159,12 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         canvas.restore();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onDraw$1(Canvas canvas, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8) {
-        this.messageView.getRadialProgress().draw(canvas);
+    public static /* synthetic */ void $r8$lambda$qwHxLyFNZ1HF4MLinIXpYaL4uaY(VoiceMessageEnterTransition voiceMessageEnterTransition, Canvas canvas, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8) {
+        voiceMessageEnterTransition.messageView.getRadialProgress().draw(canvas);
         canvas.translate(-f, -f2);
         float f9 = 1.0f / f3;
         canvas.scale(f9, f9, f4, f5);
-        ChatActivityEnterView.RecordCircle recordCircle = this.recordCircle;
+        ChatActivityEnterView.RecordCircle recordCircle = voiceMessageEnterTransition.recordCircle;
         if (recordCircle != null) {
             recordCircle.drawIcon(canvas, (int) f6, (int) f7, 1.0f - f8);
         }

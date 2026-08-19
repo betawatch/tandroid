@@ -116,7 +116,10 @@ public final class SessionsSettings {
         return Duration.isPositive-impl(j) && Duration.isFinite-impl(j);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x005a A[RETURN] */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0058, code lost:
+    
+        if (r6.updateSettings(r0) != r1) goto L23;
+     */
     /* JADX WARN: Removed duplicated region for block: B:20:0x003c  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
     /*
@@ -124,59 +127,49 @@ public final class SessionsSettings {
     */
     public final Object updateSettings(Continuation continuation) {
         SessionsSettings$updateSettings$1 sessionsSettings$updateSettings$1;
-        Object coroutine_suspended;
         int i;
         SessionsSettings sessionsSettings;
-        SettingsProvider settingsProvider;
         if (continuation instanceof SessionsSettings$updateSettings$1) {
             sessionsSettings$updateSettings$1 = (SessionsSettings$updateSettings$1) continuation;
             int i2 = sessionsSettings$updateSettings$1.label;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 sessionsSettings$updateSettings$1.label = i2 - TLObject.FLAG_31;
                 Object obj = sessionsSettings$updateSettings$1.result;
-                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = sessionsSettings$updateSettings$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    SettingsProvider settingsProvider2 = this.localOverrideSettings;
+                    SettingsProvider settingsProvider = this.localOverrideSettings;
                     sessionsSettings$updateSettings$1.L$0 = this;
                     sessionsSettings$updateSettings$1.label = 1;
-                    if (settingsProvider2.updateSettings(sessionsSettings$updateSettings$1) == coroutine_suspended) {
-                        return coroutine_suspended;
+                    if (settingsProvider.updateSettings(sessionsSettings$updateSettings$1) != coroutine_suspended) {
+                        sessionsSettings = this;
                     }
-                    sessionsSettings = this;
-                } else {
-                    if (i != 1) {
-                        if (i == 2) {
-                            ResultKt.throwOnFailure(obj);
-                            return Unit.INSTANCE;
-                        }
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    sessionsSettings = (SessionsSettings) sessionsSettings$updateSettings$1.L$0;
-                    ResultKt.throwOnFailure(obj);
-                }
-                settingsProvider = sessionsSettings.remoteSettings;
-                sessionsSettings$updateSettings$1.L$0 = null;
-                sessionsSettings$updateSettings$1.label = 2;
-                if (settingsProvider.updateSettings(sessionsSettings$updateSettings$1) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                return Unit.INSTANCE;
+                if (i != 1) {
+                    if (i == 2) {
+                        ResultKt.throwOnFailure(obj);
+                        return Unit.INSTANCE;
+                    }
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                sessionsSettings = (SessionsSettings) sessionsSettings$updateSettings$1.L$0;
+                ResultKt.throwOnFailure(obj);
+                SettingsProvider settingsProvider2 = sessionsSettings.remoteSettings;
+                sessionsSettings$updateSettings$1.L$0 = null;
+                sessionsSettings$updateSettings$1.label = 2;
             }
         }
         sessionsSettings$updateSettings$1 = new SessionsSettings$updateSettings$1(this, continuation);
         Object obj2 = sessionsSettings$updateSettings$1.result;
-        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = sessionsSettings$updateSettings$1.label;
         if (i != 0) {
         }
-        settingsProvider = sessionsSettings.remoteSettings;
+        SettingsProvider settingsProvider22 = sessionsSettings.remoteSettings;
         sessionsSettings$updateSettings$1.L$0 = null;
         sessionsSettings$updateSettings$1.label = 2;
-        if (settingsProvider.updateSettings(sessionsSettings$updateSettings$1) == coroutine_suspended) {
-        }
-        return Unit.INSTANCE;
     }
 
     public static final class Companion {

@@ -38,7 +38,7 @@ public class DashManifest implements FilterableManifest {
         this.utcTiming = utcTimingElement;
         this.location = uri;
         this.serviceDescription = serviceDescriptionElement;
-        this.periods = list == null ? Collections.emptyList() : list;
+        this.periods = list == null ? Collections.EMPTY_LIST : list;
     }
 
     public final int getPeriodCount() {

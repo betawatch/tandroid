@@ -118,7 +118,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         this.avatarsImageView.setDelegate(new Runnable() { // from class: org.telegram.ui.Components.GroupCallPip$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                GroupCallPip.this.lambda$new$0();
+                GroupCallPip.this.updateAvatars(true);
             }
         });
         updateAvatars(false);
@@ -243,7 +243,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPip$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                GroupCallPip.this.lambda$new$1(view2);
+                GroupCallPip.this.showAlert(false);
             }
         });
         this.alertContainer.setClipChildren(false);
@@ -288,13 +288,12 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
             this.micRunnable = new Runnable() { // from class: org.telegram.ui.Components.GroupCallPip$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCallPip.3.lambda$$0();
+                    GroupCallPip.3.$r8$lambda$mg6HLiI7KXGgamRg3qp8i90PRYE();
                 }
             };
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$$0() {
+        public static /* synthetic */ void $r8$lambda$mg6HLiI7KXGgamRg3qp8i90PRYE() {
             if (VoIPService.getSharedInstance() == null || !VoIPService.getSharedInstance().isMicMute()) {
                 return;
             }
@@ -511,16 +510,6 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        updateAvatars(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        showAlert(false);
-    }
-
     public static boolean isShowing() {
         VoIPService sharedInstance;
         if (!RTMPStreamPipOverlay.isVisible() && instance == null) {
@@ -668,7 +657,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.GroupCallPip$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                GroupCallPip.lambda$remove$2();
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
             }
         }, 370L);
         long j = currentFrame + 530;
@@ -709,11 +698,6 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         this.iconView.playAnimation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$remove$2() {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-    }
-
     class 9 extends AnimatorListenerAdapter {
         final /* synthetic */ View val$alert;
         final /* synthetic */ WindowManager val$windowManager;
@@ -740,13 +724,12 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
             notificationCenter.doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.GroupCallPip$9$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCallPip.9.lambda$onAnimationEnd$0(view, view2, windowManager, view3, view4);
+                    GroupCallPip.9.$r8$lambda$ReVuHfSmyrmXgr5wuhGaW32XCbI(view, view2, windowManager, view3, view4);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onAnimationEnd$0(View view, View view2, WindowManager windowManager, View view3, View view4) {
+        public static /* synthetic */ void $r8$lambda$ReVuHfSmyrmXgr5wuhGaW32XCbI(View view, View view2, WindowManager windowManager, View view3, View view4) {
             view.setVisibility(8);
             view2.setVisibility(8);
             windowManager.removeView(view);
@@ -756,7 +739,8 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         }
     }
 
-    private void updateAvatars(boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateAvatars(boolean z) {
         AvatarsImageView avatarsImageView = this.avatarsImageView;
         if (avatarsImageView.avatarsDrawable.transitionProgressAnimator == null) {
             VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -875,7 +859,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
             }).start();
             instance.onDestroy();
             instance = null;
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
         }
     }
 
@@ -980,7 +964,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.GroupCallPip$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                GroupCallPip.this.lambda$pinnedToCenter$3(valueAnimator2);
+                GroupCallPip.$r8$lambda$CdVOnqvZdoksuNHfZLk7VgkgSvY(GroupCallPip.this, valueAnimator2);
             }
         });
         this.pinAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.GroupCallPip.12
@@ -1007,18 +991,17 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         this.pinAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pinnedToCenter$3(ValueAnimator valueAnimator) {
-        if (this.removed) {
+    public static /* synthetic */ void $r8$lambda$CdVOnqvZdoksuNHfZLk7VgkgSvY(GroupCallPip groupCallPip, ValueAnimator valueAnimator) {
+        if (groupCallPip.removed) {
             return;
         }
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.pinnedProgress = floatValue;
-        this.button.setPinnedProgress(floatValue);
-        this.windowView.setScaleX(1.0f - (this.pinnedProgress * 0.6f));
-        this.windowView.setScaleY(1.0f - (this.pinnedProgress * 0.6f));
-        if (this.moving) {
-            updateButtonPosition();
+        groupCallPip.pinnedProgress = floatValue;
+        groupCallPip.button.setPinnedProgress(floatValue);
+        groupCallPip.windowView.setScaleX(1.0f - (groupCallPip.pinnedProgress * 0.6f));
+        groupCallPip.windowView.setScaleY(1.0f - (groupCallPip.pinnedProgress * 0.6f));
+        if (groupCallPip.moving) {
+            groupCallPip.updateButtonPosition();
         }
     }
 

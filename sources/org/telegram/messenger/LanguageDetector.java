@@ -56,25 +56,23 @@ public class LanguageDetector {
         LanguageIdentification.getClient().identifyLanguage(str).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.LanguageDetector$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                LanguageDetector.lambda$detectLanguage$0(LanguageDetector.StringCallback.this, (String) obj);
+                LanguageDetector.$r8$lambda$A9hSaUSYsiHXwXl3Wg4NimNwdkM(LanguageDetector.StringCallback.this, (String) obj);
             }
         }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.messenger.LanguageDetector$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.OnFailureListener
             public final void onFailure(Exception exc) {
-                LanguageDetector.lambda$detectLanguage$1(LanguageDetector.ExceptionCallback.this, exc);
+                LanguageDetector.$r8$lambda$AoS_Dilvh2Sr5L6lsNQg9lI_0nY(LanguageDetector.ExceptionCallback.this, exc);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$detectLanguage$0(StringCallback stringCallback, String str) {
+    public static /* synthetic */ void $r8$lambda$A9hSaUSYsiHXwXl3Wg4NimNwdkM(StringCallback stringCallback, String str) {
         if (stringCallback != null) {
             stringCallback.run(str);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$detectLanguage$1(ExceptionCallback exceptionCallback, Exception exc) {
+    public static /* synthetic */ void $r8$lambda$AoS_Dilvh2Sr5L6lsNQg9lI_0nY(ExceptionCallback exceptionCallback, Exception exc) {
         if (exceptionCallback != null) {
             exceptionCallback.run(exc);
         }

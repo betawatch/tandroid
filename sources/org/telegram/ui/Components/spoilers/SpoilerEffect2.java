@@ -46,7 +46,7 @@ public class SpoilerEffect2 {
     private final Runnable checkDestroy = new Runnable() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect2$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            SpoilerEffect2.this.lambda$new$0();
+            SpoilerEffect2.$r8$lambda$dCldKsXoPG3fgP8xhGGc9bzOs0o(SpoilerEffect2.this);
         }
     };
 
@@ -188,10 +188,9 @@ public class SpoilerEffect2 {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        if (this.holders.isEmpty()) {
-            destroy();
+    public static /* synthetic */ void $r8$lambda$dCldKsXoPG3fgP8xhGGc9bzOs0o(SpoilerEffect2 spoilerEffect2) {
+        if (spoilerEffect2.holders.isEmpty()) {
+            spoilerEffect2.destroy();
         }
     }
 

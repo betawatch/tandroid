@@ -40,7 +40,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Stories.recorder.DownloadButton;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DownloadButton extends ImageView {
     private BuildingVideo buildingVideo;
     private FrameLayout container;
@@ -73,16 +73,11 @@ public class DownloadButton extends ImageView {
         setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DownloadButton.this.lambda$new$0(view);
+                DownloadButton.this.onClick();
             }
         });
         this.progressDrawable = new CircularProgressDrawable(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(2.0f), -1);
         updateImage();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onClick();
     }
 
     public void setEntry(StoryEntry storyEntry) {
@@ -104,7 +99,8 @@ public class DownloadButton extends ImageView {
         }
     }
 
-    private void onClick() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onClick() {
         int checkSelfPermission;
         int i = Build.VERSION.SDK_INT;
         if (i >= 23 && (i <= 28 || BuildVars.NO_SCOPED_STORAGE)) {
@@ -175,7 +171,7 @@ public class DownloadButton extends ImageView {
             preparingVideoToast.setOnCancelListener(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadButton.this.lambda$onClickInternal$1();
+                    DownloadButton.$r8$lambda$OeAKREpL1m4ti0IkRjSXI35NdsM(DownloadButton.this);
                 }
             });
             this.container.addView(this.toast);
@@ -183,17 +179,17 @@ public class DownloadButton extends ImageView {
             this.buildingVideo = new BuildingVideo(this.currentAccount, this.currentEntry, generateVideoPath, new Runnable() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadButton.this.lambda$onClickInternal$3(generateVideoPath);
+                    DownloadButton.$r8$lambda$NOxNtlNPcq6bRKwrR69ac6g_nMI(DownloadButton.this, generateVideoPath);
                 }
             }, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    DownloadButton.this.lambda$onClickInternal$4((Float) obj);
+                    DownloadButton.$r8$lambda$mpdB7uJWnpT5CykrmcybtMpxe1Q(DownloadButton.this, (Float) obj);
                 }
             }, new Runnable() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadButton.this.lambda$onClickInternal$5();
+                    DownloadButton.$r8$lambda$22AjVVOAh3-RsY6WjZc6c_AWzIE(DownloadButton.this);
                 }
             });
         } else {
@@ -208,109 +204,102 @@ public class DownloadButton extends ImageView {
             Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadButton.this.lambda$onClickInternal$8(generatePicturePath);
+                    DownloadButton.$r8$lambda$_HLY7VWkz7LHKi5ravyl428rwEk(DownloadButton.this, generatePicturePath);
                 }
             });
         }
         updateImage();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$1() {
-        this.preparing = false;
-        BuildingVideo buildingVideo = this.buildingVideo;
+    public static /* synthetic */ void $r8$lambda$OeAKREpL1m4ti0IkRjSXI35NdsM(DownloadButton downloadButton) {
+        downloadButton.preparing = false;
+        BuildingVideo buildingVideo = downloadButton.buildingVideo;
         if (buildingVideo != null) {
             buildingVideo.stop(true);
-            this.buildingVideo = null;
+            downloadButton.buildingVideo = null;
         }
-        PreparingVideoToast preparingVideoToast = this.toast;
+        PreparingVideoToast preparingVideoToast = downloadButton.toast;
         if (preparingVideoToast != null) {
             preparingVideoToast.hide();
         }
-        this.downloading = false;
-        updateImage();
+        downloadButton.downloading = false;
+        downloadButton.updateImage();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$3(File file) {
-        if (!this.downloading || this.currentEntry == null) {
+    public static /* synthetic */ void $r8$lambda$NOxNtlNPcq6bRKwrR69ac6g_nMI(final DownloadButton downloadButton, File file) {
+        if (!downloadButton.downloading || downloadButton.currentEntry == null) {
             return;
         }
-        MediaController.saveFile(file.getAbsolutePath(), getContext(), 1, null, null, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda9
+        MediaController.saveFile(file.getAbsolutePath(), downloadButton.getContext(), 1, null, null, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                DownloadButton.this.lambda$onClickInternal$2((Uri) obj);
+                DownloadButton.$r8$lambda$qdwXPPxhmgIfQqX4UrztkVW0Cwo(DownloadButton.this, (Uri) obj);
             }
         }, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$2(Uri uri) {
-        if (!this.downloading || this.currentEntry == null) {
+    public static /* synthetic */ void $r8$lambda$qdwXPPxhmgIfQqX4UrztkVW0Cwo(DownloadButton downloadButton, Uri uri) {
+        if (!downloadButton.downloading || downloadButton.currentEntry == null) {
             return;
         }
-        this.toast.setDone(R.raw.ic_save_to_gallery, LocaleController.getString("VideoSavedHint"), 3500);
-        this.downloading = false;
-        updateImage();
-        this.savedToGalleryUri = uri;
+        downloadButton.toast.setDone(R.raw.ic_save_to_gallery, LocaleController.getString("VideoSavedHint"), 3500);
+        downloadButton.downloading = false;
+        downloadButton.updateImage();
+        downloadButton.savedToGalleryUri = uri;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$4(Float f) {
-        PreparingVideoToast preparingVideoToast = this.toast;
+    public static /* synthetic */ void $r8$lambda$mpdB7uJWnpT5CykrmcybtMpxe1Q(DownloadButton downloadButton, Float f) {
+        PreparingVideoToast preparingVideoToast = downloadButton.toast;
         if (preparingVideoToast != null) {
             preparingVideoToast.setProgress(f.floatValue());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$5() {
-        if (!this.downloading || this.currentEntry == null) {
+    public static /* synthetic */ void $r8$lambda$22AjVVOAh3-RsY6WjZc6c_AWzIE(DownloadButton downloadButton) {
+        if (!downloadButton.downloading || downloadButton.currentEntry == null) {
             return;
         }
-        this.toast.setDone(R.raw.error, LocaleController.getString("VideoConvertFail"), 3500);
-        this.downloading = false;
-        updateImage();
+        downloadButton.toast.setDone(R.raw.error, LocaleController.getString("VideoConvertFail"), 3500);
+        downloadButton.downloading = false;
+        downloadButton.updateImage();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$8(final File file) {
-        this.currentEntry.buildPhoto(file);
-        if (!this.downloading || this.currentEntry == null) {
+    public static /* synthetic */ void $r8$lambda$_HLY7VWkz7LHKi5ravyl428rwEk(final DownloadButton downloadButton, final File file) {
+        downloadButton.currentEntry.buildPhoto(file);
+        if (!downloadButton.downloading || downloadButton.currentEntry == null) {
             return;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadButton.this.lambda$onClickInternal$7(file);
+                DownloadButton.$r8$lambda$eBXX8vKqvdgGy6ArejdpojeCJ_E(DownloadButton.this, file);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$7(File file) {
-        MediaController.saveFile(file.getAbsolutePath(), getContext(), 0, null, null, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda10
+    public static /* synthetic */ void $r8$lambda$eBXX8vKqvdgGy6ArejdpojeCJ_E(final DownloadButton downloadButton, File file) {
+        downloadButton.getClass();
+        MediaController.saveFile(file.getAbsolutePath(), downloadButton.getContext(), 0, null, null, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$$ExternalSyntheticLambda10
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                DownloadButton.this.lambda$onClickInternal$6((Uri) obj);
+                DownloadButton.$r8$lambda$5ztkyw4_aDt3z_u4pWr6N5I7dGw(DownloadButton.this, (Uri) obj);
             }
         }, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickInternal$6(Uri uri) {
-        this.downloading = false;
-        updateImage();
-        PreparingVideoToast preparingVideoToast = this.toast;
+    public static /* synthetic */ void $r8$lambda$5ztkyw4_aDt3z_u4pWr6N5I7dGw(DownloadButton downloadButton, Uri uri) {
+        downloadButton.downloading = false;
+        downloadButton.updateImage();
+        PreparingVideoToast preparingVideoToast = downloadButton.toast;
         if (preparingVideoToast != null) {
             preparingVideoToast.hide();
-            this.toast = null;
+            downloadButton.toast = null;
         }
-        PreparingVideoToast preparingVideoToast2 = new PreparingVideoToast(getContext());
-        this.toast = preparingVideoToast2;
+        PreparingVideoToast preparingVideoToast2 = new PreparingVideoToast(downloadButton.getContext());
+        downloadButton.toast = preparingVideoToast2;
         preparingVideoToast2.setDone(R.raw.ic_save_to_gallery, LocaleController.getString("PhotoSavedHint"), 2500);
-        this.container.addView(this.toast);
-        this.savedToGalleryUri = uri;
+        downloadButton.container.addView(downloadButton.toast);
+        downloadButton.savedToGalleryUri = uri;
     }
 
     private void updateImage() {
@@ -387,19 +376,18 @@ public class DownloadButton extends ImageView {
             this.entry.getVideoEditedInfo(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$BuildingVideo$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    DownloadButton.BuildingVideo.this.lambda$start$0((VideoEditedInfo) obj);
+                    DownloadButton.BuildingVideo.$r8$lambda$WZxUvSdlCfxCI35He0MNi9Ptd_A(DownloadButton.BuildingVideo.this, (VideoEditedInfo) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$start$0(VideoEditedInfo videoEditedInfo) {
-            MessageObject messageObject = this.messageObject;
+        public static /* synthetic */ void $r8$lambda$WZxUvSdlCfxCI35He0MNi9Ptd_A(BuildingVideo buildingVideo, VideoEditedInfo videoEditedInfo) {
+            MessageObject messageObject = buildingVideo.messageObject;
             if (messageObject == null) {
                 return;
             }
             messageObject.videoEditedInfo = videoEditedInfo;
-            MediaController.getInstance().scheduleVideoConvert(this.messageObject);
+            MediaController.getInstance().scheduleVideoConvert(buildingVideo.messageObject);
         }
 
         public void stop(boolean z) {
@@ -422,10 +410,10 @@ public class DownloadButton extends ImageView {
             }
             if (i == NotificationCenter.fileNewChunkAvailable) {
                 if (((MessageObject) objArr[0]) == this.messageObject) {
-                    ((Long) objArr[2]).longValue();
+                    ((Long) objArr[2]).getClass();
                     long longValue = ((Long) objArr[3]).longValue();
                     Float f = (Float) objArr[4];
-                    f.floatValue();
+                    f.getClass();
                     Utilities.Callback callback = this.onProgress;
                     if (callback != null) {
                         callback.run(f);
@@ -489,8 +477,6 @@ public class DownloadButton extends ImageView {
 
         public PreparingVideoToast(Context context, String str) {
             super(context);
-            int i;
-            float f;
             Paint paint = new Paint(1);
             this.dimPaint = paint;
             TextPaint textPaint = new TextPaint(1);
@@ -532,15 +518,8 @@ public class DownloadButton extends ImageView {
             textPaint2.setTextSize(AndroidUtilities.dpf2(14.66f));
             StaticLayout staticLayout = new StaticLayout(str, textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.preparingLayout = staticLayout;
-            if (staticLayout.getLineCount() > 0) {
-                i = 0;
-                f = staticLayout.getLineWidth(0);
-            } else {
-                i = 0;
-                f = 0.0f;
-            }
-            this.preparingLayoutWidth = f;
-            this.preparingLayoutLeft = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(i) : 0.0f;
+            this.preparingLayoutWidth = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
+            this.preparingLayoutLeft = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
             show();
         }
 
@@ -591,15 +570,14 @@ public class DownloadButton extends ImageView {
             post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.DownloadButton$PreparingVideoToast$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadButton.PreparingVideoToast.this.lambda$onDraw$0();
+                    DownloadButton.PreparingVideoToast.$r8$lambda$36CKHl9ekUfackcPLX7f0jVgn4A(DownloadButton.PreparingVideoToast.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDraw$0() {
-            if (getParent() instanceof ViewGroup) {
-                ((ViewGroup) getParent()).removeView(this);
+        public static /* synthetic */ void $r8$lambda$36CKHl9ekUfackcPLX7f0jVgn4A(PreparingVideoToast preparingVideoToast) {
+            if (preparingVideoToast.getParent() instanceof ViewGroup) {
+                ((ViewGroup) preparingVideoToast.getParent()).removeView(preparingVideoToast);
             }
         }
 
@@ -612,7 +590,7 @@ public class DownloadButton extends ImageView {
             canvas.drawCircle(centerX, dp, dp2, this.greyPaint);
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(centerX - dp2, dp - dp2, centerX + dp2, dp2 + dp);
-            int i = (int) (f * 255.0f);
+            int i = (int) (255.0f * f);
             this.whitePaint.setAlpha(i);
             this.whitePaint.setStrokeWidth(AndroidUtilities.dp(4.0f));
             canvas.drawArc(rectF, -90.0f, f2 * 360.0f, false, this.whitePaint);
@@ -620,7 +598,7 @@ public class DownloadButton extends ImageView {
             canvas.save();
             canvas.scale(scale, scale, centerX, dp);
             this.whitePaint.setStrokeWidth(AndroidUtilities.dp(3.4f));
-            canvas.drawLine(centerX - AndroidUtilities.dp(7.0f), dp - AndroidUtilities.dp(7.0f), centerX + AndroidUtilities.dp(7.0f), dp + AndroidUtilities.dp(7.0f), this.whitePaint);
+            canvas.drawLine(centerX - AndroidUtilities.dp(7.0f), dp - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f) + centerX, AndroidUtilities.dp(7.0f) + dp, this.whitePaint);
             canvas.drawLine(centerX - AndroidUtilities.dp(7.0f), dp + AndroidUtilities.dp(7.0f), centerX + AndroidUtilities.dp(7.0f), dp - AndroidUtilities.dp(7.0f), this.whitePaint);
             canvas.restore();
             canvas.save();

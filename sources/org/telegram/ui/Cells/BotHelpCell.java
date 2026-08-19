@@ -16,7 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import j$.util.Objects;
-import java.util.Iterator;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
@@ -110,8 +110,22 @@ public abstract class BotHelpCell extends View {
         setText(z, 0L, str, null, null, null);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x019f  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0291  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01a8  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void setText(boolean z, long j, String str, TLObject tLObject, TL_bots.BotInfo botInfo, String str2) {
+        float f;
+        float f2;
+        char c;
         int min;
+        int i = 1;
         boolean z2 = tLObject != null;
         boolean isEmpty = TextUtils.isEmpty(str);
         if ((str == null || str.length() == 0) && TextUtils.isEmpty(str2) && !z2) {
@@ -149,82 +163,132 @@ public abstract class BotHelpCell extends View {
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 400);
                     BitmapDrawable bitmapDrawable = null;
                     if (SharedConfig.getDevicePerformanceClass() != 0) {
-                        Iterator<TLRPC.PhotoSize> it = document.thumbs.iterator();
-                        while (it.hasNext()) {
-                            TLRPC.PhotoSize next = it.next();
-                            if (next instanceof TLRPC.TL_photoStrippedSize) {
-                                bitmapDrawable = new BitmapDrawable(getResources(), ImageLoader.getStrippedPhotoBitmap(next.bytes, "b"));
+                        ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
+                        int size = arrayList.size();
+                        int i2 = 0;
+                        while (i2 < size) {
+                            TLRPC.PhotoSize photoSize = arrayList.get(i2);
+                            i2 += i;
+                            TLRPC.PhotoSize photoSize2 = photoSize;
+                            if (photoSize2 instanceof TLRPC.TL_photoStrippedSize) {
+                                bitmapDrawable = new BitmapDrawable(getResources(), ImageLoader.getStrippedPhotoBitmap(photoSize2.bytes, "b"));
+                                i = 1;
+                            } else {
+                                i = 1;
                             }
                         }
                     }
+                    f = 2.0f;
+                    f2 = 4.0f;
+                    c = 1;
                     this.imageReceiver.setImage(ImageLocation.getForDocument(document), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(MessageObject.getDocumentVideoThumb(document), document), null, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
+                    int dp3 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(f);
+                    int dp4 = AndroidUtilities.dp(f2);
+                    if (!this.isTextVisible) {
+                        dp4 = dp3;
+                    }
+                    this.imageReceiver.setRoundRadius(dp3, dp3, dp4, dp4);
+                    this.oldText = AndroidUtilities.getSafeString(str3);
+                    this.oldManagerBotName = str2;
+                    setVisibility(0);
+                    if (AndroidUtilities.isTablet()) {
+                        min = AndroidUtilities.getMinTabletSide();
+                    } else {
+                        Point point = AndroidUtilities.displaySize;
+                        min = Math.min(point.x, point.y);
+                    }
+                    int i3 = (int) (min * 0.7f);
+                    if (this.isTextVisible) {
+                        String[] split = str3.split("\n");
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                        if (z3) {
+                            int i4 = R.string.ManagedBotChatInfo;
+                            Object[] objArr = new Object[2];
+                            objArr[0] = DialogObject.getName(this.currentAccount, j);
+                            objArr[c] = str2;
+                            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i4, objArr)));
+                        } else {
+                            String string = LocaleController.getString(R.string.BotInfoTitle);
+                            if (z) {
+                                spannableStringBuilder.append((CharSequence) string);
+                                spannableStringBuilder.append((CharSequence) "\n\n");
+                            }
+                            for (int i5 = 0; i5 < split.length; i5++) {
+                                spannableStringBuilder.append((CharSequence) split[i5].trim());
+                                if (i5 != split.length - 1) {
+                                    spannableStringBuilder.append((CharSequence) "\n");
+                                }
+                            }
+                            MessageObject.addLinks(false, spannableStringBuilder);
+                            if (z) {
+                                spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, string.length(), 33);
+                            }
+                        }
+                        Emoji.replaceEmoji(spannableStringBuilder, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
+                        try {
+                            StaticLayout staticLayout = new StaticLayout(spannableStringBuilder, Theme.chat_msgTextPaint, i3 - (this.isPhotoVisible ? AndroidUtilities.dp(5.0f) : 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                            this.textLayout = staticLayout;
+                            this.width = 0;
+                            this.height = staticLayout.getHeight() + AndroidUtilities.dp(22.0f);
+                            int lineCount = this.textLayout.getLineCount();
+                            for (int i6 = 0; i6 < lineCount; i6++) {
+                                this.width = (int) Math.ceil(Math.max(this.width, this.textLayout.getLineWidth(i6) + this.textLayout.getLineLeft(i6)));
+                            }
+                            if (this.width > i3 || this.isPhotoVisible) {
+                                this.width = i3;
+                            }
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                    } else if (this.isPhotoVisible) {
+                        this.width = i3;
+                    }
+                    int dp5 = this.width + AndroidUtilities.dp(22.0f);
+                    this.width = dp5;
+                    if (this.isPhotoVisible) {
+                        int i7 = this.height;
+                        int i8 = (int) (dp5 * 0.5625d);
+                        this.photoHeight = i8;
+                        this.height = i7 + i8 + AndroidUtilities.dp(f2);
+                        return;
+                    }
+                    return;
                 }
-                int dp3 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(2.0f);
-                int dp4 = AndroidUtilities.dp(4.0f);
+                f = 2.0f;
+                f2 = 4.0f;
+                c = 1;
+                int dp32 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(f);
+                int dp42 = AndroidUtilities.dp(f2);
                 if (!this.isTextVisible) {
-                    dp4 = dp3;
                 }
-                this.imageReceiver.setRoundRadius(dp3, dp3, dp4, dp4);
+                this.imageReceiver.setRoundRadius(dp32, dp32, dp42, dp42);
+                this.oldText = AndroidUtilities.getSafeString(str3);
+                this.oldManagerBotName = str2;
+                setVisibility(0);
+                if (AndroidUtilities.isTablet()) {
+                }
+                int i32 = (int) (min * 0.7f);
+                if (this.isTextVisible) {
+                }
+                int dp52 = this.width + AndroidUtilities.dp(22.0f);
+                this.width = dp52;
+                if (this.isPhotoVisible) {
+                }
             }
         }
+        f2 = 4.0f;
+        c = 1;
         this.oldText = AndroidUtilities.getSafeString(str3);
         this.oldManagerBotName = str2;
         setVisibility(0);
         if (AndroidUtilities.isTablet()) {
-            min = AndroidUtilities.getMinTabletSide();
-        } else {
-            Point point = AndroidUtilities.displaySize;
-            min = Math.min(point.x, point.y);
         }
-        int i = (int) (min * 0.7f);
+        int i322 = (int) (min * 0.7f);
         if (this.isTextVisible) {
-            String[] split = str3.split("\n");
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            if (z3) {
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ManagedBotChatInfo, DialogObject.getName(this.currentAccount, j), str2)));
-            } else {
-                String string = LocaleController.getString(R.string.BotInfoTitle);
-                if (z) {
-                    spannableStringBuilder.append((CharSequence) string);
-                    spannableStringBuilder.append((CharSequence) "\n\n");
-                }
-                for (int i2 = 0; i2 < split.length; i2++) {
-                    spannableStringBuilder.append((CharSequence) split[i2].trim());
-                    if (i2 != split.length - 1) {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                    }
-                }
-                MessageObject.addLinks(false, spannableStringBuilder);
-                if (z) {
-                    spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, string.length(), 33);
-                }
-            }
-            Emoji.replaceEmoji(spannableStringBuilder, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
-            try {
-                StaticLayout staticLayout = new StaticLayout(spannableStringBuilder, Theme.chat_msgTextPaint, i - (this.isPhotoVisible ? AndroidUtilities.dp(5.0f) : 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                this.textLayout = staticLayout;
-                this.width = 0;
-                this.height = staticLayout.getHeight() + AndroidUtilities.dp(22.0f);
-                int lineCount = this.textLayout.getLineCount();
-                for (int i3 = 0; i3 < lineCount; i3++) {
-                    this.width = (int) Math.ceil(Math.max(this.width, this.textLayout.getLineWidth(i3) + this.textLayout.getLineLeft(i3)));
-                }
-                if (this.width > i || this.isPhotoVisible) {
-                    this.width = i;
-                }
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        } else if (this.isPhotoVisible) {
-            this.width = i;
         }
-        int dp5 = this.width + AndroidUtilities.dp(22.0f);
-        this.width = dp5;
+        int dp522 = this.width + AndroidUtilities.dp(22.0f);
+        this.width = dp522;
         if (this.isPhotoVisible) {
-            int i4 = this.height;
-            int i5 = (int) (dp5 * 0.5625d);
-            this.photoHeight = i5;
-            this.height = i4 + i5 + AndroidUtilities.dp(4.0f);
         }
     }
 
@@ -381,18 +445,17 @@ public abstract class BotHelpCell extends View {
             i = view.getMeasuredWidth();
             i2 = view.getMeasuredHeight();
         }
-        int i3 = i2;
         MessageDrawable messageDrawable = (MessageDrawable) getThemedDrawable("drawableMsgInMedia");
-        messageDrawable.setTop((int) getY(), i, i3, false, false);
+        messageDrawable.setTop((int) getY(), i, i2, false, false);
         messageDrawable.setBounds(width, 0, this.width + width, this.height);
         messageDrawable.draw(canvas);
         Drawable drawable = this.selectorDrawable;
         if (drawable != null) {
-            int i4 = this.selectorDrawableRadius;
-            int i5 = SharedConfig.bubbleRadius;
-            if (i4 != i5) {
-                this.selectorDrawableRadius = i5;
-                Theme.setMaskDrawableRad(drawable, i5, i5);
+            int i3 = this.selectorDrawableRadius;
+            int i4 = SharedConfig.bubbleRadius;
+            if (i3 != i4) {
+                this.selectorDrawableRadius = i4;
+                Theme.setMaskDrawableRad(drawable, i4, i4);
             }
             this.selectorDrawable.setBounds(AndroidUtilities.dp(2.0f) + width, AndroidUtilities.dp(2.0f), (this.width + width) - AndroidUtilities.dp(2.0f), this.height - AndroidUtilities.dp(2.0f));
             this.selectorDrawable.draw(canvas);

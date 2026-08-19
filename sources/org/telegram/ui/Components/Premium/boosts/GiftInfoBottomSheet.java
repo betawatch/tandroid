@@ -50,18 +50,17 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
         BoostRepository.checkGiftCode(str, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                GiftInfoBottomSheet.lambda$show$1(atomicBoolean, baseFragment, str, progress, (TLRPC.TL_payments_checkedGiftCode) obj);
+                GiftInfoBottomSheet.$r8$lambda$YUYLW_38Gm6o4KeCIm9DBgReAdw(atomicBoolean, baseFragment, str, progress, (TLRPC.TL_payments_checkedGiftCode) obj);
             }
         }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                GiftInfoBottomSheet.lambda$show$2(atomicBoolean, progress, (TLRPC.TL_error) obj);
+                GiftInfoBottomSheet.$r8$lambda$Y7glcthtbPhwh6Sao6m83JvUN7w(atomicBoolean, progress, (TLRPC.TL_error) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$1(AtomicBoolean atomicBoolean, BaseFragment baseFragment, String str, Browser.Progress progress, TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode) {
+    public static /* synthetic */ void $r8$lambda$YUYLW_38Gm6o4KeCIm9DBgReAdw(AtomicBoolean atomicBoolean, BaseFragment baseFragment, String str, Browser.Progress progress, TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode) {
         if (atomicBoolean.get() || baseFragment.getParentActivity() == null) {
             return;
         }
@@ -81,8 +80,7 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$2(AtomicBoolean atomicBoolean, Browser.Progress progress, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Y7glcthtbPhwh6Sao6m83JvUN7w(AtomicBoolean atomicBoolean, Browser.Progress progress, TLRPC.TL_error tL_error) {
         if (atomicBoolean.get() || progress == null) {
             return;
         }
@@ -192,9 +190,10 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
             super(resourcesProvider);
         }
 
+        /* JADX INFO: Access modifiers changed from: protected */
         @Override // org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter
-        protected void dismiss() {
-            GiftInfoBottomSheet.this.lambda$new$0();
+        public void dismiss() {
+            GiftInfoBottomSheet.this.dismiss();
         }
 
         @Override // org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter
@@ -202,13 +201,13 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GiftInfoBottomSheet.2.this.lambda$afterCodeApplied$0();
+                    GiftInfoBottomSheet.2.$r8$lambda$IXs29PEC1DO6dXlYNC-K1-ojvTw(GiftInfoBottomSheet.2.this);
                 }
             }, 200L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$afterCodeApplied$0() {
+        public static /* synthetic */ void $r8$lambda$IXs29PEC1DO6dXlYNC-K1-ojvTw(2 r7) {
+            r7.getClass();
             GiftInfoBottomSheet.this.getBaseFragment().showDialog(new PremiumPreviewBottomSheet(GiftInfoBottomSheet.this.getBaseFragment(), ((BottomSheet) GiftInfoBottomSheet.this).currentAccount, null, null, null, ((BottomSheet) GiftInfoBottomSheet.this).resourcesProvider).setAnimateConfetti(true).setOutboundGift(true));
         }
 

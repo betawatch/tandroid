@@ -9,7 +9,7 @@ public final class x {
     public static final x NEVER;
     public static final x NORMAL;
     public static final x NOT_NEGATIVE;
-    private static final /* synthetic */ x[] a;
+    public static final /* synthetic */ x[] a;
 
     public static x valueOf(String str) {
         return (x) Enum.valueOf(x.class, str);

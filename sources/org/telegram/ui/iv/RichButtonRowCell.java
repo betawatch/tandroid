@@ -13,7 +13,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -75,7 +74,7 @@ public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable 
         roundRadius.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichButtonRowCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichButtonRowCell.this.lambda$new$0(view);
+                RichButtonRowCell.$r8$lambda$sweDzUk5wK9QxbZ-kD2jEfSKnmk(RichButtonRowCell.this, view);
             }
         });
         addView(roundRadius, LayoutHelper.createFrame(38, 38, 21));
@@ -90,28 +89,26 @@ public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable 
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichButtonRowCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichButtonRowCell.this.lambda$new$1(view);
+                RichButtonRowCell.$r8$lambda$yqOYnXk5V_ceV8BUTZkkcNPBCL8(RichButtonRowCell.this, view);
             }
         });
         addView(textView, LayoutHelper.createFrame(-2, 38, 17));
         updateAddButtonColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$sweDzUk5wK9QxbZ-kD2jEfSKnmk(RichButtonRowCell richButtonRowCell, View view) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richButtonRowCell.delegate;
+        if (delegate == null || (blockRow = richButtonRowCell.currentRow) == null) {
             return;
         }
         delegate.onAddButton(blockRow, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$yqOYnXk5V_ceV8BUTZkkcNPBCL8(RichButtonRowCell richButtonRowCell, View view) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richButtonRowCell.delegate;
+        if (delegate == null || (blockRow = richButtonRowCell.currentRow) == null) {
             return;
         }
         delegate.onAddButton(blockRow, view);
@@ -305,9 +302,13 @@ public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable 
         if (isPointInside(this.addButton, f3, f4) || isPointInside(this.emptyAddButton, f3, f4)) {
             return true;
         }
-        Iterator it = this.buttonViews.iterator();
-        while (it.hasNext()) {
-            if (isPointInside((ButtonView) it.next(), f3, f4)) {
+        ArrayList arrayList = this.buttonViews;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            if (isPointInside((ButtonView) obj, f3, f4)) {
                 return true;
             }
         }
@@ -320,11 +321,12 @@ public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable 
         }
         int[] iArr = new int[2];
         view.getLocationOnScreen(iArr);
-        if (f < iArr[0] || f > r2 + view.getWidth()) {
-            return false;
+        if (f >= iArr[0] && f <= r2 + view.getWidth()) {
+            if (f2 >= iArr[1] && f2 <= r0 + view.getHeight()) {
+                return true;
+            }
         }
-        int i = iArr[1];
-        return f2 >= ((float) i) && f2 <= ((float) (i + view.getHeight()));
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -348,7 +350,7 @@ public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable 
             this.longPressRunnable = new Runnable() { // from class: org.telegram.ui.iv.RichButtonRowCell$ButtonView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichButtonRowCell.ButtonView.this.lambda$new$0(i);
+                    RichButtonRowCell.ButtonView.$r8$lambda$b7cj_jUEwaI9wsHrlDuwlez8f4w(RichButtonRowCell.ButtonView.this, i);
                 }
             };
             createEditorPageButton.width = createEditorPageButton.getPreferredWidth();
@@ -357,18 +359,17 @@ public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable 
             setLongClickable(true);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(int i) {
-            if (!this.pressed || RichButtonRowCell.this.delegate == null || RichButtonRowCell.this.currentRow == null) {
+        public static /* synthetic */ void $r8$lambda$b7cj_jUEwaI9wsHrlDuwlez8f4w(ButtonView buttonView, int i) {
+            if (!buttonView.pressed || RichButtonRowCell.this.delegate == null || RichButtonRowCell.this.currentRow == null) {
                 return;
             }
-            this.longPressed = true;
-            this.button.setPressed(false);
+            buttonView.longPressed = true;
+            buttonView.button.setPressed(false);
             try {
-                performHapticFeedback(0);
+                buttonView.performHapticFeedback(0);
             } catch (Exception unused) {
             }
-            RichButtonRowCell.this.delegate.onEditButton(RichButtonRowCell.this.currentRow, i, this);
+            RichButtonRowCell.this.delegate.onEditButton(RichButtonRowCell.this.currentRow, i, buttonView);
         }
 
         @Override // android.view.View

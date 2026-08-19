@@ -137,7 +137,7 @@ public class HashtagHistoryView extends FrameLayout {
         builder.setPositiveButton(LocaleController.getString(R.string.ClearSearchRemove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.HashtagHistoryView$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i3) {
-                HashtagHistoryView.this.lambda$onLongClick$0(str, alertDialog, i3);
+                HashtagHistoryView.$r8$lambda$5aLkB4S7nkCy6f3OdDaXHR3hOmk(HashtagHistoryView.this, str, alertDialog, i3);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -145,9 +145,8 @@ public class HashtagHistoryView extends FrameLayout {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$0(String str, AlertDialog alertDialog, int i) {
-        HashtagSearchController.getInstance(this.currentAccount).removeHashtagFromHistory(str);
-        update();
+    public static /* synthetic */ void $r8$lambda$5aLkB4S7nkCy6f3OdDaXHR3hOmk(HashtagHistoryView hashtagHistoryView, String str, AlertDialog alertDialog, int i) {
+        HashtagSearchController.getInstance(hashtagHistoryView.currentAccount).removeHashtagFromHistory(str);
+        hashtagHistoryView.update();
     }
 }

@@ -22,9 +22,7 @@ public final class AudioAttributes implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.audio.AudioAttributes$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            AudioAttributes lambda$static$0;
-            lambda$static$0 = AudioAttributes.lambda$static$0(bundle);
-            return lambda$static$0;
+            return AudioAttributes.$r8$lambda$aAjiqZCTnUjuflPZ0ItfIiXUZ6w(bundle);
         }
     };
 
@@ -100,11 +98,13 @@ public final class AudioAttributes implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || AudioAttributes.class != obj.getClass()) {
-            return false;
+        if (obj != null && AudioAttributes.class == obj.getClass()) {
+            AudioAttributes audioAttributes = (AudioAttributes) obj;
+            if (this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior) {
+                return true;
+            }
         }
-        AudioAttributes audioAttributes = (AudioAttributes) obj;
-        return this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior;
+        return false;
     }
 
     public int hashCode() {
@@ -122,8 +122,7 @@ public final class AudioAttributes implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ AudioAttributes lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ AudioAttributes $r8$lambda$aAjiqZCTnUjuflPZ0ItfIiXUZ6w(Bundle bundle) {
         Builder builder = new Builder();
         String str = FIELD_CONTENT_TYPE;
         if (bundle.containsKey(str)) {

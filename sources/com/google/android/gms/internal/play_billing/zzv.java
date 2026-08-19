@@ -9,9 +9,10 @@ public abstract class zzv {
         zzrVar.zza = zzbsVar.getClass();
         try {
             zzrVar.zza = zzbsVar.zza(zzrVar);
+            return zzuVar;
         } catch (Exception e) {
             zzuVar.zzc(e);
+            return zzuVar;
         }
-        return zzuVar;
     }
 }

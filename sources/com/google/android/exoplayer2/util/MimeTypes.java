@@ -65,21 +65,20 @@ public abstract class MimeTypes {
     }
 
     public static String getCodecsCorrespondingToMimeType(String str, String str2) {
-        if (str == null || str2 == null) {
-            return null;
-        }
-        String[] splitCodecs = Util.splitCodecs(str);
-        StringBuilder sb = new StringBuilder();
-        for (String str3 : splitCodecs) {
-            if (str2.equals(getMediaMimeType(str3))) {
-                if (sb.length() > 0) {
-                    sb.append(",");
+        if (str != null && str2 != null) {
+            String[] splitCodecs = Util.splitCodecs(str);
+            StringBuilder sb = new StringBuilder();
+            for (String str3 : splitCodecs) {
+                if (str2.equals(getMediaMimeType(str3))) {
+                    if (sb.length() > 0) {
+                        sb.append(",");
+                    }
+                    sb.append(str3);
                 }
-                sb.append(str3);
             }
-        }
-        if (sb.length() > 0) {
-            return sb.toString();
+            if (sb.length() > 0) {
+                return sb.toString();
+            }
         }
         return null;
     }
@@ -269,7 +268,7 @@ public abstract class MimeTypes {
 
     public static int getEncoding(String str, String str2) {
         Mp4aObjectType objectTypeFromMp4aRFC6381CodecString;
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "audio/eac3-joc":
                 return 18;
@@ -304,7 +303,7 @@ public abstract class MimeTypes {
     }
 
     public static String normalizeMimeType(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "audio/x-flac":
                 return "audio/flac";

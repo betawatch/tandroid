@@ -91,10 +91,10 @@ public final class DateTimeWithZone {
     private static final class Api26Impl {
         public static DateTimeWithZone create(ZonedDateTime zonedDateTime) {
             Objects.requireNonNull(zonedDateTime);
-            LocalDateTime z = zonedDateTime.z();
+            LocalDateTime B = zonedDateTime.B();
             ZoneId zone = zonedDateTime.getZone();
-            ZoneOffset offset = zone.getRules().getOffset(z);
-            return DateTimeWithZone.create(TimeUnit.SECONDS.toMillis(z.toEpochSecond(offset)), offset.getTotalSeconds(), zone.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
+            ZoneOffset offset = zone.getRules().getOffset(B);
+            return DateTimeWithZone.create(TimeUnit.SECONDS.toMillis(B.toEpochSecond(offset)), offset.getTotalSeconds(), zone.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
         }
     }
 }

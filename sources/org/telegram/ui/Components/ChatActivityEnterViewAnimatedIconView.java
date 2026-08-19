@@ -79,7 +79,7 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
             rLottieDrawable2.setOnAnimationEndListener(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterViewAnimatedIconView.this.lambda$setState$0();
+                    ChatActivityEnterViewAnimatedIconView.this.animatingState = null;
                 }
             });
             setAnimation(rLottieDrawable2);
@@ -94,11 +94,6 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
             }
             setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setState$0() {
-        this.animatingState = null;
     }
 
     public State getCurrentState() {
@@ -123,6 +118,7 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
         return null;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Enum visitor error
     jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'VOICE_TO_VIDEO' uses external variables
     	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
@@ -136,7 +132,7 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
     	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
      */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-    private static final class TransitState {
+    static final class TransitState {
         private static final /* synthetic */ TransitState[] $VALUES;
         public static final TransitState GIF_TO_KEYBOARD;
         public static final TransitState GIF_TO_SMILE;

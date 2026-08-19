@@ -270,8 +270,8 @@ public class ExifInterface {
             return "(" + ExifInterface.IFD_FORMAT_NAMES[this.format] + ", data length:" + this.bytes.length + ")";
         }
 
-        /* JADX WARN: Not initialized variable reg: 5, insn: 0x0030: MOVE (r4 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]), block:B:166:0x0030 */
-        /* JADX WARN: Removed duplicated region for block: B:169:0x018f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Not initialized variable reg: 5, insn: 0x0030: MOVE (r4 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]), block:B:178:0x0030 */
+        /* JADX WARN: Removed duplicated region for block: B:181:0x018f A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -295,18 +295,20 @@ public class ExifInterface {
                                     String str = new String(bArr, ExifInterface.ASCII);
                                     try {
                                         byteOrderedDataInputStream.close();
+                                        return str;
                                     } catch (IOException e) {
                                         Log.e("ExifInterface", "IOException occurred while closing InputStream", e);
+                                        return str;
                                     }
-                                    return str;
                                 }
                                 String str2 = new String(new char[]{(char) (b + 48)});
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return str2;
                                 } catch (IOException e2) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e2);
+                                    return str2;
                                 }
-                                return str2;
                             case 2:
                             case 7:
                                 if (this.numberOfComponents >= ExifInterface.EXIF_ASCII_PREFIX.length) {
@@ -332,10 +334,11 @@ public class ExifInterface {
                                 String sb2 = sb.toString();
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return sb2;
                                 } catch (IOException e3) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e3);
+                                    return sb2;
                                 }
-                                return sb2;
                             case 3:
                                 int[] iArr = new int[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -344,10 +347,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return iArr;
                                 } catch (IOException e4) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e4);
+                                    return iArr;
                                 }
-                                return iArr;
                             case 4:
                                 long[] jArr = new long[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -356,10 +360,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return jArr;
                                 } catch (IOException e5) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e5);
+                                    return jArr;
                                 }
-                                return jArr;
                             case 5:
                                 Rational[] rationalArr = new Rational[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -368,10 +373,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return rationalArr;
                                 } catch (IOException e6) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e6);
+                                    return rationalArr;
                                 }
-                                return rationalArr;
                             case 8:
                                 int[] iArr2 = new int[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -380,10 +386,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return iArr2;
                                 } catch (IOException e7) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e7);
+                                    return iArr2;
                                 }
-                                return iArr2;
                             case 9:
                                 int[] iArr3 = new int[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -392,10 +399,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return iArr3;
                                 } catch (IOException e8) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e8);
+                                    return iArr3;
                                 }
-                                return iArr3;
                             case 10:
                                 Rational[] rationalArr2 = new Rational[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -404,10 +412,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return rationalArr2;
                                 } catch (IOException e9) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e9);
+                                    return rationalArr2;
                                 }
-                                return rationalArr2;
                             case 11:
                                 double[] dArr = new double[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -416,10 +425,11 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return dArr;
                                 } catch (IOException e10) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
+                                    return dArr;
                                 }
-                                return dArr;
                             case 12:
                                 double[] dArr2 = new double[this.numberOfComponents];
                                 while (i < this.numberOfComponents) {
@@ -428,17 +438,19 @@ public class ExifInterface {
                                 }
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return dArr2;
                                 } catch (IOException e11) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
+                                    return dArr2;
                                 }
-                                return dArr2;
                             default:
                                 try {
                                     byteOrderedDataInputStream.close();
+                                    return null;
                                 } catch (IOException e12) {
                                     Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
+                                    return null;
                                 }
-                                return null;
                         }
                     } catch (IOException e13) {
                         e = e13;
@@ -754,18 +766,18 @@ public class ExifInterface {
             throw new NullPointerException("tag shouldn't be null");
         }
         ExifAttribute exifAttribute = getExifAttribute(str);
-        if (exifAttribute == null) {
-            return i;
+        if (exifAttribute != null) {
+            try {
+                return exifAttribute.getIntValue(this.mExifByteOrder);
+            } catch (NumberFormatException unused) {
+            }
         }
-        try {
-            return exifAttribute.getIntValue(this.mExifByteOrder);
-        } catch (NumberFormatException unused) {
-            return i;
-        }
+        return i;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:55:0x009f A[Catch: all -> 0x0015, TRY_LEAVE, TryCatch #0 {all -> 0x0015, blocks: (B:4:0x0004, B:6:0x0009, B:8:0x001e, B:10:0x0022, B:11:0x0030, B:13:0x0038, B:15:0x0041, B:16:0x0061, B:23:0x0045, B:25:0x004b, B:28:0x0052, B:31:0x005a, B:32:0x005e, B:33:0x006b, B:35:0x0075, B:38:0x007d, B:41:0x0085, B:44:0x008d, B:53:0x009b, B:55:0x009f), top: B:3:0x0004 }] */
-    /* JADX WARN: Removed duplicated region for block: B:58:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:60:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -792,19 +804,19 @@ public class ExifInterface {
                     Log.w("ExifInterface", "Invalid image: ExifInterface got an unsupported image format file(ExifInterface supports JPEG and some RAW image formats only) or a corrupted JPEG file to ExifInterface.", e);
                 }
                 addDefaultValuesForCompatibility();
-                if (!z) {
+                if (z) {
                     return;
                 }
                 printAttributes();
+                return;
             } catch (UnsupportedOperationException e2) {
                 e = e2;
                 z = DEBUG;
                 if (z) {
                 }
                 addDefaultValuesForCompatibility();
-                if (!z) {
+                if (z) {
                 }
-                printAttributes();
             }
         }
         if (!this.mIsExifDataOnly) {
@@ -844,10 +856,9 @@ public class ExifInterface {
             }
         }
         addDefaultValuesForCompatibility();
-        if (!DEBUG) {
-            return;
+        if (DEBUG) {
+            printAttributes();
         }
-        printAttributes();
     }
 
     private static boolean isSeekableFD(FileDescriptor fileDescriptor) {
@@ -1156,28 +1167,26 @@ public class ExifInterface {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0191, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0186, code lost:
     
-        r22.setByteOrder(r21.mExifByteOrder);
+        r21.setByteOrder(r20.mExifByteOrder);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0196, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x018b, code lost:
     
         return;
      */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x017b A[LOOP:0: B:9:0x0037->B:33:0x017b, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0182 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b7 A[FALL_THROUGH] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0174 A[LOOP:0: B:9:0x0037->B:32:0x0174, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x017a A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00b5 A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void getJpegAttributes(ByteOrderedDataInputStream byteOrderedDataInputStream, int i, int i2) {
-        String str;
         if (DEBUG) {
             Log.d("ExifInterface", "getJpegAttributes starting with: " + byteOrderedDataInputStream);
         }
         byteOrderedDataInputStream.setByteOrder(ByteOrder.BIG_ENDIAN);
         byte readByte = byteOrderedDataInputStream.readByte();
-        byte b = -1;
         if (readByte != -1) {
             throw new IOException("Invalid marker: " + Integer.toHexString(readByte & 255));
         }
@@ -1187,7 +1196,7 @@ public class ExifInterface {
         int i3 = 2;
         while (true) {
             byte readByte2 = byteOrderedDataInputStream.readByte();
-            if (readByte2 != b) {
+            if (readByte2 != -1) {
                 throw new IOException("Invalid marker:" + Integer.toHexString(readByte2 & 255));
             }
             byte readByte3 = byteOrderedDataInputStream.readByte();
@@ -1221,14 +1230,11 @@ public class ExifInterface {
                             int length = i5 + bArr3.length;
                             byte[] copyOfRange2 = Arrays.copyOfRange(bArr, bArr3.length, i4);
                             if (getAttribute("Xmp") == null) {
-                                str = "Invalid length";
                                 this.mAttributes[0].put("Xmp", new ExifAttribute(1, copyOfRange2.length, length, copyOfRange2));
                                 this.mXmpIsFromSeparateMarker = true;
-                                i5 = i6;
                             }
                         }
                     }
-                    str = "Invalid length";
                     i5 = i6;
                 } else if (readByte3 == -2) {
                     byte[] bArr4 = new byte[i4];
@@ -1238,7 +1244,6 @@ public class ExifInterface {
                     if (getAttribute("UserComment") == null) {
                         this.mAttributes[1].put("UserComment", ExifAttribute.createString(new String(bArr4, ASCII)));
                     }
-                    str = "Invalid length";
                 } else {
                     switch (readByte3) {
                         default:
@@ -1268,13 +1273,11 @@ public class ExifInterface {
                         case -61:
                             break;
                     }
-                    str = "Invalid length";
                     if (i4 >= 0) {
-                        throw new IOException(str);
+                        throw new IOException("Invalid length");
                     }
                     byteOrderedDataInputStream.skipFully(i4);
                     i3 = i5 + i4;
-                    b = -1;
                 }
                 i4 = 0;
                 if (i4 >= 0) {
@@ -1701,31 +1704,32 @@ public class ExifInterface {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0135  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0221  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0280  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x025a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void readImageFileDirectory(SeekableByteOrderedDataInputStream seekableByteOrderedDataInputStream, int i) {
+        char c;
+        ExifTag exifTag;
+        long j;
+        long j2;
+        boolean z;
+        boolean z2;
         short s;
         short s2;
-        long j;
-        boolean z;
-        long j2;
-        String str;
-        String str2;
-        int readUnsignedShort;
         long j3;
+        ExifTag exifTag2;
+        int readUnsignedShort;
+        long j4;
         int i2 = i;
         int i3 = 5;
-        char c = 0;
         this.mAttributesOffsets.add(Integer.valueOf(seekableByteOrderedDataInputStream.mPosition));
         short readShort = seekableByteOrderedDataInputStream.readShort();
-        String str3 = "ExifInterface";
         if (DEBUG) {
             Log.d("ExifInterface", "numberOfDirectoryEntry: " + ((int) readShort));
         }
@@ -1738,206 +1742,218 @@ public class ExifInterface {
             int readUnsignedShort3 = seekableByteOrderedDataInputStream.readUnsignedShort();
             int readInt = seekableByteOrderedDataInputStream.readInt();
             long position = seekableByteOrderedDataInputStream.position() + 4;
-            ExifTag exifTag = (ExifTag) sExifTagMapsForReading[i2].get(Integer.valueOf(readUnsignedShort2));
-            boolean z2 = DEBUG;
-            if (z2) {
-                Integer valueOf = Integer.valueOf(i);
+            ExifTag exifTag3 = (ExifTag) sExifTagMapsForReading[i2].get(Integer.valueOf(readUnsignedShort2));
+            boolean z3 = DEBUG;
+            if (z3) {
+                Integer valueOf = Integer.valueOf(i2);
                 Integer valueOf2 = Integer.valueOf(readUnsignedShort2);
-                String str4 = exifTag != null ? exifTag.name : null;
+                c = 4;
+                String str = exifTag3 != null ? exifTag3.name : null;
                 Integer valueOf3 = Integer.valueOf(readUnsignedShort3);
                 Integer valueOf4 = Integer.valueOf(readInt);
-                s = readShort;
                 Object[] objArr = new Object[i3];
-                objArr[c] = valueOf;
+                objArr[0] = valueOf;
                 objArr[1] = valueOf2;
-                objArr[2] = str4;
+                objArr[2] = str;
                 objArr[3] = valueOf3;
                 objArr[4] = valueOf4;
-                Log.d(str3, String.format("ifdType: %d, tagNumber: %d, tagName: %s, dataFormat: %d, numberOfComponents: %d", objArr));
+                Log.d("ExifInterface", String.format("ifdType: %d, tagNumber: %d, tagName: %s, dataFormat: %d, numberOfComponents: %d", objArr));
             } else {
-                s = readShort;
+                c = 4;
             }
-            if (exifTag != null) {
+            if (exifTag3 != null) {
                 if (readUnsignedShort3 > 0) {
                     if (readUnsignedShort3 < IFD_FORMAT_BYTES_PER_FORMAT.length) {
-                        if (exifTag.isFormatCompatible(readUnsignedShort3)) {
+                        if (exifTag3.isFormatCompatible(readUnsignedShort3)) {
                             if (readUnsignedShort3 == 7) {
-                                readUnsignedShort3 = exifTag.primaryFormat;
+                                readUnsignedShort3 = exifTag3.primaryFormat;
                             }
-                            s2 = s3;
-                            j = readInt * r5[readUnsignedShort3];
+                            exifTag = exifTag3;
+                            j = r5[readUnsignedShort3] * readInt;
                             if (j < 0 || j > 2147483647L) {
-                                if (z2) {
-                                    Log.d(str3, "Skip the tag entry since the number of components is invalid: " + readInt);
+                                if (z3) {
+                                    StringBuilder sb = new StringBuilder();
+                                    j2 = j;
+                                    sb.append("Skip the tag entry since the number of components is invalid: ");
+                                    sb.append(readInt);
+                                    Log.d("ExifInterface", sb.toString());
+                                } else {
+                                    j2 = j;
                                 }
+                                j = j2;
                                 z = false;
+                                if (z) {
+                                    seekableByteOrderedDataInputStream.seek(position);
+                                    s = readShort;
+                                    s2 = s3;
+                                } else {
+                                    if (j > 4) {
+                                        ExifTag exifTag4 = exifTag;
+                                        int readInt2 = seekableByteOrderedDataInputStream.readInt();
+                                        z2 = z3;
+                                        if (z3) {
+                                            StringBuilder sb2 = new StringBuilder();
+                                            s = readShort;
+                                            sb2.append("seek to data offset: ");
+                                            sb2.append(readInt2);
+                                            Log.d("ExifInterface", sb2.toString());
+                                        } else {
+                                            s = readShort;
+                                        }
+                                        if (this.mMimeType == 7) {
+                                            exifTag2 = exifTag4;
+                                            s2 = s3;
+                                            if ("MakerNote".equals(exifTag2.name)) {
+                                                this.mOrfMakerNoteOffset = readInt2;
+                                            } else if (i2 == 6 && "ThumbnailImage".equals(exifTag2.name)) {
+                                                this.mOrfThumbnailOffset = readInt2;
+                                                this.mOrfThumbnailLength = readInt;
+                                                ExifAttribute createUShort = ExifAttribute.createUShort(6, this.mExifByteOrder);
+                                                j3 = position;
+                                                ExifAttribute createULong = ExifAttribute.createULong(this.mOrfThumbnailOffset, this.mExifByteOrder);
+                                                ExifAttribute createULong2 = ExifAttribute.createULong(this.mOrfThumbnailLength, this.mExifByteOrder);
+                                                this.mAttributes[c].put("Compression", createUShort);
+                                                this.mAttributes[c].put("JPEGInterchangeFormat", createULong);
+                                                this.mAttributes[c].put("JPEGInterchangeFormatLength", createULong2);
+                                            }
+                                            j3 = position;
+                                        } else {
+                                            s2 = s3;
+                                            j3 = position;
+                                            exifTag2 = exifTag4;
+                                        }
+                                        seekableByteOrderedDataInputStream.seek(readInt2);
+                                    } else {
+                                        z2 = z3;
+                                        s = readShort;
+                                        s2 = s3;
+                                        j3 = position;
+                                        exifTag2 = exifTag;
+                                    }
+                                    Integer num = (Integer) sExifPointerTagMap.get(Integer.valueOf(readUnsignedShort2));
+                                    if (z2) {
+                                        Log.d("ExifInterface", "nextIfdType: " + num + " byteCount: " + j);
+                                    }
+                                    if (num != null) {
+                                        if (readUnsignedShort3 == 3) {
+                                            readUnsignedShort = seekableByteOrderedDataInputStream.readUnsignedShort();
+                                        } else {
+                                            if (readUnsignedShort3 == 4) {
+                                                j4 = seekableByteOrderedDataInputStream.readUnsignedInt();
+                                            } else if (readUnsignedShort3 == 8) {
+                                                readUnsignedShort = seekableByteOrderedDataInputStream.readShort();
+                                            } else if (readUnsignedShort3 == 9 || readUnsignedShort3 == 13) {
+                                                readUnsignedShort = seekableByteOrderedDataInputStream.readInt();
+                                            } else {
+                                                j4 = -1;
+                                            }
+                                            if (!z2) {
+                                                Log.d("ExifInterface", String.format("Offset: %d, tagName: %s", Long.valueOf(j4), exifTag2.name));
+                                            }
+                                            if (j4 <= 0) {
+                                                if (!this.mAttributesOffsets.contains(Integer.valueOf((int) j4))) {
+                                                    seekableByteOrderedDataInputStream.seek(j4);
+                                                    readImageFileDirectory(seekableByteOrderedDataInputStream, num.intValue());
+                                                } else if (z2) {
+                                                    Log.d("ExifInterface", "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j4 + ")");
+                                                }
+                                            } else if (z2) {
+                                                Log.d("ExifInterface", "Skip jump into the IFD since its offset is invalid: " + j4);
+                                            }
+                                            seekableByteOrderedDataInputStream.seek(j3);
+                                        }
+                                        j4 = readUnsignedShort;
+                                        if (!z2) {
+                                        }
+                                        if (j4 <= 0) {
+                                        }
+                                        seekableByteOrderedDataInputStream.seek(j3);
+                                    } else {
+                                        long j5 = j3;
+                                        int position2 = seekableByteOrderedDataInputStream.position() + this.mOffsetToExifData;
+                                        byte[] bArr = new byte[(int) j];
+                                        seekableByteOrderedDataInputStream.readFully(bArr);
+                                        ExifAttribute exifAttribute = new ExifAttribute(readUnsignedShort3, readInt, position2, bArr);
+                                        this.mAttributes[i].put(exifTag2.name, exifAttribute);
+                                        if ("DNGVersion".equals(exifTag2.name)) {
+                                            this.mMimeType = 3;
+                                        }
+                                        if ((("Make".equals(exifTag2.name) || "Model".equals(exifTag2.name)) && exifAttribute.getStringValue(this.mExifByteOrder).contains("PENTAX")) || ("Compression".equals(exifTag2.name) && exifAttribute.getIntValue(this.mExifByteOrder) == 65535)) {
+                                            this.mMimeType = 8;
+                                        }
+                                        if (seekableByteOrderedDataInputStream.position() != j5) {
+                                            seekableByteOrderedDataInputStream.seek(j5);
+                                        }
+                                        s3 = (short) (s2 + 1);
+                                        i2 = i;
+                                        readShort = s;
+                                        i3 = 5;
+                                    }
+                                }
+                                s3 = (short) (s2 + 1);
+                                i2 = i;
+                                readShort = s;
+                                i3 = 5;
                             } else {
                                 z = true;
+                                if (z) {
+                                }
+                                s3 = (short) (s2 + 1);
+                                i2 = i;
+                                readShort = s;
+                                i3 = 5;
                             }
-                            if (!z) {
-                                seekableByteOrderedDataInputStream.seek(position);
-                                str2 = str3;
-                            } else {
-                                if (j > 4) {
-                                    int readInt2 = seekableByteOrderedDataInputStream.readInt();
-                                    if (z2) {
-                                        StringBuilder sb = new StringBuilder();
-                                        j2 = position;
-                                        sb.append("seek to data offset: ");
-                                        sb.append(readInt2);
-                                        Log.d(str3, sb.toString());
-                                    } else {
-                                        j2 = position;
-                                    }
-                                    if (this.mMimeType == 7) {
-                                        if ("MakerNote".equals(exifTag.name)) {
-                                            this.mOrfMakerNoteOffset = readInt2;
-                                        } else if (i2 == 6 && "ThumbnailImage".equals(exifTag.name)) {
-                                            this.mOrfThumbnailOffset = readInt2;
-                                            this.mOrfThumbnailLength = readInt;
-                                            ExifAttribute createUShort = ExifAttribute.createUShort(6, this.mExifByteOrder);
-                                            str = str3;
-                                            ExifAttribute createULong = ExifAttribute.createULong(this.mOrfThumbnailOffset, this.mExifByteOrder);
-                                            ExifAttribute createULong2 = ExifAttribute.createULong(this.mOrfThumbnailLength, this.mExifByteOrder);
-                                            this.mAttributes[4].put("Compression", createUShort);
-                                            this.mAttributes[4].put("JPEGInterchangeFormat", createULong);
-                                            this.mAttributes[4].put("JPEGInterchangeFormatLength", createULong2);
-                                            seekableByteOrderedDataInputStream.seek(readInt2);
-                                        }
-                                    }
-                                    str = str3;
-                                    seekableByteOrderedDataInputStream.seek(readInt2);
-                                } else {
-                                    j2 = position;
-                                    str = str3;
-                                }
-                                Integer num = (Integer) sExifPointerTagMap.get(Integer.valueOf(readUnsignedShort2));
-                                if (z2) {
-                                    str2 = str;
-                                    Log.d(str2, "nextIfdType: " + num + " byteCount: " + j);
-                                } else {
-                                    str2 = str;
-                                }
-                                if (num != null) {
-                                    if (readUnsignedShort3 == 3) {
-                                        readUnsignedShort = seekableByteOrderedDataInputStream.readUnsignedShort();
-                                    } else {
-                                        if (readUnsignedShort3 == 4) {
-                                            j3 = seekableByteOrderedDataInputStream.readUnsignedInt();
-                                        } else if (readUnsignedShort3 == 8) {
-                                            readUnsignedShort = seekableByteOrderedDataInputStream.readShort();
-                                        } else if (readUnsignedShort3 == 9 || readUnsignedShort3 == 13) {
-                                            readUnsignedShort = seekableByteOrderedDataInputStream.readInt();
-                                        } else {
-                                            j3 = -1;
-                                        }
-                                        if (!z2) {
-                                            Log.d(str2, String.format("Offset: %d, tagName: %s", Long.valueOf(j3), exifTag.name));
-                                        }
-                                        if (j3 <= 0) {
-                                            if (!this.mAttributesOffsets.contains(Integer.valueOf((int) j3))) {
-                                                seekableByteOrderedDataInputStream.seek(j3);
-                                                readImageFileDirectory(seekableByteOrderedDataInputStream, num.intValue());
-                                            } else if (z2) {
-                                                Log.d(str2, "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j3 + ")");
-                                            }
-                                        } else if (z2) {
-                                            Log.d(str2, "Skip jump into the IFD since its offset is invalid: " + j3);
-                                        }
-                                        seekableByteOrderedDataInputStream.seek(j2);
-                                    }
-                                    j3 = readUnsignedShort;
-                                    if (!z2) {
-                                    }
-                                    if (j3 <= 0) {
-                                    }
-                                    seekableByteOrderedDataInputStream.seek(j2);
-                                } else {
-                                    long j4 = j2;
-                                    int position2 = seekableByteOrderedDataInputStream.position() + this.mOffsetToExifData;
-                                    byte[] bArr = new byte[(int) j];
-                                    seekableByteOrderedDataInputStream.readFully(bArr);
-                                    ExifAttribute exifAttribute = new ExifAttribute(readUnsignedShort3, readInt, position2, bArr);
-                                    this.mAttributes[i].put(exifTag.name, exifAttribute);
-                                    if ("DNGVersion".equals(exifTag.name)) {
-                                        this.mMimeType = 3;
-                                    }
-                                    if ((("Make".equals(exifTag.name) || "Model".equals(exifTag.name)) && exifAttribute.getStringValue(this.mExifByteOrder).contains("PENTAX")) || ("Compression".equals(exifTag.name) && exifAttribute.getIntValue(this.mExifByteOrder) == 65535)) {
-                                        this.mMimeType = 8;
-                                    }
-                                    if (seekableByteOrderedDataInputStream.position() != j4) {
-                                        seekableByteOrderedDataInputStream.seek(j4);
-                                    }
-                                    s3 = (short) (s2 + 1);
-                                    i2 = i;
-                                    str3 = str2;
-                                    readShort = s;
-                                    i3 = 5;
-                                    c = 0;
-                                }
-                            }
-                            s3 = (short) (s2 + 1);
-                            i2 = i;
-                            str3 = str2;
-                            readShort = s;
-                            i3 = 5;
-                            c = 0;
-                        } else if (z2) {
-                            Log.d(str3, "Skip the tag entry since data format (" + IFD_FORMAT_NAMES[readUnsignedShort3] + ") is unexpected for tag: " + exifTag.name);
+                        } else if (z3) {
+                            Log.d("ExifInterface", "Skip the tag entry since data format (" + IFD_FORMAT_NAMES[readUnsignedShort3] + ") is unexpected for tag: " + exifTag3.name);
                         }
                     }
                 }
-                s2 = s3;
-                if (z2) {
-                    Log.d(str3, "Skip the tag entry since data format is invalid: " + readUnsignedShort3);
+                exifTag = exifTag3;
+                if (z3) {
+                    Log.d("ExifInterface", "Skip the tag entry since data format is invalid: " + readUnsignedShort3);
                 }
-                z = false;
                 j = 0;
-                if (!z) {
+                z = false;
+                if (z) {
                 }
                 s3 = (short) (s2 + 1);
                 i2 = i;
-                str3 = str2;
                 readShort = s;
                 i3 = 5;
-                c = 0;
-            } else if (z2) {
-                Log.d(str3, "Skip the tag entry since tag number is not defined: " + readUnsignedShort2);
+            } else if (z3) {
+                Log.d("ExifInterface", "Skip the tag entry since tag number is not defined: " + readUnsignedShort2);
             }
-            s2 = s3;
-            z = false;
+            exifTag = exifTag3;
             j = 0;
-            if (!z) {
+            z = false;
+            if (z) {
             }
             s3 = (short) (s2 + 1);
             i2 = i;
-            str3 = str2;
             readShort = s;
             i3 = 5;
-            c = 0;
         }
-        String str5 = str3;
         int readInt3 = seekableByteOrderedDataInputStream.readInt();
-        boolean z3 = DEBUG;
-        if (z3) {
-            Log.d(str5, String.format("nextIfdOffset: %d", Integer.valueOf(readInt3)));
+        boolean z4 = DEBUG;
+        if (z4) {
+            Log.d("ExifInterface", String.format("nextIfdOffset: %d", Integer.valueOf(readInt3)));
         }
-        long j5 = readInt3;
-        if (j5 <= 0) {
-            if (z3) {
-                Log.d(str5, "Stop reading file since a wrong offset may cause an infinite loop: " + readInt3);
+        long j6 = readInt3;
+        if (j6 <= 0) {
+            if (z4) {
+                Log.d("ExifInterface", "Stop reading file since a wrong offset may cause an infinite loop: " + readInt3);
                 return;
             }
             return;
         }
         if (this.mAttributesOffsets.contains(Integer.valueOf(readInt3))) {
-            if (z3) {
-                Log.d(str5, "Stop reading file since re-reading an IFD may cause an infinite loop: " + readInt3);
+            if (z4) {
+                Log.d("ExifInterface", "Stop reading file since re-reading an IFD may cause an infinite loop: " + readInt3);
                 return;
             }
             return;
         }
-        seekableByteOrderedDataInputStream.seek(j5);
+        seekableByteOrderedDataInputStream.seek(j6);
         if (this.mAttributes[4].isEmpty()) {
             readImageFileDirectory(seekableByteOrderedDataInputStream, 4);
         } else if (this.mAttributes[5].isEmpty()) {

@@ -265,7 +265,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Integer) list.get(i4)).intValue();
+                ((Integer) list.get(i4)).getClass();
                 i3 += 4;
             }
             zzqvVar.zzt(i3);
@@ -312,7 +312,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Long) list.get(i4)).longValue();
+                ((Long) list.get(i4)).getClass();
                 i3 += 8;
             }
             zzqvVar.zzt(i3);
@@ -359,7 +359,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Boolean) list.get(i4)).booleanValue();
+                ((Boolean) list.get(i4)).getClass();
                 i3++;
             }
             zzqvVar.zzt(i3);
@@ -451,7 +451,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Long) list.get(i4)).longValue();
+                ((Long) list.get(i4)).getClass();
                 i3 += 8;
             }
             zzqvVar.zzt(i3);
@@ -498,7 +498,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Double) list.get(i4)).doubleValue();
+                ((Double) list.get(i4)).getClass();
                 i3 += 8;
             }
             zzqvVar.zzt(i3);
@@ -545,7 +545,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Float) list.get(i4)).floatValue();
+                ((Float) list.get(i4)).getClass();
                 i3 += 4;
             }
             zzqvVar.zzt(i3);
@@ -592,7 +592,7 @@ final class zzqw implements zzvi {
             zzqvVar.zzr(i, 2);
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                ((Integer) list.get(i4)).intValue();
+                ((Integer) list.get(i4)).getClass();
                 i3 += 4;
             }
             zzqvVar.zzt(i3);

@@ -243,13 +243,16 @@ public final class SingleProcessDataStore implements DataStore {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(14:0|1|(2:3|(10:5|6|7|(5:(1:(1:(1:12)(2:19|20))(3:21|22|23))(1:28)|13|14|15|16)(4:29|30|31|(6:33|(1:35)|26|14|15|16)(3:36|(1:38)(1:54)|(2:40|(2:42|(1:44)(1:45))(2:46|47))(2:48|(2:50|51)(2:52|53))))|24|(1:27)|26|14|15|16))|59|6|7|(0)(0)|24|(0)|26|14|15|16|(1:(0))) */
+    /* JADX WARN: Can't wrap try/catch for region: R(9:0|1|(2:3|(5:5|6|7|(5:(1:(1:(1:12)(2:19|20))(3:21|22|23))(1:28)|13|14|15|16)(5:29|30|31|(6:33|(1:35)|26|14|15|16)(3:36|(1:38)(1:54)|(2:40|(2:42|(1:44)(1:45))(2:46|47))(2:48|(2:50|51)(2:52|53)))|27)|24))|59|6|7|(0)(0)|24|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00bb, code lost:
+    
+        if (r9 != r1) goto L30;
+     */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x0034, code lost:
     
         r10 = th;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00bd A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0056  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0025  */
     /* JADX WARN: Type inference failed for: r9v20, types: [kotlinx.coroutines.CompletableDeferred] */
@@ -262,7 +265,6 @@ public final class SingleProcessDataStore implements DataStore {
     */
     public final Object handleUpdate(Message.Update update, Continuation continuation) {
         SingleProcessDataStore$handleUpdate$1 singleProcessDataStore$handleUpdate$1;
-        Object coroutine_suspended;
         int i;
         Object obj;
         ?? r9;
@@ -278,7 +280,7 @@ public final class SingleProcessDataStore implements DataStore {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 singleProcessDataStore$handleUpdate$1.label = i2 - TLObject.FLAG_31;
                 Object obj2 = singleProcessDataStore$handleUpdate$1.result;
-                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$handleUpdate$1.label;
                 boolean z = true;
                 if (i != 0) {
@@ -303,7 +305,6 @@ public final class SingleProcessDataStore implements DataStore {
                         singleProcessDataStore$handleUpdate$1.label = 1;
                         transformAndWrite = transformAndWrite(transform, callerContext, singleProcessDataStore$handleUpdate$1);
                         if (transformAndWrite == coroutine_suspended) {
-                            return coroutine_suspended;
                         }
                         Message.Update update4 = ack;
                         obj2 = transformAndWrite;
@@ -322,11 +323,10 @@ public final class SingleProcessDataStore implements DataStore {
                             singleProcessDataStore$handleUpdate$1.L$1 = this;
                             singleProcessDataStore$handleUpdate$1.L$2 = ack;
                             singleProcessDataStore$handleUpdate$1.label = 2;
-                            if (readAndInitOrPropagateAndThrowFailure(singleProcessDataStore$handleUpdate$1) == coroutine_suspended) {
-                                return coroutine_suspended;
+                            if (readAndInitOrPropagateAndThrowFailure(singleProcessDataStore$handleUpdate$1) != coroutine_suspended) {
+                                singleProcessDataStore = this;
+                                update2 = update;
                             }
-                            singleProcessDataStore = this;
-                            update2 = update;
                         } else {
                             throw ((ReadException) state).getReadException();
                         }
@@ -336,29 +336,29 @@ public final class SingleProcessDataStore implements DataStore {
                         }
                         throw new NoWhenBranchMatchedException();
                     }
-                } else {
-                    if (i == 1) {
-                        update3 = (CompletableDeferred) singleProcessDataStore$handleUpdate$1.L$0;
-                    } else if (i == 2) {
-                        CompletableDeferred completableDeferred = (CompletableDeferred) singleProcessDataStore$handleUpdate$1.L$2;
-                        singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$handleUpdate$1.L$1;
-                        Message.Update update5 = (Message.Update) singleProcessDataStore$handleUpdate$1.L$0;
-                        ResultKt.throwOnFailure(obj2);
-                        ack = completableDeferred;
-                        update2 = update5;
-                    } else {
-                        if (i != 3) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        update3 = (CompletableDeferred) singleProcessDataStore$handleUpdate$1.L$0;
-                    }
-                    ResultKt.throwOnFailure(obj2);
-                    update = update3;
-                    obj = Result.constructor-impl(obj2);
-                    r9 = update;
-                    CompletableDeferredKt.completeWith(r9, obj);
-                    return Unit.INSTANCE;
+                    return coroutine_suspended;
                 }
+                if (i == 1) {
+                    update3 = (CompletableDeferred) singleProcessDataStore$handleUpdate$1.L$0;
+                } else if (i == 2) {
+                    CompletableDeferred completableDeferred = (CompletableDeferred) singleProcessDataStore$handleUpdate$1.L$2;
+                    singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$handleUpdate$1.L$1;
+                    Message.Update update5 = (Message.Update) singleProcessDataStore$handleUpdate$1.L$0;
+                    ResultKt.throwOnFailure(obj2);
+                    ack = completableDeferred;
+                    update2 = update5;
+                } else {
+                    if (i != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    update3 = (CompletableDeferred) singleProcessDataStore$handleUpdate$1.L$0;
+                }
+                ResultKt.throwOnFailure(obj2);
+                update = update3;
+                obj = Result.constructor-impl(obj2);
+                r9 = update;
+                CompletableDeferredKt.completeWith(r9, obj);
+                return Unit.INSTANCE;
                 Function2 transform2 = update2.getTransform();
                 CoroutineContext callerContext2 = update2.getCallerContext();
                 singleProcessDataStore$handleUpdate$1.L$0 = ack;
@@ -366,21 +366,11 @@ public final class SingleProcessDataStore implements DataStore {
                 singleProcessDataStore$handleUpdate$1.L$2 = null;
                 singleProcessDataStore$handleUpdate$1.label = 3;
                 transformAndWrite = singleProcessDataStore.transformAndWrite(transform2, callerContext2, singleProcessDataStore$handleUpdate$1);
-                if (transformAndWrite == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                Message.Update update42 = ack;
-                obj2 = transformAndWrite;
-                update = update42;
-                obj = Result.constructor-impl(obj2);
-                r9 = update;
-                CompletableDeferredKt.completeWith(r9, obj);
-                return Unit.INSTANCE;
             }
         }
         singleProcessDataStore$handleUpdate$1 = new SingleProcessDataStore$handleUpdate$1(this, continuation);
         Object obj22 = singleProcessDataStore$handleUpdate$1.result;
-        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = singleProcessDataStore$handleUpdate$1.label;
         boolean z2 = true;
         if (i != 0) {
@@ -392,15 +382,6 @@ public final class SingleProcessDataStore implements DataStore {
         singleProcessDataStore$handleUpdate$1.L$2 = null;
         singleProcessDataStore$handleUpdate$1.label = 3;
         transformAndWrite = singleProcessDataStore.transformAndWrite(transform22, callerContext22, singleProcessDataStore$handleUpdate$1);
-        if (transformAndWrite == coroutine_suspended) {
-        }
-        Message.Update update422 = ack;
-        obj22 = transformAndWrite;
-        update = update422;
-        obj = Result.constructor-impl(obj22);
-        r9 = update;
-        CompletableDeferredKt.completeWith(r9, obj);
-        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -516,13 +497,12 @@ public final class SingleProcessDataStore implements DataStore {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0114 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007b  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0027  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -567,71 +547,69 @@ public final class SingleProcessDataStore implements DataStore {
                     singleProcessDataStore$readAndInit$1.L$3 = ref$ObjectRef;
                     singleProcessDataStore$readAndInit$1.label = 1;
                     obj = readDataOrHandleCorruption(singleProcessDataStore$readAndInit$1);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
+                    if (obj != coroutine_suspended) {
+                        singleProcessDataStore = this;
+                        ref$ObjectRef2 = ref$ObjectRef;
                     }
-                    singleProcessDataStore = this;
-                    ref$ObjectRef2 = ref$ObjectRef;
-                } else {
-                    if (i != 1) {
-                        if (i != 2) {
-                            if (i == 3) {
-                                mutex2 = (Mutex) singleProcessDataStore$readAndInit$1.L$3;
-                                ref$BooleanRef2 = (Ref$BooleanRef) singleProcessDataStore$readAndInit$1.L$2;
-                                ref$ObjectRef4 = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$1;
-                                singleProcessDataStore3 = (SingleProcessDataStore) singleProcessDataStore$readAndInit$1.L$0;
-                                ResultKt.throwOnFailure(obj);
-                                try {
-                                    ref$BooleanRef2.element = true;
-                                    Unit unit = Unit.INSTANCE;
-                                    mutex2.unlock(null);
-                                    MutableStateFlow mutableStateFlow = singleProcessDataStore3.downstreamFlow;
-                                    Object obj2 = ref$ObjectRef4.element;
-                                    mutableStateFlow.setValue(new Data(obj2, obj2 != null ? obj2.hashCode() : 0));
-                                    return Unit.INSTANCE;
-                                } catch (Throwable th) {
-                                    mutex2.unlock(null);
-                                    throw th;
-                                }
-                            }
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        it = (Iterator) singleProcessDataStore$readAndInit$1.L$5;
-                        singleProcessDataStore$readAndInit$api$1 = (SingleProcessDataStore$readAndInit$api$1) singleProcessDataStore$readAndInit$1.L$4;
-                        ref$BooleanRef = (Ref$BooleanRef) singleProcessDataStore$readAndInit$1.L$3;
-                        ref$ObjectRef3 = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$2;
-                        mutex = (Mutex) singleProcessDataStore$readAndInit$1.L$1;
-                        singleProcessDataStore2 = (SingleProcessDataStore) singleProcessDataStore$readAndInit$1.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        while (it.hasNext()) {
-                            Function2 function2 = (Function2) it.next();
-                            singleProcessDataStore$readAndInit$1.L$0 = singleProcessDataStore2;
-                            singleProcessDataStore$readAndInit$1.L$1 = mutex;
-                            singleProcessDataStore$readAndInit$1.L$2 = ref$ObjectRef3;
-                            singleProcessDataStore$readAndInit$1.L$3 = ref$BooleanRef;
-                            singleProcessDataStore$readAndInit$1.L$4 = singleProcessDataStore$readAndInit$api$1;
-                            singleProcessDataStore$readAndInit$1.L$5 = it;
-                            singleProcessDataStore$readAndInit$1.label = 2;
-                            if (function2.invoke(singleProcessDataStore$readAndInit$api$1, singleProcessDataStore$readAndInit$1) == coroutine_suspended) {
-                                return coroutine_suspended;
+                    return coroutine_suspended;
+                }
+                if (i != 1) {
+                    if (i != 2) {
+                        if (i == 3) {
+                            mutex2 = (Mutex) singleProcessDataStore$readAndInit$1.L$3;
+                            ref$BooleanRef2 = (Ref$BooleanRef) singleProcessDataStore$readAndInit$1.L$2;
+                            ref$ObjectRef4 = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$1;
+                            singleProcessDataStore3 = (SingleProcessDataStore) singleProcessDataStore$readAndInit$1.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            try {
+                                ref$BooleanRef2.element = true;
+                                Unit unit = Unit.INSTANCE;
+                                mutex2.unlock(null);
+                                MutableStateFlow mutableStateFlow = singleProcessDataStore3.downstreamFlow;
+                                Object obj2 = ref$ObjectRef4.element;
+                                mutableStateFlow.setValue(new Data(obj2, obj2 != null ? obj2.hashCode() : 0));
+                                return Unit.INSTANCE;
+                            } catch (Throwable th) {
+                                mutex2.unlock(null);
+                                throw th;
                             }
                         }
-                        singleProcessDataStore$readAndInit$12 = singleProcessDataStore$readAndInit$1;
-                        ref$BooleanRef2 = ref$BooleanRef;
-                        ref$ObjectRef2 = ref$ObjectRef3;
-                        Mutex$default = mutex;
-                        singleProcessDataStore3 = singleProcessDataStore2;
-                        singleProcessDataStore3.initTasks = null;
-                        singleProcessDataStore$readAndInit$12.L$0 = singleProcessDataStore3;
-                        singleProcessDataStore$readAndInit$12.L$1 = ref$ObjectRef2;
-                        singleProcessDataStore$readAndInit$12.L$2 = ref$BooleanRef2;
-                        singleProcessDataStore$readAndInit$12.L$3 = Mutex$default;
-                        singleProcessDataStore$readAndInit$12.L$4 = null;
-                        singleProcessDataStore$readAndInit$12.L$5 = null;
-                        singleProcessDataStore$readAndInit$12.label = 3;
-                        if (Mutex$default.lock(null, singleProcessDataStore$readAndInit$12) == coroutine_suspended) {
-                            return coroutine_suspended;
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    it = (Iterator) singleProcessDataStore$readAndInit$1.L$5;
+                    singleProcessDataStore$readAndInit$api$1 = (SingleProcessDataStore$readAndInit$api$1) singleProcessDataStore$readAndInit$1.L$4;
+                    ref$BooleanRef = (Ref$BooleanRef) singleProcessDataStore$readAndInit$1.L$3;
+                    ref$ObjectRef3 = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$2;
+                    mutex = (Mutex) singleProcessDataStore$readAndInit$1.L$1;
+                    singleProcessDataStore2 = (SingleProcessDataStore) singleProcessDataStore$readAndInit$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                    while (it.hasNext()) {
+                        Function2 function2 = (Function2) it.next();
+                        singleProcessDataStore$readAndInit$1.L$0 = singleProcessDataStore2;
+                        singleProcessDataStore$readAndInit$1.L$1 = mutex;
+                        singleProcessDataStore$readAndInit$1.L$2 = ref$ObjectRef3;
+                        singleProcessDataStore$readAndInit$1.L$3 = ref$BooleanRef;
+                        singleProcessDataStore$readAndInit$1.L$4 = singleProcessDataStore$readAndInit$api$1;
+                        singleProcessDataStore$readAndInit$1.L$5 = it;
+                        singleProcessDataStore$readAndInit$1.label = 2;
+                        if (function2.invoke(singleProcessDataStore$readAndInit$api$1, singleProcessDataStore$readAndInit$1) == coroutine_suspended) {
+                            break;
                         }
+                    }
+                    singleProcessDataStore$readAndInit$12 = singleProcessDataStore$readAndInit$1;
+                    ref$BooleanRef2 = ref$BooleanRef;
+                    ref$ObjectRef2 = ref$ObjectRef3;
+                    Mutex$default = mutex;
+                    singleProcessDataStore3 = singleProcessDataStore2;
+                    singleProcessDataStore3.initTasks = null;
+                    singleProcessDataStore$readAndInit$12.L$0 = singleProcessDataStore3;
+                    singleProcessDataStore$readAndInit$12.L$1 = ref$ObjectRef2;
+                    singleProcessDataStore$readAndInit$12.L$2 = ref$BooleanRef2;
+                    singleProcessDataStore$readAndInit$12.L$3 = Mutex$default;
+                    singleProcessDataStore$readAndInit$12.L$4 = null;
+                    singleProcessDataStore$readAndInit$12.L$5 = null;
+                    singleProcessDataStore$readAndInit$12.label = 3;
+                    if (Mutex$default.lock(null, singleProcessDataStore$readAndInit$12) != coroutine_suspended) {
                         ref$ObjectRef4 = ref$ObjectRef2;
                         mutex2 = Mutex$default;
                         ref$BooleanRef2.element = true;
@@ -642,12 +620,13 @@ public final class SingleProcessDataStore implements DataStore {
                         mutableStateFlow2.setValue(new Data(obj22, obj22 != null ? obj22.hashCode() : 0));
                         return Unit.INSTANCE;
                     }
-                    ref$ObjectRef = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$3;
-                    ref$ObjectRef2 = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$2;
-                    Mutex$default = (Mutex) singleProcessDataStore$readAndInit$1.L$1;
-                    singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$readAndInit$1.L$0;
-                    ResultKt.throwOnFailure(obj);
+                    return coroutine_suspended;
                 }
+                ref$ObjectRef = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$3;
+                ref$ObjectRef2 = (Ref$ObjectRef) singleProcessDataStore$readAndInit$1.L$2;
+                Mutex$default = (Mutex) singleProcessDataStore$readAndInit$1.L$1;
+                singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$readAndInit$1.L$0;
+                ResultKt.throwOnFailure(obj);
                 ref$ObjectRef.element = obj;
                 Ref$BooleanRef ref$BooleanRef3 = new Ref$BooleanRef();
                 SingleProcessDataStore$readAndInit$api$1 singleProcessDataStore$readAndInit$api$12 = new SingleProcessDataStore$readAndInit$api$1(Mutex$default, ref$BooleanRef3, ref$ObjectRef2, singleProcessDataStore);
@@ -664,33 +643,34 @@ public final class SingleProcessDataStore implements DataStore {
                     singleProcessDataStore$readAndInit$12.L$4 = null;
                     singleProcessDataStore$readAndInit$12.L$5 = null;
                     singleProcessDataStore$readAndInit$12.label = 3;
-                    if (Mutex$default.lock(null, singleProcessDataStore$readAndInit$12) == coroutine_suspended) {
+                    if (Mutex$default.lock(null, singleProcessDataStore$readAndInit$12) != coroutine_suspended) {
                     }
-                } else {
-                    singleProcessDataStore2 = singleProcessDataStore;
-                    ref$ObjectRef3 = ref$ObjectRef2;
-                    singleProcessDataStore$readAndInit$api$1 = singleProcessDataStore$readAndInit$api$12;
-                    it = list.iterator();
-                    mutex = Mutex$default;
-                    ref$BooleanRef = ref$BooleanRef3;
-                    while (it.hasNext()) {
-                    }
-                    singleProcessDataStore$readAndInit$12 = singleProcessDataStore$readAndInit$1;
-                    ref$BooleanRef2 = ref$BooleanRef;
-                    ref$ObjectRef2 = ref$ObjectRef3;
-                    Mutex$default = mutex;
-                    singleProcessDataStore3 = singleProcessDataStore2;
-                    singleProcessDataStore3.initTasks = null;
-                    singleProcessDataStore$readAndInit$12.L$0 = singleProcessDataStore3;
-                    singleProcessDataStore$readAndInit$12.L$1 = ref$ObjectRef2;
-                    singleProcessDataStore$readAndInit$12.L$2 = ref$BooleanRef2;
-                    singleProcessDataStore$readAndInit$12.L$3 = Mutex$default;
-                    singleProcessDataStore$readAndInit$12.L$4 = null;
-                    singleProcessDataStore$readAndInit$12.L$5 = null;
-                    singleProcessDataStore$readAndInit$12.label = 3;
-                    if (Mutex$default.lock(null, singleProcessDataStore$readAndInit$12) == coroutine_suspended) {
-                    }
+                    return coroutine_suspended;
                 }
+                singleProcessDataStore2 = singleProcessDataStore;
+                ref$ObjectRef3 = ref$ObjectRef2;
+                singleProcessDataStore$readAndInit$api$1 = singleProcessDataStore$readAndInit$api$12;
+                it = list.iterator();
+                mutex = Mutex$default;
+                ref$BooleanRef = ref$BooleanRef3;
+                while (it.hasNext()) {
+                }
+                singleProcessDataStore$readAndInit$12 = singleProcessDataStore$readAndInit$1;
+                ref$BooleanRef2 = ref$BooleanRef;
+                ref$ObjectRef2 = ref$ObjectRef3;
+                Mutex$default = mutex;
+                singleProcessDataStore3 = singleProcessDataStore2;
+                singleProcessDataStore3.initTasks = null;
+                singleProcessDataStore$readAndInit$12.L$0 = singleProcessDataStore3;
+                singleProcessDataStore$readAndInit$12.L$1 = ref$ObjectRef2;
+                singleProcessDataStore$readAndInit$12.L$2 = ref$BooleanRef2;
+                singleProcessDataStore$readAndInit$12.L$3 = Mutex$default;
+                singleProcessDataStore$readAndInit$12.L$4 = null;
+                singleProcessDataStore$readAndInit$12.L$5 = null;
+                singleProcessDataStore$readAndInit$12.label = 3;
+                if (Mutex$default.lock(null, singleProcessDataStore$readAndInit$12) != coroutine_suspended) {
+                }
+                return coroutine_suspended;
             }
         }
         singleProcessDataStore$readAndInit$1 = new SingleProcessDataStore$readAndInit$1(this, continuation);
@@ -709,16 +689,16 @@ public final class SingleProcessDataStore implements DataStore {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0085 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0074 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0086 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0055  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0025  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object readDataOrHandleCorruption(Continuation continuation) {
         SingleProcessDataStore$readDataOrHandleCorruption$1 singleProcessDataStore$readDataOrHandleCorruption$1;
+        Object coroutine_suspended;
         int i;
         SingleProcessDataStore singleProcessDataStore;
         Object handleCorruption;
@@ -731,27 +711,20 @@ public final class SingleProcessDataStore implements DataStore {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 singleProcessDataStore$readDataOrHandleCorruption$1.label = i2 - TLObject.FLAG_31;
                 Object obj = singleProcessDataStore$readDataOrHandleCorruption$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = singleProcessDataStore$readDataOrHandleCorruption$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     try {
                         singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = this;
                         singleProcessDataStore$readDataOrHandleCorruption$1.label = 1;
-                        obj = readData(singleProcessDataStore$readDataOrHandleCorruption$1);
-                        if (obj == coroutine_suspended) {
-                            return coroutine_suspended;
+                        Object readData = readData(singleProcessDataStore$readDataOrHandleCorruption$1);
+                        if (readData != coroutine_suspended) {
+                            return readData;
                         }
                     } catch (CorruptionException e) {
                         e = e;
                         singleProcessDataStore = this;
-                        CorruptionHandler corruptionHandler = singleProcessDataStore.corruptionHandler;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = singleProcessDataStore;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.L$1 = e;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.label = 2;
-                        handleCorruption = corruptionHandler.handleCorruption(e, singleProcessDataStore$readDataOrHandleCorruption$1);
-                        if (handleCorruption != coroutine_suspended) {
-                        }
                     }
                 } else {
                     if (i != 1) {
@@ -788,37 +761,42 @@ public final class SingleProcessDataStore implements DataStore {
                     singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$readDataOrHandleCorruption$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
+                        return obj;
                     } catch (CorruptionException e4) {
                         e = e4;
-                        CorruptionHandler corruptionHandler2 = singleProcessDataStore.corruptionHandler;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = singleProcessDataStore;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.L$1 = e;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.label = 2;
-                        handleCorruption = corruptionHandler2.handleCorruption(e, singleProcessDataStore$readDataOrHandleCorruption$1);
-                        if (handleCorruption != coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        SingleProcessDataStore singleProcessDataStore3 = singleProcessDataStore;
-                        corruptionException = e;
-                        obj = handleCorruption;
-                        singleProcessDataStore2 = singleProcessDataStore3;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = corruptionException;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.L$1 = obj;
-                        singleProcessDataStore$readDataOrHandleCorruption$1.label = 3;
-                        if (singleProcessDataStore2.writeData$datastore_core(obj, singleProcessDataStore$readDataOrHandleCorruption$1) != coroutine_suspended) {
-                        }
                     }
                 }
-                return obj;
+                CorruptionHandler corruptionHandler = singleProcessDataStore.corruptionHandler;
+                singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = singleProcessDataStore;
+                singleProcessDataStore$readDataOrHandleCorruption$1.L$1 = e;
+                singleProcessDataStore$readDataOrHandleCorruption$1.label = 2;
+                handleCorruption = corruptionHandler.handleCorruption(e, singleProcessDataStore$readDataOrHandleCorruption$1);
+                if (handleCorruption != coroutine_suspended) {
+                    SingleProcessDataStore singleProcessDataStore3 = singleProcessDataStore;
+                    corruptionException = e;
+                    obj = handleCorruption;
+                    singleProcessDataStore2 = singleProcessDataStore3;
+                    singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = corruptionException;
+                    singleProcessDataStore$readDataOrHandleCorruption$1.L$1 = obj;
+                    singleProcessDataStore$readDataOrHandleCorruption$1.label = 3;
+                    if (singleProcessDataStore2.writeData$datastore_core(obj, singleProcessDataStore$readDataOrHandleCorruption$1) != coroutine_suspended) {
+                    }
+                }
             }
         }
         singleProcessDataStore$readDataOrHandleCorruption$1 = new SingleProcessDataStore$readDataOrHandleCorruption$1(this, continuation);
         Object obj3 = singleProcessDataStore$readDataOrHandleCorruption$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = singleProcessDataStore$readDataOrHandleCorruption$1.label;
         if (i != 0) {
         }
-        return obj3;
+        CorruptionHandler corruptionHandler2 = singleProcessDataStore.corruptionHandler;
+        singleProcessDataStore$readDataOrHandleCorruption$1.L$0 = singleProcessDataStore;
+        singleProcessDataStore$readDataOrHandleCorruption$1.L$1 = e;
+        singleProcessDataStore$readDataOrHandleCorruption$1.label = 2;
+        handleCorruption = corruptionHandler2.handleCorruption(e, singleProcessDataStore$readDataOrHandleCorruption$1);
+        if (handleCorruption != coroutine_suspended) {
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -923,8 +901,9 @@ public final class SingleProcessDataStore implements DataStore {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x007c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0049  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0025  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -936,6 +915,7 @@ public final class SingleProcessDataStore implements DataStore {
         Data data;
         Object obj2;
         SingleProcessDataStore singleProcessDataStore;
+        Object obj3;
         SingleProcessDataStore singleProcessDataStore2;
         if (continuation instanceof SingleProcessDataStore$transformAndWrite$1) {
             singleProcessDataStore$transformAndWrite$1 = (SingleProcessDataStore$transformAndWrite$1) continuation;
@@ -956,43 +936,43 @@ public final class SingleProcessDataStore implements DataStore {
                     singleProcessDataStore$transformAndWrite$1.L$2 = value;
                     singleProcessDataStore$transformAndWrite$1.label = 1;
                     Object withContext = BuildersKt.withContext(coroutineContext, singleProcessDataStore$transformAndWrite$newData$1, singleProcessDataStore$transformAndWrite$1);
-                    if (withContext == coroutine_suspended) {
-                        return coroutine_suspended;
+                    if (withContext != coroutine_suspended) {
+                        data = data2;
+                        obj = withContext;
+                        obj2 = value;
+                        singleProcessDataStore = this;
                     }
-                    data = data2;
-                    obj = withContext;
-                    obj2 = value;
-                    singleProcessDataStore = this;
-                } else {
-                    if (i != 1) {
-                        if (i != 2) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        obj2 = singleProcessDataStore$transformAndWrite$1.L$1;
-                        singleProcessDataStore2 = (SingleProcessDataStore) singleProcessDataStore$transformAndWrite$1.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        singleProcessDataStore2.downstreamFlow.setValue(new Data(obj2, obj2 == null ? obj2.hashCode() : 0));
-                        return obj2;
-                    }
-                    obj2 = singleProcessDataStore$transformAndWrite$1.L$2;
-                    data = (Data) singleProcessDataStore$transformAndWrite$1.L$1;
-                    singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$transformAndWrite$1.L$0;
-                    ResultKt.throwOnFailure(obj);
+                    return coroutine_suspended;
                 }
+                if (i != 1) {
+                    if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    obj3 = singleProcessDataStore$transformAndWrite$1.L$1;
+                    singleProcessDataStore2 = (SingleProcessDataStore) singleProcessDataStore$transformAndWrite$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                    singleProcessDataStore2.downstreamFlow.setValue(new Data(obj3, obj3 == null ? obj3.hashCode() : 0));
+                    return obj3;
+                }
+                obj2 = singleProcessDataStore$transformAndWrite$1.L$2;
+                data = (Data) singleProcessDataStore$transformAndWrite$1.L$1;
+                singleProcessDataStore = (SingleProcessDataStore) singleProcessDataStore$transformAndWrite$1.L$0;
+                ResultKt.throwOnFailure(obj);
                 data.checkHashCode();
                 if (!Intrinsics.areEqual(obj2, obj)) {
-                    singleProcessDataStore$transformAndWrite$1.L$0 = singleProcessDataStore;
-                    singleProcessDataStore$transformAndWrite$1.L$1 = obj;
-                    singleProcessDataStore$transformAndWrite$1.L$2 = null;
-                    singleProcessDataStore$transformAndWrite$1.label = 2;
-                    if (singleProcessDataStore.writeData$datastore_core(obj, singleProcessDataStore$transformAndWrite$1) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    obj2 = obj;
-                    singleProcessDataStore2 = singleProcessDataStore;
-                    singleProcessDataStore2.downstreamFlow.setValue(new Data(obj2, obj2 == null ? obj2.hashCode() : 0));
+                    return obj2;
                 }
-                return obj2;
+                singleProcessDataStore$transformAndWrite$1.L$0 = singleProcessDataStore;
+                singleProcessDataStore$transformAndWrite$1.L$1 = obj;
+                singleProcessDataStore$transformAndWrite$1.L$2 = null;
+                singleProcessDataStore$transformAndWrite$1.label = 2;
+                if (singleProcessDataStore.writeData$datastore_core(obj, singleProcessDataStore$transformAndWrite$1) != coroutine_suspended) {
+                    obj3 = obj;
+                    singleProcessDataStore2 = singleProcessDataStore;
+                    singleProcessDataStore2.downstreamFlow.setValue(new Data(obj3, obj3 == null ? obj3.hashCode() : 0));
+                    return obj3;
+                }
+                return coroutine_suspended;
             }
         }
         singleProcessDataStore$transformAndWrite$1 = new SingleProcessDataStore$transformAndWrite$1(this, continuation);
@@ -1004,7 +984,6 @@ public final class SingleProcessDataStore implements DataStore {
         data.checkHashCode();
         if (!Intrinsics.areEqual(obj2, obj)) {
         }
-        return obj2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1150,7 +1129,7 @@ public final class SingleProcessDataStore implements DataStore {
         }
     }
 
-    private static final class UncloseableOutputStream extends OutputStream {
+    private static final class UncloseableOutputStream extends OutputStream implements AutoCloseable {
         private final FileOutputStream fileOutputStream;
 
         @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable

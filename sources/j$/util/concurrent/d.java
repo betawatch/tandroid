@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-final class d extends a implements Iterator {
+public final class d extends a implements Iterator {
     @Override // java.util.Iterator
     public final Object next() {
         l lVar = this.b;

@@ -39,7 +39,7 @@ class EventBus implements Subscriber, Publisher {
 
                         @Override // java.lang.Runnable
                         public final void run() {
-                            EventBus.lambda$publish$0(this.f$0, null);
+                            ((EventHandler) this.f$0.getKey()).handle(null);
                         }
                     });
                 }
@@ -47,11 +47,6 @@ class EventBus implements Subscriber, Publisher {
                 throw th;
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$publish$0(Map.Entry entry, Event event) {
-        ((EventHandler) entry.getKey()).handle(event);
     }
 
     private synchronized Set getHandlers(Event event) {

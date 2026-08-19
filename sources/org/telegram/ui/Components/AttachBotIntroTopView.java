@@ -36,7 +36,7 @@ public class AttachBotIntroTopView extends View {
         this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.AttachBotIntroTopView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver2, boolean z, boolean z2, boolean z3) {
-                AttachBotIntroTopView.this.lambda$new$1(imageReceiver2, z, z2, z3);
+                AttachBotIntroTopView.$r8$lambda$9E3i-q6y937AHcDGuDGtpyutUaQ(AttachBotIntroTopView.this, imageReceiver2, z, z2, z3);
             }
 
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -55,22 +55,21 @@ public class AttachBotIntroTopView extends View {
         this.paint.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+    public static /* synthetic */ void $r8$lambda$9E3i-q6y937AHcDGuDGtpyutUaQ(final AttachBotIntroTopView attachBotIntroTopView, ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        attachBotIntroTopView.getClass();
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AttachBotIntroTopView$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AttachBotIntroTopView.this.lambda$new$0(valueAnimator);
+                AttachBotIntroTopView.$r8$lambda$r7NoZe1dOlXoqnpgquNHkrgXyLs(AttachBotIntroTopView.this, valueAnimator);
             }
         });
         duration.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ValueAnimator valueAnimator) {
-        this.imageReceiver.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$r7NoZe1dOlXoqnpgquNHkrgXyLs(AttachBotIntroTopView attachBotIntroTopView, ValueAnimator valueAnimator) {
+        attachBotIntroTopView.imageReceiver.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        attachBotIntroTopView.invalidate();
     }
 
     public void setAttachBot(TLRPC.TL_attachMenuBot tL_attachMenuBot) {
@@ -114,7 +113,7 @@ public class AttachBotIntroTopView extends View {
         this.imageReceiver.setImageCoords((getWidth() / 2.0f) - AndroidUtilities.dp(66.0f), (getHeight() / 2.0f) - (AndroidUtilities.dp(42.0f) / 2.0f), AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f));
         this.imageReceiver.draw(canvas);
         canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), getHeight() / 2.0f, this.paint);
-        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.dp(8.0f), getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.dp(8.0f), this.paint);
+        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.dp(8.0f), getWidth() / 2.0f, AndroidUtilities.dp(8.0f) + (getHeight() / 2.0f), this.paint);
         this.attachDrawable.setBounds((getWidth() / 2) + AndroidUtilities.dp(24.0f), (getHeight() / 2) - (AndroidUtilities.dp(42.0f) / 2), (getWidth() / 2) + AndroidUtilities.dp(66.0f), (getHeight() / 2) + (AndroidUtilities.dp(42.0f) / 2));
         this.attachDrawable.draw(canvas);
     }

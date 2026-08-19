@@ -10,7 +10,6 @@ import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import kotlin.random.Random;
 
@@ -257,9 +256,13 @@ public abstract class ActivityResultRegistry {
         }
 
         void clearObservers() {
-            Iterator it = this.mObservers.iterator();
-            while (it.hasNext()) {
-                this.mLifecycle.removeObserver((LifecycleEventObserver) it.next());
+            ArrayList arrayList = this.mObservers;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                this.mLifecycle.removeObserver((LifecycleEventObserver) obj);
             }
             this.mObservers.clear();
         }

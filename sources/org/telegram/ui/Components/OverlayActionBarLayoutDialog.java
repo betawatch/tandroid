@@ -76,7 +76,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
             this.frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.OverlayActionBarLayoutDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OverlayActionBarLayoutDialog.this.lambda$new$0(view);
+                    OverlayActionBarLayoutDialog.this.onBackPressed();
                 }
             });
             this.actionBarLayout.setRemoveActionBarExtraHeight(true);
@@ -86,11 +86,6 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         this.passcodeView = passcodeView;
         this.frameLayout.addView(passcodeView, LayoutHelper.createFrame(-1, -1.0f));
         setContentView(this.frameLayout);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onBackPressed();
     }
 
     @Override // android.app.Dialog
@@ -155,9 +150,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         this.frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.OverlayActionBarLayoutDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnApplyWindowInsetsListener
             public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets lambda$onCreate$1;
-                lambda$onCreate$1 = OverlayActionBarLayoutDialog.lambda$onCreate$1(view, windowInsets);
-                return lambda$onCreate$1;
+                return OverlayActionBarLayoutDialog.$r8$lambda$AKW-EMZGytT31G2x4IT_NdAkiqA(view, windowInsets);
             }
         });
         if (i >= 26) {
@@ -165,8 +158,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsets lambda$onCreate$1(View view, WindowInsets windowInsets) {
+    public static /* synthetic */ WindowInsets $r8$lambda$AKW-EMZGytT31G2x4IT_NdAkiqA(View view, WindowInsets windowInsets) {
         view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
         return windowInsets;
     }

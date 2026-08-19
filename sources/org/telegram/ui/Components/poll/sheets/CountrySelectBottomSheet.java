@@ -92,11 +92,6 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$700(CountrySelectBottomSheet countrySelectBottomSheet, View view) {
-        countrySelectBottomSheet.onSpanClick(view);
-    }
-
     public CountrySelectBottomSheet(Context context, final Theme.ResourcesProvider resourcesProvider) {
         super(context, null, true, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, resourcesProvider);
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
@@ -134,7 +129,7 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CountrySelectBottomSheet.this.lambda$new$0(view);
+                CountrySelectBottomSheet.$r8$lambda$dFfKQZ88tzRd1CGAQF_yCeuElnc(CountrySelectBottomSheet.this, view);
             }
         });
         TextView textView = new TextView(context) { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet.3
@@ -160,7 +155,7 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CountrySelectBottomSheet.this.lambda$new$1(view);
+                CountrySelectBottomSheet.$r8$lambda$znhktN5OCZ0cL8t3qqSkFzS7ELg(CountrySelectBottomSheet.this, view);
             }
         });
         FragmentSearchField fragmentSearchField = new FragmentSearchField(context, resourcesProvider);
@@ -189,7 +184,7 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         fragmentSpansContainer.setDelegate(new FragmentSpansContainer.Delegate() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.FragmentSpansContainer.Delegate
             public final void onAfterMeasure(int i3) {
-                CountrySelectBottomSheet.this.lambda$new$3(i3);
+                CountrySelectBottomSheet.$r8$lambda$OAvC1fYSE1u00PJsBojVS4JpmTQ(CountrySelectBottomSheet.this, i3);
             }
         });
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet.5
@@ -225,7 +220,7 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         graySectionCell.setText(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CountrySelectBottomSheet.this.lambda$new$4(view);
+                CountrySelectBottomSheet.$r8$lambda$5rLB7r47U46DkC0pEzvp3cfZH3E(CountrySelectBottomSheet.this, view);
             }
         });
         frameLayout.addView(graySectionCell, LayoutHelper.createFrame(-1, 32, 48));
@@ -297,7 +292,7 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
                 groupCreateSpan.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$2$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        CountrySelectBottomSheet.access$700(CountrySelectBottomSheet.this, view2);
+                        CountrySelectBottomSheet.this.onSpanClick(view2);
                     }
                 });
                 CountrySelectBottomSheet.this.spansContainer.addSpan(groupCreateSpan);
@@ -312,53 +307,45 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        Listener listener = this.listener;
+    public static /* synthetic */ void $r8$lambda$dFfKQZ88tzRd1CGAQF_yCeuElnc(CountrySelectBottomSheet countrySelectBottomSheet, View view) {
+        Listener listener = countrySelectBottomSheet.listener;
         if (listener != null) {
-            listener.onCountrySelected(new ArrayList(this.selectedCountries.keySet()));
+            listener.onCountrySelected(new ArrayList(countrySelectBottomSheet.selectedCountries.keySet()));
         }
-        lambda$new$0();
+        countrySelectBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        Listener listener = this.listener;
+    public static /* synthetic */ void $r8$lambda$znhktN5OCZ0cL8t3qqSkFzS7ELg(CountrySelectBottomSheet countrySelectBottomSheet, View view) {
+        Listener listener = countrySelectBottomSheet.listener;
         if (listener != null) {
-            listener.onCountrySelected(new ArrayList(this.selectedCountries.keySet()));
+            listener.onCountrySelected(new ArrayList(countrySelectBottomSheet.selectedCountries.keySet()));
         }
-        lambda$new$0();
+        countrySelectBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(int i) {
+    public static /* synthetic */ void $r8$lambda$OAvC1fYSE1u00PJsBojVS4JpmTQ(final CountrySelectBottomSheet countrySelectBottomSheet, int i) {
+        countrySelectBottomSheet.getClass();
         int min = Math.min(i, AndroidUtilities.dp(144.0f));
         if (i > 0) {
             min -= AndroidUtilities.dp(8.0f);
         }
-        if (this.selectedCountriesHeight != min) {
-            this.selectedCountriesHeight = min;
-            this.animatorSelectorContainerHeight.animateTo(min);
-            this.spansContainer.postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda6
+        if (countrySelectBottomSheet.selectedCountriesHeight != min) {
+            countrySelectBottomSheet.selectedCountriesHeight = min;
+            countrySelectBottomSheet.animatorSelectorContainerHeight.animateTo(min);
+            countrySelectBottomSheet.spansContainer.postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CountrySelectBottomSheet.this.lambda$new$2();
+                    CountrySelectBottomSheet.this.adapter.update(true);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        this.adapter.update(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
-        this.selectedCountries.clear();
-        this.spansContainer.removeAllSpans(true);
-        this.adapter.update(true);
-        checkUi_buttonCounter();
+    public static /* synthetic */ void $r8$lambda$5rLB7r47U46DkC0pEzvp3cfZH3E(CountrySelectBottomSheet countrySelectBottomSheet, View view) {
+        countrySelectBottomSheet.selectedCountries.clear();
+        countrySelectBottomSheet.spansContainer.removeAllSpans(true);
+        countrySelectBottomSheet.adapter.update(true);
+        countrySelectBottomSheet.checkUi_buttonCounter();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -383,50 +370,44 @@ public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView im
         BoostRepository.loadCountriesForPolls(new Utilities.Callback() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                CountrySelectBottomSheet.this.lambda$loadCountries$6((Pair) obj);
+                CountrySelectBottomSheet.$r8$lambda$QF9rXduLlQ2yY6qWVzC3x0SWzKY(CountrySelectBottomSheet.this, (Pair) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadCountries$6(Pair pair) {
-        this.countriesMap.putAll((Map) pair.first);
-        this.countriesLetters.addAll((Collection) pair.second);
-        Map.-EL.forEach(this.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda8
+    public static /* synthetic */ void $r8$lambda$QF9rXduLlQ2yY6qWVzC3x0SWzKY(final CountrySelectBottomSheet countrySelectBottomSheet, Pair pair) {
+        countrySelectBottomSheet.countriesMap.putAll((Map) pair.first);
+        countrySelectBottomSheet.countriesLetters.addAll((Collection) pair.second);
+        Map.-EL.forEach(countrySelectBottomSheet.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda8
             @Override // java.util.function.BiConsumer
             public final void accept(Object obj, Object obj2) {
-                CountrySelectBottomSheet.this.lambda$loadCountries$5((String) obj, (List) obj2);
+                CountrySelectBottomSheet.this.countriesList.addAll((List) obj2);
             }
 
             public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
                 return BiConsumer$-CC.$default$andThen(this, biConsumer);
             }
         });
-        Set set = this.countriesToSelect;
+        Set set = countrySelectBottomSheet.countriesToSelect;
         if (set != null) {
             Iterator it = set.iterator();
             while (it.hasNext()) {
-                TLRPC.TL_help_country findCountry = findCountry((String) it.next());
+                TLRPC.TL_help_country findCountry = countrySelectBottomSheet.findCountry((String) it.next());
                 if (findCountry != null) {
-                    GroupCreateSpan groupCreateSpan = new GroupCreateSpan(getContext(), findCountry);
+                    GroupCreateSpan groupCreateSpan = new GroupCreateSpan(countrySelectBottomSheet.getContext(), findCountry);
                     groupCreateSpan.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda9
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             CountrySelectBottomSheet.this.onSpanClick(view);
                         }
                     });
-                    this.spansContainer.addSpan(groupCreateSpan);
-                    this.selectedCountries.put(findCountry.iso2, groupCreateSpan);
+                    countrySelectBottomSheet.spansContainer.addSpan(groupCreateSpan);
+                    countrySelectBottomSheet.selectedCountries.put(findCountry.iso2, groupCreateSpan);
                 }
             }
         }
-        this.adapter.update(true);
-        checkUi_buttonCounter();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadCountries$5(String str, List list) {
-        this.countriesList.addAll(list);
+        countrySelectBottomSheet.adapter.update(true);
+        countrySelectBottomSheet.checkUi_buttonCounter();
     }
 
     public void prepare(List list) {

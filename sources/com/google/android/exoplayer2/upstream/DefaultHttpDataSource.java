@@ -228,65 +228,46 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00b1, code lost:
-    
-        return r0;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private HttpURLConnection makeConnection(DataSpec dataSpec) {
-        URL url;
-        URL url2 = new URL(dataSpec.uri.toString());
+        HttpURLConnection makeConnection;
+        URL url = new URL(dataSpec.uri.toString());
         int i = dataSpec.httpMethod;
         byte[] bArr = dataSpec.httpBody;
         long j = dataSpec.position;
         long j2 = dataSpec.length;
+        int i2 = 1;
         boolean isFlagSet = dataSpec.isFlagSet(1);
         if (!this.allowCrossProtocolRedirects && !this.keepPostFor302Redirects) {
-            return makeConnection(url2, i, bArr, j, j2, isFlagSet, true, dataSpec.httpRequestHeaders);
+            return makeConnection(url, i, bArr, j, j2, isFlagSet, true, dataSpec.httpRequestHeaders);
         }
-        int i2 = 0;
-        URL url3 = url2;
-        int i3 = i;
-        byte[] bArr2 = bArr;
+        int i3 = 0;
         while (true) {
-            int i4 = i2 + 1;
-            if (i2 <= 20) {
-                long j3 = j;
-                long j4 = j;
-                int i5 = i3;
-                URL url4 = url3;
-                long j5 = j2;
-                HttpURLConnection makeConnection = makeConnection(url3, i3, bArr2, j3, j2, isFlagSet, false, dataSpec.httpRequestHeaders);
+            int i4 = i3 + 1;
+            if (i3 <= 20) {
+                makeConnection = makeConnection(url, i, bArr, j, j2, isFlagSet, false, dataSpec.httpRequestHeaders);
                 int responseCode = makeConnection.getResponseCode();
                 String headerField = makeConnection.getHeaderField("Location");
-                if ((i5 == 1 || i5 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
+                if ((i == i2 || i == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
                     makeConnection.disconnect();
-                    url3 = handleRedirect(url4, headerField, dataSpec);
-                    i3 = i5;
+                    url = handleRedirect(url, headerField, dataSpec);
                 } else {
-                    if (i5 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
+                    if (i != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                         break;
                     }
                     makeConnection.disconnect();
-                    if (this.keepPostFor302Redirects && responseCode == 302) {
-                        i3 = i5;
-                        url = url4;
-                    } else {
-                        bArr2 = null;
-                        url = url4;
-                        i3 = 1;
+                    if (!this.keepPostFor302Redirects || responseCode != 302) {
+                        bArr = null;
+                        i = 1;
                     }
-                    url3 = handleRedirect(url, headerField, dataSpec);
+                    url = handleRedirect(url, headerField, dataSpec);
                 }
-                i2 = i4;
-                j = j4;
-                j2 = j5;
+                i3 = i4;
+                i2 = 1;
             } else {
                 throw new HttpDataSource.HttpDataSourceException(new NoRouteToHostException("Too many redirects: " + i4), dataSpec, 2001, 1);
             }
         }
+        return makeConnection;
     }
 
     private HttpURLConnection makeConnection(URL url, int i, byte[] bArr, long j, long j2, boolean z, boolean z2, Map map) {
@@ -321,9 +302,9 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             OutputStream outputStream = openConnection.getOutputStream();
             outputStream.write(bArr);
             outputStream.close();
-        } else {
-            openConnection.connect();
+            return openConnection;
         }
+        openConnection.connect();
         return openConnection;
     }
 
@@ -433,8 +414,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
     static class NullFilteringHeadersMap extends ForwardingMap {
         private final Map headers;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ boolean lambda$keySet$0(String str) {
+        public static /* synthetic */ boolean $r8$lambda$I7XgKgZNhZQeoxBA3IERa70tPcA(String str) {
             return str != null;
         }
 
@@ -466,15 +446,12 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             return Sets.filter(super.keySet(), new Predicate() { // from class: com.google.android.exoplayer2.upstream.DefaultHttpDataSource$NullFilteringHeadersMap$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
-                    boolean lambda$keySet$0;
-                    lambda$keySet$0 = DefaultHttpDataSource.NullFilteringHeadersMap.lambda$keySet$0((String) obj);
-                    return lambda$keySet$0;
+                    return DefaultHttpDataSource.NullFilteringHeadersMap.$r8$lambda$I7XgKgZNhZQeoxBA3IERa70tPcA((String) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ boolean lambda$entrySet$1(Map.Entry entry) {
+        public static /* synthetic */ boolean $r8$lambda$TAiAjrah6b1khuI1Ns_F5kZ9ayY(Map.Entry entry) {
             return entry.getKey() != null;
         }
 
@@ -483,9 +460,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             return Sets.filter(super.entrySet(), new Predicate() { // from class: com.google.android.exoplayer2.upstream.DefaultHttpDataSource$NullFilteringHeadersMap$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
-                    boolean lambda$entrySet$1;
-                    lambda$entrySet$1 = DefaultHttpDataSource.NullFilteringHeadersMap.lambda$entrySet$1((Map.Entry) obj);
-                    return lambda$entrySet$1;
+                    return DefaultHttpDataSource.NullFilteringHeadersMap.$r8$lambda$TAiAjrah6b1khuI1Ns_F5kZ9ayY((Map.Entry) obj);
                 }
             });
         }
@@ -497,10 +472,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public boolean isEmpty() {
-            if (super.isEmpty()) {
-                return true;
-            }
-            return super.size() == 1 && super.containsKey(null);
+            return super.isEmpty() || (super.size() == 1 && super.containsKey(null));
         }
 
         @Override // java.util.Map

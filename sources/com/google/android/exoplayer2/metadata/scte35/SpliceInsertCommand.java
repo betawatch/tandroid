@@ -75,31 +75,31 @@ public final class SpliceInsertCommand extends SpliceCommand {
 
     static SpliceInsertCommand parseFromSection(ParsableByteArray parsableByteArray, long j, TimestampAdjuster timestampAdjuster) {
         List list;
+        long j2;
         boolean z;
         boolean z2;
-        long j2;
         boolean z3;
-        long j3;
+        boolean z4;
         int i;
         int i2;
         int i3;
-        boolean z4;
         boolean z5;
-        long j4;
+        int i4;
+        long j3;
         long readUnsignedInt = parsableByteArray.readUnsignedInt();
         boolean z6 = (parsableByteArray.readUnsignedByte() & 128) != 0;
-        List emptyList = Collections.emptyList();
+        List list2 = Collections.EMPTY_LIST;
+        long j4 = -9223372036854775807L;
         if (z6) {
-            list = emptyList;
+            list = list2;
+            j2 = -9223372036854775807L;
             z = false;
             z2 = false;
-            j2 = -9223372036854775807L;
             z3 = false;
-            j3 = -9223372036854775807L;
+            z4 = false;
             i = 0;
             i2 = 0;
             i3 = 0;
-            z4 = false;
         } else {
             int readUnsignedByte = parsableByteArray.readUnsignedByte();
             boolean z7 = (readUnsignedByte & 128) != 0;
@@ -110,12 +110,21 @@ public final class SpliceInsertCommand extends SpliceCommand {
             if (!z8) {
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
                 ArrayList arrayList = new ArrayList(readUnsignedByte2);
-                for (int i4 = 0; i4 < readUnsignedByte2; i4++) {
+                int i5 = 0;
+                while (i5 < readUnsignedByte2) {
                     int readUnsignedByte3 = parsableByteArray.readUnsignedByte();
-                    long parseSpliceTime2 = !z10 ? TimeSignalCommand.parseSpliceTime(parsableByteArray, j) : -9223372036854775807L;
-                    arrayList.add(new ComponentSplice(readUnsignedByte3, parseSpliceTime2, timestampAdjuster.adjustTsTimestamp(parseSpliceTime2)));
+                    if (z10) {
+                        i4 = readUnsignedByte2;
+                        j3 = -9223372036854775807L;
+                    } else {
+                        i4 = readUnsignedByte2;
+                        j3 = TimeSignalCommand.parseSpliceTime(parsableByteArray, j);
+                    }
+                    arrayList.add(new ComponentSplice(readUnsignedByte3, j3, timestampAdjuster.adjustTsTimestamp(j3)));
+                    i5++;
+                    readUnsignedByte2 = i4;
                 }
-                emptyList = arrayList;
+                list2 = arrayList;
             }
             if (z9) {
                 long readUnsignedByte4 = parsableByteArray.readUnsignedByte();
@@ -124,21 +133,21 @@ public final class SpliceInsertCommand extends SpliceCommand {
                 z5 = z11;
             } else {
                 z5 = false;
-                j4 = -9223372036854775807L;
             }
-            i = parsableByteArray.readUnsignedShort();
-            z4 = z8;
+            int readUnsignedShort = parsableByteArray.readUnsignedShort();
+            long j5 = parseSpliceTime;
+            j2 = j4;
+            j4 = j5;
             i2 = parsableByteArray.readUnsignedByte();
             i3 = parsableByteArray.readUnsignedByte();
-            list = emptyList;
-            long j5 = parseSpliceTime;
-            z3 = z5;
-            j3 = j4;
-            z2 = z10;
+            i = readUnsignedShort;
+            z4 = z5;
             z = z7;
-            j2 = j5;
+            z2 = z8;
+            list = list2;
+            z3 = z10;
         }
-        return new SpliceInsertCommand(readUnsignedInt, z6, z, z4, z2, j2, timestampAdjuster.adjustTsTimestamp(j2), list, z3, j3, i, i2, i3);
+        return new SpliceInsertCommand(readUnsignedInt, z6, z, z2, z3, j4, timestampAdjuster.adjustTsTimestamp(j4), list, z4, j2, i, i2, i3);
     }
 
     public static final class ComponentSplice {

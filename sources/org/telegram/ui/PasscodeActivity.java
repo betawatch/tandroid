@@ -108,14 +108,13 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
     private final Runnable hidePasscodesDoNotMatch = new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda11
         @Override // java.lang.Runnable
         public final void run() {
-            PasscodeActivity.this.lambda$new$0();
+            PasscodeActivity.$r8$lambda$l3DGBfSa7ivhD3iD_3Htu85fY04(PasscodeActivity.this);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.postedHidePasscodesDoNotMatch = false;
-        AndroidUtilities.updateViewVisibilityAnimated(this.passcodesDoNotMatchTextView, false);
+    public static /* synthetic */ void $r8$lambda$l3DGBfSa7ivhD3iD_3Htu85fY04(PasscodeActivity passcodeActivity) {
+        passcodeActivity.postedHidePasscodesDoNotMatch = false;
+        AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity.passcodesDoNotMatchTextView, false);
     }
 
     public PasscodeActivity(int i) {
@@ -231,7 +230,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         sizeNotifierFrameLayout.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate
             public final void onSizeChanged(int i4, boolean z2) {
-                PasscodeActivity.this.lambda$createView$1(i4, z2);
+                PasscodeActivity.$r8$lambda$MMUxJOHJE6DHTn2VUpxfOvSZg5w(PasscodeActivity.this, i4, z2);
             }
         });
         this.fragmentView = sizeNotifierFrameLayout;
@@ -267,7 +266,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda8
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i6) {
-                    PasscodeActivity.this.lambda$createView$5(view, i6);
+                    PasscodeActivity.$r8$lambda$RN9BmC_U1oZAtSIA5_TEdt7FpuY(PasscodeActivity.this, view, i6);
                 }
             });
         } else if (i4 == 1 || i4 == 2) {
@@ -328,9 +327,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                     textViewSwitcher.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda1
                         @Override // android.widget.ViewSwitcher.ViewFactory
                         public final View makeView() {
-                            View lambda$createView$6;
-                            lambda$createView$6 = PasscodeActivity.lambda$createView$6(context);
-                            return lambda$createView$6;
+                            return PasscodeActivity.$r8$lambda$np0C7gHhM9gMV8nqRbwcHpAgkOk(context);
                         }
                     });
                     this.descriptionTextSwitcher.setInAnimation(context, R.anim.alpha_in);
@@ -344,7 +341,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                     textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            PasscodeActivity.lambda$createView$7(context, view);
+                            AlertsCreator.createForgotPasscodeDialog(context).show();
                         }
                     });
                     textView2.setVisibility(this.type != 2 ? 0 : 8);
@@ -389,7 +386,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                     this.passwordEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnFocusChangeListener
                         public final void onFocusChange(View view, boolean z2) {
-                            PasscodeActivity.this.lambda$createView$8(view, z2);
+                            PasscodeActivity.this.outlinePasswordView.animateSelection(r2 ? 1.0f : 0.0f);
                         }
                     });
                     LinearLayout linearLayout2 = new LinearLayout(context);
@@ -432,7 +429,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                     this.passwordButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda4
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            PasscodeActivity.this.lambda$createView$9(atomicBoolean, view);
+                            PasscodeActivity.$r8$lambda$MP8Woc9I2spuFlU6FfDZJy52cWY(PasscodeActivity.this, atomicBoolean, view);
                         }
                     });
                     linearLayout2.addView(this.passwordButton, LayoutHelper.createLinearRelatively(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
@@ -441,9 +438,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                     this.passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda5
                         @Override // android.widget.TextView.OnEditorActionListener
                         public final boolean onEditorAction(TextView textView4, int i7, KeyEvent keyEvent) {
-                            boolean lambda$createView$10;
-                            lambda$createView$10 = PasscodeActivity.this.lambda$createView$10(textView4, i7, keyEvent);
-                            return lambda$createView$10;
+                            return PasscodeActivity.$r8$lambda$VnzTikFi9ERlkxwXmn_SN5Ljbrg(PasscodeActivity.this, textView4, i7, keyEvent);
                         }
                     });
                     this.passwordEditText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.PasscodeActivity.6
@@ -510,7 +505,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                         codeNumberField.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda6
                             @Override // android.view.View.OnFocusChangeListener
                             public final void onFocusChange(View view, boolean z2) {
-                                PasscodeActivity.this.lambda$createView$11(codeNumberField, view, z2);
+                                PasscodeActivity.$r8$lambda$35EsBeU5mY_6hz6rMvZSDESGjqI(PasscodeActivity.this, codeNumberField, view, z2);
                             }
                         });
                     }
@@ -526,7 +521,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                     this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda7
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            PasscodeActivity.this.lambda$createView$12(view);
+                            PasscodeActivity.$r8$lambda$7IK5bMAlHG_0liH3QIog6_1k_wg(PasscodeActivity.this, view);
                         }
                     });
                     TransformableLoginButtonView transformableLoginButtonView = new TransformableLoginButtonView(context);
@@ -559,9 +554,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             textViewSwitcher2.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda1
                 @Override // android.widget.ViewSwitcher.ViewFactory
                 public final View makeView() {
-                    View lambda$createView$6;
-                    lambda$createView$6 = PasscodeActivity.lambda$createView$6(context);
-                    return lambda$createView$6;
+                    return PasscodeActivity.$r8$lambda$np0C7gHhM9gMV8nqRbwcHpAgkOk(context);
                 }
             });
             this.descriptionTextSwitcher.setInAnimation(context, R.anim.alpha_in);
@@ -575,7 +568,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             textView22.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PasscodeActivity.lambda$createView$7(context, view);
+                    AlertsCreator.createForgotPasscodeDialog(context).show();
                 }
             });
             textView22.setVisibility(this.type != 2 ? 0 : 8);
@@ -615,7 +608,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             this.passwordEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnFocusChangeListener
                 public final void onFocusChange(View view, boolean z2) {
-                    PasscodeActivity.this.lambda$createView$8(view, z2);
+                    PasscodeActivity.this.outlinePasswordView.animateSelection(r2 ? 1.0f : 0.0f);
                 }
             });
             LinearLayout linearLayout22 = new LinearLayout(context);
@@ -658,7 +651,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             this.passwordButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PasscodeActivity.this.lambda$createView$9(atomicBoolean2, view);
+                    PasscodeActivity.$r8$lambda$MP8Woc9I2spuFlU6FfDZJy52cWY(PasscodeActivity.this, atomicBoolean2, view);
                 }
             });
             linearLayout22.addView(this.passwordButton, LayoutHelper.createLinearRelatively(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
@@ -667,9 +660,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             this.passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda5
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView42, int i7, KeyEvent keyEvent) {
-                    boolean lambda$createView$10;
-                    lambda$createView$10 = PasscodeActivity.this.lambda$createView$10(textView42, i7, keyEvent);
-                    return lambda$createView$10;
+                    return PasscodeActivity.$r8$lambda$VnzTikFi9ERlkxwXmn_SN5Ljbrg(PasscodeActivity.this, textView42, i7, keyEvent);
                 }
             });
             this.passwordEditText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.PasscodeActivity.6
@@ -725,7 +716,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PasscodeActivity.this.lambda$createView$12(view);
+                    PasscodeActivity.$r8$lambda$7IK5bMAlHG_0liH3QIog6_1k_wg(PasscodeActivity.this, view);
                 }
             });
             TransformableLoginButtonView transformableLoginButtonView2 = new TransformableLoginButtonView(context);
@@ -742,41 +733,41 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(int i, boolean z) {
+    public static /* synthetic */ void $r8$lambda$MMUxJOHJE6DHTn2VUpxfOvSZg5w(PasscodeActivity passcodeActivity, int i, boolean z) {
         Runnable runnable;
-        if (i < AndroidUtilities.dp(20.0f) || (runnable = this.onShowKeyboardCallback) == null) {
+        passcodeActivity.getClass();
+        if (i < AndroidUtilities.dp(20.0f) || (runnable = passcodeActivity.onShowKeyboardCallback) == null) {
             return;
         }
         runnable.run();
-        this.onShowKeyboardCallback = null;
+        passcodeActivity.onShowKeyboardCallback = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(View view, final int i) {
+    public static /* synthetic */ void $r8$lambda$RN9BmC_U1oZAtSIA5_TEdt7FpuY(final PasscodeActivity passcodeActivity, View view, final int i) {
+        passcodeActivity.getClass();
         if (view.isEnabled()) {
-            if (i == this.disablePasscodeRow) {
-                AlertDialog create = new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString(R.string.DisablePasscode)).setMessage(LocaleController.getString(R.string.DisablePasscodeConfirmMessage)).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.DisablePasscodeTurnOff), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda16
+            if (i == passcodeActivity.disablePasscodeRow) {
+                AlertDialog create = new AlertDialog.Builder(passcodeActivity.getParentActivity()).setTitle(LocaleController.getString(R.string.DisablePasscode)).setMessage(LocaleController.getString(R.string.DisablePasscodeConfirmMessage)).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.DisablePasscodeTurnOff), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda16
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
-                        PasscodeActivity.this.lambda$createView$2(alertDialog, i2);
+                        PasscodeActivity.$r8$lambda$yRTMDLKBOSxLrMspWehIxvJ3qGQ(PasscodeActivity.this, alertDialog, i2);
                     }
                 }).create();
                 create.show();
                 ((TextView) create.getButton(-1)).setTextColor(Theme.getColor(Theme.key_text_RedBold));
                 return;
             }
-            if (i == this.changePasscodeRow) {
-                presentFragment(new PasscodeActivity(1));
+            if (i == passcodeActivity.changePasscodeRow) {
+                passcodeActivity.presentFragment(new PasscodeActivity(1));
                 return;
             }
-            if (i == this.autoLockRow) {
-                if (getParentActivity() == null) {
+            if (i == passcodeActivity.autoLockRow) {
+                if (passcodeActivity.getParentActivity() == null) {
                     return;
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(passcodeActivity.getParentActivity());
                 builder.setTitle(LocaleController.getString(R.string.AutoLock));
-                final NumberPicker numberPicker = new NumberPicker(getParentActivity());
+                final NumberPicker numberPicker = new NumberPicker(passcodeActivity.getParentActivity());
                 numberPicker.setMinValue(0);
                 numberPicker.setMaxValue(4);
                 int i2 = SharedConfig.autoLockIn;
@@ -794,71 +785,68 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                 numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda17
                     @Override // org.telegram.ui.Components.NumberPicker.Formatter
                     public final String format(int i3) {
-                        String lambda$createView$3;
-                        lambda$createView$3 = PasscodeActivity.lambda$createView$3(i3);
-                        return lambda$createView$3;
+                        return PasscodeActivity.$r8$lambda$GkHM8SCihEibxZlPxpaEUpqlgj4(i3);
                     }
                 });
                 builder.setView(numberPicker);
                 builder.setNegativeButton(LocaleController.getString(R.string.Done), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda18
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i3) {
-                        PasscodeActivity.this.lambda$createView$4(numberPicker, i, alertDialog, i3);
+                        PasscodeActivity.$r8$lambda$MxwQ1UkgFWAW5ZRJ7139VG_wKh0(PasscodeActivity.this, numberPicker, i, alertDialog, i3);
                     }
                 });
-                showDialog(builder.create());
+                passcodeActivity.showDialog(builder.create());
                 return;
             }
-            if (i == this.fingerprintRow) {
+            if (i == passcodeActivity.fingerprintRow) {
                 SharedConfig.useFingerprintLock = !SharedConfig.useFingerprintLock;
-                UserConfig.getInstance(this.currentAccount).saveConfig(false);
+                UserConfig.getInstance(passcodeActivity.currentAccount).saveConfig(false);
                 ((TextCheckCell) view).setChecked(SharedConfig.useFingerprintLock);
-            } else if (i == this.captureRow) {
+            } else if (i == passcodeActivity.captureRow) {
                 SharedConfig.allowScreenCapture = !SharedConfig.allowScreenCapture;
-                UserConfig.getInstance(this.currentAccount).saveConfig(false);
+                UserConfig.getInstance(passcodeActivity.currentAccount).saveConfig(false);
                 ((TextCheckCell) view).setChecked(SharedConfig.allowScreenCapture);
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, Boolean.FALSE);
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didSetPasscode, Boolean.FALSE);
                 if (SharedConfig.allowScreenCapture) {
                     return;
                 }
-                AlertsCreator.showSimpleAlert(this, LocaleController.getString(R.string.ScreenCaptureAlert));
+                AlertsCreator.showSimpleAlert(passcodeActivity, LocaleController.getString(R.string.ScreenCaptureAlert));
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$yRTMDLKBOSxLrMspWehIxvJ3qGQ(PasscodeActivity passcodeActivity, AlertDialog alertDialog, int i) {
+        passcodeActivity.getClass();
         SharedConfig.passcodeHash = "";
         SharedConfig.appLocked = false;
         SharedConfig.saveConfig();
-        getMediaDataController().buildShortcuts();
-        int childCount = this.listView.getChildCount();
+        passcodeActivity.getMediaDataController().buildShortcuts();
+        int childCount = passcodeActivity.listView.getChildCount();
         int i2 = 0;
         while (true) {
             if (i2 >= childCount) {
                 break;
             }
-            View childAt = this.listView.getChildAt(i2);
+            View childAt = passcodeActivity.listView.getChildAt(i2);
             if (childAt instanceof TextSettingsCell) {
                 ((TextSettingsCell) childAt).setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText7));
                 break;
             }
             i2++;
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
-        finishFragment();
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didSetPasscode, new Object[0]);
+        passcodeActivity.finishFragment();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$createView$3(int i) {
+    public static /* synthetic */ String $r8$lambda$GkHM8SCihEibxZlPxpaEUpqlgj4(int i) {
         if (i == 0) {
             return LocaleController.getString(R.string.AutoLockDisabled);
         }
         return i == 1 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i == 2 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i == 3 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i == 4 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(NumberPicker numberPicker, int i, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void $r8$lambda$MxwQ1UkgFWAW5ZRJ7139VG_wKh0(PasscodeActivity passcodeActivity, NumberPicker numberPicker, int i, AlertDialog alertDialog, int i2) {
+        passcodeActivity.getClass();
         int value = numberPicker.getValue();
         if (value == 0) {
             SharedConfig.autoLockIn = 0;
@@ -871,8 +859,8 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         } else if (value == 4) {
             SharedConfig.autoLockIn = 18000;
         }
-        this.listAdapter.notifyItemChanged(i);
-        UserConfig.getInstance(this.currentAccount).saveConfig(false);
+        passcodeActivity.listAdapter.notifyItemChanged(i);
+        UserConfig.getInstance(passcodeActivity.currentAccount).saveConfig(false);
     }
 
     class 4 extends ActionBar.ActionBarMenuOnItemClick {
@@ -895,7 +883,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PasscodeActivity.4.this.lambda$onItemClick$0(actionBarMenuSubItem);
+                        PasscodeActivity.4.$r8$lambda$1jnwflz81euwwn4miftorM-h8aM(PasscodeActivity.4.this, actionBarMenuSubItem);
                     }
                 }, 150L);
                 PasscodeActivity.this.passwordEditText.setText("");
@@ -906,8 +894,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$0(ActionBarMenuSubItem actionBarMenuSubItem) {
+        public static /* synthetic */ void $r8$lambda$1jnwflz81euwwn4miftorM-h8aM(4 r2, ActionBarMenuSubItem actionBarMenuSubItem) {
             actionBarMenuSubItem.setText(LocaleController.getString(PasscodeActivity.this.currentPasswordType == 0 ? R.string.PasscodeSwitchToPassword : R.string.PasscodeSwitchToPIN));
             actionBarMenuSubItem.setIcon(PasscodeActivity.this.currentPasswordType == 0 ? R.drawable.msg_permissions : R.drawable.msg_pin_code);
             PasscodeActivity.this.showKeyboard();
@@ -918,8 +905,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ View lambda$createView$6(Context context) {
+    public static /* synthetic */ View $r8$lambda$np0C7gHhM9gMV8nqRbwcHpAgkOk(Context context) {
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText6));
         textView.setGravity(1);
@@ -928,37 +914,26 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         return textView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$7(Context context, View view) {
-        AlertsCreator.createForgotPasscodeDialog(context).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$8(View view, boolean z) {
-        this.outlinePasswordView.animateSelection(z ? 1.0f : 0.0f);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$9(AtomicBoolean atomicBoolean, View view) {
+    public static /* synthetic */ void $r8$lambda$MP8Woc9I2spuFlU6FfDZJy52cWY(PasscodeActivity passcodeActivity, AtomicBoolean atomicBoolean, View view) {
+        passcodeActivity.getClass();
         atomicBoolean.set(!atomicBoolean.get());
-        int selectionStart = this.passwordEditText.getSelectionStart();
-        int selectionEnd = this.passwordEditText.getSelectionEnd();
-        this.passwordEditText.setInputType((atomicBoolean.get() ? NotificationCenter.filePreparingStarted : 128) | 1);
-        this.passwordEditText.setSelection(selectionStart, selectionEnd);
-        this.passwordButton.setColorFilter(Theme.getColor(atomicBoolean.get() ? Theme.key_windowBackgroundWhiteInputFieldActivated : Theme.key_windowBackgroundWhiteHintText));
+        int selectionStart = passcodeActivity.passwordEditText.getSelectionStart();
+        int selectionEnd = passcodeActivity.passwordEditText.getSelectionEnd();
+        passcodeActivity.passwordEditText.setInputType((atomicBoolean.get() ? NotificationCenter.filePreparingStarted : 128) | 1);
+        passcodeActivity.passwordEditText.setSelection(selectionStart, selectionEnd);
+        passcodeActivity.passwordButton.setColorFilter(Theme.getColor(atomicBoolean.get() ? Theme.key_windowBackgroundWhiteInputFieldActivated : Theme.key_windowBackgroundWhiteHintText));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$10(TextView textView, int i, KeyEvent keyEvent) {
-        int i2 = this.passcodeSetStep;
+    public static /* synthetic */ boolean $r8$lambda$VnzTikFi9ERlkxwXmn_SN5Ljbrg(PasscodeActivity passcodeActivity, TextView textView, int i, KeyEvent keyEvent) {
+        int i2 = passcodeActivity.passcodeSetStep;
         if (i2 == 0) {
-            processNext();
+            passcodeActivity.processNext();
             return true;
         }
         if (i2 != 1) {
             return false;
         }
-        processDone();
+        passcodeActivity.processDone();
         return true;
     }
 
@@ -975,35 +950,28 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                 postDelayed(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PasscodeActivity.8.this.lambda$processNextPressed$0();
+                        PasscodeActivity.this.processNext();
                     }
                 }, 260L);
             }
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$processNextPressed$0() {
-            PasscodeActivity.this.processNext();
-        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$11(CodeNumberField codeNumberField, View view, boolean z) {
-        this.keyboardView.setEditText(codeNumberField);
-        this.keyboardView.setDispatchBackWhenEmpty(true);
+    public static /* synthetic */ void $r8$lambda$35EsBeU5mY_6hz6rMvZSDESGjqI(PasscodeActivity passcodeActivity, CodeNumberField codeNumberField, View view, boolean z) {
+        passcodeActivity.keyboardView.setEditText(codeNumberField);
+        passcodeActivity.keyboardView.setDispatchBackWhenEmpty(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$12(View view) {
-        int i = this.type;
+    public static /* synthetic */ void $r8$lambda$7IK5bMAlHG_0liH3QIog6_1k_wg(PasscodeActivity passcodeActivity, View view) {
+        int i = passcodeActivity.type;
         if (i != 1) {
             if (i == 2) {
-                processDone();
+                passcodeActivity.processDone();
             }
-        } else if (this.passcodeSetStep == 0) {
-            processNext();
+        } else if (passcodeActivity.passcodeSetStep == 0) {
+            passcodeActivity.processNext();
         } else {
-            processDone();
+            passcodeActivity.processDone();
         }
     }
 
@@ -1031,7 +999,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda10
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PasscodeActivity.this.lambda$setCustomKeyboardVisible$13(valueAnimator);
+                PasscodeActivity.$r8$lambda$-o-Z7OpinLNlYJS7UIpEF0nCDdE(PasscodeActivity.this, valueAnimator);
             }
         });
         duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PasscodeActivity.10
@@ -1053,12 +1021,12 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         duration.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCustomKeyboardVisible$13(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$-o-Z7OpinLNlYJS7UIpEF0nCDdE(PasscodeActivity passcodeActivity, ValueAnimator valueAnimator) {
+        passcodeActivity.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.keyboardView.setAlpha(floatValue);
-        this.keyboardView.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f) * 0.75f);
-        this.fragmentView.requestLayout();
+        passcodeActivity.keyboardView.setAlpha(floatValue);
+        passcodeActivity.keyboardView.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f) * 0.75f);
+        passcodeActivity.fragmentView.requestLayout();
     }
 
     public static BaseFragment determineOpenFragment() {
@@ -1090,7 +1058,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                 codeFieldContainer.postDelayed(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda21
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PasscodeActivity.this.lambda$animateSuccessAnimation$15(runnable);
+                        PasscodeActivity.$r8$lambda$iKAJ0SwdrheVIw2zGL7Ky35Mxk4(PasscodeActivity.this, runnable);
                     }
                 }, (this.codeFieldContainer.codeField.length * 75) + 350);
                 return;
@@ -1098,9 +1066,8 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateSuccessAnimation$15(Runnable runnable) {
-        for (CodeNumberField codeNumberField : this.codeFieldContainer.codeField) {
+    public static /* synthetic */ void $r8$lambda$iKAJ0SwdrheVIw2zGL7Ky35Mxk4(PasscodeActivity passcodeActivity, Runnable runnable) {
+        for (CodeNumberField codeNumberField : passcodeActivity.codeFieldContainer.codeField) {
             codeNumberField.animateSuccessProgress(0.0f);
         }
         runnable.run();
@@ -1250,7 +1217,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda19
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasscodeActivity.this.lambda$updateFields$16(z);
+                    PasscodeActivity.$r8$lambda$vERhS30BzCAu63VFmb6x88Vq23U(PasscodeActivity.this, z);
                 }
             };
             this.onShowKeyboardCallback = runnable;
@@ -1262,21 +1229,18 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         showKeyboard();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateFields$16(boolean z) {
-        this.floatingButton.setButtonVisible(true, z);
-        AndroidUtilities.cancelRunOnUIThread(this.onShowKeyboardCallback);
+    public static /* synthetic */ void $r8$lambda$vERhS30BzCAu63VFmb6x88Vq23U(PasscodeActivity passcodeActivity, boolean z) {
+        passcodeActivity.floatingButton.setButtonVisible(true, z);
+        AndroidUtilities.cancelRunOnUIThread(passcodeActivity.onShowKeyboardCallback);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isCustomKeyboardVisible() {
-        if (isPinCode() && this.type != 0 && !AndroidUtilities.isTablet()) {
-            Point point = AndroidUtilities.displaySize;
-            if (point.x < point.y && !AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-                return true;
-            }
+        if (!isPinCode() || this.type == 0 || AndroidUtilities.isTablet()) {
+            return false;
         }
-        return false;
+        Point point = AndroidUtilities.displaySize;
+        return point.x < point.y && !AndroidUtilities.isAccessibilityTouchExplorationEnabled();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1304,18 +1268,12 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isPinCode() {
         int i = this.type;
-        if (i == 1 && this.currentPasswordType == 0) {
-            return true;
-        }
-        return i == 2 && SharedConfig.passcodeType == 0;
+        return (i == 1 && this.currentPasswordType == 0) || (i == 2 && SharedConfig.passcodeType == 0);
     }
 
     private boolean isPassword() {
         int i = this.type;
-        if (i == 1 && this.currentPasswordType == 1) {
-            return true;
-        }
-        return i == 2 && SharedConfig.passcodeType == 1;
+        return (i == 1 && this.currentPasswordType == 1) || (i == 2 && SharedConfig.passcodeType == 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1342,7 +1300,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
                 this.codeFieldContainer.post(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda12
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PasscodeActivity.this.lambda$processDone$17();
+                        PasscodeActivity.$r8$lambda$FUB0nUQeqvop9aEzTpOMfAZ71Wg(PasscodeActivity.this);
                     }
                 });
                 return;
@@ -1378,7 +1336,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             animateSuccessAnimation(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasscodeActivity.this.lambda$processDone$18(isEmpty);
+                    PasscodeActivity.$r8$lambda$Np9-ApEKPbjR5dpZR7BxZwkwyP0(PasscodeActivity.this, isEmpty);
                 }
             });
             return;
@@ -1425,41 +1383,39 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             animateSuccessAnimation(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasscodeActivity.this.lambda$processDone$19();
+                    PasscodeActivity.$r8$lambda$vwDelkNLnFw9c9_of8cA8gAPkKE(PasscodeActivity.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$17() {
-        this.codeFieldContainer.postDelayed(this.hidePasscodesDoNotMatch, 3000L);
-        this.postedHidePasscodesDoNotMatch = true;
+    public static /* synthetic */ void $r8$lambda$FUB0nUQeqvop9aEzTpOMfAZ71Wg(PasscodeActivity passcodeActivity) {
+        passcodeActivity.codeFieldContainer.postDelayed(passcodeActivity.hidePasscodesDoNotMatch, 3000L);
+        passcodeActivity.postedHidePasscodesDoNotMatch = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$18(boolean z) {
-        getMediaDataController().buildShortcuts();
+    public static /* synthetic */ void $r8$lambda$Np9-ApEKPbjR5dpZR7BxZwkwyP0(PasscodeActivity passcodeActivity, boolean z) {
+        passcodeActivity.getMediaDataController().buildShortcuts();
         if (z) {
-            presentFragment(new PasscodeActivity(0), true);
-            Runnable runnable = this.openedSettings;
+            passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+            Runnable runnable = passcodeActivity.openedSettings;
             if (runnable != null) {
                 AndroidUtilities.runOnUIThread(runnable);
-                this.openedSettings = null;
+                passcodeActivity.openedSettings = null;
             }
         } else {
-            finishFragment();
+            passcodeActivity.finishFragment();
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didSetPasscode, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$19() {
-        presentFragment(new PasscodeActivity(0), true);
-        Runnable runnable = this.openedSettings;
+    public static /* synthetic */ void $r8$lambda$vwDelkNLnFw9c9_of8cA8gAPkKE(PasscodeActivity passcodeActivity) {
+        passcodeActivity.getClass();
+        passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+        Runnable runnable = passcodeActivity.openedSettings;
         if (runnable != null) {
             AndroidUtilities.runOnUIThread(runnable);
-            this.openedSettings = null;
+            passcodeActivity.openedSettings = null;
         }
     }
 
@@ -1485,33 +1441,33 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         AndroidUtilities.shakeViewSpring(isPinCode() ? this.codeFieldContainer : this.outlinePasswordView, isPinCode() ? 10.0f : 4.0f, new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                PasscodeActivity.this.lambda$onPasscodeError$21();
+                PasscodeActivity.$r8$lambda$M9FYyVAbAnd4PvOaBwjsqncp4CA(PasscodeActivity.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onPasscodeError$21() {
+    public static /* synthetic */ void $r8$lambda$M9FYyVAbAnd4PvOaBwjsqncp4CA(final PasscodeActivity passcodeActivity) {
+        passcodeActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                PasscodeActivity.this.lambda$onPasscodeError$20();
+                PasscodeActivity.$r8$lambda$vHQPKQOcEJ1C7aMyS6bI14fZPvI(PasscodeActivity.this);
             }
-        }, isPinCode() ? 150L : 1000L);
+        }, passcodeActivity.isPinCode() ? 150L : 1000L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onPasscodeError$20() {
-        if (isPinCode()) {
-            for (CodeNumberField codeNumberField : this.codeFieldContainer.codeField) {
+    public static /* synthetic */ void $r8$lambda$vHQPKQOcEJ1C7aMyS6bI14fZPvI(PasscodeActivity passcodeActivity) {
+        if (passcodeActivity.isPinCode()) {
+            for (CodeNumberField codeNumberField : passcodeActivity.codeFieldContainer.codeField) {
                 codeNumberField.animateErrorProgress(0.0f);
             }
             return;
         }
-        this.outlinePasswordView.animateError(0.0f);
+        passcodeActivity.outlinePasswordView.animateError(0.0f);
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
         private final Context mContext;
 
         public ListAdapter(Context context) {
@@ -1706,7 +1662,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$RLottieImageHolderView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PasscodeActivity.RLottieImageHolderView.this.lambda$new$0(view);
+                    PasscodeActivity.RLottieImageHolderView.$r8$lambda$sWk5P70tf6MTnRZA-ga0SYtZVfM(PasscodeActivity.RLottieImageHolderView.this, view);
                 }
             });
             int dp = AndroidUtilities.dp(120.0f);
@@ -1717,13 +1673,12 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            if (this.imageView.getAnimatedDrawable().isRunning()) {
+        public static /* synthetic */ void $r8$lambda$sWk5P70tf6MTnRZA-ga0SYtZVfM(RLottieImageHolderView rLottieImageHolderView, View view) {
+            if (rLottieImageHolderView.imageView.getAnimatedDrawable().isRunning()) {
                 return;
             }
-            this.imageView.getAnimatedDrawable().setCurrentFrame(0, false);
-            this.imageView.playAnimation();
+            rLottieImageHolderView.imageView.getAnimatedDrawable().setCurrentFrame(0, false);
+            rLottieImageHolderView.imageView.playAnimation();
         }
     }
 }

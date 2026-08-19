@@ -2,7 +2,6 @@ package androidx.fragment.app;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -56,51 +55,33 @@ public abstract class FragmentActivity extends ComponentActivity implements Acti
         getSavedStateRegistry().registerSavedStateProvider("android:support:lifecycle", new SavedStateRegistry.SavedStateProvider() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda0
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle lambda$init$0;
-                lambda$init$0 = FragmentActivity.this.lambda$init$0();
-                return lambda$init$0;
+                return FragmentActivity.$r8$lambda$PiZLedL0JH1wIOGQM80pCH0fhkU(FragmentActivity.this);
             }
         });
         addOnConfigurationChangedListener(new Consumer() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda1
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
-                FragmentActivity.this.lambda$init$1((Configuration) obj);
+                FragmentActivity.this.mFragments.noteStateNotSaved();
             }
         });
         addOnNewIntentListener(new Consumer() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda2
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
-                FragmentActivity.this.lambda$init$2((Intent) obj);
+                FragmentActivity.this.mFragments.noteStateNotSaved();
             }
         });
         addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda3
             @Override // androidx.activity.contextaware.OnContextAvailableListener
             public final void onContextAvailable(Context context) {
-                FragmentActivity.this.lambda$init$3(context);
+                FragmentActivity.this.mFragments.attachHost(null);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bundle lambda$init$0() {
-        markFragmentsCreated();
-        this.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
+    public static /* synthetic */ Bundle $r8$lambda$PiZLedL0JH1wIOGQM80pCH0fhkU(FragmentActivity fragmentActivity) {
+        fragmentActivity.markFragmentsCreated();
+        fragmentActivity.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
         return new Bundle();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$1(Configuration configuration) {
-        this.mFragments.noteStateNotSaved();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$2(Intent intent) {
-        this.mFragments.noteStateNotSaved();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$3(Context context) {
-        this.mFragments.attachHost(null);
     }
 
     @Override // androidx.activity.ComponentActivity, android.app.Activity

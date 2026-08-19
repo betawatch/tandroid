@@ -3,10 +3,9 @@ package org.telegram.ui.Stories.recorder;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.BuildVars;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CollageLayout {
     private static ArrayList layouts;
     public final int[] columns;
@@ -40,9 +39,13 @@ public class CollageLayout {
     }
 
     public static CollageLayout of(int i) {
-        Iterator it = getLayouts().iterator();
-        while (it.hasNext()) {
-            CollageLayout collageLayout = (CollageLayout) it.next();
+        ArrayList layouts2 = getLayouts();
+        int size = layouts2.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = layouts2.get(i2);
+            i2++;
+            CollageLayout collageLayout = (CollageLayout) obj;
             if (collageLayout.parts.size() >= i) {
                 return collageLayout;
             }
@@ -51,12 +54,16 @@ public class CollageLayout {
     }
 
     public static int getMaxCount() {
-        Iterator it = getLayouts().iterator();
+        ArrayList layouts2 = getLayouts();
+        int size = layouts2.size();
         int i = 0;
-        while (it.hasNext()) {
-            i = Math.max(i, ((CollageLayout) it.next()).parts.size());
+        int i2 = 0;
+        while (i < size) {
+            Object obj = layouts2.get(i);
+            i++;
+            i2 = Math.max(i2, ((CollageLayout) obj).parts.size());
         }
-        return i;
+        return i2;
     }
 
     public CollageLayout(String str) {

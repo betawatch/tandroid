@@ -28,7 +28,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.StaticLayoutEx;
 import org.telegram.ui.Stories.SelfStoryViewsView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SelfStoriesPreviewView extends View {
     boolean checkScroll;
     int childPadding;
@@ -176,6 +176,7 @@ public abstract class SelfStoriesPreviewView extends View {
         float f3;
         float f4;
         float f5;
+        float f6;
         int i;
         super.onDraw(canvas);
         if (this.scroller.computeScrollOffset()) {
@@ -185,57 +186,59 @@ public abstract class SelfStoriesPreviewView extends View {
         } else if (this.checkScroll) {
             scrollToClosest();
         }
-        float f6 = 2.0f;
+        float f7 = 2.0f;
         float measuredWidth = getMeasuredWidth() / 2.0f;
         this.imageReceiversTmp.clear();
         this.imageReceiversTmp.addAll(this.lastDrawnImageReceivers);
         this.lastDrawnImageReceivers.clear();
         int i2 = -1;
-        float f7 = 2.14748365E9f;
+        float f8 = 2.14748365E9f;
         int i3 = 0;
         int i4 = -1;
         while (i3 < this.storyItems.size()) {
-            float f8 = -this.scrollX;
-            float f9 = f8 + ((this.childPadding + r10) * i3);
-            float f10 = ((this.viewW / f6) + f9) - measuredWidth;
-            float abs = Math.abs(f10);
+            float f9 = -this.scrollX;
+            float f10 = f9 + ((this.childPadding + r10) * i3);
+            float f11 = ((this.viewW / f7) + f10) - measuredWidth;
+            float abs = Math.abs(f11);
             if (abs < this.viewW) {
-                f = 1.0f - (Math.abs(f10) / this.viewW);
+                f = 1.0f - (Math.abs(f11) / this.viewW);
                 f2 = (0.2f * f) + 1.0f;
             } else {
                 f = 0.0f;
                 f2 = 1.0f;
             }
-            if (i4 == i2 || abs < f7) {
+            if (i4 == i2 || abs < f8) {
                 i4 = i3;
-                f7 = abs;
+                f8 = abs;
             }
-            if (f10 < 0.0f) {
-                f3 = f9 - ((this.viewW * 0.1f) * (1.0f - f));
+            if (f11 < 0.0f) {
+                f3 = f10 - ((this.viewW * 0.1f) * (1.0f - f));
             } else {
-                f3 = f9 + (this.viewW * 0.1f * (1.0f - f));
+                f3 = f10 + (this.viewW * 0.1f * (1.0f - f));
             }
             if (f3 > getMeasuredWidth() || this.viewW + f3 < 0.0f) {
                 f4 = measuredWidth;
-                f5 = f7;
+                f5 = f8;
             } else {
                 ImageHolder findOrCreateImageReceiver = findOrCreateImageReceiver(i3, this.imageReceiversTmp);
-                float f11 = this.viewW;
-                float f12 = f11 * f2;
-                float f13 = this.viewH;
-                float f14 = f2 * f13;
-                float f15 = f3 - ((f12 - f11) / f6);
-                float f16 = this.topPadding - ((f14 - f13) / f6);
+                float f12 = this.viewW;
+                float f13 = f12 * f2;
+                float f14 = this.viewH;
+                float f15 = f2 * f14;
+                float f16 = f3 - ((f13 - f12) / 2.0f);
+                float f17 = this.topPadding - ((f15 - f14) / 2.0f);
                 if (this.progressToOpen == 0.0f || i3 == (i = this.lastClosestPosition)) {
                     f4 = measuredWidth;
-                    f5 = f7;
-                    findOrCreateImageReceiver.receiver.setImageCoords(f15, f16, f12, f14);
+                    f5 = f8;
+                    f6 = 1.0f;
+                    findOrCreateImageReceiver.receiver.setImageCoords(f16, f17, f13, f15);
                 } else {
+                    f6 = 1.0f;
                     f4 = measuredWidth;
-                    f5 = f7;
-                    findOrCreateImageReceiver.receiver.setImageCoords(AndroidUtilities.lerp((i3 - i) * getMeasuredWidth(), f15, this.progressToOpen), AndroidUtilities.lerp(this.imagesFromY, f16, this.progressToOpen), AndroidUtilities.lerp(this.imagesFromW, f12, this.progressToOpen), AndroidUtilities.lerp(this.imagesFromH, f14, this.progressToOpen));
+                    f5 = f8;
+                    findOrCreateImageReceiver.receiver.setImageCoords(AndroidUtilities.lerp((i3 - i) * getMeasuredWidth(), f16, this.progressToOpen), AndroidUtilities.lerp(this.imagesFromY, f17, this.progressToOpen), AndroidUtilities.lerp(this.imagesFromW, f13, this.progressToOpen), AndroidUtilities.lerp(this.imagesFromH, f15, this.progressToOpen));
                 }
-                if (this.progressToOpen == 1.0f || i3 != this.lastClosestPosition) {
+                if (this.progressToOpen == f6 || i3 != this.lastClosestPosition) {
                     findOrCreateImageReceiver.receiver.draw(canvas);
                     if (findOrCreateImageReceiver.layout != null) {
                         int i5 = (int) (((f * 0.3f) + 0.7f) * 255.0f);
@@ -247,15 +250,14 @@ public abstract class SelfStoriesPreviewView extends View {
                         findOrCreateImageReceiver.paint.setAlpha(i5);
                         findOrCreateImageReceiver.layout.draw(canvas);
                         canvas.restore();
-                        this.lastDrawnImageReceivers.add(findOrCreateImageReceiver);
                     }
                 }
                 this.lastDrawnImageReceivers.add(findOrCreateImageReceiver);
             }
             i3++;
             measuredWidth = f4;
-            f7 = f5;
-            f6 = 2.0f;
+            f8 = f5;
+            f7 = 2.0f;
             i2 = -1;
         }
         if (this.scrollAnimator == null && this.lastClosestPosition != i4) {

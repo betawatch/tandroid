@@ -90,7 +90,7 @@ final class RegisteredMediaRouteProviderWatcher {
                         registeredMediaRouteProvider.setControllerCallback(new RegisteredMediaRouteProvider.ControllerCallback() { // from class: androidx.mediarouter.media.RegisteredMediaRouteProviderWatcher$$ExternalSyntheticLambda0
                             @Override // androidx.mediarouter.media.RegisteredMediaRouteProvider.ControllerCallback
                             public final void onControllerReleasedByProvider(MediaRouteProvider.RouteController routeController) {
-                                RegisteredMediaRouteProviderWatcher.this.lambda$scanPackages$0(registeredMediaRouteProvider, routeController);
+                                RegisteredMediaRouteProviderWatcher.this.mCallback.releaseProviderController(registeredMediaRouteProvider, routeController);
                             }
                         });
                         registeredMediaRouteProvider.start();
@@ -117,11 +117,6 @@ final class RegisteredMediaRouteProviderWatcher {
                 }
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scanPackages$0(RegisteredMediaRouteProvider registeredMediaRouteProvider, MediaRouteProvider.RouteController routeController) {
-        this.mCallback.releaseProviderController(registeredMediaRouteProvider, routeController);
     }
 
     static boolean listContainsServiceInfo(List list, ServiceInfo serviceInfo) {

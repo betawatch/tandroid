@@ -45,9 +45,9 @@ class CrashlyticsController {
     static final FilenameFilter APP_EXCEPTION_MARKER_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController$$ExternalSyntheticLambda1
         @Override // java.io.FilenameFilter
         public final boolean accept(File file, String str) {
-            boolean lambda$static$0;
-            lambda$static$0 = CrashlyticsController.lambda$static$0(file, str);
-            return lambda$static$0;
+            boolean startsWith;
+            startsWith = str.startsWith(".ae");
+            return startsWith;
         }
     };
     private final AnalyticsEventLogger analyticsEventLogger;
@@ -69,11 +69,6 @@ class CrashlyticsController {
     final TaskCompletionSource reportActionProvided = new TaskCompletionSource();
     final TaskCompletionSource unsentReportsHandled = new TaskCompletionSource();
     final AtomicBoolean checkForUnsentReportsCalled = new AtomicBoolean(false);
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$0(File file, String str) {
-        return str.startsWith(".ae");
-    }
 
     CrashlyticsController(Context context, CrashlyticsBackgroundWorker crashlyticsBackgroundWorker, IdManager idManager, DataCollectionArbiter dataCollectionArbiter, FileStore fileStore, CrashlyticsFileMarker crashlyticsFileMarker, AppData appData, UserMetadata userMetadata, LogFileManager logFileManager, SessionReportingCoordinator sessionReportingCoordinator, CrashlyticsNativeComponent crashlyticsNativeComponent, AnalyticsEventLogger analyticsEventLogger, CrashlyticsAppQualitySessionsSubscriber crashlyticsAppQualitySessionsSubscriber) {
         this.context = context;
@@ -109,43 +104,52 @@ class CrashlyticsController {
     }
 
     synchronized void handleUncaughtException(final SettingsProvider settingsProvider, final Thread thread, final Throwable th, final boolean z) {
-        Logger.getLogger().d("Handling uncaught exception \"" + th + "\" from thread " + thread.getName());
-        final long currentTimeMillis = System.currentTimeMillis();
         try {
-            Utils.awaitEvenIfOnMainThread(this.backgroundWorker.submitTask(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2
-                @Override // java.util.concurrent.Callable
-                public Task call() {
-                    long timestampSeconds = CrashlyticsController.getTimestampSeconds(currentTimeMillis);
-                    final String currentSessionId = CrashlyticsController.this.getCurrentSessionId();
-                    if (currentSessionId != null) {
-                        CrashlyticsController.this.crashMarker.create();
-                        CrashlyticsController.this.reportingCoordinator.persistFatalEvent(th, thread, currentSessionId, timestampSeconds);
-                        CrashlyticsController.this.doWriteAppExceptionMarker(currentTimeMillis);
-                        CrashlyticsController.this.doCloseSessions(settingsProvider);
-                        CrashlyticsController.this.doOpenSession(new CLSUUID(CrashlyticsController.this.idManager).toString(), Boolean.valueOf(z));
-                        if (CrashlyticsController.this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
-                            final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
-                            return settingsProvider.getSettingsAsync().onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2.1
-                                @Override // com.google.android.gms.tasks.SuccessContinuation
-                                public Task then(Settings settings) {
-                                    if (settings == null) {
-                                        Logger.getLogger().w("Received null app settings, cannot send reports at crash time.");
-                                        return Tasks.forResult(null);
-                                    }
-                                    return Tasks.whenAll((Task<?>[]) new Task[]{CrashlyticsController.this.logAnalyticsAppExceptionEvents(), CrashlyticsController.this.reportingCoordinator.sendReports(executor, z ? currentSessionId : null)});
+            try {
+                Logger.getLogger().d("Handling uncaught exception \"" + th + "\" from thread " + thread.getName());
+                final long currentTimeMillis = System.currentTimeMillis();
+                try {
+                    Utils.awaitEvenIfOnMainThread(this.backgroundWorker.submitTask(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2
+                        @Override // java.util.concurrent.Callable
+                        public Task call() {
+                            long timestampSeconds = CrashlyticsController.getTimestampSeconds(currentTimeMillis);
+                            final String currentSessionId = CrashlyticsController.this.getCurrentSessionId();
+                            if (currentSessionId != null) {
+                                CrashlyticsController.this.crashMarker.create();
+                                CrashlyticsController.this.reportingCoordinator.persistFatalEvent(th, thread, currentSessionId, timestampSeconds);
+                                CrashlyticsController.this.doWriteAppExceptionMarker(currentTimeMillis);
+                                CrashlyticsController.this.doCloseSessions(settingsProvider);
+                                CrashlyticsController.this.doOpenSession(new CLSUUID(CrashlyticsController.this.idManager).toString(), Boolean.valueOf(z));
+                                if (CrashlyticsController.this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
+                                    final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
+                                    return settingsProvider.getSettingsAsync().onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2.1
+                                        @Override // com.google.android.gms.tasks.SuccessContinuation
+                                        public Task then(Settings settings) {
+                                            if (settings == null) {
+                                                Logger.getLogger().w("Received null app settings, cannot send reports at crash time.");
+                                                return Tasks.forResult(null);
+                                            }
+                                            return Tasks.whenAll((Task<?>[]) new Task[]{CrashlyticsController.this.logAnalyticsAppExceptionEvents(), CrashlyticsController.this.reportingCoordinator.sendReports(executor, z ? currentSessionId : null)});
+                                        }
+                                    });
                                 }
-                            });
+                                return Tasks.forResult(null);
+                            }
+                            Logger.getLogger().e("Tried to write a fatal exception while no session was open.");
+                            return Tasks.forResult(null);
                         }
-                        return Tasks.forResult(null);
-                    }
-                    Logger.getLogger().e("Tried to write a fatal exception while no session was open.");
-                    return Tasks.forResult(null);
+                    }));
+                } catch (TimeoutException unused) {
+                    Logger.getLogger().e("Cannot send reports. Timed out while fetching settings.");
+                } catch (Exception e) {
+                    Logger.getLogger().e("Error handling uncaught exception", e);
                 }
-            }));
-        } catch (TimeoutException unused) {
-            Logger.getLogger().e("Cannot send reports. Timed out while fetching settings.");
-        } catch (Exception e) {
-            Logger.getLogger().e("Error handling uncaught exception", e);
+            } catch (Throwable th2) {
+                th = th2;
+                throw th;
+            }
+        } catch (Throwable th3) {
+            th = th3;
         }
     }
 

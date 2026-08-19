@@ -66,7 +66,7 @@ public class RecordedAudioPlayerView extends View {
         this.progressUpdate = new Runnable() { // from class: org.telegram.ui.Components.RecordedAudioPlayerView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RecordedAudioPlayerView.this.lambda$new$0();
+                RecordedAudioPlayerView.$r8$lambda$Kx8ur_PBZa0Jtb9D0o4Sx7I2_AI(RecordedAudioPlayerView.this);
             }
         };
         this.backgroundRect = new RectF();
@@ -194,24 +194,23 @@ public class RecordedAudioPlayerView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        VideoPlayer videoPlayer = this.player;
+    public static /* synthetic */ void $r8$lambda$Kx8ur_PBZa0Jtb9D0o4Sx7I2_AI(RecordedAudioPlayerView recordedAudioPlayerView) {
+        VideoPlayer videoPlayer = recordedAudioPlayerView.player;
         if (videoPlayer != null) {
             boolean isPlaying = videoPlayer.isPlaying();
-            float currentPosition = this.player.getCurrentPosition() / this.player.getDuration();
-            float f = this.left;
+            float currentPosition = recordedAudioPlayerView.player.getCurrentPosition() / recordedAudioPlayerView.player.getDuration();
+            float f = recordedAudioPlayerView.left;
             if (currentPosition < f) {
-                this.player.seekTo((long) (f * r1.getDuration()));
-            } else if (currentPosition > this.right) {
+                recordedAudioPlayerView.player.seekTo((long) (f * r1.getDuration()));
+            } else if (currentPosition > recordedAudioPlayerView.right) {
                 isPlaying = false;
-                setPlaying(false);
+                recordedAudioPlayerView.setPlaying(false);
             }
             if (isPlaying) {
-                AndroidUtilities.runOnUIThread(this.progressUpdate, 16L);
+                AndroidUtilities.runOnUIThread(recordedAudioPlayerView.progressUpdate, 16L);
             }
         }
-        invalidate();
+        recordedAudioPlayerView.invalidate();
     }
 
     public void checkWaveform() {
@@ -320,7 +319,7 @@ public class RecordedAudioPlayerView extends View {
         if (this.progressPressed) {
             clamp = this.holdProgress;
         } else {
-            clamp = Utilities.clamp(this.player != null ? r1.getCurrentPosition() / this.player.getDuration() : 1.0f, this.right, this.left);
+            clamp = Utilities.clamp(this.player != null ? r3.getCurrentPosition() / this.player.getDuration() : 1.0f, this.right, this.left);
         }
         float clamp2 = Utilities.clamp(AndroidUtilities.lerp(rectF.left + AndroidUtilities.dp(13.0f), rectF.right - AndroidUtilities.dp(14.0f), clamp), f3, f2);
         if (clamp2 < f3) {

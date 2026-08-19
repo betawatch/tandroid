@@ -4,7 +4,7 @@ import com.google.zxing.Binarizer;
 import com.google.zxing.LuminanceSource;
 import com.google.zxing.NotFoundException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class GlobalHistogramBinarizer extends Binarizer {
     private static final byte[] EMPTY = new byte[0];
     private final int[] buckets;

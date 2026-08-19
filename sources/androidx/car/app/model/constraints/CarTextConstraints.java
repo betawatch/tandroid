@@ -15,7 +15,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class CarTextConstraints {
     private final HashSet mAllowedTypes;
-    public static final CarTextConstraints CONSERVATIVE = new CarTextConstraints(Collections.emptyList());
+    public static final CarTextConstraints CONSERVATIVE = new CarTextConstraints(Collections.EMPTY_LIST);
     public static final CarTextConstraints UNCONSTRAINED = new CarTextConstraints(Arrays.asList(CarIconSpan.class, ClickableSpan.class, DistanceSpan.class, DurationSpan.class, ForegroundCarColorSpan.class));
     public static final CarTextConstraints CLICKABLE_TEXT_ONLY = new CarTextConstraints(Arrays.asList(ClickableSpan.class, DistanceSpan.class, DurationSpan.class));
     public static final CarTextConstraints COLOR_ONLY = new CarTextConstraints(Arrays.asList(ForegroundCarColorSpan.class));

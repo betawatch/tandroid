@@ -17,15 +17,14 @@ public class Tooltip extends TextView {
     Runnable dismissRunnable;
     private boolean showing;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        ViewPropertyAnimator duration = animate().alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Tooltip.1
+    public static /* synthetic */ void $r8$lambda$w_wKlM1fYPm5O3hWM05eoptY7jk(Tooltip tooltip) {
+        ViewPropertyAnimator duration = tooltip.animate().alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Tooltip.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 Tooltip.this.setVisibility(8);
             }
         }).setDuration(300L);
-        this.animator = duration;
+        tooltip.animator = duration;
         duration.start();
     }
 
@@ -34,7 +33,7 @@ public class Tooltip extends TextView {
         this.dismissRunnable = new Runnable() { // from class: org.telegram.ui.Components.Tooltip$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Tooltip.this.lambda$new$0();
+                Tooltip.$r8$lambda$w_wKlM1fYPm5O3hWM05eoptY7jk(Tooltip.this);
             }
         };
         setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.dp(3.0f), i));

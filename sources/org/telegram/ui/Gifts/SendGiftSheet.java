@@ -130,12 +130,14 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     private SendGiftSheet(final Context context, final int i, final TL_stars.StarGift starGift, final GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier, final long j, final Runnable runnable, final boolean z, final boolean z2) {
         super(context, null, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, null);
+        float f;
+        long j2;
         Integer num;
-        LinearLayout linearLayout;
         BlurredBackgroundDrawable blurredBackgroundDrawable;
+        SizeNotifierFrameLayout sizeNotifierFrameLayout;
         int i2;
-        ChatActionCell chatActionCell;
-        ChatActionCell chatActionCell2;
+        LinearLayout linearLayout;
+        LinearLayout linearLayout2;
         this.upgrade = false;
         this.useStars = false;
         this.shakeDp = -2;
@@ -154,7 +156,10 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         this.currentAccount = i;
         this.dialogId = j;
         this.starGift = starGift;
-        if (starGift != null && starGift.auction) {
+        if (starGift == null || !starGift.auction) {
+            f = 4.0f;
+        } else {
+            f = 4.0f;
             this.auction = GiftAuctionController.getInstance(i).subscribeToGiftAuction(starGift.id, this);
         }
         this.premiumTier = giftPremiumBottomSheet$GiftTier;
@@ -168,62 +173,64 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         this.topPadding = 0.2f;
         if (j >= 0) {
+            j2 = 0;
             this.name = UserObject.getForcedFirstName(MessagesController.getInstance(i).getUser(Long.valueOf(j)));
         } else {
+            j2 = 0;
             TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-j));
             this.name = chat == null ? "" : chat.title;
         }
-        ChatActionCell chatActionCell3 = new ChatActionCell(context, false, this.resourcesProvider);
-        this.actionCell = chatActionCell3;
-        chatActionCell3.setDelegate(new ChatActionCell.ChatActionCellDelegate() { // from class: org.telegram.ui.Gifts.SendGiftSheet.1
+        ChatActionCell chatActionCell = new ChatActionCell(context, false, this.resourcesProvider);
+        this.actionCell = chatActionCell;
+        chatActionCell.setDelegate(new ChatActionCell.ChatActionCellDelegate() { // from class: org.telegram.ui.Gifts.SendGiftSheet.1
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
             public /* synthetic */ boolean canDrawOutboundsContent() {
                 return ChatActionCell.ChatActionCellDelegate.-CC.$default$canDrawOutboundsContent(this);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didClickButton(ChatActionCell chatActionCell4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didClickButton(this, chatActionCell4);
+            public /* synthetic */ void didClickButton(ChatActionCell chatActionCell2) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didClickButton(this, chatActionCell2);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didClickImage(ChatActionCell chatActionCell4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didClickImage(this, chatActionCell4);
+            public /* synthetic */ void didClickImage(ChatActionCell chatActionCell2) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didClickImage(this, chatActionCell2);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ boolean didLongPress(ChatActionCell chatActionCell4, float f, float f2) {
-                return ChatActionCell.ChatActionCellDelegate.-CC.$default$didLongPress(this, chatActionCell4, f, f2);
+            public /* synthetic */ boolean didLongPress(ChatActionCell chatActionCell2, float f2, float f3) {
+                return ChatActionCell.ChatActionCellDelegate.-CC.$default$didLongPress(this, chatActionCell2, f2, f3);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didOpenPremiumGift(ChatActionCell chatActionCell4, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str, boolean z4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGift(this, chatActionCell4, tL_premiumGiftOption, str, z4);
+            public /* synthetic */ void didOpenPremiumGift(ChatActionCell chatActionCell2, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str, boolean z4) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGift(this, chatActionCell2, tL_premiumGiftOption, str, z4);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didOpenPremiumGiftChannel(ChatActionCell chatActionCell4, String str, boolean z4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGiftChannel(this, chatActionCell4, str, z4);
+            public /* synthetic */ void didOpenPremiumGiftChannel(ChatActionCell chatActionCell2, String str, boolean z4) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGiftChannel(this, chatActionCell2, str, z4);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didPressReaction(ChatActionCell chatActionCell4, TLRPC.ReactionCount reactionCount, boolean z4, float f, float f2) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressReaction(this, chatActionCell4, reactionCount, z4, f, f2);
+            public /* synthetic */ void didPressReaction(ChatActionCell chatActionCell2, TLRPC.ReactionCount reactionCount, boolean z4, float f2, float f3) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressReaction(this, chatActionCell2, reactionCount, z4, f2, f3);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didPressReplyMessage(ChatActionCell chatActionCell4, int i3) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressReplyMessage(this, chatActionCell4, i3);
+            public /* synthetic */ void didPressReplyMessage(ChatActionCell chatActionCell2, int i3) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressReplyMessage(this, chatActionCell2, i3);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didPressTaskLink(ChatActionCell chatActionCell4, int i3, int i4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressTaskLink(this, chatActionCell4, i3, i4);
+            public /* synthetic */ void didPressTaskLink(ChatActionCell chatActionCell2, int i3, int i4) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressTaskLink(this, chatActionCell2, i3, i4);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void forceUpdate(ChatActionCell chatActionCell4, boolean z4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$forceUpdate(this, chatActionCell4, z4);
+            public /* synthetic */ void forceUpdate(ChatActionCell chatActionCell2, boolean z4) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$forceUpdate(this, chatActionCell2, z4);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
@@ -247,21 +254,21 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void needOpenUserProfile(long j2) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$needOpenUserProfile(this, j2);
+            public /* synthetic */ void needOpenUserProfile(long j3) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$needOpenUserProfile(this, j3);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void needShowEffectOverlay(ChatActionCell chatActionCell4, TLRPC.Document document, TLRPC.VideoSize videoSize) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$needShowEffectOverlay(this, chatActionCell4, document, videoSize);
+            public /* synthetic */ void needShowEffectOverlay(ChatActionCell chatActionCell2, TLRPC.Document document, TLRPC.VideoSize videoSize) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$needShowEffectOverlay(this, chatActionCell2, document, videoSize);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void onTopicClick(ChatActionCell chatActionCell4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$onTopicClick(this, chatActionCell4);
+            public /* synthetic */ void onTopicClick(ChatActionCell chatActionCell2) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$onTopicClick(this, chatActionCell2);
             }
         });
-        SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.Gifts.SendGiftSheet.2
+        SizeNotifierFrameLayout sizeNotifierFrameLayout2 = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.Gifts.SendGiftSheet.2
             int maxHeight = -1;
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
@@ -298,11 +305,11 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
 
             @Override // android.view.ViewGroup
-            protected boolean drawChild(Canvas canvas, View view, long j2) {
+            protected boolean drawChild(Canvas canvas, View view, long j3) {
                 if (view == this.backgroundView) {
                     return true;
                 }
-                return super.drawChild(canvas, view, j2);
+                return super.drawChild(canvas, view, j3);
             }
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -318,9 +325,10 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 ((BottomSheetWithRecyclerListView) SendGiftSheet.this).recyclerListView.invalidate();
             }
         };
-        this.chatView = sizeNotifierFrameLayout;
+        this.chatView = sizeNotifierFrameLayout2;
+        boolean z4 = z3;
         Drawable backgroundDrawable = PreviewView.getBackgroundDrawable((Drawable) null, i, j, Theme.isCurrentThemeDark());
-        sizeNotifierFrameLayout.setBackgroundImage(backgroundDrawable, false);
+        sizeNotifierFrameLayout2.setBackgroundImage(backgroundDrawable, false);
         BlurredBackgroundSourceColor blurredBackgroundSourceColor = new BlurredBackgroundSourceColor();
         if (backgroundDrawable instanceof ColorDrawable) {
             num = Integer.valueOf(((ColorDrawable) backgroundDrawable).getColor());
@@ -344,76 +352,77 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         int i3 = Theme.key_dialogBackground;
         createDrawable.setColorProvider(new BlurredBackgroundColorProviderThemed(resourcesProvider, i3));
         createDrawable.setRadius(AndroidUtilities.dp(20.0f));
-        createDrawable.setPadding(AndroidUtilities.dp(4.0f));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.chatLinearLayout = linearLayout2;
-        linearLayout2.setOrientation(1);
+        createDrawable.setPadding(AndroidUtilities.dp(f));
+        LinearLayout linearLayout3 = new LinearLayout(context);
+        this.chatLinearLayout = linearLayout3;
+        linearLayout3.setOrientation(1);
         if (starGift != null) {
             TLRPC.TL_messageActionStarGift tL_messageActionStarGift = new TLRPC.TL_messageActionStarGift();
             tL_messageActionStarGift.gift = starGift;
+            blurredBackgroundDrawable = createDrawable;
             tL_messageActionStarGift.flags |= 2;
             tL_messageActionStarGift.message = new TLRPC.TL_textWithEntities();
             tL_messageActionStarGift.convert_stars = starGift.convert_stars;
             tL_messageActionStarGift.forceIn = true;
             this.action = tL_messageActionStarGift;
-            chatActionCell = chatActionCell3;
-            linearLayout = linearLayout2;
-            blurredBackgroundDrawable = createDrawable;
+            sizeNotifierFrameLayout = sizeNotifierFrameLayout2;
             i2 = i3;
-        } else if (giftPremiumBottomSheet$GiftTier != null && giftPremiumBottomSheet$GiftTier.giftCodeOption != null) {
-            TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode = new TLRPC.TL_messageActionGiftCode();
-            tL_messageActionGiftCode.unclaimed = true;
-            tL_messageActionGiftCode.via_giveaway = false;
-            tL_messageActionGiftCode.months = giftPremiumBottomSheet$GiftTier.getMonths();
-            tL_messageActionGiftCode.flags |= 4;
-            tL_messageActionGiftCode.currency = giftPremiumBottomSheet$GiftTier.getCurrency();
-            long price = giftPremiumBottomSheet$GiftTier.getPrice();
-            tL_messageActionGiftCode.amount = price;
-            i2 = i3;
-            if (giftPremiumBottomSheet$GiftTier.googlePlayProductDetails != null) {
-                chatActionCell2 = chatActionCell3;
-                linearLayout = linearLayout2;
-                blurredBackgroundDrawable = createDrawable;
-                tL_messageActionGiftCode.amount = (long) (price * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_messageActionGiftCode.currency) - 6));
-            } else {
-                chatActionCell2 = chatActionCell3;
-                linearLayout = linearLayout2;
-                blurredBackgroundDrawable = createDrawable;
-            }
-            tL_messageActionGiftCode.flags |= 16;
-            tL_messageActionGiftCode.message = new TLRPC.TL_textWithEntities();
-            this.action = tL_messageActionGiftCode;
-            chatActionCell = chatActionCell2;
+            linearLayout = linearLayout3;
         } else {
-            linearLayout = linearLayout2;
             blurredBackgroundDrawable = createDrawable;
-            i2 = i3;
-            if (giftPremiumBottomSheet$GiftTier != null && giftPremiumBottomSheet$GiftTier.giftOption != null) {
-                TLRPC.TL_messageActionGiftPremium tL_messageActionGiftPremium = new TLRPC.TL_messageActionGiftPremium();
-                tL_messageActionGiftPremium.months = giftPremiumBottomSheet$GiftTier.getMonths();
-                tL_messageActionGiftPremium.currency = giftPremiumBottomSheet$GiftTier.getCurrency();
-                long price2 = giftPremiumBottomSheet$GiftTier.getPrice();
-                tL_messageActionGiftPremium.amount = price2;
+            if (giftPremiumBottomSheet$GiftTier != null && giftPremiumBottomSheet$GiftTier.giftCodeOption != null) {
+                TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode = new TLRPC.TL_messageActionGiftCode();
+                tL_messageActionGiftCode.unclaimed = true;
+                tL_messageActionGiftCode.via_giveaway = false;
+                tL_messageActionGiftCode.months = giftPremiumBottomSheet$GiftTier.getMonths();
+                tL_messageActionGiftCode.flags |= 4;
+                tL_messageActionGiftCode.currency = giftPremiumBottomSheet$GiftTier.getCurrency();
+                long price = giftPremiumBottomSheet$GiftTier.getPrice();
+                tL_messageActionGiftCode.amount = price;
                 if (giftPremiumBottomSheet$GiftTier.googlePlayProductDetails != null) {
-                    chatActionCell = chatActionCell3;
-                    tL_messageActionGiftPremium.amount = (long) (price2 * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_messageActionGiftPremium.currency) - 6));
+                    sizeNotifierFrameLayout = sizeNotifierFrameLayout2;
+                    i2 = i3;
+                    linearLayout2 = linearLayout3;
+                    tL_messageActionGiftCode.amount = (long) (price * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_messageActionGiftCode.currency) - 6));
                 } else {
-                    chatActionCell = chatActionCell3;
+                    sizeNotifierFrameLayout = sizeNotifierFrameLayout2;
+                    i2 = i3;
+                    linearLayout2 = linearLayout3;
                 }
-                tL_messageActionGiftPremium.flags |= 2;
-                tL_messageActionGiftPremium.message = new TLRPC.TL_textWithEntities();
-                this.action = tL_messageActionGiftPremium;
+                tL_messageActionGiftCode.flags |= 16;
+                tL_messageActionGiftCode.message = new TLRPC.TL_textWithEntities();
+                this.action = tL_messageActionGiftCode;
+                linearLayout = linearLayout2;
             } else {
-                throw new RuntimeException("SendGiftSheet with no star gift and no premium tier");
+                sizeNotifierFrameLayout = sizeNotifierFrameLayout2;
+                i2 = i3;
+                if (giftPremiumBottomSheet$GiftTier != null && giftPremiumBottomSheet$GiftTier.giftOption != null) {
+                    TLRPC.TL_messageActionGiftPremium tL_messageActionGiftPremium = new TLRPC.TL_messageActionGiftPremium();
+                    tL_messageActionGiftPremium.months = giftPremiumBottomSheet$GiftTier.getMonths();
+                    tL_messageActionGiftPremium.currency = giftPremiumBottomSheet$GiftTier.getCurrency();
+                    long price2 = giftPremiumBottomSheet$GiftTier.getPrice();
+                    tL_messageActionGiftPremium.amount = price2;
+                    if (giftPremiumBottomSheet$GiftTier.googlePlayProductDetails != null) {
+                        linearLayout = linearLayout3;
+                        tL_messageActionGiftPremium.amount = (long) (price2 * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_messageActionGiftPremium.currency) - 6));
+                    } else {
+                        linearLayout = linearLayout3;
+                    }
+                    tL_messageActionGiftPremium.flags |= 2;
+                    tL_messageActionGiftPremium.message = new TLRPC.TL_textWithEntities();
+                    this.action = tL_messageActionGiftPremium;
+                } else {
+                    throw new RuntimeException("SendGiftSheet with no star gift and no premium tier");
+                }
             }
         }
         TLRPC.MessageAction messageAction = this.action;
         if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
             TLRPC.TL_messageActionStarGift tL_messageActionStarGift2 = (TLRPC.TL_messageActionStarGift) messageAction;
-            boolean z4 = this.upgrade;
-            tL_messageActionStarGift2.can_upgrade = z4 || (z3 && starGift != null && starGift.can_upgrade);
-            tL_messageActionStarGift2.upgrade_stars = (!z3 && z4) ? starGift.upgrade_stars : 0L;
-            tL_messageActionStarGift2.convert_stars = z4 ? 0L : starGift.convert_stars;
+            boolean z5 = this.upgrade;
+            tL_messageActionStarGift2.can_upgrade = z5 || (z4 && starGift != null && starGift.can_upgrade);
+            tL_messageActionStarGift2.upgrade_stars = (!z4 && z5) ? starGift.upgrade_stars : j2;
+            tL_messageActionStarGift2.convert_stars = z5 ? j2 : starGift.convert_stars;
         }
         TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
         tL_messageService.id = 1;
@@ -421,25 +430,25 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         tL_messageService.from_id = MessagesController.getInstance(i).getPeer(UserConfig.getInstance(i).getClientUserId());
         tL_messageService.peer_id = MessagesController.getInstance(i).getPeer(j);
         tL_messageService.action = this.action;
-        long sendPaidMessagesStars = starGift != null ? MessagesController.getInstance(i).getSendPaidMessagesStars(j) : 0L;
+        long sendPaidMessagesStars = starGift != null ? MessagesController.getInstance(i).getSendPaidMessagesStars(j) : j2;
         this.send_paid_messages_stars = sendPaidMessagesStars;
         MessageObject messageObject = new MessageObject(i, tL_messageService, false, false);
         this.messageObject = messageObject;
-        ChatActionCell chatActionCell4 = chatActionCell;
-        chatActionCell4.setMessageObject(messageObject, true);
-        LinearLayout linearLayout3 = linearLayout;
-        linearLayout3.addView(chatActionCell4, LayoutHelper.createLinear(-1, -1, 119, 0, sendPaidMessagesStars > 0 ? 0 : 8, 0, 8));
-        sizeNotifierFrameLayout.addView(linearLayout3, LayoutHelper.createFrame(-1, -1, 119));
+        chatActionCell.setMessageObject(messageObject, true);
+        LinearLayout linearLayout4 = linearLayout;
+        linearLayout4.addView(chatActionCell, LayoutHelper.createLinear(-1, -1, 119, 0, sendPaidMessagesStars > j2 ? 0 : 8, 0, 8));
+        sizeNotifierFrameLayout.addView(linearLayout4, LayoutHelper.createFrame(-1, -1, 119));
+        int i4 = i2;
         final BlurredBackgroundDrawable blurredBackgroundDrawable2 = blurredBackgroundDrawable;
         EditEmojiTextCell editEmojiTextCell = new EditEmojiTextCell(context, (SizeNotifierFrameLayout) this.containerView, LocaleController.getString(starGift != null ? R.string.Gift2Message : R.string.Gift2MessageOptional), true, MessagesController.getInstance(i).stargiftsMessageLengthMax, 4, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.SendGiftSheet.3
             @Override // org.telegram.ui.Cells.EditEmojiTextCell
-            protected void onFocusChanged(boolean z5) {
+            protected void onFocusChanged(boolean z6) {
             }
 
             @Override // org.telegram.ui.Cells.EditEmojiTextCell, android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i4, int i5) {
+            protected void onMeasure(int i5, int i6) {
                 setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                super.onMeasure(i4, i5);
+                super.onMeasure(i5, i6);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -488,8 +497,8 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         this.messageEdit.setDivider(false);
         this.messageEdit.hideKeyboardOnEnter();
         EditEmojiTextCell editEmojiTextCell2 = this.messageEdit;
-        int i4 = this.backgroundPaddingLeft;
-        editEmojiTextCell2.setPadding(i4, 0, i4, 0);
+        int i5 = this.backgroundPaddingLeft;
+        editEmojiTextCell2.setPadding(i5, 0, i5, 0);
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Gifts.SendGiftSheet.4
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected float animateByScale(View view) {
@@ -503,17 +512,16 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         defaultItemAnimator.setDelayIncrement(40L);
         this.recyclerListView.setItemAnimator(defaultItemAnimator);
         this.adapter.update(false);
-        LinearLayout linearLayout4 = new LinearLayout(context);
-        this.buttonContainer = linearLayout4;
-        linearLayout4.setOrientation(1);
-        int i5 = i2;
-        linearLayout4.setBackgroundColor(Theme.getColor(i5, this.resourcesProvider));
+        LinearLayout linearLayout5 = new LinearLayout(context);
+        this.buttonContainer = linearLayout5;
+        linearLayout5.setOrientation(1);
+        linearLayout5.setBackgroundColor(Theme.getColor(i4, this.resourcesProvider));
         int i6 = this.backgroundPaddingLeft;
-        linearLayout4.setPadding(i6, 0, i6, 0);
-        this.containerView.addView(linearLayout4, LayoutHelper.createFrame(-1, -2, 87));
+        linearLayout5.setPadding(i6, 0, i6, 0);
+        this.containerView.addView(linearLayout5, LayoutHelper.createFrame(-1, -2, 87));
         View view = new View(context);
         view.setBackgroundColor(Theme.getColor(Theme.key_dialogGrayLine, this.resourcesProvider));
-        linearLayout4.addView(view, LayoutHelper.createLinear(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        linearLayout5.addView(view, LayoutHelper.createLinear(-1.0f, 1.0f / AndroidUtilities.density, 55));
         final float clamp = Utilities.clamp(starGift == null ? 0.0f : starGift.availability_remains / starGift.availability_total, 1.0f, 0.0f);
         FrameLayout frameLayout = new FrameLayout(context);
         this.limitContainer = frameLayout;
@@ -522,10 +530,10 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             FrameLayout frameLayout2 = new FrameLayout(context);
             this.limitContainerWrapper = frameLayout2;
             frameLayout2.addView(frameLayout, LayoutHelper.createLinear(-1, 30, 10.0f, 14.0f, 10.0f, 14.0f));
-            frameLayout2.setBackgroundColor(Theme.getColor(i5, this.resourcesProvider));
+            frameLayout2.setBackgroundColor(Theme.getColor(i4, this.resourcesProvider));
         } else {
             frameLayout.setVisibility((starGift == null || !starGift.limited) ? 8 : 0);
-            linearLayout4.addView(frameLayout, LayoutHelper.createLinear(-1, 30, 10.0f, 10.0f, 10.0f, 0.0f));
+            linearLayout5.addView(frameLayout, LayoutHelper.createLinear(-1, 30, 10.0f, 10.0f, 10.0f, 0.0f));
             this.limitContainerWrapper = null;
         }
         TextView textView = new TextView(context);
@@ -598,11 +606,11 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         this.button = buttonWithCounterView;
         buttonWithCounterView.setRound();
         setButtonText(false);
-        linearLayout4.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 119, 10, 10, 10, 10));
+        linearLayout5.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 119, 10, 10, 10, 10));
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                SendGiftSheet.this.lambda$new$0(j, context, runnable, starGift, view3);
+                SendGiftSheet.$r8$lambda$oJlqL9ApkwUIKqr5l2lPBSJiiT8(SendGiftSheet.this, j, context, runnable, starGift, view3);
             }
         });
         LinearLayoutManager linearLayoutManager = this.layoutManager;
@@ -618,27 +626,27 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
 
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void onDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.State state) {
-                float f;
                 float f2;
+                float f3;
                 float height = recyclerView.getHeight();
                 if (ViewPositionWatcher.computeCoordinatesInParent(SendGiftSheet.this.chatView, ((BottomSheetWithRecyclerListView) SendGiftSheet.this).recyclerListView, this.p)) {
                     PointF pointF = this.p;
-                    f2 = pointF.x;
+                    f3 = pointF.x;
                     height = Math.min(height, pointF.y);
-                    f = Math.max(0.0f, this.p.y + SendGiftSheet.this.chatView.getMeasuredHeight());
+                    f2 = Math.max(0.0f, this.p.y + SendGiftSheet.this.chatView.getMeasuredHeight());
                 } else {
-                    f = 0.0f;
                     f2 = 0.0f;
+                    f3 = 0.0f;
                 }
                 if (ViewPositionWatcher.computeCoordinatesInParent(SendGiftSheet.this.messageEdit, ((BottomSheetWithRecyclerListView) SendGiftSheet.this).recyclerListView, this.p)) {
                     height = Math.min(height, this.p.y);
-                    f = Math.max(f, this.p.y + SendGiftSheet.this.messageEdit.getMeasuredHeight() + AndroidUtilities.dp(12.0f));
+                    f2 = Math.max(f2, this.p.y + SendGiftSheet.this.messageEdit.getMeasuredHeight() + AndroidUtilities.dp(12.0f));
                 }
-                if (height < f && SendGiftSheet.this.chatView.backgroundView != null) {
-                    float height2 = (f - height) / SendGiftSheet.this.chatView.backgroundView.getHeight();
+                if (height < f2 && SendGiftSheet.this.chatView.backgroundView != null) {
+                    float height2 = (f2 - height) / SendGiftSheet.this.chatView.backgroundView.getHeight();
                     canvas.save();
-                    canvas.clipRect(0.0f, height, recyclerView.getWidth(), f);
-                    canvas.translate(f2, height);
+                    canvas.clipRect(0.0f, height, recyclerView.getWidth(), f2);
+                    canvas.translate(f3, height);
                     canvas.scale(height2, height2);
                     SendGiftSheet.this.chatView.backgroundView.draw(canvas);
                     canvas.restore();
@@ -649,51 +657,49 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view3, int i9) {
-                SendGiftSheet.this.lambda$new$1(z, z2, starGift, giftPremiumBottomSheet$GiftTier, view3, i9);
+                SendGiftSheet.$r8$lambda$hh4_msf_hjn-FhzoAq65wNt339M(SendGiftSheet.this, z, z2, starGift, giftPremiumBottomSheet$GiftTier, view3, i9);
             }
         });
         this.actionBar.setTitle(getTitle());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(long j, Context context, Runnable runnable, TL_stars.StarGift starGift, View view) {
-        if (this.button.isLoading()) {
+    public static /* synthetic */ void $r8$lambda$oJlqL9ApkwUIKqr5l2lPBSJiiT8(final SendGiftSheet sendGiftSheet, long j, Context context, Runnable runnable, TL_stars.StarGift starGift, View view) {
+        if (sendGiftSheet.button.isLoading()) {
             return;
         }
-        if (this.auction != null) {
-            AuctionBidSheet auctionBidSheet = new AuctionBidSheet(context, this.resourcesProvider, new AuctionBidSheet.Params(j, this.anonymous, getMessage()), this.auction);
+        if (sendGiftSheet.auction != null) {
+            AuctionBidSheet auctionBidSheet = new AuctionBidSheet(context, sendGiftSheet.resourcesProvider, new AuctionBidSheet.Params(j, sendGiftSheet.anonymous, sendGiftSheet.getMessage()), sendGiftSheet.auction);
             auctionBidSheet.show();
             auctionBidSheet.setCloseParentSheet(runnable);
-            AndroidUtilities.hideKeyboard(this.messageEdit);
-            lambda$new$0();
-            if (this.isDismissed) {
+            AndroidUtilities.hideKeyboard(sendGiftSheet.messageEdit);
+            sendGiftSheet.dismiss();
+            if (sendGiftSheet.isDismissed) {
                 return;
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendGiftSheet.this.lambda$new$0();
+                    SendGiftSheet.this.dismiss();
                 }
             }, 500L);
             return;
         }
-        this.button.setLoading(true);
-        if (this.messageEdit.editTextEmoji.getEmojiPadding() > 0) {
-            this.messageEdit.editTextEmoji.hidePopup(true);
-        } else if (this.messageEdit.editTextEmoji.isKeyboardVisible()) {
-            this.messageEdit.editTextEmoji.closeKeyboard();
+        sendGiftSheet.button.setLoading(true);
+        if (sendGiftSheet.messageEdit.editTextEmoji.getEmojiPadding() > 0) {
+            sendGiftSheet.messageEdit.editTextEmoji.hidePopup(true);
+        } else if (sendGiftSheet.messageEdit.editTextEmoji.isKeyboardVisible()) {
+            sendGiftSheet.messageEdit.editTextEmoji.closeKeyboard();
         }
         if (starGift != null) {
-            buyStarGift();
+            sendGiftSheet.buyStarGift();
         } else {
-            buyPremiumTier();
+            sendGiftSheet.buyPremiumTier();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(boolean z, boolean z2, TL_stars.StarGift starGift, GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier, View view, int i) {
-        UniversalAdapter universalAdapter = this.adapter;
-        if (!this.reverseLayout) {
+    public static /* synthetic */ void $r8$lambda$hh4_msf_hjn-FhzoAq65wNt339M(SendGiftSheet sendGiftSheet, boolean z, boolean z2, TL_stars.StarGift starGift, GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier, View view, int i) {
+        UniversalAdapter universalAdapter = sendGiftSheet.adapter;
+        if (!sendGiftSheet.reverseLayout) {
             i--;
         }
         UItem item = universalAdapter.getItem(i);
@@ -702,43 +708,43 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         int i2 = item.id;
         if (i2 == 1) {
-            boolean z3 = !this.anonymous;
-            this.anonymous = z3;
-            TLRPC.MessageAction messageAction = this.action;
+            boolean z3 = !sendGiftSheet.anonymous;
+            sendGiftSheet.anonymous = z3;
+            TLRPC.MessageAction messageAction = sendGiftSheet.action;
             if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
                 ((TLRPC.TL_messageActionStarGift) messageAction).name_hidden = z3;
             }
-            this.messageObject.updateMessageText();
-            this.actionCell.setMessageObject(this.messageObject, true);
-            this.adapter.update(true);
+            sendGiftSheet.messageObject.updateMessageText();
+            sendGiftSheet.actionCell.setMessageObject(sendGiftSheet.messageObject, true);
+            sendGiftSheet.adapter.update(true);
             return;
         }
         if (i2 == 2) {
             if (z || z2) {
-                int i3 = -this.shakeDp;
-                this.shakeDp = i3;
+                int i3 = -sendGiftSheet.shakeDp;
+                sendGiftSheet.shakeDp = i3;
                 AndroidUtilities.shakeViewSpring(view, i3);
                 return;
             }
-            boolean z4 = this.upgrade;
-            this.upgrade = !z4;
-            TLRPC.MessageAction messageAction2 = this.action;
+            boolean z4 = sendGiftSheet.upgrade;
+            sendGiftSheet.upgrade = !z4;
+            TLRPC.MessageAction messageAction2 = sendGiftSheet.action;
             if (messageAction2 instanceof TLRPC.TL_messageActionStarGift) {
                 TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction2;
-                tL_messageActionStarGift.can_upgrade = !z4 || (this.self && starGift != null && starGift.can_upgrade);
-                tL_messageActionStarGift.upgrade_stars = (this.self || z4) ? 0L : this.starGift.upgrade_stars;
-                tL_messageActionStarGift.convert_stars = z4 ? this.starGift.convert_stars : 0L;
+                tL_messageActionStarGift.can_upgrade = !z4 || (sendGiftSheet.self && starGift != null && starGift.can_upgrade);
+                tL_messageActionStarGift.upgrade_stars = (sendGiftSheet.self || z4) ? 0L : sendGiftSheet.starGift.upgrade_stars;
+                tL_messageActionStarGift.convert_stars = z4 ? sendGiftSheet.starGift.convert_stars : 0L;
             }
-            this.messageObject.updateMessageText();
-            this.actionCell.setMessageObject(this.messageObject, true);
-            this.adapter.update(true);
-            setButtonText(true);
+            sendGiftSheet.messageObject.updateMessageText();
+            sendGiftSheet.actionCell.setMessageObject(sendGiftSheet.messageObject, true);
+            sendGiftSheet.adapter.update(true);
+            sendGiftSheet.setButtonText(true);
             return;
         }
         if (i2 == 3) {
-            boolean z5 = this.useStars;
-            this.useStars = !z5;
-            TLRPC.MessageAction messageAction3 = this.action;
+            boolean z5 = sendGiftSheet.useStars;
+            sendGiftSheet.useStars = !z5;
+            TLRPC.MessageAction messageAction3 = sendGiftSheet.action;
             if (messageAction3 instanceof TLRPC.TL_messageActionGiftPremium) {
                 TLRPC.TL_messageActionGiftPremium tL_messageActionGiftPremium = (TLRPC.TL_messageActionGiftPremium) messageAction3;
                 if (!z5) {
@@ -766,10 +772,10 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                     }
                 }
             }
-            this.messageObject.updateMessageText();
-            this.actionCell.setMessageObject(this.messageObject, true);
-            this.adapter.update(true);
-            setButtonText(true);
+            sendGiftSheet.messageObject.updateMessageText();
+            sendGiftSheet.actionCell.setMessageObject(sendGiftSheet.messageObject, true);
+            sendGiftSheet.adapter.update(true);
+            sendGiftSheet.setButtonText(true);
         }
     }
 
@@ -878,37 +884,37 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         StarsController.getInstance(this.currentAccount).buyStarGift(this.starGift, this.anonymous, this.upgrade, this.dialogId, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda14
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                SendGiftSheet.this.lambda$buyStarGift$2((Boolean) obj, (String) obj2);
+                SendGiftSheet.$r8$lambda$dhnddA5Unqoi5MDvSA18YYN-Zw0(SendGiftSheet.this, (Boolean) obj, (String) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyStarGift$2(Boolean bool, String str) {
+    public static /* synthetic */ void $r8$lambda$dhnddA5Unqoi5MDvSA18YYN-Zw0(SendGiftSheet sendGiftSheet, Boolean bool, String str) {
         TL_stars.StarGift starGift;
+        sendGiftSheet.getClass();
         if (bool.booleanValue()) {
-            Runnable runnable = this.closeParentSheet;
+            Runnable runnable = sendGiftSheet.closeParentSheet;
             if (runnable != null) {
                 runnable.run();
             }
-            AndroidUtilities.hideKeyboard(this.messageEdit);
-            lambda$new$0();
+            AndroidUtilities.hideKeyboard(sendGiftSheet.messageEdit);
+            sendGiftSheet.dismiss();
         } else if ("STARGIFT_USAGE_LIMITED".equalsIgnoreCase(str)) {
-            AndroidUtilities.hideKeyboard(this.messageEdit);
-            lambda$new$0();
-            StarsController.getInstance(this.currentAccount).makeStarGiftSoldOut(this.starGift);
+            AndroidUtilities.hideKeyboard(sendGiftSheet.messageEdit);
+            sendGiftSheet.dismiss();
+            StarsController.getInstance(sendGiftSheet.currentAccount).makeStarGiftSoldOut(sendGiftSheet.starGift);
             return;
         } else if ("STARGIFT_USER_USAGE_LIMITED".equalsIgnoreCase(str)) {
-            AndroidUtilities.hideKeyboard(this.messageEdit);
-            lambda$new$0();
-            BulletinFactory parentBulletinFactory = getParentBulletinFactory();
-            if (parentBulletinFactory == null || (starGift = this.starGift) == null || !starGift.limited_per_user) {
+            AndroidUtilities.hideKeyboard(sendGiftSheet.messageEdit);
+            sendGiftSheet.dismiss();
+            BulletinFactory parentBulletinFactory = sendGiftSheet.getParentBulletinFactory();
+            if (parentBulletinFactory == null || (starGift = sendGiftSheet.starGift) == null || !starGift.limited_per_user) {
                 return;
             }
-            parentBulletinFactory.createSimpleMultiBulletin(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", this.starGift.per_user_total))).show();
+            parentBulletinFactory.createSimpleMultiBulletin(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", sendGiftSheet.starGift.per_user_total))).show();
             return;
         }
-        this.button.setLoading(false);
+        sendGiftSheet.button.setLoading(false);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -945,7 +951,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 StarsController.getInstance(this.currentAccount).buyPremiumGift(this.dialogId, tL_premiumGiftCodeOption, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda7
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj3, Object obj4) {
-                        SendGiftSheet.this.lambda$buyPremiumTier$4(user, (Boolean) obj3, (String) obj4);
+                        SendGiftSheet.$r8$lambda$SfLDjl3sTg_yGhizxJ1u2phdFys(SendGiftSheet.this, user, (Boolean) obj3, (String) obj4);
                     }
                 });
                 return;
@@ -967,12 +973,12 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj3) {
-                        SendGiftSheet.this.lambda$buyPremiumTier$6(user, (Void) obj3);
+                        SendGiftSheet.$r8$lambda$CYKjo1KJEEi00nS4T5VNCf8d6VY(SendGiftSheet.this, user, (Void) obj3);
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda9
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj3) {
-                        SendGiftSheet.this.lambda$buyPremiumTier$7((TLRPC.TL_error) obj3);
+                        BoostDialogs.showToastError(SendGiftSheet.this.getContext(), (TLRPC.TL_error) obj3);
                     }
                 });
                 return;
@@ -984,7 +990,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 StarsController.getInstance(this.currentAccount).buyPremiumGift(this.dialogId, tL_premiumGiftOption, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda10
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj3, Object obj4) {
-                        SendGiftSheet.this.lambda$buyPremiumTier$9(user, (Boolean) obj3, (String) obj4);
+                        SendGiftSheet.$r8$lambda$NpB2L-uAlPg-lvYe1t0TPOkAOsE(SendGiftSheet.this, user, (Boolean) obj3, (String) obj4);
                     }
                 });
                 return;
@@ -1000,13 +1006,13 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                             launchActivity.setNavigateToPremiumGiftCallback(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda11
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    SendGiftSheet.this.lambda$buyPremiumTier$10();
+                                    SendGiftSheet.this.onGiftSuccess(false);
                                 }
                             });
                         }
                     }
                     Browser.openUrl(launchActivity, this.premiumTier.giftOption.bot_url);
-                    lambda$new$0();
+                    dismiss();
                     return;
                 }
                 return;
@@ -1021,7 +1027,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             BillingController.getInstance().addResultListener(this.premiumTier.giftOption.store_product, new Consumer() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda12
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj3) {
-                    SendGiftSheet.this.lambda$buyPremiumTier$12((BillingResult) obj3);
+                    SendGiftSheet.$r8$lambda$CqHN52cAUO2LkQlZAyc2gtKKXkg(SendGiftSheet.this, (BillingResult) obj3);
                 }
             });
             final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
@@ -1029,146 +1035,121 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda13
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SendGiftSheet.this.lambda$buyPremiumTier$14(tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, tLObject, tL_error);
+                    SendGiftSheet.$r8$lambda$XVcEqs8yap_IzEFK0np8Rbyym2w(SendGiftSheet.this, tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, tLObject, tL_error);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$4(final TLRPC.User user, Boolean bool, String str) {
+    public static /* synthetic */ void $r8$lambda$SfLDjl3sTg_yGhizxJ1u2phdFys(SendGiftSheet sendGiftSheet, final TLRPC.User user, Boolean bool, String str) {
+        sendGiftSheet.getClass();
         if (bool.booleanValue()) {
-            Runnable runnable = this.closeParentSheet;
+            Runnable runnable = sendGiftSheet.closeParentSheet;
             if (runnable != null) {
                 runnable.run();
             }
-            AndroidUtilities.hideKeyboard(this.messageEdit);
-            lambda$new$0();
+            AndroidUtilities.hideKeyboard(sendGiftSheet.messageEdit);
+            sendGiftSheet.dismiss();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendGiftSheet.lambda$buyPremiumTier$3(TLRPC.User.this);
+                    PremiumPreviewGiftSentBottomSheet.show(new ArrayList(Arrays.asList(TLRPC.User.this)));
                 }
             }, 250L);
         } else if (!TextUtils.isEmpty(str)) {
-            BulletinFactory.of(this.topBulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str)).show();
+            BulletinFactory.of(sendGiftSheet.topBulletinContainer, sendGiftSheet.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str)).show();
         }
-        this.button.setLoading(false);
+        sendGiftSheet.button.setLoading(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$buyPremiumTier$3(TLRPC.User user) {
-        PremiumPreviewGiftSentBottomSheet.show(new ArrayList(Arrays.asList(user)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$6(final TLRPC.User user, Void r6) {
-        Runnable runnable = this.closeParentSheet;
+    public static /* synthetic */ void $r8$lambda$CYKjo1KJEEi00nS4T5VNCf8d6VY(SendGiftSheet sendGiftSheet, final TLRPC.User user, Void r6) {
+        Runnable runnable = sendGiftSheet.closeParentSheet;
         if (runnable != null) {
             runnable.run();
         }
-        lambda$new$0();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.giftsToUserSent, new Object[0]);
+        sendGiftSheet.dismiss();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationName(NotificationCenter.giftsToUserSent, new Object[0]);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                SendGiftSheet.lambda$buyPremiumTier$5(TLRPC.User.this);
+                PremiumPreviewGiftSentBottomSheet.show(new ArrayList(Arrays.asList(TLRPC.User.this)));
             }
         }, 250L);
-        MessagesController.getInstance(this.currentAccount).getMainSettings().edit().putBoolean("show_gift_for_" + this.dialogId, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + this.dialogId, true).apply();
+        MessagesController.getInstance(sendGiftSheet.currentAccount).getMainSettings().edit().putBoolean("show_gift_for_" + sendGiftSheet.dialogId, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + sendGiftSheet.dialogId, true).apply();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$buyPremiumTier$5(TLRPC.User user) {
-        PremiumPreviewGiftSentBottomSheet.show(new ArrayList(Arrays.asList(user)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$7(TLRPC.TL_error tL_error) {
-        BoostDialogs.showToastError(getContext(), tL_error);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$9(final TLRPC.User user, Boolean bool, String str) {
+    public static /* synthetic */ void $r8$lambda$NpB2L-uAlPg-lvYe1t0TPOkAOsE(SendGiftSheet sendGiftSheet, final TLRPC.User user, Boolean bool, String str) {
+        sendGiftSheet.getClass();
         if (bool.booleanValue()) {
-            Runnable runnable = this.closeParentSheet;
+            Runnable runnable = sendGiftSheet.closeParentSheet;
             if (runnable != null) {
                 runnable.run();
             }
-            AndroidUtilities.hideKeyboard(this.messageEdit);
-            lambda$new$0();
+            AndroidUtilities.hideKeyboard(sendGiftSheet.messageEdit);
+            sendGiftSheet.dismiss();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendGiftSheet.lambda$buyPremiumTier$8(TLRPC.User.this);
+                    PremiumPreviewGiftSentBottomSheet.show(new ArrayList(Arrays.asList(TLRPC.User.this)));
                 }
             }, 250L);
         } else if (!TextUtils.isEmpty(str)) {
-            BulletinFactory.of(this.topBulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str)).show();
+            BulletinFactory.of(sendGiftSheet.topBulletinContainer, sendGiftSheet.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str)).show();
         }
-        this.button.setLoading(false);
+        sendGiftSheet.button.setLoading(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$buyPremiumTier$8(TLRPC.User user) {
-        PremiumPreviewGiftSentBottomSheet.show(new ArrayList(Arrays.asList(user)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$10() {
-        onGiftSuccess(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$12(BillingResult billingResult) {
+    public static /* synthetic */ void $r8$lambda$CqHN52cAUO2LkQlZAyc2gtKKXkg(final SendGiftSheet sendGiftSheet, BillingResult billingResult) {
+        sendGiftSheet.getClass();
         if (billingResult.getResponseCode() == 0) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda19
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendGiftSheet.this.lambda$buyPremiumTier$11();
+                    SendGiftSheet.this.onGiftSuccess(true);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$11() {
-        onGiftSuccess(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$14(final TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$XVcEqs8yap_IzEFK0np8Rbyym2w(final SendGiftSheet sendGiftSheet, final TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        sendGiftSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                SendGiftSheet.this.lambda$buyPremiumTier$13(tLObject, tL_inputStorePaymentGiftPremium, tL_error, tL_payments_canPurchaseStore);
+                SendGiftSheet.$r8$lambda$xLVeke1px54zpWH2PDu-FOP9QBY(SendGiftSheet.this, tLObject, tL_inputStorePaymentGiftPremium, tL_error, tL_payments_canPurchaseStore);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$buyPremiumTier$13(TLObject tLObject, TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public static /* synthetic */ void $r8$lambda$xLVeke1px54zpWH2PDu-FOP9QBY(SendGiftSheet sendGiftSheet, TLObject tLObject, TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+        sendGiftSheet.getClass();
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            BillingController.getInstance().launchBillingFlow(getBaseFragment().getParentActivity(), AccountInstance.getInstance(this.currentAccount), tL_inputStorePaymentGiftPremium, Collections.singletonList(BillingFlowParams.ProductDetailsParams.newBuilder().setProductDetails(this.premiumTier.googlePlayProductDetails).build()));
+            BillingController.getInstance().launchBillingFlow(sendGiftSheet.getBaseFragment().getParentActivity(), AccountInstance.getInstance(sendGiftSheet.currentAccount), tL_inputStorePaymentGiftPremium, Collections.singletonList(BillingFlowParams.ProductDetailsParams.newBuilder().setProductDetails(sendGiftSheet.premiumTier.googlePlayProductDetails).build()));
         } else if (tL_error != null) {
-            AlertsCreator.processError(this.currentAccount, tL_error, getBaseFragment(), tL_payments_canPurchaseStore, new Object[0]);
+            AlertsCreator.processError(sendGiftSheet.currentAccount, tL_error, sendGiftSheet.getBaseFragment(), tL_payments_canPurchaseStore, new Object[0]);
         }
     }
 
-    private void onGiftSuccess(boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onGiftSuccess(boolean z) {
+        int i = 0;
         TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.dialogId);
         TLObject userOrChat = MessagesController.getInstance(this.currentAccount).getUserOrChat(this.dialogId);
         if (userFull != null && (userOrChat instanceof TLRPC.User)) {
             TLRPC.User user = (TLRPC.User) userOrChat;
             user.premium = true;
             MessagesController.getInstance(this.currentAccount).putUser(user, true);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(user.id), userFull);
+            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(user.id), userFull);
         }
         if (getBaseFragment() != null) {
-            ArrayList<BaseFragment> arrayList = new ArrayList(((LaunchActivity) getBaseFragment().getParentActivity()).getActionBarLayout().getFragmentStack());
+            ArrayList arrayList = new ArrayList(((LaunchActivity) getBaseFragment().getParentActivity()).getActionBarLayout().getFragmentStack());
             INavigationLayout parentLayout = getBaseFragment().getParentLayout();
+            int size = arrayList.size();
             ChatActivity chatActivity = null;
-            for (BaseFragment baseFragment : arrayList) {
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                BaseFragment baseFragment = (BaseFragment) obj;
                 if (baseFragment instanceof ChatActivity) {
                     chatActivity = (ChatActivity) baseFragment;
                     if (chatActivity.getDialogId() != this.dialogId) {
@@ -1188,7 +1169,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 parentLayout.presentFragment(new ChatActivity(bundle), true);
             }
         }
-        lambda$new$0();
+        dismiss();
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -1242,7 +1223,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                     replaceArrows = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(formatString2, new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda3
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendGiftSheet.this.lambda$fillItems$15();
+                            new StarGiftSheet(r0.getContext(), r0.currentAccount, r0.dialogId, r0.resourcesProvider).openAsLearnMore(r0.starGift.id, SendGiftSheet.this.name);
                         }
                     }), true);
                 }
@@ -1263,7 +1244,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                     CharSequence replaceArrows2 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("Gift2AuctionInfoLearnMore2", i2, Integer.valueOf(i2)), new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendGiftSheet.this.lambda$fillItems$16();
+                            AuctionJoinSheet.showMoreInfo(r0.getContext(), r0.resourcesProvider, SendGiftSheet.this.starGift);
                         }
                     }), true);
                     arrayList.add(UItem.asCustom(-43, this.limitContainerWrapper));
@@ -1286,7 +1267,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 arrayList.add(UItem.asShadow(-7, TextUtils.concat(StarsIntroActivity.replaceStarsWithPlain(LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SendGiftSheet.this.lambda$fillItems$17();
+                        new StarsIntroActivity.StarsOptionsSheet(r0.getContext(), SendGiftSheet.this.resourcesProvider).show();
                     }
                 }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
             }
@@ -1294,21 +1275,6 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
         if (this.reverseLayout) {
             Collections.reverse(arrayList);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$15() {
-        new StarGiftSheet(getContext(), this.currentAccount, this.dialogId, this.resourcesProvider).openAsLearnMore(this.starGift.id, this.name);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$16() {
-        AuctionJoinSheet.showMoreInfo(getContext(), this.resourcesProvider, this.starGift);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$17() {
-        new StarsIntroActivity.StarsOptionsSheet(getContext(), this.resourcesProvider).show();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -1321,8 +1287,7 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         if (this.messageEdit.editTextEmoji.getEmojiPadding() > 0) {
             this.messageEdit.editTextEmoji.hidePopup(true);
             return;
@@ -1339,18 +1304,17 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
             GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromGiftAuction(this.auction.giftId, this);
         }
         this.isDismissed = true;
-        super.lambda$new$0();
+        super.dismiss();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void onBackPressed() {
         if (this.messageEdit.editTextEmoji.getEmojiPadding() > 0) {
             this.messageEdit.editTextEmoji.hidePopup(true);
         } else if (this.messageEdit.editTextEmoji.isKeyboardVisible()) {
             this.messageEdit.editTextEmoji.closeKeyboard();
         } else {
-            super.lambda$openCrafting$8();
+            super.onBackPressed();
         }
     }
 }

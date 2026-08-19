@@ -83,7 +83,10 @@ public final class SonicAudioProcessor implements AudioProcessor {
 
     @Override // com.google.android.exoplayer2.audio.AudioProcessor
     public boolean isActive() {
-        return this.pendingOutputAudioFormat.sampleRate != -1 && (Math.abs(this.speed - 1.0f) >= 1.0E-4f || Math.abs(this.pitch - 1.0f) >= 1.0E-4f || this.pendingOutputAudioFormat.sampleRate != this.pendingInputAudioFormat.sampleRate);
+        if (this.pendingOutputAudioFormat.sampleRate != -1) {
+            return Math.abs(this.speed - 1.0f) >= 1.0E-4f || Math.abs(this.pitch - 1.0f) >= 1.0E-4f || this.pendingOutputAudioFormat.sampleRate != this.pendingInputAudioFormat.sampleRate;
+        }
+        return false;
     }
 
     @Override // com.google.android.exoplayer2.audio.AudioProcessor
@@ -132,8 +135,11 @@ public final class SonicAudioProcessor implements AudioProcessor {
 
     @Override // com.google.android.exoplayer2.audio.AudioProcessor
     public boolean isEnded() {
-        Sonic sonic;
-        return this.inputEnded && ((sonic = this.sonic) == null || sonic.getOutputSize() == 0);
+        if (!this.inputEnded) {
+            return false;
+        }
+        Sonic sonic = this.sonic;
+        return sonic == null || sonic.getOutputSize() == 0;
     }
 
     @Override // com.google.android.exoplayer2.audio.AudioProcessor

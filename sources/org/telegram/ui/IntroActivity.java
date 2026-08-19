@@ -27,6 +27,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import androidx.core.graphics.ColorUtils;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -165,7 +166,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                IntroActivity.this.lambda$createView$0(rLottieImageView, view);
+                IntroActivity.$r8$lambda$2ENXQXFPJCcjNwHoyGaFKZJtL34(IntroActivity.this, rLottieImageView, view);
             }
         });
         FrameLayout frameLayout3 = new FrameLayout(context);
@@ -268,7 +269,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         this.startMessagingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                IntroActivity.this.lambda$createView$1(view);
+                IntroActivity.$r8$lambda$wAg5VLWJcoV24PlyjEdqX7swqBs(IntroActivity.this, view);
             }
         });
         BottomPagesView bottomPagesView = new BottomPagesView(context, this.viewPager, 6);
@@ -282,7 +283,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         this.switchLanguageTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                IntroActivity.this.lambda$createView$2(view);
+                IntroActivity.$r8$lambda$_-ElmO9SCTF2Y_G_CIMzrlIbXOo(IntroActivity.this, view);
             }
         });
         float f = 4;
@@ -298,9 +299,9 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(RLottieImageView rLottieImageView, View view) {
+    public static /* synthetic */ void $r8$lambda$2ENXQXFPJCcjNwHoyGaFKZJtL34(IntroActivity introActivity, RLottieImageView rLottieImageView, View view) {
         Theme.ThemeInfo theme;
+        introActivity.getClass();
         if (DialogsActivity.switchingTheme) {
             return;
         }
@@ -315,14 +316,14 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         Theme.selectedAutoNightType = 0;
         Theme.saveAutoNightThemeConfig();
         Theme.cancelAutoNightThemeCallbacks();
-        RLottieDrawable rLottieDrawable = this.darkThemeDrawable;
+        RLottieDrawable rLottieDrawable = introActivity.darkThemeDrawable;
         rLottieDrawable.setCustomEndFrame(!isCurrentThemeDark ? rLottieDrawable.getFramesCount() - 1 : 0);
         rLottieImageView.playAnimation();
         int[] iArr = new int[2];
         rLottieImageView.getLocationInWindow(iArr);
         iArr[0] = iArr[0] + (rLottieImageView.getMeasuredWidth() / 2);
         iArr[1] = iArr[1] + (rLottieImageView.getMeasuredHeight() / 2);
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, theme, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), rLottieImageView);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needSetDayNightTheme, theme, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), rLottieImageView);
         rLottieImageView.setContentDescription(LocaleController.getString(!isCurrentThemeDark ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
     }
 
@@ -344,14 +345,14 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             IntroActivity.this.eglThread.postRunnable(new Runnable() { // from class: org.telegram.ui.IntroActivity$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    IntroActivity.2.this.lambda$onSurfaceTextureAvailable$0();
+                    IntroActivity.2.$r8$lambda$lW0gbtrZmtREdW9deffKfu77fhI(IntroActivity.2.this);
                 }
             });
             IntroActivity.this.eglThread.postRunnable(IntroActivity.this.eglThread.drawRunnable);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSurfaceTextureAvailable$0() {
+        public static /* synthetic */ void $r8$lambda$lW0gbtrZmtREdW9deffKfu77fhI(2 r4) {
+            r4.getClass();
             Intro.setPage(IntroActivity.this.currentViewPagerPage);
             Intro.setDate((System.currentTimeMillis() - IntroActivity.this.currentDate) / 1000.0f);
             Intro.onDrawFrame(0);
@@ -382,27 +383,25 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view) {
-        if (this.startPressed) {
+    public static /* synthetic */ void $r8$lambda$wAg5VLWJcoV24PlyjEdqX7swqBs(IntroActivity introActivity, View view) {
+        if (introActivity.startPressed) {
             return;
         }
-        this.startPressed = true;
-        presentFragment(new LoginActivity().setIntroView(this.frameContainerView, this.startMessagingButton), true);
-        this.destroyed = true;
+        introActivity.startPressed = true;
+        introActivity.presentFragment(new LoginActivity().setIntroView(introActivity.frameContainerView, introActivity.startMessagingButton), true);
+        introActivity.destroyed = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(View view) {
-        if (this.startPressed || this.localeInfo == null) {
+    public static /* synthetic */ void $r8$lambda$_-ElmO9SCTF2Y_G_CIMzrlIbXOo(IntroActivity introActivity, View view) {
+        if (introActivity.startPressed || introActivity.localeInfo == null) {
             return;
         }
-        this.startPressed = true;
+        introActivity.startPressed = true;
         AlertDialog alertDialog = new AlertDialog(view.getContext(), 3);
         alertDialog.setCanCancel(false);
         alertDialog.showDelayed(1000L);
-        NotificationCenter.getGlobalInstance().addObserver(new 5(alertDialog), NotificationCenter.reloadInterface);
-        LocaleController.getInstance().applyLanguage(this.localeInfo, true, false, this.currentAccount);
+        NotificationCenter.getGlobalInstance().addObserver(introActivity.new 5(alertDialog), NotificationCenter.reloadInterface);
+        LocaleController.getInstance().applyLanguage(introActivity.localeInfo, true, false, introActivity.currentAccount);
     }
 
     class 5 implements NotificationCenter.NotificationCenterDelegate {
@@ -420,14 +419,13 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.IntroActivity$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        IntroActivity.5.this.lambda$didReceivedNotification$0();
+                        IntroActivity.5.$r8$lambda$xL6vpq53Lm6Tvke2vYRX2m51uis(IntroActivity.5.this);
                     }
                 }, 100L);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didReceivedNotification$0() {
+        public static /* synthetic */ void $r8$lambda$xL6vpq53Lm6Tvke2vYRX2m51uis(5 r4) {
             IntroActivity.this.presentFragment(new LoginActivity().setIntroView(IntroActivity.this.frameContainerView, IntroActivity.this.startMessagingButton), true);
             IntroActivity.this.destroyed = true;
         }
@@ -501,13 +499,13 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_langpack_getStrings, new RequestDelegate() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                IntroActivity.this.lambda$checkContinueText$4(str, tLObject, tL_error);
+                IntroActivity.$r8$lambda$95lC4Ljjm2wYCHDdrDgtk1BURrc(IntroActivity.this, str, tLObject, tL_error);
             }
         }, 8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkContinueText$4(final String str, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$95lC4Ljjm2wYCHDdrDgtk1BURrc(final IntroActivity introActivity, final String str, TLObject tLObject, TLRPC.TL_error tL_error) {
+        introActivity.getClass();
         if (tLObject instanceof Vector) {
             Vector vector = (Vector) tLObject;
             if (vector.objects.isEmpty()) {
@@ -518,19 +516,18 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        IntroActivity.this.lambda$checkContinueText$3(langPackString, str);
+                        IntroActivity.$r8$lambda$coNgkOBWdJB24qadrKfAh79JjAc(IntroActivity.this, langPackString, str);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkContinueText$3(TLRPC.LangPackString langPackString, String str) {
-        if (this.destroyed) {
+    public static /* synthetic */ void $r8$lambda$coNgkOBWdJB24qadrKfAh79JjAc(IntroActivity introActivity, TLRPC.LangPackString langPackString, String str) {
+        if (introActivity.destroyed) {
             return;
         }
-        this.switchLanguageTextView.setText(langPackString.value);
+        introActivity.switchLanguageTextView.setText(langPackString.value);
         MessagesController.getGlobalMainSettings().edit().putString("language_showed2", str.toLowerCase()).apply();
     }
 
@@ -642,8 +639,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         private final GenericProvider telegramMaskProvider;
         private final int[] textures;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ Bitmap lambda$new$0(Void r6) {
+        public static /* synthetic */ Bitmap $r8$lambda$7LXCaMmSl-_zxBSp3pQPev_oFIc(Void r6) {
             int dp = AndroidUtilities.dp(150.0f);
             Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(200.0f), dp, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
@@ -660,9 +656,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             this.telegramMaskProvider = new GenericProvider() { // from class: org.telegram.ui.IntroActivity$EGLThread$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.GenericProvider
                 public final Object provide(Object obj) {
-                    Bitmap lambda$new$0;
-                    lambda$new$0 = IntroActivity.EGLThread.lambda$new$0((Void) obj);
-                    return lambda$new$0;
+                    return IntroActivity.EGLThread.$r8$lambda$7LXCaMmSl-_zxBSp3pQPev_oFIc((Void) obj);
                 }
             };
             this.drawRunnable = new Runnable() { // from class: org.telegram.ui.IntroActivity.EGLThread.1
@@ -747,7 +741,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                     return false;
                 }
                 SurfaceTexture surfaceTexture = this.surfaceTexture;
-                if (surfaceTexture instanceof SurfaceTexture) {
+                if (OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(surfaceTexture)) {
                     EGLSurface eglCreateWindowSurface = this.egl10.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, surfaceTexture, null);
                     this.eglSurface = eglCreateWindowSurface;
                     if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
@@ -790,9 +784,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                     loadTexture(new GenericProvider() { // from class: org.telegram.ui.IntroActivity$EGLThread$$ExternalSyntheticLambda2
                         @Override // org.telegram.messenger.GenericProvider
                         public final Object provide(Object obj) {
-                            Bitmap lambda$initGL$1;
-                            lambda$initGL$1 = IntroActivity.EGLThread.lambda$initGL$1((Void) obj);
-                            return lambda$initGL$1;
+                            return IntroActivity.EGLThread.$r8$lambda$foVV6ESqdPYksTpmJ2qe1lzbeC4((Void) obj);
                         }
                     }, 22);
                     loadTexture(this.telegramMaskProvider, 23);
@@ -820,8 +812,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             return false;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ Bitmap lambda$initGL$1(Void r4) {
+        public static /* synthetic */ Bitmap $r8$lambda$foVV6ESqdPYksTpmJ2qe1lzbeC4(Void r4) {
             Paint paint = new Paint(1);
             paint.setColor(-14509328);
             int dp = AndroidUtilities.dp(150.0f);
@@ -918,14 +909,13 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             postRunnable(new Runnable() { // from class: org.telegram.ui.IntroActivity$EGLThread$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    IntroActivity.EGLThread.this.lambda$shutdown$2();
+                    IntroActivity.EGLThread.$r8$lambda$Lcd-Jc3TAXcftAtQwqQ4ZW4Hns0(IntroActivity.EGLThread.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$shutdown$2() {
-            finish();
+        public static /* synthetic */ void $r8$lambda$Lcd-Jc3TAXcftAtQwqQ4ZW4Hns0(EGLThread eGLThread) {
+            eGLThread.finish();
             Looper myLooper = Looper.myLooper();
             if (myLooper != null) {
                 myLooper.quit();
@@ -943,17 +933,12 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$5() {
-        updateColors(true);
-    }
-
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         return SimpleThemeDescription.createThemeDescriptions(new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                IntroActivity.this.lambda$getThemeDescriptions$5();
+                IntroActivity.this.updateColors(true);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -963,7 +948,8 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         }, Theme.key_windowBackgroundWhite, Theme.key_windowBackgroundWhiteBlueText4, Theme.key_chats_actionBackground, Theme.key_chats_actionPressedBackground, Theme.key_featuredStickers_buttonText, Theme.key_windowBackgroundWhiteBlackText);
     }
 
-    private void updateColors(boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateColors(boolean z) {
         GradientDrawable gradientDrawable = this.startMessagingButtonBackground;
         int i = Theme.key_featuredStickers_addButton;
         gradientDrawable.setColors(new int[]{getThemedColor(i), getThemedColor(Theme.key_featuredStickers_addButton2)});
@@ -982,7 +968,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 eGLThread.postRunnable(new Runnable() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        IntroActivity.this.lambda$updateColors$6();
+                        IntroActivity.$r8$lambda$4LU_vfFsDQgjbkl1glfciARiHgU(IntroActivity.this);
                     }
                 });
             }
@@ -998,16 +984,15 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         Intro.setBackgroundColor(Theme.getColor(i2));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateColors$6() {
-        EGLThread eGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$4LU_vfFsDQgjbkl1glfciARiHgU(IntroActivity introActivity) {
+        EGLThread eGLThread = introActivity.eglThread;
         int i = R.drawable.intro_powerful_mask;
         int i2 = Theme.key_windowBackgroundWhite;
         eGLThread.loadTexture(i, 17, Theme.getColor(i2), true);
-        this.eglThread.updatePowerfulTextures();
-        EGLThread eGLThread2 = this.eglThread;
+        introActivity.eglThread.updatePowerfulTextures();
+        EGLThread eGLThread2 = introActivity.eglThread;
         eGLThread2.loadTexture(eGLThread2.telegramMaskProvider, 23, true);
-        this.eglThread.updateTelegramTextures();
+        introActivity.eglThread.updateTelegramTextures();
         Intro.setBackgroundColor(Theme.getColor(i2));
     }
 

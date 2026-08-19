@@ -44,9 +44,10 @@ public final class SavedStateRegistry {
             bundle3.remove(key);
         }
         Bundle bundle4 = this.restoredState;
-        if (bundle4 == null || bundle4.isEmpty()) {
-            this.restoredState = null;
+        if (bundle4 != null && !bundle4.isEmpty()) {
+            return bundle2;
         }
+        this.restoredState = null;
         return bundle2;
     }
 

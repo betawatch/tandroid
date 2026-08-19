@@ -1,29 +1,31 @@
 package j$.sun.misc;
 
+import j$.util.concurrent.l;
+import j$.util.concurrent.q;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import sun.misc.Unsafe;
 
 /* loaded from: classes2.dex */
 public final class a {
-    private static final a b;
-    private final Unsafe a;
+    public static final a b;
+    public final Unsafe a;
 
     static {
-        Field i = i();
-        i.setAccessible(true);
+        Field g = g();
+        g.setAccessible(true);
         try {
-            b = new a((Unsafe) i.get(null));
+            b = new a((Unsafe) g.get(null));
         } catch (IllegalAccessException e) {
             throw new AssertionError("Couldn't get the Unsafe", e);
         }
     }
 
-    a(Unsafe unsafe) {
+    public a(Unsafe unsafe) {
         this.a = unsafe;
     }
 
-    private static Field i() {
+    public static Field g() {
         try {
             return Unsafe.class.getDeclaredField("theUnsafe");
         } catch (NoSuchFieldException e) {
@@ -36,44 +38,45 @@ public final class a {
         }
     }
 
-    public static a h() {
-        return b;
+    public final int e(q qVar, long j) {
+        while (true) {
+            int intVolatile = this.a.getIntVolatile(qVar, j);
+            q qVar2 = qVar;
+            long j2 = j;
+            if (this.a.compareAndSwapInt(qVar2, j2, intVolatile, intVolatile - 4)) {
+                return intVolatile;
+            }
+            qVar = qVar2;
+            j = j2;
+        }
     }
 
-    public final int f(Object obj, long j) {
-        int intVolatile;
-        do {
-            intVolatile = this.a.getIntVolatile(obj, j);
-        } while (!this.a.compareAndSwapInt(obj, j, intVolatile, intVolatile - 4));
-        return intVolatile;
-    }
-
-    public final long k(Field field) {
+    public final long i(Field field) {
         return this.a.objectFieldOffset(field);
     }
 
-    public final long j(Class cls, String str) {
+    public final long h(Class cls, String str) {
         try {
-            return k(cls.getDeclaredField(str));
+            return i(cls.getDeclaredField(str));
         } catch (NoSuchFieldException e) {
             throw new AssertionError("Cannot find field:", e);
         }
     }
 
-    public final int a(Class cls) {
-        return this.a.arrayBaseOffset(cls);
+    public final int a() {
+        return this.a.arrayBaseOffset(l[].class);
     }
 
-    public final int b(Class cls) {
-        return this.a.arrayIndexScale(cls);
+    public final int b() {
+        return this.a.arrayIndexScale(l[].class);
     }
 
-    public final Object g(Object obj, long j) {
+    public final Object f(Object obj, long j) {
         return this.a.getObjectVolatile(obj, j);
     }
 
-    public final void l(Object obj, long j, Object obj2) {
-        this.a.putObjectVolatile(obj, j, obj2);
+    public final void j(Object obj, long j, l lVar) {
+        this.a.putObjectVolatile(obj, j, lVar);
     }
 
     public final boolean c(Object obj, long j, int i, int i2) {
@@ -82,9 +85,5 @@ public final class a {
 
     public final boolean d(Object obj, long j, long j2, long j3) {
         return this.a.compareAndSwapLong(obj, j, j2, j3);
-    }
-
-    public final boolean e(Object obj, long j, Object obj2) {
-        return j$.com.android.tools.r8.a.i(this.a, obj, j, obj2);
     }
 }

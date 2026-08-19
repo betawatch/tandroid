@@ -266,9 +266,9 @@ class DropDownListView extends ListView {
                 }
                 updateSelectorStateCompat();
             }
-        } else {
-            setSelection(-1);
+            return onHoverEvent;
         }
+        setSelection(-1);
         return onHoverEvent;
     }
 
@@ -302,38 +302,37 @@ class DropDownListView extends ListView {
             int x = (int) motionEvent.getX(findPointerIndex);
             int y = (int) motionEvent.getY(findPointerIndex);
             int pointToPosition = pointToPosition(x, y);
-            if (pointToPosition != -1) {
-                View childAt = getChildAt(pointToPosition - getFirstVisiblePosition());
-                setPressedItem(childAt, pointToPosition, x, y);
-                if (actionMasked == 1) {
-                    clickPressedItem(childAt, pointToPosition);
+            if (pointToPosition == -1) {
+                z2 = true;
+                if (z || z2) {
+                    clearPressedItem();
                 }
-                z2 = false;
-                z = true;
                 if (z) {
+                    if (this.mScrollHelper == null) {
+                        this.mScrollHelper = new ListViewAutoScrollHelper(this);
+                    }
+                    this.mScrollHelper.setEnabled(true);
+                    this.mScrollHelper.onTouch(this, motionEvent);
+                    return z;
                 }
-                clearPressedItem();
-                if (z) {
-                }
-                return z;
-            }
-            z2 = true;
-            if (z || z2) {
-                clearPressedItem();
-            }
-            if (z) {
-                if (this.mScrollHelper == null) {
-                    this.mScrollHelper = new ListViewAutoScrollHelper(this);
-                }
-                this.mScrollHelper.setEnabled(true);
-                this.mScrollHelper.onTouch(this, motionEvent);
-            } else {
                 ListViewAutoScrollHelper listViewAutoScrollHelper = this.mScrollHelper;
                 if (listViewAutoScrollHelper != null) {
                     listViewAutoScrollHelper.setEnabled(false);
                 }
+                return z;
             }
-            return z;
+            View childAt = getChildAt(pointToPosition - getFirstVisiblePosition());
+            setPressedItem(childAt, pointToPosition, x, y);
+            if (actionMasked == 1) {
+                clickPressedItem(childAt, pointToPosition);
+            }
+            z2 = false;
+            z = true;
+            if (z) {
+            }
+            clearPressedItem();
+            if (z) {
+            }
         }
         z2 = false;
         z = false;
@@ -342,7 +341,6 @@ class DropDownListView extends ListView {
         clearPressedItem();
         if (z) {
         }
-        return z;
     }
 
     private void clickPressedItem(View view, int i) {

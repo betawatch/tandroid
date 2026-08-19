@@ -56,6 +56,7 @@ public abstract class IntMath {
         }
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static int divide(int i, int i2, RoundingMode roundingMode) {
         Preconditions.checkNotNull(roundingMode);
         if (i2 == 0) {
@@ -77,14 +78,14 @@ public abstract class IntMath {
                 if (i5 >= 0) {
                     return i3;
                 }
-                break;
+                return i3 + i5;
             case 4:
-                break;
+                return i3 + i5;
             case 5:
                 if (i5 <= 0) {
                     return i3;
                 }
-                break;
+                return i3 + i5;
             case 6:
             case 7:
             case 8:
@@ -99,10 +100,9 @@ public abstract class IntMath {
                 } else if (abs2 <= 0) {
                     return i3;
                 }
-                break;
+                return i3 + i5;
             default:
                 throw new AssertionError();
         }
-        return i3 + i5;
     }
 }

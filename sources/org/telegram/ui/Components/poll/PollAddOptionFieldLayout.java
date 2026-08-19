@@ -33,7 +33,6 @@ import org.telegram.ui.Components.EditTextCaption;
 import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.poll.PollAddOptionFieldLayout;
 
 /* loaded from: classes5.dex */
 public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
@@ -128,7 +127,12 @@ public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObs
         pollAttachButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PollAddOptionFieldLayout.this.lambda$new$2(baseFragment, view);
+                ChatAttachAlertPollLayout.openPollAttachMenu(baseFragment, ChatAttachAlertPollLayout.getStartLayoutForMedia(r0.attachedMedia), ChatAttachAlertPollLayout.getAllowedLayoutsForIndex(0), new Utilities.Callback() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$$ExternalSyntheticLambda3
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj) {
+                        PollAddOptionFieldLayout.$r8$lambda$o9TNAw2RJNmvjEeLYoKixYDc_eA(PollAddOptionFieldLayout.this, (PollAttachedMedia) obj);
+                    }
+                }, null);
             }
         });
         ScaleStateListAnimator.apply(pollAttachButton);
@@ -172,14 +176,9 @@ public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObs
             postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PollAddOptionFieldLayout.1.this.lambda$onSizeChanged$0();
+                    PollAddOptionFieldLayout.this.updateCell();
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSizeChanged$0() {
-            PollAddOptionFieldLayout.this.updateCell();
         }
 
         @Override // android.widget.TextView, android.view.View
@@ -190,31 +189,15 @@ public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObs
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(BaseFragment baseFragment, View view) {
-        ChatAttachAlertPollLayout.openPollAttachMenu(baseFragment, ChatAttachAlertPollLayout.getStartLayoutForMedia(this.attachedMedia), ChatAttachAlertPollLayout.getAllowedLayoutsForIndex(0), new Utilities.Callback() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$$ExternalSyntheticLambda3
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                PollAddOptionFieldLayout.this.lambda$new$1((PollAttachedMedia) obj);
-            }
-        }, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(PollAttachedMedia pollAttachedMedia) {
-        this.attachedMedia = pollAttachedMedia;
-        this.attachButton.setAttachedMedia(pollAttachedMedia, true);
+    public static /* synthetic */ void $r8$lambda$o9TNAw2RJNmvjEeLYoKixYDc_eA(final PollAddOptionFieldLayout pollAddOptionFieldLayout, PollAttachedMedia pollAttachedMedia) {
+        pollAddOptionFieldLayout.attachedMedia = pollAttachedMedia;
+        pollAddOptionFieldLayout.attachButton.setAttachedMedia(pollAttachedMedia, true);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PollAddOptionFieldLayout.this.lambda$new$0();
+                AndroidUtilities.showKeyboard(PollAddOptionFieldLayout.this.textView);
             }
         }, 200L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        AndroidUtilities.showKeyboard(this.textView);
     }
 
     public void drawInCell(Canvas canvas) {

@@ -41,13 +41,12 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         this.locationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener() { // from class: org.telegram.messenger.GoogleLocationProvider$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                GoogleLocationProvider.lambda$getLastLocation$0(Consumer.this, task);
+                GoogleLocationProvider.$r8$lambda$pg-imAzDDNnR94RGDhgpM2y3jLE(Consumer.this, task);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getLastLocation$0(Consumer consumer, Task task) {
+    public static /* synthetic */ void $r8$lambda$pg-imAzDDNnR94RGDhgpM2y3jLE(Consumer consumer, Task task) {
         if (task.getException() != null) {
             return;
         }
@@ -79,13 +78,12 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         this.settingsClient.checkLocationSettings(new LocationSettingsRequest.Builder().addLocationRequest(((GoogleLocationRequest) iLocationRequest).request).build()).addOnCompleteListener(new OnCompleteListener() { // from class: org.telegram.messenger.GoogleLocationProvider$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                GoogleLocationProvider.lambda$checkLocationSettings$1(Consumer.this, task);
+                GoogleLocationProvider.$r8$lambda$sOg18UH3CaGba6Zw0P6W33BoWok(Consumer.this, task);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkLocationSettings$1(Consumer consumer, Task task) {
+    public static /* synthetic */ void $r8$lambda$sOg18UH3CaGba6Zw0P6W33BoWok(Consumer consumer, Task task) {
         try {
             task.getResult(ApiException.class);
             consumer.accept(0);

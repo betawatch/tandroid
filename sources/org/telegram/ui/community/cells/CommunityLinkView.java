@@ -21,7 +21,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityLinkView extends FrameLayout implements Theme.Colorable {
     private final ImageView arrowView;
     public final BackupImageView avatarView;

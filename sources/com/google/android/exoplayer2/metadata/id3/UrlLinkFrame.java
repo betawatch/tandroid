@@ -36,11 +36,13 @@ public final class UrlLinkFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || UrlLinkFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && UrlLinkFrame.class == obj.getClass()) {
+            UrlLinkFrame urlLinkFrame = (UrlLinkFrame) obj;
+            if (this.id.equals(urlLinkFrame.id) && Util.areEqual(this.description, urlLinkFrame.description) && Util.areEqual(this.url, urlLinkFrame.url)) {
+                return true;
+            }
         }
-        UrlLinkFrame urlLinkFrame = (UrlLinkFrame) obj;
-        return this.id.equals(urlLinkFrame.id) && Util.areEqual(this.description, urlLinkFrame.description) && Util.areEqual(this.url, urlLinkFrame.url);
+        return false;
     }
 
     public int hashCode() {

@@ -38,17 +38,12 @@ public class PipSourceContentView extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dispatchDraw$0(Canvas canvas) {
-        super.dispatchDraw(canvas);
-    }
-
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         this.state.draw(canvas, new Utilities.Callback() { // from class: org.telegram.messenger.pip.PipSourceContentView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                PipSourceContentView.this.lambda$dispatchDraw$0((Canvas) obj);
+                super/*android.view.ViewGroup*/.dispatchDraw((Canvas) obj);
             }
         });
     }

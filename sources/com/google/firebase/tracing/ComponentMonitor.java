@@ -19,9 +19,7 @@ public class ComponentMonitor implements ComponentRegistrarProcessor {
                 component = component.withFactory(new ComponentFactory() { // from class: com.google.firebase.tracing.ComponentMonitor$$ExternalSyntheticLambda0
                     @Override // com.google.firebase.components.ComponentFactory
                     public final Object create(ComponentContainer componentContainer) {
-                        Object lambda$processRegistrar$0;
-                        lambda$processRegistrar$0 = ComponentMonitor.lambda$processRegistrar$0(name, component, componentContainer);
-                        return lambda$processRegistrar$0;
+                        return ComponentMonitor.$r8$lambda$VxUPTnF8OKnnbKKjQblzb1_PJuw(name, component, componentContainer);
                     }
                 });
             }
@@ -30,8 +28,7 @@ public class ComponentMonitor implements ComponentRegistrarProcessor {
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$processRegistrar$0(String str, Component component, ComponentContainer componentContainer) {
+    public static /* synthetic */ Object $r8$lambda$VxUPTnF8OKnnbKKjQblzb1_PJuw(String str, Component component, ComponentContainer componentContainer) {
         try {
             FirebaseTrace.pushTrace(str);
             return component.getFactory().create(componentContainer);

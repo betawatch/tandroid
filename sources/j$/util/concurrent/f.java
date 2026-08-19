@@ -1,14 +1,13 @@
 package j$.util.concurrent;
 
 import j$.util.Spliterator;
-import j$.util.T;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class f extends p implements Spliterator {
-    final ConcurrentHashMap i;
-    long j;
+public final class f extends p implements Spliterator {
+    public final ConcurrentHashMap i;
+    public long j;
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -17,12 +16,12 @@ final class f extends p implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return T.d(this);
+        return j$.com.android.tools.r8.a.n(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return T.e(this, i);
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -30,7 +29,7 @@ final class f extends p implements Spliterator {
         throw new IllegalStateException();
     }
 
-    f(l[] lVarArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
+    public f(l[] lVarArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
         super(lVarArr, i, i2, i3);
         this.i = concurrentHashMap;
         this.j = j;
@@ -59,7 +58,7 @@ final class f extends p implements Spliterator {
             if (a == null) {
                 return;
             } else {
-                consumer.accept(new k(a.b, a.c, this.i));
+                consumer.s(new k(a.b, a.c, this.i));
             }
         }
     }
@@ -71,7 +70,7 @@ final class f extends p implements Spliterator {
         if (a == null) {
             return false;
         }
-        consumer.accept(new k(a.b, a.c, this.i));
+        consumer.s(new k(a.b, a.c, this.i));
         return true;
     }
 

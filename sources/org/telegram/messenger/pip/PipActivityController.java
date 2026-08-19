@@ -25,60 +25,7 @@ public class PipActivityController {
 
     public PipActivityController(Activity activity) {
         this.activity = activity;
-        PipActivityHandler pipActivityHandler = new PipActivityHandler(activity);
-        this.handler = pipActivityHandler;
-        pipActivityHandler.addPipListener(new IPipActivityListener() { // from class: org.telegram.messenger.pip.PipActivityController.1
-            @Override // org.telegram.messenger.pip.activity.IPipActivityListener
-            public void onStartEnterToPip() {
-                Log.d("PIP_DEBUG", "onStartEnterToPip");
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityListener
-            public void onCompleteEnterToPip() {
-                Log.d("PIP_DEBUG", "onCompleteEnterToPip");
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityListener
-            public void onStartExitFromPip(boolean z) {
-                Log.d("PIP_DEBUG", "onStartExitFromPip: byActivityStop=" + z);
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityListener
-            public void onCompleteExitFromPip(boolean z) {
-                Log.d("PIP_DEBUG", "onCompleteExitFromPip: byActivityStop=" + z);
-            }
-        });
-        pipActivityHandler.addAnimationListener(new IPipActivityAnimationListener() { // from class: org.telegram.messenger.pip.PipActivityController.2
-            @Override // org.telegram.messenger.pip.activity.IPipActivityAnimationListener
-            public void onEnterAnimationStart(long j) {
-                Log.d("PIP_DEBUG", "onEnterAnimationStart: estimatedDuration=" + j);
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityAnimationListener
-            public void onEnterAnimationEnd(long j) {
-                Log.d("PIP_DEBUG", "onEnterAnimationEnd: duration=" + j);
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityAnimationListener
-            public void onLeaveAnimationStart(long j) {
-                Log.d("PIP_DEBUG", "onLeaveAnimationStart: estimatedDuration=" + j);
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityAnimationListener
-            public void onLeaveAnimationEnd(long j) {
-                Log.d("PIP_DEBUG", "onLeaveAnimationEnd: duration=" + j);
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityAnimationListener
-            public void onTransitionAnimationFrame() {
-                Log.d("PIP_DEBUG", "onTransitionAnimationFrame");
-            }
-
-            @Override // org.telegram.messenger.pip.activity.IPipActivityAnimationListener
-            public void onTransitionAnimationProgress(float f) {
-                Log.d("PIP_DEBUG", "onTransitionAnimationProgress: estimatedProgress=" + f);
-            }
-        });
+        this.handler = new PipActivityHandler(activity);
     }
 
     public IPipActivityHandler getHandler() {

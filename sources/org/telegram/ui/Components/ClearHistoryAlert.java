@@ -103,9 +103,9 @@ public class ClearHistoryAlert extends BottomSheet {
 
     /* JADX WARN: Removed duplicated region for block: B:19:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0432  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x043e  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02e0  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0433  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x043f  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02e2  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x00e1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -155,7 +155,7 @@ public class ClearHistoryAlert extends BottomSheet {
             @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && ClearHistoryAlert.this.scrollOffsetY != 0 && motionEvent.getY() < ClearHistoryAlert.this.scrollOffsetY) {
-                    ClearHistoryAlert.this.lambda$new$0();
+                    ClearHistoryAlert.this.dismiss();
                     return true;
                 }
                 return super.onInterceptTouchEvent(motionEvent);
@@ -284,7 +284,7 @@ public class ClearHistoryAlert extends BottomSheet {
                         this.cell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ClearHistoryAlert$$ExternalSyntheticLambda0
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                ClearHistoryAlert.lambda$new$0(zArr, view);
+                                ClearHistoryAlert.$r8$lambda$EZ1C5bzlmLE_6knIy35pvM4pXbU(zArr, view);
                             }
                         });
                     }
@@ -294,7 +294,7 @@ public class ClearHistoryAlert extends BottomSheet {
                     bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ClearHistoryAlert$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            ClearHistoryAlert.this.lambda$new$1(view);
+                            ClearHistoryAlert.$r8$lambda$kcPCgmpdf1VgK6LwK17dsZfE_tc(ClearHistoryAlert.this, view);
                         }
                     });
                     this.linearLayout.addView(bottomSheetCell, LayoutHelper.createLinear(-1, 50, 51, 0, 0, 0, 0));
@@ -368,7 +368,7 @@ public class ClearHistoryAlert extends BottomSheet {
                 this.setTimerButton.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ClearHistoryAlert$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ClearHistoryAlert.this.lambda$new$2(view);
+                        ClearHistoryAlert.$r8$lambda$f8dWEbOUtv_zIMtgz_WpgOxrUbI(ClearHistoryAlert.this, view);
                     }
                 });
                 frameLayout.addView(this.setTimerButton);
@@ -414,40 +414,37 @@ public class ClearHistoryAlert extends BottomSheet {
         this.setTimerButton.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ClearHistoryAlert$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ClearHistoryAlert.this.lambda$new$2(view);
+                ClearHistoryAlert.$r8$lambda$f8dWEbOUtv_zIMtgz_WpgOxrUbI(ClearHistoryAlert.this, view);
             }
         });
         frameLayout2.addView(this.setTimerButton);
         updateTimerButton(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(boolean[] zArr, View view) {
+    public static /* synthetic */ void $r8$lambda$EZ1C5bzlmLE_6knIy35pvM4pXbU(boolean[] zArr, View view) {
         boolean z = !zArr[0];
         zArr[0] = z;
         ((CheckBoxCell) view).setChecked(z, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        if (this.dismissedDelayed) {
+    public static /* synthetic */ void $r8$lambda$kcPCgmpdf1VgK6LwK17dsZfE_tc(ClearHistoryAlert clearHistoryAlert, View view) {
+        if (clearHistoryAlert.dismissedDelayed) {
             return;
         }
-        ClearHistoryAlertDelegate clearHistoryAlertDelegate = this.delegate;
-        CheckBoxCell checkBoxCell = this.cell;
+        ClearHistoryAlertDelegate clearHistoryAlertDelegate = clearHistoryAlert.delegate;
+        CheckBoxCell checkBoxCell = clearHistoryAlert.cell;
         clearHistoryAlertDelegate.onClearHistory(checkBoxCell != null && checkBoxCell.isChecked());
-        lambda$new$0();
+        clearHistoryAlert.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
+    public static /* synthetic */ void $r8$lambda$f8dWEbOUtv_zIMtgz_WpgOxrUbI(final ClearHistoryAlert clearHistoryAlert, View view) {
         int i;
-        if (this.dismissedDelayed) {
+        if (clearHistoryAlert.dismissedDelayed) {
             return;
         }
-        int i2 = this.newTimer;
-        if (i2 != this.currentTimer) {
-            this.dismissedDelayed = true;
+        int i2 = clearHistoryAlert.newTimer;
+        if (i2 != clearHistoryAlert.currentTimer) {
+            clearHistoryAlert.dismissedDelayed = true;
             int i3 = 70;
             if (i2 == 3) {
                 i = 2678400;
@@ -459,17 +456,17 @@ public class ClearHistoryAlert extends BottomSheet {
                 i = 0;
                 i3 = 71;
             }
-            this.delegate.onAutoDeleteHistory(i, i3);
+            clearHistoryAlert.delegate.onAutoDeleteHistory(i, i3);
         }
-        if (this.dismissedDelayed) {
+        if (clearHistoryAlert.dismissedDelayed) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ClearHistoryAlert$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ClearHistoryAlert.this.lambda$new$0();
+                    ClearHistoryAlert.this.dismiss();
                 }
             }, 200L);
         } else {
-            lambda$new$0();
+            clearHistoryAlert.dismiss();
         }
     }
 

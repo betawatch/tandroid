@@ -183,18 +183,30 @@ public class Crashes extends AbstractAppCenterService {
 
     @Override // com.microsoft.appcenter.AbstractAppCenterService, com.microsoft.appcenter.AppCenterService
     public synchronized void onStarted(Context context, Channel channel, String str, String str2, boolean z) {
+        Throwable th;
         try {
-            this.mContext = context;
-            if (!isInstanceEnabled()) {
-                ErrorLogHelper.removeMinidumpFolder();
-                AppCenterLog.debug("AppCenterCrashes", "Clean up minidump folder.");
+            try {
+                this.mContext = context;
+                if (!isInstanceEnabled()) {
+                    try {
+                        ErrorLogHelper.removeMinidumpFolder();
+                        AppCenterLog.debug("AppCenterCrashes", "Clean up minidump folder.");
+                    } catch (Throwable th2) {
+                        th = th2;
+                        throw th;
+                    }
+                }
+                super.onStarted(context, channel, str, str2, z);
+                if (isInstanceEnabled()) {
+                    processPendingErrors();
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                th = th;
+                throw th;
             }
-            super.onStarted(context, channel, str, str2, z);
-            if (isInstanceEnabled()) {
-                processPendingErrors();
-            }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th4) {
+            th = th4;
         }
     }
 
@@ -322,23 +334,32 @@ public class Crashes extends AbstractAppCenterService {
     }
 
     private synchronized UUID queueException(final ExceptionModelBuilder exceptionModelBuilder, Map map, final Iterable iterable) {
-        final UUID randomUUID;
-        final String userId = UserIdContext.getInstance().getUserId();
-        randomUUID = UUID.randomUUID();
-        final Map validateProperties = ErrorLogHelper.validateProperties(map, "HandledError");
-        post(new Runnable() { // from class: com.microsoft.appcenter.crashes.Crashes.9
-            @Override // java.lang.Runnable
-            public void run() {
-                HandledErrorLog handledErrorLog = new HandledErrorLog();
-                handledErrorLog.setId(randomUUID);
-                handledErrorLog.setUserId(userId);
-                handledErrorLog.setException(exceptionModelBuilder.buildExceptionModel());
-                handledErrorLog.setProperties(validateProperties);
-                ((AbstractAppCenterService) Crashes.this).mChannel.enqueue(handledErrorLog, "groupErrors", 1);
-                Crashes.this.sendErrorAttachment(randomUUID, iterable);
+        try {
+            try {
+                final String userId = UserIdContext.getInstance().getUserId();
+                final UUID randomUUID = UUID.randomUUID();
+                final Map validateProperties = ErrorLogHelper.validateProperties(map, "HandledError");
+                post(new Runnable() { // from class: com.microsoft.appcenter.crashes.Crashes.9
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        HandledErrorLog handledErrorLog = new HandledErrorLog();
+                        handledErrorLog.setId(randomUUID);
+                        handledErrorLog.setUserId(userId);
+                        handledErrorLog.setException(exceptionModelBuilder.buildExceptionModel());
+                        handledErrorLog.setProperties(validateProperties);
+                        ((AbstractAppCenterService) Crashes.this).mChannel.enqueue(handledErrorLog, "groupErrors", 1);
+                        Crashes.this.sendErrorAttachment(randomUUID, iterable);
+                    }
+                });
+                return randomUUID;
+            } catch (Throwable th) {
+                th = th;
+                throw th;
             }
-        });
-        return randomUUID;
+        } catch (Throwable th2) {
+            th = th2;
+            throw th;
+        }
     }
 
     private void initialize() {
@@ -540,9 +561,9 @@ public class Crashes extends AbstractAppCenterService {
     /* JADX INFO: Access modifiers changed from: private */
     public synchronized void handleUserConfirmation(final int i) {
         post(new Runnable() { // from class: com.microsoft.appcenter.crashes.Crashes.12
-            /* JADX WARN: Removed duplicated region for block: B:28:0x00bd  */
-            /* JADX WARN: Removed duplicated region for block: B:31:0x00d9  */
-            /* JADX WARN: Removed duplicated region for block: B:34:0x00f4 A[SYNTHETIC] */
+            /* JADX WARN: Removed duplicated region for block: B:28:0x00bb  */
+            /* JADX WARN: Removed duplicated region for block: B:31:0x00d7  */
+            /* JADX WARN: Removed duplicated region for block: B:34:0x00f2 A[SYNTHETIC] */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.

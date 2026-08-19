@@ -171,12 +171,12 @@ public abstract class FontResourcesParserCompat {
 
     public static List readCerts(Resources resources, int i) {
         if (i == 0) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         TypedArray obtainTypedArray = resources.obtainTypedArray(i);
         try {
             if (obtainTypedArray.length() == 0) {
-                return Collections.emptyList();
+                return Collections.EMPTY_LIST;
             }
             ArrayList arrayList = new ArrayList();
             if (getType(obtainTypedArray, 0) == 1) {

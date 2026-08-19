@@ -116,7 +116,7 @@ public final class DefaultDataSource implements DataSource {
     @Override // com.google.android.exoplayer2.upstream.DataSource
     public Map getResponseHeaders() {
         DataSource dataSource = this.dataSource;
-        return dataSource == null ? Collections.emptyMap() : dataSource.getResponseHeaders();
+        return dataSource == null ? Collections.EMPTY_MAP : dataSource.getResponseHeaders();
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource

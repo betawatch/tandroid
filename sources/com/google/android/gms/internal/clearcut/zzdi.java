@@ -55,7 +55,7 @@ public final class zzdi extends LinkedHashMap {
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
     public final Set entrySet() {
-        return isEmpty() ? Collections.emptySet() : super.entrySet();
+        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x005c A[RETURN] */

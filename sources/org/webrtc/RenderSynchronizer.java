@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
     private static final String TAG = "RenderSynchronizer";
@@ -39,15 +39,15 @@ public final class RenderSynchronizer {
         handler.post(new Runnable() { // from class: org.webrtc.RenderSynchronizer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RenderSynchronizer.this.lambda$new$0();
+                RenderSynchronizer.$r8$lambda$ypMjvJEck2JfIcOoFbNLKvq1c18(RenderSynchronizer.this);
             }
         });
         Logging.d(TAG, "Created");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.choreographer = Choreographer.getInstance();
+    public static /* synthetic */ void $r8$lambda$ypMjvJEck2JfIcOoFbNLKvq1c18(RenderSynchronizer renderSynchronizer) {
+        renderSynchronizer.getClass();
+        renderSynchronizer.choreographer = Choreographer.getInstance();
     }
 
     public RenderSynchronizer() {
@@ -64,7 +64,7 @@ public final class RenderSynchronizer {
                     this.mainThreadHandler.post(new Runnable() { // from class: org.webrtc.RenderSynchronizer$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            RenderSynchronizer.this.lambda$registerListener$1();
+                            r0.choreographer.postFrameCallback(new RenderSynchronizer$$ExternalSyntheticLambda2(RenderSynchronizer.this));
                         }
                     });
                 }
@@ -72,11 +72,6 @@ public final class RenderSynchronizer {
                 throw th;
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$registerListener$1() {
-        this.choreographer.postFrameCallback(new RenderSynchronizer$$ExternalSyntheticLambda2(this));
     }
 
     public void removeListener(Listener listener) {

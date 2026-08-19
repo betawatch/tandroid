@@ -108,7 +108,7 @@ public final class DefaultHlsExtractorFactory implements HlsExtractorFactory {
         } else if (z) {
             list = Collections.singletonList(new Format.Builder().setSampleMimeType("application/cea-608").build());
         } else {
-            list = Collections.emptyList();
+            list = Collections.EMPTY_LIST;
         }
         String str = format.codecs;
         if (!TextUtils.isEmpty(str)) {
@@ -125,7 +125,7 @@ public final class DefaultHlsExtractorFactory implements HlsExtractorFactory {
     private static FragmentedMp4Extractor createFragmentedMp4Extractor(TimestampAdjuster timestampAdjuster, Format format, List list) {
         int i = isFmp4Variant(format) ? 4 : 0;
         if (list == null) {
-            list = Collections.emptyList();
+            list = Collections.EMPTY_LIST;
         }
         return new FragmentedMp4Extractor(i, timestampAdjuster, null, list);
     }

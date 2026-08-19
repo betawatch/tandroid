@@ -8,7 +8,7 @@ import java.util.Map;
 public final class zzgw {
     static final zzgw zza = new zzgw(true);
     private static volatile zzgw zzd;
-    private final Map zze = Collections.emptyMap();
+    private final Map zze = Collections.EMPTY_MAP;
 
     public static zzgw zza() {
         zzgw zzgwVar = zzd;

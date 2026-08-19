@@ -1,18 +1,24 @@
 package com.google.android.gms.internal.cast;
 
+import androidx.core.provider.FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
-final class zzsb extends zzry implements ScheduledExecutorService, zzrx {
+final class zzsb extends zzry implements ScheduledExecutorService, zzrx, AutoCloseable {
     final ScheduledExecutorService zza;
 
     zzsb(ScheduledExecutorService scheduledExecutorService) {
         super(scheduledExecutorService);
         scheduledExecutorService.getClass();
         this.zza = scheduledExecutorService;
+    }
+
+    @Override // com.google.android.gms.internal.cast.zzrl, java.lang.AutoCloseable
+    public /* synthetic */ void close() {
+        FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1.m(this);
     }
 
     @Override // java.util.concurrent.ScheduledExecutorService

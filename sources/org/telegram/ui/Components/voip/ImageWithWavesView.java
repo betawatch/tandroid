@@ -260,7 +260,7 @@ public class ImageWithWavesView extends FrameLayout {
                 this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.ImageWithWavesView$AvatarWavesDrawable$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        ImageWithWavesView.AvatarWavesDrawable.this.lambda$setMuteToStatic$0(valueAnimator2);
+                        ImageWithWavesView.AvatarWavesDrawable.$r8$lambda$_e-bVITTxOVzm1c6XWJKr3yMvGM(ImageWithWavesView.AvatarWavesDrawable.this, valueAnimator2);
                     }
                 });
                 if (z2) {
@@ -273,9 +273,9 @@ public class ImageWithWavesView extends FrameLayout {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setMuteToStatic$0(ValueAnimator valueAnimator) {
-            this.muteToStaticProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        public static /* synthetic */ void $r8$lambda$_e-bVITTxOVzm1c6XWJKr3yMvGM(AvatarWavesDrawable avatarWavesDrawable, ValueAnimator valueAnimator) {
+            avatarWavesDrawable.getClass();
+            avatarWavesDrawable.muteToStaticProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         }
     }
 }

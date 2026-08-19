@@ -25,8 +25,7 @@ public class EmptyTextProgressView extends FrameLayout {
     private TextView textView;
     private LinearLayout textViewLayout;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$Vq18KDUqpLFj2-u41GI6no-lj-8(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -77,9 +76,7 @@ public class EmptyTextProgressView extends FrameLayout {
         setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.EmptyTextProgressView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view3, MotionEvent motionEvent) {
-                boolean lambda$new$0;
-                lambda$new$0 = EmptyTextProgressView.lambda$new$0(view3, motionEvent);
-                return lambda$new$0;
+                return EmptyTextProgressView.$r8$lambda$Vq18KDUqpLFj2-u41GI6no-lj-8(view3, motionEvent);
             }
         });
     }

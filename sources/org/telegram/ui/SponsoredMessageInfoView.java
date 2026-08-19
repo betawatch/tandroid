@@ -39,7 +39,7 @@ public class SponsoredMessageInfoView extends FrameLayout {
         linksTextView.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.SponsoredMessageInfoView$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
             public final void run(ClickableSpan clickableSpan) {
-                SponsoredMessageInfoView.this.lambda$new$0(runnable, clickableSpan);
+                SponsoredMessageInfoView.$r8$lambda$yKT5h0WEDoBSPf7w9XxapAjwwwE(SponsoredMessageInfoView.this, runnable, clickableSpan);
             }
         });
         LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context);
@@ -50,7 +50,7 @@ public class SponsoredMessageInfoView extends FrameLayout {
         linksTextView2.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.SponsoredMessageInfoView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
             public final void run(ClickableSpan clickableSpan) {
-                SponsoredMessageInfoView.this.lambda$new$1(runnable, clickableSpan);
+                SponsoredMessageInfoView.$r8$lambda$pxUR-cfHOfjULqOH58B8ckLRDcM(SponsoredMessageInfoView.this, runnable, clickableSpan);
             }
         });
         LinkSpanDrawable.LinksTextView linksTextView3 = new LinkSpanDrawable.LinksTextView(context);
@@ -61,7 +61,7 @@ public class SponsoredMessageInfoView extends FrameLayout {
         linksTextView3.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.SponsoredMessageInfoView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
             public final void run(ClickableSpan clickableSpan) {
-                SponsoredMessageInfoView.this.lambda$new$2(runnable, clickableSpan);
+                SponsoredMessageInfoView.$r8$lambda$LDIfxobKJl5Ok9cXVowXb3OI9V8(SponsoredMessageInfoView.this, runnable, clickableSpan);
             }
         });
         final Paint paint = new Paint(1);
@@ -115,27 +115,27 @@ public class SponsoredMessageInfoView extends FrameLayout {
         addView(scrollView, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Runnable runnable, ClickableSpan clickableSpan) {
+    public static /* synthetic */ void $r8$lambda$yKT5h0WEDoBSPf7w9XxapAjwwwE(SponsoredMessageInfoView sponsoredMessageInfoView, Runnable runnable, ClickableSpan clickableSpan) {
+        sponsoredMessageInfoView.getClass();
         if (runnable != null) {
             runnable.run();
         }
-        clickableSpan.onClick(this);
+        clickableSpan.onClick(sponsoredMessageInfoView);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Runnable runnable, ClickableSpan clickableSpan) {
+    public static /* synthetic */ void $r8$lambda$pxUR-cfHOfjULqOH58B8ckLRDcM(SponsoredMessageInfoView sponsoredMessageInfoView, Runnable runnable, ClickableSpan clickableSpan) {
+        sponsoredMessageInfoView.getClass();
         if (runnable != null) {
             runnable.run();
         }
-        clickableSpan.onClick(this);
+        clickableSpan.onClick(sponsoredMessageInfoView);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Runnable runnable, ClickableSpan clickableSpan) {
+    public static /* synthetic */ void $r8$lambda$LDIfxobKJl5Ok9cXVowXb3OI9V8(SponsoredMessageInfoView sponsoredMessageInfoView, Runnable runnable, ClickableSpan clickableSpan) {
+        sponsoredMessageInfoView.getClass();
         if (runnable != null) {
             runnable.run();
         }
-        clickableSpan.onClick(this);
+        clickableSpan.onClick(sponsoredMessageInfoView);
     }
 }

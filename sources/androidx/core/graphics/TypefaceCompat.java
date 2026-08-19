@@ -45,15 +45,14 @@ public abstract class TypefaceCompat {
     }
 
     private static Typeface getSystemFontFamily(String str) {
-        if (str == null || str.isEmpty()) {
-            return null;
+        if (str != null && !str.isEmpty()) {
+            Typeface create = Typeface.create(str, 0);
+            Typeface create2 = Typeface.create(Typeface.DEFAULT, 0);
+            if (create != null && !create.equals(create2)) {
+                return create;
+            }
         }
-        Typeface create = Typeface.create(str, 0);
-        Typeface create2 = Typeface.create(Typeface.DEFAULT, 0);
-        if (create == null || create.equals(create2)) {
-            return null;
-        }
-        return create;
+        return null;
     }
 
     public static Typeface createFromResourcesFamilyXml(Context context, FontResourcesParserCompat.FamilyResourceEntry familyResourceEntry, Resources resources, int i, String str, int i2, int i3, ResourcesCompat.FontCallback fontCallback, Handler handler, boolean z) {
@@ -128,7 +127,7 @@ public abstract class TypefaceCompat {
         public void onTypefaceRetrieved(Typeface typeface) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.lambda$callbackSuccessAsync$0(typeface);
+                fontCallback.onFontRetrieved(typeface);
             }
         }
 
@@ -136,7 +135,7 @@ public abstract class TypefaceCompat {
         public void onTypefaceRequestFailed(int i) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.lambda$callbackFailAsync$1(i);
+                fontCallback.onFontRetrievalFailed(i);
             }
         }
     }

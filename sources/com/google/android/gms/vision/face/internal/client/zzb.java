@@ -89,22 +89,23 @@ public final class zzb extends zzt {
                 LandmarkParcel landmarkParcel = landmarkParcelArr[i2];
                 landmarkArr2[i2] = new Landmark(new PointF(landmarkParcel.zza, landmarkParcel.zzb), landmarkParcel.zzc);
                 i2++;
-                landmarkParcelArr = landmarkParcelArr;
+                i = i;
             }
             landmarkArr = landmarkArr2;
         }
+        int i3 = i;
         zza[] zzaVarArr = faceParcel.zzm;
         if (zzaVarArr == null) {
             contourArr = new Contour[0];
         } else {
             Contour[] contourArr2 = new Contour[zzaVarArr.length];
-            for (int i3 = 0; i3 < zzaVarArr.length; i3++) {
-                zza zzaVar = zzaVarArr[i3];
-                contourArr2[i3] = new Contour(zzaVar.zza, zzaVar.zzb);
+            for (int i4 = 0; i4 < zzaVarArr.length; i4++) {
+                zza zzaVar = zzaVarArr[i4];
+                contourArr2[i4] = new Contour(zzaVar.zza, zzaVar.zzb);
             }
             contourArr = contourArr2;
         }
-        return new Face(i, pointF, f, f2, f3, f4, f5, landmarkArr, contourArr, faceParcel.zzj, faceParcel.zzk, faceParcel.zzl, faceParcel.zzn);
+        return new Face(i3, pointF, f, f2, f3, f4, f5, landmarkArr, contourArr, faceParcel.zzj, faceParcel.zzk, faceParcel.zzl, faceParcel.zzn);
     }
 
     @Override // com.google.android.gms.internal.vision.zzt

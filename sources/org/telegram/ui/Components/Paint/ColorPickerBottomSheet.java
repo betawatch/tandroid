@@ -100,7 +100,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
         this.pipetteView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ColorPickerBottomSheet.this.lambda$new$0(context, view);
+                ColorPickerBottomSheet.$r8$lambda$sNcFg792RS7zQrEQTwD7We6S6Es(ColorPickerBottomSheet.this, context, view);
             }
         });
         ImageView imageView3 = new ImageView(context);
@@ -111,7 +111,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
         this.doneView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ColorPickerBottomSheet.this.lambda$new$1(view);
+                ColorPickerBottomSheet.this.dismiss();
             }
         });
         AlphaPickerView alphaPickerView = new AlphaPickerView(context);
@@ -146,16 +146,15 @@ public class ColorPickerBottomSheet extends BottomSheet {
         setCustomView(scrollView);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Context context, View view) {
-        if (this.pipetteDelegate.isPipetteVisible()) {
+    public static /* synthetic */ void $r8$lambda$sNcFg792RS7zQrEQTwD7We6S6Es(ColorPickerBottomSheet colorPickerBottomSheet, Context context, View view) {
+        if (colorPickerBottomSheet.pipetteDelegate.isPipetteVisible()) {
             return;
         }
-        Bitmap snapshotView = AndroidUtilities.snapshotView(this.pipetteDelegate.getSnapshotDrawingView());
+        Bitmap snapshotView = AndroidUtilities.snapshotView(colorPickerBottomSheet.pipetteDelegate.getSnapshotDrawingView());
         Bitmap createBitmap = Bitmap.createBitmap(snapshotView.getWidth(), snapshotView.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.drawColor(-16777216);
-        this.pipetteDelegate.onDrawImageOverCanvas(createBitmap, canvas);
+        colorPickerBottomSheet.pipetteDelegate.onDrawImageOverCanvas(createBitmap, canvas);
         canvas.drawBitmap(snapshotView, 0.0f, 0.0f, (Paint) null);
         snapshotView.recycle();
         PipettePickerView pipettePickerView = new PipettePickerView(context, createBitmap) { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet.1
@@ -169,8 +168,8 @@ public class ColorPickerBottomSheet extends BottomSheet {
                 ColorPickerBottomSheet.this.pipetteDelegate.onStopColorPipette();
             }
         };
-        this.pipetteDelegate.getContainerView().addView(pipettePickerView, LayoutHelper.createFrame(-1, -1.0f));
-        final PipetteDelegate pipetteDelegate = this.pipetteDelegate;
+        colorPickerBottomSheet.pipetteDelegate.getContainerView().addView(pipettePickerView, LayoutHelper.createFrame(-1, -1.0f));
+        final PipetteDelegate pipetteDelegate = colorPickerBottomSheet.pipetteDelegate;
         Objects.requireNonNull(pipetteDelegate);
         pipettePickerView.setColorListener(new Consumer() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$$ExternalSyntheticLambda2
             @Override // androidx.core.util.Consumer
@@ -179,12 +178,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             }
         });
         pipettePickerView.animateShow();
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        dismiss();
+        colorPickerBottomSheet.dismiss();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -657,8 +651,8 @@ public class ColorPickerBottomSheet extends BottomSheet {
                     this.previous = charSequence.toString();
                 }
 
-                /* JADX WARN: Removed duplicated region for block: B:27:0x00c9 A[RETURN] */
-                /* JADX WARN: Removed duplicated region for block: B:28:0x00ca  */
+                /* JADX WARN: Removed duplicated region for block: B:25:0x00cc  */
+                /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
                 @Override // android.text.TextWatcher
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -702,30 +696,27 @@ public class ColorPickerBottomSheet extends BottomSheet {
             this.hexEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$SlidersPickerView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnFocusChangeListener
                 public final void onFocusChange(View view, boolean z) {
-                    ColorPickerBottomSheet.SlidersPickerView.this.lambda$new$0(view, z);
+                    ColorPickerBottomSheet.SlidersPickerView.$r8$lambda$kgdyBIGKnuHzSHjNlux6qWMC25o(ColorPickerBottomSheet.SlidersPickerView.this, view, z);
                 }
             });
             this.hexEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$SlidersPickerView$$ExternalSyntheticLambda1
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView2, int i, KeyEvent keyEvent) {
-                    boolean lambda$new$1;
-                    lambda$new$1 = ColorPickerBottomSheet.SlidersPickerView.lambda$new$1(textView2, i, keyEvent);
-                    return lambda$new$1;
+                    return ColorPickerBottomSheet.SlidersPickerView.$r8$lambda$sB_NLW7ur4GL9oonFr5FtyFSJtw(textView2, i, keyEvent);
                 }
             });
             linearLayout.addView(this.hexEdit, LayoutHelper.createLinear(72, 36));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, boolean z) {
-            if (z || !TextUtils.isEmpty(this.hexEdit.getText())) {
-                return;
+        public static /* synthetic */ void $r8$lambda$kgdyBIGKnuHzSHjNlux6qWMC25o(SlidersPickerView slidersPickerView, View view, boolean z) {
+            if (z) {
+                slidersPickerView.getClass();
+            } else if (TextUtils.isEmpty(slidersPickerView.hexEdit.getText())) {
+                slidersPickerView.hexEdit.setText("0");
             }
-            this.hexEdit.setText("0");
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ boolean lambda$new$1(TextView textView, int i, KeyEvent keyEvent) {
+        public static /* synthetic */ boolean $r8$lambda$sB_NLW7ur4GL9oonFr5FtyFSJtw(TextView textView, int i, KeyEvent keyEvent) {
             if (i != 6) {
                 return false;
             }
@@ -809,30 +800,27 @@ public class ColorPickerBottomSheet extends BottomSheet {
             this.valueView.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$SliderCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnFocusChangeListener
                 public final void onFocusChange(View view, boolean z) {
-                    ColorPickerBottomSheet.SliderCell.this.lambda$new$0(view, z);
+                    ColorPickerBottomSheet.SliderCell.$r8$lambda$gQTF5tYLPwl757-tpzLH0EfU8Lc(ColorPickerBottomSheet.SliderCell.this, view, z);
                 }
             });
             this.valueView.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$SliderCell$$ExternalSyntheticLambda1
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView2, int i, KeyEvent keyEvent) {
-                    boolean lambda$new$1;
-                    lambda$new$1 = ColorPickerBottomSheet.SliderCell.lambda$new$1(textView2, i, keyEvent);
-                    return lambda$new$1;
+                    return ColorPickerBottomSheet.SliderCell.$r8$lambda$eQW2gVHHzA80k4NfetuASsF7oAA(textView2, i, keyEvent);
                 }
             });
             addView(this.valueView, LayoutHelper.createFrame(72, 36, 85));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, boolean z) {
-            if (z || !TextUtils.isEmpty(this.valueView.getText())) {
-                return;
+        public static /* synthetic */ void $r8$lambda$gQTF5tYLPwl757-tpzLH0EfU8Lc(SliderCell sliderCell, View view, boolean z) {
+            if (z) {
+                sliderCell.getClass();
+            } else if (TextUtils.isEmpty(sliderCell.valueView.getText())) {
+                sliderCell.valueView.setText("0");
             }
-            this.valueView.setText("0");
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ boolean lambda$new$1(TextView textView, int i, KeyEvent keyEvent) {
+        public static /* synthetic */ boolean $r8$lambda$eQW2gVHHzA80k4NfetuASsF7oAA(TextView textView, int i, KeyEvent keyEvent) {
             if (i != 6) {
                 return false;
             }

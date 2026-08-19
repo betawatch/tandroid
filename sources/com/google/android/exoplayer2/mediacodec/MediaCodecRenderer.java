@@ -5,7 +5,6 @@ import android.media.MediaCrypto;
 import android.media.MediaCryptoException;
 import android.media.MediaFormat;
 import android.media.metrics.LogSessionId;
-import android.opengl.EGLContext;
 import android.os.Bundle;
 import android.os.SystemClock;
 import com.google.android.exoplayer2.BaseRenderer;
@@ -28,7 +27,6 @@ import com.google.android.exoplayer2.util.NalUnitUtil;
 import com.google.android.exoplayer2.util.TimedValueQueue;
 import com.google.android.exoplayer2.util.TraceUtil;
 import com.google.android.exoplayer2.util.Util;
-import com.google.android.exoplayer2.video.MediaCodecVideoRenderer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayDeque;
@@ -69,7 +67,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     private boolean codecNeedsMonoChannelCountWorkaround;
     private boolean codecNeedsSosFlushWorkaround;
     private float codecOperatingRate;
-    public MediaFormat codecOutputMediaFormat;
+    private MediaFormat codecOutputMediaFormat;
     private boolean codecOutputMediaFormatChanged;
     private boolean codecReceivedBuffers;
     private boolean codecReceivedEos;
@@ -121,7 +119,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     protected abstract List getDecoderInfos(MediaCodecSelector mediaCodecSelector, Format format, boolean z);
 
-    protected abstract MediaCodecAdapter.Configuration getMediaCodecConfiguration(MediaCodecInfo mediaCodecInfo, Format format, MediaCrypto mediaCrypto, float f, EGLContext eGLContext);
+    protected abstract MediaCodecAdapter.Configuration getMediaCodecConfiguration(MediaCodecInfo mediaCodecInfo, Format format, MediaCrypto mediaCrypto, float f);
 
     protected void handleInputBufferSupplementalData(DecoderInputBuffer decoderInputBuffer) {
     }
@@ -307,8 +305,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void setPendingPlaybackException(ExoPlaybackException exoPlaybackException) {
+    protected final void setPendingPlaybackException(ExoPlaybackException exoPlaybackException) {
         this.pendingPlaybackException = exoPlaybackException;
     }
 
@@ -326,12 +323,11 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.codecOutputMediaFormatChanged = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final MediaCodecAdapter getCodec() {
+    protected final MediaCodecAdapter getCodec() {
         return this.codec;
     }
 
-    protected final MediaFormat getCodecOutputMediaFormat() {
+    public final MediaFormat getCodecOutputMediaFormat() {
         return this.codecOutputMediaFormat;
     }
 
@@ -690,13 +686,14 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     private List getAvailableCodecInfos(boolean z) {
         List decoderInfos = getDecoderInfos(this.mediaCodecSelector, this.inputFormat, z);
-        if (decoderInfos.isEmpty() && z) {
-            decoderInfos = getDecoderInfos(this.mediaCodecSelector, this.inputFormat, false);
-            if (!decoderInfos.isEmpty()) {
-                Log.w("MediaCodecRenderer", "Drm session requires secure decoder for " + this.inputFormat.sampleMimeType + ", but no secure decoder available. Trying to proceed with " + decoderInfos + ".");
-            }
+        if (!decoderInfos.isEmpty() || !z) {
+            return decoderInfos;
         }
-        return decoderInfos;
+        List decoderInfos2 = getDecoderInfos(this.mediaCodecSelector, this.inputFormat, false);
+        if (!decoderInfos2.isEmpty()) {
+            Log.w("MediaCodecRenderer", "Drm session requires secure decoder for " + this.inputFormat.sampleMimeType + ", but no secure decoder available. Trying to proceed with " + decoderInfos2 + ".");
+        }
+        return decoderInfos2;
     }
 
     private void initBypass(Format format) {
@@ -714,9 +711,9 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         String str = mediaCodecInfo.name;
         int i = Util.SDK_INT;
         float codecOperatingRateV23 = i < 23 ? -1.0f : getCodecOperatingRateV23(this.targetPlaybackSpeed, this.inputFormat, getStreamFormats());
-        float f = codecOperatingRateV23 <= this.assumedMinimumCodecOperatingRate ? -1.0f : codecOperatingRateV23;
+        float f = codecOperatingRateV23 > this.assumedMinimumCodecOperatingRate ? codecOperatingRateV23 : -1.0f;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        MediaCodecAdapter.Configuration mediaCodecConfiguration = getMediaCodecConfiguration(mediaCodecInfo, this.inputFormat, mediaCrypto, f, this instanceof MediaCodecVideoRenderer ? ((MediaCodecVideoRenderer) this).eglContext : null);
+        MediaCodecAdapter.Configuration mediaCodecConfiguration = getMediaCodecConfiguration(mediaCodecInfo, this.inputFormat, mediaCrypto, f);
         if (i >= 31) {
             Api31.setLogSessionIdToMediaCodecFormat(mediaCodecConfiguration, getPlayerId());
         }
@@ -724,12 +721,13 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             TraceUtil.beginSection("createCodec:" + str);
             this.codec = this.codecAdapterFactory.createAdapter(mediaCodecConfiguration);
             TraceUtil.endSection();
+            float f2 = f;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (!mediaCodecInfo.isFormatSupported(this.inputFormat)) {
                 Log.w("MediaCodecRenderer", Util.formatInvariant("Format exceeds selected codec's capabilities [%s, %s]", Format.toLogString(this.inputFormat), str));
             }
             this.codecInfo = mediaCodecInfo;
-            this.codecOperatingRate = f;
+            this.codecOperatingRate = f2;
             this.codecInputFormat = this.inputFormat;
             this.codecAdaptationWorkaroundMode = codecAdaptationWorkaroundMode(str);
             this.codecNeedsDiscardToSpsWorkaround = codecNeedsDiscardToSpsWorkaround(str, this.codecInputFormat);
@@ -929,15 +927,15 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x007e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x007d, code lost:
     
         if (drainAndUpdateCodecDrmSessionV23() == false) goto L69;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00ce, code lost:
     
         r7 = 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00af, code lost:
     
         if (drainAndUpdateCodecDrmSessionV23() == false) goto L69;
      */
@@ -1037,7 +1035,13 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     @Override // com.google.android.exoplayer2.Renderer
     public boolean isReady() {
-        return this.inputFormat != null && (isSourceReady() || hasOutputBuffer() || (this.codecHotswapDeadlineMs != -9223372036854775807L && SystemClock.elapsedRealtime() < this.codecHotswapDeadlineMs));
+        if (this.inputFormat == null) {
+            return false;
+        }
+        if (isSourceReady() || hasOutputBuffer()) {
+            return true;
+        }
+        return this.codecHotswapDeadlineMs != -9223372036854775807L && SystemClock.elapsedRealtime() < this.codecHotswapDeadlineMs;
     }
 
     protected float getPlaybackSpeed() {
@@ -1304,39 +1308,46 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     private boolean bypassRender(long j, long j2) {
+        boolean z;
         Assertions.checkState(!this.outputStreamEnded);
         if (this.bypassBatchBuffer.hasSamples()) {
             BatchBuffer batchBuffer = this.bypassBatchBuffer;
+            z = false;
             if (!processOutputBuffer(j, j2, null, batchBuffer.data, this.outputIndex, 0, batchBuffer.getSampleCount(), this.bypassBatchBuffer.getFirstSampleTimeUs(), this.bypassBatchBuffer.isDecodeOnly(), this.bypassBatchBuffer.isEndOfStream(), this.outputFormat)) {
                 return false;
             }
             onProcessedOutputBuffer(this.bypassBatchBuffer.getLastSampleTimeUs());
             this.bypassBatchBuffer.clear();
+        } else {
+            z = false;
         }
         if (this.inputStreamEnded) {
             this.outputStreamEnded = true;
-            return false;
+            return z;
         }
         if (this.bypassSampleBufferPending) {
             Assertions.checkState(this.bypassBatchBuffer.append(this.bypassSampleBuffer));
-            this.bypassSampleBufferPending = false;
+            this.bypassSampleBufferPending = z;
         }
         if (this.bypassDrainAndReinitialize) {
             if (this.bypassBatchBuffer.hasSamples()) {
                 return true;
             }
             disableBypass();
-            this.bypassDrainAndReinitialize = false;
+            this.bypassDrainAndReinitialize = z;
             maybeInitCodecOrBypass();
             if (!this.bypassEnabled) {
-                return false;
+                return z;
             }
         }
         bypassRead();
         if (this.bypassBatchBuffer.hasSamples()) {
             this.bypassBatchBuffer.flip();
         }
-        return this.bypassBatchBuffer.hasSamples() || this.inputStreamEnded || this.bypassDrainAndReinitialize;
+        if (this.bypassBatchBuffer.hasSamples() || this.inputStreamEnded || this.bypassDrainAndReinitialize) {
+            return true;
+        }
+        return z;
     }
 
     private void bypassRead() {
@@ -1393,7 +1404,16 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     private static boolean codecNeedsFlushWorkaround(String str) {
         int i = Util.SDK_INT;
-        return i < 18 || (i == 18 && ("OMX.SEC.avc.dec".equals(str) || "OMX.SEC.avc.dec.secure".equals(str))) || (i == 19 && Util.MODEL.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str) || "OMX.Exynos.avc.dec.secure".equals(str)));
+        if (i < 18) {
+            return true;
+        }
+        if (i == 18 && ("OMX.SEC.avc.dec".equals(str) || "OMX.SEC.avc.dec.secure".equals(str))) {
+            return true;
+        }
+        if (i == 19 && Util.MODEL.startsWith("SM-G800")) {
+            return "OMX.Exynos.avc.dec".equals(str) || "OMX.Exynos.avc.dec.secure".equals(str);
+        }
+        return false;
     }
 
     private int codecAdaptationWorkaroundMode(String str) {
@@ -1425,30 +1445,39 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     private static boolean codecNeedsEosPropagationWorkaround(MediaCodecInfo mediaCodecInfo) {
         String str = mediaCodecInfo.name;
         int i = Util.SDK_INT;
-        return (i <= 25 && "OMX.rk.video_decoder.avc".equals(str)) || (i <= 17 && "OMX.allwinner.video.decoder.avc".equals(str)) || ((i <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str) || "OMX.bcm.vdec.avc.tunnel".equals(str) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str) || "OMX.bcm.vdec.hevc.tunnel".equals(str) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str))) || ("Amazon".equals(Util.MANUFACTURER) && "AFTS".equals(Util.MODEL) && mediaCodecInfo.secure));
-    }
-
-    private static boolean codecNeedsEosFlushWorkaround(String str) {
-        int i = Util.SDK_INT;
-        if (i > 23 || !"OMX.google.vorbis.decoder".equals(str)) {
-            if (i <= 19) {
-                String str2 = Util.DEVICE;
-                if (("hb2000".equals(str2) || "stvm8".equals(str2)) && ("OMX.amlogic.avc.decoder.awesome".equals(str) || "OMX.amlogic.avc.decoder.awesome.secure".equals(str))) {
-                }
-            }
-            return false;
+        if (i <= 25 && "OMX.rk.video_decoder.avc".equals(str)) {
+            return true;
+        }
+        if (i <= 17 && "OMX.allwinner.video.decoder.avc".equals(str)) {
+            return true;
+        }
+        if (i > 29 || !("OMX.broadcom.video_decoder.tunnel".equals(str) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str) || "OMX.bcm.vdec.avc.tunnel".equals(str) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str) || "OMX.bcm.vdec.hevc.tunnel".equals(str) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str))) {
+            return "Amazon".equals(Util.MANUFACTURER) && "AFTS".equals(Util.MODEL) && mediaCodecInfo.secure;
         }
         return true;
     }
 
-    private static boolean codecNeedsEosBufferTimestampWorkaround(String str) {
-        if (Util.SDK_INT < 21 && "OMX.SEC.mp3.dec".equals(str) && "samsung".equals(Util.MANUFACTURER)) {
-            String str2 = Util.DEVICE;
-            if (str2.startsWith("baffin") || str2.startsWith("grand") || str2.startsWith("fortuna") || str2.startsWith("gprimelte") || str2.startsWith("j2y18lte") || str2.startsWith("ms01")) {
-                return true;
-            }
+    private static boolean codecNeedsEosFlushWorkaround(String str) {
+        int i = Util.SDK_INT;
+        if (i <= 23 && "OMX.google.vorbis.decoder".equals(str)) {
+            return true;
+        }
+        if (i > 19) {
+            return false;
+        }
+        String str2 = Util.DEVICE;
+        if ("hb2000".equals(str2) || "stvm8".equals(str2)) {
+            return "OMX.amlogic.avc.decoder.awesome".equals(str) || "OMX.amlogic.avc.decoder.awesome.secure".equals(str);
         }
         return false;
+    }
+
+    private static boolean codecNeedsEosBufferTimestampWorkaround(String str) {
+        if (Util.SDK_INT >= 21 || !"OMX.SEC.mp3.dec".equals(str) || !"samsung".equals(Util.MANUFACTURER)) {
+            return false;
+        }
+        String str2 = Util.DEVICE;
+        return str2.startsWith("baffin") || str2.startsWith("grand") || str2.startsWith("fortuna") || str2.startsWith("gprimelte") || str2.startsWith("j2y18lte") || str2.startsWith("ms01");
     }
 
     private static boolean codecNeedsEosOutputExceptionWorkaround(String str) {

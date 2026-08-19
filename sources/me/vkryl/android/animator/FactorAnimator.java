@@ -141,7 +141,7 @@ public class FactorAnimator {
         this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: me.vkryl.android.animator.FactorAnimator$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FactorAnimator.this.lambda$animateTo$0(f2, f3, valueAnimator);
+                FactorAnimator.$r8$lambda$akH-0WplOASkyE8ranBqIzYcUSA(FactorAnimator.this, f2, f3, valueAnimator);
             }
         });
         this.animator.addListener(new AnimatorListenerAdapter() { // from class: me.vkryl.android.animator.FactorAnimator.1
@@ -184,11 +184,10 @@ public class FactorAnimator {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateTo$0(float f, float f2, ValueAnimator valueAnimator) {
-        if (this.isAnimating) {
+    public static /* synthetic */ void $r8$lambda$akH-0WplOASkyE8ranBqIzYcUSA(FactorAnimator factorAnimator, float f, float f2, ValueAnimator valueAnimator) {
+        if (factorAnimator.isAnimating) {
             float fraction = AnimatorUtils.getFraction(valueAnimator);
-            setFactor(f + (f2 * fraction), fraction);
+            factorAnimator.setFactor(f + (f2 * fraction), fraction);
         }
     }
 

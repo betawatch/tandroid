@@ -27,30 +27,25 @@ public final class VoIPPendingCall {
         return new VoIPPendingCall(activity, j, z, 1000L, accountInstance);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i, int i2, Object[] objArr) {
+    public static /* synthetic */ void $r8$lambda$edP4Tyseyyaa_Rhro5S-I9dhuHU(VoIPPendingCall voIPPendingCall, int i, int i2, Object[] objArr) {
+        voIPPendingCall.getClass();
         if (i == NotificationCenter.didUpdateConnectionState) {
-            onConnectionStateUpdated(false);
+            voIPPendingCall.onConnectionStateUpdated(false);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        onConnectionStateUpdated(true);
     }
 
     private VoIPPendingCall(Activity activity, long j, boolean z, long j2, AccountInstance accountInstance) {
         NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.VoIPPendingCall$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                VoIPPendingCall.this.lambda$new$0(i, i2, objArr);
+                VoIPPendingCall.$r8$lambda$edP4Tyseyyaa_Rhro5S-I9dhuHU(VoIPPendingCall.this, i, i2, objArr);
             }
         };
         this.observer = notificationCenterDelegate;
         Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPPendingCall$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                VoIPPendingCall.this.lambda$new$1();
+                VoIPPendingCall.this.onConnectionStateUpdated(true);
             }
         };
         this.releaseRunnable = runnable;
@@ -69,7 +64,8 @@ public final class VoIPPendingCall {
         handler.postDelayed(runnable, j2);
     }
 
-    private boolean onConnectionStateUpdated(boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean onConnectionStateUpdated(boolean z) {
         if (this.released || !(z || isConnected(this.accountInstance) || isAirplaneMode())) {
             return false;
         }

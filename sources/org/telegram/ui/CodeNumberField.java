@@ -60,7 +60,7 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda3
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            CodeNumberField.lambda$static$1((CodeNumberField) obj, f);
+            CodeNumberField.$r8$lambda$HpXuBv82yoAS76t8pi9KS1yL5o0((CodeNumberField) obj, f);
         }
     }).setMultiplier(100.0f);
     private static final FloatPropertyCompat ERROR_PROGRESS = new SimpleFloatPropertyCompat("errorProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda4
@@ -73,7 +73,7 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda5
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            CodeNumberField.lambda$static$3((CodeNumberField) obj, f);
+            CodeNumberField.$r8$lambda$-5g0GVwwllzQjIXFZT8itpR3Y64((CodeNumberField) obj, f);
         }
     }).setMultiplier(100.0f);
     private static final FloatPropertyCompat SUCCESS_PROGRESS = new SimpleFloatPropertyCompat("successProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda6
@@ -86,7 +86,7 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda7
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            CodeNumberField.lambda$static$5((CodeNumberField) obj, f);
+            CodeNumberField.$r8$lambda$UomGlqr4jGp-JcdvkMj7Ervg9P4((CodeNumberField) obj, f);
         }
     }).setMultiplier(100.0f);
     private static final FloatPropertyCompat SUCCESS_SCALE_PROGRESS = new SimpleFloatPropertyCompat("successScaleProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda8
@@ -99,36 +99,32 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda9
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            CodeNumberField.lambda$static$7((CodeNumberField) obj, f);
+            CodeNumberField.$r8$lambda$XQm0Un1gX-rJzRog9t989rgHlYA((CodeNumberField) obj, f);
         }
     }).setMultiplier(100.0f);
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$1(CodeNumberField codeNumberField, float f) {
+    public static /* synthetic */ void $r8$lambda$HpXuBv82yoAS76t8pi9KS1yL5o0(CodeNumberField codeNumberField, float f) {
         codeNumberField.focusedProgress = f;
         if (codeNumberField.getParent() != null) {
             ((View) codeNumberField.getParent()).invalidate();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$3(CodeNumberField codeNumberField, float f) {
+    public static /* synthetic */ void $r8$lambda$-5g0GVwwllzQjIXFZT8itpR3Y64(CodeNumberField codeNumberField, float f) {
         codeNumberField.errorProgress = f;
         if (codeNumberField.getParent() != null) {
             ((View) codeNumberField.getParent()).invalidate();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$5(CodeNumberField codeNumberField, float f) {
+    public static /* synthetic */ void $r8$lambda$UomGlqr4jGp-JcdvkMj7Ervg9P4(CodeNumberField codeNumberField, float f) {
         codeNumberField.successProgress = f;
         if (codeNumberField.getParent() != null) {
             ((View) codeNumberField.getParent()).invalidate();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$7(CodeNumberField codeNumberField, float f) {
+    public static /* synthetic */ void $r8$lambda$XQm0Un1gX-rJzRog9t989rgHlYA(CodeNumberField codeNumberField, float f) {
         codeNumberField.successScaleProgress = f;
         if (codeNumberField.getParent() != null) {
             ((View) codeNumberField.getParent()).invalidate();
@@ -246,19 +242,19 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                CodeNumberField.this.lambda$startExitAnimation$8(valueAnimator);
+                CodeNumberField.$r8$lambda$5ixk-b8nTCtYwT0lysRUsR2xdPc(CodeNumberField.this, valueAnimator);
             }
         });
         this.exitAnimator.setDuration(220L);
         this.exitAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startExitAnimation$8(ValueAnimator valueAnimator) {
-        this.exitAnimation = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-        if (getParent() != null) {
-            ((ViewGroup) getParent()).invalidate();
+    public static /* synthetic */ void $r8$lambda$5ixk-b8nTCtYwT0lysRUsR2xdPc(CodeNumberField codeNumberField, ValueAnimator valueAnimator) {
+        codeNumberField.getClass();
+        codeNumberField.exitAnimation = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        codeNumberField.invalidate();
+        if (codeNumberField.getParent() != null) {
+            ((ViewGroup) codeNumberField.getParent()).invalidate();
         }
     }
 
@@ -270,7 +266,7 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.CodeNumberField$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                CodeNumberField.this.lambda$startEnterAnimation$9(valueAnimator);
+                CodeNumberField.$r8$lambda$8PP3jZio9e8HrIjQ2NMH4qaWzlI(CodeNumberField.this, valueAnimator);
             }
         });
         if (!this.replaceAnimation) {
@@ -282,12 +278,12 @@ public abstract class CodeNumberField extends EditTextBoldCursor {
         this.enterAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startEnterAnimation$9(ValueAnimator valueAnimator) {
-        this.enterAnimation = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-        if (getParent() != null) {
-            ((ViewGroup) getParent()).invalidate();
+    public static /* synthetic */ void $r8$lambda$8PP3jZio9e8HrIjQ2NMH4qaWzlI(CodeNumberField codeNumberField, ValueAnimator valueAnimator) {
+        codeNumberField.getClass();
+        codeNumberField.enterAnimation = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        codeNumberField.invalidate();
+        if (codeNumberField.getParent() != null) {
+            ((ViewGroup) codeNumberField.getParent()).invalidate();
         }
     }
 

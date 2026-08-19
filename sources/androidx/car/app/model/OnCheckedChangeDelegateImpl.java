@@ -47,15 +47,13 @@ public class OnCheckedChangeDelegateImpl implements OnCheckedChangeDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onCheckedChange", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.OnCheckedChangeDelegateImpl$OnCheckedChangeListenerStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onCheckedChange$0;
-                    lambda$onCheckedChange$0 = OnCheckedChangeDelegateImpl.OnCheckedChangeListenerStub.this.lambda$onCheckedChange$0(z);
-                    return lambda$onCheckedChange$0;
+                    return OnCheckedChangeDelegateImpl.OnCheckedChangeListenerStub.$r8$lambda$48webNydW9KdPgFQqULUrGYAipw(OnCheckedChangeDelegateImpl.OnCheckedChangeListenerStub.this, z);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onCheckedChange$0(boolean z) {
+        public static /* synthetic */ Object $r8$lambda$48webNydW9KdPgFQqULUrGYAipw(OnCheckedChangeListenerStub onCheckedChangeListenerStub, boolean z) {
+            onCheckedChangeListenerStub.getClass();
             throw null;
         }
     }

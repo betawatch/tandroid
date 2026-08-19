@@ -3,7 +3,7 @@ package ru.noties.jlatexmath.awt.image;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Image;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BufferedImage extends Image {
     public static final int TYPE_INT_ARGB = 2;
     public static final int TYPE_INT_RGB = 1;

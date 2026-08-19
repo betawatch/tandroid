@@ -81,28 +81,28 @@ public class NotificationsSettingsFacade {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsSettingsFacade$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsSettingsFacade.this.lambda$applyDialogNotificationsSettings$1(j, j2, peerNotifySettings);
+                NotificationsSettingsFacade.$r8$lambda$Dyc1-qFf1nfrov3gU38IqpW2W9I(NotificationsSettingsFacade.this, j, j2, peerNotifySettings);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x018f  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x018b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$applyDialogNotificationsSettings$1(long j, long j2, TLRPC.PeerNotifySettings peerNotifySettings) {
+    public static /* synthetic */ void $r8$lambda$Dyc1-qFf1nfrov3gU38IqpW2W9I(final NotificationsSettingsFacade notificationsSettingsFacade, long j, long j2, TLRPC.PeerNotifySettings peerNotifySettings) {
         boolean z;
         int i;
         int i2;
+        notificationsSettingsFacade.getClass();
         String sharedPrefKey = NotificationsController.getSharedPrefKey(j, j2, true);
-        MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
-        MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int i3 = getPreferences().getInt(PROPERTY_NOTIFY + sharedPrefKey, -1);
-        int i4 = getPreferences().getInt(PROPERTY_NOTIFY_UNTIL + sharedPrefKey, 0);
-        SharedPreferences.Editor edit = getPreferences().edit();
+        MessagesController messagesController = MessagesController.getInstance(notificationsSettingsFacade.currentAccount);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(notificationsSettingsFacade.currentAccount);
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(notificationsSettingsFacade.currentAccount);
+        NotificationsController notificationsController = NotificationsController.getInstance(notificationsSettingsFacade.currentAccount);
+        int i3 = notificationsSettingsFacade.getPreferences().getInt(PROPERTY_NOTIFY + sharedPrefKey, -1);
+        int i4 = notificationsSettingsFacade.getPreferences().getInt(PROPERTY_NOTIFY_UNTIL + sharedPrefKey, 0);
+        SharedPreferences.Editor edit = notificationsSettingsFacade.getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
             edit.putBoolean(PROPERTY_SILENT + sharedPrefKey, peerNotifySettings.silent);
         } else {
@@ -180,21 +180,16 @@ public class NotificationsSettingsFacade {
             }
         }
         boolean z2 = z;
-        applySoundSettings(peerNotifySettings.android_sound, edit, j, j2, 0, false);
+        notificationsSettingsFacade.applySoundSettings(peerNotifySettings.android_sound, edit, j, j2, 0, false);
         edit.apply();
         if (z2) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsSettingsFacade$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsSettingsFacade.this.lambda$applyDialogNotificationsSettings$0();
+                    NotificationCenter.getInstance(NotificationsSettingsFacade.this.currentAccount).postNotificationName(NotificationCenter.notificationsSettingsUpdated, new Object[0]);
                 }
             });
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$applyDialogNotificationsSettings$0() {
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.notificationsSettingsUpdated, new Object[0]);
     }
 
     public void applySoundSettings(TLRPC.NotificationSound notificationSound, SharedPreferences.Editor editor, long j, long j2, int i, boolean z) {

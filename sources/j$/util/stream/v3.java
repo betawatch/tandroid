@@ -1,84 +1,99 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class v3 {
-    final long a;
-    final long b;
-    Spliterator c;
-    long d;
-    long e;
+public final /* synthetic */ class v3 implements f2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Consumer b;
 
-    protected abstract Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4);
-
-    v3(Spliterator spliterator, long j, long j2, long j3, long j4) {
-        this.c = spliterator;
-        this.a = j;
-        this.b = j2;
-        this.d = j3;
-        this.e = j4;
+    public /* synthetic */ v3(Consumer consumer, int i) {
+        this.a = i;
+        this.b = consumer;
     }
 
-    public final Spliterator trySplit() {
-        long j = this.e;
-        if (this.a >= j || this.d >= j) {
-            return null;
+    private final /* synthetic */ void b(long j) {
+    }
+
+    private final /* synthetic */ void c(long j) {
+    }
+
+    private final /* synthetic */ void d() {
+    }
+
+    private final /* synthetic */ void e() {
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        switch (this.a) {
         }
-        while (true) {
-            Spliterator trySplit = this.c.trySplit();
-            if (trySplit == null) {
-                return null;
-            }
-            long estimateSize = trySplit.estimateSize() + this.d;
-            long min = Math.min(estimateSize, this.b);
-            long j2 = this.a;
-            if (j2 >= min) {
-                this.d = min;
-            } else {
-                long j3 = this.b;
-                if (min >= j3) {
-                    this.c = trySplit;
-                    this.e = min;
-                } else {
-                    long j4 = this.d;
-                    if (j4 >= j2 && estimateSize <= j3) {
-                        this.d = min;
-                        return trySplit;
-                    }
-                    this.d = min;
-                    return a(trySplit, j2, j3, j4, min);
-                }
-            }
+        return false;
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(double d) {
+        switch (this.a) {
+            case 0:
+                q1.a();
+                throw null;
+            default:
+                q1.a();
+                throw null;
         }
     }
 
-    public final long estimateSize() {
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 < j) {
-            return j - Math.max(j2, this.d);
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(int i) {
+        switch (this.a) {
+            case 0:
+                q1.k();
+                throw null;
+            default:
+                q1.k();
+                throw null;
         }
-        return 0L;
     }
 
-    public final int characteristics() {
-        return this.c.characteristics();
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(long j) {
+        switch (this.a) {
+            case 0:
+                q1.l();
+                throw null;
+            default:
+                q1.l();
+                throw null;
+        }
     }
 
-    public /* bridge */ /* synthetic */ j$.util.f0 trySplit() {
-        return (j$.util.f0) trySplit();
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void s(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((P2) this.b).s(obj);
+                break;
+            default:
+                this.b.s(obj);
+                break;
+        }
     }
 
-    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
-        return (j$.util.Z) trySplit();
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
-        return (j$.util.c0) trySplit();
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void x() {
+        int i = this.a;
     }
 
-    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
-        return (j$.util.W) trySplit();
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void y(long j) {
+        int i = this.a;
     }
 }

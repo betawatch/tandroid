@@ -1,17 +1,19 @@
 package j$.util;
 
-import java.util.function.Consumer;
-import java.util.function.LongConsumer;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-public interface P extends Q {
-    @Override // java.util.Iterator, j$.util.y
-    void forEachRemaining(Consumer consumer);
+public final class P extends p0 {
+    public final /* synthetic */ java.util.SortedSet f;
 
-    void forEachRemaining(LongConsumer longConsumer);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public P(java.util.SortedSet sortedSet, java.util.Collection collection) {
+        super(collection, 21);
+        this.f = sortedSet;
+    }
 
-    @Override // java.util.Iterator
-    Long next();
-
-    long nextLong();
+    @Override // j$.util.p0, j$.util.Spliterator
+    public final Comparator getComparator() {
+        return this.f.comparator();
+    }
 }

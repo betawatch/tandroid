@@ -50,9 +50,7 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onAppCreate", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda4
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onAppCreate$0;
-                lambda$onAppCreate$0 = CarAppBinder.this.lambda$onAppCreate$0(iCarHost, configuration, intent);
-                return lambda$onAppCreate$0;
+                return CarAppBinder.$r8$lambda$qV15wLbZchZqw7AYDWUTdB04thg(CarAppBinder.this, iCarHost, configuration, intent);
             }
         });
         if (Log.isLoggable("CarApp", 3)) {
@@ -60,8 +58,8 @@ final class CarAppBinder extends ICarApp.Stub {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onAppCreate$0(ICarHost iCarHost, Configuration configuration, Intent intent) {
+    public static /* synthetic */ Object $r8$lambda$qV15wLbZchZqw7AYDWUTdB04thg(CarAppBinder carAppBinder, ICarHost iCarHost, Configuration configuration, Intent intent) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -70,15 +68,13 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppStart", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda2
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onAppStart$1;
-                lambda$onAppStart$1 = CarAppBinder.this.lambda$onAppStart$1();
-                return lambda$onAppStart$1;
+                return CarAppBinder.$r8$lambda$PVFAimZMMIOaPhkV65sW3A2TlPU(CarAppBinder.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onAppStart$1() {
+    public static /* synthetic */ Object $r8$lambda$PVFAimZMMIOaPhkV65sW3A2TlPU(CarAppBinder carAppBinder) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -87,15 +83,13 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppResume", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda7
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onAppResume$2;
-                lambda$onAppResume$2 = CarAppBinder.this.lambda$onAppResume$2();
-                return lambda$onAppResume$2;
+                return CarAppBinder.$r8$lambda$7Uack6mc_KLNEQNXfnJY9SPsiFU(CarAppBinder.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onAppResume$2() {
+    public static /* synthetic */ Object $r8$lambda$7Uack6mc_KLNEQNXfnJY9SPsiFU(CarAppBinder carAppBinder) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -104,15 +98,13 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppPause", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda1
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onAppPause$3;
-                lambda$onAppPause$3 = CarAppBinder.this.lambda$onAppPause$3();
-                return lambda$onAppPause$3;
+                return CarAppBinder.$r8$lambda$9yq-tiei5dqpkoINH-KvUxBxuvs(CarAppBinder.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onAppPause$3() {
+    public static /* synthetic */ Object $r8$lambda$9yq-tiei5dqpkoINH-KvUxBxuvs(CarAppBinder carAppBinder) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -121,15 +113,13 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppStop", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda3
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onAppStop$4;
-                lambda$onAppStop$4 = CarAppBinder.this.lambda$onAppStop$4();
-                return lambda$onAppStop$4;
+                return CarAppBinder.$r8$lambda$-NmrdC46ynLALOfGH0FYY9n6M6o(CarAppBinder.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onAppStop$4() {
+    public static /* synthetic */ Object $r8$lambda$-NmrdC46ynLALOfGH0FYY9n6M6o(CarAppBinder carAppBinder) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -138,15 +128,13 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onNewIntent", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda6
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onNewIntent$5;
-                lambda$onNewIntent$5 = CarAppBinder.this.lambda$onNewIntent$5(intent);
-                return lambda$onNewIntent$5;
+                return CarAppBinder.$r8$lambda$r2-GCoVHE6N83Ffmv4fYzhYrccc(CarAppBinder.this, intent);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onNewIntent$5(Intent intent) {
+    public static /* synthetic */ Object $r8$lambda$r2-GCoVHE6N83Ffmv4fYzhYrccc(CarAppBinder carAppBinder, Intent intent) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -155,15 +143,13 @@ final class CarAppBinder extends ICarApp.Stub {
         RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onConfigurationChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda0
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onConfigurationChanged$6;
-                lambda$onConfigurationChanged$6 = CarAppBinder.this.lambda$onConfigurationChanged$6(configuration);
-                return lambda$onConfigurationChanged$6;
+                return CarAppBinder.$r8$lambda$XEfwwvAnIshhGblecnxdG4sh6nQ(CarAppBinder.this, configuration);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onConfigurationChanged$6(Configuration configuration) {
+    public static /* synthetic */ Object $r8$lambda$XEfwwvAnIshhGblecnxdG4sh6nQ(CarAppBinder carAppBinder, Configuration configuration) {
+        carAppBinder.getClass();
         throw null;
     }
 
@@ -172,13 +158,13 @@ final class CarAppBinder extends ICarApp.Stub {
         ThreadUtils.runOnMain(new Runnable() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                CarAppBinder.this.lambda$getManager$7(str, iOnDoneCallback);
+                CarAppBinder.$r8$lambda$IlVDu2UN1ozorozvq1aLAqao2a8(CarAppBinder.this, str, iOnDoneCallback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getManager$7(String str, IOnDoneCallback iOnDoneCallback) {
+    public static /* synthetic */ void $r8$lambda$IlVDu2UN1ozorozvq1aLAqao2a8(CarAppBinder carAppBinder, String str, IOnDoneCallback iOnDoneCallback) {
+        carAppBinder.getClass();
         throw null;
     }
 

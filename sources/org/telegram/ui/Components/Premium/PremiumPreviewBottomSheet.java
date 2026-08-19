@@ -175,7 +175,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                PremiumPreviewBottomSheet.this.lambda$new$0(i, baseFragment, view, i2);
+                PremiumPreviewBottomSheet.$r8$lambda$2hyFlf_SbdGeOGC6pY1a--VlXWY(PremiumPreviewBottomSheet.this, i, baseFragment, view, i2);
             }
         });
         MediaDataController.getInstance(i).preloadPremiumPreviewStickers();
@@ -188,14 +188,14 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         this.containerView.addView(frameLayout, LayoutHelper.createFrame(-1, NotificationCenter.fileUploadProgressChanged, 87));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i, BaseFragment baseFragment, View view, int i2) {
+    public static /* synthetic */ void $r8$lambda$2hyFlf_SbdGeOGC6pY1a--VlXWY(PremiumPreviewBottomSheet premiumPreviewBottomSheet, int i, BaseFragment baseFragment, View view, int i2) {
+        premiumPreviewBottomSheet.getClass();
         if (view instanceof PremiumFeatureCell) {
             PremiumFeatureCell premiumFeatureCell = (PremiumFeatureCell) view;
             PremiumPreviewFragment.sentShowFeaturePreview(i, premiumFeatureCell.data.type);
-            showDialog(new PremiumFeatureBottomSheet(baseFragment, premiumFeatureCell.data.type, false));
+            premiumPreviewBottomSheet.showDialog(new PremiumFeatureBottomSheet(baseFragment, premiumFeatureCell.data.type, false));
         }
-        onAdditionItemClicked(view);
+        premiumPreviewBottomSheet.onAdditionItemClicked(view);
     }
 
     protected void updateRows() {
@@ -241,20 +241,19 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                PremiumPreviewBottomSheet.this.lambda$showDialog$1(dialogInterface);
+                PremiumPreviewBottomSheet.$r8$lambda$cSxiTvev87yAauUlFOXw_u4a674(PremiumPreviewBottomSheet.this, dialogInterface);
             }
         });
         dialog.show();
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showDialog$1(DialogInterface dialogInterface) {
-        GLIconTextureView gLIconTextureView = this.iconTextureView;
+    public static /* synthetic */ void $r8$lambda$cSxiTvev87yAauUlFOXw_u4a674(PremiumPreviewBottomSheet premiumPreviewBottomSheet, DialogInterface dialogInterface) {
+        GLIconTextureView gLIconTextureView = premiumPreviewBottomSheet.iconTextureView;
         if (gLIconTextureView != null) {
             gLIconTextureView.setDialogVisible(false);
         }
-        this.starParticlesView.setPaused(false);
+        premiumPreviewBottomSheet.starParticlesView.setPaused(false);
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -265,7 +264,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         premiumButtonView.setButton(PremiumPreviewFragment.getPremiumButtonText(this.currentAccount, null), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PremiumPreviewBottomSheet.this.lambda$onViewCreated$2(view);
+                PremiumPreviewBottomSheet.$r8$lambda$0DE3yEARM_1zImm3IFUBKQDolzs(PremiumPreviewBottomSheet.this, view);
             }
         });
         this.buttonContainer = new FrameLayout(getContext());
@@ -282,10 +281,10 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         frameLayout.addView(this.buttonContainer, LayoutHelper.createFrame(-1, 68, 80));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onViewCreated$2(View view) {
+    public static /* synthetic */ void $r8$lambda$0DE3yEARM_1zImm3IFUBKQDolzs(PremiumPreviewBottomSheet premiumPreviewBottomSheet, View view) {
+        premiumPreviewBottomSheet.getClass();
         PremiumPreviewFragment.sentPremiumButtonClick();
-        PremiumPreviewFragment.buyPremium(this.fragment, "profile");
+        PremiumPreviewFragment.buyPremium(premiumPreviewBottomSheet.fragment, "profile");
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -311,14 +310,14 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                 this.titleView[0].animate().alpha(0.0f).setInterpolator(cubicBezierInterpolator).setDuration(200L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PremiumPreviewBottomSheet.this.lambda$titleLoaded$3();
+                        PremiumPreviewBottomSheet.this.titleView[0].setVisibility(8);
                     }
                 }).start();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda8
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        PremiumPreviewBottomSheet.this.lambda$titleLoaded$4(valueAnimator);
+                        PremiumPreviewBottomSheet.$r8$lambda$mWstZlK-46PmiR1u7bv64EK1kVQ(PremiumPreviewBottomSheet.this, valueAnimator);
                     }
                 });
                 ofFloat.setInterpolator(cubicBezierInterpolator);
@@ -333,16 +332,11 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$titleLoaded$3() {
-        this.titleView[0].setVisibility(8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$titleLoaded$4(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$mWstZlK-46PmiR1u7bv64EK1kVQ(PremiumPreviewBottomSheet premiumPreviewBottomSheet, ValueAnimator valueAnimator) {
+        premiumPreviewBottomSheet.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.titleViewContainer.getLayoutParams().height = AndroidUtilities.lerp(this.titleView[0].getHeight(), this.titleView[1].getHeight(), floatValue);
-        this.titleViewContainer.requestLayout();
+        premiumPreviewBottomSheet.titleViewContainer.getLayoutParams().height = AndroidUtilities.lerp(premiumPreviewBottomSheet.titleView[0].getHeight(), premiumPreviewBottomSheet.titleView[1].getHeight(), floatValue);
+        premiumPreviewBottomSheet.titleViewContainer.requestLayout();
     }
 
     public void setTitle(boolean z) {
@@ -362,7 +356,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             this.titleView[0].setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.TelegramPremiumUserStatusCollectibleDialogTitle, DialogObject.getShortName(this.user), str), new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PremiumPreviewBottomSheet.this.lambda$setTitle$5();
+                    Browser.openUrl(r0.getContext(), "https://" + MessagesController.getInstance(r0.currentAccount).linkPrefix + "/nft/" + PremiumPreviewBottomSheet.this.emojiStatusCollectible.slug);
                 }
             }));
             this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumUserStatusDialogSubtitle)));
@@ -512,11 +506,6 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setTitle$5() {
-        Browser.openUrl(getContext(), "https://" + MessagesController.getInstance(this.currentAccount).linkPrefix + "/nft/" + this.emojiStatusCollectible.slug);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setTitle$6(ClickableSpan clickableSpan) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(this.statusStickerSet);
@@ -558,7 +547,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         new EmojiPacksAlert(baseFragment, getContext(), this.resourcesProvider, arrayList) { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet.3
             @Override // org.telegram.ui.Components.EmojiPacksAlert
             protected void onCloseByLink() {
-                PremiumPreviewBottomSheet.this.lambda$new$0();
+                PremiumPreviewBottomSheet.this.dismiss();
             }
         }.show();
     }
@@ -768,12 +757,12 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                 textInfoCell.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceSingleTag(string, i5, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$Adapter$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PremiumPreviewBottomSheet.Adapter.this.lambda$onCreateViewHolder$0();
+                        Browser.openUrl(PremiumPreviewBottomSheet.this.fragment.getParentActivity(), LocaleController.getString(R.string.TermsOfServiceUrl));
                     }
                 }), AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumPrivacyPolicy", R.string.GiftPremiumPrivacyPolicy), i5, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$Adapter$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PremiumPreviewBottomSheet.Adapter.this.lambda$onCreateViewHolder$1();
+                        Browser.openUrl(PremiumPreviewBottomSheet.this.fragment.getParentActivity(), LocaleController.getString(R.string.PrivacyPolicyUrl));
                     }
                 })));
                 view = textInfoCell;
@@ -781,16 +770,6 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             PremiumPreviewBottomSheet.this.afterCellCreated(i, view);
             return new RecyclerListView.Holder(view);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$0() {
-            Browser.openUrl(PremiumPreviewBottomSheet.this.fragment.getParentActivity(), LocaleController.getString(R.string.TermsOfServiceUrl));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$1() {
-            Browser.openUrl(PremiumPreviewBottomSheet.this.fragment.getParentActivity(), LocaleController.getString(R.string.PrivacyPolicyUrl));
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -859,31 +838,30 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     public void show() {
         super.show();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 4);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 4);
         if (this.animateConfetti) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PremiumPreviewBottomSheet.this.lambda$show$7();
+                    PremiumPreviewBottomSheet.$r8$lambda$GJc30UTgCS8etWJVm4HJZdwfiIc(PremiumPreviewBottomSheet.this);
                 }
             }, 200L);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$7() {
+    public static /* synthetic */ void $r8$lambda$GJc30UTgCS8etWJVm4HJZdwfiIc(PremiumPreviewBottomSheet premiumPreviewBottomSheet) {
+        premiumPreviewBottomSheet.getClass();
         try {
-            this.container.performHapticFeedback(3, 2);
+            premiumPreviewBottomSheet.container.performHapticFeedback(3, 2);
         } catch (Exception unused) {
         }
-        this.fireworksOverlay.start(this.animateConfettiWithStars);
+        premiumPreviewBottomSheet.fireworksOverlay.start(premiumPreviewBottomSheet.animateConfettiWithStars);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 4);
+    public void dismiss() {
+        super.dismiss();
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 4);
         ValueAnimator valueAnimator = this.enterAnimator;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -997,7 +975,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         this.enterAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PremiumPreviewBottomSheet.this.lambda$onCustomOpenAnimation$8(valueAnimator);
+                PremiumPreviewBottomSheet.$r8$lambda$yR7iNcJz-5laaLLhRw2mPiKsxu8(PremiumPreviewBottomSheet.this, valueAnimator);
             }
         });
         this.enterAnimator.addListener(new 4(drawable));
@@ -1007,10 +985,10 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         return super.onCustomOpenAnimation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCustomOpenAnimation$8(ValueAnimator valueAnimator) {
-        this.enterTransitionProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.container.invalidate();
+    public static /* synthetic */ void $r8$lambda$yR7iNcJz-5laaLLhRw2mPiKsxu8(PremiumPreviewBottomSheet premiumPreviewBottomSheet, ValueAnimator valueAnimator) {
+        premiumPreviewBottomSheet.getClass();
+        premiumPreviewBottomSheet.enterTransitionProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        premiumPreviewBottomSheet.container.invalidate();
     }
 
     class 4 extends AnimatorListenerAdapter {
@@ -1032,7 +1010,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                 ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$4$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        PremiumPreviewBottomSheet.4.this.lambda$onAnimationEnd$0(drawable, valueAnimator);
+                        PremiumPreviewBottomSheet.4.$r8$lambda$NzPeIRuDSSczYTB8xfwAM224ofY(PremiumPreviewBottomSheet.4.this, drawable, valueAnimator);
                     }
                 });
                 ofInt.start();
@@ -1040,8 +1018,8 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             super.onAnimationEnd(animator);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAnimationEnd$0(Drawable drawable, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$NzPeIRuDSSczYTB8xfwAM224ofY(4 r0, Drawable drawable, ValueAnimator valueAnimator) {
+            r0.getClass();
             drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
             View view = PremiumPreviewBottomSheet.this.startEnterFromView;
             if (view instanceof ChatMessageCell) {

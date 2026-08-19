@@ -21,7 +21,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -102,24 +101,26 @@ public abstract class CommonUtils {
     }
 
     public static String createInstanceIdFrom(String... strArr) {
-        if (strArr == null || strArr.length == 0) {
-            return null;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (String str : strArr) {
-            if (str != null) {
-                arrayList.add(str.replace("-", "").toLowerCase(Locale.US));
+        if (strArr != null && strArr.length != 0) {
+            ArrayList arrayList = new ArrayList();
+            int i = 0;
+            for (String str : strArr) {
+                if (str != null) {
+                    arrayList.add(str.replace("-", "").toLowerCase(Locale.US));
+                }
             }
-        }
-        Collections.sort(arrayList);
-        StringBuilder sb = new StringBuilder();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            sb.append((String) it.next());
-        }
-        String sb2 = sb.toString();
-        if (sb2.length() > 0) {
-            return sha1(sb2);
+            Collections.sort(arrayList);
+            StringBuilder sb = new StringBuilder();
+            int size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                sb.append((String) obj);
+            }
+            String sb2 = sb.toString();
+            if (sb2.length() > 0) {
+                return sha1(sb2);
+            }
         }
         return null;
     }
@@ -169,13 +170,11 @@ public abstract class CommonUtils {
     }
 
     public static boolean isEmulator() {
-        if (!Build.PRODUCT.contains("sdk")) {
-            String str = Build.HARDWARE;
-            if (!str.contains("goldfish") && !str.contains("ranchu")) {
-                return false;
-            }
+        if (Build.PRODUCT.contains("sdk")) {
+            return true;
         }
-        return true;
+        String str = Build.HARDWARE;
+        return str.contains("goldfish") || str.contains("ranchu");
     }
 
     public static boolean isRooted() {

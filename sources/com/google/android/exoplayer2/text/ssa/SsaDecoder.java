@@ -103,7 +103,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
             String[] split = readLine.split(":");
             if (split.length == 2) {
                 String lowerCase = Ascii.toLowerCase(split[0].trim());
-                lowerCase.hashCode();
+                lowerCase.getClass();
                 if (lowerCase.equals("playresx")) {
                     this.screenWidth = Float.parseFloat(split[1].trim());
                 } else if (lowerCase.equals("playresy")) {

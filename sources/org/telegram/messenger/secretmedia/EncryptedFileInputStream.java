@@ -40,20 +40,25 @@ public class EncryptedFileInputStream extends FileInputStream {
 
     @Override // java.io.FileInputStream, java.io.InputStream
     public int read(byte[] bArr, int i, int i2) {
+        int i3;
         if (this.currentMode == 1 && this.fileOffset == 0) {
             super.read(new byte[32], 0, 32);
             Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i, i2, this.fileOffset, 0);
             this.fileOffset += 32;
-            skip((r11[0] & 255) - 32);
+            skip((r10[0] & 255) - 32);
         }
         int read = super.read(bArr, i, i2);
-        int i3 = this.currentMode;
-        if (i3 == 1) {
-            Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i, i2, this.fileOffset, 0);
-        } else if (i3 == 0) {
-            Utilities.aesCtrDecryptionByteArray(bArr, this.key, this.iv, i, i2, this.fileOffset);
+        int i4 = this.currentMode;
+        if (i4 == 1) {
+            i3 = i2;
+            Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i, i3, this.fileOffset, 0);
+        } else {
+            i3 = i2;
+            if (i4 == 0) {
+                Utilities.aesCtrDecryptionByteArray(bArr, this.key, this.iv, i, i3, this.fileOffset);
+            }
         }
-        this.fileOffset += i2;
+        this.fileOffset += i3;
         return read;
     }
 

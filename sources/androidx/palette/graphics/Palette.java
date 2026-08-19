@@ -203,11 +203,13 @@ public final class Palette {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || Swatch.class != obj.getClass()) {
-                return false;
+            if (obj != null && Swatch.class == obj.getClass()) {
+                Swatch swatch = (Swatch) obj;
+                if (this.mPopulation == swatch.mPopulation && this.mRgb == swatch.mRgb) {
+                    return true;
+                }
             }
-            Swatch swatch = (Swatch) obj;
-            return this.mPopulation == swatch.mPopulation && this.mRgb == swatch.mRgb;
+            return false;
         }
 
         public int hashCode() {

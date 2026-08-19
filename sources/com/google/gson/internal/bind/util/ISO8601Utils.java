@@ -11,8 +11,10 @@ import java.util.TimeZone;
 public abstract class ISO8601Utils {
     private static final TimeZone TIMEZONE_UTC = DesugarTimeZone.getTimeZone("UTC");
 
-    /* JADX WARN: Removed duplicated region for block: B:82:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00df A[Catch: IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, TryCatch #2 {IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, blocks: (B:3:0x0004, B:5:0x0017, B:6:0x0019, B:8:0x0025, B:9:0x0027, B:11:0x0037, B:13:0x003d, B:18:0x005b, B:20:0x006b, B:21:0x006d, B:23:0x0079, B:24:0x007c, B:26:0x0082, B:30:0x008c, B:35:0x009c, B:37:0x00a4, B:42:0x00d9, B:44:0x00df, B:46:0x00e5, B:47:0x0192, B:52:0x00ef, B:53:0x010a, B:54:0x010b, B:57:0x0127, B:59:0x0134, B:62:0x013d, B:64:0x015c, B:67:0x016b, B:68:0x018d, B:70:0x0190, B:71:0x0116, B:72:0x01c3, B:73:0x01ca, B:74:0x00bc, B:75:0x00bf), top: B:2:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01c3 A[Catch: IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, TryCatch #2 {IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, blocks: (B:3:0x0004, B:5:0x0017, B:6:0x0019, B:8:0x0025, B:9:0x0027, B:11:0x0037, B:13:0x003d, B:18:0x005b, B:20:0x006b, B:21:0x006d, B:23:0x0079, B:24:0x007c, B:26:0x0082, B:30:0x008c, B:35:0x009c, B:37:0x00a4, B:42:0x00d9, B:44:0x00df, B:46:0x00e5, B:47:0x0192, B:52:0x00ef, B:53:0x010a, B:54:0x010b, B:57:0x0127, B:59:0x0134, B:62:0x013d, B:64:0x015c, B:67:0x016b, B:68:0x018d, B:70:0x0190, B:71:0x0116, B:72:0x01c3, B:73:0x01ca, B:74:0x00bc, B:75:0x00bf), top: B:2:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x01cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,13 +60,7 @@ public abstract class ISO8601Utils {
                 if (checkOffset(str, i9, ':')) {
                     i9 = i8 + 3;
                 }
-                if (str.length() <= i9 || (charAt = str.charAt(i9)) == 'Z' || charAt == '+' || charAt == '-') {
-                    i2 = parseInt5;
-                    i3 = 0;
-                    i4 = 0;
-                    i7 = i9;
-                    i = parseInt4;
-                } else {
+                if (str.length() > i9 && (charAt = str.charAt(i9)) != 'Z' && charAt != '+' && charAt != '-') {
                     int i10 = i9 + 2;
                     i4 = parseInt(str, i9, i10);
                     if (i4 > 59 && i4 < 63) {
@@ -91,51 +87,56 @@ public abstract class ISO8601Utils {
                         i2 = parseInt5;
                         i3 = 0;
                     }
+                    if (str.length() > i7) {
+                        throw new IllegalArgumentException("No time zone indicator");
+                    }
+                    char charAt2 = str.charAt(i7);
+                    if (charAt2 == 'Z') {
+                        timeZone = TIMEZONE_UTC;
+                        length = i7 + 1;
+                    } else {
+                        if (charAt2 != '+' && charAt2 != '-') {
+                            throw new IndexOutOfBoundsException("Invalid time zone indicator '" + charAt2 + "'");
+                        }
+                        String substring = str.substring(i7);
+                        if (substring.length() < 5) {
+                            substring = substring + "00";
+                        }
+                        length = i7 + substring.length();
+                        if (!substring.equals("+0000") && !substring.equals("+00:00")) {
+                            String str3 = "GMT" + substring;
+                            TimeZone timeZone2 = DesugarTimeZone.getTimeZone(str3);
+                            String id = timeZone2.getID();
+                            if (!id.equals(str3) && !id.replace(":", "").equals(str3)) {
+                                throw new IndexOutOfBoundsException("Mismatching time zone indicator: " + str3 + " given, resolves to " + timeZone2.getID());
+                            }
+                            timeZone = timeZone2;
+                        }
+                        timeZone = TIMEZONE_UTC;
+                    }
+                    GregorianCalendar gregorianCalendar2 = new GregorianCalendar(timeZone);
+                    gregorianCalendar2.setLenient(false);
+                    gregorianCalendar2.set(1, parseInt);
+                    gregorianCalendar2.set(2, parseInt2 - 1);
+                    gregorianCalendar2.set(5, parseInt3);
+                    gregorianCalendar2.set(11, i);
+                    gregorianCalendar2.set(12, i2);
+                    gregorianCalendar2.set(13, i4);
+                    gregorianCalendar2.set(14, i3);
+                    parsePosition.setIndex(length);
+                    return gregorianCalendar2.getTime();
                 }
+                i7 = i9;
+                i = parseInt4;
+                i2 = parseInt5;
             } else {
                 i = 0;
                 i2 = 0;
-                i3 = 0;
-                i4 = 0;
             }
-            if (str.length() <= i7) {
-                throw new IllegalArgumentException("No time zone indicator");
+            i3 = 0;
+            i4 = 0;
+            if (str.length() > i7) {
             }
-            char charAt2 = str.charAt(i7);
-            if (charAt2 == 'Z') {
-                timeZone = TIMEZONE_UTC;
-                length = i7 + 1;
-            } else {
-                if (charAt2 != '+' && charAt2 != '-') {
-                    throw new IndexOutOfBoundsException("Invalid time zone indicator '" + charAt2 + "'");
-                }
-                String substring = str.substring(i7);
-                if (substring.length() < 5) {
-                    substring = substring + "00";
-                }
-                length = i7 + substring.length();
-                if (!substring.equals("+0000") && !substring.equals("+00:00")) {
-                    String str3 = "GMT" + substring;
-                    TimeZone timeZone2 = DesugarTimeZone.getTimeZone(str3);
-                    String id = timeZone2.getID();
-                    if (!id.equals(str3) && !id.replace(":", "").equals(str3)) {
-                        throw new IndexOutOfBoundsException("Mismatching time zone indicator: " + str3 + " given, resolves to " + timeZone2.getID());
-                    }
-                    timeZone = timeZone2;
-                }
-                timeZone = TIMEZONE_UTC;
-            }
-            GregorianCalendar gregorianCalendar2 = new GregorianCalendar(timeZone);
-            gregorianCalendar2.setLenient(false);
-            gregorianCalendar2.set(1, parseInt);
-            gregorianCalendar2.set(2, parseInt2 - 1);
-            gregorianCalendar2.set(5, parseInt3);
-            gregorianCalendar2.set(11, i);
-            gregorianCalendar2.set(12, i2);
-            gregorianCalendar2.set(13, i4);
-            gregorianCalendar2.set(14, i3);
-            parsePosition.setIndex(length);
-            return gregorianCalendar2.getTime();
         } catch (IllegalArgumentException e) {
             e = e;
             if (str != null) {

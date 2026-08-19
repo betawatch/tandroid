@@ -85,8 +85,7 @@ public class BottomSheetTabs extends FrameLayout {
     public static final HashMap tabs = new HashMap();
     public static final HashMap tabDrawables = new HashMap();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$touchEvent$6(Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$6r2txJ0Yr4DK9EpwLcLpfe0Mu_M(Boolean bool) {
     }
 
     public BottomSheetTabs(Context context, ActionBarLayout actionBarLayout) {
@@ -148,7 +147,7 @@ public class BottomSheetTabs extends FrameLayout {
         new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BottomSheetTabs.this.lambda$openTab$0(webTabData, (BaseFragment) obj);
+                BottomSheetTabs.$r8$lambda$t3dh2AB0YwSRv4-W_LOo3bJIbuQ(BottomSheetTabs.this, webTabData, (BaseFragment) obj);
             }
         }.run(lastFragment);
         if (webTabData.needsContext) {
@@ -160,14 +159,14 @@ public class BottomSheetTabs extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BottomSheetTabs.this.lambda$openTab$1(lastFragment, of);
+                    BottomSheetTabs.$r8$lambda$q_3532qoR80viwZuASU_LF6yn6Q(BottomSheetTabs.this, lastFragment, of);
                 }
             }, 220L);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openTab$0(WebTabData webTabData, BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$t3dh2AB0YwSRv4-W_LOo3bJIbuQ(BottomSheetTabs bottomSheetTabs, WebTabData webTabData, BaseFragment baseFragment) {
+        bottomSheetTabs.getClass();
         if (baseFragment == null) {
             return;
         }
@@ -184,15 +183,15 @@ public class BottomSheetTabs extends FrameLayout {
         BotWebViewSheet botWebViewSheet = new BotWebViewSheet(baseFragment.getContext(), baseFragment.getResourceProvider());
         botWebViewSheet.setParentActivity(baseFragment.getParentActivity());
         if (botWebViewSheet.restoreState(baseFragment, webTabData)) {
-            removeTab(webTabData, false);
+            bottomSheetTabs.removeTab(webTabData, false);
             botWebViewSheet.show();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openTab$1(BaseFragment baseFragment, BaseFragment baseFragment2) {
+    public static /* synthetic */ void $r8$lambda$q_3532qoR80viwZuASU_LF6yn6Q(BottomSheetTabs bottomSheetTabs, BaseFragment baseFragment, BaseFragment baseFragment2) {
+        bottomSheetTabs.getClass();
         baseFragment.presentFragment(baseFragment2);
-        this.doNotDismiss = false;
+        bottomSheetTabs.doNotDismiss = false;
     }
 
     public WebTabData tryReopenTab(WebViewRequestProps webViewRequestProps) {
@@ -473,9 +472,12 @@ public class BottomSheetTabs extends FrameLayout {
             }
             ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i));
             if (arrayList != null) {
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    WebTabData webTabData = (WebTabData) it.next();
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    WebTabData webTabData = (WebTabData) obj;
                     if (webTabData.articleViewer == articleViewer) {
                         return removeTab(i, webTabData, true);
                     }
@@ -500,42 +502,40 @@ public class BottomSheetTabs extends FrameLayout {
         AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(R.string.BotWebViewCloseAnyway), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BottomSheetTabs.this.lambda$removeTab$2(zArr, webTabData, callback, r5, alertDialog, i);
+                BottomSheetTabs.$r8$lambda$rgkkl5LsHmsPhNQPla-gMItkXc0(BottomSheetTabs.this, zArr, webTabData, callback, r5, alertDialog, i);
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BottomSheetTabs.lambda$removeTab$3(zArr, callback, r3, alertDialog, i);
+                BottomSheetTabs.$r8$lambda$kds1RKsT7D42Om7XAx69ikKtHJA(zArr, callback, r3, alertDialog, i);
             }
         }).create();
         final AlertDialog[] alertDialogArr = {create};
         create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                BottomSheetTabs.lambda$removeTab$4(zArr, callback, dialogInterface);
+                BottomSheetTabs.$r8$lambda$wY--mzJHTOpTZmii2flzYplpdWs(zArr, callback, dialogInterface);
             }
         });
         alertDialogArr[0].show();
         ((TextView) alertDialogArr[0].getButton(-1)).setTextColor(Theme.getColor(Theme.key_text_RedBold));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeTab$2(boolean[] zArr, WebTabData webTabData, Utilities.Callback callback, AlertDialog[] alertDialogArr, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$rgkkl5LsHmsPhNQPla-gMItkXc0(BottomSheetTabs bottomSheetTabs, boolean[] zArr, WebTabData webTabData, Utilities.Callback callback, AlertDialog[] alertDialogArr, AlertDialog alertDialog, int i) {
+        bottomSheetTabs.getClass();
         zArr[0] = true;
-        removeTab(webTabData, true);
+        bottomSheetTabs.removeTab(webTabData, true);
         callback.run(Boolean.TRUE);
         alertDialogArr[0].dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$removeTab$3(boolean[] zArr, Utilities.Callback callback, AlertDialog[] alertDialogArr, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$kds1RKsT7D42Om7XAx69ikKtHJA(boolean[] zArr, Utilities.Callback callback, AlertDialog[] alertDialogArr, AlertDialog alertDialog, int i) {
         zArr[0] = true;
         callback.run(Boolean.FALSE);
         alertDialogArr[0].dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$removeTab$4(boolean[] zArr, Utilities.Callback callback, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$wY--mzJHTOpTZmii2flzYplpdWs(boolean[] zArr, Utilities.Callback callback, DialogInterface dialogInterface) {
         if (zArr[0]) {
             return;
         }
@@ -566,7 +566,7 @@ public class BottomSheetTabs extends FrameLayout {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                BottomSheetTabs.this.lambda$removeTab$5(tabDrawables2, webTabData);
+                BottomSheetTabs.$r8$lambda$eS6onxPmrS2KyNhr0fENWTMjseo(BottomSheetTabs.this, tabDrawables2, webTabData);
             }
         }, 320L);
         updateVisibility(true);
@@ -578,8 +578,8 @@ public class BottomSheetTabs extends FrameLayout {
         return tabs2.isEmpty();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeTab$5(ArrayList arrayList, WebTabData webTabData) {
+    public static /* synthetic */ void $r8$lambda$eS6onxPmrS2KyNhr0fENWTMjseo(BottomSheetTabs bottomSheetTabs, ArrayList arrayList, WebTabData webTabData) {
+        bottomSheetTabs.getClass();
         int i = 0;
         while (i < arrayList.size()) {
             if (((TabDrawable) arrayList.get(i)).tab == webTabData) {
@@ -588,7 +588,7 @@ public class BottomSheetTabs extends FrameLayout {
             }
             i++;
         }
-        invalidate();
+        bottomSheetTabs.invalidate();
     }
 
     @Override // android.view.View
@@ -618,7 +618,7 @@ public class BottomSheetTabs extends FrameLayout {
                         removeTab(webTabData, new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda6
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                BottomSheetTabs.lambda$touchEvent$6((Boolean) obj);
+                                BottomSheetTabs.$r8$lambda$6r2txJ0Yr4DK9EpwLcLpfe0Mu_M((Boolean) obj);
                             }
                         });
                     }
@@ -663,6 +663,7 @@ public class BottomSheetTabs extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
         getTabs();
         ArrayList<TabDrawable> tabDrawables2 = getTabDrawables();
         if (this.bottomTabsProgress <= 0.0f) {
@@ -673,7 +674,8 @@ public class BottomSheetTabs extends FrameLayout {
         int i = this.tabColorAnimated.set(this.tabColor);
         float f = this.tabDarkAnimated.set(this.tabIsDark);
         if (this.drawTabs) {
-            for (int i2 = 0; i2 < tabDrawables2.size(); i2++) {
+            int i2 = 0;
+            while (i2 < tabDrawables2.size()) {
                 TabDrawable tabDrawable = tabDrawables2.get(i2);
                 float position = tabDrawable.getPosition();
                 float alpha = tabDrawable.getAlpha();
@@ -681,8 +683,13 @@ public class BottomSheetTabs extends FrameLayout {
                     getTabBounds(this.rect, position);
                     tabDrawable.setExpandProgress(0.0f);
                     tabDrawable.setBackgroundColor(i, f > 0.5f);
-                    tabDrawable.draw(canvas, this.rect, AndroidUtilities.dp(18.0f), alpha, 1.0f);
+                    canvas2 = canvas;
+                    tabDrawable.draw(canvas2, this.rect, AndroidUtilities.dp(18.0f), alpha, 1.0f);
+                } else {
+                    canvas2 = canvas;
                 }
+                i2++;
+                canvas = canvas2;
             }
         }
     }
@@ -719,8 +726,7 @@ public class BottomSheetTabs extends FrameLayout {
         private final Rect tmpRect;
         private final RectF tmpRectF;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onPerformActionForVirtualView$0(Boolean bool) {
+        public static /* synthetic */ void $r8$lambda$rKrZd3N_R6LXhNBcOtjYQ-dSVzc(Boolean bool) {
         }
 
         public TabsAccessibilityHelper(View view) {
@@ -833,7 +839,7 @@ public class BottomSheetTabs extends FrameLayout {
             BottomSheetTabs.this.removeTab(webTabData, new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$TabsAccessibilityHelper$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BottomSheetTabs.TabsAccessibilityHelper.lambda$onPerformActionForVirtualView$0((Boolean) obj);
+                    BottomSheetTabs.TabsAccessibilityHelper.$r8$lambda$rKrZd3N_R6LXhNBcOtjYQ-dSVzc((Boolean) obj);
                 }
             });
             return true;
@@ -946,6 +952,7 @@ public class BottomSheetTabs extends FrameLayout {
         }
 
         public void draw(Canvas canvas, RectF rectF, float f, float f2, float f3) {
+            Canvas canvas2 = canvas;
             int blendARGB = ColorUtils.blendARGB(this.backgroundColor, this.tabColor, this.expandProgress);
             this.backgroundPaint.setColor(blendARGB);
             float f4 = f2 * 255.0f;
@@ -964,21 +971,22 @@ public class BottomSheetTabs extends FrameLayout {
             fArr[4] = lerp;
             this.rectPath.rewind();
             this.rectPath.addRoundRect(rectF, this.radii, Path.Direction.CW);
-            canvas.drawPath(this.rectPath, this.backgroundPaint);
+            canvas2.drawPath(this.rectPath, this.backgroundPaint);
             if (this.progress > 0.0f && this.expandProgress > 0.0f && f2 > 0.0f) {
-                canvas.save();
-                canvas.clipPath(this.rectPath);
+                canvas2.save();
+                canvas2.clipPath(this.rectPath);
                 this.progressPaint.setColor(Theme.multAlpha(AndroidUtilities.computePerceivedBrightness(blendARGB) > 0.721f ? -16777216 : -1, 0.07f * f2 * this.expandProgress));
                 float f5 = rectF.left;
                 canvas.drawRect(f5, rectF.top, f5 + (rectF.width() * this.progress), rectF.bottom, this.progressPaint);
-                canvas.restore();
+                canvas2 = canvas;
+                canvas2.restore();
             }
             float lerp2 = AndroidUtilities.lerp(this.backgroundIsDark ? 1.0f : 0.0f, this.tabIsDark ? 1.0f : 0.0f, this.expandProgress);
             int blendARGB2 = ColorUtils.blendARGB(-16777216, -1, lerp2);
             this.iconPaint.setColor(blendARGB2);
             this.iconPaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            canvas.save();
-            canvas.translate(rectF.left, rectF.centerY());
+            canvas2.save();
+            canvas2.translate(rectF.left, rectF.centerY());
             int blendARGB3 = ColorUtils.blendARGB(553648127, 553648127, lerp2);
             this.closeRipple.setBounds(AndroidUtilities.dp(25.0f) + (-AndroidUtilities.dp(25.0f)), -AndroidUtilities.dp(25.0f), AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(25.0f), AndroidUtilities.dp(25.0f));
             if (this.closeRippleColor != blendARGB3) {
@@ -986,30 +994,30 @@ public class BottomSheetTabs extends FrameLayout {
                 this.closeRippleColor = blendARGB3;
                 Theme.setSelectorDrawableColor(drawable, blendARGB3, false);
             }
-            this.closeRipple.draw(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.translate(rectF.left + AndroidUtilities.dp(18.0f), rectF.centerY() - AndroidUtilities.dp(6.0f));
+            this.closeRipple.draw(canvas2);
+            canvas2.restore();
+            canvas2.save();
+            canvas2.translate(rectF.left + AndroidUtilities.dp(18.0f), rectF.centerY() - AndroidUtilities.dp(6.0f));
             float f6 = f4 * f3;
             int i2 = (int) f6;
             this.iconPaint.setAlpha(i2);
-            canvas.drawPath(this.closePath, this.iconPaint);
-            canvas.restore();
-            canvas.save();
-            canvas.translate(rectF.right - AndroidUtilities.dp(30.66f), rectF.centerY());
+            canvas2.drawPath(this.closePath, this.iconPaint);
+            canvas2.restore();
+            canvas2.save();
+            canvas2.translate(rectF.right - AndroidUtilities.dp(30.66f), rectF.centerY());
             this.iconPaint.setAlpha((int) (f6 * (1.0f - this.expandProgress)));
-            canvas.drawPath(this.expandPath, this.iconPaint);
-            canvas.restore();
+            canvas2.drawPath(this.expandPath, this.iconPaint);
+            canvas2.restore();
             if (this.favicon != null) {
                 int dp = AndroidUtilities.dp(24.0f);
-                canvas.save();
+                canvas2.save();
                 Rect rect = AndroidUtilities.rectTmp2;
                 float f7 = dp;
                 float f8 = f7 / 2.0f;
                 rect.set((int) (rectF.left + AndroidUtilities.dp(56.0f)), (int) (rectF.centerY() - f8), (int) (rectF.left + AndroidUtilities.dp(56.0f) + f7), (int) (rectF.centerY() + f8));
                 this.faviconPaint.setAlpha(i2);
-                canvas.drawBitmap(this.favicon, (Rect) null, rect, this.faviconPaint);
-                canvas.restore();
+                canvas2.drawBitmap(this.favicon, (Rect) null, rect, this.faviconPaint);
+                canvas2.restore();
                 i = dp + AndroidUtilities.dp(4.0f);
             } else if (this.iconDrawable != null) {
                 float dp2 = AndroidUtilities.dp(24.0f);
@@ -1024,12 +1032,12 @@ public class BottomSheetTabs extends FrameLayout {
                 }
                 this.iconDrawable.setAlpha(i2);
                 this.iconDrawable.setBounds(rect2);
-                this.iconDrawable.draw(canvas);
+                this.iconDrawable.draw(canvas2);
                 i = intrinsicHeight - AndroidUtilities.dp(2.0f);
             }
             Text text = this.overrideTitle;
             if (text != null) {
-                text.ellipsize((int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3)).draw(canvas, i + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), blendARGB2, (1.0f - this.expandProgress) * f2 * f3);
+                text.ellipsize((int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r4)).draw(canvas2, rectF.left + AndroidUtilities.dp(60.0f) + i, rectF.centerY(), blendARGB2, (1.0f - this.expandProgress) * f2 * f3);
             }
             this.title.ellipsize((int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3)).draw(canvas, i + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), blendARGB2, (this.overrideTitle != null ? this.expandProgress : 1.0f) * f2 * f3);
         }
@@ -1129,7 +1137,7 @@ public class BottomSheetTabs extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs$$ExternalSyntheticLambda5
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    BottomSheetTabs.this.lambda$updateVisibility$7(valueAnimator2);
+                    BottomSheetTabs.$r8$lambda$uun15od05WAGlNuyuHx4pmCCPKw(BottomSheetTabs.this, valueAnimator2);
                 }
             });
             this.bottomTabsAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.BottomSheetTabs.1
@@ -1158,14 +1166,14 @@ public class BottomSheetTabs extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateVisibility$7(ValueAnimator valueAnimator) {
-        this.bottomTabsProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        Iterator it = this.invalidateListeners.iterator();
+    public static /* synthetic */ void $r8$lambda$uun15od05WAGlNuyuHx4pmCCPKw(BottomSheetTabs bottomSheetTabs, ValueAnimator valueAnimator) {
+        bottomSheetTabs.getClass();
+        bottomSheetTabs.bottomTabsProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        Iterator it = bottomSheetTabs.invalidateListeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
-        invalidate();
+        bottomSheetTabs.invalidate();
     }
 
     public static class ClipTools {

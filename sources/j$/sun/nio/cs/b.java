@@ -7,8 +7,8 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 
 /* loaded from: classes2.dex */
-final class b extends CharsetEncoder {
-    private final e a;
+public final class b extends CharsetEncoder {
+    public final e a;
 
     @Override // java.nio.charset.CharsetEncoder
     public final boolean canEncode(char c) {
@@ -20,12 +20,14 @@ final class b extends CharsetEncoder {
         return true;
     }
 
-    b(c cVar) {
+    public b(c cVar) {
         super(cVar, 1.0f, 1.0f);
-        this.a = new e();
+        e eVar = new e();
+        eVar.a = CoderResult.UNDERFLOW;
+        this.a = eVar;
     }
 
-    private static int a(char[] cArr, int i, byte[] bArr, int i2, int i3) {
+    public static int a(char[] cArr, int i, byte[] bArr, int i2, int i3) {
         int i4 = 0;
         if (i3 <= 0) {
             return 0;
@@ -61,10 +63,11 @@ final class b extends CharsetEncoder {
     }
 
     @Override // java.nio.charset.CharsetEncoder
-    protected final CoderResult encodeLoop(CharBuffer charBuffer, ByteBuffer byteBuffer) {
+    public final CoderResult encodeLoop(CharBuffer charBuffer, ByteBuffer byteBuffer) {
         CoderResult coderResult;
         CoderResult coderResult2;
         boolean hasArray = charBuffer.hasArray();
+        int i = 2;
         e eVar = this.a;
         if (hasArray && byteBuffer.hasArray()) {
             char[] array = charBuffer.array();
@@ -81,29 +84,31 @@ final class b extends CharsetEncoder {
             if (position2 > limit2) {
                 position2 = limit2;
             }
-            int i = limit2 - position2;
-            int i2 = limit - position;
-            if (i >= i2) {
-                i = i2;
+            int i2 = limit2 - position2;
+            int i3 = limit - position;
+            if (i2 >= i3) {
+                i2 = i3;
             }
             try {
-                int a = a(array, position, array2, position2, i);
-                int i3 = position + a;
-                int i4 = position2 + a;
-                if (a != i) {
-                    if (eVar.c(array[i3], array, i3, limit) < 0) {
-                        coderResult2 = eVar.a();
+                int a = a(array, position, array2, position2, i2);
+                int i4 = position + a;
+                int i5 = position2 + a;
+                if (a != i2) {
+                    if (eVar.b(array[i4], array, i4, limit) < 0) {
+                        coderResult2 = eVar.a;
                     } else {
-                        coderResult2 = eVar.d();
+                        if (!eVar.b) {
+                            i = 1;
+                        }
+                        coderResult2 = CoderResult.unmappableForLength(i);
                     }
-                } else if (i < i2) {
+                } else if (i2 < i3) {
                     coderResult2 = CoderResult.OVERFLOW;
                 } else {
                     coderResult2 = CoderResult.UNDERFLOW;
                 }
                 return coderResult2;
-            } catch (Throwable th) {
-                throw th;
+            } finally {
             }
         }
         int position3 = charBuffer.position();
@@ -118,10 +123,13 @@ final class b extends CharsetEncoder {
                         }
                         byteBuffer.put((byte) c);
                         position3++;
-                    } else if (eVar.b(c, charBuffer) < 0) {
-                        coderResult = eVar.a();
+                    } else if (eVar.a(c, charBuffer) < 0) {
+                        coderResult = eVar.a;
                     } else {
-                        coderResult = eVar.d();
+                        if (!eVar.b) {
+                            i = 1;
+                        }
+                        coderResult = CoderResult.unmappableForLength(i);
                     }
                 } else {
                     coderResult = CoderResult.UNDERFLOW;

@@ -1,7 +1,7 @@
 package com.microsoft.appcenter.http;
 
 /* loaded from: classes3.dex */
-public abstract class HttpClientDecorator implements HttpClient {
+public abstract class HttpClientDecorator implements HttpClient, AutoCloseable {
     final HttpClient mDecoratedApi;
 
     HttpClientDecorator(HttpClient httpClient) {

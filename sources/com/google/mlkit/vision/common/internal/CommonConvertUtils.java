@@ -1,6 +1,6 @@
 package com.google.mlkit.vision.common.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CommonConvertUtils {
     public static int convertToMVRotation(int i) {
         if (i == 0) {

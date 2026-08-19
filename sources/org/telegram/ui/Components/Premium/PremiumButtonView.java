@@ -220,7 +220,7 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    PremiumButtonView.this.lambda$setLoading$0(valueAnimator2);
+                    PremiumButtonView.$r8$lambda$MyHMbP_TnK0zalz814PRP5AOafY(PremiumButtonView.this, valueAnimator2);
                 }
             });
             this.loadingAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.4
@@ -240,11 +240,11 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setLoading$0(ValueAnimator valueAnimator) {
-        this.loadingT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.buttonTextView.invalidate();
-        AnimatedTextView animatedTextView = this.overlayTextView;
+    public static /* synthetic */ void $r8$lambda$MyHMbP_TnK0zalz814PRP5AOafY(PremiumButtonView premiumButtonView, ValueAnimator valueAnimator) {
+        premiumButtonView.getClass();
+        premiumButtonView.loadingT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        premiumButtonView.buttonTextView.invalidate();
+        AnimatedTextView animatedTextView = premiumButtonView.overlayTextView;
         if (animatedTextView != null) {
             animatedTextView.invalidate();
         }
@@ -382,17 +382,16 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
         cellFlickerDrawable.setOnRestartCallback(new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PremiumButtonView.this.lambda$setIcon$1();
+                PremiumButtonView.$r8$lambda$zR-kv0O1Cyq7obwNcXr8cmU0hCk(PremiumButtonView.this);
             }
         });
         invalidate();
         this.iconView.setVisibility(0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setIcon$1() {
-        this.iconView.getAnimatedDrawable().setCurrentFrame(0, true);
-        this.iconView.playAnimation();
+    public static /* synthetic */ void $r8$lambda$zR-kv0O1Cyq7obwNcXr8cmU0hCk(PremiumButtonView premiumButtonView) {
+        premiumButtonView.iconView.getAnimatedDrawable().setCurrentFrame(0, true);
+        premiumButtonView.iconView.playAnimation();
     }
 
     public void hideIcon() {

@@ -33,7 +33,10 @@ public final class JsonArray extends JsonElement implements Iterable {
     }
 
     public boolean equals(Object obj) {
-        return obj == this || ((obj instanceof JsonArray) && ((JsonArray) obj).elements.equals(this.elements));
+        if (obj != this) {
+            return (obj instanceof JsonArray) && ((JsonArray) obj).elements.equals(this.elements);
+        }
+        return true;
     }
 
     public int hashCode() {

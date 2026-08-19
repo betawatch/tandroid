@@ -116,16 +116,15 @@ public class StarRatingView extends View {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.StarRatingView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                StarRatingView.this.lambda$onUpdateVisibilityFactor$0();
+                StarRatingView.$r8$lambda$RcVHJZOxN3Tw4enyS_xxWdakVB0(StarRatingView.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onUpdateVisibilityFactor$0() {
-        Delegate delegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$RcVHJZOxN3Tw4enyS_xxWdakVB0(StarRatingView starRatingView) {
+        Delegate delegate = starRatingView.delegate;
         if (delegate != null) {
-            delegate.onUpdateState(getVisibilityFactor());
+            delegate.onUpdateState(starRatingView.getVisibilityFactor());
         }
     }
 

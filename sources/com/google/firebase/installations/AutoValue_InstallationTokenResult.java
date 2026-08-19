@@ -37,11 +37,13 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof InstallationTokenResult)) {
-            return false;
+        if (obj instanceof InstallationTokenResult) {
+            InstallationTokenResult installationTokenResult = (InstallationTokenResult) obj;
+            if (this.token.equals(installationTokenResult.getToken()) && this.tokenExpirationTimestamp == installationTokenResult.getTokenExpirationTimestamp() && this.tokenCreationTimestamp == installationTokenResult.getTokenCreationTimestamp()) {
+                return true;
+            }
         }
-        InstallationTokenResult installationTokenResult = (InstallationTokenResult) obj;
-        return this.token.equals(installationTokenResult.getToken()) && this.tokenExpirationTimestamp == installationTokenResult.getTokenExpirationTimestamp() && this.tokenCreationTimestamp == installationTokenResult.getTokenCreationTimestamp();
+        return false;
     }
 
     public int hashCode() {

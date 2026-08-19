@@ -58,10 +58,14 @@ public final class UndispatchedCoroutine extends ScopeCoroutine {
         try {
             this.uCont.resumeWith(recoverResult);
             Unit unit = Unit.INSTANCE;
-        } finally {
             if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {
                 ThreadContextKt.restoreThreadContext(context, updateThreadContext);
             }
+        } catch (Throwable th) {
+            if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {
+                ThreadContextKt.restoreThreadContext(context, updateThreadContext);
+            }
+            throw th;
         }
     }
 }

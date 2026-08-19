@@ -14,17 +14,14 @@ abstract class ConcurrencyHelpers {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadFactory() { // from class: androidx.emoji2.text.ConcurrencyHelpers$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                Thread lambda$createBackgroundPriorityExecutor$0;
-                lambda$createBackgroundPriorityExecutor$0 = ConcurrencyHelpers.lambda$createBackgroundPriorityExecutor$0(str, runnable);
-                return lambda$createBackgroundPriorityExecutor$0;
+                return ConcurrencyHelpers.$r8$lambda$hDWNjMgTS47ccxPkL8ebwFGVHg4(str, runnable);
             }
         });
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         return threadPoolExecutor;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Thread lambda$createBackgroundPriorityExecutor$0(String str, Runnable runnable) {
+    public static /* synthetic */ Thread $r8$lambda$hDWNjMgTS47ccxPkL8ebwFGVHg4(String str, Runnable runnable) {
         Thread thread = new Thread(runnable, str);
         thread.setPriority(10);
         return thread;

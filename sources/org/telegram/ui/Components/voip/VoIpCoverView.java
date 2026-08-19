@@ -65,7 +65,7 @@ public class VoIpCoverView extends View {
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpCoverView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIpCoverView.this.lambda$onConnected$0(valueAnimator);
+                    VoIpCoverView.$r8$lambda$URxPMLYSrznpmU7xLUEWevhh9-k(VoIpCoverView.this, valueAnimator);
                 }
             });
             this.positionAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT);
@@ -74,15 +74,15 @@ public class VoIpCoverView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onConnected$0(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$URxPMLYSrznpmU7xLUEWevhh9-k(VoIpCoverView voIpCoverView, ValueAnimator valueAnimator) {
+        voIpCoverView.getClass();
         int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        this.diffX1 = intValue;
-        this.diffX2 = intValue;
-        this.diffX3 = intValue;
-        this.diffX4 = intValue;
-        this.diffX5 = intValue;
-        invalidate();
+        voIpCoverView.diffX1 = intValue;
+        voIpCoverView.diffX2 = intValue;
+        voIpCoverView.diffX3 = intValue;
+        voIpCoverView.diffX4 = intValue;
+        voIpCoverView.diffX5 = intValue;
+        voIpCoverView.invalidate();
     }
 
     public void onEmojiExpanded(boolean z) {
@@ -93,7 +93,7 @@ public class VoIpCoverView extends View {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpCoverView$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIpCoverView.this.lambda$onEmojiExpanded$1(valueAnimator);
+                    VoIpCoverView.$r8$lambda$axlp90befnQ4wCZtAiOQnqCwvmE(VoIpCoverView.this, valueAnimator);
                 }
             });
             this.positionAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -102,20 +102,20 @@ public class VoIpCoverView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEmojiExpanded$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$axlp90befnQ4wCZtAiOQnqCwvmE(VoIpCoverView voIpCoverView, ValueAnimator valueAnimator) {
+        voIpCoverView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.diffX1 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(56.0f), floatValue);
-        this.diffX2 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
-        this.diffX3 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(60.0f), floatValue);
-        this.diffX4 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
-        this.diffX5 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(64.0f), floatValue);
-        this.diffY1 = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
-        this.diffY2 = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
-        this.diffY3 = AndroidUtilities.lerp(0, 0, floatValue);
-        this.diffY4 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
-        this.diffY5 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
-        invalidate();
+        voIpCoverView.diffX1 = AndroidUtilities.lerp(voIpCoverView.connectedDiffX, AndroidUtilities.dp(56.0f), floatValue);
+        voIpCoverView.diffX2 = AndroidUtilities.lerp(voIpCoverView.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
+        voIpCoverView.diffX3 = AndroidUtilities.lerp(voIpCoverView.connectedDiffX, AndroidUtilities.dp(60.0f), floatValue);
+        voIpCoverView.diffX4 = AndroidUtilities.lerp(voIpCoverView.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
+        voIpCoverView.diffX5 = AndroidUtilities.lerp(voIpCoverView.connectedDiffX, AndroidUtilities.dp(64.0f), floatValue);
+        voIpCoverView.diffY1 = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
+        voIpCoverView.diffY2 = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
+        voIpCoverView.diffY3 = AndroidUtilities.lerp(0, 0, floatValue);
+        voIpCoverView.diffY4 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
+        voIpCoverView.diffY5 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
+        voIpCoverView.invalidate();
     }
 
     @Override // android.view.View

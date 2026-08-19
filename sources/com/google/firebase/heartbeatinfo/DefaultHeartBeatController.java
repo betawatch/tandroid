@@ -43,17 +43,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda3
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                Void lambda$registerHeartBeat$0;
-                lambda$registerHeartBeat$0 = DefaultHeartBeatController.this.lambda$registerHeartBeat$0();
-                return lambda$registerHeartBeat$0;
+                return DefaultHeartBeatController.$r8$lambda$ssxGEaCSc5qotNfnf_nT87dJ5TU(DefaultHeartBeatController.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Void lambda$registerHeartBeat$0() {
-        synchronized (this) {
-            ((HeartBeatInfoStorage) this.storageProvider.get()).storeHeartBeat(System.currentTimeMillis(), ((UserAgentPublisher) this.userAgentProvider.get()).getUserAgent());
+    public static /* synthetic */ Void $r8$lambda$ssxGEaCSc5qotNfnf_nT87dJ5TU(DefaultHeartBeatController defaultHeartBeatController) {
+        synchronized (defaultHeartBeatController) {
+            ((HeartBeatInfoStorage) defaultHeartBeatController.storageProvider.get()).storeHeartBeat(System.currentTimeMillis(), ((UserAgentPublisher) defaultHeartBeatController.userAgentProvider.get()).getUserAgent());
         }
         return null;
     }
@@ -66,19 +63,16 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda2
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                String lambda$getHeartBeatsHeader$1;
-                lambda$getHeartBeatsHeader$1 = DefaultHeartBeatController.this.lambda$getHeartBeatsHeader$1();
-                return lambda$getHeartBeatsHeader$1;
+                return DefaultHeartBeatController.$r8$lambda$NKSgqEy24k0xnerWqr-lPNg6qcc(DefaultHeartBeatController.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$getHeartBeatsHeader$1() {
+    public static /* synthetic */ String $r8$lambda$NKSgqEy24k0xnerWqr-lPNg6qcc(DefaultHeartBeatController defaultHeartBeatController) {
         String byteArrayOutputStream;
-        synchronized (this) {
+        synchronized (defaultHeartBeatController) {
             try {
-                HeartBeatInfoStorage heartBeatInfoStorage = (HeartBeatInfoStorage) this.storageProvider.get();
+                HeartBeatInfoStorage heartBeatInfoStorage = (HeartBeatInfoStorage) defaultHeartBeatController.storageProvider.get();
                 List allHeartBeats = heartBeatInfoStorage.getAllHeartBeats();
                 heartBeatInfoStorage.deleteAllHeartBeats();
                 JSONArray jSONArray = new JSONArray();
@@ -116,15 +110,12 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         this(new Provider() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda1
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
-                HeartBeatInfoStorage lambda$new$2;
-                lambda$new$2 = DefaultHeartBeatController.lambda$new$2(context, str);
-                return lambda$new$2;
+                return DefaultHeartBeatController.$r8$lambda$W62DRj4tEJPeea0uD3QbdJLqqVQ(context, str);
             }
         }, set, executor, provider, context);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ HeartBeatInfoStorage lambda$new$2(Context context, String str) {
+    public static /* synthetic */ HeartBeatInfoStorage $r8$lambda$W62DRj4tEJPeea0uD3QbdJLqqVQ(Context context, String str) {
         return new HeartBeatInfoStorage(context, str);
     }
 
@@ -141,15 +132,12 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Component.builder(DefaultHeartBeatController.class, HeartBeatController.class, HeartBeatInfo.class).add(Dependency.required(Context.class)).add(Dependency.required(FirebaseApp.class)).add(Dependency.setOf(HeartBeatConsumer.class)).add(Dependency.requiredProvider(UserAgentPublisher.class)).add(Dependency.required(qualified)).factory(new ComponentFactory() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                DefaultHeartBeatController lambda$component$3;
-                lambda$component$3 = DefaultHeartBeatController.lambda$component$3(Qualified.this, componentContainer);
-                return lambda$component$3;
+                return DefaultHeartBeatController.$r8$lambda$qqd15T_K2a1gIcWWKlBsXOoLnRU(Qualified.this, componentContainer);
             }
         }).build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ DefaultHeartBeatController lambda$component$3(Qualified qualified, ComponentContainer componentContainer) {
+    public static /* synthetic */ DefaultHeartBeatController $r8$lambda$qqd15T_K2a1gIcWWKlBsXOoLnRU(Qualified qualified, ComponentContainer componentContainer) {
         return new DefaultHeartBeatController((Context) componentContainer.get(Context.class), ((FirebaseApp) componentContainer.get(FirebaseApp.class)).getPersistenceKey(), componentContainer.setOf(HeartBeatConsumer.class), componentContainer.getProvider(UserAgentPublisher.class), (Executor) componentContainer.get(qualified));
     }
 

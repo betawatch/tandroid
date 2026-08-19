@@ -347,8 +347,7 @@ public abstract class Util {
         return myLooper != null ? myLooper : Looper.getMainLooper();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Thread lambda$newSingleThreadExecutor$3(String str, Runnable runnable) {
+    public static /* synthetic */ Thread $r8$lambda$pJ0nR63YsKg4l7MkXhJSeslJM70(String str, Runnable runnable) {
         return new Thread(runnable, str);
     }
 
@@ -356,9 +355,7 @@ public abstract class Util {
         return Executors.newSingleThreadExecutor(new ThreadFactory() { // from class: com.google.android.exoplayer2.util.Util$$ExternalSyntheticLambda3
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                Thread lambda$newSingleThreadExecutor$3;
-                lambda$newSingleThreadExecutor$3 = Util.lambda$newSingleThreadExecutor$3(str, runnable);
-                return lambda$newSingleThreadExecutor$3;
+                return Util.$r8$lambda$pJ0nR63YsKg4l7MkXhJSeslJM70(str, runnable);
             }
         });
     }
@@ -832,7 +829,7 @@ public abstract class Util {
 
     public static int inferContentTypeForExtension(String str) {
         String lowerCase = Ascii.toLowerCase(str);
-        lowerCase.hashCode();
+        lowerCase.getClass();
         switch (lowerCase) {
             case "ism":
             case "isml":
@@ -1036,7 +1033,7 @@ public abstract class Util {
         if (j == -9223372036854775807L) {
             return System.currentTimeMillis();
         }
-        return j + android.os.SystemClock.elapsedRealtime();
+        return android.os.SystemClock.elapsedRealtime() + j;
     }
 
     public static void moveItems(List list, int i, int i2, int i3) {
@@ -1050,17 +1047,20 @@ public abstract class Util {
     public static int getErrorCodeFromPlatformDiagnosticsInfo(String str) {
         String[] split;
         int length;
+        int i = 0;
         if (str == null || (length = (split = split(str, "_")).length) < 2) {
             return 0;
         }
         String str2 = split[length - 1];
         boolean z = length >= 3 && "neg".equals(split[length - 2]);
         try {
-            int parseInt = Integer.parseInt((String) Assertions.checkNotNull(str2));
-            return z ? -parseInt : parseInt;
+            i = Integer.parseInt((String) Assertions.checkNotNull(str2));
+            if (z) {
+                return -i;
+            }
         } catch (NumberFormatException unused) {
-            return 0;
         }
+        return i;
     }
 
     public static String getFormatSupportString(int i) {

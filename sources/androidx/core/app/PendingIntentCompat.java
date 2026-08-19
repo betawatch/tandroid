@@ -14,16 +14,16 @@ public abstract class PendingIntentCompat {
     static int addMutabilityFlags(boolean z, int i) {
         int i2;
         if (z) {
-            if (Build.VERSION.SDK_INT < 31) {
-                return i;
+            if (Build.VERSION.SDK_INT >= 31) {
+                i2 = 33554432;
+                return i2 | i;
             }
-            i2 = 33554432;
-        } else {
-            if (Build.VERSION.SDK_INT < 23) {
-                return i;
-            }
-            i2 = 67108864;
+            return i;
         }
-        return i | i2;
+        if (Build.VERSION.SDK_INT >= 23) {
+            i2 = 67108864;
+            return i2 | i;
+        }
+        return i;
     }
 }

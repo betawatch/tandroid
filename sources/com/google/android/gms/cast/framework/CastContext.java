@@ -134,26 +134,7 @@ public class CastContext {
                 return (OptionsProvider) Class.forName(string).asSubclass(OptionsProvider.class).getDeclaredConstructor(null).newInstance(null);
             }
             throw new IllegalStateException("The fully qualified name of the implementation of OptionsProvider must be provided as a metadata in the AndroidManifest.xml with key com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME.");
-        } catch (PackageManager.NameNotFoundException e) {
-            e = e;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (ClassNotFoundException e2) {
-            e = e2;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (IllegalAccessException e3) {
-            e = e3;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (InstantiationException e4) {
-            e = e4;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (NoSuchMethodException e5) {
-            e = e5;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (NullPointerException e6) {
-            e = e6;
-            throw new IllegalStateException("Failed to initialize CastContext.", e);
-        } catch (InvocationTargetException e7) {
-            e = e7;
+        } catch (PackageManager.NameNotFoundException | ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | NullPointerException | InvocationTargetException e) {
             throw new IllegalStateException("Failed to initialize CastContext.", e);
         }
     }

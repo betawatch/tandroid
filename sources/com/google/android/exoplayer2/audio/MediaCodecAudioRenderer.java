@@ -3,7 +3,6 @@ package com.google.android.exoplayer2.audio;
 import android.content.Context;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
-import android.opengl.EGLContext;
 import android.os.Handler;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -139,7 +138,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
-    protected MediaCodecAdapter.Configuration getMediaCodecConfiguration(MediaCodecInfo mediaCodecInfo, Format format, MediaCrypto mediaCrypto, float f, EGLContext eGLContext) {
+    protected MediaCodecAdapter.Configuration getMediaCodecConfiguration(MediaCodecInfo mediaCodecInfo, Format format, MediaCrypto mediaCrypto, float f) {
         this.codecMaxInputSize = getCodecMaxInputSize(mediaCodecInfo, format, getStreamFormats());
         this.codecNeedsDiscardChannelsWorkaround = codecNeedsDiscardChannelsWorkaround(mediaCodecInfo.name);
         MediaFormat mediaFormat = getMediaFormat(format, mediaCodecInfo.codecMimeType, this.codecMaxInputSize, f);
@@ -170,7 +169,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         if (i == -1) {
             return -1.0f;
         }
-        return f * i;
+        return i * f;
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
@@ -394,6 +393,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     public void handleMessage(int i, Object obj) {
         if (i == 2) {
             this.audioSink.setVolume(((Float) obj).floatValue());
+            return;
         }
         if (i == 3) {
             this.audioSink.setAudioAttributes((AudioAttributes) obj);
@@ -484,23 +484,19 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     private static boolean deviceDoesntSupportOperatingRate() {
-        if (Util.SDK_INT == 23) {
-            String str = Util.MODEL;
-            if ("ZTE B2017G".equals(str) || "AXON 7 mini".equals(str)) {
-                return true;
-            }
+        if (Util.SDK_INT != 23) {
+            return false;
         }
-        return false;
+        String str = Util.MODEL;
+        return "ZTE B2017G".equals(str) || "AXON 7 mini".equals(str);
     }
 
     private static boolean codecNeedsDiscardChannelsWorkaround(String str) {
-        if (Util.SDK_INT < 24 && "OMX.SEC.aac.dec".equals(str) && "samsung".equals(Util.MANUFACTURER)) {
-            String str2 = Util.DEVICE;
-            if (str2.startsWith("zeroflte") || str2.startsWith("herolte") || str2.startsWith("heroqlte")) {
-                return true;
-            }
+        if (Util.SDK_INT >= 24 || !"OMX.SEC.aac.dec".equals(str) || !"samsung".equals(Util.MANUFACTURER)) {
+            return false;
         }
-        return false;
+        String str2 = Util.DEVICE;
+        return str2.startsWith("zeroflte") || str2.startsWith("herolte") || str2.startsWith("heroqlte");
     }
 
     private final class AudioSinkListener implements AudioSink.Listener {

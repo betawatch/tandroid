@@ -189,9 +189,9 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
         DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00a6, code lost:
     
-        if (r1 <= (r0 + r4)) goto L38;
+        if (r1 <= (r0 + r4)) goto L39;
      */
     @Override // android.view.View
     /*
@@ -254,7 +254,7 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
             return;
         }
         if (i == 1) {
-            if (MediaController.getInstance().lambda$startAudioAgain$7(this.currentMessageObject)) {
+            if (MediaController.getInstance().pauseMessage(this.currentMessageObject)) {
                 this.buttonState = 0;
                 invalidate();
                 return;

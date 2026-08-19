@@ -1,70 +1,99 @@
 package j$.util;
 
+import j$.util.Collection;
+import j$.util.stream.Stream;
+import j$.util.stream.q1;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class q implements Map.Entry {
-    private Map.Entry a;
+public final class q extends t {
+    private static final long serialVersionUID = 7854390611657943733L;
 
-    q(Map.Entry entry) {
-        this.a = (Map.Entry) Objects.requireNonNull(entry);
+    @Override // j$.util.l, java.lang.Iterable, j$.util.Collection, j$.lang.a
+    public final void forEach(Consumer consumer) {
+        Objects.requireNonNull(consumer);
+        Collection.-EL.a(this.a, new j$.time.t(1, consumer));
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.a.getKey();
+    @Override // j$.util.l, java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final Spliterator spliterator() {
+        return new p(Collection.-EL.c(this.a));
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.a.getValue();
+    @Override // j$.util.l, java.util.Collection, j$.util.Collection
+    public final Stream stream() {
+        return q1.Z(spliterator(), false);
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // j$.util.l, java.util.Collection, j$.util.Collection
+    public final Stream parallelStream() {
+        return q1.Z(spliterator(), true);
     }
 
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // j$.util.l, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return new k(this);
     }
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        boolean equals;
-        boolean equals2;
-        if (this == obj) {
-            return true;
+    @Override // j$.util.l, java.util.Collection
+    public final Object[] toArray() {
+        Object[] array = this.a.toArray();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new o((Map.Entry) array[i]);
         }
+        return array;
+    }
+
+    @Override // j$.util.l, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        Object[] array = this.a.toArray(objArr.length == 0 ? objArr : Arrays.copyOf(objArr, 0));
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new o((Map.Entry) array[i]);
+        }
+        if (array.length > objArr.length) {
+            return array;
+        }
+        System.arraycopy(array, 0, objArr, 0, array.length);
+        if (objArr.length > array.length) {
+            objArr[array.length] = null;
+        }
+        return objArr;
+    }
+
+    @Override // j$.util.l, java.util.Collection
+    public final boolean contains(Object obj) {
         if (!(obj instanceof Map.Entry)) {
             return false;
         }
-        Map.Entry entry = (Map.Entry) obj;
-        Map.Entry entry2 = this.a;
-        Object key = entry2.getKey();
-        Object key2 = entry.getKey();
-        if (key == null) {
-            equals = key2 == null;
-        } else {
-            equals = key.equals(key2);
-        }
-        if (equals) {
-            Object value = entry2.getValue();
-            Object value2 = entry.getValue();
-            if (value == null) {
-                equals2 = value2 == null;
-            } else {
-                equals2 = value.equals(value2);
-            }
-            if (equals2) {
-                return true;
-            }
-        }
-        return false;
+        return this.a.contains(new o((Map.Entry) obj));
     }
 
-    public final String toString() {
-        return this.a.toString();
+    @Override // j$.util.l, java.util.Collection
+    public final boolean containsAll(java.util.Collection collection) {
+        Iterator it = collection.iterator();
+        while (it.hasNext()) {
+            if (!contains(it.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // j$.util.t, java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof java.util.Set)) {
+            return false;
+        }
+        java.util.Set set = (java.util.Set) obj;
+        if (set.size() != this.a.size()) {
+            return false;
+        }
+        return containsAll(set);
     }
 }

@@ -43,7 +43,7 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
 
     @Override // com.google.android.exoplayer2.drm.MediaDrmCallback
     public byte[] executeProvisionRequest(UUID uuid, ExoMediaDrm.ProvisionRequest provisionRequest) {
-        return executePost(this.dataSourceFactory, provisionRequest.getDefaultUrl() + "&signedRequest=" + Util.fromUtf8Bytes(provisionRequest.getData()), null, Collections.emptyMap());
+        return executePost(this.dataSourceFactory, provisionRequest.getDefaultUrl() + "&signedRequest=" + Util.fromUtf8Bytes(provisionRequest.getData()), null, Collections.EMPTY_MAP);
     }
 
     @Override // com.google.android.exoplayer2.drm.MediaDrmCallback
@@ -84,18 +84,19 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
             try {
                 DataSourceInputStream dataSourceInputStream = new DataSourceInputStream(statsDataSource, dataSpec);
                 try {
+                    return Util.toByteArray(dataSourceInputStream);
+                } catch (HttpDataSource.InvalidResponseCodeException e) {
                     try {
-                        return Util.toByteArray(dataSourceInputStream);
-                    } catch (HttpDataSource.InvalidResponseCodeException e) {
                         String redirectUrl = getRedirectUrl(e, i);
                         if (redirectUrl == null) {
                             throw e;
                         }
                         i++;
                         dataSpec = dataSpec.buildUpon().setUri(redirectUrl).build();
+                        Util.closeQuietly(dataSourceInputStream);
+                    } finally {
+                        Util.closeQuietly(dataSourceInputStream);
                     }
-                } finally {
-                    Util.closeQuietly(dataSourceInputStream);
                 }
             } catch (Exception e2) {
                 throw new MediaDrmCallbackException(build, (Uri) Assertions.checkNotNull(statsDataSource.getLastOpenedUri()), statsDataSource.getResponseHeaders(), statsDataSource.getBytesRead(), e2);

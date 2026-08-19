@@ -3,7 +3,7 @@ package com.google.android.gms.internal.stats;
 import java.io.Closeable;
 
 /* loaded from: classes.dex */
-public final class zzb implements Closeable {
+public final class zzb implements Closeable, AutoCloseable {
     private static final zzb zza = new zzb(false, null);
 
     private zzb(boolean z, zzd zzdVar) {

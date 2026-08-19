@@ -39,7 +39,7 @@ import org.telegram.ui.web.AddressBarList;
 import org.telegram.ui.web.BookmarksFragment;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BookmarksFragment extends UniversalFragment {
     private final Runnable closeToTabs;
     private ActionBarMenuItem gotoItem;
@@ -57,14 +57,8 @@ public class BookmarksFragment extends UniversalFragment {
     public HashSet selected = new HashSet();
     private final HashSet addedUrls = new HashSet();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$2(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$0Ef0Z-7zGzug8jwvT6D_zo0-aJ0(View view, MotionEvent motionEvent) {
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$400(BookmarksFragment bookmarksFragment) {
-        bookmarksFragment.updateWithOffset();
     }
 
     public boolean isSelected(MessageObject messageObject) {
@@ -89,16 +83,21 @@ public class BookmarksFragment extends UniversalFragment {
         Iterator it = this.selected.iterator();
         while (true) {
             MessageObject messageObject = null;
+            int i = 0;
             if (!it.hasNext()) {
                 break;
             }
             int intValue = ((Integer) it.next()).intValue();
-            Iterator it2 = this.list.links.iterator();
+            ArrayList arrayList2 = this.list.links;
+            int size = arrayList2.size();
+            int i2 = 0;
             while (true) {
-                if (!it2.hasNext()) {
+                if (i2 >= size) {
                     break;
                 }
-                MessageObject messageObject2 = (MessageObject) it2.next();
+                Object obj = arrayList2.get(i2);
+                i2++;
+                MessageObject messageObject2 = (MessageObject) obj;
                 if (messageObject2 != null && messageObject2.getId() == intValue) {
                     messageObject = messageObject2;
                     break;
@@ -106,12 +105,15 @@ public class BookmarksFragment extends UniversalFragment {
             }
             AddressBarList.BookmarksList bookmarksList = this.searchList;
             if (bookmarksList != null && messageObject == null) {
-                Iterator it3 = bookmarksList.links.iterator();
+                ArrayList arrayList3 = bookmarksList.links;
+                int size2 = arrayList3.size();
                 while (true) {
-                    if (!it3.hasNext()) {
+                    if (i >= size2) {
                         break;
                     }
-                    MessageObject messageObject3 = (MessageObject) it3.next();
+                    Object obj2 = arrayList3.get(i);
+                    i++;
+                    MessageObject messageObject3 = (MessageObject) obj2;
                     if (messageObject3 != null && messageObject3.getId() == intValue) {
                         messageObject = messageObject3;
                         break;
@@ -126,23 +128,22 @@ public class BookmarksFragment extends UniversalFragment {
         }
         new AlertDialog.Builder(getContext(), getResourceProvider()).setTitle(LocaleController.formatPluralString("DeleteOptionsTitle", hashSet2.size(), new Object[0])).setMessage(LocaleController.getString(hashSet2.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages")).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BookmarksFragment$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i) {
-                BookmarksFragment.this.lambda$deleteSelectedMessages$0(hashSet2, alertDialog, i);
+            public final void onClick(AlertDialog alertDialog, int i3) {
+                BookmarksFragment.$r8$lambda$r3rVwHkXykLYszWA4pqNRo0nuBw(BookmarksFragment.this, hashSet2, alertDialog, i3);
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteSelectedMessages$0(HashSet hashSet, AlertDialog alertDialog, int i) {
-        MessagesController.getInstance(this.currentAccount).deleteMessages(new ArrayList<>(hashSet), null, null, UserConfig.getInstance(this.currentAccount).getClientUserId(), 0, true, 0);
-        this.list.delete(new ArrayList(hashSet));
-        AddressBarList.BookmarksList bookmarksList = this.searchList;
+    public static /* synthetic */ void $r8$lambda$r3rVwHkXykLYszWA4pqNRo0nuBw(BookmarksFragment bookmarksFragment, HashSet hashSet, AlertDialog alertDialog, int i) {
+        MessagesController.getInstance(bookmarksFragment.currentAccount).deleteMessages(new ArrayList<>(hashSet), null, null, UserConfig.getInstance(bookmarksFragment.currentAccount).getClientUserId(), 0, true, 0);
+        bookmarksFragment.list.delete(new ArrayList(hashSet));
+        AddressBarList.BookmarksList bookmarksList = bookmarksFragment.searchList;
         if (bookmarksList != null) {
             bookmarksList.delete(new ArrayList(hashSet));
         }
-        this.selected.clear();
-        this.actionBar.hideActionMode();
-        this.listView.adapter.update(true);
+        bookmarksFragment.selected.clear();
+        bookmarksFragment.actionBar.hideActionMode();
+        bookmarksFragment.listView.adapter.update(true);
     }
 
     public void gotoMessage() {
@@ -159,13 +160,12 @@ public class BookmarksFragment extends UniversalFragment {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BookmarksFragment$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                BookmarksFragment.lambda$gotoMessage$1(clientUserId, intValue);
+                BookmarksFragment.$r8$lambda$9pLNWt4i1abWYTli34IBZry2f6c(clientUserId, intValue);
             }
         }, 80L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$gotoMessage$1(long j, int i) {
+    public static /* synthetic */ void $r8$lambda$9pLNWt4i1abWYTli34IBZry2f6c(long j, int i) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
             safeLastFragment.presentFragment(ChatActivity.of(j, i));
@@ -202,9 +202,7 @@ public class BookmarksFragment extends UniversalFragment {
         this.selectedCount.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.web.BookmarksFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$createView$2;
-                lambda$createView$2 = BookmarksFragment.lambda$createView$2(view, motionEvent);
-                return lambda$createView$2;
+                return BookmarksFragment.$r8$lambda$0Ef0Z-7zGzug8jwvT6D_zo0-aJ0(view, motionEvent);
             }
         });
         createActionMode.addView(this.selectedCount, LayoutHelper.createLinear(0, -1, 1.0f, 65, 0, 0, 0));
@@ -261,7 +259,7 @@ public class BookmarksFragment extends UniversalFragment {
                     AndroidUtilities.forEachViews((RecyclerView) BookmarksFragment.this.listView, new Consumer() { // from class: org.telegram.ui.web.BookmarksFragment$1$$ExternalSyntheticLambda0
                         @Override // com.google.android.exoplayer2.util.Consumer
                         public final void accept(Object obj) {
-                            BookmarksFragment.1.lambda$onItemClick$0((View) obj);
+                            BookmarksFragment.1.$r8$lambda$zxfcA_nqyu0i6_159jgYkj8d1bM((View) obj);
                         }
                     });
                     return;
@@ -276,8 +274,7 @@ public class BookmarksFragment extends UniversalFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onItemClick$0(View view) {
+        public static /* synthetic */ void $r8$lambda$zxfcA_nqyu0i6_159jgYkj8d1bM(View view) {
             if (view instanceof AddressBarList.BookmarkView) {
                 ((AddressBarList.BookmarkView) view).setChecked(false);
             }
@@ -288,7 +285,7 @@ public class BookmarksFragment extends UniversalFragment {
         private Runnable applySearch = new Runnable() { // from class: org.telegram.ui.web.BookmarksFragment$2$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BookmarksFragment.2.this.lambda$$1();
+                BookmarksFragment.2.$r8$lambda$22sKrybv2fQ38iu4YIXC2-RA8Xw(BookmarksFragment.2.this);
             }
         };
 
@@ -331,7 +328,7 @@ public class BookmarksFragment extends UniversalFragment {
                 bookmarksFragment.searchList = new AddressBarList.BookmarksList(i, obj, new Runnable() { // from class: org.telegram.ui.web.BookmarksFragment$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BookmarksFragment.access$400(BookmarksFragment.this);
+                        BookmarksFragment.this.updateWithOffset();
                     }
                 });
                 BookmarksFragment.this.searchList.attach();
@@ -351,8 +348,7 @@ public class BookmarksFragment extends UniversalFragment {
             AndroidUtilities.runOnUIThread(this.applySearch, 500L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$$1() {
+        public static /* synthetic */ void $r8$lambda$22sKrybv2fQ38iu4YIXC2-RA8Xw(2 r0) {
             AddressBarList.BookmarksList bookmarksList = BookmarksFragment.this.searchList;
             if (bookmarksList != null) {
                 bookmarksList.load();
@@ -383,9 +379,13 @@ public class BookmarksFragment extends UniversalFragment {
         TLRPC.MessageMedia messageMedia;
         this.addedUrls.clear();
         if (TextUtils.isEmpty(this.query)) {
-            Iterator it = this.list.links.iterator();
-            while (it.hasNext()) {
-                MessageObject messageObject = (MessageObject) it.next();
+            ArrayList arrayList2 = this.list.links;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                MessageObject messageObject = (MessageObject) obj;
                 String link = AddressBarList.getLink(messageObject);
                 if (!TextUtils.isEmpty(link) && !link.startsWith("#") && !link.startsWith("$") && !link.startsWith("@")) {
                     this.addedUrls.add(link);
@@ -398,9 +398,13 @@ public class BookmarksFragment extends UniversalFragment {
                 arrayList.add(UItem.asFlicker(arrayList.size(), 32));
             }
         } else {
-            Iterator it2 = this.list.links.iterator();
-            while (it2.hasNext()) {
-                MessageObject messageObject2 = (MessageObject) it2.next();
+            ArrayList arrayList3 = this.list.links;
+            int size2 = arrayList3.size();
+            int i2 = 0;
+            while (i2 < size2) {
+                Object obj2 = arrayList3.get(i2);
+                i2++;
+                MessageObject messageObject2 = (MessageObject) obj2;
                 String link2 = AddressBarList.getLink(messageObject2);
                 if (!TextUtils.isEmpty(link2) && !link2.startsWith("#") && !link2.startsWith("$") && !link2.startsWith("@")) {
                     this.addedUrls.add(link2);
@@ -414,9 +418,13 @@ public class BookmarksFragment extends UniversalFragment {
                     }
                 }
             }
-            Iterator it3 = this.searchList.links.iterator();
-            while (it3.hasNext()) {
-                MessageObject messageObject3 = (MessageObject) it3.next();
+            ArrayList arrayList4 = this.searchList.links;
+            int size3 = arrayList4.size();
+            int i3 = 0;
+            while (i3 < size3) {
+                Object obj3 = arrayList4.get(i3);
+                i3++;
+                MessageObject messageObject3 = (MessageObject) obj3;
                 String link3 = AddressBarList.getLink(messageObject3);
                 if (!TextUtils.isEmpty(link3) && !link3.startsWith("#") && !link3.startsWith("$") && !link3.startsWith("@")) {
                     this.addedUrls.add(link3);
@@ -453,7 +461,6 @@ public class BookmarksFragment extends UniversalFragment {
                             }
                         }
                     }
-                    return true;
                 }
             }
         }

@@ -406,11 +406,13 @@ public interface Player {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || PositionInfo.class != obj.getClass()) {
-                return false;
+            if (obj != null && PositionInfo.class == obj.getClass()) {
+                PositionInfo positionInfo = (PositionInfo) obj;
+                if (this.mediaItemIndex == positionInfo.mediaItemIndex && this.periodIndex == positionInfo.periodIndex && this.positionMs == positionInfo.positionMs && this.contentPositionMs == positionInfo.contentPositionMs && this.adGroupIndex == positionInfo.adGroupIndex && this.adIndexInAdGroup == positionInfo.adIndexInAdGroup && Objects.equal(this.windowUid, positionInfo.windowUid) && Objects.equal(this.periodUid, positionInfo.periodUid) && Objects.equal(this.mediaItem, positionInfo.mediaItem)) {
+                    return true;
+                }
             }
-            PositionInfo positionInfo = (PositionInfo) obj;
-            return this.mediaItemIndex == positionInfo.mediaItemIndex && this.periodIndex == positionInfo.periodIndex && this.positionMs == positionInfo.positionMs && this.contentPositionMs == positionInfo.contentPositionMs && this.adGroupIndex == positionInfo.adGroupIndex && this.adIndexInAdGroup == positionInfo.adIndexInAdGroup && Objects.equal(this.windowUid, positionInfo.windowUid) && Objects.equal(this.periodUid, positionInfo.periodUid) && Objects.equal(this.mediaItem, positionInfo.mediaItem);
+            return false;
         }
 
         public int hashCode() {

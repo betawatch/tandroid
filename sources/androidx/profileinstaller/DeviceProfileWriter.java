@@ -26,16 +26,11 @@ public class DeviceProfileWriter {
     private boolean mDeviceSupportsAotProfile = false;
     private final byte[] mDesiredVersion = desiredVersion();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$result$0(int i, Object obj) {
-        this.mDiagnostics.onResultReceived(i, obj);
-    }
-
     private void result(final int i, final Object obj) {
         this.mExecutor.execute(new Runnable() { // from class: androidx.profileinstaller.DeviceProfileWriter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DeviceProfileWriter.this.lambda$result$0(i, obj);
+                DeviceProfileWriter.this.mDiagnostics.onResultReceived(i, obj);
             }
         });
     }
@@ -81,15 +76,17 @@ public class DeviceProfileWriter {
     public DeviceProfileWriter read() {
         DeviceProfileWriter addMetadata;
         assertDeviceAllowsProfileInstallerAotWritesCalled();
-        if (this.mDesiredVersion == null) {
-            return this;
+        if (this.mDesiredVersion != null) {
+            InputStream profileInputStream = getProfileInputStream(this.mAssetManager);
+            if (profileInputStream != null) {
+                this.mProfile = readProfileInternal(profileInputStream);
+            }
+            DexProfileData[] dexProfileDataArr = this.mProfile;
+            if (dexProfileDataArr != null && requiresMetadata() && (addMetadata = addMetadata(dexProfileDataArr, this.mDesiredVersion)) != null) {
+                return addMetadata;
+            }
         }
-        InputStream profileInputStream = getProfileInputStream(this.mAssetManager);
-        if (profileInputStream != null) {
-            this.mProfile = readProfileInternal(profileInputStream);
-        }
-        DexProfileData[] dexProfileDataArr = this.mProfile;
-        return (dexProfileDataArr == null || !requiresMetadata() || (addMetadata = addMetadata(dexProfileDataArr, this.mDesiredVersion)) == null) ? this : addMetadata;
+        return this;
     }
 
     private InputStream openStreamFromAssets(AssetManager assetManager, String str) {

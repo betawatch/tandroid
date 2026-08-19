@@ -147,7 +147,13 @@ public class ActionBarContainer extends FrameLayout {
 
     @Override // android.view.View
     protected boolean verifyDrawable(Drawable drawable) {
-        return (drawable == this.mBackground && !this.mIsSplit) || (drawable == this.mStackedBackground && this.mIsStacked) || ((drawable == this.mSplitBackground && this.mIsSplit) || super.verifyDrawable(drawable));
+        if (drawable == this.mBackground && !this.mIsSplit) {
+            return true;
+        }
+        if (drawable == this.mStackedBackground && this.mIsStacked) {
+            return true;
+        }
+        return (drawable == this.mSplitBackground && this.mIsSplit) || super.verifyDrawable(drawable);
     }
 
     @Override // android.view.ViewGroup, android.view.View

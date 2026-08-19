@@ -17,7 +17,7 @@ import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RLottieDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TrashView extends View {
     private final ButtonBounce bounce;
     private final Paint circlePaint;

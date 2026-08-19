@@ -298,7 +298,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSubItem$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ActionBarMenuSubItem.this.lambda$setEnabledByColor$0(i, i2, valueAnimator2);
+                ActionBarMenuSubItem.$r8$lambda$oSRps-z_FbzUub0sZQJmG9oUyvc(ActionBarMenuSubItem.this, i, i2, valueAnimator2);
             }
         });
         this.enabledAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSubItem.1
@@ -313,11 +313,11 @@ public class ActionBarMenuSubItem extends FrameLayout {
         this.enabledAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEnabledByColor$0(int i, int i2, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$oSRps-z_FbzUub0sZQJmG9oUyvc(ActionBarMenuSubItem actionBarMenuSubItem, int i, int i2, ValueAnimator valueAnimator) {
+        actionBarMenuSubItem.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        setTextColor(ColorUtils.blendARGB(i, i2, floatValue));
-        setIconColor(ColorUtils.blendARGB(i, i2, floatValue));
+        actionBarMenuSubItem.setTextColor(ColorUtils.blendARGB(i, i2, floatValue));
+        actionBarMenuSubItem.setIconColor(ColorUtils.blendARGB(i, i2, floatValue));
     }
 
     public void setEnabledByColor(final boolean z, final int i, final int i2, final int i3) {
@@ -331,7 +331,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSubItem$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ActionBarMenuSubItem.this.lambda$setEnabledByColor$1(i, i3, i2, valueAnimator2);
+                ActionBarMenuSubItem.$r8$lambda$PsUVeQxedlHsbN9kKH8y4ZFhiAY(ActionBarMenuSubItem.this, i, i3, i2, valueAnimator2);
             }
         });
         this.enabledAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSubItem.2
@@ -346,11 +346,11 @@ public class ActionBarMenuSubItem extends FrameLayout {
         this.enabledAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEnabledByColor$1(int i, int i2, int i3, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$PsUVeQxedlHsbN9kKH8y4ZFhiAY(ActionBarMenuSubItem actionBarMenuSubItem, int i, int i2, int i3, ValueAnimator valueAnimator) {
+        actionBarMenuSubItem.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        setTextColor(ColorUtils.blendARGB(i, i2, floatValue));
-        setIconColor(ColorUtils.blendARGB(i3, i2, floatValue));
+        actionBarMenuSubItem.setTextColor(ColorUtils.blendARGB(i, i2, floatValue));
+        actionBarMenuSubItem.setIconColor(ColorUtils.blendARGB(i3, i2, floatValue));
     }
 
     public int getIconResId() {

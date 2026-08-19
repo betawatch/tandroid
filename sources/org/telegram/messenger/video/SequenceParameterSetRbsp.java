@@ -171,7 +171,7 @@ public class SequenceParameterSetRbsp {
         while (i5 < i2) {
             if (zArr2[i5]) {
                 StringBuilder sb = new StringBuilder();
-                zArr = zArr2;
+                zArr = zArr9;
                 sb.append("sub_layer_profile_space[");
                 sb.append(i5);
                 sb.append("]");
@@ -179,28 +179,28 @@ public class SequenceParameterSetRbsp {
                 zArr4[i5] = cAVLCReader.readBool("sub_layer_tier_flag[" + i5 + "]");
                 iArr4[i5] = cAVLCReader.readU(5, "sub_layer_profile_idc[" + i5 + "]");
                 int i6 = 0;
-                for (int i7 = 32; i6 < i7; i7 = 32) {
+                while (i6 < 32) {
                     zArr5[i5][i6] = cAVLCReader.readBool("sub_layer_profile_compatibility_flag[" + i5 + "][" + i6 + "]");
                     i6++;
-                    iArr3 = iArr3;
+                    iArr5 = iArr5;
                 }
-                iArr = iArr3;
+                iArr = iArr5;
                 zArr6[i5] = cAVLCReader.readBool("sub_layer_progressive_source_flag[" + i5 + "]");
                 zArr7[i5] = cAVLCReader.readBool("sub_layer_interlaced_source_flag[" + i5 + "]");
                 zArr8[i5] = cAVLCReader.readBool("sub_layer_non_packed_constraint_flag[" + i5 + "]");
-                zArr9[i5] = cAVLCReader.readBool("sub_layer_frame_only_constraint_flag[" + i5 + "]");
+                zArr[i5] = cAVLCReader.readBool("sub_layer_frame_only_constraint_flag[" + i5 + "]");
                 jArr[i5] = cAVLCReader.readNBit(44);
             } else {
-                zArr = zArr2;
-                iArr = iArr3;
+                zArr = zArr9;
+                iArr = iArr5;
             }
             if (zArr3[i5]) {
-                iArr5[i5] = cAVLCReader.readU(8, "sub_layer_level_idc[" + i5 + "]");
+                iArr[i5] = cAVLCReader.readU(8, "sub_layer_level_idc[" + i5 + "]");
             }
             i5++;
             i2 = i;
-            zArr2 = zArr;
-            iArr3 = iArr;
+            zArr9 = zArr;
+            iArr5 = iArr;
         }
     }
 }

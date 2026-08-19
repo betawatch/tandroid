@@ -36,7 +36,7 @@ public class TopViewCell extends LinearLayout implements Theme.Colorable {
         backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopViewCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopViewCell.this.lambda$new$0(view);
+                TopViewCell.this.imageView.getImageReceiver().startAnimation();
             }
         });
         addView(backupImageView, LayoutHelper.createLinear(90, 90, 17, 0, 9, 0, 9));
@@ -54,11 +54,6 @@ public class TopViewCell extends LinearLayout implements Theme.Colorable {
         linksTextView2.setTextAlignment(4);
         addView(linksTextView2, LayoutHelper.createLinear(-1, -2, 17, 48, 0, 48, 17));
         updateColors();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.imageView.getImageReceiver().startAnimation();
     }
 
     @Override // org.telegram.ui.ActionBar.Theme.Colorable

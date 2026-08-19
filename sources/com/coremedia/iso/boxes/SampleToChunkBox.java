@@ -34,7 +34,7 @@ public class SampleToChunkBox extends AbstractFullBox {
 
     public SampleToChunkBox() {
         super("stsc");
-        this.entries = Collections.emptyList();
+        this.entries = Collections.EMPTY_LIST;
     }
 
     public List getEntries() {

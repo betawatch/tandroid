@@ -40,7 +40,7 @@ public final class CarText {
 
     public List<CharSequence> getVariants() {
         if (this.mTextVariants.isEmpty()) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < this.mTextVariants.size(); i++) {
@@ -66,16 +66,18 @@ public final class CarText {
 
     private CarText() {
         this.mText = "";
-        this.mSpans = Collections.emptyList();
-        this.mTextVariants = Collections.emptyList();
-        this.mSpansForVariants = Collections.emptyList();
+        List list = Collections.EMPTY_LIST;
+        this.mSpans = list;
+        this.mTextVariants = list;
+        this.mSpansForVariants = list;
     }
 
     CarText(CharSequence charSequence) {
         this.mText = charSequence.toString();
         this.mSpans = getSpans(charSequence);
-        this.mTextVariants = Collections.emptyList();
-        this.mSpansForVariants = Collections.emptyList();
+        List list = Collections.EMPTY_LIST;
+        this.mTextVariants = list;
+        this.mSpansForVariants = list;
     }
 
     CarText(Builder builder) {

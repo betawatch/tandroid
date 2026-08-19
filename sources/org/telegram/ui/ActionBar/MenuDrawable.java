@@ -99,18 +99,18 @@ public class MenuDrawable extends Drawable {
         invalidateSelf();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0377  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x03e8  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0405  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0454  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0468  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x04d3  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0477  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x041b  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x042b  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0396  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0221  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0373  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x03d0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x03ed  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0438  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x04b5  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x045b  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0403  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0413  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0384  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x021c  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -124,14 +124,14 @@ public class MenuDrawable extends Drawable {
         float dp3;
         float dp4;
         float dp5;
-        float dp6;
+        float abs;
+        Canvas canvas2;
         int i;
         int i2;
         int i3;
         int i4;
         int i5;
         int i6;
-        int i7;
         float f4;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = this.lastFrameTime;
@@ -140,14 +140,14 @@ public class MenuDrawable extends Drawable {
         float f6 = this.finalRotation;
         if (f5 != f6) {
             if (j != 0) {
-                int i8 = (int) (this.currentAnimationTime + j2);
-                this.currentAnimationTime = i8;
-                if (i8 >= 200) {
+                int i7 = (int) (this.currentAnimationTime + j2);
+                this.currentAnimationTime = i7;
+                if (i7 >= 200) {
                     this.currentRotation = f6;
                 } else if (f5 < f6) {
-                    this.currentRotation = this.interpolator.getInterpolation(i8 / 200.0f) * this.finalRotation;
+                    this.currentRotation = this.interpolator.getInterpolation(i7 / 200.0f) * this.finalRotation;
                 } else {
-                    this.currentRotation = 1.0f - this.interpolator.getInterpolation(i8 / 200.0f);
+                    this.currentRotation = 1.0f - this.interpolator.getInterpolation(i7 / 200.0f);
                 }
             }
             invalidateSelf();
@@ -164,19 +164,19 @@ public class MenuDrawable extends Drawable {
         this.lastFrameTime = elapsedRealtime;
         canvas.save();
         canvas.translate(((getIntrinsicWidth() / 2) - AndroidUtilities.dp(9.0f)) - (AndroidUtilities.dp(1.0f) * this.currentRotation), getIntrinsicHeight() / 2);
-        int i9 = this.iconColor;
+        int i8 = this.iconColor;
+        if (i8 == 0) {
+            i8 = Theme.getColor(Theme.key_actionBarDefaultIcon);
+        }
+        int i9 = this.backColor;
         if (i9 == 0) {
-            i9 = Theme.getColor(Theme.key_actionBarDefaultIcon);
+            i9 = Theme.getColor(Theme.key_actionBarDefault);
         }
-        int i10 = this.backColor;
-        if (i10 == 0) {
-            i10 = Theme.getColor(Theme.key_actionBarDefault);
-        }
-        int i11 = i10;
-        int i12 = this.type;
-        int i13 = TYPE_DEFAULT;
-        if (i12 == i13) {
-            if (this.previousType != i13) {
+        int i10 = i9;
+        int i11 = this.type;
+        int i12 = TYPE_DEFAULT;
+        if (i11 == i12) {
+            if (this.previousType != i12) {
                 dp = AndroidUtilities.dp(9.0f) * (1.0f - this.typeAnimationProgress);
                 dp2 = AndroidUtilities.dp(7.0f);
                 f = this.typeAnimationProgress;
@@ -185,85 +185,85 @@ public class MenuDrawable extends Drawable {
                 f2 = 0.0f;
                 if (!this.rotateToBack) {
                     canvas.rotate(this.currentRotation * (this.reverseAngle ? -180 : NotificationCenter.needDeleteDialog), AndroidUtilities.dp(9.0f), 0.0f);
-                    this.paint.setColor(i9);
+                    this.paint.setColor(i8);
                     this.paint.setAlpha(this.alpha);
                     canvas.drawLine(this.roundCap ? (AndroidUtilities.dp(0.5f) * this.currentRotation) + ((this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation)) : 0.0f, 0.0f, ((AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(3.0f) * this.currentRotation)) - f3) - (this.roundCap ? (this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation) : 0.0f), 0.0f, this.paint);
                     dp3 = (AndroidUtilities.dp(5.0f) * (1.0f - Math.abs(this.currentRotation))) - (AndroidUtilities.dp(0.5f) * Math.abs(this.currentRotation));
                     dp4 = AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(2.5f) * Math.abs(this.currentRotation));
                     dp5 = AndroidUtilities.dp(5.0f) + (AndroidUtilities.dp(2.0f) * Math.abs(this.currentRotation));
-                    dp6 = AndroidUtilities.dp(7.5f) * Math.abs(this.currentRotation);
+                    abs = AndroidUtilities.dp(7.5f) * Math.abs(this.currentRotation);
                     if (this.roundCap) {
-                        dp6 += (this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation);
-                        float dp7 = dp3 + (AndroidUtilities.dp(0.5f) * this.currentRotation);
+                        abs += (this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation);
+                        float dp6 = dp3 + (AndroidUtilities.dp(0.5f) * this.currentRotation);
                         dp4 -= (AndroidUtilities.dp(0.5f) * this.currentRotation) + ((this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation));
                         dp5 -= AndroidUtilities.dp(0.25f) * this.currentRotation;
-                        dp3 = dp7 + (AndroidUtilities.dp(0.25f) * this.currentRotation);
+                        dp3 = dp6 + (AndroidUtilities.dp(0.25f) * this.currentRotation);
                     }
                 } else {
                     canvas.rotate(this.currentRotation * (this.reverseAngle ? -225 : NotificationCenter.httpFileDidLoad), AndroidUtilities.dp(9.0f), 0.0f);
                     if (this.miniIcon) {
-                        this.paint.setColor(i9);
+                        this.paint.setColor(i8);
                         this.paint.setAlpha(this.alpha);
-                        canvas.drawLine((AndroidUtilities.dp(1.0f) * this.currentRotation) + (AndroidUtilities.dpf2(2.0f) * (1.0f - Math.abs(this.currentRotation))), 0.0f, ((AndroidUtilities.dpf2(16.0f) * (1.0f - this.currentRotation)) + (AndroidUtilities.dp(17.0f) * this.currentRotation)) - f3, 0.0f, this.paint);
+                        canvas.drawLine((AndroidUtilities.dpf2(2.0f) * (1.0f - Math.abs(this.currentRotation))) + (AndroidUtilities.dp(1.0f) * this.currentRotation), 0.0f, ((AndroidUtilities.dpf2(16.0f) * (1.0f - this.currentRotation)) + (AndroidUtilities.dp(17.0f) * this.currentRotation)) - f3, 0.0f, this.paint);
                         dp3 = (AndroidUtilities.dpf2(5.0f) * (1.0f - Math.abs(this.currentRotation))) - (AndroidUtilities.dpf2(0.5f) * Math.abs(this.currentRotation));
-                        dp4 = (AndroidUtilities.dpf2(16.0f) * (1.0f - Math.abs(this.currentRotation))) + (AndroidUtilities.dpf2(9.0f) * Math.abs(this.currentRotation));
-                        dp5 = AndroidUtilities.dpf2(5.0f) + (AndroidUtilities.dpf2(3.0f) * Math.abs(this.currentRotation));
-                        dp6 = AndroidUtilities.dpf2(2.0f) + (AndroidUtilities.dpf2(7.0f) * Math.abs(this.currentRotation));
+                        dp4 = (AndroidUtilities.dpf2(9.0f) * Math.abs(this.currentRotation)) + (AndroidUtilities.dpf2(16.0f) * (1.0f - Math.abs(this.currentRotation)));
+                        dp5 = (AndroidUtilities.dpf2(3.0f) * Math.abs(this.currentRotation)) + AndroidUtilities.dpf2(5.0f);
+                        abs = (AndroidUtilities.dpf2(7.0f) * Math.abs(this.currentRotation)) + AndroidUtilities.dpf2(2.0f);
                     } else {
                         int color = Theme.getColor(Theme.key_actionBarActionModeDefaultIcon);
-                        i11 = AndroidUtilities.getOffsetColor(i11, Theme.getColor(Theme.key_actionBarActionModeDefault), this.currentRotation, 1.0f);
-                        this.paint.setColor(AndroidUtilities.getOffsetColor(i9, color, this.currentRotation, 1.0f));
+                        i10 = AndroidUtilities.getOffsetColor(i10, Theme.getColor(Theme.key_actionBarActionModeDefault), this.currentRotation, 1.0f);
+                        this.paint.setColor(AndroidUtilities.getOffsetColor(i8, color, this.currentRotation, 1.0f));
                         this.paint.setAlpha(this.alpha);
                         canvas.drawLine(this.currentRotation * AndroidUtilities.dp(1.0f), 0.0f, (AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(1.0f) * this.currentRotation)) - f3, 0.0f, this.paint);
                         dp3 = (AndroidUtilities.dp(5.0f) * (1.0f - Math.abs(this.currentRotation))) - (AndroidUtilities.dp(0.5f) * Math.abs(this.currentRotation));
                         dp4 = AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(9.0f) * Math.abs(this.currentRotation));
-                        dp5 = AndroidUtilities.dp(5.0f) + (AndroidUtilities.dp(3.0f) * Math.abs(this.currentRotation));
-                        dp6 = AndroidUtilities.dp(9.0f) * Math.abs(this.currentRotation);
+                        dp5 = (AndroidUtilities.dp(3.0f) * Math.abs(this.currentRotation)) + AndroidUtilities.dp(5.0f);
+                        abs = Math.abs(this.currentRotation) * AndroidUtilities.dp(9.0f);
                     }
                 }
                 float f9 = dp3;
-                float f10 = dp4;
-                float f11 = dp6;
-                int i14 = i11;
-                float f12 = dp5;
+                float f10 = abs;
+                int i13 = i10;
+                float f11 = dp5;
+                float f12 = dp4;
                 if (!this.miniIcon) {
-                    i = i14;
-                    canvas.drawLine(f11, -f12, f10, -f9, this.paint);
-                    canvas.drawLine(f11, f12, f10, f9, this.paint);
+                    canvas2 = canvas;
+                    canvas2.drawLine(f10, -f11, f12, -f9, this.paint);
+                    canvas2.drawLine(f10, f11, f12, f9, this.paint);
                 } else {
-                    i = i14;
-                    canvas.drawLine(f11, -f12, f10 - f2, -f9, this.paint);
-                    canvas.drawLine(f11, f12, f10, f9, this.paint);
+                    canvas2 = canvas;
+                    canvas2.drawLine(f10, -f11, f12 - f2, -f9, this.paint);
+                    canvas2.drawLine(f10, f11, f12, f9, this.paint);
                 }
-                i2 = this.type;
-                i3 = TYPE_DEFAULT;
-                if ((i2 != i3 && this.currentRotation != 1.0f) || (this.previousType != i3 && this.typeAnimationProgress != 1.0f)) {
-                    float dp8 = AndroidUtilities.dp(17.0f);
+                i = this.type;
+                i2 = TYPE_DEFAULT;
+                if ((i != i2 && this.currentRotation != 1.0f) || (this.previousType != i2 && this.typeAnimationProgress != 1.0f)) {
+                    float dp7 = AndroidUtilities.dp(17.0f);
                     float f13 = -AndroidUtilities.dp(4.5f);
                     float f14 = AndroidUtilities.density * 5.5f;
                     float f15 = 1.0f - this.currentRotation;
-                    canvas.scale(f15, f15, dp8, f13);
+                    canvas2.scale(f15, f15, dp7, f13);
                     if (this.type == TYPE_DEFAULT) {
                         f14 *= 1.0f - this.typeAnimationProgress;
                     }
-                    this.backPaint.setColor(i);
+                    this.backPaint.setColor(i13);
                     this.backPaint.setAlpha(this.alpha);
-                    canvas.drawCircle(dp8, f13, f14, this.paint);
-                    i4 = this.type;
-                    i5 = TYPE_UDPATE_AVAILABLE;
-                    if (i4 != i5 || this.previousType == i5) {
+                    canvas2.drawCircle(dp7, f13, f14, this.paint);
+                    i3 = this.type;
+                    i4 = TYPE_UDPATE_AVAILABLE;
+                    if (i3 != i4 || this.previousType == i4) {
                         this.backPaint.setStrokeWidth(AndroidUtilities.density * 1.66f);
                         if (this.previousType == TYPE_UDPATE_AVAILABLE) {
                             this.backPaint.setAlpha((int) (this.alpha * (1.0f - this.typeAnimationProgress)));
                         } else {
                             this.backPaint.setAlpha(this.alpha);
                         }
-                        canvas.drawLine(dp8, f13 - AndroidUtilities.dp(2.0f), dp8, f13, this.backPaint);
-                        canvas.drawPoint(dp8, AndroidUtilities.dp(2.5f) + f13, this.backPaint);
+                        canvas2.drawLine(dp7, f13 - AndroidUtilities.dp(2.0f), dp7, f13, this.backPaint);
+                        canvas2.drawPoint(dp7, AndroidUtilities.dp(2.5f) + f13, this.backPaint);
                     }
-                    i6 = this.type;
-                    i7 = TYPE_UDPATE_DOWNLOADING;
-                    if (i6 != i7 || this.previousType == i7) {
+                    i5 = this.type;
+                    i6 = TYPE_UDPATE_DOWNLOADING;
+                    if (i5 != i6 || this.previousType == i6) {
                         this.backPaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
                         if (this.previousType == TYPE_UDPATE_DOWNLOADING) {
                             this.backPaint.setAlpha((int) (this.alpha * (1.0f - this.typeAnimationProgress)));
@@ -271,8 +271,8 @@ public class MenuDrawable extends Drawable {
                             this.backPaint.setAlpha(this.alpha);
                         }
                         float max = Math.max(4.0f, this.animatedDownloadProgress * 360.0f);
-                        this.rect.set(dp8 - AndroidUtilities.dp(3.0f), f13 - AndroidUtilities.dp(3.0f), dp8 + AndroidUtilities.dp(3.0f), f13 + AndroidUtilities.dp(3.0f));
-                        canvas.drawArc(this.rect, this.downloadRadOffset, max, false, this.backPaint);
+                        this.rect.set(dp7 - AndroidUtilities.dp(3.0f), f13 - AndroidUtilities.dp(3.0f), dp7 + AndroidUtilities.dp(3.0f), f13 + AndroidUtilities.dp(3.0f));
+                        canvas2.drawArc(this.rect, this.downloadRadOffset, max, false, this.backPaint);
                         float f16 = this.downloadRadOffset + ((360 * j2) / 2500.0f);
                         this.downloadRadOffset = f16;
                         this.downloadRadOffset = MediaActionDrawable.getCircleValue(f16);
@@ -295,7 +295,7 @@ public class MenuDrawable extends Drawable {
                 }
                 canvas.restore();
             }
-        } else if (this.previousType == i13) {
+        } else if (this.previousType == i12) {
             dp = AndroidUtilities.dp(9.0f) * this.typeAnimationProgress * (1.0f - this.currentRotation);
             dp2 = AndroidUtilities.dp(7.0f) * this.typeAnimationProgress;
             f = this.currentRotation;
@@ -309,44 +309,44 @@ public class MenuDrawable extends Drawable {
         if (!this.rotateToBack) {
         }
         float f92 = dp3;
-        float f102 = dp4;
-        float f112 = dp6;
-        int i142 = i11;
-        float f122 = dp5;
+        float f102 = abs;
+        int i132 = i10;
+        float f112 = dp5;
+        float f122 = dp4;
         if (!this.miniIcon) {
         }
-        i2 = this.type;
-        i3 = TYPE_DEFAULT;
-        if (i2 != i3) {
-            float dp82 = AndroidUtilities.dp(17.0f);
+        i = this.type;
+        i2 = TYPE_DEFAULT;
+        if (i != i2) {
+            float dp72 = AndroidUtilities.dp(17.0f);
             float f132 = -AndroidUtilities.dp(4.5f);
             float f142 = AndroidUtilities.density * 5.5f;
             float f152 = 1.0f - this.currentRotation;
-            canvas.scale(f152, f152, dp82, f132);
+            canvas2.scale(f152, f152, dp72, f132);
             if (this.type == TYPE_DEFAULT) {
             }
-            this.backPaint.setColor(i);
+            this.backPaint.setColor(i132);
             this.backPaint.setAlpha(this.alpha);
-            canvas.drawCircle(dp82, f132, f142, this.paint);
-            i4 = this.type;
-            i5 = TYPE_UDPATE_AVAILABLE;
-            if (i4 != i5) {
+            canvas2.drawCircle(dp72, f132, f142, this.paint);
+            i3 = this.type;
+            i4 = TYPE_UDPATE_AVAILABLE;
+            if (i3 != i4) {
             }
             this.backPaint.setStrokeWidth(AndroidUtilities.density * 1.66f);
             if (this.previousType == TYPE_UDPATE_AVAILABLE) {
             }
-            canvas.drawLine(dp82, f132 - AndroidUtilities.dp(2.0f), dp82, f132, this.backPaint);
-            canvas.drawPoint(dp82, AndroidUtilities.dp(2.5f) + f132, this.backPaint);
-            i6 = this.type;
-            i7 = TYPE_UDPATE_DOWNLOADING;
-            if (i6 != i7) {
+            canvas2.drawLine(dp72, f132 - AndroidUtilities.dp(2.0f), dp72, f132, this.backPaint);
+            canvas2.drawPoint(dp72, AndroidUtilities.dp(2.5f) + f132, this.backPaint);
+            i5 = this.type;
+            i6 = TYPE_UDPATE_DOWNLOADING;
+            if (i5 != i6) {
             }
             this.backPaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
             if (this.previousType == TYPE_UDPATE_DOWNLOADING) {
             }
             float max2 = Math.max(4.0f, this.animatedDownloadProgress * 360.0f);
-            this.rect.set(dp82 - AndroidUtilities.dp(3.0f), f132 - AndroidUtilities.dp(3.0f), dp82 + AndroidUtilities.dp(3.0f), f132 + AndroidUtilities.dp(3.0f));
-            canvas.drawArc(this.rect, this.downloadRadOffset, max2, false, this.backPaint);
+            this.rect.set(dp72 - AndroidUtilities.dp(3.0f), f132 - AndroidUtilities.dp(3.0f), dp72 + AndroidUtilities.dp(3.0f), f132 + AndroidUtilities.dp(3.0f));
+            canvas2.drawArc(this.rect, this.downloadRadOffset, max2, false, this.backPaint);
             float f162 = this.downloadRadOffset + ((360 * j2) / 2500.0f);
             this.downloadRadOffset = f162;
             this.downloadRadOffset = MediaActionDrawable.getCircleValue(f162);
@@ -358,35 +358,35 @@ public class MenuDrawable extends Drawable {
             invalidateSelf();
             canvas.restore();
         }
-        float dp822 = AndroidUtilities.dp(17.0f);
+        float dp722 = AndroidUtilities.dp(17.0f);
         float f1322 = -AndroidUtilities.dp(4.5f);
         float f1422 = AndroidUtilities.density * 5.5f;
         float f1522 = 1.0f - this.currentRotation;
-        canvas.scale(f1522, f1522, dp822, f1322);
+        canvas2.scale(f1522, f1522, dp722, f1322);
         if (this.type == TYPE_DEFAULT) {
         }
-        this.backPaint.setColor(i);
+        this.backPaint.setColor(i132);
         this.backPaint.setAlpha(this.alpha);
-        canvas.drawCircle(dp822, f1322, f1422, this.paint);
-        i4 = this.type;
-        i5 = TYPE_UDPATE_AVAILABLE;
-        if (i4 != i5) {
+        canvas2.drawCircle(dp722, f1322, f1422, this.paint);
+        i3 = this.type;
+        i4 = TYPE_UDPATE_AVAILABLE;
+        if (i3 != i4) {
         }
         this.backPaint.setStrokeWidth(AndroidUtilities.density * 1.66f);
         if (this.previousType == TYPE_UDPATE_AVAILABLE) {
         }
-        canvas.drawLine(dp822, f1322 - AndroidUtilities.dp(2.0f), dp822, f1322, this.backPaint);
-        canvas.drawPoint(dp822, AndroidUtilities.dp(2.5f) + f1322, this.backPaint);
-        i6 = this.type;
-        i7 = TYPE_UDPATE_DOWNLOADING;
-        if (i6 != i7) {
+        canvas2.drawLine(dp722, f1322 - AndroidUtilities.dp(2.0f), dp722, f1322, this.backPaint);
+        canvas2.drawPoint(dp722, AndroidUtilities.dp(2.5f) + f1322, this.backPaint);
+        i5 = this.type;
+        i6 = TYPE_UDPATE_DOWNLOADING;
+        if (i5 != i6) {
         }
         this.backPaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         if (this.previousType == TYPE_UDPATE_DOWNLOADING) {
         }
         float max22 = Math.max(4.0f, this.animatedDownloadProgress * 360.0f);
-        this.rect.set(dp822 - AndroidUtilities.dp(3.0f), f1322 - AndroidUtilities.dp(3.0f), dp822 + AndroidUtilities.dp(3.0f), f1322 + AndroidUtilities.dp(3.0f));
-        canvas.drawArc(this.rect, this.downloadRadOffset, max22, false, this.backPaint);
+        this.rect.set(dp722 - AndroidUtilities.dp(3.0f), f1322 - AndroidUtilities.dp(3.0f), dp722 + AndroidUtilities.dp(3.0f), f1322 + AndroidUtilities.dp(3.0f));
+        canvas2.drawArc(this.rect, this.downloadRadOffset, max22, false, this.backPaint);
         float f1622 = this.downloadRadOffset + ((360 * j2) / 2500.0f);
         this.downloadRadOffset = f1622;
         this.downloadRadOffset = MediaActionDrawable.getCircleValue(f1622);

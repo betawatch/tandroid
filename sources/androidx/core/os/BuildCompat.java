@@ -51,16 +51,15 @@ public final class BuildCompat {
 
     public static final boolean isAtLeastT() {
         int i = Build.VERSION.SDK_INT;
-        if (i < 33) {
-            if (i >= 32) {
-                String CODENAME = Build.VERSION.CODENAME;
-                Intrinsics.checkNotNullExpressionValue(CODENAME, "CODENAME");
-                if (isAtLeastPreReleaseCodename("Tiramisu", CODENAME)) {
-                }
-            }
+        if (i >= 33) {
+            return true;
+        }
+        if (i < 32) {
             return false;
         }
-        return true;
+        String CODENAME = Build.VERSION.CODENAME;
+        Intrinsics.checkNotNullExpressionValue(CODENAME, "CODENAME");
+        return isAtLeastPreReleaseCodename("Tiramisu", CODENAME);
     }
 
     static {

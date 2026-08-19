@@ -25,7 +25,7 @@ public class EmojiColorPickerWindow extends PopupWindow {
     private static final ViewTreeObserver.OnScrollChangedListener NOP = new ViewTreeObserver.OnScrollChangedListener() { // from class: org.telegram.ui.Components.EmojiColorPickerWindow$$ExternalSyntheticLambda0
         @Override // android.view.ViewTreeObserver.OnScrollChangedListener
         public final void onScrollChanged() {
-            EmojiColorPickerWindow.lambda$static$0();
+            EmojiColorPickerWindow.$r8$lambda$vfYy1CNvgCq4_8BXvYGs6QWAT_8();
         }
     };
     private static Field superListenerField;
@@ -35,8 +35,7 @@ public class EmojiColorPickerWindow extends PopupWindow {
     private ViewTreeObserver mViewTreeObserver;
     public EmojiColorPickerView pickerView;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$0() {
+    public static /* synthetic */ void $r8$lambda$vfYy1CNvgCq4_8BXvYGs6QWAT_8() {
     }
 
     public static EmojiColorPickerWindow create(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -57,19 +56,17 @@ public class EmojiColorPickerWindow extends PopupWindow {
         this.pickerView.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.Components.EmojiColorPickerWindow$$ExternalSyntheticLambda1
             @Override // android.view.View.OnKeyListener
             public final boolean onKey(View view, int i, KeyEvent keyEvent) {
-                boolean lambda$new$1;
-                lambda$new$1 = EmojiColorPickerWindow.this.lambda$new$1(view, i, keyEvent);
-                return lambda$new$1;
+                return EmojiColorPickerWindow.$r8$lambda$O92kydiWfMt-yYraxj8TMJgARe0(EmojiColorPickerWindow.this, view, i, keyEvent);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(View view, int i, KeyEvent keyEvent) {
-        if (i != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !isShowing()) {
+    public static /* synthetic */ boolean $r8$lambda$O92kydiWfMt-yYraxj8TMJgARe0(EmojiColorPickerWindow emojiColorPickerWindow, View view, int i, KeyEvent keyEvent) {
+        emojiColorPickerWindow.getClass();
+        if (i != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !emojiColorPickerWindow.isShowing()) {
             return false;
         }
-        dismiss();
+        emojiColorPickerWindow.dismiss();
         return true;
     }
 
@@ -320,16 +317,14 @@ public class EmojiColorPickerWindow extends PopupWindow {
             this.arrowDrawable.setBounds(this.arrowX - AndroidUtilities.dp(9.0f), getMeasuredHeight() - AndroidUtilities.dp(6.34f), this.arrowX + AndroidUtilities.dp(9.0f), getMeasuredHeight());
             this.arrowDrawable.draw(canvas);
             if (this.currentEmoji != null) {
-                float f = 5.0f;
                 if (this.isCompound) {
                     int i = 0;
                     while (i < 2) {
-                        float f2 = (i == 0 ? this.selection1Animated : this.selection2Animated).set(this.selection[i]);
-                        int dp = (int) ((this.emojiSize * (f2 + 1.0f)) + AndroidUtilities.dp((Math.max(0.0f, Math.min(1.0f, r14)) * 3.0f) + f + (r14 * 4.0f)));
-                        float max = Math.max(0.0f, Math.min(1.0f, -f2));
+                        float f = (i == 0 ? this.selection1Animated : this.selection2Animated).set(this.selection[i]);
+                        float max = Math.max(0.0f, Math.min(1.0f, -f));
                         int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f) + ((this.emojiSize + AndroidUtilities.dp(1.0f)) * i), (getMeasuredHeight() - this.emojiSize) / 2, max);
                         int i2 = this.emojiSize;
-                        this.rect.set(dp, lerp, dp + i2, lerp + i2);
+                        this.rect.set((int) ((this.emojiSize * (f + 1.0f)) + AndroidUtilities.dp((Math.max(0.0f, Math.min(1.0f, r14)) * 3.0f) + 5.0f + (r14 * 4.0f))), lerp, r13 + i2, lerp + i2);
                         this.rect.inset(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(max * (-2.0f)));
                         this.rectPaint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), AndroidUtilities.lerp(1.0f, 0.5f, max)));
                         canvas.drawRoundRect(this.rect, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.rectPaint);
@@ -337,39 +332,38 @@ public class EmojiColorPickerWindow extends PopupWindow {
                         while (i3 < 5) {
                             i3++;
                             int i4 = (i * 5) + i3;
-                            int dp2 = (this.emojiSize * i3) + AndroidUtilities.dp((i3 * 4) + 8);
-                            int dp3 = AndroidUtilities.dp(3.0f) + ((this.emojiSize + AndroidUtilities.dp(1.0f)) * i);
+                            int dp = (this.emojiSize * i3) + AndroidUtilities.dp((i3 * 4) + 8);
+                            int dp2 = AndroidUtilities.dp(3.0f) + ((this.emojiSize + AndroidUtilities.dp(1.0f)) * i);
                             Drawable drawable = this.drawables[i4];
                             int i5 = this.emojiSize;
-                            drawable.setBounds(dp2, dp3, dp2 + i5, i5 + dp3);
+                            drawable.setBounds(dp, dp2, dp + i5, i5 + dp2);
                             this.drawables[i4].draw(canvas);
                         }
                         i++;
-                        f = 5.0f;
                     }
                     this.drawables[0].setBounds(AndroidUtilities.dp(5.0f), (getMeasuredHeight() - this.emojiSize) / 2, AndroidUtilities.dp(5.0f) + this.emojiSize, (getMeasuredHeight() + this.emojiSize) / 2);
                     this.drawables[0].draw(canvas);
                     canvas.drawRect(AndroidUtilities.dp(8.45f) + this.emojiSize, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.45f) + this.emojiSize + 1, getMeasuredHeight() - AndroidUtilities.dp(6.0f), Theme.dividerPaint);
                     return;
                 }
-                float f3 = this.selection1Animated.set(this.selection[0]);
-                int dp4 = AndroidUtilities.dp(5.0f);
-                float f4 = dp4;
+                float f2 = this.selection1Animated.set(this.selection[0]);
+                int dp3 = AndroidUtilities.dp(5.0f);
+                float f3 = dp3;
                 int i6 = this.emojiSize;
-                this.rect.set((int) ((this.emojiSize * f3) + AndroidUtilities.dp((f3 * 4.0f) + 5.0f)), f4, r5 + i6, i6 + dp4);
+                this.rect.set((int) ((this.emojiSize * f2) + AndroidUtilities.dp((f2 * 4.0f) + 5.0f)), f3, r5 + i6, i6 + dp3);
                 this.rect.inset(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(-2.0f));
                 this.rectPaint.setColor(Theme.getColor(Theme.key_listSelector, this.resourcesProvider));
                 canvas.drawRoundRect(this.rect, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.rectPaint);
                 for (int i7 = 0; i7 < 6; i7++) {
                     Drawable drawable2 = this.drawables[i7];
                     if (drawable2 != null) {
-                        int dp5 = (this.emojiSize * i7) + AndroidUtilities.dp((i7 * 4) + 5);
-                        float min = ((1.0f - (Math.min(0.5f, Math.abs(i7 - f3)) * 2.0f)) * 0.1f) + 0.9f;
+                        int dp4 = (this.emojiSize * i7) + AndroidUtilities.dp((i7 * 4) + 5);
+                        float min = ((1.0f - (Math.min(0.5f, Math.abs(i7 - f2)) * 2.0f)) * 0.1f) + 0.9f;
                         canvas.save();
-                        float f5 = this.emojiSize / 2.0f;
-                        canvas.scale(min, min, dp5 + f5, f5 + f4);
+                        float f4 = this.emojiSize / 2.0f;
+                        canvas.scale(min, min, dp4 + f4, f4 + f3);
                         int i8 = this.emojiSize;
-                        drawable2.setBounds(dp5, dp4, dp5 + i8, i8 + dp4);
+                        drawable2.setBounds(dp4, dp3, dp4 + i8, i8 + dp3);
                         drawable2.draw(canvas);
                         canvas.restore();
                     }

@@ -96,7 +96,7 @@ public class BusinessBotButton extends FrameLayout {
         clickableAnimatedTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BusinessBotButton.this.lambda$new$0(view);
+                BusinessBotButton.$r8$lambda$550M6GcBr_Sg4fGMNk_Htw8r-cY(BusinessBotButton.this, view);
             }
         });
         clickableAnimatedTextView.setOnWidthUpdatedListener(new Runnable() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda1
@@ -116,45 +116,44 @@ public class BusinessBotButton extends FrameLayout {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BusinessBotButton.this.lambda$new$3(chatActivity, resourcesProvider, view);
+                BusinessBotButton.$r8$lambda$-zCiV6C2OIaXYF5zw34UD61q81U(BusinessBotButton.this, chatActivity, resourcesProvider, view);
             }
         });
         addView(imageView, LayoutHelper.createFrame(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        boolean z = this.paused;
-        this.paused = !z;
-        this.pauseButton.setText(LocaleController.getString(!z ? R.string.BizBotStart : R.string.BizBotStop), true);
-        this.subtitleView.cancelAnimation();
-        this.subtitleView.setText(LocaleController.getString(this.paused ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true);
-        if (this.paused) {
-            this.flags |= 1;
+    public static /* synthetic */ void $r8$lambda$550M6GcBr_Sg4fGMNk_Htw8r-cY(BusinessBotButton businessBotButton, View view) {
+        boolean z = businessBotButton.paused;
+        businessBotButton.paused = !z;
+        businessBotButton.pauseButton.setText(LocaleController.getString(!z ? R.string.BizBotStart : R.string.BizBotStop), true);
+        businessBotButton.subtitleView.cancelAnimation();
+        businessBotButton.subtitleView.setText(LocaleController.getString(businessBotButton.paused ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true);
+        if (businessBotButton.paused) {
+            businessBotButton.flags |= 1;
         } else {
-            this.flags &= -2;
+            businessBotButton.flags &= -2;
         }
-        MessagesController.getNotificationsSettings(this.currentAccount).edit().putInt("dialog_botflags" + this.dialogId, this.flags).apply();
+        MessagesController.getNotificationsSettings(businessBotButton.currentAccount).edit().putInt("dialog_botflags" + businessBotButton.dialogId, businessBotButton.flags).apply();
         TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
-        toggleconnectedbotpaused.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
-        toggleconnectedbotpaused.paused = this.paused;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(toggleconnectedbotpaused, null);
+        toggleconnectedbotpaused.peer = MessagesController.getInstance(businessBotButton.currentAccount).getInputPeer(businessBotButton.dialogId);
+        toggleconnectedbotpaused.paused = businessBotButton.paused;
+        ConnectionsManager.getInstance(businessBotButton.currentAccount).sendRequest(toggleconnectedbotpaused, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(ChatActivity chatActivity, Theme.ResourcesProvider resourcesProvider, View view) {
-        ItemOptions makeOptions = ItemOptions.makeOptions(chatActivity.getLayoutContainer(), resourcesProvider, this.menuView);
+    public static /* synthetic */ void $r8$lambda$-zCiV6C2OIaXYF5zw34UD61q81U(final BusinessBotButton businessBotButton, ChatActivity chatActivity, Theme.ResourcesProvider resourcesProvider, View view) {
+        businessBotButton.getClass();
+        ItemOptions makeOptions = ItemOptions.makeOptions(chatActivity.getLayoutContainer(), resourcesProvider, businessBotButton.menuView);
         makeOptions.add(R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.BizBotRemove), true, new Runnable() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessBotButton.this.lambda$new$1();
+                BusinessBotButton.$r8$lambda$abNJkZYemC8BjEYq4msIhfzaKmU(BusinessBotButton.this);
             }
         }).makeMultiline(false);
-        if (this.manageUrl != null) {
+        if (businessBotButton.manageUrl != null) {
             makeOptions.add(R.drawable.msg_settings, LocaleController.getString(R.string.BizBotManage), new Runnable() { // from class: org.telegram.ui.Business.BusinessBotButton$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BusinessBotButton.this.lambda$new$2();
+                    Browser.openUrl(r0.getContext(), BusinessBotButton.this.manageUrl);
                 }
             });
         }
@@ -163,19 +162,14 @@ public class BusinessBotButton extends FrameLayout {
         makeOptions.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
+    public static /* synthetic */ void $r8$lambda$abNJkZYemC8BjEYq4msIhfzaKmU(BusinessBotButton businessBotButton) {
+        businessBotButton.getClass();
         TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
-        disablepeerconnectedbot.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(disablepeerconnectedbot, null);
-        MessagesController.getNotificationsSettings(this.currentAccount).edit().remove("dialog_botid" + this.dialogId).remove("dialog_boturl" + this.dialogId).remove("dialog_botflags" + this.dialogId).apply();
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(this.dialogId));
-        BusinessChatbotController.getInstance(this.currentAccount).invalidate(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        Browser.openUrl(getContext(), this.manageUrl);
+        disablepeerconnectedbot.peer = MessagesController.getInstance(businessBotButton.currentAccount).getInputPeer(businessBotButton.dialogId);
+        ConnectionsManager.getInstance(businessBotButton.currentAccount).sendRequest(disablepeerconnectedbot, null);
+        MessagesController.getNotificationsSettings(businessBotButton.currentAccount).edit().remove("dialog_botid" + businessBotButton.dialogId).remove("dialog_boturl" + businessBotButton.dialogId).remove("dialog_botflags" + businessBotButton.dialogId).apply();
+        NotificationCenter.getInstance(businessBotButton.currentAccount).postNotificationName(NotificationCenter.peerSettingsDidLoad, Long.valueOf(businessBotButton.dialogId));
+        BusinessChatbotController.getInstance(businessBotButton.currentAccount).invalidate(false);
     }
 
     public void setLeftMargin(float f) {

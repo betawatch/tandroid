@@ -148,13 +148,14 @@ public class AvcDecoderConfigurationRecord {
         while (this.pictureParameterSets.iterator().hasNext()) {
             j2 = j2 + 2 + ((byte[]) r3.next()).length;
         }
-        if (this.hasExts && ((i = this.avcProfileIndication) == 100 || i == 110 || i == 122 || i == 144)) {
-            j2 += 4;
-            while (this.sequenceParameterSetExts.iterator().hasNext()) {
-                j2 = j2 + 2 + ((byte[]) r0.next()).length;
-            }
+        if (!this.hasExts || ((i = this.avcProfileIndication) != 100 && i != 110 && i != 122 && i != 144)) {
+            return j2;
         }
-        return j2;
+        long j3 = j2 + 4;
+        while (this.sequenceParameterSetExts.iterator().hasNext()) {
+            j3 = j3 + 2 + ((byte[]) r0.next()).length;
+        }
+        return j3;
     }
 
     public String toString() {

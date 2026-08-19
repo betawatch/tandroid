@@ -37,32 +37,22 @@ public class CrashlyticsReportPersistence {
     private static final Comparator LATEST_SESSION_ID_FIRST_COMPARATOR = new Comparator() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$0;
-            lambda$static$0 = CrashlyticsReportPersistence.lambda$static$0((File) obj, (File) obj2);
-            return lambda$static$0;
+            int compareTo;
+            compareTo = ((File) obj2).getName().compareTo(((File) obj).getName());
+            return compareTo;
         }
     };
     private static final FilenameFilter EVENT_FILE_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda1
         @Override // java.io.FilenameFilter
         public final boolean accept(File file, String str) {
-            boolean lambda$static$1;
-            lambda$static$1 = CrashlyticsReportPersistence.lambda$static$1(file, str);
-            return lambda$static$1;
+            boolean startsWith;
+            startsWith = str.startsWith("event");
+            return startsWith;
         }
     };
 
     private static long convertTimestampFromSecondsToMs(long j) {
         return j * 1000;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(File file, File file2) {
-        return file2.getName().compareTo(file.getName());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$1(File file, String str) {
-        return str.startsWith("event");
     }
 
     public CrashlyticsReportPersistence(FileStore fileStore, SettingsProvider settingsProvider, CrashlyticsAppQualitySessionsSubscriber crashlyticsAppQualitySessionsSubscriber) {
@@ -156,14 +146,13 @@ public class CrashlyticsReportPersistence {
         if (str != null) {
             openSessionIds.remove(str);
         }
-        if (openSessionIds.size() <= 8) {
-            return openSessionIds;
-        }
-        while (openSessionIds.size() > 8) {
-            String str2 = (String) openSessionIds.last();
-            Logger.getLogger().d("Removing session over cap: " + str2);
-            this.fileStore.deleteSessionFiles(str2);
-            openSessionIds.remove(str2);
+        if (openSessionIds.size() > 8) {
+            while (openSessionIds.size() > 8) {
+                String str2 = (String) openSessionIds.last();
+                Logger.getLogger().d("Removing session over cap: " + str2);
+                this.fileStore.deleteSessionFiles(str2);
+                openSessionIds.remove(str2);
+            }
         }
         return openSessionIds;
     }
@@ -357,7 +346,7 @@ public class CrashlyticsReportPersistence {
         while (it.hasNext()) {
             File file = (File) it.next();
             if (size <= i) {
-                return size;
+                break;
             }
             FileStore.recursiveDelete(file);
             size--;

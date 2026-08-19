@@ -71,9 +71,7 @@ public abstract class BaseTrackSelection implements ExoTrackSelection {
         Arrays.sort(this.formats, new Comparator() { // from class: com.google.android.exoplayer2.trackselection.BaseTrackSelection$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$new$0;
-                lambda$new$0 = BaseTrackSelection.lambda$new$0((Format) obj, (Format) obj2);
-                return lambda$new$0;
+                return BaseTrackSelection.$r8$lambda$3wCXyuMxW2U_eHmLqTPC49NRXx8((Format) obj, (Format) obj2);
             }
         });
         this.tracks = new int[this.length];
@@ -89,8 +87,7 @@ public abstract class BaseTrackSelection implements ExoTrackSelection {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$new$0(Format format, Format format2) {
+    public static /* synthetic */ int $r8$lambda$3wCXyuMxW2U_eHmLqTPC49NRXx8(Format format, Format format2) {
         return format2.bitrate - format.bitrate;
     }
 
@@ -182,10 +179,12 @@ public abstract class BaseTrackSelection implements ExoTrackSelection {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            BaseTrackSelection baseTrackSelection = (BaseTrackSelection) obj;
+            if (this.group == baseTrackSelection.group && Arrays.equals(this.tracks, baseTrackSelection.tracks)) {
+                return true;
+            }
         }
-        BaseTrackSelection baseTrackSelection = (BaseTrackSelection) obj;
-        return this.group == baseTrackSelection.group && Arrays.equals(this.tracks, baseTrackSelection.tracks);
+        return false;
     }
 }

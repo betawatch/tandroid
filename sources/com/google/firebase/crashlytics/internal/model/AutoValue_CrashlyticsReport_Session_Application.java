@@ -64,23 +64,18 @@ final class AutoValue_CrashlyticsReport_Session_Application extends CrashlyticsR
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Application)) {
-            return false;
-        }
-        CrashlyticsReport.Session.Application application = (CrashlyticsReport.Session.Application) obj;
-        if (this.identifier.equals(application.getIdentifier()) && this.version.equals(application.getVersion()) && ((str = this.displayVersion) != null ? str.equals(application.getDisplayVersion()) : application.getDisplayVersion() == null)) {
-            application.getOrganization();
-            String str2 = this.installationUuid;
-            if (str2 != null ? str2.equals(application.getInstallationUuid()) : application.getInstallationUuid() == null) {
-                String str3 = this.developmentPlatform;
-                if (str3 != null ? str3.equals(application.getDevelopmentPlatform()) : application.getDevelopmentPlatform() == null) {
-                    String str4 = this.developmentPlatformVersion;
-                    if (str4 == null) {
-                        if (application.getDevelopmentPlatformVersion() == null) {
+        if (obj instanceof CrashlyticsReport.Session.Application) {
+            CrashlyticsReport.Session.Application application = (CrashlyticsReport.Session.Application) obj;
+            if (this.identifier.equals(application.getIdentifier()) && this.version.equals(application.getVersion()) && ((str = this.displayVersion) != null ? str.equals(application.getDisplayVersion()) : application.getDisplayVersion() == null)) {
+                application.getOrganization();
+                String str2 = this.installationUuid;
+                if (str2 != null ? str2.equals(application.getInstallationUuid()) : application.getInstallationUuid() == null) {
+                    String str3 = this.developmentPlatform;
+                    if (str3 != null ? str3.equals(application.getDevelopmentPlatform()) : application.getDevelopmentPlatform() == null) {
+                        String str4 = this.developmentPlatformVersion;
+                        if (str4 != null ? str4.equals(application.getDevelopmentPlatformVersion()) : application.getDevelopmentPlatformVersion() == null) {
                             return true;
                         }
-                    } else if (str4.equals(application.getDevelopmentPlatformVersion())) {
-                        return true;
                     }
                 }
             }

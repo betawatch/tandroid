@@ -5,10 +5,10 @@ import java.util.ConcurrentModificationException;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class a implements Spliterator {
-    private final java.util.List a;
-    private int b;
-    private int c;
+public final class a implements Spliterator {
+    public final java.util.List a;
+    public int b;
+    public int c;
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -17,12 +17,12 @@ final class a implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return T.d(this);
+        return j$.com.android.tools.r8.a.n(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return T.e(this, i);
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -30,19 +30,19 @@ final class a implements Spliterator {
         throw new IllegalStateException();
     }
 
-    a(java.util.List list) {
+    public a(java.util.List list) {
         this.a = list;
         this.b = 0;
         this.c = -1;
     }
 
-    private a(a aVar, int i, int i2) {
+    public a(a aVar, int i, int i2) {
         this.a = aVar.a;
         this.b = i;
         this.c = i2;
     }
 
-    private int a() {
+    public final int a() {
         int i = this.c;
         if (i >= 0) {
             return i;
@@ -74,7 +74,7 @@ final class a implements Spliterator {
         }
         this.b = i + 1;
         try {
-            consumer.accept(this.a.get(i));
+            consumer.s(this.a.get(i));
             return true;
         } catch (IndexOutOfBoundsException unused) {
             throw new ConcurrentModificationException();
@@ -88,7 +88,7 @@ final class a implements Spliterator {
         this.b = a;
         for (int i = this.b; i < a; i++) {
             try {
-                consumer.accept(this.a.get(i));
+                consumer.s(this.a.get(i));
             } catch (IndexOutOfBoundsException unused) {
                 throw new ConcurrentModificationException();
             }

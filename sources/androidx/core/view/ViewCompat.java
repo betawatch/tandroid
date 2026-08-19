@@ -44,15 +44,12 @@ public abstract class ViewCompat {
     private static final OnReceiveContentViewBehavior NO_OP_ON_RECEIVE_CONTENT_VIEW_BEHAVIOR = new OnReceiveContentViewBehavior() { // from class: androidx.core.view.ViewCompat$$ExternalSyntheticLambda0
         @Override // androidx.core.view.OnReceiveContentViewBehavior
         public final ContentInfoCompat onReceiveContent(ContentInfoCompat contentInfoCompat) {
-            ContentInfoCompat lambda$static$0;
-            lambda$static$0 = ViewCompat.lambda$static$0(contentInfoCompat);
-            return lambda$static$0;
+            return ViewCompat.$r8$lambda$mRexKut8PHPxTytR38MAzVT9ekI(contentInfoCompat);
         }
     };
     private static final AccessibilityPaneVisibilityManager sAccessibilityPaneVisibilityManager = new AccessibilityPaneVisibilityManager();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ContentInfoCompat lambda$static$0(ContentInfoCompat contentInfoCompat) {
+    public static /* synthetic */ ContentInfoCompat $r8$lambda$mRexKut8PHPxTytR38MAzVT9ekI(ContentInfoCompat contentInfoCompat) {
         return contentInfoCompat;
     }
 

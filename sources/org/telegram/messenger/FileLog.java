@@ -60,17 +60,20 @@ public class FileLog {
     private File tlRequestsFile = null;
 
     public static FileLog getInstance() {
-        FileLog fileLog = Instance;
-        if (fileLog == null) {
-            synchronized (FileLog.class) {
-                try {
-                    fileLog = Instance;
-                    if (fileLog == null) {
-                        fileLog = new FileLog();
-                        Instance = fileLog;
-                    }
-                } finally {
+        FileLog fileLog;
+        FileLog fileLog2 = Instance;
+        if (fileLog2 != null) {
+            return fileLog2;
+        }
+        synchronized (FileLog.class) {
+            try {
+                fileLog = Instance;
+                if (fileLog == null) {
+                    fileLog = new FileLog();
+                    Instance = fileLog;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return fileLog;
@@ -102,7 +105,7 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$dumpResponseAndRequest$0(j, j2, i2, i, currentTimeMillis, str, str3, tL_error);
+                        FileLog.$r8$lambda$TbpBHKbdIrkiw9Ph1QNW-6DiAvI(j, j2, i2, i, currentTimeMillis, str, str3, tL_error);
                     }
                 });
             } catch (Throwable th) {
@@ -111,8 +114,7 @@ public class FileLog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dumpResponseAndRequest$0(long j, long j2, int i, int i2, long j3, String str, String str2, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$TbpBHKbdIrkiw9Ph1QNW-6DiAvI(long j, long j2, int i, int i2, long j3, String str, String str2, TLRPC.TL_error tL_error) {
         try {
             String str3 = "requestMsgId=" + j + " requestingTime=" + (System.currentTimeMillis() - j2) + " request_token=" + i + " account=" + i2;
             getInstance().tlStreamWriter.write(getInstance().dateFormat.format(j3) + " " + str3);
@@ -127,12 +129,12 @@ public class FileLog {
                 Log.e(mtproto_tag, str);
                 Log.e(mtproto_tag, str2);
                 Log.e(mtproto_tag, " ");
-            } else {
-                Log.d(mtproto_tag, str3);
-                Log.d(mtproto_tag, str);
-                Log.d(mtproto_tag, str2);
-                Log.d(mtproto_tag, " ");
+                return;
             }
+            Log.d(mtproto_tag, str3);
+            Log.d(mtproto_tag, str);
+            Log.d(mtproto_tag, str2);
+            Log.d(mtproto_tag, " ");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -153,7 +155,7 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$dumpUnparsedMessage$1(currentTimeMillis, j, i, sb2);
+                        FileLog.$r8$lambda$zqRYPgC_YdSVtSz1dAm-Pwy_uUw(currentTimeMillis, j, i, sb2);
                     }
                 });
             } catch (Throwable unused) {
@@ -161,8 +163,7 @@ public class FileLog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dumpUnparsedMessage$1(long j, long j2, int i, String str) {
+    public static /* synthetic */ void $r8$lambda$zqRYPgC_YdSVtSz1dAm-Pwy_uUw(long j, long j2, int i, String str) {
         try {
             getInstance().tlStreamWriter.write(getInstance().dateFormat.format(j) + " msgId=" + j2 + " account=" + i);
             getInstance().tlStreamWriter.write("\n");
@@ -386,15 +387,14 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$e$2(str, th);
+                        FileLog.$r8$lambda$0ztTDayoCBQbqNUyey4KiVh2OWE(str, th);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$e$2(String str, Throwable th) {
+    public static /* synthetic */ void $r8$lambda$0ztTDayoCBQbqNUyey4KiVh2OWE(String str, Throwable th) {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " E/tmessages: " + str + "\n");
             getInstance().streamWriter.write(th.toString());
@@ -416,15 +416,14 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$e$3(str);
+                        FileLog.$r8$lambda$Fp_tthXxEDYM8ruhhhIZvuLpt48(str);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$e$3(String str) {
+    public static /* synthetic */ void $r8$lambda$Fp_tthXxEDYM8ruhhhIZvuLpt48(String str) {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " E/tmessages: " + str + "\n");
             getInstance().streamWriter.flush();
@@ -462,7 +461,7 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$e$4(th);
+                        FileLog.$r8$lambda$dl4NO88LqoO42afmmxifdeuAxfg(th);
                     }
                 });
             } else {
@@ -471,8 +470,7 @@ public class FileLog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$e$4(Throwable th) {
+    public static /* synthetic */ void $r8$lambda$dl4NO88LqoO42afmmxifdeuAxfg(Throwable th) {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " E/tmessages: " + th + "\n");
             for (StackTraceElement stackTraceElement : th.getStackTrace()) {
@@ -546,7 +544,7 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$fatal$5(th);
+                        FileLog.$r8$lambda$Cka7Jn8J8_XF-nXWLJvFPiIg4A4(th);
                     }
                 });
                 return;
@@ -558,8 +556,7 @@ public class FileLog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$fatal$5(Throwable th) {
+    public static /* synthetic */ void $r8$lambda$Cka7Jn8J8_XF-nXWLJvFPiIg4A4(Throwable th) {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " FATAL/tmessages: " + th + "\n");
             for (StackTraceElement stackTraceElement : th.getStackTrace()) {
@@ -593,15 +590,14 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$d$6(str);
+                        FileLog.$r8$lambda$bY-Z1YvZDkuzSWHS46PDhtH0hTE(str);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$d$6(String str) {
+    public static /* synthetic */ void $r8$lambda$bY-Z1YvZDkuzSWHS46PDhtH0hTE(String str) {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " D/tmessages: " + str + "\n");
             getInstance().streamWriter.flush();
@@ -621,15 +617,14 @@ public class FileLog {
                 getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.lambda$w$7(str);
+                        FileLog.$r8$lambda$W1fml6687f73UJ9c-xSD3wMPIB4(str);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$w$7(String str) {
+    public static /* synthetic */ void $r8$lambda$W1fml6687f73UJ9c-xSD3wMPIB4(String str) {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " W/tmessages: " + str + "\n");
             getInstance().streamWriter.flush();
@@ -667,19 +662,18 @@ public class FileLog {
             new Thread(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FileLog.ANRDetector.this.lambda$new$1(runnable);
+                    FileLog.ANRDetector.$r8$lambda$_-BnewbbfzQ78PVhPUWgvar4WoM(FileLog.ANRDetector.this, runnable);
                 }
             }).start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(Runnable runnable) {
+        public static /* synthetic */ void $r8$lambda$_-BnewbbfzQ78PVhPUWgvar4WoM(final ANRDetector aNRDetector, Runnable runnable) {
             while (true) {
-                this.isUIThreadResponsive = false;
-                this.mainHandler.post(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda1
+                aNRDetector.isUIThreadResponsive = false;
+                aNRDetector.mainHandler.post(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FileLog.ANRDetector.this.lambda$new$0();
+                        FileLog.ANRDetector.this.isUIThreadResponsive = true;
                     }
                 });
                 try {
@@ -687,15 +681,10 @@ public class FileLog {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if (!this.isUIThreadResponsive) {
+                if (!aNRDetector.isUIThreadResponsive) {
                     runnable.run();
                 }
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            this.isUIThreadResponsive = true;
         }
     }
 }

@@ -56,7 +56,7 @@ public class AppCompatViewInflater {
         if (z4) {
             context2 = TintContextWrapper.wrap(context2);
         }
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "RatingBar":
                 createRatingBar = createRatingBar(context2, attributeSet);
@@ -263,7 +263,7 @@ public class AppCompatViewInflater {
             Log.i("AppCompatViewInflater", "app:theme is now deprecated. Please move to using android:theme instead.");
         }
         obtainStyledAttributes.recycle();
-        return resourceId != 0 ? ((context instanceof ContextThemeWrapper) && ((ContextThemeWrapper) context).getThemeResId() == resourceId) ? context : new ContextThemeWrapper(context, resourceId) : context;
+        return (resourceId == 0 || ((context instanceof ContextThemeWrapper) && ((ContextThemeWrapper) context).getThemeResId() == resourceId)) ? context : new ContextThemeWrapper(context, resourceId);
     }
 
     private void backportAccessibilityAttributes(Context context, View view, AttributeSet attributeSet) {

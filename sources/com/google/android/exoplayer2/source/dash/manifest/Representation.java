@@ -45,7 +45,7 @@ public abstract class Representation {
         this.format = format;
         this.baseUrls = ImmutableList.copyOf((Collection) list);
         if (list2 == null) {
-            unmodifiableList = Collections.emptyList();
+            unmodifiableList = Collections.EMPTY_LIST;
         } else {
             unmodifiableList = DesugarCollections.unmodifiableList(list2);
         }

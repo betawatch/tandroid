@@ -94,17 +94,21 @@ public class RichDividerCell extends RichBlockCell implements Theme.Colorable, T
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        Canvas canvas2;
         int regionLo = regionLo();
         int regionHi = (regionHi() - regionLo) / 4;
         int i = regionLo + regionHi;
         int regionHi2 = regionHi() - regionHi;
         if (isCellSelected()) {
-            canvas.drawRoundRect(i - AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(12.0f) + regionHi2, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.selectionPaint);
+            canvas2 = canvas;
+            canvas2.drawRoundRect(i - AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(12.0f) + regionHi2, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.selectionPaint);
+        } else {
+            canvas2 = canvas;
         }
         float dp = (AndroidUtilities.dp(12.0f) - AndroidUtilities.dp(1.0f)) / 2.0f;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(i, dp, regionHi2, AndroidUtilities.dp(1.0f) + dp);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(0.5f), AndroidUtilities.dp(0.5f), this.paint);
+        canvas2.drawRoundRect(rectF, AndroidUtilities.dp(0.5f), AndroidUtilities.dp(0.5f), this.paint);
     }
 
     public static final class Factory extends UItem.UItemFactory {

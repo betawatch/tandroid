@@ -36,15 +36,12 @@ public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
         RemoteUtils.dispatchCallToHost("startCarApp from notification", new RemoteUtils.RemoteCall() { // from class: androidx.car.app.notification.CarAppNotificationBroadcastReceiver$$ExternalSyntheticLambda0
             @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
             public final Object call() {
-                Object lambda$onReceive$0;
-                lambda$onReceive$0 = CarAppNotificationBroadcastReceiver.lambda$onReceive$0(IStartCarApp.this, intent);
-                return lambda$onReceive$0;
+                return CarAppNotificationBroadcastReceiver.$r8$lambda$q-h3KUTu1iDCbG2k9wImwtKNT7Q(IStartCarApp.this, intent);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$onReceive$0(IStartCarApp iStartCarApp, Intent intent) {
+    public static /* synthetic */ Object $r8$lambda$q-h3KUTu1iDCbG2k9wImwtKNT7Q(IStartCarApp iStartCarApp, Intent intent) {
         iStartCarApp.startCarApp(intent);
         return null;
     }

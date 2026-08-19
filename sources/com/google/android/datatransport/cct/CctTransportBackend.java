@@ -291,9 +291,7 @@ final class CctTransportBackend implements TransportBackend {
             }, new RetryStrategy() { // from class: com.google.android.datatransport.cct.CctTransportBackend$$ExternalSyntheticLambda1
                 @Override // com.google.android.datatransport.runtime.retries.RetryStrategy
                 public final Object shouldRetry(Object obj, Object obj2) {
-                    CctTransportBackend.HttpRequest lambda$send$0;
-                    lambda$send$0 = CctTransportBackend.lambda$send$0((CctTransportBackend.HttpRequest) obj, (CctTransportBackend.HttpResponse) obj2);
-                    return lambda$send$0;
+                    return CctTransportBackend.$r8$lambda$ZhERf3WZ-xxKL1vqOg2FJv71EaQ((CctTransportBackend.HttpRequest) obj, (CctTransportBackend.HttpResponse) obj2);
                 }
             });
             int i = httpResponse.code;
@@ -313,8 +311,7 @@ final class CctTransportBackend implements TransportBackend {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ HttpRequest lambda$send$0(HttpRequest httpRequest, HttpResponse httpResponse) {
+    public static /* synthetic */ HttpRequest $r8$lambda$ZhERf3WZ-xxKL1vqOg2FJv71EaQ(HttpRequest httpRequest, HttpResponse httpResponse) {
         URL url = httpResponse.redirectUrl;
         if (url == null) {
             return null;

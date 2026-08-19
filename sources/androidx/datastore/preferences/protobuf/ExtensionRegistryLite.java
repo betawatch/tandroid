@@ -9,7 +9,7 @@ import java.util.Map;
 public class ExtensionRegistryLite {
     private static boolean doFullRuntimeInheritanceCheck = true;
     private static volatile ExtensionRegistryLite emptyRegistry;
-    private final Map extensionsByNumber = Collections.emptyMap();
+    private final Map extensionsByNumber = Collections.EMPTY_MAP;
     private static final Class extensionClass = resolveExtensionClass();
     static final ExtensionRegistryLite EMPTY_REGISTRY_LITE = new ExtensionRegistryLite(true);
 
@@ -22,17 +22,20 @@ public class ExtensionRegistryLite {
     }
 
     public static ExtensionRegistryLite getEmptyRegistry() {
-        ExtensionRegistryLite extensionRegistryLite = emptyRegistry;
-        if (extensionRegistryLite == null) {
-            synchronized (ExtensionRegistryLite.class) {
-                try {
-                    extensionRegistryLite = emptyRegistry;
-                    if (extensionRegistryLite == null) {
-                        extensionRegistryLite = doFullRuntimeInheritanceCheck ? ExtensionRegistryFactory.createEmpty() : EMPTY_REGISTRY_LITE;
-                        emptyRegistry = extensionRegistryLite;
-                    }
-                } finally {
+        ExtensionRegistryLite extensionRegistryLite;
+        ExtensionRegistryLite extensionRegistryLite2 = emptyRegistry;
+        if (extensionRegistryLite2 != null) {
+            return extensionRegistryLite2;
+        }
+        synchronized (ExtensionRegistryLite.class) {
+            try {
+                extensionRegistryLite = emptyRegistry;
+                if (extensionRegistryLite == null) {
+                    extensionRegistryLite = doFullRuntimeInheritanceCheck ? ExtensionRegistryFactory.createEmpty() : EMPTY_REGISTRY_LITE;
+                    emptyRegistry = extensionRegistryLite;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return extensionRegistryLite;

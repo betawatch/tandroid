@@ -94,8 +94,8 @@ abstract class MaskUtil {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:10:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0046 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0046 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0045 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

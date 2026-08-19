@@ -62,8 +62,9 @@ public final class Pane {
     }
 
     private Pane() {
-        this.mRows = Collections.emptyList();
-        this.mActionList = Collections.emptyList();
+        List list = Collections.EMPTY_LIST;
+        this.mRows = list;
+        this.mActionList = list;
         this.mIsLoading = false;
         this.mImage = null;
     }

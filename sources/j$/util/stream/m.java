@@ -1,134 +1,196 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.Optional;
+import j$.util.function.BiConsumer$-CC;
+import j$.util.function.Predicate$-CC;
+import java.util.function.BiConsumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleFunction;
+import java.util.function.IntBinaryOperator;
+import java.util.function.IntFunction;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.ObjIntConsumer;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
 
 /* loaded from: classes2.dex */
-final class m extends i2 {
-    public final /* synthetic */ int b = 2;
-    boolean c;
-    Object d;
+public final /* synthetic */ class m implements ObjDoubleConsumer, BiConsumer, DoubleFunction, ToDoubleFunction, IntFunction, DoubleBinaryOperator, Supplier, Predicate, ToIntFunction, IntBinaryOperator, ObjIntConsumer {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ m(m2 m2Var) {
-        super(m2Var);
+    public /* synthetic */ m(int i) {
+        this.a = i;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(K3 k3, m2 m2Var) {
-        super(m2Var);
-        this.d = k3;
-        this.c = true;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$and(this, predicate);
     }
 
-    @Override // j$.util.stream.i2, j$.util.stream.m2
-    public final void l(long j) {
-        switch (this.b) {
-            case 0:
-                this.c = false;
-                this.d = null;
-                this.a.l(-1L);
-                break;
+    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+        switch (this.a) {
             case 1:
-                this.a.l(-1L);
                 break;
+            case 3:
+                break;
+            case 24:
+                break;
+        }
+        return BiConsumer$-CC.$default$andThen(this, biConsumer);
+    }
+
+    @Override // java.util.function.DoubleFunction
+    public Object apply(double d) {
+        return Double.valueOf(d);
+    }
+
+    @Override // java.util.function.DoubleBinaryOperator
+    public double applyAsDouble(double d, double d2) {
+        return Math.max(d, d2);
+    }
+
+    @Override // java.util.function.IntBinaryOperator
+    public int applyAsInt(int i, int i2) {
+        switch (this.a) {
+            case 22:
+                return Math.min(i, i2);
+            case 25:
+                return i + i2;
             default:
-                this.a.l(-1L);
-                break;
+                return Math.max(i, i2);
         }
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void p(Object obj) {
-        switch (this.b) {
-            case 0:
-                m2 m2Var = this.a;
-                if (obj == null) {
-                    if (this.c) {
-                        return;
-                    }
-                    this.c = true;
-                    this.d = null;
-                    m2Var.p((m2) null);
-                    return;
-                }
-                Object obj2 = this.d;
-                if (obj2 == null || !obj.equals(obj2)) {
-                    this.d = obj;
-                    m2Var.p((m2) obj);
-                    return;
-                }
-                return;
-            case 1:
-                Stream stream = (Stream) ((a) ((s) this.d).n).apply((a) obj);
-                if (stream != null) {
-                    try {
-                        boolean z = this.c;
-                        m2 m2Var2 = this.a;
-                        if (!z) {
-                            ((Stream) stream.sequential()).forEach(m2Var2);
-                        } else {
-                            Spliterator spliterator = ((Stream) stream.sequential()).spliterator();
-                            while (!m2Var2.n() && spliterator.tryAdvance(m2Var2)) {
-                            }
-                        }
-                    } catch (Throwable th) {
-                        try {
-                            stream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
-                        }
-                        throw th;
-                    }
-                }
-                if (stream != null) {
-                    stream.close();
-                    return;
-                }
-                return;
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public boolean test(Object obj) {
+        switch (this.a) {
+            case 10:
+                return ((j$.util.z) obj).a;
+            case 11:
+            case 13:
             default:
-                if (this.c) {
-                    boolean test = ((K3) this.d).m.test(obj);
-                    this.c = test;
-                    if (test) {
-                        this.a.p((m2) obj);
-                        return;
-                    }
-                    return;
-                }
-                return;
+                return ((Optional) obj).isPresent();
+            case 12:
+                return ((j$.util.A) obj).a;
+            case 14:
+                return ((j$.util.B) obj).a;
         }
     }
 
-    @Override // j$.util.stream.i2, j$.util.stream.m2
-    public boolean n() {
-        switch (this.b) {
+    @Override // java.util.function.ToDoubleFunction
+    public double applyAsDouble(Object obj) {
+        return ((Double) obj).doubleValue();
+    }
+
+    @Override // java.util.function.ObjDoubleConsumer
+    public void accept(Object obj, double d) {
+        switch (this.a) {
+            case 0:
+                double[] dArr = (double[]) obj;
+                dArr[2] = dArr[2] + 1.0d;
+                Collectors.a(dArr, d);
+                dArr[3] = dArr[3] + d;
+                break;
             case 1:
-                this.c = true;
-                return this.a.n();
+            default:
+                double[] dArr2 = (double[]) obj;
+                Collectors.a(dArr2, d);
+                dArr2[2] = dArr2[2] + d;
+                break;
             case 2:
-                return !this.c || this.a.n();
-            default:
-                return super.n();
-        }
-    }
-
-    @Override // j$.util.stream.i2, j$.util.stream.m2
-    public void k() {
-        switch (this.b) {
-            case 0:
-                this.c = false;
-                this.d = null;
-                this.a.k();
-                break;
-            default:
-                super.k();
+                ((j$.util.u) obj).accept(d);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(s sVar, m2 m2Var) {
-        super(m2Var);
-        this.d = sVar;
+    @Override // java.util.function.ToIntFunction
+    public int applyAsInt(Object obj) {
+        return ((Integer) obj).intValue();
+    }
+
+    @Override // java.util.function.Supplier
+    public Object get() {
+        switch (this.a) {
+            case 8:
+                return new double[3];
+            case 11:
+                return new C();
+            case 13:
+                return new D();
+            case 15:
+                return new E();
+            case 17:
+                return new F();
+            default:
+                return new long[2];
+        }
+    }
+
+    @Override // java.util.function.ObjIntConsumer
+    public void accept(Object obj, int i) {
+        switch (this.a) {
+            case 23:
+                ((j$.util.v) obj).accept(i);
+                break;
+            default:
+                long[] jArr = (long[]) obj;
+                jArr[0] = jArr[0] + 1;
+                jArr[1] = jArr[1] + i;
+                break;
+        }
+    }
+
+    @Override // java.util.function.BiConsumer
+    public void accept(Object obj, Object obj2) {
+        switch (this.a) {
+            case 1:
+                double[] dArr = (double[]) obj;
+                double[] dArr2 = (double[]) obj2;
+                Collectors.a(dArr, dArr2[0]);
+                Collectors.a(dArr, dArr2[1]);
+                dArr[2] = dArr[2] + dArr2[2];
+                dArr[3] = dArr[3] + dArr2[3];
+                break;
+            case 3:
+                ((j$.util.u) obj).b((j$.util.u) obj2);
+                break;
+            case 24:
+                ((j$.util.v) obj).b((j$.util.v) obj2);
+                break;
+            default:
+                long[] jArr = (long[]) obj;
+                long[] jArr2 = (long[]) obj2;
+                jArr[0] = jArr[0] + jArr2[0];
+                jArr[1] = jArr[1] + jArr2[1];
+                break;
+        }
+    }
+
+    @Override // java.util.function.IntFunction
+    public Object apply(int i) {
+        switch (this.a) {
+            case 6:
+                return new Double[i];
+            case 18:
+                return new Object[i];
+            case 19:
+                return new Integer[i];
+            default:
+                return Integer.valueOf(i);
+        }
     }
 }

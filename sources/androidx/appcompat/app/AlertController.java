@@ -683,6 +683,7 @@ class AlertController {
         }
 
         public void apply(AlertController alertController) {
+            AlertController alertController2;
             View view = this.mCustomTitleView;
             if (view != null) {
                 alertController.setCustomTitle(view);
@@ -709,42 +710,48 @@ class AlertController {
                 alertController.setMessage(charSequence2);
             }
             CharSequence charSequence3 = this.mPositiveButtonText;
-            if (charSequence3 != null || this.mPositiveButtonIcon != null) {
+            if (charSequence3 == null && this.mPositiveButtonIcon == null) {
+                alertController2 = alertController;
+            } else {
                 alertController.setButton(-1, charSequence3, this.mPositiveButtonListener, null, this.mPositiveButtonIcon);
+                alertController2 = alertController;
             }
             CharSequence charSequence4 = this.mNegativeButtonText;
             if (charSequence4 != null || this.mNegativeButtonIcon != null) {
-                alertController.setButton(-2, charSequence4, this.mNegativeButtonListener, null, this.mNegativeButtonIcon);
+                alertController2.setButton(-2, charSequence4, this.mNegativeButtonListener, null, this.mNegativeButtonIcon);
             }
             CharSequence charSequence5 = this.mNeutralButtonText;
             if (charSequence5 != null || this.mNeutralButtonIcon != null) {
-                alertController.setButton(-3, charSequence5, this.mNeutralButtonListener, null, this.mNeutralButtonIcon);
+                alertController2.setButton(-3, charSequence5, this.mNeutralButtonListener, null, this.mNeutralButtonIcon);
             }
             if (this.mItems != null || this.mCursor != null || this.mAdapter != null) {
-                createListView(alertController);
+                createListView(alertController2);
             }
             View view2 = this.mView;
             if (view2 != null) {
                 if (this.mViewSpacingSpecified) {
-                    alertController.setView(view2, this.mViewSpacingLeft, this.mViewSpacingTop, this.mViewSpacingRight, this.mViewSpacingBottom);
+                    alertController2.setView(view2, this.mViewSpacingLeft, this.mViewSpacingTop, this.mViewSpacingRight, this.mViewSpacingBottom);
                     return;
                 } else {
-                    alertController.setView(view2);
+                    alertController2.setView(view2);
                     return;
                 }
             }
             int i3 = this.mViewLayoutResId;
             if (i3 != 0) {
-                alertController.setView(i3);
+                alertController2.setView(i3);
             }
         }
 
-        private void createListView(final AlertController alertController) {
+        private void createListView(AlertController alertController) {
+            AlertParams alertParams;
+            final AlertController alertController2;
             int i;
             ListAdapter listAdapter;
             final RecycleListView recycleListView = (RecycleListView) this.mInflater.inflate(alertController.mListLayout, (ViewGroup) null);
             if (this.mIsMultiChoice) {
                 if (this.mCursor == null) {
+                    alertParams = this;
                     listAdapter = new ArrayAdapter(this.mContext, alertController.mMultiChoiceItemLayout, R.id.text1, this.mItems) { // from class: androidx.appcompat.app.AlertController.AlertParams.1
                         @Override // android.widget.ArrayAdapter, android.widget.Adapter
                         public View getView(int i2, View view, ViewGroup viewGroup) {
@@ -756,8 +763,12 @@ class AlertController {
                             return view2;
                         }
                     };
+                    recycleListView = recycleListView;
+                    alertController2 = alertController;
                 } else {
-                    listAdapter = new CursorAdapter(this.mContext, this.mCursor, false) { // from class: androidx.appcompat.app.AlertController.AlertParams.2
+                    alertParams = this;
+                    alertController2 = alertController;
+                    listAdapter = new CursorAdapter(alertParams.mContext, alertParams.mCursor, false) { // from class: androidx.appcompat.app.AlertController.AlertParams.2
                         private final int mIsCheckedIndex;
                         private final int mLabelIndex;
 
@@ -775,40 +786,42 @@ class AlertController {
 
                         @Override // android.widget.CursorAdapter
                         public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-                            return AlertParams.this.mInflater.inflate(alertController.mMultiChoiceItemLayout, viewGroup, false);
+                            return AlertParams.this.mInflater.inflate(alertController2.mMultiChoiceItemLayout, viewGroup, false);
                         }
                     };
                 }
             } else {
-                if (this.mIsSingleChoice) {
-                    i = alertController.mSingleChoiceItemLayout;
+                alertParams = this;
+                alertController2 = alertController;
+                if (alertParams.mIsSingleChoice) {
+                    i = alertController2.mSingleChoiceItemLayout;
                 } else {
-                    i = alertController.mListItemLayout;
+                    i = alertController2.mListItemLayout;
                 }
                 int i2 = i;
-                if (this.mCursor != null) {
-                    listAdapter = new SimpleCursorAdapter(this.mContext, i2, this.mCursor, new String[]{this.mLabelColumn}, new int[]{R.id.text1});
+                if (alertParams.mCursor != null) {
+                    listAdapter = new SimpleCursorAdapter(alertParams.mContext, i2, alertParams.mCursor, new String[]{alertParams.mLabelColumn}, new int[]{R.id.text1});
                 } else {
-                    listAdapter = this.mAdapter;
+                    listAdapter = alertParams.mAdapter;
                     if (listAdapter == null) {
-                        listAdapter = new CheckedItemAdapter(this.mContext, i2, R.id.text1, this.mItems);
+                        listAdapter = new CheckedItemAdapter(alertParams.mContext, i2, R.id.text1, alertParams.mItems);
                     }
                 }
             }
-            alertController.mAdapter = listAdapter;
-            alertController.mCheckedItem = this.mCheckedItem;
-            if (this.mOnClickListener != null) {
+            alertController2.mAdapter = listAdapter;
+            alertController2.mCheckedItem = alertParams.mCheckedItem;
+            if (alertParams.mOnClickListener != null) {
                 recycleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: androidx.appcompat.app.AlertController.AlertParams.3
                     @Override // android.widget.AdapterView.OnItemClickListener
                     public void onItemClick(AdapterView adapterView, View view, int i3, long j) {
-                        AlertParams.this.mOnClickListener.onClick(alertController.mDialog, i3);
+                        AlertParams.this.mOnClickListener.onClick(alertController2.mDialog, i3);
                         if (AlertParams.this.mIsSingleChoice) {
                             return;
                         }
-                        alertController.mDialog.dismiss();
+                        alertController2.mDialog.dismiss();
                     }
                 });
-            } else if (this.mOnCheckboxClickListener != null) {
+            } else if (alertParams.mOnCheckboxClickListener != null) {
                 recycleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: androidx.appcompat.app.AlertController.AlertParams.4
                     @Override // android.widget.AdapterView.OnItemClickListener
                     public void onItemClick(AdapterView adapterView, View view, int i3, long j) {
@@ -816,20 +829,20 @@ class AlertController {
                         if (zArr != null) {
                             zArr[i3] = recycleListView.isItemChecked(i3);
                         }
-                        AlertParams.this.mOnCheckboxClickListener.onClick(alertController.mDialog, i3, recycleListView.isItemChecked(i3));
+                        AlertParams.this.mOnCheckboxClickListener.onClick(alertController2.mDialog, i3, recycleListView.isItemChecked(i3));
                     }
                 });
             }
-            AdapterView.OnItemSelectedListener onItemSelectedListener = this.mOnItemSelectedListener;
+            AdapterView.OnItemSelectedListener onItemSelectedListener = alertParams.mOnItemSelectedListener;
             if (onItemSelectedListener != null) {
                 recycleListView.setOnItemSelectedListener(onItemSelectedListener);
             }
-            if (this.mIsSingleChoice) {
+            if (alertParams.mIsSingleChoice) {
                 recycleListView.setChoiceMode(1);
-            } else if (this.mIsMultiChoice) {
+            } else if (alertParams.mIsMultiChoice) {
                 recycleListView.setChoiceMode(2);
             }
-            alertController.mListView = recycleListView;
+            alertController2.mListView = recycleListView;
         }
     }
 

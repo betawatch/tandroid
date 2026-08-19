@@ -88,18 +88,19 @@ public class BackDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
+        float f;
         if (this.currentRotation != this.finalRotation) {
             if (this.lastFrameTime != 0) {
                 int currentTimeMillis = this.currentAnimationTime + ((int) (System.currentTimeMillis() - this.lastFrameTime));
                 this.currentAnimationTime = currentTimeMillis;
-                float f = currentTimeMillis;
-                float f2 = this.animationTime;
-                if (f >= f2) {
+                float f2 = currentTimeMillis;
+                float f3 = this.animationTime;
+                if (f2 >= f3) {
                     this.currentRotation = this.finalRotation;
                 } else if (this.currentRotation < this.finalRotation) {
-                    this.currentRotation = this.interpolator.getInterpolation(f / f2) * this.finalRotation;
+                    this.currentRotation = this.interpolator.getInterpolation(f2 / f3) * this.finalRotation;
                 } else {
-                    this.currentRotation = 1.0f - this.interpolator.getInterpolation(f / f2);
+                    this.currentRotation = 1.0f - this.interpolator.getInterpolation(f2 / f3);
                 }
             }
             this.lastFrameTime = System.currentTimeMillis();
@@ -112,19 +113,20 @@ public class BackDrawable extends Drawable {
         if (i != 0) {
             canvas.rotate(i);
         }
-        float f3 = this.currentRotation;
+        float f4 = this.currentRotation;
         canvas.translate(-AndroidUtilities.dp(0.66f), 0.0f);
         if (this.alwaysClose) {
             canvas.rotate((this.currentRotation * (this.reverseAngle ? -180 : NotificationCenter.needDeleteDialog)) + 135.0f);
-            f3 = 1.0f;
+            f = 1.0f;
         } else {
             canvas.rotate(this.currentRotation * (this.reverseAngle ? -225 : NotificationCenter.httpFileDidLoad));
+            f = f4;
         }
-        float f4 = 1.0f - f3;
-        canvas.drawLine(AndroidUtilities.dp(AndroidUtilities.lerp(-6.75f, -8.0f, f3)), 0.0f, AndroidUtilities.dp(8.0f) - ((this.paint.getStrokeWidth() / 2.0f) * f4), 0.0f, this.paint);
+        float f5 = 1.0f - f;
+        canvas.drawLine(AndroidUtilities.dp(AndroidUtilities.lerp(-6.75f, -8.0f, f)), 0.0f, AndroidUtilities.dp(8.0f) - ((this.paint.getStrokeWidth() / 2.0f) * f5), 0.0f, this.paint);
         float dp = AndroidUtilities.dp(-0.25f);
-        float dp2 = AndroidUtilities.dp(AndroidUtilities.lerp(7.0f, 8.0f, f3)) - ((this.paint.getStrokeWidth() / 4.0f) * f4);
-        float dp3 = AndroidUtilities.dp(AndroidUtilities.lerp(-7.25f, 0.0f, f3));
+        float dp2 = AndroidUtilities.dp(AndroidUtilities.lerp(7.0f, 8.0f, f)) - ((this.paint.getStrokeWidth() / 4.0f) * f5);
+        float dp3 = AndroidUtilities.dp(AndroidUtilities.lerp(-7.25f, 0.0f, f));
         canvas.drawLine(dp3, -dp, 0.0f, -dp2, this.paint);
         canvas.drawLine(dp3, dp, 0.0f, dp2, this.paint);
         canvas.restore();

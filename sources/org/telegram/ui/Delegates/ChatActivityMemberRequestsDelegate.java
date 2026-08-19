@@ -59,7 +59,7 @@ public class ChatActivityMemberRequestsDelegate {
             this.root.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatActivityMemberRequestsDelegate.this.lambda$getView$0(view);
+                    ChatActivityMemberRequestsDelegate.this.showBottomSheet();
                 }
             });
             LinearLayout linearLayout = new LinearLayout(this.fragment.getParentActivity());
@@ -95,7 +95,7 @@ public class ChatActivityMemberRequestsDelegate {
             this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatActivityMemberRequestsDelegate.this.lambda$getView$1(view);
+                    ChatActivityMemberRequestsDelegate.$r8$lambda$v3BL8H_wviE3-TA4avi8CBc5w3A(ChatActivityMemberRequestsDelegate.this, view);
                 }
             });
             this.root.addView(this.closeView, LayoutHelper.createFrame(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
@@ -107,16 +107,10 @@ public class ChatActivityMemberRequestsDelegate {
         return this.root;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getView$0(View view) {
-        showBottomSheet();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getView$1(View view) {
-        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.id, this.pendingRequestsCount);
-        this.closePendingRequestsCount = this.pendingRequestsCount;
-        animatePendingRequests(false, true);
+    public static /* synthetic */ void $r8$lambda$v3BL8H_wviE3-TA4avi8CBc5w3A(ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate, View view) {
+        chatActivityMemberRequestsDelegate.fragment.getMessagesController().setChatPendingRequestsOnClose(chatActivityMemberRequestsDelegate.currentChat.id, chatActivityMemberRequestsDelegate.pendingRequestsCount);
+        chatActivityMemberRequestsDelegate.closePendingRequestsCount = chatActivityMemberRequestsDelegate.pendingRequestsCount;
+        chatActivityMemberRequestsDelegate.animatePendingRequests(false, true);
     }
 
     public void setChatInfo(TLRPC.ChatFull chatFull, boolean z) {
@@ -134,16 +128,16 @@ public class ChatActivityMemberRequestsDelegate {
         showBottomSheet();
     }
 
-    private void showBottomSheet() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void showBottomSheet() {
         if (this.bottomSheet == null) {
             this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
                 @Override // org.telegram.ui.Components.UsersAlertBase, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-                /* renamed from: dismiss */
-                public void lambda$new$0() {
+                public void dismiss() {
                     if (ChatActivityMemberRequestsDelegate.this.bottomSheet != null && !ChatActivityMemberRequestsDelegate.this.bottomSheet.isNeedRestoreDialog()) {
                         ChatActivityMemberRequestsDelegate.this.bottomSheet = null;
                     }
-                    super.lambda$new$0();
+                    super.dismiss();
                 }
             };
         }

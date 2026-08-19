@@ -52,7 +52,7 @@ public final class Mp4WebvttDecoder extends SimpleSubtitleDecoder {
             if (readInt2 == 1937011815) {
                 builder = WebvttCueParser.parseCueSettingsList(fromUtf8Bytes);
             } else if (readInt2 == 1885436268) {
-                charSequence = WebvttCueParser.parseCueText(null, fromUtf8Bytes.trim(), Collections.emptyList());
+                charSequence = WebvttCueParser.parseCueText(null, fromUtf8Bytes.trim(), Collections.EMPTY_LIST);
             }
         }
         if (charSequence == null) {

@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class DualCameraView extends CameraView {
     private static final int[] dualWhitelistByDevice = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
     private static final int[] dualWhitelistByModel = new int[0];
@@ -68,8 +68,7 @@ public abstract class DualCameraView extends CameraView {
     private float[] verticesSrc;
     private float w;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$log$0(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$BDUEjGDaDbdUbrccOYYisJzQ2iY(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
     protected abstract void onEntityDraggedBottom(boolean z);
@@ -170,7 +169,7 @@ public abstract class DualCameraView extends CameraView {
                 ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.DualCameraView$$ExternalSyntheticLambda0
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        DualCameraView.lambda$log$0(tLObject, tL_error);
+                        DualCameraView.$r8$lambda$BDUEjGDaDbdUbrccOYYisJzQ2iY(tLObject, tL_error);
                     }
                 });
             } catch (Exception unused) {
@@ -226,11 +225,13 @@ public abstract class DualCameraView extends CameraView {
         float f3 = (dualShape == 0 || dualShape == 1 || dualShape == 3) ? 0.5625f : 1.0f;
         float[] fArr2 = this.vertex;
         float f4 = fArr2[0];
-        if (f4 < -1.0f || f4 > 1.0f) {
-            return false;
+        if (f4 >= -1.0f && f4 <= 1.0f) {
+            float f5 = fArr2[1];
+            if (f5 >= (-f3) && f5 <= f3) {
+                return true;
+            }
         }
-        float f5 = fArr2[1];
-        return f5 >= (-f3) && f5 <= f3;
+        return false;
     }
 
     private boolean checkTap(MotionEvent motionEvent) {
@@ -250,7 +251,7 @@ public abstract class DualCameraView extends CameraView {
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.recorder.DualCameraView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DualCameraView.this.lambda$checkTap$1();
+                    DualCameraView.$r8$lambda$BVKDUQXELF7GxPh8hRHzliyVW-c(DualCameraView.this);
                 }
             };
             this.longpressRunnable = runnable2;
@@ -266,7 +267,7 @@ public abstract class DualCameraView extends CameraView {
                     this.lastFocusToPoint = new Runnable() { // from class: org.telegram.ui.Stories.recorder.DualCameraView$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            DualCameraView.this.lambda$checkTap$2();
+                            r0.focusToPoint((int) r0.tapX, (int) DualCameraView.this.tapY);
                         }
                     };
                 }
@@ -294,20 +295,14 @@ public abstract class DualCameraView extends CameraView {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkTap$1() {
-        if (this.tapTime > 0) {
-            dualToggleShape();
+    public static /* synthetic */ void $r8$lambda$BVKDUQXELF7GxPh8hRHzliyVW-c(DualCameraView dualCameraView) {
+        if (dualCameraView.tapTime > 0) {
+            dualCameraView.dualToggleShape();
             try {
-                performHapticFeedback(0, 1);
+                dualCameraView.performHapticFeedback(0, 1);
             } catch (Exception unused) {
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkTap$2() {
-        focusToPoint((int) this.tapX, (int) this.tapY);
     }
 
     public void allowToTapFocus() {
@@ -327,8 +322,11 @@ public abstract class DualCameraView extends CameraView {
         double d;
         float f;
         float f2;
-        float width;
         float f3;
+        float f4;
+        float f5;
+        float width;
+        float f6;
         Runnable runnable;
         boolean checkTap = checkTap(motionEvent);
         if (!isDual()) {
@@ -357,53 +355,60 @@ public abstract class DualCameraView extends CameraView {
             this.multitouch = z;
         }
         PointF pointF3 = this.touch;
-        float f4 = pointF3.x;
-        float f5 = pointF3.y;
+        float f7 = pointF3.x;
+        float f8 = pointF3.y;
         PointF pointF4 = this.lastTouch;
-        float f6 = pointF4.x;
-        float f7 = pointF4.y;
+        float f9 = pointF4.x;
+        float f10 = pointF4.y;
         if (motionEvent.getAction() == 0) {
             this.touchMatrix.set(dualPosition);
+            f2 = 2.0f;
             this.touchMatrix.postConcat(this.toScreen);
             this.rotationDiff = 0.0f;
             this.snappedRotation = false;
             this.doNotSpanRotation = false;
             Matrix matrix = this.touchMatrix;
             PointF pointF5 = this.touch;
+            f3 = 0.0f;
             this.down = isPointInsideDual(matrix, pointF5.x, pointF5.y);
+        } else {
+            f2 = 2.0f;
+            f3 = 0.0f;
         }
         if (motionEvent.getAction() == 2 && this.down) {
-            if (MathUtils.distance(f4, f5, f6, f7) > AndroidUtilities.dp(2.0f) && (runnable = this.longpressRunnable) != null) {
+            if (MathUtils.distance(f7, f8, f9, f10) > AndroidUtilities.dp(f2) && (runnable = this.longpressRunnable) != null) {
                 AndroidUtilities.cancelRunOnUIThread(runnable);
                 this.longpressRunnable = null;
             }
             if (motionEvent.getPointerCount() > 1) {
-                if (this.lastTouchDistance != 0.0f) {
+                if (this.lastTouchDistance != f3) {
                     extractPointsData(this.touchMatrix);
-                    float f8 = f / this.lastTouchDistance;
-                    if (this.w * f8 > getWidth() * 0.7f) {
+                    float f11 = f / this.lastTouchDistance;
+                    f4 = 90.0f;
+                    if (this.w * f11 > getWidth() * 0.7f) {
                         width = getWidth() * 0.7f;
-                        f3 = this.w;
+                        f6 = this.w;
                     } else {
-                        if (this.w * f8 < getWidth() * 0.2f) {
+                        if (this.w * f11 < getWidth() * 0.2f) {
                             width = getWidth() * 0.2f;
-                            f3 = this.w;
+                            f6 = this.w;
                         }
-                        this.touchMatrix.postScale(f8, f8, f4, f5);
+                        this.touchMatrix.postScale(f11, f11, f7, f8);
                     }
-                    f8 = width / f3;
-                    this.touchMatrix.postScale(f8, f8, f4, f5);
+                    f11 = width / f6;
+                    this.touchMatrix.postScale(f11, f11, f7, f8);
+                } else {
+                    f4 = 90.0f;
                 }
-                f2 = f;
                 float degrees = (float) Math.toDegrees(d - this.lastTouchRotation);
-                float f9 = this.rotationDiff + degrees;
-                this.rotationDiff = f9;
+                float f12 = this.rotationDiff + degrees;
+                this.rotationDiff = f12;
                 if (!this.allowRotation) {
-                    boolean z2 = Math.abs(f9) > 20.0f;
+                    boolean z2 = Math.abs(f12) > 20.0f;
                     this.allowRotation = z2;
                     if (!z2) {
                         extractPointsData(this.touchMatrix);
-                        this.allowRotation = (((float) Math.round(this.angle / 90.0f)) * 90.0f) - this.angle > 20.0f;
+                        this.allowRotation = (((float) Math.round(this.angle / f4)) * f4) - this.angle > 20.0f;
                     }
                     if (!this.snappedRotation) {
                         AndroidUtilities.vibrateCursor(this);
@@ -411,15 +416,15 @@ public abstract class DualCameraView extends CameraView {
                     }
                 }
                 if (this.allowRotation) {
-                    this.touchMatrix.postRotate(degrees, f4, f5);
+                    this.touchMatrix.postRotate(degrees, f7, f8);
                 }
             } else {
-                f2 = f;
+                f4 = 90.0f;
             }
-            this.touchMatrix.postTranslate(f4 - f6, f5 - f7);
+            this.touchMatrix.postTranslate(f7 - f9, f8 - f10);
             this.finalMatrix.set(this.touchMatrix);
             extractPointsData(this.finalMatrix);
-            float round = (Math.round(this.angle / 90.0f) * 90.0f) - this.angle;
+            float round = (Math.round(this.angle / f4) * f4) - this.angle;
             if (this.allowRotation && !this.doNotSpanRotation) {
                 if (Math.abs(round) < 5.0f) {
                     this.finalMatrix.postRotate(round, this.cx, this.cy);
@@ -431,25 +436,29 @@ public abstract class DualCameraView extends CameraView {
                     this.snappedRotation = false;
                 }
             }
-            float f10 = this.cx;
-            if (f10 < 0.0f) {
-                this.finalMatrix.postTranslate(-f10, 0.0f);
-            } else if (f10 > getWidth()) {
-                this.finalMatrix.postTranslate(getWidth() - this.cx, 0.0f);
+            float f13 = this.cx;
+            if (f13 < f3) {
+                f5 = 0.0f;
+                this.finalMatrix.postTranslate(-f13, 0.0f);
+            } else {
+                f5 = 0.0f;
+                if (f13 > getWidth()) {
+                    this.finalMatrix.postTranslate(getWidth() - this.cx, 0.0f);
+                }
             }
-            float f11 = this.cy;
-            if (f11 < 0.0f) {
-                this.finalMatrix.postTranslate(0.0f, -f11);
-            } else if (f11 > getHeight() - AndroidUtilities.dp(150.0f)) {
+            float f14 = this.cy;
+            if (f14 < f5) {
+                this.finalMatrix.postTranslate(f5, -f14);
+            } else if (f14 > getHeight() - AndroidUtilities.dp(150.0f)) {
                 this.finalMatrix.postTranslate(0.0f, (getHeight() - AndroidUtilities.dp(150.0f)) - this.cy);
             }
             this.finalMatrix.postConcat(this.toGL);
             dualPosition.set(this.finalMatrix);
             updateDualPosition();
-            float f12 = this.cy;
-            boolean z3 = Math.min(f12, f12 - (this.h / 2.0f)) < ((float) AndroidUtilities.dp(66.0f));
-            float f13 = this.cy;
-            boolean z4 = Math.max(f13, (this.h / 2.0f) + f13) > ((float) (getHeight() - AndroidUtilities.dp(66.0f)));
+            float f15 = this.cy;
+            boolean z3 = Math.min(f15, f15 - (this.h / f2)) < ((float) AndroidUtilities.dp(66.0f));
+            float f16 = this.cy;
+            boolean z4 = Math.max(f16, (this.h / f2) + f16) > ((float) (getHeight() - AndroidUtilities.dp(66.0f)));
             if (this.atTop != z3) {
                 this.atTop = z3;
                 onEntityDraggedTop(z3);
@@ -458,8 +467,6 @@ public abstract class DualCameraView extends CameraView {
                 this.atBottom = z4;
                 onEntityDraggedBottom(z4);
             }
-        } else {
-            f2 = f;
         }
         if (motionEvent.getAction() == 1) {
             this.allowRotation = false;
@@ -490,7 +497,7 @@ public abstract class DualCameraView extends CameraView {
         PointF pointF7 = this.touch;
         pointF6.x = pointF7.x;
         pointF6.y = pointF7.y;
-        this.lastTouchDistance = f2;
+        this.lastTouchDistance = f;
         this.lastTouchRotation = d;
         return this.down || checkTap;
     }

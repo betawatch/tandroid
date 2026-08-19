@@ -44,7 +44,7 @@ public abstract class SchedulerConfig {
         abstract long getMaxAllowedDelay();
 
         public static Builder builder() {
-            return new AutoValue_SchedulerConfig_ConfigValue.Builder().setFlags(Collections.emptySet());
+            return new AutoValue_SchedulerConfig_ConfigValue.Builder().setFlags(Collections.EMPTY_SET);
         }
     }
 

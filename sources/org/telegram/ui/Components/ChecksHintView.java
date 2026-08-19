@@ -20,7 +20,6 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.ChecksHintView;
 
 /* loaded from: classes5.dex */
 public class ChecksHintView extends FrameLayout {
@@ -171,14 +170,9 @@ public class ChecksHintView extends FrameLayout {
             AndroidUtilities.runOnUIThread(ChecksHintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.ChecksHintView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChecksHintView.1.this.lambda$onAnimationEnd$0();
+                    ChecksHintView.this.hide();
                 }
             }, 3000L);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAnimationEnd$0() {
-            ChecksHintView.this.hide();
         }
     }
 

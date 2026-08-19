@@ -34,7 +34,7 @@ import org.telegram.ui.Components.EmojiPacksAlert;
 import org.telegram.ui.Components.LoadingDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoryContainsEmojiButton extends View {
     private static Object lastRequestParentObject;
     private static Vector lastResponse;
@@ -209,7 +209,7 @@ public class StoryContainsEmojiButton extends View {
             final RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                    StoryContainsEmojiButton.this.lambda$load$2(obj, arrayList, zArr, i, tLObject2, tL_error);
+                    StoryContainsEmojiButton.$r8$lambda$87HihDYSe2EIvcu1bRL-nd2jt24(StoryContainsEmojiButton.this, obj, arrayList, zArr, i, tLObject2, tL_error);
                 }
             };
             if (lastRequestParentObject == obj && (vector = lastResponse) != null) {
@@ -220,7 +220,7 @@ public class StoryContainsEmojiButton extends View {
                 ConnectionsManager.getInstance(i).sendRequest(tL_messages_getAttachedStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                        StoryContainsEmojiButton.lambda$load$3(obj, i, tL_messages_getAttachedStickers, requestDelegate, tLObject2, tL_error);
+                        StoryContainsEmojiButton.$r8$lambda$jYnsKX_xKpmcvsJtYXJsLyWT_po(obj, i, tL_messages_getAttachedStickers, requestDelegate, tLObject2, tL_error);
                     }
                 });
                 return;
@@ -235,7 +235,7 @@ public class StoryContainsEmojiButton extends View {
             MediaDataController.getInstance(i).getStickerSet((TLRPC.InputStickerSet) this.inputSets.get(0), 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj2) {
-                    StoryContainsEmojiButton.this.lambda$load$4((TLRPC.TL_messages_stickerSet) obj2);
+                    StoryContainsEmojiButton.$r8$lambda$dY7h8W9Dseh5lisehpVmp3LggDg(StoryContainsEmojiButton.this, (TLRPC.TL_messages_stickerSet) obj2);
                 }
             });
         } else {
@@ -244,90 +244,88 @@ public class StoryContainsEmojiButton extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$2(final Object obj, final ArrayList arrayList, final boolean[] zArr, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$87HihDYSe2EIvcu1bRL-nd2jt24(final StoryContainsEmojiButton storyContainsEmojiButton, final Object obj, final ArrayList arrayList, final boolean[] zArr, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        storyContainsEmojiButton.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                StoryContainsEmojiButton.this.lambda$load$1(tLObject, obj, arrayList, zArr, i);
+                StoryContainsEmojiButton.$r8$lambda$9eO2tRmeb7i53b-zmV4Tf52YgVM(StoryContainsEmojiButton.this, tLObject, obj, arrayList, zArr, i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$1(TLObject tLObject, Object obj, ArrayList arrayList, boolean[] zArr, int i) {
+    public static /* synthetic */ void $r8$lambda$9eO2tRmeb7i53b-zmV4Tf52YgVM(final StoryContainsEmojiButton storyContainsEmojiButton, TLObject tLObject, Object obj, ArrayList arrayList, boolean[] zArr, int i) {
+        storyContainsEmojiButton.getClass();
         if (tLObject instanceof Vector) {
             Vector vector = (Vector) tLObject;
-            this.vector = vector;
+            storyContainsEmojiButton.vector = vector;
             lastRequestParentObject = obj;
             lastResponse = vector;
             for (int i2 = 0; i2 < vector.objects.size(); i2++) {
                 TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) vector.objects.get(i2);
-                this.sets.add(stickerSetCovered);
+                storyContainsEmojiButton.sets.add(stickerSetCovered);
                 TLRPC.StickerSet stickerSet = stickerSetCovered.set;
                 if (stickerSet != null) {
-                    this.inputSets.add(MediaDataController.getInputStickerSet(stickerSet));
+                    storyContainsEmojiButton.inputSets.add(MediaDataController.getInputStickerSet(stickerSet));
                     TLRPC.StickerSet stickerSet2 = stickerSetCovered.set;
                     if (stickerSet2.emojis) {
-                        this.emoji = true;
+                        storyContainsEmojiButton.emoji = true;
                     } else if (!stickerSet2.masks) {
-                        this.stickers = true;
+                        storyContainsEmojiButton.stickers = true;
                     }
                 }
             }
             int size = arrayList != null ? arrayList.size() : 0;
-            ArrayList arrayList2 = this.sets;
+            ArrayList arrayList2 = storyContainsEmojiButton.sets;
             int size2 = size + (arrayList2 == null ? 0 : arrayList2.size());
-            if (this.inputSets != null && arrayList != null && !arrayList.isEmpty()) {
+            if (storyContainsEmojiButton.inputSets != null && arrayList != null && !arrayList.isEmpty()) {
                 for (int i3 = 0; i3 < arrayList.size(); i3++) {
                     TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) arrayList.get(i3);
                     long j = inputStickerSet.id;
                     int i4 = 0;
                     while (true) {
-                        if (i4 >= this.inputSets.size()) {
-                            this.inputSets.add(inputStickerSet);
+                        if (i4 >= storyContainsEmojiButton.inputSets.size()) {
+                            storyContainsEmojiButton.inputSets.add(inputStickerSet);
                             break;
-                        } else if (((TLRPC.InputStickerSet) this.inputSets.get(i4)).id == j) {
+                        } else if (((TLRPC.InputStickerSet) storyContainsEmojiButton.inputSets.get(i4)).id == j) {
                             break;
                         } else {
                             i4++;
                         }
                     }
                 }
-                this.emoji = true;
-                this.vector = null;
+                storyContainsEmojiButton.emoji = true;
+                storyContainsEmojiButton.vector = null;
             }
             if (size2 == 1) {
-                if (this.sets.size() >= 1) {
-                    set((TLRPC.StickerSetCovered) this.sets.get(0));
+                if (storyContainsEmojiButton.sets.size() >= 1) {
+                    storyContainsEmojiButton.set((TLRPC.StickerSetCovered) storyContainsEmojiButton.sets.get(0));
                 } else {
                     if (arrayList != null && arrayList.size() >= 1) {
                         zArr[0] = false;
                         MediaDataController.getInstance(i).getStickerSet((TLRPC.InputStickerSet) arrayList.get(0), 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda6
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj2) {
-                                StoryContainsEmojiButton.this.lambda$load$0((TLRPC.TL_messages_stickerSet) obj2);
+                                StoryContainsEmojiButton.$r8$lambda$aX9jife5KAG-3TGApf9__hENI9w(StoryContainsEmojiButton.this, (TLRPC.TL_messages_stickerSet) obj2);
                             }
                         });
                         return;
                     }
-                    set(0);
+                    storyContainsEmojiButton.set(0);
                 }
             } else {
-                set(size2);
+                storyContainsEmojiButton.set(size2);
             }
-            animateLoad(zArr[0]);
+            storyContainsEmojiButton.animateLoad(zArr[0]);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$0(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        set(tL_messages_stickerSet);
-        animateLoad(false);
+    public static /* synthetic */ void $r8$lambda$aX9jife5KAG-3TGApf9__hENI9w(StoryContainsEmojiButton storyContainsEmojiButton, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        storyContainsEmojiButton.set(tL_messages_stickerSet);
+        storyContainsEmojiButton.animateLoad(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$load$3(Object obj, int i, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$jYnsKX_xKpmcvsJtYXJsLyWT_po(Object obj, int i, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && obj != null) {
             FileRefController.getInstance(i).requestReference(obj, tL_messages_getAttachedStickers, requestDelegate);
         } else {
@@ -335,10 +333,9 @@ public class StoryContainsEmojiButton extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$4(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        set(tL_messages_stickerSet);
-        animateLoad(true);
+    public static /* synthetic */ void $r8$lambda$dY7h8W9Dseh5lisehpVmp3LggDg(StoryContainsEmojiButton storyContainsEmojiButton, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        storyContainsEmojiButton.set(tL_messages_stickerSet);
+        storyContainsEmojiButton.animateLoad(true);
     }
 
     private void set(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
@@ -445,7 +442,7 @@ public class StoryContainsEmojiButton extends View {
             this.loadAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryContainsEmojiButton$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    StoryContainsEmojiButton.this.lambda$animateLoad$5(z2, valueAnimator2);
+                    StoryContainsEmojiButton.$r8$lambda$DxyGawappBEbNGVpzRO03nt6Vu0(StoryContainsEmojiButton.this, z2, valueAnimator2);
                 }
             });
             this.loadAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -464,12 +461,12 @@ public class StoryContainsEmojiButton extends View {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateLoad$5(boolean z, ValueAnimator valueAnimator) {
-        this.loadT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$DxyGawappBEbNGVpzRO03nt6Vu0(StoryContainsEmojiButton storyContainsEmojiButton, boolean z, ValueAnimator valueAnimator) {
+        storyContainsEmojiButton.getClass();
+        storyContainsEmojiButton.loadT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        storyContainsEmojiButton.invalidate();
         if (z) {
-            requestLayout();
+            storyContainsEmojiButton.requestLayout();
         }
     }
 }

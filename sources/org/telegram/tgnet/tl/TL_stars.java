@@ -1,7 +1,6 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.utils.tlutils.AmountUtils$Amount;
@@ -78,11 +77,15 @@ public class TL_stars {
             if (arrayList == null || arrayList.isEmpty()) {
                 return AmountUtils$Amount.fromNano(0L, amountUtils$Currency);
             }
-            Iterator<StarsAmount> it = this.resell_amount.iterator();
-            while (it.hasNext()) {
-                StarsAmount next = it.next();
-                if (next.getCurrency() == amountUtils$Currency) {
-                    return AmountUtils$Amount.of(next);
+            ArrayList<StarsAmount> arrayList2 = this.resell_amount;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                StarsAmount starsAmount = arrayList2.get(i);
+                i++;
+                StarsAmount starsAmount2 = starsAmount;
+                if (starsAmount2.getCurrency() == amountUtils$Currency) {
+                    return AmountUtils$Amount.of(starsAmount2);
                 }
             }
             return AmountUtils$Amount.fromNano(0L, amountUtils$Currency);
@@ -157,11 +160,15 @@ public class TL_stars {
             if (document != null) {
                 return document;
             }
-            Iterator<StarGiftAttribute> it = this.attributes.iterator();
-            while (it.hasNext()) {
-                StarGiftAttribute next = it.next();
-                if (next instanceof starGiftAttributeModel) {
-                    return ((starGiftAttributeModel) next).document;
+            ArrayList<StarGiftAttribute> arrayList = this.attributes;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                StarGiftAttribute starGiftAttribute = arrayList.get(i);
+                i++;
+                StarGiftAttribute starGiftAttribute2 = starGiftAttribute;
+                if (starGiftAttribute2 instanceof starGiftAttributeModel) {
+                    return ((starGiftAttributeModel) starGiftAttribute2).document;
                 }
             }
             return null;
@@ -2747,12 +2754,12 @@ public class TL_stars {
 
         public boolean positive() {
             long j = this.amount;
-            return j != 0 ? j > 0 : this.nanos > 0;
+            return j == 0 ? this.nanos > 0 : j > 0;
         }
 
         public boolean negative() {
             long j = this.amount;
-            return j != 0 ? j < 0 : this.nanos < 0;
+            return j == 0 ? this.nanos < 0 : j < 0;
         }
     }
 

@@ -55,7 +55,7 @@ public final class DashWrappingSegmentIndex implements DashSegmentIndex {
 
     @Override // com.google.android.exoplayer2.source.dash.DashSegmentIndex
     public RangedUri getSegmentUrl(long j) {
-        return new RangedUri(null, this.chunkIndex.offsets[(int) j], r0.sizes[r9]);
+        return new RangedUri(null, this.chunkIndex.offsets[(int) j], r1.sizes[r8]);
     }
 
     @Override // com.google.android.exoplayer2.source.dash.DashSegmentIndex

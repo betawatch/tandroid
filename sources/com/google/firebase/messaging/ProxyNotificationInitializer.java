@@ -24,14 +24,13 @@ abstract class ProxyNotificationInitializer {
         executor.execute(new Runnable() { // from class: com.google.firebase.messaging.ProxyNotificationInitializer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ProxyNotificationInitializer.lambda$setEnableProxyNotification$0(context, z, taskCompletionSource);
+                ProxyNotificationInitializer.$r8$lambda$4f3YGOo_VogWWzQiXH4gueD5Xb8(context, z, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setEnableProxyNotification$0(Context context, boolean z, TaskCompletionSource taskCompletionSource) {
+    public static /* synthetic */ void $r8$lambda$4f3YGOo_VogWWzQiXH4gueD5Xb8(Context context, boolean z, TaskCompletionSource taskCompletionSource) {
         Object systemService;
         String notificationDelegate;
         try {
@@ -70,7 +69,8 @@ abstract class ProxyNotificationInitializer {
         }
     }
 
-    static void initialize(Context context) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void initialize(Context context) {
         if (ProxyNotificationPreferences.isProxyNotificationInitialized(context)) {
             return;
         }

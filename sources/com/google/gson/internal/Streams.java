@@ -21,18 +21,18 @@ public abstract class Streams {
             try {
                 jsonReader.peek();
                 z = false;
-                try {
-                    return (JsonElement) TypeAdapters.JSON_ELEMENT.read(jsonReader);
-                } catch (EOFException e) {
-                    e = e;
-                    if (z) {
-                        return JsonNull.INSTANCE;
-                    }
-                    throw new JsonSyntaxException(e);
-                }
+            } catch (EOFException e) {
+                e = e;
+                z = true;
+            }
+            try {
+                return (JsonElement) TypeAdapters.JSON_ELEMENT.read(jsonReader);
             } catch (EOFException e2) {
                 e = e2;
-                z = true;
+                if (z) {
+                    return JsonNull.INSTANCE;
+                }
+                throw new JsonSyntaxException(e);
             }
         } catch (MalformedJsonException e3) {
             throw new JsonSyntaxException(e3);
@@ -51,7 +51,7 @@ public abstract class Streams {
         return appendable instanceof Writer ? (Writer) appendable : new AppendableWriter(appendable);
     }
 
-    private static final class AppendableWriter extends Writer {
+    private static final class AppendableWriter extends Writer implements AutoCloseable {
         private final Appendable appendable;
         private final CurrentWrite currentWrite = new CurrentWrite();
 

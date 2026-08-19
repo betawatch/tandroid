@@ -401,20 +401,19 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     private Strategy getLocaleSpecificStrategy(int i, Calendar calendar) {
+        Strategy textStrategy;
         ConcurrentMap<Locale, Strategy> cache = getCache(i);
         Strategy strategy = cache.get(this.locale);
-        if (strategy == null) {
-            if (i == 15) {
-                strategy = new TimeZoneStrategy(this.locale);
-            } else {
-                strategy = new TextStrategy(i, calendar, this.locale);
-            }
-            Strategy putIfAbsent = cache.putIfAbsent(this.locale, strategy);
-            if (putIfAbsent != null) {
-                return putIfAbsent;
-            }
+        if (strategy != null) {
+            return strategy;
         }
-        return strategy;
+        if (i == 15) {
+            textStrategy = new TimeZoneStrategy(this.locale);
+        } else {
+            textStrategy = new TextStrategy(i, calendar, this.locale);
+        }
+        Strategy putIfAbsent = cache.putIfAbsent(this.locale, textStrategy);
+        return putIfAbsent != null ? putIfAbsent : textStrategy;
     }
 
     private static class CopyQuotedStrategy extends Strategy {

@@ -115,14 +115,6 @@ public class RotateBox extends Box {
         return (str.equals("Br") || str.equals("rB")) ? 7 : 6;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0080, code lost:
-    
-        return r0;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private static Point2D.Float calculateShift(Box box, int i) {
         Point2D.Float r0 = new Point2D.Float(0.0f, -box.depth);
         switch (i) {
@@ -175,6 +167,7 @@ public class RotateBox extends Box {
                 r0.y = (box.height - box.depth) / 2.0f;
                 break;
         }
+        return r0;
     }
 
     @Override // org.scilab.forge.jlatexmath.Box

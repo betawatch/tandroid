@@ -122,184 +122,125 @@ public final class zzo {
     }
 
     private static zzml zzg(String str) {
-        zzml zzmlVar;
         try {
             int parseInt = Integer.parseInt(str);
-            zzml zzmlVar2 = zzml.zza;
+            zzml zzmlVar = zzml.zza;
             switch (parseInt) {
                 case 0:
-                    zzmlVar = zzml.zza;
-                    break;
+                    return zzml.zza;
                 case 1:
-                    zzmlVar = zzml.zzb;
-                    break;
+                    return zzml.zzb;
                 case 2:
-                    zzmlVar = zzml.zzc;
-                    break;
+                    return zzml.zzc;
                 case 3:
-                    zzmlVar = zzml.zzd;
-                    break;
+                    return zzml.zzd;
                 case 4:
-                    zzmlVar = zzml.zze;
-                    break;
+                    return zzml.zze;
                 case 5:
-                    zzmlVar = zzml.zzf;
-                    break;
+                    return zzml.zzf;
                 case 6:
-                    zzmlVar = zzml.zzg;
-                    break;
+                    return zzml.zzg;
                 case 7:
-                    zzmlVar = zzml.zzh;
-                    break;
+                    return zzml.zzh;
                 case 8:
-                    zzmlVar = zzml.zzi;
-                    break;
+                    return zzml.zzi;
                 case 9:
-                    zzmlVar = zzml.zzj;
-                    break;
+                    return zzml.zzj;
                 case 10:
-                    zzmlVar = zzml.zzk;
-                    break;
+                    return zzml.zzk;
                 case 11:
-                    zzmlVar = zzml.zzl;
-                    break;
+                    return zzml.zzl;
                 case 12:
-                    zzmlVar = zzml.zzm;
-                    break;
+                    return zzml.zzm;
                 case 13:
-                    zzmlVar = zzml.zzn;
-                    break;
+                    return zzml.zzn;
                 case 14:
-                    zzmlVar = zzml.zzo;
-                    break;
+                    return zzml.zzo;
                 case 15:
-                    zzmlVar = zzml.zzp;
-                    break;
+                    return zzml.zzp;
                 case 16:
-                    zzmlVar = zzml.zzq;
-                    break;
+                    return zzml.zzq;
                 case 17:
-                    zzmlVar = zzml.zzr;
-                    break;
+                    return zzml.zzr;
                 case 18:
-                    zzmlVar = zzml.zzs;
-                    break;
+                    return zzml.zzs;
                 case 19:
-                    zzmlVar = zzml.zzt;
-                    break;
+                    return zzml.zzt;
                 case 20:
-                    zzmlVar = zzml.zzu;
-                    break;
+                    return zzml.zzu;
                 case 21:
-                    zzmlVar = zzml.zzv;
-                    break;
+                    return zzml.zzv;
                 case 22:
-                    zzmlVar = zzml.zzw;
-                    break;
+                    return zzml.zzw;
                 case 23:
-                    zzmlVar = zzml.zzx;
-                    break;
+                    return zzml.zzx;
                 case 24:
-                    zzmlVar = zzml.zzy;
-                    break;
+                    return zzml.zzy;
                 case 25:
-                    zzmlVar = zzml.zzz;
-                    break;
+                    return zzml.zzz;
                 case 26:
-                    zzmlVar = zzml.zzA;
-                    break;
+                    return zzml.zzA;
                 case 27:
-                    zzmlVar = zzml.zzB;
-                    break;
+                    return zzml.zzB;
                 case 28:
-                    zzmlVar = zzml.zzC;
-                    break;
+                    return zzml.zzC;
                 case 29:
-                    zzmlVar = zzml.zzD;
-                    break;
+                    return zzml.zzD;
                 case 30:
-                    zzmlVar = zzml.zzE;
-                    break;
+                    return zzml.zzE;
                 case 31:
-                    zzmlVar = zzml.zzF;
-                    break;
+                    return zzml.zzF;
                 case 32:
-                    zzmlVar = zzml.zzG;
-                    break;
+                    return zzml.zzG;
                 case 33:
-                    zzmlVar = zzml.zzH;
-                    break;
+                    return zzml.zzH;
                 case 34:
-                    zzmlVar = zzml.zzI;
-                    break;
+                    return zzml.zzI;
                 case 35:
-                    zzmlVar = zzml.zzJ;
-                    break;
+                    return zzml.zzJ;
                 case 36:
-                    zzmlVar = zzml.zzK;
-                    break;
+                    return zzml.zzK;
                 case 37:
-                    zzmlVar = zzml.zzL;
-                    break;
+                    return zzml.zzL;
                 case 38:
-                    zzmlVar = zzml.zzM;
-                    break;
+                    return zzml.zzM;
                 case 39:
-                    zzmlVar = zzml.zzN;
-                    break;
+                    return zzml.zzN;
                 case 40:
-                    zzmlVar = zzml.zzO;
-                    break;
+                    return zzml.zzO;
                 case 41:
-                    zzmlVar = zzml.zzP;
-                    break;
+                    return zzml.zzP;
                 case 42:
-                    zzmlVar = zzml.zzQ;
-                    break;
+                    return zzml.zzQ;
                 case 43:
-                    zzmlVar = zzml.zzR;
-                    break;
+                    return zzml.zzR;
                 case 44:
-                    zzmlVar = zzml.zzS;
-                    break;
+                    return zzml.zzS;
                 case 45:
-                    zzmlVar = zzml.zzT;
-                    break;
+                    return zzml.zzT;
                 case 46:
-                    zzmlVar = zzml.zzU;
-                    break;
+                    return zzml.zzU;
                 case 47:
-                    zzmlVar = zzml.zzV;
-                    break;
+                    return zzml.zzV;
                 case 48:
-                    zzmlVar = zzml.zzW;
-                    break;
+                    return zzml.zzW;
                 case 49:
-                    zzmlVar = zzml.zzX;
-                    break;
+                    return zzml.zzX;
                 case 50:
-                    zzmlVar = zzml.zzY;
-                    break;
+                    return zzml.zzY;
                 case 51:
-                    zzmlVar = zzml.zzZ;
-                    break;
+                    return zzml.zzZ;
                 case 52:
-                    zzmlVar = zzml.zzaa;
-                    break;
+                    return zzml.zzaa;
                 case 53:
-                    zzmlVar = zzml.zzab;
-                    break;
+                    return zzml.zzab;
                 case 54:
-                    zzmlVar = zzml.zzac;
-                    break;
+                    return zzml.zzac;
                 case 55:
-                    zzmlVar = zzml.zzad;
-                    break;
+                    return zzml.zzad;
                 default:
-                    zzmlVar = null;
-                    break;
+                    return null;
             }
-            return zzmlVar;
         } catch (NumberFormatException unused) {
             return zzml.zza;
         }

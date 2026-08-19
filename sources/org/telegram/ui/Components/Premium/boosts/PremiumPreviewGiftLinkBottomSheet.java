@@ -100,9 +100,7 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
-                boolean lambda$share$0;
-                lambda$share$0 = PremiumPreviewGiftLinkBottomSheet.this.lambda$share$0(str, dialogsActivity2, arrayList, charSequence, z, z2, i, i2, topicsFragment);
-                return lambda$share$0;
+                return PremiumPreviewGiftLinkBottomSheet.$r8$lambda$UgaBuxxFI61SF-p4i0M18dgpa9U(PremiumPreviewGiftLinkBottomSheet.this, str, dialogsActivity2, arrayList, charSequence, z, z2, i, i2, topicsFragment);
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -111,15 +109,18 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
             }
         });
         getBaseFragment().presentFragment(dialogsActivity);
-        lambda$new$0();
+        dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$share$0(String str, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$UgaBuxxFI61SF-p4i0M18dgpa9U(PremiumPreviewGiftLinkBottomSheet premiumPreviewGiftLinkBottomSheet, String str, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        premiumPreviewGiftLinkBottomSheet.getClass();
         long j = 0;
-        for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            j = ((MessagesStorage.TopicKey) arrayList.get(i3)).dialogId;
-            getBaseFragment().getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(str, j, null, null, null, true, null, null, null, true, 0, 0, null, false));
+        int i3 = 0;
+        while (i3 < arrayList.size()) {
+            long j2 = ((MessagesStorage.TopicKey) arrayList.get(i3)).dialogId;
+            premiumPreviewGiftLinkBottomSheet.getBaseFragment().getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(str, j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            i3++;
+            j = j2;
         }
         dialogsActivity.finishFragment();
         BoostDialogs.showGiftLinkForwardedBulletin(j);
@@ -192,7 +193,7 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
             actionBtnCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PremiumPreviewGiftLinkBottomSheet.this.lambda$init$4(view);
+                    PremiumPreviewGiftLinkBottomSheet.$r8$lambda$VSSJRo0515LG5qg5d14pBrjBw7M(PremiumPreviewGiftLinkBottomSheet.this, view);
                 }
             });
             this.actionBtn.setActivateForFreeStyle();
@@ -201,46 +202,38 @@ public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet
         fixNavigationBar();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$4(View view) {
-        if (this.actionBtn.isLoading()) {
+    public static /* synthetic */ void $r8$lambda$VSSJRo0515LG5qg5d14pBrjBw7M(final PremiumPreviewGiftLinkBottomSheet premiumPreviewGiftLinkBottomSheet, View view) {
+        if (premiumPreviewGiftLinkBottomSheet.actionBtn.isLoading()) {
             return;
         }
-        this.actionBtn.updateLoading(true);
-        BoostRepository.applyGiftCode(this.slug, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda3
+        premiumPreviewGiftLinkBottomSheet.actionBtn.updateLoading(true);
+        BoostRepository.applyGiftCode(premiumPreviewGiftLinkBottomSheet.slug, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                PremiumPreviewGiftLinkBottomSheet.this.lambda$init$2((Void) obj);
+                PremiumPreviewGiftLinkBottomSheet.$r8$lambda$0lHm0L-XGIfmCZ2Bq_tiwdKDl0M(PremiumPreviewGiftLinkBottomSheet.this, (Void) obj);
             }
         }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                PremiumPreviewGiftLinkBottomSheet.this.lambda$init$3((TLRPC.TL_error) obj);
+                PremiumPreviewGiftLinkBottomSheet.$r8$lambda$4wfg7nV2s96dYviKwKmtfKrXuuU(PremiumPreviewGiftLinkBottomSheet.this, (TLRPC.TL_error) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$2(Void r3) {
-        this.actionBtn.updateLoading(false);
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$0lHm0L-XGIfmCZ2Bq_tiwdKDl0M(final PremiumPreviewGiftLinkBottomSheet premiumPreviewGiftLinkBottomSheet, Void r3) {
+        premiumPreviewGiftLinkBottomSheet.actionBtn.updateLoading(false);
+        premiumPreviewGiftLinkBottomSheet.dismiss();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                PremiumPreviewGiftLinkBottomSheet.this.lambda$init$1();
+                r0.getBaseFragment().showDialog(new PremiumPreviewBottomSheet(r0.getBaseFragment(), UserConfig.selectedAccount, null, null, null, PremiumPreviewGiftLinkBottomSheet.this.resourcesProvider).setAnimateConfetti(true).setAnimateConfettiWithStars(true).setOutboundGift(true));
             }
         }, 200L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$1() {
-        getBaseFragment().showDialog(new PremiumPreviewBottomSheet(getBaseFragment(), UserConfig.selectedAccount, null, null, null, this.resourcesProvider).setAnimateConfetti(true).setAnimateConfettiWithStars(true).setOutboundGift(true));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$3(TLRPC.TL_error tL_error) {
-        this.actionBtn.updateLoading(false);
-        BoostDialogs.processApplyGiftCodeError(tL_error, (FrameLayout) this.containerView, this.resourcesProvider, new PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda1(this));
+    public static /* synthetic */ void $r8$lambda$4wfg7nV2s96dYviKwKmtfKrXuuU(PremiumPreviewGiftLinkBottomSheet premiumPreviewGiftLinkBottomSheet, TLRPC.TL_error tL_error) {
+        premiumPreviewGiftLinkBottomSheet.actionBtn.updateLoading(false);
+        BoostDialogs.processApplyGiftCodeError(tL_error, (FrameLayout) premiumPreviewGiftLinkBottomSheet.containerView, premiumPreviewGiftLinkBottomSheet.resourcesProvider, new PremiumPreviewGiftLinkBottomSheet$$ExternalSyntheticLambda1(premiumPreviewGiftLinkBottomSheet));
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet

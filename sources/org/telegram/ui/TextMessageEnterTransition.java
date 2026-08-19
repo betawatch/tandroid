@@ -111,11 +111,9 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
     boolean initBitmaps = false;
     private AnimationNotificationsLocker notificationsLocker = new AnimationNotificationsLocker();
 
-    /* JADX WARN: Type inference failed for: r1v60 */
-    /* JADX WARN: Type inference failed for: r1v61, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r1v63 */
     public TextMessageEnterTransition(final ChatMessageCell chatMessageCell, final ChatActivity chatActivity, RecyclerListView recyclerListView, final MessageEnterTransitionContainer messageEnterTransitionContainer, Theme.ResourcesProvider resourcesProvider) {
         int i;
+        float f;
         int i2;
         int i3;
         int i4;
@@ -130,8 +128,6 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         StaticLayout.Builder hyphenationFrequency2;
         StaticLayout.Builder alignment2;
         StaticLayout build2;
-        int i5;
-        ?? r1;
         StaticLayout.Builder obtain3;
         StaticLayout.Builder breakStrategy3;
         StaticLayout.Builder hyphenationFrequency3;
@@ -258,60 +254,62 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         }
         this.animatedEmojiStack = AnimatedEmojiSpan.update(2, (View) null, this.animatedEmojiStack, this.layout);
         ViewPositionWatcher.computeCoordinatesInParent(chatActivityEnterView.getEditField(), chatActivity.contentView, pointF);
-        float f = pointF.y;
+        float f2 = pointF.y;
         this.fromStartX = pointF.x;
-        this.fromStartY = ((AndroidUtilities.dp(10.0f) + f) - chatActivityEnterView.getEditField().getScrollY()) + i;
+        this.fromStartY = ((AndroidUtilities.dp(10.0f) + f2) - chatActivityEnterView.getEditField().getScrollY()) + i;
         this.toXOffset = 0.0f;
-        float f2 = Float.MAX_VALUE;
-        for (int i6 = 0; i6 < this.layout.getLineCount(); i6++) {
-            float lineLeft = this.layout.getLineLeft(i6);
-            if (lineLeft < f2) {
-                f2 = lineLeft;
+        float f3 = Float.MAX_VALUE;
+        for (int i5 = 0; i5 < this.layout.getLineCount(); i5++) {
+            float lineLeft = this.layout.getLineLeft(i5);
+            if (lineLeft < f3) {
+                f3 = lineLeft;
             }
         }
-        if (f2 != Float.MAX_VALUE) {
-            this.toXOffset = f2;
+        if (f3 != Float.MAX_VALUE) {
+            this.toXOffset = f3;
         }
         this.scaleY = height / (this.layout.getHeight() * this.scaleFrom);
-        this.drawableFromTop = AndroidUtilities.dp(4.0f) + f;
+        this.drawableFromTop = AndroidUtilities.dp(4.0f) + f2;
         if (this.enterView.isTopViewVisible()) {
             this.drawableFromTop -= AndroidUtilities.dp(12.0f);
         }
-        this.drawableFromBottom = f + chatActivityEnterView.getEditField().getMeasuredHeight();
+        this.drawableFromBottom = f2 + chatActivityEnterView.getEditField().getMeasuredHeight();
         MessageObject.TextLayoutBlock textLayoutBlock = chatMessageCell.getMessageObject().textLayoutBlocks.get(0);
         this.textLayoutBlock = textLayoutBlock;
         StaticLayout staticLayout = textLayoutBlock.textLayout;
-        int i7 = Theme.key_chat_messageTextOut;
-        double calculateLuminance = ColorUtils.calculateLuminance(getThemedColor(i7));
-        int i8 = Theme.key_chat_messagePanelText;
-        if (Math.abs(calculateLuminance - ColorUtils.calculateLuminance(getThemedColor(i8))) > 0.20000000298023224d) {
+        int i6 = Theme.key_chat_messageTextOut;
+        double calculateLuminance = ColorUtils.calculateLuminance(getThemedColor(i6));
+        int i7 = Theme.key_chat_messagePanelText;
+        if (Math.abs(calculateLuminance - ColorUtils.calculateLuminance(getThemedColor(i7))) > 0.20000000298023224d) {
             this.crossfade = true;
             this.changeColor = true;
         }
-        this.fromColor = getThemedColor(i8);
-        this.toColor = getThemedColor(i7);
+        this.fromColor = getThemedColor(i7);
+        this.toColor = getThemedColor(i6);
         if (staticLayout.getLineCount() == this.layout.getLineCount()) {
             i2 = staticLayout.getLineCount();
-            int i9 = 0;
+            int i8 = 0;
             i3 = 0;
             i4 = 0;
             while (true) {
-                if (i9 < i2) {
-                    if (isRtlLine(this.layout, i9)) {
-                        r1 = 1;
+                if (i8 < i2) {
+                    if (isRtlLine(this.layout, i8)) {
                         i4++;
                     } else {
-                        r1 = 1;
                         i3++;
                     }
-                    if (staticLayout.getLineEnd(i9) != this.layout.getLineEnd(i9)) {
-                        this.crossfade = r1;
+                    f = 12.0f;
+                    if (staticLayout.getLineEnd(i8) != this.layout.getLineEnd(i8)) {
+                        this.crossfade = true;
                     } else {
-                        i9 += r1;
+                        i8++;
                     }
+                } else {
+                    f = 12.0f;
                 }
             }
         } else {
+            f = 12.0f;
             this.crossfade = true;
             i2 = lineCount;
             i3 = 0;
@@ -320,22 +318,15 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         if (!this.crossfade && i4 > 0 && i3 > 0) {
             SpannableString spannableString = new SpannableString(charSequence);
             SpannableString spannableString2 = new SpannableString(charSequence);
-            int i10 = 0;
-            float f3 = Float.MAX_VALUE;
-            while (i10 < i2) {
-                if (isRtlLine(this.layout, i10)) {
-                    spannableString.setSpan(new EmptyStubSpan(), this.layout.getLineStart(i10), this.layout.getLineEnd(i10), 0);
-                    float lineLeft2 = this.layout.getLineLeft(i10);
-                    if (lineLeft2 < f3) {
-                        f3 = lineLeft2;
-                        i5 = 1;
-                        i10 += i5;
-                    }
+            float f4 = Float.MAX_VALUE;
+            for (int i9 = 0; i9 < i2; i9++) {
+                if (isRtlLine(this.layout, i9)) {
+                    spannableString.setSpan(new EmptyStubSpan(), this.layout.getLineStart(i9), this.layout.getLineEnd(i9), 0);
+                    float lineLeft2 = this.layout.getLineLeft(i9);
+                    f4 = lineLeft2 < f4 ? lineLeft2 : f4;
                 } else {
-                    spannableString2.setSpan(new EmptyStubSpan(), this.layout.getLineStart(i10), this.layout.getLineEnd(i10), 0);
+                    spannableString2.setSpan(new EmptyStubSpan(), this.layout.getLineStart(i9), this.layout.getLineEnd(i9), 0);
                 }
-                i5 = 1;
-                i10 += i5;
             }
             if (Build.VERSION.SDK_INT >= 24) {
                 obtain = StaticLayout.Builder.obtain(spannableString, 0, spannableString.length(), textPaint2, width);
@@ -405,7 +396,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         Paint paint = new Paint(1);
         this.gradientPaint = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        LinearGradient linearGradient = new LinearGradient(0.0f, AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient(0.0f, AndroidUtilities.dp(f), 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP);
         this.gradientShader = linearGradient;
         this.gradientPaint.setShader(linearGradient);
         this.messageId = chatMessageCell.getMessageObject().stableId;
@@ -420,7 +411,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TextMessageEnterTransition$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                TextMessageEnterTransition.this.lambda$new$0(chatActivityEnterView, messageEnterTransitionContainer, valueAnimator);
+                TextMessageEnterTransition.$r8$lambda$YK_Y1kkCmpvCeJmCqPx7W5SznX0(TextMessageEnterTransition.this, chatActivityEnterView, messageEnterTransitionContainer, valueAnimator);
             }
         });
         this.animator.setInterpolator(new LinearInterpolator());
@@ -447,10 +438,10 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         this.fromMessageDrawable = currentBackgroundDrawable.getTransitionDrawable(getThemedColor(Theme.key_chat_messagePanelBackground));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ChatActivityEnterView chatActivityEnterView, MessageEnterTransitionContainer messageEnterTransitionContainer, ValueAnimator valueAnimator) {
-        this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        chatActivityEnterView.getEditField().setAlpha(this.progress);
+    public static /* synthetic */ void $r8$lambda$YK_Y1kkCmpvCeJmCqPx7W5SznX0(TextMessageEnterTransition textMessageEnterTransition, ChatActivityEnterView chatActivityEnterView, MessageEnterTransitionContainer messageEnterTransitionContainer, ValueAnimator valueAnimator) {
+        textMessageEnterTransition.getClass();
+        textMessageEnterTransition.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        chatActivityEnterView.getEditField().setAlpha(textMessageEnterTransition.progress);
         messageEnterTransitionContainer.invalidate();
     }
 
@@ -465,21 +456,21 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         return layout.getLineRight(i) == ((float) layout.getWidth()) && layout.getLineLeft(i) != 0.0f;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:243:0x0429, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:241:0x0419, code lost:
     
-        if (android.text.TextUtils.isEmpty(r5.caption) != false) goto L89;
+        if (android.text.TextUtils.isEmpty(r3.caption) != false) goto L89;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:247:0x0445, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:245:0x0435, code lost:
     
-        if ((org.telegram.messenger.MessageObject.getMedia(r50.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L89;
+        if ((org.telegram.messenger.MessageObject.getMedia(r45.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L89;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:262:0x0491, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:260:0x0481, code lost:
     
-        if (android.text.TextUtils.isEmpty(r6.caption) != false) goto L109;
+        if (android.text.TextUtils.isEmpty(r4.caption) != false) goto L109;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x04ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:264:0x049d, code lost:
     
-        if ((org.telegram.messenger.MessageObject.getMedia(r50.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L109;
+        if ((org.telegram.messenger.MessageObject.getMedia(r45.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L109;
      */
     @Override // org.telegram.ui.MessageEnterTransitionContainer.Transition
     /*
@@ -490,13 +481,13 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         float f;
         float f2;
         float f3;
+        Canvas canvas2;
         float f4;
         float f5;
         float f6;
         float f7;
-        boolean z;
-        int i2;
         float f8;
+        int i2;
         float f9;
         float f10;
         float f11;
@@ -504,29 +495,26 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         float f13;
         float f14;
         float f15;
-        float f16;
-        float f17;
         int themedColor;
         int themedColor2;
+        float f16;
+        float f17;
         float f18;
+        StaticLayout staticLayout;
         float f19;
         float f20;
-        float f21;
-        StaticLayout staticLayout;
-        float f22;
-        float f23;
         Drawable drawable;
         if (this.drawBitmaps && !this.initBitmaps && this.crossfadeTextBitmap != null && this.messageView.getTransitionParams().wasDraw) {
             this.initBitmaps = true;
-            Canvas canvas2 = new Canvas(this.crossfadeTextBitmap);
-            canvas2.translate(0.0f, this.crossfadeTextOffset);
+            Canvas canvas3 = new Canvas(this.crossfadeTextBitmap);
+            canvas3.translate(0.0f, this.crossfadeTextOffset);
             AnimatedEmojiSpan.EmojiGroupedSpans emojiGroupedSpans = this.messageView.animatedEmojiStack;
             if (emojiGroupedSpans != null) {
                 emojiGroupedSpans.clearPositions();
             }
             ChatMessageCell chatMessageCell = this.messageView;
-            chatMessageCell.drawMessageText(canvas2, chatMessageCell.getMessageObject().textLayoutBlocks, true, 1.0f, true);
-            this.messageView.drawAnimatedEmojis(canvas2, 1.0f);
+            chatMessageCell.drawMessageText(canvas3, chatMessageCell.getMessageObject().textLayoutBlocks, true, 1.0f, true);
+            this.messageView.drawAnimatedEmojis(canvas3, 1.0f);
         }
         float y = (this.listView.getY() - this.container.getY()) + this.listView.getMeasuredHeight();
         float x = this.fromStartX - this.container.getX();
@@ -541,100 +529,98 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         this.lastMessageX = x2;
         this.lastMessageY = top;
         float interpolation = ChatListItemAnimator.DEFAULT_INTERPOLATOR.getInterpolation(this.progress);
-        float f24 = this.progress;
-        float f25 = f24 > 0.4f ? 1.0f : f24 / 0.4f;
-        float interpolation2 = CubicBezierInterpolator.EASE_OUT.getInterpolation(CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(f24));
-        float f26 = x2 + this.textX;
-        float f27 = top + this.textY;
-        float f28 = 1.0f - interpolation2;
-        int measuredHeight = (int) ((this.container.getMeasuredHeight() * f28) + (y * interpolation2));
-        boolean z2 = this.messageView.getBottom() - AndroidUtilities.dp(4.0f) > this.listView.getMeasuredHeight() && (((float) this.messageView.getMeasuredHeight()) + top) - ((float) AndroidUtilities.dp(8.0f)) > ((float) measuredHeight) && this.container.getMeasuredHeight() > 0;
-        if (z2) {
+        float f21 = this.progress;
+        float f22 = f21 > 0.4f ? 1.0f : f21 / 0.4f;
+        float interpolation2 = CubicBezierInterpolator.EASE_OUT.getInterpolation(CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(f21));
+        float f23 = x2 + this.textX;
+        float f24 = top + this.textY;
+        float f25 = 1.0f - interpolation2;
+        int measuredHeight = (int) ((this.container.getMeasuredHeight() * f25) + (y * interpolation2));
+        boolean z = this.messageView.getBottom() - AndroidUtilities.dp(4.0f) > this.listView.getMeasuredHeight() && (((float) this.messageView.getMeasuredHeight()) + top) - ((float) AndroidUtilities.dp(8.0f)) > ((float) measuredHeight) && this.container.getMeasuredHeight() > 0;
+        if (z) {
             i = measuredHeight;
+            f2 = f22;
             f = interpolation2;
-            f2 = f25;
-            f3 = interpolation;
-            canvas.saveLayerAlpha(0.0f, Math.max(0.0f, top), this.container.getMeasuredWidth(), this.container.getMeasuredHeight(), NotificationCenter.didReceiveSmsCode, 31);
+            f3 = 1.0f;
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, Math.max(0.0f, top), this.container.getMeasuredWidth(), this.container.getMeasuredHeight(), NotificationCenter.didReceiveSmsCode, 31);
         } else {
             i = measuredHeight;
             f = interpolation2;
-            f2 = f25;
-            f3 = interpolation;
+            f2 = f22;
+            f3 = 1.0f;
+            canvas2 = canvas;
         }
-        canvas.save();
-        canvas.clipRect(0.0f, ((this.listView.getY() + this.chatActivity.getChatListViewPadding()) - this.container.getY()) - AndroidUtilities.dp(3.0f), this.container.getMeasuredWidth(), this.container.getMeasuredHeight());
-        canvas.save();
-        float backgroundDrawableLeft = this.messageView.getBackgroundDrawableLeft() + x2 + ((x - (f26 - this.toXOffset)) * f28);
+        canvas2.save();
+        canvas2.clipRect(0.0f, ((this.listView.getY() + this.chatActivity.getChatListViewPadding()) - this.container.getY()) - AndroidUtilities.dp(3.0f), this.container.getMeasuredWidth(), this.container.getMeasuredHeight());
+        canvas2.save();
+        float backgroundDrawableLeft = this.messageView.getBackgroundDrawableLeft() + x2 + ((x - (f23 - this.toXOffset)) * f25);
         float backgroundDrawableTop = this.messageView.getBackgroundDrawableTop() + top;
-        float f29 = 1.0f - f3;
-        float y3 = ((this.drawableFromTop - this.container.getY()) * f29) + (backgroundDrawableTop * f3);
-        float y4 = ((this.drawableFromBottom - this.container.getY()) * f29) + ((backgroundDrawableTop + (this.messageView.getBackgroundDrawableBottom() - this.messageView.getBackgroundDrawableTop())) * f3);
-        int backgroundDrawableRight = (int) (this.messageView.getBackgroundDrawableRight() + x2 + (AndroidUtilities.dp(4.0f) * f28));
+        float f26 = f3 - interpolation;
+        float y3 = ((this.drawableFromTop - this.container.getY()) * f26) + (backgroundDrawableTop * interpolation);
+        float backgroundDrawableBottom = ((backgroundDrawableTop + (this.messageView.getBackgroundDrawableBottom() - this.messageView.getBackgroundDrawableTop())) * interpolation) + ((this.drawableFromBottom - this.container.getY()) * f26);
+        int backgroundDrawableRight = (int) (this.messageView.getBackgroundDrawableRight() + x2 + (AndroidUtilities.dp(4.0f) * f25));
         MessageDrawable currentBackgroundDrawable = !this.currentMessageObject.isAnimatedEmojiStickers() ? this.messageView.getCurrentBackgroundDrawable(true) : null;
         if (currentBackgroundDrawable != null) {
             this.messageView.setBackgroundTopY(this.container.getTop() - this.listView.getTop());
             Drawable shadowDrawable = currentBackgroundDrawable.getShadowDrawable();
-            f7 = f2;
-            if (f7 == 1.0f || (drawable = this.fromMessageDrawable) == null) {
-                f4 = f3;
-                f5 = x;
+            if (f2 == f3 || (drawable = this.fromMessageDrawable) == null) {
+                f4 = x;
+                f5 = y2;
             } else {
-                f5 = x;
-                f4 = f3;
-                drawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) y4);
-                this.fromMessageDrawable.draw(canvas);
+                f4 = x;
+                f5 = y2;
+                drawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) backgroundDrawableBottom);
+                this.fromMessageDrawable.draw(canvas2);
             }
             f6 = f;
             if (shadowDrawable != null) {
                 shadowDrawable.setAlpha((int) (f6 * 255.0f));
-                shadowDrawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) y4);
-                shadowDrawable.draw(canvas);
+                shadowDrawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) backgroundDrawableBottom);
+                shadowDrawable.draw(canvas2);
                 shadowDrawable.setAlpha(NotificationCenter.didReceiveSmsCode);
             }
-            currentBackgroundDrawable.setAlpha((int) (f7 * 255.0f));
-            currentBackgroundDrawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) y4);
+            currentBackgroundDrawable.setAlpha((int) (f2 * 255.0f));
+            currentBackgroundDrawable.setBounds((int) backgroundDrawableLeft, (int) y3, backgroundDrawableRight, (int) backgroundDrawableBottom);
             currentBackgroundDrawable.setDrawFullBubble(true);
-            currentBackgroundDrawable.draw(canvas);
-            z = false;
+            currentBackgroundDrawable.draw(canvas2);
             currentBackgroundDrawable.setDrawFullBubble(false);
             currentBackgroundDrawable.setAlpha(NotificationCenter.didReceiveSmsCode);
         } else {
-            f4 = f3;
-            f5 = x;
+            f4 = x;
+            f5 = y2;
             f6 = f;
-            f7 = f2;
-            z = false;
         }
-        canvas.restore();
-        canvas.save();
+        canvas2.restore();
+        canvas2.save();
         if (currentBackgroundDrawable != null) {
             if (this.currentMessageObject.isOutOwner()) {
-                canvas.clipRect(AndroidUtilities.dp(4.0f) + backgroundDrawableLeft, AndroidUtilities.dp(4.0f) + y3, backgroundDrawableRight - AndroidUtilities.dp(10.0f), y4 - AndroidUtilities.dp(4.0f));
+                canvas2.clipRect(AndroidUtilities.dp(4.0f) + backgroundDrawableLeft, AndroidUtilities.dp(4.0f) + y3, backgroundDrawableRight - AndroidUtilities.dp(10.0f), backgroundDrawableBottom - AndroidUtilities.dp(4.0f));
             } else {
-                canvas.clipRect(AndroidUtilities.dp(4.0f) + backgroundDrawableLeft, AndroidUtilities.dp(4.0f) + y3, backgroundDrawableRight - AndroidUtilities.dp(4.0f), y4 - AndroidUtilities.dp(4.0f));
+                canvas2.clipRect(AndroidUtilities.dp(4.0f) + backgroundDrawableLeft, AndroidUtilities.dp(4.0f) + y3, backgroundDrawableRight - AndroidUtilities.dp(4.0f), backgroundDrawableBottom - AndroidUtilities.dp(4.0f));
             }
         }
-        float f30 = top + ((y2 - f27) * f29);
-        canvas.translate((this.messageView.getLeft() + this.listView.getX()) - this.container.getX(), f30);
-        this.messageView.drawTime(canvas, f7, z);
-        this.messageView.drawNamesLayout(canvas, f7);
-        this.messageView.drawCommentButton(canvas, f7);
-        this.messageView.drawCaptionLayout(canvas, z, f7);
-        this.messageView.drawReactionsLayout(canvas, f7, null);
-        this.messageView.drawCommentLayout(canvas, f7);
-        this.messageView.drawLinkPreview(canvas, f7);
-        canvas.restore();
+        float f27 = ((f5 - f24) * f26) + top;
+        canvas2.translate((this.messageView.getLeft() + this.listView.getX()) - this.container.getX(), f27);
+        this.messageView.drawTime(canvas2, f2, false);
+        this.messageView.drawNamesLayout(canvas2, f2);
+        this.messageView.drawCommentButton(canvas2, f2);
+        this.messageView.drawCaptionLayout(canvas2, false, f2);
+        this.messageView.drawReactionsLayout(canvas2, f2, null);
+        this.messageView.drawCommentLayout(canvas2, f2);
+        this.messageView.drawLinkPreview(canvas2, f2);
+        canvas2.restore();
         if (this.hasReply) {
             this.chatActivity.getReplyNameTextView().setAlpha(0.0f);
             this.chatActivity.getReplyObjectTextView().setAlpha(0.0f);
             AndroidUtilities.lerp(AndroidUtilities.dp(35.0f), this.messageView.replyHeight, f6);
             int dp = AndroidUtilities.dp(10.0f);
             float x3 = this.replyFromStartX - this.container.getX();
-            float y5 = this.replyFromStartY - this.container.getY();
+            float y4 = this.replyFromStartY - this.container.getY();
             ChatMessageCell chatMessageCell2 = this.messageView;
-            float f31 = chatMessageCell2.replyStartX + x2;
-            i2 = backgroundDrawableRight;
-            float f32 = top + chatMessageCell2.replyStartY;
+            float f28 = chatMessageCell2.replyStartX + x2;
+            f7 = backgroundDrawableBottom;
+            float f29 = top + chatMessageCell2.replyStartY;
             if (chatMessageCell2.replyLine == null) {
                 chatMessageCell2.replyLine = new ReplyMessageLine(chatMessageCell2);
             }
@@ -659,14 +645,14 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             if (!this.currentMessageObject.shouldDrawWithoutBackground()) {
                 if (this.currentMessageObject.isOutOwner()) {
                     if (this.currentMessageObject.isReplyToStory()) {
-                        f8 = y4;
-                        f9 = y3;
+                        f8 = y3;
+                        i2 = backgroundDrawableRight;
                         themedColor2 = themedColor;
                     } else {
                         int themedColor3 = getThemedColor(Theme.key_chat_outReplyMessageText);
-                        f8 = y4;
+                        f8 = y3;
                         MessageObject messageObject = this.currentMessageObject;
-                        f9 = y3;
+                        i2 = backgroundDrawableRight;
                         if (!messageObject.forceAvatar) {
                             if (messageObject.hasValidReplyMessageObject()) {
                                 MessageObject messageObject2 = this.currentMessageObject.replyMessageObject;
@@ -677,16 +663,16 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                             }
                             if (!this.messageView.isReplyQuote) {
                                 themedColor3 = getThemedColor(Theme.key_chat_outReplyMediaMessageText);
-                                f23 = 0.6f;
-                                themedColor2 = ColorUtils.blendARGB(themedColor3, Theme.adaptHue(themedColor3, themedColor), f23);
+                                f20 = 0.6f;
+                                themedColor2 = ColorUtils.blendARGB(themedColor3, Theme.adaptHue(themedColor3, themedColor), f20);
                             }
                         }
-                        f23 = 0.0f;
-                        themedColor2 = ColorUtils.blendARGB(themedColor3, Theme.adaptHue(themedColor3, themedColor), f23);
+                        f20 = 0.0f;
+                        themedColor2 = ColorUtils.blendARGB(themedColor3, Theme.adaptHue(themedColor3, themedColor), f20);
                     }
                 } else {
-                    f8 = y4;
-                    f9 = y3;
+                    f8 = y3;
+                    i2 = backgroundDrawableRight;
                     if (!this.currentMessageObject.isReplyToStory()) {
                         int themedColor4 = getThemedColor(Theme.key_chat_inReplyMessageText);
                         MessageObject messageObject3 = this.currentMessageObject;
@@ -700,18 +686,18 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                             }
                             if (!this.messageView.isReplyQuote) {
                                 themedColor4 = getThemedColor(Theme.key_chat_inReplyMediaMessageText);
-                                f22 = 0.6f;
-                                themedColor2 = ColorUtils.blendARGB(themedColor4, Theme.adaptHue(themedColor4, themedColor), f22);
+                                f19 = 0.6f;
+                                themedColor2 = ColorUtils.blendARGB(themedColor4, Theme.adaptHue(themedColor4, themedColor), f19);
                             }
                         }
-                        f22 = 0.0f;
-                        themedColor2 = ColorUtils.blendARGB(themedColor4, Theme.adaptHue(themedColor4, themedColor), f22);
+                        f19 = 0.0f;
+                        themedColor2 = ColorUtils.blendARGB(themedColor4, Theme.adaptHue(themedColor4, themedColor), f19);
                     }
                     themedColor2 = themedColor;
                 }
             } else {
-                f8 = y4;
-                f9 = y3;
+                f8 = y3;
+                i2 = backgroundDrawableRight;
                 ReplyMessageLine replyMessageLine2 = this.messageView.replyLine;
                 if (replyMessageLine2 != null) {
                     themedColor2 = replyMessageLine2.nameColorAnimated.get();
@@ -728,15 +714,14 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                     themedColor2 = getThemedColor(Theme.key_chat_outReplyMediaMessageText);
                 }
             }
-            float f33 = f4;
-            Theme.chat_replyTextPaint.setColor(ColorUtils.blendARGB(this.replayObjectFromColor, themedColor2, f33));
-            Theme.chat_replyNamePaint.setColor(ColorUtils.blendARGB(this.replayFromColor, themedColor, f33));
+            Theme.chat_replyTextPaint.setColor(ColorUtils.blendARGB(this.replayObjectFromColor, themedColor2, interpolation));
+            Theme.chat_replyNamePaint.setColor(ColorUtils.blendARGB(this.replayFromColor, themedColor, interpolation));
             if (this.messageView.needReplyImage) {
                 x3 -= AndroidUtilities.dp(44.0f);
             }
-            float f34 = x3;
-            float lerp = AndroidUtilities.lerp(f34, f31, f6);
-            float lerp2 = AndroidUtilities.lerp((AndroidUtilities.dp(12.0f) * f33) + y5, f32, f33);
+            float f30 = x3;
+            float lerp = AndroidUtilities.lerp(f30, f28, f6);
+            float lerp2 = AndroidUtilities.lerp((AndroidUtilities.dp(12.0f) * interpolation) + y4, f29, interpolation);
             if (this.roundRectRadii == null) {
                 this.roundRectRadii = new float[]{r4, r4, 0.0f, 0.0f, 0.0f, 0.0f, r4, r4};
                 float dp2 = AndroidUtilities.dp(4.0f);
@@ -747,69 +732,65 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                 fArr[2] = 0.0f;
             }
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(f34, y5, this.replyFromStartWidth + f34, AndroidUtilities.dp(35.0f) + y5);
-            rectF.offset(0.0f, AndroidUtilities.dp(12.0f) * f33);
+            rectF.set(f30, y4, this.replyFromStartWidth + f30, AndroidUtilities.dp(35.0f) + y4);
+            rectF.offset(0.0f, AndroidUtilities.dp(12.0f) * interpolation);
             this.messageReplySelectorRect.set(this.messageView.replySelectorRect);
-            this.messageReplySelectorRect.offset(x2, f30);
+            this.messageReplySelectorRect.offset(x2, f27);
             AndroidUtilities.lerp(rectF, this.messageReplySelectorRect, f6, this.replySelectorRect);
             ChatMessageCell chatMessageCell4 = this.messageView;
-            chatMessageCell4.replyLine.drawBackground(canvas, this.replySelectorRect, f7, chatMessageCell4.isReplyQuote, chatMessageCell4.getMessageObject().shouldDrawWithoutBackground());
-            this.messageView.replyLine.drawLine(canvas, this.replySelectorRect, f7);
+            float f31 = f2;
+            chatMessageCell4.replyLine.drawBackground(canvas, this.replySelectorRect, f31, chatMessageCell4.isReplyQuote, chatMessageCell4.getMessageObject().shouldDrawWithoutBackground());
+            canvas2 = canvas;
+            this.messageView.replyLine.drawLine(canvas2, this.replySelectorRect, f31);
             if (this.messageView.needReplyImage) {
-                canvas.save();
+                canvas2.save();
                 float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(35.0f), Math.min(this.replySelectorRect.height() - AndroidUtilities.dp(10.0f), AndroidUtilities.dp(this.messageView.isReplyQuote ? 3.0f : 7.0f) + Theme.chat_replyNamePaint.getTextSize() + Theme.chat_replyTextPaint.getTextSize()), f6);
                 ImageReceiver imageReceiver = this.messageView.replyImageReceiver;
                 float lerp4 = AndroidUtilities.lerp(lerp, this.replySelectorRect.left + AndroidUtilities.dp(8.0f), f6);
-                float f35 = this.replySelectorRect.top;
+                float f32 = this.replySelectorRect.top;
                 ChatMessageCell chatMessageCell5 = this.messageView;
-                imageReceiver.setImageCoords(lerp4, AndroidUtilities.lerp(lerp2, f35 + AndroidUtilities.dp(((!chatMessageCell5.isReplyQuote || (staticLayout = chatMessageCell5.replyTextLayout) == null || staticLayout.getLineCount() > 1) ? 0 : 2) + 5), f6), lerp3, lerp3);
-                this.messageView.replyImageReceiver.draw(canvas);
-                canvas.restore();
-                f18 = lerp3;
+                f16 = f31;
+                imageReceiver.setImageCoords(lerp4, AndroidUtilities.lerp(lerp2, f32 + AndroidUtilities.dp(((!chatMessageCell5.isReplyQuote || (staticLayout = chatMessageCell5.replyTextLayout) == null || staticLayout.getLineCount() > 1) ? 0 : 2) + 5), f6), lerp3, lerp3);
+                this.messageView.replyImageReceiver.draw(canvas2);
+                canvas2.restore();
+                f17 = lerp3;
             } else {
-                f18 = 0.0f;
+                f16 = f31;
+                f17 = 0.0f;
             }
-            canvas.save();
-            float f36 = dp * f6;
-            canvas.translate(f36, 0.0f);
+            canvas2.save();
+            float f33 = dp * f6;
+            canvas2.translate(f33, 0.0f);
             MessageObject messageObject6 = this.currentMessageObject;
-            if (messageObject6 == null || !messageObject6.shouldDrawWithoutBackground()) {
-                f19 = 1.0f;
-                f20 = -AndroidUtilities.dp(1.0f);
-            } else {
-                f20 = -AndroidUtilities.dp(6.0f);
-                f19 = 1.0f;
-            }
+            float f34 = -((messageObject6 == null || !messageObject6.shouldDrawWithoutBackground()) ? AndroidUtilities.dp(f3) : AndroidUtilities.dp(6.0f));
             MessageObject messageObject7 = this.currentMessageObject;
-            float dp3 = (messageObject7 == null || !messageObject7.shouldDrawWithoutBackground()) ? AndroidUtilities.dp(3.0f) : AndroidUtilities.dp(f19);
-            float f37 = this.messageView.replyTextOffset;
-            float f38 = (f31 - f37) + f20;
-            float f39 = (f31 - this.replyNameDx) + f20;
-            AndroidUtilities.lerp(f34 - f37, f38, f6);
-            float lerp5 = AndroidUtilities.lerp(f34, f39, f6) + (this.messageView.needReplyImage ? AndroidUtilities.dp(3.0f) + f18 : 0.0f);
+            float dp3 = (messageObject7 == null || !messageObject7.shouldDrawWithoutBackground()) ? AndroidUtilities.dp(3.0f) : AndroidUtilities.dp(f3);
+            float f35 = this.messageView.replyTextOffset;
+            float f36 = (f28 - f35) + f34;
+            float f37 = (f28 - this.replyNameDx) + f34;
+            AndroidUtilities.lerp(f30 - f35, f36, f6);
+            float lerp5 = AndroidUtilities.lerp(f30, f37, f6) + (this.messageView.needReplyImage ? AndroidUtilities.dp(3.0f) + f17 : 0.0f);
             if (this.messageView.replyNameLayout != null) {
-                canvas.save();
-                canvas.translate(lerp5, (dp3 * f6) + lerp2);
+                canvas2.save();
+                canvas2.translate(lerp5, (dp3 * f6) + lerp2);
                 int alpha = Theme.chat_replyNamePaint.getAlpha();
                 Theme.chat_replyNamePaint.setAlpha((int) (alpha * f6));
-                this.messageView.replyNameLayout.draw(canvas);
+                this.messageView.replyNameLayout.draw(canvas2);
                 Theme.chat_replyNamePaint.setAlpha(alpha);
                 SimpleTextView replyNameTextView = this.chatActivity.getReplyNameTextView();
-                f21 = f38;
-                f12 = f7;
-                f13 = f33;
-                f10 = backgroundDrawableLeft;
-                canvas.saveLayerAlpha(0.0f, 0.0f, replyNameTextView.getWidth(), replyNameTextView.getHeight(), (int) (f28 * 255.0f), 31);
+                f9 = backgroundDrawableLeft;
+                f18 = f36;
+                f10 = f16;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, replyNameTextView.getWidth(), replyNameTextView.getHeight(), (int) (f25 * 255.0f), 31);
                 replyNameTextView.setAlpha(1.0f);
-                replyNameTextView.draw(canvas);
+                replyNameTextView.draw(canvas2);
                 replyNameTextView.setAlpha(0.0f);
-                canvas.restore();
-                canvas.restore();
+                canvas2.restore();
+                canvas2.restore();
             } else {
-                f21 = f38;
-                f12 = f7;
-                f13 = f33;
-                f10 = backgroundDrawableLeft;
+                f18 = f36;
+                f9 = backgroundDrawableLeft;
+                f10 = f16;
             }
             ChatMessageCell chatMessageCell6 = this.messageView;
             if (chatMessageCell6.isReplyQuote && chatMessageCell6.replyQuoteDrawable != null) {
@@ -823,196 +804,194 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                     drawable2.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.SRC_IN));
                 }
                 ChatMessageCell chatMessageCell9 = this.messageView;
-                chatMessageCell9.replyQuoteDrawable.setBounds((int) (((this.replySelectorRect.right - f36) - AndroidUtilities.dp((!chatMessageCell9.drawPinnedTop ? 1 : 0) + 2)) - this.messageView.replyQuoteDrawable.getIntrinsicWidth()), (int) (this.replySelectorRect.top + AndroidUtilities.dp((!this.messageView.drawPinnedTop ? 1 : 0) + 2)), (int) ((this.replySelectorRect.right - f36) - AndroidUtilities.dp((!this.messageView.drawPinnedTop ? 1 : 0) + 2)), (int) (this.replySelectorRect.top + AndroidUtilities.dp((1 ^ (this.messageView.drawPinnedTop ? 1 : 0)) + 2) + this.messageView.replyQuoteDrawable.getIntrinsicHeight()));
+                chatMessageCell9.replyQuoteDrawable.setBounds((int) (((this.replySelectorRect.right - f33) - AndroidUtilities.dp((!chatMessageCell9.drawPinnedTop ? 1 : 0) + 2)) - this.messageView.replyQuoteDrawable.getIntrinsicWidth()), (int) (this.replySelectorRect.top + AndroidUtilities.dp((!this.messageView.drawPinnedTop ? 1 : 0) + 2)), (int) ((this.replySelectorRect.right - f33) - AndroidUtilities.dp((!this.messageView.drawPinnedTop ? 1 : 0) + 2)), (int) (this.replySelectorRect.top + AndroidUtilities.dp((!this.messageView.drawPinnedTop ? 1 : 0) + 2) + this.messageView.replyQuoteDrawable.getIntrinsicHeight()));
                 this.messageView.replyQuoteDrawable.setAlpha((int) (f6 * 255.0f));
-                this.messageView.replyQuoteDrawable.draw(canvas);
+                this.messageView.replyQuoteDrawable.draw(canvas2);
             }
             if (this.messageView.replyTextLayout != null) {
-                canvas.save();
+                canvas2.save();
                 float lerp6 = lerp2 + AndroidUtilities.lerp(AndroidUtilities.dp(19.0f), Theme.chat_replyNamePaint.getTextSize() + AndroidUtilities.dp(4.0f) + dp3, f6);
                 ChatMessageCell chatMessageCell10 = this.messageView;
-                float dp4 = (chatMessageCell10.isReplyQuote && chatMessageCell10.needReplyImage) ? f21 - AndroidUtilities.dp(2.0f) : f21;
+                float dp4 = (chatMessageCell10.isReplyQuote && chatMessageCell10.needReplyImage) ? f18 - AndroidUtilities.dp(2.0f) : f18;
                 ChatMessageCell chatMessageCell11 = this.messageView;
                 if (chatMessageCell11.needReplyImage && (!chatMessageCell11.isReplyQuote || chatMessageCell11.replyTextRTL)) {
-                    dp4 += f18 + AndroidUtilities.dp(3.0f);
+                    dp4 += f17 + AndroidUtilities.dp(3.0f);
                 }
                 ChatMessageCell chatMessageCell12 = this.messageView;
                 if (chatMessageCell12.isReplyTaskOrPollOption && chatMessageCell12.replyTaskCheckbox != null) {
-                    float lerp7 = AndroidUtilities.lerp(f34 - chatMessageCell12.replyTextOffset, dp4, f6);
+                    float lerp7 = AndroidUtilities.lerp(f30 - chatMessageCell12.replyTextOffset, dp4, f6);
                     this.messageView.replyTaskCheckbox.setBounds((int) lerp7, ((int) lerp6) + AndroidUtilities.dp(2.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
                     Theme.chat_instantViewRectPaint.setColor(getThemedColor(this.currentMessageObject.isOutOwner() ? Theme.key_chat_outMenu : Theme.key_chat_inMenu));
-                    canvas.drawCircle(lerp7 + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(8.0f) + lerp6, AndroidUtilities.dp(5.0f), Theme.chat_instantViewRectPaint);
+                    canvas2.drawCircle(lerp7 + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(8.0f) + lerp6, AndroidUtilities.dp(5.0f), Theme.chat_instantViewRectPaint);
                     this.messageView.replyTaskCheckbox.setColor(-1, this.currentMessageObject.isOutOwner() ? Theme.key_chat_outAudioSeekbarFill : Theme.key_chat_inAudioSeekbarFill, Theme.key_checkboxCheck);
-                    this.messageView.replyTaskCheckbox.setAlpha(f13);
-                    this.messageView.replyTaskCheckbox.draw(canvas);
+                    this.messageView.replyTaskCheckbox.setAlpha(interpolation);
+                    this.messageView.replyTaskCheckbox.draw(canvas2);
                 }
                 if (this.messageView.isReplyTaskOrPollOption) {
                     dp4 += AndroidUtilities.dp(16.0f);
                 }
                 ChatMessageCell chatMessageCell13 = this.messageView;
                 if (chatMessageCell13.replyTextRTL && chatMessageCell13.replyTextOffset > 0) {
-                    dp4 = ((this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.messageView.replyTextLayout.getWidth()) - f36;
+                    dp4 = ((this.replySelectorRect.right - AndroidUtilities.dp(8.0f)) - this.messageView.replyTextLayout.getWidth()) - f33;
                 }
-                canvas.translate(AndroidUtilities.lerp(f34 - this.messageView.replyTextOffset, dp4, f6), lerp6);
-                canvas.save();
-                SpoilerEffect.clipOutCanvas(canvas, this.messageView.replySpoilers);
+                canvas2.translate(AndroidUtilities.lerp(f30 - this.messageView.replyTextOffset, dp4, f6), lerp6);
+                canvas2.save();
+                SpoilerEffect.clipOutCanvas(canvas2, this.messageView.replySpoilers);
                 ChatMessageCell chatMessageCell14 = this.messageView;
-                f11 = f30;
-                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, chatMessageCell14.replyTextLayout, chatMessageCell14.animatedEmojiReplyStack, 0.0f, chatMessageCell14.replySpoilers, 0.0f, 0.0f, 0.0f, 1.0f);
-                this.messageView.replyTextLayout.draw(canvas);
-                canvas.restore();
+                AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, chatMessageCell14.replyTextLayout, chatMessageCell14.animatedEmojiReplyStack, 0.0f, chatMessageCell14.replySpoilers, 0.0f, 0.0f, 0.0f, 1.0f);
+                this.messageView.replyTextLayout.draw(canvas2);
+                canvas2.restore();
                 for (SpoilerEffect spoilerEffect : this.messageView.replySpoilers) {
                     if (spoilerEffect.shouldInvalidateColor()) {
                         spoilerEffect.setColor(this.messageView.replyTextLayout.getPaint().getColor());
                     }
-                    spoilerEffect.draw(canvas);
+                    spoilerEffect.draw(canvas2);
                 }
-                canvas.restore();
-            } else {
-                f11 = f30;
+                canvas2.restore();
             }
-            canvas.restore();
+            canvas2.restore();
         } else {
+            f7 = backgroundDrawableBottom;
+            f8 = y3;
             i2 = backgroundDrawableRight;
-            f8 = y4;
-            f9 = y3;
-            f10 = backgroundDrawableLeft;
-            f11 = f30;
-            f12 = f7;
-            f13 = f4;
+            f9 = backgroundDrawableLeft;
+            f10 = f2;
         }
-        canvas.save();
+        canvas2.save();
         if (this.messageView.getMessageObject() == null || this.messageView.getMessageObject().type != 19) {
-            canvas.clipRect(f10 + AndroidUtilities.dp(4.0f), f9 + AndroidUtilities.dp(4.0f), i2 - AndroidUtilities.dp(4.0f), f8 - AndroidUtilities.dp(4.0f));
+            canvas2.clipRect(f9 + AndroidUtilities.dp(4.0f), f8 + AndroidUtilities.dp(4.0f), i2 - AndroidUtilities.dp(4.0f), f7 - AndroidUtilities.dp(4.0f));
         }
-        float f40 = f6 + (this.scaleFrom * f28);
-        float f41 = this.drawBitmaps ? (this.scaleY * f28) + f6 : 1.0f;
-        canvas.save();
-        float f42 = f5 * f28;
-        float f43 = y2 * f29;
-        canvas.translate(f42 + ((f26 - this.toXOffset) * f6), ((f27 + this.textLayoutBlock.textYOffset(this.messageView.getMessageObject().textLayoutBlocks, this.messageView.transitionParams)) * f13) + f43);
-        float f44 = f40 * f41;
-        canvas.scale(f40, f44, 0.0f, 0.0f);
+        float f38 = f6 + (this.scaleFrom * f25);
+        float f39 = this.drawBitmaps ? (this.scaleY * f25) + f6 : 1.0f;
+        canvas2.save();
+        float f40 = f4 * f25;
+        float f41 = f5 * f26;
+        canvas2.translate(((f23 - this.toXOffset) * f6) + f40, ((f24 + this.textLayoutBlock.textYOffset(this.messageView.getMessageObject().textLayoutBlocks, this.messageView.transitionParams)) * interpolation) + f41);
+        float f42 = f38 * f39;
+        canvas2.scale(f38, f42, 0.0f, 0.0f);
         if (this.drawBitmaps) {
             if (this.crossfade) {
-                this.bitmapPaint.setAlpha((int) ((1.0f - f12) * 255.0f));
+                f15 = f10;
+                this.bitmapPaint.setAlpha((int) ((1.0f - f15) * 255.0f));
+            } else {
+                f15 = f10;
             }
-            canvas.drawBitmap(this.textLayoutBitmap, 0.0f, 0.0f, this.bitmapPaint);
-            f14 = f11;
-            f16 = f12;
-            f15 = f44;
+            canvas2.drawBitmap(this.textLayoutBitmap, 0.0f, 0.0f, this.bitmapPaint);
+            f11 = f6;
+            f12 = f40;
+            f13 = f42;
+            f14 = f15;
         } else {
-            boolean z3 = this.crossfade;
-            if (z3 && this.changeColor) {
+            float f43 = f10;
+            boolean z2 = this.crossfade;
+            if (z2 && this.changeColor) {
                 int color3 = this.layout.getPaint().getColor();
-                float f45 = f12;
-                this.layout.getPaint().setColor(ColorUtils.blendARGB(this.fromColor, this.toColor, f45));
-                float f46 = 1.0f - f45;
-                canvas.saveLayerAlpha(0.0f, 0.0f, this.layout.getWidth(), this.layout.getHeight(), (int) (f46 * 255.0f), 31);
-                this.layout.draw(canvas);
-                f14 = f11;
-                f15 = f44;
-                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.layout, this.animatedEmojiStack, 0.0f, null, 0.0f, 0.0f, 0.0f, f46);
+                this.layout.getPaint().setColor(ColorUtils.blendARGB(this.fromColor, this.toColor, f43));
+                float f44 = 1.0f - f43;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, this.layout.getWidth(), this.layout.getHeight(), (int) (f44 * 255.0f), 31);
+                this.layout.draw(canvas2);
+                f12 = f40;
+                f13 = f42;
+                f11 = f6;
+                f14 = f43;
+                AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, this.layout, this.animatedEmojiStack, 0.0f, null, 0.0f, 0.0f, 0.0f, f44);
                 this.layout.getPaint().setColor(color3);
                 canvas.restore();
-                f16 = f45;
+                canvas2 = canvas;
             } else {
-                f14 = f11;
-                float f47 = f12;
-                f15 = f44;
-                if (z3) {
-                    float f48 = 1.0f - f47;
-                    canvas.saveLayerAlpha(0.0f, 0.0f, this.layout.getWidth(), this.layout.getHeight(), (int) (f48 * 255.0f), 31);
-                    this.layout.draw(canvas);
-                    f16 = f47;
-                    AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.layout, this.animatedEmojiStack, 0.0f, null, 0.0f, 0.0f, 0.0f, f48);
-                    canvas.restore();
+                f11 = f6;
+                f12 = f40;
+                f13 = f42;
+                f14 = f43;
+                if (z2) {
+                    float f45 = 1.0f - f14;
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, this.layout.getWidth(), this.layout.getHeight(), (int) (f45 * 255.0f), 31);
+                    this.layout.draw(canvas2);
+                    AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, this.layout, this.animatedEmojiStack, 0.0f, null, 0.0f, 0.0f, 0.0f, f45);
+                    canvas2.restore();
                 } else {
-                    f16 = f47;
-                    this.layout.draw(canvas);
-                    AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.layout, this.animatedEmojiStack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
+                    canvas2 = canvas;
+                    this.layout.draw(canvas2);
+                    AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, this.layout, this.animatedEmojiStack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
                 }
             }
         }
-        canvas.restore();
+        canvas2.restore();
         if (this.rtlLayout != null) {
-            canvas.save();
-            canvas.translate(f42 + ((f26 - this.toXOffsetRtl) * f6), f43 + ((f27 + this.textLayoutBlock.textYOffset(this.messageView.getMessageObject().textLayoutBlocks, this.messageView.transitionParams)) * f13));
-            canvas.scale(f40, f15, 0.0f, 0.0f);
+            canvas2.save();
+            canvas2.translate(f12 + ((f23 - this.toXOffsetRtl) * f11), f41 + ((f24 + this.textLayoutBlock.textYOffset(this.messageView.getMessageObject().textLayoutBlocks, this.messageView.transitionParams)) * interpolation));
+            canvas2.scale(f38, f13, 0.0f, 0.0f);
             if (this.drawBitmaps) {
                 if (this.crossfade) {
-                    f17 = f16;
-                    this.bitmapPaint.setAlpha((int) ((1.0f - f17) * 255.0f));
-                } else {
-                    f17 = f16;
+                    this.bitmapPaint.setAlpha((int) ((1.0f - f14) * 255.0f));
                 }
-                canvas.drawBitmap(this.textLayoutBitmapRtl, 0.0f, 0.0f, this.bitmapPaint);
+                canvas2.drawBitmap(this.textLayoutBitmapRtl, 0.0f, 0.0f, this.bitmapPaint);
             } else {
-                f17 = f16;
-                boolean z4 = this.crossfade;
-                if (z4 && this.changeColor) {
+                boolean z3 = this.crossfade;
+                if (z3 && this.changeColor) {
                     int color4 = this.rtlLayout.getPaint().getColor();
-                    this.rtlLayout.getPaint().setColor(ColorUtils.setAlphaComponent(ColorUtils.blendARGB(this.fromColor, this.toColor, f17), (int) (Color.alpha(color4) * (1.0f - f17))));
-                    this.rtlLayout.draw(canvas);
+                    this.rtlLayout.getPaint().setColor(ColorUtils.setAlphaComponent(ColorUtils.blendARGB(this.fromColor, this.toColor, f14), (int) (Color.alpha(color4) * (1.0f - f14))));
+                    this.rtlLayout.draw(canvas2);
                     this.rtlLayout.getPaint().setColor(color4);
-                } else if (z4) {
+                } else if (z3) {
                     int alpha2 = this.rtlLayout.getPaint().getAlpha();
-                    this.rtlLayout.getPaint().setAlpha((int) (alpha2 * (1.0f - f17)));
-                    this.rtlLayout.draw(canvas);
+                    this.rtlLayout.getPaint().setAlpha((int) (alpha2 * (1.0f - f14)));
+                    this.rtlLayout.draw(canvas2);
                     this.rtlLayout.getPaint().setAlpha(alpha2);
                 } else {
-                    this.rtlLayout.draw(canvas);
+                    this.rtlLayout.draw(canvas2);
                 }
             }
-            canvas.restore();
-        } else {
-            f17 = f16;
+            canvas2.restore();
         }
         if (this.crossfade) {
-            canvas.save();
-            canvas.translate(((this.messageView.getLeft() + this.listView.getX()) - this.container.getX()) + ((f5 - f26) * f28), f14);
-            canvas.scale(f40, f15, this.messageView.getTextX(), this.messageView.getTextY());
-            canvas.translate(0.0f, -this.crossfadeTextOffset);
+            canvas2.save();
+            canvas2.translate(((this.messageView.getLeft() + this.listView.getX()) - this.container.getX()) + ((f4 - f23) * f25), f27);
+            canvas2.scale(f38, f13, this.messageView.getTextX(), this.messageView.getTextY());
+            canvas2.translate(0.0f, -this.crossfadeTextOffset);
             if (this.crossfadeTextBitmap != null) {
-                this.bitmapPaint.setAlpha((int) (f17 * 255.0f));
-                canvas.drawBitmap(this.crossfadeTextBitmap, 0.0f, 0.0f, this.bitmapPaint);
+                this.bitmapPaint.setAlpha((int) (f14 * 255.0f));
+                canvas2.drawBitmap(this.crossfadeTextBitmap, 0.0f, 0.0f, this.bitmapPaint);
             } else {
                 int color5 = Theme.chat_msgTextPaint.getColor();
                 Theme.chat_msgTextPaint.setColor(this.toColor);
                 ChatMessageCell chatMessageCell15 = this.messageView;
-                chatMessageCell15.drawMessageText(canvas, chatMessageCell15.getMessageObject().textLayoutBlocks, true, f17, true);
-                this.messageView.drawAnimatedEmojis(canvas, f17);
+                float f46 = f14;
+                chatMessageCell15.drawMessageText(canvas, chatMessageCell15.getMessageObject().textLayoutBlocks, true, f46, true);
+                canvas2 = canvas;
+                this.messageView.drawAnimatedEmojis(canvas2, f46);
                 if (Theme.chat_msgTextPaint.getColor() != color5) {
                     Theme.chat_msgTextPaint.setColor(color5);
                 }
             }
-            canvas.restore();
+            canvas2.restore();
         }
-        canvas.restore();
-        if (z2) {
-            float f49 = i;
-            this.gradientMatrix.setTranslate(0.0f, f49);
+        canvas2.restore();
+        if (z) {
+            float f47 = i;
+            this.gradientMatrix.setTranslate(0.0f, f47);
             this.gradientShader.setLocalMatrix(this.gradientMatrix);
-            canvas.drawRect(0.0f, f49, this.container.getMeasuredWidth(), this.container.getMeasuredHeight(), this.gradientPaint);
-            canvas.restore();
+            canvas2.drawRect(0.0f, f47, this.container.getMeasuredWidth(), this.container.getMeasuredHeight(), this.gradientPaint);
+            canvas2.restore();
         }
-        float f50 = this.progress;
-        float f51 = f50 > 0.4f ? 1.0f : f50 / 0.4f;
-        if (f51 == 1.0f) {
+        float f48 = this.progress;
+        float f49 = f48 > 0.4f ? 1.0f : f48 / 0.4f;
+        if (f49 == 1.0f) {
             this.enterView.setTextTransitionIsRunning(false);
         }
-        if (this.enterView.getSendButton().getVisibility() != 0 || f51 >= 1.0f) {
+        if (this.enterView.getSendButton().getVisibility() != 0 || f49 >= 1.0f) {
             return;
         }
         ViewPositionWatcher.computeCoordinatesInParent(this.enterView.getSendButton(), this.chatActivity.contentView, this.tmpPointF);
-        canvas.save();
-        canvas.translate(this.tmpPointF.x - this.container.getX(), this.tmpPointF.y - this.container.getY());
+        canvas2.save();
+        canvas2.translate(this.tmpPointF.x - this.container.getX(), this.tmpPointF.y - this.container.getY());
         View sendButton = this.enterView.getSendButton();
-        canvas.saveLayerAlpha(0.0f, 0.0f, sendButton.getWidth(), sendButton.getHeight(), (int) ((1.0f - f51) * 255.0f));
-        sendButton.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-        canvas.restore();
+        canvas2.saveLayerAlpha(0.0f, 0.0f, sendButton.getWidth(), sendButton.getHeight(), (int) ((1.0f - f49) * 255.0f));
+        sendButton.draw(canvas2);
+        canvas2.restore();
+        canvas2.restore();
+        canvas2.restore();
     }
 
     private int getThemedColor(int i) {

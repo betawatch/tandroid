@@ -24,11 +24,13 @@ public final class DecoderReuseEvaluation {
         if (this == obj) {
             return true;
         }
-        if (obj == null || DecoderReuseEvaluation.class != obj.getClass()) {
-            return false;
+        if (obj != null && DecoderReuseEvaluation.class == obj.getClass()) {
+            DecoderReuseEvaluation decoderReuseEvaluation = (DecoderReuseEvaluation) obj;
+            if (this.result == decoderReuseEvaluation.result && this.discardReasons == decoderReuseEvaluation.discardReasons && this.decoderName.equals(decoderReuseEvaluation.decoderName) && this.oldFormat.equals(decoderReuseEvaluation.oldFormat) && this.newFormat.equals(decoderReuseEvaluation.newFormat)) {
+                return true;
+            }
         }
-        DecoderReuseEvaluation decoderReuseEvaluation = (DecoderReuseEvaluation) obj;
-        return this.result == decoderReuseEvaluation.result && this.discardReasons == decoderReuseEvaluation.discardReasons && this.decoderName.equals(decoderReuseEvaluation.decoderName) && this.oldFormat.equals(decoderReuseEvaluation.oldFormat) && this.newFormat.equals(decoderReuseEvaluation.newFormat);
+        return false;
     }
 
     public int hashCode() {

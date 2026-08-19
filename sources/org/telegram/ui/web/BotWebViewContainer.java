@@ -161,7 +161,7 @@ import org.telegram.ui.web.BotWebViewContainer;
 import org.telegram.ui.web.BrowserHistory;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BotWebViewContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean firstWebView = true;
     private static HashMap rotatedTONHosts;
@@ -294,7 +294,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         this.notifyLocationChecked = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$new$59();
+                r0.notifyEvent("location_checked", BotWebViewContainer.this.location.checkObject());
             }
         };
         this.lastDialogType = -1;
@@ -327,17 +327,16 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.web.BotWebViewContainer$1$1$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            BotWebViewContainer.1.1.this.lambda$setImageBitmapByKey$0(valueAnimator);
+                            BotWebViewContainer.1.1.$r8$lambda$4NXBzkF8fPM_vGYaKqx5-b49NP0(BotWebViewContainer.1.1.this, valueAnimator);
                         }
                     });
                     duration.start();
                     return imageBitmapByKey;
                 }
 
-                /* JADX INFO: Access modifiers changed from: private */
-                public /* synthetic */ void lambda$setImageBitmapByKey$0(ValueAnimator valueAnimator) {
+                public static /* synthetic */ void $r8$lambda$4NXBzkF8fPM_vGYaKqx5-b49NP0(1 r1, ValueAnimator valueAnimator) {
                     ((BackupImageView) 1.this).imageReceiver.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                    invalidate();
+                    r1.invalidate();
                 }
             }
 
@@ -660,9 +659,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
         if (z && this.webView != null && this.flickerView != null) {
             AnimatorSet animatorSet = new AnimatorSet();
-            MyWebView myWebView4 = this.webView;
             Property property = View.ALPHA;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(myWebView4, (Property<MyWebView, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.flickerView, (Property<BackupImageView, Float>) property, 0.0f));
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.webView, (Property<MyWebView, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.flickerView, (Property<BackupImageView, Float>) property, 0.0f));
             animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.BotWebViewContainer.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
@@ -671,9 +669,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             });
             animatorSet.start();
         } else {
-            MyWebView myWebView5 = this.webView;
-            if (myWebView5 != null) {
-                myWebView5.setAlpha(1.0f);
+            MyWebView myWebView4 = this.webView;
+            if (myWebView4 != null) {
+                myWebView4.setAlpha(1.0f);
             }
             BackupImageView backupImageView = this.flickerView;
             if (backupImageView != null) {
@@ -724,18 +722,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         this.onPermissionsRequestResultCallback = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$runWithPermissions$0(consumer, strArr);
+                consumer.accept(Boolean.valueOf(BotWebViewContainer.this.checkPermissions(strArr)));
             }
         };
         Activity activity = this.parentActivity;
         if (activity != null) {
             activity.requestPermissions(strArr, 4000);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$runWithPermissions$0(Consumer consumer, String[] strArr) {
-        consumer.accept(Boolean.valueOf(checkPermissions(strArr)));
     }
 
     public boolean isPageLoaded() {
@@ -966,16 +959,19 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             setupFlickerParams(false);
             return;
         }
-        Iterator<TLRPC.TL_attachMenuBot> it = MediaDataController.getInstance(i).getAttachMenuBots().bots.iterator();
+        ArrayList<TLRPC.TL_attachMenuBot> arrayList = MediaDataController.getInstance(i).getAttachMenuBots().bots;
+        int size = arrayList.size();
+        int i2 = 0;
         while (true) {
-            if (!it.hasNext()) {
+            if (i2 >= size) {
                 tL_attachMenuBot = null;
                 break;
-            } else {
-                tL_attachMenuBot = it.next();
-                if (tL_attachMenuBot.bot_id == j) {
-                    break;
-                }
+            }
+            TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i2);
+            i2++;
+            tL_attachMenuBot = tL_attachMenuBot2;
+            if (tL_attachMenuBot.bot_id == j) {
+                break;
             }
         }
         boolean z = true;
@@ -1050,31 +1046,30 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         NotificationCenter.getInstance(this.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$reload$1();
+                BotWebViewContainer.$r8$lambda$yppCkL3c8nWAT3OIteCr5HwtJ_s(BotWebViewContainer.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$reload$1() {
-        if (this.isSettingsButtonVisible) {
-            this.isSettingsButtonVisible = false;
-            Delegate delegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$yppCkL3c8nWAT3OIteCr5HwtJ_s(BotWebViewContainer botWebViewContainer) {
+        if (botWebViewContainer.isSettingsButtonVisible) {
+            botWebViewContainer.isSettingsButtonVisible = false;
+            Delegate delegate = botWebViewContainer.delegate;
             if (delegate != null) {
                 delegate.onSetSettingsButtonVisible(false);
             }
         }
-        checkCreateWebView();
-        this.isPageLoaded = false;
-        this.lastClickMs = 0L;
-        this.hasUserPermissions = false;
-        MyWebView myWebView = this.webView;
+        botWebViewContainer.checkCreateWebView();
+        botWebViewContainer.isPageLoaded = false;
+        botWebViewContainer.lastClickMs = 0L;
+        botWebViewContainer.hasUserPermissions = false;
+        MyWebView myWebView = botWebViewContainer.webView;
         if (myWebView != null) {
             myWebView.onResume();
-            this.webView.reload();
+            botWebViewContainer.webView.reload();
         }
-        updateKeyboardFocusable();
-        BotSensors botSensors = this.sensors;
+        botWebViewContainer.updateKeyboardFocusable();
+        BotSensors botSensors = botWebViewContainer.sensors;
         if (botSensors != null) {
             botSensors.stopAll();
         }
@@ -1089,24 +1084,23 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         NotificationCenter.getInstance(i).doOnIdle(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$loadUrl$2(str);
+                BotWebViewContainer.$r8$lambda$QLg-WOeqntRncImNGyrUmTw1lDo(BotWebViewContainer.this, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUrl$2(String str) {
-        this.isPageLoaded = false;
-        this.lastClickMs = 0L;
-        this.hasUserPermissions = false;
-        this.mUrl = str;
-        checkCreateWebView();
-        MyWebView myWebView = this.webView;
+    public static /* synthetic */ void $r8$lambda$QLg-WOeqntRncImNGyrUmTw1lDo(BotWebViewContainer botWebViewContainer, String str) {
+        botWebViewContainer.isPageLoaded = false;
+        botWebViewContainer.lastClickMs = 0L;
+        botWebViewContainer.hasUserPermissions = false;
+        botWebViewContainer.mUrl = str;
+        botWebViewContainer.checkCreateWebView();
+        MyWebView myWebView = botWebViewContainer.webView;
         if (myWebView != null) {
             myWebView.onResume();
-            this.webView.loadUrl(str);
+            botWebViewContainer.webView.loadUrl(str);
         }
-        updateKeyboardFocusable();
+        botWebViewContainer.updateKeyboardFocusable();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1223,17 +1217,16 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         NotificationCenter.getInstance(this.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$evaluateJs$3(z, str);
+                BotWebViewContainer.$r8$lambda$hldEizPj3DzLqaHt9ylkEY_RJqk(BotWebViewContainer.this, z, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$evaluateJs$3(boolean z, String str) {
+    public static /* synthetic */ void $r8$lambda$hldEizPj3DzLqaHt9ylkEY_RJqk(BotWebViewContainer botWebViewContainer, boolean z, String str) {
         if (z) {
-            checkCreateWebView();
+            botWebViewContainer.checkCreateWebView();
         }
-        MyWebView myWebView = this.webView;
+        MyWebView myWebView = botWebViewContainer.webView;
         if (myWebView == null) {
             return;
         }
@@ -1290,14 +1283,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         NotificationCenter.getInstance(i).doOnIdle(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.lambda$notifyEvent$4(BotWebViewContainer.MyWebView.this, str, jSONObject);
+                BotWebViewContainer.MyWebView.this.evaluateJS("window.Telegram.WebView.receiveEvent('" + str + "', " + jSONObject + ");");
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$notifyEvent$4(MyWebView myWebView, String str, JSONObject jSONObject) {
-        myWebView.evaluateJS("window.Telegram.WebView.receiveEvent('" + str + "', " + jSONObject + ");");
     }
 
     public void setWebViewScrollListener(WebViewScrollListener webViewScrollListener) {
@@ -1337,10 +1325,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
         if (this.trustedOrigin != null && !TextUtils.equals(getOriginHost(), this.trustedOrigin)) {
             d("onWebEventReceived ignore " + str);
-            return;
         }
         d("onWebEventReceived " + str + " " + str2);
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "actionBarColor":
             case "navigationBarColor":
@@ -1381,7 +1368,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestUrlAuth, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda5
                                     @Override // org.telegram.tgnet.RequestDelegate
                                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                        BotWebViewContainer.this.lambda$onWebEventReceived$6(tL_messages_requestUrlAuth, optString, originHost, tLObject, tL_error);
+                                        BotWebViewContainer.$r8$lambda$_gCnj99tTTkm8jpqLyEwBPS4Sy0(BotWebViewContainer.this, tL_messages_requestUrlAuth, optString, originHost, tLObject, tL_error);
                                     }
                                 }, 2);
                                 break;
@@ -1421,36 +1408,36 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onWebEventReceived$6(final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final String str2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$_gCnj99tTTkm8jpqLyEwBPS4Sy0(final BotWebViewContainer botWebViewContainer, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final String str2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onWebEventReceived$5(tLObject, tL_messages_requestUrlAuth, str, tL_error, str2);
+                BotWebViewContainer.$r8$lambda$gLvgno8HWN7WFUumK9szgGP3OTk(BotWebViewContainer.this, tLObject, tL_messages_requestUrlAuth, str, tL_error, str2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onWebEventReceived$5(TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_error tL_error, String str2) {
+    public static /* synthetic */ void $r8$lambda$gLvgno8HWN7WFUumK9szgGP3OTk(BotWebViewContainer botWebViewContainer, TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_error tL_error, String str2) {
+        botWebViewContainer.getClass();
         if (tLObject == null) {
             if (tL_error != null) {
                 if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    BulletinFactory.of(this, this.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str2), Theme.getColor(Theme.key_undo_cancelColor, this.resourcesProvider))).show();
+                    BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str2), Theme.getColor(Theme.key_undo_cancelColor, botWebViewContainer.resourcesProvider))).show();
                     return;
                 } else {
-                    BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
+                    BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError(tL_error);
                     return;
                 }
             }
             return;
         }
         if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
-            OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, null, false, this);
+            OAuthSheet.handle(false, botWebViewContainer.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, null, false, botWebViewContainer);
         } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
-            OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, this);
+            OAuthSheet.handle(false, botWebViewContainer.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, botWebViewContainer);
         } else if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
-            AlertsCreator.showOpenUrlAlert(getContext(), str, false, true, true, false, 0L, (Browser.Progress) null, (Theme.ResourcesProvider) null);
+            AlertsCreator.showOpenUrlAlert(botWebViewContainer.getContext(), str, false, true, true, false, 0L, (Browser.Progress) null, (Theme.ResourcesProvider) null);
         }
     }
 
@@ -1489,75 +1476,66 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0d8d A[ADDED_TO_REGION, REMOVE, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x0d8e  */
-    /* JADX WARN: Removed duplicated region for block: B:469:0x1250  */
-    /* JADX WARN: Removed duplicated region for block: B:471:0x125c  */
-    /* JADX WARN: Removed duplicated region for block: B:663:0x04e4  */
-    /* JADX WARN: Removed duplicated region for block: B:667:0x04f2 A[Catch: Exception -> 0x04b6, TRY_LEAVE, TryCatch #6 {Exception -> 0x04b6, blocks: (B:649:0x0497, B:651:0x04a7, B:653:0x04ad, B:656:0x04b8, B:667:0x04f2, B:670:0x04e9, B:672:0x04ed, B:673:0x04cd, B:676:0x04d7), top: B:648:0x0497 }] */
-    /* JADX WARN: Removed duplicated region for block: B:672:0x04ed A[Catch: Exception -> 0x04b6, TryCatch #6 {Exception -> 0x04b6, blocks: (B:649:0x0497, B:651:0x04a7, B:653:0x04ad, B:656:0x04b8, B:667:0x04f2, B:670:0x04e9, B:672:0x04ed, B:673:0x04cd, B:676:0x04d7), top: B:648:0x0497 }] */
-    /* JADX WARN: Removed duplicated region for block: B:730:0x0736  */
-    /* JADX WARN: Removed duplicated region for block: B:737:0x07f3 A[Catch: Exception -> 0x071c, TRY_LEAVE, TryCatch #14 {Exception -> 0x071c, blocks: (B:721:0x06f3, B:737:0x07f3, B:741:0x073e, B:743:0x0743, B:757:0x0783, B:758:0x0786, B:759:0x0789, B:760:0x075d, B:763:0x0767, B:766:0x076f, B:769:0x078c, B:770:0x0796, B:782:0x07dd, B:783:0x07e1, B:784:0x07e5, B:785:0x07e9, B:786:0x07ed, B:787:0x079a, B:790:0x07a4, B:793:0x07ae, B:796:0x07b8, B:799:0x07c2, B:802:0x0712, B:805:0x071f, B:808:0x0729), top: B:720:0x06f3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:752:0x077c  */
-    /* JADX WARN: Removed duplicated region for block: B:759:0x0789 A[Catch: Exception -> 0x071c, TryCatch #14 {Exception -> 0x071c, blocks: (B:721:0x06f3, B:737:0x07f3, B:741:0x073e, B:743:0x0743, B:757:0x0783, B:758:0x0786, B:759:0x0789, B:760:0x075d, B:763:0x0767, B:766:0x076f, B:769:0x078c, B:770:0x0796, B:782:0x07dd, B:783:0x07e1, B:784:0x07e5, B:785:0x07e9, B:786:0x07ed, B:787:0x079a, B:790:0x07a4, B:793:0x07ae, B:796:0x07b8, B:799:0x07c2, B:802:0x0712, B:805:0x071f, B:808:0x0729), top: B:720:0x06f3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:769:0x078c A[Catch: Exception -> 0x071c, TryCatch #14 {Exception -> 0x071c, blocks: (B:721:0x06f3, B:737:0x07f3, B:741:0x073e, B:743:0x0743, B:757:0x0783, B:758:0x0786, B:759:0x0789, B:760:0x075d, B:763:0x0767, B:766:0x076f, B:769:0x078c, B:770:0x0796, B:782:0x07dd, B:783:0x07e1, B:784:0x07e5, B:785:0x07e9, B:786:0x07ed, B:787:0x079a, B:790:0x07a4, B:793:0x07ae, B:796:0x07b8, B:799:0x07c2, B:802:0x0712, B:805:0x071f, B:808:0x0729), top: B:720:0x06f3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:835:0x0e81  */
+    /* JADX WARN: Removed duplicated region for block: B:1016:0x0eac  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0dc1  */
+    /* JADX WARN: Removed duplicated region for block: B:265:? A[ADDED_TO_REGION, REMOVE, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:470:0x1266  */
+    /* JADX WARN: Removed duplicated region for block: B:472:0x1272  */
+    /* JADX WARN: Removed duplicated region for block: B:676:0x077e  */
+    /* JADX WARN: Removed duplicated region for block: B:683:0x083f A[Catch: Exception -> 0x0763, TRY_LEAVE, TryCatch #20 {Exception -> 0x0763, blocks: (B:667:0x0739, B:683:0x083f, B:687:0x0786, B:689:0x078b, B:703:0x07cd, B:704:0x07d0, B:705:0x07d3, B:706:0x07a5, B:709:0x07b0, B:712:0x07b8, B:715:0x07d6, B:716:0x07e0, B:728:0x0829, B:729:0x082d, B:730:0x0831, B:731:0x0835, B:732:0x0839, B:733:0x07e4, B:736:0x07ef, B:739:0x07f9, B:742:0x0803, B:745:0x080e, B:748:0x0759, B:751:0x0766, B:754:0x0771), top: B:666:0x0739 }] */
+    /* JADX WARN: Removed duplicated region for block: B:698:0x07c6  */
+    /* JADX WARN: Removed duplicated region for block: B:705:0x07d3 A[Catch: Exception -> 0x0763, TryCatch #20 {Exception -> 0x0763, blocks: (B:667:0x0739, B:683:0x083f, B:687:0x0786, B:689:0x078b, B:703:0x07cd, B:704:0x07d0, B:705:0x07d3, B:706:0x07a5, B:709:0x07b0, B:712:0x07b8, B:715:0x07d6, B:716:0x07e0, B:728:0x0829, B:729:0x082d, B:730:0x0831, B:731:0x0835, B:732:0x0839, B:733:0x07e4, B:736:0x07ef, B:739:0x07f9, B:742:0x0803, B:745:0x080e, B:748:0x0759, B:751:0x0766, B:754:0x0771), top: B:666:0x0739 }] */
+    /* JADX WARN: Removed duplicated region for block: B:715:0x07d6 A[Catch: Exception -> 0x0763, TryCatch #20 {Exception -> 0x0763, blocks: (B:667:0x0739, B:683:0x083f, B:687:0x0786, B:689:0x078b, B:703:0x07cd, B:704:0x07d0, B:705:0x07d3, B:706:0x07a5, B:709:0x07b0, B:712:0x07b8, B:715:0x07d6, B:716:0x07e0, B:728:0x0829, B:729:0x082d, B:730:0x0831, B:731:0x0835, B:732:0x0839, B:733:0x07e4, B:736:0x07ef, B:739:0x07f9, B:742:0x0803, B:745:0x080e, B:748:0x0759, B:751:0x0766, B:754:0x0771), top: B:666:0x0739 }] */
+    /* JADX WARN: Removed duplicated region for block: B:989:0x052b  */
+    /* JADX WARN: Removed duplicated region for block: B:993:0x0539 A[Catch: Exception -> 0x04fc, TRY_LEAVE, TryCatch #39 {Exception -> 0x04fc, blocks: (B:975:0x04de, B:977:0x04ee, B:979:0x04f4, B:982:0x04fe, B:993:0x0539, B:996:0x0530, B:998:0x0534, B:999:0x0513, B:1002:0x051e), top: B:974:0x04de }] */
+    /* JADX WARN: Removed duplicated region for block: B:998:0x0534 A[Catch: Exception -> 0x04fc, TryCatch #39 {Exception -> 0x04fc, blocks: (B:975:0x04de, B:977:0x04ee, B:979:0x04f4, B:982:0x04fe, B:993:0x0539, B:996:0x0530, B:998:0x0534, B:999:0x0513, B:1002:0x051e), top: B:974:0x04de }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onEventReceived(final BotWebViewProxy botWebViewProxy, String str, String str2) {
         String str3;
         char c;
-        final String str4;
+        boolean z;
+        boolean z2;
+        boolean z3;
+        JSONArray jSONArray;
+        char c2;
+        int i;
+        int i2;
+        String str4;
+        String str5;
+        long j;
+        final String str6;
         TextView textView;
         TextView textView2;
         TextView textView3;
-        String str5;
-        String str6;
-        boolean z;
-        String str7;
-        boolean z2;
-        long j;
-        boolean z3;
-        boolean z4;
-        boolean z5;
-        JSONArray jSONArray;
-        char c2;
         char c3;
+        char c4;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         BotWebViewVibrationEffect botWebViewVibrationEffect2;
-        char c4;
-        int parseColor;
         char c5;
-        int i;
-        int i2;
-        boolean z6;
+        int parseColor;
+        String str7;
+        boolean z4;
         LaunchActivity launchActivity;
         BottomSheetTabs.WebTabData webTabData;
-        String str8;
-        String str9;
         BottomSheet bottomSheet;
         long j2;
-        long j3;
         int i3;
         TLRPC.User user;
         JSONObject jSONObject;
-        long j4;
+        long j3;
         int checkSelfPermission;
-        boolean z7;
-        boolean z8;
-        String str10;
+        String str8;
+        final String str9;
+        final String str10;
         String str11;
-        String str12;
-        final String str13;
-        final String str14;
-        String str15;
-        final String str16;
+        final String str12;
+        JSONObject jSONObject2;
         JSONObject optJSONObject;
-        boolean z9;
-        String str17;
-        long j5;
-        boolean z10;
+        boolean z5;
+        String str13;
+        boolean z6;
         if (this.bot) {
             if (this.webView == null || this.delegate == null) {
                 d("onEventReceived " + str + ": no webview or delegate!");
@@ -1567,14 +1545,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 str3 = "device_storage_failed";
                 if (!TextUtils.equals(getOriginHost(), this.trustedOrigin)) {
                     d("onEventReceived ignore " + str);
-                    return;
                 }
             } else {
                 str3 = "device_storage_failed";
             }
             d("onEventReceived " + str);
-            str.hashCode();
-            long j6 = 1000;
+            str.getClass();
+            long j4 = 1000;
             switch (str.hashCode()) {
                 case -2016939055:
                     if (str.equals("web_app_invoke_custom_method")) {
@@ -2032,10 +2009,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 case 0:
                     if (this.botUser != null) {
                         try {
-                            JSONObject jSONObject2 = new JSONObject(str2);
-                            final String string = jSONObject2.getString("req_id");
-                            String string2 = jSONObject2.getString("method");
-                            String obj = jSONObject2.get("params").toString();
+                            JSONObject jSONObject3 = new JSONObject(str2);
+                            final String string = jSONObject3.getString("req_id");
+                            String string2 = jSONObject3.getString("method");
+                            String obj = jSONObject3.get("params").toString();
                             final int i4 = this.currentAccount;
                             final MyWebView myWebView = this.webView;
                             TL_bots.invokeWebViewCustomMethod invokewebviewcustommethod = new TL_bots.invokeWebViewCustomMethod();
@@ -2047,7 +2024,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             ConnectionsManager.getInstance(i4).sendRequest(invokewebviewcustommethod, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda25
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$21(string, i4, myWebView, tLObject, tL_error);
+                                    BotWebViewContainer.$r8$lambda$Px_Q2zhpAOt1oomXNevljxIeJF4(BotWebViewContainer.this, string, i4, myWebView, tLObject, tL_error);
                                 }
                             });
                             break;
@@ -2074,11 +2051,11 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case 3:
                     try {
-                        JSONObject jSONObject3 = new JSONObject(str2);
-                        Uri parse = Uri.parse(jSONObject3.optString("url"));
-                        String optString = jSONObject3.optString("try_browser");
+                        JSONObject jSONObject4 = new JSONObject(str2);
+                        Uri parse = Uri.parse(jSONObject4.optString("url"));
+                        String optString = jSONObject4.optString("try_browser");
                         if (MessagesController.getInstance(this.currentAccount).webAppAllowedProtocols != null && MessagesController.getInstance(this.currentAccount).webAppAllowedProtocols.contains(parse.getScheme())) {
-                            onOpenUri(parse, optString, jSONObject3.optBoolean("try_instant_view"), true, false);
+                            onOpenUri(parse, optString, jSONObject4.optBoolean("try_instant_view"), true, false);
                             break;
                         }
                     } catch (Exception e2) {
@@ -2092,9 +2069,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             this.downloads = BotDownloads.get(getContext(), this.currentAccount, this.botUser.id);
                         }
                         try {
-                            JSONObject jSONObject4 = new JSONObject(str2);
-                            final String string3 = jSONObject4.getString("url");
-                            final String string4 = jSONObject4.getString("file_name");
+                            JSONObject jSONObject5 = new JSONObject(str2);
+                            final String string3 = jSONObject5.getString("url");
+                            final String string4 = jSONObject5.getString("file_name");
                             if (this.downloads.getCached(string3) != null) {
                                 this.downloads.download(string3, string4);
                                 notifyEvent("file_download_requested", obj("status", "downloading"));
@@ -2107,7 +2084,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(checkdownloadfileparams, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda24
                                     @Override // org.telegram.tgnet.RequestDelegate
                                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                        BotWebViewContainer.this.lambda$onEventReceived$45(string3, string4, tLObject, tL_error);
+                                        BotWebViewContainer.$r8$lambda$WqHrRe-09XgNKOj_E-upP91AFOM(BotWebViewContainer.this, string3, string4, tLObject, tL_error);
                                     }
                                 });
                                 break;
@@ -2136,10 +2113,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             if (System.currentTimeMillis() - this.lastDialogCooldownTime <= 3000) {
                                 break;
                             } else {
-                                JSONObject jSONObject5 = new JSONObject(str2);
-                                String optString2 = jSONObject5.optString("title", null);
-                                String string5 = jSONObject5.getString("message");
-                                JSONArray jSONArray2 = jSONObject5.getJSONArray("buttons");
+                                JSONObject jSONObject6 = new JSONObject(str2);
+                                String optString2 = jSONObject6.optString("title", null);
+                                String string5 = jSONObject6.getString("message");
+                                JSONArray jSONArray2 = jSONObject6.getJSONArray("buttons");
                                 AlertDialog.Builder message = new AlertDialog.Builder(getContext()).setTitle(optString2).setMessage(string5);
                                 ArrayList arrayList = new ArrayList();
                                 for (int i6 = 0; i6 < jSONArray2.length(); i6++) {
@@ -2154,7 +2131,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                         message.setPositiveButton(popupButton.text, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda20
                                             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                             public final void onClick(AlertDialog alertDialog, int i7) {
-                                                BotWebViewContainer.this.lambda$onEventReceived$7(popupButton, atomicBoolean, alertDialog, i7);
+                                                BotWebViewContainer.$r8$lambda$3uV12iotRBDF6BS6ArYlbsMUAK4(BotWebViewContainer.this, popupButton, atomicBoolean, alertDialog, i7);
                                             }
                                         });
                                     }
@@ -2163,7 +2140,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                         message.setNegativeButton(popupButton2.text, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda21
                                             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                             public final void onClick(AlertDialog alertDialog, int i7) {
-                                                BotWebViewContainer.this.lambda$onEventReceived$8(popupButton2, atomicBoolean, alertDialog, i7);
+                                                BotWebViewContainer.$r8$lambda$JuUcgfOvF9aqBlSw2AXWFR7bBAY(BotWebViewContainer.this, popupButton2, atomicBoolean, alertDialog, i7);
                                             }
                                         });
                                     }
@@ -2172,14 +2149,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                         message.setNeutralButton(popupButton3.text, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda22
                                             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                             public final void onClick(AlertDialog alertDialog, int i7) {
-                                                BotWebViewContainer.this.lambda$onEventReceived$9(popupButton3, atomicBoolean, alertDialog, i7);
+                                                BotWebViewContainer.$r8$lambda$yYhdJGFo6OivjOfA9q_VQKNZDtk(BotWebViewContainer.this, popupButton3, atomicBoolean, alertDialog, i7);
                                             }
                                         });
                                     }
                                     message.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda23
                                         @Override // android.content.DialogInterface.OnDismissListener
                                         public final void onDismiss(DialogInterface dialogInterface) {
-                                            BotWebViewContainer.this.lambda$onEventReceived$10(atomicBoolean, dialogInterface);
+                                            BotWebViewContainer.$r8$lambda$jLTVU7PRvXCJRaw7MRUCEb7qZ4c(BotWebViewContainer.this, atomicBoolean, dialogInterface);
                                         }
                                     });
                                     this.currentDialog = message.show();
@@ -2215,6 +2192,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         final String optString3 = new JSONObject(str2).optString("slug");
                         if (this.currentPaymentSlug != null) {
                             onInvoiceStatusUpdate(optString3, "cancelled", true);
+                            break;
                         } else {
                             this.currentPaymentSlug = optString3;
                             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
@@ -2224,11 +2202,11 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda19
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$12(optString3, tL_inputInvoiceSlug, tLObject, tL_error);
+                                    BotWebViewContainer.$r8$lambda$GXU5ScDLKzxoUJ4WEi70ns4vfcs(BotWebViewContainer.this, optString3, tL_inputInvoiceSlug, tLObject, tL_error);
                                 }
                             });
+                            break;
                         }
-                        break;
                     } catch (JSONException e5) {
                         FileLog.e(e5);
                         return;
@@ -2243,23 +2221,23 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         }
                         try {
                             i3 = jSONObject.getInt("duration");
-                            j3 = j2;
                         } catch (Exception unused2) {
-                            j3 = j2;
                             i3 = 0;
+                            long j5 = j2;
                             user = this.botUser;
                             if (user != null) {
                             }
                         }
+                        long j52 = j2;
                         user = this.botUser;
                         if (user != null) {
                             notifyEvent("emoji_status_failed", obj("error", "UNKNOWN_ERROR"));
                             break;
                         } else {
-                            SetupEmojiStatusSheet.show(this.currentAccount, user, j3, i3, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda18
+                            SetupEmojiStatusSheet.show(this.currentAccount, user, j52, i3, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda18
                                 @Override // org.telegram.messenger.Utilities.Callback2
                                 public final void run(Object obj2, Object obj3) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$38((String) obj2, (TLRPC.Document) obj3);
+                                    BotWebViewContainer.$r8$lambda$Nzp7Q0ZEfplSKtY29NHByVbRsm8(BotWebViewContainer.this, (String) obj2, (TLRPC.Document) obj3);
                                 }
                             });
                             break;
@@ -2268,35 +2246,34 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case '\b':
                     try {
-                        JSONObject jSONObject6 = new JSONObject(str2);
-                        boolean optBoolean = jSONObject6.optBoolean("is_active", false);
-                        String trim = jSONObject6.optString("text", this.lastSecondaryButtonText).trim();
-                        boolean z11 = jSONObject6.optBoolean("is_visible", false) && !TextUtils.isEmpty(trim);
-                        int parseColor2 = jSONObject6.has("color") ? Color.parseColor(jSONObject6.optString("color")) : this.lastSecondaryButtonColor;
-                        int parseColor3 = jSONObject6.has("text_color") ? Color.parseColor(jSONObject6.optString("text_color")) : this.lastSecondaryButtonTextColor;
-                        boolean z12 = jSONObject6.optBoolean("is_progress_visible", false) && z11;
-                        boolean z13 = jSONObject6.optBoolean("has_shine_effect", false) && z11;
-                        String optString4 = jSONObject6.has("position") ? jSONObject6.optString("position") : this.lastSecondaryButtonPosition;
+                        JSONObject jSONObject7 = new JSONObject(str2);
+                        boolean optBoolean = jSONObject7.optBoolean("is_active", false);
+                        String trim = jSONObject7.optString("text", this.lastSecondaryButtonText).trim();
+                        boolean z7 = jSONObject7.optBoolean("is_visible", false) && !TextUtils.isEmpty(trim);
+                        int parseColor2 = jSONObject7.has("color") ? Color.parseColor(jSONObject7.optString("color")) : this.lastSecondaryButtonColor;
+                        int parseColor3 = jSONObject7.has("text_color") ? Color.parseColor(jSONObject7.optString("text_color")) : this.lastSecondaryButtonTextColor;
+                        boolean z8 = jSONObject7.optBoolean("is_progress_visible", false) && z7;
+                        boolean z9 = jSONObject7.optBoolean("has_shine_effect", false) && z7;
+                        String optString4 = jSONObject7.has("position") ? jSONObject7.optString("position") : this.lastSecondaryButtonPosition;
                         if (optString4 == null) {
                             optString4 = "left";
                         }
                         try {
-                            j4 = Long.parseLong(jSONObject6.getString("icon_custom_emoji_id"));
+                            j3 = Long.parseLong(jSONObject7.getString("icon_custom_emoji_id"));
                         } catch (Throwable unused3) {
-                            j4 = 0;
+                            j3 = 0;
                         }
                         this.lastSecondaryButtonColor = parseColor2;
                         this.lastSecondaryButtonTextColor = parseColor3;
                         this.lastSecondaryButtonText = trim;
                         this.lastSecondaryButtonPosition = optString4;
                         this.secondaryButtonData = str2;
-                        this.delegate.onSetupSecondaryButton(z11, optBoolean, trim, j4, parseColor2, parseColor3, z12, z13, optString4);
+                        this.delegate.onSetupSecondaryButton(z7, optBoolean, trim, j3, parseColor2, parseColor3, z8, z9, optString4);
                         break;
                     } catch (Exception e6) {
                         FileLog.e(e6);
                         return;
                     }
-                    break;
                 case '\t':
                     try {
                         this.delegate.onWebAppSetupClosingBehavior(new JSONObject(str2).optBoolean("need_confirmation"));
@@ -2346,9 +2323,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 case 11:
                     if (ignoreDialog(4)) {
                         try {
-                            JSONObject jSONObject7 = new JSONObject();
-                            jSONObject7.put("status", "cancelled");
-                            notifyEvent("phone_requested", jSONObject7);
+                            JSONObject jSONObject8 = new JSONObject();
+                            jSONObject8.put("status", "cancelled");
+                            notifyEvent("phone_requested", jSONObject8);
                             break;
                         } catch (Exception e9) {
                             FileLog.e(e9);
@@ -2367,8 +2344,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         } else {
                             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AreYouSureShareMyContactInfoWebapp, userName)));
                         }
-                        final boolean z14 = MessagesController.getInstance(this.currentAccount).blockePeers.indexOfKey(this.botUser.id) >= 0;
-                        if (z14) {
+                        final boolean z10 = MessagesController.getInstance(this.currentAccount).blockePeers.indexOfKey(this.botUser.id) >= 0;
+                        if (z10) {
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AreYouSureShareMyContactInfoBotUnblock));
                         }
@@ -2376,7 +2353,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         builder.setPositiveButton(LocaleController.getString(R.string.ShareContact), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda14
                             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                             public final void onClick(AlertDialog alertDialog, int i8) {
-                                BotWebViewContainer.this.lambda$onEventReceived$23(strArr, z14, i7, myWebView2, alertDialog, i8);
+                                BotWebViewContainer.$r8$lambda$yLJ5XEHe1w4zqF_UeZHEIhuUebg(BotWebViewContainer.this, strArr, z10, i7, myWebView2, alertDialog, i8);
                             }
                         });
                         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda15
@@ -2388,7 +2365,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         showDialog(4, builder.create(), new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda16
                             @Override // java.lang.Runnable
                             public final void run() {
-                                BotWebViewContainer.lambda$onEventReceived$25(strArr, i7, myWebView2);
+                                BotWebViewContainer.$r8$lambda$Y9Ca0-W-75ZkbjgWhRuPbDHpLiI(strArr, i7, myWebView2);
                             }
                         });
                         break;
@@ -2432,21 +2409,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     }
                     break;
                 case 16:
-                    if ((getParent() instanceof ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer) && ((ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer) getParent()).isSwipeInProgress()) {
-                        z7 = true;
-                        z8 = true;
-                    } else {
-                        z7 = true;
-                        z8 = false;
-                    }
-                    invalidateViewPortHeight(!z8, z7);
+                    invalidateViewPortHeight(!((getParent() instanceof ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer) && ((ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer) getParent()).isSwipeInProgress()), true);
                     break;
                 case 17:
                     if (!this.isRequestingPageOpen && this.botUser != null && System.currentTimeMillis() - this.lastClickMs <= 10000) {
                         SetupEmojiStatusSheet.askPermission(this.currentAccount, this.botUser.id, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda13
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
-                                BotWebViewContainer.this.lambda$onEventReceived$39((Boolean) obj2, (String) obj3);
+                                BotWebViewContainer.$r8$lambda$Eb2qCGsLekNqm9HPkHD0ZdlmAOs(BotWebViewContainer.this, (Boolean) obj2, (String) obj3);
                             }
                         });
                         break;
@@ -2461,55 +2431,54 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         notifyEvent("device_orientation_failed", obj("error", "UNSUPPORTED"));
                         break;
                     }
-                    break;
                 case 19:
-                    String str18 = str3;
+                    String str14 = str3;
                     if (this.botUser != null) {
                         if (this.storage == null) {
                             Context context2 = getContext();
                             int i9 = this.currentAccount;
                             this.storage = new BotStorage(context2, i9, UserConfig.getInstance(i9).getClientUserId(), this.botUser.id, false);
                         }
-                        setStorageKey(this.storage, str2, "device_storage_key_saved", str18);
+                        setStorageKey(this.storage, str2, "device_storage_key_saved", str14);
                         break;
                     }
                     break;
                 case 20:
-                    String str19 = str3;
+                    String str15 = str3;
                     if (this.botUser != null) {
                         if (this.storage == null) {
                             Context context3 = getContext();
                             int i10 = this.currentAccount;
                             this.storage = new BotStorage(context3, i10, UserConfig.getInstance(i10).getClientUserId(), this.botUser.id, false);
                         }
-                        getStorageKey(this.storage, str2, "device_storage_key_received", str19);
+                        getStorageKey(this.storage, str2, "device_storage_key_received", str15);
                         break;
                     }
                     break;
                 case 21:
                     try {
-                        str9 = new JSONObject(str2).getString("reason");
+                        str5 = new JSONObject(str2).getString("reason");
                     } catch (Exception unused4) {
-                        str9 = null;
+                        str5 = null;
                     }
                     createBiometry();
                     BotBiometry botBiometry = this.biometry;
                     if (botBiometry != null) {
                         if (!botBiometry.access_granted) {
                             try {
-                                JSONObject jSONObject8 = new JSONObject();
-                                jSONObject8.put("status", "failed");
-                                notifyEvent("biometry_auth_requested", jSONObject8);
+                                JSONObject jSONObject9 = new JSONObject();
+                                jSONObject9.put("status", "failed");
+                                notifyEvent("biometry_auth_requested", jSONObject9);
                                 break;
                             } catch (Exception e10) {
                                 FileLog.e(e10);
                                 return;
                             }
                         } else {
-                            botBiometry.requestToken(str9, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda12
+                            botBiometry.requestToken(str5, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda12
                                 @Override // org.telegram.messenger.Utilities.Callback2
                                 public final void run(Object obj2, Object obj3) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$31((Boolean) obj2, (String) obj3);
+                                    BotWebViewContainer.$r8$lambda$y4bBR0qkd95-uGhFgeHcxPpo7Mk(BotWebViewContainer.this, (Boolean) obj2, (String) obj3);
                                 }
                             });
                             break;
@@ -2518,42 +2487,42 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case 22:
                     try {
-                        z3 = new JSONObject(str2).getBoolean("locked");
+                        z = new JSONObject(str2).getBoolean("locked");
                     } catch (Exception unused5) {
-                        z3 = false;
+                        z = false;
                     }
                     Delegate delegate2 = this.delegate;
                     if (delegate2 != null) {
-                        delegate2.onOrientationLockChanged(z3);
+                        delegate2.onOrientationLockChanged(z);
                         break;
                     }
                     break;
                 case 23:
                     try {
                         jSONArray = new JSONArray(str2);
-                        z4 = jSONArray.optBoolean(0, true);
+                        z2 = jSONArray.optBoolean(0, true);
                     } catch (Exception unused6) {
-                        z4 = true;
+                        z2 = true;
                     }
                     try {
-                        z5 = jSONArray.optBoolean(1, true);
+                        z3 = jSONArray.optBoolean(1, true);
                     } catch (Exception unused7) {
-                        z5 = true;
-                        d("allowScroll " + z4 + " " + z5);
+                        z3 = true;
+                        d("allowScroll " + z2 + " " + z3);
                         if (!(getParent() instanceof ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer)) {
                             return;
                         }
                     }
-                    d("allowScroll " + z4 + " " + z5);
+                    d("allowScroll " + z2 + " " + z3);
                     if (!(getParent() instanceof ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer)) {
-                        ((ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer) getParent()).allowThisScroll(z4, z5);
+                        ((ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer) getParent()).allowThisScroll(z2, z3);
                         break;
                     }
                 case 24:
                     try {
-                        JSONObject jSONObject9 = new JSONObject(str2);
-                        String optString5 = jSONObject9.optString("path_full");
-                        boolean optBoolean2 = jSONObject9.optBoolean("force_request", false);
+                        JSONObject jSONObject10 = new JSONObject(str2);
+                        String optString5 = jSONObject10.optString("path_full");
+                        boolean optBoolean2 = jSONObject10.optBoolean("force_request", false);
                         if (optString5.startsWith("/")) {
                             optString5 = optString5.substring(1);
                         }
@@ -2579,58 +2548,50 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         this.lastClickMs = 0L;
                         this.lastPostStoryMs = System.currentTimeMillis();
                         try {
-                            JSONObject jSONObject10 = new JSONObject(str2);
-                            str10 = jSONObject10.optString("media_url");
+                            jSONObject2 = new JSONObject(str2);
+                            str8 = jSONObject2.optString("media_url");
+                        } catch (Exception e12) {
+                            e = e12;
+                            str8 = null;
+                        }
+                        try {
+                            str9 = jSONObject2.optString("text");
                             try {
-                                str11 = jSONObject10.optString("text");
-                                try {
-                                    optJSONObject = jSONObject10.optJSONObject("widget_link");
-                                } catch (Exception e12) {
-                                    e = e12;
-                                    str12 = null;
-                                    FileLog.e(e);
-                                    str15 = str10;
-                                    str14 = str11;
-                                    str13 = str12;
-                                    str16 = null;
-                                    if (str15 != null) {
-                                        return;
-                                    }
-                                }
+                                optJSONObject = jSONObject2.optJSONObject("widget_link");
                             } catch (Exception e13) {
                                 e = e13;
-                                str11 = null;
-                                str12 = null;
+                                str10 = null;
                                 FileLog.e(e);
-                                str15 = str10;
-                                str14 = str11;
-                                str13 = str12;
-                                str16 = null;
-                                if (str15 != null) {
+                                str11 = str8;
+                                str12 = null;
+                                if (str11 != null) {
+                                    return;
                                 }
                             }
                         } catch (Exception e14) {
                             e = e14;
+                            str9 = null;
                             str10 = null;
+                            FileLog.e(e);
+                            str11 = str8;
+                            str12 = null;
+                            if (str11 != null) {
+                            }
                         }
                         if (optJSONObject != null) {
-                            str12 = optJSONObject.optString("url");
+                            str10 = optJSONObject.optString("url");
                             try {
-                                str16 = optJSONObject.optString("name");
-                                str15 = str10;
-                                str14 = str11;
-                                str13 = str12;
+                                str12 = optJSONObject.optString("name");
+                                str11 = str8;
                             } catch (Exception e15) {
                                 e = e15;
                                 FileLog.e(e);
-                                str15 = str10;
-                                str14 = str11;
-                                str13 = str12;
-                                str16 = null;
-                                if (str15 != null) {
+                                str11 = str8;
+                                str12 = null;
+                                if (str11 != null) {
                                 }
                             }
-                            if (str15 != null) {
+                            if (str11 != null) {
                                 if (!MessagesController.getInstance(this.currentAccount).storiesEnabled()) {
                                     new PremiumFeatureBottomSheet(new BaseFragment() { // from class: org.telegram.ui.web.BotWebViewContainer.5
                                         @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -2670,19 +2631,18 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                     new HttpGetFileTask(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda11
                                         @Override // org.telegram.messenger.Utilities.Callback
                                         public final void run(Object obj2) {
-                                            BotWebViewContainer.this.lambda$onEventReceived$36(alertDialog, str14, str13, str16, (File) obj2);
+                                            BotWebViewContainer.$r8$lambda$FhEYSwvA-sOopx_2DJ7_E46tMF4(BotWebViewContainer.this, alertDialog, str9, str10, str12, (File) obj2);
                                         }
-                                    }, null).execute(str15);
+                                    }, null).execute(str11);
                                     alertDialog.showDelayed(250L);
                                     break;
                                 }
                             }
                         } else {
-                            str15 = str10;
-                            str14 = str11;
-                            str13 = null;
-                            str16 = null;
-                            if (str15 != null) {
+                            str11 = str8;
+                            str10 = null;
+                            str12 = null;
+                            if (str11 != null) {
                             }
                         }
                     }
@@ -2698,7 +2658,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             this.location.request(new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda9
                                 @Override // org.telegram.messenger.Utilities.Callback2
                                 public final void run(Object obj2, Object obj3) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$41((Boolean) obj2, (Boolean) obj3);
+                                    BotWebViewContainer.$r8$lambda$fCcl6l_AfqiE2aEpkEOUocLKcHA(BotWebViewContainer.this, (Boolean) obj2, (Boolean) obj3);
                                 }
                             });
                             break;
@@ -2706,7 +2666,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             this.location.requestObject(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda10
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj2) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$42((JSONObject) obj2);
+                                    BotWebViewContainer.this.notifyEvent("location_requested", (JSONObject) obj2);
                                 }
                             });
                             break;
@@ -2716,10 +2676,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 case 28:
                     BotSensors botSensors2 = this.delegate.getBotSensors();
                     try {
-                        j6 = new JSONObject(str2).getLong("refresh_rate");
+                        j4 = new JSONObject(str2).getLong("refresh_rate");
                     } catch (Exception unused8) {
                     }
-                    long clamp = Utilities.clamp(j6, 1000L, 20L);
+                    long clamp = Utilities.clamp(j4, 1000L, 20L);
                     if (botSensors2 != null && botSensors2.startGyroscope(clamp)) {
                         notifyEvent("gyroscope_started", null);
                         break;
@@ -2730,13 +2690,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case 29:
                     try {
-                        z6 = new JSONObject(str2).optBoolean("return_back");
+                        z4 = new JSONObject(str2).optBoolean("return_back");
                     } catch (Exception e16) {
                         FileLog.e(e16);
-                        z6 = false;
+                        z4 = false;
                     }
                     this.delegate.onCloseRequested(null);
-                    if (z6) {
+                    if (z4) {
                         if (this.wasOpenedByLinkIntent && LaunchActivity.instance != null) {
                             Activity findActivity = AndroidUtilities.findActivity(getContext());
                             if (findActivity == null) {
@@ -2831,10 +2791,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 case '$':
                     BotSensors botSensors4 = this.delegate.getBotSensors();
                     try {
-                        j6 = new JSONObject(str2).getLong("refresh_rate");
+                        j4 = new JSONObject(str2).getLong("refresh_rate");
                     } catch (Exception unused9) {
                     }
-                    long clamp2 = Utilities.clamp(j6, 1000L, 20L);
+                    long clamp2 = Utilities.clamp(j4, 1000L, 20L);
                     if (botSensors4 != null && botSensors4.startAccelerometer(clamp2)) {
                         notifyEvent("accelerometer_started", null);
                         break;
@@ -2864,12 +2824,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 BotShareSheet.share(getContext(), this.currentAccount, this.botUser.id, string7, this.resourcesProvider, new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda7
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        BotWebViewContainer.this.lambda$onEventReceived$46();
+                                        BotWebViewContainer.$r8$lambda$pNSCoNoNVQH0pa7Sa6YhtwvWtUU(BotWebViewContainer.this);
                                     }
                                 }, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda8
                                     @Override // org.telegram.messenger.Utilities.Callback2
                                     public final void run(Object obj2, Object obj3) {
-                                        BotWebViewContainer.this.lambda$onEventReceived$48(botWebViewProxy, (String) obj2, (ArrayList) obj3);
+                                        BotWebViewContainer.$r8$lambda$MZ6TrZltEjOu1jd7fSmzLBuuUFk(BotWebViewContainer.this, botWebViewProxy, (String) obj2, (ArrayList) obj3);
                                     }
                                 });
                                 break;
@@ -2901,7 +2861,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             MediaDataController.getInstance(this.currentAccount).installShortcut(this.botUser.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda32
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj2) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$37((Boolean) obj2);
+                                    BotWebViewContainer.$r8$lambda$-Koxb0RlqEW8R297mAIl3qWKpjU(BotWebViewContainer.this, (Boolean) obj2);
                                 }
                             });
                             break;
@@ -2910,16 +2870,16 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case '*':
                     try {
-                        z9 = new JSONObject(str2).optBoolean("blur", true);
+                        z5 = new JSONObject(str2).optBoolean("blur", true);
                     } catch (Exception unused10) {
-                        z9 = true;
+                        z5 = true;
                     }
-                    String onFullscreenRequested = this.delegate.onFullscreenRequested(true, z9);
+                    String onFullscreenRequested = this.delegate.onFullscreenRequested(true, z5);
                     if (onFullscreenRequested != null) {
                         notifyEvent("fullscreen_failed", obj("error", onFullscreenRequested));
                         break;
                     } else {
-                        notifyEvent("fullscreen_changed", obj("is_fullscreen", Boolean.TRUE, "blur_enabled", Boolean.valueOf(z9)));
+                        notifyEvent("fullscreen_changed", obj("is_fullscreen", Boolean.TRUE, "blur_enabled", Boolean.valueOf(z5)));
                         break;
                     }
                 case '+':
@@ -2960,14 +2920,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     if (this.onVerifiedAge != null) {
                         try {
                             JSONObject jSONObject12 = new JSONObject(str2);
-                            final boolean z15 = jSONObject12.getBoolean("passed");
+                            final boolean z11 = jSONObject12.getBoolean("passed");
                             final double d = jSONObject12.getDouble("age");
                             final String optString6 = jSONObject12.optString("gender");
                             final double optDouble = jSONObject12.optDouble("genderProbability");
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda31
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    BotWebViewContainer.this.lambda$onEventReceived$49(z15, d, optString6, optDouble);
+                                    BotWebViewContainer.this.onVerifiedAge.run(Boolean.valueOf(z11), Double.valueOf(d), optString6, Double.valueOf(optDouble));
                                 }
                             });
                             break;
@@ -3008,54 +2968,54 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case '1':
                     try {
-                        str5 = new JSONObject(str2).getString("reason");
+                        str4 = new JSONObject(str2).getString("reason");
                     } catch (Exception unused11) {
-                        str5 = null;
+                        str4 = null;
                     }
                     createBiometry();
                     BotBiometry botBiometry2 = this.biometry;
                     if (botBiometry2 != null) {
-                        boolean z16 = botBiometry2.access_requested;
-                        if (z16) {
+                        boolean z12 = botBiometry2.access_requested;
+                        if (z12) {
                             notifyBiometryReceived();
                             break;
                         } else if (!botBiometry2.access_granted) {
                             final Runnable[] runnableArr = {new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda27
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    BotWebViewContainer.this.lambda$onEventReceived$26();
+                                    BotWebViewContainer.$r8$lambda$CgNy5VrFYTHJyTvE0nvPrrq48mg(BotWebViewContainer.this);
                                 }
                             }};
                             AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext(), this.resourcesProvider);
-                            if (TextUtils.isEmpty(str5)) {
+                            if (TextUtils.isEmpty(str4)) {
                                 builder2.setTitle(LocaleController.getString(R.string.BotAllowBiometryTitle));
                                 builder2.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotAllowBiometryMessage, UserObject.getUserName(this.botUser))));
                             } else {
                                 builder2.setTitle(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotAllowBiometryMessage, UserObject.getUserName(this.botUser))));
-                                builder2.setMessage(str5);
+                                builder2.setMessage(str4);
                             }
                             builder2.setPositiveButton(LocaleController.getString(R.string.Allow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda28
                                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                 public final void onClick(AlertDialog alertDialog2, int i17) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$28(runnableArr, alertDialog2, i17);
+                                    BotWebViewContainer.$r8$lambda$PQmpbf8IAW8Leg__D5NV4fNhexU(BotWebViewContainer.this, runnableArr, alertDialog2, i17);
                                 }
                             });
                             builder2.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda29
                                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                                 public final void onClick(AlertDialog alertDialog2, int i17) {
-                                    BotWebViewContainer.this.lambda$onEventReceived$29(runnableArr, alertDialog2, i17);
+                                    BotWebViewContainer.$r8$lambda$-CI-Vm328ckHxSQHivxqBlVy-eI(BotWebViewContainer.this, runnableArr, alertDialog2, i17);
                                 }
                             });
                             builder2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda30
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
-                                    BotWebViewContainer.lambda$onEventReceived$30(runnableArr, dialogInterface);
+                                    BotWebViewContainer.$r8$lambda$gFHAK0CBbUCCK1DFE62CWJmWiMc(runnableArr, dialogInterface);
                                 }
                             });
                             builder2.show();
                             break;
                         } else {
-                            if (!z16) {
+                            if (!z12) {
                                 botBiometry2.access_requested = true;
                                 botBiometry2.save();
                             }
@@ -3071,70 +3031,70 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         int hashCode = optString7.hashCode();
                         if (hashCode == -1184809658) {
                             if (optString7.equals("impact")) {
-                                c2 = 0;
-                                if (c2 != 0) {
+                                c3 = 0;
+                                if (c3 != 0) {
                                 }
                                 if (botWebViewVibrationEffect2 == null) {
                                 }
                             }
-                            c2 = 65535;
-                            if (c2 != 0) {
+                            c3 = 65535;
+                            if (c3 != 0) {
                             }
                             if (botWebViewVibrationEffect2 == null) {
                             }
                         } else if (hashCode != 193071555) {
                             if (hashCode == 595233003 && optString7.equals("notification")) {
-                                c2 = 1;
-                                if (c2 != 0) {
+                                c3 = 1;
+                                if (c3 != 0) {
                                     String optString8 = jSONObject13.optString("impact_style");
                                     switch (optString8.hashCode()) {
                                         case -1078030475:
                                             if (optString8.equals("medium")) {
-                                                c3 = 1;
+                                                c4 = 1;
                                                 break;
                                             }
-                                            c3 = 65535;
+                                            c4 = 65535;
                                             break;
                                         case 3535914:
                                             if (optString8.equals("soft")) {
-                                                c3 = 4;
+                                                c4 = 4;
                                                 break;
                                             }
-                                            c3 = 65535;
+                                            c4 = 65535;
                                             break;
                                         case 99152071:
                                             if (optString8.equals("heavy")) {
-                                                c3 = 2;
+                                                c4 = 2;
                                                 break;
                                             }
-                                            c3 = 65535;
+                                            c4 = 65535;
                                             break;
                                         case 102970646:
                                             if (optString8.equals("light")) {
-                                                c3 = 0;
+                                                c4 = 0;
                                                 break;
                                             }
-                                            c3 = 65535;
+                                            c4 = 65535;
                                             break;
                                         case 108511787:
                                             if (optString8.equals("rigid")) {
-                                                c3 = 3;
+                                                c4 = 3;
                                                 break;
                                             }
-                                            c3 = 65535;
+                                            c4 = 65535;
                                             break;
                                         default:
-                                            c3 = 65535;
+                                            c4 = 65535;
                                             break;
                                     }
-                                    if (c3 == 0) {
+                                    if (c4 == 0) {
                                         botWebViewVibrationEffect = BotWebViewVibrationEffect.IMPACT_LIGHT;
-                                    } else if (c3 == 1) {
+                                    } else if (c4 == 1) {
                                         botWebViewVibrationEffect = BotWebViewVibrationEffect.IMPACT_MEDIUM;
-                                    } else if (c3 == 2) {
+                                    } else if (c4 == 2) {
                                         botWebViewVibrationEffect = BotWebViewVibrationEffect.IMPACT_HEAVY;
-                                    } else if (c3 != 3) {
-                                        if (c3 == 4) {
+                                    } else if (c4 != 3) {
+                                        if (c4 == 4) {
                                             botWebViewVibrationEffect = BotWebViewVibrationEffect.IMPACT_SOFT;
                                         }
                                         botWebViewVibrationEffect2 = null;
@@ -3142,51 +3102,51 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                         botWebViewVibrationEffect = BotWebViewVibrationEffect.IMPACT_RIGID;
                                     }
                                     botWebViewVibrationEffect2 = botWebViewVibrationEffect;
-                                } else if (c2 == 1) {
+                                } else if (c3 == 1) {
                                     String optString9 = jSONObject13.optString("notification_type");
                                     int hashCode2 = optString9.hashCode();
                                     if (hashCode2 == -1867169789) {
                                         if (optString9.equals("success")) {
-                                            c4 = 1;
-                                            if (c4 != 0) {
+                                            c5 = 1;
+                                            if (c5 != 0) {
                                             }
                                             botWebViewVibrationEffect2 = botWebViewVibrationEffect;
                                         }
-                                        c4 = 65535;
-                                        if (c4 != 0) {
+                                        c5 = 65535;
+                                        if (c5 != 0) {
                                         }
                                         botWebViewVibrationEffect2 = botWebViewVibrationEffect;
                                     } else if (hashCode2 != 96784904) {
                                         if (hashCode2 == 1124446108 && optString9.equals("warning")) {
-                                            c4 = 2;
-                                            if (c4 != 0) {
+                                            c5 = 2;
+                                            if (c5 != 0) {
                                                 botWebViewVibrationEffect = BotWebViewVibrationEffect.NOTIFICATION_ERROR;
-                                            } else if (c4 == 1) {
+                                            } else if (c5 == 1) {
                                                 botWebViewVibrationEffect = BotWebViewVibrationEffect.NOTIFICATION_SUCCESS;
-                                            } else if (c4 != 2) {
+                                            } else if (c5 != 2) {
                                                 botWebViewVibrationEffect2 = null;
                                             } else {
                                                 botWebViewVibrationEffect = BotWebViewVibrationEffect.NOTIFICATION_WARNING;
                                             }
                                             botWebViewVibrationEffect2 = botWebViewVibrationEffect;
                                         }
-                                        c4 = 65535;
-                                        if (c4 != 0) {
+                                        c5 = 65535;
+                                        if (c5 != 0) {
                                         }
                                         botWebViewVibrationEffect2 = botWebViewVibrationEffect;
                                     } else {
                                         if (optString9.equals("error")) {
-                                            c4 = 0;
-                                            if (c4 != 0) {
+                                            c5 = 0;
+                                            if (c5 != 0) {
                                             }
                                             botWebViewVibrationEffect2 = botWebViewVibrationEffect;
                                         }
-                                        c4 = 65535;
-                                        if (c4 != 0) {
+                                        c5 = 65535;
+                                        if (c5 != 0) {
                                         }
                                         botWebViewVibrationEffect2 = botWebViewVibrationEffect;
                                     }
-                                } else if (c2 != 2) {
+                                } else if (c3 != 2) {
                                     botWebViewVibrationEffect2 = null;
                                 } else {
                                     botWebViewVibrationEffect = BotWebViewVibrationEffect.SELECTION_CHANGE;
@@ -3197,21 +3157,21 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                     break;
                                 }
                             }
-                            c2 = 65535;
-                            if (c2 != 0) {
+                            c3 = 65535;
+                            if (c3 != 0) {
                             }
                             if (botWebViewVibrationEffect2 == null) {
                             }
                         } else {
                             if (optString7.equals("selection_change")) {
-                                c2 = 2;
-                                if (c2 != 0) {
+                                c3 = 2;
+                                if (c3 != 0) {
                                 }
                                 if (botWebViewVibrationEffect2 == null) {
                                 }
                             }
-                            c2 = 65535;
-                            if (c2 != 0) {
+                            c3 = 65535;
+                            if (c3 != 0) {
                             }
                             if (botWebViewVibrationEffect2 == null) {
                             }
@@ -3227,25 +3187,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         JSONObject jSONObject14 = new JSONObject(str2);
                         boolean optBoolean4 = jSONObject14.optBoolean("is_active", false);
                         String trim2 = jSONObject14.optString("text", this.lastButtonText).trim();
-                        boolean z17 = jSONObject14.optBoolean("is_visible", false) && !TextUtils.isEmpty(trim2);
+                        boolean z13 = jSONObject14.optBoolean("is_visible", false) && !TextUtils.isEmpty(trim2);
                         int parseColor4 = jSONObject14.has("color") ? Color.parseColor(jSONObject14.optString("color")) : this.lastButtonColor;
                         int parseColor5 = jSONObject14.has("text_color") ? Color.parseColor(jSONObject14.optString("text_color")) : this.lastButtonTextColor;
-                        if (jSONObject14.optBoolean("is_progress_visible", false) && z17) {
-                            str6 = "has_shine_effect";
-                            z = true;
-                        } else {
-                            str6 = "has_shine_effect";
-                            z = false;
-                        }
-                        if (jSONObject14.optBoolean(str6, false) && z17) {
-                            str7 = "icon_custom_emoji_id";
-                            z2 = true;
-                        } else {
-                            str7 = "icon_custom_emoji_id";
-                            z2 = false;
-                        }
+                        boolean z14 = jSONObject14.optBoolean("is_progress_visible", false) && z13;
+                        boolean z15 = jSONObject14.optBoolean("has_shine_effect", false) && z13;
                         try {
-                            j = Long.parseLong(jSONObject14.getString(str7));
+                            j = Long.parseLong(jSONObject14.getString("icon_custom_emoji_id"));
                         } catch (Throwable unused12) {
                             j = 0;
                         }
@@ -3253,7 +3201,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         this.lastButtonTextColor = parseColor5;
                         this.lastButtonText = trim2;
                         this.buttonData = str2;
-                        this.delegate.onSetupMainButton(z17, optBoolean4, trim2, j, parseColor4, parseColor5, z, z2);
+                        this.delegate.onSetupMainButton(z13, optBoolean4, trim2, j, parseColor4, parseColor5, z14, z15);
                         break;
                     } catch (Exception e24) {
                         FileLog.e(e24);
@@ -3282,27 +3230,27 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case '6':
                     if (this.botUser != null && Build.VERSION.SDK_INT >= 26) {
-                        str17 = MediaDataController.getInstance(this.currentAccount).isShortcutAdded(this.botUser.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT) ? "added" : "missed";
+                        str13 = MediaDataController.getInstance(this.currentAccount).isShortcutAdded(this.botUser.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT) ? "added" : "missed";
                     } else {
-                        str17 = "unsupported";
+                        str13 = "unsupported";
                     }
-                    notifyEvent("home_screen_checked", obj("status", str17));
+                    notifyEvent("home_screen_checked", obj("status", str13));
                     break;
                 case '7':
                     try {
-                        str4 = new JSONObject(str2).optString("req_id");
+                        str6 = new JSONObject(str2).optString("req_id");
                     } catch (Exception e27) {
                         FileLog.e(e27);
-                        str4 = null;
+                        str6 = null;
                     }
-                    if (str4 != null) {
+                    if (str6 != null) {
                         TL_bots.getRequestedWebViewButton getrequestedwebviewbutton = new TL_bots.getRequestedWebViewButton();
                         getrequestedwebviewbutton.bot = MessagesController.getInstance(this.currentAccount).getInputUser(this.botUser);
-                        getrequestedwebviewbutton.webapp_req_id = str4;
+                        getrequestedwebviewbutton.webapp_req_id = str6;
                         ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getrequestedwebviewbutton, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda26
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
-                                BotWebViewContainer.this.lambda$onEventReceived$57(str4, (TL_keyboard.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
+                                BotWebViewContainer.$r8$lambda$lqFBsisDkJCNGvVJtYERukbQd0A(BotWebViewContainer.this, str6, (TL_keyboard.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
                             }
                         });
                         break;
@@ -3312,15 +3260,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     BotSensors botSensors6 = this.delegate.getBotSensors();
                     try {
                         JSONObject jSONObject15 = new JSONObject(str2);
-                        j6 = jSONObject15.getLong("refresh_rate");
-                        z10 = jSONObject15.optBoolean("need_absolute", false);
-                        j5 = j6;
+                        j4 = jSONObject15.getLong("refresh_rate");
+                        z6 = jSONObject15.optBoolean("need_absolute", false);
                     } catch (Exception unused13) {
-                        j5 = j6;
-                        z10 = false;
+                        z6 = false;
                     }
-                    long clamp3 = Utilities.clamp(j5, 1000L, 20L);
-                    if (botSensors6 != null && botSensors6.startOrientation(z10, clamp3)) {
+                    long clamp3 = Utilities.clamp(j4, 1000L, 20L);
+                    if (botSensors6 != null && botSensors6.startOrientation(z6, clamp3)) {
                         notifyEvent("device_orientation_started", null);
                         break;
                     } else {
@@ -3333,9 +3279,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         JSONObject jSONObject16 = new JSONObject(str2);
                         final String string8 = jSONObject16.getString("token");
                         try {
-                            str8 = jSONObject16.getString("reason");
+                            str7 = jSONObject16.getString("reason");
                         } catch (Exception unused14) {
-                            str8 = null;
+                            str7 = null;
                         }
                         createBiometry();
                         BotBiometry botBiometry3 = this.biometry;
@@ -3351,10 +3297,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                     return;
                                 }
                             } else {
-                                botBiometry3.updateToken(str8, string8, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda17
+                                botBiometry3.updateToken(str7, string8, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda17
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj2) {
-                                        BotWebViewContainer.this.lambda$onEventReceived$32(string8, (Boolean) obj2);
+                                        BotWebViewContainer.$r8$lambda$RW51g3PiR4Nm1fJRrn8DB4Hp1j4(BotWebViewContainer.this, string8, (Boolean) obj2);
                                     }
                                 });
                                 break;
@@ -3404,10 +3350,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             int hashCode3 = optString12.hashCode();
                             if (hashCode3 != -1265068311) {
                                 if (hashCode3 == -210781868 && optString12.equals("secondary_bg_color")) {
-                                    c5 = 1;
-                                    if (c5 != 0) {
+                                    c2 = 1;
+                                    if (c2 != 0) {
                                         i = Theme.key_windowBackgroundWhite;
-                                    } else if (c5 != 1) {
+                                    } else if (c2 != 1) {
                                         i2 = -1;
                                         if (i2 >= 0) {
                                             this.delegate.onWebAppSetActionBarColor(i2, Theme.getColor(i2, this.resourcesProvider), false);
@@ -3420,23 +3366,23 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                     if (i2 >= 0) {
                                     }
                                 }
-                                c5 = 65535;
-                                if (c5 != 0) {
+                                c2 = 65535;
+                                if (c2 != 0) {
                                 }
                                 i2 = i;
                                 if (i2 >= 0) {
                                 }
                             } else {
                                 if (optString12.equals("bg_color")) {
-                                    c5 = 0;
-                                    if (c5 != 0) {
+                                    c2 = 0;
+                                    if (c2 != 0) {
                                     }
                                     i2 = i;
                                     if (i2 >= 0) {
                                     }
                                 }
-                                c5 = 65535;
-                                if (c5 != 0) {
+                                c2 = 65535;
+                                if (c2 != 0) {
                                 }
                                 i2 = i;
                                 if (i2 >= 0) {
@@ -3478,7 +3424,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         ConnectionsManager.getInstance(this.currentAccount).sendRequest(cansendmessage, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda6
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                BotWebViewContainer.this.lambda$onEventReceived$19(i17, myWebView3, tLObject, tL_error);
+                                BotWebViewContainer.$r8$lambda$eIpxr9bxEz3eMcRwyZQeS97eaug(BotWebViewContainer.this, i17, myWebView3, tLObject, tL_error);
                             }
                         });
                         break;
@@ -3493,92 +3439,91 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$7(PopupButton popupButton, AtomicBoolean atomicBoolean, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$3uV12iotRBDF6BS6ArYlbsMUAK4(BotWebViewContainer botWebViewContainer, PopupButton popupButton, AtomicBoolean atomicBoolean, AlertDialog alertDialog, int i) {
+        botWebViewContainer.getClass();
         alertDialog.dismiss();
         try {
-            this.lastClickMs = System.currentTimeMillis();
-            notifyEvent("popup_closed", new JSONObject().put("button_id", popupButton.id));
+            botWebViewContainer.lastClickMs = System.currentTimeMillis();
+            botWebViewContainer.notifyEvent("popup_closed", new JSONObject().put("button_id", popupButton.id));
             atomicBoolean.set(true);
         } catch (JSONException e) {
             FileLog.e(e);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$8(PopupButton popupButton, AtomicBoolean atomicBoolean, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$JuUcgfOvF9aqBlSw2AXWFR7bBAY(BotWebViewContainer botWebViewContainer, PopupButton popupButton, AtomicBoolean atomicBoolean, AlertDialog alertDialog, int i) {
+        botWebViewContainer.getClass();
         alertDialog.dismiss();
         try {
-            this.lastClickMs = System.currentTimeMillis();
-            notifyEvent("popup_closed", new JSONObject().put("button_id", popupButton.id));
+            botWebViewContainer.lastClickMs = System.currentTimeMillis();
+            botWebViewContainer.notifyEvent("popup_closed", new JSONObject().put("button_id", popupButton.id));
             atomicBoolean.set(true);
         } catch (JSONException e) {
             FileLog.e(e);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$9(PopupButton popupButton, AtomicBoolean atomicBoolean, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$yYhdJGFo6OivjOfA9q_VQKNZDtk(BotWebViewContainer botWebViewContainer, PopupButton popupButton, AtomicBoolean atomicBoolean, AlertDialog alertDialog, int i) {
+        botWebViewContainer.getClass();
         alertDialog.dismiss();
         try {
-            this.lastClickMs = System.currentTimeMillis();
-            notifyEvent("popup_closed", new JSONObject().put("button_id", popupButton.id));
+            botWebViewContainer.lastClickMs = System.currentTimeMillis();
+            botWebViewContainer.notifyEvent("popup_closed", new JSONObject().put("button_id", popupButton.id));
             atomicBoolean.set(true);
         } catch (JSONException e) {
             FileLog.e(e);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$10(AtomicBoolean atomicBoolean, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$jLTVU7PRvXCJRaw7MRUCEb7qZ4c(BotWebViewContainer botWebViewContainer, AtomicBoolean atomicBoolean, DialogInterface dialogInterface) {
+        botWebViewContainer.getClass();
         if (!atomicBoolean.get()) {
-            notifyEvent("popup_closed", new JSONObject());
+            botWebViewContainer.notifyEvent("popup_closed", new JSONObject());
         }
-        this.currentDialog = null;
-        this.lastDialogClosed = System.currentTimeMillis();
+        botWebViewContainer.currentDialog = null;
+        botWebViewContainer.lastDialogClosed = System.currentTimeMillis();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$12(final String str, final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$GXU5ScDLKzxoUJ4WEi70ns4vfcs(final BotWebViewContainer botWebViewContainer, final String str, final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$11(tL_error, str, tL_inputInvoiceSlug, tLObject);
+                BotWebViewContainer.$r8$lambda$MXthtFFSJMxMqjmJ381vCimbCas(BotWebViewContainer.this, tL_error, str, tL_inputInvoiceSlug, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$11(TLRPC.TL_error tL_error, String str, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$MXthtFFSJMxMqjmJ381vCimbCas(BotWebViewContainer botWebViewContainer, TLRPC.TL_error tL_error, String str, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, TLObject tLObject) {
         if (tL_error != null) {
-            onInvoiceStatusUpdate(str, "failed");
+            botWebViewContainer.onInvoiceStatusUpdate(str, "failed");
         } else {
-            this.delegate.onWebAppOpenInvoice(tL_inputInvoiceSlug, str, tLObject);
+            botWebViewContainer.delegate.onWebAppOpenInvoice(tL_inputInvoiceSlug, str, tLObject);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$19(final int i, final MyWebView myWebView, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$eIpxr9bxEz3eMcRwyZQeS97eaug(final BotWebViewContainer botWebViewContainer, final int i, final MyWebView myWebView, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda50
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$18(tLObject, i, myWebView, tL_error);
+                BotWebViewContainer.$r8$lambda$GOCJnDeoAq1sQ9eVaN3I_wi_H7s(BotWebViewContainer.this, tLObject, i, myWebView, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$18(TLObject tLObject, final int i, final MyWebView myWebView, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$GOCJnDeoAq1sQ9eVaN3I_wi_H7s(final BotWebViewContainer botWebViewContainer, TLObject tLObject, final int i, final MyWebView myWebView, TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
             if (tL_error != null) {
-                unknownError(tL_error.text);
+                botWebViewContainer.unknownError(tL_error.text);
                 return;
             } else {
                 final String[] strArr = {"cancelled"};
-                showDialog(3, new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.BotWebViewRequestWriteTitle)).setMessage(LocaleController.getString(R.string.BotWebViewRequestWriteMessage)).setPositiveButton(LocaleController.getString(R.string.BotWebViewRequestAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda51
+                botWebViewContainer.showDialog(3, new AlertDialog.Builder(botWebViewContainer.getContext()).setTitle(LocaleController.getString(R.string.BotWebViewRequestWriteTitle)).setMessage(LocaleController.getString(R.string.BotWebViewRequestWriteMessage)).setPositiveButton(LocaleController.getString(R.string.BotWebViewRequestAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda51
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
-                        BotWebViewContainer.this.lambda$onEventReceived$15(strArr, alertDialog, i2);
+                        BotWebViewContainer.$r8$lambda$g8d9ER4iIk6wDWjkkevyEsw9Kz4(BotWebViewContainer.this, strArr, alertDialog, i2);
                     }
                 }).setNegativeButton(LocaleController.getString(R.string.BotWebViewRequestDontAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda52
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
@@ -3588,7 +3533,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }).create(), new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda53
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotWebViewContainer.lambda$onEventReceived$17(strArr, i, myWebView);
+                        BotWebViewContainer.$r8$lambda$qXRhl_p8dL9DYtielvcD3tI08ZE(strArr, i, myWebView);
                     }
                 });
                 return;
@@ -3603,44 +3548,43 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$15(final String[] strArr, final AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$g8d9ER4iIk6wDWjkkevyEsw9Kz4(final BotWebViewContainer botWebViewContainer, final String[] strArr, final AlertDialog alertDialog, int i) {
+        botWebViewContainer.getClass();
         TL_bots.allowSendMessage allowsendmessage = new TL_bots.allowSendMessage();
-        allowsendmessage.bot = MessagesController.getInstance(this.currentAccount).getInputUser(this.botUser);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(allowsendmessage, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda60
+        allowsendmessage.bot = MessagesController.getInstance(botWebViewContainer.currentAccount).getInputUser(botWebViewContainer.botUser);
+        ConnectionsManager.getInstance(botWebViewContainer.currentAccount).sendRequest(allowsendmessage, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda60
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BotWebViewContainer.this.lambda$onEventReceived$14(strArr, alertDialog, tLObject, tL_error);
+                BotWebViewContainer.$r8$lambda$zvKaSzj1Qa8mtqrESNHjsF_psrg(BotWebViewContainer.this, strArr, alertDialog, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$14(final String[] strArr, final AlertDialog alertDialog, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$zvKaSzj1Qa8mtqrESNHjsF_psrg(final BotWebViewContainer botWebViewContainer, final String[] strArr, final AlertDialog alertDialog, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda61
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$13(tLObject, strArr, tL_error, alertDialog);
+                BotWebViewContainer.$r8$lambda$gvKITzydsf6Q09_O1B-NAnqC344(BotWebViewContainer.this, tLObject, strArr, tL_error, alertDialog);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$13(TLObject tLObject, String[] strArr, TLRPC.TL_error tL_error, AlertDialog alertDialog) {
+    public static /* synthetic */ void $r8$lambda$gvKITzydsf6Q09_O1B-NAnqC344(BotWebViewContainer botWebViewContainer, TLObject tLObject, String[] strArr, TLRPC.TL_error tL_error, AlertDialog alertDialog) {
+        botWebViewContainer.getClass();
         if (tLObject != null) {
             strArr[0] = "allowed";
             if (tLObject instanceof TLRPC.Updates) {
-                MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
+                MessagesController.getInstance(botWebViewContainer.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
             }
         }
         if (tL_error != null) {
-            unknownError(tL_error.text);
+            botWebViewContainer.unknownError(tL_error.text);
         }
         alertDialog.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onEventReceived$17(String[] strArr, int i, MyWebView myWebView) {
+    public static /* synthetic */ void $r8$lambda$qXRhl_p8dL9DYtielvcD3tI08ZE(String[] strArr, int i, MyWebView myWebView) {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("status", strArr[0]);
@@ -3650,18 +3594,18 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$21(final String str, final int i, final MyWebView myWebView, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Px_Q2zhpAOt1oomXNevljxIeJF4(final BotWebViewContainer botWebViewContainer, final String str, final int i, final MyWebView myWebView, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$20(str, tLObject, tL_error, i, myWebView);
+                BotWebViewContainer.$r8$lambda$MFUOZnAgEKRdp1xr3Zuc21rAb_I(BotWebViewContainer.this, str, tLObject, tL_error, i, myWebView);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$20(String str, TLObject tLObject, TLRPC.TL_error tL_error, int i, MyWebView myWebView) {
+    public static /* synthetic */ void $r8$lambda$MFUOZnAgEKRdp1xr3Zuc21rAb_I(BotWebViewContainer botWebViewContainer, String str, TLObject tLObject, TLRPC.TL_error tL_error, int i, MyWebView myWebView) {
+        botWebViewContainer.getClass();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("req_id", str);
@@ -3673,24 +3617,24 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             notifyEvent(i, myWebView, "custom_method_invoked", jSONObject);
         } catch (Exception e) {
             FileLog.e(e);
-            unknownError();
+            botWebViewContainer.unknownError();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$23(String[] strArr, boolean z, final int i, final MyWebView myWebView, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void $r8$lambda$yLJ5XEHe1w4zqF_UeZHEIhuUebg(final BotWebViewContainer botWebViewContainer, String[] strArr, boolean z, final int i, final MyWebView myWebView, AlertDialog alertDialog, int i2) {
+        botWebViewContainer.getClass();
         strArr[0] = null;
         alertDialog.dismiss();
         if (z) {
-            MessagesController.getInstance(this.currentAccount).unblockPeer(this.botUser.id, new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda47
+            MessagesController.getInstance(botWebViewContainer.currentAccount).unblockPeer(botWebViewContainer.botUser.id, new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda47
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewContainer.this.lambda$onEventReceived$22(i, myWebView);
+                    BotWebViewContainer.$r8$lambda$8U7-M4QWoUXKIPJHqq86sNDG1zg(BotWebViewContainer.this, i, myWebView);
                 }
             });
             return;
         }
-        SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(this.currentAccount).getCurrentUser(), this.botUser.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
+        SendMessagesHelper.getInstance(botWebViewContainer.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(botWebViewContainer.currentAccount).getCurrentUser(), botWebViewContainer.botUser.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("status", "sent");
@@ -3700,9 +3644,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$22(int i, MyWebView myWebView) {
-        SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(this.currentAccount).getCurrentUser(), this.botUser.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
+    public static /* synthetic */ void $r8$lambda$8U7-M4QWoUXKIPJHqq86sNDG1zg(BotWebViewContainer botWebViewContainer, int i, MyWebView myWebView) {
+        SendMessagesHelper.getInstance(botWebViewContainer.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(botWebViewContainer.currentAccount).getCurrentUser(), botWebViewContainer.botUser.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("status", "sent");
@@ -3712,8 +3655,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onEventReceived$25(String[] strArr, int i, MyWebView myWebView) {
+    public static /* synthetic */ void $r8$lambda$Y9Ca0-W-75ZkbjgWhRuPbDHpLiI(String[] strArr, int i, MyWebView myWebView) {
         if (strArr[0] == null) {
             return;
         }
@@ -3726,54 +3668,52 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$26() {
-        BotBiometry botBiometry = this.biometry;
+    public static /* synthetic */ void $r8$lambda$CgNy5VrFYTHJyTvE0nvPrrq48mg(BotWebViewContainer botWebViewContainer) {
+        BotBiometry botBiometry = botWebViewContainer.biometry;
         botBiometry.access_requested = true;
         botBiometry.save();
-        notifyBiometryReceived();
+        botWebViewContainer.notifyBiometryReceived();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$28(Runnable[] runnableArr, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$PQmpbf8IAW8Leg__D5NV4fNhexU(final BotWebViewContainer botWebViewContainer, Runnable[] runnableArr, AlertDialog alertDialog, int i) {
+        botWebViewContainer.getClass();
         if (runnableArr[0] != null) {
             runnableArr[0] = null;
         }
-        BotBiometry botBiometry = this.biometry;
+        BotBiometry botBiometry = botWebViewContainer.biometry;
         botBiometry.access_requested = true;
         botBiometry.save();
-        this.biometry.requestToken(null, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda45
+        botWebViewContainer.biometry.requestToken(null, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda45
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                BotWebViewContainer.this.lambda$onEventReceived$27((Boolean) obj, (String) obj2);
+                BotWebViewContainer.$r8$lambda$UgRk41ndqvasCe5TU1VOMMqaN4I(BotWebViewContainer.this, (Boolean) obj, (String) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$27(Boolean bool, String str) {
+    public static /* synthetic */ void $r8$lambda$UgRk41ndqvasCe5TU1VOMMqaN4I(BotWebViewContainer botWebViewContainer, Boolean bool, String str) {
+        botWebViewContainer.getClass();
         if (bool.booleanValue()) {
-            BotBiometry botBiometry = this.biometry;
+            BotBiometry botBiometry = botWebViewContainer.biometry;
             botBiometry.access_granted = true;
             botBiometry.save();
         }
-        notifyBiometryReceived();
+        botWebViewContainer.notifyBiometryReceived();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$29(Runnable[] runnableArr, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$-CI-Vm328ckHxSQHivxqBlVy-eI(BotWebViewContainer botWebViewContainer, Runnable[] runnableArr, AlertDialog alertDialog, int i) {
+        botWebViewContainer.getClass();
         if (runnableArr[0] != null) {
             runnableArr[0] = null;
         }
-        BotBiometry botBiometry = this.biometry;
+        BotBiometry botBiometry = botWebViewContainer.biometry;
         botBiometry.access_requested = true;
         botBiometry.disabled = true;
         botBiometry.save();
-        notifyBiometryReceived();
+        botWebViewContainer.notifyBiometryReceived();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onEventReceived$30(Runnable[] runnableArr, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$gFHAK0CBbUCCK1DFE62CWJmWiMc(Runnable[] runnableArr, DialogInterface dialogInterface) {
         Runnable runnable = runnableArr[0];
         if (runnable != null) {
             runnable.run();
@@ -3781,44 +3721,44 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$31(Boolean bool, String str) {
+    public static /* synthetic */ void $r8$lambda$y4bBR0qkd95-uGhFgeHcxPpo7Mk(BotWebViewContainer botWebViewContainer, Boolean bool, String str) {
+        botWebViewContainer.getClass();
         if (bool.booleanValue()) {
-            this.biometry.access_granted = true;
+            botWebViewContainer.biometry.access_granted = true;
         }
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("status", bool.booleanValue() ? "authorized" : "failed");
             jSONObject.put("token", str);
-            notifyEvent("biometry_auth_requested", jSONObject);
+            botWebViewContainer.notifyEvent("biometry_auth_requested", jSONObject);
         } catch (Exception e) {
             FileLog.e(e);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$32(String str, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$RW51g3PiR4Nm1fJRrn8DB4Hp1j4(BotWebViewContainer botWebViewContainer, String str, Boolean bool) {
+        botWebViewContainer.getClass();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("status", bool.booleanValue() ? TextUtils.isEmpty(str) ? "removed" : "updated" : "failed");
-            notifyEvent("biometry_token_updated", jSONObject);
+            botWebViewContainer.notifyEvent("biometry_token_updated", jSONObject);
         } catch (Exception e) {
             FileLog.e(e);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$36(final AlertDialog alertDialog, final String str, final String str2, final String str3, final File file) {
+    public static /* synthetic */ void $r8$lambda$FhEYSwvA-sOopx_2DJ7_E46tMF4(final BotWebViewContainer botWebViewContainer, final AlertDialog alertDialog, final String str, final String str2, final String str3, final File file) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda48
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$35(file, alertDialog, str, str2, str3);
+                BotWebViewContainer.$r8$lambda$8RoDHMieNiJ7V38eZSfkUcyFZf0(BotWebViewContainer.this, file, alertDialog, str, str2, str3);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$35(final File file, final AlertDialog alertDialog, final String str, final String str2, final String str3) {
+    public static /* synthetic */ void $r8$lambda$8RoDHMieNiJ7V38eZSfkUcyFZf0(final BotWebViewContainer botWebViewContainer, final File file, final AlertDialog alertDialog, final String str, final String str2, final String str3) {
+        botWebViewContainer.getClass();
         if (file == null) {
             alertDialog.dismissUnless(500L);
             return;
@@ -3827,45 +3767,42 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda56
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$33(iArr, file, alertDialog, str, str2, str3);
+                BotWebViewContainer.$r8$lambda$lbaekv9AbkriH6aaaL0w1uGpHsw(BotWebViewContainer.this, iArr, file, alertDialog, str, str2, str3);
             }
         };
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda57
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.lambda$onEventReceived$34(file, iArr, runnable);
+                BotWebViewContainer.$r8$lambda$5vDhNZmS1Gy5aEK62vD5qGc07_g(file, iArr, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$33(int[] iArr, File file, AlertDialog alertDialog, String str, String str2, String str3) {
+    public static /* synthetic */ void $r8$lambda$lbaekv9AbkriH6aaaL0w1uGpHsw(BotWebViewContainer botWebViewContainer, int[] iArr, File file, AlertDialog alertDialog, String str, String str2, String str3) {
         StoryRecorder.SourceView sourceView;
         StoryEntry fromPhotoShoot;
+        BotWebViewContainer botWebViewContainer2;
         File file2;
-        File file3;
+        botWebViewContainer.getClass();
         if (iArr[4] > 0) {
             int i = iArr[1];
             int i2 = iArr[2];
             int photoSize = i > AndroidUtilities.getPhotoSize() ? AndroidUtilities.getPhotoSize() : i;
             int photoSize2 = i2 > AndroidUtilities.getPhotoSize() ? AndroidUtilities.getPhotoSize() : i2;
             File makeCacheFile = StoryEntry.makeCacheFile(UserConfig.selectedAccount, "jpg");
-            AnimatedFileDrawable animatedFileDrawable = new AnimatedFileDrawable(file, true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, photoSize, photoSize2, null);
             sourceView = null;
+            AnimatedFileDrawable animatedFileDrawable = new AnimatedFileDrawable(file, true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, photoSize, photoSize2, null);
             Bitmap firstFrame = animatedFileDrawable.getFirstFrame(null);
             animatedFileDrawable.recycle();
             if (firstFrame != null) {
                 try {
-                    file3 = makeCacheFile;
-                    firstFrame.compress(Bitmap.CompressFormat.JPEG, 80, new FileOutputStream(file3));
+                    firstFrame.compress(Bitmap.CompressFormat.JPEG, 80, new FileOutputStream(makeCacheFile));
                 } catch (Exception e) {
                     FileLog.e(e);
                     file2 = null;
                 }
-            } else {
-                file3 = makeCacheFile;
             }
-            file2 = file3;
+            file2 = makeCacheFile;
             fromPhotoShoot = StoryEntry.fromVideoShoot(file, file2 == null ? null : file2.getAbsolutePath(), iArr[4]);
             fromPhotoShoot.width = i;
             fromPhotoShoot.height = i2;
@@ -3881,152 +3818,141 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         if (str != null) {
             fromPhotoShoot.caption = str;
         }
-        if (!TextUtils.isEmpty(str2) && UserConfig.getInstance(this.currentAccount).isPremium()) {
-            if (fromPhotoShoot.mediaEntities == null) {
-                fromPhotoShoot.mediaEntities = new ArrayList();
+        if (TextUtils.isEmpty(str2)) {
+            botWebViewContainer2 = botWebViewContainer;
+        } else {
+            botWebViewContainer2 = botWebViewContainer;
+            if (UserConfig.getInstance(botWebViewContainer2.currentAccount).isPremium()) {
+                if (fromPhotoShoot.mediaEntities == null) {
+                    fromPhotoShoot.mediaEntities = new ArrayList();
+                }
+                VideoEditedInfo.MediaEntity mediaEntity = new VideoEditedInfo.MediaEntity();
+                mediaEntity.type = (byte) 7;
+                mediaEntity.subType = (byte) -1;
+                mediaEntity.color = -1;
+                LinkPreview.WebPagePreview webPagePreview = new LinkPreview.WebPagePreview();
+                mediaEntity.linkSettings = webPagePreview;
+                webPagePreview.url = str2;
+                if (str3 != null) {
+                    webPagePreview.flags |= 2;
+                    webPagePreview.name = str3;
+                }
+                fromPhotoShoot.mediaEntities.add(mediaEntity);
             }
-            VideoEditedInfo.MediaEntity mediaEntity = new VideoEditedInfo.MediaEntity();
-            mediaEntity.type = (byte) 7;
-            mediaEntity.subType = (byte) -1;
-            mediaEntity.color = -1;
-            LinkPreview.WebPagePreview webPagePreview = new LinkPreview.WebPagePreview();
-            mediaEntity.linkSettings = webPagePreview;
-            webPagePreview.url = str2;
-            if (str3 != null) {
-                webPagePreview.flags |= 2;
-                webPagePreview.name = str3;
-            }
-            fromPhotoShoot.mediaEntities.add(mediaEntity);
         }
-        StoryRecorder.getInstance(this.parentActivity, UserConfig.selectedAccount).openRepost(sourceView, fromPhotoShoot);
+        StoryRecorder.getInstance(botWebViewContainer2.parentActivity, UserConfig.selectedAccount).openRepost(sourceView, fromPhotoShoot);
         alertDialog.dismissUnless(500L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onEventReceived$34(File file, int[] iArr, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$5vDhNZmS1Gy5aEK62vD5qGc07_g(File file, int[] iArr, Runnable runnable) {
         AnimatedFileNative.getVideoInfo(file.getAbsolutePath(), iArr, 0L);
         AndroidUtilities.runOnUIThread(runnable);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$37(Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$-Koxb0RlqEW8R297mAIl3qWKpjU(BotWebViewContainer botWebViewContainer, Boolean bool) {
+        botWebViewContainer.getClass();
         if (bool.booleanValue()) {
-            notifyEvent("home_screen_added", null);
+            botWebViewContainer.notifyEvent("home_screen_added", null);
         } else {
-            notifyEvent("home_screen_failed", obj("error", "UNSUPPORTED"));
+            botWebViewContainer.notifyEvent("home_screen_failed", obj("error", "UNSUPPORTED"));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$38(String str, TLRPC.Document document) {
-        if (str == null) {
-            notifyEvent("emoji_status_set", null);
-            Delegate delegate = this.delegate;
-            if (delegate != null) {
-                delegate.onEmojiStatusSet(document);
-                return;
-            }
+    public static /* synthetic */ void $r8$lambda$Nzp7Q0ZEfplSKtY29NHByVbRsm8(BotWebViewContainer botWebViewContainer, String str, TLRPC.Document document) {
+        if (str != null) {
+            botWebViewContainer.getClass();
+            botWebViewContainer.notifyEvent("emoji_status_failed", obj("error", str));
             return;
         }
-        notifyEvent("emoji_status_failed", obj("error", str));
+        botWebViewContainer.notifyEvent("emoji_status_set", null);
+        Delegate delegate = botWebViewContainer.delegate;
+        if (delegate != null) {
+            delegate.onEmojiStatusSet(document);
+        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$39(Boolean bool, String str) {
+    public static /* synthetic */ void $r8$lambda$Eb2qCGsLekNqm9HPkHD0ZdlmAOs(BotWebViewContainer botWebViewContainer, Boolean bool, String str) {
         Delegate delegate;
-        notifyEmojiStatusAccess(str);
-        if (bool.booleanValue() && "allowed".equalsIgnoreCase(str) && (delegate = this.delegate) != null) {
+        botWebViewContainer.notifyEmojiStatusAccess(str);
+        if (bool.booleanValue() && "allowed".equalsIgnoreCase(str) && (delegate = botWebViewContainer.delegate) != null) {
             delegate.onEmojiStatusGranted(true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$41(Boolean bool, Boolean bool2) {
-        if (this.delegate != null && bool.booleanValue()) {
-            this.delegate.onLocationGranted(bool2.booleanValue());
+    public static /* synthetic */ void $r8$lambda$fCcl6l_AfqiE2aEpkEOUocLKcHA(final BotWebViewContainer botWebViewContainer, Boolean bool, Boolean bool2) {
+        if (botWebViewContainer.delegate != null && bool.booleanValue()) {
+            botWebViewContainer.delegate.onLocationGranted(bool2.booleanValue());
         }
-        this.location.requestObject(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda44
+        botWebViewContainer.location.requestObject(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda44
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BotWebViewContainer.this.lambda$onEventReceived$40((JSONObject) obj);
+                BotWebViewContainer.this.notifyEvent("location_requested", (JSONObject) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$40(JSONObject jSONObject) {
-        notifyEvent("location_requested", jSONObject);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$42(JSONObject jSONObject) {
-        notifyEvent("location_requested", jSONObject);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$45(final String str, final String str2, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$WqHrRe-09XgNKOj_E-upP91AFOM(final BotWebViewContainer botWebViewContainer, final String str, final String str2, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        botWebViewContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onEventReceived$44(tLObject, str, str2);
+                BotWebViewContainer.$r8$lambda$7-wzd5Aymt5Pns_JhAKK6jw5uz0(BotWebViewContainer.this, tLObject, str, str2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$44(TLObject tLObject, final String str, final String str2) {
+    public static /* synthetic */ void $r8$lambda$7-wzd5Aymt5Pns_JhAKK6jw5uz0(final BotWebViewContainer botWebViewContainer, TLObject tLObject, final String str, final String str2) {
+        botWebViewContainer.getClass();
         if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
-            notifyEvent("file_download_requested", obj("status", "cancelled"));
+            botWebViewContainer.notifyEvent("file_download_requested", obj("status", "cancelled"));
         } else {
-            BotDownloads.showAlert(getContext(), str, str2, UserObject.getUserName(this.botUser), new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda55
+            BotDownloads.showAlert(botWebViewContainer.getContext(), str, str2, UserObject.getUserName(botWebViewContainer.botUser), new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda55
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BotWebViewContainer.this.lambda$onEventReceived$43(str, str2, (Boolean) obj);
+                    BotWebViewContainer.$r8$lambda$1ZmayrAPS0mpmO-EVXiVcFrtZ2g(BotWebViewContainer.this, str, str2, (Boolean) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$43(String str, String str2, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$1ZmayrAPS0mpmO-EVXiVcFrtZ2g(BotWebViewContainer botWebViewContainer, String str, String str2, Boolean bool) {
+        botWebViewContainer.getClass();
         if (!bool.booleanValue()) {
-            notifyEvent("file_download_requested", obj("status", "cancelled"));
+            botWebViewContainer.notifyEvent("file_download_requested", obj("status", "cancelled"));
         } else {
-            this.downloads.download(str, str2);
-            notifyEvent("file_download_requested", obj("status", "downloading"));
+            botWebViewContainer.downloads.download(str, str2);
+            botWebViewContainer.notifyEvent("file_download_requested", obj("status", "downloading"));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$46() {
-        Delegate delegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$pNSCoNoNVQH0pa7Sa6YhtwvWtUU(BotWebViewContainer botWebViewContainer) {
+        Delegate delegate = botWebViewContainer.delegate;
         if (delegate != null) {
             delegate.onCloseToTabs();
         }
         LaunchActivity.dismissAllWeb();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$48(final BotWebViewProxy botWebViewProxy, String str, final ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$MZ6TrZltEjOu1jd7fSmzLBuuUFk(BotWebViewContainer botWebViewContainer, final BotWebViewProxy botWebViewProxy, String str, final ArrayList arrayList) {
+        botWebViewContainer.getClass();
         if (TextUtils.isEmpty(str)) {
-            notifyEvent("prepared_message_sent", null);
-            Delegate delegate = this.delegate;
+            botWebViewContainer.notifyEvent("prepared_message_sent", null);
+            Delegate delegate = botWebViewContainer.delegate;
             if (delegate != null) {
                 delegate.onOpenBackFromTabs();
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda34
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewContainer.lambda$onEventReceived$47(BotWebViewContainer.BotWebViewProxy.this, arrayList);
+                    BotWebViewContainer.$r8$lambda$-yU6t9dY2ERHgkkmIJow83D94pc(BotWebViewContainer.BotWebViewProxy.this, arrayList);
                 }
             }, 500L);
             return;
         }
-        notifyEvent("prepared_message_failed", obj("error", str));
+        botWebViewContainer.notifyEvent("prepared_message_failed", obj("error", str));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onEventReceived$47(BotWebViewProxy botWebViewProxy, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$-yU6t9dY2ERHgkkmIJow83D94pc(BotWebViewProxy botWebViewProxy, ArrayList arrayList) {
         BotWebViewContainer botWebViewContainer;
         Delegate delegate;
         if (botWebViewProxy == null || (botWebViewContainer = botWebViewProxy.container) == null || (delegate = botWebViewContainer.delegate) == null) {
@@ -4035,39 +3961,34 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         delegate.onSharedTo(arrayList);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$49(boolean z, double d, String str, double d2) {
-        this.onVerifiedAge.run(Boolean.valueOf(z), Double.valueOf(d), str, Double.valueOf(d2));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$57(final String str, TL_keyboard.KeyboardButton keyboardButton, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$lqFBsisDkJCNGvVJtYERukbQd0A(final BotWebViewContainer botWebViewContainer, final String str, TL_keyboard.KeyboardButton keyboardButton, TLRPC.TL_error tL_error) {
         int i;
+        botWebViewContainer.getClass();
         final TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) TLKeyboardHelper.getType(keyboardButton, TL_keyboard.TL_buttonTypeRequestPeer.class);
         if (tL_buttonTypeRequestPeer == null) {
             if (tL_error != null) {
-                BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
-                notifyEvent("requested_chat_failed", obj("req_id", str));
+                BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError(tL_error);
+                botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
                 return;
             } else {
-                BulletinFactory.of(this, this.resourcesProvider).showForError("UNKNOWN_BUTTON");
-                notifyEvent("requested_chat_failed", obj("req_id", str));
+                BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError("UNKNOWN_BUTTON");
+                botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
                 return;
             }
         }
         TLRPC.RequestPeerType requestPeerType = tL_buttonTypeRequestPeer.peer_type;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeCreateBot) {
-            Context context = getContext();
-            int i2 = this.currentAccount;
-            TLRPC.User user = this.botUser;
+            Context context = botWebViewContainer.getContext();
+            int i2 = botWebViewContainer.currentAccount;
+            TLRPC.User user = botWebViewContainer.botUser;
             Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda37
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BotWebViewContainer.this.lambda$onEventReceived$51(str, tL_buttonTypeRequestPeer, (TLRPC.User) obj);
+                    BotWebViewContainer.$r8$lambda$faZLhZecaFbyhi5RGxc5FcO1zKc(BotWebViewContainer.this, str, tL_buttonTypeRequestPeer, (TLRPC.User) obj);
                 }
             };
-            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-            CreateBotAlert.show(context, i2, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, callback, resourcesProvider, BulletinFactory.of(this, resourcesProvider), true);
+            Theme.ResourcesProvider resourcesProvider = botWebViewContainer.resourcesProvider;
+            CreateBotAlert.show(context, i2, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, callback, resourcesProvider, BulletinFactory.of(botWebViewContainer, resourcesProvider), true);
             return;
         }
         if ((requestPeerType instanceof TLRPC.TL_requestPeerTypeUser) && (i = tL_buttonTypeRequestPeer.max_quantity) > 1) {
@@ -4076,14 +3997,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             MultiContactsSelectorBottomSheet open = MultiContactsSelectorBottomSheet.open(tL_requestPeerTypeUser.bot, tL_requestPeerTypeUser.premium, i, new MultiContactsSelectorBottomSheet.SelectorListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda38
                 @Override // org.telegram.ui.MultiContactsSelectorBottomSheet.SelectorListener
                 public final void onUserSelected(List list) {
-                    BotWebViewContainer.this.lambda$onEventReceived$53(zArr, str, tL_buttonTypeRequestPeer, list);
+                    BotWebViewContainer.$r8$lambda$ykznKomKUEgnQP1_p4Wlm0T44UI(BotWebViewContainer.this, zArr, str, tL_buttonTypeRequestPeer, list);
                 }
             });
             if (open != null) {
                 open.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda39
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
-                        BotWebViewContainer.this.lambda$onEventReceived$54(zArr, str, dialogInterface);
+                        BotWebViewContainer.$r8$lambda$OI31RbE-GHA1t9JzzfkhhtB6MQ8(BotWebViewContainer.this, zArr, str, dialogInterface);
                     }
                 });
                 return;
@@ -4093,7 +4014,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         Bundle bundle = new Bundle();
         bundle.putBoolean("onlySelect", true);
         bundle.putInt("dialogsType", 15);
-        bundle.putLong("requestPeerBotId", this.botUser.id);
+        bundle.putLong("requestPeerBotId", botWebViewContainer.botUser.id);
         try {
             SerializedData serializedData = new SerializedData(tL_buttonTypeRequestPeer.peer_type.getObjectSize());
             tL_buttonTypeRequestPeer.peer_type.serializeToStream(serializedData);
@@ -4123,9 +4044,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i3, int i4, TopicsFragment topicsFragment) {
-                boolean lambda$onEventReceived$56;
-                lambda$onEventReceived$56 = BotWebViewContainer.this.lambda$onEventReceived$56(zArr2, str, tL_buttonTypeRequestPeer, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
-                return lambda$onEventReceived$56;
+                return BotWebViewContainer.$r8$lambda$oH32YzXrtbOcqA5gpMEVyR1tWpc(BotWebViewContainer.this, zArr2, str, tL_buttonTypeRequestPeer, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -4143,50 +4062,49 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         safeLastFragment.showAsSheet(dialogsActivity, bottomSheetParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$51(final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, final TLRPC.User user) {
+    public static /* synthetic */ void $r8$lambda$faZLhZecaFbyhi5RGxc5FcO1zKc(final BotWebViewContainer botWebViewContainer, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, final TLRPC.User user) {
+        botWebViewContainer.getClass();
         if (user == null) {
-            notifyEvent("requested_chat_failed", obj("req_id", str));
+            botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
             return;
         }
         TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(this.botUser);
+        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(botWebViewContainer.botUser);
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
         tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
         tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInputPeer(user));
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda58
+        ConnectionsManager.getInstance(botWebViewContainer.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda58
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                BotWebViewContainer.this.lambda$onEventReceived$50(str, user, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                BotWebViewContainer.$r8$lambda$w345IPjP_0oEop8tsRi45Bza2b8(BotWebViewContainer.this, str, user, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
             }
         });
-        notifyEvent("requested_chat_sent", obj("req_id", str));
+        botWebViewContainer.notifyEvent("requested_chat_sent", obj("req_id", str));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$50(String str, TLRPC.User user, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$w345IPjP_0oEop8tsRi45Bza2b8(BotWebViewContainer botWebViewContainer, String str, TLRPC.User user, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
         if (updates == null) {
             if (tL_error != null) {
-                BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
-                notifyEvent("requested_chat_failed", obj("req_id", str));
+                BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError(tL_error);
+                botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
                 return;
             } else {
-                BulletinFactory.of(this, this.resourcesProvider).showForError("UNKNOWN_BUTTON");
-                notifyEvent("requested_chat_failed", obj("req_id", str));
+                BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError("UNKNOWN_BUTTON");
+                botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
                 return;
             }
         }
-        MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-        notifyEvent("requested_chat_sent", obj("req_id", str));
-        long j = this.botUser.id;
+        MessagesController.getInstance(botWebViewContainer.currentAccount).processUpdates(updates, false);
+        botWebViewContainer.notifyEvent("requested_chat_sent", obj("req_id", str));
+        long j = botWebViewContainer.botUser.id;
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", user.id);
-        6 r7 = new 6(bundle, user, j);
+        6 r0 = botWebViewContainer.new 6(bundle, user, j);
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
-            safeLastFragment.presentFragment(r7);
+            safeLastFragment.presentFragment(r0);
         }
-        Delegate delegate = this.delegate;
+        Delegate delegate = botWebViewContainer.delegate;
         if (delegate != null) {
             delegate.onCloseToTabs();
         }
@@ -4219,85 +4137,87 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             of.createSimpleBulletin(i, formatString, AndroidUtilities.replaceSingleTag(formatString2, new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$6$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewContainer.6.this.lambda$onBecomeFullyVisible$0(j);
+                    BotWebViewContainer.6.$r8$lambda$QQqI8t_41hMtmo8gtQn5iSk0-eA(BotWebViewContainer.6.this, j);
                 }
             })).show();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBecomeFullyVisible$0(long j) {
-            presentFragment(ChatActivity.of(j));
+        public static /* synthetic */ void $r8$lambda$QQqI8t_41hMtmo8gtQn5iSk0-eA(6 r0, long j) {
+            r0.getClass();
+            r0.presentFragment(ChatActivity.of(j));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$53(boolean[] zArr, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, List list) {
+    public static /* synthetic */ void $r8$lambda$ykznKomKUEgnQP1_p4Wlm0T44UI(final BotWebViewContainer botWebViewContainer, boolean[] zArr, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, List list) {
+        botWebViewContainer.getClass();
         if (list == null || list.isEmpty()) {
             return;
         }
         zArr[0] = true;
         TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        MessagesController.getInstance(this.currentAccount);
-        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(this.botUser);
+        MessagesController.getInstance(botWebViewContainer.currentAccount);
+        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(botWebViewContainer.botUser);
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
         tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(this.currentAccount).getInputPeer(((Long) it.next()).longValue()));
+            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(botWebViewContainer.currentAccount).getInputPeer(((Long) it.next()).longValue()));
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda54
+        ConnectionsManager.getInstance(botWebViewContainer.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda54
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                BotWebViewContainer.this.lambda$onEventReceived$52(str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                BotWebViewContainer.$r8$lambda$aLufqnisHmmc4SiKBxnd25Lse50(BotWebViewContainer.this, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$52(String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$aLufqnisHmmc4SiKBxnd25Lse50(BotWebViewContainer botWebViewContainer, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
         if (updates != null) {
-            MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-            notifyEvent("requested_chat_sent", obj("req_id", str));
+            MessagesController.getInstance(botWebViewContainer.currentAccount).processUpdates(updates, false);
+            botWebViewContainer.notifyEvent("requested_chat_sent", obj("req_id", str));
         } else if (tL_error != null) {
-            BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
-            notifyEvent("requested_chat_failed", obj("req_id", str));
+            BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError(tL_error);
+            botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
         } else {
-            BulletinFactory.of(this, this.resourcesProvider).showForError("UNKNOWN_BUTTON");
-            notifyEvent("requested_chat_failed", obj("req_id", str));
+            BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError("UNKNOWN_BUTTON");
+            botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$54(boolean[] zArr, String str, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$OI31RbE-GHA1t9JzzfkhhtB6MQ8(BotWebViewContainer botWebViewContainer, boolean[] zArr, String str, DialogInterface dialogInterface) {
+        botWebViewContainer.getClass();
         if (zArr[0]) {
             return;
         }
         zArr[0] = true;
-        notifyEvent("requested_chat_failed", obj("req_id", str));
+        botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$onEventReceived$56(boolean[] zArr, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$oH32YzXrtbOcqA5gpMEVyR1tWpc(final BotWebViewContainer botWebViewContainer, boolean[] zArr, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        botWebViewContainer.getClass();
         if (arrayList != null && !arrayList.isEmpty()) {
+            int i3 = 0;
             zArr[0] = true;
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-            MessagesController.getInstance(this.currentAccount);
-            tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(this.botUser);
+            MessagesController.getInstance(botWebViewContainer.currentAccount);
+            tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(botWebViewContainer.botUser);
             tL_messages_sendBotRequestedPeer.webapp_req_id = str;
             tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
             HashSet hashSet = new HashSet();
-            Iterator it = arrayList.iterator();
+            int size = arrayList.size();
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                hashSet.add(Long.valueOf(((MessagesStorage.TopicKey) obj).dialogId));
+            }
+            Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                hashSet.add(Long.valueOf(((MessagesStorage.TopicKey) it.next()).dialogId));
+                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(botWebViewContainer.currentAccount).getInputPeer(((Long) it.next()).longValue()));
             }
-            Iterator it2 = hashSet.iterator();
-            while (it2.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(this.currentAccount).getInputPeer(((Long) it2.next()).longValue()));
-            }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda59
+            ConnectionsManager.getInstance(botWebViewContainer.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda59
                 @Override // org.telegram.messenger.Utilities.Callback2
-                public final void run(Object obj, Object obj2) {
-                    BotWebViewContainer.this.lambda$onEventReceived$55(str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                public final void run(Object obj2, Object obj3) {
+                    BotWebViewContainer.$r8$lambda$Wsxp1-YWA7tpepuc6QlzJApak04(BotWebViewContainer.this, str, (TLRPC.Updates) obj2, (TLRPC.TL_error) obj3);
                 }
             });
         }
@@ -4305,17 +4225,16 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$55(String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Wsxp1-YWA7tpepuc6QlzJApak04(BotWebViewContainer botWebViewContainer, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
         if (updates != null) {
-            MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-            notifyEvent("requested_chat_sent", obj("req_id", str));
+            MessagesController.getInstance(botWebViewContainer.currentAccount).processUpdates(updates, false);
+            botWebViewContainer.notifyEvent("requested_chat_sent", obj("req_id", str));
         } else if (tL_error != null) {
-            BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
-            notifyEvent("requested_chat_failed", obj("req_id", str));
+            BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError(tL_error);
+            botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
         } else {
-            BulletinFactory.of(this, this.resourcesProvider).showForError("UNKNOWN_BUTTON");
-            notifyEvent("requested_chat_failed", obj("req_id", str));
+            BulletinFactory.of(botWebViewContainer, botWebViewContainer.resourcesProvider).showForError("UNKNOWN_BUTTON");
+            botWebViewContainer.notifyEvent("requested_chat_failed", obj("req_id", str));
         }
     }
 
@@ -4411,7 +4330,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         botStorage.showChooseStorage(getContext(), storagesWithKey, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda49
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                BotWebViewContainer.this.lambda$restoreStorageKey$58(str3, string, botStorage, optString, str2, (String) obj);
+                                BotWebViewContainer.$r8$lambda$-xkbbQLMGaBSKg2mFT7RW3PPmzw(BotWebViewContainer.this, str3, string, botStorage, optString, str2, (String) obj);
                             }
                         });
                     }
@@ -4430,17 +4349,17 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$restoreStorageKey$58(String str, String str2, BotStorage botStorage, String str3, String str4, String str5) {
+    public static /* synthetic */ void $r8$lambda$-xkbbQLMGaBSKg2mFT7RW3PPmzw(BotWebViewContainer botWebViewContainer, String str, String str2, BotStorage botStorage, String str3, String str4, String str5) {
+        botWebViewContainer.getClass();
         if (str5 == null) {
-            notifyEvent(str, obj("req_id", str2, "error", "RESTORE_CANCELLED"));
+            botWebViewContainer.notifyEvent(str, obj("req_id", str2, "error", "RESTORE_CANCELLED"));
             return;
         }
         try {
             botStorage.restoreFrom(str5);
-            notifyEvent(str4, obj("req_id", str2, "value", (String) botStorage.getKey(str3).first));
+            botWebViewContainer.notifyEvent(str4, obj("req_id", str2, "value", (String) botStorage.getKey(str3).first));
         } catch (Exception e) {
-            notifyEvent(str, obj("req_id", str2, "error", e.getMessage()));
+            botWebViewContainer.notifyEvent(str, obj("req_id", str2, "error", e.getMessage()));
         }
     }
 
@@ -4539,11 +4458,6 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         BulletinFactory.of(this, this.resourcesProvider).createSimpleBulletin(R.raw.error, str).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$59() {
-        notifyEvent("location_checked", this.location.checkObject());
-    }
-
     private boolean ignoreDialog(int i) {
         if (this.currentDialog != null) {
             return true;
@@ -4566,7 +4480,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda42
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                BotWebViewContainer.this.lambda$showDialog$60(runnable, dialogInterface);
+                BotWebViewContainer.$r8$lambda$sWpH9_ejm9fLBlaBDz-CIm1blnw(BotWebViewContainer.this, runnable, dialogInterface);
             }
         });
         this.currentDialog = alertDialog;
@@ -4581,12 +4495,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showDialog$60(Runnable runnable, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$sWpH9_ejm9fLBlaBDz-CIm1blnw(BotWebViewContainer botWebViewContainer, Runnable runnable, DialogInterface dialogInterface) {
         if (runnable != null) {
+            botWebViewContainer.getClass();
             runnable.run();
         }
-        this.currentDialog = null;
+        botWebViewContainer.currentDialog = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4669,7 +4583,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BotWebViewContainer.BotWebViewProxy.this.lambda$postEvent$0(str, str2);
+                            BotWebViewContainer.BotWebViewProxy.$r8$lambda$HMKe2dSTzx71q3LX6nbnyEFmlyM(BotWebViewContainer.BotWebViewProxy.this, str, str2);
                         }
                     });
                 }
@@ -4678,14 +4592,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$postEvent$0(String str, String str2) {
+        public static /* synthetic */ void $r8$lambda$HMKe2dSTzx71q3LX6nbnyEFmlyM(BotWebViewProxy botWebViewProxy, String str, String str2) {
+            botWebViewProxy.getClass();
             try {
-                BotWebViewContainer botWebViewContainer = this.container;
+                BotWebViewContainer botWebViewContainer = botWebViewProxy.container;
                 if (botWebViewContainer == null) {
                     return;
                 }
-                botWebViewContainer.onEventReceived(this, str, str2);
+                botWebViewContainer.onEventReceived(botWebViewProxy, str, str2);
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -4713,14 +4627,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$WebViewProxy$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewContainer.WebViewProxy.this.lambda$postEvent$0(str, str2);
+                    BotWebViewContainer.WebViewProxy.$r8$lambda$XiiLD1aDxLYjQJBNdRQrxVXYNIk(BotWebViewContainer.WebViewProxy.this, str, str2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$postEvent$0(String str, String str2) {
-            BotWebViewContainer botWebViewContainer = this.container;
+        public static /* synthetic */ void $r8$lambda$XiiLD1aDxLYjQJBNdRQrxVXYNIk(WebViewProxy webViewProxy, String str, String str2) {
+            BotWebViewContainer botWebViewContainer = webViewProxy.container;
             if (botWebViewContainer == null) {
                 return;
             }
@@ -4732,45 +4645,43 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$WebViewProxy$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewContainer.WebViewProxy.this.lambda$resolveShare$2(str, bArr, str2, str3);
+                    BotWebViewContainer.WebViewProxy.$r8$lambda$cZosmsiCezdrN2yNaOmmXcNbL_U(BotWebViewContainer.WebViewProxy.this, str, bArr, str2, str3);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x007c  */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x0083  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x0091  */
-        /* JADX WARN: Removed duplicated region for block: B:47:0x00b1  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x015c  */
+        /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x0088  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x0096  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x00b7  */
+        /* JADX WARN: Removed duplicated region for block: B:84:0x0162  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public /* synthetic */ void lambda$resolveShare$2(String str, byte[] bArr, String str2, String str3) {
+        public static /* synthetic */ void $r8$lambda$cZosmsiCezdrN2yNaOmmXcNbL_U(final WebViewProxy webViewProxy, String str, byte[] bArr, String str2, String str3) {
             String str4;
             String str5;
             String str6;
             String str7;
-            JSONObject jSONObject;
             LaunchActivity launchActivity;
-            if (this.container == null) {
+            if (webViewProxy.container == null) {
                 return;
             }
-            if (System.currentTimeMillis() - this.container.lastClickMs <= 10000) {
-                this.container.lastClickMs = 0L;
-                Context context = this.webView.getContext();
+            if (System.currentTimeMillis() - webViewProxy.container.lastClickMs <= 10000) {
+                webViewProxy.container.lastClickMs = 0L;
+                Context context = webViewProxy.webView.getContext();
                 Activity findActivity = AndroidUtilities.findActivity(context);
                 if (findActivity == null && (launchActivity = LaunchActivity.instance) != null) {
                     findActivity = launchActivity;
                 }
-                if (context == null || findActivity == null || !(findActivity instanceof LaunchActivity) || findActivity.isFinishing() || !this.webView.isAttachedToWindow()) {
-                    this.webView.evaluateJS("window.navigator.__share__receive(\"security\")");
+                if (context == null || findActivity == null || !(findActivity instanceof LaunchActivity) || findActivity.isFinishing() || !webViewProxy.webView.isAttachedToWindow()) {
+                    webViewProxy.webView.evaluateJS("window.navigator.__share__receive(\"security\")");
                     return;
                 }
                 LaunchActivity launchActivity2 = (LaunchActivity) findActivity;
                 File file = null;
                 try {
-                    jSONObject = new JSONObject(str);
+                    JSONObject jSONObject = new JSONObject(str);
                     str4 = jSONObject.optString("url", null);
                     try {
                         str5 = jSONObject.optString("text", null);
@@ -4778,36 +4689,36 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         e = e;
                         str5 = null;
                     }
-                } catch (Exception e2) {
-                    e = e2;
-                    str4 = null;
-                    str5 = null;
-                }
-                try {
-                    str6 = jSONObject.optString("title", null);
+                    try {
+                        str6 = jSONObject.optString("title", null);
+                    } catch (Exception e2) {
+                        e = e2;
+                        FileLog.e(e);
+                        str6 = null;
+                        StringBuilder sb = new StringBuilder();
+                        if (str6 != null) {
+                        }
+                        if (str5 != null) {
+                        }
+                        if (str4 != null) {
+                        }
+                        Intent intent = new Intent("android.intent.action.SEND");
+                        intent.putExtra("android.intent.extra.TEXT", sb.toString());
+                        if (bArr == null) {
+                        }
+                        launchActivity2.whenWebviewShareAPIDone(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$WebViewProxy$$ExternalSyntheticLambda2
+                            @Override // org.telegram.messenger.Utilities.Callback
+                            public final void run(Object obj) {
+                                BotWebViewContainer.WebViewProxy.$r8$lambda$APyhynYErYBJpKLMeSHYDgulq6U(BotWebViewContainer.WebViewProxy.this, (Boolean) obj);
+                            }
+                        });
+                        launchActivity2.startActivityForResult(Intent.createChooser(intent, LocaleController.getString(R.string.ShareFile)), 521);
+                        return;
+                    }
                 } catch (Exception e3) {
                     e = e3;
-                    FileLog.e(e);
-                    str6 = null;
-                    StringBuilder sb = new StringBuilder();
-                    if (str6 != null) {
-                    }
-                    if (str5 != null) {
-                    }
-                    if (str4 != null) {
-                    }
-                    Intent intent = new Intent("android.intent.action.SEND");
-                    intent.putExtra("android.intent.extra.TEXT", sb.toString());
-                    if (bArr == null) {
-                    }
-                    launchActivity2.whenWebviewShareAPIDone(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$WebViewProxy$$ExternalSyntheticLambda2
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            BotWebViewContainer.WebViewProxy.this.lambda$resolveShare$1((Boolean) obj);
-                        }
-                    });
-                    launchActivity2.startActivityForResult(Intent.createChooser(intent, LocaleController.getString(R.string.ShareFile)), 521);
-                    return;
+                    str4 = null;
+                    str5 = null;
                 }
                 StringBuilder sb2 = new StringBuilder();
                 if (str6 != null) {
@@ -4881,18 +4792,17 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 launchActivity2.whenWebviewShareAPIDone(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$WebViewProxy$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        BotWebViewContainer.WebViewProxy.this.lambda$resolveShare$1((Boolean) obj);
+                        BotWebViewContainer.WebViewProxy.$r8$lambda$APyhynYErYBJpKLMeSHYDgulq6U(BotWebViewContainer.WebViewProxy.this, (Boolean) obj);
                     }
                 });
                 launchActivity2.startActivityForResult(Intent.createChooser(intent2, LocaleController.getString(R.string.ShareFile)), 521);
                 return;
             }
-            this.webView.evaluateJS("window.navigator.__share__receive(\"security\")");
+            webViewProxy.webView.evaluateJS("window.navigator.__share__receive(\"security\")");
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$resolveShare$1(Boolean bool) {
-            MyWebView myWebView = this.webView;
+        public static /* synthetic */ void $r8$lambda$APyhynYErYBJpKLMeSHYDgulq6U(WebViewProxy webViewProxy, Boolean bool) {
+            MyWebView myWebView = webViewProxy.webView;
             StringBuilder sb = new StringBuilder();
             sb.append("window.navigator.__share__receive(");
             sb.append(bool.booleanValue() ? "" : "'abort'");
@@ -5075,7 +4985,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         if (authority == null && uri.getScheme() == null) {
             authority = Uri.parse("http://" + uri.toString()).getAuthority();
         }
-        return authority != null && (authority.endsWith(".ton") || authority.endsWith(".adnl"));
+        if (authority != null) {
+            return authority.endsWith(".ton") || authority.endsWith(".adnl");
+        }
+        return false;
     }
 
     public static WebResourceResponse proxyTON(WebResourceRequest webResourceRequest) {
@@ -5155,8 +5068,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         private WebViewScrollListener webViewScrollListener;
         private Runnable whenPageLoaded;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$evaluateJS$1(String str) {
+        public static /* synthetic */ void $r8$lambda$n4G84VuBJd3zHi0noWbm8zvFC-g(String str) {
         }
 
         public boolean isPageLoaded() {
@@ -5206,7 +5118,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$1(extra);
+                            BotWebViewContainer.MyWebView.1.$r8$lambda$tsslrC86A4YWqVNnPWddUzhQhpk(BotWebViewContainer.MyWebView.1.this, extra);
                         }
                     });
                     return true;
@@ -5218,24 +5130,24 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$3(extra2);
+                        BotWebViewContainer.MyWebView.1.$r8$lambda$T_xtGR-v2OeOjArqZHoLFfYUKvw(BotWebViewContainer.MyWebView.1.this, extra2);
                     }
                 });
                 return true;
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
             /* JADX WARN: Can't wrap try/catch for region: R(11:0|1|2|3|(5:7|9|10|11|12)|17|9|10|11|12|(2:(1:21)|(0))) */
-            /* JADX WARN: Code restructure failed: missing block: B:15:0x0041, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:15:0x0044, code lost:
             
                 r4 = e;
              */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            public /* synthetic */ void lambda$onLongClick$1(final String str) {
+            public static /* synthetic */ void $r8$lambda$tsslrC86A4YWqVNnPWddUzhQhpk(final 1 r7, final String str) {
                 String str2;
                 Uri parse;
+                r7.getClass();
                 BottomSheet.Builder builder = new BottomSheet.Builder(MyWebView.this.getContext(), false, null);
                 try {
                     parse = Uri.parse(str);
@@ -5251,7 +5163,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         builder.setItems(new CharSequence[]{LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda3
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i) {
-                                BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$0(str, dialogInterface, i);
+                                BotWebViewContainer.MyWebView.1.$r8$lambda$Mcnso9ll299ehCbMZ-0c3cFUblY(BotWebViewContainer.MyWebView.1.this, str, dialogInterface, i);
                             }
                         });
                         MyWebView.this.currentSheet = builder.show();
@@ -5265,7 +5177,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     builder.setItems(new CharSequence[]{LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda3
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
-                            BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$0(str, dialogInterface, i);
+                            BotWebViewContainer.MyWebView.1.$r8$lambda$Mcnso9ll299ehCbMZ-0c3cFUblY(BotWebViewContainer.MyWebView.1.this, str, dialogInterface, i);
                         }
                     });
                     MyWebView.this.currentSheet = builder.show();
@@ -5277,18 +5189,18 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 builder.setItems(new CharSequence[]{LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda3
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$0(str, dialogInterface, i);
+                        BotWebViewContainer.MyWebView.1.$r8$lambda$Mcnso9ll299ehCbMZ-0c3cFUblY(BotWebViewContainer.MyWebView.1.this, str, dialogInterface, i);
                     }
                 });
                 MyWebView.this.currentSheet = builder.show();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onLongClick$0(String str, DialogInterface dialogInterface, int i) {
+            public static /* synthetic */ void $r8$lambda$Mcnso9ll299ehCbMZ-0c3cFUblY(1 r2, String str, DialogInterface dialogInterface, int i) {
                 if (i == 0) {
                     MyWebView.this.loadUrl(str);
                     return;
                 }
+                r2.getClass();
                 if (i != 1) {
                     if (i == 2) {
                         AndroidUtilities.addToClipboard(str);
@@ -5311,9 +5223,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onLongClick$3(final String str) {
+            public static /* synthetic */ void $r8$lambda$T_xtGR-v2OeOjArqZHoLFfYUKvw(final 1 r7, final String str) {
                 String str2;
+                r7.getClass();
                 BottomSheet.Builder builder = new BottomSheet.Builder(MyWebView.this.getContext(), false, null);
                 try {
                     Uri parse = Uri.parse(str);
@@ -5331,7 +5243,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         builder.setItems(new CharSequence[]{LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda2
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i) {
-                                BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$2(str, dialogInterface, i);
+                                BotWebViewContainer.MyWebView.1.$r8$lambda$hd2SSlT12b-hXlyhBYkFGFIal6o(BotWebViewContainer.MyWebView.1.this, str, dialogInterface, i);
                             }
                         });
                         MyWebView.this.currentSheet = builder.show();
@@ -5347,7 +5259,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     builder.setItems(new CharSequence[]{LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda2
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
-                            BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$2(str, dialogInterface, i);
+                            BotWebViewContainer.MyWebView.1.$r8$lambda$hd2SSlT12b-hXlyhBYkFGFIal6o(BotWebViewContainer.MyWebView.1.this, str, dialogInterface, i);
                         }
                     });
                     MyWebView.this.currentSheet = builder.show();
@@ -5357,14 +5269,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 builder.setItems(new CharSequence[]{LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$1$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        BotWebViewContainer.MyWebView.1.this.lambda$onLongClick$2(str, dialogInterface, i);
+                        BotWebViewContainer.MyWebView.1.$r8$lambda$hd2SSlT12b-hXlyhBYkFGFIal6o(BotWebViewContainer.MyWebView.1.this, str, dialogInterface, i);
                     }
                 });
                 MyWebView.this.currentSheet = builder.show();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onLongClick$2(String str, DialogInterface dialogInterface, int i) {
+            public static /* synthetic */ void $r8$lambda$hd2SSlT12b-hXlyhBYkFGFIal6o(1 r3, String str, DialogInterface dialogInterface, int i) {
+                r3.getClass();
                 if (i == 0) {
                     try {
                         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
@@ -5417,7 +5329,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             private final Runnable resetErrorRunnable = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$2$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewContainer.MyWebView.2.this.lambda$$3();
+                    BotWebViewContainer.MyWebView.2.$r8$lambda$tHLf8mLy7D2CauvgcHFlSSbL418(BotWebViewContainer.MyWebView.2.this);
                 }
             };
             final /* synthetic */ boolean val$bot;
@@ -5480,7 +5392,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$2$$ExternalSyntheticLambda5
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
-                                                    BotWebViewContainer.MyWebView.2.this.lambda$shouldInterceptRequest$0();
+                                                    BotWebViewContainer.MyWebView.2.$r8$lambda$5bZiH0Us0c937ByQMUNfYNkZj_A(BotWebViewContainer.MyWebView.2.this);
                                                 }
                                             });
                                             break;
@@ -5520,8 +5432,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 return super.shouldInterceptRequest(webView, webResourceRequest);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$shouldInterceptRequest$0() {
+            public static /* synthetic */ void $r8$lambda$5bZiH0Us0c937ByQMUNfYNkZj_A(2 r3) {
                 if (MyWebView.this.botWebViewContainer != null) {
                     MyWebView.this.botWebViewContainer.onURLChanged(MyWebView.this.urlFallback, !r1.canGoBack(), !MyWebView.this.canGoForward());
                 }
@@ -5613,12 +5524,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     new AlertDialog.Builder(MyWebView.this.getContext(), MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(LocaleController.getString(R.string.ChromeCrashTitle)).setMessage(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$2$$ExternalSyntheticLambda6
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BotWebViewContainer.MyWebView.2.this.lambda$onRenderProcessGone$1();
+                            Browser.openUrl(BotWebViewContainer.MyWebView.this.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                         }
                     })).setPositiveButton(LocaleController.getString(R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$2$$ExternalSyntheticLambda7
                         @Override // android.content.DialogInterface.OnDismissListener
                         public final void onDismiss(DialogInterface dialogInterface) {
-                            BotWebViewContainer.MyWebView.2.this.lambda$onRenderProcessGone$2(dialogInterface);
+                            BotWebViewContainer.MyWebView.2.$r8$lambda$sKvG_VjLlS0lC-VI6LGy33jmB6w(BotWebViewContainer.MyWebView.2.this, dialogInterface);
                         }
                     }).show();
                     return true;
@@ -5628,13 +5539,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onRenderProcessGone$1() {
-                Browser.openUrl(MyWebView.this.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onRenderProcessGone$2(DialogInterface dialogInterface) {
+            public static /* synthetic */ void $r8$lambda$sKvG_VjLlS0lC-VI6LGy33jmB6w(2 r0, DialogInterface dialogInterface) {
                 if (MyWebView.this.botWebViewContainer == null || MyWebView.this.botWebViewContainer.delegate == null) {
                     return;
                 }
@@ -5719,8 +5624,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 return false;
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$$3() {
+            public static /* synthetic */ void $r8$lambda$tHLf8mLy7D2CauvgcHFlSSbL418(2 r2) {
                 if (MyWebView.this.botWebViewContainer != null) {
                     BotWebViewContainer botWebViewContainer = MyWebView.this.botWebViewContainer;
                     MyWebView.this.errorShown = false;
@@ -5934,19 +5838,18 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 new AlertDialog.Builder(this.val$context, MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(this.val$bot ? DialogObject.getName(this.val$botId) : LocaleController.formatString(R.string.WebsiteSays, str)).setMessage(str2).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda8
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsAlert$0(zArr, jsResult, alertDialog, i);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$JIRgPyLkvZvw66mMqbAAjH2Ayd8(zArr, jsResult, alertDialog, i);
                     }
                 }).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda9
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsAlert$1(zArr, jsResult, dialogInterface);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$K1Afog_syJZf2IitVkUD71GBLv4(zArr, jsResult, dialogInterface);
                     }
                 }).show();
                 return true;
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsAlert$0(boolean[] zArr, JsResult jsResult, AlertDialog alertDialog, int i) {
+            public static /* synthetic */ void $r8$lambda$JIRgPyLkvZvw66mMqbAAjH2Ayd8(boolean[] zArr, JsResult jsResult, AlertDialog alertDialog, int i) {
                 if (zArr[0]) {
                     return;
                 }
@@ -5954,8 +5857,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 jsResult.confirm();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsAlert$1(boolean[] zArr, JsResult jsResult, DialogInterface dialogInterface) {
+            public static /* synthetic */ void $r8$lambda$K1Afog_syJZf2IitVkUD71GBLv4(boolean[] zArr, JsResult jsResult, DialogInterface dialogInterface) {
                 if (zArr[0]) {
                     return;
                 }
@@ -5969,24 +5871,23 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 new AlertDialog.Builder(this.val$context, MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(this.val$bot ? DialogObject.getName(this.val$botId) : LocaleController.formatString(R.string.WebsiteSays, str)).setMessage(str2).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda5
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsConfirm$2(zArr, jsResult, alertDialog, i);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$2yWw2BLNVDPE9RgDuTMCL9FnW_0(zArr, jsResult, alertDialog, i);
                     }
                 }).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsConfirm$3(zArr, jsResult, alertDialog, i);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$R0Kpxaui4vP-zYr1rro_d6_1xc4(zArr, jsResult, alertDialog, i);
                     }
                 }).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda7
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsConfirm$4(zArr, jsResult, dialogInterface);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$io3EJ7eiBtyg5Jwe4zT5o_y4Yrg(zArr, jsResult, dialogInterface);
                     }
                 }).show();
                 return true;
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsConfirm$2(boolean[] zArr, JsResult jsResult, AlertDialog alertDialog, int i) {
+            public static /* synthetic */ void $r8$lambda$2yWw2BLNVDPE9RgDuTMCL9FnW_0(boolean[] zArr, JsResult jsResult, AlertDialog alertDialog, int i) {
                 if (zArr[0]) {
                     return;
                 }
@@ -5994,8 +5895,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 jsResult.cancel();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsConfirm$3(boolean[] zArr, JsResult jsResult, AlertDialog alertDialog, int i) {
+            public static /* synthetic */ void $r8$lambda$R0Kpxaui4vP-zYr1rro_d6_1xc4(boolean[] zArr, JsResult jsResult, AlertDialog alertDialog, int i) {
                 if (zArr[0]) {
                     return;
                 }
@@ -6003,8 +5903,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 jsResult.confirm();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsConfirm$4(boolean[] zArr, JsResult jsResult, DialogInterface dialogInterface) {
+            public static /* synthetic */ void $r8$lambda$io3EJ7eiBtyg5Jwe4zT5o_y4Yrg(boolean[] zArr, JsResult jsResult, DialogInterface dialogInterface) {
                 if (zArr[0]) {
                     return;
                 }
@@ -6038,25 +5937,25 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 message.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$5(zArr, jsPromptResult, alertDialog, i);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$LMHOtTZ1WIWS-ZO19WLo-8NoNkI(zArr, jsPromptResult, alertDialog, i);
                     }
                 });
                 message.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda1
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$6(zArr, jsPromptResult, editTextCaption, alertDialog, i);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$FlsajW65O1qximWu9YktPhKFj1I(zArr, jsPromptResult, editTextCaption, alertDialog, i);
                     }
                 });
                 message.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$7(zArr, jsPromptResult, dialogInterface);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$46yWweFpbnX7LDYh2i48Aea3vk4(zArr, jsPromptResult, dialogInterface);
                     }
                 });
                 message.overrideDismissListener(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda3
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        BotWebViewContainer.MyWebView.3.lambda$onJsPrompt$8(EditTextCaption.this, (Runnable) obj);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$LbrLC539usybksXm7pXYylqEpbM(EditTextCaption.this, (Runnable) obj);
                     }
                 });
                 final AlertDialog show = message.show();
@@ -6084,8 +5983,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 return true;
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsPrompt$5(boolean[] zArr, JsPromptResult jsPromptResult, AlertDialog alertDialog, int i) {
+            public static /* synthetic */ void $r8$lambda$LMHOtTZ1WIWS-ZO19WLo-8NoNkI(boolean[] zArr, JsPromptResult jsPromptResult, AlertDialog alertDialog, int i) {
                 if (zArr[0]) {
                     return;
                 }
@@ -6093,8 +5991,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 jsPromptResult.cancel();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsPrompt$6(boolean[] zArr, JsPromptResult jsPromptResult, EditTextCaption editTextCaption, AlertDialog alertDialog, int i) {
+            public static /* synthetic */ void $r8$lambda$FlsajW65O1qximWu9YktPhKFj1I(boolean[] zArr, JsPromptResult jsPromptResult, EditTextCaption editTextCaption, AlertDialog alertDialog, int i) {
                 if (zArr[0]) {
                     return;
                 }
@@ -6102,8 +5999,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 jsPromptResult.confirm(editTextCaption.getText().toString());
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsPrompt$7(boolean[] zArr, JsPromptResult jsPromptResult, DialogInterface dialogInterface) {
+            public static /* synthetic */ void $r8$lambda$46yWweFpbnX7LDYh2i48Aea3vk4(boolean[] zArr, JsPromptResult jsPromptResult, DialogInterface dialogInterface) {
                 if (zArr[0]) {
                     return;
                 }
@@ -6111,8 +6007,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 jsPromptResult.cancel();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onJsPrompt$8(EditTextCaption editTextCaption, Runnable runnable) {
+            public static /* synthetic */ void $r8$lambda$LbrLC539usybksXm7pXYylqEpbM(EditTextCaption editTextCaption, Runnable runnable) {
                 AndroidUtilities.hideKeyboard(editTextCaption);
                 AndroidUtilities.runOnUIThread(runnable, 80L);
             }
@@ -6246,12 +6141,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         new AlertDialog.Builder(MyWebView.this.getContext(), MyWebView.this.botWebViewContainer == null ? null : MyWebView.this.botWebViewContainer.resourcesProvider).setTitle(LocaleController.getString(R.string.ChromeCrashTitle)).setMessage(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$2$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                BotWebViewContainer.MyWebView.3.2.this.lambda$onRenderProcessGone$0();
+                                Browser.openUrl(BotWebViewContainer.MyWebView.this.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                             }
                         })).setPositiveButton(LocaleController.getString(R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$2$$ExternalSyntheticLambda1
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
-                                BotWebViewContainer.MyWebView.3.2.this.lambda$onRenderProcessGone$1(dialogInterface);
+                                BotWebViewContainer.MyWebView.3.2.$r8$lambda$QCjlnk0Yg8dlW92YwSJKM0QNC8Y(BotWebViewContainer.MyWebView.3.2.this, dialogInterface);
                             }
                         }).show();
                         return true;
@@ -6261,13 +6156,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     }
                 }
 
-                /* JADX INFO: Access modifiers changed from: private */
-                public /* synthetic */ void lambda$onRenderProcessGone$0() {
-                    Browser.openUrl(MyWebView.this.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                }
-
-                /* JADX INFO: Access modifiers changed from: private */
-                public /* synthetic */ void lambda$onRenderProcessGone$1(DialogInterface dialogInterface) {
+                public static /* synthetic */ void $r8$lambda$QCjlnk0Yg8dlW92YwSJKM0QNC8Y(2 r0, DialogInterface dialogInterface) {
                     if (MyWebView.this.botWebViewContainer.delegate != null) {
                         MyWebView.this.botWebViewContainer.delegate.onCloseRequested(null);
                     }
@@ -6343,22 +6232,21 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 Dialog createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, R.raw.permission_request_location, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestGeolocationPermission : R.string.WebViewRequestGeolocationPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestGeolocationPermissionWithHint : R.string.WebViewRequestGeolocationPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda13
                     @Override // androidx.core.util.Consumer
                     public final void accept(Object obj) {
-                        BotWebViewContainer.MyWebView.3.this.lambda$onGeolocationPermissionsShowPrompt$11(callback, str, (Boolean) obj);
+                        BotWebViewContainer.MyWebView.3.$r8$lambda$TGVu2J0-dKB4-Q74Mu5qkT_tbb4(BotWebViewContainer.MyWebView.3.this, callback, str, (Boolean) obj);
                     }
                 });
                 this.lastPermissionsDialog = createWebViewPermissionsRequestDialog;
                 createWebViewPermissionsRequestDialog.show();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onGeolocationPermissionsShowPrompt$11(final GeolocationPermissions.Callback callback, final String str, Boolean bool) {
-                if (this.lastPermissionsDialog != null) {
-                    this.lastPermissionsDialog = null;
+            public static /* synthetic */ void $r8$lambda$TGVu2J0-dKB4-Q74Mu5qkT_tbb4(final 3 r2, final GeolocationPermissions.Callback callback, final String str, Boolean bool) {
+                if (r2.lastPermissionsDialog != null) {
+                    r2.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
                         MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda16
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
-                                BotWebViewContainer.MyWebView.3.this.lambda$onGeolocationPermissionsShowPrompt$10(callback, str, (Boolean) obj);
+                                BotWebViewContainer.MyWebView.3.$r8$lambda$cMQsC1gqIihMh8ptQ5WjjNFg0YQ(BotWebViewContainer.MyWebView.3.this, callback, str, (Boolean) obj);
                             }
                         });
                     } else {
@@ -6367,8 +6255,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onGeolocationPermissionsShowPrompt$10(GeolocationPermissions.Callback callback, String str, Boolean bool) {
+            public static /* synthetic */ void $r8$lambda$cMQsC1gqIihMh8ptQ5WjjNFg0YQ(3 r2, GeolocationPermissions.Callback callback, String str, Boolean bool) {
+                r2.getClass();
                 callback.invoke(str, bool.booleanValue(), false);
                 if (bool.booleanValue()) {
                     MyWebView.this.botWebViewContainer.hasUserPermissions = true;
@@ -6408,12 +6296,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             permissionRequest.grant(resources);
                             return;
                         }
-                        str.hashCode();
+                        str.getClass();
                         if (str.equals("android.webkit.resource.VIDEO_CAPTURE")) {
                             Dialog createWebViewPermissionsRequestDialog = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.CAMERA"}, R.raw.permission_request_camera, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraPermission : R.string.WebViewRequestCameraPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraPermissionWithHint : R.string.WebViewRequestCameraPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda11
                                 @Override // androidx.core.util.Consumer
                                 public final void accept(Object obj) {
-                                    BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$15(permissionRequest, str, (Boolean) obj);
+                                    BotWebViewContainer.MyWebView.3.$r8$lambda$rDZ_IGIHsv01ia13BEA7WRXEUtE(BotWebViewContainer.MyWebView.3.this, permissionRequest, str, (Boolean) obj);
                                 }
                             });
                             this.lastPermissionsDialog = createWebViewPermissionsRequestDialog;
@@ -6424,7 +6312,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 Dialog createWebViewPermissionsRequestDialog2 = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.RECORD_AUDIO"}, R.raw.permission_request_microphone, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestMicrophonePermission : R.string.WebViewRequestMicrophonePermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestMicrophonePermissionWithHint : R.string.WebViewRequestMicrophonePermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda10
                                     @Override // androidx.core.util.Consumer
                                     public final void accept(Object obj) {
-                                        BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$13(permissionRequest, str, (Boolean) obj);
+                                        BotWebViewContainer.MyWebView.3.$r8$lambda$1nFMKyuoM-tuAXzNkByIEbiPfzI(BotWebViewContainer.MyWebView.3.this, permissionRequest, str, (Boolean) obj);
                                     }
                                 });
                                 this.lastPermissionsDialog = createWebViewPermissionsRequestDialog2;
@@ -6443,7 +6331,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             Dialog createWebViewPermissionsRequestDialog3 = AlertsCreator.createWebViewPermissionsRequestDialog(MyWebView.this.botWebViewContainer.parentActivity, MyWebView.this.botWebViewContainer.resourcesProvider, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, R.raw.permission_request_camera, LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraMicPermission : R.string.WebViewRequestCameraMicPermission, userName), LocaleController.formatString(this.val$bot ? R.string.BotWebViewRequestCameraMicPermissionWithHint : R.string.WebViewRequestCameraMicPermissionWithHint, userName), new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda12
                                 @Override // androidx.core.util.Consumer
                                 public final void accept(Object obj) {
-                                    BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$17(permissionRequest, resources, (Boolean) obj);
+                                    BotWebViewContainer.MyWebView.3.$r8$lambda$Ddmx9HgeJtR6c6R4d9uMG7mp4tw(BotWebViewContainer.MyWebView.3.this, permissionRequest, resources, (Boolean) obj);
                                 }
                             });
                             this.lastPermissionsDialog = createWebViewPermissionsRequestDialog3;
@@ -6453,15 +6341,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onPermissionRequest$13(final PermissionRequest permissionRequest, final String str, Boolean bool) {
-                if (this.lastPermissionsDialog != null) {
-                    this.lastPermissionsDialog = null;
+            public static /* synthetic */ void $r8$lambda$1nFMKyuoM-tuAXzNkByIEbiPfzI(final 3 r2, final PermissionRequest permissionRequest, final String str, Boolean bool) {
+                if (r2.lastPermissionsDialog != null) {
+                    r2.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
                         MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.RECORD_AUDIO"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda15
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
-                                BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$12(permissionRequest, str, (Boolean) obj);
+                                BotWebViewContainer.MyWebView.3.$r8$lambda$16i4F6TaevqKPDUxkoDB0gPQrfg(BotWebViewContainer.MyWebView.3.this, permissionRequest, str, (Boolean) obj);
                             }
                         });
                     } else {
@@ -6470,8 +6357,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onPermissionRequest$12(PermissionRequest permissionRequest, String str, Boolean bool) {
+            public static /* synthetic */ void $r8$lambda$16i4F6TaevqKPDUxkoDB0gPQrfg(3 r0, PermissionRequest permissionRequest, String str, Boolean bool) {
+                r0.getClass();
                 if (bool.booleanValue()) {
                     permissionRequest.grant(new String[]{str});
                     MyWebView.this.botWebViewContainer.hasUserPermissions = true;
@@ -6480,15 +6367,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onPermissionRequest$15(final PermissionRequest permissionRequest, final String str, Boolean bool) {
-                if (this.lastPermissionsDialog != null) {
-                    this.lastPermissionsDialog = null;
+            public static /* synthetic */ void $r8$lambda$rDZ_IGIHsv01ia13BEA7WRXEUtE(final 3 r2, final PermissionRequest permissionRequest, final String str, Boolean bool) {
+                if (r2.lastPermissionsDialog != null) {
+                    r2.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
                         MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.CAMERA"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda17
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
-                                BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$14(permissionRequest, str, (Boolean) obj);
+                                BotWebViewContainer.MyWebView.3.$r8$lambda$S1SlzAiUWaCJHm6i5EfHAiNQLSQ(BotWebViewContainer.MyWebView.3.this, permissionRequest, str, (Boolean) obj);
                             }
                         });
                     } else {
@@ -6497,8 +6383,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onPermissionRequest$14(PermissionRequest permissionRequest, String str, Boolean bool) {
+            public static /* synthetic */ void $r8$lambda$S1SlzAiUWaCJHm6i5EfHAiNQLSQ(3 r0, PermissionRequest permissionRequest, String str, Boolean bool) {
+                r0.getClass();
                 if (bool.booleanValue()) {
                     permissionRequest.grant(new String[]{str});
                     MyWebView.this.botWebViewContainer.hasUserPermissions = true;
@@ -6507,15 +6393,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onPermissionRequest$17(final PermissionRequest permissionRequest, final String[] strArr, Boolean bool) {
-                if (this.lastPermissionsDialog != null) {
-                    this.lastPermissionsDialog = null;
+            public static /* synthetic */ void $r8$lambda$Ddmx9HgeJtR6c6R4d9uMG7mp4tw(final 3 r2, final PermissionRequest permissionRequest, final String[] strArr, Boolean bool) {
+                if (r2.lastPermissionsDialog != null) {
+                    r2.lastPermissionsDialog = null;
                     if (bool.booleanValue()) {
                         MyWebView.this.botWebViewContainer.runWithPermissions(new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new Consumer() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$3$$ExternalSyntheticLambda14
                             @Override // androidx.core.util.Consumer
                             public final void accept(Object obj) {
-                                BotWebViewContainer.MyWebView.3.this.lambda$onPermissionRequest$16(permissionRequest, strArr, (Boolean) obj);
+                                BotWebViewContainer.MyWebView.3.$r8$lambda$0W7foGjWovNLsC5o_67s5oH0gWk(BotWebViewContainer.MyWebView.3.this, permissionRequest, strArr, (Boolean) obj);
                             }
                         });
                     } else {
@@ -6524,8 +6409,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onPermissionRequest$16(PermissionRequest permissionRequest, String[] strArr, Boolean bool) {
+            public static /* synthetic */ void $r8$lambda$0W7foGjWovNLsC5o_67s5oH0gWk(3 r1, PermissionRequest permissionRequest, String[] strArr, Boolean bool) {
+                r1.getClass();
                 if (bool.booleanValue()) {
                     permissionRequest.grant(new String[]{strArr[0], strArr[1]});
                     MyWebView.this.botWebViewContainer.hasUserPermissions = true;
@@ -6577,38 +6462,43 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         return;
                     }
                     final String escape = AndroidUtilities.escape(getFilename(str, str3, str4));
-                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$5$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            BotWebViewContainer.MyWebView.5.this.lambda$onDownloadStart$0(str, str4, str2, escape);
-                        }
-                    };
-                    if (!DownloadController.getInstance(UserConfig.selectedAccount).canDownloadMedia(8, j)) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MyWebView.this.getContext());
-                        builder.setTitle(LocaleController.getString(R.string.WebDownloadAlertTitle));
-                        builder.setMessage(AndroidUtilities.replaceTags(j > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape)));
-                        builder.setPositiveButton(LocaleController.getString(R.string.WebDownloadAlertYes), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$5$$ExternalSyntheticLambda1
-                            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                            public final void onClick(AlertDialog alertDialog, int i) {
-                                runnable.run();
+                    try {
+                        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$5$$ExternalSyntheticLambda0
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                BotWebViewContainer.MyWebView.5.$r8$lambda$MT1uemcVcS-ddZVB9rIcKdlbKVM(BotWebViewContainer.MyWebView.5.this, str, str4, str2, escape);
                             }
-                        });
-                        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-                        TextView textView = (TextView) builder.show().getButton(-2);
-                        if (textView != null) {
-                            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                        };
+                        if (!DownloadController.getInstance(UserConfig.selectedAccount).canDownloadMedia(8, j)) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MyWebView.this.getContext());
+                            builder.setTitle(LocaleController.getString(R.string.WebDownloadAlertTitle));
+                            builder.setMessage(AndroidUtilities.replaceTags(j > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape)));
+                            builder.setPositiveButton(LocaleController.getString(R.string.WebDownloadAlertYes), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$5$$ExternalSyntheticLambda1
+                                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                                public final void onClick(AlertDialog alertDialog, int i) {
+                                    runnable.run();
+                                }
+                            });
+                            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
+                            TextView textView = (TextView) builder.show().getButton(-2);
+                            if (textView != null) {
+                                textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                                return;
+                            }
                             return;
                         }
-                        return;
+                        runnable.run();
+                    } catch (Exception e) {
+                        e = e;
+                        FileLog.e(e);
                     }
-                    runnable.run();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e2) {
+                    e = e2;
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onDownloadStart$0(String str, String str2, String str3, String str4) {
+            public static /* synthetic */ void $r8$lambda$MT1uemcVcS-ddZVB9rIcKdlbKVM(5 r2, String str, String str2, String str3, String str4) {
+                r2.getClass();
                 try {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str));
                     request.setMimeType(str2);
@@ -6716,7 +6606,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             evaluateJavascript(str, new ValueCallback() { // from class: org.telegram.ui.web.BotWebViewContainer$MyWebView$$ExternalSyntheticLambda0
                 @Override // android.webkit.ValueCallback
                 public final void onReceiveValue(Object obj) {
-                    BotWebViewContainer.MyWebView.lambda$evaluateJS$1((String) obj);
+                    BotWebViewContainer.MyWebView.$r8$lambda$n4G84VuBJd3zHi0noWbm8zvFC-g((String) obj);
                 }
             });
         }

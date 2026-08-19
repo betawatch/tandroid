@@ -126,14 +126,13 @@ public class RichEditText extends EditTextCaption {
     protected void extendActionMode(ActionMode actionMode, Menu menu) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ CharSequence lambda$new$0(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        if (!this.locked || this.ignoreTextChange) {
+    public static /* synthetic */ CharSequence $r8$lambda$iRPklAQgcnDmxbuQdehd2WtiT1k(RichEditText richEditText, CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
+        if (!richEditText.locked || richEditText.ignoreTextChange) {
             return null;
         }
-        Listener listener = this.listener;
+        Listener listener = richEditText.listener;
         if (listener != null && charSequence != null && i2 > i && i3 == i4) {
-            listener.onLockedInsert(this, charSequence.subSequence(i, i2));
+            listener.onLockedInsert(richEditText, charSequence.subSequence(i, i2));
         }
         return spanned.subSequence(i3, i4);
     }
@@ -203,16 +202,14 @@ public class RichEditText extends EditTextCaption {
         this.lockingFilter = new InputFilter() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda1
             @Override // android.text.InputFilter
             public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-                CharSequence lambda$new$0;
-                lambda$new$0 = RichEditText.this.lambda$new$0(charSequence, i, i2, spanned, i3, i4);
-                return lambda$new$0;
+                return RichEditText.$r8$lambda$iRPklAQgcnDmxbuQdehd2WtiT1k(RichEditText.this, charSequence, i, i2, spanned, i3, i4);
             }
         };
         this.textColorKey = Theme.key_windowBackgroundWhiteBlackText;
         this.inlineButtonLongPressRunnable = new Runnable() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RichEditText.this.lambda$new$3();
+                RichEditText.$r8$lambda$y1oU0IY08BSrOo05VUjrt9nTmjo(RichEditText.this);
             }
         };
         this.resourcesProvider = resourcesProvider;
@@ -278,18 +275,14 @@ public class RichEditText extends EditTextCaption {
         setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda3
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean lambda$new$1;
-                lambda$new$1 = RichEditText.this.lambda$new$1(view);
-                return lambda$new$1;
+                return RichEditText.$r8$lambda$1zanUkwDccpaCzSLtbOTgIXX62M(RichEditText.this, view);
             }
         });
         updateLongClickForEmpty();
         setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda4
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                boolean lambda$new$2;
-                lambda$new$2 = RichEditText.this.lambda$new$2(textView, i, keyEvent);
-                return lambda$new$2;
+                return RichEditText.$r8$lambda$8cYQBJoce3BSQuD6acT9rqgqB_k(RichEditText.this, textView, i, keyEvent);
             }
         });
         addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.iv.RichEditText.3
@@ -310,21 +303,25 @@ public class RichEditText extends EditTextCaption {
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
+                Editable editable2;
                 if (RichEditText.this.ignoreTextChange || RichEditText.this.listener == null) {
                     return;
                 }
-                if (RichEditText.this.autoBold && editable.length() > 0) {
-                    RichTextStyle.setStyle(editable, 0, editable.length(), 1, true, RichEditText.this.block);
+                if (!RichEditText.this.autoBold || editable.length() <= 0) {
+                    editable2 = editable;
+                } else {
+                    editable2 = editable;
+                    RichTextStyle.setStyle(editable2, 0, editable.length(), 1, true, RichEditText.this.block);
                 }
                 if (RichEditText.this.allowNewlines || RichEditText.this.insertingNewline || RichEditText.this.softEnterNewline) {
-                    RichEditText.this.listener.onTextChanged(RichEditText.this, editable);
+                    RichEditText.this.listener.onTextChanged(RichEditText.this, editable2);
                     return;
                 }
                 RichEditText.this.ignoreTextChange = true;
                 boolean z = false;
-                for (int length = editable.length() - 1; length >= 0; length--) {
-                    if (editable.charAt(length) == '\n') {
-                        editable.delete(length, length + 1);
+                for (int length = editable2.length() - 1; length >= 0; length--) {
+                    if (editable2.charAt(length) == '\n') {
+                        editable2.delete(length, length + 1);
                         z = true;
                     }
                 }
@@ -332,29 +329,31 @@ public class RichEditText extends EditTextCaption {
                 if (z) {
                     RichEditText.this.listener.onEnterPressed(RichEditText.this);
                 } else {
-                    RichEditText.this.listener.onTextChanged(RichEditText.this, editable);
+                    RichEditText.this.listener.onTextChanged(RichEditText.this, editable2);
                 }
             }
         });
         updateColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(View view) {
-        return length() != 0;
+    public static /* synthetic */ boolean $r8$lambda$1zanUkwDccpaCzSLtbOTgIXX62M(RichEditText richEditText, View view) {
+        return richEditText.length() != 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$2(TextView textView, int i, KeyEvent keyEvent) {
-        Listener listener;
-        if (i != 5 || (listener = this.listener) == null || this.allowNewlines) {
+    public static /* synthetic */ boolean $r8$lambda$8cYQBJoce3BSQuD6acT9rqgqB_k(RichEditText richEditText, TextView textView, int i, KeyEvent keyEvent) {
+        if (i != 5) {
+            richEditText.getClass();
             return false;
         }
-        if (this.softEnterNewline) {
-            insertNewlineAtSelection();
+        Listener listener = richEditText.listener;
+        if (listener == null || richEditText.allowNewlines) {
+            return false;
+        }
+        if (richEditText.softEnterNewline) {
+            richEditText.insertNewlineAtSelection();
             return true;
         }
-        listener.onEnterPressed(this);
+        listener.onEnterPressed(richEditText);
         return true;
     }
 
@@ -549,19 +548,18 @@ public class RichEditText extends EditTextCaption {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        RichInlineButtonSpan richInlineButtonSpan = this.pressedInlineButton;
-        if (richInlineButtonSpan == null || this.inlineButtonClickListener == null) {
+    public static /* synthetic */ void $r8$lambda$y1oU0IY08BSrOo05VUjrt9nTmjo(RichEditText richEditText) {
+        RichInlineButtonSpan richInlineButtonSpan = richEditText.pressedInlineButton;
+        if (richInlineButtonSpan == null || richEditText.inlineButtonClickListener == null) {
             return;
         }
-        this.inlineButtonLongPressed = true;
+        richEditText.inlineButtonLongPressed = true;
         richInlineButtonSpan.setPressed(false);
         try {
-            performHapticFeedback(0);
+            richEditText.performHapticFeedback(0);
         } catch (Exception unused) {
         }
-        this.inlineButtonClickListener.onInlineButtonClick(this, this.pressedInlineButton, true);
+        richEditText.inlineButtonClickListener.onInlineButtonClick(richEditText, richEditText.pressedInlineButton, true);
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
@@ -677,34 +675,34 @@ public class RichEditText extends EditTextCaption {
         ChatAttachAlertRichLayout.showEditLatexSheet(getContext(), mathSpan.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                RichEditText.this.lambda$openMathEditor$4(mathSpan, (String) obj);
+                RichEditText.$r8$lambda$qLeOYjsCVrSBF1iBC3xpne4abxA(RichEditText.this, mathSpan, (String) obj);
             }
         }, this.resourcesProvider);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMathEditor$4(MathSpan mathSpan, String str) {
+    public static /* synthetic */ void $r8$lambda$qLeOYjsCVrSBF1iBC3xpne4abxA(RichEditText richEditText, MathSpan mathSpan, String str) {
         MathSpan create;
+        richEditText.getClass();
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        Editable text = getText();
+        Editable text = richEditText.getText();
         int spanStart = text.getSpanStart(mathSpan);
         int spanEnd = text.getSpanEnd(mathSpan);
-        if (spanStart < 0 || spanEnd < 0 || (create = MathSpan.create(str, getCurrentTextColor(), AndroidUtilities.dp(SharedConfig.fontSize + 4))) == null) {
+        if (spanStart < 0 || spanEnd < 0 || (create = MathSpan.create(str, richEditText.getCurrentTextColor(), AndroidUtilities.dp(SharedConfig.fontSize + 4))) == null) {
             return;
         }
-        boolean z = this.locked;
+        boolean z = richEditText.locked;
         if (z) {
-            setLocked(false);
+            richEditText.setLocked(false);
         }
         SpannableString spannableString = new SpannableString(" ");
         spannableString.setSpan(create, 0, 1, 33);
-        int max = Math.max(0, Math.min(spanStart, length()));
-        text.replace(max, Math.max(max, Math.min(spanEnd, length())), spannableString);
-        setSelection(Math.min(max + 1, length()));
+        int max = Math.max(0, Math.min(spanStart, richEditText.length()));
+        text.replace(max, Math.max(max, Math.min(spanEnd, richEditText.length())), spannableString);
+        richEditText.setSelection(Math.min(max + 1, richEditText.length()));
         if (z) {
-            setLocked(true);
+            richEditText.setLocked(true);
         }
     }
 

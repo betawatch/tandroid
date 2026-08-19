@@ -474,32 +474,34 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         getConnectionsManager().sendRequest(updatebusinesslocation, new RequestDelegate() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LocationActivity.this.lambda$processDone$1(tLObject, tL_error);
+                LocationActivity.$r8$lambda$pkYFGp4Wc3rXvM5Vl7Xm9d4ykCE(LocationActivity.this, tLObject, tL_error);
             }
         });
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$1(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$pkYFGp4Wc3rXvM5Vl7Xm9d4ykCE(final LocationActivity locationActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        locationActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                LocationActivity.this.lambda$processDone$0(tL_error, tLObject);
+                LocationActivity.$r8$lambda$Phvac0geaKVkYdRNhhSgwokjeVQ(LocationActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$0(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$Phvac0geaKVkYdRNhhSgwokjeVQ(LocationActivity locationActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
+            locationActivity.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
-        } else if (tLObject instanceof TLRPC.TL_boolFalse) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+            return;
+        }
+        locationActivity.getClass();
+        if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+            locationActivity.finishFragment();
         } else {
-            finishFragment();
+            locationActivity.doneButtonDrawable.animateToProgress(0.0f);
+            BulletinFactory.of(locationActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         }
     }
 
@@ -516,28 +518,18 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda2
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    LocationActivity.this.lambda$onBackPressed$2(alertDialog, i);
+                    LocationActivity.this.processDone();
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    LocationActivity.this.lambda$onBackPressed$3(alertDialog, i);
+                    LocationActivity.this.finishFragment();
                 }
             });
             showDialog(builder.create());
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$2(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$3(AlertDialog alertDialog, int i) {
-        finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -587,7 +579,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             builder.setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i3) {
-                    LocationActivity.this.lambda$onClick$6(alertDialog, i3);
+                    LocationActivity.$r8$lambda$loYz3qy0keCCrXpKcRKpFEqrLkU(LocationActivity.this, alertDialog, i3);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -595,42 +587,40 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$6(AlertDialog alertDialog, int i) {
-        this.doneButtonDrawable.animateToProgress(1.0f);
-        TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+    public static /* synthetic */ void $r8$lambda$loYz3qy0keCCrXpKcRKpFEqrLkU(final LocationActivity locationActivity, AlertDialog alertDialog, int i) {
+        locationActivity.doneButtonDrawable.animateToProgress(1.0f);
+        TLRPC.UserFull userFull = locationActivity.getMessagesController().getUserFull(locationActivity.getUserConfig().getClientUserId());
         TL_account.updateBusinessLocation updatebusinesslocation = new TL_account.updateBusinessLocation();
         if (userFull != null) {
             userFull.business_location = null;
             userFull.flags2 &= -3;
         }
-        getConnectionsManager().sendRequest(updatebusinesslocation, new RequestDelegate() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda6
+        locationActivity.getConnectionsManager().sendRequest(updatebusinesslocation, new RequestDelegate() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LocationActivity.this.lambda$onClick$5(tLObject, tL_error);
+                LocationActivity.$r8$lambda$tnWBqHR8jpOegJ4dVgAfSpGPJGQ(LocationActivity.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$5(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$tnWBqHR8jpOegJ4dVgAfSpGPJGQ(final LocationActivity locationActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        locationActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                LocationActivity.this.lambda$onClick$4(tL_error, tLObject);
+                LocationActivity.$r8$lambda$S1qTSIGGMaMutyUQ7eqCYU9N_lU(LocationActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$4(TLRPC.TL_error tL_error, TLObject tLObject) {
-        this.doneButtonDrawable.animateToProgress(0.0f);
+    public static /* synthetic */ void $r8$lambda$S1qTSIGGMaMutyUQ7eqCYU9N_lU(LocationActivity locationActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
+        locationActivity.doneButtonDrawable.animateToProgress(0.0f);
         if (tL_error != null) {
             BulletinFactory.showError(tL_error);
         } else if (tLObject instanceof TLRPC.TL_boolFalse) {
-            BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+            BulletinFactory.of(locationActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         } else {
-            finishFragment();
+            locationActivity.finishFragment();
         }
     }
 
@@ -645,7 +635,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
             public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-                LocationActivity.this.lambda$showLocationAlert$7(locationActivity, messageMedia, i, z, i2, j);
+                LocationActivity.$r8$lambda$NBPLI90Q25iiFSw9is334_Vq9uQ(LocationActivity.this, locationActivity, messageMedia, i, z, i2, j);
             }
         });
         if (this.geo == null && !TextUtils.isEmpty(this.address)) {
@@ -655,7 +645,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LocationActivity.this.lambda$showLocationAlert$9(locationActivity, alertDialog);
+                    LocationActivity.$r8$lambda$7z-d_vhlrazjnEWAXTmKI-pBHWs(LocationActivity.this, locationActivity, alertDialog);
                 }
             });
             return;
@@ -663,43 +653,43 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         presentFragment(locationActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLocationAlert$7(org.telegram.ui.LocationActivity locationActivity, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-        this.geo = messageMedia.geo;
-        if ((TextUtils.isEmpty(this.address) && !TextUtils.isEmpty(locationActivity.getAddressName())) || this.mapAddress) {
-            this.mapAddress = true;
-            String addressName = locationActivity.getAddressName();
-            this.address = addressName;
+    public static /* synthetic */ void $r8$lambda$NBPLI90Q25iiFSw9is334_Vq9uQ(LocationActivity locationActivity, org.telegram.ui.LocationActivity locationActivity2, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+        locationActivity.getClass();
+        locationActivity.geo = messageMedia.geo;
+        if ((TextUtils.isEmpty(locationActivity.address) && !TextUtils.isEmpty(locationActivity2.getAddressName())) || locationActivity.mapAddress) {
+            locationActivity.mapAddress = true;
+            String addressName = locationActivity2.getAddressName();
+            locationActivity.address = addressName;
             if (addressName == null) {
-                this.address = "";
+                locationActivity.address = "";
             }
-            EditTextBoldCursor editTextBoldCursor = this.editText;
+            EditTextBoldCursor editTextBoldCursor = locationActivity.editText;
             if (editTextBoldCursor != null) {
-                this.ignoreEditText = true;
-                editTextBoldCursor.setText(this.address);
-                EditTextBoldCursor editTextBoldCursor2 = this.editText;
+                locationActivity.ignoreEditText = true;
+                editTextBoldCursor.setText(locationActivity.address);
+                EditTextBoldCursor editTextBoldCursor2 = locationActivity.editText;
                 editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-                this.ignoreEditText = false;
+                locationActivity.ignoreEditText = false;
             }
         }
-        updateMapPreview();
-        this.listView.adapter.update(true);
-        checkDone(true);
+        locationActivity.updateMapPreview();
+        locationActivity.listView.adapter.update(true);
+        locationActivity.checkDone(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLocationAlert$9(final org.telegram.ui.LocationActivity locationActivity, final AlertDialog alertDialog) {
+    public static /* synthetic */ void $r8$lambda$7z-d_vhlrazjnEWAXTmKI-pBHWs(final LocationActivity locationActivity, final org.telegram.ui.LocationActivity locationActivity2, final AlertDialog alertDialog) {
+        locationActivity.getClass();
         try {
-            List<Address> fromLocationName = new Geocoder(getContext(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(this.address, 1);
+            List<Address> fromLocationName = new Geocoder(locationActivity.getContext(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(locationActivity.address, 1);
             if (!fromLocationName.isEmpty()) {
                 Address address = fromLocationName.get(0);
                 TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
-                tL_channelLocation.address = this.address;
+                tL_channelLocation.address = locationActivity.address;
                 TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
                 tL_channelLocation.geo_point = tL_geoPoint;
                 tL_geoPoint.lat = address.getLatitude();
                 tL_channelLocation.geo_point._long = address.getLongitude();
-                locationActivity.setInitialLocation(tL_channelLocation);
+                locationActivity2.setInitialLocation(tL_channelLocation);
             }
         } catch (Exception e) {
             FileLog.e(e);
@@ -707,15 +697,15 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.LocationActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                LocationActivity.this.lambda$showLocationAlert$8(alertDialog, locationActivity);
+                LocationActivity.$r8$lambda$zOvADARnHxqc3BGHAGxznjsPGBM(LocationActivity.this, alertDialog, locationActivity2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showLocationAlert$8(AlertDialog alertDialog, org.telegram.ui.LocationActivity locationActivity) {
+    public static /* synthetic */ void $r8$lambda$zOvADARnHxqc3BGHAGxznjsPGBM(LocationActivity locationActivity, AlertDialog alertDialog, org.telegram.ui.LocationActivity locationActivity2) {
+        locationActivity.getClass();
         alertDialog.dismiss();
-        presentFragment(locationActivity);
+        locationActivity.presentFragment(locationActivity2);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

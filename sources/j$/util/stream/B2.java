@@ -1,58 +1,53 @@
 package j$.util.stream;
 
-import java.util.Arrays;
+import j$.util.Collection;
+import j$.util.List;
+import j$.util.Objects;
+import java.util.ArrayList;
 
 /* loaded from: classes2.dex */
-final class B2 extends x2 {
-    private P2 c;
+public final class B2 extends t2 {
+    public ArrayList d;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.P2, j$.util.stream.V2] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.V2] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.V2] */
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public final void l(long j) {
-        ?? r0;
+    @Override // j$.util.stream.b2, j$.util.stream.f2
+    public final void y(long j) {
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (j <= 0) {
-            r0 = new V2();
-        } else {
-            r0 = new P2((int) j);
-        }
-        this.c = r0;
+        this.d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
     }
 
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public final void k() {
-        double[] dArr = (double[]) this.c.d();
-        Arrays.sort(dArr);
-        long length = dArr.length;
-        m2 m2Var = this.a;
-        m2Var.l(length);
-        int i = 0;
-        if (!this.b) {
-            int length2 = dArr.length;
-            while (i < length2) {
-                m2Var.accept(dArr[i]);
-                i++;
-            }
+    @Override // j$.util.stream.b2, j$.util.stream.f2
+    public final void x() {
+        List.-EL.sort(this.d, this.b);
+        long size = this.d.size();
+        f2 f2Var = this.a;
+        f2Var.y(size);
+        if (!this.c) {
+            ArrayList arrayList = this.d;
+            Objects.requireNonNull(f2Var);
+            Collection.-EL.a(arrayList, new j$.time.t(9, f2Var));
         } else {
-            int length3 = dArr.length;
-            while (i < length3) {
-                double d = dArr[i];
-                if (m2Var.n()) {
+            ArrayList arrayList2 = this.d;
+            int size2 = arrayList2.size();
+            int i = 0;
+            while (i < size2) {
+                Object obj = arrayList2.get(i);
+                i++;
+                if (f2Var.C()) {
                     break;
+                } else {
+                    f2Var.s((f2) obj);
                 }
-                m2Var.accept(d);
-                i++;
             }
         }
-        m2Var.k();
+        f2Var.x();
+        this.d = null;
     }
 
-    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        this.c.accept(d);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void s(Object obj) {
+        this.d.add(obj);
     }
 }

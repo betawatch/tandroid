@@ -171,11 +171,11 @@ public class ReactedUserHolderView extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01f3  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0314  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x02fd  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x01d1  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01f1  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0312  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0315  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x02fb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -368,17 +368,16 @@ public class ReactedUserHolderView extends FrameLayout {
 
     public void setUserReaction(TLRPC.MessagePeerReaction messagePeerReaction) {
         TLRPC.Chat chat;
-        TLRPC.User user;
         if (messagePeerReaction == null) {
             return;
         }
         long peerId = MessageObject.getPeerId(messagePeerReaction.peer_id);
+        TLRPC.User user = null;
         if (peerId > 0) {
             user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerId));
             chat = null;
         } else {
             chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-peerId));
-            user = null;
         }
         setUserReaction(user, chat, messagePeerReaction.reaction, false, messagePeerReaction.date, null, false, messagePeerReaction.dateIsSeen, false);
     }
@@ -419,7 +418,7 @@ public class ReactedUserHolderView extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.ReactedUserHolderView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ReactedUserHolderView.this.lambda$animateAlpha$0(valueAnimator2);
+                    ReactedUserHolderView.$r8$lambda$GrTSAvOdNNIb3jYSDvJY1mumJtE(ReactedUserHolderView.this, valueAnimator2);
                 }
             });
             this.alphaAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.ReactedUserHolderView.4
@@ -438,10 +437,10 @@ public class ReactedUserHolderView extends FrameLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateAlpha$0(ValueAnimator valueAnimator) {
-        this.alphaInternal = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$GrTSAvOdNNIb3jYSDvJY1mumJtE(ReactedUserHolderView reactedUserHolderView, ValueAnimator valueAnimator) {
+        reactedUserHolderView.getClass();
+        reactedUserHolderView.alphaInternal = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        reactedUserHolderView.invalidate();
     }
 
     public float getAlphaInternal() {

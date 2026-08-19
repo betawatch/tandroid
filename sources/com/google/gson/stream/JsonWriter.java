@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
 
 /* loaded from: classes.dex */
-public class JsonWriter implements Closeable, Flushable {
+public class JsonWriter implements Closeable, Flushable, AutoCloseable {
     private static final String[] HTML_SAFE_REPLACEMENT_CHARS;
     private String deferredName;
     private String formattedColon;

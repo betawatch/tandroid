@@ -21,6 +21,7 @@ public abstract class CallbackToFutureAdapter {
             Object attachCompleter = resolver.attachCompleter(completer);
             if (attachCompleter != null) {
                 completer.tag = attachCompleter;
+                return safeFuture;
             }
         } catch (Exception e) {
             safeFuture.setException(e);

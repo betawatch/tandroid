@@ -30,9 +30,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
     public static final ExoMediaDrm.Provider DEFAULT_PROVIDER = new ExoMediaDrm.Provider() { // from class: com.google.android.exoplayer2.drm.FrameworkMediaDrm$$ExternalSyntheticLambda1
         @Override // com.google.android.exoplayer2.drm.ExoMediaDrm.Provider
         public final ExoMediaDrm acquireExoMediaDrm(UUID uuid) {
-            ExoMediaDrm lambda$static$0;
-            lambda$static$0 = FrameworkMediaDrm.lambda$static$0(uuid);
-            return lambda$static$0;
+            return FrameworkMediaDrm.$r8$lambda$3GNQ--EqPU_wUEQYVzGhnf5fwpY(uuid);
         }
     };
     private final MediaDrm mediaDrm;
@@ -44,8 +42,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         return 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ExoMediaDrm lambda$static$0(UUID uuid) {
+    public static /* synthetic */ ExoMediaDrm $r8$lambda$3GNQ--EqPU_wUEQYVzGhnf5fwpY(UUID uuid) {
         try {
             return newInstance(uuid);
         } catch (UnsupportedDrmException unused) {
@@ -81,14 +78,14 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         this.mediaDrm.setOnEventListener(onEventListener == null ? null : new MediaDrm.OnEventListener() { // from class: com.google.android.exoplayer2.drm.FrameworkMediaDrm$$ExternalSyntheticLambda2
             @Override // android.media.MediaDrm.OnEventListener
             public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
-                FrameworkMediaDrm.this.lambda$setOnEventListener$1(onEventListener, mediaDrm, bArr, i, i2, bArr2);
+                FrameworkMediaDrm.$r8$lambda$SbLtjC6llPgdjJdrLaTi7pgFrYg(FrameworkMediaDrm.this, onEventListener, mediaDrm, bArr, i, i2, bArr2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOnEventListener$1(ExoMediaDrm.OnEventListener onEventListener, MediaDrm mediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
-        onEventListener.onEvent(this, bArr, i, i2, bArr2);
+    public static /* synthetic */ void $r8$lambda$SbLtjC6llPgdjJdrLaTi7pgFrYg(FrameworkMediaDrm frameworkMediaDrm, ExoMediaDrm.OnEventListener onEventListener, MediaDrm mediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
+        frameworkMediaDrm.getClass();
+        onEventListener.onEvent(frameworkMediaDrm, bArr, i, i2, bArr2);
     }
 
     @Override // com.google.android.exoplayer2.drm.ExoMediaDrm
@@ -231,10 +228,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             DrmInitData.SchemeData schemeData3 = (DrmInitData.SchemeData) list.get(i5);
             int parseVersion = PsshAtomUtil.parseVersion((byte[]) Assertions.checkNotNull(schemeData3.data));
             int i6 = Util.SDK_INT;
-            if (i6 < 23 && parseVersion == 0) {
-                return schemeData3;
-            }
-            if (i6 >= 23 && parseVersion == 1) {
+            if ((i6 < 23 && parseVersion == 0) || (i6 >= 23 && parseVersion == 1)) {
                 return schemeData3;
             }
         }

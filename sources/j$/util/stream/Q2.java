@@ -1,41 +1,46 @@
 package j$.util.stream;
 
-import j$.util.Spliterators;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import j$.util.stream.Collector;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.stream.Collector;
 
 /* loaded from: classes2.dex */
-final class Q2 extends U2 implements j$.util.Z {
-    final /* synthetic */ R2 g;
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.T.b(this, consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.T.g(this, consumer);
-    }
-
-    @Override // j$.util.stream.U2
-    final void a(int i, Object obj, Object obj2) {
-        ((IntConsumer) obj2).accept(((int[]) obj)[i]);
-    }
-
-    @Override // j$.util.stream.U2
-    final j$.util.f0 b(Object obj, int i, int i2) {
-        return Spliterators.k((int[]) obj, i, i2 + i);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    Q2(R2 r2, int i, int i2, int i3, int i4) {
-        super(r2, i, i2, i3, i4);
-        this.g = r2;
-    }
-
-    @Override // j$.util.stream.U2
-    final j$.util.f0 c(int i, int i2, int i3, int i4) {
-        return new Q2(this.g, i, i2, i3, i4);
+public abstract class Q2 {
+    public static Set a(Set set) {
+        if (set == null || set.isEmpty()) {
+            return set;
+        }
+        HashSet hashSet = new HashSet();
+        Object next = set.iterator().next();
+        if (next instanceof Collector.Characteristics) {
+            Iterator it = set.iterator();
+            while (it.hasNext()) {
+                try {
+                    Collector.Characteristics characteristics = (Collector.Characteristics) it.next();
+                    hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? Collector.Characteristics.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
+                } catch (ClassCastException e) {
+                    j$.util.e.a("java.util.stream.Collector.Characteristics", e);
+                    throw null;
+                }
+            }
+        } else {
+            if (!(next instanceof Collector.Characteristics)) {
+                j$.util.e.a("java.util.stream.Collector.Characteristics", next.getClass());
+                throw null;
+            }
+            Iterator it2 = set.iterator();
+            while (it2.hasNext()) {
+                try {
+                    Collector.Characteristics characteristics2 = (Collector.Characteristics) it2.next();
+                    hashSet.add(characteristics2 == null ? null : characteristics2 == Collector.Characteristics.CONCURRENT ? Collector.Characteristics.CONCURRENT : characteristics2 == Collector.Characteristics.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
+                } catch (ClassCastException e2) {
+                    j$.util.e.a("java.util.stream.Collector.Characteristics", e2);
+                    throw null;
+                }
+            }
+        }
+        return hashSet;
     }
 }

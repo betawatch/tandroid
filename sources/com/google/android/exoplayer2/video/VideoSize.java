@@ -19,9 +19,7 @@ public final class VideoSize implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.video.VideoSize$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            VideoSize lambda$static$0;
-            lambda$static$0 = VideoSize.lambda$static$0(bundle);
-            return lambda$static$0;
+            return VideoSize.$r8$lambda$Vcy9luxdITX3Asjgr_UYxhsBWBE(bundle);
         }
     };
 
@@ -40,11 +38,13 @@ public final class VideoSize implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof VideoSize)) {
-            return false;
+        if (obj instanceof VideoSize) {
+            VideoSize videoSize = (VideoSize) obj;
+            if (this.width == videoSize.width && this.height == videoSize.height && this.unappliedRotationDegrees == videoSize.unappliedRotationDegrees && this.pixelWidthHeightRatio == videoSize.pixelWidthHeightRatio) {
+                return true;
+            }
         }
-        VideoSize videoSize = (VideoSize) obj;
-        return this.width == videoSize.width && this.height == videoSize.height && this.unappliedRotationDegrees == videoSize.unappliedRotationDegrees && this.pixelWidthHeightRatio == videoSize.pixelWidthHeightRatio;
+        return false;
     }
 
     public int hashCode() {
@@ -61,8 +61,7 @@ public final class VideoSize implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ VideoSize lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ VideoSize $r8$lambda$Vcy9luxdITX3Asjgr_UYxhsBWBE(Bundle bundle) {
         return new VideoSize(bundle.getInt(FIELD_WIDTH, 0), bundle.getInt(FIELD_HEIGHT, 0), bundle.getInt(FIELD_UNAPPLIED_ROTATION_DEGREES, 0), bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, 1.0f));
     }
 }

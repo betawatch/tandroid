@@ -127,15 +127,12 @@ public abstract class CreateBotAlert {
         if (str != null && str.toLowerCase().endsWith("bot")) {
             str = str.substring(0, str.length() - 3);
         }
-        CharSequence charSequence = str;
-        editTextCell2.setText(charSequence);
+        editTextCell2.setText(str);
         linearLayout.addView(editTextCell2, LayoutHelper.createLinear(-1, -2, 55, 12, 0, 12, 0));
         editTextCell.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda0
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView4, int i4, KeyEvent keyEvent) {
-                boolean lambda$show$0;
-                lambda$show$0 = CreateBotAlert.lambda$show$0(EditTextCell.this, textView4, i4, keyEvent);
-                return lambda$show$0;
+                return CreateBotAlert.$r8$lambda$Z8-7qQ9FB7PN4baMJPXCnYjip_4(EditTextCell.this, textView4, i4, keyEvent);
             }
         });
         final TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context, resourcesProvider);
@@ -166,22 +163,22 @@ public abstract class CreateBotAlert {
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                CreateBotAlert.lambda$show$2(EditTextCell.this, iArr2, i, strArr, strArr2, round, textInfoPrivacyCell2, resourcesProvider, iArr3);
+                CreateBotAlert.$r8$lambda$duLcuQuCStUZz-3PaAYwTm-fqe0(EditTextCell.this, iArr2, i, strArr, strArr2, round, textInfoPrivacyCell2, resourcesProvider, iArr3);
             }
         };
         final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                CreateBotAlert.lambda$show$6(strArr, runnable, editTextCell, iArr3, round, z, i, user, iArr, zArr, callback, create, resourcesProvider, context);
+                CreateBotAlert.$r8$lambda$Qpj78b_0NziE56xjf31rIY9Vfg8(strArr, runnable, editTextCell, iArr3, round, z, i, user, iArr, zArr, callback, create, resourcesProvider, context);
             }
         };
         editTextCell2.editText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.CreateBotAlert.1
             @Override // android.text.TextWatcher
-            public void beforeTextChanged(CharSequence charSequence2, int i4, int i5, int i6) {
+            public void beforeTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
             }
 
             @Override // android.text.TextWatcher
-            public void onTextChanged(CharSequence charSequence2, int i4, int i5, int i6) {
+            public void onTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
             }
 
             @Override // android.text.TextWatcher
@@ -189,21 +186,19 @@ public abstract class CreateBotAlert {
                 runnable.run();
             }
         });
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!TextUtils.isEmpty(str)) {
             runnable.run();
         }
         editTextCell2.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda3
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView4, int i4, KeyEvent keyEvent) {
-                boolean lambda$show$7;
-                lambda$show$7 = CreateBotAlert.lambda$show$7(runnable2, textView4, i4, keyEvent);
-                return lambda$show$7;
+                return CreateBotAlert.$r8$lambda$DNHBVk_FfcLHor8rzZBpk0hsHQg(runnable2, textView4, i4, keyEvent);
             }
         });
         neutral.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BottomSheet.this.lambda$new$0();
+                BottomSheet.this.dismiss();
             }
         });
         round.setEnabled(false);
@@ -216,14 +211,13 @@ public abstract class CreateBotAlert {
         create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda6
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                CreateBotAlert.lambda$show$10(zArr, callback, iArr, i, dialogInterface);
+                CreateBotAlert.$r8$lambda$O4LfDmOpx_9Y5LMHst2_FDOR_54(zArr, callback, iArr, i, dialogInterface);
             }
         });
         create.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$show$0(EditTextCell editTextCell, TextView textView, int i, KeyEvent keyEvent) {
+    public static /* synthetic */ boolean $r8$lambda$Z8-7qQ9FB7PN4baMJPXCnYjip_4(EditTextCell editTextCell, TextView textView, int i, KeyEvent keyEvent) {
         if (i != 5) {
             return false;
         }
@@ -233,8 +227,7 @@ public abstract class CreateBotAlert {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$2(EditTextCell editTextCell, int[] iArr, int i, final String[] strArr, final String[] strArr2, final ButtonWithCounterView buttonWithCounterView, final TextInfoPrivacyCell textInfoPrivacyCell, final Theme.ResourcesProvider resourcesProvider, final int[] iArr2) {
+    public static /* synthetic */ void $r8$lambda$duLcuQuCStUZz-3PaAYwTm-fqe0(EditTextCell editTextCell, int[] iArr, int i, final String[] strArr, final String[] strArr2, final ButtonWithCounterView buttonWithCounterView, final TextInfoPrivacyCell textInfoPrivacyCell, final Theme.ResourcesProvider resourcesProvider, final int[] iArr2) {
         final String str = ((Object) editTextCell.getText()) + "bot";
         if (str.length() < 4) {
             if (iArr[0] >= 0) {
@@ -281,13 +274,12 @@ public abstract class CreateBotAlert {
         iArr[0] = ConnectionsManager.getInstance(i).sendRequestTyped(checkusername, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                CreateBotAlert.lambda$show$1(ButtonWithCounterView.this, strArr2, strArr, str, textInfoPrivacyCell, resourcesProvider, iArr2, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                CreateBotAlert.$r8$lambda$GmKpaDpTm5NvpHF_qD44TjE4Y10(ButtonWithCounterView.this, strArr2, strArr, str, textInfoPrivacyCell, resourcesProvider, iArr2, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$1(ButtonWithCounterView buttonWithCounterView, String[] strArr, String[] strArr2, String str, TextInfoPrivacyCell textInfoPrivacyCell, Theme.ResourcesProvider resourcesProvider, int[] iArr, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$GmKpaDpTm5NvpHF_qD44TjE4Y10(ButtonWithCounterView buttonWithCounterView, String[] strArr, String[] strArr2, String str, TextInfoPrivacyCell textInfoPrivacyCell, Theme.ResourcesProvider resourcesProvider, int[] iArr, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
         buttonWithCounterView.setLoading(false);
         strArr[0] = null;
         if (bool instanceof TLRPC.TL_boolTrue) {
@@ -306,8 +298,7 @@ public abstract class CreateBotAlert {
         AndroidUtilities.shakeViewSpring(textInfoPrivacyCell, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$6(String[] strArr, Runnable runnable, EditTextCell editTextCell, int[] iArr, final ButtonWithCounterView buttonWithCounterView, boolean z, final int i, final TLRPC.User user, final int[] iArr2, final boolean[] zArr, final Utilities.Callback callback, final BottomSheet bottomSheet, final Theme.ResourcesProvider resourcesProvider, final Context context) {
+    public static /* synthetic */ void $r8$lambda$Qpj78b_0NziE56xjf31rIY9Vfg8(String[] strArr, Runnable runnable, EditTextCell editTextCell, int[] iArr, final ButtonWithCounterView buttonWithCounterView, boolean z, final int i, final TLRPC.User user, final int[] iArr2, final boolean[] zArr, final Utilities.Callback callback, final BottomSheet bottomSheet, final Theme.ResourcesProvider resourcesProvider, final Context context) {
         if (strArr[0] == null) {
             runnable.run();
             return;
@@ -328,13 +319,12 @@ public abstract class CreateBotAlert {
         iArr2[0] = ConnectionsManager.getInstance(i).sendRequestTyped(createbot, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                CreateBotAlert.lambda$show$5(iArr2, buttonWithCounterView, zArr, i, callback, bottomSheet, resourcesProvider, context, user, (TLRPC.User) obj, (TLRPC.TL_error) obj2);
+                CreateBotAlert.$r8$lambda$beTIbpFDg1oTOp6ADA6Nl3xYAEw(iArr2, buttonWithCounterView, zArr, i, callback, bottomSheet, resourcesProvider, context, user, (TLRPC.User) obj, (TLRPC.TL_error) obj2);
             }
         }, 1024);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$5(int[] iArr, ButtonWithCounterView buttonWithCounterView, boolean[] zArr, int i, Utilities.Callback callback, final BottomSheet bottomSheet, Theme.ResourcesProvider resourcesProvider, final Context context, TLRPC.User user, TLRPC.User user2, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$beTIbpFDg1oTOp6ADA6Nl3xYAEw(int[] iArr, ButtonWithCounterView buttonWithCounterView, boolean[] zArr, int i, Utilities.Callback callback, final BottomSheet bottomSheet, Theme.ResourcesProvider resourcesProvider, final Context context, TLRPC.User user, TLRPC.User user2, TLRPC.TL_error tL_error) {
         String userName;
         String formatString;
         iArr[0] = -1;
@@ -348,7 +338,7 @@ public abstract class CreateBotAlert {
             if (callback != null) {
                 callback.run(user2);
             }
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
             return;
         }
         if (tL_error != null) {
@@ -366,12 +356,12 @@ public abstract class CreateBotAlert {
                 of.createSimpleBulletin(i2, string, highlightBotFather(context, AndroidUtilities.replaceSingleLink(formatString, Theme.getColor(Theme.key_undo_cancelColor, resourcesProvider), new Runnable() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CreateBotAlert.lambda$show$3(BottomSheet.this);
+                        CreateBotAlert.$r8$lambda$xZYcFF9Rk1bcL4YP6-Sw5LitsM0(BottomSheet.this);
                     }
                 }), new Runnable() { // from class: org.telegram.ui.Components.CreateBotAlert$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CreateBotAlert.lambda$show$4(BottomSheet.this, context);
+                        CreateBotAlert.$r8$lambda$UVa_TRG5c6A9jayVCV9VEts8O-U(BottomSheet.this, context);
                     }
                 }, resourcesProvider)).setDuration(8000).show();
             } else {
@@ -393,23 +383,20 @@ public abstract class CreateBotAlert {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$3(BottomSheet bottomSheet) {
-        bottomSheet.lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$xZYcFF9Rk1bcL4YP6-Sw5LitsM0(BottomSheet bottomSheet) {
+        bottomSheet.dismiss();
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
             safeLastFragment.presentFragment(new PremiumPreviewFragment("create_bot"));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$4(BottomSheet bottomSheet, Context context) {
-        bottomSheet.lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$UVa_TRG5c6A9jayVCV9VEts8O-U(BottomSheet bottomSheet, Context context) {
+        bottomSheet.dismiss();
         Browser.openUrl(context, "https://t.me/BotFather?start=deletebot");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$show$7(Runnable runnable, TextView textView, int i, KeyEvent keyEvent) {
+    public static /* synthetic */ boolean $r8$lambda$DNHBVk_FfcLHor8rzZBpk0hsHQg(Runnable runnable, TextView textView, int i, KeyEvent keyEvent) {
         if (i != 6) {
             return false;
         }
@@ -417,8 +404,7 @@ public abstract class CreateBotAlert {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$10(boolean[] zArr, Utilities.Callback callback, int[] iArr, int i, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$O4LfDmOpx_9Y5LMHst2_FDOR_54(boolean[] zArr, Utilities.Callback callback, int[] iArr, int i, DialogInterface dialogInterface) {
         if (!zArr[0]) {
             zArr[0] = true;
             if (callback != null) {

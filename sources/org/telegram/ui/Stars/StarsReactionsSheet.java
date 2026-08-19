@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import me.vkryl.android.animator.BoolAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -160,15 +159,15 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
     public StarsReactionsSheet(final Context context, final int i, final long j, final ChatActivity chatActivity, final MessageObject messageObject, ArrayList arrayList, boolean z, final boolean z2, long j2, final Theme.ResourcesProvider resourcesProvider) {
         super(context, false, resourcesProvider);
         TLRPC.MessageReactor messageReactor;
-        FrameLayout frameLayout;
         boolean z3;
+        TLRPC.Chat chat;
+        boolean z4;
         String formatString;
-        Theme.ResourcesProvider resourcesProvider2;
-        TLRPC.MessageReactor messageReactor2;
-        FrameLayout frameLayout2;
-        long j3;
+        final Context context2;
         int i2;
-        int i3 = 9;
+        long j3;
+        int i3;
+        int i4 = 9;
         this.starRef = new ColoredImageSpan[1];
         this.checkedVisiblity = false;
         this.resourcesProvider = resourcesProvider;
@@ -187,59 +186,63 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         balanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarsReactionsSheet.lambda$new$0(context, resourcesProvider, view);
+                new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
             }
         });
         long clientUserId = UserConfig.getInstance(i).getClientUserId();
         if (arrayList != null) {
-            Iterator it = arrayList.iterator();
-            TLRPC.MessageReactor messageReactor3 = null;
-            while (it.hasNext()) {
-                TLRPC.MessageReactor messageReactor4 = (TLRPC.MessageReactor) it.next();
-                long peerDialogId = DialogObject.getPeerDialogId(messageReactor4.peer_id);
-                if (messageReactor4.anonymous && messageReactor4.my) {
+            int size = arrayList.size();
+            int i5 = 0;
+            TLRPC.MessageReactor messageReactor2 = null;
+            while (i5 < size) {
+                Object obj = arrayList.get(i5);
+                i5++;
+                TLRPC.MessageReactor messageReactor3 = (TLRPC.MessageReactor) obj;
+                long peerDialogId = DialogObject.getPeerDialogId(messageReactor3.peer_id);
+                if (messageReactor3.anonymous && messageReactor3.my) {
                     peerDialogId = clientUserId;
                 }
-                if (messageReactor4.my || peerDialogId == clientUserId) {
-                    messageReactor3 = messageReactor4;
+                if (messageReactor3.my || peerDialogId == clientUserId) {
+                    messageReactor2 = messageReactor3;
                 }
             }
-            messageReactor = messageReactor3;
+            messageReactor = messageReactor2;
         } else {
             messageReactor = null;
         }
-        boolean z4 = (arrayList == null || arrayList.isEmpty()) ? false : true;
+        boolean z5 = (arrayList == null || arrayList.isEmpty()) ? false : true;
         if (z2) {
             if (arrayList != null) {
-                int i4 = 0;
+                int i6 = 0;
                 while (true) {
-                    if (i4 >= arrayList.size()) {
+                    if (i6 >= arrayList.size()) {
                         break;
                     }
-                    if (((TLRPC.MessageReactor) arrayList.get(i4)).my) {
+                    if (((TLRPC.MessageReactor) arrayList.get(i6)).my) {
                         break;
                     }
-                    i4++;
+                    i6++;
                 }
             }
+            z3 = z5;
             this.peer = j2;
         } else {
+            z3 = z5;
             this.peer = StarsController.getInstance(i).getPaidReactionsDialogId(messageObject);
         }
         long j4 = this.peer;
-        this.lastSelectedPeer = j4 != UserObject.ANONYMOUS ? j4 : clientUserId;
+        this.lastSelectedPeer = j4 == UserObject.ANONYMOUS ? clientUserId : j4;
         fixNavigationBar(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
         LinearLayout linearLayout = new LinearLayout(context);
         this.layout = linearLayout;
         linearLayout.setOrientation(1);
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.topLayout = frameLayout3;
-        linearLayout.addView(frameLayout3, LayoutHelper.createLinear(-1, -2));
-        TLRPC.MessageReactor messageReactor5 = messageReactor;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.topLayout = frameLayout;
+        linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2));
         this.slider = new StarsSlider(context, resourcesProvider) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.1
             @Override // org.telegram.ui.Stars.StarsReactionsSheet.StarsSlider
-            public void onValueChanged(int i5) {
-                long j5 = i5;
+            public void onValueChanged(int i7) {
+                long j5 = i7;
                 StarsReactionsSheet.this.updateSenders(j5);
                 if (StarsReactionsSheet.this.buttonView != null) {
                     StarsReactionsSheet.this.buttonView.setText(StarsIntroActivity.replaceStars(LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j5, ',')), StarsReactionsSheet.this.starRef), true);
@@ -247,48 +250,48 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 if (z2) {
                     StarsReactionsSheet.this.commentMessage.stars = j5;
                     StarsReactionsSheet.this.commentView.set(StarsReactionsSheet.this.commentMessage);
-                    setColor(HighlightMessageSheet.getTierOption(i, i5, HighlightMessageSheet.TIER_COLOR1), HighlightMessageSheet.getTierOption(i, i5, HighlightMessageSheet.TIER_COLOR2), true);
+                    setColor(HighlightMessageSheet.getTierOption(i, i7, HighlightMessageSheet.TIER_COLOR1), HighlightMessageSheet.getTierOption(i, i7, HighlightMessageSheet.TIER_COLOR2), true);
                 }
             }
 
             @Override // org.telegram.ui.Stars.StarsReactionsSheet.StarsSlider
-            public void setValue(int i5) {
-                super.setValue(i5);
+            public void setValue(int i7) {
+                super.setValue(i7);
                 if (z2) {
-                    setColor(HighlightMessageSheet.getTierOption(i, i5, HighlightMessageSheet.TIER_COLOR1), HighlightMessageSheet.getTierOption(i, i5, HighlightMessageSheet.TIER_COLOR2), true);
+                    setColor(HighlightMessageSheet.getTierOption(i, i7, HighlightMessageSheet.TIER_COLOR1), HighlightMessageSheet.getTierOption(i, i7, HighlightMessageSheet.TIER_COLOR2), true);
                 }
             }
         };
         int[] iArr = {1, 50, 100, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2000, 5000, 7500, 10000};
         long j5 = MessagesController.getInstance(i).starsPaidReactionAmountMax;
         ArrayList arrayList2 = new ArrayList();
-        int i5 = 0;
+        int i7 = 0;
         while (true) {
-            if (i5 >= i3) {
+            if (i7 >= i4) {
                 break;
             }
-            int i6 = iArr[i5];
-            if (i6 > j5) {
+            int i8 = iArr[i7];
+            if (i8 > j5) {
                 arrayList2.add(Integer.valueOf((int) j5));
                 break;
             }
-            arrayList2.add(Integer.valueOf(i6));
-            if (iArr[i5] == j5) {
+            arrayList2.add(Integer.valueOf(i8));
+            if (iArr[i7] == j5) {
                 break;
             }
-            i5++;
-            i3 = 9;
+            i7++;
+            i4 = 9;
         }
         int[] iArr2 = new int[arrayList2.size()];
-        for (int i7 = 0; i7 < arrayList2.size(); i7++) {
-            iArr2[i7] = ((Integer) arrayList2.get(i7)).intValue();
+        for (int i9 = 0; i9 < arrayList2.size(); i9++) {
+            iArr2[i9] = ((Integer) arrayList2.get(i9)).intValue();
         }
         this.slider.setSteps(100, iArr2);
         if (z || z2) {
             if (!z) {
                 this.slider.setAlpha(0.5f);
             }
-            this.topLayout.addView(this.slider, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, z2 ? -50.0f : 0.0f, 0.0f, (!z2 || z4) ? 0.0f : -40.0f));
+            this.topLayout.addView(this.slider, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, z2 ? -50.0f : 0.0f, 0.0f, (!z2 || z3) ? 0.0f : -40.0f));
         }
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.toptopLayout = linearLayout2;
@@ -296,17 +299,17 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         if (!z2) {
             this.topLayout.addView(linearLayout2, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
         }
-        FrameLayout frameLayout4 = new FrameLayout(context);
-        this.dialogSelectorLayout = frameLayout4;
-        FrameLayout frameLayout5 = new FrameLayout(context);
-        this.dialogSelectorInnerLayout = frameLayout5;
-        frameLayout5.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(14.0f), Theme.getColor(Theme.key_dialogBackgroundGray, resourcesProvider)));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.dialogSelectorLayout = frameLayout2;
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        this.dialogSelectorInnerLayout = frameLayout3;
+        frameLayout3.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(14.0f), Theme.getColor(Theme.key_dialogBackgroundGray, resourcesProvider)));
         BackupImageView backupImageView = new BackupImageView(context);
         this.dialogImageView = backupImageView;
         backupImageView.setRoundRadius(AndroidUtilities.dp(14.0f));
         backupImageView.getImageReceiver().setCrossfadeWithOldImage(true);
         updatePeerDialog();
-        frameLayout5.addView(backupImageView, LayoutHelper.createFrame(28, 28, 115));
+        frameLayout3.addView(backupImageView, LayoutHelper.createFrame(28, 28, 115));
         ImageView imageView = new ImageView(context);
         this.dialogSelectorIconView = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -315,21 +318,21 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(color, mode));
         imageView.setImageResource(R.drawable.arrows_select);
-        frameLayout5.addView(imageView, LayoutHelper.createFrame(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
-        frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(52, 28, 17));
-        frameLayout4.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
-        linearLayout2.addView(frameLayout4, LayoutHelper.createLinear(-2, -1, 0.0f, 115, 6, 4, 6, 0));
-        ScaleStateListAnimator.apply(frameLayout4);
+        frameLayout3.addView(imageView, LayoutHelper.createFrame(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        frameLayout2.addView(frameLayout3, LayoutHelper.createFrame(52, 28, 17));
+        frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
+        linearLayout2.addView(frameLayout2, LayoutHelper.createLinear(-2, -1, 0.0f, 115, 6, 4, 6, 0));
+        ScaleStateListAnimator.apply(frameLayout2);
         BotStarsController.getInstance(i).loadAdminedChannels();
         TextView textView = new TextView(context) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.2
             @Override // android.widget.TextView, android.view.View
-            protected void onMeasure(int i8, int i9) {
-                super.onMeasure(i8, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLObject.FLAG_30));
+            protected void onMeasure(int i10, int i11) {
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(ActionBar.getCurrentActionBarHeight(), TLObject.FLAG_30));
             }
         };
         this.titleView = textView;
-        int i8 = Theme.key_windowBackgroundWhiteBlackText;
-        textView.setTextColor(Theme.getColor(i8, resourcesProvider));
+        int i10 = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i10, resourcesProvider));
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.StarsReactionTitle2));
@@ -346,35 +349,35 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarsReactionsSheet.this.lambda$new$1(view);
+                StarsReactionsSheet.this.dismiss();
             }
         });
         linearLayout2.addView(imageView2, LayoutHelper.createLinear(48, 48, 0.0f, 53, 0, 6, 6, 0));
         LinearLayout linearLayout3 = new LinearLayout(context);
         linearLayout3.setOrientation(1);
         this.topLayout.addView(linearLayout3, LayoutHelper.createFrame(-1, -2.0f, 55, 0.0f, z2 ? 0.0f : z ? 179.0f : 45.0f, 0.0f, 15.0f));
-        final TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-j));
+        TLRPC.Chat chat2 = MessagesController.getInstance(i).getChat(Long.valueOf(-j));
         TextView textView2 = new TextView(context);
         this.statusView = textView2;
-        textView2.setTextColor(Theme.getColor(i8, resourcesProvider));
+        textView2.setTextColor(Theme.getColor(i10, resourcesProvider));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         textView2.setSingleLine(false);
         textView2.setMaxLines(3);
-        if (messageReactor5 != null) {
-            formatString = LocaleController.formatPluralStringComma("StarsReactionTextSent", messageReactor5.count);
-            frameLayout = frameLayout4;
-            z3 = false;
+        if (messageReactor != null) {
+            formatString = LocaleController.formatPluralStringComma("StarsReactionTextSent", messageReactor.count);
+            chat = chat2;
+            z4 = false;
         } else {
-            frameLayout = frameLayout4;
-            z3 = false;
-            formatString = LocaleController.formatString(R.string.StarsReactionText, chat == null ? "" : chat.title);
+            chat = chat2;
+            z4 = false;
+            formatString = LocaleController.formatString(R.string.StarsReactionText, chat2 == null ? "" : chat2.title);
         }
-        textView2.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(formatString), textView2.getPaint().getFontMetricsInt(), z3));
+        textView2.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(formatString), textView2.getPaint().getFontMetricsInt(), z4));
         if (z && !z2) {
             linearLayout3.addView(textView2, LayoutHelper.createLinear(-1, -2, 55, 40, 0, 40, 0));
         }
-        if (z4) {
+        if (z3) {
             if (!z2) {
                 View view = new View(context) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.3
                     private final LinearGradient gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
@@ -409,15 +412,15 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.topSendersView = topSendersView;
             topSendersView.setOnSenderClickListener(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda3
                 @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    StarsReactionsSheet.this.lambda$new$2(i, z2, (Long) obj);
+                public final void run(Object obj2) {
+                    StarsReactionsSheet.$r8$lambda$5nYVya0ypja5fs2EyLwc5FgW03w(StarsReactionsSheet.this, i, z2, (Long) obj2);
                 }
             });
             this.layout.addView(topSendersView, LayoutHelper.createLinear(-1, 110, 0.0f, z2 ? -50.0f : 0.0f, 0.0f, 0.0f));
             View view2 = new View(context);
             this.checkSeparatorView = view2;
             view2.setBackgroundColor(Theme.getColor(Theme.key_divider, resourcesProvider));
-            if (!z2 && (z || messageReactor5 != null)) {
+            if (!z2 && (z || messageReactor != null)) {
                 this.layout.addView(view2, LayoutHelper.createLinear(-1, 1.0f / AndroidUtilities.density, 7, 24, 0, 24, 0));
             }
         } else {
@@ -426,19 +429,19 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.checkSeparatorView = null;
         }
         if (z2) {
-            int i9 = Theme.key_dialogTextBlack;
-            TextView makeTextView = TextHelper.makeTextView(context, 20.0f, i9, true, resourcesProvider);
+            int i11 = Theme.key_dialogTextBlack;
+            TextView makeTextView = TextHelper.makeTextView(context, 20.0f, i11, true, resourcesProvider);
             makeTextView.setGravity(17);
             makeTextView.setText(LocaleController.getString(z ? R.string.LiveStoryReactTitle : R.string.LiveStoryReactAdminTitle));
             this.layout.addView(makeTextView, LayoutHelper.createLinear(-1, -2, 7, 32, 6, 32, 9));
-            TextView makeTextView2 = TextHelper.makeTextView(context, 14.0f, i9, false, resourcesProvider);
+            TextView makeTextView2 = TextHelper.makeTextView(context, 14.0f, i11, false, resourcesProvider);
             makeTextView2.setGravity(17);
             if (z) {
-                i2 = R.string.LiveStoryReactText;
+                i3 = R.string.LiveStoryReactText;
             } else {
-                i2 = z4 ? R.string.LiveStoryReactAdminText : R.string.LiveStoryReactAdminEmptyText;
+                i3 = z3 ? R.string.LiveStoryReactAdminText : R.string.LiveStoryReactAdminEmptyText;
             }
-            makeTextView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(i2, DialogObject.getName(j))));
+            makeTextView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(i3, DialogObject.getName(j))));
             this.layout.addView(makeTextView2, LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 20));
         }
         if (z2) {
@@ -464,7 +467,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         checkBox2.setDrawBackgroundAsArc(10);
         TextView textView3 = new TextView(context);
         this.checkTextView = textView3;
-        textView3.setTextColor(Theme.getColor(i8, resourcesProvider));
+        textView3.setTextColor(Theme.getColor(i10, resourcesProvider));
         textView3.setTextSize(1, 14.0f);
         textView3.setText(LocaleController.getString(R.string.StarsReactionShowMeInTopSenders));
         LinearLayout linearLayout4 = new LinearLayout(context);
@@ -476,13 +479,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         linearLayout4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                StarsReactionsSheet.this.lambda$new$3(view3);
+                StarsReactionsSheet.$r8$lambda$bfFmTLBSaoQw-QZ7YLwkTvTpWtE(StarsReactionsSheet.this, view3);
             }
         });
         ScaleStateListAnimator.apply(linearLayout4, 0.05f, 1.2f);
         linearLayout4.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), 6, 6));
-        if (!z2 && (z || messageReactor5 != null)) {
-            this.layout.addView(linearLayout4, LayoutHelper.createLinear(-2, -2, 1, 0, z4 ? 10 : 4, 0, 10));
+        if (!z2 && (z || messageReactor != null)) {
+            this.layout.addView(linearLayout4, LayoutHelper.createLinear(-2, -2, 1, 0, z3 ? 10 : 4, 0, 10));
         }
         ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
         this.buttonView = buttonWithCounterView;
@@ -497,49 +500,47 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         updateSenders(0L);
         buttonWithCounterView.setText(StarsIntroActivity.replaceStars(LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(50L, ',')), this.starRef), true);
         if (z) {
+            final TLRPC.Chat chat3 = chat;
+            i2 = 17;
             j3 = 0;
-            frameLayout2 = frameLayout;
-            resourcesProvider2 = resourcesProvider;
-            messageReactor2 = messageReactor5;
+            context2 = context;
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
-                    StarsReactionsSheet.this.lambda$new$7(messageObject, chatActivity, i, z2, context, resourcesProvider, j, chat, view3);
+                    StarsReactionsSheet.$r8$lambda$TIgKHs5HGl4-gWXSKNBGqWeHttE(StarsReactionsSheet.this, messageObject, chatActivity, i, z2, context, resourcesProvider, j, chat3, view3);
                 }
             });
         } else {
-            resourcesProvider2 = resourcesProvider;
-            messageReactor2 = messageReactor5;
-            frameLayout2 = frameLayout;
+            context2 = context;
+            i2 = 17;
             j3 = 0;
         }
         frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                StarsReactionsSheet.this.lambda$new$9(i, resourcesProvider, j, z2, view3);
+                StarsReactionsSheet.$r8$lambda$BY8YZpbloWjv5kM3QfWB8L6O3j8(StarsReactionsSheet.this, i, resourcesProvider, j, z2, view3);
             }
         });
-        LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context, resourcesProvider2);
-        int i10 = 1;
+        LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context2, resourcesProvider);
         linksTextView.setTextSize(1, 13.0f);
-        linksTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider2));
+        linksTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
         if (z2 && !z) {
             linksTextView.setText(LocaleController.getString(R.string.LiveStoryReactAdminCant));
         } else {
             linksTextView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsReactionTerms), new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StarsReactionsSheet.lambda$new$10(context);
+                    Browser.openUrl(context2, LocaleController.getString(R.string.StarsReactionTermsLink));
                 }
             }));
         }
-        linksTextView.setGravity(17);
+        linksTextView.setGravity(i2);
         linksTextView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
         if (z || z2) {
             this.layout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 17, 14, 8, 14, 12));
         }
         setCustomView(this.layout);
-        GLIconTextureView gLIconTextureView = new GLIconTextureView(context, i10, 2) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.6
+        GLIconTextureView gLIconTextureView = new GLIconTextureView(context2, 1, 2) { // from class: org.telegram.ui.Stars.StarsReactionsSheet.6
             @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView
             protected void startIdleAnimation() {
             }
@@ -556,31 +557,21 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.slider.setValue(50);
         if (arrayList != null) {
             long j6 = j3;
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                long j7 = ((TLRPC.MessageReactor) arrayList.get(i11)).count;
+            for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                long j7 = ((TLRPC.MessageReactor) arrayList.get(i12)).count;
                 if (j7 > j6) {
                     j6 = j7;
                 }
             }
-            j6 = messageReactor2 != null ? j6 - r1.count : j6;
+            j6 = messageReactor != null ? j6 - messageReactor.count : j6;
             if (j6 > j3) {
                 this.slider.setStarsTop(j6 + 1);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
-        new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(int i, final boolean z, Long l) {
+    public static /* synthetic */ void $r8$lambda$5nYVya0ypja5fs2EyLwc5FgW03w(StarsReactionsSheet starsReactionsSheet, int i, final boolean z, Long l) {
+        starsReactionsSheet.getClass();
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
             return;
@@ -601,7 +592,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                     StarsReactionsSheet.this.show();
                 }
             });
-            dismiss();
+            starsReactionsSheet.dismiss();
         } else {
             Bundle bundle2 = new Bundle();
             bundle2.putLong("chat_id", -l.longValue());
@@ -616,27 +607,25 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 }
             });
         }
-        dismiss();
+        starsReactionsSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        this.checkBox.setChecked(!r3.isChecked(), true);
-        this.peer = this.checkBox.isChecked() ? this.lastSelectedPeer : UserObject.ANONYMOUS;
-        updatePeerDialog();
-        TopSendersView topSendersView = this.topSendersView;
+    public static /* synthetic */ void $r8$lambda$bfFmTLBSaoQw-QZ7YLwkTvTpWtE(StarsReactionsSheet starsReactionsSheet, View view) {
+        starsReactionsSheet.checkBox.setChecked(!r3.isChecked(), true);
+        starsReactionsSheet.peer = starsReactionsSheet.checkBox.isChecked() ? starsReactionsSheet.lastSelectedPeer : UserObject.ANONYMOUS;
+        starsReactionsSheet.updatePeerDialog();
+        TopSendersView topSendersView = starsReactionsSheet.topSendersView;
         if (topSendersView != null) {
-            topSendersView.setMyPrivacy(this.peer);
+            topSendersView.setMyPrivacy(starsReactionsSheet.peer);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(final MessageObject messageObject, final ChatActivity chatActivity, int i, boolean z, Context context, Theme.ResourcesProvider resourcesProvider, long j, TLRPC.Chat chat, View view) {
-        if (this.sending) {
+    public static /* synthetic */ void $r8$lambda$TIgKHs5HGl4-gWXSKNBGqWeHttE(final StarsReactionsSheet starsReactionsSheet, final MessageObject messageObject, final ChatActivity chatActivity, int i, boolean z, Context context, Theme.ResourcesProvider resourcesProvider, long j, TLRPC.Chat chat, View view) {
+        if (starsReactionsSheet.sending) {
             return;
         }
-        final long value = this.slider.getValue();
-        if (!(this.onSendListener == null && (messageObject == null || chatActivity == null)) && this.iconAnimator == null) {
+        final long value = starsReactionsSheet.slider.getValue();
+        if (!(starsReactionsSheet.onSendListener == null && (messageObject == null || chatActivity == null)) && starsReactionsSheet.iconAnimator == null) {
             if (MessagesController.getInstance(i).isFrozen()) {
                 AccountFrozenAlert.show(i);
                 return;
@@ -645,7 +634,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StarsReactionsSheet.this.lambda$new$6(value, starsController, messageObject, chatActivity);
+                    StarsReactionsSheet.$r8$lambda$pwJ1FUzJq2NiuD7f0cxhv3x6YtU(StarsReactionsSheet.this, value, starsController, messageObject, chatActivity);
                 }
             };
             if (!starsController.balanceAvailable() || starsController.getBalance().amount >= value) {
@@ -658,66 +647,66 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(long j, StarsController starsController, MessageObject messageObject, ChatActivity chatActivity) {
-        Utilities.Callback2Return callback2Return = this.onSendListener;
+    public static /* synthetic */ void $r8$lambda$pwJ1FUzJq2NiuD7f0cxhv3x6YtU(final StarsReactionsSheet starsReactionsSheet, long j, StarsController starsController, MessageObject messageObject, ChatActivity chatActivity) {
+        Utilities.Callback2Return callback2Return = starsReactionsSheet.onSendListener;
         if (callback2Return != null) {
-            int intValue = ((Integer) callback2Return.run(Long.valueOf(this.peer), Long.valueOf(j))).intValue();
-            this.sentMessageId = intValue;
+            int intValue = ((Integer) callback2Return.run(Long.valueOf(starsReactionsSheet.peer), Long.valueOf(j))).intValue();
+            starsReactionsSheet.sentMessageId = intValue;
             if (intValue == Integer.MIN_VALUE) {
-                dismiss();
+                starsReactionsSheet.dismiss();
                 return;
             } else {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StarsReactionsSheet.this.lambda$new$4();
+                        StarsReactionsSheet.$r8$lambda$wvc14jhHOpgOtgAPU6Po4H4W2iw(StarsReactionsSheet.this);
                     }
                 });
                 return;
             }
         }
-        final StarsController.PendingPaidReactions sendPaidReaction = starsController.sendPaidReaction(messageObject, chatActivity, j, false, true, Long.valueOf(this.peer));
+        final StarsController.PendingPaidReactions sendPaidReaction = starsController.sendPaidReaction(messageObject, chatActivity, j, false, true, Long.valueOf(starsReactionsSheet.peer));
         if (sendPaidReaction == null) {
             return;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.this.lambda$new$5(sendPaidReaction);
+                StarsReactionsSheet.$r8$lambda$qxUdQr9lhn0cBEHJdlb2-52yw-s(StarsReactionsSheet.this, sendPaidReaction);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4() {
-        this.sending = true;
-        animate3dIcon(null);
-        AndroidUtilities.runOnUIThread(new StarsReactionsSheet$$ExternalSyntheticLambda14(this), 240L);
+    public static /* synthetic */ void $r8$lambda$wvc14jhHOpgOtgAPU6Po4H4W2iw(StarsReactionsSheet starsReactionsSheet) {
+        starsReactionsSheet.sending = true;
+        starsReactionsSheet.animate3dIcon(null);
+        AndroidUtilities.runOnUIThread(new StarsReactionsSheet$$ExternalSyntheticLambda14(starsReactionsSheet), 240L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(final StarsController.PendingPaidReactions pendingPaidReactions) {
-        this.sending = true;
+    public static /* synthetic */ void $r8$lambda$qxUdQr9lhn0cBEHJdlb2-52yw-s(StarsReactionsSheet starsReactionsSheet, final StarsController.PendingPaidReactions pendingPaidReactions) {
+        starsReactionsSheet.sending = true;
         Objects.requireNonNull(pendingPaidReactions);
-        animate3dIcon(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda13
+        starsReactionsSheet.animate3dIcon(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 StarsController.PendingPaidReactions.this.apply();
             }
         });
-        AndroidUtilities.runOnUIThread(new StarsReactionsSheet$$ExternalSyntheticLambda14(this), 240L);
+        AndroidUtilities.runOnUIThread(new StarsReactionsSheet$$ExternalSyntheticLambda14(starsReactionsSheet), 240L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(int i, Theme.ResourcesProvider resourcesProvider, long j, final boolean z, View view) {
+    public static /* synthetic */ void $r8$lambda$BY8YZpbloWjv5kM3QfWB8L6O3j8(final StarsReactionsSheet starsReactionsSheet, int i, Theme.ResourcesProvider resourcesProvider, long j, final boolean z, View view) {
         final long j2;
+        starsReactionsSheet.getClass();
         ArrayList adminedChannels = BotStarsController.getInstance(i).getAdminedChannels();
         adminedChannels.add(0, UserConfig.getInstance(i).getCurrentUser());
-        ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, resourcesProvider, this.dialogSelectorInnerLayout);
-        Iterator it = adminedChannels.iterator();
-        while (it.hasNext()) {
-            TLObject tLObject = (TLObject) it.next();
+        ItemOptions makeOptions = ItemOptions.makeOptions(starsReactionsSheet.containerView, resourcesProvider, starsReactionsSheet.dialogSelectorInnerLayout);
+        int size = adminedChannels.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = adminedChannels.get(i2);
+            i2++;
+            TLObject tLObject = (TLObject) obj;
             if (tLObject instanceof TLRPC.User) {
                 j2 = ((TLRPC.User) tLObject).id;
             } else if (tLObject instanceof TLRPC.Chat) {
@@ -727,11 +716,11 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 }
             }
             if (j2 != j) {
-                long j3 = this.peer;
+                long j3 = starsReactionsSheet.peer;
                 makeOptions.addChat(tLObject, j2 == j3 || (j3 == 0 && j2 == UserConfig.getInstance(i).getClientUserId()), new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StarsReactionsSheet.this.lambda$new$8(j2, z);
+                        StarsReactionsSheet.$r8$lambda$vo4BvQobXRa0SahbGPcPCxse3kQ(StarsReactionsSheet.this, j2, z);
                     }
                 });
             }
@@ -739,26 +728,20 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         makeOptions.setDrawScrim(false).setOnTopOfScrim().setDimAlpha(0).setGravity(5).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(long j, boolean z) {
-        this.lastSelectedPeer = j;
-        this.peer = j;
+    public static /* synthetic */ void $r8$lambda$vo4BvQobXRa0SahbGPcPCxse3kQ(StarsReactionsSheet starsReactionsSheet, long j, boolean z) {
+        starsReactionsSheet.lastSelectedPeer = j;
+        starsReactionsSheet.peer = j;
         if (z) {
-            LiveCommentsView.Message message = this.commentMessage;
+            LiveCommentsView.Message message = starsReactionsSheet.commentMessage;
             message.dialogId = j;
-            this.commentView.set(message);
+            starsReactionsSheet.commentView.set(message);
         }
-        updatePeerDialog();
-        this.checkBox.setChecked(true, true);
-        TopSendersView topSendersView = this.topSendersView;
+        starsReactionsSheet.updatePeerDialog();
+        starsReactionsSheet.checkBox.setChecked(true, true);
+        TopSendersView topSendersView = starsReactionsSheet.topSendersView;
         if (topSendersView != null) {
-            topSendersView.setMyPrivacy(this.peer);
+            topSendersView.setMyPrivacy(starsReactionsSheet.peer);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$10(Context context) {
-        Browser.openUrl(context, LocaleController.getString(R.string.StarsReactionTermsLink));
     }
 
     public StarsReactionsSheet setLiveCommentsView(LiveCommentsView liveCommentsView) {
@@ -816,10 +799,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         if (this.liveStories) {
             return false;
         }
-        Iterator it = BotStarsController.getInstance(this.currentAccount).getAdminedChannels().iterator();
-        while (it.hasNext()) {
-            Object next = it.next();
-            if ((next instanceof TLRPC.Chat) && ChatObject.isChannelAndNotMegaGroup((TLRPC.Chat) next)) {
+        ArrayList adminedChannels = BotStarsController.getInstance(this.currentAccount).getAdminedChannels();
+        int size = adminedChannels.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = adminedChannels.get(i);
+            i++;
+            if ((obj instanceof TLRPC.Chat) && ChatObject.isChannelAndNotMegaGroup((TLRPC.Chat) obj)) {
                 return true;
             }
         }
@@ -879,17 +865,14 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda8
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$updateSenders$11;
-                    lambda$updateSenders$11 = StarsReactionsSheet.lambda$updateSenders$11((StarsReactionsSheet.SenderData) obj, (StarsReactionsSheet.SenderData) obj2);
-                    return lambda$updateSenders$11;
+                    return StarsReactionsSheet.$r8$lambda$bCH_sQJJecgHsNrSQOp5eQYI_k8((StarsReactionsSheet.SenderData) obj, (StarsReactionsSheet.SenderData) obj2);
                 }
             });
             this.topSendersView.setSenders(new ArrayList<>(arrayList.subList(0, Math.min(3, arrayList.size()))));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateSenders$11(SenderData senderData, SenderData senderData2) {
+    public static /* synthetic */ int $r8$lambda$bCH_sQJJecgHsNrSQOp5eQYI_k8(SenderData senderData, SenderData senderData2) {
         return (int) (senderData2.stars - senderData.stars);
     }
 
@@ -919,20 +902,20 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 tL_messages_togglePaidReactionPrivacy.privacy = paidreactionprivacypeer;
                 paidreactionprivacypeer.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.peer);
             }
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starReactionAnonymousUpdate, Long.valueOf(from.did), Integer.valueOf(from.mid), Long.valueOf(this.peer));
+            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.starReactionAnonymousUpdate, Long.valueOf(from.did), Integer.valueOf(from.mid), Long.valueOf(this.peer));
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_togglePaidReactionPrivacy, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StarsReactionsSheet.this.lambda$checkVisibility$12(tLObject, tL_error);
+                    StarsReactionsSheet.$r8$lambda$yQFdXn7yXj7uaClFhRtzC2Iv2q8(StarsReactionsSheet.this, tLObject, tL_error);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkVisibility$12(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$yQFdXn7yXj7uaClFhRtzC2Iv2q8(StarsReactionsSheet starsReactionsSheet, TLObject tLObject, TLRPC.TL_error tL_error) {
+        starsReactionsSheet.getClass();
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            MessagesStorage.getInstance(this.currentAccount).putMessages(new ArrayList<>(Arrays.asList(this.messageObject.messageOwner)), true, true, true, 0, 0, 0L);
+            MessagesStorage.getInstance(starsReactionsSheet.currentAccount).putMessages(new ArrayList<>(Arrays.asList(starsReactionsSheet.messageObject.messageOwner)), true, true, true, 0, 0, 0L);
         }
     }
 
@@ -950,48 +933,56 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.messageCell = view;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:40:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void animate3dIcon(final Runnable runnable) {
-        final ReactionsLayoutInBubble reactionsLayoutInBubble;
-        ReactionsLayoutInBubble.ReactionButton reactionButton;
         View view;
+        final ReactionsLayoutInBubble reactionsLayoutInBubble;
         LiveCommentsView liveCommentsView;
         View view2;
         ReactionsLayoutInBubble reactionsLayoutInBubble2;
-        ReactionsLayoutInBubble.ReactionButton reactionButton2;
+        ReactionsLayoutInBubble.ReactionButton reactionButton;
+        ReactionsLayoutInBubble.ReactionButton reactionButton2 = null;
         MessageObject messageObject = null;
         if (this.messageObject == null || (view2 = this.chatActivity.fragmentView) == null || !view2.isAttachedToWindow()) {
             if (this.commentsView == null) {
                 return;
             }
-            reactionsLayoutInBubble = null;
-            reactionButton = null;
             view = null;
+            reactionsLayoutInBubble = null;
         } else {
             View view3 = this.messageCell;
             if (view3 instanceof ChatMessageCell) {
                 reactionsLayoutInBubble2 = ((ChatMessageCell) view3).reactionsLayoutInBubble;
-                reactionButton2 = reactionsLayoutInBubble2.getReactionButton(ReactionsLayoutInBubble.VisibleReaction.asStar());
+                reactionButton = reactionsLayoutInBubble2.getReactionButton(ReactionsLayoutInBubble.VisibleReaction.asStar());
             } else if (view3 instanceof ChatActionCell) {
                 reactionsLayoutInBubble2 = ((ChatActionCell) view3).reactionsLayoutInBubble;
-                reactionButton2 = reactionsLayoutInBubble2.getReactionButton(ReactionsLayoutInBubble.VisibleReaction.asStar());
+                reactionButton = reactionsLayoutInBubble2.getReactionButton(ReactionsLayoutInBubble.VisibleReaction.asStar());
             } else {
                 reactionsLayoutInBubble2 = null;
-                reactionButton2 = null;
+                reactionButton = null;
             }
-            if (reactionButton2 == null && reactionsLayoutInBubble2 != null) {
+            if (reactionButton == null && reactionsLayoutInBubble2 != null) {
                 MessageObject.GroupedMessages validGroupedMessage = this.chatActivity.getValidGroupedMessage(this.messageObject);
                 if (validGroupedMessage != null && !validGroupedMessage.posArray.isEmpty()) {
-                    Iterator<MessageObject> it = validGroupedMessage.messages.iterator();
+                    ArrayList<MessageObject> arrayList = validGroupedMessage.messages;
+                    int size = arrayList.size();
+                    int i = 0;
                     while (true) {
-                        if (!it.hasNext()) {
+                        if (i >= size) {
                             break;
                         }
-                        MessageObject next = it.next();
-                        MessageObject.GroupedMessagePosition position = validGroupedMessage.getPosition(next);
+                        MessageObject messageObject2 = arrayList.get(i);
+                        i++;
+                        MessageObject messageObject3 = messageObject2;
+                        MessageObject.GroupedMessagePosition position = validGroupedMessage.getPosition(messageObject3);
                         if (position != null) {
-                            int i = position.flags;
-                            if ((i & 1) != 0 && (i & 8) != 0) {
-                                messageObject = next;
+                            int i2 = position.flags;
+                            if ((i2 & 1) != 0 && (i2 & 8) != 0) {
+                                messageObject = messageObject3;
                                 break;
                             }
                         }
@@ -1004,16 +995,19 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                     return;
                 }
                 if (view3 instanceof ChatMessageCell) {
-                    reactionsLayoutInBubble2 = ((ChatMessageCell) view3).reactionsLayoutInBubble;
-                    reactionButton2 = reactionsLayoutInBubble2.getReactionButton(ReactionsLayoutInBubble.VisibleReaction.asStar());
+                    ReactionsLayoutInBubble reactionsLayoutInBubble3 = ((ChatMessageCell) view3).reactionsLayoutInBubble;
+                    reactionsLayoutInBubble2 = reactionsLayoutInBubble3;
+                    reactionButton2 = reactionsLayoutInBubble3.getReactionButton(ReactionsLayoutInBubble.VisibleReaction.asStar());
+                    if (reactionButton2 != null) {
+                        return;
+                    }
+                    reactionsLayoutInBubble = reactionsLayoutInBubble2;
+                    view = view3;
                 }
             }
-            if (reactionButton2 == null) {
-                return;
+            reactionButton2 = reactionButton;
+            if (reactionButton2 != null) {
             }
-            view = view3;
-            reactionsLayoutInBubble = reactionsLayoutInBubble2;
-            reactionButton = reactionButton2;
         }
         final int[] iArr = new int[2];
         final RectF rectF = new RectF();
@@ -1024,11 +1018,11 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.icon3dView.whenReady(new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.this.lambda$animate3dIcon$13();
+                StarsReactionsSheet.$r8$lambda$xxOdjFAhx7AXo43xY9_uvlrfs9Y(StarsReactionsSheet.this);
             }
         });
-        if (reactionButton != null) {
-            reactionButton.drawImage = false;
+        if (reactionButton2 != null) {
+            reactionButton2.drawImage = false;
         }
         if (view != null) {
             view.invalidate();
@@ -1037,13 +1031,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         if (this.liveStories && (liveCommentsView = this.commentsView) != null) {
             liveCommentViewArr[0] = liveCommentsView.findComment(this.sentMessageId);
         }
+        final ReactionsLayoutInBubble.ReactionButton reactionButton3 = reactionButton2;
         final RectF rectF2 = new RectF();
         final View view4 = view;
-        final ReactionsLayoutInBubble.ReactionButton reactionButton3 = reactionButton;
         final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                StarsReactionsSheet.this.lambda$animate3dIcon$14(liveCommentViewArr, iArr, rectF2, view4, reactionsLayoutInBubble, reactionButton3);
+                StarsReactionsSheet.$r8$lambda$uaoJSTCAW6GZzZkkJUlSdYdBGHo(StarsReactionsSheet.this, liveCommentViewArr, iArr, rectF2, view4, reactionsLayoutInBubble, reactionButton3);
             }
         };
         runnable2.run();
@@ -1065,23 +1059,21 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$$ExternalSyntheticLambda17
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StarsReactionsSheet.this.lambda$animate3dIcon$15(runnable2, rectF, rectF2, rectF3, zArr, runnable, valueAnimator2);
+                StarsReactionsSheet.$r8$lambda$iOYfvQWE6ADsWUmYua3xV_JR0Bs(StarsReactionsSheet.this, runnable2, rectF, rectF2, rectF3, zArr, runnable, valueAnimator2);
             }
         });
-        final ReactionsLayoutInBubble.ReactionButton reactionButton4 = reactionButton;
-        final View view5 = view;
         this.iconAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarsReactionsSheet.7
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 StarsReactionsSheet.this.icon3dView.setVisibility(4);
                 StarsReactionsSheet.this.icon3dView.setPaused(true);
-                ReactionsLayoutInBubble.ReactionButton reactionButton5 = reactionButton4;
-                if (reactionButton5 != null) {
-                    reactionButton5.drawImage = true;
+                ReactionsLayoutInBubble.ReactionButton reactionButton4 = reactionButton3;
+                if (reactionButton4 != null) {
+                    reactionButton4.drawImage = true;
                 }
-                View view6 = view5;
-                if (view6 != null) {
-                    view6.invalidate();
+                View view5 = view4;
+                if (view5 != null) {
+                    view5.invalidate();
                 }
                 LiveCommentsView.LiveCommentView liveCommentView = liveCommentViewArr[0];
                 if (liveCommentView != null) {
@@ -1118,19 +1110,17 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         this.iconAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate3dIcon$13() {
-        StarsSlider starsSlider = this.slider;
+    public static /* synthetic */ void $r8$lambda$xxOdjFAhx7AXo43xY9_uvlrfs9Y(StarsReactionsSheet starsReactionsSheet) {
+        StarsSlider starsSlider = starsReactionsSheet.slider;
         starsSlider.drawCounterImage = false;
         starsSlider.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate3dIcon$14(LiveCommentsView.LiveCommentView[] liveCommentViewArr, int[] iArr, RectF rectF, View view, ReactionsLayoutInBubble reactionsLayoutInBubble, ReactionsLayoutInBubble.ReactionButton reactionButton) {
-        if (this.liveStories) {
+    public static /* synthetic */ void $r8$lambda$uaoJSTCAW6GZzZkkJUlSdYdBGHo(StarsReactionsSheet starsReactionsSheet, LiveCommentsView.LiveCommentView[] liveCommentViewArr, int[] iArr, RectF rectF, View view, ReactionsLayoutInBubble reactionsLayoutInBubble, ReactionsLayoutInBubble.ReactionButton reactionButton) {
+        if (starsReactionsSheet.liveStories) {
             LiveCommentsView.LiveCommentView liveCommentView = liveCommentViewArr[0];
             if (liveCommentView == null) {
-                liveCommentView = this.commentsView.findComment(this.sentMessageId);
+                liveCommentView = starsReactionsSheet.commentsView.findComment(starsReactionsSheet.sentMessageId);
                 liveCommentViewArr[0] = liveCommentView;
             }
             if (liveCommentView != null) {
@@ -1146,17 +1136,17 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         rectF.set(iArr[0] + reactionsLayoutInBubble.x + reactionButton.x + AndroidUtilities.dp(4.0f), iArr[1] + reactionsLayoutInBubble.y + reactionButton.y + ((reactionButton.height - AndroidUtilities.dp(22.0f)) / 2.0f), iArr[0] + reactionsLayoutInBubble.x + reactionButton.x + AndroidUtilities.dp(26.0f), iArr[1] + reactionsLayoutInBubble.y + reactionButton.y + ((reactionButton.height + AndroidUtilities.dp(22.0f)) / 2.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate3dIcon$15(Runnable runnable, RectF rectF, RectF rectF2, RectF rectF3, boolean[] zArr, Runnable runnable2, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$iOYfvQWE6ADsWUmYua3xV_JR0Bs(StarsReactionsSheet starsReactionsSheet, Runnable runnable, RectF rectF, RectF rectF2, RectF rectF3, boolean[] zArr, Runnable runnable2, ValueAnimator valueAnimator) {
+        starsReactionsSheet.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         runnable.run();
         AndroidUtilities.lerp(rectF, rectF2, floatValue, rectF3);
-        this.icon3dView.setTranslationX(rectF3.centerX() - (AndroidUtilities.dp(150.0f) / 2.0f));
-        this.icon3dView.setTranslationY(rectF3.centerY() - (AndroidUtilities.dp(150.0f) / 2.0f));
+        starsReactionsSheet.icon3dView.setTranslationX(rectF3.centerX() - (AndroidUtilities.dp(150.0f) / 2.0f));
+        starsReactionsSheet.icon3dView.setTranslationY(rectF3.centerY() - (AndroidUtilities.dp(150.0f) / 2.0f));
         float lerp = AndroidUtilities.lerp(Math.max(rectF3.width() / AndroidUtilities.dp(150.0f), rectF3.height() / AndroidUtilities.dp(150.0f)), 1.0f, (float) Math.sin(floatValue * 3.141592653589793d));
-        this.icon3dView.setScaleX(lerp);
-        this.icon3dView.setScaleY(lerp);
-        GLIconRenderer gLIconRenderer = this.icon3dView.mRenderer;
+        starsReactionsSheet.icon3dView.setScaleX(lerp);
+        starsReactionsSheet.icon3dView.setScaleY(lerp);
+        GLIconRenderer gLIconRenderer = starsReactionsSheet.icon3dView.mRenderer;
         gLIconRenderer.angleX = 360.0f * floatValue;
         gLIconRenderer.white = Math.max(0.0f, 1.0f - (4.0f * floatValue));
         if (zArr[0] || floatValue <= 0.95f) {
@@ -1165,7 +1155,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
         zArr[0] = true;
         LaunchActivity.makeRipple(rectF2.centerX(), rectF2.centerY(), 1.5f);
         try {
-            this.container.performHapticFeedback(0, 1);
+            starsReactionsSheet.container.performHapticFeedback(0, 1);
         } catch (Exception unused) {
         }
         if (runnable2 != null) {
@@ -1397,7 +1387,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$StarsSlider$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StarsReactionsSheet.StarsSlider.this.lambda$setColor$0(i3, i, i4, i2, valueAnimator2);
+                        StarsReactionsSheet.StarsSlider.$r8$lambda$NaicAq1wm4lKbu2-n96zuvbxGAA(StarsReactionsSheet.StarsSlider.this, i3, i, i4, i2, valueAnimator2);
                     }
                 });
                 this.gradientAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarsReactionsSheet.StarsSlider.1
@@ -1422,13 +1412,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             invalidate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setColor$0(int i, int i2, int i3, int i4, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$NaicAq1wm4lKbu2-n96zuvbxGAA(StarsSlider starsSlider, int i, int i2, int i3, int i4, ValueAnimator valueAnimator) {
+            starsSlider.getClass();
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.gradientColor1 = ColorUtils.blendARGB(i, i2, floatValue);
-            this.gradientColor2 = ColorUtils.blendARGB(i3, i4, floatValue);
-            this.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{this.gradientColor1, this.gradientColor2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-            invalidate();
+            starsSlider.gradientColor1 = ColorUtils.blendARGB(i, i2, floatValue);
+            starsSlider.gradientColor2 = ColorUtils.blendARGB(i3, i4, floatValue);
+            starsSlider.gradient = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{starsSlider.gradientColor1, starsSlider.gradientColor2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            starsSlider.invalidate();
         }
 
         public void updateText(boolean z) {
@@ -1448,8 +1438,13 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
 
         @Override // android.view.View
         protected void dispatchDraw(Canvas canvas) {
+            int i;
             float f;
             float f2;
+            float f3;
+            float f4;
+            float f5;
+            Canvas canvas2 = canvas;
             super.dispatchDraw(canvas);
             this.gradientMatrix.reset();
             this.gradientMatrix.postTranslate(this.sliderInnerRect.left, 0.0f);
@@ -1465,7 +1460,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             Path.Direction direction = Path.Direction.CW;
             path.addRoundRect(rectF, dp, dp2, direction);
             this.sliderInnerPaint.setColor(Theme.multAlpha(this.gradientColor1, 0.15f));
-            canvas.drawPath(this.sliderInnerPath, this.sliderInnerPaint);
+            canvas2.drawPath(this.sliderInnerPath, this.sliderInnerPaint);
             this.sliderRect.set(this.sliderInnerRect);
             float progress = getProgress(getValue());
             RectF rectF2 = this.sliderRect;
@@ -1476,41 +1471,50 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.sliderParticles.setSpeed((this.progress * 15.0f) + 1.0f);
             this.sliderParticles.setVisible((this.progress * 0.85f) + 0.15f);
             this.sliderParticles.process();
-            canvas.save();
-            canvas.clipPath(this.sliderInnerPath);
-            this.sliderParticles.draw(canvas, blendARGB);
+            canvas2.save();
+            canvas2.clipPath(this.sliderInnerPath);
+            this.sliderParticles.draw(canvas2, blendARGB);
             long j = this.currentTop;
-            if (j != -1 && getProgress((int) j) < 1.0f && getProgress((int) this.currentTop) > 0.0f) {
+            if (j == -1 || getProgress((int) j) >= 1.0f || getProgress((int) this.currentTop) <= 0.0f) {
+                i = blendARGB;
+                f = 255.0f;
+                f2 = 12.0f;
+            } else {
                 float dp3 = this.sliderInnerRect.left + AndroidUtilities.dp(12.0f) + ((this.sliderInnerRect.width() - AndroidUtilities.dp(24.0f)) * Utilities.clamp01(getProgress((int) this.currentTop)));
-                float f3 = this.overTop.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(14.0f)));
+                float f6 = this.overTop.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(14.0f)));
+                f = 255.0f;
+                f2 = 12.0f;
                 float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), this.overTopText.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(12.0f))));
                 float currentWidth = (this.topText.getCurrentWidth() + dp3) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > this.sliderInnerRect.right ? (dp3 - lerp) - this.topText.getCurrentWidth() : lerp + dp3;
                 this.topPaint.setStrokeWidth(AndroidUtilities.dp(1.0f));
                 this.topPaint.setColor(Theme.multAlpha(blendARGB, 0.6f));
                 RectF rectF3 = this.sliderInnerRect;
-                float lerp2 = AndroidUtilities.lerp(rectF3.top, rectF3.centerY(), f3);
+                float lerp2 = AndroidUtilities.lerp(rectF3.top, rectF3.centerY(), f6);
                 RectF rectF4 = this.sliderInnerRect;
-                canvas.drawLine(dp3, lerp2, dp3, AndroidUtilities.lerp(rectF4.bottom, rectF4.centerY(), f3), this.topPaint);
+                canvas2.drawLine(dp3, lerp2, dp3, AndroidUtilities.lerp(rectF4.bottom, rectF4.centerY(), f6), this.topPaint);
                 this.topText.draw(canvas, currentWidth, this.sliderInnerRect.centerY(), blendARGB, 0.6f);
+                canvas2 = canvas;
+                i = blendARGB;
             }
-            canvas.drawPath(this.sliderPath, this.sliderPaint);
-            canvas.clipPath(this.sliderPath);
-            this.sliderParticles.draw(canvas, -1);
+            canvas2.drawPath(this.sliderPath, this.sliderPaint);
+            canvas2.clipPath(this.sliderPath);
+            this.sliderParticles.draw(canvas2, -1);
             long j2 = this.currentTop;
             if (j2 != -1 && getProgress((int) j2) < 1.0f && getProgress((int) this.currentTop) > 0.0f) {
-                float dp4 = this.sliderInnerRect.left + AndroidUtilities.dp(12.0f) + ((this.sliderInnerRect.width() - AndroidUtilities.dp(24.0f)) * Utilities.clamp01(getProgress((int) this.currentTop)));
-                float f4 = this.overTop.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp4) < ((float) AndroidUtilities.dp(14.0f)));
-                float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), this.overTopText.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp4) < ((float) AndroidUtilities.dp(12.0f))));
+                float dp4 = this.sliderInnerRect.left + AndroidUtilities.dp(f2) + ((this.sliderInnerRect.width() - AndroidUtilities.dp(24.0f)) * Utilities.clamp01(getProgress((int) this.currentTop)));
+                float f7 = this.overTop.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp4) < ((float) AndroidUtilities.dp(14.0f)));
+                float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), this.overTopText.set(Math.abs((this.sliderRect.right - ((float) AndroidUtilities.dp(10.0f))) - dp4) < ((float) AndroidUtilities.dp(f2))));
                 float currentWidth2 = (this.topText.getCurrentWidth() + dp4) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > this.sliderInnerRect.right ? (dp4 - lerp3) - this.topText.getCurrentWidth() : lerp3 + dp4;
                 this.topPaint.setStrokeWidth(AndroidUtilities.dp(1.0f));
                 this.topPaint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider), 0.4f));
                 RectF rectF5 = this.sliderInnerRect;
-                float lerp4 = AndroidUtilities.lerp(rectF5.top, rectF5.centerY(), f4);
+                float lerp4 = AndroidUtilities.lerp(rectF5.top, rectF5.centerY(), f7);
                 RectF rectF6 = this.sliderInnerRect;
-                canvas.drawLine(dp4, lerp4, dp4, AndroidUtilities.lerp(rectF6.bottom, rectF6.centerY(), f4), this.topPaint);
+                canvas2.drawLine(dp4, lerp4, dp4, AndroidUtilities.lerp(rectF6.bottom, rectF6.centerY(), f7), this.topPaint);
                 this.topText.draw(canvas, currentWidth2, this.sliderInnerRect.centerY(), -1, 0.75f);
+                canvas2 = canvas;
             }
-            canvas.restore();
+            canvas2.restore();
             invalidate();
             if (this.drawPlus) {
                 RectF rectF7 = this.sliderInnerRect;
@@ -1518,25 +1522,28 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 float centerY = this.sliderInnerRect.centerY();
                 this.plusPaint.setColor(ColorUtils.blendARGB(this.sliderInnerPaint.getColor(), this.gradientColor2, 0.5f));
                 this.plusPath.rewind();
-                f = progress;
+                f4 = 0.5f;
+                f5 = 2.0f;
+                f3 = progress;
                 this.plusPath.addRoundRect(height - AndroidUtilities.dp(1.0f), centerY - AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f) + height, centerY + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), direction);
                 this.plusPath.addRoundRect(height - AndroidUtilities.dp(6.0f), centerY - AndroidUtilities.dp(1.0f), height + AndroidUtilities.dp(6.0f), centerY + AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), direction);
-                canvas.drawPath(this.plusPath, this.plusPaint);
+                canvas2.drawPath(this.plusPath, this.plusPaint);
             } else {
-                f = progress;
+                f3 = progress;
+                f4 = 0.5f;
+                f5 = 2.0f;
             }
-            this.sliderCircleRect.set((this.sliderRect.right - AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(4.0f), this.sliderRect.centerY() - (AndroidUtilities.dp(16.0f) / 2.0f), this.sliderRect.right - AndroidUtilities.dp(4.0f), this.sliderRect.centerY() + (AndroidUtilities.dp(16.0f) / 2.0f));
-            canvas.drawRoundRect(this.sliderCircleRect, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.sliderCirclePaint);
+            this.sliderCircleRect.set((this.sliderRect.right - AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(4.0f), this.sliderRect.centerY() - (AndroidUtilities.dp(16.0f) / f5), this.sliderRect.right - AndroidUtilities.dp(4.0f), this.sliderRect.centerY() + (AndroidUtilities.dp(16.0f) / f5));
+            canvas2.drawRoundRect(this.sliderCircleRect, AndroidUtilities.dp(f2), AndroidUtilities.dp(f2), this.sliderCirclePaint);
             float dp5 = AndroidUtilities.dp(9.0f) / this.sliderInnerRect.width();
             RectF rectF8 = this.sliderCircleRect;
-            float f5 = f;
-            float lerp5 = AndroidUtilities.lerp(AndroidUtilities.lerp(rectF8.left, rectF8.right, f5), AndroidUtilities.lerp(this.sliderCircleRect.left + AndroidUtilities.dp(9.0f), this.sliderCircleRect.right - AndroidUtilities.dp(9.0f), f5), Math.min(Utilities.clamp01(f5 / dp5), Utilities.clamp01((1.0f - f5) / dp5)));
+            float lerp5 = AndroidUtilities.lerp(AndroidUtilities.lerp(rectF8.left, rectF8.right, f3), AndroidUtilities.lerp(this.sliderCircleRect.left + AndroidUtilities.dp(9.0f), this.sliderCircleRect.right - AndroidUtilities.dp(9.0f), f3), Math.min(Utilities.clamp01(f3 / dp5), Utilities.clamp01((1.0f - f3) / dp5)));
             float max = Math.max(this.counterSubText.getCurrentWidth() + AndroidUtilities.dp(20.0f), this.counterText.getCurrentWidth() + AndroidUtilities.dp(50.0f));
             float dp6 = AndroidUtilities.dp(44.0f);
-            float clamp = Utilities.clamp(lerp5 - (max / 2.0f), (this.sliderInnerRect.right - max) - AndroidUtilities.dp(4.0f), this.sliderInnerRect.left + AndroidUtilities.dp(4.0f));
+            float clamp = Utilities.clamp(lerp5 - (max / f5), (this.sliderInnerRect.right - max) - AndroidUtilities.dp(4.0f), this.sliderInnerRect.left + AndroidUtilities.dp(4.0f));
             this.textRect.set(clamp, (this.sliderInnerRect.top - AndroidUtilities.dp(21.0f)) - dp6, max + clamp, this.sliderInnerRect.top - AndroidUtilities.dp(21.0f));
             float height2 = this.textRect.height();
-            float f6 = height2 / 2.0f;
+            float f8 = height2 / f5;
             RectF rectF9 = this.textRect;
             float clamp2 = Utilities.clamp(lerp5, rectF9.right, rectF9.left);
             RectF rectF10 = this.textRect;
@@ -1548,43 +1555,40 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.textPath.rewind();
             RectF rectF12 = this.arc;
             RectF rectF13 = this.textRect;
-            float f7 = rectF13.left;
-            float f8 = rectF13.top;
-            rectF12.set(f7, f8, f7 + height2, f8 + height2);
+            float f9 = rectF13.left;
+            float f10 = rectF13.top;
+            rectF12.set(f9, f10, f9 + height2, f10 + height2);
             this.textPath.arcTo(this.arc, -180.0f, 90.0f);
             RectF rectF14 = this.arc;
             RectF rectF15 = this.textRect;
-            float f9 = rectF15.right;
-            float f10 = rectF15.top;
-            rectF14.set(f9 - height2, f10, f9, f10 + height2);
+            float f11 = rectF15.right;
+            float f12 = rectF15.top;
+            rectF14.set(f11 - height2, f12, f11, f12 + height2);
             this.textPath.arcTo(this.arc, -90.0f, 90.0f);
             RectF rectF16 = this.arc;
             RectF rectF17 = this.textRect;
-            float f11 = rectF17.right;
-            float f12 = rectF17.bottom;
-            rectF16.set(f11 - height2, f12 - height2, f11, f12);
-            this.textPath.arcTo(this.arc, 0.0f, (float) Utilities.clamp(((Math.acos(Utilities.clamp01((clamp4 - this.arc.centerX()) / f6)) * 0.8500000238418579d) / 3.141592653589793d) * 180.0d, 90.0d, 0.0d));
+            float f13 = rectF17.right;
+            float f14 = rectF17.bottom;
+            rectF16.set(f13 - height2, f14 - height2, f13, f14);
+            this.textPath.arcTo(this.arc, 0.0f, (float) Utilities.clamp(((Math.acos(Utilities.clamp01((clamp4 - this.arc.centerX()) / f8)) * 0.8500000238418579d) / 3.141592653589793d) * 180.0d, 90.0d, 0.0d));
             RectF rectF18 = this.textRect;
-            float f13 = 0.7f * height2;
-            if (clamp3 < rectF18.right - f13) {
+            float f15 = 0.7f * height2;
+            if (clamp3 < rectF18.right - f15) {
                 this.textPath.lineTo(clamp4, rectF18.bottom);
-                f2 = 8.0f;
-                this.textPath.lineTo(clamp2 + 2.0f, this.textRect.bottom + AndroidUtilities.dp(8.0f));
-            } else {
-                f2 = 8.0f;
+                this.textPath.lineTo(clamp2 + f5, this.textRect.bottom + AndroidUtilities.dp(8.0f));
             }
-            this.textPath.lineTo(clamp2, this.textRect.bottom + AndroidUtilities.dp(f2) + 1.0f);
+            this.textPath.lineTo(clamp2, this.textRect.bottom + AndroidUtilities.dp(8.0f) + 1.0f);
             RectF rectF19 = this.textRect;
-            if (clamp4 > rectF19.left + f13) {
-                this.textPath.lineTo(clamp2 - 2.0f, rectF19.bottom + AndroidUtilities.dp(8.0f));
+            if (clamp4 > rectF19.left + f15) {
+                this.textPath.lineTo(clamp2 - f5, rectF19.bottom + AndroidUtilities.dp(8.0f));
                 this.textPath.lineTo(clamp3, this.textRect.bottom);
             }
             RectF rectF20 = this.arc;
             RectF rectF21 = this.textRect;
-            float f14 = rectF21.left;
-            float f15 = rectF21.bottom;
-            rectF20.set(f14, f15 - height2, height2 + f14, f15);
-            float clamp6 = ((float) Utilities.clamp(((Math.acos(Utilities.clamp01((clamp3 - this.arc.left) / f6)) * 0.8500000238418579d) / 3.141592653589793d) * 180.0d, 90.0d, 0.0d)) + 90.0f;
+            float f16 = rectF21.left;
+            float f17 = rectF21.bottom;
+            rectF20.set(f16, f17 - height2, height2 + f16, f17);
+            float clamp6 = ((float) Utilities.clamp(((Math.acos(Utilities.clamp01((clamp3 - this.arc.left) / f8)) * 0.8500000238418579d) / 3.141592653589793d) * 180.0d, 90.0d, 0.0d)) + 90.0f;
             this.textPath.arcTo(this.arc, clamp6, 180.0f - clamp6);
             Path path2 = this.textPath;
             RectF rectF22 = this.textRect;
@@ -1592,50 +1596,50 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.textPath.close();
             RectF rectF23 = AndroidUtilities.rectTmp;
             rectF23.set(this.textRect);
-            rectF23.inset(-AndroidUtilities.dp(12.0f), -AndroidUtilities.dp(12.0f));
+            rectF23.inset(-AndroidUtilities.dp(f2), -AndroidUtilities.dp(f2));
             this.textParticles.setBounds(rectF23);
             this.textParticles.setSpeed((this.progress * 15.0f) + 1.0f);
             this.textParticles.process();
-            canvas.save();
-            this.textParticles.draw(canvas, blendARGB);
-            canvas.restore();
-            canvas.save();
-            canvas.rotate(clamp5, clamp2, dp7);
+            canvas2.save();
+            this.textParticles.draw(canvas2, i);
+            canvas2.restore();
+            canvas2.save();
+            canvas2.rotate(clamp5, clamp2, dp7);
             if (Math.abs(this.progress - this.aprogress) > 0.001f) {
                 this.aprogress = AndroidUtilities.lerp(this.aprogress, this.progress, 0.1f);
                 invalidate();
             }
             this.textBackgroundPaint.setShader(this.gradient);
-            canvas.drawPath(this.textPath, this.textBackgroundPaint);
-            canvas.save();
-            canvas.clipPath(this.textPath);
-            canvas.rotate(-clamp5, clamp2, dp7);
-            this.textParticles.draw(canvas, -1);
-            canvas.restore();
-            canvas.save();
+            canvas2.drawPath(this.textPath, this.textBackgroundPaint);
+            canvas2.save();
+            canvas2.clipPath(this.textPath);
+            canvas2.rotate(-clamp5, clamp2, dp7);
+            this.textParticles.draw(canvas2, -1);
+            canvas2.restore();
+            canvas2.save();
             float floatValue = 1.0f - (this.subTextVisible.getFloatValue() * 0.15f);
             float centerX = this.textRect.centerX();
             RectF rectF24 = this.textRect;
-            canvas.scale(floatValue, floatValue, centerX, rectF24.top - (rectF24.height() * 0.5f));
-            this.counterImage.setBounds((int) ((this.textRect.centerX() - (this.counterText.getCurrentWidth() / 2.0f)) + AndroidUtilities.dp(-12.0f)), (int) (this.textRect.centerY() - AndroidUtilities.dp(10.0f)), (int) ((this.textRect.centerX() - (this.counterText.getCurrentWidth() / 2.0f)) + AndroidUtilities.dp(8.0f)), (int) (this.textRect.centerY() + AndroidUtilities.dp(10.0f)));
+            canvas2.scale(floatValue, floatValue, centerX, rectF24.top - (rectF24.height() * f4));
+            this.counterImage.setBounds((int) ((this.textRect.centerX() - (this.counterText.getCurrentWidth() / f5)) + AndroidUtilities.dp(-12.0f)), (int) (this.textRect.centerY() - AndroidUtilities.dp(10.0f)), (int) ((this.textRect.centerX() - (this.counterText.getCurrentWidth() / f5)) + AndroidUtilities.dp(8.0f)), (int) (this.textRect.centerY() + AndroidUtilities.dp(10.0f)));
             if (this.drawCounterImage) {
-                this.counterImage.draw(canvas);
+                this.counterImage.draw(canvas2);
             }
             AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.counterText;
             float dp8 = this.textRect.left + AndroidUtilities.dp(24.0f);
             RectF rectF25 = this.textRect;
             animatedTextDrawable.setBounds(dp8, rectF25.top, rectF25.right, rectF25.bottom);
-            this.counterText.draw(canvas);
-            canvas.restore();
+            this.counterText.draw(canvas2);
+            canvas2.restore();
             AnimatedTextView.AnimatedTextDrawable animatedTextDrawable2 = this.counterSubText;
             RectF rectF26 = this.textRect;
-            float f16 = rectF26.left;
+            float f18 = rectF26.left;
             float dp9 = rectF26.top + AndroidUtilities.dp(10.0f);
             RectF rectF27 = this.textRect;
-            animatedTextDrawable2.setBounds(f16, dp9, rectF27.right, rectF27.bottom + AndroidUtilities.dp(10.0f));
-            this.counterSubText.setAlpha((int) (this.subTextVisible.getFloatValue() * 255.0f));
-            this.counterSubText.draw(canvas);
-            canvas.restore();
+            animatedTextDrawable2.setBounds(f18, dp9, rectF27.right, rectF27.bottom + AndroidUtilities.dp(10.0f));
+            this.counterSubText.setAlpha((int) (this.subTextVisible.getFloatValue() * f));
+            this.counterSubText.draw(canvas2);
+            canvas2.restore();
         }
 
         public void setCounterSubText(String str, boolean z) {
@@ -1705,7 +1709,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarsReactionsSheet$StarsSlider$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    StarsReactionsSheet.StarsSlider.this.lambda$animateProgressTo$1(valueAnimator2);
+                    StarsReactionsSheet.StarsSlider.$r8$lambda$jQpoCFrs6xh_nRnOGpfClrYkpj8(StarsReactionsSheet.StarsSlider.this, valueAnimator2);
                 }
             });
             final int value = getValue();
@@ -1731,10 +1735,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.counterText.setText(StarsIntroActivity.replaceStars(LocaleController.formatNumber(getValue(f), ','), this.starRef), true);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$animateProgressTo$1(ValueAnimator valueAnimator) {
-            this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$jQpoCFrs6xh_nRnOGpfClrYkpj8(StarsSlider starsSlider, ValueAnimator valueAnimator) {
+            starsSlider.getClass();
+            starsSlider.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            starsSlider.invalidate();
         }
     }
 
@@ -1938,46 +1942,34 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             while (!arrayList2.isEmpty()) {
                 int nextInt = arrayList2.size() > i5 ? Utilities.fastRandom.nextInt(arrayList2.size() - i5) : 0;
                 PointF pointF2 = (PointF) arrayList2.get(nextInt);
-                int i8 = i3;
-                int i9 = 0;
+                int i8 = 0;
                 while (true) {
-                    if (i9 < i8) {
-                        float lerp = AndroidUtilities.lerp(i4, 360, Utilities.fastRandom.nextFloat());
-                        int i10 = i9;
-                        double lerp2 = AndroidUtilities.lerp(1, 2, Utilities.fastRandom.nextFloat()) * f2;
-                        double d = lerp;
-                        PointF pointF3 = pointF2;
-                        PointF pointF4 = new PointF((float) (pointF2.x + (Math.cos(Math.toRadians(d)) * lerp2)), (float) (pointF2.y + (lerp2 * Math.sin(Math.toRadians(d)))));
-                        int i11 = nextInt;
+                    if (i8 < i3) {
+                        int i9 = i8;
+                        double lerp = AndroidUtilities.lerp(1, 2, Utilities.fastRandom.nextFloat()) * f2;
+                        double lerp2 = AndroidUtilities.lerp(i4, 360, Utilities.fastRandom.nextFloat());
                         PointF[][] pointFArr2 = pointFArr;
-                        int i12 = ceil2;
-                        int i13 = ceil;
-                        if (isValidPoint(pointFArr, i, i2, floor, ceil, ceil2, pointF4, f)) {
-                            arrayList.add(pointF4);
-                            insertPoint(pointFArr2, floor, pointF4);
-                            arrayList2.add(pointF4);
+                        PointF pointF3 = new PointF((float) (pointF2.x + (Math.cos(Math.toRadians(lerp2)) * lerp)), (float) (pointF2.y + (Math.sin(Math.toRadians(lerp2)) * lerp)));
+                        if (isValidPoint(pointFArr2, i, i2, floor, ceil, ceil2, pointF3, f2)) {
+                            arrayList.add(pointF3);
+                            insertPoint(pointFArr2, floor, pointF3);
+                            arrayList2.add(pointF3);
+                            f2 = f;
                             pointFArr = pointFArr2;
-                            ceil2 = i12;
-                            ceil = i13;
                             break;
                         }
-                        i9 = i10 + 1;
-                        i8 = i3;
-                        pointFArr = pointFArr2;
-                        pointF2 = pointF3;
-                        nextInt = i11;
-                        ceil2 = i12;
-                        ceil = i13;
-                        i4 = 0;
                         f2 = f;
+                        pointFArr = pointFArr2;
+                        i8 = i9 + 1;
+                        i4 = 0;
                     } else {
                         arrayList2.remove(nextInt);
+                        f2 = f;
                         break;
                     }
                 }
-                i5 = 1;
                 i4 = 0;
-                f2 = f;
+                i5 = 1;
             }
             return arrayList;
         }
@@ -2000,7 +1992,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                         BatchParticlesDrawHelper.BatchParticlesBuffer batchParticlesBuffer = this.batchParticlesBuffer;
                         float f5 = particle.x;
                         float f6 = particle.y;
-                        batchParticlesBuffer.setParticleVertexCords(i2, f5 - f3, f6 - f4, f5 + f3, f6 + f4);
+                        batchParticlesBuffer.setParticleVertexCords(i2, f5 - f3, f6 - f4, f5 + f3, f4 + f6);
                         this.batchParticlesBuffer.setParticleColor(i2, ColorUtils.setAlphaComponent(i, (int) (Utilities.clamp01(particle.la * f) * 255.0f)));
                     }
                     BatchParticlesDrawHelper.draw(canvas, this.batchParticlesBuffer, min, this.batchParticlesPaint);
@@ -2412,41 +2404,51 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             }
 
             public void draw(Canvas canvas) {
-                float f = this.animatedPosition.set(this.index);
+                float f;
+                float f2;
+                float f3 = this.animatedPosition.set(this.index);
                 AnimatedFloat animatedFloat = this.animatedScale;
                 int i = this.index;
-                float f2 = animatedFloat.set(i >= 0 && i < TopSendersView.this.senders.size());
+                float f4 = animatedFloat.set(i >= 0 && i < TopSendersView.this.senders.size());
                 canvas.save();
                 float width = (TopSendersView.this.getWidth() - AndroidUtilities.dp(80.0f)) / Math.max(1.0f, TopSendersView.this.count);
-                float dp = AndroidUtilities.dp(40.0f) + ((TopSendersView.this.count - (f + 0.5f)) * width);
+                float dp = AndroidUtilities.dp(40.0f) + ((TopSendersView.this.count - (f3 + 0.5f)) * width);
                 float dp2 = AndroidUtilities.dp(40.0f);
-                float f3 = width / 2.0f;
-                this.clickBounds.set(dp - f3, dp2 - AndroidUtilities.dp(50.0f), f3 + dp, AndroidUtilities.dp(50.0f) + dp2);
-                float f4 = (0.3f * f2) + 0.7f;
-                canvas.scale(f4, f4, dp, dp2);
+                float f5 = width / 2.0f;
+                this.clickBounds.set(dp - f5, dp2 - AndroidUtilities.dp(50.0f), f5 + dp, AndroidUtilities.dp(50.0f) + dp2);
+                float f6 = (0.3f * f4) + 0.7f;
+                canvas.scale(f6, f6, dp, dp2);
                 float scale = this.bounce.getScale(0.04f);
                 canvas.scale(scale, scale, dp, dp2);
-                if (f2 > 0.0f) {
-                    float f5 = this.animatedAnonymous.set(this.anonymous);
-                    if (f5 < 1.0f) {
+                if (f4 > 0.0f) {
+                    float f7 = this.animatedAnonymous.set(this.anonymous);
+                    if (f7 < 1.0f) {
+                        f = 255.0f;
+                        f2 = 40.0f;
                         this.imageReceiver.setImageCoords(dp - (AndroidUtilities.dp(56.0f) / 2.0f), dp2 - (AndroidUtilities.dp(56.0f) / 2.0f), AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                        this.imageReceiver.setAlpha(f2);
+                        this.imageReceiver.setAlpha(f4);
                         this.imageReceiver.draw(canvas);
                         this.imageReceiver.setAlpha(1.0f);
+                    } else {
+                        f = 255.0f;
+                        f2 = 40.0f;
                     }
-                    if (f5 > 0.0f) {
+                    if (f7 > 0.0f) {
                         int i2 = (int) dp;
                         int i3 = (int) dp2;
                         this.anonymousAvatarDrawable.setBounds(i2 - (AndroidUtilities.dp(56.0f) / 2), i3 - (AndroidUtilities.dp(56.0f) / 2), i2 + (AndroidUtilities.dp(56.0f) / 2), i3 + (AndroidUtilities.dp(56.0f) / 2));
-                        this.anonymousAvatarDrawable.setAlpha((int) (f2 * 255.0f * f5));
+                        this.anonymousAvatarDrawable.setAlpha((int) (f4 * f * f7));
                         this.anonymousAvatarDrawable.draw(canvas);
                         this.anonymousAvatarDrawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                     }
+                } else {
+                    f = 255.0f;
+                    f2 = 40.0f;
                 }
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set((dp - (this.starsText.getCurrentWidth() / 2.0f)) - AndroidUtilities.dp(5.66f), (AndroidUtilities.dp(23.0f) + dp2) - (AndroidUtilities.dp(16.0f) / 2.0f), (this.starsText.getCurrentWidth() / 2.0f) + dp + AndroidUtilities.dp(5.66f), AndroidUtilities.dp(23.0f) + dp2 + (AndroidUtilities.dp(16.0f) / 2.0f));
                 canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, TopSendersView.this.backgroundPaint);
-                int i4 = (int) (255.0f * f2);
+                int i4 = (int) (f4 * f);
                 this.paint.setAlpha(i4);
                 if (this.gradient != null) {
                     this.gradientMatrix.reset();
@@ -2455,19 +2457,19 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                 }
                 canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.paint);
                 Text text = this.starsText;
-                text.draw(canvas, dp - (text.getCurrentWidth() / 2.0f), dp2 + AndroidUtilities.dp(23.0f), -1, f2);
-                this.text.ellipsize(width - AndroidUtilities.dp(4.0f)).draw(canvas, dp - (this.text.getWidth() / 2.0f), dp2 + AndroidUtilities.dp(42.0f), Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, StarsReactionsSheet.this.resourcesProvider), f2);
+                text.draw(canvas, dp - (text.getCurrentWidth() / 2.0f), AndroidUtilities.dp(23.0f) + dp2, -1, f4);
+                this.text.ellipsize(width - AndroidUtilities.dp(4.0f)).draw(canvas, dp - (this.text.getWidth() / 2.0f), dp2 + AndroidUtilities.dp(42.0f), Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, StarsReactionsSheet.this.resourcesProvider), f4);
                 if (this.place > 0) {
                     int i5 = (int) dp;
                     int i6 = (int) dp2;
-                    this.crownOutline.setBounds(i5 - AndroidUtilities.dp(12.0f), i6 - AndroidUtilities.dp(40.0f), AndroidUtilities.dp(12.0f) + i5, i6 - AndroidUtilities.dp(16.0f));
-                    this.crown.setBounds(i5 - AndroidUtilities.dp(12.0f), i6 - AndroidUtilities.dp(40.0f), i5 + AndroidUtilities.dp(12.0f), i6 - AndroidUtilities.dp(16.0f));
+                    this.crownOutline.setBounds(i5 - AndroidUtilities.dp(12.0f), i6 - AndroidUtilities.dp(f2), AndroidUtilities.dp(12.0f) + i5, i6 - AndroidUtilities.dp(16.0f));
+                    this.crown.setBounds(i5 - AndroidUtilities.dp(12.0f), i6 - AndroidUtilities.dp(f2), i5 + AndroidUtilities.dp(12.0f), i6 - AndroidUtilities.dp(16.0f));
                     this.crownOutline.setAlpha(i4);
                     this.crown.setAlpha(i4);
                     this.crownOutline.draw(canvas);
                     this.crown.draw(canvas);
                     Text text2 = this.placeText;
-                    text2.draw(canvas, dp - (text2.getCurrentWidth() / 2.0f), dp2 - AndroidUtilities.dp(27.0f), -1, f2);
+                    text2.draw(canvas, dp - (text2.getCurrentWidth() / 2.0f), dp2 - AndroidUtilities.dp(27.0f), -1, f4);
                 }
                 canvas.restore();
             }

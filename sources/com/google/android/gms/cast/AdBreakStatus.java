@@ -36,7 +36,10 @@ public class AdBreakStatus extends AbstractSafeParcelable {
                 String optStringOrNull = CastUtils.optStringOrNull(jSONObject, "breakId");
                 String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject, "breakClipId");
                 long optLong = jSONObject.optLong("whenSkippable", -1L);
-                return new AdBreakStatus(secToMillisec, secToMillisec2, optStringOrNull, optStringOrNull2, optLong != -1 ? CastUtils.secToMillisec(optLong) : optLong);
+                if (optLong != -1) {
+                    optLong = CastUtils.secToMillisec(optLong);
+                }
+                return new AdBreakStatus(secToMillisec, secToMillisec2, optStringOrNull, optStringOrNull2, optLong);
             } catch (JSONException e) {
                 zza.e(e, "Error while creating an AdBreakClipInfo from JSON", new Object[0]);
             }

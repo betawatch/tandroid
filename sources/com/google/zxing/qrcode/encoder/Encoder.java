@@ -15,7 +15,6 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
@@ -356,45 +355,60 @@ public abstract class Encoder {
         int i4 = 0;
         int i5 = 0;
         int i6 = 0;
-        for (int i7 = 0; i7 < i3; i7++) {
+        int i7 = 0;
+        while (i4 < i3) {
             int[] iArr = new int[1];
             int[] iArr2 = new int[1];
-            getNumDataBytesAndNumECBytesForBlockID(i, i2, i3, i7, iArr, iArr2);
-            int i8 = iArr[0];
-            byte[] bArr = new byte[i8];
-            bitArray.toBytes(i4 * 8, bArr, 0, i8);
+            int i8 = i;
+            int i9 = i2;
+            int i10 = i3;
+            getNumDataBytesAndNumECBytesForBlockID(i8, i9, i10, i4, iArr, iArr2);
+            int i11 = iArr[0];
+            byte[] bArr = new byte[i11];
+            bitArray.toBytes(i5 * 8, bArr, 0, i11);
             byte[] generateECBytes = generateECBytes(bArr, iArr2[0]);
             arrayList.add(new BlockPair(bArr, generateECBytes));
-            i5 = Math.max(i5, i8);
-            i6 = Math.max(i6, generateECBytes.length);
-            i4 += iArr[0];
+            i6 = Math.max(i6, i11);
+            i7 = Math.max(i7, generateECBytes.length);
+            i5 += iArr[0];
+            i4++;
+            i = i8;
+            i2 = i9;
+            i3 = i10;
         }
-        if (i2 != i4) {
+        int i12 = i;
+        if (i2 != i5) {
             throw new WriterException("Data bytes does not match offset");
         }
         BitArray bitArray2 = new BitArray();
-        for (int i9 = 0; i9 < i5; i9++) {
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                byte[] dataBytes = ((BlockPair) it.next()).getDataBytes();
-                if (i9 < dataBytes.length) {
-                    bitArray2.appendBits(dataBytes[i9], 8);
+        for (int i13 = 0; i13 < i6; i13++) {
+            int size = arrayList.size();
+            int i14 = 0;
+            while (i14 < size) {
+                Object obj = arrayList.get(i14);
+                i14++;
+                byte[] dataBytes = ((BlockPair) obj).getDataBytes();
+                if (i13 < dataBytes.length) {
+                    bitArray2.appendBits(dataBytes[i13], 8);
                 }
             }
         }
-        for (int i10 = 0; i10 < i6; i10++) {
-            Iterator it2 = arrayList.iterator();
-            while (it2.hasNext()) {
-                byte[] errorCorrectionBytes = ((BlockPair) it2.next()).getErrorCorrectionBytes();
-                if (i10 < errorCorrectionBytes.length) {
-                    bitArray2.appendBits(errorCorrectionBytes[i10], 8);
+        for (int i15 = 0; i15 < i7; i15++) {
+            int size2 = arrayList.size();
+            int i16 = 0;
+            while (i16 < size2) {
+                Object obj2 = arrayList.get(i16);
+                i16++;
+                byte[] errorCorrectionBytes = ((BlockPair) obj2).getErrorCorrectionBytes();
+                if (i15 < errorCorrectionBytes.length) {
+                    bitArray2.appendBits(errorCorrectionBytes[i15], 8);
                 }
             }
         }
-        if (i == bitArray2.getSizeInBytes()) {
+        if (i12 == bitArray2.getSizeInBytes()) {
             return bitArray2;
         }
-        throw new WriterException("Interleaving error: " + i + " and " + bitArray2.getSizeInBytes() + " differ.");
+        throw new WriterException("Interleaving error: " + i12 + " and " + bitArray2.getSizeInBytes() + " differ.");
     }
 
     static byte[] generateECBytes(byte[] bArr, int i) {

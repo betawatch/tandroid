@@ -109,12 +109,12 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
         Page[] pageArr = new Page[5];
         this.allPages = pageArr;
         this.parentFragment = baseFragment;
-        1 r11 = null;
+        1 r9 = null;
         1 r5 = null;
-        pageArr[0] = new Page(this, LocaleController.getString(R.string.FilterChats), 0, new DialogsAdapter(this, r11), r5);
-        this.allPages[1] = new Page(this, LocaleController.getString(R.string.MediaTab), 1, new MediaAdapter(this, false, r11), r5);
-        this.allPages[2] = new Page(this, LocaleController.getString(R.string.SharedFilesTab2), 2, new DocumentsAdapter(this, r11), r5);
-        this.allPages[3] = new Page(this, LocaleController.getString(R.string.Music), 3, new MusicAdapter(this, r11), r5);
+        pageArr[0] = new Page(this, LocaleController.getString(R.string.FilterChats), 0, new DialogsAdapter(this, r9), r5);
+        this.allPages[1] = new Page(this, LocaleController.getString(R.string.MediaTab), 1, new MediaAdapter(this, false, r9), r5);
+        this.allPages[2] = new Page(this, LocaleController.getString(R.string.SharedFilesTab2), 2, new DocumentsAdapter(this, r9), r5);
+        this.allPages[3] = new Page(this, LocaleController.getString(R.string.Music), 3, new MusicAdapter(this, r9), r5);
         int i = 0;
         while (true) {
             Page[] pageArr2 = this.allPages;
@@ -161,7 +161,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                 imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        CachedMediaLayout.this.lambda$new$0(view2);
+                        CachedMediaLayout.this.delegate.clearSelection();
                     }
                 });
                 AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
@@ -181,7 +181,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                 actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        CachedMediaLayout.this.lambda$new$1(view2);
+                        CachedMediaLayout.this.delegate.clear();
                     }
                 });
                 return;
@@ -257,9 +257,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.CachedMediaLayout$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public final boolean onItemClick(View view, int i2, float f, float f2) {
-                    boolean lambda$createView$5;
-                    lambda$createView$5 = CachedMediaLayout.1.this.lambda$createView$5(recyclerListView, baseFragment, view, i2, f, f2);
-                    return lambda$createView$5;
+                    return CachedMediaLayout.1.$r8$lambda$MoX0w7VckYxqA1B2hE6LcApPigU(CachedMediaLayout.1.this, recyclerListView, baseFragment, view, i2, f, f2);
                 }
 
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
@@ -275,8 +273,8 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             return recyclerListView;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$createView$5(final RecyclerListView recyclerListView, final BaseFragment baseFragment, final View view, int i, float f, float f2) {
+        public static /* synthetic */ boolean $r8$lambda$MoX0w7VckYxqA1B2hE6LcApPigU(final 1 r16, final RecyclerListView recyclerListView, final BaseFragment baseFragment, final View view, int i, float f, float f2) {
+            r16.getClass();
             final BaseAdapter baseAdapter = (BaseAdapter) recyclerListView.getAdapter();
             final ItemInner itemInner = (ItemInner) baseAdapter.itemInners.get(i);
             if ((view instanceof CacheCell) || (view instanceof SharedPhotoVideoCell2)) {
@@ -285,21 +283,21 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                     ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_view_file, LocaleController.getString(R.string.CacheOpenFile), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$1$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            CachedMediaLayout.1.this.lambda$createView$0(itemInner, baseAdapter, recyclerListView, view, view2);
+                            CachedMediaLayout.1.$r8$lambda$dMdwR_9VldD6JAf5K_FHwSdxtPE(CachedMediaLayout.1.this, itemInner, baseAdapter, recyclerListView, view, view2);
                         }
                     });
                 } else if (((CacheCell) view).container.getChildAt(0) instanceof SharedAudioCell) {
                     ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_played, LocaleController.getString(R.string.PlayFile), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$1$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            CachedMediaLayout.1.this.lambda$createView$1(itemInner, view, view2);
+                            CachedMediaLayout.1.$r8$lambda$EyMtRyLqx7w2LGRjRkH5PuzJ4Fo(CachedMediaLayout.1.this, itemInner, view, view2);
                         }
                     });
                 } else {
                     ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_view_file, LocaleController.getString(R.string.CacheOpenFile), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$1$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            CachedMediaLayout.1.this.lambda$createView$2(itemInner, view, view2);
+                            CachedMediaLayout.1.$r8$lambda$tQSlYLOxCY1xteXD68aMQngCVOc(CachedMediaLayout.1.this, itemInner, view, view2);
                         }
                     });
                 }
@@ -308,17 +306,17 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                     ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_viewintopic, LocaleController.getString(R.string.ViewInChat), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$1$$ExternalSyntheticLambda4
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            CachedMediaLayout.1.this.lambda$createView$3(itemInner, baseFragment, view2);
+                            CachedMediaLayout.1.$r8$lambda$H6Dlzvcu4aeyycMq2m0jzn-dFRI(CachedMediaLayout.1.this, itemInner, baseFragment, view2);
                         }
                     });
                 }
                 ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_select, LocaleController.getString(!CachedMediaLayout.this.cacheModel.selectedFiles.contains(itemInner.file) ? R.string.Select : R.string.Deselect), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$1$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        CachedMediaLayout.1.this.lambda$createView$4(itemInner, view2);
+                        CachedMediaLayout.1.$r8$lambda$En7sboSWdrr88mkAPOKI_IdRDeo(CachedMediaLayout.1.this, itemInner, view2);
                     }
                 });
-                this.popupWindow = AlertsCreator.createSimplePopup(baseFragment, actionBarPopupWindowLayout, view, (int) f, (int) f2);
+                r16.popupWindow = AlertsCreator.createSimplePopup(baseFragment, actionBarPopupWindowLayout, view, (int) f, (int) f2);
                 CachedMediaLayout.this.getRootView().dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
                 return true;
             }
@@ -329,35 +327,32 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$0(ItemInner itemInner, BaseAdapter baseAdapter, RecyclerListView recyclerListView, View view, View view2) {
+        public static /* synthetic */ void $r8$lambda$dMdwR_9VldD6JAf5K_FHwSdxtPE(1 r0, ItemInner itemInner, BaseAdapter baseAdapter, RecyclerListView recyclerListView, View view, View view2) {
             CachedMediaLayout.this.openPhoto(itemInner, (MediaAdapter) baseAdapter, recyclerListView, (SharedPhotoVideoCell2) view);
-            ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
+            ActionBarPopupWindow actionBarPopupWindow = r0.popupWindow;
             if (actionBarPopupWindow != null) {
                 actionBarPopupWindow.dismiss();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$1(ItemInner itemInner, View view, View view2) {
+        public static /* synthetic */ void $r8$lambda$EyMtRyLqx7w2LGRjRkH5PuzJ4Fo(1 r0, ItemInner itemInner, View view, View view2) {
             CachedMediaLayout.this.openItem(itemInner.file, (CacheCell) view);
-            ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
+            ActionBarPopupWindow actionBarPopupWindow = r0.popupWindow;
             if (actionBarPopupWindow != null) {
                 actionBarPopupWindow.dismiss();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$2(ItemInner itemInner, View view, View view2) {
+        public static /* synthetic */ void $r8$lambda$tQSlYLOxCY1xteXD68aMQngCVOc(1 r0, ItemInner itemInner, View view, View view2) {
             CachedMediaLayout.this.openItem(itemInner.file, (CacheCell) view);
-            ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
+            ActionBarPopupWindow actionBarPopupWindow = r0.popupWindow;
             if (actionBarPopupWindow != null) {
                 actionBarPopupWindow.dismiss();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$3(ItemInner itemInner, BaseFragment baseFragment, View view) {
+        public static /* synthetic */ void $r8$lambda$H6Dlzvcu4aeyycMq2m0jzn-dFRI(1 r5, ItemInner itemInner, BaseFragment baseFragment, View view) {
+            r5.getClass();
             Bundle bundle = new Bundle();
             long j = itemInner.file.dialogId;
             if (j > 0) {
@@ -368,19 +363,18 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             bundle.putInt("message_id", itemInner.file.messageId);
             baseFragment.presentFragment(new ChatActivity(bundle));
             CachedMediaLayout.this.delegate.dismiss();
-            ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
+            ActionBarPopupWindow actionBarPopupWindow = r5.popupWindow;
             if (actionBarPopupWindow != null) {
                 actionBarPopupWindow.dismiss();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$4(ItemInner itemInner, View view) {
+        public static /* synthetic */ void $r8$lambda$En7sboSWdrr88mkAPOKI_IdRDeo(1 r2, ItemInner itemInner, View view) {
             Delegate delegate = CachedMediaLayout.this.delegate;
             if (delegate != null) {
                 delegate.onItemSelected(itemInner.entities, itemInner.file, true);
             }
-            ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
+            ActionBarPopupWindow actionBarPopupWindow = r2.popupWindow;
             if (actionBarPopupWindow != null) {
                 actionBarPopupWindow.dismiss();
             }
@@ -397,16 +391,6 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             }
             recyclerListView.setTag(Integer.valueOf(((Page) CachedMediaLayout.this.pages.get(i)).type));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.delegate.clearSelection();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        this.delegate.clear();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -445,7 +429,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
         if (cacheCell.type == 3) {
             if (MediaController.getInstance().isPlayingMessage(fileInfo.messageObject)) {
                 if (!MediaController.getInstance().isMessagePaused()) {
-                    MediaController.getInstance().lambda$startAudioAgain$7(fileInfo.messageObject);
+                    MediaController.getInstance().pauseMessage(fileInfo.messageObject);
                     return;
                 } else {
                     MediaController.getInstance().playMessage(fileInfo.messageObject);
@@ -745,7 +729,8 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
         }
     }
 
-    private class MediaAdapter extends BaseFilesAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class MediaAdapter extends BaseFilesAdapter {
         boolean isStories;
         ArrayList photoEntries;
         private SharedPhotoVideoCell2.SharedResources sharedResources;
@@ -782,8 +767,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             }
             SharedPhotoVideoCell2 sharedPhotoVideoCell2 = new SharedPhotoVideoCell2(viewGroup.getContext(), this.sharedResources, CachedMediaLayout.this.parentFragment.getCurrentAccount()) { // from class: org.telegram.ui.CachedMediaLayout.MediaAdapter.1
                 @Override // org.telegram.ui.Cells.SharedPhotoVideoCell2
-                /* renamed from: onCheckBoxPressed */
-                public void lambda$setStyle$1() {
+                public void onCheckBoxPressed() {
                     CachedMediaLayout.this.delegate.onItemSelected(null, (CacheModel.FileInfo) getTag(), true);
                 }
             };
@@ -980,7 +964,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                 Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.CachedMediaLayout$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CachedMediaLayout.this.lambda$checkMessageObjectForAudio$3(fileInfo, tL_documentAttributeAudio);
+                        CachedMediaLayout.$r8$lambda$SXwQEwU-RU4BsHU8U5Grstgo0Hw(CachedMediaLayout.this, fileInfo, tL_documentAttributeAudio);
                     }
                 });
             }
@@ -995,32 +979,27 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkMessageObjectForAudio$3(final CacheModel.FileInfo fileInfo, final TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio) {
-        MediaMetadataRetriever mediaMetadataRetriever;
+    public static /* synthetic */ void $r8$lambda$SXwQEwU-RU4BsHU8U5Grstgo0Hw(final CachedMediaLayout cachedMediaLayout, final CacheModel.FileInfo fileInfo, final TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio) {
         String str;
+        Throwable th;
+        MediaMetadataRetriever mediaMetadataRetriever;
         String str2;
         final String str3;
         final String str4;
+        cachedMediaLayout.getClass();
         String str5 = "";
         MediaMetadataRetriever mediaMetadataRetriever2 = null;
         try {
             try {
                 mediaMetadataRetriever = new MediaMetadataRetriever();
+            } catch (Throwable th2) {
+                th = th2;
+                mediaMetadataRetriever = mediaMetadataRetriever2;
+            }
+            try {
                 try {
-                    try {
-                        mediaMetadataRetriever.setDataSource(getContext(), Uri.fromFile(fileInfo.file));
-                        str2 = mediaMetadataRetriever.extractMetadata(7);
-                    } catch (Throwable th) {
-                        th = th;
-                        if (mediaMetadataRetriever != null) {
-                            try {
-                                mediaMetadataRetriever.release();
-                            } catch (Throwable unused) {
-                            }
-                        }
-                        throw th;
-                    }
+                    mediaMetadataRetriever.setDataSource(cachedMediaLayout.getContext(), Uri.fromFile(fileInfo.file));
+                    str2 = mediaMetadataRetriever.extractMetadata(7);
                 } catch (Exception e) {
                     e = e;
                     str2 = "";
@@ -1029,7 +1008,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                     str5 = mediaMetadataRetriever.extractMetadata(2);
                     try {
                         mediaMetadataRetriever.release();
-                    } catch (Throwable unused2) {
+                    } catch (Throwable unused) {
                     }
                     str3 = str5;
                     str4 = str2;
@@ -1041,7 +1020,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                     if (mediaMetadataRetriever2 != null) {
                         try {
                             mediaMetadataRetriever2.release();
-                        } catch (Throwable unused3) {
+                        } catch (Throwable unused2) {
                             str2 = str;
                         }
                     }
@@ -1050,35 +1029,43 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CachedMediaLayout$$ExternalSyntheticLambda3
                         @Override // java.lang.Runnable
                         public final void run() {
-                            CachedMediaLayout.this.lambda$checkMessageObjectForAudio$2(fileInfo, tL_documentAttributeAudio, str4, str3);
+                            CachedMediaLayout.$r8$lambda$0twu0M1jes6O-5C5iTUyecCYf98(CachedMediaLayout.this, fileInfo, tL_documentAttributeAudio, str4, str3);
                         }
                     });
                 }
-            } catch (Exception e3) {
-                e = e3;
-                str = "";
-            }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CachedMediaLayout$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CachedMediaLayout.this.lambda$checkMessageObjectForAudio$2(fileInfo, tL_documentAttributeAudio, str4, str3);
+            } catch (Throwable th3) {
+                th = th3;
+                if (mediaMetadataRetriever != null) {
+                    try {
+                        mediaMetadataRetriever.release();
+                        throw th;
+                    } catch (Throwable unused3) {
+                        throw th;
+                    }
                 }
-            });
-        } catch (Throwable th2) {
-            th = th2;
-            mediaMetadataRetriever = mediaMetadataRetriever2;
+                throw th;
+            }
+        } catch (Exception e3) {
+            e = e3;
+            str = "";
         }
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CachedMediaLayout$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                CachedMediaLayout.$r8$lambda$0twu0M1jes6O-5C5iTUyecCYf98(CachedMediaLayout.this, fileInfo, tL_documentAttributeAudio, str4, str3);
+            }
+        });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkMessageObjectForAudio$2(CacheModel.FileInfo fileInfo, TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio, String str, String str2) {
+    public static /* synthetic */ void $r8$lambda$0twu0M1jes6O-5C5iTUyecCYf98(CachedMediaLayout cachedMediaLayout, CacheModel.FileInfo fileInfo, TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio, String str, String str2) {
+        cachedMediaLayout.getClass();
         CacheModel.FileInfo.FileMetadata fileMetadata = fileInfo.metadata;
         fileMetadata.loading = false;
         fileMetadata.title = str;
         tL_documentAttributeAudio.title = str;
         fileMetadata.author = str2;
         tL_documentAttributeAudio.performer = str2;
-        updateRow(fileInfo, 3);
+        cachedMediaLayout.updateRow(fileInfo, 3);
     }
 
     private void updateRow(CacheModel.FileInfo fileInfo, int i) {
@@ -1159,7 +1146,7 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CachedMediaLayout$CacheCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    CachedMediaLayout.CacheCell.this.lambda$new$0(view2);
+                    CachedMediaLayout.CacheCell.this.onCheckBoxPressed();
                 }
             });
             this.container = new FrameLayout(context);
@@ -1179,11 +1166,6 @@ public abstract class CachedMediaLayout extends FrameLayout implements NestedSiz
             addView(view, LayoutHelper.createFrame(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             addView(this.container, LayoutHelper.createFrame(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
             addView(this.sizeTextView, LayoutHelper.createFrame(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            onCheckBoxPressed();
         }
 
         @Override // android.view.ViewGroup, android.view.View

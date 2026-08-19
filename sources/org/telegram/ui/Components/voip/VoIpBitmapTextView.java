@@ -43,17 +43,16 @@ public class VoIpBitmapTextView extends View {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIpBitmapTextView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIpBitmapTextView.this.lambda$onLayout$0();
+                    VoIpBitmapTextView.$r8$lambda$d44ajallhzPC3tUlRT0vfZT9nWs(VoIpBitmapTextView.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLayout$0() {
-        this.bitmap = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-        new Canvas(this.bitmap).drawText(this.text, getMeasuredWidth() / 2, (int) ((getMeasuredHeight() / 2) - ((this.textPaint.descent() + this.textPaint.ascent()) / 2.0f)), this.textPaint);
-        postInvalidate();
+    public static /* synthetic */ void $r8$lambda$d44ajallhzPC3tUlRT0vfZT9nWs(VoIpBitmapTextView voIpBitmapTextView) {
+        voIpBitmapTextView.bitmap = Bitmap.createBitmap(voIpBitmapTextView.getMeasuredWidth(), voIpBitmapTextView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+        new Canvas(voIpBitmapTextView.bitmap).drawText(voIpBitmapTextView.text, voIpBitmapTextView.getMeasuredWidth() / 2, (int) ((voIpBitmapTextView.getMeasuredHeight() / 2) - ((voIpBitmapTextView.textPaint.descent() + voIpBitmapTextView.textPaint.ascent()) / 2.0f)), voIpBitmapTextView.textPaint);
+        voIpBitmapTextView.postInvalidate();
     }
 
     @Override // android.view.View

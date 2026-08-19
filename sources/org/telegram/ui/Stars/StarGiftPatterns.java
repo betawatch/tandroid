@@ -103,110 +103,86 @@ public abstract class StarGiftPatterns {
     }
 
     public static void drawProfileAnimatedPattern(Canvas canvas, Drawable drawable, int i, float f, float f2, RectF rectF, float f3) {
-        float clamp01;
-        float[] fArr;
-        float f4;
-        float f5;
-        float f6;
-        float f7;
+        int i2 = 6;
         if (f2 <= 0.0f) {
             return;
         }
-        float clamp012 = Utilities.clamp01(((f2 >= 0.85f ? 1.0f : f2 / 0.85f) - 0.2f) / 0.8f);
-        float f8 = rectF.left;
-        float f9 = rectF.top;
+        float clamp01 = Utilities.clamp01(((f2 >= 0.85f ? 1.0f : f2 / 0.85f) - 0.2f) / 0.8f);
+        float f4 = rectF.left;
+        float f5 = rectF.top;
+        int i3 = 0;
         float width = rectF.width();
         float height = rectF.height();
-        float f10 = f8 + (width / 2.0f);
-        float f11 = f9 + (height / 2.0f);
+        float f6 = f4 + (width / 2.0f);
+        float f7 = f5 + (height / 2.0f);
         float dpf2 = AndroidUtilities.dpf2(96.0f);
-        float min = Math.min(f8, (i - dpf2) / 2.0f);
-        float max = Math.max(f9, (f - dpf2) / 2.0f);
+        float min = Math.min(f4, (i - dpf2) / 2.0f);
+        float max = Math.max(f5, (f - dpf2) / 2.0f);
         float max2 = Math.max(width, dpf2);
         float max3 = Math.max(height, dpf2);
-        float f12 = max2 / 2.0f;
-        float f13 = min + f12;
-        float f14 = max3 / 2.0f;
-        float f15 = max + f14;
+        float f8 = max2 / 2.0f;
+        float f9 = min + f8;
+        float f10 = max3 / 2.0f;
+        float f11 = max + f10;
         float dpf22 = AndroidUtilities.dpf2(24.0f);
         float dpf23 = AndroidUtilities.dpf2(16.0f);
         float dpf24 = AndroidUtilities.dpf2(12.0f);
         float dpf25 = AndroidUtilities.dpf2(8.0f);
         float dpf26 = AndroidUtilities.dpf2(4.0f);
-        float f16 = dpf22 * 2.0f;
-        float f17 = f16 * 2.0f;
-        float cos = (f16 + f12) * ((float) Math.cos(Math.toRadians(120.0d)));
-        float cos2 = (dpf23 + f14) * ((float) Math.cos(Math.toRadians(160.0d)));
-        float f18 = max + max3;
-        float f19 = min - dpf23;
-        float f20 = max3 / 4.0f;
-        float f21 = (f15 - f20) - dpf25;
-        float f22 = min + max2;
-        float f23 = f22 + dpf23;
-        float f24 = f20 + f15 + dpf25;
-        float f25 = min - f16;
-        float f26 = f22 + f16;
-        float f27 = f13 + cos;
-        float f28 = (max - f16) + dpf24;
-        float f29 = f13 - cos;
-        float f30 = (f18 + f16) - dpf24;
-        float f31 = f25 - dpf25;
-        float f32 = f15 + cos2;
-        float f33 = f26 + dpf25;
-        float f34 = f15 - cos2;
-        int i2 = 0;
-        float[] fArr2 = {f13, max - dpf22, 20.0f, f13, f18 + dpf22, 20.0f, f19, f21, 23.0f, f23, f21, 18.0f, f19, f24, 24.0f, f23 - dpf26, f24, 24.0f, f25, f15, 19.0f, f26, f15, 19.0f, f27, f28, 17.0f, f29, f28, 17.0f, f27, f30, 20.0f, f29, f30, 20.0f, f31, f32, 20.0f, f33, f32, 19.0f, f31, f34, 21.0f, f33, f34, 18.0f, min - f17, f15, 19.0f, f22 + f17, f15, 19.0f};
-        float[] fArr3 = {0.02f, 0.42f, 0.0f, 0.32f, 0.0f, 0.4f, 0.0f, 0.4f, 0.0f, 0.4f, 0.0f, 0.4f, 0.14f, 0.6f, 0.16f, 0.64f, 0.14f, 0.7f, 0.14f, 0.9f, 0.2f, 0.75f, 0.2f, 0.85f, 0.09f, 0.45f, 0.09f, 0.45f, 0.09f, 0.45f, 0.11f, 0.45f, 0.14f, 0.75f, 0.2f, 0.8f};
-        int i3 = 0;
-        for (int i4 = 54; i3 < i4; i4 = 54) {
-            float f35 = fArr2[i3];
-            float f36 = fArr2[i3 + 1];
-            float dpf27 = AndroidUtilities.dpf2(fArr2[i3 + 2]) * 0.5f;
-            float f37 = fArr3[i2];
-            float f38 = fArr3[i2 + 1];
-            float f39 = 1.0f - clamp012;
-            if (f39 < f37) {
-                fArr = fArr3;
-                clamp01 = 1.0f;
-            } else {
-                clamp01 = 1.0f - Utilities.clamp01((f39 - f37) / (f38 - f37));
-                fArr = fArr3;
+        float f12 = dpf22 * 2.0f;
+        float f13 = f12 * 2.0f;
+        float cos = (f12 + f8) * ((float) Math.cos(Math.toRadians(120.0d)));
+        float cos2 = (dpf23 + f10) * ((float) Math.cos(Math.toRadians(160.0d)));
+        float f14 = max + max3;
+        float f15 = min - dpf23;
+        float f16 = max3 / 4.0f;
+        float f17 = (f11 - f16) - dpf25;
+        float f18 = min + max2;
+        float f19 = f18 + dpf23;
+        float f20 = f11 + f16 + dpf25;
+        float f21 = min - f12;
+        float f22 = f18 + f12;
+        float f23 = f9 + cos;
+        float f24 = (max - f12) + dpf24;
+        float f25 = f9 - cos;
+        float f26 = (f14 + f12) - dpf24;
+        float f27 = f21 - dpf25;
+        float f28 = f11 + cos2;
+        float f29 = f22 + dpf25;
+        float f30 = f11 - cos2;
+        float[] fArr = {f9, max - dpf22, 20.0f, f9, f14 + dpf22, 20.0f, f15, f17, 23.0f, f19, f17, 18.0f, f15, f20, 24.0f, f19 - dpf26, f20, 24.0f, f21, f11, 19.0f, f22, f11, 19.0f, f23, f24, 17.0f, f25, f24, 17.0f, f23, f26, 20.0f, f25, f26, 20.0f, f27, f28, 20.0f, f29, f28, 19.0f, f27, f30, 21.0f, f29, f30, 18.0f, min - f13, f11, 19.0f, f18 + f13, f11, 19.0f};
+        float[] fArr2 = {0.02f, 0.42f, 0.0f, 0.32f, 0.0f, 0.4f, 0.0f, 0.4f, 0.0f, 0.4f, 0.0f, 0.4f, 0.14f, 0.6f, 0.16f, 0.64f, 0.14f, 0.7f, 0.14f, 0.9f, 0.2f, 0.75f, 0.2f, 0.85f, 0.09f, 0.45f, 0.09f, 0.45f, 0.09f, 0.45f, 0.11f, 0.45f, 0.14f, 0.75f, 0.2f, 0.8f};
+        int i4 = 0;
+        for (int i5 = 54; i4 < i5; i5 = 54) {
+            float f31 = fArr[i4];
+            float f32 = fArr[i4 + 1];
+            float dpf27 = AndroidUtilities.dpf2(fArr[i4 + 2]) * 0.5f;
+            float f33 = fArr2[i3];
+            float f34 = 1.0f - clamp01;
+            float clamp012 = f34 < f33 ? 1.0f : 1.0f - Utilities.clamp01((f34 - f33) / (fArr2[i3 + 1] - f33));
+            if (i4 == 18 || i4 == 19 || i4 == i2 || i4 == 7) {
+                clamp012 = CubicBezierInterpolator.EASE_IN.getInterpolation(clamp012);
             }
-            if (i3 == 18 || i3 == 19 || i3 == 6 || i3 == 7) {
-                clamp01 = CubicBezierInterpolator.EASE_IN.getInterpolation(clamp01);
+            float f35 = clamp012;
+            float dp = f32 - (AndroidUtilities.dp(12.0f) * (1.0f - f2));
+            float f36 = max3;
+            if (f35 < 1.0f) {
+                f31 = AndroidUtilities.lerp(f6, f31, CubicBezierInterpolator.EASE_IN.getInterpolation(f35));
+                dp = AndroidUtilities.lerp(f7, dp, f35);
+                dpf27 = AndroidUtilities.lerp(AndroidUtilities.dpf2(8.0f), dpf27, f35);
             }
-            float[] fArr4 = fArr2;
-            float dp = f36 - (AndroidUtilities.dp(12.0f) * (1.0f - f2));
-            if (clamp01 < 1.0f) {
-                f35 = AndroidUtilities.lerp(f10, f35, CubicBezierInterpolator.EASE_IN.getInterpolation(clamp01));
-                dp = AndroidUtilities.lerp(f11, dp, clamp01);
-                f4 = f10;
-                f5 = 8.0f;
-                dpf27 = AndroidUtilities.lerp(AndroidUtilities.dpf2(8.0f), dpf27, clamp01);
-            } else {
-                f4 = f10;
-                f5 = 8.0f;
+            float clamp013 = (dp > ((float) AndroidUtilities.dp(8.0f)) + f14 ? 1.0f - Utilities.clamp01((((dp - max) - f36) - AndroidUtilities.dp(8.0f)) / AndroidUtilities.dp(56.0f)) : 1.0f) * (1.0f - Utilities.clamp01(MathUtils.distance(f9, f11, f31, dp) / (max2 * 2.0f))) * f3 * 0.5f;
+            float f37 = dp;
+            if (f35 < 1.0f) {
+                clamp013 = AndroidUtilities.lerp(0.0f, clamp013, f35);
             }
-            if (dp > AndroidUtilities.dp(f5) + f18) {
-                f6 = max3;
-                f7 = 1.0f - Utilities.clamp01((((dp - max) - max3) - AndroidUtilities.dp(f5)) / AndroidUtilities.dp(56.0f));
-            } else {
-                f6 = max3;
-                f7 = 1.0f;
-            }
-            float clamp013 = (1.0f - Utilities.clamp01(MathUtils.distance(f13, f15, f35, dp) / (max2 * 2.0f))) * f3 * 0.5f * f7;
-            if (clamp01 < 1.0f) {
-                clamp013 = AndroidUtilities.lerp(0.0f, clamp013, clamp01);
-            }
-            drawable.setBounds((int) (f35 - dpf27), (int) (dp - dpf27), (int) (f35 + dpf27), (int) (dp + dpf27));
+            drawable.setBounds((int) (f31 - dpf27), (int) (f37 - dpf27), (int) (f31 + dpf27), (int) (f37 + dpf27));
             drawable.setAlpha((int) (clamp013 * 255.0f));
             drawable.draw(canvas);
-            i3 += 3;
-            i2 += 2;
-            max3 = f6;
-            f10 = f4;
-            fArr3 = fArr;
-            fArr2 = fArr4;
+            i4 += 3;
+            i3 += 2;
+            max3 = f36;
+            i2 = 6;
         }
     }
 }

@@ -81,7 +81,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.Cells.ArchivedStickerSetCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ArchivedStickerSetCell.this.lambda$new$0(view);
+                    ArchivedStickerSetCell.this.toggle();
                 }
             };
             progressButton.setOnClickListener(onClickListener);
@@ -115,11 +115,6 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         backupImageView.setAspectFit(true);
         backupImageView.setLayerNum(1);
         addView(backupImageView, LayoutHelper.createFrameRelatively(48.0f, 48.0f, 8388659, 12.0f, 8.0f, 0.0f, 0.0f));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        toggle();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -246,15 +241,14 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
                 this.animatorSet = animatorSet2;
                 animatorSet2.setDuration(250L);
                 AnimatorSet animatorSet3 = this.animatorSet;
-                Button button = this.deleteButton;
                 Property property = View.ALPHA;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(button, (Property<Button, Float>) property, f);
-                Button button2 = this.deleteButton;
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.deleteButton, (Property<Button, Float>) property, f);
                 Property property2 = View.SCALE_X;
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(button2, (Property<Button, Float>) property2, f);
-                Button button3 = this.deleteButton;
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.deleteButton, (Property<Button, Float>) property2, f);
+                Button button = this.deleteButton;
+                float[] fArr = {f};
                 Property property3 = View.SCALE_Y;
-                animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(button3, (Property<Button, Float>) property3, f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property2, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property3, f2));
+                animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(button, (Property<Button, Float>) property3, fArr), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property2, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property3, f2));
                 this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.ArchivedStickerSetCell.1
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {

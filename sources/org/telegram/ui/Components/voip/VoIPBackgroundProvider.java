@@ -77,7 +77,7 @@ public class VoIPBackgroundProvider {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPBackgroundProvider$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIPBackgroundProvider.this.lambda$setHasVideo$0(valueAnimator);
+                    VoIPBackgroundProvider.$r8$lambda$QMudu5aswTbVewGRgDTvmdq1UEM(VoIPBackgroundProvider.this, valueAnimator);
                 }
             });
             ofFloat.setInterpolator(new LinearInterpolator());
@@ -97,7 +97,7 @@ public class VoIPBackgroundProvider {
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPBackgroundProvider$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIPBackgroundProvider.this.lambda$setHasVideo$1(valueAnimator);
+                    VoIPBackgroundProvider.$r8$lambda$L1LSd_WXei80B3Enj5rYixrVATM(VoIPBackgroundProvider.this, valueAnimator);
                 }
             });
             ofFloat2.setInterpolator(new LinearInterpolator());
@@ -110,22 +110,22 @@ public class VoIPBackgroundProvider {
         invalidateViews();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setHasVideo$0(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$QMudu5aswTbVewGRgDTvmdq1UEM(VoIPBackgroundProvider voIPBackgroundProvider, ValueAnimator valueAnimator) {
+        voIPBackgroundProvider.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         int i = (int) (35.0f * floatValue);
-        this.darkPaint.setAlpha(i);
-        this.darkVideoPaint.setAlpha((int) (floatValue * 102.0f));
-        this.whiteVideoPaint.setAlpha(i);
-        invalidateViews();
+        voIPBackgroundProvider.darkPaint.setAlpha(i);
+        voIPBackgroundProvider.darkVideoPaint.setAlpha((int) (floatValue * 102.0f));
+        voIPBackgroundProvider.whiteVideoPaint.setAlpha(i);
+        voIPBackgroundProvider.invalidateViews();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setHasVideo$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$L1LSd_WXei80B3Enj5rYixrVATM(VoIPBackgroundProvider voIPBackgroundProvider, ValueAnimator valueAnimator) {
+        voIPBackgroundProvider.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.darkShaderTools.paint.setAlpha((int) (180.0f * floatValue));
-        this.lightShaderTools.paint.setAlpha((int) (floatValue * 255.0f));
-        invalidateViews();
+        voIPBackgroundProvider.darkShaderTools.paint.setAlpha((int) (180.0f * floatValue));
+        voIPBackgroundProvider.lightShaderTools.paint.setAlpha((int) (floatValue * 255.0f));
+        voIPBackgroundProvider.invalidateViews();
     }
 
     public Canvas getLightCanvas() {

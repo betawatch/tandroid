@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -349,17 +348,12 @@ public abstract class ErrorLogHelper {
             return null;
         }
         HashMap hashMap = new HashMap();
-        Iterator it = map.entrySet().iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                break;
-            }
-            Map.Entry entry = (Map.Entry) it.next();
+        for (Map.Entry entry : map.entrySet()) {
             String str2 = (String) entry.getKey();
             String str3 = (String) entry.getValue();
             if (hashMap.size() >= 20) {
                 AppCenterLog.warn("AppCenterCrashes", String.format("%s : properties cannot contain more than %s items. Skipping other properties.", str, 20));
-                break;
+                return hashMap;
             }
             if (str2 == null || str2.isEmpty()) {
                 AppCenterLog.warn("AppCenterCrashes", String.format("%s : a property key cannot be null or empty. Property will be skipped.", str));

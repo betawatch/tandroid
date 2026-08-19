@@ -41,8 +41,8 @@ public abstract class zbd {
             }
             sb.append((CharSequence) str, i3, indexOf);
             sb.append(objArr[i]);
-            i3 = indexOf + 2;
             i++;
+            i3 = indexOf + 2;
         }
         sb.append((CharSequence) str, i3, str.length());
         if (i < length2) {

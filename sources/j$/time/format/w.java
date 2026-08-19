@@ -7,7 +7,7 @@ public final class w {
     public static final w LENIENT;
     public static final w SMART;
     public static final w STRICT;
-    private static final /* synthetic */ w[] a;
+    public static final /* synthetic */ w[] a;
 
     public static w valueOf(String str) {
         return (w) Enum.valueOf(w.class, str);

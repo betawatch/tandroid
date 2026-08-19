@@ -114,7 +114,10 @@ public class DefaultLoadControl implements LoadControl {
         if (j2 != -9223372036854775807L) {
             j3 = Math.min(j2 / 2, j3);
         }
-        return j3 <= 0 || playoutDurationForMediaDuration >= j3 || (!this.prioritizeTimeOverSizeThresholds && this.allocator.getTotalBytesAllocated() >= this.targetBufferBytes);
+        if (j3 <= 0 || playoutDurationForMediaDuration >= j3) {
+            return true;
+        }
+        return !this.prioritizeTimeOverSizeThresholds && this.allocator.getTotalBytesAllocated() >= this.targetBufferBytes;
     }
 
     protected int calculateTargetBufferBytes(Renderer[] rendererArr, ExoTrackSelection[] exoTrackSelectionArr) {

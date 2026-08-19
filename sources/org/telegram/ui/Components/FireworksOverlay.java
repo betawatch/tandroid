@@ -237,13 +237,12 @@ public class FireworksOverlay extends View {
         return getMeasuredWidth();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x008e A[Catch: Exception -> 0x0025, TryCatch #0 {Exception -> 0x0025, blocks: (B:3:0x0006, B:6:0x0016, B:7:0x004f, B:11:0x006c, B:14:0x008e, B:17:0x00c4, B:19:0x00dd, B:20:0x00ea, B:23:0x00f1, B:25:0x00e2, B:26:0x007a, B:27:0x0028, B:29:0x002c, B:31:0x0034, B:32:0x0043), top: B:2:0x0006 }] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00c4 A[Catch: Exception -> 0x0025, TryCatch #0 {Exception -> 0x0025, blocks: (B:3:0x0006, B:6:0x0016, B:7:0x004f, B:11:0x006c, B:14:0x008e, B:17:0x00c4, B:19:0x00dd, B:20:0x00ea, B:23:0x00f1, B:25:0x00e2, B:26:0x007a, B:27:0x0028, B:29:0x002c, B:31:0x0034, B:32:0x0043), top: B:2:0x0006 }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x008e A[Catch: Exception -> 0x0025, TryCatch #0 {Exception -> 0x0025, blocks: (B:3:0x0006, B:6:0x0016, B:7:0x004f, B:11:0x006c, B:14:0x008e, B:17:0x00c4, B:19:0x00dd, B:20:0x00ea, B:23:0x00f1, B:26:0x00e2, B:27:0x007a, B:28:0x0028, B:30:0x002c, B:32:0x0034, B:33:0x0043), top: B:2:0x0006 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00c4 A[Catch: Exception -> 0x0025, TryCatch #0 {Exception -> 0x0025, blocks: (B:3:0x0006, B:6:0x0016, B:7:0x004f, B:11:0x006c, B:14:0x008e, B:17:0x00c4, B:19:0x00dd, B:20:0x00ea, B:23:0x00f1, B:26:0x00e2, B:27:0x007a, B:28:0x0028, B:30:0x002c, B:32:0x0034, B:33:0x0043), top: B:2:0x0006 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private Particle createParticle(boolean z) {
-        byte b;
         Particle particle = new Particle();
         try {
             byte nextInt = (byte) Utilities.random.nextInt(2);
@@ -259,17 +258,15 @@ public class FireworksOverlay extends View {
             }
             particle.side = (byte) Utilities.random.nextInt(2);
             particle.finishedStart = (byte) (Utilities.random.nextInt(2) + 1);
-            b = particle.type;
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (b != 0 && b != 2) {
-            particle.typeSize = (byte) ((Utilities.random.nextFloat() * 4.0f) + 4.0f);
-            if (!z) {
-                particle.y = (-Utilities.random.nextFloat()) * getHeightForAnimation() * 1.2f;
-                particle.x = AndroidUtilities.dp(5.0f) + Utilities.random.nextInt(Math.max(1, getWidthForAnimation() - AndroidUtilities.dp(10.0f)));
-                particle.xFinished = particle.finishedStart;
-            } else {
+            byte b = particle.type;
+            if (b != 0 && b != 2) {
+                particle.typeSize = (byte) ((Utilities.random.nextFloat() * 4.0f) + 4.0f);
+                if (!z) {
+                    particle.y = (-Utilities.random.nextFloat()) * getHeightForAnimation() * 1.2f;
+                    particle.x = AndroidUtilities.dp(5.0f) + Utilities.random.nextInt(Math.max(1, getWidthForAnimation() - AndroidUtilities.dp(10.0f)));
+                    particle.xFinished = particle.finishedStart;
+                    return particle;
+                }
                 int dp = AndroidUtilities.dp(Utilities.random.nextInt(10) + 4);
                 int heightForAnimation = getHeightForAnimation() / 4;
                 if (particle.side == 0) {
@@ -280,13 +277,15 @@ public class FireworksOverlay extends View {
                 particle.moveX = (particle.side == 0 ? 1 : -1) * (AndroidUtilities.dp(1.2f) + (Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)));
                 particle.moveY = -(AndroidUtilities.dp(4.0f) + (Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)));
                 particle.y = (heightForAnimation / 2) + Utilities.random.nextInt(Math.max(1, heightForAnimation * 2));
+                return particle;
             }
+            particle.typeSize = (byte) ((Utilities.random.nextFloat() * 2.0f) + 4.0f);
+            if (!z) {
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
             return particle;
         }
-        particle.typeSize = (byte) ((Utilities.random.nextFloat() * 2.0f) + 4.0f);
-        if (!z) {
-        }
-        return particle;
     }
 
     public boolean isStarted() {
@@ -371,17 +370,16 @@ public class FireworksOverlay extends View {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FireworksOverlay$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FireworksOverlay.this.lambda$onDraw$0();
+                FireworksOverlay.$r8$lambda$TdBXviA6ch6Fl3bB-7PGubx5g8s(FireworksOverlay.this);
             }
         });
         onStop();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onDraw$0() {
-        if (this.started) {
+    public static /* synthetic */ void $r8$lambda$TdBXviA6ch6Fl3bB-7PGubx5g8s(FireworksOverlay fireworksOverlay) {
+        if (fireworksOverlay.started) {
             return;
         }
-        setLayerType(0, null);
+        fireworksOverlay.setLayerType(0, null);
     }
 }

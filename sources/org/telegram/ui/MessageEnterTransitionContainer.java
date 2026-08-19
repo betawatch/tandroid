@@ -17,18 +17,13 @@ public class MessageEnterTransitionContainer extends View {
         void onDraw(Canvas canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        setVisibility(8);
-    }
-
     public MessageEnterTransitionContainer(ViewGroup viewGroup, int i) {
         super(viewGroup.getContext());
         this.transitions = new ArrayList();
         this.hideRunnable = new Runnable() { // from class: org.telegram.ui.MessageEnterTransitionContainer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MessageEnterTransitionContainer.this.lambda$new$0();
+                MessageEnterTransitionContainer.this.setVisibility(8);
             }
         };
         this.parent = viewGroup;

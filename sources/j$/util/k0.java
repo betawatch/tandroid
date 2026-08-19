@@ -1,75 +1,54 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class k0 implements H, DoubleConsumer, y {
-    boolean a = false;
-    double b;
-    final /* synthetic */ W c;
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
+public final class k0 extends j$.com.android.tools.r8.a implements T {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.i(this, consumer);
     }
 
-    @Override // j$.util.Q
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.com.android.tools.r8.a.n(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.com.android.tools.r8.a.p(this, i);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.com.android.tools.r8.a.z(this, consumer);
+    }
+
+    @Override // j$.com.android.tools.r8.a, j$.util.T, j$.util.c0, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ T trySplit() {
+        return null;
+    }
+
+    @Override // j$.com.android.tools.r8.a, j$.util.T, j$.util.c0, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ c0 trySplit() {
+        return null;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.T
+    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        return false;
+    }
+
+    @Override // j$.util.T
     public final void forEachRemaining(DoubleConsumer doubleConsumer) {
         Objects.requireNonNull(doubleConsumer);
-        while (hasNext()) {
-            doubleConsumer.accept(nextDouble());
-        }
-    }
-
-    @Override // java.util.Iterator
-    public final Double next() {
-        if (w0.a) {
-            w0.a(k0.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
-            throw null;
-        }
-        return Double.valueOf(nextDouble());
-    }
-
-    @Override // j$.util.H, java.util.Iterator, j$.util.y
-    public final void forEachRemaining(Consumer consumer) {
-        if (consumer instanceof DoubleConsumer) {
-            forEachRemaining((DoubleConsumer) consumer);
-            return;
-        }
-        Objects.requireNonNull(consumer);
-        if (w0.a) {
-            w0.a(k0.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
-            throw null;
-        }
-        Objects.requireNonNull(consumer);
-        forEachRemaining((DoubleConsumer) new E(consumer));
-    }
-
-    k0(W w) {
-        this.c = w;
-    }
-
-    @Override // java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        this.a = true;
-        this.b = d;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance((DoubleConsumer) this);
-        }
-        return this.a;
-    }
-
-    @Override // j$.util.H
-    public final double nextDouble() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
-        }
-        this.a = false;
-        return this.b;
     }
 }

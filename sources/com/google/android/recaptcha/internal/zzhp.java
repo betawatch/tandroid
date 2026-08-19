@@ -47,11 +47,7 @@ public final class zzhp implements zzhn {
             } catch (Exception e3) {
                 throw new zzcg(zzce.zzc, zzcd.zzF, e3.getMessage(), null, 8, null);
             }
-        } catch (Throwable th) {
-            if (zzhlVar != null) {
-                zzhlVar.zzd();
-            }
-            throw th;
+        } finally {
         }
     }
 

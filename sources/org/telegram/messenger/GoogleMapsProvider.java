@@ -144,13 +144,12 @@ public class GoogleMapsProvider implements IMapsProvider {
             this.googleMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveStartedListener() { // from class: org.telegram.messenger.GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda5
                 @Override // com.google.android.gms.maps.GoogleMap.OnCameraMoveStartedListener
                 public final void onCameraMoveStarted(int i) {
-                    GoogleMapsProvider.GoogleMapImpl.lambda$setOnCameraMoveStartedListener$0(IMapsProvider.OnCameraMoveStartedListener.this, i);
+                    GoogleMapsProvider.GoogleMapImpl.$r8$lambda$r9-kkoqpW97OxjoEF5_g6CEGB9s(IMapsProvider.OnCameraMoveStartedListener.this, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setOnCameraMoveStartedListener$0(IMapsProvider.OnCameraMoveStartedListener onCameraMoveStartedListener, int i) {
+        public static /* synthetic */ void $r8$lambda$r9-kkoqpW97OxjoEF5_g6CEGB9s(IMapsProvider.OnCameraMoveStartedListener onCameraMoveStartedListener, int i) {
             int i2 = 2;
             if (i != 2) {
                 i2 = 3;
@@ -240,19 +239,16 @@ public class GoogleMapsProvider implements IMapsProvider {
             this.googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() { // from class: org.telegram.messenger.GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda3
                 @Override // com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
                 public final boolean onMarkerClick(Marker marker) {
-                    boolean lambda$setOnMarkerClickListener$1;
-                    lambda$setOnMarkerClickListener$1 = GoogleMapsProvider.GoogleMapImpl.this.lambda$setOnMarkerClickListener$1(onMarkerClickListener, marker);
-                    return lambda$setOnMarkerClickListener$1;
+                    return GoogleMapsProvider.GoogleMapImpl.$r8$lambda$Dqer7Rwgy7g1OY28ig-qup4aAZ4(GoogleMapsProvider.GoogleMapImpl.this, onMarkerClickListener, marker);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$setOnMarkerClickListener$1(IMapsProvider.OnMarkerClickListener onMarkerClickListener, Marker marker) {
-            GoogleMarker googleMarker = this.implToAbsMarkerMap.get(marker);
+        public static /* synthetic */ boolean $r8$lambda$Dqer7Rwgy7g1OY28ig-qup4aAZ4(GoogleMapImpl googleMapImpl, IMapsProvider.OnMarkerClickListener onMarkerClickListener, Marker marker) {
+            GoogleMarker googleMarker = googleMapImpl.implToAbsMarkerMap.get(marker);
             if (googleMarker == null) {
                 googleMarker = new GoogleMarker(marker);
-                this.implToAbsMarkerMap.put(marker, googleMarker);
+                googleMapImpl.implToAbsMarkerMap.put(marker, googleMarker);
             }
             return onMarkerClickListener.onClick(googleMarker);
         }
@@ -588,18 +584,13 @@ public class GoogleMapsProvider implements IMapsProvider {
                     return GoogleMapView.this.dispatchInterceptor.onInterceptTouchEvent(motionEvent, new IMapsProvider.ICallableMethod() { // from class: org.telegram.messenger.GoogleMapsProvider$GoogleMapView$1$$ExternalSyntheticLambda0
                         @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
                         public final Object call(Object obj) {
-                            Boolean lambda$dispatchTouchEvent$0;
-                            lambda$dispatchTouchEvent$0 = GoogleMapsProvider.GoogleMapView.1.this.lambda$dispatchTouchEvent$0((MotionEvent) obj);
-                            return lambda$dispatchTouchEvent$0;
+                            Boolean valueOf;
+                            valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.dispatchTouchEvent((MotionEvent) obj));
+                            return valueOf;
                         }
                     });
                 }
                 return super.dispatchTouchEvent(motionEvent);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ Boolean lambda$dispatchTouchEvent$0(MotionEvent motionEvent) {
-                return Boolean.valueOf(super.dispatchTouchEvent(motionEvent));
             }
 
             @Override // android.view.ViewGroup
@@ -608,18 +599,13 @@ public class GoogleMapsProvider implements IMapsProvider {
                     return GoogleMapView.this.interceptInterceptor.onInterceptTouchEvent(motionEvent, new IMapsProvider.ICallableMethod() { // from class: org.telegram.messenger.GoogleMapsProvider$GoogleMapView$1$$ExternalSyntheticLambda1
                         @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
                         public final Object call(Object obj) {
-                            Boolean lambda$onInterceptTouchEvent$1;
-                            lambda$onInterceptTouchEvent$1 = GoogleMapsProvider.GoogleMapView.1.this.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
-                            return lambda$onInterceptTouchEvent$1;
+                            Boolean valueOf;
+                            valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.onInterceptTouchEvent((MotionEvent) obj));
+                            return valueOf;
                         }
                     });
                 }
                 return super.onInterceptTouchEvent(motionEvent);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ Boolean lambda$onInterceptTouchEvent$1(MotionEvent motionEvent) {
-                return Boolean.valueOf(super.onInterceptTouchEvent(motionEvent));
             }
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -660,15 +646,15 @@ public class GoogleMapsProvider implements IMapsProvider {
             this.mapView.getMapAsync(new OnMapReadyCallback() { // from class: org.telegram.messenger.GoogleMapsProvider$GoogleMapView$$ExternalSyntheticLambda0
                 @Override // com.google.android.gms.maps.OnMapReadyCallback
                 public final void onMapReady(GoogleMap googleMap) {
-                    GoogleMapsProvider.GoogleMapView.this.lambda$getMapAsync$0(consumer, googleMap);
+                    GoogleMapsProvider.GoogleMapView.$r8$lambda$fUp_KBihKS9VTxCZNiQu-wh8QKg(GoogleMapsProvider.GoogleMapView.this, consumer, googleMap);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$getMapAsync$0(Consumer consumer, GoogleMap googleMap) {
+        public static /* synthetic */ void $r8$lambda$fUp_KBihKS9VTxCZNiQu-wh8QKg(GoogleMapView googleMapView, Consumer consumer, GoogleMap googleMap) {
+            googleMapView.getClass();
             consumer.accept(new GoogleMapImpl(googleMap));
-            findGlSurfaceView(this.mapView);
+            googleMapView.findGlSurfaceView(googleMapView.mapView);
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMapView

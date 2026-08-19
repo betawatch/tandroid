@@ -77,7 +77,10 @@ public final class ParsableNalUnitBitArray {
             }
         }
         int i7 = this.byteLimit;
-        return i4 < i7 || (i4 == i7 && i5 == 0);
+        if (i4 >= i7) {
+            return i4 == i7 && i5 == 0;
+        }
+        return true;
     }
 
     public boolean readBit() {
@@ -147,13 +150,11 @@ public final class ParsableNalUnitBitArray {
     }
 
     private boolean shouldSkipByte(int i) {
-        if (2 <= i && i < this.byteLimit) {
-            byte[] bArr = this.data;
-            if (bArr[i] == 3 && bArr[i - 2] == 0 && bArr[i - 1] == 0) {
-                return true;
-            }
+        if (2 > i || i >= this.byteLimit) {
+            return false;
         }
-        return false;
+        byte[] bArr = this.data;
+        return bArr[i] == 3 && bArr[i + (-2)] == 0 && bArr[i - 1] == 0;
     }
 
     private void assertValidOffset() {

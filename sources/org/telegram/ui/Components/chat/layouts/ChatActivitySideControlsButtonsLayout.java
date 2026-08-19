@@ -183,10 +183,12 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
     private ButtonHolder getOrCreateButtonHolder(final int i) {
         int i2;
         int i3;
-        if (this.buttonHolders[i] == null) {
+        final ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout = this;
+        if (chatActivitySideControlsButtonsLayout.buttonHolders[i] == null) {
             int i4 = i << 16;
-            BoolAnimator boolAnimator = new BoolAnimator(i4 | 1, this, i == 0 ? CubicBezierInterpolator.EASE_OUT_QUINT : AnimatorUtils.DECELERATE_INTERPOLATOR, i == 0 ? 300L : 280L);
-            BoolAnimator boolAnimator2 = new BoolAnimator(i4 | 2, this, i == 0 ? CubicBezierInterpolator.EASE_OUT_QUINT : AnimatorUtils.DECELERATE_INTERPOLATOR, i == 0 ? 300L : 280L);
+            BoolAnimator boolAnimator = new BoolAnimator(i4 | 1, chatActivitySideControlsButtonsLayout, i == 0 ? CubicBezierInterpolator.EASE_OUT_QUINT : AnimatorUtils.DECELERATE_INTERPOLATOR, i == 0 ? 300L : 280L);
+            chatActivitySideControlsButtonsLayout = this;
+            BoolAnimator boolAnimator2 = new BoolAnimator(i4 | 2, chatActivitySideControlsButtonsLayout, i == 0 ? CubicBezierInterpolator.EASE_OUT_QUINT : AnimatorUtils.DECELERATE_INTERPOLATOR, i == 0 ? 300L : 280L);
             if (i == 0) {
                 i2 = 50;
                 i3 = 32;
@@ -194,24 +196,22 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
                 i2 = 56;
                 i3 = 48;
             }
-            ChatActivityBlurredRoundPageDownButton create = ChatActivityBlurredRoundPageDownButton.create(getContext(), i2, i3, this.resourcesProvider, this.blurredBackgroundDrawableViewFactory, this.colorProvider, buttonIcons[i]);
+            ChatActivityBlurredRoundPageDownButton create = ChatActivityBlurredRoundPageDownButton.create(chatActivitySideControlsButtonsLayout.getContext(), i2, i3, chatActivitySideControlsButtonsLayout.resourcesProvider, chatActivitySideControlsButtonsLayout.blurredBackgroundDrawableViewFactory, chatActivitySideControlsButtonsLayout.colorProvider, buttonIcons[i]);
             float f = i2 / 2.0f;
             create.setPivotX(AndroidUtilities.dp(f));
             create.setPivotY(AndroidUtilities.dp(f + 8.0f));
             create.setVisibility(8);
-            create.setContentDescription(this.buttonDescriptions[i]);
+            create.setContentDescription(chatActivitySideControlsButtonsLayout.buttonDescriptions[i]);
             create.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivitySideControlsButtonsLayout$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatActivitySideControlsButtonsLayout.this.lambda$getOrCreateButtonHolder$0(i, view);
+                    ChatActivitySideControlsButtonsLayout.$r8$lambda$l7Ig94tjTBvu_GEBp8xfoUixsTU(ChatActivitySideControlsButtonsLayout.this, i, view);
                 }
             });
             create.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivitySideControlsButtonsLayout$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean lambda$getOrCreateButtonHolder$1;
-                    lambda$getOrCreateButtonHolder$1 = ChatActivitySideControlsButtonsLayout.this.lambda$getOrCreateButtonHolder$1(i, view);
-                    return lambda$getOrCreateButtonHolder$1;
+                    return ChatActivitySideControlsButtonsLayout.$r8$lambda$JdeiqiDS9vK0cMHP-WKAOLhYoUA(ChatActivitySideControlsButtonsLayout.this, i, view);
                 }
             });
             if (i == 6) {
@@ -220,9 +220,9 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
             if (i == 1) {
                 create.reverseCounter();
             }
-            addView(create, LayoutHelper.createFrame(i2, i2 + 8, this.gravity));
-            this.buttonHolders[i] = new ButtonHolder(create, boolAnimator, boolAnimator2);
-            ButtonPendingState buttonPendingState = this.pendingStates[i];
+            chatActivitySideControlsButtonsLayout.addView(create, LayoutHelper.createFrame(i2, i2 + 8, chatActivitySideControlsButtonsLayout.gravity));
+            chatActivitySideControlsButtonsLayout.buttonHolders[i] = new ButtonHolder(create, boolAnimator, boolAnimator2);
+            ButtonPendingState buttonPendingState = chatActivitySideControlsButtonsLayout.pendingStates[i];
             if (buttonPendingState != null) {
                 create.setCount(buttonPendingState.count, false);
                 boolAnimator.setValue(false, false);
@@ -230,22 +230,20 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
                 create.showLoading(buttonPendingState.loading, false);
                 create.setEnabled(buttonPendingState.enabled, false);
             }
-            checkButtonsPositionsAndVisibility();
+            chatActivitySideControlsButtonsLayout.checkButtonsPositionsAndVisibility();
         }
-        return this.buttonHolders[i];
+        return chatActivitySideControlsButtonsLayout.buttonHolders[i];
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getOrCreateButtonHolder$0(int i, View view) {
-        ButtonOnClickListener buttonOnClickListener = this.onClickListener;
+    public static /* synthetic */ void $r8$lambda$l7Ig94tjTBvu_GEBp8xfoUixsTU(ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout, int i, View view) {
+        ButtonOnClickListener buttonOnClickListener = chatActivitySideControlsButtonsLayout.onClickListener;
         if (buttonOnClickListener != null) {
             buttonOnClickListener.onClick(i, view);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$getOrCreateButtonHolder$1(int i, View view) {
-        ButtonOnLongClickListener buttonOnLongClickListener = this.onLongClickListener;
+    public static /* synthetic */ boolean $r8$lambda$JdeiqiDS9vK0cMHP-WKAOLhYoUA(ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout, int i, View view) {
+        ButtonOnLongClickListener buttonOnLongClickListener = chatActivitySideControlsButtonsLayout.onLongClickListener;
         if (buttonOnLongClickListener != null) {
             return buttonOnLongClickListener.onLongClick(i, view);
         }

@@ -22,19 +22,24 @@ public class HttpClientNetworkStateHandler extends HttpClientDecorator implement
 
     @Override // com.microsoft.appcenter.http.HttpClient
     public synchronized ServiceCall callAsync(String str, String str2, Map map, HttpClient.CallTemplate callTemplate, ServiceCallback serviceCallback) {
-        Call call;
         try {
-            call = new Call(this.mDecoratedApi, str, str2, map, callTemplate, serviceCallback);
-            if (this.mNetworkStateHelper.isNetworkConnected()) {
-                call.run();
-            } else {
-                this.mCalls.add(call);
-                AppCenterLog.debug("AppCenter", "Call triggered with no network connectivity, waiting network to become available...");
+            try {
+                Call call = new Call(this.mDecoratedApi, str, str2, map, callTemplate, serviceCallback);
+                if (this.mNetworkStateHelper.isNetworkConnected()) {
+                    call.run();
+                } else {
+                    this.mCalls.add(call);
+                    AppCenterLog.debug("AppCenter", "Call triggered with no network connectivity, waiting network to become available...");
+                }
+                return call;
+            } catch (Throwable th) {
+                th = th;
+                throw th;
             }
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
+            th = th2;
             throw th;
         }
-        return call;
     }
 
     @Override // com.microsoft.appcenter.http.HttpClientDecorator, java.io.Closeable, java.lang.AutoCloseable

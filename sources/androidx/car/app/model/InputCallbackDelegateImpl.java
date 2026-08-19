@@ -59,15 +59,13 @@ public class InputCallbackDelegateImpl implements InputCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onInputSubmitted", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.InputCallbackDelegateImpl$OnInputCallbackStub$$ExternalSyntheticLambda1
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onInputSubmitted$0;
-                    lambda$onInputSubmitted$0 = InputCallbackDelegateImpl.OnInputCallbackStub.this.lambda$onInputSubmitted$0(str);
-                    return lambda$onInputSubmitted$0;
+                    return InputCallbackDelegateImpl.OnInputCallbackStub.$r8$lambda$N58f7Tz5aHCUixbEqJYdd2mIpbI(InputCallbackDelegateImpl.OnInputCallbackStub.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onInputSubmitted$0(String str) {
+        public static /* synthetic */ Object $r8$lambda$N58f7Tz5aHCUixbEqJYdd2mIpbI(OnInputCallbackStub onInputCallbackStub, String str) {
+            onInputCallbackStub.getClass();
             throw null;
         }
 
@@ -76,15 +74,13 @@ public class InputCallbackDelegateImpl implements InputCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onInputTextChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.InputCallbackDelegateImpl$OnInputCallbackStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onInputTextChanged$1;
-                    lambda$onInputTextChanged$1 = InputCallbackDelegateImpl.OnInputCallbackStub.this.lambda$onInputTextChanged$1(str);
-                    return lambda$onInputTextChanged$1;
+                    return InputCallbackDelegateImpl.OnInputCallbackStub.$r8$lambda$g_2c3vvJ8FsmK7acrkLVEWJpcwE(InputCallbackDelegateImpl.OnInputCallbackStub.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onInputTextChanged$1(String str) {
+        public static /* synthetic */ Object $r8$lambda$g_2c3vvJ8FsmK7acrkLVEWJpcwE(OnInputCallbackStub onInputCallbackStub, String str) {
+            onInputCallbackStub.getClass();
             throw null;
         }
     }

@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FlashViews {
     public static final int[] COLORS = {-1, -70004, -7544833};
     private ValueAnimator animator;
@@ -100,45 +100,39 @@ public class FlashViews {
         flashTo(1.0f, 320L, new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                FlashViews.this.lambda$flash$3(callback);
+                FlashViews.$r8$lambda$R08TOrHUpyDLFbpjF4ZVOXU5rzw(FlashViews.this, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flash$3(final Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$R08TOrHUpyDLFbpjF4ZVOXU5rzw(final FlashViews flashViews, final Utilities.Callback callback) {
+        flashViews.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                FlashViews.this.lambda$flash$2(callback);
+                FlashViews.$r8$lambda$YsGBG9l6lJie_KgZSTuJU0GjGJQ(FlashViews.this, callback);
             }
         }, 320L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flash$2(Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$YsGBG9l6lJie_KgZSTuJU0GjGJQ(final FlashViews flashViews, Utilities.Callback callback) {
+        flashViews.getClass();
         callback.run(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                FlashViews.this.lambda$flash$1((Runnable) obj);
+                FlashViews.$r8$lambda$3ObZ-RIGMTKpzqpmiu2tFCI0xNU(FlashViews.this, (Runnable) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flash$1(final Runnable runnable) {
-        setScreenBrightness(-1.0f);
+    public static /* synthetic */ void $r8$lambda$3ObZ-RIGMTKpzqpmiu2tFCI0xNU(final FlashViews flashViews, final Runnable runnable) {
+        flashViews.setScreenBrightness(-1.0f);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                FlashViews.this.lambda$flash$0(runnable);
+                FlashViews.this.flashTo(0.0f, 240L, runnable);
             }
         }, 80L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flash$0(Runnable runnable) {
-        flashTo(0.0f, 240L, runnable);
     }
 
     private void setScreenBrightness(float f) {
@@ -184,7 +178,8 @@ public class FlashViews {
         flashTo(0.0f, 240L, null);
     }
 
-    private void flashTo(final float f, long j, final Runnable runnable) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void flashTo(final float f, long j, final Runnable runnable) {
         ValueAnimator valueAnimator = this.animator;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -204,7 +199,7 @@ public class FlashViews {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.FlashViews$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                FlashViews.this.lambda$flashTo$4(valueAnimator2);
+                FlashViews.$r8$lambda$7KhwyhqbluvfMfmdkYhyrOcH6HY(FlashViews.this, valueAnimator2);
             }
         });
         this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.FlashViews.3
@@ -223,10 +218,10 @@ public class FlashViews {
         this.animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flashTo$4(ValueAnimator valueAnimator) {
-        this.invert = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        update();
+    public static /* synthetic */ void $r8$lambda$7KhwyhqbluvfMfmdkYhyrOcH6HY(FlashViews flashViews, ValueAnimator valueAnimator) {
+        flashViews.getClass();
+        flashViews.invert = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        flashViews.update();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -298,7 +293,7 @@ public class FlashViews {
             pack2 = valueOf2.pack();
             this.gradient = FlashViews$$ExternalSyntheticApiModelOutline0.m(f, f2, min, new long[]{pack, pack2}, new float[]{AndroidUtilities.lerp(0.9f, 0.22f, this.invert), 1.0f}, Shader.TileMode.CLAMP);
         } else {
-            this.gradient = new RadialGradient(this.lastWidth * 0.5f, 0.4f * this.lastHeight, (Math.min(r4, r6) / 2.0f) * 1.35f * (2.0f - this.invert), new int[]{ColorUtils.setAlphaComponent(this.color, 0), this.color}, new float[]{AndroidUtilities.lerp(0.9f, 0.22f, this.invert), 1.0f}, Shader.TileMode.CLAMP);
+            this.gradient = new RadialGradient(this.lastWidth * 0.5f, this.lastHeight * 0.4f, (Math.min(r4, r10) / 2.0f) * 1.35f * (2.0f - this.invert), new int[]{ColorUtils.setAlphaComponent(this.color, 0), this.color}, new float[]{AndroidUtilities.lerp(0.9f, 0.22f, this.invert), 1.0f}, Shader.TileMode.CLAMP);
         }
         this.paint.setShader(this.gradient);
         invalidate();

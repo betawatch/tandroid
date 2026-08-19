@@ -28,7 +28,7 @@ public class ContactsWidgetConfigActivity extends ExternalActionActivity {
             editWidgetActivity.setDelegate(new EditWidgetActivity.EditWidgetActivityDelegate() { // from class: org.telegram.ui.ContactsWidgetConfigActivity$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.EditWidgetActivity.EditWidgetActivityDelegate
                 public final void didSelectDialogs(ArrayList arrayList) {
-                    ContactsWidgetConfigActivity.this.lambda$handleIntent$0(arrayList);
+                    ContactsWidgetConfigActivity.$r8$lambda$Vybw1BHuqO8H2ZrHsWp8PRjvs_g(ContactsWidgetConfigActivity.this, arrayList);
                 }
             });
             if (AndroidUtilities.isTablet()) {
@@ -52,11 +52,11 @@ public class ContactsWidgetConfigActivity extends ExternalActionActivity {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleIntent$0(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$Vybw1BHuqO8H2ZrHsWp8PRjvs_g(ContactsWidgetConfigActivity contactsWidgetConfigActivity, ArrayList arrayList) {
+        contactsWidgetConfigActivity.getClass();
         Intent intent = new Intent();
-        intent.putExtra("appWidgetId", this.creatingAppWidgetId);
-        setResult(-1, intent);
-        finish();
+        intent.putExtra("appWidgetId", contactsWidgetConfigActivity.creatingAppWidgetId);
+        contactsWidgetConfigActivity.setResult(-1, intent);
+        contactsWidgetConfigActivity.finish();
     }
 }

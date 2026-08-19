@@ -36,13 +36,12 @@ public class WindowVisibilityManager {
         this.listener = new OnVisibilityChangedListener() { // from class: org.telegram.messenger.utils.WindowVisibilityManager$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.utils.WindowVisibilityManager.OnVisibilityChangedListener
             public final void onVisibilityChanged(boolean z) {
-                WindowVisibilityManager.lambda$new$0(weakReference, z);
+                WindowVisibilityManager.$r8$lambda$5BlAw3AoEPCLn11rm_5hye_Xvw0(weakReference, z);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(WeakReference weakReference, boolean z) {
+    public static /* synthetic */ void $r8$lambda$5BlAw3AoEPCLn11rm_5hye_Xvw0(WeakReference weakReference, boolean z) {
         Window window = (Window) weakReference.get();
         if (window != null) {
             window.getDecorView().setVisibility(z ? 0 : 8);

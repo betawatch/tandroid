@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityBanGroupConfirmCell extends FrameLayout {
     public final BackupImageView avatarView;
     public final TextView subtitleView;

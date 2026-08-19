@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -65,7 +64,7 @@ public class SelectStoriesBottomSheet extends BottomSheetWithRecyclerListView im
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SelectStoriesBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SelectStoriesBottomSheet.this.lambda$new$0(callback, view2);
+                SelectStoriesBottomSheet.$r8$lambda$EPXWdL0t-1J3afAkZkuAhy8C3Po(SelectStoriesBottomSheet.this, callback, view2);
             }
         });
         frameLayout.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
@@ -111,13 +110,12 @@ public class SelectStoriesBottomSheet extends BottomSheetWithRecyclerListView im
         this.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Utilities.Callback callback, View view) {
-        if (this.storiesList.getCount() == 0) {
+    public static /* synthetic */ void $r8$lambda$EPXWdL0t-1J3afAkZkuAhy8C3Po(SelectStoriesBottomSheet selectStoriesBottomSheet, Utilities.Callback callback, View view) {
+        if (selectStoriesBottomSheet.storiesList.getCount() == 0) {
             return;
         }
-        callback.run(new ArrayList(this.selectedStoriesIds.values()));
-        lambda$new$0();
+        callback.run(new ArrayList(selectStoriesBottomSheet.selectedStoriesIds.values()));
+        selectStoriesBottomSheet.dismiss();
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
@@ -180,32 +178,32 @@ public class SelectStoriesBottomSheet extends BottomSheetWithRecyclerListView im
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        int i;
         if (this.storiesList == null) {
             return;
         }
         arrayList.add(UItem.asSpace(AndroidUtilities.dp(16.0f)));
-        int i2 = this.columnsCount;
-        Iterator it = this.storiesList.messageObjects.iterator();
-        while (true) {
-            i = 0;
-            if (!it.hasNext()) {
-                break;
-            }
-            MessageObject messageObject = (MessageObject) it.next();
+        int i = this.columnsCount;
+        ArrayList arrayList2 = this.storiesList.messageObjects;
+        int size = arrayList2.size();
+        int i2 = 0;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList2.get(i3);
+            i3++;
+            MessageObject messageObject = (MessageObject) obj;
             arrayList.add(StoryCellFactory.asStory(0, messageObject, this.columnsCount, true).setChecked(this.selectedStoriesIds.containsKey(Integer.valueOf(messageObject.getId()))).setSpanCount(1));
-            i2--;
-            if (i2 == 0) {
-                i2 = this.columnsCount;
+            i--;
+            if (i == 0) {
+                i = this.columnsCount;
             }
         }
         if (this.storiesList.isLoading() || !this.storiesList.isFull()) {
             while (true) {
-                if (i >= (i2 <= 0 ? this.columnsCount : i2)) {
+                if (i2 >= (i <= 0 ? this.columnsCount : i)) {
                     break;
                 }
-                i++;
-                arrayList.add(UItem.asFlicker(i, 34).setSpanCount(1));
+                i2++;
+                arrayList.add(UItem.asFlicker(i2, 34).setSpanCount(1));
             }
         }
         arrayList.add(UItem.asSpace(AndroidUtilities.dp(68.0f)));

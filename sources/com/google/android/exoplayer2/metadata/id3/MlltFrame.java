@@ -51,11 +51,13 @@ public final class MlltFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || MlltFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && MlltFrame.class == obj.getClass()) {
+            MlltFrame mlltFrame = (MlltFrame) obj;
+            if (this.mpegFramesBetweenReference == mlltFrame.mpegFramesBetweenReference && this.bytesBetweenReference == mlltFrame.bytesBetweenReference && this.millisecondsBetweenReference == mlltFrame.millisecondsBetweenReference && Arrays.equals(this.bytesDeviations, mlltFrame.bytesDeviations) && Arrays.equals(this.millisecondsDeviations, mlltFrame.millisecondsDeviations)) {
+                return true;
+            }
         }
-        MlltFrame mlltFrame = (MlltFrame) obj;
-        return this.mpegFramesBetweenReference == mlltFrame.mpegFramesBetweenReference && this.bytesBetweenReference == mlltFrame.bytesBetweenReference && this.millisecondsBetweenReference == mlltFrame.millisecondsBetweenReference && Arrays.equals(this.bytesDeviations, mlltFrame.bytesDeviations) && Arrays.equals(this.millisecondsDeviations, mlltFrame.millisecondsDeviations);
+        return false;
     }
 
     public int hashCode() {

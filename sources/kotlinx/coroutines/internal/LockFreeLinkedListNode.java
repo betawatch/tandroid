@@ -148,51 +148,53 @@ public class LockFreeLinkedListNode {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x004c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004b, code lost:
     
-        if (androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(kotlinx.coroutines.internal.LockFreeLinkedListNode._next$volatile$FU, r3, r2, ((kotlinx.coroutines.internal.Removed) r4).ref) != false) goto L26;
+        if (androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(kotlinx.coroutines.internal.LockFreeLinkedListNode._next$volatile$FU, r3, r2, ((kotlinx.coroutines.internal.Removed) r4).ref) != false) goto L25;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final LockFreeLinkedListNode correctPrev(OpDescriptor opDescriptor) {
-        while (true) {
-            LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) _prev$volatile$FU.get(this);
-            LockFreeLinkedListNode lockFreeLinkedListNode2 = lockFreeLinkedListNode;
+        LockFreeLinkedListNode lockFreeLinkedListNode;
+        loop0: while (true) {
+            LockFreeLinkedListNode lockFreeLinkedListNode2 = (LockFreeLinkedListNode) _prev$volatile$FU.get(this);
+            lockFreeLinkedListNode = lockFreeLinkedListNode2;
             while (true) {
                 LockFreeLinkedListNode lockFreeLinkedListNode3 = null;
                 while (true) {
-                    Object obj = _next$volatile$FU.get(lockFreeLinkedListNode2);
+                    Object obj = _next$volatile$FU.get(lockFreeLinkedListNode);
                     if (obj == this) {
-                        if (lockFreeLinkedListNode == lockFreeLinkedListNode2 || AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_prev$volatile$FU, this, lockFreeLinkedListNode, lockFreeLinkedListNode2)) {
-                            return lockFreeLinkedListNode2;
+                        if (lockFreeLinkedListNode2 == lockFreeLinkedListNode || AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_prev$volatile$FU, this, lockFreeLinkedListNode2, lockFreeLinkedListNode)) {
+                            break;
                         }
                     } else {
                         if (isRemoved()) {
                             return null;
                         }
                         if (obj == opDescriptor) {
-                            return lockFreeLinkedListNode2;
+                            break loop0;
                         }
                         if (obj instanceof OpDescriptor) {
-                            ((OpDescriptor) obj).perform(lockFreeLinkedListNode2);
+                            ((OpDescriptor) obj).perform(lockFreeLinkedListNode);
                             break;
                         }
                         if (!(obj instanceof Removed)) {
                             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
-                            lockFreeLinkedListNode3 = lockFreeLinkedListNode2;
-                            lockFreeLinkedListNode2 = (LockFreeLinkedListNode) obj;
+                            lockFreeLinkedListNode3 = lockFreeLinkedListNode;
+                            lockFreeLinkedListNode = (LockFreeLinkedListNode) obj;
                         } else {
                             if (lockFreeLinkedListNode3 != null) {
                                 break;
                             }
-                            lockFreeLinkedListNode2 = (LockFreeLinkedListNode) _prev$volatile$FU.get(lockFreeLinkedListNode2);
+                            lockFreeLinkedListNode = (LockFreeLinkedListNode) _prev$volatile$FU.get(lockFreeLinkedListNode);
                         }
                     }
                 }
-                lockFreeLinkedListNode2 = lockFreeLinkedListNode3;
+                lockFreeLinkedListNode = lockFreeLinkedListNode3;
             }
         }
+        return lockFreeLinkedListNode;
     }
 
     public String toString() {

@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DraftSavedHint extends View {
     private final Paint backgroundPaint;
     private Runnable hideRunnable;
@@ -74,16 +74,11 @@ public class DraftSavedHint extends View {
         Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.recorder.DraftSavedHint$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DraftSavedHint.this.lambda$show$0();
+                DraftSavedHint.this.hide(true);
             }
         };
         this.hideRunnable = runnable2;
         AndroidUtilities.runOnUIThread(runnable2, 3500L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$0() {
-        hide(true);
     }
 
     @Override // android.view.View

@@ -3,15 +3,15 @@ package j$.time.format;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-final class k implements f {
+public final class k implements f {
     public static final k INSENSITIVE;
     public static final k LENIENT;
     public static final k SENSITIVE;
     public static final k STRICT;
-    private static final /* synthetic */ k[] a;
+    public static final /* synthetic */ k[] a;
 
     @Override // j$.time.format.f
-    public final boolean k(r rVar, StringBuilder sb) {
+    public final boolean l(r rVar, StringBuilder sb) {
         return true;
     }
 

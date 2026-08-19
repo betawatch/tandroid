@@ -230,7 +230,7 @@ public class StorageUsageView extends FrameLayout {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StorageUsageView$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StorageUsageView.this.lambda$setStorageUsage$0(valueAnimator2);
+                        StorageUsageView.$r8$lambda$MQyrrkLQezyqXYoVVNAe0fhpOIQ(StorageUsageView.this, valueAnimator2);
                     }
                 });
                 this.valueAnimator.start();
@@ -245,7 +245,7 @@ public class StorageUsageView extends FrameLayout {
                 ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StorageUsageView$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                        StorageUsageView.this.lambda$setStorageUsage$1(valueAnimator3);
+                        StorageUsageView.$r8$lambda$qtdXgkmgFZrYs21GtTW1qvhlx9k(StorageUsageView.this, valueAnimator3);
                     }
                 });
                 this.valueAnimator2.start();
@@ -255,16 +255,16 @@ public class StorageUsageView extends FrameLayout {
         requestLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStorageUsage$0(ValueAnimator valueAnimator) {
-        this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$MQyrrkLQezyqXYoVVNAe0fhpOIQ(StorageUsageView storageUsageView, ValueAnimator valueAnimator) {
+        storageUsageView.getClass();
+        storageUsageView.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        storageUsageView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStorageUsage$1(ValueAnimator valueAnimator) {
-        this.progress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$qtdXgkmgFZrYs21GtTW1qvhlx9k(StorageUsageView storageUsageView, ValueAnimator valueAnimator) {
+        storageUsageView.getClass();
+        storageUsageView.progress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        storageUsageView.invalidate();
     }
 
     @Override // android.view.View
@@ -345,7 +345,7 @@ public class StorageUsageView extends FrameLayout {
             int dp = AndroidUtilities.dp(24.0f);
             if (!StorageUsageView.this.calculating) {
                 int dp2 = AndroidUtilities.dp(24.0f) + ((int) ((getMeasuredWidth() - (AndroidUtilities.dp(24.0f) * 2)) * StorageUsageView.this.progress2));
-                canvas.drawLine(dp, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(24.0f) + r5, AndroidUtilities.dp(20.0f), StorageUsageView.this.paintProgress2);
+                canvas.drawLine(dp, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(24.0f) + r3, AndroidUtilities.dp(20.0f), StorageUsageView.this.paintProgress2);
                 canvas.drawRect(dp2, AndroidUtilities.dp(20.0f) - AndroidUtilities.dp(3.0f), dp2 + AndroidUtilities.dp(3.0f), AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(3.0f), StorageUsageView.this.bgPaint);
             }
             if (StorageUsageView.this.calculating) {

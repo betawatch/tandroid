@@ -99,16 +99,16 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
         setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Cells.AppIconsSelectorCell$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                AppIconsSelectorCell.this.lambda$new$0(baseFragment, context, view, i2);
+                AppIconsSelectorCell.$r8$lambda$oTbx71RAH-cxSmC2tUl4LIq23L0(AppIconsSelectorCell.this, baseFragment, context, view, i2);
             }
         });
         updateIconsVisibility();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(BaseFragment baseFragment, Context context, View view, int i) {
+    public static /* synthetic */ void $r8$lambda$oTbx71RAH-cxSmC2tUl4LIq23L0(AppIconsSelectorCell appIconsSelectorCell, BaseFragment baseFragment, Context context, View view, int i) {
+        appIconsSelectorCell.getClass();
         IconHolderView iconHolderView = (IconHolderView) view;
-        LauncherIconController.LauncherIcon launcherIcon = (LauncherIconController.LauncherIcon) this.availableIcons.get(i);
+        LauncherIconController.LauncherIcon launcherIcon = (LauncherIconController.LauncherIcon) appIconsSelectorCell.availableIcons.get(i);
         if (launcherIcon.premium && !UserConfig.hasPremiumOnAccounts()) {
             baseFragment.showDialog(new PremiumFeatureBottomSheet(baseFragment, 10, true));
             return;
@@ -128,16 +128,16 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
             }
         };
         linearSmoothScroller.setTargetPosition(i);
-        this.linearLayoutManager.startSmoothScroll(linearSmoothScroller);
+        appIconsSelectorCell.linearLayoutManager.startSmoothScroll(linearSmoothScroller);
         LauncherIconController.setIcon(launcherIcon);
         iconHolderView.setSelected(true, true);
-        for (int i2 = 0; i2 < getChildCount(); i2++) {
-            IconHolderView iconHolderView2 = (IconHolderView) getChildAt(i2);
+        for (int i2 = 0; i2 < appIconsSelectorCell.getChildCount(); i2++) {
+            IconHolderView iconHolderView2 = (IconHolderView) appIconsSelectorCell.getChildAt(i2);
             if (iconHolderView2 != iconHolderView) {
                 iconHolderView2.setSelected(false, true);
             }
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 5, launcherIcon);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 5, launcherIcon);
     }
 
     private void updateIconsVisibility() {
@@ -256,7 +256,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
                 duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.AppIconsSelectorCell$IconHolderView$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        AppIconsSelectorCell.IconHolderView.this.lambda$setSelected$0(valueAnimator);
+                        AppIconsSelectorCell.IconHolderView.$r8$lambda$yb58zMHCYgamIrID08BUdBF70NA(AppIconsSelectorCell.IconHolderView.this, valueAnimator);
                     }
                 });
                 duration.start();
@@ -265,9 +265,9 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
             setProgress(f);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSelected$0(ValueAnimator valueAnimator) {
-            setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        public static /* synthetic */ void $r8$lambda$yb58zMHCYgamIrID08BUdBF70NA(IconHolderView iconHolderView, ValueAnimator valueAnimator) {
+            iconHolderView.getClass();
+            iconHolderView.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
         /* JADX INFO: Access modifiers changed from: private */

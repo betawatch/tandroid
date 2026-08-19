@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -140,9 +139,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         this.listView.setItemSelectorColorProvider(new GenericProvider() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
-                Integer lambda$createView$0;
-                lambda$createView$0 = PrivacyUsersActivity.this.lambda$createView$0((Integer) obj);
-                return lambda$createView$0;
+                return PrivacyUsersActivity.$r8$lambda$-z89hZfZTBvoBO5XtM69sx9Kyv4(PrivacyUsersActivity.this, (Integer) obj);
             }
         });
         this.listView.setEmptyView(this.emptyView);
@@ -160,15 +157,13 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                PrivacyUsersActivity.this.lambda$createView$3(view, i2);
+                PrivacyUsersActivity.$r8$lambda$Ifa9XwnvTVB3kCL50YTmAutchQY(PrivacyUsersActivity.this, view, i2);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
-                boolean lambda$createView$4;
-                lambda$createView$4 = PrivacyUsersActivity.this.lambda$createView$4(view, i2);
-                return lambda$createView$4;
+                return PrivacyUsersActivity.$r8$lambda$_RTLVkn5HvAZRSZ83zslORIzJDE(PrivacyUsersActivity.this, view, i2);
             }
         });
         if (this.currentType == 1) {
@@ -196,103 +191,103 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Integer lambda$createView$0(Integer num) {
-        if (num.intValue() == this.deleteAllRow) {
+    public static /* synthetic */ Integer $r8$lambda$-z89hZfZTBvoBO5XtM69sx9Kyv4(PrivacyUsersActivity privacyUsersActivity, Integer num) {
+        privacyUsersActivity.getClass();
+        if (num.intValue() == privacyUsersActivity.deleteAllRow) {
             return Integer.valueOf(Theme.multAlpha(Theme.getColor(Theme.key_text_RedRegular), 0.12f));
         }
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(View view, int i) {
-        if (i == this.deleteAllRow) {
-            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda6
+    public static /* synthetic */ void $r8$lambda$Ifa9XwnvTVB3kCL50YTmAutchQY(final PrivacyUsersActivity privacyUsersActivity, View view, int i) {
+        if (i == privacyUsersActivity.deleteAllRow) {
+            AlertDialog create = AlertsCreator.createSimpleAlert(privacyUsersActivity.getContext(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PrivacyUsersActivity.this.lambda$createView$1();
+                    PrivacyUsersActivity.$r8$lambda$86kBhdOdFnUO-HGp6EgsghOis38(PrivacyUsersActivity.this);
                 }
             }, null).create();
             create.show();
             create.redPositive();
             return;
         }
-        if (i == this.blockUserRow) {
-            if (this.currentType == 1) {
-                presentFragment(new DialogOrContactPickerActivity());
+        if (i == privacyUsersActivity.blockUserRow) {
+            if (privacyUsersActivity.currentType == 1) {
+                privacyUsersActivity.presentFragment(new DialogOrContactPickerActivity());
                 return;
             }
             Bundle bundle = new Bundle();
-            bundle.putBoolean(this.isAlwaysShare ? "isAlwaysShare" : "isNeverShare", true);
-            if (this.isGroup) {
+            bundle.putBoolean(privacyUsersActivity.isAlwaysShare ? "isAlwaysShare" : "isNeverShare", true);
+            if (privacyUsersActivity.isGroup) {
                 bundle.putInt("chatAddType", 1);
-            } else if (this.currentType == 2) {
+            } else if (privacyUsersActivity.currentType == 2) {
                 bundle.putInt("chatAddType", 2);
             }
-            if (this.isAlwaysShare && this.rulesType == 1) {
+            if (privacyUsersActivity.isAlwaysShare && privacyUsersActivity.rulesType == 1) {
                 bundle.putBoolean("allowPremium", true);
-            } else if (this.rulesType == 12) {
+            } else if (privacyUsersActivity.rulesType == 12) {
                 bundle.putBoolean("allowMiniapps", true);
             }
             GroupCreateActivity groupCreateActivity = new GroupCreateActivity(bundle);
             groupCreateActivity.setDelegate(new GroupCreateActivity.GroupCreateActivityDelegate() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.GroupCreateActivity.GroupCreateActivityDelegate
                 public final void didSelectUsers(boolean z, boolean z2, ArrayList arrayList) {
-                    PrivacyUsersActivity.this.lambda$createView$2(z, z2, arrayList);
+                    PrivacyUsersActivity.$r8$lambda$ZVZ8B2d3z9-giqJMLYjr0DewVqk(PrivacyUsersActivity.this, z, z2, arrayList);
                 }
             });
-            presentFragment(groupCreateActivity);
+            privacyUsersActivity.presentFragment(groupCreateActivity);
             return;
         }
-        if (i < this.usersStartRow || i >= this.usersEndRow) {
+        if (i < privacyUsersActivity.usersStartRow || i >= privacyUsersActivity.usersEndRow) {
             return;
         }
-        if (this.currentType == 1) {
+        if (privacyUsersActivity.currentType == 1) {
             Bundle bundle2 = new Bundle();
-            bundle2.putLong("user_id", getMessagesController().blockePeers.keyAt(i - this.usersStartRow));
-            presentFragment(new ProfileActivity(bundle2));
+            bundle2.putLong("user_id", privacyUsersActivity.getMessagesController().blockePeers.keyAt(i - privacyUsersActivity.usersStartRow));
+            privacyUsersActivity.presentFragment(new ProfileActivity(bundle2));
         } else {
             Bundle bundle3 = new Bundle();
-            long longValue = ((Long) this.uidArray.get(i - this.usersStartRow)).longValue();
+            long longValue = ((Long) privacyUsersActivity.uidArray.get(i - privacyUsersActivity.usersStartRow)).longValue();
             if (DialogObject.isUserDialog(longValue)) {
                 bundle3.putLong("user_id", longValue);
             } else {
                 bundle3.putLong("chat_id", -longValue);
             }
-            presentFragment(new ProfileActivity(bundle3));
+            privacyUsersActivity.presentFragment(new ProfileActivity(bundle3));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1() {
-        this.uidArray.clear();
-        updateRows();
-        finishFragment();
+    public static /* synthetic */ void $r8$lambda$86kBhdOdFnUO-HGp6EgsghOis38(PrivacyUsersActivity privacyUsersActivity) {
+        privacyUsersActivity.uidArray.clear();
+        privacyUsersActivity.updateRows();
+        privacyUsersActivity.finishFragment();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(boolean z, boolean z2, ArrayList arrayList) {
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            Long l = (Long) it.next();
-            if (!this.uidArray.contains(l)) {
-                this.uidArray.add(l);
+    public static /* synthetic */ void $r8$lambda$ZVZ8B2d3z9-giqJMLYjr0DewVqk(PrivacyUsersActivity privacyUsersActivity, boolean z, boolean z2, ArrayList arrayList) {
+        privacyUsersActivity.getClass();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            Long l = (Long) obj;
+            if (!privacyUsersActivity.uidArray.contains(l)) {
+                privacyUsersActivity.uidArray.add(l);
             }
         }
-        updateRows();
+        privacyUsersActivity.updateRows();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$4(View view, int i) {
-        int i2 = this.usersStartRow;
-        if (i < i2 || i >= this.usersEndRow) {
+    public static /* synthetic */ boolean $r8$lambda$_RTLVkn5HvAZRSZ83zslORIzJDE(PrivacyUsersActivity privacyUsersActivity, View view, int i) {
+        int i2 = privacyUsersActivity.usersStartRow;
+        if (i < i2 || i >= privacyUsersActivity.usersEndRow) {
             return false;
         }
-        if (this.currentType == 1) {
-            showUnblockAlert(Long.valueOf(getMessagesController().blockePeers.keyAt(i - this.usersStartRow)), view);
-        } else {
-            showUnblockAlert((Long) this.uidArray.get(i - i2), view);
+        if (privacyUsersActivity.currentType == 1) {
+            privacyUsersActivity.showUnblockAlert(Long.valueOf(privacyUsersActivity.getMessagesController().blockePeers.keyAt(i - privacyUsersActivity.usersStartRow)), view);
+            return true;
         }
+        privacyUsersActivity.showUnblockAlert((Long) privacyUsersActivity.uidArray.get(i - i2), view);
         return true;
     }
 
@@ -304,29 +299,23 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         ItemOptions addIf = ItemOptions.makeOptions(this, view).setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite))).addIf(this.currentType == 1, 0, LocaleController.getString(R.string.Unblock), new Runnable() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PrivacyUsersActivity.this.lambda$showUnblockAlert$5(l);
+                PrivacyUsersActivity.this.getMessagesController().unblockPeer(l.longValue());
             }
         });
         int i = this.currentType;
         addIf.addIf(i != 1, i == 0 ? R.drawable.msg_user_remove : 0, (CharSequence) LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                PrivacyUsersActivity.this.lambda$showUnblockAlert$6(l);
+                PrivacyUsersActivity.$r8$lambda$AU0nTt9lkEiYUkPdPRdK0zjCAZs(PrivacyUsersActivity.this, l);
             }
         }).setMinWidth(NotificationCenter.boostedChannelByUser).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showUnblockAlert$5(Long l) {
-        getMessagesController().unblockPeer(l.longValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showUnblockAlert$6(Long l) {
-        this.uidArray.remove(l);
-        updateRows();
-        if (this.uidArray.isEmpty()) {
-            finishFragment();
+    public static /* synthetic */ void $r8$lambda$AU0nTt9lkEiYUkPdPRdK0zjCAZs(PrivacyUsersActivity privacyUsersActivity, Long l) {
+        privacyUsersActivity.uidArray.remove(l);
+        privacyUsersActivity.updateRows();
+        if (privacyUsersActivity.uidArray.isEmpty()) {
+            privacyUsersActivity.finishFragment();
         }
     }
 
@@ -442,12 +431,12 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
             return itemViewType == 0 || itemViewType == 2 || itemViewType == 4;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$onCreateViewHolder$0(ManageChatUserCell manageChatUserCell, boolean z) {
-            if (!z) {
+        public static /* synthetic */ boolean $r8$lambda$4zdDOFOc1rfEsoV-RG2n2jTn4dI(ListAdapter listAdapter, ManageChatUserCell manageChatUserCell, boolean z) {
+            if (z) {
+                PrivacyUsersActivity.this.showUnblockAlert((Long) manageChatUserCell.getTag(), manageChatUserCell);
                 return true;
             }
-            PrivacyUsersActivity.this.showUnblockAlert((Long) manageChatUserCell.getTag(), manageChatUserCell);
+            listAdapter.getClass();
             return true;
         }
 
@@ -459,9 +448,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
                 manageChatUserCell.setDelegate(new ManageChatUserCell.ManageChatUserCellDelegate() { // from class: org.telegram.ui.PrivacyUsersActivity$ListAdapter$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.Cells.ManageChatUserCell.ManageChatUserCellDelegate
                     public final boolean onOptionsButtonCheck(ManageChatUserCell manageChatUserCell2, boolean z) {
-                        boolean lambda$onCreateViewHolder$0;
-                        lambda$onCreateViewHolder$0 = PrivacyUsersActivity.ListAdapter.this.lambda$onCreateViewHolder$0(manageChatUserCell2, z);
-                        return lambda$onCreateViewHolder$0;
+                        return PrivacyUsersActivity.ListAdapter.$r8$lambda$4zdDOFOc1rfEsoV-RG2n2jTn4dI(PrivacyUsersActivity.ListAdapter.this, manageChatUserCell2, z);
                     }
                 });
                 frameLayout = manageChatUserCell;
@@ -596,7 +583,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.PrivacyUsersActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                PrivacyUsersActivity.this.lambda$getThemeDescriptions$7();
+                PrivacyUsersActivity.$r8$lambda$n2AHQWXp-a1KiiRXGirznhMhlYU(PrivacyUsersActivity.this);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -634,13 +621,12 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$7() {
-        RecyclerListView recyclerListView = this.listView;
+    public static /* synthetic */ void $r8$lambda$n2AHQWXp-a1KiiRXGirznhMhlYU(PrivacyUsersActivity privacyUsersActivity) {
+        RecyclerListView recyclerListView = privacyUsersActivity.listView;
         if (recyclerListView != null) {
             int childCount = recyclerListView.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                View childAt = this.listView.getChildAt(i);
+                View childAt = privacyUsersActivity.listView.getChildAt(i);
                 if (childAt instanceof ManageChatUserCell) {
                     ((ManageChatUserCell) childAt).update(0);
                 }

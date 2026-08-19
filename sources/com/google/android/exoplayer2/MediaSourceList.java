@@ -1,7 +1,6 @@
 package com.google.android.exoplayer2;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.MediaSourceList;
 import com.google.android.exoplayer2.analytics.AnalyticsCollector;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.drm.DrmSessionEventListener;
@@ -256,7 +255,7 @@ final class MediaSourceList {
         MediaSource.MediaSourceCaller mediaSourceCaller = new MediaSource.MediaSourceCaller() { // from class: com.google.android.exoplayer2.MediaSourceList$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.source.MediaSource.MediaSourceCaller
             public final void onSourceInfoRefreshed(MediaSource mediaSource, Timeline timeline) {
-                MediaSourceList.this.lambda$prepareChildSource$0(mediaSource, timeline);
+                MediaSourceList.this.mediaSourceListInfoListener.onPlaylistUpdateRequested();
             }
         };
         ForwardingEventListener forwardingEventListener = new ForwardingEventListener(mediaSourceHolder);
@@ -264,11 +263,6 @@ final class MediaSourceList {
         maskingMediaSource.addEventListener(Util.createHandlerForCurrentOrMainLooper(), forwardingEventListener);
         maskingMediaSource.addDrmEventListener(Util.createHandlerForCurrentOrMainLooper(), forwardingEventListener);
         maskingMediaSource.prepareSource(mediaSourceCaller, this.mediaTransferListener, this.playerId);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareChildSource$0(MediaSource mediaSource, Timeline timeline) {
-        this.mediaSourceListInfoListener.onPlaylistUpdateRequested();
     }
 
     private void maybeReleaseChildSource(MediaSourceHolder mediaSourceHolder) {
@@ -353,15 +347,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onLoadStarted$0(eventParameters, loadEventInfo, mediaLoadData);
+                        MediaSourceList.this.eventListener.onLoadStarted(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, loadEventInfo, mediaLoadData);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLoadStarted$0(Pair pair, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
-            MediaSourceList.this.eventListener.onLoadStarted(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, loadEventInfo, mediaLoadData);
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -371,15 +360,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onLoadCompleted$1(eventParameters, loadEventInfo, mediaLoadData);
+                        MediaSourceList.this.eventListener.onLoadCompleted(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, loadEventInfo, mediaLoadData);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLoadCompleted$1(Pair pair, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
-            MediaSourceList.this.eventListener.onLoadCompleted(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, loadEventInfo, mediaLoadData);
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -389,15 +373,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onLoadCanceled$2(eventParameters, loadEventInfo, mediaLoadData);
+                        MediaSourceList.this.eventListener.onLoadCanceled(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, loadEventInfo, mediaLoadData);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLoadCanceled$2(Pair pair, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
-            MediaSourceList.this.eventListener.onLoadCanceled(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, loadEventInfo, mediaLoadData);
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -407,15 +386,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onLoadError$3(eventParameters, loadEventInfo, mediaLoadData, iOException, z);
+                        MediaSourceList.this.eventListener.onLoadError(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, loadEventInfo, mediaLoadData, iOException, z);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLoadError$3(Pair pair, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, IOException iOException, boolean z) {
-            MediaSourceList.this.eventListener.onLoadError(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, loadEventInfo, mediaLoadData, iOException, z);
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -425,15 +399,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onUpstreamDiscarded$4(eventParameters, mediaLoadData);
+                        MediaSourceList.this.eventListener.onUpstreamDiscarded(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) Assertions.checkNotNull((MediaSource.MediaPeriodId) eventParameters.second), mediaLoadData);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onUpstreamDiscarded$4(Pair pair, MediaLoadData mediaLoadData) {
-            MediaSourceList.this.eventListener.onUpstreamDiscarded(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) Assertions.checkNotNull((MediaSource.MediaPeriodId) pair.second), mediaLoadData);
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -443,15 +412,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDownstreamFormatChanged$5(eventParameters, mediaLoadData);
+                        MediaSourceList.this.eventListener.onDownstreamFormatChanged(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, mediaLoadData);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDownstreamFormatChanged$5(Pair pair, MediaLoadData mediaLoadData) {
-            MediaSourceList.this.eventListener.onDownstreamFormatChanged(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, mediaLoadData);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -461,15 +425,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDrmSessionAcquired$6(eventParameters, i2);
+                        MediaSourceList.this.eventListener.onDrmSessionAcquired(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, i2);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDrmSessionAcquired$6(Pair pair, int i) {
-            MediaSourceList.this.eventListener.onDrmSessionAcquired(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, i);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -479,15 +438,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDrmKeysLoaded$7(eventParameters);
+                        MediaSourceList.this.eventListener.onDrmKeysLoaded(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDrmKeysLoaded$7(Pair pair) {
-            MediaSourceList.this.eventListener.onDrmKeysLoaded(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -497,15 +451,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDrmSessionManagerError$8(eventParameters, exc);
+                        MediaSourceList.this.eventListener.onDrmSessionManagerError(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second, exc);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDrmSessionManagerError$8(Pair pair, Exception exc) {
-            MediaSourceList.this.eventListener.onDrmSessionManagerError(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second, exc);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -515,15 +464,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDrmKeysRestored$9(eventParameters);
+                        MediaSourceList.this.eventListener.onDrmKeysRestored(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDrmKeysRestored$9(Pair pair) {
-            MediaSourceList.this.eventListener.onDrmKeysRestored(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -533,15 +477,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDrmKeysRemoved$10(eventParameters);
+                        MediaSourceList.this.eventListener.onDrmKeysRemoved(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDrmKeysRemoved$10(Pair pair) {
-            MediaSourceList.this.eventListener.onDrmKeysRemoved(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second);
         }
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -551,15 +490,10 @@ final class MediaSourceList {
                 MediaSourceList.this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaSourceList$ForwardingEventListener$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaSourceList.ForwardingEventListener.this.lambda$onDrmSessionReleased$11(eventParameters);
+                        MediaSourceList.this.eventListener.onDrmSessionReleased(((Integer) r1.first).intValue(), (MediaSource.MediaPeriodId) eventParameters.second);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onDrmSessionReleased$11(Pair pair) {
-            MediaSourceList.this.eventListener.onDrmSessionReleased(((Integer) pair.first).intValue(), (MediaSource.MediaPeriodId) pair.second);
         }
 
         private Pair getEventParameters(int i, MediaSource.MediaPeriodId mediaPeriodId) {

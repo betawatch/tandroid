@@ -393,8 +393,8 @@ public abstract class zzdy extends zzfi implements zzeu {
     static {
         boolean z;
         Throwable th;
-        Throwable th2;
         zza zzgVar;
+        Throwable th2;
         try {
             z = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -405,8 +405,8 @@ public abstract class zzdy extends zzfi implements zzeu {
         zzeb zzebVar = null;
         try {
             zzgVar = new zzj(zzebVar);
-            th2 = null;
             th = null;
+            th2 = null;
         } catch (Error | Exception e) {
             try {
                 th = null;
@@ -414,8 +414,8 @@ public abstract class zzdy extends zzfi implements zzeu {
                 zzgVar = new zze(AtomicReferenceFieldUpdater.newUpdater(zzk.class, Thread.class, "thread"), AtomicReferenceFieldUpdater.newUpdater(zzk.class, zzk.class, "next"), AtomicReferenceFieldUpdater.newUpdater(zzdy.class, zzk.class, "waiters"), AtomicReferenceFieldUpdater.newUpdater(zzdy.class, zzd.class, "listeners"), AtomicReferenceFieldUpdater.newUpdater(zzdy.class, Object.class, "value"));
             } catch (Error | Exception e2) {
                 th = e2;
-                th2 = e;
                 zzgVar = new zzg(zzebVar);
+                th2 = e;
             }
         }
         zzc = zzgVar;
@@ -463,16 +463,12 @@ public abstract class zzdy extends zzfi implements zzeu {
                 return zzs == null ? zzd : zzs;
             }
             return new zzb(false, new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: " + String.valueOf(zzeuVar)));
-        } catch (Error e) {
-            e = e;
+        } catch (Error | Exception e) {
             return new zzc(e);
         } catch (CancellationException e2) {
             return !isCancelled ? new zzc(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(zzeuVar)), e2)) : new zzb(false, e2);
         } catch (ExecutionException e3) {
             return isCancelled ? new zzb(false, new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(zzeuVar)), e3)) : new zzc(e3.getCause());
-        } catch (Exception e4) {
-            e = e4;
-            return new zzc(e);
         }
     }
 
@@ -679,7 +675,7 @@ public abstract class zzdy extends zzfi implements zzeu {
         return obj;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0053, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0057, code lost:
     
         return true;
      */
@@ -715,7 +711,7 @@ public abstract class zzdy extends zzfi implements zzeu {
                 zzdyVar = (zzdy) zzeuVar;
                 obj = zzdyVar.value;
                 if (!(obj == null) && !(obj instanceof zzf)) {
-                    break;
+                    return true;
                 }
                 z2 = true;
             } else {

@@ -114,14 +114,14 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
                 View childClosestToEnd = getChildClosestToEnd();
                 savedState.mAnchorOffset = this.mOrientationHelper.getEndAfterPadding() - this.mOrientationHelper.getDecoratedEnd(childClosestToEnd);
                 savedState.mAnchorPosition = getPosition(childClosestToEnd);
-            } else {
-                View childClosestToStart = getChildClosestToStart();
-                savedState.mAnchorPosition = getPosition(childClosestToStart);
-                savedState.mAnchorOffset = this.mOrientationHelper.getDecoratedStart(childClosestToStart) - this.mOrientationHelper.getStartAfterPadding();
+                return savedState;
             }
-        } else {
-            savedState.invalidateAnchor();
+            View childClosestToStart = getChildClosestToStart();
+            savedState.mAnchorPosition = getPosition(childClosestToStart);
+            savedState.mAnchorOffset = this.mOrientationHelper.getDecoratedStart(childClosestToStart) - this.mOrientationHelper.getStartAfterPadding();
+            return savedState;
         }
+        savedState.invalidateAnchor();
         return savedState;
     }
 
@@ -993,7 +993,10 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         int i2;
         int i3;
         int i4;
+        int paddingLeft;
         int decoratedMeasurementInOther;
+        int i5;
+        int i6;
         View next = layoutState.next(recycler);
         if (next == null) {
             layoutChunkResult.mFinished = true;
@@ -1018,40 +1021,40 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         if (this.mOrientation == 1) {
             if (isLayoutRTL()) {
                 decoratedMeasurementInOther = getWidth() - getPaddingRight();
-                i4 = decoratedMeasurementInOther - this.mOrientationHelper.getDecoratedMeasurementInOther(next);
+                paddingLeft = decoratedMeasurementInOther - this.mOrientationHelper.getDecoratedMeasurementInOther(next);
             } else {
-                i4 = getPaddingLeft();
-                decoratedMeasurementInOther = this.mOrientationHelper.getDecoratedMeasurementInOther(next) + i4;
+                paddingLeft = getPaddingLeft();
+                decoratedMeasurementInOther = this.mOrientationHelper.getDecoratedMeasurementInOther(next) + paddingLeft;
             }
             if (layoutState.mLayoutDirection == -1) {
-                int i5 = layoutState.mOffset;
-                i3 = i5;
-                i2 = decoratedMeasurementInOther;
-                i = i5 - layoutChunkResult.mConsumed;
+                i6 = layoutState.mOffset;
+                i5 = i6 - layoutChunkResult.mConsumed;
             } else {
-                int i6 = layoutState.mOffset;
-                i = i6;
-                i2 = decoratedMeasurementInOther;
-                i3 = layoutChunkResult.mConsumed + i6;
+                i5 = layoutState.mOffset;
+                i6 = layoutChunkResult.mConsumed + i5;
             }
+            int i7 = paddingLeft;
+            i4 = i5;
+            i3 = i7;
+            i2 = i6;
+            i = decoratedMeasurementInOther;
         } else {
             int paddingTop = getPaddingTop();
             int decoratedMeasurementInOther2 = this.mOrientationHelper.getDecoratedMeasurementInOther(next) + paddingTop;
             if (layoutState.mLayoutDirection == -1) {
-                int i7 = layoutState.mOffset;
-                i2 = i7;
-                i = paddingTop;
-                i3 = decoratedMeasurementInOther2;
-                i4 = i7 - layoutChunkResult.mConsumed;
-            } else {
                 int i8 = layoutState.mOffset;
-                i = paddingTop;
-                i2 = layoutChunkResult.mConsumed + i8;
-                i3 = decoratedMeasurementInOther2;
-                i4 = i8;
+                i3 = i8 - layoutChunkResult.mConsumed;
+                i = i8;
+                i2 = decoratedMeasurementInOther2;
+            } else {
+                int i9 = layoutState.mOffset;
+                i = layoutChunkResult.mConsumed + i9;
+                i2 = decoratedMeasurementInOther2;
+                i3 = i9;
             }
+            i4 = paddingTop;
         }
-        layoutDecoratedWithMargins(next, i4, i, i2, i3);
+        layoutDecoratedWithMargins(next, i3, i4, i, i2);
         if (layoutParams.isItemRemoved() || layoutParams.isItemChanged()) {
             layoutChunkResult.mIgnoreConsumed = true;
         }
@@ -1383,10 +1386,10 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
                 View view3 = ((RecyclerView.ViewHolder) this.mScrapList.get(i2)).itemView;
                 RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view3.getLayoutParams();
                 if (view3 != view && !layoutParams.isItemRemoved() && (viewLayoutPosition = (layoutParams.getViewLayoutPosition() - this.mCurrentPosition) * this.mItemDirection) >= 0 && viewLayoutPosition < i) {
-                    view2 = view3;
                     if (viewLayoutPosition == 0) {
-                        break;
+                        return view3;
                     }
+                    view2 = view3;
                     i = viewLayoutPosition;
                 }
             }

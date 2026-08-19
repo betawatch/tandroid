@@ -48,7 +48,10 @@ public final class RemoteInput {
     }
 
     public boolean isDataOnly() {
-        return (getAllowFreeFormInput() || (getChoices() != null && getChoices().length != 0) || getAllowedDataTypes() == null || getAllowedDataTypes().isEmpty()) ? false : true;
+        if (getAllowFreeFormInput()) {
+            return false;
+        }
+        return ((getChoices() != null && getChoices().length != 0) || getAllowedDataTypes() == null || getAllowedDataTypes().isEmpty()) ? false : true;
     }
 
     public boolean getAllowFreeFormInput() {

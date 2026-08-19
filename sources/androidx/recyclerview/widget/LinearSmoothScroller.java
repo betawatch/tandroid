@@ -95,24 +95,26 @@ public class LinearSmoothScroller extends RecyclerView.SmoothScroller {
 
     protected int getHorizontalSnapPreference() {
         PointF pointF = this.mTargetVector;
-        if (pointF != null) {
-            float f = pointF.x;
-            if (f != 0.0f) {
-                return f > 0.0f ? 1 : -1;
-            }
+        if (pointF == null) {
+            return 0;
         }
-        return 0;
+        float f = pointF.x;
+        if (f == 0.0f) {
+            return 0;
+        }
+        return f > 0.0f ? 1 : -1;
     }
 
     protected int getVerticalSnapPreference() {
         PointF pointF = this.mTargetVector;
-        if (pointF != null) {
-            float f = pointF.y;
-            if (f != 0.0f) {
-                return f > 0.0f ? 1 : -1;
-            }
+        if (pointF == null) {
+            return 0;
         }
-        return 0;
+        float f = pointF.y;
+        if (f == 0.0f) {
+            return 0;
+        }
+        return f > 0.0f ? 1 : -1;
     }
 
     protected void updateActionForInterimTarget(RecyclerView.SmoothScroller.Action action) {

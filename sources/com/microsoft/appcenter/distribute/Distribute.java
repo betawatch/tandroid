@@ -22,7 +22,6 @@ import com.google.android.gms.cast.framework.media.internal.zzo$$ExternalSynthet
 import com.google.android.search.verification.client.SearchActionVerificationClientService$$ExternalSyntheticApiModelOutline2;
 import com.microsoft.appcenter.AbstractAppCenterService;
 import com.microsoft.appcenter.DependencyConfiguration;
-import com.microsoft.appcenter.channel.Channel;
 import com.microsoft.appcenter.distribute.channel.DistributeInfoTracker;
 import com.microsoft.appcenter.distribute.download.ReleaseDownloader;
 import com.microsoft.appcenter.distribute.download.ReleaseDownloaderFactory;
@@ -142,16 +141,56 @@ public class Distribute extends AbstractAppCenterService {
         return this.mFactories;
     }
 
+    /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:21:0x002f
+        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1179)
+        	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.collectHandlerRegions(ExcHandlersRegionMaker.java:53)
+        	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.process(ExcHandlersRegionMaker.java:38)
+        	at jadx.core.dex.visitors.regions.RegionMakerVisitor.visit(RegionMakerVisitor.java:27)
+        */
     @Override // com.microsoft.appcenter.AbstractAppCenterService, com.microsoft.appcenter.AppCenterService
-    public synchronized void onStarted(Context context, Channel channel, String str, String str2, boolean z) {
-        this.mContext = context;
-        this.mAppSecret = str;
-        try {
-            this.mPackageInfo = context.getPackageManager().getPackageInfo(this.mContext.getPackageName(), 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            AppCenterLog.error("AppCenterDistribute", "Could not get self package info.", e);
-        }
-        super.onStarted(context, channel, str, str2, z);
+    public synchronized void onStarted(android.content.Context r4, com.microsoft.appcenter.channel.Channel r5, java.lang.String r6, java.lang.String r7, boolean r8) {
+        /*
+            r3 = this;
+            monitor-enter(r3)
+            r3.mContext = r4     // Catch: java.lang.Throwable -> L2a
+            r3.mAppSecret = r6     // Catch: java.lang.Throwable -> L2a
+            android.content.pm.PackageManager r0 = r4.getPackageManager()     // Catch: java.lang.Throwable -> L17 android.content.pm.PackageManager.NameNotFoundException -> L1c
+            android.content.Context r1 = r3.mContext     // Catch: java.lang.Throwable -> L17 android.content.pm.PackageManager.NameNotFoundException -> L1c
+            java.lang.String r1 = r1.getPackageName()     // Catch: java.lang.Throwable -> L17 android.content.pm.PackageManager.NameNotFoundException -> L1c
+            r2 = 0
+            android.content.pm.PackageInfo r0 = r0.getPackageInfo(r1, r2)     // Catch: java.lang.Throwable -> L17 android.content.pm.PackageManager.NameNotFoundException -> L1c
+            r3.mPackageInfo = r0     // Catch: java.lang.Throwable -> L17 android.content.pm.PackageManager.NameNotFoundException -> L1c
+            goto L24
+        L17:
+            r0 = move-exception
+            r4 = r0
+            r5 = r4
+            r4 = r3
+            goto L2d
+        L1c:
+            r0 = move-exception
+            java.lang.String r1 = "AppCenterDistribute"
+            java.lang.String r2 = "Could not get self package info."
+            com.microsoft.appcenter.utils.AppCenterLog.error(r1, r2, r0)     // Catch: java.lang.Throwable -> L2a
+        L24:
+            super.onStarted(r4, r5, r6, r7, r8)     // Catch: java.lang.Throwable -> L2a
+            r4 = r3
+            monitor-exit(r3)
+            return
+        L2a:
+            r0 = move-exception
+            r4 = r3
+        L2c:
+            r5 = r0
+        L2d:
+            monitor-exit(r3)     // Catch: java.lang.Throwable -> L2f
+            throw r5
+        L2f:
+            r0 = move-exception
+            goto L2c
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.microsoft.appcenter.distribute.Distribute.onStarted(android.content.Context, com.microsoft.appcenter.channel.Channel, java.lang.String, java.lang.String, boolean):void");
     }
 
     synchronized void startFromBackground(Context context) {

@@ -237,7 +237,7 @@ final class GapWorker implements Runnable {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: androidx.recyclerview.widget.GapWorker$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GapWorker.lambda$prefetchPositionWithDeadline$0(RecyclerView.this);
+                        GapWorker.$r8$lambda$AzUCWB2uRWYN3md5QS0GYsl7qPU(RecyclerView.this);
                     }
                 });
                 recyclerView.onExitLayoutOrScroll(false);
@@ -249,8 +249,7 @@ final class GapWorker implements Runnable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prefetchPositionWithDeadline$0(RecyclerView recyclerView) {
+    public static /* synthetic */ void $r8$lambda$AzUCWB2uRWYN3md5QS0GYsl7qPU(RecyclerView recyclerView) {
         if (recyclerView.getAdapter() != null) {
             recyclerView.getAdapter().notifyDataSetChanged();
         }

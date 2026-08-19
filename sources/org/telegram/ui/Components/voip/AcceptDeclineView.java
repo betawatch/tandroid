@@ -211,7 +211,7 @@ public class AcceptDeclineView extends View {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.AcceptDeclineView$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            AcceptDeclineView.this.lambda$onTouchEvent$0(valueAnimator);
+                            AcceptDeclineView.$r8$lambda$IbfpJBh3X899dR0VGTKVYLe-7a8(AcceptDeclineView.this, valueAnimator);
                         }
                     });
                     ofFloat.start();
@@ -224,7 +224,7 @@ public class AcceptDeclineView extends View {
                     ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.AcceptDeclineView$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            AcceptDeclineView.this.lambda$onTouchEvent$1(valueAnimator);
+                            AcceptDeclineView.$r8$lambda$0L4rTGanHQ2PPIU3UThiZnkUNKE(AcceptDeclineView.this, valueAnimator);
                         }
                     });
                     ofFloat2.start();
@@ -244,18 +244,18 @@ public class AcceptDeclineView extends View {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$0(ValueAnimator valueAnimator) {
-        this.leftOffsetX = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-        this.leftAnimator = null;
+    public static /* synthetic */ void $r8$lambda$IbfpJBh3X899dR0VGTKVYLe-7a8(AcceptDeclineView acceptDeclineView, ValueAnimator valueAnimator) {
+        acceptDeclineView.getClass();
+        acceptDeclineView.leftOffsetX = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        acceptDeclineView.invalidate();
+        acceptDeclineView.leftAnimator = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$1(ValueAnimator valueAnimator) {
-        this.rigthOffsetX = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-        this.rightAnimator = null;
+    public static /* synthetic */ void $r8$lambda$0L4rTGanHQ2PPIU3UThiZnkUNKE(AcceptDeclineView acceptDeclineView, ValueAnimator valueAnimator) {
+        acceptDeclineView.getClass();
+        acceptDeclineView.rigthOffsetX = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        acceptDeclineView.invalidate();
+        acceptDeclineView.rightAnimator = null;
     }
 
     @Override // android.view.View
@@ -387,18 +387,13 @@ public class AcceptDeclineView extends View {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.AcceptDeclineView$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AcceptDeclineView.this.lambda$setRetryMod$2(valueAnimator);
+                AcceptDeclineView.this.avatarWavesDrawable.setAmplitude(((Integer) valueAnimator.getAnimatedValue()).intValue());
             }
         });
         this.callAnimator.setDuration(1500L);
         this.callAnimator.setRepeatMode(1);
         this.callAnimator.setRepeatCount(-1);
         this.callAnimator.start();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setRetryMod$2(ValueAnimator valueAnimator) {
-        this.avatarWavesDrawable.setAmplitude(((Integer) valueAnimator.getAnimatedValue()).intValue());
     }
 
     public void stopAnimations() {

@@ -53,7 +53,7 @@ public class SessionCell extends FrameLayout {
     private boolean showStub;
     private AnimatedFloat showStubValue;
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x021c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0216, code lost:
     
         if (r25 == 0) goto L91;
      */

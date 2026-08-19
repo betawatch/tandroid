@@ -61,24 +61,28 @@ public abstract class FlacMetadataReader {
         int readBits2 = parsableBitArray.readBits(24) + 4;
         if (readBits == 0) {
             flacStreamMetadataHolder.flacStreamMetadata = readStreamInfoBlock(extractorInput);
-        } else {
-            FlacStreamMetadata flacStreamMetadata = flacStreamMetadataHolder.flacStreamMetadata;
-            if (flacStreamMetadata == null) {
-                throw new IllegalArgumentException();
-            }
-            if (readBits == 3) {
-                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithSeekTable(readSeekTableMetadataBlock(extractorInput, readBits2));
-            } else if (readBits == 4) {
-                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithVorbisComments(readVorbisCommentMetadataBlock(extractorInput, readBits2));
-            } else if (readBits == 6) {
-                ParsableByteArray parsableByteArray = new ParsableByteArray(readBits2);
-                extractorInput.readFully(parsableByteArray.getData(), 0, readBits2);
-                parsableByteArray.skipBytes(4);
-                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithPictureFrames(ImmutableList.of((Object) PictureFrame.fromPictureBlock(parsableByteArray)));
-            } else {
-                extractorInput.skipFully(readBits2);
-            }
+            return readBit;
         }
+        FlacStreamMetadata flacStreamMetadata = flacStreamMetadataHolder.flacStreamMetadata;
+        if (flacStreamMetadata == null) {
+            throw new IllegalArgumentException();
+        }
+        if (readBits == 3) {
+            flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithSeekTable(readSeekTableMetadataBlock(extractorInput, readBits2));
+            return readBit;
+        }
+        if (readBits == 4) {
+            flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithVorbisComments(readVorbisCommentMetadataBlock(extractorInput, readBits2));
+            return readBit;
+        }
+        if (readBits == 6) {
+            ParsableByteArray parsableByteArray = new ParsableByteArray(readBits2);
+            extractorInput.readFully(parsableByteArray.getData(), 0, readBits2);
+            parsableByteArray.skipBytes(4);
+            flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithPictureFrames(ImmutableList.of((Object) PictureFrame.fromPictureBlock(parsableByteArray)));
+            return readBit;
+        }
+        extractorInput.skipFully(readBits2);
         return readBit;
     }
 

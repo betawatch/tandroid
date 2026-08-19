@@ -53,7 +53,7 @@ public class BoostCounterView extends View {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostCounterView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                BoostCounterView.this.lambda$animateCount$0(valueAnimator2);
+                BoostCounterView.$r8$lambda$aJESGgsPM9CMtfm2YLl0K_7USeM(BoostCounterView.this, valueAnimator2);
             }
         });
         this.countAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.boosts.BoostCounterView.1
@@ -68,10 +68,10 @@ public class BoostCounterView extends View {
         this.countAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateCount$0(ValueAnimator valueAnimator) {
-        this.countScale = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$aJESGgsPM9CMtfm2YLl0K_7USeM(BoostCounterView boostCounterView, ValueAnimator valueAnimator) {
+        boostCounterView.getClass();
+        boostCounterView.countScale = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+        boostCounterView.invalidate();
     }
 
     public void setCount(int i, boolean z) {

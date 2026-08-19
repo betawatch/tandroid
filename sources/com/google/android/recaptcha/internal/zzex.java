@@ -42,17 +42,15 @@ final class zzex extends SuspendLambda implements Function2 {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            zzgr zzgrVar = (zzgr) this.zze;
-            zzfp zzfpVar = this.zzb;
-            CoroutineContext coroutineContext = zzfp.zzf(zzfpVar).zza().getCoroutineContext();
-            zzew zzewVar = new zzew(this.zzc, zzfpVar, zzgrVar, this.zzd, null);
-            this.zza = 1;
-            obj = BuildersKt.withContext(coroutineContext, zzewVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
+        if (i != 0) {
+            return obj;
         }
-        return obj;
+        zzgr zzgrVar = (zzgr) this.zze;
+        zzfp zzfpVar = this.zzb;
+        CoroutineContext coroutineContext = zzfp.zzf(zzfpVar).zza().getCoroutineContext();
+        zzew zzewVar = new zzew(this.zzc, zzfpVar, zzgrVar, this.zzd, null);
+        this.zza = 1;
+        Object withContext = BuildersKt.withContext(coroutineContext, zzewVar, this);
+        return withContext == coroutine_suspended ? coroutine_suspended : withContext;
     }
 }

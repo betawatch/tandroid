@@ -134,9 +134,11 @@ public class LinkSpanDrawable {
     }
 
     public boolean draw(Canvas canvas) {
+        long j;
+        boolean z;
         float f;
         int dp = this.isLite ? 0 : AndroidUtilities.dp(4.0f);
-        boolean z = this.cornerRadius != dp;
+        boolean z2 = this.cornerRadius != dp;
         if (this.mSelectionPaint == null) {
             Paint paint = new Paint(1);
             this.mSelectionPaint = paint;
@@ -151,7 +153,7 @@ public class LinkSpanDrawable {
             this.mRipplePaint.setColor(this.color);
             this.mRippleAlpha = Color.alpha(this.color);
         }
-        if (z) {
+        if (z2) {
             this.cornerRadius = dp;
             if (dp <= 0) {
                 this.mSelectionPaint.setPathEffect(null);
@@ -194,11 +196,15 @@ public class LinkSpanDrawable {
         float interpolation = CubicBezierInterpolator.DEFAULT.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.mStart) / this.mDuration));
         float min = this.mReleaseStart < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r12) / 100.0f));
         if (this.mSupportsLongPress) {
-            long j = elapsedRealtime - this.mStart;
-            long j2 = this.mDuration * 2;
-            float max = Math.max(0.0f, (j - j2) / (this.mLongPressDuration - j2));
-            f = (max > 1.0f ? 1.0f - (((elapsedRealtime - this.mStart) - this.mLongPressDuration) / this.mDuration) : max * 0.5f) * (1.0f - min);
+            long j2 = elapsedRealtime - this.mStart;
+            long j3 = this.mDuration * 2;
+            j = elapsedRealtime;
+            z = true;
+            float max = Math.max(0.0f, (j2 - j3) / (this.mLongPressDuration - j3));
+            f = (max > 1.0f ? 1.0f - (((j - this.mStart) - this.mLongPressDuration) / this.mDuration) : max * 0.5f) * (1.0f - min);
         } else {
+            j = elapsedRealtime;
+            z = true;
             f = 1.0f;
         }
         float f2 = 1.0f - min;
@@ -226,7 +232,10 @@ public class LinkSpanDrawable {
                 canvas.drawPath((Path) this.mPathes.get(i5), this.mRipplePaint);
             }
         }
-        return interpolation < 1.0f || this.mReleaseStart >= 0 || (this.mSupportsLongPress && elapsedRealtime - this.mStart < this.mLongPressDuration + this.mDuration);
+        if (interpolation < 1.0f || this.mReleaseStart >= 0 || (this.mSupportsLongPress && j - this.mStart < this.mLongPressDuration + this.mDuration)) {
+            return z;
+        }
+        return false;
     }
 
     public static class LinkCollector {
@@ -328,15 +337,10 @@ public class LinkSpanDrawable {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LinkSpanDrawable.LinkCollector.this.lambda$removeLink$0(linkSpanDrawable);
+                        LinkSpanDrawable.LinkCollector.this.removeLink(linkSpanDrawable, false);
                     }
                 }, Math.max(0L, (linkSpanDrawable.mReleaseStart - SystemClock.elapsedRealtime()) + 175));
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$removeLink$0(LinkSpanDrawable linkSpanDrawable) {
-            removeLink(linkSpanDrawable, false);
         }
 
         private void removeLink(int i, boolean z) {
@@ -352,7 +356,7 @@ public class LinkSpanDrawable {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LinkSpanDrawable.LinkCollector.this.lambda$removeLink$1(linkSpanDrawable);
+                            LinkSpanDrawable.LinkCollector.this.removeLink(linkSpanDrawable, false);
                         }
                     }, Math.max(0L, (linkSpanDrawable.mReleaseStart - SystemClock.elapsedRealtime()) + 175));
                     return;
@@ -363,11 +367,6 @@ public class LinkSpanDrawable {
             ((LinkSpanDrawable) pair2.first).reset();
             this.mLinksCount = this.mLinks.size();
             invalidate(pair2.second);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$removeLink$1(LinkSpanDrawable linkSpanDrawable) {
-            removeLink(linkSpanDrawable, false);
         }
 
         public void removeLoading(LoadingDrawable loadingDrawable, boolean z) {
@@ -396,7 +395,7 @@ public class LinkSpanDrawable {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LinkSpanDrawable.LinkCollector.this.lambda$removeLoadingAt$2(loadingDrawable);
+                            LinkSpanDrawable.LinkCollector.this.removeLoading(loadingDrawable, false);
                         }
                     }, loadingDrawable.timeToDisappear());
                     return;
@@ -409,11 +408,6 @@ public class LinkSpanDrawable {
             loadingDrawable.resetDisappear();
             this.mLoadingCount = this.mLoading.size();
             invalidate(pair.second);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$removeLoadingAt$2(LoadingDrawable loadingDrawable) {
-            removeLoading(loadingDrawable, false);
         }
 
         public void clear() {
@@ -706,7 +700,7 @@ public class LinkSpanDrawable {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$LinksTextView$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LinkSpanDrawable.LinksTextView.this.lambda$onTouchEvent$0(linkSpanDrawable, hit);
+                            LinkSpanDrawable.LinksTextView.$r8$lambda$1fTHCSw5YqsMzd3_Yak0CsZC-3k(LinkSpanDrawable.LinksTextView.this, linkSpanDrawable, hit);
                         }
                     }, ViewConfiguration.getLongPressTimeout());
                     return true;
@@ -734,57 +728,83 @@ public class LinkSpanDrawable {
             return this.pressedLink != null || super.onTouchEvent(motionEvent);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onTouchEvent$0(LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
-            OnLinkPress onLinkPress = this.onLongPressListener;
-            if (onLinkPress == null || this.pressedLink != linkSpanDrawable) {
+        public static /* synthetic */ void $r8$lambda$1fTHCSw5YqsMzd3_Yak0CsZC-3k(LinksTextView linksTextView, LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
+            OnLinkPress onLinkPress = linksTextView.onLongPressListener;
+            if (onLinkPress == null || linksTextView.pressedLink != linkSpanDrawable) {
                 return;
             }
             onLinkPress.run(clickableSpan);
-            this.pressedLink = null;
-            this.links.clear();
+            linksTextView.pressedLink = null;
+            linksTextView.links.clear();
         }
 
-        /* JADX WARN: Can't wrap try/catch for region: R(15:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|(4:21|22|(1:62)(1:25)|26)|(6:31|32|33|(3:35|(2:37|(1:39))|40)|41|(2:43|44)(1:46))|54|56|57|58|32|33|(0)|41|(0)(0)) */
-        /* JADX WARN: Can't wrap try/catch for region: R(18:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|21|22|(1:62)(1:25)|26|(6:31|32|33|(3:35|(2:37|(1:39))|40)|41|(2:43|44)(1:46))|54|56|57|58|32|33|(0)|41|(0)(0)) */
-        /* JADX WARN: Code restructure failed: missing block: B:48:0x00ad, code lost:
+        /* JADX WARN: Can't wrap try/catch for region: R(23:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|(4:21|22|(1:79)(1:25)|26)|(14:31|32|33|34|35|37|38|39|(3:41|(2:43|(1:45))|46)|47|48|49|50|(2:52|53)(1:55))|71|72|73|74|32|33|34|35|37|38|39|(0)|47|48|49|50|(0)(0)) */
+        /* JADX WARN: Can't wrap try/catch for region: R(26:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|21|22|(1:79)(1:25)|26|(14:31|32|33|34|35|37|38|39|(3:41|(2:43|(1:45))|46)|47|48|49|50|(2:52|53)(1:55))|71|72|73|74|32|33|34|35|37|38|39|(0)|47|48|49|50|(0)(0)) */
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x00d0, code lost:
         
             r0 = e;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:49:0x00ae, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:58:0x00ad, code lost:
         
-            r2 = r14;
+            r1 = r3;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:51:0x00d7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:60:0x00e0, code lost:
         
-            if (r15.loggedError == false) goto L54;
+            if (r14.loggedError == false) goto L66;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:52:0x00d9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:61:0x00e2, code lost:
         
             org.telegram.messenger.FileLog.e((java.lang.Throwable) r0, true);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:53:0x00dc, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:62:0x00e5, code lost:
         
-            r15.loggedError = true;
-            r14 = r2;
+            r14.loggedError = true;
+            r3 = r1;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:60:0x00d3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:65:0x00d2, code lost:
+        
+            r0 = move-exception;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:66:0x00d3, code lost:
+        
+            r4 = r15;
+            r0 = r0;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:67:0x00d7, code lost:
         
             r0 = e;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:61:0x00d4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:68:0x00d8, code lost:
         
-            r2 = true;
+            r4 = r15;
          */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x009e A[Catch: Exception -> 0x00ad, TryCatch #0 {Exception -> 0x00ad, blocks: (B:33:0x0086, B:35:0x009e, B:37:0x00a2, B:40:0x00b0, B:41:0x00c1), top: B:32:0x0086 }] */
-        /* JADX WARN: Removed duplicated region for block: B:43:0x00e1  */
-        /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:52:0x00d9  */
+        /* JADX WARN: Code restructure failed: missing block: B:69:0x00ab, code lost:
+        
+            r0 = e;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:70:0x00ac, code lost:
+        
+            r4 = r15;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:76:0x00db, code lost:
+        
+            r0 = e;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:77:0x00dc, code lost:
+        
+            r4 = r15;
+            r1 = true;
+         */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x009c A[Catch: Exception -> 0x00ab, TryCatch #2 {Exception -> 0x00ab, blocks: (B:33:0x0084, B:39:0x0092, B:41:0x009c, B:43:0x00a0, B:46:0x00af, B:47:0x00c0), top: B:32:0x0084 }] */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x00ea  */
+        /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x00e2  */
         @Override // android.widget.TextView, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         protected void onDraw(Canvas canvas) {
+            Canvas canvas2;
             boolean z;
             Layout layout;
             float paddingTop;
@@ -806,10 +826,15 @@ public class LinkSpanDrawable {
                 paddingTop = ((getGravity() & 16) == 0 || layout == null) ? 0.0f : getPaddingTop() + ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - layout.getHeight()) / 2.0f);
             } catch (Exception e) {
                 e = e;
+                canvas2 = canvas;
             }
             if (paddingTop == 0.0f && getPaddingLeft() == 0) {
                 z = false;
-                this.stack = AnimatedEmojiSpan.update(emojiCacheType(), this, this.stack, getLayout());
+                int emojiCacheType = emojiCacheType();
+                AnimatedEmojiSpan.EmojiGroupedSpans emojiGroupedSpans = this.stack;
+                Layout[] layoutArr = new Layout[1];
+                layoutArr[0] = getLayout();
+                this.stack = AnimatedEmojiSpan.update(emojiCacheType, this, emojiGroupedSpans, layoutArr);
                 if (this.emojiColorIsLink) {
                     if (this.emojiColorFilter == null) {
                         if (this.emojiColorFilterColor != getPaint().linkColor) {
@@ -819,20 +844,26 @@ public class LinkSpanDrawable {
                     this.emojiColorFilterColor = i;
                     this.emojiColorFilter = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
                 }
-                AnimatedEmojiSpan.drawAnimatedEmojis(canvas, layout, this.stack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.emojiColorFilter);
+                canvas2 = canvas;
+                AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, layout, this.stack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.emojiColorFilter);
                 if (z) {
                     return;
                 }
-                canvas.restore();
+                canvas2.restore();
                 return;
             }
             canvas.save();
             canvas.translate(getPaddingLeft(), paddingTop);
             z = true;
-            this.stack = AnimatedEmojiSpan.update(emojiCacheType(), this, this.stack, getLayout());
+            int emojiCacheType2 = emojiCacheType();
+            AnimatedEmojiSpan.EmojiGroupedSpans emojiGroupedSpans2 = this.stack;
+            Layout[] layoutArr2 = new Layout[1];
+            layoutArr2[0] = getLayout();
+            this.stack = AnimatedEmojiSpan.update(emojiCacheType2, this, emojiGroupedSpans2, layoutArr2);
             if (this.emojiColorIsLink) {
             }
-            AnimatedEmojiSpan.drawAnimatedEmojis(canvas, layout, this.stack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.emojiColorFilter);
+            canvas2 = canvas;
+            AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, layout, this.stack, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.emojiColorFilter);
             if (z) {
             }
         }
@@ -1028,7 +1059,7 @@ public class LinkSpanDrawable {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkSpanDrawable$ClickableSmallTextView$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LinkSpanDrawable.ClickableSmallTextView.this.lambda$onTouchEvent$0(linkSpanDrawable);
+                            LinkSpanDrawable.ClickableSmallTextView.$r8$lambda$OqYR9hwV6iW96fI-UjMgxbb1w8w(LinkSpanDrawable.ClickableSmallTextView.this, linkSpanDrawable);
                         }
                     }, ViewConfiguration.getLongPressTimeout());
                     return true;
@@ -1050,12 +1081,11 @@ public class LinkSpanDrawable {
             return this.pressedLink != null || super.onTouchEvent(motionEvent);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onTouchEvent$0(LinkSpanDrawable linkSpanDrawable) {
-            if (this.pressedLink == linkSpanDrawable) {
-                performLongClick();
-                this.pressedLink = null;
-                this.links.clear();
+        public static /* synthetic */ void $r8$lambda$OqYR9hwV6iW96fI-UjMgxbb1w8w(ClickableSmallTextView clickableSmallTextView, LinkSpanDrawable linkSpanDrawable) {
+            if (clickableSmallTextView.pressedLink == linkSpanDrawable) {
+                clickableSmallTextView.performLongClick();
+                clickableSmallTextView.pressedLink = null;
+                clickableSmallTextView.links.clear();
             }
         }
     }

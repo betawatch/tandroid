@@ -540,9 +540,9 @@ public class SsManifestParser implements ParsingLoadable.Parser {
                 byte[][] splitNalUnits = CodecSpecificDataUtil.splitNalUnits(bytesFromHexString);
                 if (splitNalUnits == null) {
                     arrayList.add(bytesFromHexString);
-                } else {
-                    Collections.addAll(arrayList, splitNalUnits);
+                    return arrayList;
                 }
+                Collections.addAll(arrayList, splitNalUnits);
             }
             return arrayList;
         }

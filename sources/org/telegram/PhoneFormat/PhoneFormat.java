@@ -24,17 +24,20 @@ public class PhoneFormat {
     private boolean initialzed = false;
 
     public static PhoneFormat getInstance() {
-        PhoneFormat phoneFormat = Instance;
-        if (phoneFormat == null) {
-            synchronized (PhoneFormat.class) {
-                try {
-                    phoneFormat = Instance;
-                    if (phoneFormat == null) {
-                        phoneFormat = new PhoneFormat();
-                        Instance = phoneFormat;
-                    }
-                } finally {
+        PhoneFormat phoneFormat;
+        PhoneFormat phoneFormat2 = Instance;
+        if (phoneFormat2 != null) {
+            return phoneFormat2;
+        }
+        synchronized (PhoneFormat.class) {
+            try {
+                phoneFormat = Instance;
+                if (phoneFormat == null) {
+                    phoneFormat = new PhoneFormat();
+                    Instance = phoneFormat;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return phoneFormat;
@@ -216,37 +219,36 @@ public class PhoneFormat {
     }
 
     public String format(String str) {
-        if (!this.initialzed) {
-            return str;
-        }
-        try {
-            String strip = strip(str);
-            if (strip.startsWith("+")) {
-                String substring = strip.substring(1);
-                CallingCodeInfo findCallingCodeInfo = findCallingCodeInfo(substring);
-                if (findCallingCodeInfo == null) {
-                    return str;
+        if (this.initialzed) {
+            try {
+                String strip = strip(str);
+                if (strip.startsWith("+")) {
+                    String substring = strip.substring(1);
+                    CallingCodeInfo findCallingCodeInfo = findCallingCodeInfo(substring);
+                    if (findCallingCodeInfo != null) {
+                        return "+" + findCallingCodeInfo.format(substring);
+                    }
+                } else {
+                    CallingCodeInfo callingCodeInfo = callingCodeInfo(this.defaultCallingCode);
+                    if (callingCodeInfo != null) {
+                        String matchingAccessCode = callingCodeInfo.matchingAccessCode(strip);
+                        if (matchingAccessCode != null) {
+                            String substring2 = strip.substring(matchingAccessCode.length());
+                            CallingCodeInfo findCallingCodeInfo2 = findCallingCodeInfo(substring2);
+                            if (findCallingCodeInfo2 != null) {
+                                substring2 = findCallingCodeInfo2.format(substring2);
+                            }
+                            return substring2.length() == 0 ? matchingAccessCode : String.format("%s %s", matchingAccessCode, substring2);
+                        }
+                        return callingCodeInfo.format(strip);
+                    }
                 }
-                return "+" + findCallingCodeInfo.format(substring);
-            }
-            CallingCodeInfo callingCodeInfo = callingCodeInfo(this.defaultCallingCode);
-            if (callingCodeInfo == null) {
+            } catch (Exception e) {
+                FileLog.e(e);
                 return str;
             }
-            String matchingAccessCode = callingCodeInfo.matchingAccessCode(strip);
-            if (matchingAccessCode != null) {
-                String substring2 = strip.substring(matchingAccessCode.length());
-                CallingCodeInfo findCallingCodeInfo2 = findCallingCodeInfo(substring2);
-                if (findCallingCodeInfo2 != null) {
-                    substring2 = findCallingCodeInfo2.format(substring2);
-                }
-                return substring2.length() == 0 ? matchingAccessCode : String.format("%s %s", matchingAccessCode, substring2);
-            }
-            return callingCodeInfo.format(strip);
-        } catch (Exception e) {
-            FileLog.e(e);
-            return str;
         }
+        return str;
     }
 
     int value32(int i) {
@@ -303,19 +305,18 @@ public class PhoneFormat {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r2v10, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r2v12 */
-    /* JADX WARN: Type inference failed for: r2v9 */
+    /* JADX WARN: Type inference failed for: r0v6 */
+    /* JADX WARN: Type inference failed for: r0v7, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r0v9 */
     public CallingCodeInfo callingCodeInfo(String str) {
         Integer num;
-        byte[] bArr;
-        ?? r2;
+        ?? r0;
         PhoneFormat phoneFormat = this;
         CallingCodeInfo callingCodeInfo = (CallingCodeInfo) phoneFormat.callingCodeData.get(str);
         if (callingCodeInfo != null || (num = (Integer) phoneFormat.callingCodeOffsets.get(str)) == null) {
             return callingCodeInfo;
         }
-        byte[] bArr2 = phoneFormat.data;
+        byte[] bArr = phoneFormat.data;
         int intValue = num.intValue();
         CallingCodeInfo callingCodeInfo2 = new CallingCodeInfo();
         callingCodeInfo2.callingCode = str;
@@ -361,41 +362,37 @@ public class PhoneFormat {
                 PhoneRule phoneRule = new PhoneRule();
                 phoneRule.minVal = phoneFormat.value32(i4);
                 phoneRule.maxVal = phoneFormat.value32(i4 + 4);
-                phoneRule.byte8 = bArr2[i4 + 8];
-                phoneRule.maxLen = bArr2[i4 + 9];
-                phoneRule.otherFlag = bArr2[i4 + 10];
-                phoneRule.prefixLen = bArr2[i4 + 11];
-                phoneRule.flag12 = bArr2[i4 + 12];
-                phoneRule.flag13 = bArr2[i4 + 13];
+                phoneRule.byte8 = bArr[i4 + 8];
+                phoneRule.maxLen = bArr[i4 + 9];
+                phoneRule.otherFlag = bArr[i4 + 10];
+                phoneRule.prefixLen = bArr[i4 + 11];
+                phoneRule.flag12 = bArr[i4 + 12];
+                phoneRule.flag13 = bArr[i4 + 13];
                 short value165 = phoneFormat.value16(i4 + 14);
                 i4 += 16;
                 String valueString3 = phoneFormat.valueString(i3 + value162 + value165);
                 phoneRule.format = valueString3;
                 int indexOf = valueString3.indexOf("[[");
                 if (indexOf != -1) {
-                    bArr = bArr2;
-                    r2 = 1;
                     phoneRule.format = String.format("%s%s", phoneRule.format.substring(0, indexOf), phoneRule.format.substring(phoneRule.format.indexOf("]]") + 2));
-                } else {
-                    bArr = bArr2;
-                    r2 = 1;
                 }
                 arrayList4.add(phoneRule);
                 if (phoneRule.hasIntlPrefix) {
-                    ruleSet.hasRuleWithIntlPrefix = r2;
+                    r0 = 1;
+                    ruleSet.hasRuleWithIntlPrefix = true;
+                } else {
+                    r0 = 1;
                 }
                 if (phoneRule.hasTrunkPrefix) {
-                    ruleSet.hasRuleWithTrunkPrefix = r2;
+                    ruleSet.hasRuleWithTrunkPrefix = r0;
                 }
-                i6 += r2;
+                i6 += r0;
                 phoneFormat = this;
-                bArr2 = bArr;
             }
             ruleSet.rules = arrayList4;
             arrayList3.add(ruleSet);
             i5++;
             phoneFormat = this;
-            bArr2 = bArr2;
         }
         callingCodeInfo2.ruleSets = arrayList3;
         return callingCodeInfo2;

@@ -1,73 +1,34 @@
 package j$.util;
 
-import java.util.PrimitiveIterator;
+import j$.util.stream.f2;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class G implements PrimitiveIterator.OfDouble {
-    public final /* synthetic */ H a;
+public final /* synthetic */ class G implements IntConsumer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Consumer b;
 
-    private /* synthetic */ G(H h) {
-        this.a = h;
+    public /* synthetic */ G(Consumer consumer, int i) {
+        this.a = i;
+        this.b = consumer;
     }
 
-    public static /* synthetic */ PrimitiveIterator.OfDouble a(H h) {
-        if (h == null) {
-            return null;
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i) {
+        switch (this.a) {
+            case 0:
+                this.b.accept(Integer.valueOf(i));
+                break;
+            default:
+                ((f2) this.b).accept(i);
+                break;
         }
-        return h instanceof F ? ((F) h).a : new G(h);
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        H h = this.a;
-        if (obj instanceof G) {
-            obj = ((G) obj).a;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        switch (this.a) {
         }
-        return h.equals(obj);
-    }
-
-    @Override // java.util.PrimitiveIterator
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining((Object) doubleConsumer);
-    }
-
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.PrimitiveIterator.OfDouble
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(doubleConsumer);
-    }
-
-    @Override // java.util.Iterator
-    public final /* synthetic */ boolean hasNext() {
-        return this.a.hasNext();
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ Double next() {
-        return this.a.next();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return this.a.next();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfDouble
-    public final /* synthetic */ double nextDouble() {
-        return this.a.nextDouble();
-    }
-
-    @Override // java.util.Iterator
-    public final /* synthetic */ void remove() {
-        this.a.remove();
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 }

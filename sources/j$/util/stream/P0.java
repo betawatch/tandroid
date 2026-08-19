@@ -1,50 +1,118 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
-import java.util.function.BinaryOperator;
-import java.util.function.LongFunction;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-class P0 extends e {
-    protected final b h;
-    protected final LongFunction i;
-    protected final BinaryOperator j;
-
-    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        e eVar = this.d;
-        if (eVar != null) {
-            f((I0) this.j.apply((I0) ((P0) eVar).c(), (I0) ((P0) this.e).c()));
-        }
-        super.onCompletion(countedCompleter);
+public final class P0 extends I2 implements v0, q0 {
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        return false;
     }
 
-    P0(b bVar, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator) {
-        super(bVar, spliterator);
-        this.h = bVar;
-        this.i = longFunction;
-        this.j = binaryOperator;
+    @Override // j$.util.stream.c2
+    public final /* synthetic */ void E(Double d) {
+        q1.e(this, d);
     }
 
-    P0(P0 p0, Spliterator spliterator) {
-        super(p0, spliterator);
-        this.h = p0.h;
-        this.i = p0.i;
-        this.j = p0.j;
+    @Override // j$.util.stream.t0
+    public final B0 a() {
+        return this;
     }
 
-    @Override // j$.util.stream.e
-    protected e e(Spliterator spliterator) {
-        return new P0(this, spliterator);
+    @Override // j$.util.stream.q0, j$.util.stream.t0
+    public final v0 a() {
+        return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // j$.util.stream.e
-    /* renamed from: h, reason: merged with bridge method [inline-methods] */
-    public final I0 a() {
-        A0 a0 = (A0) this.i.apply(this.h.F(this.b));
-        this.h.U(this.b, a0);
-        return a0.a();
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(int i) {
+        q1.k();
+        throw null;
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(long j) {
+        q1.l();
+        throw null;
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        E((Double) obj);
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ B0 f(long j, long j2, IntFunction intFunction) {
+        return q1.t(this, j, j2);
+    }
+
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ Object[] h(IntFunction intFunction) {
+        return q1.m(this, intFunction);
+    }
+
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ int i() {
+        return 0;
+    }
+
+    @Override // j$.util.stream.f2
+    public final void x() {
+    }
+
+    @Override // j$.util.stream.B0
+    public final /* bridge */ /* synthetic */ B0 b(int i) {
+        b(i);
+        throw null;
+    }
+
+    @Override // j$.util.stream.A0, j$.util.stream.B0
+    public final A0 b(int i) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ void g(Object[] objArr, int i) {
+        q1.n(this, (Double[]) objArr, i);
+    }
+
+    @Override // j$.util.stream.O2, j$.util.stream.A0
+    public final void e(Object obj) {
+        super.e((DoubleConsumer) obj);
+    }
+
+    @Override // j$.util.stream.O2, j$.util.stream.A0
+    public final void j(int i, Object obj) {
+        super.j(i, (double[]) obj);
+    }
+
+    @Override // j$.util.stream.I2, j$.util.stream.O2, java.lang.Iterable
+    public final Spliterator spliterator() {
+        return super.spliterator();
+    }
+
+    @Override // j$.util.stream.I2, j$.util.stream.O2, java.lang.Iterable
+    public final j$.util.c0 spliterator() {
+        return super.spliterator();
+    }
+
+    @Override // j$.util.stream.f2
+    public final void y(long j) {
+        clear();
+        p(j);
+    }
+
+    @Override // j$.util.stream.O2, j$.util.stream.A0
+    public final Object d() {
+        return (double[]) super.d();
     }
 }

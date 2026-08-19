@@ -21,7 +21,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
@@ -76,14 +75,13 @@ import org.telegram.ui.FilteredSearchView;
 import org.telegram.ui.Stories.StoriesListPlaceProvider;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.TopicsFragment;
-import org.telegram.ui.community.CommunitySheet;
 import org.telegram.ui.community.CommunityUtils;
 import org.telegram.ui.community.cells.CommunityPendingRequestCell;
 import org.telegram.ui.community.cells.CommunityRequestsCell;
 import org.telegram.ui.community.sheet.CommunityAddOptionsSheet;
 import org.telegram.ui.community.sheet.CommunityInviteOnlySheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunitySheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target, DialogCell.DialogCellDelegate {
     private ButtonWithCounterView addChatToCommunityButton;
     private final BoolAnimator animatorSearchChatsVisible;
@@ -142,36 +140,6 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
 
     @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
     public void showChatPreview(DialogCell dialogCell) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$3100(CommunitySheet communitySheet, UItem uItem, View view, int i, float f, float f2) {
-        communitySheet.onClickCommunity(uItem, view, i, f, f2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$3200(CommunitySheet communitySheet, ArrayList arrayList, UniversalAdapter universalAdapter) {
-        communitySheet.fillItemsCommunity(arrayList, universalAdapter);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$4300(CommunitySheet communitySheet, UItem uItem, View view, int i, float f, float f2) {
-        communitySheet.onClickChatToAdd(uItem, view, i, f, f2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$4400(CommunitySheet communitySheet, ArrayList arrayList, UniversalAdapter universalAdapter) {
-        communitySheet.fillItemsChatsToAdd(arrayList, universalAdapter);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$5600(CommunitySheet communitySheet, UItem uItem, View view, int i, float f, float f2) {
-        communitySheet.onClickRequest(uItem, view, i, f, f2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$5700(CommunitySheet communitySheet, ArrayList arrayList, UniversalAdapter universalAdapter) {
-        communitySheet.fillItemsRequests(arrayList, universalAdapter);
     }
 
     public CommunitySheet(BaseFragment baseFragment, long j) {
@@ -309,7 +277,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             @Override // org.telegram.ui.FilteredSearchView.UiCallback
             public void goToMessage(MessageObject messageObject) {
                 CommunitySheet.this.parentFragment.presentFragment(SearchViewPager.createFragmentFromMessage(((BottomSheet) CommunitySheet.this).currentAccount, messageObject));
-                CommunitySheet.this.lambda$new$0();
+                CommunitySheet.this.dismiss();
             }
         });
         filteredSearchView.recyclerListView.setClipToPadding(false);
@@ -333,7 +301,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             @Override // org.telegram.ui.community.CommunityUtils.PendingRequests.Delegate
             public void onClickGroupOwner(long j2) {
                 baseFragment.presentFragment(ChatActivity.of(j2));
-                CommunitySheet.this.lambda$new$0();
+                CommunitySheet.this.dismiss();
             }
         });
         this.communityId = j;
@@ -379,13 +347,13 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         fragmentSearchField.setCloseButtonOnClickListener(new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                CommunitySheet.this.lambda$new$0();
+                CommunitySheet.$r8$lambda$Wvdy-AYi8jqcUyJM1b3tX6K0ka0(CommunitySheet.this);
             }
         });
         fragmentSearchField2.setCloseButtonOnClickListener(new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                CommunitySheet.this.lambda$new$1();
+                CommunitySheet.$r8$lambda$msKhrbZDqnNH6fTeH4olCsfkvMc(CommunitySheet.this);
             }
         });
         this.pendingRequestsList.loadNext();
@@ -441,22 +409,20 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.communityPage.listView.layoutManager.scrollToPositionWithOffset(1, this.systemInsets.top);
-        this.animatorSearchMessagesVisible.setValue(false, true);
-        setAllowNestedScroll(true);
-        AndroidUtilities.hideKeyboard(this.messagesSearchView.editText);
-        this.messagesSearchView.editText.clearFocus();
+    public static /* synthetic */ void $r8$lambda$Wvdy-AYi8jqcUyJM1b3tX6K0ka0(CommunitySheet communitySheet) {
+        communitySheet.communityPage.listView.layoutManager.scrollToPositionWithOffset(1, communitySheet.systemInsets.top);
+        communitySheet.animatorSearchMessagesVisible.setValue(false, true);
+        communitySheet.setAllowNestedScroll(true);
+        AndroidUtilities.hideKeyboard(communitySheet.messagesSearchView.editText);
+        communitySheet.messagesSearchView.editText.clearFocus();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        this.chatsPage.listView.layoutManager.scrollToPositionWithOffset(1, this.systemInsets.top);
-        this.animatorSearchChatsVisible.setValue(false, true);
-        setAllowNestedScroll(true);
-        AndroidUtilities.hideKeyboard(this.chatsSearchView.editText);
-        this.chatsSearchView.editText.clearFocus();
+    public static /* synthetic */ void $r8$lambda$msKhrbZDqnNH6fTeH4olCsfkvMc(CommunitySheet communitySheet) {
+        communitySheet.chatsPage.listView.layoutManager.scrollToPositionWithOffset(1, communitySheet.systemInsets.top);
+        communitySheet.animatorSearchChatsVisible.setValue(false, true);
+        communitySheet.setAllowNestedScroll(true);
+        AndroidUtilities.hideKeyboard(communitySheet.chatsSearchView.editText);
+        communitySheet.chatsSearchView.editText.clearFocus();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -494,7 +460,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             arrayList.add(UItem.asShadow(1, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CommunityPendingRequestsInfo), new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CommunitySheet.this.lambda$fillItemsRequests$2();
+                    CommunitySheet.$r8$lambda$ieBlMxOAwQFrTG-MoOzqVdPqRoA(CommunitySheet.this);
                 }
             }), true)));
         } else {
@@ -505,12 +471,12 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         this.pendingRequestsList.fillItems(arrayList);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItemsRequests$2() {
+    public static /* synthetic */ void $r8$lambda$ieBlMxOAwQFrTG-MoOzqVdPqRoA(CommunitySheet communitySheet) {
+        communitySheet.getClass();
         Bundle bundle = new Bundle();
-        bundle.putLong("community_id", this.communityId);
-        this.parentFragment.presentFragment(new CommunityEditActivity(bundle));
-        lambda$new$0();
+        bundle.putLong("community_id", communitySheet.communityId);
+        communitySheet.parentFragment.presentFragment(new CommunityEditActivity(bundle));
+        communitySheet.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -525,15 +491,19 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
 
     private void fillItemsChatsToAddImpl(ArrayList arrayList, UniversalAdapter universalAdapter, boolean z) {
         String str;
+        int i = 0;
         if (!z) {
             arrayList.add(UItem.asSpace(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
             arrayList.add(UItem.asSpace(0, AndroidUtilities.dp(56.0f)));
         }
         if (this.chatsToAddToCommunity != null) {
             String lowerCase = (!z || (str = this.lastSearchChatsString) == null) ? null : str.toLowerCase();
-            Iterator it = this.chatsToAddToCommunity.iterator();
-            while (it.hasNext()) {
-                TLRPC.Chat chat = (TLRPC.Chat) it.next();
+            ArrayList arrayList2 = this.chatsToAddToCommunity;
+            int size = arrayList2.size();
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
                 if (z && !TextUtils.isEmpty(lowerCase)) {
                     String str2 = chat.title;
                     if (str2 != null && str2.toLowerCase().contains(lowerCase)) {
@@ -553,21 +523,16 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             final TLRPC.Chat chat = (TLRPC.Chat) obj;
             if (this.onlyChatsMode) {
                 this.chatsToAddCallback.run(chat);
-                lambda$new$0();
+                dismiss();
             } else {
                 new CommunityAddOptionsSheet(getContext(), this.currentCommunity, -chat.id, new Utilities.Callback() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda5
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj2) {
-                        CommunitySheet.this.lambda$onClickChatToAdd$3(chat, (Boolean) obj2);
+                        r0.linkToCommunity(chat, CommunitySheet.this.communityId, ((Boolean) obj2).booleanValue());
                     }
                 }).show();
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickChatToAdd$3(TLRPC.Chat chat, Boolean bool) {
-        linkToCommunity(chat, this.communityId, bool.booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -616,7 +581,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
                 TLRPC.Chat currentChat = ((ChatActivity) baseFragment).getCurrentChat();
                 TLRPC.User currentUser = ((ChatActivity) this.parentFragment).getCurrentUser();
                 if ((currentChat != null && currentChat.id == (-j)) || (currentUser != null && currentUser.id == j)) {
-                    lambda$new$0();
+                    dismiss();
                     return;
                 }
             }
@@ -637,7 +602,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             } else {
                 this.parentFragment.presentFragment(new ChatActivity(bundle));
             }
-            lambda$new$0();
+            dismiss();
             return;
         }
         if (communityChatType == CommunityChatType.YouCanSendJoinRequest) {
@@ -658,31 +623,30 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean onLongClickCommunity(UItem uItem, View view, int i, float f, float f2) {
+        long j;
         boolean canRemoveBotFromCommunity;
         final boolean z;
-        final long j;
         final boolean z2;
         Object obj = uItem.object;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
-            long j2 = -chat.id;
+            j = -chat.id;
             boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
             canRemoveBotFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentCommunity);
             z2 = isChannelAndNotMegaGroup;
-            j = j2;
             z = false;
         } else {
             if (!(obj instanceof TLRPC.User)) {
                 return false;
             }
             TLRPC.User user = (TLRPC.User) obj;
-            long j3 = user.id;
+            j = user.id;
             boolean isBot = UserObject.isBot(user);
             canRemoveBotFromCommunity = ChatObject.canRemoveBotFromCommunity(user, this.currentCommunity);
             z = isBot;
-            j = j3;
             z2 = false;
         }
+        final long j2 = j;
         if (!canRemoveBotFromCommunity) {
             return false;
         }
@@ -690,7 +654,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         makeOptions.add(R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                CommunitySheet.this.lambda$onLongClickCommunity$6(z, z2, j);
+                CommunitySheet.$r8$lambda$NwvIrXTwjQ5JQIHS8Wyfg-DE18c(CommunitySheet.this, z, z2, j2);
             }
         });
         makeOptions.setScrimViewBackground(this.communityPage.listView.getClipBackground(view, true));
@@ -698,11 +662,10 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClickCommunity$6(boolean z, boolean z2, final long j) {
+    public static /* synthetic */ void $r8$lambda$NwvIrXTwjQ5JQIHS8Wyfg-DE18c(final CommunitySheet communitySheet, boolean z, boolean z2, final long j) {
         int i;
-        Context context = getContext();
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        Context context = communitySheet.getContext();
+        Theme.ResourcesProvider resourcesProvider = communitySheet.resourcesProvider;
         String string = LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity);
         if (z) {
             i = R.string.CommunityMenuRemoveBotFromCommunityConfirm;
@@ -714,25 +677,21 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         AlertsCreator.showSimpleConfirmAlert(context, resourcesProvider, string, LocaleController.getString(i), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                CommunitySheet.this.lambda$onLongClickCommunity$5(j);
+                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(j, r0.communityId, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda13
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj, Object obj2) {
+                        CommunitySheet.$r8$lambda$H2QIdSSp9VlgAh-qn6a9ncCVFqc(CommunitySheet.this, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClickCommunity$5(long j) {
-        MessagesController.getInstance(this.currentAccount).unlinkCommunity(j, this.communityId, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda13
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                CommunitySheet.this.lambda$onLongClickCommunity$4((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClickCommunity$4(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$H2QIdSSp9VlgAh-qn6a9ncCVFqc(CommunitySheet communitySheet, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).showForError(tL_error);
+            BulletinFactory.of((FrameLayout) communitySheet.containerView, communitySheet.resourcesProvider).showForError(tL_error);
+        } else {
+            communitySheet.getClass();
         }
     }
 
@@ -760,15 +719,10 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         new CommunityInviteOnlySheet(getContext(), chat, data.requestFromUser, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                CommunitySheet.this.lambda$checkPendingRequestClick$7(data);
+                CommunitySheet.this.parentFragment.presentFragment(ChatActivity.of(data.requestFromUser.id));
             }
         }).show();
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkPendingRequestClick$7(CommunityPendingRequestCell.Data data) {
-        this.parentFragment.presentFragment(ChatActivity.of(data.requestFromUser.id));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -795,8 +749,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void onBackPressed() {
         if (this.viewPager.getCurrentPosition() > 0) {
             if (this.viewPager.getCurrentPosition() == 2 && this.animatorSearchChatsVisible.getValue()) {
                 this.chatsPage.listView.layoutManager.scrollToPositionWithOffset(1, this.systemInsets.top);
@@ -809,7 +762,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             this.viewPager.scrollToPosition(0);
             return;
         }
-        super.lambda$openCrafting$8();
+        super.onBackPressed();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -879,19 +832,19 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, ((BottomSheet) CommunitySheet.this).currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    CommunitySheet.access$3200(CommunitySheet.this, (ArrayList) obj, (UniversalAdapter) obj2);
+                    CommunitySheet.this.fillItemsCommunity((ArrayList) obj, (UniversalAdapter) obj2);
                 }
             }, new Utilities.Callback5() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    CommunitySheet.access$3100(CommunitySheet.this, (UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+                    CommunitySheet.this.onClickCommunity((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
                 }
             }, new Utilities.Callback5Return() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback5Return
                 public final Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    Boolean lambda$new$2;
-                    lambda$new$2 = CommunitySheet.CommunityPage.lambda$new$2(CommunitySheet.this, (UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
-                    return lambda$new$2;
+                    Boolean valueOf;
+                    valueOf = Boolean.valueOf(CommunitySheet.this.onLongClickCommunity((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue()));
+                    return valueOf;
                 }
             }, ((BottomSheet) CommunitySheet.this).resourcesProvider);
             this.listView = universalRecyclerView;
@@ -919,7 +872,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
                         Bundle bundle = new Bundle();
                         bundle.putLong("community_id", CommunitySheet.this.communityId);
                         CommunitySheet.this.parentFragment.presentFragment(new CommunityEditActivity(bundle));
-                        CommunitySheet.this.lambda$new$0();
+                        CommunitySheet.this.dismiss();
                         return;
                     }
                     if (i == 3) {
@@ -962,21 +915,11 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             CommunitySheet.this.addChatToCommunityButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CommunitySheet.CommunityPage.this.lambda$new$3(view);
+                    CommunitySheet.this.onAddChatToCommunityButtonClick();
                 }
             });
             this.contentView.addView(buttonWithCounterView, LayoutHelper.createFrameMarginPx(-1, 48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(12.0f)));
             afterInit();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ Boolean lambda$new$2(CommunitySheet communitySheet, UItem uItem, View view, int i, float f, float f2) {
-            return Boolean.valueOf(communitySheet.onLongClickCommunity(uItem, view, i, f, f2));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$3(View view) {
-            CommunitySheet.this.onAddChatToCommunityButtonClick();
         }
 
         @Override // org.telegram.ui.community.CommunitySheet.Page
@@ -994,7 +937,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public void onAddChatToCommunityButtonClick() {
         if (!ChatObject.canAddChatToCommunity(this.currentCommunity)) {
-            lambda$new$0();
+            dismiss();
         } else {
             loadChatsToAddToCommunity();
         }
@@ -1008,25 +951,24 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         MessagesController.getInstance(this.currentAccount).fetchChatsToAddToCommunity(new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                CommunitySheet.this.lambda$loadChatsToAddToCommunity$8((ArrayList) obj, (TLRPC.TL_error) obj2);
+                CommunitySheet.$r8$lambda$CMpEgDxxBkRIWOMWnQxcxeiowkE(CommunitySheet.this, (ArrayList) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadChatsToAddToCommunity$8(ArrayList arrayList, TLRPC.TL_error tL_error) {
-        this.addChatToCommunityButton.setLoading(false);
+    public static /* synthetic */ void $r8$lambda$CMpEgDxxBkRIWOMWnQxcxeiowkE(CommunitySheet communitySheet, ArrayList arrayList, TLRPC.TL_error tL_error) {
+        communitySheet.addChatToCommunityButton.setLoading(false);
         if (tL_error != null) {
-            BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).showForError(tL_error);
+            BulletinFactory.of((FrameLayout) communitySheet.containerView, communitySheet.resourcesProvider).showForError(tL_error);
             return;
         }
         if (arrayList != null) {
-            this.chatsToAddToCommunity = arrayList;
+            communitySheet.chatsToAddToCommunity = arrayList;
             if (arrayList.isEmpty()) {
-                BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).createSimpleBulletin(R.raw.info, LocaleController.getString(R.string.CommunityNoChatsToAdd)).show();
+                BulletinFactory.of((FrameLayout) communitySheet.containerView, communitySheet.resourcesProvider).createSimpleBulletin(R.raw.info, LocaleController.getString(R.string.CommunityNoChatsToAdd)).show();
             } else {
-                this.chatsPage.listView.adapter.update(false);
-                this.viewPager.scrollToPosition(2);
+                communitySheet.chatsPage.listView.adapter.update(false);
+                communitySheet.viewPager.scrollToPosition(2);
             }
         }
     }
@@ -1039,12 +981,12 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, ((BottomSheet) CommunitySheet.this).currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$ChatsToAddListPage$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    CommunitySheet.access$4400(CommunitySheet.this, (ArrayList) obj, (UniversalAdapter) obj2);
+                    CommunitySheet.this.fillItemsChatsToAdd((ArrayList) obj, (UniversalAdapter) obj2);
                 }
             }, new Utilities.Callback5() { // from class: org.telegram.ui.community.CommunitySheet$ChatsToAddListPage$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    CommunitySheet.access$4300(CommunitySheet.this, (UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+                    CommunitySheet.this.onClickChatToAdd((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
                 }
             }, null, ((BottomSheet) CommunitySheet.this).resourcesProvider);
             this.listView = universalRecyclerView;
@@ -1073,7 +1015,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
                             CommunitySheet.this.viewPager.scrollToPosition(0);
                             return;
                         } else {
-                            CommunitySheet.this.lambda$new$0();
+                            CommunitySheet.this.dismiss();
                             return;
                         }
                     }
@@ -1099,7 +1041,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             CommunitySheet.this.closeChatToCommunityButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunitySheet$ChatsToAddListPage$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CommunitySheet.ChatsToAddListPage.this.lambda$new$2(view);
+                    CommunitySheet.this.viewPager.scrollToPosition(0);
                 }
             });
             if (CommunitySheet.this.onlyChatsMode) {
@@ -1107,11 +1049,6 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             }
             this.contentView.addView(CommunitySheet.this.closeChatToCommunityButton, LayoutHelper.createFrameMarginPx(-1, 48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(12.0f)));
             afterInit();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(View view) {
-            CommunitySheet.this.viewPager.scrollToPosition(0);
         }
 
         @Override // org.telegram.ui.community.CommunitySheet.Page
@@ -1133,12 +1070,12 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, ((BottomSheet) CommunitySheet.this).currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$PendingRequestsPage$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    CommunitySheet.access$5700(CommunitySheet.this, (ArrayList) obj, (UniversalAdapter) obj2);
+                    CommunitySheet.this.fillItemsRequests((ArrayList) obj, (UniversalAdapter) obj2);
                 }
             }, new Utilities.Callback5() { // from class: org.telegram.ui.community.CommunitySheet$PendingRequestsPage$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    CommunitySheet.access$5600(CommunitySheet.this, (UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+                    CommunitySheet.this.onClickRequest((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
                 }
             }, null, ((BottomSheet) CommunitySheet.this).resourcesProvider);
             this.listView = universalRecyclerView;
@@ -1186,7 +1123,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunitySheet$PendingRequestsPage$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CommunitySheet.PendingRequestsPage.this.lambda$new$2(view);
+                    CommunitySheet.this.pendingRequestsList.onResolveAllJoinRequests(false);
                 }
             });
             linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(0, 48, 1.0f, 0, 4, 0, 4, 0));
@@ -1196,26 +1133,17 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunitySheet$PendingRequestsPage$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CommunitySheet.PendingRequestsPage.this.lambda$new$3(view);
+                    CommunitySheet.this.pendingRequestsList.onResolveAllJoinRequests(true);
                 }
             });
             linearLayout.addView(buttonWithCounterView2, LayoutHelper.createLinear(0, 48, 1.0f, 0, 4, 0, 4, 0));
             this.contentView.addView(linearLayout, LayoutHelper.createFrameMarginPx(-1, -2.0f, 80, 0, 0, 0, AndroidUtilities.navigationBarHeight));
             afterInit();
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(View view) {
-            CommunitySheet.this.pendingRequestsList.onResolveAllJoinRequests(false);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$3(View view) {
-            CommunitySheet.this.pendingRequestsList.onResolveAllJoinRequests(true);
-        }
     }
 
-    private abstract class Page extends FrameLayout {
+    /* JADX INFO: Access modifiers changed from: private */
+    abstract class Page extends FrameLayout {
         protected ActionBar actionBar;
         protected final FrameLayout contentView;
         protected ChatActivityFadeView fadeView;
@@ -1375,7 +1303,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         @Override // android.view.ViewGroup, android.view.View
         public boolean dispatchTouchEvent(MotionEvent motionEvent) {
             if (motionEvent.getAction() == 0 && motionEvent.getY() < this.top) {
-                CommunitySheet.this.lambda$new$0();
+                CommunitySheet.this.dismiss();
                 return true;
             }
             return super.dispatchTouchEvent(motionEvent);
@@ -1387,7 +1315,8 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         }
     }
 
-    private void linkToCommunity(TLRPC.Chat chat, final long j, final boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void linkToCommunity(TLRPC.Chat chat, final long j, final boolean z) {
         long j2 = -chat.id;
         final boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
         if (!ChatObject.isChannel(chat)) {
@@ -1396,7 +1325,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             MessagesController.getInstance(this.currentAccount).convertToMegaGroup(getContext(), -j2, null, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.MessagesStorage.LongCallback
                 public final void run(long j3) {
-                    CommunitySheet.this.lambda$linkToCommunity$9(alertDialog, j, z, j3);
+                    CommunitySheet.$r8$lambda$HhvkFjTDhK1OAVuc73gvSXxNcqw(CommunitySheet.this, alertDialog, j, z, j3);
                 }
             });
             return;
@@ -1404,32 +1333,32 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         MessagesController.getInstance(this.currentAccount).linkCommunity(j2, j, z, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                CommunitySheet.this.lambda$linkToCommunity$10(isChannelAndNotMegaGroup, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                CommunitySheet.$r8$lambda$703Ly0vA1DvUkxDrsGuHhygRv9s(CommunitySheet.this, isChannelAndNotMegaGroup, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$linkToCommunity$9(AlertDialog alertDialog, long j, boolean z, long j2) {
+    public static /* synthetic */ void $r8$lambda$HhvkFjTDhK1OAVuc73gvSXxNcqw(CommunitySheet communitySheet, AlertDialog alertDialog, long j, boolean z, long j2) {
+        communitySheet.getClass();
         alertDialog.dismiss();
         if (j2 == 0) {
             return;
         }
-        linkToCommunity(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j2)), j, z);
+        communitySheet.linkToCommunity(MessagesController.getInstance(communitySheet.currentAccount).getChat(Long.valueOf(j2)), j, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$linkToCommunity$10(boolean z, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$703Ly0vA1DvUkxDrsGuHhygRv9s(CommunitySheet communitySheet, boolean z, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
+            communitySheet.getClass();
             if (TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                onLinkSuccess(2, z);
+                communitySheet.onLinkSuccess(2, z);
                 return;
             } else {
-                BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).showForError(tL_error);
+                BulletinFactory.of((FrameLayout) communitySheet.containerView, communitySheet.resourcesProvider).showForError(tL_error);
                 return;
             }
         }
-        onLinkSuccess(1, z);
+        communitySheet.onLinkSuccess(1, z);
     }
 
     private void onLinkSuccess(int i, boolean z) {

@@ -311,7 +311,13 @@ public abstract class DecoderAudioRenderer extends BaseRenderer implements Media
 
     @Override // com.google.android.exoplayer2.Renderer
     public boolean isReady() {
-        return this.audioSink.hasPendingData() || (this.inputFormat != null && (isSourceReady() || this.outputBuffer != null));
+        if (this.audioSink.hasPendingData()) {
+            return true;
+        }
+        if (this.inputFormat != null) {
+            return isSourceReady() || this.outputBuffer != null;
+        }
+        return false;
     }
 
     @Override // com.google.android.exoplayer2.util.MediaClock

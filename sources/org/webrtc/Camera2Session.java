@@ -20,7 +20,7 @@ import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 class Camera2Session implements CameraSession {
     private static final String TAG = "Camera2Session";
     private final Context applicationContext;
@@ -49,7 +49,8 @@ class Camera2Session implements CameraSession {
     private static final Histogram camera2StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera2.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera2ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera2.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    private enum SessionState {
+    /* JADX INFO: Access modifiers changed from: private */
+    enum SessionState {
         RUNNING,
         STOPPED
     }
@@ -147,7 +148,7 @@ class Camera2Session implements CameraSession {
                 Camera2Session.this.surfaceTextureHelper.startListening(new VideoSink() { // from class: org.webrtc.Camera2Session$CaptureSessionCallback$$ExternalSyntheticLambda0
                     @Override // org.webrtc.VideoSink
                     public final void onFrame(VideoFrame videoFrame) {
-                        Camera2Session.CaptureSessionCallback.this.lambda$onConfigured$0(videoFrame);
+                        Camera2Session.CaptureSessionCallback.$r8$lambda$ZzH-OhveMDi0ypJsV9EdfM3Bwm0(Camera2Session.CaptureSessionCallback.this, videoFrame);
                     }
 
                     @Override // org.webrtc.VideoSink
@@ -162,8 +163,7 @@ class Camera2Session implements CameraSession {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onConfigured$0(VideoFrame videoFrame) {
+        public static /* synthetic */ void $r8$lambda$ZzH-OhveMDi0ypJsV9EdfM3Bwm0(CaptureSessionCallback captureSessionCallback, VideoFrame videoFrame) {
             Camera2Session.this.checkIsOnCameraThread();
             if (Camera2Session.this.state == SessionState.RUNNING) {
                 if (!Camera2Session.this.firstFrameReported) {

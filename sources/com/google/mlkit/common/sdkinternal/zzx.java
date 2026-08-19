@@ -5,7 +5,7 @@ import java.io.Closeable;
 import java.util.concurrent.atomic.AtomicReference;
 
 /* loaded from: classes.dex */
-final class zzx implements Closeable {
+final class zzx implements Closeable, AutoCloseable {
     final /* synthetic */ TaskQueue zza;
 
     /* synthetic */ zzx(TaskQueue taskQueue, zzw zzwVar) {

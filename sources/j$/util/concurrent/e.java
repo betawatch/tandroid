@@ -13,7 +13,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-final class e extends b implements Set, j$.util.Set {
+public final class e extends b implements Set, j$.util.Set {
     private static final long serialVersionUID = 2249069246763182397L;
 
     @Override // java.util.Collection, j$.util.Collection
@@ -60,7 +60,10 @@ final class e extends b implements Set, j$.util.Set {
         Object key;
         Object obj2;
         Object value;
-        return (!(obj instanceof Map.Entry) || (key = (entry = (Map.Entry) obj).getKey()) == null || (obj2 = this.a.get(key)) == null || (value = entry.getValue()) == null || (value != obj2 && !value.equals(obj2))) ? false : true;
+        if (!(obj instanceof Map.Entry) || (key = (entry = (Map.Entry) obj).getKey()) == null || (obj2 = this.a.get(key)) == null || (value = entry.getValue()) == null) {
+            return false;
+        }
+        return value == obj2 || value.equals(obj2);
     }
 
     @Override // j$.util.concurrent.b, java.util.Collection
@@ -95,7 +98,6 @@ final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, j$.util.Collection
     public final boolean removeIf(Predicate predicate) {
         ConcurrentHashMap concurrentHashMap = this.a;
-        concurrentHashMap.getClass();
         predicate.getClass();
         l[] lVarArr = concurrentHashMap.a;
         boolean z = false;
@@ -135,8 +137,14 @@ final class e extends b implements Set, j$.util.Set {
 
     @Override // java.util.Collection, java.util.Set
     public final boolean equals(Object obj) {
-        Set set;
-        return (obj instanceof Set) && ((set = (Set) obj) == this || (containsAll(set) && set.containsAll(this)));
+        if (!(obj instanceof Set)) {
+            return false;
+        }
+        Set set = (Set) obj;
+        if (set != this) {
+            return containsAll(set) && set.containsAll(this);
+        }
+        return true;
     }
 
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
@@ -161,7 +169,7 @@ final class e extends b implements Set, j$.util.Set {
             if (a == null) {
                 return;
             } else {
-                consumer.p(new k(a.b, a.c, this.a));
+                consumer.s(new k(a.b, a.c, this.a));
             }
         }
     }

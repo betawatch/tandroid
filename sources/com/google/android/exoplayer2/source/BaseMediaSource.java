@@ -11,7 +11,6 @@ import com.google.android.exoplayer2.upstream.TransferListener;
 import com.google.android.exoplayer2.util.Assertions;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 
 /* loaded from: classes.dex */
 public abstract class BaseMediaSource implements MediaSource {
@@ -45,9 +44,13 @@ public abstract class BaseMediaSource implements MediaSource {
 
     protected final void refreshSourceInfo(Timeline timeline) {
         this.timeline = timeline;
-        Iterator it = this.mediaSourceCallers.iterator();
-        while (it.hasNext()) {
-            ((MediaSource.MediaSourceCaller) it.next()).onSourceInfoRefreshed(this, timeline);
+        ArrayList arrayList = this.mediaSourceCallers;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((MediaSource.MediaSourceCaller) obj).onSourceInfoRefreshed(this, timeline);
         }
     }
 

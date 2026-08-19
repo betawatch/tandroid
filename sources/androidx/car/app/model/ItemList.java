@@ -83,7 +83,7 @@ public final class ItemList {
 
     private ItemList() {
         this.mSelectedIndex = 0;
-        this.mItems = Collections.emptyList();
+        this.mItems = Collections.EMPTY_LIST;
         this.mNoItemsMessage = null;
         this.mOnSelectedDelegate = null;
         this.mOnItemVisibilityChangedDelegate = null;

@@ -134,18 +134,13 @@ public class MenuToItemOptions implements Menu {
         this.itemOptions.add(charSequence, new Runnable() { // from class: org.telegram.ui.Components.MenuToItemOptions$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MenuToItemOptions.this.lambda$add$0(i2);
+                MenuToItemOptions.this.onMenuClicked.run(Integer.valueOf(i2));
             }
         });
         if (this.premiumLock != null && FloatingToolbar.premiumOptions.contains(Integer.valueOf(i2))) {
             this.itemOptions.putPremiumLock(this.premiumLock);
         }
         return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$add$0(int i) {
-        this.onMenuClicked.run(Integer.valueOf(i));
     }
 
     @Override // android.view.Menu

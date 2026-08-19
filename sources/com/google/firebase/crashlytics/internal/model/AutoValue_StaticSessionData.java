@@ -46,11 +46,13 @@ final class AutoValue_StaticSessionData extends StaticSessionData {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof StaticSessionData)) {
-            return false;
+        if (obj instanceof StaticSessionData) {
+            StaticSessionData staticSessionData = (StaticSessionData) obj;
+            if (this.appData.equals(staticSessionData.appData()) && this.osData.equals(staticSessionData.osData()) && this.deviceData.equals(staticSessionData.deviceData())) {
+                return true;
+            }
         }
-        StaticSessionData staticSessionData = (StaticSessionData) obj;
-        return this.appData.equals(staticSessionData.appData()) && this.osData.equals(staticSessionData.osData()) && this.deviceData.equals(staticSessionData.deviceData());
+        return false;
     }
 
     public int hashCode() {

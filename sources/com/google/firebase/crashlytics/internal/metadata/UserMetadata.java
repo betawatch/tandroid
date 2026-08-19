@@ -77,9 +77,7 @@ public class UserMetadata {
                 this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$$ExternalSyntheticLambda0
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        Object lambda$setUserId$0;
-                        lambda$setUserId$0 = UserMetadata.this.lambda$setUserId$0();
-                        return lambda$setUserId$0;
+                        return UserMetadata.$r8$lambda$dCuOoYutJUFqjZ4zVe0P6kT6Mi8(UserMetadata.this);
                     }
                 });
             } catch (Throwable th) {
@@ -88,9 +86,8 @@ public class UserMetadata {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$setUserId$0() {
-        serializeUserDataIfNeeded();
+    public static /* synthetic */ Object $r8$lambda$dCuOoYutJUFqjZ4zVe0P6kT6Mi8(UserMetadata userMetadata) {
+        userMetadata.serializeUserDataIfNeeded();
         return null;
     }
 
@@ -171,9 +168,7 @@ public class UserMetadata {
             Callable callable = new Callable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$SerializeableKeysMap$$ExternalSyntheticLambda0
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
-                    Void lambda$scheduleSerializationTaskIfNeeded$0;
-                    lambda$scheduleSerializationTaskIfNeeded$0 = UserMetadata.SerializeableKeysMap.this.lambda$scheduleSerializationTaskIfNeeded$0();
-                    return lambda$scheduleSerializationTaskIfNeeded$0;
+                    return UserMetadata.SerializeableKeysMap.$r8$lambda$MRS7FQg6LwlQlWElOiIBARH1194(UserMetadata.SerializeableKeysMap.this);
                 }
             };
             if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(this.queuedSerializer, null, callable)) {
@@ -181,10 +176,9 @@ public class UserMetadata {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Void lambda$scheduleSerializationTaskIfNeeded$0() {
-            this.queuedSerializer.set(null);
-            serializeIfMarked();
+        public static /* synthetic */ Void $r8$lambda$MRS7FQg6LwlQlWElOiIBARH1194(SerializeableKeysMap serializeableKeysMap) {
+            serializeableKeysMap.queuedSerializer.set(null);
+            serializeableKeysMap.serializeIfMarked();
             return null;
         }
 

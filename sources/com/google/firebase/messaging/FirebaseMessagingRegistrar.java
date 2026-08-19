@@ -26,15 +26,12 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
         return Arrays.asList(Component.builder(FirebaseMessaging.class).name(LIBRARY_NAME).add(Dependency.required(FirebaseApp.class)).add(Dependency.optional(FirebaseInstanceIdInternal.class)).add(Dependency.optionalProvider(UserAgentPublisher.class)).add(Dependency.optionalProvider(HeartBeatInfo.class)).add(Dependency.optional(TransportFactory.class)).add(Dependency.required(FirebaseInstallationsApi.class)).add(Dependency.required(Subscriber.class)).factory(new ComponentFactory() { // from class: com.google.firebase.messaging.FirebaseMessagingRegistrar$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                FirebaseMessaging lambda$getComponents$0;
-                lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(componentContainer);
-                return lambda$getComponents$0;
+                return FirebaseMessagingRegistrar.$r8$lambda$bZoaCm49JrDNg3UPCIlAWkp3Nnc(componentContainer);
             }
         }).alwaysEager().build(), LibraryVersionComponent.create(LIBRARY_NAME, "23.4.0"));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(ComponentContainer componentContainer) {
+    public static /* synthetic */ FirebaseMessaging $r8$lambda$bZoaCm49JrDNg3UPCIlAWkp3Nnc(ComponentContainer componentContainer) {
         FirebaseApp firebaseApp = (FirebaseApp) componentContainer.get(FirebaseApp.class);
         WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(componentContainer.get(FirebaseInstanceIdInternal.class));
         return new FirebaseMessaging(firebaseApp, null, componentContainer.getProvider(UserAgentPublisher.class), componentContainer.getProvider(HeartBeatInfo.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), (TransportFactory) componentContainer.get(TransportFactory.class), (Subscriber) componentContainer.get(Subscriber.class));

@@ -1,24 +1,24 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-final class r extends l {
-    r e;
-    r f;
-    r g;
-    r h;
-    boolean i;
+public final class r extends l {
+    public r e;
+    public r f;
+    public r g;
+    public r h;
+    public boolean i;
 
-    r(int i, Object obj, Object obj2, l lVar, r rVar) {
+    public r(int i, Object obj, Object obj2, l lVar, r rVar) {
         super(i, obj, obj2, lVar);
         this.e = rVar;
     }
 
     @Override // j$.util.concurrent.l
-    final l a(int i, Object obj) {
+    public final l a(int i, Object obj) {
         return b(i, obj, null);
     }
 
-    final r b(int i, Object obj, Class cls) {
+    public final r b(int i, Object obj, Class cls) {
         if (obj == null) {
             return null;
         }

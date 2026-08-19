@@ -18,11 +18,13 @@ public final class Descriptor {
         if (this == obj) {
             return true;
         }
-        if (obj == null || Descriptor.class != obj.getClass()) {
-            return false;
+        if (obj != null && Descriptor.class == obj.getClass()) {
+            Descriptor descriptor = (Descriptor) obj;
+            if (Util.areEqual(this.schemeIdUri, descriptor.schemeIdUri) && Util.areEqual(this.value, descriptor.value) && Util.areEqual(this.id, descriptor.id)) {
+                return true;
+            }
         }
-        Descriptor descriptor = (Descriptor) obj;
-        return Util.areEqual(this.schemeIdUri, descriptor.schemeIdUri) && Util.areEqual(this.value, descriptor.value) && Util.areEqual(this.id, descriptor.id);
+        return false;
     }
 
     public int hashCode() {

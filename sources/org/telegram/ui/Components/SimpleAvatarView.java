@@ -88,7 +88,7 @@ public class SimpleAvatarView extends View {
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SimpleAvatarView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    SimpleAvatarView.this.lambda$setSelected$0(valueAnimator2);
+                    SimpleAvatarView.$r8$lambda$NP7dCIoAfh8q15iCnFF9r7CD-_c(SimpleAvatarView.this, valueAnimator2);
                 }
             });
             duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SimpleAvatarView.1
@@ -107,10 +107,10 @@ public class SimpleAvatarView extends View {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSelected$0(ValueAnimator valueAnimator) {
-        this.selectProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$NP7dCIoAfh8q15iCnFF9r7CD-_c(SimpleAvatarView simpleAvatarView, ValueAnimator valueAnimator) {
+        simpleAvatarView.getClass();
+        simpleAvatarView.selectProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        simpleAvatarView.invalidate();
     }
 
     public void setHideAvatar(boolean z) {

@@ -14,8 +14,7 @@ final class TransportImpl implements Transport {
     private final TransportContext transportContext;
     private final TransportInternal transportInternal;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$send$0(Exception exc) {
+    public static /* synthetic */ void $r8$lambda$bZYIR2AWMsK3OiMdU9QsskqwQec(Exception exc) {
     }
 
     TransportImpl(TransportContext transportContext, String str, Encoding encoding, Transformer transformer, TransportInternal transportInternal) {
@@ -31,7 +30,7 @@ final class TransportImpl implements Transport {
         schedule(event, new TransportScheduleCallback() { // from class: com.google.android.datatransport.runtime.TransportImpl$$ExternalSyntheticLambda0
             @Override // com.google.android.datatransport.TransportScheduleCallback
             public final void onSchedule(Exception exc) {
-                TransportImpl.lambda$send$0(exc);
+                TransportImpl.$r8$lambda$bZYIR2AWMsK3OiMdU9QsskqwQec(exc);
             }
         });
     }

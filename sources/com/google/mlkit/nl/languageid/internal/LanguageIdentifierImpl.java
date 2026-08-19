@@ -34,8 +34,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
-public class LanguageIdentifierImpl implements LanguageIdentifier {
+/* loaded from: classes.dex */
+public class LanguageIdentifierImpl implements LanguageIdentifier, AutoCloseable {
     private final LanguageIdentificationOptions zza;
     private final zzli zzb;
     private final zzlk zzc;
@@ -151,11 +151,27 @@ public class LanguageIdentifierImpl implements LanguageIdentifier {
     }
 
     final /* synthetic */ String zzc(zzg zzgVar, String str, boolean z) {
+        boolean z2;
+        RuntimeException runtimeException;
+        float floatValue;
         zzja zzc;
         Float confidenceThreshold = this.zza.getConfidenceThreshold();
         long elapsedRealtime = SystemClock.elapsedRealtime();
         try {
-            String zzc2 = zzgVar.zzc(str.substring(0, Math.min(str.length(), NotificationCenter.dialogPhotosUpdate)), confidenceThreshold != null ? confidenceThreshold.floatValue() : 0.5f);
+            String substring = str.substring(0, Math.min(str.length(), NotificationCenter.dialogPhotosUpdate));
+            if (confidenceThreshold != null) {
+                try {
+                    floatValue = confidenceThreshold.floatValue();
+                } catch (RuntimeException e) {
+                    runtimeException = e;
+                    z2 = z;
+                    zze(elapsedRealtime, z2, null, null, zzhx.zzV);
+                    throw runtimeException;
+                }
+            } else {
+                floatValue = 0.5f;
+            }
+            String zzc2 = zzgVar.zzc(substring, floatValue);
             if (zzc2 == null) {
                 zzc = null;
             } else {
@@ -165,11 +181,19 @@ public class LanguageIdentifierImpl implements LanguageIdentifier {
                 zziyVar.zzb(zzivVar.zzc());
                 zzc = zziyVar.zzc();
             }
-            zze(elapsedRealtime, z, null, zzc, zzhx.zza);
-            return zzc2;
-        } catch (RuntimeException e) {
-            zze(elapsedRealtime, z, null, null, zzhx.zzV);
-            throw e;
+            z2 = z;
+            try {
+                zze(elapsedRealtime, z2, null, zzc, zzhx.zza);
+                return zzc2;
+            } catch (RuntimeException e2) {
+                e = e2;
+                runtimeException = e;
+                zze(elapsedRealtime, z2, null, null, zzhx.zzV);
+                throw runtimeException;
+            }
+        } catch (RuntimeException e3) {
+            e = e3;
+            z2 = z;
         }
     }
 }

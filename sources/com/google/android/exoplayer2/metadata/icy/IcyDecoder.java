@@ -33,7 +33,7 @@ public final class IcyDecoder extends SimpleMetadataDecoder {
             String group2 = matcher.group(2);
             if (group != null) {
                 String lowerCase = Ascii.toLowerCase(group);
-                lowerCase.hashCode();
+                lowerCase.getClass();
                 if (lowerCase.equals("streamurl")) {
                     str2 = group2;
                 } else if (lowerCase.equals("streamtitle")) {

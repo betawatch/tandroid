@@ -194,17 +194,12 @@ public class SessionReportingCoordinator {
         Collections.sort(arrayList, new Comparator() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda10
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$getSortedCustomAttributes$0;
-                lambda$getSortedCustomAttributes$0 = SessionReportingCoordinator.lambda$getSortedCustomAttributes$0((CrashlyticsReport.CustomAttribute) obj, (CrashlyticsReport.CustomAttribute) obj2);
-                return lambda$getSortedCustomAttributes$0;
+                int compareTo;
+                compareTo = ((CrashlyticsReport.CustomAttribute) obj).getKey().compareTo(((CrashlyticsReport.CustomAttribute) obj2).getKey());
+                return compareTo;
             }
         });
         return DesugarCollections.unmodifiableList(arrayList);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getSortedCustomAttributes$0(CrashlyticsReport.CustomAttribute customAttribute, CrashlyticsReport.CustomAttribute customAttribute2) {
-        return customAttribute.getKey().compareTo(customAttribute2.getKey());
     }
 
     private static CrashlyticsReport.ApplicationExitInfo convertApplicationExitInfo(ApplicationExitInfo applicationExitInfo) {

@@ -79,7 +79,7 @@ public final class ComponentDiscovery {
             Bundle metadata = getMetadata(context);
             if (metadata == null) {
                 Log.w("ComponentDiscovery", "Could not retrieve metadata, returning empty list of registrars.");
-                return Collections.emptyList();
+                return Collections.EMPTY_LIST;
             }
             ArrayList arrayList = new ArrayList();
             for (String str : metadata.keySet()) {

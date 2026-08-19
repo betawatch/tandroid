@@ -106,8 +106,7 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         void sendBotInlineResult(TLRPC.BotInlineResult botInlineResult, boolean z, int i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$updateListViewTranslation$3(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+    public static /* synthetic */ void $r8$lambda$dd_L2UtPYzHyIxI7hKB0lrroym8(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
     }
 
     protected boolean canOpen() {
@@ -146,7 +145,8 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         this.updateVisibilityRunnable = new Runnable() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MentionsContainerView.this.lambda$new$0();
+                MentionsContainerView mentionsContainerView = MentionsContainerView.this;
+                mentionsContainerView.updateListViewTranslation(!mentionsContainerView.shown, true);
             }
         };
         this.animationIndex = -1;
@@ -519,11 +519,6 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         super.requestLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        updateListViewTranslation(!this.shown, true);
-    }
-
     public void updateVisibility(boolean z) {
         if (z) {
             boolean isReversed = isReversed();
@@ -569,7 +564,8 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         super.onMeasure(i, i2);
     }
 
-    private void updateListViewTranslation(final boolean z, boolean z2) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateListViewTranslation(final boolean z, boolean z2) {
         float f;
         int i;
         float max;
@@ -631,21 +627,21 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
                 spring.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda4
                     @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                     public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f6, float f7) {
-                        MentionsContainerView.this.lambda$updateListViewTranslation$1(f4, f5, translationY, f3, dynamicAnimation, f6, f7);
+                        MentionsContainerView.$r8$lambda$cJjjMrgvbGDP6Jd8yGlxWFpKC5c(MentionsContainerView.this, f4, f5, translationY, f3, dynamicAnimation, f6, f7);
                     }
                 });
                 if (z) {
                     this.listViewTranslationAnimator.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda5
                         @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                         public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z3, float f6, float f7) {
-                            MentionsContainerView.this.lambda$updateListViewTranslation$2(z, dynamicAnimation, z3, f6, f7);
+                            MentionsContainerView.$r8$lambda$wMMgsk-b3IAyZ0RrV69cCF-P5vQ(MentionsContainerView.this, z, dynamicAnimation, z3, f6, f7);
                         }
                     });
                 }
                 this.listViewTranslationAnimator.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda6
                     @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                     public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z3, float f6, float f7) {
-                        MentionsContainerView.lambda$updateListViewTranslation$3(dynamicAnimation, z3, f6, f7);
+                        MentionsContainerView.$r8$lambda$dd_L2UtPYzHyIxI7hKB0lrroym8(dynamicAnimation, z3, f6, f7);
                     }
                 });
                 this.listViewTranslationAnimator.start();
@@ -663,25 +659,24 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         setVisibility(num.intValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateListViewTranslation$1(float f, float f2, float f3, float f4, DynamicAnimation dynamicAnimation, float f5, float f6) {
-        this.listView.setTranslationY(f5);
-        onAnimationScroll();
-        this.hideT = AndroidUtilities.lerp(f, f2, (f5 - f3) / (f4 - f3));
+    public static /* synthetic */ void $r8$lambda$cJjjMrgvbGDP6Jd8yGlxWFpKC5c(MentionsContainerView mentionsContainerView, float f, float f2, float f3, float f4, DynamicAnimation dynamicAnimation, float f5, float f6) {
+        mentionsContainerView.listView.setTranslationY(f5);
+        mentionsContainerView.onAnimationScroll();
+        mentionsContainerView.hideT = AndroidUtilities.lerp(f, f2, (f5 - f3) / (f4 - f3));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateListViewTranslation$2(boolean z, DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
+    public static /* synthetic */ void $r8$lambda$wMMgsk-b3IAyZ0RrV69cCF-P5vQ(MentionsContainerView mentionsContainerView, boolean z, DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
         if (z2) {
+            mentionsContainerView.getClass();
             return;
         }
-        this.listViewTranslationAnimator = null;
-        setVisibility(z ? 8 : 0);
-        if (this.switchLayoutManagerOnEnd && z) {
-            this.switchLayoutManagerOnEnd = false;
-            this.listView.setLayoutManager(getNeededLayoutManager());
-            this.shown = true;
-            updateVisibility(true);
+        mentionsContainerView.listViewTranslationAnimator = null;
+        mentionsContainerView.setVisibility(z ? 8 : 0);
+        if (mentionsContainerView.switchLayoutManagerOnEnd && z) {
+            mentionsContainerView.switchLayoutManagerOnEnd = false;
+            mentionsContainerView.listView.setLayoutManager(mentionsContainerView.getNeededLayoutManager());
+            mentionsContainerView.shown = true;
+            mentionsContainerView.updateVisibility(true);
         }
     }
 
@@ -695,7 +690,7 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         RecyclerListView.OnItemClickListener onItemClickListener = new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                MentionsContainerView.this.lambda$withDelegate$4(delegate, view, i);
+                MentionsContainerView.$r8$lambda$6wK1BOSmSmqI7TUdSrbJKaTMADo(MentionsContainerView.this, delegate, view, i);
             }
         };
         this.mentionsOnItemClickListener = onItemClickListener;
@@ -703,32 +698,32 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         getListView().setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$withDelegate$5;
-                lambda$withDelegate$5 = MentionsContainerView.this.lambda$withDelegate$5(view, motionEvent);
-                return lambda$withDelegate$5;
+                return MentionsContainerView.$r8$lambda$ABSTcLqgT8m9IUs5jgNSu1GW0tA(MentionsContainerView.this, view, motionEvent);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$withDelegate$4(Delegate delegate, View view, int i) {
+    public static /* synthetic */ void $r8$lambda$6wK1BOSmSmqI7TUdSrbJKaTMADo(MentionsContainerView mentionsContainerView, Delegate delegate, View view, int i) {
         Paint.FontMetricsInt fontMetricsInt;
-        AnimatedEmojiSpan animatedEmojiSpan;
-        if (i == 0 || getAdapter().isBannedInline()) {
+        if (i == 0) {
+            mentionsContainerView.getClass();
+            return;
+        }
+        if (mentionsContainerView.getAdapter().isBannedInline()) {
             return;
         }
         int i2 = i - 1;
-        Object item = getAdapter().getItem(i2);
-        int resultStartPosition = getAdapter().getResultStartPosition();
-        int resultLength = getAdapter().getResultLength();
+        Object item = mentionsContainerView.getAdapter().getItem(i2);
+        int resultStartPosition = mentionsContainerView.getAdapter().getResultStartPosition();
+        int resultLength = mentionsContainerView.getAdapter().getResultLength();
         String str = "";
-        if (getAdapter().isLocalHashtagHint(i2)) {
-            TLRPC.Chat chat = getAdapter().chat;
-            if (chat == null && getAdapter().parentFragment != null) {
-                chat = getAdapter().parentFragment.getCurrentChat();
+        if (mentionsContainerView.getAdapter().isLocalHashtagHint(i2)) {
+            TLRPC.Chat chat = mentionsContainerView.getAdapter().chat;
+            if (chat == null && mentionsContainerView.getAdapter().parentFragment != null) {
+                chat = mentionsContainerView.getAdapter().parentFragment.getCurrentChat();
             }
             StringBuilder sb = new StringBuilder();
-            sb.append(getAdapter().getHashtagHint());
+            sb.append(mentionsContainerView.getAdapter().getHashtagHint());
             if (chat != null) {
                 str = "@" + ChatObject.getPublicUsername(chat);
             }
@@ -737,8 +732,8 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
             delegate.replaceText(resultStartPosition, resultLength, sb.toString(), false);
             return;
         }
-        if (getAdapter().isGlobalHashtagHint(i2)) {
-            delegate.replaceText(resultStartPosition, resultLength, getAdapter().getHashtagHint() + " ", false);
+        if (mentionsContainerView.getAdapter().isGlobalHashtagHint(i2)) {
+            delegate.replaceText(resultStartPosition, resultLength, mentionsContainerView.getAdapter().getHashtagHint() + " ", false);
             return;
         }
         if (item instanceof TLRPC.TL_document) {
@@ -746,7 +741,7 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
                 ((StickerCell) view).getSendAnimationData();
             }
             TLRPC.TL_document tL_document = (TLRPC.TL_document) item;
-            delegate.onStickerSelected(tL_document, MessageObject.findAnimatedEmojiEmoticon(tL_document), getAdapter().getItemParent(i2));
+            delegate.onStickerSelected(tL_document, MessageObject.findAnimatedEmojiEmoticon(tL_document), mentionsContainerView.getAdapter().getItemParent(i2));
         } else if (item instanceof TLRPC.Chat) {
             String publicUsername = ChatObject.getPublicUsername((TLRPC.Chat) item);
             if (publicUsername != null) {
@@ -766,7 +761,9 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
         } else if (item instanceof MediaDataController.KeywordResult) {
             String str2 = ((MediaDataController.KeywordResult) item).emoji;
             delegate.addEmojiToRecent(str2);
-            if (str2 != null && str2.startsWith("animated_")) {
+            if (str2 == null || !str2.startsWith("animated_")) {
+                delegate.replaceText(resultStartPosition, resultLength, str2, true);
+            } else {
                 try {
                     try {
                         fontMetricsInt = delegate.getFontMetrics();
@@ -777,37 +774,30 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
                     long parseLong = Long.parseLong(str2.substring(9));
                     TLRPC.Document findDocument = AnimatedEmojiDrawable.findDocument(UserConfig.selectedAccount, parseLong);
                     SpannableString spannableString2 = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(findDocument));
-                    if (findDocument != null) {
-                        animatedEmojiSpan = new AnimatedEmojiSpan(findDocument, fontMetricsInt);
-                    } else {
-                        animatedEmojiSpan = new AnimatedEmojiSpan(parseLong, fontMetricsInt);
-                    }
-                    spannableString2.setSpan(animatedEmojiSpan, 0, spannableString2.length(), 33);
+                    spannableString2.setSpan(findDocument != null ? new AnimatedEmojiSpan(findDocument, fontMetricsInt) : new AnimatedEmojiSpan(parseLong, fontMetricsInt), 0, spannableString2.length(), 33);
                     delegate.replaceText(resultStartPosition, resultLength, spannableString2, false);
                 } catch (Exception unused) {
                     delegate.replaceText(resultStartPosition, resultLength, str2, true);
                 }
-            } else {
-                delegate.replaceText(resultStartPosition, resultLength, str2, true);
             }
-            updateVisibility(false);
+            mentionsContainerView.updateVisibility(false);
         }
         if (item instanceof TLRPC.BotInlineResult) {
             TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) item;
-            if ((botInlineResult.type.equals("photo") && (botInlineResult.photo != null || botInlineResult.content != null)) || ((botInlineResult.type.equals("gif") && (botInlineResult.document != null || botInlineResult.content != null)) || (botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && botInlineResult.document != null))) {
-                ArrayList arrayList = new ArrayList(getAdapter().getSearchResultBotContext());
-                this.botContextResults = arrayList;
-                PhotoViewer.getInstance().setParentActivity(this.baseFragment, this.resourcesProvider);
-                PhotoViewer.getInstance().openPhotoForSelect(arrayList, getAdapter().getItemPosition(i2), 3, false, this.botContextProvider, null);
+            if ((!botInlineResult.type.equals("photo") || (botInlineResult.photo == null && botInlineResult.content == null)) && ((!botInlineResult.type.equals("gif") || (botInlineResult.document == null && botInlineResult.content == null)) && (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) || botInlineResult.document == null))) {
+                delegate.sendBotInlineResult(botInlineResult, true, 0);
                 return;
             }
-            delegate.sendBotInlineResult(botInlineResult, true, 0);
+            ArrayList arrayList = new ArrayList(mentionsContainerView.getAdapter().getSearchResultBotContext());
+            mentionsContainerView.botContextResults = arrayList;
+            PhotoViewer.getInstance().setParentActivity(mentionsContainerView.baseFragment, mentionsContainerView.resourcesProvider);
+            PhotoViewer.getInstance().openPhotoForSelect(arrayList, mentionsContainerView.getAdapter().getItemPosition(i2), 3, false, mentionsContainerView.botContextProvider, null);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$withDelegate$5(View view, MotionEvent motionEvent) {
-        return ContentPreviewViewer.getInstance().onTouch(motionEvent, getListView(), 0, this.mentionsOnItemClickListener, null, this.resourcesProvider);
+    public static /* synthetic */ boolean $r8$lambda$ABSTcLqgT8m9IUs5jgNSu1GW0tA(MentionsContainerView mentionsContainerView, View view, MotionEvent motionEvent) {
+        mentionsContainerView.getClass();
+        return ContentPreviewViewer.getInstance().onTouch(motionEvent, mentionsContainerView.getListView(), 0, mentionsContainerView.mentionsOnItemClickListener, null, mentionsContainerView.resourcesProvider);
     }
 
     public class MentionsListView extends RecyclerListView {
@@ -862,8 +852,14 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
             });
         }
 
+        /* JADX WARN: Removed duplicated region for block: B:27:0x00bf A[ADDED_TO_REGION] */
         @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+            MotionEvent motionEvent2;
+            boolean z;
             if (MentionsContainerView.this.linearLayoutManager.getReverseLayout()) {
                 if (!this.isDragging && MentionsContainerView.this.paddedAdapter != null && MentionsContainerView.this.paddedAdapter.paddingView != null && MentionsContainerView.this.paddedAdapter.paddingViewAttached && motionEvent.getY() > MentionsContainerView.this.paddedAdapter.paddingView.getTop()) {
                     return false;
@@ -871,11 +867,27 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
             } else if (!this.isDragging && MentionsContainerView.this.paddedAdapter != null && MentionsContainerView.this.paddedAdapter.paddingView != null && MentionsContainerView.this.paddedAdapter.paddingViewAttached && motionEvent.getY() < MentionsContainerView.this.paddedAdapter.paddingView.getBottom()) {
                 return false;
             }
-            boolean z = !this.isScrolling && ContentPreviewViewer.getInstance().onInterceptTouchEvent(motionEvent, MentionsContainerView.this.listView, 0, null, this.resourcesProvider);
-            if ((MentionsContainerView.this.adapter.isStickers() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) {
-                MentionsContainerView.this.adapter.doSomeStickersAction();
+            if (this.isScrolling) {
+                motionEvent2 = motionEvent;
+            } else {
+                motionEvent2 = motionEvent;
+                if (ContentPreviewViewer.getInstance().onInterceptTouchEvent(motionEvent2, MentionsContainerView.this.listView, 0, null, this.resourcesProvider)) {
+                    z = true;
+                    if ((MentionsContainerView.this.adapter.isStickers() && motionEvent2.getAction() == 0) || motionEvent2.getAction() == 2) {
+                        MentionsContainerView.this.adapter.doSomeStickersAction();
+                    }
+                    return !super.onInterceptTouchEvent(motionEvent2) || z;
+                }
             }
-            return super.onInterceptTouchEvent(motionEvent) || z;
+            z = false;
+            if (MentionsContainerView.this.adapter.isStickers()) {
+                MentionsContainerView.this.adapter.doSomeStickersAction();
+                if (super.onInterceptTouchEvent(motionEvent2)) {
+                }
+            }
+            MentionsContainerView.this.adapter.doSomeStickersAction();
+            if (super.onInterceptTouchEvent(motionEvent2)) {
+            }
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -976,14 +988,13 @@ public abstract class MentionsContainerView extends FrameLayout implements Notif
             AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.MentionsContainerView$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    MentionsContainerView.lambda$didReceivedNotification$6((View) obj);
+                    MentionsContainerView.$r8$lambda$P0RBUas03aNl8uv9eCnt3Tgs_hs((View) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$6(View view) {
+    public static /* synthetic */ void $r8$lambda$P0RBUas03aNl8uv9eCnt3Tgs_hs(View view) {
         if (view instanceof MentionCell) {
             ((MentionCell) view).invalidateEmojis();
         } else if (view instanceof QuickRepliesActivity.QuickReplyView) {

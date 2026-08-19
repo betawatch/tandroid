@@ -179,7 +179,7 @@ public class CountrySelectActivity extends BaseFragment {
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.CountrySelectActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                CountrySelectActivity.this.lambda$createView$0(view, i2);
+                CountrySelectActivity.$r8$lambda$eXzLmdgisnCW26jJi-69v3oZTk0(CountrySelectActivity.this, view, i2);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.CountrySelectActivity.3
@@ -193,26 +193,25 @@ public class CountrySelectActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$eXzLmdgisnCW26jJi-69v3oZTk0(CountrySelectActivity countrySelectActivity, View view, int i) {
         Country item;
         CountrySelectActivityDelegate countrySelectActivityDelegate;
-        if (this.searching && this.searchWas) {
-            item = this.searchListViewAdapter.getItem(i);
+        if (countrySelectActivity.searching && countrySelectActivity.searchWas) {
+            item = countrySelectActivity.searchListViewAdapter.getItem(i);
         } else {
-            int sectionForPosition = this.listViewAdapter.getSectionForPosition(i);
-            int positionInSectionForPosition = this.listViewAdapter.getPositionInSectionForPosition(i);
+            int sectionForPosition = countrySelectActivity.listViewAdapter.getSectionForPosition(i);
+            int positionInSectionForPosition = countrySelectActivity.listViewAdapter.getPositionInSectionForPosition(i);
             if (positionInSectionForPosition < 0 || sectionForPosition < 0) {
                 return;
             } else {
-                item = this.listViewAdapter.getItem(sectionForPosition, positionInSectionForPosition);
+                item = countrySelectActivity.listViewAdapter.getItem(sectionForPosition, positionInSectionForPosition);
             }
         }
         if (i < 0) {
             return;
         }
-        finishFragment();
-        if (item == null || (countrySelectActivityDelegate = this.delegate) == null) {
+        countrySelectActivity.finishFragment();
+        if (item == null || (countrySelectActivityDelegate = countrySelectActivity.delegate) == null) {
             return;
         }
         countrySelectActivityDelegate.didSelectCountry(item);
@@ -241,11 +240,13 @@ public class CountrySelectActivity extends BaseFragment {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
+            if (obj != null && getClass() == obj.getClass()) {
+                Country country = (Country) obj;
+                if (Objects.equals(this.name, country.name) && Objects.equals(this.code, country.code)) {
+                    return true;
+                }
             }
-            Country country = (Country) obj;
-            return Objects.equals(this.name, country.name) && Objects.equals(this.code, country.code);
+            return false;
         }
 
         public int hashCode() {
@@ -323,17 +324,12 @@ public class CountrySelectActivity extends BaseFragment {
                 Collections.sort((ArrayList) it.next(), new Comparator() { // from class: org.telegram.ui.CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda0
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$new$0;
-                        lambda$new$0 = CountrySelectActivity.CountryAdapter.lambda$new$0(boostRepository$$ExternalSyntheticLambda24, (CountrySelectActivity.Country) obj, (CountrySelectActivity.Country) obj2);
-                        return lambda$new$0;
+                        int compare;
+                        compare = boostRepository$$ExternalSyntheticLambda24.compare(((CountrySelectActivity.Country) obj).name, ((CountrySelectActivity.Country) obj2).name);
+                        return compare;
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$new$0(Comparator comparator, Country country, Country country2) {
-            return comparator.compare(country.name, country2.name);
         }
 
         public HashMap getCountries() {
@@ -477,21 +473,21 @@ public class CountrySelectActivity extends BaseFragment {
             Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.CountrySelectActivity$CountrySearchAdapter$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CountrySelectActivity.CountrySearchAdapter.this.lambda$processSearch$0(str);
+                    CountrySelectActivity.CountrySearchAdapter.$r8$lambda$TWRaxYNKskF834hblhudYZek6gw(CountrySelectActivity.CountrySearchAdapter.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$processSearch$0(String str) {
+        public static /* synthetic */ void $r8$lambda$TWRaxYNKskF834hblhudYZek6gw(CountrySearchAdapter countrySearchAdapter, String str) {
+            countrySearchAdapter.getClass();
             String lowerCase = str.trim().toLowerCase();
             if (lowerCase.length() == 0) {
-                updateSearchResults(new ArrayList());
+                countrySearchAdapter.updateSearchResults(new ArrayList());
                 return;
             }
             String translitSafe = AndroidUtilities.translitSafe(lowerCase);
             ArrayList arrayList = new ArrayList();
-            for (Country country : this.countryList) {
+            for (Country country : countrySearchAdapter.countryList) {
                 String str2 = country.name;
                 if (str2 == null) {
                     str2 = "";
@@ -521,27 +517,26 @@ public class CountrySelectActivity extends BaseFragment {
                 }
                 arrayList.add(country);
             }
-            updateSearchResults(arrayList);
+            countrySearchAdapter.updateSearchResults(arrayList);
         }
 
         private void updateSearchResults(final ArrayList arrayList) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CountrySelectActivity$CountrySearchAdapter$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CountrySelectActivity.CountrySearchAdapter.this.lambda$updateSearchResults$1(arrayList);
+                    CountrySelectActivity.CountrySearchAdapter.$r8$lambda$zxS2AknKGEFqWpT4N9PKdZNvI2g(CountrySelectActivity.CountrySearchAdapter.this, arrayList);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateSearchResults$1(ArrayList arrayList) {
+        public static /* synthetic */ void $r8$lambda$zxS2AknKGEFqWpT4N9PKdZNvI2g(CountrySearchAdapter countrySearchAdapter, ArrayList arrayList) {
             if (CountrySelectActivity.this.searching) {
-                this.searchResult = arrayList;
+                countrySearchAdapter.searchResult = arrayList;
                 if (CountrySelectActivity.this.searchWas && CountrySelectActivity.this.listView != null && CountrySelectActivity.this.listView.getAdapter() != CountrySelectActivity.this.searchListViewAdapter) {
                     CountrySelectActivity.this.listView.setAdapter(CountrySelectActivity.this.searchListViewAdapter);
                     CountrySelectActivity.this.listView.setFastScrollVisible(false);
                 }
-                notifyDataSetChanged();
+                countrySearchAdapter.notifyDataSetChanged();
             }
         }
 
@@ -599,13 +594,12 @@ public class CountrySelectActivity extends BaseFragment {
             this.listener = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.CountrySelectActivity$4$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    CountrySelectActivity.4.lambda$$0(TextSettingsCell.this, i, i2, objArr);
+                    CountrySelectActivity.4.$r8$lambda$0DoFj1EMwzi9gkncDjaoCqlCJDY(TextSettingsCell.this, i, i2, objArr);
                 }
             };
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$$0(TextSettingsCell textSettingsCell, int i, int i2, Object[] objArr) {
+        public static /* synthetic */ void $r8$lambda$0DoFj1EMwzi9gkncDjaoCqlCJDY(TextSettingsCell textSettingsCell, int i, int i2, Object[] objArr) {
             if (i == NotificationCenter.emojiLoaded) {
                 textSettingsCell.getTextView().invalidate();
             }

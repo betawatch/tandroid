@@ -35,21 +35,24 @@ class DownloadManagerUpdateTask extends AsyncTask {
             if (!query.moveToFirst()) {
                 throw new NoSuchElementException("Cannot find download with id=" + downloadId);
             }
-            if (isCancelled()) {
-                return null;
-            }
-            int i = query.getInt(query.getColumnIndexOrThrow("status"));
-            if (i != 16) {
+            if (!isCancelled()) {
+                int i = query.getInt(query.getColumnIndexOrThrow("status"));
+                if (i == 16) {
+                    throw new IllegalStateException("The download has failed with reason code: " + query.getInt(query.getColumnIndexOrThrow("reason")));
+                }
                 if (i != 8) {
                     this.mDownloader.onDownloadProgress(query);
+                } else {
+                    this.mDownloader.onDownloadComplete(query);
+                    query.close();
                     return null;
                 }
-                this.mDownloader.onDownloadComplete(query);
-                return null;
             }
-            throw new IllegalStateException("The download has failed with reason code: " + query.getInt(query.getColumnIndexOrThrow("reason")));
-        } finally {
             query.close();
+            return null;
+        } catch (Throwable th) {
+            query.close();
+            throw th;
         }
     }
 }

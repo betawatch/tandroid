@@ -34,13 +34,12 @@ final class ModuleNameRetriever {
         if (cache2 == null) {
             cache2 = buildCache(continuation);
         }
-        if (cache2 == notOnJava9 || (method = cache2.getModuleMethod) == null || (invoke = method.invoke(continuation.getClass(), null)) == null || (method2 = cache2.getDescriptorMethod) == null || (invoke2 = method2.invoke(invoke, null)) == null) {
-            return null;
-        }
-        Method method3 = cache2.nameMethod;
-        Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
-        if (invoke3 instanceof String) {
-            return (String) invoke3;
+        if (cache2 != notOnJava9 && (method = cache2.getModuleMethod) != null && (invoke = method.invoke(continuation.getClass(), null)) != null && (method2 = cache2.getDescriptorMethod) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
+            Method method3 = cache2.nameMethod;
+            Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
+            if (invoke3 instanceof String) {
+                return (String) invoke3;
+            }
         }
         return null;
     }

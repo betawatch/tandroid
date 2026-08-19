@@ -84,18 +84,10 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
         private Companion() {
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:8:0x003b, code lost:
-        
-            if (r2 == null) goto L13;
-         */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
         public final String getClassSimpleName(Class jClass) {
             String str;
-            String str2;
             Intrinsics.checkNotNullParameter(jClass, "jClass");
-            String str3 = null;
+            String str2 = null;
             if (jClass.isAnonymousClass()) {
                 return null;
             }
@@ -104,7 +96,10 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
                 Method enclosingMethod = jClass.getEnclosingMethod();
                 if (enclosingMethod != null) {
                     Intrinsics.checkNotNull(simpleName);
-                    str = StringsKt.substringAfter$default(simpleName, enclosingMethod.getName() + '$', (String) null, 2, (Object) null);
+                    String substringAfter$default = StringsKt.substringAfter$default(simpleName, enclosingMethod.getName() + '$', (String) null, 2, (Object) null);
+                    if (substringAfter$default != null) {
+                        return substringAfter$default;
+                    }
                 }
                 Constructor<?> enclosingConstructor = jClass.getEnclosingConstructor();
                 if (enclosingConstructor == null) {
@@ -115,18 +110,14 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
                 return StringsKt.substringAfter$default(simpleName, enclosingConstructor.getName() + '$', (String) null, 2, (Object) null);
             }
             if (!jClass.isArray()) {
-                String str4 = (String) ClassReference.simpleNames.get(jClass.getName());
-                return str4 == null ? jClass.getSimpleName() : str4;
+                String str3 = (String) ClassReference.simpleNames.get(jClass.getName());
+                return str3 == null ? jClass.getSimpleName() : str3;
             }
             Class<?> componentType = jClass.getComponentType();
-            str = "Array";
-            if (componentType.isPrimitive() && (str2 = (String) ClassReference.simpleNames.get(componentType.getName())) != null) {
-                str3 = str2 + "Array";
+            if (componentType.isPrimitive() && (str = (String) ClassReference.simpleNames.get(componentType.getName())) != null) {
+                str2 = str + "Array";
             }
-            if (str3 != null) {
-                return str3;
-            }
-            return str;
+            return str2 == null ? "Array" : str2;
         }
     }
 

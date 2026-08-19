@@ -103,12 +103,11 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        if (this.completed) {
-            this.imageView.getAnimatedDrawable().setAutoRepeat(0);
-            this.imageView.setAnimation(this.completedDrawable);
-            this.imageView.playAnimation();
+    public static /* synthetic */ void $r8$lambda$0fDImwMlsROjsm2DxSXGEhJncDs(ImportingAlert importingAlert) {
+        if (importingAlert.completed) {
+            importingAlert.imageView.getAnimatedDrawable().setAutoRepeat(0);
+            importingAlert.imageView.setAnimation(importingAlert.completedDrawable);
+            importingAlert.imageView.playAnimation();
         }
     }
 
@@ -119,7 +118,7 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ImportingAlert$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ImportingAlert.this.lambda$new$0();
+                ImportingAlert.$r8$lambda$0fDImwMlsROjsm2DxSXGEhJncDs(ImportingAlert.this);
             }
         };
         this.onFinishCallback = runnable;
@@ -167,7 +166,7 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
         this.cell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ImportingAlert$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ImportingAlert.this.lambda$new$1(view);
+                ImportingAlert.this.dismiss();
             }
         });
         this.cell.background.setPivotY(AndroidUtilities.dp(48.0f));
@@ -214,11 +213,6 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersImportProgressChanged);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        lambda$new$0();
-    }
-
     public void setCompleted() {
         this.completed = true;
         this.imageView.setAutoRepeat(false);
@@ -242,7 +236,7 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.historyImportProgressChanged) {
             if (objArr.length > 1) {
-                lambda$new$0();
+                dismiss();
                 return;
             }
             SendMessagesHelper.ImportingHistory importingHistory = this.parentFragment.getSendMessagesHelper().getImportingHistory(this.parentFragment.getDialogId());
@@ -261,7 +255,7 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
         }
         if (i == NotificationCenter.stickersImportProgressChanged) {
             if (objArr.length > 1) {
-                lambda$new$0();
+                dismiss();
                 return;
             }
             SendMessagesHelper.ImportingStickers importingStickers = SendMessagesHelper.getInstance(this.currentAccount).getImportingStickers(this.stickersShortName);

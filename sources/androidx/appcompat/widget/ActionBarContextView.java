@@ -326,10 +326,9 @@ public class ActionBarContextView extends AbsActionBarView {
         if (linearLayout != null && this.mCustomView == null && linearLayout.getVisibility() != 8) {
             i7 += positionChild(this.mTitleLayout, i7, paddingTop, paddingTop2, isLayoutRtl);
         }
-        int i8 = i7;
         View view2 = this.mCustomView;
         if (view2 != null) {
-            positionChild(view2, i8, paddingTop, paddingTop2, isLayoutRtl);
+            positionChild(view2, i7, paddingTop, paddingTop2, isLayoutRtl);
         }
         int paddingLeft = isLayoutRtl ? getPaddingLeft() : (i3 - i) - getPaddingRight();
         ActionMenuView actionMenuView = this.mMenuView;

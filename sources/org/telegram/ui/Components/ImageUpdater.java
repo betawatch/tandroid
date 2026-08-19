@@ -266,7 +266,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         builder.setItems((CharSequence[]) arrayList.toArray(new CharSequence[0]), iArr, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ImageUpdater$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
-                ImageUpdater.this.lambda$openMenu$0(arrayList3, runnable, dialogInterface, i3);
+                ImageUpdater.$r8$lambda$gG5PjXL7Dz2NCTbg2IJoUSNC4TM(ImageUpdater.this, arrayList3, runnable, dialogInterface, i3);
             }
         });
         BottomSheet create = builder.create();
@@ -277,26 +277,26 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMenu$0(ArrayList arrayList, Runnable runnable, DialogInterface dialogInterface, int i) {
+    public static /* synthetic */ void $r8$lambda$gG5PjXL7Dz2NCTbg2IJoUSNC4TM(ImageUpdater imageUpdater, ArrayList arrayList, Runnable runnable, DialogInterface dialogInterface, int i) {
+        imageUpdater.getClass();
         int intValue = ((Integer) arrayList.get(i)).intValue();
         if (intValue == 0) {
-            openCamera();
+            imageUpdater.openCamera();
             return;
         }
         if (intValue == 1) {
-            openGallery();
+            imageUpdater.openGallery();
             return;
         }
         if (intValue == 2) {
-            openSearch();
+            imageUpdater.openSearch();
         } else if (intValue == 3) {
             runnable.run();
         } else {
             if (intValue != 4) {
                 return;
             }
-            openVideoCamera();
+            imageUpdater.openVideoCamera();
         }
     }
 
@@ -810,15 +810,15 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ImageUpdater$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ImageUpdater.this.lambda$startCrop$1(str, uri);
+                ImageUpdater.$r8$lambda$yimo8f9g3VrhL8XaetKKc6Br8SA(ImageUpdater.this, str, uri);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startCrop$1(String str, Uri uri) {
+    public static /* synthetic */ void $r8$lambda$yimo8f9g3VrhL8XaetKKc6Br8SA(ImageUpdater imageUpdater, String str, Uri uri) {
+        imageUpdater.getClass();
         try {
-            LaunchActivity launchActivity = (LaunchActivity) this.parentFragment.getParentActivity();
+            LaunchActivity launchActivity = (LaunchActivity) imageUpdater.parentFragment.getParentActivity();
             if (launchActivity == null) {
                 return;
             }
@@ -829,11 +829,11 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                 bundle.putParcelable("photoUri", uri);
             }
             PhotoCropActivity photoCropActivity = new PhotoCropActivity(bundle);
-            photoCropActivity.setDelegate(this);
-            launchActivity.lambda$runLinkRequest$100(photoCropActivity);
+            photoCropActivity.setDelegate(imageUpdater);
+            launchActivity.presentFragment(photoCropActivity);
         } catch (Exception e) {
             FileLog.e(e);
-            processBitmap(false, ImageLoader.loadBitmap(str, uri, 800.0f, 800.0f, true), null);
+            imageUpdater.processBitmap(false, ImageLoader.loadBitmap(str, uri, 800.0f, 800.0f, true), null);
         }
     }
 

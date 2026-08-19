@@ -150,7 +150,8 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
                         this.fileStartTimes.remove(str);
                         this.sync.notifyAll();
                     }
-                } finally {
+                } catch (Throwable th) {
+                    throw th;
                 }
             }
         }

@@ -1,21 +1,16 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.Spliterators;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class b1 extends c1 {
-    @Override // j$.util.stream.I0
-    public final /* bridge */ /* synthetic */ void forEach(Consumer consumer) {
+public final class b1 extends c1 implements j$.util.Z {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.k(this, consumer);
     }
 
-    @Override // j$.util.stream.I0
-    public final /* bridge */ /* synthetic */ void i(Object[] objArr, int i) {
-    }
-
-    @Override // j$.util.stream.I0
-    public final Spliterator spliterator() {
-        return Spliterators.e();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.com.android.tools.r8.a.B(this, consumer);
     }
 }

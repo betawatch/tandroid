@@ -177,7 +177,7 @@ public class LocationMarker extends View {
             MediaDataController.getInstance(i).getStickerSet(tL_inputStickerSetShortName, 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Components.Paint.Views.LocationMarker$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    LocationMarker.this.lambda$setCodeEmoji$0(str, (TLRPC.TL_messages_stickerSet) obj);
+                    LocationMarker.$r8$lambda$kA9WVTNWvMZV_E_Uxm7XroalC4s(LocationMarker.this, str, (TLRPC.TL_messages_stickerSet) obj);
                 }
             });
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
@@ -185,7 +185,7 @@ public class LocationMarker extends View {
             MediaDataController.getInstance(i).getStickerSet(tL_inputStickerSetShortName2, 0, false, new Utilities.Callback() { // from class: org.telegram.ui.Components.Paint.Views.LocationMarker$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    LocationMarker.this.lambda$setCodeEmoji$1(str, (TLRPC.TL_messages_stickerSet) obj);
+                    LocationMarker.$r8$lambda$NnUrPcxtH-70pLxzfRxskgyUioA(LocationMarker.this, str, (TLRPC.TL_messages_stickerSet) obj);
                 }
             });
             this.flagImageReceiver.setImage(ImageLocation.getForDocument(this.flagDocument), "80_80", getEmojiThumb(str), null, null, 0);
@@ -195,22 +195,20 @@ public class LocationMarker extends View {
         requestLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCodeEmoji$0(String str, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        TLRPC.Document findDocument = findDocument(tL_messages_stickerSet, str);
-        this.flagDocument = findDocument;
-        this.flagImageReceiver.setImage(ImageLocation.getForDocument(findDocument), "80_80", getEmojiThumb(str), null, null, 0);
-        this.flagAnimatedImageReceiver.setImage(ImageLocation.getForDocument(this.flagAnimatedDocument), "80_80", ImageLocation.getForDocument(this.flagDocument), "80_80", null, null, getEmojiThumb(str), 0L, null, null, 0);
+    public static /* synthetic */ void $r8$lambda$kA9WVTNWvMZV_E_Uxm7XroalC4s(LocationMarker locationMarker, String str, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        TLRPC.Document findDocument = locationMarker.findDocument(tL_messages_stickerSet, str);
+        locationMarker.flagDocument = findDocument;
+        locationMarker.flagImageReceiver.setImage(ImageLocation.getForDocument(findDocument), "80_80", locationMarker.getEmojiThumb(str), null, null, 0);
+        locationMarker.flagAnimatedImageReceiver.setImage(ImageLocation.getForDocument(locationMarker.flagAnimatedDocument), "80_80", ImageLocation.getForDocument(locationMarker.flagDocument), "80_80", null, null, locationMarker.getEmojiThumb(str), 0L, null, null, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCodeEmoji$1(String str, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        TLRPC.Document findDocument = findDocument(tL_messages_stickerSet, str);
-        this.flagAnimatedDocument = findDocument;
+    public static /* synthetic */ void $r8$lambda$NnUrPcxtH-70pLxzfRxskgyUioA(LocationMarker locationMarker, String str, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        TLRPC.Document findDocument = locationMarker.findDocument(tL_messages_stickerSet, str);
+        locationMarker.flagAnimatedDocument = findDocument;
         if (findDocument == null) {
             return;
         }
-        this.flagAnimatedImageReceiver.setImage(ImageLocation.getForDocument(findDocument), "80_80", ImageLocation.getForDocument(this.flagDocument), "80_80", null, null, getEmojiThumb(str), 0L, null, null, 0);
+        locationMarker.flagAnimatedImageReceiver.setImage(ImageLocation.getForDocument(findDocument), "80_80", ImageLocation.getForDocument(locationMarker.flagDocument), "80_80", null, null, locationMarker.getEmojiThumb(str), 0L, null, null, 0);
     }
 
     private TLRPC.Document findDocument(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, String str) {

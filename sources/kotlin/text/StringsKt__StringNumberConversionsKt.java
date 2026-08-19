@@ -11,8 +11,8 @@ public abstract class StringsKt__StringNumberConversionsKt extends StringsKt__St
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x007a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -21,6 +21,7 @@ public abstract class StringsKt__StringNumberConversionsKt extends StringsKt__St
         Intrinsics.checkNotNullParameter(str, "<this>");
         CharsKt__CharJVMKt.checkRadix(i);
         int length = str.length();
+        Long l = null;
         if (length == 0) {
             return null;
         }
@@ -38,39 +39,40 @@ public abstract class StringsKt__StringNumberConversionsKt extends StringsKt__St
                 }
                 j = Long.MIN_VALUE;
                 i2 = 1;
-                long j2 = -256204778801521550L;
-                long j3 = 0;
-                long j4 = -256204778801521550L;
+                long j2 = 0;
+                long j3 = -256204778801521550L;
                 while (i2 < length) {
                     int digitOf = CharsKt__CharJVMKt.digitOf(str.charAt(i2), i);
                     if (digitOf < 0) {
-                        return null;
+                        return l;
                     }
-                    if (j3 < j4) {
-                        if (j4 == j2) {
-                            j4 = j / i;
-                            if (j3 < j4) {
-                            }
+                    if (j2 < j3) {
+                        if (j3 != -256204778801521550L) {
+                            return l;
                         }
-                        return null;
+                        j3 = j / i;
+                        if (j2 < j3) {
+                            return l;
+                        }
                     }
-                    long j5 = j3 * i;
-                    long j6 = digitOf;
-                    if (j5 < j + j6) {
-                        return null;
+                    Long l2 = l;
+                    int i3 = i2;
+                    long j4 = j2 * i;
+                    long j5 = digitOf;
+                    if (j4 < j + j5) {
+                        return l2;
                     }
-                    j3 = j5 - j6;
-                    i2++;
-                    j2 = -256204778801521550L;
+                    j2 = j4 - j5;
+                    i2 = i3 + 1;
+                    l = l2;
                 }
-                return !z ? Long.valueOf(j3) : Long.valueOf(-j3);
+                return !z ? Long.valueOf(j2) : Long.valueOf(-j2);
             }
             i2 = 1;
         }
         z = false;
-        long j22 = -256204778801521550L;
-        long j32 = 0;
-        long j42 = -256204778801521550L;
+        long j22 = 0;
+        long j32 = -256204778801521550L;
         while (i2 < length) {
         }
         if (!z) {

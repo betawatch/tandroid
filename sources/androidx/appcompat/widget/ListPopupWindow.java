@@ -66,9 +66,11 @@ public abstract class ListPopupWindow implements ShowableListMenu {
     private final PopupTouchInterceptor mTouchInterceptor;
 
     static {
-        if (Build.VERSION.SDK_INT <= 28) {
+        int i = Build.VERSION.SDK_INT;
+        Class cls = Boolean.TYPE;
+        if (i <= 28) {
             try {
-                sSetClipToWindowEnabledMethod = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", Boolean.TYPE);
+                sSetClipToWindowEnabledMethod = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", cls);
             } catch (NoSuchMethodException unused) {
                 Log.i("ListPopupWindow", "Could not find method setClipToScreenEnabled() on PopupWindow. Oh well.");
             }
@@ -80,7 +82,7 @@ public abstract class ListPopupWindow implements ShowableListMenu {
         }
         if (Build.VERSION.SDK_INT <= 23) {
             try {
-                sGetMaxAvailableHeightMethod = PopupWindow.class.getDeclaredMethod("getMaxAvailableHeight", View.class, Integer.TYPE, Boolean.TYPE);
+                sGetMaxAvailableHeightMethod = PopupWindow.class.getDeclaredMethod("getMaxAvailableHeight", View.class, Integer.TYPE, cls);
             } catch (NoSuchMethodException unused3) {
                 Log.i("ListPopupWindow", "Could not find method getMaxAvailableHeight(View, int, boolean) on PopupWindow. Oh well.");
             }

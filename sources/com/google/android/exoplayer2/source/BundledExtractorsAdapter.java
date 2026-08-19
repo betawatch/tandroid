@@ -26,15 +26,15 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
     
-        if (r6.getPosition() != r11) goto L23;
+        if (r1.getPosition() != r11) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0046, code lost:
     
-        r1 = false;
+        r14 = false;
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x006e, code lost:
     
-        if (r6.getPosition() != r11) goto L23;
+        if (r1.getPosition() != r11) goto L23;
      */
     @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
     /*

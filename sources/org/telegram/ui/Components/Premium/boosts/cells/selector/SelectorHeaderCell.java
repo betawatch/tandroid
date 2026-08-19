@@ -48,14 +48,13 @@ public class SelectorHeaderCell extends FrameLayout {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorHeaderCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SelectorHeaderCell.this.lambda$new$0(view);
+                SelectorHeaderCell.$r8$lambda$Q_aq6LZJEciJ9EbiU8tIvtGbJGc(SelectorHeaderCell.this, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        Runnable runnable = this.onCloseClickListener;
+    public static /* synthetic */ void $r8$lambda$Q_aq6LZJEciJ9EbiU8tIvtGbJGc(SelectorHeaderCell selectorHeaderCell, View view) {
+        Runnable runnable = selectorHeaderCell.onCloseClickListener;
         if (runnable != null) {
             runnable.run();
         }

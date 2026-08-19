@@ -57,10 +57,13 @@ public class PlayCoreDialogWrapperActivity extends Activity {
             finish();
         } else {
             try {
-                startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
-            } catch (IntentSender.SendIntentException unused) {
-                zza();
-                finish();
+                try {
+                    startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
+                } catch (IntentSender.SendIntentException unused) {
+                    zza();
+                    finish();
+                }
+            } catch (IntentSender.SendIntentException unused2) {
             }
         }
     }

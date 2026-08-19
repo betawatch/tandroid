@@ -56,20 +56,13 @@ final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.
 
     public boolean equals(Object obj) {
         CrashlyticsReport.Session.Event.Log log;
+        CrashlyticsReport.Session.Event.RolloutsState rolloutsState;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event)) {
-            return false;
-        }
-        CrashlyticsReport.Session.Event event = (CrashlyticsReport.Session.Event) obj;
-        if (this.timestamp == event.getTimestamp() && this.type.equals(event.getType()) && this.app.equals(event.getApp()) && this.device.equals(event.getDevice()) && ((log = this.log) != null ? log.equals(event.getLog()) : event.getLog() == null)) {
-            CrashlyticsReport.Session.Event.RolloutsState rolloutsState = this.rollouts;
-            if (rolloutsState == null) {
-                if (event.getRollouts() == null) {
-                    return true;
-                }
-            } else if (rolloutsState.equals(event.getRollouts())) {
+        if (obj instanceof CrashlyticsReport.Session.Event) {
+            CrashlyticsReport.Session.Event event = (CrashlyticsReport.Session.Event) obj;
+            if (this.timestamp == event.getTimestamp() && this.type.equals(event.getType()) && this.app.equals(event.getApp()) && this.device.equals(event.getDevice()) && ((log = this.log) != null ? log.equals(event.getLog()) : event.getLog() == null) && ((rolloutsState = this.rollouts) != null ? rolloutsState.equals(event.getRollouts()) : event.getRollouts() == null)) {
                 return true;
             }
         }

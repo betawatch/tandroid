@@ -107,43 +107,41 @@ final class AlignmentPatternFinder {
             iArr[1] = i6 + 1;
             i5--;
         }
-        if (i5 < 0 || iArr[1] > i3) {
-            return Float.NaN;
-        }
-        while (i5 >= 0 && !bitMatrix.get(i2, i5)) {
-            int i7 = iArr[0];
-            if (i7 > i3) {
-                break;
+        if (i5 >= 0 && iArr[1] <= i3) {
+            while (i5 >= 0 && !bitMatrix.get(i2, i5)) {
+                int i7 = iArr[0];
+                if (i7 > i3) {
+                    break;
+                }
+                iArr[0] = i7 + 1;
+                i5--;
             }
-            iArr[0] = i7 + 1;
-            i5--;
-        }
-        if (iArr[0] > i3) {
-            return Float.NaN;
-        }
-        int i8 = i + 1;
-        while (i8 < height && bitMatrix.get(i2, i8)) {
-            int i9 = iArr[1];
-            if (i9 > i3) {
-                break;
+            if (iArr[0] > i3) {
+                return Float.NaN;
             }
-            iArr[1] = i9 + 1;
-            i8++;
-        }
-        if (i8 == height || iArr[1] > i3) {
-            return Float.NaN;
-        }
-        while (i8 < height && !bitMatrix.get(i2, i8)) {
-            int i10 = iArr[2];
-            if (i10 > i3) {
-                break;
+            int i8 = i + 1;
+            while (i8 < height && bitMatrix.get(i2, i8)) {
+                int i9 = iArr[1];
+                if (i9 > i3) {
+                    break;
+                }
+                iArr[1] = i9 + 1;
+                i8++;
             }
-            iArr[2] = i10 + 1;
-            i8++;
-        }
-        int i11 = iArr[2];
-        if (i11 <= i3 && Math.abs(((iArr[0] + iArr[1]) + i11) - i4) * 5 < i4 * 2 && foundPatternCross(iArr)) {
-            return centerFromEnd(iArr, i8);
+            if (i8 != height && iArr[1] <= i3) {
+                while (i8 < height && !bitMatrix.get(i2, i8)) {
+                    int i10 = iArr[2];
+                    if (i10 > i3) {
+                        break;
+                    }
+                    iArr[2] = i10 + 1;
+                    i8++;
+                }
+                int i11 = iArr[2];
+                if (i11 <= i3 && Math.abs(((iArr[0] + iArr[1]) + i11) - i4) * 5 < i4 * 2 && foundPatternCross(iArr)) {
+                    return centerFromEnd(iArr, i8);
+                }
+            }
         }
         return Float.NaN;
     }

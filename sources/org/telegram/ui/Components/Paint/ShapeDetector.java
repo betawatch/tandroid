@@ -37,7 +37,7 @@ public class ShapeDetector {
     private Runnable detect = new Runnable() { // from class: org.telegram.ui.Components.Paint.ShapeDetector$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            ShapeDetector.this.lambda$new$2();
+            ShapeDetector.$r8$lambda$nqveIXGn67co06Ms1Bb-_Os5JfM(ShapeDetector.this);
         }
     };
 
@@ -47,7 +47,8 @@ public class ShapeDetector {
         halfDiagonal = sqrt / 2.0d;
     }
 
-    private static class Point {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class Point {
         public double x;
         public double y;
 
@@ -102,7 +103,8 @@ public class ShapeDetector {
         }
     }
 
-    private static class Template {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class Template {
         public ArrayList points;
         public int score;
         public int shapeType;
@@ -179,16 +181,16 @@ public class ShapeDetector {
         queue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.ShapeDetector$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ShapeDetector.this.lambda$parseTemplates$0();
+                ShapeDetector.$r8$lambda$OT-SSOXXz1D93SF52xzh08SvNKk(ShapeDetector.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$parseTemplates$0() {
+    public static /* synthetic */ void $r8$lambda$OT-SSOXXz1D93SF52xzh08SvNKk(ShapeDetector shapeDetector) {
         1 r5;
         char c;
         String string;
+        shapeDetector.getClass();
         try {
             InputStream open = ApplicationLoader.applicationContext.getAssets().open("shapes.dat");
             while (true) {
@@ -208,12 +210,12 @@ public class ShapeDetector {
                 for (int i = 0; i < read; i++) {
                     template.points.add(new Point((open.read() - read2) - 127, (open.read() - read3) - 127));
                 }
-                template.score = this.preferences.getInt("score" + this.templates.size(), 0);
-                this.templates.add(template);
+                template.score = shapeDetector.preferences.getInt("score" + shapeDetector.templates.size(), 0);
+                shapeDetector.templates.add(template);
             }
-            if (this.isLearning && (string = this.preferences.getString("moretemplates", null)) != null) {
+            if (shapeDetector.isLearning && (string = shapeDetector.preferences.getString("moretemplates", null)) != null) {
                 String[] split = string.split("\\|");
-                int size = this.templates.size();
+                int size = shapeDetector.templates.size();
                 int i2 = 0;
                 while (i2 < split.length) {
                     Template template2 = new Template();
@@ -223,8 +225,8 @@ public class ShapeDetector {
                         for (int i3 = 1; i3 < split2.length; i3 += 2) {
                             template2.points.add(new Point(Double.parseDouble(split2[i3]), Double.parseDouble(split2[i3 + 1])));
                         }
-                        template2.score = this.preferences.getInt("score" + (size + i2), 0);
-                        this.templates.add(template2);
+                        template2.score = shapeDetector.preferences.getInt("score" + (size + i2), 0);
+                        shapeDetector.templates.add(template2);
                     }
                     i2++;
                     r5 = null;
@@ -237,52 +239,47 @@ public class ShapeDetector {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
+    public static /* synthetic */ void $r8$lambda$nqveIXGn67co06Ms1Bb-_Os5JfM(final ShapeDetector shapeDetector) {
         String str;
-        if (this.busy.get()) {
+        if (shapeDetector.busy.get()) {
             return;
         }
-        this.scheduled.set(false);
-        this.busy.set(true);
+        shapeDetector.scheduled.set(false);
+        shapeDetector.busy.set(true);
         long currentTimeMillis = System.currentTimeMillis();
-        synchronized (this) {
+        synchronized (shapeDetector) {
             try {
-                if (this.points.size() < 8) {
-                    this.busy.set(false);
+                if (shapeDetector.points.size() < 8) {
+                    shapeDetector.busy.set(false);
                     return;
                 }
-                ArrayList resample = resample(fullClone(this.points), 48);
-                ArrayList fullClone = fullClone(resample);
-                rotate(fullClone, indicativeAngle(fullClone));
-                Point centroid = centroid(fullClone);
-                translate(fullClone, -centroid.x, -centroid.y);
-                scale(fullClone, 250.0d);
-                Point centroid2 = centroid(fullClone);
+                ArrayList resample = shapeDetector.resample(shapeDetector.fullClone(shapeDetector.points), 48);
+                final ArrayList fullClone = shapeDetector.fullClone(resample);
+                shapeDetector.rotate(fullClone, shapeDetector.indicativeAngle(fullClone));
+                Point centroid = shapeDetector.centroid(fullClone);
+                shapeDetector.translate(fullClone, -centroid.x, -centroid.y);
+                shapeDetector.scale(fullClone, 250.0d);
+                Point centroid2 = shapeDetector.centroid(fullClone);
                 double d = Double.MAX_VALUE;
                 int i = 0;
                 int i2 = -1;
                 int i3 = -1;
-                while (i < this.templates.size()) {
-                    ArrayList arrayList = fullClone;
+                while (i < shapeDetector.templates.size()) {
                     int i4 = i;
-                    ArrayList arrayList2 = fullClone;
                     int i5 = i2;
-                    double distanceAtBestAngle = distanceAtBestAngle(arrayList, centroid2, ((Template) this.templates.get(i)).points, -1.5707963267948966d, 1.5707963267948966d, 0.06981317007977318d);
+                    double distanceAtBestAngle = shapeDetector.distanceAtBestAngle(fullClone, centroid2, ((Template) shapeDetector.templates.get(i)).points, -1.5707963267948966d, 1.5707963267948966d, 0.06981317007977318d);
                     if (distanceAtBestAngle < d) {
                         d = distanceAtBestAngle;
-                        i3 = ((Template) this.templates.get(i4)).shapeType;
+                        i3 = ((Template) shapeDetector.templates.get(i4)).shapeType;
                         i2 = i4;
                     } else {
                         i2 = i5;
                     }
                     i = i4 + 1;
-                    fullClone = arrayList2;
                 }
-                final ArrayList arrayList3 = fullClone;
                 final int i6 = i2;
                 int i7 = 1.0d - (d / halfDiagonal) < 0.8d ? -1 : i3;
-                final Shape constructShape = constructShape(i7, resample);
+                final Shape constructShape = shapeDetector.constructShape(i7, resample);
                 if (BuildVars.LOGS_ENABLED) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("took ");
@@ -301,29 +298,29 @@ public class ShapeDetector {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.ShapeDetector$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ShapeDetector.this.lambda$new$1(constructShape, i6, arrayList3);
+                        ShapeDetector.$r8$lambda$L8dkv00z7PHHUqzDgLQDZ6VVPts(ShapeDetector.this, constructShape, i6, fullClone);
                     }
                 });
-                this.busy.set(false);
+                shapeDetector.busy.set(false);
             } catch (Throwable th) {
                 throw th;
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Shape shape, int i, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$L8dkv00z7PHHUqzDgLQDZ6VVPts(ShapeDetector shapeDetector, Shape shape, int i, ArrayList arrayList) {
+        shapeDetector.getClass();
         boolean z = shape != null;
-        this.shapeDetected = z;
-        if (z && i >= 0 && i < this.templates.size()) {
-            this.templatesUsageScore++;
-            ((Template) this.templates.get(i)).score++;
-            this.preferences.edit().putInt("score" + i, ((Template) this.templates.get(i)).score).putInt("scoreall", this.templatesUsageScore).apply();
-            this.toSave = null;
+        shapeDetector.shapeDetected = z;
+        if (z && i >= 0 && i < shapeDetector.templates.size()) {
+            shapeDetector.templatesUsageScore++;
+            ((Template) shapeDetector.templates.get(i)).score++;
+            shapeDetector.preferences.edit().putInt("score" + i, ((Template) shapeDetector.templates.get(i)).score).putInt("scoreall", shapeDetector.templatesUsageScore).apply();
+            shapeDetector.toSave = null;
         } else {
-            this.toSave = arrayList;
+            shapeDetector.toSave = arrayList;
         }
-        this.onShapeDetected.run(shape);
+        shapeDetector.onShapeDetected.run(shape);
     }
 
     private ArrayList resample(ArrayList arrayList, int i) {
@@ -368,53 +365,51 @@ public class ShapeDetector {
         double d5 = (sqrt * d) + (d4 * d2);
         double d6 = (d4 * d) + (sqrt * d2);
         double distanceAtAngle = distanceAtAngle(arrayList, point, arrayList2, d5);
+        double d7 = d6;
         double distanceAtAngle2 = distanceAtAngle(arrayList, point, arrayList2, d6);
-        double d7 = d5;
-        double d8 = d6;
-        double d9 = d;
-        double d10 = d2;
-        while (Math.abs(d10 - d9) > d3) {
+        double d8 = d;
+        double d9 = d2;
+        while (Math.abs(d9 - d8) > d3) {
             if (distanceAtAngle < distanceAtAngle2) {
-                double d11 = (sqrt * d9) + (d4 * d8);
-                double d12 = distanceAtAngle;
-                distanceAtAngle = distanceAtAngle(arrayList, point, arrayList2, d11);
-                distanceAtAngle2 = d12;
-                d10 = d8;
-                d8 = d7;
-                d7 = d11;
+                double d10 = (d4 * d7) + (sqrt * d8);
+                distanceAtAngle2 = distanceAtAngle;
+                d9 = d7;
+                distanceAtAngle = distanceAtAngle(arrayList, point, arrayList2, d10);
+                d7 = d5;
+                d5 = d10;
             } else {
-                double d13 = (d4 * d7) + (sqrt * d10);
+                double d11 = (d4 * d5) + (sqrt * d9);
                 distanceAtAngle = distanceAtAngle2;
-                distanceAtAngle2 = distanceAtAngle(arrayList, point, arrayList2, d13);
-                double d14 = d7;
-                d7 = d8;
-                d8 = d13;
-                d9 = d14;
+                d8 = d5;
+                d5 = d7;
+                distanceAtAngle2 = distanceAtAngle(arrayList, point, arrayList2, d11);
+                d7 = d11;
             }
         }
         return Math.min(distanceAtAngle, distanceAtAngle2);
     }
 
     private double distanceAtAngle(ArrayList arrayList, Point point, ArrayList arrayList2, double d) {
+        Point point2 = point;
         double cos = Math.cos(d);
         double sin = Math.sin(d);
         int min = Math.min(arrayList.size(), arrayList2.size());
         double d2 = 0.0d;
         int i = 0;
         while (i < min) {
-            Point point2 = (Point) arrayList.get(i);
-            Point point3 = (Point) arrayList2.get(i);
-            double d3 = point2.x;
-            int i2 = i;
-            double d4 = point.x;
-            double d5 = d3 - d4;
-            double d6 = point2.y;
-            int i3 = min;
-            double d7 = point.y;
-            double d8 = d6 - d7;
-            d2 += point3.distance(((d5 * cos) - (d8 * sin)) + d4, (d5 * sin) + (d8 * cos) + d7);
-            i = i2 + 1;
-            min = i3;
+            Point point3 = (Point) arrayList.get(i);
+            Point point4 = (Point) arrayList2.get(i);
+            double d3 = point3.x;
+            double d4 = cos;
+            double d5 = point2.x;
+            double d6 = d3 - d5;
+            double d7 = point3.y;
+            double d8 = point2.y;
+            double d9 = d7 - d8;
+            d2 += point4.distance(((d6 * d4) - (d9 * sin)) + d5, (d6 * sin) + (d9 * d4) + d8);
+            i++;
+            point2 = point;
+            cos = d4;
         }
         return d2 / arrayList.size();
     }
@@ -460,13 +455,15 @@ public class ShapeDetector {
             double d2 = point2.x;
             double d3 = point.x;
             double d4 = d2 - d3;
-            double d5 = point2.y;
-            int i2 = i;
-            double d6 = point.y;
-            double d7 = d5 - d6;
-            point2.y = (d4 * sin) + (d7 * cos) + d6;
-            point2.x = ((d4 * cos) - (d7 * sin)) + d3;
-            i = i2 + 1;
+            double d5 = d4 * cos;
+            double d6 = point2.y;
+            double d7 = cos;
+            double d8 = point.y;
+            double d9 = d6 - d8;
+            point2.y = (d4 * sin) + (d9 * d7) + d8;
+            point2.x = (d5 - (d9 * sin)) + d3;
+            i++;
+            cos = d7;
         }
     }
 
@@ -559,17 +556,17 @@ public class ShapeDetector {
             shape.radiusX = (float) point3.x;
             shape.radiusY = (float) point3.y;
             shape.arrowTriangleLength = 16.0f;
-        } else {
-            Point centroid = centroid(arrayList);
-            shape.centerX = (float) centroid.x;
-            shape.centerY = (float) centroid.y;
-            RectD boundingBox = boundingBox(arrayList);
-            shape.radiusX = ((float) (boundingBox.right - boundingBox.left)) / 2.0f;
-            shape.radiusY = ((float) (boundingBox.bottom - boundingBox.top)) / 2.0f;
-            if (i == 2 && (findAnglePoint = findAnglePoint(arrayList, 1)) > 0) {
-                Point point4 = (Point) arrayList.get(findAnglePoint);
-                shape.rotation = (float) Math.atan2(point4.y - shape.centerY, point4.x - shape.centerX);
-            }
+            return shape;
+        }
+        Point centroid = centroid(arrayList);
+        shape.centerX = (float) centroid.x;
+        shape.centerY = (float) centroid.y;
+        RectD boundingBox = boundingBox(arrayList);
+        shape.radiusX = ((float) (boundingBox.right - boundingBox.left)) / 2.0f;
+        shape.radiusY = ((float) (boundingBox.bottom - boundingBox.top)) / 2.0f;
+        if (i == 2 && (findAnglePoint = findAnglePoint(arrayList, 1)) > 0) {
+            Point point4 = (Point) arrayList.get(findAnglePoint);
+            shape.rotation = (float) Math.atan2(point4.y - shape.centerY, point4.x - shape.centerX);
         }
         return shape;
     }
@@ -579,53 +576,53 @@ public class ShapeDetector {
         new AlertDialog.Builder(this.context).setTitle("Shape?").setItems(new String[]{"Log all", "Circle", "Rectangle", "Star", "Bubble", "Arrow", "None"}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Paint.ShapeDetector$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                ShapeDetector.this.lambda$showSaveLearnDialog$3(arrayList, dialogInterface, i);
+                ShapeDetector.$r8$lambda$l0wNvQdW2E2Yd3fJ9CctlH7Sq8U(ShapeDetector.this, arrayList, dialogInterface, i);
             }
         }).show();
         this.toSave = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showSaveLearnDialog$3(ArrayList arrayList, DialogInterface dialogInterface, int i) {
-        if (i == 0) {
-            StringBuilder sb = new StringBuilder();
-            sb.append("[");
-            for (int i2 = 0; i2 < this.templates.size(); i2++) {
-                Template template = (Template) this.templates.get(i2);
-                if (i2 > 0) {
-                    sb.append(",\n");
-                }
-                sb.append("\t{\n\t\t\"shape\": ");
-                sb.append(template.shapeType);
-                sb.append(",\n\t\t\"points\": [");
-                for (int i3 = 0; i3 < template.points.size(); i3++) {
-                    if (i3 > 0) {
-                        sb.append(",");
-                    }
-                    Point point = (Point) template.points.get(i3);
-                    sb.append("[");
-                    sb.append(Math.round(point.x));
-                    sb.append(",");
-                    sb.append(Math.round(point.y));
-                    sb.append("]");
-                }
-                sb.append("],\n\t\t\"freq\": ");
-                sb.append(Math.round(((template.score / this.templatesUsageScore) * 100.0f) * 100.0f) / 100.0f);
-                sb.append("\n\t}");
+    public static /* synthetic */ void $r8$lambda$l0wNvQdW2E2Yd3fJ9CctlH7Sq8U(ShapeDetector shapeDetector, ArrayList arrayList, DialogInterface dialogInterface, int i) {
+        shapeDetector.getClass();
+        if (i != 0) {
+            Template template = new Template();
+            template.shapeType = i - 1;
+            template.points = arrayList;
+            shapeDetector.templates.add(template);
+            String string = shapeDetector.preferences.getString("moretemplates", null);
+            String str = string == null ? "" + template.shapeType : string + "|" + template.shapeType;
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                str = str + "," + Math.round(((Point) arrayList.get(i2)).x) + "," + Math.round(((Point) arrayList.get(i2)).y);
             }
-            sb.append("\n]");
-            Log.i("shapedetector", sb.toString());
+            shapeDetector.preferences.edit().putString("moretemplates", str).apply();
             return;
         }
-        Template template2 = new Template();
-        template2.shapeType = i - 1;
-        template2.points = arrayList;
-        this.templates.add(template2);
-        String string = this.preferences.getString("moretemplates", null);
-        String str = string == null ? "" + template2.shapeType : string + "|" + template2.shapeType;
-        for (int i4 = 0; i4 < arrayList.size(); i4++) {
-            str = str + "," + Math.round(((Point) arrayList.get(i4)).x) + "," + Math.round(((Point) arrayList.get(i4)).y);
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i3 = 0; i3 < shapeDetector.templates.size(); i3++) {
+            Template template2 = (Template) shapeDetector.templates.get(i3);
+            if (i3 > 0) {
+                sb.append(",\n");
+            }
+            sb.append("\t{\n\t\t\"shape\": ");
+            sb.append(template2.shapeType);
+            sb.append(",\n\t\t\"points\": [");
+            for (int i4 = 0; i4 < template2.points.size(); i4++) {
+                if (i4 > 0) {
+                    sb.append(",");
+                }
+                Point point = (Point) template2.points.get(i4);
+                sb.append("[");
+                sb.append(Math.round(point.x));
+                sb.append(",");
+                sb.append(Math.round(point.y));
+                sb.append("]");
+            }
+            sb.append("],\n\t\t\"freq\": ");
+            sb.append(Math.round(((template2.score / shapeDetector.templatesUsageScore) * 100.0f) * 100.0f) / 100.0f);
+            sb.append("\n\t}");
         }
-        this.preferences.edit().putString("moretemplates", str).apply();
+        sb.append("\n]");
+        Log.i("shapedetector", sb.toString());
     }
 }

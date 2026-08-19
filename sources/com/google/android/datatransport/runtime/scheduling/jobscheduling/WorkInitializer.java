@@ -24,28 +24,20 @@ public class WorkInitializer {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WorkInitializer.this.lambda$ensureContextsScheduled$1();
+                r0.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda1
+                    @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
+                    public final Object execute() {
+                        return WorkInitializer.$r8$lambda$-ZllettEmXhg2KekoGpGM9ilHcY(WorkInitializer.this);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$ensureContextsScheduled$1() {
-        this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda1
-            @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
-            public final Object execute() {
-                Object lambda$ensureContextsScheduled$0;
-                lambda$ensureContextsScheduled$0 = WorkInitializer.this.lambda$ensureContextsScheduled$0();
-                return lambda$ensureContextsScheduled$0;
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$ensureContextsScheduled$0() {
-        Iterator it = this.store.loadActiveContexts().iterator();
+    public static /* synthetic */ Object $r8$lambda$-ZllettEmXhg2KekoGpGM9ilHcY(WorkInitializer workInitializer) {
+        Iterator it = workInitializer.store.loadActiveContexts().iterator();
         while (it.hasNext()) {
-            this.scheduler.schedule((TransportContext) it.next(), 1);
+            workInitializer.scheduler.schedule((TransportContext) it.next(), 1);
         }
         return null;
     }

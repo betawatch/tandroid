@@ -53,7 +53,7 @@ public class ContainerMediaChunk extends BaseMediaChunk {
             long j = this.clippedStartTimeUs;
             long j2 = j == -9223372036854775807L ? -9223372036854775807L : j - this.sampleOffsetUs;
             long j3 = this.clippedEndTimeUs;
-            chunkExtractor.init(trackOutputProvider, j2, j3 == -9223372036854775807L ? -9223372036854775807L : j3 - this.sampleOffsetUs);
+            chunkExtractor.init(trackOutputProvider, j2, j3 != -9223372036854775807L ? j3 - this.sampleOffsetUs : -9223372036854775807L);
         }
         try {
             DataSpec subrange = this.dataSpec.subrange(this.nextLoadPosition);

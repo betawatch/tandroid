@@ -23,6 +23,7 @@ final class VbriSeeker implements Seeker {
         int readUnsignedByte;
         parsableByteArray.skipBytes(10);
         int readInt = parsableByteArray.readInt();
+        VbriSeeker vbriSeeker = null;
         if (readInt <= 0) {
             return null;
         }
@@ -31,40 +32,44 @@ final class VbriSeeker implements Seeker {
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
         int readUnsignedShort2 = parsableByteArray.readUnsignedShort();
         int readUnsignedShort3 = parsableByteArray.readUnsignedShort();
+        int i2 = 2;
         parsableByteArray.skipBytes(2);
         long j3 = j2 + header.frameSize;
         long[] jArr = new long[readUnsignedShort];
         long[] jArr2 = new long[readUnsignedShort];
-        int i2 = 0;
+        int i3 = 0;
         long j4 = j2;
-        while (i2 < readUnsignedShort) {
-            int i3 = readUnsignedShort2;
-            long j5 = j3;
-            jArr[i2] = (i2 * scaleLargeTimestamp) / readUnsignedShort;
-            jArr2[i2] = Math.max(j4, j5);
+        while (i3 < readUnsignedShort) {
+            VbriSeeker vbriSeeker2 = vbriSeeker;
+            int i4 = readUnsignedShort2;
+            long[] jArr3 = jArr;
+            jArr3[i3] = (i3 * scaleLargeTimestamp) / readUnsignedShort;
+            jArr2[i3] = Math.max(j4, j3);
             if (readUnsignedShort3 == 1) {
                 readUnsignedByte = parsableByteArray.readUnsignedByte();
-            } else if (readUnsignedShort3 == 2) {
+            } else if (readUnsignedShort3 == i2) {
                 readUnsignedByte = parsableByteArray.readUnsignedShort();
             } else if (readUnsignedShort3 == 3) {
                 readUnsignedByte = parsableByteArray.readUnsignedInt24();
             } else {
                 if (readUnsignedShort3 != 4) {
-                    return null;
+                    return vbriSeeker2;
                 }
                 readUnsignedByte = parsableByteArray.readUnsignedIntToInt();
             }
-            j4 += readUnsignedByte * i3;
-            i2++;
-            jArr = jArr;
-            readUnsignedShort2 = i3;
-            j3 = j5;
+            j4 += readUnsignedByte * i4;
+            i3++;
+            vbriSeeker = vbriSeeker2;
+            readUnsignedShort2 = i4;
+            jArr = jArr3;
+            j3 = j3;
+            i2 = 2;
         }
-        long[] jArr3 = jArr;
+        long[] jArr4 = jArr;
         if (j != -1 && j != j4) {
             Log.w("VbriSeeker", "VBRI data size mismatch: " + j + ", " + j4);
         }
-        return new VbriSeeker(jArr3, jArr2, scaleLargeTimestamp, j4);
+        return new VbriSeeker(jArr4, jArr2, scaleLargeTimestamp, j4);
     }
 
     private VbriSeeker(long[] jArr, long[] jArr2, long j, long j2) {

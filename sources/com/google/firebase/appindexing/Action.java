@@ -21,7 +21,7 @@ public interface Action {
             this.zzb = str;
         }
 
-        /* JADX WARN: Type inference failed for: r1v3, types: [com.google.firebase.appindexing.Action$Metadata$Builder] */
+        /* JADX WARN: Type inference failed for: r0v4, types: [com.google.firebase.appindexing.Action$Metadata$Builder] */
         public Action build() {
             Preconditions.checkNotNull(this.zzc, "setObject is required before calling build().");
             Preconditions.checkNotNull(this.zzd, "setObject is required before calling build().");

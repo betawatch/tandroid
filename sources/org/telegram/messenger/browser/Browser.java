@@ -289,51 +289,146 @@ public abstract class Browser {
         openUrl(context, uri, z, z2, false, progress, null, false, true, false);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(17:19|(1:21)|(3:119|120|121)|24|25|(1:27)|(3:(2:30|(1:32))|33|(2:48|(2:50|51)(5:52|53|54|55|56)))|112|(3:89|90|(2:(4:93|(1:95)|96|(7:98|(2:100|(2:102|(1:104)))|63|64|65|(1:67)|(1:(2:74|(4:76|(2:80|(1:82))|83|84)(1:85))(2:86|87))(2:71|72)))|106))|61|(6:88|64|65|(0)|(1:69)|(0)(0))|63|64|65|(0)|(0)|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x0277, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(10:21|(10:124|125|126|26|27|(5:112|113|114|115|116)(1:29)|(3:(2:32|(1:34))|35|(2:50|(2:52|53)(7:54|55|56|57|58|59|61)))|62|(3:91|92|(2:(1:95)|107))|64)|25|26|27|(0)(0)|(0)|62|(0)|64) */
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0249, code lost:
     
-        if ("tonsite".equals(r2.getScheme()) != false) goto L117;
+        if (r9.getScheme() != null) goto L111;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x024a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x0253, code lost:
     
-        if (isInstantViewOpen() != false) goto L105;
+        if (r8.equals(r9.getScheme()) == false) goto L113;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x0148, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x025d, code lost:
+    
+        if ("http".equals(r9.getScheme()) == false) goto L115;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x026a, code lost:
+    
+        if ("tonsite".equals(r9.getScheme()) == false) goto L117;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x023d, code lost:
+    
+        if (isInstantViewOpen() != false) goto L107;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x021f, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0274, code lost:
     
-        if ("https".equals(r1) != false) goto L150;
+        if (isTonsite(r9.toString()) == false) goto L120;
      */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0127 A[Catch: Exception -> 0x0148, TryCatch #2 {Exception -> 0x0148, blocks: (B:25:0x010b, B:27:0x0127, B:30:0x014e, B:33:0x0160, B:35:0x0166, B:38:0x0172, B:40:0x017b, B:42:0x0185, B:44:0x018a, B:46:0x0194, B:48:0x019e, B:50:0x01aa, B:52:0x01bc), top: B:24:0x010b }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x028e A[Catch: Exception -> 0x0243, TRY_ENTER, TryCatch #5 {Exception -> 0x0243, blocks: (B:90:0x022e, B:93:0x0234, B:96:0x024c, B:98:0x0252, B:100:0x0258, B:102:0x0262, B:104:0x026c, B:64:0x0286, B:67:0x028e, B:69:0x0297, B:71:0x029b, B:74:0x02a9, B:76:0x02b3, B:78:0x02b9, B:80:0x02c3, B:82:0x02d8, B:83:0x02dc, B:86:0x02e4, B:106:0x0246, B:61:0x0279), top: B:89:0x022e }] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0297 A[Catch: Exception -> 0x0243, TryCatch #5 {Exception -> 0x0243, blocks: (B:90:0x022e, B:93:0x0234, B:96:0x024c, B:98:0x0252, B:100:0x0258, B:102:0x0262, B:104:0x026c, B:64:0x0286, B:67:0x028e, B:69:0x0297, B:71:0x029b, B:74:0x02a9, B:76:0x02b3, B:78:0x02b9, B:80:0x02c3, B:82:0x02d8, B:83:0x02dc, B:86:0x02e4, B:106:0x0246, B:61:0x0279), top: B:89:0x022e }] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x02a9 A[Catch: Exception -> 0x0243, TryCatch #5 {Exception -> 0x0243, blocks: (B:90:0x022e, B:93:0x0234, B:96:0x024c, B:98:0x0252, B:100:0x0258, B:102:0x0262, B:104:0x026c, B:64:0x0286, B:67:0x028e, B:69:0x0297, B:71:0x029b, B:74:0x02a9, B:76:0x02b3, B:78:0x02b9, B:80:0x02c3, B:82:0x02d8, B:83:0x02dc, B:86:0x02e4, B:106:0x0246, B:61:0x0279), top: B:89:0x022e }] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x02e4 A[Catch: Exception -> 0x0243, TRY_LEAVE, TryCatch #5 {Exception -> 0x0243, blocks: (B:90:0x022e, B:93:0x0234, B:96:0x024c, B:98:0x0252, B:100:0x0258, B:102:0x0262, B:104:0x026c, B:64:0x0286, B:67:0x028e, B:69:0x0297, B:71:0x029b, B:74:0x02a9, B:76:0x02b3, B:78:0x02b9, B:80:0x02c3, B:82:0x02d8, B:83:0x02dc, B:86:0x02e4, B:106:0x0246, B:61:0x0279), top: B:89:0x022e }] */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0285  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x022e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x0276, code lost:
+    
+        r2 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x027d, code lost:
+    
+        if (r9.getScheme() == null) goto L124;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x027f, code lost:
+    
+        r9.getScheme().equalsIgnoreCase("intent");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x0286, code lost:
+    
+        if (r13 == false) goto L128;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0288, code lost:
+    
+        r0 = org.telegram.ui.LaunchActivity.instance;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x028a, code lost:
+    
+        if (r0 == null) goto L128;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x028c, code lost:
+    
+        openAsInternalIntent(r0, r9.toString(), r20, r25, r1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:75:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0298, code lost:
+    
+        if (r2 == false) goto L139;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x02a2, code lost:
+    
+        if (openInExternalApp(r16, r9.toString(), r23) != false) goto L166;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x02a8, code lost:
+    
+        if (r9.getScheme() == null) goto L138;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x02b2, code lost:
+    
+        if (r9.getScheme().equalsIgnoreCase("intent") == false) goto L138;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x02b4, code lost:
+    
+        r0 = android.content.Intent.parseUri(r9.toString(), 1).getStringExtra("browser_fallback_url");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x02c7, code lost:
+    
+        if (android.text.TextUtils.isEmpty(r0) != false) goto L138;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x02c9, code lost:
+    
+        r9 = android.net.Uri.parse(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x02cd, code lost:
+    
+        openInTelegramBrowser(r16, r9.toString(), r1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:87:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:88:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x02d5, code lost:
+    
+        openInExternalBrowser(r16, r9.toString(), r23, r14);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:90:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0237, code lost:
+    
+        if (org.telegram.messenger.MessagesController.getInstance(r3).isWebBrowserOpenInApp(r9.toString()) != false) goto L107;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x0243, code lost:
+    
+        if (android.text.TextUtils.isEmpty(r14) == false) goto L117;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0116 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0225 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void openUrl(final Context context, final Uri uri, boolean z, boolean z2, boolean z3, final Progress progress, String str, boolean z4, boolean z5, boolean z6) {
-        boolean z7;
+    public static void openUrl(final Context context, final Uri uri, boolean z, boolean z2, boolean z3, Progress progress, String str, boolean z4, boolean z5, boolean z6) {
+        final boolean z7;
         boolean z8;
+        final Progress progress2;
         String str2;
-        boolean[] zArr;
-        Uri uri2;
         boolean z9;
-        LaunchActivity launchActivity;
+        Uri uri2;
         String lowerCase;
-        String str3;
         String hostAuthority;
+        char c;
         if (context == null || uri == null) {
             return;
         }
         final int i = UserConfig.selectedAccount;
-        boolean[] zArr2 = {false};
-        boolean isInternalUri = isInternalUri(uri, zArr2);
+        boolean[] zArr = {false};
+        boolean isInternalUri = isInternalUri(uri, zArr);
         String browserPackageName = getBrowserPackageName(str);
         if (browserPackageName != null) {
             z8 = false;
@@ -359,211 +454,131 @@ public abstract class Browser {
                     final AlertDialog[] alertDialogArr = {new AlertDialog(context, 3)};
                     TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                     getwebpagepreview.message = uri.toString();
-                    str2 = browserPackageName;
-                    zArr = zArr2;
-                    final boolean z10 = z7;
+                    progress2 = progress;
                     try {
                         final int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new RequestDelegate() { // from class: org.telegram.messenger.browser.Browser$$ExternalSyntheticLambda0
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                Browser.lambda$openUrl$1(Browser.Progress.this, alertDialogArr, i, uri, context, z10, tLObject, tL_error);
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.browser.Browser$$ExternalSyntheticLambda3
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        Browser.$r8$lambda$r0CCM-iFnrGCwmVQpGqtZgRrTxo(Browser.Progress.this, r2, tLObject, r4, r5, r6, r7);
+                                    }
+                                });
                             }
                         });
-                        if (progress != null) {
-                            progress.init();
-                            return;
-                        } else {
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.browser.Browser$$ExternalSyntheticLambda1
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    Browser.lambda$openUrl$3(alertDialogArr, sendRequest);
-                                }
-                            }, 1000L);
+                        if (progress2 != null) {
+                            progress2.init();
                             return;
                         }
-                    } catch (Exception unused) {
+                        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.browser.Browser$$ExternalSyntheticLambda1
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                Browser.$r8$lambda$7LZ2gk4KysH4NPPJAO6oZpWQocA(alertDialogArr, sendRequest);
+                            }
+                        };
+                        str2 = "https";
+                        z9 = false;
+                        try {
+                            AndroidUtilities.runOnUIThread(runnable, 1000L);
+                            return;
+                        } catch (Exception unused) {
+                        }
+                    } catch (Exception unused2) {
                     }
                 }
-            } catch (Exception unused2) {
+            } catch (Exception unused3) {
             }
         }
-        str2 = browserPackageName;
-        zArr = zArr2;
+        progress2 = progress;
+        str2 = "https";
+        z9 = false;
         try {
-            if (uri.getScheme() != null) {
+            lowerCase = uri.getScheme() != null ? uri.getScheme().toLowerCase() : "";
+        } catch (Exception e) {
+            e = e;
+            uri2 = uri;
+        }
+        if (lowerCase != null && lowerCase.contains(".")) {
+            return;
+        }
+        if ("http".equals(lowerCase) || str2.equals(lowerCase)) {
+            try {
+                uri2 = uri.normalizeScheme();
+            } catch (Exception e2) {
+                FileLog.e(e2);
+            }
+            hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
+            if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
+                c = 0;
+            } else {
                 try {
-                    lowerCase = uri.getScheme().toLowerCase();
-                } catch (Exception e) {
-                    e = e;
-                    uri2 = uri;
+                    c = 0;
+                } catch (Exception e3) {
+                    e = e3;
+                }
+                try {
+                    uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().autologinToken, "UTF-8")).build();
+                } catch (Exception e4) {
+                    e = e4;
+                    z9 = false;
                     FileLog.e(e);
                     if (z5) {
                     }
-                    if (!isTonsite(uri2.toString())) {
-                    }
-                    z9 = true;
-                    if (uri2.getScheme() != null) {
-                    }
-                    if (!isInternalUri) {
-                    }
-                    if (z9) {
-                    }
                 }
-            } else {
-                lowerCase = "";
-            }
-            str3 = lowerCase;
-        } catch (Exception e2) {
-            e = e2;
-            uri2 = uri;
-        }
-        if (str3 != null && str3.contains(".")) {
-            return;
-        }
-        if (!"http".equals(str3)) {
-        }
-        try {
-            uri2 = uri.normalizeScheme();
-        } catch (Exception e3) {
-            FileLog.e(e3);
-            uri2 = uri;
-            hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
-            if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
             }
             if (z7) {
-            }
-            if (z5) {
-            }
-            if (!isTonsite(uri2.toString())) {
-            }
-            z9 = true;
-            if (uri2.getScheme() != null) {
-            }
-            if (!isInternalUri) {
-            }
-            if (z9) {
-            }
-        }
-        hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
-        if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
-            uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().autologinToken, "UTF-8")).build();
-        }
-        if (z7) {
-            if (uri2 == null) {
-                if (!MessagesController.getInstance(i).isWebBrowserOpenInApp(uri2.toString())) {
+                if (uri2 == null) {
+                    if (!MessagesController.getInstance(i).isWebBrowserOpenInApp(uri2.toString())) {
+                    }
                 }
-            }
-            if (!isInstantViewOpen() && MessagesController.getInstance(i).isWebBrowserUseCustomTabs() && !isInternalUri && !str3.equals("tel") && !isTonsite(uri2.toString()) && (zArr[0] || !openInExternalApp(context, uri2.toString(), false) || !hasAppToOpen(context, uri2.toString()))) {
-                if (MessagesController.getInstance(i).authDomains.contains(hostAuthority)) {
-                    Intent intent = new Intent("android.intent.action.VIEW", uri2);
-                    intent.addFlags(TLObject.FLAG_28);
-                    ApplicationLoader.applicationContext.startActivity(intent);
-                    return;
-                }
-                Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) ShareBroadcastReceiver.class);
-                intent2.setAction("android.intent.action.SEND");
-                PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, new Intent(ApplicationLoader.applicationContext, (Class<?>) CustomTabsCopyReceiver.class), 167772160);
-                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(getSession());
-                builder.addMenuItem(LocaleController.getString(R.string.CopyLink), broadcast);
-                builder.setToolbarColor(Theme.getColor(Theme.key_actionBarBrowser));
-                builder.setShowTitle(true);
-                try {
+                if (!isInstantViewOpen() && MessagesController.getInstance(i).isWebBrowserUseCustomTabs() && !isInternalUri && !lowerCase.equals("tel") && !isTonsite(uri2.toString()) && (zArr[c] || !openInExternalApp(context, uri2.toString(), false) || !hasAppToOpen(context, uri2.toString()))) {
+                    if (MessagesController.getInstance(i).authDomains.contains(hostAuthority)) {
+                        Intent intent = new Intent("android.intent.action.VIEW", uri2);
+                        intent.addFlags(TLObject.FLAG_28);
+                        ApplicationLoader.applicationContext.startActivity(intent);
+                        return;
+                    }
+                    Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) ShareBroadcastReceiver.class);
+                    intent2.setAction("android.intent.action.SEND");
+                    PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, new Intent(ApplicationLoader.applicationContext, (Class<?>) CustomTabsCopyReceiver.class), 167772160);
+                    CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(getSession());
+                    builder.addMenuItem(LocaleController.getString(R.string.CopyLink), broadcast);
+                    builder.setToolbarColor(Theme.getColor(Theme.key_actionBarBrowser));
+                    builder.setShowTitle(true);
+                    z9 = false;
                     builder.setActionButton(BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout), LocaleController.getString(R.string.ShareFile), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent2, 33554432), true);
                     CustomTabsIntent build = builder.build();
                     build.setUseNewTask();
                     build.launchUrl(context, uri2);
                     return;
-                } catch (Exception e4) {
-                    e = e4;
-                    FileLog.e(e);
-                    if (z5) {
-                    }
-                    if (!isTonsite(uri2.toString())) {
-                    }
-                    z9 = true;
-                    if (uri2.getScheme() != null) {
-                    }
-                    if (!isInternalUri) {
-                    }
-                    if (z9) {
-                    }
                 }
             }
-        }
-        if (z5) {
-            try {
-                if (BubbleActivity.instance == null) {
-                    if (uri2 != null) {
-                        if (!MessagesController.getInstance(i).isWebBrowserOpenInApp(uri2.toString())) {
-                        }
-                        if (TextUtils.isEmpty(str2)) {
-                            if (uri2.getScheme() != null) {
-                                if (!"https".equals(uri2.getScheme())) {
-                                    if (!"http".equals(uri2.getScheme())) {
-                                    }
-                                }
-                            }
-                            z9 = true;
-                            if (uri2.getScheme() != null) {
-                                uri2.getScheme().equalsIgnoreCase("intent");
-                            }
-                            if (!isInternalUri && (launchActivity = LaunchActivity.instance) != null) {
-                                openAsInternalIntent(launchActivity, uri2.toString(), z3, z6, progress);
-                                return;
-                            }
-                            if (z9) {
-                                if (openInExternalApp(context, uri2.toString(), z4)) {
-                                    return;
-                                }
-                                if (uri2.getScheme() != null && uri2.getScheme().equalsIgnoreCase("intent")) {
-                                    String stringExtra = Intent.parseUri(uri2.toString(), 1).getStringExtra("browser_fallback_url");
-                                    if (!TextUtils.isEmpty(stringExtra)) {
-                                        uri2 = Uri.parse(stringExtra);
-                                    }
-                                }
-                                openInTelegramBrowser(context, uri2.toString(), progress);
-                                return;
-                            }
-                            openInExternalBrowser(context, uri2.toString(), z4, str2);
-                            return;
-                        }
-                    }
-                }
-            } catch (Exception e5) {
-                FileLog.e(e5);
-                return;
-            }
-        }
-        if (!isTonsite(uri2.toString())) {
             z9 = false;
-            if (uri2.getScheme() != null) {
-            }
-            if (!isInternalUri) {
-            }
-            if (z9) {
+            if (z5) {
+                try {
+                    if (BubbleActivity.instance == null) {
+                        if (uri2 != null) {
+                        }
+                    }
+                } catch (Exception e5) {
+                    FileLog.e(e5);
+                    return;
+                }
             }
         }
-        z9 = true;
-        if (uri2.getScheme() != null) {
+        uri2 = uri;
+        hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
+        if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
         }
-        if (!isInternalUri) {
+        if (z7) {
         }
-        if (z9) {
+        z9 = false;
+        if (z5) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openUrl$1(final Progress progress, final AlertDialog[] alertDialogArr, final int i, final Uri uri, final Context context, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.browser.Browser$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                Browser.lambda$openUrl$0(Browser.Progress.this, alertDialogArr, tLObject, i, uri, context, z);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openUrl$0(Progress progress, AlertDialog[] alertDialogArr, TLObject tLObject, int i, Uri uri, Context context, boolean z) {
+    public static /* synthetic */ void $r8$lambda$r0CCM-iFnrGCwmVQpGqtZgRrTxo(Progress progress, AlertDialog[] alertDialogArr, TLObject tLObject, int i, Uri uri, Context context, boolean z) {
         if (progress != null) {
             progress.end();
         } else {
@@ -582,7 +597,7 @@ public abstract class Browser {
                 TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
                 TLRPC.WebPage webPage = tL_messageMediaWebPage.webpage;
                 if ((webPage instanceof TLRPC.TL_webPage) && webPage.cached_page != null) {
-                    NotificationCenter.getInstance(i).lambda$postNotificationNameOnUIThread$1(NotificationCenter.openArticle, tL_messageMediaWebPage.webpage, uri.toString());
+                    NotificationCenter.getInstance(i).postNotificationName(NotificationCenter.openArticle, tL_messageMediaWebPage.webpage, uri.toString());
                     return;
                 }
             }
@@ -590,8 +605,7 @@ public abstract class Browser {
         openUrl(context, uri, z, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openUrl$3(AlertDialog[] alertDialogArr, final int i) {
+    public static /* synthetic */ void $r8$lambda$7LZ2gk4KysH4NPPJAO6oZpWQocA(AlertDialog[] alertDialogArr, final int i) {
         AlertDialog alertDialog = alertDialogArr[0];
         if (alertDialog == null) {
             return;
@@ -600,17 +614,12 @@ public abstract class Browser {
             alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.browser.Browser$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
-                    Browser.lambda$openUrl$2(i, dialogInterface);
+                    ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i, true);
                 }
             });
             alertDialogArr[0].show();
         } catch (Exception unused) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openUrl$2(int i, DialogInterface dialogInterface) {
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i, true);
     }
 
     public static boolean openAsInternalIntent(Context context, String str) {
@@ -1011,7 +1020,10 @@ public abstract class Browser {
     }
 
     public static boolean isBrowserPackageName(String str) {
-        return str != null && (str.contains("browser") || str.contains("chrome") || str.contains("firefox") || "com.microsoft.emmx".equals(str) || "com.opera.mini.native".equals(str) || "com.duckduckgo.mobile.android".equals(str) || "com.UCMobile.intl".equals(str));
+        if (str != null) {
+            return str.contains("browser") || str.contains("chrome") || str.contains("firefox") || "com.microsoft.emmx".equals(str) || "com.opera.mini.native".equals(str) || "com.duckduckgo.mobile.android".equals(str) || "com.UCMobile.intl".equals(str);
+        }
+        return false;
     }
 
     public static boolean isPunycodeAllowed(String str) {

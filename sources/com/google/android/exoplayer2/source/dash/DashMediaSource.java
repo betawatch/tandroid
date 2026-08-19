@@ -188,14 +188,9 @@ public final class DashMediaSource extends BaseMediaSource {
         this.simulateManifestRefreshRunnable = new Runnable() { // from class: com.google.android.exoplayer2.source.dash.DashMediaSource$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                DashMediaSource.this.lambda$new$0();
+                DashMediaSource.this.processManifest(false);
             }
         };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        processManifest(false);
     }
 
     @Override // com.google.android.exoplayer2.source.MediaSource
@@ -227,7 +222,7 @@ public final class DashMediaSource extends BaseMediaSource {
     public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
         int intValue = ((Integer) mediaPeriodId.periodUid).intValue() - this.firstPeriodId;
         MediaSourceEventListener.EventDispatcher createEventDispatcher = createEventDispatcher(mediaPeriodId, this.manifest.getPeriod(intValue).startMs);
-        DashMediaPeriod dashMediaPeriod = new DashMediaPeriod(intValue + this.firstPeriodId, this.manifest, this.baseUrlExclusionList, intValue, this.chunkSourceFactory, this.mediaTransferListener, this.drmSessionManager, createDrmEventDispatcher(mediaPeriodId), this.loadErrorHandlingPolicy, createEventDispatcher, this.elapsedRealtimeOffsetMs, this.manifestLoadErrorThrower, allocator, this.compositeSequenceableLoaderFactory, this.playerEmsgCallback, getPlayerId());
+        DashMediaPeriod dashMediaPeriod = new DashMediaPeriod(this.firstPeriodId + intValue, this.manifest, this.baseUrlExclusionList, intValue, this.chunkSourceFactory, this.mediaTransferListener, this.drmSessionManager, createDrmEventDispatcher(mediaPeriodId), this.loadErrorHandlingPolicy, createEventDispatcher, this.elapsedRealtimeOffsetMs, this.manifestLoadErrorThrower, allocator, this.compositeSequenceableLoaderFactory, this.playerEmsgCallback, getPlayerId());
         this.periodsById.put(dashMediaPeriod.id, dashMediaPeriod);
         return dashMediaPeriod;
     }
@@ -442,50 +437,51 @@ public final class DashMediaSource extends BaseMediaSource {
         processManifest(true);
     }
 
-    private void processManifest(boolean z) {
-        Period period;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void processManifest(boolean z) {
         long j;
         long j2;
+        long j3;
         for (int i = 0; i < this.periodsById.size(); i++) {
             int keyAt = this.periodsById.keyAt(i);
             if (keyAt >= this.firstPeriodId) {
                 ((DashMediaPeriod) this.periodsById.valueAt(i)).updateManifest(this.manifest, keyAt - this.firstPeriodId);
             }
         }
-        Period period2 = this.manifest.getPeriod(0);
+        Period period = this.manifest.getPeriod(0);
         int periodCount = this.manifest.getPeriodCount() - 1;
-        Period period3 = this.manifest.getPeriod(periodCount);
+        Period period2 = this.manifest.getPeriod(periodCount);
         long periodDurationUs = this.manifest.getPeriodDurationUs(periodCount);
         long msToUs = Util.msToUs(Util.getNowUnixTimeMs(this.elapsedRealtimeOffsetMs));
-        long availableStartTimeInManifestUs = getAvailableStartTimeInManifestUs(period2, this.manifest.getPeriodDurationUs(0), msToUs);
-        long availableEndTimeInManifestUs = getAvailableEndTimeInManifestUs(period3, periodDurationUs, msToUs);
-        boolean z2 = this.manifest.dynamic && !isIndexExplicit(period3);
+        long availableStartTimeInManifestUs = getAvailableStartTimeInManifestUs(period, this.manifest.getPeriodDurationUs(0), msToUs);
+        long availableEndTimeInManifestUs = getAvailableEndTimeInManifestUs(period2, periodDurationUs, msToUs);
+        boolean z2 = this.manifest.dynamic && !isIndexExplicit(period2);
         if (z2) {
-            long j3 = this.manifest.timeShiftBufferDepthMs;
-            if (j3 != -9223372036854775807L) {
-                availableStartTimeInManifestUs = Math.max(availableStartTimeInManifestUs, availableEndTimeInManifestUs - Util.msToUs(j3));
+            long j4 = this.manifest.timeShiftBufferDepthMs;
+            if (j4 != -9223372036854775807L) {
+                availableStartTimeInManifestUs = Math.max(availableStartTimeInManifestUs, availableEndTimeInManifestUs - Util.msToUs(j4));
             }
         }
-        long j4 = availableEndTimeInManifestUs - availableStartTimeInManifestUs;
+        long j5 = availableEndTimeInManifestUs - availableStartTimeInManifestUs;
         DashManifest dashManifest = this.manifest;
         if (dashManifest.dynamic) {
             Assertions.checkState(dashManifest.availabilityStartTimeMs != -9223372036854775807L);
             long msToUs2 = (msToUs - Util.msToUs(this.manifest.availabilityStartTimeMs)) - availableStartTimeInManifestUs;
-            updateLiveConfiguration(msToUs2, j4);
+            updateLiveConfiguration(msToUs2, j5);
             long usToMs = this.manifest.availabilityStartTimeMs + Util.usToMs(availableStartTimeInManifestUs);
             long msToUs3 = msToUs2 - Util.msToUs(this.liveConfiguration.targetOffsetMs);
-            long min = Math.min(5000000L, j4 / 2);
-            j = usToMs;
-            j2 = msToUs3 < min ? min : msToUs3;
-            period = period2;
+            j = 0;
+            long min = Math.min(5000000L, j5 / 2);
+            j2 = usToMs;
+            j3 = msToUs3 < min ? min : msToUs3;
         } else {
-            period = period2;
-            j = -9223372036854775807L;
-            j2 = 0;
+            j = 0;
+            j2 = -9223372036854775807L;
+            j3 = 0;
         }
         long msToUs4 = availableStartTimeInManifestUs - Util.msToUs(period.startMs);
         DashManifest dashManifest2 = this.manifest;
-        refreshSourceInfo(new DashTimeline(dashManifest2.availabilityStartTimeMs, j, this.elapsedRealtimeOffsetMs, this.firstPeriodId, msToUs4, j4, j2, dashManifest2, this.mediaItem, dashManifest2.dynamic ? this.liveConfiguration : null));
+        refreshSourceInfo(new DashTimeline(dashManifest2.availabilityStartTimeMs, j2, this.elapsedRealtimeOffsetMs, this.firstPeriodId, msToUs4, j5, j3, dashManifest2, this.mediaItem, dashManifest2.dynamic ? this.liveConfiguration : null));
         if (this.sideloadedManifest) {
             return;
         }
@@ -500,12 +496,12 @@ public final class DashMediaSource extends BaseMediaSource {
         if (z) {
             DashManifest dashManifest3 = this.manifest;
             if (dashManifest3.dynamic) {
-                long j5 = dashManifest3.minUpdatePeriodMs;
-                if (j5 != -9223372036854775807L) {
-                    if (j5 == 0) {
-                        j5 = 5000;
+                long j6 = dashManifest3.minUpdatePeriodMs;
+                if (j6 != -9223372036854775807L) {
+                    if (j6 == j) {
+                        j6 = 5000;
                     }
-                    scheduleManifestRefresh(Math.max(0L, (this.manifestLoadStartTimestampMs + j5) - SystemClock.elapsedRealtime()));
+                    scheduleManifestRefresh(Math.max(j, (this.manifestLoadStartTimestampMs + j6) - SystemClock.elapsedRealtime()));
                 }
             }
         }
@@ -513,13 +509,14 @@ public final class DashMediaSource extends BaseMediaSource {
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x005c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -531,19 +528,20 @@ public final class DashMediaSource extends BaseMediaSource {
         long j5;
         long j6;
         long j7;
+        long j8;
         float f;
         float f2;
         ServiceDescriptionElement serviceDescriptionElement;
         long usToMs2 = Util.usToMs(j);
-        long j8 = this.mediaItem.liveConfiguration.maxOffsetMs;
-        if (j8 != -9223372036854775807L) {
-            min = Math.min(usToMs2, j8);
+        long j9 = this.mediaItem.liveConfiguration.maxOffsetMs;
+        if (j9 != -9223372036854775807L) {
+            min = Math.min(usToMs2, j9);
         } else {
             ServiceDescriptionElement serviceDescriptionElement2 = this.manifest.serviceDescription;
             if (serviceDescriptionElement2 != null) {
-                long j9 = serviceDescriptionElement2.maxOffsetMs;
-                if (j9 != -9223372036854775807L) {
-                    min = Math.min(usToMs2, j9);
+                long j10 = serviceDescriptionElement2.maxOffsetMs;
+                if (j10 != -9223372036854775807L) {
+                    min = Math.min(usToMs2, j10);
                 }
             }
             j3 = usToMs2;
@@ -555,43 +553,43 @@ public final class DashMediaSource extends BaseMediaSource {
             if (j4 != -9223372036854775807L) {
                 usToMs = Math.min(usToMs + j4, usToMs2);
             }
-            j5 = usToMs;
-            j6 = this.mediaItem.liveConfiguration.minOffsetMs;
-            if (j6 == -9223372036854775807L) {
-                j5 = Util.constrainValue(j6, j5, usToMs2);
+            long j11 = usToMs;
+            j5 = this.mediaItem.liveConfiguration.minOffsetMs;
+            if (j5 == -9223372036854775807L) {
+                j11 = Util.constrainValue(j5, j11, usToMs2);
             } else {
                 ServiceDescriptionElement serviceDescriptionElement3 = this.manifest.serviceDescription;
                 if (serviceDescriptionElement3 != null) {
-                    long j10 = serviceDescriptionElement3.minOffsetMs;
-                    if (j10 != -9223372036854775807L) {
-                        j5 = Util.constrainValue(j10, j5, usToMs2);
+                    long j12 = serviceDescriptionElement3.minOffsetMs;
+                    if (j12 != -9223372036854775807L) {
+                        j11 = Util.constrainValue(j12, j11, usToMs2);
                     }
                 }
             }
-            if (j5 > j3) {
-                j3 = j5;
-            }
-            j7 = this.liveConfiguration.targetOffsetMs;
-            if (j7 == -9223372036854775807L) {
+            j6 = j11;
+            j7 = j6 <= j3 ? j6 : j3;
+            j8 = this.liveConfiguration.targetOffsetMs;
+            if (j8 == -9223372036854775807L) {
                 DashManifest dashManifest = this.manifest;
                 ServiceDescriptionElement serviceDescriptionElement4 = dashManifest.serviceDescription;
                 if (serviceDescriptionElement4 != null) {
-                    long j11 = serviceDescriptionElement4.targetOffsetMs;
-                    if (j11 != -9223372036854775807L) {
-                        j7 = j11;
+                    long j13 = serviceDescriptionElement4.targetOffsetMs;
+                    if (j13 != -9223372036854775807L) {
+                        j8 = j13;
                     }
                 }
-                j7 = dashManifest.suggestedPresentationDelayMs;
-                if (j7 == -9223372036854775807L) {
-                    j7 = this.fallbackTargetLiveOffsetMs;
+                j8 = dashManifest.suggestedPresentationDelayMs;
+                if (j8 == -9223372036854775807L) {
+                    j8 = this.fallbackTargetLiveOffsetMs;
                 }
             }
-            if (j7 < j5) {
-                j7 = j5;
+            if (j8 < j6) {
+                j8 = j6;
             }
-            if (j7 > j3) {
-                j7 = Util.constrainValue(Util.usToMs(j - Math.min(5000000L, j2 / 2)), j5, j3);
+            if (j8 > j7) {
+                j8 = Util.constrainValue(Util.usToMs(j - Math.min(5000000L, j2 / 2)), j6, j7);
             }
+            long j14 = j7;
             MediaItem.LiveConfiguration liveConfiguration = this.mediaItem.liveConfiguration;
             f = liveConfiguration.minPlaybackSpeed;
             if (f == -3.4028235E38f) {
@@ -607,7 +605,7 @@ public final class DashMediaSource extends BaseMediaSource {
                 f = 1.0f;
                 f2 = 1.0f;
             }
-            this.liveConfiguration = new MediaItem.LiveConfiguration.Builder().setTargetOffsetMs(j7).setMinOffsetMs(j5).setMaxOffsetMs(j3).setMinPlaybackSpeed(f).setMaxPlaybackSpeed(f2).build();
+            this.liveConfiguration = new MediaItem.LiveConfiguration.Builder().setTargetOffsetMs(j8).setMinOffsetMs(j6).setMaxOffsetMs(j14).setMinPlaybackSpeed(f).setMaxPlaybackSpeed(f2).build();
         }
         j3 = min;
         usToMs = Util.usToMs(j - j2);
@@ -617,19 +615,21 @@ public final class DashMediaSource extends BaseMediaSource {
         j4 = this.manifest.minBufferTimeMs;
         if (j4 != -9223372036854775807L) {
         }
-        j5 = usToMs;
-        j6 = this.mediaItem.liveConfiguration.minOffsetMs;
-        if (j6 == -9223372036854775807L) {
+        long j112 = usToMs;
+        j5 = this.mediaItem.liveConfiguration.minOffsetMs;
+        if (j5 == -9223372036854775807L) {
         }
-        if (j5 > j3) {
+        j6 = j112;
+        if (j6 <= j3) {
         }
-        j7 = this.liveConfiguration.targetOffsetMs;
-        if (j7 == -9223372036854775807L) {
+        j8 = this.liveConfiguration.targetOffsetMs;
+        if (j8 == -9223372036854775807L) {
         }
-        if (j7 < j5) {
+        if (j8 < j6) {
         }
-        if (j7 > j3) {
+        if (j8 > j7) {
         }
+        long j142 = j7;
         MediaItem.LiveConfiguration liveConfiguration2 = this.mediaItem.liveConfiguration;
         f = liveConfiguration2.minPlaybackSpeed;
         if (f == -3.4028235E38f) {
@@ -641,7 +641,7 @@ public final class DashMediaSource extends BaseMediaSource {
             f = 1.0f;
             f2 = 1.0f;
         }
-        this.liveConfiguration = new MediaItem.LiveConfiguration.Builder().setTargetOffsetMs(j7).setMinOffsetMs(j5).setMaxOffsetMs(j3).setMinPlaybackSpeed(f).setMaxPlaybackSpeed(f2).build();
+        this.liveConfiguration = new MediaItem.LiveConfiguration.Builder().setTargetOffsetMs(j8).setMinOffsetMs(j6).setMaxOffsetMs(j142).setMinPlaybackSpeed(f).setMaxPlaybackSpeed(f2).build();
     }
 
     private void scheduleManifestRefresh(long j) {

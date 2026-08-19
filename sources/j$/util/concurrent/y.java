@@ -1,17 +1,16 @@
 package j$.util.concurrent;
 
-import j$.util.T;
-import j$.util.W;
+import j$.util.Z;
 import java.util.Comparator;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class y implements W {
-    long a;
-    final long b;
-    final double c;
-    final double d;
+public final class y implements Z {
+    public long a;
+    public final long b;
+    public final long c;
+    public final long d;
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -20,22 +19,22 @@ final class y implements W {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        T.a(this, consumer);
+        j$.com.android.tools.r8.a.k(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return T.d(this);
+        return j$.com.android.tools.r8.a.n(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return T.e(this, i);
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return T.f(this, consumer);
+        return j$.com.android.tools.r8.a.B(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -43,14 +42,14 @@ final class y implements W {
         throw new IllegalStateException();
     }
 
-    y(long j, long j2, double d, double d2) {
+    public y(long j, long j2, long j3, long j4) {
         this.a = j;
         this.b = j2;
-        this.c = d;
-        this.d = d2;
+        this.c = j3;
+        this.d = j4;
     }
 
-    @Override // j$.util.f0, j$.util.Spliterator
+    @Override // j$.util.c0, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final y trySplit() {
         long j = this.a;
@@ -67,28 +66,28 @@ final class y implements W {
         return this.b - this.a;
     }
 
-    @Override // j$.util.f0
-    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        doubleConsumer.getClass();
+    @Override // j$.util.c0
+    public final boolean tryAdvance(LongConsumer longConsumer) {
+        longConsumer.getClass();
         long j = this.a;
         if (j >= this.b) {
             return false;
         }
-        doubleConsumer.accept(ThreadLocalRandom.current().c(this.c, this.d));
+        longConsumer.accept(ThreadLocalRandom.current().c(this.c, this.d));
         this.a = j + 1;
         return true;
     }
 
-    @Override // j$.util.f0
-    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
-        doubleConsumer.getClass();
+    @Override // j$.util.c0
+    public final void forEachRemaining(LongConsumer longConsumer) {
+        longConsumer.getClass();
         long j = this.a;
         long j2 = this.b;
         if (j < j2) {
             this.a = j2;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
-                doubleConsumer.accept(current.c(this.c, this.d));
+                longConsumer.accept(current.c(this.c, this.d));
                 j++;
             } while (j < j2);
         }

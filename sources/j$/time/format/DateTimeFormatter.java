@@ -9,125 +9,138 @@ import java.util.Locale;
 public final class DateTimeFormatter {
     public static final DateTimeFormatter ISO_LOCAL_DATE;
     public static final DateTimeFormatter e;
-    private final e a;
-    private final Locale b;
-    private final v c;
-    private final j$.time.chrono.s d;
+    public final e a;
+    public final Locale b;
+    public final v c;
+    public final j$.time.chrono.r d;
 
     static {
         p pVar = new p();
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
         x xVar = x.EXCEEDS_PAD;
-        pVar.m(aVar, 4, 10, xVar);
-        pVar.e('-');
+        pVar.h(aVar, 4, 10, xVar);
+        pVar.c('-');
         j$.time.temporal.a aVar2 = j$.time.temporal.a.MONTH_OF_YEAR;
-        pVar.l(aVar2, 2);
-        pVar.e('-');
+        pVar.g(aVar2, 2);
+        pVar.c('-');
         j$.time.temporal.a aVar3 = j$.time.temporal.a.DAY_OF_MONTH;
-        pVar.l(aVar3, 2);
+        pVar.g(aVar3, 2);
         w wVar = w.STRICT;
-        j$.time.chrono.s sVar = j$.time.chrono.s.d;
-        DateTimeFormatter v = pVar.v(wVar, sVar);
-        ISO_LOCAL_DATE = v;
+        j$.time.chrono.r rVar = j$.time.chrono.r.c;
+        DateTimeFormatter k = pVar.k(wVar, rVar);
+        ISO_LOCAL_DATE = k;
         p pVar2 = new p();
-        pVar2.r();
-        pVar2.a(v);
-        pVar2.h();
-        pVar2.v(wVar, sVar);
+        k kVar = k.INSENSITIVE;
+        pVar2.b(kVar);
+        pVar2.a(k);
+        j jVar = j.e;
+        pVar2.b(jVar);
+        pVar2.k(wVar, rVar);
         p pVar3 = new p();
-        pVar3.r();
-        pVar3.a(v);
-        pVar3.q();
-        pVar3.h();
-        pVar3.v(wVar, sVar);
+        pVar3.b(kVar);
+        pVar3.a(k);
+        pVar3.j();
+        pVar3.b(jVar);
+        pVar3.k(wVar, rVar);
         p pVar4 = new p();
         j$.time.temporal.a aVar4 = j$.time.temporal.a.HOUR_OF_DAY;
-        pVar4.l(aVar4, 2);
-        pVar4.e(':');
+        pVar4.g(aVar4, 2);
+        pVar4.c(':');
         j$.time.temporal.a aVar5 = j$.time.temporal.a.MINUTE_OF_HOUR;
-        pVar4.l(aVar5, 2);
-        pVar4.q();
-        pVar4.e(':');
+        pVar4.g(aVar5, 2);
+        pVar4.j();
+        pVar4.c(':');
         j$.time.temporal.a aVar6 = j$.time.temporal.a.SECOND_OF_MINUTE;
-        pVar4.l(aVar6, 2);
-        pVar4.q();
-        pVar4.b(j$.time.temporal.a.NANO_OF_SECOND);
-        DateTimeFormatter v2 = pVar4.v(wVar, null);
+        pVar4.g(aVar6, 2);
+        pVar4.j();
+        j$.time.temporal.a aVar7 = j$.time.temporal.a.NANO_OF_SECOND;
+        g gVar = new g(aVar7, 0, 9, true, 0);
+        Objects.requireNonNull(aVar7, "field");
+        j$.time.temporal.s sVar = aVar7.b;
+        if (sVar.a != sVar.b || sVar.c != sVar.d) {
+            throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar7);
+        }
+        pVar4.b(gVar);
+        DateTimeFormatter k2 = pVar4.k(wVar, null);
         p pVar5 = new p();
-        pVar5.r();
-        pVar5.a(v2);
-        pVar5.h();
-        pVar5.v(wVar, null);
+        pVar5.b(kVar);
+        pVar5.a(k2);
+        pVar5.b(jVar);
+        pVar5.k(wVar, null);
         p pVar6 = new p();
-        pVar6.r();
-        pVar6.a(v2);
-        pVar6.q();
-        pVar6.h();
-        pVar6.v(wVar, null);
+        pVar6.b(kVar);
+        pVar6.a(k2);
+        pVar6.j();
+        pVar6.b(jVar);
+        pVar6.k(wVar, null);
         p pVar7 = new p();
-        pVar7.r();
-        pVar7.a(v);
-        pVar7.e('T');
-        pVar7.a(v2);
-        DateTimeFormatter v3 = pVar7.v(wVar, sVar);
+        pVar7.b(kVar);
+        pVar7.a(k);
+        pVar7.c('T');
+        pVar7.a(k2);
+        DateTimeFormatter k3 = pVar7.k(wVar, rVar);
         p pVar8 = new p();
-        pVar8.r();
-        pVar8.a(v3);
-        pVar8.t();
-        pVar8.h();
-        pVar8.u();
-        DateTimeFormatter v4 = pVar8.v(wVar, sVar);
+        pVar8.b(kVar);
+        pVar8.a(k3);
+        k kVar2 = k.LENIENT;
+        pVar8.b(kVar2);
+        pVar8.b(jVar);
+        k kVar3 = k.STRICT;
+        pVar8.b(kVar3);
+        DateTimeFormatter k4 = pVar8.k(wVar, rVar);
         p pVar9 = new p();
-        pVar9.a(v4);
-        pVar9.q();
-        pVar9.e('[');
-        pVar9.s();
-        pVar9.n();
-        pVar9.e(']');
-        pVar9.v(wVar, sVar);
+        pVar9.a(k4);
+        pVar9.j();
+        pVar9.c('[');
+        k kVar4 = k.SENSITIVE;
+        pVar9.b(kVar4);
+        a aVar8 = p.f;
+        pVar9.b(new n(aVar8, "ZoneRegionId()"));
+        pVar9.c(']');
+        pVar9.k(wVar, rVar);
         p pVar10 = new p();
-        pVar10.a(v3);
-        pVar10.q();
-        pVar10.h();
-        pVar10.q();
-        pVar10.e('[');
-        pVar10.s();
-        pVar10.n();
-        pVar10.e(']');
-        pVar10.v(wVar, sVar);
+        pVar10.a(k3);
+        pVar10.j();
+        pVar10.b(jVar);
+        pVar10.j();
+        pVar10.c('[');
+        pVar10.b(kVar4);
+        pVar10.b(new n(aVar8, "ZoneRegionId()"));
+        pVar10.c(']');
+        pVar10.k(wVar, rVar);
         p pVar11 = new p();
-        pVar11.r();
-        pVar11.m(aVar, 4, 10, xVar);
-        pVar11.e('-');
-        pVar11.l(j$.time.temporal.a.DAY_OF_YEAR, 3);
-        pVar11.q();
-        pVar11.h();
-        pVar11.v(wVar, sVar);
+        pVar11.b(kVar);
+        pVar11.h(aVar, 4, 10, xVar);
+        pVar11.c('-');
+        pVar11.g(j$.time.temporal.a.DAY_OF_YEAR, 3);
+        pVar11.j();
+        pVar11.b(jVar);
+        pVar11.k(wVar, rVar);
         p pVar12 = new p();
-        pVar12.r();
-        pVar12.m(j$.time.temporal.i.c, 4, 10, xVar);
-        pVar12.f("-W");
-        pVar12.l(j$.time.temporal.i.b, 2);
-        pVar12.e('-');
-        j$.time.temporal.a aVar7 = j$.time.temporal.a.DAY_OF_WEEK;
-        pVar12.l(aVar7, 1);
-        pVar12.q();
-        pVar12.h();
-        pVar12.v(wVar, sVar);
+        pVar12.b(kVar);
+        pVar12.h(j$.time.temporal.i.c, 4, 10, xVar);
+        pVar12.d("-W");
+        pVar12.g(j$.time.temporal.i.b, 2);
+        pVar12.c('-');
+        j$.time.temporal.a aVar9 = j$.time.temporal.a.DAY_OF_WEEK;
+        pVar12.g(aVar9, 1);
+        pVar12.j();
+        pVar12.b(jVar);
+        pVar12.k(wVar, rVar);
         p pVar13 = new p();
-        pVar13.r();
-        pVar13.c();
-        e = pVar13.v(wVar, null);
+        pVar13.b(kVar);
+        pVar13.b(new h());
+        e = pVar13.k(wVar, null);
         p pVar14 = new p();
-        pVar14.r();
-        pVar14.l(aVar, 4);
-        pVar14.l(aVar2, 2);
-        pVar14.l(aVar3, 2);
-        pVar14.q();
-        pVar14.t();
-        pVar14.g("+HHMMss", "Z");
-        pVar14.u();
-        pVar14.v(wVar, sVar);
+        pVar14.b(kVar);
+        pVar14.g(aVar, 4);
+        pVar14.g(aVar2, 2);
+        pVar14.g(aVar3, 2);
+        pVar14.j();
+        pVar14.b(kVar2);
+        pVar14.b(new j("+HHMMss", "Z"));
+        pVar14.b(kVar3);
+        pVar14.k(wVar, rVar);
         HashMap hashMap = new HashMap();
         hashMap.put(1L, "Mon");
         hashMap.put(2L, "Tue");
@@ -150,64 +163,48 @@ public final class DateTimeFormatter {
         hashMap2.put(11L, "Nov");
         hashMap2.put(12L, "Dec");
         p pVar15 = new p();
-        pVar15.r();
-        pVar15.t();
-        pVar15.q();
-        pVar15.j(aVar7, hashMap);
-        pVar15.f(", ");
-        pVar15.p();
-        pVar15.m(aVar3, 1, 2, x.NOT_NEGATIVE);
-        pVar15.e(' ');
-        pVar15.j(aVar2, hashMap2);
-        pVar15.e(' ');
-        pVar15.l(aVar, 4);
-        pVar15.e(' ');
-        pVar15.l(aVar4, 2);
-        pVar15.e(':');
-        pVar15.l(aVar5, 2);
-        pVar15.q();
-        pVar15.e(':');
-        pVar15.l(aVar6, 2);
-        pVar15.p();
-        pVar15.e(' ');
-        pVar15.g("+HHMM", "GMT");
-        pVar15.v(w.SMART, sVar);
+        pVar15.b(kVar);
+        pVar15.b(kVar2);
+        pVar15.j();
+        pVar15.e(aVar9, hashMap);
+        pVar15.d(", ");
+        pVar15.i();
+        pVar15.h(aVar3, 1, 2, x.NOT_NEGATIVE);
+        pVar15.c(' ');
+        pVar15.e(aVar2, hashMap2);
+        pVar15.c(' ');
+        pVar15.g(aVar, 4);
+        pVar15.c(' ');
+        pVar15.g(aVar4, 2);
+        pVar15.c(':');
+        pVar15.g(aVar5, 2);
+        pVar15.j();
+        pVar15.c(':');
+        pVar15.g(aVar6, 2);
+        pVar15.i();
+        pVar15.c(' ');
+        pVar15.b(new j("+HHMM", "GMT"));
+        pVar15.k(w.SMART, rVar);
     }
 
-    DateTimeFormatter(e eVar, Locale locale, w wVar, j$.time.chrono.s sVar) {
+    public DateTimeFormatter(e eVar, Locale locale, w wVar, j$.time.chrono.r rVar) {
         v vVar = v.a;
         this.a = (e) Objects.requireNonNull(eVar, "printerParser");
         this.b = (Locale) Objects.requireNonNull(locale, "locale");
         this.c = (v) Objects.requireNonNull(vVar, "decimalStyle");
-        this.d = sVar;
+        this.d = rVar;
     }
 
-    public final Locale d() {
-        return this.b;
-    }
-
-    public final v c() {
-        return this.c;
-    }
-
-    public final j$.time.chrono.l b() {
-        return this.d;
-    }
-
-    public final String a(j$.time.temporal.m mVar) {
+    public final String a(j$.time.temporal.l lVar) {
         StringBuilder sb = new StringBuilder(32);
-        Objects.requireNonNull(mVar, "temporal");
+        Objects.requireNonNull(lVar, "temporal");
         Objects.requireNonNull(sb, "appendable");
         try {
-            this.a.k(new r(mVar, this), sb);
+            this.a.l(new r(lVar, this), sb);
             return sb.toString();
         } catch (IOException e2) {
-            throw new j$.time.c(e2.getMessage(), e2);
+            throw new j$.time.b(e2.getMessage(), e2);
         }
-    }
-
-    final e e() {
-        return this.a.a();
     }
 
     public final String toString() {

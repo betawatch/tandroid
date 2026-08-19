@@ -109,13 +109,23 @@ public final class zabi implements zaca, zau {
     }
 
     final void zaj() {
+        zabi zabiVar;
         this.zai.lock();
         try {
-            this.zan = new zaaw(this, this.zac, this.zad, this.zal, this.zae, this.zai, this.zak);
-            this.zan.zad();
-            this.zaj.signalAll();
-        } finally {
-            this.zai.unlock();
+            zabiVar = this;
+            try {
+                zabiVar.zan = new zaaw(zabiVar, this.zac, this.zad, this.zal, this.zae, this.zai, this.zak);
+                zabiVar.zan.zad();
+                zabiVar.zaj.signalAll();
+                zabiVar.zai.unlock();
+            } catch (Throwable th) {
+                th = th;
+                zabiVar.zai.unlock();
+                throw th;
+            }
+        } catch (Throwable th2) {
+            th = th2;
+            zabiVar = this;
         }
     }
 

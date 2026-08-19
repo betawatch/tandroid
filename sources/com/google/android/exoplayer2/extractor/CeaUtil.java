@@ -37,17 +37,26 @@ public abstract class CeaUtil {
     }
 
     public static void consumeCcData(long j, ParsableByteArray parsableByteArray, TrackOutput[] trackOutputArr) {
+        long j2;
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
         if ((readUnsignedByte & 64) != 0) {
             parsableByteArray.skipBytes(1);
             int i = (readUnsignedByte & 31) * 3;
             int position = parsableByteArray.getPosition();
-            for (TrackOutput trackOutput : trackOutputArr) {
+            int length = trackOutputArr.length;
+            int i2 = 0;
+            while (i2 < length) {
+                TrackOutput trackOutput = trackOutputArr[i2];
                 parsableByteArray.setPosition(position);
                 trackOutput.sampleData(parsableByteArray, i);
                 if (j != -9223372036854775807L) {
-                    trackOutput.sampleMetadata(j, 1, i, 0, null);
+                    j2 = j;
+                    trackOutput.sampleMetadata(j2, 1, i, 0, null);
+                } else {
+                    j2 = j;
                 }
+                i2++;
+                j = j2;
             }
         }
     }

@@ -19,11 +19,13 @@ public final class SeekPoint {
         if (this == obj) {
             return true;
         }
-        if (obj == null || SeekPoint.class != obj.getClass()) {
-            return false;
+        if (obj != null && SeekPoint.class == obj.getClass()) {
+            SeekPoint seekPoint = (SeekPoint) obj;
+            if (this.timeUs == seekPoint.timeUs && this.position == seekPoint.position) {
+                return true;
+            }
         }
-        SeekPoint seekPoint = (SeekPoint) obj;
-        return this.timeUs == seekPoint.timeUs && this.position == seekPoint.position;
+        return false;
     }
 
     public int hashCode() {

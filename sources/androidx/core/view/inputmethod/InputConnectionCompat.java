@@ -148,15 +148,12 @@ public abstract class InputConnectionCompat {
         return new OnCommitContentListener() { // from class: androidx.core.view.inputmethod.InputConnectionCompat$$ExternalSyntheticLambda0
             @Override // androidx.core.view.inputmethod.InputConnectionCompat.OnCommitContentListener
             public final boolean onCommitContent(InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
-                boolean lambda$createOnCommitContentListenerUsingPerformReceiveContent$0;
-                lambda$createOnCommitContentListenerUsingPerformReceiveContent$0 = InputConnectionCompat.lambda$createOnCommitContentListenerUsingPerformReceiveContent$0(view, inputContentInfoCompat, i, bundle);
-                return lambda$createOnCommitContentListenerUsingPerformReceiveContent$0;
+                return InputConnectionCompat.$r8$lambda$W5vh3RZmbJZXHbjpKG2oyXMz20Y(view, inputContentInfoCompat, i, bundle);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createOnCommitContentListenerUsingPerformReceiveContent$0(View view, InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
+    public static /* synthetic */ boolean $r8$lambda$W5vh3RZmbJZXHbjpKG2oyXMz20Y(View view, InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
         if (Build.VERSION.SDK_INT >= 25 && (i & 1) != 0) {
             try {
                 inputContentInfoCompat.requestPermission();

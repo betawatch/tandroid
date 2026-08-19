@@ -31,9 +31,11 @@ public abstract class SettingsSuggestionCell extends LinearLayout {
     private TextView textView;
     private TextView yesButton;
 
-    protected abstract void onNoClick(int i);
+    /* JADX INFO: Access modifiers changed from: protected */
+    public abstract void onNoClick(int i);
 
-    protected abstract void onYesClick(int i);
+    /* JADX INFO: Access modifiers changed from: protected */
+    public abstract void onYesClick(int i);
 
     public SettingsSuggestionCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
@@ -79,7 +81,7 @@ public abstract class SettingsSuggestionCell extends LinearLayout {
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.SettingsSuggestionCell$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        SettingsSuggestionCell.this.lambda$new$0(view);
+                        r0.onYesClick(SettingsSuggestionCell.this.currentType);
                     }
                 });
             } else {
@@ -87,22 +89,12 @@ public abstract class SettingsSuggestionCell extends LinearLayout {
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.SettingsSuggestionCell$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        SettingsSuggestionCell.this.lambda$new$1(view);
+                        r0.onNoClick(SettingsSuggestionCell.this.currentType);
                     }
                 });
             }
             i++;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onYesClick(this.currentType);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        onNoClick(this.currentType);
     }
 
     public void setType(int i) {

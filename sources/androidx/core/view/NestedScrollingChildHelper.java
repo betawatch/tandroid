@@ -131,11 +131,10 @@ public class NestedScrollingChildHelper {
             return false;
         }
         if (i == 0 && i2 == 0) {
-            if (iArr2 == null) {
-                return false;
+            if (iArr2 != null) {
+                iArr2[0] = 0;
+                iArr2[1] = 0;
             }
-            iArr2[0] = 0;
-            iArr2[1] = 0;
             return false;
         }
         if (iArr2 != null) {
@@ -149,15 +148,16 @@ public class NestedScrollingChildHelper {
         if (iArr == null) {
             iArr = getTempNestedScrollConsumed();
         }
-        iArr[0] = 0;
-        iArr[1] = 0;
-        ViewParentCompat.onNestedPreScroll(nestedScrollingParentForType, this.mView, i, i2, iArr, i3);
+        int[] iArr3 = iArr;
+        iArr3[0] = 0;
+        iArr3[1] = 0;
+        ViewParentCompat.onNestedPreScroll(nestedScrollingParentForType, this.mView, i, i2, iArr3, i3);
         if (iArr2 != null) {
             this.mView.getLocationInWindow(iArr2);
             iArr2[0] = iArr2[0] - i4;
             iArr2[1] = iArr2[1] - i5;
         }
-        return (iArr[0] == 0 && iArr[1] == 0) ? false : true;
+        return (iArr3[0] == 0 && iArr3[1] == 0) ? false : true;
     }
 
     public boolean dispatchNestedFling(float f, float f2, boolean z) {

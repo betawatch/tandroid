@@ -22,7 +22,7 @@ import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Stories.recorder.FlashViews;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ToggleButton2 extends View implements FlashViews.Invertable {
     private Bitmap activeBitmap;
     private final Paint activeBitmapPaint;
@@ -64,7 +64,7 @@ public class ToggleButton2 extends View implements FlashViews.Invertable {
             this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.ToggleButton2$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ToggleButton2.this.lambda$setIcon$0(atomicBoolean, i, valueAnimator2);
+                    ToggleButton2.$r8$lambda$7N8XUy7mDOAwptXKcb1iDnTNhcw(ToggleButton2.this, atomicBoolean, i, valueAnimator2);
                 }
             });
             this.animator.start();
@@ -74,15 +74,15 @@ public class ToggleButton2 extends View implements FlashViews.Invertable {
         setDrawable(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setIcon$0(AtomicBoolean atomicBoolean, int i, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$7N8XUy7mDOAwptXKcb1iDnTNhcw(ToggleButton2 toggleButton2, AtomicBoolean atomicBoolean, int i, ValueAnimator valueAnimator) {
+        toggleButton2.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.scale = Math.abs(floatValue - 0.5f) + 0.5f;
+        toggleButton2.scale = Math.abs(floatValue - 0.5f) + 0.5f;
         if (floatValue >= 0.5f && !atomicBoolean.get()) {
             atomicBoolean.set(true);
-            setDrawable(i);
+            toggleButton2.setDrawable(i);
         }
-        invalidate();
+        toggleButton2.invalidate();
     }
 
     public void setIcon(final Drawable drawable, boolean z) {
@@ -100,7 +100,7 @@ public class ToggleButton2 extends View implements FlashViews.Invertable {
             this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.ToggleButton2$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ToggleButton2.this.lambda$setIcon$1(atomicBoolean, drawable, valueAnimator2);
+                    ToggleButton2.$r8$lambda$A4tM51lh7vANWCzIePR_O6INzDM(ToggleButton2.this, atomicBoolean, drawable, valueAnimator2);
                 }
             });
             this.animator.start();
@@ -110,15 +110,15 @@ public class ToggleButton2 extends View implements FlashViews.Invertable {
         setDrawable(drawable);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setIcon$1(AtomicBoolean atomicBoolean, Drawable drawable, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$A4tM51lh7vANWCzIePR_O6INzDM(ToggleButton2 toggleButton2, AtomicBoolean atomicBoolean, Drawable drawable, ValueAnimator valueAnimator) {
+        toggleButton2.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.scale = Math.abs(floatValue - 0.5f) + 0.5f;
+        toggleButton2.scale = Math.abs(floatValue - 0.5f) + 0.5f;
         if (floatValue < 0.5f || atomicBoolean.get()) {
             return;
         }
         atomicBoolean.set(true);
-        setDrawable(drawable);
+        toggleButton2.setDrawable(drawable);
     }
 
     @Override // android.view.View

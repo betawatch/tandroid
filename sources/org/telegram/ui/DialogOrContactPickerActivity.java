@@ -49,9 +49,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
     private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.DialogOrContactPickerActivity$$ExternalSyntheticLambda2
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
-            float lambda$static$0;
-            lambda$static$0 = DialogOrContactPickerActivity.lambda$static$0(f);
-            return lambda$static$0;
+            return DialogOrContactPickerActivity.$r8$lambda$WPiIeeW8Ap_FcV7NtOQ6L2oUzsY(f);
         }
     };
     private boolean animatingForward;
@@ -67,8 +65,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
     private ViewPage[] viewPages = new ViewPage[2];
     private boolean swipeBackEnabled = true;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ float lambda$static$0(float f) {
+    public static /* synthetic */ float $r8$lambda$WPiIeeW8Ap_FcV7NtOQ6L2oUzsY(float f) {
         float f2 = f - 1.0f;
         return (f2 * f2 * f2 * f2 * f2) + 1.0f;
     }
@@ -102,9 +99,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
-                boolean lambda$new$1;
-                lambda$new$1 = DialogOrContactPickerActivity.this.lambda$new$1(dialogsActivity2, arrayList, charSequence, z, z2, i, i2, topicsFragment);
-                return lambda$new$1;
+                return DialogOrContactPickerActivity.$r8$lambda$1-s__PWu4d9YS1HEViLlNbikwMg(DialogOrContactPickerActivity.this, dialogsActivity2, arrayList, charSequence, z, z2, i, i2, topicsFragment);
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -126,28 +121,22 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         contactsActivity.setDelegate(new ContactsActivity.ContactsActivityDelegate() { // from class: org.telegram.ui.DialogOrContactPickerActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ContactsActivity.ContactsActivityDelegate
             public final void didSelectContact(TLRPC.User user, String str, ContactsActivity contactsActivity2) {
-                DialogOrContactPickerActivity.this.lambda$new$2(user, str, contactsActivity2);
+                DialogOrContactPickerActivity.this.showBlockAlert(user);
             }
         });
         this.contactsActivity.onFragmentCreate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
-        if (arrayList.isEmpty()) {
-            return true;
+    public static /* synthetic */ boolean $r8$lambda$1-s__PWu4d9YS1HEViLlNbikwMg(DialogOrContactPickerActivity dialogOrContactPickerActivity, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        dialogOrContactPickerActivity.getClass();
+        if (!arrayList.isEmpty()) {
+            long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+            if (DialogObject.isUserDialog(j)) {
+                dialogOrContactPickerActivity.showBlockAlert(dialogOrContactPickerActivity.getMessagesController().getUser(Long.valueOf(j)));
+                return true;
+            }
         }
-        long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        if (!DialogObject.isUserDialog(j)) {
-            return true;
-        }
-        showBlockAlert(getMessagesController().getUser(Long.valueOf(j)));
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(TLRPC.User user, String str, ContactsActivity contactsActivity) {
-        showBlockAlert(user);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -286,26 +275,30 @@ public class DialogOrContactPickerActivity extends BaseFragment {
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
                 setMeasuredDimension(View.MeasureSpec.getSize(i), View.MeasureSpec.getSize(i2));
-                measureChildWithMargins(((BaseFragment) DialogOrContactPickerActivity.this).actionBar, i, 0, i2, 0);
+                4 r1 = this;
+                r1.measureChildWithMargins(((BaseFragment) DialogOrContactPickerActivity.this).actionBar, i, 0, i2, 0);
                 int measuredHeight = ((BaseFragment) DialogOrContactPickerActivity.this).actionBar.getMeasuredHeight();
-                this.globalIgnoreLayout = true;
-                for (int i3 = 0; i3 < DialogOrContactPickerActivity.this.viewPages.length; i3++) {
-                    if (DialogOrContactPickerActivity.this.viewPages[i3] != null) {
-                        if (DialogOrContactPickerActivity.this.viewPages[i3].listView != null) {
-                            DialogOrContactPickerActivity.this.viewPages[i3].listView.setPadding(0, measuredHeight, 0, 0);
+                r1.globalIgnoreLayout = true;
+                int i3 = 0;
+                for (int i4 = 0; i4 < DialogOrContactPickerActivity.this.viewPages.length; i4++) {
+                    if (DialogOrContactPickerActivity.this.viewPages[i4] != null) {
+                        if (DialogOrContactPickerActivity.this.viewPages[i4].listView != null) {
+                            DialogOrContactPickerActivity.this.viewPages[i4].listView.setPadding(0, measuredHeight, 0, 0);
                         }
-                        if (DialogOrContactPickerActivity.this.viewPages[i3].listView2 != null) {
-                            DialogOrContactPickerActivity.this.viewPages[i3].listView2.setPadding(0, measuredHeight, 0, 0);
+                        if (DialogOrContactPickerActivity.this.viewPages[i4].listView2 != null) {
+                            DialogOrContactPickerActivity.this.viewPages[i4].listView2.setPadding(0, measuredHeight, 0, 0);
                         }
                     }
                 }
-                this.globalIgnoreLayout = false;
+                r1.globalIgnoreLayout = false;
                 int childCount = getChildCount();
-                for (int i4 = 0; i4 < childCount; i4++) {
-                    View childAt = getChildAt(i4);
+                while (i3 < childCount) {
+                    View childAt = getChildAt(i3);
                     if (childAt != null && childAt.getVisibility() != 8 && childAt != ((BaseFragment) DialogOrContactPickerActivity.this).actionBar) {
-                        measureChildWithMargins(childAt, i, 0, i2, 0);
+                        r1.measureChildWithMargins(childAt, i, 0, i2, 0);
                     }
+                    i3++;
+                    r1 = this;
                 }
             }
 
@@ -428,31 +421,21 @@ public class DialogOrContactPickerActivity extends BaseFragment {
                         float x2 = DialogOrContactPickerActivity.this.viewPages[0].getX();
                         DialogOrContactPickerActivity.this.tabsAnimation = new AnimatorSet();
                         DialogOrContactPickerActivity.this.backAnimation = Math.abs(x2) < ((float) DialogOrContactPickerActivity.this.viewPages[0].getMeasuredWidth()) / 3.0f && (Math.abs(f) < 3500.0f || Math.abs(f) < Math.abs(f2));
-                        if (!DialogOrContactPickerActivity.this.backAnimation) {
+                        boolean z = DialogOrContactPickerActivity.this.backAnimation;
+                        Property property = View.TRANSLATION_X;
+                        if (!z) {
                             measuredWidth = DialogOrContactPickerActivity.this.viewPages[0].getMeasuredWidth() - Math.abs(x2);
                             if (DialogOrContactPickerActivity.this.animatingForward) {
-                                AnimatorSet animatorSet = DialogOrContactPickerActivity.this.tabsAnimation;
-                                ViewPage viewPage = DialogOrContactPickerActivity.this.viewPages[0];
-                                Property property = View.TRANSLATION_X;
-                                animatorSet.playTogether(ObjectAnimator.ofFloat(viewPage, (Property<ViewPage, Float>) property, -DialogOrContactPickerActivity.this.viewPages[0].getMeasuredWidth()), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property, 0.0f));
+                                DialogOrContactPickerActivity.this.tabsAnimation.playTogether(ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[0], (Property<ViewPage, Float>) property, -DialogOrContactPickerActivity.this.viewPages[0].getMeasuredWidth()), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property, 0.0f));
                             } else {
-                                AnimatorSet animatorSet2 = DialogOrContactPickerActivity.this.tabsAnimation;
-                                ViewPage viewPage2 = DialogOrContactPickerActivity.this.viewPages[0];
-                                Property property2 = View.TRANSLATION_X;
-                                animatorSet2.playTogether(ObjectAnimator.ofFloat(viewPage2, (Property<ViewPage, Float>) property2, DialogOrContactPickerActivity.this.viewPages[0].getMeasuredWidth()), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property2, 0.0f));
+                                DialogOrContactPickerActivity.this.tabsAnimation.playTogether(ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[0], (Property<ViewPage, Float>) property, DialogOrContactPickerActivity.this.viewPages[0].getMeasuredWidth()), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property, 0.0f));
                             }
                         } else {
                             measuredWidth = Math.abs(x2);
                             if (DialogOrContactPickerActivity.this.animatingForward) {
-                                AnimatorSet animatorSet3 = DialogOrContactPickerActivity.this.tabsAnimation;
-                                ViewPage viewPage3 = DialogOrContactPickerActivity.this.viewPages[0];
-                                Property property3 = View.TRANSLATION_X;
-                                animatorSet3.playTogether(ObjectAnimator.ofFloat(viewPage3, (Property<ViewPage, Float>) property3, 0.0f), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property3, DialogOrContactPickerActivity.this.viewPages[1].getMeasuredWidth()));
+                                DialogOrContactPickerActivity.this.tabsAnimation.playTogether(ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[0], (Property<ViewPage, Float>) property, 0.0f), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property, DialogOrContactPickerActivity.this.viewPages[1].getMeasuredWidth()));
                             } else {
-                                AnimatorSet animatorSet4 = DialogOrContactPickerActivity.this.tabsAnimation;
-                                ViewPage viewPage4 = DialogOrContactPickerActivity.this.viewPages[0];
-                                Property property4 = View.TRANSLATION_X;
-                                animatorSet4.playTogether(ObjectAnimator.ofFloat(viewPage4, (Property<ViewPage, Float>) property4, 0.0f), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property4, -DialogOrContactPickerActivity.this.viewPages[1].getMeasuredWidth()));
+                                DialogOrContactPickerActivity.this.tabsAnimation.playTogether(ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[0], (Property<ViewPage, Float>) property, 0.0f), ObjectAnimator.ofFloat(DialogOrContactPickerActivity.this.viewPages[1], (Property<ViewPage, Float>) property, -DialogOrContactPickerActivity.this.viewPages[1].getMeasuredWidth()));
                             }
                         }
                         DialogOrContactPickerActivity.this.tabsAnimation.setInterpolator(DialogOrContactPickerActivity.interpolator);
@@ -473,9 +456,9 @@ public class DialogOrContactPickerActivity extends BaseFragment {
                                 if (DialogOrContactPickerActivity.this.backAnimation) {
                                     DialogOrContactPickerActivity.this.viewPages[1].setVisibility(8);
                                 } else {
-                                    ViewPage viewPage5 = DialogOrContactPickerActivity.this.viewPages[0];
+                                    ViewPage viewPage = DialogOrContactPickerActivity.this.viewPages[0];
                                     DialogOrContactPickerActivity.this.viewPages[0] = DialogOrContactPickerActivity.this.viewPages[1];
-                                    DialogOrContactPickerActivity.this.viewPages[1] = viewPage5;
+                                    DialogOrContactPickerActivity.this.viewPages[1] = viewPage;
                                     DialogOrContactPickerActivity.this.viewPages[1].setVisibility(8);
                                     DialogOrContactPickerActivity dialogOrContactPickerActivity = DialogOrContactPickerActivity.this;
                                     dialogOrContactPickerActivity.swipeBackEnabled = dialogOrContactPickerActivity.viewPages[0].selectedType == DialogOrContactPickerActivity.this.scrollSlidingTextTabStrip.getFirstTabId();
@@ -671,7 +654,8 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         }
     }
 
-    private void showBlockAlert(final TLRPC.User user) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void showBlockAlert(final TLRPC.User user) {
         if (user == null) {
             return;
         }
@@ -681,7 +665,7 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         builder.setPositiveButton(LocaleController.getString(R.string.BlockContact), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogOrContactPickerActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                DialogOrContactPickerActivity.this.lambda$showBlockAlert$3(user, alertDialog, i);
+                DialogOrContactPickerActivity.$r8$lambda$y-oCYKYWXmVx7Cyv6V02HXjJqSs(DialogOrContactPickerActivity.this, user, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -693,15 +677,15 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showBlockAlert$3(TLRPC.User user, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$y-oCYKYWXmVx7Cyv6V02HXjJqSs(DialogOrContactPickerActivity dialogOrContactPickerActivity, TLRPC.User user, AlertDialog alertDialog, int i) {
+        dialogOrContactPickerActivity.getClass();
         if (MessagesController.isSupportUser(user)) {
-            AlertsCreator.showSimpleToast(this, LocaleController.getString(R.string.ErrorOccurred));
+            AlertsCreator.showSimpleToast(dialogOrContactPickerActivity, LocaleController.getString(R.string.ErrorOccurred));
         } else {
-            MessagesController.getInstance(this.currentAccount).blockPeer(user.id);
-            AlertsCreator.showSimpleToast(this, LocaleController.getString(R.string.UserBlocked));
+            MessagesController.getInstance(dialogOrContactPickerActivity.currentAccount).blockPeer(user.id);
+            AlertsCreator.showSimpleToast(dialogOrContactPickerActivity, LocaleController.getString(R.string.UserBlocked));
         }
-        finishFragment();
+        dialogOrContactPickerActivity.finishFragment();
     }
 
     private void updateTabs() {

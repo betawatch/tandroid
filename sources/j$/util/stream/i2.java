@@ -1,51 +1,42 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-public abstract class i2 implements m2 {
-    protected final m2 a;
+public final class i2 extends Z1 {
+    public long b;
+    public long c;
+    public final /* synthetic */ j2 d;
 
-    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final /* synthetic */ void accept(double d) {
-        w0.a();
-        throw null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i2(j2 j2Var, f2 f2Var) {
+        super(f2Var);
+        this.d = j2Var;
+        this.b = j2Var.m;
+        long j = j2Var.n;
+        this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(int i) {
-        w0.k();
-        throw null;
+    @Override // j$.util.stream.Z1, j$.util.stream.f2
+    public final void y(long j) {
+        this.a.y(q1.x(j, this.d.m, this.c));
     }
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(long j) {
-        w0.l();
-        throw null;
+    @Override // j$.util.stream.d2, j$.util.stream.f2
+    public final void accept(int i) {
+        long j = this.b;
+        if (j == 0) {
+            long j2 = this.c;
+            if (j2 > 0) {
+                this.c = j2 - 1;
+                this.a.accept(i);
+                return;
+            }
+            return;
+        }
+        this.b = j - 1;
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public i2(m2 m2Var) {
-        this.a = (m2) Objects.requireNonNull(m2Var);
-    }
-
-    @Override // j$.util.stream.m2
-    public void l(long j) {
-        this.a.l(j);
-    }
-
-    @Override // j$.util.stream.m2
-    public void k() {
-        this.a.k();
-    }
-
-    @Override // j$.util.stream.m2
-    public boolean n() {
-        return this.a.n();
+    @Override // j$.util.stream.Z1, j$.util.stream.f2
+    public final boolean C() {
+        return this.c == 0 || this.a.C();
     }
 }

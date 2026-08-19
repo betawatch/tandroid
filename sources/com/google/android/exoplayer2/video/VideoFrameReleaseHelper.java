@@ -128,9 +128,14 @@ public final class VideoFrameReleaseHelper {
         clearSurfaceFrameRate();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public long adjustReleaseTime(long j) {
         long j2;
         VSyncSampler vSyncSampler;
+        long j3;
         if (this.lastAdjustedFrameIndex != -1 && this.frameRateEstimator.isSynced()) {
             long frameDurationNs = this.lastAdjustedReleaseTimeNs + ((long) ((this.frameRateEstimator.getFrameDurationNs() * (this.frameIndex - this.lastAdjustedFrameIndex)) / this.playbackSpeed));
             if (!adjustmentAllowed(j, frameDurationNs)) {
@@ -140,11 +145,13 @@ public final class VideoFrameReleaseHelper {
                 this.pendingLastAdjustedFrameIndex = this.frameIndex;
                 this.pendingLastAdjustedReleaseTimeNs = j2;
                 vSyncSampler = this.vsyncSampler;
-                if (vSyncSampler != null || this.vsyncDurationNs == -9223372036854775807L) {
-                    return j2;
+                if (vSyncSampler != null && this.vsyncDurationNs != -9223372036854775807L) {
+                    j3 = vSyncSampler.sampledVsyncTimeNs;
+                    if (j3 != -9223372036854775807L) {
+                        return closestVsync(j2, j3, this.vsyncDurationNs) - this.vsyncOffsetNs;
+                    }
                 }
-                long j3 = vSyncSampler.sampledVsyncTimeNs;
-                return j3 == -9223372036854775807L ? j2 : closestVsync(j2, j3, this.vsyncDurationNs) - this.vsyncOffsetNs;
+                return j2;
             }
         }
         j2 = j;
@@ -152,6 +159,9 @@ public final class VideoFrameReleaseHelper {
         this.pendingLastAdjustedReleaseTimeNs = j2;
         vSyncSampler = this.vsyncSampler;
         if (vSyncSampler != null) {
+            j3 = vSyncSampler.sampledVsyncTimeNs;
+            if (j3 != -9223372036854775807L) {
+            }
         }
         return j2;
     }
@@ -238,19 +248,22 @@ public final class VideoFrameReleaseHelper {
         if (j <= j5) {
             j4 = j5 - j3;
         } else {
-            j5 = j3 + j5;
+            long j6 = j3 + j5;
             j4 = j5;
+            j5 = j6;
         }
         return j5 - j < j - j4 ? j5 : j4;
     }
 
     private static DisplayHelper maybeBuildDisplayHelper(Context context) {
-        if (context == null) {
-            return null;
+        if (context != null) {
+            Context applicationContext = context.getApplicationContext();
+            r0 = Util.SDK_INT >= 17 ? DisplayHelperV17.maybeBuildNewInstance(applicationContext) : null;
+            if (r0 == null) {
+                return DisplayHelperV16.maybeBuildNewInstance(applicationContext);
+            }
         }
-        Context applicationContext = context.getApplicationContext();
-        DisplayHelper maybeBuildNewInstance = Util.SDK_INT >= 17 ? DisplayHelperV17.maybeBuildNewInstance(applicationContext) : null;
-        return maybeBuildNewInstance == null ? DisplayHelperV16.maybeBuildNewInstance(applicationContext) : maybeBuildNewInstance;
+        return r0;
     }
 
     private static final class Api30 {

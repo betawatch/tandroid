@@ -103,13 +103,13 @@ public abstract class zze {
                 return null;
             }
             arrayList.add(zzq);
-        } else {
-            zzk("BillingHelper", "Found purchase list of " + stringArrayList.size() + " items");
-            for (int i = 0; i < stringArrayList.size() && i < stringArrayList2.size(); i++) {
-                Purchase zzq2 = zzq(stringArrayList.get(i), stringArrayList2.get(i));
-                if (zzq2 != null) {
-                    arrayList.add(zzq2);
-                }
+            return arrayList;
+        }
+        zzk("BillingHelper", "Found purchase list of " + stringArrayList.size() + " items");
+        for (int i = 0; i < stringArrayList.size() && i < stringArrayList2.size(); i++) {
+            Purchase zzq2 = zzq(stringArrayList.get(i), stringArrayList2.get(i));
+            if (zzq2 != null) {
+                arrayList.add(zzq2);
             }
         }
         return arrayList;

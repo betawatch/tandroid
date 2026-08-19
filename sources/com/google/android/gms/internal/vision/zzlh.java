@@ -27,9 +27,10 @@ abstract class zzlh extends AbstractMap {
 
     private zzlh(int i) {
         this.zza = i;
-        this.zzb = Collections.emptyList();
-        this.zzc = Collections.emptyMap();
-        this.zzf = Collections.emptyMap();
+        this.zzb = Collections.EMPTY_LIST;
+        Map map = Collections.EMPTY_MAP;
+        this.zzc = map;
+        this.zzf = map;
     }
 
     public void zza() {
@@ -39,13 +40,13 @@ abstract class zzlh extends AbstractMap {
             return;
         }
         if (this.zzc.isEmpty()) {
-            unmodifiableMap = Collections.emptyMap();
+            unmodifiableMap = Collections.EMPTY_MAP;
         } else {
             unmodifiableMap = DesugarCollections.unmodifiableMap(this.zzc);
         }
         this.zzc = unmodifiableMap;
         if (this.zzf.isEmpty()) {
-            unmodifiableMap2 = Collections.emptyMap();
+            unmodifiableMap2 = Collections.EMPTY_MAP;
         } else {
             unmodifiableMap2 = DesugarCollections.unmodifiableMap(this.zzf);
         }

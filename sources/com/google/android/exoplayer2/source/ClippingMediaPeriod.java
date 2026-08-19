@@ -57,12 +57,12 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
         return this.mediaPeriod.getTrackGroups();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x005e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0058, code lost:
     
-        if (r2 > r4) goto L26;
+        if (r10 > r13) goto L26;
      */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0064  */
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     /*
         Code decompiled incorrectly, please refer to instructions dump.

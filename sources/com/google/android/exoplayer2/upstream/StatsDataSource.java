@@ -10,7 +10,7 @@ public final class StatsDataSource implements DataSource {
     private long bytesRead;
     private final DataSource dataSource;
     private Uri lastOpenedUri = Uri.EMPTY;
-    private Map lastResponseHeaders = Collections.emptyMap();
+    private Map lastResponseHeaders = Collections.EMPTY_MAP;
 
     public StatsDataSource(DataSource dataSource) {
         this.dataSource = (DataSource) Assertions.checkNotNull(dataSource);
@@ -41,7 +41,7 @@ public final class StatsDataSource implements DataSource {
     @Override // com.google.android.exoplayer2.upstream.DataSource
     public long open(DataSpec dataSpec) {
         this.lastOpenedUri = dataSpec.uri;
-        this.lastResponseHeaders = Collections.emptyMap();
+        this.lastResponseHeaders = Collections.EMPTY_MAP;
         long open = this.dataSource.open(dataSpec);
         this.lastOpenedUri = (Uri) Assertions.checkNotNull(getUri());
         this.lastResponseHeaders = getResponseHeaders();

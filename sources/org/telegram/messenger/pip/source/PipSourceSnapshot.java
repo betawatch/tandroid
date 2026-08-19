@@ -34,6 +34,7 @@ class PipSourceSnapshot {
     }
 
     public void draw(Canvas canvas, float f) {
+        Canvas canvas2;
         if (Build.VERSION.SDK_INT >= 29) {
             RenderNode renderNode = this.node;
             if (renderNode != null) {
@@ -48,11 +49,14 @@ class PipSourceSnapshot {
         }
         boolean z = f < 0.999f;
         if (z) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, r0.getWidth(), this.picture.getHeight(), (int) (f * 255.0f), 31);
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, r0.getWidth(), this.picture.getHeight(), (int) (f * 255.0f), 31);
+        } else {
+            canvas2 = canvas;
         }
-        canvas.drawPicture(this.picture);
+        canvas2.drawPicture(this.picture);
         if (z) {
-            canvas.restore();
+            canvas2.restore();
         }
     }
 

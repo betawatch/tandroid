@@ -102,19 +102,19 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         this.xUpdater2 = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                GLIconTextureView.this.lambda$new$1(valueAnimator);
+                GLIconTextureView.this.mRenderer.angleX2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             }
         };
         this.xUpdater = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                GLIconTextureView.this.lambda$new$2(valueAnimator);
+                GLIconTextureView.this.mRenderer.angleX = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             }
         };
         this.yUpdater = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                GLIconTextureView.this.lambda$new$3(valueAnimator);
+                GLIconTextureView.this.mRenderer.angleY = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             }
         };
         this.type = i2;
@@ -172,14 +172,13 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GLIconTextureView.1.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
+                    GLIconTextureView.1.$r8$lambda$nu0ruVaKQ5jIEF3MuPrAqEayuR4(GLIconTextureView.1.this, nextInt, nextInt2);
                 }
             }, 16L);
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSingleTapUp$0(float f, float f2) {
+        public static /* synthetic */ void $r8$lambda$nu0ruVaKQ5jIEF3MuPrAqEayuR4(1 r12, float f, float f2) {
             ValueAnimator valueAnimator = GLIconTextureView.this.backAnimation;
             if (valueAnimator != null) {
                 valueAnimator.removeAllListeners();
@@ -462,9 +461,8 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         } else {
             iArr = new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12344};
         }
-        int[] iArr3 = iArr;
         this.eglConfig = null;
-        if (!this.mEgl.eglChooseConfig(this.mEglDisplay, iArr3, eGLConfigArr, 1, iArr2)) {
+        if (!this.mEgl.eglChooseConfig(this.mEglDisplay, iArr, eGLConfigArr, 1, iArr2)) {
             throw new IllegalArgumentException("eglChooseConfig failed " + GLUtils.getEGLErrorString(this.mEgl.eglGetError()));
         }
         if (iArr2[0] > 0) {
@@ -519,7 +517,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                GLIconTextureView.this.lambda$startBackAnimation$0(f, f3, f2, valueAnimator);
+                GLIconTextureView.$r8$lambda$RoeAm-LTxcl1yTBHo_oeMcSmbWQ(GLIconTextureView.this, f, f3, f2, valueAnimator);
             }
         });
         this.backAnimation.setDuration(600L);
@@ -532,10 +530,10 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         scheduleIdleAnimation(this.idleDelay);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startBackAnimation$0(float f, float f2, float f3, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$RoeAm-LTxcl1yTBHo_oeMcSmbWQ(GLIconTextureView gLIconTextureView, float f, float f2, float f3, ValueAnimator valueAnimator) {
+        gLIconTextureView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        GLIconRenderer gLIconRenderer = this.mRenderer;
+        GLIconRenderer gLIconRenderer = gLIconTextureView.mRenderer;
         gLIconRenderer.angleX = f * floatValue;
         gLIconRenderer.angleX2 = f2 * floatValue;
         gLIconRenderer.angleY = floatValue * f3;
@@ -575,21 +573,6 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             gLIconRenderer.angleX2 = 0.0f;
         }
         this.attached = false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(ValueAnimator valueAnimator) {
-        this.mRenderer.angleX2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(ValueAnimator valueAnimator) {
-        this.mRenderer.angleX = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(ValueAnimator valueAnimator) {
-        this.mRenderer.angleY = ((Float) valueAnimator.getAnimatedValue()).floatValue();
     }
 
     public void scheduleIdleAnimation(long j) {

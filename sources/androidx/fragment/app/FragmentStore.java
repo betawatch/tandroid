@@ -90,9 +90,13 @@ class FragmentStore {
     }
 
     void moveToExpectedState() {
-        Iterator it = this.mAdded.iterator();
-        while (it.hasNext()) {
-            FragmentStateManager fragmentStateManager = (FragmentStateManager) this.mActive.get(((Fragment) it.next()).mWho);
+        ArrayList arrayList = this.mAdded;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            FragmentStateManager fragmentStateManager = (FragmentStateManager) this.mActive.get(((Fragment) obj).mWho);
             if (fragmentStateManager != null) {
                 fragmentStateManager.moveToExpectedState();
             }
@@ -174,9 +178,13 @@ class FragmentStore {
                     return null;
                 }
                 ArrayList arrayList = new ArrayList(this.mAdded.size());
-                Iterator it = this.mAdded.iterator();
-                while (it.hasNext()) {
-                    Fragment fragment = (Fragment) it.next();
+                ArrayList arrayList2 = this.mAdded;
+                int size = arrayList2.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList2.get(i);
+                    i++;
+                    Fragment fragment = (Fragment) obj;
                     arrayList.add(fragment.mWho);
                     if (FragmentManager.isLoggingEnabled(2)) {
                         Log.v("FragmentManager", "saveAllState: adding fragment (" + fragment.mWho + "): " + fragment);
@@ -202,7 +210,7 @@ class FragmentStore {
     List getFragments() {
         ArrayList arrayList;
         if (this.mAdded.isEmpty()) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         synchronized (this.mAdded) {
             arrayList = new ArrayList(this.mAdded);

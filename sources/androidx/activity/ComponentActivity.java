@@ -111,9 +111,8 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Unit lambda$new$0() {
-        reportFullyDrawn();
+    public static /* synthetic */ Unit $r8$lambda$aw7Gh21f7q0ZVK9WcrxuxkkoVwc(ComponentActivity componentActivity) {
+        componentActivity.reportFullyDrawn();
         return null;
     }
 
@@ -126,9 +125,7 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         this.mFullyDrawnReporter = new FullyDrawnReporter(createFullyDrawnExecutor, new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit lambda$new$0;
-                lambda$new$0 = ComponentActivity.this.lambda$new$0();
-                return lambda$new$0;
+                return ComponentActivity.$r8$lambda$aw7Gh21f7q0ZVK9WcrxuxkkoVwc(ComponentActivity.this);
             }
         });
         this.mNextLocalRequestCode = new AtomicInteger();
@@ -136,6 +133,7 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
             @Override // androidx.activity.result.ActivityResultRegistry
             public void onLaunch(final int i, ActivityResultContract activityResultContract, Object obj, ActivityOptionsCompat activityOptionsCompat) {
                 Bundle bundle;
+                final int i2;
                 ComponentActivity componentActivity = ComponentActivity.this;
                 final ActivityResultContract.SynchronousResult synchronousResult = activityResultContract.getSynchronousResult(componentActivity, obj);
                 if (synchronousResult != null) {
@@ -152,12 +150,12 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
                     createIntent.setExtrasClassLoader(componentActivity.getClassLoader());
                 }
                 if (createIntent.hasExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE")) {
-                    Bundle bundleExtra = createIntent.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
+                    bundle = createIntent.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
                     createIntent.removeExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
-                    bundle = bundleExtra;
                 } else {
                     bundle = null;
                 }
+                Bundle bundle2 = bundle;
                 if ("androidx.activity.result.contract.action.REQUEST_PERMISSIONS".equals(createIntent.getAction())) {
                     String[] stringArrayExtra = createIntent.getStringArrayExtra("androidx.activity.result.contract.extra.PERMISSIONS");
                     if (stringArrayExtra == null) {
@@ -169,19 +167,27 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
                 if ("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(createIntent.getAction())) {
                     IntentSenderRequest intentSenderRequest = (IntentSenderRequest) createIntent.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
                     try {
-                        ActivityCompat.startIntentSenderForResult(componentActivity, intentSenderRequest.getIntentSender(), i, intentSenderRequest.getFillInIntent(), intentSenderRequest.getFlagsMask(), intentSenderRequest.getFlagsValues(), 0, bundle);
-                        return;
+                        i2 = i;
                     } catch (IntentSender.SendIntentException e) {
+                        e = e;
+                        i2 = i;
+                    }
+                    try {
+                        ActivityCompat.startIntentSenderForResult(componentActivity, intentSenderRequest.getIntentSender(), i2, intentSenderRequest.getFillInIntent(), intentSenderRequest.getFlagsMask(), intentSenderRequest.getFlagsValues(), 0, bundle2);
+                        return;
+                    } catch (IntentSender.SendIntentException e2) {
+                        e = e2;
+                        final IntentSender.SendIntentException sendIntentException = e;
                         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity.1.2
                             @Override // java.lang.Runnable
                             public void run() {
-                                dispatchResult(i, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", e));
+                                dispatchResult(i2, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", sendIntentException));
                             }
                         });
                         return;
                     }
                 }
-                ActivityCompat.startActivityForResult(componentActivity, createIntent, i, bundle);
+                ActivityCompat.startActivityForResult(componentActivity, createIntent, i, bundle2);
             }
         };
         this.mOnConfigurationChangedListeners = new CopyOnWriteArrayList();
@@ -234,31 +240,28 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         getSavedStateRegistry().registerSavedStateProvider("android:support:activity-result", new SavedStateRegistry.SavedStateProvider() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda2
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle lambda$new$1;
-                lambda$new$1 = ComponentActivity.this.lambda$new$1();
-                return lambda$new$1;
+                return ComponentActivity.$r8$lambda$71Q7mCYu4-mmbn-a-hJ05KgHel0(ComponentActivity.this);
             }
         });
         addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda3
             @Override // androidx.activity.contextaware.OnContextAvailableListener
             public final void onContextAvailable(Context context) {
-                ComponentActivity.this.lambda$new$2(context);
+                ComponentActivity.$r8$lambda$278Cq622rQ9X9WaDkyOm2xm3rFw(ComponentActivity.this, context);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Bundle lambda$new$1() {
+    public static /* synthetic */ Bundle $r8$lambda$71Q7mCYu4-mmbn-a-hJ05KgHel0(ComponentActivity componentActivity) {
+        componentActivity.getClass();
         Bundle bundle = new Bundle();
-        this.mActivityResultRegistry.onSaveInstanceState(bundle);
+        componentActivity.mActivityResultRegistry.onSaveInstanceState(bundle);
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Context context) {
-        Bundle consumeRestoredStateForKey = getSavedStateRegistry().consumeRestoredStateForKey("android:support:activity-result");
+    public static /* synthetic */ void $r8$lambda$278Cq622rQ9X9WaDkyOm2xm3rFw(ComponentActivity componentActivity, Context context) {
+        Bundle consumeRestoredStateForKey = componentActivity.getSavedStateRegistry().consumeRestoredStateForKey("android:support:activity-result");
         if (consumeRestoredStateForKey != null) {
-            this.mActivityResultRegistry.onRestoreInstanceState(consumeRestoredStateForKey);
+            componentActivity.mActivityResultRegistry.onRestoreInstanceState(consumeRestoredStateForKey);
         }
     }
 
@@ -726,17 +729,16 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
             decorView.postOnAnimation(new Runnable() { // from class: androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ComponentActivity.ReportFullyDrawnExecutorApi16Impl.this.lambda$execute$0();
+                    ComponentActivity.ReportFullyDrawnExecutorApi16Impl.$r8$lambda$zFdbhFANN0XaCUXNOV7NjBkM5D0(ComponentActivity.ReportFullyDrawnExecutorApi16Impl.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$execute$0() {
-            Runnable runnable = this.mRunnable;
+        public static /* synthetic */ void $r8$lambda$zFdbhFANN0XaCUXNOV7NjBkM5D0(ReportFullyDrawnExecutorApi16Impl reportFullyDrawnExecutorApi16Impl) {
+            Runnable runnable = reportFullyDrawnExecutorApi16Impl.mRunnable;
             if (runnable != null) {
                 runnable.run();
-                this.mRunnable = null;
+                reportFullyDrawnExecutorApi16Impl.mRunnable = null;
             }
         }
 

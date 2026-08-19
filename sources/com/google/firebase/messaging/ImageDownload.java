@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 /* loaded from: classes.dex */
-public class ImageDownload implements Closeable {
+public class ImageDownload implements Closeable, AutoCloseable {
     private volatile Future future;
     private Task task;
     private final URL url;
@@ -43,16 +43,16 @@ public class ImageDownload implements Closeable {
         this.future = executorService.submit(new Runnable() { // from class: com.google.firebase.messaging.ImageDownload$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ImageDownload.this.lambda$start$0(taskCompletionSource);
+                ImageDownload.$r8$lambda$eScMs6vxKn1BVRLt69sEYv0FXxI(ImageDownload.this, taskCompletionSource);
             }
         });
         this.task = taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$start$0(TaskCompletionSource taskCompletionSource) {
+    public static /* synthetic */ void $r8$lambda$eScMs6vxKn1BVRLt69sEYv0FXxI(ImageDownload imageDownload, TaskCompletionSource taskCompletionSource) {
+        imageDownload.getClass();
         try {
-            taskCompletionSource.setResult(blockingDownload());
+            taskCompletionSource.setResult(imageDownload.blockingDownload());
         } catch (Exception e) {
             taskCompletionSource.setException(e);
         }

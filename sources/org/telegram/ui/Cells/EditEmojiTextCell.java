@@ -94,16 +94,11 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideKeyboardOnEnter$0() {
-        AndroidUtilities.hideKeyboard(this.editTextEmoji.getEditText());
-    }
-
     public void hideKeyboardOnEnter() {
         whenHitEnter(new Runnable() { // from class: org.telegram.ui.Cells.EditEmojiTextCell$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                EditEmojiTextCell.this.lambda$hideKeyboardOnEnter$0();
+                AndroidUtilities.hideKeyboard(EditEmojiTextCell.this.editTextEmoji.getEditText());
             }
         });
     }

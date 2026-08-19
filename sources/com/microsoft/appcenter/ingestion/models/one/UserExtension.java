@@ -42,17 +42,22 @@ public class UserExtension implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            UserExtension userExtension = (UserExtension) obj;
+            String str = this.localId;
+            if (str == null ? userExtension.localId != null : !str.equals(userExtension.localId)) {
+                return false;
+            }
+            String str2 = this.locale;
+            String str3 = userExtension.locale;
+            if (str2 != null) {
+                return str2.equals(str3);
+            }
+            if (str3 == null) {
+                return true;
+            }
         }
-        UserExtension userExtension = (UserExtension) obj;
-        String str = this.localId;
-        if (str == null ? userExtension.localId != null : !str.equals(userExtension.localId)) {
-            return false;
-        }
-        String str2 = this.locale;
-        String str3 = userExtension.locale;
-        return str2 != null ? str2.equals(str3) : str3 == null;
+        return false;
     }
 
     public int hashCode() {

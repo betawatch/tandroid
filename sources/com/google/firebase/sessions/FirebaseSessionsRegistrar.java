@@ -130,19 +130,16 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
     public static final SessionFirelogPublisher getComponents$lambda-2(ComponentContainer componentContainer) {
         Object obj = componentContainer.get(firebaseApp);
         Intrinsics.checkNotNullExpressionValue(obj, "container[firebaseApp]");
-        FirebaseApp firebaseApp2 = (FirebaseApp) obj;
         Object obj2 = componentContainer.get(firebaseInstallationsApi);
         Intrinsics.checkNotNullExpressionValue(obj2, "container[firebaseInstallationsApi]");
-        FirebaseInstallationsApi firebaseInstallationsApi2 = (FirebaseInstallationsApi) obj2;
         Object obj3 = componentContainer.get(sessionsSettings);
         Intrinsics.checkNotNullExpressionValue(obj3, "container[sessionsSettings]");
-        SessionsSettings sessionsSettings2 = (SessionsSettings) obj3;
         Provider provider = componentContainer.getProvider(transportFactory);
         Intrinsics.checkNotNullExpressionValue(provider, "container.getProvider(transportFactory)");
         EventGDTLogger eventGDTLogger = new EventGDTLogger(provider);
         Object obj4 = componentContainer.get(backgroundDispatcher);
         Intrinsics.checkNotNullExpressionValue(obj4, "container[backgroundDispatcher]");
-        return new SessionFirelogPublisherImpl(firebaseApp2, firebaseInstallationsApi2, sessionsSettings2, eventGDTLogger, (CoroutineContext) obj4);
+        return new SessionFirelogPublisherImpl((FirebaseApp) obj, (FirebaseInstallationsApi) obj2, (SessionsSettings) obj3, eventGDTLogger, (CoroutineContext) obj4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

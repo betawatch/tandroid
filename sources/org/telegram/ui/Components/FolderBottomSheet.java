@@ -117,14 +117,14 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                FolderBottomSheet.lambda$showForDeletion$2(i, baseFragment, callback);
+                FolderBottomSheet.$r8$lambda$ghEr4FSQkfj5jUZmnT84c9ENi6U(i, baseFragment, callback);
             }
         };
         if (dialogFilter != null && dialogFilter.isMyChatlist()) {
             AlertDialog create = new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString(R.string.FilterDelete)).setMessage(LocaleController.getString(R.string.FilterDeleteAlertLinks)).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda13
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i3) {
-                    FolderBottomSheet.lambda$showForDeletion$3(Utilities.Callback.this, alertDialog, i3);
+                    FolderBottomSheet.$r8$lambda$lp5dkVKpHmrmggBQ9OG-JZjkB5o(Utilities.Callback.this, alertDialog, i3);
                 }
             }).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda14
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
@@ -143,8 +143,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showForDeletion$2(final int i, final BaseFragment baseFragment, final Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$ghEr4FSQkfj5jUZmnT84c9ENi6U(final int i, final BaseFragment baseFragment, final Utilities.Callback callback) {
         TL_chatlists.TL_chatlists_getLeaveChatlistSuggestions tL_chatlists_getLeaveChatlistSuggestions = new TL_chatlists.TL_chatlists_getLeaveChatlistSuggestions();
         TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
         tL_chatlists_getLeaveChatlistSuggestions.chatlist = tL_inputChatlistDialogFilter;
@@ -152,23 +151,17 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         baseFragment.getConnectionsManager().sendRequest(tL_chatlists_getLeaveChatlistSuggestions, new RequestDelegate() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda20
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FolderBottomSheet.lambda$showForDeletion$1(BaseFragment.this, i, callback, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda21
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        FolderBottomSheet.$r8$lambda$cCDM0O0ir7WgxsrczN4I5-ZeImM(BaseFragment.this, tLObject, r3, r4);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showForDeletion$1(final BaseFragment baseFragment, final int i, final Utilities.Callback callback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda21
-            @Override // java.lang.Runnable
-            public final void run() {
-                FolderBottomSheet.lambda$showForDeletion$0(BaseFragment.this, tLObject, i, callback);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showForDeletion$0(BaseFragment baseFragment, TLObject tLObject, int i, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$cCDM0O0ir7WgxsrczN4I5-ZeImM(BaseFragment baseFragment, TLObject tLObject, int i, Utilities.Callback callback) {
         FolderBottomSheet folderBottomSheet;
         if (baseFragment.getParentActivity() == null) {
             return;
@@ -190,8 +183,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         baseFragment.showDialog(folderBottomSheet);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showForDeletion$3(Utilities.Callback callback, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$lp5dkVKpHmrmggBQ9OG-JZjkB5o(Utilities.Callback callback, AlertDialog alertDialog, int i) {
         if (callback != null) {
             callback.run(Boolean.FALSE);
         }
@@ -419,7 +411,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FolderBottomSheet.this.lambda$init$5(view);
+                FolderBottomSheet.this.onJoinButtonClicked();
             }
         });
         this.containerView.addView(this.button, LayoutHelper.createFrame(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f));
@@ -437,23 +429,19 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$5(View view) {
-        onJoinButtonClicked();
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
-    private void onJoinButtonClicked() {
+    public void onJoinButtonClicked() {
         final TL_chatlists.TL_chatlists_joinChatlistInvite tL_chatlists_joinChatlistInvite;
         final Utilities.Callback callback;
         Button button = this.button;
         if (button == null || !button.isLoading()) {
             ArrayList arrayList = this.peers;
             if (arrayList == null) {
-                lambda$new$0();
+                dismiss();
                 return;
             }
             if (arrayList.isEmpty() && !this.deleting) {
-                lambda$new$0();
+                dismiss();
                 return;
             }
             if (this.selectedPeers.isEmpty() && (this.invite instanceof TL_chatlists.TL_chatlists_chatlistInvite)) {
@@ -487,7 +475,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     tL_inputChatlistDialogFilter2.filter_id = this.filterId;
                     getBaseFragment().getConnectionsManager().sendRequest(tL_chatlists_hideChatlistUpdates, null);
                     getBaseFragment().getMessagesController().invalidateChatlistFolderUpdate(this.filterId);
-                    lambda$new$0();
+                    dismiss();
                     return;
                 }
                 TL_chatlists.TL_chatlists_joinChatlistUpdates tL_chatlists_joinChatlistUpdates = new TL_chatlists.TL_chatlists_joinChatlistUpdates();
@@ -498,7 +486,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 tL_chatlists_joinChatlistInvite = tL_chatlists_joinChatlistUpdates;
             } else {
                 if ((this.invite instanceof TL_chatlists.TL_chatlists_chatlistInviteAlready) && arrayList2.isEmpty()) {
-                    lambda$new$0();
+                    dismiss();
                     return;
                 }
                 TL_chatlists.TL_chatlists_joinChatlistInvite tL_chatlists_joinChatlistInvite2 = new TL_chatlists.TL_chatlists_joinChatlistInvite();
@@ -512,21 +500,21 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     final Utilities.Callback callback2 = new Utilities.Callback() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda5
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            FolderBottomSheet.this.lambda$onJoinButtonClicked$11(arrayList2, (BaseFragment) obj);
+                            FolderBottomSheet.$r8$lambda$w-EnCJ760kZ5fg6O8Mjl7ycU2rg(FolderBottomSheet.this, arrayList2, (BaseFragment) obj);
                         }
                     };
                     if (this.updates != null) {
                         callback = new Utilities.Callback() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda6
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                FolderBottomSheet.lambda$onJoinButtonClicked$12(Utilities.Callback.this, parentLayout, (Integer) obj);
+                                Utilities.Callback.this.run(parentLayout.getLastFragment());
                             }
                         };
                     } else {
                         callback = new Utilities.Callback() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda7
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                FolderBottomSheet.lambda$onJoinButtonClicked$15(INavigationLayout.this, callback2, (Integer) obj);
+                                FolderBottomSheet.$r8$lambda$LnLGAcIF3RNRFVPwgtxe-wCpCVw(INavigationLayout.this, callback2, (Integer) obj);
                             }
                         };
                     }
@@ -541,7 +529,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                             boolean[] zArr = new boolean[1];
                             getBaseFragment().getMessagesController().ensureFolderDialogExists(1, zArr);
                             if (zArr[0]) {
-                                getBaseFragment().getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
+                                getBaseFragment().getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
                             }
                         }
                     }
@@ -549,7 +537,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     this.reqId = getBaseFragment().getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda8
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            FolderBottomSheet.this.lambda$onJoinButtonClicked$18(callback, tLObject, tL_error);
+                            FolderBottomSheet.$r8$lambda$1_ERLReE5BvqDaxOcXz3mT6_ta0(FolderBottomSheet.this, callback, tLObject, tL_error);
                         }
                     });
                     return;
@@ -578,7 +566,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     this.reqId = getBaseFragment().getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda3
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            FolderBottomSheet.this.lambda$onJoinButtonClicked$7(lastFragment, arrayList2, tLObject, tL_error);
+                            FolderBottomSheet.$r8$lambda$ujZO0Ci9twdL2YQiw8GuB7jvJkY(FolderBottomSheet.this, lastFragment, arrayList2, tLObject, tL_error);
                         }
                     });
                     return;
@@ -591,86 +579,72 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 undoView2.showWithAction(0L, 88, this.title, Integer.valueOf(arrayList2.size()), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FolderBottomSheet.this.lambda$onJoinButtonClicked$10(tL_chatlists_joinChatlistInvite, removeFolderTemporarily);
+                        FolderBottomSheet.this.reqId = r0.getBaseFragment().getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda10
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                FolderBottomSheet.$r8$lambda$HtA3OyG9wcyTTRlB4d4aUgtzc5k(FolderBottomSheet.this, r2, tLObject, tL_error);
+                            }
+                        });
                     }
                 }, (Runnable) removeFolderTemporarily.second);
                 this.success = true;
-                lambda$new$0();
+                dismiss();
                 getBaseFragment().getMessagesController().invalidateChatlistFolderUpdate(this.filterId);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$7(final BaseFragment baseFragment, final ArrayList arrayList, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$ujZO0Ci9twdL2YQiw8GuB7jvJkY(final FolderBottomSheet folderBottomSheet, final BaseFragment baseFragment, final ArrayList arrayList, TLObject tLObject, TLRPC.TL_error tL_error) {
+        folderBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                FolderBottomSheet.this.lambda$onJoinButtonClicked$6(baseFragment, arrayList);
+                FolderBottomSheet.$r8$lambda$fcCW5cdS2nWLxX4moseZ6sdGGN8(FolderBottomSheet.this, baseFragment, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$6(BaseFragment baseFragment, ArrayList arrayList) {
-        this.reqId = -1;
-        BulletinFactory.of(baseFragment).createSimpleBulletin(R.raw.ic_delete, LocaleController.formatString(R.string.FolderLinkDeletedTitle, this.title), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", arrayList.size(), new Object[0])).setDuration(5000).show();
-        this.success = true;
-        lambda$new$0();
-        getBaseFragment().getMessagesController().invalidateChatlistFolderUpdate(this.filterId);
+    public static /* synthetic */ void $r8$lambda$fcCW5cdS2nWLxX4moseZ6sdGGN8(FolderBottomSheet folderBottomSheet, BaseFragment baseFragment, ArrayList arrayList) {
+        folderBottomSheet.reqId = -1;
+        BulletinFactory.of(baseFragment).createSimpleBulletin(R.raw.ic_delete, LocaleController.formatString(R.string.FolderLinkDeletedTitle, folderBottomSheet.title), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", arrayList.size(), new Object[0])).setDuration(5000).show();
+        folderBottomSheet.success = true;
+        folderBottomSheet.dismiss();
+        folderBottomSheet.getBaseFragment().getMessagesController().invalidateChatlistFolderUpdate(folderBottomSheet.filterId);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$10(TLObject tLObject, final Pair pair) {
-        this.reqId = getBaseFragment().getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda10
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                FolderBottomSheet.this.lambda$onJoinButtonClicked$9(pair, tLObject2, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$9(final Pair pair, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$HtA3OyG9wcyTTRlB4d4aUgtzc5k(final FolderBottomSheet folderBottomSheet, final Pair pair, TLObject tLObject, TLRPC.TL_error tL_error) {
+        folderBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                FolderBottomSheet.this.lambda$onJoinButtonClicked$8(pair);
+                FolderBottomSheet.$r8$lambda$45WVmfmmiV3z48SBmeLX_PbA_U0(FolderBottomSheet.this, pair);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$8(Pair pair) {
-        this.reqId = -1;
+    public static /* synthetic */ void $r8$lambda$45WVmfmmiV3z48SBmeLX_PbA_U0(FolderBottomSheet folderBottomSheet, Pair pair) {
+        folderBottomSheet.reqId = -1;
         ((Runnable) pair.first).run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$11(ArrayList arrayList, BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$w-EnCJ760kZ5fg6O8Mjl7ycU2rg(FolderBottomSheet folderBottomSheet, ArrayList arrayList, BaseFragment baseFragment) {
         String formatPluralString;
-        if (this.updates != null || (this.invite instanceof TL_chatlists.TL_chatlists_chatlistInviteAlready)) {
+        if (folderBottomSheet.updates != null || (folderBottomSheet.invite instanceof TL_chatlists.TL_chatlists_chatlistInviteAlready)) {
             BulletinFactory of = BulletinFactory.of(baseFragment);
             int i = R.raw.folder_in;
-            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FolderLinkUpdatedTitle, this.escapedTitle));
+            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FolderLinkUpdatedTitle, folderBottomSheet.escapedTitle));
             if (arrayList.size() <= 0) {
-                formatPluralString = LocaleController.formatPluralString("FolderLinkUpdatedSubtitle", this.alreadyJoined.size(), new Object[0]);
+                formatPluralString = LocaleController.formatPluralString("FolderLinkUpdatedSubtitle", folderBottomSheet.alreadyJoined.size(), new Object[0]);
             } else {
                 formatPluralString = LocaleController.formatPluralString("FolderLinkUpdatedJoinedSubtitle", arrayList.size(), new Object[0]);
             }
             of.createSimpleBulletin(i, replaceTags, formatPluralString).setDuration(5000).show();
             return;
         }
-        BulletinFactory.of(baseFragment).createSimpleBulletin(R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FolderLinkAddedTitle, this.escapedTitle)), LocaleController.formatPluralString("FolderLinkAddedSubtitle", arrayList.size(), new Object[0])).setDuration(5000).show();
+        BulletinFactory.of(baseFragment).createSimpleBulletin(R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FolderLinkAddedTitle, folderBottomSheet.escapedTitle)), LocaleController.formatPluralString("FolderLinkAddedSubtitle", arrayList.size(), new Object[0])).setDuration(5000).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onJoinButtonClicked$12(Utilities.Callback callback, INavigationLayout iNavigationLayout, Integer num) {
-        callback.run(iNavigationLayout.getLastFragment());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onJoinButtonClicked$15(INavigationLayout iNavigationLayout, final Utilities.Callback callback, final Integer num) {
+    public static /* synthetic */ void $r8$lambda$LnLGAcIF3RNRFVPwgtxe-wCpCVw(INavigationLayout iNavigationLayout, final Utilities.Callback callback, final Integer num) {
         List fragmentStack = iNavigationLayout.getFragmentStack();
         boolean z = true;
         final BaseFragment baseFragment = null;
@@ -693,7 +667,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FolderBottomSheet.lambda$onJoinButtonClicked$14(DialogsActivity.this, num, callback, baseFragment);
+                    FolderBottomSheet.$r8$lambda$9JxFwf3jckGVRUOp9bth4TFA8Io(DialogsActivity.this, num, callback, baseFragment);
                 }
             }, 80L);
             return;
@@ -701,8 +675,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         callback.run(baseFragment);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onJoinButtonClicked$14(DialogsActivity dialogsActivity, Integer num, final Utilities.Callback callback, final BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$9JxFwf3jckGVRUOp9bth4TFA8Io(DialogsActivity dialogsActivity, Integer num, final Utilities.Callback callback, final BaseFragment baseFragment) {
         dialogsActivity.scrollToFolder(num.intValue());
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
@@ -712,22 +685,21 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         }, 200L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$18(final Utilities.Callback callback, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$1_ERLReE5BvqDaxOcXz3mT6_ta0(final FolderBottomSheet folderBottomSheet, final Utilities.Callback callback, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        folderBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                FolderBottomSheet.this.lambda$onJoinButtonClicked$17(tL_error, tLObject, callback);
+                FolderBottomSheet.$r8$lambda$djBw8L_Ru60gZ5QQm1icJdKvnVU(FolderBottomSheet.this, tL_error, tLObject, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$17(TLRPC.TL_error tL_error, TLObject tLObject, final Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$djBw8L_Ru60gZ5QQm1icJdKvnVU(final FolderBottomSheet folderBottomSheet, TLRPC.TL_error tL_error, TLObject tLObject, final Utilities.Callback callback) {
         final int i = -1;
-        this.reqId = -1;
+        folderBottomSheet.reqId = -1;
         int i2 = 0;
-        if (FilterCreateActivity.processErrors(tL_error, getBaseFragment(), BulletinFactory.of(getBaseFragment())) && tLObject != null) {
+        if (FilterCreateActivity.processErrors(tL_error, folderBottomSheet.getBaseFragment(), BulletinFactory.of(folderBottomSheet.getBaseFragment())) && tLObject != null) {
             if (tLObject instanceof TLRPC.Updates) {
                 TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                 ArrayList<TLRPC.Update> arrayList = updates.updates;
@@ -749,30 +721,30 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     }
                 }
             }
-            if (this.invite instanceof TL_chatlists.TL_chatlists_chatlistInvite) {
-                getBaseFragment().getMessagesController().loadRemoteFilters(true, new Utilities.Callback() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda19
+            if (folderBottomSheet.invite instanceof TL_chatlists.TL_chatlists_chatlistInvite) {
+                folderBottomSheet.getBaseFragment().getMessagesController().loadRemoteFilters(true, new Utilities.Callback() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda19
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        FolderBottomSheet.this.lambda$onJoinButtonClicked$16(callback, i, (Boolean) obj);
+                        FolderBottomSheet.$r8$lambda$iQZ72J6wbYJSb3ODslEWw0k184s(FolderBottomSheet.this, callback, i, (Boolean) obj);
                     }
                 });
                 return;
             }
-            if (this.updates != null) {
-                getBaseFragment().getMessagesController().checkChatlistFolderUpdate(this.filterId, true);
+            if (folderBottomSheet.updates != null) {
+                folderBottomSheet.getBaseFragment().getMessagesController().checkChatlistFolderUpdate(folderBottomSheet.filterId, true);
             }
-            this.success = true;
-            lambda$new$0();
+            folderBottomSheet.success = true;
+            folderBottomSheet.dismiss();
             callback.run(Integer.valueOf(i));
             return;
         }
-        this.button.setLoading(false);
+        folderBottomSheet.button.setLoading(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onJoinButtonClicked$16(Utilities.Callback callback, int i, Boolean bool) {
-        this.success = bool.booleanValue();
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$iQZ72J6wbYJSb3ODslEWw0k184s(FolderBottomSheet folderBottomSheet, Utilities.Callback callback, int i, Boolean bool) {
+        folderBottomSheet.getClass();
+        folderBottomSheet.success = bool.booleanValue();
+        folderBottomSheet.dismiss();
         callback.run(Integer.valueOf(i));
     }
 
@@ -781,9 +753,8 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         if (this.reqId >= 0) {
             getBaseFragment().getConnectionsManager().cancelRequest(this.reqId, true);
         }
@@ -802,32 +773,32 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                FolderBottomSheet.this.lambda$onViewCreated$19(view, i);
+                FolderBottomSheet.$r8$lambda$AYJaWO1SRvB5ql8EKVAVXMzIxV0(FolderBottomSheet.this, view, i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onViewCreated$19(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$AYJaWO1SRvB5ql8EKVAVXMzIxV0(FolderBottomSheet folderBottomSheet, View view, int i) {
         int i2;
         String string;
         String str;
-        if (!(view instanceof GroupCreateUserCell) || (i2 = (i - 1) - this.usersStartRow) < 0 || i2 >= this.peers.size()) {
+        folderBottomSheet.getClass();
+        if (!(view instanceof GroupCreateUserCell) || (i2 = (i - 1) - folderBottomSheet.usersStartRow) < 0 || i2 >= folderBottomSheet.peers.size()) {
             return;
         }
-        long peerDialogId = DialogObject.getPeerDialogId((TLRPC.Peer) this.peers.get(i2));
-        if (this.selectedPeers.contains(Long.valueOf(peerDialogId))) {
-            if (this.alreadyJoined.contains(Long.valueOf(peerDialogId))) {
-                int i3 = -this.shiftDp;
-                this.shiftDp = i3;
+        long peerDialogId = DialogObject.getPeerDialogId((TLRPC.Peer) folderBottomSheet.peers.get(i2));
+        if (folderBottomSheet.selectedPeers.contains(Long.valueOf(peerDialogId))) {
+            if (folderBottomSheet.alreadyJoined.contains(Long.valueOf(peerDialogId))) {
+                int i3 = -folderBottomSheet.shiftDp;
+                folderBottomSheet.shiftDp = i3;
                 AndroidUtilities.shakeViewSpring(view, i3);
                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                 ArrayList arrayList = new ArrayList();
                 if (peerDialogId >= 0) {
-                    arrayList.add(getBaseFragment().getMessagesController().getUser(Long.valueOf(peerDialogId)));
+                    arrayList.add(folderBottomSheet.getBaseFragment().getMessagesController().getUser(Long.valueOf(peerDialogId)));
                     str = "beep boop.";
                 } else {
-                    TLRPC.Chat chat = getBaseFragment().getMessagesController().getChat(Long.valueOf(-peerDialogId));
+                    TLRPC.Chat chat = folderBottomSheet.getBaseFragment().getMessagesController().getChat(Long.valueOf(-peerDialogId));
                     if (ChatObject.isChannelAndNotMegaGroup(chat)) {
                         string = LocaleController.getString(R.string.FolderLinkAlreadySubscribed);
                     } else {
@@ -836,23 +807,23 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     arrayList.add(chat);
                     str = string;
                 }
-                if (this.lastClickedDialogId != peerDialogId || System.currentTimeMillis() - this.lastClicked > 1500) {
-                    this.lastClickedDialogId = peerDialogId;
-                    this.lastClicked = System.currentTimeMillis();
-                    BulletinFactory.of(this.bulletinContainer, null).createChatsBulletin(arrayList, str, null).setDuration(1500).show();
+                if (folderBottomSheet.lastClickedDialogId != peerDialogId || System.currentTimeMillis() - folderBottomSheet.lastClicked > 1500) {
+                    folderBottomSheet.lastClickedDialogId = peerDialogId;
+                    folderBottomSheet.lastClicked = System.currentTimeMillis();
+                    BulletinFactory.of(folderBottomSheet.bulletinContainer, null).createChatsBulletin(arrayList, str, null).setDuration(1500).show();
                     return;
                 }
                 return;
             }
-            this.selectedPeers.remove(Long.valueOf(peerDialogId));
+            folderBottomSheet.selectedPeers.remove(Long.valueOf(peerDialogId));
             ((GroupCreateUserCell) view).setChecked(false, true);
         } else {
-            this.selectedPeers.add(Long.valueOf(peerDialogId));
+            folderBottomSheet.selectedPeers.add(Long.valueOf(peerDialogId));
             ((GroupCreateUserCell) view).setChecked(true, true);
         }
-        updateCount(true);
-        updateHeaderCell(true);
-        announceSelection(false);
+        folderBottomSheet.updateCount(true);
+        folderBottomSheet.updateHeaderCell(true);
+        folderBottomSheet.announceSelection(false);
     }
 
     public void updateCount(boolean z) {
@@ -979,7 +950,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$Button$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        FolderBottomSheet.Button.this.lambda$setLoading$0(valueAnimator2);
+                        FolderBottomSheet.Button.$r8$lambda$tjTn0DifLbSg8D0rYd6G1If-smg(FolderBottomSheet.Button.this, valueAnimator2);
                     }
                 });
                 this.loadingAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FolderBottomSheet.Button.1
@@ -995,10 +966,10 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setLoading$0(ValueAnimator valueAnimator) {
-            this.loadingT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$tjTn0DifLbSg8D0rYd6G1If-smg(Button button, ValueAnimator valueAnimator) {
+            button.getClass();
+            button.loadingT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            button.invalidate();
         }
 
         public boolean isLoading() {
@@ -1016,7 +987,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$Button$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    FolderBottomSheet.Button.this.lambda$animateCount$1(valueAnimator2);
+                    FolderBottomSheet.Button.$r8$lambda$QQDdsEjx4I-1AwK8gPQKL767UjE(FolderBottomSheet.Button.this, valueAnimator2);
                 }
             });
             this.countAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FolderBottomSheet.Button.2
@@ -1031,10 +1002,10 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             this.countAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$animateCount$1(ValueAnimator valueAnimator) {
-            this.countScale = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$QQDdsEjx4I-1AwK8gPQKL767UjE(Button button, ValueAnimator valueAnimator) {
+            button.getClass();
+            button.countScale = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+            button.invalidate();
         }
 
         public void setCount(int i, boolean z) {
@@ -1066,7 +1037,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$Button$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        FolderBottomSheet.Button.this.lambda$setEnabled$2(valueAnimator2);
+                        FolderBottomSheet.Button.$r8$lambda$ZBEyD37Im3QCLBNwtAFQzCCYems(FolderBottomSheet.Button.this, valueAnimator2);
                     }
                 });
                 this.enabledAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FolderBottomSheet.Button.3
@@ -1078,10 +1049,10 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setEnabled$2(ValueAnimator valueAnimator) {
-            this.enabledT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$ZBEyD37Im3QCLBNwtAFQzCCYems(Button button, ValueAnimator valueAnimator) {
+            button.getClass();
+            button.enabledT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            button.invalidate();
         }
 
         @Override // android.view.View
@@ -1388,13 +1359,12 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             this.actionTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$HeaderCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FolderBottomSheet.HeaderCell.lambda$setAction$0(runnable, view);
+                    FolderBottomSheet.HeaderCell.$r8$lambda$kFktNU1EJbYmEg4fSZ-vDobQYVY(runnable, view);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setAction$0(Runnable runnable, View view) {
+        public static /* synthetic */ void $r8$lambda$kFktNU1EJbYmEg4fSZ-vDobQYVY(Runnable runnable, View view) {
             if (runnable != null) {
                 runnable.run();
             }
@@ -1582,13 +1552,11 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 if (this.middleFolder != null) {
                     canvas.save();
-                    float currentWidth = this.middleFolder.getCurrentWidth() + (isCountEmpty() ? 0.0f : AndroidUtilities.dp(15.32f) + this.countText.getCurrentWidth());
-                    float f4 = measuredWidth - (currentWidth / 2.0f);
-                    canvas.translate(f4, measuredHeight - (this.middleFolder.getHeight() / 2.0f));
+                    f2 = this.middleFolder.getCurrentWidth() + (isCountEmpty() ? 0.0f : AndroidUtilities.dp(15.32f) + this.countText.getCurrentWidth());
+                    f = measuredWidth - (f2 / 2.0f);
+                    canvas.translate(f, measuredHeight - (this.middleFolder.getHeight() / 2.0f));
                     this.middleFolder.draw(canvas);
                     canvas.restore();
-                    f2 = currentWidth;
-                    f = f4;
                 } else {
                     f = measuredWidth;
                     f2 = 0.0f;
@@ -1604,45 +1572,44 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     this.countText.draw(canvas);
                 }
                 float dp = AndroidUtilities.dp(30.0f);
-                float currentWidth2 = (f - dp) - this.leftFolder.getCurrentWidth();
+                float currentWidth = (f - dp) - this.leftFolder.getCurrentWidth();
                 if (this.leftFolder2 == null || this.leftFolder.getCurrentWidth() >= AndroidUtilities.dp(64.0f)) {
-                    f3 = currentWidth2;
+                    f3 = currentWidth;
                 } else {
-                    float currentWidth3 = currentWidth2 - (this.leftFolder2.getCurrentWidth() + dp);
+                    f3 = currentWidth - (this.leftFolder2.getCurrentWidth() + dp);
                     canvas.save();
-                    canvas.translate(currentWidth3, (measuredHeight - (this.leftFolder2.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
+                    canvas.translate(f3, (measuredHeight - (this.leftFolder2.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
                     this.leftFolder2.draw(canvas);
                     canvas.restore();
-                    f3 = currentWidth3;
                 }
                 if (this.leftFolder != null) {
                     canvas.save();
-                    canvas.translate(currentWidth2, (measuredHeight - (this.leftFolder.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
+                    canvas.translate(currentWidth, (measuredHeight - (this.leftFolder.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
                     this.leftFolder.draw(canvas);
                     canvas.restore();
                 }
-                float f5 = f + f2;
+                float f4 = f + f2;
                 if (this.rightFolder != null) {
                     canvas.save();
-                    canvas.translate(f5 + dp, (measuredHeight - (this.rightFolder.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
+                    canvas.translate(f4 + dp, (measuredHeight - (this.rightFolder.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
                     this.rightFolder.draw(canvas);
                     canvas.restore();
-                    f5 += this.rightFolder.getCurrentWidth() + dp;
+                    f4 += this.rightFolder.getCurrentWidth() + dp;
                 }
                 if (this.rightFolder2 != null && this.rightFolder.getCurrentWidth() < AndroidUtilities.dp(64.0f)) {
                     canvas.save();
-                    canvas.translate(f5 + dp, (measuredHeight - (this.rightFolder2.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
+                    canvas.translate(f4 + dp, (measuredHeight - (this.rightFolder2.getHeight() / 2.0f)) + AndroidUtilities.dp(1.0f));
                     this.rightFolder2.draw(canvas);
                     canvas.restore();
-                    f5 += dp + this.rightFolder2.getCurrentWidth();
+                    f4 += dp + this.rightFolder2.getCurrentWidth();
                 }
                 float height = measuredHeight + (this.middleFolder.getHeight() / 2.0f) + AndroidUtilities.dp(12.0f);
                 canvas.drawRect(0.0f, height, getMeasuredWidth(), height + 1.0f, this.paint);
                 this.path.rewind();
                 RectF rectF2 = AndroidUtilities.rectTmp;
-                float f6 = f2 / 2.0f;
-                float f7 = f6 + measuredWidth;
-                rectF2.set((measuredWidth - f6) - AndroidUtilities.dp(4.0f), height - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + f7, height);
+                float f5 = f2 / 2.0f;
+                float f6 = f5 + measuredWidth;
+                rectF2.set((measuredWidth - f5) - AndroidUtilities.dp(4.0f), height - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + f6, height);
                 this.path.addRoundRect(rectF2, this.radii, Path.Direction.CW);
                 canvas.drawPath(this.path, this.selectedPaint);
                 canvas.save();
@@ -1650,9 +1617,9 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 this.leftMatrix.reset();
                 this.leftMatrix.postTranslate(Math.min(f, max + AndroidUtilities.dp(8.0f)), 0.0f);
                 this.leftGradient.setLocalMatrix(this.leftMatrix);
-                float min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(8.0f), f5);
+                float min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(8.0f), f4);
                 this.rightMatrix.reset();
-                this.rightMatrix.postTranslate(Math.max(f7, min - AndroidUtilities.dp(88.0f)), 0.0f);
+                this.rightMatrix.postTranslate(Math.max(f6, min - AndroidUtilities.dp(88.0f)), 0.0f);
                 this.rightGradient.setLocalMatrix(this.rightMatrix);
                 canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.leftPaint);
                 canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.rightPaint);
@@ -1703,17 +1670,12 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             this.headerCell.setAction(LocaleController.getString(z2 ? R.string.DeselectAll : R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FolderBottomSheet.this.lambda$updateHeaderCell$20(z2);
+                    r0.deselectAll(FolderBottomSheet.this.headerCell, z2);
                 }
             });
         } else {
             this.headerCell.setAction("", null);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateHeaderCell$20(boolean z) {
-        deselectAll(this.headerCell, z);
     }
 
     private void announceSelection(boolean z) {
@@ -1729,7 +1691,8 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         AndroidUtilities.makeAccessibilityAnnouncement(sb.toString());
     }
 
-    private void deselectAll(final HeaderCell headerCell, final boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void deselectAll(final HeaderCell headerCell, final boolean z) {
         this.selectedPeers.clear();
         this.selectedPeers.addAll(this.alreadyJoined);
         if (!z) {
@@ -1744,7 +1707,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         headerCell.setAction(LocaleController.getString(z ? R.string.SelectAll : R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                FolderBottomSheet.this.lambda$deselectAll$21(headerCell, z);
+                FolderBottomSheet.this.deselectAll(headerCell, !z);
             }
         });
         announceSelection(true);
@@ -1755,15 +1718,10 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 if (tag instanceof Long) {
                     ArrayList arrayList = this.selectedPeers;
                     Long l = (Long) tag;
-                    l.longValue();
+                    l.getClass();
                     ((GroupCreateUserCell) childAt).setChecked(arrayList.contains(l), true);
                 }
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deselectAll$21(HeaderCell headerCell, boolean z) {
-        deselectAll(headerCell, !z);
     }
 }

@@ -155,7 +155,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                InviteMembersBottomSheet.this.lambda$new$0(j, baseFragment, longSparseArray, context, view, i3);
+                InviteMembersBottomSheet.$r8$lambda$60h1CqH-YVHgQNlddRT-rxNU3fw(InviteMembersBottomSheet.this, j, baseFragment, longSparseArray, context, view, i3);
             }
         });
         this.listView.setItemAnimator(new ItemAnimator());
@@ -184,7 +184,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         fragmentFloatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InviteMembersBottomSheet.this.lambda$new$2(context, j, view);
+                InviteMembersBottomSheet.$r8$lambda$DWJph8e5tjxFu99nIZJWSYECYz4(InviteMembersBottomSheet.this, context, j, view);
             }
         });
         fragmentFloatingButton.setButtonVisible(false, false);
@@ -195,60 +195,59 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         ((ViewGroup.MarginLayoutParams) this.emptyView.getLayoutParams()).rightMargin = AndroidUtilities.dp(4.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00dd A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:50:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$new$0(long j, BaseFragment baseFragment, LongSparseArray longSparseArray, Context context, View view, int i) {
+    public static /* synthetic */ void $r8$lambda$60h1CqH-YVHgQNlddRT-rxNU3fw(InviteMembersBottomSheet inviteMembersBottomSheet, long j, BaseFragment baseFragment, LongSparseArray longSparseArray, Context context, View view, int i) {
         String str;
         TLRPC.TL_chatInviteExported tL_chatInviteExported;
         long j2;
-        RecyclerView.Adapter adapter = this.listView.getAdapter();
-        SearchAdapter searchAdapter = this.searchAdapter;
+        RecyclerView.Adapter adapter = inviteMembersBottomSheet.listView.getAdapter();
+        SearchAdapter searchAdapter = inviteMembersBottomSheet.searchAdapter;
         TLObject tLObject = null;
         if (adapter != searchAdapter) {
-            if (i == this.copyLinkRow) {
-                TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j));
-                TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(j);
+            if (i == inviteMembersBottomSheet.copyLinkRow) {
+                TLRPC.Chat chat = MessagesController.getInstance(inviteMembersBottomSheet.currentAccount).getChat(Long.valueOf(j));
+                TLRPC.ChatFull chatFull = MessagesController.getInstance(inviteMembersBottomSheet.currentAccount).getChatFull(j);
                 if (chat != null) {
                     String publicUsername = ChatObject.getPublicUsername(chat);
                     if (!TextUtils.isEmpty(publicUsername)) {
-                        str = "https://" + MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername;
+                        str = "https://" + MessagesController.getInstance(inviteMembersBottomSheet.currentAccount).linkPrefix + "/" + publicUsername;
                         if (str != null) {
                             return;
                         }
                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", str));
-                        lambda$new$0();
+                        inviteMembersBottomSheet.dismiss();
                         BulletinFactory.createCopyLinkBulletin(baseFragment).show();
                     }
                 }
                 if (chatFull != null && (tL_chatInviteExported = chatFull.exported_invite) != null) {
                     str = tL_chatInviteExported.link;
                 } else {
-                    generateLink();
+                    inviteMembersBottomSheet.generateLink();
                     str = null;
                 }
                 if (str != null) {
                 }
-            } else if (i >= this.contactsStartRow && i < this.contactsEndRow) {
-                tLObject = ((ListAdapter) this.listViewAdapter).getObject(i);
+            } else if (i >= inviteMembersBottomSheet.contactsStartRow && i < inviteMembersBottomSheet.contactsEndRow) {
+                tLObject = ((ListAdapter) inviteMembersBottomSheet.listViewAdapter).getObject(i);
             }
         } else {
             int size = searchAdapter.searchResult.size();
-            int size2 = this.searchAdapter.searchAdapterHelper.getGlobalSearch().size();
-            int size3 = this.searchAdapter.searchAdapterHelper.getLocalServerSearch().size();
+            int size2 = inviteMembersBottomSheet.searchAdapter.searchAdapterHelper.getGlobalSearch().size();
+            int size3 = inviteMembersBottomSheet.searchAdapter.searchAdapterHelper.getLocalServerSearch().size();
             int i2 = i - 1;
             if (i2 >= 0 && i2 < size) {
-                tLObject = (TLObject) this.searchAdapter.searchResult.get(i2);
+                tLObject = (TLObject) inviteMembersBottomSheet.searchAdapter.searchResult.get(i2);
             } else if (i2 >= size && i2 < size3 + size) {
-                tLObject = (TLObject) this.searchAdapter.searchAdapterHelper.getLocalServerSearch().get(i2 - size);
+                tLObject = (TLObject) inviteMembersBottomSheet.searchAdapter.searchAdapterHelper.getLocalServerSearch().get(i2 - size);
             } else if (i2 > size + size3 && i2 <= size2 + size + size3) {
-                tLObject = (TLObject) this.searchAdapter.searchAdapterHelper.getGlobalSearch().get(((i2 - size) - size3) - 1);
+                tLObject = (TLObject) inviteMembersBottomSheet.searchAdapter.searchAdapterHelper.getGlobalSearch().get(((i2 - size) - size3) - 1);
             }
-            if (this.dialogsDelegate != null) {
-                this.searchView.closeSearch();
+            if (inviteMembersBottomSheet.dialogsDelegate != null) {
+                inviteMembersBottomSheet.searchView.closeSearch();
             }
         }
         if (tLObject != null) {
@@ -259,43 +258,42 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             }
             if (longSparseArray == null || longSparseArray.indexOfKey(j2) < 0) {
                 if (j2 != 0) {
-                    if (this.selectedContacts.indexOfKey(j2) >= 0) {
-                        GroupCreateSpan groupCreateSpan = (GroupCreateSpan) this.selectedContacts.get(j2);
-                        this.selectedContacts.remove(j2);
-                        this.spansContainer.removeSpan(groupCreateSpan);
+                    if (inviteMembersBottomSheet.selectedContacts.indexOfKey(j2) >= 0) {
+                        GroupCreateSpan groupCreateSpan = (GroupCreateSpan) inviteMembersBottomSheet.selectedContacts.get(j2);
+                        inviteMembersBottomSheet.selectedContacts.remove(j2);
+                        inviteMembersBottomSheet.spansContainer.removeSpan(groupCreateSpan);
                     } else {
                         GroupCreateSpan groupCreateSpan2 = new GroupCreateSpan(context, tLObject);
-                        groupCreateSpan2.setOnClickListener(this.spanClickListener);
-                        this.selectedContacts.put(j2, groupCreateSpan2);
-                        this.spansContainer.addSpan(groupCreateSpan2, true);
+                        groupCreateSpan2.setOnClickListener(inviteMembersBottomSheet.spanClickListener);
+                        inviteMembersBottomSheet.selectedContacts.put(j2, groupCreateSpan2);
+                        inviteMembersBottomSheet.spansContainer.addSpan(groupCreateSpan2, true);
                     }
                 }
-                spansCountChanged(true);
-                AndroidUtilities.updateVisibleRows(this.listView);
+                inviteMembersBottomSheet.spansCountChanged(true);
+                AndroidUtilities.updateVisibleRows(inviteMembersBottomSheet.listView);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Context context, long j, View view) {
+    public static /* synthetic */ void $r8$lambda$DWJph8e5tjxFu99nIZJWSYECYz4(final InviteMembersBottomSheet inviteMembersBottomSheet, Context context, long j, View view) {
         Activity findActivity;
-        if ((this.dialogsDelegate == null && this.selectedContacts.isEmpty()) || (findActivity = AndroidUtilities.findActivity(context)) == null) {
+        if ((inviteMembersBottomSheet.dialogsDelegate == null && inviteMembersBottomSheet.selectedContacts.isEmpty()) || (findActivity = AndroidUtilities.findActivity(context)) == null) {
             return;
         }
-        if (this.dialogsDelegate != null) {
+        if (inviteMembersBottomSheet.dialogsDelegate != null) {
             ArrayList arrayList = new ArrayList();
-            for (int i = 0; i < this.selectedContacts.size(); i++) {
-                arrayList.add(Long.valueOf(this.selectedContacts.keyAt(i)));
+            for (int i = 0; i < inviteMembersBottomSheet.selectedContacts.size(); i++) {
+                arrayList.add(Long.valueOf(inviteMembersBottomSheet.selectedContacts.keyAt(i)));
             }
-            this.dialogsDelegate.didSelectDialogs(arrayList);
-            lambda$new$0();
+            inviteMembersBottomSheet.dialogsDelegate.didSelectDialogs(arrayList);
+            inviteMembersBottomSheet.dismiss();
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(findActivity);
-        builder.setTitle(LocaleController.formatPluralString("AddManyMembersAlertTitle", this.selectedContacts.size(), new Object[0]));
+        builder.setTitle(LocaleController.formatPluralString("AddManyMembersAlertTitle", inviteMembersBottomSheet.selectedContacts.size(), new Object[0]));
         StringBuilder sb = new StringBuilder();
-        for (int i2 = 0; i2 < this.selectedContacts.size(); i2++) {
-            TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.selectedContacts.keyAt(i2)));
+        for (int i2 = 0; i2 < inviteMembersBottomSheet.selectedContacts.size(); i2++) {
+            TLRPC.User user = MessagesController.getInstance(inviteMembersBottomSheet.currentAccount).getUser(Long.valueOf(inviteMembersBottomSheet.selectedContacts.keyAt(i2)));
             if (user != null) {
                 if (sb.length() > 0) {
                     sb.append(", ");
@@ -305,10 +303,10 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 sb.append("**");
             }
         }
-        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j));
-        if (this.selectedContacts.size() > 5) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddManyMembersAlertNamesText", this.selectedContacts.size(), chat.title)));
-            String format = String.format("%d", Integer.valueOf(this.selectedContacts.size()));
+        TLRPC.Chat chat = MessagesController.getInstance(inviteMembersBottomSheet.currentAccount).getChat(Long.valueOf(j));
+        if (inviteMembersBottomSheet.selectedContacts.size() > 5) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddManyMembersAlertNamesText", inviteMembersBottomSheet.selectedContacts.size(), chat.title)));
+            String format = String.format("%d", Integer.valueOf(inviteMembersBottomSheet.selectedContacts.size()));
             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
             if (indexOf >= 0) {
                 spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
@@ -320,7 +318,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         builder.setPositiveButton(LocaleController.getString(R.string.Add), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i3) {
-                InviteMembersBottomSheet.this.lambda$new$1(alertDialog, i3);
+                InviteMembersBottomSheet.this.onAddToGroupDone(0);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -329,11 +327,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(AlertDialog alertDialog, int i) {
-        onAddToGroupDone(0);
-    }
-
-    private void onAddToGroupDone(int i) {
+    public void onAddToGroupDone(int i) {
         ArrayList arrayList = new ArrayList();
         for (int i2 = 0; i2 < this.selectedContacts.size(); i2++) {
             arrayList.add(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.selectedContacts.keyAt(i2))));
@@ -342,13 +336,12 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         if (contactsAddActivityDelegate != null) {
             contactsAddActivityDelegate.didSelectUsers(arrayList, i);
         }
-        lambda$new$0();
+        dismiss();
     }
 
     @Override // org.telegram.ui.Components.UsersAlertBase, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);
     }
 
@@ -461,7 +454,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        InviteMembersBottomSheet.this.lambda$spansCountChanged$3(valueAnimator2);
+                        InviteMembersBottomSheet.$r8$lambda$dfxa6Fc6u18xPr2bFdpzMzshZis(InviteMembersBottomSheet.this, valueAnimator2);
                     }
                 });
                 this.spansEnterAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.3
@@ -492,10 +485,10 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$spansCountChanged$3(ValueAnimator valueAnimator) {
-        this.spansEnterProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.containerView.invalidate();
+    public static /* synthetic */ void $r8$lambda$dfxa6Fc6u18xPr2bFdpzMzshZis(InviteMembersBottomSheet inviteMembersBottomSheet, ValueAnimator valueAnimator) {
+        inviteMembersBottomSheet.getClass();
+        inviteMembersBottomSheet.spansEnterProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        inviteMembersBottomSheet.containerView.invalidate();
     }
 
     private void updateRows() {
@@ -558,7 +551,8 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         }
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
         private ListAdapter() {
         }
 
@@ -709,7 +703,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
 
                 @Override // org.telegram.ui.Adapters.SearchAdapterHelper.SearchAdapterHelperDelegate
                 public final void onDataSetChanged(int i) {
-                    InviteMembersBottomSheet.SearchAdapter.this.lambda$new$0(i);
+                    InviteMembersBottomSheet.SearchAdapter.$r8$lambda$3TSneWtgzb-wLU99AoxTzJMSWh0(InviteMembersBottomSheet.SearchAdapter.this, i);
                 }
 
                 @Override // org.telegram.ui.Adapters.SearchAdapterHelper.SearchAdapterHelperDelegate
@@ -719,13 +713,12 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(int i) {
-            InviteMembersBottomSheet.this.showItemsAnimated(this.currentItemsCount - 1);
-            if (this.searchRunnable == null && !this.searchAdapterHelper.isSearchInProgress() && getItemCount() <= 2) {
+        public static /* synthetic */ void $r8$lambda$3TSneWtgzb-wLU99AoxTzJMSWh0(SearchAdapter searchAdapter, int i) {
+            InviteMembersBottomSheet.this.showItemsAnimated(searchAdapter.currentItemsCount - 1);
+            if (searchAdapter.searchRunnable == null && !searchAdapter.searchAdapterHelper.isSearchInProgress() && searchAdapter.getItemCount() <= 2) {
                 InviteMembersBottomSheet.this.emptyView.showProgress(false, true);
             }
-            notifyDataSetChanged();
+            searchAdapter.notifyDataSetChanged();
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
@@ -754,16 +747,16 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             return new RecyclerListView.Holder(groupCreateUserCell);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:26:0x00b0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:26:0x00af, code lost:
         
-            if (r13.toString().startsWith("@" + r3) != false) goto L57;
+            if (r13.toString().startsWith("@" + r3) != false) goto L58;
          */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x010e  */
-        /* JADX WARN: Removed duplicated region for block: B:32:0x0125  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x0139  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x010d  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x0124  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x0138  */
         /* JADX WARN: Removed duplicated region for block: B:54:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:55:0x012a  */
-        /* JADX WARN: Removed duplicated region for block: B:59:0x0113  */
+        /* JADX WARN: Removed duplicated region for block: B:55:0x0129  */
+        /* JADX WARN: Removed duplicated region for block: B:59:0x0112  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -901,20 +894,19 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SearchAdapter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InviteMembersBottomSheet.SearchAdapter.this.lambda$updateSearchResults$1(arrayList, arrayList2);
+                    InviteMembersBottomSheet.SearchAdapter.$r8$lambda$o2HU2KD4-9Ho7yJnTX4xVsD2kVw(InviteMembersBottomSheet.SearchAdapter.this, arrayList, arrayList2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateSearchResults$1(ArrayList arrayList, ArrayList arrayList2) {
-            this.searchRunnable = null;
-            this.searchResult = arrayList;
-            this.searchResultNames = arrayList2;
-            this.searchAdapterHelper.mergeResults(arrayList);
-            InviteMembersBottomSheet.this.showItemsAnimated(this.currentItemsCount - 1);
-            notifyDataSetChanged();
-            if (this.searchAdapterHelper.isSearchInProgress() || getItemCount() > 2) {
+        public static /* synthetic */ void $r8$lambda$o2HU2KD4-9Ho7yJnTX4xVsD2kVw(SearchAdapter searchAdapter, ArrayList arrayList, ArrayList arrayList2) {
+            searchAdapter.searchRunnable = null;
+            searchAdapter.searchResult = arrayList;
+            searchAdapter.searchResultNames = arrayList2;
+            searchAdapter.searchAdapterHelper.mergeResults(arrayList);
+            InviteMembersBottomSheet.this.showItemsAnimated(searchAdapter.currentItemsCount - 1);
+            searchAdapter.notifyDataSetChanged();
+            if (searchAdapter.searchAdapterHelper.isSearchInProgress() || searchAdapter.getItemCount() > 2) {
                 return;
             }
             InviteMembersBottomSheet.this.emptyView.showProgress(false, true);
@@ -942,7 +934,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SearchAdapter$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteMembersBottomSheet.SearchAdapter.this.lambda$searchDialogs$4(str);
+                        InviteMembersBottomSheet.SearchAdapter.$r8$lambda$oQTJao8AoPQU4nFyT_oBs1MIRTc(InviteMembersBottomSheet.SearchAdapter.this, str);
                     }
                 };
                 this.searchRunnable = runnable;
@@ -957,47 +949,46 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchDialogs$4(final String str) {
+        public static /* synthetic */ void $r8$lambda$oQTJao8AoPQU4nFyT_oBs1MIRTc(final SearchAdapter searchAdapter, final String str) {
+            searchAdapter.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SearchAdapter$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InviteMembersBottomSheet.SearchAdapter.this.lambda$searchDialogs$3(str);
+                    InviteMembersBottomSheet.SearchAdapter.$r8$lambda$kJ7ix-IhHh2e4JaQ_cX-NttJmOA(InviteMembersBottomSheet.SearchAdapter.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchDialogs$3(final String str) {
-            this.searchAdapterHelper.queryServerSearch(str, true, InviteMembersBottomSheet.this.dialogsDelegate != null, true, InviteMembersBottomSheet.this.dialogsDelegate != null, false, 0L, false, 0, 0);
+        public static /* synthetic */ void $r8$lambda$kJ7ix-IhHh2e4JaQ_cX-NttJmOA(final SearchAdapter searchAdapter, final String str) {
+            searchAdapter.searchAdapterHelper.queryServerSearch(str, true, InviteMembersBottomSheet.this.dialogsDelegate != null, true, InviteMembersBottomSheet.this.dialogsDelegate != null, false, 0L, false, 0, 0);
             DispatchQueue dispatchQueue = Utilities.searchQueue;
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SearchAdapter$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InviteMembersBottomSheet.SearchAdapter.this.lambda$searchDialogs$2(str);
+                    InviteMembersBottomSheet.SearchAdapter.$r8$lambda$C5hGV4f_WxqbXvmxQX7ZLJxcVS4(InviteMembersBottomSheet.SearchAdapter.this, str);
                 }
             };
-            this.searchRunnable = runnable;
+            searchAdapter.searchRunnable = runnable;
             dispatchQueue.postRunnable(runnable);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:35:0x00d4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:35:0x00d7, code lost:
         
-            if (r13.contains(" " + r3) != false) goto L44;
+            if (r13.contains(" " + r5) != false) goto L44;
          */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x0134 A[LOOP:1: B:26:0x0098->B:41:0x0134, LOOP_END] */
-        /* JADX WARN: Removed duplicated region for block: B:42:0x00e4 A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x0138 A[LOOP:1: B:26:0x009b->B:41:0x0138, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x00e7 A[SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public /* synthetic */ void lambda$searchDialogs$2(String str) {
+        public static /* synthetic */ void $r8$lambda$C5hGV4f_WxqbXvmxQX7ZLJxcVS4(SearchAdapter searchAdapter, String str) {
             String str2;
             String publicUsername;
             Object obj;
+            searchAdapter.getClass();
             String lowerCase = str.trim().toLowerCase();
             if (lowerCase.length() == 0) {
-                updateSearchResults(new ArrayList(), new ArrayList());
+                searchAdapter.updateSearchResults(new ArrayList(), new ArrayList());
                 return;
             }
             String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -1067,7 +1058,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                     }
                 }
             }
-            updateSearchResults(arrayList, arrayList2);
+            searchAdapter.updateSearchResults(arrayList, arrayList2);
         }
     }
 
@@ -1094,7 +1085,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InviteMembersBottomSheet.this.lambda$onSearchViewTouched$5(editTextBoldCursor);
+                    InviteMembersBottomSheet.$r8$lambda$ZvdpehcT4RY6ChYyGCLMlHQIwqg(InviteMembersBottomSheet.this, editTextBoldCursor);
                 }
             }, needEnterText ? 200L : 0L);
         } else {
@@ -1110,9 +1101,8 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSearchViewTouched$5(final EditTextBoldCursor editTextBoldCursor) {
-        setFocusable(true);
+    public static /* synthetic */ void $r8$lambda$ZvdpehcT4RY6ChYyGCLMlHQIwqg(InviteMembersBottomSheet inviteMembersBottomSheet, final EditTextBoldCursor editTextBoldCursor) {
+        inviteMembersBottomSheet.setFocusable(true);
         editTextBoldCursor.requestFocus();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
@@ -1213,7 +1203,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        InviteMembersBottomSheet.SpansContainer.this.lambda$onMeasure$0(valueAnimator);
+                        InviteMembersBottomSheet.SpansContainer.$r8$lambda$MfQh7cY2v2J_fTb7UA4v3aIMN7A(InviteMembersBottomSheet.SpansContainer.this, valueAnimator);
                     }
                 });
                 this.animators.add(ofInt);
@@ -1222,14 +1212,14 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteMembersBottomSheet.SpansContainer.this.lambda$onMeasure$1(dp6);
+                        InviteMembersBottomSheet.this.spansScrollView.smoothScrollTo(0, dp6 - InviteMembersBottomSheet.this.maxSize);
                     }
                 });
             } else if (!this.addAnimation && InviteMembersBottomSheet.this.spansScrollView.getScrollY() + InviteMembersBottomSheet.this.spansScrollView.getMeasuredHeight() > dp6) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteMembersBottomSheet.SpansContainer.this.lambda$onMeasure$2(dp6);
+                        InviteMembersBottomSheet.this.spansScrollView.smoothScrollTo(0, dp6 - InviteMembersBottomSheet.this.maxSize);
                     }
                 });
             }
@@ -1253,20 +1243,9 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             InviteMembersBottomSheet.this.listView.setTranslationY(0.0f);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onMeasure$0(ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$MfQh7cY2v2J_fTb7UA4v3aIMN7A(SpansContainer spansContainer, ValueAnimator valueAnimator) {
             InviteMembersBottomSheet.this.scrollViewH = ((Integer) valueAnimator.getAnimatedValue()).intValue();
             ((BottomSheet) InviteMembersBottomSheet.this).containerView.invalidate();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onMeasure$1(int i) {
-            InviteMembersBottomSheet.this.spansScrollView.smoothScrollTo(0, i - InviteMembersBottomSheet.this.maxSize);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onMeasure$2(int i) {
-            InviteMembersBottomSheet.this.spansScrollView.smoothScrollTo(0, i - InviteMembersBottomSheet.this.maxSize);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -1458,36 +1437,36 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new RequestDelegate() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                InviteMembersBottomSheet.this.lambda$generateLink$8(tLObject, tL_error);
+                InviteMembersBottomSheet.$r8$lambda$pTcK69kS7pqfGrGxmKbK0qJHYFQ(InviteMembersBottomSheet.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$generateLink$8(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$pTcK69kS7pqfGrGxmKbK0qJHYFQ(final InviteMembersBottomSheet inviteMembersBottomSheet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        inviteMembersBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                InviteMembersBottomSheet.this.lambda$generateLink$7(tL_error, tLObject);
+                InviteMembersBottomSheet.$r8$lambda$HPhb5555Pw3t2cLui7n7p1s9SmQ(InviteMembersBottomSheet.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$generateLink$7(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$HPhb5555Pw3t2cLui7n7p1s9SmQ(InviteMembersBottomSheet inviteMembersBottomSheet, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error == null) {
-            this.invite = (TLRPC.TL_chatInviteExported) tLObject;
-            TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.chatId);
+            inviteMembersBottomSheet.getClass();
+            inviteMembersBottomSheet.invite = (TLRPC.TL_chatInviteExported) tLObject;
+            TLRPC.ChatFull chatFull = MessagesController.getInstance(inviteMembersBottomSheet.currentAccount).getChatFull(inviteMembersBottomSheet.chatId);
             if (chatFull != null) {
-                chatFull.exported_invite = this.invite;
+                chatFull.exported_invite = inviteMembersBottomSheet.invite;
             }
-            if (this.invite.link == null) {
+            if (inviteMembersBottomSheet.invite.link == null) {
                 return;
             }
-            ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.invite.link));
-            BulletinFactory.createCopyLinkBulletin(this.parentFragment).show();
-            lambda$new$0();
+            ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", inviteMembersBottomSheet.invite.link));
+            BulletinFactory.createCopyLinkBulletin(inviteMembersBottomSheet.parentFragment).show();
+            inviteMembersBottomSheet.dismiss();
         }
-        this.linkGenerating = false;
+        inviteMembersBottomSheet.linkGenerating = false;
     }
 }

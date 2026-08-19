@@ -46,15 +46,13 @@ public class OnContentRefreshDelegateImpl implements OnContentRefreshDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onClick", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.OnContentRefreshDelegateImpl$OnContentRefreshListenerStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onContentRefreshRequested$0;
-                    lambda$onContentRefreshRequested$0 = OnContentRefreshDelegateImpl.OnContentRefreshListenerStub.this.lambda$onContentRefreshRequested$0();
-                    return lambda$onContentRefreshRequested$0;
+                    return OnContentRefreshDelegateImpl.OnContentRefreshListenerStub.$r8$lambda$HDd2U4FE66IM1uZFtMhRK-dnpR8(OnContentRefreshDelegateImpl.OnContentRefreshListenerStub.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onContentRefreshRequested$0() {
+        public static /* synthetic */ Object $r8$lambda$HDd2U4FE66IM1uZFtMhRK-dnpR8(OnContentRefreshListenerStub onContentRefreshListenerStub) {
+            onContentRefreshListenerStub.getClass();
             throw null;
         }
     }

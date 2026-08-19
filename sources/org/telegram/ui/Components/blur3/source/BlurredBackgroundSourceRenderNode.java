@@ -79,16 +79,15 @@ public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSourc
         int width;
         int height;
         hasDisplayList = this.renderNode.hasDisplayList();
-        if (hasDisplayList) {
-            width = this.renderNode.getWidth();
-            if (width == i) {
-                height = this.renderNode.getHeight();
-                if (height == i2) {
-                    return false;
-                }
-            }
+        if (!hasDisplayList) {
+            return true;
         }
-        return true;
+        width = this.renderNode.getWidth();
+        if (width != i) {
+            return true;
+        }
+        height = this.renderNode.getHeight();
+        return height != i2;
     }
 
     public RecordingCanvas beginRecording(int i, int i2) {

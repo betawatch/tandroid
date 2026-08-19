@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /* loaded from: classes3.dex */
-public class OneCollectorIngestion implements Ingestion {
+public class OneCollectorIngestion implements Ingestion, AutoCloseable {
     private final HttpClient mHttpClient;
     private final LogSerializer mLogSerializer;
     private String mLogUrl = "https://mobile.events.data.microsoft.com/OneCollector/1.0";

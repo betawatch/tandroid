@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /* loaded from: classes.dex */
-final class zzog extends zzoj implements Closeable {
+final class zzog extends zzoj implements Closeable, AutoCloseable {
     private zzog() {
         new AtomicBoolean();
     }

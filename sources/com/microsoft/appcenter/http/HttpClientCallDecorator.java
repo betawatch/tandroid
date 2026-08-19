@@ -29,7 +29,17 @@ abstract class HttpClientCallDecorator implements Runnable, ServiceCall, Service
 
     @Override // java.lang.Runnable
     public synchronized void run() {
-        this.mServiceCall = this.mDecoratedApi.callAsync(this.mUrl, this.mMethod, this.mHeaders, this.mCallTemplate, this);
+        try {
+            try {
+                this.mServiceCall = this.mDecoratedApi.callAsync(this.mUrl, this.mMethod, this.mHeaders, this.mCallTemplate, this);
+            } catch (Throwable th) {
+                th = th;
+                throw th;
+            }
+        } catch (Throwable th2) {
+            th = th2;
+            throw th;
+        }
     }
 
     @Override // com.microsoft.appcenter.http.ServiceCallback

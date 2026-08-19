@@ -31,7 +31,7 @@ public final class zaax implements zabf {
         while (it.hasNext()) {
             ((Api.Client) it.next()).disconnect();
         }
-        this.zaa.zag.zad = Collections.emptySet();
+        this.zaa.zag.zad = Collections.EMPTY_SET;
     }
 
     @Override // com.google.android.gms.common.api.internal.zabf

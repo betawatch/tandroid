@@ -59,13 +59,11 @@ public abstract class InstallerUtils {
     public static boolean isUnknownSourcesEnabled(Context context) {
         boolean canRequestPackageInstalls;
         if (Build.VERSION.SDK_INT >= 26) {
-            if (context.getApplicationInfo().targetSdkVersion >= 26) {
-                canRequestPackageInstalls = context.getPackageManager().canRequestPackageInstalls();
-                if (!canRequestPackageInstalls) {
-                    return false;
-                }
+            if (context.getApplicationInfo().targetSdkVersion < 26) {
+                return true;
             }
-            return true;
+            canRequestPackageInstalls = context.getPackageManager().canRequestPackageInstalls();
+            return canRequestPackageInstalls;
         }
         return "1".equals(Settings.Secure.getString(context.getContentResolver(), "install_non_market_apps"));
     }

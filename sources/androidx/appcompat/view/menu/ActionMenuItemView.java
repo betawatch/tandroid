@@ -81,7 +81,11 @@ public class ActionMenuItemView extends AppCompatTextView implements MenuView.It
     private boolean shouldAllowTextWithIcon() {
         Configuration configuration = getContext().getResources().getConfiguration();
         int i = configuration.screenWidthDp;
-        return i >= 480 || (i >= 640 && configuration.screenHeightDp >= 480) || configuration.orientation == 2;
+        int i2 = configuration.screenHeightDp;
+        if (i < 480) {
+            return (i >= 640 && i2 >= 480) || configuration.orientation == 2;
+        }
+        return true;
     }
 
     @Override // android.widget.TextView, android.view.View

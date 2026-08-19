@@ -1,83 +1,33 @@
 package j$.util.stream;
 
-import java.util.function.BiConsumer;
-import java.util.function.DoubleBinaryOperator;
-import java.util.function.DoubleConsumer;
-import java.util.function.DoubleFunction;
-import java.util.function.ObjDoubleConsumer;
-import java.util.function.Supplier;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public interface D extends BaseStream {
-    D a();
+public final class D extends G implements d2 {
+    public static final B c;
+    public static final B d;
 
-    j$.util.B average();
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
+    }
 
-    D b();
+    @Override // j$.util.stream.G, j$.util.stream.f2
+    public final void accept(int i) {
+        s(Integer.valueOf(i));
+    }
 
-    Stream boxed();
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        if (this.a) {
+            return new j$.util.A(((Integer) this.b).intValue());
+        }
+        return null;
+    }
 
-    D c();
-
-    Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer);
-
-    long count();
-
-    D d();
-
-    D distinct();
-
-    D e(a aVar);
-
-    j$.util.B findAny();
-
-    j$.util.B findFirst();
-
-    void forEach(DoubleConsumer doubleConsumer);
-
-    void forEachOrdered(DoubleConsumer doubleConsumer);
-
-    boolean h();
-
-    LongStream i();
-
-    j$.util.H iterator();
-
-    D limit(long j);
-
-    Stream mapToObj(DoubleFunction doubleFunction);
-
-    j$.util.B max();
-
-    j$.util.B min();
-
-    boolean o();
-
-    @Override // j$.util.stream.BaseStream
-    D parallel();
-
-    D peek(DoubleConsumer doubleConsumer);
-
-    double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
-
-    j$.util.B reduce(DoubleBinaryOperator doubleBinaryOperator);
-
-    @Override // j$.util.stream.BaseStream
-    D sequential();
-
-    D skip(long j);
-
-    D sorted();
-
-    j$.util.W spliterator();
-
-    double sum();
-
-    j$.util.w summaryStatistics();
-
-    IntStream t();
-
-    double[] toArray();
-
-    boolean x();
+    static {
+        T2 t2 = T2.INT_VALUE;
+        j$.util.A a = j$.util.A.c;
+        c = new B(true, t2, a, new m(12), new m(13));
+        d = new B(false, t2, a, new m(12), new m(13));
+    }
 }

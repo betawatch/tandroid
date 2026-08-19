@@ -51,7 +51,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private UniversalAdapter adapter;
     private ButtonWithCounterView button;
@@ -78,7 +78,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         this.requestPreview = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkSheet.this.lambda$new$7();
+                StoryLinkSheet.$r8$lambda$TFhJVauuAvy-sAoyO1YAHMgfn70(StoryLinkSheet.this);
             }
         };
         this.whenDone = callback;
@@ -113,13 +113,13 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkSheet.this.lambda$new$0(str, textView);
+                StoryLinkSheet.$r8$lambda$KdNv_Pl_g3ioDTxEalYcHAfBcCI(StoryLinkSheet.this, str, textView);
             }
         };
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryLinkSheet.this.lambda$new$1(runnable, view);
+                StoryLinkSheet.$r8$lambda$y6jMhzSaEZHiRK9pggOhEerdzUU(StoryLinkSheet.this, runnable, view);
             }
         });
         runnable.run();
@@ -176,7 +176,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoryLinkSheet.this.lambda$new$2(view);
+                StoryLinkSheet.this.processDone();
             }
         });
         this.button.setEnabled(containsURL(this.urlEditText.getText().toString()));
@@ -203,7 +203,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                StoryLinkSheet.this.lambda$new$4(context, previewView, view, i2);
+                StoryLinkSheet.$r8$lambda$O3Ei4aCLYVIBOTzy_USSM57__8c(StoryLinkSheet.this, context, previewView, view, i2);
             }
         });
         UniversalAdapter universalAdapter = this.adapter;
@@ -212,54 +212,46 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(String str, TextView textView) {
-        ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
-        boolean z = (TextUtils.isEmpty(this.urlEditText.editText.getText()) || TextUtils.equals(this.urlEditText.editText.getText(), str) || TextUtils.isEmpty(this.urlEditText.editText.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip();
+    public static /* synthetic */ void $r8$lambda$KdNv_Pl_g3ioDTxEalYcHAfBcCI(StoryLinkSheet storyLinkSheet, String str, TextView textView) {
+        ClipboardManager clipboardManager = (ClipboardManager) storyLinkSheet.getContext().getSystemService("clipboard");
+        boolean z = (TextUtils.isEmpty(storyLinkSheet.urlEditText.editText.getText()) || TextUtils.equals(storyLinkSheet.urlEditText.editText.getText(), str) || TextUtils.isEmpty(storyLinkSheet.urlEditText.editText.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip();
         textView.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.7f).scaleY(z ? 1.0f : 0.7f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(300L).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$y6jMhzSaEZHiRK9pggOhEerdzUU(StoryLinkSheet storyLinkSheet, Runnable runnable, View view) {
         CharSequence charSequence;
         try {
-            charSequence = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(getContext());
+            charSequence = ((ClipboardManager) storyLinkSheet.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(storyLinkSheet.getContext());
         } catch (Exception e) {
             FileLog.e(e);
             charSequence = null;
         }
         if (charSequence != null) {
-            this.urlEditText.editText.setText(charSequence.toString());
-            EditTextCaption editTextCaption = this.urlEditText.editText;
+            storyLinkSheet.urlEditText.editText.setText(charSequence.toString());
+            EditTextCaption editTextCaption = storyLinkSheet.urlEditText.editText;
             editTextCaption.setSelection(0, editTextCaption.getText().length());
         }
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(Context context, PreviewView previewView, View view, int i) {
+    public static /* synthetic */ void $r8$lambda$O3Ei4aCLYVIBOTzy_USSM57__8c(final StoryLinkSheet storyLinkSheet, Context context, PreviewView previewView, View view, int i) {
         TLRPC.WebPage webPage;
-        UItem item = this.adapter.getItem(i - 1);
+        UItem item = storyLinkSheet.adapter.getItem(i - 1);
         if (item == null) {
             return;
         }
-        if (item.instanceOf(WebpagePreviewView.Factory.class) && (webPage = this.webpage) != null && !isPreviewEmpty(webPage)) {
-            StoryLinkPreviewDialog storyLinkPreviewDialog = new StoryLinkPreviewDialog(context, this.currentAccount);
+        if (item.instanceOf(WebpagePreviewView.Factory.class) && (webPage = storyLinkSheet.webpage) != null && !isPreviewEmpty(webPage)) {
+            StoryLinkPreviewDialog storyLinkPreviewDialog = new StoryLinkPreviewDialog(context, storyLinkSheet.currentAccount);
             LinkPreview.WebPagePreview webPagePreview = new LinkPreview.WebPagePreview();
-            webPagePreview.url = this.urlEditText.editText.getText().toString();
-            webPagePreview.name = this.nameOpen ? this.nameEditText.editText.getText().toString() : null;
-            webPagePreview.webpage = this.webpage;
-            webPagePreview.largePhoto = this.photoLarge;
-            webPagePreview.captionAbove = this.captionAbove;
+            webPagePreview.url = storyLinkSheet.urlEditText.editText.getText().toString();
+            webPagePreview.name = storyLinkSheet.nameOpen ? storyLinkSheet.nameEditText.editText.getText().toString() : null;
+            webPagePreview.webpage = storyLinkSheet.webpage;
+            webPagePreview.largePhoto = storyLinkSheet.photoLarge;
+            webPagePreview.captionAbove = storyLinkSheet.captionAbove;
             storyLinkPreviewDialog.set(webPagePreview, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda8
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    StoryLinkSheet.this.lambda$new$3((LinkPreview.WebPagePreview) obj);
+                    StoryLinkSheet.$r8$lambda$ByFZrGZjmVP4Eq3mIvHBqcqpjCs(StoryLinkSheet.this, (LinkPreview.WebPagePreview) obj);
                 }
             });
             storyLinkPreviewDialog.setStoryPreviewView(previewView);
@@ -267,26 +259,26 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
             return;
         }
         if (item.id == 2 && (view instanceof TextCheckCell)) {
-            boolean z = !this.nameOpen;
-            this.nameOpen = z;
+            boolean z = !storyLinkSheet.nameOpen;
+            storyLinkSheet.nameOpen = z;
             ((TextCheckCell) view).setChecked(z);
-            this.adapter.update(true);
-            if (this.nameOpen) {
-                this.nameEditText.requestFocus();
+            storyLinkSheet.adapter.update(true);
+            if (storyLinkSheet.nameOpen) {
+                storyLinkSheet.nameEditText.requestFocus();
             } else {
-                this.urlEditText.requestFocus();
+                storyLinkSheet.urlEditText.requestFocus();
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(LinkPreview.WebPagePreview webPagePreview) {
+    public static /* synthetic */ void $r8$lambda$ByFZrGZjmVP4Eq3mIvHBqcqpjCs(StoryLinkSheet storyLinkSheet, LinkPreview.WebPagePreview webPagePreview) {
         if (webPagePreview == null) {
-            closePreview(null);
-        } else {
-            this.photoLarge = webPagePreview.largePhoto;
-            this.captionAbove = webPagePreview.captionAbove;
+            storyLinkSheet.closePreview(null);
+            return;
         }
+        storyLinkSheet.getClass();
+        storyLinkSheet.photoLarge = webPagePreview.largePhoto;
+        storyLinkSheet.captionAbove = webPagePreview.captionAbove;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -302,7 +294,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
                 this.whenDone.run(webPagePreview);
                 this.whenDone = null;
             }
-            lambda$new$0();
+            dismiss();
         }
     }
 
@@ -415,63 +407,63 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         this.button.setEnabled(containsURL);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7() {
+    public static /* synthetic */ void $r8$lambda$TFhJVauuAvy-sAoyO1YAHMgfn70(final StoryLinkSheet storyLinkSheet) {
+        storyLinkSheet.getClass();
         TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
-        getwebpagepreview.message = this.urlEditText.editText.getText().toString();
-        this.reqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwebpagepreview, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda9
+        getwebpagepreview.message = storyLinkSheet.urlEditText.editText.getText().toString();
+        storyLinkSheet.reqId = ConnectionsManager.getInstance(storyLinkSheet.currentAccount).sendRequest(getwebpagepreview, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                StoryLinkSheet.this.lambda$new$6(tLObject, tL_error);
+                StoryLinkSheet.$r8$lambda$-oVy1tiKl5OTXZVuOtczggGXN_M(StoryLinkSheet.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$-oVy1tiKl5OTXZVuOtczggGXN_M(final StoryLinkSheet storyLinkSheet, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        storyLinkSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkSheet.this.lambda$new$5(tLObject);
+                StoryLinkSheet.$r8$lambda$zZMrhBagZSF_gWLhS9zj6GNSM34(StoryLinkSheet.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0051  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$new$5(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$zZMrhBagZSF_gWLhS9zj6GNSM34(StoryLinkSheet storyLinkSheet, TLObject tLObject) {
         TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage;
         UniversalAdapter universalAdapter;
+        storyLinkSheet.getClass();
         if (tLObject instanceof TL_account.webPagePreview) {
             TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
-            MessagesController.getInstance(this.currentAccount).putUsers(webpagepreview.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(webpagepreview.chats, false);
+            MessagesController.getInstance(storyLinkSheet.currentAccount).putUsers(webpagepreview.users, false);
+            MessagesController.getInstance(storyLinkSheet.currentAccount).putChats(webpagepreview.chats, false);
             TLRPC.MessageMedia messageMedia = webpagepreview.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
                 if (tL_messageMediaWebPage == null) {
                     TLRPC.WebPage webPage = tL_messageMediaWebPage.webpage;
-                    this.webpage = webPage;
+                    storyLinkSheet.webpage = webPage;
                     if (isPreviewEmpty(webPage)) {
-                        TLRPC.WebPage webPage2 = this.webpage;
-                        this.webpageId = webPage2 == null ? 0L : webPage2.id;
-                        this.webpage = null;
+                        TLRPC.WebPage webPage2 = storyLinkSheet.webpage;
+                        storyLinkSheet.webpageId = webPage2 == null ? 0L : webPage2.id;
+                        storyLinkSheet.webpage = null;
                     } else {
-                        this.webpageId = 0L;
+                        storyLinkSheet.webpageId = 0L;
                     }
                 } else {
-                    this.webpage = null;
-                    this.webpageId = 0L;
+                    storyLinkSheet.webpage = null;
+                    storyLinkSheet.webpageId = 0L;
                 }
-                this.loading = this.webpageId != 0;
-                universalAdapter = this.adapter;
+                storyLinkSheet.loading = storyLinkSheet.webpageId != 0;
+                universalAdapter = storyLinkSheet.adapter;
                 if (universalAdapter == null) {
                     universalAdapter.update(true);
                     return;
@@ -482,8 +474,8 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         tL_messageMediaWebPage = null;
         if (tL_messageMediaWebPage == null) {
         }
-        this.loading = this.webpageId != 0;
-        universalAdapter = this.adapter;
+        storyLinkSheet.loading = storyLinkSheet.webpageId != 0;
+        universalAdapter = storyLinkSheet.adapter;
         if (universalAdapter == null) {
         }
     }
@@ -670,7 +662,10 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
     }
 
     public static boolean isPreviewEmpty(TLRPC.WebPage webPage) {
-        return (webPage instanceof TLRPC.TL_webPagePending) || (TextUtils.isEmpty(webPage.title) && TextUtils.isEmpty(webPage.description));
+        if (webPage instanceof TLRPC.TL_webPagePending) {
+            return true;
+        }
+        return TextUtils.isEmpty(webPage.title) && TextUtils.isEmpty(webPage.description);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -680,25 +675,23 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryLinkSheet$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                StoryLinkSheet.this.lambda$show$8();
+                StoryLinkSheet.$r8$lambda$S3KrucBAHa9RZ7od-v03RayBOSA(StoryLinkSheet.this);
             }
         }, 150L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$8() {
-        if (isShowing()) {
-            this.urlEditText.editText.requestFocus();
-            AndroidUtilities.showKeyboard(this.urlEditText.editText);
+    public static /* synthetic */ void $r8$lambda$S3KrucBAHa9RZ7od-v03RayBOSA(StoryLinkSheet storyLinkSheet) {
+        if (storyLinkSheet.isShowing()) {
+            storyLinkSheet.urlEditText.editText.requestFocus();
+            AndroidUtilities.showKeyboard(storyLinkSheet.urlEditText.editText);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         AndroidUtilities.hideKeyboard(this.urlEditText.editText);
         AndroidUtilities.hideKeyboard(this.nameEditText.editText);
-        super.lambda$new$0();
+        super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
     }
 }

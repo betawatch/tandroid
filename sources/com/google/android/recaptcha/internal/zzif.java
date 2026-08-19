@@ -37,30 +37,26 @@ public final class zzif {
                 Object obj = zzicVar.zza;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzicVar.zzc;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
-                    zzicVar.zzc = 1;
-                    obj = CoroutineScopeKt.coroutineScope(zzidVar, zzicVar);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                } else {
+                if (i == 0) {
                     if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     ResultKt.throwOnFailure(obj);
+                    return obj;
                 }
-                return obj;
+                ResultKt.throwOnFailure(obj);
+                zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
+                zzicVar.zzc = 1;
+                Object coroutineScope = CoroutineScopeKt.coroutineScope(zzidVar, zzicVar);
+                return coroutineScope == coroutine_suspended ? coroutine_suspended : coroutineScope;
             }
         }
         zzicVar = new zzic(zzifVar, continuation);
         Object obj2 = zzicVar.zza;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzicVar.zzc;
-        if (i != 0) {
+        if (i == 0) {
         }
-        return obj2;
     }
 
     public final Object zzb(zzcy zzcyVar, zzye zzyeVar, Continuation continuation) {

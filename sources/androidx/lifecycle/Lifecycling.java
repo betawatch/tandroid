@@ -90,10 +90,9 @@ public final class Lifecycling {
             Class<?> cls2 = Class.forName(adapterName);
             Intrinsics.checkNotNull(cls2, "null cannot be cast to non-null type java.lang.Class<out androidx.lifecycle.GeneratedAdapter>");
             Constructor declaredConstructor = cls2.getDeclaredConstructor(cls);
-            if (declaredConstructor.isAccessible()) {
-                return declaredConstructor;
+            if (!declaredConstructor.isAccessible()) {
+                declaredConstructor.setAccessible(true);
             }
-            declaredConstructor.setAccessible(true);
             return declaredConstructor;
         } catch (ClassNotFoundException unused) {
             return null;

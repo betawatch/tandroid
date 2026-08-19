@@ -96,7 +96,7 @@ public abstract class GoogleApi {
         ClientSettings.Builder builder = new ClientSettings.Builder();
         Api.ApiOptions apiOptions = this.zae;
         builder.zab(apiOptions instanceof Api.ApiOptions.HasAccountOptions ? ((Api.ApiOptions.HasAccountOptions) apiOptions).getAccount() : null);
-        builder.zaa(Collections.emptySet());
+        builder.zaa(Collections.EMPTY_SET);
         builder.zac(this.zab.getClass().getName());
         builder.setRealClientPackageName(this.zab.getPackageName());
         return builder;

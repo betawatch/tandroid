@@ -49,11 +49,11 @@ class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
             new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.google.firebase.messaging.FcmLifecycleCallbacks$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FcmLifecycleCallbacks.this.lambda$onActivityCreated$0(intent);
+                    FcmLifecycleCallbacks.this.logNotificationOpen(intent);
                 }
             });
         } else {
-            lambda$onActivityCreated$0(intent);
+            logNotificationOpen(intent);
         }
     }
 
@@ -65,8 +65,7 @@ class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: logNotificationOpen, reason: merged with bridge method [inline-methods] */
-    public void lambda$onActivityCreated$0(Intent intent) {
+    public void logNotificationOpen(Intent intent) {
         Bundle bundle = null;
         try {
             Bundle extras = intent.getExtras();

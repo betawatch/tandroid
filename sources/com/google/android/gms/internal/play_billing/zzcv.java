@@ -42,9 +42,7 @@ public abstract class zzcv extends zzcj implements Set, j$.util.Set {
             Set set = (Set) obj;
             try {
                 if (size() == set.size()) {
-                    if (containsAll(set)) {
-                        return true;
-                    }
+                    return containsAll(set);
                 }
             } catch (ClassCastException | NullPointerException unused) {
             }

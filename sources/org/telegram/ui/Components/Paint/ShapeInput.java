@@ -100,9 +100,16 @@ public class ShapeInput {
         return (float) ((Math.cos(d) * (f4 - f2)) - (Math.sin(d) * (f3 - f)));
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:29:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x013b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x013c A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private boolean isInsideShape(float f, float f2) {
-        float sqrt;
+        boolean z;
         float f3;
+        float sqrt;
         Shape shape = this.shape;
         if (shape == null) {
             return false;
@@ -123,47 +130,67 @@ public class ShapeInput {
             float f10 = (f8 - f9) - f6;
             float f11 = f4 + f5 + f6;
             float f12 = f8 + f9 + f6;
-            if (f2 <= f10 || f2 >= f12) {
-                if (f >= f7 || f <= f11) {
-                    double d = f - f7;
-                    double d2 = f2 - f10;
-                    double d3 = f - f11;
-                    double d4 = f2 - f12;
-                    sqrt = (float) Math.sqrt(Math.min(Math.min(Math.pow(d, 2.0d) + Math.pow(d2, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d2, 2.0d)), Math.min(Math.pow(d, 2.0d) + Math.pow(d4, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d4, 2.0d))));
-                } else if (f2 < f10) {
-                    sqrt = f10 - f2;
-                } else {
-                    if (f2 > f12) {
-                        sqrt = f2 - f12;
-                    }
-                    f3 = 0.0f;
-                }
-                f3 = sqrt;
-            } else {
+            if (f2 > f10 && f2 < f12) {
                 if (f < f7) {
                     sqrt = f7 - f;
                 } else {
                     if (f > f11) {
                         sqrt = f - f11;
                     }
-                    f3 = 0.0f;
+                    sqrt = 0.0f;
                 }
-                f3 = sqrt;
+                z = false;
+                f3 = 30.0f;
+                if (this.shape.getType() == 3) {
+                }
+                if (sqrt < AndroidUtilities.dp(f3)) {
+                }
+            } else {
+                if (f >= f7 || f <= f11) {
+                    double d = f - f7;
+                    float f13 = f2 - f10;
+                    z = false;
+                    f3 = 30.0f;
+                    double d2 = f13;
+                    double d3 = f - f11;
+                    double d4 = f2 - f12;
+                    sqrt = (float) Math.sqrt(Math.min(Math.min(Math.pow(d, 2.0d) + Math.pow(d2, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d2, 2.0d)), Math.min(Math.pow(d, 2.0d) + Math.pow(d4, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d4, 2.0d))));
+                    if (this.shape.getType() == 3) {
+                        Shape shape4 = this.shape;
+                        sqrt = Math.min(sqrt, distToLine(f, f2, shape4.centerX, shape4.centerY, shape4.middleX, shape4.middleY));
+                    }
+                    if (sqrt < AndroidUtilities.dp(f3)) {
+                        return true;
+                    }
+                    return z;
+                }
+                if (f2 < f10) {
+                    sqrt = f10 - f2;
+                } else {
+                    if (f2 > f12) {
+                        sqrt = f2 - f12;
+                    }
+                    sqrt = 0.0f;
+                }
+                z = false;
+                f3 = 30.0f;
+                if (this.shape.getType() == 3) {
+                }
+                if (sqrt < AndroidUtilities.dp(f3)) {
+                }
             }
-            if (this.shape.getType() == 3) {
-                Shape shape4 = this.shape;
-                f3 = Math.min(f3, distToLine(f, f2, shape4.centerX, shape4.centerY, shape4.middleX, shape4.middleY));
+        } else {
+            if (this.shape.getType() == 4) {
+                Size size = this.renderView.getPainting().getSize();
+                Shape shape5 = this.shape;
+                float distToLine = distToLine(f, f2, shape5.centerX, shape5.centerY, shape5.middleX, shape5.middleY);
+                Shape shape6 = this.shape;
+                if (Math.min(distToLine, distToLine(f, f2, shape6.radiusX, shape6.radiusY, shape6.middleX, shape6.middleY)) - (this.shape.thickness / 2.0f) < Math.min(size.width, size.height) * 0.1f) {
+                    return true;
+                }
             }
-            return f3 < ((float) AndroidUtilities.dp(30.0f));
-        }
-        if (this.shape.getType() != 4) {
             return false;
         }
-        Size size = this.renderView.getPainting().getSize();
-        Shape shape5 = this.shape;
-        float distToLine = distToLine(f, f2, shape5.centerX, shape5.centerY, shape5.middleX, shape5.middleY);
-        Shape shape6 = this.shape;
-        return Math.min(distToLine, distToLine(f, f2, shape6.radiusX, shape6.radiusY, shape6.middleX, shape6.middleY)) - (this.shape.thickness / 2.0f) < Math.min(size.width, size.height) * 0.1f;
     }
 
     public void process(MotionEvent motionEvent, float f) {
@@ -575,12 +602,12 @@ public class ShapeInput {
         Shape shape = this.shape;
         if (shape != null && shape.rotation != 0.0f) {
             canvas.save();
-            canvas.rotate((float) (((-r2.rotation) / 3.141592653589793d) * 180.0d), (this.shape.centerX / size.width) * canvas.getWidth(), (this.shape.centerY / size.height) * canvas.getHeight());
+            canvas.rotate((float) (((-r1.rotation) / 3.141592653589793d) * 180.0d), (this.shape.centerX / size.width) * canvas.getWidth(), (this.shape.centerY / size.height) * canvas.getHeight());
         }
         Shape shape2 = this.shape;
         if (shape2 != null && shape2.getType() == 4) {
             canvas.drawLine((this.shape.centerX / size.width) * canvas.getWidth(), (this.shape.centerY / size.height) * canvas.getHeight(), (this.shape.middleX / size.width) * canvas.getWidth(), (this.shape.middleY / size.height) * canvas.getHeight(), this.linePaint);
-            canvas.drawLine((this.shape.radiusX / size.width) * canvas.getWidth(), (this.shape.radiusY / size.height) * canvas.getHeight(), (this.shape.middleX / size.width) * canvas.getWidth(), (this.shape.middleY / size.height) * canvas.getHeight(), this.linePaint);
+            canvas.drawLine(canvas.getWidth() * (this.shape.radiusX / size.width), canvas.getHeight() * (this.shape.radiusY / size.height), canvas.getWidth() * (this.shape.middleX / size.width), canvas.getHeight() * (this.shape.middleY / size.height), this.linePaint);
         }
         for (int i2 = 0; i2 < this.allPoints.size(); i2++) {
             Point point2 = (Point) this.allPoints.get(i2);

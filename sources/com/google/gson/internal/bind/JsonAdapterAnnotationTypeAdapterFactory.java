@@ -61,17 +61,17 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
 
     TypeAdapter getTypeAdapter(ConstructorConstructor constructorConstructor, Gson gson, TypeToken typeToken, JsonAdapter jsonAdapter, boolean z) {
         TypeAdapterFactory typeAdapterFactory;
-        TypeAdapter treeTypeAdapter;
+        TypeAdapter typeAdapter;
         Object createAdapter = createAdapter(constructorConstructor, jsonAdapter.value());
         boolean nullSafe = jsonAdapter.nullSafe();
         if (createAdapter instanceof TypeAdapter) {
-            treeTypeAdapter = (TypeAdapter) createAdapter;
+            typeAdapter = (TypeAdapter) createAdapter;
         } else if (createAdapter instanceof TypeAdapterFactory) {
             TypeAdapterFactory typeAdapterFactory2 = (TypeAdapterFactory) createAdapter;
             if (z) {
                 typeAdapterFactory2 = putFactoryAndGetCurrent(typeToken.getRawType(), typeAdapterFactory2);
             }
-            treeTypeAdapter = typeAdapterFactory2.create(gson, typeToken);
+            typeAdapter = typeAdapterFactory2.create(gson, typeToken);
         } else {
             boolean z2 = createAdapter instanceof JsonSerializer;
             if (z2) {
@@ -81,13 +81,14 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
                 } else {
                     typeAdapterFactory = TREE_TYPE_FIELD_DUMMY_FACTORY;
                 }
-                treeTypeAdapter = new TreeTypeAdapter(jsonSerializer, null, gson, typeToken, typeAdapterFactory, nullSafe);
+                TreeTypeAdapter treeTypeAdapter = new TreeTypeAdapter(jsonSerializer, null, gson, typeToken, typeAdapterFactory, nullSafe);
                 nullSafe = false;
+                typeAdapter = treeTypeAdapter;
             } else {
                 throw new IllegalArgumentException("Invalid attempt to bind an instance of " + createAdapter.getClass().getName() + " as a @JsonAdapter for " + typeToken.toString() + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
             }
         }
-        return (treeTypeAdapter == null || !nullSafe) ? treeTypeAdapter : treeTypeAdapter.nullSafe();
+        return (typeAdapter == null || !nullSafe) ? typeAdapter : typeAdapter.nullSafe();
     }
 
     public boolean isClassJsonAdapterFactory(TypeToken typeToken, TypeAdapterFactory typeAdapterFactory) {

@@ -99,17 +99,17 @@ public class FlatCheckBox extends View {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FlatCheckBox$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                FlatCheckBox.this.lambda$setChecked$0(valueAnimator2);
+                FlatCheckBox.$r8$lambda$dijcduvgVEr83-WA7vfwbTeycy0(FlatCheckBox.this, valueAnimator2);
             }
         });
         this.checkAnimator.setDuration(300L);
         this.checkAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setChecked$0(ValueAnimator valueAnimator) {
-        this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$dijcduvgVEr83-WA7vfwbTeycy0(FlatCheckBox flatCheckBox, ValueAnimator valueAnimator) {
+        flatCheckBox.getClass();
+        flatCheckBox.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        flatCheckBox.invalidate();
     }
 
     public void setText(String str) {

@@ -55,16 +55,13 @@ public class OnClickDelegateImpl implements OnClickDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onClick", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.OnClickDelegateImpl$OnClickListenerStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onClick$0;
-                    lambda$onClick$0 = OnClickDelegateImpl.OnClickListenerStub.this.lambda$onClick$0();
-                    return lambda$onClick$0;
+                    return OnClickDelegateImpl.OnClickListenerStub.$r8$lambda$XNCP4ktZ0-uqZhJZBLJ1aOuuP5k(OnClickDelegateImpl.OnClickListenerStub.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onClick$0() {
-            this.mOnClickListener.onClick();
+        public static /* synthetic */ Object $r8$lambda$XNCP4ktZ0-uqZhJZBLJ1aOuuP5k(OnClickListenerStub onClickListenerStub) {
+            onClickListenerStub.mOnClickListener.onClick();
             return null;
         }
     }

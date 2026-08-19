@@ -16,44 +16,50 @@ import org.json.JSONObject;
 /* loaded from: classes3.dex */
 public abstract class CommonSchemaDataUtils {
     public static void addCommonSchemaData(List list, CommonSchemaLog commonSchemaLog) {
-        Iterator it;
+        Data data;
+        Data data2;
         if (list == null) {
             return;
         }
         try {
-            Data data = new Data();
-            commonSchemaLog.setData(data);
+            Data data3 = new Data();
+            commonSchemaLog.setData(data3);
             MetadataExtension metadataExtension = new MetadataExtension();
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                TypedProperty typedProperty = (TypedProperty) it2.next();
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                TypedProperty typedProperty = (TypedProperty) it.next();
                 try {
                     Object validateProperty = validateProperty(typedProperty);
                     Integer metadataType = getMetadataType(typedProperty);
                     String[] split = typedProperty.getName().split("\\.", -1);
                     int length = split.length - 1;
-                    JSONObject properties = data.getProperties();
+                    JSONObject properties = data3.getProperties();
                     JSONObject metadata = metadataExtension.getMetadata();
                     int i = 0;
                     while (i < length) {
-                        Iterator it3 = it2;
-                        String str = split[i];
+                        String[] strArr = split;
+                        String str = strArr[i];
                         JSONObject optJSONObject = properties.optJSONObject(str);
                         if (optJSONObject == null) {
                             if (properties.has(str)) {
+                                data2 = data3;
                                 AppCenterLog.warn("AppCenter", "Property key '" + str + "' already has a value, the old value will be overridden.");
+                            } else {
+                                data2 = data3;
                             }
                             JSONObject jSONObject = new JSONObject();
                             properties.put(str, jSONObject);
                             properties = jSONObject;
                         } else {
+                            data2 = data3;
                             properties = optJSONObject;
                         }
                         metadata = addIntermediateMetadata(metadata, str);
                         i++;
-                        it2 = it3;
+                        split = strArr;
+                        data3 = data2;
                     }
-                    it = it2;
+                    data = data3;
                     String str2 = split[length];
                     if (properties.has(str2)) {
                         AppCenterLog.warn("AppCenter", "Property key '" + str2 + "' already has a value, the old value will be overridden.");
@@ -61,12 +67,12 @@ public abstract class CommonSchemaDataUtils {
                     properties.put(str2, validateProperty);
                     addLeafMetadata(metadataType, metadata, str2);
                 } catch (IllegalArgumentException e) {
-                    it = it2;
+                    data = data3;
                     AppCenterLog.warn("AppCenter", e.getMessage());
                 }
-                it2 = it;
+                data3 = data;
             }
-            JSONObject properties2 = data.getProperties();
+            JSONObject properties2 = data3.getProperties();
             String optString = properties2.optString("baseType", null);
             JSONObject optJSONObject2 = properties2.optJSONObject("baseData");
             if (optString == null && optJSONObject2 != null) {

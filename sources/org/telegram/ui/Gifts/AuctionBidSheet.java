@@ -103,12 +103,10 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
     private final BidderCell[] topBidderCells;
     private final BoolAnimator winningColor;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(View view) {
+    public static /* synthetic */ void $r8$lambda$G2Xuq_D6dRrzaq-7lKN44Yo7tEw(View view, int i) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$5(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$kEbIuDGYjHhgjjOWj68BRjfmH0Q(View view) {
     }
 
     public static class Params {
@@ -221,7 +219,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         infoCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AuctionBidSheet.this.lambda$new$0(view);
+                r0.slider.setValueAnimated((int) AuctionBidSheet.this.auction.getMinimumBid());
             }
         });
         infoCell.titleView.setText(LocaleController.getString(R.string.Gift2AuctionBidInfoMinimumBid));
@@ -250,7 +248,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
             linksTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionBidSheet.this.lambda$new$2(zArr, resourcesProvider, view);
+                    AuctionBidSheet.$r8$lambda$lZXnxOxvFbwnBkbwAFHDl5tSz8s(AuctionBidSheet.this, zArr, resourcesProvider, view);
                 }
             });
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
@@ -272,7 +270,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         headerCell.setOnWidthUpdateListener(new Runnable() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                AuctionBidSheet.this.lambda$new$3();
+                r0.selfBidderFutureGift.setTranslationX(AuctionBidSheet.this.selfBidderHeader.getAnimatedWidth() + AndroidUtilities.dp(28.0f));
             }
         });
         headerCell.addView(animatedTextView, LayoutHelper.createFrame(-1, 17.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
@@ -298,7 +296,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
             this.topBidderCells[i4].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionBidSheet.lambda$new$4(view);
+                    AuctionBidSheet.$r8$lambda$kEbIuDGYjHhgjjOWj68BRjfmH0Q(view);
                 }
             });
             linearLayout.addView(this.topBidderCells[i4], LayoutHelper.createLinear(-1, -2));
@@ -327,7 +325,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i9) {
-                AuctionBidSheet.lambda$new$5(view, i9);
+                AuctionBidSheet.$r8$lambda$G2Xuq_D6dRrzaq-7lKN44Yo7tEw(view, i9);
             }
         });
         long j2 = subscribeToGiftAuction.auctionUserState.bid_amount;
@@ -350,7 +348,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         balanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AuctionBidSheet.lambda$new$6(context, resourcesProvider, view);
+                new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
             }
         });
         FrameLayout frameLayout = new FrameLayout(context);
@@ -360,39 +358,24 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         this.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.slider.setValueAnimated((int) this.auction.getMinimumBid());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(final boolean[] zArr, final Theme.ResourcesProvider resourcesProvider, View view) {
+    public static /* synthetic */ void $r8$lambda$lZXnxOxvFbwnBkbwAFHDl5tSz8s(final AuctionBidSheet auctionBidSheet, final boolean[] zArr, final Theme.ResourcesProvider resourcesProvider, View view) {
+        auctionBidSheet.getClass();
         if (zArr[0]) {
             return;
         }
         zArr[0] = true;
-        GiftAuctionController.getInstance(this.currentAccount).getOrRequestAcquiredGifts(this.giftId, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda11
+        GiftAuctionController.getInstance(auctionBidSheet.currentAccount).getOrRequestAcquiredGifts(auctionBidSheet.giftId, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                AuctionBidSheet.this.lambda$new$1(zArr, resourcesProvider, (List) obj);
+                AuctionBidSheet.$r8$lambda$h2wHd9jQuvxe9b4-cz_YE0FszUs(AuctionBidSheet.this, zArr, resourcesProvider, (List) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(boolean[] zArr, Theme.ResourcesProvider resourcesProvider, List list) {
+    public static /* synthetic */ void $r8$lambda$h2wHd9jQuvxe9b4-cz_YE0FszUs(AuctionBidSheet auctionBidSheet, boolean[] zArr, Theme.ResourcesProvider resourcesProvider, List list) {
+        auctionBidSheet.getClass();
         zArr[0] = false;
-        new AcquiredGiftsSheet(getContext(), resourcesProvider, this.auction, list).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        this.selfBidderFutureGift.setTranslationX(this.selfBidderHeader.getAnimatedWidth() + AndroidUtilities.dp(28.0f));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$6(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
-        new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
+        new AcquiredGiftsSheet(auctionBidSheet.getContext(), resourcesProvider, auctionBidSheet.auction, list).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -501,7 +484,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
                 if (runnable != null) {
                     runnable.run();
                 }
-                lambda$new$0();
+                dismiss();
             }
         }
         if (peerDialogId != 0) {
@@ -562,7 +545,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
                     this.topBidderCells[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda8
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            AuctionBidSheet.this.lambda$updateTable$7(longValue, view);
+                            AuctionBidSheet.this.openProfile(longValue);
                         }
                     });
                     i2 = i3;
@@ -581,11 +564,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateTable$7(long j, View view) {
-        openProfile(j);
-    }
-
-    private void openProfile(long j) {
+    public void openProfile(long j) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
             if (UserObject.isService(j)) {
@@ -607,7 +586,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         if (runnable != null) {
             runnable.run();
         }
-        lambda$new$0();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -697,7 +676,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
             this.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionBidSheet.this.lambda$updateButtonText$8(view);
+                    AuctionBidSheet.this.dismiss();
                 }
             });
             return;
@@ -712,25 +691,19 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         this.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AuctionBidSheet.this.lambda$updateButtonText$9(view);
+                AuctionBidSheet.$r8$lambda$LGjPqytnQD3cIaEXnRKv_y8vhuc(AuctionBidSheet.this, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateButtonText$8(View view) {
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateButtonText$9(View view) {
-        int value = this.slider.getValue();
-        int minimumBid = (int) this.auction.getMinimumBid();
+    public static /* synthetic */ void $r8$lambda$LGjPqytnQD3cIaEXnRKv_y8vhuc(AuctionBidSheet auctionBidSheet, View view) {
+        int value = auctionBidSheet.slider.getValue();
+        int minimumBid = (int) auctionBidSheet.auction.getMinimumBid();
         if (value < minimumBid) {
-            AndroidUtilities.shakeView(this.buttonView);
-            BulletinFactory.of(this.container, this.resourcesProvider).createSimpleBulletin(R.raw.info, AndroidUtilities.replaceTags(LocaleController.formatPluralString("Gift2AuctionMinimumBidIncreased", minimumBid, new Object[0]))).show();
+            AndroidUtilities.shakeView(auctionBidSheet.buttonView);
+            BulletinFactory.of(auctionBidSheet.container, auctionBidSheet.resourcesProvider).createSimpleBulletin(R.raw.info, AndroidUtilities.replaceTags(LocaleController.formatPluralString("Gift2AuctionMinimumBidIncreased", minimumBid, new Object[0]))).show();
         } else {
-            sendBid(value);
+            auctionBidSheet.sendBid(value);
         }
     }
 
@@ -789,11 +762,10 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromGiftAuction(this.giftId, this);
         this.timer.stop();
-        super.lambda$new$0();
+        super.dismiss();
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -866,22 +838,21 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         GiftAuctionController.getInstance(this.currentAccount).sendBid(this.giftId, this.params, i, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda18
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                AuctionBidSheet.this.lambda$sendBid$10(j, (Boolean) obj, (String) obj2);
+                AuctionBidSheet.$r8$lambda$wwPZ2vn5-WSlX0CHaaELu6_6lQc(AuctionBidSheet.this, j, (Boolean) obj, (String) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendBid$10(long j, Boolean bool, String str) {
-        this.buttonView.setLoading(false);
-        this.bidIsPending = false;
+    public static /* synthetic */ void $r8$lambda$wwPZ2vn5-WSlX0CHaaELu6_6lQc(AuctionBidSheet auctionBidSheet, long j, Boolean bool, String str) {
+        auctionBidSheet.buttonView.setLoading(false);
+        auctionBidSheet.bidIsPending = false;
         if (bool != null) {
-            showBidSuccessBulletin(j > 0);
-            StarsController.getInstance(this.currentAccount).getBalance(false, null, true);
+            auctionBidSheet.showBidSuccessBulletin(j > 0);
+            StarsController.getInstance(auctionBidSheet.currentAccount).getBalance(false, null, true);
         }
         if (str != null) {
-            updateBulletinContainerPosition();
-            BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str)).show();
+            auctionBidSheet.updateBulletinContainerPosition();
+            BulletinFactory.of(auctionBidSheet.bulletinContainer, auctionBidSheet.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str)).show();
         }
     }
 
@@ -971,7 +942,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         builder.setPositiveButton(LocaleController.getString(R.string.Gift2AuctionPlaceABid), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                AuctionBidSheet.this.lambda$showCustomPlaceABid$11(editTextCaption, alertDialog, i);
+                AuctionBidSheet.$r8$lambda$mQ9WhLtfGXpw93uCjdO9KTvatU0(AuctionBidSheet.this, editTextCaption, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda13
@@ -987,13 +958,13 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         alertDialogArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda14
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                AuctionBidSheet.lambda$showCustomPlaceABid$13(EditTextCaption.this, lastFragment, findActivity, dialogInterface);
+                AuctionBidSheet.$r8$lambda$3H2sZSZ6p9m5W_7TQ96JI8Ydpjg(EditTextCaption.this, lastFragment, findActivity, dialogInterface);
             }
         });
         alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Gifts.AuctionBidSheet$$ExternalSyntheticLambda15
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
-                AuctionBidSheet.lambda$showCustomPlaceABid$14(EditTextCaption.this, dialogInterface);
+                AuctionBidSheet.$r8$lambda$Gjs5MOYaCq2CPw6S1guYlA55XXM(EditTextCaption.this, dialogInterface);
             }
         });
         alertDialogArr[0].show();
@@ -1004,12 +975,12 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         editTextCaption.setSelection(editTextCaption.getText().length());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showCustomPlaceABid$11(EditTextCaption editTextCaption, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$mQ9WhLtfGXpw93uCjdO9KTvatU0(AuctionBidSheet auctionBidSheet, EditTextCaption editTextCaption, AlertDialog alertDialog, int i) {
+        auctionBidSheet.getClass();
         try {
             int parseInt = Integer.parseInt(editTextCaption.getText().toString().trim());
-            sendBid(parseInt);
-            this.slider.setValue(parseInt);
+            auctionBidSheet.sendBid(parseInt);
+            auctionBidSheet.slider.setValue(parseInt);
             alertDialog.dismiss();
         } catch (Throwable th) {
             AndroidUtilities.shakeView(editTextCaption);
@@ -1017,16 +988,14 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showCustomPlaceABid$13(EditTextCaption editTextCaption, BaseFragment baseFragment, Activity activity, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$3H2sZSZ6p9m5W_7TQ96JI8Ydpjg(EditTextCaption editTextCaption, BaseFragment baseFragment, Activity activity, DialogInterface dialogInterface) {
         AndroidUtilities.hideKeyboard(editTextCaption);
         if (baseFragment != null) {
             AndroidUtilities.requestAdjustResize(activity, baseFragment.getClassGuid());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showCustomPlaceABid$14(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$Gjs5MOYaCq2CPw6S1guYlA55XXM(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
         editTextCaption.requestFocus();
         AndroidUtilities.showKeyboard(editTextCaption);
     }

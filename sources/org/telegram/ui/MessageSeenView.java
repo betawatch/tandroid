@@ -100,109 +100,111 @@ public class MessageSeenView extends FrameLayout {
         ConnectionsManager.getInstance(i).sendRequest(tL_messages_getMessageReadParticipants, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                MessageSeenView.this.lambda$new$5(j, i, chat, tLObject, tL_error);
+                MessageSeenView.$r8$lambda$KwN4onZ6YhnPecXXW3cYcwCjaxs(MessageSeenView.this, j, i, chat, tLObject, tL_error);
             }
         });
         setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector), 6, 0));
         setEnabled(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(final long j, final int i, final TLRPC.Chat chat, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$KwN4onZ6YhnPecXXW3cYcwCjaxs(final MessageSeenView messageSeenView, final long j, final int i, final TLRPC.Chat chat, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        messageSeenView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSeenView.this.lambda$new$4(tL_error, tLObject, j, i, chat);
+                MessageSeenView.$r8$lambda$KRiDezFtaLuZPL8Pe5MZwNjFHXs(MessageSeenView.this, tL_error, tLObject, j, i, chat);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(TLRPC.TL_error tL_error, TLObject tLObject, long j, final int i, TLRPC.Chat chat) {
-        if (tL_error == null && (tLObject instanceof Vector)) {
-            Vector vector = (Vector) tLObject;
-            ArrayList arrayList = new ArrayList();
-            ArrayList arrayList2 = new ArrayList();
-            final HashMap hashMap = new HashMap();
-            final ArrayList arrayList3 = new ArrayList();
-            int size = vector.objects.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                Object obj = vector.objects.get(i2);
-                if (obj instanceof TLRPC.TL_readParticipantDate) {
-                    TLRPC.TL_readParticipantDate tL_readParticipantDate = (TLRPC.TL_readParticipantDate) obj;
-                    int i3 = tL_readParticipantDate.date;
-                    long j2 = tL_readParticipantDate.user_id;
-                    Long valueOf = Long.valueOf(j2);
-                    if (j != j2) {
-                        MessagesController.getInstance(i).getUser(valueOf);
-                        arrayList3.add(new Pair(valueOf, Integer.valueOf(i3)));
-                        arrayList.add(valueOf);
-                    }
-                } else if (obj instanceof Long) {
-                    Long l = (Long) obj;
-                    if (j != l.longValue()) {
-                        if (l.longValue() > 0) {
-                            MessagesController.getInstance(i).getUser(l);
-                            arrayList3.add(new Pair(l, 0));
-                            arrayList.add(l);
-                        } else {
-                            MessagesController.getInstance(i).getChat(Long.valueOf(-l.longValue()));
-                            arrayList3.add(new Pair(l, 0));
-                            arrayList2.add(l);
+    public static /* synthetic */ void $r8$lambda$KRiDezFtaLuZPL8Pe5MZwNjFHXs(final MessageSeenView messageSeenView, TLRPC.TL_error tL_error, TLObject tLObject, long j, final int i, TLRPC.Chat chat) {
+        if (tL_error == null) {
+            messageSeenView.getClass();
+            if (tLObject instanceof Vector) {
+                Vector vector = (Vector) tLObject;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                final HashMap hashMap = new HashMap();
+                final ArrayList arrayList3 = new ArrayList();
+                int size = vector.objects.size();
+                for (int i2 = 0; i2 < size; i2++) {
+                    Object obj = vector.objects.get(i2);
+                    if (obj instanceof TLRPC.TL_readParticipantDate) {
+                        TLRPC.TL_readParticipantDate tL_readParticipantDate = (TLRPC.TL_readParticipantDate) obj;
+                        int i3 = tL_readParticipantDate.date;
+                        long j2 = tL_readParticipantDate.user_id;
+                        Long valueOf = Long.valueOf(j2);
+                        if (j != j2) {
+                            MessagesController.getInstance(i).getUser(valueOf);
+                            arrayList3.add(new Pair(valueOf, Integer.valueOf(i3)));
+                            arrayList.add(valueOf);
+                        }
+                    } else if (obj instanceof Long) {
+                        Long l = (Long) obj;
+                        if (j != l.longValue()) {
+                            if (l.longValue() > 0) {
+                                MessagesController.getInstance(i).getUser(l);
+                                arrayList3.add(new Pair(l, 0));
+                                arrayList.add(l);
+                            } else {
+                                MessagesController.getInstance(i).getChat(Long.valueOf(-l.longValue()));
+                                arrayList3.add(new Pair(l, 0));
+                                arrayList2.add(l);
+                            }
                         }
                     }
                 }
-            }
-            if (arrayList.isEmpty()) {
-                for (int i4 = 0; i4 < arrayList3.size(); i4++) {
-                    Pair pair = (Pair) arrayList3.get(i4);
-                    this.peerIds.add((Long) pair.first);
-                    this.dates.add((Integer) pair.second);
-                    this.users.add((TLObject) hashMap.get(pair.first));
+                if (arrayList.isEmpty()) {
+                    for (int i4 = 0; i4 < arrayList3.size(); i4++) {
+                        Pair pair = (Pair) arrayList3.get(i4);
+                        messageSeenView.peerIds.add((Long) pair.first);
+                        messageSeenView.dates.add((Integer) pair.second);
+                        messageSeenView.users.add((TLObject) hashMap.get(pair.first));
+                    }
+                    messageSeenView.updateView();
+                    return;
                 }
-                updateView();
-                return;
-            }
-            if (ChatObject.isChannel(chat)) {
-                TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-                tL_channels_getParticipants.limit = MessagesController.getInstance(i).chatReadMarkSizeThreshold;
-                tL_channels_getParticipants.offset = 0;
-                tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
-                tL_channels_getParticipants.channel = MessagesController.getInstance(i).getInputChannel(chat.id);
-                ConnectionsManager.getInstance(i).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda2
+                if (ChatObject.isChannel(chat)) {
+                    TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
+                    tL_channels_getParticipants.limit = MessagesController.getInstance(i).chatReadMarkSizeThreshold;
+                    tL_channels_getParticipants.offset = 0;
+                    tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
+                    tL_channels_getParticipants.channel = MessagesController.getInstance(i).getInputChannel(chat.id);
+                    ConnectionsManager.getInstance(i).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda2
+                        @Override // org.telegram.tgnet.RequestDelegate
+                        public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
+                            MessageSeenView.$r8$lambda$pGw7Zq6BcQF8YdeibVcxae3Ubpo(MessageSeenView.this, i, hashMap, arrayList3, tLObject2, tL_error2);
+                        }
+                    });
+                    return;
+                }
+                TLRPC.TL_messages_getFullChat tL_messages_getFullChat = new TLRPC.TL_messages_getFullChat();
+                tL_messages_getFullChat.chat_id = chat.id;
+                ConnectionsManager.getInstance(i).sendRequest(tL_messages_getFullChat, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda3
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                        MessageSeenView.this.lambda$new$1(i, hashMap, arrayList3, tLObject2, tL_error2);
+                        MessageSeenView.$r8$lambda$Yba_PCIMq_OzWkFXHB_qibuThEg(MessageSeenView.this, i, hashMap, arrayList3, tLObject2, tL_error2);
                     }
                 });
                 return;
             }
-            TLRPC.TL_messages_getFullChat tL_messages_getFullChat = new TLRPC.TL_messages_getFullChat();
-            tL_messages_getFullChat.chat_id = chat.id;
-            ConnectionsManager.getInstance(i).sendRequest(tL_messages_getFullChat, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda3
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                    MessageSeenView.this.lambda$new$3(i, hashMap, arrayList3, tLObject2, tL_error2);
-                }
-            });
-            return;
         }
-        updateView();
+        messageSeenView.updateView();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(final int i, final HashMap hashMap, final ArrayList arrayList, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$pGw7Zq6BcQF8YdeibVcxae3Ubpo(final MessageSeenView messageSeenView, final int i, final HashMap hashMap, final ArrayList arrayList, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        messageSeenView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSeenView.this.lambda$new$0(tLObject, i, hashMap, arrayList);
+                MessageSeenView.$r8$lambda$O4__tDWeqgV2K25LBXOEypPInbw(MessageSeenView.this, tLObject, i, hashMap, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLObject tLObject, int i, HashMap hashMap, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$O4__tDWeqgV2K25LBXOEypPInbw(MessageSeenView messageSeenView, TLObject tLObject, int i, HashMap hashMap, ArrayList arrayList) {
         if (tLObject != null) {
+            messageSeenView.getClass();
             TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject;
             for (int i2 = 0; i2 < tL_channels_channelParticipants.users.size(); i2++) {
                 TLRPC.User user = tL_channels_channelParticipants.users.get(i2);
@@ -211,27 +213,27 @@ public class MessageSeenView extends FrameLayout {
             }
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
                 Pair pair = (Pair) arrayList.get(i3);
-                this.peerIds.add((Long) pair.first);
-                this.dates.add((Integer) pair.second);
-                this.users.add((TLObject) hashMap.get(pair.first));
+                messageSeenView.peerIds.add((Long) pair.first);
+                messageSeenView.dates.add((Integer) pair.second);
+                messageSeenView.users.add((TLObject) hashMap.get(pair.first));
             }
         }
-        updateView();
+        messageSeenView.updateView();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(final int i, final HashMap hashMap, final ArrayList arrayList, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Yba_PCIMq_OzWkFXHB_qibuThEg(final MessageSeenView messageSeenView, final int i, final HashMap hashMap, final ArrayList arrayList, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        messageSeenView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSeenView.this.lambda$new$2(tLObject, i, hashMap, arrayList);
+                MessageSeenView.$r8$lambda$MMPrkE5_B5s9RUrciIIYFiGBT9Y(MessageSeenView.this, tLObject, i, hashMap, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(TLObject tLObject, int i, HashMap hashMap, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$MMPrkE5_B5s9RUrciIIYFiGBT9Y(MessageSeenView messageSeenView, TLObject tLObject, int i, HashMap hashMap, ArrayList arrayList) {
         if (tLObject != null) {
+            messageSeenView.getClass();
             TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject;
             for (int i2 = 0; i2 < tL_messages_chatFull.users.size(); i2++) {
                 TLRPC.User user = tL_messages_chatFull.users.get(i2);
@@ -240,12 +242,12 @@ public class MessageSeenView extends FrameLayout {
             }
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
                 Pair pair = (Pair) arrayList.get(i3);
-                this.peerIds.add((Long) pair.first);
-                this.dates.add((Integer) pair.second);
-                this.users.add((TLObject) hashMap.get(pair.first));
+                messageSeenView.peerIds.add((Long) pair.first);
+                messageSeenView.dates.add((Integer) pair.second);
+                messageSeenView.users.add((TLObject) hashMap.get(pair.first));
             }
         }
-        updateView();
+        messageSeenView.updateView();
     }
 
     @Override // android.view.View, android.view.ViewParent

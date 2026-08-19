@@ -1,5 +1,6 @@
 package j$.util.function;
 
+import j$.time.t;
 import j$.util.Objects;
 import java.util.function.Predicate;
 
@@ -11,7 +12,7 @@ public final /* synthetic */ class Predicate$-CC {
     }
 
     public static Predicate $default$negate(Predicate predicate) {
-        return new a(2, predicate);
+        return new t(2, predicate);
     }
 
     public static Predicate $default$or(Predicate predicate, Predicate predicate2) {

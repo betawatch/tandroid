@@ -137,12 +137,14 @@ final class zzqc {
                 break;
             }
             int zzi2 = zzi(bArr, i2, zzqbVar);
-            i8 = zzqbVar.zza;
-            if (i8 == i6) {
+            int i9 = zzqbVar.zza;
+            if (i9 == i6) {
+                i8 = i9;
                 i2 = zzi2;
                 break;
             }
-            i2 = zzh(i8, bArr, zzi2, i3, zzf, zzqbVar);
+            i2 = zzh(i9, bArr, zzi2, i3, zzf, zzqbVar);
+            i8 = i9;
         }
         zzqbVar.zze--;
         if (i2 > i3 || i8 != i6) {
@@ -240,11 +242,10 @@ final class zzqc {
     }
 
     static int zzm(Object obj, zzug zzugVar, byte[] bArr, int i, int i2, int i3, zzqb zzqbVar) {
-        zztv zztvVar = (zztv) zzugVar;
         int i4 = zzqbVar.zze + 1;
         zzqbVar.zze = i4;
         zzq(i4);
-        int zzc = zztvVar.zzc(obj, bArr, i, i2, i3, zzqbVar);
+        int zzc = ((zztv) zzugVar).zzc(obj, bArr, i, i2, i3, zzqbVar);
         zzqbVar.zze--;
         zzqbVar.zzc = obj;
         return zzc;
@@ -264,7 +265,7 @@ final class zzqc {
         int i6 = zzqbVar.zze + 1;
         zzqbVar.zze = i6;
         zzq(i6);
-        int i7 = i4 + i5;
+        int i7 = i5 + i4;
         zzugVar.zzi(obj, bArr, i5, i7, zzqbVar);
         zzqbVar.zze--;
         zzqbVar.zzc = obj;

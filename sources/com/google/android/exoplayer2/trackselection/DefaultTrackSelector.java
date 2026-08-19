@@ -54,17 +54,13 @@ public class DefaultTrackSelector extends MappingTrackSelector {
     private static final Ordering FORMAT_VALUE_ORDERING = Ordering.from(new Comparator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$0;
-            lambda$static$0 = DefaultTrackSelector.lambda$static$0((Integer) obj, (Integer) obj2);
-            return lambda$static$0;
+            return DefaultTrackSelector.$r8$lambda$ab5pcQn94AtNhTwBQsSm2Lfz01g((Integer) obj, (Integer) obj2);
         }
     });
     private static final Ordering NO_ORDER = Ordering.from(new Comparator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$1;
-            lambda$static$1 = DefaultTrackSelector.lambda$static$1((Integer) obj, (Integer) obj2);
-            return lambda$static$1;
+            return DefaultTrackSelector.$r8$lambda$TgzEdaT8vw77vbxe4MS8W_aJRBE((Integer) obj, (Integer) obj2);
         }
     });
     private AudioAttributes audioAttributes;
@@ -75,8 +71,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
     private SpatializerWrapperV32 spatializer;
     private final ExoTrackSelection.Factory trackSelectionFactory;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$1(Integer num, Integer num2) {
+    public static /* synthetic */ int $r8$lambda$TgzEdaT8vw77vbxe4MS8W_aJRBE(Integer num, Integer num2) {
         return 0;
     }
 
@@ -402,9 +397,9 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$Parameters$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.Bundleable.Creator
                 public final Bundleable fromBundle(Bundle bundle) {
-                    DefaultTrackSelector.Parameters lambda$static$0;
-                    lambda$static$0 = DefaultTrackSelector.Parameters.lambda$static$0(bundle);
-                    return lambda$static$0;
+                    DefaultTrackSelector.Parameters build2;
+                    build2 = new DefaultTrackSelector.Parameters.Builder(bundle).build();
+                    return build2;
                 }
             };
         }
@@ -459,11 +454,13 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || Parameters.class != obj.getClass()) {
-                return false;
+            if (obj != null && Parameters.class == obj.getClass()) {
+                Parameters parameters = (Parameters) obj;
+                if (super.equals(parameters) && this.exceedVideoConstraintsIfNecessary == parameters.exceedVideoConstraintsIfNecessary && this.allowVideoMixedMimeTypeAdaptiveness == parameters.allowVideoMixedMimeTypeAdaptiveness && this.allowVideoNonSeamlessAdaptiveness == parameters.allowVideoNonSeamlessAdaptiveness && this.allowVideoMixedDecoderSupportAdaptiveness == parameters.allowVideoMixedDecoderSupportAdaptiveness && this.exceedAudioConstraintsIfNecessary == parameters.exceedAudioConstraintsIfNecessary && this.allowAudioMixedMimeTypeAdaptiveness == parameters.allowAudioMixedMimeTypeAdaptiveness && this.allowAudioMixedSampleRateAdaptiveness == parameters.allowAudioMixedSampleRateAdaptiveness && this.allowAudioMixedChannelCountAdaptiveness == parameters.allowAudioMixedChannelCountAdaptiveness && this.allowAudioMixedDecoderSupportAdaptiveness == parameters.allowAudioMixedDecoderSupportAdaptiveness && this.constrainAudioChannelCountToDeviceCapabilities == parameters.constrainAudioChannelCountToDeviceCapabilities && this.exceedRendererCapabilitiesIfNecessary == parameters.exceedRendererCapabilitiesIfNecessary && this.tunnelingEnabled == parameters.tunnelingEnabled && this.allowMultipleAdaptiveSelections == parameters.allowMultipleAdaptiveSelections && areRendererDisabledFlagsEqual(this.rendererDisabledFlags, parameters.rendererDisabledFlags) && areSelectionOverridesEqual(this.selectionOverrides, parameters.selectionOverrides)) {
+                    return true;
+                }
             }
-            Parameters parameters = (Parameters) obj;
-            return super.equals(parameters) && this.exceedVideoConstraintsIfNecessary == parameters.exceedVideoConstraintsIfNecessary && this.allowVideoMixedMimeTypeAdaptiveness == parameters.allowVideoMixedMimeTypeAdaptiveness && this.allowVideoNonSeamlessAdaptiveness == parameters.allowVideoNonSeamlessAdaptiveness && this.allowVideoMixedDecoderSupportAdaptiveness == parameters.allowVideoMixedDecoderSupportAdaptiveness && this.exceedAudioConstraintsIfNecessary == parameters.exceedAudioConstraintsIfNecessary && this.allowAudioMixedMimeTypeAdaptiveness == parameters.allowAudioMixedMimeTypeAdaptiveness && this.allowAudioMixedSampleRateAdaptiveness == parameters.allowAudioMixedSampleRateAdaptiveness && this.allowAudioMixedChannelCountAdaptiveness == parameters.allowAudioMixedChannelCountAdaptiveness && this.allowAudioMixedDecoderSupportAdaptiveness == parameters.allowAudioMixedDecoderSupportAdaptiveness && this.constrainAudioChannelCountToDeviceCapabilities == parameters.constrainAudioChannelCountToDeviceCapabilities && this.exceedRendererCapabilitiesIfNecessary == parameters.exceedRendererCapabilitiesIfNecessary && this.tunnelingEnabled == parameters.tunnelingEnabled && this.allowMultipleAdaptiveSelections == parameters.allowMultipleAdaptiveSelections && areRendererDisabledFlagsEqual(this.rendererDisabledFlags, parameters.rendererDisabledFlags) && areSelectionOverridesEqual(this.selectionOverrides, parameters.selectionOverrides);
+            return false;
         }
 
         @Override // com.google.android.exoplayer2.trackselection.TrackSelectionParameters
@@ -490,11 +487,6 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             putSelectionOverridesToBundle(bundle, this.selectionOverrides);
             bundle.putIntArray(FIELD_RENDERER_DISABLED_INDICES, getKeysFromSparseBooleanArray(this.rendererDisabledFlags));
             return bundle;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ Parameters lambda$static$0(Bundle bundle) {
-            return new Builder(bundle).build();
         }
 
         private static void putSelectionOverridesToBundle(Bundle bundle, SparseArray sparseArray) {
@@ -577,9 +569,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$SelectionOverride$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.Bundleable.Creator
             public final Bundleable fromBundle(Bundle bundle) {
-                DefaultTrackSelector.SelectionOverride lambda$static$0;
-                lambda$static$0 = DefaultTrackSelector.SelectionOverride.lambda$static$0(bundle);
-                return lambda$static$0;
+                return DefaultTrackSelector.SelectionOverride.$r8$lambda$NrcuImclxfyMS7IzFykzM9hD3rk(bundle);
             }
         };
 
@@ -600,11 +590,13 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || SelectionOverride.class != obj.getClass()) {
-                return false;
+            if (obj != null && SelectionOverride.class == obj.getClass()) {
+                SelectionOverride selectionOverride = (SelectionOverride) obj;
+                if (this.groupIndex == selectionOverride.groupIndex && Arrays.equals(this.tracks, selectionOverride.tracks) && this.type == selectionOverride.type) {
+                    return true;
+                }
             }
-            SelectionOverride selectionOverride = (SelectionOverride) obj;
-            return this.groupIndex == selectionOverride.groupIndex && Arrays.equals(this.tracks, selectionOverride.tracks) && this.type == selectionOverride.type;
+            return false;
         }
 
         @Override // com.google.android.exoplayer2.Bundleable
@@ -616,8 +608,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             return bundle;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ SelectionOverride lambda$static$0(Bundle bundle) {
+        public static /* synthetic */ SelectionOverride $r8$lambda$NrcuImclxfyMS7IzFykzM9hD3rk(Bundle bundle) {
             int i = bundle.getInt(FIELD_GROUP_INDEX, -1);
             int[] intArray = bundle.getIntArray(FIELD_TRACKS);
             int i2 = bundle.getInt(FIELD_TRACK_TYPE, -1);
@@ -627,8 +618,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(Integer num, Integer num2) {
+    public static /* synthetic */ int $r8$lambda$ab5pcQn94AtNhTwBQsSm2Lfz01g(Integer num, Integer num2) {
         if (num.intValue() == -1) {
             return num2.intValue() == -1 ? 0 : -1;
         }
@@ -801,9 +791,9 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         return selectTracksForType(2, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda2
             @Override // com.google.android.exoplayer2.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i, TrackGroup trackGroup, int[] iArr3) {
-                List lambda$selectVideoTrack$2;
-                lambda$selectVideoTrack$2 = DefaultTrackSelector.lambda$selectVideoTrack$2(DefaultTrackSelector.Parameters.this, iArr2, i, trackGroup, iArr3);
-                return lambda$selectVideoTrack$2;
+                List createForTrackGroup;
+                createForTrackGroup = DefaultTrackSelector.VideoTrackInfo.createForTrackGroup(i, trackGroup, DefaultTrackSelector.Parameters.this, iArr3, iArr2[i]);
+                return createForTrackGroup;
             }
         }, new Comparator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda3
             @Override // java.util.Comparator
@@ -811,11 +801,6 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                 return DefaultTrackSelector.VideoTrackInfo.compareSelections((List) obj, (List) obj2);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ List lambda$selectVideoTrack$2(Parameters parameters, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
-        return VideoTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr2, iArr[i]);
     }
 
     protected Pair selectAudioTrack(MappingTrackSelector.MappedTrackInfo mappedTrackInfo, int[][][] iArr, int[] iArr2, final Parameters parameters) {
@@ -835,9 +820,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         return selectTracksForType(1, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda4
             @Override // com.google.android.exoplayer2.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i2, TrackGroup trackGroup, int[] iArr3) {
-                List lambda$selectAudioTrack$3;
-                lambda$selectAudioTrack$3 = DefaultTrackSelector.this.lambda$selectAudioTrack$3(parameters, z, i2, trackGroup, iArr3);
-                return lambda$selectAudioTrack$3;
+                return DefaultTrackSelector.$r8$lambda$sih5Pv2vBFLqgJovgGnPmMZfQd4(DefaultTrackSelector.this, parameters, z, i2, trackGroup, iArr3);
             }
         }, new Comparator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda5
             @Override // java.util.Comparator
@@ -847,8 +830,8 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ List lambda$selectAudioTrack$3(Parameters parameters, boolean z, int i, TrackGroup trackGroup, int[] iArr) {
+    public static /* synthetic */ List $r8$lambda$sih5Pv2vBFLqgJovgGnPmMZfQd4(final DefaultTrackSelector defaultTrackSelector, Parameters parameters, boolean z, int i, TrackGroup trackGroup, int[] iArr) {
+        defaultTrackSelector.getClass();
         return AudioTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr, z, new Predicate() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda8
             @Override // com.google.common.base.Predicate
             public final boolean apply(Object obj) {
@@ -890,9 +873,9 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         return selectTracksForType(3, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda6
             @Override // com.google.android.exoplayer2.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i, TrackGroup trackGroup, int[] iArr2) {
-                List lambda$selectTextTrack$4;
-                lambda$selectTextTrack$4 = DefaultTrackSelector.lambda$selectTextTrack$4(DefaultTrackSelector.Parameters.this, str, i, trackGroup, iArr2);
-                return lambda$selectTextTrack$4;
+                List createForTrackGroup;
+                createForTrackGroup = DefaultTrackSelector.TextTrackInfo.createForTrackGroup(i, trackGroup, DefaultTrackSelector.Parameters.this, iArr2, str);
+                return createForTrackGroup;
             }
         }, new Comparator() { // from class: com.google.android.exoplayer2.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda7
             @Override // java.util.Comparator
@@ -900,11 +883,6 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                 return DefaultTrackSelector.TextTrackInfo.compareSelections((List) obj, (List) obj2);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ List lambda$selectTextTrack$4(Parameters parameters, String str, int i, TrackGroup trackGroup, int[] iArr) {
-        return TextTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr, str);
     }
 
     protected ExoTrackSelection.Definition selectOtherTrack(int i, TrackGroupArray trackGroupArray, int[][] iArr, Parameters parameters) {
@@ -936,7 +914,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         RandomAccess randomAccess;
         MappingTrackSelector.MappedTrackInfo mappedTrackInfo2 = mappedTrackInfo;
         ArrayList arrayList = new ArrayList();
-        int rendererCount = mappedTrackInfo.getRendererCount();
+        int rendererCount = mappedTrackInfo2.getRendererCount();
         int i3 = 0;
         while (i3 < rendererCount) {
             if (i == mappedTrackInfo2.getRendererType(i3)) {
@@ -954,7 +932,6 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                         } else {
                             if (selectionEligibility == 1) {
                                 randomAccess = ImmutableList.of((Object) trackInfo);
-                                i2 = rendererCount;
                             } else {
                                 ArrayList arrayList2 = new ArrayList();
                                 arrayList2.add(trackInfo);
@@ -969,9 +946,9 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                                     i6++;
                                     rendererCount = i7;
                                 }
-                                i2 = rendererCount;
                                 randomAccess = arrayList2;
                             }
+                            i2 = rendererCount;
                             arrayList.add(randomAccess);
                         }
                         i5++;
@@ -1097,7 +1074,10 @@ public class DefaultTrackSelector extends MappingTrackSelector {
 
     protected static boolean isSupported(int i, boolean z) {
         int formatSupport = RendererCapabilities.-CC.getFormatSupport(i);
-        return formatSupport == 4 || (z && formatSupport == 3);
+        if (formatSupport != 4) {
+            return z && formatSupport == 3;
+        }
+        return true;
     }
 
     protected static String normalizeUndeterminedLanguageToNull(String str) {
@@ -1380,7 +1360,13 @@ public class DefaultTrackSelector extends MappingTrackSelector {
 
         @Override // com.google.android.exoplayer2.trackselection.DefaultTrackSelector.TrackInfo
         public boolean isCompatibleForAdaptationWith(VideoTrackInfo videoTrackInfo) {
-            return (this.allowMixedMimeTypes || Util.areEqual(this.format.sampleMimeType, videoTrackInfo.format.sampleMimeType)) && (this.parameters.allowVideoMixedDecoderSupportAdaptiveness || (this.usesPrimaryDecoder == videoTrackInfo.usesPrimaryDecoder && this.usesHardwareAcceleration == videoTrackInfo.usesHardwareAcceleration));
+            if (!this.allowMixedMimeTypes && !Util.areEqual(this.format.sampleMimeType, videoTrackInfo.format.sampleMimeType)) {
+                return false;
+            }
+            if (this.parameters.allowVideoMixedDecoderSupportAdaptiveness) {
+                return true;
+            }
+            return this.usesPrimaryDecoder == videoTrackInfo.usesPrimaryDecoder && this.usesHardwareAcceleration == videoTrackInfo.usesHardwareAcceleration;
         }
 
         private int evaluateSelectionEligibility(int i, int i2) {
@@ -1390,13 +1376,11 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             if (!this.isWithinMaxConstraints && !this.parameters.exceedVideoConstraintsIfNecessary) {
                 return 0;
             }
-            if (DefaultTrackSelector.isSupported(i, false) && this.isWithinMinConstraints && this.isWithinMaxConstraints && this.format.bitrate != -1) {
-                Parameters parameters = this.parameters;
-                if (!parameters.forceHighestSupportedBitrate && !parameters.forceLowestBitrate && (i & i2) != 0) {
-                    return 2;
-                }
+            if (!DefaultTrackSelector.isSupported(i, false) || !this.isWithinMinConstraints || !this.isWithinMaxConstraints || this.format.bitrate == -1) {
+                return 1;
             }
-            return 1;
+            Parameters parameters = this.parameters;
+            return (parameters.forceHighestSupportedBitrate || parameters.forceLowestBitrate || (i & i2) == 0) ? 1 : 2;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1576,13 +1560,20 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             String str;
             int i2;
             Parameters parameters = this.parameters;
-            if ((parameters.allowAudioMixedChannelCountAdaptiveness || ((i2 = this.format.channelCount) != -1 && i2 == audioTrackInfo.format.channelCount)) && (parameters.allowAudioMixedMimeTypeAdaptiveness || ((str = this.format.sampleMimeType) != null && TextUtils.equals(str, audioTrackInfo.format.sampleMimeType)))) {
-                Parameters parameters2 = this.parameters;
-                if ((parameters2.allowAudioMixedSampleRateAdaptiveness || ((i = this.format.sampleRate) != -1 && i == audioTrackInfo.format.sampleRate)) && (parameters2.allowAudioMixedDecoderSupportAdaptiveness || (this.usesPrimaryDecoder == audioTrackInfo.usesPrimaryDecoder && this.usesHardwareAcceleration == audioTrackInfo.usesHardwareAcceleration))) {
-                    return true;
-                }
+            if (!parameters.allowAudioMixedChannelCountAdaptiveness && ((i2 = this.format.channelCount) == -1 || i2 != audioTrackInfo.format.channelCount)) {
+                return false;
             }
-            return false;
+            if (!parameters.allowAudioMixedMimeTypeAdaptiveness && ((str = this.format.sampleMimeType) == null || !TextUtils.equals(str, audioTrackInfo.format.sampleMimeType))) {
+                return false;
+            }
+            Parameters parameters2 = this.parameters;
+            if (!parameters2.allowAudioMixedSampleRateAdaptiveness && ((i = this.format.sampleRate) == -1 || i != audioTrackInfo.format.sampleRate)) {
+                return false;
+            }
+            if (parameters2.allowAudioMixedDecoderSupportAdaptiveness) {
+                return true;
+            }
+            return this.usesPrimaryDecoder == audioTrackInfo.usesPrimaryDecoder && this.usesHardwareAcceleration == audioTrackInfo.usesHardwareAcceleration;
         }
 
         @Override // java.lang.Comparable
@@ -1604,13 +1595,14 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             if (!this.isWithinConstraints && !this.parameters.exceedAudioConstraintsIfNecessary) {
                 return 0;
             }
-            if (DefaultTrackSelector.isSupported(i, false) && this.isWithinConstraints && this.format.bitrate != -1) {
-                Parameters parameters = this.parameters;
-                if (!parameters.forceHighestSupportedBitrate && !parameters.forceLowestBitrate && (parameters.allowMultipleAdaptiveSelections || !z)) {
-                    return 2;
-                }
+            if (!DefaultTrackSelector.isSupported(i, false) || !this.isWithinConstraints || this.format.bitrate == -1) {
+                return 1;
             }
-            return 1;
+            Parameters parameters = this.parameters;
+            if (parameters.forceHighestSupportedBitrate || parameters.forceLowestBitrate) {
+                return 1;
+            }
+            return (parameters.allowMultipleAdaptiveSelections || !z) ? 2 : 1;
         }
 
         public static int compareSelections(List list, List list2) {

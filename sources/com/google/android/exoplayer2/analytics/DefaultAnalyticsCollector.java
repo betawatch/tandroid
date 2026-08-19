@@ -51,8 +51,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     private Player player;
     private final Timeline.Window window;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(AnalyticsListener analyticsListener, FlagSet flagSet) {
+    public static /* synthetic */ void $r8$lambda$3O9AMI8ds5A0XXbYJXSnWgm_bhw(AnalyticsListener analyticsListener, FlagSet flagSet) {
     }
 
     @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -81,7 +80,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         this.listeners = new ListenerSet(Util.getCurrentOrMainLooper(), clock, new ListenerSet.IterationFinishedEvent() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda29
             @Override // com.google.android.exoplayer2.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
-                DefaultAnalyticsCollector.lambda$new$0((AnalyticsListener) obj, flagSet);
+                DefaultAnalyticsCollector.$r8$lambda$3O9AMI8ds5A0XXbYJXSnWgm_bhw((AnalyticsListener) obj, flagSet);
             }
         });
         Timeline.Period period = new Timeline.Period();
@@ -105,14 +104,10 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         this.listeners = this.listeners.copy(looper, new ListenerSet.IterationFinishedEvent() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda17
             @Override // com.google.android.exoplayer2.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
-                DefaultAnalyticsCollector.this.lambda$setPlayer$1(player, (AnalyticsListener) obj, flagSet);
+                AnalyticsListener analyticsListener = (AnalyticsListener) obj;
+                analyticsListener.onEvents(player, new AnalyticsListener.Events(flagSet, DefaultAnalyticsCollector.this.eventTimes));
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPlayer$1(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
-        analyticsListener.onEvents(player, new AnalyticsListener.Events(flagSet, this.eventTimes));
     }
 
     @Override // com.google.android.exoplayer2.analytics.AnalyticsCollector
@@ -151,13 +146,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 1007, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda45
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onAudioEnabled$3(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$fOmox8FwKRgJqY_-TOsvgUc03-Y(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onAudioEnabled$3(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$fOmox8FwKRgJqY_-TOsvgUc03-Y(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
         analyticsListener.onAudioEnabled(eventTime, decoderCounters);
         analyticsListener.onDecoderEnabled(eventTime, 1, decoderCounters);
     }
@@ -168,13 +162,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 1008, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onAudioDecoderInitialized$4(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$tYN0EpDyW_MiXhpp-d9F27rns18(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onAudioDecoderInitialized$4(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$tYN0EpDyW_MiXhpp-d9F27rns18(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
         analyticsListener.onAudioDecoderInitialized(eventTime, str, j);
         analyticsListener.onAudioDecoderInitialized(eventTime, str, j2, j);
         analyticsListener.onDecoderInitialized(eventTime, 1, str, j);
@@ -186,13 +179,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 1009, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda10
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onAudioInputFormatChanged$5(AnalyticsListener.EventTime.this, format, decoderReuseEvaluation, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$lkCcBetGkYxjMaRLQMYP1fSVr9s(AnalyticsListener.EventTime.this, format, decoderReuseEvaluation, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onAudioInputFormatChanged$5(AnalyticsListener.EventTime eventTime, Format format, DecoderReuseEvaluation decoderReuseEvaluation, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$lkCcBetGkYxjMaRLQMYP1fSVr9s(AnalyticsListener.EventTime eventTime, Format format, DecoderReuseEvaluation decoderReuseEvaluation, AnalyticsListener analyticsListener) {
         analyticsListener.onAudioInputFormatChanged(eventTime, format);
         analyticsListener.onAudioInputFormatChanged(eventTime, format, decoderReuseEvaluation);
         analyticsListener.onDecoderInputFormatChanged(eventTime, 1, format);
@@ -237,13 +229,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generatePlayingMediaPeriodEventTime, 1013, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda30
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onAudioDisabled$9(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$0wb6_-j9HgIWY-TFwzNUwmcn5po(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onAudioDisabled$9(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$0wb6_-j9HgIWY-TFwzNUwmcn5po(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
         analyticsListener.onAudioDisabled(eventTime, decoderCounters);
         analyticsListener.onDecoderDisabled(eventTime, 1, decoderCounters);
     }
@@ -287,13 +278,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 1015, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda26
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onVideoEnabled$13(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$6Xqp2xDv_SpyutLnsLUPKlK0Jso(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onVideoEnabled$13(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$6Xqp2xDv_SpyutLnsLUPKlK0Jso(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
         analyticsListener.onVideoEnabled(eventTime, decoderCounters);
         analyticsListener.onDecoderEnabled(eventTime, 2, decoderCounters);
     }
@@ -304,13 +294,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 1016, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda28
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onVideoDecoderInitialized$14(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$u7o6l1WhnG6ZvaiyZNx66rQvnQg(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onVideoDecoderInitialized$14(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$u7o6l1WhnG6ZvaiyZNx66rQvnQg(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
         analyticsListener.onVideoDecoderInitialized(eventTime, str, j);
         analyticsListener.onVideoDecoderInitialized(eventTime, str, j2, j);
         analyticsListener.onDecoderInitialized(eventTime, 2, str, j);
@@ -322,13 +311,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 1017, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda25
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onVideoInputFormatChanged$15(AnalyticsListener.EventTime.this, format, decoderReuseEvaluation, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$lr3o98lL1-w0qx-zGPLvhF8uS4Y(AnalyticsListener.EventTime.this, format, decoderReuseEvaluation, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onVideoInputFormatChanged$15(AnalyticsListener.EventTime eventTime, Format format, DecoderReuseEvaluation decoderReuseEvaluation, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$lr3o98lL1-w0qx-zGPLvhF8uS4Y(AnalyticsListener.EventTime eventTime, Format format, DecoderReuseEvaluation decoderReuseEvaluation, AnalyticsListener analyticsListener) {
         analyticsListener.onVideoInputFormatChanged(eventTime, format);
         analyticsListener.onVideoInputFormatChanged(eventTime, format, decoderReuseEvaluation);
         analyticsListener.onDecoderInputFormatChanged(eventTime, 2, format);
@@ -362,13 +350,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generatePlayingMediaPeriodEventTime, 1020, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda2
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onVideoDisabled$18(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$BUo199JEHsrAqgMGOcjS0yKvrr4(AnalyticsListener.EventTime.this, decoderCounters, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onVideoDisabled$18(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$BUo199JEHsrAqgMGOcjS0yKvrr4(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters, AnalyticsListener analyticsListener) {
         analyticsListener.onVideoDisabled(eventTime, decoderCounters);
         analyticsListener.onDecoderDisabled(eventTime, 2, decoderCounters);
     }
@@ -523,13 +510,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateCurrentPlayerMediaPeriodEventTime, 3, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda4
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onIsLoadingChanged$32(AnalyticsListener.EventTime.this, z, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$Uw9rpS04iwvLixYy_Jf_JAQWpKg(AnalyticsListener.EventTime.this, z, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onIsLoadingChanged$32(AnalyticsListener.EventTime eventTime, boolean z, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$Uw9rpS04iwvLixYy_Jf_JAQWpKg(AnalyticsListener.EventTime eventTime, boolean z, AnalyticsListener analyticsListener) {
         analyticsListener.onLoadingChanged(eventTime, z);
         analyticsListener.onIsLoadingChanged(eventTime, z);
     }
@@ -654,13 +640,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateCurrentPlayerMediaPeriodEventTime, 11, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda44
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onPositionDiscontinuity$43(AnalyticsListener.EventTime.this, i, positionInfo, positionInfo2, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$qZx1ea0H6d8d-PwdMyplWR0wzfI(AnalyticsListener.EventTime.this, i, positionInfo, positionInfo2, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPositionDiscontinuity$43(AnalyticsListener.EventTime eventTime, int i, Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$qZx1ea0H6d8d-PwdMyplWR0wzfI(AnalyticsListener.EventTime eventTime, int i, Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, AnalyticsListener analyticsListener) {
         analyticsListener.onPositionDiscontinuity(eventTime, i);
         analyticsListener.onPositionDiscontinuity(eventTime, positionInfo, positionInfo2, i);
     }
@@ -759,13 +744,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateReadingMediaPeriodEventTime, 25, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda54
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onVideoSizeChanged$57(AnalyticsListener.EventTime.this, videoSize, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$WQvjxTgXLAz81xG0ShreklR9mCE(AnalyticsListener.EventTime.this, videoSize, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onVideoSizeChanged$57(AnalyticsListener.EventTime eventTime, VideoSize videoSize, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$WQvjxTgXLAz81xG0ShreklR9mCE(AnalyticsListener.EventTime eventTime, VideoSize videoSize, AnalyticsListener analyticsListener) {
         analyticsListener.onVideoSizeChanged(eventTime, videoSize);
         analyticsListener.onVideoSizeChanged(eventTime, videoSize.width, videoSize.height, videoSize.unappliedRotationDegrees, videoSize.pixelWidthHeightRatio);
     }
@@ -809,13 +793,12 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         sendEvent(generateMediaPeriodEventTime, 1022, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda47
             @Override // com.google.android.exoplayer2.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onDrmSessionAcquired$62(AnalyticsListener.EventTime.this, i2, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.$r8$lambda$O_Olq1A376LwdixOR6LbhnpH0ck(AnalyticsListener.EventTime.this, i2, (AnalyticsListener) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onDrmSessionAcquired$62(AnalyticsListener.EventTime eventTime, int i, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void $r8$lambda$O_Olq1A376LwdixOR6LbhnpH0ck(AnalyticsListener.EventTime eventTime, int i, AnalyticsListener analyticsListener) {
         analyticsListener.onDrmSessionAcquired(eventTime);
         analyticsListener.onDrmSessionAcquired(eventTime, i);
     }
@@ -1068,19 +1051,20 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
                     return mediaPeriodId2;
                 }
             }
-            if (immutableList.isEmpty() && mediaPeriodId != null) {
-                if (isMatchingMediaPeriod(mediaPeriodId, uidOfPeriod, player.isPlayingAd(), player.getCurrentAdGroupIndex(), player.getCurrentAdIndexInAdGroup(), adGroupIndexAfterPositionUs)) {
-                    return mediaPeriodId;
-                }
+            if (immutableList.isEmpty() && mediaPeriodId != null && isMatchingMediaPeriod(mediaPeriodId, uidOfPeriod, player.isPlayingAd(), player.getCurrentAdGroupIndex(), player.getCurrentAdIndexInAdGroup(), adGroupIndexAfterPositionUs)) {
+                return mediaPeriodId;
             }
             return null;
         }
 
         private static boolean isMatchingMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Object obj, boolean z, int i, int i2, int i3) {
-            if (mediaPeriodId.periodUid.equals(obj)) {
-                return (z && mediaPeriodId.adGroupIndex == i && mediaPeriodId.adIndexInAdGroup == i2) || (!z && mediaPeriodId.adGroupIndex == -1 && mediaPeriodId.nextAdGroupIndex == i3);
+            if (!mediaPeriodId.periodUid.equals(obj)) {
+                return false;
             }
-            return false;
+            if (z && mediaPeriodId.adGroupIndex == i && mediaPeriodId.adIndexInAdGroup == i2) {
+                return true;
+            }
+            return !z && mediaPeriodId.adGroupIndex == -1 && mediaPeriodId.nextAdGroupIndex == i3;
         }
     }
 }

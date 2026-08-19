@@ -71,7 +71,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
     private Utilities.Callback onPowerAppliedChange = new Utilities.Callback() { // from class: org.telegram.ui.LiteModeSettingsActivity$$ExternalSyntheticLambda0
         @Override // org.telegram.messenger.Utilities.Callback
         public final void run(Object obj) {
-            LiteModeSettingsActivity.this.lambda$new$1((Boolean) obj);
+            LiteModeSettingsActivity.this.updateValues();
         }
     };
     private boolean[] expanded = new boolean[3];
@@ -135,7 +135,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                LiteModeSettingsActivity.this.lambda$createView$0(view, i, f, f2);
+                LiteModeSettingsActivity.$r8$lambda$UjYFGZuQC79daPf2ke4bOF-_PXM(LiteModeSettingsActivity.this, view, i, f, f2);
             }
         });
         this.fragmentView = this.contentView;
@@ -144,27 +144,27 @@ public class LiteModeSettingsActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view, int i, float f, float f2) {
+    public static /* synthetic */ void $r8$lambda$UjYFGZuQC79daPf2ke4bOF-_PXM(LiteModeSettingsActivity liteModeSettingsActivity, View view, int i, float f, float f2) {
         int expandedIndex;
-        if (view == null || i < 0 || i >= this.items.size()) {
+        liteModeSettingsActivity.getClass();
+        if (view == null || i < 0 || i >= liteModeSettingsActivity.items.size()) {
             return;
         }
-        Item item = (Item) this.items.get(i);
+        Item item = (Item) liteModeSettingsActivity.items.get(i);
         int i2 = item.viewType;
         if (i2 == 3 || i2 == 4) {
             if (LiteMode.isPowerSaverApplied()) {
-                this.restrictBulletin = BulletinFactory.of(this).createSimpleBulletin(new BatteryDrawable(0.1f, -1, Theme.getColor(Theme.key_dialogSwipeRemove), 1.3f), LocaleController.getString(R.string.LiteBatteryRestricted)).show();
+                liteModeSettingsActivity.restrictBulletin = BulletinFactory.of(liteModeSettingsActivity).createSimpleBulletin(new BatteryDrawable(0.1f, -1, Theme.getColor(Theme.key_dialogSwipeRemove), 1.3f), LocaleController.getString(R.string.LiteBatteryRestricted)).show();
                 return;
             }
-            if (item.viewType == 3 && item.getFlagsCount() > 1 && (!LocaleController.isRTL ? f < view.getMeasuredWidth() - AndroidUtilities.dp(75.0f) : f > AndroidUtilities.dp(75.0f)) && (expandedIndex = getExpandedIndex(item.flags)) != -1) {
-                this.expanded[expandedIndex] = !r5[expandedIndex];
-                updateValues();
-                updateItems();
+            if (item.viewType == 3 && item.getFlagsCount() > 1 && (!LocaleController.isRTL ? f < view.getMeasuredWidth() - AndroidUtilities.dp(75.0f) : f > AndroidUtilities.dp(75.0f)) && (expandedIndex = liteModeSettingsActivity.getExpandedIndex(item.flags)) != -1) {
+                liteModeSettingsActivity.expanded[expandedIndex] = !r5[expandedIndex];
+                liteModeSettingsActivity.updateValues();
+                liteModeSettingsActivity.updateItems();
                 return;
             }
             LiteMode.toggleFlag(item.flags, !LiteMode.isEnabledSetting(item.flags));
-            updateValues();
+            liteModeSettingsActivity.updateValues();
             return;
         }
         if (i2 == 5 && item.type == 1) {
@@ -189,11 +189,6 @@ public class LiteModeSettingsActivity extends BaseFragment {
     public void onBecomeFullyHidden() {
         super.onBecomeFullyHidden();
         LiteMode.removeOnPowerSaverAppliedListener(this.onPowerAppliedChange);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Boolean bool) {
-        updateValues();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -239,16 +234,13 @@ public class LiteModeSettingsActivity extends BaseFragment {
         this.listView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.ui.LiteModeSettingsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.IntReturnCallback
             public final int run() {
-                int lambda$highlightRow$2;
-                lambda$highlightRow$2 = LiteModeSettingsActivity.this.lambda$highlightRow$2(i);
-                return lambda$highlightRow$2;
+                return LiteModeSettingsActivity.$r8$lambda$sVuUwulOjX_0iWby-VRgUMQ2Dsg(LiteModeSettingsActivity.this, i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$highlightRow$2(int i) {
-        this.layoutManager.scrollToPositionWithOffset(i, AndroidUtilities.dp(60.0f));
+    public static /* synthetic */ int $r8$lambda$sVuUwulOjX_0iWby-VRgUMQ2Dsg(LiteModeSettingsActivity liteModeSettingsActivity, int i) {
+        liteModeSettingsActivity.layoutManager.scrollToPositionWithOffset(i, AndroidUtilities.dp(60.0f));
         return i;
     }
 
@@ -960,7 +952,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LiteModeSettingsActivity$PowerSaverSlider$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        LiteModeSettingsActivity.PowerSaverSlider.this.lambda$updateOnActive$0(valueAnimator2);
+                        LiteModeSettingsActivity.PowerSaverSlider.$r8$lambda$1Jzm6Fl_TCKn6XZdPeH5E9ShRHc(LiteModeSettingsActivity.PowerSaverSlider.this, valueAnimator2);
                     }
                 });
                 this.onActiveAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LiteModeSettingsActivity.PowerSaverSlider.5
@@ -975,13 +967,12 @@ public class LiteModeSettingsActivity extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateOnActive$0(ValueAnimator valueAnimator) {
-            TextView textView = this.rightTextView;
+        public static /* synthetic */ void $r8$lambda$1Jzm6Fl_TCKn6XZdPeH5E9ShRHc(PowerSaverSlider powerSaverSlider, ValueAnimator valueAnimator) {
+            TextView textView = powerSaverSlider.rightTextView;
             int color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText);
             int color2 = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText);
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.onActiveT = floatValue;
+            powerSaverSlider.onActiveT = floatValue;
             textView.setTextColor(ColorUtils.blendARGB(color, color2, floatValue));
         }
 
@@ -999,7 +990,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LiteModeSettingsActivity$PowerSaverSlider$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        LiteModeSettingsActivity.PowerSaverSlider.this.lambda$updateOffActive$1(valueAnimator2);
+                        LiteModeSettingsActivity.PowerSaverSlider.$r8$lambda$ZYcvDmzJtFogptxHYHBgGgU8xaw(LiteModeSettingsActivity.PowerSaverSlider.this, valueAnimator2);
                     }
                 });
                 this.offActiveAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LiteModeSettingsActivity.PowerSaverSlider.6
@@ -1014,13 +1005,12 @@ public class LiteModeSettingsActivity extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateOffActive$1(ValueAnimator valueAnimator) {
-            TextView textView = this.leftTextView;
+        public static /* synthetic */ void $r8$lambda$ZYcvDmzJtFogptxHYHBgGgU8xaw(PowerSaverSlider powerSaverSlider, ValueAnimator valueAnimator) {
+            TextView textView = powerSaverSlider.leftTextView;
             int color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText);
             int color2 = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText);
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.offActiveT = floatValue;
+            powerSaverSlider.offActiveT = floatValue;
             textView.setTextColor(ColorUtils.blendARGB(color, color2, floatValue));
         }
 
@@ -1030,7 +1020,8 @@ public class LiteModeSettingsActivity extends BaseFragment {
         }
     }
 
-    private static class Item extends AdapterWithDiffUtils.Item {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class Item extends AdapterWithDiffUtils.Item {
         public int flags;
         public int iconResId;
         public CharSequence text;

@@ -2,7 +2,6 @@ package org.telegram.messenger;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -132,7 +131,6 @@ public class DialogObject {
     }
 
     public static String setDialogPhotoTitle(ImageReceiver imageReceiver, AvatarDrawable avatarDrawable, TLObject tLObject) {
-        String str;
         if (tLObject instanceof TLRPC.User) {
             TLRPC.User user = (TLRPC.User) tLObject;
             if (UserObject.isReplyUser(user)) {
@@ -140,10 +138,9 @@ public class DialogObject {
                 if (avatarDrawable != null) {
                     avatarDrawable.setAvatarType(12);
                 }
-                if (imageReceiver == null) {
-                    return string;
+                if (imageReceiver != null) {
+                    imageReceiver.setForUserOrChat(null, avatarDrawable);
                 }
-                imageReceiver.setForUserOrChat(null, avatarDrawable);
                 return string;
             }
             if (UserObject.isUserSelf(user)) {
@@ -151,31 +148,30 @@ public class DialogObject {
                 if (avatarDrawable != null) {
                     avatarDrawable.setAvatarType(1);
                 }
-                if (imageReceiver == null) {
-                    return string2;
+                if (imageReceiver != null) {
+                    imageReceiver.setForUserOrChat(null, avatarDrawable);
                 }
-                imageReceiver.setForUserOrChat(null, avatarDrawable);
                 return string2;
             }
-            str = UserObject.getUserName(user);
+            String userName = UserObject.getUserName(user);
             if (avatarDrawable != null) {
                 avatarDrawable.setInfo(user);
             }
             if (imageReceiver != null) {
                 imageReceiver.setForUserOrChat(tLObject, avatarDrawable);
             }
-        } else {
-            if (!(tLObject instanceof TLRPC.Chat)) {
-                return "";
-            }
-            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-            str = chat.title;
-            if (avatarDrawable != null) {
-                avatarDrawable.setInfo(chat);
-            }
-            if (imageReceiver != null) {
-                imageReceiver.setForUserOrChat(tLObject, avatarDrawable);
-            }
+            return userName;
+        }
+        if (!(tLObject instanceof TLRPC.Chat)) {
+            return "";
+        }
+        TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+        String str = chat.title;
+        if (avatarDrawable != null) {
+            avatarDrawable.setInfo(chat);
+        }
+        if (imageReceiver != null) {
+            imageReceiver.setForUserOrChat(tLObject, avatarDrawable);
         }
         return str;
     }
@@ -279,24 +275,23 @@ public class DialogObject {
     }
 
     public static String getPublicUsername(String str, ArrayList<TLRPC.TL_username> arrayList, boolean z) {
-        if (!TextUtils.isEmpty(str) && !z) {
-            return str;
-        }
-        if (arrayList != null) {
-            for (int i = 0; i < arrayList.size(); i++) {
-                TLRPC.TL_username tL_username = arrayList.get(i);
-                if (tL_username != null && (((tL_username.active && !z) || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
-                    return tL_username.username;
+        if (TextUtils.isEmpty(str) || z) {
+            if (arrayList != null) {
+                for (int i = 0; i < arrayList.size(); i++) {
+                    TLRPC.TL_username tL_username = arrayList.get(i);
+                    if (tL_username != null && (((tL_username.active && !z) || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
+                        return tL_username.username;
+                    }
                 }
             }
+            if (TextUtils.isEmpty(str) || !z) {
+                return null;
+            }
+            if (arrayList != null && arrayList.size() > 0) {
+                return null;
+            }
         }
-        if (TextUtils.isEmpty(str) || !z) {
-            return null;
-        }
-        if (arrayList == null || arrayList.size() <= 0) {
-            return str;
-        }
-        return null;
+        return str;
     }
 
     public static String getSimilarPublicUsername(String str, ArrayList<TLRPC.TL_username> arrayList, String str2) {
@@ -475,11 +470,14 @@ public class DialogObject {
         if (arrayList == null) {
             return null;
         }
-        Iterator<TLRPC.TL_username> it = arrayList.iterator();
-        while (it.hasNext()) {
-            TLRPC.TL_username next = it.next();
-            if (next != null && TextUtils.equals(next.username, str)) {
-                return next;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            TLRPC.TL_username tL_username = arrayList.get(i);
+            i++;
+            TLRPC.TL_username tL_username2 = tL_username;
+            if (tL_username2 != null && TextUtils.equals(tL_username2.username, str)) {
+                return tL_username2;
             }
         }
         return null;

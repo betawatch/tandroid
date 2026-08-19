@@ -6,7 +6,7 @@ import java.util.Comparator;
 /* loaded from: classes.dex */
 public final class zzor {
     private static final Comparator zza = new zzok();
-    private static final zzor zzb = new zzor(new zzop(Collections.emptyList()));
+    private static final zzor zzb = new zzor(new zzop(Collections.EMPTY_LIST));
     private final zzop zzc;
 
     private zzor(zzop zzopVar) {

@@ -62,7 +62,8 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
     public TLRPC.TL_messageMediaVenue street;
     private Runnable updateRunnable;
 
-    protected void onDirectionClick() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void onDirectionClick() {
     }
 
     public void setAddressNameOverride(String str) {
@@ -326,35 +327,35 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
     public int getItemCount() {
         int i = this.locationType;
         if (i != 6 && i != 5 && i != 4 && !this.biz) {
+            int i2 = 0;
             if (this.currentMessageObject != null) {
                 if (!this.currentLiveLocations.isEmpty()) {
-                    r5 = this.currentLiveLocations.size() + 3;
-                } else if (this.fromStories) {
-                    r5 = 0;
+                    i2 = this.currentLiveLocations.size() + 3;
+                } else if (!this.fromStories) {
+                    i2 = 1;
                 }
-                r1 = 2 + r5;
+                r2 = 2 + i2;
             } else if (i == 2) {
                 LocationController.SharingLocationInfo sharingLocationInfo = LocationController.getInstance(this.currentAccount).getSharingLocationInfo(this.dialogId);
-                r1 = this.currentLiveLocations.size() + 2 + ((sharingLocationInfo == null || sharingLocationInfo.period == Integer.MAX_VALUE) ? 0 : 1);
+                int size = this.currentLiveLocations.size() + 2;
+                if (sharingLocationInfo != null && sharingLocationInfo.period != Integer.MAX_VALUE) {
+                    i2 = 1;
+                }
+                r2 = size + i2;
             } else if (this.searching || !this.searched || this.places.isEmpty()) {
-                int i2 = this.locationType;
-                if (i2 == 0) {
-                    r2 = 5;
-                } else if (i2 == 7) {
-                    r2 = (this.street == null ? 0 : 1) + 5;
+                int i3 = this.locationType;
+                if (i3 == 0) {
+                    r3 = 5;
+                } else if (i3 == 7) {
+                    r3 = (this.street != null ? 1 : 0) + 5;
                 }
                 boolean z = this.myLocationDenied;
-                r1 = r2 + ((((z || (!this.searching && this.searched)) ? 0 : 2) + (this.needEmptyView ? 1 : 0)) - (z ? 2 : 0));
+                r2 = r3 + ((((z || (!this.searching && this.searched)) ? 0 : 2) + (this.needEmptyView ? 1 : 0)) - (z ? 2 : 0));
             } else {
-                r1 = (this.locationType != 1 ? 5 : 6) + this.locations.size() + this.places.size() + (this.needEmptyView ? 1 : 0);
+                r2 = (this.locationType != 1 ? 5 : 6) + this.locations.size() + this.places.size() + (this.needEmptyView ? 1 : 0);
             }
         }
-        return (this.sharedMediaLayout == null || !this.sharedMediaLayoutVisible) ? r1 : r1 + 1;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
-        onDirectionClick();
+        return (this.sharedMediaLayout == null || !this.sharedMediaLayoutVisible) ? r2 : r2 + 1;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -407,7 +408,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                 locationDirectionCell.setOnButtonClick(new View.OnClickListener() { // from class: org.telegram.ui.Adapters.LocationActivityAdapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view3) {
-                        LocationActivityAdapter.this.lambda$onCreateViewHolder$0(view3);
+                        LocationActivityAdapter.this.onDirectionClick();
                     }
                 });
                 view2 = locationDirectionCell;
@@ -576,12 +577,12 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
             if (location != null) {
                 tL_geoPoint.lat = location.getLatitude();
                 tL_messageMediaVenue.geo._long = this.customLocation.getLongitude();
-            } else {
-                Location location2 = this.gpsLocation;
-                if (location2 != null) {
-                    tL_geoPoint.lat = location2.getLatitude();
-                    tL_messageMediaVenue.geo._long = this.gpsLocation.getLongitude();
-                }
+                return tL_messageMediaVenue;
+            }
+            Location location2 = this.gpsLocation;
+            if (location2 != null) {
+                tL_geoPoint.lat = location2.getLatitude();
+                tL_messageMediaVenue.geo._long = this.gpsLocation.getLongitude();
             }
             return tL_messageMediaVenue;
         }

@@ -28,12 +28,10 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
     private final Theme.ResourcesProvider resourcesProvider;
     private float totalVisibilityFactor;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$93jBtX9Pu1-HgVxuSin9Qptiq48(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$hGVe-BG6LPQS6sq_s-AAeOPhOqg(View view) {
     }
 
     public ChatActivityActionsButtonsLayout(Context context, Theme.ResourcesProvider resourcesProvider, BlurredBackgroundColorProvider blurredBackgroundColorProvider, BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory) {
@@ -48,7 +46,7 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
         create.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivityActionsButtonsLayout$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityActionsButtonsLayout.lambda$new$0(view);
+                ChatActivityActionsButtonsLayout.$r8$lambda$93jBtX9Pu1-HgVxuSin9Qptiq48(view);
             }
         });
         ScaleStateListAnimator.apply(buttonHolder.button, 0.065f, 2.0f);
@@ -57,7 +55,7 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
         create2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivityActionsButtonsLayout$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityActionsButtonsLayout.lambda$new$1(view);
+                ChatActivityActionsButtonsLayout.$r8$lambda$hGVe-BG6LPQS6sq_s-AAeOPhOqg(view);
             }
         });
         ScaleStateListAnimator.apply(buttonHolder2.button, 0.065f, 2.0f);

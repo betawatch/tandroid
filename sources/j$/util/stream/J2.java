@@ -1,47 +1,41 @@
 package j$.util.stream;
 
-import java.util.Arrays;
+import j$.util.DesugarArrays;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class J2 extends x2 {
-    private double[] c;
-    private int d;
+public final class J2 extends N2 implements j$.util.W {
+    public final /* synthetic */ K2 g;
 
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public final void l(long j) {
-        if (j >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.c = new double[(int) j];
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.j(this, consumer);
     }
 
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public final void k() {
-        int i = 0;
-        Arrays.sort(this.c, 0, this.d);
-        long j = this.d;
-        m2 m2Var = this.a;
-        m2Var.l(j);
-        if (!this.b) {
-            while (i < this.d) {
-                m2Var.accept(this.c[i]);
-                i++;
-            }
-        } else {
-            while (i < this.d && !m2Var.n()) {
-                m2Var.accept(this.c[i]);
-                i++;
-            }
-        }
-        m2Var.k();
-        this.c = null;
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.com.android.tools.r8.a.A(this, consumer);
     }
 
-    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        double[] dArr = this.c;
-        int i = this.d;
-        this.d = i + 1;
-        dArr[i] = d;
+    @Override // j$.util.stream.N2
+    public final void a(int i, Object obj, Object obj2) {
+        ((IntConsumer) obj2).accept(((int[]) obj)[i]);
+    }
+
+    @Override // j$.util.stream.N2
+    public final j$.util.c0 b(Object obj, int i, int i2) {
+        return DesugarArrays.b((int[]) obj, i, i2 + i);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public J2(K2 k2, int i, int i2, int i3, int i4) {
+        super(k2, i, i2, i3, i4);
+        this.g = k2;
+    }
+
+    @Override // j$.util.stream.N2
+    public final j$.util.c0 c(int i, int i2, int i3, int i4) {
+        return new J2(this.g, i, i2, i3, i4);
     }
 }

@@ -53,8 +53,7 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
     private LinearLayout linearLayout1;
     private TextView textView;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$_9TeDfLKkBhGucrGhUv-CKvDx8M(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -109,9 +108,7 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
         this.fragmentView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.IdenticonActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$createView$0;
-                lambda$createView$0 = IdenticonActivity.lambda$createView$0(view, motionEvent);
-                return lambda$createView$0;
+                return IdenticonActivity.$r8$lambda$_9TeDfLKkBhGucrGhUv-CKvDx8M(view, motionEvent);
             }
         });
         LinearLayout linearLayout = new LinearLayout(context);

@@ -53,26 +53,29 @@ public abstract class RoundedBitmapDrawable extends Drawable {
     }
 
     void updateDstRect() {
+        RoundedBitmapDrawable roundedBitmapDrawable;
         if (this.mApplyGravity) {
             if (this.mIsCircular) {
                 int min = Math.min(this.mBitmapWidth, this.mBitmapHeight);
-                gravityCompatApply(this.mGravity, min, min, getBounds(), this.mDstRect);
-                int min2 = Math.min(this.mDstRect.width(), this.mDstRect.height());
-                this.mDstRect.inset(Math.max(0, (this.mDstRect.width() - min2) / 2), Math.max(0, (this.mDstRect.height() - min2) / 2));
-                this.mCornerRadius = min2 * 0.5f;
+                roundedBitmapDrawable = this;
+                roundedBitmapDrawable.gravityCompatApply(this.mGravity, min, min, getBounds(), this.mDstRect);
+                int min2 = Math.min(roundedBitmapDrawable.mDstRect.width(), roundedBitmapDrawable.mDstRect.height());
+                roundedBitmapDrawable.mDstRect.inset(Math.max(0, (roundedBitmapDrawable.mDstRect.width() - min2) / 2), Math.max(0, (roundedBitmapDrawable.mDstRect.height() - min2) / 2));
+                roundedBitmapDrawable.mCornerRadius = min2 * 0.5f;
             } else {
-                gravityCompatApply(this.mGravity, this.mBitmapWidth, this.mBitmapHeight, getBounds(), this.mDstRect);
+                roundedBitmapDrawable = this;
+                roundedBitmapDrawable.gravityCompatApply(roundedBitmapDrawable.mGravity, roundedBitmapDrawable.mBitmapWidth, roundedBitmapDrawable.mBitmapHeight, getBounds(), roundedBitmapDrawable.mDstRect);
             }
-            this.mDstRectF.set(this.mDstRect);
-            if (this.mBitmapShader != null) {
-                Matrix matrix = this.mShaderMatrix;
-                RectF rectF = this.mDstRectF;
+            roundedBitmapDrawable.mDstRectF.set(roundedBitmapDrawable.mDstRect);
+            if (roundedBitmapDrawable.mBitmapShader != null) {
+                Matrix matrix = roundedBitmapDrawable.mShaderMatrix;
+                RectF rectF = roundedBitmapDrawable.mDstRectF;
                 matrix.setTranslate(rectF.left, rectF.top);
-                this.mShaderMatrix.preScale(this.mDstRectF.width() / this.mBitmap.getWidth(), this.mDstRectF.height() / this.mBitmap.getHeight());
-                this.mBitmapShader.setLocalMatrix(this.mShaderMatrix);
-                this.mPaint.setShader(this.mBitmapShader);
+                roundedBitmapDrawable.mShaderMatrix.preScale(roundedBitmapDrawable.mDstRectF.width() / roundedBitmapDrawable.mBitmap.getWidth(), roundedBitmapDrawable.mDstRectF.height() / roundedBitmapDrawable.mBitmap.getHeight());
+                roundedBitmapDrawable.mBitmapShader.setLocalMatrix(roundedBitmapDrawable.mShaderMatrix);
+                roundedBitmapDrawable.mPaint.setShader(roundedBitmapDrawable.mBitmapShader);
             }
-            this.mApplyGravity = false;
+            roundedBitmapDrawable.mApplyGravity = false;
         }
     }
 

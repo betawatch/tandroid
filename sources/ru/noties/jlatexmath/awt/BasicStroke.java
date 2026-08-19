@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.awt;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BasicStroke implements Stroke {
     public static final int CAP_BUTT = 0;
     public static final int JOIN_MITER = 0;

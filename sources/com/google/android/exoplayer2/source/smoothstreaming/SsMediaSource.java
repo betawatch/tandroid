@@ -259,7 +259,10 @@ public final class SsMediaSource extends BaseMediaSource implements Loader.Callb
                 singlePeriodTimeline = new SinglePeriodTimeline(-9223372036854775807L, j6, j5, msToUs, true, true, true, this.manifest, this.mediaItem);
             } else {
                 long j7 = ssManifest2.durationUs;
-                long j8 = j7 != -9223372036854775807L ? j7 : j - j2;
+                if (j7 == -9223372036854775807L) {
+                    j7 = j - j2;
+                }
+                long j8 = j7;
                 singlePeriodTimeline = new SinglePeriodTimeline(j2 + j8, j8, j2, 0L, true, false, false, this.manifest, this.mediaItem);
             }
         }

@@ -15,13 +15,12 @@ public class KeepAliveJob extends JobIntentService {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.KeepAliveJob$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                KeepAliveJob.lambda$startJob$0();
+                KeepAliveJob.$r8$lambda$KunmSAUOG7za9CVFvrm3r_2vjUE();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$startJob$0() {
+    public static /* synthetic */ void $r8$lambda$KunmSAUOG7za9CVFvrm3r_2vjUE() {
         if (startingJob || countDownLatch != null) {
             return;
         }

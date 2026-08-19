@@ -71,25 +71,31 @@ public final class zzcw extends zzav implements zzcx, RandomAccess {
         return super.equals(obj);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x001b, code lost:
+    
+        if (r0.zzaa() != false) goto L10;
+     */
     @Override // java.util.AbstractList, java.util.List
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final /* synthetic */ Object get(int i) {
+        String zzf;
         Object obj = this.zzls.get(i);
         if (obj instanceof String) {
             return (String) obj;
         }
         if (obj instanceof zzbb) {
             zzbb zzbbVar = (zzbb) obj;
-            String zzz = zzbbVar.zzz();
-            if (zzbbVar.zzaa()) {
-                this.zzls.set(i, zzz);
+            zzf = zzbbVar.zzz();
+        } else {
+            byte[] bArr = (byte[]) obj;
+            zzf = zzci.zzf(bArr);
+            if (!zzci.zze(bArr)) {
+                return zzf;
             }
-            return zzz;
         }
-        byte[] bArr = (byte[]) obj;
-        String zzf = zzci.zzf(bArr);
-        if (zzci.zze(bArr)) {
-            this.zzls.set(i, zzf);
-        }
+        this.zzls.set(i, zzf);
         return zzf;
     }
 

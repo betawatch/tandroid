@@ -219,9 +219,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.GradientHeaderActivity$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.CallbackReturn
                 public final Object run(Object obj) {
-                    Boolean lambda$createView$0;
-                    lambda$createView$0 = GradientHeaderActivity.this.lambda$createView$0((View) obj);
-                    return lambda$createView$0;
+                    return GradientHeaderActivity.$r8$lambda$xGwfZ6oA2FvXd88KIWXL8scgV1s(GradientHeaderActivity.this, (View) obj);
                 }
             };
             int dp = AndroidUtilities.dp(12.0f);
@@ -284,9 +282,9 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$createView$0(View view) {
-        return view.getParent() != this.listView ? Boolean.FALSE : Boolean.valueOf(!UniversalAdapter.isShadow(r1.getChildViewHolder(view).getItemViewType()));
+    public static /* synthetic */ Boolean $r8$lambda$xGwfZ6oA2FvXd88KIWXL8scgV1s(GradientHeaderActivity gradientHeaderActivity, View view) {
+        gradientHeaderActivity.getClass();
+        return view.getParent() != gradientHeaderActivity.listView ? Boolean.FALSE : Boolean.valueOf(!UniversalAdapter.isShadow(r1.getChildViewHolder(view).getItemViewType()));
     }
 
     protected ContentView createContentView() {
@@ -347,9 +345,10 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 }
                 if (this.isTouchedActionBarBackButton) {
                     boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        this.isTouchedActionBarBackButton = false;
+                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
+                        return dispatchTouchEvent;
                     }
+                    this.isTouchedActionBarBackButton = false;
                     return dispatchTouchEvent;
                 }
             }
@@ -426,7 +425,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             View findViewByPosition = GradientHeaderActivity.this.listView.getLayoutManager() != null ? GradientHeaderActivity.this.listView.getLayoutManager().findViewByPosition(0) : null;
             GradientHeaderActivity.this.currentYOffset = findViewByPosition != null ? findViewByPosition.getBottom() : 0;
             int bottom = ((BaseFragment) GradientHeaderActivity.this).actionBar.getBottom() + AndroidUtilities.dp(16.0f);
-            GradientHeaderActivity.this.totalProgress = 1.0f - ((r4.currentYOffset - bottom) / (GradientHeaderActivity.this.firstViewHeight - bottom));
+            GradientHeaderActivity.this.totalProgress = 1.0f - ((r5.currentYOffset - bottom) / (GradientHeaderActivity.this.firstViewHeight - bottom));
             GradientHeaderActivity gradientHeaderActivity2 = GradientHeaderActivity.this;
             gradientHeaderActivity2.totalProgress = Utilities.clamp(gradientHeaderActivity2.totalProgress, 1.0f, 0.0f);
             int bottom2 = ((BaseFragment) GradientHeaderActivity.this).actionBar.getBottom() + AndroidUtilities.dp(16.0f);
@@ -570,7 +569,8 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         updateDialogVisibility(false);
     }
 
-    protected void updateDialogVisibility(boolean z) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void updateDialogVisibility(boolean z) {
         if (z != this.isDialogVisible) {
             this.isDialogVisible = z;
             this.particlesView.setPaused(z);

@@ -64,7 +64,7 @@ public class PaintToolsView extends LinearLayout {
                 this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PaintToolsView.this.lambda$new$0(view);
+                        PaintToolsView.this.delegate.onColorPickerSelected();
                     }
                 });
             } else if (i > 0 && i <= Brush.BRUSHES_LIST.size()) {
@@ -74,7 +74,7 @@ public class PaintToolsView extends LinearLayout {
                     this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            PaintToolsView.this.lambda$new$1(i2, brush, view);
+                            PaintToolsView.$r8$lambda$sW__ZHphfCezGZRaqY4qll_8mHM(PaintToolsView.this, i2, brush, view);
                         }
                     });
                 } else {
@@ -85,7 +85,7 @@ public class PaintToolsView extends LinearLayout {
                 this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PaintToolsView.this.lambda$new$2(view);
+                        PaintToolsView.this.delegate.onAddButtonPressed(view);
                     }
                 });
             }
@@ -95,21 +95,10 @@ public class PaintToolsView extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.delegate.onColorPickerSelected();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, Brush brush, View view) {
-        animateNextIndex(i);
-        this.delegate.onGetPalette().setCurrentBrush(i - 1);
-        this.delegate.onBrushSelected(brush);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        this.delegate.onAddButtonPressed(view);
+    public static /* synthetic */ void $r8$lambda$sW__ZHphfCezGZRaqY4qll_8mHM(PaintToolsView paintToolsView, int i, Brush brush, View view) {
+        paintToolsView.animateNextIndex(i);
+        paintToolsView.delegate.onGetPalette().setCurrentBrush(i - 1);
+        paintToolsView.delegate.onBrushSelected(brush);
     }
 
     public void setSelectedIndex(int i) {
@@ -167,7 +156,7 @@ public class PaintToolsView extends LinearLayout {
                 this.nextSelectedAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        PaintToolsView.this.lambda$animateNextIndex$3(valueAnimator2);
+                        PaintToolsView.$r8$lambda$CBoPz9vHB-RW5o5Ro4fKCjOuUEw(PaintToolsView.this, valueAnimator2);
                     }
                 });
                 this.nextSelectedAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView.1
@@ -186,10 +175,10 @@ public class PaintToolsView extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateNextIndex$3(ValueAnimator valueAnimator) {
-        this.nextSelectedIndexProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$CBoPz9vHB-RW5o5Ro4fKCjOuUEw(PaintToolsView paintToolsView, ValueAnimator valueAnimator) {
+        paintToolsView.getClass();
+        paintToolsView.nextSelectedIndexProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        paintToolsView.invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.View

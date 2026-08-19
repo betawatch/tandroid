@@ -67,7 +67,10 @@ final class MediaPeriodHolder {
     }
 
     public boolean isFullyBuffered() {
-        return this.prepared && (!this.hasEnabledTracks || this.mediaPeriod.getBufferedPositionUs() == Long.MIN_VALUE);
+        if (this.prepared) {
+            return !this.hasEnabledTracks || this.mediaPeriod.getBufferedPositionUs() == Long.MIN_VALUE;
+        }
+        return false;
     }
 
     public long getBufferedPositionUs() {

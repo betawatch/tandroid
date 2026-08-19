@@ -129,7 +129,7 @@ public abstract class ActionBarMenuSlider extends FrameLayout {
         this.prepareBlur = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSlider$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ActionBarMenuSlider.this.lambda$new$2();
+                ActionBarMenuSlider.$r8$lambda$glIfugGQY6ANHYokt6BzOWBZlk8(ActionBarMenuSlider.this);
             }
         };
         this.resourcesProvider = resourcesProvider;
@@ -201,7 +201,7 @@ public abstract class ActionBarMenuSlider extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSlider$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ActionBarMenuSlider.this.lambda$setValue$0(valueAnimator2);
+                    ActionBarMenuSlider.$r8$lambda$59cvFoR3YGmETkIQolt6b0KxQHQ(ActionBarMenuSlider.this, valueAnimator2);
                 }
             });
             this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSlider.3
@@ -229,10 +229,10 @@ public abstract class ActionBarMenuSlider extends FrameLayout {
         this.fillPaint.setColor(getColorValue(clamp));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setValue$0(ValueAnimator valueAnimator) {
-        this.value = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$59cvFoR3YGmETkIQolt6b0KxQHQ(ActionBarMenuSlider actionBarMenuSlider, ValueAnimator valueAnimator) {
+        actionBarMenuSlider.getClass();
+        actionBarMenuSlider.value = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        actionBarMenuSlider.invalidate();
     }
 
     @Override // android.view.View
@@ -278,39 +278,37 @@ public abstract class ActionBarMenuSlider extends FrameLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        this.preparingBlur = true;
+    public static /* synthetic */ void $r8$lambda$glIfugGQY6ANHYokt6BzOWBZlk8(final ActionBarMenuSlider actionBarMenuSlider) {
+        actionBarMenuSlider.preparingBlur = true;
         AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.ActionBarMenuSlider$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ActionBarMenuSlider.this.lambda$new$1((Bitmap) obj);
+                ActionBarMenuSlider.$r8$lambda$MuyrIntDVgalfEX96cFLlqiTekw(ActionBarMenuSlider.this, (Bitmap) obj);
             }
         }, 8.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Bitmap bitmap) {
-        this.preparingBlur = false;
-        this.blurBitmap = bitmap;
+    public static /* synthetic */ void $r8$lambda$MuyrIntDVgalfEX96cFLlqiTekw(ActionBarMenuSlider actionBarMenuSlider, Bitmap bitmap) {
+        actionBarMenuSlider.preparingBlur = false;
+        actionBarMenuSlider.blurBitmap = bitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.blurBitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        Matrix matrix = this.blurBitmapMatrix;
+        actionBarMenuSlider.blurBitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        Matrix matrix = actionBarMenuSlider.blurBitmapMatrix;
         if (matrix == null) {
-            this.blurBitmapMatrix = new Matrix();
+            actionBarMenuSlider.blurBitmapMatrix = new Matrix();
         } else {
             matrix.reset();
         }
-        this.blurBitmapMatrix.postScale(8.0f, 8.0f);
-        Matrix matrix2 = this.blurBitmapMatrix;
-        int[] iArr = this.location;
+        actionBarMenuSlider.blurBitmapMatrix.postScale(8.0f, 8.0f);
+        Matrix matrix2 = actionBarMenuSlider.blurBitmapMatrix;
+        int[] iArr = actionBarMenuSlider.location;
         matrix2.postTranslate(-iArr[0], -iArr[1]);
-        this.blurBitmapShader.setLocalMatrix(this.blurBitmapMatrix);
-        this.blurPaint.setShader(this.blurBitmapShader);
+        actionBarMenuSlider.blurBitmapShader.setLocalMatrix(actionBarMenuSlider.blurBitmapMatrix);
+        actionBarMenuSlider.blurPaint.setShader(actionBarMenuSlider.blurBitmapShader);
         ColorMatrix colorMatrix = new ColorMatrix();
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.2f);
-        this.blurPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        invalidate();
+        actionBarMenuSlider.blurPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        actionBarMenuSlider.invalidate();
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -72,13 +72,13 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         public static Event parseFromSection(ParsableByteArray parsableByteArray) {
             ArrayList arrayList;
             boolean z;
-            long j;
             boolean z2;
+            long j;
+            boolean z3;
             long j2;
             int i;
             int i2;
             int i3;
-            boolean z3;
             boolean z4;
             long j3;
             long readUnsignedInt = parsableByteArray.readUnsignedInt();
@@ -87,13 +87,13 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             if (z5) {
                 arrayList = arrayList2;
                 z = false;
-                j = -9223372036854775807L;
                 z2 = false;
+                j = -9223372036854775807L;
+                z3 = false;
                 j2 = -9223372036854775807L;
                 i = 0;
                 i2 = 0;
                 i3 = 0;
-                z3 = false;
             } else {
                 int readUnsignedByte = parsableByteArray.readUnsignedByte();
                 boolean z6 = (readUnsignedByte & 128) != 0;
@@ -103,8 +103,11 @@ public final class SpliceScheduleCommand extends SpliceCommand {
                 if (!z7) {
                     int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
                     ArrayList arrayList3 = new ArrayList(readUnsignedByte2);
-                    for (int i4 = 0; i4 < readUnsignedByte2; i4++) {
+                    int i4 = 0;
+                    while (i4 < readUnsignedByte2) {
                         arrayList3.add(new ComponentSplice(parsableByteArray.readUnsignedByte(), parsableByteArray.readUnsignedInt()));
+                        i4++;
+                        readUnsignedByte2 = readUnsignedByte2;
                     }
                     arrayList2 = arrayList3;
                 }
@@ -119,19 +122,20 @@ public final class SpliceScheduleCommand extends SpliceCommand {
                 }
                 int readUnsignedShort = parsableByteArray.readUnsignedShort();
                 int readUnsignedByte4 = parsableByteArray.readUnsignedByte();
-                z3 = z7;
+                boolean z10 = z6;
+                z3 = z4;
+                z = z10;
                 i3 = parsableByteArray.readUnsignedByte();
-                j2 = j3;
-                arrayList = arrayList2;
                 long j4 = readUnsignedInt2;
                 i = readUnsignedShort;
                 i2 = readUnsignedByte4;
+                long j5 = j3;
+                arrayList = arrayList2;
+                z2 = z7;
                 j = j4;
-                boolean z10 = z6;
-                z2 = z4;
-                z = z10;
+                j2 = j5;
             }
-            return new Event(readUnsignedInt, z5, z, z3, arrayList, j, z2, j2, i, i2, i3);
+            return new Event(readUnsignedInt, z5, z, z2, arrayList, j, z3, j2, i, i2, i3);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

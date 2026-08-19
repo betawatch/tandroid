@@ -106,7 +106,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                     Crashes.getMinidumpDirectory().thenAccept(new AppCenterConsumer() { // from class: org.telegram.messenger.ApplicationLoaderImpl$$ExternalSyntheticLambda2
                         @Override // com.microsoft.appcenter.utils.async.AppCenterConsumer
                         public final void accept(Object obj) {
-                            ApplicationLoaderImpl.lambda$startAppCenterInternal$0((String) obj);
+                            ApplicationLoaderImpl.$r8$lambda$iduE1Rxk3r4juvJq-EO1Jt_RGXI((String) obj);
                         }
                     });
                     CustomProperties customProperties = new CustomProperties();
@@ -140,8 +140,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$startAppCenterInternal$0(String str) {
+    public static /* synthetic */ void $r8$lambda$iduE1Rxk3r4juvJq-EO1Jt_RGXI(String str) {
         if (str != null) {
             Utilities.setupNativeCrashesListener(str);
         }
@@ -150,11 +149,10 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     protected void checkForUpdatesInternal() {
         try {
-            if (!BuildVars.DEBUG_VERSION || SystemClock.elapsedRealtime() - lastUpdateCheckTime < 3600000) {
-                return;
+            if (BuildVars.DEBUG_VERSION && SystemClock.elapsedRealtime() - lastUpdateCheckTime >= 3600000) {
+                lastUpdateCheckTime = SystemClock.elapsedRealtime();
+                Distribute.checkForUpdate();
             }
-            lastUpdateCheckTime = SystemClock.elapsedRealtime();
-            Distribute.checkForUpdate();
         } catch (Throwable th) {
             FileLog.e(th);
         }

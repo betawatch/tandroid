@@ -19,12 +19,12 @@ public abstract class ProfileVerifier {
     private static final Object SYNC_OBJ = new Object();
     private static CompilationStatus sCompilationStatus = null;
 
-    /* JADX WARN: Can't wrap try/catch for region: R(20:14|(1:79)(1:18)|19|(1:78)(1:23)|24|25|26|(2:63|64)(1:28)|29|(8:36|(1:40)|(1:47)|48|(2:55|56)|52|53|54)|(1:62)|(1:40)|(3:42|45|47)|48|(1:50)|55|56|52|53|54) */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00cf, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(21:14|(1:80)(1:18)|19|(1:79)(1:23)|24|25|26|(2:64|65)(1:28)|29|(8:36|(1:40)|(1:59)(1:47)|48|(2:55|56)|52|53|54)|(1:63)|(1:40)|(1:42)|59|48|(1:50)|55|56|52|53|54) */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00d0, code lost:
     
-        r3 = 196608;
+        r13 = 196608;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00a0, code lost:
     
         r3 = 1;
      */
@@ -76,14 +76,12 @@ public abstract class ProfileVerifier {
                         if (z && z3 && i3 != 1) {
                             i3 = 2;
                         }
-                        if (readFromFile != null && readFromFile.mResultCode == 2 && i3 == 1 && length < readFromFile.mInstalledCurrentProfileSize) {
-                            i3 = 3;
-                        }
-                        cache = new Cache(1, i3, packageLastUpdateTime, length2);
+                        int i4 = (readFromFile == null && readFromFile.mResultCode == 2 && i3 == 1 && length < readFromFile.mInstalledCurrentProfileSize) ? 3 : i3;
+                        cache = new Cache(1, i4, packageLastUpdateTime, length2);
                         if (readFromFile != null || !readFromFile.equals(cache)) {
                             cache.writeOnFile(file3);
                         }
-                        return setCompilationStatus(i3, z2, z3);
+                        return setCompilationStatus(i4, z2, z3);
                     }
                     if (z3) {
                         i3 = 2;
@@ -91,14 +89,13 @@ public abstract class ProfileVerifier {
                     if (z) {
                         i3 = 2;
                     }
-                    if (readFromFile != null) {
-                        i3 = 3;
+                    if (readFromFile == null) {
                     }
-                    cache = new Cache(1, i3, packageLastUpdateTime, length2);
+                    cache = new Cache(1, i4, packageLastUpdateTime, length2);
                     if (readFromFile != null) {
                     }
                     cache.writeOnFile(file3);
-                    return setCompilationStatus(i3, z2, z3);
+                    return setCompilationStatus(i4, z2, z3);
                 } catch (PackageManager.NameNotFoundException unused2) {
                     return setCompilationStatus(65536, z2, z3);
                 }
@@ -139,11 +136,13 @@ public abstract class ProfileVerifier {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || !(obj instanceof Cache)) {
-                return false;
+            if (obj != null && (obj instanceof Cache)) {
+                Cache cache = (Cache) obj;
+                if (this.mResultCode == cache.mResultCode && this.mPackageLastUpdateTime == cache.mPackageLastUpdateTime && this.mSchema == cache.mSchema && this.mInstalledCurrentProfileSize == cache.mInstalledCurrentProfileSize) {
+                    return true;
+                }
             }
-            Cache cache = (Cache) obj;
-            return this.mResultCode == cache.mResultCode && this.mPackageLastUpdateTime == cache.mPackageLastUpdateTime && this.mSchema == cache.mSchema && this.mInstalledCurrentProfileSize == cache.mInstalledCurrentProfileSize;
+            return false;
         }
 
         public int hashCode() {
@@ -175,13 +174,7 @@ public abstract class ProfileVerifier {
                 Cache cache = new Cache(dataInputStream.readInt(), dataInputStream.readInt(), dataInputStream.readLong(), dataInputStream.readLong());
                 dataInputStream.close();
                 return cache;
-            } catch (Throwable th) {
-                try {
-                    dataInputStream.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
-                }
-                throw th;
+            } finally {
             }
         }
     }

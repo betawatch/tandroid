@@ -18,7 +18,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GallerySheet extends BottomSheet {
     private Boolean galleryListViewOpening;
     private ValueAnimator galleryOpenCloseAnimator;
@@ -41,13 +41,13 @@ public class GallerySheet extends BottomSheet {
         galleryListView.setOnBackClickListener(new Runnable() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                GallerySheet.this.lambda$new$0();
+                GallerySheet.this.dismiss();
             }
         });
         galleryListView.setOnSelectListener(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                GallerySheet.this.lambda$new$1(obj, (Bitmap) obj2);
+                GallerySheet.$r8$lambda$boleV3-p_swaWSlzgvrOP5qHLLs(GallerySheet.this, obj, (Bitmap) obj2);
             }
         });
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context);
@@ -57,13 +57,13 @@ public class GallerySheet extends BottomSheet {
         this.containerView.addView(galleryListView);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Object obj, Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$boleV3-p_swaWSlzgvrOP5qHLLs(GallerySheet gallerySheet, Object obj, Bitmap bitmap) {
         Utilities.Callback callback;
-        if (obj == null || this.galleryListViewOpening != null || !(obj instanceof MediaController.PhotoEntry) || (callback = this.onGalleryListener) == null) {
-            return;
+        if (obj == null) {
+            gallerySheet.getClass();
+        } else if (gallerySheet.galleryListViewOpening == null && (obj instanceof MediaController.PhotoEntry) && (callback = gallerySheet.onGalleryListener) != null) {
+            callback.run((MediaController.PhotoEntry) obj);
         }
-        callback.run((MediaController.PhotoEntry) obj);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -72,21 +72,15 @@ public class GallerySheet extends BottomSheet {
         animate(true, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$2() {
-        super.lambda$new$0();
-    }
-
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$0() {
+    public void dismiss() {
         animate(false, new Runnable() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                GallerySheet.this.lambda$dismiss$2();
+                super/*org.telegram.ui.ActionBar.BottomSheet*/.dismiss();
             }
         });
-        super.lambda$new$0();
+        super.dismiss();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -97,7 +91,7 @@ public class GallerySheet extends BottomSheet {
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.view.Window.Callback
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0 && motionEvent.getY() < this.listView.top()) {
-            lambda$new$0();
+            dismiss();
             return true;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -115,7 +109,7 @@ public class GallerySheet extends BottomSheet {
             this.galleryOpenCloseSpringAnimator.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda2
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
-                    GallerySheet.this.lambda$animate$3(height, runnable, dynamicAnimation, z2, f, f2);
+                    GallerySheet.$r8$lambda$x37FlltTpeb4zFQvqEKMRa4TFIQ(GallerySheet.this, height, runnable, dynamicAnimation, z2, f, f2);
                 }
             });
             this.galleryOpenCloseSpringAnimator.start();
@@ -126,7 +120,7 @@ public class GallerySheet extends BottomSheet {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                GallerySheet.this.lambda$animate$4(valueAnimator);
+                GallerySheet.this.listView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
             }
         });
         this.galleryOpenCloseAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.GallerySheet.2
@@ -145,23 +139,18 @@ public class GallerySheet extends BottomSheet {
         this.galleryOpenCloseAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate$3(float f, Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f2, float f3) {
+    public static /* synthetic */ void $r8$lambda$x37FlltTpeb4zFQvqEKMRa4TFIQ(GallerySheet gallerySheet, float f, Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f2, float f3) {
         if (z) {
+            gallerySheet.getClass();
             return;
         }
-        this.listView.setTranslationY(f);
-        this.listView.ignoreScroll = false;
-        this.galleryOpenCloseSpringAnimator = null;
-        this.galleryListViewOpening = null;
+        gallerySheet.listView.setTranslationY(f);
+        gallerySheet.listView.ignoreScroll = false;
+        gallerySheet.galleryOpenCloseSpringAnimator = null;
+        gallerySheet.galleryListViewOpening = null;
         if (runnable != null) {
             runnable.run();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate$4(ValueAnimator valueAnimator) {
-        this.listView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     public void setOnGalleryImage(Utilities.Callback callback) {

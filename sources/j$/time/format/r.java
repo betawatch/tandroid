@@ -2,76 +2,57 @@ package j$.time.format;
 
 import j$.time.ZoneId;
 import j$.util.Objects;
-import java.util.Locale;
 
 /* loaded from: classes2.dex */
-final class r {
-    private j$.time.temporal.m a;
-    private DateTimeFormatter b;
-    private int c;
+public final class r {
+    public final j$.time.temporal.l a;
+    public final DateTimeFormatter b;
+    public int c;
 
-    r(j$.time.temporal.m mVar, DateTimeFormatter dateTimeFormatter) {
-        j$.time.chrono.l b = dateTimeFormatter.b();
-        if (b != null) {
-            j$.time.chrono.l lVar = (j$.time.chrono.l) mVar.v(j$.time.temporal.l.e());
-            ZoneId zoneId = (ZoneId) mVar.v(j$.time.temporal.l.k());
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v2, types: [j$.time.chrono.k, java.lang.Object] */
+    public r(j$.time.temporal.l lVar, DateTimeFormatter dateTimeFormatter) {
+        j$.time.chrono.r rVar = dateTimeFormatter.d;
+        if (rVar != null) {
+            ?? r1 = (j$.time.chrono.k) lVar.r(j$.time.temporal.p.b);
+            ZoneId zoneId = (ZoneId) lVar.r(j$.time.temporal.p.a);
             j$.time.chrono.b bVar = null;
-            b = Objects.equals(b, lVar) ? null : b;
+            rVar = Objects.equals(rVar, r1) ? null : rVar;
             Objects.equals(null, zoneId);
-            if (b != null) {
-                j$.time.chrono.l lVar2 = b != null ? b : lVar;
-                if (b != null) {
-                    if (mVar.g(j$.time.temporal.a.EPOCH_DAY)) {
-                        bVar = lVar2.m(mVar);
-                    } else if (b != j$.time.chrono.s.d || lVar != null) {
+            if (rVar != null) {
+                j$.time.chrono.r rVar2 = rVar != null ? rVar : r1;
+                if (rVar != null) {
+                    if (lVar.h(j$.time.temporal.a.EPOCH_DAY)) {
+                        bVar = rVar2.a(lVar);
+                    } else if (rVar != j$.time.chrono.r.c || r1 != 0) {
                         for (j$.time.temporal.a aVar : j$.time.temporal.a.values()) {
-                            if (aVar.v() && mVar.g(aVar)) {
-                                throw new j$.time.c("Unable to apply override chronology '" + b + "' because the temporal object being formatted contains date fields but does not represent a whole date: " + mVar);
+                            if (aVar.u() && lVar.h(aVar)) {
+                                throw new j$.time.b("Unable to apply override chronology '" + rVar + "' because the temporal object being formatted contains date fields but does not represent a whole date: " + lVar);
                             }
                         }
                     }
                 }
-                mVar = new q(bVar, mVar, lVar2, zoneId);
+                lVar = new q(bVar, lVar, rVar2, zoneId);
             }
         }
-        this.a = mVar;
+        this.a = lVar;
         this.b = dateTimeFormatter;
     }
 
-    final j$.time.temporal.m d() {
-        return this.a;
-    }
-
-    final Locale c() {
-        return this.b.d();
-    }
-
-    final v b() {
-        return this.b.c();
-    }
-
-    final void g() {
-        this.c++;
-    }
-
-    final void a() {
-        this.c--;
-    }
-
-    final Object f(j$.time.temporal.r rVar) {
-        j$.time.temporal.m mVar = this.a;
-        Object v = mVar.v(rVar);
-        if (v != null || this.c != 0) {
-            return v;
+    public final Object b(a aVar) {
+        j$.time.temporal.l lVar = this.a;
+        Object r = lVar.r(aVar);
+        if (r != null || this.c != 0) {
+            return r;
         }
-        throw new j$.time.c("Unable to extract " + rVar + " from temporal " + mVar);
+        throw new j$.time.b("Unable to extract " + aVar + " from temporal " + lVar);
     }
 
-    final Long e(j$.time.temporal.p pVar) {
+    public final Long a(j$.time.temporal.o oVar) {
         int i = this.c;
-        j$.time.temporal.m mVar = this.a;
-        if (i <= 0 || mVar.g(pVar)) {
-            return Long.valueOf(mVar.r(pVar));
+        j$.time.temporal.l lVar = this.a;
+        if (i <= 0 || lVar.h(oVar)) {
+            return Long.valueOf(lVar.u(oVar));
         }
         return null;
     }

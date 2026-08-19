@@ -48,12 +48,11 @@ public class CameraSession {
     private Camera.AutoFocusCallback autoFocusCallback = new Camera.AutoFocusCallback() { // from class: org.telegram.messenger.camera.CameraSession$$ExternalSyntheticLambda0
         @Override // android.hardware.Camera.AutoFocusCallback
         public final void onAutoFocus(boolean z, Camera camera) {
-            CameraSession.lambda$new$0(z, camera);
+            CameraSession.$r8$lambda$BSjrOWlJ0XlSz8pFjO9V6cBNhHE(z, camera);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(boolean z, Camera camera) {
+    public static /* synthetic */ void $r8$lambda$BSjrOWlJ0XlSz8pFjO9V6cBNhHE(boolean z, Camera camera) {
     }
 
     public CameraSession(CameraInfo cameraInfo, Size size, Size size2, int i, boolean z) {
@@ -144,12 +143,13 @@ public class CameraSession {
             String str = this.currentFlashMode;
             String str2 = z ? "torch" : "off";
             this.currentFlashMode = str2;
-            if (!TextUtils.equals(str, str2)) {
-                if (this.isRound) {
-                    configureRoundCamera(false);
-                } else {
-                    configurePhotoCamera();
-                }
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            if (this.isRound) {
+                configureRoundCamera(false);
+            } else {
+                configurePhotoCamera();
             }
         } catch (Exception e) {
             FileLog.e(e);
@@ -272,9 +272,9 @@ public class CameraSession {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0063  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

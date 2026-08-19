@@ -138,7 +138,7 @@ public class SelectorUserCell extends BaseCell {
             this.audioView.animate().alpha((z && this.hasAudioView) ? 1.0f : 0.0f).withEndAction((z && this.hasAudioView) ? null : new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectorUserCell.this.lambda$setCallButtonsVisible$0();
+                    SelectorUserCell.this.audioView.setVisibility(8);
                 }
             }).start();
             this.videoView.setVisibility(0);
@@ -149,7 +149,7 @@ public class SelectorUserCell extends BaseCell {
             animate.alpha(f).withEndAction((z && this.hasVideoView) ? null : new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectorUserCell.this.lambda$setCallButtonsVisible$1();
+                    SelectorUserCell.this.videoView.setVisibility(8);
                 }
             }).start();
             return;
@@ -164,16 +164,6 @@ public class SelectorUserCell extends BaseCell {
         }
         imageView.setAlpha(f);
         this.videoView.setVisibility((z && this.hasVideoView) ? 0 : 8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCallButtonsVisible$0() {
-        this.audioView.setVisibility(8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCallButtonsVisible$1() {
-        this.videoView.setVisibility(8);
     }
 
     @Override // android.view.ViewGroup, android.view.View

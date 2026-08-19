@@ -125,36 +125,41 @@ public abstract class AbstractLog implements Log {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            AbstractLog abstractLog = (AbstractLog) obj;
+            if (!this.transmissionTargetTokens.equals(abstractLog.transmissionTargetTokens)) {
+                return false;
+            }
+            Date date = this.timestamp;
+            if (date == null ? abstractLog.timestamp != null : !date.equals(abstractLog.timestamp)) {
+                return false;
+            }
+            UUID uuid = this.sid;
+            if (uuid == null ? abstractLog.sid != null : !uuid.equals(abstractLog.sid)) {
+                return false;
+            }
+            String str = this.distributionGroupId;
+            if (str == null ? abstractLog.distributionGroupId != null : !str.equals(abstractLog.distributionGroupId)) {
+                return false;
+            }
+            String str2 = this.userId;
+            if (str2 == null ? abstractLog.userId != null : !str2.equals(abstractLog.userId)) {
+                return false;
+            }
+            Device device = this.device;
+            if (device == null ? abstractLog.device != null : !device.equals(abstractLog.device)) {
+                return false;
+            }
+            Object obj2 = this.tag;
+            Object obj3 = abstractLog.tag;
+            if (obj2 != null) {
+                return obj2.equals(obj3);
+            }
+            if (obj3 == null) {
+                return true;
+            }
         }
-        AbstractLog abstractLog = (AbstractLog) obj;
-        if (!this.transmissionTargetTokens.equals(abstractLog.transmissionTargetTokens)) {
-            return false;
-        }
-        Date date = this.timestamp;
-        if (date == null ? abstractLog.timestamp != null : !date.equals(abstractLog.timestamp)) {
-            return false;
-        }
-        UUID uuid = this.sid;
-        if (uuid == null ? abstractLog.sid != null : !uuid.equals(abstractLog.sid)) {
-            return false;
-        }
-        String str = this.distributionGroupId;
-        if (str == null ? abstractLog.distributionGroupId != null : !str.equals(abstractLog.distributionGroupId)) {
-            return false;
-        }
-        String str2 = this.userId;
-        if (str2 == null ? abstractLog.userId != null : !str2.equals(abstractLog.userId)) {
-            return false;
-        }
-        Device device = this.device;
-        if (device == null ? abstractLog.device != null : !device.equals(abstractLog.device)) {
-            return false;
-        }
-        Object obj2 = this.tag;
-        Object obj3 = abstractLog.tag;
-        return obj2 != null ? obj2.equals(obj3) : obj3 == null;
+        return false;
     }
 
     public int hashCode() {

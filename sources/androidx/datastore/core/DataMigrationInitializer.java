@@ -64,46 +64,45 @@ public abstract class DataMigrationInitializer {
                         Function2 dataMigrationInitializer$Companion$runMigrations$2 = new DataMigrationInitializer$Companion$runMigrations$2(list, arrayList, null);
                         dataMigrationInitializer$Companion$runMigrations$1.L$0 = arrayList;
                         dataMigrationInitializer$Companion$runMigrations$1.label = 1;
-                        if (initializerApi.updateData(dataMigrationInitializer$Companion$runMigrations$2, dataMigrationInitializer$Companion$runMigrations$1) == coroutine_suspended) {
-                            return coroutine_suspended;
+                        if (initializerApi.updateData(dataMigrationInitializer$Companion$runMigrations$2, dataMigrationInitializer$Companion$runMigrations$1) != coroutine_suspended) {
+                            list2 = arrayList;
                         }
-                        list2 = arrayList;
-                    } else {
-                        if (i != 1) {
-                            if (i == 2) {
-                                it = (Iterator) dataMigrationInitializer$Companion$runMigrations$1.L$1;
-                                ref$ObjectRef = (Ref$ObjectRef) dataMigrationInitializer$Companion$runMigrations$1.L$0;
-                                try {
-                                    ResultKt.throwOnFailure(obj);
-                                } catch (Throwable th2) {
-                                    Object obj2 = ref$ObjectRef.element;
-                                    if (obj2 == null) {
-                                        ref$ObjectRef.element = th2;
-                                    } else {
-                                        Intrinsics.checkNotNull(obj2);
-                                        ExceptionsKt.addSuppressed((Throwable) ref$ObjectRef.element, th2);
-                                    }
-                                }
-                                while (it.hasNext()) {
-                                    Function1 function1 = (Function1) it.next();
-                                    dataMigrationInitializer$Companion$runMigrations$1.L$0 = ref$ObjectRef;
-                                    dataMigrationInitializer$Companion$runMigrations$1.L$1 = it;
-                                    dataMigrationInitializer$Companion$runMigrations$1.label = 2;
-                                    if (function1.invoke(dataMigrationInitializer$Companion$runMigrations$1) == coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                }
-                                th = (Throwable) ref$ObjectRef.element;
-                                if (th != null) {
-                                    throw th;
-                                }
-                                return Unit.INSTANCE;
-                            }
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        list2 = (List) dataMigrationInitializer$Companion$runMigrations$1.L$0;
-                        ResultKt.throwOnFailure(obj);
+                        return coroutine_suspended;
                     }
+                    if (i != 1) {
+                        if (i == 2) {
+                            it = (Iterator) dataMigrationInitializer$Companion$runMigrations$1.L$1;
+                            ref$ObjectRef = (Ref$ObjectRef) dataMigrationInitializer$Companion$runMigrations$1.L$0;
+                            try {
+                                ResultKt.throwOnFailure(obj);
+                            } catch (Throwable th2) {
+                                Object obj2 = ref$ObjectRef.element;
+                                if (obj2 == null) {
+                                    ref$ObjectRef.element = th2;
+                                } else {
+                                    Intrinsics.checkNotNull(obj2);
+                                    ExceptionsKt.addSuppressed((Throwable) ref$ObjectRef.element, th2);
+                                }
+                            }
+                            while (it.hasNext()) {
+                                Function1 function1 = (Function1) it.next();
+                                dataMigrationInitializer$Companion$runMigrations$1.L$0 = ref$ObjectRef;
+                                dataMigrationInitializer$Companion$runMigrations$1.L$1 = it;
+                                dataMigrationInitializer$Companion$runMigrations$1.label = 2;
+                                if (function1.invoke(dataMigrationInitializer$Companion$runMigrations$1) == coroutine_suspended) {
+                                    return coroutine_suspended;
+                                }
+                            }
+                            th = (Throwable) ref$ObjectRef.element;
+                            if (th != null) {
+                                throw th;
+                            }
+                            return Unit.INSTANCE;
+                        }
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    list2 = (List) dataMigrationInitializer$Companion$runMigrations$1.L$0;
+                    ResultKt.throwOnFailure(obj);
                     ref$ObjectRef = new Ref$ObjectRef();
                     it = list2.iterator();
                     while (it.hasNext()) {

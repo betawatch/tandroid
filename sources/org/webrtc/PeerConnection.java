@@ -12,7 +12,7 @@ import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpTransceiver;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PeerConnection {
     private final List<MediaStream> localStreams;
     private final long nativePeerConnection;
@@ -804,7 +804,7 @@ public class PeerConnection {
     }
 
     public RtpSender addTrack(MediaStreamTrack mediaStreamTrack) {
-        return addTrack(mediaStreamTrack, Collections.emptyList());
+        return addTrack(mediaStreamTrack, Collections.EMPTY_LIST);
     }
 
     public RtpSender addTrack(MediaStreamTrack mediaStreamTrack, List<String> list) {

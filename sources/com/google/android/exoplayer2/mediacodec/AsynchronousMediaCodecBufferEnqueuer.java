@@ -106,25 +106,37 @@ class AsynchronousMediaCodecBufferEnqueuer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:12:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x004d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void doHandleMessage(Message message) {
         MessageParams messageParams;
+        MessageParams messageParams2;
         int i = message.what;
         if (i == 0) {
             messageParams = (MessageParams) message.obj;
             doQueueInputBuffer(messageParams.index, messageParams.offset, messageParams.size, messageParams.presentationTimeUs, messageParams.flags);
-        } else if (i != 1) {
-            messageParams = null;
-            if (i == 2) {
-                this.conditionVariable.open();
-            } else {
-                AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(this.pendingRuntimeException, null, new IllegalStateException(String.valueOf(message.what)));
-            }
         } else {
+            if (i != 1) {
+                messageParams2 = null;
+                if (i == 2) {
+                    this.conditionVariable.open();
+                } else {
+                    AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(this.pendingRuntimeException, null, new IllegalStateException(String.valueOf(message.what)));
+                }
+                if (messageParams2 == null) {
+                    recycleMessageParams(messageParams2);
+                    return;
+                }
+                return;
+            }
             messageParams = (MessageParams) message.obj;
             doQueueSecureInputBuffer(messageParams.index, messageParams.offset, messageParams.cryptoInfo, messageParams.presentationTimeUs, messageParams.flags);
         }
-        if (messageParams != null) {
-            recycleMessageParams(messageParams);
+        messageParams2 = messageParams;
+        if (messageParams2 == null) {
         }
     }
 

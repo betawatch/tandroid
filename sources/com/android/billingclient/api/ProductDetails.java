@@ -45,8 +45,8 @@ public final class ProductDetails {
             this.zzc = jSONObject.optString("priceCurrencyCode");
             String optString = jSONObject.optString("offerIdToken");
             this.zzd = true == optString.isEmpty() ? null : optString;
-            jSONObject.optString("offerId").isEmpty();
-            jSONObject.optString("purchaseOptionId").isEmpty();
+            jSONObject.optString("offerId").getClass();
+            jSONObject.optString("purchaseOptionId").getClass();
             jSONObject.optInt("offerType");
             JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
             ArrayList arrayList = new ArrayList();
@@ -82,7 +82,7 @@ public final class ProductDetails {
             JSONObject optJSONObject5 = jSONObject.optJSONObject("rentalDetails");
             if (optJSONObject5 != null) {
                 optJSONObject5.getString("rentalPeriod");
-                optJSONObject5.optString("rentalExpirationPeriod").isEmpty();
+                optJSONObject5.optString("rentalExpirationPeriod").getClass();
             }
             JSONObject optJSONObject6 = jSONObject.optJSONObject("autoPayDetails");
             this.zzf = optJSONObject6 != null ? new zzcs(optJSONObject6) : null;

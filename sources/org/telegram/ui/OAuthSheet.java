@@ -59,8 +59,7 @@ import org.telegram.ui.web.BotWebViewContainer;
 public abstract class OAuthSheet {
     private static BottomSheet showing;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$12() {
+    public static /* synthetic */ void $r8$lambda$jC2YU9RuChWHWeVgWqh7nBtoVt0() {
     }
 
     public static void handle(boolean z, int i, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult) {
@@ -71,9 +70,10 @@ public abstract class OAuthSheet {
         final Context context;
         String str3;
         int i2;
+        FrameLayout frameLayout;
+        FrameLayout frameLayout2;
+        Theme.ResourcesProvider resourcesProvider;
         boolean z3;
-        ArrayList arrayList;
-        boolean z4;
         TextCheckCell textCheckCell;
         BaseFragment safeLastFragment;
         String str4;
@@ -94,8 +94,8 @@ public abstract class OAuthSheet {
                     Browser.openUrlInSystemBrowser(safeLastFragment3.getContext(), tL_urlAuthResultAccepted.url);
                     return;
                 }
-                boolean z5 = urlAuthResult2 instanceof TLRPC.TL_urlAuthResultRequest;
-                if (z5) {
+                boolean z4 = urlAuthResult2 instanceof TLRPC.TL_urlAuthResultRequest;
+                if (z4) {
                     TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) urlAuthResult2;
                     if (tL_urlAuthResultRequest.is_app) {
                         str4 = !TextUtils.isEmpty(tL_urlAuthResultRequest.verified_app_name) ? tL_urlAuthResultRequest.verified_app_name : LocaleController.getString(R.string.UnverifiedApp);
@@ -106,7 +106,7 @@ public abstract class OAuthSheet {
                     str4 = null;
                 }
                 if (!TextUtils.isEmpty(str4)) {
-                    getBulletinFactory().createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.BotAuthLoggedInSuccessTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(z5 && ((TLRPC.TL_urlAuthResultRequest) urlAuthResult2).request_phone_number && !z2 ? R.string.BotAuthLoggedInSuccessWithoutPhoneNumber : R.string.BotAuthLoggedInSuccess, str4), Theme.getColor(Theme.key_undo_cancelColor))).show();
+                    getBulletinFactory().createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.BotAuthLoggedInSuccessTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(z4 && ((TLRPC.TL_urlAuthResultRequest) urlAuthResult2).request_phone_number && !z2 ? R.string.BotAuthLoggedInSuccessWithoutPhoneNumber : R.string.BotAuthLoggedInSuccess, str4), Theme.getColor(Theme.key_undo_cancelColor))).show();
                 }
                 if (botWebViewContainer != null) {
                     botWebViewContainer.notifyEvent("oauth_result_confirmed", BotWebViewContainer.obj("result_url", null));
@@ -118,7 +118,7 @@ public abstract class OAuthSheet {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            OAuthSheet.lambda$handle$0(context2);
+                            OAuthSheet.$r8$lambda$3lihHEW1tILjKbxIgKnX7YRsiak(context2);
                         }
                     }, 800L);
                     return;
@@ -150,31 +150,29 @@ public abstract class OAuthSheet {
             if (safeLastFragment5 == null || (context = safeLastFragment5.getContext()) == null) {
                 return;
             }
-            final Theme.ResourcesProvider resourceProvider = safeLastFragment5.getResourceProvider();
+            Theme.ResourcesProvider resourceProvider = safeLastFragment5.getResourceProvider();
             BottomSheet.Builder builder = new BottomSheet.Builder(context, false, safeLastFragment5.getResourceProvider());
-            FrameLayout frameLayout = new FrameLayout(context);
-            builder.setCustomView(frameLayout);
-            ArrayList arrayList2 = new ArrayList();
+            FrameLayout frameLayout3 = new FrameLayout(context);
+            builder.setCustomView(frameLayout3);
+            final ArrayList arrayList = new ArrayList();
             boolean isTestBackend = ConnectionsManager.getInstance(i).isTestBackend();
-            arrayList2.clear();
+            arrayList.clear();
             for (int i3 = 0; i3 < 4; i3++) {
                 if (UserConfig.getInstance(i3).isClientActivated() && ConnectionsManager.getInstance(i3).isTestBackend() == isTestBackend) {
-                    arrayList2.add(Integer.valueOf(i3));
+                    arrayList.add(Integer.valueOf(i3));
                 }
             }
-            Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda3
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda3
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$handle$1;
-                    lambda$handle$1 = OAuthSheet.lambda$handle$1((Integer) obj, (Integer) obj2);
-                    return lambda$handle$1;
+                    return OAuthSheet.$r8$lambda$b4FpqIvCNWYnjZflWn0J4aEpMao((Integer) obj, (Integer) obj2);
                 }
             });
-            boolean z6 = tL_messages_requestUrlAuth.peer != null;
-            boolean z7 = tL_urlAuthResultRequest2.is_app;
-            FrameLayout frameLayout2 = new FrameLayout(context);
-            final FrameLayout frameLayout3 = new FrameLayout(context);
-            frameLayout3.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(14.0f), safeLastFragment5.getThemedColor(Theme.key_dialogBackgroundGray)));
+            final boolean z5 = tL_messages_requestUrlAuth.peer != null;
+            final boolean z6 = tL_urlAuthResultRequest2.is_app;
+            FrameLayout frameLayout4 = new FrameLayout(context);
+            FrameLayout frameLayout5 = new FrameLayout(context);
+            frameLayout5.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(14.0f), safeLastFragment5.getThemedColor(Theme.key_dialogBackgroundGray)));
             BackupImageView backupImageView = new BackupImageView(context);
             backupImageView.setRoundRadius(AndroidUtilities.dp(14.0f));
             backupImageView.getImageReceiver().setCrossfadeWithOldImage(true);
@@ -183,24 +181,24 @@ public abstract class OAuthSheet {
             TLRPC.User currentUser = UserConfig.getInstance(iArr[0]).getCurrentUser();
             avatarDrawable.setInfo(currentUser);
             backupImageView.setForUserOrChat(currentUser, avatarDrawable);
-            frameLayout3.addView(backupImageView, LayoutHelper.createFrame(28, 28, 115));
+            frameLayout5.addView(backupImageView, LayoutHelper.createFrame(28, 28, 115));
             ImageView imageView = new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             int themedColor = safeLastFragment5.getThemedColor(Theme.key_dialogTextGray3);
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
             imageView.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
             imageView.setImageResource(R.drawable.arrows_select);
-            frameLayout3.addView(imageView, LayoutHelper.createFrame(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
-            frameLayout2.addView(frameLayout3, LayoutHelper.createFrame(52, 28, 17));
-            frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
-            frameLayout.addView(frameLayout2, LayoutHelper.createLinear(-2, -2, 0.0f, 51, 6, 4, 6, 0));
-            ScaleStateListAnimator.apply(frameLayout2);
-            if (arrayList2.size() <= 1 || tL_messages_requestUrlAuth.peer != null) {
-                frameLayout2.setVisibility(8);
+            frameLayout5.addView(imageView, LayoutHelper.createFrame(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+            frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(52, 28, 17));
+            frameLayout4.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
+            frameLayout3.addView(frameLayout4, LayoutHelper.createLinear(-2, -2, 0.0f, 51, 6, 4, 6, 0));
+            ScaleStateListAnimator.apply(frameLayout4);
+            if (arrayList.size() <= 1 || tL_messages_requestUrlAuth.peer != null) {
+                frameLayout4.setVisibility(8);
             }
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
-            frameLayout.addView(linearLayout, LayoutHelper.createFrame(-1, -1, 119));
+            frameLayout3.addView(linearLayout, LayoutHelper.createFrame(-1, -1, 119));
             BackupImageView backupImageView2 = new BackupImageView(context);
             backupImageView2.setRoundRadius(AndroidUtilities.dp(40.0f));
             AvatarDrawable avatarDrawable2 = new AvatarDrawable();
@@ -220,16 +218,17 @@ public abstract class OAuthSheet {
             linearLayout.addView(makeTextView, LayoutHelper.createLinear(-1, -2, 49, 32.0f, 0.0f, 32.0f, 9.66f));
             TextView makeTextView2 = TextHelper.makeTextView(context, 14.0f, i4, false);
             makeTextView2.setGravity(17);
-            if (z7) {
+            if (z6) {
                 i2 = R.string.BotAuthAppSubtitle;
             } else {
-                i2 = z6 ? R.string.BotAuthBotSubtitle : R.string.BotAuthSiteSubtitle;
+                i2 = z5 ? R.string.BotAuthBotSubtitle : R.string.BotAuthSiteSubtitle;
             }
             makeTextView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(i2)));
             linearLayout.addView(makeTextView2, LayoutHelper.createLinear(-1, -2, 49, 32, 0, 32, 24));
             if (TextUtils.isEmpty(tL_urlAuthResultRequest2.platform) && TextUtils.isEmpty(tL_urlAuthResultRequest2.browser) && TextUtils.isEmpty(tL_urlAuthResultRequest2.region) && TextUtils.isEmpty(tL_urlAuthResultRequest2.ip)) {
-                z3 = z7;
-                arrayList = arrayList2;
+                frameLayout = frameLayout4;
+                frameLayout2 = frameLayout5;
+                resourcesProvider = resourceProvider;
             } else {
                 LinearLayout linearLayout2 = new LinearLayout(context);
                 linearLayout2.setClipToPadding(false);
@@ -238,30 +237,32 @@ public abstract class OAuthSheet {
                 linearLayout2.setBackground(Theme.createRoundRectDrawableShadowed(AndroidUtilities.dp(16.0f), safeLastFragment5.getThemedColor(Theme.key_windowBackgroundWhite)));
                 linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, 55, 9, -3, 9, -3));
                 if (TextUtils.isEmpty(tL_urlAuthResultRequest2.platform) && TextUtils.isEmpty(tL_urlAuthResultRequest2.browser)) {
-                    z3 = z7;
-                    arrayList = arrayList2;
+                    frameLayout = frameLayout4;
+                    frameLayout2 = frameLayout5;
+                    resourcesProvider = resourceProvider;
                 } else {
                     LinearLayout linearLayout3 = new LinearLayout(context);
                     linearLayout3.setOrientation(0);
                     ImageView imageView2 = new ImageView(context);
                     imageView2.setImageResource(R.drawable.msg2_devices);
-                    z3 = z7;
+                    frameLayout = frameLayout4;
                     imageView2.setColorFilter(new PorterDuffColorFilter(safeLastFragment5.getThemedColor(i4), mode));
                     linearLayout3.addView(imageView2, LayoutHelper.createLinear(24, 24, 19, 17, 0, 20, 0));
                     LinearLayout linearLayout4 = new LinearLayout(context);
                     linearLayout4.setOrientation(1);
                     linearLayout3.addView(linearLayout4, LayoutHelper.createLinear(-1, -2, 55, 0.0f, 10.66f, 20.0f, 11.0f));
-                    arrayList = arrayList2;
                     TextView makeTextView3 = TextHelper.makeTextView(context, 16.0f, i4, false);
                     makeTextView3.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.platform) ? "—" : tL_urlAuthResultRequest2.platform);
                     linearLayout4.addView(makeTextView3, LayoutHelper.createLinear(-1, -2, 55, 0.0f, 0.0f, 0.0f, 4.33f));
                     TextView makeTextView4 = TextHelper.makeTextView(context, 13.0f, Theme.key_windowBackgroundWhiteGrayText, false);
                     makeTextView4.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.browser) ? "—" : tL_urlAuthResultRequest2.browser);
+                    frameLayout2 = frameLayout5;
+                    resourcesProvider = resourceProvider;
                     linearLayout4.addView(makeTextView4, LayoutHelper.createLinear(-1, -2, 55));
                     linearLayout2.addView(linearLayout3, LayoutHelper.createLinear(-1, -2));
                 }
                 if (TextUtils.isEmpty(tL_urlAuthResultRequest2.region) && TextUtils.isEmpty(tL_urlAuthResultRequest2.ip)) {
-                    z4 = false;
+                    z3 = false;
                 } else {
                     LinearLayout linearLayout5 = new LinearLayout(context);
                     linearLayout5.setOrientation(0);
@@ -275,32 +276,33 @@ public abstract class OAuthSheet {
                     TextView makeTextView5 = TextHelper.makeTextView(context, 16.0f, i4, false);
                     makeTextView5.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.region) ? "—" : tL_urlAuthResultRequest2.region);
                     linearLayout6.addView(makeTextView5, LayoutHelper.createLinear(-1, -2, 55, 0.0f, 0.0f, 0.0f, 4.33f));
-                    z4 = false;
+                    z3 = false;
                     TextView makeTextView6 = TextHelper.makeTextView(context, 13.0f, Theme.key_windowBackgroundWhiteGrayText, false);
                     makeTextView6.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.ip) ? "—" : LocaleController.formatString(R.string.BotAuthBasedOnIP, tL_urlAuthResultRequest2.ip));
                     linearLayout6.addView(makeTextView6, LayoutHelper.createLinear(-1, -2, 55));
                     linearLayout2.addView(linearLayout5, LayoutHelper.createLinear(-1, -2));
                 }
-                TextView makeTextView7 = TextHelper.makeTextView(context, 14.0f, Theme.key_windowBackgroundWhiteGrayText, z4);
+                TextView makeTextView7 = TextHelper.makeTextView(context, 14.0f, Theme.key_windowBackgroundWhiteGrayText, z3);
                 makeTextView7.setText(LocaleController.getString(R.string.BotAuthInfo));
                 linearLayout.addView(makeTextView7, LayoutHelper.createLinear(-1, -2, 55, 22, 5, 22, 20));
             }
             if (tL_urlAuthResultRequest2.request_write_access) {
-                FrameLayout frameLayout4 = new FrameLayout(context);
+                FrameLayout frameLayout6 = new FrameLayout(context);
                 int dp = AndroidUtilities.dp(16.0f);
                 int i5 = Theme.key_windowBackgroundWhite;
-                frameLayout4.setBackground(Theme.createRoundRectDrawableShadowed(dp, safeLastFragment5.getThemedColor(i5)));
+                frameLayout6.setBackground(Theme.createRoundRectDrawableShadowed(dp, safeLastFragment5.getThemedColor(i5)));
                 final TextCheckCell textCheckCell2 = new TextCheckCell(context, safeLastFragment5.getResourceProvider());
                 textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.BotAuthAllowMessages), true, false);
                 textCheckCell2.setBackground(Theme.createRadSelectorDrawable(safeLastFragment5.getThemedColor(i5), safeLastFragment5.getThemedColor(Theme.key_listSelector), 16, 16));
                 textCheckCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        OAuthSheet.lambda$handle$2(TextCheckCell.this, view);
+                        TextCheckCell textCheckCell3 = TextCheckCell.this;
+                        textCheckCell3.setChecked(!textCheckCell3.isChecked());
                     }
                 });
-                frameLayout4.addView(textCheckCell2, LayoutHelper.createFrame(-1, -1, 119));
-                linearLayout.addView(frameLayout4, LayoutHelper.createLinear(-1, -2, 7, 9, -3, 9, -3));
+                frameLayout6.addView(textCheckCell2, LayoutHelper.createFrame(-1, -1, 119));
+                linearLayout.addView(frameLayout6, LayoutHelper.createLinear(-1, -2, 7, 9, -3, 9, -3));
                 TextView makeTextView8 = TextHelper.makeTextView(context, 14.0f, Theme.key_windowBackgroundWhiteGrayText, false);
                 makeTextView8.setText(LocaleController.formatString(R.string.BotAuthAllowMessagesInfo, UserObject.getUserName(tL_urlAuthResultRequest2.bot)));
                 linearLayout.addView(makeTextView8, LayoutHelper.createLinear(-1, -2, 55, 22, 6, 22, 20));
@@ -321,71 +323,74 @@ public abstract class OAuthSheet {
             final BottomSheet create = builder.create();
             create.setBackgroundColor(safeLastFragment5.getThemedColor(Theme.key_windowBackgroundGray));
             final String[] strArr = {str2};
-            final boolean z8 = z3;
-            final ArrayList arrayList3 = arrayList;
-            final TextCheckCell textCheckCell3 = textCheckCell;
+            FrameLayout frameLayout7 = frameLayout;
+            final Theme.ResourcesProvider resourcesProvider2 = resourcesProvider;
             final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    OAuthSheet.lambda$handle$4(iArr, tL_messages_requestUrlAuth, create, z, str, urlAuthResult2, strArr, z2, botWebViewContainer, str5, resourceProvider, (Integer) obj);
+                    OAuthSheet.$r8$lambda$_XhonlkijnqPLxQI1Pl3uWgZHTg(iArr, tL_messages_requestUrlAuth, create, z, str, urlAuthResult2, strArr, z2, botWebViewContainer, str5, resourcesProvider2, (Integer) obj);
                 }
             };
             if (tL_urlAuthResultRequest2.user_id_hint != 0 && UserConfig.getInstance(i).getClientUserId() != tL_urlAuthResultRequest2.user_id_hint) {
-                Iterator it = arrayList3.iterator();
+                int size = arrayList.size();
+                int i6 = 0;
                 while (true) {
-                    if (!it.hasNext()) {
+                    if (i6 >= size) {
                         break;
                     }
-                    Integer num = (Integer) it.next();
+                    Object obj = arrayList.get(i6);
+                    i6++;
+                    Integer num = (Integer) obj;
                     if (UserConfig.getInstance(num.intValue()).getClientUserId() == tL_urlAuthResultRequest2.user_id_hint) {
                         callback.run(num);
                         break;
                     }
                 }
             }
-            frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda6
+            final FrameLayout frameLayout8 = frameLayout2;
+            frameLayout7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OAuthSheet.lambda$handle$6(BottomSheet.this, frameLayout3, arrayList3, iArr, callback, view);
+                    OAuthSheet.$r8$lambda$KxXt3asaUsxnKMGProHSahhnkC4(BottomSheet.this, frameLayout8, arrayList, iArr, callback, view);
                 }
             });
             final boolean[] zArr = new boolean[1];
             round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OAuthSheet.lambda$handle$8(TLRPC.TL_messages_requestUrlAuth.this, zArr, create, round, botWebViewContainer, i, view);
+                    OAuthSheet.$r8$lambda$zN4O2JcVZJ2SPRwDmEJNBYP5WTw(TLRPC.TL_messages_requestUrlAuth.this, zArr, create, round, botWebViewContainer, i, view);
                 }
             });
             final boolean[] zArr2 = new boolean[1];
             final BottomSheet[] bottomSheetArr = new BottomSheet[1];
+            final TextCheckCell textCheckCell3 = textCheckCell;
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    OAuthSheet.lambda$handle$10(ButtonWithCounterView.this, round, tL_messages_requestUrlAuth, strArr, textCheckCell3, zArr2, iArr, zArr, create, str5, resourceProvider, z, str, tL_urlAuthResultRequest2, botWebViewContainer);
+                    OAuthSheet.$r8$lambda$Ksf0UZGXVXhBJxF7xJZJZbnNlec(ButtonWithCounterView.this, round, tL_messages_requestUrlAuth, strArr, textCheckCell3, zArr2, iArr, zArr, create, str5, resourcesProvider2, z, str, tL_urlAuthResultRequest2, botWebViewContainer);
                 }
             };
             final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    OAuthSheet.lambda$handle$13(TLRPC.TL_urlAuthResultRequest.this, strArr, context, i, runnable, safeLastFragment5);
+                    OAuthSheet.$r8$lambda$6xPbgwiQuEyzUNYJAAB_K6HFjFM(TLRPC.TL_urlAuthResultRequest.this, strArr, context, i, runnable, safeLastFragment5);
                 }
             };
-            final boolean z9 = z6;
             round2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OAuthSheet.lambda$handle$16(ButtonWithCounterView.this, round, tL_urlAuthResultRequest2, iArr, context, safeLastFragment5, z9, z8, str5, zArr2, runnable2, view);
+                    OAuthSheet.$r8$lambda$AAswbIL2pMdG7We6ICRnWfm2ZPA(ButtonWithCounterView.this, round, tL_urlAuthResultRequest2, iArr, context, safeLastFragment5, z5, z6, str5, zArr2, runnable2, view);
                 }
             });
             create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda11
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    OAuthSheet.lambda$handle$17(bottomSheetArr, dialogInterface);
+                    OAuthSheet.$r8$lambda$ItlOwHQ0s5YEaaQexFOiw72zpBQ(bottomSheetArr, dialogInterface);
                 }
             });
             BottomSheet bottomSheet = showing;
             if (bottomSheet != null) {
-                bottomSheet.lambda$new$0();
+                bottomSheet.dismiss();
                 showing = null;
             }
             if (!tL_urlAuthResultRequest2.match_codes_first || tL_urlAuthResultRequest2.match_codes.isEmpty() || !TextUtils.isEmpty(strArr[0])) {
@@ -394,21 +399,20 @@ public abstract class OAuthSheet {
             } else {
                 showing = showMatchCodeSheet(context, i, tL_urlAuthResultRequest2.match_codes, str5, new Utilities.Callback() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj) {
-                        OAuthSheet.lambda$handle$19(context, strArr, tL_messages_requestUrlAuth, i, create, str5, resourceProvider, (String) obj);
+                    public final void run(Object obj2) {
+                        OAuthSheet.$r8$lambda$xnxdbcMFvYfYefG-2jCmQJ3S1m4(context, strArr, tL_messages_requestUrlAuth, i, create, str5, resourcesProvider2, (String) obj2);
                     }
                 }, false, new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        OAuthSheet.lambda$handle$20(zArr, botWebViewContainer, tL_messages_requestUrlAuth, i);
+                        OAuthSheet.$r8$lambda$Foy1WD7Lw4Sl81Axg8hb75DEfbQ(zArr, botWebViewContainer, tL_messages_requestUrlAuth, i);
                     }
                 }, safeLastFragment5.getResourceProvider());
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$0(Context context) {
+    public static /* synthetic */ void $r8$lambda$3lihHEW1tILjKbxIgKnX7YRsiak(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity == null) {
             findActivity = LaunchActivity.instance;
@@ -419,8 +423,7 @@ public abstract class OAuthSheet {
         findActivity.moveTaskToBack(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$handle$1(Integer num, Integer num2) {
+    public static /* synthetic */ int $r8$lambda$b4FpqIvCNWYnjZflWn0J4aEpMao(Integer num, Integer num2) {
         long j = UserConfig.getInstance(num.intValue()).loginTime;
         long j2 = UserConfig.getInstance(num2.intValue()).loginTime;
         if (j > j2) {
@@ -429,13 +432,7 @@ public abstract class OAuthSheet {
         return j < j2 ? -1 : 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$2(TextCheckCell textCheckCell, View view) {
-        textCheckCell.setChecked(!textCheckCell.isChecked());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$4(int[] iArr, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final BottomSheet bottomSheet, final boolean z, final String str, final TLRPC.UrlAuthResult urlAuthResult, final String[] strArr, final boolean z2, final BotWebViewContainer botWebViewContainer, final String str2, final Theme.ResourcesProvider resourcesProvider, final Integer num) {
+    public static /* synthetic */ void $r8$lambda$_XhonlkijnqPLxQI1Pl3uWgZHTg(int[] iArr, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final BottomSheet bottomSheet, final boolean z, final String str, final TLRPC.UrlAuthResult urlAuthResult, final String[] strArr, final boolean z2, final BotWebViewContainer botWebViewContainer, final String str2, final Theme.ResourcesProvider resourcesProvider, final Integer num) {
         if (iArr[0] == num.intValue()) {
             return;
         }
@@ -444,20 +441,19 @@ public abstract class OAuthSheet {
         ConnectionsManager.getInstance(num.intValue()).sendRequestTyped(tL_messages_requestUrlAuth, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda20
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                OAuthSheet.lambda$handle$3(AlertDialog.this, bottomSheet, z, num, tL_messages_requestUrlAuth, str, urlAuthResult, strArr, z2, botWebViewContainer, str2, resourcesProvider, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
+                OAuthSheet.$r8$lambda$QH7aFdNPh8Gei4-JjHn1iAiSUKU(AlertDialog.this, bottomSheet, z, num, tL_messages_requestUrlAuth, str, urlAuthResult, strArr, z2, botWebViewContainer, str2, resourcesProvider, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$3(AlertDialog alertDialog, BottomSheet bottomSheet, boolean z, Integer num, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.UrlAuthResult urlAuthResult, String[] strArr, boolean z2, BotWebViewContainer botWebViewContainer, String str2, Theme.ResourcesProvider resourcesProvider, TLRPC.UrlAuthResult urlAuthResult2, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$QH7aFdNPh8Gei4-JjHn1iAiSUKU(AlertDialog alertDialog, BottomSheet bottomSheet, boolean z, Integer num, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.UrlAuthResult urlAuthResult, String[] strArr, boolean z2, BotWebViewContainer botWebViewContainer, String str2, Theme.ResourcesProvider resourcesProvider, TLRPC.UrlAuthResult urlAuthResult2, TLRPC.TL_error tL_error) {
         alertDialog.dismiss();
         if (urlAuthResult2 != null) {
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
             handle(z, num.intValue(), tL_messages_requestUrlAuth, urlAuthResult2, str, urlAuthResult, strArr[0], z2, botWebViewContainer);
         } else if (tL_error != null) {
             if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                bottomSheet.lambda$new$0();
+                bottomSheet.dismiss();
                 getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str2) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str2), Theme.getColor(Theme.key_undo_cancelColor, resourcesProvider))).show();
             } else {
                 BulletinFactory.of(bottomSheet.topBulletinContainer, bottomSheet.getResourcesProvider()).showForError(tL_error);
@@ -465,38 +461,30 @@ public abstract class OAuthSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$6(BottomSheet bottomSheet, FrameLayout frameLayout, ArrayList arrayList, int[] iArr, final Utilities.Callback callback, View view) {
+    public static /* synthetic */ void $r8$lambda$KxXt3asaUsxnKMGProHSahhnkC4(BottomSheet bottomSheet, FrameLayout frameLayout, ArrayList arrayList, int[] iArr, final Utilities.Callback callback, View view) {
         ItemOptions makeOptions = ItemOptions.makeOptions(bottomSheet.container, bottomSheet.getResourcesProvider(), frameLayout);
-        Iterator it = arrayList.iterator();
-        while (true) {
-            if (it.hasNext()) {
-                final int intValue = ((Integer) it.next()).intValue();
-                if (UserConfig.getInstance(intValue).getCurrentUser() != null) {
-                    makeOptions.addAccount(intValue, iArr[0] == intValue, new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda18
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            OAuthSheet.lambda$handle$5(Utilities.Callback.this, intValue);
-                        }
-                    });
-                }
-            } else {
-                makeOptions.setDrawScrim(false).setOnTopOfScrim().setDimAlpha(0).setGravity(3).translate(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(8.0f)).show();
-                return;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            final int intValue = ((Integer) obj).intValue();
+            if (UserConfig.getInstance(intValue).getCurrentUser() != null) {
+                makeOptions.addAccount(intValue, iArr[0] == intValue, new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda18
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Utilities.Callback.this.run(Integer.valueOf(intValue));
+                    }
+                });
             }
         }
+        makeOptions.setDrawScrim(false).setOnTopOfScrim().setDimAlpha(0).setGravity(3).translate(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(8.0f)).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$5(Utilities.Callback callback, int i) {
-        callback.run(Integer.valueOf(i));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$8(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final boolean[] zArr, final BottomSheet bottomSheet, ButtonWithCounterView buttonWithCounterView, BotWebViewContainer botWebViewContainer, int i, View view) {
+    public static /* synthetic */ void $r8$lambda$zN4O2JcVZJ2SPRwDmEJNBYP5WTw(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final boolean[] zArr, final BottomSheet bottomSheet, ButtonWithCounterView buttonWithCounterView, BotWebViewContainer botWebViewContainer, int i, View view) {
         if (tL_messages_requestUrlAuth == null || TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
             zArr[0] = true;
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
         } else {
             if (buttonWithCounterView.isLoading()) {
                 return;
@@ -510,20 +498,18 @@ public abstract class OAuthSheet {
             ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_declineUrlAuth, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda19
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    OAuthSheet.lambda$handle$7(zArr, bottomSheet, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                    OAuthSheet.$r8$lambda$LEF4U4aGV6a65A5Hsz9Z0_E37nc(zArr, bottomSheet, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$7(boolean[] zArr, BottomSheet bottomSheet, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$LEF4U4aGV6a65A5Hsz9Z0_E37nc(boolean[] zArr, BottomSheet bottomSheet, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
         zArr[0] = true;
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$10(ButtonWithCounterView buttonWithCounterView, ButtonWithCounterView buttonWithCounterView2, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, TextCheckCell textCheckCell, boolean[] zArr, final int[] iArr, final boolean[] zArr2, final BottomSheet bottomSheet, final String str, final Theme.ResourcesProvider resourcesProvider, final boolean z, final String str2, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final BotWebViewContainer botWebViewContainer) {
+    public static /* synthetic */ void $r8$lambda$Ksf0UZGXVXhBJxF7xJZJZbnNlec(ButtonWithCounterView buttonWithCounterView, ButtonWithCounterView buttonWithCounterView2, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, TextCheckCell textCheckCell, boolean[] zArr, final int[] iArr, final boolean[] zArr2, final BottomSheet bottomSheet, final String str, final Theme.ResourcesProvider resourcesProvider, final boolean z, final String str2, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final BotWebViewContainer botWebViewContainer) {
         if (buttonWithCounterView.isLoading() || buttonWithCounterView2.isLoading()) {
             return;
         }
@@ -548,15 +534,14 @@ public abstract class OAuthSheet {
         ConnectionsManager.getInstance(iArr[0]).sendRequestTyped(tL_messages_acceptUrlAuth, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda15
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                OAuthSheet.lambda$handle$9(zArr2, bottomSheet, str, resourcesProvider, z, iArr, tL_messages_requestUrlAuth, str2, tL_urlAuthResultRequest, tL_messages_acceptUrlAuth, botWebViewContainer, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
+                OAuthSheet.$r8$lambda$x55_jhWYHbgJgOmuImGb3tCtbd8(zArr2, bottomSheet, str, resourcesProvider, z, iArr, tL_messages_requestUrlAuth, str2, tL_urlAuthResultRequest, tL_messages_acceptUrlAuth, botWebViewContainer, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$9(boolean[] zArr, BottomSheet bottomSheet, String str, Theme.ResourcesProvider resourcesProvider, boolean z, int[] iArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth, BotWebViewContainer botWebViewContainer, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$x55_jhWYHbgJgOmuImGb3tCtbd8(boolean[] zArr, BottomSheet bottomSheet, String str, Theme.ResourcesProvider resourcesProvider, boolean z, int[] iArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth, BotWebViewContainer botWebViewContainer, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
         zArr[0] = true;
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
         if (tL_error != null) {
             if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
                 getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), Theme.getColor(Theme.key_undo_cancelColor, resourcesProvider))).show();
@@ -569,18 +554,17 @@ public abstract class OAuthSheet {
         handle(z, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str2, tL_urlAuthResultRequest, null, tL_messages_acceptUrlAuth.share_phone_number, botWebViewContainer);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$13(TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final String[] strArr, Context context, int i, final Runnable runnable, BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$6xPbgwiQuEyzUNYJAAB_K6HFjFM(TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final String[] strArr, Context context, int i, final Runnable runnable, BaseFragment baseFragment) {
         if (!tL_urlAuthResultRequest.match_codes.isEmpty() && TextUtils.isEmpty(strArr[0])) {
             showMatchCodeSheet(context, i, tL_urlAuthResultRequest.match_codes, tL_urlAuthResultRequest.domain, new Utilities.Callback() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda16
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    OAuthSheet.lambda$handle$11(strArr, runnable, (String) obj);
+                    OAuthSheet.$r8$lambda$vmd5HyhxjlEvAUp-kN27745VRlk(strArr, runnable, (String) obj);
                 }
             }, true, new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
-                    OAuthSheet.lambda$handle$12();
+                    OAuthSheet.$r8$lambda$jC2YU9RuChWHWeVgWqh7nBtoVt0();
                 }
             }, baseFragment.getResourceProvider());
         } else {
@@ -588,14 +572,12 @@ public abstract class OAuthSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$11(String[] strArr, Runnable runnable, String str) {
+    public static /* synthetic */ void $r8$lambda$vmd5HyhxjlEvAUp-kN27745VRlk(String[] strArr, Runnable runnable, String str) {
         strArr[0] = str;
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$16(ButtonWithCounterView buttonWithCounterView, ButtonWithCounterView buttonWithCounterView2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, int[] iArr, Context context, BaseFragment baseFragment, boolean z, boolean z2, String str, final boolean[] zArr, final Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$AAswbIL2pMdG7We6ICRnWfm2ZPA(ButtonWithCounterView buttonWithCounterView, ButtonWithCounterView buttonWithCounterView2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, int[] iArr, Context context, BaseFragment baseFragment, boolean z, boolean z2, String str, final boolean[] zArr, final Runnable runnable, View view) {
         if (buttonWithCounterView.isLoading() || buttonWithCounterView2.isLoading()) {
             return;
         }
@@ -609,12 +591,12 @@ public abstract class OAuthSheet {
             title.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(i, str, PhoneFormat.getInstance().format("+" + currentUser.phone).replaceAll(" ", " ")))).setNegativeButton(LocaleController.getString(R.string.BotAuthPhoneNumberDeny), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda22
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    OAuthSheet.lambda$handle$14(zArr, runnable, alertDialog, i2);
+                    OAuthSheet.$r8$lambda$_v5KRZYa6dp0PtdBna1SElZe1B0(zArr, runnable, alertDialog, i2);
                 }
             }).setPositiveButton(LocaleController.getString(R.string.BotAuthPhoneNumberAccept), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda23
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    OAuthSheet.lambda$handle$15(zArr, runnable, alertDialog, i2);
+                    OAuthSheet.$r8$lambda$zFEFn3uSz5fZExu1EDUAFOgXuac(zArr, runnable, alertDialog, i2);
                 }
             }).makeRed(-2).show();
             return;
@@ -622,30 +604,26 @@ public abstract class OAuthSheet {
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$14(boolean[] zArr, Runnable runnable, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$_v5KRZYa6dp0PtdBna1SElZe1B0(boolean[] zArr, Runnable runnable, AlertDialog alertDialog, int i) {
         zArr[0] = false;
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$15(boolean[] zArr, Runnable runnable, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$zFEFn3uSz5fZExu1EDUAFOgXuac(boolean[] zArr, Runnable runnable, AlertDialog alertDialog, int i) {
         zArr[0] = true;
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$17(BottomSheet[] bottomSheetArr, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$ItlOwHQ0s5YEaaQexFOiw72zpBQ(BottomSheet[] bottomSheetArr, DialogInterface dialogInterface) {
         showing = null;
         BottomSheet bottomSheet = bottomSheetArr[0];
         if (bottomSheet != null) {
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
             bottomSheetArr[0] = null;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$19(Context context, String[] strArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, int i, final BottomSheet bottomSheet, final String str, final Theme.ResourcesProvider resourcesProvider, String str2) {
+    public static /* synthetic */ void $r8$lambda$xnxdbcMFvYfYefG-2jCmQJ3S1m4(Context context, String[] strArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, int i, final BottomSheet bottomSheet, final String str, final Theme.ResourcesProvider resourcesProvider, String str2) {
         final AlertDialog alertDialog = new AlertDialog(context, 3);
         alertDialog.showDelayed(200L);
         TLRPC.TL_messages_checkUrlAuthMatchCode tL_messages_checkUrlAuthMatchCode = new TLRPC.TL_messages_checkUrlAuthMatchCode();
@@ -655,13 +633,12 @@ public abstract class OAuthSheet {
         ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_checkUrlAuthMatchCode, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda21
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                OAuthSheet.lambda$handle$18(AlertDialog.this, bottomSheet, str, resourcesProvider, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                OAuthSheet.$r8$lambda$4DvKHYHrJDvFx1GneRe3QEE2swg(AlertDialog.this, bottomSheet, str, resourcesProvider, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$18(AlertDialog alertDialog, BottomSheet bottomSheet, String str, Theme.ResourcesProvider resourcesProvider, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$4DvKHYHrJDvFx1GneRe3QEE2swg(AlertDialog alertDialog, BottomSheet bottomSheet, String str, Theme.ResourcesProvider resourcesProvider, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
         alertDialog.dismiss();
         if (bool instanceof TLRPC.TL_boolTrue) {
             showing = bottomSheet;
@@ -670,14 +647,13 @@ public abstract class OAuthSheet {
         }
         BottomSheet bottomSheet2 = showing;
         if (bottomSheet2 != null) {
-            bottomSheet2.lambda$new$0();
+            bottomSheet2.dismiss();
             showing = null;
         }
         getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), Theme.getColor(Theme.key_undo_cancelColor, resourcesProvider))).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$20(boolean[] zArr, BotWebViewContainer botWebViewContainer, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, int i) {
+    public static /* synthetic */ void $r8$lambda$Foy1WD7Lw4Sl81Axg8hb75DEfbQ(boolean[] zArr, BotWebViewContainer botWebViewContainer, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, int i) {
         showing = null;
         if (zArr[0]) {
             return;
@@ -769,7 +745,7 @@ public abstract class OAuthSheet {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OAuthSheet.lambda$showMatchCodeSheet$21(bottomSheetArr, callback, str2, view);
+                    OAuthSheet.$r8$lambda$wMhAEAmdBygSATigTTqIkxlshXY(bottomSheetArr, callback, str2, view);
                 }
             });
             i3++;
@@ -781,7 +757,7 @@ public abstract class OAuthSheet {
         MediaDataController.getInstance(i2).getStickerSet(tL_inputStickerSetShortName, null, false, new Utilities.Callback() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda13
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                OAuthSheet.lambda$showMatchCodeSheet$22(arrayList, backupImageViewArr, (TLRPC.TL_messages_stickerSet) obj);
+                OAuthSheet.$r8$lambda$pfTlQM9HwhspZJEfT70vEXzhlY8(arrayList, backupImageViewArr, (TLRPC.TL_messages_stickerSet) obj);
             }
         });
         textView.setText(LocaleController.getString(z2 ? R.string.BotAuthSelectEmoji : R.string.BotAuthSelectCode));
@@ -803,7 +779,7 @@ public abstract class OAuthSheet {
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                OAuthSheet.lambda$showMatchCodeSheet$23(ButtonWithCounterView.this, bottomSheetArr, runnable, view);
+                OAuthSheet.$r8$lambda$U1LH9SuT0RMFwlUwp1no2gswtgQ(ButtonWithCounterView.this, bottomSheetArr, runnable, view);
             }
         });
         BottomSheet show = builder4.show();
@@ -811,18 +787,16 @@ public abstract class OAuthSheet {
         return show;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showMatchCodeSheet$21(BottomSheet[] bottomSheetArr, Utilities.Callback callback, String str, View view) {
+    public static /* synthetic */ void $r8$lambda$wMhAEAmdBygSATigTTqIkxlshXY(BottomSheet[] bottomSheetArr, Utilities.Callback callback, String str, View view) {
         BottomSheet bottomSheet = bottomSheetArr[0];
         if (bottomSheet != null) {
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
             bottomSheetArr[0] = null;
             callback.run(str);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showMatchCodeSheet$22(ArrayList arrayList, BackupImageView[] backupImageViewArr, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+    public static /* synthetic */ void $r8$lambda$pfTlQM9HwhspZJEfT70vEXzhlY8(ArrayList arrayList, BackupImageView[] backupImageViewArr, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         TLRPC.Document document;
         if (tL_messages_stickerSet == null || tL_messages_stickerSet.set == null) {
             return;
@@ -853,13 +827,12 @@ public abstract class OAuthSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showMatchCodeSheet$23(ButtonWithCounterView buttonWithCounterView, BottomSheet[] bottomSheetArr, Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$U1LH9SuT0RMFwlUwp1no2gswtgQ(ButtonWithCounterView buttonWithCounterView, BottomSheet[] bottomSheetArr, Runnable runnable, View view) {
         BottomSheet bottomSheet;
         if (buttonWithCounterView.isLoading() || (bottomSheet = bottomSheetArr[0]) == null) {
             return;
         }
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
         bottomSheetArr[0] = null;
         runnable.run();
     }

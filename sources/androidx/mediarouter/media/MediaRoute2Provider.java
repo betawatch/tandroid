@@ -433,15 +433,10 @@ class MediaRoute2Provider extends MediaRouteProvider {
         private final Runnable mClearOptimisticVolumeRunnable = new Runnable() { // from class: androidx.mediarouter.media.MediaRoute2Provider$GroupRouteController$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                MediaRoute2Provider.GroupRouteController.this.lambda$new$0();
+                MediaRoute2Provider.GroupRouteController.this.mOptimisticVolume = -1;
             }
         };
         int mOptimisticVolume = -1;
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            this.mOptimisticVolume = -1;
-        }
 
         GroupRouteController(MediaRouter2.RoutingController routingController, String str) {
             this.mRoutingController = routingController;

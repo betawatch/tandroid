@@ -283,7 +283,7 @@ public class SlideIntChooseView extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.SlideIntChooseView$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    SlideIntChooseView.this.lambda$setMaxTextEmojiSaturation$0(valueAnimator2);
+                    SlideIntChooseView.$r8$lambda$R_XELlFNQ9crFlG0qb7MK7AtaJ4(SlideIntChooseView.this, valueAnimator2);
                 }
             });
             this.maxTextEmojiSaturationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.SlideIntChooseView.3
@@ -310,16 +310,16 @@ public class SlideIntChooseView extends FrameLayout {
         this.maxText.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setMaxTextEmojiSaturation$0(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$R_XELlFNQ9crFlG0qb7MK7AtaJ4(SlideIntChooseView slideIntChooseView, ValueAnimator valueAnimator) {
+        slideIntChooseView.getClass();
         ColorMatrix colorMatrix = new ColorMatrix();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.maxTextEmojiSaturation = floatValue;
+        slideIntChooseView.maxTextEmojiSaturation = floatValue;
         colorMatrix.setSaturation(floatValue);
         if (Theme.isCurrentThemeDark()) {
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - this.maxTextEmojiSaturation) * (-0.3f));
+            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - slideIntChooseView.maxTextEmojiSaturation) * (-0.3f));
         }
-        this.maxText.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        slideIntChooseView.maxText.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -377,16 +377,13 @@ public class SlideIntChooseView extends FrameLayout {
             options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
-                    CharSequence lambda$make$0;
-                    lambda$make$0 = SlideIntChooseView.Options.lambda$make$0(Utilities.CallbackReturn.this, (Integer) obj, (Integer) obj2);
-                    return lambda$make$0;
+                    return SlideIntChooseView.Options.$r8$lambda$j64mmNixyX9paZV0J1XrEUu83XA(Utilities.CallbackReturn.this, (Integer) obj, (Integer) obj2);
                 }
             };
             return options;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ CharSequence lambda$make$0(Utilities.CallbackReturn callbackReturn, Integer num, Integer num2) {
+        public static /* synthetic */ CharSequence $r8$lambda$j64mmNixyX9paZV0J1XrEUu83XA(Utilities.CallbackReturn callbackReturn, Integer num, Integer num2) {
             return (CharSequence) callbackReturn.run(num2);
         }
 
@@ -407,16 +404,13 @@ public class SlideIntChooseView extends FrameLayout {
             options.toString = new Utilities.Callback2Return() { // from class: org.telegram.ui.Cells.SlideIntChooseView$Options$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
-                    CharSequence lambda$make$1;
-                    lambda$make$1 = SlideIntChooseView.Options.lambda$make$1(str, (Integer) obj, (Integer) obj2);
-                    return lambda$make$1;
+                    return SlideIntChooseView.Options.$r8$lambda$ych8fJhbMOkiRMSNRZEpMuMJEcs(str, (Integer) obj, (Integer) obj2);
                 }
             };
             return options;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ CharSequence lambda$make$1(String str, Integer num, Integer num2) {
+        public static /* synthetic */ CharSequence $r8$lambda$ych8fJhbMOkiRMSNRZEpMuMJEcs(String str, Integer num, Integer num2) {
             if (num.intValue() == 0) {
                 return LocaleController.formatPluralString(str, num2.intValue(), new Object[0]);
             }

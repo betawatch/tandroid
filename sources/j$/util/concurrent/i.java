@@ -91,8 +91,14 @@ public final class i extends b implements Set, j$.util.Set {
 
     @Override // java.util.Collection, java.util.Set
     public final boolean equals(Object obj) {
-        Set set;
-        return (obj instanceof Set) && ((set = (Set) obj) == this || (containsAll(set) && set.containsAll(this)));
+        if (!(obj instanceof Set)) {
+            return false;
+        }
+        Set set = (Set) obj;
+        if (set != this) {
+            return containsAll(set) && set.containsAll(this);
+        }
+        return true;
     }
 
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
@@ -117,7 +123,7 @@ public final class i extends b implements Set, j$.util.Set {
             if (a == null) {
                 return;
             } else {
-                consumer.p(a.b);
+                consumer.s(a.b);
             }
         }
     }

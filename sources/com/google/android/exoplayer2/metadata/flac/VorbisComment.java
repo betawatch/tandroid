@@ -51,7 +51,7 @@ public class VorbisComment implements Metadata.Entry {
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
     public void populateMediaMetadata(MediaMetadata.Builder builder) {
         String str = this.key;
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "ALBUM":
                 builder.setAlbumTitle(this.value);
@@ -79,11 +79,13 @@ public class VorbisComment implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            VorbisComment vorbisComment = (VorbisComment) obj;
+            if (this.key.equals(vorbisComment.key) && this.value.equals(vorbisComment.value)) {
+                return true;
+            }
         }
-        VorbisComment vorbisComment = (VorbisComment) obj;
-        return this.key.equals(vorbisComment.key) && this.value.equals(vorbisComment.value);
+        return false;
     }
 
     public int hashCode() {

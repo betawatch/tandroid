@@ -33,10 +33,10 @@ class CursorFilter extends Filter {
         if (runQueryOnBackgroundThread != null) {
             filterResults.count = runQueryOnBackgroundThread.getCount();
             filterResults.values = runQueryOnBackgroundThread;
-        } else {
-            filterResults.count = 0;
-            filterResults.values = null;
+            return filterResults;
         }
+        filterResults.count = 0;
+        filterResults.values = null;
         return filterResults;
     }
 

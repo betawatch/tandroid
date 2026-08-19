@@ -165,86 +165,145 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x004f, code lost:
+    
+        if (r10.totalBytesTransferred >= 524288) goto L22;
+     */
     @Override // com.google.android.exoplayer2.upstream.TransferListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public synchronized void onTransferEnd(DataSource dataSource, DataSpec dataSpec, boolean z) {
+        Throwable th;
+        DefaultBandwidthMeter defaultBandwidthMeter;
         try {
-            if (isTransferAtFullNetworkSpeed(dataSpec, z)) {
-                Assertions.checkState(this.streamCount > 0);
-                long elapsedRealtime = this.clock.elapsedRealtime();
-                int i = (int) (elapsedRealtime - this.sampleStartTimeMs);
-                this.totalElapsedTimeMs += i;
-                long j = this.totalBytesTransferred;
-                long j2 = this.sampleBytesTransferred;
-                this.totalBytesTransferred = j + j2;
-                if (i > 0) {
-                    this.slidingPercentile.addSample((int) Math.sqrt(j2), (j2 * 8000.0f) / i);
-                    if (this.totalElapsedTimeMs < 2000) {
-                        if (this.totalBytesTransferred >= 524288) {
+            try {
+                if (isTransferAtFullNetworkSpeed(dataSpec, z)) {
+                    Assertions.checkState(this.streamCount > 0);
+                    long elapsedRealtime = this.clock.elapsedRealtime();
+                    int i = (int) (elapsedRealtime - this.sampleStartTimeMs);
+                    this.totalElapsedTimeMs += i;
+                    long j = this.totalBytesTransferred;
+                    long j2 = this.sampleBytesTransferred;
+                    this.totalBytesTransferred = j + j2;
+                    if (i > 0) {
+                        this.slidingPercentile.addSample((int) Math.sqrt(j2), (j2 * 8000.0f) / i);
+                        if (this.totalElapsedTimeMs < 2000) {
+                            try {
+                            } catch (Throwable th2) {
+                                th = th2;
+                                throw th;
+                            }
                         }
-                        maybeNotifyBandwidthSample(i, this.sampleBytesTransferred, this.bitrateEstimate);
-                        this.sampleStartTimeMs = elapsedRealtime;
-                        this.sampleBytesTransferred = 0L;
+                        this.bitrateEstimate = (long) this.slidingPercentile.getPercentile(0.5f);
+                        FileLog.d("debug_loading: bandwidth meter (onTransferEnd), bitrate estimate = " + this.bitrateEstimate);
+                        defaultBandwidthMeter = this;
+                        defaultBandwidthMeter.maybeNotifyBandwidthSample(i, this.sampleBytesTransferred, this.bitrateEstimate);
+                        defaultBandwidthMeter.sampleStartTimeMs = elapsedRealtime;
+                        defaultBandwidthMeter.sampleBytesTransferred = 0L;
+                    } else {
+                        defaultBandwidthMeter = this;
                     }
-                    this.bitrateEstimate = (long) this.slidingPercentile.getPercentile(0.5f);
-                    FileLog.d("debug_loading: bandwidth meter (onTransferEnd), bitrate estimate = " + this.bitrateEstimate);
-                    maybeNotifyBandwidthSample(i, this.sampleBytesTransferred, this.bitrateEstimate);
-                    this.sampleStartTimeMs = elapsedRealtime;
-                    this.sampleBytesTransferred = 0L;
+                    defaultBandwidthMeter.streamCount--;
                 }
-                this.streamCount--;
+            } catch (Throwable th3) {
+                th = th3;
+                th = th;
+                throw th;
             }
-        } catch (Throwable th) {
+        } catch (Throwable th4) {
+            th = th4;
+            th = th;
             throw th;
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0067, code lost:
+    
+        if (r11.totalBytesTransferred >= 524288) goto L16;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public synchronized void onTransfer(long j, long j2) {
+        Throwable th;
         try {
-            long elapsedRealtime = this.clock.elapsedRealtime();
-            this.totalElapsedTimeMs += (int) (elapsedRealtime - this.sampleStartTimeMs);
-            this.totalBytesTransferred += j;
-            if (j2 > 0 && j > 0) {
+            try {
+                long elapsedRealtime = this.clock.elapsedRealtime();
+                this.totalElapsedTimeMs += (int) (elapsedRealtime - this.sampleStartTimeMs);
+                this.totalBytesTransferred += j;
+                if (j2 <= 0 || j <= 0) {
+                    return;
+                }
                 FileLog.d("debug_loading: bandwidth meter on transfer " + AndroidUtilities.formatFileSize(j) + " per " + j2 + "ms");
                 this.slidingPercentile.addSample((int) Math.sqrt((double) j), (((float) j) * 8000.0f) / ((float) j2));
                 if (this.totalElapsedTimeMs < 2000) {
-                    if (this.totalBytesTransferred >= 524288) {
+                    try {
+                    } catch (Throwable th2) {
+                        th = th2;
+                        throw th;
                     }
-                    maybeNotifyBandwidthSample((int) j2, j, this.bitrateEstimate);
-                    this.sampleStartTimeMs = elapsedRealtime;
-                    this.sampleBytesTransferred = 0L;
                 }
                 this.bitrateEstimate = (long) this.slidingPercentile.getPercentile(0.5f);
                 FileLog.d("debug_loading: bandwidth meter (onTransfer), bitrate estimate = " + this.bitrateEstimate);
                 maybeNotifyBandwidthSample((int) j2, j, this.bitrateEstimate);
                 this.sampleStartTimeMs = elapsedRealtime;
                 this.sampleBytesTransferred = 0L;
+            } catch (Throwable th3) {
+                th = th3;
+                th = th;
+                throw th;
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th4) {
+            th = th4;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0007, code lost:
+    
+        if (r8.resetOnNetworkTypeChange == false) goto L7;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public synchronized void onNetworkTypeChanged(int i) {
-        int i2 = this.networkType;
-        if (i2 == 0 || this.resetOnNetworkTypeChange) {
-            if (this.networkTypeOverrideSet) {
-                i = this.networkTypeOverride;
+        Throwable th;
+        try {
+            try {
+                int i2 = this.networkType;
+                if (i2 != 0) {
+                    try {
+                    } catch (Throwable th2) {
+                        th = th2;
+                        throw th;
+                    }
+                }
+                if (this.networkTypeOverrideSet) {
+                    i = this.networkTypeOverride;
+                }
+                if (i2 != i) {
+                    this.networkType = i;
+                    if (i != 1 && i != 0 && i != 8) {
+                        this.bitrateEstimate = getInitialBitrateEstimateForNetworkType(i);
+                        long elapsedRealtime = this.clock.elapsedRealtime();
+                        maybeNotifyBandwidthSample(this.streamCount > 0 ? (int) (elapsedRealtime - this.sampleStartTimeMs) : 0, this.sampleBytesTransferred, this.bitrateEstimate);
+                        this.sampleStartTimeMs = elapsedRealtime;
+                        this.sampleBytesTransferred = 0L;
+                        this.totalBytesTransferred = 0L;
+                        this.totalElapsedTimeMs = 0L;
+                        this.slidingPercentile.reset();
+                    }
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                th = th;
+                throw th;
             }
-            if (i2 == i) {
-                return;
-            }
-            this.networkType = i;
-            if (i != 1 && i != 0 && i != 8) {
-                this.bitrateEstimate = getInitialBitrateEstimateForNetworkType(i);
-                long elapsedRealtime = this.clock.elapsedRealtime();
-                maybeNotifyBandwidthSample(this.streamCount > 0 ? (int) (elapsedRealtime - this.sampleStartTimeMs) : 0, this.sampleBytesTransferred, this.bitrateEstimate);
-                this.sampleStartTimeMs = elapsedRealtime;
-                this.sampleBytesTransferred = 0L;
-                this.totalBytesTransferred = 0L;
-                this.totalElapsedTimeMs = 0L;
-                this.slidingPercentile.reset();
-            }
+        } catch (Throwable th4) {
+            th = th4;
+            th = th;
+            throw th;
         }
     }
 
@@ -268,7 +327,10 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     }
 
     private static boolean isTransferAtFullNetworkSpeed(DataSpec dataSpec, boolean z) {
-        return z && (dataSpec == null || !dataSpec.isFlagSet(8));
+        if (z) {
+            return dataSpec == null || !dataSpec.isFlagSet(8);
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -282,7 +344,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     */
     public static int[] getInitialBitrateCountryGroupAssignment(String str) {
         char c = 0;
-        str.hashCode();
+        str.getClass();
         switch (str.hashCode()) {
             case 2083:
                 break;

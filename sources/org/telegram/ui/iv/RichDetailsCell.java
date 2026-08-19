@@ -101,7 +101,7 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
         view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichDetailsCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                RichDetailsCell.this.lambda$new$0(view2);
+                RichDetailsCell.$r8$lambda$lbb7UyFLk4IpptdW_FZ1TRn3sYc(RichDetailsCell.this, view2);
             }
         });
         addView(view, LayoutHelper.createFrame(53, -1, 51));
@@ -115,18 +115,17 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
         richEditText.setDelegate(new EditTextCaption.EditTextCaptionDelegate() { // from class: org.telegram.ui.iv.RichDetailsCell$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.EditTextCaption.EditTextCaptionDelegate
             public final void onSpansChanged() {
-                RichDetailsCell.this.lambda$new$1();
+                RichDetailsCell.$r8$lambda$_HLRs6uEkgX4dtZqIbYfAQSF308(RichDetailsCell.this);
             }
         });
         addView(richEditText, LayoutHelper.createFrame(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
         updateColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$lbb7UyFLk4IpptdW_FZ1TRn3sYc(RichDetailsCell richDetailsCell, View view) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richDetailsCell.delegate;
+        if (delegate == null || (blockRow = richDetailsCell.currentRow) == null) {
             return;
         }
         delegate.onToggle(blockRow);
@@ -222,13 +221,13 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
             RichDetailsCell.this.post(new Runnable() { // from class: org.telegram.ui.iv.RichDetailsCell$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichDetailsCell.3.this.lambda$onSelectionChanged$0(richEditText, i2, selectionHelper, i);
+                    RichDetailsCell.3.$r8$lambda$NQEIFl3aWVH-0lhGZE-PxnTsjUk(RichDetailsCell.3.this, richEditText, i2, selectionHelper, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSelectionChanged$0(RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2) {
+        public static /* synthetic */ void $r8$lambda$NQEIFl3aWVH-0lhGZE-PxnTsjUk(3 r2, RichEditText richEditText, int i, TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper, int i2) {
+            r2.getClass();
             if (richEditText.length() < i || richEditText.getSelectionStart() == richEditText.getSelectionEnd() || !articleTextSelectionHelper.selectRangeOf(RichDetailsCell.this, i2, i)) {
                 return;
             }
@@ -238,19 +237,18 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
+    public static /* synthetic */ void $r8$lambda$_HLRs6uEkgX4dtZqIbYfAQSF308(RichDetailsCell richDetailsCell) {
         BlockRow blockRow;
-        rememberAutoBoldState();
-        BlockRow blockRow2 = this.currentRow;
+        richDetailsCell.rememberAutoBoldState();
+        BlockRow blockRow2 = richDetailsCell.currentRow;
         if (blockRow2 != null) {
             TL_iv.PageBlock pageBlock = blockRow2.block;
             if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                ((TL_iv.pageBlockDetails) pageBlock).title = RichTextStyle.fromSpannable(this.editText.getText());
+                ((TL_iv.pageBlockDetails) pageBlock).title = RichTextStyle.fromSpannable(richDetailsCell.editText.getText());
             }
         }
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richDetailsCell.delegate;
+        if (delegate == null || (blockRow = richDetailsCell.currentRow) == null) {
             return;
         }
         delegate.onSpansChanged(blockRow);
@@ -315,17 +313,22 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
     public boolean isPressOnText(int i, int i2) {
         int lineForVertical;
         Layout layout = this.editText.getLayout();
-        if (layout == null || this.editText.length() == 0) {
-            return false;
+        if (layout != null && this.editText.length() != 0) {
+            int left = i - (this.editText.getLeft() + this.editText.getPaddingLeft());
+            int top = i2 - (this.editText.getTop() + this.editText.getPaddingTop());
+            if (top >= 0 && top < layout.getHeight() && (lineForVertical = layout.getLineForVertical(top)) >= 0 && lineForVertical < layout.getLineCount()) {
+                int dp = AndroidUtilities.dp(24.0f);
+                int max = Math.max(0, (this.editText.getWidth() - this.editText.getPaddingLeft()) - this.editText.getPaddingRight());
+                float f = dp;
+                float max2 = Math.max(0.0f, layout.getLineLeft(lineForVertical) - f);
+                float min = Math.min(max, layout.getLineRight(lineForVertical) + f);
+                float f2 = left;
+                if (f2 >= max2 && f2 <= min) {
+                    return true;
+                }
+            }
         }
-        int left = i - (this.editText.getLeft() + this.editText.getPaddingLeft());
-        int top = i2 - (this.editText.getTop() + this.editText.getPaddingTop());
-        if (top < 0 || top >= layout.getHeight() || (lineForVertical = layout.getLineForVertical(top)) < 0 || lineForVertical >= layout.getLineCount()) {
-            return false;
-        }
-        float dp = AndroidUtilities.dp(24.0f);
-        float f = left;
-        return f >= Math.max(0.0f, layout.getLineLeft(lineForVertical) - dp) && f <= Math.min((float) Math.max(0, (this.editText.getWidth() - this.editText.getPaddingLeft()) - this.editText.getPaddingRight()), layout.getLineRight(lineForVertical) + dp);
+        return false;
     }
 
     public boolean isPressOnEmptyEditText(int i, int i2) {
@@ -385,7 +388,10 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
 
             @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
             public CharSequence getText() {
-                return (RichDetailsCell.this.currentRow == null || !(RichDetailsCell.this.currentRow.block instanceof TL_iv.pageBlockDetails)) ? "" : RichTextStyle.toSpannable(((TL_iv.pageBlockDetails) RichDetailsCell.this.currentRow.block).title);
+                if (RichDetailsCell.this.currentRow != null && (RichDetailsCell.this.currentRow.block instanceof TL_iv.pageBlockDetails)) {
+                    return RichTextStyle.toSpannable(((TL_iv.pageBlockDetails) RichDetailsCell.this.currentRow.block).title);
+                }
+                return "";
             }
         });
     }

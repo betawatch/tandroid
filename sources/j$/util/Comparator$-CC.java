@@ -13,10 +13,6 @@ public final /* synthetic */ class Comparator$-CC {
         return Collections.reverseOrder();
     }
 
-    public static Comparator a() {
-        return e.INSTANCE;
-    }
-
     public static <T, U extends Comparable<? super U>> Comparator<T> comparing(Function<? super T, ? extends U> function) {
         Objects.requireNonNull(function);
         return new b(2, function);

@@ -43,11 +43,13 @@ final class AutoValue_StaticSessionData_OsData extends StaticSessionData.OsData 
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof StaticSessionData.OsData)) {
-            return false;
+        if (obj instanceof StaticSessionData.OsData) {
+            StaticSessionData.OsData osData = (StaticSessionData.OsData) obj;
+            if (this.osRelease.equals(osData.osRelease()) && this.osCodeName.equals(osData.osCodeName()) && this.isRooted == osData.isRooted()) {
+                return true;
+            }
         }
-        StaticSessionData.OsData osData = (StaticSessionData.OsData) obj;
-        return this.osRelease.equals(osData.osRelease()) && this.osCodeName.equals(osData.osCodeName()) && this.isRooted == osData.isRooted();
+        return false;
     }
 
     public int hashCode() {

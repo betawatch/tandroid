@@ -137,10 +137,9 @@ final class zacd implements OnCompleteListener {
                 if (z) {
                     long j3 = this.zad;
                     long j4 = this.zae;
-                    long currentTimeMillis = System.currentTimeMillis();
-                    i5 = (int) (SystemClock.elapsedRealtime() - j4);
                     j = j3;
-                    j2 = currentTimeMillis;
+                    j2 = System.currentTimeMillis();
+                    i5 = (int) (SystemClock.elapsedRealtime() - j4);
                 } else {
                     j = 0;
                     j2 = 0;

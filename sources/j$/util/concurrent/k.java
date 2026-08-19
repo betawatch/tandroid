@@ -3,12 +3,12 @@ package j$.util.concurrent;
 import java.util.Map;
 
 /* loaded from: classes2.dex */
-final class k implements Map.Entry {
-    final Object a;
-    Object b;
-    final ConcurrentHashMap c;
+public final class k implements Map.Entry {
+    public final Object a;
+    public Object b;
+    public final ConcurrentHashMap c;
 
-    k(Object obj, Object obj2, ConcurrentHashMap concurrentHashMap) {
+    public k(Object obj, Object obj2, ConcurrentHashMap concurrentHashMap) {
         this.a = obj;
         this.b = obj2;
         this.c = concurrentHashMap;
@@ -30,7 +30,7 @@ final class k implements Map.Entry {
     }
 
     public final String toString() {
-        return u.b(this.a, this.b);
+        return j$.com.android.tools.r8.a.V(this.a, this.b);
     }
 
     @Override // java.util.Map.Entry
@@ -38,9 +38,15 @@ final class k implements Map.Entry {
         Map.Entry entry;
         Object key;
         Object value;
-        Object obj2;
-        Object obj3;
-        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.a) || key.equals(obj2)) && (value == (obj3 = this.b) || value.equals(obj3));
+        if (!(obj instanceof Map.Entry) || (key = (entry = (Map.Entry) obj).getKey()) == null || (value = entry.getValue()) == null) {
+            return false;
+        }
+        Object obj2 = this.a;
+        if (key != obj2 && !key.equals(obj2)) {
+            return false;
+        }
+        Object obj3 = this.b;
+        return value == obj3 || value.equals(obj3);
     }
 
     @Override // java.util.Map.Entry

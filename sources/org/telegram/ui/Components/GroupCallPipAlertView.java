@@ -115,7 +115,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         this.groupInfoContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GroupCallPipAlertView.this.lambda$new$0(view);
+                GroupCallPipAlertView.$r8$lambda$oQInfJBupbDg1HH3CacNLyheGM0(GroupCallPipAlertView.this, view);
             }
         });
         LinearLayout linearLayout = new LinearLayout(context);
@@ -141,7 +141,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         this.soundButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GroupCallPipAlertView.this.lambda$new$1(context, view);
+                GroupCallPipAlertView.$r8$lambda$kWQe1Uj8kh6vBmp5RRVUohtY070(GroupCallPipAlertView.this, context, view);
             }
         });
         this.soundButton.setCheckable(true);
@@ -152,7 +152,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         this.muteButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GroupCallPipAlertView.this.lambda$new$2(context, view);
+                GroupCallPipAlertView.$r8$lambda$R8FugTcyvKdXDOrH2w7v5tNdCJg(GroupCallPipAlertView.this, context, view);
             }
         });
         VoIPToggleButton voIPToggleButton3 = new VoIPToggleButton(context, 44.0f);
@@ -162,7 +162,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         this.leaveButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GroupCallPipAlertView.this.lambda$new$4(context, view);
+                GroupCallPipAlertView.$r8$lambda$zZauqajqrAHt71u_QpFcOrIgLik(GroupCallPipAlertView.this, context, view);
             }
         });
         VoIPButtonsLayout voIPButtonsLayout = new VoIPButtonsLayout(context);
@@ -175,24 +175,24 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         addView(voIPButtonsLayout, LayoutHelper.createLinear(-1, -2, 0, 6, 0, 6, 0));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$oQInfJBupbDg1HH3CacNLyheGM0(GroupCallPipAlertView groupCallPipAlertView, View view) {
+        groupCallPipAlertView.getClass();
         if (VoIPService.getSharedInstance() != null) {
-            Intent action = new Intent(getContext(), (Class<?>) LaunchActivity.class).setAction("voip_chat");
+            Intent action = new Intent(groupCallPipAlertView.getContext(), (Class<?>) LaunchActivity.class).setAction("voip_chat");
             action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());
-            getContext().startActivity(action);
+            groupCallPipAlertView.getContext().startActivity(action);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$kWQe1Uj8kh6vBmp5RRVUohtY070(GroupCallPipAlertView groupCallPipAlertView, Context context, View view) {
         boolean z;
         boolean canDrawOverlays;
+        groupCallPipAlertView.getClass();
         if (VoIPService.getSharedInstance() == null) {
             return;
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
-        Context context2 = getContext();
+        Context context2 = groupCallPipAlertView.getContext();
         if (Build.VERSION.SDK_INT >= 23) {
             canDrawOverlays = Settings.canDrawOverlays(context);
             if (!canDrawOverlays) {
@@ -204,11 +204,11 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         sharedInstance.toggleSpeakerphoneOrShowRouteSheet(context2, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$R8FugTcyvKdXDOrH2w7v5tNdCJg(GroupCallPipAlertView groupCallPipAlertView, Context context, View view) {
+        groupCallPipAlertView.getClass();
         if (VoIPService.getSharedInstance() != null) {
             if (VoIPService.getSharedInstance().mutedByAdmin()) {
-                this.muteButton.shakeView();
+                groupCallPipAlertView.muteButton.shakeView();
                 try {
                     Vibrator vibrator = (Vibrator) context.getSystemService("vibrator");
                     if (vibrator != null) {
@@ -225,11 +225,10 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(final Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$zZauqajqrAHt71u_QpFcOrIgLik(GroupCallPipAlertView groupCallPipAlertView, final Context context, View view) {
         boolean z;
         boolean canDrawOverlays;
-        Context context2 = getContext();
+        Context context2 = groupCallPipAlertView.getContext();
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
@@ -249,10 +248,10 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0055  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01ba  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01ab  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01b4  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x006c  */
     @Override // android.widget.LinearLayout, android.view.View
     /*

@@ -53,17 +53,12 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
         linksTextView.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new Runnable() { // from class: org.telegram.ui.Stars.BalanceCloud$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BalanceCloud.lambda$new$0(context, resourcesProvider);
+                new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
             }
         }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
         linksTextView.setGravity(17);
         addView(linksTextView, LayoutHelper.createLinear(-2, -2, 0.0f, 17, 0, 1, 0, 0));
         updateBalance(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider) {
-        new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
     }
 
     public void setCurrency(AmountUtils$Currency amountUtils$Currency, boolean z) {
@@ -85,7 +80,7 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
             this.textView2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new Runnable() { // from class: org.telegram.ui.Stars.BalanceCloud$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BalanceCloud.this.lambda$updateBalance$1();
+                    BalanceCloud.$r8$lambda$tJ3wfEqmP72qkfS94rHIzIfiAkk(BalanceCloud.this);
                 }
             }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
             return;
@@ -106,9 +101,9 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateBalance$1() {
-        new StarsIntroActivity.StarsOptionsSheet(getContext(), this.resourcesProvider).show();
+    public static /* synthetic */ void $r8$lambda$tJ3wfEqmP72qkfS94rHIzIfiAkk(BalanceCloud balanceCloud) {
+        balanceCloud.getClass();
+        new StarsIntroActivity.StarsOptionsSheet(balanceCloud.getContext(), balanceCloud.resourcesProvider).show();
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -30,8 +30,8 @@ class AppCompatCompoundButtonHelper {
         this.mView = compoundButton;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x005e A[Catch: all -> 0x0039, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0056, B:11:0x005e, B:12:0x0067, B:14:0x006f, B:21:0x003b, B:23:0x0043, B:25:0x0049), top: B:2:0x001d }] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006f A[Catch: all -> 0x0039, TRY_LEAVE, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0056, B:11:0x005e, B:12:0x0067, B:14:0x006f, B:21:0x003b, B:23:0x0043, B:25:0x0049), top: B:2:0x001d }] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x005f A[Catch: all -> 0x0039, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0057, B:11:0x005f, B:12:0x0068, B:14:0x0070, B:21:0x003c, B:23:0x0044, B:25:0x004a), top: B:2:0x001d }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0070 A[Catch: all -> 0x0039, TRY_LEAVE, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0057, B:11:0x005f, B:12:0x0068, B:14:0x0070, B:21:0x003c, B:23:0x0044, B:25:0x004a), top: B:2:0x001d }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -61,6 +61,7 @@ class AppCompatCompoundButtonHelper {
                 if (obtainStyledAttributes.hasValue(i3)) {
                     CompoundButtonCompat.setButtonTintMode(this.mView, DrawableUtils.parseTintMode(obtainStyledAttributes.getInt(i3, -1), null));
                 }
+                obtainStyledAttributes.recycle();
             }
             int i5 = R$styleable.CompoundButton_android_button;
             if (obtainStyledAttributes.hasValue(i5) && (resourceId = obtainStyledAttributes.getResourceId(i5, 0)) != 0) {
@@ -73,8 +74,10 @@ class AppCompatCompoundButtonHelper {
             i3 = R$styleable.CompoundButton_buttonTintMode;
             if (obtainStyledAttributes.hasValue(i3)) {
             }
-        } finally {
             obtainStyledAttributes.recycle();
+        } catch (Throwable th) {
+            obtainStyledAttributes.recycle();
+            throw th;
         }
     }
 

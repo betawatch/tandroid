@@ -420,6 +420,7 @@ final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Callback,
     private static int buildPrimaryAndEmbeddedTrackGroupInfos(DrmSessionManager drmSessionManager, List list, int[][] iArr, int i, boolean[] zArr, Format[][] formatArr, TrackGroup[] trackGroupArr, TrackGroupInfo[] trackGroupInfoArr) {
         int i2;
         int i3;
+        char c = 0;
         int i4 = 0;
         int i5 = 0;
         while (i4 < i) {
@@ -434,7 +435,7 @@ final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Callback,
                 Format format = ((Representation) arrayList.get(i7)).format;
                 formatArr2[i7] = format.copyWithCryptoType(drmSessionManager.getCryptoType(format));
             }
-            AdaptationSet adaptationSet = (AdaptationSet) list.get(iArr2[0]);
+            AdaptationSet adaptationSet = (AdaptationSet) list.get(iArr2[c]);
             int i8 = adaptationSet.id;
             String num = i8 != -1 ? Integer.toString(i8) : "unset:" + i4;
             int i9 = i5 + 1;
@@ -463,6 +464,7 @@ final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Callback,
             }
             i4++;
             i5 = i3;
+            c = 0;
         }
         return i5;
     }

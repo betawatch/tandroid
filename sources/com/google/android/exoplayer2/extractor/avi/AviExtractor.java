@@ -246,7 +246,7 @@ public final class AviExtractor implements Extractor {
         parsableByteArray.skipBytes(8);
         long readLittleEndianInt = parsableByteArray.readLittleEndianInt();
         long j = this.moviStart;
-        long j2 = readLittleEndianInt <= j ? j + 8 : 0L;
+        long j2 = readLittleEndianInt <= j ? 8 + j : 0L;
         parsableByteArray.setPosition(position);
         return j2;
     }

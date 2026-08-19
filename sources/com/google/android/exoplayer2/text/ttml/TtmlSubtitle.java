@@ -19,7 +19,7 @@ final class TtmlSubtitle implements Subtitle {
         this.root = ttmlNode;
         this.regionMap = map2;
         this.imageMap = map3;
-        this.globalStyles = map != null ? DesugarCollections.unmodifiableMap(map) : Collections.emptyMap();
+        this.globalStyles = map != null ? DesugarCollections.unmodifiableMap(map) : Collections.EMPTY_MAP;
         this.eventTimesUs = ttmlNode.getEventTimesUs();
     }
 

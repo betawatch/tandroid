@@ -93,11 +93,13 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || VariantInfo.class != obj.getClass()) {
-                return false;
+            if (obj != null && VariantInfo.class == obj.getClass()) {
+                VariantInfo variantInfo = (VariantInfo) obj;
+                if (this.averageBitrate == variantInfo.averageBitrate && this.peakBitrate == variantInfo.peakBitrate && TextUtils.equals(this.videoGroupId, variantInfo.videoGroupId) && TextUtils.equals(this.audioGroupId, variantInfo.audioGroupId) && TextUtils.equals(this.subtitleGroupId, variantInfo.subtitleGroupId) && TextUtils.equals(this.captionGroupId, variantInfo.captionGroupId)) {
+                    return true;
+                }
             }
-            VariantInfo variantInfo = (VariantInfo) obj;
-            return this.averageBitrate == variantInfo.averageBitrate && this.peakBitrate == variantInfo.peakBitrate && TextUtils.equals(this.videoGroupId, variantInfo.videoGroupId) && TextUtils.equals(this.audioGroupId, variantInfo.audioGroupId) && TextUtils.equals(this.subtitleGroupId, variantInfo.subtitleGroupId) && TextUtils.equals(this.captionGroupId, variantInfo.captionGroupId);
+            return false;
         }
 
         public int hashCode() {
@@ -157,11 +159,13 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || HlsTrackMetadataEntry.class != obj.getClass()) {
-            return false;
+        if (obj != null && HlsTrackMetadataEntry.class == obj.getClass()) {
+            HlsTrackMetadataEntry hlsTrackMetadataEntry = (HlsTrackMetadataEntry) obj;
+            if (TextUtils.equals(this.groupId, hlsTrackMetadataEntry.groupId) && TextUtils.equals(this.name, hlsTrackMetadataEntry.name) && this.variantInfos.equals(hlsTrackMetadataEntry.variantInfos)) {
+                return true;
+            }
         }
-        HlsTrackMetadataEntry hlsTrackMetadataEntry = (HlsTrackMetadataEntry) obj;
-        return TextUtils.equals(this.groupId, hlsTrackMetadataEntry.groupId) && TextUtils.equals(this.name, hlsTrackMetadataEntry.name) && this.variantInfos.equals(hlsTrackMetadataEntry.variantInfos);
+        return false;
     }
 
     public int hashCode() {

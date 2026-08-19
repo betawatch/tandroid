@@ -1,37 +1,54 @@
 package j$.time;
 
 import j$.time.temporal.ChronoUnit;
+import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Pattern;
 
 /* loaded from: classes2.dex */
 public final class Period implements Serializable {
     public static final Period d = new Period(0, 0, 0);
     private static final long serialVersionUID = -3587258372562876L;
-    private final int a;
-    private final int b;
-    private final int c;
+    public final int a;
+    public final int b;
+    public final int c;
 
     static {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
-        j$.com.android.tools.r8.a.h(new Object[]{ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS});
+        Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
+        ArrayList arrayList = new ArrayList(3);
+        for (int i = 0; i < 3; i++) {
+            arrayList.add(Objects.requireNonNull(objArr[i]));
+        }
+        Collections.unmodifiableList(arrayList);
     }
 
     public static Period between(LocalDate localDate, LocalDate localDate2) {
-        return localDate.Y(localDate2);
-    }
-
-    public static Period a(int i, int i2, int i3) {
-        if ((i | i2 | i3) == 0) {
-            return d;
+        localDate.getClass();
+        LocalDate I = LocalDate.I(localDate2);
+        long M = I.M() - localDate.M();
+        int i = I.c - localDate.c;
+        if (M > 0 && i < 0) {
+            M--;
+            i = (int) (I.v() - localDate.T(M).v());
+        } else if (M < 0 && i > 0) {
+            M++;
+            i -= I.P();
         }
-        return new Period(i, i2, i3);
+        long j = M / 12;
+        int i2 = (int) (M % 12);
+        int i3 = (int) j;
+        if (j == i3) {
+            return ((i3 | i2) | i) == 0 ? d : new Period(i3, i2, i);
+        }
+        throw new ArithmeticException();
     }
 
-    private Period(int i, int i2, int i3) {
+    public Period(int i, int i2, int i3) {
         this.a = i;
         this.b = i2;
         this.c = i3;
@@ -45,11 +62,13 @@ public final class Period implements Serializable {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Period)) {
-            return false;
+        if (obj instanceof Period) {
+            Period period = (Period) obj;
+            if (this.a == period.a && this.b == period.b && this.c == period.c) {
+                return true;
+            }
         }
-        Period period = (Period) obj;
-        return this.a == period.a && this.b == period.b && this.c == period.c;
+        return false;
     }
 
     public final int hashCode() {
@@ -80,16 +99,10 @@ public final class Period implements Serializable {
     }
 
     private Object writeReplace() {
-        return new q((byte) 14, this);
+        return new p((byte) 14, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    final void writeExternal(ObjectOutput objectOutput) {
-        objectOutput.writeInt(this.a);
-        objectOutput.writeInt(this.b);
-        objectOutput.writeInt(this.c);
     }
 }

@@ -4,7 +4,7 @@ import android.media.MediaCodecInfo;
 import org.webrtc.EglBase;
 import org.webrtc.Predicate;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
     private static final Predicate<MediaCodecInfo> defaultAllowedPredicate = new Predicate<MediaCodecInfo>() { // from class: org.webrtc.HardwareVideoDecoderFactory.1
         @Override // org.webrtc.Predicate

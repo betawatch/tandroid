@@ -37,6 +37,8 @@ public class BarChartView extends BaseChartView {
         float f2;
         int i;
         int i2;
+        int i3;
+        Canvas canvas2 = canvas;
         ChartData chartData = this.chartData;
         if (chartData != null) {
             float f3 = this.chartWidth;
@@ -46,32 +48,30 @@ public class BarChartView extends BaseChartView {
             float f6 = f3 / (f4 - f5);
             float f7 = (f5 * f6) - BaseChartView.HORIZONTAL_PADDING;
             char c = 1;
-            int i3 = this.startXIndex - 1;
-            int i4 = 0;
-            int i5 = i3 < 0 ? 0 : i3;
+            int i4 = this.startXIndex - 1;
+            int i5 = i4 < 0 ? 0 : i4;
             int i6 = this.endXIndex + 1;
             if (i6 > ((ChartData.Line) chartData.lines.get(0)).y.length - 1) {
                 i6 = ((ChartData.Line) this.chartData.lines.get(0)).y.length - 1;
             }
             int i7 = i6;
-            canvas.save();
+            canvas2.save();
             float f8 = 0.0f;
-            canvas.clipRect(this.chartStart, 0.0f, this.chartEnd, getMeasuredHeight() - this.chartBottom);
-            canvas.save();
+            canvas2.clipRect(this.chartStart, 0.0f, this.chartEnd, getMeasuredHeight() - this.chartBottom);
+            canvas2.save();
             int i8 = this.transitionMode;
-            float f9 = 2.0f;
             int i9 = 2;
             if (i8 == 2) {
                 this.postTransition = true;
                 this.selectionA = 0.0f;
                 TransitionParams transitionParams = this.transitionParams;
-                float f10 = transitionParams.progress;
-                f2 = 1.0f - f10;
-                canvas.scale((f10 * 2.0f) + 1.0f, 1.0f, transitionParams.pX, transitionParams.pY);
+                float f9 = transitionParams.progress;
+                f2 = 1.0f - f9;
+                canvas2.scale((f9 * 2.0f) + 1.0f, 1.0f, transitionParams.pX, transitionParams.pY);
             } else if (i8 == 1) {
                 TransitionParams transitionParams2 = this.transitionParams;
                 f2 = transitionParams2.progress;
-                canvas.scale(f2, 1.0f, transitionParams2.pX, transitionParams2.pY);
+                canvas2.scale(f2, 1.0f, transitionParams2.pX, transitionParams2.pY);
             } else {
                 f = 1.0f;
                 i = 0;
@@ -79,36 +79,38 @@ public class BarChartView extends BaseChartView {
                     BarViewData barViewData = (BarViewData) this.lines.get(i);
                     if (barViewData.enabled || barViewData.alpha != f8) {
                         float[] fArr = this.chartData.xPercentage;
-                        float f11 = fArr.length < i9 ? 1.0f : fArr[c] * f6;
+                        float f10 = fArr.length < i9 ? 1.0f : fArr[c] * f6;
                         long[] jArr = barViewData.line.y;
-                        float f12 = barViewData.alpha;
+                        float f11 = barViewData.alpha;
+                        i2 = i;
                         int i10 = i5;
+                        float f12 = 0.0f;
                         float f13 = 0.0f;
-                        float f14 = 0.0f;
+                        int i11 = 0;
                         boolean z = false;
                         while (i10 <= i7) {
-                            float f15 = ((f11 / f9) + (this.chartData.xPercentage[i10] * f6)) - f7;
-                            long[] jArr2 = jArr;
-                            float measuredHeight = (getMeasuredHeight() - this.chartBottom) - (((jArr[i10] / this.currentMaxHeight) * f12) * ((getMeasuredHeight() - this.chartBottom) - BaseChartView.SIGNATURE_TEXT_HEIGHT));
+                            float f14 = ((f10 / 2.0f) + (this.chartData.xPercentage[i10] * f6)) - f7;
+                            int i12 = i5;
+                            float measuredHeight = (getMeasuredHeight() - this.chartBottom) - (((jArr[i10] / this.currentMaxHeight) * f11) * ((getMeasuredHeight() - this.chartBottom) - BaseChartView.SIGNATURE_TEXT_HEIGHT));
                             if (i10 == this.selectedIndex && this.legendShowing) {
                                 f13 = measuredHeight;
-                                f14 = f15;
+                                f12 = f14;
                                 z = true;
                             } else {
                                 float[] fArr2 = barViewData.linesPath;
-                                fArr2[i4] = f15;
-                                fArr2[i4 + 1] = measuredHeight;
-                                int i11 = i4 + 3;
-                                fArr2[i4 + 2] = f15;
-                                i4 += 4;
-                                fArr2[i11] = getMeasuredHeight() - this.chartBottom;
+                                fArr2[i11] = f14;
+                                fArr2[i11 + 1] = measuredHeight;
+                                int i13 = i11 + 3;
+                                fArr2[i11 + 2] = f14;
+                                i11 += 4;
+                                fArr2[i13] = getMeasuredHeight() - this.chartBottom;
                             }
                             i10++;
-                            jArr = jArr2;
-                            f9 = 2.0f;
+                            i5 = i12;
                         }
+                        i3 = i5;
                         Paint paint = (z || this.postTransition) ? barViewData.unselectedPaint : barViewData.paint;
-                        paint.setStrokeWidth(f11);
+                        paint.setStrokeWidth(f10);
                         if (z) {
                             barViewData.unselectedPaint.setColor(ColorUtils.blendARGB(barViewData.lineColor, barViewData.blendColor, 1.0f - this.selectionA));
                         }
@@ -118,34 +120,24 @@ public class BarChartView extends BaseChartView {
                         } else {
                             f8 = 0.0f;
                         }
-                        int i12 = (int) (255.0f * f);
-                        paint.setAlpha(i12);
-                        canvas.drawLines(barViewData.linesPath, 0, i4, paint);
+                        int i14 = (int) (255.0f * f);
+                        paint.setAlpha(i14);
+                        canvas2.drawLines(barViewData.linesPath, 0, i11, paint);
                         if (z) {
-                            barViewData.paint.setStrokeWidth(f11);
-                            barViewData.paint.setAlpha(i12);
-                            float measuredHeight2 = getMeasuredHeight() - this.chartBottom;
-                            Paint paint2 = barViewData.paint;
-                            float f16 = f13;
-                            i2 = i;
-                            canvas.drawLine(f14, f16, f14, measuredHeight2, paint2);
+                            barViewData.paint.setStrokeWidth(f10);
+                            barViewData.paint.setAlpha(i14);
+                            canvas2.drawLine(f12, f13, f12, getMeasuredHeight() - this.chartBottom, barViewData.paint);
                             barViewData.paint.setAlpha(NotificationCenter.didReceiveSmsCode);
-                            i = i2 + 1;
-                            i9 = 2;
-                            c = 1;
-                            i4 = 0;
-                            f9 = 2.0f;
-                        } else {
-                            i2 = i;
                         }
                     } else {
                         i2 = i;
+                        i3 = i5;
                     }
                     i = i2 + 1;
-                    i9 = 2;
+                    canvas2 = canvas;
+                    i5 = i3;
                     c = 1;
-                    i4 = 0;
-                    f9 = 2.0f;
+                    i9 = 2;
                 }
                 canvas.restore();
                 canvas.restore();
@@ -164,66 +156,66 @@ public class BarChartView extends BaseChartView {
         int i;
         int i2;
         int i3;
-        long[] jArr;
+        int i4;
         float f;
         int measuredHeight = getMeasuredHeight();
-        int i4 = BaseChartView.PICKER_PADDING;
-        int i5 = measuredHeight - i4;
-        int measuredHeight2 = (getMeasuredHeight() - this.pikerHeight) - i4;
+        int i5 = BaseChartView.PICKER_PADDING;
+        int i6 = measuredHeight - i5;
+        int measuredHeight2 = (getMeasuredHeight() - this.pikerHeight) - i5;
         int size = this.lines.size();
         if (this.chartData != null) {
-            int i6 = 0;
-            while (i6 < size) {
-                BarViewData barViewData = (BarViewData) this.lines.get(i6);
+            int i7 = 0;
+            while (i7 < size) {
+                BarViewData barViewData = (BarViewData) this.lines.get(i7);
                 if (barViewData.enabled || barViewData.alpha != 0.0f) {
                     barViewData.bottomLinePath.reset();
                     float[] fArr = this.chartData.xPercentage;
                     int length = fArr.length;
                     float f2 = fArr.length < 2 ? 1.0f : fArr[1] * this.pickerWidth;
-                    long[] jArr2 = barViewData.line.y;
+                    long[] jArr = barViewData.line.y;
                     float f3 = barViewData.alpha;
-                    int i7 = 0;
                     int i8 = 0;
-                    while (i7 < length) {
-                        long j = jArr2[i7];
+                    int i9 = 0;
+                    while (i8 < length) {
+                        long j = jArr[i8];
                         if (j < 0) {
-                            i2 = size;
-                            i3 = length;
-                            jArr = jArr2;
+                            i3 = i6;
+                            i4 = size;
                         } else {
                             ChartData chartData = this.chartData;
-                            i2 = size;
-                            float f4 = chartData.xPercentage[i7] * this.pickerWidth;
+                            i3 = i6;
+                            float f4 = chartData.xPercentage[i8] * this.pickerWidth;
                             if (BaseChartView.ANIMATE_PICKER_SIZES) {
                                 f = this.pickerMaxHeight;
-                                i3 = length;
-                                jArr = jArr2;
+                                i4 = size;
                             } else {
-                                i3 = length;
-                                jArr = jArr2;
+                                i4 = size;
                                 f = chartData.maxValue;
                             }
+                            float f5 = (1.0f - ((j / f) * f3)) * (i3 - measuredHeight2);
                             float[] fArr2 = barViewData.linesPath;
-                            fArr2[i8] = f4;
-                            fArr2[i8 + 1] = (1.0f - ((j / f) * f3)) * (i5 - measuredHeight2);
-                            int i9 = i8 + 3;
-                            fArr2[i8 + 2] = f4;
-                            i8 += 4;
-                            fArr2[i9] = getMeasuredHeight() - this.chartBottom;
+                            fArr2[i9] = f4;
+                            fArr2[i9 + 1] = f5;
+                            int i10 = i9 + 3;
+                            fArr2[i9 + 2] = f4;
+                            i9 += 4;
+                            fArr2[i10] = getMeasuredHeight() - this.chartBottom;
                         }
-                        i7++;
-                        length = i3;
-                        size = i2;
-                        jArr2 = jArr;
+                        i8++;
+                        i6 = i3;
+                        size = i4;
                     }
-                    i = size;
+                    i = i6;
+                    i2 = size;
                     barViewData.paint.setStrokeWidth(f2 + 2.0f);
-                    canvas.drawLines(barViewData.linesPath, 0, i8, barViewData.paint);
+                    canvas.drawLines(barViewData.linesPath, 0, i9, barViewData.paint);
                 } else {
-                    i = size;
+                    i = i6;
+                    i2 = size;
                 }
-                i6++;
-                size = i;
+                i7++;
+                i6 = i;
+                size = i2;
             }
         }
     }

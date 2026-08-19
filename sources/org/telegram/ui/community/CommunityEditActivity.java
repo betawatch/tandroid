@@ -23,7 +23,6 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
-import java.util.Iterator;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
@@ -73,7 +72,7 @@ import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundPro
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityEditActivity extends BaseFragment implements ImageUpdater.ImageUpdaterDelegate, NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
     private final BoolAnimator animatorDoneVisible;
     private TLRPC.FileLocation avatar;
@@ -97,8 +96,7 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
     private final AlertDialog[] progressDialog;
     private PhotoViewer.PhotoViewerProvider provider;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openSetPhotoAlert$8(DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$SYe-LWGXfsCkP6IaLtIuBS31nXk(DialogInterface dialogInterface) {
     }
 
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -310,7 +308,7 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         this.doneItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityEditActivity.this.lambda$createView$0(view);
+                CommunityEditActivity.$r8$lambda$MhCfPnLm2_X3irwWzHG0pUMdYA8(CommunityEditActivity.this, view);
             }
         });
         ScaleStateListAnimator.apply(this.doneItem);
@@ -375,10 +373,9 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         return frameLayout2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view) {
-        processDone();
-        finishFragment();
+    public static /* synthetic */ void $r8$lambda$MhCfPnLm2_X3irwWzHG0pUMdYA8(CommunityEditActivity communityEditActivity, View view) {
+        communityEditActivity.processDone();
+        communityEditActivity.finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -386,14 +383,15 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         ArrayList<TL_communities.CommunityPeer> arrayList2;
         int i;
         arrayList.add(UItem.asCustomShadow(NotificationCenter.fileUploadProgressChanged, this.communityHeaderView));
+        int i2 = 0;
         if (ChatObject.canUserDoAdminAction(this.currentChat, 1)) {
-            int i2 = R.drawable.outline_profile_photo;
+            int i3 = R.drawable.outline_profile_photo;
             if (ChatObject.hasPhoto(this.currentChat)) {
                 i = R.string.CommunitySettingsChangePhoto;
             } else {
                 i = R.string.CommunitySettingsSetPhoto;
             }
-            arrayList.add(UItem.asButton(NotificationCenter.fileLoadProgressChanged, i2, LocaleController.getString(i)).accent());
+            arrayList.add(UItem.asButton(NotificationCenter.fileLoadProgressChanged, i3, LocaleController.getString(i)).accent());
             arrayList.add(UItem.asSpace(2, AndroidUtilities.dp(14.0f)));
             arrayList.add(UItem.asHeader(0, LocaleController.getString(R.string.CommunitySectionCommunityName)));
             arrayList.add(UItem.asCustom(7, this.editTextCell));
@@ -406,18 +404,18 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
             arrayList.add(UItem.asSpace(4, AndroidUtilities.dp(14.0f)));
         }
         if (ChatObject.hasAdminRights(this.currentChat)) {
-            int i3 = R.drawable.msg_admins;
+            int i4 = R.drawable.msg_admins;
             String string = LocaleController.getString(R.string.CommunityAdministrators);
             TLRPC.ChatFull chatFull = this.info;
-            arrayList.add(UItem.asButton(NotificationCenter.fileLoaded, i3, string, chatFull != null ? Integer.toString(chatFull.admins_count) : ""));
-            int i4 = R.drawable.community_requests_outline_24;
+            arrayList.add(UItem.asButton(NotificationCenter.fileLoaded, i4, string, chatFull != null ? Integer.toString(chatFull.admins_count) : ""));
+            int i5 = R.drawable.community_requests_outline_24;
             String string2 = LocaleController.getString(R.string.CommunityPendingRequests);
             TLRPC.ChatFull chatFull2 = this.info;
-            arrayList.add(UItem.asButton(NotificationCenter.fileLoadFailed, i4, string2, chatFull2 != null ? Integer.toString(chatFull2.requests_pending) : ""));
-            int i5 = R.drawable.msg_user_remove;
+            arrayList.add(UItem.asButton(NotificationCenter.fileLoadFailed, i5, string2, chatFull2 != null ? Integer.toString(chatFull2.requests_pending) : ""));
+            int i6 = R.drawable.msg_user_remove;
             String string3 = LocaleController.getString(R.string.CommunityRemovedUsers);
             TLRPC.ChatFull chatFull3 = this.info;
-            arrayList.add(UItem.asButton(NotificationCenter.filePreparingStarted, i5, string3, chatFull3 != null ? Integer.toString(chatFull3.kicked_count) : ""));
+            arrayList.add(UItem.asButton(NotificationCenter.filePreparingStarted, i6, string3, chatFull3 != null ? Integer.toString(chatFull3.kicked_count) : ""));
         }
         arrayList.add(UItem.asSpace(5, AndroidUtilities.dp(14.0f)));
         arrayList.add(UItem.asButton(NotificationCenter.filePreparingFailed, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityMenuAddChat)).accent());
@@ -425,9 +423,11 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         if (chatFull4 == null || (arrayList2 = chatFull4.linked_peers) == null) {
             return;
         }
-        Iterator<TL_communities.CommunityPeer> it = arrayList2.iterator();
-        while (it.hasNext()) {
-            arrayList.add(UItem.asProfileCell(getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(it.next().peer))));
+        int size = arrayList2.size();
+        while (i2 < size) {
+            TL_communities.CommunityPeer communityPeer = arrayList2.get(i2);
+            i2++;
+            arrayList.add(UItem.asProfileCell(getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(communityPeer.peer))));
         }
     }
 
@@ -500,7 +500,7 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
             AlertsCreator.createClearOrDeleteDialogAlert(this, false, this.currentChat, null, false, true, true, false, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                 public final void run(boolean z) {
-                    CommunityEditActivity.this.lambda$onClick$1(z);
+                    CommunityEditActivity.$r8$lambda$E1twvnFoP6lE4L1wuIfV1mPrHCc(CommunityEditActivity.this, z);
                 }
             });
             return;
@@ -517,10 +517,9 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$1(boolean z) {
-        finishFragment();
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-this.communityId), null, this.currentChat, Boolean.valueOf(z));
+    public static /* synthetic */ void $r8$lambda$E1twvnFoP6lE4L1wuIfV1mPrHCc(CommunityEditActivity communityEditActivity, boolean z) {
+        communityEditActivity.finishFragment();
+        communityEditActivity.getNotificationCenter().postNotificationName(NotificationCenter.needDeleteDialog, Long.valueOf(-communityEditActivity.communityId), null, communityEditActivity.currentChat, Boolean.valueOf(z));
     }
 
     private void setAllowedManageLinkedPeers(boolean z) {
@@ -541,35 +540,35 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean onLongClick(UItem uItem, View view, int i, float f, float f2) {
+        long j;
         boolean canRemoveBotFromCommunity;
         final boolean z;
-        final long j;
         final boolean z2;
         int i2;
         Object obj = uItem.object;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
-            long j2 = -chat.id;
+            j = -chat.id;
             boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
             canRemoveBotFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentChat);
             z2 = isChannelAndNotMegaGroup;
-            j = j2;
             z = false;
         } else {
             if (!(obj instanceof TLRPC.User)) {
                 return false;
             }
             TLRPC.User user = (TLRPC.User) obj;
-            long j3 = user.id;
+            j = user.id;
             boolean isBot = UserObject.isBot(user);
             canRemoveBotFromCommunity = ChatObject.canRemoveBotFromCommunity(user, this.currentChat);
             z = isBot;
-            j = j3;
             z2 = false;
         }
-        CommunityChatType communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, j);
-        boolean z3 = communityChatType == CommunityChatType.YouAreIn || communityChatType == CommunityChatType.YouCanView;
-        if (!canRemoveBotFromCommunity && !z3) {
+        boolean z3 = canRemoveBotFromCommunity;
+        final long j2 = j;
+        CommunityChatType communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, j2);
+        boolean z4 = communityChatType == CommunityChatType.YouAreIn || communityChatType == CommunityChatType.YouCanView;
+        if (!z3 && !z4) {
             return false;
         }
         ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, view);
@@ -581,16 +580,16 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         } else {
             i2 = R.string.CommunityMenuViewGroup;
         }
-        makeOptions.addIf(z3, i3, LocaleController.getString(i2), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda8
+        makeOptions.addIf(z4, i3, LocaleController.getString(i2), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$onLongClick$2(j);
+                CommunityEditActivity.$r8$lambda$ioyRUjkbzULk4zxD3ogKohsvCOc(CommunityEditActivity.this, j2);
             }
         });
-        makeOptions.addIf(canRemoveBotFromCommunity, R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda9
+        makeOptions.addIf(z3, R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$onLongClick$5(z, z2, j);
+                CommunityEditActivity.$r8$lambda$0Rg8aCGQXrTtvk-nqYIblyOZGok(CommunityEditActivity.this, z, z2, j2);
             }
         });
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view, true));
@@ -598,14 +597,14 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$2(long j) {
-        presentFragment(ChatActivity.of(j));
+    public static /* synthetic */ void $r8$lambda$ioyRUjkbzULk4zxD3ogKohsvCOc(CommunityEditActivity communityEditActivity, long j) {
+        communityEditActivity.getClass();
+        communityEditActivity.presentFragment(ChatActivity.of(j));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$5(boolean z, boolean z2, final long j) {
+    public static /* synthetic */ void $r8$lambda$0Rg8aCGQXrTtvk-nqYIblyOZGok(final CommunityEditActivity communityEditActivity, boolean z, boolean z2, final long j) {
         int i;
+        communityEditActivity.getClass();
         String string = LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity);
         if (z) {
             i = R.string.CommunityMenuRemoveBotFromCommunityConfirm;
@@ -614,28 +613,23 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         } else {
             i = R.string.CommunityMenuRemoveGroupFromCommunityConfirm;
         }
-        AlertsCreator.showSimpleConfirmAlert(this, string, LocaleController.getString(i), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda10
+        AlertsCreator.showSimpleConfirmAlert(communityEditActivity, string, LocaleController.getString(i), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$onLongClick$4(j);
+                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(j, r0.communityId, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda13
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj, Object obj2) {
+                        CommunityEditActivity.$r8$lambda$QAQHIFQTJCXRuxMhglOh4LuWY0M(CommunityEditActivity.this, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$4(long j) {
-        MessagesController.getInstance(this.currentAccount).unlinkCommunity(j, this.communityId, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda13
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                CommunityEditActivity.this.lambda$onLongClick$3((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$3(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$QAQHIFQTJCXRuxMhglOh4LuWY0M(CommunityEditActivity communityEditActivity, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+        communityEditActivity.getClass();
         if (tL_error != null) {
-            BulletinFactory.of(this).showForError(tL_error);
+            BulletinFactory.of(communityEditActivity).showForError(tL_error);
         }
     }
 
@@ -662,7 +656,7 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
             getMessagesController().changeChatTitle(this.currentChat.id, this.editTextCell.getText(), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CommunityEditActivity.this.lambda$processDone$6();
+                    CommunityEditActivity.this.getNotificationCenter().postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));
                 }
             });
         }
@@ -675,11 +669,6 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         }
         this.currentChat.default_banned_rights.manage_linked_peers = !this.canAllManageLinkedPeers;
         getMessagesController().setDefaultBannedRole(this.communityId, this.currentChat.default_banned_rights, false, this);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$6() {
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -746,22 +735,21 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         this.imageUpdater.openMenu(this.avatar != null, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$openSetPhotoAlert$7();
+                CommunityEditActivity.$r8$lambda$V34YbR9DPlXIDP8kNdquZsLAk48(CommunityEditActivity.this);
             }
         }, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda12
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                CommunityEditActivity.lambda$openSetPhotoAlert$8(dialogInterface);
+                CommunityEditActivity.$r8$lambda$SYe-LWGXfsCkP6IaLtIuBS31nXk(dialogInterface);
             }
         }, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openSetPhotoAlert$7() {
-        this.avatar = null;
-        MessagesController.getInstance(this.currentAccount).changeChatAvatar(this.communityId, null, null, null, null, 0.0d, null, null, null, null);
-        showAvatarProgress(false, true);
-        this.avatarImage.setImage((ImageLocation) null, (String) null, this.avatarDrawable, this.currentChat);
+    public static /* synthetic */ void $r8$lambda$V34YbR9DPlXIDP8kNdquZsLAk48(CommunityEditActivity communityEditActivity) {
+        communityEditActivity.avatar = null;
+        MessagesController.getInstance(communityEditActivity.currentAccount).changeChatAvatar(communityEditActivity.communityId, null, null, null, null, 0.0d, null, null, null, null);
+        communityEditActivity.showAvatarProgress(false, true);
+        communityEditActivity.avatarImage.setImage((ImageLocation) null, (String) null, communityEditActivity.avatarDrawable, communityEditActivity.currentChat);
     }
 
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -787,23 +775,23 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$didUploadPhoto$9(photoSize2, inputFile, inputFile2, videoSize, d, str, photoSize);
+                CommunityEditActivity.$r8$lambda$7wwTH4M3Tu36YFpbuZmaQnOrX2w(CommunityEditActivity.this, photoSize2, inputFile, inputFile2, videoSize, d, str, photoSize);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didUploadPhoto$9(TLRPC.PhotoSize photoSize, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize2) {
+    public static /* synthetic */ void $r8$lambda$7wwTH4M3Tu36YFpbuZmaQnOrX2w(CommunityEditActivity communityEditActivity, TLRPC.PhotoSize photoSize, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize2) {
+        communityEditActivity.getClass();
         TLRPC.FileLocation fileLocation = photoSize.location;
-        this.avatar = fileLocation;
+        communityEditActivity.avatar = fileLocation;
         if (inputFile != null || inputFile2 != null || videoSize != null) {
-            getMessagesController().changeChatAvatar(this.communityId, null, inputFile, inputFile2, videoSize, d, str, photoSize.location, photoSize2.location, null);
-            showAvatarProgress(false, true);
+            communityEditActivity.getMessagesController().changeChatAvatar(communityEditActivity.communityId, null, inputFile, inputFile2, videoSize, d, str, photoSize.location, photoSize2.location, null);
+            communityEditActivity.showAvatarProgress(false, true);
         } else {
-            this.avatarImage.setImage(ImageLocation.getForLocal(fileLocation), "50_50", this.avatarDrawable, this.currentChat);
-            showAvatarProgress(true, false);
+            communityEditActivity.avatarImage.setImage(ImageLocation.getForLocal(fileLocation), "50_50", communityEditActivity.avatarDrawable, communityEditActivity.currentChat);
+            communityEditActivity.showAvatarProgress(true, false);
         }
-        this.listView.adapter.update(true);
+        communityEditActivity.listView.adapter.update(true);
     }
 
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate

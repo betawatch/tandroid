@@ -10,24 +10,20 @@ class OptionalProvider implements Provider, Deferred {
     private static final Deferred.DeferredHandler NOOP_HANDLER = new Deferred.DeferredHandler() { // from class: com.google.firebase.components.OptionalProvider$$ExternalSyntheticLambda0
         @Override // com.google.firebase.inject.Deferred.DeferredHandler
         public final void handle(Provider provider) {
-            OptionalProvider.lambda$static$0(provider);
+            OptionalProvider.$r8$lambda$ytZhMnMbf78qjlsbWoYlWtBGovI(provider);
         }
     };
     private static final Provider EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.OptionalProvider$$ExternalSyntheticLambda1
         @Override // com.google.firebase.inject.Provider
         public final Object get() {
-            Object lambda$static$1;
-            lambda$static$1 = OptionalProvider.lambda$static$1();
-            return lambda$static$1;
+            return OptionalProvider.$r8$lambda$42DdGLxm8XDmnYxP5XsnqhLiudg();
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$0(Provider provider) {
+    public static /* synthetic */ void $r8$lambda$ytZhMnMbf78qjlsbWoYlWtBGovI(Provider provider) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$static$1() {
+    public static /* synthetic */ Object $r8$lambda$42DdGLxm8XDmnYxP5XsnqhLiudg() {
         return null;
     }
 
@@ -81,7 +77,7 @@ class OptionalProvider implements Provider, Deferred {
                 this.handler = new Deferred.DeferredHandler() { // from class: com.google.firebase.components.OptionalProvider$$ExternalSyntheticLambda2
                     @Override // com.google.firebase.inject.Deferred.DeferredHandler
                     public final void handle(Provider provider5) {
-                        OptionalProvider.lambda$whenAvailable$2(Deferred.DeferredHandler.this, deferredHandler, provider5);
+                        OptionalProvider.$r8$lambda$SG6J0sYOwGLatJJ8BJZBQ-OrQm8(Deferred.DeferredHandler.this, deferredHandler, provider5);
                     }
                 };
                 provider2 = null;
@@ -92,8 +88,7 @@ class OptionalProvider implements Provider, Deferred {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$whenAvailable$2(Deferred.DeferredHandler deferredHandler, Deferred.DeferredHandler deferredHandler2, Provider provider) {
+    public static /* synthetic */ void $r8$lambda$SG6J0sYOwGLatJJ8BJZBQ-OrQm8(Deferred.DeferredHandler deferredHandler, Deferred.DeferredHandler deferredHandler2, Provider provider) {
         deferredHandler.handle(provider);
         deferredHandler2.handle(provider);
     }

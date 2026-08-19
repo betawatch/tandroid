@@ -34,27 +34,25 @@ public class DefaultScheduler implements Scheduler {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.DefaultScheduler$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultScheduler.this.lambda$schedule$1(transportContext, transportScheduleCallback, eventInternal);
+                DefaultScheduler.$r8$lambda$e6JsNcl7eJ_uvseaJMOS9AGgb2A(DefaultScheduler.this, transportContext, transportScheduleCallback, eventInternal);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$schedule$1(final TransportContext transportContext, TransportScheduleCallback transportScheduleCallback, EventInternal eventInternal) {
+    public static /* synthetic */ void $r8$lambda$e6JsNcl7eJ_uvseaJMOS9AGgb2A(final DefaultScheduler defaultScheduler, final TransportContext transportContext, TransportScheduleCallback transportScheduleCallback, EventInternal eventInternal) {
+        defaultScheduler.getClass();
         try {
-            TransportBackend transportBackend = this.backendRegistry.get(transportContext.getBackendName());
+            TransportBackend transportBackend = defaultScheduler.backendRegistry.get(transportContext.getBackendName());
             if (transportBackend == null) {
                 String format = String.format("Transport backend '%s' is not registered", transportContext.getBackendName());
                 LOGGER.warning(format);
                 transportScheduleCallback.onSchedule(new IllegalArgumentException(format));
             } else {
                 final EventInternal decorate = transportBackend.decorate(eventInternal);
-                this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.DefaultScheduler$$ExternalSyntheticLambda1
+                defaultScheduler.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.DefaultScheduler$$ExternalSyntheticLambda1
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        Object lambda$schedule$0;
-                        lambda$schedule$0 = DefaultScheduler.this.lambda$schedule$0(transportContext, decorate);
-                        return lambda$schedule$0;
+                        return DefaultScheduler.$r8$lambda$GlqmrSMOOB_fezGeVe6EN3_zTX0(DefaultScheduler.this, transportContext, decorate);
                     }
                 });
                 transportScheduleCallback.onSchedule(null);
@@ -65,10 +63,9 @@ public class DefaultScheduler implements Scheduler {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$schedule$0(TransportContext transportContext, EventInternal eventInternal) {
-        this.eventStore.persist(transportContext, eventInternal);
-        this.workScheduler.schedule(transportContext, 1);
+    public static /* synthetic */ Object $r8$lambda$GlqmrSMOOB_fezGeVe6EN3_zTX0(DefaultScheduler defaultScheduler, TransportContext transportContext, EventInternal eventInternal) {
+        defaultScheduler.eventStore.persist(transportContext, eventInternal);
+        defaultScheduler.workScheduler.schedule(transportContext, 1);
         return null;
     }
 }

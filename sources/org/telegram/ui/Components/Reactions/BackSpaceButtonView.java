@@ -24,8 +24,7 @@ public class BackSpaceButtonView extends FrameLayout {
     private Utilities.Callback onBackspace;
     private final Theme.ResourcesProvider resourcesProvider;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$fzY2D_3TtdN909QK9dTb1llnbDo(View view) {
     }
 
     public BackSpaceButtonView(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -68,7 +67,7 @@ public class BackSpaceButtonView extends FrameLayout {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Reactions.BackSpaceButtonView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BackSpaceButtonView.lambda$new$0(view);
+                BackSpaceButtonView.$r8$lambda$fzY2D_3TtdN909QK9dTb1llnbDo(view);
             }
         });
         addView(imageView, LayoutHelper.createFrame(36, 36, 17));
@@ -93,24 +92,23 @@ public class BackSpaceButtonView extends FrameLayout {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.BackSpaceButtonView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BackSpaceButtonView.this.lambda$postBackspaceRunnable$1(i);
+                BackSpaceButtonView.$r8$lambda$RJgduBNT1ld1wSusT-o8wjlfmxM(BackSpaceButtonView.this, i);
             }
         }, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$postBackspaceRunnable$1(int i) {
-        if (this.backspacePressed) {
-            Utilities.Callback callback = this.onBackspace;
+    public static /* synthetic */ void $r8$lambda$RJgduBNT1ld1wSusT-o8wjlfmxM(BackSpaceButtonView backSpaceButtonView, int i) {
+        if (backSpaceButtonView.backspacePressed) {
+            Utilities.Callback callback = backSpaceButtonView.onBackspace;
             if (callback != null) {
                 callback.run(Boolean.valueOf(i < 300));
                 try {
-                    this.backspaceButton.performHapticFeedback(3);
+                    backSpaceButtonView.backspaceButton.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
             }
-            this.backspaceOnce = true;
-            postBackspaceRunnable(Math.max(50, i - 100));
+            backSpaceButtonView.backspaceOnce = true;
+            backSpaceButtonView.postBackspaceRunnable(Math.max(50, i - 100));
         }
     }
 

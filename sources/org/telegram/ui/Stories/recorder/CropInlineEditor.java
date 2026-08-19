@@ -25,7 +25,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Paint.Views.EntityView;
 import org.telegram.ui.Components.Paint.Views.PhotoView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CropInlineEditor extends FrameLayout {
     private final AnimatedFloat animatedMirror;
     private final AnimatedFloat animatedOrientation;
@@ -50,7 +50,8 @@ public abstract class CropInlineEditor extends FrameLayout {
     private final int[] thisLocation;
     public final CropRotationWheel wheel;
 
-    protected abstract void close();
+    /* JADX INFO: Access modifiers changed from: protected */
+    public abstract void close();
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentWidth() {
@@ -172,7 +173,7 @@ public abstract class CropInlineEditor extends FrameLayout {
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CropInlineEditor$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CropInlineEditor.this.lambda$new$0(view);
+                CropInlineEditor.this.close();
             }
         });
         TextView textView2 = new TextView(context);
@@ -187,7 +188,7 @@ public abstract class CropInlineEditor extends FrameLayout {
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CropInlineEditor$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CropInlineEditor.this.lambda$new$1(view);
+                CropInlineEditor.$r8$lambda$qJX8RxU0Lrm6P1q7BY-N6tO1wCE(CropInlineEditor.this, view);
             }
         });
         TextView textView3 = new TextView(context);
@@ -202,29 +203,22 @@ public abstract class CropInlineEditor extends FrameLayout {
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CropInlineEditor$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CropInlineEditor.this.lambda$new$2(view);
+                CropInlineEditor.$r8$lambda$mLhTaRudlM7y-tsoxAbv8R86FZQ(CropInlineEditor.this, view);
             }
         });
         this.shapesLayout = new LinearLayout(context);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        close();
+    public static /* synthetic */ void $r8$lambda$qJX8RxU0Lrm6P1q7BY-N6tO1wCE(CropInlineEditor cropInlineEditor, View view) {
+        cropInlineEditor.cropView.reset(true);
+        cropInlineEditor.wheel.setRotated(false);
+        cropInlineEditor.wheel.setMirrored(false);
+        cropInlineEditor.wheel.setRotation(0.0f, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        this.cropView.reset(true);
-        this.wheel.setRotated(false);
-        this.wheel.setMirrored(false);
-        this.wheel.setRotation(0.0f, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        apply();
-        close();
+    public static /* synthetic */ void $r8$lambda$mLhTaRudlM7y-tsoxAbv8R86FZQ(CropInlineEditor cropInlineEditor, View view) {
+        cropInlineEditor.apply();
+        cropInlineEditor.close();
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -250,13 +244,14 @@ public abstract class CropInlineEditor extends FrameLayout {
         if (cropState == null) {
             cropState = null;
         }
-        this.cropView.start(photoView.getOrientation(), true, false, this.cropTransform, cropState);
+        MediaController.CropState cropState2 = cropState;
+        this.cropView.start(photoView.getOrientation(), true, false, this.cropTransform, cropState2);
         this.wheel.setRotation(this.cropView.getRotation());
-        if (cropState != null) {
-            this.wheel.setRotation(cropState.cropRotate, false);
-            this.wheel.setRotated(cropState.transformRotation != 0);
-            this.wheel.setMirrored(cropState.mirrored);
-            this.animatedMirror.set(cropState.mirrored, false);
+        if (cropState2 != null) {
+            this.wheel.setRotation(cropState2.cropRotate, false);
+            this.wheel.setRotated(cropState2.transformRotation != 0);
+            this.wheel.setMirrored(cropState2.mirrored);
+            this.animatedMirror.set(cropState2.mirrored, false);
         } else {
             this.wheel.setRotation(0.0f, false);
             this.wheel.setRotated(false);
@@ -297,18 +292,17 @@ public abstract class CropInlineEditor extends FrameLayout {
         this.photoView.containerView.post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CropInlineEditor$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                CropInlineEditor.this.lambda$apply$3();
+                CropInlineEditor.$r8$lambda$Zmi0VjOXwK3iY_duU7tmLskfkgM(CropInlineEditor.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$apply$3() {
-        EntityView.SelectionView selectionView = this.photoView.selectionView;
+    public static /* synthetic */ void $r8$lambda$Zmi0VjOXwK3iY_duU7tmLskfkgM(CropInlineEditor cropInlineEditor) {
+        EntityView.SelectionView selectionView = cropInlineEditor.photoView.selectionView;
         if (selectionView != null) {
             selectionView.updatePosition();
         }
-        this.photoView.updatePosition();
+        cropInlineEditor.photoView.updatePosition();
     }
 
     public float getAppearProgress() {

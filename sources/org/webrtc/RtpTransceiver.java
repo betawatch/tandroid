@@ -7,7 +7,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpCapabilities;
 import org.webrtc.RtpParameters;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RtpTransceiver {
     private RtpReceiver cachedReceiver;
     private RtpSender cachedSender;
@@ -71,12 +71,17 @@ public class RtpTransceiver {
             this(RtpTransceiverDirection.SEND_RECV);
         }
 
+        /* JADX WARN: Illegal instructions before constructor call */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public RtpTransceiverInit(RtpTransceiverDirection rtpTransceiverDirection) {
-            this(rtpTransceiverDirection, Collections.emptyList(), Collections.emptyList());
+            this(rtpTransceiverDirection, r0, r0);
+            List list = Collections.EMPTY_LIST;
         }
 
         public RtpTransceiverInit(RtpTransceiverDirection rtpTransceiverDirection, List<String> list) {
-            this(rtpTransceiverDirection, list, Collections.emptyList());
+            this(rtpTransceiverDirection, list, Collections.EMPTY_LIST);
         }
 
         public RtpTransceiverInit(RtpTransceiverDirection rtpTransceiverDirection, List<String> list, List<RtpParameters.Encoding> list2) {

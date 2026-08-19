@@ -425,13 +425,12 @@ public abstract class MaskPaintView extends FrameLayout {
         this.queue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.MaskPaintView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MaskPaintView.lambda$shutdown$0();
+                MaskPaintView.$r8$lambda$cXRL7e_YItIUpm3UBcEWZiwtjVc();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$shutdown$0() {
+    public static /* synthetic */ void $r8$lambda$cXRL7e_YItIUpm3UBcEWZiwtjVc() {
         Looper myLooper = Looper.myLooper();
         if (myLooper != null) {
             myLooper.quit();

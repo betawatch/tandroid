@@ -84,7 +84,7 @@ public final class GridTemplate implements Template {
         this.mHeaderAction = null;
         this.mSingleList = null;
         this.mActionStrip = null;
-        this.mActions = Collections.emptyList();
+        this.mActions = Collections.EMPTY_LIST;
         this.mItemSize = 1;
         this.mItemImageShape = 1;
     }

@@ -55,15 +55,12 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this(executorService, executor, firebaseApp, new FirebaseInstallationServiceClient(firebaseApp.getApplicationContext(), provider), new PersistedInstallation(firebaseApp), Utils.getInstance(), new Lazy(new Provider() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
-                IidStore lambda$new$0;
-                lambda$new$0 = FirebaseInstallations.lambda$new$0(FirebaseApp.this);
-                return lambda$new$0;
+                return FirebaseInstallations.$r8$lambda$z0Ybp6xAOnLAhXE51EMdjIBTAfA(FirebaseApp.this);
             }
         }), new RandomFidGenerator());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ IidStore lambda$new$0(FirebaseApp firebaseApp) {
+    public static /* synthetic */ IidStore $r8$lambda$z0Ybp6xAOnLAhXE51EMdjIBTAfA(FirebaseApp firebaseApp) {
         return new IidStore(firebaseApp);
     }
 
@@ -117,15 +114,10 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.lambda$getId$1();
+                FirebaseInstallations.this.doRegistrationOrRefresh(false);
             }
         });
         return addGetIdListener;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getId$1() {
-        lambda$getToken$2(false);
     }
 
     @Override // com.google.firebase.installations.FirebaseInstallationsApi
@@ -135,7 +127,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.lambda$getToken$2(z);
+                FirebaseInstallations.this.doRegistrationOrRefresh(z);
             }
         });
         return addGetAuthTokenListener;
@@ -198,8 +190,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: doRegistrationOrRefresh, reason: merged with bridge method [inline-methods] */
-    public final void lambda$getToken$2(final boolean z) {
+    public final void doRegistrationOrRefresh(final boolean z) {
         PersistedInstallationEntry prefsWithGeneratedIdMultiProcessSafe = getPrefsWithGeneratedIdMultiProcessSafe();
         if (z) {
             prefsWithGeneratedIdMultiProcessSafe = prefsWithGeneratedIdMultiProcessSafe.withClearedAuthToken();
@@ -208,7 +199,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.networkExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.lambda$doRegistrationOrRefresh$3(z);
+                FirebaseInstallations.this.doNetworkCallIfNecessary(z);
             }
         });
     }
@@ -221,11 +212,10 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     /* JADX WARN: Removed duplicated region for block: B:17:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0041  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x004c  */
-    /* renamed from: doNetworkCallIfNecessary, reason: merged with bridge method [inline-methods] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void lambda$doRegistrationOrRefresh$3(boolean z) {
+    public void doNetworkCallIfNecessary(boolean z) {
         PersistedInstallationEntry registerFidWithServer;
         PersistedInstallationEntry multiProcessSafePrefs = getMultiProcessSafePrefs();
         try {

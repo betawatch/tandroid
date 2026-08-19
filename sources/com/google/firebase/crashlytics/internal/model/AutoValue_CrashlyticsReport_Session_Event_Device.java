@@ -58,14 +58,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_Device extends Crashlytics
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Device)) {
-            return false;
-        }
-        CrashlyticsReport.Session.Event.Device device = (CrashlyticsReport.Session.Event.Device) obj;
-        Double d = this.batteryLevel;
-        if (d != null ? d.equals(device.getBatteryLevel()) : device.getBatteryLevel() == null) {
-            if (this.batteryVelocity == device.getBatteryVelocity() && this.proximityOn == device.isProximityOn() && this.orientation == device.getOrientation() && this.ramUsed == device.getRamUsed() && this.diskUsed == device.getDiskUsed()) {
-                return true;
+        if (obj instanceof CrashlyticsReport.Session.Event.Device) {
+            CrashlyticsReport.Session.Event.Device device = (CrashlyticsReport.Session.Event.Device) obj;
+            Double d = this.batteryLevel;
+            if (d != null ? d.equals(device.getBatteryLevel()) : device.getBatteryLevel() == null) {
+                if (this.batteryVelocity == device.getBatteryVelocity() && this.proximityOn == device.isProximityOn() && this.orientation == device.getOrientation() && this.ramUsed == device.getRamUsed() && this.diskUsed == device.getDiskUsed()) {
+                    return true;
+                }
             }
         }
         return false;

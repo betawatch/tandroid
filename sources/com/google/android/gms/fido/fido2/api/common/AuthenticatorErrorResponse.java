@@ -75,9 +75,10 @@ public class AuthenticatorErrorResponse extends AuthenticatorResponse {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("code", this.zza.getCode());
             String str = this.zzb;
-            if (str != null) {
-                jSONObject.put("message", str);
+            if (str == null) {
+                return jSONObject;
             }
+            jSONObject.put("message", str);
             return jSONObject;
         } catch (JSONException e) {
             throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);

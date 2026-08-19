@@ -22,25 +22,13 @@ public abstract class AppManager {
             throw null;
         }
 
-        private static /* synthetic */ Object lambda$onBackPressed$0(CarContext carContext) {
-            throw null;
-        }
-
         @Override // androidx.car.app.IAppManager
         public void startLocationUpdates(IOnDoneCallback iOnDoneCallback) {
             throw null;
         }
 
-        private static /* synthetic */ Object lambda$startLocationUpdates$1(CarContext carContext) {
-            throw null;
-        }
-
         @Override // androidx.car.app.IAppManager
         public void stopLocationUpdates(IOnDoneCallback iOnDoneCallback) {
-            throw null;
-        }
-
-        private static /* synthetic */ Object lambda$stopLocationUpdates$2(CarContext carContext) {
             throw null;
         }
     }

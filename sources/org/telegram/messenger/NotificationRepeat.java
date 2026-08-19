@@ -19,14 +19,9 @@ public class NotificationRepeat extends IntentService {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationRepeat$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationRepeat.lambda$onHandleIntent$0(intExtra);
+                    NotificationsController.getInstance(intExtra).repeatNotificationMaybe();
                 }
             });
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onHandleIntent$0(int i) {
-        NotificationsController.getInstance(i).repeatNotificationMaybe();
     }
 }

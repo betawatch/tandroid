@@ -31,9 +31,9 @@ abstract class zzav {
             int i9 = i3 & i;
             if (i7 == -1) {
                 zze(obj3, i4, i9);
-            } else {
-                iArr[i7] = (i9 & i) | (iArr[i7] & i5);
+                return i2;
             }
+            iArr[i7] = (i9 & i) | (iArr[i7] & i5);
             return i2;
         }
         return -1;

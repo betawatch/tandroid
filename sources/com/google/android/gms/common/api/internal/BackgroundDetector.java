@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import com.google.android.gms.common.util.ProcessUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /* loaded from: classes.dex */
@@ -48,9 +47,13 @@ public final class BackgroundDetector implements Application.ActivityLifecycleCa
     private final void zza(boolean z) {
         synchronized (zza) {
             try {
-                Iterator it = this.zzd.iterator();
-                while (it.hasNext()) {
-                    ((BackgroundStateChangeListener) it.next()).onBackgroundStateChanged(z);
+                ArrayList arrayList = this.zzd;
+                int size = arrayList.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    ((BackgroundStateChangeListener) obj).onBackgroundStateChanged(z);
                 }
             } catch (Throwable th) {
                 throw th;

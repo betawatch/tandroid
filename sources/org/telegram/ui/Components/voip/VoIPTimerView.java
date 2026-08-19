@@ -28,10 +28,9 @@ public class VoIPTimerView extends View {
     StaticLayout timerLayout;
     Runnable updater;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        if (getVisibility() == 0) {
-            updateTimer();
+    public static /* synthetic */ void $r8$lambda$xsiNA0j6b08VDtkuk-zVFm69eYo(VoIPTimerView voIPTimerView) {
+        if (voIPTimerView.getVisibility() == 0) {
+            voIPTimerView.updateTimer();
         }
     }
 
@@ -46,7 +45,7 @@ public class VoIPTimerView extends View {
         this.updater = new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPTimerView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                VoIPTimerView.this.lambda$new$0();
+                VoIPTimerView.$r8$lambda$xsiNA0j6b08VDtkuk-zVFm69eYo(VoIPTimerView.this);
             }
         };
         this.textPaint.setTextSize(AndroidUtilities.dp(15.0f));

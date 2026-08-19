@@ -165,16 +165,14 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
             return false;
         }
         Object obj = _queue$volatile$FU.get(this);
-        if (obj != null) {
-            if (obj instanceof LockFreeTaskQueueCore) {
-                return ((LockFreeTaskQueueCore) obj).isEmpty();
-            }
-            symbol = EventLoop_commonKt.CLOSED_EMPTY;
-            if (obj != symbol) {
-                return false;
-            }
+        if (obj == null) {
+            return true;
         }
-        return true;
+        if (obj instanceof LockFreeTaskQueueCore) {
+            return ((LockFreeTaskQueueCore) obj).isEmpty();
+        }
+        symbol = EventLoop_commonKt.CLOSED_EMPTY;
+        return obj == symbol;
     }
 
     @Override // kotlinx.coroutines.EventLoop

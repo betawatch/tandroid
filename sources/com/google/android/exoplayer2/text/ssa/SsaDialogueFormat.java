@@ -31,7 +31,7 @@ final class SsaDialogueFormat {
         int i4 = -1;
         for (int i5 = 0; i5 < split.length; i5++) {
             String lowerCase = Ascii.toLowerCase(split[i5].trim());
-            lowerCase.hashCode();
+            lowerCase.getClass();
             switch (lowerCase.hashCode()) {
                 case 100571:
                     if (lowerCase.equals("end")) {

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes.dex */
-public final class DataHolder extends AbstractSafeParcelable implements Closeable {
+public final class DataHolder extends AbstractSafeParcelable implements Closeable, AutoCloseable {
     public static final Parcelable.Creator<DataHolder> CREATOR = new zaf();
     private static final Builder zaf = new zab(new String[0], null);
     final int zaa;

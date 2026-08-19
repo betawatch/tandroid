@@ -35,11 +35,13 @@ final class AutoValue_StartupTime extends StartupTime {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof StartupTime)) {
-            return false;
+        if (obj instanceof StartupTime) {
+            StartupTime startupTime = (StartupTime) obj;
+            if (this.epochMillis == startupTime.getEpochMillis() && this.elapsedRealtime == startupTime.getElapsedRealtime() && this.uptimeMillis == startupTime.getUptimeMillis()) {
+                return true;
+            }
         }
-        StartupTime startupTime = (StartupTime) obj;
-        return this.epochMillis == startupTime.getEpochMillis() && this.elapsedRealtime == startupTime.getElapsedRealtime() && this.uptimeMillis == startupTime.getUptimeMillis();
+        return false;
     }
 
     public int hashCode() {
@@ -47,6 +49,6 @@ final class AutoValue_StartupTime extends StartupTime {
         long j2 = this.elapsedRealtime;
         int i = (((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003;
         long j3 = this.uptimeMillis;
-        return ((int) ((j3 >>> 32) ^ j3)) ^ i;
+        return ((int) (j3 ^ (j3 >>> 32))) ^ i;
     }
 }

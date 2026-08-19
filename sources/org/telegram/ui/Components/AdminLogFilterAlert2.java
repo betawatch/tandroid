@@ -5,7 +5,6 @@ import android.view.ViewGroup;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -114,7 +113,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i2, float f, float f2) {
-                AdminLogFilterAlert2.this.lambda$new$0(view, i2, f, f2);
+                r0.onClick(AdminLogFilterAlert2.this.adapter.getItem(i2 - 1), view, f);
             }
         });
         SelectorBtnCell selectorBtnCell = new SelectorBtnCell(getContext(), this.resourcesProvider, null);
@@ -130,7 +129,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AdminLogFilterAlert2$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AdminLogFilterAlert2.this.lambda$new$1(view);
+                AdminLogFilterAlert2.$r8$lambda$W_c0trDSi_v0wW3BmGqLIy8X0xM(AdminLogFilterAlert2.this, view);
             }
         });
         selectorBtnCell.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 87));
@@ -143,23 +142,17 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         this.recyclerListView.setSections();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i, float f, float f2) {
-        onClick(this.adapter.getItem(i - 1), view, f);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
+    public static /* synthetic */ void $r8$lambda$W_c0trDSi_v0wW3BmGqLIy8X0xM(AdminLogFilterAlert2 adminLogFilterAlert2, View view) {
+        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = adminLogFilterAlert2.currentFilter;
         if (tL_channelAdminLogEventsFilter.join && tL_channelAdminLogEventsFilter.leave && tL_channelAdminLogEventsFilter.edit_rank && tL_channelAdminLogEventsFilter.invite && tL_channelAdminLogEventsFilter.ban && tL_channelAdminLogEventsFilter.unban && tL_channelAdminLogEventsFilter.kick && tL_channelAdminLogEventsFilter.unkick && tL_channelAdminLogEventsFilter.promote && tL_channelAdminLogEventsFilter.demote && tL_channelAdminLogEventsFilter.info && tL_channelAdminLogEventsFilter.settings && tL_channelAdminLogEventsFilter.pinned && tL_channelAdminLogEventsFilter.edit && tL_channelAdminLogEventsFilter.delete && tL_channelAdminLogEventsFilter.group_call && tL_channelAdminLogEventsFilter.invites) {
-            this.currentFilter = null;
+            adminLogFilterAlert2.currentFilter = null;
         }
-        LongSparseArray longSparseArray = this.selectedAdmins;
-        if (longSparseArray != null && this.currentAdmins != null && longSparseArray.size() >= this.currentAdmins.size()) {
-            this.selectedAdmins = null;
+        LongSparseArray longSparseArray = adminLogFilterAlert2.selectedAdmins;
+        if (longSparseArray != null && adminLogFilterAlert2.currentAdmins != null && longSparseArray.size() >= adminLogFilterAlert2.currentAdmins.size()) {
+            adminLogFilterAlert2.selectedAdmins = null;
         }
-        this.delegate.didSelectRights(this.currentFilter, this.selectedAdmins);
-        lambda$new$0();
+        adminLogFilterAlert2.delegate.didSelectRights(adminLogFilterAlert2.currentFilter, adminLogFilterAlert2.selectedAdmins);
+        adminLogFilterAlert2.dismiss();
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -206,22 +199,21 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         return new View.OnClickListener() { // from class: org.telegram.ui.Components.AdminLogFilterAlert2$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AdminLogFilterAlert2.this.lambda$getGroupClick$2(i, view);
+                AdminLogFilterAlert2.$r8$lambda$HcRcYALdH6_mI6ItT_7vWE8ECUU(AdminLogFilterAlert2.this, i, view);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getGroupClick$2(int i, View view) {
+    public static /* synthetic */ void $r8$lambda$HcRcYALdH6_mI6ItT_7vWE8ECUU(AdminLogFilterAlert2 adminLogFilterAlert2, int i, View view) {
         if (i == 0) {
-            this.sectionMembersExpanded = !this.sectionMembersExpanded;
+            adminLogFilterAlert2.sectionMembersExpanded = !adminLogFilterAlert2.sectionMembersExpanded;
         } else if (i == 1) {
-            this.sectionSettingsExpanded = !this.sectionSettingsExpanded;
+            adminLogFilterAlert2.sectionSettingsExpanded = !adminLogFilterAlert2.sectionSettingsExpanded;
         } else if (i == 2) {
-            this.sectionMessagesExpanded = !this.sectionMessagesExpanded;
+            adminLogFilterAlert2.sectionMessagesExpanded = !adminLogFilterAlert2.sectionMessagesExpanded;
         }
-        this.adapter.update(true);
-        applyScrolledPosition();
+        adminLogFilterAlert2.adapter.update(true);
+        adminLogFilterAlert2.applyScrolledPosition();
     }
 
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
@@ -285,26 +277,26 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x002f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0030, code lost:
     
-        r9 = true;
+        r11 = true;
      */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x012e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -426,9 +418,12 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                         }
                         this.selectedAdmins.clear();
                         if (checkBoxCell.isChecked() && (arrayList = this.currentAdmins) != null) {
-                            Iterator it = arrayList.iterator();
-                            while (it.hasNext()) {
-                                long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) it.next()).peer);
+                            int size = arrayList.size();
+                            int i2 = 0;
+                            while (i2 < size) {
+                                Object obj = arrayList.get(i2);
+                                i2++;
+                                long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) obj).peer);
                                 this.selectedAdmins.put(peerDialogId, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId)));
                             }
                             break;
@@ -445,14 +440,14 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
             }
             this.adapter.update(true);
         }
-        int i2 = uItem.id;
-        if (i2 < 0) {
+        int i3 = uItem.id;
+        if (i3 < 0) {
             CheckBoxCell checkBoxCell3 = (CheckBoxCell) view;
-            int i3 = (-i2) - 1;
-            if (i3 < 0 || i3 >= this.currentAdmins.size()) {
+            int i4 = (-i3) - 1;
+            if (i4 < 0 || i4 >= this.currentAdmins.size()) {
                 return;
             }
-            long peerDialogId2 = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) this.currentAdmins.get(i3)).peer);
+            long peerDialogId2 = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) this.currentAdmins.get(i4)).peer);
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId2));
             if (this.selectedAdmins == null) {
                 this.selectedAdmins = new LongSparseArray();
@@ -472,9 +467,13 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         this.currentAdmins = arrayList;
         if (arrayList != null && this.selectedAdmins == null) {
             this.selectedAdmins = new LongSparseArray();
-            Iterator it = this.currentAdmins.iterator();
-            while (it.hasNext()) {
-                long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) it.next()).peer);
+            ArrayList arrayList2 = this.currentAdmins;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) obj).peer);
                 this.selectedAdmins.put(peerDialogId, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId)));
             }
         }

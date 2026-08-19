@@ -186,7 +186,7 @@ public class MediaMetadata extends AbstractSafeParcelable {
             } catch (JSONException unused2) {
             }
         }
-        ArrayList<String> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         int i = this.zze;
         if (i == 0) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.SUBTITLE", "com.google.android.gms.cast.metadata.RELEASE_DATE");
@@ -203,7 +203,12 @@ public class MediaMetadata extends AbstractSafeParcelable {
         }
         Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.SECTION_DURATION", "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID");
         try {
-            for (String str : arrayList) {
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList.get(i2);
+                i2++;
+                String str = (String) obj;
                 if (str != null && this.zza.containsKey(str) && (zzc2 = (zzcdVar = zzc).zzc(str)) != null) {
                     int zza = zzcdVar.zza(str);
                     if (zza != 1) {
@@ -222,13 +227,13 @@ public class MediaMetadata extends AbstractSafeParcelable {
             }
             for (String str2 : this.zza.keySet()) {
                 if (!str2.startsWith("com.google.")) {
-                    Object obj = this.zza.get(str2);
-                    if (obj instanceof String) {
-                        jSONObject.put(str2, obj);
-                    } else if (obj instanceof Integer) {
-                        jSONObject.put(str2, obj);
-                    } else if (obj instanceof Double) {
-                        jSONObject.put(str2, obj);
+                    Object obj2 = this.zza.get(str2);
+                    if (obj2 instanceof String) {
+                        jSONObject.put(str2, obj2);
+                    } else if (obj2 instanceof Integer) {
+                        jSONObject.put(str2, obj2);
+                    } else if (obj2 instanceof Double) {
+                        jSONObject.put(str2, obj2);
                     }
                 }
             }

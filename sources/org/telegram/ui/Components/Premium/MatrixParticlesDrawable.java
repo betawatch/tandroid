@@ -44,7 +44,6 @@ public class MatrixParticlesDrawable {
     void onDraw(Canvas canvas) {
         int i;
         int i2;
-        Particle particle;
         int width = this.drawingRect.width() / this.size;
         int height = this.drawingRect.height() / this.size;
         if (width == 0 || height == 0) {
@@ -52,79 +51,77 @@ public class MatrixParticlesDrawable {
         }
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList[] arrayListArr = this.particles;
-        1 r12 = null;
+        1 r10 = null;
+        int i3 = 0;
         if (arrayListArr == null || arrayListArr.length != width + 1) {
             this.particles = new ArrayList[width + 1];
-            for (int i3 = 0; i3 <= width; i3++) {
-                this.particles[i3] = new ArrayList();
-                Particle particle2 = new Particle();
-                particle2.init(height, currentTimeMillis);
-                this.particles[i3].add(particle2);
+            for (int i4 = 0; i4 <= width; i4++) {
+                this.particles[i4] = new ArrayList();
+                Particle particle = new Particle();
+                particle.init(height, currentTimeMillis);
+                this.particles[i4].add(particle);
             }
         }
         MatrixTextParticle[][] matrixTextParticleArr = this.matrixTextParticles;
         if (matrixTextParticleArr == null || matrixTextParticleArr.length != width + 1 || matrixTextParticleArr[0].length != height + 1) {
             this.matrixTextParticles = new MatrixTextParticle[width + 1][];
-            for (int i4 = 0; i4 <= width; i4++) {
-                this.matrixTextParticles[i4] = new MatrixTextParticle[height + 1];
-                for (int i5 = 0; i5 <= height; i5++) {
-                    this.matrixTextParticles[i4][i5] = new MatrixTextParticle();
-                    this.matrixTextParticles[i4][i5].init(currentTimeMillis);
+            for (int i5 = 0; i5 <= width; i5++) {
+                this.matrixTextParticles[i5] = new MatrixTextParticle[height + 1];
+                for (int i6 = 0; i6 <= height; i6++) {
+                    this.matrixTextParticles[i5][i6] = new MatrixTextParticle();
+                    this.matrixTextParticles[i5][i6].init(currentTimeMillis);
                 }
             }
         }
-        int i6 = 0;
-        while (i6 <= width) {
-            ArrayList arrayList = this.particles[i6];
-            int i7 = 0;
-            while (i7 < arrayList.size()) {
-                Particle particle3 = (Particle) arrayList.get(i7);
-                int i8 = 1;
-                if (currentTimeMillis - particle3.time > 50) {
-                    int i9 = particle3.y + 1;
-                    particle3.y = i9;
-                    particle3.time = currentTimeMillis;
-                    if (i9 - particle3.len >= height) {
+        int i7 = 0;
+        while (i7 <= width) {
+            ArrayList arrayList = this.particles[i7];
+            int i8 = 0;
+            while (i8 < arrayList.size()) {
+                Particle particle2 = (Particle) arrayList.get(i8);
+                if (currentTimeMillis - particle2.time > 50) {
+                    int i9 = particle2.y + 1;
+                    particle2.y = i9;
+                    particle2.time = currentTimeMillis;
+                    if (i9 - particle2.len >= height) {
                         if (arrayList.size() == 1) {
-                            particle3.reset(currentTimeMillis);
+                            particle2.reset(currentTimeMillis);
                         } else {
-                            arrayList.remove(particle3);
-                            i7--;
+                            arrayList.remove(particle2);
+                            i8--;
                         }
                     }
-                    if (particle3.y > particle3.len && i7 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
-                        Particle particle4 = new Particle();
-                        particle4.reset(currentTimeMillis);
-                        arrayList.add(particle4);
+                    if (particle2.y > particle2.len && i8 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
+                        Particle particle3 = new Particle();
+                        particle3.reset(currentTimeMillis);
+                        arrayList.add(particle3);
                     }
                 }
-                int i10 = i7;
-                int min = Math.min(particle3.y, height + 1);
-                int max = Math.max(0, particle3.y - particle3.len);
+                int i10 = i8;
+                int min = Math.min(particle2.y, height + 1);
+                int max = Math.max(i3, particle2.y - particle2.len);
                 while (max < min) {
                     int i11 = this.size;
-                    float f = i11 * i6;
+                    float f = i11 * i7;
                     float f2 = i11 * max;
                     if (this.excludeRect.contains(f, f2)) {
-                        i = max;
-                        i2 = min;
-                        particle = particle3;
+                        i = min;
+                        i2 = max;
                     } else {
-                        i = max;
-                        i2 = min;
-                        particle = particle3;
-                        this.matrixTextParticles[i6][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.y - max) / (particle3.len - i8))) * 0.8f) + 0.2f, 1.0f, 0.0f));
+                        i = min;
+                        i2 = max;
+                        this.matrixTextParticles[i7][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle2.y - max) / (particle2.len - 1))) * 0.8f) + 0.2f, 1.0f, 0.0f));
                     }
-                    max = i + 1;
-                    min = i2;
-                    particle3 = particle;
-                    i8 = 1;
+                    max = i2 + 1;
+                    min = i;
                 }
-                i7 = i10 + 1;
-                r12 = null;
+                i8 = i10 + 1;
+                r10 = null;
+                i3 = 0;
             }
-            i6++;
-            r12 = null;
+            i7++;
+            r10 = null;
+            i3 = 0;
         }
     }
 

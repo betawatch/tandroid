@@ -85,7 +85,7 @@ public class SubstringLayoutAnimator {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SubstringLayoutAnimator$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                SubstringLayoutAnimator.this.lambda$create$0(valueAnimator2);
+                SubstringLayoutAnimator.$r8$lambda$YCYfvCTPks0Mn8R_NHGC6lJtVV0(SubstringLayoutAnimator.this, valueAnimator2);
             }
         });
         this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SubstringLayoutAnimator.1
@@ -99,10 +99,10 @@ public class SubstringLayoutAnimator {
         this.valueAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$create$0(ValueAnimator valueAnimator) {
-        this.hintProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.parentView.invalidate();
+    public static /* synthetic */ void $r8$lambda$YCYfvCTPks0Mn8R_NHGC6lJtVV0(SubstringLayoutAnimator substringLayoutAnimator, ValueAnimator valueAnimator) {
+        substringLayoutAnimator.getClass();
+        substringLayoutAnimator.hintProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        substringLayoutAnimator.parentView.invalidate();
     }
 
     public void draw(Canvas canvas, TextPaint textPaint) {

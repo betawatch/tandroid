@@ -14,7 +14,6 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -133,9 +132,13 @@ public class ProfileGiftsView extends View implements NotificationCenter.Notific
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starUserGiftsLoaded);
-        Iterator it = this.gifts.iterator();
-        while (it.hasNext()) {
-            ((Gift) it.next()).emojiDrawable.addView(this);
+        ArrayList arrayList = this.gifts;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((Gift) obj).emojiDrawable.addView(this);
         }
         update();
     }
@@ -144,9 +147,13 @@ public class ProfileGiftsView extends View implements NotificationCenter.Notific
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-        Iterator it = this.gifts.iterator();
-        while (it.hasNext()) {
-            ((Gift) it.next()).emojiDrawable.removeView(this);
+        ArrayList arrayList = this.gifts;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((Gift) obj).emojiDrawable.removeView(this);
         }
     }
 
@@ -215,7 +222,7 @@ public class ProfileGiftsView extends View implements NotificationCenter.Notific
             canvas.save();
             canvas.translate(f, f2);
             canvas.rotate(f4);
-            float scale = this.bounce.getScale(0.1f) * f3;
+            float scale = f3 * this.bounce.getScale(0.1f);
             canvas.scale(scale, scale);
             this.particles.process();
             this.particles.draw(canvas, this.color, f5);
@@ -230,19 +237,19 @@ public class ProfileGiftsView extends View implements NotificationCenter.Notific
                 int i = (-dp2) / 2;
                 int i2 = dp2 / 2;
                 this.emojiDrawable.setBounds(i, i, i2, i2);
-                this.emojiDrawable.setAlpha((int) (f5 * 255.0f));
+                this.emojiDrawable.setAlpha((int) (255.0f * f5));
                 this.emojiDrawable.draw(canvas);
             }
             canvas.restore();
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0233  */
-    /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01ad A[LOOP:4: B:73:0x01a9->B:75:0x01ad, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01bf  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0235  */
+    /* JADX WARN: Removed duplicated region for block: B:113:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01af A[LOOP:4: B:74:0x01ab->B:76:0x01af, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01c1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -396,27 +403,29 @@ public class ProfileGiftsView extends View implements NotificationCenter.Notific
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x018a  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x01a7  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x01bc  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x01a9  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x01d7 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01ac  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void dispatchDraw(Canvas canvas) {
         float dp;
-        float dp2;
+        int dp2;
         float f;
         float f2;
         float f3;
         float f4;
+        float f5;
+        float f6;
         float clamp01;
         if (this.gifts.isEmpty()) {
             return;
         }
-        float f5 = 1.0f;
+        float f7 = 1.0f;
         if (this.expandProgress >= 1.0f || this.collapseProgress <= 0.0f) {
             return;
         }
@@ -430,93 +439,106 @@ public class ProfileGiftsView extends View implements NotificationCenter.Notific
         float max2 = Math.max(width, dpf2);
         float max3 = Math.max(height, dpf2);
         canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getWidth(), this.expandY);
-        float f6 = min + (max2 / 2.0f);
-        float f7 = (max3 / 2.0f) + max;
-        float f8 = x + (width / 2.0f);
-        float f9 = y + (height / 2.0f);
-        float f10 = this.expandY;
-        float f11 = f10 / this.maxExpandY;
-        float clamp012 = Utilities.clamp01((f10 - (AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight())) / AndroidUtilities.dp(50.0f));
+        Canvas canvas2 = canvas;
+        canvas2.clipRect(0.0f, 0.0f, getWidth(), this.expandY);
+        float f8 = min + (max2 / 2.0f);
+        float f9 = (max3 / 2.0f) + max;
+        float f10 = x + (width / 2.0f);
+        float f11 = y + (height / 2.0f);
+        float f12 = this.expandY;
+        float f13 = f12 / this.maxExpandY;
+        float clamp012 = Utilities.clamp01((f12 - (AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight())) / AndroidUtilities.dp(50.0f));
         int i = 0;
         while (i < this.gifts.size()) {
             Gift gift = (Gift) this.gifts.get(i);
-            float f12 = gift.animatedFloat.set(f5);
-            float lerp = AndroidUtilities.lerp(0.5f, f5, f12);
-            float f13 = (f5 - this.expandProgress) * f12 * (f5 - this.actionBarProgress) * clamp012;
+            float f14 = gift.animatedFloat.set(f7);
+            float lerp = AndroidUtilities.lerp(0.5f, f7, f14);
+            float f15 = (1.0f - this.expandProgress) * f14 * (1.0f - this.actionBarProgress) * clamp012;
             int i2 = gift.position;
             if (i2 == 0) {
-                dp = (f6 / 2.0f) - (AndroidUtilities.dp(20.0f) * f11);
-                dp2 = f7 - AndroidUtilities.dp(13.0f);
+                dp = (f8 / 2.0f) - (AndroidUtilities.dp(20.0f) * f13);
+                dp2 = AndroidUtilities.dp(13.0f);
             } else {
                 if (i2 == 1) {
-                    f2 = ((f6 * 2.0f) / 3.0f) - (AndroidUtilities.dp(6.0f) * f11);
-                    f = clamp012;
-                    dp2 = max - AndroidUtilities.dp(4.0f);
+                    f2 = clamp012;
+                    f3 = f13;
+                    f4 = ((f8 * 2.0f) / 3.0f) - (AndroidUtilities.dp(6.0f) * f13);
+                    f = max - AndroidUtilities.dp(4.0f);
                 } else {
                     if (i2 == 2) {
-                        dp2 = (max + max3) - AndroidUtilities.dp(16.0f);
-                        f = clamp012;
-                        f2 = ((f6 * 2.0f) / 3.0f) - (AndroidUtilities.dp(12.0f) * f11);
+                        f = (max + max3) - AndroidUtilities.dp(16.0f);
+                        f2 = clamp012;
+                        f3 = f13;
+                        f4 = ((f8 * 2.0f) / 3.0f) - (AndroidUtilities.dp(12.0f) * f13);
                     } else if (i2 == 3) {
-                        dp = (1.5f * f6) + (AndroidUtilities.dp(20.0f) * f11);
-                        dp2 = f7 - AndroidUtilities.dp(13.0f);
+                        dp = (1.5f * f8) + (AndroidUtilities.dp(20.0f) * f13);
+                        dp2 = AndroidUtilities.dp(13.0f);
                     } else if (i2 == 4) {
-                        f = clamp012;
-                        f2 = ((f6 * 4.0f) / 3.0f) + (AndroidUtilities.dp(12.0f) * f11);
-                        dp2 = max - AndroidUtilities.dp(4.0f);
+                        f2 = clamp012;
+                        f3 = f13;
+                        f4 = ((f8 * 4.0f) / 3.0f) + (AndroidUtilities.dp(12.0f) * f13);
+                        f = max - AndroidUtilities.dp(4.0f);
                     } else {
-                        dp2 = (max + max3) - AndroidUtilities.dp(16.0f);
-                        f = clamp012;
-                        f2 = ((4.0f * f6) / 3.0f) + (AndroidUtilities.dp(12.0f) * f11);
+                        f = (max + max3) - AndroidUtilities.dp(16.0f);
+                        f2 = clamp012;
+                        f3 = f13;
+                        f4 = ((4.0f * f8) / 3.0f) + (AndroidUtilities.dp(12.0f) * f13);
                     }
-                    f3 = 0.9f;
-                    if (!this.isOpening || f12 >= 1.0f) {
-                        f4 = this.collapseProgress;
+                    f5 = 0.9f;
+                    if (!this.isOpening || f14 >= 1.0f) {
+                        f6 = this.collapseProgress;
                     } else {
-                        f4 = Math.min(f12, this.collapseProgress);
+                        f6 = Math.min(f14, this.collapseProgress);
                     }
-                    float f14 = f3 * 0.2f;
-                    clamp01 = f4 >= 1.0f - f14 ? 1.0f : Utilities.clamp01(((f4 - 0.32000002f) + f14) / 0.67999995f);
+                    float f16 = f5 * 0.2f;
+                    clamp01 = f6 >= 1.0f - f16 ? 1.0f : Utilities.clamp01(((f6 - 0.32000002f) + f16) / 0.67999995f);
                     if (clamp01 < 1.0f) {
-                        f2 = AndroidUtilities.lerp(f8, f2, this.giftCollapseXInterpolator.getInterpolation(clamp01));
-                        dp2 = AndroidUtilities.lerp(f9, dp2, this.giftCollapseYInterpolator.getInterpolation(clamp01));
+                        f4 = AndroidUtilities.lerp(f10, f4, this.giftCollapseXInterpolator.getInterpolation(clamp01));
+                        f = AndroidUtilities.lerp(f11, f, this.giftCollapseYInterpolator.getInterpolation(clamp01));
                         lerp = AndroidUtilities.lerp(lerp / 2.0f, lerp, clamp01);
                     }
-                    gift.draw(canvas, f2, dp2, lerp, 0.0f, f13, 1.0f);
+                    gift.draw(canvas2, f4, f, lerp, 0.0f, f15, 1.0f);
                     i++;
-                    clamp012 = f;
-                    f5 = 1.0f;
+                    canvas2 = canvas;
+                    clamp012 = f2;
+                    f13 = f3;
+                    f7 = 1.0f;
                 }
-                f3 = 0.0f;
+                f5 = 0.0f;
                 if (!this.isOpening) {
                 }
-                f4 = this.collapseProgress;
-                float f142 = f3 * 0.2f;
-                if (f4 >= 1.0f - f142) {
+                f6 = this.collapseProgress;
+                float f162 = f5 * 0.2f;
+                if (f6 >= 1.0f - f162) {
                 }
                 if (clamp01 < 1.0f) {
                 }
-                gift.draw(canvas, f2, dp2, lerp, 0.0f, f13, 1.0f);
+                gift.draw(canvas2, f4, f, lerp, 0.0f, f15, 1.0f);
                 i++;
-                clamp012 = f;
-                f5 = 1.0f;
+                canvas2 = canvas;
+                clamp012 = f2;
+                f13 = f3;
+                f7 = 1.0f;
             }
-            f = clamp012;
-            f2 = dp;
-            f3 = 1.6f;
+            f = f9 - dp2;
+            f2 = clamp012;
+            f3 = f13;
+            f4 = dp;
+            f5 = 1.6f;
             if (!this.isOpening) {
             }
-            f4 = this.collapseProgress;
-            float f1422 = f3 * 0.2f;
-            if (f4 >= 1.0f - f1422) {
+            f6 = this.collapseProgress;
+            float f1622 = f5 * 0.2f;
+            if (f6 >= 1.0f - f1622) {
             }
             if (clamp01 < 1.0f) {
             }
-            gift.draw(canvas, f2, dp2, lerp, 0.0f, f13, 1.0f);
+            gift.draw(canvas2, f4, f, lerp, 0.0f, f15, 1.0f);
             i++;
-            clamp012 = f;
-            f5 = 1.0f;
+            canvas2 = canvas;
+            clamp012 = f2;
+            f13 = f3;
+            f7 = 1.0f;
         }
         canvas.restore();
     }

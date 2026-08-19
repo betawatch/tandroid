@@ -44,11 +44,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_RolloutAssignment extends 
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.RolloutAssignment)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Event.RolloutAssignment) {
+            CrashlyticsReport.Session.Event.RolloutAssignment rolloutAssignment = (CrashlyticsReport.Session.Event.RolloutAssignment) obj;
+            if (this.rolloutVariant.equals(rolloutAssignment.getRolloutVariant()) && this.parameterKey.equals(rolloutAssignment.getParameterKey()) && this.parameterValue.equals(rolloutAssignment.getParameterValue()) && this.templateVersion == rolloutAssignment.getTemplateVersion()) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Event.RolloutAssignment rolloutAssignment = (CrashlyticsReport.Session.Event.RolloutAssignment) obj;
-        return this.rolloutVariant.equals(rolloutAssignment.getRolloutVariant()) && this.parameterKey.equals(rolloutAssignment.getParameterKey()) && this.parameterValue.equals(rolloutAssignment.getParameterValue()) && this.templateVersion == rolloutAssignment.getTemplateVersion();
+        return false;
     }
 
     public int hashCode() {

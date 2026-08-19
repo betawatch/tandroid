@@ -68,7 +68,7 @@ public class ButtonBounce {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ButtonBounce$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ButtonBounce.this.lambda$setPressed$0(valueAnimator2);
+                    ButtonBounce.$r8$lambda$grnQYDy3yxTkUbUjjclvBWYg__I(ButtonBounce.this, valueAnimator2);
                 }
             });
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ButtonBounce.1
@@ -94,10 +94,10 @@ public class ButtonBounce {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPressed$0(ValueAnimator valueAnimator) {
-        this.pressedT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$grnQYDy3yxTkUbUjjclvBWYg__I(ButtonBounce buttonBounce, ValueAnimator valueAnimator) {
+        buttonBounce.getClass();
+        buttonBounce.pressedT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        buttonBounce.invalidate();
     }
 
     public float getScale(float f) {

@@ -55,7 +55,7 @@ public abstract class ChatSearchTabs extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatSearchTabs$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ChatSearchTabs.this.lambda$show$0(valueAnimator2);
+                ChatSearchTabs.$r8$lambda$MHL0umdnSNcJoPX6I6OzNFWBCiE(ChatSearchTabs.this, valueAnimator2);
             }
         });
         this.actionBarTagsAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -78,12 +78,12 @@ public abstract class ChatSearchTabs extends FrameLayout {
         this.actionBarTagsAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$0(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$MHL0umdnSNcJoPX6I6OzNFWBCiE(ChatSearchTabs chatSearchTabs, ValueAnimator valueAnimator) {
+        chatSearchTabs.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.actionBarTagsT = floatValue;
-        setShown(floatValue);
-        onShownUpdate(false);
+        chatSearchTabs.actionBarTagsT = floatValue;
+        chatSearchTabs.setShown(floatValue);
+        chatSearchTabs.onShownUpdate(false);
     }
 
     @Override // android.view.View

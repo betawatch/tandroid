@@ -107,7 +107,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
     private final Runnable loadMembersRunnable = new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
         public final void run() {
-            MemberRequestsDelegate.this.lambda$new$8();
+            MemberRequestsDelegate.this.loadMembers();
         }
     };
     private final RecyclerView.OnScrollListener listScrollListener = new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.2
@@ -257,50 +257,45 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MemberRequestsDelegate.this.lambda$onItemClick$1(memberRequestCell);
+                    MemberRequestsDelegate.$r8$lambda$PF4JfkoYovr7_7OvOiFGpz5R9VU(MemberRequestsDelegate.this, memberRequestCell);
                 }
             }, this.isSearchExpanded ? 100L : 0L);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onItemClick$1(MemberRequestCell memberRequestCell) {
+    public static /* synthetic */ void $r8$lambda$PF4JfkoYovr7_7OvOiFGpz5R9VU(final MemberRequestsDelegate memberRequestsDelegate, MemberRequestCell memberRequestCell) {
+        memberRequestsDelegate.getClass();
         TLRPC.TL_chatInviteImporter importer = memberRequestCell.getImporter();
-        this.importer = importer;
-        TLRPC.User user = (TLRPC.User) this.users.get(importer.user_id);
+        memberRequestsDelegate.importer = importer;
+        TLRPC.User user = (TLRPC.User) memberRequestsDelegate.users.get(importer.user_id);
         if (user == null) {
             return;
         }
-        this.fragment.getMessagesController().putUser(user, false);
+        memberRequestsDelegate.fragment.getMessagesController().putUser(user, false);
         Point point = AndroidUtilities.displaySize;
         boolean z = point.x > point.y;
         if (user.photo == null || z) {
-            this.isNeedRestoreList = true;
-            this.fragment.dismissCurrentDialog();
+            memberRequestsDelegate.isNeedRestoreList = true;
+            memberRequestsDelegate.fragment.dismissCurrentDialog();
             Bundle bundle = new Bundle();
             ProfileActivity profileActivity = new ProfileActivity(bundle);
             bundle.putLong("user_id", user.id);
             bundle.putBoolean("removeFragmentOnChatOpen", false);
-            this.fragment.presentFragment(profileActivity);
+            memberRequestsDelegate.fragment.presentFragment(profileActivity);
             return;
         }
-        if (this.previewDialog == null) {
-            PreviewDialog previewDialog = new PreviewDialog(this.fragment.getParentActivity(), (RecyclerListView) memberRequestCell.getParent(), this.fragment.getResourceProvider(), this.isChannel);
-            this.previewDialog = previewDialog;
-            previewDialog.setImporter(this.importer, memberRequestCell.getAvatarImageView());
-            this.previewDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda7
+        if (memberRequestsDelegate.previewDialog == null) {
+            PreviewDialog previewDialog = memberRequestsDelegate.new PreviewDialog(memberRequestsDelegate.fragment.getParentActivity(), (RecyclerListView) memberRequestCell.getParent(), memberRequestsDelegate.fragment.getResourceProvider(), memberRequestsDelegate.isChannel);
+            memberRequestsDelegate.previewDialog = previewDialog;
+            previewDialog.setImporter(memberRequestsDelegate.importer, memberRequestCell.getAvatarImageView());
+            memberRequestsDelegate.previewDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda7
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    MemberRequestsDelegate.this.lambda$onItemClick$0(dialogInterface);
+                    MemberRequestsDelegate.this.previewDialog = null;
                 }
             });
-            this.previewDialog.show();
+            memberRequestsDelegate.previewDialog.show();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onItemClick$0(DialogInterface dialogInterface) {
-        this.previewDialog = null;
     }
 
     public boolean onBackPressed(boolean z) {
@@ -345,14 +340,14 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
                 this.fragment.getActionBar().createMenu().getItem(0).setVisibility(this.allImporters.isEmpty() ? 8 : 0);
             }
         } else {
-            this.adapter.setItems(Collections.emptyList());
+            this.adapter.setItems(Collections.EMPTY_LIST);
             setViewVisible(this.recyclerView, false, false);
             setViewVisible(this.loadingView, true, true);
             DispatchQueue dispatchQueue = Utilities.searchQueue;
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MemberRequestsDelegate.this.lambda$new$8();
+                    MemberRequestsDelegate.this.loadMembers();
                 }
             };
             this.searchRunnable = runnable;
@@ -370,8 +365,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         }
     }
 
-    /* renamed from: loadMembers, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$8() {
+    public void loadMembers() {
         TLRPC.TL_messages_chatInviteImporters cachedImporters;
         final boolean z = true;
         if (this.isFirstLoading && (cachedImporters = this.controller.getCachedImporters(this.chatId)) != null) {
@@ -382,68 +376,65 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MemberRequestsDelegate.this.lambda$loadMembers$5(z);
+                MemberRequestsDelegate.$r8$lambda$wJmKpNnxBOz4bctgtOp1XSfateQ(MemberRequestsDelegate.this, z);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMembers$5(boolean z) {
+    public static /* synthetic */ void $r8$lambda$wJmKpNnxBOz4bctgtOp1XSfateQ(final MemberRequestsDelegate memberRequestsDelegate, boolean z) {
         TLRPC.TL_chatInviteImporter tL_chatInviteImporter;
-        final boolean isEmpty = TextUtils.isEmpty(this.query);
-        final String str = this.query;
-        this.isLoading = true;
-        this.isFirstLoading = false;
-        if (!isEmpty || this.currentImporters.isEmpty()) {
+        final boolean isEmpty = TextUtils.isEmpty(memberRequestsDelegate.query);
+        final String str = memberRequestsDelegate.query;
+        memberRequestsDelegate.isLoading = true;
+        memberRequestsDelegate.isFirstLoading = false;
+        Runnable runnable = null;
+        if (!isEmpty || memberRequestsDelegate.currentImporters.isEmpty()) {
             tL_chatInviteImporter = null;
         } else {
-            List list = this.currentImporters;
+            List list = memberRequestsDelegate.currentImporters;
             tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) list.get(list.size() - 1);
         }
         final boolean z2 = tL_chatInviteImporter == null;
-        final Runnable runnable = (isEmpty && z2 && z) ? new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                MemberRequestsDelegate.this.lambda$loadMembers$2();
-            }
-        } : null;
-        if (isEmpty) {
-            AndroidUtilities.runOnUIThread(runnable, 300L);
+        if (isEmpty && z2 && z) {
+            runnable = new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    r0.setViewVisible(MemberRequestsDelegate.this.loadingView, true, true);
+                }
+            };
         }
-        this.searchRequestId = this.controller.getImporters(this.chatId, str, tL_chatInviteImporter, this.users, new RequestDelegate() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda4
+        final Runnable runnable2 = runnable;
+        if (isEmpty) {
+            AndroidUtilities.runOnUIThread(runnable2, 300L);
+        }
+        memberRequestsDelegate.searchRequestId = memberRequestsDelegate.controller.getImporters(memberRequestsDelegate.chatId, str, tL_chatInviteImporter, memberRequestsDelegate.users, new RequestDelegate() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                MemberRequestsDelegate.this.lambda$loadMembers$4(isEmpty, runnable, str, z2, tLObject, tL_error);
+                MemberRequestsDelegate.$r8$lambda$9CesLLOjkpd7naKIk_hM8WgVSwY(MemberRequestsDelegate.this, isEmpty, runnable2, str, z2, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMembers$2() {
-        setViewVisible(this.loadingView, true, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMembers$4(final boolean z, final Runnable runnable, final String str, final boolean z2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$9CesLLOjkpd7naKIk_hM8WgVSwY(final MemberRequestsDelegate memberRequestsDelegate, final boolean z, final Runnable runnable, final String str, final boolean z2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        memberRequestsDelegate.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                MemberRequestsDelegate.this.lambda$loadMembers$3(z, runnable, str, tL_error, tLObject, z2);
+                MemberRequestsDelegate.$r8$lambda$_lKXC140u8EwkqTMzPLunXTSVus(MemberRequestsDelegate.this, z, runnable, str, tL_error, tLObject, z2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMembers$3(boolean z, Runnable runnable, String str, TLRPC.TL_error tL_error, TLObject tLObject, boolean z2) {
-        this.isLoading = false;
-        this.isDataLoaded = true;
+    public static /* synthetic */ void $r8$lambda$_lKXC140u8EwkqTMzPLunXTSVus(MemberRequestsDelegate memberRequestsDelegate, boolean z, Runnable runnable, String str, TLRPC.TL_error tL_error, TLObject tLObject, boolean z2) {
+        memberRequestsDelegate.isLoading = false;
+        memberRequestsDelegate.isDataLoaded = true;
         if (z) {
             AndroidUtilities.cancelRunOnUIThread(runnable);
         }
-        setViewVisible(this.loadingView, false, false);
-        if (TextUtils.equals(str, this.query) && tL_error == null) {
-            this.isDataLoaded = true;
-            onImportersLoaded((TLRPC.TL_messages_chatInviteImporters) tLObject, str, z2, false);
+        memberRequestsDelegate.setViewVisible(memberRequestsDelegate.loadingView, false, false);
+        if (TextUtils.equals(str, memberRequestsDelegate.query) && tL_error == null) {
+            memberRequestsDelegate.isDataLoaded = true;
+            memberRequestsDelegate.onImportersLoaded((TLRPC.TL_messages_chatInviteImporters) tLObject, str, z2, false);
         }
     }
 
@@ -565,55 +556,54 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_hideChatJoinRequest, new RequestDelegate() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                MemberRequestsDelegate.this.lambda$hideChatJoinRequest$7(tL_chatInviteImporter, z, user, tL_messages_hideChatJoinRequest, tLObject, tL_error);
+                MemberRequestsDelegate.$r8$lambda$fgx2yxP6nI8GR1krL71yzqzzyBk(MemberRequestsDelegate.this, tL_chatInviteImporter, z, user, tL_messages_hideChatJoinRequest, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideChatJoinRequest$7(final TLRPC.TL_chatInviteImporter tL_chatInviteImporter, final boolean z, final TLRPC.User user, final TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$fgx2yxP6nI8GR1krL71yzqzzyBk(final MemberRequestsDelegate memberRequestsDelegate, final TLRPC.TL_chatInviteImporter tL_chatInviteImporter, final boolean z, final TLRPC.User user, final TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        memberRequestsDelegate.getClass();
         if (tL_error == null) {
-            MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.TL_updates) tLObject, false);
+            MessagesController.getInstance(memberRequestsDelegate.currentAccount).processUpdates((TLRPC.TL_updates) tLObject, false);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                MemberRequestsDelegate.this.lambda$hideChatJoinRequest$6(tL_error, tLObject, tL_chatInviteImporter, z, user, tL_messages_hideChatJoinRequest);
+                MemberRequestsDelegate.$r8$lambda$dggnKzWsiWyjGQcB9a26_oQK-1I(MemberRequestsDelegate.this, tL_error, tLObject, tL_chatInviteImporter, z, user, tL_messages_hideChatJoinRequest);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideChatJoinRequest$6(TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
+    public static /* synthetic */ void $r8$lambda$dggnKzWsiWyjGQcB9a26_oQK-1I(MemberRequestsDelegate memberRequestsDelegate, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
         String formatString;
-        BaseFragment baseFragment = this.fragment;
+        BaseFragment baseFragment = memberRequestsDelegate.fragment;
         if (baseFragment == null || baseFragment.getParentActivity() == null) {
             return;
         }
         if (tL_error == null) {
             TLRPC.TL_updates tL_updates = (TLRPC.TL_updates) tLObject;
             if (!tL_updates.chats.isEmpty()) {
-                MessagesController.getInstance(this.currentAccount).loadFullChat(tL_updates.chats.get(0).id, 0, true);
+                MessagesController.getInstance(memberRequestsDelegate.currentAccount).loadFullChat(tL_updates.chats.get(0).id, 0, true);
             }
             int i = 0;
             while (true) {
-                if (i >= this.allImporters.size()) {
+                if (i >= memberRequestsDelegate.allImporters.size()) {
                     break;
                 }
-                if (((TLRPC.TL_chatInviteImporter) this.allImporters.get(i)).user_id == tL_chatInviteImporter.user_id) {
-                    this.allImporters.remove(i);
+                if (((TLRPC.TL_chatInviteImporter) memberRequestsDelegate.allImporters.get(i)).user_id == tL_chatInviteImporter.user_id) {
+                    memberRequestsDelegate.allImporters.remove(i);
                     break;
                 }
                 i++;
             }
-            this.adapter.removeItem(tL_chatInviteImporter);
-            onImportersChanged(this.query, false, true);
+            memberRequestsDelegate.adapter.removeItem(tL_chatInviteImporter);
+            memberRequestsDelegate.onImportersChanged(memberRequestsDelegate.query, false, true);
             if (z) {
-                Bulletin.MultiLineLayout multiLineLayout = new Bulletin.MultiLineLayout(this.fragment.getParentActivity(), this.fragment.getResourceProvider());
+                Bulletin.MultiLineLayout multiLineLayout = new Bulletin.MultiLineLayout(memberRequestsDelegate.fragment.getParentActivity(), memberRequestsDelegate.fragment.getResourceProvider());
                 multiLineLayout.imageView.setRoundRadius(AndroidUtilities.dp(15.0f));
                 multiLineLayout.imageView.setForUserOrChat(user, new AvatarDrawable(user));
                 String firstName = UserObject.getFirstName(user);
-                if (this.isChannel) {
+                if (memberRequestsDelegate.isChannel) {
                     formatString = LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName);
                 } else {
                     formatString = LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
@@ -622,20 +612,20 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
                 int indexOf = formatString.indexOf(firstName);
                 spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
                 multiLineLayout.textView.setText(spannableStringBuilder);
-                if (this.allImporters.isEmpty()) {
-                    Bulletin.make(this.fragment, multiLineLayout, 2750).show();
+                if (memberRequestsDelegate.allImporters.isEmpty()) {
+                    Bulletin.make(memberRequestsDelegate.fragment, multiLineLayout, 2750).show();
                 } else {
-                    Bulletin.make(this.layoutContainer, multiLineLayout, 2750).show();
+                    Bulletin.make(memberRequestsDelegate.layoutContainer, multiLineLayout, 2750).show();
                 }
             }
-            ActionBarMenu createMenu = this.fragment.getActionBar().createMenu();
-            if (TextUtils.isEmpty(this.query) && this.showSearchMenu) {
-                createMenu.getItem(0).setVisibility(this.allImporters.isEmpty() ? 8 : 0);
+            ActionBarMenu createMenu = memberRequestsDelegate.fragment.getActionBar().createMenu();
+            if (TextUtils.isEmpty(memberRequestsDelegate.query) && memberRequestsDelegate.showSearchMenu) {
+                createMenu.getItem(0).setVisibility(memberRequestsDelegate.allImporters.isEmpty() ? 8 : 0);
                 return;
             }
             return;
         }
-        AlertsCreator.processError(this.currentAccount, tL_error, this.fragment, tL_messages_hideChatJoinRequest, new Object[0]);
+        AlertsCreator.processError(memberRequestsDelegate.currentAccount, tL_error, memberRequestsDelegate.fragment, tL_messages_hideChatJoinRequest, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -644,7 +634,8 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         this.importer = null;
     }
 
-    private void setViewVisible(View view, boolean z, boolean z2) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setViewVisible(View view, boolean z, boolean z2) {
         if (view == null) {
             return;
         }
@@ -1004,7 +995,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MemberRequestsDelegate.PreviewDialog.this.lambda$new$0(view);
+                    MemberRequestsDelegate.PreviewDialog.$r8$lambda$dCAFu_qxqOmUbp2HxJOEjqFzww4(MemberRequestsDelegate.PreviewDialog.this, view);
                 }
             });
             actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
@@ -1015,7 +1006,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MemberRequestsDelegate.PreviewDialog.this.lambda$new$1(view);
+                    MemberRequestsDelegate.PreviewDialog.$r8$lambda$jwCDBnOHvLwX9C0jYfpeeEXMIh4(MemberRequestsDelegate.PreviewDialog.this, view);
                 }
             });
             actionBarPopupWindowLayout.addView(actionBarMenuSubItem2);
@@ -1026,36 +1017,33 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MemberRequestsDelegate.PreviewDialog.this.lambda$new$2(view);
+                    MemberRequestsDelegate.PreviewDialog.$r8$lambda$y-EDy06tDqXGAKOB4oJ2cBZ2f70(MemberRequestsDelegate.PreviewDialog.this, view);
                 }
             });
             actionBarPopupWindowLayout.addView(actionBarMenuSubItem3);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            TLRPC.TL_chatInviteImporter tL_chatInviteImporter = this.importer;
+        public static /* synthetic */ void $r8$lambda$dCAFu_qxqOmUbp2HxJOEjqFzww4(PreviewDialog previewDialog, View view) {
+            TLRPC.TL_chatInviteImporter tL_chatInviteImporter = previewDialog.importer;
             if (tL_chatInviteImporter != null) {
                 MemberRequestsDelegate.this.onAddClicked(tL_chatInviteImporter);
             }
             MemberRequestsDelegate.this.hidePreview();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(View view) {
-            if (this.importer != null) {
+        public static /* synthetic */ void $r8$lambda$jwCDBnOHvLwX9C0jYfpeeEXMIh4(PreviewDialog previewDialog, View view) {
+            if (previewDialog.importer != null) {
                 MemberRequestsDelegate.this.isNeedRestoreList = true;
                 super.dismiss();
                 MemberRequestsDelegate.this.fragment.dismissCurrentDialog();
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", this.importer.user_id);
+                bundle.putLong("user_id", previewDialog.importer.user_id);
                 MemberRequestsDelegate.this.fragment.presentFragment(new ChatActivity(bundle));
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(View view) {
-            TLRPC.TL_chatInviteImporter tL_chatInviteImporter = this.importer;
+        public static /* synthetic */ void $r8$lambda$y-EDy06tDqXGAKOB4oJ2cBZ2f70(PreviewDialog previewDialog, View view) {
+            TLRPC.TL_chatInviteImporter tL_chatInviteImporter = previewDialog.importer;
             if (tL_chatInviteImporter != null) {
                 MemberRequestsDelegate.this.onDismissClicked(tL_chatInviteImporter);
             }
@@ -1106,15 +1094,14 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MemberRequestsDelegate.PreviewDialog.this.lambda$show$3();
+                    MemberRequestsDelegate.PreviewDialog.$r8$lambda$9SL8pZ3LyZ43rVtm7YirVY-g0SQ(MemberRequestsDelegate.PreviewDialog.this);
                 }
             }, 80L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$show$3() {
-            updateBackgroundBitmap();
-            runAnimation(true);
+        public static /* synthetic */ void $r8$lambda$9SL8pZ3LyZ43rVtm7YirVY-g0SQ(PreviewDialog previewDialog) {
+            previewDialog.updateBackgroundBitmap();
+            previewDialog.runAnimation(true);
         }
 
         @Override // android.app.Dialog, android.content.DialogInterface
@@ -1140,7 +1127,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    MemberRequestsDelegate.PreviewDialog.this.lambda$runAnimation$4(width, left, top, width2, i, valueAnimator2);
+                    MemberRequestsDelegate.PreviewDialog.$r8$lambda$Wcrg_3Es6wrN1BvrmynEcCZpzKA(MemberRequestsDelegate.PreviewDialog.this, width, left, top, width2, i, valueAnimator2);
                 }
             });
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.PreviewDialog.2
@@ -1168,28 +1155,28 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             this.animator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$runAnimation$4(float f, float f2, float f3, float f4, int i, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$Wcrg_3Es6wrN1BvrmynEcCZpzKA(PreviewDialog previewDialog, float f, float f2, float f3, float f4, int i, ValueAnimator valueAnimator) {
+            previewDialog.getClass();
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.animationProgress = floatValue;
+            previewDialog.animationProgress = floatValue;
             float f5 = f + ((1.0f - f) * floatValue);
-            this.contentView.setScaleX(f5);
-            this.contentView.setScaleY(f5);
-            this.contentView.setTranslationX(f2 * (1.0f - this.animationProgress));
-            this.contentView.setTranslationY(f3 * (1.0f - this.animationProgress));
-            int i2 = (int) (f4 * (1.0f - this.animationProgress));
-            this.viewPager.setRoundRadius(i2, i2);
-            float clamp = MathUtils.clamp((this.animationProgress * 2.0f) - 1.0f, 0.0f, 1.0f);
-            this.pagerShadowDrawable.setAlpha((int) (clamp * 255.0f));
-            this.nameText.setAlpha(clamp);
-            this.bioText.setAlpha(clamp);
-            this.popupLayout.setTranslationY(i * (1.0f - this.animationProgress));
-            this.popupLayout.setAlpha(clamp);
-            BitmapDrawable bitmapDrawable = this.backgroundDrawable;
+            previewDialog.contentView.setScaleX(f5);
+            previewDialog.contentView.setScaleY(f5);
+            previewDialog.contentView.setTranslationX(f2 * (1.0f - previewDialog.animationProgress));
+            previewDialog.contentView.setTranslationY(f3 * (1.0f - previewDialog.animationProgress));
+            int i2 = (int) (f4 * (1.0f - previewDialog.animationProgress));
+            previewDialog.viewPager.setRoundRadius(i2, i2);
+            float clamp = MathUtils.clamp((previewDialog.animationProgress * 2.0f) - 1.0f, 0.0f, 1.0f);
+            previewDialog.pagerShadowDrawable.setAlpha((int) (clamp * 255.0f));
+            previewDialog.nameText.setAlpha(clamp);
+            previewDialog.bioText.setAlpha(clamp);
+            previewDialog.popupLayout.setTranslationY(i * (1.0f - previewDialog.animationProgress));
+            previewDialog.popupLayout.setAlpha(clamp);
+            BitmapDrawable bitmapDrawable = previewDialog.backgroundDrawable;
             if (bitmapDrawable != null) {
-                bitmapDrawable.setAlpha((int) (this.animationProgress * 255.0f));
+                bitmapDrawable.setAlpha((int) (previewDialog.animationProgress * 255.0f));
             }
-            this.pagerIndicator.setAlpha(clamp);
+            previewDialog.pagerIndicator.setAlpha(clamp);
         }
 
         private Bitmap getBlurredBitmap() {

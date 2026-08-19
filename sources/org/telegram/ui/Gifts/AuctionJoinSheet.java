@@ -83,36 +83,30 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
     private final TL_stars.StarGift starGift;
     private final LinkSpanDrawable.LinksTextView subtitleTextView;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$10(View view) {
+    public static /* synthetic */ void $r8$lambda$1DUxjYFtE69U_qFQRtChVoxzGr8(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$11(View view) {
+    public static /* synthetic */ void $r8$lambda$6BJrnfi3ZJ3cJ-s3Bf_9BJtCOLU(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$12(View view) {
+    public static /* synthetic */ void $r8$lambda$YeUq2LReHHi1r1GAtZp0wUyzLtQ(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$7(View view) {
+    public static /* synthetic */ void $r8$lambda$_AmuCjii1B-RD-D1h5poia39kI0(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$8(View view) {
+    public static /* synthetic */ void $r8$lambda$evhnpTfZlwrtcMSOiMiajabj5Lo(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$9(View view) {
+    public static /* synthetic */ void $r8$lambda$lOauVwazGWP_yO4vu_vKA-8mJfY(View view) {
     }
 
     private AuctionJoinSheet(final Context context, final Theme.ResourcesProvider resourcesProvider, final long j, final TL_stars.StarGift starGift, final Runnable runnable) {
         super(context, null, false, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.FADING, resourcesProvider);
-        boolean z;
+        int i;
         TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState;
         ArrayList<TL_stars.StarGiftAuctionRound> arrayList;
-        int i;
+        int i2;
         String formatString;
         String formatPluralString;
         TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState2;
@@ -155,8 +149,8 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         textView.setGravity(17);
         textView.setText(str2);
         textView.setTextSize(1, 20.0f);
-        int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        textView.setTextColor(Theme.getColor(i2, resourcesProvider));
+        int i3 = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i3, resourcesProvider));
         linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 17, 20, 0, 20, 6));
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
         this.subtitleTextView = linksTextView;
@@ -168,9 +162,9 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             }
         }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f))));
         linksTextView.setTextSize(1, 14.0f);
-        linksTextView.setTextColor(Theme.getColor(i2, resourcesProvider));
-        int i3 = Theme.key_windowBackgroundWhiteLinkText;
-        linksTextView.setLinkTextColor(Theme.getColor(i3, resourcesProvider));
+        linksTextView.setTextColor(Theme.getColor(i3, resourcesProvider));
+        int i4 = Theme.key_windowBackgroundWhiteLinkText;
+        linksTextView.setLinkTextColor(Theme.getColor(i4, resourcesProvider));
         linearLayout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 17, 20, 0, 20, 4));
         TableView tableView = new TableView(context, resourcesProvider);
         String string = LocaleController.getString(R.string.Gift2AuctionTableStarted);
@@ -187,7 +181,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         this.showHint = new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                AuctionJoinSheet.this.lambda$new$2(hintView2Arr, frameLayout2, (View) obj, (CharSequence) obj2);
+                AuctionJoinSheet.$r8$lambda$o3NL3-m2WpXqLK-zIKw8DRS3cvA(AuctionJoinSheet.this, hintView2Arr, frameLayout2, (View) obj, (CharSequence) obj2);
             }
         };
         TableRow addRow = tableView.addRow(LocaleController.getString(R.string.GiftValueAveragePrice), "", textViewButtonsArr);
@@ -195,7 +189,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         addRow.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AuctionJoinSheet.this.lambda$new$3(view);
+                AuctionJoinSheet.this.showAveragePriceHint();
             }
         });
         this.auctionRowAveragePriceText = textViewButtonsArr[0];
@@ -209,12 +203,12 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         this.itemsBought = linksTextView2;
         linksTextView2.setGravity(17);
         linksTextView2.setTextSize(1, 16.0f);
-        linksTextView2.setTextColor(Theme.getColor(i3, resourcesProvider));
-        linksTextView2.setLinkTextColor(Theme.getColor(i3, resourcesProvider));
+        linksTextView2.setTextColor(Theme.getColor(i4, resourcesProvider));
+        linksTextView2.setLinkTextColor(Theme.getColor(i4, resourcesProvider));
         linksTextView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AuctionJoinSheet.this.lambda$new$5(zArr, resourcesProvider, view);
+                AuctionJoinSheet.$r8$lambda$3PXWKSWkocdOqfY2fnj0I-rdPz8(AuctionJoinSheet.this, zArr, resourcesProvider, view);
             }
         });
         ScaleStateListAnimator.apply(linksTextView2, 0.02f, 1.5f);
@@ -231,18 +225,18 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AuctionJoinSheet.this.lambda$new$6(j, context, resourcesProvider, runnable, view);
+                AuctionJoinSheet.$r8$lambda$ZilYHHa2cKuYr4qM7A10dFSdZeM(AuctionJoinSheet.this, j, context, resourcesProvider, runnable, view);
             }
         });
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
-        int i4 = createFrame.leftMargin;
-        int i5 = this.backgroundPaddingLeft;
-        createFrame.leftMargin = i4 + i5;
-        createFrame.rightMargin += i5;
+        int i5 = createFrame.leftMargin;
+        int i6 = this.backgroundPaddingLeft;
+        createFrame.leftMargin = i5 + i6;
+        createFrame.rightMargin += i6;
         this.containerView.addView(buttonWithCounterView, createFrame);
         RecyclerListView recyclerListView = this.recyclerListView;
-        int i6 = this.backgroundPaddingLeft;
-        recyclerListView.setPadding(i6, 0, i6, AndroidUtilities.dp(64.0f));
+        int i7 = this.backgroundPaddingLeft;
+        recyclerListView.setPadding(i7, 0, i7, AndroidUtilities.dp(64.0f));
         this.adapter.update(false);
         GiftAuctionController.Auction subscribeToGiftAuction = GiftAuctionController.getInstance(this.currentAccount).subscribeToGiftAuction(j2, this);
         this.auction = subscribeToGiftAuction;
@@ -256,20 +250,20 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         GiftAuctionController.Auction auction = this.auction;
         if (auction != null && (tL_starGiftAuctionState = auction.auctionStateActive) != null && (arrayList = tL_starGiftAuctionState.rounds) != null) {
             int size = arrayList.size();
-            for (int i7 = 0; i7 < size; i7++) {
-                TL_stars.StarGiftAuctionRound starGiftAuctionRound = this.auction.auctionStateActive.rounds.get(i7);
-                if (i7 < size - 1) {
-                    i = this.auction.auctionStateActive.rounds.get(i7 + 1).num - 1;
+            for (int i8 = 0; i8 < size; i8++) {
+                TL_stars.StarGiftAuctionRound starGiftAuctionRound = this.auction.auctionStateActive.rounds.get(i8);
+                if (i8 < size - 1) {
+                    i2 = this.auction.auctionStateActive.rounds.get(i8 + 1).num - 1;
                 } else {
-                    i = this.auction.auctionStateActive.total_rounds;
+                    i2 = this.auction.auctionStateActive.total_rounds;
                 }
-                int i8 = starGiftAuctionRound.num;
-                if (i8 == i) {
-                    formatString = LocaleController.formatString(R.string.Gift2AuctionTableCurrentRoundsOne, Integer.valueOf(i8));
+                int i9 = starGiftAuctionRound.num;
+                if (i9 == i2) {
+                    formatString = LocaleController.formatString(R.string.Gift2AuctionTableCurrentRoundsOne, Integer.valueOf(i9));
                 } else {
-                    formatString = LocaleController.formatString(R.string.Gift2AuctionTableCurrentRoundsTwo, Integer.valueOf(i8), Integer.valueOf(i));
+                    formatString = LocaleController.formatString(R.string.Gift2AuctionTableCurrentRoundsTwo, Integer.valueOf(i9), Integer.valueOf(i2));
                 }
-                if (starGiftAuctionRound.num == i) {
+                if (starGiftAuctionRound.num == i2) {
                     formatPluralString = LocaleController.formatString(R.string.Gift2AuctionTableCurrentRoundsOneDuration, LocaleController.formatTTLString(starGiftAuctionRound.duration), LocaleController.formatTTLString(starGiftAuctionRound.current_window), Integer.valueOf(starGiftAuctionRound.extend_top));
                 } else {
                     formatPluralString = LocaleController.formatPluralString("Gift2AuctionTableCurrentRoundsTwoDuration", starGiftAuctionRound.duration / 60, new Object[0]);
@@ -278,43 +272,41 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             }
         }
         GiftAuctionController.Auction auction2 = this.auction;
-        if (auction2 == null || auction2.previewAttributes == null) {
-            z = false;
-        } else {
+        if (auction2 != null && auction2.previewAttributes != null) {
             StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AuctionJoinSheet.this.lambda$openCrafting$8();
+                    AuctionJoinSheet.this.onBackPressed();
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.lambda$new$7(view);
+                    AuctionJoinSheet.$r8$lambda$1DUxjYFtE69U_qFQRtChVoxzGr8(view);
                 }
             }, null, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda14
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.lambda$new$8(view);
+                    AuctionJoinSheet.$r8$lambda$evhnpTfZlwrtcMSOiMiajabj5Lo(view);
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.lambda$new$9(view);
+                    AuctionJoinSheet.$r8$lambda$lOauVwazGWP_yO4vu_vKA-8mJfY(view);
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.lambda$new$10(view);
+                    AuctionJoinSheet.$r8$lambda$_AmuCjii1B-RD-D1h5poia39kI0(view);
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.lambda$new$11(view);
+                    AuctionJoinSheet.$r8$lambda$6BJrnfi3ZJ3cJ-s3Bf_9BJtCOLU(view);
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.lambda$new$12(view);
+                    AuctionJoinSheet.$r8$lambda$YeUq2LReHHi1r1GAtZp0wUyzLtQ(view);
                 }
             }) { // from class: org.telegram.ui.Gifts.AuctionJoinSheet.3
                 Path path = new Path();
@@ -331,8 +323,8 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
                 }
 
                 @Override // android.view.View
-                protected void onSizeChanged(int i9, int i10, int i11, int i12) {
-                    super.onSizeChanged(i9, i10, i11, i12);
+                protected void onSizeChanged(int i10, int i11, int i12, int i13) {
+                    super.onSizeChanged(i10, i11, i12, i13);
                     float[] fArr = this.r;
                     float dp = AndroidUtilities.dp(12.0f);
                     fArr[3] = dp;
@@ -340,7 +332,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
                     fArr[1] = dp;
                     fArr[0] = dp;
                     this.path.rewind();
-                    this.path.addRoundRect(0.0f, 0.0f, i9, i10, this.r, Path.Direction.CW);
+                    this.path.addRoundRect(0.0f, 0.0f, i10, i11, this.r, Path.Direction.CW);
                 }
 
                 @Override // org.telegram.ui.Stars.StarGiftSheet.TopView, android.view.ViewGroup, android.view.View
@@ -352,9 +344,9 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
                 }
 
                 @Override // org.telegram.ui.Stars.StarGiftSheet.TopView
-                protected void updateButtonsBackgrounds(int i9) {
-                    super.updateButtonsBackgrounds(i9);
-                    if (AuctionJoinSheet.this.headerStatus == null || !Theme.setSelectorDrawableColor(AuctionJoinSheet.this.headerStatus.getBackground(), i9, false)) {
+                protected void updateButtonsBackgrounds(int i10) {
+                    super.updateButtonsBackgrounds(i10);
+                    if (AuctionJoinSheet.this.headerStatus == null || !Theme.setSelectorDrawableColor(AuctionJoinSheet.this.headerStatus.getBackground(), i10, false)) {
                         return;
                     }
                     AuctionJoinSheet.this.headerStatus.invalidate();
@@ -363,7 +355,6 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             topView.onSwitchPage(new StarGiftSheet.PageTransition(1, 1, 1.0f));
             topView.setPreviewingAttributes(this.auction.previewAttributes);
             topView.hideCloseButton();
-            z = false;
             this.headerContainer.addView(topView, 0, LayoutHelper.createFrame(-1, NotificationCenter.webRtcMicAmplitudeEvent, 48));
             TextView textView2 = new TextView(context);
             this.headerStatus = textView2;
@@ -398,7 +389,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.this.lambda$new$13(view);
+                    new PremiumFeatureBottomSheet(AuctionJoinSheet.this.getContext(), 40, true, (Theme.ResourcesProvider) null).show();
                 }
             });
             ScaleStateListAnimator.apply(textView4, 0.02f, 1.5f);
@@ -409,13 +400,13 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             LinkSpanDrawable.LinksTextView linksTextView3 = new LinkSpanDrawable.LinksTextView(context, resourcesProvider);
             linksTextView3.setGravity(17);
             linksTextView3.setTextSize(1, 16.0f);
-            int i9 = Theme.key_windowBackgroundWhiteLinkText;
-            linksTextView3.setTextColor(Theme.getColor(i9, resourcesProvider));
-            linksTextView3.setLinkTextColor(Theme.getColor(i9, resourcesProvider));
+            int i10 = Theme.key_windowBackgroundWhiteLinkText;
+            linksTextView3.setTextColor(Theme.getColor(i10, resourcesProvider));
+            linksTextView3.setLinkTextColor(Theme.getColor(i10, resourcesProvider));
             linksTextView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AuctionJoinSheet.this.lambda$new$14(context, resourcesProvider, view);
+                    AuctionJoinSheet.$r8$lambda$oODoYFiuw5qYHUBsC4A8eC3ltFc(AuctionJoinSheet.this, context, resourcesProvider, view);
                 }
             });
             ScaleStateListAnimator.apply(linksTextView3, 0.02f, 1.5f);
@@ -423,22 +414,28 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             BagRandomizer bagRandomizer = new BagRandomizer(TlUtils.findAllInstances(this.auction.previewAttributes, TL_stars.starGiftAttributeModel.class));
             long j3 = starGift.upgrade_variants;
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-            for (int i10 = 0; i10 < 3; i10++) {
+            int i11 = 0;
+            while (i11 < 3) {
                 TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) bagRandomizer.next();
-                if (stargiftattributemodel != null) {
+                if (stargiftattributemodel == null) {
+                    i = 1;
+                } else {
                     spannableStringBuilder2.append('*');
-                    spannableStringBuilder2.setSpan(new AnimatedEmojiSpan(stargiftattributemodel.document, linksTextView3.getPaint().getFontMetricsInt()), i10, i10 + 1, 33);
+                    AnimatedEmojiSpan animatedEmojiSpan = new AnimatedEmojiSpan(stargiftattributemodel.document, linksTextView3.getPaint().getFontMetricsInt());
+                    i = 1;
+                    spannableStringBuilder2.setSpan(animatedEmojiSpan, i11, i11 + 1, 33);
                 }
+                i11 += i;
             }
             linksTextView3.setText(AndroidUtilities.replaceArrows(LocaleController.formatSpannable(R.string.Gift2AuctionVariants, spannableStringBuilder2, LocaleController.formatNumber(j3, ',')), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
         }
         this.linearLayout.addView(this.itemsBought, LayoutHelper.createLinear(-1, -2, 16.0f, 0.0f, 14.0f, 18.0f));
-        updateTable(z);
+        updateTable(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(HintView2[] hintView2Arr, FrameLayout frameLayout, View view, CharSequence charSequence) {
+    public static /* synthetic */ void $r8$lambda$o3NL3-m2WpXqLK-zIKw8DRS3cvA(AuctionJoinSheet auctionJoinSheet, HintView2[] hintView2Arr, FrameLayout frameLayout, View view, CharSequence charSequence) {
         ButtonSpan buttonSpan;
+        auctionJoinSheet.getClass();
         HintView2 hintView2 = hintView2Arr[0];
         if (hintView2 != null) {
             hintView2.hide();
@@ -458,7 +455,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
                 }
             }
         }
-        final HintView2 hintView22 = new HintView2(getContext(), 3);
+        final HintView2 hintView22 = new HintView2(auctionJoinSheet.getContext(), 3);
         hintView2Arr[0] = hintView22;
         hintView22.setMultilineText(true);
         hintView22.setInnerPadding(11.0f, 8.0f, 11.0f, 7.0f);
@@ -478,44 +475,38 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         hintView22.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        showAveragePriceHint();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(final boolean[] zArr, final Theme.ResourcesProvider resourcesProvider, View view) {
+    public static /* synthetic */ void $r8$lambda$3PXWKSWkocdOqfY2fnj0I-rdPz8(final AuctionJoinSheet auctionJoinSheet, final boolean[] zArr, final Theme.ResourcesProvider resourcesProvider, View view) {
+        auctionJoinSheet.getClass();
         if (zArr[0]) {
             return;
         }
         zArr[0] = true;
-        GiftAuctionController.getInstance(this.currentAccount).getOrRequestAcquiredGifts(this.giftId, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda21
+        GiftAuctionController.getInstance(auctionJoinSheet.currentAccount).getOrRequestAcquiredGifts(auctionJoinSheet.giftId, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda21
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                AuctionJoinSheet.this.lambda$new$4(zArr, resourcesProvider, (List) obj);
+                AuctionJoinSheet.$r8$lambda$sm9h2ZckasVc9aKVWJE2AszHSTI(AuctionJoinSheet.this, zArr, resourcesProvider, (List) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(boolean[] zArr, Theme.ResourcesProvider resourcesProvider, List list) {
+    public static /* synthetic */ void $r8$lambda$sm9h2ZckasVc9aKVWJE2AszHSTI(AuctionJoinSheet auctionJoinSheet, boolean[] zArr, Theme.ResourcesProvider resourcesProvider, List list) {
+        auctionJoinSheet.getClass();
         zArr[0] = false;
-        if (this.auction != null) {
-            new AcquiredGiftsSheet(getContext(), resourcesProvider, this.auction, list).show();
-            lambda$new$0();
+        if (auctionJoinSheet.auction != null) {
+            new AcquiredGiftsSheet(auctionJoinSheet.getContext(), resourcesProvider, auctionJoinSheet.auction, list).show();
+            auctionJoinSheet.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(long j, Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$ZilYHHa2cKuYr4qM7A10dFSdZeM(AuctionJoinSheet auctionJoinSheet, long j, Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable, View view) {
         GiftAuctionController.Auction auction;
         ArrayList<TL_stars.StarGiftAttribute> arrayList;
-        GiftAuctionController.Auction auction2 = this.auction;
+        GiftAuctionController.Auction auction2 = auctionJoinSheet.auction;
         if (auction2 != null && !auction2.isFinished()) {
-            if ((j == 0 || j == UserConfig.getInstance(this.currentAccount).getClientUserId()) && (arrayList = (auction = this.auction).previewAttributes) != null) {
+            if ((j == 0 || j == UserConfig.getInstance(auctionJoinSheet.currentAccount).getClientUserId()) && (arrayList = (auction = auctionJoinSheet.auction).previewAttributes) != null) {
                 new AuctionWearingSheet(context, resourcesProvider, j, auction.gift, arrayList, runnable, false).show();
             } else {
-                new SendGiftSheet(context, this.currentAccount, this.auction.gift, j, runnable, false, false) { // from class: org.telegram.ui.Gifts.AuctionJoinSheet.2
+                new SendGiftSheet(context, auctionJoinSheet.currentAccount, auctionJoinSheet.auction.gift, j, runnable, false, false) { // from class: org.telegram.ui.Gifts.AuctionJoinSheet.2
                     @Override // org.telegram.ui.Gifts.SendGiftSheet
                     protected BulletinFactory getParentBulletinFactory() {
                         return BulletinFactory.of(this.container, this.resourcesProvider);
@@ -523,20 +514,14 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
                 }.show();
             }
         }
-        lambda$new$0();
+        auctionJoinSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$13(View view) {
-        new PremiumFeatureBottomSheet(getContext(), 40, true, (Theme.ResourcesProvider) null).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$14(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
-        int i = this.currentAccount;
-        GiftAuctionController.Auction auction = this.auction;
+    public static /* synthetic */ void $r8$lambda$oODoYFiuw5qYHUBsC4A8eC3ltFc(AuctionJoinSheet auctionJoinSheet, Context context, Theme.ResourcesProvider resourcesProvider, View view) {
+        int i = auctionJoinSheet.currentAccount;
+        GiftAuctionController.Auction auction = auctionJoinSheet.auction;
         new StarGiftPreviewSheet(context, resourcesProvider, i, auction.gift.title, auction.previewAttributes, false).show();
-        lambda$new$0();
+        auctionJoinSheet.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -643,10 +628,9 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromGiftAuction(this.giftId, this);
-        super.lambda$new$0();
+        super.dismiss();
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -745,13 +729,12 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         GiftAuctionController.getInstance(i).getOrRequestAuction(j2, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                AuctionJoinSheet.lambda$show$16(context, resourcesProvider, i, j, runnable, (GiftAuctionController.Auction) obj, (TLRPC.TL_error) obj2);
+                AuctionJoinSheet.$r8$lambda$hP_lRU-uYCaP75u8lhXvsZQZlQw(context, resourcesProvider, i, j, runnable, (GiftAuctionController.Auction) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$16(Context context, Theme.ResourcesProvider resourcesProvider, int i, long j, Runnable runnable, GiftAuctionController.Auction auction, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$hP_lRU-uYCaP75u8lhXvsZQZlQw(Context context, Theme.ResourcesProvider resourcesProvider, int i, long j, Runnable runnable, GiftAuctionController.Auction auction, TLRPC.TL_error tL_error) {
         if (auction != null) {
             show(context, resourcesProvider, i, j, auction, runnable);
         }
@@ -767,7 +750,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             openAuctionTransferAlert(context, resourcesProvider, i, peerDialogId, j, new Runnable() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AuctionJoinSheet.lambda$show$17(context, i, auction, j, runnable);
+                    new SendGiftSheet(context, i, auction.gift, j, runnable, false, false).show();
                 }
             });
             return;
@@ -779,11 +762,6 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             return;
         }
         new AuctionJoinSheet(context, resourcesProvider, j, auction.gift, runnable).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$17(Context context, int i, GiftAuctionController.Auction auction, long j, Runnable runnable) {
-        new SendGiftSheet(context, i, auction.gift, j, runnable, false, false).show();
     }
 
     public static void initActionBar(ActionBar actionBar, final Context context, final Theme.ResourcesProvider resourcesProvider, int i, final TL_stars.StarGift starGift) {

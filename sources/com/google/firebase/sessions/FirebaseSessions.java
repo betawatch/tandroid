@@ -66,8 +66,18 @@ public final class FirebaseSessions {
             return ((1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:12:0x007b  */
-        /* JADX WARN: Removed duplicated region for block: B:8:0x0075  */
+        /* JADX WARN: Code restructure failed: missing block: B:28:0x0066, code lost:
+        
+            if (r6.updateSettings(r5) == r0) goto L25;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:29:0x0068, code lost:
+        
+            return r0;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:33:0x002b, code lost:
+        
+            if (r6 == r0) goto L25;
+         */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -80,14 +90,11 @@ public final class FirebaseSessions {
                 FirebaseSessionsDependencies firebaseSessionsDependencies = FirebaseSessionsDependencies.INSTANCE;
                 this.label = 1;
                 obj = firebaseSessionsDependencies.getRegisteredSubscribers$com_google_firebase_firebase_sessions(this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             } else {
                 if (i != 1) {
                     if (i == 2) {
                         ResultKt.throwOnFailure(obj);
-                        if (FirebaseSessions.this.settings.getSessionsEnabled()) {
+                        if (!FirebaseSessions.this.settings.getSessionsEnabled()) {
                             Log.d("FirebaseSessions", "Sessions SDK disabled. Not listening to lifecycle events.");
                         } else {
                             SessionLifecycleClient sessionLifecycleClient = new SessionLifecycleClient(this.$backgroundDispatcher);
@@ -109,12 +116,6 @@ public final class FirebaseSessions {
                     if (((SessionSubscriber) it.next()).isDataCollectionEnabled()) {
                         SessionsSettings sessionsSettings = FirebaseSessions.this.settings;
                         this.label = 2;
-                        if (sessionsSettings.updateSettings(this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        if (FirebaseSessions.this.settings.getSessionsEnabled()) {
-                        }
-                        return Unit.INSTANCE;
                     }
                 }
             }

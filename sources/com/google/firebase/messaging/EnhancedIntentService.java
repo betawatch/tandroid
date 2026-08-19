@@ -60,16 +60,16 @@ public abstract class EnhancedIntentService extends Service {
         this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EnhancedIntentService.this.lambda$processIntent$0(intent, taskCompletionSource);
+                EnhancedIntentService.$r8$lambda$9b4qTh6k1amVzUe1kAE6oojA2-8(EnhancedIntentService.this, intent, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processIntent$0(Intent intent, TaskCompletionSource taskCompletionSource) {
+    public static /* synthetic */ void $r8$lambda$9b4qTh6k1amVzUe1kAE6oojA2-8(EnhancedIntentService enhancedIntentService, Intent intent, TaskCompletionSource taskCompletionSource) {
+        enhancedIntentService.getClass();
         try {
-            handleIntent(intent);
+            enhancedIntentService.handleIntent(intent);
         } finally {
             taskCompletionSource.setResult(null);
         }
@@ -94,15 +94,10 @@ public abstract class EnhancedIntentService extends Service {
         processIntent.addOnCompleteListener(new CredentialManager$$ExternalSyntheticLambda0(), new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                EnhancedIntentService.this.lambda$onStartCommand$1(intent, task);
+                EnhancedIntentService.this.finishTask(intent);
             }
         });
         return 3;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onStartCommand$1(Intent intent, Task task) {
-        finishTask(intent);
     }
 
     @Override // android.app.Service
@@ -111,7 +106,8 @@ public abstract class EnhancedIntentService extends Service {
         super.onDestroy();
     }
 
-    private void finishTask(Intent intent) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void finishTask(Intent intent) {
         if (intent != null) {
             WakeLockHolder.completeWakefulIntent(intent);
         }

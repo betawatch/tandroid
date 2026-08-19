@@ -43,14 +43,14 @@ public class WebAppDisclaimerAlert {
         webAppDisclaimerAlert.cell.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotWebAppDisclaimerCheck), new Runnable() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WebAppDisclaimerAlert.lambda$show$0(context);
+                Browser.openUrl(context, LocaleController.getString(R.string.WebAppDisclaimerUrl));
             }
         }), "", false, false);
         builder.setView(linearLayout);
         builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                WebAppDisclaimerAlert.lambda$show$1(Consumer.this, zArr, alertDialog, i);
+                WebAppDisclaimerAlert.$r8$lambda$ieZxLpbNUQex9tFQgbaeiuh1B5I(Consumer.this, zArr, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda2
@@ -69,39 +69,31 @@ public class WebAppDisclaimerAlert {
         webAppDisclaimerAlert.cell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WebAppDisclaimerAlert.lambda$show$3(WebAppDisclaimerAlert.this, view);
+                WebAppDisclaimerAlert.$r8$lambda$ICLm3wirtfJP4fPzJ1h4N-5G00Y(WebAppDisclaimerAlert.this, view);
             }
         });
         webAppDisclaimerAlert.cell.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 7));
         webAppDisclaimerAlert.alert.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                WebAppDisclaimerAlert.lambda$show$4(zArr, runnable, dialogInterface);
+                WebAppDisclaimerAlert.$r8$lambda$LOJMvwvnO12EwW70_zmwaJs0cc4(zArr, runnable, dialogInterface);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$0(Context context) {
-        Browser.openUrl(context, LocaleController.getString(R.string.WebAppDisclaimerUrl));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$1(Consumer consumer, boolean[] zArr, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$ieZxLpbNUQex9tFQgbaeiuh1B5I(Consumer consumer, boolean[] zArr, AlertDialog alertDialog, int i) {
         consumer.accept(Boolean.TRUE);
         zArr[0] = true;
         alertDialog.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$3(WebAppDisclaimerAlert webAppDisclaimerAlert, View view) {
+    public static /* synthetic */ void $r8$lambda$ICLm3wirtfJP4fPzJ1h4N-5G00Y(WebAppDisclaimerAlert webAppDisclaimerAlert, View view) {
         webAppDisclaimerAlert.cell.setChecked(!r3.isChecked(), true);
         webAppDisclaimerAlert.positiveButton.setEnabled(webAppDisclaimerAlert.cell.isChecked());
         webAppDisclaimerAlert.positiveButton.animate().alpha(webAppDisclaimerAlert.cell.isChecked() ? 1.0f : 0.5f).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$4(boolean[] zArr, Runnable runnable, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$LOJMvwvnO12EwW70_zmwaJs0cc4(boolean[] zArr, Runnable runnable, DialogInterface dialogInterface) {
         if (zArr[0]) {
             return;
         }

@@ -208,39 +208,46 @@ public final class ArraySet implements Collection, Set {
     }
 
     public final Object removeAt(int i) {
-        int i2 = get_size$collection();
+        int i2;
+        Object[] objArr;
+        int i3 = get_size$collection();
         Object obj = getArray$collection()[i];
-        if (i2 <= 1) {
+        if (i3 <= 1) {
             clear();
-        } else {
-            int i3 = i2 - 1;
-            if (getHashes$collection().length > 8 && get_size$collection() < getHashes$collection().length / 3) {
-                int i4 = get_size$collection() > 8 ? get_size$collection() + (get_size$collection() >> 1) : 8;
-                int[] hashes$collection = getHashes$collection();
-                Object[] array$collection = getArray$collection();
-                ArraySetKt.allocArrays(this, i4);
-                if (i > 0) {
-                    ArraysKt.copyInto$default(hashes$collection, getHashes$collection(), 0, 0, i, 6, (Object) null);
-                    ArraysKt.copyInto$default(array$collection, getArray$collection(), 0, 0, i, 6, (Object) null);
-                }
-                if (i < i3) {
-                    int i5 = i + 1;
-                    ArraysKt.copyInto(hashes$collection, getHashes$collection(), i, i5, i2);
-                    ArraysKt.copyInto(array$collection, getArray$collection(), i, i5, i2);
-                }
-            } else {
-                if (i < i3) {
-                    int i6 = i + 1;
-                    ArraysKt.copyInto(getHashes$collection(), getHashes$collection(), i, i6, i2);
-                    ArraysKt.copyInto(getArray$collection(), getArray$collection(), i, i6, i2);
-                }
-                getArray$collection()[i3] = null;
-            }
-            if (i2 != get_size$collection()) {
-                throw new ConcurrentModificationException();
-            }
-            set_size$collection(i3);
+            return obj;
         }
+        int i4 = i3 - 1;
+        if (getHashes$collection().length > 8 && get_size$collection() < getHashes$collection().length / 3) {
+            int i5 = get_size$collection() > 8 ? get_size$collection() + (get_size$collection() >> 1) : 8;
+            int[] hashes$collection = getHashes$collection();
+            Object[] array$collection = getArray$collection();
+            ArraySetKt.allocArrays(this, i5);
+            if (i > 0) {
+                ArraysKt.copyInto$default(hashes$collection, getHashes$collection(), 0, 0, i, 6, (Object) null);
+                objArr = array$collection;
+                ArraysKt.copyInto$default(objArr, getArray$collection(), 0, 0, i, 6, (Object) null);
+                i2 = i;
+            } else {
+                i2 = i;
+                objArr = array$collection;
+            }
+            if (i2 < i4) {
+                int i6 = i2 + 1;
+                ArraysKt.copyInto(hashes$collection, getHashes$collection(), i2, i6, i3);
+                ArraysKt.copyInto(objArr, getArray$collection(), i2, i6, i3);
+            }
+        } else {
+            if (i < i4) {
+                int i7 = i + 1;
+                ArraysKt.copyInto(getHashes$collection(), getHashes$collection(), i, i7, i3);
+                ArraysKt.copyInto(getArray$collection(), getArray$collection(), i, i7, i3);
+            }
+            getArray$collection()[i4] = null;
+        }
+        if (i3 != get_size$collection()) {
+            throw new ConcurrentModificationException();
+        }
+        set_size$collection(i4);
         return obj;
     }
 
@@ -249,18 +256,20 @@ public final class ArraySet implements Collection, Set {
         if (this == obj) {
             return true;
         }
-        if ((obj instanceof Set) && size() == ((Set) obj).size()) {
-            try {
-                int i = get_size$collection();
-                for (int i2 = 0; i2 < i; i2++) {
-                    if (((Set) obj).contains(valueAt(i2))) {
-                    }
-                }
-                return true;
-            } catch (ClassCastException | NullPointerException unused) {
-            }
+        if (!(obj instanceof Set) || size() != ((Set) obj).size()) {
+            return false;
         }
-        return false;
+        try {
+            int i = get_size$collection();
+            for (int i2 = 0; i2 < i; i2++) {
+                if (!((Set) obj).contains(valueAt(i2))) {
+                    return false;
+                }
+            }
+            return true;
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
+        }
     }
 
     @Override // java.util.Collection, java.util.Set

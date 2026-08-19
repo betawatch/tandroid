@@ -90,35 +90,34 @@ public class DispatchQueuePoolBackground {
                 remove.postRunnable(new Runnable() { // from class: org.telegram.messenger.DispatchQueuePoolBackground$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DispatchQueuePoolBackground.this.lambda$execute$1(runnable, remove);
+                        DispatchQueuePoolBackground.$r8$lambda$NgWWbhAd8Pbq6aNX4bpN7zTzzGs(DispatchQueuePoolBackground.this, runnable, remove);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$execute$1(Runnable runnable, final DispatchQueue dispatchQueue) {
+    public static /* synthetic */ void $r8$lambda$NgWWbhAd8Pbq6aNX4bpN7zTzzGs(final DispatchQueuePoolBackground dispatchQueuePoolBackground, Runnable runnable, final DispatchQueue dispatchQueue) {
+        dispatchQueuePoolBackground.getClass();
         runnable.run();
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.DispatchQueuePoolBackground$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DispatchQueuePoolBackground.this.lambda$execute$0(dispatchQueue);
+                DispatchQueuePoolBackground.$r8$lambda$kdj_O_LqsCSAkhlAhxny-At8aQU(DispatchQueuePoolBackground.this, dispatchQueue);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$execute$0(DispatchQueue dispatchQueue) {
-        this.totalTasksCount--;
-        int i = this.busyQueuesMap.get(dispatchQueue.index) - 1;
+    public static /* synthetic */ void $r8$lambda$kdj_O_LqsCSAkhlAhxny-At8aQU(DispatchQueuePoolBackground dispatchQueuePoolBackground, DispatchQueue dispatchQueue) {
+        dispatchQueuePoolBackground.totalTasksCount--;
+        int i = dispatchQueuePoolBackground.busyQueuesMap.get(dispatchQueue.index) - 1;
         if (i == 0) {
-            this.busyQueuesMap.delete(dispatchQueue.index);
-            this.busyQueues.remove(dispatchQueue);
-            this.queues.add(dispatchQueue);
+            dispatchQueuePoolBackground.busyQueuesMap.delete(dispatchQueue.index);
+            dispatchQueuePoolBackground.busyQueues.remove(dispatchQueue);
+            dispatchQueuePoolBackground.queues.add(dispatchQueue);
             return;
         }
-        this.busyQueuesMap.put(dispatchQueue.index, i);
+        dispatchQueuePoolBackground.busyQueuesMap.put(dispatchQueue.index, i);
     }
 
     public static void execute(Runnable runnable) {
@@ -167,25 +166,19 @@ public class DispatchQueuePoolBackground {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.DispatchQueuePoolBackground$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DispatchQueuePoolBackground.lambda$finishCollectUpdateRunnables$3(arrayList2);
+                DispatchQueuePoolBackground.$r8$lambda$o-lCmqjv06XbZi7A_RYb7NkHJQA(arrayList2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$finishCollectUpdateRunnables$3(final ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$o-lCmqjv06XbZi7A_RYb7NkHJQA(final ArrayList arrayList) {
         backgroundQueue.execute((ArrayList<Runnable>) arrayList);
         arrayList.clear();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.DispatchQueuePoolBackground$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                DispatchQueuePoolBackground.lambda$finishCollectUpdateRunnables$2(arrayList);
+                DispatchQueuePoolBackground.freeCollections.add(arrayList);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$finishCollectUpdateRunnables$2(ArrayList arrayList) {
-        freeCollections.add(arrayList);
     }
 }

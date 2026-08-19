@@ -30,7 +30,8 @@ public abstract class DialogsRequestedEmptyCell extends LinearLayout implements 
     TextView subtitleView;
     TextView titleView;
 
-    protected abstract void onButtonClick();
+    /* JADX INFO: Access modifiers changed from: protected */
+    public abstract void onButtonClick();
 
     public DialogsRequestedEmptyCell(Context context) {
         super(context);
@@ -71,7 +72,7 @@ public abstract class DialogsRequestedEmptyCell extends LinearLayout implements 
         backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogsRequestedEmptyCell.this.lambda$new$0(view);
+                DialogsRequestedEmptyCell.this.stickerView.getImageReceiver().startAnimation();
             }
         });
         updateSticker();
@@ -100,22 +101,12 @@ public abstract class DialogsRequestedEmptyCell extends LinearLayout implements 
         this.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogsRequestedEmptyCell.this.lambda$new$1(view);
+                DialogsRequestedEmptyCell.this.onButtonClick();
             }
         });
         linearLayout.addView(this.buttonView, LayoutHelper.createLinear(-1, -2, 49, 0, 18, 0, 0));
         addView(linearLayout, LayoutHelper.createLinear(-1, -2));
         set(null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.stickerView.getImageReceiver().startAnimation();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        onButtonClick();
     }
 
     public void set(TLRPC.RequestPeerType requestPeerType) {

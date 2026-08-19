@@ -26,9 +26,7 @@ public class CapsuleBlobDrawable extends Drawable {
     private static final TimeInterpolator SMOOTHER = new TimeInterpolator() { // from class: org.telegram.ui.Components.CapsuleBlobDrawable$$ExternalSyntheticLambda0
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
-            float lambda$static$0;
-            lambda$static$0 = CapsuleBlobDrawable.lambda$static$0(f);
-            return lambda$static$0;
+            return CapsuleBlobDrawable.$r8$lambda$UdYoPCaMa_YR8vttLQa0v7_hpD4(f);
         }
     };
     private float amplitude;
@@ -66,13 +64,12 @@ public class CapsuleBlobDrawable extends Drawable {
     private final Runnable mInvalidateSelf = new Runnable() { // from class: org.telegram.ui.Components.CapsuleBlobDrawable$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
         public final void run() {
-            CapsuleBlobDrawable.this.lambda$new$1();
+            CapsuleBlobDrawable.$r8$lambda$w5XISAyYoo2Jk4lclLqmDPvqAfE(CapsuleBlobDrawable.this);
         }
     };
     private int mAlpha = NotificationCenter.didReceiveSmsCode;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ float lambda$static$0(float f) {
+    public static /* synthetic */ float $r8$lambda$UdYoPCaMa_YR8vttLQa0v7_hpD4(float f) {
         return f * f * f * ((f * ((6.0f * f) - 15.0f)) + 10.0f);
     }
 
@@ -184,10 +181,10 @@ public class CapsuleBlobDrawable extends Drawable {
         return Math.max(f5, layer2.pushMax + (f2 * layer2.breathScale) + (f4 * layer2.waveScale));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
+    public static /* synthetic */ void $r8$lambda$w5XISAyYoo2Jk4lclLqmDPvqAfE(CapsuleBlobDrawable capsuleBlobDrawable) {
+        capsuleBlobDrawable.getClass();
         if (LiteMode.isEnabled(512)) {
-            invalidateSelf();
+            capsuleBlobDrawable.invalidateSelf();
         }
     }
 
@@ -296,7 +293,7 @@ public class CapsuleBlobDrawable extends Drawable {
         float exactCenterY = bounds.exactCenterY();
         float f3 = 1.0f - (this.amplitude * 0.7f);
         float sin = this.breathDepth * this.big.breathScale * f3 * ((((float) Math.sin(this.breathPhase)) * 0.5f) + 0.5f);
-        float sin2 = this.breathDepth * this.small.breathScale * f3 * ((((float) Math.sin(this.breathPhase + r5.phaseOffset)) * 0.5f) + 0.5f);
+        float sin2 = this.breathDepth * this.small.breathScale * f3 * ((((float) Math.sin(this.breathPhase + r3.phaseOffset)) * 0.5f) + 0.5f);
         drawLayer(canvas, this.big, exactCenterX, exactCenterY, sin);
         drawLayer(canvas, this.small, exactCenterX, exactCenterY, sin2);
         if (this.colorProgress < 1.0f) {

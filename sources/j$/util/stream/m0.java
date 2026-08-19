@@ -1,26 +1,31 @@
 package j$.util.stream;
 
-import java.util.function.Supplier;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoublePredicate;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m0 implements Supplier {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
-
-    public /* synthetic */ m0(t0 t0Var, int i) {
-        this.a = i;
-        this.b = t0Var;
+public final class m0 extends n0 implements c2 {
+    @Override // j$.util.stream.c2
+    public final /* synthetic */ void E(Double d) {
+        q1.e(this, d);
     }
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                return new q0(this.b);
-            case 1:
-                return new p0(this.b);
-            default:
-                return new r0(this.b);
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        E((Double) obj);
+    }
+
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
+    }
+
+    @Override // j$.util.stream.n0, j$.util.stream.f2
+    public final void accept(double d) {
+        if (this.a) {
+            return;
         }
+        DoublePredicate doublePredicate = null;
+        doublePredicate.test(d);
+        throw null;
     }
 }

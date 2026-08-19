@@ -30,19 +30,14 @@ final class AutoValue_NetworkConnectionInfo extends NetworkConnectionInfo {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof NetworkConnectionInfo)) {
-            return false;
-        }
-        NetworkConnectionInfo networkConnectionInfo = (NetworkConnectionInfo) obj;
-        NetworkConnectionInfo.NetworkType networkType = this.networkType;
-        if (networkType != null ? networkType.equals(networkConnectionInfo.getNetworkType()) : networkConnectionInfo.getNetworkType() == null) {
-            NetworkConnectionInfo.MobileSubtype mobileSubtype = this.mobileSubtype;
-            if (mobileSubtype == null) {
-                if (networkConnectionInfo.getMobileSubtype() == null) {
+        if (obj instanceof NetworkConnectionInfo) {
+            NetworkConnectionInfo networkConnectionInfo = (NetworkConnectionInfo) obj;
+            NetworkConnectionInfo.NetworkType networkType = this.networkType;
+            if (networkType != null ? networkType.equals(networkConnectionInfo.getNetworkType()) : networkConnectionInfo.getNetworkType() == null) {
+                NetworkConnectionInfo.MobileSubtype mobileSubtype = this.mobileSubtype;
+                if (mobileSubtype != null ? mobileSubtype.equals(networkConnectionInfo.getMobileSubtype()) : networkConnectionInfo.getMobileSubtype() == null) {
                     return true;
                 }
-            } else if (mobileSubtype.equals(networkConnectionInfo.getMobileSubtype())) {
-                return true;
             }
         }
         return false;

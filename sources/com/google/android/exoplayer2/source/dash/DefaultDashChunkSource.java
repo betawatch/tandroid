@@ -86,34 +86,49 @@ public class DefaultDashChunkSource implements DashChunkSource {
         this.baseUrlExclusionList = baseUrlExclusionList;
         this.adaptationSetIndices = iArr;
         this.trackSelection = exoTrackSelection;
-        this.trackType = i2;
+        int i4 = i2;
+        this.trackType = i4;
         this.dataSource = dataSource;
         this.periodIndex = i;
         this.elapsedRealtimeOffsetMs = j;
         this.maxSegmentsPerLoad = i3;
-        this.playerTrackEmsgHandler = playerTrackEmsgHandler;
+        PlayerEmsgHandler.PlayerTrackEmsgHandler playerTrackEmsgHandler2 = playerTrackEmsgHandler;
+        this.playerTrackEmsgHandler = playerTrackEmsgHandler2;
         long periodDurationUs = dashManifest.getPeriodDurationUs(i);
         ArrayList representations = getRepresentations();
         this.representationHolders = new RepresentationHolder[exoTrackSelection.length()];
-        int i4 = 0;
-        while (i4 < this.representationHolders.length) {
-            Representation representation = (Representation) representations.get(exoTrackSelection.getIndexInTrackGroup(i4));
+        int i5 = 0;
+        while (i5 < this.representationHolders.length) {
+            Representation representation = (Representation) representations.get(exoTrackSelection.getIndexInTrackGroup(i5));
             BaseUrl selectBaseUrl = baseUrlExclusionList.selectBaseUrl(representation.baseUrls);
-            int i5 = i4;
-            this.representationHolders[i5] = new RepresentationHolder(periodDurationUs, representation, selectBaseUrl == null ? (BaseUrl) representation.baseUrls.get(0) : selectBaseUrl, factory.createProgressiveMediaExtractor(i2, representation.format, z, list, playerTrackEmsgHandler, playerId), 0L, representation.getIndex());
-            i4 = i5 + 1;
+            RepresentationHolder[] representationHolderArr = this.representationHolders;
+            BaseUrl baseUrl = selectBaseUrl == null ? (BaseUrl) representation.baseUrls.get(0) : selectBaseUrl;
+            ChunkExtractor createProgressiveMediaExtractor = factory.createProgressiveMediaExtractor(i4, representation.format, z, list, playerTrackEmsgHandler2, playerId);
+            long j2 = periodDurationUs;
+            representationHolderArr[i5] = new RepresentationHolder(j2, representation, baseUrl, createProgressiveMediaExtractor, 0L, representation.getIndex());
+            i5++;
+            playerTrackEmsgHandler2 = playerTrackEmsgHandler;
+            periodDurationUs = j2;
+            i4 = i2;
         }
     }
 
     @Override // com.google.android.exoplayer2.source.chunk.ChunkSource
     public long getAdjustedSeekPositionUs(long j, SeekParameters seekParameters) {
-        for (RepresentationHolder representationHolder : this.representationHolders) {
+        long j2 = j;
+        RepresentationHolder[] representationHolderArr = this.representationHolders;
+        int length = representationHolderArr.length;
+        int i = 0;
+        while (i < length) {
+            RepresentationHolder representationHolder = representationHolderArr[i];
             if (representationHolder.segmentIndex != null) {
-                long segmentNum = representationHolder.getSegmentNum(j);
+                long segmentNum = representationHolder.getSegmentNum(j2);
                 long segmentStartTimeUs = representationHolder.getSegmentStartTimeUs(segmentNum);
                 long segmentCount = representationHolder.getSegmentCount();
-                return seekParameters.resolveSeekPositionUs(j, segmentStartTimeUs, (segmentStartTimeUs >= j || (segmentCount != -1 && segmentNum >= (representationHolder.getFirstSegmentNum() + segmentCount) - 1)) ? segmentStartTimeUs : representationHolder.getSegmentStartTimeUs(segmentNum + 1));
+                return seekParameters.resolveSeekPositionUs(j2, segmentStartTimeUs, (segmentStartTimeUs >= j2 || (segmentCount != -1 && segmentNum >= (representationHolder.getFirstSegmentNum() + segmentCount) - 1)) ? segmentStartTimeUs : representationHolder.getSegmentStartTimeUs(segmentNum + 1));
             }
+            i++;
+            j2 = j;
         }
         return j;
     }
@@ -167,11 +182,12 @@ public class DefaultDashChunkSource implements DashChunkSource {
 
     @Override // com.google.android.exoplayer2.source.chunk.ChunkSource
     public void getNextChunk(long j, long j2, List list, ChunkHolder chunkHolder) {
-        int i;
-        int i2;
-        MediaChunkIterator[] mediaChunkIteratorArr;
         long j3;
+        int i;
+        MediaChunkIterator[] mediaChunkIteratorArr;
         long j4;
+        int i2;
+        MediaChunk mediaChunk;
         if (this.fatalError != null) {
             return;
         }
@@ -181,7 +197,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
         if (playerTrackEmsgHandler == null || !playerTrackEmsgHandler.maybeRefreshManifestBeforeLoadingNextChunk(msToUs)) {
             long msToUs2 = Util.msToUs(Util.getNowUnixTimeMs(this.elapsedRealtimeOffsetMs));
             long nowPeriodTimeUs = getNowPeriodTimeUs(msToUs2);
-            MediaChunk mediaChunk = list.isEmpty() ? null : (MediaChunk) list.get(list.size() - 1);
+            MediaChunk mediaChunk2 = list.isEmpty() ? null : (MediaChunk) list.get(list.size() - 1);
             int length = this.trackSelection.length();
             MediaChunkIterator[] mediaChunkIteratorArr2 = new MediaChunkIterator[length];
             int i3 = 0;
@@ -189,32 +205,44 @@ public class DefaultDashChunkSource implements DashChunkSource {
                 RepresentationHolder representationHolder = this.representationHolders[i3];
                 if (representationHolder.segmentIndex == null) {
                     mediaChunkIteratorArr2[i3] = MediaChunkIterator.EMPTY;
-                    i = i3;
-                    i2 = length;
+                    mediaChunk = mediaChunk2;
+                    i = length;
                     mediaChunkIteratorArr = mediaChunkIteratorArr2;
+                    i2 = i3;
                     j3 = j5;
                     j4 = msToUs2;
                 } else {
+                    int i4 = length;
                     long firstAvailableSegmentNum = representationHolder.getFirstAvailableSegmentNum(msToUs2);
                     long lastAvailableSegmentNum = representationHolder.getLastAvailableSegmentNum(msToUs2);
-                    i = i3;
-                    i2 = length;
-                    mediaChunkIteratorArr = mediaChunkIteratorArr2;
                     j3 = j5;
+                    i = i4;
+                    mediaChunkIteratorArr = mediaChunkIteratorArr2;
                     j4 = msToUs2;
-                    long segmentNum = getSegmentNum(representationHolder, mediaChunk, j2, firstAvailableSegmentNum, lastAvailableSegmentNum);
+                    MediaChunk mediaChunk3 = mediaChunk2;
+                    i2 = i3;
+                    long segmentNum = getSegmentNum(representationHolder, mediaChunk3, j2, firstAvailableSegmentNum, lastAvailableSegmentNum);
+                    mediaChunk = mediaChunk3;
                     if (segmentNum < firstAvailableSegmentNum) {
-                        mediaChunkIteratorArr[i] = MediaChunkIterator.EMPTY;
+                        mediaChunkIteratorArr[i2] = MediaChunkIterator.EMPTY;
                     } else {
-                        mediaChunkIteratorArr[i] = new RepresentationSegmentIterator(updateSelectedBaseUrl(i), segmentNum, lastAvailableSegmentNum, nowPeriodTimeUs);
+                        mediaChunkIteratorArr[i2] = new RepresentationSegmentIterator(updateSelectedBaseUrl(i2), segmentNum, lastAvailableSegmentNum, nowPeriodTimeUs);
+                        i3 = i2 + 1;
+                        msToUs2 = j4;
+                        j5 = j3;
+                        mediaChunkIteratorArr2 = mediaChunkIteratorArr;
+                        length = i;
+                        mediaChunk2 = mediaChunk;
                     }
                 }
-                i3 = i + 1;
+                i3 = i2 + 1;
                 msToUs2 = j4;
-                length = i2;
-                mediaChunkIteratorArr2 = mediaChunkIteratorArr;
                 j5 = j3;
+                mediaChunkIteratorArr2 = mediaChunkIteratorArr;
+                length = i;
+                mediaChunk2 = mediaChunk;
             }
+            MediaChunk mediaChunk4 = mediaChunk2;
             long j6 = j5;
             long j7 = msToUs2;
             this.trackSelection.updateSelectedTrack(j, j6, getAvailableLiveDurationUs(j7, j), list, mediaChunkIteratorArr2);
@@ -237,7 +265,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
             }
             long firstAvailableSegmentNum2 = updateSelectedBaseUrl.getFirstAvailableSegmentNum(j7);
             long lastAvailableSegmentNum2 = updateSelectedBaseUrl.getLastAvailableSegmentNum(j7);
-            long segmentNum2 = getSegmentNum(updateSelectedBaseUrl, mediaChunk, j2, firstAvailableSegmentNum2, lastAvailableSegmentNum2);
+            long segmentNum2 = getSegmentNum(updateSelectedBaseUrl, mediaChunk4, j2, firstAvailableSegmentNum2, lastAvailableSegmentNum2);
             if (segmentNum2 < firstAvailableSegmentNum2) {
                 this.fatalError = new BehindLiveWindowException();
                 return;
@@ -305,19 +333,18 @@ public class DefaultDashChunkSource implements DashChunkSource {
             return true;
         }
         LoadErrorHandlingPolicy.FallbackOptions createFallbackOptions = createFallbackOptions(this.trackSelection, representationHolder2.representation.baseUrls);
-        if ((!createFallbackOptions.isFallbackAvailable(2) && !createFallbackOptions.isFallbackAvailable(1)) || (fallbackSelectionFor = loadErrorHandlingPolicy.getFallbackSelectionFor(createFallbackOptions, loadErrorInfo)) == null || !createFallbackOptions.isFallbackAvailable(fallbackSelectionFor.type)) {
-            return false;
+        if ((createFallbackOptions.isFallbackAvailable(2) || createFallbackOptions.isFallbackAvailable(1)) && (fallbackSelectionFor = loadErrorHandlingPolicy.getFallbackSelectionFor(createFallbackOptions, loadErrorInfo)) != null && createFallbackOptions.isFallbackAvailable(fallbackSelectionFor.type)) {
+            int i = fallbackSelectionFor.type;
+            if (i == 2) {
+                ExoTrackSelection exoTrackSelection = this.trackSelection;
+                return exoTrackSelection.blacklist(exoTrackSelection.indexOf(chunk.trackFormat), fallbackSelectionFor.exclusionDurationMs);
+            }
+            if (i == 1) {
+                this.baseUrlExclusionList.exclude(representationHolder2.selectedBaseUrl, fallbackSelectionFor.exclusionDurationMs);
+                return true;
+            }
         }
-        int i = fallbackSelectionFor.type;
-        if (i == 2) {
-            ExoTrackSelection exoTrackSelection = this.trackSelection;
-            return exoTrackSelection.blacklist(exoTrackSelection.indexOf(chunk.trackFormat), fallbackSelectionFor.exclusionDurationMs);
-        }
-        if (i != 1) {
-            return false;
-        }
-        this.baseUrlExclusionList.exclude(representationHolder2.selectedBaseUrl, fallbackSelectionFor.exclusionDurationMs);
-        return true;
+        return false;
     }
 
     @Override // com.google.android.exoplayer2.source.chunk.ChunkSource
@@ -376,12 +403,12 @@ public class DefaultDashChunkSource implements DashChunkSource {
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r3v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri, still in use, count: 2, list:
-          (r3v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri) from 0x0011: IF  (r3v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri) == (null com.google.android.exoplayer2.source.dash.manifest.RangedUri)  -> B:6:0x0018 A[HIDDEN]
-          (r3v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri) from 0x0017: PHI (r3v3 com.google.android.exoplayer2.source.dash.manifest.RangedUri) = 
-          (r3v0 com.google.android.exoplayer2.source.dash.manifest.RangedUri)
-          (r3v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri)
-         binds: [B:9:0x0014, B:4:0x0011] A[DONT_GENERATE, DONT_INLINE]
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r2v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri, still in use, count: 2, list:
+          (r2v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri) from 0x0010: IF  (r2v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri) == (null com.google.android.exoplayer2.source.dash.manifest.RangedUri)  -> B:6:0x0017 A[HIDDEN]
+          (r2v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri) from 0x0016: PHI (r2v3 com.google.android.exoplayer2.source.dash.manifest.RangedUri) = 
+          (r2v0 com.google.android.exoplayer2.source.dash.manifest.RangedUri)
+          (r2v6 com.google.android.exoplayer2.source.dash.manifest.RangedUri)
+         binds: [B:9:0x0013, B:4:0x0010] A[DONT_GENERATE, DONT_INLINE]
         	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
         	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
         	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:114)
@@ -396,38 +423,36 @@ public class DefaultDashChunkSource implements DashChunkSource {
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.process(IfRegionVisitor.java:34)
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
         */
-    protected com.google.android.exoplayer2.source.chunk.Chunk newInitializationChunk(com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.RepresentationHolder r13, com.google.android.exoplayer2.upstream.DataSource r14, com.google.android.exoplayer2.Format r15, int r16, java.lang.Object r17, com.google.android.exoplayer2.source.dash.manifest.RangedUri r18, com.google.android.exoplayer2.source.dash.manifest.RangedUri r19) {
+    protected com.google.android.exoplayer2.source.chunk.Chunk newInitializationChunk(com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.RepresentationHolder r12, com.google.android.exoplayer2.upstream.DataSource r13, com.google.android.exoplayer2.Format r14, int r15, java.lang.Object r16, com.google.android.exoplayer2.source.dash.manifest.RangedUri r17, com.google.android.exoplayer2.source.dash.manifest.RangedUri r18) {
         /*
-            r12 = this;
-            r0 = r13
-            r1 = r18
-            com.google.android.exoplayer2.source.dash.manifest.Representation r2 = r0.representation
-            if (r1 == 0) goto L14
-            com.google.android.exoplayer2.source.dash.manifest.BaseUrl r3 = r0.selectedBaseUrl
-            java.lang.String r3 = r3.url
-            r4 = r19
-            com.google.android.exoplayer2.source.dash.manifest.RangedUri r3 = r1.attemptMerge(r4, r3)
-            if (r3 != 0) goto L17
-            goto L18
-        L14:
-            r4 = r19
-            r3 = r4
+            r11 = this;
+            r0 = r17
+            com.google.android.exoplayer2.source.dash.manifest.Representation r1 = r12.representation
+            if (r0 == 0) goto L13
+            com.google.android.exoplayer2.source.dash.manifest.BaseUrl r2 = r12.selectedBaseUrl
+            java.lang.String r2 = r2.url
+            r3 = r18
+            com.google.android.exoplayer2.source.dash.manifest.RangedUri r2 = r0.attemptMerge(r3, r2)
+            if (r2 != 0) goto L16
+            goto L17
+        L13:
+            r3 = r18
+            r2 = r3
+        L16:
+            r0 = r2
         L17:
-            r1 = r3
-        L18:
-            com.google.android.exoplayer2.source.dash.manifest.BaseUrl r3 = r0.selectedBaseUrl
-            java.lang.String r3 = r3.url
-            r4 = 0
-            com.google.android.exoplayer2.upstream.DataSpec r7 = com.google.android.exoplayer2.source.dash.DashUtil.buildDataSpec(r2, r3, r1, r4)
-            com.google.android.exoplayer2.source.chunk.InitializationChunk r1 = new com.google.android.exoplayer2.source.chunk.InitializationChunk
-            com.google.android.exoplayer2.source.chunk.ChunkExtractor r11 = r0.chunkExtractor
-            r5 = r1
-            r6 = r14
+            com.google.android.exoplayer2.source.dash.manifest.BaseUrl r2 = r12.selectedBaseUrl
+            java.lang.String r2 = r2.url
+            r3 = 0
+            com.google.android.exoplayer2.upstream.DataSpec r6 = com.google.android.exoplayer2.source.dash.DashUtil.buildDataSpec(r1, r2, r0, r3)
+            com.google.android.exoplayer2.source.chunk.InitializationChunk r4 = new com.google.android.exoplayer2.source.chunk.InitializationChunk
+            com.google.android.exoplayer2.source.chunk.ChunkExtractor r10 = r12.chunkExtractor
+            r5 = r13
+            r7 = r14
             r8 = r15
             r9 = r16
-            r10 = r17
-            r5.<init>(r6, r7, r8, r9, r10, r11)
-            return r1
+            r4.<init>(r5, r6, r7, r8, r9, r10)
+            return r4
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.newInitializationChunk(com.google.android.exoplayer2.source.dash.DefaultDashChunkSource$RepresentationHolder, com.google.android.exoplayer2.upstream.DataSource, com.google.android.exoplayer2.Format, int, java.lang.Object, com.google.android.exoplayer2.source.dash.manifest.RangedUri, com.google.android.exoplayer2.source.dash.manifest.RangedUri):com.google.android.exoplayer2.source.chunk.Chunk");
     }
@@ -442,7 +467,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
         int i4 = 1;
         int i5 = 1;
         while (i4 < i3) {
-            RangedUri attemptMerge = segmentUrl.attemptMerge(representationHolder.getSegmentUrl(i4 + j), representationHolder.selectedBaseUrl.url);
+            RangedUri attemptMerge = segmentUrl.attemptMerge(representationHolder.getSegmentUrl(j + i4), representationHolder.selectedBaseUrl.url);
             if (attemptMerge == null) {
                 break;
             }
@@ -450,10 +475,14 @@ public class DefaultDashChunkSource implements DashChunkSource {
             i4++;
             segmentUrl = attemptMerge;
         }
-        long j4 = (i5 + j) - 1;
+        long j4 = (j + i5) - 1;
+        int i6 = i5;
         long segmentEndTimeUs = representationHolder.getSegmentEndTimeUs(j4);
         long j5 = representationHolder.periodDurationUs;
-        return new ContainerMediaChunk(dataSource, DashUtil.buildDataSpec(representation, representationHolder.selectedBaseUrl.url, segmentUrl, representationHolder.isSegmentAvailableAtFullNetworkSpeed(j4, j3) ? 0 : 8), format, i2, obj, segmentStartTimeUs, segmentEndTimeUs, j2, (j5 == -9223372036854775807L || j5 > segmentEndTimeUs) ? -9223372036854775807L : j5, j, i5, -representation.presentationTimeOffsetUs, representationHolder.chunkExtractor);
+        if (j5 == -9223372036854775807L || j5 > segmentEndTimeUs) {
+            j5 = -9223372036854775807L;
+        }
+        return new ContainerMediaChunk(dataSource, DashUtil.buildDataSpec(representation, representationHolder.selectedBaseUrl.url, segmentUrl, representationHolder.isSegmentAvailableAtFullNetworkSpeed(j4, j3) ? 0 : 8), format, i2, obj, segmentStartTimeUs, segmentEndTimeUs, j2, j5, j, i6, -representation.presentationTimeOffsetUs, representationHolder.chunkExtractor);
     }
 
     private RepresentationHolder updateSelectedBaseUrl(int i) {
@@ -509,6 +538,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
 
         RepresentationHolder copyWithNewRepresentation(long j, Representation representation) {
             long segmentNum;
+            long segmentNum2;
             DashSegmentIndex index = this.representation.getIndex();
             DashSegmentIndex index2 = representation.getIndex();
             if (index == null) {
@@ -529,18 +559,20 @@ public class DefaultDashChunkSource implements DashChunkSource {
             long firstSegmentNum2 = index2.getFirstSegmentNum();
             long timeUs3 = index2.getTimeUs(firstSegmentNum2);
             long j4 = this.segmentNumShift;
-            if (timeUs2 != timeUs3) {
+            if (timeUs2 == timeUs3) {
+                segmentNum = j2 - firstSegmentNum2;
+            } else {
                 if (timeUs2 < timeUs3) {
                     throw new BehindLiveWindowException();
                 }
                 if (timeUs3 < timeUs) {
-                    segmentNum = j4 - (index2.getSegmentNum(timeUs, j) - firstSegmentNum);
-                    return new RepresentationHolder(j, representation, this.selectedBaseUrl, this.chunkExtractor, segmentNum, index2);
+                    segmentNum2 = j4 - (index2.getSegmentNum(timeUs, j) - firstSegmentNum);
+                    return new RepresentationHolder(j, representation, this.selectedBaseUrl, this.chunkExtractor, segmentNum2, index2);
                 }
-                j2 = index.getSegmentNum(timeUs3, j);
+                segmentNum = index.getSegmentNum(timeUs3, j) - firstSegmentNum2;
             }
-            segmentNum = j4 + (j2 - firstSegmentNum2);
-            return new RepresentationHolder(j, representation, this.selectedBaseUrl, this.chunkExtractor, segmentNum, index2);
+            segmentNum2 = j4 + segmentNum;
+            return new RepresentationHolder(j, representation, this.selectedBaseUrl, this.chunkExtractor, segmentNum2, index2);
         }
 
         RepresentationHolder copyWithNewSegmentIndex(DashSegmentIndex dashSegmentIndex) {

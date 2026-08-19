@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.concurrent.RejectedExecutionException;
 
 /* loaded from: classes3.dex */
-public class DefaultHttpClient implements HttpClient, DefaultHttpClientCallTask.Tracker {
+public class DefaultHttpClient implements HttpClient, DefaultHttpClientCallTask.Tracker, AutoCloseable {
     private final boolean mCompressionEnabled;
     private final Set mTasks = new HashSet();
 

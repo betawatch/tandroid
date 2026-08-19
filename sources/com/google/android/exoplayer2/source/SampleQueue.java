@@ -52,7 +52,7 @@ public class SampleQueue implements TrackOutput {
     private final SpannedData sharedSampleMetadata = new SpannedData(new Consumer() { // from class: com.google.android.exoplayer2.source.SampleQueue$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.util.Consumer
         public final void accept(Object obj) {
-            SampleQueue.lambda$new$0((SampleQueue.SharedSampleMetadata) obj);
+            ((SampleQueue.SharedSampleMetadata) obj).drmSessionReference.release();
         }
     });
     private long startTimeUs = Long.MIN_VALUE;
@@ -89,11 +89,6 @@ public class SampleQueue implements TrackOutput {
         this.drmSessionManager = drmSessionManager;
         this.drmEventDispatcher = eventDispatcher;
         this.sampleDataQueue = new SampleDataQueue(allocator);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(SharedSampleMetadata sharedSampleMetadata) {
-        sharedSampleMetadata.drmSessionReference.release();
     }
 
     public void release() {
@@ -165,15 +160,18 @@ public class SampleQueue implements TrackOutput {
     }
 
     public final synchronized int peekSourceId() {
-        try {
-        } catch (Throwable th) {
-            throw th;
+        int relativeIndex = getRelativeIndex(this.readPosition);
+        if (hasNextSample()) {
+            return this.sourceIds[relativeIndex];
         }
-        return hasNextSample() ? this.sourceIds[getRelativeIndex(this.readPosition)] : this.upstreamSourceId;
+        return this.upstreamSourceId;
     }
 
     public final synchronized Format getUpstreamFormat() {
-        return this.upstreamFormatRequired ? null : this.upstreamFormat;
+        if (this.upstreamFormatRequired) {
+            return null;
+        }
+        return this.upstreamFormat;
     }
 
     public final synchronized long getLargestQueuedTimestampUs() {
@@ -189,17 +187,16 @@ public class SampleQueue implements TrackOutput {
     }
 
     public final synchronized long getFirstTimestampUs() {
-        return this.length == 0 ? Long.MIN_VALUE : this.timesUs[this.relativeFirstIndex];
+        if (this.length == 0) {
+            return Long.MIN_VALUE;
+        }
+        return this.timesUs[this.relativeFirstIndex];
     }
 
     public synchronized boolean isReady(boolean z) {
         Format format;
-        boolean z2 = true;
         if (!hasNextSample()) {
-            if (!z && !this.isLastSampleQueued && ((format = this.upstreamFormat) == null || format == this.downstreamFormat)) {
-                z2 = false;
-            }
-            return z2;
+            return z || this.isLastSampleQueued || !((format = this.upstreamFormat) == null || format == this.downstreamFormat);
         }
         if (((SharedSampleMetadata) this.sharedSampleMetadata.get(getReadIndex())).format != this.downstreamFormat) {
             return true;
@@ -237,33 +234,58 @@ public class SampleQueue implements TrackOutput {
     }
 
     public final synchronized boolean seekTo(long j, boolean z) {
-        rewind();
-        int relativeIndex = getRelativeIndex(this.readPosition);
-        if (hasNextSample() && j >= this.timesUs[relativeIndex] && (j <= this.largestQueuedTimestampUs || z)) {
-            int findSampleBefore = findSampleBefore(relativeIndex, this.length - this.readPosition, j, true);
-            if (findSampleBefore == -1) {
-                return false;
+        try {
+            try {
+                rewind();
+                int relativeIndex = getRelativeIndex(this.readPosition);
+                if (!hasNextSample() || j < this.timesUs[relativeIndex] || (j > this.largestQueuedTimestampUs && !z)) {
+                    return false;
+                }
+                int findSampleBefore = findSampleBefore(relativeIndex, this.length - this.readPosition, j, true);
+                if (findSampleBefore == -1) {
+                    return false;
+                }
+                this.startTimeUs = j;
+                this.readPosition += findSampleBefore;
+                return true;
+            } catch (Throwable th) {
+                th = th;
+                throw th;
             }
-            this.startTimeUs = j;
-            this.readPosition += findSampleBefore;
-            return true;
+        } catch (Throwable th2) {
+            th = th2;
         }
-        return false;
     }
 
     public final synchronized int getSkipCount(long j, boolean z) {
-        int relativeIndex = getRelativeIndex(this.readPosition);
-        if (hasNextSample() && j >= this.timesUs[relativeIndex]) {
-            if (j > this.largestQueuedTimestampUs && z) {
-                return this.length - this.readPosition;
+        Throwable th;
+        try {
+            try {
+                int relativeIndex = getRelativeIndex(this.readPosition);
+                if (!hasNextSample() || j < this.timesUs[relativeIndex]) {
+                    return 0;
+                }
+                if (j > this.largestQueuedTimestampUs && z) {
+                    try {
+                        return this.length - this.readPosition;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        throw th;
+                    }
+                }
+                int findSampleBefore = findSampleBefore(relativeIndex, this.length - this.readPosition, j, true);
+                if (findSampleBefore == -1) {
+                    return 0;
+                }
+                return findSampleBefore;
+            } catch (Throwable th3) {
+                th = th3;
+                th = th;
+                throw th;
             }
-            int findSampleBefore = findSampleBefore(relativeIndex, this.length - this.readPosition, j, true);
-            if (findSampleBefore == -1) {
-                return 0;
-            }
-            return findSampleBefore;
+        } catch (Throwable th4) {
+            th = th4;
         }
-        return 0;
     }
 
     public final synchronized void skip(int i) {
@@ -330,7 +352,7 @@ public class SampleQueue implements TrackOutput {
         this.sampleDataQueue.sampleData(parsableByteArray, i);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
     @Override // com.google.android.exoplayer2.extractor.TrackOutput
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -450,25 +472,42 @@ public class SampleQueue implements TrackOutput {
     }
 
     private synchronized long discardSampleMetadataTo(long j, boolean z, boolean z2) {
-        int i;
+        Throwable th;
         try {
-            int i2 = this.length;
-            if (i2 != 0) {
-                long[] jArr = this.timesUs;
-                int i3 = this.relativeFirstIndex;
-                if (j >= jArr[i3]) {
-                    if (z2 && (i = this.readPosition) != i2) {
-                        i2 = i + 1;
+            try {
+                int i = this.length;
+                if (i != 0) {
+                    long[] jArr = this.timesUs;
+                    int i2 = this.relativeFirstIndex;
+                    if (j >= jArr[i2]) {
+                        if (z2) {
+                            try {
+                                int i3 = this.readPosition;
+                                if (i3 != i) {
+                                    i = i3 + 1;
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                throw th;
+                            }
+                        }
+                        int findSampleBefore = findSampleBefore(i2, i, j, z);
+                        if (findSampleBefore == -1) {
+                            return -1L;
+                        }
+                        return discardSamples(findSampleBefore);
                     }
-                    int findSampleBefore = findSampleBefore(i3, i2, j, z);
-                    if (findSampleBefore == -1) {
-                        return -1L;
-                    }
-                    return discardSamples(findSampleBefore);
                 }
+                return -1L;
+            } catch (Throwable th3) {
+                th = th3;
+                th = th;
+                throw th;
             }
-            return -1L;
-        } finally {
+        } catch (Throwable th4) {
+            th = th4;
+            th = th;
+            throw th;
         }
     }
 
@@ -622,7 +661,10 @@ public class SampleQueue implements TrackOutput {
 
     private boolean mayReadSample(int i) {
         DrmSession drmSession = this.currentDrmSession;
-        return drmSession == null || drmSession.getState() == 4 || ((this.flags[i] & TLObject.FLAG_30) == 0 && this.currentDrmSession.playClearSamplesWithoutKeys());
+        if (drmSession == null || drmSession.getState() == 4) {
+            return true;
+        }
+        return (this.flags[i] & TLObject.FLAG_30) == 0 && this.currentDrmSession.playClearSamplesWithoutKeys();
     }
 
     private int findSampleBefore(int i, int i2, long j, boolean z) {
@@ -633,10 +675,10 @@ public class SampleQueue implements TrackOutput {
                 break;
             }
             if (!z || (this.flags[i] & 1) != 0) {
-                i3 = i4;
                 if (j2 == j) {
-                    break;
+                    return i4;
                 }
+                i3 = i4;
             }
             i++;
             if (i == this.capacity) {
@@ -695,7 +737,7 @@ public class SampleQueue implements TrackOutput {
         for (int i2 = 0; i2 < i; i2++) {
             j = Math.max(j, this.timesUs[relativeIndex]);
             if ((this.flags[relativeIndex] & 1) != 0) {
-                break;
+                return j;
             }
             relativeIndex--;
             if (relativeIndex == -1) {

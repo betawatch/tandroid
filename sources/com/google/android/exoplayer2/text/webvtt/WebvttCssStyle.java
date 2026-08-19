@@ -15,7 +15,7 @@ public final class WebvttCssStyle {
     private float fontSize;
     private String targetId = "";
     private String targetTag = "";
-    private Set targetClasses = Collections.emptySet();
+    private Set targetClasses = Collections.EMPTY_SET;
     private String targetVoice = "";
     private String fontFamily = null;
     private boolean hasFontColor = false;

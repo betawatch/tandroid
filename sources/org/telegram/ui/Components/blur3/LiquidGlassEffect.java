@@ -67,9 +67,8 @@ public class LiquidGlassEffect {
         float f25 = f6 + f7;
         if (f25 > f20) {
             float f26 = f6 / f25;
-            float f27 = f20 * f26;
             f15 = f20 * (1.0f - f26);
-            f14 = f27;
+            f14 = f20 * f26;
         } else {
             f14 = f6;
             f15 = f7;
@@ -77,9 +76,6 @@ public class LiquidGlassEffect {
         if (Math.abs(this.resolutionX - f16) > 0.1f || Math.abs(this.resolutionY - f17) > 0.1f || Math.abs(this.centerX - f18) > 0.1f || Math.abs(this.centerY - f19) > 0.1f || Math.abs(this.sizeX - f21) > 0.1f || Math.abs(this.sizeY - f22) > 0.1f || Math.abs(this.radiusLeftTop - f12) > 0.1f || Math.abs(this.radiusRightTop - f14) > 0.1f || Math.abs(this.radiusRightBottom - f15) > 0.1f || Math.abs(this.radiusLeftBottom - f13) > 0.1f || Math.abs(this.thickness - f9) > 0.1f || Math.abs(this.intensity - f10) > 0.1f || Math.abs(this.index - f11) > 0.1f || this.foregroundColor != i) {
             this.foregroundColor = i;
             float alpha = Color.alpha(i) / 255.0f;
-            float red = (Color.red(i) / 255.0f) * alpha;
-            float green = (Color.green(i) / 255.0f) * alpha;
-            float blue = (Color.blue(i) / 255.0f) * alpha;
             RuntimeShader runtimeShader = this.shader;
             this.resolutionX = f16;
             this.resolutionY = f17;
@@ -107,7 +103,7 @@ public class LiquidGlassEffect {
             RuntimeShader runtimeShader7 = this.shader;
             this.index = f11;
             runtimeShader7.setFloatUniform("refract_index", f11);
-            this.shader.setFloatUniform("foreground_color_premultiplied", red, green, blue, alpha);
+            this.shader.setFloatUniform("foreground_color_premultiplied", (Color.red(i) / 255.0f) * alpha, (Color.green(i) / 255.0f) * alpha, (Color.blue(i) / 255.0f) * alpha, alpha);
             RenderNode renderNode = this.node;
             createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(this.shader, "img");
             this.effect = createRuntimeShaderEffect;

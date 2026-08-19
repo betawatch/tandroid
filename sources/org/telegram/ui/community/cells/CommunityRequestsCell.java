@@ -19,7 +19,7 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.SettingsActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityRequestsCell extends LinearLayout implements Theme.Colorable {
     private final SettingsActivity.SettingCell.Background iconBackground;
     private final FrameLayout iconLayout;

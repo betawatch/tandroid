@@ -26,14 +26,7 @@ public class MediaUploadState {
         if (this.state != 2) {
             return false;
         }
-        if (this.isVideo || this.isAudio || this.isDocument) {
-            if (this.document == null) {
-                return false;
-            }
-        } else if (this.photo == null) {
-            return false;
-        }
-        return true;
+        return (this.isVideo || this.isAudio || this.isDocument) ? this.document != null : this.photo != null;
     }
 
     public boolean isPending() {

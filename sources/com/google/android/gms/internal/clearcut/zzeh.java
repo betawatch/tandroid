@@ -41,33 +41,33 @@ abstract class zzeh {
         if (zzckVar == null) {
             return obj;
         }
-        if (list instanceof RandomAccess) {
-            int size = list.size();
-            int i2 = 0;
-            for (int i3 = 0; i3 < size; i3++) {
-                Integer num = (Integer) list.get(i3);
-                int intValue = num.intValue();
-                if (zzckVar.zzb(intValue) != null) {
-                    if (i3 != i2) {
-                        list.set(i2, num);
-                    }
-                    i2++;
-                } else {
-                    obj = zza(i, intValue, obj, zzexVar);
-                }
-            }
-            if (i2 != size) {
-                list.subList(i2, size).clear();
-            }
-        } else {
+        if (!(list instanceof RandomAccess)) {
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                int intValue2 = ((Integer) it.next()).intValue();
-                if (zzckVar.zzb(intValue2) == null) {
-                    obj = zza(i, intValue2, obj, zzexVar);
+                int intValue = ((Integer) it.next()).intValue();
+                if (zzckVar.zzb(intValue) == null) {
+                    obj = zza(i, intValue, obj, zzexVar);
                     it.remove();
                 }
             }
+            return obj;
+        }
+        int size = list.size();
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            Integer num = (Integer) list.get(i3);
+            int intValue2 = num.intValue();
+            if (zzckVar.zzb(intValue2) != null) {
+                if (i3 != i2) {
+                    list.set(i2, num);
+                }
+                i2++;
+            } else {
+                obj = zza(i, intValue2, obj, zzexVar);
+            }
+        }
+        if (i2 != size) {
+            list.subList(i2, size).clear();
         }
         return obj;
     }
@@ -159,19 +159,19 @@ abstract class zzeh {
             return 0;
         }
         int zzr = zzbn.zzr(i) * size;
-        if (list instanceof zzcx) {
-            zzcx zzcxVar = (zzcx) list;
-            while (i2 < size) {
-                Object raw = zzcxVar.getRaw(i2);
-                zzr += raw instanceof zzbb ? zzbn.zzb((zzbb) raw) : zzbn.zzh((String) raw);
-                i2++;
-            }
-        } else {
+        if (!(list instanceof zzcx)) {
             while (i2 < size) {
                 Object obj = list.get(i2);
                 zzr += obj instanceof zzbb ? zzbn.zzb((zzbb) obj) : zzbn.zzh((String) obj);
                 i2++;
             }
+            return zzr;
+        }
+        zzcx zzcxVar = (zzcx) list;
+        while (i2 < size) {
+            Object raw = zzcxVar.getRaw(i2);
+            zzr += raw instanceof zzbb ? zzbn.zzb((zzbb) raw) : zzbn.zzh((String) raw);
+            i2++;
         }
         return zzr;
     }

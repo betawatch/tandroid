@@ -275,12 +275,13 @@ public class TeXFormula {
         }
         try {
             new TeXParser(true, str, teXFormula).parse();
+            return teXFormula;
         } catch (Exception unused) {
             if (teXFormula.root == null) {
                 teXFormula.root = new EmptyAtom();
             }
+            return teXFormula;
         }
-        return teXFormula;
     }
 
     public static void registerFonts(boolean z) {
@@ -304,14 +305,14 @@ public class TeXFormula {
             Atom atom2 = this.root;
             if (atom2 == null) {
                 this.root = atom;
-            } else {
-                if (!(atom2 instanceof RowAtom)) {
-                    this.root = new RowAtom(this.root);
-                }
-                ((RowAtom) this.root).add(atom);
-                if ((atom instanceof TypedAtom) && ((rightType = ((TypedAtom) atom).getRightType()) == 2 || rightType == 3)) {
-                    ((RowAtom) this.root).add(new BreakMarkAtom());
-                }
+                return this;
+            }
+            if (!(atom2 instanceof RowAtom)) {
+                this.root = new RowAtom(this.root);
+            }
+            ((RowAtom) this.root).add(atom);
+            if ((atom instanceof TypedAtom) && ((rightType = ((TypedAtom) atom).getRightType()) == 2 || rightType == 3)) {
+                ((RowAtom) this.root).add(new BreakMarkAtom());
             }
         }
         return this;
@@ -577,9 +578,9 @@ public class TeXFormula {
         if (color != null) {
             if (this.root instanceof ColorAtom) {
                 this.root = new ColorAtom(color, (Color) null, (ColorAtom) this.root);
-            } else {
-                this.root = new ColorAtom(this.root, color, (Color) null);
+                return this;
             }
+            this.root = new ColorAtom(this.root, color, (Color) null);
         }
         return this;
     }
@@ -588,9 +589,9 @@ public class TeXFormula {
         if (color != null) {
             if (this.root instanceof ColorAtom) {
                 this.root = new ColorAtom((Color) null, color, (ColorAtom) this.root);
-            } else {
-                this.root = new ColorAtom(this.root, (Color) null, color);
+                return this;
             }
+            this.root = new ColorAtom(this.root, (Color) null, color);
         }
         return this;
     }

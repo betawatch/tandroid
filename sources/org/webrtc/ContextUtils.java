@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.content.Context;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ContextUtils {
     private static final String TAG = "ContextUtils";
     private static Context applicationContext;

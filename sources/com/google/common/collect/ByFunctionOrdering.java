@@ -25,11 +25,13 @@ final class ByFunctionOrdering extends Ordering implements Serializable {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ByFunctionOrdering)) {
-            return false;
+        if (obj instanceof ByFunctionOrdering) {
+            ByFunctionOrdering byFunctionOrdering = (ByFunctionOrdering) obj;
+            if (this.function.equals(byFunctionOrdering.function) && this.ordering.equals(byFunctionOrdering.ordering)) {
+                return true;
+            }
         }
-        ByFunctionOrdering byFunctionOrdering = (ByFunctionOrdering) obj;
-        return this.function.equals(byFunctionOrdering.function) && this.ordering.equals(byFunctionOrdering.ordering);
+        return false;
     }
 
     public int hashCode() {

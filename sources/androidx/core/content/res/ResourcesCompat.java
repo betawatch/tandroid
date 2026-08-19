@@ -142,11 +142,13 @@ public abstract class ResourcesCompat {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || ColorStateListCacheKey.class != obj.getClass()) {
-                return false;
+            if (obj != null && ColorStateListCacheKey.class == obj.getClass()) {
+                ColorStateListCacheKey colorStateListCacheKey = (ColorStateListCacheKey) obj;
+                if (this.mResources.equals(colorStateListCacheKey.mResources) && ObjectsCompat.equals(this.mTheme, colorStateListCacheKey.mTheme)) {
+                    return true;
+                }
             }
-            ColorStateListCacheKey colorStateListCacheKey = (ColorStateListCacheKey) obj;
-            return this.mResources.equals(colorStateListCacheKey.mResources) && ObjectsCompat.equals(this.mTheme, colorStateListCacheKey.mTheme);
+            return false;
         }
 
         public int hashCode() {
@@ -167,17 +169,15 @@ public abstract class ResourcesCompat {
     }
 
     public static abstract class FontCallback {
-        /* renamed from: onFontRetrievalFailed, reason: merged with bridge method [inline-methods] */
-        public abstract void lambda$callbackFailAsync$1(int i);
+        public abstract void onFontRetrievalFailed(int i);
 
-        /* renamed from: onFontRetrieved, reason: merged with bridge method [inline-methods] */
-        public abstract void lambda$callbackSuccessAsync$0(Typeface typeface);
+        public abstract void onFontRetrieved(Typeface typeface);
 
         public final void callbackSuccessAsync(final Typeface typeface, Handler handler) {
             getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResourcesCompat.FontCallback.this.lambda$callbackSuccessAsync$0(typeface);
+                    ResourcesCompat.FontCallback.this.onFontRetrieved(typeface);
                 }
             });
         }
@@ -186,7 +186,7 @@ public abstract class ResourcesCompat {
             getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResourcesCompat.FontCallback.this.lambda$callbackFailAsync$1(i);
+                    ResourcesCompat.FontCallback.this.onFontRetrievalFailed(i);
                 }
             });
         }
@@ -213,8 +213,7 @@ public abstract class ResourcesCompat {
         throw new Resources.NotFoundException("Font resource ID #0x" + Integer.toHexString(i) + " could not be retrieved.");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00b3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -224,7 +223,6 @@ public abstract class ResourcesCompat {
             throw new Resources.NotFoundException("Resource \"" + resources.getResourceName(i) + "\" (" + Integer.toHexString(i) + ") is not a Font: " + typedValue);
         }
         String charSequence2 = charSequence.toString();
-        int i3 = 0;
         if (!charSequence2.startsWith("res/")) {
             if (fontCallback != null) {
                 fontCallback.callbackFailAsync(-3, handler);
@@ -242,14 +240,6 @@ public abstract class ResourcesCompat {
             return null;
         }
         try {
-        } catch (IOException e) {
-            e = e;
-            i3 = -3;
-        } catch (XmlPullParserException e2) {
-            e = e2;
-            i3 = -3;
-        }
-        try {
             if (charSequence2.toLowerCase().endsWith(".xml")) {
                 FontResourcesParserCompat.FamilyResourceEntry parse = FontResourcesParserCompat.parse(resources.getXml(i), resources);
                 if (parse == null) {
@@ -259,30 +249,38 @@ public abstract class ResourcesCompat {
                     }
                     return null;
                 }
-                return TypefaceCompat.createFromResourcesFamilyXml(context, parse, resources, i, charSequence2, typedValue.assetCookie, i2, fontCallback, handler, z);
+                try {
+                    return TypefaceCompat.createFromResourcesFamilyXml(context, parse, resources, i, charSequence2, typedValue.assetCookie, i2, fontCallback, handler, z);
+                } catch (IOException e) {
+                    e = e;
+                    charSequence2 = charSequence2;
+                    Log.e("ResourcesCompat", "Failed to read xml resource " + charSequence2, e);
+                    if (fontCallback != null) {
+                        fontCallback.callbackFailAsync(-3, handler);
+                    }
+                    return null;
+                } catch (XmlPullParserException e2) {
+                    e = e2;
+                    charSequence2 = charSequence2;
+                    Log.e("ResourcesCompat", "Failed to parse xml resource " + charSequence2, e);
+                    if (fontCallback != null) {
+                    }
+                    return null;
+                }
             }
             Typeface createFromResourcesFontFile = TypefaceCompat.createFromResourcesFontFile(context, resources, i, charSequence2, typedValue.assetCookie, i2);
             if (fontCallback != null) {
                 if (createFromResourcesFontFile != null) {
                     fontCallback.callbackSuccessAsync(createFromResourcesFontFile, handler);
-                } else {
-                    fontCallback.callbackFailAsync(-3, handler);
+                    return createFromResourcesFontFile;
                 }
+                fontCallback.callbackFailAsync(-3, handler);
             }
             return createFromResourcesFontFile;
         } catch (IOException e3) {
             e = e3;
-            Log.e("ResourcesCompat", "Failed to read xml resource " + charSequence2, e);
-            if (fontCallback != null) {
-                return null;
-            }
-            fontCallback.callbackFailAsync(i3, handler);
-            return null;
         } catch (XmlPullParserException e4) {
             e = e4;
-            Log.e("ResourcesCompat", "Failed to parse xml resource " + charSequence2, e);
-            if (fontCallback != null) {
-            }
         }
     }
 

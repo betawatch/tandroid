@@ -250,7 +250,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         createCircleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichMediaCell.this.lambda$new$0(view);
+                RichMediaCell.$r8$lambda$mHg5RPnRniObWcym7yBCq_U8i5k(RichMediaCell.this, view);
             }
         });
         ImageView createCircleButton2 = createCircleButton();
@@ -260,27 +260,25 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         createCircleButton2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichMediaCell.this.lambda$new$1(view);
+                RichMediaCell.$r8$lambda$akt-fNM_mFaBj37umbqys92duXw(RichMediaCell.this, view);
             }
         });
         updateColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$mHg5RPnRniObWcym7yBCq_U8i5k(RichMediaCell richMediaCell, View view) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richMediaCell.delegate;
+        if (delegate == null || (blockRow = richMediaCell.currentRow) == null) {
             return;
         }
         delegate.onAddMedia(blockRow);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$akt-fNM_mFaBj37umbqys92duXw(RichMediaCell richMediaCell, View view) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richMediaCell.delegate;
+        if (delegate == null || (blockRow = richMediaCell.currentRow) == null) {
             return;
         }
         delegate.onSwitchMode(blockRow);
@@ -356,25 +354,23 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
 
     private boolean isGalleryRow() {
         BlockRow blockRow = this.currentRow;
-        if (blockRow != null) {
-            TL_iv.PageBlock pageBlock = blockRow.block;
-            if ((pageBlock instanceof TL_iv.pageBlockCollage) || (pageBlock instanceof TL_iv.pageBlockSlideshow)) {
-                return true;
-            }
+        if (blockRow == null) {
+            return false;
         }
-        return false;
+        TL_iv.PageBlock pageBlock = blockRow.block;
+        return (pageBlock instanceof TL_iv.pageBlockCollage) || (pageBlock instanceof TL_iv.pageBlockSlideshow);
     }
 
     private List medias() {
         if (this.currentRow == null) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         if (isGalleryRow()) {
             ArrayList arrayList = this.currentRow.medias;
-            return arrayList != null ? arrayList : Collections.emptyList();
+            return arrayList != null ? arrayList : Collections.EMPTY_LIST;
         }
         MediaUploadState mediaUploadState = this.currentRow.media;
-        return mediaUploadState != null ? Collections.singletonList(mediaUploadState) : Collections.emptyList();
+        return mediaUploadState != null ? Collections.singletonList(mediaUploadState) : Collections.EMPTY_LIST;
     }
 
     private void updateSwitchButton(boolean z) {
@@ -436,7 +432,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             createCircleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    RichMediaCell.this.lambda$rebuildItems$2(view);
+                    r0.onMenuClicked(RichMediaCell.this.menuButtons.indexOf(view));
                 }
             });
             addView(createCircleButton, LayoutHelper.createFrame(32, 32, 51));
@@ -457,11 +453,6 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         this.spoilerEffect = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$rebuildItems$2(View view) {
-        onMenuClicked(this.menuButtons.indexOf(view));
-    }
-
     private boolean hasAnySpoiler() {
         for (int i = 0; i < this.items.size(); i++) {
             MediaUploadState media = ((RichMediaItem) this.items.get(i)).getMedia();
@@ -472,7 +463,8 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         return false;
     }
 
-    private void onMenuClicked(int i) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onMenuClicked(int i) {
         if (this.delegate == null || this.currentRow == null) {
             return;
         }
@@ -489,13 +481,13 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         makeMenu.add(z ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RichMediaCell.this.lambda$onMenuClicked$3(mediaUploadState);
+                RichMediaCell.$r8$lambda$2HytqjQOWtKJj2veZLb8k0QpX80(RichMediaCell.this, mediaUploadState);
             }
         });
         makeMenu.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                RichMediaCell.this.lambda$onMenuClicked$4(mediaUploadState);
+                RichMediaCell.$r8$lambda$qRIK69zkVfD_uOJkuGUWY98XDl8(RichMediaCell.this, mediaUploadState);
             }
         });
         makeMenu.translate(0.0f, -AndroidUtilities.dp(38.0f));
@@ -506,21 +498,19 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         makeMenu.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClicked$3(MediaUploadState mediaUploadState) {
+    public static /* synthetic */ void $r8$lambda$2HytqjQOWtKJj2veZLb8k0QpX80(RichMediaCell richMediaCell, MediaUploadState mediaUploadState) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richMediaCell.delegate;
+        if (delegate == null || (blockRow = richMediaCell.currentRow) == null) {
             return;
         }
         delegate.onToggleSpoiler(blockRow, mediaUploadState);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClicked$4(MediaUploadState mediaUploadState) {
+    public static /* synthetic */ void $r8$lambda$qRIK69zkVfD_uOJkuGUWY98XDl8(RichMediaCell richMediaCell, MediaUploadState mediaUploadState) {
         BlockRow blockRow;
-        Delegate delegate = this.delegate;
-        if (delegate == null || (blockRow = this.currentRow) == null) {
+        Delegate delegate = richMediaCell.delegate;
+        if (delegate == null || (blockRow = richMediaCell.currentRow) == null) {
             return;
         }
         delegate.onDeleteMedia(blockRow, mediaUploadState);
@@ -631,6 +621,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void computeGeometry(int i) {
+        float f;
         int round;
         int dp;
         int i2;
@@ -699,11 +690,13 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
                 int i9 = (b2 - i8) + i3;
                 float[] fArr3 = groupedMessagePosition3.siblingHeights;
                 if (fArr3 == null || fArr3.length != i9) {
-                    float f = groupedMessagePosition3.ph / i9;
+                    float f2 = groupedMessagePosition3.ph / i9;
                     while (i8 <= groupedMessagePosition3.maxY) {
-                        fArr2[i8] = Math.max(fArr2[i8], f);
+                        fArr2[i8] = Math.max(fArr2[i8], f2);
                         i8++;
                     }
+                    i7++;
+                    i3 = 1;
                 } else {
                     for (int i10 = 0; i10 < i9; i10++) {
                         int i11 = groupedMessagePosition3.minY + i10;
@@ -717,12 +710,12 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         Point point2 = AndroidUtilities.displaySize;
         float max2 = Math.max(point2.x, point2.y) * 0.5f;
         int[] iArr = new int[i5 + 2];
-        float f2 = 0.0f;
+        float f3 = 0.0f;
         for (int i12 = 0; i12 <= i5; i12++) {
-            iArr[i12] = Math.round(f2 * max2);
-            f2 += fArr2[i12];
+            iArr[i12] = Math.round(f3 * max2);
+            f3 += fArr2[i12];
         }
-        iArr[i6] = Math.round(f2 * max2);
+        iArr[i6] = Math.round(f3 * max2);
         int dp3 = AndroidUtilities.dp(2.0f);
         int i13 = 0;
         while (i13 < computeGrouped.length) {
@@ -730,7 +723,8 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             int i14 = iArr[groupedMessagePosition4.minY];
             int i15 = iArr[groupedMessagePosition4.maxY + 1] - i14;
             if (groupedMessagePosition4.leftSpanOffset > 0) {
-                round = Math.round((r15 * i) / 1000.0f);
+                round = Math.round((r14 * i) / 1000.0f);
+                f = 1000.0f;
             } else {
                 int i16 = 0;
                 for (int i17 = 0; i17 < computeGrouped.length; i17++) {
@@ -743,9 +737,10 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
                         }
                     }
                 }
+                f = 1000.0f;
                 round = Math.round((i16 * i) / 1000.0f);
             }
-            int round2 = (groupedMessagePosition4.flags & 2) != 0 ? i - round : Math.round((groupedMessagePosition4.pw * i) / 1000.0f) - dp3;
+            int round2 = (groupedMessagePosition4.flags & 2) != 0 ? i - round : Math.round((groupedMessagePosition4.pw * i) / f) - dp3;
             if ((groupedMessagePosition4.flags & 8) == 0) {
                 i15 -= dp3;
             }
@@ -756,11 +751,11 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         }
         this.collageH = iArr[i6];
         this.slideW = i;
-        float f3 = 0.0f;
+        float f4 = 0.0f;
         for (int i18 = 0; i18 < size; i18++) {
-            f3 += aspectRatio((RichMediaItem) this.items.get(i18));
+            f4 += aspectRatio((RichMediaItem) this.items.get(i18));
         }
-        int max3 = (int) (this.slideW / Math.max(0.5f, f3 / size));
+        int max3 = (int) (this.slideW / Math.max(0.5f, f4 / size));
         Point point3 = AndroidUtilities.displaySize;
         int max4 = (int) (Math.max(point3.x, point3.y) * 0.55f);
         if (max3 > max4) {
@@ -848,6 +843,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        Canvas canvas2;
         int paddingTop = getPaddingTop();
         drawMedia(canvas);
         float f = this.modeProgress.get();
@@ -855,9 +851,12 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             drawDots(canvas, f);
         }
         if (isCellSelected()) {
-            canvas.drawRect(getPaddingLeft(), paddingTop, getWidth() - getPaddingRight(), paddingTop + this.imageH, this.selectionPaint);
+            canvas2 = canvas;
+            canvas2.drawRect(getPaddingLeft(), paddingTop, getWidth() - getPaddingRight(), paddingTop + this.imageH, this.selectionPaint);
+        } else {
+            canvas2 = canvas;
         }
-        drawGlassButtons(canvas);
+        drawGlassButtons(canvas2);
         if (this.modeProgress.isInProgress()) {
             requestLayout();
         }
@@ -878,6 +877,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void drawMedia(Canvas canvas) {
+        Canvas canvas2;
         int i;
         int paddingTop = getPaddingTop();
         int paddingLeft = getPaddingLeft();
@@ -893,15 +893,18 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         }
         boolean z = isSlideshow() && this.items.size() >= 2;
         int dp = RichBlockChrome.quoteDepth(this.currentRow) > 0 ? AndroidUtilities.dp(8.0f) : 0;
-        if (z && (((i = this.currentPage) == 0 && this.pageOffset < 0.0f) || (i == this.items.size() - 1 && this.pageOffset > 0.0f))) {
-            canvas.drawRect(0.0f, paddingTop, max, this.imageH + paddingTop, this.backgroundPaint);
+        if (!z || (((i = this.currentPage) != 0 || this.pageOffset >= 0.0f) && (i != this.items.size() - 1 || this.pageOffset <= 0.0f))) {
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawRect(0.0f, paddingTop, max, this.imageH + paddingTop, this.backgroundPaint);
         }
         if (this.items.size() == 1 && this.itemRects.size() == 1) {
             RectF rectF = (RectF) this.itemRects.get(0);
             if (rectF.left > 0.5f || rectF.right < max - 0.5f) {
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(0.0f, paddingTop, max, paddingTop + this.imageH);
-                ((RichMediaItem) this.items.get(0)).drawBlurBackground(canvas, rectF2);
+                ((RichMediaItem) this.items.get(0)).drawBlurBackground(canvas2, rectF2);
             }
         }
         int i2 = 0;
@@ -914,16 +917,16 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
                 richMediaItem.setRoundRadius(0, 0, 0, 0);
             }
             if (!richMediaItem.hasImage()) {
-                canvas.drawRect(rectF3, this.backgroundPaint);
+                canvas2.drawRect(rectF3, this.backgroundPaint);
             }
-            richMediaItem.draw(canvas, rectF3);
+            richMediaItem.draw(canvas2, rectF3);
             MediaUploadState media = richMediaItem.getMedia();
             if (media != null && media.hasSpoiler && richMediaItem.hasImage()) {
-                richMediaItem.drawSpoiler(canvas, rectF3, getSpoilerEffect(), this);
+                richMediaItem.drawSpoiler(canvas2, rectF3, getSpoilerEffect(), this);
             }
             i2++;
         }
-        canvas.restore();
+        canvas2.restore();
     }
 
     private void drawGlassButtons(Canvas canvas) {
@@ -963,6 +966,8 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void drawDots(Canvas canvas, float f) {
+        float f2;
+        float f3;
         float clamp;
         if (slideDotPaint == null) {
             Paint paint = new Paint(1);
@@ -975,20 +980,24 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         int dp = (AndroidUtilities.dp(7.0f) * size) + ((size - 1) * AndroidUtilities.dp(6.0f)) + AndroidUtilities.dp(4.0f);
         int paddingLeft = getPaddingLeft();
         int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
-        float f2 = this.currentPage + this.pageOffset;
+        float f4 = this.currentPage + this.pageOffset;
         if (dp < max) {
             clamp = paddingLeft + ((max - dp) / 2.0f);
+            f2 = 1.0f;
+            f3 = 23.0f;
         } else {
             float dp2 = AndroidUtilities.dp(4.0f) + paddingLeft;
+            f2 = 1.0f;
             int dp3 = AndroidUtilities.dp(13.0f);
-            clamp = dp2 - (Utilities.clamp(f2 - (((max - AndroidUtilities.dp(8.0f)) / 2) / dp3), Math.max(0, (size - (r14 * 2)) - 1), 0.0f) * dp3);
+            f3 = 23.0f;
+            clamp = dp2 - (Utilities.clamp(f4 - (((max - AndroidUtilities.dp(8.0f)) / 2) / dp3), Math.max(0, (size - (r5 * 2)) - 1), 0.0f) * dp3);
         }
         canvas.save();
-        canvas.clipRect(paddingLeft, (getPaddingTop() + this.imageH) - AndroidUtilities.dp(23.0f), max + paddingLeft, getPaddingTop() + this.imageH);
+        canvas.clipRect(paddingLeft, (getPaddingTop() + this.imageH) - AndroidUtilities.dp(f3), max + paddingLeft, getPaddingTop() + this.imageH);
         for (int i = 0; i < size; i++) {
-            float max2 = Math.max(0.0f, 1.0f - Math.abs(i - f2));
+            float max2 = Math.max(0.0f, f2 - Math.abs(i - f4));
             slideDotPaint.setAlpha((int) (((max2 * 95.0f) + 160.0f) * f));
-            canvas.drawCircle(AndroidUtilities.dp(4.0f) + clamp + (AndroidUtilities.dp(13.0f) * i), paddingTop, AndroidUtilities.dp(2.0f) + (AndroidUtilities.dp(1.0f) * max2), slideDotPaint);
+            canvas.drawCircle(AndroidUtilities.dp(4.0f) + clamp + (AndroidUtilities.dp(13.0f) * i), paddingTop, AndroidUtilities.dp(2.0f) + (AndroidUtilities.dp(f2) * max2), slideDotPaint);
         }
         canvas.restore();
     }
@@ -1134,7 +1143,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
                         this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                RichMediaCell.this.lambda$settle$5(valueAnimator);
+                                RichMediaCell.$r8$lambda$pqLgnNZfp5Bid422jCKaZB6tnm8(RichMediaCell.this, valueAnimator);
                             }
                         });
                         this.settleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.iv.RichMediaCell.3
@@ -1159,7 +1168,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    RichMediaCell.this.lambda$settle$5(valueAnimator);
+                    RichMediaCell.$r8$lambda$pqLgnNZfp5Bid422jCKaZB6tnm8(RichMediaCell.this, valueAnimator);
                 }
             });
             this.settleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.iv.RichMediaCell.3
@@ -1182,7 +1191,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                RichMediaCell.this.lambda$settle$5(valueAnimator);
+                RichMediaCell.$r8$lambda$pqLgnNZfp5Bid422jCKaZB6tnm8(RichMediaCell.this, valueAnimator);
             }
         });
         this.settleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.iv.RichMediaCell.3
@@ -1197,11 +1206,11 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         this.settleAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$settle$5(ValueAnimator valueAnimator) {
-        this.pageOffset = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        requestLayout();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$pqLgnNZfp5Bid422jCKaZB6tnm8(RichMediaCell richMediaCell, ValueAnimator valueAnimator) {
+        richMediaCell.getClass();
+        richMediaCell.pageOffset = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        richMediaCell.requestLayout();
+        richMediaCell.invalidate();
     }
 
     private int itemIndexAt(float f, float f2) {

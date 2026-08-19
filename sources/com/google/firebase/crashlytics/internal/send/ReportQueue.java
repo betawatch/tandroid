@@ -87,16 +87,16 @@ final class ReportQueue {
         new Thread(new Runnable() { // from class: com.google.firebase.crashlytics.internal.send.ReportQueue$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ReportQueue.this.lambda$flushScheduledReportsIfAble$0(countDownLatch);
+                ReportQueue.$r8$lambda$8U76pxOta423qVuKYJ0HhfFLxJ4(ReportQueue.this, countDownLatch);
             }
         }).start();
         Utils.awaitUninterruptibly(countDownLatch, 2L, TimeUnit.SECONDS);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flushScheduledReportsIfAble$0(CountDownLatch countDownLatch) {
+    public static /* synthetic */ void $r8$lambda$8U76pxOta423qVuKYJ0HhfFLxJ4(ReportQueue reportQueue, CountDownLatch countDownLatch) {
+        reportQueue.getClass();
         try {
-            ForcedSender.sendBlocking(this.transport, Priority.HIGHEST);
+            ForcedSender.sendBlocking(reportQueue.transport, Priority.HIGHEST);
         } catch (SQLException unused) {
         }
         countDownLatch.countDown();
@@ -109,19 +109,19 @@ final class ReportQueue {
         this.transport.schedule(Event.ofUrgent(crashlyticsReportWithSessionId.getReport()), new TransportScheduleCallback() { // from class: com.google.firebase.crashlytics.internal.send.ReportQueue$$ExternalSyntheticLambda0
             @Override // com.google.android.datatransport.TransportScheduleCallback
             public final void onSchedule(Exception exc) {
-                ReportQueue.this.lambda$sendReport$1(taskCompletionSource, z, crashlyticsReportWithSessionId, exc);
+                ReportQueue.$r8$lambda$4lFm4kq1MZXZfcwIBR3zscs57No(ReportQueue.this, taskCompletionSource, z, crashlyticsReportWithSessionId, exc);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendReport$1(TaskCompletionSource taskCompletionSource, boolean z, CrashlyticsReportWithSessionId crashlyticsReportWithSessionId, Exception exc) {
+    public static /* synthetic */ void $r8$lambda$4lFm4kq1MZXZfcwIBR3zscs57No(ReportQueue reportQueue, TaskCompletionSource taskCompletionSource, boolean z, CrashlyticsReportWithSessionId crashlyticsReportWithSessionId, Exception exc) {
+        reportQueue.getClass();
         if (exc != null) {
             taskCompletionSource.trySetException(exc);
             return;
         }
         if (z) {
-            flushScheduledReportsIfAble();
+            reportQueue.flushScheduledReportsIfAble();
         }
         taskCompletionSource.trySetResult(crashlyticsReportWithSessionId);
     }

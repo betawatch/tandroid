@@ -127,15 +127,14 @@ public class VoIPStatusTextView extends FrameLayout {
             replaceViews(textViewArr[0], textViewArr[1], new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPStatusTextView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPStatusTextView.this.lambda$setText$0();
+                    VoIPStatusTextView.$r8$lambda$a7CBLmpfBBhynmxzYc4BDBqvIb8(VoIPStatusTextView.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setText$0() {
-        TextView[] textViewArr = this.textView;
+    public static /* synthetic */ void $r8$lambda$a7CBLmpfBBhynmxzYc4BDBqvIb8(VoIPStatusTextView voIPStatusTextView) {
+        TextView[] textViewArr = voIPStatusTextView.textView;
         TextView textView = textViewArr[0];
         textViewArr[0] = textViewArr[1];
         textViewArr[1] = textView;
@@ -181,7 +180,7 @@ public class VoIPStatusTextView extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPStatusTextView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoIPStatusTextView.lambda$replaceViews$1(view2, view, valueAnimator);
+                VoIPStatusTextView.$r8$lambda$7qpEzghzXJzSCxBxECkhuY5Xs_4(view2, view, valueAnimator);
             }
         });
         this.animator.addListener(new 2(view, view2, runnable));
@@ -189,8 +188,7 @@ public class VoIPStatusTextView extends FrameLayout {
         this.animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$replaceViews$1(View view, View view2, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$7qpEzghzXJzSCxBxECkhuY5Xs_4(View view, View view2, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         float f = 1.0f - floatValue;
         view.setTranslationY(AndroidUtilities.dp(8.0f) * f);
@@ -240,7 +238,7 @@ public class VoIPStatusTextView extends FrameLayout {
                     voIPStatusTextView3.replaceViews(textViewArr[0], textViewArr[1], new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPStatusTextView$2$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            VoIPStatusTextView.2.this.lambda$onAnimationEnd$0();
+                            VoIPStatusTextView.2.$r8$lambda$vqd9HtMAbV7fckPz2V1GVE1QDrc(VoIPStatusTextView.2.this);
                         }
                     });
                 }
@@ -248,8 +246,7 @@ public class VoIPStatusTextView extends FrameLayout {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAnimationEnd$0() {
+        public static /* synthetic */ void $r8$lambda$vqd9HtMAbV7fckPz2V1GVE1QDrc(2 r4) {
             TextView[] textViewArr = VoIPStatusTextView.this.textView;
             TextView textView = textViewArr[0];
             textViewArr[0] = textViewArr[1];

@@ -138,7 +138,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
                 this.openAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        RightSlidingDialogContainer.this.lambda$presentFragment$0(valueAnimator);
+                        RightSlidingDialogContainer.$r8$lambda$7b7JyHtSj8PCCEk6wYEOER3FcxE(RightSlidingDialogContainer.this, valueAnimator);
                     }
                 });
                 this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.RightSlidingDialogContainer.1
@@ -165,17 +165,17 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
             baseFragment.setPreviewDelegate(new BaseFragment.PreviewDelegate() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.BaseFragment.PreviewDelegate
                 public final void finishFragment() {
-                    RightSlidingDialogContainer.this.lambda$presentFragment$1();
+                    RightSlidingDialogContainer.this.finishPreview();
                 }
             });
             ViewCompat.requestApplyInsets(this);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$presentFragment$0(ValueAnimator valueAnimator) {
-        this.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateOpenAnimationProgress();
+    public static /* synthetic */ void $r8$lambda$7b7JyHtSj8PCCEk6wYEOER3FcxE(RightSlidingDialogContainer rightSlidingDialogContainer, ValueAnimator valueAnimator) {
+        rightSlidingDialogContainer.getClass();
+        rightSlidingDialogContainer.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        rightSlidingDialogContainer.updateOpenAnimationProgress();
     }
 
     private void animateReplace(final BaseFragment baseFragment) {
@@ -208,39 +208,37 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         this.replaceAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda5
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
             public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                RightSlidingDialogContainer.this.lambda$animateReplace$2(dynamicAnimation, f, f2);
+                RightSlidingDialogContainer.$r8$lambda$id-1rogzV9qOevvyOhPbPQoQ72Y(RightSlidingDialogContainer.this, dynamicAnimation, f, f2);
             }
         });
         this.replaceAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda6
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                RightSlidingDialogContainer.this.lambda$animateReplace$3(baseFragment2, baseFragment, dynamicAnimation, z, f, f2);
+                RightSlidingDialogContainer.$r8$lambda$CD3mTbU7b-tmmcWJTSy1oasOvmM(RightSlidingDialogContainer.this, baseFragment2, baseFragment, dynamicAnimation, z, f, f2);
             }
         });
         this.replaceAnimation.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateReplace$2(DynamicAnimation dynamicAnimation, float f, float f2) {
-        this.replaceProgress = f / 1000.0f;
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$id-1rogzV9qOevvyOhPbPQoQ72Y(RightSlidingDialogContainer rightSlidingDialogContainer, DynamicAnimation dynamicAnimation, float f, float f2) {
+        rightSlidingDialogContainer.replaceProgress = f / 1000.0f;
+        rightSlidingDialogContainer.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateReplace$3(BaseFragment baseFragment, BaseFragment baseFragment2, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-        if (this.replaceAnimation == null) {
+    public static /* synthetic */ void $r8$lambda$CD3mTbU7b-tmmcWJTSy1oasOvmM(RightSlidingDialogContainer rightSlidingDialogContainer, BaseFragment baseFragment, BaseFragment baseFragment2, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        if (rightSlidingDialogContainer.replaceAnimation == null) {
             return;
         }
-        this.replaceAnimation = null;
+        rightSlidingDialogContainer.replaceAnimation = null;
         baseFragment.onTransitionAnimationEnd(true, false);
-        setReplaceProgress(baseFragment2, baseFragment, 1.0f);
-        this.replaceAnimationInProgress = false;
-        this.replacingFragment = null;
+        rightSlidingDialogContainer.setReplaceProgress(baseFragment2, baseFragment, 1.0f);
+        rightSlidingDialogContainer.replaceAnimationInProgress = false;
+        rightSlidingDialogContainer.replacingFragment = null;
         baseFragment2.onPause();
         baseFragment2.onFragmentDestroy();
-        removeView(baseFragment2.getFragmentView());
-        removeView(baseFragment2.getActionBar());
-        this.notificationsLocker.unlock();
+        rightSlidingDialogContainer.removeView(baseFragment2.getFragmentView());
+        rightSlidingDialogContainer.removeView(baseFragment2.getActionBar());
+        rightSlidingDialogContainer.notificationsLocker.unlock();
     }
 
     private void setReplaceProgress(BaseFragment baseFragment, BaseFragment baseFragment2, float f) {
@@ -314,8 +312,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         return this.currentFragment != null;
     }
 
-    /* renamed from: finishPreview, reason: merged with bridge method [inline-methods] */
-    public void lambda$presentFragment$1() {
+    public void finishPreview() {
         if (this.isOpenned) {
             openAnimationStarted(false);
             finishPreviewInernal();
@@ -333,7 +330,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
                 this.currentFragment.onFragmentDestroy();
                 removeAllViews();
                 this.currentFragment = null;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needCheckSystemBarColors, new Object[0]);
             }
             openAnimationFinished(false);
             return;
@@ -344,7 +341,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                RightSlidingDialogContainer.this.lambda$finishPreviewInernal$4(valueAnimator);
+                RightSlidingDialogContainer.$r8$lambda$MfFrl10bmtMgHMlVh3hdr3TE5ys(RightSlidingDialogContainer.this, valueAnimator);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.RightSlidingDialogContainer.2
@@ -364,7 +361,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
                     RightSlidingDialogContainer.this.currentFragment.onFragmentDestroy();
                     RightSlidingDialogContainer.this.removeAllViews();
                     RightSlidingDialogContainer.this.currentFragment = null;
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
+                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needCheckSystemBarColors, new Object[0]);
                 }
                 RightSlidingDialogContainer.this.openAnimationFinished(false);
             }
@@ -374,10 +371,10 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         this.openAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$finishPreviewInernal$4(ValueAnimator valueAnimator) {
-        this.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateOpenAnimationProgress();
+    public static /* synthetic */ void $r8$lambda$MfFrl10bmtMgHMlVh3hdr3TE5ys(RightSlidingDialogContainer rightSlidingDialogContainer, ValueAnimator valueAnimator) {
+        rightSlidingDialogContainer.getClass();
+        rightSlidingDialogContainer.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        rightSlidingDialogContainer.updateOpenAnimationProgress();
     }
 
     @Override // android.view.ViewGroup
@@ -436,7 +433,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda4
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            RightSlidingDialogContainer.this.lambda$onTouchEvent$5(valueAnimator);
+                            RightSlidingDialogContainer.$r8$lambda$TuEvtWFX_cGYvU2O--xBJm6x2pE(RightSlidingDialogContainer.this, valueAnimator);
                         }
                     });
                     this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.RightSlidingDialogContainer.3
@@ -474,10 +471,10 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         return this.startedTracking;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$5(ValueAnimator valueAnimator) {
-        this.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateOpenAnimationProgress();
+    public static /* synthetic */ void $r8$lambda$TuEvtWFX_cGYvU2O--xBJm6x2pE(RightSlidingDialogContainer rightSlidingDialogContainer, ValueAnimator valueAnimator) {
+        rightSlidingDialogContainer.getClass();
+        rightSlidingDialogContainer.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        rightSlidingDialogContainer.updateOpenAnimationProgress();
     }
 
     private void prepareForMoving(MotionEvent motionEvent) {
@@ -599,7 +596,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
     public void removeViewInLayout(View view) {
         super.removeViewInLayout(view);
         if (view == this.currentFragmentView) {
-            lambda$presentFragment$1();
+            finishPreview();
         }
     }
 
@@ -607,7 +604,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
     public void removeView(View view) {
         super.removeView(view);
         if (view == this.currentFragmentView) {
-            lambda$presentFragment$1();
+            finishPreview();
         }
     }
 }

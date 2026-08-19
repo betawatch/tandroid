@@ -246,14 +246,16 @@ public class MediaRouteButton extends View {
     @Override // android.view.View
     protected int[] onCreateDrawableState(int i) {
         int[] onCreateDrawableState = super.onCreateDrawableState(i + 1);
-        if (this.mRouter == null || this.mIsFixedIcon) {
-            return onCreateDrawableState;
-        }
-        int i2 = this.mConnectionState;
-        if (i2 == 1) {
-            View.mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
-        } else if (i2 == 2) {
-            View.mergeDrawableStates(onCreateDrawableState, CHECKED_STATE_SET);
+        if (this.mRouter != null && !this.mIsFixedIcon) {
+            int i2 = this.mConnectionState;
+            if (i2 == 1) {
+                View.mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
+                return onCreateDrawableState;
+            }
+            if (i2 == 2) {
+                View.mergeDrawableStates(onCreateDrawableState, CHECKED_STATE_SET);
+                return onCreateDrawableState;
+            }
         }
         return onCreateDrawableState;
     }

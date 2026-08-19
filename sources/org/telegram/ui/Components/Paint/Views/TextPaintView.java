@@ -10,11 +10,11 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.Build;
 import android.text.Editable;
-import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
@@ -217,7 +217,7 @@ public class TextPaintView extends EntityView {
         float f = i;
         this.editText.setTextSize(0, f);
         this.editText.setCursorSize(AndroidUtilities.dp(f * 0.4f));
-        if (this.editText.getText() instanceof Spanned) {
+        if (OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(this.editText.getText())) {
             Editable text = this.editText.getText();
             Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) text.getSpans(0, text.length(), Emoji.EmojiSpan.class);
             for (int i2 = 0; i2 < emojiSpanArr.length; i2++) {
@@ -325,14 +325,9 @@ public class TextPaintView extends EntityView {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.TextPaintView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                TextPaintView.this.lambda$beginEditing$0();
+                AndroidUtilities.showKeyboard(TextPaintView.this.editText);
             }
         }, 300L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$beginEditing$0() {
-        AndroidUtilities.showKeyboard(this.editText);
     }
 
     public void endEditing() {
@@ -432,6 +427,7 @@ public class TextPaintView extends EntityView {
 
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
+            Canvas canvas2;
             super.onDraw(canvas);
             int saveCount = canvas.getSaveCount();
             float showAlpha = getShowAlpha();
@@ -439,7 +435,11 @@ public class TextPaintView extends EntityView {
                 return;
             }
             if (showAlpha < 1.0f) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha * 255.0f), 31);
+                int i = (int) (showAlpha * 255.0f);
+                canvas2 = canvas;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i, 31);
+            } else {
+                canvas2 = canvas;
             }
             float dp = AndroidUtilities.dp(2.0f);
             float dpf2 = AndroidUtilities.dpf2(5.66f);
@@ -465,20 +465,20 @@ public class TextPaintView extends EntityView {
             float f9 = f2 - f5;
             rectF.set(f9, dp2, f2, f8);
             this.path.arcTo(rectF, 270.0f, 90.0f);
-            canvas.drawPath(this.path, this.paint);
+            canvas2.drawPath(this.path, this.paint);
             this.path.rewind();
             float f10 = f3 - f7;
             rectF.set(dp2, f10, f6, f3);
             this.path.arcTo(rectF, 180.0f, -90.0f);
             rectF.set(f9, f10, f2, f3);
             this.path.arcTo(rectF, 90.0f, -90.0f);
-            canvas.drawPath(this.path, this.paint);
+            canvas2.drawPath(this.path, this.paint);
             float f11 = dp2 + f4;
-            canvas.drawCircle(dp2, f11, dpf2, this.dotStrokePaint);
-            canvas.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
-            canvas.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
+            canvas2.drawCircle(dp2, f11, dpf2, this.dotStrokePaint);
+            canvas2.drawCircle(dp2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
+            canvas2.drawCircle(f2, f11, dpf2, this.dotStrokePaint);
+            canvas2.drawCircle(f2, f11, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, this.dotPaint);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             float f12 = dp2 + min2;
             float f13 = f3 - min2;
             canvas.drawLine(dp2, f12, dp2, f13, this.paint);

@@ -107,7 +107,7 @@ public class RecyclerItemsEnterAnimator {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.RecyclerItemsEnterAnimator$2$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            RecyclerItemsEnterAnimator.2.this.lambda$onPreDraw$0(childAdapterPosition, valueAnimator);
+                            RecyclerItemsEnterAnimator.2.$r8$lambda$g2GB4Jel2oVNqnYddJpDMzOEvxE(RecyclerItemsEnterAnimator.2.this, childAdapterPosition, valueAnimator);
                         }
                     });
                     ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.RecyclerItemsEnterAnimator.2.1
@@ -142,8 +142,8 @@ public class RecyclerItemsEnterAnimator {
             return false;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onPreDraw$0(int i, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$g2GB4Jel2oVNqnYddJpDMzOEvxE(2 r1, int i, ValueAnimator valueAnimator) {
+            r1.getClass();
             RecyclerItemsEnterAnimator.this.listAlphaItems.put(i, (Float) valueAnimator.getAnimatedValue());
             RecyclerItemsEnterAnimator recyclerItemsEnterAnimator = RecyclerItemsEnterAnimator.this;
             recyclerItemsEnterAnimator.invalidateAlpha = true;

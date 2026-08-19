@@ -606,9 +606,9 @@ class FragmentStateManager {
             if (!bundle4.isEmpty()) {
                 bundle2.putBundle("registryState", bundle4);
             }
-            Bundle lambda$attachController$5 = this.mFragment.mChildFragmentManager.lambda$attachController$5();
-            if (!lambda$attachController$5.isEmpty()) {
-                bundle2.putBundle("childFragmentManager", lambda$attachController$5);
+            Bundle saveAllStateInternal = this.mFragment.mChildFragmentManager.saveAllStateInternal();
+            if (!saveAllStateInternal.isEmpty()) {
+                bundle2.putBundle("childFragmentManager", saveAllStateInternal);
             }
             if (this.mFragment.mView != null) {
                 saveViewState();

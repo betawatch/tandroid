@@ -20,11 +20,13 @@ abstract class CycleDetector {
         }
 
         public boolean equals(Object obj) {
-            if (!(obj instanceof Dep)) {
-                return false;
+            if (obj instanceof Dep) {
+                Dep dep = (Dep) obj;
+                if (dep.anInterface.equals(this.anInterface) && dep.set == this.set) {
+                    return true;
+                }
             }
-            Dep dep = (Dep) obj;
-            return dep.anInterface.equals(this.anInterface) && dep.set == this.set;
+            return false;
         }
 
         public int hashCode() {

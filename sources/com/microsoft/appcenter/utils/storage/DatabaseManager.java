@@ -12,7 +12,7 @@ import java.io.Closeable;
 import java.util.Arrays;
 
 /* loaded from: classes3.dex */
-public class DatabaseManager implements Closeable {
+public class DatabaseManager implements Closeable, AutoCloseable {
     public static final String[] SELECT_PRIMARY_KEY = {"oid"};
     private final Context mContext;
     private final String mDatabase;

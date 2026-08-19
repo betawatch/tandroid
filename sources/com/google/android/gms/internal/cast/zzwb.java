@@ -22,13 +22,12 @@ final class zzwb extends zzvz {
 
     @Override // com.google.android.gms.internal.cast.zzvz
     final /* bridge */ /* synthetic */ Object zzd(Object obj, Object obj2) {
-        if (zzwa.zzc().equals(obj2)) {
-            return obj;
+        if (!zzwa.zzc().equals(obj2)) {
+            if (zzwa.zzc().equals(obj)) {
+                return zzwa.zze((zzwa) obj, (zzwa) obj2);
+            }
+            ((zzwa) obj).zzd((zzwa) obj2);
         }
-        if (zzwa.zzc().equals(obj)) {
-            return zzwa.zze((zzwa) obj, (zzwa) obj2);
-        }
-        ((zzwa) obj).zzd((zzwa) obj2);
         return obj;
     }
 

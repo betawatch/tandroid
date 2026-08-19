@@ -73,7 +73,10 @@ public class IdManager implements InstallIdProvider {
 
     private boolean shouldRefresh() {
         InstallIdProvider.InstallIds installIds = this.installIds;
-        return installIds == null || (installIds.getFirebaseInstallationId() == null && this.dataCollectionArbiter.isAutomaticDataCollectionEnabled());
+        if (installIds != null) {
+            return installIds.getFirebaseInstallationId() == null && this.dataCollectionArbiter.isAutomaticDataCollectionEnabled();
+        }
+        return true;
     }
 
     static String createSyntheticFid() {

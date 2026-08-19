@@ -104,9 +104,12 @@ final class FieldSet {
             }
             ArrayList arrayList = new ArrayList();
             arrayList.addAll((List) obj);
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                verifyType(fieldDescriptorLite.getLiteType(), it.next());
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj2 = arrayList.get(i);
+                i++;
+                verifyType(fieldDescriptorLite.getLiteType(), obj2);
             }
             obj = arrayList;
         } else {
@@ -124,27 +127,20 @@ final class FieldSet {
     private static boolean isValidType(WireFormat.FieldType fieldType, Object obj) {
         Internal.checkNotNull(obj);
         switch (1.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
-            case 1:
-                return obj instanceof Integer;
-            case 2:
-                return obj instanceof Long;
-            case 3:
-                return obj instanceof Float;
-            case 4:
-                return obj instanceof Double;
-            case 5:
-                return obj instanceof Boolean;
-            case 6:
-                return obj instanceof String;
             case 7:
-                return (obj instanceof ByteString) || (obj instanceof byte[]);
+                if ((obj instanceof ByteString) || (obj instanceof byte[])) {
+                }
+                break;
             case 8:
-                return obj instanceof Integer;
+                if (!(obj instanceof Integer)) {
+                }
+                break;
             case 9:
-                return obj instanceof MessageLite;
-            default:
-                return false;
+                if (!(obj instanceof MessageLite)) {
+                }
+                break;
         }
+        return false;
     }
 
     public boolean isInitialized() {

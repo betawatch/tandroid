@@ -1,40 +1,38 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
-abstract class K0 implements I0 {
-    protected final I0 a;
-    protected final I0 b;
-    private final long c;
-
-    @Override // j$.util.stream.I0
-    public final int q() {
-        return 2;
+public final class K0 extends L0 implements z0 {
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ B0 f(long j, long j2, IntFunction intFunction) {
+        return q1.v(this, j, j2);
     }
 
-    K0(I0 i0, I0 i02) {
-        this.a = i0;
-        this.b = i02;
-        this.c = i0.count() + i02.count();
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        q1.s(this, consumer);
     }
 
-    @Override // j$.util.stream.I0
-    public final I0 b(int i) {
-        if (i == 0) {
-            return this.a;
-        }
-        if (i == 1) {
-            return this.b;
-        }
-        throw new IndexOutOfBoundsException();
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ void g(Object[] objArr, int i) {
+        q1.p(this, (Long[]) objArr, i);
     }
 
-    @Override // j$.util.stream.I0
-    public final long count() {
-        return this.c;
+    @Override // j$.util.stream.A0
+    public final Object c(int i) {
+        return new long[i];
     }
 
-    @Override // j$.util.stream.I0
-    public /* bridge */ /* synthetic */ H0 b(int i) {
-        return (H0) b(i);
+    @Override // j$.util.stream.B0
+    public final Spliterator spliterator() {
+        return new b1(this);
+    }
+
+    @Override // j$.util.stream.B0
+    public final j$.util.c0 spliterator() {
+        return new b1(this);
     }
 }

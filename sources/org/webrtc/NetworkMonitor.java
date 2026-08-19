@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class NetworkMonitor {
     private static final String TAG = "NetworkMonitor";
     private volatile NetworkChangeDetector.ConnectionType currentConnectionType;
@@ -191,9 +191,12 @@ public class NetworkMonitor {
         synchronized (this.networkObservers) {
             arrayList = new ArrayList(this.networkObservers);
         }
-        Iterator it2 = arrayList.iterator();
-        while (it2.hasNext()) {
-            ((NetworkObserver) it2.next()).onConnectionTypeChanged(connectionType);
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((NetworkObserver) obj).onConnectionTypeChanged(connectionType);
         }
     }
 

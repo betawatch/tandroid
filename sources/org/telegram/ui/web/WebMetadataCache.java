@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.web.BotWebViewContainer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebMetadataCache {
     private static WebMetadataCache instance;
     private HashMap cache;
@@ -133,7 +133,8 @@ public class WebMetadataCache {
         }
     }
 
-    private static final class MetadataFile extends TLObject {
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class MetadataFile extends TLObject {
         public final ArrayList array;
 
         private MetadataFile() {
@@ -203,16 +204,15 @@ public class WebMetadataCache {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                WebMetadataCache.this.lambda$load$1();
+                WebMetadataCache.$r8$lambda$GPcF8HnHTI7svLi0lIMiiPOg2Vw(WebMetadataCache.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$1() {
-        File cacheFile = getCacheFile();
+    public static /* synthetic */ void $r8$lambda$GPcF8HnHTI7svLi0lIMiiPOg2Vw(final WebMetadataCache webMetadataCache) {
+        File cacheFile = webMetadataCache.getCacheFile();
         if (!cacheFile.exists()) {
-            this.loaded = true;
+            webMetadataCache.loaded = true;
             return;
         }
         final ArrayList arrayList = new ArrayList();
@@ -227,19 +227,19 @@ public class WebMetadataCache {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                WebMetadataCache.this.lambda$load$0(arrayList);
+                WebMetadataCache.$r8$lambda$zspukuyN0kEK8HOwNUHx6E_10zA(WebMetadataCache.this, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$0(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$zspukuyN0kEK8HOwNUHx6E_10zA(WebMetadataCache webMetadataCache, ArrayList arrayList) {
+        webMetadataCache.getClass();
         for (int i = 0; i < arrayList.size(); i++) {
             WebMetadata webMetadata = (WebMetadata) arrayList.get(i);
-            this.cache.put(webMetadata.domain, webMetadata);
+            webMetadataCache.cache.put(webMetadata.domain, webMetadata);
         }
-        this.loaded = true;
-        this.loading = false;
+        webMetadataCache.loaded = true;
+        webMetadataCache.loading = false;
     }
 
     public void scheduleSave() {
@@ -278,20 +278,19 @@ public class WebMetadataCache {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                WebMetadataCache.this.lambda$save$3(arrayList);
+                WebMetadataCache.$r8$lambda$g46RWQrFUs2ijBAvU24OJzuEsls(WebMetadataCache.this, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$save$3(ArrayList arrayList) {
-        File cacheFile = getCacheFile();
+    public static /* synthetic */ void $r8$lambda$g46RWQrFUs2ijBAvU24OJzuEsls(final WebMetadataCache webMetadataCache, ArrayList arrayList) {
+        File cacheFile = webMetadataCache.getCacheFile();
         if (!cacheFile.exists()) {
             try {
                 cacheFile.createNewFile();
             } catch (Exception e) {
                 FileLog.e(e);
-                this.saving = false;
+                webMetadataCache.saving = false;
                 return;
             }
         }
@@ -309,14 +308,9 @@ public class WebMetadataCache {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                WebMetadataCache.this.lambda$save$2();
+                WebMetadataCache.this.saving = false;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$save$2() {
-        this.saving = false;
     }
 
     public void clear() {

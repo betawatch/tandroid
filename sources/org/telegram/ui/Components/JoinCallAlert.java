@@ -164,19 +164,16 @@ public class JoinCallAlert extends BottomSheet {
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(180L);
             animatorSet.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-            TextView textView = this.textView[0];
             Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f, 0.0f);
-            TextView textView2 = this.textView[0];
             Property property2 = View.TRANSLATION_Y;
-            animatorSet.playTogether(ofFloat, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(this.textView[1], (Property<TextView, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.textView[1], (Property<TextView, Float>) property2, AndroidUtilities.dp(10.0f), 0.0f));
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.textView[0], (Property<TextView, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(this.textView[0], (Property<TextView, Float>) property2, 0.0f, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(this.textView[1], (Property<TextView, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.textView[1], (Property<TextView, Float>) property2, AndroidUtilities.dp(10.0f), 0.0f));
             animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.JoinCallAlert.BottomSheetCell.1
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     JoinCallAlert.this.animationInProgress = false;
-                    TextView textView3 = BottomSheetCell.this.textView[0];
+                    TextView textView = BottomSheetCell.this.textView[0];
                     BottomSheetCell.this.textView[0] = BottomSheetCell.this.textView[1];
-                    BottomSheetCell.this.textView[1] = textView3;
+                    BottomSheetCell.this.textView[1] = textView;
                 }
             });
             animatorSet.start();
@@ -201,13 +198,18 @@ public class JoinCallAlert extends BottomSheet {
         final int sendRequest = accountInstance.getConnectionsManager().sendRequest(getgroupcalljoinas, new RequestDelegate() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                JoinCallAlert.lambda$checkFewUsers$1(AlertDialog.this, j, accountInstance, booleanCallback, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        JoinCallAlert.$r8$lambda$V1wauqt2O0Je46IaESM-YiZZZ6M(AlertDialog.this, tLObject, r3, r5, r6);
+                    }
+                });
             }
         });
         alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
-                JoinCallAlert.lambda$checkFewUsers$2(AccountInstance.this, sendRequest, dialogInterface);
+                AccountInstance.this.getConnectionsManager().cancelRequest(sendRequest, true);
             }
         });
         try {
@@ -216,18 +218,7 @@ public class JoinCallAlert extends BottomSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkFewUsers$1(final AlertDialog alertDialog, final long j, final AccountInstance accountInstance, final MessagesStorage.BooleanCallback booleanCallback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                JoinCallAlert.lambda$checkFewUsers$0(AlertDialog.this, tLObject, j, accountInstance, booleanCallback);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkFewUsers$0(AlertDialog alertDialog, TLObject tLObject, long j, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
+    public static /* synthetic */ void $r8$lambda$V1wauqt2O0Je46IaESM-YiZZZ6M(AlertDialog alertDialog, TLObject tLObject, long j, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
@@ -243,11 +234,6 @@ public class JoinCallAlert extends BottomSheet {
             accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
             booleanCallback.run(joinaspeers.peers.size() == 1);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkFewUsers$2(AccountInstance accountInstance, int i, DialogInterface dialogInterface) {
-        accountInstance.getConnectionsManager().cancelRequest(i, true);
     }
 
     public static void open(final Context context, final long j, final AccountInstance accountInstance, final BaseFragment baseFragment, final int i, final TLRPC.Peer peer, final JoinCallAlertDelegate joinCallAlertDelegate) {
@@ -269,13 +255,18 @@ public class JoinCallAlert extends BottomSheet {
         final int sendRequest = accountInstance.getConnectionsManager().sendRequest(getgroupcalljoinas, new RequestDelegate() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                JoinCallAlert.lambda$open$4(AlertDialog.this, accountInstance, joinCallAlertDelegate, j, context, baseFragment, i, peer, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        JoinCallAlert.$r8$lambda$WulgJK5bRda5E1DckB3UPxblCDI(AlertDialog.this, tLObject, r3, r4, r5, r7, r8, r9, r10);
+                    }
+                });
             }
         });
         alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
-                JoinCallAlert.lambda$open$5(AccountInstance.this, sendRequest, dialogInterface);
+                AccountInstance.this.getConnectionsManager().cancelRequest(sendRequest, true);
             }
         });
         try {
@@ -284,18 +275,7 @@ public class JoinCallAlert extends BottomSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$open$4(final AlertDialog alertDialog, final AccountInstance accountInstance, final JoinCallAlertDelegate joinCallAlertDelegate, final long j, final Context context, final BaseFragment baseFragment, final int i, final TLRPC.Peer peer, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                JoinCallAlert.lambda$open$3(AlertDialog.this, tLObject, accountInstance, joinCallAlertDelegate, j, context, baseFragment, i, peer);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$open$3(AlertDialog alertDialog, TLObject tLObject, AccountInstance accountInstance, JoinCallAlertDelegate joinCallAlertDelegate, long j, Context context, BaseFragment baseFragment, int i, TLRPC.Peer peer) {
+    public static /* synthetic */ void $r8$lambda$WulgJK5bRda5E1DckB3UPxblCDI(AlertDialog alertDialog, TLObject tLObject, AccountInstance accountInstance, JoinCallAlertDelegate joinCallAlertDelegate, long j, Context context, BaseFragment baseFragment, int i, TLRPC.Peer peer) {
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
@@ -315,11 +295,6 @@ public class JoinCallAlert extends BottomSheet {
             accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
             showAlert(context, j, joinaspeers.peers, baseFragment, i, peer, joinCallAlertDelegate);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$open$5(AccountInstance accountInstance, int i, DialogInterface dialogInterface) {
-        accountInstance.getConnectionsManager().cancelRequest(i, true);
     }
 
     private static void showAlert(Context context, long j, ArrayList arrayList, BaseFragment baseFragment, int i, TLRPC.Peer peer, JoinCallAlertDelegate joinCallAlertDelegate) {
@@ -441,7 +416,7 @@ public class JoinCallAlert extends BottomSheet {
                 @Override // android.view.ViewGroup
                 public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                     if (motionEvent.getAction() == 0 && JoinCallAlert.this.scrollOffsetY != 0 && motionEvent.getY() < JoinCallAlert.this.scrollOffsetY) {
-                        JoinCallAlert.this.lambda$new$0();
+                        JoinCallAlert.this.dismiss();
                         return true;
                     }
                     return super.onInterceptTouchEvent(motionEvent);
@@ -524,7 +499,7 @@ public class JoinCallAlert extends BottomSheet {
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i5) {
-                JoinCallAlert.this.lambda$new$6(chat, view, i5);
+                JoinCallAlert.$r8$lambda$L8wCQsOEl6W8-m2mZMRyIDKFVxI(JoinCallAlert.this, chat, view, i5);
             }
         });
         if (i != 0) {
@@ -623,7 +598,7 @@ public class JoinCallAlert extends BottomSheet {
         bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                JoinCallAlert.this.lambda$new$7(joinCallAlertDelegate, view);
+                JoinCallAlert.$r8$lambda$4JAf63IIftbx3LO-a3EKfwgfJKk(JoinCallAlert.this, joinCallAlertDelegate, view);
             }
         });
         if (this.currentType == 0) {
@@ -637,7 +612,7 @@ public class JoinCallAlert extends BottomSheet {
             bottomSheetCell2.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    JoinCallAlert.this.lambda$new$8(view);
+                    JoinCallAlert.$r8$lambda$yNz9gBqLDLO8uAXSLPJBF1G_S1Y(JoinCallAlert.this, view);
                 }
             });
             viewGroup.addView(bottomSheetCell2, LayoutHelper.createLinear(-1, 50, 51, 0, 0, 0, 0));
@@ -647,12 +622,11 @@ public class JoinCallAlert extends BottomSheet {
         updateDoneButton(false, chat);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(TLRPC.Chat chat, View view, int i) {
-        if (this.animationInProgress || this.chats.get(i) == this.selectedPeer) {
+    public static /* synthetic */ void $r8$lambda$L8wCQsOEl6W8-m2mZMRyIDKFVxI(JoinCallAlert joinCallAlert, TLRPC.Chat chat, View view, int i) {
+        if (joinCallAlert.animationInProgress || joinCallAlert.chats.get(i) == joinCallAlert.selectedPeer) {
             return;
         }
-        this.selectedPeer = (TLRPC.Peer) this.chats.get(i);
+        joinCallAlert.selectedPeer = (TLRPC.Peer) joinCallAlert.chats.get(i);
         boolean z = view instanceof GroupCreateUserCell;
         if (z) {
             ((GroupCreateUserCell) view).setChecked(true, true);
@@ -660,9 +634,9 @@ public class JoinCallAlert extends BottomSheet {
             ((ShareDialogCell) view).setChecked(true, true);
             view.invalidate();
         }
-        int childCount = this.listView.getChildCount();
+        int childCount = joinCallAlert.listView.getChildCount();
         for (int i2 = 0; i2 < childCount; i2++) {
-            View childAt = this.listView.getChildAt(i2);
+            View childAt = joinCallAlert.listView.getChildAt(i2);
             if (childAt != view) {
                 if (z) {
                     ((GroupCreateUserCell) childAt).setChecked(false, true);
@@ -671,29 +645,27 @@ public class JoinCallAlert extends BottomSheet {
                 }
             }
         }
-        if (this.currentType != 0) {
-            updateDoneButton(true, chat);
+        if (joinCallAlert.currentType != 0) {
+            joinCallAlert.updateDoneButton(true, chat);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(JoinCallAlertDelegate joinCallAlertDelegate, View view) {
-        TLRPC.InputPeer inputPeer = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(this.selectedPeer));
-        if (this.currentType == 2) {
-            if (this.selectedPeer != this.currentPeer) {
-                joinCallAlertDelegate.didSelectChat(inputPeer, this.chats.size() > 1, false, false);
+    public static /* synthetic */ void $r8$lambda$4JAf63IIftbx3LO-a3EKfwgfJKk(JoinCallAlert joinCallAlert, JoinCallAlertDelegate joinCallAlertDelegate, View view) {
+        TLRPC.InputPeer inputPeer = MessagesController.getInstance(joinCallAlert.currentAccount).getInputPeer(MessageObject.getPeerId(joinCallAlert.selectedPeer));
+        if (joinCallAlert.currentType == 2) {
+            if (joinCallAlert.selectedPeer != joinCallAlert.currentPeer) {
+                joinCallAlertDelegate.didSelectChat(inputPeer, joinCallAlert.chats.size() > 1, false, false);
             }
         } else {
-            this.selectAfterDismiss = inputPeer;
+            joinCallAlert.selectAfterDismiss = inputPeer;
         }
-        lambda$new$0();
+        joinCallAlert.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(View view) {
-        this.selectAfterDismiss = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(this.selectedPeer));
-        this.schedule = true;
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$yNz9gBqLDLO8uAXSLPJBF1G_S1Y(JoinCallAlert joinCallAlert, View view) {
+        joinCallAlert.selectAfterDismiss = MessagesController.getInstance(joinCallAlert.currentAccount).getInputPeer(MessageObject.getPeerId(joinCallAlert.selectedPeer));
+        joinCallAlert.schedule = true;
+        joinCallAlert.dismiss();
     }
 
     private void updateDoneButton(boolean z, TLRPC.Chat chat) {

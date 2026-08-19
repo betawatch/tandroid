@@ -83,7 +83,7 @@ public final class UrlTemplate {
                         }
                         substring = substring.substring(0, indexOf3);
                     }
-                    substring.hashCode();
+                    substring.getClass();
                     switch (substring.hashCode()) {
                         case -1950496919:
                             if (substring.equals("Number")) {

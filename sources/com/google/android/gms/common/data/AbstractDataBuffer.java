@@ -3,7 +3,7 @@ package com.google.android.gms.common.data;
 import java.util.Iterator;
 
 /* loaded from: classes.dex */
-public abstract class AbstractDataBuffer implements DataBuffer {
+public abstract class AbstractDataBuffer implements DataBuffer, AutoCloseable {
     protected final DataHolder mDataHolder;
 
     protected AbstractDataBuffer(DataHolder dataHolder) {

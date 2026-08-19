@@ -2,7 +2,7 @@ package com.google.zxing;
 
 import com.google.zxing.common.detector.MathUtils;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ResultPoint {
     private final float x;
     private final float y;
@@ -21,11 +21,13 @@ public abstract class ResultPoint {
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof ResultPoint)) {
-            return false;
+        if (obj instanceof ResultPoint) {
+            ResultPoint resultPoint = (ResultPoint) obj;
+            if (this.x == resultPoint.x && this.y == resultPoint.y) {
+                return true;
+            }
         }
-        ResultPoint resultPoint = (ResultPoint) obj;
-        return this.x == resultPoint.x && this.y == resultPoint.y;
+        return false;
     }
 
     public final int hashCode() {

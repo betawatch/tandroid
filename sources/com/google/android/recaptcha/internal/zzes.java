@@ -36,14 +36,12 @@ final class zzes extends SuspendLambda implements Function2 {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            zzer zzerVar = new zzer(this.zzb, this.zzc, null);
-            this.zza = 1;
-            obj = CoroutineScopeKt.coroutineScope(zzerVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
+        if (i != 0) {
+            return obj;
         }
-        return obj;
+        zzer zzerVar = new zzer(this.zzb, this.zzc, null);
+        this.zza = 1;
+        Object coroutineScope = CoroutineScopeKt.coroutineScope(zzerVar, this);
+        return coroutineScope == coroutine_suspended ? coroutine_suspended : coroutineScope;
     }
 }

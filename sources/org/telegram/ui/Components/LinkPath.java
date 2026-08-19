@@ -100,7 +100,7 @@ public class LinkPath extends CornerPath {
         try {
             float f5 = this.yOffset;
             float f6 = f2 + f5;
-            float f7 = f5 + f4;
+            float f7 = f4 + f5;
             float f8 = this.lastTop;
             if (f8 == -1.0f) {
                 this.lastTop = f6;
@@ -112,15 +112,15 @@ public class LinkPath extends CornerPath {
             float lineLeft = this.currentLayout.getLineLeft(this.currentLine);
             if (f < lineRight) {
                 if (f > lineLeft || f3 > lineLeft) {
-                    if (f3 <= lineRight) {
-                        lineRight = f3;
+                    if (f3 > lineRight) {
+                        f3 = lineRight;
                     }
-                    if (f >= lineLeft) {
-                        lineLeft = f;
+                    if (f < lineLeft) {
+                        f = lineLeft;
                     }
                     float f9 = this.xOffset;
-                    float f10 = lineLeft + f9;
-                    float f11 = f9 + lineRight;
+                    float f10 = f + f9;
+                    float f11 = f3 + f9;
                     if (Build.VERSION.SDK_INT < 28) {
                         f7 -= f7 != ((float) this.currentLayout.getHeight()) ? this.currentLayout.getSpacingAdd() : 0.0f;
                     } else if (f7 - f6 > this.lineHeight) {
@@ -132,13 +132,14 @@ public class LinkPath extends CornerPath {
                     } else if (i > 0) {
                         f6 += i;
                     }
-                    float f12 = f7;
+                    float f12 = f6;
+                    float f13 = f7;
                     this.centerX = (f11 + f10) / 2.0f;
-                    this.centerY = (f12 + f6) / 2.0f;
+                    this.centerY = (f13 + f12) / 2.0f;
                     if (this.useRoundRect) {
-                        superAddRect(f10 - (getRadius() / 2.0f), f6, f11 + (getRadius() / 2.0f), f12, direction);
+                        superAddRect(f10 - (getRadius() / 2.0f), f12, f11 + (getRadius() / 2.0f), f13, direction);
                     } else {
-                        superAddRect(f10, f6, f11, f12, direction);
+                        superAddRect(f10, f12, f11, f13, direction);
                     }
                 }
             }

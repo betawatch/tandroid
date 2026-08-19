@@ -183,15 +183,13 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                LanguageSelectActivity.this.lambda$createView$4(view, i);
+                LanguageSelectActivity.$r8$lambda$VwWD0TLST9FQVPPl1gX3WWTnqGg(LanguageSelectActivity.this, view, i);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
-                boolean lambda$createView$6;
-                lambda$createView$6 = LanguageSelectActivity.this.lambda$createView$6(view, i);
-                return lambda$createView$6;
+                return LanguageSelectActivity.$r8$lambda$alXUWLNsA1jGQ0KCopCOVKfYbeU(LanguageSelectActivity.this, view, i);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LanguageSelectActivity.4
@@ -205,50 +203,51 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x001d A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x001d, B:13:0x007e, B:15:0x0084, B:20:0x0090, B:24:0x0098, B:26:0x00a0, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0095, B:47:0x0040, B:49:0x0044, B:51:0x004c, B:53:0x0056, B:55:0x0061, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:77:0x013c, B:80:0x0147, B:82:0x0153, B:83:0x0158, B:85:0x0179, B:86:0x0181, B:88:0x0194, B:90:0x019a, B:92:0x01a4, B:94:0x01ac, B:95:0x01af, B:98:0x0107, B:101:0x0111, B:103:0x0119, B:104:0x0122, B:106:0x012a, B:107:0x0132), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0090 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x001d, B:13:0x007e, B:15:0x0084, B:20:0x0090, B:24:0x0098, B:26:0x00a0, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0095, B:47:0x0040, B:49:0x0044, B:51:0x004c, B:53:0x0056, B:55:0x0061, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:77:0x013c, B:80:0x0147, B:82:0x0153, B:83:0x0158, B:85:0x0179, B:86:0x0181, B:88:0x0194, B:90:0x019a, B:92:0x01a4, B:94:0x01ac, B:95:0x01af, B:98:0x0107, B:101:0x0111, B:103:0x0119, B:104:0x0122, B:106:0x012a, B:107:0x0132), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:45:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0040 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x001d, B:13:0x007e, B:15:0x0084, B:20:0x0090, B:24:0x0098, B:26:0x00a0, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0095, B:47:0x0040, B:49:0x0044, B:51:0x004c, B:53:0x0056, B:55:0x0061, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:77:0x013c, B:80:0x0147, B:82:0x0153, B:83:0x0158, B:85:0x0179, B:86:0x0181, B:88:0x0194, B:90:0x019a, B:92:0x01a4, B:94:0x01ac, B:95:0x01af, B:98:0x0107, B:101:0x0111, B:103:0x0119, B:104:0x0122, B:106:0x012a, B:107:0x0132), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x001d A[Catch: Exception -> 0x01d4, TryCatch #0 {Exception -> 0x01d4, blocks: (B:3:0x0003, B:5:0x0009, B:7:0x000f, B:11:0x0019, B:13:0x001d, B:14:0x007e, B:16:0x0084, B:21:0x0090, B:25:0x0098, B:27:0x00a0, B:29:0x00ae, B:31:0x00b2, B:33:0x00b5, B:38:0x00ba, B:40:0x00bf, B:43:0x00c6, B:45:0x0095, B:48:0x0040, B:50:0x0044, B:52:0x004c, B:54:0x0056, B:56:0x0061, B:58:0x00cd, B:60:0x00d1, B:62:0x00da, B:64:0x00e0, B:66:0x00e4, B:70:0x00ea, B:74:0x00f9, B:76:0x00fe, B:79:0x013e, B:82:0x014a, B:84:0x0156, B:85:0x015b, B:87:0x017b, B:88:0x0183, B:90:0x0196, B:92:0x019c, B:94:0x01a6, B:96:0x01ae, B:97:0x01b1, B:101:0x0108, B:104:0x0112, B:106:0x011a, B:107:0x0123, B:109:0x012b, B:110:0x0133), top: B:2:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0090 A[Catch: Exception -> 0x01d4, TryCatch #0 {Exception -> 0x01d4, blocks: (B:3:0x0003, B:5:0x0009, B:7:0x000f, B:11:0x0019, B:13:0x001d, B:14:0x007e, B:16:0x0084, B:21:0x0090, B:25:0x0098, B:27:0x00a0, B:29:0x00ae, B:31:0x00b2, B:33:0x00b5, B:38:0x00ba, B:40:0x00bf, B:43:0x00c6, B:45:0x0095, B:48:0x0040, B:50:0x0044, B:52:0x004c, B:54:0x0056, B:56:0x0061, B:58:0x00cd, B:60:0x00d1, B:62:0x00da, B:64:0x00e0, B:66:0x00e4, B:70:0x00ea, B:74:0x00f9, B:76:0x00fe, B:79:0x013e, B:82:0x014a, B:84:0x0156, B:85:0x015b, B:87:0x017b, B:88:0x0183, B:90:0x0196, B:92:0x019c, B:94:0x01a6, B:96:0x01ae, B:97:0x01b1, B:101:0x0108, B:104:0x0112, B:106:0x011a, B:107:0x0123, B:109:0x012b, B:110:0x0133), top: B:2:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0040 A[Catch: Exception -> 0x01d4, TryCatch #0 {Exception -> 0x01d4, blocks: (B:3:0x0003, B:5:0x0009, B:7:0x000f, B:11:0x0019, B:13:0x001d, B:14:0x007e, B:16:0x0084, B:21:0x0090, B:25:0x0098, B:27:0x00a0, B:29:0x00ae, B:31:0x00b2, B:33:0x00b5, B:38:0x00ba, B:40:0x00bf, B:43:0x00c6, B:45:0x0095, B:48:0x0040, B:50:0x0044, B:52:0x004c, B:54:0x0056, B:56:0x0061, B:58:0x00cd, B:60:0x00d1, B:62:0x00da, B:64:0x00e0, B:66:0x00e4, B:70:0x00ea, B:74:0x00f9, B:76:0x00fe, B:79:0x013e, B:82:0x014a, B:84:0x0156, B:85:0x015b, B:87:0x017b, B:88:0x0183, B:90:0x0196, B:92:0x019c, B:94:0x01a6, B:96:0x01ae, B:97:0x01b1, B:101:0x0108, B:104:0x0112, B:106:0x011a, B:107:0x0123, B:109:0x012b, B:110:0x0133), top: B:2:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$createView$4(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$VwWD0TLST9FQVPPl1gX3WWTnqGg(final LanguageSelectActivity languageSelectActivity, View view, int i) {
         LocaleController.LocaleInfo localeInfo;
         boolean z;
         boolean z2;
+        languageSelectActivity.getClass();
         try {
+            final boolean z3 = true;
             if (view instanceof TextCheckCell) {
-                if (!getContextValue() && !getChatValue()) {
+                if (!languageSelectActivity.getContextValue() && !languageSelectActivity.getChatValue()) {
                     z = false;
-                    if (i != this.manualTranslationPosition) {
-                        boolean z3 = !getContextValue();
-                        getMessagesController().getTranslateController().setContextTranslateEnabled(z3);
-                        ((TextCheckCell) view).setChecked(z3);
-                        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateSearchSettings, new Object[0]);
-                    } else if (i == this.autoTranslationPosition) {
-                        boolean chatValue = getChatValue();
-                        boolean z4 = !chatValue;
-                        if (!chatValue && !getUserConfig().isPremium()) {
-                            showDialog(new PremiumFeatureBottomSheet(this, 13, false));
+                    if (i != languageSelectActivity.manualTranslationPosition) {
+                        boolean z4 = !languageSelectActivity.getContextValue();
+                        languageSelectActivity.getMessagesController().getTranslateController().setContextTranslateEnabled(z4);
+                        ((TextCheckCell) view).setChecked(z4);
+                        NotificationCenter.getInstance(languageSelectActivity.currentAccount).postNotificationName(NotificationCenter.updateSearchSettings, new Object[0]);
+                    } else if (i == languageSelectActivity.autoTranslationPosition) {
+                        boolean chatValue = languageSelectActivity.getChatValue();
+                        boolean z5 = !chatValue;
+                        if (!chatValue && !languageSelectActivity.getUserConfig().isPremium()) {
+                            languageSelectActivity.showDialog(new PremiumFeatureBottomSheet(languageSelectActivity, 13, false));
                             return;
                         } else {
-                            getMessagesController().getTranslateController().setChatTranslateEnabled(z4);
-                            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateSearchSettings, new Object[0]);
-                            ((TextCheckCell) view).setChecked(z4);
+                            languageSelectActivity.getMessagesController().getTranslateController().setChatTranslateEnabled(z5);
+                            NotificationCenter.getInstance(languageSelectActivity.currentAccount).postNotificationName(NotificationCenter.updateSearchSettings, new Object[0]);
+                            ((TextCheckCell) view).setChecked(z5);
                         }
                     }
-                    if (!getContextValue() && !getChatValue()) {
+                    if (!languageSelectActivity.getContextValue() && !languageSelectActivity.getChatValue()) {
                         z2 = false;
                         if (z2 == z) {
-                            int i2 = this.autoTranslationPosition;
+                            int i2 = languageSelectActivity.autoTranslationPosition;
                             if (i2 < 0) {
-                                i2 = this.manualTranslationPosition;
+                                i2 = languageSelectActivity.manualTranslationPosition;
                             }
                             TextCheckCell textCheckCell = null;
-                            for (int i3 = 0; i3 < this.listView.getChildCount(); i3++) {
-                                View childAt = this.listView.getChildAt(i3);
-                                if (this.listView.getChildAdapterPosition(childAt) == i2 && (childAt instanceof TextCheckCell)) {
+                            for (int i3 = 0; i3 < languageSelectActivity.listView.getChildCount(); i3++) {
+                                View childAt = languageSelectActivity.listView.getChildAt(i3);
+                                if (languageSelectActivity.listView.getChildAdapterPosition(childAt) == i2 && (childAt instanceof TextCheckCell)) {
                                     textCheckCell = (TextCheckCell) childAt;
                                 }
                             }
@@ -256,10 +255,10 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                                 textCheckCell.setDivider(z2);
                             }
                             if (z2) {
-                                this.listAdapter.notifyItemInserted(i2 + 1);
+                                languageSelectActivity.listAdapter.notifyItemInserted(i2 + 1);
                                 return;
                             } else {
-                                this.listAdapter.notifyItemRemoved(i2 + 1);
+                                languageSelectActivity.listAdapter.notifyItemRemoved(i2 + 1);
                                 return;
                             }
                         }
@@ -270,9 +269,9 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     }
                 }
                 z = true;
-                if (i != this.manualTranslationPosition) {
+                if (i != languageSelectActivity.manualTranslationPosition) {
                 }
-                if (!getContextValue()) {
+                if (!languageSelectActivity.getContextValue()) {
                     z2 = false;
                     if (z2 == z) {
                     }
@@ -282,47 +281,50 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 }
             } else {
                 if (view instanceof TextSettingsCell) {
-                    presentFragment(new RestrictedLanguagesSelectActivity());
+                    languageSelectActivity.presentFragment(new RestrictedLanguagesSelectActivity());
                     return;
                 }
-                if (getParentActivity() != null && this.parentLayout != null && (view instanceof TextRadioCell)) {
-                    boolean z5 = this.listView.getAdapter() == this.searchListViewAdapter;
-                    if (!z5) {
-                        i -= this.languagesStartsPosition;
+                if (languageSelectActivity.getParentActivity() != null && languageSelectActivity.parentLayout != null && (view instanceof TextRadioCell)) {
+                    boolean z6 = languageSelectActivity.listView.getAdapter() == languageSelectActivity.searchListViewAdapter;
+                    if (!z6) {
+                        i -= languageSelectActivity.languagesStartsPosition;
                     }
-                    if (z5) {
-                        localeInfo = (LocaleController.LocaleInfo) this.searchResult.get(i);
-                    } else if (!this.unofficialLanguages.isEmpty() && i >= 0 && i < this.unofficialLanguages.size()) {
-                        localeInfo = (LocaleController.LocaleInfo) this.unofficialLanguages.get(i);
+                    if (z6) {
+                        localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.searchResult.get(i);
+                    } else if (!languageSelectActivity.unofficialLanguages.isEmpty() && i >= 0 && i < languageSelectActivity.unofficialLanguages.size()) {
+                        localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.unofficialLanguages.get(i);
                     } else {
-                        if (!this.unofficialLanguages.isEmpty()) {
-                            i -= this.unofficialLanguages.size() + 1;
+                        if (!languageSelectActivity.unofficialLanguages.isEmpty()) {
+                            i -= languageSelectActivity.unofficialLanguages.size() + 1;
                         }
-                        localeInfo = (LocaleController.LocaleInfo) this.sortedLanguages.get(i);
+                        localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.sortedLanguages.get(i);
                     }
-                    if (localeInfo != null) {
+                    LocaleController.LocaleInfo localeInfo2 = localeInfo;
+                    if (localeInfo2 != null) {
                         LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-                        final boolean z6 = currentLocaleInfo == localeInfo;
-                        final AlertDialog alertDialog = new AlertDialog(getContext(), 3);
-                        if (!z6) {
+                        if (currentLocaleInfo != localeInfo2) {
+                            z3 = false;
+                        }
+                        final AlertDialog alertDialog = new AlertDialog(languageSelectActivity.getContext(), 3);
+                        if (!z3) {
                             alertDialog.showDelayed(500L);
                         }
-                        getMessagesController().getTranslateController().reset();
-                        final int applyLanguage = LocaleController.getInstance().applyLanguage(localeInfo, true, false, false, true, this.currentAccount, new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda6
+                        languageSelectActivity.getMessagesController().getTranslateController().reset();
+                        final int applyLanguage = LocaleController.getInstance().applyLanguage(localeInfo2, true, false, false, true, languageSelectActivity.currentAccount, new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda6
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LanguageSelectActivity.this.lambda$createView$1(alertDialog, z6);
+                                LanguageSelectActivity.$r8$lambda$HCh4amaV5Bczi73xUmgNfiacZr0(LanguageSelectActivity.this, alertDialog, z3);
                             }
                         });
                         if (applyLanguage != 0) {
                             alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda7
                                 @Override // android.content.DialogInterface.OnCancelListener
                                 public final void onCancel(DialogInterface dialogInterface) {
-                                    LanguageSelectActivity.this.lambda$createView$2(applyLanguage, dialogInterface);
+                                    ConnectionsManager.getInstance(LanguageSelectActivity.this.currentAccount).cancelRequest(applyLanguage, true);
                                 }
                             });
                         }
-                        String str = localeInfo.pluralLangCode;
+                        String str = localeInfo2.pluralLangCode;
                         final String str2 = currentLocaleInfo.pluralLangCode;
                         HashSet restrictedLanguages = RestrictedLanguagesSelectActivity.getRestrictedLanguages();
                         HashSet hashSet = new HashSet(restrictedLanguages);
@@ -342,9 +344,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
                                 @Override // java.util.function.Predicate
                                 public final boolean test(Object obj) {
-                                    boolean lambda$createView$3;
-                                    lambda$createView$3 = LanguageSelectActivity.lambda$createView$3(str2, (String) obj);
-                                    return lambda$createView$3;
+                                    return LanguageSelectActivity.$r8$lambda$mPoukI7YM3gn8zCN1ToTeZn9-SI(str2, (String) obj);
                                 }
                             });
                         }
@@ -352,8 +352,8 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                             hashSet.add(str);
                         }
                         RestrictedLanguagesSelectActivity.updateRestrictedLanguages(hashSet, Boolean.FALSE);
-                        MessagesController.getInstance(this.currentAccount).getTranslateController().checkRestrictedLanguagesUpdate();
-                        MessagesController.getInstance(this.currentAccount).getTranslateController().cleanup();
+                        MessagesController.getInstance(languageSelectActivity.currentAccount).getTranslateController().checkRestrictedLanguagesUpdate();
+                        MessagesController.getInstance(languageSelectActivity.currentAccount).getTranslateController().cleanup();
                         TranslateController.invalidateSuggestedLanguageCodes();
                     }
                 }
@@ -363,8 +363,8 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(AlertDialog alertDialog, boolean z) {
+    public static /* synthetic */ void $r8$lambda$HCh4amaV5Bczi73xUmgNfiacZr0(final LanguageSelectActivity languageSelectActivity, AlertDialog alertDialog, boolean z) {
+        languageSelectActivity.getClass();
         alertDialog.dismiss();
         if (z) {
             return;
@@ -372,62 +372,55 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$createView$0();
+                LanguageSelectActivity.$r8$lambda$iqThVj-WIji3sgJXpW1Cb6s6d7U(LanguageSelectActivity.this);
             }
         }, 10L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0() {
-        this.actionBar.closeSearchField();
-        updateLanguage();
+    public static /* synthetic */ void $r8$lambda$iqThVj-WIji3sgJXpW1Cb6s6d7U(LanguageSelectActivity languageSelectActivity) {
+        languageSelectActivity.actionBar.closeSearchField();
+        languageSelectActivity.updateLanguage();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(int i, DialogInterface dialogInterface) {
-        ConnectionsManager.getInstance(this.currentAccount).cancelRequest(i, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$3(String str, String str2) {
+    public static /* synthetic */ boolean $r8$lambda$mPoukI7YM3gn8zCN1ToTeZn9-SI(String str, String str2) {
         return str2 != null && str2.equals(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$6(View view, int i) {
+    public static /* synthetic */ boolean $r8$lambda$alXUWLNsA1jGQ0KCopCOVKfYbeU(final LanguageSelectActivity languageSelectActivity, View view, int i) {
         final LocaleController.LocaleInfo localeInfo;
+        languageSelectActivity.getClass();
         try {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (getParentActivity() != null && this.parentLayout != null && (view instanceof TextRadioCell)) {
-            boolean z = this.listView.getAdapter() == this.searchListViewAdapter;
+        if (languageSelectActivity.getParentActivity() != null && languageSelectActivity.parentLayout != null && (view instanceof TextRadioCell)) {
+            boolean z = languageSelectActivity.listView.getAdapter() == languageSelectActivity.searchListViewAdapter;
             if (!z) {
-                i -= this.languagesStartsPosition;
+                i -= languageSelectActivity.languagesStartsPosition;
             }
             if (z) {
-                localeInfo = (LocaleController.LocaleInfo) this.searchResult.get(i);
-            } else if (!this.unofficialLanguages.isEmpty() && i >= 0 && i < this.unofficialLanguages.size()) {
-                localeInfo = (LocaleController.LocaleInfo) this.unofficialLanguages.get(i);
+                localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.searchResult.get(i);
+            } else if (!languageSelectActivity.unofficialLanguages.isEmpty() && i >= 0 && i < languageSelectActivity.unofficialLanguages.size()) {
+                localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.unofficialLanguages.get(i);
             } else {
-                if (!this.unofficialLanguages.isEmpty()) {
-                    i -= this.unofficialLanguages.size() + 1;
+                if (!languageSelectActivity.unofficialLanguages.isEmpty()) {
+                    i -= languageSelectActivity.unofficialLanguages.size() + 1;
                 }
-                localeInfo = (LocaleController.LocaleInfo) this.sortedLanguages.get(i);
+                localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.sortedLanguages.get(i);
             }
             if (localeInfo != null && localeInfo.pathToFile != null && (!localeInfo.isRemote() || localeInfo.serverIndex == Integer.MAX_VALUE)) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(languageSelectActivity.getParentActivity());
                 builder.setTitle(LocaleController.getString(R.string.DeleteLocalizationTitle));
                 builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", R.string.DeleteLocalizationText, localeInfo.name)));
                 builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda5
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
-                        LanguageSelectActivity.this.lambda$createView$5(localeInfo, alertDialog, i2);
+                        LanguageSelectActivity.$r8$lambda$qeLaUgj2LpYsPe4F6TWW-1i7ByY(LanguageSelectActivity.this, localeInfo, alertDialog, i2);
                     }
                 });
                 builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
                 AlertDialog create = builder.create();
-                showDialog(create);
+                languageSelectActivity.showDialog(create);
                 TextView textView = (TextView) create.getButton(-1);
                 if (textView != null) {
                     textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
@@ -438,19 +431,19 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(LocaleController.LocaleInfo localeInfo, AlertDialog alertDialog, int i) {
-        if (LocaleController.getInstance().deleteLanguage(localeInfo, this.currentAccount)) {
-            fillLanguages();
-            ArrayList arrayList = this.searchResult;
+    public static /* synthetic */ void $r8$lambda$qeLaUgj2LpYsPe4F6TWW-1i7ByY(LanguageSelectActivity languageSelectActivity, LocaleController.LocaleInfo localeInfo, AlertDialog alertDialog, int i) {
+        languageSelectActivity.getClass();
+        if (LocaleController.getInstance().deleteLanguage(localeInfo, languageSelectActivity.currentAccount)) {
+            languageSelectActivity.fillLanguages();
+            ArrayList arrayList = languageSelectActivity.searchResult;
             if (arrayList != null) {
                 arrayList.remove(localeInfo);
             }
-            ListAdapter listAdapter = this.listAdapter;
+            ListAdapter listAdapter = languageSelectActivity.listAdapter;
             if (listAdapter != null) {
                 listAdapter.notifyDataSetChanged();
             }
-            ListAdapter listAdapter2 = this.searchListViewAdapter;
+            ListAdapter listAdapter2 = languageSelectActivity.searchListViewAdapter;
             if (listAdapter2 != null) {
                 listAdapter2.notifyDataSetChanged();
             }
@@ -466,14 +459,9 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$didReceivedNotification$7();
+                LanguageSelectActivity.this.listAdapter.notifyDataSetChanged();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$7() {
-        this.listAdapter.notifyDataSetChanged();
     }
 
     private void fillLanguages() {
@@ -481,9 +469,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         Comparator comparator = new Comparator() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$fillLanguages$8;
-                lambda$fillLanguages$8 = LanguageSelectActivity.lambda$fillLanguages$8(LocaleController.LocaleInfo.this, (LocaleController.LocaleInfo) obj, (LocaleController.LocaleInfo) obj2);
-                return lambda$fillLanguages$8;
+                return LanguageSelectActivity.$r8$lambda$_-FbdPmeWIkGDvFCvZ_P2xG0b2M(LocaleController.LocaleInfo.this, (LocaleController.LocaleInfo) obj, (LocaleController.LocaleInfo) obj2);
             }
         };
         this.sortedLanguages = new ArrayList();
@@ -502,8 +488,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         Collections.sort(this.unofficialLanguages, comparator);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$fillLanguages$8(LocaleController.LocaleInfo localeInfo, LocaleController.LocaleInfo localeInfo2, LocaleController.LocaleInfo localeInfo3) {
+    public static /* synthetic */ int $r8$lambda$_-FbdPmeWIkGDvFCvZ_P2xG0b2M(LocaleController.LocaleInfo localeInfo, LocaleController.LocaleInfo localeInfo2, LocaleController.LocaleInfo localeInfo3) {
         if (localeInfo2 == localeInfo) {
             return -1;
         }
@@ -527,17 +512,16 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         LocaleController.getInstance().checkForcePatchLangpack(this.currentAccount, new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$onBecomeFullyVisible$9();
+                LanguageSelectActivity.$r8$lambda$t7_hq5XPK5zjqVv79DMvDwuCuqY(LanguageSelectActivity.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBecomeFullyVisible$9() {
-        if (this.isPaused) {
+    public static /* synthetic */ void $r8$lambda$t7_hq5XPK5zjqVv79DMvDwuCuqY(LanguageSelectActivity languageSelectActivity) {
+        if (languageSelectActivity.isPaused) {
             return;
         }
-        updateLanguage();
+        languageSelectActivity.updateLanguage();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -580,49 +564,48 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$processSearch$10(str);
+                LanguageSelectActivity.$r8$lambda$swV0XwFoFGkFlBtJnXOEZ1ApbN4(LanguageSelectActivity.this, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processSearch$10(String str) {
+    public static /* synthetic */ void $r8$lambda$swV0XwFoFGkFlBtJnXOEZ1ApbN4(LanguageSelectActivity languageSelectActivity, String str) {
+        languageSelectActivity.getClass();
         if (str.trim().toLowerCase().length() == 0) {
-            updateSearchResults(new ArrayList());
+            languageSelectActivity.updateSearchResults(new ArrayList());
             return;
         }
         System.currentTimeMillis();
         ArrayList arrayList = new ArrayList();
-        int size = this.unofficialLanguages.size();
+        int size = languageSelectActivity.unofficialLanguages.size();
         for (int i = 0; i < size; i++) {
-            LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) this.unofficialLanguages.get(i);
+            LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.unofficialLanguages.get(i);
             if (localeInfo.name.toLowerCase().startsWith(str) || localeInfo.nameEnglish.toLowerCase().startsWith(str)) {
                 arrayList.add(localeInfo);
             }
         }
-        int size2 = this.sortedLanguages.size();
+        int size2 = languageSelectActivity.sortedLanguages.size();
         for (int i2 = 0; i2 < size2; i2++) {
-            LocaleController.LocaleInfo localeInfo2 = (LocaleController.LocaleInfo) this.sortedLanguages.get(i2);
+            LocaleController.LocaleInfo localeInfo2 = (LocaleController.LocaleInfo) languageSelectActivity.sortedLanguages.get(i2);
             if (localeInfo2.name.toLowerCase().startsWith(str) || localeInfo2.nameEnglish.toLowerCase().startsWith(str)) {
                 arrayList.add(localeInfo2);
             }
         }
-        updateSearchResults(arrayList);
+        languageSelectActivity.updateSearchResults(arrayList);
     }
 
     private void updateSearchResults(final ArrayList arrayList) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$updateSearchResults$11(arrayList);
+                LanguageSelectActivity.$r8$lambda$37MHR5Vz4zim4AMCgsLqUcpMqdk(LanguageSelectActivity.this, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSearchResults$11(ArrayList arrayList) {
-        this.searchResult = arrayList;
-        this.searchListViewAdapter.notifyDataSetChanged();
+    public static /* synthetic */ void $r8$lambda$37MHR5Vz4zim4AMCgsLqUcpMqdk(LanguageSelectActivity languageSelectActivity, ArrayList arrayList) {
+        languageSelectActivity.searchResult = arrayList;
+        languageSelectActivity.searchListViewAdapter.notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -635,7 +618,8 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         return getMessagesController().getTranslateController().isFeatureAvailable();
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
         private Context mContext;
         private boolean search;
 
@@ -702,31 +686,31 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:108:0x028e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:108:0x0287, code lost:
         
-            r12 = true;
+            r11 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:115:0x024b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:115:0x0244, code lost:
         
-            if (r12 == (r10.this$0.unofficialLanguages.size() - 1)) goto L100;
+            if (r12 == (r10.this$0.unofficialLanguages.size() - 1)) goto L108;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:124:0x028c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:124:0x0285, code lost:
         
-            if (r12 == (r10.this$0.sortedLanguages.size() - 1)) goto L100;
+            if (r12 == (r10.this$0.sortedLanguages.size() - 1)) goto L108;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:42:0x00e5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:42:0x00e2, code lost:
         
-            if (r11.getValueTextView().getPaint().measureText(r4) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(34.0f)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(84.0f)) - r11.getTextView().getPaint().measureText(r0))) goto L34;
+            if (r11.getValueTextView().getPaint().measureText(r4) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(34.0f)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(84.0f)) - r11.getTextView().getPaint().measureText(r0))) goto L37;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:96:0x0215, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:96:0x020e, code lost:
         
-            if (r12 == (r10.this$0.searchResult.size() - 1)) goto L100;
+            if (r12 == (r10.this$0.searchResult.size() - 1)) goto L108;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:97:0x0290, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:97:0x0289, code lost:
         
-            r12 = false;
+            r11 = false;
          */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x00ee  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x00eb  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.

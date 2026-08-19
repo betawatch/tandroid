@@ -152,15 +152,13 @@ public class ReactedUsersListView extends FrameLayout {
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                ReactedUsersListView.this.lambda$new$0(view, i2);
+                ReactedUsersListView.$r8$lambda$C2tjdPO_Liev0R2Tx5cLxsNV4Rc(ReactedUsersListView.this, view, i2);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
-                boolean lambda$new$1;
-                lambda$new$1 = ReactedUsersListView.this.lambda$new$1(view, i2);
-                return lambda$new$1;
+                return ReactedUsersListView.$r8$lambda$HwAB3qENjRNtHO_V8zgneNfD7N0(ReactedUsersListView.this, view, i2);
             }
         });
         this.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ReactedUsersListView.3
@@ -199,31 +197,29 @@ public class ReactedUsersListView extends FrameLayout {
         this.loadingView.setViewType(this.customReactionsEmoji.isEmpty() ? 16 : 23);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$C2tjdPO_Liev0R2Tx5cLxsNV4Rc(ReactedUsersListView reactedUsersListView, View view, int i) {
         OnCustomEmojiSelectedListener onCustomEmojiSelectedListener;
-        int itemViewType = this.adapter.getItemViewType(i);
+        int itemViewType = reactedUsersListView.adapter.getItemViewType(i);
         if (itemViewType == 0) {
-            OnProfileSelectedListener onProfileSelectedListener = this.onProfileSelectedListener;
+            OnProfileSelectedListener onProfileSelectedListener = reactedUsersListView.onProfileSelectedListener;
             if (onProfileSelectedListener != null) {
-                onProfileSelectedListener.onProfileSelected(this, MessageObject.getPeerId(((TLRPC.MessagePeerReaction) this.userReactions.get(i)).peer_id), (TLRPC.MessagePeerReaction) this.userReactions.get(i));
+                onProfileSelectedListener.onProfileSelected(reactedUsersListView, MessageObject.getPeerId(((TLRPC.MessagePeerReaction) reactedUsersListView.userReactions.get(i)).peer_id), (TLRPC.MessagePeerReaction) reactedUsersListView.userReactions.get(i));
                 return;
             }
             return;
         }
-        if (itemViewType != 1 || (onCustomEmojiSelectedListener = this.onCustomEmojiSelectedListener) == null) {
+        if (itemViewType != 1 || (onCustomEmojiSelectedListener = reactedUsersListView.onCustomEmojiSelectedListener) == null) {
             return;
         }
-        onCustomEmojiSelectedListener.showCustomEmojiAlert(this, this.customEmojiStickerSets);
+        onCustomEmojiSelectedListener.showCustomEmojiAlert(reactedUsersListView, reactedUsersListView.customEmojiStickerSets);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(View view, int i) {
+    public static /* synthetic */ boolean $r8$lambda$HwAB3qENjRNtHO_V8zgneNfD7N0(ReactedUsersListView reactedUsersListView, View view, int i) {
         OnProfileSelectedListener onProfileSelectedListener;
-        if (this.adapter.getItemViewType(i) != 0 || (onProfileSelectedListener = this.onProfileSelectedLongListener) == null) {
+        if (reactedUsersListView.adapter.getItemViewType(i) != 0 || (onProfileSelectedListener = reactedUsersListView.onProfileSelectedLongListener) == null) {
             return true;
         }
-        onProfileSelectedListener.onProfileSelected(this, MessageObject.getPeerId(((TLRPC.MessagePeerReaction) this.userReactions.get(i)).peer_id), (TLRPC.MessagePeerReaction) this.userReactions.get(i));
+        onProfileSelectedListener.onProfileSelected(reactedUsersListView, MessageObject.getPeerId(((TLRPC.MessagePeerReaction) reactedUsersListView.userReactions.get(i)).peer_id), (TLRPC.MessagePeerReaction) reactedUsersListView.userReactions.get(i));
         return true;
     }
 
@@ -283,9 +279,7 @@ public class ReactedUsersListView extends FrameLayout {
         Collections.sort(this.userReactions, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda1
             @Override // java.util.function.ToIntFunction
             public final int applyAsInt(Object obj) {
-                int lambda$setSeenUsers$2;
-                lambda$setSeenUsers$2 = ReactedUsersListView.lambda$setSeenUsers$2((TLRPC.MessagePeerReaction) obj);
-                return lambda$setSeenUsers$2;
+                return ReactedUsersListView.$r8$lambda$C-dvtuBtO2AQTL87-B-PwQ1yaYY((TLRPC.MessagePeerReaction) obj);
             }
         }));
         this.adapter.notifyDataSetChanged();
@@ -293,8 +287,7 @@ public class ReactedUsersListView extends FrameLayout {
         return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$setSeenUsers$2(TLRPC.MessagePeerReaction messagePeerReaction) {
+    public static /* synthetic */ int $r8$lambda$C-dvtuBtO2AQTL87-B-PwQ1yaYY(TLRPC.MessagePeerReaction messagePeerReaction) {
         int i = messagePeerReaction.date;
         return (i <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i;
     }
@@ -329,42 +322,37 @@ public class ReactedUsersListView extends FrameLayout {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getMessageReactionsList, new RequestDelegate() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ReactedUsersListView.this.lambda$load$7(tLObject, tL_error);
+                ReactedUsersListView.$r8$lambda$fo6pCMAYcgwUEUSZ8BzV1jyUj_4(ReactedUsersListView.this, tLObject, tL_error);
             }
         }, 64);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$6(final TLObject tLObject) {
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                ReactedUsersListView.this.lambda$load$5(tLObject);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$7(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$fo6pCMAYcgwUEUSZ8BzV1jyUj_4(final ReactedUsersListView reactedUsersListView, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        reactedUsersListView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                ReactedUsersListView.this.lambda$load$6(tLObject);
+                NotificationCenter.getInstance(r0.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ReactedUsersListView.$r8$lambda$I0fLPpfb5REg_bFYspD6RXL5I7A(ReactedUsersListView.this, r2);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$5(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$I0fLPpfb5REg_bFYspD6RXL5I7A(final ReactedUsersListView reactedUsersListView, TLObject tLObject) {
+        reactedUsersListView.getClass();
         if (tLObject instanceof TLRPC.TL_messages_messageReactionsList) {
             TLRPC.TL_messages_messageReactionsList tL_messages_messageReactionsList = (TLRPC.TL_messages_messageReactionsList) tLObject;
-            MessagesController.getInstance(this.currentAccount).putUsers(tL_messages_messageReactionsList.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(tL_messages_messageReactionsList.chats, false);
+            MessagesController.getInstance(reactedUsersListView.currentAccount).putUsers(tL_messages_messageReactionsList.users, false);
+            MessagesController.getInstance(reactedUsersListView.currentAccount).putChats(tL_messages_messageReactionsList.chats, false);
             HashSet hashSet = new HashSet();
             for (int i = 0; i < tL_messages_messageReactionsList.reactions.size(); i++) {
-                this.userReactions.add(tL_messages_messageReactionsList.reactions.get(i));
+                reactedUsersListView.userReactions.add(tL_messages_messageReactionsList.reactions.get(i));
                 long peerId = MessageObject.getPeerId(tL_messages_messageReactionsList.reactions.get(i).peer_id);
-                ArrayList arrayList = (ArrayList) this.peerReactionMap.get(peerId);
+                ArrayList arrayList = (ArrayList) reactedUsersListView.peerReactionMap.get(peerId);
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
@@ -381,29 +369,27 @@ public class ReactedUsersListView extends FrameLayout {
                     hashSet.add(fromTL);
                 }
                 arrayList.add(tL_messages_messageReactionsList.reactions.get(i));
-                this.peerReactionMap.put(peerId, arrayList);
+                reactedUsersListView.peerReactionMap.put(peerId, arrayList);
             }
-            if (this.filter == null) {
-                this.customReactionsEmoji.clear();
-                this.customReactionsEmoji.addAll(hashSet);
-                updateCustomReactionsButton();
+            if (reactedUsersListView.filter == null) {
+                reactedUsersListView.customReactionsEmoji.clear();
+                reactedUsersListView.customReactionsEmoji.addAll(hashSet);
+                reactedUsersListView.updateCustomReactionsButton();
             }
-            Collections.sort(this.userReactions, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda7
+            Collections.sort(reactedUsersListView.userReactions, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda7
                 @Override // java.util.function.ToIntFunction
                 public final int applyAsInt(Object obj) {
-                    int lambda$load$3;
-                    lambda$load$3 = ReactedUsersListView.lambda$load$3((TLRPC.MessagePeerReaction) obj);
-                    return lambda$load$3;
+                    return ReactedUsersListView.$r8$lambda$unLT4OaqL4UEFS31xTXl82zjVas((TLRPC.MessagePeerReaction) obj);
                 }
             }));
-            this.adapter.notifyDataSetChanged();
-            if (!this.isLoaded) {
+            reactedUsersListView.adapter.notifyDataSetChanged();
+            if (!reactedUsersListView.isLoaded) {
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
                 duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda8
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ReactedUsersListView.this.lambda$load$4(valueAnimator);
+                        ReactedUsersListView.$r8$lambda$5MMP5ZqejrNbaMpE456k-PCtgR8(ReactedUsersListView.this, valueAnimator);
                     }
                 });
                 duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ReactedUsersListView.5
@@ -413,31 +399,30 @@ public class ReactedUsersListView extends FrameLayout {
                     }
                 });
                 duration.start();
-                updateHeight();
-                this.isLoaded = true;
+                reactedUsersListView.updateHeight();
+                reactedUsersListView.isLoaded = true;
             }
             String str = tL_messages_messageReactionsList.next_offset;
-            this.offset = str;
+            reactedUsersListView.offset = str;
             if (str == null) {
-                this.canLoadMore = false;
+                reactedUsersListView.canLoadMore = false;
             }
-            this.isLoading = false;
+            reactedUsersListView.isLoading = false;
             return;
         }
-        this.isLoading = false;
+        reactedUsersListView.isLoading = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$load$3(TLRPC.MessagePeerReaction messagePeerReaction) {
+    public static /* synthetic */ int $r8$lambda$unLT4OaqL4UEFS31xTXl82zjVas(TLRPC.MessagePeerReaction messagePeerReaction) {
         int i = messagePeerReaction.date;
         return (i <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$4(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$5MMP5ZqejrNbaMpE456k-PCtgR8(ReactedUsersListView reactedUsersListView, ValueAnimator valueAnimator) {
+        reactedUsersListView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.listView.setAlpha(floatValue);
-        this.loadingView.setAlpha(1.0f - floatValue);
+        reactedUsersListView.listView.setAlpha(floatValue);
+        reactedUsersListView.loadingView.setAlpha(1.0f - floatValue);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

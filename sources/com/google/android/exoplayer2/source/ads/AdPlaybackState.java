@@ -113,11 +113,13 @@ public final class AdPlaybackState implements Bundleable {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || AdGroup.class != obj.getClass()) {
-                return false;
+            if (obj != null && AdGroup.class == obj.getClass()) {
+                AdGroup adGroup = (AdGroup) obj;
+                if (this.timeUs == adGroup.timeUs && this.count == adGroup.count && this.originalCount == adGroup.originalCount && Arrays.equals(this.uris, adGroup.uris) && Arrays.equals(this.states, adGroup.states) && Arrays.equals(this.durationsUs, adGroup.durationsUs) && this.contentResumeOffsetUs == adGroup.contentResumeOffsetUs && this.isServerSideInserted == adGroup.isServerSideInserted) {
+                    return true;
+                }
             }
-            AdGroup adGroup = (AdGroup) obj;
-            return this.timeUs == adGroup.timeUs && this.count == adGroup.count && this.originalCount == adGroup.originalCount && Arrays.equals(this.uris, adGroup.uris) && Arrays.equals(this.states, adGroup.states) && Arrays.equals(this.durationsUs, adGroup.durationsUs) && this.contentResumeOffsetUs == adGroup.contentResumeOffsetUs && this.isServerSideInserted == adGroup.isServerSideInserted;
+            return false;
         }
 
         public int hashCode() {
@@ -174,10 +176,15 @@ public final class AdPlaybackState implements Bundleable {
             long[] longArray = bundle.getLongArray(FIELD_DURATIONS_US);
             long j2 = bundle.getLong(FIELD_CONTENT_RESUME_OFFSET_US);
             boolean z = bundle.getBoolean(FIELD_IS_SERVER_SIDE_INSERTED);
-            if (intArray == null) {
-                intArray = new int[0];
+            int[] iArr = intArray;
+            if (iArr == null) {
+                iArr = new int[0];
             }
-            return new AdGroup(j, i, i2, intArray, parcelableArrayList == null ? new Uri[0] : (Uri[]) parcelableArrayList.toArray(new Uri[0]), longArray == null ? new long[0] : longArray, j2, z);
+            Uri[] uriArr = parcelableArrayList == null ? new Uri[0] : (Uri[]) parcelableArrayList.toArray(new Uri[0]);
+            if (longArray == null) {
+                longArray = new long[0];
+            }
+            return new AdGroup(j, i, i2, iArr, uriArr, longArray, j2, z);
         }
     }
 
@@ -200,8 +207,15 @@ public final class AdPlaybackState implements Bundleable {
 
     public int getAdGroupIndexForPositionUs(long j, long j2) {
         int i = this.adGroupCount - 1;
-        while (i >= 0 && isPositionBeforeAdGroup(j, j2, i)) {
+        while (i >= 0) {
+            long j3 = j;
+            long j4 = j2;
+            if (!isPositionBeforeAdGroup(j3, j4, i)) {
+                break;
+            }
             i--;
+            j = j3;
+            j2 = j4;
         }
         if (i < 0 || !getAdGroup(i).hasUnplayedAds()) {
             return -1;
@@ -210,18 +224,14 @@ public final class AdPlaybackState implements Bundleable {
     }
 
     public int getAdGroupIndexAfterPositionUs(long j, long j2) {
-        if (j == Long.MIN_VALUE) {
-            return -1;
-        }
-        if (j2 != -9223372036854775807L && j >= j2) {
-            return -1;
-        }
-        int i = this.removedAdGroupCount;
-        while (i < this.adGroupCount && ((getAdGroup(i).timeUs != Long.MIN_VALUE && getAdGroup(i).timeUs <= j) || !getAdGroup(i).shouldPlayAdGroup())) {
-            i++;
-        }
-        if (i < this.adGroupCount) {
-            return i;
+        if (j != Long.MIN_VALUE && (j2 == -9223372036854775807L || j < j2)) {
+            int i = this.removedAdGroupCount;
+            while (i < this.adGroupCount && ((getAdGroup(i).timeUs != Long.MIN_VALUE && getAdGroup(i).timeUs <= j) || !getAdGroup(i).shouldPlayAdGroup())) {
+                i++;
+            }
+            if (i < this.adGroupCount) {
+                return i;
+            }
         }
         return -1;
     }
@@ -230,11 +240,13 @@ public final class AdPlaybackState implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || AdPlaybackState.class != obj.getClass()) {
-            return false;
+        if (obj != null && AdPlaybackState.class == obj.getClass()) {
+            AdPlaybackState adPlaybackState = (AdPlaybackState) obj;
+            if (Util.areEqual(this.adsId, adPlaybackState.adsId) && this.adGroupCount == adPlaybackState.adGroupCount && this.adResumePositionUs == adPlaybackState.adResumePositionUs && this.contentDurationUs == adPlaybackState.contentDurationUs && this.removedAdGroupCount == adPlaybackState.removedAdGroupCount && Arrays.equals(this.adGroups, adPlaybackState.adGroups)) {
+                return true;
+            }
         }
-        AdPlaybackState adPlaybackState = (AdPlaybackState) obj;
-        return Util.areEqual(this.adsId, adPlaybackState.adsId) && this.adGroupCount == adPlaybackState.adGroupCount && this.adResumePositionUs == adPlaybackState.adResumePositionUs && this.contentDurationUs == adPlaybackState.contentDurationUs && this.removedAdGroupCount == adPlaybackState.removedAdGroupCount && Arrays.equals(this.adGroups, adPlaybackState.adGroups);
+        return false;
     }
 
     public int hashCode() {

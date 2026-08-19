@@ -155,25 +155,25 @@ public abstract class FragmentManager {
     private final Consumer mOnConfigurationChangedListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda0
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.lambda$new$0((Configuration) obj);
+            FragmentManager.$r8$lambda$yvqmBMGn9GAGgLS3kX3Pb1Mp5KA(FragmentManager.this, (Configuration) obj);
         }
     };
     private final Consumer mOnTrimMemoryListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda1
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.lambda$new$1((Integer) obj);
+            FragmentManager.$r8$lambda$7VI8nQONq1ttVaacOnJY0SOCn_A(FragmentManager.this, (Integer) obj);
         }
     };
     private final Consumer mOnMultiWindowModeChangedListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda2
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.lambda$new$2((MultiWindowModeChangedInfo) obj);
+            FragmentManager.$r8$lambda$sjgpDn2MJatSnY7YFGNxTaNF_8E(FragmentManager.this, (MultiWindowModeChangedInfo) obj);
         }
     };
     private final Consumer mOnPictureInPictureModeChangedListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda3
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.lambda$new$3((PictureInPictureModeChangedInfo) obj);
+            FragmentManager.$r8$lambda$lO3Nl4juk4ObZbb6MT-FkJMWEjY(FragmentManager.this, (PictureInPictureModeChangedInfo) obj);
         }
     };
     private final MenuProvider mMenuProvider = new MenuProvider() { // from class: androidx.fragment.app.FragmentManager.2
@@ -244,31 +244,27 @@ public abstract class FragmentManager {
         return DEBUG || Log.isLoggable("FragmentManager", i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Configuration configuration) {
-        if (isParentAdded()) {
-            dispatchConfigurationChanged(configuration, false);
+    public static /* synthetic */ void $r8$lambda$yvqmBMGn9GAGgLS3kX3Pb1Mp5KA(FragmentManager fragmentManager, Configuration configuration) {
+        if (fragmentManager.isParentAdded()) {
+            fragmentManager.dispatchConfigurationChanged(configuration, false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Integer num) {
-        if (isParentAdded() && num.intValue() == 80) {
-            dispatchLowMemory(false);
+    public static /* synthetic */ void $r8$lambda$7VI8nQONq1ttVaacOnJY0SOCn_A(FragmentManager fragmentManager, Integer num) {
+        if (fragmentManager.isParentAdded() && num.intValue() == 80) {
+            fragmentManager.dispatchLowMemory(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(MultiWindowModeChangedInfo multiWindowModeChangedInfo) {
-        if (isParentAdded()) {
-            dispatchMultiWindowModeChanged(multiWindowModeChangedInfo.isInMultiWindowMode(), false);
+    public static /* synthetic */ void $r8$lambda$sjgpDn2MJatSnY7YFGNxTaNF_8E(FragmentManager fragmentManager, MultiWindowModeChangedInfo multiWindowModeChangedInfo) {
+        if (fragmentManager.isParentAdded()) {
+            fragmentManager.dispatchMultiWindowModeChanged(multiWindowModeChangedInfo.isInMultiWindowMode(), false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(PictureInPictureModeChangedInfo pictureInPictureModeChangedInfo) {
-        if (isParentAdded()) {
-            dispatchPictureInPictureModeChanged(pictureInPictureModeChangedInfo.isInPictureInPictureMode(), false);
+    public static /* synthetic */ void $r8$lambda$lO3Nl4juk4ObZbb6MT-FkJMWEjY(FragmentManager fragmentManager, PictureInPictureModeChangedInfo pictureInPictureModeChangedInfo) {
+        if (fragmentManager.isParentAdded()) {
+            fragmentManager.dispatchPictureInPictureModeChanged(pictureInPictureModeChangedInfo.isInPictureInPictureMode(), false);
         }
     }
 
@@ -351,33 +347,45 @@ public abstract class FragmentManager {
     void handleOnBackPressed() {
         this.mHandlingTransitioningOp = true;
         execPendingActions(true);
+        int i = 0;
         this.mHandlingTransitioningOp = false;
         if (USE_PREDICTIVE_BACK && this.mTransitioningOp != null) {
             if (!this.mBackStackChangeListeners.isEmpty()) {
                 LinkedHashSet linkedHashSet = new LinkedHashSet(fragmentsFromRecord(this.mTransitioningOp));
-                Iterator it = this.mBackStackChangeListeners.iterator();
-                while (it.hasNext()) {
-                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-                    Iterator it2 = linkedHashSet.iterator();
-                    if (it2.hasNext()) {
+                ArrayList arrayList = this.mBackStackChangeListeners;
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+                    Iterator it = linkedHashSet.iterator();
+                    if (it.hasNext()) {
                         throw null;
                     }
                 }
             }
-            Iterator it3 = this.mTransitioningOp.mOps.iterator();
-            while (it3.hasNext()) {
-                Fragment fragment = ((FragmentTransaction.Op) it3.next()).mFragment;
+            ArrayList arrayList2 = this.mTransitioningOp.mOps;
+            int size2 = arrayList2.size();
+            int i3 = 0;
+            while (i3 < size2) {
+                Object obj2 = arrayList2.get(i3);
+                i3++;
+                Fragment fragment = ((FragmentTransaction.Op) obj2).mFragment;
                 if (fragment != null) {
                     fragment.mTransitioning = false;
                 }
             }
-            Iterator it4 = collectChangedControllers(new ArrayList(Collections.singletonList(this.mTransitioningOp)), 0, 1).iterator();
-            while (it4.hasNext()) {
-                ((SpecialEffectsController) it4.next()).completeBack();
+            Iterator it2 = collectChangedControllers(new ArrayList(Collections.singletonList(this.mTransitioningOp)), 0, 1).iterator();
+            while (it2.hasNext()) {
+                ((SpecialEffectsController) it2.next()).completeBack();
             }
-            Iterator it5 = this.mTransitioningOp.mOps.iterator();
-            while (it5.hasNext()) {
-                Fragment fragment2 = ((FragmentTransaction.Op) it5.next()).mFragment;
+            ArrayList arrayList3 = this.mTransitioningOp.mOps;
+            int size3 = arrayList3.size();
+            while (i < size3) {
+                Object obj3 = arrayList3.get(i);
+                i++;
+                Fragment fragment2 = ((FragmentTransaction.Op) obj3).mFragment;
                 if (fragment2 != null && fragment2.mContainer == null) {
                     createOrGetFragmentStateManager(fragment2).moveToExpectedState();
                 }
@@ -430,7 +438,7 @@ public abstract class FragmentManager {
             this.mTransitioningOp.runOnCommitInternal(true, new Runnable() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FragmentManager.this.lambda$cancelBackStackTransition$4();
+                    FragmentManager.$r8$lambda$bPin5ccQodW2WrqGfSgyKuPsaCA(FragmentManager.this);
                 }
             });
             this.mTransitioningOp.commit();
@@ -441,9 +449,8 @@ public abstract class FragmentManager {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$cancelBackStackTransition$4() {
-        Iterator it = this.mBackStackChangeListeners.iterator();
+    public static /* synthetic */ void $r8$lambda$bPin5ccQodW2WrqGfSgyKuPsaCA(FragmentManager fragmentManager) {
+        Iterator it = fragmentManager.mBackStackChangeListeners.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             throw null;
@@ -967,9 +974,13 @@ public abstract class FragmentManager {
             }
             this.mTransitioningOp.commitInternal(false, false);
             boolean generateOps = this.mTransitioningOp.generateOps(this.mTmpRecords, this.mTmpIsPop);
-            Iterator it = this.mTransitioningOp.mOps.iterator();
-            while (it.hasNext()) {
-                Fragment fragment = ((FragmentTransaction.Op) it.next()).mFragment;
+            ArrayList arrayList = this.mTransitioningOp.mOps;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                Fragment fragment = ((FragmentTransaction.Op) obj).mFragment;
                 if (fragment != null) {
                     fragment.mTransitioning = false;
                 }
@@ -1009,9 +1020,13 @@ public abstract class FragmentManager {
             }
             this.mTransitioningOp.commitInternal(false, false);
             this.mPendingActions.add(0, this.mTransitioningOp);
-            Iterator it = this.mTransitioningOp.mOps.iterator();
-            while (it.hasNext()) {
-                Fragment fragment = ((FragmentTransaction.Op) it.next()).mFragment;
+            ArrayList arrayList = this.mTransitioningOp.mOps;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                Fragment fragment = ((FragmentTransaction.Op) obj).mFragment;
                 if (fragment != null) {
                     fragment.mTransitioning = false;
                 }
@@ -1087,9 +1102,13 @@ public abstract class FragmentManager {
         this.mTmpAddedFragments.clear();
         if (!z && this.mCurState >= 1) {
             for (int i4 = i; i4 < i2; i4++) {
-                Iterator it = ((BackStackRecord) arrayList.get(i4)).mOps.iterator();
-                while (it.hasNext()) {
-                    Fragment fragment = ((FragmentTransaction.Op) it.next()).mFragment;
+                ArrayList arrayList4 = ((BackStackRecord) arrayList.get(i4)).mOps;
+                int size = arrayList4.size();
+                int i5 = 0;
+                while (i5 < size) {
+                    Object obj = arrayList4.get(i5);
+                    i5++;
+                    Fragment fragment = ((FragmentTransaction.Op) obj).mFragment;
                     if (fragment != null && fragment.mFragmentManager != null) {
                         this.mFragmentStore.makeActive(createOrGetFragmentStateManager(fragment));
                     }
@@ -1100,42 +1119,57 @@ public abstract class FragmentManager {
         boolean booleanValue = ((Boolean) arrayList2.get(i2 - 1)).booleanValue();
         if (z2 && !this.mBackStackChangeListeners.isEmpty()) {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            Iterator it2 = arrayList.iterator();
-            while (it2.hasNext()) {
-                linkedHashSet.addAll(fragmentsFromRecord((BackStackRecord) it2.next()));
+            int size2 = arrayList.size();
+            int i6 = 0;
+            while (i6 < size2) {
+                Object obj2 = arrayList.get(i6);
+                i6++;
+                linkedHashSet.addAll(fragmentsFromRecord((BackStackRecord) obj2));
             }
             if (this.mTransitioningOp == null) {
-                Iterator it3 = this.mBackStackChangeListeners.iterator();
-                while (it3.hasNext()) {
-                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it3.next());
-                    Iterator it4 = linkedHashSet.iterator();
-                    if (it4.hasNext()) {
+                ArrayList arrayList5 = this.mBackStackChangeListeners;
+                int size3 = arrayList5.size();
+                int i7 = 0;
+                while (i7 < size3) {
+                    Object obj3 = arrayList5.get(i7);
+                    i7++;
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj3);
+                    Iterator it = linkedHashSet.iterator();
+                    if (it.hasNext()) {
                         throw null;
                     }
                 }
-                Iterator it5 = this.mBackStackChangeListeners.iterator();
-                while (it5.hasNext()) {
-                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it5.next());
-                    Iterator it6 = linkedHashSet.iterator();
-                    if (it6.hasNext()) {
+                ArrayList arrayList6 = this.mBackStackChangeListeners;
+                int size4 = arrayList6.size();
+                int i8 = 0;
+                while (i8 < size4) {
+                    Object obj4 = arrayList6.get(i8);
+                    i8++;
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj4);
+                    Iterator it2 = linkedHashSet.iterator();
+                    if (it2.hasNext()) {
                         throw null;
                     }
                 }
             }
         }
-        for (int i5 = i; i5 < i2; i5++) {
-            BackStackRecord backStackRecord2 = (BackStackRecord) arrayList.get(i5);
+        for (int i9 = i; i9 < i2; i9++) {
+            BackStackRecord backStackRecord2 = (BackStackRecord) arrayList.get(i9);
             if (booleanValue) {
-                for (int size = backStackRecord2.mOps.size() - 1; size >= 0; size--) {
-                    Fragment fragment2 = ((FragmentTransaction.Op) backStackRecord2.mOps.get(size)).mFragment;
+                for (int size5 = backStackRecord2.mOps.size() - 1; size5 >= 0; size5--) {
+                    Fragment fragment2 = ((FragmentTransaction.Op) backStackRecord2.mOps.get(size5)).mFragment;
                     if (fragment2 != null) {
                         createOrGetFragmentStateManager(fragment2).moveToExpectedState();
                     }
                 }
             } else {
-                Iterator it7 = backStackRecord2.mOps.iterator();
-                while (it7.hasNext()) {
-                    Fragment fragment3 = ((FragmentTransaction.Op) it7.next()).mFragment;
+                ArrayList arrayList7 = backStackRecord2.mOps;
+                int size6 = arrayList7.size();
+                int i10 = 0;
+                while (i10 < size6) {
+                    Object obj5 = arrayList7.get(i10);
+                    i10++;
+                    Fragment fragment3 = ((FragmentTransaction.Op) obj5).mFragment;
                     if (fragment3 != null) {
                         createOrGetFragmentStateManager(fragment3).moveToExpectedState();
                     }
@@ -1165,9 +1199,13 @@ public abstract class FragmentManager {
         ViewGroup viewGroup;
         HashSet hashSet = new HashSet();
         while (i < i2) {
-            Iterator it = ((BackStackRecord) arrayList.get(i)).mOps.iterator();
-            while (it.hasNext()) {
-                Fragment fragment = ((FragmentTransaction.Op) it.next()).mFragment;
+            ArrayList arrayList2 = ((BackStackRecord) arrayList.get(i)).mOps;
+            int size = arrayList2.size();
+            int i3 = 0;
+            while (i3 < size) {
+                Object obj = arrayList2.get(i3);
+                i3++;
+                Fragment fragment = ((FragmentTransaction.Op) obj).mFragment;
                 if (fragment != null && (viewGroup = fragment.mContainer) != null) {
                     hashSet.add(SpecialEffectsController.getOrCreateController(viewGroup, this));
                 }
@@ -1309,6 +1347,7 @@ public abstract class FragmentManager {
         if (isLoggingEnabled(2)) {
             Log.v("FragmentManager", "FragmentManager has the following pending actions inside of prepareBackStackState: " + this.mPendingActions);
         }
+        int i = 0;
         if (this.mBackStack.isEmpty()) {
             Log.i("FragmentManager", "Ignoring call to start back stack pop because the back stack is empty.");
             return false;
@@ -1316,9 +1355,12 @@ public abstract class FragmentManager {
         ArrayList arrayList3 = this.mBackStack;
         BackStackRecord backStackRecord = (BackStackRecord) arrayList3.get(arrayList3.size() - 1);
         this.mTransitioningOp = backStackRecord;
-        Iterator it = backStackRecord.mOps.iterator();
-        while (it.hasNext()) {
-            Fragment fragment = ((FragmentTransaction.Op) it.next()).mFragment;
+        ArrayList arrayList4 = backStackRecord.mOps;
+        int size = arrayList4.size();
+        while (i < size) {
+            Object obj = arrayList4.get(i);
+            i++;
+            Fragment fragment = ((FragmentTransaction.Op) obj).mFragment;
             if (fragment != null) {
                 fragment.mTransitioning = true;
             }
@@ -1356,7 +1398,7 @@ public abstract class FragmentManager {
         while (size > 0) {
             BackStackRecord backStackRecord2 = (BackStackRecord) this.mBackStack.get(size - 1);
             if ((str == null || !str.equals(backStackRecord2.getName())) && (i < 0 || i != backStackRecord2.mIndex)) {
-                return size;
+                break;
             }
             size--;
         }
@@ -1364,8 +1406,7 @@ public abstract class FragmentManager {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: saveAllStateInternal, reason: merged with bridge method [inline-methods] */
-    public Bundle lambda$attachController$5() {
+    public Bundle saveAllStateInternal() {
         BackStackRecordState[] backStackRecordStateArr;
         Bundle bundle = new Bundle();
         forcePostponedTransactions();
@@ -1378,6 +1419,7 @@ public abstract class FragmentManager {
         if (allSavedState.isEmpty()) {
             if (isLoggingEnabled(2)) {
                 Log.v("FragmentManager", "saveAllState: no fragments!");
+                return bundle;
             }
         } else {
             ArrayList saveAddedFragments = this.mFragmentStore.saveAddedFragments();
@@ -1443,9 +1485,13 @@ public abstract class FragmentManager {
             return;
         }
         this.mFragmentStore.resetActiveFragments();
-        Iterator it = fragmentManagerState.mActive.iterator();
-        while (it.hasNext()) {
-            Bundle savedState = this.mFragmentStore.setSavedState((String) it.next(), null);
+        ArrayList arrayList = fragmentManagerState.mActive;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            Bundle savedState = this.mFragmentStore.setSavedState((String) obj, null);
             if (savedState != null) {
                 Fragment findRetainedFragmentByWho = this.mNonConfig.findRetainedFragmentByWho(((FragmentState) savedState.getParcelable("state")).mWho);
                 if (findRetainedFragmentByWho != null) {
@@ -1484,21 +1530,21 @@ public abstract class FragmentManager {
         this.mFragmentStore.restoreAddedFragments(fragmentManagerState.mAdded);
         if (fragmentManagerState.mBackStack != null) {
             this.mBackStack = new ArrayList(fragmentManagerState.mBackStack.length);
-            int i = 0;
+            int i2 = 0;
             while (true) {
                 BackStackRecordState[] backStackRecordStateArr = fragmentManagerState.mBackStack;
-                if (i >= backStackRecordStateArr.length) {
+                if (i2 >= backStackRecordStateArr.length) {
                     break;
                 }
-                BackStackRecord instantiate = backStackRecordStateArr[i].instantiate(this);
+                BackStackRecord instantiate = backStackRecordStateArr[i2].instantiate(this);
                 if (isLoggingEnabled(2)) {
-                    Log.v("FragmentManager", "restoreAllState: back stack #" + i + " (index " + instantiate.mIndex + "): " + instantiate);
+                    Log.v("FragmentManager", "restoreAllState: back stack #" + i2 + " (index " + instantiate.mIndex + "): " + instantiate);
                     PrintWriter printWriter = new PrintWriter(new LogWriter("FragmentManager"));
                     instantiate.dump("  ", printWriter, false);
                     printWriter.close();
                 }
                 this.mBackStack.add(instantiate);
-                i++;
+                i2++;
             }
         } else {
             this.mBackStack = new ArrayList();
@@ -1510,10 +1556,10 @@ public abstract class FragmentManager {
             this.mPrimaryNav = findActiveFragment;
             dispatchParentPrimaryNavigationFragmentChanged(findActiveFragment);
         }
-        ArrayList arrayList = fragmentManagerState.mBackStackStateKeys;
-        if (arrayList != null) {
-            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                this.mBackStackStates.put((String) arrayList.get(i2), (BackStackState) fragmentManagerState.mBackStackStates.get(i2));
+        ArrayList arrayList2 = fragmentManagerState.mBackStackStateKeys;
+        if (arrayList2 != null) {
+            for (int i3 = 0; i3 < arrayList2.size(); i3++) {
+                this.mBackStackStates.put((String) arrayList2.get(i3), (BackStackState) fragmentManagerState.mBackStackStates.get(i3));
             }
         }
         this.mLaunchedFragments = new ArrayDeque(fragmentManagerState.mLaunchedFragments);
@@ -1578,9 +1624,9 @@ public abstract class FragmentManager {
             savedStateRegistry.registerSavedStateProvider("android:support:fragments", new SavedStateRegistry.SavedStateProvider() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda4
                 @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
                 public final Bundle saveState() {
-                    Bundle lambda$attachController$5;
-                    lambda$attachController$5 = FragmentManager.this.lambda$attachController$5();
-                    return lambda$attachController$5;
+                    Bundle saveAllStateInternal;
+                    saveAllStateInternal = FragmentManager.this.saveAllStateInternal();
+                    return saveAllStateInternal;
                 }
             });
             Bundle consumeRestoredStateForKey = savedStateRegistry.consumeRestoredStateForKey("android:support:fragments");
@@ -2122,15 +2168,22 @@ public abstract class FragmentManager {
             if (!FragmentManager.this.mBackStackChangeListeners.isEmpty() && arrayList.size() > 0) {
                 ((Boolean) arrayList2.get(arrayList.size() - 1)).booleanValue();
                 LinkedHashSet linkedHashSet = new LinkedHashSet();
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    linkedHashSet.addAll(FragmentManager.this.fragmentsFromRecord((BackStackRecord) it.next()));
+                int size = arrayList.size();
+                int i = 0;
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    linkedHashSet.addAll(FragmentManager.this.fragmentsFromRecord((BackStackRecord) obj));
                 }
-                Iterator it2 = FragmentManager.this.mBackStackChangeListeners.iterator();
-                while (it2.hasNext()) {
-                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it2.next());
-                    Iterator it3 = linkedHashSet.iterator();
-                    if (it3.hasNext()) {
+                ArrayList arrayList3 = FragmentManager.this.mBackStackChangeListeners;
+                int size2 = arrayList3.size();
+                while (i < size2) {
+                    Object obj2 = arrayList3.get(i);
+                    i++;
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj2);
+                    Iterator it = linkedHashSet.iterator();
+                    if (it.hasNext()) {
                         throw null;
                     }
                 }

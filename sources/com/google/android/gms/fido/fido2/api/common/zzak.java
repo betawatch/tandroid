@@ -73,10 +73,10 @@ public final class zzak extends AbstractSafeParcelable {
         JSONObject jSONObject = new JSONObject();
         if (bArr.length == 32) {
             jSONObject.put("first", Base64Utils.encodeUrlSafeNoPadding(bArr));
-        } else {
-            jSONObject.put("first", Base64.encodeToString(bArr, 0, 32, 11));
-            jSONObject.put("second", Base64.encodeToString(bArr, 32, 32, 11));
+            return jSONObject;
         }
+        jSONObject.put("first", Base64.encodeToString(bArr, 0, 32, 11));
+        jSONObject.put("second", Base64.encodeToString(bArr, 32, 32, 11));
         return jSONObject;
     }
 

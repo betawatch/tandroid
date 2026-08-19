@@ -32,11 +32,11 @@ final class zzsd {
         int i = 4;
         switch (zzd2.ordinal()) {
             case 0:
-                ((Double) obj).doubleValue();
+                ((Double) obj).getClass();
                 i = 8;
                 return zzA2 + i;
             case 1:
-                ((Float) obj).floatValue();
+                ((Float) obj).getClass();
                 return zzA2 + i;
             case 2:
                 i = zzqv.zzB(((Long) obj).longValue());
@@ -48,14 +48,14 @@ final class zzsd {
                 i = zzqv.zzB(((Integer) obj).intValue());
                 return zzA2 + i;
             case 5:
-                ((Long) obj).longValue();
+                ((Long) obj).getClass();
                 i = 8;
                 return zzA2 + i;
             case 6:
-                ((Integer) obj).intValue();
+                ((Integer) obj).getClass();
                 return zzA2 + i;
             case 7:
-                ((Boolean) obj).booleanValue();
+                ((Boolean) obj).getClass();
                 i = 1;
                 return zzA2 + i;
             case 8:
@@ -96,10 +96,10 @@ final class zzsd {
                 i = obj instanceof zzsp ? zzqv.zzB(((zzsp) obj).zza()) : zzqv.zzB(((Integer) obj).intValue());
                 return zzA2 + i;
             case 14:
-                ((Integer) obj).intValue();
+                ((Integer) obj).getClass();
                 return zzA2 + i;
             case 15:
-                ((Long) obj).longValue();
+                ((Long) obj).getClass();
                 i = 8;
                 return zzA2 + i;
             case 16:

@@ -112,13 +112,11 @@ public final class AudioCapabilities {
     }
 
     private static boolean deviceMaySetExternalSurroundSoundGlobalSetting() {
-        if (Util.SDK_INT >= 17) {
-            String str = Util.MANUFACTURER;
-            if ("Amazon".equals(str) || "Xiaomi".equals(str)) {
-                return true;
-            }
+        if (Util.SDK_INT < 17) {
+            return false;
         }
-        return false;
+        String str = Util.MANUFACTURER;
+        return "Amazon".equals(str) || "Xiaomi".equals(str);
     }
 
     private static int getMaxSupportedChannelCountForPassthrough(int i, int i2) {

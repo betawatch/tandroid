@@ -127,8 +127,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
     private static final String[] searchColorsNames = {"Blue", "Red", "Orange", "Yellow", "Green", "Teal", "Purple", "Pink", "Brown", "Black", "Gray", "White"};
     private static final int[] searchColorsNamesR = {R.string.Blue, R.string.Red, R.string.Orange, R.string.Yellow, R.string.Green, R.string.Teal, R.string.Purple, R.string.Pink, R.string.Brown, R.string.Black, R.string.Gray, R.string.White};
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$wfA44qyGaX_B4XNajFoxnQYt0RQ(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -379,9 +378,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             this.selectedMessagesCountTextView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    boolean lambda$createView$0;
-                    lambda$createView$0 = WallpapersListActivity.lambda$createView$0(view, motionEvent);
-                    return lambda$createView$0;
+                    return WallpapersListActivity.$r8$lambda$wfA44qyGaX_B4XNajFoxnQYt0RQ(view, motionEvent);
                 }
             });
             createActionMode.addView(this.selectedMessagesCountTextView, LayoutHelper.createLinear(0, -1, 1.0f, 65, 0, 0, 0));
@@ -422,7 +419,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i5) {
-                WallpapersListActivity.this.lambda$createView$4(view, i5);
+                WallpapersListActivity.$r8$lambda$_FEgVfGtf1hLJu7KHYnxW2pib9k(WallpapersListActivity.this, view, i5);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.WallpapersListActivity.5
@@ -477,16 +474,11 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                 themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$1$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
                     public final void didSetNewBackground(TLRPC.WallPaper wallPaper) {
-                        WallpapersListActivity.1.this.lambda$didSelectWallpaper$0(wallPaper);
+                        WallpapersListActivity.this.removeSelfFromStack();
                     }
                 });
             }
             WallpapersListActivity.this.presentFragment(themePreviewActivity, z);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didSelectWallpaper$0(TLRPC.WallPaper wallPaper) {
-            WallpapersListActivity.this.removeSelfFromStack();
         }
     }
 
@@ -520,9 +512,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
 
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                         public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
-                            boolean lambda$onItemClick$3;
-                            lambda$onItemClick$3 = WallpapersListActivity.2.this.lambda$onItemClick$3(dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
-                            return lambda$onItemClick$3;
+                            return WallpapersListActivity.2.$r8$lambda$_ur62TRHQSp77Km64BUW0w3cEcg(WallpapersListActivity.2.this, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
                         }
 
                         @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -544,7 +534,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    WallpapersListActivity.2.this.lambda$onItemClick$2(alertDialog, i2);
+                    WallpapersListActivity.2.$r8$lambda$1B7jWEpv3usY6_kIDMcq9V-HHkY(WallpapersListActivity.2.this, alertDialog, i2);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -556,8 +546,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$2(AlertDialog alertDialog, int i) {
+        public static /* synthetic */ void $r8$lambda$1B7jWEpv3usY6_kIDMcq9V-HHkY(final 2 r10, AlertDialog alertDialog, int i) {
             WallpapersListActivity.this.progressDialog = new AlertDialog(WallpapersListActivity.this.getParentActivity(), 3);
             WallpapersListActivity.this.progressDialog.setCanCancel(false);
             WallpapersListActivity.this.progressDialog.show();
@@ -601,7 +590,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendRequest(savewallpaper, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda2
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            WallpapersListActivity.2.this.lambda$onItemClick$1(iArr, tLObject, tL_error);
+                            WallpapersListActivity.2.$r8$lambda$7bcQSne_XncLXIUcqvemE0C7fis(WallpapersListActivity.2.this, iArr, tLObject, tL_error);
                         }
                     });
                 }
@@ -614,18 +603,18 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             ((BaseFragment) WallpapersListActivity.this).actionBar.closeSearchField();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$1(final int[] iArr, TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$7bcQSne_XncLXIUcqvemE0C7fis(final 2 r0, final int[] iArr, TLObject tLObject, TLRPC.TL_error tL_error) {
+            r0.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WallpapersListActivity.2.this.lambda$onItemClick$0(iArr);
+                    WallpapersListActivity.2.$r8$lambda$R7DTo3dz5xWdm0ymifJARzSBdC8(WallpapersListActivity.2.this, iArr);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$0(int[] iArr) {
+        public static /* synthetic */ void $r8$lambda$R7DTo3dz5xWdm0ymifJARzSBdC8(2 r3, int[] iArr) {
+            r3.getClass();
             int i = iArr[0] - 1;
             iArr[0] = i;
             if (i == 0) {
@@ -633,9 +622,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$onItemClick$3(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
-            long j;
+        public static /* synthetic */ boolean $r8$lambda$_ur62TRHQSp77Km64BUW0w3cEcg(2 r22, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
             String url;
             StringBuilder sb = new StringBuilder();
             for (int i3 = 0; i3 < WallpapersListActivity.this.selectedWallPapers.size(); i3++) {
@@ -658,68 +645,64 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == UserConfig.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).getClientUserId() || charSequence != null) {
                 WallpapersListActivity.this.updateRowsSelection();
                 for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                    long j2 = ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId;
+                    long j = ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId;
                     if (charSequence != null) {
-                        j = j2;
-                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
-                    } else {
-                        j = j2;
+                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
                     }
                     if (!TextUtils.isEmpty(sb)) {
                         SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
                     }
                 }
                 dialogsActivity.finishFragment();
-            } else {
-                long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                Bundle bundle = new Bundle();
-                bundle.putBoolean("scrollToTopOnResume", true);
-                if (DialogObject.isEncryptedDialog(j3)) {
-                    bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j3));
-                } else {
-                    if (DialogObject.isUserDialog(j3)) {
-                        bundle.putLong("user_id", j3);
-                    } else if (DialogObject.isChatDialog(j3)) {
-                        bundle.putLong("chat_id", -j3);
-                    }
-                    if (!MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).checkCanOpenChat(bundle, dialogsActivity)) {
-                        return true;
-                    }
-                }
-                NotificationCenter.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                WallpapersListActivity.this.presentFragment(new ChatActivity(bundle), true);
-                SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                return true;
             }
+            long j2 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+            Bundle bundle = new Bundle();
+            bundle.putBoolean("scrollToTopOnResume", true);
+            if (DialogObject.isEncryptedDialog(j2)) {
+                bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j2));
+            } else {
+                if (DialogObject.isUserDialog(j2)) {
+                    bundle.putLong("user_id", j2);
+                } else if (DialogObject.isChatDialog(j2)) {
+                    bundle.putLong("chat_id", -j2);
+                }
+                if (!MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).checkCanOpenChat(bundle, dialogsActivity)) {
+                    return true;
+                }
+            }
+            NotificationCenter.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).postNotificationName(NotificationCenter.closeChats, new Object[0]);
+            WallpapersListActivity.this.presentFragment(new ChatActivity(bundle), true);
+            SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
             return true;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(View view, int i) {
-        if (getParentActivity() == null || this.listView.getAdapter() == this.searchAdapter) {
+    public static /* synthetic */ void $r8$lambda$_FEgVfGtf1hLJu7KHYnxW2pib9k(final WallpapersListActivity wallpapersListActivity, View view, int i) {
+        if (wallpapersListActivity.getParentActivity() == null || wallpapersListActivity.listView.getAdapter() == wallpapersListActivity.searchAdapter) {
             return;
         }
-        if (i == this.uploadImageRow) {
-            this.updater.openGallery();
+        if (i == wallpapersListActivity.uploadImageRow) {
+            wallpapersListActivity.updater.openGallery();
             return;
         }
-        if (i == this.setColorRow) {
-            WallpapersListActivity wallpapersListActivity = new WallpapersListActivity(1);
-            wallpapersListActivity.patterns = this.patterns;
-            presentFragment(wallpapersListActivity);
-        } else if (i == this.resetRow) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+        if (i == wallpapersListActivity.setColorRow) {
+            WallpapersListActivity wallpapersListActivity2 = new WallpapersListActivity(1);
+            wallpapersListActivity2.patterns = wallpapersListActivity.patterns;
+            wallpapersListActivity.presentFragment(wallpapersListActivity2);
+        } else if (i == wallpapersListActivity.resetRow) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(wallpapersListActivity.getParentActivity());
             builder.setTitle(LocaleController.getString(R.string.ResetChatBackgroundsAlertTitle));
             builder.setMessage(LocaleController.getString(R.string.ResetChatBackgroundsAlert));
             builder.setPositiveButton(LocaleController.getString(R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    WallpapersListActivity.this.lambda$createView$3(alertDialog, i2);
+                    WallpapersListActivity.$r8$lambda$JlAJDvoRMyNONTBfaWEXLLIPrAk(WallpapersListActivity.this, alertDialog, i2);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
             AlertDialog create = builder.create();
-            showDialog(create);
+            wallpapersListActivity.showDialog(create);
             TextView textView = (TextView) create.getButton(-1);
             if (textView != null) {
                 textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
@@ -727,36 +710,30 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(AlertDialog alertDialog, int i) {
-        if (this.actionBar.isActionModeShowed()) {
-            this.selectedWallPapers.clear();
-            this.actionBar.hideActionMode();
-            updateRowsSelection();
+    public static /* synthetic */ void $r8$lambda$JlAJDvoRMyNONTBfaWEXLLIPrAk(final WallpapersListActivity wallpapersListActivity, AlertDialog alertDialog, int i) {
+        if (wallpapersListActivity.actionBar.isActionModeShowed()) {
+            wallpapersListActivity.selectedWallPapers.clear();
+            wallpapersListActivity.actionBar.hideActionMode();
+            wallpapersListActivity.updateRowsSelection();
         }
-        AlertDialog alertDialog2 = new AlertDialog(getParentActivity(), 3);
-        this.progressDialog = alertDialog2;
+        AlertDialog alertDialog2 = new AlertDialog(wallpapersListActivity.getParentActivity(), 3);
+        wallpapersListActivity.progressDialog = alertDialog2;
         alertDialog2.setCanCancel(false);
-        this.progressDialog.show();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.resetWallPapers(), new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda6
+        wallpapersListActivity.progressDialog.show();
+        ConnectionsManager.getInstance(wallpapersListActivity.currentAccount).sendRequest(new TL_account.resetWallPapers(), new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                WallpapersListActivity.this.lambda$createView$2(tLObject, tL_error);
+                WallpapersListActivity.$r8$lambda$plnluGjWCIUIIl9iDWFW-VAy0-Y(WallpapersListActivity.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1() {
-        loadWallpapers(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$plnluGjWCIUIIl9iDWFW-VAy0-Y(final WallpapersListActivity wallpapersListActivity, TLObject tLObject, TLRPC.TL_error tL_error) {
+        wallpapersListActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                WallpapersListActivity.this.lambda$createView$1();
+                WallpapersListActivity.this.loadWallpapers(false);
             }
         });
     }
@@ -872,19 +849,21 @@ public class WallpapersListActivity extends BaseFragment implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00c7  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void onItemClick(WallpaperCell wallpaperCell, Object obj, int i) {
-        WallpaperCell wallpaperCell2;
-        int i2;
-        Object obj2 = obj;
-        boolean z = false;
+        Object obj2;
+        ThemePreviewActivity themePreviewActivity;
         if (this.actionBar.isActionModeShowed()) {
-            Object obj3 = obj2 instanceof ColorWallpaper ? ((ColorWallpaper) obj2).parentWallpaper : obj2;
+            Object obj3 = obj instanceof ColorWallpaper ? ((ColorWallpaper) obj).parentWallpaper : obj;
             if (obj3 instanceof TLRPC.WallPaper) {
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj3;
                 if (this.selectedWallPapers.indexOfKey(wallPaper.id) >= 0) {
                     this.selectedWallPapers.remove(wallPaper.id);
                 } else {
-                    this.selectedWallPapers.put(wallPaper.id, obj2);
+                    this.selectedWallPapers.put(wallPaper.id, obj);
                 }
                 if (this.selectedWallPapers.size() == 0) {
                     this.actionBar.hideActionMode();
@@ -892,59 +871,63 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     this.selectedMessagesCountTextView.setNumber(this.selectedWallPapers.size(), true);
                 }
                 this.scrolling = false;
-                if (this.selectedWallPapers.indexOfKey(wallPaper.id) >= 0) {
-                    wallpaperCell2 = wallpaperCell;
-                    i2 = i;
-                    z = true;
-                } else {
-                    wallpaperCell2 = wallpaperCell;
-                    i2 = i;
-                }
-                wallpaperCell2.setChecked(i2, z, true);
+                wallpaperCell.setChecked(i, this.selectedWallPapers.indexOfKey(wallPaper.id) >= 0, true);
                 return;
             }
             return;
         }
-        String wallPaperSlug = getWallPaperSlug(obj2);
-        boolean z2 = obj2 instanceof TLRPC.TL_wallPaper;
-        Object obj4 = obj2;
-        if (z2) {
-            TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
-            obj4 = obj2;
+        String wallPaperSlug = getWallPaperSlug(obj);
+        if (obj instanceof TLRPC.TL_wallPaper) {
+            TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
             if (tL_wallPaper.pattern) {
                 String str = tL_wallPaper.slug;
                 TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
-                ColorWallpaper colorWallpaper = new ColorWallpaper(str, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r2.intensity / 100.0f, tL_wallPaper.settings.motion, null);
+                ColorWallpaper colorWallpaper = new ColorWallpaper(str, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r0.intensity / 100.0f, tL_wallPaper.settings.motion, null);
                 colorWallpaper.pattern = tL_wallPaper;
                 colorWallpaper.parentWallpaper = tL_wallPaper;
-                obj4 = colorWallpaper;
+                obj2 = colorWallpaper;
+                themePreviewActivity = new ThemePreviewActivity(obj2, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.6
+                    @Override // org.telegram.ui.ThemePreviewActivity
+                    public boolean insideBottomSheet() {
+                        return true;
+                    }
+                };
+                if (this.currentType != 1 || this.dialogId != 0) {
+                    themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda7
+                        @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
+                        public final void didSetNewBackground(TLRPC.WallPaper wallPaper2) {
+                            WallpapersListActivity.this.removeSelfFromStack();
+                        }
+                    });
+                }
+                if (this.selectedBackgroundSlug.equals(wallPaperSlug)) {
+                    themePreviewActivity.setInitialModes(this.selectedBackgroundBlurred, this.selectedBackgroundMotion, this.selectedIntensity);
+                }
+                themePreviewActivity.setPatterns(this.patterns);
+                themePreviewActivity.setDialogId(this.dialogId);
+                showAsSheet(themePreviewActivity);
             }
         }
-        ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(obj4, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.6
+        obj2 = obj;
+        themePreviewActivity = new ThemePreviewActivity(obj2, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.6
             @Override // org.telegram.ui.ThemePreviewActivity
             public boolean insideBottomSheet() {
                 return true;
             }
         };
-        if (this.currentType == 1 || this.dialogId != 0) {
-            themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda7
-                @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
-                public final void didSetNewBackground(TLRPC.WallPaper wallPaper2) {
-                    WallpapersListActivity.this.lambda$onItemClick$5(wallPaper2);
-                }
-            });
+        if (this.currentType != 1) {
         }
+        themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda7
+            @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
+            public final void didSetNewBackground(TLRPC.WallPaper wallPaper2) {
+                WallpapersListActivity.this.removeSelfFromStack();
+            }
+        });
         if (this.selectedBackgroundSlug.equals(wallPaperSlug)) {
-            themePreviewActivity.setInitialModes(this.selectedBackgroundBlurred, this.selectedBackgroundMotion, this.selectedIntensity);
         }
         themePreviewActivity.setPatterns(this.patterns);
         themePreviewActivity.setDialogId(this.dialogId);
         showAsSheet(themePreviewActivity);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onItemClick$5(TLRPC.WallPaper wallPaper) {
-        removeSelfFromStack();
     }
 
     private void showAsSheet(ThemePreviewActivity themePreviewActivity) {
@@ -955,16 +938,11 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         bottomSheetParams.onOpenAnimationFinished = new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                WallpapersListActivity.lambda$showAsSheet$6();
+                PhotoViewer.getInstance().closePhoto(false, false);
             }
         };
         bottomSheetParams.occupyNavigationBar = true;
         showAsSheet(themePreviewActivity, bottomSheetParams);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAsSheet$6() {
-        PhotoViewer.getInstance().closePhoto(false, false);
     }
 
     private String getWallPaperSlug(Object obj) {
@@ -1118,23 +1096,22 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                WallpapersListActivity.this.lambda$loadWallpapers$8(z, tLObject, tL_error);
+                WallpapersListActivity.$r8$lambda$7zYtv6K0xW92C4pSJLixru3o7-g(WallpapersListActivity.this, z, tLObject, tL_error);
             }
         }), this.classGuid);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadWallpapers$8(final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$7zYtv6K0xW92C4pSJLixru3o7-g(final WallpapersListActivity wallpapersListActivity, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        wallpapersListActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                WallpapersListActivity.this.lambda$loadWallpapers$7(tLObject, z);
+                WallpapersListActivity.$r8$lambda$cjY_gCgr2yKcfIZuawwfbh97W9k(WallpapersListActivity.this, tLObject, z);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadWallpapers$7(TLObject tLObject, boolean z) {
+    public static /* synthetic */ void $r8$lambda$cjY_gCgr2yKcfIZuawwfbh97W9k(WallpapersListActivity wallpapersListActivity, TLObject tLObject, boolean z) {
         ColorWallpaper colorWallpaper;
         int i;
         TLRPC.WallPaperSettings wallPaperSettings;
@@ -1142,31 +1119,32 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         TLRPC.WallPaperSettings wallPaperSettings2;
         TLRPC.WallPaperSettings wallPaperSettings3;
         TLRPC.Document document;
+        wallpapersListActivity.getClass();
         if (tLObject instanceof TL_account.TL_wallPapers) {
             TL_account.TL_wallPapers tL_wallPapers = (TL_account.TL_wallPapers) tLObject;
-            this.patterns.clear();
-            this.patternsDict.clear();
-            int i2 = this.currentType;
+            wallpapersListActivity.patterns.clear();
+            wallpapersListActivity.patternsDict.clear();
+            int i2 = wallpapersListActivity.currentType;
             if (i2 != 1 && i2 != 2) {
-                this.wallPapers.clear();
-                this.allWallPapersDict.clear();
-                this.allWallPapers.clear();
-                this.allWallPapers.addAll(tL_wallPapers.wallpapers);
-                this.wallPapers.addAll(this.localWallPapers);
+                wallpapersListActivity.wallPapers.clear();
+                wallpapersListActivity.allWallPapersDict.clear();
+                wallpapersListActivity.allWallPapers.clear();
+                wallpapersListActivity.allWallPapers.addAll(tL_wallPapers.wallpapers);
+                wallpapersListActivity.wallPapers.addAll(wallpapersListActivity.localWallPapers);
             }
             int size = tL_wallPapers.wallpapers.size();
             for (int i3 = 0; i3 < size; i3++) {
                 TLRPC.WallPaper wallPaper = tL_wallPapers.wallpapers.get(i3);
                 if (!"fqv01SQemVIBAAAApND8LDRUhRU".equals(wallPaper.slug)) {
                     if ((wallPaper instanceof TLRPC.TL_wallPaper) && !(wallPaper.document instanceof TLRPC.TL_documentEmpty)) {
-                        this.allWallPapersDict.put(wallPaper.slug, wallPaper);
-                        if (wallPaper.pattern && (document = wallPaper.document) != null && !this.patternsDict.containsKey(Long.valueOf(document.id))) {
-                            this.patterns.add(wallPaper);
-                            this.patternsDict.put(Long.valueOf(wallPaper.document.id), wallPaper);
+                        wallpapersListActivity.allWallPapersDict.put(wallPaper.slug, wallPaper);
+                        if (wallPaper.pattern && (document = wallPaper.document) != null && !wallpapersListActivity.patternsDict.containsKey(Long.valueOf(document.id))) {
+                            wallpapersListActivity.patterns.add(wallPaper);
+                            wallpapersListActivity.patternsDict.put(Long.valueOf(wallPaper.document.id), wallPaper);
                         }
-                        int i4 = this.currentType;
+                        int i4 = wallpapersListActivity.currentType;
                         if (i4 != 1 && ((!(z2 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i4 != 2 || z2) && (Theme.isCurrentThemeDark() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
-                            this.wallPapers.add(wallPaper);
+                            wallpapersListActivity.wallPapers.add(wallPaper);
                         }
                     } else if (wallPaper.settings.background_color != 0 && (Theme.isCurrentThemeDark() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
                         TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
@@ -1181,35 +1159,35 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                         colorWallpaper.intensity = wallPaperSettings5.intensity / 100.0f;
                         colorWallpaper.gradientRotation = AndroidUtilities.getWallpaperRotation(wallPaperSettings5.rotation, false);
                         colorWallpaper.parentWallpaper = wallPaper;
-                        this.wallPapers.add(colorWallpaper);
+                        wallpapersListActivity.wallPapers.add(colorWallpaper);
                     }
                 }
             }
-            fillWallpapersWithCustom();
-            getMessagesStorage().putWallpapers(tL_wallPapers.wallpapers, 1);
+            wallpapersListActivity.fillWallpapersWithCustom();
+            wallpapersListActivity.getMessagesStorage().putWallpapers(tL_wallPapers.wallpapers, 1);
         }
-        AlertDialog alertDialog = this.progressDialog;
+        AlertDialog alertDialog = wallpapersListActivity.progressDialog;
         if (alertDialog != null) {
             alertDialog.dismiss();
             if (z) {
                 return;
             }
-            this.listView.smoothScrollToPosition(0);
+            wallpapersListActivity.listView.smoothScrollToPosition(0);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v0 */
-    /* JADX WARN: Type inference failed for: r4v1 */
-    /* JADX WARN: Type inference failed for: r4v10, types: [org.telegram.ui.WallpapersListActivity$ColorWallpaper] */
-    /* JADX WARN: Type inference failed for: r4v9, types: [org.telegram.tgnet.TLRPC$TL_wallPaper, org.telegram.tgnet.TLRPC$WallPaper] */
+    /* JADX WARN: Type inference failed for: r5v0 */
+    /* JADX WARN: Type inference failed for: r5v1 */
+    /* JADX WARN: Type inference failed for: r5v10, types: [org.telegram.tgnet.TLRPC$TL_wallPaper, org.telegram.tgnet.TLRPC$WallPaper] */
+    /* JADX WARN: Type inference failed for: r5v11, types: [org.telegram.ui.WallpapersListActivity$ColorWallpaper] */
     private void fillWallpapersWithCustom() {
         int i;
         TLRPC.TL_wallPaper tL_wallPaper;
         final String str;
+        final long j;
         Object obj;
         TLRPC.TL_wallPaper tL_wallPaper2;
-        final long j;
         TLRPC.WallPaper wallPaper;
         int i2;
         int i3;
@@ -1298,24 +1276,22 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     tL_wallPaper3 = null;
                     obj2 = tL_wallPaper;
                 }
+                str = str2;
                 tL_wallPaper2 = tL_wallPaper3;
                 obj = obj2;
                 j = tL_wallPaper4.id;
-                str = str2;
             } else {
                 str = this.selectedBackgroundSlug;
+                j = (!(tL_wallPaper instanceof ColorWallpaper) || (wallPaper = tL_wallPaper.parentWallpaper) == null) ? 0L : wallPaper.id;
                 obj = tL_wallPaper;
                 tL_wallPaper2 = null;
-                j = (!(tL_wallPaper instanceof ColorWallpaper) || (wallPaper = tL_wallPaper.parentWallpaper) == null) ? 0L : wallPaper.id;
             }
             final boolean isDark = Theme.getCurrentTheme().isDark();
             try {
                 Collections.sort(this.wallPapers, new Comparator() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda3
                     @Override // java.util.Comparator
                     public final int compare(Object obj4, Object obj5) {
-                        int lambda$fillWallpapersWithCustom$9;
-                        lambda$fillWallpapersWithCustom$9 = WallpapersListActivity.this.lambda$fillWallpapersWithCustom$9(j, str, isDark, obj4, obj5);
-                        return lambda$fillWallpapersWithCustom$9;
+                        return WallpapersListActivity.$r8$lambda$X3yZjldfw-BnZ8wMqTasT2ktGL8(WallpapersListActivity.this, j, str, isDark, obj4, obj5);
                     }
                 });
             } catch (Exception e) {
@@ -1376,8 +1352,8 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$fillWallpapersWithCustom$9(long j, String str, boolean z, Object obj, Object obj2) {
+    public static /* synthetic */ int $r8$lambda$X3yZjldfw-BnZ8wMqTasT2ktGL8(WallpapersListActivity wallpapersListActivity, long j, String str, boolean z, Object obj, Object obj2) {
+        wallpapersListActivity.getClass();
         if (obj instanceof ColorWallpaper) {
             obj = ((ColorWallpaper) obj).parentWallpaper;
         }
@@ -1412,8 +1388,8 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                 return 1;
             }
         }
-        int indexOf = this.allWallPapers.indexOf(wallPaper);
-        int indexOf2 = this.allWallPapers.indexOf(wallPaper2);
+        int indexOf = wallpapersListActivity.allWallPapers.indexOf(wallPaper);
+        int indexOf2 = wallpapersListActivity.allWallPapers.indexOf(wallPaper2);
         boolean z2 = wallPaper.dark;
         if (!(z2 && wallPaper2.dark) && (z2 || wallPaper2.dark)) {
             return (!z2 || wallPaper2.dark) ? z ? 1 : -1 : z ? -1 : 1;
@@ -1614,7 +1590,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            WallpapersListActivity.SearchAdapter.this.lambda$processSearch$0(str);
+                            WallpapersListActivity.SearchAdapter.$r8$lambda$rJ9qX6XYeRwO8WGB3mOpdASh3rA(WallpapersListActivity.SearchAdapter.this, str);
                         }
                     };
                     this.searchRunnable = runnable2;
@@ -1634,10 +1610,9 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             notifyDataSetChanged();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$processSearch$0(String str) {
-            doSearch(str);
-            this.searchRunnable = null;
+        public static /* synthetic */ void $r8$lambda$rJ9qX6XYeRwO8WGB3mOpdASh3rA(SearchAdapter searchAdapter, String str) {
+            searchAdapter.doSearch(str);
+            searchAdapter.searchRunnable = null;
         }
 
         private void doSearch(String str) {
@@ -1659,32 +1634,32 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda3
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    WallpapersListActivity.SearchAdapter.this.lambda$searchBotUser$2(tLObject, tL_error);
+                    WallpapersListActivity.SearchAdapter.$r8$lambda$aFh6x-1UW2_LzlIvxZPBj40akb4(WallpapersListActivity.SearchAdapter.this, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchBotUser$2(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$aFh6x-1UW2_LzlIvxZPBj40akb4(final SearchAdapter searchAdapter, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            searchAdapter.getClass();
             if (tLObject != null) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        WallpapersListActivity.SearchAdapter.this.lambda$searchBotUser$1(tLObject);
+                        WallpapersListActivity.SearchAdapter.$r8$lambda$8XQWcWqYXGOj9myOZ3ul4jXwsEM(WallpapersListActivity.SearchAdapter.this, tLObject);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchBotUser$1(TLObject tLObject) {
+        public static /* synthetic */ void $r8$lambda$8XQWcWqYXGOj9myOZ3ul4jXwsEM(SearchAdapter searchAdapter, TLObject tLObject) {
+            searchAdapter.getClass();
             TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
             MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
             MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
             WallpapersListActivity.this.getMessagesStorage().putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-            String str = this.lastSearchImageString;
-            this.lastSearchImageString = null;
-            searchImages(str, "", false);
+            String str = searchAdapter.lastSearchImageString;
+            searchAdapter.lastSearchImageString = null;
+            searchAdapter.searchImages(str, "", false);
         }
 
         public void loadMoreResults() {
@@ -1718,36 +1693,35 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             this.imageReqId = ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    WallpapersListActivity.SearchAdapter.this.lambda$searchImages$4(i, tLObject, tL_error);
+                    WallpapersListActivity.SearchAdapter.$r8$lambda$20W4i7ifNTaxs1i3t5ioKSj-UFo(WallpapersListActivity.SearchAdapter.this, i, tLObject, tL_error);
                 }
             });
             ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).bindRequestToGuid(this.imageReqId, ((BaseFragment) WallpapersListActivity.this).classGuid);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchImages$4(final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$20W4i7ifNTaxs1i3t5ioKSj-UFo(final SearchAdapter searchAdapter, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            searchAdapter.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WallpapersListActivity.SearchAdapter.this.lambda$searchImages$3(i, tLObject);
+                    WallpapersListActivity.SearchAdapter.$r8$lambda$VnyBTM75juEbDBeOSTkWv0NUVT8(WallpapersListActivity.SearchAdapter.this, i, tLObject);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$searchImages$3(int i, TLObject tLObject) {
-            if (i != this.lastSearchToken) {
+        public static /* synthetic */ void $r8$lambda$VnyBTM75juEbDBeOSTkWv0NUVT8(SearchAdapter searchAdapter, int i, TLObject tLObject) {
+            if (i != searchAdapter.lastSearchToken) {
                 return;
             }
-            this.imageReqId = 0;
-            int size = this.searchResult.size();
+            searchAdapter.imageReqId = 0;
+            int size = searchAdapter.searchResult.size();
             if (tLObject != null) {
                 TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                this.nextImagesSearchOffset = messages_botresults.next_offset;
+                searchAdapter.nextImagesSearchOffset = messages_botresults.next_offset;
                 int size2 = messages_botresults.results.size();
                 for (int i2 = 0; i2 < size2; i2++) {
                     TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i2);
-                    if ("photo".equals(botInlineResult.type) && !this.searchResultKeys.containsKey(botInlineResult.id)) {
+                    if ("photo".equals(botInlineResult.type) && !searchAdapter.searchResultKeys.containsKey(botInlineResult.id)) {
                         MediaController.SearchImage searchImage = new MediaController.SearchImage();
                         TLRPC.Photo photo = botInlineResult.photo;
                         if (photo != null) {
@@ -1762,8 +1736,8 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                                 searchImage.thumbPhotoSize = closestPhotoSizeWithSize2;
                                 searchImage.id = botInlineResult.id;
                                 searchImage.type = 0;
-                                this.searchResult.add(searchImage);
-                                this.searchResultKeys.put(searchImage.id, searchImage);
+                                searchAdapter.searchResult.add(searchImage);
+                                searchAdapter.searchResultKeys.put(searchImage.id, searchImage);
                             }
                         } else if (botInlineResult.content != null) {
                             int i3 = 0;
@@ -1790,21 +1764,21 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                             searchImage.size = webDocument2.size;
                             searchImage.id = botInlineResult.id;
                             searchImage.type = 0;
-                            this.searchResult.add(searchImage);
-                            this.searchResultKeys.put(searchImage.id, searchImage);
+                            searchAdapter.searchResult.add(searchImage);
+                            searchAdapter.searchResultKeys.put(searchImage.id, searchImage);
                         }
                     }
                 }
-                this.bingSearchEndReached = size == this.searchResult.size() || this.nextImagesSearchOffset == null;
+                searchAdapter.bingSearchEndReached = size == searchAdapter.searchResult.size() || searchAdapter.nextImagesSearchOffset == null;
             }
-            if (size != this.searchResult.size()) {
+            if (size != searchAdapter.searchResult.size()) {
                 int i4 = size % WallpapersListActivity.this.columnsCount;
                 float f = size;
                 int ceil = (int) Math.ceil(f / WallpapersListActivity.this.columnsCount);
                 if (i4 != 0) {
-                    notifyItemChanged(((int) Math.ceil(f / WallpapersListActivity.this.columnsCount)) - 1);
+                    searchAdapter.notifyItemChanged(((int) Math.ceil(f / WallpapersListActivity.this.columnsCount)) - 1);
                 }
-                WallpapersListActivity.this.searchAdapter.notifyItemRangeInserted(ceil, ((int) Math.ceil(this.searchResult.size() / WallpapersListActivity.this.columnsCount)) - ceil);
+                WallpapersListActivity.this.searchAdapter.notifyItemRangeInserted(ceil, ((int) Math.ceil(searchAdapter.searchResult.size() / WallpapersListActivity.this.columnsCount)) - ceil);
             }
             WallpapersListActivity.this.searchEmptyView.showTextView();
         }
@@ -1822,16 +1796,16 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             return viewHolder.getItemViewType() != 2;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$5(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$AZ3eBseOQMUD9ozugNA6g5McQ_c(SearchAdapter searchAdapter, View view, int i) {
+            searchAdapter.getClass();
             String string = LocaleController.getString(R.string.BackgroundSearchColor);
             SpannableString spannableString = new SpannableString(string + " " + LocaleController.getString(WallpapersListActivity.searchColorsNames[i], WallpapersListActivity.searchColorsNamesR[i]));
             spannableString.setSpan(new ForegroundColorSpan(Theme.getColor(Theme.key_actionBarDefaultSubtitle)), string.length(), spannableString.length(), 33);
             WallpapersListActivity.this.searchItem.setSearchFieldCaption(spannableString);
             WallpapersListActivity.this.searchItem.setSearchFieldHint(null);
             WallpapersListActivity.this.searchItem.setSearchFieldText("", true);
-            this.selectedColor = WallpapersListActivity.searchColorsNames[i];
-            processSearch("", true);
+            searchAdapter.selectedColor = WallpapersListActivity.searchColorsNames[i];
+            searchAdapter.processSearch("", true);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1867,7 +1841,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda1
                         @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                         public final void onItemClick(View view2, int i2) {
-                            WallpapersListActivity.SearchAdapter.this.lambda$onCreateViewHolder$5(view2, i2);
+                            WallpapersListActivity.SearchAdapter.$r8$lambda$AZ3eBseOQMUD9ozugNA6g5McQ_c(WallpapersListActivity.SearchAdapter.this, view2, i2);
                         }
                     });
                     this.innerListView = recyclerListView;
@@ -1961,15 +1935,9 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             return new RecyclerListView.Holder(textCell);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:62:0x0225  */
-        /* JADX WARN: Removed duplicated region for block: B:69:0x023f  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
             long j;
-            long j2;
             int itemViewType = viewHolder.getItemViewType();
             if (itemViewType == 0) {
                 TextCell textCell = (TextCell) viewHolder.itemView;
@@ -2020,8 +1988,9 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     if (WallpapersListActivity.this.selectedBackgroundSlug.equals(tL_wallPaper.slug) && (!WallpapersListActivity.this.selectedBackgroundSlug.equals(tL_wallPaper.slug) || tL_wallPaper.settings == null || (WallpapersListActivity.this.selectedColor == Theme.getWallpaperColor(tL_wallPaper.settings.background_color) && WallpapersListActivity.this.selectedGradientColor1 == Theme.getWallpaperColor(tL_wallPaper.settings.second_background_color) && WallpapersListActivity.this.selectedGradientColor2 == Theme.getWallpaperColor(tL_wallPaper.settings.third_background_color) && WallpapersListActivity.this.selectedGradientColor3 == Theme.getWallpaperColor(tL_wallPaper.settings.fourth_background_color) && (WallpapersListActivity.this.selectedGradientColor1 == 0 || WallpapersListActivity.this.selectedGradientColor2 != 0 || WallpapersListActivity.this.selectedGradientRotation == AndroidUtilities.getWallpaperRotation(tL_wallPaper.settings.rotation, false) || !tL_wallPaper.pattern || Math.abs(Theme.getThemeIntensity(tL_wallPaper.settings.intensity / 100.0f) - WallpapersListActivity.this.selectedIntensity) <= 0.001f)))) {
                         obj = tL_wallPaper;
                     }
-                    j2 = tL_wallPaper.id;
+                    j = tL_wallPaper.id;
                 } else {
+                    j = 0;
                     if (obj2 instanceof ColorWallpaper) {
                         ColorWallpaper colorWallpaper = (ColorWallpaper) obj2;
                         if (("d".equals(colorWallpaper.slug) && WallpapersListActivity.this.selectedBackgroundSlug != null && WallpapersListActivity.this.selectedBackgroundSlug.equals(colorWallpaper.slug)) || (colorWallpaper.color == WallpapersListActivity.this.selectedColor && colorWallpaper.gradientColor1 == WallpapersListActivity.this.selectedGradientColor1 && colorWallpaper.gradientColor2 == WallpapersListActivity.this.selectedGradientColor2 && colorWallpaper.gradientColor3 == WallpapersListActivity.this.selectedGradientColor3 && ((WallpapersListActivity.this.selectedGradientColor1 == 0 || colorWallpaper.gradientRotation == WallpapersListActivity.this.selectedGradientRotation) && ((!"c".equals(WallpapersListActivity.this.selectedBackgroundSlug) || colorWallpaper.slug == null) && ("c".equals(WallpapersListActivity.this.selectedBackgroundSlug) || (TextUtils.equals(WallpapersListActivity.this.selectedBackgroundSlug, colorWallpaper.slug) && ((int) (colorWallpaper.intensity * 100.0f)) == ((int) (WallpapersListActivity.this.selectedIntensity * 100.0f)))))))) {
@@ -2029,22 +1998,18 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                         }
                         TLRPC.WallPaper wallPaper = colorWallpaper.parentWallpaper;
                         if (wallPaper != null) {
-                            j2 = wallPaper.id;
+                            j = wallPaper.id;
                         }
                     } else if ((obj2 instanceof FileWallpaper) && WallpapersListActivity.this.selectedBackgroundSlug.equals(((FileWallpaper) obj2).slug)) {
                         obj = obj2;
                     }
-                    j = 0;
-                    wallpaperCell.setWallpaper(WallpapersListActivity.this.currentType, i3, obj2, obj, null, false);
-                    if (!((BaseFragment) WallpapersListActivity.this).actionBar.isActionModeShowed()) {
-                        wallpaperCell.setChecked(i3, WallpapersListActivity.this.selectedWallPapers.indexOfKey(j) >= 0, !WallpapersListActivity.this.scrolling);
-                    } else {
-                        wallpaperCell.setChecked(i3, false, !WallpapersListActivity.this.scrolling);
-                    }
                 }
-                j = j2;
+                long j2 = j;
                 wallpaperCell.setWallpaper(WallpapersListActivity.this.currentType, i3, obj2, obj, null, false);
-                if (!((BaseFragment) WallpapersListActivity.this).actionBar.isActionModeShowed()) {
+                if (((BaseFragment) WallpapersListActivity.this).actionBar.isActionModeShowed()) {
+                    wallpaperCell.setChecked(i3, WallpapersListActivity.this.selectedWallPapers.indexOfKey(j2) >= 0, !WallpapersListActivity.this.scrolling);
+                } else {
+                    wallpaperCell.setChecked(i3, false, !WallpapersListActivity.this.scrolling);
                 }
             }
         }
@@ -2078,7 +2043,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{ShadowSectionCell.class}, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayIcon));

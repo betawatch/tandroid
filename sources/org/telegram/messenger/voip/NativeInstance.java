@@ -224,15 +224,12 @@ public class NativeInstance {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.NativeInstance$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NativeInstance.this.lambda$onNetworkStateUpdated$0(z, z2);
+                    NativeInstance nativeInstance = NativeInstance.this;
+                    boolean z3 = z;
+                    nativeInstance.onStateUpdatedListener.onStateUpdated(r1 ? 1 : 0, z2);
                 }
             });
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onNetworkStateUpdated$0(boolean z, boolean z2) {
-        this.onStateUpdatedListener.onStateUpdated(z ? 1 : 0, z2);
     }
 
     private void onAudioLevelsUpdated(final int[] iArr, final float[] fArr, final boolean[] zArr) {
@@ -242,14 +239,9 @@ public class NativeInstance {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.NativeInstance$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                NativeInstance.this.lambda$onAudioLevelsUpdated$1(iArr, fArr, zArr);
+                NativeInstance.this.audioLevelsCallback.run(iArr, fArr, zArr);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onAudioLevelsUpdated$1(int[] iArr, float[] fArr, boolean[] zArr) {
-        this.audioLevelsCallback.run(iArr, fArr, zArr);
     }
 
     private void onParticipantDescriptionsRequired(final long j, final int[] iArr) {
@@ -259,19 +251,9 @@ public class NativeInstance {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.NativeInstance$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                NativeInstance.this.lambda$onParticipantDescriptionsRequired$2(j, iArr);
+                NativeInstance.this.unknownParticipantsCallback.run(j, iArr);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onParticipantDescriptionsRequired$2(long j, int[] iArr) {
-        this.unknownParticipantsCallback.run(j, iArr);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEmitJoinPayload$3(int i, String str) {
-        this.payloadCallback.run(i, str);
     }
 
     private void onEmitJoinPayload(final String str, final int i) {
@@ -279,7 +261,7 @@ public class NativeInstance {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.NativeInstance$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NativeInstance.this.lambda$onEmitJoinPayload$3(i, str);
+                    NativeInstance.this.payloadCallback.run(i, str);
                 }
             });
         } catch (Exception e) {

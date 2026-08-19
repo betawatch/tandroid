@@ -111,8 +111,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
     private Runnable onAnimationEndRunnable = null;
     private ArrayList popupMessages = new ArrayList();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$getButtonsViewForMessage$4(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$h5vaCQOS0Y721s71pMjDPrRTnU4(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -162,6 +161,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(this) { // from class: org.telegram.ui.PopupNotificationActivity.1
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
+                int i4;
                 View.MeasureSpec.getMode(i2);
                 View.MeasureSpec.getMode(i3);
                 int size = View.MeasureSpec.getSize(i2);
@@ -171,19 +171,27 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     size2 -= PopupNotificationActivity.this.chatActivityEnterView.getEmojiPadding();
                 }
                 int childCount = getChildCount();
-                for (int i4 = 0; i4 < childCount; i4++) {
-                    View childAt = getChildAt(i4);
+                int i5 = 0;
+                while (i5 < childCount) {
+                    View childAt = getChildAt(i5);
                     if (childAt.getVisibility() != 8) {
                         if (!PopupNotificationActivity.this.chatActivityEnterView.isPopupView(childAt)) {
                             if (PopupNotificationActivity.this.chatActivityEnterView.isRecordCircle(childAt)) {
-                                measureChildWithMargins(childAt, i2, 0, i3, 0);
+                                i4 = i3;
+                                measureChildWithMargins(childAt, i2, 0, i4, 0);
                             } else {
+                                i4 = i3;
                                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.0f) + size2), TLObject.FLAG_30));
                             }
+                            i5++;
+                            i3 = i4;
                         } else {
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
                         }
                     }
+                    i4 = i3;
+                    i5++;
+                    i3 = i4;
                 }
             }
 
@@ -643,19 +651,19 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         builder.setNegativeButton(LocaleController.getString(R.string.PermissionOpenSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                PopupNotificationActivity.this.lambda$onRequestPermissionsResult$0(alertDialog, i2);
+                PopupNotificationActivity.$r8$lambda$F2SEj-S59ijpvlZkyVaCYPuPZTc(PopupNotificationActivity.this, alertDialog, i2);
             }
         });
         builder.setPositiveButton(LocaleController.getString(R.string.OK), null);
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onRequestPermissionsResult$0(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$F2SEj-S59ijpvlZkyVaCYPuPZTc(PopupNotificationActivity popupNotificationActivity, AlertDialog alertDialog, int i) {
+        popupNotificationActivity.getClass();
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            startActivity(intent);
+            popupNotificationActivity.startActivity(intent);
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -761,7 +769,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         this.onAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                PopupNotificationActivity.this.lambda$onTouchEventMy$1();
+                                PopupNotificationActivity.$r8$lambda$AeADSfx61ldLSfIn62yekyHNqks(PopupNotificationActivity.this);
                             }
                         };
                     } else if ((c == 2 || x2 < (-dp) / 3) && this.rightView != null) {
@@ -771,7 +779,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         this.onAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                PopupNotificationActivity.this.lambda$onTouchEventMy$2();
+                                PopupNotificationActivity.$r8$lambda$xVtzkpClIX8nOQT9lENMuqH9tQ8(PopupNotificationActivity.this);
                             }
                         };
                     } else if (this.centerView.getTranslationX() != 0.0f) {
@@ -781,7 +789,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         this.onAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda2
                             @Override // java.lang.Runnable
                             public final void run() {
-                                PopupNotificationActivity.this.lambda$onTouchEventMy$3();
+                                PopupNotificationActivity.$r8$lambda$IKKa5xUM6bBG44ViH4PwE4CGqls(PopupNotificationActivity.this);
                             }
                         };
                         ViewGroup viewGroup5 = viewGroup3;
@@ -834,7 +842,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 this.onAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PopupNotificationActivity.this.lambda$onTouchEventMy$1();
+                        PopupNotificationActivity.$r8$lambda$AeADSfx61ldLSfIn62yekyHNqks(PopupNotificationActivity.this);
                     }
                 };
                 if (translationX != 0.0f) {
@@ -853,25 +861,22 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         return this.startedMoving;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEventMy$1() {
-        this.animationInProgress = false;
-        switchToPreviousMessage();
-        AndroidUtilities.unlockOrientation(this);
+    public static /* synthetic */ void $r8$lambda$AeADSfx61ldLSfIn62yekyHNqks(PopupNotificationActivity popupNotificationActivity) {
+        popupNotificationActivity.animationInProgress = false;
+        popupNotificationActivity.switchToPreviousMessage();
+        AndroidUtilities.unlockOrientation(popupNotificationActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEventMy$2() {
-        this.animationInProgress = false;
-        switchToNextMessage();
-        AndroidUtilities.unlockOrientation(this);
+    public static /* synthetic */ void $r8$lambda$xVtzkpClIX8nOQT9lENMuqH9tQ8(PopupNotificationActivity popupNotificationActivity) {
+        popupNotificationActivity.animationInProgress = false;
+        popupNotificationActivity.switchToNextMessage();
+        AndroidUtilities.unlockOrientation(popupNotificationActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEventMy$3() {
-        this.animationInProgress = false;
-        applyViewsLayoutParams(0);
-        AndroidUtilities.unlockOrientation(this);
+    public static /* synthetic */ void $r8$lambda$IKKa5xUM6bBG44ViH4PwE4CGqls(PopupNotificationActivity popupNotificationActivity) {
+        popupNotificationActivity.animationInProgress = false;
+        popupNotificationActivity.applyViewsLayoutParams(0);
+        AndroidUtilities.unlockOrientation(popupNotificationActivity);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -976,9 +981,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                             linearLayout2.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda4
                                 @Override // android.view.View.OnTouchListener
                                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                                    boolean lambda$getButtonsViewForMessage$4;
-                                    lambda$getButtonsViewForMessage$4 = PopupNotificationActivity.lambda$getButtonsViewForMessage$4(view, motionEvent);
-                                    return lambda$getButtonsViewForMessage$4;
+                                    return PopupNotificationActivity.$r8$lambda$h5vaCQOS0Y721s71pMjDPrRTnU4(view, motionEvent);
                                 }
                             });
                         } else {
@@ -997,7 +1000,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda5
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                PopupNotificationActivity.lambda$getButtonsViewForMessage$5(i7, messageObject, view);
+                                PopupNotificationActivity.$r8$lambda$0ZtfsiHWK_MLtvB-GQtp_ZoMqlU(i7, messageObject, view);
                             }
                         });
                         linearLayout3 = linearLayout2;
@@ -1032,8 +1035,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         return linearLayout;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getButtonsViewForMessage$5(int i, MessageObject messageObject, View view) {
+    public static /* synthetic */ void $r8$lambda$0ZtfsiHWK_MLtvB-GQtp_ZoMqlU(int i, MessageObject messageObject, View view) {
         TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) view.getTag();
         if (keyboardButtonProto != null) {
             SendMessagesHelper.getInstance(i).sendNotificationCallback(messageObject.getDialogId(), messageObject.getId(), keyboardButtonProto.getData());
@@ -1062,9 +1064,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (this.imageViews.size() > 0) {
                 frameLayout = (ViewGroup) this.imageViews.get(0);
                 this.imageViews.remove(0);
+                i2 = NotificationCenter.premiumStickersPreviewLoaded;
             } else {
                 frameLayout = new FrameLayout(this);
                 FrameLayout frameLayout2 = new FrameLayout(this);
+                i2 = NotificationCenter.premiumStickersPreviewLoaded;
                 frameLayout2.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 frameLayout2.setBackgroundDrawable(Theme.getSelectorDrawable(false));
                 frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, -1.0f));
@@ -1081,13 +1085,12 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PopupNotificationActivity.this.lambda$getViewForMessage$6(view);
+                        PopupNotificationActivity.this.openCurrentMessage();
                     }
                 });
             }
-            ViewGroup viewGroup4 = frameLayout;
-            TextView textView2 = (TextView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.premiumStickersPreviewLoaded));
-            BackupImageView backupImageView2 = (BackupImageView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.billingConfirmPurchaseError));
+            TextView textView2 = (TextView) frameLayout.findViewWithTag(Integer.valueOf(i2));
+            BackupImageView backupImageView2 = (BackupImageView) frameLayout.findViewWithTag(Integer.valueOf(NotificationCenter.billingConfirmPurchaseError));
             backupImageView2.setAspectFit(true);
             int i5 = messageObject.type;
             if (i5 == 1) {
@@ -1097,147 +1100,126 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     boolean z2 = messageObject.type != 1 || FileLoader.getInstance(UserConfig.selectedAccount).getPathToMessage(messageObject.messageOwner).exists();
                     if (!messageObject.needDrawBluredPreview()) {
                         if (z2 || DownloadController.getInstance(messageObject.currentAccount).canDownloadMedia(messageObject)) {
-                            i2 = 8;
                             backupImageView2.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize, messageObject.photoThumbsObject), "100_100", ImageLocation.getForObject(closestPhotoSizeWithSize2, messageObject.photoThumbsObject), "100_100_b", closestPhotoSizeWithSize.size, messageObject);
                         } else if (closestPhotoSizeWithSize2 != null) {
                             backupImageView2.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize2, messageObject.photoThumbsObject), "100_100_b", (String) null, (Drawable) null, messageObject);
-                            i2 = 8;
                         }
                         backupImageView2.setVisibility(0);
-                        textView2.setVisibility(i2);
-                        viewGroup = viewGroup4;
+                        textView2.setVisibility(8);
                     }
                 }
                 backupImageView2.setVisibility(8);
                 textView2.setVisibility(0);
                 textView2.setTextSize(2, SharedConfig.fontSize);
                 textView2.setText(messageObject.messageText);
-                viewGroup = viewGroup4;
-            } else {
-                viewGroup = viewGroup4;
-                if (i5 == 4) {
-                    textView2.setVisibility(8);
-                    textView2.setText(messageObject.messageText);
-                    backupImageView2.setVisibility(0);
-                    TLRPC.GeoPoint geoPoint = messageObject.messageOwner.media.geo;
-                    double d = geoPoint.lat;
-                    double d2 = geoPoint._long;
-                    if (MessagesController.getInstance(messageObject.currentAccount).mapProvider == 2) {
-                        backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint, 100, 100, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (String) null, (Drawable) null, messageObject);
-                        viewGroup = viewGroup4;
-                    } else {
-                        backupImageView2.setImage(AndroidUtilities.formapMapUrl(messageObject.currentAccount, d, d2, 100, 100, true, 15, -1), null, null);
-                        viewGroup = viewGroup4;
-                    }
+            } else if (i5 == 4) {
+                textView2.setVisibility(8);
+                textView2.setText(messageObject.messageText);
+                backupImageView2.setVisibility(0);
+                TLRPC.GeoPoint geoPoint = messageObject.messageOwner.media.geo;
+                double d = geoPoint.lat;
+                double d2 = geoPoint._long;
+                if (MessagesController.getInstance(messageObject.currentAccount).mapProvider == 2) {
+                    backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint, 100, 100, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (String) null, (Drawable) null, messageObject);
+                } else {
+                    backupImageView2.setImage(AndroidUtilities.formapMapUrl(messageObject.currentAccount, d, d2, 100, 100, true, 15, -1), null, null);
                 }
             }
-        } else if (messageObject.type == 2) {
-            if (this.audioViews.size() > 0) {
-                ViewGroup viewGroup5 = (ViewGroup) this.audioViews.get(0);
-                this.audioViews.remove(0);
-                popupAudioView = (PopupAudioView) viewGroup5.findViewWithTag(Integer.valueOf(NotificationCenter.dialogsUnreadPollVotesCounterChanged));
-                viewGroup3 = viewGroup5;
-            } else {
-                FrameLayout frameLayout3 = new FrameLayout(this);
-                FrameLayout frameLayout4 = new FrameLayout(this);
-                frameLayout4.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-                frameLayout4.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-                frameLayout3.addView(frameLayout4, LayoutHelper.createFrame(-1, -1.0f));
-                FrameLayout frameLayout5 = new FrameLayout(this);
-                frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
-                PopupAudioView popupAudioView2 = new PopupAudioView(this);
-                popupAudioView2.setTag(Integer.valueOf(NotificationCenter.dialogsUnreadPollVotesCounterChanged));
-                frameLayout5.addView(popupAudioView2);
-                frameLayout3.setTag(3);
-                frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda7
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        PopupNotificationActivity.this.lambda$getViewForMessage$7(view);
-                    }
-                });
-                popupAudioView = popupAudioView2;
-                viewGroup3 = frameLayout3;
-            }
-            popupAudioView.setMessageObject(messageObject);
-            viewGroup = viewGroup3;
-            if (DownloadController.getInstance(messageObject.currentAccount).canDownloadMedia(messageObject)) {
-                popupAudioView.downloadAudioIfNeed();
-                viewGroup = viewGroup3;
-            }
         } else {
-            if (this.textViews.size() > 0) {
-                ViewGroup viewGroup6 = (ViewGroup) this.textViews.get(0);
-                this.textViews.remove(0);
-                viewGroup2 = viewGroup6;
+            if (messageObject.type == 2) {
+                if (this.audioViews.size() > 0) {
+                    ViewGroup viewGroup4 = (ViewGroup) this.audioViews.get(0);
+                    this.audioViews.remove(0);
+                    popupAudioView = (PopupAudioView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.dialogsUnreadPollVotesCounterChanged));
+                    viewGroup3 = viewGroup4;
+                } else {
+                    FrameLayout frameLayout3 = new FrameLayout(this);
+                    FrameLayout frameLayout4 = new FrameLayout(this);
+                    frameLayout4.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+                    frameLayout4.setBackgroundDrawable(Theme.getSelectorDrawable(false));
+                    frameLayout3.addView(frameLayout4, LayoutHelper.createFrame(-1, -1.0f));
+                    FrameLayout frameLayout5 = new FrameLayout(this);
+                    frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
+                    PopupAudioView popupAudioView2 = new PopupAudioView(this);
+                    popupAudioView2.setTag(Integer.valueOf(NotificationCenter.dialogsUnreadPollVotesCounterChanged));
+                    frameLayout5.addView(popupAudioView2);
+                    frameLayout3.setTag(3);
+                    frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda7
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            PopupNotificationActivity.this.openCurrentMessage();
+                        }
+                    });
+                    popupAudioView = popupAudioView2;
+                    viewGroup3 = frameLayout3;
+                }
+                popupAudioView.setMessageObject(messageObject);
+                viewGroup2 = viewGroup3;
+                if (DownloadController.getInstance(messageObject.currentAccount).canDownloadMedia(messageObject)) {
+                    popupAudioView.downloadAudioIfNeed();
+                    viewGroup2 = viewGroup3;
+                }
             } else {
-                FrameLayout frameLayout6 = new FrameLayout(this);
-                ScrollView scrollView = new ScrollView(this);
-                scrollView.setFillViewport(true);
-                frameLayout6.addView(scrollView, LayoutHelper.createFrame(-1, -1.0f));
-                LinearLayout linearLayout = new LinearLayout(this);
-                linearLayout.setOrientation(0);
-                linearLayout.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-                scrollView.addView(linearLayout, LayoutHelper.createScroll(-1, -2, 1));
-                linearLayout.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-                linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda8
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        PopupNotificationActivity.this.lambda$getViewForMessage$8(view);
-                    }
-                });
-                TextView textView3 = new TextView(this);
-                textView3.setTextSize(1, 16.0f);
-                textView3.setTag(Integer.valueOf(NotificationCenter.onDatabaseOpened));
-                int i6 = Theme.key_windowBackgroundWhiteBlackText;
-                textView3.setTextColor(Theme.getColor(i6));
-                textView3.setLinkTextColor(Theme.getColor(i6));
-                textView3.setGravity(17);
-                linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2, 17));
-                frameLayout6.setTag(1);
-                viewGroup2 = frameLayout6;
+                if (this.textViews.size() > 0) {
+                    ViewGroup viewGroup5 = (ViewGroup) this.textViews.get(0);
+                    this.textViews.remove(0);
+                    viewGroup = viewGroup5;
+                } else {
+                    FrameLayout frameLayout6 = new FrameLayout(this);
+                    ScrollView scrollView = new ScrollView(this);
+                    scrollView.setFillViewport(true);
+                    frameLayout6.addView(scrollView, LayoutHelper.createFrame(-1, -1.0f));
+                    LinearLayout linearLayout = new LinearLayout(this);
+                    linearLayout.setOrientation(0);
+                    linearLayout.setBackgroundDrawable(Theme.getSelectorDrawable(false));
+                    scrollView.addView(linearLayout, LayoutHelper.createScroll(-1, -2, 1));
+                    linearLayout.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+                    linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda8
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            PopupNotificationActivity.this.openCurrentMessage();
+                        }
+                    });
+                    TextView textView3 = new TextView(this);
+                    textView3.setTextSize(1, 16.0f);
+                    textView3.setTag(Integer.valueOf(NotificationCenter.onDatabaseOpened));
+                    int i6 = Theme.key_windowBackgroundWhiteBlackText;
+                    textView3.setTextColor(Theme.getColor(i6));
+                    textView3.setLinkTextColor(Theme.getColor(i6));
+                    textView3.setGravity(17);
+                    linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2, 17));
+                    frameLayout6.setTag(1);
+                    viewGroup = frameLayout6;
+                }
+                TextView textView4 = (TextView) viewGroup.findViewWithTag(Integer.valueOf(NotificationCenter.onDatabaseOpened));
+                textView4.setTextSize(2, SharedConfig.fontSize);
+                textView4.setText(messageObject.messageText);
+                viewGroup2 = viewGroup;
             }
-            TextView textView4 = (TextView) viewGroup2.findViewWithTag(Integer.valueOf(NotificationCenter.onDatabaseOpened));
-            textView4.setTextSize(2, SharedConfig.fontSize);
-            textView4.setText(messageObject.messageText);
-            viewGroup = viewGroup2;
+            frameLayout = viewGroup2;
         }
-        if (viewGroup.getParent() == null) {
-            this.messageContainer.addView(viewGroup);
+        if (frameLayout.getParent() == null) {
+            this.messageContainer.addView(frameLayout);
         }
-        viewGroup.setVisibility(0);
+        frameLayout.setVisibility(0);
         if (z) {
             int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(24.0f);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewGroup.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
             layoutParams.gravity = 51;
             layoutParams.height = -1;
             layoutParams.width = dp;
             int i7 = this.currentMessageNum;
             if (i3 == i7) {
-                viewGroup.setTranslationX(0.0f);
+                frameLayout.setTranslationX(0.0f);
             } else if (i3 == i7 - 1) {
-                viewGroup.setTranslationX(-dp);
+                frameLayout.setTranslationX(-dp);
             } else if (i3 == i7 + 1) {
-                viewGroup.setTranslationX(dp);
+                frameLayout.setTranslationX(dp);
             }
-            viewGroup.setLayoutParams(layoutParams);
-            viewGroup.invalidate();
+            frameLayout.setLayoutParams(layoutParams);
+            frameLayout.invalidate();
         }
-        return viewGroup;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getViewForMessage$6(View view) {
-        openCurrentMessage();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getViewForMessage$7(View view) {
-        openCurrentMessage();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getViewForMessage$8(View view) {
-        openCurrentMessage();
+        return frameLayout;
     }
 
     private void reuseButtonsView(ViewGroup viewGroup) {

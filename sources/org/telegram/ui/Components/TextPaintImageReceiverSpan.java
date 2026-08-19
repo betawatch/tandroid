@@ -26,8 +26,7 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
     private ImageReceiver imageReceiver;
     private int width;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$2() {
+    public static /* synthetic */ void $r8$lambda$njb1CVCkH53R0cVT72Kh89O4uj4() {
     }
 
     public TextPaintImageReceiverSpan(View view, TLRPC.Document document, Object obj, int i, int i2, boolean z, boolean z2) {
@@ -41,7 +40,7 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
             this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.TextPaintImageReceiverSpan$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                 public final void didSetImage(ImageReceiver imageReceiver2, boolean z3, boolean z4, boolean z5) {
-                    TextPaintImageReceiverSpan.lambda$new$0(imageReceiver2, z3, z4, z5);
+                    TextPaintImageReceiverSpan.$r8$lambda$4MMEUN7lGItDcmEJ4PJPQuQdpRk(imageReceiver2, z3, z4, z5);
                 }
 
                 @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -59,8 +58,7 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
         this.alignTop = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+    public static /* synthetic */ void $r8$lambda$4MMEUN7lGItDcmEJ4PJPQuQdpRk(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
         if (imageReceiver.canInvertBitmap()) {
             imageReceiver.setColorFilter(new ColorMatrixColorFilter(new float[]{-1.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, -1.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, -1.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f}));
         }
@@ -76,7 +74,7 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
             this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.TextPaintImageReceiverSpan$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                 public final void didSetImage(ImageReceiver imageReceiver2, boolean z3, boolean z4, boolean z5) {
-                    TextPaintImageReceiverSpan.lambda$new$1(imageReceiver2, z3, z4, z5);
+                    TextPaintImageReceiverSpan.$r8$lambda$hL00ZSraoBvcqklhxroC5of8_Ck(imageReceiver2, z3, z4, z5);
                 }
 
                 @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -93,14 +91,13 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
         WebInstantView.loadPhoto(webPhoto, this.imageReceiver, new Runnable() { // from class: org.telegram.ui.Components.TextPaintImageReceiverSpan$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                TextPaintImageReceiverSpan.lambda$new$2();
+                TextPaintImageReceiverSpan.$r8$lambda$njb1CVCkH53R0cVT72Kh89O4uj4();
             }
         });
         this.alignTop = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+    public static /* synthetic */ void $r8$lambda$hL00ZSraoBvcqklhxroC5of8_Ck(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
         if (imageReceiver.canInvertBitmap()) {
             imageReceiver.setColorFilter(new ColorMatrixColorFilter(new float[]{-1.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, -1.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, -1.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f}));
         }

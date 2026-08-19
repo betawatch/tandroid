@@ -4,10 +4,10 @@ import java.security.PrivilegedAction;
 import java.util.ArrayList;
 
 /* loaded from: classes2.dex */
-final class g implements PrivilegedAction {
-    final /* synthetic */ ArrayList a;
+public final class g implements PrivilegedAction {
+    public final /* synthetic */ ArrayList a;
 
-    g(ArrayList arrayList) {
+    public g(ArrayList arrayList) {
         this.a = arrayList;
     }
 
@@ -16,15 +16,15 @@ final class g implements PrivilegedAction {
         String property = System.getProperty("java.time.zone.DefaultZoneRulesProvider");
         if (property != null) {
             try {
-                i iVar = (i) i.class.cast(Class.forName(property, true, i.class.getClassLoader()).newInstance());
-                i.d(iVar);
-                this.a.add(iVar);
+                h hVar = (h) h.class.cast(Class.forName(property, true, h.class.getClassLoader()).newInstance());
+                h.b(hVar);
+                this.a.add(hVar);
                 return null;
             } catch (Exception e) {
                 throw new Error(e);
             }
         }
-        i.d(new h());
+        h.b(new h());
         return null;
     }
 }

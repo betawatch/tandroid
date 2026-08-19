@@ -37,11 +37,11 @@ final class zzbn extends SuspendLambda implements Function2 {
         return ((zzbn) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x00a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x00a6, code lost:
     
         if (((com.google.android.recaptcha.internal.zzhg) r13).zza(r1, r12) != r0) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0047, code lost:
     
         if (r5.lock(null, r12) != r0) goto L30;
      */
@@ -85,10 +85,12 @@ final class zzbn extends SuspendLambda implements Function2 {
             }
             zzbpVar = zzboVar.zzc;
             if (!Intrinsics.areEqual(zzbpVar, zzbp.zza)) {
-                return Unit.INSTANCE;
+                Unit unit = Unit.INSTANCE;
+                mutex.unlock(null);
+                return unit;
             }
             zzboVar.zzc = zzbp.zzb;
-            Unit unit = Unit.INSTANCE;
+            Unit unit2 = Unit.INSTANCE;
             mutex.unlock(null);
             zzbo zzboVar2 = this.zzd;
             zzboVar2.zza = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
@@ -105,8 +107,9 @@ final class zzbn extends SuspendLambda implements Function2 {
                 this.zzc = 3;
             }
             return coroutine_suspended;
-        } finally {
+        } catch (Throwable th) {
             mutex.unlock(null);
+            throw th;
         }
     }
 }

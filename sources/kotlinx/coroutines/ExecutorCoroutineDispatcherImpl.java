@@ -37,25 +37,45 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
 
     @Override // kotlinx.coroutines.Delay
     public void scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
+        long j2;
         Executor executor = getExecutor();
+        ScheduledFuture scheduledFuture = null;
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
-        ScheduledFuture scheduleBlock = scheduledExecutorService != null ? scheduleBlock(scheduledExecutorService, new ResumeUndispatchedRunnable(this, cancellableContinuation), cancellableContinuation.getContext(), j) : null;
-        if (scheduleBlock != null) {
-            JobKt.cancelFutureOnCancellation(cancellableContinuation, scheduleBlock);
+        if (scheduledExecutorService != null) {
+            j2 = j;
+            scheduledFuture = scheduleBlock(scheduledExecutorService, new ResumeUndispatchedRunnable(this, cancellableContinuation), cancellableContinuation.getContext(), j2);
         } else {
-            DefaultExecutor.INSTANCE.scheduleResumeAfterDelay(j, cancellableContinuation);
+            j2 = j;
+        }
+        if (scheduledFuture != null) {
+            JobKt.cancelFutureOnCancellation(cancellableContinuation, scheduledFuture);
+        } else {
+            DefaultExecutor.INSTANCE.scheduleResumeAfterDelay(j2, cancellableContinuation);
         }
     }
 
     @Override // kotlinx.coroutines.Delay
     public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
+        long j2;
+        Runnable runnable2;
+        CoroutineContext coroutineContext2;
         Executor executor = getExecutor();
+        ScheduledFuture scheduledFuture = null;
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
-        ScheduledFuture scheduleBlock = scheduledExecutorService != null ? scheduleBlock(scheduledExecutorService, runnable, coroutineContext, j) : null;
-        if (scheduleBlock != null) {
-            return new DisposableFutureHandle(scheduleBlock);
+        if (scheduledExecutorService != null) {
+            j2 = j;
+            runnable2 = runnable;
+            coroutineContext2 = coroutineContext;
+            scheduledFuture = scheduleBlock(scheduledExecutorService, runnable2, coroutineContext2, j2);
+        } else {
+            j2 = j;
+            runnable2 = runnable;
+            coroutineContext2 = coroutineContext;
         }
-        return DefaultExecutor.INSTANCE.invokeOnTimeout(j, runnable, coroutineContext);
+        if (scheduledFuture != null) {
+            return new DisposableFutureHandle(scheduledFuture);
+        }
+        return DefaultExecutor.INSTANCE.invokeOnTimeout(j2, runnable2, coroutineContext2);
     }
 
     private final ScheduledFuture scheduleBlock(ScheduledExecutorService scheduledExecutorService, Runnable runnable, CoroutineContext coroutineContext, long j) {

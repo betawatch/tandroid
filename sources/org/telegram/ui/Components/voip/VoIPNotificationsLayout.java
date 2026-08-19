@@ -125,15 +125,14 @@ public class VoIPNotificationsLayout extends LinearLayout {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPNotificationsLayout$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                VoIPNotificationsLayout.this.lambda$lock$0();
+                VoIPNotificationsLayout.$r8$lambda$K3bAGjGz_7hB2Zs1XgSqVXMNDcc(VoIPNotificationsLayout.this);
             }
         }, 700L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$lock$0() {
-        this.lockAnimation = false;
-        runDelayed();
+    public static /* synthetic */ void $r8$lambda$K3bAGjGz_7hB2Zs1XgSqVXMNDcc(VoIPNotificationsLayout voIPNotificationsLayout) {
+        voIPNotificationsLayout.lockAnimation = false;
+        voIPNotificationsLayout.runDelayed();
     }
 
     private void runDelayed() {
@@ -230,11 +229,10 @@ public class VoIPNotificationsLayout extends LinearLayout {
             int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(120.0f);
             StaticLayout createStaticLayout = StaticLayoutEx.createStaticLayout(charSequence, this.textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false, TextUtils.TruncateAt.END, dp, 10);
             if (createStaticLayout != null) {
-                int i = 0;
-                for (int i2 = 0; i2 < createStaticLayout.getLineCount(); i2++) {
-                    i = (int) Math.max(i, Math.ceil(createStaticLayout.getLineWidth(i2)));
+                dp = 0;
+                for (int i = 0; i < createStaticLayout.getLineCount(); i++) {
+                    dp = (int) Math.max(dp, Math.ceil(createStaticLayout.getLineWidth(i)));
                 }
-                dp = i;
             }
             this.textView.setMaxWidth(dp);
             this.textView.setText(charSequence);

@@ -97,7 +97,7 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ReplaceableIconDrawable$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ReplaceableIconDrawable.this.lambda$setIcon$0(valueAnimator2);
+                ReplaceableIconDrawable.$r8$lambda$9HGZZuq3Hl3DD2pz0coraiDrRCU(ReplaceableIconDrawable.this, valueAnimator2);
             }
         });
         this.animation.addListener(this);
@@ -105,10 +105,10 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
         this.animation.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setIcon$0(ValueAnimator valueAnimator) {
-        this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidateSelf();
+    public static /* synthetic */ void $r8$lambda$9HGZZuq3Hl3DD2pz0coraiDrRCU(ReplaceableIconDrawable replaceableIconDrawable, ValueAnimator valueAnimator) {
+        replaceableIconDrawable.getClass();
+        replaceableIconDrawable.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        replaceableIconDrawable.invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable

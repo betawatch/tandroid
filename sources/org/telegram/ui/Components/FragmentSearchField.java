@@ -160,7 +160,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentSearchField$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FragmentSearchField.this.lambda$new$0(view);
+                FragmentSearchField.$r8$lambda$xyGqNEQ_1dyz-u284zPSgNEFWSE(FragmentSearchField.this, view);
             }
         });
         addView(imageView2, LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
@@ -180,26 +180,25 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         updateColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        if (hasRemovableFilters()) {
-            SearchFiltersListener searchFiltersListener = this.searchFiltersListener;
+    public static /* synthetic */ void $r8$lambda$xyGqNEQ_1dyz-u284zPSgNEFWSE(FragmentSearchField fragmentSearchField, View view) {
+        if (fragmentSearchField.hasRemovableFilters()) {
+            SearchFiltersListener searchFiltersListener = fragmentSearchField.searchFiltersListener;
             if (searchFiltersListener != null) {
                 searchFiltersListener.hideActionMode();
             }
-            for (int i = 0; i < this.currentSearchFilters.size(); i++) {
-                if (this.searchFiltersListener != null && ((FiltersView.MediaFilterData) this.currentSearchFilters.get(i)).removable) {
-                    this.searchFiltersListener.onSearchFilterCleared((FiltersView.MediaFilterData) this.currentSearchFilters.get(i));
+            for (int i = 0; i < fragmentSearchField.currentSearchFilters.size(); i++) {
+                if (fragmentSearchField.searchFiltersListener != null && ((FiltersView.MediaFilterData) fragmentSearchField.currentSearchFilters.get(i)).removable) {
+                    fragmentSearchField.searchFiltersListener.onSearchFilterCleared((FiltersView.MediaFilterData) fragmentSearchField.currentSearchFilters.get(i));
                 }
             }
-            clearSearchFilters();
+            fragmentSearchField.clearSearchFilters();
             return;
         }
-        Runnable runnable = this.onCloseSearch;
+        Runnable runnable = fragmentSearchField.onCloseSearch;
         if (runnable != null) {
             runnable.run();
         } else {
-            this.editText.getText().clear();
+            fragmentSearchField.editText.getText().clear();
         }
     }
 
@@ -503,7 +502,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
             searchFilterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentSearchField$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FragmentSearchField.this.lambda$onFiltersChanged$1(searchFilterView, view);
+                    FragmentSearchField.$r8$lambda$6iTX3sskoVI41WBuE8KbfIh3-n0(FragmentSearchField.this, searchFilterView, view);
                 }
             });
             LinearLayout linearLayout = this.searchFilterLayout;
@@ -518,12 +517,11 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         this.searchFilterLayout.setTag(!isEmpty ? 1 : null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onFiltersChanged$1(ActionBarMenuItem.SearchFilterView searchFilterView, View view) {
-        int indexOf = this.currentSearchFilters.indexOf(searchFilterView.getFilter());
-        if (this.selectedFilterIndex != indexOf) {
-            this.selectedFilterIndex = indexOf;
-            onFiltersChanged();
+    public static /* synthetic */ void $r8$lambda$6iTX3sskoVI41WBuE8KbfIh3-n0(FragmentSearchField fragmentSearchField, ActionBarMenuItem.SearchFilterView searchFilterView, View view) {
+        int indexOf = fragmentSearchField.currentSearchFilters.indexOf(searchFilterView.getFilter());
+        if (fragmentSearchField.selectedFilterIndex != indexOf) {
+            fragmentSearchField.selectedFilterIndex = indexOf;
+            fragmentSearchField.onFiltersChanged();
             return;
         }
         if (searchFilterView.getFilter().removable) {
@@ -532,8 +530,8 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
                 return;
             }
             FiltersView.MediaFilterData filter = searchFilterView.getFilter();
-            removeSearchFilter(filter);
-            SearchFiltersListener searchFiltersListener = this.searchFiltersListener;
+            fragmentSearchField.removeSearchFilter(filter);
+            SearchFiltersListener searchFiltersListener = fragmentSearchField.searchFiltersListener;
             if (searchFiltersListener != null) {
                 searchFiltersListener.onSearchFilterCleared(filter);
             }

@@ -90,20 +90,20 @@ public class VideoEncodingService extends Service implements NotificationCenter.
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.VideoEncodingService$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VideoEncodingService.this.lambda$didReceivedNotification$0();
+                        VideoEncodingService.$r8$lambda$d-MN0l2dmFhJ-f_LsCGtC6ZkZjM(VideoEncodingService.this);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$0() {
+    public static /* synthetic */ void $r8$lambda$d-MN0l2dmFhJ-f_LsCGtC6ZkZjM(VideoEncodingService videoEncodingService) {
+        videoEncodingService.getClass();
         MediaController.VideoConvertMessage currentForegroundConverMessage = MediaController.getInstance().getCurrentForegroundConverMessage();
         if (currentForegroundConverMessage != null) {
-            setCurrentMessage(currentForegroundConverMessage);
+            videoEncodingService.setCurrentMessage(currentForegroundConverMessage);
         } else {
-            stopSelf();
+            videoEncodingService.stopSelf();
         }
     }
 

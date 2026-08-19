@@ -21,9 +21,7 @@ public final class AdtsExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.AdtsExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = AdtsExtractor.lambda$static$0();
-            return lambda$static$0;
+            return AdtsExtractor.$r8$lambda$6GRiHfq73DxGOaOHADb9-lQQUcs();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -50,8 +48,7 @@ public final class AdtsExtractor implements Extractor {
     public void release() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$6GRiHfq73DxGOaOHADb9-lQQUcs() {
         return new Extractor[]{new AdtsExtractor()};
     }
 

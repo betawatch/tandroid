@@ -37,11 +37,13 @@ final class AutoValue_SchedulerConfig extends SchedulerConfig {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof SchedulerConfig)) {
-            return false;
+        if (obj instanceof SchedulerConfig) {
+            SchedulerConfig schedulerConfig = (SchedulerConfig) obj;
+            if (this.clock.equals(schedulerConfig.getClock()) && this.values.equals(schedulerConfig.getValues())) {
+                return true;
+            }
         }
-        SchedulerConfig schedulerConfig = (SchedulerConfig) obj;
-        return this.clock.equals(schedulerConfig.getClock()) && this.values.equals(schedulerConfig.getValues());
+        return false;
     }
 
     public int hashCode() {

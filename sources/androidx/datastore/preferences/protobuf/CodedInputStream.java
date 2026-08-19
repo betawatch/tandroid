@@ -422,6 +422,7 @@ public abstract class CodedInputStream {
             long j;
             long j2;
             long j3;
+            long j4;
             int i = this.pos;
             int i2 = this.limit;
             if (i2 != i) {
@@ -447,9 +448,7 @@ public abstract class CodedInputStream {
                             int i8 = i + 4;
                             int i9 = i7 ^ (bArr[i6] << 21);
                             if (i9 < 0) {
-                                long j4 = (-2080896) ^ i9;
-                                i4 = i8;
-                                j = j4;
+                                j4 = (-2080896) ^ i9;
                             } else {
                                 long j5 = i9;
                                 i4 = i + 5;
@@ -457,38 +456,39 @@ public abstract class CodedInputStream {
                                 if (j6 >= 0) {
                                     j3 = 266354560;
                                 } else {
-                                    int i10 = i + 6;
+                                    i8 = i + 6;
                                     long j7 = j6 ^ (bArr[i4] << 35);
                                     if (j7 < 0) {
                                         j2 = -34093383808L;
                                     } else {
                                         i4 = i + 7;
-                                        j6 = j7 ^ (bArr[i10] << 42);
+                                        j6 = j7 ^ (bArr[i8] << 42);
                                         if (j6 >= 0) {
                                             j3 = 4363953127296L;
                                         } else {
-                                            i10 = i + 8;
+                                            i8 = i + 8;
                                             j7 = j6 ^ (bArr[i4] << 49);
                                             if (j7 < 0) {
                                                 j2 = -558586000294016L;
                                             } else {
                                                 i4 = i + 9;
-                                                long j8 = (j7 ^ (bArr[i10] << 56)) ^ 71499008037633920L;
+                                                long j8 = (j7 ^ (bArr[i8] << 56)) ^ 71499008037633920L;
                                                 if (j8 < 0) {
-                                                    int i11 = i + 10;
+                                                    int i10 = i + 10;
                                                     if (bArr[i4] >= 0) {
-                                                        i4 = i11;
+                                                        i4 = i10;
                                                     }
                                                 }
                                                 j = j8;
                                             }
                                         }
                                     }
-                                    j = j7 ^ j2;
-                                    i4 = i10;
+                                    j4 = j2 ^ j7;
                                 }
-                                j = j6 ^ j3;
+                                j = j3 ^ j6;
                             }
+                            i4 = i8;
+                            j = j4;
                         }
                     }
                     this.pos = i4;
@@ -933,6 +933,7 @@ public abstract class CodedInputStream {
             long j;
             long j2;
             long j3;
+            long j4;
             int i = this.pos;
             int i2 = this.bufferSize;
             if (i2 != i) {
@@ -958,9 +959,7 @@ public abstract class CodedInputStream {
                             int i8 = i + 4;
                             int i9 = i7 ^ (bArr[i6] << 21);
                             if (i9 < 0) {
-                                long j4 = (-2080896) ^ i9;
-                                i4 = i8;
-                                j = j4;
+                                j4 = (-2080896) ^ i9;
                             } else {
                                 long j5 = i9;
                                 i4 = i + 5;
@@ -968,38 +967,39 @@ public abstract class CodedInputStream {
                                 if (j6 >= 0) {
                                     j3 = 266354560;
                                 } else {
-                                    int i10 = i + 6;
+                                    i8 = i + 6;
                                     long j7 = j6 ^ (bArr[i4] << 35);
                                     if (j7 < 0) {
                                         j2 = -34093383808L;
                                     } else {
                                         i4 = i + 7;
-                                        j6 = j7 ^ (bArr[i10] << 42);
+                                        j6 = j7 ^ (bArr[i8] << 42);
                                         if (j6 >= 0) {
                                             j3 = 4363953127296L;
                                         } else {
-                                            i10 = i + 8;
+                                            i8 = i + 8;
                                             j7 = j6 ^ (bArr[i4] << 49);
                                             if (j7 < 0) {
                                                 j2 = -558586000294016L;
                                             } else {
                                                 i4 = i + 9;
-                                                long j8 = (j7 ^ (bArr[i10] << 56)) ^ 71499008037633920L;
+                                                long j8 = (j7 ^ (bArr[i8] << 56)) ^ 71499008037633920L;
                                                 if (j8 < 0) {
-                                                    int i11 = i + 10;
+                                                    int i10 = i + 10;
                                                     if (bArr[i4] >= 0) {
-                                                        i4 = i11;
+                                                        i4 = i10;
                                                     }
                                                 }
                                                 j = j8;
                                             }
                                         }
                                     }
-                                    j = j7 ^ j2;
-                                    i4 = i10;
+                                    j4 = j2 ^ j7;
                                 }
-                                j = j6 ^ j3;
+                                j = j3 ^ j6;
                             }
+                            i4 = i8;
+                            j = j4;
                         }
                     }
                     this.pos = i4;

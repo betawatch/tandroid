@@ -43,7 +43,6 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.EditTextEmoji;
 import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
@@ -378,59 +377,58 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         this.emojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EditTextEmoji$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EditTextEmoji.this.lambda$new$0(sizeNotifierFrameLayout, resourcesProvider, view);
+                EditTextEmoji.$r8$lambda$BuNHRsGwIJRmrzwqwjQkbbp551M(EditTextEmoji.this, sizeNotifierFrameLayout, resourcesProvider, view);
             }
         });
         this.emojiButton.setContentDescription(LocaleController.getString(R.string.Emoji));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(SizeNotifierFrameLayout sizeNotifierFrameLayout, Theme.ResourcesProvider resourcesProvider, View view) {
-        if (!this.emojiButton.isEnabled() || this.emojiButton.getAlpha() < 0.5f) {
+    public static /* synthetic */ void $r8$lambda$BuNHRsGwIJRmrzwqwjQkbbp551M(EditTextEmoji editTextEmoji, SizeNotifierFrameLayout sizeNotifierFrameLayout, Theme.ResourcesProvider resourcesProvider, View view) {
+        if (!editTextEmoji.emojiButton.isEnabled() || editTextEmoji.emojiButton.getAlpha() < 0.5f) {
             return;
         }
-        AdjustPanLayoutHelper adjustPanLayoutHelper = this.adjustPanLayoutHelper;
+        AdjustPanLayoutHelper adjustPanLayoutHelper = editTextEmoji.adjustPanLayoutHelper;
         if (adjustPanLayoutHelper == null || !adjustPanLayoutHelper.animationInProgress()) {
-            if (this.shownFormatButton) {
-                ItemOptions itemOptions = this.formatOptions;
+            if (editTextEmoji.shownFormatButton) {
+                ItemOptions itemOptions = editTextEmoji.formatOptions;
                 if (itemOptions == null) {
-                    this.editText.hideActionMode();
-                    ItemOptions makeOptions = ItemOptions.makeOptions(sizeNotifierFrameLayout, resourcesProvider, this.emojiButton, false, false, true);
+                    editTextEmoji.editText.hideActionMode();
+                    ItemOptions makeOptions = ItemOptions.makeOptions(sizeNotifierFrameLayout, resourcesProvider, editTextEmoji.emojiButton, false, false, true);
                     makeOptions.setMaxHeight(AndroidUtilities.dp(280.0f));
-                    final EditTextCaption editTextCaption = this.editText;
+                    final EditTextCaption editTextCaption = editTextEmoji.editText;
                     Objects.requireNonNull(editTextCaption);
                     editTextCaption.extendActionMode(null, new MenuToItemOptions(makeOptions, new Utilities.Callback() { // from class: org.telegram.ui.Components.EditTextEmoji$$ExternalSyntheticLambda3
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             EditTextCaption.this.performMenuAction(((Integer) obj).intValue());
                         }
-                    }, this.editText.getOnPremiumMenuLockClickListener()));
+                    }, editTextEmoji.editText.getOnPremiumMenuLockClickListener()));
                     makeOptions.forceTop(true);
                     makeOptions.show();
                     return;
                 }
                 itemOptions.dismiss();
-                this.formatOptions = null;
+                editTextEmoji.formatOptions = null;
                 return;
             }
-            if (!isPopupShowing()) {
-                showPopup(1);
-                boolean isFocused = this.editText.isFocused();
-                this.emojiView.onOpen(this.editText.length() > 0, false);
-                this.editText.requestFocus();
+            if (!editTextEmoji.isPopupShowing()) {
+                editTextEmoji.showPopup(1);
+                boolean isFocused = editTextEmoji.editText.isFocused();
+                editTextEmoji.emojiView.onOpen(editTextEmoji.editText.length() > 0, false);
+                editTextEmoji.editText.requestFocus();
                 if (isFocused) {
                     return;
                 }
-                EditTextCaption editTextCaption2 = this.editText;
+                EditTextCaption editTextCaption2 = editTextEmoji.editText;
                 editTextCaption2.setSelection(editTextCaption2.length());
                 return;
             }
-            if (this.emojiExpanded) {
-                hidePopup(true);
-                this.emojiExpanded = false;
-                onEmojiKeyboardUpdate();
+            if (editTextEmoji.emojiExpanded) {
+                editTextEmoji.hidePopup(true);
+                editTextEmoji.emojiExpanded = false;
+                editTextEmoji.onEmojiKeyboardUpdate();
             }
-            openKeyboardInternal();
+            editTextEmoji.openKeyboardInternal();
         }
     }
 
@@ -642,7 +640,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.EditTextEmoji$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        EditTextEmoji.this.lambda$hidePopup$1(measuredHeight, valueAnimator);
+                        EditTextEmoji.$r8$lambda$8LhCpvUmLdox9J2jeH7GZMjlWno(EditTextEmoji.this, measuredHeight, valueAnimator);
                     }
                 });
                 this.isAnimatePopupClosing = true;
@@ -675,18 +673,18 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hidePopup$1(int i, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$8LhCpvUmLdox9J2jeH7GZMjlWno(EditTextEmoji editTextEmoji, int i, ValueAnimator valueAnimator) {
         int i2;
+        editTextEmoji.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.emojiView.setTranslationY(floatValue);
+        editTextEmoji.emojiView.setTranslationY(floatValue);
         float f = i;
         float f2 = 1.0f - (floatValue / f);
-        this.emojiViewAlpha = f2;
-        if (i > 0 && ((i2 = this.currentStyle) == 2 || i2 == 3)) {
-            this.emojiView.setAlpha(f2);
+        editTextEmoji.emojiViewAlpha = f2;
+        if (i > 0 && ((i2 = editTextEmoji.currentStyle) == 2 || i2 == 3)) {
+            editTextEmoji.emojiView.setAlpha(f2);
         }
-        bottomPanelTranslationY(floatValue - f);
+        editTextEmoji.bottomPanelTranslationY(floatValue - f);
     }
 
     public float getEmojiPaddingShown() {
@@ -774,7 +772,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.EditTextEmoji$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        EditTextEmoji.this.lambda$showPopup$2(valueAnimator);
+                        EditTextEmoji.$r8$lambda$7jQ_zP9v6GXOCX7eMj8lK9XgoDI(EditTextEmoji.this, valueAnimator);
                     }
                 });
                 ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.EditTextEmoji.5
@@ -822,18 +820,18 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPopup$2(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$7jQ_zP9v6GXOCX7eMj8lK9XgoDI(EditTextEmoji editTextEmoji, ValueAnimator valueAnimator) {
         int i;
+        editTextEmoji.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.emojiView.setTranslationY(floatValue);
-        int i2 = this.emojiPadding;
+        editTextEmoji.emojiView.setTranslationY(floatValue);
+        int i2 = editTextEmoji.emojiPadding;
         float f = 1.0f - (floatValue / i2);
-        this.emojiViewAlpha = f;
-        if (i2 > 0 && ((i = this.currentStyle) == 2 || i == 3)) {
-            this.emojiView.setAlpha(f);
+        editTextEmoji.emojiViewAlpha = f;
+        if (i2 > 0 && ((i = editTextEmoji.currentStyle) == 2 || i == 3)) {
+            editTextEmoji.emojiView.setAlpha(f);
         }
-        bottomPanelTranslationY(floatValue);
+        editTextEmoji.bottomPanelTranslationY(floatValue);
     }
 
     private void onWindowSizeChanged() {
@@ -854,7 +852,8 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         Context context = getContext();
         boolean allowSearch = allowSearch();
         int i = this.currentStyle;
-        EmojiView emojiView2 = new EmojiView(baseFragment, z, false, false, context, allowSearch, null, null, (i == 2 || i == 3 || i == 5) ? false : true, this.resourcesProvider, false, this.glassDesignForEmojiView) { // from class: org.telegram.ui.Components.EditTextEmoji.6
+        boolean z2 = (i == 2 || i == 3 || i == 5) ? false : true;
+        EmojiView emojiView2 = new EmojiView(baseFragment, z, false, false, context, allowSearch, null, null, z2, this.resourcesProvider, false, this.glassDesignForEmojiView) { // from class: org.telegram.ui.Components.EditTextEmoji.6
             private boolean changedExpanded;
             private boolean lastExpanded;
             private int lastHeight;
@@ -868,9 +867,9 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             }
 
             @Override // org.telegram.ui.Components.EmojiView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z2, int i2, int i3, int i4, int i5) {
+            protected void onLayout(boolean z3, int i2, int i3, int i4, int i5) {
                 int i6;
-                super.onLayout(z2, i2, i3, i4, i5);
+                super.onLayout(z3, i2, i3, i4, i5);
                 if (EditTextEmoji.this.allowSearch()) {
                     int i7 = i5 - i3;
                     if (!this.lastExpanded && EditTextEmoji.this.emojiExpanded) {
@@ -1129,7 +1128,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.EditTextEmoji$7$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    EditTextEmoji.7.this.lambda$onClearEmojiRecent$0(alertDialog, i);
+                    EditTextEmoji.this.emojiView.clearRecentEmoji();
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -1138,11 +1137,6 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             } else {
                 builder.show();
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onClearEmojiRecent$0(AlertDialog alertDialog, int i) {
-            EditTextEmoji.this.emojiView.clearRecentEmoji();
         }
     }
 

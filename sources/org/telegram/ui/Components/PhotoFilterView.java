@@ -154,7 +154,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             float f4 = this.highlightsLevel / 100.0f;
             float f5 = this.whitesLevel / 100.0f;
             int i = 5;
-            float f6 = 0.5f;
+            float f6 = 1.0f;
             float[] fArr = {-0.001f, f, 0.0f, f, 0.25f, f2, 0.5f, f3, 0.75f, f4, 1.0f, f5, 1.001f, f5};
             ArrayList arrayList = new ArrayList(100);
             ArrayList arrayList2 = new ArrayList(100);
@@ -180,8 +180,8 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
                     float f15 = i8 * 0.01f;
                     float f16 = f15 * f15;
                     float f17 = f16 * f15;
-                    float f18 = ((f9 * 2.0f) + ((f11 - f7) * f15) + (((((f7 * 2.0f) - (f9 * 5.0f)) + (f11 * 4.0f)) - f13) * f16) + (((((f9 * 3.0f) - f7) - (f11 * 3.0f)) + f13) * f17)) * f6;
-                    float max = Math.max(0.0f, Math.min(1.0f, ((f10 * 2.0f) + ((f12 - f8) * f15) + (((((2.0f * f8) - (5.0f * f10)) + (4.0f * f12)) - f14) * f16) + (((((f10 * 3.0f) - f8) - (3.0f * f12)) + f14) * f17)) * f6));
+                    float f18 = ((f9 * 2.0f) + ((f11 - f7) * f15) + (((((f7 * 2.0f) - (f9 * 5.0f)) + (f11 * 4.0f)) - f13) * f16) + (((((f9 * 3.0f) - f7) - (f11 * 3.0f)) + f13) * f17)) * 0.5f;
+                    float max = Math.max(0.0f, Math.min(f6, ((f10 * 2.0f) + ((f12 - f8) * f15) + (((((2.0f * f8) - (5.0f * f10)) + (4.0f * f12)) - f14) * f16) + (((((f10 * 3.0f) - f8) - (3.0f * f12)) + f14) * f17)) * 0.5f));
                     if (f18 > f7) {
                         arrayList2.add(Float.valueOf(f18));
                         arrayList2.add(Float.valueOf(max));
@@ -190,13 +190,13 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
                         arrayList.add(Float.valueOf(max));
                     }
                     i8++;
-                    f6 = 0.5f;
+                    f6 = 1.0f;
                 }
                 arrayList2.add(Float.valueOf(f11));
                 arrayList2.add(Float.valueOf(f12));
                 i2 = i5;
                 i = 5;
-                f6 = 0.5f;
+                f6 = 1.0f;
             }
             arrayList2.add(Float.valueOf(fArr[12]));
             arrayList2.add(Float.valueOf(fArr[13]));
@@ -301,8 +301,8 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this(context, videoEditTextureView, bitmap, null, i, savedFilterState, paintingOverlay, i2, z, z2, blurManager, resourcesProvider);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x04da  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x04dc  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x04d7  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x04db  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -391,7 +391,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             videoEditTextureView.setDelegate(new VideoEditTextureView.VideoEditTextureViewDelegate() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.VideoEditTextureView.VideoEditTextureViewDelegate
                 public final void onEGLThreadAvailable(FilterGLThread filterGLThread) {
-                    PhotoFilterView.this.lambda$new$0(filterGLThread);
+                    PhotoFilterView.$r8$lambda$zzD-iDi9uEEGmxMrSGMEWVNxwpE(PhotoFilterView.this, filterGLThread);
                 }
             });
         } else {
@@ -427,7 +427,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.blurControl.setDelegate(new PhotoFilterBlurControl.PhotoFilterLinearBlurControlDelegate() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.PhotoFilterBlurControl.PhotoFilterLinearBlurControlDelegate
             public final void valueChanged(PointF pointF, float f, float f2, float f3) {
-                PhotoFilterView.this.lambda$new$1(pointF, f, f2, f3);
+                PhotoFilterView.$r8$lambda$ga0S3FEfImfOPzeBLSd21hSV-9M(PhotoFilterView.this, pointF, f, f2, f3);
             }
         });
         PhotoFilterCurvesControl photoFilterCurvesControl = new PhotoFilterCurvesControl(context, this.curvesToolValue);
@@ -435,7 +435,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         photoFilterCurvesControl.setDelegate(new PhotoFilterCurvesControl.PhotoFilterCurvesControlDelegate() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.PhotoFilterCurvesControl.PhotoFilterCurvesControlDelegate
             public final void valueChanged() {
-                PhotoFilterView.this.lambda$new$2();
+                PhotoFilterView.$r8$lambda$tTFnuEKU7pKR0oodlYvgVxhFFn4(PhotoFilterView.this);
             }
         });
         this.curvesControl.setVisibility(4);
@@ -483,7 +483,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.tuneItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoFilterView.this.lambda$new$3(view);
+                PhotoFilterView.$r8$lambda$9iBtNlZyeC2W-uiq4YwZUvuzaCc(PhotoFilterView.this, view);
             }
         });
         ImageView imageView2 = new ImageView(context);
@@ -495,7 +495,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.blurItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoFilterView.this.lambda$new$4(view);
+                PhotoFilterView.$r8$lambda$-a8z3Ho4SsDpMN9wcYdj2Gl20FA(PhotoFilterView.this, view);
             }
         });
         if (videoEditTextureView != null) {
@@ -510,7 +510,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.curveItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoFilterView.this.lambda$new$5(view);
+                PhotoFilterView.$r8$lambda$bXVyXwRK76CUNqiH6SGJPmd1zJk(PhotoFilterView.this, view);
             }
         });
         this.recyclerListView = new RecyclerListViewWithShadows(context);
@@ -529,7 +529,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         linearLayout2.setOrientation(0);
         this.curveLayout.addView(linearLayout2, LayoutHelper.createFrame(-2, -2, 1));
         int i8 = 0;
-        for (int i9 = 4; i8 < i9; i9 = 4) {
+        while (i8 < 4) {
             FrameLayout frameLayout4 = new FrameLayout(context);
             frameLayout4.setTag(Integer.valueOf(i8));
             this.curveRadioButton[i8] = new RadioButton(context);
@@ -565,7 +565,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
                 frameLayout4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PhotoFilterView.this.lambda$new$6(view);
+                        PhotoFilterView.$r8$lambda$vj_5MLN6XauOWEWwg2i0k-skqa4(PhotoFilterView.this, view);
                     }
                 });
                 i8++;
@@ -575,7 +575,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             frameLayout4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PhotoFilterView.this.lambda$new$6(view);
+                    PhotoFilterView.$r8$lambda$vj_5MLN6XauOWEWwg2i0k-skqa4(PhotoFilterView.this, view);
                 }
             });
             i8++;
@@ -594,7 +594,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.blurOffButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoFilterView.this.lambda$new$7(view);
+                PhotoFilterView.$r8$lambda$vir9DcHr96THwVT4GE5NRUdWF3M(PhotoFilterView.this, view);
             }
         });
         TextView textView6 = new TextView(context);
@@ -607,7 +607,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.blurRadialButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoFilterView.this.lambda$new$8(view);
+                PhotoFilterView.$r8$lambda$JTNnrhnuDFmCIPBYa5l5rulZpFo(PhotoFilterView.this, view);
             }
         });
         TextView textView7 = new TextView(context);
@@ -620,7 +620,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         this.blurLinearButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PhotoFilterView.this.lambda$new$9(view);
+                PhotoFilterView.$r8$lambda$Uf2vCJiG0iZJaMauKN8RIWpHIEo(PhotoFilterView.this, view);
             }
         });
         updateSelectedBlurType();
@@ -633,10 +633,9 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         ((FrameLayout.LayoutParams) this.curvesControl.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(FilterGLThread filterGLThread) {
-        this.eglThread = filterGLThread;
-        filterGLThread.setFilterGLThreadDelegate(this);
+    public static /* synthetic */ void $r8$lambda$zzD-iDi9uEEGmxMrSGMEWVNxwpE(PhotoFilterView photoFilterView, FilterGLThread filterGLThread) {
+        photoFilterView.eglThread = filterGLThread;
+        filterGLThread.setFilterGLThreadDelegate(photoFilterView);
     }
 
     class 2 implements TextureView.SurfaceTextureListener {
@@ -675,14 +674,13 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
                 PhotoFilterView.this.eglThread.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.PhotoFilterView$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PhotoFilterView.2.this.lambda$onSurfaceTextureSizeChanged$0();
+                        PhotoFilterView.2.$r8$lambda$oFgzgtTajarvJMbDBfXs_yOw_gc(PhotoFilterView.2.this);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSurfaceTextureSizeChanged$0() {
+        public static /* synthetic */ void $r8$lambda$oFgzgtTajarvJMbDBfXs_yOw_gc(2 r2) {
             if (PhotoFilterView.this.eglThread != null) {
                 PhotoFilterView.this.eglThread.requestRender(false, true, false);
             }
@@ -699,96 +697,88 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(PointF pointF, float f, float f2, float f3) {
-        this.blurExcludeSize = f2;
-        this.blurExcludePoint = pointF;
-        this.blurExcludeBlurSize = f;
-        this.blurAngle = f3;
-        FilterGLThread filterGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$ga0S3FEfImfOPzeBLSd21hSV-9M(PhotoFilterView photoFilterView, PointF pointF, float f, float f2, float f3) {
+        photoFilterView.blurExcludeSize = f2;
+        photoFilterView.blurExcludePoint = pointF;
+        photoFilterView.blurExcludeBlurSize = f;
+        photoFilterView.blurAngle = f3;
+        FilterGLThread filterGLThread = photoFilterView.eglThread;
         if (filterGLThread != null) {
             filterGLThread.requestRender(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        updateFiltersEmpty();
-        FilterGLThread filterGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$tTFnuEKU7pKR0oodlYvgVxhFFn4(PhotoFilterView photoFilterView) {
+        photoFilterView.updateFiltersEmpty();
+        FilterGLThread filterGLThread = photoFilterView.eglThread;
         if (filterGLThread != null) {
             filterGLThread.requestRender(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        this.selectedTool = 0;
-        this.tuneItem.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_editMediaButton), PorterDuff.Mode.MULTIPLY));
-        this.blurItem.setColorFilter((ColorFilter) null);
-        this.curveItem.setColorFilter((ColorFilter) null);
-        switchMode();
+    public static /* synthetic */ void $r8$lambda$9iBtNlZyeC2W-uiq4YwZUvuzaCc(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.selectedTool = 0;
+        photoFilterView.tuneItem.setColorFilter(new PorterDuffColorFilter(photoFilterView.getThemedColor(Theme.key_chat_editMediaButton), PorterDuff.Mode.MULTIPLY));
+        photoFilterView.blurItem.setColorFilter((ColorFilter) null);
+        photoFilterView.curveItem.setColorFilter((ColorFilter) null);
+        photoFilterView.switchMode();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
-        this.selectedTool = 1;
-        this.tuneItem.setColorFilter((ColorFilter) null);
-        this.blurItem.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_editMediaButton), PorterDuff.Mode.MULTIPLY));
-        this.curveItem.setColorFilter((ColorFilter) null);
-        switchMode();
+    public static /* synthetic */ void $r8$lambda$-a8z3Ho4SsDpMN9wcYdj2Gl20FA(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.selectedTool = 1;
+        photoFilterView.tuneItem.setColorFilter((ColorFilter) null);
+        photoFilterView.blurItem.setColorFilter(new PorterDuffColorFilter(photoFilterView.getThemedColor(Theme.key_chat_editMediaButton), PorterDuff.Mode.MULTIPLY));
+        photoFilterView.curveItem.setColorFilter((ColorFilter) null);
+        photoFilterView.switchMode();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view) {
-        this.selectedTool = 2;
-        this.tuneItem.setColorFilter((ColorFilter) null);
-        this.blurItem.setColorFilter((ColorFilter) null);
-        this.curveItem.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_editMediaButton), PorterDuff.Mode.MULTIPLY));
-        switchMode();
+    public static /* synthetic */ void $r8$lambda$bXVyXwRK76CUNqiH6SGJPmd1zJk(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.selectedTool = 2;
+        photoFilterView.tuneItem.setColorFilter((ColorFilter) null);
+        photoFilterView.blurItem.setColorFilter((ColorFilter) null);
+        photoFilterView.curveItem.setColorFilter(new PorterDuffColorFilter(photoFilterView.getThemedColor(Theme.key_chat_editMediaButton), PorterDuff.Mode.MULTIPLY));
+        photoFilterView.switchMode();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(View view) {
+    public static /* synthetic */ void $r8$lambda$vj_5MLN6XauOWEWwg2i0k-skqa4(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.getClass();
         int intValue = ((Integer) view.getTag()).intValue();
-        this.curvesToolValue.activeType = intValue;
+        photoFilterView.curvesToolValue.activeType = intValue;
         int i = 0;
         while (i < 4) {
-            this.curveRadioButton[i].setChecked(i == intValue, true);
+            photoFilterView.curveRadioButton[i].setChecked(i == intValue, true);
             i++;
         }
-        this.curvesControl.invalidate();
+        photoFilterView.curvesControl.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(View view) {
-        this.blurType = 0;
-        updateSelectedBlurType();
-        this.blurControl.setVisibility(4);
-        FilterGLThread filterGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$vir9DcHr96THwVT4GE5NRUdWF3M(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.blurType = 0;
+        photoFilterView.updateSelectedBlurType();
+        photoFilterView.blurControl.setVisibility(4);
+        FilterGLThread filterGLThread = photoFilterView.eglThread;
         if (filterGLThread != null) {
             filterGLThread.requestRender(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(View view) {
-        this.blurType = 1;
-        updateSelectedBlurType();
-        this.blurControl.setVisibility(0);
-        this.blurControl.setType(1);
-        FilterGLThread filterGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$JTNnrhnuDFmCIPBYa5l5rulZpFo(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.blurType = 1;
+        photoFilterView.updateSelectedBlurType();
+        photoFilterView.blurControl.setVisibility(0);
+        photoFilterView.blurControl.setType(1);
+        FilterGLThread filterGLThread = photoFilterView.eglThread;
         if (filterGLThread != null) {
             filterGLThread.requestRender(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(View view) {
-        this.blurType = 2;
-        updateSelectedBlurType();
-        this.blurControl.setVisibility(0);
-        this.blurControl.setType(0);
-        FilterGLThread filterGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$Uf2vCJiG0iZJaMauKN8RIWpHIEo(PhotoFilterView photoFilterView, View view) {
+        photoFilterView.blurType = 2;
+        photoFilterView.updateSelectedBlurType();
+        photoFilterView.blurControl.setVisibility(0);
+        photoFilterView.blurControl.setType(0);
+        FilterGLThread filterGLThread = photoFilterView.eglThread;
         if (filterGLThread != null) {
             filterGLThread.requestRender(false);
         }
@@ -1341,7 +1331,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
                 photoEditToolCell.setSeekBarDelegate(new PhotoEditorSeekBar.PhotoEditorSeekBarDelegate() { // from class: org.telegram.ui.Components.PhotoFilterView$ToolsAdapter$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.Components.PhotoEditorSeekBar.PhotoEditorSeekBarDelegate
                     public final void onProgressChanged(int i2, int i3) {
-                        PhotoFilterView.ToolsAdapter.this.lambda$onCreateViewHolder$0(i2, i3);
+                        PhotoFilterView.ToolsAdapter.$r8$lambda$NFCFdJqzH-AEMR_XCVvBu--MEBg(PhotoFilterView.ToolsAdapter.this, i2, i3);
                     }
                 });
                 photoEditRadioCell = photoEditToolCell;
@@ -1350,7 +1340,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
                 photoEditRadioCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoFilterView$ToolsAdapter$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PhotoFilterView.ToolsAdapter.this.lambda$onCreateViewHolder$1(view);
+                        PhotoFilterView.ToolsAdapter.$r8$lambda$3gzSUOB7djwKp4Z8fD5YO3VCrfU(PhotoFilterView.ToolsAdapter.this, view);
                     }
                 });
                 photoEditRadioCell = photoEditRadioCell2;
@@ -1358,8 +1348,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             return new RecyclerListView.Holder(photoEditRadioCell);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$0(int i, int i2) {
+        public static /* synthetic */ void $r8$lambda$NFCFdJqzH-AEMR_XCVvBu--MEBg(ToolsAdapter toolsAdapter, int i, int i2) {
             if (i == PhotoFilterView.this.enhanceTool) {
                 PhotoFilterView.this.enhanceValue = i2;
             } else if (i == PhotoFilterView.this.highlightsTool) {
@@ -1391,8 +1380,8 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             PhotoFilterView.this.updateFiltersEmpty();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$1(View view) {
+        public static /* synthetic */ void $r8$lambda$3gzSUOB7djwKp4Z8fD5YO3VCrfU(ToolsAdapter toolsAdapter, View view) {
+            toolsAdapter.getClass();
             PhotoEditRadioCell photoEditRadioCell = (PhotoEditRadioCell) view;
             if (((Integer) photoEditRadioCell.getTag()).intValue() == PhotoFilterView.this.tintShadowsTool) {
                 PhotoFilterView.this.tintShadowsColor = photoEditRadioCell.getCurrentColor();
@@ -1507,7 +1496,7 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             this.hide = new Runnable() { // from class: org.telegram.ui.Components.PhotoFilterView$EnhanceView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoFilterView.EnhanceView.this.lambda$new$0();
+                    PhotoFilterView.EnhanceView.$r8$lambda$u_cJXlUp_0Ivn2d-XX8x1eQAPYI(PhotoFilterView.EnhanceView.this);
                 }
             };
             this.requestFilterView = runnable;
@@ -1547,10 +1536,9 @@ public class PhotoFilterView extends FrameLayout implements FilterShaders.Filter
             invalidate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            this.shown = false;
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$u_cJXlUp_0Ivn2d-XX8x1eQAPYI(EnhanceView enhanceView) {
+            enhanceView.shown = false;
+            enhanceView.invalidate();
         }
 
         public boolean onTouch(MotionEvent motionEvent) {

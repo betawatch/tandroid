@@ -117,7 +117,7 @@ final class SefReader {
     }
 
     private static int nameToDataType(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "SlowMotion_Data":
                 return 2192;

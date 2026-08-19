@@ -64,25 +64,30 @@ public class StackFrame implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            StackFrame stackFrame = (StackFrame) obj;
+            String str = this.className;
+            if (str == null ? stackFrame.className != null : !str.equals(stackFrame.className)) {
+                return false;
+            }
+            String str2 = this.methodName;
+            if (str2 == null ? stackFrame.methodName != null : !str2.equals(stackFrame.methodName)) {
+                return false;
+            }
+            Integer num = this.lineNumber;
+            if (num == null ? stackFrame.lineNumber != null : !num.equals(stackFrame.lineNumber)) {
+                return false;
+            }
+            String str3 = this.fileName;
+            String str4 = stackFrame.fileName;
+            if (str3 != null) {
+                return str3.equals(str4);
+            }
+            if (str4 == null) {
+                return true;
+            }
         }
-        StackFrame stackFrame = (StackFrame) obj;
-        String str = this.className;
-        if (str == null ? stackFrame.className != null : !str.equals(stackFrame.className)) {
-            return false;
-        }
-        String str2 = this.methodName;
-        if (str2 == null ? stackFrame.methodName != null : !str2.equals(stackFrame.methodName)) {
-            return false;
-        }
-        Integer num = this.lineNumber;
-        if (num == null ? stackFrame.lineNumber != null : !num.equals(stackFrame.lineNumber)) {
-            return false;
-        }
-        String str3 = this.fileName;
-        String str4 = stackFrame.fileName;
-        return str3 != null ? str3.equals(str4) : str4 == null;
+        return false;
     }
 
     public int hashCode() {

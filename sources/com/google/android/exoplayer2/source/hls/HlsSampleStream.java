@@ -30,7 +30,10 @@ final class HlsSampleStream implements SampleStream {
 
     @Override // com.google.android.exoplayer2.source.SampleStream
     public boolean isReady() {
-        return this.sampleQueueIndex == -3 || (hasValidSampleQueueIndex() && this.sampleStreamWrapper.isReady(this.sampleQueueIndex));
+        if (this.sampleQueueIndex != -3) {
+            return hasValidSampleQueueIndex() && this.sampleStreamWrapper.isReady(this.sampleQueueIndex);
+        }
+        return true;
     }
 
     @Override // com.google.android.exoplayer2.source.SampleStream

@@ -67,15 +67,10 @@ public class NotificationBadge {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$AdwHomeBadger$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        NotificationBadge.AdwHomeBadger.lambda$executeBadge$0(intent);
+                        ApplicationLoader.applicationContext.sendBroadcast(intent);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadge$0(Intent intent) {
-            ApplicationLoader.applicationContext.sendBroadcast(intent);
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -100,15 +95,10 @@ public class NotificationBadge {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$ApexHomeBadger$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        NotificationBadge.ApexHomeBadger.lambda$executeBadge$0(intent);
+                        ApplicationLoader.applicationContext.sendBroadcast(intent);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadge$0(Intent intent) {
-            ApplicationLoader.applicationContext.sendBroadcast(intent);
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -134,15 +124,10 @@ public class NotificationBadge {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$AsusHomeBadger$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        NotificationBadge.AsusHomeBadger.lambda$executeBadge$0(intent);
+                        ApplicationLoader.applicationContext.sendBroadcast(intent);
                     }
                 });
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadge$0(Intent intent) {
-            ApplicationLoader.applicationContext.sendBroadcast(intent);
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -166,17 +151,9 @@ public class NotificationBadge {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$DefaultBadger$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationBadge.DefaultBadger.lambda$executeBadge$0(intent);
+                    ApplicationLoader.applicationContext.sendBroadcast(intent);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadge$0(Intent intent) {
-            try {
-                ApplicationLoader.applicationContext.sendBroadcast(intent);
-            } catch (Exception unused) {
-            }
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -195,13 +172,12 @@ public class NotificationBadge {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$HuaweiHomeBadger$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0(bundle);
+                    NotificationBadge.HuaweiHomeBadger.$r8$lambda$xnk9Ep8QRBi4ET5i5Wp29K48zdk(bundle);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
+        public static /* synthetic */ void $r8$lambda$xnk9Ep8QRBi4ET5i5Wp29K48zdk(Bundle bundle) {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, bundle);
             } catch (Exception e) {
@@ -235,14 +211,13 @@ public class NotificationBadge {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$NewHtcHomeBadger$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        NotificationBadge.NewHtcHomeBadger.lambda$executeBadge$0(intent, intent2);
+                        NotificationBadge.NewHtcHomeBadger.$r8$lambda$LNOrzcbHoddZ-HaXpWj71zfhB0w(intent, intent2);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadge$0(Intent intent, Intent intent2) {
+        public static /* synthetic */ void $r8$lambda$LNOrzcbHoddZ-HaXpWj71zfhB0w(Intent intent, Intent intent2) {
             ApplicationLoader.applicationContext.sendBroadcast(intent);
             ApplicationLoader.applicationContext.sendBroadcast(intent2);
         }
@@ -397,14 +372,9 @@ public class NotificationBadge {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$SonyHomeBadger$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationBadge.SonyHomeBadger.lambda$executeBadgeByBroadcast$0(intent);
+                    ApplicationLoader.applicationContext.sendBroadcast(intent);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$executeBadgeByBroadcast$0(Intent intent) {
-            ApplicationLoader.applicationContext.sendBroadcast(intent);
         }
 
         private void executeBadgeByContentProvider(int i) {
@@ -481,15 +451,15 @@ public class NotificationBadge {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge$ZukHomeBadger$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationBadge.ZukHomeBadger.this.lambda$executeBadge$0(bundle);
+                    NotificationBadge.ZukHomeBadger.$r8$lambda$JnVD7bxT6f5ElDaXZepApuuApAg(NotificationBadge.ZukHomeBadger.this, bundle);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
+        public static /* synthetic */ void $r8$lambda$JnVD7bxT6f5ElDaXZepApuuApAg(ZukHomeBadger zukHomeBadger, Bundle bundle) {
+            zukHomeBadger.getClass();
             try {
-                ApplicationLoader.applicationContext.getContentResolver().call(this.CONTENT_URI, "setAppBadgeCount", (String) null, bundle);
+                ApplicationLoader.applicationContext.getContentResolver().call(zukHomeBadger.CONTENT_URI, "setAppBadgeCount", (String) null, bundle);
             } catch (Exception e) {
                 FileLog.e(e);
             }

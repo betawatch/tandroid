@@ -63,14 +63,18 @@ public class HiddenActivity extends Activity {
         if (pendingIntent != null) {
             try {
                 this.mWaitingForActivityResult = true;
-                startIntentSenderForResult(pendingIntent.getIntentSender(), intExtra, null, 0, 0, 0, null);
-                return;
-            } catch (IntentSender.SendIntentException e) {
-                setupIntentSenderFailureByType(str, e);
-                return;
+                try {
+                    startIntentSenderForResult(pendingIntent.getIntentSender(), intExtra, null, 0, 0, 0, null);
+                } catch (IntentSender.SendIntentException e) {
+                    e = e;
+                    setupIntentSenderFailureByType(str, e);
+                }
+            } catch (IntentSender.SendIntentException e2) {
+                e = e2;
             }
+        } else {
+            setupPendingIntentFailureByType(str);
         }
-        setupPendingIntentFailureByType(str);
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue

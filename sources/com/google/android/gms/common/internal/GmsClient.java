@@ -52,7 +52,7 @@ public abstract class GmsClient extends BaseGmsClient implements Api.Client, zaj
 
     @Override // com.google.android.gms.common.api.Api.Client
     public Set getScopesForConnectionlessNonSignIn() {
-        return requiresSignIn() ? this.zac : Collections.emptySet();
+        return requiresSignIn() ? this.zac : Collections.EMPTY_SET;
     }
 
     protected Set validateScopes(Set set) {
@@ -68,7 +68,7 @@ public abstract class GmsClient extends BaseGmsClient implements Api.Client, zaj
     }
 
     protected GmsClient(Context context, Looper looper, GmsClientSupervisor gmsClientSupervisor, GoogleApiAvailability googleApiAvailability, int i, ClientSettings clientSettings, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, gmsClientSupervisor, googleApiAvailability, i, connectionCallbacks == null ? null : new zah(connectionCallbacks), onConnectionFailedListener == null ? null : new zai(onConnectionFailedListener), clientSettings.zac());
+        super(context, looper, gmsClientSupervisor, googleApiAvailability, i, connectionCallbacks == null ? null : new zah(connectionCallbacks), onConnectionFailedListener != null ? new zai(onConnectionFailedListener) : null, clientSettings.zac());
         this.zab = clientSettings;
         this.zad = clientSettings.getAccount();
         this.zac = zaa(clientSettings.getAllRequestedScopes());

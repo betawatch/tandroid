@@ -10,7 +10,6 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.DelayKt;
 
 /* loaded from: classes.dex */
 final class zzbd extends SuspendLambda implements Function2 {
@@ -37,10 +36,22 @@ final class zzbd extends SuspendLambda implements Function2 {
         return ((zzbd) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0025 A[Catch: Exception -> 0x001b, TRY_ENTER, TryCatch #0 {Exception -> 0x001b, blocks: (B:8:0x0025, B:10:0x0031, B:39:0x0017), top: B:38:0x0017 }] */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0079, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0074, code lost:
+    
+        if (kotlinx.coroutines.DelayKt.delay(r4, r7) != r0) goto L6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x002f, code lost:
+    
+        if (r8 != r0) goto L16;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0025 A[Catch: Exception -> 0x001b, TRY_ENTER, TryCatch #0 {Exception -> 0x001b, blocks: (B:8:0x0025, B:10:0x0031, B:38:0x0017), top: B:37:0x0017 }] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0041 -> B:7:0x0023). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0075 -> B:5:0x0013). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0074 -> B:5:0x0013). Please report as a decompilation issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,21 +76,12 @@ final class zzbd extends SuspendLambda implements Function2 {
             z = z2;
             j += j;
             if (!z) {
-                zzbo zzboVar = this.zzd;
-                this.zza = j;
-                this.zzc = 1;
-                obj = zzboVar.zzl(this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                zzbo zzboVar2 = this.zzd;
-                zzboVar2.zzf().complete((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
-                zzboVar2.zzc = zzbp.zzc;
-                z = false;
-                if (!z) {
-                    return Unit.INSTANCE;
-                }
+                return Unit.INSTANCE;
             }
+            zzbo zzboVar = this.zzd;
+            this.zza = j;
+            this.zzc = 1;
+            obj = zzboVar.zzl(this);
         } else {
             j = this.zza;
             try {
@@ -93,13 +95,10 @@ final class zzbd extends SuspendLambda implements Function2 {
                 this.zza = j;
                 this.zzb = true;
                 this.zzc = 2;
-                if (DelayKt.delay(j, this) == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             }
-            zzbo zzboVar22 = this.zzd;
-            zzboVar22.zzf().complete((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
-            zzboVar22.zzc = zzbp.zzc;
+            zzbo zzboVar2 = this.zzd;
+            zzboVar2.zzf().complete((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
+            zzboVar2.zzc = zzbp.zzc;
             z = false;
             if (!z) {
             }

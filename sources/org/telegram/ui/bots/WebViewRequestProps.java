@@ -6,7 +6,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WebViewRequestProps {
     public boolean allowWrite;
     public TLRPC.BotApp app;
@@ -51,6 +51,7 @@ public class WebViewRequestProps {
                 Uri parse = Uri.parse(str2);
                 webViewRequestProps.compact = TextUtils.equals(parse.getQueryParameter("mode"), "compact");
                 webViewRequestProps.fullscreen = TextUtils.equals(parse.getQueryParameter("mode"), "fullscreen");
+                return webViewRequestProps;
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -68,18 +69,19 @@ public class WebViewRequestProps {
             return false;
         }
         WebViewRequestProps webViewRequestProps = (WebViewRequestProps) obj;
-        if (this.currentAccount != webViewRequestProps.currentAccount || this.peerId != webViewRequestProps.peerId || this.botId != webViewRequestProps.botId || !TextUtils.equals(this.buttonUrl, webViewRequestProps.buttonUrl) || this.type != webViewRequestProps.type || this.replyToMsgId != webViewRequestProps.replyToMsgId || this.silent != webViewRequestProps.silent) {
-            return false;
+        if (this.currentAccount == webViewRequestProps.currentAccount && this.peerId == webViewRequestProps.peerId && this.botId == webViewRequestProps.botId && TextUtils.equals(this.buttonUrl, webViewRequestProps.buttonUrl) && this.type == webViewRequestProps.type && this.replyToMsgId == webViewRequestProps.replyToMsgId && this.silent == webViewRequestProps.silent) {
+            TLRPC.BotApp botApp = this.app;
+            long j = botApp == null ? 0L : botApp.id;
+            TLRPC.BotApp botApp2 = webViewRequestProps.app;
+            if (j == (botApp2 == null ? 0L : botApp2.id) && this.allowWrite == webViewRequestProps.allowWrite && TextUtils.equals(this.startParam, webViewRequestProps.startParam)) {
+                TLRPC.User user = this.botUser;
+                long j2 = user == null ? 0L : user.id;
+                TLRPC.User user2 = webViewRequestProps.botUser;
+                if (j2 == (user2 != null ? user2.id : 0L) && this.flags == webViewRequestProps.flags) {
+                    return true;
+                }
+            }
         }
-        TLRPC.BotApp botApp = this.app;
-        long j = botApp == null ? 0L : botApp.id;
-        TLRPC.BotApp botApp2 = webViewRequestProps.app;
-        if (j != (botApp2 == null ? 0L : botApp2.id) || this.allowWrite != webViewRequestProps.allowWrite || !TextUtils.equals(this.startParam, webViewRequestProps.startParam)) {
-            return false;
-        }
-        TLRPC.User user = this.botUser;
-        long j2 = user == null ? 0L : user.id;
-        TLRPC.User user2 = webViewRequestProps.botUser;
-        return j2 == (user2 != null ? user2.id : 0L) && this.flags == webViewRequestProps.flags;
+        return false;
     }
 }

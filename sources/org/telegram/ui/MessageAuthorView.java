@@ -30,8 +30,7 @@ public abstract class MessageAuthorView extends FrameLayout {
     public TLRPC.User user;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* renamed from: openUser, reason: merged with bridge method [inline-methods] */
-    public abstract void lambda$updateView$2(long j);
+    public abstract void openUser(long j);
 
     public MessageAuthorView(Context context, final int i, MessageObject messageObject, TLRPC.Chat chat) {
         super(context);
@@ -62,30 +61,30 @@ public abstract class MessageAuthorView extends FrameLayout {
         ConnectionsManager.getInstance(i).sendRequest(tL_channels_getMessageAuthor, new RequestDelegate() { // from class: org.telegram.ui.MessageAuthorView$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                MessageAuthorView.this.lambda$new$1(i, tLObject, tL_error);
+                MessageAuthorView.$r8$lambda$Klk0-joMhrJzkjSfXJ4Xmm0xa6I(MessageAuthorView.this, i, tLObject, tL_error);
             }
         });
         setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector), 6, 0));
         setEnabled(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Klk0-joMhrJzkjSfXJ4Xmm0xa6I(final MessageAuthorView messageAuthorView, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        messageAuthorView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageAuthorView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MessageAuthorView.this.lambda$new$0(tLObject, i);
+                MessageAuthorView.$r8$lambda$ipsOxUTmwIPG4c73YwF_yozAnpA(MessageAuthorView.this, tLObject, i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLObject tLObject, int i) {
+    public static /* synthetic */ void $r8$lambda$ipsOxUTmwIPG4c73YwF_yozAnpA(MessageAuthorView messageAuthorView, TLObject tLObject, int i) {
+        messageAuthorView.getClass();
         if (tLObject instanceof TLRPC.User) {
-            this.user = (TLRPC.User) tLObject;
-            MessagesController.getInstance(i).putUser(this.user, false);
+            messageAuthorView.user = (TLRPC.User) tLObject;
+            MessagesController.getInstance(i).putUser(messageAuthorView.user, false);
         }
-        updateView();
+        messageAuthorView.updateView();
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -128,7 +127,7 @@ public abstract class MessageAuthorView extends FrameLayout {
             this.titleView.setText(AndroidUtilities.premiumText(LocaleController.formatString(R.string.MessageAuthorSentBy, UserObject.getUserName(user)), new Runnable() { // from class: org.telegram.ui.MessageAuthorView$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessageAuthorView.this.lambda$updateView$2(j);
+                    MessageAuthorView.this.openUser(j);
                 }
             }));
         }

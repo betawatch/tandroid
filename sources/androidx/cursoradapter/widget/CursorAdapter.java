@@ -162,11 +162,11 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
             this.mRowIDColumn = cursor.getColumnIndexOrThrow("_id");
             this.mDataValid = true;
             notifyDataSetChanged();
-        } else {
-            this.mRowIDColumn = -1;
-            this.mDataValid = false;
-            notifyDataSetInvalidated();
+            return cursor2;
         }
+        this.mRowIDColumn = -1;
+        this.mDataValid = false;
+        notifyDataSetInvalidated();
         return cursor2;
     }
 

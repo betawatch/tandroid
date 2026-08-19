@@ -51,7 +51,7 @@ public class ExperimentTokens extends AbstractSafeParcelable {
 
     private static List zza(int[] iArr) {
         if (iArr == null) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         ArrayList arrayList = new ArrayList(iArr.length);
         for (int i : iArr) {
@@ -63,7 +63,7 @@ public class ExperimentTokens extends AbstractSafeParcelable {
 
     private static List zza(byte[][] bArr) {
         if (bArr == null) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         ArrayList arrayList = new ArrayList(bArr.length);
         for (byte[] bArr2 : bArr) {

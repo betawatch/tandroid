@@ -89,7 +89,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
         BusinessRecipientsHelper businessRecipientsHelper = new BusinessRecipientsHelper(this, new Runnable() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AwayMessagesActivity.this.lambda$createView$0();
+                AwayMessagesActivity.$r8$lambda$2nBbeAk8ZIV33hdtkoWa3JCeK8s(AwayMessagesActivity.this);
             }
         });
         this.recipientsHelper = businessRecipientsHelper;
@@ -120,10 +120,9 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
         return frameLayout;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0() {
-        this.listView.adapter.update(true);
-        checkDone(true);
+    public static /* synthetic */ void $r8$lambda$2nBbeAk8ZIV33hdtkoWa3JCeK8s(AwayMessagesActivity awayMessagesActivity) {
+        awayMessagesActivity.listView.adapter.update(true);
+        awayMessagesActivity.checkDone(true);
     }
 
     private void setValue() {
@@ -292,33 +291,35 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             getConnectionsManager().sendRequest(updatebusinessawaymessage, new RequestDelegate() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    AwayMessagesActivity.this.lambda$processDone$2(tLObject, tL_error);
+                    AwayMessagesActivity.$r8$lambda$mnzAcQ_74ZIrQbyOE6P-GfDzTw8(AwayMessagesActivity.this, tLObject, tL_error);
                 }
             });
             getMessagesStorage().updateUserInfo(userFull, false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$2(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$mnzAcQ_74ZIrQbyOE6P-GfDzTw8(final AwayMessagesActivity awayMessagesActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        awayMessagesActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                AwayMessagesActivity.this.lambda$processDone$1(tL_error, tLObject);
+                AwayMessagesActivity.$r8$lambda$ISqU1esEyKooW4UWlUSRJc9jdtY(AwayMessagesActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$1(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$ISqU1esEyKooW4UWlUSRJc9jdtY(AwayMessagesActivity awayMessagesActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
+            awayMessagesActivity.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
-        } else if (tLObject instanceof TLRPC.TL_boolFalse) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+            return;
+        }
+        awayMessagesActivity.getClass();
+        if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+            awayMessagesActivity.finishFragment();
         } else {
-            finishFragment();
+            awayMessagesActivity.doneButtonDrawable.animateToProgress(0.0f);
+            BulletinFactory.of(awayMessagesActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         }
     }
 
@@ -338,28 +339,18 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    AwayMessagesActivity.this.lambda$onBackPressed$3(alertDialog, i);
+                    AwayMessagesActivity.this.processDone();
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    AwayMessagesActivity.this.lambda$onBackPressed$4(alertDialog, i);
+                    AwayMessagesActivity.this.finishFragment();
                 }
             });
             showDialog(builder.create());
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$3(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -457,7 +448,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
                 AlertsCreator.createDatePickerDialog(getContext(), LocaleController.getString(R.string.BusinessAwayScheduleCustomStartTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), this.scheduleCustomStart, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                     public final void didSelectDate(boolean z, int i3, int i4) {
-                        AwayMessagesActivity.this.lambda$onClick$5(view, z, i3, i4);
+                        AwayMessagesActivity.$r8$lambda$y3Zu7oWUdYHAwFXwhYbXBttxMa0(AwayMessagesActivity.this, view, z, i3, i4);
                     }
                 });
                 return;
@@ -466,7 +457,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
                 AlertsCreator.createDatePickerDialog(getContext(), LocaleController.getString(R.string.BusinessAwayScheduleCustomEndTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), this.scheduleCustomEnd, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda7
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                     public final void didSelectDate(boolean z, int i3, int i4) {
-                        AwayMessagesActivity.this.lambda$onClick$6(view, z, i3, i4);
+                        AwayMessagesActivity.$r8$lambda$YXeL3LYBpsifCvxuNMxh8hBYXqU(AwayMessagesActivity.this, view, z, i3, i4);
                     }
                 });
             } else if (i2 == 10) {
@@ -478,18 +469,18 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$5(View view, boolean z, int i, int i2) {
-        this.scheduleCustomStart = i;
+    public static /* synthetic */ void $r8$lambda$y3Zu7oWUdYHAwFXwhYbXBttxMa0(AwayMessagesActivity awayMessagesActivity, View view, boolean z, int i, int i2) {
+        awayMessagesActivity.getClass();
+        awayMessagesActivity.scheduleCustomStart = i;
         ((TextCell) view).setValue(LocaleController.formatShortDateTime(i), true);
-        checkDone(true);
+        awayMessagesActivity.checkDone(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$6(View view, boolean z, int i, int i2) {
-        this.scheduleCustomEnd = i;
+    public static /* synthetic */ void $r8$lambda$YXeL3LYBpsifCvxuNMxh8hBYXqU(AwayMessagesActivity awayMessagesActivity, View view, boolean z, int i, int i2) {
+        awayMessagesActivity.getClass();
+        awayMessagesActivity.scheduleCustomEnd = i;
         ((TextCell) view).setValue(LocaleController.formatShortDateTime(i), true);
-        checkDone(true);
+        awayMessagesActivity.checkDone(true);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

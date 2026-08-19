@@ -51,6 +51,7 @@ final class RegularImmutableMap extends ImmutableMap {
 
     private static Object createHashTable(Object[] objArr, int i, int i2, int i3) {
         ImmutableMap.Builder.DuplicateKey duplicateKey = null;
+        int i4 = 1;
         if (i == 1) {
             Object obj = objArr[i3];
             Objects.requireNonNull(obj);
@@ -59,8 +60,7 @@ final class RegularImmutableMap extends ImmutableMap {
             CollectPreconditions.checkEntryNotNull(obj, obj2);
             return null;
         }
-        int i4 = i2 - 1;
-        int i5 = -1;
+        int i5 = i2 - 1;
         if (i2 <= 128) {
             byte[] bArr = new byte[i2];
             Arrays.fill(bArr, (byte) -1);
@@ -75,7 +75,7 @@ final class RegularImmutableMap extends ImmutableMap {
                 CollectPreconditions.checkEntryNotNull(obj3, obj4);
                 int smear = Hashing.smear(obj3.hashCode());
                 while (true) {
-                    int i10 = smear & i4;
+                    int i10 = smear & i5;
                     int i11 = bArr[i10] & 255;
                     if (i11 == 255) {
                         bArr[i10] = (byte) i9;
@@ -113,7 +113,7 @@ final class RegularImmutableMap extends ImmutableMap {
                 CollectPreconditions.checkEntryNotNull(obj6, obj7);
                 int smear2 = Hashing.smear(obj6.hashCode());
                 while (true) {
-                    int i17 = smear2 & i4;
+                    int i17 = smear2 & i5;
                     int i18 = sArr[i17] & 65535;
                     if (i18 == 65535) {
                         sArr[i17] = (short) i16;
@@ -146,14 +146,14 @@ final class RegularImmutableMap extends ImmutableMap {
             int i23 = (i21 * 2) + i3;
             Object obj9 = objArr[i22];
             Objects.requireNonNull(obj9);
-            Object obj10 = objArr[i22 ^ 1];
+            Object obj10 = objArr[i22 ^ i4];
             Objects.requireNonNull(obj10);
             CollectPreconditions.checkEntryNotNull(obj9, obj10);
             int smear3 = Hashing.smear(obj9.hashCode());
             while (true) {
-                int i24 = smear3 & i4;
+                int i24 = smear3 & i5;
                 int i25 = iArr[i24];
-                if (i25 == i5) {
+                if (i25 == -1) {
                     iArr[i24] = i23;
                     if (i21 < i20) {
                         objArr[i23] = obj9;
@@ -170,11 +170,10 @@ final class RegularImmutableMap extends ImmutableMap {
                         break;
                     }
                     smear3 = i24 + 1;
-                    i5 = -1;
                 }
             }
             i20++;
-            i5 = -1;
+            i4 = 1;
         }
         return i21 == i ? iArr : new Object[]{iArr, Integer.valueOf(i21), duplicateKey};
     }
@@ -325,13 +324,15 @@ final class RegularImmutableMap extends ImmutableMap {
 
         @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
-            if (!(obj instanceof Map.Entry)) {
-                return false;
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = entry.getKey();
+                Object value = entry.getValue();
+                if (value != null && value.equals(this.map.get(key))) {
+                    return true;
+                }
             }
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            return value != null && value.equals(this.map.get(key));
+            return false;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

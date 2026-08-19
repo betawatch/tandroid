@@ -61,71 +61,70 @@ public class RLottieDiceDrawable extends RLottieDrawable {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.RLottieDiceDrawable$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RLottieDiceDrawable.this.lambda$setDiceNumber$2(readRes);
+                    RLottieDiceDrawable.$r8$lambda$NeUEDZoYnYk8cDMtDOsiMN8lr3Q(RLottieDiceDrawable.this, readRes);
                 }
             });
         }
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setDiceNumber$2(String str) {
-        if (this.destroyAfterLoading) {
+    public static /* synthetic */ void $r8$lambda$NeUEDZoYnYk8cDMtDOsiMN8lr3Q(final RLottieDiceDrawable rLottieDiceDrawable, String str) {
+        if (rLottieDiceDrawable.destroyAfterLoading) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.RLottieDiceDrawable$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RLottieDiceDrawable.this.lambda$setDiceNumber$0();
+                    RLottieDiceDrawable.$r8$lambda$4EqyIkYEs5KMgkpIDyMG0K7MyTc(RLottieDiceDrawable.this);
                 }
             });
             return;
         }
-        this.secondNativePtr = RLottieNative.createFromRawJson(str, "dice", null);
-        final int frameCount = this.secondNativePtr != null ? this.secondNativePtr.getFrameCount() : 0;
-        if (this.secondNativePtr != null) {
-            this.secondNativePtr.getFps();
+        rLottieDiceDrawable.secondNativePtr = RLottieNative.createFromRawJson(str, "dice", null);
+        final int frameCount = rLottieDiceDrawable.secondNativePtr != null ? rLottieDiceDrawable.secondNativePtr.getFrameCount() : 0;
+        if (rLottieDiceDrawable.secondNativePtr != null) {
+            rLottieDiceDrawable.secondNativePtr.getFps();
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.RLottieDiceDrawable$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                RLottieDiceDrawable.this.lambda$setDiceNumber$1(frameCount);
+                RLottieDiceDrawable.$r8$lambda$wapA9tk9_GK1Wyq-qGCZMqNTSCk(RLottieDiceDrawable.this, frameCount);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setDiceNumber$0() {
-        this.secondLoadingInBackground = false;
-        if (this.loadingInBackground || !this.destroyAfterLoading) {
+    public static /* synthetic */ void $r8$lambda$4EqyIkYEs5KMgkpIDyMG0K7MyTc(RLottieDiceDrawable rLottieDiceDrawable) {
+        rLottieDiceDrawable.secondLoadingInBackground = false;
+        if (rLottieDiceDrawable.loadingInBackground || !rLottieDiceDrawable.destroyAfterLoading) {
             return;
         }
-        recycle(true);
+        rLottieDiceDrawable.recycle(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setDiceNumber$1(int i) {
-        this.secondLoadingInBackground = false;
-        if (this.destroyAfterLoading) {
-            recycle(true);
+    public static /* synthetic */ void $r8$lambda$wapA9tk9_GK1Wyq-qGCZMqNTSCk(RLottieDiceDrawable rLottieDiceDrawable, int i) {
+        rLottieDiceDrawable.secondLoadingInBackground = false;
+        if (rLottieDiceDrawable.destroyAfterLoading) {
+            rLottieDiceDrawable.recycle(true);
             return;
         }
-        this.secondFramesCount = i;
-        scheduleNextGetFrame();
-        invalidateInternal();
+        rLottieDiceDrawable.secondFramesCount = i;
+        rLottieDiceDrawable.scheduleNextGetFrame();
+        rLottieDiceDrawable.invalidateInternal();
     }
 
     public boolean isDiceRevealed() {
         int i = this.isDice;
-        if (i == 1 || i != 2) {
-            return false;
+        if (i != 1 && i == 2) {
+            if (this.setLastFrame) {
+                return true;
+            }
+            float progress = getProgress();
+            if (this.secondNativePtr != null) {
+                progress = this.currentFrame / this.secondFramesCount;
+            }
+            if (progress > 0.95f) {
+                return true;
+            }
         }
-        if (this.setLastFrame) {
-            return true;
-        }
-        float progress = getProgress();
-        if (this.secondNativePtr != null) {
-            progress = this.currentFrame / this.secondFramesCount;
-        }
-        return progress > 0.95f;
+        return false;
     }
 
     public boolean setBaseDice(File file) {
@@ -138,34 +137,32 @@ public class RLottieDiceDrawable extends RLottieDrawable {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.RLottieDiceDrawable$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RLottieDiceDrawable.this.lambda$setBaseDice$4(readRes);
+                    RLottieDiceDrawable.$r8$lambda$H7Qj3l2T4J-v6szGnMIwge5ryFY(RLottieDiceDrawable.this, readRes);
                 }
             });
         }
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setBaseDice$4(String str) {
-        this.nativePtr = RLottieNative.createFromRawJson(str, "dice", this.metaData, null);
+    public static /* synthetic */ void $r8$lambda$H7Qj3l2T4J-v6szGnMIwge5ryFY(final RLottieDiceDrawable rLottieDiceDrawable, String str) {
+        rLottieDiceDrawable.nativePtr = RLottieNative.createFromRawJson(str, "dice", rLottieDiceDrawable.metaData, null);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.RLottieDiceDrawable$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RLottieDiceDrawable.this.lambda$setBaseDice$3();
+                RLottieDiceDrawable.$r8$lambda$W4Bnn1cwRTw2t23s0bcch5rRtBk(RLottieDiceDrawable.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setBaseDice$3() {
-        this.loadingInBackground = false;
-        if (!this.secondLoadingInBackground && this.destroyAfterLoading) {
-            recycle(true);
+    public static /* synthetic */ void $r8$lambda$W4Bnn1cwRTw2t23s0bcch5rRtBk(RLottieDiceDrawable rLottieDiceDrawable) {
+        rLottieDiceDrawable.loadingInBackground = false;
+        if (!rLottieDiceDrawable.secondLoadingInBackground && rLottieDiceDrawable.destroyAfterLoading) {
+            rLottieDiceDrawable.recycle(true);
             return;
         }
-        checkChoreographer();
-        scheduleNextGetFrame();
-        invalidateInternal();
+        rLottieDiceDrawable.checkChoreographer();
+        rLottieDiceDrawable.scheduleNextGetFrame();
+        rLottieDiceDrawable.invalidateInternal();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0032 A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -303,7 +300,7 @@ public class RLottieDiceDrawable extends RLottieDrawable {
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDiceDrawable$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RLottieDiceDrawable.lambda$recycleNativePtr$5(RLottieNative.this, rLottieNative2);
+                RLottieDiceDrawable.$r8$lambda$dzkidqaevrZJQv_c80YElxZyjkM(RLottieNative.this, rLottieNative2);
             }
         };
         if (z) {
@@ -313,8 +310,7 @@ public class RLottieDiceDrawable extends RLottieDrawable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$recycleNativePtr$5(RLottieNative rLottieNative, RLottieNative rLottieNative2) {
+    public static /* synthetic */ void $r8$lambda$dzkidqaevrZJQv_c80YElxZyjkM(RLottieNative rLottieNative, RLottieNative rLottieNative2) {
         if (rLottieNative != null) {
             rLottieNative.recycle();
         }

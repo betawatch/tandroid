@@ -25,7 +25,7 @@ public final class zzsa {
     }
 
     public final zzsa zzd(Integer num) {
-        num.intValue();
+        num.getClass();
         this.zzj = 10;
         return this;
     }

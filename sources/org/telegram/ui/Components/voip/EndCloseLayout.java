@@ -113,7 +113,7 @@ public class EndCloseLayout extends FrameLayout {
                 valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        EndCloseLayout.1.lambda$createAnimator$0(transitionValues, valueAnimator2);
+                        ((EndCloseLayout.EndCloseView) transitionValues.view).backColor = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
                     }
                 });
                 animatorSet.playTogether(valueAnimator);
@@ -121,7 +121,7 @@ public class EndCloseLayout extends FrameLayout {
                 ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        EndCloseLayout.1.lambda$createAnimator$1(transitionValues, valueAnimator2);
+                        ((EndCloseLayout.EndCloseView) transitionValues.view).round = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
                     }
                 });
                 animatorSet.playTogether(ofInt);
@@ -129,7 +129,7 @@ public class EndCloseLayout extends FrameLayout {
                 ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        EndCloseLayout.1.lambda$createAnimator$2(transitionValues, valueAnimator2);
+                        ((EndCloseLayout.EndCloseView) transitionValues.view).callDeclineAlpha = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
                     }
                 });
                 animatorSet.playTogether(ofInt2);
@@ -137,7 +137,7 @@ public class EndCloseLayout extends FrameLayout {
                 ofInt3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        EndCloseLayout.1.lambda$createAnimator$3(transitionValues, valueAnimator2);
+                        ((EndCloseLayout.EndCloseView) transitionValues.view).closeTextAlpha = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
                     }
                 });
                 animatorSet.playTogether(ofInt3);
@@ -157,26 +157,6 @@ public class EndCloseLayout extends FrameLayout {
                 return animatorSet;
             }
             return super.createAnimator(viewGroup, transitionValues, transitionValues2);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$createAnimator$0(TransitionValues transitionValues, ValueAnimator valueAnimator) {
-            ((EndCloseView) transitionValues.view).backColor = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$createAnimator$1(TransitionValues transitionValues, ValueAnimator valueAnimator) {
-            ((EndCloseView) transitionValues.view).round = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$createAnimator$2(TransitionValues transitionValues, ValueAnimator valueAnimator) {
-            ((EndCloseView) transitionValues.view).callDeclineAlpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$createAnimator$3(TransitionValues transitionValues, ValueAnimator valueAnimator) {
-            ((EndCloseView) transitionValues.view).closeTextAlpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
         }
     }
 
@@ -203,14 +183,9 @@ public class EndCloseLayout extends FrameLayout {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                EndCloseLayout.this.lambda$switchToClose$0(onClickListener);
+                EndCloseLayout.this.endCloseView.setOnClickListener(onClickListener);
             }
         }, 500L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchToClose$0(View.OnClickListener onClickListener) {
-        this.endCloseView.setOnClickListener(onClickListener);
     }
 
     static class EndCloseView extends View {

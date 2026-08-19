@@ -25,6 +25,7 @@ public abstract class StickerMakerBackgroundView extends View {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        Canvas canvas2;
         float dp = AndroidUtilities.dp(10.0f);
         float f = dp * 2.0f;
         float measuredWidth = getMeasuredWidth() - f;
@@ -46,17 +47,25 @@ public abstract class StickerMakerBackgroundView extends View {
         int height = ((int) (rectF.height() / f4)) + 1;
         for (int i = 0; i < height; i++) {
             canvas.save();
-            for (int i2 = 0; i2 < width; i2++) {
+            int i2 = 0;
+            while (i2 < width) {
                 int i3 = i2 % 2;
-                if ((i3 == 0 && i % 2 == 0) || (i3 != 0 && i % 2 != 0)) {
-                    canvas.drawRect(0.0f, 0.0f, f4, f4, this.backgroundPaint);
+                if (!(i3 == 0 && i % 2 == 0) && (i3 == 0 || i % 2 == 0)) {
+                    canvas2 = canvas;
+                } else {
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, f4, f4, this.backgroundPaint);
                 }
-                canvas.translate(f4, 0.0f);
+                canvas2.translate(f4, 0.0f);
+                i2++;
+                canvas = canvas2;
             }
-            canvas.restore();
-            canvas.translate(0.0f, f4);
+            Canvas canvas3 = canvas;
+            canvas3.restore();
+            canvas3.translate(0.0f, f4);
         }
-        canvas.restore();
-        canvas.restore();
+        Canvas canvas4 = canvas;
+        canvas4.restore();
+        canvas4.restore();
     }
 }

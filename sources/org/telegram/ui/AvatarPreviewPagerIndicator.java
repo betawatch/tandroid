@@ -110,7 +110,7 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewPagerIndicator$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AvatarPreviewPagerIndicator.this.lambda$new$0(valueAnimator);
+                AvatarPreviewPagerIndicator.$r8$lambda$wXg0i3IKSb4KfUj5-y5ToQNbcjc(AvatarPreviewPagerIndicator.this, valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.AvatarPreviewPagerIndicator.1
@@ -135,12 +135,11 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
         this.textPaint.setTextSize(AndroidUtilities.dpf2(15.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ValueAnimator valueAnimator) {
-        float[] fArr = this.animatorValues;
+    public static /* synthetic */ void $r8$lambda$wXg0i3IKSb4KfUj5-y5ToQNbcjc(AvatarPreviewPagerIndicator avatarPreviewPagerIndicator, ValueAnimator valueAnimator) {
+        float[] fArr = avatarPreviewPagerIndicator.animatorValues;
         float animatedFraction = valueAnimator.getAnimatedFraction();
-        this.currentAnimationValue = animatedFraction;
-        setAlphaValue(AndroidUtilities.lerp(fArr, animatedFraction), true);
+        avatarPreviewPagerIndicator.currentAnimationValue = animatedFraction;
+        avatarPreviewPagerIndicator.setAlphaValue(AndroidUtilities.lerp(fArr, animatedFraction), true);
     }
 
     public void saveCurrentPageProgress() {
@@ -184,28 +183,29 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
         this.pressedOverlayGradient[1].setBounds(i - i5, 0, i, i2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:120:0x02fd  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x01cf  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0208  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x020b  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x02f2  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x02f5  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01ff  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0202  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x01e9  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void onDraw(Canvas canvas) {
+        float f;
+        float f2;
         int i;
         boolean z;
-        float f;
+        float f3;
         int i2;
-        int i3;
-        float f2;
-        for (int i4 = 0; i4 < 2; i4++) {
-            float f3 = this.pressedOverlayAlpha[i4];
-            if (f3 > 0.0f) {
-                this.pressedOverlayGradient[i4].setAlpha((int) (f3 * 255.0f));
-                this.pressedOverlayGradient[i4].draw(canvas);
+        float f4;
+        for (int i3 = 0; i3 < 2; i3++) {
+            float f5 = this.pressedOverlayAlpha[i3];
+            if (f5 > 0.0f) {
+                this.pressedOverlayGradient[i3].setAlpha((int) (f5 * 255.0f));
+                this.pressedOverlayGradient[i3].draw(canvas);
             }
         }
         this.topOverlayGradient.draw(canvas);
@@ -224,16 +224,17 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
             j = 17;
         }
         this.lastTime = elapsedRealtime;
-        float f4 = 1.0f;
         if (realCount <= 1 || realCount > 20) {
+            f = 8.0f;
+            f2 = 180.0f;
             i = 20;
             z = false;
         } else {
-            int i5 = this.overlayCountVisible;
-            if (i5 == 0) {
+            int i4 = this.overlayCountVisible;
+            if (i4 == 0) {
                 this.alpha = 0.0f;
                 this.overlayCountVisible = 3;
-            } else if (i5 == 1) {
+            } else if (i4 == 1) {
                 this.alpha = 0.0f;
                 this.overlayCountVisible = 2;
             }
@@ -243,83 +244,78 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
             }
             int measuredWidth = ((getMeasuredWidth() - AndroidUtilities.dp(10.0f)) - AndroidUtilities.dp((realCount - 1) * 2)) / realCount;
             int dp = AndroidUtilities.dp(8.0f);
-            int i6 = 0;
+            int i5 = 0;
             z = false;
-            while (i6 < realCount) {
-                int dp2 = AndroidUtilities.dp((i6 * 2) + 5) + (measuredWidth * i6);
-                if (i6 == this.previousSelectedPotision && Math.abs(this.previousSelectedProgress - f4) > 1.0E-4f) {
-                    f2 = this.previousSelectedProgress;
+            while (i5 < realCount) {
+                int dp2 = AndroidUtilities.dp((i5 * 2) + 5) + (measuredWidth * i5);
+                if (i5 == this.previousSelectedPotision && Math.abs(this.previousSelectedProgress - 1.0f) > 1.0E-4f) {
+                    f4 = this.previousSelectedProgress;
                     canvas.save();
-                    float f5 = dp2;
-                    float f6 = dp;
-                    float f7 = dp2 + measuredWidth;
-                    canvas.clipRect((measuredWidth * f2) + f5, f6, f7, dp + AndroidUtilities.dp(2.0f));
-                    this.rect.set(f5, f6, f7, AndroidUtilities.dp(2.0f) + dp);
+                    float f6 = dp2;
+                    float f7 = dp;
+                    float f8 = dp2 + measuredWidth;
+                    canvas.clipRect((measuredWidth * f4) + f6, f7, f8, dp + AndroidUtilities.dp(2.0f));
+                    this.rect.set(f6, f7, f8, AndroidUtilities.dp(2.0f) + dp);
                     this.barPaint.setAlpha((int) (this.alpha * 85.0f));
-                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(f4), AndroidUtilities.dp(f4), this.barPaint);
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), this.barPaint);
                     canvas.restore();
-                    i3 = i6;
                 } else {
                     i2 = 85;
-                    if (i6 != this.selectedPosition) {
-                        i3 = i6;
-                    } else if (this.profileGalleryView.isCurrentItemVideo()) {
-                        f2 = this.profileGalleryView.getCurrentItemProgress();
-                        this.currentProgress = f2;
-                        if ((f2 > 0.0f || !this.profileGalleryView.isLoadingCurrentVideo()) && this.currentLoadingAnimationProgress <= 0.0f) {
-                            i3 = i6;
-                        } else {
-                            float f8 = this.currentLoadingAnimationProgress;
-                            int i7 = this.currentLoadingAnimationDirection;
-                            i3 = i6;
-                            float f9 = f8 + ((i7 * j) / 500.0f);
-                            this.currentLoadingAnimationProgress = f9;
-                            if (f9 > 1.0f) {
-                                this.currentLoadingAnimationProgress = 1.0f;
-                                this.currentLoadingAnimationDirection = i7 * (-1);
-                            } else if (f9 <= 0.0f) {
-                                this.currentLoadingAnimationProgress = 0.0f;
-                                this.currentLoadingAnimationDirection = i7 * (-1);
+                    if (i5 == this.selectedPosition) {
+                        if (this.profileGalleryView.isCurrentItemVideo()) {
+                            f4 = this.profileGalleryView.getCurrentItemProgress();
+                            this.currentProgress = f4;
+                            if ((f4 <= 0.0f && this.profileGalleryView.isLoadingCurrentVideo()) || this.currentLoadingAnimationProgress > 0.0f) {
+                                float f9 = this.currentLoadingAnimationProgress;
+                                int i6 = this.currentLoadingAnimationDirection;
+                                float f10 = f9 + ((i6 * j) / 500.0f);
+                                this.currentLoadingAnimationProgress = f10;
+                                if (f10 > 1.0f) {
+                                    this.currentLoadingAnimationProgress = 1.0f;
+                                    this.currentLoadingAnimationDirection = i6 * (-1);
+                                } else if (f10 <= 0.0f) {
+                                    this.currentLoadingAnimationProgress = 0.0f;
+                                    this.currentLoadingAnimationDirection = i6 * (-1);
+                                }
                             }
+                            this.rect.set(dp2, dp, dp2 + measuredWidth, AndroidUtilities.dp(2.0f) + dp);
+                            this.barPaint.setAlpha((int) (((this.currentLoadingAnimationProgress * 48.0f) + 85.0f) * this.alpha));
+                            canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), this.barPaint);
+                        } else {
+                            this.currentProgress = 1.0f;
                         }
-                        this.rect.set(dp2, dp, dp2 + measuredWidth, AndroidUtilities.dp(2.0f) + dp);
-                        this.barPaint.setAlpha((int) (((this.currentLoadingAnimationProgress * 48.0f) + 85.0f) * this.alpha));
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), this.barPaint);
-                    } else {
-                        i3 = i6;
-                        this.currentProgress = 1.0f;
                     }
-                    f2 = 1.0f;
-                    float f10 = dp2;
-                    this.rect.set(f10, dp, (measuredWidth * f2) + f10, AndroidUtilities.dp(2.0f) + dp);
-                    if (i3 == this.selectedPosition) {
-                        if (this.overlayCountVisible == 3) {
-                            this.barPaint.setAlpha((int) (AndroidUtilities.lerp(i2, NotificationCenter.didReceiveSmsCode, CubicBezierInterpolator.EASE_BOTH.getInterpolation(this.alphas[i3])) * this.alpha));
-                        }
-                    } else {
-                        this.alphas[i3] = 0.75f;
-                    }
-                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i3 != this.selectedPosition ? this.selectedBarPaint : this.barPaint);
-                    i6 = i3 + 1;
                     f4 = 1.0f;
+                    float f11 = dp2;
+                    this.rect.set(f11, dp, (measuredWidth * f4) + f11, AndroidUtilities.dp(2.0f) + dp);
+                    if (i5 == this.selectedPosition) {
+                        if (this.overlayCountVisible == 3) {
+                            this.barPaint.setAlpha((int) (AndroidUtilities.lerp(i2, NotificationCenter.didReceiveSmsCode, CubicBezierInterpolator.EASE_BOTH.getInterpolation(this.alphas[i5])) * this.alpha));
+                        }
+                    } else {
+                        this.alphas[i5] = 0.75f;
+                    }
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i5 != this.selectedPosition ? this.selectedBarPaint : this.barPaint);
+                    i5++;
                 }
                 i2 = 80;
                 z = true;
-                float f102 = dp2;
-                this.rect.set(f102, dp, (measuredWidth * f2) + f102, AndroidUtilities.dp(2.0f) + dp);
-                if (i3 == this.selectedPosition) {
+                float f112 = dp2;
+                this.rect.set(f112, dp, (measuredWidth * f4) + f112, AndroidUtilities.dp(2.0f) + dp);
+                if (i5 == this.selectedPosition) {
                 }
-                canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i3 != this.selectedPosition ? this.selectedBarPaint : this.barPaint);
-                i6 = i3 + 1;
-                f4 = 1.0f;
+                canvas.drawRoundRect(this.rect, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i5 != this.selectedPosition ? this.selectedBarPaint : this.barPaint);
+                i5++;
             }
-            int i8 = this.overlayCountVisible;
-            if (i8 == 2) {
-                float f11 = this.alpha;
-                if (f11 < 1.0f) {
-                    float f12 = f11 + (j / 180.0f);
-                    this.alpha = f12;
-                    if (f12 > 1.0f) {
+            f = 8.0f;
+            f2 = 180.0f;
+            int i7 = this.overlayCountVisible;
+            if (i7 == 2) {
+                float f12 = this.alpha;
+                if (f12 < 1.0f) {
+                    float f13 = f12 + (j / 180.0f);
+                    this.alpha = f13;
+                    if (f13 > 1.0f) {
                         this.alpha = 1.0f;
                     }
                     i = 20;
@@ -327,101 +323,101 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
                 } else {
                     this.overlayCountVisible = 3;
                 }
-            } else if (i8 == 3) {
-                int i9 = 0;
+            } else if (i7 == 3) {
+                int i8 = 0;
                 while (true) {
                     float[] fArr3 = this.alphas;
-                    if (i9 >= fArr3.length) {
+                    if (i8 >= fArr3.length) {
                         break;
                     }
-                    if (i9 != this.selectedPosition) {
-                        float f13 = fArr3[i9];
-                        if (f13 > 0.0f) {
-                            float f14 = f13 - (j / 500.0f);
-                            fArr3[i9] = f14;
-                            if (f14 <= 0.0f) {
-                                fArr3[i9] = 0.0f;
-                                if (i9 == this.previousSelectedPotision) {
+                    if (i8 != this.selectedPosition) {
+                        float f14 = fArr3[i8];
+                        if (f14 > 0.0f) {
+                            float f15 = f14 - (j / 500.0f);
+                            fArr3[i8] = f15;
+                            if (f15 <= 0.0f) {
+                                fArr3[i8] = 0.0f;
+                                if (i8 == this.previousSelectedPotision) {
                                     this.previousSelectedPotision = -1;
                                 }
                             }
                             z = true;
-                            i9++;
+                            i8++;
                         }
                     }
-                    if (i9 == this.previousSelectedPotision) {
+                    if (i8 == this.previousSelectedPotision) {
                         this.previousSelectedPotision = -1;
                     }
-                    i9++;
+                    i8++;
                 }
             }
             i = 20;
         }
         if (realCount > i || this.progressToCounter != 0.0f) {
             float measureText = this.textPaint.measureText(getCurrentTitle());
-            this.indicatorRect.right = getMeasuredWidth() - AndroidUtilities.dp(8.0f);
+            this.indicatorRect.right = getMeasuredWidth() - AndroidUtilities.dp(f);
             RectF rectF = this.indicatorRect;
             rectF.left = rectF.right - (measureText + AndroidUtilities.dpf2(16.0f));
-            this.indicatorRect.top = AndroidUtilities.dp(8.0f);
+            this.indicatorRect.top = AndroidUtilities.dp(f);
             RectF rectF2 = this.indicatorRect;
             rectF2.bottom = rectF2.top + AndroidUtilities.dp(26.0f);
             float dpf2 = AndroidUtilities.dpf2(12.0f);
             canvas.save();
             boolean z2 = realCount > 20;
             if (z2) {
-                float f15 = this.progressToCounter;
-                if (f15 != 1.0f) {
-                    this.progressToCounter = f15 + (j / 150.0f);
-                    f = this.progressToCounter;
-                    if (f < 1.0f) {
+                float f16 = this.progressToCounter;
+                if (f16 != 1.0f) {
+                    this.progressToCounter = f16 + (j / 150.0f);
+                    f3 = this.progressToCounter;
+                    if (f3 < 1.0f) {
                         this.progressToCounter = 1.0f;
-                    } else if (f <= 0.0f) {
+                    } else if (f3 <= 0.0f) {
                         this.progressToCounter = 0.0f;
                     } else {
                         invalidate();
                     }
-                    float f16 = this.progressToCounter;
-                    canvas.scale(f16, f16, this.indicatorRect.centerX(), this.indicatorRect.centerY());
+                    float f17 = this.progressToCounter;
+                    canvas.scale(f17, f17, this.indicatorRect.centerX(), this.indicatorRect.centerY());
                     canvas.drawRoundRect(this.indicatorRect, dpf2, dpf2, this.backgroundPaint);
                     canvas.drawText(getCurrentTitle(), this.indicatorRect.centerX(), this.indicatorRect.top + AndroidUtilities.dpf2(18.5f), this.textPaint);
                     canvas.restore();
                 }
             }
             if (!z2) {
-                float f17 = this.progressToCounter;
-                if (f17 != 0.0f) {
-                    this.progressToCounter = f17 - (j / 150.0f);
+                float f18 = this.progressToCounter;
+                if (f18 != 0.0f) {
+                    this.progressToCounter = f18 - (j / 150.0f);
                 }
             }
-            f = this.progressToCounter;
-            if (f < 1.0f) {
+            f3 = this.progressToCounter;
+            if (f3 < 1.0f) {
             }
-            float f162 = this.progressToCounter;
-            canvas.scale(f162, f162, this.indicatorRect.centerX(), this.indicatorRect.centerY());
+            float f172 = this.progressToCounter;
+            canvas.scale(f172, f172, this.indicatorRect.centerX(), this.indicatorRect.centerY());
             canvas.drawRoundRect(this.indicatorRect, dpf2, dpf2, this.backgroundPaint);
             canvas.drawText(getCurrentTitle(), this.indicatorRect.centerX(), this.indicatorRect.top + AndroidUtilities.dpf2(18.5f), this.textPaint);
             canvas.restore();
         }
-        for (int i10 = 0; i10 < 2; i10++) {
-            if (this.pressedOverlayVisible[i10]) {
+        for (int i9 = 0; i9 < 2; i9++) {
+            if (this.pressedOverlayVisible[i9]) {
                 float[] fArr4 = this.pressedOverlayAlpha;
-                float f18 = fArr4[i10];
-                if (f18 < 1.0f) {
-                    float f19 = f18 + (j / 180.0f);
-                    fArr4[i10] = f19;
-                    if (f19 > 1.0f) {
-                        fArr4[i10] = 1.0f;
+                float f19 = fArr4[i9];
+                if (f19 < 1.0f) {
+                    float f20 = f19 + (j / f2);
+                    fArr4[i9] = f20;
+                    if (f20 > 1.0f) {
+                        fArr4[i9] = 1.0f;
                     }
                     z = true;
                 }
             } else {
                 float[] fArr5 = this.pressedOverlayAlpha;
-                float f20 = fArr5[i10];
-                if (f20 > 0.0f) {
-                    float f21 = f20 - (j / 180.0f);
-                    fArr5[i10] = f21;
-                    if (f21 < 0.0f) {
-                        fArr5[i10] = 0.0f;
+                float f21 = fArr5[i9];
+                if (f21 > 0.0f) {
+                    float f22 = f21 - (j / f2);
+                    fArr5[i9] = f22;
+                    if (f22 < 0.0f) {
+                        fArr5[i9] = 0.0f;
                     }
                     z = true;
                 }

@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.Map;
 
 /* loaded from: classes.dex */
-public class zzlx implements Closeable {
+public class zzlx implements Closeable, AutoCloseable {
     private static final Map zza = new HashMap();
     private final String zzb;
     private int zzc;

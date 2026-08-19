@@ -15,14 +15,9 @@ public class ShortcutResultReceiver extends BroadcastReceiver {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ShortcutResultReceiver$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShortcutResultReceiver.lambda$onReceive$0(Utilities.Callback.this);
+                    Utilities.Callback.this.run(Boolean.TRUE);
                 }
             });
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onReceive$0(Utilities.Callback callback) {
-        callback.run(Boolean.TRUE);
     }
 }

@@ -139,7 +139,7 @@ public class VoIpGradientLayout extends FrameLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoIpGradientLayout.this.lambda$new$0(voIPBackgroundProvider, valueAnimator);
+                VoIpGradientLayout.$r8$lambda$HQkk_DnxZ04zcOfBc3TAaWifPdM(VoIpGradientLayout.this, voIPBackgroundProvider, valueAnimator);
             }
         });
         ofInt.setRepeatCount(-1);
@@ -153,15 +153,15 @@ public class VoIpGradientLayout extends FrameLayout {
         switchToCalling();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(VoIPBackgroundProvider voIPBackgroundProvider, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$HQkk_DnxZ04zcOfBc3TAaWifPdM(VoIpGradientLayout voIpGradientLayout, VoIPBackgroundProvider voIPBackgroundProvider, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
         voIPBackgroundProvider.setDegree(((Integer) valueAnimator.getAnimatedValue()).intValue());
         int degree = voIPBackgroundProvider.getDegree();
-        if (((degree < 0 || degree > 2) && (degree < 180 || degree > 182)) || !this.isPaused) {
+        if (((degree < 0 || degree > 2) && (degree < 180 || degree > 182)) || !voIpGradientLayout.isPaused) {
             return;
         }
-        this.defaultAnimatorSet.pause();
-        AnimatorSet animatorSet = this.connectedAnimatorSet;
+        voIpGradientLayout.defaultAnimatorSet.pause();
+        AnimatorSet animatorSet = voIpGradientLayout.connectedAnimatorSet;
         if (animatorSet != null) {
             animatorSet.pause();
         }
@@ -197,7 +197,7 @@ public class VoIpGradientLayout extends FrameLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoIpGradientLayout.this.lambda$switchToCalling$1(valueAnimator);
+                VoIpGradientLayout.$r8$lambda$NdAtpf0Wp0qwPG1r1-2koW7hMYs(VoIpGradientLayout.this, valueAnimator);
             }
         });
         this.callingAnimator.setRepeatCount(-1);
@@ -209,10 +209,10 @@ public class VoIpGradientLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchToCalling$1(ValueAnimator valueAnimator) {
-        this.alphaBlueViolet = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$NdAtpf0Wp0qwPG1r1-2koW7hMYs(VoIpGradientLayout voIpGradientLayout, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
+        voIpGradientLayout.alphaBlueViolet = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        voIpGradientLayout.invalidate();
     }
 
     public boolean isConnectedCalled() {
@@ -249,7 +249,7 @@ public class VoIpGradientLayout extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                VoIpGradientLayout.this.lambda$switchToCallConnected$2(valueAnimator2);
+                VoIpGradientLayout.$r8$lambda$foitUgjB7vq3edwIu70VlbsCbkE(VoIpGradientLayout.this, valueAnimator2);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout.1
@@ -268,11 +268,11 @@ public class VoIpGradientLayout extends FrameLayout {
         ofFloat.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchToCallConnected$2(ValueAnimator valueAnimator) {
-        this.clipRadius = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-        this.backgroundProvider.invalidateViews();
+    public static /* synthetic */ void $r8$lambda$foitUgjB7vq3edwIu70VlbsCbkE(VoIpGradientLayout voIpGradientLayout, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
+        voIpGradientLayout.clipRadius = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        voIpGradientLayout.invalidate();
+        voIpGradientLayout.backgroundProvider.invalidateViews();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -292,7 +292,7 @@ public class VoIpGradientLayout extends FrameLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                VoIpGradientLayout.this.lambda$switchToConnectedAnimator$3(valueAnimator2);
+                VoIpGradientLayout.$r8$lambda$Lu6ZbXrhPf_0kjh3OVBIO1ARXco(VoIpGradientLayout.this, valueAnimator2);
             }
         });
         ofInt.setRepeatCount(-1);
@@ -301,7 +301,7 @@ public class VoIpGradientLayout extends FrameLayout {
         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                VoIpGradientLayout.this.lambda$switchToConnectedAnimator$4(valueAnimator2);
+                VoIpGradientLayout.$r8$lambda$aA1m3nWKJtOaWmDC0ZePcZMDyb0(VoIpGradientLayout.this, valueAnimator2);
             }
         });
         ofInt2.setRepeatCount(-1);
@@ -318,16 +318,16 @@ public class VoIpGradientLayout extends FrameLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchToConnectedAnimator$3(ValueAnimator valueAnimator) {
-        this.alphaBlueGreen = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$Lu6ZbXrhPf_0kjh3OVBIO1ARXco(VoIpGradientLayout voIpGradientLayout, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
+        voIpGradientLayout.alphaBlueGreen = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        voIpGradientLayout.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchToConnectedAnimator$4(ValueAnimator valueAnimator) {
-        this.alphaBlueViolet = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$aA1m3nWKJtOaWmDC0ZePcZMDyb0(VoIpGradientLayout voIpGradientLayout, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
+        voIpGradientLayout.alphaBlueViolet = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        voIpGradientLayout.invalidate();
     }
 
     public void showToBadConnection() {
@@ -342,18 +342,18 @@ public class VoIpGradientLayout extends FrameLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoIpGradientLayout.this.lambda$showToBadConnection$5(valueAnimator);
+                VoIpGradientLayout.$r8$lambda$kzDbnNgLrL54LmPLhYF2RfPahsg(VoIpGradientLayout.this, valueAnimator);
             }
         });
         this.badConnectionAnimator.setDuration(500L);
         this.badConnectionAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showToBadConnection$5(ValueAnimator valueAnimator) {
-        this.alphaOrangeRed = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        invalidate();
-        this.backgroundProvider.invalidateViews();
+    public static /* synthetic */ void $r8$lambda$kzDbnNgLrL54LmPLhYF2RfPahsg(VoIpGradientLayout voIpGradientLayout, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
+        voIpGradientLayout.alphaOrangeRed = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        voIpGradientLayout.invalidate();
+        voIpGradientLayout.backgroundProvider.invalidateViews();
     }
 
     public void hideBadConnection() {
@@ -374,18 +374,18 @@ public class VoIpGradientLayout extends FrameLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                VoIpGradientLayout.this.lambda$hideBadConnection$6(valueAnimator2);
+                VoIpGradientLayout.$r8$lambda$qThKa9FOWGNYjCoHGarIUDPuE1k(VoIpGradientLayout.this, valueAnimator2);
             }
         });
         this.badConnectionAnimator.setDuration(500L);
         this.badConnectionAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideBadConnection$6(ValueAnimator valueAnimator) {
-        this.alphaOrangeRed = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        invalidate();
-        this.backgroundProvider.invalidateViews();
+    public static /* synthetic */ void $r8$lambda$qThKa9FOWGNYjCoHGarIUDPuE1k(VoIpGradientLayout voIpGradientLayout, ValueAnimator valueAnimator) {
+        voIpGradientLayout.getClass();
+        voIpGradientLayout.alphaOrangeRed = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        voIpGradientLayout.invalidate();
+        voIpGradientLayout.backgroundProvider.invalidateViews();
     }
 
     public void pause() {

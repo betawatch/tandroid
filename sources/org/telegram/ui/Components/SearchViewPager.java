@@ -19,6 +19,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -141,8 +142,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         void startChatPreview(RecyclerListView recyclerListView, DialogCell dialogCell);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$showActionMode$1(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$IWDQng5sl7zUoo6zKCuKyGfo6VY(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -409,7 +409,6 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView3.setItemAnimator(this.botsItemAnimator);
         recyclerListView3.setPivotY(0.0f);
         recyclerListView3.setClipToPadding(false);
-        int i7 = 1;
         recyclerListView3.setVerticalScrollBarEnabled(true);
         recyclerListView3.setInstantClick(true);
         recyclerListView3.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
@@ -419,13 +418,13 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView3.setAnimateEmptyView(true, 0);
         FlickerLoadingView flickerLoadingView3 = new FlickerLoadingView(context);
         flickerLoadingView3.setViewType(1);
-        StickerEmptyView stickerEmptyView3 = new StickerEmptyView(context, flickerLoadingView3, i7) { // from class: org.telegram.ui.Components.SearchViewPager.11
+        StickerEmptyView stickerEmptyView3 = new StickerEmptyView(context, flickerLoadingView3, i4) { // from class: org.telegram.ui.Components.SearchViewPager.11
             @Override // org.telegram.ui.Components.StickerEmptyView, android.view.View
-            public void setVisibility(int i8) {
+            public void setVisibility(int i7) {
                 if (SearchViewPager.this.noMediaFiltersSearchView.getTag() != null) {
                     super.setVisibility(8);
                 } else {
-                    super.setVisibility(i8);
+                    super.setVisibility(i7);
                 }
             }
         };
@@ -452,16 +451,16 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView3.setAdapter(dialogsBotsAdapter);
         recyclerListView3.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.13
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i8) {
-                if (i8 == 1) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int i7) {
+                if (i7 == 1) {
                     AndroidUtilities.hideKeyboard(dialogsActivity.getParentActivity().getCurrentFocus());
                 }
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i8, int i9) {
+            public void onScrolled(RecyclerView recyclerView, int i7, int i8) {
                 SearchViewPager.this.botsSearchAdapter.checkBottom();
-                SearchViewPager.this.onPageScrolled(i8, i9);
+                SearchViewPager.this.onPageScrolled(i7, i8);
             }
         });
         recyclerListView3.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
@@ -482,7 +481,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         this.hashtagSearchListView = recyclerListView4;
         recyclerListView4.setItemAnimator(this.hashtagItemAnimator);
         recyclerListView4.setPivotY(0.0f);
-        int i8 = 1;
+        int i7 = 1;
         recyclerListView4.setVerticalScrollBarEnabled(true);
         recyclerListView4.setInstantClick(true);
         recyclerListView4.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
@@ -493,13 +492,13 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView4.setClipToPadding(false);
         FlickerLoadingView flickerLoadingView4 = new FlickerLoadingView(context);
         flickerLoadingView4.setViewType(1);
-        StickerEmptyView stickerEmptyView4 = new StickerEmptyView(context, flickerLoadingView4, i8) { // from class: org.telegram.ui.Components.SearchViewPager.15
+        StickerEmptyView stickerEmptyView4 = new StickerEmptyView(context, flickerLoadingView4, i7) { // from class: org.telegram.ui.Components.SearchViewPager.15
             @Override // org.telegram.ui.Components.StickerEmptyView, android.view.View
-            public void setVisibility(int i9) {
+            public void setVisibility(int i8) {
                 if (SearchViewPager.this.noMediaFiltersSearchView.getTag() != null) {
                     super.setVisibility(8);
                 } else {
-                    super.setVisibility(i9);
+                    super.setVisibility(i8);
                 }
             }
         };
@@ -533,16 +532,16 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView4.setAdapter(hashtagsSearchAdapter);
         recyclerListView4.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.17
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i9) {
-                if (i9 == 1) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int i8) {
+                if (i8 == 1) {
                     AndroidUtilities.hideKeyboard(dialogsActivity.getParentActivity().getCurrentFocus());
                 }
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i9, int i10) {
+            public void onScrolled(RecyclerView recyclerView, int i8, int i9) {
                 SearchViewPager.this.hashtagSearchAdapter.checkBottom();
-                SearchViewPager.this.onPageScrolled(i9, i10);
+                SearchViewPager.this.onPageScrolled(i8, i9);
             }
         });
         recyclerListView4.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
@@ -553,9 +552,9 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         postsSearchContainer.listView.setClipToPadding(false);
         postsSearchContainer.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.18
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i9, int i10) {
-                super.onScrolled(recyclerView, i9, i10);
-                SearchViewPager.this.onPageScrolled(i9, i10);
+            public void onScrolled(RecyclerView recyclerView, int i8, int i9) {
+                super.onScrolled(recyclerView, i8, i9);
+                SearchViewPager.this.onPageScrolled(i8, i9);
             }
         });
         postsSearchContainer.listView.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
@@ -614,7 +613,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                 return;
             }
             DialogsActivity dialogsActivity = SearchViewPager.this.parent;
-            if (dialogsActivity instanceof DialogsActivity) {
+            if (OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(dialogsActivity)) {
                 dialogsActivity.closeSearching();
             }
             MessagesController.getInstance(SearchViewPager.this.currentAccount).openApp(user, 0);
@@ -655,7 +654,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             ItemOptions add = makeOptions.add(i, string, new Runnable() { // from class: org.telegram.ui.Components.SearchViewPager$1$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SearchViewPager.1.this.lambda$openSponsoredOptions$3(dialogsActivity, context, makeOptions);
+                    SearchViewPager.1.$r8$lambda$OtQBEU3jz-e9FqRLUauYb7kjWcs(SearchViewPager.1.this, dialogsActivity, context, makeOptions);
                 }
             });
             int i2 = R.drawable.msg_block2;
@@ -664,7 +663,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             ItemOptions addGap2 = add.add(i2, string2, new Runnable() { // from class: org.telegram.ui.Components.SearchViewPager$1$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SearchViewPager.1.this.lambda$openSponsoredOptions$5(dialogsActivity2, tL_sponsoredPeer, makeOptions);
+                    SearchViewPager.1.$r8$lambda$6dIxMr-um-mqxQKLRqedUM1kRV4(SearchViewPager.1.this, dialogsActivity2, tL_sponsoredPeer, makeOptions);
                 }
             }).addGap();
             int i3 = R.drawable.msg_cancel;
@@ -673,49 +672,42 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             addGap2.add(i3, string3, new Runnable() { // from class: org.telegram.ui.Components.SearchViewPager$1$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SearchViewPager.1.this.lambda$openSponsoredOptions$6(dialogsActivity3, makeOptions);
+                    SearchViewPager.1.$r8$lambda$llEFeB-c6Rc4zl4N_yN_yeEHZO0(SearchViewPager.1.this, dialogsActivity3, makeOptions);
                 }
             }).setGravity(LocaleController.isRTL ? 3 : 5).setOnTopOfScrim().setDrawScrim(false).show();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openSponsoredOptions$3(final DialogsActivity dialogsActivity, Context context, ItemOptions itemOptions) {
+        public static /* synthetic */ void $r8$lambda$OtQBEU3jz-e9FqRLUauYb7kjWcs(final 1 r3, final DialogsActivity dialogsActivity, Context context, ItemOptions itemOptions) {
+            r3.getClass();
             dialogsActivity.showDialog(new SearchAdsInfoBottomSheet(context, dialogsActivity.getResourceProvider(), new Runnable() { // from class: org.telegram.ui.Components.SearchViewPager$1$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SearchViewPager.1.this.lambda$openSponsoredOptions$2(dialogsActivity);
+                    SearchViewPager.1.$r8$lambda$Wc78u_--lYsxlhySx3Qc0ptMuu4(SearchViewPager.1.this, dialogsActivity);
                 }
             }));
             itemOptions.dismiss();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openSponsoredOptions$2(DialogsActivity dialogsActivity) {
-            removeAllAds();
+        public static /* synthetic */ void $r8$lambda$Wc78u_--lYsxlhySx3Qc0ptMuu4(1 r0, DialogsActivity dialogsActivity) {
+            r0.removeAllAds();
             BulletinFactory.of(dialogsActivity).createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openSponsoredOptions$5(DialogsActivity dialogsActivity, final TLRPC.TL_sponsoredPeer tL_sponsoredPeer, ItemOptions itemOptions) {
+        public static /* synthetic */ void $r8$lambda$6dIxMr-um-mqxQKLRqedUM1kRV4(final 1 r3, DialogsActivity dialogsActivity, final TLRPC.TL_sponsoredPeer tL_sponsoredPeer, ItemOptions itemOptions) {
+            r3.getClass();
             ReportBottomSheet.openSponsoredPeer(dialogsActivity, tL_sponsoredPeer.random_id, dialogsActivity.getResourceProvider(), new Runnable() { // from class: org.telegram.ui.Components.SearchViewPager$1$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SearchViewPager.1.this.lambda$openSponsoredOptions$4(tL_sponsoredPeer);
+                    SearchViewPager.1.this.removeAd(tL_sponsoredPeer);
                 }
             });
             itemOptions.dismiss();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openSponsoredOptions$4(TLRPC.TL_sponsoredPeer tL_sponsoredPeer) {
-            removeAd(tL_sponsoredPeer);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openSponsoredOptions$6(DialogsActivity dialogsActivity, ItemOptions itemOptions) {
+        public static /* synthetic */ void $r8$lambda$llEFeB-c6Rc4zl4N_yN_yeEHZO0(1 r2, DialogsActivity dialogsActivity, ItemOptions itemOptions) {
             if (UserConfig.getInstance(SearchViewPager.this.currentAccount).isPremium()) {
                 dialogsActivity.getMessagesController().disableAds(true);
-                removeAllAds();
+                r2.removeAllAds();
                 BulletinFactory.of(dialogsActivity).createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
             } else {
                 new PremiumFeatureBottomSheet(dialogsActivity, 3, true).show();
@@ -769,7 +761,6 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
     /* JADX INFO: Access modifiers changed from: private */
     public void search(View view, int i, String str, boolean z) {
         boolean z2;
-        boolean z3;
         if (TextUtils.isEmpty(str)) {
             this.emptyView.subtitle.setVisibility(8);
         } else {
@@ -779,7 +770,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         DialogsSearchAdapter.DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.dialogsSearchAdapter.delegate;
         long searchForumDialogId = dialogsSearchAdapterDelegate != null ? dialogsSearchAdapterDelegate.getSearchForumDialogId() : 0L;
         long j = i == 0 ? 0L : searchForumDialogId;
-        boolean z4 = false;
+        boolean z3 = false;
         long j2 = 0;
         long j3 = 0;
         for (int i2 = 0; i2 < this.currentSearchFilters.size(); i2++) {
@@ -798,7 +789,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                 j3 = dateData.maxDate;
                 j2 = j4;
             } else if (i3 == 7) {
-                z4 = true;
+                z3 = true;
             }
         }
         if (this.hashtagSearchAdapter.getHashtag(str) == null) {
@@ -829,24 +820,21 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                 return;
             }
             if (z) {
-                z3 = false;
                 this.hashtagSearchLayoutManager.scrollToPositionWithOffset(0, 0);
-            } else {
-                z3 = false;
             }
             this.hashtagSearchAdapter.search(str);
-            this.hashtagEmptyView.setKeyboardHeight(this.keyboardSize, z3);
+            this.hashtagEmptyView.setKeyboardHeight(this.keyboardSize, false);
             return;
         }
         if (view == this.searchContainer) {
             if ((j == 0 && this.communityId == 0 && j2 == 0 && j3 == 0) || searchForumDialogId != 0) {
                 this.lastSearchScrolledToTop = false;
-                this.dialogsSearchAdapter.searchDialogs(str, z4 ? 1 : 0, true);
+                this.dialogsSearchAdapter.searchDialogs(str, z3 ? 1 : 0, true);
                 this.dialogsSearchAdapter.setFiltersDelegate(this.filteredSearchViewDelegate, false);
                 this.noMediaFiltersSearchView.animate().setListener(null).cancel();
                 this.noMediaFiltersSearchView.setDelegate(null, false);
                 if (z) {
-                    this.emptyView.showProgress(true ^ this.dialogsSearchAdapter.isSearching(), false);
+                    this.emptyView.showProgress(!this.dialogsSearchAdapter.isSearching(), false);
                     this.emptyView.showProgress(this.dialogsSearchAdapter.isSearching(), false);
                 } else if (!this.dialogsSearchAdapter.hasRecentSearch()) {
                     this.emptyView.showProgress(this.dialogsSearchAdapter.isSearching(), true);
@@ -863,6 +851,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                 }
                 this.noMediaFiltersSearchView.setTag(null);
             } else {
+                boolean z4 = true;
                 this.noMediaFiltersSearchView.setTag(1);
                 this.noMediaFiltersSearchView.setDelegate(this.filteredSearchViewDelegate, false);
                 this.noMediaFiltersSearchView.animate().setListener(null).cancel();
@@ -875,23 +864,25 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                         this.noMediaFiltersSearchView.setVisibility(0);
                         this.noMediaFiltersSearchView.setAlpha(0.0f);
                     } else {
-                        r3 = z;
+                        z4 = z;
                     }
                     this.noMediaFiltersSearchView.animate().alpha(1.0f).setDuration(150L).start();
-                    z2 = r3;
+                    z2 = z4;
                 }
-                this.noMediaFiltersSearchView.search(j, this.communityId, j2, j3, null, z4, str, z2);
+                this.noMediaFiltersSearchView.search(j, this.communityId, j2, j3, null, z3, str, z2);
                 this.emptyView.setVisibility(8);
             }
             this.emptyView.setKeyboardHeight(this.keyboardSize, false);
             this.noMediaFiltersSearchView.setKeyboardHeight(this.keyboardSize, false);
             return;
         }
+        long j5 = searchForumDialogId;
+        long j6 = j2;
         if (view instanceof FilteredSearchView) {
             FilteredSearchView filteredSearchView = (FilteredSearchView) view;
-            filteredSearchView.setUseFromUserAsAvatar(searchForumDialogId != 0);
+            filteredSearchView.setUseFromUserAsAvatar(j5 != 0);
             filteredSearchView.setKeyboardHeight(this.keyboardSize, false);
-            filteredSearchView.search(j, this.communityId, j2, j3, FiltersView.filters[((ViewPagerAdapter.Item) this.viewPagerAdapter.items.get(i)).filterIndex], z4, str, z);
+            filteredSearchView.search(j, this.communityId, j6, j3, FiltersView.filters[((ViewPagerAdapter.Item) this.viewPagerAdapter.items.get(i)).filterIndex], z3, str, z);
             return;
         }
         if (view instanceof SearchDownloadsContainer) {
@@ -976,7 +967,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                 this.actionModeCloseView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        SearchViewPager.this.lambda$showActionMode$0(view);
+                        SearchViewPager.this.hideActionMode();
                     }
                 });
                 this.actionMode.addView(this.actionModeCloseView, LayoutHelper.createLinear(54, 54, 0.0f, 16));
@@ -992,9 +983,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             this.selectedMessagesCountTextView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    boolean lambda$showActionMode$1;
-                    lambda$showActionMode$1 = SearchViewPager.lambda$showActionMode$1(view, motionEvent);
-                    return lambda$showActionMode$1;
+                    return SearchViewPager.$r8$lambda$IWDQng5sl7zUoo6zKCuKyGfo6VY(view, motionEvent);
                 }
             });
             ActionBarMenuItem addItemWithWidth = this.actionMode.addItemWithWidth(203, R.drawable.avd_speed, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.AccDescrPremiumSpeed));
@@ -1049,11 +1038,6 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showActionMode$0(View view) {
-        hideActionMode();
-    }
-
     private boolean isSpeedItemVisible() {
         if (!UserConfig.getInstance(this.currentAccount).isPremium() && !MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked()) {
             for (MessageObject messageObject : this.selectedFiles.values()) {
@@ -1086,7 +1070,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
-                    SearchViewPager.this.lambda$onActionBarItemClick$3(arrayList, alertDialog, i2);
+                    SearchViewPager.$r8$lambda$3bJBScCEc3OFKs7UULkKBIPfdTw(SearchViewPager.this, arrayList, alertDialog, i2);
                 }
             });
             TextView textView = (TextView) builder.show().getButton(-1);
@@ -1118,9 +1102,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList2, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
-                    boolean lambda$onActionBarItemClick$4;
-                    lambda$onActionBarItemClick$4 = SearchViewPager.this.lambda$onActionBarItemClick$4(dialogsActivity3, arrayList2, charSequence, z, z2, i2, i3, topicsFragment);
-                    return lambda$onActionBarItemClick$4;
+                    return SearchViewPager.$r8$lambda$ABj7mDzjPPFeWtcawB4p4ot2Rg0(SearchViewPager.this, dialogsActivity3, arrayList2, charSequence, z, z2, i2, i3, topicsFragment);
                 }
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -1132,51 +1114,55 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onActionBarItemClick$3(ArrayList arrayList, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$3bJBScCEc3OFKs7UULkKBIPfdTw(SearchViewPager searchViewPager, ArrayList arrayList, AlertDialog alertDialog, int i) {
+        searchViewPager.getClass();
         alertDialog.dismiss();
-        this.parent.getDownloadController().deleteRecentFiles(arrayList);
-        hideActionMode();
+        searchViewPager.parent.getDownloadController().deleteRecentFiles(arrayList);
+        searchViewPager.hideActionMode();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$onActionBarItemClick$4(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$ABj7mDzjPPFeWtcawB4p4ot2Rg0(SearchViewPager searchViewPager, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        long j;
+        searchViewPager.getClass();
         ArrayList<MessageObject> arrayList2 = new ArrayList<>();
-        Iterator it = this.selectedFiles.keySet().iterator();
+        Iterator it = searchViewPager.selectedFiles.keySet().iterator();
         while (it.hasNext()) {
-            arrayList2.add((MessageObject) this.selectedFiles.get((FilteredSearchView.MessageHashId) it.next()));
+            arrayList2.add((MessageObject) searchViewPager.selectedFiles.get((FilteredSearchView.MessageHashId) it.next()));
         }
-        this.selectedFiles.clear();
-        showActionMode(false);
-        if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == AccountInstance.getInstance(this.currentAccount).getUserConfig().getClientUserId() || charSequence != null) {
+        searchViewPager.selectedFiles.clear();
+        searchViewPager.showActionMode(false);
+        if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == AccountInstance.getInstance(searchViewPager.currentAccount).getUserConfig().getClientUserId() || charSequence != null) {
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                long j = ((MessagesStorage.TopicKey) arrayList.get(i3)).dialogId;
+                long j2 = ((MessagesStorage.TopicKey) arrayList.get(i3)).dialogId;
                 if (charSequence != null) {
-                    AccountInstance.getInstance(this.currentAccount).getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                    j = j2;
+                    AccountInstance.getInstance(searchViewPager.currentAccount).getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                } else {
+                    j = j2;
                 }
-                AccountInstance.getInstance(this.currentAccount).getSendMessagesHelper().sendMessage(arrayList2, j, false, false, true, 0, 0L);
+                AccountInstance.getInstance(searchViewPager.currentAccount).getSendMessagesHelper().sendMessage(arrayList2, j, false, false, true, 0, 0L);
             }
             dialogsActivity.finishFragment();
-        } else {
-            long j2 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-            Bundle bundle = new Bundle();
-            bundle.putBoolean("scrollToTopOnResume", true);
-            if (DialogObject.isEncryptedDialog(j2)) {
-                bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j2));
-            } else {
-                if (DialogObject.isUserDialog(j2)) {
-                    bundle.putLong("user_id", j2);
-                } else {
-                    bundle.putLong("chat_id", -j2);
-                }
-                if (!AccountInstance.getInstance(this.currentAccount).getMessagesController().checkCanOpenChat(bundle, dialogsActivity)) {
-                    return true;
-                }
-            }
-            ChatActivity chatActivity = new ChatActivity(bundle);
-            dialogsActivity.presentFragment(chatActivity, true);
-            chatActivity.showFieldPanelForForward(true, arrayList2);
+            return true;
         }
+        long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("scrollToTopOnResume", true);
+        if (DialogObject.isEncryptedDialog(j3)) {
+            bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j3));
+        } else {
+            if (DialogObject.isUserDialog(j3)) {
+                bundle.putLong("user_id", j3);
+            } else {
+                bundle.putLong("chat_id", -j3);
+            }
+            if (!AccountInstance.getInstance(searchViewPager.currentAccount).getMessagesController().checkCanOpenChat(bundle, dialogsActivity)) {
+                return true;
+            }
+        }
+        ChatActivity chatActivity = new ChatActivity(bundle);
+        dialogsActivity.presentFragment(chatActivity, true);
+        chatActivity.showFieldPanelForForward(true, arrayList2);
         return true;
     }
 
@@ -1350,7 +1336,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         arrayList.addAll(SimpleThemeDescription.createThemeDescriptions(new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                SearchViewPager.this.lambda$getThemeDescriptions$5();
+                SearchViewPager.$r8$lambda$q4YyeqWeE-QzvVLmRexiLYcLlAY(SearchViewPager.this);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -1360,9 +1346,8 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         }, Theme.key_actionBarActionModeDefaultIcon));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$5() {
-        NumberTextView numberTextView = this.selectedMessagesCountTextView;
+    public static /* synthetic */ void $r8$lambda$q4YyeqWeE-QzvVLmRexiLYcLlAY(SearchViewPager searchViewPager) {
+        NumberTextView numberTextView = searchViewPager.selectedMessagesCountTextView;
         if (numberTextView != null) {
             numberTextView.setTextColor(Theme.getColor(Theme.key_actionBarActionModeDefaultIcon));
         }

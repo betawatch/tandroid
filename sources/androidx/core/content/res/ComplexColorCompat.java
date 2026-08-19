@@ -55,15 +55,16 @@ public final class ComplexColorCompat {
     }
 
     public boolean onStateChanged(int[] iArr) {
-        if (isStateful()) {
-            ColorStateList colorStateList = this.mColorStateList;
-            int colorForState = colorStateList.getColorForState(iArr, colorStateList.getDefaultColor());
-            if (colorForState != this.mColor) {
-                this.mColor = colorForState;
-                return true;
-            }
+        if (!isStateful()) {
+            return false;
         }
-        return false;
+        ColorStateList colorStateList = this.mColorStateList;
+        int colorForState = colorStateList.getColorForState(iArr, colorStateList.getDefaultColor());
+        if (colorForState == this.mColor) {
+            return false;
+        }
+        this.mColor = colorForState;
+        return true;
     }
 
     public boolean willDraw() {
@@ -93,7 +94,7 @@ public final class ComplexColorCompat {
             throw new XmlPullParserException("No start tag found");
         }
         String name = xml.getName();
-        name.hashCode();
+        name.getClass();
         if (name.equals("gradient")) {
             return from(GradientColorInflaterCompat.createFromXmlInner(resources, xml, asAttributeSet, theme));
         }

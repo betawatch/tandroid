@@ -42,7 +42,6 @@ import androidx.core.view.ViewCompat;
 import androidx.customview.view.AbsSavedState;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
@@ -1000,10 +999,11 @@ public class Toolbar extends ViewGroup implements MenuHost {
         int i4;
         int i5;
         int i6;
+        int[] iArr;
         int i7;
         int i8;
         int i9;
-        int[] iArr = this.mTempMargins;
+        int[] iArr2 = this.mTempMargins;
         boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
         int i10 = !isLayoutRtl ? 1 : 0;
         if (shouldLayout(this.mNavButtonView)) {
@@ -1024,7 +1024,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         }
         int currentContentInsetStart = getCurrentContentInsetStart();
         int max = Math.max(currentContentInsetStart, i3);
-        iArr[isLayoutRtl ? 1 : 0] = Math.max(0, currentContentInsetStart - i3);
+        iArr2[isLayoutRtl ? 1 : 0] = Math.max(0, currentContentInsetStart - i3);
         if (shouldLayout(this.mMenuView)) {
             measureChildConstrained(this.mMenuView, i, max, i2, 0, this.mMaxButtonHeight);
             i6 = this.mMenuView.getMeasuredWidth() + getHorizontalMargins(this.mMenuView);
@@ -1035,11 +1035,14 @@ public class Toolbar extends ViewGroup implements MenuHost {
         }
         int currentContentInsetEnd = getCurrentContentInsetEnd();
         int max2 = max + Math.max(currentContentInsetEnd, i6);
-        iArr[i10] = Math.max(0, currentContentInsetEnd - i6);
+        iArr2[i10] = Math.max(0, currentContentInsetEnd - i6);
         if (shouldLayout(this.mExpandedActionView)) {
+            iArr = iArr2;
             max2 += measureChildCollapseMargins(this.mExpandedActionView, i, max2, i2, 0, iArr);
             i4 = Math.max(i4, this.mExpandedActionView.getMeasuredHeight() + getVerticalMargins(this.mExpandedActionView));
             i5 = View.combineMeasuredStates(i5, this.mExpandedActionView.getMeasuredState());
+        } else {
+            iArr = iArr2;
         }
         if (shouldLayout(this.mLogoView)) {
             max2 += measureChildCollapseMargins(this.mLogoView, i, max2, i2, 0, iArr);
@@ -1051,52 +1054,57 @@ public class Toolbar extends ViewGroup implements MenuHost {
             View childAt = getChildAt(i11);
             if (((LayoutParams) childAt.getLayoutParams()).mViewType == 0 && shouldLayout(childAt)) {
                 max2 += measureChildCollapseMargins(childAt, i, max2, i2, 0, iArr);
-                i4 = Math.max(i4, childAt.getMeasuredHeight() + getVerticalMargins(childAt));
+                int max3 = Math.max(i4, childAt.getMeasuredHeight() + getVerticalMargins(childAt));
                 i5 = View.combineMeasuredStates(i5, childAt.getMeasuredState());
+                i4 = max3;
+            } else {
+                max2 = max2;
             }
         }
-        int i12 = this.mTitleMarginTop + this.mTitleMarginBottom;
-        int i13 = this.mTitleMarginStart + this.mTitleMarginEnd;
+        int i12 = max2;
+        int i13 = this.mTitleMarginTop + this.mTitleMarginBottom;
+        int i14 = this.mTitleMarginStart + this.mTitleMarginEnd;
         if (shouldLayout(this.mTitleTextView)) {
-            measureChildCollapseMargins(this.mTitleTextView, i, max2 + i13, i2, i12, iArr);
+            measureChildCollapseMargins(this.mTitleTextView, i, i12 + i14, i2, i13, iArr);
             int measuredWidth = this.mTitleTextView.getMeasuredWidth() + getHorizontalMargins(this.mTitleTextView);
-            i9 = this.mTitleTextView.getMeasuredHeight() + getVerticalMargins(this.mTitleTextView);
-            i7 = View.combineMeasuredStates(i5, this.mTitleTextView.getMeasuredState());
+            int measuredHeight = this.mTitleTextView.getMeasuredHeight() + getVerticalMargins(this.mTitleTextView);
             i8 = measuredWidth;
+            i7 = View.combineMeasuredStates(i5, this.mTitleTextView.getMeasuredState());
+            i9 = measuredHeight;
         } else {
             i7 = i5;
             i8 = 0;
             i9 = 0;
         }
         if (shouldLayout(this.mSubtitleTextView)) {
-            i8 = Math.max(i8, measureChildCollapseMargins(this.mSubtitleTextView, i, max2 + i13, i2, i9 + i12, iArr));
+            i8 = Math.max(i8, measureChildCollapseMargins(this.mSubtitleTextView, i, i12 + i14, i2, i13 + i9, iArr));
             i9 += this.mSubtitleTextView.getMeasuredHeight() + getVerticalMargins(this.mSubtitleTextView);
             i7 = View.combineMeasuredStates(i7, this.mSubtitleTextView.getMeasuredState());
         }
-        int max3 = Math.max(i4, i9);
-        setMeasuredDimension(View.resolveSizeAndState(Math.max(max2 + i8 + getPaddingLeft() + getPaddingRight(), getSuggestedMinimumWidth()), i, (-16777216) & i7), shouldCollapse() ? 0 : View.resolveSizeAndState(Math.max(max3 + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i7 << 16));
+        int max4 = Math.max(i4, i9);
+        setMeasuredDimension(View.resolveSizeAndState(Math.max(i12 + i8 + getPaddingLeft() + getPaddingRight(), getSuggestedMinimumWidth()), i, (-16777216) & i7), shouldCollapse() ? 0 : View.resolveSizeAndState(Math.max(max4 + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i7 << 16));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x01a5  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x00ff  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0060  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0077  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00b4  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00cb  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00e8  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x02a1 A[LOOP:0: B:41:0x029f->B:42:0x02a1, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x02c3 A[LOOP:1: B:45:0x02c1->B:46:0x02c3, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x02ed  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x02fc A[LOOP:2: B:54:0x02fa->B:55:0x02fc, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0227  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0298 A[LOOP:0: B:40:0x0296->B:41:0x0298, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x02b6 A[LOOP:1: B:44:0x02b4->B:45:0x02b6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x02dd  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x02ec A[LOOP:2: B:53:0x02ea->B:54:0x02ec, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x021e  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1104,36 +1112,33 @@ public class Toolbar extends ViewGroup implements MenuHost {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5;
         int i6;
+        int max;
         boolean shouldLayout;
         boolean shouldLayout2;
+        boolean z2;
         int i7;
         int i8;
+        int paddingTop;
         int i9;
         int i10;
         int i11;
         int i12;
         int i13;
-        int paddingTop;
+        int size;
         int i14;
         int i15;
+        int size2;
         int i16;
         int i17;
-        int i18;
-        int size;
-        int i19;
-        int i20;
-        int size2;
-        int i21;
-        int i22;
         int size3;
-        boolean z2 = ViewCompat.getLayoutDirection(this) == 1;
+        boolean z3 = ViewCompat.getLayoutDirection(this) == 1;
         int width = getWidth();
         int height = getHeight();
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
         int paddingTop2 = getPaddingTop();
         int paddingBottom = getPaddingBottom();
-        int i23 = width - paddingRight;
+        int i18 = width - paddingRight;
         int[] iArr = this.mTempMargins;
         iArr[1] = 0;
         iArr[0] = 0;
@@ -1142,18 +1147,18 @@ public class Toolbar extends ViewGroup implements MenuHost {
         if (!shouldLayout(this.mNavButtonView)) {
             i5 = paddingLeft;
         } else {
-            if (z2) {
-                i6 = layoutChildRight(this.mNavButtonView, i23, iArr, min);
+            if (z3) {
+                i6 = layoutChildRight(this.mNavButtonView, i18, iArr, min);
                 i5 = paddingLeft;
                 if (shouldLayout(this.mCollapseButtonView)) {
-                    if (z2) {
+                    if (z3) {
                         i6 = layoutChildRight(this.mCollapseButtonView, i6, iArr, min);
                     } else {
                         i5 = layoutChildLeft(this.mCollapseButtonView, i5, iArr, min);
                     }
                 }
                 if (shouldLayout(this.mMenuView)) {
-                    if (z2) {
+                    if (z3) {
                         i5 = layoutChildLeft(this.mMenuView, i5, iArr, min);
                     } else {
                         i6 = layoutChildRight(this.mMenuView, i6, iArr, min);
@@ -1162,18 +1167,18 @@ public class Toolbar extends ViewGroup implements MenuHost {
                 int currentContentInsetLeft = getCurrentContentInsetLeft();
                 int currentContentInsetRight = getCurrentContentInsetRight();
                 iArr[0] = Math.max(0, currentContentInsetLeft - i5);
-                iArr[1] = Math.max(0, currentContentInsetRight - (i23 - i6));
-                int max = Math.max(i5, currentContentInsetLeft);
-                int min2 = Math.min(i6, i23 - currentContentInsetRight);
+                iArr[1] = Math.max(0, currentContentInsetRight - (i18 - i6));
+                max = Math.max(i5, currentContentInsetLeft);
+                int min2 = Math.min(i6, i18 - currentContentInsetRight);
                 if (shouldLayout(this.mExpandedActionView)) {
-                    if (z2) {
+                    if (z3) {
                         min2 = layoutChildRight(this.mExpandedActionView, min2, iArr, min);
                     } else {
                         max = layoutChildLeft(this.mExpandedActionView, max, iArr, min);
                     }
                 }
                 if (shouldLayout(this.mLogoView)) {
-                    if (z2) {
+                    if (z3) {
                         min2 = layoutChildRight(this.mLogoView, min2, iArr, min);
                     } else {
                         max = layoutChildLeft(this.mLogoView, max, iArr, min);
@@ -1182,162 +1187,149 @@ public class Toolbar extends ViewGroup implements MenuHost {
                 shouldLayout = shouldLayout(this.mTitleTextView);
                 shouldLayout2 = shouldLayout(this.mSubtitleTextView);
                 if (shouldLayout) {
-                    i7 = paddingRight;
-                    i8 = 0;
+                    z2 = z3;
+                    i7 = 0;
                 } else {
                     LayoutParams layoutParams = (LayoutParams) this.mTitleTextView.getLayoutParams();
-                    i7 = paddingRight;
-                    i8 = ((ViewGroup.MarginLayoutParams) layoutParams).topMargin + this.mTitleTextView.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
+                    z2 = z3;
+                    i7 = ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin + ((ViewGroup.MarginLayoutParams) layoutParams).topMargin + this.mTitleTextView.getMeasuredHeight();
                 }
-                if (shouldLayout2) {
-                    i9 = width;
-                } else {
+                if (!shouldLayout2) {
                     LayoutParams layoutParams2 = (LayoutParams) this.mSubtitleTextView.getLayoutParams();
-                    i9 = width;
-                    i8 += ((ViewGroup.MarginLayoutParams) layoutParams2).topMargin + this.mSubtitleTextView.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin;
+                    i7 += ((ViewGroup.MarginLayoutParams) layoutParams2).topMargin + this.mSubtitleTextView.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin;
                 }
                 if (!shouldLayout || shouldLayout2) {
                     TextView textView = !shouldLayout ? this.mTitleTextView : this.mSubtitleTextView;
                     TextView textView2 = !shouldLayout2 ? this.mSubtitleTextView : this.mTitleTextView;
                     LayoutParams layoutParams3 = (LayoutParams) textView.getLayoutParams();
                     LayoutParams layoutParams4 = (LayoutParams) textView2.getLayoutParams();
-                    boolean z3 = (!shouldLayout && this.mTitleTextView.getMeasuredWidth() > 0) || (shouldLayout2 && this.mSubtitleTextView.getMeasuredWidth() > 0);
-                    i10 = this.mGravity & 112;
-                    i11 = paddingLeft;
-                    if (i10 != 48) {
-                        i12 = max;
-                        i13 = min;
+                    int i19 = i7;
+                    boolean z4 = (!shouldLayout && this.mTitleTextView.getMeasuredWidth() > 0) || (shouldLayout2 && this.mSubtitleTextView.getMeasuredWidth() > 0);
+                    i8 = this.mGravity & 112;
+                    int i20 = max;
+                    if (i8 != 48) {
                         paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) layoutParams3).topMargin + this.mTitleMarginTop;
-                    } else if (i10 != 80) {
-                        int i24 = (((height - paddingTop2) - paddingBottom) - i8) / 2;
-                        int i25 = ((ViewGroup.MarginLayoutParams) layoutParams3).topMargin;
-                        i13 = min;
-                        int i26 = this.mTitleMarginTop;
-                        i12 = max;
-                        if (i24 < i25 + i26) {
-                            i24 = i25 + i26;
+                    } else if (i8 != 80) {
+                        int i21 = (((height - paddingTop2) - paddingBottom) - i19) / 2;
+                        int i22 = ((ViewGroup.MarginLayoutParams) layoutParams3).topMargin;
+                        int i23 = this.mTitleMarginTop;
+                        if (i21 < i22 + i23) {
+                            i21 = i22 + i23;
                         } else {
-                            int i27 = (((height - paddingBottom) - i8) - i24) - paddingTop2;
-                            int i28 = ((ViewGroup.MarginLayoutParams) layoutParams3).bottomMargin;
-                            int i29 = this.mTitleMarginBottom;
-                            if (i27 < i28 + i29) {
-                                i24 = Math.max(0, i24 - ((((ViewGroup.MarginLayoutParams) layoutParams4).bottomMargin + i29) - i27));
+                            int i24 = (((height - paddingBottom) - i19) - i21) - paddingTop2;
+                            int i25 = ((ViewGroup.MarginLayoutParams) layoutParams3).bottomMargin;
+                            int i26 = this.mTitleMarginBottom;
+                            if (i24 < i25 + i26) {
+                                i21 = Math.max(0, i21 - ((((ViewGroup.MarginLayoutParams) layoutParams4).bottomMargin + i26) - i24));
                             }
                         }
-                        paddingTop = paddingTop2 + i24;
+                        paddingTop = paddingTop2 + i21;
                     } else {
-                        i12 = max;
-                        i13 = min;
-                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) layoutParams4).bottomMargin) - this.mTitleMarginBottom) - i8;
+                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) layoutParams4).bottomMargin) - this.mTitleMarginBottom) - i19;
                     }
                     if (!z2) {
-                        int i30 = (z3 ? this.mTitleMarginStart : 0) - iArr[1];
-                        min2 -= Math.max(0, i30);
-                        iArr[1] = Math.max(0, -i30);
+                        int i27 = (z4 ? this.mTitleMarginStart : 0) - iArr[1];
+                        min2 -= Math.max(0, i27);
+                        iArr[1] = Math.max(0, -i27);
                         if (shouldLayout) {
                             LayoutParams layoutParams5 = (LayoutParams) this.mTitleTextView.getLayoutParams();
                             int measuredWidth = min2 - this.mTitleTextView.getMeasuredWidth();
                             int measuredHeight = this.mTitleTextView.getMeasuredHeight() + paddingTop;
                             this.mTitleTextView.layout(measuredWidth, paddingTop, min2, measuredHeight);
-                            i17 = measuredWidth - this.mTitleMarginEnd;
+                            i12 = measuredWidth - this.mTitleMarginEnd;
                             paddingTop = measuredHeight + ((ViewGroup.MarginLayoutParams) layoutParams5).bottomMargin;
                         } else {
-                            i17 = min2;
+                            i12 = min2;
                         }
                         if (shouldLayout2) {
-                            int i31 = paddingTop + ((ViewGroup.MarginLayoutParams) ((LayoutParams) this.mSubtitleTextView.getLayoutParams())).topMargin;
-                            this.mSubtitleTextView.layout(min2 - this.mSubtitleTextView.getMeasuredWidth(), i31, min2, this.mSubtitleTextView.getMeasuredHeight() + i31);
-                            i18 = min2 - this.mTitleMarginEnd;
+                            int i28 = paddingTop + ((ViewGroup.MarginLayoutParams) ((LayoutParams) this.mSubtitleTextView.getLayoutParams())).topMargin;
+                            this.mSubtitleTextView.layout(min2 - this.mSubtitleTextView.getMeasuredWidth(), i28, min2, this.mSubtitleTextView.getMeasuredHeight() + i28);
+                            i13 = min2 - this.mTitleMarginEnd;
                         } else {
-                            i18 = min2;
+                            i13 = min2;
                         }
-                        if (z3) {
-                            min2 = Math.min(i17, i18);
+                        if (z4) {
+                            min2 = Math.min(i12, i13);
                         }
-                        max = i12;
+                        max = i20;
                     } else {
-                        i14 = 0;
-                        int i32 = (z3 ? this.mTitleMarginStart : 0) - iArr[0];
-                        max = i12 + Math.max(0, i32);
-                        iArr[0] = Math.max(0, -i32);
+                        i9 = 0;
+                        int i29 = (z4 ? this.mTitleMarginStart : 0) - iArr[0];
+                        max = i20 + Math.max(0, i29);
+                        iArr[0] = Math.max(0, -i29);
                         if (shouldLayout) {
                             LayoutParams layoutParams6 = (LayoutParams) this.mTitleTextView.getLayoutParams();
                             int measuredWidth2 = this.mTitleTextView.getMeasuredWidth() + max;
                             int measuredHeight2 = this.mTitleTextView.getMeasuredHeight() + paddingTop;
                             this.mTitleTextView.layout(max, paddingTop, measuredWidth2, measuredHeight2);
-                            i15 = measuredWidth2 + this.mTitleMarginEnd;
+                            i10 = measuredWidth2 + this.mTitleMarginEnd;
                             paddingTop = measuredHeight2 + ((ViewGroup.MarginLayoutParams) layoutParams6).bottomMargin;
                         } else {
-                            i15 = max;
+                            i10 = max;
                         }
                         if (shouldLayout2) {
-                            int i33 = paddingTop + ((ViewGroup.MarginLayoutParams) ((LayoutParams) this.mSubtitleTextView.getLayoutParams())).topMargin;
+                            int i30 = paddingTop + ((ViewGroup.MarginLayoutParams) ((LayoutParams) this.mSubtitleTextView.getLayoutParams())).topMargin;
                             int measuredWidth3 = this.mSubtitleTextView.getMeasuredWidth() + max;
-                            this.mSubtitleTextView.layout(max, i33, measuredWidth3, this.mSubtitleTextView.getMeasuredHeight() + i33);
-                            i16 = measuredWidth3 + this.mTitleMarginEnd;
+                            this.mSubtitleTextView.layout(max, i30, measuredWidth3, this.mSubtitleTextView.getMeasuredHeight() + i30);
+                            i11 = measuredWidth3 + this.mTitleMarginEnd;
                         } else {
-                            i16 = max;
+                            i11 = max;
                         }
-                        if (z3) {
-                            max = Math.max(i15, i16);
+                        if (z4) {
+                            max = Math.max(i10, i11);
                         }
                         addCustomViewsWithGravity(this.mTempViews, 3);
                         size = this.mTempViews.size();
-                        i19 = max;
-                        for (i20 = 0; i20 < size; i20++) {
-                            i19 = layoutChildLeft((View) this.mTempViews.get(i20), i19, iArr, i13);
+                        i14 = max;
+                        for (i15 = 0; i15 < size; i15++) {
+                            i14 = layoutChildLeft((View) this.mTempViews.get(i15), i14, iArr, min);
                         }
-                        int i34 = i13;
                         addCustomViewsWithGravity(this.mTempViews, 5);
                         size2 = this.mTempViews.size();
-                        for (i21 = 0; i21 < size2; i21++) {
-                            min2 = layoutChildRight((View) this.mTempViews.get(i21), min2, iArr, i34);
+                        for (i16 = 0; i16 < size2; i16++) {
+                            min2 = layoutChildRight((View) this.mTempViews.get(i16), min2, iArr, min);
                         }
                         addCustomViewsWithGravity(this.mTempViews, 1);
                         int viewListMeasuredWidth = getViewListMeasuredWidth(this.mTempViews, iArr);
-                        i22 = (i11 + (((i9 - i11) - i7) / 2)) - (viewListMeasuredWidth / 2);
-                        int i35 = viewListMeasuredWidth + i22;
-                        if (i22 >= i19) {
-                            i19 = i35 > min2 ? i22 - (i35 - min2) : i22;
+                        i17 = (paddingLeft + (((width - paddingLeft) - paddingRight) / 2)) - (viewListMeasuredWidth / 2);
+                        int i31 = viewListMeasuredWidth + i17;
+                        if (i17 >= i14) {
+                            i14 = i31 > min2 ? i17 - (i31 - min2) : i17;
                         }
                         size3 = this.mTempViews.size();
-                        while (i14 < size3) {
-                            i19 = layoutChildLeft((View) this.mTempViews.get(i14), i19, iArr, i34);
-                            i14++;
+                        while (i9 < size3) {
+                            i14 = layoutChildLeft((View) this.mTempViews.get(i9), i14, iArr, min);
+                            i9++;
                         }
                         this.mTempViews.clear();
                         return;
                     }
-                } else {
-                    i11 = paddingLeft;
-                    i13 = min;
                 }
-                i14 = 0;
+                i9 = 0;
                 addCustomViewsWithGravity(this.mTempViews, 3);
                 size = this.mTempViews.size();
-                i19 = max;
-                while (i20 < size) {
+                i14 = max;
+                while (i15 < size) {
                 }
-                int i342 = i13;
                 addCustomViewsWithGravity(this.mTempViews, 5);
                 size2 = this.mTempViews.size();
-                while (i21 < size2) {
+                while (i16 < size2) {
                 }
                 addCustomViewsWithGravity(this.mTempViews, 1);
                 int viewListMeasuredWidth2 = getViewListMeasuredWidth(this.mTempViews, iArr);
-                i22 = (i11 + (((i9 - i11) - i7) / 2)) - (viewListMeasuredWidth2 / 2);
-                int i352 = viewListMeasuredWidth2 + i22;
-                if (i22 >= i19) {
+                i17 = (paddingLeft + (((width - paddingLeft) - paddingRight) / 2)) - (viewListMeasuredWidth2 / 2);
+                int i312 = viewListMeasuredWidth2 + i17;
+                if (i17 >= i14) {
                 }
                 size3 = this.mTempViews.size();
-                while (i14 < size3) {
+                while (i9 < size3) {
                 }
                 this.mTempViews.clear();
                 return;
             }
             i5 = layoutChildLeft(this.mNavButtonView, paddingLeft, iArr, min);
         }
-        i6 = i23;
+        i6 = i18;
         if (shouldLayout(this.mCollapseButtonView)) {
         }
         if (shouldLayout(this.mMenuView)) {
@@ -1345,9 +1337,9 @@ public class Toolbar extends ViewGroup implements MenuHost {
         int currentContentInsetLeft2 = getCurrentContentInsetLeft();
         int currentContentInsetRight2 = getCurrentContentInsetRight();
         iArr[0] = Math.max(0, currentContentInsetLeft2 - i5);
-        iArr[1] = Math.max(0, currentContentInsetRight2 - (i23 - i6));
-        int max2 = Math.max(i5, currentContentInsetLeft2);
-        int min22 = Math.min(i6, i23 - currentContentInsetRight2);
+        iArr[1] = Math.max(0, currentContentInsetRight2 - (i18 - i6));
+        max = Math.max(i5, currentContentInsetLeft2);
+        int min22 = Math.min(i6, i18 - currentContentInsetRight2);
         if (shouldLayout(this.mExpandedActionView)) {
         }
         if (shouldLayout(this.mLogoView)) {
@@ -1356,9 +1348,9 @@ public class Toolbar extends ViewGroup implements MenuHost {
         shouldLayout2 = shouldLayout(this.mSubtitleTextView);
         if (shouldLayout) {
         }
-        if (shouldLayout2) {
+        if (!shouldLayout2) {
         }
-        if (shouldLayout) {
+        if (!shouldLayout) {
         }
         if (!shouldLayout) {
         }
@@ -1366,11 +1358,12 @@ public class Toolbar extends ViewGroup implements MenuHost {
         }
         LayoutParams layoutParams32 = (LayoutParams) textView.getLayoutParams();
         LayoutParams layoutParams42 = (LayoutParams) textView2.getLayoutParams();
+        int i192 = i7;
         if (shouldLayout) {
         }
-        i10 = this.mGravity & 112;
-        i11 = paddingLeft;
-        if (i10 != 48) {
+        i8 = this.mGravity & 112;
+        int i202 = max;
+        if (i8 != 48) {
         }
         if (!z2) {
         }
@@ -1613,9 +1606,13 @@ public class Toolbar extends ViewGroup implements MenuHost {
     }
 
     public void invalidateMenu() {
-        Iterator it = this.mProvidedMenuItems.iterator();
-        while (it.hasNext()) {
-            getMenu().removeItem(((MenuItem) it.next()).getItemId());
+        ArrayList arrayList = this.mProvidedMenuItems;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            getMenu().removeItem(((MenuItem) obj).getItemId());
         }
         onCreateMenu();
     }

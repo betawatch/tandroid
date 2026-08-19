@@ -53,14 +53,15 @@ public abstract class zzhk extends zzfv {
                 throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
-        if (zzhkVar == null) {
-            zzhkVar = (zzhk) ((zzhk) zzjq.zze(cls)).zzd(6, null, null);
-            if (zzhkVar == null) {
-                throw new IllegalStateException();
-            }
-            map.put(cls, zzhkVar);
+        if (zzhkVar != null) {
+            return zzhkVar;
         }
-        return zzhkVar;
+        zzhk zzhkVar2 = (zzhk) ((zzhk) zzjq.zze(cls)).zzd(6, null, null);
+        if (zzhkVar2 == null) {
+            throw new IllegalStateException();
+        }
+        map.put(cls, zzhkVar2);
+        return zzhkVar2;
     }
 
     protected static zzhk zzq(zzhk zzhkVar, byte[] bArr, zzgw zzgwVar) {
@@ -222,22 +223,22 @@ public abstract class zzhk extends zzfv {
 
     @Override // com.google.android.gms.internal.play_billing.zzim
     public final int zzk() {
-        int i;
         if (zzA()) {
-            i = zzc(null);
-            if (i < 0) {
-                throw new IllegalStateException("serialized size must be non-negative, was " + i);
+            int zzc = zzc(null);
+            if (zzc >= 0) {
+                return zzc;
             }
-        } else {
-            i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (i == Integer.MAX_VALUE) {
-                i = zzc(null);
-                if (i < 0) {
-                    throw new IllegalStateException("serialized size must be non-negative, was " + i);
-                }
-                this.zzd = (this.zzd & TLObject.FLAG_31) | i;
-            }
+            throw new IllegalStateException("serialized size must be non-negative, was " + zzc);
         }
-        return i;
+        int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        int zzc2 = zzc(null);
+        if (zzc2 >= 0) {
+            this.zzd = (this.zzd & TLObject.FLAG_31) | zzc2;
+            return zzc2;
+        }
+        throw new IllegalStateException("serialized size must be non-negative, was " + zzc2);
     }
 }

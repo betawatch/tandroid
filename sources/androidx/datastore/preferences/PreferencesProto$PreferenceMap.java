@@ -72,6 +72,7 @@ public final class PreferencesProto$PreferenceMap extends GeneratedMessageLite i
 
     @Override // androidx.datastore.preferences.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
+        Parser parser;
         PreferencesProto$1 preferencesProto$1 = null;
         switch (PreferencesProto$1.$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke[methodToInvoke.ordinal()]) {
             case 1:
@@ -83,17 +84,19 @@ public final class PreferencesProto$PreferenceMap extends GeneratedMessageLite i
             case 4:
                 return DEFAULT_INSTANCE;
             case 5:
-                Parser parser = PARSER;
-                if (parser == null) {
-                    synchronized (PreferencesProto$PreferenceMap.class) {
-                        try {
-                            parser = PARSER;
-                            if (parser == null) {
-                                parser = new GeneratedMessageLite.DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                                PARSER = parser;
-                            }
-                        } finally {
+                Parser parser2 = PARSER;
+                if (parser2 != null) {
+                    return parser2;
+                }
+                synchronized (PreferencesProto$PreferenceMap.class) {
+                    try {
+                        parser = PARSER;
+                        if (parser == null) {
+                            parser = new GeneratedMessageLite.DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                            PARSER = parser;
                         }
+                    } catch (Throwable th) {
+                        throw th;
                     }
                 }
                 return parser;

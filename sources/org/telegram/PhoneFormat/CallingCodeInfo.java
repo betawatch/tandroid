@@ -1,7 +1,6 @@
 package org.telegram.PhoneFormat;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /* loaded from: classes3.dex */
 public class CallingCodeInfo {
@@ -12,9 +11,13 @@ public class CallingCodeInfo {
     public ArrayList ruleSets = new ArrayList();
 
     String matchingAccessCode(String str) {
-        Iterator it = this.intlPrefixes.iterator();
-        while (it.hasNext()) {
-            String str2 = (String) it.next();
+        ArrayList arrayList = this.intlPrefixes;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            String str2 = (String) obj;
             if (str.startsWith(str2)) {
                 return str2;
             }
@@ -23,9 +26,13 @@ public class CallingCodeInfo {
     }
 
     String matchingTrunkCode(String str) {
-        Iterator it = this.trunkPrefixes.iterator();
-        while (it.hasNext()) {
-            String str2 = (String) it.next();
+        ArrayList arrayList = this.trunkPrefixes;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            String str2 = (String) obj;
             if (str.startsWith(str2)) {
                 return str2;
             }
@@ -51,16 +58,24 @@ public class CallingCodeInfo {
                 str3 = null;
             }
         }
-        Iterator it = this.ruleSets.iterator();
-        while (it.hasNext()) {
-            String format = ((RuleSet) it.next()).format(str2, str3, str4, true);
+        ArrayList arrayList = this.ruleSets;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            String format = ((RuleSet) obj).format(str2, str3, str4, true);
             if (format != null) {
                 return format;
             }
         }
-        Iterator it2 = this.ruleSets.iterator();
-        while (it2.hasNext()) {
-            String format2 = ((RuleSet) it2.next()).format(str2, str3, str4, false);
+        ArrayList arrayList2 = this.ruleSets;
+        int size2 = arrayList2.size();
+        int i2 = 0;
+        while (i2 < size2) {
+            Object obj2 = arrayList2.get(i2);
+            i2++;
+            String format2 = ((RuleSet) obj2).format(str2, str3, str4, false);
             if (format2 != null) {
                 return format2;
             }

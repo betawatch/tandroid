@@ -28,7 +28,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.DialogStoriesCell;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
     public int addBottomClip;
     int[] clipPoint;
@@ -155,7 +155,7 @@ public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
                         transitionViewHolder.drawClip = new StoryViewer.HolderClip() { // from class: org.telegram.ui.Stories.StoriesListPlaceProvider$$ExternalSyntheticLambda0
                             @Override // org.telegram.ui.Stories.StoryViewer.HolderClip
                             public final void clip(Canvas canvas, RectF rectF, float f, boolean z) {
-                                StoriesListPlaceProvider.lambda$findView$0(path, canvas, rectF, f, z);
+                                StoriesListPlaceProvider.$r8$lambda$dVvQM61LLLmGehYO5ae62iOJhMA(path, canvas, rectF, f, z);
                             }
                         };
                     } else {
@@ -220,7 +220,7 @@ public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
                     transitionViewHolder.drawAbove = new StoryViewer.HolderDrawAbove() { // from class: org.telegram.ui.Stories.StoriesListPlaceProvider$$ExternalSyntheticLambda1
                         @Override // org.telegram.ui.Stories.StoryViewer.HolderDrawAbove
                         public final void draw(Canvas canvas, RectF rectF, float f, boolean z) {
-                            StoriesListPlaceProvider.lambda$findView$1(SharedPhotoVideoCell2.this, fastScroll, iArr, canvas, rectF, f, z);
+                            StoriesListPlaceProvider.$r8$lambda$DVGIpiWkCMGnkOFEE2Al1jnXguk(SharedPhotoVideoCell2.this, fastScroll, iArr, canvas, rectF, f, z);
                         }
                     };
                     transitionViewHolder.clipParent = (View) sharedPhotoVideoCell2.getParent();
@@ -319,8 +319,7 @@ public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$findView$0(Path path, Canvas canvas, RectF rectF, float f, boolean z) {
+    public static /* synthetic */ void $r8$lambda$dVvQM61LLLmGehYO5ae62iOJhMA(Path path, Canvas canvas, RectF rectF, float f, boolean z) {
         if (z) {
             return;
         }
@@ -330,8 +329,7 @@ public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
         canvas.clipPath(path, Region.Op.DIFFERENCE);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$findView$1(SharedPhotoVideoCell2 sharedPhotoVideoCell2, RecyclerListView.FastScroll fastScroll, int[] iArr, Canvas canvas, RectF rectF, float f, boolean z) {
+    public static /* synthetic */ void $r8$lambda$DVGIpiWkCMGnkOFEE2Al1jnXguk(SharedPhotoVideoCell2 sharedPhotoVideoCell2, RecyclerListView.FastScroll fastScroll, int[] iArr, Canvas canvas, RectF rectF, float f, boolean z) {
         sharedPhotoVideoCell2.drawDuration(canvas, rectF, f);
         sharedPhotoVideoCell2.drawViews(canvas, rectF, f);
         if (sharedPhotoVideoCell2.isSearchingHashtag) {

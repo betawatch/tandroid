@@ -128,16 +128,11 @@ public class ManageChatUserCell extends FrameLayout {
             this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.ManageChatUserCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ManageChatUserCell.this.lambda$new$0(view);
+                    r0.delegate.onOptionsButtonCheck(ManageChatUserCell.this, true);
                 }
             });
             this.optionsButton.setContentDescription(LocaleController.getString(R.string.AccDescrUserOptions));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.delegate.onOptionsButtonCheck(this, true);
     }
 
     public void setStoryItem(TL_stories.StoryItem storyItem, View.OnClickListener onClickListener) {
@@ -263,11 +258,11 @@ public class ManageChatUserCell extends FrameLayout {
         this.dividerColor = i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x01c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x01c6, code lost:
     
-        if (r12.equals(r6) == false) goto L128;
+        if (r12.equals(r6) == false) goto L129;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0068, code lost:
     
         if (r12.equals(r11.lastName) == false) goto L48;
      */

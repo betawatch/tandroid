@@ -20,6 +20,14 @@ final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
         this.$predicate = function2;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0085, code lost:
+    
+        if (r8.emit(r7, r0) == r1) goto L33;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0056, code lost:
+    
+        if (r8.emit(r7, r0) == r1) goto L33;
+     */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0074  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x008b  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0045  */
@@ -45,50 +53,42 @@ final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
                     if (this.$matched.element) {
                         FlowCollector flowCollector = this.$this_unsafeFlow;
                         flowKt__LimitKt$dropWhile$1$1$emit$1.label = 1;
-                        if (flowCollector.emit(obj, flowKt__LimitKt$dropWhile$1$1$emit$1) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        return Unit.INSTANCE;
-                    }
-                    Function2 function2 = this.$predicate;
-                    flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = this;
-                    flowKt__LimitKt$dropWhile$1$1$emit$1.L$1 = obj;
-                    flowKt__LimitKt$dropWhile$1$1$emit$1.label = 2;
-                    obj2 = function2.invoke(obj, flowKt__LimitKt$dropWhile$1$1$emit$1);
-                    if (obj2 == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    flowKt__LimitKt$dropWhile$1$1 = this;
-                    if (!((Boolean) obj2).booleanValue()) {
-                    }
-                } else {
-                    if (i == 1) {
-                        ResultKt.throwOnFailure(obj2);
-                        return Unit.INSTANCE;
-                    }
-                    if (i == 2) {
-                        obj = flowKt__LimitKt$dropWhile$1$1$emit$1.L$1;
-                        flowKt__LimitKt$dropWhile$1$1 = (FlowKt__LimitKt$dropWhile$1$1) flowKt__LimitKt$dropWhile$1$1$emit$1.L$0;
-                        ResultKt.throwOnFailure(obj2);
-                        if (!((Boolean) obj2).booleanValue()) {
-                            return Unit.INSTANCE;
-                        }
-                        flowKt__LimitKt$dropWhile$1$1.$matched.element = true;
-                        FlowCollector flowCollector2 = flowKt__LimitKt$dropWhile$1$1.$this_unsafeFlow;
-                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = null;
-                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$1 = null;
-                        flowKt__LimitKt$dropWhile$1$1$emit$1.label = 3;
-                        if (flowCollector2.emit(obj, flowKt__LimitKt$dropWhile$1$1$emit$1) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
                     } else {
-                        if (i != 3) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        Function2 function2 = this.$predicate;
+                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = this;
+                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$1 = obj;
+                        flowKt__LimitKt$dropWhile$1$1$emit$1.label = 2;
+                        obj2 = function2.invoke(obj, flowKt__LimitKt$dropWhile$1$1$emit$1);
+                        if (obj2 != coroutine_suspended) {
+                            flowKt__LimitKt$dropWhile$1$1 = this;
+                            if (!((Boolean) obj2).booleanValue()) {
+                            }
                         }
-                        ResultKt.throwOnFailure(obj2);
                     }
+                    return coroutine_suspended;
                 }
-                return Unit.INSTANCE;
+                if (i == 1) {
+                    ResultKt.throwOnFailure(obj2);
+                    return Unit.INSTANCE;
+                }
+                if (i != 2) {
+                    if (i != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ResultKt.throwOnFailure(obj2);
+                    return Unit.INSTANCE;
+                }
+                obj = flowKt__LimitKt$dropWhile$1$1$emit$1.L$1;
+                flowKt__LimitKt$dropWhile$1$1 = (FlowKt__LimitKt$dropWhile$1$1) flowKt__LimitKt$dropWhile$1$1$emit$1.L$0;
+                ResultKt.throwOnFailure(obj2);
+                if (!((Boolean) obj2).booleanValue()) {
+                    return Unit.INSTANCE;
+                }
+                flowKt__LimitKt$dropWhile$1$1.$matched.element = true;
+                FlowCollector flowCollector2 = flowKt__LimitKt$dropWhile$1$1.$this_unsafeFlow;
+                flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = null;
+                flowKt__LimitKt$dropWhile$1$1$emit$1.L$1 = null;
+                flowKt__LimitKt$dropWhile$1$1$emit$1.label = 3;
             }
         }
         flowKt__LimitKt$dropWhile$1$1$emit$1 = new FlowKt__LimitKt$dropWhile$1$1$emit$1(this, continuation);
@@ -97,6 +97,5 @@ final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
         i = flowKt__LimitKt$dropWhile$1$1$emit$1.label;
         if (i != 0) {
         }
-        return Unit.INSTANCE;
     }
 }

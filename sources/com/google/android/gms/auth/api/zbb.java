@@ -23,6 +23,6 @@ final class zbb extends Api.AbstractClientBuilder {
     @Override // com.google.android.gms.common.api.Api.BaseClientBuilder
     public final /* bridge */ /* synthetic */ List getImpliedScopes(Object obj) {
         GoogleSignInOptions googleSignInOptions = (GoogleSignInOptions) obj;
-        return googleSignInOptions == null ? Collections.emptyList() : googleSignInOptions.getScopes();
+        return googleSignInOptions == null ? Collections.EMPTY_LIST : googleSignInOptions.getScopes();
     }
 }

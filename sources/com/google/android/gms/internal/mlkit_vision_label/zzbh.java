@@ -18,9 +18,7 @@ public abstract class zzbh extends zzaz implements Set {
             Set set = (Set) obj;
             try {
                 if (size() == set.size()) {
-                    if (containsAll(set)) {
-                        return true;
-                    }
+                    return containsAll(set);
                 }
             } catch (ClassCastException | NullPointerException unused) {
             }

@@ -143,37 +143,37 @@ public final class Tasks {
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Executor executor, Collection<? extends Task<?>> collection) {
-        return (collection == null || collection.isEmpty()) ? forResult(Collections.emptyList()) : whenAll(collection).continueWithTask(executor, new zzab(collection));
+        return (collection == null || collection.isEmpty()) ? forResult(Collections.EMPTY_LIST) : whenAll(collection).continueWithTask(executor, new zzab(collection));
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Executor executor, Collection<? extends Task> collection) {
-        return (collection == null || collection.isEmpty()) ? forResult(Collections.emptyList()) : (Task<List<TResult>>) whenAll((Collection<? extends Task<?>>) collection).continueWith(executor, new zzaa(collection));
+        return (collection == null || collection.isEmpty()) ? forResult(Collections.EMPTY_LIST) : (Task<List<TResult>>) whenAll((Collection<? extends Task<?>>) collection).continueWith(executor, new zzaa(collection));
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Executor executor, Task<?>... taskArr) {
         if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.emptyList());
+            return forResult(Collections.EMPTY_LIST);
         }
         return whenAllComplete(executor, Arrays.asList(taskArr));
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Executor executor, Task... taskArr) {
         if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.emptyList());
+            return forResult(Collections.EMPTY_LIST);
         }
         return whenAllSuccess(executor, Arrays.asList(taskArr));
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Task<?>... taskArr) {
         if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.emptyList());
+            return forResult(Collections.EMPTY_LIST);
         }
         return whenAllComplete(Arrays.asList(taskArr));
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Task... taskArr) {
         if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.emptyList());
+            return forResult(Collections.EMPTY_LIST);
         }
         return whenAllSuccess(Arrays.asList(taskArr));
     }

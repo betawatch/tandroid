@@ -5,20 +5,34 @@ import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-interface I0 {
-    I0 b(int i);
+public final class I0 extends L0 implements v0 {
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ B0 f(long j, long j2, IntFunction intFunction) {
+        return q1.t(this, j, j2);
+    }
 
-    long count();
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        q1.q(this, consumer);
+    }
 
-    void forEach(Consumer consumer);
+    @Override // j$.util.stream.B0
+    public final /* synthetic */ void g(Object[] objArr, int i) {
+        q1.n(this, (Double[]) objArr, i);
+    }
 
-    I0 h(long j, long j2, IntFunction intFunction);
+    @Override // j$.util.stream.A0
+    public final Object c(int i) {
+        return new double[i];
+    }
 
-    void i(Object[] objArr, int i);
+    @Override // j$.util.stream.B0
+    public final Spliterator spliterator() {
+        return new Z0(this);
+    }
 
-    Object[] o(IntFunction intFunction);
-
-    int q();
-
-    Spliterator spliterator();
+    @Override // j$.util.stream.B0
+    public final j$.util.c0 spliterator() {
+        return new Z0(this);
+    }
 }

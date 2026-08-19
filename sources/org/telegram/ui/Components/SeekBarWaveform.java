@@ -262,7 +262,7 @@ public class SeekBarWaveform {
         int i4 = 0;
         float f2 = 0.0f;
         int i5 = 0;
-        while (i3 < length) {
+        loop0: while (i3 < length) {
             if (i3 == i4) {
                 int i6 = i4;
                 int i7 = 0;
@@ -286,7 +286,7 @@ public class SeekBarWaveform {
                 int i13 = 0;
                 while (i13 < i7) {
                     if (i5 >= i) {
-                        return fArr;
+                        break loop0;
                     }
                     fArr[i5] = Math.max(0.0f, (min * 7) / 31.0f);
                     i13++;
@@ -315,12 +315,12 @@ public class SeekBarWaveform {
         int i;
         float f;
         float f2;
+        float f3;
+        float f4;
+        float f5;
         RectF rectF;
         float[] fArr;
         float[] fArr2;
-        int i2;
-        int i3;
-        int i4;
         if (this.waveformBytes == null || (i = this.width) == 0 || this.alpha <= 0.0f) {
             return;
         }
@@ -328,17 +328,17 @@ public class SeekBarWaveform {
         if (dpf2 <= 0.1f) {
             return;
         }
-        float f3 = this.clearProgress;
-        if (f3 != 1.0f) {
-            float f4 = f3 + 0.10666667f;
-            this.clearProgress = f4;
-            if (f4 > 1.0f) {
+        float f6 = this.clearProgress;
+        if (f6 != 1.0f) {
+            float f7 = f6 + 0.10666667f;
+            this.clearProgress = f7;
+            if (f7 > 1.0f) {
                 this.clearProgress = 1.0f;
             } else {
                 view.invalidate();
             }
         }
-        float f5 = this.appearFloat.set(1.0f);
+        float f8 = this.appearFloat.set(1.0f);
         Path path = this.path;
         if (path == null) {
             this.path = new Path();
@@ -355,79 +355,75 @@ public class SeekBarWaveform {
         boolean z = seekBarDelegate != null && seekBarDelegate.reverseWaveform();
         float[] fArr3 = this.fromHeights;
         if (fArr3 != null && (fArr2 = this.toHeights) != null) {
-            int i5 = this.width;
-            int i6 = this.fromWidth;
-            float f6 = (i5 - i6) / (this.toWidth - i6);
+            int i2 = this.width;
+            int i3 = this.fromWidth;
+            float f9 = (i2 - i3) / (this.toWidth - i3);
             int max = Math.max(fArr3.length, fArr2.length);
             int min = Math.min(this.fromHeights.length, this.toHeights.length);
             float[] fArr4 = this.fromHeights;
             int length = fArr4.length;
             float[] fArr5 = this.toHeights;
+            f3 = 3.0f;
             float[] fArr6 = length < fArr5.length ? fArr4 : fArr5;
             float[] fArr7 = fArr4.length < fArr5.length ? fArr5 : fArr4;
             if (fArr4.length >= fArr5.length) {
-                f6 = 1.0f - f6;
+                f9 = 1.0f - f9;
             }
-            int i7 = -1;
-            f = 0.0f;
-            int i8 = 0;
-            while (i8 < max) {
-                float f7 = i8;
-                int i9 = max;
-                int clamp = MathUtils.clamp((int) Math.floor((f7 / max) * min), 0, min - 1);
-                if (i7 < clamp) {
-                    float lerp = AndroidUtilities.lerp(clamp, f7, f6) * AndroidUtilities.dpf2(3.0f);
-                    if (z) {
-                        i3 = 1;
-                        i4 = (fArr6.length - 1) - clamp;
-                    } else {
-                        i3 = 1;
-                        i4 = clamp;
-                    }
-                    addBar(this.path, lerp, AndroidUtilities.dpf2(AndroidUtilities.lerp(fArr6[i4], fArr7[z ? (fArr7.length - i3) - i8 : i8], f6)));
-                    i7 = clamp;
+            int i4 = -1;
+            int i5 = 0;
+            f4 = 0.0f;
+            while (i5 < max) {
+                float f10 = i5;
+                float f11 = f8;
+                float f12 = dpf2;
+                int clamp = MathUtils.clamp((int) Math.floor((f10 / max) * min), 0, min - 1);
+                if (i4 < clamp) {
+                    addBar(this.path, AndroidUtilities.lerp(clamp, f10, f9) * AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(AndroidUtilities.lerp(fArr6[z ? (fArr6.length - 1) - clamp : clamp], fArr7[z ? (fArr7.length - 1) - i5 : i5], f9)));
+                    i4 = clamp;
                 } else {
-                    float lerp2 = AndroidUtilities.lerp(clamp, f7, f6) * AndroidUtilities.dpf2(3.0f);
+                    float lerp = AndroidUtilities.lerp(clamp, f10, f9) * AndroidUtilities.dpf2(3.0f);
                     if (z) {
-                        i2 = 1;
                         clamp = (fArr6.length - 1) - clamp;
-                    } else {
-                        i2 = 1;
                     }
-                    addBar(this.alphaPath, lerp2, AndroidUtilities.dpf2(AndroidUtilities.lerp(fArr6[clamp], fArr7[z ? (fArr7.length - i2) - i8 : i8], f6)));
-                    f = f6;
+                    addBar(this.alphaPath, lerp, AndroidUtilities.dpf2(AndroidUtilities.lerp(fArr6[clamp], fArr7[z ? (fArr7.length - 1) - i5 : i5], f9)));
+                    f4 = f9;
                 }
-                i8++;
-                max = i9;
+                i5++;
+                f8 = f11;
+                dpf2 = f12;
             }
+            f = dpf2;
+            f2 = f8;
         } else {
+            f = dpf2;
+            f2 = f8;
+            int i6 = 0;
+            f3 = 3.0f;
             if (this.heights != null) {
-                int i10 = 0;
                 while (true) {
-                    float f8 = i10;
-                    if (f8 >= dpf2 || i10 >= this.heights.length) {
+                    float f13 = i6;
+                    if (f13 >= f || i6 >= this.heights.length) {
                         break;
                     }
-                    float dpf22 = AndroidUtilities.dpf2(3.0f) * f8;
-                    float clamp2 = MathUtils.clamp((f5 * dpf2) - f8, 0.0f, 1.0f);
-                    float[] fArr8 = this.heights;
-                    addBar(this.path, dpf22, (AndroidUtilities.dpf2(fArr8[z ? (fArr8.length - 1) - i10 : i10]) * clamp2) - (AndroidUtilities.dpf2(1.0f) * (1.0f - clamp2)));
-                    i10++;
+                    float dpf22 = AndroidUtilities.dpf2(3.0f) * f13;
+                    float clamp2 = MathUtils.clamp((f2 * f) - f13, 0.0f, 1.0f);
+                    addBar(this.path, dpf22, (AndroidUtilities.dpf2(this.heights[z ? (r3.length - 1) - i6 : i6]) * clamp2) - (AndroidUtilities.dpf2(1.0f) * (1.0f - clamp2)));
+                    i6++;
                 }
             }
-            f = 0.0f;
+            f4 = 0.0f;
         }
         if (this.exploding || this.explosionRate > 0.0f) {
             canvas.save();
-            f2 = 0.0f;
-            canvas.clipRect(0.0f, 0.0f, AndroidUtilities.dpf2(3.0f) * dpf2 * (1.0f - (this.explodeProgress * this.explosionRate)), this.height);
+            f5 = 0.0f;
+            canvas.clipRect(0.0f, 0.0f, AndroidUtilities.dpf2(f3) * f * (1.0f - (this.explodeProgress * this.explosionRate)), this.height);
         } else {
-            f2 = 0.0f;
+            f5 = 0.0f;
         }
-        if (f > f2) {
+        if (f4 > f5) {
             canvas.save();
             canvas.clipPath(this.alphaPath);
-            drawFill(canvas, f * this.alpha);
+            drawFill(canvas, f4 * this.alpha);
             canvas.restore();
         }
         canvas.save();
@@ -444,21 +440,21 @@ public class SeekBarWaveform {
                     }
                 });
             }
-            float f9 = this.explodeProgress;
-            if (f9 < 0.99f && (fArr = this.heights) != null) {
-                int i11 = (int) ((1.0f - f9) * dpf2);
+            float f14 = this.explodeProgress;
+            if (f14 < 0.99f && (fArr = this.heights) != null) {
+                int i7 = (int) (f * (1.0f - f14));
                 if (z) {
-                    i11 = (int) ((dpf2 - 1.0f) - i11);
+                    i7 = (int) ((f - 1.0f) - i7);
                 }
-                if (i11 >= 0 && i11 < fArr.length) {
-                    float dpf23 = AndroidUtilities.dpf2(this.heights[i11]) * MathUtils.clamp((f5 * dpf2) - i11, 0.0f, 1.0f);
+                if (i7 >= 0 && i7 < fArr.length) {
+                    float dpf23 = AndroidUtilities.dpf2(this.heights[i7]) * MathUtils.clamp((f2 * f) - i7, 0.0f, 1.0f);
                     rectF = AndroidUtilities.rectTmp;
-                    float dpf24 = dpf2 * (1.0f - this.explodeProgress) * AndroidUtilities.dpf2(3.0f);
+                    float dpf24 = (1.0f - this.explodeProgress) * f * AndroidUtilities.dpf2(f3);
                     float dpf25 = AndroidUtilities.dpf2(2.0f);
                     int dp = (this.height - AndroidUtilities.dp(14.0f)) / 2;
-                    float f10 = dpf23 * this.waveScaling;
-                    float f11 = dpf25 / 2.0f;
-                    rectF.set((AndroidUtilities.dpf2(1.0f) + dpf24) - f11, AndroidUtilities.dp(7.0f) + dp + ((-f10) - f11), dpf24 + AndroidUtilities.dpf2(1.0f) + f11, dp + AndroidUtilities.dp(7.0f) + f10 + f11);
+                    float f15 = dpf23 * this.waveScaling;
+                    float f16 = dpf25 / 2.0f;
+                    rectF.set((AndroidUtilities.dpf2(1.0f) + dpf24) - f16, AndroidUtilities.dp(7.0f) + dp + ((-f15) - f16), dpf24 + AndroidUtilities.dpf2(1.0f) + f16, dp + AndroidUtilities.dp(7.0f) + f15 + f16);
                     this.particles.setColor(this.outerColor).setEmitArea(rectF).draw(canvas, this.explosionRate);
                 }
             }

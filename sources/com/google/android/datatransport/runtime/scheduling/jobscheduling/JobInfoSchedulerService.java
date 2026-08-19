@@ -28,14 +28,9 @@ public class JobInfoSchedulerService extends JobService {
         TransportRuntime.getInstance().getUploader().upload(priority.build(), i2, new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                JobInfoSchedulerService.this.lambda$onStartJob$0(jobParameters);
+                JobInfoSchedulerService.this.jobFinished(jobParameters, false);
             }
         });
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onStartJob$0(JobParameters jobParameters) {
-        jobFinished(jobParameters, false);
     }
 }

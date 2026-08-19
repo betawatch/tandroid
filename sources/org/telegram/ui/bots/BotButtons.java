@@ -23,7 +23,7 @@ import org.telegram.ui.Components.CircularProgressDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BotButtons extends FrameLayout {
     public final AnimatedColor background;
     private final Paint backgroundPaint;
@@ -227,7 +227,6 @@ public abstract class BotButtons extends FrameLayout {
                 button.textDrawable.draw(canvas);
                 canvas.restore();
             }
-            float f13 = 0.0f;
             if (f9 > 0.0f) {
                 canvas.save();
                 float lerp5 = AndroidUtilities.lerp(0.75f, 1.0f, f9);
@@ -239,9 +238,8 @@ public abstract class BotButtons extends FrameLayout {
                 circularProgressDrawable.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                 button.progress.draw(canvas);
                 canvas.restore();
-                f13 = 0.0f;
             }
-            if (f10 > f13) {
+            if (f10 > 0.0f) {
                 button.flicker.setColors(Theme.multAlpha(button.textColor.set(buttonState.textColor), f6 * f10));
                 button.flicker.draw(canvas, button.bounds, AndroidUtilities.dp(8.0f), this);
             }

@@ -18,20 +18,18 @@ final class zzaq extends zzai {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x01b7  */
-    /* JADX WARN: Type inference failed for: r15v0 */
-    /* JADX WARN: Type inference failed for: r5v10, types: [java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r5v2, types: [int[]] */
-    /* JADX WARN: Type inference failed for: r5v8 */
-    /* JADX WARN: Type inference failed for: r6v5, types: [java.lang.Object[]] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x01c6  */
+    /* JADX WARN: Type inference failed for: r4v6 */
+    /* JADX WARN: Type inference failed for: r4v7, types: [java.lang.Object[]] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     static zzaq zzg(int i, Object[] objArr, zzah zzahVar) {
         int i2;
-        short[] sArr;
         char c;
         char c2;
+        char c3;
+        short[] sArr;
         boolean z;
         int i3 = i;
         Object[] objArr2 = objArr;
@@ -68,9 +66,10 @@ final class zzaq extends zzai {
             Objects.requireNonNull(obj5);
             zzw.zza(obj4, obj5);
             i3 = 1;
+            c = 0;
+            c2 = 1;
         } else {
             int i5 = i2 - 1;
-            char c3 = 65535;
             if (i2 <= 128) {
                 byte[] bArr = new byte[i2];
                 Arrays.fill(bArr, (byte) -1);
@@ -111,97 +110,98 @@ final class zzaq extends zzai {
                     i6++;
                     i4 = 1;
                 }
+                c = 0;
+                c2 = 1;
                 if (i7 == i3) {
                     obj = bArr;
                 } else {
                     sArr = new Object[]{bArr, Integer.valueOf(i7), obj};
+                    obj = sArr;
                 }
-            } else if (i2 <= 32768) {
-                sArr = new short[i2];
-                Arrays.fill(sArr, (short) -1);
-                int i13 = 0;
-                for (int i14 = 0; i14 < i3; i14++) {
-                    int i15 = i13 + i13;
-                    int i16 = i14 + i14;
-                    Object obj9 = objArr2[i16];
-                    Objects.requireNonNull(obj9);
-                    Object obj10 = objArr2[i16 ^ 1];
-                    Objects.requireNonNull(obj10);
-                    zzw.zza(obj9, obj10);
-                    int zza3 = zzy.zza(obj9.hashCode());
-                    while (true) {
-                        int i17 = zza3 & i5;
-                        char c4 = (char) sArr[i17];
-                        if (c4 == 65535) {
-                            sArr[i17] = (short) i15;
-                            if (i13 < i14) {
-                                objArr2[i15] = obj9;
-                                objArr2[i15 ^ 1] = obj10;
+            } else {
+                c = 0;
+                c2 = 1;
+                if (i2 > 32768) {
+                    int[] iArr = new int[i2];
+                    Arrays.fill(iArr, -1);
+                    int i13 = 0;
+                    for (int i14 = 0; i14 < i3; i14++) {
+                        int i15 = i13 + i13;
+                        int i16 = i14 + i14;
+                        Object obj9 = objArr2[i16];
+                        Objects.requireNonNull(obj9);
+                        Object obj10 = objArr2[i16 ^ 1];
+                        Objects.requireNonNull(obj10);
+                        zzw.zza(obj9, obj10);
+                        int zza3 = zzy.zza(obj9.hashCode());
+                        while (true) {
+                            int i17 = zza3 & i5;
+                            int i18 = iArr[i17];
+                            if (i18 == -1) {
+                                iArr[i17] = i15;
+                                if (i13 < i14) {
+                                    objArr2[i15] = obj9;
+                                    objArr2[i15 ^ 1] = obj10;
+                                }
+                                i13++;
+                            } else {
+                                if (obj9.equals(objArr2[i18])) {
+                                    int i19 = i18 ^ 1;
+                                    Object obj11 = objArr2[i19];
+                                    Objects.requireNonNull(obj11);
+                                    zzag zzagVar2 = new zzag(obj9, obj10, obj11);
+                                    objArr2[i19] = obj10;
+                                    obj = zzagVar2;
+                                    break;
+                                }
+                                zza3 = i17 + 1;
                             }
-                            i13++;
-                        } else {
-                            if (obj9.equals(objArr2[c4])) {
-                                int i18 = c4 ^ 1;
-                                Object obj11 = objArr2[i18];
-                                Objects.requireNonNull(obj11);
-                                zzag zzagVar2 = new zzag(obj9, obj10, obj11);
-                                objArr2[i18] = obj10;
-                                obj = zzagVar2;
-                                break;
-                            }
-                            zza3 = i17 + 1;
                         }
                     }
-                }
-                if (i13 != i3) {
-                    c2 = 2;
-                    obj = new Object[]{sArr, Integer.valueOf(i13), obj};
-                    c = 1;
+                    c3 = 2;
+                    obj = i13 == i3 ? iArr : new Object[]{iArr, Integer.valueOf(i13), obj};
                     z = obj instanceof Object[];
                     Object obj12 = obj;
                     if (z) {
                         Object[] objArr3 = (Object[]) obj;
-                        zzag zzagVar3 = (zzag) objArr3[c2];
+                        zzag zzagVar3 = (zzag) objArr3[c3];
                         if (zzahVar == null) {
                             throw zzagVar3.zza();
                         }
                         zzahVar.zzc = zzagVar3;
-                        Object obj13 = objArr3[0];
-                        int intValue = ((Integer) objArr3[c]).intValue();
+                        Object obj13 = objArr3[c];
+                        int intValue = ((Integer) objArr3[c2]).intValue();
                         objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
                         obj12 = obj13;
                         i3 = intValue;
                     }
                     return new zzaq(obj12, objArr2, i3);
                 }
-            } else {
-                int i19 = 1;
-                sArr = new int[i2];
-                Arrays.fill((int[]) sArr, -1);
+                sArr = new short[i2];
+                Arrays.fill(sArr, (short) -1);
                 int i20 = 0;
-                int i21 = 0;
-                while (i20 < i3) {
-                    int i22 = i21 + i21;
-                    int i23 = i20 + i20;
+                for (int i21 = 0; i21 < i3; i21++) {
+                    int i22 = i20 + i20;
+                    int i23 = i21 + i21;
                     Object obj14 = objArr2[i23];
                     Objects.requireNonNull(obj14);
-                    Object obj15 = objArr2[i23 ^ i19];
+                    Object obj15 = objArr2[i23 ^ 1];
                     Objects.requireNonNull(obj15);
                     zzw.zza(obj14, obj15);
                     int zza4 = zzy.zza(obj14.hashCode());
                     while (true) {
                         int i24 = zza4 & i5;
-                        ?? r15 = sArr[i24];
-                        if (r15 == c3) {
-                            sArr[i24] = i22;
-                            if (i21 < i20) {
+                        char c4 = (char) sArr[i24];
+                        if (c4 == 65535) {
+                            sArr[i24] = (short) i22;
+                            if (i20 < i21) {
                                 objArr2[i22] = obj14;
                                 objArr2[i22 ^ 1] = obj15;
                             }
-                            i21++;
+                            i20++;
                         } else {
-                            if (obj14.equals(objArr2[r15])) {
-                                int i25 = r15 ^ 1;
+                            if (obj14.equals(objArr2[c4])) {
+                                int i25 = c4 ^ 1;
                                 Object obj16 = objArr2[i25];
                                 Objects.requireNonNull(obj16);
                                 zzag zzagVar4 = new zzag(obj14, obj15, obj16);
@@ -210,33 +210,21 @@ final class zzaq extends zzai {
                                 break;
                             }
                             zza4 = i24 + 1;
-                            c3 = 65535;
                         }
                     }
-                    i20++;
-                    i19 = 1;
-                    c3 = 65535;
                 }
-                if (i21 != i3) {
-                    c = 1;
-                    c2 = 2;
-                    obj = new Object[]{sArr, Integer.valueOf(i21), obj};
-                    z = obj instanceof Object[];
-                    Object obj122 = obj;
-                    if (z) {
-                    }
-                    return new zzaq(obj122, objArr2, i3);
+                if (i20 != i3) {
+                    obj = new Object[]{sArr, Integer.valueOf(i20), obj};
                 }
+                obj = sArr;
             }
-            obj = sArr;
         }
-        c2 = 2;
-        c = 1;
+        c3 = 2;
         z = obj instanceof Object[];
-        Object obj1222 = obj;
+        Object obj122 = obj;
         if (z) {
         }
-        return new zzaq(obj1222, objArr2, i3);
+        return new zzaq(obj122, objArr2, i3);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */

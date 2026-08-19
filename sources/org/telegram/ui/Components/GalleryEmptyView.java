@@ -128,16 +128,11 @@ public class GalleryEmptyView extends LinearLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$doOnEmojiButton$2(Utilities.Callback callback, View view) {
-        callback.run(Long.valueOf(this.emojiDocumentId));
-    }
-
     public void doOnEmojiButton(final Utilities.Callback callback) {
         this.useAnEmojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GalleryEmptyView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GalleryEmptyView.this.lambda$doOnEmojiButton$2(callback, view);
+                callback.run(Long.valueOf(GalleryEmptyView.this.emojiDocumentId));
             }
         });
     }

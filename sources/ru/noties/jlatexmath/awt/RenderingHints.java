@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.awt;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RenderingHints {
     public static final Key KEY_ANTIALIASING = null;
     public static final Key KEY_RENDERING = null;

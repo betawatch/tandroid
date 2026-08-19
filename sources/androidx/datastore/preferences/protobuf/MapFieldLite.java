@@ -40,7 +40,7 @@ public final class MapFieldLite extends LinkedHashMap {
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
     public Set entrySet() {
-        return isEmpty() ? Collections.emptySet() : super.entrySet();
+        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
     }
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map

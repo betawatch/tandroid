@@ -188,9 +188,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
     }
 
     MediaRouter.RouteInfo getRoute(String str) {
-        Iterator it = this.mRoutes.iterator();
-        while (it.hasNext()) {
-            MediaRouter.RouteInfo routeInfo = (MediaRouter.RouteInfo) it.next();
+        ArrayList arrayList = this.mRoutes;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            MediaRouter.RouteInfo routeInfo = (MediaRouter.RouteInfo) obj;
             if (routeInfo.mUniqueId.equals(str)) {
                 return routeInfo;
             }
@@ -339,6 +343,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
         this.mActiveScanThrottlingHelper.reset();
         int size = this.mRouters.size();
         int i = 0;
+        int i2 = 0;
         boolean z = false;
         while (true) {
             size--;
@@ -350,27 +355,27 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 this.mRouters.remove(size);
             } else {
                 int size2 = mediaRouter.mCallbackRecords.size();
-                i += size2;
-                for (int i2 = 0; i2 < size2; i2++) {
-                    MediaRouter.CallbackRecord callbackRecord = (MediaRouter.CallbackRecord) mediaRouter.mCallbackRecords.get(i2);
+                i2 += size2;
+                for (int i3 = 0; i3 < size2; i3++) {
+                    MediaRouter.CallbackRecord callbackRecord = (MediaRouter.CallbackRecord) mediaRouter.mCallbackRecords.get(i3);
                     builder.addSelector(callbackRecord.mSelector);
                     boolean z2 = (callbackRecord.mFlags & 1) != 0;
                     this.mActiveScanThrottlingHelper.requestActiveScan(z2, callbackRecord.mTimestamp);
                     if (z2) {
                         z = true;
                     }
-                    int i3 = callbackRecord.mFlags;
-                    if ((i3 & 4) != 0 && !this.mLowRam) {
+                    int i4 = callbackRecord.mFlags;
+                    if ((i4 & 4) != 0 && !this.mLowRam) {
                         z = true;
                     }
-                    if ((i3 & 8) != 0) {
+                    if ((i4 & 8) != 0) {
                         z = true;
                     }
                 }
             }
         }
         boolean finalizeActiveScanAndScheduleSuppressActiveScanRunnable = this.mActiveScanThrottlingHelper.finalizeActiveScanAndScheduleSuppressActiveScanRunnable();
-        this.mCallbackCount = i;
+        this.mCallbackCount = i2;
         MediaRouteSelector build = z ? builder.build() : MediaRouteSelector.EMPTY;
         updateMr2ProviderDiscoveryRequest(builder.build(), finalizeActiveScanAndScheduleSuppressActiveScanRunnable);
         MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest = this.mDiscoveryRequest;
@@ -389,9 +394,12 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
         if (z && !finalizeActiveScanAndScheduleSuppressActiveScanRunnable && this.mLowRam) {
             Log.i("GlobalMediaRouter", "Forcing passive route discovery on a low-RAM device, system performance may be affected.  Please consider using CALLBACK_FLAG_REQUEST_DISCOVERY instead of CALLBACK_FLAG_FORCE_DISCOVERY.");
         }
-        Iterator it = this.mProviders.iterator();
-        while (it.hasNext()) {
-            MediaRouteProvider mediaRouteProvider = ((MediaRouter.ProviderInfo) it.next()).mProviderInstance;
+        ArrayList arrayList = this.mProviders;
+        int size3 = arrayList.size();
+        while (i < size3) {
+            Object obj = arrayList.get(i);
+            i++;
+            MediaRouteProvider mediaRouteProvider = ((MediaRouter.ProviderInfo) obj).mProviderInstance;
             if (mediaRouteProvider != this.mMr2Provider) {
                 mediaRouteProvider.setDiscoveryRequest(this.mDiscoveryRequest);
             }
@@ -422,8 +430,11 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
     }
 
     boolean isMediaTransferEnabled() {
-        MediaRouterParams mediaRouterParams;
-        return this.mTransferReceiverDeclared && ((mediaRouterParams = this.mRouterParams) == null || mediaRouterParams.isMediaTransferReceiverEnabled());
+        if (!this.mTransferReceiverDeclared) {
+            return false;
+        }
+        MediaRouterParams mediaRouterParams = this.mRouterParams;
+        return mediaRouterParams == null || mediaRouterParams.isMediaTransferReceiverEnabled();
     }
 
     boolean isTransferToLocalEnabled() {
@@ -483,9 +494,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
     }
 
     private MediaRouter.ProviderInfo findProviderInfo(MediaRouteProvider mediaRouteProvider) {
-        Iterator it = this.mProviders.iterator();
-        while (it.hasNext()) {
-            MediaRouter.ProviderInfo providerInfo = (MediaRouter.ProviderInfo) it.next();
+        ArrayList arrayList = this.mProviders;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            MediaRouter.ProviderInfo providerInfo = (MediaRouter.ProviderInfo) obj;
             if (providerInfo.mProviderInstance == mediaRouteProvider) {
                 return providerInfo;
             }
@@ -502,9 +517,10 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 z = false;
             } else {
                 List<MediaRouteDescriptor> routes = mediaRouteProviderDescriptor.getRoutes();
-                ArrayList<Pair> arrayList = new ArrayList();
-                ArrayList<Pair> arrayList2 = new ArrayList();
-                z = false;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                int i2 = 0;
+                boolean z2 = false;
                 for (MediaRouteDescriptor mediaRouteDescriptor : routes) {
                     if (mediaRouteDescriptor == null || !mediaRouteDescriptor.isValid()) {
                         Log.w("GlobalMediaRouter", "Ignoring invalid route descriptor: " + mediaRouteDescriptor);
@@ -513,8 +529,8 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                         int findRouteIndexByDescriptorId = providerInfo.findRouteIndexByDescriptorId(id);
                         if (findRouteIndexByDescriptorId < 0) {
                             MediaRouter.RouteInfo routeInfo = new MediaRouter.RouteInfo(providerInfo, id, assignRouteUniqueId(providerInfo, id), mediaRouteDescriptor.isSystemRoute());
-                            int i2 = i + 1;
-                            providerInfo.mRoutes.add(i, routeInfo);
+                            int i3 = i2 + 1;
+                            providerInfo.mRoutes.add(i2, routeInfo);
                             this.mRoutes.add(routeInfo);
                             if (!mediaRouteDescriptor.getGroupMemberIds().isEmpty()) {
                                 arrayList.add(new Pair(routeInfo, mediaRouteDescriptor));
@@ -522,43 +538,56 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                                 routeInfo.maybeUpdateDescriptor(mediaRouteDescriptor);
                                 this.mCallbackHandler.post(NotificationCenter.emojiLoaded, routeInfo);
                             }
-                            i = i2;
-                        } else if (findRouteIndexByDescriptorId < i) {
+                            i2 = i3;
+                        } else if (findRouteIndexByDescriptorId < i2) {
                             Log.w("GlobalMediaRouter", "Ignoring route descriptor with duplicate id: " + mediaRouteDescriptor);
                         } else {
                             MediaRouter.RouteInfo routeInfo2 = (MediaRouter.RouteInfo) providerInfo.mRoutes.get(findRouteIndexByDescriptorId);
-                            int i3 = i + 1;
-                            Collections.swap(providerInfo.mRoutes, findRouteIndexByDescriptorId, i);
+                            int i4 = i2 + 1;
+                            Collections.swap(providerInfo.mRoutes, findRouteIndexByDescriptorId, i2);
                             if (!mediaRouteDescriptor.getGroupMemberIds().isEmpty()) {
                                 arrayList2.add(new Pair(routeInfo2, mediaRouteDescriptor));
                             } else if (updateRouteDescriptorAndNotify(routeInfo2, mediaRouteDescriptor) != 0 && routeInfo2 == this.mSelectedRoute) {
-                                i = i3;
-                                z = true;
+                                i2 = i4;
+                                z2 = true;
                             }
-                            i = i3;
+                            i2 = i4;
                         }
                     }
                 }
-                for (Pair pair : arrayList) {
+                int size = arrayList.size();
+                int i5 = 0;
+                while (i5 < size) {
+                    Object obj = arrayList.get(i5);
+                    i5++;
+                    Pair pair = (Pair) obj;
                     MediaRouter.RouteInfo routeInfo3 = (MediaRouter.RouteInfo) pair.first;
                     routeInfo3.maybeUpdateDescriptor((MediaRouteDescriptor) pair.second);
                     this.mCallbackHandler.post(NotificationCenter.emojiLoaded, routeInfo3);
                 }
-                for (Pair pair2 : arrayList2) {
+                int size2 = arrayList2.size();
+                boolean z3 = z2;
+                int i6 = 0;
+                while (i6 < size2) {
+                    Object obj2 = arrayList2.get(i6);
+                    i6++;
+                    Pair pair2 = (Pair) obj2;
                     MediaRouter.RouteInfo routeInfo4 = (MediaRouter.RouteInfo) pair2.first;
                     if (updateRouteDescriptorAndNotify(routeInfo4, (MediaRouteDescriptor) pair2.second) != 0 && routeInfo4 == this.mSelectedRoute) {
-                        z = true;
+                        z3 = true;
                     }
                 }
+                z = z3;
+                i = i2;
             }
-            for (int size = providerInfo.mRoutes.size() - 1; size >= i; size--) {
-                MediaRouter.RouteInfo routeInfo5 = (MediaRouter.RouteInfo) providerInfo.mRoutes.get(size);
+            for (int size3 = providerInfo.mRoutes.size() - 1; size3 >= i; size3--) {
+                MediaRouter.RouteInfo routeInfo5 = (MediaRouter.RouteInfo) providerInfo.mRoutes.get(size3);
                 routeInfo5.maybeUpdateDescriptor(null);
                 this.mRoutes.remove(routeInfo5);
             }
             updateSelectedRouteIfNeeded(z);
-            for (int size2 = providerInfo.mRoutes.size() - 1; size2 >= i; size2--) {
-                this.mCallbackHandler.post(NotificationCenter.invalidateMotionBackground, (MediaRouter.RouteInfo) providerInfo.mRoutes.remove(size2));
+            for (int size4 = providerInfo.mRoutes.size() - 1; size4 >= i; size4--) {
+                this.mCallbackHandler.post(NotificationCenter.invalidateMotionBackground, (MediaRouter.RouteInfo) providerInfo.mRoutes.remove(size4));
             }
             this.mCallbackHandler.post(515, providerInfo);
         }
@@ -625,12 +654,16 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
             this.mDefaultRoute = null;
         }
         if (this.mDefaultRoute == null) {
-            Iterator it = this.mRoutes.iterator();
+            ArrayList arrayList = this.mRoutes;
+            int size = arrayList.size();
+            int i = 0;
             while (true) {
-                if (!it.hasNext()) {
+                if (i >= size) {
                     break;
                 }
-                MediaRouter.RouteInfo routeInfo2 = (MediaRouter.RouteInfo) it.next();
+                Object obj = arrayList.get(i);
+                i++;
+                MediaRouter.RouteInfo routeInfo2 = (MediaRouter.RouteInfo) obj;
                 if (isSystemDefaultRoute(routeInfo2) && routeInfo2.isSelectable()) {
                     this.mDefaultRoute = routeInfo2;
                     Log.i("GlobalMediaRouter", "Found default route: " + this.mDefaultRoute);
@@ -644,12 +677,16 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
             this.mBluetoothRoute = null;
         }
         if (this.mBluetoothRoute == null) {
-            Iterator it2 = this.mRoutes.iterator();
+            ArrayList arrayList2 = this.mRoutes;
+            int size2 = arrayList2.size();
+            int i2 = 0;
             while (true) {
-                if (!it2.hasNext()) {
+                if (i2 >= size2) {
                     break;
                 }
-                MediaRouter.RouteInfo routeInfo4 = (MediaRouter.RouteInfo) it2.next();
+                Object obj2 = arrayList2.get(i2);
+                i2++;
+                MediaRouter.RouteInfo routeInfo4 = (MediaRouter.RouteInfo) obj2;
                 if (isSystemLiveAudioOnlyRoute(routeInfo4) && routeInfo4.isSelectable()) {
                     this.mBluetoothRoute = routeInfo4;
                     Log.i("GlobalMediaRouter", "Found bluetooth route: " + this.mBluetoothRoute);
@@ -671,9 +708,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
     }
 
     MediaRouter.RouteInfo chooseFallbackRoute() {
-        Iterator it = this.mRoutes.iterator();
-        while (it.hasNext()) {
-            MediaRouter.RouteInfo routeInfo = (MediaRouter.RouteInfo) it.next();
+        ArrayList arrayList = this.mRoutes;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            MediaRouter.RouteInfo routeInfo = (MediaRouter.RouteInfo) obj;
             if (routeInfo != this.mDefaultRoute && isSystemLiveAudioOnlyRoute(routeInfo) && routeInfo.isSelectable()) {
                 return routeInfo;
             }
@@ -850,9 +891,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
             } else {
                 this.mPlaybackInfo.volumeControlId = null;
             }
-            Iterator it = this.mRemoteControlClients.iterator();
-            while (it.hasNext()) {
-                ((RemoteControlClientRecord) it.next()).updatePlaybackInfo();
+            ArrayList arrayList = this.mRemoteControlClients;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((RemoteControlClientRecord) obj).updatePlaybackInfo();
             }
             if (this.mMediaSession != null) {
                 if (this.mSelectedRoute == getDefaultRoute() || this.mSelectedRoute == getBluetoothRoute()) {
@@ -947,9 +992,9 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                     volumeProviderCompat.setCurrentVolume(i3);
                     return;
                 }
-                1 r0 = new 1(i, i2, i3, str);
-                this.mVpCompat = r0;
-                this.mMsCompat.setPlaybackToRemote(r0);
+                1 r2 = new 1(i, i2, i3, str);
+                this.mVpCompat = r2;
+                this.mMsCompat.setPlaybackToRemote(r2);
             }
         }
 
@@ -963,13 +1008,12 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 GlobalMediaRouter.this.mCallbackHandler.post(new Runnable() { // from class: androidx.mediarouter.media.GlobalMediaRouter$MediaSessionRecord$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GlobalMediaRouter.MediaSessionRecord.1.this.lambda$onSetVolumeTo$0(i);
+                        GlobalMediaRouter.MediaSessionRecord.1.$r8$lambda$RwT-hTJ1_-jY_0YuYRdD-WofhYI(GlobalMediaRouter.MediaSessionRecord.1.this, i);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onSetVolumeTo$0(int i) {
+            public static /* synthetic */ void $r8$lambda$RwT-hTJ1_-jY_0YuYRdD-WofhYI(1 r0, int i) {
                 MediaRouter.RouteInfo routeInfo = GlobalMediaRouter.this.mSelectedRoute;
                 if (routeInfo != null) {
                     routeInfo.requestSetVolume(i);
@@ -981,13 +1025,12 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 GlobalMediaRouter.this.mCallbackHandler.post(new Runnable() { // from class: androidx.mediarouter.media.GlobalMediaRouter$MediaSessionRecord$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GlobalMediaRouter.MediaSessionRecord.1.this.lambda$onAdjustVolume$1(i);
+                        GlobalMediaRouter.MediaSessionRecord.1.$r8$lambda$wrZvJ8MvyiExqf3cdiLr1GYD96A(GlobalMediaRouter.MediaSessionRecord.1.this, i);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onAdjustVolume$1(int i) {
+            public static /* synthetic */ void $r8$lambda$wrZvJ8MvyiExqf3cdiLr1GYD96A(1 r0, int i) {
                 MediaRouter.RouteInfo routeInfo = GlobalMediaRouter.this.mSelectedRoute;
                 if (routeInfo != null) {
                     routeInfo.requestUpdateVolume(i);
@@ -1095,9 +1138,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                         this.mTempCallbackRecords.addAll(mediaRouter.mCallbackRecords);
                     }
                 }
-                Iterator it = this.mTempCallbackRecords.iterator();
-                while (it.hasNext()) {
-                    invokeCallback((MediaRouter.CallbackRecord) it.next(), i, obj, i2);
+                ArrayList arrayList = this.mTempCallbackRecords;
+                int size2 = arrayList.size();
+                int i3 = 0;
+                while (i3 < size2) {
+                    Object obj2 = arrayList.get(i3);
+                    i3++;
+                    invokeCallback((MediaRouter.CallbackRecord) obj2, i, obj, i2);
                 }
                 this.mTempCallbackRecords.clear();
             } catch (Throwable th) {
@@ -1149,7 +1196,6 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 if (i3 != 512) {
                     if (i3 == 768 && i == 769) {
                         callback.onRouterParamsChanged(mediaRouter, (MediaRouterParams) obj);
-                        return;
                     }
                     return;
                 }

@@ -26,9 +26,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     public static final ChunkExtractor.Factory FACTORY = new ChunkExtractor.Factory() { // from class: com.google.android.exoplayer2.source.chunk.BundledChunkExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.source.chunk.ChunkExtractor.Factory
         public final ChunkExtractor createProgressiveMediaExtractor(int i, Format format, boolean z, List list, TrackOutput trackOutput, PlayerId playerId) {
-            ChunkExtractor lambda$static$0;
-            lambda$static$0 = BundledChunkExtractor.lambda$static$0(i, format, z, list, trackOutput, playerId);
-            return lambda$static$0;
+            return BundledChunkExtractor.$r8$lambda$9Ya_LtLVS2dGXJ930dYWmsfZ93s(i, format, z, list, trackOutput, playerId);
         }
     };
     private static final PositionHolder POSITION_HOLDER = new PositionHolder();
@@ -42,8 +40,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     private SeekMap seekMap;
     private ChunkExtractor.TrackOutputProvider trackOutputProvider;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ChunkExtractor lambda$static$0(int i, Format format, boolean z, List list, TrackOutput trackOutput, PlayerId playerId) {
+    public static /* synthetic */ ChunkExtractor $r8$lambda$9Ya_LtLVS2dGXJ930dYWmsfZ93s(int i, Format format, boolean z, List list, TrackOutput trackOutput, PlayerId playerId) {
         Extractor fragmentedMp4Extractor;
         String str = format.containerMimeType;
         if (MimeTypes.isText(str)) {

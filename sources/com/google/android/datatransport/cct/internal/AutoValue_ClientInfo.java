@@ -30,19 +30,14 @@ final class AutoValue_ClientInfo extends ClientInfo {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ClientInfo)) {
-            return false;
-        }
-        ClientInfo clientInfo = (ClientInfo) obj;
-        ClientInfo.ClientType clientType = this.clientType;
-        if (clientType != null ? clientType.equals(clientInfo.getClientType()) : clientInfo.getClientType() == null) {
-            AndroidClientInfo androidClientInfo = this.androidClientInfo;
-            if (androidClientInfo == null) {
-                if (clientInfo.getAndroidClientInfo() == null) {
+        if (obj instanceof ClientInfo) {
+            ClientInfo clientInfo = (ClientInfo) obj;
+            ClientInfo.ClientType clientType = this.clientType;
+            if (clientType != null ? clientType.equals(clientInfo.getClientType()) : clientInfo.getClientType() == null) {
+                AndroidClientInfo androidClientInfo = this.androidClientInfo;
+                if (androidClientInfo != null ? androidClientInfo.equals(clientInfo.getAndroidClientInfo()) : clientInfo.getAndroidClientInfo() == null) {
                     return true;
                 }
-            } else if (androidClientInfo.equals(clientInfo.getAndroidClientInfo())) {
-                return true;
             }
         }
         return false;

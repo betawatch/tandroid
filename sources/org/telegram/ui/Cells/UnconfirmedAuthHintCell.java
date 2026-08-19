@@ -50,8 +50,7 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
     private final TextView titleTextView;
     private final TextViewWithLoading yesButton;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$set$1(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$BxLL04nNHETLUQ1-6lksruDUVQc(ArrayList arrayList) {
     }
 
     public UnconfirmedAuthHintCell(Context context) {
@@ -143,25 +142,24 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         this.yesButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UnconfirmedAuthHintCell.lambda$set$2(BaseFragment.this, z, i, arrayList, view);
+                UnconfirmedAuthHintCell.$r8$lambda$ZEICsbdb9MQnlCJ70APeGLR_RYQ(BaseFragment.this, z, i, arrayList, view);
             }
         });
         this.noButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UnconfirmedAuthHintCell.this.lambda$set$4(i, arrayList, view);
+                UnconfirmedAuthHintCell.$r8$lambda$Wbi6klv8qNLjst2cn7KK7XY8ba8(UnconfirmedAuthHintCell.this, i, arrayList, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$set$2(final BaseFragment baseFragment, boolean z, int i, ArrayList arrayList, View view) {
+    public static /* synthetic */ void $r8$lambda$ZEICsbdb9MQnlCJ70APeGLR_RYQ(final BaseFragment baseFragment, boolean z, int i, ArrayList arrayList, View view) {
         String string = LocaleController.getString(R.string.UnconfirmedAuthConfirmedMessage);
         int i2 = Theme.key_undo_cancelColor;
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i2, 0, new Runnable() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                UnconfirmedAuthHintCell.lambda$set$0(BaseFragment.this);
+                UnconfirmedAuthHintCell.$r8$lambda$aR9eE_PuztcHAvmgfUDXWLIRfig(BaseFragment.this);
             }
         });
         SpannableString spannableString = new SpannableString(">");
@@ -175,35 +173,33 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         MessagesController.getInstance(i).getUnconfirmedAuthController().confirm(arrayList, new Utilities.Callback() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                UnconfirmedAuthHintCell.lambda$set$1((ArrayList) obj);
+                UnconfirmedAuthHintCell.$r8$lambda$BxLL04nNHETLUQ1-6lksruDUVQc((ArrayList) obj);
             }
         });
         MessagesController.getInstance(i).getUnconfirmedAuthController().cleanup();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$set$0(BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$aR9eE_PuztcHAvmgfUDXWLIRfig(BaseFragment baseFragment) {
         Bulletin.hideVisible();
         baseFragment.presentFragment(new SessionsActivity(0));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$set$4(final int i, ArrayList arrayList, View view) {
-        this.noButton.setLoading(true);
+    public static /* synthetic */ void $r8$lambda$Wbi6klv8qNLjst2cn7KK7XY8ba8(final UnconfirmedAuthHintCell unconfirmedAuthHintCell, final int i, ArrayList arrayList, View view) {
+        unconfirmedAuthHintCell.noButton.setLoading(true);
         MessagesController.getInstance(i).getUnconfirmedAuthController().deny(arrayList, new Utilities.Callback() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                UnconfirmedAuthHintCell.this.lambda$set$3(i, (ArrayList) obj);
+                UnconfirmedAuthHintCell.$r8$lambda$1B-UkAiR1j7HMXFvSH7w9Sv39rc(UnconfirmedAuthHintCell.this, i, (ArrayList) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$set$3(int i, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$1B-UkAiR1j7HMXFvSH7w9Sv39rc(UnconfirmedAuthHintCell unconfirmedAuthHintCell, int i, ArrayList arrayList) {
+        unconfirmedAuthHintCell.getClass();
         if (LaunchActivity.isActive) {
-            showLoginPreventedSheet(arrayList);
+            unconfirmedAuthHintCell.showLoginPreventedSheet(arrayList);
         }
-        this.noButton.setLoading(false);
+        unconfirmedAuthHintCell.noButton.setLoading(false);
         MessagesController.getInstance(i).getUnconfirmedAuthController().cleanup();
     }
 
@@ -220,7 +216,8 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         this.noButton.setBackground(Theme.createSelectorDrawable(Theme.multAlpha(Theme.getColor(i2), Theme.isCurrentThemeDark() ? 0.3f : 0.15f), 7, AndroidUtilities.dp(8.0f)));
     }
 
-    private static class TextViewWithLoading extends TextView {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class TextViewWithLoading extends TextView {
         private boolean loading;
         private final AnimatedFloat loadingT;
         private CircularProgressDrawable progressDrawable;
@@ -254,15 +251,19 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
 
         @Override // android.widget.TextView, android.view.View
         protected void onDraw(Canvas canvas) {
+            Canvas canvas2;
             float f = this.loadingT.set(this.loading);
             if (f > 0.0f) {
                 if (f < 1.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f) * 255.0f), 31);
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f) * 255.0f), 31);
                     float f2 = 1.0f - (0.2f * f);
-                    canvas.scale(f2, f2, getWidth() / 2.0f, getHeight() / 2.0f);
-                    canvas.translate(0.0f, AndroidUtilities.dp(-12.0f) * f);
-                    super.onDraw(canvas);
-                    canvas.restore();
+                    canvas2.scale(f2, f2, getWidth() / 2.0f, getHeight() / 2.0f);
+                    canvas2.translate(0.0f, AndroidUtilities.dp(-12.0f) * f);
+                    super.onDraw(canvas2);
+                    canvas2.restore();
+                } else {
+                    canvas2 = canvas;
                 }
                 if (this.progressDrawable == null) {
                     CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
@@ -273,7 +274,7 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
                 float f3 = 1.0f - f;
                 this.progressDrawable.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (AndroidUtilities.dp(12.0f) * f3)), getWidth() / 2, (getHeight() / 2) + ((int) (f3 * AndroidUtilities.dp(12.0f))));
                 this.progressDrawable.setAlpha((int) (f * 255.0f));
-                this.progressDrawable.draw(canvas);
+                this.progressDrawable.draw(canvas2);
                 invalidate();
                 return;
             }
@@ -356,30 +357,28 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         round.setTimer(5, new Runnable() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                UnconfirmedAuthHintCell.lambda$showLoginPreventedSheet$5(BottomSheet.this);
+                UnconfirmedAuthHintCell.$r8$lambda$sjRWXBHKvFpazvxwtiyIF-nxmFs(BottomSheet.this);
             }
         });
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UnconfirmedAuthHintCell.lambda$showLoginPreventedSheet$6(ButtonWithCounterView.this, show, view);
+                UnconfirmedAuthHintCell.$r8$lambda$FmPsg7Mq8dur9rHWnN-TbvXVYpo(ButtonWithCounterView.this, show, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showLoginPreventedSheet$5(BottomSheet bottomSheet) {
+    public static /* synthetic */ void $r8$lambda$sjRWXBHKvFpazvxwtiyIF-nxmFs(BottomSheet bottomSheet) {
         bottomSheet.setCanDismissWithSwipe(true);
         bottomSheet.setCanDismissWithTouchOutside(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showLoginPreventedSheet$6(ButtonWithCounterView buttonWithCounterView, BottomSheet bottomSheet, View view) {
+    public static /* synthetic */ void $r8$lambda$FmPsg7Mq8dur9rHWnN-TbvXVYpo(ButtonWithCounterView buttonWithCounterView, BottomSheet bottomSheet, View view) {
         if (buttonWithCounterView.isTimerActive()) {
             AndroidUtilities.shakeViewSpring(buttonWithCounterView, 3.0f);
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
         } else {
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
         }
     }
 

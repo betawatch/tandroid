@@ -5,7 +5,6 @@ import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -101,9 +100,13 @@ public class ComposeDrawable extends Drawable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void invalidate() {
-        Iterator it = this.views.iterator();
-        while (it.hasNext()) {
-            ((View) it.next()).invalidate();
+        ArrayList arrayList = this.views;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((View) obj).invalidate();
         }
         invalidateSelf();
     }

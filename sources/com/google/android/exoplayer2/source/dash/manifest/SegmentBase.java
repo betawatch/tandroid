@@ -75,28 +75,30 @@ public abstract class SegmentBase {
         public long getSegmentNum(long j, long j2) {
             long firstSegmentNum = getFirstSegmentNum();
             long segmentCount = getSegmentCount(j2);
-            if (segmentCount == 0) {
-                return firstSegmentNum;
-            }
-            if (this.segmentTimeline == null) {
-                long j3 = this.startNumber + (j / ((this.duration * 1000000) / this.timescale));
-                return j3 < firstSegmentNum ? firstSegmentNum : segmentCount == -1 ? j3 : Math.min(j3, (firstSegmentNum + segmentCount) - 1);
-            }
-            long j4 = (segmentCount + firstSegmentNum) - 1;
-            long j5 = firstSegmentNum;
-            while (j5 <= j4) {
-                long j6 = ((j4 - j5) / 2) + j5;
-                long segmentTimeUs = getSegmentTimeUs(j6);
-                if (segmentTimeUs < j) {
-                    j5 = j6 + 1;
-                } else {
-                    if (segmentTimeUs <= j) {
-                        return j6;
+            if (segmentCount != 0) {
+                if (this.segmentTimeline != null) {
+                    long j3 = (segmentCount + firstSegmentNum) - 1;
+                    long j4 = firstSegmentNum;
+                    while (j4 <= j3) {
+                        long j5 = ((j3 - j4) / 2) + j4;
+                        long segmentTimeUs = getSegmentTimeUs(j5);
+                        if (segmentTimeUs < j) {
+                            j4 = j5 + 1;
+                        } else {
+                            if (segmentTimeUs <= j) {
+                                return j5;
+                            }
+                            j3 = j5 - 1;
+                        }
                     }
-                    j4 = j6 - 1;
+                    return j4 == firstSegmentNum ? j4 : j3;
+                }
+                long j6 = this.startNumber + (j / ((this.duration * 1000000) / this.timescale));
+                if (j6 >= firstSegmentNum) {
+                    return segmentCount == -1 ? j6 : Math.min(j6, (firstSegmentNum + segmentCount) - 1);
                 }
             }
-            return j5 == firstSegmentNum ? j5 : j4;
+            return firstSegmentNum;
         }
 
         public final long getSegmentDurationUs(long j, long j2) {
@@ -244,11 +246,13 @@ public abstract class SegmentBase {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || SegmentTimelineElement.class != obj.getClass()) {
-                return false;
+            if (obj != null && SegmentTimelineElement.class == obj.getClass()) {
+                SegmentTimelineElement segmentTimelineElement = (SegmentTimelineElement) obj;
+                if (this.startTime == segmentTimelineElement.startTime && this.duration == segmentTimelineElement.duration) {
+                    return true;
+                }
             }
-            SegmentTimelineElement segmentTimelineElement = (SegmentTimelineElement) obj;
-            return this.startTime == segmentTimelineElement.startTime && this.duration == segmentTimelineElement.duration;
+            return false;
         }
 
         public int hashCode() {

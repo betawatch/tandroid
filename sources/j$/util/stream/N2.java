@@ -1,19 +1,25 @@
 package j$.util.stream;
 
 import j$.util.Objects;
-import j$.util.Spliterator;
-import j$.util.Spliterators;
 import java.util.Comparator;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class N2 implements Spliterator {
-    int a;
-    final int b;
-    int c;
-    final int d;
-    Object[] e;
-    final /* synthetic */ W2 f;
+public abstract class N2 implements j$.util.c0 {
+    public int a;
+    public final int b;
+    public int c;
+    public final int d;
+    public Object e;
+    public final /* synthetic */ O2 f;
+
+    public abstract void a(int i, Object obj, Object obj2);
+
+    public abstract j$.util.c0 b(Object obj, int i, int i2);
+
+    public abstract j$.util.c0 c(int i, int i2, int i3, int i4);
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -22,22 +28,27 @@ final class N2 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.T.d(this);
+        return j$.com.android.tools.r8.a.n(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.T.e(this, i);
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
-    N2(W2 w2, int i, int i2, int i3, int i4) {
-        this.f = w2;
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
+    }
+
+    public N2(O2 o2, int i, int i2, int i3, int i4) {
+        this.f = o2;
         this.a = i;
         this.b = i2;
         this.c = i3;
         this.d = i4;
-        Object[][] objArr = w2.f;
-        this.e = objArr == null ? w2.e : objArr[i];
+        Object[] objArr = o2.f;
+        this.e = objArr == null ? o2.e : objArr[i];
     }
 
     @Override // j$.util.Spliterator
@@ -52,75 +63,71 @@ final class N2 implements Spliterator {
         return ((jArr[i3] + i2) - jArr[i]) - this.c;
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        Objects.requireNonNull(consumer);
+    @Override // j$.util.c0
+    public final boolean tryAdvance(Object obj) {
+        Objects.requireNonNull(obj);
         int i = this.a;
         int i2 = this.b;
         if (i >= i2 && (i != i2 || this.c >= this.d)) {
             return false;
         }
-        Object[] objArr = this.e;
+        Object obj2 = this.e;
         int i3 = this.c;
         this.c = i3 + 1;
-        consumer.accept(objArr[i3]);
-        if (this.c == this.e.length) {
+        a(i3, obj2, obj);
+        int i4 = this.c;
+        Object obj3 = this.e;
+        O2 o2 = this.f;
+        if (i4 == o2.l(obj3)) {
             this.c = 0;
-            int i4 = this.a + 1;
-            this.a = i4;
-            Object[][] objArr2 = this.f.f;
-            if (objArr2 != null && i4 <= i2) {
-                this.e = objArr2[i4];
+            int i5 = this.a + 1;
+            this.a = i5;
+            Object[] objArr = o2.f;
+            if (objArr != null && i5 <= i2) {
+                this.e = objArr[i5];
             }
         }
         return true;
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        W2 w2;
-        Objects.requireNonNull(consumer);
+    @Override // j$.util.c0
+    public final void forEachRemaining(Object obj) {
+        O2 o2;
+        Objects.requireNonNull(obj);
         int i = this.a;
         int i2 = this.d;
         int i3 = this.b;
         if (i < i3 || (i == i3 && this.c < i2)) {
             int i4 = this.c;
             while (true) {
-                w2 = this.f;
+                o2 = this.f;
                 if (i >= i3) {
                     break;
                 }
-                Object[] objArr = w2.f[i];
-                while (i4 < objArr.length) {
-                    consumer.accept(objArr[i4]);
-                    i4++;
-                }
+                Object obj2 = o2.f[i];
+                o2.k(obj2, i4, o2.l(obj2), obj);
                 i++;
                 i4 = 0;
             }
-            Object[] objArr2 = this.a == i3 ? this.e : w2.f[i3];
-            while (i4 < i2) {
-                consumer.accept(objArr2[i4]);
-                i4++;
-            }
+            o2.k(this.a == i3 ? this.e : o2.f[i3], i4, i2, obj);
             this.a = i3;
             this.c = i2;
         }
     }
 
     @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
+    public final j$.util.c0 trySplit() {
         int i = this.a;
         int i2 = this.b;
         if (i < i2) {
             int i3 = i2 - 1;
             int i4 = this.c;
-            W2 w2 = this.f;
-            N2 n2 = new N2(w2, i, i3, i4, w2.f[i3].length);
+            O2 o2 = this.f;
+            j$.util.c0 c = c(i, i3, i4, o2.l(o2.f[i3]));
             this.a = i2;
             this.c = 0;
-            this.e = w2.f[i2];
-            return n2;
+            this.e = o2.f[i2];
+            return c;
         }
         if (i != i2) {
             return null;
@@ -130,13 +137,47 @@ final class N2 implements Spliterator {
         if (i6 == 0) {
             return null;
         }
-        Spliterator m = Spliterators.m(this.e, i5, i5 + i6);
+        j$.util.c0 b = b(this.e, i5, i6);
         this.c += i6;
-        return m;
+        return b;
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
+        forEachRemaining((Object) intConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
+        return tryAdvance((Object) intConsumer);
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        forEachRemaining((Object) longConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
+        return tryAdvance((Object) longConsumer);
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        forEachRemaining((Object) doubleConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        return tryAdvance((Object) doubleConsumer);
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.T trySplit() {
+        return (j$.util.T) trySplit();
     }
 }

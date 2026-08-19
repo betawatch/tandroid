@@ -128,6 +128,7 @@ public final class zabe extends GoogleApiClient implements zabz {
     }
 
     private final void zal(int i) {
+        zabe zabeVar;
         Integer num = this.zaw;
         if (num == null) {
             this.zaw = Integer.valueOf(i);
@@ -145,17 +146,21 @@ public final class zabe extends GoogleApiClient implements zabz {
         }
         int intValue = this.zaw.intValue();
         if (intValue == 1) {
+            zabeVar = this;
             if (!z) {
                 throw new IllegalStateException("SIGN_IN_MODE_REQUIRED cannot be used on a GoogleApiClient that does not contain any authenticated APIs. Use connect() instead.");
             }
             if (z2) {
                 throw new IllegalStateException("Cannot use SIGN_IN_MODE_REQUIRED with GOOGLE_SIGN_IN_API. Use connect(SIGN_IN_MODE_OPTIONAL) instead.");
             }
-        } else if (intValue == 2 && z) {
-            this.zal = zaaa.zag(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav);
-            return;
+        } else {
+            if (intValue == 2 && z) {
+                this.zal = zaaa.zag(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav);
+                return;
+            }
+            zabeVar = this;
         }
-        this.zal = new zabi(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav, this);
+        zabeVar.zal = new zabi(zabeVar.zan, zabeVar, zabeVar.zaj, zabeVar.zao, zabeVar.zat, zabeVar.zac, zabeVar.zae, zabeVar.zaf, zabeVar.zag, zabeVar.zav, this);
     }
 
     private final void zan() {

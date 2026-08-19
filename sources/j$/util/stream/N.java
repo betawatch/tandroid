@@ -1,51 +1,62 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.LongConsumer;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class N extends P implements l2 {
-    final LongConsumer b;
+public abstract class N implements y3, z3 {
+    public final boolean a;
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void p(Object obj) {
-        j((Long) obj);
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        return false;
     }
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    public /* synthetic */ void accept(double d) {
+        q1.a();
+        throw null;
     }
 
-    @Override // java.util.function.Supplier
-    public final /* bridge */ /* synthetic */ Object get() {
-        return null;
+    public /* synthetic */ void accept(int i) {
+        q1.k();
+        throw null;
     }
 
-    @Override // j$.util.stream.l2
-    public final /* synthetic */ void j(Long l) {
-        w0.i(this, l);
+    public /* synthetic */ void accept(long j) {
+        q1.l();
+        throw null;
     }
 
-    @Override // j$.util.stream.G3
-    public final Object b(b bVar, Spliterator spliterator) {
-        bVar.U(spliterator, this);
-        return null;
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.G3
-    public final /* bridge */ /* synthetic */ Object c(b bVar, Spliterator spliterator) {
-        e(bVar, spliterator);
-        return null;
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void x() {
     }
 
-    N(LongConsumer longConsumer, boolean z) {
-        super(z);
-        this.b = longConsumer;
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void y(long j) {
     }
 
-    @Override // j$.util.stream.P, j$.util.stream.m2
-    public final void accept(long j) {
-        this.b.accept(j);
+    public N(boolean z) {
+        this.a = z;
+    }
+
+    @Override // j$.util.stream.y3
+    public final int d() {
+        if (this.a) {
+            return 0;
+        }
+        return S2.r;
+    }
+
+    public final void e(a aVar, Spliterator spliterator) {
+        if (this.a) {
+            new O(aVar, spliterator, this).invoke();
+        } else {
+            new P(aVar, spliterator, aVar.R(this)).invoke();
+        }
     }
 }

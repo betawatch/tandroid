@@ -10,7 +10,7 @@ public final /* synthetic */ class Comparator$-EL {
         if (!(comparator instanceof d)) {
             return Collections.reverseOrder(comparator);
         }
-        ((e) ((d) comparator)).getClass();
+        ((d) comparator).getClass();
         return Comparator$-CC.reverseOrder();
     }
 
@@ -19,18 +19,18 @@ public final /* synthetic */ class Comparator$-EL {
             Objects.requireNonNull(comparator2);
             return new c(comparator, comparator2, 0);
         }
-        e eVar = (e) ((d) comparator);
-        eVar.getClass();
+        d dVar = (d) comparator;
+        dVar.getClass();
         Objects.requireNonNull(comparator2);
-        return new c(eVar, comparator2, 0);
+        return new c(dVar, comparator2, 0);
     }
 
     public static Comparator thenComparingInt(Comparator comparator, ToIntFunction toIntFunction) {
         if (!(comparator instanceof d)) {
             return a(comparator, Comparator$-CC.comparingInt(toIntFunction));
         }
-        e eVar = (e) ((d) comparator);
-        eVar.getClass();
-        return a(eVar, Comparator$-CC.comparingInt(toIntFunction));
+        d dVar = (d) comparator;
+        dVar.getClass();
+        return a(dVar, Comparator$-CC.comparingInt(toIntFunction));
     }
 }

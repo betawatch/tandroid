@@ -32,11 +32,23 @@ final class EmojiProcessor {
         this.mEmojiAsDefaultStyleExceptions = iArr;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0049 A[Catch: all -> 0x002a, TryCatch #0 {all -> 0x002a, blocks: (B:100:0x000e, B:103:0x0013, B:105:0x0017, B:107:0x0024, B:9:0x003a, B:11:0x0042, B:13:0x0045, B:15:0x0049, B:17:0x0055, B:19:0x0058, B:23:0x0065, B:29:0x0074, B:30:0x0080, B:34:0x009b, B:60:0x00ab, B:64:0x00b7, B:65:0x00c1, B:47:0x00cb, B:50:0x00d2, B:37:0x00d7, B:39:0x00e2, B:71:0x00e9, B:75:0x00f3, B:78:0x00ff, B:79:0x0104, B:81:0x010d, B:6:0x002f), top: B:99:0x000e }] */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0119, code lost:
+    
+        if (r0 != false) goto L78;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x011b, code lost:
+    
+        ((androidx.emoji2.text.SpannableBuilder) r11).endBatchEdit();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0121, code lost:
+    
+        return r11;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0049 A[Catch: all -> 0x002a, TryCatch #0 {all -> 0x002a, blocks: (B:99:0x000e, B:102:0x0013, B:104:0x0017, B:106:0x0024, B:9:0x003a, B:11:0x0042, B:13:0x0045, B:15:0x0049, B:17:0x0055, B:19:0x0058, B:23:0x0065, B:29:0x0074, B:30:0x0080, B:34:0x009b, B:60:0x00ab, B:64:0x00b7, B:65:0x00c1, B:47:0x00cb, B:50:0x00d2, B:37:0x00d7, B:39:0x00e2, B:71:0x00e9, B:75:0x00f3, B:78:0x00ff, B:79:0x0104, B:81:0x010d, B:6:0x002f), top: B:98:0x000e }] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00d7 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00a2 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x00ff A[Catch: all -> 0x002a, TryCatch #0 {all -> 0x002a, blocks: (B:100:0x000e, B:103:0x0013, B:105:0x0017, B:107:0x0024, B:9:0x003a, B:11:0x0042, B:13:0x0045, B:15:0x0049, B:17:0x0055, B:19:0x0058, B:23:0x0065, B:29:0x0074, B:30:0x0080, B:34:0x009b, B:60:0x00ab, B:64:0x00b7, B:65:0x00c1, B:47:0x00cb, B:50:0x00d2, B:37:0x00d7, B:39:0x00e2, B:71:0x00e9, B:75:0x00f3, B:78:0x00ff, B:79:0x0104, B:81:0x010d, B:6:0x002f), top: B:99:0x000e }] */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x010d A[Catch: all -> 0x002a, TRY_LEAVE, TryCatch #0 {all -> 0x002a, blocks: (B:100:0x000e, B:103:0x0013, B:105:0x0017, B:107:0x0024, B:9:0x003a, B:11:0x0042, B:13:0x0045, B:15:0x0049, B:17:0x0055, B:19:0x0058, B:23:0x0065, B:29:0x0074, B:30:0x0080, B:34:0x009b, B:60:0x00ab, B:64:0x00b7, B:65:0x00c1, B:47:0x00cb, B:50:0x00d2, B:37:0x00d7, B:39:0x00e2, B:71:0x00e9, B:75:0x00f3, B:78:0x00ff, B:79:0x0104, B:81:0x010d, B:6:0x002f), top: B:99:0x000e }] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00ff A[Catch: all -> 0x002a, TryCatch #0 {all -> 0x002a, blocks: (B:99:0x000e, B:102:0x0013, B:104:0x0017, B:106:0x0024, B:9:0x003a, B:11:0x0042, B:13:0x0045, B:15:0x0049, B:17:0x0055, B:19:0x0058, B:23:0x0065, B:29:0x0074, B:30:0x0080, B:34:0x009b, B:60:0x00ab, B:64:0x00b7, B:65:0x00c1, B:47:0x00cb, B:50:0x00d2, B:37:0x00d7, B:39:0x00e2, B:71:0x00e9, B:75:0x00f3, B:78:0x00ff, B:79:0x0104, B:81:0x010d, B:6:0x002f), top: B:98:0x000e }] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x010d A[Catch: all -> 0x002a, TRY_LEAVE, TryCatch #0 {all -> 0x002a, blocks: (B:99:0x000e, B:102:0x0013, B:104:0x0017, B:106:0x0024, B:9:0x003a, B:11:0x0042, B:13:0x0045, B:15:0x0049, B:17:0x0055, B:19:0x0058, B:23:0x0065, B:29:0x0074, B:30:0x0080, B:34:0x009b, B:60:0x00ab, B:64:0x00b7, B:65:0x00c1, B:47:0x00cb, B:50:0x00d2, B:37:0x00d7, B:39:0x00e2, B:71:0x00e9, B:75:0x00f3, B:78:0x00ff, B:79:0x0104, B:81:0x010d, B:6:0x002f), top: B:98:0x000e }] */
     /* JADX WARN: Removed duplicated region for block: B:92:0x0119  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -108,24 +120,21 @@ final class EmojiProcessor {
                             }
                             addEmoji(unprecomputeTextOnModificationSpannable2, processorSm.getCurrentMetadata(), i4, i);
                         }
-                        if (unprecomputeTextOnModificationSpannable2 != null) {
+                        if (unprecomputeTextOnModificationSpannable2 == null) {
+                            Spannable unwrappedSpannable = unprecomputeTextOnModificationSpannable2.getUnwrappedSpannable();
                             if (z2) {
                                 ((SpannableBuilder) charSequence).endBatchEdit();
                             }
-                            return charSequence;
+                            return unwrappedSpannable;
                         }
-                        Spannable unwrappedSpannable = unprecomputeTextOnModificationSpannable2.getUnwrappedSpannable();
-                        if (z2) {
-                            ((SpannableBuilder) charSequence).endBatchEdit();
-                        }
-                        return unwrappedSpannable;
                     }
                     return charSequence;
                 }
-            } finally {
+            } catch (Throwable th) {
                 if (z2) {
                     ((SpannableBuilder) charSequence).endBatchEdit();
                 }
+                throw th;
             }
         }
         unprecomputeTextOnModificationSpannable = new UnprecomputeTextOnModificationSpannable((Spannable) charSequence);
@@ -154,7 +163,7 @@ final class EmojiProcessor {
                 }
                 addEmoji(unprecomputeTextOnModificationSpannable2, processorSm.getCurrentMetadata(), i4, i);
             }
-            if (unprecomputeTextOnModificationSpannable2 != null) {
+            if (unprecomputeTextOnModificationSpannable2 == null) {
             }
         }
         return charSequence;
@@ -326,7 +335,10 @@ final class EmojiProcessor {
         }
 
         boolean isInFlushableState() {
-            return this.mState == 2 && this.mCurrentNode.getData() != null && (this.mCurrentDepth > 1 || shouldUseEmojiPresentationStyleForSingleCodepoint());
+            if (this.mState != 2 || this.mCurrentNode.getData() == null) {
+                return false;
+            }
+            return this.mCurrentDepth > 1 || shouldUseEmojiPresentationStyleForSingleCodepoint();
         }
 
         private boolean shouldUseEmojiPresentationStyleForSingleCodepoint() {

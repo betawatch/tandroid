@@ -70,7 +70,7 @@ public abstract class AbstractCollection implements Collection {
     }
 
     public String toString() {
-        return CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$$ExternalSyntheticLambda0
+        return CollectionsKt___CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 CharSequence string$lambda$2;

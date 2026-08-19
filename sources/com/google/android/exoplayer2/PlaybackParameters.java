@@ -16,9 +16,7 @@ public final class PlaybackParameters implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.PlaybackParameters$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            PlaybackParameters lambda$static$0;
-            lambda$static$0 = PlaybackParameters.lambda$static$0(bundle);
-            return lambda$static$0;
+            return PlaybackParameters.$r8$lambda$Emm-7RfmlhRqcQf5RbiZCuXgDco(bundle);
         }
     };
 
@@ -46,11 +44,13 @@ public final class PlaybackParameters implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || PlaybackParameters.class != obj.getClass()) {
-            return false;
+        if (obj != null && PlaybackParameters.class == obj.getClass()) {
+            PlaybackParameters playbackParameters = (PlaybackParameters) obj;
+            if (this.speed == playbackParameters.speed && this.pitch == playbackParameters.pitch) {
+                return true;
+            }
         }
-        PlaybackParameters playbackParameters = (PlaybackParameters) obj;
-        return this.speed == playbackParameters.speed && this.pitch == playbackParameters.pitch;
+        return false;
     }
 
     public int hashCode() {
@@ -69,8 +69,7 @@ public final class PlaybackParameters implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ PlaybackParameters lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ PlaybackParameters $r8$lambda$Emm-7RfmlhRqcQf5RbiZCuXgDco(Bundle bundle) {
         return new PlaybackParameters(bundle.getFloat(FIELD_SPEED, 1.0f), bundle.getFloat(FIELD_PITCH, 1.0f));
     }
 }

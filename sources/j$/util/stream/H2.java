@@ -1,50 +1,45 @@
 package j$.util.stream;
 
-import j$.util.Comparator$-CC;
 import j$.util.Objects;
-import j$.util.Spliterator;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.function.IntFunction;
+import j$.util.Spliterators;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class H2 extends d2 {
-    private final boolean m;
-    private final Comparator n;
+public final class H2 extends N2 implements j$.util.T {
+    public final /* synthetic */ I2 g;
 
-    H2(e2 e2Var) {
-        super(e2Var, a3.q | a3.o, 0);
-        this.m = true;
-        this.n = Comparator$-CC.a();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.i(this, consumer);
     }
 
-    H2(e2 e2Var, Comparator comparator) {
-        super(e2Var, a3.q | a3.p, 0);
-        this.m = false;
-        this.n = (Comparator) Objects.requireNonNull(comparator);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.com.android.tools.r8.a.z(this, consumer);
     }
 
-    @Override // j$.util.stream.b
-    public final m2 Q(int i, m2 m2Var) {
-        Objects.requireNonNull(m2Var);
-        if (a3.SORTED.o(i) && this.m) {
-            return m2Var;
-        }
-        boolean o = a3.SIZED.o(i);
-        Comparator comparator = this.n;
-        if (o) {
-            return new M2(m2Var, comparator);
-        }
-        return new I2(m2Var, comparator);
+    @Override // j$.util.stream.N2
+    public final void a(int i, Object obj, Object obj2) {
+        ((DoubleConsumer) obj2).accept(((double[]) obj)[i]);
     }
 
-    @Override // j$.util.stream.b
-    public final I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        if (a3.SORTED.o(bVar.J()) && this.m) {
-            return bVar.B(spliterator, false, intFunction);
-        }
-        Object[] o = bVar.B(spliterator, true, intFunction).o(intFunction);
-        Arrays.sort(o, this.n);
-        return new L0(o);
+    @Override // j$.util.stream.N2
+    public final j$.util.c0 b(Object obj, int i, int i2) {
+        double[] dArr = (double[]) obj;
+        int i3 = i2 + i;
+        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, i, i3);
+        return new j$.util.j0(dArr, i, i3, 1040);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public H2(I2 i2, int i, int i3, int i4, int i5) {
+        super(i2, i, i3, i4, i5);
+        this.g = i2;
+    }
+
+    @Override // j$.util.stream.N2
+    public final j$.util.c0 c(int i, int i2, int i3, int i4) {
+        return new H2(this.g, i, i2, i3, i4);
     }
 }

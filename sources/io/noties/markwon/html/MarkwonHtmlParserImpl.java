@@ -111,7 +111,7 @@ public class MarkwonHtmlParserImpl extends MarkwonHtmlParser {
             this.inlineTags.clear();
             return;
         }
-        flushAction.apply(Collections.emptyList());
+        flushAction.apply(Collections.EMPTY_LIST);
     }
 
     @Override // io.noties.markwon.html.MarkwonHtmlParser
@@ -132,7 +132,7 @@ public class MarkwonHtmlParserImpl extends MarkwonHtmlParser {
         if (children.size() > 0) {
             flushAction.apply(children);
         } else {
-            flushAction.apply(Collections.emptyList());
+            flushAction.apply(Collections.EMPTY_LIST);
         }
         this.currentBlock = HtmlTagImpl.BlockImpl.root();
     }
@@ -296,7 +296,7 @@ public class MarkwonHtmlParserImpl extends MarkwonHtmlParser {
             }
             return DesugarCollections.unmodifiableMap(hashMap);
         }
-        return Collections.emptyMap();
+        return Collections.EMPTY_MAP;
     }
 
     protected static boolean isEmpty(Appendable appendable, HtmlTagImpl htmlTagImpl) {

@@ -154,7 +154,6 @@ public abstract class StorageDiagramView extends View implements NotificationCen
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        double d;
         int i;
         if (this.data == null) {
             return;
@@ -197,7 +196,6 @@ public abstract class StorageDiagramView extends View implements NotificationCen
         while (true) {
             ClearViewData[] clearViewDataArr = this.data;
             int length = clearViewDataArr.length;
-            d = 180.0d;
             i = NotificationCenter.didReceiveSmsCode;
             if (i2 >= length) {
                 break;
@@ -212,9 +210,9 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                         clearViewData.paint.setColor(Theme.getColor(clearViewData.colorKey));
                         this.data[i2].paint.setAlpha(NotificationCenter.didReceiveSmsCode);
                         double width = this.rectF.width() / 2.0f;
-                        if (Math.abs((float) (f10 * ((3.141592653589793d * width) / 180.0d))) <= 1.0f) {
-                            double d2 = (-90.0f) - (360.0f * f7);
-                            canvas.drawPoint(this.rectF.centerX() + ((float) (Math.cos(Math.toRadians(d2)) * width)), this.rectF.centerY() + ((float) (width * Math.sin(Math.toRadians(d2)))), this.data[i2].paint);
+                        if (Math.abs((float) (((3.141592653589793d * width) / 180.0d) * f10)) <= 1.0f) {
+                            double d = (-90.0f) - (360.0f * f7);
+                            canvas.drawPoint(this.rectF.centerX() + ((float) (Math.cos(Math.toRadians(d)) * width)), this.rectF.centerY() + ((float) (width * Math.sin(Math.toRadians(d)))), this.data[i2].paint);
                         } else {
                             this.data[i2].paint.setStyle(Paint.Style.STROKE);
                             canvas.drawArc(this.rectF, (-90.0f) - (360.0f * f7), f10, false, this.data[i2].paint);
@@ -238,31 +236,30 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                 if (f12 != 0.0f) {
                     if (!clearViewData2.firstDraw) {
                         float f13 = (f12 * (-360.0f)) + ((1.0f - this.singleProgress) * 10.0f);
-                        float f14 = f13 > 0.0f ? 0.0f : f13;
+                        if (f13 > 0.0f) {
+                            f13 = 0.0f;
+                        }
                         clearViewData2.paint.setColor(Theme.getColor(clearViewData2.colorKey));
                         this.data[i3].paint.setAlpha(i);
                         double width2 = this.rectF.width() / 2.0f;
-                        if (Math.abs((float) (f14 * ((width2 * 3.141592653589793d) / d))) <= 1.0f) {
-                            double d3 = (-90.0f) - (f11 * 360.0f);
-                            canvas.drawPoint(this.rectF.centerX() + ((float) (Math.cos(Math.toRadians(d3)) * width2)), this.rectF.centerY() + ((float) (width2 * Math.sin(Math.toRadians(d3)))), this.data[i3].paint);
+                        if (Math.abs((float) (f13 * ((width2 * 3.141592653589793d) / 180.0d))) <= 1.0f) {
+                            double d2 = (-90.0f) - (f11 * 360.0f);
+                            canvas.drawPoint(this.rectF.centerX() + ((float) (width2 * Math.cos(Math.toRadians(d2)))), this.rectF.centerY() + ((float) (Math.sin(Math.toRadians(d2)) * width2)), this.data[i3].paint);
                         } else {
                             this.data[i3].paint.setStyle(Paint.Style.STROKE);
-                            canvas.drawArc(this.rectF, (-90.0f) - (f11 * 360.0f), f14, false, this.data[i3].paint);
+                            canvas.drawArc(this.rectF, (-90.0f) - (f11 * 360.0f), f13, false, this.data[i3].paint);
                             f11 += f12;
                             i3++;
                             i = NotificationCenter.didReceiveSmsCode;
-                            d = 180.0d;
                         }
                     }
                     f11 += f12;
                     i3++;
                     i = NotificationCenter.didReceiveSmsCode;
-                    d = 180.0d;
                 }
             }
             i3++;
             i = NotificationCenter.didReceiveSmsCode;
-            d = 180.0d;
         }
         ImageReceiver imageReceiver = this.avatarImageReceiver;
         if (imageReceiver != null) {
@@ -388,7 +385,7 @@ public abstract class StorageDiagramView extends View implements NotificationCen
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StorageDiagramView$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StorageDiagramView.this.lambda$update$0(clearViewDataArr, valueAnimator2);
+                StorageDiagramView.$r8$lambda$aRBhXNGBD8hxfdPtEDiiKBOVXgA(StorageDiagramView.this, clearViewDataArr, valueAnimator2);
             }
         });
         this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.StorageDiagramView.1
@@ -413,13 +410,13 @@ public abstract class StorageDiagramView extends View implements NotificationCen
         this.valueAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$update$0(ClearViewData[] clearViewDataArr, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$aRBhXNGBD8hxfdPtEDiiKBOVXgA(StorageDiagramView storageDiagramView, ClearViewData[] clearViewDataArr, ValueAnimator valueAnimator) {
+        storageDiagramView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         for (int i = 0; i < clearViewDataArr.length; i++) {
-            this.drawingPercentage[i] = (this.startFromPercentage[i] * (1.0f - floatValue)) + (this.animateToPercentage[i] * floatValue);
+            storageDiagramView.drawingPercentage[i] = (storageDiagramView.startFromPercentage[i] * (1.0f - floatValue)) + (storageDiagramView.animateToPercentage[i] * floatValue);
         }
-        invalidate();
+        storageDiagramView.invalidate();
     }
 
     @Override // android.view.View
@@ -466,7 +463,7 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StorageDiagramView$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StorageDiagramView.this.lambda$setPressed$1(valueAnimator2);
+                        StorageDiagramView.$r8$lambda$ATR54lDOgXOxCBVfgFDIbKuF3J8(StorageDiagramView.this, valueAnimator2);
                     }
                 });
                 this.backAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.StorageDiagramView.2
@@ -483,10 +480,10 @@ public abstract class StorageDiagramView extends View implements NotificationCen
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPressed$1(ValueAnimator valueAnimator) {
-        this.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$ATR54lDOgXOxCBVfgFDIbKuF3J8(StorageDiagramView storageDiagramView, ValueAnimator valueAnimator) {
+        storageDiagramView.getClass();
+        storageDiagramView.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        storageDiagramView.invalidate();
     }
 
     public long updateDescription() {

@@ -194,7 +194,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && motionEvent.getY() < TranslateAlert2.this.getSheetTop() - getTop()) {
-                    TranslateAlert2.this.lambda$new$0();
+                    TranslateAlert2.this.dismiss();
                     return true;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -285,17 +285,12 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                TranslateAlert2.this.lambda$new$0(view2);
+                TranslateAlert2.this.dismiss();
             }
         });
         this.buttonView.addView(this.buttonTextView, LayoutHelper.createFrame(-1, 48.0f, 87, 16.0f, 16.0f, 16.0f, 16.0f));
         this.containerView.addView(this.buttonView, LayoutHelper.createFrame(-1, -2, 87));
         translate();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -334,7 +329,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             this.reqId = Integer.valueOf(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_translateRichMessage, new RequestDelegate() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda8
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    TranslateAlert2.this.lambda$translate$2(tLObject, tL_error);
+                    TranslateAlert2.$r8$lambda$MGgHgyWdrdSMiP952Ag7Vtq43Vc(TranslateAlert2.this, tLObject, tL_error);
                 }
             }));
             return;
@@ -355,7 +350,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             this.reqId = Integer.valueOf(ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_summarizeText, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda9
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    TranslateAlert2.this.lambda$translate$3(tL_textWithEntities, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                    TranslateAlert2.$r8$lambda$-hIQqDVFHyI4E16DO4jB6xnsgMk(TranslateAlert2.this, tL_textWithEntities, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 }
             }));
             return;
@@ -374,119 +369,116 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         this.reqId = Integer.valueOf(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_translateText, new RequestDelegate() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                TranslateAlert2.this.lambda$translate$5(tL_textWithEntities, tLObject, tL_error);
+                TranslateAlert2.$r8$lambda$pYSrfd0XHC-LtHp5h97GxZkjRm4(TranslateAlert2.this, tL_textWithEntities, tLObject, tL_error);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$translate$2(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$MGgHgyWdrdSMiP952Ag7Vtq43Vc(final TranslateAlert2 translateAlert2, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        translateAlert2.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                TranslateAlert2.this.lambda$translate$1(tLObject);
+                TranslateAlert2.$r8$lambda$h4bNLRT22kII1AFoqthd0y_Pe70(TranslateAlert2.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$translate$1(TLObject tLObject) {
-        this.reqId = null;
+    public static /* synthetic */ void $r8$lambda$h4bNLRT22kII1AFoqthd0y_Pe70(TranslateAlert2 translateAlert2, TLObject tLObject) {
+        translateAlert2.reqId = null;
         if (tLObject instanceof TLRPC.TL_messages_translatedRichMessage) {
             TLRPC.TL_messages_translatedRichMessage tL_messages_translatedRichMessage = (TLRPC.TL_messages_translatedRichMessage) tLObject;
             if (!tL_messages_translatedRichMessage.result.isEmpty() && tL_messages_translatedRichMessage.result.get(0) != null) {
-                this.firstTranslation = false;
+                translateAlert2.firstTranslation = false;
                 TL_iv.RichMessage richMessage = tL_messages_translatedRichMessage.result.get(0);
-                RichMessageLayout.PreviewView previewView = this.richPreviewView;
+                RichMessageLayout.PreviewView previewView = translateAlert2.richPreviewView;
                 if (previewView != null) {
                     previewView.set(richMessage);
-                    this.adapter.updateMainView(this.richPreviewView);
+                    translateAlert2.adapter.updateMainView(translateAlert2.richPreviewView);
                     return;
                 }
                 return;
             }
         }
-        if (this.firstTranslation) {
-            lambda$new$0();
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
+        if (translateAlert2.firstTranslation) {
+            translateAlert2.dismiss();
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).createErrorBulletin(LocaleController.getString(R.string.TranslationFailedAlert2)).show();
-        AnimatedTextView animatedTextView = this.headerView.toLanguageTextView;
-        String str = this.prevToLanguage;
-        this.toLanguage = str;
+        BulletinFactory.of((FrameLayout) translateAlert2.containerView, translateAlert2.resourcesProvider).createErrorBulletin(LocaleController.getString(R.string.TranslationFailedAlert2)).show();
+        AnimatedTextView animatedTextView = translateAlert2.headerView.toLanguageTextView;
+        String str = translateAlert2.prevToLanguage;
+        translateAlert2.toLanguage = str;
         animatedTextView.setText(languageName(str));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$translate$3(TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2, TLRPC.TL_error tL_error) {
-        this.reqId = null;
+    public static /* synthetic */ void $r8$lambda$-hIQqDVFHyI4E16DO4jB6xnsgMk(TranslateAlert2 translateAlert2, TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2, TLRPC.TL_error tL_error) {
+        translateAlert2.reqId = null;
         if (tL_error != null && "TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error.text)) {
-            translateAlt();
+            translateAlert2.translateAlt();
             return;
         }
         if (tL_textWithEntities2 != null) {
-            this.firstTranslation = false;
+            translateAlert2.firstTranslation = false;
             TLRPC.TL_textWithEntities preprocess = preprocess(tL_textWithEntities, tL_textWithEntities2);
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(preprocess.text);
             MessageObject.addEntitiesToText(valueOf, preprocess.entities, false, true, false, false);
-            this.textView.setText(preprocessText(valueOf));
-            this.adapter.updateMainView(this.textViewContainer);
+            translateAlert2.textView.setText(translateAlert2.preprocessText(valueOf));
+            translateAlert2.adapter.updateMainView(translateAlert2.textViewContainer);
             return;
         }
-        if (this.firstTranslation) {
-            lambda$new$0();
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
+        if (translateAlert2.firstTranslation) {
+            translateAlert2.dismiss();
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).createErrorBulletin(LocaleController.getString(R.string.TranslationFailedAlert2)).show();
-        AnimatedTextView animatedTextView = this.headerView.toLanguageTextView;
-        String str = this.prevToLanguage;
-        this.toLanguage = str;
+        BulletinFactory.of((FrameLayout) translateAlert2.containerView, translateAlert2.resourcesProvider).createErrorBulletin(LocaleController.getString(R.string.TranslationFailedAlert2)).show();
+        AnimatedTextView animatedTextView = translateAlert2.headerView.toLanguageTextView;
+        String str = translateAlert2.prevToLanguage;
+        translateAlert2.toLanguage = str;
         animatedTextView.setText(languageName(str));
-        this.adapter.updateMainView(this.textViewContainer);
+        translateAlert2.adapter.updateMainView(translateAlert2.textViewContainer);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$translate$5(final TLRPC.TL_textWithEntities tL_textWithEntities, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$pYSrfd0XHC-LtHp5h97GxZkjRm4(final TranslateAlert2 translateAlert2, final TLRPC.TL_textWithEntities tL_textWithEntities, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        translateAlert2.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                TranslateAlert2.this.lambda$translate$4(tL_error, tLObject, tL_textWithEntities);
+                TranslateAlert2.$r8$lambda$fgGNeDixBfwaqRAOcKBUglvCsRQ(TranslateAlert2.this, tL_error, tLObject, tL_textWithEntities);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$translate$4(TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.reqId = null;
+    public static /* synthetic */ void $r8$lambda$fgGNeDixBfwaqRAOcKBUglvCsRQ(TranslateAlert2 translateAlert2, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        translateAlert2.reqId = null;
         if (tL_error != null && "TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error.text)) {
-            translateAlt();
+            translateAlert2.translateAlt();
             return;
         }
         if (tLObject instanceof TLRPC.TL_messages_translateResult) {
             TLRPC.TL_messages_translateResult tL_messages_translateResult = (TLRPC.TL_messages_translateResult) tLObject;
             if (!tL_messages_translateResult.result.isEmpty() && tL_messages_translateResult.result.get(0) != null && tL_messages_translateResult.result.get(0).text != null) {
-                this.firstTranslation = false;
+                translateAlert2.firstTranslation = false;
                 TLRPC.TL_textWithEntities preprocess = preprocess(tL_textWithEntities, tL_messages_translateResult.result.get(0));
                 SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(preprocess.text);
                 MessageObject.addEntitiesToText(valueOf, preprocess.entities, false, true, false, false);
-                this.textView.setText(preprocessText(valueOf));
-                this.adapter.updateMainView(this.textViewContainer);
+                translateAlert2.textView.setText(translateAlert2.preprocessText(valueOf));
+                translateAlert2.adapter.updateMainView(translateAlert2.textViewContainer);
                 return;
             }
         }
-        if (this.firstTranslation) {
-            lambda$new$0();
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
+        if (translateAlert2.firstTranslation) {
+            translateAlert2.dismiss();
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).createErrorBulletin(LocaleController.getString(R.string.TranslationFailedAlert2)).show();
-        AnimatedTextView animatedTextView = this.headerView.toLanguageTextView;
-        String str = this.prevToLanguage;
-        this.toLanguage = str;
+        BulletinFactory.of((FrameLayout) translateAlert2.containerView, translateAlert2.resourcesProvider).createErrorBulletin(LocaleController.getString(R.string.TranslationFailedAlert2)).show();
+        AnimatedTextView animatedTextView = translateAlert2.headerView.toLanguageTextView;
+        String str = translateAlert2.prevToLanguage;
+        translateAlert2.toLanguage = str;
         animatedTextView.setText(languageName(str));
-        this.adapter.updateMainView(this.textViewContainer);
+        translateAlert2.adapter.updateMainView(translateAlert2.textViewContainer);
     }
 
     private void translateAlt() {
@@ -506,32 +498,31 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         alternativeTranslate(charSequence2, str, "nb".equals(str2) ? "no" : str2, new Utilities.Callback2() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                TranslateAlert2.this.lambda$translateAlt$6((String) obj, (Boolean) obj2);
+                TranslateAlert2.$r8$lambda$l4cNJw7QK6vW7Gmtp9dk0WWYVtk(TranslateAlert2.this, (String) obj, (Boolean) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$translateAlt$6(String str, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$l4cNJw7QK6vW7Gmtp9dk0WWYVtk(TranslateAlert2 translateAlert2, String str, Boolean bool) {
         if (str != null) {
-            this.firstTranslation = false;
-            this.textView.setText(preprocessText(str));
-            this.adapter.updateMainView(this.textViewContainer);
+            translateAlert2.firstTranslation = false;
+            translateAlert2.textView.setText(translateAlert2.preprocessText(str));
+            translateAlert2.adapter.updateMainView(translateAlert2.textViewContainer);
         } else {
-            if (isDismissed()) {
+            if (translateAlert2.isDismissed()) {
                 return;
             }
-            if (this.firstTranslation) {
-                lambda$new$0();
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2));
+            if (translateAlert2.firstTranslation) {
+                translateAlert2.dismiss();
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2));
                 return;
             }
-            BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider).createErrorBulletin(LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2)).show();
-            AnimatedTextView animatedTextView = this.headerView.toLanguageTextView;
-            String str2 = this.prevToLanguage;
-            this.toLanguage = str2;
+            BulletinFactory.of((FrameLayout) translateAlert2.containerView, translateAlert2.resourcesProvider).createErrorBulletin(LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2)).show();
+            AnimatedTextView animatedTextView = translateAlert2.headerView.toLanguageTextView;
+            String str2 = translateAlert2.prevToLanguage;
+            translateAlert2.toLanguage = str2;
             animatedTextView.setText(languageName(str2));
-            this.adapter.updateMainView(this.textViewContainer);
+            translateAlert2.adapter.updateMainView(translateAlert2.textViewContainer);
         }
     }
 
@@ -591,7 +582,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                 alternativeTranslateInternal((String) cut.get(i2), str2, str3, new Utilities.Callback2() { // from class: org.telegram.ui.Components.TranslateAlert2$$ExternalSyntheticLambda6
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
-                        TranslateAlert2.lambda$alternativeTranslate$9(zArr, arrayList, i2, callback2, (String) obj, (Boolean) obj2);
+                        TranslateAlert2.$r8$lambda$0EnTe7f_rrxXwR3Kj5loBrXB1gw(zArr, arrayList, i2, callback2, (String) obj, (Boolean) obj2);
                     }
                 });
             }
@@ -600,8 +591,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         alternativeTranslateInternal(encode, str2, str3, callback2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$alternativeTranslate$9(boolean[] zArr, ArrayList arrayList, int i, Utilities.Callback2 callback2, String str, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$0EnTe7f_rrxXwR3Kj5loBrXB1gw(boolean[] zArr, ArrayList arrayList, int i, Utilities.Callback2 callback2, String str, Boolean bool) {
         if (zArr[0]) {
             return;
         }
@@ -682,7 +672,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$5$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            TranslateAlert2.5.lambda$run$0(Utilities.Callback2.this, str2);
+                            TranslateAlert2.5.$r8$lambda$EJo9S1zdx0isGruy-5xMAQ05zgw(Utilities.Callback2.this, str2);
                         }
                     });
                 } catch (Exception e) {
@@ -705,7 +695,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$5$$ExternalSyntheticLambda1
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        TranslateAlert2.5.lambda$run$1(Utilities.Callback2.this, z);
+                                        Utilities.Callback2.this.run(null, Boolean.valueOf(z));
                                     }
                                 });
                             }
@@ -714,7 +704,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$5$$ExternalSyntheticLambda2
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    TranslateAlert2.5.lambda$run$2(Utilities.Callback2.this);
+                                    Utilities.Callback2.this.run(null, Boolean.FALSE);
                                 }
                             });
                             return;
@@ -725,7 +715,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$5$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            TranslateAlert2.5.lambda$run$1(Utilities.Callback2.this, z);
+                            Utilities.Callback2.this.run(null, Boolean.valueOf(z));
                         }
                     });
                 }
@@ -735,21 +725,10 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$run$0(Utilities.Callback2 callback2, String str) {
+        public static /* synthetic */ void $r8$lambda$EJo9S1zdx0isGruy-5xMAQ05zgw(Utilities.Callback2 callback2, String str) {
             if (callback2 != null) {
                 callback2.run(str, Boolean.FALSE);
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$run$1(Utilities.Callback2 callback2, boolean z) {
-            callback2.run(null, Boolean.valueOf(z));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$run$2(Utilities.Callback2 callback2) {
-            callback2.run(null, Boolean.FALSE);
         }
     }
 
@@ -854,20 +833,19 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
     private static HashMap groupEmojiRanges(CharSequence charSequence) {
         ArrayList<Emoji.EmojiSpanRange> parseEmojis;
         HashMap hashMap = new HashMap();
-        if (charSequence == null || (parseEmojis = Emoji.parseEmojis(charSequence)) == null) {
-            return hashMap;
-        }
-        String charSequence2 = charSequence.toString();
-        for (int i = 0; i < parseEmojis.size(); i++) {
-            Emoji.EmojiSpanRange emojiSpanRange = parseEmojis.get(i);
-            if (emojiSpanRange != null && emojiSpanRange.code != null) {
-                String substring = charSequence2.substring(emojiSpanRange.start, emojiSpanRange.end);
-                ArrayList arrayList = (ArrayList) hashMap.get(substring);
-                if (arrayList == null) {
-                    arrayList = new ArrayList();
-                    hashMap.put(substring, arrayList);
+        if (charSequence != null && (parseEmojis = Emoji.parseEmojis(charSequence)) != null) {
+            String charSequence2 = charSequence.toString();
+            for (int i = 0; i < parseEmojis.size(); i++) {
+                Emoji.EmojiSpanRange emojiSpanRange = parseEmojis.get(i);
+                if (emojiSpanRange != null && emojiSpanRange.code != null) {
+                    String substring = charSequence2.substring(emojiSpanRange.start, emojiSpanRange.end);
+                    ArrayList arrayList = (ArrayList) hashMap.get(substring);
+                    if (arrayList == null) {
+                        arrayList = new ArrayList();
+                        hashMap.put(substring, arrayList);
+                    }
+                    arrayList.add(emojiSpanRange);
                 }
-                arrayList.add(emojiSpanRange);
             }
         }
         return hashMap;
@@ -886,7 +864,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                         public void onClick(View view) {
                             if (TranslateAlert2.this.onLinkPress != null) {
                                 if (((Boolean) TranslateAlert2.this.onLinkPress.run(uRLSpan)).booleanValue()) {
-                                    TranslateAlert2.this.lambda$new$0();
+                                    TranslateAlert2.this.dismiss();
                                 }
                             } else if (TranslateAlert2.this.fragment != null) {
                                 AlertsCreator.showOpenUrlAlert(TranslateAlert2.this.fragment, uRLSpan.getURL(), false, false);
@@ -940,7 +918,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         }
     }
 
-    private class LoadingTextView extends TextView {
+    /* JADX INFO: Access modifiers changed from: private */
+    class LoadingTextView extends TextView {
         private final LoadingDrawable loadingDrawable;
         private final LinkPath path;
 
@@ -994,7 +973,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         }
     }
 
-    private static class PaddedAdapter extends RecyclerView.Adapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class PaddedAdapter extends RecyclerView.Adapter {
         private Context mContext;
         private View mMainView;
         private int mainViewType = 1;
@@ -1058,13 +1038,12 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             top += Math.max(0, recyclerListView.getChildAt(recyclerListView.getChildCount() - 1).getTop());
         }
         float max = Math.max(0.0f, top - AndroidUtilities.dp(78.0f));
-        if (!z || (animatedFloat = this.sheetTopAnimated) == null) {
-            return max;
+        if (z && (animatedFloat = this.sheetTopAnimated) != null) {
+            if (!this.listView.scrollingByUser && !this.sheetTopNotAnimate) {
+                return animatedFloat.set(max);
+            }
+            animatedFloat.set(max, true);
         }
-        if (!this.listView.scrollingByUser && !this.sheetTopNotAnimate) {
-            return animatedFloat.set(max);
-        }
-        animatedFloat.set(max, true);
         return max;
     }
 
@@ -1099,7 +1078,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             this.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    TranslateAlert2.HeaderView.this.lambda$new$0(view2);
+                    TranslateAlert2.this.dismiss();
                 }
             });
             addView(this.backButton, LayoutHelper.createFrame(54, 54.0f, 48, 1.0f, 1.0f, 1.0f, 1.0f));
@@ -1210,7 +1189,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             this.toLanguageTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    TranslateAlert2.HeaderView.this.lambda$new$1(view2);
+                    TranslateAlert2.HeaderView.this.openLanguagesSelect();
                 }
             });
             if (LocaleController.isRTL) {
@@ -1233,16 +1212,6 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             view2.setBackgroundColor(TranslateAlert2.this.getThemedColor(Theme.key_dialogShadowLine));
             this.shadow.setAlpha(0.0f);
             addView(this.shadow, LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight() / AndroidUtilities.dpf2(1.0f), 55, 0.0f, 56.0f, 0.0f, 0.0f));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            TranslateAlert2.this.lambda$new$0();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(View view) {
-            openLanguagesSelect();
         }
 
         public void openLanguagesSelect() {
@@ -1269,7 +1238,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                     actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            TranslateAlert2.HeaderView.this.lambda$openLanguagesSelect$2(runnableArr, localeInfo, view);
+                            TranslateAlert2.HeaderView.$r8$lambda$UblI6Bw1mBSi2LG49nRSYd2HcQc(TranslateAlert2.HeaderView.this, runnableArr, localeInfo, view);
                         }
                     });
                     actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
@@ -1298,8 +1267,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             actionBarPopupWindow.showAtLocation(((BottomSheet) TranslateAlert2.this).containerView, 51, iArr[0] - AndroidUtilities.dp(8.0f), ((float) i2) > (((float) AndroidUtilities.displaySize.y) * 0.9f) - ((float) measuredHeight) ? (i2 - measuredHeight) + AndroidUtilities.dp(8.0f) : (i2 + this.toLanguageTextView.getMeasuredHeight()) - AndroidUtilities.dp(8.0f));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openLanguagesSelect$2(Runnable[] runnableArr, LocaleController.LocaleInfo localeInfo, View view) {
+        public static /* synthetic */ void $r8$lambda$UblI6Bw1mBSi2LG49nRSYd2HcQc(HeaderView headerView, Runnable[] runnableArr, LocaleController.LocaleInfo localeInfo, View view) {
+            headerView.getClass();
             Runnable runnable = runnableArr[0];
             if (runnable != null) {
                 runnable.run();
@@ -1311,7 +1280,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                 TranslateAlert2 translateAlert2 = TranslateAlert2.this;
                 translateAlert2.prevToLanguage = translateAlert2.toLanguage;
             }
-            this.toLanguageTextView.setText(TranslateAlert2.capitalFirst(TranslateAlert2.languageName(TranslateAlert2.this.toLanguage = localeInfo.pluralLangCode)));
+            headerView.toLanguageTextView.setText(TranslateAlert2.capitalFirst(TranslateAlert2.languageName(TranslateAlert2.this.toLanguage = localeInfo.pluralLangCode)));
             TranslateAlert2.this.adapter.updateMainView(TranslateAlert2.this.reqRichMessage != null ? TranslateAlert2.this.richLoadingPreviewView : TranslateAlert2.this.loadingTextView);
             TranslateAlert2.setToLanguage(TranslateAlert2.this.toLanguage);
             TranslateAlert2.this.translate();
@@ -1603,9 +1572,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.translationModelDownloaded);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.translationModelDownloading);
@@ -1632,9 +1600,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
     public static TranslateAlert2 showAlert(Context context, BaseFragment baseFragment, int i, TLRPC.InputPeer inputPeer, int i2, boolean z, String str, String str2, CharSequence charSequence, ArrayList arrayList, boolean z2, Utilities.CallbackReturn callbackReturn, final Runnable runnable) {
         TranslateAlert2 translateAlert2 = new TranslateAlert2(context, str, str2, charSequence, arrayList, inputPeer, i2, z, null, null) { // from class: org.telegram.ui.Components.TranslateAlert2.7
             @Override // org.telegram.ui.Components.TranslateAlert2, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-            /* renamed from: dismiss */
-            public void lambda$new$0() {
-                super.lambda$new$0();
+            public void dismiss() {
+                super.dismiss();
                 Runnable runnable2 = runnable;
                 if (runnable2 != null) {
                     runnable2.run();
@@ -1648,9 +1615,9 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             if (baseFragment.getParentActivity() != null) {
                 baseFragment.showDialog(translateAlert2);
             }
-        } else {
-            translateAlert2.show();
+            return translateAlert2;
         }
+        translateAlert2.show();
         return translateAlert2;
     }
 
@@ -1660,9 +1627,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         }
         TranslateAlert2 translateAlert2 = new TranslateAlert2(context, str, str2, null, null, inputPeer, i2, false, richMessage, null) { // from class: org.telegram.ui.Components.TranslateAlert2.8
             @Override // org.telegram.ui.Components.TranslateAlert2, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-            /* renamed from: dismiss */
-            public void lambda$new$0() {
-                super.lambda$new$0();
+            public void dismiss() {
+                super.dismiss();
                 Runnable runnable2 = runnable;
                 if (runnable2 != null) {
                     runnable2.run();
@@ -1676,9 +1642,9 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             if (baseFragment.getParentActivity() != null) {
                 baseFragment.showDialog(translateAlert2);
             }
-        } else {
-            translateAlert2.show();
+            return translateAlert2;
         }
+        translateAlert2.show();
         return translateAlert2;
     }
 
@@ -1688,9 +1654,8 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         }
         TranslateAlert2 translateAlert2 = new TranslateAlert2(context, str, str2, charSequence, arrayList, null) { // from class: org.telegram.ui.Components.TranslateAlert2.9
             @Override // org.telegram.ui.Components.TranslateAlert2, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-            /* renamed from: dismiss */
-            public void lambda$new$0() {
-                super.lambda$new$0();
+            public void dismiss() {
+                super.dismiss();
                 Runnable runnable2 = runnable;
                 if (runnable2 != null) {
                     runnable2.run();
@@ -1704,9 +1669,9 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             if (baseFragment.getParentActivity() != null) {
                 baseFragment.showDialog(translateAlert2);
             }
-        } else {
-            translateAlert2.show();
+            return translateAlert2;
         }
+        translateAlert2.show();
         return translateAlert2;
     }
 

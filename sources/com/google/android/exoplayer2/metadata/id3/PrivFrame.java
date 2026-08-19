@@ -37,11 +37,13 @@ public final class PrivFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || PrivFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && PrivFrame.class == obj.getClass()) {
+            PrivFrame privFrame = (PrivFrame) obj;
+            if (Util.areEqual(this.owner, privFrame.owner) && Arrays.equals(this.privateData, privFrame.privateData)) {
+                return true;
+            }
         }
-        PrivFrame privFrame = (PrivFrame) obj;
-        return Util.areEqual(this.owner, privFrame.owner) && Arrays.equals(this.privateData, privFrame.privateData);
+        return false;
     }
 
     public int hashCode() {

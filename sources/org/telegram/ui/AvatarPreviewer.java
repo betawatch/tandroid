@@ -84,7 +84,10 @@ public class AvatarPreviewer {
     }
 
     public static boolean canPreview(Data data) {
-        return (data == null || (data.imageLocation == null && data.thumbImageLocation == null)) ? false : true;
+        if (data != null) {
+            return (data.imageLocation == null && data.thumbImageLocation == null) ? false : true;
+        }
+        return false;
     }
 
     public void show(ViewGroup viewGroup, Theme.ResourcesProvider resourcesProvider, Data data, Callback callback) {
@@ -116,9 +119,7 @@ public class AvatarPreviewer {
             ViewCompat.setOnApplyWindowInsetsListener(layout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.AvatarPreviewer$$ExternalSyntheticLambda0
                 @Override // androidx.core.view.OnApplyWindowInsetsListener
                 public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                    WindowInsetsCompat lambda$show$0;
-                    lambda$show$0 = AvatarPreviewer.this.lambda$show$0(view, windowInsetsCompat);
-                    return lambda$show$0;
+                    return AvatarPreviewer.$r8$lambda$baHesU_j19n_OB-G0wGe2cl2bH8(AvatarPreviewer.this, view, windowInsetsCompat);
                 }
             });
         }
@@ -139,12 +140,12 @@ public class AvatarPreviewer {
         this.visible = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ WindowInsetsCompat lambda$show$0(View view, WindowInsetsCompat windowInsetsCompat) {
+    public static /* synthetic */ WindowInsetsCompat $r8$lambda$baHesU_j19n_OB-G0wGe2cl2bH8(AvatarPreviewer avatarPreviewer, View view, WindowInsetsCompat windowInsetsCompat) {
+        avatarPreviewer.getClass();
         Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
-        Layout layout = this.layout;
+        Layout layout = avatarPreviewer.layout;
         if (layout == view && layout.container != null) {
-            this.layout.container.setPadding(defaultWindowInsets.left, defaultWindowInsets.top, defaultWindowInsets.right, defaultWindowInsets.bottom);
+            avatarPreviewer.layout.container.setPadding(defaultWindowInsets.left, defaultWindowInsets.top, defaultWindowInsets.right, defaultWindowInsets.bottom);
         }
         return WindowInsetsCompat.CONSUMED;
     }
@@ -252,7 +253,8 @@ public class AvatarPreviewer {
             }
             ImageLocation imageLocation2 = forUserOrChat;
             ImageLocation forUserOrChat2 = ImageLocation.getForUserOrChat(userFull.user, 1);
-            String str2 = (forUserOrChat2 == null || !(forUserOrChat2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
+            String str2 = null;
+            String str3 = (forUserOrChat2 == null || !(forUserOrChat2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
             BitmapDrawable bitmapDrawable = (user == null || (userProfilePhoto = user.photo) == null) ? null : userProfilePhoto.strippedBitmap;
             TLRPC.Photo photo2 = userFull.profile_photo;
             if (photo2 == null || photo2.video_sizes.isEmpty()) {
@@ -264,7 +266,10 @@ public class AvatarPreviewer {
                 str = FileLoader.getAttachFileName(closestVideoSizeWithSize);
                 imageLocation = forPhoto;
             }
-            return new Data(imageLocation2, forUserOrChat2, imageLocation, null, str2, (imageLocation == null || imageLocation.imageType != 2) ? null : ImageLoader.AUTOPLAY_FILTER, str, bitmapDrawable, userFull.user, menuItemArr, null);
+            if (imageLocation != null && imageLocation.imageType == 2) {
+                str2 = ImageLoader.AUTOPLAY_FILTER;
+            }
+            return new Data(imageLocation2, forUserOrChat2, imageLocation, null, str3, str2, str, bitmapDrawable, userFull.user, menuItemArr, null);
         }
 
         public static Data of(TLRPC.Chat chat, int i, MenuItem... menuItemArr) {
@@ -285,7 +290,8 @@ public class AvatarPreviewer {
             TLRPC.ChatPhoto chatPhoto;
             ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(chat, 0);
             ImageLocation forUserOrChat2 = ImageLocation.getForUserOrChat(chat, 1);
-            String str2 = (forUserOrChat2 == null || !(forUserOrChat2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
+            String str2 = null;
+            String str3 = (forUserOrChat2 == null || !(forUserOrChat2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
             BitmapDrawable bitmapDrawable = (chat == null || (chatPhoto = chat.photo) == null) ? null : chatPhoto.strippedBitmap;
             TLRPC.Photo photo = chatFull.chat_photo;
             if (photo == null || photo.video_sizes.isEmpty()) {
@@ -296,7 +302,10 @@ public class AvatarPreviewer {
                 imageLocation = ImageLocation.getForPhoto(closestVideoSizeWithSize, chatFull.chat_photo);
                 str = FileLoader.getAttachFileName(closestVideoSizeWithSize);
             }
-            return new Data(forUserOrChat, forUserOrChat2, imageLocation, null, str2, (imageLocation == null || imageLocation.imageType != 2) ? null : ImageLoader.AUTOPLAY_FILTER, str, bitmapDrawable, chat, menuItemArr, null);
+            if (imageLocation != null && imageLocation.imageType == 2) {
+                str2 = ImageLoader.AUTOPLAY_FILTER;
+            }
+            return new Data(forUserOrChat, forUserOrChat2, imageLocation, null, str3, str2, str, bitmapDrawable, chat, menuItemArr, null);
         }
 
         private Data(ImageLocation imageLocation, ImageLocation imageLocation2, ImageLocation imageLocation3, String str, String str2, String str3, String str4, BitmapDrawable bitmapDrawable, Object obj, MenuItem[] menuItemArr, InfoLoadTask infoLoadTask) {
@@ -352,7 +361,8 @@ public class AvatarPreviewer {
         }
     }
 
-    private static abstract class InfoLoadTask {
+    /* JADX INFO: Access modifiers changed from: private */
+    static abstract class InfoLoadTask {
         protected final Object argument;
         protected final int classGuid;
         private boolean loading;
@@ -442,7 +452,7 @@ public class AvatarPreviewer {
             view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    AvatarPreviewer.Layout.this.lambda$new$0(view2);
+                    AvatarPreviewer.Layout.this.setShowing(false);
                 }
             });
             addView(this.blurView, LayoutHelper.createFrame(-1, -1.0f));
@@ -487,11 +497,6 @@ public class AvatarPreviewer {
             this.menu = actionBarPopupWindowLayout;
             actionBarPopupWindowLayout.setBackground(blurredBackgroundDrawableViewFactory.create(actionBarPopupWindowLayout).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(12.0f)));
             frameLayout.addView(actionBarPopupWindowLayout, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388611));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            setShowing(false);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -568,18 +573,17 @@ public class AvatarPreviewer {
             ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda8
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    AvatarPreviewer.Layout.this.lambda$prepareBlurBitmap$1((Bitmap) obj, (Bitmap) obj2);
+                    AvatarPreviewer.Layout.$r8$lambda$cvGgztzxpoLyXvLtmD5sykS0I7w(AvatarPreviewer.Layout.this, (Bitmap) obj, (Bitmap) obj2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$prepareBlurBitmap$1(Bitmap bitmap, Bitmap bitmap2) {
-            this.blurBitmap = bitmap;
-            this.blurView.setBackground(new BitmapDrawable(bitmap));
-            this.preparingBlur = false;
-            this.iBlur3SourceBitmap.setBitmap(bitmap2);
-            checkBitmapMatrix();
+        public static /* synthetic */ void $r8$lambda$cvGgztzxpoLyXvLtmD5sykS0I7w(Layout layout, Bitmap bitmap, Bitmap bitmap2) {
+            layout.blurBitmap = bitmap;
+            layout.blurView.setBackground(new BitmapDrawable(bitmap));
+            layout.preparingBlur = false;
+            layout.iBlur3SourceBitmap.setBitmap(bitmap2);
+            layout.checkBitmapMatrix();
         }
 
         private void checkBitmapMatrix() {
@@ -601,7 +605,7 @@ public class AvatarPreviewer {
                 infoLoadTask.load(new Consumer() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda4
                     @Override // androidx.core.util.Consumer
                     public final void accept(Object obj) {
-                        AvatarPreviewer.Layout.this.lambda$setData$2(data, obj);
+                        AvatarPreviewer.Layout.$r8$lambda$96xfiRgsDrvUap7bzPmwlndPzBk(AvatarPreviewer.Layout.this, data, obj);
                     }
                 });
             }
@@ -617,7 +621,7 @@ public class AvatarPreviewer {
                     addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            AvatarPreviewer.Layout.this.lambda$setData$3(menuItem, view);
+                            AvatarPreviewer.Layout.$r8$lambda$U08UCfIaOuD4-GSUzyTBLd73-RU(AvatarPreviewer.Layout.this, menuItem, view);
                         }
                     });
                     i++;
@@ -628,22 +632,20 @@ public class AvatarPreviewer {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setData$2(Data data, Object obj) {
-            if (this.recycled) {
+        public static /* synthetic */ void $r8$lambda$96xfiRgsDrvUap7bzPmwlndPzBk(Layout layout, Data data, Object obj) {
+            if (layout.recycled) {
                 return;
             }
             if (obj instanceof TLRPC.UserFull) {
-                setData(Data.of((TLRPC.User) data.infoLoadTask.argument, (TLRPC.UserFull) obj, data.menuItems));
+                layout.setData(Data.of((TLRPC.User) data.infoLoadTask.argument, (TLRPC.UserFull) obj, data.menuItems));
             } else if (obj instanceof TLRPC.ChatFull) {
-                setData(Data.of((TLRPC.Chat) data.infoLoadTask.argument, (TLRPC.ChatFull) obj, data.menuItems));
+                layout.setData(Data.of((TLRPC.Chat) data.infoLoadTask.argument, (TLRPC.ChatFull) obj, data.menuItems));
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setData$3(MenuItem menuItem, View view) {
-            setShowing(false);
-            this.callback.onMenuClick(menuItem);
+        public static /* synthetic */ void $r8$lambda$U08UCfIaOuD4-GSUzyTBLd73-RU(Layout layout, MenuItem menuItem, View view) {
+            layout.setShowing(false);
+            layout.callback.onMenuClick(menuItem);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -657,14 +659,14 @@ public class AvatarPreviewer {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    AvatarPreviewer.Layout.this.lambda$setShowing$4(z, valueAnimator);
+                    AvatarPreviewer.Layout.$r8$lambda$5AVyoeWIH1trf_diptCbRZRFtag(AvatarPreviewer.Layout.this, z, valueAnimator);
                 }
             });
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    AvatarPreviewer.Layout.this.lambda$setShowing$5(z, valueAnimator);
+                    AvatarPreviewer.Layout.$r8$lambda$KTIYZzg_s0bjWEpsK2dpDq33f9A(AvatarPreviewer.Layout.this, z, valueAnimator);
                 }
             });
             AnimatorSet animatorSet = this.openAnimator;
@@ -688,33 +690,33 @@ public class AvatarPreviewer {
             this.openAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setShowing$4(boolean z, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$5AVyoeWIH1trf_diptCbRZRFtag(Layout layout, boolean z, ValueAnimator valueAnimator) {
+            layout.getClass();
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             if (!z) {
                 floatValue = 1.0f - floatValue;
             }
             float clamp = MathUtils.clamp(floatValue, 0.0f, 1.0f);
             float f = (0.3f * floatValue) + 0.7f;
-            this.container.setScaleX(f);
-            this.container.setScaleY(f);
-            this.container.setAlpha(clamp);
+            layout.container.setScaleX(f);
+            layout.container.setScaleY(f);
+            layout.container.setAlpha(clamp);
             float f2 = 1.0f - floatValue;
-            this.avatarView.setTranslationY(AndroidUtilities.dp(40.0f) * f2);
-            this.menu.setTranslationY((-AndroidUtilities.dp(70.0f)) * f2);
+            layout.avatarView.setTranslationY(AndroidUtilities.dp(40.0f) * f2);
+            layout.menu.setTranslationY((-AndroidUtilities.dp(70.0f)) * f2);
             float f3 = (floatValue * 0.05f) + 0.95f;
-            this.menu.setScaleX(f3);
-            this.menu.setScaleY(f3);
+            layout.menu.setScaleX(f3);
+            layout.menu.setScaleY(f3);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setShowing$5(boolean z, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$KTIYZzg_s0bjWEpsK2dpDq33f9A(Layout layout, boolean z, ValueAnimator valueAnimator) {
+            layout.getClass();
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             if (!z) {
                 floatValue = 1.0f - floatValue;
             }
-            this.blurView.setAlpha(floatValue);
-            invalidate();
+            layout.blurView.setAlpha(floatValue);
+            layout.invalidate();
         }
 
         public void recycle() {
@@ -808,7 +810,7 @@ public class AvatarPreviewer {
                         this.progressHideAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$AvatarView$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                AvatarPreviewer.AvatarView.this.lambda$dispatchDraw$0(valueAnimator2);
+                                AvatarPreviewer.AvatarView.this.invalidate();
                             }
                         });
                         this.progressHideAnimator.setDuration(250L);
@@ -822,7 +824,7 @@ public class AvatarPreviewer {
                     ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$AvatarView$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            AvatarPreviewer.AvatarView.this.lambda$dispatchDraw$1(valueAnimator2);
+                            AvatarPreviewer.AvatarView.this.invalidate();
                         }
                     });
                     this.progressShowAnimator.setStartDelay(250L);
@@ -841,16 +843,6 @@ public class AvatarPreviewer {
                     this.radialProgress.draw(canvas);
                 }
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$dispatchDraw$0(ValueAnimator valueAnimator) {
-            invalidate();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$dispatchDraw$1(ValueAnimator valueAnimator) {
-            invalidate();
         }
     }
 }

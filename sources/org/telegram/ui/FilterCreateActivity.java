@@ -159,18 +159,17 @@ public class FilterCreateActivity extends BaseFragment {
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$HintInnerCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FilterCreateActivity.HintInnerCell.this.lambda$new$0(view);
+                    FilterCreateActivity.HintInnerCell.$r8$lambda$m85KI9TApdGzfYRksWNVkxvD8sI(FilterCreateActivity.HintInnerCell.this, view);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            if (this.imageView.isPlaying()) {
+        public static /* synthetic */ void $r8$lambda$m85KI9TApdGzfYRksWNVkxvD8sI(HintInnerCell hintInnerCell, View view) {
+            if (hintInnerCell.imageView.isPlaying()) {
                 return;
             }
-            this.imageView.setProgress(0.0f);
-            this.imageView.playAnimation();
+            hintInnerCell.imageView.setProgress(0.0f);
+            hintInnerCell.imageView.playAnimation();
         }
 
         @Override // android.widget.FrameLayout, android.view.View
@@ -248,33 +247,32 @@ public class FilterCreateActivity extends BaseFragment {
         this.requestingInvitesReqId = getConnectionsManager().sendRequest(tL_chatlists_getExportedInvites, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda20
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FilterCreateActivity.this.lambda$loadInvites$1(tLObject, tL_error);
+                FilterCreateActivity.$r8$lambda$T-aHW9_rIXZWe7pm7gh4MtsX3eA(FilterCreateActivity.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadInvites$1(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$T-aHW9_rIXZWe7pm7gh4MtsX3eA(final FilterCreateActivity filterCreateActivity, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        filterCreateActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
-                FilterCreateActivity.this.lambda$loadInvites$0(tLObject);
+                FilterCreateActivity.$r8$lambda$RdmhZecibQIQjOusjT641fMdJlQ(FilterCreateActivity.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadInvites$0(TLObject tLObject) {
-        this.loadingInvites = false;
+    public static /* synthetic */ void $r8$lambda$RdmhZecibQIQjOusjT641fMdJlQ(FilterCreateActivity filterCreateActivity, TLObject tLObject) {
+        filterCreateActivity.loadingInvites = false;
         if (tLObject instanceof TL_chatlists.TL_chatlists_exportedInvites) {
             TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject;
-            getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
-            getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-            this.invites.clear();
-            this.invites.addAll(tL_chatlists_exportedInvites.invites);
-            updateRows();
+            filterCreateActivity.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
+            filterCreateActivity.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
+            filterCreateActivity.invites.clear();
+            filterCreateActivity.invites.addAll(tL_chatlists_exportedInvites.invites);
+            filterCreateActivity.updateRows();
         }
-        this.requestingInvitesReqId = 0;
+        filterCreateActivity.requestingInvitesReqId = 0;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -297,7 +295,7 @@ public class FilterCreateActivity extends BaseFragment {
         this.items.add(ItemInner.asAnimatedHeader(LocaleController.getString(R.string.FilterNameHeader), hasAnimatedEmojis(this.newFilterName) ? LocaleController.getString(this.newFilterAnimations ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable) : null, new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FilterCreateActivity.this.lambda$updateRows$2(view);
+                FilterCreateActivity.$r8$lambda$Gk3NboPjyShZ88-K1DCwZNekbCk(FilterCreateActivity.this, view);
             }
         }));
         this.nameRow = this.items.size();
@@ -307,7 +305,7 @@ public class FilterCreateActivity extends BaseFragment {
         this.items.add(ItemInner.asButton(R.drawable.msg2_chats_add, LocaleController.getString(R.string.FilterAddChats), false).whenClicked(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FilterCreateActivity.this.lambda$updateRows$3(view);
+                FilterCreateActivity.this.selectChatsFor(true);
             }
         }));
         if ((this.newFilterFlags & MessagesController.DIALOG_FILTER_FLAG_CONTACTS) != 0) {
@@ -334,7 +332,7 @@ public class FilterCreateActivity extends BaseFragment {
                 this.items.add(ItemInner.asButton(R.drawable.arrow_more, LocaleController.formatPluralString("FilterShowMoreChats", this.newAlwaysShow.size() - 5, new Object[0]), false).whenClicked(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FilterCreateActivity.this.lambda$updateRows$4(view);
+                        FilterCreateActivity.$r8$lambda$ZRhz3Xdqbvovh2vBawNzwJ3BL-s(FilterCreateActivity.this, view);
                     }
                 }));
             }
@@ -345,7 +343,7 @@ public class FilterCreateActivity extends BaseFragment {
             this.items.add(ItemInner.asButton(R.drawable.msg2_chats_add, LocaleController.getString(R.string.FilterRemoveChats), false).whenClicked(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FilterCreateActivity.this.lambda$updateRows$5(view);
+                    FilterCreateActivity.this.selectChatsFor(false);
                 }
             }));
             if ((this.newFilterFlags & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) != 0) {
@@ -366,7 +364,7 @@ public class FilterCreateActivity extends BaseFragment {
                     this.items.add(ItemInner.asButton(R.drawable.arrow_more, LocaleController.formatPluralString("FilterShowMoreChats", this.newNeverShow.size() - 5, new Object[0]), false).whenClicked(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda10
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            FilterCreateActivity.this.lambda$updateRows$6(view);
+                            FilterCreateActivity.$r8$lambda$n_1HsXGOcl-Z7v7Hzo4Y8CqOK3o(FilterCreateActivity.this, view);
                         }
                     }));
                 }
@@ -416,53 +414,40 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRows$2(View view) {
+    public static /* synthetic */ void $r8$lambda$Gk3NboPjyShZ88-K1DCwZNekbCk(FilterCreateActivity filterCreateActivity, View view) {
         String str;
-        this.newFilterAnimations = !this.newFilterAnimations;
-        HeaderCellWithRight headerCellWithRight = this.nameHeaderCell;
+        filterCreateActivity.newFilterAnimations = !filterCreateActivity.newFilterAnimations;
+        HeaderCellWithRight headerCellWithRight = filterCreateActivity.nameHeaderCell;
         if (headerCellWithRight != null) {
             AnimatedTextView animatedTextView = headerCellWithRight.rightTextView;
-            if (hasAnimatedEmojis(this.newFilterName)) {
-                str = LocaleController.getString(this.newFilterAnimations ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable);
+            if (filterCreateActivity.hasAnimatedEmojis(filterCreateActivity.newFilterName)) {
+                str = LocaleController.getString(filterCreateActivity.newFilterAnimations ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable);
             } else {
                 str = null;
             }
             animatedTextView.setText(str);
         }
-        AnimatedEmojiDrawable.toggleAnimations(this.currentAccount, this.newFilterAnimations);
-        checkDoneButton(true);
-        ActionBar actionBar = this.actionBar;
+        AnimatedEmojiDrawable.toggleAnimations(filterCreateActivity.currentAccount, filterCreateActivity.newFilterAnimations);
+        filterCreateActivity.checkDoneButton(true);
+        ActionBar actionBar = filterCreateActivity.actionBar;
         if (actionBar != null) {
             if (actionBar.getTitleTextView() != null) {
-                this.actionBar.getTitleTextView().setEmojiCacheType(this.newFilterAnimations ? 0 : 26);
+                filterCreateActivity.actionBar.getTitleTextView().setEmojiCacheType(filterCreateActivity.newFilterAnimations ? 0 : 26);
             }
-            if (this.actionBar.getTitleTextView2() != null) {
-                this.actionBar.getTitleTextView2().setEmojiCacheType(this.newFilterAnimations ? 0 : 26);
+            if (filterCreateActivity.actionBar.getTitleTextView2() != null) {
+                filterCreateActivity.actionBar.getTitleTextView2().setEmojiCacheType(filterCreateActivity.newFilterAnimations ? 0 : 26);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRows$3(View view) {
-        selectChatsFor(true);
+    public static /* synthetic */ void $r8$lambda$ZRhz3Xdqbvovh2vBawNzwJ3BL-s(FilterCreateActivity filterCreateActivity, View view) {
+        filterCreateActivity.includeExpanded = true;
+        filterCreateActivity.updateRows();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRows$4(View view) {
-        this.includeExpanded = true;
-        updateRows();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRows$5(View view) {
-        selectChatsFor(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRows$6(View view) {
-        this.excludeExpanded = true;
-        updateRows();
+    public static /* synthetic */ void $r8$lambda$n_1HsXGOcl-Z7v7Hzo4Y8CqOK3o(FilterCreateActivity filterCreateActivity, View view) {
+        filterCreateActivity.excludeExpanded = true;
+        filterCreateActivity.updateRows();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -622,15 +607,13 @@ public class FilterCreateActivity extends BaseFragment {
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                FilterCreateActivity.this.lambda$createView$8(view, i);
+                FilterCreateActivity.$r8$lambda$C4JsGSvFPhXvFmVHdz6-SR2AqJA(FilterCreateActivity.this, view, i);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda13
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
-                boolean lambda$createView$9;
-                lambda$createView$9 = FilterCreateActivity.this.lambda$createView$9(view, i);
-                return lambda$createView$9;
+                return FilterCreateActivity.$r8$lambda$0AtHt2HxOts3W3Piwau08zoj_XE(FilterCreateActivity.this, view, i);
             }
         });
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
@@ -657,28 +640,27 @@ public class FilterCreateActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$8(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$C4JsGSvFPhXvFmVHdz6-SR2AqJA(final FilterCreateActivity filterCreateActivity, View view, int i) {
         final ItemInner itemInner;
-        if (getParentActivity() == null || (itemInner = (ItemInner) this.items.get(i)) == null) {
+        if (filterCreateActivity.getParentActivity() == null || (itemInner = (ItemInner) filterCreateActivity.items.get(i)) == null) {
             return;
         }
         if (itemInner.onClickListener == null) {
             int i2 = itemInner.viewType;
             if (i2 == 1) {
                 UserCell userCell = (UserCell) view;
-                showRemoveAlert(itemInner, userCell.getName(), userCell.getCurrentObject(), itemInner.include);
+                filterCreateActivity.showRemoveAlert(itemInner, userCell.getName(), userCell.getCurrentObject(), itemInner.include);
                 return;
             }
             if (i2 == 7) {
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda21
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FilterCreateActivity.this.lambda$createView$7(itemInner);
+                        FilterCreateActivity.$r8$lambda$0EuwRbTm8u-DZtVAd5Z5P87Rpe8(FilterCreateActivity.this, itemInner);
                     }
                 };
-                if (this.doneItem.isEnabled()) {
-                    save(false, runnable);
+                if (filterCreateActivity.doneItem.isEnabled()) {
+                    filterCreateActivity.save(false, runnable);
                     return;
                 } else {
                     runnable.run();
@@ -686,7 +668,7 @@ public class FilterCreateActivity extends BaseFragment {
                 }
             }
             if (i2 == 8 || (i2 == 4 && itemInner.iconResId == R.drawable.msg2_link2)) {
-                onClickCreateLink(view);
+                filterCreateActivity.onClickCreateLink(view);
                 return;
             }
             return;
@@ -694,22 +676,20 @@ public class FilterCreateActivity extends BaseFragment {
         itemInner.onClickListener.onClick(view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$7(ItemInner itemInner) {
-        FilterChatlistActivity filterChatlistActivity = new FilterChatlistActivity(this.filter, itemInner.link);
-        filterChatlistActivity.setOnEdit(new FilterCreateActivity$$ExternalSyntheticLambda23(this));
-        filterChatlistActivity.setOnDelete(new FilterCreateActivity$$ExternalSyntheticLambda24(this));
-        presentFragment(filterChatlistActivity);
+    public static /* synthetic */ void $r8$lambda$0EuwRbTm8u-DZtVAd5Z5P87Rpe8(FilterCreateActivity filterCreateActivity, ItemInner itemInner) {
+        FilterChatlistActivity filterChatlistActivity = new FilterChatlistActivity(filterCreateActivity.filter, itemInner.link);
+        filterChatlistActivity.setOnEdit(new FilterCreateActivity$$ExternalSyntheticLambda23(filterCreateActivity));
+        filterChatlistActivity.setOnDelete(new FilterCreateActivity$$ExternalSyntheticLambda24(filterCreateActivity));
+        filterCreateActivity.presentFragment(filterChatlistActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$9(View view, int i) {
-        ItemInner itemInner = (ItemInner) this.items.get(i);
+    public static /* synthetic */ boolean $r8$lambda$0AtHt2HxOts3W3Piwau08zoj_XE(FilterCreateActivity filterCreateActivity, View view, int i) {
+        ItemInner itemInner = (ItemInner) filterCreateActivity.items.get(i);
         if (itemInner == null || !(view instanceof UserCell)) {
             return false;
         }
         UserCell userCell = (UserCell) view;
-        showRemoveAlert(itemInner, userCell.getName(), userCell.getCurrentObject(), itemInner.include);
+        filterCreateActivity.showRemoveAlert(itemInner, userCell.getName(), userCell.getCurrentObject(), itemInner.include);
         return true;
     }
 
@@ -761,78 +741,77 @@ public class FilterCreateActivity extends BaseFragment {
         save(false, new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                FilterCreateActivity.this.lambda$onClickCreateLink$13();
+                FilterCreateActivity.$r8$lambda$rjuU3fulMw9OMBZO_YtYZ9eM0kA(FilterCreateActivity.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickCreateLink$13() {
-        getMessagesController().updateFilterDialogs(this.filter);
+    public static /* synthetic */ void $r8$lambda$rjuU3fulMw9OMBZO_YtYZ9eM0kA(final FilterCreateActivity filterCreateActivity) {
+        filterCreateActivity.getMessagesController().updateFilterDialogs(filterCreateActivity.filter);
         ArrayList<TLRPC.InputPeer> arrayList = new ArrayList<>();
-        for (int i = 0; i < this.filter.alwaysShow.size(); i++) {
-            long longValue = this.filter.alwaysShow.get(i).longValue();
-            if (longValue < 0 && canAddToFolder(getMessagesController().getChat(Long.valueOf(-longValue)))) {
-                arrayList.add(getMessagesController().getInputPeer(longValue));
+        for (int i = 0; i < filterCreateActivity.filter.alwaysShow.size(); i++) {
+            long longValue = filterCreateActivity.filter.alwaysShow.get(i).longValue();
+            if (longValue < 0 && canAddToFolder(filterCreateActivity.getMessagesController().getChat(Long.valueOf(-longValue)))) {
+                arrayList.add(filterCreateActivity.getMessagesController().getInputPeer(longValue));
             }
         }
-        if (arrayList.size() > (getUserConfig().isPremium() ? getMessagesController().dialogFiltersChatsLimitPremium : getMessagesController().dialogFiltersChatsLimitDefault)) {
-            showDialog(new LimitReachedBottomSheet(this, getContext(), 4, this.currentAccount, null));
+        if (arrayList.size() > (filterCreateActivity.getUserConfig().isPremium() ? filterCreateActivity.getMessagesController().dialogFiltersChatsLimitPremium : filterCreateActivity.getMessagesController().dialogFiltersChatsLimitDefault)) {
+            filterCreateActivity.showDialog(new LimitReachedBottomSheet(filterCreateActivity, filterCreateActivity.getContext(), 4, filterCreateActivity.currentAccount, null));
             return;
         }
         if (!arrayList.isEmpty()) {
             TL_chatlists.TL_chatlists_exportChatlistInvite tL_chatlists_exportChatlistInvite = new TL_chatlists.TL_chatlists_exportChatlistInvite();
             TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
             tL_chatlists_exportChatlistInvite.chatlist = tL_inputChatlistDialogFilter;
-            tL_inputChatlistDialogFilter.filter_id = this.filter.id;
+            tL_inputChatlistDialogFilter.filter_id = filterCreateActivity.filter.id;
             tL_chatlists_exportChatlistInvite.peers = arrayList;
             tL_chatlists_exportChatlistInvite.title = "";
-            getConnectionsManager().sendRequest(tL_chatlists_exportChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda30
+            filterCreateActivity.getConnectionsManager().sendRequest(tL_chatlists_exportChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda30
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    FilterCreateActivity.this.lambda$onClickCreateLink$12(tLObject, tL_error);
+                    FilterCreateActivity.$r8$lambda$cT--qBV2K-ILTTE9jwQcOgkCpqI(FilterCreateActivity.this, tLObject, tL_error);
                 }
             });
             return;
         }
-        FilterChatlistActivity filterChatlistActivity = new FilterChatlistActivity(this.filter, null);
-        filterChatlistActivity.setOnEdit(new FilterCreateActivity$$ExternalSyntheticLambda23(this));
-        filterChatlistActivity.setOnDelete(new FilterCreateActivity$$ExternalSyntheticLambda24(this));
-        presentFragment(filterChatlistActivity);
+        FilterChatlistActivity filterChatlistActivity = new FilterChatlistActivity(filterCreateActivity.filter, null);
+        filterChatlistActivity.setOnEdit(new FilterCreateActivity$$ExternalSyntheticLambda23(filterCreateActivity));
+        filterChatlistActivity.setOnDelete(new FilterCreateActivity$$ExternalSyntheticLambda24(filterCreateActivity));
+        filterCreateActivity.presentFragment(filterChatlistActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickCreateLink$12(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$cT--qBV2K-ILTTE9jwQcOgkCpqI(final FilterCreateActivity filterCreateActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        filterCreateActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
-                FilterCreateActivity.this.lambda$onClickCreateLink$11(tL_error, tLObject);
+                FilterCreateActivity.$r8$lambda$0T3-HxIm1q6inlL0SLBzG48dLdc(FilterCreateActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickCreateLink$11(TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (processErrors(tL_error, this, BulletinFactory.of(this)) && (tLObject instanceof TL_chatlists.TL_chatlists_exportedChatlistInvite)) {
+    public static /* synthetic */ void $r8$lambda$0T3-HxIm1q6inlL0SLBzG48dLdc(final FilterCreateActivity filterCreateActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
+        filterCreateActivity.getClass();
+        if (processErrors(tL_error, filterCreateActivity, BulletinFactory.of(filterCreateActivity)) && (tLObject instanceof TL_chatlists.TL_chatlists_exportedChatlistInvite)) {
             hideNew(0);
-            getMessagesController().loadRemoteFilters(true);
+            filterCreateActivity.getMessagesController().loadRemoteFilters(true);
             final TL_chatlists.TL_chatlists_exportedChatlistInvite tL_chatlists_exportedChatlistInvite = (TL_chatlists.TL_chatlists_exportedChatlistInvite) tLObject;
-            FilterChatlistActivity filterChatlistActivity = new FilterChatlistActivity(this.filter, tL_chatlists_exportedChatlistInvite.invite);
-            filterChatlistActivity.setOnEdit(new FilterCreateActivity$$ExternalSyntheticLambda23(this));
-            filterChatlistActivity.setOnDelete(new FilterCreateActivity$$ExternalSyntheticLambda24(this));
-            presentFragment(filterChatlistActivity);
+            FilterChatlistActivity filterChatlistActivity = new FilterChatlistActivity(filterCreateActivity.filter, tL_chatlists_exportedChatlistInvite.invite);
+            filterChatlistActivity.setOnEdit(new FilterCreateActivity$$ExternalSyntheticLambda23(filterCreateActivity));
+            filterChatlistActivity.setOnDelete(new FilterCreateActivity$$ExternalSyntheticLambda24(filterCreateActivity));
+            filterCreateActivity.presentFragment(filterChatlistActivity);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda32
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilterCreateActivity.this.lambda$onClickCreateLink$10(tL_chatlists_exportedChatlistInvite);
+                    FilterCreateActivity.$r8$lambda$kzCKWynzHwjD2o3EX2XCdpHQXzw(FilterCreateActivity.this, tL_chatlists_exportedChatlistInvite);
                 }
             }, 200L);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClickCreateLink$10(TL_chatlists.TL_chatlists_exportedChatlistInvite tL_chatlists_exportedChatlistInvite) {
-        onEdit(tL_chatlists_exportedChatlistInvite.invite);
+    public static /* synthetic */ void $r8$lambda$kzCKWynzHwjD2o3EX2XCdpHQXzw(FilterCreateActivity filterCreateActivity, TL_chatlists.TL_chatlists_exportedChatlistInvite tL_chatlists_exportedChatlistInvite) {
+        filterCreateActivity.getClass();
+        filterCreateActivity.onEdit(tL_chatlists_exportedChatlistInvite.invite);
     }
 
     private void showSaveHint() {
@@ -862,7 +841,10 @@ public class FilterCreateActivity extends BaseFragment {
     }
 
     public static boolean canAddToFolder(TLRPC.Chat chat) {
-        return ChatObject.canUserDoAdminAction(chat, 3) || (ChatObject.isPublic(chat) && !chat.join_request);
+        if (ChatObject.canUserDoAdminAction(chat, 3)) {
+            return true;
+        }
+        return ChatObject.isPublic(chat) && !chat.join_request;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -921,7 +903,7 @@ public class FilterCreateActivity extends BaseFragment {
             FolderBottomSheet.showForDeletion(this, this.filter.id, new Utilities.Callback() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda17
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    FilterCreateActivity.this.lambda$deleteFolder$14((Boolean) obj);
+                    FilterCreateActivity.this.finishFragment();
                 }
             });
             return;
@@ -933,7 +915,7 @@ public class FilterCreateActivity extends BaseFragment {
         builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                FilterCreateActivity.this.lambda$deleteFolder$17(alertDialog, i);
+                FilterCreateActivity.$r8$lambda$T7pc3rhWSjnhjrtCgWInbxWmhzc(FilterCreateActivity.this, alertDialog, i);
             }
         });
         AlertDialog create = builder.create();
@@ -944,43 +926,37 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteFolder$14(Boolean bool) {
-        finishFragment();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteFolder$17(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$T7pc3rhWSjnhjrtCgWInbxWmhzc(final FilterCreateActivity filterCreateActivity, AlertDialog alertDialog, int i) {
         final AlertDialog alertDialog2;
-        if (getParentActivity() != null) {
-            alertDialog2 = new AlertDialog(getParentActivity(), 3);
+        if (filterCreateActivity.getParentActivity() != null) {
+            alertDialog2 = new AlertDialog(filterCreateActivity.getParentActivity(), 3);
             alertDialog2.setCanCancel(false);
             alertDialog2.show();
         } else {
             alertDialog2 = null;
         }
         TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter = new TLRPC.TL_messages_updateDialogFilter();
-        tL_messages_updateDialogFilter.id = this.filter.id;
-        getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda25
+        tL_messages_updateDialogFilter.id = filterCreateActivity.filter.id;
+        filterCreateActivity.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda25
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FilterCreateActivity.this.lambda$deleteFolder$16(alertDialog2, tLObject, tL_error);
+                FilterCreateActivity.$r8$lambda$ayzov50h936vMNH1OYyXa6-gXhA(FilterCreateActivity.this, alertDialog2, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteFolder$16(final AlertDialog alertDialog, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$ayzov50h936vMNH1OYyXa6-gXhA(final FilterCreateActivity filterCreateActivity, final AlertDialog alertDialog, TLObject tLObject, TLRPC.TL_error tL_error) {
+        filterCreateActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
-                FilterCreateActivity.this.lambda$deleteFolder$15(alertDialog);
+                FilterCreateActivity.$r8$lambda$tPdKpLt9XJR2uTAdc0Y2uvNBFTg(FilterCreateActivity.this, alertDialog);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteFolder$15(AlertDialog alertDialog) {
+    public static /* synthetic */ void $r8$lambda$tPdKpLt9XJR2uTAdc0Y2uvNBFTg(FilterCreateActivity filterCreateActivity, AlertDialog alertDialog) {
+        filterCreateActivity.getClass();
         if (alertDialog != null) {
             try {
                 alertDialog.dismiss();
@@ -988,9 +964,9 @@ public class FilterCreateActivity extends BaseFragment {
                 FileLog.e(e);
             }
         }
-        getMessagesController().removeFilter(this.filter);
-        getMessagesStorage().deleteDialogFilter(this.filter);
-        finishFragment();
+        filterCreateActivity.getMessagesController().removeFilter(filterCreateActivity.filter);
+        filterCreateActivity.getMessagesStorage().deleteDialogFilter(filterCreateActivity.filter);
+        filterCreateActivity.finishFragment();
     }
 
     private void onUpdate(boolean z, ArrayList arrayList, ArrayList arrayList2) {
@@ -1031,52 +1007,52 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    private void selectChatsFor(final boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void selectChatsFor(final boolean z) {
         UsersSelectActivity usersSelectActivity = new UsersSelectActivity(z, z ? this.newAlwaysShow : this.newNeverShow, this.newFilterFlags);
         usersSelectActivity.noChatTypes = this.filter.isChatlist();
         usersSelectActivity.setDelegate(new UsersSelectActivity.FilterUsersActivityDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda16
             @Override // org.telegram.ui.UsersSelectActivity.FilterUsersActivityDelegate
             public final void didSelectChats(ArrayList arrayList, int i) {
-                FilterCreateActivity.this.lambda$selectChatsFor$18(z, arrayList, i);
+                FilterCreateActivity.$r8$lambda$SyfJUfDo97HNVH-sLVlG839RMyU(FilterCreateActivity.this, z, arrayList, i);
             }
         });
         presentFragment(usersSelectActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$selectChatsFor$18(boolean z, ArrayList arrayList, int i) {
-        this.newFilterFlags = i;
+    public static /* synthetic */ void $r8$lambda$SyfJUfDo97HNVH-sLVlG839RMyU(FilterCreateActivity filterCreateActivity, boolean z, ArrayList arrayList, int i) {
+        filterCreateActivity.newFilterFlags = i;
         if (z) {
-            onUpdate(true, this.newAlwaysShow, arrayList);
-            this.newAlwaysShow = arrayList;
-            for (int i2 = 0; i2 < this.newAlwaysShow.size(); i2++) {
-                this.newNeverShow.remove(this.newAlwaysShow.get(i2));
+            filterCreateActivity.onUpdate(true, filterCreateActivity.newAlwaysShow, arrayList);
+            filterCreateActivity.newAlwaysShow = arrayList;
+            for (int i2 = 0; i2 < filterCreateActivity.newAlwaysShow.size(); i2++) {
+                filterCreateActivity.newNeverShow.remove(filterCreateActivity.newAlwaysShow.get(i2));
             }
             ArrayList arrayList2 = new ArrayList();
-            int size = this.newPinned.size();
+            int size = filterCreateActivity.newPinned.size();
             for (int i3 = 0; i3 < size; i3++) {
-                long keyAt = this.newPinned.keyAt(i3);
+                long keyAt = filterCreateActivity.newPinned.keyAt(i3);
                 Long valueOf = Long.valueOf(keyAt);
-                if (!DialogObject.isEncryptedDialog(keyAt) && !this.newAlwaysShow.contains(valueOf)) {
+                if (!DialogObject.isEncryptedDialog(keyAt) && !filterCreateActivity.newAlwaysShow.contains(valueOf)) {
                     arrayList2.add(valueOf);
                 }
             }
             int size2 = arrayList2.size();
             for (int i4 = 0; i4 < size2; i4++) {
-                this.newPinned.delete(((Long) arrayList2.get(i4)).longValue());
+                filterCreateActivity.newPinned.delete(((Long) arrayList2.get(i4)).longValue());
             }
         } else {
-            onUpdate(false, this.newNeverShow, arrayList);
-            this.newNeverShow = arrayList;
-            for (int i5 = 0; i5 < this.newNeverShow.size(); i5++) {
-                Long l = (Long) this.newNeverShow.get(i5);
-                this.newAlwaysShow.remove(l);
-                this.newPinned.delete(l.longValue());
+            filterCreateActivity.onUpdate(false, filterCreateActivity.newNeverShow, arrayList);
+            filterCreateActivity.newNeverShow = arrayList;
+            for (int i5 = 0; i5 < filterCreateActivity.newNeverShow.size(); i5++) {
+                Long l = (Long) filterCreateActivity.newNeverShow.get(i5);
+                filterCreateActivity.newAlwaysShow.remove(l);
+                filterCreateActivity.newPinned.delete(l.longValue());
             }
         }
-        fillFilterName();
-        checkDoneButton(false);
-        updateRows();
+        filterCreateActivity.fillFilterName();
+        filterCreateActivity.checkDoneButton(false);
+        filterCreateActivity.updateRows();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1187,7 +1163,7 @@ public class FilterCreateActivity extends BaseFragment {
             builder.setPositiveButton(LocaleController.getString(R.string.FilterDiscardNewSave), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda3
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    FilterCreateActivity.this.lambda$checkDiscard$19(alertDialog, i);
+                    FilterCreateActivity.this.processDone();
                 }
             });
         } else {
@@ -1196,33 +1172,18 @@ public class FilterCreateActivity extends BaseFragment {
             builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    FilterCreateActivity.this.lambda$checkDiscard$20(alertDialog, i);
+                    FilterCreateActivity.this.processDone();
                 }
             });
         }
         builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                FilterCreateActivity.this.lambda$checkDiscard$21(alertDialog, i);
+                FilterCreateActivity.this.finishFragment();
             }
         });
         showDialog(builder.create());
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkDiscard$19(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkDiscard$20(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkDiscard$21(AlertDialog alertDialog, int i) {
-        finishFragment();
     }
 
     private void showRemoveAlert(final ItemInner itemInner, CharSequence charSequence, Object obj, final boolean z) {
@@ -1250,7 +1211,7 @@ public class FilterCreateActivity extends BaseFragment {
         builder.setPositiveButton(LocaleController.getString(R.string.StickersRemove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda15
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                FilterCreateActivity.this.lambda$showRemoveAlert$22(itemInner, z, alertDialog, i);
+                FilterCreateActivity.$r8$lambda$3ui7c-63oWdetZVRrGWyU0mj-DM(FilterCreateActivity.this, itemInner, z, alertDialog, i);
             }
         });
         AlertDialog create = builder.create();
@@ -1261,18 +1222,18 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showRemoveAlert$22(ItemInner itemInner, boolean z, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$3ui7c-63oWdetZVRrGWyU0mj-DM(FilterCreateActivity filterCreateActivity, ItemInner itemInner, boolean z, AlertDialog alertDialog, int i) {
+        filterCreateActivity.getClass();
         if (itemInner.flags > 0) {
-            this.newFilterFlags = (~itemInner.flags) & this.newFilterFlags;
+            filterCreateActivity.newFilterFlags = (~itemInner.flags) & filterCreateActivity.newFilterFlags;
         } else {
-            (z ? this.newAlwaysShow : this.newNeverShow).remove(Long.valueOf(itemInner.did));
+            (z ? filterCreateActivity.newAlwaysShow : filterCreateActivity.newNeverShow).remove(Long.valueOf(itemInner.did));
         }
-        fillFilterName();
-        updateRows();
-        checkDoneButton(true);
+        filterCreateActivity.fillFilterName();
+        filterCreateActivity.updateRows();
+        filterCreateActivity.checkDoneButton(true);
         if (z) {
-            onUpdate(false, 1);
+            filterCreateActivity.onUpdate(false, 1);
         }
     }
 
@@ -1286,20 +1247,19 @@ public class FilterCreateActivity extends BaseFragment {
         save(true, new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                FilterCreateActivity.this.lambda$processDone$23();
+                FilterCreateActivity.$r8$lambda$Qo00zyYxtGqsSLgapLbFi2oIDjA(FilterCreateActivity.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$23() {
-        if (this.doNotCloseWhenSave) {
-            this.doNotCloseWhenSave = false;
-            Paint.FontMetricsInt titleFontMetricsInt = this.actionBar.getTitleFontMetricsInt();
-            this.actionBar.setTitleAnimated(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(this.filter.name, titleFontMetricsInt, false), this.filter.entities, titleFontMetricsInt), true, 220L);
+    public static /* synthetic */ void $r8$lambda$Qo00zyYxtGqsSLgapLbFi2oIDjA(FilterCreateActivity filterCreateActivity) {
+        if (filterCreateActivity.doNotCloseWhenSave) {
+            filterCreateActivity.doNotCloseWhenSave = false;
+            Paint.FontMetricsInt titleFontMetricsInt = filterCreateActivity.actionBar.getTitleFontMetricsInt();
+            filterCreateActivity.actionBar.setTitleAnimated(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(filterCreateActivity.filter.name, titleFontMetricsInt, false), filterCreateActivity.filter.entities, titleFontMetricsInt), true, 220L);
             return;
         }
-        finishFragment();
+        filterCreateActivity.finishFragment();
     }
 
     private void save(boolean z, final Runnable runnable) {
@@ -1307,18 +1267,17 @@ public class FilterCreateActivity extends BaseFragment {
         saveFilterToServer(this.filter, this.newFilterFlags, charSequenceArr[0].toString(), getMediaDataController().getEntities(charSequenceArr, false), !this.newFilterAnimations, this.newFilterColor, this.newAlwaysShow, this.newNeverShow, this.newPinned, this.creatingNew, false, this.hasUserChanged, true, z, this, new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                FilterCreateActivity.this.lambda$save$24(runnable);
+                FilterCreateActivity.$r8$lambda$I-gAdxYphxUD274_DfPnj4l7AyE(FilterCreateActivity.this, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$save$24(Runnable runnable) {
-        this.hasUserChanged = false;
-        this.creatingNew = false;
-        this.filter.flags = this.newFilterFlags;
-        checkDoneButton(true);
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+    public static /* synthetic */ void $r8$lambda$I-gAdxYphxUD274_DfPnj4l7AyE(FilterCreateActivity filterCreateActivity, Runnable runnable) {
+        filterCreateActivity.hasUserChanged = false;
+        filterCreateActivity.creatingNew = false;
+        filterCreateActivity.filter.flags = filterCreateActivity.newFilterFlags;
+        filterCreateActivity.checkDoneButton(true);
+        filterCreateActivity.getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
         if (runnable != null) {
             runnable.run();
         }
@@ -1358,11 +1317,10 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    public static void saveFilterToServer(final MessagesController.DialogFilter dialogFilter, final int i, final String str, final ArrayList arrayList, final boolean z, final int i2, final ArrayList arrayList2, final ArrayList arrayList3, LongSparseIntArray longSparseIntArray, final boolean z2, final boolean z3, final boolean z4, final boolean z5, final boolean z6, final BaseFragment baseFragment, final Runnable runnable) {
+    public static void saveFilterToServer(final MessagesController.DialogFilter dialogFilter, final int i, final String str, final ArrayList arrayList, final boolean z, final int i2, final ArrayList arrayList2, final ArrayList arrayList3, final LongSparseIntArray longSparseIntArray, final boolean z2, final boolean z3, final boolean z4, final boolean z5, final boolean z6, final BaseFragment baseFragment, final Runnable runnable) {
         AlertDialog alertDialog;
         ArrayList<TLRPC.InputPeer> arrayList4;
         ArrayList arrayList5;
-        final LongSparseIntArray longSparseIntArray2 = longSparseIntArray;
         if (baseFragment == null || baseFragment.getParentActivity() == null) {
             return;
         }
@@ -1408,7 +1366,7 @@ public class FilterCreateActivity extends BaseFragment {
         if (longSparseIntArray.size() != 0) {
             int size = longSparseIntArray.size();
             for (int i6 = 0; i6 < size; i6++) {
-                long keyAt = longSparseIntArray2.keyAt(i6);
+                long keyAt = longSparseIntArray.keyAt(i6);
                 if (!DialogObject.isEncryptedDialog(keyAt)) {
                     arrayList6.add(Long.valueOf(keyAt));
                 }
@@ -1416,9 +1374,7 @@ public class FilterCreateActivity extends BaseFragment {
             Collections.sort(arrayList6, new Comparator() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda0
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$saveFilterToServer$25;
-                    lambda$saveFilterToServer$25 = FilterCreateActivity.lambda$saveFilterToServer$25(LongSparseIntArray.this, (Long) obj, (Long) obj2);
-                    return lambda$saveFilterToServer$25;
+                    return FilterCreateActivity.$r8$lambda$EAiVXe9Yl9sL1hdHBEq1o50JJaY(LongSparseIntArray.this, (Long) obj, (Long) obj2);
                 }
             });
         }
@@ -1437,9 +1393,10 @@ public class FilterCreateActivity extends BaseFragment {
             int size2 = arrayList5.size();
             while (i4 < size2) {
                 Long l = (Long) arrayList5.get(i4);
-                ArrayList arrayList7 = arrayList5;
+                int i8 = size2;
+                int i9 = i4;
                 long longValue = l.longValue();
-                if ((i7 != 0 || longSparseIntArray2.indexOfKey(longValue) < 0) && !DialogObject.isEncryptedDialog(longValue)) {
+                if ((i7 != 0 || longSparseIntArray.indexOfKey(longValue) < 0) && !DialogObject.isEncryptedDialog(longValue)) {
                     if (longValue > 0) {
                         TLRPC.User user = messagesController.getUser(l);
                         if (user != null) {
@@ -1465,12 +1422,10 @@ public class FilterCreateActivity extends BaseFragment {
                         }
                     }
                 }
-                i4++;
-                longSparseIntArray2 = longSparseIntArray;
-                arrayList5 = arrayList7;
+                i4 = i9 + 1;
+                size2 = i8;
             }
             i7++;
-            longSparseIntArray2 = longSparseIntArray;
             i3 = 3;
             i4 = 0;
             i5 = 1;
@@ -1479,7 +1434,12 @@ public class FilterCreateActivity extends BaseFragment {
         baseFragment.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FilterCreateActivity.lambda$saveFilterToServer$27(z6, alertDialog2, dialogFilter, i, str, arrayList, z, i2, arrayList2, arrayList3, z2, z3, z4, z5, baseFragment, runnable, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        FilterCreateActivity.$r8$lambda$SlUhTSDd1HG08Fd92gNVOkGw65I(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16);
+                    }
+                });
             }
         });
         if (z6) {
@@ -1488,8 +1448,7 @@ public class FilterCreateActivity extends BaseFragment {
         processAddFilter(dialogFilter, i, str, arrayList, z, i2, arrayList2, arrayList3, z2, z3, z4, z5, baseFragment, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$saveFilterToServer$25(LongSparseIntArray longSparseIntArray, Long l, Long l2) {
+    public static /* synthetic */ int $r8$lambda$EAiVXe9Yl9sL1hdHBEq1o50JJaY(LongSparseIntArray longSparseIntArray, Long l, Long l2) {
         int i = longSparseIntArray.get(l.longValue());
         int i2 = longSparseIntArray.get(l2.longValue());
         if (i > i2) {
@@ -1498,18 +1457,7 @@ public class FilterCreateActivity extends BaseFragment {
         return i < i2 ? -1 : 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$saveFilterToServer$27(final boolean z, final AlertDialog alertDialog, final MessagesController.DialogFilter dialogFilter, final int i, final String str, final ArrayList arrayList, final boolean z2, final int i2, final ArrayList arrayList2, final ArrayList arrayList3, final boolean z3, final boolean z4, final boolean z5, final boolean z6, final BaseFragment baseFragment, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                FilterCreateActivity.lambda$saveFilterToServer$26(z, alertDialog, dialogFilter, i, str, arrayList, z2, i2, arrayList2, arrayList3, z3, z4, z5, z6, baseFragment, runnable);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$saveFilterToServer$26(boolean z, AlertDialog alertDialog, MessagesController.DialogFilter dialogFilter, int i, String str, ArrayList arrayList, boolean z2, int i2, ArrayList arrayList2, ArrayList arrayList3, boolean z3, boolean z4, boolean z5, boolean z6, BaseFragment baseFragment, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$SlUhTSDd1HG08Fd92gNVOkGw65I(boolean z, AlertDialog alertDialog, MessagesController.DialogFilter dialogFilter, int i, String str, ArrayList arrayList, boolean z2, int i2, ArrayList arrayList2, ArrayList arrayList3, boolean z3, boolean z4, boolean z5, boolean z6, BaseFragment baseFragment, Runnable runnable) {
         if (!z) {
             if (runnable != null) {
                 runnable.run();
@@ -1702,18 +1650,17 @@ public class FilterCreateActivity extends BaseFragment {
             if (i2 == 1) {
                 return this.did == itemInner.did && TextUtils.equals(this.chatType, itemInner.chatType) && this.flags == itemInner.flags;
             }
-            if (i2 != 7 || (tL_exportedChatlistInvite = this.link) == (tL_exportedChatlistInvite2 = itemInner.link)) {
-                return true;
-            }
-            if (TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
-                TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.link;
-                boolean z = tL_exportedChatlistInvite3.revoked;
-                TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = itemInner.link;
-                if (z == tL_exportedChatlistInvite4.revoked && TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) && this.link.peers.size() == itemInner.link.peers.size()) {
-                    return true;
+            if (i2 == 7 && (tL_exportedChatlistInvite = this.link) != (tL_exportedChatlistInvite2 = itemInner.link)) {
+                if (TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.link;
+                    boolean z = tL_exportedChatlistInvite3.revoked;
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = itemInner.link;
+                    if (z != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.link.peers.size() != itemInner.link.peers.size()) {
+                    }
                 }
+                return false;
             }
-            return false;
+            return true;
         }
     }
 
@@ -1908,7 +1855,7 @@ public class FilterCreateActivity extends BaseFragment {
                             peerColorGrid.setOnColorClick(new Utilities.Callback() { // from class: org.telegram.ui.FilterCreateActivity$ListAdapter$$ExternalSyntheticLambda0
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
-                                    FilterCreateActivity.ListAdapter.this.lambda$onBindViewHolder$0(peerColorGrid, (Integer) obj);
+                                    FilterCreateActivity.ListAdapter.$r8$lambda$PQuN0Py66bqjIzTJhMFJP0ozuFg(FilterCreateActivity.ListAdapter.this, peerColorGrid, (Integer) obj);
                                 }
                             });
                             break;
@@ -1973,8 +1920,7 @@ public class FilterCreateActivity extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(PeerColorActivity.PeerColorGrid peerColorGrid, Integer num) {
+        public static /* synthetic */ void $r8$lambda$PQuN0Py66bqjIzTJhMFJP0ozuFg(ListAdapter listAdapter, PeerColorActivity.PeerColorGrid peerColorGrid, Integer num) {
             if (FilterCreateActivity.this.getUserConfig().isPremium()) {
                 peerColorGrid.setSelected(FilterCreateActivity.this.newFilterColor = num.intValue(), true);
                 if (FilterCreateActivity.this.folderTagsHeader != null) {
@@ -2002,7 +1948,7 @@ public class FilterCreateActivity extends BaseFragment {
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda14
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                FilterCreateActivity.this.lambda$getThemeDescriptions$28();
+                FilterCreateActivity.$r8$lambda$neKoxp5pAba-IHKZEr0mKdH_2lk(FilterCreateActivity.this);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -2041,13 +1987,12 @@ public class FilterCreateActivity extends BaseFragment {
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$28() {
-        RecyclerListView recyclerListView = this.listView;
+    public static /* synthetic */ void $r8$lambda$neKoxp5pAba-IHKZEr0mKdH_2lk(FilterCreateActivity filterCreateActivity) {
+        RecyclerListView recyclerListView = filterCreateActivity.listView;
         if (recyclerListView != null) {
             int childCount = recyclerListView.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                View childAt = this.listView.getChildAt(i);
+                View childAt = filterCreateActivity.listView.getChildAt(i);
                 if (childAt instanceof UserCell) {
                     ((UserCell) childAt).update(0);
                 }
@@ -2220,7 +2165,8 @@ public class FilterCreateActivity extends BaseFragment {
         AnimatedTextView titleTextView;
         private ValueAnimator valueAnimator;
 
-        protected abstract void onDelete(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite);
+        /* JADX INFO: Access modifiers changed from: protected */
+        public abstract void onDelete(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite);
 
         public LinkCell(Context context, BaseFragment baseFragment, int i, int i2) {
             super(context);
@@ -2257,7 +2203,7 @@ public class FilterCreateActivity extends BaseFragment {
             this.optionsIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FilterCreateActivity.LinkCell.this.lambda$new$0(view);
+                    FilterCreateActivity.LinkCell.this.options();
                 }
             });
             this.optionsIcon.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
@@ -2277,11 +2223,6 @@ public class FilterCreateActivity extends BaseFragment {
             this.revokedLinkIcon = mutate2;
             mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
             setWillNotDraw(false);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            options();
         }
 
         @Override // android.view.View
@@ -2324,7 +2265,7 @@ public class FilterCreateActivity extends BaseFragment {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            FilterCreateActivity.LinkCell.this.lambda$setRevoked$1(valueAnimator2);
+                            FilterCreateActivity.LinkCell.$r8$lambda$dQe-OcRSur5uZzkah0GC5OrjHW0(FilterCreateActivity.LinkCell.this, valueAnimator2);
                         }
                     });
                     this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.FilterCreateActivity.LinkCell.1
@@ -2345,10 +2286,10 @@ public class FilterCreateActivity extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setRevoked$1(ValueAnimator valueAnimator) {
-            this.revokeT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$dQe-OcRSur5uZzkah0GC5OrjHW0(LinkCell linkCell, ValueAnimator valueAnimator) {
+            linkCell.getClass();
+            linkCell.revokeT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            linkCell.invalidate();
         }
 
         public void setInvite(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite, boolean z) {
@@ -2426,37 +2367,33 @@ public class FilterCreateActivity extends BaseFragment {
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilterCreateActivity.LinkCell.this.lambda$deleteLink$4();
+                    r0.onDelete(FilterCreateActivity.LinkCell.this.lastInvite);
                 }
             };
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_chatlists_deleteExportedInvite, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda5
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    FilterCreateActivity.LinkCell.this.lambda$deleteLink$6(runnable, tLObject, tL_error);
+                    FilterCreateActivity.LinkCell.$r8$lambda$6LizlAIcMmvqDfUgTR1QF5ut6Rw(FilterCreateActivity.LinkCell.this, runnable, tLObject, tL_error);
                 }
             });
             AndroidUtilities.runOnUIThread(runnable, 150L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$deleteLink$4() {
-            onDelete(this.lastInvite);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$deleteLink$6(final Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$6LizlAIcMmvqDfUgTR1QF5ut6Rw(final LinkCell linkCell, final Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
+            linkCell.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilterCreateActivity.LinkCell.this.lambda$deleteLink$5(tL_error, runnable);
+                    FilterCreateActivity.LinkCell.$r8$lambda$YyYwSr53z0Q2SQhGDgZ_WO1K80o(FilterCreateActivity.LinkCell.this, tL_error, runnable);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$deleteLink$5(TLRPC.TL_error tL_error, Runnable runnable) {
-            if (tL_error != null) {
-                BulletinFactory.of(this.fragment).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+        public static /* synthetic */ void $r8$lambda$YyYwSr53z0Q2SQhGDgZ_WO1K80o(LinkCell linkCell, TLRPC.TL_error tL_error, Runnable runnable) {
+            if (tL_error == null) {
+                linkCell.getClass();
+            } else {
+                BulletinFactory.of(linkCell.fragment).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
                 AndroidUtilities.cancelRunOnUIThread(runnable);
             }
         }
@@ -2502,29 +2439,28 @@ public class FilterCreateActivity extends BaseFragment {
     public static CharSequence withNew(int i, CharSequence charSequence, boolean z) {
         Context context;
         if (i >= 0) {
-            if (MessagesController.getGlobalMainSettings().getBoolean("n_" + i, false) || (context = ApplicationLoader.applicationContext) == null) {
-                return charSequence;
+            if (!MessagesController.getGlobalMainSettings().getBoolean("n_" + i, false) && (context = ApplicationLoader.applicationContext) != null) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+                spannableStringBuilder.append((CharSequence) "  ");
+                SpannableString spannableString = new SpannableString("NEW");
+                if (z) {
+                    Drawable mutate = context.getResources().getDrawable(R.drawable.msg_other_new_outline).mutate();
+                    mutate.setBounds(0, -AndroidUtilities.dp(8.0f), mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight() - AndroidUtilities.dp(8.0f));
+                    spannableString.setSpan(new ColorImageSpan(mutate, 0), 0, spannableString.length(), 33);
+                } else {
+                    Drawable mutate2 = context.getResources().getDrawable(R.drawable.msg_other_new_filled).mutate();
+                    Drawable mutate3 = context.getResources().getDrawable(R.drawable.msg_other_new_filled_text).mutate();
+                    int color = Theme.getColor(Theme.key_featuredStickers_unread);
+                    PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+                    mutate2.setColorFilter(new PorterDuffColorFilter(color, mode));
+                    mutate3.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_buttonText), mode));
+                    CombinedDrawable combinedDrawable = new CombinedDrawable(mutate2, mutate3);
+                    combinedDrawable.setBounds(0, 0, combinedDrawable.getIntrinsicWidth(), combinedDrawable.getIntrinsicHeight());
+                    spannableString.setSpan(new ImageSpan(combinedDrawable, 0), 0, spannableString.length(), 33);
+                }
+                spannableStringBuilder.append((CharSequence) spannableString);
+                return spannableStringBuilder;
             }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            SpannableString spannableString = new SpannableString("NEW");
-            if (z) {
-                Drawable mutate = context.getResources().getDrawable(R.drawable.msg_other_new_outline).mutate();
-                mutate.setBounds(0, -AndroidUtilities.dp(8.0f), mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight() - AndroidUtilities.dp(8.0f));
-                spannableString.setSpan(new ColorImageSpan(mutate, 0), 0, spannableString.length(), 33);
-            } else {
-                Drawable mutate2 = context.getResources().getDrawable(R.drawable.msg_other_new_filled).mutate();
-                Drawable mutate3 = context.getResources().getDrawable(R.drawable.msg_other_new_filled_text).mutate();
-                int color = Theme.getColor(Theme.key_featuredStickers_unread);
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                mutate2.setColorFilter(new PorterDuffColorFilter(color, mode));
-                mutate3.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_buttonText), mode));
-                CombinedDrawable combinedDrawable = new CombinedDrawable(mutate2, mutate3);
-                combinedDrawable.setBounds(0, 0, combinedDrawable.getIntrinsicWidth(), combinedDrawable.getIntrinsicHeight());
-                spannableString.setSpan(new ImageSpan(combinedDrawable, 0), 0, spannableString.length(), 33);
-            }
-            spannableStringBuilder.append((CharSequence) spannableString);
-            return spannableStringBuilder;
         }
         return charSequence;
     }
@@ -2700,7 +2636,7 @@ public class FilterCreateActivity extends BaseFragment {
             this.showBulletinOnResume = new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilterCreateActivity.this.lambda$onUpdate$29(z, i);
+                    FilterCreateActivity.$r8$lambda$a4LsChzeaG2N7d516askRH5j8UA(FilterCreateActivity.this, z, i);
                 }
             };
             if (getLayoutContainer() != null) {
@@ -2710,10 +2646,10 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onUpdate$29(boolean z, int i) {
+    public static /* synthetic */ void $r8$lambda$a4LsChzeaG2N7d516askRH5j8UA(FilterCreateActivity filterCreateActivity, boolean z, int i) {
         String formatPluralString;
-        BulletinFactory of = BulletinFactory.of(this);
+        filterCreateActivity.getClass();
+        BulletinFactory of = BulletinFactory.of(filterCreateActivity);
         int i2 = z ? R.raw.folder_in : R.raw.folder_out;
         if (z) {
             formatPluralString = LocaleController.formatPluralString("FolderLinkAddedChats", i, new Object[0]);
@@ -2741,23 +2677,17 @@ public class FilterCreateActivity extends BaseFragment {
             baseFragment.getConnectionsManager().sendRequest(tL_chatlists_getExportedInvites, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    FilterCreateActivity.FilterInvitesBottomSheet.lambda$show$1(BaseFragment.this, dialogFilter, runnable, currentTimeMillis, tLObject, tL_error);
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda1
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            FilterCreateActivity.FilterInvitesBottomSheet.$r8$lambda$PtxB57vVtG7SpSeyo74XZjhcgzQ(BaseFragment.this, tLObject, r3, tL_error, r5, r6);
+                        }
+                    });
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$show$1(final BaseFragment baseFragment, final MessagesController.DialogFilter dialogFilter, final Runnable runnable, final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FilterCreateActivity.FilterInvitesBottomSheet.lambda$show$0(BaseFragment.this, tLObject, dialogFilter, tL_error, runnable, j);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$show$0(BaseFragment baseFragment, TLObject tLObject, MessagesController.DialogFilter dialogFilter, TLRPC.TL_error tL_error, Runnable runnable, long j) {
+        public static /* synthetic */ void $r8$lambda$PtxB57vVtG7SpSeyo74XZjhcgzQ(BaseFragment baseFragment, TLObject tLObject, MessagesController.DialogFilter dialogFilter, TLRPC.TL_error tL_error, Runnable runnable, long j) {
             if (baseFragment == null || baseFragment.getContext() == null) {
                 return;
             }
@@ -2799,7 +2729,7 @@ public class FilterCreateActivity extends BaseFragment {
             this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FilterCreateActivity.FilterInvitesBottomSheet.this.lambda$new$2(view);
+                    FilterCreateActivity.FilterInvitesBottomSheet.this.createLink();
                 }
             });
             FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f);
@@ -2812,11 +2742,6 @@ public class FilterCreateActivity extends BaseFragment {
             this.bulletinContainer = frameLayout;
             this.containerView.addView(frameLayout, LayoutHelper.createFrame(-1, 100.0f, 80, 6.0f, 0.0f, 6.0f, 0.0f));
             updateCreateInviteButton();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(View view) {
-            createLink();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2919,8 +2844,9 @@ public class FilterCreateActivity extends BaseFragment {
                         textInfoPrivacyCell = new CreateLinkCell(FilterInvitesBottomSheet.this.getContext());
                         textInfoPrivacyCell.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
                     } else if (i == 7) {
-                        textInfoPrivacyCell = new 1(FilterInvitesBottomSheet.this.getContext(), null, ((BottomSheet) FilterInvitesBottomSheet.this).currentAccount, FilterInvitesBottomSheet.this.filter.id);
-                        textInfoPrivacyCell.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
+                        1 r0 = new 1(FilterInvitesBottomSheet.this.getContext(), null, ((BottomSheet) FilterInvitesBottomSheet.this).currentAccount, FilterInvitesBottomSheet.this.filter.id);
+                        r0.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
+                        textInfoPrivacyCell = r0;
                     } else if (i == 6 || i == 3) {
                         textInfoPrivacyCell = new TextInfoPrivacyCell(FilterInvitesBottomSheet.this.getContext());
                         textInfoPrivacyCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
@@ -3070,15 +2996,10 @@ public class FilterCreateActivity extends BaseFragment {
                 imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$HeaderView$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FilterCreateActivity.FilterInvitesBottomSheet.HeaderView.this.lambda$new$0(view);
+                        FilterCreateActivity.FilterInvitesBottomSheet.this.dismiss();
                     }
                 });
                 addView(imageView2, LayoutHelper.createFrame(48, 48.0f, 53, 0.0f, -4.0f, 2.0f, 0.0f));
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$0(View view) {
-                FilterInvitesBottomSheet.this.lambda$new$0();
             }
 
             @Override // android.widget.FrameLayout, android.view.View
@@ -3087,7 +3008,8 @@ public class FilterCreateActivity extends BaseFragment {
             }
         }
 
-        private void createLink() {
+        /* JADX INFO: Access modifiers changed from: private */
+        public void createLink() {
             ArrayList<TLRPC.InputPeer> arrayList = new ArrayList<>();
             for (int i = 0; i < this.filter.alwaysShow.size(); i++) {
                 long longValue = this.filter.alwaysShow.get(i).longValue();
@@ -3096,7 +3018,7 @@ public class FilterCreateActivity extends BaseFragment {
                 }
             }
             if (arrayList.isEmpty()) {
-                lambda$new$0();
+                dismiss();
                 getBaseFragment().presentFragment(new FilterChatlistActivity(this.filter, null));
                 return;
             }
@@ -3109,28 +3031,27 @@ public class FilterCreateActivity extends BaseFragment {
             getBaseFragment().getConnectionsManager().sendRequest(tL_chatlists_exportChatlistInvite, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda4
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    FilterCreateActivity.FilterInvitesBottomSheet.this.lambda$createLink$4(tLObject, tL_error);
+                    FilterCreateActivity.FilterInvitesBottomSheet.$r8$lambda$wEeoSNIv-KUkuBK4nOPhPGICbJE(FilterCreateActivity.FilterInvitesBottomSheet.this, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createLink$4(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$wEeoSNIv-KUkuBK4nOPhPGICbJE(final FilterInvitesBottomSheet filterInvitesBottomSheet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+            filterInvitesBottomSheet.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilterCreateActivity.FilterInvitesBottomSheet.this.lambda$createLink$3(tL_error, tLObject);
+                    FilterCreateActivity.FilterInvitesBottomSheet.$r8$lambda$JFfdGijJqddktJIr7cn30PC0FJo(FilterCreateActivity.FilterInvitesBottomSheet.this, tL_error, tLObject);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createLink$3(TLRPC.TL_error tL_error, TLObject tLObject) {
-            if (FilterCreateActivity.processErrors(tL_error, getBaseFragment(), BulletinFactory.of(this.bulletinContainer, null)) && (tLObject instanceof TL_chatlists.TL_chatlists_exportedChatlistInvite)) {
+        public static /* synthetic */ void $r8$lambda$JFfdGijJqddktJIr7cn30PC0FJo(FilterInvitesBottomSheet filterInvitesBottomSheet, TLRPC.TL_error tL_error, TLObject tLObject) {
+            if (FilterCreateActivity.processErrors(tL_error, filterInvitesBottomSheet.getBaseFragment(), BulletinFactory.of(filterInvitesBottomSheet.bulletinContainer, null)) && (tLObject instanceof TL_chatlists.TL_chatlists_exportedChatlistInvite)) {
                 FilterCreateActivity.hideNew(0);
-                lambda$new$0();
-                getBaseFragment().getMessagesController().loadRemoteFilters(true);
-                getBaseFragment().presentFragment(new FilterChatlistActivity(this.filter, ((TL_chatlists.TL_chatlists_exportedChatlistInvite) tLObject).invite));
+                filterInvitesBottomSheet.dismiss();
+                filterInvitesBottomSheet.getBaseFragment().getMessagesController().loadRemoteFilters(true);
+                filterInvitesBottomSheet.getBaseFragment().presentFragment(new FilterChatlistActivity(filterInvitesBottomSheet.filter, ((TL_chatlists.TL_chatlists_exportedChatlistInvite) tLObject).invite));
             }
         }
 
@@ -3141,7 +3062,7 @@ public class FilterCreateActivity extends BaseFragment {
             this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda2
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
-                    FilterCreateActivity.FilterInvitesBottomSheet.this.lambda$onViewCreated$5(view, i);
+                    FilterCreateActivity.FilterInvitesBottomSheet.$r8$lambda$qibdMyixSzPXKQpttOGr0vIyAn0(FilterCreateActivity.FilterInvitesBottomSheet.this, view, i);
                 }
             });
             DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
@@ -3152,19 +3073,22 @@ public class FilterCreateActivity extends BaseFragment {
             this.recyclerListView.setItemAnimator(defaultItemAnimator);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onViewCreated$5(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$qibdMyixSzPXKQpttOGr0vIyAn0(FilterInvitesBottomSheet filterInvitesBottomSheet, View view, int i) {
             int i2 = i - 1;
-            if (i2 < 0 || i2 >= this.items.size()) {
+            if (i2 < 0) {
+                filterInvitesBottomSheet.getClass();
                 return;
             }
-            ItemInner itemInner = (ItemInner) this.items.get(i2);
+            if (i2 >= filterInvitesBottomSheet.items.size()) {
+                return;
+            }
+            ItemInner itemInner = (ItemInner) filterInvitesBottomSheet.items.get(i2);
             int i3 = itemInner.viewType;
             if (i3 == 7) {
-                lambda$new$0();
-                getBaseFragment().presentFragment(new FilterChatlistActivity(this.filter, itemInner.link));
+                filterInvitesBottomSheet.dismiss();
+                filterInvitesBottomSheet.getBaseFragment().presentFragment(new FilterChatlistActivity(filterInvitesBottomSheet.filter, itemInner.link));
             } else if (i3 == 8) {
-                createLink();
+                filterInvitesBottomSheet.createLink();
             }
         }
     }
@@ -3196,7 +3120,8 @@ public class FilterCreateActivity extends BaseFragment {
         return true;
     }
 
-    private class HeaderCellColorPreview extends HeaderCell {
+    /* JADX INFO: Access modifiers changed from: private */
+    class HeaderCellColorPreview extends HeaderCell {
         private final AnimatedColor animatedColor;
         private int currentColor;
         public final TextView noTag;
@@ -3286,7 +3211,8 @@ public class FilterCreateActivity extends BaseFragment {
         }
     }
 
-    private class HeaderCellWithRight extends HeaderCell {
+    /* JADX INFO: Access modifiers changed from: private */
+    class HeaderCellWithRight extends HeaderCell {
         private final AnimatedTextView rightTextView;
 
         public HeaderCellWithRight(Context context, Theme.ResourcesProvider resourcesProvider) {

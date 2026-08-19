@@ -114,9 +114,10 @@ public class AuthenticatorAssertionResponse extends AuthenticatorResponse {
             jSONObject.put("clientDataJSON", Base64Utils.encodeUrlSafeNoPadding(getClientDataJSON()));
             jSONObject.put("authenticatorData", Base64Utils.encodeUrlSafeNoPadding(getAuthenticatorData()));
             jSONObject.put("signature", Base64Utils.encodeUrlSafeNoPadding(getSignature()));
-            if (this.zze != null) {
-                jSONObject.put("userHandle", Base64Utils.encodeUrlSafeNoPadding(getUserHandle()));
+            if (this.zze == null) {
+                return jSONObject;
             }
+            jSONObject.put("userHandle", Base64Utils.encodeUrlSafeNoPadding(getUserHandle()));
             return jSONObject;
         } catch (JSONException e) {
             throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e);

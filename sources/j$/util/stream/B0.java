@@ -1,29 +1,24 @@
 package j$.util.stream;
 
-import java.util.function.DoubleConsumer;
+import j$.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class B0 implements DoubleConsumer {
-    public final /* synthetic */ int a;
+public interface B0 {
+    B0 b(int i);
 
-    public /* synthetic */ B0(int i) {
-        this.a = i;
-    }
+    long count();
 
-    private final void accept$j$$util$stream$Node$OfDouble$$ExternalSyntheticLambda0(double d) {
-    }
+    B0 f(long j, long j2, IntFunction intFunction);
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfDouble$$ExternalSyntheticLambda0(double d) {
-    }
+    void forEach(Consumer consumer);
 
-    @Override // java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        int i = this.a;
-    }
+    void g(Object[] objArr, int i);
 
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
-    }
+    Object[] h(IntFunction intFunction);
+
+    int i();
+
+    Spliterator spliterator();
 }

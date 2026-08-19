@@ -199,7 +199,7 @@ public class VideoPlayerRewinder {
                     videoPlayer2.seekTo(j, false, new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerRewinder$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            VideoPlayerRewinder.this.lambda$updateRewindSpeed$0();
+                            VideoPlayerRewinder.$r8$lambda$fEE-RfiqyKnmLcZ80xcHeqUU-ew(VideoPlayerRewinder.this);
                         }
                     });
                 }
@@ -208,9 +208,8 @@ public class VideoPlayerRewinder {
         setPlaybackSpeed(this.playSpeed * rewindSpeed);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRewindSpeed$0() {
-        VideoFramesRewinder videoFramesRewinder = this.framesRewinder;
+    public static /* synthetic */ void $r8$lambda$fEE-RfiqyKnmLcZ80xcHeqUU-ew(VideoPlayerRewinder videoPlayerRewinder) {
+        VideoFramesRewinder videoFramesRewinder = videoPlayerRewinder.framesRewinder;
         if (videoFramesRewinder != null) {
             videoFramesRewinder.clearCurrent();
         }
@@ -240,7 +239,7 @@ public class VideoPlayerRewinder {
                         videoPlayer.seekTo(this.rewindBackSeekPlayerPosition, false, new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerRewinder$$ExternalSyntheticLambda1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                VideoPlayerRewinder.this.lambda$cancelRewind$1();
+                                VideoPlayerRewinder.$r8$lambda$e0LDp0ifZxxK34aHVJNPRZekzhc(VideoPlayerRewinder.this);
                             }
                         });
                         z = true;
@@ -274,9 +273,8 @@ public class VideoPlayerRewinder {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$cancelRewind$1() {
-        VideoFramesRewinder videoFramesRewinder = this.framesRewinder;
+    public static /* synthetic */ void $r8$lambda$e0LDp0ifZxxK34aHVJNPRZekzhc(VideoPlayerRewinder videoPlayerRewinder) {
+        VideoFramesRewinder videoFramesRewinder = videoPlayerRewinder.framesRewinder;
         if (videoFramesRewinder != null) {
             videoFramesRewinder.release();
         }

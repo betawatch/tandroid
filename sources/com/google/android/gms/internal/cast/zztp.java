@@ -63,14 +63,15 @@ public abstract class zztp extends zzsh {
                 throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
-        if (zztpVar == null) {
-            zztpVar = (zztp) ((zztp) zzwj.zze(cls)).zzb(6, null, null);
-            if (zztpVar == null) {
-                throw new IllegalStateException();
-            }
-            map.put(cls, zztpVar);
+        if (zztpVar != null) {
+            return zztpVar;
         }
-        return zztpVar;
+        zztp zztpVar2 = (zztp) ((zztp) zzwj.zze(cls)).zzb(6, null, null);
+        if (zztpVar2 == null) {
+            throw new IllegalStateException();
+        }
+        map.put(cls, zztpVar2);
+        return zztpVar2;
     }
 
     protected static zztu zzy() {
@@ -177,22 +178,22 @@ public abstract class zztp extends zzsh {
 
     @Override // com.google.android.gms.internal.cast.zzux
     public final int zzu() {
-        int i;
         if (zzK()) {
-            i = zza(null);
-            if (i < 0) {
-                throw new IllegalStateException("serialized size must be non-negative, was " + i);
+            int zza = zza(null);
+            if (zza >= 0) {
+                return zza;
             }
-        } else {
-            i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (i == Integer.MAX_VALUE) {
-                i = zza(null);
-                if (i < 0) {
-                    throw new IllegalStateException("serialized size must be non-negative, was " + i);
-                }
-                this.zzd = (this.zzd & TLObject.FLAG_31) | i;
-            }
+            throw new IllegalStateException("serialized size must be non-negative, was " + zza);
         }
-        return i;
+        int i = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        int zza2 = zza(null);
+        if (zza2 >= 0) {
+            this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
+            return zza2;
+        }
+        throw new IllegalStateException("serialized size must be non-negative, was " + zza2);
     }
 }

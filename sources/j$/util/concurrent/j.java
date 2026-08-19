@@ -1,14 +1,13 @@
 package j$.util.concurrent;
 
 import j$.util.Spliterator;
-import j$.util.T;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class j extends p implements Spliterator {
+public final class j extends p implements Spliterator {
     public final /* synthetic */ int i;
-    long j;
+    public long j;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ j(l[] lVarArr, int i, int i2, int i3, long j, int i4) {
@@ -31,14 +30,14 @@ final class j extends p implements Spliterator {
     public final /* synthetic */ long getExactSizeIfKnown() {
         switch (this.i) {
         }
-        return T.d(this);
+        return j$.com.android.tools.r8.a.n(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
         switch (this.i) {
         }
-        return T.e(this, i);
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -91,7 +90,7 @@ final class j extends p implements Spliterator {
                     if (a == null) {
                         break;
                     } else {
-                        consumer.accept(a.b);
+                        consumer.s(a.b);
                     }
                 }
             default:
@@ -101,7 +100,7 @@ final class j extends p implements Spliterator {
                     if (a2 == null) {
                         break;
                     } else {
-                        consumer.accept(a2.c);
+                        consumer.s(a2.c);
                     }
                 }
         }
@@ -114,7 +113,7 @@ final class j extends p implements Spliterator {
                 consumer.getClass();
                 l a = a();
                 if (a != null) {
-                    consumer.accept(a.b);
+                    consumer.s(a.b);
                     break;
                 }
                 break;
@@ -122,7 +121,7 @@ final class j extends p implements Spliterator {
                 consumer.getClass();
                 l a2 = a();
                 if (a2 != null) {
-                    consumer.accept(a2.c);
+                    consumer.s(a2.c);
                     break;
                 }
                 break;

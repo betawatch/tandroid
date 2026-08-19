@@ -67,15 +67,14 @@ public class StickersArchiveAlert extends AlertDialog.Builder {
             setPositiveButton(LocaleController.getString(R.string.Settings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.StickersArchiveAlert$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    StickersArchiveAlert.this.lambda$new$1(alertDialog, i);
+                    StickersArchiveAlert.$r8$lambda$HvtB8gRncxhFUS-9Z1QQczx7-F8(StickersArchiveAlert.this, alertDialog, i);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(AlertDialog alertDialog, int i) {
-        this.parentFragment.presentFragment(new StickersActivity(this.currentType, null));
+    public static /* synthetic */ void $r8$lambda$HvtB8gRncxhFUS-9Z1QQczx7-F8(StickersArchiveAlert stickersArchiveAlert, AlertDialog alertDialog, int i) {
+        stickersArchiveAlert.parentFragment.presentFragment(new StickersActivity(stickersArchiveAlert.currentType, null));
         alertDialog.dismiss();
     }
 

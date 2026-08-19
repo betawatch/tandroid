@@ -12,7 +12,7 @@ import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
     private EglBase eglBase;
@@ -73,14 +73,13 @@ public class VideoFileRenderer implements VideoSink {
         this.renderThreadHandler.post(new Runnable() { // from class: org.webrtc.VideoFileRenderer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                VideoFileRenderer.this.lambda$onFrame$0(videoFrame);
+                VideoFileRenderer.this.renderFrameOnRenderThread(videoFrame);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: renderFrameOnRenderThread, reason: merged with bridge method [inline-methods] */
-    public void lambda$onFrame$0(final VideoFrame videoFrame) {
+    public void renderFrameOnRenderThread(final VideoFrame videoFrame) {
         VideoFrame.Buffer buffer = videoFrame.getBuffer();
         int i = videoFrame.getRotation() % NotificationCenter.needDeleteDialog == 0 ? this.outputFileWidth : this.outputFileHeight;
         int i2 = videoFrame.getRotation() % NotificationCenter.needDeleteDialog == 0 ? this.outputFileHeight : this.outputFileWidth;
@@ -100,19 +99,19 @@ public class VideoFileRenderer implements VideoSink {
         this.fileThreadHandler.post(new Runnable() { // from class: org.webrtc.VideoFileRenderer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                VideoFileRenderer.this.lambda$renderFrameOnRenderThread$1(i420, videoFrame);
+                VideoFileRenderer.$r8$lambda$5AeH-6EyAYq6gGVjpb9QdZFYeeQ(VideoFileRenderer.this, i420, videoFrame);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$renderFrameOnRenderThread$1(VideoFrame.I420Buffer i420Buffer, VideoFrame videoFrame) {
-        YuvHelper.I420Rotate(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), this.outputFrameBuffer, i420Buffer.getWidth(), i420Buffer.getHeight(), videoFrame.getRotation());
+    public static /* synthetic */ void $r8$lambda$5AeH-6EyAYq6gGVjpb9QdZFYeeQ(VideoFileRenderer videoFileRenderer, VideoFrame.I420Buffer i420Buffer, VideoFrame videoFrame) {
+        videoFileRenderer.getClass();
+        YuvHelper.I420Rotate(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), videoFileRenderer.outputFrameBuffer, i420Buffer.getWidth(), i420Buffer.getHeight(), videoFrame.getRotation());
         i420Buffer.release();
         try {
-            this.videoOutFile.write("FRAME\n".getBytes(Charset.forName("US-ASCII")));
-            this.videoOutFile.write(this.outputFrameBuffer.array(), this.outputFrameBuffer.arrayOffset(), this.outputFrameSize);
-            this.frameCount++;
+            videoFileRenderer.videoOutFile.write("FRAME\n".getBytes(Charset.forName("US-ASCII")));
+            videoFileRenderer.videoOutFile.write(videoFileRenderer.outputFrameBuffer.array(), videoFileRenderer.outputFrameBuffer.arrayOffset(), videoFileRenderer.outputFrameSize);
+            videoFileRenderer.frameCount++;
         } catch (IOException e) {
             throw new RuntimeException("Error writing video to disk", e);
         }
@@ -123,14 +122,14 @@ public class VideoFileRenderer implements VideoSink {
         this.renderThreadHandler.post(new Runnable() { // from class: org.webrtc.VideoFileRenderer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                VideoFileRenderer.this.lambda$release$2(countDownLatch);
+                VideoFileRenderer.$r8$lambda$mRUnSw99LKy4NYWIWpVWspG1GOM(VideoFileRenderer.this, countDownLatch);
             }
         });
         ThreadUtils.awaitUninterruptibly(countDownLatch);
         this.fileThreadHandler.post(new Runnable() { // from class: org.webrtc.VideoFileRenderer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                VideoFileRenderer.this.lambda$release$3();
+                VideoFileRenderer.$r8$lambda$g_uD-y1qWJtlsDvdzZb4faX4yk4(VideoFileRenderer.this);
             }
         });
         try {
@@ -141,20 +140,19 @@ public class VideoFileRenderer implements VideoSink {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$release$2(CountDownLatch countDownLatch) {
-        this.yuvConverter.release();
-        this.eglBase.release();
-        this.renderThread.quit();
+    public static /* synthetic */ void $r8$lambda$mRUnSw99LKy4NYWIWpVWspG1GOM(VideoFileRenderer videoFileRenderer, CountDownLatch countDownLatch) {
+        videoFileRenderer.yuvConverter.release();
+        videoFileRenderer.eglBase.release();
+        videoFileRenderer.renderThread.quit();
         countDownLatch.countDown();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$release$3() {
+    public static /* synthetic */ void $r8$lambda$g_uD-y1qWJtlsDvdzZb4faX4yk4(VideoFileRenderer videoFileRenderer) {
+        videoFileRenderer.getClass();
         try {
-            this.videoOutFile.close();
-            Logging.d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
-            this.fileThread.quit();
+            videoFileRenderer.videoOutFile.close();
+            Logging.d(TAG, "Video written to disk as " + videoFileRenderer.outputFileName + ". The number of frames is " + videoFileRenderer.frameCount + " and the dimensions of the frames are " + videoFileRenderer.outputFileWidth + "x" + videoFileRenderer.outputFileHeight + ".");
+            videoFileRenderer.fileThread.quit();
         } catch (IOException e) {
             throw new RuntimeException("Error closing output file", e);
         }

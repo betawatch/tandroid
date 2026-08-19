@@ -122,14 +122,16 @@ public abstract class FlacFrameReader {
         if (i == 12) {
             return parsableByteArray.readUnsignedByte() * MediaDataController.MAX_STYLE_RUNS_COUNT == i2;
         }
-        if (i > 14) {
-            return false;
+        if (i <= 14) {
+            int readUnsignedShort = parsableByteArray.readUnsignedShort();
+            if (i == 14) {
+                readUnsignedShort *= 10;
+            }
+            if (readUnsignedShort == i2) {
+                return true;
+            }
         }
-        int readUnsignedShort = parsableByteArray.readUnsignedShort();
-        if (i == 14) {
-            readUnsignedShort *= 10;
-        }
-        return readUnsignedShort == i2;
+        return false;
     }
 
     private static boolean checkAndReadCrc(ParsableByteArray parsableByteArray, int i) {

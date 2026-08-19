@@ -33,13 +33,11 @@ public class ChangeNameActivity extends BaseFragment {
     private EditTextBoldCursor lastNameField;
     private Theme.ResourcesProvider resourcesProvider;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$gcnxyxS84kCDz_EqMdnOhnbbsJo(View view, MotionEvent motionEvent) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$saveName$3(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$hTGE7lCqp8KFgHj5cy6tmKlYMJE(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
     public ChangeNameActivity(Theme.ResourcesProvider resourcesProvider) {
@@ -79,9 +77,7 @@ public class ChangeNameActivity extends BaseFragment {
         this.fragmentView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$createView$0;
-                lambda$createView$0 = ChangeNameActivity.lambda$createView$0(view, motionEvent);
-                return lambda$createView$0;
+                return ChangeNameActivity.$r8$lambda$gcnxyxS84kCDz_EqMdnOhnbbsJo(view, motionEvent);
             }
         });
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.ChangeNameActivity.2
@@ -120,9 +116,7 @@ public class ChangeNameActivity extends BaseFragment {
         this.firstNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda2
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i6, KeyEvent keyEvent) {
-                boolean lambda$createView$1;
-                lambda$createView$1 = ChangeNameActivity.this.lambda$createView$1(textView, i6, keyEvent);
-                return lambda$createView$1;
+                return ChangeNameActivity.$r8$lambda$hDn9PmUck_PcM8IA4QieXFBRBhk(ChangeNameActivity.this, textView, i6, keyEvent);
             }
         });
         EditTextBoldCursor editTextBoldCursor5 = new EditTextBoldCursor(context) { // from class: org.telegram.ui.ChangeNameActivity.3
@@ -151,9 +145,7 @@ public class ChangeNameActivity extends BaseFragment {
         this.lastNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda3
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i6, KeyEvent keyEvent) {
-                boolean lambda$createView$2;
-                lambda$createView$2 = ChangeNameActivity.this.lambda$createView$2(textView, i6, keyEvent);
-                return lambda$createView$2;
+                return ChangeNameActivity.$r8$lambda$pYQqOPMW4-FTo9sIFLGh8DVhPPo(ChangeNameActivity.this, textView, i6, keyEvent);
             }
         });
         if (user != null) {
@@ -165,24 +157,24 @@ public class ChangeNameActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$1(TextView textView, int i, KeyEvent keyEvent) {
+    public static /* synthetic */ boolean $r8$lambda$hDn9PmUck_PcM8IA4QieXFBRBhk(ChangeNameActivity changeNameActivity, TextView textView, int i, KeyEvent keyEvent) {
         if (i != 5) {
+            changeNameActivity.getClass();
             return false;
         }
-        this.lastNameField.requestFocus();
-        EditTextBoldCursor editTextBoldCursor = this.lastNameField;
+        changeNameActivity.lastNameField.requestFocus();
+        EditTextBoldCursor editTextBoldCursor = changeNameActivity.lastNameField;
         editTextBoldCursor.setSelection(editTextBoldCursor.length());
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$2(TextView textView, int i, KeyEvent keyEvent) {
-        if (i != 6) {
-            return false;
+    public static /* synthetic */ boolean $r8$lambda$pYQqOPMW4-FTo9sIFLGh8DVhPPo(ChangeNameActivity changeNameActivity, TextView textView, int i, KeyEvent keyEvent) {
+        if (i == 6) {
+            changeNameActivity.doneButton.performClick();
+            return true;
         }
-        this.doneButton.performClick();
-        return true;
+        changeNameActivity.getClass();
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -218,12 +210,12 @@ public class ChangeNameActivity extends BaseFragment {
                 user.last_name = updateprofile.last_name;
             }
             UserConfig.getInstance(this.currentAccount).saveConfig(true);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
+            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.mainUserInfoChanged, new Object[0]);
+            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(updateprofile, new RequestDelegate() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ChangeNameActivity.lambda$saveName$3(tLObject, tL_error);
+                    ChangeNameActivity.$r8$lambda$hTGE7lCqp8KFgHj5cy6tmKlYMJE(tLObject, tL_error);
                 }
             });
         }
@@ -240,18 +232,17 @@ public class ChangeNameActivity extends BaseFragment {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChangeNameActivity.this.lambda$onTransitionAnimationEnd$4();
+                    ChangeNameActivity.$r8$lambda$obe45pXivvV-73tUEq_duePnlNE(ChangeNameActivity.this);
                 }
             }, 100L);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTransitionAnimationEnd$4() {
-        EditTextBoldCursor editTextBoldCursor = this.firstNameField;
+    public static /* synthetic */ void $r8$lambda$obe45pXivvV-73tUEq_duePnlNE(ChangeNameActivity changeNameActivity) {
+        EditTextBoldCursor editTextBoldCursor = changeNameActivity.firstNameField;
         if (editTextBoldCursor != null) {
             editTextBoldCursor.requestFocus();
-            AndroidUtilities.showKeyboard(this.firstNameField);
+            AndroidUtilities.showKeyboard(changeNameActivity.firstNameField);
         }
     }
 
@@ -282,7 +273,7 @@ public class ChangeNameActivity extends BaseFragment {
         arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i6));
-        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, i8));
+        arrayList.add(new ThemeDescription(this.lastNameField, ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, i8));
         return arrayList;
     }
 }

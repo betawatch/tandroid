@@ -30,7 +30,7 @@ public class CompositionTimeToSample extends AbstractFullBox {
 
     public CompositionTimeToSample() {
         super("ctts");
-        this.entries = Collections.emptyList();
+        this.entries = Collections.EMPTY_LIST;
     }
 
     @Override // com.googlecode.mp4parser.AbstractBox

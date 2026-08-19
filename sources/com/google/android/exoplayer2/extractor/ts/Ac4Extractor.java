@@ -17,9 +17,7 @@ public final class Ac4Extractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.Ac4Extractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = Ac4Extractor.lambda$static$0();
-            return lambda$static$0;
+            return Ac4Extractor.$r8$lambda$N5Xzrew3bu4TmTBktQJk6bj3_p4();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -37,8 +35,7 @@ public final class Ac4Extractor implements Extractor {
     public void release() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$N5Xzrew3bu4TmTBktQJk6bj3_p4() {
         return new Extractor[]{new Ac4Extractor()};
     }
 

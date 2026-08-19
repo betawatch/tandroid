@@ -16,7 +16,7 @@ public final class zzku {
         }
         Object next = it.next();
         while (it.hasNext()) {
-            next = Long.valueOf(((Number) next).longValue() ^ ((Number) it.next()).longValue());
+            next = Long.valueOf(((Number) it.next()).longValue() ^ ((Number) next).longValue());
         }
         return ((Number) next).longValue();
     }

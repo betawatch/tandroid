@@ -190,45 +190,50 @@ public class Extensions implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            Extensions extensions = (Extensions) obj;
+            MetadataExtension metadataExtension = this.metadata;
+            if (metadataExtension == null ? extensions.metadata != null : !metadataExtension.equals(extensions.metadata)) {
+                return false;
+            }
+            ProtocolExtension protocolExtension = this.protocol;
+            if (protocolExtension == null ? extensions.protocol != null : !protocolExtension.equals(extensions.protocol)) {
+                return false;
+            }
+            UserExtension userExtension = this.user;
+            if (userExtension == null ? extensions.user != null : !userExtension.equals(extensions.user)) {
+                return false;
+            }
+            DeviceExtension deviceExtension = this.device;
+            if (deviceExtension == null ? extensions.device != null : !deviceExtension.equals(extensions.device)) {
+                return false;
+            }
+            OsExtension osExtension = this.os;
+            if (osExtension == null ? extensions.os != null : !osExtension.equals(extensions.os)) {
+                return false;
+            }
+            AppExtension appExtension = this.app;
+            if (appExtension == null ? extensions.app != null : !appExtension.equals(extensions.app)) {
+                return false;
+            }
+            NetExtension netExtension = this.net;
+            if (netExtension == null ? extensions.net != null : !netExtension.equals(extensions.net)) {
+                return false;
+            }
+            SdkExtension sdkExtension = this.sdk;
+            if (sdkExtension == null ? extensions.sdk != null : !sdkExtension.equals(extensions.sdk)) {
+                return false;
+            }
+            LocExtension locExtension = this.loc;
+            LocExtension locExtension2 = extensions.loc;
+            if (locExtension != null) {
+                return locExtension.equals(locExtension2);
+            }
+            if (locExtension2 == null) {
+                return true;
+            }
         }
-        Extensions extensions = (Extensions) obj;
-        MetadataExtension metadataExtension = this.metadata;
-        if (metadataExtension == null ? extensions.metadata != null : !metadataExtension.equals(extensions.metadata)) {
-            return false;
-        }
-        ProtocolExtension protocolExtension = this.protocol;
-        if (protocolExtension == null ? extensions.protocol != null : !protocolExtension.equals(extensions.protocol)) {
-            return false;
-        }
-        UserExtension userExtension = this.user;
-        if (userExtension == null ? extensions.user != null : !userExtension.equals(extensions.user)) {
-            return false;
-        }
-        DeviceExtension deviceExtension = this.device;
-        if (deviceExtension == null ? extensions.device != null : !deviceExtension.equals(extensions.device)) {
-            return false;
-        }
-        OsExtension osExtension = this.os;
-        if (osExtension == null ? extensions.os != null : !osExtension.equals(extensions.os)) {
-            return false;
-        }
-        AppExtension appExtension = this.app;
-        if (appExtension == null ? extensions.app != null : !appExtension.equals(extensions.app)) {
-            return false;
-        }
-        NetExtension netExtension = this.net;
-        if (netExtension == null ? extensions.net != null : !netExtension.equals(extensions.net)) {
-            return false;
-        }
-        SdkExtension sdkExtension = this.sdk;
-        if (sdkExtension == null ? extensions.sdk != null : !sdkExtension.equals(extensions.sdk)) {
-            return false;
-        }
-        LocExtension locExtension = this.loc;
-        LocExtension locExtension2 = extensions.loc;
-        return locExtension != null ? locExtension.equals(locExtension2) : locExtension2 == null;
+        return false;
     }
 
     public int hashCode() {

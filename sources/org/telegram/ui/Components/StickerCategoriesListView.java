@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
@@ -97,20 +96,22 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         fetcher.fetch(i, Integer.valueOf(i2), new Utilities.Callback() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                StickerCategoriesListView.lambda$preload$0(i, (TLRPC.TL_messages_emojiGroups) obj);
+                StickerCategoriesListView.$r8$lambda$ZDQ_VKiRHbB-Vs7puOYEMcax-ZQ(i, (TLRPC.TL_messages_emojiGroups) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$preload$0(int i, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups) {
+    public static /* synthetic */ void $r8$lambda$ZDQ_VKiRHbB-Vs7puOYEMcax-ZQ(int i, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups) {
         ArrayList<TLRPC.EmojiGroup> arrayList;
         if (tL_messages_emojiGroups == null || (arrayList = tL_messages_emojiGroups.groups) == null) {
             return;
         }
-        Iterator<TLRPC.EmojiGroup> it = arrayList.iterator();
-        while (it.hasNext()) {
-            AnimatedEmojiDrawable.getDocumentFetcher(i).fetchDocument(it.next().icon_emoji_id, null);
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            TLRPC.EmojiGroup emojiGroup = arrayList.get(i2);
+            i2++;
+            AnimatedEmojiDrawable.getDocumentFetcher(i).fetchDocument(emojiGroup.icon_emoji_id, null);
         }
     }
 
@@ -152,47 +153,47 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                StickerCategoriesListView.this.lambda$new$1(view, i3);
+                StickerCategoriesListView.this.onItemClick(i3, view);
             }
         });
         final long currentTimeMillis = System.currentTimeMillis();
         fetcher.fetch(UserConfig.selectedAccount, Integer.valueOf(i), new Utilities.Callback() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                StickerCategoriesListView.this.lambda$new$3(emojiCategoryArr, currentTimeMillis, (TLRPC.TL_messages_emojiGroups) obj);
+                StickerCategoriesListView.$r8$lambda$ebTGacH_rg6j1j9Z08XhIZUVi-I(StickerCategoriesListView.this, emojiCategoryArr, currentTimeMillis, (TLRPC.TL_messages_emojiGroups) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(final EmojiCategory[] emojiCategoryArr, final long j, final TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups) {
+    public static /* synthetic */ void $r8$lambda$ebTGacH_rg6j1j9Z08XhIZUVi-I(final StickerCategoriesListView stickerCategoriesListView, final EmojiCategory[] emojiCategoryArr, final long j, final TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups) {
+        stickerCategoriesListView.getClass();
         if (tL_messages_emojiGroups != null) {
             NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StickerCategoriesListView.this.lambda$new$2(emojiCategoryArr, tL_messages_emojiGroups, j);
+                    StickerCategoriesListView.$r8$lambda$m2HdIcq8gv4PxwYaq1vSwfIxu3k(StickerCategoriesListView.this, emojiCategoryArr, tL_messages_emojiGroups, j);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(EmojiCategory[] emojiCategoryArr, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups, long j) {
-        this.categories = new EmojiCategory[(emojiCategoryArr == null ? 0 : emojiCategoryArr.length) + tL_messages_emojiGroups.groups.size()];
+    public static /* synthetic */ void $r8$lambda$m2HdIcq8gv4PxwYaq1vSwfIxu3k(StickerCategoriesListView stickerCategoriesListView, EmojiCategory[] emojiCategoryArr, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups, long j) {
+        stickerCategoriesListView.getClass();
+        stickerCategoriesListView.categories = new EmojiCategory[(emojiCategoryArr == null ? 0 : emojiCategoryArr.length) + tL_messages_emojiGroups.groups.size()];
         int i = 0;
         if (emojiCategoryArr != null) {
             while (i < emojiCategoryArr.length) {
-                this.categories[i] = emojiCategoryArr[i];
+                stickerCategoriesListView.categories[i] = emojiCategoryArr[i];
                 i++;
             }
         }
         for (int i2 = 0; i2 < tL_messages_emojiGroups.groups.size(); i2++) {
-            this.categories[i + i2] = EmojiCategory.remote(tL_messages_emojiGroups.groups.get(i2));
+            stickerCategoriesListView.categories[i + i2] = EmojiCategory.remote(tL_messages_emojiGroups.groups.get(i2));
         }
-        this.categories = preprocessCategories(this.categories);
-        this.adapter.notifyDataSetChanged();
-        setCategoriesShownT(0.0f);
-        updateCategoriesShown(this.categoriesShouldShow, System.currentTimeMillis() - j > 16);
+        stickerCategoriesListView.categories = stickerCategoriesListView.preprocessCategories(stickerCategoriesListView.categories);
+        stickerCategoriesListView.adapter.notifyDataSetChanged();
+        stickerCategoriesListView.setCategoriesShownT(0.0f);
+        stickerCategoriesListView.updateCategoriesShown(stickerCategoriesListView.categoriesShouldShow, System.currentTimeMillis() - j > 16);
     }
 
     public void setShownButtonsAtStart(float f) {
@@ -200,8 +201,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onItemClick, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$1(int i, View view) {
+    public void onItemClick(int i, View view) {
         EmojiCategory[] emojiCategoryArr;
         if (i >= 1 && (emojiCategoryArr = this.categories) != null) {
             EmojiCategory emojiCategory = emojiCategoryArr[i - 1];
@@ -239,14 +239,9 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         post(new Runnable() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                StickerCategoriesListView.this.lambda$scrollToSelected$4(max);
+                StickerCategoriesListView.this.onScrolled(max, 0);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scrollToSelected$4(int i) {
-        onScrolled(i, 0);
     }
 
     public void selectCategory(EmojiCategory emojiCategory) {
@@ -335,7 +330,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    StickerCategoriesListView.this.lambda$updateCategoriesShown$5(valueAnimator2);
+                    StickerCategoriesListView.$r8$lambda$6JNOjg6kUpFB-K4YSQL_woFWINc(StickerCategoriesListView.this, valueAnimator2);
                 }
             });
             this.categoriesShownAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.StickerCategoriesListView.1
@@ -354,9 +349,9 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         setCategoriesShownT(r5 != 0 ? 1.0f : 0.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateCategoriesShown$5(ValueAnimator valueAnimator) {
-        setCategoriesShownT(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public static /* synthetic */ void $r8$lambda$6JNOjg6kUpFB-K4YSQL_woFWINc(StickerCategoriesListView stickerCategoriesListView, ValueAnimator valueAnimator) {
+        stickerCategoriesListView.getClass();
+        stickerCategoriesListView.setCategoriesShownT(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -469,9 +464,16 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         mutate2.setColorFilter(new PorterDuffColorFilter(i, mode));
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void draw(Canvas canvas) {
+        Canvas canvas2;
         Drawable drawable;
+        Drawable drawable2;
         if (this.backgroundPaint != null) {
             int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i2 = TLObject.FLAG_31;
@@ -485,25 +487,35 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             if (i < i2) {
                 int width = (int) (i + ((getWidth() + AndroidUtilities.dp(32.0f)) * (1.0f - this.categoriesShownT)));
                 int width2 = (int) (i2 + ((getWidth() + AndroidUtilities.dp(32.0f)) * (1.0f - this.categoriesShownT)));
-                canvas.drawRect(width, 0.0f, width2, getHeight(), this.backgroundPaint);
-                if (width2 < getWidth() && (drawable = this.leftBoundDrawable) != null) {
-                    drawable.setAlpha(NotificationCenter.didReceiveSmsCode);
-                    Drawable drawable2 = this.leftBoundDrawable;
-                    drawable2.setBounds(width2, 0, drawable2.getIntrinsicWidth() + width2, getHeight());
-                    this.leftBoundDrawable.draw(canvas);
+                canvas2 = canvas;
+                canvas2.drawRect(width, 0.0f, width2, getHeight(), this.backgroundPaint);
+                if (width2 < getWidth() && (drawable2 = this.leftBoundDrawable) != null) {
+                    drawable2.setAlpha(NotificationCenter.didReceiveSmsCode);
+                    Drawable drawable3 = this.leftBoundDrawable;
+                    drawable3.setBounds(width2, 0, drawable3.getIntrinsicWidth() + width2, getHeight());
+                    this.leftBoundDrawable.draw(canvas2);
                 }
+                drawSelectedHighlight(canvas2);
+                super.draw(canvas2);
+                drawable = this.leftBoundDrawable;
+                if (drawable == null) {
+                    drawable.setAlpha((int) (255.0f * this.leftBoundAlpha.set((canScrollHorizontally(-1) && this.scrolledFully) ? 1.0f : 0.0f) * this.categoriesShownT));
+                    if (this.leftBoundDrawable.getAlpha() > 0) {
+                        Drawable drawable4 = this.leftBoundDrawable;
+                        drawable4.setBounds(0, 0, drawable4.getIntrinsicWidth(), getHeight());
+                        this.leftBoundDrawable.draw(canvas2);
+                        return;
+                    }
+                    return;
+                }
+                return;
             }
         }
-        drawSelectedHighlight(canvas);
-        super.draw(canvas);
-        Drawable drawable3 = this.leftBoundDrawable;
-        if (drawable3 != null) {
-            drawable3.setAlpha((int) (255.0f * this.leftBoundAlpha.set((canScrollHorizontally(-1) && this.scrolledFully) ? 1.0f : 0.0f) * this.categoriesShownT));
-            if (this.leftBoundDrawable.getAlpha() > 0) {
-                Drawable drawable4 = this.leftBoundDrawable;
-                drawable4.setBounds(0, 0, drawable4.getIntrinsicWidth(), getHeight());
-                this.leftBoundDrawable.draw(canvas);
-            }
+        canvas2 = canvas;
+        drawSelectedHighlight(canvas2);
+        super.draw(canvas2);
+        drawable = this.leftBoundDrawable;
+        if (drawable == null) {
         }
     }
 
@@ -563,7 +575,8 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    private class Adapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class Adapter extends RecyclerListView.SelectionAdapter {
         private int lastItemCount;
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -689,13 +702,13 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                 AnimatedEmojiDrawable.getDocumentFetcher(UserConfig.selectedAccount).fetchDocument(emojiCategory.documentId, new AnimatedEmojiDrawable.ReceivedDocument() { // from class: org.telegram.ui.Components.StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda1
                     @Override // org.telegram.ui.Components.AnimatedEmojiDrawable.ReceivedDocument
                     public final void run(TLRPC.Document document) {
-                        StickerCategoriesListView.CategoryButton.this.lambda$set$0(isTabIconsAnimationEnabled, document);
+                        StickerCategoriesListView.CategoryButton.$r8$lambda$5E4_ogyFdNd56291g2oNdZyDnZ4(StickerCategoriesListView.CategoryButton.this, isTabIconsAnimationEnabled, document);
                     }
                 });
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StickerCategoriesListView.CategoryButton.this.lambda$set$1();
+                        StickerCategoriesListView.CategoryButton.$r8$lambda$gEMFKTsWBVlNDwS0LHZUSf6OYfs(StickerCategoriesListView.CategoryButton.this);
                     }
                 }, 60L);
             } else if (emojiCategory.animated) {
@@ -712,19 +725,17 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             setSelected(z, false);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$set$0(boolean z, TLRPC.Document document) {
-            setOnlyLastFrame(!z);
-            setAnimation(document, 24, 24);
-            playAnimation();
+        public static /* synthetic */ void $r8$lambda$5E4_ogyFdNd56291g2oNdZyDnZ4(CategoryButton categoryButton, boolean z, TLRPC.Document document) {
+            categoryButton.setOnlyLastFrame(!z);
+            categoryButton.setAnimation(document, 24, 24);
+            categoryButton.playAnimation();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$set$1() {
-            if (this.loaded) {
+        public static /* synthetic */ void $r8$lambda$gEMFKTsWBVlNDwS0LHZUSf6OYfs(CategoryButton categoryButton) {
+            if (categoryButton.loaded) {
                 return;
             }
-            this.loadProgress = 0.0f;
+            categoryButton.loadProgress = 0.0f;
         }
 
         @Override // org.telegram.ui.Components.RLottieImageView
@@ -741,7 +752,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StickerCategoriesListView.CategoryButton.this.lambda$onLoaded$2(valueAnimator2);
+                        StickerCategoriesListView.CategoryButton.$r8$lambda$U5F_BfWS_GPWXrSJCnEY6lD-DYw(StickerCategoriesListView.CategoryButton.this, valueAnimator2);
                     }
                 });
                 this.loadAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.StickerCategoriesListView.CategoryButton.1
@@ -759,10 +770,10 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLoaded$2(ValueAnimator valueAnimator) {
-            this.loadProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$U5F_BfWS_GPWXrSJCnEY6lD-DYw(CategoryButton categoryButton, ValueAnimator valueAnimator) {
+            categoryButton.getClass();
+            categoryButton.loadProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            categoryButton.invalidate();
         }
 
         public void setSelected(boolean z, boolean z2) {
@@ -778,7 +789,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda3
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            StickerCategoriesListView.CategoryButton.this.lambda$setSelected$3(valueAnimator2);
+                            StickerCategoriesListView.CategoryButton.$r8$lambda$aA2TeOugb7S-PCGBt3SF2PnedcQ(StickerCategoriesListView.CategoryButton.this, valueAnimator2);
                         }
                     });
                     this.selectedAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.StickerCategoriesListView.CategoryButton.2
@@ -798,9 +809,9 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSelected$3(ValueAnimator valueAnimator) {
-            updateSelectedT(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        public static /* synthetic */ void $r8$lambda$aA2TeOugb7S-PCGBt3SF2PnedcQ(CategoryButton categoryButton, ValueAnimator valueAnimator) {
+            categoryButton.getClass();
+            categoryButton.updateSelectedT(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -896,7 +907,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            StickerCategoriesListView.CategoryButton.this.lambda$setPressed$4(valueAnimator2);
+                            StickerCategoriesListView.CategoryButton.$r8$lambda$W9Qj9Xa7YvSGwcVW4kyx2BHAnC8(StickerCategoriesListView.CategoryButton.this, valueAnimator2);
                         }
                     });
                     this.backAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.StickerCategoriesListView.CategoryButton.3
@@ -913,10 +924,10 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setPressed$4(ValueAnimator valueAnimator) {
-            this.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$W9Qj9Xa7YvSGwcVW4kyx2BHAnC8(CategoryButton categoryButton, ValueAnimator valueAnimator) {
+            categoryButton.getClass();
+            categoryButton.pressedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            categoryButton.invalidate();
         }
     }
 
@@ -976,20 +987,19 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             ConnectionsManager.getInstance(i).sendRequest(tL_messages_getEmojiGroups, new RequestDelegate() { // from class: org.telegram.ui.Components.StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StickerCategoriesListView.EmojiGroupFetcher.lambda$getRemote$0(Utilities.Callback4.this, tLObject, tL_error);
+                    StickerCategoriesListView.EmojiGroupFetcher.$r8$lambda$hoVrwIB0C7JCXIxZyF899CAsQ48(Utilities.Callback4.this, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$getRemote$0(Utilities.Callback4 callback4, TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$hoVrwIB0C7JCXIxZyF899CAsQ48(Utilities.Callback4 callback4, TLObject tLObject, TLRPC.TL_error tL_error) {
             if (tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified) {
                 Boolean bool = Boolean.TRUE;
                 callback4.run(bool, null, 0L, bool);
             } else if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
                 callback4.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
             } else {
-                callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r4.hash), Boolean.TRUE);
+                callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r3.hash), Boolean.TRUE);
             }
         }
 
@@ -999,19 +1009,18 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             MessagesStorage.getInstance(i).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Components.StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StickerCategoriesListView.EmojiGroupFetcher.lambda$getLocal$1(i, num, callback2);
+                    StickerCategoriesListView.EmojiGroupFetcher.$r8$lambda$d9VgXuQKrOQ1qkFLkDr7Mpark10(i, num, callback2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:25:0x006d  */
-        /* JADX WARN: Removed duplicated region for block: B:29:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x0070  */
+        /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public static /* synthetic */ void lambda$getLocal$1(int i, Integer num, Utilities.Callback2 callback2) {
+        public static /* synthetic */ void $r8$lambda$d9VgXuQKrOQ1qkFLkDr7Mpark10(int i, Integer num, Utilities.Callback2 callback2) {
             SQLiteCursor sQLiteCursor;
             TLRPC.messages_EmojiGroups messages_emojigroups;
             NativeByteBuffer byteBufferValue;
@@ -1040,8 +1049,8 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                                 FileLog.e(e);
                                 callback2.run(0L, null);
                                 if (sQLiteCursor == null) {
-                                    sQLiteCursor2 = sQLiteCursor;
-                                    sQLiteCursor2.dispose();
+                                    sQLiteCursor.dispose();
+                                    return;
                                 }
                                 return;
                             }
@@ -1060,8 +1069,8 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
                             throw th;
                         }
                     }
-                    if (sQLiteCursor2 == null) {
-                        return;
+                    if (sQLiteCursor2 != null) {
+                        sQLiteCursor2.dispose();
                     }
                 } catch (Throwable th2) {
                     th = th2;
@@ -1072,7 +1081,6 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             } catch (Throwable th3) {
                 th = th3;
             }
-            sQLiteCursor2.dispose();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -1081,29 +1089,28 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             MessagesStorage.getInstance(i).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Components.StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StickerCategoriesListView.EmojiGroupFetcher.lambda$setLocal$2(i, tL_messages_emojiGroups, num);
+                    StickerCategoriesListView.EmojiGroupFetcher.$r8$lambda$ItTxN5yQgcyJ0ciauXDJGTpsOXk(i, tL_messages_emojiGroups, num);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setLocal$2(int i, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups, Integer num) {
+        public static /* synthetic */ void $r8$lambda$ItTxN5yQgcyJ0ciauXDJGTpsOXk(int i, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups, Integer num) {
             try {
                 SQLiteDatabase database = MessagesStorage.getInstance(i).getDatabase();
                 if (database != null) {
                     if (tL_messages_emojiGroups == null) {
                         database.executeFast("DELETE FROM emoji_groups WHERE type = " + num).stepThis().dispose();
-                    } else {
-                        SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO emoji_groups VALUES(?, ?)");
-                        executeFast.requery();
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_messages_emojiGroups.getObjectSize());
-                        tL_messages_emojiGroups.serializeToStream(nativeByteBuffer);
-                        executeFast.bindInteger(1, num.intValue());
-                        executeFast.bindByteBuffer(2, nativeByteBuffer);
-                        executeFast.step();
-                        nativeByteBuffer.reuse();
-                        executeFast.dispose();
+                        return;
                     }
+                    SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO emoji_groups VALUES(?, ?)");
+                    executeFast.requery();
+                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_messages_emojiGroups.getObjectSize());
+                    tL_messages_emojiGroups.serializeToStream(nativeByteBuffer);
+                    executeFast.bindInteger(1, num.intValue());
+                    executeFast.bindByteBuffer(2, nativeByteBuffer);
+                    executeFast.step();
+                    nativeByteBuffer.reuse();
+                    executeFast.dispose();
                 }
             } catch (Exception e) {
                 FileLog.e(e);
@@ -1125,13 +1132,12 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             ConnectionsManager.getInstance(i).sendRequest(tL_messages_searchCustomEmoji, new RequestDelegate() { // from class: org.telegram.ui.Components.StickerCategoriesListView$EmojiSearch$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StickerCategoriesListView.EmojiSearch.lambda$getRemote$0(Utilities.Callback4.this, tLObject, tL_error);
+                    StickerCategoriesListView.EmojiSearch.$r8$lambda$S8qTPEYrUlxmW8suBr-CSOYi_S0(Utilities.Callback4.this, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$getRemote$0(Utilities.Callback4 callback4, TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$S8qTPEYrUlxmW8suBr-CSOYi_S0(Utilities.Callback4 callback4, TLObject tLObject, TLRPC.TL_error tL_error) {
             if (tLObject instanceof TLRPC.TL_emojiListNotModified) {
                 Boolean bool = Boolean.TRUE;
                 callback4.run(bool, null, 0L, bool);

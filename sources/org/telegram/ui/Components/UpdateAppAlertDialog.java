@@ -186,7 +186,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    UpdateAppAlertDialog.this.lambda$new$0(downloadedUpdateFile, view2);
+                    UpdateAppAlertDialog.$r8$lambda$nXsl3NE98bpqUZNx9bOKzQYTORw(UpdateAppAlertDialog.this, downloadedUpdateFile, view2);
                 }
             });
         } else {
@@ -194,7 +194,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    UpdateAppAlertDialog.this.lambda$new$1(view2);
+                    UpdateAppAlertDialog.$r8$lambda$KYynxmihc1M2KRz7xcx74z0AjEU(UpdateAppAlertDialog.this, view2);
                 }
             });
         }
@@ -204,31 +204,29 @@ public class UpdateAppAlertDialog extends BottomSheet {
         buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                UpdateAppAlertDialog.this.lambda$new$2(view2);
+                UpdateAppAlertDialog.this.dismiss();
             }
         });
         frameLayout.addView(buttonWithCounterView2, LayoutHelper.createFrame(-1, 48.0f, 87, 20.0f, 4.0f, 20.0f, 8.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(File file, View view) {
-        Activity findActivity;
-        if (file == null || (findActivity = AndroidUtilities.findActivity(getContext())) == null) {
+    public static /* synthetic */ void $r8$lambda$nXsl3NE98bpqUZNx9bOKzQYTORw(UpdateAppAlertDialog updateAppAlertDialog, File file, View view) {
+        if (file == null) {
+            updateAppAlertDialog.getClass();
+            return;
+        }
+        Activity findActivity = AndroidUtilities.findActivity(updateAppAlertDialog.getContext());
+        if (findActivity == null) {
             return;
         }
         AndroidUtilities.openForView(file, "Telegram.apk", "application/vnd.android.package-archive", findActivity, null, false);
-        dismiss();
+        updateAppAlertDialog.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$KYynxmihc1M2KRz7xcx74z0AjEU(UpdateAppAlertDialog updateAppAlertDialog, View view) {
+        updateAppAlertDialog.getClass();
         ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        dismiss();
+        updateAppAlertDialog.dismiss();
     }
 
     private void runShadowAnimation(int i, final boolean z) {

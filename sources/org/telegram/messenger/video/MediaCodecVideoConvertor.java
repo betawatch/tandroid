@@ -48,17 +48,15 @@ public class MediaCodecVideoConvertor {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r14v272 ??), method size: 7668
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Unreachable blocks removed: 2, instructions: 5 */
-    private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r83, boolean r84, int r85) {
+    private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r107, boolean r108, int r109) {
         /*
-            Method dump skipped, instructions count: 7668
+            Method dump skipped, instructions count: 7241
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor$ConvertVideoParams, boolean, int):boolean");
@@ -211,20 +209,19 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0118, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0114, code lost:
     
-        if (r13[r6 + 3] != 1) goto L74;
+        if (r13[r4 + 3] != 1) goto L75;
      */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01e4  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01ee  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x01ba  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x01da A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01cd A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private long readAndWriteTracks(MediaExtractor mediaExtractor, Muxer muxer, MediaCodec.BufferInfo bufferInfo, long j, long j2, long j3, File file, boolean z) {
-        long j4;
         int i;
         int i2;
         int i3;
@@ -234,53 +231,45 @@ public class MediaCodecVideoConvertor {
         int i7;
         int i8;
         boolean z2;
+        byte[] array;
         int i9;
         int i10;
-        boolean z3;
-        byte[] array;
-        int i11;
-        int i12;
         long sampleSize;
-        int i13;
+        int i11;
+        int i12 = 0;
         int findTrack = MediaController.findTrack(mediaExtractor, false);
-        if (z) {
-            j4 = j3;
-            i = MediaController.findTrack(mediaExtractor, true);
-        } else {
-            j4 = j3;
-            i = -1;
-        }
-        float f = j4 / 1000.0f;
+        int findTrack2 = z ? MediaController.findTrack(mediaExtractor, true) : -1;
+        float f = j3 / 1000.0f;
         if (findTrack >= 0) {
             mediaExtractor.selectTrack(findTrack);
             MediaFormat trackFormat = mediaExtractor.getTrackFormat(findTrack);
-            i3 = muxer.addTrack(trackFormat, false);
+            i2 = muxer.addTrack(trackFormat, false);
             try {
-                i13 = trackFormat.getInteger("max-input-size");
+                i11 = trackFormat.getInteger("max-input-size");
             } catch (Exception e) {
                 FileLog.e(e);
-                i13 = 0;
+                i11 = 0;
             }
             if (j > 0) {
                 mediaExtractor.seekTo(j, 0);
             } else {
                 mediaExtractor.seekTo(0L, 0);
             }
-            i2 = i13;
+            i = i11;
         } else {
-            i2 = 0;
-            i3 = -1;
+            i = 0;
+            i2 = -1;
         }
-        if (i >= 0) {
-            mediaExtractor.selectTrack(i);
-            MediaFormat trackFormat2 = mediaExtractor.getTrackFormat(i);
+        if (findTrack2 >= 0) {
+            mediaExtractor.selectTrack(findTrack2);
+            MediaFormat trackFormat2 = mediaExtractor.getTrackFormat(findTrack2);
             if (trackFormat2.getString("mime").equals("audio/unknown")) {
-                i4 = -1;
-                i = -1;
+                i3 = -1;
+                findTrack2 = -1;
             } else {
-                i4 = muxer.addTrack(trackFormat2, true);
+                i3 = muxer.addTrack(trackFormat2, true);
                 try {
-                    i2 = Math.max(trackFormat2.getInteger("max-input-size"), i2);
+                    i = Math.max(trackFormat2.getInteger("max-input-size"), i);
                 } catch (Exception e2) {
                     FileLog.e(e2);
                 }
@@ -291,162 +280,155 @@ public class MediaCodecVideoConvertor {
                 }
             }
         } else {
-            i4 = -1;
+            i3 = -1;
         }
-        if (i2 <= 0) {
-            i2 = 65536;
+        if (i <= 0) {
+            i = 65536;
         }
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i2);
-        if (i < 0 && findTrack < 0) {
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i);
+        long j4 = -1;
+        if (findTrack2 < 0 && findTrack < 0) {
             return -1L;
         }
         checkConversionCanceled();
-        long j5 = 0;
-        long j6 = -1;
-        boolean z4 = false;
-        while (!z4) {
+        long j5 = -1;
+        boolean z3 = false;
+        long j6 = 0;
+        while (!z3) {
             checkConversionCanceled();
+            long j7 = j4;
             if (Build.VERSION.SDK_INT >= 28) {
                 sampleSize = mediaExtractor.getSampleSize();
-                i5 = i;
-                if (sampleSize > i2) {
-                    int i14 = (int) (sampleSize + 1024);
-                    i2 = i14;
-                    allocateDirect = ByteBuffer.allocateDirect(i14);
+                i4 = findTrack2;
+                if (sampleSize > i) {
+                    int i13 = (int) (sampleSize + 1024);
+                    i = i13;
+                    allocateDirect = ByteBuffer.allocateDirect(i13);
                 }
             } else {
-                i5 = i;
+                i4 = findTrack2;
             }
-            bufferInfo.size = mediaExtractor.readSampleData(allocateDirect, 0);
+            bufferInfo.size = mediaExtractor.readSampleData(allocateDirect, i12);
             int sampleTrackIndex = mediaExtractor.getSampleTrackIndex();
-            int i15 = i5;
+            findTrack2 = i4;
             if (sampleTrackIndex == findTrack) {
-                i7 = i3;
-            } else if (sampleTrackIndex == i15) {
-                i7 = i4;
+                i6 = i2;
+            } else if (sampleTrackIndex == findTrack2) {
+                i6 = i3;
             } else {
+                i5 = -1;
                 i6 = -1;
-                i7 = -1;
-                if (i7 == i6) {
-                    if (sampleTrackIndex != i15 && (array = allocateDirect.array()) != null) {
+                if (i6 == i5) {
+                    if (sampleTrackIndex != findTrack2 && (array = allocateDirect.array()) != null) {
                         int arrayOffset = allocateDirect.arrayOffset();
                         int limit = arrayOffset + allocateDirect.limit();
-                        i8 = i4;
-                        int i16 = arrayOffset;
-                        int i17 = -1;
+                        int i14 = arrayOffset;
+                        int i15 = -1;
                         while (true) {
-                            z2 = z4;
-                            int i18 = limit - 4;
-                            if (i16 > i18) {
+                            int i16 = limit - 4;
+                            if (i14 > i16) {
                                 break;
                             }
-                            if (array[i16] == 0 && array[i16 + 1] == 0 && array[i16 + 2] == 0) {
-                                i12 = i2;
-                                i11 = i15;
+                            if (array[i14] == 0 && array[i14 + 1] == 0 && array[i14 + 2] == 0) {
+                                i9 = i3;
+                                i10 = i;
                             } else {
-                                i11 = i15;
-                                i12 = i2;
+                                i9 = i3;
+                                i10 = i;
                             }
-                            if (i16 != i18) {
-                                i16++;
-                                z4 = z2;
-                                i15 = i11;
-                                i2 = i12;
+                            if (i14 != i16) {
+                                i14++;
+                                i3 = i9;
+                                i = i10;
                             }
-                            if (i17 != -1) {
-                                int i19 = (i16 - i17) - (i16 == i18 ? 0 : 4);
-                                array[i17] = (byte) (i19 >> 24);
-                                array[i17 + 1] = (byte) (i19 >> 16);
-                                array[i17 + 2] = (byte) (i19 >> 8);
-                                array[i17 + 3] = (byte) i19;
+                            if (i15 != -1) {
+                                int i17 = (i14 - i15) - (i14 != i16 ? 4 : 0);
+                                array[i15] = (byte) (i17 >> 24);
+                                array[i15 + 1] = (byte) (i17 >> 16);
+                                array[i15 + 2] = (byte) (i17 >> 8);
+                                array[i15 + 3] = (byte) i17;
                             }
-                            i17 = i16;
-                            i16++;
-                            z4 = z2;
-                            i15 = i11;
-                            i2 = i12;
+                            i15 = i14;
+                            i14++;
+                            i3 = i9;
+                            i = i10;
                         }
-                    } else {
-                        i8 = i4;
-                        z2 = z4;
                     }
-                    i9 = i15;
-                    i10 = i2;
+                    i7 = i3;
+                    i8 = i;
                     if (bufferInfo.size >= 0) {
                         bufferInfo.presentationTimeUs = mediaExtractor.getSampleTime();
-                        z3 = false;
+                        z2 = false;
                     } else {
                         bufferInfo.size = 0;
-                        z3 = true;
+                        z2 = true;
                     }
-                    if (bufferInfo.size > 0 && !z3) {
-                        if (sampleTrackIndex == findTrack && j > 0 && j6 == -1) {
-                            j6 = bufferInfo.presentationTimeUs;
+                    if (bufferInfo.size > 0 && !z2) {
+                        if (sampleTrackIndex == findTrack && j > 0 && j5 == j7) {
+                            j5 = bufferInfo.presentationTimeUs;
                         }
                         if (j2 < 0 || bufferInfo.presentationTimeUs < j2) {
                             bufferInfo.offset = 0;
                             bufferInfo.flags = mediaExtractor.getSampleFlags();
-                            long writeSampleData = muxer.writeSampleData(i7, allocateDirect, bufferInfo, false);
+                            long writeSampleData = muxer.writeSampleData(i6, allocateDirect, bufferInfo, false);
                             if (writeSampleData != 0) {
                                 MediaController.VideoConvertorListener videoConvertorListener = this.callback;
                                 if (videoConvertorListener != null) {
-                                    long j7 = bufferInfo.presentationTimeUs - j6;
-                                    if (j7 <= j5) {
-                                        j7 = j5;
+                                    long j8 = bufferInfo.presentationTimeUs - j5;
+                                    if (j8 <= j6) {
+                                        j8 = j6;
                                     }
-                                    videoConvertorListener.didWriteData(writeSampleData, (j7 / 1000.0f) / f);
-                                    j5 = j7;
-                                    if (!z3) {
-                                        mediaExtractor.advance();
-                                    }
+                                    videoConvertorListener.didWriteData(writeSampleData, (j8 / 1000.0f) / f);
+                                    j6 = j8;
                                 }
-                                if (!z3) {
+                                if (!z2) {
+                                    mediaExtractor.advance();
                                 }
                             }
+                            if (!z2) {
+                            }
                         } else {
-                            z3 = true;
+                            z2 = true;
                         }
                     }
-                    if (!z3) {
+                    if (!z2) {
                     }
                 } else {
-                    i8 = i4;
-                    z2 = z4;
-                    i9 = i15;
-                    i10 = i2;
+                    i7 = i3;
+                    i8 = i;
                     if (sampleTrackIndex == -1) {
-                        z3 = true;
+                        z2 = true;
                     } else {
                         mediaExtractor.advance();
-                        z3 = false;
+                        z2 = false;
                     }
                 }
-                i4 = i8;
-                if (z3) {
-                    z4 = z2;
-                    i = i9;
-                    i2 = i10;
+                if (z2) {
+                    i3 = i7;
+                    j4 = j7;
+                    i = i8;
+                    i12 = 0;
                 } else {
-                    i = i9;
-                    i2 = i10;
-                    z4 = true;
+                    i3 = i7;
+                    j4 = j7;
+                    i = i8;
+                    i12 = 0;
+                    z3 = true;
                 }
             }
-            i6 = -1;
-            if (i7 == i6) {
+            i5 = -1;
+            if (i6 == i5) {
             }
-            i4 = i8;
-            if (z3) {
+            if (z2) {
             }
         }
-        int i20 = i;
         if (findTrack >= 0) {
             mediaExtractor.unselectTrack(findTrack);
         }
-        if (i20 >= 0) {
-            mediaExtractor.unselectTrack(i20);
+        if (findTrack2 >= 0) {
+            mediaExtractor.unselectTrack(findTrack2);
         }
-        return j6;
+        return j5;
     }
 
     private void checkConversionCanceled() {

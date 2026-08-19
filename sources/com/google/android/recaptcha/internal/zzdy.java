@@ -37,15 +37,13 @@ final class zzdy extends SuspendLambda implements Function2 {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            Application application = this.zzb;
-            String str = this.zzc;
-            this.zza = 1;
-            obj = zzdz.zzd(application, str, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
+        if (i != 0) {
+            return obj;
         }
-        return obj;
+        Application application = this.zzb;
+        String str = this.zzc;
+        this.zza = 1;
+        Object zzd = zzdz.zzd(application, str, this);
+        return zzd == coroutine_suspended ? coroutine_suspended : zzd;
     }
 }

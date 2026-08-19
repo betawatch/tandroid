@@ -57,7 +57,7 @@ public class VoipCoverEmoji {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoipCoverEmoji.this.lambda$new$0(view, valueAnimator);
+                VoipCoverEmoji.$r8$lambda$wHt6k9-uscPhbPWg_LHAc3R59JM(VoipCoverEmoji.this, view, valueAnimator);
             }
         });
         this.fromRandomX = this.toRandomX + AndroidUtilities.dp(12.0f);
@@ -82,10 +82,9 @@ public class VoipCoverEmoji {
         this.positionAnimator.setDuration(2000L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, ValueAnimator valueAnimator) {
-        this.randomX = (int) (this.fromRandomX + ((this.toRandomX - r0) * ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-        this.randomY = (int) (this.fromRandomY + ((this.toRandomY - r0) * ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+    public static /* synthetic */ void $r8$lambda$wHt6k9-uscPhbPWg_LHAc3R59JM(VoipCoverEmoji voipCoverEmoji, View view, ValueAnimator valueAnimator) {
+        voipCoverEmoji.randomX = (int) (voipCoverEmoji.fromRandomX + ((voipCoverEmoji.toRandomX - r0) * ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+        voipCoverEmoji.randomY = (int) (voipCoverEmoji.fromRandomY + ((voipCoverEmoji.toRandomY - r0) * ((Float) valueAnimator.getAnimatedValue()).floatValue()));
         view.invalidate();
     }
 
@@ -108,7 +107,7 @@ public class VoipCoverEmoji {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoipCoverEmoji.this.lambda$show$2(i, i2, valueAnimator);
+                VoipCoverEmoji.$r8$lambda$miXq0gBKf7xgbCSyjE5Wab9At-g(VoipCoverEmoji.this, i, i2, valueAnimator);
             }
         });
         long j = 350;
@@ -121,7 +120,7 @@ public class VoipCoverEmoji {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                VoipCoverEmoji.this.lambda$show$3(valueAnimator);
+                VoipCoverEmoji.$r8$lambda$tO9teCpBJEIPQXwOBCOBKfQ3DjI(VoipCoverEmoji.this, valueAnimator);
             }
         });
         ofInt.setStartDelay(j2);
@@ -129,39 +128,39 @@ public class VoipCoverEmoji {
         ofInt.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$2(int i, int i2, ValueAnimator valueAnimator) {
-        this.scale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.parent.invalidate();
-        if (this.scale <= 1.0f || this.diffXAnimator != null) {
+    public static /* synthetic */ void $r8$lambda$miXq0gBKf7xgbCSyjE5Wab9At-g(final VoipCoverEmoji voipCoverEmoji, int i, int i2, ValueAnimator valueAnimator) {
+        voipCoverEmoji.getClass();
+        voipCoverEmoji.scale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        voipCoverEmoji.parent.invalidate();
+        if (voipCoverEmoji.scale <= 1.0f || voipCoverEmoji.diffXAnimator != null) {
             return;
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(AndroidUtilities.dp(i), 0);
-        this.diffXAnimator = ofInt;
+        voipCoverEmoji.diffXAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                VoipCoverEmoji.this.lambda$show$1(valueAnimator2);
+                VoipCoverEmoji.$r8$lambda$vxSsd-Pi5ywC15U_CG3iukpYj5I(VoipCoverEmoji.this, valueAnimator2);
             }
         });
-        this.diffXAnimator.setDuration(i2 - valueAnimator.getCurrentPlayTime());
-        this.diffXAnimator.start();
+        voipCoverEmoji.diffXAnimator.setDuration(i2 - valueAnimator.getCurrentPlayTime());
+        voipCoverEmoji.diffXAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$vxSsd-Pi5ywC15U_CG3iukpYj5I(VoipCoverEmoji voipCoverEmoji, ValueAnimator valueAnimator) {
+        voipCoverEmoji.getClass();
         int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        if (this.posX <= getCenterX()) {
+        if (voipCoverEmoji.posX <= voipCoverEmoji.getCenterX()) {
             intValue = -intValue;
         }
-        this.diffX = intValue;
-        this.parent.invalidate();
+        voipCoverEmoji.diffX = intValue;
+        voipCoverEmoji.parent.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$3(ValueAnimator valueAnimator) {
-        this.alpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        this.parent.invalidate();
+    public static /* synthetic */ void $r8$lambda$tO9teCpBJEIPQXwOBCOBKfQ3DjI(VoipCoverEmoji voipCoverEmoji, ValueAnimator valueAnimator) {
+        voipCoverEmoji.getClass();
+        voipCoverEmoji.alpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        voipCoverEmoji.parent.invalidate();
     }
 
     private int getCenterX() {

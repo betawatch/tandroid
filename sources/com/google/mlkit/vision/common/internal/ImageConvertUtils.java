@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ImageConvertUtils {
     private static final ImageConvertUtils zza = new ImageConvertUtils();
 
@@ -70,16 +70,7 @@ public class ImageConvertUtils {
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 byteArrayOutputStream.close();
                 return byteArray;
-            } catch (Throwable th) {
-                try {
-                    byteArrayOutputStream.close();
-                } catch (Throwable th2) {
-                    try {
-                        Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th, th2);
-                    } catch (Exception unused) {
-                    }
-                }
-                throw th;
+            } finally {
             }
         } catch (IOException e) {
             Log.w("ImageConvertUtils", "Error closing ByteArrayOutputStream");

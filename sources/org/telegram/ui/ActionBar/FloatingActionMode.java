@@ -98,9 +98,9 @@ public final class FloatingActionMode extends ActionMode {
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.FloatingActionMode$$ExternalSyntheticLambda3
             @Override // android.widget.PopupMenu.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                boolean lambda$new$0;
-                lambda$new$0 = FloatingActionMode.this.lambda$new$0(menuItem);
-                return lambda$new$0;
+                boolean onActionItemClicked;
+                onActionItemClicked = r0.mCallback.onActionItemClicked(FloatingActionMode.this, menuItem);
+                return onActionItemClicked;
             }
         });
         this.mContentRect = new Rect();
@@ -120,23 +120,13 @@ public final class FloatingActionMode extends ActionMode {
         setFloatingToolbar(floatingToolbar);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$0(MenuItem menuItem) {
-        return this.mCallback.onActionItemClicked(this, menuItem);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setFloatingToolbar$1(MenuItem menuItem) {
-        return this.mCallback.onActionItemClicked(this, menuItem);
-    }
-
     private void setFloatingToolbar(FloatingToolbar floatingToolbar) {
         FloatingToolbar onMenuItemClickListener = floatingToolbar.setMenu(this.mMenu).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.FloatingActionMode$$ExternalSyntheticLambda4
             @Override // android.view.MenuItem.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                boolean lambda$setFloatingToolbar$1;
-                lambda$setFloatingToolbar$1 = FloatingActionMode.this.lambda$setFloatingToolbar$1(menuItem);
-                return lambda$setFloatingToolbar$1;
+                boolean onActionItemClicked;
+                onActionItemClicked = r0.mCallback.onActionItemClicked(FloatingActionMode.this, menuItem);
+                return onActionItemClicked;
             }
         });
         this.mFloatingToolbar = onMenuItemClickListener;

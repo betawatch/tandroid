@@ -67,31 +67,30 @@ public class UserNameResolver {
         final int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.messenger.UserNameResolver$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                UserNameResolver.this.lambda$resolve$1(str, tLObject, tL_error);
+                UserNameResolver.$r8$lambda$1Yk5ZpB3Lxtu-bF9sBJ2DTAOZIo(UserNameResolver.this, str, tLObject, tL_error);
             }
         });
         return new Runnable() { // from class: org.telegram.messenger.UserNameResolver$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                UserNameResolver.this.lambda$resolve$2(str, sendRequest);
+                UserNameResolver.$r8$lambda$SwNCHeKztFg6UdM4dVAQNfxrqnM(UserNameResolver.this, str, sendRequest);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$resolve$1(final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$1Yk5ZpB3Lxtu-bF9sBJ2DTAOZIo(final UserNameResolver userNameResolver, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        userNameResolver.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.UserNameResolver$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                UserNameResolver.this.lambda$resolve$0(str, tL_error, tLObject);
+                UserNameResolver.$r8$lambda$N_TP1RdEDy8CFh9-lbHlZ7xPnqw(UserNameResolver.this, str, tL_error, tLObject);
             }
         }, 2L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$resolve$0(String str, TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$N_TP1RdEDy8CFh9-lbHlZ7xPnqw(UserNameResolver userNameResolver, String str, TLRPC.TL_error tL_error, TLObject tLObject) {
         BaseFragment lastFragment;
-        ArrayList<Consumer> remove = this.resolvingConsumers.remove(str);
+        ArrayList<Consumer> remove = userNameResolver.resolvingConsumers.remove(str);
         if (remove == null) {
             return;
         }
@@ -117,21 +116,20 @@ public class UserNameResolver {
             return;
         }
         TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-        MessagesController.getInstance(this.currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
-        MessagesController.getInstance(this.currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
-        MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+        MessagesController.getInstance(userNameResolver.currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
+        MessagesController.getInstance(userNameResolver.currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
+        MessagesStorage.getInstance(userNameResolver.currentAccount).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
         long peerId = MessageObject.getPeerId(tL_contacts_resolvedPeer.peer);
-        this.resolvedCache.put(str, new CachedPeer(peerId));
+        userNameResolver.resolvedCache.put(str, userNameResolver.new CachedPeer(peerId));
         while (i < remove.size()) {
             remove.get(i).accept(Long.valueOf(peerId));
             i++;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$resolve$2(String str, int i) {
-        this.resolvingConsumers.remove(str);
-        ConnectionsManager.getInstance(this.currentAccount).cancelRequest(i, true);
+    public static /* synthetic */ void $r8$lambda$SwNCHeKztFg6UdM4dVAQNfxrqnM(UserNameResolver userNameResolver, String str, int i) {
+        userNameResolver.resolvingConsumers.remove(str);
+        ConnectionsManager.getInstance(userNameResolver.currentAccount).cancelRequest(i, true);
     }
 
     public void update(TLRPC.User user, TLRPC.User user2) {
@@ -158,7 +156,8 @@ public class UserNameResolver {
         }
     }
 
-    private class CachedPeer {
+    /* JADX INFO: Access modifiers changed from: private */
+    class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
 

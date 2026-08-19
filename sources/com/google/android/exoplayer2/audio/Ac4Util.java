@@ -33,17 +33,17 @@ public abstract class Ac4Util {
         return new Format.Builder().setId(str).setSampleMimeType("audio/ac4").setChannelCount(2).setSampleRate(((parsableByteArray.readUnsignedByte() & 32) >> 5) == 1 ? 48000 : 44100).setDrmInitData(drmInitData).setLanguage(str2).build();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0086, code lost:
     
-        if (r11 != 11) goto L46;
+        if (r11 != 11) goto L47;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0089, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x008b, code lost:
     
-        if (r11 != 11) goto L46;
+        if (r11 != 11) goto L47;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x008e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0090, code lost:
     
-        if (r11 != 8) goto L46;
+        if (r11 != 8) goto L47;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -51,6 +51,7 @@ public abstract class Ac4Util {
     public static SyncFrameInfo parseAc4SyncframeInfo(ParsableBitArray parsableBitArray) {
         int i;
         int i2;
+        int i3;
         int readBits = parsableBitArray.readBits(16);
         int readBits2 = parsableBitArray.readBits(16);
         if (readBits2 == 65535) {
@@ -59,56 +60,57 @@ public abstract class Ac4Util {
         } else {
             i = 4;
         }
-        int i3 = readBits2 + i;
+        int i4 = readBits2 + i;
         if (readBits == 44097) {
-            i3 += 2;
+            i4 += 2;
         }
-        int i4 = i3;
+        int i5 = i4;
         int readBits3 = parsableBitArray.readBits(2);
         if (readBits3 == 3) {
             readBits3 += readVariableBits(parsableBitArray, 2);
         }
-        int i5 = readBits3;
+        int i6 = readBits3;
         int readBits4 = parsableBitArray.readBits(10);
         if (parsableBitArray.readBit() && parsableBitArray.readBits(3) > 0) {
             parsableBitArray.skipBits(2);
         }
-        int i6 = parsableBitArray.readBit() ? 48000 : 44100;
+        int i7 = parsableBitArray.readBit() ? 48000 : 44100;
         int readBits5 = parsableBitArray.readBits(4);
-        if (i6 == 44100 && readBits5 == 13) {
-            i2 = SAMPLE_COUNT[readBits5];
+        if (i7 == 44100 && readBits5 == 13) {
+            i3 = SAMPLE_COUNT[readBits5];
         } else {
-            if (i6 == 48000) {
+            if (i7 == 48000) {
                 int[] iArr = SAMPLE_COUNT;
                 if (readBits5 < iArr.length) {
-                    int i7 = iArr[readBits5];
-                    int i8 = readBits4 % 5;
-                    if (i8 != 1) {
-                        if (i8 == 2) {
+                    int i8 = iArr[readBits5];
+                    int i9 = readBits4 % 5;
+                    if (i9 != 1) {
+                        if (i9 == 2) {
                             if (readBits5 != 8) {
                             }
-                            i7++;
-                            i2 = i7;
-                        } else if (i8 != 3) {
-                            if (i8 == 4) {
+                            i3 = i8 + 1;
+                        } else if (i9 != 3) {
+                            if (i9 == 4) {
                                 if (readBits5 != 3) {
                                     if (readBits5 != 8) {
                                     }
                                 }
-                                i7++;
+                                i3 = i8 + 1;
                             }
-                            i2 = i7;
+                            i2 = i8;
                         }
+                        return new SyncFrameInfo(i6, 2, i7, i5, i2);
                     }
                     if (readBits5 != 3) {
                     }
-                    i7++;
-                    i2 = i7;
+                    i3 = i8 + 1;
                 }
             }
             i2 = 0;
+            return new SyncFrameInfo(i6, 2, i7, i5, i2);
         }
-        return new SyncFrameInfo(i5, 2, i6, i4, i2);
+        i2 = i3;
+        return new SyncFrameInfo(i6, 2, i7, i5, i2);
     }
 
     public static int parseAc4SyncframeSize(byte[] bArr, int i) {

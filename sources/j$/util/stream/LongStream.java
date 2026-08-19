@@ -11,9 +11,9 @@ import java.util.function.Supplier;
 public interface LongStream extends BaseStream<Long, LongStream> {
     LongStream a();
 
-    D asDoubleStream();
+    A asDoubleStream();
 
-    j$.util.B average();
+    j$.util.z average();
 
     LongStream b();
 
@@ -25,24 +25,24 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     long count();
 
-    LongStream d();
+    LongStream d(j$.time.t tVar);
 
     LongStream distinct();
 
-    LongStream e(a aVar);
+    LongStream e();
 
-    j$.util.D findAny();
+    j$.util.B findAny();
 
-    j$.util.D findFirst();
+    j$.util.B findFirst();
 
     void forEach(LongConsumer longConsumer);
 
     void forEachOrdered(LongConsumer longConsumer);
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.P iterator();
+    @Override // j$.util.stream.BaseStream
+    j$.util.N iterator();
 
-    D k();
+    A k();
 
     LongStream limit(long j);
 
@@ -50,20 +50,20 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     <U> Stream<U> mapToObj(LongFunction<? extends U> longFunction);
 
-    j$.util.D max();
+    j$.util.B max();
 
-    j$.util.D min();
+    j$.util.B min();
+
+    boolean p();
 
     @Override // j$.util.stream.BaseStream
     LongStream parallel();
 
     LongStream peek(LongConsumer longConsumer);
 
-    boolean q();
-
     long reduce(long j, LongBinaryOperator longBinaryOperator);
 
-    j$.util.D reduce(LongBinaryOperator longBinaryOperator);
+    j$.util.B reduce(LongBinaryOperator longBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     LongStream sequential();
@@ -72,16 +72,16 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     LongStream sorted();
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.c0 spliterator();
+    @Override // j$.util.stream.BaseStream
+    j$.util.Z spliterator();
 
     long sum();
 
-    j$.util.z summaryStatistics();
+    j$.util.x summaryStatistics();
 
     long[] toArray();
 
-    boolean v();
+    boolean u();
 
     IntStream w();
 }

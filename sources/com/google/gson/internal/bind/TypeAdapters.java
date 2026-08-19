@@ -653,7 +653,7 @@ public abstract class TypeAdapters {
                 while (jsonReader.peek() != JsonToken.END_OBJECT) {
                     String nextName = jsonReader.nextName();
                     nextInt = jsonReader.nextInt();
-                    nextName.hashCode();
+                    nextName.getClass();
                     switch (nextName) {
                         case "dayOfMonth":
                             i3 = nextInt;

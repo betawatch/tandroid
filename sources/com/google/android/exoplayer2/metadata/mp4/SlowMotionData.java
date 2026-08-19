@@ -55,9 +55,9 @@ public final class SlowMotionData implements Metadata.Entry {
         public static final Comparator BY_START_THEN_END_THEN_DIVISOR = new Comparator() { // from class: com.google.android.exoplayer2.metadata.mp4.SlowMotionData$Segment$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$static$0;
-                lambda$static$0 = SlowMotionData.Segment.lambda$static$0((SlowMotionData.Segment) obj, (SlowMotionData.Segment) obj2);
-                return lambda$static$0;
+                int result;
+                result = ComparisonChain.start().compare(r1.startTimeMs, r2.startTimeMs).compare(r1.endTimeMs, r2.endTimeMs).compare(((SlowMotionData.Segment) obj).speedDivisor, ((SlowMotionData.Segment) obj2).speedDivisor).result();
+                return result;
             }
         };
         public static final Parcelable.Creator<Segment> CREATOR = new Parcelable.Creator() { // from class: com.google.android.exoplayer2.metadata.mp4.SlowMotionData.Segment.1
@@ -80,11 +80,6 @@ public final class SlowMotionData implements Metadata.Entry {
             return 0;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$static$0(Segment segment, Segment segment2) {
-            return ComparisonChain.start().compare(segment.startTimeMs, segment2.startTimeMs).compare(segment.endTimeMs, segment2.endTimeMs).compare(segment.speedDivisor, segment2.speedDivisor).result();
-        }
-
         public Segment(long j, long j2, int i) {
             Assertions.checkArgument(j < j2);
             this.startTimeMs = j;
@@ -100,11 +95,13 @@ public final class SlowMotionData implements Metadata.Entry {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || Segment.class != obj.getClass()) {
-                return false;
+            if (obj != null && Segment.class == obj.getClass()) {
+                Segment segment = (Segment) obj;
+                if (this.startTimeMs == segment.startTimeMs && this.endTimeMs == segment.endTimeMs && this.speedDivisor == segment.speedDivisor) {
+                    return true;
+                }
             }
-            Segment segment = (Segment) obj;
-            return this.startTimeMs == segment.startTimeMs && this.endTimeMs == segment.endTimeMs && this.speedDivisor == segment.speedDivisor;
+            return false;
         }
 
         public int hashCode() {

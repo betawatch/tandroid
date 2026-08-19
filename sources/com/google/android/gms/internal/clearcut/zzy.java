@@ -63,52 +63,57 @@ public abstract class zzy {
         }
     }
 
+    /* JADX WARN: Finally extract failed */
     public static String zza(ContentResolver contentResolver, String str, String str2) {
+        String str3;
         synchronized (zzy.class) {
             try {
                 zza(contentResolver);
                 Object obj = zzcz;
-                if (zzcu.containsKey(str)) {
-                    String str3 = (String) zzcu.get(str);
-                    return str3 != null ? str3 : null;
-                }
-                for (String str4 : zzdb) {
-                    if (str.startsWith(str4)) {
-                        if (!zzda || zzcu.isEmpty()) {
-                            zzcu.putAll(zza(contentResolver, zzdb));
-                            zzda = true;
-                            if (zzcu.containsKey(str)) {
-                                String str5 = (String) zzcu.get(str);
-                                return str5 != null ? str5 : null;
+                if (!zzcu.containsKey(str)) {
+                    for (String str4 : zzdb) {
+                        if (str.startsWith(str4)) {
+                            if (!zzda || zzcu.isEmpty()) {
+                                zzcu.putAll(zza(contentResolver, zzdb));
+                                zzda = true;
+                                if (zzcu.containsKey(str) && (str3 = (String) zzcu.get(str)) != null) {
+                                    r2 = str3;
+                                }
                             }
                         }
-                        return null;
                     }
-                }
-                Cursor query = contentResolver.query(CONTENT_URI, null, null, new String[]{str}, null);
-                if (query != null) {
-                    try {
-                        if (query.moveToFirst()) {
-                            String string = query.getString(1);
-                            if (string != null && string.equals(null)) {
-                                string = null;
+                    Cursor query = contentResolver.query(CONTENT_URI, null, null, new String[]{str}, null);
+                    if (query != null) {
+                        try {
+                            if (query.moveToFirst()) {
+                                String string = query.getString(1);
+                                if (string != null && string.equals(null)) {
+                                    string = null;
+                                }
+                                zza(obj, str, string);
+                                r2 = string != null ? string : null;
+                                query.close();
+                                return r2;
                             }
-                            zza(obj, str, string);
-                            String str6 = string != null ? string : null;
+                        } catch (Throwable th) {
+                            if (query == null) {
+                                throw th;
+                            }
                             query.close();
-                            return str6;
-                        }
-                    } finally {
-                        if (query != null) {
-                            query.close();
+                            throw th;
                         }
                     }
+                    zza(obj, str, (String) null);
+                    if (query != null) {
+                        query.close();
+                    }
+                    return null;
                 }
-                zza(obj, str, (String) null);
-                if (query != null) {
-                    query.close();
+                String str5 = (String) zzcu.get(str);
+                if (str5 != null) {
+                    r2 = str5;
                 }
-                return null;
+                return r2;
             } finally {
             }
         }

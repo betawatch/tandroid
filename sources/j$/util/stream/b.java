@@ -1,295 +1,123 @@
 package j$.util.stream;
 
-import j$.util.Objects;
 import j$.util.Spliterator;
-import java.util.function.IntFunction;
-import java.util.function.Supplier;
+import java.util.concurrent.CountedCompleter;
+import java.util.concurrent.atomic.AtomicReference;
 
 /* loaded from: classes2.dex */
-abstract class b implements BaseStream {
-    private final b a;
-    private final b b;
-    protected final int c;
-    private b d;
-    private int e;
-    private int f;
-    private Spliterator g;
-    private boolean h;
-    private boolean i;
-    private Runnable j;
-    private boolean k;
+public abstract class b extends d {
+    public final AtomicReference h;
+    public volatile boolean i;
 
-    abstract I0 E(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction);
+    public abstract Object h();
 
-    abstract boolean G(Spliterator spliterator, m2 m2Var);
-
-    abstract b3 H();
-
-    abstract A0 M(long j, IntFunction intFunction);
-
-    abstract boolean P();
-
-    abstract m2 Q(int i, m2 m2Var);
-
-    abstract Spliterator T(b bVar, Supplier supplier, boolean z);
-
-    b(Spliterator spliterator, int i, boolean z) {
-        this.b = null;
-        this.g = spliterator;
-        this.a = this;
-        int i2 = a3.g & i;
-        this.c = i2;
-        this.f = (~(i2 << 1)) & a3.l;
-        this.e = 0;
-        this.k = z;
+    public b(a aVar, Spliterator spliterator) {
+        super(aVar, spliterator);
+        this.h = new AtomicReference(null);
     }
 
-    b(b bVar, int i) {
-        if (bVar.h) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        bVar.h = true;
-        bVar.d = this;
-        this.b = bVar;
-        this.c = a3.h & i;
-        this.f = a3.k(i, bVar.f);
-        b bVar2 = bVar.a;
-        this.a = bVar2;
-        if (P()) {
-            bVar2.i = true;
-        }
-        this.e = bVar.e + 1;
+    public b(b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
+        this.h = bVar.h;
     }
 
-    final Object C(G3 g3) {
-        if (this.h) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
+    public final void compute() {
+        Object obj;
+        Spliterator trySplit;
+        Spliterator spliterator = this.b;
+        long estimateSize = spliterator.estimateSize();
+        long j = this.c;
+        if (j == 0) {
+            j = d.e(estimateSize);
+            this.c = j;
         }
-        this.h = true;
-        if (this.a.k) {
-            return g3.c(this, R(g3.d()));
-        }
-        return g3.b(this, R(g3.d()));
-    }
-
-    final I0 D(IntFunction intFunction) {
-        b bVar;
-        if (this.h) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        this.h = true;
-        if (this.a.k && (bVar = this.b) != null && P()) {
-            this.e = 0;
-            return N(bVar, bVar.R(0), intFunction);
-        }
-        return B(R(0), true, intFunction);
-    }
-
-    final Spliterator S() {
-        b bVar = this.a;
-        if (this != bVar) {
-            throw new IllegalStateException();
-        }
-        if (this.h) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        this.h = true;
-        Spliterator spliterator = bVar.g;
-        if (spliterator != null) {
-            bVar.g = null;
-            return spliterator;
-        }
-        throw new IllegalStateException("source already consumed or closed");
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream sequential() {
-        this.a.k = false;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream parallel() {
-        this.a.k = true;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
-    public final void close() {
-        this.h = true;
-        this.g = null;
-        b bVar = this.a;
-        Runnable runnable = bVar.j;
-        if (runnable != null) {
-            bVar.j = null;
-            runnable.run();
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream onClose(Runnable runnable) {
-        if (this.h) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        Objects.requireNonNull(runnable);
-        b bVar = this.a;
-        Runnable runnable2 = bVar.j;
-        if (runnable2 != null) {
-            runnable = new F3(runnable2, runnable);
-        }
-        bVar.j = runnable;
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public Spliterator spliterator() {
-        if (this.h) {
-            throw new IllegalStateException("stream has already been operated upon or closed");
-        }
-        this.h = true;
-        b bVar = this.a;
-        if (this == bVar) {
-            Spliterator spliterator = bVar.g;
-            if (spliterator != null) {
-                bVar.g = null;
-                return spliterator;
+        AtomicReference atomicReference = this.h;
+        boolean z = false;
+        b bVar = this;
+        while (true) {
+            obj = atomicReference.get();
+            if (obj != null) {
+                break;
             }
-            throw new IllegalStateException("source already consumed or closed");
-        }
-        return T(this, new a(0, this), bVar.k);
-    }
-
-    final /* synthetic */ Spliterator L() {
-        return R(0);
-    }
-
-    final I0 B(Spliterator spliterator, boolean z, IntFunction intFunction) {
-        if (this.a.k) {
-            return E(this, spliterator, z, intFunction);
-        }
-        A0 M = M(F(spliterator), intFunction);
-        U(spliterator, M);
-        return M.a();
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final boolean isParallel() {
-        return this.a.k;
-    }
-
-    private Spliterator R(int i) {
-        int i2;
-        int i3;
-        b bVar = this.a;
-        Spliterator spliterator = bVar.g;
-        if (spliterator != null) {
-            bVar.g = null;
-            if (bVar.k && bVar.i) {
-                b bVar2 = bVar.d;
-                int i4 = 1;
-                while (bVar != this) {
-                    int i5 = bVar2.c;
-                    if (bVar2.P()) {
-                        if (a3.SHORT_CIRCUIT.o(i5)) {
-                            i5 &= ~a3.u;
-                        }
-                        spliterator = bVar2.O(bVar, spliterator);
-                        if (spliterator.hasCharacteristics(64)) {
-                            i2 = (~a3.t) & i5;
-                            i3 = a3.s;
-                        } else {
-                            i2 = (~a3.s) & i5;
-                            i3 = a3.t;
-                        }
-                        i5 = i2 | i3;
-                        i4 = 0;
+            boolean z2 = bVar.i;
+            if (!z2) {
+                CountedCompleter<?> completer = bVar.getCompleter();
+                while (true) {
+                    b bVar2 = (b) ((d) completer);
+                    if (z2 || bVar2 == null) {
+                        break;
                     }
-                    bVar2.e = i4;
-                    bVar2.f = a3.k(i5, bVar.f);
-                    i4++;
-                    b bVar3 = bVar2;
-                    bVar2 = bVar2.d;
-                    bVar = bVar3;
+                    z2 = bVar2.i;
+                    completer = bVar2.getCompleter();
                 }
             }
-            if (i != 0) {
-                this.f = a3.k(i, this.f);
+            if (z2) {
+                obj = bVar.h();
+                break;
             }
-            return spliterator;
+            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
+                break;
+            }
+            b bVar3 = (b) bVar.c(trySplit);
+            bVar.d = bVar3;
+            b bVar4 = (b) bVar.c(spliterator);
+            bVar.e = bVar4;
+            bVar.setPendingCount(1);
+            if (z) {
+                spliterator = trySplit;
+                bVar = bVar3;
+                bVar3 = bVar4;
+            } else {
+                bVar = bVar4;
+            }
+            z = !z;
+            bVar3.fork();
+            estimateSize = spliterator.estimateSize();
         }
-        throw new IllegalStateException("source already consumed or closed");
+        obj = bVar.a();
+        bVar.d(obj);
+        bVar.tryComplete();
     }
 
-    final b3 I() {
-        b bVar = this;
-        while (bVar.e > 0) {
-            bVar = bVar.b;
+    @Override // j$.util.stream.d
+    public final void d(Object obj) {
+        if (!b()) {
+            this.f = obj;
+        } else if (obj != null) {
+            AtomicReference atomicReference = this.h;
+            while (!atomicReference.compareAndSet(null, obj) && atomicReference.get() == null) {
+            }
         }
-        return bVar.H();
     }
 
-    final long F(Spliterator spliterator) {
-        if (a3.SIZED.o(this.f)) {
-            return spliterator.getExactSizeIfKnown();
+    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
+    public final Object getRawResult() {
+        return i();
+    }
+
+    public final Object i() {
+        if (b()) {
+            Object obj = this.h.get();
+            return obj == null ? h() : obj;
         }
-        return -1L;
-    }
-
-    final m2 U(Spliterator spliterator, m2 m2Var) {
-        z(spliterator, V((m2) Objects.requireNonNull(m2Var)));
-        return m2Var;
-    }
-
-    final void z(Spliterator spliterator, m2 m2Var) {
-        Objects.requireNonNull(m2Var);
-        if (!a3.SHORT_CIRCUIT.o(this.f)) {
-            m2Var.l(spliterator.getExactSizeIfKnown());
-            spliterator.forEachRemaining(m2Var);
-            m2Var.k();
-            return;
-        }
-        A(spliterator, m2Var);
-    }
-
-    final boolean A(Spliterator spliterator, m2 m2Var) {
-        b bVar = this;
-        while (bVar.e > 0) {
-            bVar = bVar.b;
-        }
-        m2Var.l(spliterator.getExactSizeIfKnown());
-        boolean G = bVar.G(spliterator, m2Var);
-        m2Var.k();
-        return G;
-    }
-
-    final int J() {
         return this.f;
     }
 
-    final boolean K() {
-        return a3.ORDERED.o(this.f);
+    public void f() {
+        this.i = true;
     }
 
-    final m2 V(m2 m2Var) {
-        Objects.requireNonNull(m2Var);
+    public final void g() {
         b bVar = this;
-        while (bVar.e > 0) {
-            b bVar2 = bVar.b;
-            m2Var = bVar.Q(bVar2.f, m2Var);
+        for (b bVar2 = (b) ((d) getCompleter()); bVar2 != null; bVar2 = (b) ((d) bVar2.getCompleter())) {
+            if (bVar2.d == bVar) {
+                b bVar3 = (b) bVar2.e;
+                if (!bVar3.i) {
+                    bVar3.f();
+                }
+            }
             bVar = bVar2;
         }
-        return m2Var;
-    }
-
-    final Spliterator W(Spliterator spliterator) {
-        return this.e == 0 ? spliterator : T(this, new a(7, spliterator), this.a.k);
-    }
-
-    I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        throw new UnsupportedOperationException("Parallel evaluation is not supported");
-    }
-
-    Spliterator O(b bVar, Spliterator spliterator) {
-        return N(bVar, spliterator, new j(19)).spliterator();
     }
 }

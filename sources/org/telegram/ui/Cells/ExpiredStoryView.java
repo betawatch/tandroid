@@ -65,9 +65,9 @@ public class ExpiredStoryView {
                     str = format;
                 }
                 TextPaint textPaint2 = Theme.chat_replyTextPaint;
-                int measureText = ((int) (textPaint2.measureText(createExpiredStoryString, 0, createExpiredStoryString.length()) + 1.0f)) + AndroidUtilities.dp(10.0f);
+                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(createExpiredStoryString, 0, createExpiredStoryString.length()) + 1.0f));
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.titleLayout = new StaticLayout(createExpiredStoryString, textPaint2, measureText, alignment, 1.0f, 0.0f, false);
+                this.titleLayout = new StaticLayout(createExpiredStoryString, textPaint2, dp, alignment, 1.0f, 0.0f, false);
                 this.subtitleLayout = new StaticLayout(str, textPaint2, ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)) + AndroidUtilities.dp(10.0f), alignment, 1.0f, 0.0f, false);
                 this.height = 0;
                 this.verticalPadding = AndroidUtilities.dp(4.0f);

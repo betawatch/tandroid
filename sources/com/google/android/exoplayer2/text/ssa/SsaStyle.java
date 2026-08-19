@@ -180,7 +180,6 @@ final class SsaStyle {
             this.length = i11;
         }
 
-        /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
         public static Format fromFormatLine(String str) {
             char c;
             String[] split = TextUtils.split(str.substring(7), ",");
@@ -196,7 +195,7 @@ final class SsaStyle {
             int i10 = -1;
             for (int i11 = 0; i11 < split.length; i11++) {
                 String lowerCase = Ascii.toLowerCase(split[i11].trim());
-                lowerCase.hashCode();
+                lowerCase.getClass();
                 switch (lowerCase.hashCode()) {
                     case -1178781136:
                         if (lowerCase.equals("italic")) {

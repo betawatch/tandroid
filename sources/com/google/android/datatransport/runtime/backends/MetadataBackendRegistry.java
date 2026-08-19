@@ -85,7 +85,7 @@ class MetadataBackendRegistry implements BackendRegistry {
             Bundle metadata = getMetadata(context);
             if (metadata == null) {
                 Log.w("BackendRegistry", "Could not retrieve metadata, returning empty list of transport backends.");
-                return Collections.emptyMap();
+                return Collections.EMPTY_MAP;
             }
             HashMap hashMap = new HashMap();
             for (String str : metadata.keySet()) {

@@ -34,7 +34,7 @@ public class RecyclerListViewScroller {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.RecyclerListViewScroller$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                RecyclerListViewScroller.this.lambda$smoothScrollBy$0(iArr, valueAnimator2);
+                RecyclerListViewScroller.$r8$lambda$AMpE-om35Z2wyZyp4yAFj6uWZmo(RecyclerListViewScroller.this, iArr, valueAnimator2);
             }
         });
         this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.RecyclerListViewScroller.1
@@ -49,13 +49,13 @@ public class RecyclerListViewScroller {
         this.valueAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$smoothScrollBy$0(int[] iArr, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$AMpE-om35Z2wyZyp4yAFj6uWZmo(RecyclerListViewScroller recyclerListViewScroller, int[] iArr, ValueAnimator valueAnimator) {
+        recyclerListViewScroller.getClass();
         int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        int i = intValue - this.lastScrolled;
-        this.recyclerListView.scrollBy(0, i);
+        int i = intValue - recyclerListViewScroller.lastScrolled;
+        recyclerListViewScroller.recyclerListView.scrollBy(0, i);
         iArr[0] = iArr[0] + i;
-        this.lastScrolled = intValue;
+        recyclerListViewScroller.lastScrolled = intValue;
     }
 
     public void cancel() {

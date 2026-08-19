@@ -52,28 +52,24 @@ public final class DefaultAllocator implements Allocator {
 
     @Override // com.google.android.exoplayer2.upstream.Allocator
     public synchronized Allocation allocate() {
-        Allocation allocation;
-        try {
-            this.allocatedCount++;
-            int i = this.availableCount;
-            if (i > 0) {
-                Allocation[] allocationArr = this.availableAllocations;
-                int i2 = i - 1;
-                this.availableCount = i2;
-                allocation = (Allocation) Assertions.checkNotNull(allocationArr[i2]);
-                this.availableAllocations[this.availableCount] = null;
-            } else {
-                allocation = new Allocation(new byte[this.individualAllocationSize], 0);
-                int i3 = this.allocatedCount;
-                Allocation[] allocationArr2 = this.availableAllocations;
-                if (i3 > allocationArr2.length) {
-                    this.availableAllocations = (Allocation[]) Arrays.copyOf(allocationArr2, allocationArr2.length * 2);
-                }
-            }
-        } catch (Throwable th) {
-            throw th;
+        this.allocatedCount++;
+        int i = this.availableCount;
+        if (i > 0) {
+            Allocation[] allocationArr = this.availableAllocations;
+            int i2 = i - 1;
+            this.availableCount = i2;
+            Allocation allocation = (Allocation) Assertions.checkNotNull(allocationArr[i2]);
+            this.availableAllocations[this.availableCount] = null;
+            return allocation;
         }
-        return allocation;
+        Allocation allocation2 = new Allocation(new byte[this.individualAllocationSize], 0);
+        int i3 = this.allocatedCount;
+        Allocation[] allocationArr2 = this.availableAllocations;
+        if (i3 <= allocationArr2.length) {
+            return allocation2;
+        }
+        this.availableAllocations = (Allocation[]) Arrays.copyOf(allocationArr2, allocationArr2.length * 2);
+        return allocation2;
     }
 
     @Override // com.google.android.exoplayer2.upstream.Allocator
@@ -103,43 +99,45 @@ public final class DefaultAllocator implements Allocator {
         notifyAll();
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0059, code lost:
+    
+        if (r0 >= r7.availableCount) goto L21;
+     */
     @Override // com.google.android.exoplayer2.upstream.Allocator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public synchronized void trim() {
         try {
             int i = 0;
             int max = Math.max(0, Util.ceilDivide(this.targetBufferSize, this.individualAllocationSize) - this.allocatedCount);
             int i2 = this.availableCount;
-            if (max >= i2) {
-                return;
-            }
-            if (this.initialAllocationBlock != null) {
-                int i3 = i2 - 1;
-                while (i <= i3) {
-                    Allocation allocation = (Allocation) Assertions.checkNotNull(this.availableAllocations[i]);
-                    if (allocation.data == this.initialAllocationBlock) {
-                        i++;
-                    } else {
-                        Allocation allocation2 = (Allocation) Assertions.checkNotNull(this.availableAllocations[i3]);
-                        if (allocation2.data != this.initialAllocationBlock) {
-                            i3--;
-                        } else {
-                            Allocation[] allocationArr = this.availableAllocations;
-                            allocationArr[i] = allocation2;
-                            allocationArr[i3] = allocation;
-                            i3--;
+            if (max < i2) {
+                if (this.initialAllocationBlock != null) {
+                    int i3 = i2 - 1;
+                    while (i <= i3) {
+                        Allocation allocation = (Allocation) Assertions.checkNotNull(this.availableAllocations[i]);
+                        if (allocation.data == this.initialAllocationBlock) {
                             i++;
+                        } else {
+                            Allocation allocation2 = (Allocation) Assertions.checkNotNull(this.availableAllocations[i3]);
+                            if (allocation2.data != this.initialAllocationBlock) {
+                                i3--;
+                            } else {
+                                Allocation[] allocationArr = this.availableAllocations;
+                                allocationArr[i] = allocation2;
+                                allocationArr[i3] = allocation;
+                                i3--;
+                                i++;
+                            }
                         }
                     }
+                    max = Math.max(max, i);
                 }
-                max = Math.max(max, i);
-                if (max >= this.availableCount) {
-                    return;
-                }
+                Arrays.fill(this.availableAllocations, max, this.availableCount, (Object) null);
+                this.availableCount = max;
             }
-            Arrays.fill(this.availableAllocations, max, this.availableCount, (Object) null);
-            this.availableCount = max;
-        } catch (Throwable th) {
-            throw th;
+        } finally {
         }
     }
 

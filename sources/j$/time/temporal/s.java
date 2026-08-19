@@ -1,8 +1,122 @@
 package j$.time.temporal;
 
-/* loaded from: classes2.dex */
-public interface s {
-    long between(Temporal temporal, Temporal temporal2);
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 
-    Temporal k(Temporal temporal, long j);
+/* loaded from: classes2.dex */
+public final class s implements Serializable {
+    private static final long serialVersionUID = -7317881728594519368L;
+    public final long a;
+    public final long b;
+    public final long c;
+    public final long d;
+
+    public static s e(long j, long j2) {
+        if (j > j2) {
+            throw new IllegalArgumentException("Minimum value must be less than maximum value");
+        }
+        return new s(j, j, j2, j2);
+    }
+
+    public static s f(long j, long j2) {
+        if (j > j2) {
+            throw new IllegalArgumentException("Smallest maximum value must be less than largest maximum value");
+        }
+        if (1 > j2) {
+            throw new IllegalArgumentException("Minimum value must be less than maximum value");
+        }
+        return new s(1L, 1L, j, j2);
+    }
+
+    public s(long j, long j2, long j3, long j4) {
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
+        this.d = j4;
+    }
+
+    public final int a(long j, o oVar) {
+        if (this.a < -2147483648L || this.d > 2147483647L || !d(j)) {
+            throw new j$.time.b(c(j, oVar));
+        }
+        return (int) j;
+    }
+
+    public final boolean d(long j) {
+        return j >= this.a && j <= this.d;
+    }
+
+    public final void b(long j, o oVar) {
+        if (!d(j)) {
+            throw new j$.time.b(c(j, oVar));
+        }
+    }
+
+    public final String c(long j, o oVar) {
+        if (oVar != null) {
+            return "Invalid value for " + oVar + " (valid values " + this + "): " + j;
+        }
+        return "Invalid value (valid values " + this + "): " + j;
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) {
+        objectInputStream.defaultReadObject();
+        long j = this.a;
+        long j2 = this.b;
+        if (j > j2) {
+            throw new InvalidObjectException("Smallest minimum value must be less than largest minimum value");
+        }
+        long j3 = this.c;
+        long j4 = this.d;
+        if (j3 > j4) {
+            throw new InvalidObjectException("Smallest maximum value must be less than largest maximum value");
+        }
+        if (j2 > j4) {
+            throw new InvalidObjectException("Minimum value must be less than maximum value");
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof s) {
+            s sVar = (s) obj;
+            if (this.a == sVar.a && this.b == sVar.b && this.c == sVar.c && this.d == sVar.d) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        long j = this.b;
+        long j2 = this.a + (j << 16) + (j >> 48);
+        long j3 = this.c;
+        long j4 = j2 + (j3 << 32) + (j3 >> 32);
+        long j5 = this.d;
+        long j6 = j4 + (j5 << 48) + (j5 >> 16);
+        return (int) ((j6 >>> 32) ^ j6);
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        long j = this.a;
+        sb.append(j);
+        long j2 = this.b;
+        if (j != j2) {
+            sb.append('/');
+            sb.append(j2);
+        }
+        sb.append(" - ");
+        long j3 = this.c;
+        sb.append(j3);
+        long j4 = this.d;
+        if (j3 != j4) {
+            sb.append('/');
+            sb.append(j4);
+        }
+        return sb.toString();
+    }
 }

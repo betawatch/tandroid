@@ -88,7 +88,7 @@ public class DefaultThemesPreviewCell extends LinearLayout {
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                DefaultThemesPreviewCell.this.lambda$new$0(baseFragment, view, i3);
+                DefaultThemesPreviewCell.$r8$lambda$IMx43UwANlviUibFAnij6GLz5Cg(DefaultThemesPreviewCell.this, baseFragment, view, i3);
             }
         });
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(getContext(), null);
@@ -127,7 +127,7 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             this.browseThemesCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DefaultThemesPreviewCell.lambda$new$1(BaseFragment.this, view);
+                    BaseFragment.this.presentFragment(new ThemeActivity(3));
                 }
             });
             if (!Theme.isCurrentThemeDay()) {
@@ -159,14 +159,13 @@ public class DefaultThemesPreviewCell extends LinearLayout {
         linearLayoutManager.scrollToPositionWithOffset(i5, AndroidUtilities.dp(16.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(BaseFragment baseFragment, View view, int i) {
-        ChatThemeBottomSheet.ChatThemeItem chatThemeItem = (ChatThemeBottomSheet.ChatThemeItem) this.adapter.items.get(i);
-        Theme.ThemeInfo themeInfo = chatThemeItem.chatTheme.getThemeInfo(this.themeIndex);
-        int accentId = (chatThemeItem.chatTheme.getEmoticonOrSlug().equals("🏠") || chatThemeItem.chatTheme.getEmoticonOrSlug().equals("🎨")) ? chatThemeItem.chatTheme.getAccentId(this.themeIndex) : -1;
+    public static /* synthetic */ void $r8$lambda$IMx43UwANlviUibFAnij6GLz5Cg(DefaultThemesPreviewCell defaultThemesPreviewCell, BaseFragment baseFragment, View view, int i) {
+        ChatThemeBottomSheet.ChatThemeItem chatThemeItem = (ChatThemeBottomSheet.ChatThemeItem) defaultThemesPreviewCell.adapter.items.get(i);
+        Theme.ThemeInfo themeInfo = chatThemeItem.chatTheme.getThemeInfo(defaultThemesPreviewCell.themeIndex);
+        int accentId = (chatThemeItem.chatTheme.getEmoticonOrSlug().equals("🏠") || chatThemeItem.chatTheme.getEmoticonOrSlug().equals("🎨")) ? chatThemeItem.chatTheme.getAccentId(defaultThemesPreviewCell.themeIndex) : -1;
         if (themeInfo == null) {
-            TLRPC.TL_theme tlTheme = chatThemeItem.chatTheme.getTlTheme(this.themeIndex);
-            Theme.ThemeInfo theme = Theme.getTheme(Theme.getBaseThemeKey(tlTheme.settings.get(chatThemeItem.chatTheme.getSettingsIndex(this.themeIndex))));
+            TLRPC.TL_theme tlTheme = chatThemeItem.chatTheme.getTlTheme(defaultThemesPreviewCell.themeIndex);
+            Theme.ThemeInfo theme = Theme.getTheme(Theme.getBaseThemeKey(tlTheme.settings.get(chatThemeItem.chatTheme.getSettingsIndex(defaultThemesPreviewCell.themeIndex))));
             if (theme != null) {
                 Theme.ThemeAccent themeAccent = (Theme.ThemeAccent) theme.accentsByThemeId.get(tlTheme.id);
                 if (themeAccent == null) {
@@ -177,16 +176,16 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             }
             themeInfo = theme;
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, themeInfo, Boolean.FALSE, null, Integer.valueOf(accentId));
-        this.selectedPosition = i;
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needSetDayNightTheme, themeInfo, Boolean.FALSE, null, Integer.valueOf(accentId));
+        defaultThemesPreviewCell.selectedPosition = i;
         int i2 = 0;
-        while (i2 < this.adapter.items.size()) {
-            ((ChatThemeBottomSheet.ChatThemeItem) this.adapter.items.get(i2)).isSelected = i2 == this.selectedPosition;
+        while (i2 < defaultThemesPreviewCell.adapter.items.size()) {
+            ((ChatThemeBottomSheet.ChatThemeItem) defaultThemesPreviewCell.adapter.items.get(i2)).isSelected = i2 == defaultThemesPreviewCell.selectedPosition;
             i2++;
         }
-        this.adapter.setSelectedItem(this.selectedPosition);
-        for (int i3 = 0; i3 < this.recyclerView.getChildCount(); i3++) {
-            ThemeSmallPreviewView themeSmallPreviewView = (ThemeSmallPreviewView) this.recyclerView.getChildAt(i3);
+        defaultThemesPreviewCell.adapter.setSelectedItem(defaultThemesPreviewCell.selectedPosition);
+        for (int i3 = 0; i3 < defaultThemesPreviewCell.recyclerView.getChildCount(); i3++) {
+            ThemeSmallPreviewView themeSmallPreviewView = (ThemeSmallPreviewView) defaultThemesPreviewCell.recyclerView.getChildAt(i3);
             if (themeSmallPreviewView != view) {
                 themeSmallPreviewView.cancelAnimation();
             }
@@ -194,7 +193,7 @@ public class DefaultThemesPreviewCell extends LinearLayout {
         ((ThemeSmallPreviewView) view).playEmojiAnimation();
         if (themeInfo != null) {
             SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
-            edit.putString((this.currentType == 1 || themeInfo.isDark()) ? "lastDarkTheme" : "lastDayTheme", themeInfo.getKey());
+            edit.putString((defaultThemesPreviewCell.currentType == 1 || themeInfo.isDark()) ? "lastDarkTheme" : "lastDayTheme", themeInfo.getKey());
             edit.commit();
         }
         Theme.turnOffAutoNight(baseFragment);
@@ -209,10 +208,10 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             this.val$parentFragment = baseFragment;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:24:0x007d  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x008e  */
-        /* JADX WARN: Removed duplicated region for block: B:31:0x0094  */
-        /* JADX WARN: Removed duplicated region for block: B:32:0x0083  */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x007e  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x008f  */
+        /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x0084  */
         @Override // android.view.View.OnClickListener
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -243,9 +242,10 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             } else if (activeTheme.isDark() || string.equals("Dark Blue") || string.equals("Night")) {
                 str2 = string2;
                 isCurrentThemeDark = Theme.isCurrentThemeDark();
+                String str3 = str2;
                 final boolean z = !isCurrentThemeDark;
                 if (isCurrentThemeDark) {
-                    theme = Theme.getTheme(str2);
+                    theme = Theme.getTheme(str3);
                 } else {
                     theme = Theme.getTheme(str);
                 }
@@ -259,15 +259,16 @@ public class DefaultThemesPreviewCell extends LinearLayout {
                 iArr[1] = iArr[1] + (DefaultThemesPreviewCell.this.dayNightCell.getImageView().getMeasuredHeight() / 2) + AndroidUtilities.dp(3.0f);
                 final Context context = this.val$context;
                 final BaseFragment baseFragment = this.val$parentFragment;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, themeInfo, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), DefaultThemesPreviewCell.this.dayNightCell.getImageView(), DefaultThemesPreviewCell.this.dayNightCell, new Runnable() { // from class: org.telegram.ui.DefaultThemesPreviewCell$2$$ExternalSyntheticLambda0
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needSetDayNightTheme, themeInfo, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), DefaultThemesPreviewCell.this.dayNightCell.getImageView(), DefaultThemesPreviewCell.this.dayNightCell, new Runnable() { // from class: org.telegram.ui.DefaultThemesPreviewCell$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DefaultThemesPreviewCell.2.this.lambda$onClick$0(color, context, color2, z, baseFragment);
+                        DefaultThemesPreviewCell.2.$r8$lambda$hQTxTLHe7xd_ObecuVGUxgkfrZY(DefaultThemesPreviewCell.2.this, color, context, color2, z, baseFragment);
                     }
                 });
             }
             str = string;
             isCurrentThemeDark = Theme.isCurrentThemeDark();
+            String str32 = str2;
             final boolean z2 = !isCurrentThemeDark;
             if (isCurrentThemeDark) {
             }
@@ -281,16 +282,15 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             iArr2[1] = iArr2[1] + (DefaultThemesPreviewCell.this.dayNightCell.getImageView().getMeasuredHeight() / 2) + AndroidUtilities.dp(3.0f);
             final Context context2 = this.val$context;
             final BaseFragment baseFragment2 = this.val$parentFragment;
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, themeInfo2, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z2), DefaultThemesPreviewCell.this.dayNightCell.getImageView(), DefaultThemesPreviewCell.this.dayNightCell, new Runnable() { // from class: org.telegram.ui.DefaultThemesPreviewCell$2$$ExternalSyntheticLambda0
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.needSetDayNightTheme, themeInfo2, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z2), DefaultThemesPreviewCell.this.dayNightCell.getImageView(), DefaultThemesPreviewCell.this.dayNightCell, new Runnable() { // from class: org.telegram.ui.DefaultThemesPreviewCell$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultThemesPreviewCell.2.this.lambda$onClick$0(color, context2, color2, z2, baseFragment2);
+                    DefaultThemesPreviewCell.2.$r8$lambda$hQTxTLHe7xd_ObecuVGUxgkfrZY(DefaultThemesPreviewCell.2.this, color, context2, color2, z2, baseFragment2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onClick$0(final int i, Context context, int i2, boolean z, BaseFragment baseFragment) {
+        public static /* synthetic */ void $r8$lambda$hQTxTLHe7xd_ObecuVGUxgkfrZY(2 r11, final int i, Context context, int i2, boolean z, BaseFragment baseFragment) {
             DefaultThemesPreviewCell.this.updateDayNightMode();
             DefaultThemesPreviewCell.this.updateSelectedPosition();
             final int color = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4);
@@ -322,13 +322,12 @@ public class DefaultThemesPreviewCell extends LinearLayout {
                 final float f = z ? 50.0f : 200.0f;
                 final float f2 = 350.0f;
                 final float f3 = 150.0f;
-                final Activity activity2 = activity;
                 DefaultThemesPreviewCell.this.navBarAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.DefaultThemesPreviewCell.2.3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
                         DefaultThemesPreviewCell.this.navBarColor = ColorUtils.blendARGB(i3, color2, Math.max(0.0f, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * f2) - f) / f3)));
-                        AndroidUtilities.setNavigationBarColor(activity2, DefaultThemesPreviewCell.this.navBarColor, false);
-                        AndroidUtilities.setLightNavigationBar(activity2, AndroidUtilities.computePerceivedBrightness(DefaultThemesPreviewCell.this.navBarColor) >= 0.721f);
+                        AndroidUtilities.setNavigationBarColor(activity, DefaultThemesPreviewCell.this.navBarColor, false);
+                        AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(DefaultThemesPreviewCell.this.navBarColor) >= 0.721f);
                     }
                 });
                 DefaultThemesPreviewCell.this.navBarAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.DefaultThemesPreviewCell.2.4
@@ -348,11 +347,6 @@ public class DefaultThemesPreviewCell extends LinearLayout {
             }
             Theme.turnOffAutoNight(baseFragment);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(BaseFragment baseFragment, View view) {
-        baseFragment.presentFragment(new ThemeActivity(3));
     }
 
     public void updateLayoutManager() {

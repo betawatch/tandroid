@@ -1,95 +1,66 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class E1 extends w0 {
-    public final /* synthetic */ int h;
+public final class E1 extends M1 implements L1 {
+    public final /* synthetic */ Supplier b;
+    public final /* synthetic */ BiConsumer c;
+    public final /* synthetic */ BiConsumer d;
 
-    public /* synthetic */ E1(int i) {
-        this.h = i;
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ boolean C() {
+        return false;
     }
 
-    @Override // j$.util.stream.w0
-    public final S1 e0() {
-        switch (this.h) {
-            case 0:
-                return new W1();
-            case 1:
-                return new U1();
-            case 2:
-                return new X1();
-            default:
-                return new V1();
-        }
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(double d) {
+        q1.a();
+        throw null;
     }
 
-    @Override // j$.util.stream.w0, j$.util.stream.G3
-    public final Object b(b bVar, Spliterator spliterator) {
-        switch (this.h) {
-            case 0:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-            case 2:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return (Long) super.b(bVar, spliterator);
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(int i) {
+        q1.k();
+        throw null;
     }
 
-    @Override // j$.util.stream.w0, j$.util.stream.G3
-    public final Object c(b bVar, Spliterator spliterator) {
-        switch (this.h) {
-            case 0:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-            case 2:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!a3.SIZED.o(bVar.J())) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return (Long) super.c(bVar, spliterator);
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void accept(long j) {
+        q1.l();
+        throw null;
     }
 
-    @Override // j$.util.stream.w0, j$.util.stream.G3
-    public final int d() {
-        switch (this.h) {
-        }
-        return a3.r;
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void x() {
+    }
+
+    @Override // j$.util.stream.L1
+    public final void n(L1 l1) {
+        this.d.accept(this.a, ((E1) l1).a);
+    }
+
+    @Override // j$.util.stream.f2
+    public final void y(long j) {
+        this.a = this.b.get();
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void s(Object obj) {
+        this.c.accept(this.a, obj);
+    }
+
+    public E1(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2) {
+        this.b = supplier;
+        this.c = biConsumer;
+        this.d = biConsumer2;
     }
 }

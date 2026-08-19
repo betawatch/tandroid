@@ -21,14 +21,13 @@ public class RemoteConfigDeferredProxy {
             this.remoteConfigInteropDeferred.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.internal.RemoteConfigDeferredProxy$$ExternalSyntheticLambda0
                 @Override // com.google.firebase.inject.Deferred.DeferredHandler
                 public final void handle(Provider provider) {
-                    RemoteConfigDeferredProxy.lambda$setupListener$0(CrashlyticsRemoteConfigListener.this, provider);
+                    RemoteConfigDeferredProxy.$r8$lambda$tM9cwbkvs3BgPiTMmQjNX30V2r4(CrashlyticsRemoteConfigListener.this, provider);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setupListener$0(CrashlyticsRemoteConfigListener crashlyticsRemoteConfigListener, Provider provider) {
+    public static /* synthetic */ void $r8$lambda$tM9cwbkvs3BgPiTMmQjNX30V2r4(CrashlyticsRemoteConfigListener crashlyticsRemoteConfigListener, Provider provider) {
         WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(provider.get());
         throw null;
     }

@@ -56,15 +56,13 @@ public class AlertCallbackDelegateImpl implements AlertCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onCancel", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.AlertCallbackDelegateImpl$AlertCallbackStub$$ExternalSyntheticLambda1
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onAlertCancelled$0;
-                    lambda$onAlertCancelled$0 = AlertCallbackDelegateImpl.AlertCallbackStub.this.lambda$onAlertCancelled$0(i);
-                    return lambda$onAlertCancelled$0;
+                    return AlertCallbackDelegateImpl.AlertCallbackStub.$r8$lambda$KnQ-FnNRyUyR5iddrT6-wu_j5-U(AlertCallbackDelegateImpl.AlertCallbackStub.this, i);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onAlertCancelled$0(int i) {
+        public static /* synthetic */ Object $r8$lambda$KnQ-FnNRyUyR5iddrT6-wu_j5-U(AlertCallbackStub alertCallbackStub, int i) {
+            alertCallbackStub.getClass();
             throw null;
         }
 
@@ -73,15 +71,13 @@ public class AlertCallbackDelegateImpl implements AlertCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onDismiss", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.AlertCallbackDelegateImpl$AlertCallbackStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onAlertDismissed$1;
-                    lambda$onAlertDismissed$1 = AlertCallbackDelegateImpl.AlertCallbackStub.this.lambda$onAlertDismissed$1();
-                    return lambda$onAlertDismissed$1;
+                    return AlertCallbackDelegateImpl.AlertCallbackStub.$r8$lambda$TaRFdnKZJVRXV72MsEkaaZoD3dg(AlertCallbackDelegateImpl.AlertCallbackStub.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onAlertDismissed$1() {
+        public static /* synthetic */ Object $r8$lambda$TaRFdnKZJVRXV72MsEkaaZoD3dg(AlertCallbackStub alertCallbackStub) {
+            alertCallbackStub.getClass();
             throw null;
         }
     }

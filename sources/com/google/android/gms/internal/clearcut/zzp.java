@@ -154,7 +154,7 @@ public final class zzp implements ClearcutLogger.zza {
             return true;
         }
         if (this.zzh == null) {
-            zzfs = Collections.emptyList();
+            zzfs = Collections.EMPTY_LIST;
         } else {
             ConcurrentHashMap concurrentHashMap = zzas;
             zzae zzaeVar2 = (zzae) concurrentHashMap.get(str);

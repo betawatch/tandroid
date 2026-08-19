@@ -240,6 +240,7 @@ public final class Cea708Decoder extends CeaDecoder {
         if (i != 0) {
             if (i == 3) {
                 this.cues = getDisplayCues();
+                return;
             }
             if (i == 8) {
                 this.currentCueInfoBuilder.backspace();
@@ -682,7 +683,10 @@ public final class Cea708Decoder extends CeaDecoder {
         }
 
         public boolean isEmpty() {
-            return !isDefined() || (this.rolledUpCaptions.isEmpty() && this.captionStringBuilder.length() == 0);
+            if (isDefined()) {
+                return this.rolledUpCaptions.isEmpty() && this.captionStringBuilder.length() == 0;
+            }
+            return true;
         }
 
         public void reset() {
@@ -867,13 +871,14 @@ public final class Cea708Decoder extends CeaDecoder {
             return new SpannableString(spannableStringBuilder);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0066  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x0092  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x009c  */
-        /* JADX WARN: Removed duplicated region for block: B:30:0x00a9  */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x009e  */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x0094  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x0071  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x0064  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x008e  */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x009f  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x00aa  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x00ad  */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x00a1  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x0092  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x006f  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -881,25 +886,30 @@ public final class Cea708Decoder extends CeaDecoder {
             Layout.Alignment alignment;
             float f;
             float f2;
+            int i;
+            int i2;
+            float f3;
+            int i3;
+            int i4;
             if (isEmpty()) {
                 return null;
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            for (int i = 0; i < this.rolledUpCaptions.size(); i++) {
-                spannableStringBuilder.append((CharSequence) this.rolledUpCaptions.get(i));
+            for (int i5 = 0; i5 < this.rolledUpCaptions.size(); i5++) {
+                spannableStringBuilder.append((CharSequence) this.rolledUpCaptions.get(i5));
                 spannableStringBuilder.append('\n');
             }
             spannableStringBuilder.append((CharSequence) buildSpannableString());
-            int i2 = this.justification;
-            if (i2 != 0) {
-                if (i2 == 1) {
+            int i6 = this.justification;
+            int i7 = 2;
+            if (i6 != 0) {
+                if (i6 == 1) {
                     alignment = Layout.Alignment.ALIGN_OPPOSITE;
-                } else if (i2 == 2) {
+                } else if (i6 == 2) {
                     alignment = Layout.Alignment.ALIGN_CENTER;
-                } else if (i2 != 3) {
+                } else if (i6 != 3) {
                     throw new IllegalArgumentException("Unexpected justification value: " + this.justification);
                 }
-                Layout.Alignment alignment2 = alignment;
                 if (!this.relativePositioning) {
                     f = this.horizontalAnchor / 99.0f;
                     f2 = this.verticalAnchor / 99.0f;
@@ -907,23 +917,44 @@ public final class Cea708Decoder extends CeaDecoder {
                     f = this.horizontalAnchor / 209.0f;
                     f2 = this.verticalAnchor / 74.0f;
                 }
-                float f3 = (f * 0.9f) + 0.05f;
-                float f4 = (f2 * 0.9f) + 0.05f;
-                int i3 = this.anchorId;
-                int i4 = i3 / 3;
-                int i5 = i3 % 3;
-                return new Cea708CueInfo(spannableStringBuilder, alignment2, f4, 0, i4 != 0 ? 0 : i4 == 1 ? 1 : 2, f3, i5 != 0 ? 0 : i5 == 1 ? 1 : 2, -3.4028235E38f, this.windowFillColor != COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
+                float f4 = (f * 0.9f) + 0.05f;
+                float f5 = (f2 * 0.9f) + 0.05f;
+                int i8 = this.anchorId;
+                i = i8 / 3;
+                if (i != 0) {
+                    i2 = i8;
+                    f3 = f4;
+                    i3 = 0;
+                } else if (i == 1) {
+                    i2 = i8;
+                    f3 = f4;
+                    i3 = 1;
+                } else {
+                    i2 = i8;
+                    f3 = f4;
+                    i3 = 2;
+                }
+                i4 = i2 % 3;
+                if (i4 != 0) {
+                    i7 = 0;
+                } else if (i4 == 1) {
+                    i7 = 1;
+                }
+                return new Cea708CueInfo(spannableStringBuilder, alignment, f5, 0, i3, f3, i7, -3.4028235E38f, this.windowFillColor == COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
             }
             alignment = Layout.Alignment.ALIGN_NORMAL;
-            Layout.Alignment alignment22 = alignment;
             if (!this.relativePositioning) {
             }
-            float f32 = (f * 0.9f) + 0.05f;
-            float f42 = (f2 * 0.9f) + 0.05f;
-            int i32 = this.anchorId;
-            int i42 = i32 / 3;
-            int i52 = i32 % 3;
-            return new Cea708CueInfo(spannableStringBuilder, alignment22, f42, 0, i42 != 0 ? 0 : i42 == 1 ? 1 : 2, f32, i52 != 0 ? 0 : i52 == 1 ? 1 : 2, -3.4028235E38f, this.windowFillColor != COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
+            float f42 = (f * 0.9f) + 0.05f;
+            float f52 = (f2 * 0.9f) + 0.05f;
+            int i82 = this.anchorId;
+            i = i82 / 3;
+            if (i != 0) {
+            }
+            i4 = i2 % 3;
+            if (i4 != 0) {
+            }
+            return new Cea708CueInfo(spannableStringBuilder, alignment, f52, 0, i3, f3, i7, -3.4028235E38f, this.windowFillColor == COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
         }
 
         public static int getArgbColorFromCeaColor(int i, int i2, int i3) {
@@ -944,18 +975,13 @@ public final class Cea708Decoder extends CeaDecoder {
         private static final Comparator LEAST_IMPORTANT_FIRST = new Comparator() { // from class: com.google.android.exoplayer2.text.cea.Cea708Decoder$Cea708CueInfo$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$static$0;
-                lambda$static$0 = Cea708Decoder.Cea708CueInfo.lambda$static$0((Cea708Decoder.Cea708CueInfo) obj, (Cea708Decoder.Cea708CueInfo) obj2);
-                return lambda$static$0;
+                int compare;
+                compare = Integer.compare(((Cea708Decoder.Cea708CueInfo) obj2).priority, ((Cea708Decoder.Cea708CueInfo) obj).priority);
+                return compare;
             }
         };
         public final Cue cue;
         public final int priority;
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$static$0(Cea708CueInfo cea708CueInfo, Cea708CueInfo cea708CueInfo2) {
-            return Integer.compare(cea708CueInfo2.priority, cea708CueInfo.priority);
-        }
 
         public Cea708CueInfo(CharSequence charSequence, Layout.Alignment alignment, float f, int i, int i2, float f2, int i3, float f3, boolean z, int i4, int i5) {
             Cue.Builder size = new Cue.Builder().setText(charSequence).setTextAlignment(alignment).setLine(f, i).setLineAnchor(i2).setPosition(f2).setPositionAnchor(i3).setSize(f3);

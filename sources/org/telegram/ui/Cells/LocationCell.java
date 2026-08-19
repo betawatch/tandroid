@@ -188,7 +188,7 @@ public class LocationCell extends FrameLayout {
         this.enterAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.LocationCell$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                LocationCell.this.lambda$setLocation$0(elapsedRealtime, abs, f, f2, valueAnimator2);
+                LocationCell.$r8$lambda$4f04vaATkMfuscwU_dWvsY5S0MM(LocationCell.this, elapsedRealtime, abs, f, f2, valueAnimator2);
             }
         });
         ValueAnimator valueAnimator2 = this.enterAnimator;
@@ -204,14 +204,14 @@ public class LocationCell extends FrameLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setLocation$0(long j, long j2, float f, float f2, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$4f04vaATkMfuscwU_dWvsY5S0MM(LocationCell locationCell, long j, long j2, float f, float f2, ValueAnimator valueAnimator) {
+        locationCell.getClass();
         float lerp = AndroidUtilities.lerp(f, f2, j2 > 0 ? Math.min(Math.max((SystemClock.elapsedRealtime() - j) / j2, 0.0f), 1.0f) : 1.0f);
-        this.enterAlpha = lerp;
-        this.imageView.setAlpha(lerp);
-        this.nameTextView.setAlpha(this.enterAlpha);
-        this.addressTextView.setAlpha(this.enterAlpha);
-        invalidate();
+        locationCell.enterAlpha = lerp;
+        locationCell.imageView.setAlpha(lerp);
+        locationCell.nameTextView.setAlpha(locationCell.enterAlpha);
+        locationCell.addressTextView.setAlpha(locationCell.enterAlpha);
+        locationCell.invalidate();
     }
 
     private void updateContentDescription(TLRPC.TL_messageMediaVenue tL_messageMediaVenue, String str) {

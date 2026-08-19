@@ -35,7 +35,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.GridLayoutManagerFixed;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.BuildVars;
@@ -191,18 +190,22 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.MessageSendPreview.1
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
+                Canvas canvas2;
                 if (MessageSendPreview.this.activityVisibilityController != null) {
                     MessageSendPreview.this.activityVisibilityController.setHidden(MessageSendPreview.this.openProgress == 1.0f && MessageSendPreview.this.blurBitmapPaint != null);
                 }
-                if (MessageSendPreview.this.openProgress > 0.0f && MessageSendPreview.this.blurBitmapPaint != null) {
+                if (MessageSendPreview.this.openProgress <= 0.0f || MessageSendPreview.this.blurBitmapPaint == null) {
+                    canvas2 = canvas;
+                } else {
                     MessageSendPreview.this.blurMatrix.reset();
                     float width = getWidth() / MessageSendPreview.this.blurBitmap.getWidth();
                     MessageSendPreview.this.blurMatrix.postScale(width, width);
                     MessageSendPreview.this.blurBitmapShader.setLocalMatrix(MessageSendPreview.this.blurMatrix);
                     MessageSendPreview.this.blurBitmapPaint.setAlpha((int) (MessageSendPreview.this.openProgress * 255.0f));
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), MessageSendPreview.this.blurBitmapPaint);
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), MessageSendPreview.this.blurBitmapPaint);
                 }
-                super.dispatchDraw(canvas);
+                super.dispatchDraw(canvas2);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -234,13 +237,13 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessageSendPreview.this.lambda$new$0(view);
+                MessageSendPreview.this.onBackPressed();
             }
         });
         frameLayout.getViewTreeObserver().addOnGlobalFocusChangeListener(new ViewTreeObserver.OnGlobalFocusChangeListener() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda6
             @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
             public final void onGlobalFocusChanged(View view, View view2) {
-                MessageSendPreview.this.lambda$new$3(view, view2);
+                MessageSendPreview.$r8$lambda$a3cDjL9fSGTcS_yqW6Ngu5rCX68(MessageSendPreview.this, view, view2);
             }
         });
         BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
@@ -248,10 +251,10 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceBitmap);
         this.iBlur3Factory = blurredBackgroundDrawableViewFactory;
         blurredBackgroundDrawableViewFactory.setSourceRootView(new ViewPositionWatcher(frameLayout), frameLayout);
-        2 r13 = new 2(context, resourcesProvider);
-        this.containerView = r13;
-        r13.setClipToPadding(false);
-        frameLayout.addView(r13, LayoutHelper.createFrame(-1, -1, 119));
+        2 r11 = new 2(context, resourcesProvider);
+        this.containerView = r11;
+        r11.setClipToPadding(false);
+        frameLayout.addView(r11, LayoutHelper.createFrame(-1, -1, 119));
         ViewCompat.setOnApplyWindowInsetsListener(frameLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.MessageSendPreview.3
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
@@ -370,32 +373,33 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             /* JADX WARN: Type inference failed for: r3v9 */
             private void drawChatBackgroundElements(Canvas canvas) {
                 boolean z;
-                int i2;
+                Canvas canvas2;
+                float f;
                 MessageObject.GroupedMessages currentMessagesGroup;
                 MessageObject.GroupedMessages currentMessagesGroup2;
                 int childCount = getChildCount();
                 ?? r3 = 0;
                 MessageObject.GroupedMessages groupedMessages = null;
-                for (int i3 = 0; i3 < childCount; i3++) {
-                    View childAt = getChildAt(i3);
+                for (int i2 = 0; i2 < childCount; i2++) {
+                    View childAt = getChildAt(i2);
                     if ((childAt instanceof ChatMessageCell) && ((currentMessagesGroup2 = ((ChatMessageCell) childAt).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != groupedMessages)) {
                         groupedMessages = currentMessagesGroup2;
                     }
                 }
-                int i4 = 0;
-                while (i4 < 3) {
+                int i3 = 0;
+                while (i3 < 3) {
                     this.drawingGroups.clear();
-                    if (i4 != 2 || MessageSendPreview.this.chatListView.isFastScrollAnimationRunning()) {
-                        int i5 = 0;
+                    if (i3 != 2 || MessageSendPreview.this.chatListView.isFastScrollAnimationRunning()) {
+                        int i4 = 0;
                         while (true) {
                             z = true;
-                            if (i5 >= childCount) {
+                            if (i4 >= childCount) {
                                 break;
                             }
-                            View childAt2 = MessageSendPreview.this.chatListView.getChildAt(i5);
+                            View childAt2 = MessageSendPreview.this.chatListView.getChildAt(i4);
                             if (childAt2 instanceof ChatMessageCell) {
                                 ChatMessageCell chatMessageCell = (ChatMessageCell) childAt2;
-                                if (childAt2.getY() <= MessageSendPreview.this.chatListView.getHeight() && childAt2.getY() + childAt2.getHeight() >= 0.0f && (currentMessagesGroup = chatMessageCell.getCurrentMessagesGroup()) != null && ((i4 != 0 || currentMessagesGroup.messages.size() != 1) && ((i4 != 1 || currentMessagesGroup.transitionParams.drawBackgroundForDeletedItems) && ((i4 != 0 || !chatMessageCell.getMessageObject().deleted) && ((i4 != 1 || chatMessageCell.getMessageObject().deleted) && ((i4 != 2 || chatMessageCell.willRemovedAfterAnimation()) && (i4 == 2 || !chatMessageCell.willRemovedAfterAnimation()))))))) {
+                                if (childAt2.getY() <= MessageSendPreview.this.chatListView.getHeight() && childAt2.getY() + childAt2.getHeight() >= 0.0f && (currentMessagesGroup = chatMessageCell.getCurrentMessagesGroup()) != null && ((i3 != 0 || currentMessagesGroup.messages.size() != 1) && ((i3 != 1 || currentMessagesGroup.transitionParams.drawBackgroundForDeletedItems) && ((i3 != 0 || !chatMessageCell.getMessageObject().deleted) && ((i3 != 1 || chatMessageCell.getMessageObject().deleted) && ((i3 != 2 || chatMessageCell.willRemovedAfterAnimation()) && (i3 == 2 || !chatMessageCell.willRemovedAfterAnimation()))))))) {
                                     if (!this.drawingGroups.contains(currentMessagesGroup)) {
                                         MessageObject.GroupedMessages.TransitionParams transitionParams = currentMessagesGroup.transitionParams;
                                         transitionParams.left = r3;
@@ -423,77 +427,78 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                                         currentMessagesGroup.transitionParams.cell = chatMessageCell;
                                     }
                                     MessageObject.GroupedMessages.TransitionParams transitionParams2 = currentMessagesGroup.transitionParams;
-                                    int i6 = transitionParams2.top;
-                                    if (i6 == 0 || y < i6) {
+                                    int i5 = transitionParams2.top;
+                                    if (i5 == 0 || y < i5) {
                                         transitionParams2.top = y;
                                     }
-                                    int i7 = transitionParams2.bottom;
-                                    if (i7 == 0 || y2 > i7) {
+                                    int i6 = transitionParams2.bottom;
+                                    if (i6 == 0 || y2 > i6) {
                                         transitionParams2.bottom = y2;
                                     }
-                                    int i8 = transitionParams2.left;
-                                    if (i8 == 0 || x < i8) {
+                                    int i7 = transitionParams2.left;
+                                    if (i7 == 0 || x < i7) {
                                         transitionParams2.left = x;
                                     }
-                                    int i9 = transitionParams2.right;
-                                    if (i9 == 0 || x2 > i9) {
+                                    int i8 = transitionParams2.right;
+                                    if (i8 == 0 || x2 > i8) {
                                         transitionParams2.right = x2;
                                     }
                                 }
                             }
-                            i5++;
+                            i4++;
                         }
-                        int i10 = 0;
-                        while (i10 < this.drawingGroups.size()) {
-                            MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) this.drawingGroups.get(i10);
-                            if (groupedMessages2 == null) {
-                                i2 = i4;
-                            } else {
+                        int i9 = 0;
+                        while (i9 < this.drawingGroups.size()) {
+                            MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) this.drawingGroups.get(i9);
+                            if (groupedMessages2 != null) {
                                 float nonAnimationTranslationX = groupedMessages2.transitionParams.cell.getNonAnimationTranslationX(z);
                                 MessageObject.GroupedMessages.TransitionParams transitionParams3 = groupedMessages2.transitionParams;
-                                float f = transitionParams3.left + nonAnimationTranslationX + transitionParams3.offsetLeft;
-                                float f2 = transitionParams3.top + transitionParams3.offsetTop;
-                                float f3 = transitionParams3.right + nonAnimationTranslationX + transitionParams3.offsetRight;
-                                float f4 = transitionParams3.bottom + transitionParams3.offsetBottom;
-                                if (f2 < (-AndroidUtilities.dp(20.0f))) {
-                                    f2 = -AndroidUtilities.dp(20.0f);
+                                float f2 = transitionParams3.left + nonAnimationTranslationX + transitionParams3.offsetLeft;
+                                float f3 = transitionParams3.top + transitionParams3.offsetTop;
+                                float f4 = transitionParams3.right + nonAnimationTranslationX + transitionParams3.offsetRight;
+                                float f5 = transitionParams3.bottom + transitionParams3.offsetBottom;
+                                if (f3 < (-AndroidUtilities.dp(20.0f))) {
+                                    f3 = -AndroidUtilities.dp(20.0f);
                                 }
-                                if (f4 > MessageSendPreview.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f)) {
-                                    f4 = MessageSendPreview.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f);
+                                if (f5 > MessageSendPreview.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f)) {
+                                    f5 = MessageSendPreview.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f);
                                 }
                                 boolean z2 = (groupedMessages2.transitionParams.cell.getScaleX() == 1.0f && groupedMessages2.transitionParams.cell.getScaleY() == 1.0f) ? false : true;
                                 if (z2) {
                                     canvas.save();
-                                    canvas.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), f + ((f3 - f) / 2.0f), f2 + ((f4 - f2) / 2.0f));
+                                    canvas2 = canvas;
+                                    f = 2.0f;
+                                    canvas2.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), f2 + ((f4 - f2) / 2.0f), f3 + ((f5 - f3) / 2.0f));
+                                } else {
+                                    canvas2 = canvas;
+                                    f = 2.0f;
                                 }
                                 MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages2.transitionParams;
-                                i2 = i4;
-                                transitionParams4.cell.drawBackground(canvas, (int) f, (int) f2, (int) f3, (int) f4, transitionParams4.pinnedTop, transitionParams4.pinnedBotton, false, 0);
+                                transitionParams4.cell.drawBackground(canvas2, (int) f2, (int) f3, (int) f4, (int) f5, transitionParams4.pinnedTop, transitionParams4.pinnedBotton, false, 0);
                                 MessageObject.GroupedMessages.TransitionParams transitionParams5 = groupedMessages2.transitionParams;
                                 transitionParams5.cell = null;
                                 transitionParams5.drawCaptionLayout = groupedMessages2.hasCaption;
                                 if (z2) {
                                     canvas.restore();
-                                    for (int i11 = 0; i11 < childCount; i11++) {
-                                        View childAt3 = MessageSendPreview.this.chatListView.getChildAt(i11);
+                                    for (int i10 = 0; i10 < childCount; i10++) {
+                                        View childAt3 = MessageSendPreview.this.chatListView.getChildAt(i10);
                                         if (childAt3 instanceof ChatMessageCell) {
                                             ChatMessageCell chatMessageCell2 = (ChatMessageCell) childAt3;
                                             if (chatMessageCell2.getCurrentMessagesGroup() == groupedMessages2) {
                                                 int left = chatMessageCell2.getLeft();
                                                 int top = chatMessageCell2.getTop();
-                                                childAt3.setPivotX((f - left) + ((f3 - f) / 2.0f));
-                                                childAt3.setPivotY((f2 - top) + ((f4 - f2) / 2.0f));
+                                                childAt3.setPivotX((f2 - left) + ((f4 - f2) / f));
+                                                childAt3.setPivotY((f3 - top) + ((f5 - f3) / f));
                                             }
                                         }
                                     }
                                 }
                             }
-                            i10++;
-                            i4 = i2;
+                            i9++;
                             z = true;
                         }
                     }
-                    i4++;
+                    i3++;
                     r3 = 0;
                 }
             }
@@ -593,13 +598,13 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         recyclerListView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessageSendPreview.this.lambda$new$4(view);
+                MessageSendPreview.this.onBackPressed();
             }
         });
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                MessageSendPreview.this.lambda$new$5(view, i2);
+                MessageSendPreview.this.onBackPressed();
             }
         });
         recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.MessageSendPreview.5
@@ -1241,7 +1246,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         recyclerListView.setAdapter(adapter);
         recyclerListView.setVerticalScrollBarEnabled(false);
         recyclerListView.setOverScrollMode(2);
-        r13.addView(recyclerListView, LayoutHelper.createFrame(-1, -2.0f));
+        r11.addView(recyclerListView, LayoutHelper.createFrame(-1, -2.0f));
         FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.MessageSendPreview.11
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
@@ -1293,49 +1298,42 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onBackPressed();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view, final View view2) {
-        if (this.focusable || !(view2 instanceof EditText)) {
+    public static /* synthetic */ void $r8$lambda$a3cDjL9fSGTcS_yqW6Ngu5rCX68(final MessageSendPreview messageSendPreview, View view, final View view2) {
+        if (messageSendPreview.focusable || !(view2 instanceof EditText)) {
             return;
         }
-        AndroidUtilities.hideKeyboard(this.editText);
+        AndroidUtilities.hideKeyboard(messageSendPreview.editText);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSendPreview.this.lambda$new$2(view2);
+                MessageSendPreview.$r8$lambda$ebDvlycnWjZW2aie5BMEWdWQMaM(MessageSendPreview.this, view2);
             }
         }, 200L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(final View view) {
-        makeFocusable();
+    public static /* synthetic */ void $r8$lambda$ebDvlycnWjZW2aie5BMEWdWQMaM(final MessageSendPreview messageSendPreview, final View view) {
+        messageSendPreview.makeFocusable();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSendPreview.this.lambda$new$1(view);
+                MessageSendPreview.$r8$lambda$hu3jiRbqLK-rwaIM-fMCC39C4yY(MessageSendPreview.this, view);
             }
         }, 100L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$hu3jiRbqLK-rwaIM-fMCC39C4yY(MessageSendPreview messageSendPreview, View view) {
+        messageSendPreview.getClass();
         AndroidUtilities.showKeyboard(view);
-        ChatActivityEnterView.SendButton sendButton = this.anchorSendButton;
+        ChatActivityEnterView.SendButton sendButton = messageSendPreview.anchorSendButton;
         if (sendButton != null) {
-            sendButton.getLocationOnScreen(this.sendButtonInitialPosition);
-            int[] iArr = this.sendButtonInitialPosition;
+            sendButton.getLocationOnScreen(messageSendPreview.sendButtonInitialPosition);
+            int[] iArr = messageSendPreview.sendButtonInitialPosition;
             int i = iArr[0];
-            int width = this.anchorSendButton.getWidth();
-            ChatActivityEnterView.SendButton sendButton2 = this.anchorSendButton;
+            int width = messageSendPreview.anchorSendButton.getWidth();
+            ChatActivityEnterView.SendButton sendButton2 = messageSendPreview.anchorSendButton;
             iArr[0] = i + ((width - sendButton2.width(sendButton2.getHeight())) - AndroidUtilities.dp(6.0f));
-            this.sendButton.setScaleX(this.anchorSendButton.getScaleX());
-            this.sendButton.setScaleY(this.anchorSendButton.getScaleY());
+            messageSendPreview.sendButton.setScaleX(messageSendPreview.anchorSendButton.getScaleX());
+            messageSendPreview.sendButton.setScaleY(messageSendPreview.anchorSendButton.getScaleY());
         }
     }
 
@@ -1362,22 +1360,22 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             this.backgroundPaint = new Paint(1);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:68:0x0514, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:96:0x04fd, code lost:
         
-            if ((r29.destCellPos[1] - r29.pos2[1]) > r2) goto L80;
+            if ((r27.destCellPos[1] - r27.pos2[1]) > r3) goto L82;
          */
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        protected void dispatchDraw(final Canvas canvas) {
-            char c;
+        protected void dispatchDraw(Canvas canvas) {
+            final Canvas canvas2;
             float f;
-            float f2;
+            char c;
             float height;
+            float f2;
             float f3;
             float f4;
-            float f5;
             if (MessageSendPreview.this.openInProgress && MessageSendPreview.this.mainMessageCell != null && MessageSendPreview.this.mainMessageCell.getCurrentPosition() == null) {
                 if (MessageSendPreview.this.firstOpenFrame) {
                     if (MessageSendPreview.this.editText != null) {
@@ -1397,70 +1395,67 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     float paddingTop = (this.pos[1] + MessageSendPreview.this.editText.getPaddingTop()) - MessageSendPreview.this.editText.getScrollY();
                     float textSize2 = MessageSendPreview.this.editText.getTextSize();
                     int i = this.pos[1];
-                    float f6 = i;
-                    float measuredHeight = i + MessageSendPreview.this.editText.getMeasuredHeight();
-                    float lerp = AndroidUtilities.lerp(paddingLeft, x, MessageSendPreview.this.openProgress);
-                    float lerp2 = AndroidUtilities.lerp(paddingTop, y, MessageSendPreview.this.openProgress);
-                    f = lerp;
-                    height = measuredHeight;
-                    f3 = AndroidUtilities.lerp(textSize2, textSize, MessageSendPreview.this.openProgress);
-                    f2 = lerp2;
-                    f4 = f6;
+                    f3 = i;
+                    height = i + MessageSendPreview.this.editText.getMeasuredHeight();
+                    x = AndroidUtilities.lerp(paddingLeft, x, MessageSendPreview.this.openProgress);
+                    y = AndroidUtilities.lerp(paddingTop, y, MessageSendPreview.this.openProgress);
+                    f2 = AndroidUtilities.lerp(textSize2, textSize, MessageSendPreview.this.openProgress);
                 } else {
-                    f = x;
-                    f2 = y;
                     height = getHeight();
-                    f3 = textSize;
-                    f4 = 0.0f;
+                    f2 = textSize;
+                    f3 = 0.0f;
                 }
-                float f7 = MessageSendPreview.this.openProgress;
+                float f5 = x;
+                float f6 = MessageSendPreview.this.openProgress;
                 if (MessageSendPreview.this.destCell != null) {
-                    f4 = MessageSendPreview.this.destClipTop;
+                    f3 = MessageSendPreview.this.destClipTop;
                 }
-                float lerp3 = AndroidUtilities.lerp(f4, MessageSendPreview.this.chatListView.getY() + (MessageSendPreview.this.chatListView.getHeight() * (1.0f - MessageSendPreview.this.chatListView.getScaleY())), MessageSendPreview.this.openProgress);
-                float lerp4 = AndroidUtilities.lerp(0.0f, MessageSendPreview.this.chatListView.canScrollVertically(-1) ? 1.0f : 0.0f, MessageSendPreview.this.openProgress);
+                f = 255.0f;
+                float lerp = AndroidUtilities.lerp(f3, MessageSendPreview.this.chatListView.getY() + (MessageSendPreview.this.chatListView.getHeight() * (1.0f - MessageSendPreview.this.chatListView.getScaleY())), MessageSendPreview.this.openProgress);
+                float lerp2 = AndroidUtilities.lerp(0.0f, MessageSendPreview.this.chatListView.canScrollVertically(-1) ? 1.0f : 0.0f, MessageSendPreview.this.openProgress);
                 if (MessageSendPreview.this.destCell != null) {
                     height = MessageSendPreview.this.destClipBottom;
                 }
-                float lerp5 = AndroidUtilities.lerp(height, MessageSendPreview.this.chatListView.getY() + MessageSendPreview.this.chatListView.getHeight(), MessageSendPreview.this.openProgress);
-                float lerp6 = AndroidUtilities.lerp(0.0f, MessageSendPreview.this.chatListView.canScrollVertically(1) ? 1.0f : 0.0f, MessageSendPreview.this.openProgress);
-                final float f8 = f3;
-                float f9 = f2;
-                canvas.saveLayerAlpha(0.0f, lerp3 + 1.0f, getWidth(), lerp5 - 1.0f, NotificationCenter.didReceiveSmsCode, 31);
+                float lerp3 = AndroidUtilities.lerp(height, MessageSendPreview.this.chatListView.getY() + MessageSendPreview.this.chatListView.getHeight(), MessageSendPreview.this.openProgress);
+                float lerp4 = AndroidUtilities.lerp(0.0f, MessageSendPreview.this.chatListView.canScrollVertically(1) ? 1.0f : 0.0f, MessageSendPreview.this.openProgress);
+                final float f7 = f2;
+                float f8 = y;
+                canvas.saveLayerAlpha(0.0f, lerp + 1.0f, getWidth(), lerp3 - 1.0f, NotificationCenter.didReceiveSmsCode, 31);
                 if (MessageSendPreview.this.editText != null) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f7) * 255.0f), 31);
-                    canvas.translate(f, f9);
-                    canvas.translate((-MessageSendPreview.this.editText.getX()) - MessageSendPreview.this.editText.getPaddingLeft(), ((-MessageSendPreview.this.editText.getY()) - MessageSendPreview.this.editText.getPaddingTop()) + MessageSendPreview.this.editText.getScrollY());
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f6) * 255.0f), 31);
+                    canvas2.translate(f5, f8);
+                    canvas2.translate((-MessageSendPreview.this.editText.getX()) - MessageSendPreview.this.editText.getPaddingLeft(), ((-MessageSendPreview.this.editText.getY()) - MessageSendPreview.this.editText.getPaddingTop()) + MessageSendPreview.this.editText.getScrollY());
                     float alpha = MessageSendPreview.this.editText.getAlpha();
                     MessageSendPreview.this.editText.setAlpha(1.0f);
                     if (MessageSendPreview.this.openProgress >= 0.001f) {
-                        f5 = alpha;
+                        f4 = alpha;
                     } else if (MessageSendPreview.this.drawEditTextBackground == null) {
-                        f5 = alpha;
+                        f4 = alpha;
                         MessageSendPreview.this.editTextBackgroundPaint.setColor(Theme.getColor(Theme.key_chat_messagePanelBackground, this.val$resourcesProvider));
                         MessageSendPreview.this.editTextBackgroundPaint.setAlpha((int) (MessageSendPreview.this.editTextBackgroundPaint.getAlpha() * (1.0f - (MessageSendPreview.this.openProgress / 0.1f))));
-                        canvas.drawRect(MessageSendPreview.this.editText.getPaddingLeft(), MessageSendPreview.this.editText.getY(), ((MessageSendPreview.this.editText.getX() + MessageSendPreview.this.editText.getPaddingLeft()) + MessageSendPreview.this.editText.getWidth()) - MessageSendPreview.this.editText.getPaddingRight(), MessageSendPreview.this.editText.getHeight() + MessageSendPreview.this.editText.getY(), MessageSendPreview.this.editTextBackgroundPaint);
+                        canvas2.drawRect(MessageSendPreview.this.editText.getPaddingLeft(), MessageSendPreview.this.editText.getY(), ((MessageSendPreview.this.editText.getX() + MessageSendPreview.this.editText.getPaddingLeft()) + MessageSendPreview.this.editText.getWidth()) - MessageSendPreview.this.editText.getPaddingRight(), MessageSendPreview.this.editText.getY() + MessageSendPreview.this.editText.getHeight(), MessageSendPreview.this.editTextBackgroundPaint);
                     } else {
-                        canvas.save();
-                        canvas.translate(0.0f, MessageSendPreview.this.editText.getY());
-                        f5 = alpha;
-                        canvas.saveLayerAlpha(MessageSendPreview.this.editText.getPaddingLeft() + MessageSendPreview.this.editText.getX(), 0.0f, ((MessageSendPreview.this.editText.getX() + MessageSendPreview.this.editText.getPaddingLeft()) + MessageSendPreview.this.editText.getWidth()) - MessageSendPreview.this.editText.getPaddingRight(), MessageSendPreview.this.editText.getHeight(), (int) ((1.0f - (MessageSendPreview.this.openProgress / 0.1f)) * 255.0f), 31);
-                        MessageSendPreview.this.drawEditTextBackground.run(canvas);
-                        canvas.restore();
-                        canvas.restore();
+                        canvas2.save();
+                        canvas2.translate(0.0f, MessageSendPreview.this.editText.getY());
+                        f4 = alpha;
+                        canvas2.saveLayerAlpha(MessageSendPreview.this.editText.getX() + MessageSendPreview.this.editText.getPaddingLeft(), 0.0f, ((MessageSendPreview.this.editText.getX() + MessageSendPreview.this.editText.getPaddingLeft()) + MessageSendPreview.this.editText.getWidth()) - MessageSendPreview.this.editText.getPaddingRight(), MessageSendPreview.this.editText.getHeight(), (int) ((1.0f - (MessageSendPreview.this.openProgress / 0.1f)) * 255.0f), 31);
+                        MessageSendPreview.this.drawEditTextBackground.run(canvas2);
+                        canvas2.restore();
+                        canvas2.restore();
                     }
                     if (MessageSendPreview.this.drawEditText != null) {
-                        MessageSendPreview.this.drawEditText.run(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.MessageSendPreview$2$$ExternalSyntheticLambda0
+                        MessageSendPreview.this.drawEditText.run(canvas2, new Utilities.Callback0Return() { // from class: org.telegram.ui.MessageSendPreview$2$$ExternalSyntheticLambda0
                             @Override // org.telegram.messenger.Utilities.Callback0Return
                             public final Object run() {
-                                Boolean lambda$dispatchDraw$0;
-                                lambda$dispatchDraw$0 = MessageSendPreview.2.this.lambda$dispatchDraw$0(canvas, f8);
-                                return lambda$dispatchDraw$0;
+                                return MessageSendPreview.2.$r8$lambda$bUhhqt52v92mqfIlEmS-TKg8vBs(MessageSendPreview.2.this, canvas2, f7);
                             }
                         });
                     }
-                    MessageSendPreview.this.editText.setAlpha(f5);
-                    canvas.restore();
+                    MessageSendPreview.this.editText.setAlpha(f4);
+                    canvas2.restore();
+                } else {
+                    canvas2 = canvas;
                 }
                 MessageSendPreview.this.mainMessageCell.getTransitionParams().ignoreAlpha = true;
                 if (MessageSendPreview.this.destCell != null) {
@@ -1473,12 +1468,12 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     iArr[0] = iArr2[0];
                     iArr[c2] = iArr2[c2];
                     this.chatListViewTy = translationY;
-                    float lerp7 = AndroidUtilities.lerp(MessageSendPreview.this.chatListView.getX() + MessageSendPreview.this.mainMessageCell.getX(), this.destCellPos[0], 1.0f - MessageSendPreview.this.openProgress);
-                    float lerp8 = AndroidUtilities.lerp(MessageSendPreview.this.chatListView.getY() + MessageSendPreview.this.mainMessageCell.getY(), this.destCellPos[1], 1.0f - MessageSendPreview.this.openProgress);
-                    canvas.save();
-                    canvas.translate(lerp7, lerp8);
-                    float lerp9 = AndroidUtilities.lerp(1.0f, MessageSendPreview.this.chatListView.getScaleX(), MessageSendPreview.this.openProgress);
-                    canvas.scale(lerp9, lerp9, (-MessageSendPreview.this.mainMessageCell.getX()) + MessageSendPreview.this.chatListView.getWidth(), (-MessageSendPreview.this.mainMessageCell.getY()) + MessageSendPreview.this.chatListView.getHeight());
+                    float lerp5 = AndroidUtilities.lerp(MessageSendPreview.this.chatListView.getX() + MessageSendPreview.this.mainMessageCell.getX(), this.destCellPos[0], 1.0f - MessageSendPreview.this.openProgress);
+                    float lerp6 = AndroidUtilities.lerp(MessageSendPreview.this.chatListView.getY() + MessageSendPreview.this.mainMessageCell.getY(), this.destCellPos[1], 1.0f - MessageSendPreview.this.openProgress);
+                    canvas2.save();
+                    canvas2.translate(lerp5, lerp6);
+                    float lerp7 = AndroidUtilities.lerp(1.0f, MessageSendPreview.this.chatListView.getScaleX(), MessageSendPreview.this.openProgress);
+                    canvas2.scale(lerp7, lerp7, (-MessageSendPreview.this.mainMessageCell.getX()) + MessageSendPreview.this.chatListView.getWidth(), (-MessageSendPreview.this.mainMessageCell.getY()) + MessageSendPreview.this.chatListView.getHeight());
                     MessageSendPreview.this.mainMessageCell.getTransitionParams().animateChangeProgress = 1.0f - MessageSendPreview.this.openProgress;
                     MessageSendPreview.this.mainMessageCell.getTransitionParams().deltaLeft = MessageSendPreview.this.cellDelta.left * MessageSendPreview.this.openProgress;
                     MessageSendPreview.this.mainMessageCell.getTransitionParams().deltaTop = MessageSendPreview.this.cellDelta.top * MessageSendPreview.this.openProgress;
@@ -1486,46 +1481,49 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     MessageSendPreview.this.mainMessageCell.getTransitionParams().deltaBottom = MessageSendPreview.this.cellDelta.bottom * MessageSendPreview.this.openProgress;
                     MessageSendPreview.this.mainMessageCell.setTimeAlpha(1.0f - MessageSendPreview.this.openProgress);
                     if (MessageSendPreview.this.mainMessageCell.drawBackgroundInParent()) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, MessageSendPreview.this.destCell.getWidth(), MessageSendPreview.this.destCell.getHeight(), (int) (MessageSendPreview.this.openProgress * 255.0f), 31);
-                        canvas.translate(0.0f, MessageSendPreview.this.mainMessageCell.getPaddingTop());
-                        MessageSendPreview.this.mainMessageCell.drawBackgroundInternal(canvas, true);
-                        canvas.restore();
-                        canvas.saveLayerAlpha(0.0f, 0.0f, MessageSendPreview.this.destCell.getWidth(), MessageSendPreview.this.destCell.getHeight(), (int) ((1.0f - MessageSendPreview.this.openProgress) * 255.0f), 31);
-                        canvas.translate(0.0f, MessageSendPreview.this.destCell.getPaddingTop());
-                        MessageSendPreview.this.destCell.drawBackgroundInternal(canvas, true);
-                        canvas.restore();
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, MessageSendPreview.this.destCell.getWidth(), MessageSendPreview.this.destCell.getHeight(), (int) (MessageSendPreview.this.openProgress * 255.0f), 31);
+                        canvas2.translate(0.0f, MessageSendPreview.this.mainMessageCell.getPaddingTop());
+                        MessageSendPreview.this.mainMessageCell.drawBackgroundInternal(canvas2, true);
+                        canvas2.restore();
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, MessageSendPreview.this.destCell.getWidth(), MessageSendPreview.this.destCell.getHeight(), (int) ((1.0f - MessageSendPreview.this.openProgress) * 255.0f), 31);
+                        canvas2.translate(0.0f, MessageSendPreview.this.destCell.getPaddingTop());
+                        MessageSendPreview.this.destCell.drawBackgroundInternal(canvas2, true);
+                        canvas2.restore();
                     }
-                    MessageSendPreview.this.mainMessageCell.draw(canvas);
+                    MessageSendPreview.this.mainMessageCell.draw(canvas2);
                     if (MessageSendPreview.this.mainMessageCell.getTransitionParams().animateBackgroundBoundsInner) {
-                        MessageSendPreview.this.mainMessageCell.drawNamesLayout(canvas, 1.0f);
-                        MessageSendPreview.this.mainMessageCell.drawTime(canvas, 1.0f - MessageSendPreview.this.openProgress, true);
+                        MessageSendPreview.this.mainMessageCell.drawNamesLayout(canvas2, 1.0f);
+                        MessageSendPreview.this.mainMessageCell.drawTime(canvas2, 1.0f - MessageSendPreview.this.openProgress, true);
                     }
-                    canvas.restore();
+                    canvas2.restore();
                 } else {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f7 * 255.0f), 31);
-                    canvas.translate(f, f9);
-                    canvas.translate(-imageX, -imageY);
-                    float lerp10 = AndroidUtilities.lerp(1.0f, MessageSendPreview.this.chatListView.getScaleX(), MessageSendPreview.this.openProgress);
-                    canvas.scale(lerp10, lerp10, (-MessageSendPreview.this.mainMessageCell.getX()) + MessageSendPreview.this.chatListView.getWidth(), (-MessageSendPreview.this.mainMessageCell.getY()) + MessageSendPreview.this.chatListView.getHeight());
-                    float f10 = f8 / textSize;
-                    canvas.scale(f10, f10, imageX, imageY);
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f6 * 255.0f), 31);
+                    canvas2.translate(f5, f8);
+                    canvas2.translate(-imageX, -imageY);
+                    float lerp8 = AndroidUtilities.lerp(1.0f, MessageSendPreview.this.chatListView.getScaleX(), MessageSendPreview.this.openProgress);
+                    canvas2.scale(lerp8, lerp8, (-MessageSendPreview.this.mainMessageCell.getX()) + MessageSendPreview.this.chatListView.getWidth(), (-MessageSendPreview.this.mainMessageCell.getY()) + MessageSendPreview.this.chatListView.getHeight());
+                    float f9 = f7 / textSize;
+                    canvas2.scale(f9, f9, imageX, imageY);
                     if (MessageSendPreview.this.mainMessageCell.drawBackgroundInParent()) {
-                        canvas.save();
-                        canvas.translate(0.0f, MessageSendPreview.this.mainMessageCell.getPaddingTop());
-                        MessageSendPreview.this.mainMessageCell.drawBackgroundInternal(canvas, true);
-                        canvas.restore();
+                        canvas2.save();
+                        canvas2.translate(0.0f, MessageSendPreview.this.mainMessageCell.getPaddingTop());
+                        MessageSendPreview.this.mainMessageCell.drawBackgroundInternal(canvas2, true);
+                        canvas2.restore();
                     }
-                    MessageSendPreview.this.mainMessageCell.draw(canvas);
-                    canvas.restore();
+                    MessageSendPreview.this.mainMessageCell.draw(canvas2);
+                    canvas2.restore();
                 }
-                canvas.save();
+                canvas2.save();
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(0.0f, lerp3, getWidth(), AndroidUtilities.dp(14.0f) + lerp3);
-                this.clip.draw(canvas, rectF, true, lerp4);
-                rectF.set(0.0f, lerp5 - AndroidUtilities.dp(14.0f), getWidth(), lerp5);
-                this.clip.draw(canvas, rectF, false, lerp6);
-                canvas.restore();
-                canvas.restore();
+                rectF.set(0.0f, lerp, getWidth(), AndroidUtilities.dp(14.0f) + lerp);
+                this.clip.draw(canvas2, rectF, true, lerp2);
+                rectF.set(0.0f, lerp3 - AndroidUtilities.dp(14.0f), getWidth(), lerp3);
+                this.clip.draw(canvas2, rectF, false, lerp4);
+                canvas2.restore();
+                canvas2.restore();
+            } else {
+                canvas2 = canvas;
+                f = 255.0f;
             }
             if (MessageSendPreview.this.openInProgress) {
                 if (MessageSendPreview.this.firstOpenFrame2) {
@@ -1537,16 +1535,16 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 } else {
                     c = 0;
                 }
-                canvas.save();
-                canvas.translate(AndroidUtilities.lerp((MessageSendPreview.this.sendButtonInitialPosition[c] - (MessageSendPreview.this.sendButton.getWidth() - MessageSendPreview.this.sendButton.width(MessageSendPreview.this.sendButton.getHeight()))) + AndroidUtilities.dp(6.0f), MessageSendPreview.this.sendButton.getX(), MessageSendPreview.this.openProgress), AndroidUtilities.lerp(MessageSendPreview.this.sendButtonInitialPosition[1], MessageSendPreview.this.sendButton.getY(), MessageSendPreview.this.openProgress));
+                canvas2.save();
+                canvas2.translate(AndroidUtilities.lerp((MessageSendPreview.this.sendButtonInitialPosition[c] - (MessageSendPreview.this.sendButton.getWidth() - MessageSendPreview.this.sendButton.width(MessageSendPreview.this.sendButton.getHeight()))) + AndroidUtilities.dp(6.0f), MessageSendPreview.this.sendButton.getX(), MessageSendPreview.this.openProgress), AndroidUtilities.lerp(MessageSendPreview.this.sendButtonInitialPosition[1], MessageSendPreview.this.sendButton.getY(), MessageSendPreview.this.openProgress));
                 if (MessageSendPreview.this.closing && MessageSendPreview.this.sent) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, MessageSendPreview.this.sendButton.getWidth(), MessageSendPreview.this.sendButton.getHeight(), (int) (MessageSendPreview.this.openProgress * 255.0f), 31);
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, MessageSendPreview.this.sendButton.getWidth(), MessageSendPreview.this.sendButton.getHeight(), (int) (MessageSendPreview.this.openProgress * f), 31);
                 }
-                MessageSendPreview.this.sendButton.draw(canvas);
+                MessageSendPreview.this.sendButton.draw(canvas2);
                 if (MessageSendPreview.this.closing && MessageSendPreview.this.sent) {
-                    canvas.restore();
+                    canvas2.restore();
                 }
-                canvas.restore();
+                canvas2.restore();
             }
             super.dispatchDraw(canvas);
             if (MessageSendPreview.this.cameraRect != null) {
@@ -1561,15 +1559,15 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 float height2 = rectF2.height() / 2.0f;
                 this.backgroundPaint.setColor(503316480);
                 this.backgroundPaint.setAlpha((int) (MessageSendPreview.this.effectDrawable.isNotEmpty() * 30.0f * MessageSendPreview.this.openProgress));
-                canvas.drawRoundRect(rectF2, height2, height2, this.backgroundPaint);
+                canvas2.drawRoundRect(rectF2, height2, height2, this.backgroundPaint);
                 MessageSendPreview.this.effectDrawable.setBounds(rect);
-                MessageSendPreview.this.effectDrawable.setAlpha((int) (MessageSendPreview.this.openProgress * 255.0f));
-                MessageSendPreview.this.effectDrawable.draw(canvas);
+                MessageSendPreview.this.effectDrawable.setAlpha((int) (MessageSendPreview.this.openProgress * f));
+                MessageSendPreview.this.effectDrawable.draw(canvas2);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Boolean lambda$dispatchDraw$0(Canvas canvas, float f) {
+        public static /* synthetic */ Boolean $r8$lambda$bUhhqt52v92mqfIlEmS-TKg8vBs(2 r3, Canvas canvas, float f) {
+            r3.getClass();
             canvas.save();
             canvas.translate(MessageSendPreview.this.editText.getX(), MessageSendPreview.this.editText.getY() - MessageSendPreview.this.editText.getScrollY());
             float textSize = f / MessageSendPreview.this.editText.getTextSize();
@@ -1591,16 +1589,6 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             }
             return super.drawChild(canvas, view, j);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
-        onBackPressed();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view, int i) {
-        onBackPressed();
     }
 
     class 6 extends ChatListItemAnimator {
@@ -1637,16 +1625,15 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.MessageSendPreview$6$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessageSendPreview.6.this.lambda$onAllAnimationsDone$0();
+                    MessageSendPreview.6.$r8$lambda$o2mTaLDxXUbmAwNXb9JQqudAJjE(MessageSendPreview.6.this);
                 }
             };
             this.finishRunnable = runnable2;
             AndroidUtilities.runOnUIThread(runnable2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAllAnimationsDone$0() {
-            this.finishRunnable = null;
+        public static /* synthetic */ void $r8$lambda$o2mTaLDxXUbmAwNXb9JQqudAJjE(6 r1) {
+            r1.finishRunnable = null;
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("chatItemAnimator enable notifications");
             }
@@ -1662,16 +1649,15 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.MessageSendPreview$6$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessageSendPreview.6.this.lambda$endAnimations$1();
+                    MessageSendPreview.6.$r8$lambda$94Q2JwuOmuIrPyIeqktO1P3cSY0(MessageSendPreview.6.this);
                 }
             };
             this.finishRunnable = runnable2;
             AndroidUtilities.runOnUIThread(runnable2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$endAnimations$1() {
-            this.finishRunnable = null;
+        public static /* synthetic */ void $r8$lambda$94Q2JwuOmuIrPyIeqktO1P3cSY0(6 r1) {
+            r1.finishRunnable = null;
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("chatItemAnimator enable notifications");
             }
@@ -1944,7 +1930,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         new KeyboardNotifier(this.windowView, new Utilities.Callback() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                MessageSendPreview.this.lambda$allowEffectSelector$6((Integer) obj);
+                MessageSendPreview.$r8$lambda$biOAAfxzI0ouwoX663buQk45eq0(MessageSendPreview.this, (Integer) obj);
             }
         });
     }
@@ -1981,9 +1967,9 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             this.val$fragment = baseFragment;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:77:0x01be  */
-        /* JADX WARN: Removed duplicated region for block: B:84:0x01f0  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x01c0  */
+        /* JADX WARN: Removed duplicated region for block: B:77:0x01c3  */
+        /* JADX WARN: Removed duplicated region for block: B:84:0x01f5  */
+        /* JADX WARN: Removed duplicated region for block: B:86:0x01c5  */
         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1993,6 +1979,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             ReactionsLayoutInBubble.VisibleReaction visibleReaction2;
             boolean z4;
             long j;
+            long j2;
             ReactionsLayoutInBubble.VisibleReaction visibleReaction3 = visibleReaction;
             if (visibleReaction3 == null || MessageSendPreview.this.effectSelector == null) {
                 return;
@@ -2004,21 +1991,23 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     return;
                 }
                 TLRPC.Message message = messageObject.messageOwner;
-                long j2 = message.effect;
-                long j3 = visibleReaction3.effectId;
-                if (j3 == j2) {
+                long j3 = message.effect;
+                long j4 = visibleReaction3.effectId;
+                if (j4 == j3) {
                     message.flags2 &= -5;
                     message.effect = 0L;
                     z4 = true;
                 } else {
                     message.flags2 |= 4;
-                    message.effect = j3;
+                    message.effect = j4;
                     z4 = false;
                 }
                 if (z5) {
-                    j = j2;
+                    j = 0;
+                    j2 = j3;
                 } else {
-                    j = j2;
+                    j = 0;
+                    j2 = j3;
                     MessageSendPreview.this.mainMessageCell.setMessageObject(messageObject, MessageSendPreview.this.getValidGroupedMessage(messageObject), MessageSendPreview.this.messageObjects.size() > 1, false, false);
                     MessageSendPreview.this.effectSelector.setSelectedReactionAnimated(z4 ? null : visibleReaction3);
                     if (MessageSendPreview.this.effectSelector.getReactionsWindow() != null && MessageSendPreview.this.effectSelector.getReactionsWindow().getSelectAnimatedEmojiDialog() != null) {
@@ -2036,8 +2025,8 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 }
                 if (z5) {
                     TLRPC.Message message2 = messageObject.messageOwner;
-                    message2.effect = j;
-                    if (j == 0) {
+                    message2.effect = j2;
+                    if (j2 == j) {
                         message2.flags2 &= -5;
                     }
                 }
@@ -2105,15 +2094,14 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 of.createSimpleBulletin(i, AndroidUtilities.premiumText(string, new Runnable() { // from class: org.telegram.ui.MessageSendPreview$15$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MessageSendPreview.15.lambda$onReactionClicked$0(BaseFragment.this);
+                        MessageSendPreview.15.$r8$lambda$tyWKze7VD88usEKRXkm81_hG0mQ(BaseFragment.this);
                     }
                 })).show();
             }
             MessageSendPreview.this.effectsView.invalidate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onReactionClicked$0(BaseFragment baseFragment) {
+        public static /* synthetic */ void $r8$lambda$tyWKze7VD88usEKRXkm81_hG0mQ(BaseFragment baseFragment) {
             BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
             bottomSheetParams.transitionFromLeft = true;
             bottomSheetParams.allowNestedScroll = false;
@@ -2121,11 +2109,11 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$allowEffectSelector$6(Integer num) {
-        boolean z = num.intValue() - this.insets.bottom > AndroidUtilities.dp(20.0f);
-        this.keyboardVisible = z;
-        this.effectSelectorContainer.animate().translationY((z ? Math.min(this.effectSelectorContainerY, (this.windowView.getHeight() - num.intValue()) - this.effectSelectorContainer.getMeasuredHeight()) : this.effectSelectorContainerY) - this.effectSelectorContainer.getTop()).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
+    public static /* synthetic */ void $r8$lambda$biOAAfxzI0ouwoX663buQk45eq0(MessageSendPreview messageSendPreview, Integer num) {
+        messageSendPreview.getClass();
+        boolean z = num.intValue() - messageSendPreview.insets.bottom > AndroidUtilities.dp(20.0f);
+        messageSendPreview.keyboardVisible = z;
+        messageSendPreview.effectSelectorContainer.animate().translationY((z ? Math.min(messageSendPreview.effectSelectorContainerY, (messageSendPreview.windowView.getHeight() - num.intValue()) - messageSendPreview.effectSelectorContainer.getMeasuredHeight()) : messageSendPreview.effectSelectorContainerY) - messageSendPreview.effectSelectorContainer.getTop()).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
     }
 
     public void setEffectId(long j) {
@@ -2373,31 +2361,26 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSendPreview.this.lambda$dismissInto$8();
+                MessageSendPreview.$r8$lambda$PH_VZf8olP8pTEvRLyUAX4iMqCA(MessageSendPreview.this);
             }
         });
         this.windowView.invalidate();
         afterDismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismissInto$8() {
+    public static /* synthetic */ void $r8$lambda$PH_VZf8olP8pTEvRLyUAX4iMqCA(final MessageSendPreview messageSendPreview) {
+        messageSendPreview.getClass();
         SpoilerEffect2.pause(0, false);
-        SpoilerEffect2 spoilerEffect2 = this.spoilerEffect2;
+        SpoilerEffect2 spoilerEffect2 = messageSendPreview.spoilerEffect2;
         if (spoilerEffect2 != null) {
-            spoilerEffect2.detach(this.windowView);
+            spoilerEffect2.detach(messageSendPreview.windowView);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSendPreview.this.lambda$dismissInto$7();
+                super/*android.app.Dialog*/.dismiss();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismissInto$7() {
-        super.dismiss();
     }
 
     public void dismiss(boolean z) {
@@ -2436,31 +2419,26 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSendPreview.this.lambda$dismiss$10();
+                MessageSendPreview.$r8$lambda$8R2SunroV6P_2DOQ9Q1LrXde0Dw(MessageSendPreview.this);
             }
         });
         this.windowView.invalidate();
         afterDismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$10() {
+    public static /* synthetic */ void $r8$lambda$8R2SunroV6P_2DOQ9Q1LrXde0Dw(final MessageSendPreview messageSendPreview) {
+        messageSendPreview.getClass();
         SpoilerEffect2.pause(0, false);
-        SpoilerEffect2 spoilerEffect2 = this.spoilerEffect2;
+        SpoilerEffect2 spoilerEffect2 = messageSendPreview.spoilerEffect2;
         if (spoilerEffect2 != null) {
-            spoilerEffect2.detach(this.windowView);
+            spoilerEffect2.detach(messageSendPreview.windowView);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                MessageSendPreview.this.lambda$dismiss$9();
+                super/*android.app.Dialog*/.dismiss();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$9() {
-        super.dismiss();
     }
 
     private void afterDismiss() {
@@ -2496,7 +2474,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                MessageSendPreview.this.lambda$animateOpenTo$11(z2, valueAnimator2);
+                MessageSendPreview.$r8$lambda$x6l3tzg3Lz31sLqlCWToHeaq8RM(MessageSendPreview.this, z2, valueAnimator2);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.MessageSendPreview.16
@@ -2546,18 +2524,18 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         this.openAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$11(boolean z, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$x6l3tzg3Lz31sLqlCWToHeaq8RM(MessageSendPreview messageSendPreview, boolean z, ValueAnimator valueAnimator) {
         View view;
+        messageSendPreview.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.openProgress = floatValue;
-        this.effectsView.setAlpha(floatValue);
-        this.chatListView.setAlpha(this.openProgress);
-        if (!z && (view = this.optionsView) != null) {
-            view.setAlpha(this.openProgress);
+        messageSendPreview.openProgress = floatValue;
+        messageSendPreview.effectsView.setAlpha(floatValue);
+        messageSendPreview.chatListView.setAlpha(messageSendPreview.openProgress);
+        if (!z && (view = messageSendPreview.optionsView) != null) {
+            view.setAlpha(messageSendPreview.openProgress);
         }
-        this.windowView.invalidate();
-        this.containerView.invalidate();
+        messageSendPreview.windowView.invalidate();
+        messageSendPreview.containerView.invalidate();
     }
 
     private void prepareBlur(final View view) {
@@ -2572,31 +2550,30 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.MessageSendPreview$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                MessageSendPreview.this.lambda$prepareBlur$12(alpha, view, (Bitmap) obj, (Bitmap) obj2);
+                MessageSendPreview.$r8$lambda$YZcBwsRtILWtNQB1IH8DB_vyIfU(MessageSendPreview.this, alpha, view, (Bitmap) obj, (Bitmap) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$12(float f, View view, Bitmap bitmap, Bitmap bitmap2) {
-        ChatActivityEnterView.SendButton sendButton = this.anchorSendButton;
+    public static /* synthetic */ void $r8$lambda$YZcBwsRtILWtNQB1IH8DB_vyIfU(MessageSendPreview messageSendPreview, float f, View view, Bitmap bitmap, Bitmap bitmap2) {
+        ChatActivityEnterView.SendButton sendButton = messageSendPreview.anchorSendButton;
         if (sendButton != null) {
             sendButton.setAlpha(f);
         }
         if (view != null) {
             view.setVisibility(0);
         }
-        this.blurBitmap = bitmap;
+        messageSendPreview.blurBitmap = bitmap;
         Paint paint = new Paint(1);
-        this.blurBitmapPaint = paint;
-        Bitmap bitmap3 = this.blurBitmap;
+        messageSendPreview.blurBitmapPaint = paint;
+        Bitmap bitmap3 = messageSendPreview.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);
-        this.blurBitmapShader = bitmapShader;
+        messageSendPreview.blurBitmapShader = bitmapShader;
         paint.setShader(bitmapShader);
-        this.blurMatrix = new Matrix();
-        this.iBlur3SourceBitmap.setBitmap(bitmap2);
-        checkBitmapMatrix();
+        messageSendPreview.blurMatrix = new Matrix();
+        messageSendPreview.iBlur3SourceBitmap.setBitmap(bitmap2);
+        messageSendPreview.checkBitmapMatrix();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -2638,9 +2615,13 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         MessageObject.GroupedMessages validGroupedMessage = getValidGroupedMessage(messageObject);
         if (validGroupedMessage != null) {
             validGroupedMessage.calculate();
-            Iterator<MessageObject> it = validGroupedMessage.messages.iterator();
-            while (it.hasNext()) {
-                changeMessageInternal(it.next());
+            ArrayList<MessageObject> arrayList = validGroupedMessage.messages;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                MessageObject messageObject2 = arrayList.get(i);
+                i++;
+                changeMessageInternal(messageObject2);
             }
             return;
         }

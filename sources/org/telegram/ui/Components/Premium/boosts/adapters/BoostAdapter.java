@@ -55,15 +55,14 @@ public class BoostAdapter extends AdapterWithDiffUtils {
         BoostRepository.loadParticipantsCount(new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.BoostAdapter$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BoostAdapter.this.lambda$new$0((HashMap) obj);
+                BoostAdapter.$r8$lambda$lcFDLf-yq3_4twOSLqgXFGbGA5o(BoostAdapter.this, (HashMap) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(HashMap hashMap) {
-        this.chatsParticipantsCount.clear();
-        this.chatsParticipantsCount.putAll(hashMap);
+    public static /* synthetic */ void $r8$lambda$lcFDLf-yq3_4twOSLqgXFGbGA5o(BoostAdapter boostAdapter, HashMap hashMap) {
+        boostAdapter.chatsParticipantsCount.clear();
+        boostAdapter.chatsParticipantsCount.putAll(hashMap);
     }
 
     public void setItems(TLRPC.Chat chat, List list, RecyclerListView recyclerListView, SlideChooseView.Callback callback, ChatCell.ChatDeleteListener chatDeleteListener, EnterPrizeCell.AfterTextChangedListener afterTextChangedListener) {
@@ -220,6 +219,7 @@ public class BoostAdapter extends AdapterWithDiffUtils {
             this.headerCell = headerCell;
             headerCell.setBoostViaGifsText(this.currentChat);
             this.headerCell.setStars(item.boolValue);
+            return;
         }
         if (itemViewType == 2) {
             ((BoostTypeCell) viewHolder.itemView).setType(item.subType, item.intValue, (TLRPC.User) item.user, item.selectable);

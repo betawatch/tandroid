@@ -30,6 +30,7 @@ public abstract class BlurredFrameLayout extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
         if (SharedConfig.chatBlurEnabled() && this.sizeNotifierFrameLayout != null && this.drawBlur && this.backgroundColor != 0) {
             if (this.backgroundPaint == null) {
                 this.backgroundPaint = new Paint();
@@ -50,12 +51,15 @@ public abstract class BlurredFrameLayout extends FrameLayout {
                         return;
                     }
                 } else {
-                    sizeNotifierFrameLayout.drawBlurRect(canvas, f, this.blurBounds, this.backgroundPaint, this.isTopView);
+                    canvas2 = canvas;
+                    sizeNotifierFrameLayout.drawBlurRect(canvas2, f, this.blurBounds, this.backgroundPaint, this.isTopView);
                     break;
                 }
             }
+        } else {
+            canvas2 = canvas;
         }
-        super.dispatchDraw(canvas);
+        super.dispatchDraw(canvas2);
     }
 
     @Override // android.view.View

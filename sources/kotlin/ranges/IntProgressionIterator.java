@@ -34,9 +34,9 @@ public final class IntProgressionIterator extends IntIterator {
                 throw new NoSuchElementException();
             }
             this.hasNext = false;
-        } else {
-            this.next = this.step + i;
+            return i;
         }
+        this.next = this.step + i;
         return i;
     }
 }

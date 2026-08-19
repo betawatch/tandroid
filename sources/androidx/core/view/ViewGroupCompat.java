@@ -27,9 +27,7 @@ public abstract class ViewGroupCompat {
         view.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: androidx.core.view.ViewGroupCompat$$ExternalSyntheticLambda0
             @Override // android.view.View.OnApplyWindowInsetsListener
             public final WindowInsets onApplyWindowInsets(View view2, WindowInsets windowInsets2) {
-                WindowInsets lambda$dispatchApplyWindowInsets$1;
-                lambda$dispatchApplyWindowInsets$1 = ViewGroupCompat.lambda$dispatchApplyWindowInsets$1(windowInsetsArr, onApplyWindowInsetsListener, view2, windowInsets2);
-                return lambda$dispatchApplyWindowInsets$1;
+                return ViewGroupCompat.$r8$lambda$Lnvt8czxDhWTdEYEcOIJD_YU-AE(windowInsetsArr, onApplyWindowInsetsListener, view2, windowInsets2);
             }
         });
         view.dispatchApplyWindowInsets(windowInsets);
@@ -49,8 +47,7 @@ public abstract class ViewGroupCompat {
         return windowInsetsArr[0];
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsets lambda$dispatchApplyWindowInsets$1(WindowInsets[] windowInsetsArr, View.OnApplyWindowInsetsListener onApplyWindowInsetsListener, View view, WindowInsets windowInsets) {
+    public static /* synthetic */ WindowInsets $r8$lambda$Lnvt8czxDhWTdEYEcOIJD_YU-AE(WindowInsets[] windowInsetsArr, View.OnApplyWindowInsetsListener onApplyWindowInsetsListener, View view, WindowInsets windowInsets) {
         WindowInsets onApplyWindowInsets;
         if (onApplyWindowInsetsListener != null) {
             onApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(view, windowInsets);

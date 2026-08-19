@@ -41,13 +41,13 @@ final class zzbm extends zzbk {
         int i3 = this.limit + this.zzfv;
         this.limit = i3;
         int i4 = i3 - this.zzfw;
-        if (i4 > zzaf) {
-            int i5 = i4 - zzaf;
-            this.zzfv = i5;
-            this.limit = i3 - i5;
-        } else {
+        if (i4 <= zzaf) {
             this.zzfv = 0;
+            return i2;
         }
+        int i5 = i4 - zzaf;
+        this.zzfv = i5;
+        this.limit = i3 - i5;
         return i2;
     }
 }

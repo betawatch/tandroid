@@ -82,11 +82,13 @@ public final class PictureFrame implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || PictureFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && PictureFrame.class == obj.getClass()) {
+            PictureFrame pictureFrame = (PictureFrame) obj;
+            if (this.pictureType == pictureFrame.pictureType && this.mimeType.equals(pictureFrame.mimeType) && this.description.equals(pictureFrame.description) && this.width == pictureFrame.width && this.height == pictureFrame.height && this.depth == pictureFrame.depth && this.colors == pictureFrame.colors && Arrays.equals(this.pictureData, pictureFrame.pictureData)) {
+                return true;
+            }
         }
-        PictureFrame pictureFrame = (PictureFrame) obj;
-        return this.pictureType == pictureFrame.pictureType && this.mimeType.equals(pictureFrame.mimeType) && this.description.equals(pictureFrame.description) && this.width == pictureFrame.width && this.height == pictureFrame.height && this.depth == pictureFrame.depth && this.colors == pictureFrame.colors && Arrays.equals(this.pictureData, pictureFrame.pictureData);
+        return false;
     }
 
     public int hashCode() {

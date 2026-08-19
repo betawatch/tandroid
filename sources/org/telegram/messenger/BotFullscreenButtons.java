@@ -102,7 +102,7 @@ public class BotFullscreenButtons extends View {
         this.hidePreview = new Runnable() { // from class: org.telegram.messenger.BotFullscreenButtons$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                BotFullscreenButtons.this.lambda$new$0();
+                BotFullscreenButtons.this.setPreview(false, true);
             }
         };
         this.start = System.currentTimeMillis();
@@ -133,9 +133,12 @@ public class BotFullscreenButtons extends View {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        float currentWidth;
         float f;
+        float currentWidth;
         float f2;
+        float f3;
+        float f4;
+        float f5;
         WebView webView;
         int width;
         int height;
@@ -168,38 +171,46 @@ public class BotFullscreenButtons extends View {
         float dp4 = AndroidUtilities.dp(15.0f);
         Path.Direction direction = Path.Direction.CW;
         path.addRoundRect(rectF9, dp3, dp4, direction);
-        float f3 = this.animatedBack.set(this.back);
-        float f4 = this.animatedPreview.set(this.preview);
+        float f6 = this.animatedBack.set(this.back);
+        float f7 = this.animatedPreview.set(this.preview);
         float dp5 = (this.rightMenu.left - AndroidUtilities.dp(18.0f)) - (this.insets.left + AndroidUtilities.dp(38.0f));
         Text text = this.previewText;
         if (text == null) {
             currentWidth = 0.0f;
+            f = 18.0f;
         } else {
+            f = 18.0f;
             currentWidth = text.getCurrentWidth() + AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f);
         }
         float min = Math.min(dp5, currentWidth);
-        this.leftMenu.set(this.insets.left + AndroidUtilities.dp(8.0f), this.insets.top + AndroidUtilities.dp(8.0f), this.insets.left + AndroidUtilities.dp(38.0f) + AndroidUtilities.lerp(AndroidUtilities.lerp(this.closeText.getCurrentWidth(), this.backText.getCurrentWidth(), f3) + AndroidUtilities.dp(12.0f), min, f4), this.insets.top + AndroidUtilities.dp(38.0f));
+        this.leftMenu.set(this.insets.left + AndroidUtilities.dp(8.0f), this.insets.top + AndroidUtilities.dp(8.0f), this.insets.left + AndroidUtilities.dp(38.0f) + AndroidUtilities.lerp(AndroidUtilities.lerp(this.closeText.getCurrentWidth(), this.backText.getCurrentWidth(), f6) + AndroidUtilities.dp(12.0f), min, f7), this.insets.top + AndroidUtilities.dp(38.0f));
         RectF rectF10 = this.closeRect;
         RectF rectF11 = this.leftMenu;
-        float f5 = rectF11.left;
-        rectF10.set(f5, rectF11.top, AndroidUtilities.dp(30.0f) + f5, this.leftMenu.bottom);
+        float f8 = rectF11.left;
+        rectF10.set(f8, rectF11.top, AndroidUtilities.dp(30.0f) + f8, this.leftMenu.bottom);
         this.closeRectArea.set(this.closeRect);
-        this.closeRectArea.right = AndroidUtilities.lerp(this.leftMenu.right, this.closeRect.left + AndroidUtilities.dp(30.0f), f4);
+        this.closeRectArea.right = AndroidUtilities.lerp(this.leftMenu.right, this.closeRect.left + AndroidUtilities.dp(30.0f), f7);
         this.closeRectArea.inset(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(8.0f));
         this.backgroundPath.addRoundRect(this.leftMenu, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), direction);
         if (this.parentRenderNode != null && Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && ((webView = this.webView) == null || webView.getLayerType() == 2)) {
             if (this.blurNode == null) {
                 RenderNode m = BotFullscreenButtons$$ExternalSyntheticApiModelOutline9.m("bot_fullscreen_blur");
                 this.blurNode = m;
-                createBlurEffect = RenderEffect.createBlurEffect(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), Shader.TileMode.CLAMP);
+                float dp6 = AndroidUtilities.dp(f);
+                float dp7 = AndroidUtilities.dp(f);
+                f2 = 16.0f;
+                createBlurEffect = RenderEffect.createBlurEffect(dp6, dp7, Shader.TileMode.CLAMP);
                 m.setRenderEffect(createBlurEffect);
+            } else {
+                f2 = 16.0f;
             }
             RenderNode m2 = BotFullscreenButtons$$ExternalSyntheticApiModelOutline2.m(this.parentRenderNode);
             width = m2.getWidth();
-            int max = Math.max(1, width - AndroidUtilities.dp(16.0f));
-            float dp6 = this.insets.top + AndroidUtilities.dp(46.0f);
+            int max = Math.max(1, width - AndroidUtilities.dp(f2));
+            f3 = 12.0f;
+            float dp8 = this.insets.top + AndroidUtilities.dp(46.0f);
             height = m2.getHeight();
-            this.blurNode.setPosition(0, 0, max, Math.max(1, (int) Math.min(dp6, height)));
+            this.blurNode.setPosition(0, 0, max, Math.max(1, (int) Math.min(dp8, height)));
             beginRecording = this.blurNode.beginRecording();
             beginRecording.translate(-AndroidUtilities.dp(8.0f), 0.0f);
             beginRecording.drawRenderNode(m2);
@@ -214,6 +225,8 @@ public class BotFullscreenButtons extends View {
             canvas.drawPaint(this.backgroundPaint);
             canvas.restore();
         } else {
+            f2 = 16.0f;
+            f3 = 12.0f;
             this.backgroundPaint.setColor(Theme.multAlpha(-16777216, 0.35f));
             canvas.drawPath(this.backgroundPath, this.backgroundPaint);
         }
@@ -221,98 +234,105 @@ public class BotFullscreenButtons extends View {
         canvas.translate(this.closeRect.centerX(), this.closeRect.centerY());
         float scale = this.closeBounce.getScale(0.1f);
         canvas.scale(scale, scale);
-        canvas.translate((-AndroidUtilities.dp(6.5f)) * f3, 0.0f);
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(5.5f), f3);
-        float f6 = -lerp;
-        canvas.drawLine(AndroidUtilities.lerp(f6, 0.0f, f3), AndroidUtilities.lerp(f6, 0.0f, f3), lerp, lerp, this.iconStrokePaint);
-        canvas.drawLine(AndroidUtilities.lerp(f6, 0.0f, f3), AndroidUtilities.lerp(lerp, 0.0f, f3), lerp, f6, this.iconStrokePaint);
-        if (f3 > 0.0f) {
-            canvas.drawLine(0.0f, 0.0f, AndroidUtilities.dp(11.6f) * f3, 0.0f, this.iconStrokePaint);
+        canvas.translate((-AndroidUtilities.dp(6.5f)) * f6, 0.0f);
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(5.5f), f6);
+        float f9 = -lerp;
+        canvas.drawLine(AndroidUtilities.lerp(f9, 0.0f, f6), AndroidUtilities.lerp(f9, 0.0f, f6), lerp, lerp, this.iconStrokePaint);
+        canvas.drawLine(AndroidUtilities.lerp(f9, 0.0f, f6), AndroidUtilities.lerp(lerp, 0.0f, f6), lerp, f9, this.iconStrokePaint);
+        if (f6 > 0.0f) {
+            canvas.drawLine(0.0f, 0.0f, AndroidUtilities.dp(11.6f) * f6, 0.0f, this.iconStrokePaint);
         }
         canvas.restore();
-        float dp7 = (this.leftMenu.left + AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(10.0f);
+        float dp9 = (this.leftMenu.left + AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(10.0f);
         RectF rectF12 = this.leftMenu;
-        canvas.saveLayerAlpha(dp7, rectF12.top, rectF12.right, rectF12.bottom, NotificationCenter.didReceiveSmsCode, 31);
-        if (f4 <= 0.0f || this.previewText == null) {
-            f = 1.0f;
+        float f10 = rectF12.top;
+        float f11 = rectF12.right;
+        float f12 = rectF12.bottom;
+        Canvas canvas2 = canvas;
+        canvas2.saveLayerAlpha(dp9, f10, f11, f12, NotificationCenter.didReceiveSmsCode, 31);
+        if (f7 <= 0.0f || this.previewText == null) {
+            f4 = f7;
+            f5 = 1.0f;
         } else {
-            canvas.save();
-            canvas.translate((this.leftMenu.left + AndroidUtilities.dp(30.0f)) - (min * (1.0f - f4)), this.leftMenu.centerY());
-            f = 1.0f;
-            this.previewText.ellipsize(((this.leftMenu.right - AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f)) - (this.leftMenu.left + AndroidUtilities.dp(30.0f))) + 2.0f).draw(canvas, 0.0f, 0.0f, -1, f4);
-            canvas.translate(this.previewText.getWidth() + AndroidUtilities.dp(5.0f), 0.0f);
-            int dp8 = AndroidUtilities.dp(16.0f);
+            canvas2.save();
+            canvas2.translate((this.leftMenu.left + AndroidUtilities.dp(30.0f)) - ((1.0f - f7) * min), this.leftMenu.centerY());
+            f5 = 1.0f;
+            this.previewText.ellipsize(((this.leftMenu.right - AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f)) - (this.leftMenu.left + AndroidUtilities.dp(30.0f))) + 2.0f).draw(canvas, 0.0f, 0.0f, -1, f7);
+            canvas2 = canvas;
+            f4 = f7;
+            canvas2.translate(this.previewText.getWidth() + AndroidUtilities.dp(5.0f), 0.0f);
+            int dp10 = AndroidUtilities.dp(f2);
             Drawable drawable = this.verifiedBackground;
             if (drawable != null) {
-                drawable.setBounds(0, (-dp8) / 2, dp8, dp8 / 2);
+                drawable.setBounds(0, (-dp10) / 2, dp10, dp10 / 2);
                 this.verifiedBackground.setAlpha((int) (75.0f * f4));
-                this.verifiedBackground.draw(canvas);
+                this.verifiedBackground.draw(canvas2);
             }
             Drawable drawable2 = this.verifiedForeground;
             if (drawable2 != null) {
-                drawable2.setBounds(0, (-dp8) / 2, dp8, dp8 / 2);
+                drawable2.setBounds(0, (-dp10) / 2, dp10, dp10 / 2);
                 this.verifiedForeground.setAlpha((int) (255.0f * f4));
-                this.verifiedForeground.draw(canvas);
+                this.verifiedForeground.draw(canvas2);
             }
             RectF rectF13 = AndroidUtilities.rectTmp;
-            float dp9 = (this.leftMenu.left + AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(10.0f);
+            float dp11 = (this.leftMenu.left + AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(10.0f);
             RectF rectF14 = this.leftMenu;
-            rectF13.set(dp9, rectF14.top, rectF14.left + AndroidUtilities.dp(30.0f), this.leftMenu.bottom);
-            this.previewClip.draw(canvas, rectF13, 2, 1.0f);
-            canvas.restore();
+            rectF13.set(dp11, rectF14.top, rectF14.left + AndroidUtilities.dp(30.0f), this.leftMenu.bottom);
+            this.previewClip.draw(canvas2, rectF13, 2, 1.0f);
+            canvas2.restore();
         }
-        if (f4 < f) {
-            canvas.save();
-            f2 = 0.1f;
+        if (f4 < f5) {
+            canvas2.save();
             float scale2 = this.closeBounce.getScale(0.1f);
-            canvas.scale(scale2, scale2, this.closeRect.centerX(), this.closeRect.centerY());
-            float f7 = f - f3;
-            if (f7 > 0.0f) {
-                this.closeText.draw(canvas, (AndroidUtilities.dp(32.0f) * f4) + ((this.closeRect.left + AndroidUtilities.dp(30.0f)) - (AndroidUtilities.dp(12.0f) * f3)), this.closeRect.centerY(), -1, (f - f4) * f7);
+            canvas2.scale(scale2, scale2, this.closeRect.centerX(), this.closeRect.centerY());
+            float f13 = f5 - f6;
+            if (f13 > 0.0f) {
+                this.closeText.draw(canvas, (AndroidUtilities.dp(32.0f) * f4) + ((this.closeRect.left + AndroidUtilities.dp(30.0f)) - (AndroidUtilities.dp(f3) * f6)), this.closeRect.centerY(), -1, f13 * (f5 - f4));
             }
-            if (f3 > 0.0f) {
-                this.backText.draw(canvas, (AndroidUtilities.dp(32.0f) * f4) + this.closeRect.left + AndroidUtilities.dp(30.0f) + (AndroidUtilities.dp(12.0f) * f7), this.closeRect.centerY(), -1, (f - f4) * f3);
+            if (f6 > 0.0f) {
+                this.backText.draw(canvas, (AndroidUtilities.dp(32.0f) * f4) + this.closeRect.left + AndroidUtilities.dp(30.0f) + (AndroidUtilities.dp(f3) * f13), this.closeRect.centerY(), -1, f6 * (f5 - f4));
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
             }
-            canvas.restore();
-        } else {
-            f2 = 0.1f;
+            canvas2.restore();
         }
+        canvas2.restore();
+        canvas2.save();
+        canvas2.translate(this.collapseRect.centerX() + AndroidUtilities.dp(2.0f), this.collapseRect.centerY());
+        float scale3 = this.collapseBounce.getScale(0.1f);
+        canvas2.scale(scale3, scale3);
+        float dp12 = AndroidUtilities.dp(6.0f);
+        float dp13 = AndroidUtilities.dp(3.0f);
+        float f14 = -dp13;
+        canvas2.drawLine(-dp12, f14, 0.0f, dp13, this.iconStrokePaint);
+        canvas.drawLine(0.0f, dp13, dp12, f14, this.iconStrokePaint);
         canvas.restore();
         canvas.save();
-        canvas.translate(this.collapseRect.centerX() + AndroidUtilities.dp(2.0f), this.collapseRect.centerY());
-        float scale3 = this.collapseBounce.getScale(f2);
-        canvas.scale(scale3, scale3);
-        float dp10 = AndroidUtilities.dp(6.0f);
-        float dp11 = AndroidUtilities.dp(3.0f);
-        float f8 = -dp11;
-        canvas.drawLine(-dp10, f8, 0.0f, dp11, this.iconStrokePaint);
-        canvas.drawLine(0.0f, dp11, dp10, f8, this.iconStrokePaint);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(this.menuRect.centerX() + AndroidUtilities.dp(f), this.menuRect.centerY());
-        float scale4 = this.menuBounce.getScale(f2);
+        canvas.translate(this.menuRect.centerX() + AndroidUtilities.dp(f5), this.menuRect.centerY());
+        float scale4 = this.menuBounce.getScale(0.1f);
         canvas.scale(scale4, scale4);
         canvas.drawCircle(0.0f, -AndroidUtilities.dp(5.0f), AndroidUtilities.dp(1.66f), this.iconPaint);
         canvas.drawCircle(0.0f, 0.0f, AndroidUtilities.dp(1.66f), this.iconPaint);
         canvas.drawCircle(0.0f, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(1.66f), this.iconPaint);
-        float f9 = this.animatedDownloading.set(this.downloading);
-        if (f9 > 0.0f) {
+        float f15 = this.animatedDownloading.set(this.downloading);
+        if (f15 > 0.0f) {
             canvas.translate(-AndroidUtilities.dpf2(8.166f), AndroidUtilities.dpf2(3.5f));
-            float f10 = (f9 * 0.5f) + 0.5f;
-            canvas.scale(f10, f10);
+            float f16 = (f15 * 0.5f) + 0.5f;
+            canvas.scale(f16, f16);
             this.downloadPaint.setColor(Theme.multAlpha(-1, 0.4f));
             canvas.drawPath(this.downloadPath, this.downloadPaint);
             float currentTimeMillis = ((System.currentTimeMillis() - this.start) % 450) / 450.0f;
-            float f11 = 0.5f + currentTimeMillis;
+            float f17 = 0.5f + currentTimeMillis;
             canvas.save();
-            canvas.clipRect(-AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), currentTimeMillis), AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), f11));
-            this.downloadPaint.setColor(Theme.multAlpha(-1, f));
+            canvas.clipRect(-AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), currentTimeMillis), AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), f17));
+            this.downloadPaint.setColor(Theme.multAlpha(-1, f5));
             canvas.drawPath(this.downloadPath, this.downloadPaint);
             canvas.restore();
-            if (f11 > f) {
+            if (f17 > f5) {
                 canvas.save();
-                canvas.clipRect(-AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), 0.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), f11 - f));
-                this.downloadPaint.setColor(Theme.multAlpha(-1, f));
+                canvas.clipRect(-AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), 0.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.lerp(-AndroidUtilities.dpf2(3.5f), AndroidUtilities.dpf2(3.5f), f17 - f5));
+                this.downloadPaint.setColor(Theme.multAlpha(-1, f5));
                 canvas.drawPath(this.downloadPath, this.downloadPaint);
                 canvas.restore();
             }
@@ -338,11 +358,6 @@ public class BotFullscreenButtons extends View {
             this.verifiedBackground = getContext().getResources().getDrawable(R.drawable.verified_area).mutate();
             this.verifiedForeground = getContext().getResources().getDrawable(R.drawable.verified_check).mutate();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        setPreview(false, true);
     }
 
     public void setPreview(boolean z, boolean z2) {

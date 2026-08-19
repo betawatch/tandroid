@@ -172,15 +172,13 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i2, float f, float f2) {
-                SaveToGallerySettingsActivity.this.lambda$createView$2(view, i2, f, f2);
+                SaveToGallerySettingsActivity.$r8$lambda$yXF8xyfHohRhDtsdtUoWWyPWhUo(SaveToGallerySettingsActivity.this, view, i2, f, f2);
             }
         });
         this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public final boolean onItemClick(View view, int i2, float f, float f2) {
-                boolean lambda$createView$5;
-                lambda$createView$5 = SaveToGallerySettingsActivity.this.lambda$createView$5(view, i2, f, f2);
-                return lambda$createView$5;
+                return SaveToGallerySettingsActivity.$r8$lambda$26Gp8FOiuBkh0xqeKlQ7jGJoj8c(SaveToGallerySettingsActivity.this, view, i2, f, f2);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
@@ -208,7 +206,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SaveToGallerySettingsActivity.this.lambda$createView$6(view);
+                    SaveToGallerySettingsActivity.$r8$lambda$580J7dlhp5SFom9SNIIQLhlO9ag(SaveToGallerySettingsActivity.this, view);
                 }
             });
             frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
@@ -217,25 +215,24 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(View view, int i, float f, float f2) {
-        if (i == this.savePhotosRow) {
-            getSettings().savePhoto = !r8.savePhoto;
-            onSettingsUpdated();
-            updateRows();
+    public static /* synthetic */ void $r8$lambda$yXF8xyfHohRhDtsdtUoWWyPWhUo(final SaveToGallerySettingsActivity saveToGallerySettingsActivity, View view, int i, float f, float f2) {
+        if (i == saveToGallerySettingsActivity.savePhotosRow) {
+            saveToGallerySettingsActivity.getSettings().savePhoto = !r8.savePhoto;
+            saveToGallerySettingsActivity.onSettingsUpdated();
+            saveToGallerySettingsActivity.updateRows();
             return;
         }
-        if (i == this.saveVideosRow) {
-            getSettings().saveVideo = !r8.saveVideo;
-            onSettingsUpdated();
-            updateRows();
+        if (i == saveToGallerySettingsActivity.saveVideosRow) {
+            saveToGallerySettingsActivity.getSettings().saveVideo = !r8.saveVideo;
+            saveToGallerySettingsActivity.onSettingsUpdated();
+            saveToGallerySettingsActivity.updateRows();
             return;
         }
-        if (((Item) this.items.get(i)).viewType == 1) {
+        if (((Item) saveToGallerySettingsActivity.items.get(i)).viewType == 1) {
             Bundle bundle = new Bundle();
             bundle.putBoolean("onlySelect", true);
             bundle.putBoolean("checkCanWrite", false);
-            int i2 = this.type;
+            int i2 = saveToGallerySettingsActivity.type;
             if (i2 == 2) {
                 bundle.putInt("dialogsType", 6);
             } else if (i2 == 4) {
@@ -253,9 +250,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i3, int i4, TopicsFragment topicsFragment) {
-                    boolean lambda$createView$0;
-                    lambda$createView$0 = SaveToGallerySettingsActivity.this.lambda$createView$0(dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
-                    return lambda$createView$0;
+                    return SaveToGallerySettingsActivity.$r8$lambda$oAeOYnrxTJkUkZTP5k1Z1arKs38(SaveToGallerySettingsActivity.this, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
                 }
 
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -263,21 +258,21 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
                 }
             });
-            presentFragment(dialogsActivity);
+            saveToGallerySettingsActivity.presentFragment(dialogsActivity);
             return;
         }
-        if (((Item) this.items.get(i)).viewType == 2) {
+        if (((Item) saveToGallerySettingsActivity.items.get(i)).viewType == 2) {
             Bundle bundle2 = new Bundle();
-            bundle2.putLong("dialog_id", ((Item) this.items.get(i)).exception.dialogId);
-            bundle2.putInt(TeXSymbolParser.TYPE_ATTR, this.type);
-            presentFragment(new SaveToGallerySettingsActivity(bundle2));
+            bundle2.putLong("dialog_id", ((Item) saveToGallerySettingsActivity.items.get(i)).exception.dialogId);
+            bundle2.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.type);
+            saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle2));
             return;
         }
-        if (((Item) this.items.get(i)).viewType == 4) {
-            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda4
+        if (((Item) saveToGallerySettingsActivity.items.get(i)).viewType == 4) {
+            AlertDialog create = AlertsCreator.createSimpleAlert(saveToGallerySettingsActivity.getContext(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SaveToGallerySettingsActivity.this.lambda$createView$1();
+                    SaveToGallerySettingsActivity.$r8$lambda$B13ra5apzhUEDJrvUclVCxAJ170(SaveToGallerySettingsActivity.this);
                 }
             }, null).create();
             create.show();
@@ -285,77 +280,74 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$0(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$oAeOYnrxTJkUkZTP5k1Z1arKs38(SaveToGallerySettingsActivity saveToGallerySettingsActivity, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        saveToGallerySettingsActivity.getClass();
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
-        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.type);
-        presentFragment(new SaveToGallerySettingsActivity(bundle), true);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.type);
+        saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle), true);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1() {
-        this.exceptionsDialogs.clear();
-        getUserConfig().updateSaveGalleryExceptions(this.type, this.exceptionsDialogs);
-        updateRows();
+    public static /* synthetic */ void $r8$lambda$B13ra5apzhUEDJrvUclVCxAJ170(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
+        saveToGallerySettingsActivity.exceptionsDialogs.clear();
+        saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.type, saveToGallerySettingsActivity.exceptionsDialogs);
+        saveToGallerySettingsActivity.updateRows();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$5(View view, final int i, float f, float f2) {
-        if (((Item) this.items.get(i)).viewType != 2) {
+    public static /* synthetic */ boolean $r8$lambda$26Gp8FOiuBkh0xqeKlQ7jGJoj8c(final SaveToGallerySettingsActivity saveToGallerySettingsActivity, View view, final int i, float f, float f2) {
+        if (((Item) saveToGallerySettingsActivity.items.get(i)).viewType != 2) {
             return false;
         }
-        final SaveToGallerySettingsHelper.DialogException dialogException = ((Item) this.items.get(i)).exception;
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext());
+        final SaveToGallerySettingsHelper.DialogException dialogException = ((Item) saveToGallerySettingsActivity.items.get(i)).exception;
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(saveToGallerySettingsActivity.getContext());
         ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.EditException), false, null);
         ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteException), false, null);
         int i2 = Theme.key_text_RedRegular;
         addItem2.setColors(Theme.getColor(i2), Theme.getColor(i2));
-        final ActionBarPopupWindow createSimplePopup = AlertsCreator.createSimplePopup(this, actionBarPopupWindowLayout, view, f, f2);
+        final ActionBarPopupWindow createSimplePopup = AlertsCreator.createSimplePopup(saveToGallerySettingsActivity, actionBarPopupWindowLayout, view, f, f2);
         actionBarPopupWindowLayout.setParentWindow(createSimplePopup);
         addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SaveToGallerySettingsActivity.this.lambda$createView$3(createSimplePopup, i, view2);
+                SaveToGallerySettingsActivity.$r8$lambda$5bjMA144M3_oGt3EySnwAUdwgHA(SaveToGallerySettingsActivity.this, createSimplePopup, i, view2);
             }
         });
         addItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SaveToGallerySettingsActivity.this.lambda$createView$4(createSimplePopup, dialogException, view2);
+                SaveToGallerySettingsActivity.$r8$lambda$Bx9Osi1aHSjOKQONLxyFqIZowH0(SaveToGallerySettingsActivity.this, createSimplePopup, dialogException, view2);
             }
         });
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(ActionBarPopupWindow actionBarPopupWindow, int i, View view) {
+    public static /* synthetic */ void $r8$lambda$5bjMA144M3_oGt3EySnwAUdwgHA(SaveToGallerySettingsActivity saveToGallerySettingsActivity, ActionBarPopupWindow actionBarPopupWindow, int i, View view) {
+        saveToGallerySettingsActivity.getClass();
         actionBarPopupWindow.dismiss();
         Bundle bundle = new Bundle();
-        bundle.putLong("dialog_id", ((Item) this.items.get(i)).exception.dialogId);
-        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.type);
-        presentFragment(new SaveToGallerySettingsActivity(bundle));
+        bundle.putLong("dialog_id", ((Item) saveToGallerySettingsActivity.items.get(i)).exception.dialogId);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.type);
+        saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(ActionBarPopupWindow actionBarPopupWindow, SaveToGallerySettingsHelper.DialogException dialogException, View view) {
+    public static /* synthetic */ void $r8$lambda$Bx9Osi1aHSjOKQONLxyFqIZowH0(SaveToGallerySettingsActivity saveToGallerySettingsActivity, ActionBarPopupWindow actionBarPopupWindow, SaveToGallerySettingsHelper.DialogException dialogException, View view) {
+        saveToGallerySettingsActivity.getClass();
         actionBarPopupWindow.dismiss();
-        LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = getUserConfig().getSaveGalleryExceptions(this.type);
+        LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.type);
         saveGalleryExceptions.remove(dialogException.dialogId);
-        getUserConfig().updateSaveGalleryExceptions(this.type, saveGalleryExceptions);
-        updateRows();
+        saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.type, saveGalleryExceptions);
+        saveToGallerySettingsActivity.updateRows();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(View view) {
-        if (this.isNewException) {
-            LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = getUserConfig().getSaveGalleryExceptions(this.type);
-            SaveToGallerySettingsHelper.DialogException dialogException = this.dialogException;
+    public static /* synthetic */ void $r8$lambda$580J7dlhp5SFom9SNIIQLhlO9ag(SaveToGallerySettingsActivity saveToGallerySettingsActivity, View view) {
+        if (saveToGallerySettingsActivity.isNewException) {
+            LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.type);
+            SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.dialogException;
             saveGalleryExceptions.put(dialogException.dialogId, dialogException);
-            getUserConfig().updateSaveGalleryExceptions(this.type, saveGalleryExceptions);
+            saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.type, saveGalleryExceptions);
         }
-        finishFragment();
+        saveToGallerySettingsActivity.finishFragment();
     }
 
     private void updateRows() {
@@ -441,8 +433,10 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         private Adapter() {
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            UserCell userCell;
             View view = null;
             switch (i) {
                 case 1:
@@ -453,8 +447,9 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     view = textCell;
                     break;
                 case 2:
-                    UserCell userCell = new UserCell(viewGroup.getContext(), 4, 0, false, false);
-                    userCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                    UserCell userCell2 = new UserCell(viewGroup.getContext(), 4, 0, false, false);
+                    userCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                    userCell = userCell2;
                     view = userCell;
                     break;
                 case 3:
@@ -557,13 +552,14 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     seekBarView.setProgress(((float) j) > ((float) SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) * 0.7f ? (((j - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) / 4089446400L) * 0.3f) + 0.7f : ((j - 524288) / 104333312) * 0.7f);
                     seekBarView.delegate.onSeekBarDrag(false, seekBarView.getProgress());
                     linearLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    view = linearLayout;
+                    userCell = linearLayout;
+                    view = userCell;
                     break;
                 case 9:
-                    UserCell2 userCell2 = new UserCell2(SaveToGallerySettingsActivity.this.getContext(), 4, 0, SaveToGallerySettingsActivity.this.getResourceProvider());
-                    userCell2.setData(DialogObject.isUserDialog(SaveToGallerySettingsActivity.this.dialogId) ? MessagesController.getInstance(((BaseFragment) SaveToGallerySettingsActivity.this).currentAccount).getUser(Long.valueOf(SaveToGallerySettingsActivity.this.dialogId)) : MessagesController.getInstance(((BaseFragment) SaveToGallerySettingsActivity.this).currentAccount).getChat(Long.valueOf(-SaveToGallerySettingsActivity.this.dialogId)), null, null, 0);
-                    userCell2.setBackgroundColor(SaveToGallerySettingsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    view = userCell2;
+                    UserCell2 userCell22 = new UserCell2(SaveToGallerySettingsActivity.this.getContext(), 4, 0, SaveToGallerySettingsActivity.this.getResourceProvider());
+                    userCell22.setData(DialogObject.isUserDialog(SaveToGallerySettingsActivity.this.dialogId) ? MessagesController.getInstance(((BaseFragment) SaveToGallerySettingsActivity.this).currentAccount).getUser(Long.valueOf(SaveToGallerySettingsActivity.this.dialogId)) : MessagesController.getInstance(((BaseFragment) SaveToGallerySettingsActivity.this).currentAccount).getChat(Long.valueOf(-SaveToGallerySettingsActivity.this.dialogId)), null, null, 0);
+                    userCell22.setBackgroundColor(SaveToGallerySettingsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                    view = userCell22;
                     break;
                 case 10:
                     ShadowSectionCell shadowSectionCell = new ShadowSectionCell(viewGroup.getContext());
@@ -663,7 +659,8 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         }
     }
 
-    private class Item extends AdapterWithDiffUtils.Item {
+    /* JADX INFO: Access modifiers changed from: private */
+    class Item extends AdapterWithDiffUtils.Item {
         final SaveToGallerySettingsHelper.DialogException exception;
         String title;
 

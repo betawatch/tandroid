@@ -211,8 +211,10 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         } else if (messageObject.isStory()) {
             charSequence = LocaleController.getString(R.string.Story);
         } else {
-            CharSequence charSequence2 = messageObject.caption;
-            charSequence = charSequence2 != null ? charSequence2 : messageObject.messageText;
+            charSequence = messageObject.caption;
+            if (charSequence == null) {
+                charSequence = messageObject.messageText;
+            }
         }
         if (charSequence == null) {
             charSequence = "";

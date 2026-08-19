@@ -50,15 +50,15 @@ public class RateCallLayout extends FrameLayout {
             this.startsViews[i].setAllStarsProvider(new StarContainer.AllStarsProvider() { // from class: org.telegram.ui.Components.voip.RateCallLayout$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.voip.RateCallLayout.StarContainer.AllStarsProvider
                 public final RateCallLayout.StarContainer[] getAllStartsViews() {
-                    RateCallLayout.StarContainer[] lambda$new$0;
-                    lambda$new$0 = RateCallLayout.this.lambda$new$0();
-                    return lambda$new$0;
+                    RateCallLayout.StarContainer[] starContainerArr;
+                    starContainerArr = RateCallLayout.this.startsViews;
+                    return starContainerArr;
                 }
             });
             this.startsViews[i].setOnSelectedStar(new StarContainer.OnSelectedStar() { // from class: org.telegram.ui.Components.voip.RateCallLayout$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.Components.voip.RateCallLayout.StarContainer.OnSelectedStar
                 public final void onSelected(float f, float f2, int i2) {
-                    RateCallLayout.this.lambda$new$3(context, f, f2, i2);
+                    RateCallLayout.$r8$lambda$VKs0wbyGt6zcAgetbnEmaAEVPzY(RateCallLayout.this, context, f, f2, i2);
                 }
             }, i);
             this.starsContainer.addView(this.startsViews[i], LayoutHelper.createFrame(-2, -2.0f, 51, i * 41, 0.0f, 0.0f, 0.0f));
@@ -67,50 +67,40 @@ public class RateCallLayout extends FrameLayout {
         addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.channelRecommendationsLoaded, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ StarContainer[] lambda$new$0() {
-        return this.startsViews;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(Context context, float f, float f2, int i) {
+    public static /* synthetic */ void $r8$lambda$VKs0wbyGt6zcAgetbnEmaAEVPzY(final RateCallLayout rateCallLayout, Context context, float f, float f2, int i) {
         if (i >= 4) {
+            rateCallLayout.getClass();
             final RLottieImageView rLottieImageView = new RLottieImageView(context);
             int dp = AndroidUtilities.dp(133.0f);
             rLottieImageView.setAnimation(R.raw.rate, NotificationCenter.walletPendingTransactionsChanged, NotificationCenter.walletPendingTransactionsChanged);
             int[] iArr = new int[2];
-            getLocationOnScreen(iArr);
+            rateCallLayout.getLocationOnScreen(iArr);
             int i2 = iArr[0];
             int i3 = iArr[1];
-            addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.walletPendingTransactionsChanged, 133.0f));
+            rateCallLayout.addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.walletPendingTransactionsChanged, 133.0f));
             float f3 = dp / 2.0f;
             rLottieImageView.setTranslationX((f - i2) - f3);
             rLottieImageView.setTranslationY((f2 - i3) - f3);
             rLottieImageView.setOnAnimationEndListener(new Runnable() { // from class: org.telegram.ui.Components.voip.RateCallLayout$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RateCallLayout.this.lambda$new$2(rLottieImageView);
+                    RateCallLayout.$r8$lambda$oqEl9AXQEfMLyiMz4UXlYgzeBXY(RateCallLayout.this, rLottieImageView);
                 }
             });
             rLottieImageView.playAnimation();
         }
-        OnRateSelected onRateSelected = this.onRateSelected;
+        OnRateSelected onRateSelected = rateCallLayout.onRateSelected;
         if (onRateSelected != null) {
             onRateSelected.onRateSelected(i);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(RLottieImageView rLottieImageView) {
-        removeView(rLottieImageView);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(final RLottieImageView rLottieImageView) {
+    public static /* synthetic */ void $r8$lambda$oqEl9AXQEfMLyiMz4UXlYgzeBXY(final RateCallLayout rateCallLayout, final RLottieImageView rLottieImageView) {
+        rateCallLayout.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.RateCallLayout$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RateCallLayout.this.lambda$new$1(rLottieImageView);
+                RateCallLayout.this.removeView(rLottieImageView);
             }
         });
     }
@@ -120,16 +110,26 @@ public class RateCallLayout extends FrameLayout {
         this.rateCallContainer.setVisibility(0);
         this.starsContainer.setVisibility(0);
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) View.SCALE_X, 0.7f, 1.0f), ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) View.SCALE_Y, 0.7f, 1.0f), ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(24.0f), 0.0f));
+        float f = 0.0f;
+        Property property = View.ALPHA;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) property, 0.0f, 1.0f);
+        Property property2 = View.SCALE_X;
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) property2, 0.7f, 1.0f);
+        Property property3 = View.SCALE_Y;
+        Property property4 = View.TRANSLATION_Y;
+        animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) property3, 0.7f, 1.0f), ObjectAnimator.ofFloat(this.rateCallContainer, (Property<RateCallContainer, Float>) property4, AndroidUtilities.dp(24.0f), 0.0f));
         animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
         animatorSet.setDuration(250L);
-        for (int i = 0; i < this.startsViews.length; i++) {
+        int i = 0;
+        while (i < this.startsViews.length) {
             AnimatorSet animatorSet2 = new AnimatorSet();
-            this.startsViews[i].setAlpha(0.0f);
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) View.SCALE_X, 0.3f, 1.0f), ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) View.SCALE_Y, 0.3f, 1.0f), ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(30.0f), 0.0f));
+            this.startsViews[i].setAlpha(f);
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) property2, 0.3f, 1.0f), ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) property3, 0.3f, 1.0f), ObjectAnimator.ofFloat(this.startsViews[i], (Property<StarContainer, Float>) property4, AndroidUtilities.dp(30.0f), 0.0f));
             animatorSet2.setDuration(250L);
             animatorSet2.setStartDelay(i * 16);
             animatorSet2.start();
+            i++;
+            f = 0.0f;
         }
         animatorSet.start();
     }

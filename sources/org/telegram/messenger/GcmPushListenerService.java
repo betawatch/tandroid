@@ -22,13 +22,12 @@ public class GcmPushListenerService extends FirebaseMessagingService {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.GcmPushListenerService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                GcmPushListenerService.lambda$onNewToken$0(str);
+                GcmPushListenerService.$r8$lambda$yff5x9Kir9GwH0krOiFRPGGXb_U(str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onNewToken$0(String str) {
+    public static /* synthetic */ void $r8$lambda$yff5x9Kir9GwH0krOiFRPGGXb_U(String str) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("Refreshed FCM token: " + str);
         }

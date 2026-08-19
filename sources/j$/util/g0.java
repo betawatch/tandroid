@@ -1,74 +1,75 @@
 package j$.util;
 
-import j$.util.Spliterator;
-import java.util.Comparator;
-import java.util.Spliterator;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class g0 implements Spliterator {
-    public final /* synthetic */ java.util.Spliterator a;
+public final class g0 implements N, LongConsumer, w {
+    public boolean a = false;
+    public long b;
+    public final /* synthetic */ Z c;
 
-    private /* synthetic */ g0(java.util.Spliterator spliterator) {
-        this.a = spliterator;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    public static /* synthetic */ Spliterator a(java.util.Spliterator spliterator) {
-        if (spliterator == null) {
-            return null;
+    @Override // j$.util.O
+    public final void forEachRemaining(LongConsumer longConsumer) {
+        Objects.requireNonNull(longConsumer);
+        while (hasNext()) {
+            longConsumer.accept(nextLong());
         }
-        return spliterator instanceof Spliterator.Wrapper ? Spliterator.this : spliterator instanceof Spliterator.OfPrimitive ? d0.a((Spliterator.OfPrimitive) spliterator) : new g0(spliterator);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        java.util.Spliterator spliterator = this.a;
-        if (obj instanceof g0) {
-            obj = ((g0) obj).a;
+    @Override // java.util.Iterator
+    public final Long next() {
+        if (t0.a) {
+            t0.a(g0.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
+            throw null;
         }
-        return spliterator.equals(obj);
+        return Long.valueOf(nextLong());
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
+    @Override // j$.util.N, java.util.Iterator, j$.util.w
+    public final void forEachRemaining(Consumer consumer) {
+        if (consumer instanceof LongConsumer) {
+            forEachRemaining((LongConsumer) consumer);
+            return;
+        }
+        Objects.requireNonNull(consumer);
+        if (t0.a) {
+            t0.a(g0.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
+            throw null;
+        }
+        Objects.requireNonNull(consumer);
+        forEachRemaining((LongConsumer) new K(consumer, 0));
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
+    public g0(Z z) {
+        this.c = z;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        this.a = true;
+        this.b = j;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        if (!this.a) {
+            this.c.tryAdvance((LongConsumer) this);
+        }
+        return this.a;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return this.a.tryAdvance(consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Spliterator trySplit() {
-        return a(this.a.trySplit());
+    @Override // j$.util.N
+    public final long nextLong() {
+        if (!this.a && !hasNext()) {
+            throw new NoSuchElementException();
+        }
+        this.a = false;
+        return this.b;
     }
 }

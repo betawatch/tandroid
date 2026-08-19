@@ -237,25 +237,24 @@ final class zzqs extends zzqv {
         boolean z;
         int i;
         IndexOutOfBoundsException indexOutOfBoundsException;
-        int i2;
-        int i3 = this.zze;
+        int i2 = this.zze;
         z = zzqv.zzd;
-        if (!z || this.zzd - i3 < 10) {
+        if (!z || this.zzd - i2 < 10) {
+            int i3 = i2;
             while ((j & (-128)) != 0) {
                 try {
-                    i2 = i3 + 1;
-                } catch (IndexOutOfBoundsException e) {
-                    e = e;
-                }
-                try {
-                    this.zzc[i3] = (byte) (((int) j) | 128);
-                    j >>>= 7;
-                    i3 = i2;
+                    int i4 = i3 + 1;
+                    try {
+                        this.zzc[i3] = (byte) (((int) j) | 128);
+                        j >>>= 7;
+                        i3 = i4;
+                    } catch (IndexOutOfBoundsException e) {
+                        indexOutOfBoundsException = e;
+                        i3 = i4;
+                        throw new zzqt(i3, this.zzd, 1, indexOutOfBoundsException);
+                    }
                 } catch (IndexOutOfBoundsException e2) {
-                    e = e2;
-                    i3 = i2;
-                    indexOutOfBoundsException = e;
-                    throw new zzqt(i3, this.zzd, 1, indexOutOfBoundsException);
+                    indexOutOfBoundsException = e2;
                 }
             }
             i = i3 + 1;
@@ -268,12 +267,12 @@ final class zzqs extends zzqv {
             }
         } else {
             while ((j & (-128)) != 0) {
-                zzvc.zzn(this.zzc, i3, (byte) (((int) j) | 128));
+                zzvc.zzn(this.zzc, i2, (byte) (((int) j) | 128));
                 j >>>= 7;
-                i3++;
+                i2++;
             }
-            i = i3 + 1;
-            zzvc.zzn(this.zzc, i3, (byte) j);
+            i = i2 + 1;
+            zzvc.zzn(this.zzc, i2, (byte) j);
         }
         this.zze = i;
     }

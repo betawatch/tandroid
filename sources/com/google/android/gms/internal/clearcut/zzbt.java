@@ -7,7 +7,7 @@ import java.util.Map;
 public final class zzbt {
     private static final Class zzgn = zzam();
     static final zzbt zzgo = new zzbt(true);
-    private final Map zzgp = Collections.emptyMap();
+    private final Map zzgp = Collections.EMPTY_MAP;
 
     private zzbt(boolean z) {
     }

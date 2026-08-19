@@ -27,25 +27,25 @@ public class GroupCallStatusIcon {
     private Runnable shakeHandCallback = new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallStatusIcon$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            GroupCallStatusIcon.this.lambda$new$0();
+            GroupCallStatusIcon.$r8$lambda$iUSg5CwNgob-xBuUEf7sm5Zp0xU(GroupCallStatusIcon.this);
         }
     };
     private Runnable raiseHandCallback = new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallStatusIcon$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
         public final void run() {
-            GroupCallStatusIcon.this.lambda$new$1();
+            GroupCallStatusIcon.$r8$lambda$Q2X7GT50hF-IASvkVcIe9D0_jHs(GroupCallStatusIcon.this);
         }
     };
     private Runnable updateRunnable = new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallStatusIcon$$ExternalSyntheticLambda2
         @Override // java.lang.Runnable
         public final void run() {
-            GroupCallStatusIcon.this.lambda$new$2();
+            GroupCallStatusIcon.$r8$lambda$5W5cJ9LLa8sbsY36SfVA9SZh7Jk(GroupCallStatusIcon.this);
         }
     };
     private Runnable checkRaiseRunnable = new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallStatusIcon$$ExternalSyntheticLambda3
         @Override // java.lang.Runnable
         public final void run() {
-            GroupCallStatusIcon.this.lambda$new$3();
+            GroupCallStatusIcon.this.updateIcon(true);
         }
     };
 
@@ -53,19 +53,18 @@ public class GroupCallStatusIcon {
         void onStatusChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.shakeHandDrawable.setOnFinishCallback(null, 0);
-        this.micDrawable.setOnFinishCallback(null, 0);
-        RLottieImageView rLottieImageView = this.iconView;
+    public static /* synthetic */ void $r8$lambda$iUSg5CwNgob-xBuUEf7sm5Zp0xU(GroupCallStatusIcon groupCallStatusIcon) {
+        groupCallStatusIcon.shakeHandDrawable.setOnFinishCallback(null, 0);
+        groupCallStatusIcon.micDrawable.setOnFinishCallback(null, 0);
+        RLottieImageView rLottieImageView = groupCallStatusIcon.iconView;
         if (rLottieImageView != null) {
-            rLottieImageView.setAnimation(this.micDrawable);
+            rLottieImageView.setAnimation(groupCallStatusIcon.micDrawable);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
+    public static /* synthetic */ void $r8$lambda$Q2X7GT50hF-IASvkVcIe9D0_jHs(GroupCallStatusIcon groupCallStatusIcon) {
         int i;
+        groupCallStatusIcon.getClass();
         int nextInt = Utilities.random.nextInt(100);
         int i2 = 120;
         if (nextInt < 32) {
@@ -88,13 +87,13 @@ public class GroupCallStatusIcon {
                 }
             }
         }
-        this.shakeHandDrawable.setCustomEndFrame(i2);
-        this.shakeHandDrawable.setOnFinishCallback(this.shakeHandCallback, i2 - 1);
-        this.shakeHandDrawable.setCurrentFrame(i);
-        RLottieImageView rLottieImageView = this.iconView;
+        groupCallStatusIcon.shakeHandDrawable.setCustomEndFrame(i2);
+        groupCallStatusIcon.shakeHandDrawable.setOnFinishCallback(groupCallStatusIcon.shakeHandCallback, i2 - 1);
+        groupCallStatusIcon.shakeHandDrawable.setCurrentFrame(i);
+        RLottieImageView rLottieImageView = groupCallStatusIcon.iconView;
         if (rLottieImageView != null) {
-            rLottieImageView.setAnimation(this.shakeHandDrawable);
-            this.iconView.playAnimation();
+            rLottieImageView.setAnimation(groupCallStatusIcon.shakeHandDrawable);
+            groupCallStatusIcon.iconView.playAnimation();
         }
     }
 
@@ -105,14 +104,13 @@ public class GroupCallStatusIcon {
         this.shakeHandDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), true, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        this.isSpeaking = false;
-        Callback callback = this.callback;
+    public static /* synthetic */ void $r8$lambda$5W5cJ9LLa8sbsY36SfVA9SZh7Jk(GroupCallStatusIcon groupCallStatusIcon) {
+        groupCallStatusIcon.isSpeaking = false;
+        Callback callback = groupCallStatusIcon.callback;
         if (callback != null) {
             callback.onStatusChanged();
         }
-        this.updateRunnableScheduled = false;
+        groupCallStatusIcon.updateRunnableScheduled = false;
     }
 
     public void setAmplitude(double d) {
@@ -130,11 +128,6 @@ public class GroupCallStatusIcon {
             AndroidUtilities.runOnUIThread(this.updateRunnable, 500L);
             this.updateRunnableScheduled = true;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        updateIcon(true);
     }
 
     public void setImageView(RLottieImageView rLottieImageView) {

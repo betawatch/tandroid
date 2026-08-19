@@ -62,11 +62,11 @@ public class SuperRipple extends ISuperRipple {
         this.effect = createRuntimeShaderEffect;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0094  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -151,7 +151,7 @@ public class SuperRipple extends ISuperRipple {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                SuperRipple.this.lambda$animate$0(effect, valueAnimator);
+                SuperRipple.$r8$lambda$eNVcrL0I2Sm2OIqbhz-sSR7aUI8(SuperRipple.this, effect, valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.SuperRipple.1
@@ -168,10 +168,10 @@ public class SuperRipple extends ISuperRipple {
         ofFloat.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate$0(Effect effect, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$eNVcrL0I2Sm2OIqbhz-sSR7aUI8(SuperRipple superRipple, Effect effect, ValueAnimator valueAnimator) {
+        superRipple.getClass();
         effect.t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateProperties();
+        superRipple.updateProperties();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

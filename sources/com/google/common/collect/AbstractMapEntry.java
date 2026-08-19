@@ -16,11 +16,13 @@ abstract class AbstractMapEntry implements Map.Entry {
 
     @Override // java.util.Map.Entry
     public boolean equals(Object obj) {
-        if (!(obj instanceof Map.Entry)) {
-            return false;
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            if (Objects.equal(getKey(), entry.getKey()) && Objects.equal(getValue(), entry.getValue())) {
+                return true;
+            }
         }
-        Map.Entry entry = (Map.Entry) obj;
-        return Objects.equal(getKey(), entry.getKey()) && Objects.equal(getValue(), entry.getValue());
+        return false;
     }
 
     @Override // java.util.Map.Entry

@@ -37,8 +37,21 @@ public final class SinglePeriodTimeline extends Timeline {
         this(j, j, 0L, 0L, z, z2, z3, obj, mediaItem);
     }
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public SinglePeriodTimeline(long j, long j2, long j3, long j4, boolean z, boolean z2, boolean z3, Object obj, MediaItem mediaItem) {
-        this(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, j, j2, j3, j4, z, z2, false, obj, mediaItem, z3 ? mediaItem.liveConfiguration : null);
+        this(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, j, j2, j3, j4, z, z2, false, obj, r0, r1);
+        MediaItem mediaItem2;
+        MediaItem.LiveConfiguration liveConfiguration;
+        if (z3) {
+            mediaItem2 = mediaItem;
+            liveConfiguration = mediaItem2.liveConfiguration;
+        } else {
+            mediaItem2 = mediaItem;
+            liveConfiguration = null;
+        }
     }
 
     public SinglePeriodTimeline(long j, long j2, long j3, long j4, long j5, long j6, long j7, boolean z, boolean z2, boolean z3, Object obj, MediaItem mediaItem, MediaItem.LiveConfiguration liveConfiguration) {

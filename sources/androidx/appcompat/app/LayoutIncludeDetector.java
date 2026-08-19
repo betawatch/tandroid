@@ -53,16 +53,16 @@ class LayoutIncludeDetector {
     }
 
     private static boolean isParserOutdated(XmlPullParser xmlPullParser) {
-        if (xmlPullParser == null) {
-            return true;
-        }
-        try {
-            if (xmlPullParser.getEventType() != 3) {
-                return xmlPullParser.getEventType() == 1;
+        if (xmlPullParser != null) {
+            try {
+                if (xmlPullParser.getEventType() != 3) {
+                    if (xmlPullParser.getEventType() != 1) {
+                        return false;
+                    }
+                }
+            } catch (XmlPullParserException unused) {
             }
-            return true;
-        } catch (XmlPullParserException unused) {
-            return true;
         }
+        return true;
     }
 }

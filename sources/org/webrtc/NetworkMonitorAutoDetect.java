@@ -25,7 +25,7 @@ import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
     private static final String TAG = "NetworkMonitorAutoDetect";
@@ -329,7 +329,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
                 wifiP2pManager.requestGroupInfo(wifiP2pManager.initialize(context, context.getMainLooper(), null), new WifiP2pManager.GroupInfoListener() { // from class: org.webrtc.NetworkMonitorAutoDetect$WifiDirectManagerDelegate$$ExternalSyntheticLambda0
                     @Override // android.net.wifi.p2p.WifiP2pManager.GroupInfoListener
                     public final void onGroupInfoAvailable(WifiP2pGroup wifiP2pGroup) {
-                        NetworkMonitorAutoDetect.WifiDirectManagerDelegate.this.lambda$new$0(wifiP2pGroup);
+                        NetworkMonitorAutoDetect.WifiDirectManagerDelegate.this.onWifiP2pGroupChange(wifiP2pGroup);
                     }
                 });
             }
@@ -338,7 +338,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
             if ("android.net.wifi.p2p.CONNECTION_STATE_CHANGE".equals(intent.getAction())) {
-                lambda$new$0((WifiP2pGroup) intent.getParcelableExtra("p2pGroupInfo"));
+                onWifiP2pGroupChange((WifiP2pGroup) intent.getParcelableExtra("p2pGroupInfo"));
             } else if ("android.net.wifi.p2p.STATE_CHANGED".equals(intent.getAction())) {
                 onWifiP2pStateChange(intent.getIntExtra("wifi_p2p_state", 0));
             }
@@ -353,12 +353,11 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             if (networkInformation != null) {
                 return Collections.singletonList(networkInformation);
             }
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onWifiP2pGroupChange, reason: merged with bridge method [inline-methods] */
-        public void lambda$new$0(WifiP2pGroup wifiP2pGroup) {
+        public void onWifiP2pGroupChange(WifiP2pGroup wifiP2pGroup) {
             if (wifiP2pGroup == null || wifiP2pGroup.getInterface() == null) {
                 return;
             }

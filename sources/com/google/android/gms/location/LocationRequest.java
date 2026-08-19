@@ -241,15 +241,14 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
 
     LocationRequest(int i, long j, long j2, long j3, long j4, long j5, int i2, float f, boolean z, long j6, int i3, int i4, String str, boolean z2, WorkSource workSource, zzd zzdVar) {
         this.zza = i;
-        long j7 = j;
-        this.zzb = j7;
+        this.zzb = j;
         this.zzc = j2;
         this.zzd = j3;
         this.zze = j4 == Long.MAX_VALUE ? j5 : Math.min(Math.max(1L, j4 - SystemClock.elapsedRealtime()), j5);
         this.zzf = i2;
         this.zzg = f;
         this.zzh = z;
-        this.zzi = j6 != -1 ? j6 : j7;
+        this.zzi = j6 != -1 ? j6 : j;
         this.zzj = i3;
         this.zzk = i4;
         this.zzl = str;
@@ -290,7 +289,10 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
             float f = this.zzg;
             boolean z = this.zzh;
             long j4 = this.zzi;
-            return new LocationRequest(i, j, j2, max, Long.MAX_VALUE, j3, i2, f, z, j4 == -1 ? this.zzb : j4, this.zzj, this.zzk, this.zzl, this.zzm, new WorkSource(this.zzn), this.zzo);
+            if (j4 == -1) {
+                j4 = this.zzb;
+            }
+            return new LocationRequest(i, j, j2, max, Long.MAX_VALUE, j3, i2, f, z, j4, this.zzj, this.zzk, this.zzl, this.zzm, new WorkSource(this.zzn), this.zzo);
         }
 
         public Builder setGranularity(int i) {

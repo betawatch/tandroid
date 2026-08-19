@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RtpReceiver {
     private MediaStreamTrack cachedTrack;
     private long nativeObserver;

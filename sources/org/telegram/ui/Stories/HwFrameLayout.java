@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.messenger.SharedConfig;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 abstract class HwFrameLayout extends FrameLayout {
     private final boolean isFastDevice;
     static final Set hwViews = new HashSet();

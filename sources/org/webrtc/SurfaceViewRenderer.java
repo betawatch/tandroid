@@ -12,7 +12,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
     private final SurfaceEglRenderer eglRenderer;
@@ -212,17 +212,16 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         postOrRun(new Runnable() { // from class: org.webrtc.SurfaceViewRenderer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SurfaceViewRenderer.this.lambda$onFrameResolutionChanged$0(i4, i);
+                SurfaceViewRenderer.$r8$lambda$EDi_GeCMRrAQW8S-3IJU49ulMqI(SurfaceViewRenderer.this, i4, i);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onFrameResolutionChanged$0(int i, int i2) {
-        this.rotatedFrameWidth = i;
-        this.rotatedFrameHeight = i2;
-        updateSurfaceSize();
-        requestLayout();
+    public static /* synthetic */ void $r8$lambda$EDi_GeCMRrAQW8S-3IJU49ulMqI(SurfaceViewRenderer surfaceViewRenderer, int i, int i2) {
+        surfaceViewRenderer.rotatedFrameWidth = i;
+        surfaceViewRenderer.rotatedFrameHeight = i2;
+        surfaceViewRenderer.updateSurfaceSize();
+        surfaceViewRenderer.requestLayout();
     }
 
     private void postOrRun(Runnable runnable) {

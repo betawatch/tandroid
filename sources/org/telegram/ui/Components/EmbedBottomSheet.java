@@ -96,13 +96,11 @@ public class EmbedBottomSheet extends BottomSheet {
     private int width;
     private final String youtubeFrame;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$TYGq2_Sm_y4Rvgth4JDN1AR7Az8(View view, MotionEvent motionEvent) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$1(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$ZkrgZlkVSzB6qtOfyLrMh7Sv2xk(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -117,14 +115,13 @@ public class EmbedBottomSheet extends BottomSheet {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmbedBottomSheet$YoutubeProxy$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmbedBottomSheet.YoutubeProxy.this.lambda$postEvent$0();
+                        EmbedBottomSheet.YoutubeProxy.$r8$lambda$dx0abvLJmuwdCJddVFPPRFlMqWI(EmbedBottomSheet.YoutubeProxy.this);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$postEvent$0() {
+        public static /* synthetic */ void $r8$lambda$dx0abvLJmuwdCJddVFPPRFlMqWI(YoutubeProxy youtubeProxy) {
             EmbedBottomSheet.this.progressBar.setVisibility(4);
             EmbedBottomSheet.this.progressBarBlackBackground.setVisibility(4);
             EmbedBottomSheet.this.pipButton.setEnabled(true);
@@ -197,9 +194,7 @@ public class EmbedBottomSheet extends BottomSheet {
         this.fullscreenVideoContainer.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$new$0;
-                lambda$new$0 = EmbedBottomSheet.lambda$new$0(view, motionEvent);
-                return lambda$new$0;
+                return EmbedBottomSheet.$r8$lambda$TYGq2_Sm_y4Rvgth4JDN1AR7Az8(view, motionEvent);
             }
         });
         this.container.addView(this.fullscreenVideoContainer, LayoutHelper.createFrame(-1, -1.0f));
@@ -242,9 +237,7 @@ public class EmbedBottomSheet extends BottomSheet {
         frameLayout2.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$new$1;
-                lambda$new$1 = EmbedBottomSheet.lambda$new$1(view, motionEvent);
-                return lambda$new$1;
+                return EmbedBottomSheet.$r8$lambda$ZkrgZlkVSzB6qtOfyLrMh7Sv2xk(view, motionEvent);
             }
         });
         setCustomView(this.containerLayout);
@@ -267,9 +260,9 @@ public class EmbedBottomSheet extends BottomSheet {
                 if (onTouchEvent) {
                     if (motionEvent.getAction() == 1) {
                         EmbedBottomSheet.this.setDisableScroll(false);
-                    } else {
-                        EmbedBottomSheet.this.setDisableScroll(true);
+                        return onTouchEvent;
                     }
+                    EmbedBottomSheet.this.setDisableScroll(true);
                 }
                 return onTouchEvent;
             }
@@ -627,7 +620,7 @@ public class EmbedBottomSheet extends BottomSheet {
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                EmbedBottomSheet.this.lambda$new$2(view3);
+                EmbedBottomSheet.this.dismiss();
             }
         });
         LinearLayout linearLayout2 = new LinearLayout(context);
@@ -651,13 +644,13 @@ public class EmbedBottomSheet extends BottomSheet {
         this.pipButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                EmbedBottomSheet.this.lambda$new$3(view3);
+                EmbedBottomSheet.$r8$lambda$O6NVxHxtixbL3TK-8ag5-tibp1s(EmbedBottomSheet.this, view3);
             }
         });
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                EmbedBottomSheet.this.lambda$new$4(view3);
+                EmbedBottomSheet.$r8$lambda$SzW7M7iXrzRHJl79CZ9ruXBP7-s(EmbedBottomSheet.this, view3);
             }
         };
         ImageView imageView3 = new ImageView(context);
@@ -695,7 +688,7 @@ public class EmbedBottomSheet extends BottomSheet {
         textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                EmbedBottomSheet.this.lambda$new$5(view3);
+                EmbedBottomSheet.$r8$lambda$AkrgWKM0QD5pl8EDLqSwiOcknAs(EmbedBottomSheet.this, view3);
             }
         });
         final boolean z = this.videoView.canHandleUrl(this.embedUrl) || this.videoView.canHandleUrl(str3);
@@ -846,7 +839,7 @@ public class EmbedBottomSheet extends BottomSheet {
                 new AlertDialog.Builder(EmbedBottomSheet.this.getContext(), ((BottomSheet) EmbedBottomSheet.this).resourcesProvider).setTitle(LocaleController.getString(R.string.ChromeCrashTitle)).setMessage(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new Runnable() { // from class: org.telegram.ui.Components.EmbedBottomSheet$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmbedBottomSheet.5.this.lambda$onRenderProcessGone$0();
+                        Browser.openUrl(EmbedBottomSheet.this.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                     }
                 })).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
                 return true;
@@ -854,11 +847,6 @@ public class EmbedBottomSheet extends BottomSheet {
                 FileLog.e(e);
                 return false;
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onRenderProcessGone$0() {
-            Browser.openUrl(EmbedBottomSheet.this.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
         }
 
         @Override // android.webkit.WebViewClient
@@ -888,40 +876,35 @@ public class EmbedBottomSheet extends BottomSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
+    public static /* synthetic */ void $r8$lambda$O6NVxHxtixbL3TK-8ag5-tibp1s(EmbedBottomSheet embedBottomSheet, View view) {
+        embedBottomSheet.getClass();
         if (PipVideoOverlay.isVisible()) {
             PipVideoOverlay.dismiss();
             Objects.requireNonNull(view);
             AndroidUtilities.runOnUIThread(new EmbedBottomSheet$$ExternalSyntheticLambda6(view), 300L);
             return;
         }
-        boolean z = this.isYouTube && "inapp".equals(MessagesController.getInstance(this.currentAccount).youtubePipType);
-        if ((z || checkInlinePermissions()) && this.progressBar.getVisibility() != 0) {
-            if (PipVideoOverlay.show(z, this.parentActivity, this.webView, this.width, this.height)) {
-                PipVideoOverlay.setParentSheet(this);
+        boolean z = embedBottomSheet.isYouTube && "inapp".equals(MessagesController.getInstance(embedBottomSheet.currentAccount).youtubePipType);
+        if ((z || embedBottomSheet.checkInlinePermissions()) && embedBottomSheet.progressBar.getVisibility() != 0) {
+            if (PipVideoOverlay.show(z, embedBottomSheet.parentActivity, embedBottomSheet.webView, embedBottomSheet.width, embedBottomSheet.height)) {
+                PipVideoOverlay.setParentSheet(embedBottomSheet);
             }
-            if (this.isYouTube) {
-                runJsCode("hideControls();");
+            if (embedBottomSheet.isYouTube) {
+                embedBottomSheet.runJsCode("hideControls();");
             }
-            this.containerView.setTranslationY(0.0f);
-            dismissInternal();
+            embedBottomSheet.containerView.setTranslationY(0.0f);
+            embedBottomSheet.dismissInternal();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
+    public static /* synthetic */ void $r8$lambda$SzW7M7iXrzRHJl79CZ9ruXBP7-s(EmbedBottomSheet embedBottomSheet, View view) {
+        embedBottomSheet.getClass();
         try {
-            ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.openUrl));
+            ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", embedBottomSheet.openUrl));
         } catch (Exception e) {
             FileLog.e(e);
         }
-        Activity activity = this.parentActivity;
+        Activity activity = embedBottomSheet.parentActivity;
         if (activity instanceof LaunchActivity) {
             ((LaunchActivity) activity).showBulletin(new Function() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda7
                 @Override // androidx.arch.core.util.Function
@@ -930,13 +913,12 @@ public class EmbedBottomSheet extends BottomSheet {
                 }
             });
         }
-        lambda$new$0();
+        embedBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view) {
-        Browser.openUrl(this.parentActivity, this.openUrl);
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$AkrgWKM0QD5pl8EDLqSwiOcknAs(EmbedBottomSheet embedBottomSheet, View view) {
+        Browser.openUrl(embedBottomSheet.parentActivity, embedBottomSheet.openUrl);
+        embedBottomSheet.dismiss();
     }
 
     private void runJsCode(String str) {

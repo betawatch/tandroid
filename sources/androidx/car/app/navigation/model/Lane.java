@@ -41,6 +41,6 @@ public final class Lane {
     }
 
     private Lane() {
-        this.mDirections = Collections.emptyList();
+        this.mDirections = Collections.EMPTY_LIST;
     }
 }

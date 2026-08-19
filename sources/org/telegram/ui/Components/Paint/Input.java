@@ -49,7 +49,7 @@ public class Input {
     private final Runnable fillWithCurrentBrush = new Runnable() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda2
         @Override // java.lang.Runnable
         public final void run() {
-            Input.this.lambda$new$1();
+            Input.this.fill(null, true, null);
         }
     };
 
@@ -85,7 +85,8 @@ public class Input {
         matrix.invert(matrix2);
     }
 
-    private void fill(Brush brush, final boolean z, final Runnable runnable) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fill(Brush brush, final boolean z, final Runnable runnable) {
         if (!this.canFill || this.renderView.getPainting().masking || this.lastLocation == null) {
             return;
         }
@@ -134,7 +135,7 @@ public class Input {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                Input.this.lambda$fill$0(point6, brush2, max2, valueAnimator3);
+                Input.$r8$lambda$Dxns--DqYYnAEf8u9WBbIZMZ6I8(Input.this, point6, brush2, max2, valueAnimator3);
             }
         });
         this.fillAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Paint.Input.1
@@ -161,17 +162,12 @@ public class Input {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fill$0(Point point, Brush brush, float f, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$Dxns--DqYYnAEf8u9WBbIZMZ6I8(Input input, Point point, Brush brush, float f, ValueAnimator valueAnimator) {
+        input.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         Path path = new Path(new Point[]{point});
-        path.setup(brush.isEraser() ? -1 : this.renderView.getCurrentColor(), floatValue * f, brush);
-        this.renderView.getPainting().paintStroke(path, true, true, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        fill(null, true, null);
+        path.setup(brush.isEraser() ? -1 : input.renderView.getCurrentColor(), floatValue * f, brush);
+        input.renderView.getPainting().paintStroke(path, true, true, null);
     }
 
     public void clear(Runnable runnable) {
@@ -184,21 +180,17 @@ public class Input {
         this.ignore = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x035e  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x034f  */
+    /* JADX WARN: Removed duplicated region for block: B:119:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00d2  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0200 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0201  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0301  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0204  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void process(MotionEvent motionEvent, float f) {
         boolean z;
         float f2;
-        int i;
-        Point point;
+        char c;
         if (this.fillAnimator != null || this.arrowAnimator != null) {
             return;
         }
@@ -225,7 +217,7 @@ public class Input {
                     f3 = ((f3 - 1.0f) * AndroidUtilities.lerp(this.renderView.getCurrentBrush().getSmoothThicknessRate(), 1.0f, androidx.core.math.MathUtils.clamp(this.realPointsCount / 16.0f, 0.0f, 1.0f))) + 1.0f;
                 }
                 float[] fArr2 = this.tempPoint;
-                Point point2 = new Point(fArr2[0], fArr2[1], f3);
+                Point point = new Point(fArr2[0], fArr2[1], f3);
                 if (actionMasked != 0) {
                     if (actionMasked == 1) {
                         if (this.ignore) {
@@ -238,18 +230,18 @@ public class Input {
                         if (!this.renderView.getPainting().applyHelperShape()) {
                             if (!this.hasMoved) {
                                 if (this.renderView.shouldDraw()) {
-                                    point2.edge = true;
-                                    paintPath(new Path(point2));
+                                    point.edge = true;
+                                    paintPath(new Path(point));
                                 }
                                 reset();
                             } else if (this.pointsCount > 0) {
                                 smoothenAndPaintPoints(true, this.renderView.getCurrentBrush().getSmoothThicknessRate());
                                 if (this.renderView.getCurrentBrush() instanceof Brush.Arrow) {
                                     final float f4 = this.lastAngle;
-                                    final Point point3 = this.points[this.pointsCount - 1];
-                                    Point point4 = this.lastThickLocation;
-                                    final double d = point4 == null ? point2.z : point4.z;
-                                    final float currentWeight = 12.0f * this.renderView.getCurrentWeight() * ((float) d);
+                                    final Point point2 = this.points[this.pointsCount - 1];
+                                    Point point3 = this.lastThickLocation;
+                                    final double d = point3 == null ? point.z : point3.z;
+                                    final float currentWeight = this.renderView.getCurrentWeight() * ((float) d) * 12.0f;
                                     ValueAnimator valueAnimator = this.arrowAnimator;
                                     if (valueAnimator != null) {
                                         valueAnimator.cancel();
@@ -261,7 +253,7 @@ public class Input {
                                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda0
                                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                            Input.this.lambda$process$2(f4, point3, currentWeight, fArr3, d, zArr, valueAnimator2);
+                                            Input.$r8$lambda$P4dMGq0EALDnWaBxKPLLAFU6JlI(Input.this, f4, point2, currentWeight, fArr3, d, zArr, valueAnimator2);
                                         }
                                     });
                                     this.arrowAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Paint.Input.2
@@ -279,7 +271,7 @@ public class Input {
                             this.renderView.getPainting().commitPath(null, this.renderView.getCurrentColor(), true, new Runnable() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    Input.this.lambda$process$3();
+                                    Input.$r8$lambda$kD-7dz164h0Md9DEJCsD4Ge7hUw(Input.this);
                                 }
                             });
                         }
@@ -325,9 +317,9 @@ public class Input {
                         this.beganDrawing = true;
                         this.hasMoved = false;
                         this.isFirst = true;
-                        this.lastLocation = point2;
+                        this.lastLocation = point;
                         this.drawingStart = System.currentTimeMillis();
-                        this.points[0] = point2;
+                        this.points[0] = point;
                         this.pointsCount = 1;
                         this.realPointsCount = 1;
                         this.lastAngleSet = false;
@@ -336,7 +328,7 @@ public class Input {
                         AndroidUtilities.runOnUIThread(this.fillWithCurrentBrush, ViewConfiguration.getLongPressTimeout());
                         return;
                     }
-                    float distanceTo = point2.getDistanceTo(this.lastLocation);
+                    float distanceTo = point.getDistanceTo(this.lastLocation);
                     if (distanceTo < AndroidUtilities.dp(5.0f) / f) {
                         return;
                     }
@@ -354,57 +346,45 @@ public class Input {
                             renderView.selectBrush((Brush) list.get(list.size() - 1));
                         }
                     }
-                    this.points[this.pointsCount] = point2;
+                    this.points[this.pointsCount] = point;
                     if (this.renderView.getPainting() == null || !this.renderView.getPainting().masking) {
+                        f2 = distanceTo;
+                        c = 2;
                         if (System.currentTimeMillis() - this.drawingStart > 3000) {
                             this.detector.clear();
                             this.renderView.getPainting().setHelperShape(null);
                         } else if ((this.renderView.getCurrentBrush() instanceof Brush.Radial) || (this.renderView.getCurrentBrush() instanceof Brush.Elliptical)) {
-                            f2 = currentTimeMillis;
-                            this.detector.append(point2.x, point2.y, distanceTo > ((float) AndroidUtilities.dp(6.0f)) / f);
-                            i = this.pointsCount + 1;
-                            this.pointsCount = i;
-                            this.realPointsCount++;
-                            if (i != 3) {
-                                Point[] pointArr = this.points;
-                                Point point5 = pointArr[2];
-                                double d2 = point5.y;
-                                Point point6 = pointArr[1];
-                                double d3 = d2 - point6.y;
-                                double d4 = point5.x;
-                                point = point2;
-                                float atan2 = (float) Math.atan2(d3, d4 - point6.x);
-                                if (!this.lastAngleSet) {
-                                    this.lastAngle = atan2;
-                                    this.lastAngleSet = true;
-                                } else {
-                                    float clamp = androidx.core.math.MathUtils.clamp(distanceTo / (AndroidUtilities.dp(16.0f) / f), 0.0f, 1.0f);
-                                    if (clamp > 0.4f) {
-                                        this.lastAngle = lerpAngle(this.lastAngle, atan2, clamp);
-                                    }
-                                }
-                                smoothenAndPaintPoints(false, this.renderView.getCurrentBrush().getSmoothThicknessRate());
-                            } else {
-                                point = point2;
-                            }
-                            this.lastLocation = point;
-                            if (distanceTo > AndroidUtilities.dp(8.0f) / f) {
-                                this.lastThickLocation = point;
-                            }
-                            this.velocity = androidx.core.math.MathUtils.clamp(this.velocity + (f2 / 75.0f), 0.6f, 1.0f);
-                            return;
+                            this.detector.append(point.x, point.y, f2 > ((float) AndroidUtilities.dp(6.0f)) / f);
                         }
+                    } else {
+                        f2 = distanceTo;
+                        c = 2;
                     }
-                    f2 = currentTimeMillis;
-                    i = this.pointsCount + 1;
+                    int i = this.pointsCount + 1;
                     this.pointsCount = i;
                     this.realPointsCount++;
-                    if (i != 3) {
+                    if (i == 3) {
+                        Point[] pointArr = this.points;
+                        Point point4 = pointArr[c];
+                        double d2 = point4.y;
+                        Point point5 = pointArr[1];
+                        float atan2 = (float) Math.atan2(d2 - point5.y, point4.x - point5.x);
+                        if (!this.lastAngleSet) {
+                            this.lastAngle = atan2;
+                            this.lastAngleSet = true;
+                        } else {
+                            float clamp = androidx.core.math.MathUtils.clamp(f2 / (AndroidUtilities.dp(16.0f) / f), 0.0f, 1.0f);
+                            if (clamp > 0.4f) {
+                                this.lastAngle = lerpAngle(this.lastAngle, atan2, clamp);
+                            }
+                        }
+                        smoothenAndPaintPoints(false, this.renderView.getCurrentBrush().getSmoothThicknessRate());
                     }
                     this.lastLocation = point;
-                    if (distanceTo > AndroidUtilities.dp(8.0f) / f) {
+                    if (f2 > AndroidUtilities.dp(8.0f) / f) {
+                        this.lastThickLocation = point;
                     }
-                    this.velocity = androidx.core.math.MathUtils.clamp(this.velocity + (f2 / 75.0f), 0.6f, 1.0f);
+                    this.velocity = androidx.core.math.MathUtils.clamp(this.velocity + (currentTimeMillis / 75.0f), 0.6f, 1.0f);
                     return;
                 }
                 return;
@@ -414,15 +394,15 @@ public class Input {
         if (this.renderView.getCurrentBrush() != null) {
         }
         float[] fArr22 = this.tempPoint;
-        Point point22 = new Point(fArr22[0], fArr22[1], f3);
+        Point point6 = new Point(fArr22[0], fArr22[1], f3);
         if (actionMasked != 0) {
         }
         if (this.ignore) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$process$2(float f, Point point, float f2, float[] fArr, double d, boolean[] zArr, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$P4dMGq0EALDnWaBxKPLLAFU6JlI(Input input, float f, Point point, float f2, float[] fArr, double d, boolean[] zArr, ValueAnimator valueAnimator) {
+        input.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         double d2 = f;
         double cos = Math.cos(d2 - 2.5918139392115793d);
@@ -434,14 +414,14 @@ public class Input {
         double d7 = sin * d4;
         Point point2 = new Point(d3 + (d5 * d6), point.y + (d6 * d7), d);
         double d8 = floatValue;
-        paintPath(new Path(new Point[]{point2, new Point(point.x + (d5 * d8), point.y + (d7 * d8), d, true)}));
+        input.paintPath(new Path(new Point[]{point2, new Point(point.x + (d5 * d8), point.y + (d7 * d8), d, true)}));
         double cos2 = Math.cos(d2 + 2.5918139392115793d);
         double sin2 = Math.sin(d2 + 2.748893571891069d);
         double d9 = point.x;
         double d10 = cos2 * d4;
         double d11 = fArr[0];
         double d12 = sin2 * d4;
-        paintPath(new Path(new Point[]{new Point(d9 + (d10 * d11), point.y + (d11 * d12), d), new Point(point.x + (d10 * d8), point.y + (d12 * d8), d, true)}));
+        input.paintPath(new Path(new Point[]{new Point(d9 + (d10 * d11), point.y + (d11 * d12), d), new Point(point.x + (d10 * d8), point.y + (d12 * d8), d, true)}));
         if (!zArr[0] && floatValue > 0.4f) {
             zArr[0] = true;
             BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();
@@ -449,12 +429,11 @@ public class Input {
         fArr[0] = floatValue;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$process$3() {
-        Brush brush = this.switchedBrushByStylusFrom;
+    public static /* synthetic */ void $r8$lambda$kD-7dz164h0Md9DEJCsD4Ge7hUw(Input input) {
+        Brush brush = input.switchedBrushByStylusFrom;
         if (brush != null) {
-            this.renderView.selectBrush(brush);
-            this.switchedBrushByStylusFrom = null;
+            input.renderView.selectBrush(brush);
+            input.switchedBrushByStylusFrom = null;
         }
     }
 
@@ -472,6 +451,7 @@ public class Input {
 
     private void smoothenAndPaintPoints(boolean z, float f) {
         int i = this.pointsCount;
+        boolean z2 = false;
         if (i > 2) {
             Vector vector = new Vector();
             Point[] pointArr = this.points;
@@ -485,25 +465,30 @@ public class Input {
             Point multiplySum2 = point3.multiplySum(point2, 0.5d);
             int min = (int) Math.min(48.0d, Math.max(Math.floor(multiplySum.getDistanceTo(multiplySum2) / 1), 24.0d));
             float f2 = 1.0f / min;
-            int i2 = 0;
             float f3 = 0.0f;
+            int i2 = 0;
             while (i2 < min) {
-                int i3 = i2;
-                Point smoothPoint = smoothPoint(multiplySum, multiplySum2, point2, f3, f);
+                Point point4 = multiplySum;
+                Point point5 = multiplySum2;
+                Point smoothPoint = smoothPoint(point4, point5, point2, f3, f);
                 if (this.isFirst) {
                     smoothPoint.edge = true;
-                    this.isFirst = false;
+                    this.isFirst = z2;
                 }
                 vector.add(smoothPoint);
                 this.thicknessSum += smoothPoint.z;
                 this.thicknessCount += 1.0d;
                 f3 += f2;
-                i2 = i3 + 1;
+                i2++;
+                multiplySum = point4;
+                multiplySum2 = point5;
+                z2 = false;
             }
+            Point point6 = multiplySum2;
             if (z) {
-                multiplySum2.edge = true;
+                point6.edge = true;
             }
-            vector.add(multiplySum2);
+            vector.add(point6);
             Point[] pointArr2 = new Point[vector.size()];
             vector.toArray(pointArr2);
             paintPath(new Path(pointArr2));
@@ -540,24 +525,24 @@ public class Input {
         this.renderView.getPainting().paintStroke(path, this.clearBuffer, false, new Runnable() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                Input.this.lambda$paintPath$5(path);
+                Input.$r8$lambda$FFO9ZkJ_tD5PihwheO666ZpJPhk(Input.this, path);
             }
         });
         this.clearBuffer = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$paintPath$4(Path path) {
-        this.lastRemainder = path.remainder;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$paintPath$5(final Path path) {
+    public static /* synthetic */ void $r8$lambda$FFO9ZkJ_tD5PihwheO666ZpJPhk(final Input input, final Path path) {
+        input.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Input$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                Input.this.lambda$paintPath$4(path);
+                Input.$r8$lambda$RFmG-G63-8y7Hsw-lBC2KbPA020(Input.this, path);
             }
         });
+    }
+
+    public static /* synthetic */ void $r8$lambda$RFmG-G63-8y7Hsw-lBC2KbPA020(Input input, Path path) {
+        input.getClass();
+        input.lastRemainder = path.remainder;
     }
 }

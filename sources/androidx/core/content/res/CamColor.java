@@ -101,7 +101,7 @@ public class CamColor {
         float c = (4.0f / viewingConditions.getC()) * ((float) Math.sqrt(pow4 / 100.0f)) * (viewingConditions.getAw() + 4.0f) * viewingConditions.getFlRoot();
         float sqrt = ((float) Math.sqrt(pow4 / 100.0d)) * ((float) Math.pow(1.64d - Math.pow(0.29d, viewingConditions.getN()), 0.73d)) * ((float) Math.pow((((((((float) (Math.cos((((((double) atan2) < 20.14d ? 360.0f + atan2 : atan2) * 3.141592653589793d) / 180.0d) + 2.0d) + 3.8d)) * 0.25f) * 3846.1538f) * viewingConditions.getNc()) * viewingConditions.getNcb()) * ((float) Math.sqrt((f12 * f12) + (f13 * f13)))) / (f15 + 0.305f), 0.9d));
         float flRoot = viewingConditions.getFlRoot() * sqrt;
-        float sqrt2 = ((float) Math.sqrt((r7 * viewingConditions.getC()) / (viewingConditions.getAw() + 4.0f))) * 50.0f;
+        float sqrt2 = ((float) Math.sqrt((r4 * viewingConditions.getC()) / (viewingConditions.getAw() + 4.0f))) * 50.0f;
         float f18 = (1.7f * pow4) / ((0.007f * pow4) + 1.0f);
         float log = ((float) Math.log((0.0228f * flRoot) + 1.0f)) * 43.85965f;
         double d2 = f17;
@@ -126,12 +126,12 @@ public class CamColor {
 
     private static CamColor fromJchInFrame(float f, float f2, float f3, ViewingConditions viewingConditions) {
         float c = (4.0f / viewingConditions.getC()) * ((float) Math.sqrt(f / 100.0d)) * (viewingConditions.getAw() + 4.0f) * viewingConditions.getFlRoot();
-        float flRoot = f2 * viewingConditions.getFlRoot();
+        float flRoot = viewingConditions.getFlRoot() * f2;
         float sqrt = ((float) Math.sqrt(((f2 / ((float) Math.sqrt(r4))) * viewingConditions.getC()) / (viewingConditions.getAw() + 4.0f))) * 50.0f;
         float f4 = (1.7f * f) / ((0.007f * f) + 1.0f);
         float log = ((float) Math.log((flRoot * 0.0228d) + 1.0d)) * 43.85965f;
         double d = (3.1415927f * f3) / 180.0f;
-        return new CamColor(f3, f2, f, c, flRoot, sqrt, f4, log * ((float) Math.cos(d)), log * ((float) Math.sin(d)));
+        return new CamColor(f3, f2, f, c, flRoot, sqrt, f4, ((float) Math.cos(d)) * log, log * ((float) Math.sin(d)));
     }
 
     float distance(CamColor camColor) {
@@ -229,7 +229,7 @@ public class CamColor {
                 }
             }
             if (f5 == 0.0f && f6 == 0.0f) {
-                break;
+                return camColor;
             }
             if (lStarFromInt < f3) {
                 f7 = f8;

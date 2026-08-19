@@ -146,14 +146,13 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
                 }
             }
             requestStop();
-            return this.mExclusive && this.mAnimating;
+            return !this.mExclusive && this.mAnimating;
         }
         this.mScroller.setTargetVelocity(computeTargetVelocity(0, motionEvent.getX(), view.getWidth(), this.mTarget.getWidth()), computeTargetVelocity(1, motionEvent.getY(), view.getHeight(), this.mTarget.getHeight()));
         if (!this.mAnimating && shouldAnimate()) {
             startAnimating();
         }
         if (this.mExclusive) {
-            return false;
         }
     }
 
@@ -161,7 +160,10 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
         ClampedScroller clampedScroller = this.mScroller;
         int verticalDirection = clampedScroller.getVerticalDirection();
         int horizontalDirection = clampedScroller.getHorizontalDirection();
-        return (verticalDirection != 0 && canTargetScrollVertically(verticalDirection)) || (horizontalDirection != 0 && canTargetScrollHorizontally(horizontalDirection));
+        if (verticalDirection == 0 || !canTargetScrollVertically(verticalDirection)) {
+            return horizontalDirection != 0 && canTargetScrollHorizontally(horizontalDirection);
+        }
+        return true;
     }
 
     private void startAnimating() {

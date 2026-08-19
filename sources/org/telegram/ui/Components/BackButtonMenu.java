@@ -52,26 +52,23 @@ public abstract class BackButtonMenu {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0283  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x029f  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x02c1 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0286  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x027f  */
-    /* JADX WARN: Type inference failed for: r1v25, types: [android.graphics.drawable.BitmapDrawable] */
-    /* JADX WARN: Type inference failed for: r23v1, types: [org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
-    /* JADX WARN: Type inference failed for: r6v1, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0272  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0293  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x02b5 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0275  */
+    /* JADX WARN: Type inference failed for: r13v0, types: [android.view.View, org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
+    /* JADX WARN: Type inference failed for: r1v24, types: [android.graphics.drawable.BitmapDrawable] */
+    /* JADX WARN: Type inference failed for: r7v4, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static ActionBarPopupWindow show(final BaseFragment baseFragment, View view, long j, long j2, Theme.ResourcesProvider resourcesProvider) {
         ArrayList stackedHistoryDialogs;
-        View view2;
+        ArrayList arrayList;
+        TLRPC.TL_forumTopic tL_forumTopic;
         boolean z;
-        INavigationLayout iNavigationLayout;
-        long j3;
-        View view3;
-        boolean z2;
         Drawable drawable;
         String str;
         ?? r1;
@@ -84,38 +81,44 @@ public abstract class BackButtonMenu {
         if (parentLayout == null || parentActivity == null || fragmentView == null) {
             return null;
         }
+        long j3 = 0;
         if (j2 != 0 && !ChatObject.isMonoForum(baseFragment.getCurrentAccount(), j)) {
             stackedHistoryDialogs = getStackedHistoryForTopic(baseFragment, j, j2);
         } else {
             stackedHistoryDialogs = getStackedHistoryDialogs(baseFragment, j);
         }
-        ArrayList arrayList = stackedHistoryDialogs;
-        if (arrayList.size() <= 0) {
+        ArrayList arrayList2 = stackedHistoryDialogs;
+        if (arrayList2.size() <= 0) {
             return null;
         }
         int i = R.drawable.popup_fixed_alert4;
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity, i, resourcesProvider);
+        ?? actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity, i, resourcesProvider);
         Rect rect = new Rect();
         baseFragment.getParentActivity().getResources().getDrawable(i).mutate().getPadding(rect);
         actionBarPopupWindowLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground, resourcesProvider));
-        AtomicReference atomicReference = new AtomicReference();
-        int size = arrayList.size();
-        boolean z3 = false;
+        final AtomicReference atomicReference = new AtomicReference();
+        int size = arrayList2.size();
         int i2 = 0;
-        while (i2 < size) {
-            boolean z4 = i2 == 0;
-            boolean z5 = i2 == size + (-1);
-            final PulledDialog pulledDialog = (PulledDialog) arrayList.get(i2);
+        boolean z2 = false;
+        while (true) {
+            long j4 = j3;
+            if (i2 >= size) {
+                break;
+            }
+            boolean z3 = i2 == 0;
+            boolean z4 = i2 == size + (-1);
+            final PulledDialog pulledDialog = (PulledDialog) arrayList2.get(i2);
             TLRPC.Chat chat = pulledDialog.chat;
-            int i3 = i2;
+            AtomicReference atomicReference2 = atomicReference;
             TLRPC.User user = pulledDialog.user;
-            Rect rect2 = rect;
-            final TLRPC.TL_forumTopic tL_forumTopic = pulledDialog.topic;
+            boolean z5 = z2;
+            final INavigationLayout iNavigationLayout = parentLayout;
+            TLRPC.TL_forumTopic tL_forumTopic2 = pulledDialog.topic;
+            boolean z6 = z4;
             ?? frameLayout = new FrameLayout(parentActivity);
-            int i4 = size;
+            int i3 = i2;
             frameLayout.setMinimumWidth(AndroidUtilities.dp(200.0f));
             BackupImageView backupImageView = new BackupImageView(parentActivity);
-            ArrayList arrayList2 = arrayList;
             if (chat == null && user == null) {
                 backupImageView.setRoundRadius(0);
             } else {
@@ -123,38 +126,28 @@ public abstract class BackButtonMenu {
             }
             frameLayout.addView(backupImageView, LayoutHelper.createFrameRelatively(32.0f, 32.0f, 8388627, 8.0f, 0.0f, 0.0f, 0.0f));
             TextView textView = new TextView(parentActivity);
-            boolean z6 = z3;
             textView.setLines(1);
-            ?? r23 = actionBarPopupWindowLayout;
+            boolean z7 = z3;
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, resourcesProvider));
             textView.setEllipsize(TextUtils.TruncateAt.END);
             frameLayout.addView(textView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 52.0f, 0.0f, 8.0f, 0.0f));
             AvatarDrawable avatarDrawable = new AvatarDrawable();
             avatarDrawable.setScaleSize(0.8f);
-            if (tL_forumTopic != null) {
-                if (tL_forumTopic.id == 1) {
+            if (tL_forumTopic2 != null) {
+                if (tL_forumTopic2.id == 1) {
                     backupImageView.setImageDrawable(ForumUtilities.createGeneralTopicDrawable(fragmentView.getContext(), 1.0f, Theme.getColor(Theme.key_chat_inMenu, resourcesProvider), false));
-                    z = z5;
-                    iNavigationLayout = parentLayout;
-                    j3 = 0;
+                    arrayList = arrayList2;
+                } else if (tL_forumTopic2.icon_emoji_id != j4) {
+                    arrayList = arrayList2;
+                    backupImageView.setAnimatedEmojiDrawable(new AnimatedEmojiDrawable(10, baseFragment.getCurrentAccount(), tL_forumTopic2.icon_emoji_id));
                 } else {
-                    j3 = 0;
-                    if (tL_forumTopic.icon_emoji_id != 0) {
-                        z = z5;
-                        iNavigationLayout = parentLayout;
-                        backupImageView.setAnimatedEmojiDrawable(new AnimatedEmojiDrawable(10, baseFragment.getCurrentAccount(), tL_forumTopic.icon_emoji_id));
-                    } else {
-                        z = z5;
-                        iNavigationLayout = parentLayout;
-                        backupImageView.setImageDrawable(ForumUtilities.createTopicDrawable(tL_forumTopic, false));
-                    }
+                    arrayList = arrayList2;
+                    backupImageView.setImageDrawable(ForumUtilities.createTopicDrawable(tL_forumTopic2, false));
                 }
-                textView.setText(tL_forumTopic.title);
+                textView.setText(tL_forumTopic2.title);
             } else {
-                z = z5;
-                iNavigationLayout = parentLayout;
-                j3 = 0;
+                arrayList = arrayList2;
                 if (chat != null) {
                     avatarDrawable.setInfo(baseFragment.getCurrentAccount(), chat);
                     TLRPC.ChatPhoto chatPhoto = chat.photo;
@@ -168,7 +161,7 @@ public abstract class BackButtonMenu {
                     if (userProfilePhoto == null || (drawable = userProfilePhoto.strippedBitmap) == null) {
                         drawable = avatarDrawable;
                     }
-                    view3 = fragmentView;
+                    tL_forumTopic = tL_forumTopic2;
                     if (pulledDialog.activity == ChatActivity.class && UserObject.isUserSelf(user)) {
                         str = LocaleController.getString(R.string.SavedMessages);
                         avatarDrawable.setAvatarType(1);
@@ -178,10 +171,9 @@ public abstract class BackButtonMenu {
                         avatarDrawable.setAvatarType(12);
                         backupImageView.setImageDrawable(avatarDrawable);
                     } else if (UserObject.isDeleted(user)) {
-                        String string = LocaleController.getString(R.string.HiddenName);
+                        str = LocaleController.getString(R.string.HiddenName);
                         avatarDrawable.setInfo(baseFragment.getCurrentAccount(), user);
                         backupImageView.setImage(ImageLocation.getForUser(baseFragment.getCurrentAccount(), user, 1), "50_50", avatarDrawable, user);
-                        str = string;
                     } else {
                         String userName = UserObject.getUserName(user);
                         avatarDrawable.setInfo(baseFragment.getCurrentAccount(), user);
@@ -189,132 +181,109 @@ public abstract class BackButtonMenu {
                         str = userName;
                     }
                     textView.setText(str);
-                    z2 = false;
-                    z6 = true;
+                    z = false;
+                    z5 = true;
                     frameLayout.setBackground(Theme.getSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), false));
-                    final AtomicReference atomicReference2 = atomicReference;
-                    final INavigationLayout iNavigationLayout2 = iNavigationLayout;
-                    AtomicReference atomicReference3 = atomicReference;
+                    atomicReference = atomicReference2;
+                    final TLRPC.TL_forumTopic tL_forumTopic3 = tL_forumTopic;
                     frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BackButtonMenu$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
-                        public final void onClick(View view4) {
-                            BackButtonMenu.lambda$show$0(atomicReference2, pulledDialog, iNavigationLayout2, tL_forumTopic, baseFragment, view4);
+                        public final void onClick(View view2) {
+                            BackButtonMenu.$r8$lambda$LjwJnyIy4aTYeceLn6PSUidUlns(atomicReference, pulledDialog, iNavigationLayout, tL_forumTopic3, baseFragment, view2);
                         }
                     });
-                    r23.addView(frameLayout, LayoutHelper.createLinear(-1, 44, 0.0f, 0, 0, z4 ? 3 : 0, 0, z ? 3 : 0));
-                    if (z2) {
+                    actionBarPopupWindowLayout.addView(frameLayout, LayoutHelper.createLinear(-1, 44, 0.0f, 0, 0, z7 ? 3 : 0, 0, z6 ? 3 : 0));
+                    if (z) {
                         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                         frameLayout2.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuSeparator, resourcesProvider));
                         frameLayout2.setTag(R.id.fit_width_tag, 1);
-                        r23.addView(frameLayout2, LayoutHelper.createLinear(-1, 8));
+                        actionBarPopupWindowLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, 8));
                     }
-                    rect = rect2;
-                    atomicReference = atomicReference3;
-                    parentLayout = iNavigationLayout;
-                    arrayList = arrayList2;
-                    size = i4;
-                    fragmentView = view3;
-                    actionBarPopupWindowLayout = r23;
                     i2 = i3 + 1;
-                    z3 = z6;
+                    parentLayout = iNavigationLayout;
+                    j3 = j4;
+                    z2 = z5;
+                    arrayList2 = arrayList;
                 } else {
-                    view3 = fragmentView;
+                    tL_forumTopic = tL_forumTopic2;
                     backupImageView.setImageDrawable(ContextCompat.getDrawable(parentActivity, R.drawable.msg_viewchats).mutate());
                     backupImageView.setSize(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
                     backupImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, resourcesProvider), PorterDuff.Mode.MULTIPLY));
                     textView.setText(LocaleController.getString(R.string.AllChats));
-                    z2 = true;
+                    z = true;
                     frameLayout.setBackground(Theme.getSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), false));
-                    final AtomicReference atomicReference22 = atomicReference;
-                    final INavigationLayout iNavigationLayout22 = iNavigationLayout;
-                    AtomicReference atomicReference32 = atomicReference;
+                    atomicReference = atomicReference2;
+                    final TLRPC.TL_forumTopic tL_forumTopic32 = tL_forumTopic;
                     frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BackButtonMenu$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
-                        public final void onClick(View view4) {
-                            BackButtonMenu.lambda$show$0(atomicReference22, pulledDialog, iNavigationLayout22, tL_forumTopic, baseFragment, view4);
+                        public final void onClick(View view2) {
+                            BackButtonMenu.$r8$lambda$LjwJnyIy4aTYeceLn6PSUidUlns(atomicReference, pulledDialog, iNavigationLayout, tL_forumTopic32, baseFragment, view2);
                         }
                     });
-                    r23.addView(frameLayout, LayoutHelper.createLinear(-1, 44, 0.0f, 0, 0, z4 ? 3 : 0, 0, z ? 3 : 0));
-                    if (z2) {
+                    actionBarPopupWindowLayout.addView(frameLayout, LayoutHelper.createLinear(-1, 44, 0.0f, 0, 0, z7 ? 3 : 0, 0, z6 ? 3 : 0));
+                    if (z) {
                     }
-                    rect = rect2;
-                    atomicReference = atomicReference32;
-                    parentLayout = iNavigationLayout;
-                    arrayList = arrayList2;
-                    size = i4;
-                    fragmentView = view3;
-                    actionBarPopupWindowLayout = r23;
                     i2 = i3 + 1;
-                    z3 = z6;
+                    parentLayout = iNavigationLayout;
+                    j3 = j4;
+                    z2 = z5;
+                    arrayList2 = arrayList;
                 }
             }
-            view3 = fragmentView;
-            z2 = false;
-            z6 = true;
+            tL_forumTopic = tL_forumTopic2;
+            z = false;
+            z5 = true;
             frameLayout.setBackground(Theme.getSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), false));
-            final AtomicReference atomicReference222 = atomicReference;
-            final INavigationLayout iNavigationLayout222 = iNavigationLayout;
-            AtomicReference atomicReference322 = atomicReference;
+            atomicReference = atomicReference2;
+            final TLRPC.TL_forumTopic tL_forumTopic322 = tL_forumTopic;
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BackButtonMenu$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view4) {
-                    BackButtonMenu.lambda$show$0(atomicReference222, pulledDialog, iNavigationLayout222, tL_forumTopic, baseFragment, view4);
+                public final void onClick(View view2) {
+                    BackButtonMenu.$r8$lambda$LjwJnyIy4aTYeceLn6PSUidUlns(atomicReference, pulledDialog, iNavigationLayout, tL_forumTopic322, baseFragment, view2);
                 }
             });
-            r23.addView(frameLayout, LayoutHelper.createLinear(-1, 44, 0.0f, 0, 0, z4 ? 3 : 0, 0, z ? 3 : 0));
-            if (z2) {
+            actionBarPopupWindowLayout.addView(frameLayout, LayoutHelper.createLinear(-1, 44, 0.0f, 0, 0, z7 ? 3 : 0, 0, z6 ? 3 : 0));
+            if (z) {
             }
-            rect = rect2;
-            atomicReference = atomicReference322;
-            parentLayout = iNavigationLayout;
-            arrayList = arrayList2;
-            size = i4;
-            fragmentView = view3;
-            actionBarPopupWindowLayout = r23;
             i2 = i3 + 1;
-            z3 = z6;
+            parentLayout = iNavigationLayout;
+            j3 = j4;
+            z2 = z5;
+            arrayList2 = arrayList;
         }
-        AtomicReference atomicReference4 = atomicReference;
-        Rect rect3 = rect;
-        View view4 = fragmentView;
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = actionBarPopupWindowLayout;
-        if (!z3) {
+        if (!z2) {
             return null;
         }
-        ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout2, -2, -2);
-        atomicReference4.set(actionBarPopupWindow);
+        ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
+        atomicReference.set(actionBarPopupWindow);
         actionBarPopupWindow.setPauseNotifications(true);
         actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
         actionBarPopupWindow.setFocusable(true);
-        actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+        actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
         actionBarPopupWindow.setInputMethodMode(2);
         actionBarPopupWindow.setSoftInputMode(0);
         actionBarPopupWindow.getContentView().setFocusableInTouchMode(true);
-        actionBarPopupWindowLayout2.setFitItems(true);
-        int dp = AndroidUtilities.dp(7.0f) - rect3.left;
+        actionBarPopupWindowLayout.setFitItems(true);
+        int dp = AndroidUtilities.dp(7.0f) - rect.left;
         if (AndroidUtilities.isTablet()) {
             int[] iArr = new int[2];
-            view2 = view4;
-            view2.getLocationInWindow(iArr);
+            fragmentView.getLocationInWindow(iArr);
             dp += iArr[0];
-        } else {
-            view2 = view4;
         }
-        actionBarPopupWindow.showAtLocation(view2, 51, dp, (view.getBottom() - rect3.top) - AndroidUtilities.dp(1.0f));
+        actionBarPopupWindow.showAtLocation(fragmentView, 51, dp, (view.getBottom() - rect.top) - AndroidUtilities.dp(1.0f));
         return actionBarPopupWindow;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00ae A[LOOP:1: B:30:0x00aa->B:32:0x00ae, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00ba A[EDGE_INSN: B:33:0x00ba->B:34:0x00ba BREAK  A[LOOP:1: B:30:0x00aa->B:32:0x00ae], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00c4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$show$0(AtomicReference atomicReference, PulledDialog pulledDialog, INavigationLayout iNavigationLayout, TLRPC.TL_forumTopic tL_forumTopic, BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$LjwJnyIy4aTYeceLn6PSUidUlns(AtomicReference atomicReference, PulledDialog pulledDialog, INavigationLayout iNavigationLayout, TLRPC.TL_forumTopic tL_forumTopic, BaseFragment baseFragment, View view) {
         Long l;
         ArrayList arrayList;
         int size;
@@ -419,20 +388,18 @@ public abstract class BackButtonMenu {
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Components.BackButtonMenu$$ExternalSyntheticLambda2
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$getStackedHistoryForTopic$1;
-                lambda$getStackedHistoryForTopic$1 = BackButtonMenu.lambda$getStackedHistoryForTopic$1((BackButtonMenu.PulledDialog) obj, (BackButtonMenu.PulledDialog) obj2);
-                return lambda$getStackedHistoryForTopic$1;
+                return BackButtonMenu.$r8$lambda$zwJbf49aukFzohFh_mJM0GlNr8Q((BackButtonMenu.PulledDialog) obj, (BackButtonMenu.PulledDialog) obj2);
             }
         });
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getStackedHistoryForTopic$1(PulledDialog pulledDialog, PulledDialog pulledDialog2) {
+    public static /* synthetic */ int $r8$lambda$zwJbf49aukFzohFh_mJM0GlNr8Q(PulledDialog pulledDialog, PulledDialog pulledDialog2) {
         return pulledDialog2.stackIndex - pulledDialog.stackIndex;
     }
 
     public static void goToPulledDialog(BaseFragment baseFragment, PulledDialog pulledDialog) {
+        BaseFragment baseFragment2;
         if (pulledDialog == null) {
             return;
         }
@@ -452,27 +419,32 @@ public abstract class BackButtonMenu {
             bundle.putInt("dialog_filter_id", pulledDialog.filterId);
             TLRPC.TL_forumTopic tL_forumTopic = pulledDialog.topic;
             if (tL_forumTopic != null) {
-                baseFragment.presentFragment(ForumUtilities.getChatActivityForTopic(baseFragment, pulledDialog.chat.id, tL_forumTopic, 0, bundle), true);
+                baseFragment2 = baseFragment;
+                baseFragment2.presentFragment(ForumUtilities.getChatActivityForTopic(baseFragment2, pulledDialog.chat.id, tL_forumTopic, 0, bundle), true);
             } else {
-                baseFragment.presentFragment(new ChatActivity(bundle), true);
+                baseFragment2 = baseFragment;
+                baseFragment2.presentFragment(new ChatActivity(bundle), true);
             }
-        } else if (cls == ProfileActivity.class) {
-            Bundle bundle2 = new Bundle();
-            bundle2.putLong("dialog_id", pulledDialog.dialogId);
-            baseFragment.presentFragment(new ProfileActivity(bundle2), true);
+        } else {
+            baseFragment2 = baseFragment;
+            if (cls == ProfileActivity.class) {
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("dialog_id", pulledDialog.dialogId);
+                baseFragment2.presentFragment(new ProfileActivity(bundle2), true);
+            }
         }
         if (pulledDialog.activity == TopicsFragment.class) {
             Bundle bundle3 = new Bundle();
             bundle3.putLong("chat_id", pulledDialog.chat.id);
-            baseFragment.presentFragment(new TopicsFragment(bundle3), true);
+            baseFragment2.presentFragment(new TopicsFragment(bundle3), true);
         }
         if (pulledDialog.activity == DialogsActivity.class) {
-            baseFragment.presentFragment(new DialogsActivity(null), true);
+            baseFragment2.presentFragment(new DialogsActivity(null), true);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0093 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0093 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -572,16 +544,13 @@ public abstract class BackButtonMenu {
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Components.BackButtonMenu$$ExternalSyntheticLambda1
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$getStackedHistoryDialogs$2;
-                lambda$getStackedHistoryDialogs$2 = BackButtonMenu.lambda$getStackedHistoryDialogs$2((BackButtonMenu.PulledDialog) obj, (BackButtonMenu.PulledDialog) obj2);
-                return lambda$getStackedHistoryDialogs$2;
+                return BackButtonMenu.$r8$lambda$sPUzo9otFwawnC1-lMMb0CzYuf8((BackButtonMenu.PulledDialog) obj, (BackButtonMenu.PulledDialog) obj2);
             }
         });
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getStackedHistoryDialogs$2(PulledDialog pulledDialog, PulledDialog pulledDialog2) {
+    public static /* synthetic */ int $r8$lambda$sPUzo9otFwawnC1-lMMb0CzYuf8(PulledDialog pulledDialog, PulledDialog pulledDialog2) {
         return pulledDialog2.stackIndex - pulledDialog.stackIndex;
     }
 

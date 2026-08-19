@@ -566,10 +566,14 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:193:0x014c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x0152, code lost:
     
-        if (r3.equals("groups") == false) goto L68;
+        if (r3.equals("groups") == false) goto L69;
      */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00c3 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -577,12 +581,14 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         TLRPC.User user;
         TLRPC.Chat chat;
         TLRPC.FileLocation fileLocation;
+        long j;
         String str;
         long botVerificationIcon;
         TLRPC.UserStatus userStatus;
         TextView textView;
         int dp;
-        TLRPC.FileLocation fileLocation2;
+        boolean z;
+        TLRPC.UserStatus userStatus2;
         char c = 1;
         this.dialogId = 0L;
         this.isCommunity = false;
@@ -590,17 +596,17 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         if (obj instanceof TLRPC.User) {
             user = (TLRPC.User) obj;
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-            TLRPC.FileLocation fileLocation3 = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
+            TLRPC.FileLocation fileLocation2 = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
             this.dialogId = user.id;
-            fileLocation = fileLocation3;
+            fileLocation = fileLocation2;
             chat = null;
         } else if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat2 = (TLRPC.Chat) obj;
             TLRPC.ChatPhoto chatPhoto = chat2.photo;
-            TLRPC.FileLocation fileLocation4 = chatPhoto != null ? chatPhoto.photo_small : null;
+            TLRPC.FileLocation fileLocation3 = chatPhoto != null ? chatPhoto.photo_small : null;
             this.dialogId = chat2.id;
             this.isCommunity = ChatObject.isCommunity(chat2);
-            fileLocation = fileLocation4;
+            fileLocation = fileLocation3;
             chat = chat2;
             user = null;
         } else {
@@ -609,35 +615,55 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             fileLocation = null;
         }
         if (i != 0) {
-            boolean z = (i & MessagesController.UPDATE_MASK_AVATAR) != 0 && (((fileLocation2 = this.lastAvatar) != null && fileLocation == null) || ((fileLocation2 == null && fileLocation != null) || !(fileLocation2 == null || (fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.local_id == fileLocation.local_id))));
-            if (user != null && !z && (i & MessagesController.UPDATE_MASK_STATUS) != 0) {
-                TLRPC.UserStatus userStatus2 = user.status;
-                if ((userStatus2 != null ? userStatus2.expires : 0) != this.lastStatus) {
+            if ((i & MessagesController.UPDATE_MASK_AVATAR) != 0) {
+                j = 0;
+                TLRPC.FileLocation fileLocation4 = this.lastAvatar;
+                if ((fileLocation4 != null && fileLocation == null) || ((fileLocation4 == null && fileLocation != null) || (fileLocation4 != null && (fileLocation4.volume_id != fileLocation.volume_id || fileLocation4.local_id != fileLocation.local_id)))) {
                     z = true;
+                    if (user != null && !z && (i & MessagesController.UPDATE_MASK_STATUS) != 0) {
+                        userStatus2 = user.status;
+                        if ((userStatus2 == null ? userStatus2.expires : 0) != this.lastStatus) {
+                            z = true;
+                        }
+                    }
+                    if (!z || this.currentName != null || this.lastName == null || (i & MessagesController.UPDATE_MASK_NAME) == 0) {
+                        str = null;
+                    } else {
+                        if (user != null) {
+                            str = AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(UserObject.getUserName(user)));
+                        } else {
+                            str = AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title));
+                        }
+                        if (!str.equals(this.lastName)) {
+                            z = true;
+                        }
+                    }
+                    if (!z) {
+                        return;
+                    }
                 }
-            }
-            if (z || this.currentName != null || this.lastName == null || (i & MessagesController.UPDATE_MASK_NAME) == 0) {
-                str = null;
             } else {
-                if (user != null) {
-                    str = AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(UserObject.getUserName(user)));
-                } else {
-                    str = AndroidUtilities.removeRTL(AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title));
-                }
-                if (!str.equals(this.lastName)) {
-                    z = true;
+                j = 0;
+            }
+            z = false;
+            if (user != null) {
+                userStatus2 = user.status;
+                if ((userStatus2 == null ? userStatus2.expires : 0) != this.lastStatus) {
                 }
             }
+            if (z) {
+            }
+            str = null;
             if (!z) {
-                return;
             }
         } else {
+            j = 0;
             str = null;
         }
         if (this.currentObject instanceof String) {
             ((FrameLayout.LayoutParams) this.nameTextView.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
             String str2 = (String) this.currentObject;
-            str2.hashCode();
+            str2.getClass();
             switch (str2.hashCode()) {
                 case -1716307998:
                     if (str2.equals("archived")) {
@@ -812,9 +838,9 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         if (user != null) {
             botVerificationIcon = DialogObject.getBotVerificationIcon(user);
         } else {
-            botVerificationIcon = chat != null ? DialogObject.getBotVerificationIcon(chat) : 0L;
+            botVerificationIcon = chat != null ? DialogObject.getBotVerificationIcon(chat) : j;
         }
-        if (botVerificationIcon == 0) {
+        if (botVerificationIcon == j) {
             this.botVerification.set((Drawable) null, false);
             this.nameTextView.setLeftDrawable((Drawable) null);
         } else {
@@ -823,7 +849,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             this.nameTextView.setLeftDrawable(this.botVerification);
         }
         if (user != null && MessagesController.getInstance(this.currentAccount).isPremiumUser(user) && !MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked()) {
-            if (DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            if (DialogObject.getEmojiStatusDocumentId(user.emoji_status) != j) {
                 this.emojiStatus.set(DialogObject.getEmojiStatusDocumentId(user.emoji_status), false);
                 this.emojiStatus.setColor(Integer.valueOf(Theme.getColor(Theme.key_chats_verifiedBackground, this.resourcesProvider)));
                 this.nameTextView.setRightDrawable(this.emojiStatus);

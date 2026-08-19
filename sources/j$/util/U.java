@@ -3,21 +3,21 @@ package j$.util;
 import java.util.Comparator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class U implements W {
-    public final /* synthetic */ Spliterator.OfDouble a;
+    public final /* synthetic */ Spliterator.OfInt a;
 
-    private /* synthetic */ U(Spliterator.OfDouble ofDouble) {
-        this.a = ofDouble;
+    public /* synthetic */ U(Spliterator.OfInt ofInt) {
+        this.a = ofInt;
     }
 
-    public static /* synthetic */ W a(Spliterator.OfDouble ofDouble) {
-        if (ofDouble == null) {
+    public static /* synthetic */ W a(Spliterator.OfInt ofInt) {
+        if (ofInt == null) {
             return null;
         }
-        return ofDouble instanceof V ? ((V) ofDouble).a : new U(ofDouble);
+        return ofInt instanceof V ? ((V) ofInt).a : new U(ofInt);
     }
 
     @Override // j$.util.Spliterator
@@ -26,11 +26,11 @@ public final /* synthetic */ class U implements W {
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Spliterator.OfDouble ofDouble = this.a;
+        Spliterator.OfInt ofInt = this.a;
         if (obj instanceof U) {
             obj = ((U) obj).a;
         }
-        return ofDouble.equals(obj);
+        return ofInt.equals(obj);
     }
 
     @Override // j$.util.Spliterator
@@ -38,19 +38,19 @@ public final /* synthetic */ class U implements W {
         return this.a.estimateSize();
     }
 
-    @Override // j$.util.f0
+    @Override // j$.util.c0
     public final /* synthetic */ void forEachRemaining(Object obj) {
-        this.a.forEachRemaining((Spliterator.OfDouble) obj);
+        this.a.forEachRemaining((Spliterator.OfInt) obj);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining((Consumer<? super Double>) consumer);
+        this.a.forEachRemaining((Consumer<? super Integer>) consumer);
     }
 
     @Override // j$.util.W
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(doubleConsumer);
+    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
+        this.a.forEachRemaining(intConsumer);
     }
 
     @Override // j$.util.Spliterator
@@ -72,33 +72,33 @@ public final /* synthetic */ class U implements W {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.f0
+    @Override // j$.util.c0
     public final /* synthetic */ boolean tryAdvance(Object obj) {
-        return this.a.tryAdvance((Spliterator.OfDouble) obj);
+        return this.a.tryAdvance((Spliterator.OfInt) obj);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return this.a.tryAdvance((Consumer<? super Double>) consumer);
+        return this.a.tryAdvance((Consumer<? super Integer>) consumer);
     }
 
     @Override // j$.util.W
-    public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return this.a.tryAdvance(doubleConsumer);
+    public final /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
+        return this.a.tryAdvance(intConsumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ Spliterator trySplit() {
-        return g0.a(this.a.trySplit());
+        return d0.a(this.a.trySplit());
     }
 
-    @Override // j$.util.W, j$.util.f0, j$.util.Spliterator
+    @Override // j$.util.W, j$.util.c0, j$.util.Spliterator
     public final /* synthetic */ W trySplit() {
         return a(this.a.trySplit());
     }
 
-    @Override // j$.util.f0, j$.util.Spliterator
-    public final /* synthetic */ f0 trySplit() {
-        return d0.a(this.a.trySplit());
+    @Override // j$.util.c0, j$.util.Spliterator
+    public final /* synthetic */ c0 trySplit() {
+        return a0.a(this.a.trySplit());
     }
 }

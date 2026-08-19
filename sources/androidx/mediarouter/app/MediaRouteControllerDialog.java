@@ -407,7 +407,10 @@ public class MediaRouteControllerDialog extends AlertDialog {
     }
 
     private boolean canShowPlaybackControlLayout() {
-        return this.mCustomControlView == null && !(this.mDescription == null && this.mState == null);
+        if (this.mCustomControlView == null) {
+            return (this.mDescription == null && this.mState == null) ? false : true;
+        }
+        return false;
     }
 
     private int getMainControllerHeight(boolean z) {
@@ -421,7 +424,7 @@ public class MediaRouteControllerDialog extends AlertDialog {
         if (this.mVolumeControlLayout.getVisibility() == 0) {
             paddingTop += this.mVolumeControlLayout.getMeasuredHeight();
         }
-        return (z && this.mVolumeControlLayout.getVisibility() == 0) ? this.mDividerView.getMeasuredHeight() + paddingTop : paddingTop;
+        return (z && this.mVolumeControlLayout.getVisibility() == 0) ? paddingTop + this.mDividerView.getMeasuredHeight() : paddingTop;
     }
 
     private void updateMediaControlVisibility(boolean z) {

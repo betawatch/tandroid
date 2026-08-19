@@ -61,11 +61,13 @@ final class AutoValue_RolloutAssignment extends RolloutAssignment {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof RolloutAssignment)) {
-            return false;
+        if (obj instanceof RolloutAssignment) {
+            RolloutAssignment rolloutAssignment = (RolloutAssignment) obj;
+            if (this.rolloutId.equals(rolloutAssignment.getRolloutId()) && this.parameterKey.equals(rolloutAssignment.getParameterKey()) && this.parameterValue.equals(rolloutAssignment.getParameterValue()) && this.variantId.equals(rolloutAssignment.getVariantId()) && this.templateVersion == rolloutAssignment.getTemplateVersion()) {
+                return true;
+            }
         }
-        RolloutAssignment rolloutAssignment = (RolloutAssignment) obj;
-        return this.rolloutId.equals(rolloutAssignment.getRolloutId()) && this.parameterKey.equals(rolloutAssignment.getParameterKey()) && this.parameterValue.equals(rolloutAssignment.getParameterValue()) && this.variantId.equals(rolloutAssignment.getVariantId()) && this.templateVersion == rolloutAssignment.getTemplateVersion();
+        return false;
     }
 
     public int hashCode() {

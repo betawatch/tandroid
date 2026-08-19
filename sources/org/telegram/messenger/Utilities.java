@@ -597,21 +597,17 @@ public class Utilities {
         doCallbacks(0, callbackArr);
     }
 
-    private static void doCallbacks(final int i, final Callback<Runnable>... callbackArr) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void doCallbacks(final int i, final Callback<Runnable>... callbackArr) {
         if (callbackArr == null || callbackArr.length <= i) {
             return;
         }
         callbackArr[i].run(new Runnable() { // from class: org.telegram.messenger.Utilities$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Utilities.lambda$doCallbacks$0(i, callbackArr);
+                Utilities.doCallbacks(i + 1, callbackArr);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$doCallbacks$0(int i, Callback[] callbackArr) {
-        doCallbacks(i + 1, callbackArr);
     }
 
     public static void raceCallbacks(final Runnable runnable, final Callback<Runnable>... callbackArr) {
@@ -624,7 +620,7 @@ public class Utilities {
             Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.Utilities$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Utilities.lambda$raceCallbacks$1(iArr, callbackArr, runnable);
+                    Utilities.$r8$lambda$7LYngopHvLcfmuoeB4pq0gKlpg4(iArr, callbackArr, runnable);
                 }
             };
             for (Callback<Runnable> callback : callbackArr) {
@@ -633,8 +629,7 @@ public class Utilities {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$raceCallbacks$1(int[] iArr, Callback[] callbackArr, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$7LYngopHvLcfmuoeB4pq0gKlpg4(int[] iArr, Callback[] callbackArr, Runnable runnable) {
         int i = iArr[0] + 1;
         iArr[0] = i;
         if (i != callbackArr.length || runnable == null) {

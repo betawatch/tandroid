@@ -149,34 +149,34 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(44:0|1|(1:3)(1:108)|4|5|6|(31:104|14|(1:16)|17|(1:103)|19|20|(1:22)(1:102)|23|(1:25)(1:101)|26|27|(5:29|(1:31)(1:44)|32|(5:34|(1:36)(1:42)|37|(1:39)(1:41)|40)|43)|45|46|(21:82|(1:84)|85|(1:87)|88|(1:90)(1:96)|91|92|(1:94)|95|58|(1:60)(1:80)|61|(1:63)|64|65|(1:67)|68|(1:70)(1:78)|71|(2:73|74)(2:76|77))|53|(1:55)(1:81)|56|57|58|(0)(0)|61|(0)|64|65|(0)|68|(0)(0)|71|(0)(0))|13|14|(0)|17|(0)|19|20|(0)(0)|23|(0)(0)|26|27|(0)|45|46|(2:48|50)|82|(0)|85|(0)|88|(0)(0)|91|92|(0)|95|58|(0)(0)|61|(0)|64|65|(0)|68|(0)(0)|71|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x01bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x01b8, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x02bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x02b8, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x00a4 A[Catch: Exception -> 0x007d, TryCatch #0 {Exception -> 0x007d, blocks: (B:6:0x0068, B:8:0x006c, B:10:0x0074, B:13:0x0080, B:14:0x0091, B:17:0x009e, B:20:0x00a7, B:22:0x00cd, B:23:0x00d5, B:25:0x00df, B:26:0x00e7, B:103:0x00a4, B:104:0x0087), top: B:5:0x0068 }] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00cd A[Catch: Exception -> 0x007d, TryCatch #0 {Exception -> 0x007d, blocks: (B:6:0x0068, B:8:0x006c, B:10:0x0074, B:13:0x0080, B:14:0x0091, B:17:0x009e, B:20:0x00a7, B:22:0x00cd, B:23:0x00d5, B:25:0x00df, B:26:0x00e7, B:103:0x00a4, B:104:0x0087), top: B:5:0x0068 }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00df A[Catch: Exception -> 0x007d, TryCatch #0 {Exception -> 0x007d, blocks: (B:6:0x0068, B:8:0x006c, B:10:0x0074, B:13:0x0080, B:14:0x0091, B:17:0x009e, B:20:0x00a7, B:22:0x00cd, B:23:0x00d5, B:25:0x00df, B:26:0x00e7, B:103:0x00a4, B:104:0x0087), top: B:5:0x0068 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0294 A[Catch: Exception -> 0x01bb, TryCatch #1 {Exception -> 0x01bb, blocks: (B:46:0x01a6, B:48:0x01aa, B:50:0x01b2, B:53:0x01be, B:55:0x01cd, B:57:0x01d4, B:58:0x028c, B:60:0x0294, B:61:0x029c, B:63:0x02a6, B:64:0x02ac, B:81:0x01d1, B:82:0x01f3, B:85:0x020a, B:87:0x020e, B:88:0x022b, B:90:0x022f, B:92:0x0236, B:94:0x0242, B:95:0x0262, B:96:0x0233), top: B:45:0x01a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x02a6 A[Catch: Exception -> 0x01bb, TryCatch #1 {Exception -> 0x01bb, blocks: (B:46:0x01a6, B:48:0x01aa, B:50:0x01b2, B:53:0x01be, B:55:0x01cd, B:57:0x01d4, B:58:0x028c, B:60:0x0294, B:61:0x029c, B:63:0x02a6, B:64:0x02ac, B:81:0x01d1, B:82:0x01f3, B:85:0x020a, B:87:0x020e, B:88:0x022b, B:90:0x022f, B:92:0x0236, B:94:0x0242, B:95:0x0262, B:96:0x0233), top: B:45:0x01a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02d1  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x02e6  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0329  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x033b  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x02f1  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x029b  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0209  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x020e A[Catch: Exception -> 0x01bb, TryCatch #1 {Exception -> 0x01bb, blocks: (B:46:0x01a6, B:48:0x01aa, B:50:0x01b2, B:53:0x01be, B:55:0x01cd, B:57:0x01d4, B:58:0x028c, B:60:0x0294, B:61:0x029c, B:63:0x02a6, B:64:0x02ac, B:81:0x01d1, B:82:0x01f3, B:85:0x020a, B:87:0x020e, B:88:0x022b, B:90:0x022f, B:92:0x0236, B:94:0x0242, B:95:0x0262, B:96:0x0233), top: B:45:0x01a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x022f A[Catch: Exception -> 0x01bb, TryCatch #1 {Exception -> 0x01bb, blocks: (B:46:0x01a6, B:48:0x01aa, B:50:0x01b2, B:53:0x01be, B:55:0x01cd, B:57:0x01d4, B:58:0x028c, B:60:0x0294, B:61:0x029c, B:63:0x02a6, B:64:0x02ac, B:81:0x01d1, B:82:0x01f3, B:85:0x020a, B:87:0x020e, B:88:0x022b, B:90:0x022f, B:92:0x0236, B:94:0x0242, B:95:0x0262, B:96:0x0233), top: B:45:0x01a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0242 A[Catch: Exception -> 0x01bb, TryCatch #1 {Exception -> 0x01bb, blocks: (B:46:0x01a6, B:48:0x01aa, B:50:0x01b2, B:53:0x01be, B:55:0x01cd, B:57:0x01d4, B:58:0x028c, B:60:0x0294, B:61:0x029c, B:63:0x02a6, B:64:0x02ac, B:81:0x01d1, B:82:0x01f3, B:85:0x020a, B:87:0x020e, B:88:0x022b, B:90:0x022f, B:92:0x0236, B:94:0x0242, B:95:0x0262, B:96:0x0233), top: B:45:0x01a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0233 A[Catch: Exception -> 0x01bb, TryCatch #1 {Exception -> 0x01bb, blocks: (B:46:0x01a6, B:48:0x01aa, B:50:0x01b2, B:53:0x01be, B:55:0x01cd, B:57:0x01d4, B:58:0x028c, B:60:0x0294, B:61:0x029c, B:63:0x02a6, B:64:0x02ac, B:81:0x01d1, B:82:0x01f3, B:85:0x020a, B:87:0x020e, B:88:0x022b, B:90:0x022f, B:92:0x0236, B:94:0x0242, B:95:0x0262, B:96:0x0233), top: B:45:0x01a6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x00e4  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x00a3 A[Catch: Exception -> 0x007c, TryCatch #0 {Exception -> 0x007c, blocks: (B:6:0x0067, B:8:0x006b, B:10:0x0073, B:13:0x007f, B:14:0x0090, B:17:0x009d, B:20:0x00a6, B:22:0x00cb, B:23:0x00d3, B:25:0x00dd, B:26:0x00e5, B:103:0x00a3, B:104:0x0086), top: B:5:0x0067 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00cb A[Catch: Exception -> 0x007c, TryCatch #0 {Exception -> 0x007c, blocks: (B:6:0x0067, B:8:0x006b, B:10:0x0073, B:13:0x007f, B:14:0x0090, B:17:0x009d, B:20:0x00a6, B:22:0x00cb, B:23:0x00d3, B:25:0x00dd, B:26:0x00e5, B:103:0x00a3, B:104:0x0086), top: B:5:0x0067 }] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00dd A[Catch: Exception -> 0x007c, TryCatch #0 {Exception -> 0x007c, blocks: (B:6:0x0067, B:8:0x006b, B:10:0x0073, B:13:0x007f, B:14:0x0090, B:17:0x009d, B:20:0x00a6, B:22:0x00cb, B:23:0x00d3, B:25:0x00dd, B:26:0x00e5, B:103:0x00a3, B:104:0x0086), top: B:5:0x0067 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x028f A[Catch: Exception -> 0x01b8, TryCatch #1 {Exception -> 0x01b8, blocks: (B:46:0x01a3, B:48:0x01a7, B:50:0x01af, B:53:0x01bb, B:55:0x01ca, B:57:0x01d1, B:58:0x0287, B:60:0x028f, B:61:0x0297, B:63:0x02a1, B:64:0x02a7, B:81:0x01ce, B:82:0x01ef, B:85:0x0206, B:87:0x020a, B:88:0x0227, B:90:0x022b, B:92:0x0232, B:94:0x023e, B:95:0x025e, B:96:0x022f), top: B:45:0x01a3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x02a1 A[Catch: Exception -> 0x01b8, TryCatch #1 {Exception -> 0x01b8, blocks: (B:46:0x01a3, B:48:0x01a7, B:50:0x01af, B:53:0x01bb, B:55:0x01ca, B:57:0x01d1, B:58:0x0287, B:60:0x028f, B:61:0x0297, B:63:0x02a1, B:64:0x02a7, B:81:0x01ce, B:82:0x01ef, B:85:0x0206, B:87:0x020a, B:88:0x0227, B:90:0x022b, B:92:0x0232, B:94:0x023e, B:95:0x025e, B:96:0x022f), top: B:45:0x01a3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02cc  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x02e1  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0322  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0334  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x02ec  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0296  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x020a A[Catch: Exception -> 0x01b8, TryCatch #1 {Exception -> 0x01b8, blocks: (B:46:0x01a3, B:48:0x01a7, B:50:0x01af, B:53:0x01bb, B:55:0x01ca, B:57:0x01d1, B:58:0x0287, B:60:0x028f, B:61:0x0297, B:63:0x02a1, B:64:0x02a7, B:81:0x01ce, B:82:0x01ef, B:85:0x0206, B:87:0x020a, B:88:0x0227, B:90:0x022b, B:92:0x0232, B:94:0x023e, B:95:0x025e, B:96:0x022f), top: B:45:0x01a3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x022b A[Catch: Exception -> 0x01b8, TryCatch #1 {Exception -> 0x01b8, blocks: (B:46:0x01a3, B:48:0x01a7, B:50:0x01af, B:53:0x01bb, B:55:0x01ca, B:57:0x01d1, B:58:0x0287, B:60:0x028f, B:61:0x0297, B:63:0x02a1, B:64:0x02a7, B:81:0x01ce, B:82:0x01ef, B:85:0x0206, B:87:0x020a, B:88:0x0227, B:90:0x022b, B:92:0x0232, B:94:0x023e, B:95:0x025e, B:96:0x022f), top: B:45:0x01a3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x023e A[Catch: Exception -> 0x01b8, TryCatch #1 {Exception -> 0x01b8, blocks: (B:46:0x01a3, B:48:0x01a7, B:50:0x01af, B:53:0x01bb, B:55:0x01ca, B:57:0x01d1, B:58:0x0287, B:60:0x028f, B:61:0x0297, B:63:0x02a1, B:64:0x02a7, B:81:0x01ce, B:82:0x01ef, B:85:0x0206, B:87:0x020a, B:88:0x0227, B:90:0x022b, B:92:0x0232, B:94:0x023e, B:95:0x025e, B:96:0x022f), top: B:45:0x01a3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x022f A[Catch: Exception -> 0x01b8, TryCatch #1 {Exception -> 0x01b8, blocks: (B:46:0x01a3, B:48:0x01a7, B:50:0x01af, B:53:0x01bb, B:55:0x01ca, B:57:0x01d1, B:58:0x0287, B:60:0x028f, B:61:0x0297, B:63:0x02a1, B:64:0x02a7, B:81:0x01ce, B:82:0x01ef, B:85:0x0206, B:87:0x020a, B:88:0x0227, B:90:0x022b, B:92:0x0232, B:94:0x023e, B:95:0x025e, B:96:0x022f), top: B:45:0x01a3 }] */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -453,12 +453,11 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
             }
             z = true;
             this.radialProgress.setPressed(this.miniButtonPressed, true);
-            return z || this.buttonPressed;
+            return !z || this.buttonPressed;
         }
         z = false;
         this.radialProgress.setPressed(this.miniButtonPressed, true);
         if (z) {
-            return true;
         }
     }
 
@@ -520,7 +519,7 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
             return;
         }
         if (i == 1) {
-            if (MediaController.getInstance().lambda$startAudioAgain$7(this.currentMessageObject)) {
+            if (MediaController.getInstance().pauseMessage(this.currentMessageObject)) {
                 this.buttonState = 0;
                 this.radialProgress.setIcon(getIconForCurrentState(), false, true);
                 invalidate();

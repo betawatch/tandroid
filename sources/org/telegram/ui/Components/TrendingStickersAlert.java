@@ -88,7 +88,7 @@ public class TrendingStickersAlert extends BottomSheet {
     }
 
     public void setHeavyOperationsEnabled(boolean z) {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z ? NotificationCenter.startAllHeavyOperations : NotificationCenter.stopAllHeavyOperations, 2);
+        NotificationCenter.getGlobalInstance().postNotificationName(z ? NotificationCenter.startAllHeavyOperations : NotificationCenter.stopAllHeavyOperations, 2);
     }
 
     public TrendingStickersLayout getLayout() {
@@ -272,24 +272,28 @@ public class TrendingStickersAlert extends BottomSheet {
 
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
+            Canvas canvas2;
             float fraction = getFraction();
             setStatusBarVisible(fraction == 0.0f && !TrendingStickersAlert.this.isDismissed(), true);
             updateLightStatusBar(this.statusBarAlpha > 0.5f);
             if (this.statusBarAlpha > 0.0f) {
                 this.paint.setColor(TrendingStickersAlert.this.getThemedColor(Theme.key_dialogBackground));
-                canvas.drawRect(((BottomSheet) TrendingStickersAlert.this).backgroundPaddingLeft, AndroidUtilities.lerp(r1, -AndroidUtilities.statusBarHeight, this.statusBarAlpha), getMeasuredWidth() - ((BottomSheet) TrendingStickersAlert.this).backgroundPaddingLeft, (int) Math.max(0.0f, TrendingStickersAlert.this.scrollOffsetY + (TrendingStickersAlert.this.topOffset * (1.0f - getFraction())) + AndroidUtilities.dp(24.0f) + TrendingStickersAlert.this.layout.getTranslationY() + (AndroidUtilities.statusBarHeight - TrendingStickersAlert.this.topOffset)), this.paint);
+                canvas2 = canvas;
+                canvas2.drawRect(((BottomSheet) TrendingStickersAlert.this).backgroundPaddingLeft, AndroidUtilities.lerp(r1, -AndroidUtilities.statusBarHeight, this.statusBarAlpha), getMeasuredWidth() - ((BottomSheet) TrendingStickersAlert.this).backgroundPaddingLeft, (int) Math.max(0.0f, TrendingStickersAlert.this.scrollOffsetY + (TrendingStickersAlert.this.topOffset * (1.0f - getFraction())) + AndroidUtilities.dp(24.0f) + TrendingStickersAlert.this.layout.getTranslationY() + (AndroidUtilities.statusBarHeight - TrendingStickersAlert.this.topOffset)), this.paint);
+            } else {
+                canvas2 = canvas;
             }
-            super.dispatchDraw(canvas);
-            canvas.save();
-            canvas.translate(0.0f, (TrendingStickersAlert.this.layout.getTranslationY() + AndroidUtilities.statusBarHeight) - TrendingStickersAlert.this.topOffset);
+            super.dispatchDraw(canvas2);
+            canvas2.save();
+            canvas2.translate(0.0f, (TrendingStickersAlert.this.layout.getTranslationY() + AndroidUtilities.statusBarHeight) - TrendingStickersAlert.this.topOffset);
             int dp = AndroidUtilities.dp(36.0f);
             int dp2 = AndroidUtilities.dp(4.0f);
             int i = (int) (dp2 * 2.0f * (1.0f - fraction));
             TrendingStickersAlert.this.shapeDrawable.setCornerRadius(AndroidUtilities.dp(2.0f));
-            TrendingStickersAlert.this.shapeDrawable.setColor(ColorUtils.setAlphaComponent(TrendingStickersAlert.this.getThemedColor(Theme.key_sheet_scrollUp), (int) (Color.alpha(r4) * fraction)));
+            TrendingStickersAlert.this.shapeDrawable.setColor(ColorUtils.setAlphaComponent(TrendingStickersAlert.this.getThemedColor(Theme.key_sheet_scrollUp), (int) (Color.alpha(r3) * fraction)));
             TrendingStickersAlert.this.shapeDrawable.setBounds((getWidth() - dp) / 2, TrendingStickersAlert.this.scrollOffsetY + AndroidUtilities.dp(10.0f) + i, (getWidth() + dp) / 2, TrendingStickersAlert.this.scrollOffsetY + AndroidUtilities.dp(10.0f) + i + dp2);
-            TrendingStickersAlert.this.shapeDrawable.draw(canvas);
-            canvas.restore();
+            TrendingStickersAlert.this.shapeDrawable.draw(canvas2);
+            canvas2.restore();
         }
 
         @Override // android.view.View
@@ -322,7 +326,7 @@ public class TrendingStickersAlert extends BottomSheet {
                         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.TrendingStickersAlert$AlertContainerView$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                                TrendingStickersAlert.AlertContainerView.this.lambda$setStatusBarVisible$0(valueAnimator3);
+                                TrendingStickersAlert.AlertContainerView.$r8$lambda$rmxsh33i55heNTAadtBTxYLUCyk(TrendingStickersAlert.AlertContainerView.this, valueAnimator3);
                             }
                         });
                         this.statusBarAnimator.setDuration(200L);
@@ -337,10 +341,10 @@ public class TrendingStickersAlert extends BottomSheet {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setStatusBarVisible$0(ValueAnimator valueAnimator) {
-            this.statusBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$rmxsh33i55heNTAadtBTxYLUCyk(AlertContainerView alertContainerView, ValueAnimator valueAnimator) {
+            alertContainerView.getClass();
+            alertContainerView.statusBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            alertContainerView.invalidate();
         }
     }
 }

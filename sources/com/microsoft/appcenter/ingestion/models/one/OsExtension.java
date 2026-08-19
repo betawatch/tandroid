@@ -42,17 +42,22 @@ public class OsExtension implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            OsExtension osExtension = (OsExtension) obj;
+            String str = this.name;
+            if (str == null ? osExtension.name != null : !str.equals(osExtension.name)) {
+                return false;
+            }
+            String str2 = this.ver;
+            String str3 = osExtension.ver;
+            if (str2 != null) {
+                return str2.equals(str3);
+            }
+            if (str3 == null) {
+                return true;
+            }
         }
-        OsExtension osExtension = (OsExtension) obj;
-        String str = this.name;
-        if (str == null ? osExtension.name != null : !str.equals(osExtension.name)) {
-            return false;
-        }
-        String str2 = this.ver;
-        String str3 = osExtension.ver;
-        return str2 != null ? str2.equals(str3) : str3 == null;
+        return false;
     }
 
     public int hashCode() {

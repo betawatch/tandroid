@@ -160,7 +160,7 @@ public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable impleme
         canvas.drawText(string, (width - ((int) Math.ceil(textPaint.measureText(string)))) / 2, AndroidUtilities.dp(235.0f) + dp2 + dp, textPaint);
         if (this.progressVisible) {
             if (this.progress != null) {
-                canvas.drawText(this.progress, (width - ((int) Math.ceil(percentPaint.measureText(r3)))) / 2, AndroidUtilities.dp(210.0f) + dp2, percentPaint);
+                canvas.drawText(this.progress, (width - ((int) Math.ceil(percentPaint.measureText(r1)))) / 2, AndroidUtilities.dp(210.0f) + dp2, percentPaint);
             }
             int dp4 = (width - AndroidUtilities.dp(240.0f)) / 2;
             int dp5 = dp2 + AndroidUtilities.dp(232.0f);

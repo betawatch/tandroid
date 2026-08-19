@@ -37,19 +37,22 @@ public class BusinessLinksController {
     }
 
     public static BusinessLinksController getInstance(int i) {
-        BusinessLinksController businessLinksController = Instance[i];
-        if (businessLinksController == null) {
-            synchronized (lockObjects[i]) {
-                try {
-                    businessLinksController = Instance[i];
-                    if (businessLinksController == null) {
-                        BusinessLinksController[] businessLinksControllerArr = Instance;
-                        BusinessLinksController businessLinksController2 = new BusinessLinksController(i);
-                        businessLinksControllerArr[i] = businessLinksController2;
-                        businessLinksController = businessLinksController2;
-                    }
-                } finally {
+        BusinessLinksController businessLinksController;
+        BusinessLinksController businessLinksController2 = Instance[i];
+        if (businessLinksController2 != null) {
+            return businessLinksController2;
+        }
+        synchronized (lockObjects[i]) {
+            try {
+                businessLinksController = Instance[i];
+                if (businessLinksController == null) {
+                    BusinessLinksController[] businessLinksControllerArr = Instance;
+                    BusinessLinksController businessLinksController3 = new BusinessLinksController(i);
+                    businessLinksControllerArr[i] = businessLinksController3;
+                    businessLinksController = businessLinksController3;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return businessLinksController;
@@ -86,29 +89,29 @@ public class BusinessLinksController {
                 messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BusinessLinksController.this.lambda$load$1(messagesStorage, z2);
+                        BusinessLinksController.$r8$lambda$j7UYbLhU__0KPLLviNomhzQlpEI(BusinessLinksController.this, messagesStorage, z2);
                     }
                 });
             } else {
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getBusinessChatLinks(), new RequestDelegate() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        BusinessLinksController.this.lambda$load$3(tLObject, tL_error);
+                        BusinessLinksController.$r8$lambda$jzTnnLvt4YUVZBErvCxFr9ZrOcM(BusinessLinksController.this, tLObject, tL_error);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00b4, code lost:
     
-        if (r0 == null) goto L37;
+        if (r1 == null) goto L37;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$load$1(MessagesStorage messagesStorage, final boolean z) {
+    public static /* synthetic */ void $r8$lambda$j7UYbLhU__0KPLLviNomhzQlpEI(final BusinessLinksController businessLinksController, MessagesStorage messagesStorage, final boolean z) {
+        businessLinksController.getClass();
         final ArrayList arrayList = new ArrayList();
         final ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
         final ArrayList<TLRPC.Chat> arrayList3 = new ArrayList<>();
@@ -149,54 +152,49 @@ public class BusinessLinksController {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BusinessLinksController.this.lambda$load$0(arrayList, arrayList2, arrayList3, z);
+                    BusinessLinksController.$r8$lambda$MneD0-Kbi_yJhWm2SOIgSq0NhOc(BusinessLinksController.this, arrayList, arrayList2, arrayList3, z);
                 }
             });
-        } catch (Throwable th) {
-            if (sQLiteCursor != null) {
-                sQLiteCursor.dispose();
-            }
-            throw th;
+        } finally {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$0(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, boolean z) {
-        this.links.clear();
-        this.links.addAll(arrayList);
-        MessagesController.getInstance(this.currentAccount).putUsers(arrayList2, true);
-        MessagesController.getInstance(this.currentAccount).putChats(arrayList3, true);
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
-        this.loading = false;
-        load(false, z);
+    public static /* synthetic */ void $r8$lambda$MneD0-Kbi_yJhWm2SOIgSq0NhOc(BusinessLinksController businessLinksController, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, boolean z) {
+        businessLinksController.links.clear();
+        businessLinksController.links.addAll(arrayList);
+        MessagesController.getInstance(businessLinksController.currentAccount).putUsers(arrayList2, true);
+        MessagesController.getInstance(businessLinksController.currentAccount).putChats(arrayList3, true);
+        NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.quickRepliesUpdated, new Object[0]);
+        businessLinksController.loading = false;
+        businessLinksController.load(false, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$3(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$jzTnnLvt4YUVZBErvCxFr9ZrOcM(final BusinessLinksController businessLinksController, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        businessLinksController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessLinksController.this.lambda$load$2(tLObject);
+                BusinessLinksController.$r8$lambda$bsg-rNQlRxtwTTvrtH-qg5HBAg8(BusinessLinksController.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$2(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$bsg-rNQlRxtwTTvrtH-qg5HBAg8(BusinessLinksController businessLinksController, TLObject tLObject) {
+        businessLinksController.getClass();
         if (tLObject instanceof TL_account.businessChatLinks) {
             TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject;
-            this.links.clear();
-            this.links.addAll(businesschatlinks.links);
-            MessagesController.getInstance(this.currentAccount).putUsers(businesschatlinks.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(businesschatlinks.chats, false);
-            MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(businesschatlinks.users, businesschatlinks.chats, true, true);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-            saveToCache();
+            businessLinksController.links.clear();
+            businessLinksController.links.addAll(businesschatlinks.links);
+            MessagesController.getInstance(businessLinksController.currentAccount).putUsers(businesschatlinks.users, false);
+            MessagesController.getInstance(businessLinksController.currentAccount).putChats(businesschatlinks.chats, false);
+            MessagesStorage.getInstance(businessLinksController.currentAccount).putUsersAndChats(businesschatlinks.users, businesschatlinks.chats, true, true);
+            NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.businessLinksUpdated, new Object[0]);
+            businessLinksController.saveToCache();
         } else {
             FileLog.e(new RuntimeException("Unexpected response from server!"));
         }
-        this.loading = false;
-        this.loaded = true;
+        businessLinksController.loading = false;
+        businessLinksController.loaded = true;
     }
 
     public void createEmptyLink() {
@@ -207,29 +205,29 @@ public class BusinessLinksController {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(createbusinesschatlink, new RequestDelegate() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BusinessLinksController.this.lambda$createEmptyLink$5(tLObject, tL_error);
+                BusinessLinksController.$r8$lambda$L4WDLcoljIWLTYyn73mkbOJ2itU(BusinessLinksController.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createEmptyLink$5(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$L4WDLcoljIWLTYyn73mkbOJ2itU(final BusinessLinksController businessLinksController, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        businessLinksController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessLinksController.this.lambda$createEmptyLink$4(tLObject);
+                BusinessLinksController.$r8$lambda$FqMudxMXnXa3TEFaITNov83xXPw(BusinessLinksController.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createEmptyLink$4(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$FqMudxMXnXa3TEFaITNov83xXPw(BusinessLinksController businessLinksController, TLObject tLObject) {
+        businessLinksController.getClass();
         if (tLObject instanceof TL_account.TL_businessChatLink) {
             TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject;
-            this.links.add(tL_businessChatLink);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinkCreated, tL_businessChatLink);
-            saveToCache();
+            businessLinksController.links.add(tL_businessChatLink);
+            NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.businessLinksUpdated, new Object[0]);
+            NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.businessLinkCreated, tL_businessChatLink);
+            businessLinksController.saveToCache();
         }
     }
 
@@ -238,57 +236,56 @@ public class BusinessLinksController {
         if (findLink != null) {
             final int indexOf = this.links.indexOf(findLink);
             this.links.remove(findLink);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.businessLinksUpdated, new Object[0]);
             BulletinFactory.of(baseFragment).createUndoBulletin(LocaleController.getString(R.string.BusinessLinkDeleted), true, new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BusinessLinksController.this.lambda$deleteLinkUndoable$6(indexOf, findLink);
+                    BusinessLinksController.$r8$lambda$o-hgflHdA_TOBDCphug8nzdbLpo(BusinessLinksController.this, indexOf, findLink);
                 }
             }, new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BusinessLinksController.this.lambda$deleteLinkUndoable$9(str, findLink);
+                    BusinessLinksController.$r8$lambda$72scG8Y468lh5T6A8jSPlozKRfw(BusinessLinksController.this, str, findLink);
                 }
             }).show();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteLinkUndoable$6(int i, TL_account.TL_businessChatLink tL_businessChatLink) {
-        this.links.add(i, tL_businessChatLink);
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+    public static /* synthetic */ void $r8$lambda$o-hgflHdA_TOBDCphug8nzdbLpo(BusinessLinksController businessLinksController, int i, TL_account.TL_businessChatLink tL_businessChatLink) {
+        businessLinksController.links.add(i, tL_businessChatLink);
+        NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.businessLinksUpdated, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteLinkUndoable$9(String str, final TL_account.TL_businessChatLink tL_businessChatLink) {
+    public static /* synthetic */ void $r8$lambda$72scG8Y468lh5T6A8jSPlozKRfw(final BusinessLinksController businessLinksController, String str, final TL_account.TL_businessChatLink tL_businessChatLink) {
+        businessLinksController.getClass();
         TL_account.deleteBusinessChatLink deletebusinesschatlink = new TL_account.deleteBusinessChatLink();
         deletebusinesschatlink.slug = str;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(deletebusinesschatlink, new RequestDelegate() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda9
+        ConnectionsManager.getInstance(businessLinksController.currentAccount).sendRequest(deletebusinesschatlink, new RequestDelegate() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BusinessLinksController.this.lambda$deleteLinkUndoable$8(tL_businessChatLink, tLObject, tL_error);
+                BusinessLinksController.$r8$lambda$NxGLnAimz403yBYkl3nUQGYJ92I(BusinessLinksController.this, tL_businessChatLink, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteLinkUndoable$8(final TL_account.TL_businessChatLink tL_businessChatLink, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$NxGLnAimz403yBYkl3nUQGYJ92I(final BusinessLinksController businessLinksController, final TL_account.TL_businessChatLink tL_businessChatLink, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        businessLinksController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessLinksController.this.lambda$deleteLinkUndoable$7(tLObject, tL_businessChatLink);
+                BusinessLinksController.$r8$lambda$lqS1QggZnXLFV2xrEgOiUu4HtG8(BusinessLinksController.this, tLObject, tL_businessChatLink);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteLinkUndoable$7(TLObject tLObject, TL_account.TL_businessChatLink tL_businessChatLink) {
+    public static /* synthetic */ void $r8$lambda$lqS1QggZnXLFV2xrEgOiUu4HtG8(BusinessLinksController businessLinksController, TLObject tLObject, TL_account.TL_businessChatLink tL_businessChatLink) {
+        businessLinksController.getClass();
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            if (this.links.contains(tL_businessChatLink)) {
-                this.links.remove(tL_businessChatLink);
-                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+            if (businessLinksController.links.contains(tL_businessChatLink)) {
+                businessLinksController.links.remove(tL_businessChatLink);
+                NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.businessLinksUpdated, new Object[0]);
             }
-            saveToCache();
+            businessLinksController.saveToCache();
             return;
         }
         FileLog.e(new RuntimeException("Unexpected response from server!"));
@@ -324,13 +321,12 @@ public class BusinessLinksController {
         messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessLinksController.lambda$saveToCache$10(MessagesStorage.this, arrayList);
+                BusinessLinksController.$r8$lambda$gVJNAGu2jWJMqiCxyRgbyRcVKGQ(MessagesStorage.this, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$saveToCache$10(MessagesStorage messagesStorage, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$gVJNAGu2jWJMqiCxyRgbyRcVKGQ(MessagesStorage messagesStorage, ArrayList arrayList) {
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
@@ -346,16 +342,15 @@ public class BusinessLinksController {
                     sQLitePreparedStatement.bindInteger(2, i);
                     sQLitePreparedStatement.step();
                 }
-                if (sQLitePreparedStatement == null) {
-                    return;
+                if (sQLitePreparedStatement != null) {
+                    sQLitePreparedStatement.dispose();
                 }
             } catch (Exception e) {
                 FileLog.e(e);
-                if (sQLitePreparedStatement == null) {
-                    return;
+                if (sQLitePreparedStatement != null) {
+                    sQLitePreparedStatement.dispose();
                 }
             }
-            sQLitePreparedStatement.dispose();
         } catch (Throwable th) {
             if (sQLitePreparedStatement != null) {
                 sQLitePreparedStatement.dispose();
@@ -377,33 +372,33 @@ public class BusinessLinksController {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(editbusinesschatlink, new RequestDelegate() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BusinessLinksController.this.lambda$editLink$12(tL_businessChatLink, runnable, tLObject, tL_error);
+                BusinessLinksController.$r8$lambda$1qVQ9ynJiR5FFqAfjzo0QRgSYtU(BusinessLinksController.this, tL_businessChatLink, runnable, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$editLink$12(final TL_account.TL_businessChatLink tL_businessChatLink, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$1qVQ9ynJiR5FFqAfjzo0QRgSYtU(final BusinessLinksController businessLinksController, final TL_account.TL_businessChatLink tL_businessChatLink, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        businessLinksController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessLinksController$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessLinksController.this.lambda$editLink$11(tLObject, tL_businessChatLink, runnable);
+                BusinessLinksController.$r8$lambda$8usVRA-Y8VhEnR5SGzDnV3jydWI(BusinessLinksController.this, tLObject, tL_businessChatLink, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$editLink$11(TLObject tLObject, TL_account.TL_businessChatLink tL_businessChatLink, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$8usVRA-Y8VhEnR5SGzDnV3jydWI(BusinessLinksController businessLinksController, TLObject tLObject, TL_account.TL_businessChatLink tL_businessChatLink, Runnable runnable) {
+        businessLinksController.getClass();
         if (tLObject instanceof TL_account.TL_businessChatLink) {
             TL_account.TL_businessChatLink tL_businessChatLink2 = (TL_account.TL_businessChatLink) tLObject;
-            int indexOf = this.links.indexOf(tL_businessChatLink);
+            int indexOf = businessLinksController.links.indexOf(tL_businessChatLink);
             if (indexOf != -1) {
-                this.links.set(indexOf, tL_businessChatLink2);
-                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                businessLinksController.links.set(indexOf, tL_businessChatLink2);
+                NotificationCenter.getInstance(businessLinksController.currentAccount).postNotificationName(NotificationCenter.businessLinksUpdated, new Object[0]);
                 if (runnable != null) {
                     runnable.run();
                 }
-                saveToCache();
+                businessLinksController.saveToCache();
             }
         }
     }

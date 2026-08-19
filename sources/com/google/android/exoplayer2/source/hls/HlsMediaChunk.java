@@ -61,47 +61,48 @@ final class HlsMediaChunk extends MediaChunk {
     public final int uid;
 
     public static HlsMediaChunk createInstance(HlsExtractorFactory hlsExtractorFactory, DataSource dataSource, Format format, long j, HlsMediaPlaylist hlsMediaPlaylist, HlsChunkSource.SegmentBaseHolder segmentBaseHolder, Uri uri, List list, int i, Object obj, boolean z, TimestampAdjusterProvider timestampAdjusterProvider, HlsMediaChunk hlsMediaChunk, byte[] bArr, byte[] bArr2, boolean z2, PlayerId playerId) {
-        boolean z3;
         DataSource dataSource2;
         DataSpec dataSpec;
-        boolean z4;
+        boolean z3;
+        Uri uri2;
         Id3Decoder id3Decoder;
         ParsableByteArray parsableByteArray;
         HlsMediaChunkExtractor hlsMediaChunkExtractor;
         HlsMediaPlaylist.SegmentBase segmentBase = segmentBaseHolder.segmentBase;
         DataSpec build = new DataSpec.Builder().setUri(UriUtil.resolveToUri(hlsMediaPlaylist.baseUri, segmentBase.url)).setPosition(segmentBase.byteRangeOffset).setLength(segmentBase.byteRangeLength).setFlags(segmentBaseHolder.isPreload ? 8 : 0).build();
-        boolean z5 = bArr != null;
-        DataSource buildDataSource = buildDataSource(dataSource, bArr, z5 ? getEncryptionIvArray((String) Assertions.checkNotNull(segmentBase.encryptionIV)) : null);
+        boolean z4 = bArr != null;
+        DataSource buildDataSource = buildDataSource(dataSource, bArr, z4 ? getEncryptionIvArray((String) Assertions.checkNotNull(segmentBase.encryptionIV)) : null);
         HlsMediaPlaylist.Segment segment = segmentBase.initializationSegment;
         if (segment != null) {
-            boolean z6 = bArr2 != null;
-            byte[] encryptionIvArray = z6 ? getEncryptionIvArray((String) Assertions.checkNotNull(segment.encryptionIV)) : null;
-            z3 = z5;
-            dataSpec = new DataSpec(UriUtil.resolveToUri(hlsMediaPlaylist.baseUri, segment.url), segment.byteRangeOffset, segment.byteRangeLength);
+            boolean z5 = bArr2 != null;
+            byte[] encryptionIvArray = z5 ? getEncryptionIvArray((String) Assertions.checkNotNull(segment.encryptionIV)) : null;
+            DataSpec dataSpec2 = new DataSpec(UriUtil.resolveToUri(hlsMediaPlaylist.baseUri, segment.url), segment.byteRangeOffset, segment.byteRangeLength);
             dataSource2 = buildDataSource(dataSource, bArr2, encryptionIvArray);
-            z4 = z6;
-        } else {
             z3 = z5;
+            dataSpec = dataSpec2;
+        } else {
             dataSource2 = null;
             dataSpec = null;
-            z4 = false;
+            z3 = false;
         }
         long j2 = j + segmentBase.relativeStartTimeUs;
         long j3 = j2 + segmentBase.durationUs;
         int i2 = hlsMediaPlaylist.discontinuitySequence + segmentBase.relativeDiscontinuitySequence;
         if (hlsMediaChunk != null) {
-            DataSpec dataSpec2 = hlsMediaChunk.initDataSpec;
-            boolean z7 = dataSpec == dataSpec2 || (dataSpec != null && dataSpec2 != null && dataSpec.uri.equals(dataSpec2.uri) && dataSpec.position == hlsMediaChunk.initDataSpec.position);
-            boolean z8 = uri.equals(hlsMediaChunk.playlistUrl) && hlsMediaChunk.loadCompleted;
+            DataSpec dataSpec3 = hlsMediaChunk.initDataSpec;
+            boolean z6 = dataSpec == dataSpec3 || (dataSpec != null && dataSpec3 != null && dataSpec.uri.equals(dataSpec3.uri) && dataSpec.position == hlsMediaChunk.initDataSpec.position);
+            uri2 = uri;
+            boolean z7 = uri2.equals(hlsMediaChunk.playlistUrl) && hlsMediaChunk.loadCompleted;
             id3Decoder = hlsMediaChunk.id3Decoder;
             parsableByteArray = hlsMediaChunk.scratchId3Data;
-            hlsMediaChunkExtractor = (z7 && z8 && !hlsMediaChunk.extractorInvalidated && hlsMediaChunk.discontinuitySequenceNumber == i2) ? hlsMediaChunk.extractor : null;
+            hlsMediaChunkExtractor = (z6 && z7 && !hlsMediaChunk.extractorInvalidated && hlsMediaChunk.discontinuitySequenceNumber == i2) ? hlsMediaChunk.extractor : null;
         } else {
+            uri2 = uri;
             id3Decoder = new Id3Decoder();
             parsableByteArray = new ParsableByteArray(10);
             hlsMediaChunkExtractor = null;
         }
-        return new HlsMediaChunk(hlsExtractorFactory, buildDataSource, build, format, z3, dataSource2, dataSpec, z4, uri, list, i, obj, j2, j3, segmentBaseHolder.mediaSequence, segmentBaseHolder.partIndex, !segmentBaseHolder.isPreload, i2, segmentBase.hasGapTag, z, timestampAdjusterProvider.getAdjuster(i2), segmentBase.drmInitData, hlsMediaChunkExtractor, id3Decoder, parsableByteArray, z2, playerId);
+        return new HlsMediaChunk(hlsExtractorFactory, buildDataSource, build, format, z4, dataSource2, dataSpec, z3, uri2, list, i, obj, j2, j3, segmentBaseHolder.mediaSequence, segmentBaseHolder.partIndex, !segmentBaseHolder.isPreload, i2, segmentBase.hasGapTag, z, timestampAdjusterProvider.getAdjuster(i2), segmentBase.drmInitData, hlsMediaChunkExtractor, id3Decoder, parsableByteArray, z2, playerId);
     }
 
     public static boolean shouldSpliceIn(HlsMediaChunk hlsMediaChunk, Uri uri, HlsMediaPlaylist hlsMediaPlaylist, HlsChunkSource.SegmentBaseHolder segmentBaseHolder, long j) {
@@ -268,6 +269,7 @@ final class HlsMediaChunk extends MediaChunk {
                 createExtractor = hlsMediaChunkExtractor.recreate();
             } else {
                 createExtractor = this.extractorFactory.createExtractor(dataSpec.uri, this.trackFormat, this.muxedCaptionFormats, this.timestampAdjuster, dataSource.getResponseHeaders(), defaultExtractorInput, this.playerId);
+                defaultExtractorInput = defaultExtractorInput;
             }
             this.extractor = createExtractor;
             if (createExtractor.isPackedAudioExtractor()) {
@@ -349,7 +351,10 @@ final class HlsMediaChunk extends MediaChunk {
     private static boolean isIndependent(HlsChunkSource.SegmentBaseHolder segmentBaseHolder, HlsMediaPlaylist hlsMediaPlaylist) {
         HlsMediaPlaylist.SegmentBase segmentBase = segmentBaseHolder.segmentBase;
         if (segmentBase instanceof HlsMediaPlaylist.Part) {
-            return ((HlsMediaPlaylist.Part) segmentBase).isIndependent || (segmentBaseHolder.partIndex == 0 && hlsMediaPlaylist.hasIndependentSegments);
+            if (((HlsMediaPlaylist.Part) segmentBase).isIndependent) {
+                return true;
+            }
+            return segmentBaseHolder.partIndex == 0 && hlsMediaPlaylist.hasIndependentSegments;
         }
         return hlsMediaPlaylist.hasIndependentSegments;
     }

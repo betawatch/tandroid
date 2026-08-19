@@ -257,22 +257,20 @@ public abstract class UsersAlertBase extends BottomSheet {
             this.searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.UsersAlertBase$SearchField$$ExternalSyntheticLambda0
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                    boolean lambda$new$0;
-                    lambda$new$0 = UsersAlertBase.SearchField.this.lambda$new$0(textView, i, keyEvent);
-                    return lambda$new$0;
+                    return UsersAlertBase.SearchField.$r8$lambda$FuB3YmaLg_S0RrMd0WXyTlxEvy0(UsersAlertBase.SearchField.this, textView, i, keyEvent);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$new$0(TextView textView, int i, KeyEvent keyEvent) {
+        public static /* synthetic */ boolean $r8$lambda$FuB3YmaLg_S0RrMd0WXyTlxEvy0(SearchField searchField, TextView textView, int i, KeyEvent keyEvent) {
+            searchField.getClass();
             if (keyEvent == null) {
                 return false;
             }
             if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
                 return false;
             }
-            AndroidUtilities.hideKeyboard(this.searchEditText);
+            AndroidUtilities.hideKeyboard(searchField.searchEditText);
             return false;
         }
 
@@ -463,7 +461,7 @@ public abstract class UsersAlertBase extends BottomSheet {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.UsersAlertBase$ContainerView$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            UsersAlertBase.ContainerView.this.lambda$onMeasure$0(valueAnimator2);
+                            UsersAlertBase.ContainerView.$r8$lambda$esc-EspxYUkbGGIcbqNqz1PUPtw(UsersAlertBase.ContainerView.this, valueAnimator2);
                         }
                     });
                     this.valueAnimator.setDuration(250L);
@@ -494,11 +492,11 @@ public abstract class UsersAlertBase extends BottomSheet {
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onMeasure$0(ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$esc-EspxYUkbGGIcbqNqz1PUPtw(ContainerView containerView, ValueAnimator valueAnimator) {
+            containerView.getClass();
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.snapToTopOffset = floatValue;
-            setTranslationY(floatValue);
+            containerView.snapToTopOffset = floatValue;
+            containerView.setTranslationY(floatValue);
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

@@ -115,15 +115,10 @@ public class DispatchQueueMainThreadSync extends Thread {
         postRunnable(new Runnable() { // from class: org.telegram.messenger.DispatchQueueMainThreadSync$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DispatchQueueMainThreadSync.this.lambda$recycle$0();
+                DispatchQueueMainThreadSync.this.handler.getLooper().quit();
             }
         });
         this.isRecycled = true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$recycle$0() {
-        this.handler.getLooper().quit();
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
@@ -132,9 +127,7 @@ public class DispatchQueueMainThreadSync extends Thread {
         this.handler = new Handler(Looper.myLooper(), new Handler.Callback() { // from class: org.telegram.messenger.DispatchQueueMainThreadSync$$ExternalSyntheticLambda1
             @Override // android.os.Handler.Callback
             public final boolean handleMessage(Message message) {
-                boolean lambda$run$1;
-                lambda$run$1 = DispatchQueueMainThreadSync.this.lambda$run$1(message);
-                return lambda$run$1;
+                return DispatchQueueMainThreadSync.$r8$lambda$E779pQCgwgl-pboUjyEXnUhMILs(DispatchQueueMainThreadSync.this, message);
             }
         });
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.DispatchQueueMainThreadSync.1
@@ -150,9 +143,8 @@ public class DispatchQueueMainThreadSync extends Thread {
         Looper.loop();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$run$1(Message message) {
-        handleMessage(message);
+    public static /* synthetic */ boolean $r8$lambda$E779pQCgwgl-pboUjyEXnUhMILs(DispatchQueueMainThreadSync dispatchQueueMainThreadSync, Message message) {
+        dispatchQueueMainThreadSync.handleMessage(message);
         return true;
     }
 

@@ -34,9 +34,11 @@ public class CarAudioCallbackDelegate {
         private final CarAudioCallback mCarAudioCallback;
 
         CarAudioCallbackStub(CarAudioCallback carAudioCallback) {
+            this.mCarAudioCallback = carAudioCallback;
         }
 
         CarAudioCallbackStub() {
+            this.mCarAudioCallback = null;
         }
 
         @Override // androidx.car.app.media.ICarAudioCallback

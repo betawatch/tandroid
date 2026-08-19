@@ -494,7 +494,7 @@ public class VoIPTextureView extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPTextureView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    VoIPTextureView.this.lambda$onLayout$0(f3, f4, f2, f, f5, valueAnimator2);
+                    VoIPTextureView.$r8$lambda$TtSAUHTrBh5tiBw7S2DlHP_v1Zs(VoIPTextureView.this, f3, f4, f2, f, f5, valueAnimator2);
                 }
             });
             long j = this.animateNextDuration;
@@ -549,27 +549,27 @@ public class VoIPTextureView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLayout$0(float f, float f2, float f3, float f4, float f5, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$TtSAUHTrBh5tiBw7S2DlHP_v1Zs(VoIPTextureView voIPTextureView, float f, float f2, float f3, float f4, float f5, ValueAnimator valueAnimator) {
+        voIPTextureView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         float f6 = 1.0f - floatValue;
-        this.animationProgress = f6;
-        this.currentClipVertical = this.clipVertical * floatValue;
-        this.currentClipHorizontal = this.clipHorizontal * floatValue;
-        invalidateOutline();
-        invalidate();
-        float f7 = (f * floatValue) + (this.scaleTextureToFill * f6);
-        this.renderer.setScaleX(f7);
-        this.renderer.setScaleY(f7);
-        float f8 = (f2 * floatValue) + (this.scaleTextureToFillBlur * f6);
-        TextureView textureView = this.blurRenderer;
+        voIPTextureView.animationProgress = f6;
+        voIPTextureView.currentClipVertical = voIPTextureView.clipVertical * floatValue;
+        voIPTextureView.currentClipHorizontal = voIPTextureView.clipHorizontal * floatValue;
+        voIPTextureView.invalidateOutline();
+        voIPTextureView.invalidate();
+        float f7 = (f * floatValue) + (voIPTextureView.scaleTextureToFill * f6);
+        voIPTextureView.renderer.setScaleX(f7);
+        voIPTextureView.renderer.setScaleY(f7);
+        float f8 = (f2 * floatValue) + (voIPTextureView.scaleTextureToFillBlur * f6);
+        TextureView textureView = voIPTextureView.blurRenderer;
         if (textureView != null) {
             textureView.setScaleX(f8);
-            this.blurRenderer.setScaleY(f8);
+            voIPTextureView.blurRenderer.setScaleY(f8);
         }
-        setTranslationX(f3 * floatValue);
-        setTranslationY(f4 * floatValue);
-        this.currentThumbScale = (f5 * floatValue) + (this.scaleThumb * f6);
+        voIPTextureView.setTranslationX(f3 * floatValue);
+        voIPTextureView.setTranslationY(f4 * floatValue);
+        voIPTextureView.currentThumbScale = (f5 * floatValue) + (voIPTextureView.scaleThumb * f6);
     }
 
     public void setAnimateWithParent(boolean z) {

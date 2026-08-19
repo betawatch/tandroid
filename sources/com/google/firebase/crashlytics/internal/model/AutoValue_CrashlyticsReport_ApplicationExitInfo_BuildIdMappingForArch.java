@@ -37,11 +37,13 @@ final class AutoValue_CrashlyticsReport_ApplicationExitInfo_BuildIdMappingForArc
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch) {
+            CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch buildIdMappingForArch = (CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch) obj;
+            if (this.arch.equals(buildIdMappingForArch.getArch()) && this.libraryName.equals(buildIdMappingForArch.getLibraryName()) && this.buildId.equals(buildIdMappingForArch.getBuildId())) {
+                return true;
+            }
         }
-        CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch buildIdMappingForArch = (CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch) obj;
-        return this.arch.equals(buildIdMappingForArch.getArch()) && this.libraryName.equals(buildIdMappingForArch.getLibraryName()) && this.buildId.equals(buildIdMappingForArch.getBuildId());
+        return false;
     }
 
     public int hashCode() {

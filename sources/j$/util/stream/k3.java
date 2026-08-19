@@ -1,118 +1,27 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
+import j$.util.Spliterator;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class k3 implements j2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DoubleConsumer b;
-
-    public /* synthetic */ k3(DoubleConsumer doubleConsumer, int i) {
-        this.a = i;
-        this.b = doubleConsumer;
+public final class k3 extends l3 implements j$.util.Z {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.k(this, consumer);
     }
 
-    private final /* synthetic */ void b(long j) {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.com.android.tools.r8.a.B(this, consumer);
     }
 
-    private final /* synthetic */ void c(long j) {
+    @Override // j$.util.stream.n3
+    public final Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4) {
+        return new k3((j$.util.Z) spliterator, j, j2, j3, j4);
     }
 
-    private final /* synthetic */ void d() {
-    }
-
-    private final /* synthetic */ void e() {
-    }
-
-    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        switch (this.a) {
-            case 0:
-                ((P2) this.b).accept(d);
-                break;
-            default:
-                this.b.accept(d);
-                break;
-        }
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(int i) {
-        switch (this.a) {
-            case 0:
-                w0.k();
-                throw null;
-            default:
-                w0.k();
-                throw null;
-        }
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(long j) {
-        switch (this.a) {
-            case 0:
-                w0.l();
-                throw null;
-            default:
-                w0.l();
-                throw null;
-        }
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void p(Object obj) {
-        switch (this.a) {
-            case 0:
-                p((Double) obj);
-                break;
-            default:
-                p((Double) obj);
-                break;
-        }
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-        }
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void k() {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void l(long j) {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ boolean n() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // j$.util.stream.j2
-    public final /* synthetic */ void p(Double d) {
-        switch (this.a) {
-            case 0:
-                w0.e(this, d);
-                break;
-            default:
-                w0.e(this, d);
-                break;
-        }
+    @Override // j$.util.stream.l3
+    public final Object b() {
+        return new y0(1);
     }
 }

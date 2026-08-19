@@ -52,7 +52,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -232,11 +231,11 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
         this.sampleQueuesEnabledStates[i2] = false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0119, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x010c, code lost:
     
-        if (r11.getSelectedIndexInTrackGroup() != r19.chunkSource.getTrackGroup().indexOf(r1.trackFormat)) goto L67;
+        if (r1.getSelectedIndexInTrackGroup() != r13.chunkSource.getTrackGroup().indexOf(r14.trackFormat)) goto L67;
      */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0117  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -303,7 +302,8 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
                 if (!this.seenFirstTrackSelection) {
                     long j2 = j < 0 ? -j : 0L;
                     HlsMediaChunk lastMediaChunk = getLastMediaChunk();
-                    exoTrackSelection.updateSelectedTrack(j, j2, -9223372036854775807L, this.readOnlyMediaChunks, this.chunkSource.createMediaChunkIterators(lastMediaChunk, j));
+                    ExoTrackSelection exoTrackSelection3 = exoTrackSelection;
+                    exoTrackSelection3.updateSelectedTrack(j, j2, -9223372036854775807L, this.readOnlyMediaChunks, this.chunkSource.createMediaChunkIterators(lastMediaChunk, j));
                 }
                 this.pendingResetUpstreamFormats = true;
                 z2 = true;
@@ -487,9 +487,7 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
     }
 
     /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
+        java.lang.NullPointerException
         */
     @Override // com.google.android.exoplayer2.source.SequenceableLoader
     public long getBufferedPositionUs() {
@@ -565,7 +563,7 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
             return false;
         }
         if (isPendingReset()) {
-            list = Collections.emptyList();
+            list = Collections.EMPTY_LIST;
             max = this.pendingResetPositionUs;
             for (HlsSampleQueue hlsSampleQueue : this.sampleQueues) {
                 hlsSampleQueue.setStartTimeUs(this.pendingResetPositionUs);
@@ -710,9 +708,9 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
         if (maybeExcludeTrack) {
             if (!this.prepared) {
                 continueLoading(this.lastSeekPositionUs);
-            } else {
-                this.callback.onContinueLoadingRequested(this);
+                return loadErrorAction2;
             }
+            this.callback.onContinueLoadingRequested(this);
         }
         return loadErrorAction2;
     }
@@ -970,23 +968,27 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
         int[] iArr = new int[i];
         this.trackGroupToSampleQueueIndex = iArr;
         Arrays.fill(iArr, -1);
-        for (int i2 = 0; i2 < i; i2++) {
-            int i3 = 0;
+        int i2 = 0;
+        for (int i3 = 0; i3 < i; i3++) {
+            int i4 = 0;
             while (true) {
                 HlsSampleQueue[] hlsSampleQueueArr = this.sampleQueues;
-                if (i3 >= hlsSampleQueueArr.length) {
+                if (i4 >= hlsSampleQueueArr.length) {
                     break;
                 }
-                if (formatsMatch((Format) Assertions.checkStateNotNull(hlsSampleQueueArr[i3].getUpstreamFormat()), this.trackGroups.get(i2).getFormat(0))) {
-                    this.trackGroupToSampleQueueIndex[i2] = i3;
+                if (formatsMatch((Format) Assertions.checkStateNotNull(hlsSampleQueueArr[i4].getUpstreamFormat()), this.trackGroups.get(i3).getFormat(0))) {
+                    this.trackGroupToSampleQueueIndex[i3] = i4;
                     break;
                 }
-                i3++;
+                i4++;
             }
         }
-        Iterator it = this.hlsSampleStreams.iterator();
-        while (it.hasNext()) {
-            ((HlsSampleStream) it.next()).bindSampleQueue();
+        ArrayList arrayList = this.hlsSampleStreams;
+        int size = arrayList.size();
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            ((HlsSampleStream) obj).bindSampleQueue();
         }
     }
 
@@ -1057,7 +1059,7 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
         }
         this.trackGroups = createTrackGroupArrayWithDrmInfo(trackGroupArr);
         Assertions.checkState(this.optionalTrackGroups == null);
-        this.optionalTrackGroups = Collections.emptySet();
+        this.optionalTrackGroups = Collections.EMPTY_SET;
     }
 
     private TrackGroupArray createTrackGroupArrayWithDrmInfo(TrackGroup[] trackGroupArr) {

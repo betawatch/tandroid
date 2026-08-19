@@ -97,7 +97,7 @@ class zzge extends zzgf {
         }
         if (this.zzc != null) {
             while (i3 < this.zzb.zzd * 8) {
-                this.zzc.charValue();
+                this.zzc.getClass();
                 appendable.append('=');
                 i3 += this.zzb.zzb;
             }

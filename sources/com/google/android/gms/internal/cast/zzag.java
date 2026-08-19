@@ -59,12 +59,7 @@ public abstract class zzag {
         try {
             zzak zzf = zzf(context.getApplicationContext());
             return zzf.zze() >= 233700000 ? zzf.zzk(ObjectWrapper.wrap(context.getApplicationContext()), ObjectWrapper.wrap(asyncTask), zzkVar, i, i2, false, 2097152L, 5, NotificationCenter.nearEarEvent, 10000) : zzf.zzj(ObjectWrapper.wrap(asyncTask), zzkVar, i, i2, false, 2097152L, 5, NotificationCenter.nearEarEvent, 10000);
-        } catch (RemoteException e) {
-            e = e;
-            zza.d(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", zzak.class.getSimpleName());
-            return null;
-        } catch (ModuleUnavailableException e2) {
-            e = e2;
+        } catch (RemoteException | ModuleUnavailableException e) {
             zza.d(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", zzak.class.getSimpleName());
             return null;
         }

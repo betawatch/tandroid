@@ -84,7 +84,7 @@ public class StickerView extends EntityView {
         this.centerImage.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.Paint.Views.StickerView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-                StickerView.this.lambda$new$0(imageReceiver, z, z2, z3);
+                StickerView.$r8$lambda$U2d8xD0_grLKSYH6Yoyj6_WDd-M(StickerView.this, imageReceiver, z, z2, z3);
             }
 
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -100,13 +100,13 @@ public class StickerView extends EntityView {
         updatePosition();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+    public static /* synthetic */ void $r8$lambda$U2d8xD0_grLKSYH6Yoyj6_WDd-M(StickerView stickerView, ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
         RLottieDrawable lottieAnimation;
+        stickerView.getClass();
         if (!z || z2 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
         }
-        didSetAnimatedSticker(lottieAnimation);
+        stickerView.didSetAnimatedSticker(lottieAnimation);
     }
 
     public StickerView(Context context, StickerView stickerView, PointF pointF) {
@@ -149,8 +149,9 @@ public class StickerView extends EntityView {
         return this.mirrored;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.Components.Paint.Views.EntityView
-    protected void updatePosition() {
+    public void updatePosition() {
         Size size = this.baseSize;
         float f = size.width / 2.0f;
         float f2 = size.height / 2.0f;

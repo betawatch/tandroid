@@ -38,50 +38,48 @@ public abstract class Render {
     }
 
     private static void PaintSegment(Point point, Point point2, RenderState renderState) {
-        boolean z;
-        int i;
+        float f;
+        RenderState renderState2 = renderState;
         double distanceTo = point.getDistanceTo(point2);
         Point substract = point2.substract(point);
         Point point3 = new Point(1.0d, 1.0d, 0.0d);
-        float atan2 = Math.abs(renderState.angle) > 0.0f ? renderState.angle : (float) Math.atan2(substract.y, substract.x);
-        float f = (float) ((((renderState.baseWeight * point2.z) * renderState.scale) * 1.0d) / renderState.viewportScale);
-        double max = Math.max(1.0f, renderState.spacing * f);
+        float atan2 = Math.abs(renderState2.angle) > 0.0f ? renderState2.angle : (float) Math.atan2(substract.y, substract.x);
+        float f2 = (float) ((((renderState2.baseWeight * point2.z) * renderState2.scale) * 1.0d) / renderState2.viewportScale);
+        double max = Math.max(1.0f, renderState2.spacing * f2);
         if (distanceTo > 0.0d) {
             point3 = substract.multiplyByScalar(1.0d / distanceTo);
         }
-        Point point4 = point3;
-        float min = Math.min(1.0f, renderState.alpha * 1.15f);
-        boolean z2 = point.edge;
-        boolean z3 = point2.edge;
-        int ceil = (int) Math.ceil((distanceTo - renderState.remainder) / max);
-        int count = renderState.getCount();
-        renderState.appendValuesCount(ceil);
-        renderState.setPosition(count);
-        Point add = point.add(point4.multiplyByScalar(renderState.remainder));
-        double d = renderState.remainder;
-        boolean z4 = true;
+        float min = Math.min(1.0f, renderState2.alpha * 1.15f);
+        boolean z = point.edge;
+        boolean z2 = point2.edge;
+        int ceil = (int) Math.ceil((distanceTo - renderState2.remainder) / max);
+        int count = renderState2.getCount();
+        renderState2.appendValuesCount(ceil);
+        renderState2.setPosition(count);
+        Point add = point.add(point3.multiplyByScalar(renderState2.remainder));
+        double d = renderState2.remainder;
+        boolean z3 = true;
         while (true) {
             if (d > distanceTo) {
-                z = z3;
-                i = 1;
+                f = atan2;
                 break;
             }
-            i = 1;
-            z = z3;
-            z4 = renderState.addPoint(add.toPointF(), f, atan2, z2 ? min : renderState.alpha, -1);
-            if (!z4) {
+            z3 = renderState2.addPoint(add.toPointF(), f2, atan2, z ? min : renderState2.alpha, -1);
+            f = atan2;
+            if (!z3) {
                 break;
             }
-            add = add.add(point4.multiplyByScalar(max));
+            add = add.add(point3.multiplyByScalar(max));
             d += max;
-            z2 = false;
-            z3 = z;
+            atan2 = f;
+            z = false;
         }
-        if (z4 && z) {
-            renderState.appendValuesCount(i);
-            renderState.addPoint(point2.toPointF(), f, atan2, min, -1);
+        if (z3 && z2) {
+            renderState2.appendValuesCount(1);
+            renderState2.addPoint(point2.toPointF(), f2, f, min, -1);
+            renderState2 = renderState2;
         }
-        renderState.remainder = d - distanceTo;
+        renderState2.remainder = d - distanceTo;
     }
 
     private static void PaintStamp(Point point, RenderState renderState) {
@@ -95,9 +93,7 @@ public abstract class Render {
     }
 
     private static RectF Draw(RenderState renderState) {
-        char c;
         float f;
-        char c2 = 0;
         RectF rectF = new RectF(0.0f, 0.0f, 0.0f, 0.0f);
         int count = renderState.getCount();
         if (count <= 0) {
@@ -122,18 +118,11 @@ public abstract class Render {
             float f3 = rectF2.top;
             float f4 = rectF2.right;
             float f5 = rectF2.bottom;
-            float[] fArr = new float[8];
-            fArr[c2] = f2;
-            fArr[1] = f3;
-            fArr[2] = f4;
-            fArr[3] = f3;
-            fArr[4] = f2;
-            fArr[5] = f5;
-            fArr[6] = f4;
-            fArr[7] = f5;
+            float[] fArr = {f2, f3, f4, f3, f2, f5, f4, f5};
             float centerX = rectF2.centerX();
             float centerY = rectF2.centerY();
             Matrix matrix = new Matrix();
+            int i4 = count;
             matrix.setRotate((float) Math.toDegrees(read4), centerX, centerY);
             matrix.mapPoints(fArr);
             matrix.mapRect(rectF2);
@@ -141,7 +130,6 @@ public abstract class Render {
             rectF.union(rectF2);
             if (i3 != 0) {
                 asFloatBuffer.put(fArr[0]);
-                c = 1;
                 asFloatBuffer.put(fArr[1]);
                 f = 0.0f;
                 asFloatBuffer.put(0.0f);
@@ -149,11 +137,10 @@ public abstract class Render {
                 asFloatBuffer.put(read5);
                 i3++;
             } else {
-                c = 1;
                 f = 0.0f;
             }
             asFloatBuffer.put(fArr[0]);
-            asFloatBuffer.put(fArr[c]);
+            asFloatBuffer.put(fArr[1]);
             asFloatBuffer.put(f);
             asFloatBuffer.put(f);
             asFloatBuffer.put(read5);
@@ -172,7 +159,7 @@ public abstract class Render {
             asFloatBuffer.put(1.0f);
             asFloatBuffer.put(1.0f);
             asFloatBuffer.put(read5);
-            int i4 = i3 + 4;
+            int i5 = i3 + 4;
             if (i2 != i) {
                 asFloatBuffer.put(fArr[6]);
                 asFloatBuffer.put(fArr[7]);
@@ -181,10 +168,10 @@ public abstract class Render {
                 asFloatBuffer.put(read5);
                 i3 += 5;
             } else {
-                i3 = i4;
+                i3 = i5;
             }
             i2++;
-            c2 = 0;
+            count = i4;
         }
         asFloatBuffer.position(0);
         GLES20.glVertexAttribPointer(0, 2, 5126, false, 20, (Buffer) asFloatBuffer.slice());

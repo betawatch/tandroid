@@ -124,9 +124,9 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
         maybeUnNest();
         if (bArr == null) {
             this.jsonWriter.nullValue();
-        } else {
-            this.jsonWriter.value(Base64.encodeToString(bArr, 2));
+            return this;
         }
+        this.jsonWriter.value(Base64.encodeToString(bArr, 2));
         return this;
     }
 
@@ -221,9 +221,9 @@ final class JsonValueObjectEncoderContext implements ObjectEncoderContext, Value
         if (obj instanceof Enum) {
             if (obj instanceof NumberedEnum) {
                 add(((NumberedEnum) obj).getNumber());
-            } else {
-                add(((Enum) obj).name());
+                return this;
             }
+            add(((Enum) obj).name());
             return this;
         }
         return doEncode(this.fallbackEncoder, obj, z);

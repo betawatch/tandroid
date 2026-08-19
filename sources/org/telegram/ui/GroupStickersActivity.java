@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
@@ -195,7 +194,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.GroupStickersActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                GroupStickersActivity.this.lambda$createView$0(view, i);
+                GroupStickersActivity.$r8$lambda$MmkaKFZ2sdDrs4ISPg6phql4hvU(GroupStickersActivity.this, view, i);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.GroupStickersActivity.3
@@ -209,25 +208,24 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view, int i) {
-        if (getParentActivity() == null) {
+    public static /* synthetic */ void $r8$lambda$MmkaKFZ2sdDrs4ISPg6phql4hvU(GroupStickersActivity groupStickersActivity, View view, int i) {
+        if (groupStickersActivity.getParentActivity() == null) {
             return;
         }
-        if (!this.searching) {
-            if (i >= this.stickersStartRow && i < this.stickersEndRow) {
-                onStickerSetClicked(((StickerSetCell) view).isChecked(), MediaDataController.getInstance(this.currentAccount).getStickerSets(getStickerSetType()).get(i - this.stickersStartRow), false);
+        if (!groupStickersActivity.searching) {
+            if (i >= groupStickersActivity.stickersStartRow && i < groupStickersActivity.stickersEndRow) {
+                groupStickersActivity.onStickerSetClicked(((StickerSetCell) view).isChecked(), MediaDataController.getInstance(groupStickersActivity.currentAccount).getStickerSets(groupStickersActivity.getStickerSetType()).get(i - groupStickersActivity.stickersStartRow), false);
             }
-            if (i == this.currentEmojiPackRow) {
-                onStickerSetClicked(true, this.selectedStickerSet, false);
+            if (i == groupStickersActivity.currentEmojiPackRow) {
+                groupStickersActivity.onStickerSetClicked(true, groupStickersActivity.selectedStickerSet, false);
                 return;
             }
             return;
         }
-        if (i > this.searchAdapter.searchEntries.size()) {
-            onStickerSetClicked(((StickerSetCell) view).isChecked(), (TLRPC.TL_messages_stickerSet) this.searchAdapter.localSearchEntries.get((i - this.searchAdapter.searchEntries.size()) - 1), false);
-        } else if (i != this.searchAdapter.searchEntries.size()) {
-            onStickerSetClicked(((StickerSetCell) view).isChecked(), (TLRPC.TL_messages_stickerSet) this.searchAdapter.searchEntries.get(i), true);
+        if (i > groupStickersActivity.searchAdapter.searchEntries.size()) {
+            groupStickersActivity.onStickerSetClicked(((StickerSetCell) view).isChecked(), (TLRPC.TL_messages_stickerSet) groupStickersActivity.searchAdapter.localSearchEntries.get((i - groupStickersActivity.searchAdapter.searchEntries.size()) - 1), false);
+        } else if (i != groupStickersActivity.searchAdapter.searchEntries.size()) {
+            groupStickersActivity.onStickerSetClicked(((StickerSetCell) view).isChecked(), (TLRPC.TL_messages_stickerSet) groupStickersActivity.searchAdapter.searchEntries.get(i), true);
         }
     }
 
@@ -301,7 +299,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupStickersActivity$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GroupStickersActivity.4.this.lambda$onCustomButtonPressed$0();
+                        BulletinFactory.of(GroupStickersActivity.this).createSimpleBulletin(R.raw.done, LocaleController.getString(R.string.GroupsEmojiPackUpdated)).show();
                     }
                 }, 350L);
             }
@@ -340,11 +338,6 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 ((BaseFragment) GroupStickersActivity.this).actionBar.closeSearchField(true);
             }
             return true;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCustomButtonPressed$0() {
-            BulletinFactory.of(GroupStickersActivity.this).createSimpleBulletin(R.raw.done, LocaleController.getString(R.string.GroupsEmojiPackUpdated)).show();
         }
     }
 
@@ -447,57 +440,56 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_setStickers, new RequestDelegate() { // from class: org.telegram.ui.GroupStickersActivity$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        GroupStickersActivity.this.lambda$saveStickerSet$2(tLObject, tL_error);
+                        GroupStickersActivity.$r8$lambda$2fw_XdZNX7uEep1Bk1wVf2mXBSU(GroupStickersActivity.this, tLObject, tL_error);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$saveStickerSet$2(TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$2fw_XdZNX7uEep1Bk1wVf2mXBSU(final GroupStickersActivity groupStickersActivity, TLObject tLObject, final TLRPC.TL_error tL_error) {
+        groupStickersActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupStickersActivity$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                GroupStickersActivity.this.lambda$saveStickerSet$1(tL_error);
+                GroupStickersActivity.$r8$lambda$dA7c7Oi6RZ6l4c-hYed3Wx_q760(GroupStickersActivity.this, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$saveStickerSet$1(TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$dA7c7Oi6RZ6l4c-hYed3Wx_q760(GroupStickersActivity groupStickersActivity, TLRPC.TL_error tL_error) {
         if (tL_error == null) {
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.selectedStickerSet;
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = groupStickersActivity.selectedStickerSet;
             if (tL_messages_stickerSet == null) {
-                setStickerSet(null);
+                groupStickersActivity.setStickerSet(null);
             } else {
-                setStickerSet(tL_messages_stickerSet.set);
-                MediaDataController.getInstance(this.currentAccount).putGroupStickerSet(this.selectedStickerSet);
+                groupStickersActivity.setStickerSet(tL_messages_stickerSet.set);
+                MediaDataController.getInstance(groupStickersActivity.currentAccount).putGroupStickerSet(groupStickersActivity.selectedStickerSet);
             }
-            updateSelectedStickerSetIndex();
-            if (this.isEmoji) {
-                TLRPC.ChatFull chatFull = this.info;
+            groupStickersActivity.updateSelectedStickerSetIndex();
+            if (groupStickersActivity.isEmoji) {
+                TLRPC.ChatFull chatFull = groupStickersActivity.info;
                 if (chatFull.emojiset != null) {
                     chatFull.flags2 |= 1024;
                 } else {
                     chatFull.flags2 &= -1025;
                 }
             } else {
-                TLRPC.ChatFull chatFull2 = this.info;
+                TLRPC.ChatFull chatFull2 = groupStickersActivity.info;
                 if (chatFull2.stickerset == null) {
                     chatFull2.flags |= 256;
                 } else {
                     chatFull2.flags &= -257;
                 }
             }
-            MessagesStorage.getInstance(this.currentAccount).updateChatInfo(this.info, false);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatInfoDidLoad, this.info, 0, Boolean.TRUE, Boolean.FALSE);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupPackUpdated, Long.valueOf(this.info.id), Boolean.valueOf(this.isEmoji));
-            finishFragment();
+            MessagesStorage.getInstance(groupStickersActivity.currentAccount).updateChatInfo(groupStickersActivity.info, false);
+            NotificationCenter.getInstance(groupStickersActivity.currentAccount).postNotificationName(NotificationCenter.chatInfoDidLoad, groupStickersActivity.info, 0, Boolean.TRUE, Boolean.FALSE);
+            NotificationCenter.getInstance(groupStickersActivity.currentAccount).postNotificationName(NotificationCenter.groupPackUpdated, Long.valueOf(groupStickersActivity.info.id), Boolean.valueOf(groupStickersActivity.isEmoji));
+            groupStickersActivity.finishFragment();
             return;
         }
-        if (getParentActivity() != null) {
-            Toast.makeText(getParentActivity(), LocaleController.getString(R.string.ErrorOccurred) + "\n" + tL_error.text, 0).show();
+        if (groupStickersActivity.getParentActivity() != null) {
+            Toast.makeText(groupStickersActivity.getParentActivity(), LocaleController.getString(R.string.ErrorOccurred) + "\n" + tL_error.text, 0).show();
         }
     }
 
@@ -655,18 +647,17 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.GroupStickersActivity$SearchAdapter$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupStickersActivity.SearchAdapter.this.lambda$onSearchStickers$2(str);
+                    GroupStickersActivity.SearchAdapter.$r8$lambda$cRNFc-bOsDPM2Vcgk3y1oxA9NdM(GroupStickersActivity.SearchAdapter.this, str);
                 }
             };
             this.lastCallback = runnable2;
             AndroidUtilities.runOnUIThread(runnable2, 300L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
-        public /* synthetic */ void lambda$onSearchStickers$2(final String str) {
+        public static /* synthetic */ void $r8$lambda$cRNFc-bOsDPM2Vcgk3y1oxA9NdM(final SearchAdapter searchAdapter, final String str) {
             TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets;
-            this.lastQuery = str;
+            searchAdapter.lastQuery = str;
             if (GroupStickersActivity.this.isEmoji) {
                 TLRPC.TL_messages_searchEmojiStickerSets tL_messages_searchEmojiStickerSets = new TLRPC.TL_messages_searchEmojiStickerSets();
                 tL_messages_searchEmojiStickerSets.q = str;
@@ -676,53 +667,59 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 tL_messages_searchStickerSets2.q = str;
                 tL_messages_searchStickerSets = tL_messages_searchStickerSets2;
             }
-            this.reqId = GroupStickersActivity.this.getConnectionsManager().sendRequest(tL_messages_searchStickerSets, new RequestDelegate() { // from class: org.telegram.ui.GroupStickersActivity$SearchAdapter$$ExternalSyntheticLambda1
+            searchAdapter.reqId = GroupStickersActivity.this.getConnectionsManager().sendRequest(tL_messages_searchStickerSets, new RequestDelegate() { // from class: org.telegram.ui.GroupStickersActivity$SearchAdapter$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    GroupStickersActivity.SearchAdapter.this.lambda$onSearchStickers$1(str, str, tLObject, tL_error);
+                    GroupStickersActivity.SearchAdapter.$r8$lambda$dMnLHfmZ_pGkja8vanYPSyommPs(GroupStickersActivity.SearchAdapter.this, str, str, tLObject, tL_error);
                 }
             }, 66);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSearchStickers$1(String str, final String str2, TLObject tLObject, TLRPC.TL_error tL_error) {
-            if (Objects.equals(this.lastQuery, str) && (tLObject instanceof TLRPC.TL_messages_foundStickerSets)) {
+        public static /* synthetic */ void $r8$lambda$dMnLHfmZ_pGkja8vanYPSyommPs(final SearchAdapter searchAdapter, String str, final String str2, TLObject tLObject, TLRPC.TL_error tL_error) {
+            if (Objects.equals(searchAdapter.lastQuery, str) && (tLObject instanceof TLRPC.TL_messages_foundStickerSets)) {
                 final ArrayList arrayList = new ArrayList();
-                Iterator<TLRPC.StickerSetCovered> it = ((TLRPC.TL_messages_foundStickerSets) tLObject).sets.iterator();
-                while (it.hasNext()) {
-                    TLRPC.StickerSetCovered next = it.next();
+                ArrayList<TLRPC.StickerSetCovered> arrayList2 = ((TLRPC.TL_messages_foundStickerSets) tLObject).sets;
+                int size = arrayList2.size();
+                int i = 0;
+                int i2 = 0;
+                while (i2 < size) {
+                    TLRPC.StickerSetCovered stickerSetCovered = arrayList2.get(i2);
+                    i2++;
+                    TLRPC.StickerSetCovered stickerSetCovered2 = stickerSetCovered;
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = new TLRPC.TL_messages_stickerSet();
-                    tL_messages_stickerSet.set = next.set;
-                    tL_messages_stickerSet.documents = next.covers;
+                    tL_messages_stickerSet.set = stickerSetCovered2.set;
+                    tL_messages_stickerSet.documents = stickerSetCovered2.covers;
                     if (!GroupStickersActivity.this.isEmoji || tL_messages_stickerSet.set.emojis) {
                         arrayList.add(tL_messages_stickerSet);
                     }
                 }
                 String trim = str2.toLowerCase(Locale.ROOT).trim();
-                final ArrayList arrayList2 = new ArrayList();
-                Iterator<TLRPC.TL_messages_stickerSet> it2 = MediaDataController.getInstance(((BaseFragment) GroupStickersActivity.this).currentAccount).getStickerSets(GroupStickersActivity.this.getStickerSetType()).iterator();
-                while (it2.hasNext()) {
-                    TLRPC.TL_messages_stickerSet next2 = it2.next();
-                    String str3 = next2.set.short_name;
+                final ArrayList arrayList3 = new ArrayList();
+                ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(((BaseFragment) GroupStickersActivity.this).currentAccount).getStickerSets(GroupStickersActivity.this.getStickerSetType());
+                int size2 = stickerSets.size();
+                while (i < size2) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = stickerSets.get(i);
+                    i++;
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = tL_messages_stickerSet2;
+                    String str3 = tL_messages_stickerSet3.set.short_name;
                     Locale locale = Locale.ROOT;
-                    if (str3.toLowerCase(locale).contains(trim) || next2.set.title.toLowerCase(locale).contains(trim)) {
-                        arrayList2.add(next2);
+                    if (str3.toLowerCase(locale).contains(trim) || tL_messages_stickerSet3.set.title.toLowerCase(locale).contains(trim)) {
+                        arrayList3.add(tL_messages_stickerSet3);
                     }
                 }
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupStickersActivity$SearchAdapter$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GroupStickersActivity.SearchAdapter.this.lambda$onSearchStickers$0(arrayList, arrayList2, str2);
+                        GroupStickersActivity.SearchAdapter.$r8$lambda$NR5KaRrWmTGMlyvJ1LfG49AzhJg(GroupStickersActivity.SearchAdapter.this, arrayList, arrayList3, str2);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSearchStickers$0(List list, List list2, String str) {
-            this.searchEntries = list;
-            this.localSearchEntries = list2;
-            notifyDataSetChanged();
+        public static /* synthetic */ void $r8$lambda$NR5KaRrWmTGMlyvJ1LfG49AzhJg(SearchAdapter searchAdapter, List list, List list2, String str) {
+            searchAdapter.searchEntries = list;
+            searchAdapter.localSearchEntries = list2;
+            searchAdapter.notifyDataSetChanged();
             GroupStickersActivity.this.emptyView.title.setVisibility(8);
             GroupStickersActivity.this.emptyView.subtitle.setText(LocaleController.formatString(R.string.ChooseStickerNoResultsFound, str));
             GroupStickersActivity.this.emptyView.showProgress(false, true);
@@ -838,7 +835,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 stickerSetCell.setDeleteAction(new View.OnClickListener() { // from class: org.telegram.ui.GroupStickersActivity$ListAdapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        GroupStickersActivity.ListAdapter.this.lambda$onBindViewHolder$0(view);
+                        GroupStickersActivity.this.selectSetAfterSearch(null);
                     }
                 });
                 return;
@@ -885,11 +882,6 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
             if (i == GroupStickersActivity.this.addEmojiPackHintRow) {
                 ((TextInfoPrivacyCell) viewHolder.itemView).setText(LocaleController.getString(R.string.AddGroupEmojiPackHint));
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(View view) {
-            GroupStickersActivity.this.selectSetAfterSearch(null);
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
@@ -1044,14 +1036,13 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                     AndroidUtilities.runOnUIThread(AddEmojiCell.this.lastCallback = new Runnable() { // from class: org.telegram.ui.GroupStickersActivity$AddEmojiCell$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            GroupStickersActivity.AddEmojiCell.1.this.lambda$afterTextChanged$2(trim);
+                            GroupStickersActivity.AddEmojiCell.1.$r8$lambda$r6CbCvKbAR-SW-JA89Vs65wo_g0(GroupStickersActivity.AddEmojiCell.1.this, trim);
                         }
                     }, 300L);
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$afterTextChanged$2(final String str) {
+            public static /* synthetic */ void $r8$lambda$r6CbCvKbAR-SW-JA89Vs65wo_g0(final 1 r4, final String str) {
                 AddEmojiCell.this.lastQuery = str;
                 TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet = new TLRPC.TL_messages_getStickerSet();
                 TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
@@ -1061,25 +1052,23 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 addEmojiCell.reqId = GroupStickersActivity.this.getConnectionsManager().sendRequest(tL_messages_getStickerSet, new RequestDelegate() { // from class: org.telegram.ui.GroupStickersActivity$AddEmojiCell$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        GroupStickersActivity.AddEmojiCell.1.this.lambda$afterTextChanged$1(str, tLObject, tL_error);
+                        GroupStickersActivity.AddEmojiCell.1.$r8$lambda$KcLHoWo6SSNdCI1CZInlqgqqkzs(GroupStickersActivity.AddEmojiCell.1.this, str, tLObject, tL_error);
                     }
                 }, 66);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$afterTextChanged$1(String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            public static /* synthetic */ void $r8$lambda$KcLHoWo6SSNdCI1CZInlqgqqkzs(final 1 r0, String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
                 if (Objects.equals(AddEmojiCell.this.lastQuery, str)) {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupStickersActivity$AddEmojiCell$1$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            GroupStickersActivity.AddEmojiCell.1.this.lambda$afterTextChanged$0(tLObject);
+                            GroupStickersActivity.AddEmojiCell.1.$r8$lambda$nfOW-BzuYBsikzi_TanKpdTIpyU(GroupStickersActivity.AddEmojiCell.1.this, tLObject);
                         }
                     });
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$afterTextChanged$0(TLObject tLObject) {
+            public static /* synthetic */ void $r8$lambda$nfOW-BzuYBsikzi_TanKpdTIpyU(1 r0, TLObject tLObject) {
                 if (tLObject != null) {
                     GroupStickersActivity.this.selectSetAfterSearch((TLRPC.TL_messages_stickerSet) tLObject);
                 } else {

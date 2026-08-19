@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Locale;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SessionDescription {
     public final String description;
     public final Type type;

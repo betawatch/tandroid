@@ -49,11 +49,13 @@ public final class ApicFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || ApicFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && ApicFrame.class == obj.getClass()) {
+            ApicFrame apicFrame = (ApicFrame) obj;
+            if (this.pictureType == apicFrame.pictureType && Util.areEqual(this.mimeType, apicFrame.mimeType) && Util.areEqual(this.description, apicFrame.description) && Arrays.equals(this.pictureData, apicFrame.pictureData)) {
+                return true;
+            }
         }
-        ApicFrame apicFrame = (ApicFrame) obj;
-        return this.pictureType == apicFrame.pictureType && Util.areEqual(this.mimeType, apicFrame.mimeType) && Util.areEqual(this.description, apicFrame.description) && Arrays.equals(this.pictureData, apicFrame.pictureData);
+        return false;
     }
 
     public int hashCode() {

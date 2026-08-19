@@ -182,25 +182,23 @@ public final class HlsMediaPlaylist extends HlsPlaylist {
     }
 
     public boolean isNewerThan(HlsMediaPlaylist hlsMediaPlaylist) {
-        if (hlsMediaPlaylist == null) {
-            return true;
-        }
-        long j = this.mediaSequence;
-        long j2 = hlsMediaPlaylist.mediaSequence;
-        if (j > j2) {
-            return true;
-        }
-        if (j < j2) {
-            return false;
-        }
-        int size = this.segments.size() - hlsMediaPlaylist.segments.size();
-        if (size != 0) {
-            return size > 0;
-        }
-        int size2 = this.trailingParts.size();
-        int size3 = hlsMediaPlaylist.trailingParts.size();
-        if (size2 <= size3) {
-            return size2 == size3 && this.hasEndTag && !hlsMediaPlaylist.hasEndTag;
+        if (hlsMediaPlaylist != null) {
+            long j = this.mediaSequence;
+            long j2 = hlsMediaPlaylist.mediaSequence;
+            if (j <= j2) {
+                if (j < j2) {
+                    return false;
+                }
+                int size = this.segments.size() - hlsMediaPlaylist.segments.size();
+                if (size != 0) {
+                    return size > 0;
+                }
+                int size2 = this.trailingParts.size();
+                int size3 = hlsMediaPlaylist.trailingParts.size();
+                if (size2 <= size3 && (size2 != size3 || !this.hasEndTag || hlsMediaPlaylist.hasEndTag)) {
+                    return false;
+                }
+            }
         }
         return true;
     }

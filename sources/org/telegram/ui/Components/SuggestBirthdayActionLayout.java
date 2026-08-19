@@ -95,15 +95,18 @@ public class SuggestBirthdayActionLayout {
             i = (int) (i + AndroidUtilities.dp(9.0f) + Math.max(this.titles[i2].getWidth(), this.values[i2].getWidth()) + AndroidUtilities.dp(9.0f));
         }
         int width2 = (this.view.getWidth() - i) / 2;
-        for (int i3 = 0; i3 < this.titles.length; i3++) {
+        int i3 = 0;
+        while (i3 < this.titles.length) {
             float dp3 = AndroidUtilities.dp(9.0f) + Math.max(this.titles[i3].getWidth(), this.values[i3].getWidth()) + AndroidUtilities.dp(9.0f);
             float f = width2;
-            float f2 = (dp3 / 2.0f) + f;
-            width2 = (int) (f + dp3);
+            float f2 = f + (dp3 / 2.0f);
+            int i4 = (int) (f + dp3);
             Text text = this.titles[i3];
             text.draw(canvas, f2 - (text.getWidth() / 2.0f), dp2, -1, 0.75f);
             Text text2 = this.values[i3];
             text2.draw(canvas, f2 - (text2.getWidth() / 2.0f), AndroidUtilities.dp(16.0f) + dp2, -1, 1.0f);
+            i3++;
+            width2 = i4;
         }
         if (this.hasButton) {
             int dp4 = dp2 + AndroidUtilities.dp(38.0f);
@@ -158,47 +161,47 @@ public class SuggestBirthdayActionLayout {
         AlertsCreator.createBirthdayPickerDialog(this.view.getContext(), LocaleController.getString(R.string.DateOfBirth), LocaleController.getString(R.string.DateOfBirthAddToProfile), this.birthday, new Utilities.Callback() { // from class: org.telegram.ui.Components.SuggestBirthdayActionLayout$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                SuggestBirthdayActionLayout.this.lambda$open$2((TL_account.TL_birthday) obj);
+                SuggestBirthdayActionLayout.$r8$lambda$VFGVibElkC_B-VbKBCMewXhqjLQ(SuggestBirthdayActionLayout.this, (TL_account.TL_birthday) obj);
             }
         }, null, true, false, this.resourcesProvider).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$2(TL_account.TL_birthday tL_birthday) {
+    public static /* synthetic */ void $r8$lambda$VFGVibElkC_B-VbKBCMewXhqjLQ(final SuggestBirthdayActionLayout suggestBirthdayActionLayout, TL_account.TL_birthday tL_birthday) {
+        suggestBirthdayActionLayout.getClass();
         TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
         updatebirthday.flags |= 1;
         updatebirthday.birthday = tL_birthday;
-        final TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
+        final TLRPC.UserFull userFull = MessagesController.getInstance(suggestBirthdayActionLayout.currentAccount).getUserFull(UserConfig.getInstance(suggestBirthdayActionLayout.currentAccount).getClientUserId());
         final TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
         if (userFull != null) {
             userFull.flags2 |= 32;
             userFull.birthday = tL_birthday;
-            MessagesStorage.getInstance(this.currentAccount).updateUserInfo(userFull, false);
+            MessagesStorage.getInstance(suggestBirthdayActionLayout.currentAccount).updateUserInfo(userFull, false);
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(updatebirthday, new RequestDelegate() { // from class: org.telegram.ui.Components.SuggestBirthdayActionLayout$$ExternalSyntheticLambda1
+        ConnectionsManager.getInstance(suggestBirthdayActionLayout.currentAccount).sendRequest(updatebirthday, new RequestDelegate() { // from class: org.telegram.ui.Components.SuggestBirthdayActionLayout$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SuggestBirthdayActionLayout.this.lambda$open$1(userFull, tL_birthday2, tLObject, tL_error);
+                SuggestBirthdayActionLayout.$r8$lambda$D4C9Zgaain_9l75CZRc6O88H_Ok(SuggestBirthdayActionLayout.this, userFull, tL_birthday2, tLObject, tL_error);
             }
         }, 1024);
-        MessagesController.getInstance(this.currentAccount).invalidateContentSettings();
-        MessagesController.getInstance(this.currentAccount).removeSuggestion(0L, "BIRTHDAY_SETUP");
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
+        MessagesController.getInstance(suggestBirthdayActionLayout.currentAccount).invalidateContentSettings();
+        MessagesController.getInstance(suggestBirthdayActionLayout.currentAccount).removeSuggestion(0L, "BIRTHDAY_SETUP");
+        NotificationCenter.getInstance(suggestBirthdayActionLayout.currentAccount).postNotificationName(NotificationCenter.newSuggestionsAvailable, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$1(final TLRPC.UserFull userFull, final TL_account.TL_birthday tL_birthday, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$D4C9Zgaain_9l75CZRc6O88H_Ok(final SuggestBirthdayActionLayout suggestBirthdayActionLayout, final TLRPC.UserFull userFull, final TL_account.TL_birthday tL_birthday, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        suggestBirthdayActionLayout.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SuggestBirthdayActionLayout$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                SuggestBirthdayActionLayout.this.lambda$open$0(tLObject, userFull, tL_birthday, tL_error);
+                SuggestBirthdayActionLayout.$r8$lambda$hcMtcMpKQmkY2YkY_TRkLXQVMHE(SuggestBirthdayActionLayout.this, tLObject, userFull, tL_birthday, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$0(TLObject tLObject, TLRPC.UserFull userFull, TL_account.TL_birthday tL_birthday, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$hcMtcMpKQmkY2YkY_TRkLXQVMHE(SuggestBirthdayActionLayout suggestBirthdayActionLayout, TLObject tLObject, TLRPC.UserFull userFull, TL_account.TL_birthday tL_birthday, TLRPC.TL_error tL_error) {
         String str;
+        suggestBirthdayActionLayout.getClass();
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
             return;
@@ -214,10 +217,10 @@ public class SuggestBirthdayActionLayout {
                 userFull.flags2 |= 32;
             }
             userFull.birthday = tL_birthday;
-            MessagesStorage.getInstance(this.currentAccount).updateUserInfo(userFull, false);
+            MessagesStorage.getInstance(suggestBirthdayActionLayout.currentAccount).updateUserInfo(userFull, false);
         }
         if (tL_error != null && (str = tL_error.text) != null && str.startsWith("FLOOD_WAIT_")) {
-            new AlertDialog.Builder(this.view.getContext()).setTitle(LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle)).setMessage(LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
+            new AlertDialog.Builder(suggestBirthdayActionLayout.view.getContext()).setTitle(LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle)).setMessage(LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
         } else {
             BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.UnknownError)).show();
         }

@@ -48,41 +48,38 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
 
     @Override // com.google.android.exoplayer2.text.SimpleSubtitleDecoder
     protected Subtitle decode(byte[] bArr, int i, boolean z) {
-        FrameAndTickRate frameAndTickRate;
         try {
             XmlPullParser newPullParser = this.xmlParserFactory.newPullParser();
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = new HashMap();
             HashMap hashMap3 = new HashMap();
             hashMap2.put("", new TtmlRegion(""));
+            int i2 = 0;
             TtsExtent ttsExtent = null;
             newPullParser.setInput(new ByteArrayInputStream(bArr, 0, i), null);
             ArrayDeque arrayDeque = new ArrayDeque();
-            FrameAndTickRate frameAndTickRate2 = DEFAULT_FRAME_AND_TICK_RATE;
+            FrameAndTickRate frameAndTickRate = DEFAULT_FRAME_AND_TICK_RATE;
             CellResolution cellResolution = DEFAULT_CELL_RESOLUTION;
             TtmlSubtitle ttmlSubtitle = null;
-            int i2 = 0;
             for (int eventType = newPullParser.getEventType(); eventType != 1; eventType = newPullParser.getEventType()) {
                 TtmlNode ttmlNode = (TtmlNode) arrayDeque.peek();
                 if (i2 == 0) {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
                         if ("tt".equals(name)) {
-                            frameAndTickRate2 = parseFrameAndTickRates(newPullParser);
+                            frameAndTickRate = parseFrameAndTickRates(newPullParser);
                             cellResolution = parseCellResolution(newPullParser, DEFAULT_CELL_RESOLUTION);
                             ttsExtent = parseTtsExtent(newPullParser);
                         }
+                        FrameAndTickRate frameAndTickRate2 = frameAndTickRate;
                         TtsExtent ttsExtent2 = ttsExtent;
-                        FrameAndTickRate frameAndTickRate3 = frameAndTickRate2;
                         CellResolution cellResolution2 = cellResolution;
                         if (isSupportedTag(name)) {
                             if ("head".equals(name)) {
-                                frameAndTickRate = frameAndTickRate3;
                                 parseHeader(newPullParser, hashMap, cellResolution2, ttsExtent2, hashMap2, hashMap3);
                             } else {
-                                frameAndTickRate = frameAndTickRate3;
                                 try {
-                                    TtmlNode parseNode = parseNode(newPullParser, ttmlNode, hashMap2, frameAndTickRate);
+                                    TtmlNode parseNode = parseNode(newPullParser, ttmlNode, hashMap2, frameAndTickRate2);
                                     arrayDeque.push(parseNode);
                                     if (ttmlNode != null) {
                                         ttmlNode.addChild(parseNode);
@@ -91,16 +88,15 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                                     Log.w("TtmlDecoder", "Suppressing parser error", e);
                                 }
                             }
-                            frameAndTickRate2 = frameAndTickRate;
-                            ttsExtent = ttsExtent2;
                             cellResolution = cellResolution2;
+                            ttsExtent = ttsExtent2;
+                            frameAndTickRate = frameAndTickRate2;
                         } else {
                             Log.i("TtmlDecoder", "Ignoring unsupported tag: " + newPullParser.getName());
-                            frameAndTickRate = frameAndTickRate3;
                         }
-                        frameAndTickRate2 = frameAndTickRate;
-                        ttsExtent = ttsExtent2;
                         cellResolution = cellResolution2;
+                        ttsExtent = ttsExtent2;
+                        frameAndTickRate = frameAndTickRate2;
                         i2++;
                     } else if (eventType == 4) {
                         ((TtmlNode) Assertions.checkNotNull(ttmlNode)).addChild(TtmlNode.buildTextNode(newPullParser.getText()));
@@ -239,21 +235,21 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x01ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x01ae, code lost:
     
-        if (r0.equals("tb") == false) goto L49;
+        if (r0.equals("tb") == false) goto L50;
      */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0180  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0181  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private static TtmlRegion parseRegionAttributes(XmlPullParser xmlPullParser, CellResolution cellResolution, TtsExtent ttsExtent) {
         float parseFloat;
-        float f;
         float parseFloat2;
         float parseFloat3;
+        float parseFloat4;
         CellResolution cellResolution2;
-        float f2;
+        float f;
         int i;
         String attributeValue;
         int i2;
@@ -270,9 +266,8 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             Matcher matcher2 = pattern2.matcher(attributeValue3);
             if (matcher.matches()) {
                 try {
-                    float parseFloat4 = Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1))) / 100.0f;
-                    parseFloat = Float.parseFloat((String) Assertions.checkNotNull(matcher.group(2))) / 100.0f;
-                    f = parseFloat4;
+                    parseFloat = Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1))) / 100.0f;
+                    parseFloat2 = Float.parseFloat((String) Assertions.checkNotNull(matcher.group(2))) / 100.0f;
                 } catch (NumberFormatException unused) {
                     Log.w("TtmlDecoder", "Ignoring region with malformed origin: " + attributeValue3);
                     return null;
@@ -288,8 +283,10 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                 }
                 try {
                     int parseInt = Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(1)));
-                    f = parseInt / ttsExtent.width;
-                    parseFloat = Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(2))) / ttsExtent.height;
+                    float f2 = parseInt / ttsExtent.width;
+                    float parseInt2 = Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(2))) / ttsExtent.height;
+                    parseFloat = f2;
+                    parseFloat2 = parseInt2;
                 } catch (NumberFormatException unused2) {
                     Log.w("TtmlDecoder", "Ignoring region with malformed origin: " + attributeValue3);
                     return null;
@@ -301,8 +298,8 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                 Matcher matcher4 = pattern2.matcher(attributeValue4);
                 if (matcher3.matches()) {
                     try {
-                        parseFloat2 = Float.parseFloat((String) Assertions.checkNotNull(matcher3.group(1))) / 100.0f;
-                        parseFloat3 = Float.parseFloat((String) Assertions.checkNotNull(matcher3.group(2))) / 100.0f;
+                        parseFloat3 = Float.parseFloat((String) Assertions.checkNotNull(matcher3.group(1))) / 100.0f;
+                        parseFloat4 = Float.parseFloat((String) Assertions.checkNotNull(matcher3.group(2))) / 100.0f;
                     } catch (NumberFormatException unused3) {
                         Log.w("TtmlDecoder", "Ignoring region with malformed extent: " + attributeValue3);
                         return null;
@@ -317,32 +314,34 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                         return null;
                     }
                     try {
-                        int parseInt2 = Integer.parseInt((String) Assertions.checkNotNull(matcher4.group(1)));
-                        parseFloat2 = parseInt2 / ttsExtent.width;
-                        parseFloat3 = Integer.parseInt((String) Assertions.checkNotNull(matcher4.group(2))) / ttsExtent.height;
+                        int parseInt3 = Integer.parseInt((String) Assertions.checkNotNull(matcher4.group(1)));
+                        float f3 = parseInt3 / ttsExtent.width;
+                        parseFloat4 = Integer.parseInt((String) Assertions.checkNotNull(matcher4.group(2))) / ttsExtent.height;
+                        parseFloat3 = f3;
                     } catch (NumberFormatException unused4) {
                         Log.w("TtmlDecoder", "Ignoring region with malformed extent: " + attributeValue3);
                         return null;
                     }
                 }
+                float f4 = parseFloat4;
                 String attributeValue5 = XmlPullParserUtil.getAttributeValue(xmlPullParser, "displayAlign");
                 if (attributeValue5 != null) {
                     String lowerCase = Ascii.toLowerCase(attributeValue5);
-                    lowerCase.hashCode();
+                    lowerCase.getClass();
                     if (lowerCase.equals("center")) {
                         cellResolution2 = cellResolution;
-                        f2 = parseFloat + (parseFloat3 / 2.0f);
+                        f = parseFloat2 + (f4 / 2.0f);
                         i = 1;
                     } else if (lowerCase.equals("after")) {
                         cellResolution2 = cellResolution;
-                        f2 = parseFloat + parseFloat3;
+                        f = parseFloat2 + f4;
                         i = 2;
                     }
-                    float f3 = 1.0f / cellResolution2.rows;
+                    float f5 = 1.0f / cellResolution2.rows;
                     attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, "writingMode");
                     if (attributeValue != null) {
                         String lowerCase2 = Ascii.toLowerCase(attributeValue);
-                        lowerCase2.hashCode();
+                        lowerCase2.getClass();
                         switch (lowerCase2.hashCode()) {
                             case 3694:
                                 break;
@@ -373,20 +372,20 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                                 i2 = 1;
                                 break;
                         }
-                        return new TtmlRegion(attributeValue2, f, f2, 0, i, parseFloat2, parseFloat3, 1, f3, i2);
+                        return new TtmlRegion(attributeValue2, parseFloat, f, 0, i, parseFloat3, f4, 1, f5, i2);
                     }
                     i2 = TLObject.FLAG_31;
-                    return new TtmlRegion(attributeValue2, f, f2, 0, i, parseFloat2, parseFloat3, 1, f3, i2);
+                    return new TtmlRegion(attributeValue2, parseFloat, f, 0, i, parseFloat3, f4, 1, f5, i2);
                 }
                 cellResolution2 = cellResolution;
-                f2 = parseFloat;
+                f = parseFloat2;
                 i = 0;
-                float f32 = 1.0f / cellResolution2.rows;
+                float f52 = 1.0f / cellResolution2.rows;
                 attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, "writingMode");
                 if (attributeValue != null) {
                 }
                 i2 = TLObject.FLAG_31;
-                return new TtmlRegion(attributeValue2, f, f2, 0, i, parseFloat2, parseFloat3, 1, f32, i2);
+                return new TtmlRegion(attributeValue2, parseFloat, f, 0, i, parseFloat3, f4, 1, f52, i2);
             }
             Log.w("TtmlDecoder", "Ignoring region without an extent");
             return null;
@@ -409,7 +408,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         for (int i = 0; i < attributeCount; i++) {
             String attributeValue = xmlPullParser.getAttributeValue(i);
             String attributeName = xmlPullParser.getAttributeName(i);
-            attributeName.hashCode();
+            attributeName.getClass();
             switch (attributeName.hashCode()) {
                 case -1550943582:
                     if (attributeName.equals("fontStyle")) {
@@ -532,7 +531,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                     break;
                 case 3:
                     String lowerCase = Ascii.toLowerCase(attributeValue);
-                    lowerCase.hashCode();
+                    lowerCase.getClass();
                     switch (lowerCase.hashCode()) {
                         case -1461280213:
                             if (lowerCase.equals("nounderline")) {
@@ -592,7 +591,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                     }
                 case 6:
                     String lowerCase2 = Ascii.toLowerCase(attributeValue);
-                    lowerCase2.hashCode();
+                    lowerCase2.getClass();
                     switch (lowerCase2.hashCode()) {
                         case -618561360:
                             if (lowerCase2.equals("baseContainer")) {
@@ -670,7 +669,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                     break;
                 case '\t':
                     String lowerCase3 = Ascii.toLowerCase(attributeValue);
-                    lowerCase3.hashCode();
+                    lowerCase3.getClass();
                     if (lowerCase3.equals("all")) {
                         ttmlStyle = createIfNull(ttmlStyle).setTextCombine(true);
                         break;
@@ -694,7 +693,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                     break;
                 case '\f':
                     String lowerCase4 = Ascii.toLowerCase(attributeValue);
-                    lowerCase4.hashCode();
+                    lowerCase4.getClass();
                     if (lowerCase4.equals("before")) {
                         ttmlStyle = createIfNull(ttmlStyle).setRubyPosition(1);
                         break;
@@ -727,7 +726,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
 
     private static Layout.Alignment parseAlignment(String str) {
         String lowerCase = Ascii.toLowerCase(str);
-        lowerCase.hashCode();
+        lowerCase.getClass();
         switch (lowerCase) {
             case "center":
                 return Layout.Alignment.ALIGN_CENTER;
@@ -744,21 +743,22 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     private static TtmlNode parseNode(XmlPullParser xmlPullParser, TtmlNode ttmlNode, Map map, FrameAndTickRate frameAndTickRate) {
-        long j;
-        long j2;
         char c;
         int attributeCount = xmlPullParser.getAttributeCount();
+        String[] strArr = null;
         TtmlStyle parseStyleAttributes = parseStyleAttributes(xmlPullParser, null);
-        String str = null;
-        String str2 = "";
+        long j = -9223372036854775807L;
+        long j2 = -9223372036854775807L;
         long j3 = -9223372036854775807L;
         long j4 = -9223372036854775807L;
-        long j5 = -9223372036854775807L;
-        String[] strArr = null;
-        for (int i = 0; i < attributeCount; i++) {
+        String str = "";
+        int i = 0;
+        String str2 = null;
+        while (i < attributeCount) {
             String attributeName = xmlPullParser.getAttributeName(i);
+            long j5 = j;
             String attributeValue = xmlPullParser.getAttributeValue(i);
-            attributeName.hashCode();
+            attributeName.getClass();
             switch (attributeName.hashCode()) {
                 case -934795532:
                     if (attributeName.equals("region")) {
@@ -811,17 +811,17 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                     if (!map.containsKey(attributeValue)) {
                         break;
                     } else {
-                        str2 = attributeValue;
+                        str = attributeValue;
                         continue;
                     }
                 case 1:
-                    j5 = parseTimeExpression(attributeValue, frameAndTickRate);
-                    break;
-                case 2:
                     j4 = parseTimeExpression(attributeValue, frameAndTickRate);
                     break;
-                case 3:
+                case 2:
                     j3 = parseTimeExpression(attributeValue, frameAndTickRate);
+                    break;
+                case 3:
+                    j2 = parseTimeExpression(attributeValue, frameAndTickRate);
                     break;
                 case 4:
                     String[] parseStyleIds = parseStyleIds(attributeValue);
@@ -832,40 +832,38 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                     break;
                 case 5:
                     if (attributeValue.startsWith("#")) {
-                        str = attributeValue.substring(1);
+                        str2 = attributeValue.substring(1);
                         break;
                     }
                     break;
             }
+            i++;
+            j = j5;
         }
+        long j6 = j;
         if (ttmlNode != null) {
-            long j6 = ttmlNode.startTimeUs;
-            j = -9223372036854775807L;
-            if (j6 != -9223372036854775807L) {
-                if (j3 != -9223372036854775807L) {
-                    j3 += j6;
+            long j7 = ttmlNode.startTimeUs;
+            if (j7 != j6) {
+                if (j2 != j6) {
+                    j2 += j7;
                 }
-                if (j4 != -9223372036854775807L) {
-                    j4 += j6;
+                if (j3 != j6) {
+                    j3 += j7;
                 }
             }
-        } else {
-            j = -9223372036854775807L;
         }
-        long j7 = j3;
-        if (j4 == j) {
-            if (j5 != j) {
-                j2 = j7 + j5;
+        long j8 = j2;
+        if (j3 == j6) {
+            if (j4 != j6) {
+                j3 = j8 + j4;
             } else if (ttmlNode != null) {
-                long j8 = ttmlNode.endTimeUs;
-                if (j8 != j) {
-                    j2 = j8;
+                long j9 = ttmlNode.endTimeUs;
+                if (j9 != j6) {
+                    j3 = j9;
                 }
             }
-            return TtmlNode.buildNode(xmlPullParser.getName(), j7, j2, parseStyleAttributes, strArr, str2, str, ttmlNode);
         }
-        j2 = j4;
-        return TtmlNode.buildNode(xmlPullParser.getName(), j7, j2, parseStyleAttributes, strArr, str2, str, ttmlNode);
+        return TtmlNode.buildNode(xmlPullParser.getName(), j8, j3, parseStyleAttributes, strArr, str, str2, ttmlNode);
     }
 
     private static boolean isSupportedTag(String str) {
@@ -886,7 +884,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         if (matcher.matches()) {
             str2 = (String) Assertions.checkNotNull(matcher.group(3));
-            str2.hashCode();
+            str2.getClass();
             switch (str2) {
                 case "%":
                     ttmlStyle.setFontSizeUnit(3);
@@ -942,7 +940,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         if (matcher2.matches()) {
             double parseDouble = Double.parseDouble((String) Assertions.checkNotNull(matcher2.group(1)));
             String str2 = (String) Assertions.checkNotNull(matcher2.group(2));
-            str2.hashCode();
+            str2.getClass();
             switch (str2.hashCode()) {
                 case 102:
                     if (str2.equals("f")) {

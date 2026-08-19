@@ -105,6 +105,9 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
     }
 
     private static boolean isSafeToMultiply(int i, int i2) {
-        return i >= 0 && i2 >= 0 && (i2 <= 0 || i < ConnectionsManager.DEFAULT_DATACENTER_ID / i2);
+        if (i < 0 || i2 < 0) {
+            return false;
+        }
+        return i2 <= 0 || i < ConnectionsManager.DEFAULT_DATACENTER_ID / i2;
     }
 }

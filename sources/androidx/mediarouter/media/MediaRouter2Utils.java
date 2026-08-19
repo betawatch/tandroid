@@ -175,7 +175,7 @@ abstract class MediaRouter2Utils {
     }
 
     static String toRouteFeature(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "android.media.intent.category.REMOTE_PLAYBACK":
                 return "android.media.route.feature.REMOTE_PLAYBACK";

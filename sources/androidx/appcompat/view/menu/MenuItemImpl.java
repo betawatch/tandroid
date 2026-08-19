@@ -427,9 +427,9 @@ public final class MenuItemImpl implements SupportMenuItem {
     public MenuItem setChecked(boolean z) {
         if ((this.mFlags & 4) != 0) {
             this.mMenu.setExclusiveItemChecked(this);
-        } else {
-            setCheckedInt(z);
+            return this;
         }
+        setCheckedInt(z);
         return this;
     }
 
@@ -634,13 +634,15 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     public boolean hasCollapsibleActionView() {
         ActionProvider actionProvider;
-        if ((this.mShowAsAction & 8) == 0) {
-            return false;
+        if ((this.mShowAsAction & 8) != 0) {
+            if (this.mActionView == null && (actionProvider = this.mActionProvider) != null) {
+                this.mActionView = actionProvider.onCreateActionView(this);
+            }
+            if (this.mActionView != null) {
+                return true;
+            }
         }
-        if (this.mActionView == null && (actionProvider = this.mActionProvider) != null) {
-            this.mActionView = actionProvider.onCreateActionView(this);
-        }
-        return this.mActionView != null;
+        return false;
     }
 
     public void setActionViewExpanded(boolean z) {

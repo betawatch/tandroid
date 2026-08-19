@@ -45,71 +45,76 @@ final class RemoteSettingsFetcher$doConfigFetch$2 extends SuspendLambda implemen
         return ((RemoteSettingsFetcher$doConfigFetch$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00cb, code lost:
+    
+        if (r8.invoke(r1, r7) == r0) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00e0, code lost:
+    
+        if (r1.invoke(r3, r7) != r0) goto L37;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         URL url;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
-                url = this.this$0.settingsUrl();
-                URLConnection openConnection = url.openConnection();
-                Intrinsics.checkNotNull(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
-                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
-                httpsURLConnection.setRequestMethod("GET");
-                httpsURLConnection.setRequestProperty("Accept", "application/json");
-                for (Map.Entry entry : this.$headerOptions.entrySet()) {
-                    httpsURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                }
-                int responseCode = httpsURLConnection.getResponseCode();
-                if (responseCode == 200) {
-                    InputStream inputStream = httpsURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    StringBuilder sb = new StringBuilder();
-                    Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
-                    while (true) {
-                        String readLine = bufferedReader.readLine();
-                        ref$ObjectRef.element = readLine;
-                        if (readLine == null) {
-                            break;
-                        }
-                        sb.append(readLine);
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    JSONObject jSONObject = new JSONObject(sb.toString());
-                    Function2 function2 = this.$onSuccess;
-                    this.label = 1;
-                    if (function2.invoke(jSONObject, this) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                } else {
-                    Function2 function22 = this.$onFailure;
-                    String str = "Bad response code: " + responseCode;
-                    this.label = 2;
-                    if (function22.invoke(str, this) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                }
-            } else if (i == 1 || i == 2) {
-                ResultKt.throwOnFailure(obj);
-            } else {
-                if (i != 3) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                }
-                ResultKt.throwOnFailure(obj);
-            }
         } catch (Exception e) {
-            Function2 function23 = this.$onFailure;
+            Function2 function2 = this.$onFailure;
             String message = e.getMessage();
             if (message == null) {
                 message = e.toString();
             }
             this.label = 3;
-            if (function23.invoke(message, this) == coroutine_suspended) {
-                return coroutine_suspended;
+        }
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            url = this.this$0.settingsUrl();
+            URLConnection openConnection = url.openConnection();
+            Intrinsics.checkNotNull(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
+            HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
+            httpsURLConnection.setRequestMethod("GET");
+            httpsURLConnection.setRequestProperty("Accept", "application/json");
+            for (Map.Entry entry : this.$headerOptions.entrySet()) {
+                httpsURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
             }
+            int responseCode = httpsURLConnection.getResponseCode();
+            if (responseCode == 200) {
+                InputStream inputStream = httpsURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder sb = new StringBuilder();
+                Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
+                while (true) {
+                    String readLine = bufferedReader.readLine();
+                    ref$ObjectRef.element = readLine;
+                    if (readLine == null) {
+                        break;
+                    }
+                    sb.append(readLine);
+                }
+                bufferedReader.close();
+                inputStream.close();
+                JSONObject jSONObject = new JSONObject(sb.toString());
+                Function2 function22 = this.$onSuccess;
+                this.label = 1;
+                if (function22.invoke(jSONObject, this) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+            } else {
+                Function2 function23 = this.$onFailure;
+                String str = "Bad response code: " + responseCode;
+                this.label = 2;
+            }
+        } else if (i == 1 || i == 2) {
+            ResultKt.throwOnFailure(obj);
+        } else {
+            if (i != 3) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;
     }

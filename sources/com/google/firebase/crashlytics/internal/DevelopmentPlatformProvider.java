@@ -29,10 +29,9 @@ public class DevelopmentPlatformProvider {
         }
         try {
             InputStream open = this.context.getAssets().open(str);
-            if (open == null) {
-                return true;
+            if (open != null) {
+                open.close();
             }
-            open.close();
             return true;
         } catch (IOException unused) {
             return false;

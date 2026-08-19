@@ -88,6 +88,10 @@ public class PipSource {
         }
     }
 
+    public Player getPlayer() {
+        return this.player;
+    }
+
     public void setPlaceholderView(View view) {
         this.placeholderView = view;
     }
@@ -105,8 +109,8 @@ public class PipSource {
         this.controller.dispatchSourceParamsChanged(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:12:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0049  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

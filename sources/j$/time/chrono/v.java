@@ -1,74 +1,47 @@
 package j$.time.chrono;
 
-import j$.time.Instant;
-import j$.time.LocalDate;
-import j$.time.ZoneId;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
-
 /* loaded from: classes2.dex */
-public final class v extends a implements Serializable {
-    public static final v d = new v();
-    private static final long serialVersionUID = 459996390165777884L;
+public abstract /* synthetic */ class v {
+    public static final /* synthetic */ int[] a;
 
-    private v() {
-    }
-
-    @Override // j$.time.chrono.l
-    public final String getId() {
-        return "Japanese";
-    }
-
-    @Override // j$.time.chrono.l
-    public final String q() {
-        return "japanese";
-    }
-
-    @Override // j$.time.chrono.l
-    public final b m(j$.time.temporal.m mVar) {
-        if (mVar instanceof x) {
-            return (x) mVar;
+    static {
+        int[] iArr = new int[j$.time.temporal.a.values().length];
+        a = iArr;
+        try {
+            iArr[j$.time.temporal.a.DAY_OF_MONTH.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        return new x(LocalDate.I(mVar));
-    }
-
-    @Override // j$.time.chrono.l
-    public final m E(int i) {
-        return y.A(i);
-    }
-
-    @Override // j$.time.chrono.l
-    public final j$.time.temporal.u A(j$.time.temporal.a aVar) {
-        switch (u.a[aVar.ordinal()]) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-                throw new j$.time.temporal.t("Unsupported field: " + aVar);
-            case 5:
-                return j$.time.temporal.u.k(y.E(), 999999999 - y.q().u().getYear());
-            case 6:
-                return j$.time.temporal.u.k(y.B(), j$.time.temporal.a.DAY_OF_YEAR.k().d());
-            case 7:
-                return j$.time.temporal.u.j(x.d.getYear(), 999999999L);
-            case 8:
-                return j$.time.temporal.u.j(y.d.getValue(), y.q().getValue());
-            default:
-                return aVar.k();
+        try {
+            a[j$.time.temporal.a.DAY_OF_YEAR.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-    }
-
-    @Override // j$.time.chrono.l
-    public final ChronoZonedDateTime B(Instant instant, ZoneId zoneId) {
-        return k.H(this, instant, zoneId);
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    Object writeReplace() {
-        return new E((byte) 1, this);
+        try {
+            a[j$.time.temporal.a.YEAR_OF_ERA.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_MONTH.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_YEAR.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            a[j$.time.temporal.a.ALIGNED_WEEK_OF_YEAR.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        try {
+            a[j$.time.temporal.a.ERA.ordinal()] = 8;
+        } catch (NoSuchFieldError unused8) {
+        }
+        try {
+            a[j$.time.temporal.a.YEAR.ordinal()] = 9;
+        } catch (NoSuchFieldError unused9) {
+        }
     }
 }

@@ -99,17 +99,16 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             this.albumViews[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.PhotoPickerAlbumsCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PhotoPickerAlbumsCell.this.lambda$new$0(view);
+                    PhotoPickerAlbumsCell.$r8$lambda$waiSIsOL9q3VL46JSzP47vgOYoU(PhotoPickerAlbumsCell.this, view);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        PhotoPickerAlbumsCellDelegate photoPickerAlbumsCellDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$waiSIsOL9q3VL46JSzP47vgOYoU(PhotoPickerAlbumsCell photoPickerAlbumsCell, View view) {
+        PhotoPickerAlbumsCellDelegate photoPickerAlbumsCellDelegate = photoPickerAlbumsCell.delegate;
         if (photoPickerAlbumsCellDelegate != null) {
-            photoPickerAlbumsCellDelegate.didSelectAlbum(this.albumEntries[((Integer) view.getTag()).intValue()]);
+            photoPickerAlbumsCellDelegate.didSelectAlbum(photoPickerAlbumsCell.albumEntries[((Integer) view.getTag()).intValue()]);
         }
     }
 

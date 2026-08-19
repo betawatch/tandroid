@@ -186,25 +186,20 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0382, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0387, code lost:
     
-        if (r4.isComments == false) goto L96;
+        if (r1.isComments == false) goto L95;
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v41 */
-    /* JADX WARN: Type inference failed for: r2v42, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r2v47 */
-    /* JADX WARN: Type inference failed for: r8v1 */
-    /* JADX WARN: Type inference failed for: r8v2, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r8v3 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ChatAvatarContainer(Context context, BaseFragment baseFragment, boolean z, final Theme.ResourcesProvider resourcesProvider) {
+    public ChatAvatarContainer(Context context, BaseFragment baseFragment, boolean z, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        ?? r2;
+        final Theme.ResourcesProvider resourcesProvider2;
+        Context context2;
         int i;
-        ?? r8;
+        char c;
+        char c2;
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.animatorTimeVisible = new BoolAnimator(0, this, cubicBezierInterpolator, 320L);
         this.avatarSizeInDp = 42;
@@ -228,7 +223,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this.onLongClick = new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$new$3();
+                ChatAvatarContainer.$r8$lambda$_rvtlWSY6Di1gV2Ire3RpPoxneE(ChatAvatarContainer.this);
             }
         };
         this.rightDrawableIsScamOrVerified = false;
@@ -267,7 +262,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             this.avatarImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatAvatarContainer.this.lambda$new$0(view);
+                    ChatAvatarContainer.$r8$lambda$2CwFd7iy6ZDj1tV2YPJAEaXBY2U(ChatAvatarContainer.this, view);
                 }
             });
         }
@@ -286,9 +281,11 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         if (useAnimatedSubtitle()) {
             AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
             this.animatedSubtitleTextView = animatedTextView;
-            r2 = 0;
+            c = 2;
+            resourcesProvider2 = resourcesProvider;
             i = 8;
-            r8 = 1;
+            c2 = 5;
+            context2 = context;
             animatedTextView.setAnimationProperties(0.3f, 0L, 320L, cubicBezierInterpolator);
             this.animatedSubtitleTextView.setEllipsizeByGradient(true);
             AnimatedTextView animatedTextView2 = this.animatedSubtitleTextView;
@@ -301,10 +298,12 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             this.animatedSubtitleTextView.setTranslationY(-AndroidUtilities.dp(1.0f));
             addView(this.animatedSubtitleTextView);
         } else {
-            r2 = 0;
+            resourcesProvider2 = resourcesProvider;
+            context2 = context;
             i = 8;
-            r8 = 1;
-            SimpleTextConnectedView simpleTextConnectedView2 = new SimpleTextConnectedView(context, this.subtitleTextLargerCopyView);
+            c = 2;
+            c2 = 5;
+            SimpleTextConnectedView simpleTextConnectedView2 = new SimpleTextConnectedView(context2, this.subtitleTextLargerCopyView);
             this.subtitleTextView = simpleTextConnectedView2;
             simpleTextConnectedView2.setEllipsizeByGradient(true);
             SimpleTextView simpleTextView = this.subtitleTextView;
@@ -317,28 +316,28 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             addView(this.subtitleTextView);
         }
         if (this.parentFragment != null) {
-            ImageView imageView = new ImageView(context);
+            ImageView imageView = new ImageView(context2);
             this.communityItem = imageView;
             ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
             imageView.setScaleType(scaleType);
             this.communityItem.setVisibility(i);
             this.communityItem.setImageDrawable(new CommunityArrowDrawable());
             addView(this.communityItem);
-            ImageView imageView2 = new ImageView(context);
+            ImageView imageView2 = new ImageView(context2);
             this.timeItem = imageView2;
             imageView2.setScaleType(scaleType);
             this.timeItem.setVisibility(i);
             ImageView imageView3 = this.timeItem;
-            TimerDrawable timerDrawable = new TimerDrawable(context, resourcesProvider);
+            TimerDrawable timerDrawable = new TimerDrawable(context2, resourcesProvider2);
             this.timerDrawable = timerDrawable;
             imageView3.setImageDrawable(timerDrawable);
-            this.timerDrawable.setBackgroundColor(r2);
+            this.timerDrawable.setBackgroundColor(0);
             addView(this.timeItem);
             this.secretChatTimer = z;
             this.timeItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatAvatarContainer.this.lambda$new$1(resourcesProvider, view);
+                    ChatAvatarContainer.$r8$lambda$cSjSPhbxdbAkGUEAiKH8khIx88c(ChatAvatarContainer.this, resourcesProvider2, view);
                 }
             });
             if (this.secretChatTimer) {
@@ -346,7 +345,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             } else {
                 this.timeItem.setContentDescription(LocaleController.getString(R.string.AccAutoDeleteTimer));
             }
-            ImageView imageView4 = new ImageView(context);
+            ImageView imageView4 = new ImageView(context2);
             this.starBgItem = imageView4;
             imageView4.setImageResource(R.drawable.star_small_outline);
             this.starBgItem.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarDefault), PorterDuff.Mode.SRC_IN));
@@ -355,7 +354,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             this.starBgItem.setScaleY(0.0f);
             this.starBgItem.setScaleX(0.0f);
             addView(this.starBgItem);
-            ImageView imageView5 = new ImageView(context);
+            ImageView imageView5 = new ImageView(context2);
             this.starFgItem = imageView5;
             imageView5.setImageResource(R.drawable.star_small_inner);
             this.starFgItem.setAlpha(0.0f);
@@ -375,17 +374,17 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ChatAvatarContainer.this.lambda$new$2(view);
+                        ChatAvatarContainer.this.openProfile(false);
                     }
                 });
             }
             TLRPC.Chat currentChat2 = this.parentFragment.getCurrentChat();
-            this.statusDrawables[r2] = new TypingDotsDrawable(r8);
-            this.statusDrawables[r8] = new RecordStatusDrawable(r8);
-            this.statusDrawables[2] = new SendingFileDrawable(r8);
-            this.statusDrawables[3] = new PlayingGameDrawable(r2, resourcesProvider);
-            this.statusDrawables[4] = new RoundStatusDrawable(r8);
-            this.statusDrawables[5] = new ChoosingStickerStatusDrawable(r8);
+            this.statusDrawables[0] = new TypingDotsDrawable(true);
+            this.statusDrawables[1] = new RecordStatusDrawable(true);
+            this.statusDrawables[c] = new SendingFileDrawable(true);
+            this.statusDrawables[3] = new PlayingGameDrawable(false, resourcesProvider2);
+            this.statusDrawables[4] = new RoundStatusDrawable(true);
+            this.statusDrawables[c2] = new ChoosingStickerStatusDrawable(true);
             int i4 = 0;
             while (true) {
                 StatusDrawable[] statusDrawableArr = this.statusDrawables;
@@ -425,9 +424,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 1.this.val$baseFragment.getOrCreateStoryViewer().open(1.this.getContext(), j, new StoryViewer.PlaceProvider() { // from class: org.telegram.ui.Components.ChatAvatarContainer$1$1$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.Stories.StoryViewer.PlaceProvider
                     public final boolean findView(long j2, int i, int i2, int i3, StoryViewer.TransitionViewHolder transitionViewHolder) {
-                        boolean lambda$openStory$0;
-                        lambda$openStory$0 = ChatAvatarContainer.1.1.this.lambda$openStory$0(j2, i, i2, i3, transitionViewHolder);
-                        return lambda$openStory$0;
+                        return ChatAvatarContainer.1.1.$r8$lambda$PmGxdEyxP-KWlc8L_ePd4pumuYQ(ChatAvatarContainer.1.1.this, j2, i, i2, i3, transitionViewHolder);
                     }
 
                     @Override // org.telegram.ui.Stories.StoryViewer.PlaceProvider
@@ -442,8 +439,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ boolean lambda$openStory$0(long j, int i, int i2, int i3, StoryViewer.TransitionViewHolder transitionViewHolder) {
+            public static /* synthetic */ boolean $r8$lambda$PmGxdEyxP-KWlc8L_ePd4pumuYQ(1 r0, long j, int i, int i2, int i3, StoryViewer.TransitionViewHolder transitionViewHolder) {
                 1 r1 = 1.this;
                 ImageReceiver imageReceiver = r1.imageReceiver;
                 transitionViewHolder.storyImage = imageReceiver;
@@ -505,34 +501,26 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        if (onAvatarClick()) {
+    public static /* synthetic */ void $r8$lambda$2CwFd7iy6ZDj1tV2YPJAEaXBY2U(ChatAvatarContainer chatAvatarContainer, View view) {
+        if (chatAvatarContainer.onAvatarClick()) {
             return;
         }
-        openProfile(true);
+        chatAvatarContainer.openProfile(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Theme.ResourcesProvider resourcesProvider, View view) {
-        if (this.secretChatTimer) {
-            this.parentFragment.showDialog(AlertsCreator.createTTLAlert(getContext(), this.parentFragment.getCurrentEncryptedChat(), resourcesProvider).create());
+    public static /* synthetic */ void $r8$lambda$cSjSPhbxdbAkGUEAiKH8khIx88c(ChatAvatarContainer chatAvatarContainer, Theme.ResourcesProvider resourcesProvider, View view) {
+        if (chatAvatarContainer.secretChatTimer) {
+            chatAvatarContainer.parentFragment.showDialog(AlertsCreator.createTTLAlert(chatAvatarContainer.getContext(), chatAvatarContainer.parentFragment.getCurrentEncryptedChat(), resourcesProvider).create());
         } else {
-            openSetTimer();
+            chatAvatarContainer.openSetTimer();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        openProfile(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        this.pressed = false;
-        this.bounce.setPressed(false);
-        if (canSearch()) {
-            openSearch();
+    public static /* synthetic */ void $r8$lambda$_rvtlWSY6Di1gV2Ire3RpPoxneE(ChatAvatarContainer chatAvatarContainer) {
+        chatAvatarContainer.pressed = false;
+        chatAvatarContainer.bounce.setPressed(false);
+        if (chatAvatarContainer.canSearch()) {
+            chatAvatarContainer.openSearch();
         }
     }
 
@@ -660,7 +648,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 undoView.showWithAction(ChatAvatarContainer.this.parentFragment.getDialogId(), i3, ChatAvatarContainer.this.parentFragment.getCurrentUser(), Integer.valueOf(currentUserInfo2 != null ? currentUserInfo2.ttl_period : currentChatInfo2.ttl_period), (Runnable) null, (Runnable) null);
             }
         }, true, 0, this.resourcesProvider);
-        autoDeletePopupWrapper.lambda$updateItems$7(i);
+        autoDeletePopupWrapper.updateItems(i);
         int i2 = -2;
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(autoDeletePopupWrapper.windowLayout, i2, i2) { // from class: org.telegram.ui.Components.ChatAvatarContainer.3
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
@@ -696,10 +684,10 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
     
         if (r17.avatarImageView.getImageReceiver().hasNotThumb() != false) goto L11;
      */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0055 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00b5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -920,7 +908,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         duration.setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$fadeOutToLessWidth$4();
+                ChatAvatarContainer.$r8$lambda$0LRr7bKAvd-0vhRKTQcI2se70Lo(ChatAvatarContainer.this);
             }
         }).start();
         addView(simpleTextView);
@@ -947,32 +935,30 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         simpleTextView2.animate().alpha(0.0f).setDuration(350L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$fadeOutToLessWidth$5();
+                ChatAvatarContainer.$r8$lambda$_EXG5ffek-Jck7YcX0-A58mP6qs(ChatAvatarContainer.this);
             }
         }).start();
         addView(simpleTextView2);
         setClipChildren(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fadeOutToLessWidth$4() {
-        SimpleTextView simpleTextView = (SimpleTextView) this.titleTextLargerCopyView.get();
+    public static /* synthetic */ void $r8$lambda$0LRr7bKAvd-0vhRKTQcI2se70Lo(ChatAvatarContainer chatAvatarContainer) {
+        SimpleTextView simpleTextView = (SimpleTextView) chatAvatarContainer.titleTextLargerCopyView.get();
         if (simpleTextView != null) {
-            removeView(simpleTextView);
-            this.titleTextLargerCopyView.set(null);
+            chatAvatarContainer.removeView(simpleTextView);
+            chatAvatarContainer.titleTextLargerCopyView.set(null);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fadeOutToLessWidth$5() {
-        SimpleTextView simpleTextView = (SimpleTextView) this.subtitleTextLargerCopyView.get();
+    public static /* synthetic */ void $r8$lambda$_EXG5ffek-Jck7YcX0-A58mP6qs(ChatAvatarContainer chatAvatarContainer) {
+        SimpleTextView simpleTextView = (SimpleTextView) chatAvatarContainer.subtitleTextLargerCopyView.get();
         if (simpleTextView != null) {
-            removeView(simpleTextView);
-            this.subtitleTextLargerCopyView.set(null);
-            if (this.allowDrawStories) {
+            chatAvatarContainer.removeView(simpleTextView);
+            chatAvatarContainer.subtitleTextLargerCopyView.set(null);
+            if (chatAvatarContainer.allowDrawStories) {
                 return;
             }
-            setClipChildren(true);
+            chatAvatarContainer.setClipChildren(true);
         }
     }
 
@@ -1119,31 +1105,31 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this.starBgItem.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.1f : 0.0f).scaleY(z ? 1.1f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$setStars$6(z);
+                ChatAvatarContainer.$r8$lambda$jFxpm6T2UXxgkEyx5a654BIgvu8(ChatAvatarContainer.this, z);
             }
         }).start();
         this.starFgItem.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.0f).scaleY(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$setStars$7(z);
+                ChatAvatarContainer.$r8$lambda$dk5qC4LZMGc5jJIEkVWS6ZL-STA(ChatAvatarContainer.this, z);
             }
         }).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStars$6(boolean z) {
+    public static /* synthetic */ void $r8$lambda$jFxpm6T2UXxgkEyx5a654BIgvu8(ChatAvatarContainer chatAvatarContainer, boolean z) {
         if (z) {
-            return;
+            chatAvatarContainer.getClass();
+        } else {
+            chatAvatarContainer.starBgItem.setVisibility(4);
         }
-        this.starBgItem.setVisibility(4);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStars$7(boolean z) {
+    public static /* synthetic */ void $r8$lambda$dk5qC4LZMGc5jJIEkVWS6ZL-STA(ChatAvatarContainer chatAvatarContainer, boolean z) {
         if (z) {
-            return;
+            chatAvatarContainer.getClass();
+        } else {
+            chatAvatarContainer.starFgItem.setVisibility(4);
         }
-        this.starFgItem.setVisibility(4);
     }
 
     public void setTitleIcons(Drawable drawable, Drawable drawable2) {
@@ -1342,6 +1328,17 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         updateSubtitle(false);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0122, code lost:
+    
+        if (r6.megagroup == false) goto L79;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0401  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x040c  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0462  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0404  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void updateSubtitle(boolean z) {
         int i;
         String string;
@@ -1383,12 +1380,13 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         if (printingString != null) {
             printingString = TextUtils.replace(printingString, new String[]{"..."}, new String[]{""});
         }
-        if (printingString == null || printingString.length() == 0 || (ChatObject.isChannel(currentChat) && !currentChat.megagroup)) {
-            if (this.parentFragment.isThreadChat() && !this.parentFragment.isTopic) {
-                if (this.titleTextView.getTag() != null) {
-                    return;
-                }
-                this.titleTextView.setTag(1);
+        Property property = View.ALPHA;
+        Property property2 = View.TRANSLATION_Y;
+        if (printingString != null && printingString.length() != 0) {
+            float f = ChatObject.isChannel(currentChat) ? 0.0f : 0.0f;
+            if (this.parentFragment.isThreadChat() && this.titleTextView.getTag() != null) {
+                this.titleTextView.setTag(null);
+                getSubtitleTextView().setVisibility(0);
                 AnimatorSet animatorSet = this.titleAnimation;
                 if (animatorSet != null) {
                     animatorSet.cancel();
@@ -1397,109 +1395,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 if (z) {
                     AnimatorSet animatorSet2 = new AnimatorSet();
                     this.titleAnimation = animatorSet2;
-                    animatorSet2.playTogether(ObjectAnimator.ofFloat(this.titleTextView, (Property<SimpleTextView, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(9.7f)), ObjectAnimator.ofFloat(getSubtitleTextView(), (Property<View, Float>) View.ALPHA, 0.0f));
-                    this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.4
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationCancel(Animator animator) {
-                            ChatAvatarContainer.this.titleAnimation = null;
-                        }
-
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationEnd(Animator animator) {
-                            if (ChatAvatarContainer.this.titleAnimation == animator) {
-                                ChatAvatarContainer.this.getSubtitleTextView().setVisibility(4);
-                                ChatAvatarContainer.this.titleAnimation = null;
-                            }
-                        }
-                    });
-                    this.titleAnimation.setDuration(180L);
-                    this.titleAnimation.start();
-                    return;
-                }
-                this.titleTextView.setTranslationY(AndroidUtilities.dp(9.7f));
-                getSubtitleTextView().setAlpha(0.0f);
-                getSubtitleTextView().setVisibility(4);
-                return;
-            }
-            setTypingAnimation(false);
-            if (this.parentFragment.getChatMode() == 8) {
-                ChatActivity chatActivity2 = this.parentFragment;
-                if (chatActivity2.isSubscriberSuggestions) {
-                    charSequence = LocaleController.getString(R.string.ChatMessageSuggestions);
-                } else if (chatActivity2.getTopicId() == 0) {
-                    int topicsCount = this.parentFragment.getMessagesController().getTopicsController().getTopicsCount(-this.parentFragment.getDialogId());
-                    if (topicsCount > 0) {
-                        string = LocaleController.formatPluralStringComma("Chats", topicsCount);
-                    } else {
-                        string = LocaleController.getString(R.string.ChatMessageSuggestions);
-                    }
-                    charSequence = string;
-                } else {
-                    TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(currentChat.id, this.parentFragment.getTopicId());
-                    int i2 = findTopic != null ? findTopic.totalMessagesCount : 0;
-                    charSequence = i2 > 0 ? LocaleController.formatPluralString("messages", i2, Integer.valueOf(i2)) : LocaleController.formatString(R.string.TopicProfileStatus, ForumUtilities.getMonoForumTitle(this.currentAccount, currentChat));
-                }
-            } else if (this.parentFragment.getChatMode() == 3) {
-                charSequence = LocaleController.formatPluralString("SavedMessagesCount", Math.max(1, this.parentFragment.getMessagesController().getSavedMessagesController().getMessagesCount(this.parentFragment.getSavedDialogId())), new Object[0]);
-            } else {
-                ChatActivity chatActivity3 = this.parentFragment;
-                if (chatActivity3.isTopic && currentChat != null) {
-                    TLRPC.TL_forumTopic findTopic2 = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(currentChat.id, this.parentFragment.getTopicId());
-                    int i3 = findTopic2 != null ? findTopic2.totalMessagesCount - 1 : 0;
-                    charSequence = i3 > 0 ? LocaleController.formatPluralString("messages", i3, Integer.valueOf(i3)) : LocaleController.formatString(R.string.TopicProfileStatus, currentChat.title);
-                } else if (currentChat != null) {
-                    charSequence = getChatSubtitle(currentChat, chatActivity3.getCurrentChatInfo(), this.onlineCount);
-                } else if (currentUser != null) {
-                    TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(currentUser.id));
-                    if (user != null) {
-                        currentUser = user;
-                    }
-                    if (!UserObject.isReplyUser(currentUser)) {
-                        long j = currentUser.id;
-                        if (j != UserObject.VERIFY) {
-                            if (j != UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                                long j2 = currentUser.id;
-                                if (j2 == 333000 || j2 == 777000 || j2 == 42777) {
-                                    charSequence = LocaleController.getString(R.string.ServiceNotifications);
-                                } else if (MessagesController.isSupportUser(currentUser)) {
-                                    charSequence = LocaleController.getString(R.string.SupportStatus);
-                                } else {
-                                    boolean z5 = currentUser.bot;
-                                    if (z5 && (i = currentUser.bot_active_users) != 0) {
-                                        charSequence = LocaleController.formatPluralStringComma("BotUsers", i, ',');
-                                    } else if (z5) {
-                                        charSequence = LocaleController.getString(R.string.Bot);
-                                    } else {
-                                        boolean[] zArr = this.isOnline;
-                                        zArr[0] = false;
-                                        charSequence = LocaleController.formatUserStatus(this.currentAccount, currentUser, zArr, this.allowShorterStatus ? this.statusMadeShorter : null);
-                                        z2 = this.isOnline[0];
-                                    }
-                                }
-                            } else if (z4) {
-                                charSequence = AndroidUtilities.replaceArrows(LocaleController.getString(R.string.SavedMessagesViewAsChatsHint), false);
-                            } else {
-                                charSequence = LocaleController.getString(R.string.ChatYourSelf);
-                            }
-                        }
-                    }
-                }
-            }
-            z3 = z2;
-            printingString = charSequence;
-        } else {
-            if (this.parentFragment.isThreadChat() && this.titleTextView.getTag() != null) {
-                this.titleTextView.setTag(null);
-                getSubtitleTextView().setVisibility(0);
-                AnimatorSet animatorSet3 = this.titleAnimation;
-                if (animatorSet3 != null) {
-                    animatorSet3.cancel();
-                    this.titleAnimation = null;
-                }
-                if (z) {
-                    AnimatorSet animatorSet4 = new AnimatorSet();
-                    this.titleAnimation = animatorSet4;
-                    animatorSet4.playTogether(ObjectAnimator.ofFloat(this.titleTextView, (Property<SimpleTextView, Float>) View.TRANSLATION_Y, 0.0f), ObjectAnimator.ofFloat(getSubtitleTextView(), (Property<View, Float>) View.ALPHA, 1.0f));
+                    animatorSet2.playTogether(ObjectAnimator.ofFloat(this.titleTextView, (Property<SimpleTextView, Float>) property2, f), ObjectAnimator.ofFloat(getSubtitleTextView(), (Property<View, Float>) property, 1.0f));
                     this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.5
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
@@ -1518,31 +1414,138 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 printingString = Emoji.replaceEmoji(printingString, getSubtitlePaint().getFontMetricsInt(), false);
             }
             setTypingAnimation(true);
-        }
-        this.lastSubtitleColorKey = z3 ? Theme.key_chat_status : Theme.key_actionBarDefaultSubtitle;
-        if (this.lastSubtitle == null) {
-            SimpleTextView simpleTextView = this.subtitleTextView;
-            if (simpleTextView != null) {
-                simpleTextView.setText(printingString);
-                Integer num = this.overrideSubtitleColor;
-                if (num == null) {
-                    this.subtitleTextView.setTextColor(getThemedColor(this.lastSubtitleColorKey));
-                    this.subtitleTextView.setTag(Integer.valueOf(this.lastSubtitleColorKey));
+            this.lastSubtitleColorKey = !z3 ? Theme.key_chat_status : Theme.key_actionBarDefaultSubtitle;
+            if (this.lastSubtitle != null) {
+                SimpleTextView simpleTextView = this.subtitleTextView;
+                if (simpleTextView != null) {
+                    simpleTextView.setText(printingString);
+                    Integer num = this.overrideSubtitleColor;
+                    if (num == null) {
+                        this.subtitleTextView.setTextColor(getThemedColor(this.lastSubtitleColorKey));
+                        this.subtitleTextView.setTag(Integer.valueOf(this.lastSubtitleColorKey));
+                    } else {
+                        this.subtitleTextView.setTextColor(num.intValue());
+                    }
                 } else {
-                    this.subtitleTextView.setTextColor(num.intValue());
+                    this.animatedSubtitleTextView.setText(printingString, z);
+                    Integer num2 = this.overrideSubtitleColor;
+                    if (num2 == null) {
+                        this.animatedSubtitleTextView.setTextColor(getThemedColor(this.lastSubtitleColorKey));
+                        this.animatedSubtitleTextView.setTag(Integer.valueOf(this.lastSubtitleColorKey));
+                    } else {
+                        this.animatedSubtitleTextView.setTextColor(num2.intValue());
+                    }
                 }
             } else {
-                this.animatedSubtitleTextView.setText(printingString, z);
-                Integer num2 = this.overrideSubtitleColor;
-                if (num2 == null) {
-                    this.animatedSubtitleTextView.setTextColor(getThemedColor(this.lastSubtitleColorKey));
-                    this.animatedSubtitleTextView.setTag(Integer.valueOf(this.lastSubtitleColorKey));
+                this.lastSubtitle = printingString;
+            }
+            checkActionBar(z);
+        }
+        if (this.parentFragment.isThreadChat() && !this.parentFragment.isTopic) {
+            if (this.titleTextView.getTag() != null) {
+                return;
+            }
+            this.titleTextView.setTag(1);
+            AnimatorSet animatorSet3 = this.titleAnimation;
+            if (animatorSet3 != null) {
+                animatorSet3.cancel();
+                this.titleAnimation = null;
+            }
+            if (z) {
+                AnimatorSet animatorSet4 = new AnimatorSet();
+                this.titleAnimation = animatorSet4;
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.titleTextView, (Property<SimpleTextView, Float>) property2, AndroidUtilities.dp(9.7f)), ObjectAnimator.ofFloat(getSubtitleTextView(), (Property<View, Float>) property, 0.0f));
+                this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.4
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationCancel(Animator animator) {
+                        ChatAvatarContainer.this.titleAnimation = null;
+                    }
+
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        if (ChatAvatarContainer.this.titleAnimation == animator) {
+                            ChatAvatarContainer.this.getSubtitleTextView().setVisibility(4);
+                            ChatAvatarContainer.this.titleAnimation = null;
+                        }
+                    }
+                });
+                this.titleAnimation.setDuration(180L);
+                this.titleAnimation.start();
+                return;
+            }
+            this.titleTextView.setTranslationY(AndroidUtilities.dp(9.7f));
+            getSubtitleTextView().setAlpha(0.0f);
+            getSubtitleTextView().setVisibility(4);
+            return;
+        }
+        setTypingAnimation(false);
+        if (this.parentFragment.getChatMode() == 8) {
+            ChatActivity chatActivity2 = this.parentFragment;
+            if (chatActivity2.isSubscriberSuggestions) {
+                charSequence = LocaleController.getString(R.string.ChatMessageSuggestions);
+            } else if (chatActivity2.getTopicId() == 0) {
+                int topicsCount = this.parentFragment.getMessagesController().getTopicsController().getTopicsCount(-this.parentFragment.getDialogId());
+                if (topicsCount > 0) {
+                    string = LocaleController.formatPluralStringComma("Chats", topicsCount);
                 } else {
-                    this.animatedSubtitleTextView.setTextColor(num2.intValue());
+                    string = LocaleController.getString(R.string.ChatMessageSuggestions);
+                }
+                charSequence = string;
+            } else {
+                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(currentChat.id, this.parentFragment.getTopicId());
+                int i2 = findTopic != null ? findTopic.totalMessagesCount : 0;
+                charSequence = i2 > 0 ? LocaleController.formatPluralString("messages", i2, Integer.valueOf(i2)) : LocaleController.formatString(R.string.TopicProfileStatus, ForumUtilities.getMonoForumTitle(this.currentAccount, currentChat));
+            }
+        } else if (this.parentFragment.getChatMode() == 3) {
+            charSequence = LocaleController.formatPluralString("SavedMessagesCount", Math.max(1, this.parentFragment.getMessagesController().getSavedMessagesController().getMessagesCount(this.parentFragment.getSavedDialogId())), new Object[0]);
+        } else {
+            ChatActivity chatActivity3 = this.parentFragment;
+            if (chatActivity3.isTopic && currentChat != null) {
+                TLRPC.TL_forumTopic findTopic2 = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(currentChat.id, this.parentFragment.getTopicId());
+                int i3 = findTopic2 != null ? findTopic2.totalMessagesCount - 1 : 0;
+                charSequence = i3 > 0 ? LocaleController.formatPluralString("messages", i3, Integer.valueOf(i3)) : LocaleController.formatString(R.string.TopicProfileStatus, currentChat.title);
+            } else if (currentChat != null) {
+                charSequence = getChatSubtitle(currentChat, chatActivity3.getCurrentChatInfo(), this.onlineCount);
+            } else if (currentUser != null) {
+                TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(currentUser.id));
+                if (user != null) {
+                    currentUser = user;
+                }
+                if (!UserObject.isReplyUser(currentUser)) {
+                    long j = currentUser.id;
+                    if (j != UserObject.VERIFY) {
+                        if (j != UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                            long j2 = currentUser.id;
+                            if (j2 == 333000 || j2 == 777000 || j2 == 42777) {
+                                charSequence = LocaleController.getString(R.string.ServiceNotifications);
+                            } else if (MessagesController.isSupportUser(currentUser)) {
+                                charSequence = LocaleController.getString(R.string.SupportStatus);
+                            } else {
+                                boolean z5 = currentUser.bot;
+                                if (z5 && (i = currentUser.bot_active_users) != 0) {
+                                    charSequence = LocaleController.formatPluralStringComma("BotUsers", i, ',');
+                                } else if (z5) {
+                                    charSequence = LocaleController.getString(R.string.Bot);
+                                } else {
+                                    boolean[] zArr = this.isOnline;
+                                    zArr[0] = false;
+                                    charSequence = LocaleController.formatUserStatus(this.currentAccount, currentUser, zArr, this.allowShorterStatus ? this.statusMadeShorter : null);
+                                    z2 = this.isOnline[0];
+                                }
+                            }
+                        } else if (z4) {
+                            charSequence = AndroidUtilities.replaceArrows(LocaleController.getString(R.string.SavedMessagesViewAsChatsHint), false);
+                        } else {
+                            charSequence = LocaleController.getString(R.string.ChatYourSelf);
+                        }
+                    }
                 }
             }
-        } else {
-            this.lastSubtitle = printingString;
+        }
+        z3 = z2;
+        printingString = charSequence;
+        this.lastSubtitleColorKey = !z3 ? Theme.key_chat_status : Theme.key_actionBarDefaultSubtitle;
+        if (this.lastSubtitle != null) {
         }
         checkActionBar(z);
     }

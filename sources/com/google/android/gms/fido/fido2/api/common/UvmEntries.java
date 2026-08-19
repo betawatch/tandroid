@@ -26,7 +26,10 @@ public class UvmEntries extends AbstractSafeParcelable {
         }
         UvmEntries uvmEntries = (UvmEntries) obj;
         List list2 = this.zza;
-        return (list2 == null && uvmEntries.zza == null) || (list2 != null && (list = uvmEntries.zza) != null && list2.containsAll(list) && uvmEntries.zza.containsAll(this.zza));
+        if (list2 == null && uvmEntries.zza == null) {
+            return true;
+        }
+        return list2 != null && (list = uvmEntries.zza) != null && list2.containsAll(list) && uvmEntries.zza.containsAll(this.zza);
     }
 
     public List getUvmEntryList() {

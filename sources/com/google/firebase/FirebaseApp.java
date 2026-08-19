@@ -173,32 +173,29 @@ public class FirebaseApp {
         this.dataCollectionConfigStorage = new Lazy(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
-                DataCollectionConfigStorage lambda$new$0;
-                lambda$new$0 = FirebaseApp.this.lambda$new$0(context);
-                return lambda$new$0;
+                return FirebaseApp.$r8$lambda$pG3s90n26vpdSjq6F1QDhdMcBvY(FirebaseApp.this, context);
             }
         });
         this.defaultHeartBeatController = build.getProvider(DefaultHeartBeatController.class);
         addBackgroundStateChangeListener(new BackgroundStateChangeListener() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda1
             @Override // com.google.firebase.FirebaseApp.BackgroundStateChangeListener
             public final void onBackgroundStateChanged(boolean z) {
-                FirebaseApp.this.lambda$new$1(z);
+                FirebaseApp.$r8$lambda$ACPzvYj-hpDUdi_U1Jr3TE9p-sg(FirebaseApp.this, z);
             }
         });
         FirebaseTrace.popTrace();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ DataCollectionConfigStorage lambda$new$0(Context context) {
-        return new DataCollectionConfigStorage(context, getPersistenceKey(), (Publisher) this.componentRuntime.get(Publisher.class));
+    public static /* synthetic */ DataCollectionConfigStorage $r8$lambda$pG3s90n26vpdSjq6F1QDhdMcBvY(FirebaseApp firebaseApp, Context context) {
+        return new DataCollectionConfigStorage(context, firebaseApp.getPersistenceKey(), (Publisher) firebaseApp.componentRuntime.get(Publisher.class));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(boolean z) {
+    public static /* synthetic */ void $r8$lambda$ACPzvYj-hpDUdi_U1Jr3TE9p-sg(FirebaseApp firebaseApp, boolean z) {
         if (z) {
-            return;
+            firebaseApp.getClass();
+        } else {
+            ((DefaultHeartBeatController) firebaseApp.defaultHeartBeatController.get()).registerHeartBeat();
         }
-        ((DefaultHeartBeatController) this.defaultHeartBeatController.get()).registerHeartBeat();
     }
 
     private void checkNotDeleted() {
@@ -314,9 +311,13 @@ public class FirebaseApp {
         public void onBackgroundStateChanged(boolean z) {
             synchronized (FirebaseApp.LOCK) {
                 try {
-                    Iterator it = new ArrayList(FirebaseApp.INSTANCES.values()).iterator();
-                    while (it.hasNext()) {
-                        FirebaseApp firebaseApp = (FirebaseApp) it.next();
+                    ArrayList arrayList = new ArrayList(FirebaseApp.INSTANCES.values());
+                    int size = arrayList.size();
+                    int i = 0;
+                    while (i < size) {
+                        Object obj = arrayList.get(i);
+                        i++;
+                        FirebaseApp firebaseApp = (FirebaseApp) obj;
                         if (firebaseApp.automaticResourceManagementEnabled.get()) {
                             firebaseApp.notifyBackgroundStateChangeListeners(z);
                         }

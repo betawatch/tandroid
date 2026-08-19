@@ -44,12 +44,11 @@ public class AlertDialogDecor extends AlertDialog {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.rootView.setVisibility(0);
-        this.dimView.setAlpha(0.0f);
-        this.contentView.startAnimation(AnimationUtils.loadAnimation(getContext(), this.resEnterAnimation));
-        this.dimView.animate().setDuration(300L).alpha(1.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialogDecor.1
+    public static /* synthetic */ void $r8$lambda$8RLZCjnGF2HtuczYbgz5AZPNT2M(AlertDialogDecor alertDialogDecor) {
+        alertDialogDecor.rootView.setVisibility(0);
+        alertDialogDecor.dimView.setAlpha(0.0f);
+        alertDialogDecor.contentView.startAnimation(AnimationUtils.loadAnimation(alertDialogDecor.getContext(), alertDialogDecor.resEnterAnimation));
+        alertDialogDecor.dimView.animate().setDuration(300L).alpha(1.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialogDecor.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (AlertDialogDecor.this.onShowListener != null) {
@@ -66,7 +65,7 @@ public class AlertDialogDecor extends AlertDialog {
         this.showRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialogDecor$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AlertDialogDecor.this.lambda$new$0();
+                AlertDialogDecor.$r8$lambda$8RLZCjnGF2HtuczYbgz5AZPNT2M(AlertDialogDecor.this);
             }
         };
     }
@@ -97,7 +96,7 @@ public class AlertDialogDecor extends AlertDialog {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialogDecor$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AlertDialogDecor.this.lambda$show$1(view);
+                AlertDialogDecor.this.dismiss();
             }
         });
         View view = new View(getContext());
@@ -113,9 +112,7 @@ public class AlertDialogDecor extends AlertDialog {
         ViewCompat.setOnApplyWindowInsetsListener(this.rootView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.AlertDialogDecor$$ExternalSyntheticLambda2
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view2, WindowInsetsCompat windowInsetsCompat) {
-                WindowInsetsCompat lambda$show$2;
-                lambda$show$2 = AlertDialogDecor.lambda$show$2(frameLayout2, view2, windowInsetsCompat);
-                return lambda$show$2;
+                return AlertDialogDecor.$r8$lambda$MfRho_Mx6ljB7hFhFOV_Aw5clhE(frameLayout2, view2, windowInsetsCompat);
             }
         });
         this.rootView.setVisibility(4);
@@ -127,13 +124,7 @@ public class AlertDialogDecor extends AlertDialog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$1(View view) {
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsetsCompat lambda$show$2(FrameLayout frameLayout, View view, WindowInsetsCompat windowInsetsCompat) {
+    public static /* synthetic */ WindowInsetsCompat $r8$lambda$MfRho_Mx6ljB7hFhFOV_Aw5clhE(FrameLayout frameLayout, View view, WindowInsetsCompat windowInsetsCompat) {
         Rect rect = new Rect();
         if (Build.VERSION.SDK_INT >= 30) {
             Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars());

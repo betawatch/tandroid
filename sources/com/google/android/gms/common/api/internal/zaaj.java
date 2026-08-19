@@ -34,13 +34,14 @@ public final class zaaj implements zabf {
             Preconditions.checkNotNull(client, "Appropriate Api was not requested.");
             if (client.isConnected() || !this.zaa.zab.containsKey(baseImplementation$ApiMethodImpl.getClientKey())) {
                 baseImplementation$ApiMethodImpl.run(client);
-            } else {
-                baseImplementation$ApiMethodImpl.setFailedResult(new Status(17));
+                return baseImplementation$ApiMethodImpl;
             }
+            baseImplementation$ApiMethodImpl.setFailedResult(new Status(17));
+            return baseImplementation$ApiMethodImpl;
         } catch (DeadObjectException unused) {
             this.zaa.zal(new zaah(this, this));
+            return baseImplementation$ApiMethodImpl;
         }
-        return baseImplementation$ApiMethodImpl;
     }
 
     @Override // com.google.android.gms.common.api.internal.zabf

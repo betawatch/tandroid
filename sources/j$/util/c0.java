@@ -1,13 +1,11 @@
 package j$.util;
 
-import java.util.function.LongConsumer;
-
 /* loaded from: classes2.dex */
-public interface c0 extends f0 {
-    void forEachRemaining(LongConsumer longConsumer);
+public interface c0 extends Spliterator {
+    void forEachRemaining(Object obj);
 
-    boolean tryAdvance(LongConsumer longConsumer);
+    boolean tryAdvance(Object obj);
 
-    @Override // j$.util.f0, j$.util.Spliterator
+    @Override // j$.util.Spliterator
     c0 trySplit();
 }

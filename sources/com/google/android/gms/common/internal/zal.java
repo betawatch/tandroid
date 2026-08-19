@@ -23,23 +23,26 @@ public final class zal {
         }
         int minApkVersion = client.getMinApkVersion();
         int zaa = zaa(context, minApkVersion);
-        if (zaa == -1) {
-            int i2 = 0;
-            while (true) {
-                if (i2 >= this.zaa.size()) {
-                    i = -1;
-                    break;
-                }
-                int keyAt = this.zaa.keyAt(i2);
-                if (keyAt > minApkVersion && this.zaa.get(keyAt) == 0) {
-                    break;
-                }
-                i2++;
-            }
-            zaa = i == -1 ? this.zab.isGooglePlayServicesAvailable(context, minApkVersion) : i;
-            this.zaa.put(minApkVersion, zaa);
+        if (zaa != -1) {
+            return zaa;
         }
-        return zaa;
+        int i2 = 0;
+        while (true) {
+            if (i2 >= this.zaa.size()) {
+                i = -1;
+                break;
+            }
+            int keyAt = this.zaa.keyAt(i2);
+            if (keyAt > minApkVersion && this.zaa.get(keyAt) == 0) {
+                break;
+            }
+            i2++;
+        }
+        if (i == -1) {
+            i = this.zab.isGooglePlayServicesAvailable(context, minApkVersion);
+        }
+        this.zaa.put(minApkVersion, i);
+        return i;
     }
 
     public final void zac() {

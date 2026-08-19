@@ -79,16 +79,15 @@ public class ChartHeaderView extends FrameLayout {
         this.datesTmp.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Charts.view_data.ChartHeaderView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                ChartHeaderView.this.lambda$new$0(view, i, i2, i3, i4, i5, i6, i7, i8);
+                ChartHeaderView.$r8$lambda$tgKxiNEs5F53-OHtaDq3c9lwuEY(ChartHeaderView.this, view, i, i2, i3, i4, i5, i6, i7, i8);
             }
         });
         recolor();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        this.datesTmp.setPivotX(r1.getMeasuredWidth() * 0.7f);
-        this.dates.setPivotX(r1.getMeasuredWidth() * 0.7f);
+    public static /* synthetic */ void $r8$lambda$tgKxiNEs5F53-OHtaDq3c9lwuEY(ChartHeaderView chartHeaderView, View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        chartHeaderView.datesTmp.setPivotX(r1.getMeasuredWidth() * 0.7f);
+        chartHeaderView.dates.setPivotX(r0.getMeasuredWidth() * 0.7f);
     }
 
     public void recolor() {

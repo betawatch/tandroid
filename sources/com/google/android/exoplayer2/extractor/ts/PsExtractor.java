@@ -21,9 +21,7 @@ public final class PsExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.PsExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = PsExtractor.lambda$static$0();
-            return lambda$static$0;
+            return PsExtractor.$r8$lambda$R1vgK-JkEO-HOLpz0bXcJ6XRYOY();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -49,8 +47,7 @@ public final class PsExtractor implements Extractor {
     public void release() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$R1vgK-JkEO-HOLpz0bXcJ6XRYOY() {
         return new Extractor[]{new PsExtractor()};
     }
 

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.blur3.StrokeDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MuteButton extends FrameLayout {
     private ValueAnimator animator;
     private final StrokeDrawable background;
@@ -95,7 +95,7 @@ public class MuteButton extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.MuteButton$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    MuteButton.this.lambda$setConnected$0(valueAnimator2);
+                    MuteButton.this.loadingView.setAlpha(((Float) valueAnimator2.getAnimatedValue()).floatValue());
                 }
             });
             this.loadingViewAnimator.setDuration(320L);
@@ -106,11 +106,6 @@ public class MuteButton extends FrameLayout {
             z3 = false;
         }
         updateFill(z3, z2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setConnected$0(ValueAnimator valueAnimator) {
-        this.loadingView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     public void setMuted(boolean z, boolean z2) {
@@ -144,7 +139,7 @@ public class MuteButton extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.MuteButton$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                MuteButton.this.lambda$updateFill$1(valueAnimator2);
+                MuteButton.$r8$lambda$slVReqTgRBlp2-qRiEYjaysTAGU(MuteButton.this, valueAnimator2);
             }
         });
         this.animator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -152,14 +147,14 @@ public class MuteButton extends FrameLayout {
         this.animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateFill$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$slVReqTgRBlp2-qRiEYjaysTAGU(MuteButton muteButton, ValueAnimator valueAnimator) {
+        muteButton.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.mutedT = floatValue;
-        this.filledBackgroundView.setAlpha(1.0f - floatValue);
-        this.filledBackgroundView.setScaleX(1.0f - this.mutedT);
-        this.filledBackgroundView.setScaleY(1.0f - this.mutedT);
-        this.image.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(-1, -2960428, this.mutedT), PorterDuff.Mode.SRC_IN));
-        this.layout.invalidate();
+        muteButton.mutedT = floatValue;
+        muteButton.filledBackgroundView.setAlpha(1.0f - floatValue);
+        muteButton.filledBackgroundView.setScaleX(1.0f - muteButton.mutedT);
+        muteButton.filledBackgroundView.setScaleY(1.0f - muteButton.mutedT);
+        muteButton.image.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(-1, -2960428, muteButton.mutedT), PorterDuff.Mode.SRC_IN));
+        muteButton.layout.invalidate();
     }
 }

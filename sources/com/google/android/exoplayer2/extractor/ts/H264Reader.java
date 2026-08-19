@@ -239,12 +239,12 @@ public final class H264Reader implements ElementaryStreamReader {
             this.isFilling = true;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:50:0x00fc  */
-        /* JADX WARN: Removed duplicated region for block: B:52:0x0103  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x011b  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x0151  */
-        /* JADX WARN: Removed duplicated region for block: B:89:0x0115  */
-        /* JADX WARN: Removed duplicated region for block: B:90:0x00ff  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x0105  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x010c  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x0125  */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x015b  */
+        /* JADX WARN: Removed duplicated region for block: B:81:0x011f  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x0108  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -481,8 +481,11 @@ public final class H264Reader implements ElementaryStreamReader {
             }
 
             public boolean isISlice() {
-                int i;
-                return this.hasSliceType && ((i = this.sliceType) == 7 || i == 2);
+                if (!this.hasSliceType) {
+                    return false;
+                }
+                int i = this.sliceType;
+                return i == 7 || i == 2;
             }
 
             /* JADX INFO: Access modifiers changed from: private */

@@ -46,8 +46,11 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
         return ((SessionFirelogPublisherImpl$logSession$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00f8 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00f9  */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0078, code lost:
+    
+        if (r13 == r0) goto L23;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00fa  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,13 +68,13 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
         FirebaseApp firebaseApp4;
         SessionsSettings sessionsSettings2;
         Object firebaseInstallationId;
-        SessionEvents sessionEvents2;
         Map map;
         SessionDetails sessionDetails2;
         List list2;
         FirebaseApp firebaseApp5;
         ProcessDetails processDetails2;
         SessionsSettings sessionsSettings3;
+        SessionEvents sessionEvents2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -79,9 +82,6 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
             SessionFirelogPublisherImpl sessionFirelogPublisherImpl2 = this.this$0;
             this.label = 1;
             obj = sessionFirelogPublisherImpl2.shouldLogSession(this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
         } else {
             if (i != 1) {
                 if (i != 2) {
@@ -95,13 +95,13 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
                         SessionEvents sessionEvents3 = (SessionEvents) this.L$1;
                         SessionFirelogPublisherImpl sessionFirelogPublisherImpl3 = (SessionFirelogPublisherImpl) this.L$0;
                         ResultKt.throwOnFailure(obj);
-                        sessionFirelogPublisherImpl = sessionFirelogPublisherImpl3;
                         map = map2;
                         sessionEvents2 = sessionEvents3;
                         list2 = list3;
                         firebaseApp5 = firebaseApp6;
                         processDetails2 = processDetails3;
                         sessionDetails2 = sessionDetails3;
+                        sessionFirelogPublisherImpl = sessionFirelogPublisherImpl3;
                         Intrinsics.checkNotNullExpressionValue(obj, "getFirebaseInstallationId()");
                         sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents2.buildSession(firebaseApp5, sessionDetails2, sessionsSettings3, processDetails2, list2, map, (String) obj));
                         return Unit.INSTANCE;
@@ -129,21 +129,21 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
                 this.label = 3;
                 firebaseInstallationId = sessionFirelogPublisherImpl4.getFirebaseInstallationId(this);
                 if (firebaseInstallationId != coroutine_suspended) {
-                    return coroutine_suspended;
+                    FirebaseApp firebaseApp7 = firebaseApp4;
+                    map = map3;
+                    obj = firebaseInstallationId;
+                    sessionDetails2 = sessionDetails;
+                    list2 = list;
+                    firebaseApp5 = firebaseApp7;
+                    SessionsSettings sessionsSettings4 = sessionsSettings2;
+                    processDetails2 = processDetails;
+                    sessionsSettings3 = sessionsSettings4;
+                    sessionEvents2 = sessionEvents;
+                    Intrinsics.checkNotNullExpressionValue(obj, "getFirebaseInstallationId()");
+                    sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents2.buildSession(firebaseApp5, sessionDetails2, sessionsSettings3, processDetails2, list2, map, (String) obj));
+                    return Unit.INSTANCE;
                 }
-                sessionEvents2 = sessionEvents;
-                FirebaseApp firebaseApp7 = firebaseApp4;
-                map = map3;
-                obj = firebaseInstallationId;
-                sessionDetails2 = sessionDetails;
-                list2 = list;
-                firebaseApp5 = firebaseApp7;
-                SessionsSettings sessionsSettings4 = sessionsSettings2;
-                processDetails2 = processDetails;
-                sessionsSettings3 = sessionsSettings4;
-                Intrinsics.checkNotNullExpressionValue(obj, "getFirebaseInstallationId()");
-                sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents2.buildSession(firebaseApp5, sessionDetails2, sessionsSettings3, processDetails2, list2, map, (String) obj));
-                return Unit.INSTANCE;
+                return coroutine_suspended;
             }
             ResultKt.throwOnFailure(obj);
         }
@@ -172,30 +172,30 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
             this.L$6 = appProcessDetails;
             this.label = 2;
             Object registeredSubscribers$com_google_firebase_firebase_sessions = firebaseSessionsDependencies.getRegisteredSubscribers$com_google_firebase_firebase_sessions(this);
-            if (registeredSubscribers$com_google_firebase_firebase_sessions == coroutine_suspended) {
-                return coroutine_suspended;
+            if (registeredSubscribers$com_google_firebase_firebase_sessions != coroutine_suspended) {
+                sessionFirelogPublisherImpl = sessionFirelogPublisherImpl5;
+                obj = registeredSubscribers$com_google_firebase_firebase_sessions;
+                processDetails = currentProcessDetails;
+                sessionEvents = sessionEvents4;
+                list = appProcessDetails;
+                firebaseApp4 = firebaseApp;
+                sessionsSettings2 = sessionsSettings;
+                Map map32 = (Map) obj;
+                SessionFirelogPublisherImpl sessionFirelogPublisherImpl42 = this.this$0;
+                this.L$0 = sessionFirelogPublisherImpl;
+                this.L$1 = sessionEvents;
+                this.L$2 = firebaseApp4;
+                this.L$3 = sessionDetails;
+                this.L$4 = sessionsSettings2;
+                this.L$5 = processDetails;
+                this.L$6 = list;
+                this.L$7 = map32;
+                this.label = 3;
+                firebaseInstallationId = sessionFirelogPublisherImpl42.getFirebaseInstallationId(this);
+                if (firebaseInstallationId != coroutine_suspended) {
+                }
             }
-            sessionFirelogPublisherImpl = sessionFirelogPublisherImpl5;
-            obj = registeredSubscribers$com_google_firebase_firebase_sessions;
-            processDetails = currentProcessDetails;
-            sessionEvents = sessionEvents4;
-            list = appProcessDetails;
-            firebaseApp4 = firebaseApp;
-            sessionsSettings2 = sessionsSettings;
-            Map map32 = (Map) obj;
-            SessionFirelogPublisherImpl sessionFirelogPublisherImpl42 = this.this$0;
-            this.L$0 = sessionFirelogPublisherImpl;
-            this.L$1 = sessionEvents;
-            this.L$2 = firebaseApp4;
-            this.L$3 = sessionDetails;
-            this.L$4 = sessionsSettings2;
-            this.L$5 = processDetails;
-            this.L$6 = list;
-            this.L$7 = map32;
-            this.label = 3;
-            firebaseInstallationId = sessionFirelogPublisherImpl42.getFirebaseInstallationId(this);
-            if (firebaseInstallationId != coroutine_suspended) {
-            }
+            return coroutine_suspended;
         }
         return Unit.INSTANCE;
     }

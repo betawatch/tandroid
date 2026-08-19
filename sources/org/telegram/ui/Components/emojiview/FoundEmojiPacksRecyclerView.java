@@ -27,24 +27,19 @@ public abstract class FoundEmojiPacksRecyclerView extends UniversalRecyclerView 
             AndroidUtilities.doOnLayout(this, new Runnable() { // from class: org.telegram.ui.Components.emojiview.FoundEmojiPacksRecyclerView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FoundEmojiPacksRecyclerView.this.lambda$scrollOnSelect$1(view, i);
+                    FoundEmojiPacksRecyclerView.$r8$lambda$iotaPCQNFp90pxMy9oK18jci40Q(FoundEmojiPacksRecyclerView.this, view, i);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scrollOnSelect$1(View view, final int i) {
+    public static /* synthetic */ void $r8$lambda$iotaPCQNFp90pxMy9oK18jci40Q(final FoundEmojiPacksRecyclerView foundEmojiPacksRecyclerView, View view, final int i) {
+        foundEmojiPacksRecyclerView.getClass();
         view.postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.emojiview.FoundEmojiPacksRecyclerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                FoundEmojiPacksRecyclerView.this.lambda$scrollOnSelect$0(i);
+                FoundEmojiPacksRecyclerView.this.smoothScrollBy(i, 0);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scrollOnSelect$0(int i) {
-        smoothScrollBy(i, 0);
     }
 }

@@ -1,68 +1,37 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class S extends CountedCompleter {
-    private Spliterator a;
-    private final m2 b;
-    private final b c;
-    private long d;
+public final class S extends W {
+    public final /* synthetic */ int m;
+    public final /* synthetic */ Object n;
 
-    S(b bVar, Spliterator spliterator, m2 m2Var) {
-        super(null);
-        this.b = m2Var;
-        this.c = bVar;
-        this.a = spliterator;
-        this.d = 0L;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ S(a aVar, int i, Object obj, int i2) {
+        super(aVar, i, 1);
+        this.m = i2;
+        this.n = obj;
     }
 
-    S(S s, Spliterator spliterator) {
-        super(s);
-        this.a = spliterator;
-        this.b = s.b;
-        this.d = s.d;
-        this.c = s.c;
+    @Override // j$.util.stream.a
+    public final f2 M(int i, f2 f2Var) {
+        switch (this.m) {
+            case 0:
+                return new Q(this, f2Var, 1);
+            case 1:
+                return new U(this, f2Var);
+            case 2:
+                return new k(this, f2Var, 4);
+            default:
+                return new T1(this, f2Var);
+        }
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.a;
-        long estimateSize = spliterator.estimateSize();
-        long j = this.d;
-        if (j == 0) {
-            j = e.g(estimateSize);
-            this.d = j;
-        }
-        boolean o = a3.SHORT_CIRCUIT.o(this.c.J());
-        m2 m2Var = this.b;
-        boolean z = false;
-        S s = this;
-        while (true) {
-            if (o && m2Var.n()) {
-                break;
-            }
-            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
-                break;
-            }
-            S s2 = new S(s, trySplit);
-            s.addToPendingCount(1);
-            if (z) {
-                spliterator = trySplit;
-            } else {
-                S s3 = s;
-                s = s2;
-                s2 = s3;
-            }
-            z = !z;
-            s.fork();
-            s = s2;
-            estimateSize = spliterator.estimateSize();
-        }
-        s.c.z(spliterator, m2Var);
-        s.a = null;
-        s.propagateCompletion();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public S(X x, IntConsumer intConsumer) {
+        super(x, 0, 1);
+        this.m = 0;
+        this.n = intConsumer;
     }
 }

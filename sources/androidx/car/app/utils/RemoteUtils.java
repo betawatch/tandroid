@@ -50,13 +50,12 @@ public abstract class RemoteUtils {
         ThreadUtils.runOnMain(new Runnable() { // from class: androidx.car.app.utils.RemoteUtils$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RemoteUtils.lambda$dispatchCallFromHost$0(IOnDoneCallback.this, str, hostCall);
+                RemoteUtils.$r8$lambda$kZaNPbfuaKBY2Ftzn027n80YsOA(IOnDoneCallback.this, str, hostCall);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dispatchCallFromHost$0(IOnDoneCallback iOnDoneCallback, String str, HostCall hostCall) {
+    public static /* synthetic */ void $r8$lambda$kZaNPbfuaKBY2Ftzn027n80YsOA(IOnDoneCallback iOnDoneCallback, String str, HostCall hostCall) {
         try {
             sendSuccessResponseToHost(iOnDoneCallback, str, hostCall.dispatch());
         } catch (BundlerException e) {
@@ -71,13 +70,12 @@ public abstract class RemoteUtils {
         ThreadUtils.runOnMain(new Runnable() { // from class: androidx.car.app.utils.RemoteUtils$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RemoteUtils.lambda$dispatchCallFromHost$1(Lifecycle.this, iOnDoneCallback, str, hostCall);
+                RemoteUtils.$r8$lambda$1ADQp-Fpr9d0_tX7AcIVXhvtU7o(Lifecycle.this, iOnDoneCallback, str, hostCall);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dispatchCallFromHost$1(Lifecycle lifecycle, IOnDoneCallback iOnDoneCallback, String str, HostCall hostCall) {
+    public static /* synthetic */ void $r8$lambda$1ADQp-Fpr9d0_tX7AcIVXhvtU7o(Lifecycle lifecycle, IOnDoneCallback iOnDoneCallback, String str, HostCall hostCall) {
         if (lifecycle == null || !lifecycle.getCurrentState().isAtLeast(Lifecycle.State.CREATED)) {
             sendFailureResponseToHost(iOnDoneCallback, str, new IllegalStateException("Lifecycle is not at least created when dispatching " + hostCall));
             return;
@@ -89,13 +87,12 @@ public abstract class RemoteUtils {
         ThreadUtils.runOnMain(new Runnable() { // from class: androidx.car.app.utils.RemoteUtils$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RemoteUtils.lambda$dispatchCallFromHost$2(Lifecycle.this, hostCall, str);
+                RemoteUtils.$r8$lambda$U6p5YSQvLJKecNuPicYtfyl-6Fc(Lifecycle.this, hostCall, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dispatchCallFromHost$2(Lifecycle lifecycle, HostCall hostCall, String str) {
+    public static /* synthetic */ void $r8$lambda$U6p5YSQvLJKecNuPicYtfyl-6Fc(Lifecycle lifecycle, HostCall hostCall, String str) {
         if (lifecycle != null) {
             try {
                 if (lifecycle.getCurrentState().isAtLeast(Lifecycle.State.CREATED)) {
@@ -114,15 +111,12 @@ public abstract class RemoteUtils {
         dispatchCallToHost(str + " onSuccess", new RemoteCall() { // from class: androidx.car.app.utils.RemoteUtils$$ExternalSyntheticLambda0
             @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
             public final Object call() {
-                Object lambda$sendSuccessResponseToHost$3;
-                lambda$sendSuccessResponseToHost$3 = RemoteUtils.lambda$sendSuccessResponseToHost$3(IOnDoneCallback.this, obj, str);
-                return lambda$sendSuccessResponseToHost$3;
+                return RemoteUtils.$r8$lambda$z9ri9Ugtm70byNiId8lWSRX4Qco(IOnDoneCallback.this, obj, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$sendSuccessResponseToHost$3(IOnDoneCallback iOnDoneCallback, Object obj, String str) {
+    public static /* synthetic */ Object $r8$lambda$z9ri9Ugtm70byNiId8lWSRX4Qco(IOnDoneCallback iOnDoneCallback, Object obj, String str) {
         Bundleable create;
         if (obj == null) {
             create = null;
@@ -131,6 +125,7 @@ public abstract class RemoteUtils {
                 create = Bundleable.create(obj);
             } catch (BundlerException e) {
                 sendFailureResponseToHost(iOnDoneCallback, str, e);
+                return null;
             }
         }
         iOnDoneCallback.onSuccess(create);
@@ -141,15 +136,12 @@ public abstract class RemoteUtils {
         dispatchCallToHost(str + " onFailure", new RemoteCall() { // from class: androidx.car.app.utils.RemoteUtils$$ExternalSyntheticLambda1
             @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
             public final Object call() {
-                Object lambda$sendFailureResponseToHost$4;
-                lambda$sendFailureResponseToHost$4 = RemoteUtils.lambda$sendFailureResponseToHost$4(IOnDoneCallback.this, th, str);
-                return lambda$sendFailureResponseToHost$4;
+                return RemoteUtils.$r8$lambda$Nik9_MASBYx-4cvWP3LEmxjuGes(IOnDoneCallback.this, th, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$sendFailureResponseToHost$4(IOnDoneCallback iOnDoneCallback, Throwable th, String str) {
+    public static /* synthetic */ Object $r8$lambda$Nik9_MASBYx-4cvWP3LEmxjuGes(IOnDoneCallback iOnDoneCallback, Throwable th, String str) {
         try {
             iOnDoneCallback.onFailure(Bundleable.create(new FailureResponse(th)));
             return null;
@@ -189,15 +181,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, iOnDoneCallback, "onSurfaceAvailable", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda3
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onSurfaceAvailable$0;
-                    lambda$onSurfaceAvailable$0 = RemoteUtils.SurfaceCallbackStub.this.lambda$onSurfaceAvailable$0(bundleable);
-                    return lambda$onSurfaceAvailable$0;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$vopP5bi72VxlTE6zvu-FxmsgSuw(RemoteUtils.SurfaceCallbackStub.this, bundleable);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSurfaceAvailable$0(Bundleable bundleable) {
+        public static /* synthetic */ Object $r8$lambda$vopP5bi72VxlTE6zvu-FxmsgSuw(SurfaceCallbackStub surfaceCallbackStub, Bundleable bundleable) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -206,15 +196,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, iOnDoneCallback, "onVisibleAreaChanged", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda2
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onVisibleAreaChanged$1;
-                    lambda$onVisibleAreaChanged$1 = RemoteUtils.SurfaceCallbackStub.this.lambda$onVisibleAreaChanged$1(rect);
-                    return lambda$onVisibleAreaChanged$1;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$weX9liOQmXme7_5iEcnBgJa-QiI(RemoteUtils.SurfaceCallbackStub.this, rect);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onVisibleAreaChanged$1(Rect rect) {
+        public static /* synthetic */ Object $r8$lambda$weX9liOQmXme7_5iEcnBgJa-QiI(SurfaceCallbackStub surfaceCallbackStub, Rect rect) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -223,15 +211,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, iOnDoneCallback, "onStableAreaChanged", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda7
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onStableAreaChanged$2;
-                    lambda$onStableAreaChanged$2 = RemoteUtils.SurfaceCallbackStub.this.lambda$onStableAreaChanged$2(rect);
-                    return lambda$onStableAreaChanged$2;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$6OgX2XQs0-QDCABjDrkCGawgkFA(RemoteUtils.SurfaceCallbackStub.this, rect);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onStableAreaChanged$2(Rect rect) {
+        public static /* synthetic */ Object $r8$lambda$6OgX2XQs0-QDCABjDrkCGawgkFA(SurfaceCallbackStub surfaceCallbackStub, Rect rect) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -240,15 +226,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, iOnDoneCallback, "onSurfaceDestroyed", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onSurfaceDestroyed$3;
-                    lambda$onSurfaceDestroyed$3 = RemoteUtils.SurfaceCallbackStub.this.lambda$onSurfaceDestroyed$3(bundleable);
-                    return lambda$onSurfaceDestroyed$3;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$EN7iiik0xJGNxAoKLGOEz1hsg78(RemoteUtils.SurfaceCallbackStub.this, bundleable);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSurfaceDestroyed$3(Bundleable bundleable) {
+        public static /* synthetic */ Object $r8$lambda$EN7iiik0xJGNxAoKLGOEz1hsg78(SurfaceCallbackStub surfaceCallbackStub, Bundleable bundleable) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -257,15 +241,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, "onScroll", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda4
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onScroll$4;
-                    lambda$onScroll$4 = RemoteUtils.SurfaceCallbackStub.this.lambda$onScroll$4(f, f2);
-                    return lambda$onScroll$4;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$IUFGA-u6lp2tlrKusT1H9PKOCac(RemoteUtils.SurfaceCallbackStub.this, f, f2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onScroll$4(float f, float f2) {
+        public static /* synthetic */ Object $r8$lambda$IUFGA-u6lp2tlrKusT1H9PKOCac(SurfaceCallbackStub surfaceCallbackStub, float f, float f2) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -274,15 +256,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, "onFling", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda5
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onFling$5;
-                    lambda$onFling$5 = RemoteUtils.SurfaceCallbackStub.this.lambda$onFling$5(f, f2);
-                    return lambda$onFling$5;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$MzK6fExmBHGOgqo-9TpejdgnwIM(RemoteUtils.SurfaceCallbackStub.this, f, f2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onFling$5(float f, float f2) {
+        public static /* synthetic */ Object $r8$lambda$MzK6fExmBHGOgqo-9TpejdgnwIM(SurfaceCallbackStub surfaceCallbackStub, float f, float f2) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -291,15 +271,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, "onScale", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda6
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onScale$6;
-                    lambda$onScale$6 = RemoteUtils.SurfaceCallbackStub.this.lambda$onScale$6(f, f2, f3);
-                    return lambda$onScale$6;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$sYTQYPXw0DtzoyltSLR4B-cyKuY(RemoteUtils.SurfaceCallbackStub.this, f, f2, f3);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onScale$6(float f, float f2, float f3) {
+        public static /* synthetic */ Object $r8$lambda$sYTQYPXw0DtzoyltSLR4B-cyKuY(SurfaceCallbackStub surfaceCallbackStub, float f, float f2, float f3) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
 
@@ -308,15 +286,13 @@ public abstract class RemoteUtils {
             RemoteUtils.dispatchCallFromHost(this.mLifecycle, "onClick", new HostCall() { // from class: androidx.car.app.utils.RemoteUtils$SurfaceCallbackStub$$ExternalSyntheticLambda1
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onClick$7;
-                    lambda$onClick$7 = RemoteUtils.SurfaceCallbackStub.this.lambda$onClick$7(f, f2);
-                    return lambda$onClick$7;
+                    return RemoteUtils.SurfaceCallbackStub.$r8$lambda$7I2Zivv0E-6goRdBlvK60jyTbP8(RemoteUtils.SurfaceCallbackStub.this, f, f2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onClick$7(float f, float f2) {
+        public static /* synthetic */ Object $r8$lambda$7I2Zivv0E-6goRdBlvK60jyTbP8(SurfaceCallbackStub surfaceCallbackStub, float f, float f2) {
+            surfaceCallbackStub.getClass();
             throw null;
         }
     }

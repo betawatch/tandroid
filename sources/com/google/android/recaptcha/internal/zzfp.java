@@ -81,28 +81,25 @@ public final class zzfp {
     }
 
     private final boolean zzu() {
+        ConnectivityManager connectivityManager;
         Network activeNetwork;
         NetworkCapabilities networkCapabilities;
         int i = zzby.zza;
-        boolean z = false;
         try {
             Object systemService = zzs().getSystemService("connectivity");
             Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
-            ConnectivityManager connectivityManager = (ConnectivityManager) systemService;
-            if (Build.VERSION.SDK_INT >= 23) {
-                activeNetwork = connectivityManager.getActiveNetwork();
-                if (activeNetwork != null && (networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)) != null && networkCapabilities.hasCapability(16)) {
-                    return true;
-                }
-            } else {
-                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                if (activeNetworkInfo != null) {
-                    z = activeNetworkInfo.isConnected();
-                }
-            }
+            connectivityManager = (ConnectivityManager) systemService;
         } catch (Exception unused) {
         }
-        return z;
+        if (Build.VERSION.SDK_INT >= 23) {
+            activeNetwork = connectivityManager.getActiveNetwork();
+            return (activeNetwork == null || (networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)) == null || !networkCapabilities.hasCapability(16)) ? false : true;
+        }
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        if (activeNetworkInfo != null) {
+            return activeNetworkInfo.isConnected();
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

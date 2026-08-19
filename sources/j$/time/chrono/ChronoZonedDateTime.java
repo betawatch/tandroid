@@ -8,23 +8,23 @@ import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface ChronoZonedDateTime<D extends b> extends Temporal, Comparable<ChronoZonedDateTime<?>> {
-    long F();
+    ChronoLocalDateTime B();
 
-    l a();
+    long G();
 
-    j$.time.i b();
+    k b();
 
-    b c();
+    j$.time.h c();
+
+    b d();
 
     ZoneId getZone();
 
-    ZoneOffset h();
-
-    ChronoZonedDateTime i(ZoneId zoneId);
+    ZoneOffset i();
 
     ChronoZonedDateTime j(ZoneId zoneId);
 
-    Instant toInstant();
+    ChronoZonedDateTime k(ZoneId zoneId);
 
-    ChronoLocalDateTime z();
+    Instant toInstant();
 }

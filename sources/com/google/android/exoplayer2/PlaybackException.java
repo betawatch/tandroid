@@ -64,11 +64,9 @@ public class PlaybackException extends Exception implements Bundleable {
         try {
             Class<?> cls = Class.forName(string, true, PlaybackException.class.getClassLoader());
             Throwable createThrowable = Throwable.class.isAssignableFrom(cls) ? createThrowable(cls, string2) : null;
-            if (createThrowable != null) {
-                return createThrowable;
-            }
+            return createThrowable == null ? createRemoteException(string2) : createThrowable;
         } catch (Throwable unused) {
+            return createRemoteException(string2);
         }
-        return createRemoteException(string2);
     }
 }

@@ -62,7 +62,10 @@ public final class GsonBuilder {
     }
 
     private static boolean isTypeObjectOrJsonElement(Type type) {
-        return (type instanceof Class) && (type == Object.class || JsonElement.class.isAssignableFrom((Class) type));
+        if (type instanceof Class) {
+            return type == Object.class || JsonElement.class.isAssignableFrom((Class) type);
+        }
+        return false;
     }
 
     public GsonBuilder registerTypeAdapterFactory(TypeAdapterFactory typeAdapterFactory) {

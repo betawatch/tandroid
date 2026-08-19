@@ -31,18 +31,25 @@ class ReleaseDownloadListener implements ReleaseDownloader.Listener {
 
     @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader.Listener
     public synchronized boolean onProgress(final long j, final long j2) {
-        boolean z;
         synchronized (this) {
-            AppCenterLog.verbose("AppCenterDistribute", String.format(Locale.ENGLISH, "Downloading %s (%d) update: %d KiB / %d KiB", this.mReleaseDetails.getShortVersion(), Integer.valueOf(this.mReleaseDetails.getVersion()), Long.valueOf(j / 1024), Long.valueOf(j2 / 1024)));
-            HandlerUtils.runOnUiThread(new Runnable() { // from class: com.microsoft.appcenter.distribute.ReleaseDownloadListener.1
-                @Override // java.lang.Runnable
-                public void run() {
-                    ReleaseDownloadListener.this.updateProgressDialog(j, j2);
+            try {
+                try {
+                    AppCenterLog.verbose("AppCenterDistribute", String.format(Locale.ENGLISH, "Downloading %s (%d) update: %d KiB / %d KiB", this.mReleaseDetails.getShortVersion(), Integer.valueOf(this.mReleaseDetails.getVersion()), Long.valueOf(j / 1024), Long.valueOf(j2 / 1024)));
+                    HandlerUtils.runOnUiThread(new Runnable() { // from class: com.microsoft.appcenter.distribute.ReleaseDownloadListener.1
+                        @Override // java.lang.Runnable
+                        public void run() {
+                            ReleaseDownloadListener.this.updateProgressDialog(j, j2);
+                        }
+                    });
+                    return this.mProgressDialog != null;
+                } catch (Throwable th) {
+                    th = th;
+                    throw th;
                 }
-            });
-            z = this.mProgressDialog != null;
+            } catch (Throwable th2) {
+                th = th2;
+            }
         }
-        return z;
     }
 
     @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader.Listener

@@ -318,7 +318,7 @@ public class PinchToZoomHelper {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PinchToZoomHelper$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PinchToZoomHelper.this.lambda$finishZoom$0(valueAnimator);
+                    PinchToZoomHelper.$r8$lambda$D1zGapCNpit4jUkz0z9K-add5D8(PinchToZoomHelper.this, valueAnimator);
                 }
             });
             this.finishTransition.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PinchToZoomHelper.1
@@ -337,10 +337,10 @@ public class PinchToZoomHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$finishZoom$0(ValueAnimator valueAnimator) {
-        this.finishProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidateViews();
+    public static /* synthetic */ void $r8$lambda$D1zGapCNpit4jUkz0z9K-add5D8(PinchToZoomHelper pinchToZoomHelper, ValueAnimator valueAnimator) {
+        pinchToZoomHelper.getClass();
+        pinchToZoomHelper.finishProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        pinchToZoomHelper.invalidateViews();
     }
 
     public void clear() {
@@ -787,10 +787,9 @@ public class PinchToZoomHelper {
             float y3 = (motionEvent.getY(i2) + motionEvent.getY(i3)) / 2.0f;
             float f = this.pinchStartCenterX - x3;
             float f2 = this.pinchStartCenterY - y3;
-            float f3 = -f;
-            float f4 = this.pinchScale;
-            this.pinchTranslationX = f3 / f4;
-            this.pinchTranslationY = (-f2) / f4;
+            float f3 = this.pinchScale;
+            this.pinchTranslationX = (-f) / f3;
+            this.pinchTranslationY = (-f2) / f3;
             invalidateViews();
         } else if ((motionEvent.getActionMasked() == 1 || ((motionEvent.getActionMasked() == 6 && checkPointerIds(motionEvent)) || motionEvent.getActionMasked() == 3)) && this.isInPinchToZoomTouchMode) {
             this.isInPinchToZoomTouchMode = false;

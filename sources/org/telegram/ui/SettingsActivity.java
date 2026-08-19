@@ -57,7 +57,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
 import me.vkryl.android.animator.BoolAnimator;
@@ -192,8 +191,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     private TextView versionView;
     private int versionViewPressCount;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$2(DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$BnPkUZRulRE_udSPzgP5UU8wZes(DialogInterface dialogInterface) {
     }
 
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -441,7 +439,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         this.listView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                SettingsActivity.this.lambda$createView$0();
+                r0.listView.postOnAnimation(new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        SettingsActivity.this.blur3_InvalidateBlur();
+                    }
+                });
             }
         });
         this.contentView.addView(this.listView, LayoutHelper.createFrame(-1, -1, 119));
@@ -476,7 +479,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         this.avatarContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SettingsActivity.this.lambda$createView$3(view2);
+                SettingsActivity.$r8$lambda$B8LXBAuXOqYOYB8_Vv71N6Lqe1Q(SettingsActivity.this, view2);
             }
         });
         ScaleStateListAnimator.apply(this.avatarContainer);
@@ -551,7 +554,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         this.versionView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SettingsActivity.this.lambda$createView$4(view2);
+                SettingsActivity.$r8$lambda$UbEpGAnjrNeqNi80IhOHHyg1DNQ(SettingsActivity.this, view2);
             }
         });
         this.navigationBar = new View(context);
@@ -573,59 +576,42 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         return sizeNotifierFrameLayout2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0() {
-        this.listView.postOnAnimation(new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                SettingsActivity.this.blur3_InvalidateBlur();
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(View view) {
-        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(UserConfig.getInstance(this.currentAccount).getClientUserId()));
+    public static /* synthetic */ void $r8$lambda$B8LXBAuXOqYOYB8_Vv71N6Lqe1Q(final SettingsActivity settingsActivity, View view) {
+        TLRPC.User user = MessagesController.getInstance(settingsActivity.currentAccount).getUser(Long.valueOf(UserConfig.getInstance(settingsActivity.currentAccount).getClientUserId()));
         if (user == null) {
-            user = UserConfig.getInstance(this.currentAccount).getCurrentUser();
+            user = UserConfig.getInstance(settingsActivity.currentAccount).getCurrentUser();
         }
         if (user == null) {
             return;
         }
-        ImageUpdater imageUpdater = this.imageUpdater;
+        ImageUpdater imageUpdater = settingsActivity.imageUpdater;
         TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
         imageUpdater.openMenu((userProfilePhoto == null || userProfilePhoto.photo_big == null || (userProfilePhoto instanceof TLRPC.TL_userProfilePhotoEmpty)) ? false : true, new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                SettingsActivity.this.lambda$createView$1();
+                MessagesController.getInstance(SettingsActivity.this.currentAccount).deleteUserPhoto(null);
             }
         }, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda10
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                SettingsActivity.lambda$createView$2(dialogInterface);
+                SettingsActivity.$r8$lambda$BnPkUZRulRE_udSPzgP5UU8wZes(dialogInterface);
             }
         }, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1() {
-        MessagesController.getInstance(this.currentAccount).deleteUserPhoto(null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(View view) {
-        int i = this.versionViewPressCount + 1;
-        this.versionViewPressCount = i;
+    public static /* synthetic */ void $r8$lambda$UbEpGAnjrNeqNi80IhOHHyg1DNQ(SettingsActivity settingsActivity, View view) {
+        int i = settingsActivity.versionViewPressCount + 1;
+        settingsActivity.versionViewPressCount = i;
         if (i < 2 && !BuildVars.DEBUG_PRIVATE_VERSION) {
             try {
-                Toast.makeText(getParentActivity(), LocaleController.getString(R.string.DebugMenuLongPress), 0).show();
+                Toast.makeText(settingsActivity.getParentActivity(), LocaleController.getString(R.string.DebugMenuLongPress), 0).show();
                 return;
             } catch (Exception e) {
                 FileLog.e(e);
                 return;
             }
         }
-        openDebugMenu();
+        settingsActivity.openDebugMenu();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -738,7 +724,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda13
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        SettingsActivity.this.lambda$updateActionBarVisible$5(valueAnimator2);
+                        SettingsActivity.$r8$lambda$_FfZeQZ8nlM2A3PZavyIaMoHV8k(SettingsActivity.this, valueAnimator2);
                     }
                 });
                 this.actionBarVisibleAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -759,11 +745,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateActionBarVisible$5(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$_FfZeQZ8nlM2A3PZavyIaMoHV8k(SettingsActivity settingsActivity, ValueAnimator valueAnimator) {
+        settingsActivity.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.actionBar.getTitlesContainer().setAlpha(floatValue);
-        this.actionBarBackground.setAlpha(floatValue);
+        settingsActivity.actionBar.getTitlesContainer().setAlpha(floatValue);
+        settingsActivity.actionBarBackground.setAlpha(floatValue);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -784,9 +770,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         Collections.sort(this.accountNumbers, new Comparator() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda16
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$fillItems$6;
-                lambda$fillItems$6 = SettingsActivity.lambda$fillItems$6((Integer) obj, (Integer) obj2);
-                return lambda$fillItems$6;
+                return SettingsActivity.$r8$lambda$IiepfaP1-r9DHGITzIkOnCE1GO4((Integer) obj, (Integer) obj2);
             }
         });
         Set<String> set = getMessagesController().pendingSuggestions;
@@ -794,7 +778,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             arrayList.add(SuggestionCell.Factory.of(LocaleController.getString(R.string.GraceSuggestionTitle), LocaleController.getString(R.string.GraceSuggestionMessage), null, null, LocaleController.getString(R.string.GraceSuggestionButton), new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda17
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsActivity.this.lambda$fillItems$7(view);
+                    SettingsActivity.$r8$lambda$RTUdQvT32BSqNdacMBwLrKV-u50(SettingsActivity.this, view);
                 }
             }));
             arrayList.add(UItem.asShadow(null));
@@ -802,17 +786,17 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             arrayList.add(SuggestionCell.Factory.of(LocaleController.formatString(R.string.CheckPhoneNumber, PhoneFormat.getInstance().format("+" + getUserConfig().getCurrentUser().phone)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SettingsActivity.this.lambda$fillItems$8();
+                    Browser.openUrl(SettingsActivity.this.getContext(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
                 }
             }), LocaleController.getString(R.string.CheckPhoneNumberNo), new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda19
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsActivity.this.lambda$fillItems$9(view);
+                    SettingsActivity.$r8$lambda$rtBRdNukUmuMJTYZnLc2VCpqGzg(SettingsActivity.this, view);
                 }
             }, StarGiftSheet.replaceUnderstood(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda20
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsActivity.this.lambda$fillItems$10(view);
+                    SettingsActivity.this.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
                 }
             }));
             arrayList.add(UItem.asShadow(null));
@@ -820,12 +804,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             arrayList.add(SuggestionCell.Factory.of(LocaleController.getString(R.string.YourPasswordHeader), LocaleController.getString(R.string.YourPasswordRemember), LocaleController.getString(R.string.YourPasswordRememberNo), new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsActivity.this.lambda$fillItems$11(view);
+                    SettingsActivity.$r8$lambda$27Fm3SqJWBS21KPy7rZZMLvhpis(SettingsActivity.this, view);
                 }
             }, LocaleController.getString(R.string.YourPasswordRememberYes), new View.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda22
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsActivity.this.lambda$fillItems$12(view);
+                    SettingsActivity.this.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
                 }
             }));
             arrayList.add(UItem.asShadow(null));
@@ -877,12 +861,16 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
         TLRPC.TL_attachMenuBots attachMenuBots = MediaDataController.getInstance(UserConfig.selectedAccount).getAttachMenuBots();
         if (attachMenuBots != null && (arrayList2 = attachMenuBots.bots) != null && !arrayList2.isEmpty()) {
-            Iterator<TLRPC.TL_attachMenuBot> it = attachMenuBots.bots.iterator();
-            while (it.hasNext()) {
-                TLRPC.TL_attachMenuBot next = it.next();
-                if (next.show_in_side_menu && next.bot_id == 1985737506) {
-                    UItem ofBot = SettingCell.Factory.ofBot(next, -14965523, -15431455, R.drawable.settings_wallet);
-                    ofBot.object = next;
+            ArrayList<TLRPC.TL_attachMenuBot> arrayList3 = attachMenuBots.bots;
+            int size = arrayList3.size();
+            int i4 = 0;
+            while (i4 < size) {
+                TLRPC.TL_attachMenuBot tL_attachMenuBot = arrayList3.get(i4);
+                i4++;
+                TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
+                if (tL_attachMenuBot2.show_in_side_menu && tL_attachMenuBot2.bot_id == 1985737506) {
+                    UItem ofBot = SettingCell.Factory.ofBot(tL_attachMenuBot2, -14965523, -15431455, R.drawable.settings_wallet);
+                    ofBot.object = tL_attachMenuBot2;
                     arrayList.add(ofBot);
                 }
             }
@@ -915,8 +903,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         arrayList.add(UItem.asCustomShadow(this.versionView));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$fillItems$6(Integer num, Integer num2) {
+    public static /* synthetic */ int $r8$lambda$IiepfaP1-r9DHGITzIkOnCE1GO4(Integer num, Integer num2) {
         long j = UserConfig.getInstance(num.intValue()).loginTime;
         long j2 = UserConfig.getInstance(num2.intValue()).loginTime;
         if (j > j2) {
@@ -925,35 +912,19 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         return j < j2 ? -1 : 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$7(View view) {
-        Browser.openUrl(getContext(), getMessagesController().premiumManageSubscriptionUrl);
-        getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
+    public static /* synthetic */ void $r8$lambda$RTUdQvT32BSqNdacMBwLrKV-u50(SettingsActivity settingsActivity, View view) {
+        Browser.openUrl(settingsActivity.getContext(), settingsActivity.getMessagesController().premiumManageSubscriptionUrl);
+        settingsActivity.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$8() {
-        Browser.openUrl(getContext(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+    public static /* synthetic */ void $r8$lambda$rtBRdNukUmuMJTYZnLc2VCpqGzg(SettingsActivity settingsActivity, View view) {
+        settingsActivity.getClass();
+        settingsActivity.presentFragment(new ActionIntroActivity(3));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$9(View view) {
-        presentFragment(new ActionIntroActivity(3));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$10(View view) {
-        getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$11(View view) {
-        presentFragment(new TwoStepVerificationSetupActivity(8, null));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$12(View view) {
-        getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+    public static /* synthetic */ void $r8$lambda$27Fm3SqJWBS21KPy7rZZMLvhpis(SettingsActivity settingsActivity, View view) {
+        settingsActivity.getClass();
+        settingsActivity.presentFragment(new TwoStepVerificationSetupActivity(8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -982,12 +953,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 WebAppDisclaimerAlert.show(getContext(), new Consumer() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda14
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj2) {
-                        SettingsActivity.this.lambda$onClick$15(tL_attachMenuBot, (Boolean) obj2);
+                        SettingsActivity.$r8$lambda$wb9ptXjTwnH-IuW9pxnZhXbhp3E(SettingsActivity.this, tL_attachMenuBot, (Boolean) obj2);
                     }
                 }, null, null);
+                return;
             } else {
                 LaunchActivity.showAttachMenuBot(LaunchActivity.instance, this.currentAccount, tL_attachMenuBot, null, true);
-                return;
             }
         }
         if (uItem.instanceOf(AccountCell.Factory.class)) {
@@ -1004,7 +975,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             if (obj2 instanceof ProfileActivity.SearchAdapter.SearchResult) {
                 ((ProfileActivity.SearchAdapter.SearchResult) obj2).open(getParentLayout());
             } else if (obj2 instanceof MessagesController.FaqSearchResult) {
-                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.openArticle, this.search.faqWebPage, ((MessagesController.FaqSearchResult) obj2).url);
+                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.openArticle, this.search.faqWebPage, ((MessagesController.FaqSearchResult) obj2).url);
             }
             Object obj3 = uItem.object;
             if (obj3 != null) {
@@ -1085,36 +1056,36 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$15(final TLRPC.TL_attachMenuBot tL_attachMenuBot, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$wb9ptXjTwnH-IuW9pxnZhXbhp3E(final SettingsActivity settingsActivity, final TLRPC.TL_attachMenuBot tL_attachMenuBot, Boolean bool) {
+        settingsActivity.getClass();
         TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
-        tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(this.currentAccount).getInputUser(tL_attachMenuBot.bot_id);
+        tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(settingsActivity.currentAccount).getInputUser(tL_attachMenuBot.bot_id);
         tL_messages_toggleBotInAttachMenu.enabled = true;
         tL_messages_toggleBotInAttachMenu.write_allowed = true;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda24
+        ConnectionsManager.getInstance(settingsActivity.currentAccount).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda24
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SettingsActivity.this.lambda$onClick$14(tL_attachMenuBot, tLObject, tL_error);
+                SettingsActivity.$r8$lambda$noJL0vaOZu19FWcmDf-LxjKX_OE(SettingsActivity.this, tL_attachMenuBot, tLObject, tL_error);
             }
         }, 66);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$14(final TLRPC.TL_attachMenuBot tL_attachMenuBot, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$noJL0vaOZu19FWcmDf-LxjKX_OE(final SettingsActivity settingsActivity, final TLRPC.TL_attachMenuBot tL_attachMenuBot, TLObject tLObject, TLRPC.TL_error tL_error) {
+        settingsActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
-                SettingsActivity.this.lambda$onClick$13(tL_attachMenuBot);
+                SettingsActivity.$r8$lambda$J6NGCav7N0BV56GC_oJ3LqSJFF8(SettingsActivity.this, tL_attachMenuBot);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$13(TLRPC.TL_attachMenuBot tL_attachMenuBot) {
+    public static /* synthetic */ void $r8$lambda$J6NGCav7N0BV56GC_oJ3LqSJFF8(SettingsActivity settingsActivity, TLRPC.TL_attachMenuBot tL_attachMenuBot) {
+        settingsActivity.getClass();
         tL_attachMenuBot.side_menu_disclaimer_needed = false;
         tL_attachMenuBot.inactive = false;
-        LaunchActivity.showAttachMenuBot(LaunchActivity.instance, this.currentAccount, tL_attachMenuBot, null, true);
-        MediaDataController.getInstance(this.currentAccount).updateAttachMenuBotsInCache();
+        LaunchActivity.showAttachMenuBot(LaunchActivity.instance, settingsActivity.currentAccount, tL_attachMenuBot, null, true);
+        MediaDataController.getInstance(settingsActivity.currentAccount).updateAttachMenuBotsInCache();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1125,7 +1096,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             BotWebViewSheet.deleteBot(this.currentAccount, ((TLRPC.TL_attachMenuBot) obj).bot_id, new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SettingsActivity.this.lambda$onLongClick$16();
+                    SettingsActivity.this.listView.adapter.update(true);
                 }
             });
             return true;
@@ -1145,21 +1116,16 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         ItemOptions.makeOptions(this, view).add(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                SettingsActivity.this.lambda$onLongClick$17(str);
+                SettingsActivity.$r8$lambda$n785_sA9XIoQBMdw9tOG2_8Iy3c(SettingsActivity.this, str);
             }
         }).setScrimViewBackground(this.listView.getClipBackground(view)).show();
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$16() {
-        this.listView.adapter.update(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$17(String str) {
+    public static /* synthetic */ void $r8$lambda$n785_sA9XIoQBMdw9tOG2_8Iy3c(SettingsActivity settingsActivity, String str) {
+        settingsActivity.getClass();
         AndroidUtilities.addToClipboard(str);
-        BulletinFactory.of(this).createCopyLinkBulletin().show();
+        BulletinFactory.of(settingsActivity).createCopyLinkBulletin().show();
     }
 
     public String getVersionName() {
@@ -1671,6 +1637,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         String str2;
         String str3;
         String str4;
+        String str5;
+        String str6;
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity(), this.resourceProvider);
         builder.setTitle(LocaleController.getString(R.string.DebugMenu));
         String string2 = LocaleController.getString(R.string.DebugMenuImportContacts);
@@ -1701,80 +1669,93 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         String string8 = LocaleController.getString(R.string.DebugMenuCallSettings);
         String string9 = (BuildVars.DEBUG_PRIVATE_VERSION || ApplicationLoader.isStandaloneBuild() || ApplicationLoader.isBetaBuild()) ? LocaleController.getString("DebugMenuCheckAppUpdate", R.string.DebugMenuCheckAppUpdate) : null;
         String string10 = LocaleController.getString("DebugMenuReadAllDialogs", R.string.DebugMenuReadAllDialogs);
-        String str5 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.disableVoiceAudioEffects ? "Enable voip audio effects" : "Disable voip audio effects" : null;
+        String str7 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.disableVoiceAudioEffects ? "Enable voip audio effects" : "Disable voip audio effects" : null;
         boolean z = BuildVars.DEBUG_PRIVATE_VERSION;
-        String str6 = z ? "Clean app update" : null;
-        String str7 = z ? "Reset suggestions" : null;
+        String str8 = z ? "Clean app update" : null;
+        String str9 = z ? "Reset suggestions" : null;
         String string11 = z ? LocaleController.getString(R.string.DebugMenuClearWebViewCache) : null;
         String string12 = LocaleController.getString(R.string.DebugMenuClearWebViewCookies);
         String string13 = LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuDisableWebViewDebug : R.string.DebugMenuEnableWebViewDebug);
-        String str8 = (AndroidUtilities.isTabletInternal() && BuildVars.DEBUG_PRIVATE_VERSION) ? SharedConfig.forceDisableTabletMode ? "Enable tablet mode" : "Disable tablet mode" : null;
+        String str10 = (AndroidUtilities.isTabletInternal() && BuildVars.DEBUG_PRIVATE_VERSION) ? SharedConfig.forceDisableTabletMode ? "Enable tablet mode" : "Disable tablet mode" : null;
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
             str3 = LocaleController.getString(SharedConfig.isFloatingDebugActive ? R.string.FloatingDebugDisable : R.string.FloatingDebugEnable);
         } else {
             str3 = null;
         }
         boolean z2 = BuildVars.DEBUG_PRIVATE_VERSION;
-        String str9 = z2 ? "Force remove premium suggestions" : null;
-        String str10 = z2 ? "Share device info" : null;
-        String str11 = z2 ? "Force performance class" : null;
-        String str12 = (!z2 || InstantCameraView.allowBigSizeCameraDebug()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
+        String str11 = z2 ? "Force remove premium suggestions" : null;
+        String str12 = z2 ? "Share device info" : null;
+        String str13 = z2 ? "Force performance class" : null;
+        String str14 = (!z2 || InstantCameraView.allowBigSizeCameraDebug()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
         String string14 = LocaleController.getString(DualCameraView.dualAvailableStatic(getContext()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
-        String str13 = BuildVars.DEBUG_VERSION ? SharedConfig.useSurfaceInStories ? "back to TextureView in stories" : "use SurfaceView in stories" : null;
-        String str14 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.photoViewerBlur ? "do not blur in photoviewer" : "blur in photoviewer" : null;
-        String str15 = !SharedConfig.payByInvoice ? "Enable Invoice Payment" : "Disable Invoice Payment";
-        String str16 = BuildVars.DEBUG_PRIVATE_VERSION ? "Update Attach Bots" : null;
-        String str17 = !SharedConfig.isUsingCamera2(this.currentAccount) ? "Use Camera 2 API" : "Use old Camera 1 API";
-        String str18 = BuildVars.DEBUG_VERSION ? "Clear Mini Apps Permissions and Files" : null;
-        String str19 = BuildVars.DEBUG_PRIVATE_VERSION ? "Clear all login tokens" : null;
-        String str20 = (!SharedConfig.canBlurChat() || Build.VERSION.SDK_INT < 31) ? null : SharedConfig.useNewBlur ? "back to cpu blur" : "use new gpu blur";
-        String str21 = SharedConfig.adaptableColorInBrowser ? "Disabled adaptive browser colors" : "Enable adaptive browser colors";
-        String str22 = SharedConfig.debugVideoQualities ? "Disable video qualities debug" : "Enable video qualities debug";
+        String str15 = BuildVars.DEBUG_VERSION ? SharedConfig.useSurfaceInStories ? "back to TextureView in stories" : "use SurfaceView in stories" : null;
+        String str16 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.photoViewerBlur ? "do not blur in photoviewer" : "blur in photoviewer" : null;
+        String str17 = !SharedConfig.payByInvoice ? "Enable Invoice Payment" : "Disable Invoice Payment";
+        String str18 = BuildVars.DEBUG_PRIVATE_VERSION ? "Update Attach Bots" : null;
+        String str19 = !SharedConfig.isUsingCamera2(this.currentAccount) ? "Use Camera 2 API" : "Use old Camera 1 API";
+        String str20 = BuildVars.DEBUG_VERSION ? "Clear Mini Apps Permissions and Files" : null;
+        String str21 = BuildVars.DEBUG_PRIVATE_VERSION ? "Clear all login tokens" : null;
+        String str22 = (!SharedConfig.canBlurChat() || Build.VERSION.SDK_INT < 31) ? null : SharedConfig.useNewBlur ? "back to cpu blur" : "use new gpu blur";
+        String str23 = SharedConfig.adaptableColorInBrowser ? "Disabled adaptive browser colors" : "Enable adaptive browser colors";
+        String str24 = SharedConfig.debugVideoQualities ? "Disable video qualities debug" : "Enable video qualities debug";
+        String str25 = str22;
         if (Build.VERSION.SDK_INT >= 28) {
             str4 = LocaleController.getString(SharedConfig.useSystemBoldFont ? R.string.DebugMenuDontUseSystemBoldFont : R.string.DebugMenuUseSystemBoldFont);
         } else {
             str4 = null;
         }
-        builder.setItems(new CharSequence[]{string2, string3, string4, string5, string, string6, string7, string8, null, string9, string10, str5, str6, str7, string11, string12, string13, str8, str3, str9, str10, str11, str12, string14, str13, str14, str15, str16, str17, str18, str19, str20, str21, str22, str4, "Reload app config", !SharedConfig.forceForumTabs ? "Force Forum Tabs" : "Do Not Force Forum Tabs", "Make Memory Dump", BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.fastWallpaperDisabled ? "enable wallpaper shader" : "disable wallpaper shader" : null, SharedConfig.frameMetricsEnabled ? "hide frame metrics" : "show frame metrics", BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.shadowsInSections ? "disable shadows in settings" : "enable shadows in settings" : null, BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.debugViewMetrics ? "disable debug view metrics" : "enable debug view metrics" : null}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda15
+        String str26 = !SharedConfig.forceForumTabs ? "Force Forum Tabs" : "Do Not Force Forum Tabs";
+        String str27 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.fastWallpaperDisabled ? "enable wallpaper shader" : "disable wallpaper shader" : null;
+        String str28 = SharedConfig.frameMetricsEnabled ? "hide frame metrics" : "show frame metrics";
+        String str29 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.shadowsInSections ? "disable shadows in settings" : "enable shadows in settings" : null;
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            str6 = SharedConfig.debugViewMetrics ? "disable debug view metrics" : "enable debug view metrics";
+            str5 = str4;
+        } else {
+            str5 = str4;
+            str6 = null;
+        }
+        builder.setItems(new CharSequence[]{string2, string3, string4, string5, string, string6, string7, string8, null, string9, string10, str7, str8, str9, string11, string12, string13, str10, str3, str11, str12, str13, str14, string14, str15, str16, str17, str18, str19, str20, str21, str25, str23, str24, str5, "Reload app config", str26, "Make Memory Dump", str27, str28, str29, str6}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda15
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
-                SettingsActivity.this.lambda$openDebugMenu$21(dialogInterface, i3);
+                SettingsActivity.$r8$lambda$ssMEhJhc6nq_1KTe69CRic43nvU(SettingsActivity.this, dialogInterface, i3);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
         showDialog(builder.create());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openDebugMenu$21(DialogInterface dialogInterface, int i) {
+    public static /* synthetic */ void $r8$lambda$ssMEhJhc6nq_1KTe69CRic43nvU(final SettingsActivity settingsActivity, DialogInterface dialogInterface, int i) {
         int i2;
+        Long l;
+        Long l2;
         String str;
         String str2;
-        int i3;
-        int i4;
-        int i5 = 0;
+        long j;
+        int i3 = 0;
+        settingsActivity.getClass();
         if (i == 0) {
-            getUserConfig().syncContacts = true;
-            getUserConfig().saveConfig(false);
-            getContactsController().forceImportContacts();
+            settingsActivity.getUserConfig().syncContacts = true;
+            settingsActivity.getUserConfig().saveConfig(false);
+            settingsActivity.getContactsController().forceImportContacts();
             return;
         }
         if (i == 1) {
-            getContactsController().loadContacts(false, 0L);
+            settingsActivity.getContactsController().loadContacts(false, 0L);
             return;
         }
         if (i == 2) {
-            getContactsController().resetImportedContacts();
+            settingsActivity.getContactsController().resetImportedContacts();
             return;
         }
         if (i == 3) {
-            getMessagesController().forceResetDialogs();
+            settingsActivity.getMessagesController().forceResetDialogs();
             return;
         }
         if (i == 4) {
             BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
             ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
-            this.listView.adapter.update(true);
+            settingsActivity.listView.adapter.update(true);
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("app start time = " + ApplicationLoader.startTime);
                 try {
@@ -1792,12 +1773,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             return;
         }
         if (i == 6) {
-            getMessagesStorage().clearSentMedia();
+            settingsActivity.getMessagesStorage().clearSentMedia();
             SharedConfig.setNoSoundHintShowed(false);
             MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("searchpostsnew").remove("speedhint").remove("gifhint").remove("reminderhint").remove("soundHint").remove("themehint").remove("bganimationhint").remove("filterhint").remove("n_0").remove("storyprvhint").remove("storyhint").remove("storyhint2").remove("storydualhint").remove("storysvddualhint").remove("stories_camera").remove("dualcam").remove("dualmatrix").remove("dual_available").remove("archivehint").remove("askNotificationsAfter").remove("askNotificationsDuration").remove("viewoncehint").remove("voicepausehint").remove("taptostorysoundhint").remove("nothanos").remove("voiceoncehint").remove("savedhint").remove("savedsearchhint").remove("savedsearchtaghint").remove("newppsms").remove("monetizationadshint").remove("seekSpeedHintShowed").remove("unsupport_video/av01").remove("statusgiftpage").remove("multistorieshint").remove("trimvoicehint").remove("taptostoryhighlighthint").remove("proxycheckstatusip").remove("callmiconstart").remove("showchattagsinfo").remove("language_showed2").remove("aihintshown").remove("savedmsgschatshint").apply();
             HintsController.resetAll();
-            SharedPrefsHelper.cleanupAccount(this.currentAccount);
-            MessagesController.getEmojiSettings(this.currentAccount).edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
+            SharedPrefsHelper.cleanupAccount(settingsActivity.currentAccount);
+            MessagesController.getEmojiSettings(settingsActivity.currentAccount).edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
             MessagesController.getGlobalNotificationsSettings().edit().remove("disable_sharing_learn").remove("askedAboutFSILockscreen").apply();
             SharedConfig.textSelectionHintShows = 0;
             SharedConfig.lockRecordAudioVideoHint = 0;
@@ -1813,11 +1794,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             SharedConfig.setStoriesReactionsLongPressHintUsed(false);
             SharedConfig.setStoriesIntroShown(false);
             SharedConfig.setMultipleReactionsPromoShowed(false);
-            ChatThemeController.getInstance(this.currentAccount).clearCache();
-            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
+            ChatThemeController.getInstance(settingsActivity.currentAccount).clearCache();
+            settingsActivity.getNotificationCenter().postNotificationName(NotificationCenter.newSuggestionsAvailable, new Object[0]);
             RestrictedLanguagesSelectActivity.cleanup();
-            PersistColorPalette.getInstance(this.currentAccount).cleanup();
-            SharedPreferences mainSettings = getMessagesController().getMainSettings();
+            PersistColorPalette.getInstance(settingsActivity.currentAccount).cleanup();
+            SharedPreferences mainSettings = settingsActivity.getMessagesController().getMainSettings();
             SharedPreferences.Editor edit = mainSettings.edit();
             edit.remove("peerColors").remove("profilePeerColors").remove("boostingappearance").remove("bizbothint").remove("movecaptionhint");
             for (String str3 : mainSettings.getAll().keySet()) {
@@ -1826,8 +1807,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 }
             }
             edit.apply();
-            SharedPreferences.Editor edit2 = MessagesController.getNotificationsSettings(this.currentAccount).edit();
-            for (String str4 : MessagesController.getNotificationsSettings(this.currentAccount).getAll().keySet()) {
+            SharedPreferences.Editor edit2 = MessagesController.getNotificationsSettings(settingsActivity.currentAccount).edit();
+            for (String str4 : MessagesController.getNotificationsSettings(settingsActivity.currentAccount).getAll().keySet()) {
                 if (str4.startsWith("dialog_bar_botver")) {
                     edit2.remove(str4);
                 }
@@ -1836,7 +1817,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             return;
         }
         if (i == 7) {
-            VoIPHelper.showCallDebugSettings(getParentActivity());
+            VoIPHelper.showCallDebugSettings(settingsActivity.getParentActivity());
             return;
         }
         if (i == 8) {
@@ -1844,11 +1825,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             return;
         }
         if (i == 9) {
-            ((LaunchActivity) getParentActivity()).checkAppUpdate(true, null);
+            ((LaunchActivity) settingsActivity.getParentActivity()).checkAppUpdate(true, null);
             return;
         }
         if (i == 10) {
-            getMessagesStorage().readAllDialogs(-1);
+            settingsActivity.getMessagesStorage().readAllDialogs(-1);
             return;
         }
         if (i == 11) {
@@ -1858,14 +1839,14 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         if (i == 12) {
             SharedConfig.pendingAppUpdate = null;
             SharedConfig.saveConfig();
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
             return;
         }
         if (i == 13) {
-            Set<String> set = getMessagesController().pendingSuggestions;
+            Set<String> set = settingsActivity.getMessagesController().pendingSuggestions;
             set.add("VALIDATE_PHONE_NUMBER");
             set.add("VALIDATE_PASSWORD");
-            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
+            settingsActivity.getNotificationCenter().postNotificationName(NotificationCenter.newSuggestionsAvailable, new Object[0]);
             return;
         }
         try {
@@ -1886,12 +1867,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             }
             if (i == 16) {
                 SharedConfig.toggleDebugWebView();
-                Toast.makeText(getParentActivity(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
+                Toast.makeText(settingsActivity.getParentActivity(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
                 return;
             }
             if (i == 17) {
                 SharedConfig.toggleForceDisableTabletMode();
-                Activity parentActivity = getParentActivity();
+                Activity parentActivity = settingsActivity.getParentActivity();
                 if (parentActivity != null) {
                     Intent launchIntentForPackage = parentActivity.getPackageManager().getLaunchIntentForPackage(parentActivity.getPackageName());
                     parentActivity.finishAffinity();
@@ -1901,25 +1882,25 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 return;
             }
             if (i == 18) {
-                FloatingDebugController.setActive((LaunchActivity) getParentActivity(), !FloatingDebugController.isActive());
+                FloatingDebugController.setActive((LaunchActivity) settingsActivity.getParentActivity(), !FloatingDebugController.isActive());
                 return;
             }
             if (i == 19) {
-                getMessagesController().loadAppConfig();
+                settingsActivity.getMessagesController().loadAppConfig();
                 TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
                 tL_help_dismissSuggestion.suggestion = "VALIDATE_PHONE_NUMBER";
                 tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda26
+                settingsActivity.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda26
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        SettingsActivity.this.lambda$openDebugMenu$19(tLObject, tL_error);
+                        SettingsActivity.$r8$lambda$CVz9-hXwTRIiRUEANJVSSDBxve4(SettingsActivity.this, tLObject, tL_error);
                     }
                 });
                 return;
             }
             if (i != 20) {
                 if (i == 21) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity(), this.resourceProvider);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(settingsActivity.getParentActivity(), settingsActivity.resourceProvider);
                     builder.setTitle("Force performance class");
                     int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
                     final int measureDevicePerformanceClass = SharedConfig.measureDevicePerformanceClass();
@@ -1936,8 +1917,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     sb3.append(measureDevicePerformanceClass == 0 ? " (measured)" : "");
                     builder.setItems(new CharSequence[]{replaceTags, replaceTags2, AndroidUtilities.replaceTags(sb3.toString())}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda27
                         @Override // android.content.DialogInterface.OnClickListener
-                        public final void onClick(DialogInterface dialogInterface2, int i6) {
-                            SettingsActivity.lambda$openDebugMenu$20(measureDevicePerformanceClass, dialogInterface2, i6);
+                        public final void onClick(DialogInterface dialogInterface2, int i4) {
+                            SettingsActivity.$r8$lambda$dWBxWaGBa_8Tfgg7c2TLk4RCptk(measureDevicePerformanceClass, dialogInterface2, i4);
                         }
                     });
                     builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
@@ -1949,16 +1930,16 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     return;
                 }
                 if (i == 23) {
-                    boolean dualAvailableStatic = DualCameraView.dualAvailableStatic(getContext());
-                    MessagesController.getGlobalMainSettings().edit().putBoolean("dual_available", true ^ dualAvailableStatic).apply();
-                    Toast.makeText(getParentActivity(), LocaleController.getString(!dualAvailableStatic ? R.string.DebugMenuDualOnToast : R.string.DebugMenuDualOffToast), 0).show();
+                    boolean dualAvailableStatic = DualCameraView.dualAvailableStatic(settingsActivity.getContext());
+                    MessagesController.getGlobalMainSettings().edit().putBoolean("dual_available", !dualAvailableStatic).apply();
+                    Toast.makeText(settingsActivity.getParentActivity(), LocaleController.getString(!dualAvailableStatic ? R.string.DebugMenuDualOnToast : R.string.DebugMenuDualOffToast), 0).show();
                     return;
                 }
                 if (i == 24) {
                     SharedConfig.toggleSurfaceInStories();
-                    while (i5 < getParentLayout().getFragmentStack().size()) {
-                        ((BaseFragment) getParentLayout().getFragmentStack().get(i5)).clearSheets();
-                        i5++;
+                    while (i3 < settingsActivity.getParentLayout().getFragmentStack().size()) {
+                        ((BaseFragment) settingsActivity.getParentLayout().getFragmentStack().get(i3)).clearSheets();
+                        i3++;
                     }
                     return;
                 }
@@ -1971,11 +1952,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     return;
                 }
                 if (i == 27) {
-                    getMediaDataController().loadAttachMenuBots(false, true);
+                    settingsActivity.getMediaDataController().loadAttachMenuBots(false, true);
                     return;
                 }
                 if (i == 28) {
-                    SharedConfig.toggleUseCamera2(this.currentAccount);
+                    SharedConfig.toggleUseCamera2(settingsActivity.currentAccount);
                     return;
                 }
                 if (i == 29) {
@@ -2006,7 +1987,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     return;
                 }
                 if (i == 35) {
-                    MessagesController.getInstance(this.currentAccount).loadAppConfig(true);
+                    MessagesController.getInstance(settingsActivity.currentAccount).loadAppConfig(true);
                     return;
                 }
                 if (i == 36) {
@@ -2046,10 +2027,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 }
                 return;
             }
-            int i6 = ConnectionsManager.CPU_COUNT;
+            int i4 = ConnectionsManager.CPU_COUNT;
             int memoryClass = ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).getMemoryClass();
             StringBuilder sb4 = new StringBuilder();
-            long j = 0;
             long j2 = 0;
             long j3 = 0;
             long j4 = 0;
@@ -2057,54 +2037,52 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             long j6 = 0;
             long j7 = 0;
             long j8 = 0;
-            while (i5 < i6) {
-                Long sysInfoLong = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i5 + "/cpufreq/cpuinfo_min_freq");
-                Long sysInfoLong2 = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i5 + "/cpufreq/cpuinfo_cur_freq");
-                Long sysInfoLong3 = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i5 + "/cpufreq/cpuinfo_max_freq");
-                Long sysInfoLong4 = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i5 + "/cpu_capacity");
+            long j9 = 0;
+            while (i3 < i4) {
+                Long sysInfoLong = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i3 + "/cpufreq/cpuinfo_min_freq");
+                Long sysInfoLong2 = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i3 + "/cpufreq/cpuinfo_cur_freq");
+                Long sysInfoLong3 = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i3 + "/cpufreq/cpuinfo_max_freq");
+                Long sysInfoLong4 = AndroidUtilities.getSysInfoLong("/sys/devices/system/cpu/cpu" + i3 + "/cpu_capacity");
                 sb4.append("#");
-                sb4.append(i5);
+                sb4.append(i3);
                 sb4.append(" ");
+                int i5 = i3;
                 if (sysInfoLong != null) {
                     sb4.append("min=");
-                    i3 = i6;
-                    i4 = memoryClass;
                     sb4.append(sysInfoLong.longValue() / 1000);
                     sb4.append(" ");
-                    j2 += sysInfoLong.longValue() / 1000;
-                    j++;
-                } else {
-                    i3 = i6;
-                    i4 = memoryClass;
+                    j3 += sysInfoLong.longValue() / 1000;
+                    j2++;
                 }
                 if (sysInfoLong2 != null) {
                     sb4.append("cur=");
+                    j = j2;
                     sb4.append(sysInfoLong2.longValue() / 1000);
                     sb4.append(" ");
-                    j4 += sysInfoLong2.longValue() / 1000;
-                    j3++;
+                    j5 += sysInfoLong2.longValue() / 1000;
+                    j4++;
+                } else {
+                    j = j2;
                 }
                 if (sysInfoLong3 != null) {
                     sb4.append("max=");
                     sb4.append(sysInfoLong3.longValue() / 1000);
                     sb4.append(" ");
-                    j6 += sysInfoLong3.longValue() / 1000;
-                    j5++;
+                    j7 += sysInfoLong3.longValue() / 1000;
+                    j6++;
                 }
                 if (sysInfoLong4 != null) {
                     sb4.append("cpc=");
                     sb4.append(sysInfoLong4);
                     sb4.append(" ");
-                    j8 += sysInfoLong4.longValue();
-                    j7++;
+                    j9 += sysInfoLong4.longValue();
+                    j8++;
                 }
                 sb4.append("\n");
-                i5++;
-                i6 = i3;
-                memoryClass = i4;
+                i3 = i5 + 1;
+                j2 = j;
             }
-            int i7 = i6;
-            int i8 = memoryClass;
+            long j10 = j2;
             StringBuilder sb5 = new StringBuilder();
             sb5.append(Build.MANUFACTURER);
             sb5.append(", ");
@@ -2115,10 +2093,10 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             sb5.append(Build.DEVICE);
             sb5.append(") ");
             sb5.append(" (android ");
-            int i9 = Build.VERSION.SDK_INT;
-            sb5.append(i9);
+            int i6 = Build.VERSION.SDK_INT;
+            sb5.append(i6);
             sb5.append(")\n");
-            if (i9 >= 31) {
+            if (i6 >= 31) {
                 sb5.append("SoC: ");
                 str = Build.SOC_MANUFACTURER;
                 sb5.append(str);
@@ -2136,15 +2114,20 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 Long sysInfoLong7 = AndroidUtilities.getSysInfoLong("/sys/kernel/gpu/gpu_max_clock");
                 if (sysInfoLong5 != null) {
                     sb5.append(", min=");
+                    l = sysInfoLong6;
+                    l2 = sysInfoLong7;
                     sb5.append(sysInfoLong5.longValue() / 1000);
+                } else {
+                    l = sysInfoLong6;
+                    l2 = sysInfoLong7;
                 }
-                if (sysInfoLong6 != null) {
+                if (l != null) {
                     sb5.append(", mmin=");
-                    sb5.append(sysInfoLong6.longValue() / 1000);
+                    sb5.append(l.longValue() / 1000);
                 }
-                if (sysInfoLong7 != null) {
+                if (l2 != null) {
                     sb5.append(", max=");
-                    sb5.append(sysInfoLong7.longValue() / 1000);
+                    sb5.append(l2.longValue() / 1000);
                 }
                 sb5.append("\n");
             }
@@ -2153,7 +2136,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             sb5.append(deviceConfigurationInfo.getGlEsVersion());
             sb5.append("\n");
             sb5.append("Memory: class=");
-            sb5.append(AndroidUtilities.formatFileSize(i8 * 1048576));
+            sb5.append(AndroidUtilities.formatFileSize(memoryClass * 1048576));
             ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
             ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).getMemoryInfo(memoryInfo);
             sb5.append(", total=");
@@ -2170,57 +2153,52 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             sb5.append(SharedConfig.performanceClassName(SharedConfig.getDevicePerformanceClass()));
             sb5.append(", measured: ");
             sb5.append(SharedConfig.performanceClassName(SharedConfig.measureDevicePerformanceClass()));
-            if (i9 >= 31) {
+            if (i6 >= 31) {
                 sb5.append(", suggest=");
                 i2 = Build.VERSION.MEDIA_PERFORMANCE_CLASS;
                 sb5.append(i2);
             }
             sb5.append("\n");
-            sb5.append(i7);
+            sb5.append(i4);
             sb5.append(" CPUs");
-            if (j > 0) {
+            if (j10 > 0) {
                 sb5.append(", avgMinFreq=");
-                sb5.append(j2 / j);
+                sb5.append(j3 / j10);
             }
-            if (j3 > 0) {
+            if (j4 > 0) {
                 sb5.append(", avgCurFreq=");
-                sb5.append(j4 / j3);
+                sb5.append(j5 / j4);
             }
-            if (j5 > 0) {
+            if (j6 > 0) {
                 sb5.append(", avgMaxFreq=");
-                sb5.append(j6 / j5);
+                sb5.append(j7 / j6);
             }
-            if (j7 > 0) {
+            if (j8 > 0) {
                 sb5.append(", avgCapacity=");
-                sb5.append(j8 / j7);
+                sb5.append(j9 / j8);
             }
             sb5.append("\n");
             sb5.append((CharSequence) sb4);
-            listCodecs(MediaController.VIDEO_MIME_TYPE, sb5);
-            listCodecs("video/hevc", sb5);
-            listCodecs("video/x-vnd.on2.vp8", sb5);
-            listCodecs("video/x-vnd.on2.vp9", sb5);
-            showDialog(new 8(getParentActivity(), null, sb5.toString(), false, null, false));
+            settingsActivity.listCodecs(MediaController.VIDEO_MIME_TYPE, sb5);
+            settingsActivity.listCodecs("video/hevc", sb5);
+            settingsActivity.listCodecs("video/x-vnd.on2.vp8", sb5);
+            settingsActivity.listCodecs("video/x-vnd.on2.vp9", sb5);
+            settingsActivity.showDialog(settingsActivity.new 8(settingsActivity.getParentActivity(), null, sb5.toString(), false, null, false));
         } catch (Exception unused) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openDebugMenu$19(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$CVz9-hXwTRIiRUEANJVSSDBxve4(final SettingsActivity settingsActivity, TLObject tLObject, TLRPC.TL_error tL_error) {
+        settingsActivity.getClass();
         TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
         tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
         tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-        getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda28
+        settingsActivity.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda28
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                SettingsActivity.this.lambda$openDebugMenu$18(tLObject2, tL_error2);
+                SettingsActivity.this.getMessagesController().loadAppConfig();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openDebugMenu$18(TLObject tLObject, TLRPC.TL_error tL_error) {
-        getMessagesController().loadAppConfig();
     }
 
     class 8 extends ShareAlert {
@@ -2234,20 +2212,14 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SettingsActivity$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SettingsActivity.8.this.lambda$onSend$0(longSparseArray, i);
+                        BulletinFactory.createInviteSentBulletin(SettingsActivity.this.getParentActivity(), SettingsActivity.this.contentView, r1.size(), r10.size() == 1 ? ((TLRPC.Dialog) longSparseArray.valueAt(0)).id : 0L, i, r0.getThemedColor(Theme.key_undo_background), SettingsActivity.8.this.getThemedColor(Theme.key_undo_infoColor)).show();
                     }
                 }, 250L);
             }
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSend$0(LongSparseArray longSparseArray, int i) {
-            BulletinFactory.createInviteSentBulletin(SettingsActivity.this.getParentActivity(), SettingsActivity.this.contentView, longSparseArray.size(), longSparseArray.size() == 1 ? ((TLRPC.Dialog) longSparseArray.valueAt(0)).id : 0L, i, getThemedColor(Theme.key_undo_background), getThemedColor(Theme.key_undo_infoColor)).show();
-        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openDebugMenu$20(int i, DialogInterface dialogInterface, int i2) {
+    public static /* synthetic */ void $r8$lambda$dWBxWaGBa_8Tfgg7c2TLk4RCptk(int i, DialogInterface dialogInterface, int i2) {
         int i3 = 2 - i2;
         if (i3 == i) {
             SharedConfig.overrideDevicePerformanceClass(-1);
@@ -2364,35 +2336,34 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SettingsActivity.this.lambda$didUploadPhoto$24(inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize);
+                SettingsActivity.$r8$lambda$t_meMONhChpBBVDKwKFoOBPvlbo(SettingsActivity.this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didUploadPhoto$23(final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$_nghCTpgha7_G9yUVDBuK1FqHI8(final SettingsActivity settingsActivity, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        settingsActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda25
             @Override // java.lang.Runnable
             public final void run() {
-                SettingsActivity.this.lambda$didUploadPhoto$22(tL_error, tLObject, str);
+                SettingsActivity.$r8$lambda$sYlMSespSVOJth1WT4luNW7cy0w(SettingsActivity.this, tL_error, tLObject, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didUploadPhoto$22(TLRPC.TL_error tL_error, TLObject tLObject, String str) {
-        this.avatarUploadingRequest = -1;
+    public static /* synthetic */ void $r8$lambda$sYlMSespSVOJth1WT4luNW7cy0w(SettingsActivity settingsActivity, TLRPC.TL_error tL_error, TLObject tLObject, String str) {
+        settingsActivity.avatarUploadingRequest = -1;
         if (tL_error == null) {
-            TLRPC.User user = getMessagesController().getUser(Long.valueOf(getUserConfig().getClientUserId()));
+            TLRPC.User user = settingsActivity.getMessagesController().getUser(Long.valueOf(settingsActivity.getUserConfig().getClientUserId()));
             if (user == null) {
-                user = getUserConfig().getCurrentUser();
+                user = settingsActivity.getUserConfig().getCurrentUser();
                 if (user == null) {
                     return;
                 } else {
-                    getMessagesController().putUser(user, false);
+                    settingsActivity.getMessagesController().putUser(user, false);
                 }
             } else {
-                getUserConfig().setCurrentUser(user);
+                settingsActivity.getUserConfig().setCurrentUser(user);
             }
             TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
             ArrayList<TLRPC.PhotoSize> arrayList = tL_photos_photo.photo.sizes;
@@ -2408,38 +2379,38 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             if (closestPhotoSizeWithSize2 != null) {
                 tL_userProfilePhoto.photo_big = closestPhotoSizeWithSize2.location;
             }
-            if (closestPhotoSizeWithSize != null && this.avatar != null) {
-                FileLoader.getInstance(this.currentAccount).getPathToAttach(this.avatar, true).renameTo(FileLoader.getInstance(this.currentAccount).getPathToAttach(closestPhotoSizeWithSize, true));
-                ImageLoader.getInstance().replaceImageInCache(this.avatar.volume_id + "_" + this.avatar.local_id + "@90_90", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@90_90", ImageLocation.getForUserOrChat(this.currentAccount, user, 1), false);
+            if (closestPhotoSizeWithSize != null && settingsActivity.avatar != null) {
+                FileLoader.getInstance(settingsActivity.currentAccount).getPathToAttach(settingsActivity.avatar, true).renameTo(FileLoader.getInstance(settingsActivity.currentAccount).getPathToAttach(closestPhotoSizeWithSize, true));
+                ImageLoader.getInstance().replaceImageInCache(settingsActivity.avatar.volume_id + "_" + settingsActivity.avatar.local_id + "@90_90", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@90_90", ImageLocation.getForUserOrChat(settingsActivity.currentAccount, user, 1), false);
             }
             if (closestVideoSizeWithSize != null && str != null) {
-                new File(str).renameTo(FileLoader.getInstance(this.currentAccount).getPathToAttach(closestVideoSizeWithSize, "mp4", true));
-            } else if (closestPhotoSizeWithSize2 != null && this.avatarBig != null) {
-                FileLoader.getInstance(this.currentAccount).getPathToAttach(this.avatarBig, true).renameTo(FileLoader.getInstance(this.currentAccount).getPathToAttach(closestPhotoSizeWithSize2, true));
+                new File(str).renameTo(FileLoader.getInstance(settingsActivity.currentAccount).getPathToAttach(closestVideoSizeWithSize, "mp4", true));
+            } else if (closestPhotoSizeWithSize2 != null && settingsActivity.avatarBig != null) {
+                FileLoader.getInstance(settingsActivity.currentAccount).getPathToAttach(settingsActivity.avatarBig, true).renameTo(FileLoader.getInstance(settingsActivity.currentAccount).getPathToAttach(closestPhotoSizeWithSize2, true));
             }
-            getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
+            settingsActivity.getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(user);
-            getMessagesStorage().putUsersAndChats(arrayList2, null, false, true);
-            TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+            settingsActivity.getMessagesStorage().putUsersAndChats(arrayList2, null, false, true);
+            TLRPC.UserFull userFull = settingsActivity.getMessagesController().getUserFull(settingsActivity.getUserConfig().getClientUserId());
             if (userFull != null) {
                 userFull.profile_photo = tL_photos_photo.photo;
-                getMessagesStorage().updateUserInfo(userFull, false);
+                settingsActivity.getMessagesStorage().updateUserInfo(userFull, false);
             }
-            setInfo(user);
+            settingsActivity.setInfo(user);
         }
-        this.avatar = null;
-        this.avatarBig = null;
-        showAvatarProgress(false, true);
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_ALL));
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
-        getUserConfig().saveConfig(true);
+        settingsActivity.avatar = null;
+        settingsActivity.avatarBig = null;
+        settingsActivity.showAvatarProgress(false, true);
+        settingsActivity.getNotificationCenter().postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_ALL));
+        settingsActivity.getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged, new Object[0]);
+        settingsActivity.getUserConfig().saveConfig(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didUploadPhoto$24(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, final String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2) {
+    public static /* synthetic */ void $r8$lambda$t_meMONhChpBBVDKwKFoOBPvlbo(final SettingsActivity settingsActivity, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, final String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2) {
+        settingsActivity.getClass();
         if (inputFile != null || inputFile2 != null || videoSize != null) {
-            if (this.avatar == null) {
+            if (settingsActivity.avatar == null) {
                 return;
             }
             TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
@@ -2457,20 +2428,20 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
                 tL_photos_uploadProfilePhoto.flags |= 16;
             }
-            this.avatarUploadingRequest = getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda23
+            settingsActivity.avatarUploadingRequest = settingsActivity.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda23
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SettingsActivity.this.lambda$didUploadPhoto$23(str, tLObject, tL_error);
+                    SettingsActivity.$r8$lambda$_nghCTpgha7_G9yUVDBuK1FqHI8(SettingsActivity.this, str, tLObject, tL_error);
                 }
             });
         } else {
             TLRPC.FileLocation fileLocation = photoSize.location;
-            this.avatar = fileLocation;
-            this.avatarBig = photoSize2.location;
-            this.avatarView.setImage(ImageLocation.getForLocal(fileLocation), "90_90", this.avatarDrawable, (Object) null);
-            showAvatarProgress(true, false);
+            settingsActivity.avatar = fileLocation;
+            settingsActivity.avatarBig = photoSize2.location;
+            settingsActivity.avatarView.setImage(ImageLocation.getForLocal(fileLocation), "90_90", settingsActivity.avatarDrawable, (Object) null);
+            settingsActivity.showAvatarProgress(true, false);
         }
-        this.actionBar.createMenu().requestLayout();
+        settingsActivity.actionBar.createMenu().requestLayout();
     }
 
     private void showAvatarProgress(final boolean z, boolean z2) {

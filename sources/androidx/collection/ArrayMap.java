@@ -516,7 +516,6 @@ public class ArrayMap extends SimpleArrayMap implements Map, j$.util.Map {
                         return true;
                     }
                 }
-                return false;
             } catch (ClassCastException | NullPointerException unused) {
             }
         }

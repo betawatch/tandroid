@@ -3,44 +3,50 @@ package j$.time.format;
 import java.util.ArrayList;
 
 /* loaded from: classes2.dex */
-final class e implements f {
-    private final f[] a;
-    private final boolean b;
+public final class e implements f {
+    public final f[] a;
+    public final boolean b;
 
-    e(ArrayList arrayList, boolean z) {
+    public e(ArrayList arrayList, boolean z) {
         this((f[]) arrayList.toArray(new f[arrayList.size()]), z);
     }
 
-    e(f[] fVarArr, boolean z) {
+    public e(f[] fVarArr, boolean z) {
         this.a = fVarArr;
         this.b = z;
     }
 
-    public final e a() {
-        return !this.b ? this : new e(this.a, false);
-    }
-
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0026, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x002f, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x002c, code lost:
+    
+        if (r2 != false) goto L11;
+     */
     @Override // j$.time.format.f
-    public final boolean k(r rVar, StringBuilder sb) {
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean l(r rVar, StringBuilder sb) {
         int length = sb.length();
         boolean z = this.b;
         if (z) {
-            rVar.g();
+            rVar.c++;
         }
         try {
             for (f fVar : this.a) {
-                if (!fVar.k(rVar, sb)) {
+                if (!fVar.l(rVar, sb)) {
                     sb.setLength(length);
-                    return true;
                 }
             }
-            if (z) {
-                rVar.a();
-            }
-            return true;
         } finally {
             if (z) {
-                rVar.a();
+                rVar.c--;
             }
         }
     }

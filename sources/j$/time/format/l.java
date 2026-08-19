@@ -1,15 +1,15 @@
 package j$.time.format;
 
 /* loaded from: classes2.dex */
-final class l implements f {
-    private final String a;
+public final class l implements f {
+    public final String a;
 
-    l(String str) {
+    public l(String str) {
         this.a = str;
     }
 
     @Override // j$.time.format.f
-    public final boolean k(r rVar, StringBuilder sb) {
+    public final boolean l(r rVar, StringBuilder sb) {
         sb.append(this.a);
         return true;
     }

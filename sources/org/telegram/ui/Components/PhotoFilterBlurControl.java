@@ -410,45 +410,49 @@ public class PhotoFilterBlurControl extends FrameLayout {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        Canvas canvas2 = canvas;
         super.onDraw(canvas);
         PointF actualCenterPoint = getActualCenterPoint();
         float actualInnerRadius = getActualInnerRadius();
         float actualOuterRadius = getActualOuterRadius();
-        canvas.translate(actualCenterPoint.x, actualCenterPoint.y);
+        canvas2.translate(actualCenterPoint.x, actualCenterPoint.y);
         int i = this.type;
+        int i2 = 0;
         if (i == 0) {
-            canvas.rotate(this.angle);
+            canvas2.rotate(this.angle);
             float dp = AndroidUtilities.dp(6.0f);
             float dp2 = AndroidUtilities.dp(12.0f);
             float dp3 = AndroidUtilities.dp(1.5f);
-            for (int i2 = 0; i2 < 30; i2++) {
+            for (int i3 = 0; i3 < 30; i3++) {
                 float f = dp2 + dp;
-                float f2 = i2 * f;
+                float f2 = i3 * f;
                 float f3 = -actualInnerRadius;
                 float f4 = f2 + dp2;
                 float f5 = dp3 - actualInnerRadius;
-                canvas.drawRect(f2, f3, f4, f5, this.paint);
-                float f6 = ((-r11) * f) - dp;
+                canvas2.drawRect(f2, f3, f4, f5, this.paint);
+                float f6 = ((-i3) * f) - dp;
                 float f7 = f6 - dp2;
-                canvas.drawRect(f7, f3, f6, f5, this.paint);
+                canvas2 = canvas;
+                canvas2.drawRect(f7, f3, f6, f5, this.paint);
                 float f8 = dp3 + actualInnerRadius;
-                canvas.drawRect(f2, actualInnerRadius, f4, f8, this.paint);
-                canvas.drawRect(f7, actualInnerRadius, f6, f8, this.paint);
+                canvas2.drawRect(f2, actualInnerRadius, f4, f8, this.paint);
+                canvas2.drawRect(f7, actualInnerRadius, f6, f8, this.paint);
             }
             float dp4 = AndroidUtilities.dp(6.0f);
-            for (int i3 = 0; i3 < 64; i3++) {
+            while (i2 < 64) {
                 float f9 = dp4 + dp;
-                float f10 = i3 * f9;
+                float f10 = i2 * f9;
                 float f11 = -actualOuterRadius;
                 float f12 = dp4 + f10;
                 float f13 = dp3 - actualOuterRadius;
                 canvas.drawRect(f10, f11, f12, f13, this.paint);
-                float f14 = ((-i3) * f9) - dp;
+                float f14 = ((-i2) * f9) - dp;
                 float f15 = f14 - dp4;
                 canvas.drawRect(f15, f11, f14, f13, this.paint);
                 float f16 = dp3 + actualOuterRadius;
                 canvas.drawRect(f10, actualOuterRadius, f12, f16, this.paint);
                 canvas.drawRect(f15, actualOuterRadius, f14, f16, this.paint);
+                i2++;
             }
         } else if (i == 1) {
             float f17 = -actualInnerRadius;
@@ -458,8 +462,9 @@ public class PhotoFilterBlurControl extends FrameLayout {
             }
             float f18 = -actualOuterRadius;
             this.arcRect.set(f18, f18, actualOuterRadius, actualOuterRadius);
-            for (int i5 = 0; i5 < 64; i5++) {
-                canvas.drawArc(this.arcRect, 5.62f * i5, 3.6f, false, this.arcPaint);
+            while (i2 < 64) {
+                canvas.drawArc(this.arcRect, 5.62f * i2, 3.6f, false, this.arcPaint);
+                i2++;
             }
         }
         canvas.drawCircle(0.0f, 0.0f, AndroidUtilities.dp(8.0f), this.paint);

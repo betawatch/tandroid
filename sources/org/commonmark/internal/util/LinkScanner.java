@@ -97,36 +97,31 @@ public abstract class LinkScanner {
         int i3 = i;
         while (i3 < charSequence.length()) {
             char charAt = charSequence.charAt(i3);
-            if (charAt == 0 || charAt == ' ') {
-                if (i3 != i) {
-                    return i3;
+            if (charAt != 0 && charAt != ' ') {
+                if (charAt == '\\') {
+                    int i4 = i3 + 1;
+                    if (Parsing.isEscapable(charSequence, i4)) {
+                        i3 = i4;
+                    }
+                } else if (charAt == '(') {
+                    i2++;
+                    if (i2 > 32) {
+                        return -1;
+                    }
+                } else if (charAt != ')') {
+                    if (Character.isISOControl(charAt)) {
+                        if (i3 == i) {
+                            return -1;
+                        }
+                    }
+                } else if (i2 != 0) {
+                    i2--;
                 }
+                i3++;
+            } else if (i3 == i) {
                 return -1;
             }
-            if (charAt == '\\') {
-                int i4 = i3 + 1;
-                if (Parsing.isEscapable(charSequence, i4)) {
-                    i3 = i4;
-                }
-            } else if (charAt == '(') {
-                i2++;
-                if (i2 > 32) {
-                    return -1;
-                }
-            } else if (charAt != ')') {
-                if (Character.isISOControl(charAt)) {
-                    if (i3 != i) {
-                        return i3;
-                    }
-                    return -1;
-                }
-            } else {
-                if (i2 == 0) {
-                    return i3;
-                }
-                i2--;
-            }
-            i3++;
+            return i3;
         }
         return charSequence.length();
     }

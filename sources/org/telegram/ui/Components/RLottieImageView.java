@@ -136,8 +136,8 @@ public class RLottieImageView extends ImageView {
         imageReceiver2.setAllowLoadingOnAttachedOnly(true);
         String str2 = document.localThumbPath;
         if (str2 != null) {
-            imageLocation = ImageLocation.getForPath(str2);
             str = i + "_" + i2;
+            imageLocation = ImageLocation.getForPath(str2);
         } else {
             imageLocation = null;
             str = null;
@@ -156,7 +156,11 @@ public class RLottieImageView extends ImageView {
                 sb.append(this.cached ? "_pcache" : "");
                 sb.append("_");
                 sb.append(ImageLoader.AUTOPLAY_FILTER);
-                imageReceiver3.setImage(forDocument, sb.toString(), imageLocation != null ? imageLocation : ImageLocation.getForDocument(closestPhotoSizeWithSize, document), str, null, document.size, null, document, 1);
+                String sb2 = sb.toString();
+                if (imageLocation == null) {
+                    imageLocation = ImageLocation.getForDocument(closestPhotoSizeWithSize, document);
+                }
+                imageReceiver3.setImage(forDocument, sb2, imageLocation, str, null, document.size, null, document, 1);
             } else {
                 SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, Theme.key_windowBackgroundWhiteGrayIcon, 0.2f);
                 if (svgThumb != null) {
@@ -164,12 +168,12 @@ public class RLottieImageView extends ImageView {
                 }
                 ImageReceiver imageReceiver4 = this.imageReceiver;
                 ImageLocation forDocument2 = ImageLocation.getForDocument(document);
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(i);
-                sb2.append("_");
-                sb2.append(i2);
-                sb2.append(this.cached ? "_pcache" : "");
-                imageReceiver4.setImage(forDocument2, sb2.toString(), ImageLocation.getForDocument(closestPhotoSizeWithSize, document), i + "_" + i2, imageLocation, str, svgThumb, 0L, null, document, 1);
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append(i);
+                sb3.append("_");
+                sb3.append(i2);
+                sb3.append(this.cached ? "_pcache" : "");
+                imageReceiver4.setImage(forDocument2, sb3.toString(), ImageLocation.getForDocument(closestPhotoSizeWithSize, document), i + "_" + i2, imageLocation, str, svgThumb, 0L, null, document, 1);
             }
         }
         this.imageReceiver.setAspectFit(true);

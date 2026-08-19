@@ -47,6 +47,7 @@ class AppCompatProgressBarHelper {
             Drawable wrappedDrawable2 = wrappedDrawable.getWrappedDrawable();
             if (wrappedDrawable2 != null) {
                 wrappedDrawable.setWrappedDrawable(tileify(wrappedDrawable2, z));
+                return drawable;
             }
         } else {
             if (drawable instanceof LayerDrawable) {

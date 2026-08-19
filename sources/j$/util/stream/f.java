@@ -4,30 +4,30 @@ import j$.util.Spliterator;
 import j$.util.stream.IntStream;
 import j$.util.stream.Stream;
 import java.util.Iterator;
-import java.util.stream.DoubleStream;
+import java.util.Spliterator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class f implements BaseStream {
-    public final /* synthetic */ java.util.stream.BaseStream a;
+public final /* synthetic */ class f implements java.util.stream.BaseStream {
+    public final /* synthetic */ BaseStream a;
 
-    private /* synthetic */ f(java.util.stream.BaseStream baseStream) {
+    public /* synthetic */ f(BaseStream baseStream) {
         this.a = baseStream;
     }
 
-    public static /* synthetic */ BaseStream j(java.util.stream.BaseStream baseStream) {
+    public static /* synthetic */ java.util.stream.BaseStream j(BaseStream baseStream) {
         if (baseStream == null) {
             return null;
         }
-        return baseStream instanceof g ? ((g) baseStream).a : baseStream instanceof DoubleStream ? B.j((DoubleStream) baseStream) : baseStream instanceof java.util.stream.IntStream ? IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) baseStream) : baseStream instanceof java.util.stream.LongStream ? k0.j((java.util.stream.LongStream) baseStream) : baseStream instanceof java.util.stream.Stream ? Stream.VivifiedWrapper.convert((java.util.stream.Stream) baseStream) : new f(baseStream);
+        return baseStream instanceof e ? ((e) baseStream).a : baseStream instanceof A ? z.j((A) baseStream) : baseStream instanceof IntStream ? IntStream.Wrapper.convert((IntStream) baseStream) : baseStream instanceof LongStream ? h0.j((LongStream) baseStream) : baseStream instanceof Stream ? Stream.Wrapper.convert((Stream) baseStream) : new f(baseStream);
     }
 
-    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
+    @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
     public final /* synthetic */ void close() {
         this.a.close();
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.stream.BaseStream baseStream = this.a;
+        BaseStream baseStream = this.a;
         if (obj instanceof f) {
             obj = ((f) obj).a;
         }
@@ -38,38 +38,38 @@ public final /* synthetic */ class f implements BaseStream {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.stream.BaseStream
+    @Override // java.util.stream.BaseStream
     public final /* synthetic */ boolean isParallel() {
         return this.a.isParallel();
     }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    @Override // java.util.stream.BaseStream
     public final /* synthetic */ Iterator iterator() {
         return this.a.iterator();
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream onClose(Runnable runnable) {
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.BaseStream onClose(Runnable runnable) {
         return j(this.a.onClose(runnable));
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream parallel() {
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.BaseStream parallel() {
         return j(this.a.parallel());
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream sequential() {
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.BaseStream sequential() {
         return j(this.a.sequential());
     }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    @Override // java.util.stream.BaseStream
     public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.g0.a(this.a.spliterator());
+        return Spliterator.Wrapper.convert(this.a.spliterator());
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream unordered() {
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.BaseStream unordered() {
         return j(this.a.unordered());
     }
 }

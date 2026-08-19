@@ -71,7 +71,12 @@ public abstract class PhotoUtilities {
 
             @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
             public final void didUploadPhoto(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z, TLRPC.VideoSize videoSize) {
-                PhotoUtilities.lambda$setImageAsAvatar$4(currentAccount, runnable, parentLayout, imageUpdater, inputFile, inputFile2, d, str, photoSize, photoSize2, z, videoSize);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        PhotoUtilities.$r8$lambda$7M-ejB92G72HNHArTnHvAEjZ0Ys(TLRPC.InputFile.this, inputFile2, d, videoSize, r6, photoSize2, photoSize, r9, r10, r11);
+                    }
+                });
             }
 
             @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -96,18 +101,7 @@ public abstract class PhotoUtilities {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setImageAsAvatar$4(final int i, final Runnable runnable, final INavigationLayout iNavigationLayout, final ImageUpdater imageUpdater, final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, boolean z, final TLRPC.VideoSize videoSize) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                PhotoUtilities.lambda$setImageAsAvatar$3(TLRPC.InputFile.this, inputFile2, d, videoSize, i, photoSize2, photoSize, runnable, iNavigationLayout, imageUpdater);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setImageAsAvatar$3(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, TLRPC.VideoSize videoSize, final int i, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final Runnable runnable, final INavigationLayout iNavigationLayout, ImageUpdater imageUpdater) {
+    public static /* synthetic */ void $r8$lambda$7M-ejB92G72HNHArTnHvAEjZ0Ys(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, TLRPC.VideoSize videoSize, final int i, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final Runnable runnable, final INavigationLayout iNavigationLayout, ImageUpdater imageUpdater) {
         TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
         if (inputFile != null) {
             tL_photos_uploadProfilePhoto.file = inputFile;
@@ -126,24 +120,18 @@ public abstract class PhotoUtilities {
         ConnectionsManager.getInstance(i).sendRequest(tL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PhotoUtilities.lambda$setImageAsAvatar$2(i, photoSize, photoSize2, runnable, iNavigationLayout, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        PhotoUtilities.$r8$lambda$qx2kormntPEvjsmL_m-b7R_n0Dg(TLObject.this, r2, r3, r4, r5, r6);
+                    }
+                });
             }
         });
         imageUpdater.onPause();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setImageAsAvatar$2(final int i, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final Runnable runnable, final INavigationLayout iNavigationLayout, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                PhotoUtilities.lambda$setImageAsAvatar$1(TLObject.this, i, photoSize, photoSize2, runnable, iNavigationLayout);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setImageAsAvatar$1(TLObject tLObject, final int i, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, Runnable runnable, final INavigationLayout iNavigationLayout) {
+    public static /* synthetic */ void $r8$lambda$qx2kormntPEvjsmL_m-b7R_n0Dg(TLObject tLObject, final int i, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, Runnable runnable, final INavigationLayout iNavigationLayout) {
         if (tLObject instanceof TLRPC.TL_photos_photo) {
             TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
             MessagesController.getInstance(i).putUsers(tL_photos_photo.users, false);
@@ -170,14 +158,13 @@ public abstract class PhotoUtilities {
             BulletinFactory.of(iNavigationLayout.getLastFragment()).createUsersBulletin(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoUtilities.lambda$setImageAsAvatar$0(i, iNavigationLayout);
+                    PhotoUtilities.$r8$lambda$ozcDEvBk9PRJN_Uvr7r6Ef-rkSw(i, iNavigationLayout);
                 }
             }), null).show();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setImageAsAvatar$0(int i, INavigationLayout iNavigationLayout) {
+    public static /* synthetic */ void $r8$lambda$ozcDEvBk9PRJN_Uvr7r6Ef-rkSw(int i, INavigationLayout iNavigationLayout) {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(i).clientUserId);
         iNavigationLayout.getLastFragment().presentFragment(new ProfileActivity(bundle));
@@ -239,7 +226,7 @@ public abstract class PhotoUtilities {
 
             @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
             public final void didUploadPhoto(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z, TLRPC.VideoSize videoSize2) {
-                PhotoUtilities.lambda$showAvatartConstructorForUpdateUserPhoto$8(ChatActivity.this, fileLocationArr, fileLocationArr2, clientUserId, inputFile, inputFile2, d, str, photoSize, photoSize2, z, videoSize2);
+                PhotoUtilities.$r8$lambda$4Ua-qjCAnbRsMNEcpG9vGjmmDbE(ChatActivity.this, fileLocationArr, fileLocationArr2, clientUserId, inputFile, inputFile2, d, str, photoSize, photoSize2, z, videoSize2);
             }
 
             @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -264,18 +251,7 @@ public abstract class PhotoUtilities {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAvatartConstructorForUpdateUserPhoto$7(final ChatActivity chatActivity, final TLRPC.FileLocation[] fileLocationArr, final String str, final TLRPC.FileLocation[] fileLocationArr2, final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                PhotoUtilities.lambda$showAvatartConstructorForUpdateUserPhoto$6(TLRPC.TL_error.this, chatActivity, tLObject, fileLocationArr, str, fileLocationArr2, j);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAvatartConstructorForUpdateUserPhoto$6(TLRPC.TL_error tL_error, final ChatActivity chatActivity, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, final long j) {
+    public static /* synthetic */ void $r8$lambda$VGyOKEJ4EPt_YZymp46qHxmuRrU(TLRPC.TL_error tL_error, final ChatActivity chatActivity, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, final long j) {
         if (tL_error == null) {
             TLRPC.User user = chatActivity.getMessagesController().getUser(Long.valueOf(chatActivity.getUserConfig().getClientUserId()));
             TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
@@ -311,21 +287,19 @@ public abstract class PhotoUtilities {
             BulletinFactory.of(chatActivity).createUsersBulletin(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PhotoUtilities.lambda$showAvatartConstructorForUpdateUserPhoto$5(j, chatActivity);
+                    PhotoUtilities.$r8$lambda$qLMsmLE_mPCuS_MPL8DHMzZJa-s(j, chatActivity);
                 }
             }), null).show();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAvatartConstructorForUpdateUserPhoto$5(long j, ChatActivity chatActivity) {
+    public static /* synthetic */ void $r8$lambda$qLMsmLE_mPCuS_MPL8DHMzZJa-s(long j, ChatActivity chatActivity) {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", j);
         chatActivity.presentFragment(new ProfileActivity(bundle));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAvatartConstructorForUpdateUserPhoto$8(final ChatActivity chatActivity, final TLRPC.FileLocation[] fileLocationArr, final TLRPC.FileLocation[] fileLocationArr2, final long j, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, final String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z, TLRPC.VideoSize videoSize) {
+    public static /* synthetic */ void $r8$lambda$4Ua-qjCAnbRsMNEcpG9vGjmmDbE(final ChatActivity chatActivity, final TLRPC.FileLocation[] fileLocationArr, final TLRPC.FileLocation[] fileLocationArr2, final long j, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, final String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z, TLRPC.VideoSize videoSize) {
         if (inputFile != null || inputFile2 != null || videoSize != null) {
             TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
             if (inputFile != null) {
@@ -345,7 +319,12 @@ public abstract class PhotoUtilities {
             chatActivity.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    PhotoUtilities.lambda$showAvatartConstructorForUpdateUserPhoto$7(ChatActivity.this, fileLocationArr, str, fileLocationArr2, j, tLObject, tL_error);
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda3
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            PhotoUtilities.$r8$lambda$VGyOKEJ4EPt_YZymp46qHxmuRrU(TLRPC.TL_error.this, r2, tLObject, r4, r5, r6, r7);
+                        }
+                    });
                 }
             });
             return;

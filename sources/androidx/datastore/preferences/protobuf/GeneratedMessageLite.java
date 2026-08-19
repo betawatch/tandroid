@@ -128,14 +128,15 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite {
                 throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
-        if (generatedMessageLite == null) {
-            generatedMessageLite = ((GeneratedMessageLite) UnsafeUtil.allocateInstance(cls)).getDefaultInstanceForType();
-            if (generatedMessageLite == null) {
-                throw new IllegalStateException();
-            }
-            defaultInstanceMap.put(cls, generatedMessageLite);
+        if (generatedMessageLite != null) {
+            return generatedMessageLite;
         }
-        return generatedMessageLite;
+        GeneratedMessageLite defaultInstanceForType = ((GeneratedMessageLite) UnsafeUtil.allocateInstance(cls)).getDefaultInstanceForType();
+        if (defaultInstanceForType == null) {
+            throw new IllegalStateException();
+        }
+        defaultInstanceMap.put(cls, defaultInstanceForType);
+        return defaultInstanceForType;
     }
 
     protected static void registerDefaultInstance(Class cls, GeneratedMessageLite generatedMessageLite) {

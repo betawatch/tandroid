@@ -77,7 +77,7 @@ public class SearchAdsInfoBottomSheet extends BottomSheetWithRecyclerListView {
         linearLayout.addView(new FeatureCell(context, R.drawable.menu_feature_noads, LocaleController.getString(R.string.SearchAdsAbout2Title), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(isPremium ? R.string.SearchAdsAbout2SubtitlePremium : R.string.SearchAdsAbout2Subtitle), new Runnable() { // from class: org.telegram.ui.SearchAdsInfoBottomSheet$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SearchAdsInfoBottomSheet.this.lambda$new$0(isPremium, runnable);
+                SearchAdsInfoBottomSheet.$r8$lambda$cP11mBLI7UsZJfiN07B6PKcgzyE(SearchAdsInfoBottomSheet.this, isPremium, runnable);
             }
         }), true)), LayoutHelper.createLinear(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         View view = new View(getContext());
@@ -96,7 +96,7 @@ public class SearchAdsInfoBottomSheet extends BottomSheetWithRecyclerListView {
         SpannableStringBuilder replaceCharSequence = AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceTags(LocaleController.getString(R.string.SearchAdsAboutLaunchSubtitle)), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SearchAdsAboutLaunchLearnMore), new Runnable() { // from class: org.telegram.ui.SearchAdsInfoBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SearchAdsInfoBottomSheet.this.lambda$new$1();
+                SearchAdsInfoBottomSheet.$r8$lambda$2aVPqJyJSE9Nm6GxR3ptZdle81U(SearchAdsInfoBottomSheet.this);
             }
         }), true));
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
@@ -120,19 +120,19 @@ public class SearchAdsInfoBottomSheet extends BottomSheetWithRecyclerListView {
         textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SearchAdsInfoBottomSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SearchAdsInfoBottomSheet.this.lambda$new$2(view2);
+                SearchAdsInfoBottomSheet.this.dismiss();
             }
         });
         linearLayout.addView(textView4, LayoutHelper.createLinear(-1, 48, 0, 14, 22, 14, 14));
         this.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(boolean z, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$cP11mBLI7UsZJfiN07B6PKcgzyE(SearchAdsInfoBottomSheet searchAdsInfoBottomSheet, boolean z, Runnable runnable) {
         if (z) {
-            MessagesController.getInstance(this.currentAccount).disableAds(true);
+            MessagesController.getInstance(searchAdsInfoBottomSheet.currentAccount).disableAds(true);
             runnable.run();
         } else {
+            searchAdsInfoBottomSheet.getClass();
             BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
             if (safeLastFragment == null) {
                 return;
@@ -140,18 +140,12 @@ public class SearchAdsInfoBottomSheet extends BottomSheetWithRecyclerListView {
                 safeLastFragment.presentFragment(new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(3)));
             }
         }
-        lambda$new$0();
+        searchAdsInfoBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        lambda$new$0();
-        Browser.openUrl(getContext(), LocaleController.getString(R.string.PromoteUrl));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$2aVPqJyJSE9Nm6GxR3ptZdle81U(SearchAdsInfoBottomSheet searchAdsInfoBottomSheet) {
+        searchAdsInfoBottomSheet.dismiss();
+        Browser.openUrl(searchAdsInfoBottomSheet.getContext(), LocaleController.getString(R.string.PromoteUrl));
     }
 
     private class FeatureCell extends FrameLayout {

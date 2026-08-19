@@ -20,14 +20,12 @@ final class zziu {
     public final zzix zzb(Class cls) {
         zzhp.zzc(cls, "messageType");
         zzix zzixVar = (zzix) this.zzd.get(cls);
-        if (zzixVar == null) {
-            zzixVar = this.zzc.zza(cls);
-            zzhp.zzc(cls, "messageType");
-            zzix zzixVar2 = (zzix) this.zzd.putIfAbsent(cls, zzixVar);
-            if (zzixVar2 != null) {
-                return zzixVar2;
-            }
+        if (zzixVar != null) {
+            return zzixVar;
         }
-        return zzixVar;
+        zzix zza = this.zzc.zza(cls);
+        zzhp.zzc(cls, "messageType");
+        zzix zzixVar2 = (zzix) this.zzd.putIfAbsent(cls, zza);
+        return zzixVar2 == null ? zza : zzixVar2;
     }
 }

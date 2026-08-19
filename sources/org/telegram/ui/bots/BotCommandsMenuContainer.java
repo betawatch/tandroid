@@ -20,7 +20,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BotCommandsMenuContainer extends FrameLayout {
     private BlurredBackgroundDrawable backgroundDrawable;
     private float containerY;

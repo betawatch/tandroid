@@ -39,16 +39,17 @@ public class PlayPauseDrawable extends Drawable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void draw(Canvas canvas) {
         int i;
+        Canvas canvas2;
         float f;
         float interpolation;
         PathAnimator pathAnimator;
@@ -77,25 +78,27 @@ public class PlayPauseDrawable extends Drawable {
                 i = this.alpha;
                 if (i != 255) {
                     canvas.save();
+                    canvas2 = canvas;
                 } else {
-                    canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i, 31);
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i, 31);
                 }
-                canvas.translate(bounds.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds.centerY());
+                canvas2.translate(bounds.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds.centerY());
                 f = this.progress * 500.0f;
                 if (f >= 100.0f) {
                     interpolation = CubicBezierInterpolator.EASE_BOTH.getInterpolation(f / 100.0f) * (-5.0f);
                 } else {
                     interpolation = f < 484.0f ? (CubicBezierInterpolator.EASE_BOTH.getInterpolation((f - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
                 }
-                canvas.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
-                canvas.rotate(interpolation);
+                canvas2.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
+                canvas2.rotate(interpolation);
                 pathAnimator = Theme.playPauseAnimator;
                 if (pathAnimator != null) {
-                    pathAnimator.draw(canvas, this.paint, f);
-                    canvas.scale(1.0f, -1.0f);
-                    Theme.playPauseAnimator.draw(canvas, this.paint, f);
+                    pathAnimator.draw(canvas2, this.paint, f);
+                    canvas2.scale(1.0f, -1.0f);
+                    Theme.playPauseAnimator.draw(canvas2, this.paint, f);
                 }
-                canvas.restore();
+                canvas2.restore();
             }
         }
         if (!z) {
@@ -118,16 +121,16 @@ public class PlayPauseDrawable extends Drawable {
         i = this.alpha;
         if (i != 255) {
         }
-        canvas.translate(bounds2.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds2.centerY());
+        canvas2.translate(bounds2.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds2.centerY());
         f = this.progress * 500.0f;
         if (f >= 100.0f) {
         }
-        canvas.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
-        canvas.rotate(interpolation);
+        canvas2.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
+        canvas2.rotate(interpolation);
         pathAnimator = Theme.playPauseAnimator;
         if (pathAnimator != null) {
         }
-        canvas.restore();
+        canvas2.restore();
     }
 
     public void setPause(boolean z) {

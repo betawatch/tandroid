@@ -115,7 +115,8 @@ public class FragmentSpansContainer extends ScrollView {
         */
         protected void onMeasure(int i, int i2) {
             int min;
-            int i3;
+            char c;
+            int childCount = getChildCount();
             int size = View.MeasureSpec.getSize(i);
             int dp = size - AndroidUtilities.dp(26.0f);
             int dp2 = AndroidUtilities.dp(10.0f);
@@ -123,61 +124,59 @@ public class FragmentSpansContainer extends ScrollView {
             if (!this.animationStarted) {
                 this.maxTy = 0;
             }
+            int i3 = 0;
             int i4 = 0;
-            int i5 = 0;
-            int i6 = 0;
-            for (int childCount = getChildCount(); i4 < childCount; childCount = i3) {
-                View childAt = getChildAt(i4);
+            for (int i5 = 0; i5 < childCount; i5++) {
+                View childAt = getChildAt(i5);
                 if (childAt instanceof GroupCreateSpan) {
                     childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                     boolean contains = this.removingSpans.contains(childAt);
-                    if (!contains && childAt.getMeasuredWidth() + i5 > dp) {
+                    if (!contains && childAt.getMeasuredWidth() + i3 > dp) {
                         dp2 += childAt.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
-                        i5 = 0;
+                        i3 = 0;
                     }
-                    if (childAt.getMeasuredWidth() + i6 > dp) {
+                    if (childAt.getMeasuredWidth() + i4 > dp) {
                         dp3 += childAt.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
-                        i6 = 0;
+                        i4 = 0;
                     }
-                    int dp4 = AndroidUtilities.dp(13.0f) + i5;
+                    int dp4 = AndroidUtilities.dp(13.0f) + i3;
                     if (!this.animationStarted) {
                         if (contains) {
-                            childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i6);
+                            childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i4);
                             childAt.setTranslationY(dp3);
                         } else {
                             if (!this.removingSpans.isEmpty()) {
                                 float f = dp4;
                                 if (childAt.getTranslationX() != f) {
-                                    i3 = childCount;
+                                    c = 0;
                                     this.animators.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, f));
                                 } else {
-                                    i3 = childCount;
+                                    c = 0;
                                 }
                                 float f2 = dp2;
                                 if (childAt.getTranslationY() != f2) {
-                                    this.animators.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, f2));
+                                    ArrayList arrayList = this.animators;
+                                    Property property = View.TRANSLATION_Y;
+                                    float[] fArr = new float[1];
+                                    fArr[c] = f2;
+                                    arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, fArr));
                                 }
                                 this.maxTy = Math.max(this.maxTy, dp2);
                             } else {
-                                i3 = childCount;
                                 childAt.setTranslationX(dp4);
                                 childAt.setTranslationY(dp2);
                                 this.maxTy = Math.max(this.maxTy, dp2);
                             }
                             if (!contains) {
-                                i5 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
+                                i3 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
                             }
-                            i6 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
+                            i4 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
                         }
                     }
-                    i3 = childCount;
                     if (!contains) {
                     }
-                    i6 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
-                } else {
-                    i3 = childCount;
+                    i4 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
                 }
-                i4++;
             }
             if (AndroidUtilities.isTablet()) {
                 min = AndroidUtilities.dp(372.0f) / 3;
@@ -185,10 +184,10 @@ public class FragmentSpansContainer extends ScrollView {
                 Point point = AndroidUtilities.displaySize;
                 min = (Math.min(point.x, point.y) - AndroidUtilities.dp(158.0f)) / 3;
             }
-            if (dp - i5 < min) {
+            if (dp - i3 < min) {
                 dp2 += AndroidUtilities.dp(40.0f);
             }
-            if (dp - i6 < min) {
+            if (dp - i4 < min) {
                 dp3 += AndroidUtilities.dp(40.0f);
             }
             if (!this.animationStarted) {
@@ -212,8 +211,8 @@ public class FragmentSpansContainer extends ScrollView {
                 }
             }
             FragmentSpansContainer fragmentSpansContainer = FragmentSpansContainer.this;
-            int i7 = this.maxTy;
-            fragmentSpansContainer.visualHeight = i7 > 0 ? i7 + AndroidUtilities.dp(40.0f) : 0;
+            int i6 = this.maxTy;
+            fragmentSpansContainer.visualHeight = i6 > 0 ? i6 + AndroidUtilities.dp(40.0f) : 0;
             setMeasuredDimension(size, this.containerHeight);
             if (FragmentSpansContainer.this.delegate != null) {
                 FragmentSpansContainer.this.delegate.onAfterMeasure(FragmentSpansContainer.this.visualHeight);

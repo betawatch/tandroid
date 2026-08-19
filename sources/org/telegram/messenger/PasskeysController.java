@@ -43,14 +43,13 @@ public class PasskeysController {
             ConnectionsManager.getInstance(i).sendRequestTyped(new TL_account.initPasskeyRegistration(), new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda12
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    PasskeysController.lambda$create$9(AlertDialog.this, callback2, create, context, i, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
+                    PasskeysController.$r8$lambda$uzlz7C9R-irnBVnV8ty3z_v7jkQ(AlertDialog.this, callback2, create, context, i, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$9(AlertDialog alertDialog, final Utilities.Callback2 callback2, CredentialManager credentialManager, final Context context, final int i, TL_account.passkeyRegistrationOptions passkeyregistrationoptions, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$uzlz7C9R-irnBVnV8ty3z_v7jkQ(AlertDialog alertDialog, final Utilities.Callback2 callback2, CredentialManager credentialManager, final Context context, final int i, TL_account.passkeyRegistrationOptions passkeyregistrationoptions, TLRPC.TL_error tL_error) {
         alertDialog.dismiss();
         if (tL_error != null) {
             callback2.run(null, tL_error.text);
@@ -61,7 +60,7 @@ public class PasskeysController {
                 credentialManager.createCredential(context, new CreatePublicKeyCredentialRequest(new JSONObject(passkeyregistrationoptions.options.data).getJSONObject("publicKey").toString()), ktxCallback(new Utilities.Callback2() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda8
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
-                        PasskeysController.lambda$create$7(Utilities.Callback2.this, context, i, (CreateCredentialResponse) obj, (Throwable) obj2);
+                        PasskeysController.$r8$lambda$UFW9mxCL6OVJAvCzDQKgbaWCx_g(Utilities.Callback2.this, context, i, (CreateCredentialResponse) obj, (Throwable) obj2);
                     }
                 }));
             } catch (Exception e) {
@@ -69,7 +68,7 @@ public class PasskeysController {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PasskeysController.lambda$create$8(Utilities.Callback2.this, e);
+                        Utilities.Callback2.this.run(null, e.getMessage());
                     }
                 });
             }
@@ -79,8 +78,7 @@ public class PasskeysController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$7(final Utilities.Callback2 callback2, final Context context, final int i, CreateCredentialResponse createCredentialResponse, final Throwable th) {
+    public static /* synthetic */ void $r8$lambda$UFW9mxCL6OVJAvCzDQKgbaWCx_g(final Utilities.Callback2 callback2, final Context context, final int i, CreateCredentialResponse createCredentialResponse, final Throwable th) {
         if ((th instanceof CreateCredentialCancellationException) || (th instanceof CreateCredentialInterruptedException)) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
@@ -104,7 +102,7 @@ public class PasskeysController {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasskeysController.lambda$create$2(Utilities.Callback2.this, th);
+                    Utilities.Callback2.this.run(null, th.getMessage());
                 }
             });
             return;
@@ -127,7 +125,7 @@ public class PasskeysController {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasskeysController.lambda$create$6(context, i, registerpasskey, callback2);
+                    PasskeysController.$r8$lambda$y0t8xdzxstUVdPjML0pMI_yGUOg(context, i, registerpasskey, callback2);
                 }
             });
         } catch (Exception e) {
@@ -135,42 +133,30 @@ public class PasskeysController {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasskeysController.lambda$create$3(Utilities.Callback2.this, e);
+                    Utilities.Callback2.this.run(null, e.getMessage());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$2(Utilities.Callback2 callback2, Throwable th) {
-        callback2.run(null, th.getMessage());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$3(Utilities.Callback2 callback2, Exception exc) {
-        callback2.run(null, exc.getMessage());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$6(Context context, final int i, TL_account.registerPasskey registerpasskey, final Utilities.Callback2 callback2) {
+    public static /* synthetic */ void $r8$lambda$y0t8xdzxstUVdPjML0pMI_yGUOg(Context context, final int i, TL_account.registerPasskey registerpasskey, final Utilities.Callback2 callback2) {
         final AlertDialog alertDialog = new AlertDialog(context, 3);
         alertDialog.showDelayed(500L);
         final int sendRequestTyped = ConnectionsManager.getInstance(i).sendRequestTyped(registerpasskey, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda10
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                PasskeysController.lambda$create$4(AlertDialog.this, callback2, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.$r8$lambda$9XpDvasej2ZlaH5A73JOyh8A3uo(AlertDialog.this, callback2, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
             }
         });
         alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda11
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
-                PasskeysController.lambda$create$5(i, sendRequestTyped, callback2, dialogInterface);
+                PasskeysController.$r8$lambda$nn76CV_Y1sHdcydbtd3_ZJgwwi4(i, sendRequestTyped, callback2, dialogInterface);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$4(AlertDialog alertDialog, Utilities.Callback2 callback2, TL_account.Passkey passkey, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$9XpDvasej2ZlaH5A73JOyh8A3uo(AlertDialog alertDialog, Utilities.Callback2 callback2, TL_account.Passkey passkey, TLRPC.TL_error tL_error) {
         alertDialog.dismiss();
         if (tL_error != null) {
             callback2.run(null, tL_error.text);
@@ -179,15 +165,9 @@ public class PasskeysController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$5(int i, int i2, Utilities.Callback2 callback2, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$nn76CV_Y1sHdcydbtd3_ZJgwwi4(int i, int i2, Utilities.Callback2 callback2, DialogInterface dialogInterface) {
         ConnectionsManager.getInstance(i).cancelRequest(i2, true);
         callback2.run(null, "CANCELLED");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$8(Utilities.Callback2 callback2, Exception exc) {
-        callback2.run(null, exc.getMessage());
     }
 
     public static Runnable login(final Context context, final int i, final boolean z, final Utilities.Callback3<Long, TLRPC.auth_Authorization, String> callback3) {
@@ -202,25 +182,24 @@ public class PasskeysController {
         final int sendRequestTyped = ConnectionsManager.getInstance(i).sendRequestTyped(initpasskeylogin, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                PasskeysController.lambda$login$10(zArr, callback3, z, create, context, i, r7, (TL_account.passkeyLoginOptions) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.$r8$lambda$3L4sUw_47wNxWVaSQ6GIWRaiOEQ(zArr, callback3, z, create, context, i, r7, (TL_account.passkeyLoginOptions) obj, (TLRPC.TL_error) obj2);
             }
         }, 8);
         final Runnable[] runnableArr = {new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PasskeysController.lambda$login$11(i, sendRequestTyped);
+                ConnectionsManager.getInstance(i).cancelRequest(sendRequestTyped, true);
             }
         }};
         return new Runnable() { // from class: org.telegram.messenger.PasskeysController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                PasskeysController.lambda$login$12(zArr, runnableArr);
+                PasskeysController.$r8$lambda$r0BjSG3ZEIMsdcfxhA6pR0B2F-M(zArr, runnableArr);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$login$10(boolean[] zArr, Utilities.Callback3 callback3, boolean z, CredentialManager credentialManager, Context context, int i, Runnable[] runnableArr, TL_account.passkeyLoginOptions passkeyloginoptions, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$3L4sUw_47wNxWVaSQ6GIWRaiOEQ(boolean[] zArr, Utilities.Callback3 callback3, boolean z, CredentialManager credentialManager, Context context, int i, Runnable[] runnableArr, TL_account.passkeyLoginOptions passkeyloginoptions, TLRPC.TL_error tL_error) {
         Executor mainExecutor;
         if (zArr[0]) {
             return;
@@ -298,7 +277,7 @@ public class PasskeysController {
                 final int sendRequestTyped = connectionsManager.sendRequestTyped(finishpasskeylogin, aiTonesController$$ExternalSyntheticLambda0, new Utilities.Callback2() { // from class: org.telegram.messenger.PasskeysController$1$$ExternalSyntheticLambda0
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
-                        PasskeysController.1.lambda$onResult$0(AlertDialog.this, callback3, parseLong, (TLRPC.auth_Authorization) obj, (TLRPC.TL_error) obj2);
+                        PasskeysController.1.$r8$lambda$gx4vqzEbMkPbuY3kEBWRgHgji2Q(AlertDialog.this, callback3, parseLong, (TLRPC.auth_Authorization) obj, (TLRPC.TL_error) obj2);
                     }
                 }, parseInt, 72);
                 final int i = this.val$currentAccount;
@@ -306,7 +285,7 @@ public class PasskeysController {
                 alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.PasskeysController$1$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnCancelListener
                     public final void onCancel(DialogInterface dialogInterface) {
-                        PasskeysController.1.lambda$onResult$1(i, sendRequestTyped, callback32, parseLong, dialogInterface);
+                        PasskeysController.1.$r8$lambda$aD_TSB9_08HxxMQbIkVP1CwvnZ0(i, sendRequestTyped, callback32, parseLong, dialogInterface);
                     }
                 });
             } catch (Exception e) {
@@ -315,8 +294,7 @@ public class PasskeysController {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onResult$0(AlertDialog alertDialog, Utilities.Callback3 callback3, long j, TLRPC.auth_Authorization auth_authorization, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$gx4vqzEbMkPbuY3kEBWRgHgji2Q(AlertDialog alertDialog, Utilities.Callback3 callback3, long j, TLRPC.auth_Authorization auth_authorization, TLRPC.TL_error tL_error) {
             alertDialog.dismiss();
             if (tL_error != null) {
                 callback3.run(Long.valueOf(j), null, tL_error.text);
@@ -325,8 +303,7 @@ public class PasskeysController {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onResult$1(int i, int i2, Utilities.Callback3 callback3, long j, DialogInterface dialogInterface) {
+        public static /* synthetic */ void $r8$lambda$aD_TSB9_08HxxMQbIkVP1CwvnZ0(int i, int i2, Utilities.Callback3 callback3, long j, DialogInterface dialogInterface) {
             ConnectionsManager.getInstance(i).cancelRequest(i2, true);
             callback3.run(Long.valueOf(j), null, "CANCELLED");
         }
@@ -347,13 +324,7 @@ public class PasskeysController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$login$11(int i, int i2) {
-        ConnectionsManager.getInstance(i).cancelRequest(i2, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$login$12(boolean[] zArr, Runnable[] runnableArr) {
+    public static /* synthetic */ void $r8$lambda$r0BjSG3ZEIMsdcfxhA6pR0B2F-M(boolean[] zArr, Runnable[] runnableArr) {
         zArr[0] = true;
         Runnable runnable = runnableArr[0];
         if (runnable != null) {

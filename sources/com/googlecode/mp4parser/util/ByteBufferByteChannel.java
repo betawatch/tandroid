@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ByteChannel;
 
 /* loaded from: classes3.dex */
-public class ByteBufferByteChannel implements ByteChannel {
+public class ByteBufferByteChannel implements ByteChannel, AutoCloseable {
     ByteBuffer byteBuffer;
 
     @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable

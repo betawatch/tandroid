@@ -163,7 +163,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
     }
 
     private final void collectAnimEffects(List list) {
-        ArrayList<AnimationInfo> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -171,6 +171,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         }
         boolean isEmpty = arrayList2.isEmpty();
         Iterator it2 = list.iterator();
+        int i = 0;
         boolean z = false;
         while (it2.hasNext()) {
             AnimationInfo animationInfo = (AnimationInfo) it2.next();
@@ -197,7 +198,11 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                 }
             }
         }
-        for (AnimationInfo animationInfo2 : arrayList) {
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            AnimationInfo animationInfo2 = (AnimationInfo) obj;
             SpecialEffectsController.Operation operation2 = animationInfo2.getOperation();
             Fragment fragment2 = operation2.getFragment();
             if (isEmpty) {
@@ -215,24 +220,33 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
     }
 
     private final void createTransitionEffect(List list, boolean z, SpecialEffectsController.Operation operation, SpecialEffectsController.Operation operation2) {
-        Object obj;
         FragmentTransitionImpl fragmentTransitionImpl;
-        Iterator it;
+        ArrayList arrayList;
+        ArrayList arrayList2;
         Pair pair;
-        ArrayList arrayList = new ArrayList();
-        for (Object obj2 : list) {
-            if (!((TransitionInfo) obj2).isVisibilityUnchanged()) {
-                arrayList.add(obj2);
+        ArrayList arrayList3 = new ArrayList();
+        for (Object obj : list) {
+            if (!((TransitionInfo) obj).isVisibilityUnchanged()) {
+                arrayList3.add(obj);
             }
         }
-        ArrayList<TransitionInfo> arrayList2 = new ArrayList();
-        for (Object obj3 : arrayList) {
-            if (((TransitionInfo) obj3).getHandlingImpl() != null) {
-                arrayList2.add(obj3);
+        ArrayList arrayList4 = new ArrayList();
+        int size = arrayList3.size();
+        int i = 0;
+        while (i < size) {
+            Object obj2 = arrayList3.get(i);
+            i++;
+            if (((TransitionInfo) obj2).getHandlingImpl() != null) {
+                arrayList4.add(obj2);
             }
         }
+        int size2 = arrayList4.size();
         FragmentTransitionImpl fragmentTransitionImpl2 = null;
-        for (TransitionInfo transitionInfo : arrayList2) {
+        int i2 = 0;
+        while (i2 < size2) {
+            Object obj3 = arrayList4.get(i2);
+            i2++;
+            TransitionInfo transitionInfo = (TransitionInfo) obj3;
             FragmentTransitionImpl handlingImpl = transitionInfo.getHandlingImpl();
             if (fragmentTransitionImpl2 != null && handlingImpl != fragmentTransitionImpl2) {
                 throw new IllegalArgumentException(("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + transitionInfo.getOperation().getFragment() + " returned Transition " + transitionInfo.getTransition() + " which uses a different Transition type than other Fragments.").toString());
@@ -242,128 +256,148 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         if (fragmentTransitionImpl2 == null) {
             return;
         }
-        ArrayList arrayList3 = new ArrayList();
-        ArrayList arrayList4 = new ArrayList();
-        ArrayMap arrayMap = new ArrayMap();
         ArrayList arrayList5 = new ArrayList();
         ArrayList arrayList6 = new ArrayList();
+        ArrayMap arrayMap = new ArrayMap();
+        ArrayList arrayList7 = new ArrayList();
+        ArrayList arrayList8 = new ArrayList();
         ArrayMap arrayMap2 = new ArrayMap();
         ArrayMap arrayMap3 = new ArrayMap();
-        Iterator it2 = arrayList2.iterator();
-        ArrayList arrayList7 = arrayList5;
-        ArrayList arrayList8 = arrayList6;
-        loop3: while (true) {
-            obj = null;
-            while (it2.hasNext()) {
-                TransitionInfo transitionInfo2 = (TransitionInfo) it2.next();
-                if (transitionInfo2.hasSharedElementTransition() && operation != null && operation2 != null) {
-                    obj = fragmentTransitionImpl2.wrapTransitionInSet(fragmentTransitionImpl2.cloneTransition(transitionInfo2.getSharedElementTransition()));
-                    arrayList8 = operation2.getFragment().getSharedElementSourceNames();
-                    Intrinsics.checkNotNullExpressionValue(arrayList8, "lastIn.fragment.sharedElementSourceNames");
-                    ArrayList sharedElementSourceNames = operation.getFragment().getSharedElementSourceNames();
-                    Intrinsics.checkNotNullExpressionValue(sharedElementSourceNames, "firstOut.fragment.sharedElementSourceNames");
-                    ArrayList sharedElementTargetNames = operation.getFragment().getSharedElementTargetNames();
-                    Intrinsics.checkNotNullExpressionValue(sharedElementTargetNames, "firstOut.fragment.sharedElementTargetNames");
-                    int size = sharedElementTargetNames.size();
-                    it = it2;
-                    int i = 0;
-                    while (i < size) {
-                        int i2 = size;
-                        int indexOf = arrayList8.indexOf(sharedElementTargetNames.get(i));
-                        ArrayList arrayList9 = sharedElementTargetNames;
-                        if (indexOf != -1) {
-                            arrayList8.set(indexOf, sharedElementSourceNames.get(i));
-                        }
-                        i++;
-                        size = i2;
-                        sharedElementTargetNames = arrayList9;
+        int size3 = arrayList4.size();
+        ArrayList arrayList9 = arrayList7;
+        ArrayList arrayList10 = arrayList8;
+        Object obj4 = null;
+        int i3 = 0;
+        while (i3 < size3) {
+            Object obj5 = arrayList4.get(i3);
+            i3++;
+            TransitionInfo transitionInfo2 = (TransitionInfo) obj5;
+            if (!transitionInfo2.hasSharedElementTransition() || operation == null || operation2 == null) {
+                fragmentTransitionImpl = fragmentTransitionImpl2;
+                arrayList = arrayList5;
+                arrayList2 = arrayList6;
+            } else {
+                obj4 = fragmentTransitionImpl2.wrapTransitionInSet(fragmentTransitionImpl2.cloneTransition(transitionInfo2.getSharedElementTransition()));
+                arrayList10 = operation2.getFragment().getSharedElementSourceNames();
+                Intrinsics.checkNotNullExpressionValue(arrayList10, "lastIn.fragment.sharedElementSourceNames");
+                ArrayList sharedElementSourceNames = operation.getFragment().getSharedElementSourceNames();
+                Intrinsics.checkNotNullExpressionValue(sharedElementSourceNames, "firstOut.fragment.sharedElementSourceNames");
+                ArrayList sharedElementTargetNames = operation.getFragment().getSharedElementTargetNames();
+                fragmentTransitionImpl = fragmentTransitionImpl2;
+                Intrinsics.checkNotNullExpressionValue(sharedElementTargetNames, "firstOut.fragment.sharedElementTargetNames");
+                int size4 = sharedElementTargetNames.size();
+                arrayList = arrayList5;
+                int i4 = 0;
+                while (i4 < size4) {
+                    int i5 = size4;
+                    int indexOf = arrayList10.indexOf(sharedElementTargetNames.get(i4));
+                    ArrayList arrayList11 = sharedElementTargetNames;
+                    if (indexOf != -1) {
+                        arrayList10.set(indexOf, sharedElementSourceNames.get(i4));
                     }
-                    arrayList7 = operation2.getFragment().getSharedElementTargetNames();
-                    Intrinsics.checkNotNullExpressionValue(arrayList7, "lastIn.fragment.sharedElementTargetNames");
-                    if (z) {
-                        operation.getFragment().getEnterTransitionCallback();
-                        operation2.getFragment().getExitTransitionCallback();
-                        pair = TuplesKt.to(null, null);
-                    } else {
-                        operation.getFragment().getExitTransitionCallback();
-                        operation2.getFragment().getEnterTransitionCallback();
-                        pair = TuplesKt.to(null, null);
+                    i4++;
+                    size4 = i5;
+                    sharedElementTargetNames = arrayList11;
+                }
+                arrayList9 = operation2.getFragment().getSharedElementTargetNames();
+                Intrinsics.checkNotNullExpressionValue(arrayList9, "lastIn.fragment.sharedElementTargetNames");
+                if (z) {
+                    operation.getFragment().getEnterTransitionCallback();
+                    operation2.getFragment().getExitTransitionCallback();
+                    pair = TuplesKt.to(null, null);
+                } else {
+                    operation.getFragment().getExitTransitionCallback();
+                    operation2.getFragment().getEnterTransitionCallback();
+                    pair = TuplesKt.to(null, null);
+                }
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.component1());
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.component2());
+                int size5 = arrayList10.size();
+                int i6 = 0;
+                while (i6 < size5) {
+                    Object obj6 = arrayList10.get(i6);
+                    int i7 = size5;
+                    Intrinsics.checkNotNullExpressionValue(obj6, "exitingNames[i]");
+                    Object obj7 = arrayList9.get(i6);
+                    Intrinsics.checkNotNullExpressionValue(obj7, "enteringNames[i]");
+                    arrayMap.put((String) obj6, (String) obj7);
+                    i6++;
+                    size5 = i7;
+                }
+                if (FragmentManager.isLoggingEnabled(2)) {
+                    Log.v("FragmentManager", ">>> entering view names <<<");
+                    arrayList2 = arrayList6;
+                    int i8 = 0;
+                    for (int size6 = arrayList9.size(); i8 < size6; size6 = size6) {
+                        Object obj8 = arrayList9.get(i8);
+                        Log.v("FragmentManager", "Name: " + ((String) obj8));
+                        i8++;
                     }
-                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.component1());
-                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.component2());
-                    int size2 = arrayList8.size();
-                    int i3 = 0;
-                    while (i3 < size2) {
-                        Object obj4 = arrayList8.get(i3);
-                        int i4 = size2;
-                        Intrinsics.checkNotNullExpressionValue(obj4, "exitingNames[i]");
-                        Object obj5 = arrayList7.get(i3);
-                        Intrinsics.checkNotNullExpressionValue(obj5, "enteringNames[i]");
-                        arrayMap.put((String) obj4, (String) obj5);
-                        i3++;
-                        size2 = i4;
-                        fragmentTransitionImpl2 = fragmentTransitionImpl2;
-                    }
-                    fragmentTransitionImpl = fragmentTransitionImpl2;
-                    if (FragmentManager.isLoggingEnabled(2)) {
-                        Log.v("FragmentManager", ">>> entering view names <<<");
-                        for (Iterator it3 = arrayList7.iterator(); it3.hasNext(); it3 = it3) {
-                            Log.v("FragmentManager", "Name: " + ((String) it3.next()));
-                        }
-                        Log.v("FragmentManager", ">>> exiting view names <<<");
-                        for (Iterator it4 = arrayList8.iterator(); it4.hasNext(); it4 = it4) {
-                            Log.v("FragmentManager", "Name: " + ((String) it4.next()));
-                        }
-                    }
-                    View view = operation.getFragment().mView;
-                    Intrinsics.checkNotNullExpressionValue(view, "firstOut.fragment.mView");
-                    findNamedViews(arrayMap2, view);
-                    arrayMap2.retainAll(arrayList8);
-                    arrayMap.retainAll(arrayMap2.keySet());
-                    View view2 = operation2.getFragment().mView;
-                    Intrinsics.checkNotNullExpressionValue(view2, "lastIn.fragment.mView");
-                    findNamedViews(arrayMap3, view2);
-                    arrayMap3.retainAll(arrayList7);
-                    arrayMap3.retainAll(arrayMap.values());
-                    FragmentTransition.retainValues(arrayMap, arrayMap3);
-                    Collection keySet = arrayMap.keySet();
-                    Intrinsics.checkNotNullExpressionValue(keySet, "sharedElementNameMapping.keys");
-                    retainMatchingViews(arrayMap2, keySet);
-                    Collection values = arrayMap.values();
-                    Intrinsics.checkNotNullExpressionValue(values, "sharedElementNameMapping.values");
-                    retainMatchingViews(arrayMap3, values);
-                    if (arrayMap.isEmpty()) {
-                        break;
+                    Log.v("FragmentManager", ">>> exiting view names <<<");
+                    int i9 = 0;
+                    for (int size7 = arrayList10.size(); i9 < size7; size7 = size7) {
+                        Object obj9 = arrayList10.get(i9);
+                        Log.v("FragmentManager", "Name: " + ((String) obj9));
+                        i9++;
                     }
                 } else {
-                    fragmentTransitionImpl = fragmentTransitionImpl2;
-                    it = it2;
+                    arrayList2 = arrayList6;
                 }
-                it2 = it;
-                fragmentTransitionImpl2 = fragmentTransitionImpl;
+                View view = operation.getFragment().mView;
+                Intrinsics.checkNotNullExpressionValue(view, "firstOut.fragment.mView");
+                findNamedViews(arrayMap2, view);
+                arrayMap2.retainAll(arrayList10);
+                arrayMap.retainAll(arrayMap2.keySet());
+                View view2 = operation2.getFragment().mView;
+                Intrinsics.checkNotNullExpressionValue(view2, "lastIn.fragment.mView");
+                findNamedViews(arrayMap3, view2);
+                arrayMap3.retainAll(arrayList9);
+                arrayMap3.retainAll(arrayMap.values());
+                FragmentTransition.retainValues(arrayMap, arrayMap3);
+                Collection keySet = arrayMap.keySet();
+                Intrinsics.checkNotNullExpressionValue(keySet, "sharedElementNameMapping.keys");
+                retainMatchingViews(arrayMap2, keySet);
+                Collection values = arrayMap.values();
+                Intrinsics.checkNotNullExpressionValue(values, "sharedElementNameMapping.values");
+                retainMatchingViews(arrayMap3, values);
+                if (arrayMap.isEmpty()) {
+                    Log.i("FragmentManager", "Ignoring shared elements transition " + obj4 + " between " + operation + " and " + operation2 + " as there are no matching elements in both the entering and exiting fragment. In order to run a SharedElementTransition, both fragments involved must have the element.");
+                    arrayList.clear();
+                    arrayList2.clear();
+                    fragmentTransitionImpl2 = fragmentTransitionImpl;
+                    arrayList5 = arrayList;
+                    arrayList6 = arrayList2;
+                    obj4 = null;
+                }
             }
-            Log.i("FragmentManager", "Ignoring shared elements transition " + obj + " between " + operation + " and " + operation2 + " as there are no matching elements in both the entering and exiting fragment. In order to run a SharedElementTransition, both fragments involved must have the element.");
-            arrayList3.clear();
-            arrayList4.clear();
-            it2 = it;
             fragmentTransitionImpl2 = fragmentTransitionImpl;
+            arrayList5 = arrayList;
+            arrayList6 = arrayList2;
         }
         FragmentTransitionImpl fragmentTransitionImpl3 = fragmentTransitionImpl2;
-        if (obj == null) {
-            if (arrayList2.isEmpty()) {
+        ArrayList arrayList12 = arrayList5;
+        ArrayList arrayList13 = arrayList6;
+        if (obj4 == null) {
+            if (arrayList4.isEmpty()) {
                 return;
             }
-            Iterator it5 = arrayList2.iterator();
-            while (it5.hasNext()) {
-                if (((TransitionInfo) it5.next()).getTransition() == null) {
+            int size8 = arrayList4.size();
+            int i10 = 0;
+            while (i10 < size8) {
+                Object obj10 = arrayList4.get(i10);
+                i10++;
+                if (((TransitionInfo) obj10).getTransition() == null) {
                 }
             }
             return;
         }
-        TransitionEffect transitionEffect = new TransitionEffect(arrayList2, operation, operation2, fragmentTransitionImpl3, obj, arrayList3, arrayList4, arrayMap, arrayList7, arrayList8, arrayMap2, arrayMap3, z);
-        Iterator it6 = arrayList2.iterator();
-        while (it6.hasNext()) {
-            ((TransitionInfo) it6.next()).getOperation().addEffect(transitionEffect);
+        TransitionEffect transitionEffect = new TransitionEffect(arrayList4, operation, operation2, fragmentTransitionImpl3, obj4, arrayList12, arrayList13, arrayMap, arrayList9, arrayList10, arrayMap2, arrayMap3, z);
+        int size9 = arrayList4.size();
+        int i11 = 0;
+        while (i11 < size9) {
+            Object obj11 = arrayList4.get(i11);
+            i11++;
+            ((TransitionInfo) obj11).getOperation().addEffect(transitionEffect);
         }
     }
 
@@ -415,11 +449,14 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         }
 
         public final boolean isVisibilityUnchanged() {
-            SpecialEffectsController.Operation.State state;
             View view = this.operation.getFragment().mView;
             SpecialEffectsController.Operation.State asOperationState = view != null ? SpecialEffectsController.Operation.State.Companion.asOperationState(view) : null;
             SpecialEffectsController.Operation.State finalState = this.operation.getFinalState();
-            return asOperationState == finalState || !(asOperationState == (state = SpecialEffectsController.Operation.State.VISIBLE) || finalState == state);
+            if (asOperationState == finalState) {
+                return true;
+            }
+            SpecialEffectsController.Operation.State state = SpecialEffectsController.Operation.State.VISIBLE;
+            return (asOperationState == state || finalState == state) ? false : true;
         }
     }
 
@@ -612,6 +649,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
 
         @Override // androidx.fragment.app.SpecialEffectsController.Effect
         public void onStart(final ViewGroup container) {
+            final AnimatorEffect animatorEffect;
             Intrinsics.checkNotNullParameter(container, "container");
             if (this.animatorInfo.isVisibilityUnchanged()) {
                 return;
@@ -628,6 +666,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
             container.startViewTransition(view);
             AnimatorSet animatorSet = this.animator;
             if (animatorSet != null) {
+                animatorEffect = this;
                 animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$AnimatorEffect$onStart$1
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator anim) {
@@ -639,14 +678,16 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                             Intrinsics.checkNotNullExpressionValue(viewToAnimate, "viewToAnimate");
                             finalState.applyState(viewToAnimate, container);
                         }
-                        this.getAnimatorInfo().getOperation().completeEffect(this);
+                        animatorEffect.getAnimatorInfo().getOperation().completeEffect(animatorEffect);
                         if (FragmentManager.isLoggingEnabled(2)) {
                             Log.v("FragmentManager", "Animator from operation " + operation + " has ended.");
                         }
                     }
                 });
+            } else {
+                animatorEffect = this;
             }
-            AnimatorSet animatorSet2 = this.animator;
+            AnimatorSet animatorSet2 = animatorEffect.animator;
             if (animatorSet2 != null) {
                 animatorSet2.setTarget(view);
             }
@@ -800,21 +841,19 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
 
         @Override // androidx.fragment.app.SpecialEffectsController.Effect
         public boolean isSeekingSupported() {
-            if (this.transitionImpl.isSeekingSupported()) {
-                List<TransitionInfo> list = this.transitionInfos;
-                if (!(list instanceof Collection) || !list.isEmpty()) {
-                    for (TransitionInfo transitionInfo : list) {
-                        if (Build.VERSION.SDK_INT < 34 || transitionInfo.getTransition() == null || !this.transitionImpl.isSeekingSupported(transitionInfo.getTransition())) {
-                            break;
-                        }
+            if (!this.transitionImpl.isSeekingSupported()) {
+                return false;
+            }
+            List<TransitionInfo> list = this.transitionInfos;
+            if (!(list instanceof Collection) || !list.isEmpty()) {
+                for (TransitionInfo transitionInfo : list) {
+                    if (Build.VERSION.SDK_INT < 34 || transitionInfo.getTransition() == null || !this.transitionImpl.isSeekingSupported(transitionInfo.getTransition())) {
+                        return false;
                     }
                 }
-                Object obj = this.sharedElementTransition;
-                if (obj == null || this.transitionImpl.isSeekingSupported(obj)) {
-                    return true;
-                }
             }
-            return false;
+            Object obj = this.sharedElementTransition;
+            return obj == null || this.transitionImpl.isSeekingSupported(obj);
         }
 
         public final boolean getTransitioning() {
@@ -853,12 +892,14 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                 ArrayList arrayList = (ArrayList) createMergedTransition.component1();
                 final Object component2 = createMergedTransition.component2();
                 List list = this.transitionInfos;
-                ArrayList<SpecialEffectsController.Operation> arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                 Iterator it2 = list.iterator();
                 while (it2.hasNext()) {
                     arrayList2.add(((TransitionInfo) it2.next()).getOperation());
                 }
-                for (final SpecialEffectsController.Operation operation2 : arrayList2) {
+                int size = arrayList2.size();
+                for (int i = 0; i < size; i++) {
+                    final SpecialEffectsController.Operation operation2 = (SpecialEffectsController.Operation) arrayList2.get(i);
                     this.transitionImpl.setListenerForTransitionEnd(operation2.getFragment(), component2, this.transitionSignal, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -1040,7 +1081,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                                             r5.<init>(r4)
                                             r1.setListenerForTransitionEnd(r2, r3, r0, r5)
                                             r0.cancel()
-                                            goto L94
+                                            return
                                         L6e:
                                             boolean r0 = androidx.fragment.app.FragmentManager.isLoggingEnabled(r3)
                                             if (r0 == 0) goto L79
@@ -1057,7 +1098,6 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                                             androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda0 r4 = new androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda0
                                             r4.<init>(r2, r3)
                                             r0.animateToStart(r1, r4)
-                                        L94:
                                             return
                                         */
                                         throw new UnsupportedOperationException("Method not decompiled: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4.1.invoke():void");
@@ -1125,6 +1165,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                     @Override // androidx.fragment.app.SpecialEffectsController.Effect
                     public void onCommit(final ViewGroup container) {
                         Intrinsics.checkNotNullParameter(container, "container");
+                        int i = 0;
                         if (container.isLaidOut() && !this.noControllerReturned) {
                             Object obj = this.controller;
                             if (obj != null) {
@@ -1141,12 +1182,16 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                             ArrayList arrayList = (ArrayList) createMergedTransition.component1();
                             final Object component2 = createMergedTransition.component2();
                             List list = this.transitionInfos;
-                            ArrayList<SpecialEffectsController.Operation> arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                             Iterator it = list.iterator();
                             while (it.hasNext()) {
                                 arrayList2.add(((TransitionInfo) it.next()).getOperation());
                             }
-                            for (final SpecialEffectsController.Operation operation : arrayList2) {
+                            int size = arrayList2.size();
+                            while (i < size) {
+                                Object obj2 = arrayList2.get(i);
+                                i++;
+                                final SpecialEffectsController.Operation operation = (SpecialEffectsController.Operation) obj2;
                                 this.transitionImpl.setListenerForTransitionEnd(operation.getFragment(), component2, this.transitionSignal, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda2
                                     @Override // java.lang.Runnable
                                     public final void run() {
@@ -1200,20 +1245,21 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                         operation.completeEffect(this$0);
                     }
 
-                    private final Pair createMergedTransition(ViewGroup viewGroup, SpecialEffectsController.Operation operation, final SpecialEffectsController.Operation operation2) {
+                    private final Pair createMergedTransition(ViewGroup viewGroup, SpecialEffectsController.Operation operation, SpecialEffectsController.Operation operation2) {
                         final SpecialEffectsController.Operation operation3 = operation;
+                        final SpecialEffectsController.Operation operation4 = operation2;
                         View view = new View(viewGroup.getContext());
                         final Rect rect = new Rect();
                         Iterator it = this.transitionInfos.iterator();
                         View view2 = null;
                         boolean z = false;
                         while (it.hasNext()) {
-                            if (((TransitionInfo) it.next()).hasSharedElementTransition() && operation2 != null && operation3 != null && !this.sharedElementNameMapping.isEmpty() && this.sharedElementTransition != null) {
-                                FragmentTransition.callSharedElementStartEnd(operation.getFragment(), operation2.getFragment(), this.isPop, this.firstOutViews, true);
+                            if (((TransitionInfo) it.next()).hasSharedElementTransition() && operation4 != null && operation3 != null && !this.sharedElementNameMapping.isEmpty() && this.sharedElementTransition != null) {
+                                FragmentTransition.callSharedElementStartEnd(operation3.getFragment(), operation4.getFragment(), this.isPop, this.firstOutViews, true);
                                 OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda3
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        DefaultSpecialEffectsController.TransitionEffect.createMergedTransition$lambda$12(SpecialEffectsController.Operation.this, operation2, this);
+                                        DefaultSpecialEffectsController.TransitionEffect.createMergedTransition$lambda$12(SpecialEffectsController.Operation.this, operation4, this);
                                     }
                                 });
                                 this.sharedElementFirstOutViews.addAll(this.firstOutViews.values());
@@ -1251,18 +1297,17 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                         Object obj5 = null;
                         while (it2.hasNext()) {
                             TransitionInfo transitionInfo = (TransitionInfo) it2.next();
-                            SpecialEffectsController.Operation operation4 = transitionInfo.getOperation();
-                            Iterator it3 = it2;
+                            SpecialEffectsController.Operation operation5 = transitionInfo.getOperation();
+                            boolean z2 = z;
                             Object cloneTransition = this.transitionImpl.cloneTransition(transitionInfo.getTransition());
                             if (cloneTransition != null) {
                                 final ArrayList arrayList2 = new ArrayList();
-                                Object obj6 = obj5;
-                                View view4 = operation4.getFragment().mView;
-                                Object obj7 = obj4;
+                                Iterator it3 = it2;
+                                View view4 = operation5.getFragment().mView;
                                 Intrinsics.checkNotNullExpressionValue(view4, "operation.fragment.mView");
                                 captureTransitioningViews(arrayList2, view4);
-                                if (this.sharedElementTransition != null && (operation4 == operation2 || operation4 == operation3)) {
-                                    if (operation4 == operation2) {
+                                if (this.sharedElementTransition != null && (operation5 == operation4 || operation5 == operation3)) {
+                                    if (operation5 == operation4) {
                                         arrayList2.removeAll(CollectionsKt.toSet(this.sharedElementFirstOutViews));
                                     } else {
                                         arrayList2.removeAll(CollectionsKt.toSet(this.sharedElementLastInViews));
@@ -1273,11 +1318,11 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                                 } else {
                                     this.transitionImpl.addTargets(cloneTransition, arrayList2);
                                     this.transitionImpl.scheduleRemoveTargets(cloneTransition, cloneTransition, arrayList2, null, null, null, null);
-                                    if (operation4.getFinalState() == SpecialEffectsController.Operation.State.GONE) {
-                                        operation4.setAwaitingContainerChanges(false);
+                                    if (operation5.getFinalState() == SpecialEffectsController.Operation.State.GONE) {
+                                        operation5.setAwaitingContainerChanges(false);
                                         ArrayList arrayList3 = new ArrayList(arrayList2);
-                                        arrayList3.remove(operation4.getFragment().mView);
-                                        this.transitionImpl.scheduleHideFragmentView(cloneTransition, operation4.getFragment().mView, arrayList3);
+                                        arrayList3.remove(operation5.getFragment().mView);
+                                        this.transitionImpl.scheduleHideFragmentView(cloneTransition, operation5.getFragment().mView, arrayList3);
                                         OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda5
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -1286,19 +1331,23 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                                         });
                                     }
                                 }
-                                if (operation4.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
+                                if (operation5.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
                                     arrayList.addAll(arrayList2);
-                                    if (z) {
+                                    if (z2) {
                                         this.transitionImpl.setEpicenter(cloneTransition, rect);
                                     }
                                     if (FragmentManager.isLoggingEnabled(2)) {
                                         Log.v("FragmentManager", "Entering Transition: " + cloneTransition);
                                         Log.v("FragmentManager", ">>>>> EnteringViews <<<<<");
-                                        Iterator it4 = arrayList2.iterator();
-                                        while (it4.hasNext()) {
-                                            Object transitioningViews = it4.next();
+                                        int size = arrayList2.size();
+                                        int i = 0;
+                                        while (i < size) {
+                                            int i2 = size;
+                                            Object transitioningViews = arrayList2.get(i);
+                                            i++;
                                             Intrinsics.checkNotNullExpressionValue(transitioningViews, "transitioningViews");
                                             Log.v("FragmentManager", "View: " + ((View) transitioningViews));
+                                            size = i2;
                                         }
                                     }
                                 } else {
@@ -1306,26 +1355,29 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                                     if (FragmentManager.isLoggingEnabled(2)) {
                                         Log.v("FragmentManager", "Exiting Transition: " + cloneTransition);
                                         Log.v("FragmentManager", ">>>>> ExitingViews <<<<<");
-                                        Iterator it5 = arrayList2.iterator();
-                                        while (it5.hasNext()) {
-                                            Object transitioningViews2 = it5.next();
+                                        int i3 = 0;
+                                        for (int size2 = arrayList2.size(); i3 < size2; size2 = size2) {
+                                            Object transitioningViews2 = arrayList2.get(i3);
+                                            i3++;
                                             Intrinsics.checkNotNullExpressionValue(transitioningViews2, "transitioningViews");
                                             Log.v("FragmentManager", "View: " + ((View) transitioningViews2));
                                         }
                                     }
                                 }
                                 if (transitionInfo.isOverlapAllowed()) {
-                                    obj4 = this.transitionImpl.mergeTransitionsTogether(obj7, cloneTransition, null);
-                                    operation3 = operation;
-                                    it2 = it3;
-                                    obj5 = obj6;
+                                    obj4 = this.transitionImpl.mergeTransitionsTogether(obj4, cloneTransition, null);
                                 } else {
-                                    obj4 = obj7;
-                                    obj5 = this.transitionImpl.mergeTransitionsTogether(obj6, cloneTransition, null);
+                                    obj5 = this.transitionImpl.mergeTransitionsTogether(obj5, cloneTransition, null);
                                 }
+                                operation3 = operation;
+                                operation4 = operation2;
+                                z = z2;
+                                it2 = it3;
+                            } else {
+                                operation3 = operation;
+                                operation4 = operation2;
+                                z = z2;
                             }
-                            operation3 = operation;
-                            it2 = it3;
                         }
                         Object mergeTransitionsInSequence = this.transitionImpl.mergeTransitionsInSequence(obj4, obj5, this.sharedElementTransition);
                         if (FragmentManager.isLoggingEnabled(2)) {
@@ -1359,17 +1411,23 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                         if (FragmentManager.isLoggingEnabled(2)) {
                             Log.v("FragmentManager", ">>>>> Beginning transition <<<<<");
                             Log.v("FragmentManager", ">>>>> SharedElementFirstOutViews <<<<<");
-                            Iterator it = this.sharedElementFirstOutViews.iterator();
-                            while (it.hasNext()) {
-                                Object sharedElementFirstOutViews = it.next();
+                            ArrayList arrayList2 = this.sharedElementFirstOutViews;
+                            int size = arrayList2.size();
+                            int i = 0;
+                            while (i < size) {
+                                Object sharedElementFirstOutViews = arrayList2.get(i);
+                                i++;
                                 Intrinsics.checkNotNullExpressionValue(sharedElementFirstOutViews, "sharedElementFirstOutViews");
                                 View view = (View) sharedElementFirstOutViews;
                                 Log.v("FragmentManager", "View: " + view + " Name: " + ViewCompat.getTransitionName(view));
                             }
                             Log.v("FragmentManager", ">>>>> SharedElementLastInViews <<<<<");
-                            Iterator it2 = this.sharedElementLastInViews.iterator();
-                            while (it2.hasNext()) {
-                                Object sharedElementLastInViews = it2.next();
+                            ArrayList arrayList3 = this.sharedElementLastInViews;
+                            int size2 = arrayList3.size();
+                            int i2 = 0;
+                            while (i2 < size2) {
+                                Object sharedElementLastInViews = arrayList3.get(i2);
+                                i2++;
                                 Intrinsics.checkNotNullExpressionValue(sharedElementLastInViews, "sharedElementLastInViews");
                                 View view2 = (View) sharedElementLastInViews;
                                 Log.v("FragmentManager", "View: " + view2 + " Name: " + ViewCompat.getTransitionName(view2));

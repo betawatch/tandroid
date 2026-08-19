@@ -115,13 +115,12 @@ public abstract class RichInlineButtonEditor {
         inlineButtonEdit.showInputDialog(LocaleController.getString(z2 ? R.string.RichEditorEditLinkButton : R.string.RichEditorCreateLinkButton), LocaleController.getString(R.string.RichEditorButtonURL), str, true, !z, new EditTextCaption.InputDialogCallback() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Components.EditTextCaption.InputDialogCallback
             public final void run(String str2) {
-                RichInlineButtonEditor.lambda$showInlineLinkDialog$6(RichEditorListView.InlineButtonEdit.this, str2);
+                RichInlineButtonEditor.$r8$lambda$Gi4Gfh1y_O3TV1ASyCBSCpCELx0(RichEditorListView.InlineButtonEdit.this, str2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showInlineLinkDialog$6(RichEditorListView.InlineButtonEdit inlineButtonEdit, String str) {
+    public static /* synthetic */ void $r8$lambda$Gi4Gfh1y_O3TV1ASyCBSCpCELx0(RichEditorListView.InlineButtonEdit inlineButtonEdit, String str) {
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -139,13 +138,12 @@ public abstract class RichInlineButtonEditor {
         inlineButtonEdit.showInputDialog(LocaleController.getString(z2 ? R.string.RichEditorEditCopyButton : R.string.RichEditorCreateCopyButton), LocaleController.getString(R.string.RichEditorButtonCopyText), label, false, !z, new EditTextCaption.InputDialogCallback() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.EditTextCaption.InputDialogCallback
             public final void run(String str) {
-                RichInlineButtonEditor.lambda$showInlineCopyDialog$7(RichEditorListView.InlineButtonEdit.this, str);
+                RichInlineButtonEditor.$r8$lambda$k4Uyi-bSmgnkrb0D_htrUlGmT84(RichEditorListView.InlineButtonEdit.this, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showInlineCopyDialog$7(RichEditorListView.InlineButtonEdit inlineButtonEdit, String str) {
+    public static /* synthetic */ void $r8$lambda$k4Uyi-bSmgnkrb0D_htrUlGmT84(RichEditorListView.InlineButtonEdit inlineButtonEdit, String str) {
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -160,13 +158,12 @@ public abstract class RichInlineButtonEditor {
         showUserPicker(baseFragment, z, new UserPicked() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.iv.RichInlineButtonEditor.UserPicked
             public final void run(long j) {
-                RichInlineButtonEditor.lambda$showInlineUserPicker$8(RichEditorListView.InlineButtonEdit.this, j);
+                RichInlineButtonEditor.$r8$lambda$JlIy6My55sprHvl_5eMxqrbVgy4(RichEditorListView.InlineButtonEdit.this, j);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showInlineUserPicker$8(RichEditorListView.InlineButtonEdit inlineButtonEdit, long j) {
+    public static /* synthetic */ void $r8$lambda$JlIy6My55sprHvl_5eMxqrbVgy4(RichEditorListView.InlineButtonEdit inlineButtonEdit, long j) {
         TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
         tL_inlineButtonTypeUserProfile.user_id = j;
         inlineButtonEdit.apply(tL_inlineButtonTypeUserProfile);
@@ -189,13 +186,12 @@ public abstract class RichInlineButtonEditor {
         showBlockTextAndValueDialog(context, resourcesProvider, blockButtonEdit, z, LocaleController.getString(exists ? R.string.RichEditorEditLinkButton : R.string.RichEditorCreateLinkButton), LocaleController.getString(R.string.RichEditorButtonURL), type instanceof TL_keyboard.TL_inlineButtonTypeUrl ? ((TL_keyboard.TL_inlineButtonTypeUrl) type).url : "http://", new BlockApply() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.iv.RichInlineButtonEditor.BlockApply
             public final void run(String str, String str2) {
-                RichInlineButtonEditor.lambda$showBlockLinkDialog$9(RichEditorListView.BlockButtonEdit.this, str, str2);
+                RichInlineButtonEditor.$r8$lambda$wZL_qzcmJBk47z4zB5GbKXEawDM(RichEditorListView.BlockButtonEdit.this, str, str2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBlockLinkDialog$9(RichEditorListView.BlockButtonEdit blockButtonEdit, String str, String str2) {
+    public static /* synthetic */ void $r8$lambda$wZL_qzcmJBk47z4zB5GbKXEawDM(RichEditorListView.BlockButtonEdit blockButtonEdit, String str, String str2) {
         TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = new TL_keyboard.TL_inlineButtonTypeUrl();
         tL_inlineButtonTypeUrl.url = str2;
         blockButtonEdit.apply(str, tL_inlineButtonTypeUrl);
@@ -208,13 +204,12 @@ public abstract class RichInlineButtonEditor {
         showBlockTextAndValueDialog(context, resourcesProvider, blockButtonEdit, z, LocaleController.getString(exists ? R.string.RichEditorEditCopyButton : R.string.RichEditorCreateCopyButton), LocaleController.getString(R.string.RichEditorButtonCopyText), type instanceof TL_keyboard.TL_inlineButtonTypeCopy ? ((TL_keyboard.TL_inlineButtonTypeCopy) type).copy_text : "", new BlockApply() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda16
             @Override // org.telegram.ui.iv.RichInlineButtonEditor.BlockApply
             public final void run(String str, String str2) {
-                RichInlineButtonEditor.lambda$showBlockCopyDialog$10(RichEditorListView.BlockButtonEdit.this, str, str2);
+                RichInlineButtonEditor.$r8$lambda$plAy2aj-P4WFvyMss9W5bArwOH0(RichEditorListView.BlockButtonEdit.this, str, str2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBlockCopyDialog$10(RichEditorListView.BlockButtonEdit blockButtonEdit, String str, String str2) {
+    public static /* synthetic */ void $r8$lambda$plAy2aj-P4WFvyMss9W5bArwOH0(RichEditorListView.BlockButtonEdit blockButtonEdit, String str, String str2) {
         TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy = new TL_keyboard.TL_inlineButtonTypeCopy();
         tL_inlineButtonTypeCopy.copy_text = str2;
         blockButtonEdit.apply(str, tL_inlineButtonTypeCopy);
@@ -232,7 +227,7 @@ public abstract class RichInlineButtonEditor {
         createInputDialogBuilder.setTitle(str).setView(linearLayout).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                RichInlineButtonEditor.lambda$showBlockTextAndValueDialog$11(EditTextBoldCursor.this, createField2, blockApply, alertDialog, i);
+                RichInlineButtonEditor.$r8$lambda$kiEtvQxyO3M-Gj9F2wc7QVpOmzw(EditTextBoldCursor.this, createField2, blockApply, alertDialog, i);
             }
         });
         addCancelAndDelete(createInputDialogBuilder, blockButtonEdit);
@@ -242,8 +237,7 @@ public abstract class RichInlineButtonEditor {
         showInputDialog(createInputDialogBuilder, createField, blockButtonEdit.exists() ? -3 : 0, resourcesProvider);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBlockTextAndValueDialog$11(EditTextBoldCursor editTextBoldCursor, EditTextBoldCursor editTextBoldCursor2, BlockApply blockApply, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$kiEtvQxyO3M-Gj9F2wc7QVpOmzw(EditTextBoldCursor editTextBoldCursor, EditTextBoldCursor editTextBoldCursor2, BlockApply blockApply, AlertDialog alertDialog, int i) {
         String trim = editTextBoldCursor.getText().toString().trim();
         String trim2 = editTextBoldCursor2.getText().toString().trim();
         if (TextUtils.isEmpty(trim) || TextUtils.isEmpty(trim2)) {
@@ -264,14 +258,14 @@ public abstract class RichInlineButtonEditor {
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                RichInlineButtonEditor.lambda$showBlockProfileDialog$13(EditTextBoldCursor.this, baseFragment, z, blockButtonEdit);
+                RichInlineButtonEditor.$r8$lambda$aQAC9urWRNFWGEd1_EG2stusK-g(EditTextBoldCursor.this, baseFragment, z, blockButtonEdit);
             }
         };
         AlertDialog.Builder createInputDialogBuilder = createInputDialogBuilder(context, resourcesProvider, z);
         createInputDialogBuilder.setTitle(LocaleController.getString(exists ? R.string.RichEditorEditProfileButton : R.string.RichEditorCreateProfileButton)).setView(linearLayout).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda13
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                RichInlineButtonEditor.lambda$showBlockProfileDialog$14(exists, runnable, createField, blockButtonEdit, alertDialog, i2);
+                RichInlineButtonEditor.$r8$lambda$agvEds9tSky5DHnVmGKbHvOwxzo(exists, runnable, createField, blockButtonEdit, alertDialog, i2);
             }
         });
         if (exists) {
@@ -293,8 +287,7 @@ public abstract class RichInlineButtonEditor {
         showInputDialog(createInputDialogBuilder, createField, i, resourcesProvider);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBlockProfileDialog$13(EditTextBoldCursor editTextBoldCursor, BaseFragment baseFragment, boolean z, final RichEditorListView.BlockButtonEdit blockButtonEdit) {
+    public static /* synthetic */ void $r8$lambda$aQAC9urWRNFWGEd1_EG2stusK-g(EditTextBoldCursor editTextBoldCursor, BaseFragment baseFragment, boolean z, final RichEditorListView.BlockButtonEdit blockButtonEdit) {
         final String trim = editTextBoldCursor.getText().toString().trim();
         if (TextUtils.isEmpty(trim)) {
             return;
@@ -302,20 +295,18 @@ public abstract class RichInlineButtonEditor {
         showUserPicker(baseFragment, z, new UserPicked() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.iv.RichInlineButtonEditor.UserPicked
             public final void run(long j) {
-                RichInlineButtonEditor.lambda$showBlockProfileDialog$12(RichEditorListView.BlockButtonEdit.this, trim, j);
+                RichInlineButtonEditor.$r8$lambda$um-XAv4tsqZtiYmQE9KLOcy84t8(RichEditorListView.BlockButtonEdit.this, trim, j);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBlockProfileDialog$12(RichEditorListView.BlockButtonEdit blockButtonEdit, String str, long j) {
+    public static /* synthetic */ void $r8$lambda$um-XAv4tsqZtiYmQE9KLOcy84t8(RichEditorListView.BlockButtonEdit blockButtonEdit, String str, long j) {
         TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
         tL_inlineButtonTypeUserProfile.user_id = j;
         blockButtonEdit.apply(str, tL_inlineButtonTypeUserProfile);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBlockProfileDialog$14(boolean z, Runnable runnable, EditTextBoldCursor editTextBoldCursor, RichEditorListView.BlockButtonEdit blockButtonEdit, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$agvEds9tSky5DHnVmGKbHvOwxzo(boolean z, Runnable runnable, EditTextBoldCursor editTextBoldCursor, RichEditorListView.BlockButtonEdit blockButtonEdit, AlertDialog alertDialog, int i) {
         if (!z) {
             runnable.run();
             return;
@@ -378,7 +369,7 @@ public abstract class RichInlineButtonEditor {
         create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.iv.RichInlineButtonEditor$$ExternalSyntheticLambda17
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
-                RichInlineButtonEditor.lambda$showInputDialog$18(EditTextBoldCursor.this, dialogInterface);
+                RichInlineButtonEditor.$r8$lambda$W-xOSkdjUS_c3XezDSneFYNktOY(EditTextBoldCursor.this, dialogInterface);
             }
         });
         create.showDelayed(250L);
@@ -388,8 +379,7 @@ public abstract class RichInlineButtonEditor {
         return create;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showInputDialog$18(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$W-xOSkdjUS_c3XezDSneFYNktOY(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
         editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
@@ -412,9 +402,7 @@ public abstract class RichInlineButtonEditor {
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z2, boolean z3, int i, int i2, TopicsFragment topicsFragment) {
-                boolean lambda$showUserPicker$19;
-                lambda$showUserPicker$19 = RichInlineButtonEditor.lambda$showUserPicker$19(RichInlineButtonEditor.UserPicked.this, dialogsActivity2, arrayList, charSequence, z2, z3, i, i2, topicsFragment);
-                return lambda$showUserPicker$19;
+                return RichInlineButtonEditor.$r8$lambda$xD89-Y_QWSGhRCV4ruUcWuJky28(RichInlineButtonEditor.UserPicked.this, dialogsActivity2, arrayList, charSequence, z2, z3, i, i2, topicsFragment);
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -432,8 +420,7 @@ public abstract class RichInlineButtonEditor {
         baseFragment.presentFragment(dialogsActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$showUserPicker$19(UserPicked userPicked, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$xD89-Y_QWSGhRCV4ruUcWuJky28(UserPicked userPicked, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
         if (arrayList == null || arrayList.isEmpty() || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId <= 0) {
             return false;
         }

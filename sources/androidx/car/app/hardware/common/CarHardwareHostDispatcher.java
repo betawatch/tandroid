@@ -20,16 +20,13 @@ public class CarHardwareHostDispatcher {
         RemoteUtils.dispatchCallToHost("getCarHardwareResult", new RemoteUtils.RemoteCall() { // from class: androidx.car.app.hardware.common.CarHardwareHostDispatcher$$ExternalSyntheticLambda0
             @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
             public final Object call() {
-                Object lambda$dispatchGetCarHardwareResult$0;
-                lambda$dispatchGetCarHardwareResult$0 = CarHardwareHostDispatcher.this.lambda$dispatchGetCarHardwareResult$0(i, bundleable, iCarHardwareResult);
-                return lambda$dispatchGetCarHardwareResult$0;
+                return CarHardwareHostDispatcher.$r8$lambda$RWB_Hd3Wpqr7Y3FVmYXjx-Lusow(CarHardwareHostDispatcher.this, i, bundleable, iCarHardwareResult);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$dispatchGetCarHardwareResult$0(int i, Bundleable bundleable, ICarHardwareResult iCarHardwareResult) {
-        getHost().getCarHardwareResult(i, bundleable, iCarHardwareResult);
+    public static /* synthetic */ Object $r8$lambda$RWB_Hd3Wpqr7Y3FVmYXjx-Lusow(CarHardwareHostDispatcher carHardwareHostDispatcher, int i, Bundleable bundleable, ICarHardwareResult iCarHardwareResult) {
+        carHardwareHostDispatcher.getHost().getCarHardwareResult(i, bundleable, iCarHardwareResult);
         return null;
     }
 
@@ -38,16 +35,13 @@ public class CarHardwareHostDispatcher {
         RemoteUtils.dispatchCallToHost("subscribeCarHardwareResult", new RemoteUtils.RemoteCall() { // from class: androidx.car.app.hardware.common.CarHardwareHostDispatcher$$ExternalSyntheticLambda1
             @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
             public final Object call() {
-                Object lambda$dispatchSubscribeCarHardwareResult$1;
-                lambda$dispatchSubscribeCarHardwareResult$1 = CarHardwareHostDispatcher.this.lambda$dispatchSubscribeCarHardwareResult$1(i, bundleable, iCarHardwareResult);
-                return lambda$dispatchSubscribeCarHardwareResult$1;
+                return CarHardwareHostDispatcher.$r8$lambda$-uJPuf2SZKQG1LuTBzNl32gl8Cs(CarHardwareHostDispatcher.this, i, bundleable, iCarHardwareResult);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$dispatchSubscribeCarHardwareResult$1(int i, Bundleable bundleable, ICarHardwareResult iCarHardwareResult) {
-        getHost().subscribeCarHardwareResult(i, bundleable, iCarHardwareResult);
+    public static /* synthetic */ Object $r8$lambda$-uJPuf2SZKQG1LuTBzNl32gl8Cs(CarHardwareHostDispatcher carHardwareHostDispatcher, int i, Bundleable bundleable, ICarHardwareResult iCarHardwareResult) {
+        carHardwareHostDispatcher.getHost().subscribeCarHardwareResult(i, bundleable, iCarHardwareResult);
         return null;
     }
 
@@ -55,16 +49,13 @@ public class CarHardwareHostDispatcher {
         RemoteUtils.dispatchCallToHost("unsubscribeCarHardwareResult", new RemoteUtils.RemoteCall() { // from class: androidx.car.app.hardware.common.CarHardwareHostDispatcher$$ExternalSyntheticLambda2
             @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
             public final Object call() {
-                Object lambda$dispatchUnsubscribeCarHardwareResult$2;
-                lambda$dispatchUnsubscribeCarHardwareResult$2 = CarHardwareHostDispatcher.this.lambda$dispatchUnsubscribeCarHardwareResult$2(i, bundleable);
-                return lambda$dispatchUnsubscribeCarHardwareResult$2;
+                return CarHardwareHostDispatcher.$r8$lambda$QGWz3y_oA7uH7F2k5epRAGxfhNo(CarHardwareHostDispatcher.this, i, bundleable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$dispatchUnsubscribeCarHardwareResult$2(int i, Bundleable bundleable) {
-        getHost().unsubscribeCarHardwareResult(i, bundleable);
+    public static /* synthetic */ Object $r8$lambda$QGWz3y_oA7uH7F2k5epRAGxfhNo(CarHardwareHostDispatcher carHardwareHostDispatcher, int i, Bundleable bundleable) {
+        carHardwareHostDispatcher.getHost().unsubscribeCarHardwareResult(i, bundleable);
         return null;
     }
 

@@ -1,40 +1,71 @@
 package j$.util;
 
-import j$.util.function.Consumer$-CC;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class h0 implements Iterator, Consumer {
-    boolean a = false;
-    Object b;
-    final /* synthetic */ Spliterator c;
+public final class h0 implements F, DoubleConsumer, w {
+    public boolean a = false;
+    public double b;
+    public final /* synthetic */ T c;
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    h0(Spliterator spliterator) {
-        this.c = spliterator;
+    @Override // j$.util.O
+    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        while (hasNext()) {
+            doubleConsumer.accept(nextDouble());
+        }
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
+    @Override // java.util.Iterator
+    public final Double next() {
+        if (t0.a) {
+            t0.a(h0.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
+            throw null;
+        }
+        return Double.valueOf(nextDouble());
+    }
+
+    @Override // j$.util.F, java.util.Iterator, j$.util.w
+    public final void forEachRemaining(Consumer consumer) {
+        if (consumer instanceof DoubleConsumer) {
+            forEachRemaining((DoubleConsumer) consumer);
+            return;
+        }
+        Objects.requireNonNull(consumer);
+        if (t0.a) {
+            t0.a(h0.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
+            throw null;
+        }
+        Objects.requireNonNull(consumer);
+        forEachRemaining((DoubleConsumer) new C(consumer, 0));
+    }
+
+    public h0(T t) {
+        this.c = t;
+    }
+
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
         this.a = true;
-        this.b = obj;
+        this.b = d;
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
         if (!this.a) {
-            this.c.tryAdvance(this);
+            this.c.tryAdvance((DoubleConsumer) this);
         }
         return this.a;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
+    @Override // j$.util.F
+    public final double nextDouble() {
         if (!this.a && !hasNext()) {
             throw new NoSuchElementException();
         }

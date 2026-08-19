@@ -209,7 +209,7 @@ public class CounterView extends View {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.CounterView$CounterDrawable$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                        CounterView.CounterDrawable.this.lambda$setText$0(valueAnimator3);
+                        CounterView.CounterDrawable.$r8$lambda$Q3XKFRUZsz7kSJnw0IIyy2Zxr-I(CounterView.CounterDrawable.this, valueAnimator3);
                     }
                 });
                 this.countAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.CounterView.CounterDrawable.1
@@ -286,10 +286,10 @@ public class CounterView extends View {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setText$0(ValueAnimator valueAnimator) {
-            this.countChangeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            View view = this.parent;
+        public static /* synthetic */ void $r8$lambda$Q3XKFRUZsz7kSJnw0IIyy2Zxr-I(CounterDrawable counterDrawable, ValueAnimator valueAnimator) {
+            counterDrawable.getClass();
+            counterDrawable.countChangeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            View view = counterDrawable.parent;
             if (view != null) {
                 view.invalidate();
             }

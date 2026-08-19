@@ -1,99 +1,36 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
+import j$.util.Spliterator;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class D3 implements m2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Consumer b;
+public final class D3 extends W1 implements O3 {
+    public final /* synthetic */ Predicate m;
 
-    public /* synthetic */ D3(Consumer consumer, int i) {
-        this.a = i;
-        this.b = consumer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public D3(X1 x1, int i, Predicate predicate) {
+        super(x1, i, 0);
+        this.m = predicate;
     }
 
-    private final /* synthetic */ void b(long j) {
+    @Override // j$.util.stream.a
+    public final Spliterator K(a aVar, Spliterator spliterator) {
+        return S2.ORDERED.q(aVar.f) ? J(aVar, spliterator, new Y(12)).spliterator() : new V3(aVar.S(spliterator), this.m, 0);
     }
 
-    private final /* synthetic */ void c(long j) {
+    @Override // j$.util.stream.a
+    public final B0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+        return (B0) new Q3(this, aVar, spliterator, intFunction).invoke();
     }
 
-    private final /* synthetic */ void d() {
+    @Override // j$.util.stream.a
+    public final f2 M(int i, f2 f2Var) {
+        return new C3(this, f2Var, false);
     }
 
-    private final /* synthetic */ void e() {
-    }
-
-    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final /* synthetic */ void accept(double d) {
-        switch (this.a) {
-            case 0:
-                w0.a();
-                throw null;
-            default:
-                w0.a();
-                throw null;
-        }
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(int i) {
-        switch (this.a) {
-            case 0:
-                w0.k();
-                throw null;
-            default:
-                w0.k();
-                throw null;
-        }
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(long j) {
-        switch (this.a) {
-            case 0:
-                w0.l();
-                throw null;
-            default:
-                w0.l();
-                throw null;
-        }
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void p(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((W2) this.b).p(obj);
-                break;
-            default:
-                this.b.p(obj);
-                break;
-        }
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-        }
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void k() {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void l(long j) {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ boolean n() {
-        switch (this.a) {
-        }
-        return false;
+    @Override // j$.util.stream.O3
+    public final P3 j(t0 t0Var, boolean z) {
+        return new C3(this, t0Var, z);
     }
 }

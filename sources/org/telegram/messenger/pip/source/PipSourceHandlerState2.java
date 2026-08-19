@@ -8,6 +8,7 @@ import android.graphics.RectF;
 import android.util.Log;
 import android.view.View;
 import androidx.core.graphics.ColorUtils;
+import com.google.android.exoplayer2.Player;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
@@ -112,14 +113,14 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         AndroidUtilities.doOnPreDraw(this.pictureInPictureView, Trigger.run(new Trigger.Callback() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.pip.utils.Trigger.Callback
             public final void run(boolean z) {
-                PipSourceHandlerState2.this.lambda$performPreAttach$0(z);
+                PipSourceHandlerState2.$r8$lambda$OJ6TCd9j1ASPOaXttSCtHNB46v0(PipSourceHandlerState2.this, z);
             }
         }, 300L));
         Log.i("PIP_DEBUG", "[HANDLER] pre attach end");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performPreAttach$0(boolean z) {
+    public static /* synthetic */ void $r8$lambda$OJ6TCd9j1ASPOaXttSCtHNB46v0(final PipSourceHandlerState2 pipSourceHandlerState2, boolean z) {
+        pipSourceHandlerState2.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
@@ -139,7 +140,7 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         this.source.delegate.pipHidePrimaryWindowView(Trigger.run(new Trigger.Callback() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.pip.utils.Trigger.Callback
             public final void run(boolean z) {
-                PipSourceHandlerState2.this.lambda$performAttach$1(z);
+                PipSourceHandlerState2.$r8$lambda$_0s5XHU7H0igMoPANFvvW2kjXXo(PipSourceHandlerState2.this, z);
             }
         }, 400L));
         this.state = 2;
@@ -149,9 +150,8 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         performPreDetach1();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performAttach$1(boolean z) {
-        this.pipSourcePlaceholder.stopPlaceholderForActivity();
+    public static /* synthetic */ void $r8$lambda$_0s5XHU7H0igMoPANFvvW2kjXXo(PipSourceHandlerState2 pipSourceHandlerState2, boolean z) {
+        pipSourceHandlerState2.pipSourcePlaceholder.stopPlaceholderForActivity();
         Log.i("PIP_DEBUG", "[HANDLER] on new source render first frame " + z);
     }
 
@@ -168,14 +168,14 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         AndroidUtilities.doOnPreDraw(this.pictureInPictureWrapperView, Trigger.run(new Trigger.Callback() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.pip.utils.Trigger.Callback
             public final void run(boolean z) {
-                PipSourceHandlerState2.this.lambda$performPreDetach1$2(z);
+                PipSourceHandlerState2.$r8$lambda$n8ccvq7nV2IkZ9Vzn9O72rIal2c(PipSourceHandlerState2.this, z);
             }
         }, 300L));
         Log.i("PIP_DEBUG", "[HANDLER] pre detach 1");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performPreDetach1$2(boolean z) {
+    public static /* synthetic */ void $r8$lambda$n8ccvq7nV2IkZ9Vzn9O72rIal2c(final PipSourceHandlerState2 pipSourceHandlerState2, boolean z) {
+        pipSourceHandlerState2.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
@@ -193,7 +193,7 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         this.source.delegate.pipShowPrimaryWindowView(Trigger.run(new Trigger.Callback() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.pip.utils.Trigger.Callback
             public final void run(boolean z) {
-                PipSourceHandlerState2.this.lambda$performPreDetach2$3(z);
+                PipSourceHandlerState2.$r8$lambda$ZySLOLIvyuM3KbeOOCEW108V4hQ(PipSourceHandlerState2.this, z);
             }
         }, 400L));
         this.pictureInPictureWrapperView.invalidate();
@@ -201,16 +201,16 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         AndroidUtilities.doOnPreDraw(this.source.contentView, Trigger.run(new Trigger.Callback() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.pip.utils.Trigger.Callback
             public final void run(boolean z) {
-                PipSourceHandlerState2.this.lambda$performPreDetach2$4(z);
+                PipSourceHandlerState2.$r8$lambda$5ZF6tf4lCT3nStrKGYxbw_T-sic(PipSourceHandlerState2.this, z);
             }
         }, 300L));
         Log.i("PIP_DEBUG", "[HANDLER] pre detach 2");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performPreDetach2$3(boolean z) {
+    public static /* synthetic */ void $r8$lambda$ZySLOLIvyuM3KbeOOCEW108V4hQ(PipSourceHandlerState2 pipSourceHandlerState2, boolean z) {
+        pipSourceHandlerState2.getClass();
         Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z);
-        final PipSourcePlaceholder pipSourcePlaceholder = this.pipSourcePlaceholder;
+        final PipSourcePlaceholder pipSourcePlaceholder = pipSourceHandlerState2.pipSourcePlaceholder;
         Objects.requireNonNull(pipSourcePlaceholder);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
@@ -220,8 +220,8 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performPreDetach2$4(boolean z) {
+    public static /* synthetic */ void $r8$lambda$5ZF6tf4lCT3nStrKGYxbw_T-sic(final PipSourceHandlerState2 pipSourceHandlerState2, boolean z) {
+        pipSourceHandlerState2.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.pip.source.PipSourceHandlerState2$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
@@ -304,6 +304,26 @@ public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivit
 
     public boolean isAttachedToPip() {
         return this.state != 0;
+    }
+
+    @Override // org.telegram.messenger.pip.activity.IPipActivityListener
+    public void onPipStashStart() {
+        Player player;
+        PipSource pipSource = this.source;
+        if (pipSource == null || (player = pipSource.getPlayer()) == null) {
+            return;
+        }
+        player.pause();
+    }
+
+    @Override // org.telegram.messenger.pip.activity.IPipActivityListener
+    public void onPipStashEnd() {
+        Player player;
+        PipSource pipSource = this.source;
+        if (pipSource == null || (player = pipSource.getPlayer()) == null) {
+            return;
+        }
+        player.play();
     }
 
     @Override // org.telegram.messenger.pip.activity.IPipActivityListener

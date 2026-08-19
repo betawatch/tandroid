@@ -2,7 +2,6 @@ package j$.time;
 
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.Serializable;
 import java.math.BigInteger;
 
@@ -10,8 +9,8 @@ import java.math.BigInteger;
 public final class Duration implements Comparable<Duration>, Serializable {
     public static final Duration c = new Duration(0, 0);
     private static final long serialVersionUID = 3078945930695997490L;
-    private final long a;
-    private final int b;
+    public final long a;
+    public final int b;
 
     @Override // java.lang.Comparable
     public final int compareTo(Duration duration) {
@@ -24,22 +23,14 @@ public final class Duration implements Comparable<Duration>, Serializable {
         BigInteger.valueOf(1000000000L);
     }
 
-    public static Duration l(long j) {
-        return k(j, 0);
-    }
-
-    public static Duration n(long j, long j2) {
-        return k(j$.com.android.tools.r8.a.f(j, j$.com.android.tools.r8.a.k(j2, 1000000000L)), (int) j$.com.android.tools.r8.a.j(j2, 1000000000L));
-    }
-
-    private static Duration k(long j, int i) {
+    public static Duration l(long j, int i) {
         if ((i | j) == 0) {
             return c;
         }
         return new Duration(j, i);
     }
 
-    private Duration(long j, int i) {
+    public Duration(long j, int i) {
         this.a = j;
         this.b = i;
     }
@@ -52,11 +43,13 @@ public final class Duration implements Comparable<Duration>, Serializable {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Duration)) {
-            return false;
+        if (obj instanceof Duration) {
+            Duration duration = (Duration) obj;
+            if (this.a == duration.a && this.b == duration.b) {
+                return true;
+            }
         }
-        Duration duration = (Duration) obj;
-        return this.a == duration.a && this.b == duration.b;
+        return false;
     }
 
     public final int hashCode() {
@@ -111,15 +104,10 @@ public final class Duration implements Comparable<Duration>, Serializable {
     }
 
     private Object writeReplace() {
-        return new q((byte) 1, this);
+        return new p((byte) 1, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    final void writeExternal(ObjectOutput objectOutput) {
-        objectOutput.writeLong(this.a);
-        objectOutput.writeInt(this.b);
     }
 }

@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -97,15 +96,11 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public ActionBarMenuItem addItemAt(int i, int i2, int i3, CharSequence charSequence, int i4, Drawable drawable, int i5, CharSequence charSequence2, Theme.ResourcesProvider resourcesProvider) {
-        int i6 = i5;
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), this, i4, this.isActionMode ? this.parentActionBar.itemsActionModeColor : this.parentActionBar.itemsColor, charSequence != null, resourcesProvider);
         actionBarMenuItem.setTag(Integer.valueOf(i2));
         if (charSequence != null) {
             actionBarMenuItem.textView.setText(charSequence);
-            if (i6 == 0) {
-                i6 = -2;
-            }
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(i6, -1);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(i5 != 0 ? i5 : -2, -1);
             int dp = AndroidUtilities.dp(14.0f);
             layoutParams.rightMargin = dp;
             layoutParams.leftMargin = dp;
@@ -120,12 +115,12 @@ public class ActionBarMenu extends LinearLayout {
             } else if (i3 != 0) {
                 actionBarMenuItem.iconView.setImageResource(i3);
             }
-            addView(actionBarMenuItem, i, new LinearLayout.LayoutParams(i6, -1));
+            addView(actionBarMenuItem, i, new LinearLayout.LayoutParams(i5, -1));
         }
         actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ActionBarMenu.this.lambda$addItemAt$0(view);
+                ActionBarMenu.$r8$lambda$nc0FJpNgs_c2gixpTtLovTJ7Z0E(ActionBarMenu.this, view);
             }
         });
         if (charSequence2 != null) {
@@ -134,17 +129,17 @@ public class ActionBarMenu extends LinearLayout {
         return actionBarMenuItem;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addItemAt$0(View view) {
+    public static /* synthetic */ void $r8$lambda$nc0FJpNgs_c2gixpTtLovTJ7Z0E(ActionBarMenu actionBarMenu, View view) {
+        actionBarMenu.getClass();
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) view;
         if (actionBarMenuItem.hasSubMenu()) {
-            if (this.parentActionBar.actionBarMenuOnItemClick.canOpenMenu()) {
+            if (actionBarMenu.parentActionBar.actionBarMenuOnItemClick.canOpenMenu()) {
                 actionBarMenuItem.toggleSubMenu();
             }
         } else if (actionBarMenuItem.isSearchField()) {
-            this.parentActionBar.onSearchFieldVisibilityChanged(actionBarMenuItem.toggleSearch(true));
+            actionBarMenu.parentActionBar.onSearchFieldVisibilityChanged(actionBarMenuItem.toggleSearch(true));
         } else {
-            onItemClick(((Integer) view.getTag()).intValue());
+            actionBarMenu.onItemClick(((Integer) view.getTag()).intValue());
         }
     }
 
@@ -266,15 +261,16 @@ public class ActionBarMenu extends LinearLayout {
                 return;
             }
             int childCount = this.parent.getChildCount();
+            int i2 = 0;
             if (this.parent.ids != null) {
                 int indexOf = this.parent.ids.indexOf(Integer.valueOf(this.id));
-                for (int i2 = 0; i2 < this.parent.getChildCount(); i2++) {
-                    Object tag = this.parent.getChildAt(i2).getTag();
+                for (int i3 = 0; i3 < this.parent.getChildCount(); i3++) {
+                    Object tag = this.parent.getChildAt(i3).getTag();
                     if (tag instanceof Integer) {
                         Integer num = (Integer) tag;
-                        num.intValue();
+                        num.getClass();
                         if (this.parent.ids.indexOf(num) > indexOf) {
-                            i = i2;
+                            i = i3;
                             break;
                         }
                     }
@@ -311,9 +307,11 @@ public class ActionBarMenu extends LinearLayout {
             this.cell.setAlpha(this.alpha);
             ArrayList arrayList = this.onViews;
             if (arrayList != null) {
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    ((Utilities.Callback) it.next()).run(this.cell);
+                int size = arrayList.size();
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    ((Utilities.Callback) obj).run(this.cell);
                 }
                 this.onViews = null;
             }

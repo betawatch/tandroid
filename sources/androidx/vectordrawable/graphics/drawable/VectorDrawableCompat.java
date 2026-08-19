@@ -306,13 +306,22 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
 
     @Override // android.graphics.drawable.Drawable
     public boolean isStateful() {
-        VectorDrawableCompatState vectorDrawableCompatState;
-        ColorStateList colorStateList;
         Drawable drawable = this.mDelegateDrawable;
         if (drawable != null) {
             return drawable.isStateful();
         }
-        return super.isStateful() || ((vectorDrawableCompatState = this.mVectorState) != null && (vectorDrawableCompatState.isStateful() || ((colorStateList = this.mVectorState.mTint) != null && colorStateList.isStateful())));
+        if (super.isStateful()) {
+            return true;
+        }
+        VectorDrawableCompatState vectorDrawableCompatState = this.mVectorState;
+        if (vectorDrawableCompatState == null) {
+            return false;
+        }
+        if (vectorDrawableCompatState.isStateful()) {
+            return true;
+        }
+        ColorStateList colorStateList = this.mVectorState.mTint;
+        return colorStateList != null && colorStateList.isStateful();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -870,16 +879,20 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
         }
 
         private void drawGroupTree(VGroup vGroup, Matrix matrix, Canvas canvas, int i, int i2, ColorFilter colorFilter) {
-            vGroup.mStackedMatrix.set(matrix);
-            vGroup.mStackedMatrix.preConcat(vGroup.mLocalMatrix);
+            VGroup vGroup2 = vGroup;
+            vGroup2.mStackedMatrix.set(matrix);
+            vGroup2.mStackedMatrix.preConcat(vGroup2.mLocalMatrix);
             canvas.save();
-            for (int i3 = 0; i3 < vGroup.mChildren.size(); i3++) {
-                VObject vObject = (VObject) vGroup.mChildren.get(i3);
+            int i3 = 0;
+            while (i3 < vGroup2.mChildren.size()) {
+                VObject vObject = (VObject) vGroup2.mChildren.get(i3);
                 if (vObject instanceof VGroup) {
-                    drawGroupTree((VGroup) vObject, vGroup.mStackedMatrix, canvas, i, i2, colorFilter);
+                    drawGroupTree((VGroup) vObject, vGroup2.mStackedMatrix, canvas, i, i2, colorFilter);
                 } else if (vObject instanceof VPath) {
-                    drawPath(vGroup, (VPath) vObject, canvas, i, i2, colorFilter);
+                    drawPath(vGroup2, (VPath) vObject, canvas, i, i2, colorFilter);
                 }
+                i3++;
+                vGroup2 = vGroup;
             }
             canvas.restore();
         }

@@ -133,7 +133,7 @@ public class CrossfadeDrawable extends Drawable {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.CrossfadeDrawable$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                CrossfadeDrawable.this.lambda$animateToProgress$0(valueAnimator2);
+                CrossfadeDrawable.$r8$lambda$-DMQFPc8rj-FUiIHvrkcVE7MqkU(CrossfadeDrawable.this, valueAnimator2);
             }
         });
         this.animator.setDuration((long) (Math.abs(getProgress() - f) * 200.0f));
@@ -141,9 +141,9 @@ public class CrossfadeDrawable extends Drawable {
         this.animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateToProgress$0(ValueAnimator valueAnimator) {
-        setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
-        invalidateSelf();
+    public static /* synthetic */ void $r8$lambda$-DMQFPc8rj-FUiIHvrkcVE7MqkU(CrossfadeDrawable crossfadeDrawable, ValueAnimator valueAnimator) {
+        crossfadeDrawable.getClass();
+        crossfadeDrawable.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        crossfadeDrawable.invalidateSelf();
     }
 }

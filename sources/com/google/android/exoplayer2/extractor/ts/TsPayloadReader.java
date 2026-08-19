@@ -35,7 +35,7 @@ public interface TsPayloadReader {
             this.streamType = i;
             this.language = str;
             if (list == null) {
-                unmodifiableList = Collections.emptyList();
+                unmodifiableList = Collections.EMPTY_LIST;
             } else {
                 unmodifiableList = DesugarCollections.unmodifiableList(list);
             }

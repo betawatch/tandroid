@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ECIEncoderSet {
     private static final List ENCODERS = new ArrayList();
     private final CharsetEncoder[] encoders;
@@ -29,12 +29,17 @@ public final class ECIEncoderSet {
 
     public ECIEncoderSet(String str, Charset charset, int i) {
         boolean z;
-        ArrayList<CharsetEncoder> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         arrayList.add(StandardCharsets.ISO_8859_1.newEncoder());
         int i2 = 0;
         boolean z2 = charset != null && charset.name().startsWith("UTF");
         for (int i3 = 0; i3 < str.length(); i3++) {
-            for (CharsetEncoder charsetEncoder : arrayList) {
+            int size = arrayList.size();
+            int i4 = 0;
+            while (i4 < size) {
+                Object obj = arrayList.get(i4);
+                i4++;
+                CharsetEncoder charsetEncoder = (CharsetEncoder) obj;
                 char charAt = str.charAt(i3);
                 if (charAt == i || charsetEncoder.canEncode(charAt)) {
                     z = true;
@@ -62,14 +67,17 @@ public final class ECIEncoderSet {
         }
         if (arrayList.size() != 1 || z2) {
             this.encoders = new CharsetEncoder[arrayList.size() + 2];
-            Iterator it2 = arrayList.iterator();
-            int i4 = 0;
-            while (it2.hasNext()) {
-                this.encoders[i4] = (CharsetEncoder) it2.next();
-                i4++;
+            int size2 = arrayList.size();
+            int i5 = 0;
+            int i6 = 0;
+            while (i6 < size2) {
+                Object obj2 = arrayList.get(i6);
+                i6++;
+                this.encoders[i5] = (CharsetEncoder) obj2;
+                i5++;
             }
-            this.encoders[i4] = StandardCharsets.UTF_8.newEncoder();
-            this.encoders[i4 + 1] = StandardCharsets.UTF_16BE.newEncoder();
+            this.encoders[i5] = StandardCharsets.UTF_8.newEncoder();
+            this.encoders[i5 + 1] = StandardCharsets.UTF_16BE.newEncoder();
         } else {
             this.encoders = new CharsetEncoder[]{(CharsetEncoder) arrayList.get(0)};
         }
@@ -85,7 +93,6 @@ public final class ECIEncoderSet {
                     i2++;
                 }
             }
-            this.priorityEncoderIndex = i2;
         }
         i2 = -1;
         this.priorityEncoderIndex = i2;

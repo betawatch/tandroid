@@ -1,73 +1,34 @@
 package j$.util;
 
-import java.util.PrimitiveIterator;
+import j$.util.stream.f2;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class K implements PrimitiveIterator.OfInt {
-    public final /* synthetic */ L a;
+public final /* synthetic */ class K implements LongConsumer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Consumer b;
 
-    private /* synthetic */ K(L l) {
-        this.a = l;
+    public /* synthetic */ K(Consumer consumer, int i) {
+        this.a = i;
+        this.b = consumer;
     }
 
-    public static /* synthetic */ PrimitiveIterator.OfInt a(L l) {
-        if (l == null) {
-            return null;
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        switch (this.a) {
+            case 0:
+                this.b.accept(Long.valueOf(j));
+                break;
+            default:
+                ((f2) this.b).accept(j);
+                break;
         }
-        return l instanceof J ? ((J) l).a : new K(l);
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        L l = this.a;
-        if (obj instanceof K) {
-            obj = ((K) obj).a;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        switch (this.a) {
         }
-        return l.equals(obj);
-    }
-
-    @Override // java.util.PrimitiveIterator
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining((Object) intConsumer);
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining(intConsumer);
-    }
-
-    @Override // java.util.Iterator
-    public final /* synthetic */ boolean hasNext() {
-        return this.a.hasNext();
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
-    public final /* synthetic */ Integer next() {
-        return this.a.next();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return this.a.next();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt
-    public final /* synthetic */ int nextInt() {
-        return this.a.nextInt();
-    }
-
-    @Override // java.util.Iterator
-    public final /* synthetic */ void remove() {
-        this.a.remove();
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 }

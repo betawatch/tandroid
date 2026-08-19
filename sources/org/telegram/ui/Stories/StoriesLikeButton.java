@@ -16,7 +16,7 @@ import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Stories.PeerStoriesView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoriesLikeButton extends View {
     private boolean allowDrawReaction;
     ImageReceiver animateReactionImageReceiver;

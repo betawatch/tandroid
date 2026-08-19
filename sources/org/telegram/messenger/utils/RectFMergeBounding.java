@@ -10,9 +10,7 @@ public abstract class RectFMergeBounding {
     private static final Comparator RECT_COMPARATOR = new Comparator() { // from class: org.telegram.messenger.utils.RectFMergeBounding$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$0;
-            lambda$static$0 = RectFMergeBounding.lambda$static$0((RectF) obj, (RectF) obj2);
-            return lambda$static$0;
+            return RectFMergeBounding.$r8$lambda$3FEaNDNxTEmLiir9-NQLN9ndvqw((RectF) obj, (RectF) obj2);
         }
     };
 
@@ -87,8 +85,7 @@ public abstract class RectFMergeBounding {
         return rectF.left <= rectF2.right + 1.0E-4f && rectF.right >= rectF2.left - 1.0E-4f && rectF.top <= rectF2.bottom + 1.0E-4f && rectF.bottom >= rectF2.top - 1.0E-4f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(RectF rectF, RectF rectF2) {
+    public static /* synthetic */ int $r8$lambda$3FEaNDNxTEmLiir9-NQLN9ndvqw(RectF rectF, RectF rectF2) {
         if (Math.abs(rectF.top - rectF2.top) > 1.0E-4f) {
             return rectF.top < rectF2.top ? -1 : 1;
         }

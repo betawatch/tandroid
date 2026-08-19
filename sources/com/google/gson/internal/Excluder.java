@@ -22,12 +22,18 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes.dex */
 public final class Excluder implements TypeAdapterFactory, Cloneable {
     public static final Excluder DEFAULT = new Excluder();
+    private List deserializationStrategies;
     private boolean requireExpose;
+    private List serializationStrategies;
     private double version = -1.0d;
     private int modifiers = NotificationCenter.httpFileDidFailedLoad;
     private boolean serializeInnerClasses = true;
-    private List serializationStrategies = Collections.emptyList();
-    private List deserializationStrategies = Collections.emptyList();
+
+    public Excluder() {
+        List list = Collections.EMPTY_LIST;
+        this.serializationStrategies = list;
+        this.deserializationStrategies = list;
+    }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public Excluder clone() {

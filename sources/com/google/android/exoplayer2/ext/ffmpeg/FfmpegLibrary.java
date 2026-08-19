@@ -64,7 +64,7 @@ public final class FfmpegLibrary {
     }
 
     static String getCodecName(String str) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "audio/eac3-joc":
             case "audio/eac3":

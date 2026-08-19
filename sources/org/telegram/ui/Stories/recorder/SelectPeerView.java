@@ -19,7 +19,7 @@ import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SelectPeerView extends FrameLayout {
     private final AvatarDrawable avatarDrawable;
     private final int currentAccount;
@@ -85,7 +85,7 @@ public class SelectPeerView extends FrameLayout {
             ViewPropertyAnimator duration = animate().alpha(z ? 1.0f : 0.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.SelectPeerView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectPeerView.this.lambda$setShowing$0(z);
+                    SelectPeerView.$r8$lambda$nOc4qzgWHvJH-DdoEu-WqUi2HQM(SelectPeerView.this, z);
                 }
             }).setDuration(320L);
             this.showAnimator = duration;
@@ -96,11 +96,11 @@ public class SelectPeerView extends FrameLayout {
         setAlpha(z ? 1.0f : 0.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setShowing$0(boolean z) {
+    public static /* synthetic */ void $r8$lambda$nOc4qzgWHvJH-DdoEu-WqUi2HQM(SelectPeerView selectPeerView, boolean z) {
         if (z) {
-            return;
+            selectPeerView.getClass();
+        } else {
+            selectPeerView.setVisibility(8);
         }
-        setVisibility(8);
     }
 }

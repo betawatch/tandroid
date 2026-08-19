@@ -108,11 +108,13 @@ public final class Metadata implements Parcelable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || Metadata.class != obj.getClass()) {
-            return false;
+        if (obj != null && Metadata.class == obj.getClass()) {
+            Metadata metadata = (Metadata) obj;
+            if (Arrays.equals(this.entries, metadata.entries) && this.presentationTimeUs == metadata.presentationTimeUs) {
+                return true;
+            }
         }
-        Metadata metadata = (Metadata) obj;
-        return Arrays.equals(this.entries, metadata.entries) && this.presentationTimeUs == metadata.presentationTimeUs;
+        return false;
     }
 
     public int hashCode() {

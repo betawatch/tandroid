@@ -1,92 +1,68 @@
 package j$.util;
 
-import java.util.Comparator;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-import java.util.function.UnaryOperator;
+import java.util.Map;
 
 /* loaded from: classes2.dex */
-class o extends m implements java.util.List, List {
-    private static final long serialVersionUID = -283967356065247728L;
-    final java.util.List b;
+public final class o implements Map.Entry {
+    public final Map.Entry a;
 
-    o(java.util.List list) {
-        super(list);
-        this.b = list;
+    public o(Map.Entry entry) {
+        this.a = (Map.Entry) Objects.requireNonNull(entry);
     }
 
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        return obj == this || this.b.equals(obj);
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.a.getKey();
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.a.getValue();
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map.Entry
     public final int hashCode() {
-        return this.b.hashCode();
+        return this.a.hashCode();
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        return this.b.get(i);
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        boolean equals;
+        boolean equals2;
+        if (this != obj) {
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Map.Entry entry2 = this.a;
+                Object key = entry2.getKey();
+                Object key2 = entry.getKey();
+                if (key == null) {
+                    equals = key2 == null;
+                } else {
+                    equals = key.equals(key2);
+                }
+                if (equals) {
+                    Object value = entry2.getValue();
+                    Object value2 = entry.getValue();
+                    if (value == null) {
+                        equals2 = value2 == null;
+                    } else {
+                        equals2 = value.equals(value2);
+                    }
+                    if (equals2) {
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        return this.b.indexOf(obj);
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        return this.b.lastIndexOf(obj);
-    }
-
-    @Override // java.util.List
-    public final boolean addAll(int i, java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public final void replaceAll(UnaryOperator unaryOperator) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public final void sort(Comparator comparator) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final ListIterator listIterator() {
-        return new n(this, 0);
-    }
-
-    @Override // java.util.List
-    public final ListIterator listIterator(int i) {
-        return new n(this, i);
-    }
-
-    @Override // java.util.List
-    public java.util.List subList(int i, int i2) {
-        return new o(this.b.subList(i, i2));
-    }
-
-    private Object readResolve() {
-        java.util.List list = this.b;
-        return list instanceof RandomAccess ? new u(list) : this;
+    public final String toString() {
+        return this.a.toString();
     }
 }

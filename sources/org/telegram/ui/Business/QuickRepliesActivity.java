@@ -31,7 +31,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -87,8 +86,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
     public final ArrayList selected = new ArrayList();
     private boolean shownEditItem = true;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$ifxmYZ-dj0M51BTjeMLg-3okpfY(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -113,9 +111,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         this.countText.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda9
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$createView$0;
-                lambda$createView$0 = QuickRepliesActivity.lambda$createView$0(view, motionEvent);
-                return lambda$createView$0;
+                return QuickRepliesActivity.$r8$lambda$ifxmYZ-dj0M51BTjeMLg-3okpfY(view, motionEvent);
             }
         });
         ActionBarMenuItem addItem = createActionMode.addItem(1, R.drawable.msg_edit);
@@ -185,7 +181,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
                     quickRepliesActivity.showDialog(new AlertDialog.Builder(quickRepliesActivity.getContext(), QuickRepliesActivity.this.getResourceProvider()).setTitle(LocaleController.formatPluralString("BusinessRepliesDeleteTitle", QuickRepliesActivity.this.selected.size(), new Object[0])).setMessage(LocaleController.formatPluralString("BusinessRepliesDeleteMessage", QuickRepliesActivity.this.selected.size(), new Object[0])).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$1$$ExternalSyntheticLambda1
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i2) {
-                            QuickRepliesActivity.1.this.lambda$onItemClick$1(alertDialog, i2);
+                            QuickRepliesActivity.1.$r8$lambda$ThS6Ap9puawPzRQdMw83QR0E82I(QuickRepliesActivity.1.this, alertDialog, i2);
                         }
                     }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).create());
                     return;
@@ -203,19 +199,17 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
             QuickRepliesActivity.openRenameReplyAlert(QuickRepliesActivity.this.getContext(), ((BaseFragment) QuickRepliesActivity.this).currentAccount, null, findReply, ((BaseFragment) QuickRepliesActivity.this).resourceProvider, false, new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    QuickRepliesActivity.1.this.lambda$onItemClick$0(intValue, (String) obj);
+                    QuickRepliesActivity.1.$r8$lambda$n3S-ewBrXU1N7eqWWi1x8Sl-u0U(QuickRepliesActivity.1.this, intValue, (String) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$0(int i, String str) {
+        public static /* synthetic */ void $r8$lambda$n3S-ewBrXU1N7eqWWi1x8Sl-u0U(1 r1, int i, String str) {
             QuickRepliesActivity.this.clearSelection();
             QuickRepliesController.getInstance(((BaseFragment) QuickRepliesActivity.this).currentAccount).renameReply(i, str);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$1(AlertDialog alertDialog, int i) {
+        public static /* synthetic */ void $r8$lambda$ThS6Ap9puawPzRQdMw83QR0E82I(1 r0, AlertDialog alertDialog, int i) {
             QuickRepliesController.getInstance(((BaseFragment) QuickRepliesActivity.this).currentAccount).deleteReplies(QuickRepliesActivity.this.selected);
             QuickRepliesActivity.this.clearSelection();
         }
@@ -229,9 +223,13 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
             arrayList.add(UItem.asButton(1, R.drawable.msg_viewintopic, LocaleController.getString(R.string.BusinessRepliesAdd)).accent());
         }
         this.repliesOrderId = universalAdapter.reorderSectionStart();
-        Iterator it = QuickRepliesController.getInstance(this.currentAccount).replies.iterator();
-        while (it.hasNext()) {
-            QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) it.next();
+        ArrayList arrayList2 = QuickRepliesController.getInstance(this.currentAccount).replies;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) obj;
             arrayList.add(UItem.asQuickReply(quickReply).setChecked(this.selected.contains(Integer.valueOf(quickReply.id))));
         }
         universalAdapter.reorderSectionEnd();
@@ -257,7 +255,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
             openRenameReplyAlert(getContext(), this.currentAccount, null, null, getResourceProvider(), false, new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda14
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    QuickRepliesActivity.this.lambda$onClick$1((String) obj);
+                    QuickRepliesActivity.$r8$lambda$OgeiK9N_KLKiq6OIE7u95f3VcfA(QuickRepliesActivity.this, (String) obj);
                 }
             });
             return;
@@ -281,15 +279,15 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$1(String str) {
+    public static /* synthetic */ void $r8$lambda$OgeiK9N_KLKiq6OIE7u95f3VcfA(QuickRepliesActivity quickRepliesActivity, String str) {
+        quickRepliesActivity.getClass();
         Bundle bundle = new Bundle();
         bundle.putInt("chatMode", 5);
-        bundle.putLong("user_id", getUserConfig().getClientUserId());
+        bundle.putLong("user_id", quickRepliesActivity.getUserConfig().getClientUserId());
         bundle.putString("quick_reply", str);
         ChatActivity chatActivity = new ChatActivity(bundle);
         chatActivity.forceEmptyHistory();
-        presentFragment(chatActivity);
+        quickRepliesActivity.presentFragment(chatActivity);
     }
 
     private void updateSelect(UItem uItem, View view) {
@@ -338,15 +336,14 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda16
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
-                QuickRepliesActivity.lambda$clearSelection$2((View) obj);
+                QuickRepliesActivity.$r8$lambda$DXrWCH_IribtI7QI_T5ifywXdjU((View) obj);
             }
         });
         this.actionBar.hideActionMode();
         this.listView.allowReorder(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$clearSelection$2(View view) {
+    public static /* synthetic */ void $r8$lambda$DXrWCH_IribtI7QI_T5ifywXdjU(View view) {
         if (view instanceof QuickReplyView) {
             ((QuickReplyView) view).setChecked(false, true);
         }
@@ -366,31 +363,23 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v16, types: [android.app.Dialog] */
-    /* JADX WARN: Type inference failed for: r0v17, types: [org.telegram.ui.ActionBar.AlertDialog] */
-    /* JADX WARN: Type inference failed for: r0v18, types: [org.telegram.ui.ActionBar.AlertDialog] */
-    /* JADX WARN: Type inference failed for: r13v0, types: [org.telegram.ui.ActionBar.AlertDialog[]] */
-    /* JADX WARN: Type inference failed for: r14v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
-    /* JADX WARN: Type inference failed for: r1v10 */
-    /* JADX WARN: Type inference failed for: r1v11, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r1v16 */
-    /* JADX WARN: Type inference failed for: r4v13, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
+    /* JADX WARN: Type inference failed for: r6v4, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
     public static void openRenameReplyAlert(Context context, final int i, String str, final QuickRepliesController.QuickReply quickReply, final Theme.ResourcesProvider resourcesProvider, boolean z, final Utilities.Callback callback) {
         Object builder;
         String str2;
-        ?? r1;
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         Activity findActivity = AndroidUtilities.findActivity(context);
         final View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
         boolean z2 = lastFragment != null && (lastFragment.getFragmentView() instanceof SizeNotifierFrameLayout) && ((SizeNotifierFrameLayout) lastFragment.getFragmentView()).measureKeyboardHeight() > AndroidUtilities.dp(20.0f) && !z;
-        final ?? r13 = new AlertDialog[1];
+        final AlertDialog[] alertDialogArr = new AlertDialog[1];
         if (z2) {
             builder = new AlertDialogDecor.Builder(context, resourcesProvider);
         } else {
             builder = new AlertDialog.Builder(context, resourcesProvider);
         }
-        ?? r14 = builder;
-        r14.setTitle(LocaleController.getString((quickReply == null && str == null) ? R.string.BusinessRepliesNewTitle : R.string.BusinessRepliesEditTitle));
+        ?? r11 = builder;
+        r11.setTitle(LocaleController.getString((quickReply == null && str == null) ? R.string.BusinessRepliesNewTitle : R.string.BusinessRepliesEditTitle));
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.Business.QuickRepliesActivity.3
             AnimatedTextView.AnimatedTextDrawable limit;
             AnimatedColor limitColor = new AnimatedColor(this);
@@ -480,13 +469,13 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         final Runnable[] runnableArr = {new Runnable() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                QuickRepliesActivity.lambda$openRenameReplyAlert$5(Utilities.Callback.this);
+                Utilities.Callback.this.run(Boolean.FALSE);
             }
         }};
         final Utilities.Callback callback2 = new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                QuickRepliesActivity.lambda$openRenameReplyAlert$4(runnableArr, valueAnimatorArr, textView2, textView, (Boolean) obj);
+                QuickRepliesActivity.$r8$lambda$VHsMSvYMPiYKY5kqrnTa-h4CNd4(runnableArr, valueAnimatorArr, textView2, textView, (Boolean) obj);
             }
         };
         editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Business.QuickRepliesActivity.5
@@ -508,9 +497,8 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         });
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2, 24.0f, 5.0f, 24.0f, 12.0f));
         linearLayout.addView(editTextBoldCursor, LayoutHelper.createLinear(-1, -2, 24.0f, 0.0f, 24.0f, 10.0f));
-        r14.setView(linearLayout);
-        r14.setWidth(AndroidUtilities.dp(292.0f));
-        final View view = currentFocus;
+        r11.setView(linearLayout);
+        r11.setWidth(AndroidUtilities.dp(292.0f));
         editTextBoldCursor.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity.6
             @Override // android.widget.TextView.OnEditorActionListener
             public boolean onEditorAction(TextView textView3, int i3, KeyEvent keyEvent) {
@@ -534,80 +522,77 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
                 if (callback3 != null) {
                     callback3.run(obj);
                 }
-                AlertDialog alertDialog = r13[0];
+                AlertDialog alertDialog = alertDialogArr[0];
                 if (alertDialog != null) {
                     alertDialog.dismiss();
                 }
-                if (r13[0] == QuickRepliesActivity.currentDialog) {
+                if (alertDialogArr[0] == QuickRepliesActivity.currentDialog) {
                     AlertDialog unused = QuickRepliesActivity.currentDialog = null;
                 }
-                View view2 = view;
-                if (view2 != null) {
-                    view2.requestFocus();
+                View view = currentFocus;
+                if (view != null) {
+                    view.requestFocus();
                 }
                 return true;
             }
         });
-        r14.setPositiveButton(LocaleController.getString(R.string.Done), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda2
+        r11.setPositiveButton(LocaleController.getString(R.string.Done), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i3) {
-                QuickRepliesActivity.lambda$openRenameReplyAlert$6(EditTextBoldCursor.this, callback2, i, quickReply, textView2, callback, alertDialog, i3);
+                QuickRepliesActivity.$r8$lambda$0pRxDBuy8ztEkr1uoTVgdmpUhUM(EditTextBoldCursor.this, callback2, i, quickReply, textView2, callback, alertDialog, i3);
             }
         });
-        r14.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda3
+        r11.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i3) {
                 alertDialog.dismiss();
             }
         });
         if (z2) {
-            AlertDialog create = r14.create();
+            AlertDialog create = r11.create();
             currentDialog = create;
-            r13[0] = create;
+            alertDialogArr[0] = create;
             create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    QuickRepliesActivity.lambda$openRenameReplyAlert$8(currentFocus, dialogInterface);
+                    QuickRepliesActivity.$r8$lambda$sF9FHqFkkH3wZHUsi6MiJxSdiw8(currentFocus, dialogInterface);
                 }
             });
             currentDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda5
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    QuickRepliesActivity.lambda$openRenameReplyAlert$9(EditTextBoldCursor.this, dialogInterface);
+                    QuickRepliesActivity.$r8$lambda$mvxXaGaQpNH83o7El7LuGcpnyNA(EditTextBoldCursor.this, dialogInterface);
                 }
             });
             currentDialog.showDelayed(250L);
-            r1 = 0;
         } else {
-            r14.overrideDismissListener(new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda6
+            r11.overrideDismissListener(new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    QuickRepliesActivity.lambda$openRenameReplyAlert$10(EditTextBoldCursor.this, (Runnable) obj);
+                    QuickRepliesActivity.$r8$lambda$QvBAgX4oJR40Y-L-K8c3o2Ep4iU(EditTextBoldCursor.this, (Runnable) obj);
                 }
             });
-            AlertDialog create2 = r14.create();
-            r1 = 0;
-            r13[0] = create2;
+            AlertDialog create2 = r11.create();
+            alertDialogArr[0] = create2;
             create2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda7
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     AndroidUtilities.hideKeyboard(EditTextBoldCursor.this);
                 }
             });
-            r13[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda8
+            alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda8
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    QuickRepliesActivity.lambda$openRenameReplyAlert$12(EditTextBoldCursor.this, dialogInterface);
+                    QuickRepliesActivity.$r8$lambda$ZSAcGoE2QDXJpND0A7RqwPPsXOI(EditTextBoldCursor.this, dialogInterface);
                 }
             });
-            r13[0].show();
+            alertDialogArr[0].show();
         }
-        r13[r1].setDismissDialogByButtons(r1);
+        alertDialogArr[0].setDismissDialogByButtons(false);
         editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$4(Runnable[] runnableArr, ValueAnimator[] valueAnimatorArr, final TextView textView, final TextView textView2, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$VHsMSvYMPiYKY5kqrnTa-h4CNd4(Runnable[] runnableArr, ValueAnimator[] valueAnimatorArr, final TextView textView, final TextView textView2, Boolean bool) {
         AndroidUtilities.cancelRunOnUIThread(runnableArr[0]);
         ValueAnimator valueAnimator = valueAnimatorArr[0];
         if (valueAnimator != null) {
@@ -618,7 +603,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda15
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                QuickRepliesActivity.lambda$openRenameReplyAlert$3(textView, textView2, valueAnimator2);
+                QuickRepliesActivity.$r8$lambda$YvpIIRQr5jc8H4moXkzXFBpXttM(textView, textView2, valueAnimator2);
             }
         });
         valueAnimatorArr[0].setDuration(320L);
@@ -629,19 +614,12 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$3(TextView textView, TextView textView2, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$YvpIIRQr5jc8H4moXkzXFBpXttM(TextView textView, TextView textView2, ValueAnimator valueAnimator) {
         textView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
         textView2.setAlpha(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$5(Utilities.Callback callback) {
-        callback.run(Boolean.FALSE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$6(EditTextBoldCursor editTextBoldCursor, Utilities.Callback callback, int i, QuickRepliesController.QuickReply quickReply, TextView textView, Utilities.Callback callback2, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void $r8$lambda$0pRxDBuy8ztEkr1uoTVgdmpUhUM(EditTextBoldCursor editTextBoldCursor, Utilities.Callback callback, int i, QuickRepliesController.QuickReply quickReply, TextView textView, Utilities.Callback callback2, AlertDialog alertDialog, int i2) {
         String obj = editTextBoldCursor.getText().toString();
         if (obj.length() <= 0 || obj.length() > 32) {
             AndroidUtilities.shakeView(editTextBoldCursor);
@@ -660,28 +638,24 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$8(View view, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$sF9FHqFkkH3wZHUsi6MiJxSdiw8(View view, DialogInterface dialogInterface) {
         currentDialog = null;
         if (view != null) {
             view.requestFocus();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$9(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$mvxXaGaQpNH83o7El7LuGcpnyNA(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$10(EditTextBoldCursor editTextBoldCursor, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$QvBAgX4oJR40Y-L-K8c3o2Ep4iU(EditTextBoldCursor editTextBoldCursor, Runnable runnable) {
         AndroidUtilities.hideKeyboard(editTextBoldCursor);
         AndroidUtilities.runOnUIThread(runnable, 80L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameReplyAlert$12(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$ZSAcGoE2QDXJpND0A7RqwPPsXOI(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
@@ -817,7 +791,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
             String str3 = str;
             this.local = quickReply != null ? quickReply.local : false;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            if (str3 != null && str.length() > 0 && !str3.startsWith("/")) {
+            if (str3 != null && str3.length() > 0 && !str3.startsWith("/")) {
                 str3 = "/" + str3;
             }
             spannableStringBuilder.append((CharSequence) "/").append((CharSequence) quickReply.name);

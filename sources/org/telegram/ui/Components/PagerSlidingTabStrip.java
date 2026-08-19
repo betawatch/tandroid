@@ -161,7 +161,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PagerSlidingTabStrip$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PagerSlidingTabStrip.this.lambda$addIconTab$0(i, view);
+                PagerSlidingTabStrip.$r8$lambda$fXfj9wgwaJ2taMvgKFD27LkgG5Y(PagerSlidingTabStrip.this, i, view);
             }
         });
         this.tabsContainer.addView(imageView);
@@ -169,10 +169,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         imageView.setContentDescription(charSequence);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addIconTab$0(int i, View view) {
-        if (!(this.pager.getAdapter() instanceof IconTabProvider) || ((IconTabProvider) this.pager.getAdapter()).canScrollToTab(i)) {
-            this.pager.setCurrentItem(i, false);
+    public static /* synthetic */ void $r8$lambda$fXfj9wgwaJ2taMvgKFD27LkgG5Y(PagerSlidingTabStrip pagerSlidingTabStrip, int i, View view) {
+        if (!(pagerSlidingTabStrip.pager.getAdapter() instanceof IconTabProvider) || ((IconTabProvider) pagerSlidingTabStrip.pager.getAdapter()).canScrollToTab(i)) {
+            pagerSlidingTabStrip.pager.setCurrentItem(i, false);
         }
     }
 
@@ -188,7 +187,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         textTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PagerSlidingTabStrip$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PagerSlidingTabStrip.this.lambda$addTab$1(i, view);
+                PagerSlidingTabStrip.$r8$lambda$fjdAuTl2r62GqZaqZHorv5f-jsI(PagerSlidingTabStrip.this, i, view);
             }
         });
         textTab.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -196,10 +195,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         textTab.setSelected(i == this.currentPosition);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addTab$1(int i, View view) {
-        if (!(this.pager.getAdapter() instanceof IconTabProvider) || ((IconTabProvider) this.pager.getAdapter()).canScrollToTab(i)) {
-            this.pager.setCurrentItem(i, false);
+    public static /* synthetic */ void $r8$lambda$fjdAuTl2r62GqZaqZHorv5f-jsI(PagerSlidingTabStrip pagerSlidingTabStrip, int i, View view) {
+        if (!(pagerSlidingTabStrip.pager.getAdapter() instanceof IconTabProvider) || ((IconTabProvider) pagerSlidingTabStrip.pager.getAdapter()).canScrollToTab(i)) {
+            pagerSlidingTabStrip.pager.setCurrentItem(i, false);
         }
     }
 

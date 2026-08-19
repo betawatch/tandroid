@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
@@ -123,15 +122,13 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                SearchDownloadsContainer.this.lambda$new$0(i, view, i2);
+                SearchDownloadsContainer.$r8$lambda$6H0ECteTyLxDXlHO3DbM8yYhSwY(SearchDownloadsContainer.this, i, view, i2);
             }
         });
         recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
-                boolean lambda$new$1;
-                lambda$new$1 = SearchDownloadsContainer.this.lambda$new$1(view, i2);
-                return lambda$new$1;
+                return SearchDownloadsContainer.$r8$lambda$GFph80b_QD4Y5hqTUxAsWx2ClSk(SearchDownloadsContainer.this, view, i2);
             }
         });
         this.itemsEnterAnimator = new RecyclerItemsEnterAnimator(recyclerListView, true);
@@ -148,21 +145,20 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         FileLoader.getInstance(i).getCurrentLoadingFiles(this.currentLoadingFiles);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i, View view, int i2) {
-        MessageObject message = this.adapter.getMessage(i2);
+    public static /* synthetic */ void $r8$lambda$6H0ECteTyLxDXlHO3DbM8yYhSwY(SearchDownloadsContainer searchDownloadsContainer, int i, View view, int i2) {
+        MessageObject message = searchDownloadsContainer.adapter.getMessage(i2);
         if (message == null) {
             return;
         }
         boolean z = false;
-        if (this.uiCallback.actionModeShowing()) {
-            this.uiCallback.toggleItemSelection(message, view, 0);
-            this.messageHashIdTmp.set(message.getId(), message.getDialogId());
-            this.adapter.notifyItemChanged(i2);
-            if (this.uiCallback.actionModeShowing()) {
+        if (searchDownloadsContainer.uiCallback.actionModeShowing()) {
+            searchDownloadsContainer.uiCallback.toggleItemSelection(message, view, 0);
+            searchDownloadsContainer.messageHashIdTmp.set(message.getId(), message.getDialogId());
+            searchDownloadsContainer.adapter.notifyItemChanged(i2);
+            if (searchDownloadsContainer.uiCallback.actionModeShowing()) {
                 return;
             }
-            DownloadsAdapter downloadsAdapter = this.adapter;
+            DownloadsAdapter downloadsAdapter = searchDownloadsContainer.adapter;
             downloadsAdapter.notifyItemRangeChanged(0, downloadsAdapter.getItemCount());
             return;
         }
@@ -196,14 +192,14 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                     }
                 }
                 if (z) {
-                    PhotoViewer.getInstance().setParentActivity(this.parentFragment);
+                    PhotoViewer.getInstance().setParentActivity(searchDownloadsContainer.parentFragment);
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(message2);
-                    PhotoViewer.getInstance().setParentActivity(this.parentFragment);
+                    PhotoViewer.getInstance().setParentActivity(searchDownloadsContainer.parentFragment);
                     PhotoViewer.getInstance().openPhoto(arrayList, 0, 0L, 0L, 0L, new PhotoViewer.EmptyPhotoViewerProvider());
                     return;
                 }
-                AndroidUtilities.openDocument(message2, this.parentActivity, this.parentFragment);
+                AndroidUtilities.openDocument(message2, searchDownloadsContainer.parentActivity, searchDownloadsContainer.parentFragment);
             } else if (!sharedDocumentCell.isLoading()) {
                 message.putInDownloadsStore = true;
                 AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().loadFile(document, message, 0, 0);
@@ -213,33 +209,32 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                 AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().cancelLoadFile(document);
                 sharedDocumentCell.updateFileExistIcon(true);
             }
-            update(true);
+            searchDownloadsContainer.update(true);
         }
         if (view instanceof SharedAudioCell) {
             ((SharedAudioCell) view).didPressedButton();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(View view, int i) {
-        MessageObject message = this.adapter.getMessage(i);
+    public static /* synthetic */ boolean $r8$lambda$GFph80b_QD4Y5hqTUxAsWx2ClSk(SearchDownloadsContainer searchDownloadsContainer, View view, int i) {
+        MessageObject message = searchDownloadsContainer.adapter.getMessage(i);
         if (message == null) {
             return false;
         }
-        if (!this.uiCallback.actionModeShowing()) {
-            this.uiCallback.showActionMode();
-            DownloadsAdapter downloadsAdapter = this.adapter;
+        if (!searchDownloadsContainer.uiCallback.actionModeShowing()) {
+            searchDownloadsContainer.uiCallback.showActionMode();
+            DownloadsAdapter downloadsAdapter = searchDownloadsContainer.adapter;
             downloadsAdapter.notifyItemRangeChanged(0, downloadsAdapter.getItemCount());
         }
-        if (!this.uiCallback.actionModeShowing()) {
+        if (!searchDownloadsContainer.uiCallback.actionModeShowing()) {
             return true;
         }
-        this.uiCallback.toggleItemSelection(message, view, 0);
-        if (!this.uiCallback.actionModeShowing()) {
-            DownloadsAdapter downloadsAdapter2 = this.adapter;
+        searchDownloadsContainer.uiCallback.toggleItemSelection(message, view, 0);
+        if (!searchDownloadsContainer.uiCallback.actionModeShowing()) {
+            DownloadsAdapter downloadsAdapter2 = searchDownloadsContainer.adapter;
             downloadsAdapter2.notifyItemRangeChanged(0, downloadsAdapter2.getItemCount());
         }
-        this.messageHashIdTmp.set(message.getId(), message.getDialogId());
+        searchDownloadsContainer.messageHashIdTmp.set(message.getId(), message.getDialogId());
         return true;
     }
 
@@ -274,47 +269,47 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SearchDownloadsContainer.this.lambda$checkFilesExist$3();
+                SearchDownloadsContainer.$r8$lambda$ps5HHDyM1bs_lVPToQMRbFPiDtc(SearchDownloadsContainer.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkFilesExist$3() {
+    public static /* synthetic */ void $r8$lambda$ps5HHDyM1bs_lVPToQMRbFPiDtc(final SearchDownloadsContainer searchDownloadsContainer) {
+        searchDownloadsContainer.getClass();
         ArrayList<MessageObject> arrayList = new ArrayList<>();
         ArrayList<MessageObject> arrayList2 = new ArrayList<>();
         final ArrayList arrayList3 = new ArrayList();
         final ArrayList arrayList4 = new ArrayList();
-        FileLoader.getInstance(this.currentAccount).getCurrentLoadingFiles(arrayList);
-        FileLoader.getInstance(this.currentAccount).getRecentLoadingFiles(arrayList2);
+        FileLoader.getInstance(searchDownloadsContainer.currentAccount).getCurrentLoadingFiles(arrayList);
+        FileLoader.getInstance(searchDownloadsContainer.currentAccount).getRecentLoadingFiles(arrayList2);
         for (int i = 0; i < arrayList.size(); i++) {
-            if (FileLoader.getInstance(this.currentAccount).getPathToMessage(arrayList.get(i).messageOwner).exists()) {
+            if (FileLoader.getInstance(searchDownloadsContainer.currentAccount).getPathToMessage(arrayList.get(i).messageOwner).exists()) {
                 arrayList3.add(arrayList.get(i));
             }
         }
         for (int i2 = 0; i2 < arrayList2.size(); i2++) {
-            if (!FileLoader.getInstance(this.currentAccount).getPathToMessage(arrayList2.get(i2).messageOwner).exists()) {
+            if (!FileLoader.getInstance(searchDownloadsContainer.currentAccount).getPathToMessage(arrayList2.get(i2).messageOwner).exists()) {
                 arrayList4.add(arrayList2.get(i2));
             }
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                SearchDownloadsContainer.this.lambda$checkFilesExist$2(arrayList3, arrayList4);
+                SearchDownloadsContainer.$r8$lambda$1i1Z2ImwlvK4Nrj6eEZ63i5A2Nw(SearchDownloadsContainer.this, arrayList3, arrayList4);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkFilesExist$2(ArrayList arrayList, ArrayList arrayList2) {
+    public static /* synthetic */ void $r8$lambda$1i1Z2ImwlvK4Nrj6eEZ63i5A2Nw(SearchDownloadsContainer searchDownloadsContainer, ArrayList arrayList, ArrayList arrayList2) {
+        searchDownloadsContainer.getClass();
         for (int i = 0; i < arrayList.size(); i++) {
-            DownloadController.getInstance(this.currentAccount).onDownloadComplete((MessageObject) arrayList.get(i));
+            DownloadController.getInstance(searchDownloadsContainer.currentAccount).onDownloadComplete((MessageObject) arrayList.get(i));
         }
         if (!arrayList2.isEmpty()) {
-            DownloadController.getInstance(this.currentAccount).deleteRecentFiles(arrayList2);
+            DownloadController.getInstance(searchDownloadsContainer.currentAccount).deleteRecentFiles(arrayList2);
         }
-        this.checkingFilesExist = false;
-        update(true);
+        searchDownloadsContainer.checkingFilesExist = false;
+        searchDownloadsContainer.update(true);
     }
 
     public void update(boolean z) {
@@ -359,7 +354,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SearchDownloadsContainer.this.lambda$update$5(arrayList, lowerCase, arrayList2);
+                SearchDownloadsContainer.$r8$lambda$60aQvv3asNXvmZCLHUHIZiZpF2o(SearchDownloadsContainer.this, arrayList, lowerCase, arrayList2);
             }
         };
         this.lastSearchRunnable = runnable;
@@ -373,48 +368,47 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         updateListInternal(z, this.currentLoadingFilesTmp, this.recentLoadingFilesTmp);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$update$5(ArrayList arrayList, final String str, ArrayList arrayList2) {
+    public static /* synthetic */ void $r8$lambda$60aQvv3asNXvmZCLHUHIZiZpF2o(final SearchDownloadsContainer searchDownloadsContainer, ArrayList arrayList, final String str, ArrayList arrayList2) {
+        searchDownloadsContainer.getClass();
         final ArrayList arrayList3 = new ArrayList();
         final ArrayList arrayList4 = new ArrayList();
         for (int i = 0; i < arrayList.size(); i++) {
             String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList.get(i)).getDocument());
             if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
-                MessageObject messageObject = new MessageObject(this.currentAccount, ((MessageObject) arrayList.get(i)).messageOwner, false, false);
+                MessageObject messageObject = new MessageObject(searchDownloadsContainer.currentAccount, ((MessageObject) arrayList.get(i)).messageOwner, false, false);
                 messageObject.mediaExists = ((MessageObject) arrayList.get(i)).mediaExists;
-                messageObject.setQuery(this.searchQuery);
+                messageObject.setQuery(searchDownloadsContainer.searchQuery);
                 arrayList3.add(messageObject);
             }
         }
         for (int i2 = 0; i2 < arrayList2.size(); i2++) {
             String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList2.get(i2)).getDocument());
             if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
-                MessageObject messageObject2 = new MessageObject(this.currentAccount, ((MessageObject) arrayList2.get(i2)).messageOwner, false, false);
+                MessageObject messageObject2 = new MessageObject(searchDownloadsContainer.currentAccount, ((MessageObject) arrayList2.get(i2)).messageOwner, false, false);
                 messageObject2.mediaExists = ((MessageObject) arrayList2.get(i2)).mediaExists;
-                messageObject2.setQuery(this.searchQuery);
+                messageObject2.setQuery(searchDownloadsContainer.searchQuery);
                 arrayList4.add(messageObject2);
             }
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                SearchDownloadsContainer.this.lambda$update$4(str, arrayList3, arrayList4);
+                SearchDownloadsContainer.$r8$lambda$9lAt6Se6w2h2o-iX0QNRmd9b9lA(SearchDownloadsContainer.this, str, arrayList3, arrayList4);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$update$4(String str, ArrayList arrayList, ArrayList arrayList2) {
-        if (str.equals(this.lastQueryString)) {
-            if (this.rowCount == 0) {
-                this.itemsEnterAnimator.showItemsAnimated(0);
+    public static /* synthetic */ void $r8$lambda$9lAt6Se6w2h2o-iX0QNRmd9b9lA(SearchDownloadsContainer searchDownloadsContainer, String str, ArrayList arrayList, ArrayList arrayList2) {
+        if (str.equals(searchDownloadsContainer.lastQueryString)) {
+            if (searchDownloadsContainer.rowCount == 0) {
+                searchDownloadsContainer.itemsEnterAnimator.showItemsAnimated(0);
             }
-            updateListInternal(true, arrayList, arrayList2);
-            if (this.rowCount == 0) {
-                this.emptyView.showProgress(false, true);
-                this.emptyView.title.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                this.emptyView.subtitle.setVisibility(0);
-                this.emptyView.subtitle.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+            searchDownloadsContainer.updateListInternal(true, arrayList, arrayList2);
+            if (searchDownloadsContainer.rowCount == 0) {
+                searchDownloadsContainer.emptyView.showProgress(false, true);
+                searchDownloadsContainer.emptyView.title.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                searchDownloadsContainer.emptyView.subtitle.setVisibility(0);
+                searchDownloadsContainer.emptyView.subtitle.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
             }
         }
     }
@@ -506,22 +500,28 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
 
     private void updateRows(ArrayList arrayList, ArrayList arrayList2) {
         this.currentLoadingFiles.clear();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            MessageObject messageObject = (MessageObject) it.next();
+        int size = arrayList.size();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            MessageObject messageObject = (MessageObject) obj;
             if (!messageObject.isRoundVideo() && !messageObject.isVoice()) {
                 this.currentLoadingFiles.add(messageObject);
             }
         }
         this.recentLoadingFiles.clear();
-        Iterator it2 = arrayList2.iterator();
-        while (it2.hasNext()) {
-            MessageObject messageObject2 = (MessageObject) it2.next();
+        int size2 = arrayList2.size();
+        int i3 = 0;
+        while (i3 < size2) {
+            Object obj2 = arrayList2.get(i3);
+            i3++;
+            MessageObject messageObject2 = (MessageObject) obj2;
             if (!messageObject2.isRoundVideo() && !messageObject2.isVoice()) {
                 this.recentLoadingFiles.add(messageObject2);
             }
         }
-        int i = 0;
         this.rowCount = 0;
         this.downloadingFilesHeader = -1;
         this.downloadingFilesStartRow = -1;
@@ -531,14 +531,14 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         this.recentFilesEndRow = -1;
         this.hasCurrentDownload = false;
         if (!this.currentLoadingFiles.isEmpty()) {
-            int i2 = this.rowCount;
-            int i3 = i2 + 1;
-            this.rowCount = i3;
-            this.downloadingFilesHeader = i2;
-            this.downloadingFilesStartRow = i3;
-            int size = i3 + this.currentLoadingFiles.size();
-            this.rowCount = size;
-            this.downloadingFilesEndRow = size;
+            int i4 = this.rowCount;
+            int i5 = i4 + 1;
+            this.rowCount = i5;
+            this.downloadingFilesHeader = i4;
+            this.downloadingFilesStartRow = i5;
+            int size3 = i5 + this.currentLoadingFiles.size();
+            this.rowCount = size3;
+            this.downloadingFilesEndRow = size3;
             while (true) {
                 if (i >= this.currentLoadingFiles.size()) {
                     break;
@@ -553,14 +553,14 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         if (this.recentLoadingFiles.isEmpty()) {
             return;
         }
-        int i4 = this.rowCount;
-        int i5 = i4 + 1;
-        this.rowCount = i5;
-        this.recentFilesHeader = i4;
-        this.recentFilesStartRow = i5;
-        int size2 = i5 + this.recentLoadingFiles.size();
-        this.rowCount = size2;
-        this.recentFilesEndRow = size2;
+        int i6 = this.rowCount;
+        int i7 = i6 + 1;
+        this.rowCount = i7;
+        this.recentFilesHeader = i6;
+        this.recentFilesStartRow = i7;
+        int size4 = i7 + this.recentLoadingFiles.size();
+        this.rowCount = size4;
+        this.recentFilesEndRow = size4;
     }
 
     public void search(String str) {
@@ -592,8 +592,8 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             return new RecyclerListView.Holder(view);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:37:0x0094  */
-        /* JADX WARN: Removed duplicated region for block: B:50:0x00fe  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x0091  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x00fb  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -632,7 +632,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                     graySectionCell.setText(LocaleController.getString(R.string.RecentlyDownloaded), LocaleController.getString(R.string.Settings), new View.OnClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$DownloadsAdapter$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            SearchDownloadsContainer.DownloadsAdapter.this.lambda$onBindViewHolder$0(view);
+                            SearchDownloadsContainer.DownloadsAdapter.$r8$lambda$9okgf1Ocn_hRZOCaYmxiGLY2dmw(SearchDownloadsContainer.DownloadsAdapter.this, view);
                         }
                     });
                     return;
@@ -677,8 +677,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(View view) {
+        public static /* synthetic */ void $r8$lambda$9okgf1Ocn_hRZOCaYmxiGLY2dmw(DownloadsAdapter downloadsAdapter, View view) {
             SearchDownloadsContainer searchDownloadsContainer = SearchDownloadsContainer.this;
             DownloadsInfoBottomSheet.show(searchDownloadsContainer.parentActivity, searchDownloadsContainer.parentFragment);
         }
@@ -749,7 +748,8 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         }
     }
 
-    private class Cell extends FrameLayout {
+    /* JADX INFO: Access modifiers changed from: private */
+    class Cell extends FrameLayout {
         SharedDocumentCell sharedDocumentCell;
 
         public Cell(Context context) {
@@ -850,11 +850,12 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                 if ((childAt instanceof Cell) && (message = ((Cell) childAt).sharedDocumentCell.getMessage()) != null) {
                     if (FileLoader.getInstance(this.currentAccount).checkLoadCaughtPremiumFloodWait(message.getFileName())) {
                         showPremiumFloodWaitBulletin(false);
-                        return;
                     } else if (FileLoader.getInstance(this.currentAccount).checkLoadCaughtPremiumFloodWait(message.getFileName())) {
                         showPremiumFloodWaitBulletin(true);
-                        return;
+                    } else {
+                        continue;
                     }
+                    return;
                 }
             } catch (Exception e) {
                 FileLog.e(e);
@@ -888,13 +889,10 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         BulletinFactory.of(this.parentFragment).createSimpleBulletin(R.raw.speed_limit, LocaleController.getString(z ? R.string.UploadSpeedLimited : R.string.DownloadSpeedLimited), AndroidUtilities.replaceCharSequence("%d", AndroidUtilities.premiumText(LocaleController.getString(z ? R.string.UploadSpeedLimitedMessage : R.string.DownloadSpeedLimitedMessage), new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                SearchDownloadsContainer.this.lambda$showPremiumFloodWaitBulletin$6(z);
+                SearchDownloadsContainer searchDownloadsContainer = SearchDownloadsContainer.this;
+                boolean z2 = z;
+                searchDownloadsContainer.parentFragment.presentFragment(new PremiumPreviewFragment(r2 ? "upload_speed" : "download_speed"));
             }
         }), spannableString)).setDuration(8000).show(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPremiumFloodWaitBulletin$6(boolean z) {
-        this.parentFragment.presentFragment(new PremiumPreviewFragment(z ? "upload_speed" : "download_speed"));
     }
 }

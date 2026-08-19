@@ -103,7 +103,13 @@ public final class SessionLifecycleService extends Service {
             sb.append(companion.getInstance().getCurrentSession());
             Log.d("SessionLifecycleService", sb.toString());
             SessionFirelogPublisher.Companion.getInstance().logSession(companion.getInstance().getCurrentSession());
-            for (Messenger it : new ArrayList(this.boundClients)) {
+            ArrayList arrayList = new ArrayList(this.boundClients);
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                Messenger it = (Messenger) obj;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 maybeSendSessionToClient(it);
             }

@@ -113,7 +113,7 @@ public class ID3v2Info extends AudioInfo {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:264:0x04d6 A[Catch: all -> 0x04b9, TryCatch #6 {all -> 0x04b9, blocks: (B:257:0x049f, B:259:0x04b4, B:262:0x04cb, B:264:0x04d6, B:266:0x04ed, B:267:0x050a, B:269:0x050e, B:271:0x0506, B:274:0x04bb, B:276:0x04c3), top: B:256:0x049f }] */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x04c7 A[Catch: all -> 0x04aa, TryCatch #2 {all -> 0x04aa, blocks: (B:257:0x0490, B:259:0x04a5, B:262:0x04bc, B:264:0x04c7, B:266:0x04de, B:267:0x04fb, B:269:0x04ff, B:271:0x04f7, B:274:0x04ac, B:276:0x04b4), top: B:256:0x0490 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -131,7 +131,7 @@ public class ID3v2Info extends AudioInfo {
             logger.log(this.debugLevel, "Parsing frame: " + iD3v2FrameBody.getFrameHeader().getFrameId());
         }
         String frameId = iD3v2FrameBody.getFrameHeader().getFrameId();
-        frameId.hashCode();
+        frameId.getClass();
         switch (frameId) {
             case "COM":
             case "COMM":
@@ -399,7 +399,7 @@ public class ID3v2Info extends AudioInfo {
         ID3v2Encoding readEncoding = iD3v2FrameBody.readEncoding();
         if (iD3v2FrameBody.getTagHeader().getVersion() == 2) {
             String upperCase = iD3v2FrameBody.readFixedLengthString(3, ID3v2Encoding.ISO_8859_1).toUpperCase();
-            upperCase.hashCode();
+            upperCase.getClass();
             if (upperCase.equals("JPG")) {
                 readZeroTerminatedString = "image/jpeg";
             } else if (upperCase.equals("PNG")) {

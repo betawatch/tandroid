@@ -51,18 +51,20 @@ final class AutoValue_EventStoreConfig extends EventStoreConfig {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof EventStoreConfig)) {
-            return false;
+        if (obj instanceof EventStoreConfig) {
+            EventStoreConfig eventStoreConfig = (EventStoreConfig) obj;
+            if (this.maxStorageSizeInBytes == eventStoreConfig.getMaxStorageSizeInBytes() && this.loadBatchSize == eventStoreConfig.getLoadBatchSize() && this.criticalSectionEnterTimeoutMs == eventStoreConfig.getCriticalSectionEnterTimeoutMs() && this.eventCleanUpAge == eventStoreConfig.getEventCleanUpAge() && this.maxBlobByteSizePerRow == eventStoreConfig.getMaxBlobByteSizePerRow()) {
+                return true;
+            }
         }
-        EventStoreConfig eventStoreConfig = (EventStoreConfig) obj;
-        return this.maxStorageSizeInBytes == eventStoreConfig.getMaxStorageSizeInBytes() && this.loadBatchSize == eventStoreConfig.getLoadBatchSize() && this.criticalSectionEnterTimeoutMs == eventStoreConfig.getCriticalSectionEnterTimeoutMs() && this.eventCleanUpAge == eventStoreConfig.getEventCleanUpAge() && this.maxBlobByteSizePerRow == eventStoreConfig.getMaxBlobByteSizePerRow();
+        return false;
     }
 
     public int hashCode() {
         long j = this.maxStorageSizeInBytes;
         int i = (((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.loadBatchSize) * 1000003) ^ this.criticalSectionEnterTimeoutMs) * 1000003;
         long j2 = this.eventCleanUpAge;
-        return this.maxBlobByteSizePerRow ^ ((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
+        return this.maxBlobByteSizePerRow ^ ((i ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003);
     }
 
     static final class Builder extends EventStoreConfig.Builder {

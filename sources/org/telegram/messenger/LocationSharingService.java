@@ -35,26 +35,24 @@ public class LocationSharingService extends Service implements NotificationCente
         Runnable runnable = new Runnable() { // from class: org.telegram.messenger.LocationSharingService$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                LocationSharingService.this.lambda$onCreate$1();
+                LocationSharingService.$r8$lambda$0W_MUm9liG2v2He2nHfKI2BUn1w(LocationSharingService.this);
             }
         };
         this.runnable = runnable;
         this.handler.postDelayed(runnable, 1000L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreate$1() {
-        this.handler.postDelayed(this.runnable, 1000L);
+    public static /* synthetic */ void $r8$lambda$0W_MUm9liG2v2He2nHfKI2BUn1w(LocationSharingService locationSharingService) {
+        locationSharingService.handler.postDelayed(locationSharingService.runnable, 1000L);
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.LocationSharingService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                LocationSharingService.lambda$onCreate$0();
+                LocationSharingService.$r8$lambda$jDpuTo-nJalawPNBnRWljHyRr88();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onCreate$0() {
+    public static /* synthetic */ void $r8$lambda$jDpuTo-nJalawPNBnRWljHyRr88() {
         for (int i = 0; i < 4; i++) {
             LocationController.getInstance(i).update();
         }
@@ -81,17 +79,16 @@ public class LocationSharingService extends Service implements NotificationCente
         handler.post(new Runnable() { // from class: org.telegram.messenger.LocationSharingService$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                LocationSharingService.this.lambda$didReceivedNotification$2();
+                LocationSharingService.$r8$lambda$3uEqpDLAL9Va82rzbvQVfISHKWk(LocationSharingService.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$2() {
-        if (getInfos().isEmpty()) {
-            stopSelf();
+    public static /* synthetic */ void $r8$lambda$3uEqpDLAL9Va82rzbvQVfISHKWk(LocationSharingService locationSharingService) {
+        if (locationSharingService.getInfos().isEmpty()) {
+            locationSharingService.stopSelf();
         } else {
-            updateNotification(true);
+            locationSharingService.updateNotification(true);
         }
     }
 

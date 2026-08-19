@@ -7,14 +7,14 @@ import java.util.function.Consumer;
 public interface Spliterator<T> {
 
     public final /* synthetic */ class Wrapper implements java.util.Spliterator {
-        private /* synthetic */ Wrapper() {
+        public /* synthetic */ Wrapper() {
         }
 
         public static /* synthetic */ java.util.Spliterator convert(Spliterator spliterator) {
             if (spliterator == null) {
                 return null;
             }
-            return spliterator instanceof g0 ? ((g0) spliterator).a : spliterator instanceof f0 ? e0.a((f0) spliterator) : new Wrapper();
+            return spliterator instanceof d0 ? ((d0) spliterator).a : spliterator instanceof c0 ? b0.a((c0) spliterator) : new Wrapper();
         }
 
         @Override // java.util.Spliterator

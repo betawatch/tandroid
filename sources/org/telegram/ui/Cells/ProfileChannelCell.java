@@ -12,7 +12,6 @@ import android.widget.TextView;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.function.ToIntFunction;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.AndroidUtilities;
@@ -199,6 +198,7 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
             } else {
                 MessageObject messageObject = (MessageObject) arrayList.get(arrayList.size() - 1);
                 this.dialogCell.setDialog(-chat.id, messageObject, arrayList, messageObject.messageOwner.date, false, z);
+                z = z;
             }
         }
         if (!z) {
@@ -257,16 +257,16 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
             messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ProfileChannelCell.ChannelMessageFetcher.this.lambda$fetch$5(i, messagesStorage, j, clientUserId, i2);
+                    ProfileChannelCell.ChannelMessageFetcher.$r8$lambda$rXKSW7QTzI4_zXTgytjDxPu1NJ4(ProfileChannelCell.ChannelMessageFetcher.this, i, messagesStorage, j, clientUserId, i2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fetch$5(final int i, final MessagesStorage messagesStorage, final long j, long j2, final int i2) {
+        public static /* synthetic */ void $r8$lambda$rXKSW7QTzI4_zXTgytjDxPu1NJ4(final ChannelMessageFetcher channelMessageFetcher, final int i, final MessagesStorage messagesStorage, final long j, long j2, final int i2) {
             SQLiteCursor sQLiteCursor;
             boolean z = false;
             int i3 = 1;
+            channelMessageFetcher.getClass();
             final ArrayList arrayList = new ArrayList();
             ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
             ArrayList<TLRPC.Chat> arrayList3 = new ArrayList<>();
@@ -321,7 +321,7 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileChannelCell.ChannelMessageFetcher.this.lambda$fetch$4(i2, arrayList, j, i, messagesStorage);
+                        ProfileChannelCell.ChannelMessageFetcher.$r8$lambda$fc_Nyqlljl_Uw1Lp0w8_VtSyrqU(ProfileChannelCell.ChannelMessageFetcher.this, i2, arrayList, j, i, messagesStorage);
                     }
                 });
             } catch (Throwable th2) {
@@ -336,18 +336,17 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ProfileChannelCell.ChannelMessageFetcher.this.lambda$fetch$4(i2, arrayList, j, i, messagesStorage);
+                    ProfileChannelCell.ChannelMessageFetcher.$r8$lambda$fc_Nyqlljl_Uw1Lp0w8_VtSyrqU(ProfileChannelCell.ChannelMessageFetcher.this, i2, arrayList, j, i, messagesStorage);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fetch$4(final int i, final ArrayList arrayList, final long j, int i2, final MessagesStorage messagesStorage) {
-            if (i != this.searchId) {
+        public static /* synthetic */ void $r8$lambda$fc_Nyqlljl_Uw1Lp0w8_VtSyrqU(final ChannelMessageFetcher channelMessageFetcher, final int i, final ArrayList arrayList, final long j, int i2, final MessagesStorage messagesStorage) {
+            if (i != channelMessageFetcher.searchId) {
                 return;
             }
             if (!arrayList.isEmpty()) {
-                this.messageObjects.clear();
+                channelMessageFetcher.messageObjects.clear();
                 Collections.sort(arrayList, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda2
                     @Override // java.util.function.ToIntFunction
                     public final int applyAsInt(Object obj) {
@@ -359,57 +358,60 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
                 TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
                 long j2 = message.grouped_id;
                 if (j2 != 0) {
-                    Iterator it = arrayList.iterator();
-                    while (it.hasNext()) {
-                        TLRPC.Message message2 = (TLRPC.Message) it.next();
+                    int size = arrayList.size();
+                    int i3 = 0;
+                    while (i3 < size) {
+                        Object obj = arrayList.get(i3);
+                        i3++;
+                        TLRPC.Message message2 = (TLRPC.Message) obj;
                         if (message2.grouped_id == j2) {
-                            this.messageObjects.add(new MessageObject(this.currentAccount, message2, false, true));
+                            channelMessageFetcher.messageObjects.add(new MessageObject(channelMessageFetcher.currentAccount, message2, false, true));
                         }
                     }
                 } else {
-                    this.messageObjects.add(new MessageObject(this.currentAccount, message, false, true));
+                    channelMessageFetcher.messageObjects.add(new MessageObject(channelMessageFetcher.currentAccount, message, false, true));
                 }
-                if (!this.messageObjects.isEmpty()) {
-                    done(false);
+                if (!channelMessageFetcher.messageObjects.isEmpty()) {
+                    channelMessageFetcher.done(false);
                     return;
                 }
             }
             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-            tL_channels_getMessages.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(j);
-            for (int i3 = 10; i3 >= 0; i3--) {
-                int i4 = i2 - i3;
-                if (i4 >= 0) {
-                    tL_channels_getMessages.id.add(Integer.valueOf(i4));
+            tL_channels_getMessages.channel = MessagesController.getInstance(channelMessageFetcher.currentAccount).getInputChannel(j);
+            for (int i4 = 10; i4 >= 0; i4--) {
+                int i5 = i2 - i4;
+                if (i5 >= 0) {
+                    tL_channels_getMessages.id.add(Integer.valueOf(i5));
                 }
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda3
+            ConnectionsManager.getInstance(channelMessageFetcher.currentAccount).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda3
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ProfileChannelCell.ChannelMessageFetcher.this.lambda$fetch$3(messagesStorage, j, i, arrayList, tLObject, tL_error);
+                    ProfileChannelCell.ChannelMessageFetcher.$r8$lambda$y6kbaezH8lc59pPc6OUHkf-b5iY(ProfileChannelCell.ChannelMessageFetcher.this, messagesStorage, j, i, arrayList, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fetch$3(final MessagesStorage messagesStorage, final long j, final int i, final ArrayList arrayList, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$y6kbaezH8lc59pPc6OUHkf-b5iY(final ChannelMessageFetcher channelMessageFetcher, final MessagesStorage messagesStorage, final long j, final int i, final ArrayList arrayList, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            channelMessageFetcher.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ProfileChannelCell.ChannelMessageFetcher.this.lambda$fetch$2(tLObject, messagesStorage, j, i, arrayList);
+                    ProfileChannelCell.ChannelMessageFetcher.$r8$lambda$CE0It025FDdHulM9Rwkn80lbBgk(ProfileChannelCell.ChannelMessageFetcher.this, tLObject, messagesStorage, j, i, arrayList);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fetch$2(TLObject tLObject, MessagesStorage messagesStorage, long j, int i, ArrayList arrayList) {
+        public static /* synthetic */ void $r8$lambda$CE0It025FDdHulM9Rwkn80lbBgk(ChannelMessageFetcher channelMessageFetcher, TLObject tLObject, MessagesStorage messagesStorage, long j, int i, ArrayList arrayList) {
+            channelMessageFetcher.getClass();
             if (tLObject instanceof TLRPC.messages_Messages) {
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                MessagesController.getInstance(this.currentAccount).putUsers(messages_messages.users, false);
-                MessagesController.getInstance(this.currentAccount).putChats(messages_messages.chats, false);
+                MessagesController.getInstance(channelMessageFetcher.currentAccount).putUsers(messages_messages.users, false);
+                MessagesController.getInstance(channelMessageFetcher.currentAccount).putChats(messages_messages.chats, false);
                 messagesStorage.putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
                 messagesStorage.putMessages(messages_messages, -j, 3, 0, false, 0, 0L);
-                if (i == this.searchId && !messages_messages.messages.isEmpty()) {
-                    this.messageObjects.clear();
+                if (i == channelMessageFetcher.searchId && !messages_messages.messages.isEmpty()) {
+                    channelMessageFetcher.messageObjects.clear();
                     Collections.sort(arrayList, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Cells.ProfileChannelCell$ChannelMessageFetcher$$ExternalSyntheticLambda5
                         @Override // java.util.function.ToIntFunction
                         public final int applyAsInt(Object obj) {
@@ -422,28 +424,32 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
                     TLRPC.Message message = arrayList2.get(arrayList2.size() - 1);
                     long j2 = message.grouped_id;
                     if (j2 != 0) {
-                        Iterator<TLRPC.Message> it = messages_messages.messages.iterator();
-                        while (it.hasNext()) {
-                            TLRPC.Message next = it.next();
-                            if (next.grouped_id == j2) {
-                                this.messageObjects.add(new MessageObject(this.currentAccount, next, false, true));
+                        ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
+                        int size = arrayList3.size();
+                        int i2 = 0;
+                        while (i2 < size) {
+                            TLRPC.Message message2 = arrayList3.get(i2);
+                            i2++;
+                            TLRPC.Message message3 = message2;
+                            if (message3.grouped_id == j2) {
+                                channelMessageFetcher.messageObjects.add(new MessageObject(channelMessageFetcher.currentAccount, message3, false, true));
                             }
                         }
                     } else {
-                        this.messageObjects.add(new MessageObject(this.currentAccount, message, false, true));
+                        channelMessageFetcher.messageObjects.add(new MessageObject(channelMessageFetcher.currentAccount, message, false, true));
                     }
-                    if (this.messageObjects.isEmpty()) {
+                    if (channelMessageFetcher.messageObjects.isEmpty()) {
                         return;
                     }
-                    done(false);
+                    channelMessageFetcher.done(false);
                     return;
                 }
                 return;
             }
-            if (i != this.searchId) {
+            if (i != channelMessageFetcher.searchId) {
                 return;
             }
-            done(true);
+            channelMessageFetcher.done(true);
         }
 
         public void subscribe(Runnable runnable) {
@@ -455,12 +461,16 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
         }
 
         private void done(boolean z) {
+            int i = 0;
             this.loading = false;
             this.loaded = true;
             this.error = z;
-            Iterator it = this.callbacks.iterator();
-            while (it.hasNext()) {
-                ((Runnable) it.next()).run();
+            ArrayList arrayList = this.callbacks;
+            int size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((Runnable) obj).run();
             }
             this.callbacks.clear();
         }

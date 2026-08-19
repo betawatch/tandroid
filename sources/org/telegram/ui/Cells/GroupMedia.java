@@ -13,7 +13,6 @@ import android.view.MotionEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -85,6 +84,7 @@ public class GroupMedia {
 
     public void setMessageObject(MessageObject messageObject, boolean z, boolean z2) {
         TLRPC.Message message;
+        MessageObject messageObject2;
         if (messageObject == null || (message = messageObject.messageOwner) == null) {
             return;
         }
@@ -118,17 +118,18 @@ public class GroupMedia {
                 TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i2);
                 MediaHolder mediaHolder = i2 >= this.holders.size() ? null : (MediaHolder) this.holders.get(i2);
                 if (mediaHolder == null) {
-                    MediaHolder mediaHolder2 = new MediaHolder(this.cell, messageObject, messageExtendedMedia, tL_messageMediaPaidMedia.extended_media.size() != 1, (int) ((r5.pw / 1000.0f) * this.maxWidth), (int) (this.layout.getPosition(messageExtendedMedia).ph * this.layout.maxSizeHeight));
+                    messageObject2 = messageObject;
+                    MediaHolder mediaHolder2 = new MediaHolder(this.cell, messageObject2, messageExtendedMedia, tL_messageMediaPaidMedia.extended_media.size() != 1, (int) ((r1.pw / 1000.0f) * this.maxWidth), (int) (this.layout.getPosition(messageExtendedMedia).ph * this.layout.maxSizeHeight));
                     String str = messageExtendedMedia.attachPath;
                     if (str != null) {
                         mediaHolder2.attachPath = str;
                     } else if (tL_messageMediaPaidMedia.extended_media.size() == 1) {
-                        TLRPC.Message message2 = messageObject.messageOwner;
+                        TLRPC.Message message2 = messageObject2.messageOwner;
                         mediaHolder2.attachPath = message2 != null ? message2.attachPath : null;
                     }
                     if (!TextUtils.isEmpty(mediaHolder2.attachPath)) {
-                        DownloadController.getInstance(this.cell.currentAccount).addLoadingFileObserver(mediaHolder2.attachPath, messageObject, mediaHolder2);
-                        if (messageObject.isSending()) {
+                        DownloadController.getInstance(this.cell.currentAccount).addLoadingFileObserver(mediaHolder2.attachPath, messageObject2, mediaHolder2);
+                        if (messageObject2.isSending()) {
                             mediaHolder2.radialProgress.setProgress(messageExtendedMedia.uploadProgress, false);
                         }
                     }
@@ -137,10 +138,13 @@ public class GroupMedia {
                     }
                     this.holders.add(mediaHolder2);
                 } else {
-                    mediaHolder.updateMedia(messageExtendedMedia, messageObject);
+                    messageObject2 = messageObject;
+                    mediaHolder.updateMedia(messageExtendedMedia, messageObject2);
                 }
                 i2++;
+                messageObject = messageObject2;
             }
+            MessageObject messageObject3 = messageObject;
             int size = tL_messageMediaPaidMedia.extended_media.size();
             while (size < this.holders.size()) {
                 MediaHolder mediaHolder3 = size >= this.holders.size() ? null : (MediaHolder) this.holders.get(size);
@@ -151,7 +155,7 @@ public class GroupMedia {
                 }
                 size++;
             }
-            updateHolders(messageObject);
+            updateHolders(messageObject3);
             GroupedMessages groupedMessages = this.layout;
             this.width = (int) ((groupedMessages.width / 1000.0f) * this.maxWidth);
             this.height = (int) (groupedMessages.height * groupedMessages.maxSizeHeight);
@@ -180,7 +184,7 @@ public class GroupMedia {
     /* JADX WARN: Removed duplicated region for block: B:15:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01f1  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x01eb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -189,9 +193,9 @@ public class GroupMedia {
         int i;
         float f;
         int i2;
-        int i3;
+        boolean z2;
         ChatMessageCell chatMessageCell = this.cell;
-        boolean z2 = chatMessageCell.namesOffset > 0 || (chatMessageCell.captionAbove && !TextUtils.isEmpty(messageObject.caption));
+        boolean z3 = chatMessageCell.namesOffset > 0 || (chatMessageCell.captionAbove && !TextUtils.isEmpty(messageObject.caption));
         if (this.cell.captionAbove || TextUtils.isEmpty(messageObject.caption)) {
             ChatMessageCell chatMessageCell2 = this.cell;
             if (chatMessageCell2.reactionsLayoutInBubble.isEmpty && !chatMessageCell2.hasCommentLayout()) {
@@ -225,70 +229,70 @@ public class GroupMedia {
                     MediaHolder mediaHolder = (MediaHolder) this.holders.get(i2);
                     MessageObject.GroupedMessagePosition position = this.layout.getPosition(mediaHolder.media);
                     if (position == null) {
-                        i3 = dp2;
+                        z2 = z3;
                     } else {
                         float f3 = (position.left / f2) * f;
                         float f4 = this.maxWidth;
-                        int i4 = (int) (f3 * f4);
+                        int i3 = (int) (f3 * f4);
                         float f5 = position.top;
                         float f6 = this.layout.maxSizeHeight;
-                        int i5 = (int) (f5 * f6);
-                        i3 = dp2;
-                        int i6 = (int) ((position.pw / 1000.0f) * f * f4);
-                        int i7 = (int) (position.ph * f6);
-                        int i8 = position.flags;
-                        if ((i8 & 1) == 0) {
+                        int i4 = (int) (f5 * f6);
+                        z2 = z3;
+                        int i5 = (int) ((position.pw / 1000.0f) * f * f4);
+                        int i6 = (int) (position.ph * f6);
+                        int i7 = position.flags;
+                        if ((i7 & 1) == 0) {
+                            i3 += dp;
+                            i5 -= dp;
+                        }
+                        if ((i7 & 4) == 0) {
                             i4 += dp;
                             i6 -= dp;
                         }
-                        if ((i8 & 4) == 0) {
-                            i5 += dp;
-                            i7 -= dp;
+                        if ((i7 & 2) == 0) {
+                            i5 -= dp;
                         }
-                        if ((i8 & 2) == 0) {
+                        if ((i7 & 8) == 0) {
                             i6 -= dp;
                         }
-                        if ((i8 & 8) == 0) {
-                            i7 -= dp;
-                        }
-                        mediaHolder.l = i4;
-                        mediaHolder.t = i5;
-                        mediaHolder.r = i4 + i6;
-                        mediaHolder.b = i5 + i7;
-                        mediaHolder.imageReceiver.setImageCoords(i4, i5, i6, i7);
-                        int i9 = position.flags;
-                        int i10 = i9 & 4;
-                        int i11 = (i10 == 0 || (i9 & 1) == 0 || z2) ? i3 : dp3;
-                        int i12 = (i10 == 0 || (i9 & 2) == 0 || z2) ? i3 : dp3;
-                        int i13 = i9 & 8;
-                        int i14 = (i13 == 0 || (i9 & 1) == 0 || z) ? i3 : dp3;
-                        int i15 = (i13 == 0 || (i9 & 2) == 0 || z) ? i3 : dp3;
+                        mediaHolder.l = i3;
+                        mediaHolder.t = i4;
+                        mediaHolder.r = i3 + i5;
+                        mediaHolder.b = i4 + i6;
+                        mediaHolder.imageReceiver.setImageCoords(i3, i4, i5, i6);
+                        int i8 = position.flags;
+                        int i9 = i8 & 4;
+                        int i10 = (i9 == 0 || (i8 & 1) == 0 || z2) ? dp2 : dp3;
+                        int i11 = (i9 == 0 || (i8 & 2) == 0 || z2) ? dp2 : dp3;
+                        int i12 = i8 & 8;
+                        int i13 = (i12 == 0 || (i8 & 1) == 0 || z) ? dp2 : dp3;
+                        int i14 = (i12 == 0 || (i8 & 2) == 0 || z) ? dp2 : dp3;
                         if (!z) {
                             if (messageObject.isOutOwner()) {
-                                i15 = i3;
+                                i14 = dp2;
                             } else {
-                                i14 = i3;
+                                i13 = dp2;
                             }
                         }
                         if (!z2 && this.cell.pinnedTop) {
                             if (messageObject.isOutOwner()) {
-                                i12 = min;
-                            } else {
                                 i11 = min;
+                            } else {
+                                i10 = min;
                             }
                         }
-                        mediaHolder.imageReceiver.setRoundRadius(i11, i12, i15, i14);
+                        mediaHolder.imageReceiver.setRoundRadius(i10, i11, i14, i13);
                         float[] fArr = mediaHolder.radii;
-                        float f7 = i11;
+                        float f7 = i10;
                         fArr[1] = f7;
                         fArr[0] = f7;
-                        float f8 = i12;
+                        float f8 = i11;
                         fArr[3] = f8;
                         fArr[2] = f8;
-                        float f9 = i15;
+                        float f9 = i14;
                         fArr[5] = f9;
                         fArr[4] = f9;
-                        float f10 = i14;
+                        float f10 = i13;
                         fArr[7] = f10;
                         fArr[6] = f10;
                         if (messageObject != null && messageObject.isSending()) {
@@ -297,7 +301,7 @@ public class GroupMedia {
                         this.hidden = this.hidden || mediaHolder.hidden;
                     }
                     i2++;
-                    dp2 = i3;
+                    z3 = z2;
                     f2 = 1000.0f;
                 }
                 if (this.hidden) {
@@ -394,9 +398,13 @@ public class GroupMedia {
     }
 
     public boolean allVisible() {
-        Iterator it = this.holders.iterator();
-        while (it.hasNext()) {
-            if (!((MediaHolder) it.next()).imageReceiver.getVisible()) {
+        ArrayList arrayList = this.holders;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            if (!((MediaHolder) obj).imageReceiver.getVisible()) {
                 return false;
             }
         }
@@ -428,7 +436,7 @@ public class GroupMedia {
             canvas.clipPath(this.clipPath);
             drawBlurred(canvas, f);
             canvas.drawColor(Theme.multAlpha(1342177280, f));
-            this.buttonText.draw(canvas, ((this.x + (this.width / 2.0f)) - (dp / 2.0f)) + AndroidUtilities.dp(14.0f), (this.height / 2.0f) + this.y, -1, f);
+            this.buttonText.draw(canvas, AndroidUtilities.dp(14.0f) + ((this.x + (this.width / 2.0f)) - (dp / 2.0f)), this.y + (this.height / 2.0f), -1, f);
             canvas.restore();
             if (isLoading()) {
                 LoadingDrawable loadingDrawable = this.loadingDrawable;
@@ -552,6 +560,7 @@ public class GroupMedia {
     }
 
     public void drawImages(Canvas canvas, boolean z) {
+        Canvas canvas2 = canvas;
         float f = this.animatedHidden.set(this.hidden);
         MessageObject messageObject = this.cell.getMessageObject();
         this.clipPath2.rewind();
@@ -568,7 +577,7 @@ public class GroupMedia {
             int i4 = this.y;
             int i5 = mediaHolder.t;
             imageReceiver.setImageCoords(i2 + i3, i4 + i5, mediaHolder.r - i3, mediaHolder.b - i5);
-            mediaHolder.imageReceiver.draw(canvas);
+            mediaHolder.imageReceiver.draw(canvas2);
             if (mediaHolder.imageReceiver.getAnimation() != null) {
                 mediaHolder.setTime(Math.round(mediaHolder.imageReceiver.getAnimation().currentTime / 1000.0f));
             }
@@ -599,27 +608,29 @@ public class GroupMedia {
             } else {
                 mediaHolder.setIcon(mediaHolder.getDefaultIcon());
             }
-            canvas.saveLayerAlpha(mediaHolder.radialProgress.getProgressRect(), (int) ((1.0f - f) * 255.0f), 31);
-            mediaHolder.radialProgress.draw(canvas);
-            canvas.restore();
+            canvas2.saveLayerAlpha(mediaHolder.radialProgress.getProgressRect(), (int) ((1.0f - f) * 255.0f), 31);
+            mediaHolder.radialProgress.draw(canvas2);
+            canvas2.restore();
             i++;
             f2 = f7;
         }
         if (f > 0.0f && z) {
-            canvas.save();
-            canvas.clipPath(this.clipPath2);
-            canvas.translate(f3, f2);
+            canvas2.save();
+            canvas2.clipPath(this.clipPath2);
+            canvas2.translate(f3, f2);
             int i7 = (int) (f5 - f3);
             int i8 = (int) (f4 - f2);
-            canvas.saveLayerAlpha(0.0f, 0.0f, i7, i8, (int) (255.0f * f), 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, i7, i8, (int) (f * 255.0f), 31);
             SpoilerEffect2 spoilerEffect2 = this.spoilerEffect;
             ChatMessageCell chatMessageCell = this.cell;
-            spoilerEffect2.draw(canvas, chatMessageCell, i7, i8, 1.0f, chatMessageCell.drawingToBitmap);
-            canvas.restore();
-            canvas.restore();
+            canvas2 = canvas;
+            spoilerEffect2.draw(canvas2, chatMessageCell, i7, i8, 1.0f, chatMessageCell.drawingToBitmap);
+            canvas2.restore();
+            canvas2.restore();
             this.cell.invalidate();
         }
-        for (int i9 = 0; i9 < this.holders.size(); i9++) {
+        int i9 = 0;
+        while (i9 < this.holders.size()) {
             MediaHolder mediaHolder2 = (MediaHolder) this.holders.get(i9);
             if (mediaHolder2.durationText != null) {
                 float dp = AndroidUtilities.dp(11.4f) + mediaHolder2.durationText.getCurrentWidth();
@@ -632,14 +643,16 @@ public class GroupMedia {
                     this.clipPath.rewind();
                     float f10 = dp2 / 2.0f;
                     this.clipPath.addRoundRect(this.clipRect, f10, f10, Path.Direction.CW);
-                    canvas.save();
-                    canvas.clipPath(this.clipPath);
-                    drawBlurred(canvas, f);
-                    canvas.drawColor(Theme.multAlpha(TLObject.FLAG_30, 1.0f));
-                    mediaHolder2.durationText.draw(canvas, this.x + mediaHolder2.l + dp3 + AndroidUtilities.dp(5.66f), this.y + mediaHolder2.t + dp3 + f10, -1, 1.0f);
+                    canvas2.save();
+                    canvas2.clipPath(this.clipPath);
+                    drawBlurred(canvas2, f);
+                    canvas2.drawColor(Theme.multAlpha(TLObject.FLAG_30, 1.0f));
+                    mediaHolder2.durationText.draw(canvas2, this.x + mediaHolder2.l + dp3 + AndroidUtilities.dp(5.66f), f10 + this.y + mediaHolder2.t + dp3, -1, 1.0f);
                     canvas.restore();
                 }
             }
+            i9++;
+            canvas2 = canvas;
         }
     }
 
@@ -754,14 +767,13 @@ public class GroupMedia {
                 if (z) {
                     str = str + "_b3";
                 }
-                String str2 = str;
                 this.imageReceiver.setColorFilter(null);
                 TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
                 this.filename = MessageObject.getFileName(messageMedia);
                 if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
                     TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, AndroidUtilities.getPhotoSize(), true, null, true);
-                    this.imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_messageMediaPhoto.photo), str2, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, Math.min(this.w, this.h) / 100, false, closestPhotoSizeWithSize, false), tL_messageMediaPhoto.photo), str2, 0L, null, messageObject, 0);
+                    this.imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_messageMediaPhoto.photo), str, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, Math.min(this.w, this.h) / 100, false, closestPhotoSizeWithSize, false), tL_messageMediaPhoto.photo), str, 0L, null, messageObject, 0);
                     return;
                 }
                 if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
@@ -773,18 +785,21 @@ public class GroupMedia {
                         ImageLocation forDocument = ImageLocation.getForDocument(tL_messageMediaDocument.document);
                         ImageLocation forDocument2 = ImageLocation.getForDocument(closestPhotoSizeWithSize2, tL_messageMediaDocument.document);
                         ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize3, tL_messageMediaDocument.document);
+                        ImageLocation imageLocation = forDocument;
                         ImageReceiver imageReceiver = this.imageReceiver;
-                        ImageLocation imageLocation = this.autoplay ? forDocument : null;
+                        if (!this.autoplay) {
+                            imageLocation = null;
+                        }
                         StringBuilder sb = new StringBuilder();
-                        sb.append(str2);
+                        sb.append(str);
                         sb.append(this.autoplay ? "_g" : "");
-                        imageReceiver.setImage(imageLocation, sb.toString(), forDocument2, str2, forDocument3, str2, null, 0L, null, messageObject, 0);
+                        imageReceiver.setImage(imageLocation, sb.toString(), forDocument2, str, forDocument3, str, null, 0L, null, messageObject, 0);
                         return;
                     }
                     TLRPC.Document document2 = tL_messageMediaDocument.document;
                     if (document2 != null) {
                         TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, AndroidUtilities.getPhotoSize(), true, null, true);
-                        this.imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, tL_messageMediaDocument.document), str2, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaDocument.document.thumbs, Math.min(this.w, this.h), false, closestPhotoSizeWithSize4, false), tL_messageMediaDocument.document), str2, 0L, null, messageObject, 0);
+                        this.imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, tL_messageMediaDocument.document), str, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaDocument.document.thumbs, Math.min(this.w, this.h), false, closestPhotoSizeWithSize4, false), tL_messageMediaDocument.document), str, 0L, null, messageObject, 0);
                     }
                 }
             }
@@ -922,19 +937,35 @@ public class GroupMedia {
             return this.maxSizeWidth / f;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:41:0x0098  */
-        /* JADX WARN: Removed duplicated region for block: B:44:0x00a2  */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x009b  */
+        /* JADX WARN: Code restructure failed: missing block: B:257:0x0722, code lost:
+        
+            if (r3[2] > r3[3]) goto L190;
+         */
+        /* JADX WARN: Removed duplicated region for block: B:103:0x087b A[LOOP:3: B:102:0x0879->B:103:0x087b, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x009d  */
+        /* JADX WARN: Removed duplicated region for block: B:43:0x00a7  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x00a0  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x07d1  */
+        /* JADX WARN: Removed duplicated region for block: B:91:0x0834  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void calculate() {
-            int i;
             float f;
+            int i;
+            int i2;
+            int i3;
+            int i4;
+            int i5;
+            int i6;
+            int i7;
+            int i8;
             float f2;
             float f3;
+            float f4;
             TLRPC.Document document;
             TLRPC.PhotoSize closestPhotoSizeWithSize;
+            int i9 = 3;
             this.posArray.clear();
             this.positions.clear();
             this.maxX = 0;
@@ -948,64 +979,68 @@ public class GroupMedia {
             this.maxSizeWidth = 800;
             StringBuilder sb = new StringBuilder();
             this.hasSibling = false;
-            int i2 = 0;
-            float f4 = 1.0f;
+            int i10 = 0;
+            float f5 = 1.0f;
             boolean z = false;
-            while (i2 < size) {
-                TLRPC.MessageExtendedMedia messageExtendedMedia = (TLRPC.MessageExtendedMedia) this.medias.get(i2);
+            while (i10 < size) {
+                TLRPC.MessageExtendedMedia messageExtendedMedia = (TLRPC.MessageExtendedMedia) this.medias.get(i10);
                 MessageObject.GroupedMessagePosition groupedMessagePosition = new MessageObject.GroupedMessagePosition();
-                groupedMessagePosition.last = i2 == size + (-1);
+                groupedMessagePosition.last = i10 == size + (-1);
                 if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview) {
                     TLRPC.TL_messageExtendedMediaPreview tL_messageExtendedMediaPreview = (TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia;
                     groupedMessagePosition.photoWidth = tL_messageExtendedMediaPreview.w;
                     groupedMessagePosition.photoHeight = tL_messageExtendedMediaPreview.h;
-                } else if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
-                    TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
-                    if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-                        TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) messageMedia).photo;
-                        if (photo != null) {
-                            closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                            groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
-                            groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
-                        }
-                        closestPhotoSizeWithSize = null;
-                        groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
-                        groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
-                    } else {
-                        if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) messageMedia).document) != null) {
-                            closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.getPhotoSize());
-                            groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
-                            groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
-                        }
-                        closestPhotoSizeWithSize = null;
-                        groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
-                        groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
-                    }
+                    f4 = 1.2f;
                 } else {
-                    groupedMessagePosition.photoWidth = 100;
-                    groupedMessagePosition.photoHeight = 100;
+                    f4 = 1.2f;
+                    if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
+                        TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
+                        if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
+                            TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) messageMedia).photo;
+                            if (photo != null) {
+                                closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
+                                groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
+                                groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
+                            }
+                            closestPhotoSizeWithSize = null;
+                            groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
+                            groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
+                        } else {
+                            if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) messageMedia).document) != null) {
+                                closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.getPhotoSize());
+                                groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
+                                groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
+                            }
+                            closestPhotoSizeWithSize = null;
+                            groupedMessagePosition.photoWidth = closestPhotoSizeWithSize != null ? 100 : closestPhotoSizeWithSize.w;
+                            groupedMessagePosition.photoHeight = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100;
+                        }
+                    } else {
+                        groupedMessagePosition.photoWidth = 100;
+                        groupedMessagePosition.photoHeight = 100;
+                    }
                 }
                 if (groupedMessagePosition.photoWidth <= 0 || groupedMessagePosition.photoHeight <= 0) {
                     groupedMessagePosition.photoWidth = 50;
                     groupedMessagePosition.photoHeight = 50;
                 }
-                float f5 = groupedMessagePosition.photoWidth / groupedMessagePosition.photoHeight;
-                groupedMessagePosition.aspectRatio = f5;
-                if (f5 > 1.2f) {
+                float f6 = groupedMessagePosition.photoWidth / groupedMessagePosition.photoHeight;
+                groupedMessagePosition.aspectRatio = f6;
+                if (f6 > f4) {
                     sb.append("w");
-                } else if (f5 < 0.8f) {
+                } else if (f6 < 0.8f) {
                     sb.append("n");
                 } else {
                     sb.append("q");
                 }
-                float f6 = groupedMessagePosition.aspectRatio;
-                f4 += f6;
-                if (f6 > 2.0f) {
+                float f7 = groupedMessagePosition.aspectRatio;
+                f5 += f7;
+                if (f7 > 2.0f) {
                     z = true;
                 }
                 this.positions.put(messageExtendedMedia, groupedMessagePosition);
                 this.posArray.add(groupedMessagePosition);
-                i2++;
+                i10++;
             }
             int dp = AndroidUtilities.dp(120.0f);
             float dp2 = AndroidUtilities.dp(120.0f);
@@ -1014,331 +1049,365 @@ public class GroupMedia {
             float dp3 = AndroidUtilities.dp(40.0f);
             Point point2 = AndroidUtilities.displaySize;
             float min2 = Math.min(point2.x, point2.y);
-            float f7 = this.maxSizeWidth;
-            int i3 = (int) (dp3 / (min2 / f7));
-            float f8 = f7 / this.maxSizeHeight;
-            float f9 = f4 / size;
+            float f8 = this.maxSizeWidth;
+            int i11 = (int) (dp3 / (min2 / f8));
+            float f9 = f8 / this.maxSizeHeight;
+            float f10 = f5 / size;
             float dp4 = AndroidUtilities.dp(100.0f) / this.maxSizeHeight;
             if (size == 1) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
-                float f10 = groupedMessagePosition2.aspectRatio;
-                if (f10 >= 1.0f) {
+                float f11 = groupedMessagePosition2.aspectRatio;
+                if (f11 >= 1.0f) {
                     f2 = this.maxSizeWidth;
-                    f3 = ((f2 / f10) / f2) * this.maxSizeHeight;
+                    f3 = ((f2 / f11) / f2) * this.maxSizeHeight;
                 } else {
-                    float f11 = this.maxSizeHeight;
-                    f2 = ((f10 * f11) / f11) * this.maxSizeWidth;
-                    f3 = f11;
+                    float f12 = this.maxSizeHeight;
+                    f2 = ((f11 * f12) / f12) * this.maxSizeWidth;
+                    f3 = f12;
                 }
                 groupedMessagePosition2.set(0, 0, 0, 0, (int) f2, f3 / this.maxSizeHeight, 15);
-            } else if (z || !(size == 2 || size == 3 || size == 4)) {
-                int size2 = this.posArray.size();
-                float[] fArr = new float[size2];
-                for (int i4 = 0; i4 < size; i4++) {
-                    if (f9 > 1.1f) {
-                        fArr[i4] = Math.max(1.0f, ((MessageObject.GroupedMessagePosition) this.posArray.get(i4)).aspectRatio);
-                    } else {
-                        fArr[i4] = Math.min(1.0f, ((MessageObject.GroupedMessagePosition) this.posArray.get(i4)).aspectRatio);
+            } else {
+                if (z || !(size == 2 || size == 3 || size == 4)) {
+                    int size2 = this.posArray.size();
+                    float[] fArr = new float[size2];
+                    for (int i12 = 0; i12 < size; i12++) {
+                        if (f10 > 1.1f) {
+                            fArr[i12] = Math.max(1.0f, ((MessageObject.GroupedMessagePosition) this.posArray.get(i12)).aspectRatio);
+                        } else {
+                            fArr[i12] = Math.min(1.0f, ((MessageObject.GroupedMessagePosition) this.posArray.get(i12)).aspectRatio);
+                        }
+                        fArr[i12] = Math.max(0.66667f, Math.min(1.7f, fArr[i12]));
                     }
-                    fArr[i4] = Math.max(0.66667f, Math.min(1.7f, fArr[i4]));
-                }
-                ArrayList arrayList = new ArrayList();
-                for (int i5 = 1; i5 < size2; i5++) {
-                    int i6 = size2 - i5;
-                    if (i5 <= 3 && i6 <= 3) {
-                        arrayList.add(new MessageGroupedLayoutAttempt(i5, i6, multiHeight(fArr, 0, i5), multiHeight(fArr, i5, size2)));
-                    }
-                }
-                for (int i7 = 1; i7 < size2 - 1; i7++) {
-                    int i8 = 1;
-                    while (true) {
-                        int i9 = size2 - i7;
-                        if (i8 < i9) {
-                            int i10 = i9 - i8;
-                            if (i7 <= 3) {
-                                if (i8 <= (f9 < 0.85f ? 4 : 3) && i10 <= 3) {
-                                    int i11 = i7 + i8;
-                                    arrayList.add(new MessageGroupedLayoutAttempt(i7, i8, i10, multiHeight(fArr, 0, i7), multiHeight(fArr, i7, i11), multiHeight(fArr, i11, size2)));
-                                }
-                            }
-                            i8++;
+                    ArrayList arrayList = new ArrayList();
+                    for (int i13 = 1; i13 < size2; i13++) {
+                        int i14 = size2 - i13;
+                        if (i13 <= 3 && i14 <= 3) {
+                            arrayList.add(new MessageGroupedLayoutAttempt(i13, i14, multiHeight(fArr, 0, i13), multiHeight(fArr, i13, size2)));
                         }
                     }
-                }
-                for (int i12 = 1; i12 < size2 - 2; i12++) {
-                    int i13 = 1;
-                    while (true) {
-                        int i14 = size2 - i12;
-                        if (i13 < i14) {
-                            int i15 = 1;
-                            while (true) {
-                                int i16 = i14 - i13;
-                                if (i15 < i16) {
-                                    int i17 = i16 - i15;
-                                    if (i12 <= 3 && i13 <= 3 && i15 <= 3 && i17 <= 3) {
-                                        int i18 = i12 + i13;
-                                        int i19 = i18 + i15;
-                                        arrayList.add(new MessageGroupedLayoutAttempt(i12, i13, i15, i17, multiHeight(fArr, 0, i12), multiHeight(fArr, i12, i18), multiHeight(fArr, i18, i19), multiHeight(fArr, i19, size2)));
+                    int i15 = 1;
+                    while (i15 < size2 - 1) {
+                        int i16 = 1;
+                        while (true) {
+                            int i17 = size2 - i15;
+                            if (i16 < i17) {
+                                int i18 = i17 - i16;
+                                if (i15 <= 3) {
+                                    if (i16 <= (f10 < 0.85f ? 4 : 3) && i18 <= 3) {
+                                        int i19 = i15 + i16;
+                                        i4 = i15;
+                                        i5 = i16;
+                                        arrayList.add(new MessageGroupedLayoutAttempt(i4, i5, i18, multiHeight(fArr, 0, i15), multiHeight(fArr, i15, i19), multiHeight(fArr, i19, size2)));
+                                        i16 = i5 + 1;
+                                        i15 = i4;
                                     }
-                                    i15++;
                                 }
+                                i4 = i15;
+                                i5 = i16;
+                                i16 = i5 + 1;
+                                i15 = i4;
                             }
-                            i13++;
                         }
+                        i15++;
                     }
-                }
-                float f12 = (this.maxSizeWidth / 3) * 4;
-                int i20 = 0;
-                MessageGroupedLayoutAttempt messageGroupedLayoutAttempt = null;
-                float f13 = 0.0f;
-                while (i20 < arrayList.size()) {
-                    MessageGroupedLayoutAttempt messageGroupedLayoutAttempt2 = (MessageGroupedLayoutAttempt) arrayList.get(i20);
-                    int i21 = 0;
-                    float f14 = Float.MAX_VALUE;
-                    float f15 = 0.0f;
+                    int i20 = 1;
+                    while (i20 < size2 - 2) {
+                        int i21 = 1;
+                        while (true) {
+                            int i22 = size2 - i20;
+                            if (i21 < i22) {
+                                int i23 = 1;
+                                while (true) {
+                                    int i24 = i22 - i21;
+                                    if (i23 < i24) {
+                                        int i25 = i24 - i23;
+                                        if (i20 > i9 || i21 > i9 || i23 > i9 || i25 > i9) {
+                                            i = i20;
+                                            i2 = i21;
+                                            i3 = i23;
+                                        } else {
+                                            int i26 = i20 + i21;
+                                            int i27 = i26 + i23;
+                                            i = i20;
+                                            i2 = i21;
+                                            i3 = i23;
+                                            arrayList.add(new MessageGroupedLayoutAttempt(i, i2, i3, i25, multiHeight(fArr, 0, i20), multiHeight(fArr, i20, i26), multiHeight(fArr, i26, i27), multiHeight(fArr, i27, size2)));
+                                        }
+                                        i23 = i3 + 1;
+                                        i20 = i;
+                                        i21 = i2;
+                                        i9 = 3;
+                                    }
+                                }
+                                i21++;
+                                i9 = 3;
+                            }
+                        }
+                        i20++;
+                        i9 = 3;
+                    }
+                    float f13 = (this.maxSizeWidth / 3) * 4;
+                    int i28 = 0;
+                    MessageGroupedLayoutAttempt messageGroupedLayoutAttempt = null;
+                    float f14 = 0.0f;
+                    while (i28 < arrayList.size()) {
+                        MessageGroupedLayoutAttempt messageGroupedLayoutAttempt2 = (MessageGroupedLayoutAttempt) arrayList.get(i28);
+                        int i29 = 0;
+                        float f15 = Float.MAX_VALUE;
+                        float f16 = 0.0f;
+                        while (true) {
+                            float[] fArr2 = messageGroupedLayoutAttempt2.heights;
+                            if (i29 >= fArr2.length) {
+                                break;
+                            }
+                            float f17 = fArr2[i29];
+                            f16 += f17;
+                            if (f17 < f15) {
+                                f15 = f17;
+                            }
+                            i29++;
+                        }
+                        float abs = Math.abs(f16 - f13);
+                        int[] iArr = messageGroupedLayoutAttempt2.lineCounts;
+                        if (iArr.length > 1) {
+                            int i30 = iArr[0];
+                            int i31 = iArr[1];
+                            if (i30 <= i31) {
+                                f = f13;
+                                if (iArr.length <= 2 || i31 <= iArr[2]) {
+                                    if (iArr.length > 3) {
+                                    }
+                                }
+                            } else {
+                                f = f13;
+                            }
+                            abs *= 1.2f;
+                        } else {
+                            f = f13;
+                        }
+                        if (f15 < min) {
+                            abs *= 1.5f;
+                        }
+                        if (messageGroupedLayoutAttempt == null || abs < f14) {
+                            f14 = abs;
+                            messageGroupedLayoutAttempt = messageGroupedLayoutAttempt2;
+                        }
+                        i28++;
+                        f13 = f;
+                    }
+                    if (messageGroupedLayoutAttempt == null) {
+                        return;
+                    }
+                    int i32 = 0;
+                    int i33 = 0;
                     while (true) {
-                        float[] fArr2 = messageGroupedLayoutAttempt2.heights;
-                        if (i21 >= fArr2.length) {
+                        int[] iArr2 = messageGroupedLayoutAttempt.lineCounts;
+                        if (i33 >= iArr2.length) {
                             break;
                         }
-                        float f16 = fArr2[i21];
-                        f15 += f16;
-                        if (f16 < f14) {
-                            f14 = f16;
+                        int i34 = iArr2[i33];
+                        float f18 = messageGroupedLayoutAttempt.heights[i33];
+                        int i35 = this.maxSizeWidth;
+                        int i36 = i34 - 1;
+                        this.maxX = Math.max(this.maxX, i36);
+                        int i37 = 0;
+                        MessageObject.GroupedMessagePosition groupedMessagePosition3 = null;
+                        while (i37 < i34) {
+                            int i38 = (int) (fArr[i32] * f18);
+                            i35 -= i38;
+                            MessageObject.GroupedMessagePosition groupedMessagePosition4 = (MessageObject.GroupedMessagePosition) this.posArray.get(i32);
+                            int i39 = i33 == 0 ? 4 : 0;
+                            if (i33 == messageGroupedLayoutAttempt.lineCounts.length - 1) {
+                                i39 |= 8;
+                            }
+                            if (i37 == 0) {
+                                i39 |= 1;
+                            }
+                            if (i37 == i36) {
+                                i39 |= 2;
+                                groupedMessagePosition3 = groupedMessagePosition4;
+                            }
+                            int i40 = i37;
+                            groupedMessagePosition4.set(i40, i37, i33, i33, i38, Math.max(dp4, f18 / this.maxSizeHeight), i39);
+                            i32++;
+                            i37 = i40 + 1;
                         }
-                        i21++;
+                        groupedMessagePosition3.pw += i35;
+                        groupedMessagePosition3.spanSize += i35;
+                        i33++;
                     }
-                    float abs = Math.abs(f15 - f12);
-                    int[] iArr = messageGroupedLayoutAttempt2.lineCounts;
-                    float f17 = f12;
-                    if (iArr.length > 1) {
-                        int i22 = iArr[0];
-                        int i23 = iArr[1];
-                        if (i22 <= i23) {
-                            if (iArr.length > 2 && i23 > iArr[2]) {
-                                f = 1.2f;
-                                abs *= f;
-                            } else if (iArr.length <= 3 || iArr[2] <= iArr[3]) {
+                    for (i6 = 0; i6 < size; i6++) {
+                        MessageObject.GroupedMessagePosition groupedMessagePosition5 = (MessageObject.GroupedMessagePosition) this.posArray.get(i6);
+                        if (groupedMessagePosition5.maxX == this.maxX || (groupedMessagePosition5.flags & 2) != 0) {
+                            groupedMessagePosition5.spanSize += NotificationCenter.dialogPhotosUpdate;
+                        }
+                        if ((groupedMessagePosition5.flags & 1) != 0) {
+                            groupedMessagePosition5.edge = true;
+                        }
+                        if (groupedMessagePosition5.edge) {
+                            int i41 = groupedMessagePosition5.spanSize;
+                            if (i41 != 1000) {
+                                groupedMessagePosition5.spanSize = i41 + 108;
+                            }
+                            groupedMessagePosition5.pw += 108;
+                        } else if ((groupedMessagePosition5.flags & 2) != 0) {
+                            int i42 = groupedMessagePosition5.spanSize;
+                            if (i42 != 1000) {
+                                groupedMessagePosition5.spanSize = i42 - 108;
+                            } else {
+                                int i43 = groupedMessagePosition5.leftSpanOffset;
+                                if (i43 != 0) {
+                                    groupedMessagePosition5.leftSpanOffset = i43 + 108;
+                                }
                             }
                         }
-                        f = 1.2f;
-                        abs *= f;
                     }
-                    if (f14 < min) {
-                        abs *= 1.5f;
-                    }
-                    if (messageGroupedLayoutAttempt == null || abs < f13) {
-                        messageGroupedLayoutAttempt = messageGroupedLayoutAttempt2;
-                        f13 = abs;
-                    }
-                    i20++;
-                    f12 = f17;
-                }
-                if (messageGroupedLayoutAttempt == null) {
-                    return;
-                }
-                int i24 = 0;
-                int i25 = 0;
-                while (true) {
-                    int[] iArr2 = messageGroupedLayoutAttempt.lineCounts;
-                    if (i24 >= iArr2.length) {
-                        break;
-                    }
-                    int i26 = iArr2[i24];
-                    float f18 = messageGroupedLayoutAttempt.heights[i24];
-                    int i27 = this.maxSizeWidth;
-                    int i28 = i26 - 1;
-                    this.maxX = Math.max(this.maxX, i28);
-                    int i29 = i27;
-                    MessageObject.GroupedMessagePosition groupedMessagePosition3 = null;
-                    for (int i30 = 0; i30 < i26; i30++) {
-                        int i31 = (int) (fArr[i25] * f18);
-                        i29 -= i31;
-                        MessageObject.GroupedMessagePosition groupedMessagePosition4 = (MessageObject.GroupedMessagePosition) this.posArray.get(i25);
-                        int i32 = i24 == 0 ? 4 : 0;
-                        if (i24 == messageGroupedLayoutAttempt.lineCounts.length - 1) {
-                            i32 |= 8;
+                    for (i7 = 0; i7 < size; i7++) {
+                        MessageObject.GroupedMessagePosition groupedMessagePosition6 = (MessageObject.GroupedMessagePosition) this.posArray.get(i7);
+                        if (groupedMessagePosition6.minX == 0) {
+                            groupedMessagePosition6.spanSize += NotificationCenter.dialogPhotosUpdate;
                         }
-                        if (i30 == 0) {
-                            i32 |= 1;
+                        if ((groupedMessagePosition6.flags & 2) != 0) {
+                            groupedMessagePosition6.edge = true;
                         }
-                        if (i30 == i28) {
-                            i = i32 | 2;
-                            groupedMessagePosition3 = groupedMessagePosition4;
+                        this.maxX = Math.max(this.maxX, (int) groupedMessagePosition6.maxX);
+                        this.maxY = Math.max(this.maxY, (int) groupedMessagePosition6.maxY);
+                        groupedMessagePosition6.left = getLeft(groupedMessagePosition6, groupedMessagePosition6.minY, groupedMessagePosition6.maxY, groupedMessagePosition6.minX);
+                    }
+                    for (i8 = 0; i8 < size; i8++) {
+                        MessageObject.GroupedMessagePosition groupedMessagePosition7 = (MessageObject.GroupedMessagePosition) this.posArray.get(i8);
+                        groupedMessagePosition7.top = getTop(groupedMessagePosition7, groupedMessagePosition7.minY);
+                    }
+                    this.width = getWidth();
+                    this.height = getHeight();
+                }
+                if (size == 2) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition8 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition9 = (MessageObject.GroupedMessagePosition) this.posArray.get(1);
+                    String sb2 = sb.toString();
+                    if (sb2.equals("ww") && f10 > f9 * 1.4d) {
+                        float f19 = groupedMessagePosition8.aspectRatio;
+                        float f20 = groupedMessagePosition9.aspectRatio;
+                        if (f19 - f20 < 0.2d) {
+                            float f21 = this.maxSizeWidth;
+                            float round = Math.round(Math.min(f21 / f19, Math.min(f21 / f20, this.maxSizeHeight / 2.0f))) / this.maxSizeHeight;
+                            groupedMessagePosition8.set(0, 0, 0, 0, this.maxSizeWidth, round, 7);
+                            groupedMessagePosition9.set(0, 0, 1, 1, this.maxSizeWidth, round, 11);
+                            size = size;
+                        }
+                    }
+                    if (sb2.equals("ww") || sb2.equals("qq")) {
+                        int i44 = this.maxSizeWidth / 2;
+                        float f22 = i44;
+                        float round2 = Math.round(Math.min(f22 / groupedMessagePosition8.aspectRatio, Math.min(f22 / groupedMessagePosition9.aspectRatio, this.maxSizeHeight))) / this.maxSizeHeight;
+                        groupedMessagePosition8.set(0, 0, 0, 0, i44, round2, 13);
+                        groupedMessagePosition9.set(1, 1, 0, 0, i44, round2, 14);
+                        this.maxX = 1;
+                    } else {
+                        float f23 = this.maxSizeWidth;
+                        float f24 = groupedMessagePosition8.aspectRatio;
+                        int max = (int) Math.max(0.4f * f23, Math.round((f23 / f24) / ((1.0f / f24) + (1.0f / groupedMessagePosition9.aspectRatio))));
+                        int i45 = this.maxSizeWidth - max;
+                        if (i45 < min) {
+                            max -= min - i45;
                         } else {
-                            i = i32;
+                            min = i45;
                         }
-                        groupedMessagePosition4.set(i30, i30, i24, i24, i31, Math.max(dp4, f18 / this.maxSizeHeight), i);
-                        i25++;
+                        float min3 = Math.min(this.maxSizeHeight, Math.round(Math.min(min / groupedMessagePosition8.aspectRatio, max / groupedMessagePosition9.aspectRatio))) / this.maxSizeHeight;
+                        groupedMessagePosition8.set(0, 0, 0, 0, min, min3, 13);
+                        groupedMessagePosition9.set(1, 1, 0, 0, max, min3, 14);
+                        this.maxX = 1;
                     }
-                    groupedMessagePosition3.pw += i29;
-                    groupedMessagePosition3.spanSize += i29;
-                    i24++;
-                }
-            } else if (size == 2) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition5 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
-                MessageObject.GroupedMessagePosition groupedMessagePosition6 = (MessageObject.GroupedMessagePosition) this.posArray.get(1);
-                String sb2 = sb.toString();
-                if (sb2.equals("ww") && f9 > f8 * 1.4d) {
-                    float f19 = groupedMessagePosition5.aspectRatio;
-                    float f20 = groupedMessagePosition6.aspectRatio;
-                    if (f19 - f20 < 0.2d) {
-                        float f21 = this.maxSizeWidth;
-                        float round = Math.round(Math.min(f21 / f19, Math.min(f21 / f20, this.maxSizeHeight / 2.0f))) / this.maxSizeHeight;
-                        groupedMessagePosition5.set(0, 0, 0, 0, this.maxSizeWidth, round, 7);
-                        groupedMessagePosition6.set(0, 0, 1, 1, this.maxSizeWidth, round, 11);
-                    }
-                }
-                if (sb2.equals("ww") || sb2.equals("qq")) {
-                    int i33 = this.maxSizeWidth / 2;
-                    float f22 = i33;
-                    float round2 = Math.round(Math.min(f22 / groupedMessagePosition5.aspectRatio, Math.min(f22 / groupedMessagePosition6.aspectRatio, this.maxSizeHeight))) / this.maxSizeHeight;
-                    groupedMessagePosition5.set(0, 0, 0, 0, i33, round2, 13);
-                    groupedMessagePosition6.set(1, 1, 0, 0, i33, round2, 14);
-                    this.maxX = 1;
-                } else {
-                    float f23 = this.maxSizeWidth;
-                    float f24 = groupedMessagePosition5.aspectRatio;
-                    int max = (int) Math.max(0.4f * f23, Math.round((f23 / f24) / ((1.0f / f24) + (1.0f / groupedMessagePosition6.aspectRatio))));
-                    int i34 = this.maxSizeWidth - max;
-                    if (i34 < min) {
-                        max -= min - i34;
+                    size = size;
+                } else if (size == 3) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition10 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition11 = (MessageObject.GroupedMessagePosition) this.posArray.get(1);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition12 = (MessageObject.GroupedMessagePosition) this.posArray.get(2);
+                    if (sb.charAt(0) == 'n') {
+                        float f25 = this.maxSizeHeight * 0.5f;
+                        float f26 = groupedMessagePosition11.aspectRatio;
+                        float min4 = Math.min(f25, Math.round((this.maxSizeWidth * f26) / (groupedMessagePosition12.aspectRatio + f26)));
+                        float f27 = this.maxSizeHeight - min4;
+                        int max2 = (int) Math.max(min, Math.min(this.maxSizeWidth * 0.5f, Math.round(Math.min(groupedMessagePosition12.aspectRatio * min4, groupedMessagePosition11.aspectRatio * f27))));
+                        int round3 = Math.round(Math.min((this.maxSizeHeight * groupedMessagePosition10.aspectRatio) + i11, this.maxSizeWidth - max2));
+                        groupedMessagePosition10.set(0, 0, 0, 1, round3, 1.0f, 13);
+                        groupedMessagePosition11.set(1, 1, 0, 0, max2, f27 / this.maxSizeHeight, 6);
+                        groupedMessagePosition12.set(1, 1, 1, 1, max2, min4 / this.maxSizeHeight, 10);
+                        int i46 = this.maxSizeWidth;
+                        groupedMessagePosition12.spanSize = i46;
+                        float f28 = this.maxSizeHeight;
+                        groupedMessagePosition10.siblingHeights = new float[]{min4 / f28, f27 / f28};
+                        groupedMessagePosition11.spanSize = i46 - round3;
+                        groupedMessagePosition12.leftSpanOffset = round3;
+                        this.hasSibling = true;
+                        this.maxX = 1;
                     } else {
-                        min = i34;
+                        float round4 = Math.round(Math.min(this.maxSizeWidth / groupedMessagePosition10.aspectRatio, this.maxSizeHeight * 0.66f)) / this.maxSizeHeight;
+                        groupedMessagePosition10.set(0, 1, 0, 0, this.maxSizeWidth, round4, 7);
+                        int i47 = this.maxSizeWidth / 2;
+                        float f29 = i47;
+                        float min5 = Math.min(this.maxSizeHeight - round4, Math.round(Math.min(f29 / groupedMessagePosition11.aspectRatio, f29 / groupedMessagePosition12.aspectRatio))) / this.maxSizeHeight;
+                        float f30 = min5 < dp4 ? dp4 : min5;
+                        groupedMessagePosition11.set(0, 0, 1, 1, i47, f30, 9);
+                        groupedMessagePosition12.set(1, 1, 1, 1, i47, f30, 10);
+                        this.maxX = 1;
                     }
-                    float min3 = Math.min(this.maxSizeHeight, Math.round(Math.min(min / groupedMessagePosition5.aspectRatio, max / groupedMessagePosition6.aspectRatio))) / this.maxSizeHeight;
-                    groupedMessagePosition5.set(0, 0, 0, 0, min, min3, 13);
-                    groupedMessagePosition6.set(1, 1, 0, 0, max, min3, 14);
-                    this.maxX = 1;
-                }
-            } else if (size == 3) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition7 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
-                MessageObject.GroupedMessagePosition groupedMessagePosition8 = (MessageObject.GroupedMessagePosition) this.posArray.get(1);
-                MessageObject.GroupedMessagePosition groupedMessagePosition9 = (MessageObject.GroupedMessagePosition) this.posArray.get(2);
-                if (sb.charAt(0) == 'n') {
-                    float f25 = this.maxSizeHeight * 0.5f;
-                    float f26 = groupedMessagePosition8.aspectRatio;
-                    float min4 = Math.min(f25, Math.round((this.maxSizeWidth * f26) / (groupedMessagePosition9.aspectRatio + f26)));
-                    float f27 = this.maxSizeHeight - min4;
-                    int max2 = (int) Math.max(min, Math.min(this.maxSizeWidth * 0.5f, Math.round(Math.min(groupedMessagePosition9.aspectRatio * min4, groupedMessagePosition8.aspectRatio * f27))));
-                    int round3 = Math.round(Math.min((this.maxSizeHeight * groupedMessagePosition7.aspectRatio) + i3, this.maxSizeWidth - max2));
-                    groupedMessagePosition7.set(0, 0, 0, 1, round3, 1.0f, 13);
-                    groupedMessagePosition8.set(1, 1, 0, 0, max2, f27 / this.maxSizeHeight, 6);
-                    groupedMessagePosition9.set(1, 1, 1, 1, max2, min4 / this.maxSizeHeight, 10);
-                    int i35 = this.maxSizeWidth;
-                    groupedMessagePosition9.spanSize = i35;
-                    float f28 = this.maxSizeHeight;
-                    groupedMessagePosition7.siblingHeights = new float[]{min4 / f28, f27 / f28};
-                    groupedMessagePosition8.spanSize = i35 - round3;
-                    groupedMessagePosition9.leftSpanOffset = round3;
-                    this.hasSibling = true;
-                    this.maxX = 1;
                 } else {
-                    float round4 = Math.round(Math.min(this.maxSizeWidth / groupedMessagePosition7.aspectRatio, this.maxSizeHeight * 0.66f)) / this.maxSizeHeight;
-                    groupedMessagePosition7.set(0, 1, 0, 0, this.maxSizeWidth, round4, 7);
-                    int i36 = this.maxSizeWidth / 2;
-                    float f29 = this.maxSizeHeight - round4;
-                    float f30 = i36;
-                    float min5 = Math.min(f29, Math.round(Math.min(f30 / groupedMessagePosition8.aspectRatio, f30 / groupedMessagePosition9.aspectRatio))) / this.maxSizeHeight;
-                    float f31 = min5 < dp4 ? dp4 : min5;
-                    groupedMessagePosition8.set(0, 0, 1, 1, i36, f31, 9);
-                    groupedMessagePosition9.set(1, 1, 1, 1, i36, f31, 10);
-                    this.maxX = 1;
-                }
-            } else {
-                MessageObject.GroupedMessagePosition groupedMessagePosition10 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
-                MessageObject.GroupedMessagePosition groupedMessagePosition11 = (MessageObject.GroupedMessagePosition) this.posArray.get(1);
-                MessageObject.GroupedMessagePosition groupedMessagePosition12 = (MessageObject.GroupedMessagePosition) this.posArray.get(2);
-                MessageObject.GroupedMessagePosition groupedMessagePosition13 = (MessageObject.GroupedMessagePosition) this.posArray.get(3);
-                if (sb.charAt(0) == 'w') {
-                    float round5 = Math.round(Math.min(this.maxSizeWidth / groupedMessagePosition10.aspectRatio, this.maxSizeHeight * 0.66f)) / this.maxSizeHeight;
-                    groupedMessagePosition10.set(0, 2, 0, 0, this.maxSizeWidth, round5, 7);
-                    float round6 = Math.round(this.maxSizeWidth / ((groupedMessagePosition11.aspectRatio + groupedMessagePosition12.aspectRatio) + groupedMessagePosition13.aspectRatio));
-                    float f32 = min;
-                    int max3 = (int) Math.max(f32, Math.min(this.maxSizeWidth * 0.4f, groupedMessagePosition11.aspectRatio * round6));
-                    int max4 = (int) Math.max(Math.max(f32, this.maxSizeWidth * 0.33f), groupedMessagePosition13.aspectRatio * round6);
-                    int i37 = (this.maxSizeWidth - max3) - max4;
-                    if (i37 < AndroidUtilities.dp(58.0f)) {
-                        int dp5 = AndroidUtilities.dp(58.0f) - i37;
-                        i37 = AndroidUtilities.dp(58.0f);
-                        int i38 = dp5 / 2;
-                        max3 -= i38;
-                        max4 -= dp5 - i38;
-                    }
-                    int i39 = max3;
-                    float min6 = Math.min(this.maxSizeHeight - round5, round6) / this.maxSizeHeight;
-                    if (min6 < dp4) {
-                        min6 = dp4;
-                    }
-                    float f33 = min6;
-                    groupedMessagePosition11.set(0, 0, 1, 1, i39, f33, 9);
-                    groupedMessagePosition12.set(1, 1, 1, 1, i37, f33, 8);
-                    groupedMessagePosition13.set(2, 2, 1, 1, max4, f33, 10);
-                    this.maxX = 2;
-                } else {
-                    int max5 = Math.max(min, Math.round(this.maxSizeHeight / (((1.0f / groupedMessagePosition11.aspectRatio) + (1.0f / groupedMessagePosition12.aspectRatio)) + (1.0f / groupedMessagePosition13.aspectRatio))));
-                    float f34 = dp;
-                    float f35 = max5;
-                    float min7 = Math.min(0.33f, Math.max(f34, f35 / groupedMessagePosition11.aspectRatio) / this.maxSizeHeight);
-                    float min8 = Math.min(0.33f, Math.max(f34, f35 / groupedMessagePosition12.aspectRatio) / this.maxSizeHeight);
-                    float f36 = (1.0f - min7) - min8;
-                    int round7 = Math.round(Math.min((this.maxSizeHeight * groupedMessagePosition10.aspectRatio) + i3, this.maxSizeWidth - max5));
-                    groupedMessagePosition10.set(0, 0, 0, 2, round7, min7 + min8 + f36, 13);
-                    groupedMessagePosition11.set(1, 1, 0, 0, max5, min7, 6);
-                    groupedMessagePosition12.set(1, 1, 1, 1, max5, min8, 2);
-                    groupedMessagePosition12.spanSize = this.maxSizeWidth;
-                    groupedMessagePosition13.set(1, 1, 2, 2, max5, f36, 10);
-                    int i40 = this.maxSizeWidth;
-                    groupedMessagePosition13.spanSize = i40;
-                    groupedMessagePosition11.spanSize = i40 - round7;
-                    groupedMessagePosition12.leftSpanOffset = round7;
-                    groupedMessagePosition13.leftSpanOffset = round7;
-                    groupedMessagePosition10.siblingHeights = new float[]{min7, min8, f36};
-                    this.hasSibling = true;
-                    this.maxX = 1;
-                }
-            }
-            for (int i41 = 0; i41 < size; i41++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition14 = (MessageObject.GroupedMessagePosition) this.posArray.get(i41);
-                if (groupedMessagePosition14.maxX == this.maxX || (groupedMessagePosition14.flags & 2) != 0) {
-                    groupedMessagePosition14.spanSize += NotificationCenter.dialogPhotosUpdate;
-                }
-                if ((groupedMessagePosition14.flags & 1) != 0) {
-                    groupedMessagePosition14.edge = true;
-                }
-                if (groupedMessagePosition14.edge) {
-                    int i42 = groupedMessagePosition14.spanSize;
-                    if (i42 != 1000) {
-                        groupedMessagePosition14.spanSize = i42 + 108;
-                    }
-                    groupedMessagePosition14.pw += 108;
-                } else if ((groupedMessagePosition14.flags & 2) != 0) {
-                    int i43 = groupedMessagePosition14.spanSize;
-                    if (i43 != 1000) {
-                        groupedMessagePosition14.spanSize = i43 - 108;
-                    } else {
-                        int i44 = groupedMessagePosition14.leftSpanOffset;
-                        if (i44 != 0) {
-                            groupedMessagePosition14.leftSpanOffset = i44 + 108;
+                    MessageObject.GroupedMessagePosition groupedMessagePosition13 = (MessageObject.GroupedMessagePosition) this.posArray.get(0);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition14 = (MessageObject.GroupedMessagePosition) this.posArray.get(1);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) this.posArray.get(2);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition16 = (MessageObject.GroupedMessagePosition) this.posArray.get(3);
+                    if (sb.charAt(0) == 'w') {
+                        float round5 = Math.round(Math.min(this.maxSizeWidth / groupedMessagePosition13.aspectRatio, this.maxSizeHeight * 0.66f)) / this.maxSizeHeight;
+                        groupedMessagePosition13.set(0, 2, 0, 0, this.maxSizeWidth, round5, 7);
+                        float round6 = Math.round(this.maxSizeWidth / ((groupedMessagePosition14.aspectRatio + groupedMessagePosition15.aspectRatio) + groupedMessagePosition16.aspectRatio));
+                        float f31 = min;
+                        int max3 = (int) Math.max(f31, Math.min(this.maxSizeWidth * 0.4f, groupedMessagePosition14.aspectRatio * round6));
+                        int max4 = (int) Math.max(Math.max(f31, this.maxSizeWidth * 0.33f), groupedMessagePosition16.aspectRatio * round6);
+                        int i48 = (this.maxSizeWidth - max3) - max4;
+                        if (i48 < AndroidUtilities.dp(58.0f)) {
+                            int dp5 = AndroidUtilities.dp(58.0f) - i48;
+                            i48 = AndroidUtilities.dp(58.0f);
+                            int i49 = dp5 / 2;
+                            max3 -= i49;
+                            max4 -= dp5 - i49;
                         }
+                        int i50 = max4;
+                        float min6 = Math.min(this.maxSizeHeight - round5, round6) / this.maxSizeHeight;
+                        float f32 = min6 < dp4 ? dp4 : min6;
+                        groupedMessagePosition14.set(0, 0, 1, 1, max3, f32, 9);
+                        groupedMessagePosition15.set(1, 1, 1, 1, i48, f32, 8);
+                        groupedMessagePosition16.set(2, 2, 1, 1, i50, f32, 10);
+                        this.maxX = 2;
+                    } else {
+                        int max5 = Math.max(min, Math.round(this.maxSizeHeight / (((1.0f / groupedMessagePosition14.aspectRatio) + (1.0f / groupedMessagePosition15.aspectRatio)) + (1.0f / groupedMessagePosition16.aspectRatio))));
+                        float f33 = dp;
+                        float f34 = max5;
+                        float min7 = Math.min(0.33f, Math.max(f33, f34 / groupedMessagePosition14.aspectRatio) / this.maxSizeHeight);
+                        float min8 = Math.min(0.33f, Math.max(f33, f34 / groupedMessagePosition15.aspectRatio) / this.maxSizeHeight);
+                        float f35 = (1.0f - min7) - min8;
+                        int round7 = Math.round(Math.min((this.maxSizeHeight * groupedMessagePosition13.aspectRatio) + i11, this.maxSizeWidth - max5));
+                        groupedMessagePosition13.set(0, 0, 0, 2, round7, min7 + min8 + f35, 13);
+                        groupedMessagePosition14.set(1, 1, 0, 0, max5, min7, 6);
+                        groupedMessagePosition15.set(1, 1, 1, 1, max5, min8, 2);
+                        groupedMessagePosition15.spanSize = this.maxSizeWidth;
+                        groupedMessagePosition16.set(1, 1, 2, 2, max5, f35, 10);
+                        int i51 = this.maxSizeWidth;
+                        groupedMessagePosition16.spanSize = i51;
+                        groupedMessagePosition14.spanSize = i51 - round7;
+                        groupedMessagePosition15.leftSpanOffset = round7;
+                        groupedMessagePosition16.leftSpanOffset = round7;
+                        groupedMessagePosition13.siblingHeights = new float[]{min7, min8, f35};
+                        this.hasSibling = true;
+                        this.maxX = 1;
                     }
                 }
             }
-            for (int i45 = 0; i45 < size; i45++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) this.posArray.get(i45);
-                if (groupedMessagePosition15.minX == 0) {
-                    groupedMessagePosition15.spanSize += NotificationCenter.dialogPhotosUpdate;
-                }
-                if ((groupedMessagePosition15.flags & 2) != 0) {
-                    groupedMessagePosition15.edge = true;
-                }
-                this.maxX = Math.max(this.maxX, (int) groupedMessagePosition15.maxX);
-                this.maxY = Math.max(this.maxY, (int) groupedMessagePosition15.maxY);
-                groupedMessagePosition15.left = getLeft(groupedMessagePosition15, groupedMessagePosition15.minY, groupedMessagePosition15.maxY, groupedMessagePosition15.minX);
+            while (i6 < size) {
             }
-            for (int i46 = 0; i46 < size; i46++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition16 = (MessageObject.GroupedMessagePosition) this.posArray.get(i46);
-                groupedMessagePosition16.top = getTop(groupedMessagePosition16, groupedMessagePosition16.minY);
+            while (i7 < size) {
+            }
+            while (i8 < size) {
             }
             this.width = getWidth();
             this.height = getHeight();

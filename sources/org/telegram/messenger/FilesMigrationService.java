@@ -72,13 +72,13 @@ public class FilesMigrationService extends Service {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FilesMigrationService$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilesMigrationService.1.this.lambda$run$0();
+                    FilesMigrationService.1.$r8$lambda$HjSudWMQI5vNMKAzhIAC3wQ2I48(FilesMigrationService.1.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$run$0() {
+        public static /* synthetic */ void $r8$lambda$HjSudWMQI5vNMKAzhIAC3wQ2I48(1 r2) {
+            r2.getClass();
             FilesMigrationService.isRunning = false;
             FilesMigrationService.this.stopForeground(true);
             FilesMigrationService.this.stopSelf();
@@ -138,8 +138,8 @@ public class FilesMigrationService extends Service {
                         convert.forEach(new Consumer() { // from class: org.telegram.messenger.FilesMigrationService$$ExternalSyntheticLambda8
                             @Override // java.util.function.Consumer
                             /* renamed from: accept */
-                            public final void p(Object obj) {
-                                FilesMigrationService.this.lambda$moveDirectory$0(file2, (Path) obj);
+                            public final void s(Object obj) {
+                                FilesMigrationService.$r8$lambda$gcPhkMdBF-ERemd7i1MOR00gJ8E(FilesMigrationService.this, file2, (Path) obj);
                             }
 
                             public /* synthetic */ Consumer andThen(Consumer consumer) {
@@ -161,21 +161,21 @@ public class FilesMigrationService extends Service {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$moveDirectory$0(File file, Path path) {
+    public static /* synthetic */ void $r8$lambda$gcPhkMdBF-ERemd7i1MOR00gJ8E(FilesMigrationService filesMigrationService, File file, Path path) {
         Path fileName;
         String path2;
         boolean isDirectory;
         File file2;
         Path path3;
         File file3;
+        filesMigrationService.getClass();
         fileName = path.getFileName();
         path2 = fileName.toString();
         File file4 = new File(file, path2);
         isDirectory = Files.isDirectory(path, new LinkOption[0]);
         if (isDirectory) {
             file3 = path.toFile();
-            moveDirectory(file3, file4);
+            filesMigrationService.moveDirectory(file3, file4);
             return;
         }
         try {
@@ -190,8 +190,8 @@ public class FilesMigrationService extends Service {
                 FileLog.e(e2);
             }
         }
-        this.movedFilesCount++;
-        updateProgress();
+        filesMigrationService.movedFilesCount++;
+        filesMigrationService.updateProgress();
     }
 
     private void updateProgress() {
@@ -200,16 +200,16 @@ public class FilesMigrationService extends Service {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FilesMigrationService$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilesMigrationService.this.lambda$updateProgress$1(i);
+                    FilesMigrationService.$r8$lambda$SLt5OJlbdrP51pHuYFgV8Ttwlg4(FilesMigrationService.this, i);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateProgress$1(int i) {
+    public static /* synthetic */ void $r8$lambda$SLt5OJlbdrP51pHuYFgV8Ttwlg4(FilesMigrationService filesMigrationService, int i) {
+        filesMigrationService.getClass();
         Distribute$$ExternalSyntheticApiModelOutline1.m();
-        ((NotificationManager) getSystemService("notification")).notify(NotificationCenter.onDatabaseOpened, Distribute$$ExternalSyntheticApiModelOutline0.m(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
+        ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(NotificationCenter.onDatabaseOpened, Distribute$$ExternalSyntheticApiModelOutline0.m(filesMigrationService, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(filesMigrationService.getText(R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(filesMigrationService.totalFilesCount))).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.totalFilesCount, i, false).build());
     }
 
     public static void checkBottomSheet(BaseFragment baseFragment) {
@@ -305,17 +305,12 @@ public class FilesMigrationService extends Service {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.FilesMigrationService$FilesMigrationBottomSheet$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FilesMigrationService.FilesMigrationBottomSheet.this.lambda$new$0(view);
+                    FilesMigrationService.FilesMigrationBottomSheet.this.migrateOldFolder();
                 }
             });
             ScrollView scrollView = new ScrollView(parentActivity);
             scrollView.addView(linearLayout);
             setCustomView(scrollView);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            migrateOldFolder();
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:11:0x0031, code lost:
@@ -374,13 +369,12 @@ public class FilesMigrationService extends Service {
                 return;
             }
             FilesMigrationService.start();
-            lambda$new$0();
+            dismiss();
         }
 
         @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-        /* renamed from: dismiss */
-        public void lambda$new$0() {
-            super.lambda$new$0();
+        public void dismiss() {
+            super.dismiss();
             FilesMigrationService.filesMigrationBottomSheet = null;
         }
     }

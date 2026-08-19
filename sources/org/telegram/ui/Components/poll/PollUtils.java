@@ -2,7 +2,6 @@ package org.telegram.ui.Components.poll;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import me.vkryl.core.BitwiseUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -40,10 +39,12 @@ public abstract class PollUtils {
             }
         }
         ArrayList<String> arrayList = tL_messageMediaPoll.poll.countries_iso2;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return i2;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            if (!tL_messageMediaPoll.poll.countries_iso2.contains(MessagesController.getInstance(i).config.phoneCountryIso2.get())) {
+                return i2 | 4;
+            }
         }
-        return !tL_messageMediaPoll.poll.countries_iso2.contains(MessagesController.getInstance(i).config.phoneCountryIso2.get()) ? i2 | 4 : i2;
+        return i2;
     }
 
     public static CharSequence getVoteRestrictedToastText(MessageObject messageObject, int i) {
@@ -60,14 +61,18 @@ public abstract class PollUtils {
         }
         if (BitwiseUtils.hasFlag(i, 4)) {
             ArrayList arrayList = new ArrayList(tL_messageMediaPoll.poll.countries_iso2.size());
-            Iterator<String> it = tL_messageMediaPoll.poll.countries_iso2.iterator();
-            while (it.hasNext()) {
-                String next = it.next();
-                String countryName = LocaleController.getCountryName(next);
+            ArrayList<String> arrayList2 = tL_messageMediaPoll.poll.countries_iso2;
+            int size = arrayList2.size();
+            int i5 = 0;
+            while (i5 < size) {
+                String str = arrayList2.get(i5);
+                i5++;
+                String str2 = str;
+                String countryName = LocaleController.getCountryName(str2);
                 if (!TextUtils.isEmpty(countryName)) {
-                    next = countryName;
+                    str2 = countryName;
                 }
-                arrayList.add(next);
+                arrayList.add(str2);
             }
             boolean z = tL_messageMediaPoll.poll.subscribers_only;
             if (arrayList.size() == 1) {
@@ -79,11 +84,11 @@ public abstract class PollUtils {
                 return AndroidUtilities.replaceTags(LocaleController.formatString(i3, arrayList.get(0)));
             }
             StringBuffer stringBuffer = new StringBuffer();
-            for (int i5 = 0; i5 < arrayList.size() - 1; i5++) {
+            for (int i6 = 0; i6 < arrayList.size() - 1; i6++) {
                 if (stringBuffer.length() > 0) {
                     stringBuffer.append(", ");
                 }
-                stringBuffer.append((String) arrayList.get(i5));
+                stringBuffer.append((String) arrayList.get(i6));
             }
             if (z) {
                 i2 = R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther;

@@ -43,7 +43,7 @@ final class SubripSubtitle implements Subtitle {
         Cue cue;
         int binarySearchFloor = Util.binarySearchFloor(this.cueTimesUs, j, true, false);
         if (binarySearchFloor == -1 || (cue = this.cues[binarySearchFloor]) == Cue.EMPTY) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         return Collections.singletonList(cue);
     }

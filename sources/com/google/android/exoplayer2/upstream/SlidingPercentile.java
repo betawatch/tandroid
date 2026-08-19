@@ -10,17 +10,15 @@ public class SlidingPercentile {
     private static final Comparator INDEX_COMPARATOR = new Comparator() { // from class: com.google.android.exoplayer2.upstream.SlidingPercentile$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$0;
-            lambda$static$0 = SlidingPercentile.lambda$static$0((SlidingPercentile.Sample) obj, (SlidingPercentile.Sample) obj2);
-            return lambda$static$0;
+            return SlidingPercentile.$r8$lambda$GBXxp428mvoAGCyA2G4AawB-Thg((SlidingPercentile.Sample) obj, (SlidingPercentile.Sample) obj2);
         }
     };
     private static final Comparator VALUE_COMPARATOR = new Comparator() { // from class: com.google.android.exoplayer2.upstream.SlidingPercentile$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$1;
-            lambda$static$1 = SlidingPercentile.lambda$static$1((SlidingPercentile.Sample) obj, (SlidingPercentile.Sample) obj2);
-            return lambda$static$1;
+            int compare;
+            compare = Float.compare(((SlidingPercentile.Sample) obj).value, ((SlidingPercentile.Sample) obj2).value);
+            return compare;
         }
     };
     private final int maxWeight;
@@ -31,14 +29,8 @@ public class SlidingPercentile {
     private final ArrayList samples = new ArrayList();
     private int currentSortOrder = -1;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(Sample sample, Sample sample2) {
+    public static /* synthetic */ int $r8$lambda$GBXxp428mvoAGCyA2G4AawB-Thg(Sample sample, Sample sample2) {
         return sample.index - sample2.index;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$1(Sample sample, Sample sample2) {
-        return Float.compare(sample.value, sample2.value);
     }
 
     public SlidingPercentile(int i) {

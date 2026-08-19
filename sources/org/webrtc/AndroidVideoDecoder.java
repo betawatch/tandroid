@@ -18,7 +18,7 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
@@ -369,31 +369,48 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         int i4;
         int i5;
         int i6;
+        AndroidVideoDecoder androidVideoDecoder;
         VideoFrame.Buffer copyNV12ToI420Buffer;
         synchronized (this.dimensionLock) {
-            i3 = this.width;
-            i4 = this.height;
-            i5 = this.stride;
-            i6 = this.sliceHeight;
+            try {
+                i3 = this.width;
+                i4 = this.height;
+                i5 = this.stride;
+                i6 = this.sliceHeight;
+            } catch (Throwable th) {
+                th = th;
+                while (true) {
+                    try {
+                        throw th;
+                    } catch (Throwable th2) {
+                        th = th2;
+                    }
+                }
+            }
         }
         int i7 = bufferInfo.size;
         if (i7 < ((i3 * i4) * 3) / 2) {
             Logging.e(TAG, "Insufficient output buffer size: " + bufferInfo.size);
             return;
         }
-        int i8 = (i7 >= ((i5 * i4) * 3) / 2 || i6 != i4 || i5 <= i3) ? i5 : (i7 * 2) / (i4 * 3);
+        if (i7 < ((i5 * i4) * 3) / 2 && i6 == i4 && i5 > i3) {
+            i5 = (i7 * 2) / (i4 * 3);
+        }
+        int i8 = i5;
         ByteBuffer outputBuffer = this.codec.getOutputBuffer(i);
         outputBuffer.position(bufferInfo.offset);
         outputBuffer.limit(bufferInfo.offset + bufferInfo.size);
         ByteBuffer slice = outputBuffer.slice();
         if (this.colorFormat == 19) {
-            copyNV12ToI420Buffer = copyI420Buffer(slice, i8, i6, i3, i4);
+            androidVideoDecoder = this;
+            copyNV12ToI420Buffer = androidVideoDecoder.copyI420Buffer(slice, i8, i6, i3, i4);
         } else {
-            copyNV12ToI420Buffer = copyNV12ToI420Buffer(slice, i8, i6, i3, i4);
+            androidVideoDecoder = this;
+            copyNV12ToI420Buffer = androidVideoDecoder.copyNV12ToI420Buffer(slice, i8, i6, i3, i4);
         }
-        this.codec.releaseOutputBuffer(i, false);
+        androidVideoDecoder.codec.releaseOutputBuffer(i, false);
         VideoFrame videoFrame = new VideoFrame(copyNV12ToI420Buffer, i2, bufferInfo.presentationTimeUs * 1000);
-        this.callback.onDecodedFrame(videoFrame, num, null);
+        androidVideoDecoder.callback.onDecodedFrame(videoFrame, num, null);
         videoFrame.release();
     }
 
@@ -423,7 +440,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
             byteBuffer.position(i9);
             copyPlane(byteBuffer.slice(), i7, allocateI420Buffer.getDataU(), allocateI420Buffer.getStrideU(), i5, i6);
             if (i2 % 2 == 1) {
-                byteBuffer.position(i9 + ((i6 - 1) * i7));
+                byteBuffer.position(i9 + (i7 * (i6 - 1)));
                 ByteBuffer dataU = allocateI420Buffer.getDataU();
                 dataU.position(allocateI420Buffer.getStrideU() * i6);
                 dataU.put(byteBuffer);
@@ -436,6 +453,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 ByteBuffer dataV = allocateI420Buffer.getDataV();
                 dataV.position(allocateI420Buffer.getStrideV() * i6);
                 dataV.put(byteBuffer);
+                return allocateI420Buffer;
             }
         } catch (Throwable th) {
             FileLog.e(th);
@@ -443,8 +461,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         return allocateI420Buffer;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0112 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0113 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

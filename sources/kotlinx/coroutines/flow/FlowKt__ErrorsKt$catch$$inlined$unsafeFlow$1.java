@@ -32,6 +32,10 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x006c, code lost:
+    
+        if (r6 == r1) goto L24;
+     */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0057  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
@@ -59,22 +63,21 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
                     r0.L$1 = flowCollector;
                     r0.label = 1;
                     obj = FlowKt.catchImpl(flow, flowCollector, r0);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
+                    if (obj != coroutine_suspended) {
+                        flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 = this;
                     }
-                    flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 = this;
-                } else {
-                    if (i != 1) {
-                        if (i != 2) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        ResultKt.throwOnFailure(obj);
-                        return Unit.INSTANCE;
-                    }
-                    flowCollector = (FlowCollector) r0.L$1;
-                    flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 = (FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1) r0.L$0;
-                    ResultKt.throwOnFailure(obj);
+                    return coroutine_suspended;
                 }
+                if (i != 1) {
+                    if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ResultKt.throwOnFailure(obj);
+                    return Unit.INSTANCE;
+                }
+                flowCollector = (FlowCollector) r0.L$1;
+                flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 = (FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1) r0.L$0;
+                ResultKt.throwOnFailure(obj);
                 th = (Throwable) obj;
                 if (th != null) {
                     Function3 function3 = flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1.$action$inlined;
@@ -84,9 +87,6 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
                     InlineMarker.mark(6);
                     Object invoke = function3.invoke(flowCollector, th, r0);
                     InlineMarker.mark(7);
-                    if (invoke == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
                 }
                 return Unit.INSTANCE;
             }

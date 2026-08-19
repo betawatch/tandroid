@@ -49,6 +49,7 @@ public class ActiveAuctionsSheet extends BottomSheetWithRecyclerListView impleme
         this.activeAuctions = new ArrayList();
         setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
+        int i = 0;
         this.ignoreTouchActionBar = false;
         this.headerMoveTop = AndroidUtilities.dp(12.0f);
         fixNavigationBar();
@@ -62,24 +63,28 @@ public class ActiveAuctionsSheet extends BottomSheetWithRecyclerListView impleme
         this.recyclerListView.setOverScrollMode(2);
         this.adapter.update(false);
         ArrayList<GiftAuctionController.Auction> activeAuctions = GiftAuctionController.getInstance(this.currentAccount).getActiveAuctions();
-        for (final GiftAuctionController.Auction auction : activeAuctions) {
-            ActiveAuctionCell activeAuctionCell = new ActiveAuctionCell(context, resourcesProvider, auction);
+        int size = activeAuctions.size();
+        while (i < size) {
+            GiftAuctionController.Auction auction = activeAuctions.get(i);
+            i++;
+            final GiftAuctionController.Auction auction2 = auction;
+            ActiveAuctionCell activeAuctionCell = new ActiveAuctionCell(context, resourcesProvider, auction2);
             activeAuctionCell.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ActiveAuctionsSheet$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ActiveAuctionsSheet.this.lambda$new$0(context, resourcesProvider, auction, view);
+                    ActiveAuctionsSheet.$r8$lambda$BFl-tsclDpKFn9dcf8fhGTp-jFE(ActiveAuctionsSheet.this, context, resourcesProvider, auction2, view);
                 }
             });
             linearLayout.addView(activeAuctionCell, LayoutHelper.createLinear(-1, -2));
-            this.activeAuctionCells.put(auction.giftId, activeAuctionCell);
+            this.activeAuctionCells.put(auction2.giftId, activeAuctionCell);
         }
         onActiveAuctionsUpdate(activeAuctions);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider, GiftAuctionController.Auction auction, View view) {
+    public static /* synthetic */ void $r8$lambda$BFl-tsclDpKFn9dcf8fhGTp-jFE(ActiveAuctionsSheet activeAuctionsSheet, Context context, Theme.ResourcesProvider resourcesProvider, GiftAuctionController.Auction auction, View view) {
+        activeAuctionsSheet.getClass();
         new AuctionBidSheet(context, resourcesProvider, null, auction).show();
-        lambda$new$0();
+        activeAuctionsSheet.dismiss();
     }
 
     @Override // org.telegram.messenger.GiftAuctionController.OnActiveAuctionsUpdateListeners
@@ -108,10 +113,9 @@ public class ActiveAuctionsSheet extends BottomSheetWithRecyclerListView impleme
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromActiveAuctionsUpdates(this);
-        super.lambda$new$0();
+        super.dismiss();
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -152,11 +156,6 @@ public class ActiveAuctionsSheet extends BottomSheetWithRecyclerListView impleme
         private final CountdownTimer timer;
         private final AnimatedTextView titleView;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(long j) {
-            updateButton(j, true);
-        }
-
         public ActiveAuctionCell(Context context, Theme.ResourcesProvider resourcesProvider, GiftAuctionController.Auction auction) {
             super(context);
             Paint paint = new Paint(1);
@@ -164,7 +163,7 @@ public class ActiveAuctionsSheet extends BottomSheetWithRecyclerListView impleme
             this.timer = new CountdownTimer(new CountdownTimer.Callback() { // from class: org.telegram.ui.Gifts.ActiveAuctionsSheet$ActiveAuctionCell$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.utils.CountdownTimer.Callback
                 public final void onTimerUpdate(long j) {
-                    ActiveAuctionsSheet.ActiveAuctionCell.this.lambda$new$0(j);
+                    ActiveAuctionsSheet.ActiveAuctionCell.this.updateButton(j, true);
                 }
             });
             this.cs = new ColoredImageSpan(R.drawable.filled_gift_sell_24);

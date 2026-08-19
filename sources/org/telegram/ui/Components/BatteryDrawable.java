@@ -77,7 +77,7 @@ public class BatteryDrawable extends Drawable {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.BatteryDrawable$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                BatteryDrawable.this.lambda$setFillValue$0(valueAnimator2);
+                BatteryDrawable.$r8$lambda$Ogs7G8iRdKf9wrLopXvdru_uIB8(BatteryDrawable.this, valueAnimator2);
             }
         });
         this.fillValueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.BatteryDrawable.1
@@ -92,10 +92,10 @@ public class BatteryDrawable extends Drawable {
         this.fillValueAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setFillValue$0(ValueAnimator valueAnimator) {
-        this.fillValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidateSelf();
+    public static /* synthetic */ void $r8$lambda$Ogs7G8iRdKf9wrLopXvdru_uIB8(BatteryDrawable batteryDrawable, ValueAnimator valueAnimator) {
+        batteryDrawable.getClass();
+        batteryDrawable.fillValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        batteryDrawable.invalidateSelf();
     }
 
     public void colorFromPaint(Paint paint) {

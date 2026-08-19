@@ -36,7 +36,7 @@ public abstract class ReadAllMentionsMenu {
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ReadAllMentionsMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ReadAllMentionsMenu.lambda$show$0(runnable, view2);
+                ReadAllMentionsMenu.$r8$lambda$DrkfNM6Yt5Is8WakSteytf1ehao(runnable, view2);
             }
         });
         actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
@@ -64,8 +64,7 @@ public abstract class ReadAllMentionsMenu {
         return actionBarPopupWindow;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$0(Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$DrkfNM6Yt5Is8WakSteytf1ehao(Runnable runnable, View view) {
         if (runnable != null) {
             runnable.run();
         }

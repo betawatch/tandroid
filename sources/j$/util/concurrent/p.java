@@ -1,17 +1,17 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-class p {
-    l[] a;
-    l b = null;
-    o c;
-    o d;
-    int e;
-    int f;
-    int g;
-    final int h;
+public class p {
+    public l[] a;
+    public l b = null;
+    public o c;
+    public o d;
+    public int e;
+    public int f;
+    public int g;
+    public final int h;
 
-    p(l[] lVarArr, int i, int i2, int i3) {
+    public p(l[] lVarArr, int i, int i2, int i3) {
         this.a = lVarArr;
         this.h = i;
         this.e = i2;
@@ -19,7 +19,7 @@ class p {
         this.g = i3;
     }
 
-    final l a() {
+    public final l a() {
         l[] lVarArr;
         int length;
         int i;

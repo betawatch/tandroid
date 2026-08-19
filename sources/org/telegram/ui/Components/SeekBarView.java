@@ -305,7 +305,7 @@ public class SeekBarView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SeekBarView$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SeekBarView.this.lambda$onTouch$0();
+                        SeekBarView.this.pressedDelayed = false;
                     }
                 }, 50L);
                 invalidate();
@@ -371,11 +371,6 @@ public class SeekBarView extends FrameLayout {
             }
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouch$0() {
-        this.pressedDelayed = false;
     }
 
     private int minThumbX() {
@@ -484,17 +479,17 @@ public class SeekBarView extends FrameLayout {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x00a7  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x01f2  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0205  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x020e  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0257  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0203  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x020c  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0240  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0255  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x02b5  */
     /* JADX WARN: Removed duplicated region for block: B:49:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x029f  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0170  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x016e  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -507,14 +502,15 @@ public class SeekBarView extends FrameLayout {
         boolean z;
         float f3;
         float f4;
+        Canvas canvas2 = canvas;
         int i = this.thumbX;
         boolean z2 = true;
         if (!this.twoSided && this.separatorsCount > 1) {
-            round = this.animatedThumbX.set(Math.round(i / r2) * ((getMeasuredWidth() - this.selectorWidth) / (this.separatorsCount - 1.0f)));
+            round = this.animatedThumbX.set(Math.round(i / r3) * ((getMeasuredWidth() - this.selectorWidth) / (this.separatorsCount - 1.0f)));
         } else {
             SeekBarViewDelegate seekBarViewDelegate = this.delegate;
             if (seekBarViewDelegate != null && seekBarViewDelegate.needVisuallyDivideSteps()) {
-                round = Math.round(i / r2) * ((getMeasuredWidth() - this.selectorWidth) / (this.delegate.getStepsCount() - 1.0f));
+                round = Math.round(i / r3) * ((getMeasuredWidth() - this.selectorWidth) / (this.delegate.getStepsCount() - 1.0f));
             }
             int i2 = i;
             int measuredHeight = (getMeasuredHeight() - this.thumbSize) / 2;
@@ -525,40 +521,42 @@ public class SeekBarView extends FrameLayout {
             float dp = measuredHeight2 - (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
             float dp2 = measuredHeight2 + (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
             this.rect.set(f5, dp, measuredWidth, dp2);
-            drawProgressBar(canvas, this.rect, this.innerPaint1);
+            drawProgressBar(canvas2, this.rect, this.innerPaint1);
             if (this.bufferedProgress > 0.0f) {
                 this.innerPaint1.setColor(getThemedColor(Theme.key_player_progressCachedBackground));
                 this.rect.set(f5, dp, (this.selectorWidth / 2.0f) + (this.bufferedProgress * (getMeasuredWidth() - this.selectorWidth)), dp2);
-                drawProgressBar(canvas, this.rect, this.innerPaint1);
+                drawProgressBar(canvas2, this.rect, this.innerPaint1);
             }
             if (!this.twoSided) {
-                canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) - AndroidUtilities.dp(6.0f), (getMeasuredWidth() / 2) + AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) + AndroidUtilities.dp(6.0f), this.outerPaint1);
+                canvas2.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) - AndroidUtilities.dp(6.0f), (getMeasuredWidth() / 2) + AndroidUtilities.dp(1.0f), (getMeasuredHeight() / 2) + AndroidUtilities.dp(6.0f), this.outerPaint1);
                 if (i2 > (getMeasuredWidth() - this.selectorWidth) / 2) {
-                    canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), (this.selectorWidth / 2) + i2, (getMeasuredHeight() / 2) + AndroidUtilities.dp(1.0f), this.outerPaint1);
+                    canvas2 = canvas;
+                    canvas2.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), (this.selectorWidth / 2) + i2, (getMeasuredHeight() / 2) + AndroidUtilities.dp(1.0f), this.outerPaint1);
                 } else {
-                    canvas.drawRect((r2 / 2) + i2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, (getMeasuredHeight() / 2) + AndroidUtilities.dp(1.0f), this.outerPaint1);
+                    canvas2 = canvas;
+                    canvas2.drawRect((r2 / 2) + i2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, (getMeasuredHeight() / 2) + AndroidUtilities.dp(1.0f), this.outerPaint1);
                 }
             } else {
                 float f6 = this.minProgress;
                 if (f6 >= 0.0f) {
                     float f7 = measuredWidth - f5;
                     this.rect.set((f6 * f7) + f5, dp, i2 + f5, dp2);
-                    drawProgressBar(canvas, this.rect, this.outerPaint1);
+                    drawProgressBar(canvas2, this.rect, this.outerPaint1);
                     int alpha = this.outerPaint1.getAlpha();
                     this.rect.set(f5, dp, (this.minProgress * f7) + f5, dp2);
                     this.outerPaint1.setAlpha((int) (alpha * 0.5f));
-                    drawProgressBar(canvas, this.rect, this.outerPaint1);
+                    drawProgressBar(canvas2, this.rect, this.outerPaint1);
                     this.outerPaint1.setAlpha(alpha);
                 } else {
                     this.rect.set(f5, dp, i2 + f5, dp2);
-                    drawProgressBar(canvas, this.rect, this.outerPaint1);
+                    drawProgressBar(canvas2, this.rect, this.outerPaint1);
                 }
             }
             if (this.hoverDrawable != null) {
                 int dp3 = ((this.selectorWidth / 2) + i2) - AndroidUtilities.dp(16.0f);
                 int dp4 = ((this.thumbSize / 2) + measuredHeight) - AndroidUtilities.dp(16.0f);
                 this.hoverDrawable.setBounds(dp3, dp4, AndroidUtilities.dp(32.0f) + dp3, AndroidUtilities.dp(32.0f) + dp4);
-                this.hoverDrawable.draw(canvas);
+                this.hoverDrawable.draw(canvas2);
             }
             int dp5 = AndroidUtilities.dp(this.pressed ? 8.0f : 6.0f);
             elapsedRealtime = SystemClock.elapsedRealtime() - this.lastUpdateTime;
@@ -597,11 +595,11 @@ public class SeekBarView extends FrameLayout {
                     float interpolation = 1.0f - Easings.easeInQuad.getInterpolation(Math.min(1.0f, f4 * 3.0f));
                     float interpolation2 = Easings.easeOutQuad.getInterpolation(this.transitionProgress);
                     if (interpolation > 0.0f) {
-                        canvas.drawCircle(this.transitionThumbX + (this.selectorWidth / 2), (this.thumbSize / 2) + measuredHeight, this.currentRadius * interpolation, this.outerPaint1);
+                        canvas2.drawCircle(this.transitionThumbX + (this.selectorWidth / 2), (this.thumbSize / 2) + measuredHeight, this.currentRadius * interpolation, this.outerPaint1);
                     }
-                    canvas.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight + (this.thumbSize / 2), this.currentRadius * interpolation2, this.outerPaint1);
+                    canvas2.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight + (this.thumbSize / 2), this.currentRadius * interpolation2, this.outerPaint1);
                 } else {
-                    canvas.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight + (this.thumbSize / 2), this.currentRadius, this.outerPaint1);
+                    canvas2.drawCircle(i2 + (this.selectorWidth / 2), measuredHeight + (this.thumbSize / 2), this.currentRadius, this.outerPaint1);
                 }
                 drawTimestampLabel(canvas);
                 if (z2) {
@@ -628,7 +626,7 @@ public class SeekBarView extends FrameLayout {
         float dp8 = measuredHeight22 - (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
         float dp22 = measuredHeight22 + (AndroidUtilities.dp(this.lineWidthDp) / 2.0f);
         this.rect.set(f52, dp8, measuredWidth2, dp22);
-        drawProgressBar(canvas, this.rect, this.innerPaint1);
+        drawProgressBar(canvas2, this.rect, this.innerPaint1);
         if (this.bufferedProgress > 0.0f) {
         }
         if (!this.twoSided) {
@@ -732,9 +730,7 @@ public class SeekBarView extends FrameLayout {
                 Collections.sort(this.timestamps, new Comparator() { // from class: org.telegram.ui.Components.SeekBarView$$ExternalSyntheticLambda0
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$updateTimestamps$1;
-                        lambda$updateTimestamps$1 = SeekBarView.lambda$updateTimestamps$1((Pair) obj, (Pair) obj2);
-                        return lambda$updateTimestamps$1;
+                        return SeekBarView.$r8$lambda$krRqn86cNzSUGZ63XNeyzAeauiE((Pair) obj, (Pair) obj2);
                     }
                 });
             } catch (Exception e) {
@@ -751,16 +747,28 @@ public class SeekBarView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateTimestamps$1(Pair pair, Pair pair2) {
+    public static /* synthetic */ int $r8$lambda$krRqn86cNzSUGZ63XNeyzAeauiE(Pair pair, Pair pair2) {
         if (((Float) pair.first).floatValue() > ((Float) pair2.first).floatValue()) {
             return 1;
         }
         return ((Float) pair2.first).floatValue() > ((Float) pair.first).floatValue() ? -1 : 0;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0175, code lost:
+    
+        if (r14.left >= r27.left) goto L78;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01dd A[EDGE_INSN: B:70:0x01dd->B:71:0x01dd BREAK  A[LOOP:2: B:27:0x00ab->B:75:0x01d4], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01d4 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void drawProgressBar(Canvas canvas, RectF rectF, Paint paint) {
         int i;
+        char c;
+        float floatValue;
+        char c2;
+        char c3;
         SeekBarView seekBarView = this;
         float dp = AndroidUtilities.dp(2.0f);
         ArrayList arrayList = seekBarView.timestamps;
@@ -770,7 +778,7 @@ public class SeekBarView extends FrameLayout {
         }
         float f = rectF.bottom;
         float f2 = seekBarView.selectorWidth / 2.0f;
-        float measuredWidth = getMeasuredWidth() - (seekBarView.selectorWidth / 2.0f);
+        float measuredWidth = seekBarView.getMeasuredWidth() - (seekBarView.selectorWidth / 2.0f);
         AndroidUtilities.rectTmp.set(rectF);
         float dp2 = AndroidUtilities.dp(seekBarView.timestampsAppearing * 1.0f) / 2.0f;
         if (tmpPath == null) {
@@ -793,7 +801,6 @@ public class SeekBarView extends FrameLayout {
         if (i2 < 0) {
             i2 = 0;
         }
-        int i3 = 1;
         int size = seekBarView.timestamps.size() - 1;
         while (true) {
             if (size < 0) {
@@ -808,17 +815,28 @@ public class SeekBarView extends FrameLayout {
         if (i < 0) {
             i = seekBarView.timestamps.size();
         }
-        int i4 = i2;
-        while (i4 <= i) {
-            float floatValue = i4 == i2 ? 0.0f : ((Float) ((Pair) seekBarView.timestamps.get(i4 - 1)).first).floatValue();
-            float floatValue2 = i4 == i ? 1.0f : ((Float) ((Pair) seekBarView.timestamps.get(i4)).first).floatValue();
-            while (i4 != i && i4 != 0 && i4 < seekBarView.timestamps.size() - i3 && ((Float) ((Pair) seekBarView.timestamps.get(i4)).first).floatValue() - floatValue <= dp3) {
-                i4++;
-                floatValue2 = ((Float) ((Pair) seekBarView.timestamps.get(i4)).first).floatValue();
+        int i3 = i2;
+        while (i3 <= i) {
+            if (i3 == i2) {
+                floatValue = 0.0f;
+                c = 0;
+            } else {
+                c = 0;
+                floatValue = ((Float) ((Pair) seekBarView.timestamps.get(i3 - 1)).first).floatValue();
             }
+            float floatValue2 = i3 == i ? 1.0f : ((Float) ((Pair) seekBarView.timestamps.get(i3)).first).floatValue();
+            while (i3 != i && i3 != 0) {
+                c2 = 1;
+                if (i3 >= seekBarView.timestamps.size() - 1 || ((Float) ((Pair) seekBarView.timestamps.get(i3)).first).floatValue() - floatValue > dp3) {
+                    break;
+                }
+                i3++;
+                floatValue2 = ((Float) ((Pair) seekBarView.timestamps.get(i3)).first).floatValue();
+            }
+            c2 = 1;
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.left = AndroidUtilities.lerp(f2, measuredWidth, floatValue) + (i4 > 0 ? dp2 : 0.0f);
-            float lerp = AndroidUtilities.lerp(f2, measuredWidth, floatValue2) - (i4 < i ? dp2 : 0.0f);
+            rectF2.left = AndroidUtilities.lerp(f2, measuredWidth, floatValue) + (i3 > 0 ? dp2 : 0.0f);
+            float lerp = AndroidUtilities.lerp(f2, measuredWidth, floatValue2) - (i3 < i ? dp2 : 0.0f);
             rectF2.right = lerp;
             float f3 = rectF.right;
             boolean z = lerp > f3;
@@ -834,47 +852,57 @@ public class SeekBarView extends FrameLayout {
                 if (tmpRadii == null) {
                     tmpRadii = new float[8];
                 }
-                if (i4 == i2 || (z && rectF2.left >= rectF.left)) {
-                    float[] fArr = tmpRadii;
-                    fArr[7] = dp;
-                    fArr[6] = dp;
-                    fArr[1] = dp;
-                    fArr[0] = dp;
-                    float f6 = 0.7f * dp * seekBarView.timestampsAppearing;
-                    fArr[5] = f6;
-                    fArr[4] = f6;
-                    fArr[3] = f6;
-                    fArr[2] = f6;
-                } else if (i4 >= i) {
-                    float[] fArr2 = tmpRadii;
-                    float f7 = 0.7f * dp * seekBarView.timestampsAppearing;
-                    fArr2[7] = f7;
-                    fArr2[6] = f7;
-                    fArr2[1] = f7;
-                    fArr2[0] = f7;
-                    fArr2[5] = dp;
-                    fArr2[4] = dp;
-                    fArr2[3] = dp;
-                    fArr2[2] = dp;
+                if (i3 != i2) {
+                    if (z) {
+                        c3 = 3;
+                    } else {
+                        c3 = 3;
+                    }
+                    if (i3 >= i) {
+                        float[] fArr = tmpRadii;
+                        float f6 = 0.7f * dp * seekBarView.timestampsAppearing;
+                        fArr[7] = f6;
+                        fArr[6] = f6;
+                        fArr[c2] = f6;
+                        fArr[c] = f6;
+                        fArr[5] = dp;
+                        fArr[4] = dp;
+                        fArr[c3] = dp;
+                        fArr[2] = dp;
+                    } else {
+                        float[] fArr2 = tmpRadii;
+                        float f7 = 0.7f * dp * seekBarView.timestampsAppearing;
+                        fArr2[5] = f7;
+                        fArr2[4] = f7;
+                        fArr2[c3] = f7;
+                        fArr2[2] = f7;
+                        fArr2[7] = f7;
+                        fArr2[6] = f7;
+                        fArr2[c2] = f7;
+                        fArr2[c] = f7;
+                    }
+                    tmpPath.addRoundRect(rectF2, tmpRadii, Path.Direction.CW);
+                    if (!z) {
+                        break;
+                    }
                 } else {
-                    float[] fArr3 = tmpRadii;
-                    float f8 = 0.7f * dp * seekBarView.timestampsAppearing;
-                    fArr3[5] = f8;
-                    fArr3[4] = f8;
-                    fArr3[3] = f8;
-                    fArr3[2] = f8;
-                    fArr3[7] = f8;
-                    fArr3[6] = f8;
-                    fArr3[1] = f8;
-                    fArr3[0] = f8;
+                    c3 = 3;
                 }
+                float[] fArr3 = tmpRadii;
+                fArr3[7] = dp;
+                fArr3[6] = dp;
+                fArr3[c2] = dp;
+                fArr3[c] = dp;
+                float f8 = 0.7f * dp * seekBarView.timestampsAppearing;
+                fArr3[5] = f8;
+                fArr3[4] = f8;
+                fArr3[c3] = f8;
+                fArr3[2] = f8;
                 tmpPath.addRoundRect(rectF2, tmpRadii, Path.Direction.CW);
-                if (z) {
-                    break;
+                if (!z) {
                 }
             }
-            i4++;
-            i3 = 1;
+            i3++;
             seekBarView = this;
         }
         canvas.drawPath(tmpPath, paint);
@@ -1021,7 +1049,8 @@ public class SeekBarView extends FrameLayout {
             build = ellipsizedWidth.build();
             return build;
         }
-        return new StaticLayout(charSequence2, 0, charSequence2.length(), this.timestampLabelPaint, i, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false, TextUtils.TruncateAt.END, Math.min(AndroidUtilities.dp(400.0f), i));
+        CharSequence charSequence3 = charSequence2;
+        return new StaticLayout(charSequence3, 0, charSequence3.length(), this.timestampLabelPaint, i, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false, TextUtils.TruncateAt.END, Math.min(AndroidUtilities.dp(400.0f), i));
     }
 
     public SeekBarAccessibilityDelegate getSeekBarAccessibilityDelegate() {

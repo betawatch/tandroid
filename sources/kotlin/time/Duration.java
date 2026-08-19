@@ -73,24 +73,25 @@ public final class Duration implements Comparable {
     }
 
     public static long constructor-impl(long j) {
-        if (DurationJvmKt.getDurationAssertionsEnabled()) {
-            if (isInNanos-impl(j)) {
-                long j2 = getValue-impl(j);
-                if (-4611686018426999999L > j2 || j2 >= 4611686018427000000L) {
-                    throw new AssertionError(getValue-impl(j) + " ns is out of nanoseconds range");
-                }
-            } else {
-                long j3 = getValue-impl(j);
-                if (-4611686018427387903L > j3 || j3 >= 4611686018427387904L) {
-                    throw new AssertionError(getValue-impl(j) + " ms is out of milliseconds range");
-                }
-                long j4 = getValue-impl(j);
-                if (-4611686018426L <= j4 && j4 < 4611686018427L) {
-                    throw new AssertionError(getValue-impl(j) + " ms is denormalized");
-                }
-            }
+        if (!DurationJvmKt.getDurationAssertionsEnabled()) {
+            return j;
         }
-        return j;
+        if (isInNanos-impl(j)) {
+            long j2 = getValue-impl(j);
+            if (-4611686018426999999L <= j2 && j2 < 4611686018427000000L) {
+                return j;
+            }
+            throw new AssertionError(getValue-impl(j) + " ns is out of nanoseconds range");
+        }
+        long j3 = getValue-impl(j);
+        if (-4611686018427387903L > j3 || j3 >= 4611686018427387904L) {
+            throw new AssertionError(getValue-impl(j) + " ms is out of milliseconds range");
+        }
+        long j4 = getValue-impl(j);
+        if (-4611686018426L > j4 || j4 >= 4611686018427L) {
+            return j;
+        }
+        throw new AssertionError(getValue-impl(j) + " ms is denormalized");
     }
 
     public static final class Companion {

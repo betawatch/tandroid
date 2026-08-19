@@ -320,15 +320,17 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
         }
         HlsMediaPlaylist hlsMediaPlaylist3 = this.primaryMediaPlaylistSnapshot;
         long j = hlsMediaPlaylist3 != null ? hlsMediaPlaylist3.startTimeUs : 0L;
-        if (hlsMediaPlaylist == null) {
-            return j;
+        if (hlsMediaPlaylist != null) {
+            int size = hlsMediaPlaylist.segments.size();
+            HlsMediaPlaylist.Segment firstOldOverlappingSegment = getFirstOldOverlappingSegment(hlsMediaPlaylist, hlsMediaPlaylist2);
+            if (firstOldOverlappingSegment != null) {
+                return hlsMediaPlaylist.startTimeUs + firstOldOverlappingSegment.relativeStartTimeUs;
+            }
+            if (size == hlsMediaPlaylist2.mediaSequence - hlsMediaPlaylist.mediaSequence) {
+                return hlsMediaPlaylist.getEndTimeUs();
+            }
         }
-        int size = hlsMediaPlaylist.segments.size();
-        HlsMediaPlaylist.Segment firstOldOverlappingSegment = getFirstOldOverlappingSegment(hlsMediaPlaylist, hlsMediaPlaylist2);
-        if (firstOldOverlappingSegment != null) {
-            return hlsMediaPlaylist.startTimeUs + firstOldOverlappingSegment.relativeStartTimeUs;
-        }
-        return ((long) size) == hlsMediaPlaylist2.mediaSequence - hlsMediaPlaylist.mediaSequence ? hlsMediaPlaylist.getEndTimeUs() : j;
+        return j;
     }
 
     private int getLoadedPlaylistDiscontinuitySequence(HlsMediaPlaylist hlsMediaPlaylist, HlsMediaPlaylist hlsMediaPlaylist2) {
@@ -337,8 +339,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
             return hlsMediaPlaylist2.discontinuitySequence;
         }
         HlsMediaPlaylist hlsMediaPlaylist3 = this.primaryMediaPlaylistSnapshot;
-        int i = hlsMediaPlaylist3 != null ? hlsMediaPlaylist3.discontinuitySequence : 0;
-        return (hlsMediaPlaylist == null || (firstOldOverlappingSegment = getFirstOldOverlappingSegment(hlsMediaPlaylist, hlsMediaPlaylist2)) == null) ? i : (hlsMediaPlaylist.discontinuitySequence + firstOldOverlappingSegment.relativeDiscontinuitySequence) - ((HlsMediaPlaylist.Segment) hlsMediaPlaylist2.segments.get(0)).relativeDiscontinuitySequence;
+        return (hlsMediaPlaylist == null || (firstOldOverlappingSegment = getFirstOldOverlappingSegment(hlsMediaPlaylist, hlsMediaPlaylist2)) == null) ? hlsMediaPlaylist3 != null ? hlsMediaPlaylist3.discontinuitySequence : 0 : (hlsMediaPlaylist.discontinuitySequence + firstOldOverlappingSegment.relativeDiscontinuitySequence) - ((HlsMediaPlaylist.Segment) hlsMediaPlaylist2.segments.get(0)).relativeDiscontinuitySequence;
     }
 
     private static HlsMediaPlaylist.Segment getFirstOldOverlappingSegment(HlsMediaPlaylist hlsMediaPlaylist, HlsMediaPlaylist hlsMediaPlaylist2) {
@@ -465,7 +466,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
                 DefaultHlsPlaylistTracker.this.playlistRefreshHandler.postDelayed(new Runnable() { // from class: com.google.android.exoplayer2.source.hls.playlist.DefaultHlsPlaylistTracker$MediaPlaylistBundle$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DefaultHlsPlaylistTracker.MediaPlaylistBundle.this.lambda$loadPlaylistInternal$0(uri);
+                        DefaultHlsPlaylistTracker.MediaPlaylistBundle.$r8$lambda$JkeXMHHRP0mXoFiu2nCc-1TZdMQ(DefaultHlsPlaylistTracker.MediaPlaylistBundle.this, uri);
                     }
                 }, this.earliestNextLoadTimeMs - elapsedRealtime);
             } else {
@@ -473,10 +474,9 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$loadPlaylistInternal$0(Uri uri) {
-            this.loadPending = false;
-            loadPlaylistImmediately(uri);
+        public static /* synthetic */ void $r8$lambda$JkeXMHHRP0mXoFiu2nCc-1TZdMQ(MediaPlaylistBundle mediaPlaylistBundle, Uri uri) {
+            mediaPlaylistBundle.loadPending = false;
+            mediaPlaylistBundle.loadPlaylistImmediately(uri);
         }
 
         private void loadPlaylistImmediately(Uri uri) {

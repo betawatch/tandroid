@@ -129,8 +129,8 @@ public abstract class StripeApiHandler {
         return httpURLConnection;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0027 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0026 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -213,26 +213,25 @@ public abstract class StripeApiHandler {
         String format = String.format("%s[]", str);
         if (list.isEmpty()) {
             linkedList.add(new Parameter(str, ""));
-        } else {
-            while (it.hasNext()) {
-                linkedList.addAll(flattenParamsValue(it.next(), format));
-            }
+            return linkedList;
+        }
+        while (it.hasNext()) {
+            linkedList.addAll(flattenParamsValue(it.next(), format));
         }
         return linkedList;
     }
 
     private static List flattenParamsMap(Map map, String str) {
         LinkedList linkedList = new LinkedList();
-        if (map == null) {
-            return linkedList;
-        }
-        for (Map.Entry entry : map.entrySet()) {
-            String str2 = (String) entry.getKey();
-            Object value = entry.getValue();
-            if (str != null) {
-                str2 = String.format("%s[%s]", str, str2);
+        if (map != null) {
+            for (Map.Entry entry : map.entrySet()) {
+                String str2 = (String) entry.getKey();
+                Object value = entry.getValue();
+                if (str != null) {
+                    str2 = String.format("%s[%s]", str, str2);
+                }
+                linkedList.addAll(flattenParamsValue(value, str2));
             }
-            linkedList.addAll(flattenParamsValue(value, str2));
         }
         return linkedList;
     }

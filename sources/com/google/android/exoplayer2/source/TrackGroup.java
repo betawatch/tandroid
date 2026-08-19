@@ -26,9 +26,7 @@ public final class TrackGroup implements Bundleable {
     public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.source.TrackGroup$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
         public final Bundleable fromBundle(Bundle bundle) {
-            TrackGroup lambda$static$0;
-            lambda$static$0 = TrackGroup.lambda$static$0(bundle);
-            return lambda$static$0;
+            return TrackGroup.$r8$lambda$dVnoGSbKWiu48dumLD_6svpA8pI(bundle);
         }
     };
 
@@ -83,11 +81,13 @@ public final class TrackGroup implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || TrackGroup.class != obj.getClass()) {
-            return false;
+        if (obj != null && TrackGroup.class == obj.getClass()) {
+            TrackGroup trackGroup = (TrackGroup) obj;
+            if (this.id.equals(trackGroup.id) && Arrays.equals(this.formats, trackGroup.formats)) {
+                return true;
+            }
         }
-        TrackGroup trackGroup = (TrackGroup) obj;
-        return this.id.equals(trackGroup.id) && Arrays.equals(this.formats, trackGroup.formats);
+        return false;
     }
 
     @Override // com.google.android.exoplayer2.Bundleable
@@ -102,8 +102,7 @@ public final class TrackGroup implements Bundleable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ TrackGroup lambda$static$0(Bundle bundle) {
+    public static /* synthetic */ TrackGroup $r8$lambda$dVnoGSbKWiu48dumLD_6svpA8pI(Bundle bundle) {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_FORMATS);
         if (parcelableArrayList == null) {

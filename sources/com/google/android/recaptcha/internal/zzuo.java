@@ -13,12 +13,15 @@ import java.util.TreeMap;
 class zzuo extends AbstractMap {
     private Object[] zza;
     private int zzb;
+    private Map zzc;
     private boolean zzd;
     private volatile zzum zze;
-    private Map zzc = Collections.emptyMap();
-    private Map zzf = Collections.emptyMap();
+    private Map zzf;
 
     private zzuo() {
+        Map map = Collections.EMPTY_MAP;
+        this.zzc = map;
+        this.zzf = map;
     }
 
     private final int zzl(Comparable comparable) {
@@ -180,8 +183,8 @@ class zzuo extends AbstractMap {
         if (this.zzd) {
             return;
         }
-        this.zzc = this.zzc.isEmpty() ? Collections.emptyMap() : DesugarCollections.unmodifiableMap(this.zzc);
-        this.zzf = this.zzf.isEmpty() ? Collections.emptyMap() : DesugarCollections.unmodifiableMap(this.zzf);
+        this.zzc = this.zzc.isEmpty() ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(this.zzc);
+        this.zzf = this.zzf.isEmpty() ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(this.zzf);
         this.zzd = true;
     }
 
@@ -190,7 +193,7 @@ class zzuo extends AbstractMap {
     }
 
     public final Iterable zzd() {
-        return this.zzc.isEmpty() ? Collections.emptySet() : this.zzc.entrySet();
+        return this.zzc.isEmpty() ? Collections.EMPTY_SET : this.zzc.entrySet();
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -234,5 +237,8 @@ class zzuo extends AbstractMap {
     }
 
     /* synthetic */ zzuo(zzun zzunVar) {
+        Map map = Collections.EMPTY_MAP;
+        this.zzc = map;
+        this.zzf = map;
     }
 }

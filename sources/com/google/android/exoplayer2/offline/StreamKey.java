@@ -49,11 +49,13 @@ public final class StreamKey implements Comparable, Parcelable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || StreamKey.class != obj.getClass()) {
-            return false;
+        if (obj != null && StreamKey.class == obj.getClass()) {
+            StreamKey streamKey = (StreamKey) obj;
+            if (this.periodIndex == streamKey.periodIndex && this.groupIndex == streamKey.groupIndex && this.streamIndex == streamKey.streamIndex) {
+                return true;
+            }
         }
-        StreamKey streamKey = (StreamKey) obj;
-        return this.periodIndex == streamKey.periodIndex && this.groupIndex == streamKey.groupIndex && this.streamIndex == streamKey.streamIndex;
+        return false;
     }
 
     public int hashCode() {

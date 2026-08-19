@@ -30,20 +30,13 @@ final class AutoValue_InstallIdProvider_InstallIds extends InstallIdProvider.Ins
     }
 
     public boolean equals(Object obj) {
+        String str;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof InstallIdProvider.InstallIds)) {
-            return false;
-        }
-        InstallIdProvider.InstallIds installIds = (InstallIdProvider.InstallIds) obj;
-        if (this.crashlyticsInstallId.equals(installIds.getCrashlyticsInstallId())) {
-            String str = this.firebaseInstallationId;
-            if (str == null) {
-                if (installIds.getFirebaseInstallationId() == null) {
-                    return true;
-                }
-            } else if (str.equals(installIds.getFirebaseInstallationId())) {
+        if (obj instanceof InstallIdProvider.InstallIds) {
+            InstallIdProvider.InstallIds installIds = (InstallIdProvider.InstallIds) obj;
+            if (this.crashlyticsInstallId.equals(installIds.getCrashlyticsInstallId()) && ((str = this.firebaseInstallationId) != null ? str.equals(installIds.getFirebaseInstallationId()) : installIds.getFirebaseInstallationId() == null)) {
                 return true;
             }
         }

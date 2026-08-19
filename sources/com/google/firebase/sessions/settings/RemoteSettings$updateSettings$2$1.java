@@ -39,14 +39,33 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
         return ((RemoteSettings$updateSettings$2$1) create(jSONObject, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0195 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x013b  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00f3  */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0195, code lost:
+    
+        if (r13.updateSessionCacheUpdatedTime(r0, r12) == r4) goto L66;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0177, code lost:
+    
+        if (r13.updateSessionCacheDuration(r0, r12) == r4) goto L66;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0154, code lost:
+    
+        if (r13.updateSessionCacheDuration(r0, r12) == r4) goto L66;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0134, code lost:
+    
+        if (r13.updateSamplingRate(r1, r12) == r4) goto L66;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0113, code lost:
+    
+        if (r13.updateSessionRestartTimeout(r2, r12) == r4) goto L66;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00f4  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,7 +84,6 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
         SettingsCache settingsCache4;
         SettingsCache settingsCache5;
         SettingsCache settingsCache6;
-        Long boxLong;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         switch (this.label) {
             case 0:
@@ -110,81 +128,59 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                     this.L$1 = ref$ObjectRef;
                     this.L$2 = ref$ObjectRef7;
                     this.label = 1;
-                    if (settingsCache.updateSettingsEnabled(bool, this) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    ref$ObjectRef4 = ref$ObjectRef6;
-                    ref$ObjectRef5 = ref$ObjectRef;
-                    ref$ObjectRef3 = ref$ObjectRef7;
-                    ref$ObjectRef = ref$ObjectRef5;
-                    ref$ObjectRef2 = ref$ObjectRef4;
-                    if (((Integer) ref$ObjectRef.element) != null) {
-                        settingsCache2 = this.this$0.settingsCache;
-                        Integer num = (Integer) ref$ObjectRef.element;
-                        this.L$0 = ref$ObjectRef2;
-                        this.L$1 = ref$ObjectRef3;
-                        this.L$2 = null;
-                        this.label = 2;
-                        if (settingsCache2.updateSessionRestartTimeout(num, this) == coroutine_suspended) {
-                            return coroutine_suspended;
+                    if (settingsCache.updateSettingsEnabled(bool, this) != coroutine_suspended) {
+                        ref$ObjectRef4 = ref$ObjectRef6;
+                        ref$ObjectRef5 = ref$ObjectRef;
+                        ref$ObjectRef3 = ref$ObjectRef7;
+                        ref$ObjectRef = ref$ObjectRef5;
+                        ref$ObjectRef2 = ref$ObjectRef4;
+                        if (((Integer) ref$ObjectRef.element) != null) {
+                            settingsCache2 = this.this$0.settingsCache;
+                            Integer num = (Integer) ref$ObjectRef.element;
+                            this.L$0 = ref$ObjectRef2;
+                            this.L$1 = ref$ObjectRef3;
+                            this.L$2 = null;
+                            this.label = 2;
+                            break;
                         }
-                    }
-                    if (((Double) ref$ObjectRef2.element) != null) {
-                        settingsCache3 = this.this$0.settingsCache;
-                        Double d = (Double) ref$ObjectRef2.element;
-                        this.L$0 = ref$ObjectRef3;
-                        this.L$1 = null;
-                        this.L$2 = null;
-                        this.label = 3;
-                        if (settingsCache3.updateSamplingRate(d, this) == coroutine_suspended) {
-                            return coroutine_suspended;
+                        if (((Double) ref$ObjectRef2.element) != null) {
+                            settingsCache3 = this.this$0.settingsCache;
+                            Double d = (Double) ref$ObjectRef2.element;
+                            this.L$0 = ref$ObjectRef3;
+                            this.L$1 = null;
+                            this.L$2 = null;
+                            this.label = 3;
+                            break;
                         }
-                    }
-                    if (((Integer) ref$ObjectRef3.element) != null) {
-                        settingsCache4 = this.this$0.settingsCache;
-                        Integer num2 = (Integer) ref$ObjectRef3.element;
-                        this.L$0 = null;
-                        this.L$1 = null;
-                        this.L$2 = null;
-                        this.label = 4;
-                        if (settingsCache4.updateSessionCacheDuration(num2, this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        unit = Unit.INSTANCE;
-                        if (unit == null) {
-                            settingsCache5 = this.this$0.settingsCache;
-                            Integer boxInt = Boxing.boxInt(86400);
+                        if (((Integer) ref$ObjectRef3.element) != null) {
+                            settingsCache4 = this.this$0.settingsCache;
+                            Integer num2 = (Integer) ref$ObjectRef3.element;
                             this.L$0 = null;
                             this.L$1 = null;
                             this.L$2 = null;
-                            this.label = 5;
-                            if (settingsCache5.updateSessionCacheDuration(boxInt, this) == coroutine_suspended) {
-                                return coroutine_suspended;
+                            this.label = 4;
+                            break;
+                        } else {
+                            unit = null;
+                            if (unit == null) {
+                                settingsCache5 = this.this$0.settingsCache;
+                                Integer boxInt = Boxing.boxInt(86400);
+                                this.L$0 = null;
+                                this.L$1 = null;
+                                this.L$2 = null;
+                                this.label = 5;
+                                break;
                             }
+                            settingsCache6 = this.this$0.settingsCache;
+                            Long boxLong = Boxing.boxLong(System.currentTimeMillis());
+                            this.L$0 = null;
+                            this.L$1 = null;
+                            this.L$2 = null;
+                            this.label = 6;
+                            break;
                         }
-                        settingsCache6 = this.this$0.settingsCache;
-                        boxLong = Boxing.boxLong(System.currentTimeMillis());
-                        this.L$0 = null;
-                        this.L$1 = null;
-                        this.L$2 = null;
-                        this.label = 6;
-                        if (settingsCache6.updateSessionCacheUpdatedTime(boxLong, this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        return Unit.INSTANCE;
                     }
-                    unit = null;
-                    if (unit == null) {
-                    }
-                    settingsCache6 = this.this$0.settingsCache;
-                    boxLong = Boxing.boxLong(System.currentTimeMillis());
-                    this.L$0 = null;
-                    this.L$1 = null;
-                    this.L$2 = null;
-                    this.label = 6;
-                    if (settingsCache6.updateSessionCacheUpdatedTime(boxLong, this) == coroutine_suspended) {
-                    }
-                    return Unit.INSTANCE;
+                    return coroutine_suspended;
                 }
                 ref$ObjectRef2 = ref$ObjectRef6;
                 ref$ObjectRef3 = ref$ObjectRef7;
@@ -229,25 +225,21 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                 if (unit == null) {
                 }
                 settingsCache6 = this.this$0.settingsCache;
-                boxLong = Boxing.boxLong(System.currentTimeMillis());
+                Long boxLong2 = Boxing.boxLong(System.currentTimeMillis());
                 this.L$0 = null;
                 this.L$1 = null;
                 this.L$2 = null;
                 this.label = 6;
-                if (settingsCache6.updateSessionCacheUpdatedTime(boxLong, this) == coroutine_suspended) {
-                }
-                return Unit.INSTANCE;
+                break;
             case 5:
                 ResultKt.throwOnFailure(obj);
                 settingsCache6 = this.this$0.settingsCache;
-                boxLong = Boxing.boxLong(System.currentTimeMillis());
+                Long boxLong22 = Boxing.boxLong(System.currentTimeMillis());
                 this.L$0 = null;
                 this.L$1 = null;
                 this.L$2 = null;
                 this.label = 6;
-                if (settingsCache6.updateSessionCacheUpdatedTime(boxLong, this) == coroutine_suspended) {
-                }
-                return Unit.INSTANCE;
+                break;
             case 6:
                 ResultKt.throwOnFailure(obj);
                 return Unit.INSTANCE;

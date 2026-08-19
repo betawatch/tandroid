@@ -141,12 +141,13 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
     private static final zzbk zzz(zzbk zzbkVar) {
         try {
             zzbkVar.zzc();
+            return zzbkVar;
         } catch (IllegalArgumentException e) {
             throw e;
         } catch (Throwable unused) {
             zzbkVar.setResult(new zzbj(zzbkVar, new Status(2100)));
+            return zzbkVar;
         }
-        return zzbkVar;
     }
 
     public long getApproximateStreamPosition() {
@@ -470,21 +471,27 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
     }
 
     public final boolean zzt() {
-        Integer indexById;
         if (!hasMediaSession()) {
             return false;
         }
         MediaStatus mediaStatus = (MediaStatus) Preconditions.checkNotNull(getMediaStatus());
-        return mediaStatus.isMediaCommandSupported(64L) || mediaStatus.getQueueRepeatMode() != 0 || ((indexById = mediaStatus.getIndexById(mediaStatus.getCurrentItemId())) != null && indexById.intValue() < mediaStatus.getQueueItemCount() + (-1));
+        if (mediaStatus.isMediaCommandSupported(64L) || mediaStatus.getQueueRepeatMode() != 0) {
+            return true;
+        }
+        Integer indexById = mediaStatus.getIndexById(mediaStatus.getCurrentItemId());
+        return indexById != null && indexById.intValue() < mediaStatus.getQueueItemCount() + (-1);
     }
 
     public final boolean zzu() {
-        Integer indexById;
         if (!hasMediaSession()) {
             return false;
         }
         MediaStatus mediaStatus = (MediaStatus) Preconditions.checkNotNull(getMediaStatus());
-        return mediaStatus.isMediaCommandSupported(128L) || mediaStatus.getQueueRepeatMode() != 0 || ((indexById = mediaStatus.getIndexById(mediaStatus.getCurrentItemId())) != null && indexById.intValue() > 0);
+        if (mediaStatus.isMediaCommandSupported(128L) || mediaStatus.getQueueRepeatMode() != 0) {
+            return true;
+        }
+        Integer indexById = mediaStatus.getIndexById(mediaStatus.getCurrentItemId());
+        return indexById != null && indexById.intValue() > 0;
     }
 
     final boolean zzv() {

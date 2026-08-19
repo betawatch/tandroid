@@ -63,7 +63,7 @@ public abstract class ScrollableHorizontalScrollView extends HorizontalScrollVie
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrollableHorizontalScrollView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ScrollableHorizontalScrollView.this.lambda$scrollTo$0(valueAnimator2);
+                ScrollableHorizontalScrollView.$r8$lambda$LoUjiMHB75HABA7pTR0eoEgDe9A(ScrollableHorizontalScrollView.this, valueAnimator2);
             }
         });
         this.scrollAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -86,9 +86,9 @@ public abstract class ScrollableHorizontalScrollView extends HorizontalScrollVie
         this.scrollAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scrollTo$0(ValueAnimator valueAnimator) {
-        setScrollX((int) ((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public static /* synthetic */ void $r8$lambda$LoUjiMHB75HABA7pTR0eoEgDe9A(ScrollableHorizontalScrollView scrollableHorizontalScrollView, ValueAnimator valueAnimator) {
+        scrollableHorizontalScrollView.getClass();
+        scrollableHorizontalScrollView.setScrollX((int) ((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     public void resetScrollTo() {

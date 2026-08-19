@@ -58,11 +58,13 @@ public final class ChapterFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || ChapterFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && ChapterFrame.class == obj.getClass()) {
+            ChapterFrame chapterFrame = (ChapterFrame) obj;
+            if (this.startTimeMs == chapterFrame.startTimeMs && this.endTimeMs == chapterFrame.endTimeMs && this.startOffset == chapterFrame.startOffset && this.endOffset == chapterFrame.endOffset && Util.areEqual(this.chapterId, chapterFrame.chapterId) && Arrays.equals(this.subFrames, chapterFrame.subFrames)) {
+                return true;
+            }
         }
-        ChapterFrame chapterFrame = (ChapterFrame) obj;
-        return this.startTimeMs == chapterFrame.startTimeMs && this.endTimeMs == chapterFrame.endTimeMs && this.startOffset == chapterFrame.startOffset && this.endOffset == chapterFrame.endOffset && Util.areEqual(this.chapterId, chapterFrame.chapterId) && Arrays.equals(this.subFrames, chapterFrame.subFrames);
+        return false;
     }
 
     public int hashCode() {

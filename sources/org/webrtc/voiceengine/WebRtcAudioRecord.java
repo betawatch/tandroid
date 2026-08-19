@@ -15,7 +15,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.WebRtcAudioRecord$$ExternalSyntheticApiModelOutline19;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebRtcAudioRecord {
     private static final long AUDIO_RECORD_THREAD_JOIN_TIMEOUT_MS = 2000;
     private static final int BITS_PER_SAMPLE = 16;

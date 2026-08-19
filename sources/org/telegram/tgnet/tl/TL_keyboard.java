@@ -1,7 +1,6 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
@@ -16,11 +15,6 @@ import org.telegram.tgnet.tl.TL_keyboard;
 public class TL_keyboard {
 
     public static abstract class ButtonTypeProto extends TLObject {
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ TLObject access$400(InputSerializedData inputSerializedData, int i, boolean z) {
-        return TLdeserializeLegacy(inputSerializedData, i, z);
     }
 
     private TL_keyboard() {
@@ -732,15 +726,18 @@ public class TL_keyboard {
             ArrayList deserialize = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_keyboard$TL_keyboardInlineButtonRow_layer228$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.Vector.TLDeserializer
                 public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
-                    TLObject access$400;
-                    access$400 = TL_keyboard.access$400(inputSerializedData2, i, z2);
-                    return access$400;
+                    TLObject TLdeserializeLegacy;
+                    TLdeserializeLegacy = TL_keyboard.TLdeserializeLegacy(inputSerializedData2, i, z2);
+                    return TLdeserializeLegacy;
                 }
             }, z);
             this.buttons = new ArrayList<>(deserialize.size());
-            Iterator it = deserialize.iterator();
-            while (it.hasNext()) {
-                TLObject tLObject = (TLObject) it.next();
+            int size = deserialize.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = deserialize.get(i);
+                i++;
+                TLObject tLObject = (TLObject) obj;
                 if (tLObject instanceof KeyboardInlineButton) {
                     this.buttons.add((KeyboardInlineButton) tLObject);
                 }

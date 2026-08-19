@@ -2,7 +2,7 @@ package ru.noties.jlatexmath.awt;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class Color {
     public static final Color BLACK;
     public static final Color RED;

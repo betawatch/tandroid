@@ -31,9 +31,7 @@ public final class Mp3Extractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.mp3.Mp3Extractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = Mp3Extractor.lambda$static$0();
-            return lambda$static$0;
+            return Mp3Extractor.$r8$lambda$5hBhKwpQMo5Y1V-wXbZpz_A2KwY();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -46,9 +44,7 @@ public final class Mp3Extractor implements Extractor {
     private static final Id3Decoder.FramePredicate REQUIRED_ID3_FRAME_PREDICATE = new Id3Decoder.FramePredicate() { // from class: com.google.android.exoplayer2.extractor.mp3.Mp3Extractor$$ExternalSyntheticLambda1
         @Override // com.google.android.exoplayer2.metadata.id3.Id3Decoder.FramePredicate
         public final boolean evaluate(int i, int i2, int i3, int i4, int i5) {
-            boolean lambda$static$1;
-            lambda$static$1 = Mp3Extractor.lambda$static$1(i, i2, i3, i4, i5);
-            return lambda$static$1;
+            return Mp3Extractor.$r8$lambda$itzi5sQ4APfHauk2-YMljPCFep0(i, i2, i3, i4, i5);
         }
     };
     private long basisTimeUs;
@@ -72,21 +68,25 @@ public final class Mp3Extractor implements Extractor {
     private final MpegAudioUtil.Header synchronizedHeader;
     private int synchronizedHeaderData;
 
-    private static boolean headersMatch(int i, long j) {
-        return ((long) (i & (-128000))) == (j & (-128000));
+    public static /* synthetic */ boolean $r8$lambda$itzi5sQ4APfHauk2-YMljPCFep0(int i, int i2, int i3, int i4, int i5) {
+        if (i2 == 67 && i3 == 79 && i4 == 77 && (i5 == 77 || i == 2)) {
+            return true;
+        }
+        if (i2 == 77 && i3 == 76 && i4 == 76) {
+            return i5 == 84 || i == 2;
+        }
+        return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$1(int i, int i2, int i3, int i4, int i5) {
-        return (i2 == 67 && i3 == 79 && i4 == 77 && (i5 == 77 || i == 2)) || (i2 == 77 && i3 == 76 && i4 == 76 && (i5 == 84 || i == 2));
+    private static boolean headersMatch(int i, long j) {
+        return ((long) (i & (-128000))) == (j & (-128000));
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void release() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$5hBhKwpQMo5Y1V-wXbZpz_A2KwY() {
         return new Extractor[]{new Mp3Extractor()};
     }
 

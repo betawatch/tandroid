@@ -31,18 +31,18 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:108:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0093 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0157  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01e3  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x026c  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x027e  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0290  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x02a2  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x031d  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0387  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x008f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x026b  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x028d  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0304  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x036b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -191,7 +191,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
                             this.subtitleTextView.setText(AndroidUtilities.premiumText(LocaleController.formatString("LimitReachedFavoriteStickersSubtitle", R.string.LimitReachedFavoriteStickersSubtitle, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitPremium)), new Runnable() { // from class: org.telegram.ui.Components.StickerSetBulletinLayout$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    StickerSetBulletinLayout.lambda$new$0(context);
+                                    StickerSetBulletinLayout.$r8$lambda$H3iEL8c72YVk4MXdEAWXkJoksi0(context);
                                 }
                             }));
                             return;
@@ -207,7 +207,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
                             this.subtitleTextView.setText(AndroidUtilities.premiumText(LocaleController.formatString(R.string.LimitReachedFavoriteGifsSubtitle, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitPremium)), new Runnable() { // from class: org.telegram.ui.Components.StickerSetBulletinLayout$$ExternalSyntheticLambda0
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    StickerSetBulletinLayout.lambda$new$1(context);
+                                    StickerSetBulletinLayout.$r8$lambda$57QwHCV-IjZ3fyt7ykEQYpLyG_I(context);
                                 }
                             }));
                             return;
@@ -259,19 +259,17 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(Context context) {
+    public static /* synthetic */ void $r8$lambda$H3iEL8c72YVk4MXdEAWXkJoksi0(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$100(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
+            ((LaunchActivity) findActivity).presentFragment(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(Context context) {
+    public static /* synthetic */ void $r8$lambda$57QwHCV-IjZ3fyt7ykEQYpLyG_I(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$100(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
+            ((LaunchActivity) findActivity).presentFragment(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
         }
     }
 }

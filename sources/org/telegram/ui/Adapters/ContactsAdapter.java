@@ -109,9 +109,7 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             Collections.sort(this.onlineContacts, new Comparator() { // from class: org.telegram.ui.Adapters.ContactsAdapter$$ExternalSyntheticLambda0
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$sortOnlineContacts$0;
-                    lambda$sortOnlineContacts$0 = ContactsAdapter.lambda$sortOnlineContacts$0(MessagesController.this, currentTime, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                    return lambda$sortOnlineContacts$0;
+                    return ContactsAdapter.$r8$lambda$ELiMIR3niEAcM_m7UV_uqfYJfuE(MessagesController.this, currentTime, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
                 }
             });
             notifyDataSetChanged();
@@ -120,16 +118,17 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0048 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0053 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x005c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x003b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0045 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x004f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0053 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0059 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x005d A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x002b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ int lambda$sortOnlineContacts$0(MessagesController messagesController, int i, TLRPC.TL_contact tL_contact, TLRPC.TL_contact tL_contact2) {
+    public static /* synthetic */ int $r8$lambda$ELiMIR3niEAcM_m7UV_uqfYJfuE(MessagesController messagesController, int i, TLRPC.TL_contact tL_contact, TLRPC.TL_contact tL_contact2) {
         int i2;
         int i3;
         TLRPC.User user = messagesController.getUser(Long.valueOf(tL_contact2.user_id));
@@ -152,45 +151,70 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                         i3 = userStatus2.expires;
                     }
                 }
-                if (i2 <= 0 && i3 > 0) {
+                if (i2 > 0 || i3 <= 0) {
+                    if (i2 < 0 || i3 >= 0) {
+                        if (i2 >= 0 && i3 > 0) {
+                            return -1;
+                        }
+                        if (i2 != 0 && i3 != 0) {
+                            return -1;
+                        }
+                        if (i3 >= 0 && i2 > 0) {
+                            return 1;
+                        }
+                        if (i3 != 0 && i2 != 0) {
+                            return 1;
+                        }
+                    } else {
+                        if (i2 > i3) {
+                            return 1;
+                        }
+                        if (i2 < i3) {
+                            return -1;
+                        }
+                    }
+                } else {
                     if (i2 > i3) {
                         return 1;
                     }
-                    return i2 < i3 ? -1 : 0;
-                }
-                if (i2 >= 0 && i3 < 0) {
-                    if (i2 > i3) {
-                        return 1;
+                    if (i2 < i3) {
+                        return -1;
                     }
-                    return i2 < i3 ? -1 : 0;
                 }
-                if ((i2 < 0 || i3 <= 0) && (i2 != 0 || i3 == 0)) {
-                    return ((i3 < 0 || i2 <= 0) && (i3 != 0 || i2 == 0)) ? 0 : 1;
-                }
-                return -1;
+                return 0;
             }
             i3 = 0;
-            if (i2 <= 0) {
-            }
-            if (i2 >= 0) {
+            if (i2 > 0) {
             }
             if (i2 < 0) {
             }
-            if (i3 < 0) {
+            if (i2 >= 0) {
             }
+            if (i2 != 0) {
+            }
+            if (i3 >= 0) {
+            }
+            if (i3 != 0) {
+            }
+            return 0;
         }
         i2 = 0;
         if (user2 != null) {
         }
         i3 = 0;
-        if (i2 <= 0) {
-        }
-        if (i2 >= 0) {
+        if (i2 > 0) {
         }
         if (i2 < 0) {
         }
-        if (i3 < 0) {
+        if (i2 >= 0) {
         }
+        if (i2 != 0) {
+        }
+        if (i3 >= 0) {
+        }
+        if (i3 != 0) {
+        }
+        return 0;
     }
 
     @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
@@ -386,22 +410,26 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         LetterSectionCell letterSectionCell = (LetterSectionCell) view;
         if (this.sortType == 2 || this.disableSections || this.isEmpty) {
             letterSectionCell.setLetter("");
-        } else if (this.onlyUsers == 0 || this.isAdmin) {
-            if (i == 0) {
-                letterSectionCell.setLetter("");
-            } else {
-                int i2 = i - 1;
-                if (i2 < arrayList.size()) {
-                    letterSectionCell.setLetter(arrayList.get(i2));
-                } else {
-                    letterSectionCell.setLetter("");
-                }
-            }
-        } else if (i < arrayList.size()) {
-            letterSectionCell.setLetter(arrayList.get(i));
-        } else {
-            letterSectionCell.setLetter("");
+            return view;
         }
+        if (this.onlyUsers != 0 && !this.isAdmin) {
+            if (i < arrayList.size()) {
+                letterSectionCell.setLetter(arrayList.get(i));
+                return view;
+            }
+            letterSectionCell.setLetter("");
+            return view;
+        }
+        if (i == 0) {
+            letterSectionCell.setLetter("");
+            return view;
+        }
+        int i2 = i - 1;
+        if (i2 < arrayList.size()) {
+            letterSectionCell.setLetter(arrayList.get(i2));
+            return view;
+        }
+        letterSectionCell.setLetter("");
         return view;
     }
 

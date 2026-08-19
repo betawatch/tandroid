@@ -94,20 +94,13 @@ final class AutoValue_CrashlyticsReport extends CrashlyticsReport {
         String str2;
         CrashlyticsReport.Session session;
         CrashlyticsReport.FilesPayload filesPayload;
+        CrashlyticsReport.ApplicationExitInfo applicationExitInfo;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport)) {
-            return false;
-        }
-        CrashlyticsReport crashlyticsReport = (CrashlyticsReport) obj;
-        if (this.sdkVersion.equals(crashlyticsReport.getSdkVersion()) && this.gmpAppId.equals(crashlyticsReport.getGmpAppId()) && this.platform == crashlyticsReport.getPlatform() && this.installationUuid.equals(crashlyticsReport.getInstallationUuid()) && ((str = this.firebaseInstallationId) != null ? str.equals(crashlyticsReport.getFirebaseInstallationId()) : crashlyticsReport.getFirebaseInstallationId() == null) && ((str2 = this.appQualitySessionId) != null ? str2.equals(crashlyticsReport.getAppQualitySessionId()) : crashlyticsReport.getAppQualitySessionId() == null) && this.buildVersion.equals(crashlyticsReport.getBuildVersion()) && this.displayVersion.equals(crashlyticsReport.getDisplayVersion()) && ((session = this.session) != null ? session.equals(crashlyticsReport.getSession()) : crashlyticsReport.getSession() == null) && ((filesPayload = this.ndkPayload) != null ? filesPayload.equals(crashlyticsReport.getNdkPayload()) : crashlyticsReport.getNdkPayload() == null)) {
-            CrashlyticsReport.ApplicationExitInfo applicationExitInfo = this.appExitInfo;
-            if (applicationExitInfo == null) {
-                if (crashlyticsReport.getAppExitInfo() == null) {
-                    return true;
-                }
-            } else if (applicationExitInfo.equals(crashlyticsReport.getAppExitInfo())) {
+        if (obj instanceof CrashlyticsReport) {
+            CrashlyticsReport crashlyticsReport = (CrashlyticsReport) obj;
+            if (this.sdkVersion.equals(crashlyticsReport.getSdkVersion()) && this.gmpAppId.equals(crashlyticsReport.getGmpAppId()) && this.platform == crashlyticsReport.getPlatform() && this.installationUuid.equals(crashlyticsReport.getInstallationUuid()) && ((str = this.firebaseInstallationId) != null ? str.equals(crashlyticsReport.getFirebaseInstallationId()) : crashlyticsReport.getFirebaseInstallationId() == null) && ((str2 = this.appQualitySessionId) != null ? str2.equals(crashlyticsReport.getAppQualitySessionId()) : crashlyticsReport.getAppQualitySessionId() == null) && this.buildVersion.equals(crashlyticsReport.getBuildVersion()) && this.displayVersion.equals(crashlyticsReport.getDisplayVersion()) && ((session = this.session) != null ? session.equals(crashlyticsReport.getSession()) : crashlyticsReport.getSession() == null) && ((filesPayload = this.ndkPayload) != null ? filesPayload.equals(crashlyticsReport.getNdkPayload()) : crashlyticsReport.getNdkPayload() == null) && ((applicationExitInfo = this.appExitInfo) != null ? applicationExitInfo.equals(crashlyticsReport.getAppExitInfo()) : crashlyticsReport.getAppExitInfo() == null)) {
                 return true;
             }
         }

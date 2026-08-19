@@ -23,35 +23,23 @@ public final class zzcz implements zzda {
         this.zza = googleApiAvailabilityLight;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0021, code lost:
-    
-        if (r5 == null) goto L13;
-     */
     @Override // com.google.android.recaptcha.internal.zzda
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final String zza(Context context) {
-        PackageManager packageManager;
-        String packageName;
-        String installerPackageName;
         InstallSourceInfo installSourceInfo;
-        String str = "";
+        String initiatingPackageName;
         try {
-            packageManager = context.getPackageManager();
-            packageName = context.getPackageName();
-        } catch (Exception unused) {
-        }
-        if (Build.VERSION.SDK_INT >= 30) {
-            installSourceInfo = packageManager.getInstallSourceInfo(packageName);
-            installerPackageName = installSourceInfo.getInitiatingPackageName();
-            if (installerPackageName == null) {
-                return str;
+            PackageManager packageManager = context.getPackageManager();
+            String packageName = context.getPackageName();
+            if (Build.VERSION.SDK_INT < 30) {
+                String installerPackageName = packageManager.getInstallerPackageName(packageName);
+                return installerPackageName == null ? "" : installerPackageName;
             }
-            str = installerPackageName;
-            return str;
+            installSourceInfo = packageManager.getInstallSourceInfo(packageName);
+            initiatingPackageName = installSourceInfo.getInitiatingPackageName();
+            return initiatingPackageName == null ? "" : initiatingPackageName;
+        } catch (Exception unused) {
+            return "";
         }
-        installerPackageName = packageManager.getInstallerPackageName(packageName);
     }
 
     @Override // com.google.android.recaptcha.internal.zzda
@@ -61,21 +49,21 @@ public final class zzcz implements zzda {
 
     @Override // com.google.android.recaptcha.internal.zzda
     public final boolean zzc(Context context) {
+        List<PackageInfo> installedPackages;
         try {
-            List<PackageInfo> installedPackages = context.getPackageManager().getInstalledPackages(0);
-            if ((installedPackages instanceof Collection) && installedPackages.isEmpty()) {
-                return false;
-            }
-            Iterator<T> it = installedPackages.iterator();
-            while (it.hasNext()) {
-                if (Intrinsics.areEqual(((PackageInfo) it.next()).packageName, "com.android.vending")) {
-                    return true;
-                }
-            }
-            return false;
+            installedPackages = context.getPackageManager().getInstalledPackages(0);
         } catch (Exception unused) {
+        }
+        if ((installedPackages instanceof Collection) && installedPackages.isEmpty()) {
             return false;
         }
+        Iterator<T> it = installedPackages.iterator();
+        while (it.hasNext()) {
+            if (Intrinsics.areEqual(((PackageInfo) it.next()).packageName, "com.android.vending")) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override // com.google.android.recaptcha.internal.zzda

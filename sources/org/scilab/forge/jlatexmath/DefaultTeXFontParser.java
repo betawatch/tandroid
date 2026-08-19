@@ -283,27 +283,26 @@ public class DefaultTeXFontParser {
     public String[] parseDefaultTextStyleMappings() {
         String[] strArr = new String[4];
         Element element = (Element) this.root.getElementsByTagName("DefaultTextStyleMapping").item(0);
-        if (element == null) {
-            return strArr;
-        }
-        NodeList elementsByTagName = element.getElementsByTagName("MapStyle");
-        for (int i = 0; i < elementsByTagName.getLength(); i++) {
-            Element element2 = (Element) elementsByTagName.item(i);
-            String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("code", element2);
-            Integer num = rangeTypeMappings.get(attrValueAndCheckIfNotNull);
-            if (num == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "code", "contains an unknown \"range name\" '" + attrValueAndCheckIfNotNull + "'!");
+        if (element != null) {
+            NodeList elementsByTagName = element.getElementsByTagName("MapStyle");
+            for (int i = 0; i < elementsByTagName.getLength(); i++) {
+                Element element2 = (Element) elementsByTagName.item(i);
+                String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("code", element2);
+                Integer num = rangeTypeMappings.get(attrValueAndCheckIfNotNull);
+                if (num == null) {
+                    throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "code", "contains an unknown \"range name\" '" + attrValueAndCheckIfNotNull + "'!");
+                }
+                String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull("textStyle", element2);
+                if (this.parsedTextStyles.get(attrValueAndCheckIfNotNull2) == null) {
+                    throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "textStyle", "contains an unknown text style '" + attrValueAndCheckIfNotNull2 + "'!");
+                }
+                CharFont[] charFontArr = this.parsedTextStyles.get(attrValueAndCheckIfNotNull2);
+                int intValue = num.intValue();
+                if (charFontArr[intValue] == null) {
+                    throw new XMLResourceParseException("DefaultTeXFont.xml: the default text style mapping '" + attrValueAndCheckIfNotNull2 + "' for the range '" + attrValueAndCheckIfNotNull + "' contains no mapping for that range!");
+                }
+                strArr[intValue] = attrValueAndCheckIfNotNull2;
             }
-            String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull("textStyle", element2);
-            if (this.parsedTextStyles.get(attrValueAndCheckIfNotNull2) == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "textStyle", "contains an unknown text style '" + attrValueAndCheckIfNotNull2 + "'!");
-            }
-            CharFont[] charFontArr = this.parsedTextStyles.get(attrValueAndCheckIfNotNull2);
-            int intValue = num.intValue();
-            if (charFontArr[intValue] == null) {
-                throw new XMLResourceParseException("DefaultTeXFont.xml: the default text style mapping '" + attrValueAndCheckIfNotNull2 + "' for the range '" + attrValueAndCheckIfNotNull + "' contains no mapping for that range!");
-            }
-            strArr[intValue] = attrValueAndCheckIfNotNull2;
         }
         return strArr;
     }
@@ -343,36 +342,35 @@ public class DefaultTeXFontParser {
         String str;
         HashMap hashMap = new HashMap();
         Element element = (Element) this.root.getElementsByTagName("TextStyleMappings").item(0);
-        if (element == null) {
-            return hashMap;
-        }
-        NodeList elementsByTagName = element.getElementsByTagName(STYLE_MAPPING_EL);
-        for (int i = 0; i < elementsByTagName.getLength(); i++) {
-            Element element2 = (Element) elementsByTagName.item(i);
-            String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element2);
-            try {
-                str = getAttrValueAndCheckIfNotNull("bold", element2);
-            } catch (ResourceParseException unused) {
-                str = null;
-            }
-            NodeList elementsByTagName2 = element2.getElementsByTagName("MapRange");
-            CharFont[] charFontArr = new CharFont[4];
-            for (int i2 = 0; i2 < elementsByTagName2.getLength(); i2++) {
-                Element element3 = (Element) elementsByTagName2.item(i2);
-                String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull("fontId", element3);
-                int intAndCheck = getIntAndCheck("start", element3);
-                String attrValueAndCheckIfNotNull3 = getAttrValueAndCheckIfNotNull("code", element3);
-                Integer num = rangeTypeMappings.get(attrValueAndCheckIfNotNull3);
-                if (num == null) {
-                    throw new XMLResourceParseException(RESOURCE_NAME, "MapRange", "code", "contains an unknown \"range name\" '" + attrValueAndCheckIfNotNull3 + "'!");
+        if (element != null) {
+            NodeList elementsByTagName = element.getElementsByTagName(STYLE_MAPPING_EL);
+            for (int i = 0; i < elementsByTagName.getLength(); i++) {
+                Element element2 = (Element) elementsByTagName.item(i);
+                String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element2);
+                try {
+                    str = getAttrValueAndCheckIfNotNull("bold", element2);
+                } catch (ResourceParseException unused) {
+                    str = null;
                 }
-                if (str == null) {
-                    charFontArr[num.intValue()] = new CharFont((char) intAndCheck, Font_ID.indexOf(attrValueAndCheckIfNotNull2));
-                } else {
-                    charFontArr[num.intValue()] = new CharFont((char) intAndCheck, Font_ID.indexOf(attrValueAndCheckIfNotNull2), Font_ID.indexOf(str));
+                NodeList elementsByTagName2 = element2.getElementsByTagName("MapRange");
+                CharFont[] charFontArr = new CharFont[4];
+                for (int i2 = 0; i2 < elementsByTagName2.getLength(); i2++) {
+                    Element element3 = (Element) elementsByTagName2.item(i2);
+                    String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull("fontId", element3);
+                    int intAndCheck = getIntAndCheck("start", element3);
+                    String attrValueAndCheckIfNotNull3 = getAttrValueAndCheckIfNotNull("code", element3);
+                    Integer num = rangeTypeMappings.get(attrValueAndCheckIfNotNull3);
+                    if (num == null) {
+                        throw new XMLResourceParseException(RESOURCE_NAME, "MapRange", "code", "contains an unknown \"range name\" '" + attrValueAndCheckIfNotNull3 + "'!");
+                    }
+                    if (str == null) {
+                        charFontArr[num.intValue()] = new CharFont((char) intAndCheck, Font_ID.indexOf(attrValueAndCheckIfNotNull2));
+                    } else {
+                        charFontArr[num.intValue()] = new CharFont((char) intAndCheck, Font_ID.indexOf(attrValueAndCheckIfNotNull2), Font_ID.indexOf(str));
+                    }
                 }
+                hashMap.put(attrValueAndCheckIfNotNull, charFontArr);
             }
-            hashMap.put(attrValueAndCheckIfNotNull, charFontArr);
         }
         return hashMap;
     }

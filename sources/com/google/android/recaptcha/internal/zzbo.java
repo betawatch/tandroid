@@ -47,30 +47,26 @@ public final class zzbo {
                 Object obj = zzbcVar.zza;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzbcVar.zzc;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    Deferred zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
-                    zzbcVar.zzc = 1;
-                    obj = zza.await(zzbcVar);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                } else {
+                if (i == 0) {
                     if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     ResultKt.throwOnFailure(obj);
+                    return obj;
                 }
-                return obj;
+                ResultKt.throwOnFailure(obj);
+                Deferred zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
+                zzbcVar.zzc = 1;
+                Object await = zza.await(zzbcVar);
+                return await == coroutine_suspended ? coroutine_suspended : await;
             }
         }
         zzbcVar = new zzbc(this, continuation);
         Object obj2 = zzbcVar.zza;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzbcVar.zzc;
-        if (i != 0) {
+        if (i == 0) {
         }
-        return obj2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

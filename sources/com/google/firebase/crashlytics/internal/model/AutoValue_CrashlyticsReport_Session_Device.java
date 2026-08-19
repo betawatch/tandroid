@@ -79,11 +79,13 @@ final class AutoValue_CrashlyticsReport_Session_Device extends CrashlyticsReport
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Device)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Device) {
+            CrashlyticsReport.Session.Device device = (CrashlyticsReport.Session.Device) obj;
+            if (this.arch == device.getArch() && this.model.equals(device.getModel()) && this.cores == device.getCores() && this.ram == device.getRam() && this.diskSpace == device.getDiskSpace() && this.simulator == device.isSimulator() && this.state == device.getState() && this.manufacturer.equals(device.getManufacturer()) && this.modelClass.equals(device.getModelClass())) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Device device = (CrashlyticsReport.Session.Device) obj;
-        return this.arch == device.getArch() && this.model.equals(device.getModel()) && this.cores == device.getCores() && this.ram == device.getRam() && this.diskSpace == device.getDiskSpace() && this.simulator == device.isSimulator() && this.state == device.getState() && this.manufacturer.equals(device.getManufacturer()) && this.modelClass.equals(device.getModelClass());
+        return false;
     }
 
     public int hashCode() {

@@ -38,35 +38,29 @@ public class AnalyticsDeferredProxy {
         return new BreadcrumbSource() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda0
             @Override // com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource
             public final void registerBreadcrumbHandler(BreadcrumbHandler breadcrumbHandler) {
-                AnalyticsDeferredProxy.this.lambda$getDeferredBreadcrumbSource$0(breadcrumbHandler);
+                AnalyticsDeferredProxy.$r8$lambda$jxPNZIoMD5TUXCrnSLExogZZxg0(AnalyticsDeferredProxy.this, breadcrumbHandler);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getDeferredBreadcrumbSource$0(BreadcrumbHandler breadcrumbHandler) {
-        synchronized (this) {
+    public static /* synthetic */ void $r8$lambda$jxPNZIoMD5TUXCrnSLExogZZxg0(AnalyticsDeferredProxy analyticsDeferredProxy, BreadcrumbHandler breadcrumbHandler) {
+        synchronized (analyticsDeferredProxy) {
             try {
-                if (this.breadcrumbSource instanceof DisabledBreadcrumbSource) {
-                    this.breadcrumbHandlerList.add(breadcrumbHandler);
+                if (analyticsDeferredProxy.breadcrumbSource instanceof DisabledBreadcrumbSource) {
+                    analyticsDeferredProxy.breadcrumbHandlerList.add(breadcrumbHandler);
                 }
-                this.breadcrumbSource.registerBreadcrumbHandler(breadcrumbHandler);
+                analyticsDeferredProxy.breadcrumbSource.registerBreadcrumbHandler(breadcrumbHandler);
             } catch (Throwable th) {
                 throw th;
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getAnalyticsEventLogger$1(String str, Bundle bundle) {
-        this.analyticsEventLogger.logEvent(str, bundle);
-    }
-
     public AnalyticsEventLogger getAnalyticsEventLogger() {
         return new AnalyticsEventLogger() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda1
             @Override // com.google.firebase.crashlytics.internal.analytics.AnalyticsEventLogger
             public final void logEvent(String str, Bundle bundle) {
-                AnalyticsDeferredProxy.this.lambda$getAnalyticsEventLogger$1(str, bundle);
+                AnalyticsDeferredProxy.this.analyticsEventLogger.logEvent(str, bundle);
             }
         };
     }
@@ -75,13 +69,13 @@ public class AnalyticsDeferredProxy {
         this.analyticsConnectorDeferred.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda2
             @Override // com.google.firebase.inject.Deferred.DeferredHandler
             public final void handle(Provider provider) {
-                AnalyticsDeferredProxy.this.lambda$init$2(provider);
+                AnalyticsDeferredProxy.$r8$lambda$9OFGxA2N0nOG8dDPC_xdm7JYRUo(AnalyticsDeferredProxy.this, provider);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$2(Provider provider) {
+    public static /* synthetic */ void $r8$lambda$9OFGxA2N0nOG8dDPC_xdm7JYRUo(AnalyticsDeferredProxy analyticsDeferredProxy, Provider provider) {
+        analyticsDeferredProxy.getClass();
         Logger.getLogger().d("AnalyticsConnector now available.");
         WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(provider.get());
         new CrashlyticsOriginAnalyticsEventLogger(null);

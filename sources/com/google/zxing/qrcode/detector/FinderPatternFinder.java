@@ -215,11 +215,11 @@ public class FinderPatternFinder {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0086, code lost:
     
-        if (r11 >= r1) goto L80;
+        if (r11 >= r1) goto L81;
      */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x008c, code lost:
     
-        if (r0.get(r12, r11) == false) goto L81;
+        if (r0.get(r12, r11) == false) goto L82;
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008e, code lost:
     
@@ -227,7 +227,7 @@ public class FinderPatternFinder {
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x0090, code lost:
     
-        if (r9 >= r13) goto L79;
+        if (r9 >= r13) goto L80;
      */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x0092, code lost:
     
@@ -256,19 +256,11 @@ public class FinderPatternFinder {
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x00ba, code lost:
     
-        if (foundPatternCross(r2) == false) goto L84;
+        if (foundPatternCross(r2) == false) goto L66;
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x00c0, code lost:
     
         return centerFromEnd(r2, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:70:?, code lost:
-    
-        return Float.NaN;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:?, code lost:
-    
-        return Float.NaN;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -295,27 +287,26 @@ public class FinderPatternFinder {
             crossCheckStateCount[1] = i8 + 1;
             i7--;
         }
-        if (i7 < 0 || crossCheckStateCount[1] > i3) {
-            return Float.NaN;
-        }
-        while (i7 >= 0 && bitMatrix.get(i2, i7) && (i6 = crossCheckStateCount[0]) <= i3) {
-            crossCheckStateCount[0] = i6 + 1;
-            i7--;
-        }
-        if (crossCheckStateCount[0] > i3) {
-            return Float.NaN;
-        }
-        int i9 = i + 1;
-        while (i9 < height && bitMatrix.get(i2, i9)) {
-            crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
-            i9++;
-        }
-        if (i9 == height) {
-            return Float.NaN;
-        }
-        while (i9 < height && !bitMatrix.get(i2, i9) && (i5 = crossCheckStateCount[3]) < i3) {
-            crossCheckStateCount[3] = i5 + 1;
-            i9++;
+        if (i7 >= 0 && crossCheckStateCount[1] <= i3) {
+            while (i7 >= 0 && bitMatrix.get(i2, i7) && (i6 = crossCheckStateCount[0]) <= i3) {
+                crossCheckStateCount[0] = i6 + 1;
+                i7--;
+            }
+            if (crossCheckStateCount[0] > i3) {
+                return Float.NaN;
+            }
+            int i9 = i + 1;
+            while (i9 < height && bitMatrix.get(i2, i9)) {
+                crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
+                i9++;
+            }
+            if (i9 == height) {
+                return Float.NaN;
+            }
+            while (i9 < height && !bitMatrix.get(i2, i9) && (i5 = crossCheckStateCount[3]) < i3) {
+                crossCheckStateCount[3] = i5 + 1;
+                i9++;
+            }
         }
         return Float.NaN;
     }
@@ -326,11 +317,11 @@ public class FinderPatternFinder {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0086, code lost:
     
-        if (r11 >= r1) goto L80;
+        if (r11 >= r1) goto L81;
      */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x008c, code lost:
     
-        if (r0.get(r11, r12) == false) goto L81;
+        if (r0.get(r11, r12) == false) goto L82;
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008e, code lost:
     
@@ -338,7 +329,7 @@ public class FinderPatternFinder {
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x0090, code lost:
     
-        if (r9 >= r13) goto L79;
+        if (r9 >= r13) goto L80;
      */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x0092, code lost:
     
@@ -367,19 +358,11 @@ public class FinderPatternFinder {
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x00b8, code lost:
     
-        if (foundPatternCross(r2) == false) goto L84;
+        if (foundPatternCross(r2) == false) goto L66;
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x00be, code lost:
     
         return centerFromEnd(r2, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:70:?, code lost:
-    
-        return Float.NaN;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:?, code lost:
-    
-        return Float.NaN;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -406,27 +389,26 @@ public class FinderPatternFinder {
             crossCheckStateCount[1] = i8 + 1;
             i7--;
         }
-        if (i7 < 0 || crossCheckStateCount[1] > i3) {
-            return Float.NaN;
-        }
-        while (i7 >= 0 && bitMatrix.get(i7, i2) && (i6 = crossCheckStateCount[0]) <= i3) {
-            crossCheckStateCount[0] = i6 + 1;
-            i7--;
-        }
-        if (crossCheckStateCount[0] > i3) {
-            return Float.NaN;
-        }
-        int i9 = i + 1;
-        while (i9 < width && bitMatrix.get(i9, i2)) {
-            crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
-            i9++;
-        }
-        if (i9 == width) {
-            return Float.NaN;
-        }
-        while (i9 < width && !bitMatrix.get(i9, i2) && (i5 = crossCheckStateCount[3]) < i3) {
-            crossCheckStateCount[3] = i5 + 1;
-            i9++;
+        if (i7 >= 0 && crossCheckStateCount[1] <= i3) {
+            while (i7 >= 0 && bitMatrix.get(i7, i2) && (i6 = crossCheckStateCount[0]) <= i3) {
+                crossCheckStateCount[0] = i6 + 1;
+                i7--;
+            }
+            if (crossCheckStateCount[0] > i3) {
+                return Float.NaN;
+            }
+            int i9 = i + 1;
+            while (i9 < width && bitMatrix.get(i9, i2)) {
+                crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
+                i9++;
+            }
+            if (i9 == width) {
+                return Float.NaN;
+            }
+            while (i9 < width && !bitMatrix.get(i9, i2) && (i5 = crossCheckStateCount[3]) < i3) {
+                crossCheckStateCount[3] = i5 + 1;
+                i9++;
+            }
         }
         return Float.NaN;
     }
@@ -505,58 +487,64 @@ public class FinderPatternFinder {
         return (x * x) + (y * y);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00e3 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00e5 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private FinderPattern[] selectBestPatterns() {
+        int i;
         double d;
         double abs;
         if (this.possibleCenters.size() < 3) {
             throw NotFoundException.getNotFoundInstance();
         }
         Iterator it = this.possibleCenters.iterator();
-        while (it.hasNext()) {
+        while (true) {
+            i = 2;
+            if (!it.hasNext()) {
+                break;
+            }
             if (((FinderPattern) it.next()).getCount() < 2) {
                 it.remove();
             }
         }
         Collections.sort(this.possibleCenters, moduleComparator);
         FinderPattern[] finderPatternArr = new FinderPattern[3];
-        int i = 0;
         double d2 = Double.MAX_VALUE;
-        while (i < this.possibleCenters.size() - 2) {
-            FinderPattern finderPattern = (FinderPattern) this.possibleCenters.get(i);
+        int i2 = 0;
+        while (i2 < this.possibleCenters.size() - i) {
+            FinderPattern finderPattern = (FinderPattern) this.possibleCenters.get(i2);
             float estimatedModuleSize = finderPattern.getEstimatedModuleSize();
-            i++;
-            int i2 = i;
-            while (i2 < this.possibleCenters.size() - 1) {
-                FinderPattern finderPattern2 = (FinderPattern) this.possibleCenters.get(i2);
+            i2++;
+            int i3 = i2;
+            while (i3 < this.possibleCenters.size() - 1) {
+                FinderPattern finderPattern2 = (FinderPattern) this.possibleCenters.get(i3);
                 double squaredDistance = squaredDistance(finderPattern, finderPattern2);
-                i2++;
-                for (int i3 = i2; i3 < this.possibleCenters.size(); i3++) {
-                    FinderPattern finderPattern3 = (FinderPattern) this.possibleCenters.get(i3);
+                i3++;
+                for (int i4 = i3; i4 < this.possibleCenters.size(); i4++) {
+                    FinderPattern finderPattern3 = (FinderPattern) this.possibleCenters.get(i4);
                     if (finderPattern3.getEstimatedModuleSize() <= 1.4f * estimatedModuleSize) {
                         double squaredDistance2 = squaredDistance(finderPattern2, finderPattern3);
                         double squaredDistance3 = squaredDistance(finderPattern, finderPattern3);
                         if (squaredDistance < squaredDistance2) {
                             if (squaredDistance2 <= squaredDistance3) {
-                                d = squaredDistance;
-                                squaredDistance2 = squaredDistance3;
                                 squaredDistance3 = squaredDistance2;
-                            } else if (squaredDistance < squaredDistance3) {
-                                d = squaredDistance;
-                            } else {
+                                squaredDistance2 = squaredDistance3;
+                            } else if (squaredDistance >= squaredDistance3) {
                                 d = squaredDistance3;
                                 squaredDistance3 = squaredDistance;
+                                abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
+                                if (abs >= d2) {
+                                    finderPatternArr[0] = finderPattern;
+                                    finderPatternArr[1] = finderPattern2;
+                                    finderPatternArr[2] = finderPattern3;
+                                    d2 = abs;
+                                }
                             }
+                            d = squaredDistance;
                             abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
-                            if (abs < d2) {
-                                finderPatternArr[0] = finderPattern;
-                                finderPatternArr[1] = finderPattern2;
-                                finderPatternArr[2] = finderPattern3;
-                                d2 = abs;
+                            if (abs >= d2) {
                             }
                         } else {
                             if (squaredDistance2 >= squaredDistance3) {
@@ -567,18 +555,19 @@ public class FinderPatternFinder {
                                 squaredDistance2 = squaredDistance3;
                                 squaredDistance3 = squaredDistance;
                                 abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
-                                if (abs < d2) {
+                                if (abs >= d2) {
                                 }
                             } else {
                                 d = squaredDistance2;
                             }
                             squaredDistance2 = squaredDistance;
                             abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
-                            if (abs < d2) {
+                            if (abs >= d2) {
                             }
                         }
                     }
                 }
+                i = 2;
             }
         }
         if (d2 != Double.MAX_VALUE) {

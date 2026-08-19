@@ -3,7 +3,7 @@ package org.webrtc;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MediaConstraints {
     public final List<KeyValuePair> mandatory = new ArrayList();
     public final List<KeyValuePair> optional = new ArrayList();
@@ -33,11 +33,13 @@ public class MediaConstraints {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
+            if (obj != null && getClass() == obj.getClass()) {
+                KeyValuePair keyValuePair = (KeyValuePair) obj;
+                if (this.key.equals(keyValuePair.key) && this.value.equals(keyValuePair.value)) {
+                    return true;
+                }
             }
-            KeyValuePair keyValuePair = (KeyValuePair) obj;
-            return this.key.equals(keyValuePair.key) && this.value.equals(keyValuePair.value);
+            return false;
         }
 
         public int hashCode() {

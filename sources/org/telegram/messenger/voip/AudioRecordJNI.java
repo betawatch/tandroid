@@ -95,23 +95,42 @@ public class AudioRecordJNI {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x004a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private boolean tryInit(int i, int i2) {
-        AudioRecord audioRecord = this.audioRecord;
-        if (audioRecord != null) {
+        int i3;
+        AudioRecord audioRecord;
+        AudioRecord audioRecord2 = this.audioRecord;
+        if (audioRecord2 != null) {
             try {
-                audioRecord.release();
+                audioRecord2.release();
             } catch (Exception unused) {
             }
         }
         VLog.i("Trying to initialize AudioRecord with source=" + i + " and sample rate=" + i2);
         try {
-            this.audioRecord = new AudioRecord(i, i2, 16, 2, getBufferSize(this.bufferSize, 48000));
+            i3 = i2;
         } catch (Exception e) {
-            VLog.e("AudioRecord init failed!", e);
+            e = e;
+            i3 = i2;
         }
-        this.needResampling = i2 != 48000;
-        AudioRecord audioRecord2 = this.audioRecord;
-        return audioRecord2 != null && audioRecord2.getState() == 1;
+        try {
+            this.audioRecord = new AudioRecord(i, i3, 16, 2, getBufferSize(this.bufferSize, 48000));
+        } catch (Exception e2) {
+            e = e2;
+            VLog.e("AudioRecord init failed!", e);
+            this.needResampling = i3 == 48000;
+            audioRecord = this.audioRecord;
+            return audioRecord == null ? false : false;
+        }
+        this.needResampling = i3 == 48000;
+        audioRecord = this.audioRecord;
+        if (audioRecord == null && audioRecord.getState() == 1) {
+            return true;
+        }
     }
 
     public void stop() {
@@ -188,31 +207,30 @@ public class AudioRecordJNI {
         Thread thread = new Thread(new Runnable() { // from class: org.telegram.messenger.voip.AudioRecordJNI$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AudioRecordJNI.this.lambda$startThread$0(allocateDirect);
+                AudioRecordJNI.$r8$lambda$oMshtME2Pii1Z3ZKpPH1ohR0gNM(AudioRecordJNI.this, allocateDirect);
             }
         });
         this.thread = thread;
         thread.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startThread$0(ByteBuffer byteBuffer) {
-        while (this.running) {
+    public static /* synthetic */ void $r8$lambda$oMshtME2Pii1Z3ZKpPH1ohR0gNM(AudioRecordJNI audioRecordJNI, ByteBuffer byteBuffer) {
+        while (audioRecordJNI.running) {
             try {
-                if (!this.needResampling) {
-                    this.audioRecord.read(this.buffer, 1920);
+                if (!audioRecordJNI.needResampling) {
+                    audioRecordJNI.audioRecord.read(audioRecordJNI.buffer, 1920);
                 } else {
-                    this.audioRecord.read(byteBuffer, 1764);
-                    Resampler.convert44to48(byteBuffer, this.buffer);
+                    audioRecordJNI.audioRecord.read(byteBuffer, 1764);
+                    Resampler.convert44to48(byteBuffer, audioRecordJNI.buffer);
                 }
             } catch (Exception e) {
                 VLog.e(e);
             }
-            if (!this.running) {
-                this.audioRecord.stop();
+            if (!audioRecordJNI.running) {
+                audioRecordJNI.audioRecord.stop();
                 break;
             }
-            nativeCallback(this.buffer);
+            audioRecordJNI.nativeCallback(audioRecordJNI.buffer);
         }
         VLog.i("audiorecord thread exits");
     }

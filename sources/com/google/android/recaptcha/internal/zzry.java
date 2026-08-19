@@ -20,6 +20,6 @@ public final class zzry {
     }
 
     zzry(boolean z) {
-        this.zzd = Collections.emptyMap();
+        this.zzd = Collections.EMPTY_MAP;
     }
 }

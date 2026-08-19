@@ -77,15 +77,13 @@ public class CropRotationWheel extends FrameLayout {
         this.mirrorButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CropRotationWheel.this.lambda$new$0(view);
+                CropRotationWheel.$r8$lambda$_kKv5ZU5duqWNkbW-St-PVNLUqE(CropRotationWheel.this, view);
             }
         });
         this.mirrorButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda1
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean lambda$new$1;
-                lambda$new$1 = CropRotationWheel.this.lambda$new$1(view);
-                return lambda$new$1;
+                return CropRotationWheel.$r8$lambda$ii_mKFpdpuRx_6Yi9woLN9t_7Hc(CropRotationWheel.this, view);
             }
         });
         this.mirrorButton.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
@@ -98,7 +96,7 @@ public class CropRotationWheel extends FrameLayout {
         this.aspectRatioButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CropRotationWheel.this.lambda$new$2(view);
+                CropRotationWheel.$r8$lambda$rGAw4KW_FOPaf2ISMFirYQDucMg(CropRotationWheel.this, view);
             }
         });
         this.aspectRatioButton.setVisibility(8);
@@ -112,7 +110,7 @@ public class CropRotationWheel extends FrameLayout {
         this.rotation90Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CropRotationWheel.this.lambda$new$3(view);
+                CropRotationWheel.$r8$lambda$4p-WpcLGhBIA87ldncOPMZyJpZQ(CropRotationWheel.this, view);
             }
         });
         this.rotation90Button.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
@@ -125,33 +123,29 @@ public class CropRotationWheel extends FrameLayout {
         setRotation(0.0f, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        RotationWheelListener rotationWheelListener = this.rotationListener;
+    public static /* synthetic */ void $r8$lambda$_kKv5ZU5duqWNkbW-St-PVNLUqE(CropRotationWheel cropRotationWheel, View view) {
+        RotationWheelListener rotationWheelListener = cropRotationWheel.rotationListener;
         if (rotationWheelListener != null) {
-            setMirrored(rotationWheelListener.mirror());
+            cropRotationWheel.setMirrored(rotationWheelListener.mirror());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(View view) {
-        this.aspectRatioButton.callOnClick();
+    public static /* synthetic */ boolean $r8$lambda$ii_mKFpdpuRx_6Yi9woLN9t_7Hc(CropRotationWheel cropRotationWheel, View view) {
+        cropRotationWheel.aspectRatioButton.callOnClick();
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        RotationWheelListener rotationWheelListener = this.rotationListener;
+    public static /* synthetic */ void $r8$lambda$rGAw4KW_FOPaf2ISMFirYQDucMg(CropRotationWheel cropRotationWheel, View view) {
+        RotationWheelListener rotationWheelListener = cropRotationWheel.rotationListener;
         if (rotationWheelListener != null) {
             rotationWheelListener.aspectRatioPressed();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        RotationWheelListener rotationWheelListener = this.rotationListener;
+    public static /* synthetic */ void $r8$lambda$4p-WpcLGhBIA87ldncOPMZyJpZQ(CropRotationWheel cropRotationWheel, View view) {
+        RotationWheelListener rotationWheelListener = cropRotationWheel.rotationListener;
         if (rotationWheelListener != null) {
-            setRotated(rotationWheelListener.rotate90Pressed());
+            cropRotationWheel.setRotated(rotationWheelListener.rotate90Pressed());
         }
     }
 
@@ -260,21 +254,24 @@ public class CropRotationWheel extends FrameLayout {
             if (i < floor || (i == 0 && f < 0.0f)) {
                 paint = this.bluePaint;
             }
+            Canvas canvas2 = canvas;
+            drawLine(canvas2, i, f, width, height, i == floor || (i == 0 && floor == -1), paint);
             int i2 = i;
-            drawLine(canvas, i, f, width, height, i == floor || (i == 0 && floor == -1), paint);
             if (i2 != 0) {
                 int i3 = -i2;
-                drawLine(canvas, i3, f, width, height, i3 == floor + 1, i3 > floor ? this.bluePaint : this.whitePaint);
+                drawLine(canvas2, i3, f, width, height, i3 == floor + 1, i3 > floor ? this.bluePaint : this.whitePaint);
             }
             i = i2 + 1;
+            canvas = canvas2;
         }
+        Canvas canvas3 = canvas;
         this.bluePaint.setAlpha(NotificationCenter.didReceiveSmsCode);
         this.tempRect.left = (width - AndroidUtilities.dp(2.5f)) / 2;
         this.tempRect.top = (height - AndroidUtilities.dp(22.0f)) / 2;
         this.tempRect.right = (AndroidUtilities.dp(2.5f) + width) / 2;
         this.tempRect.bottom = (height + AndroidUtilities.dp(22.0f)) / 2;
-        canvas.drawRoundRect(this.tempRect, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), this.bluePaint);
-        canvas.drawText(this.degreesText, (width - this.degreesTextPaint.measureText(this.degreesText)) / 2.0f, AndroidUtilities.dp(14.0f), this.degreesTextPaint);
+        canvas3.drawRoundRect(this.tempRect, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), this.bluePaint);
+        canvas3.drawText(this.degreesText, (width - this.degreesTextPaint.measureText(this.degreesText)) / 2.0f, AndroidUtilities.dp(14.0f), this.degreesTextPaint);
     }
 
     protected void drawLine(Canvas canvas, int i, float f, int i2, int i3, boolean z, Paint paint) {

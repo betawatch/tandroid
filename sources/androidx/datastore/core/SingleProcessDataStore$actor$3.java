@@ -32,7 +32,22 @@ final class SingleProcessDataStore$actor$3 extends SuspendLambda implements Func
         return ((SingleProcessDataStore$actor$3) create(message, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0030, code lost:
+    
+        if (r5 == r0) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0043, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0041, code lost:
+    
+        if (r5 == r0) goto L19;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         Object handleUpdate;
         Object handleRead;
@@ -44,15 +59,9 @@ final class SingleProcessDataStore$actor$3 extends SuspendLambda implements Func
             if (message instanceof SingleProcessDataStore.Message.Read) {
                 this.label = 1;
                 handleRead = this.this$0.handleRead((SingleProcessDataStore.Message.Read) message, this);
-                if (handleRead == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             } else if (message instanceof SingleProcessDataStore.Message.Update) {
                 this.label = 2;
                 handleUpdate = this.this$0.handleUpdate((SingleProcessDataStore.Message.Update) message, this);
-                if (handleUpdate == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             }
         } else if (i == 1 || i == 2) {
             ResultKt.throwOnFailure(obj);

@@ -65,21 +65,14 @@ final class AutoValue_LogEvent extends LogEvent {
     public boolean equals(Object obj) {
         Integer num;
         String str;
+        NetworkConnectionInfo networkConnectionInfo;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof LogEvent)) {
-            return false;
-        }
-        LogEvent logEvent = (LogEvent) obj;
-        if (this.eventTimeMs == logEvent.getEventTimeMs() && ((num = this.eventCode) != null ? num.equals(logEvent.getEventCode()) : logEvent.getEventCode() == null) && this.eventUptimeMs == logEvent.getEventUptimeMs()) {
-            if (Arrays.equals(this.sourceExtension, logEvent instanceof AutoValue_LogEvent ? ((AutoValue_LogEvent) logEvent).sourceExtension : logEvent.getSourceExtension()) && ((str = this.sourceExtensionJsonProto3) != null ? str.equals(logEvent.getSourceExtensionJsonProto3()) : logEvent.getSourceExtensionJsonProto3() == null) && this.timezoneOffsetSeconds == logEvent.getTimezoneOffsetSeconds()) {
-                NetworkConnectionInfo networkConnectionInfo = this.networkConnectionInfo;
-                if (networkConnectionInfo == null) {
-                    if (logEvent.getNetworkConnectionInfo() == null) {
-                        return true;
-                    }
-                } else if (networkConnectionInfo.equals(logEvent.getNetworkConnectionInfo())) {
+        if (obj instanceof LogEvent) {
+            LogEvent logEvent = (LogEvent) obj;
+            if (this.eventTimeMs == logEvent.getEventTimeMs() && ((num = this.eventCode) != null ? num.equals(logEvent.getEventCode()) : logEvent.getEventCode() == null) && this.eventUptimeMs == logEvent.getEventUptimeMs()) {
+                if (Arrays.equals(this.sourceExtension, logEvent instanceof AutoValue_LogEvent ? ((AutoValue_LogEvent) logEvent).sourceExtension : logEvent.getSourceExtension()) && ((str = this.sourceExtensionJsonProto3) != null ? str.equals(logEvent.getSourceExtensionJsonProto3()) : logEvent.getSourceExtensionJsonProto3() == null) && this.timezoneOffsetSeconds == logEvent.getTimezoneOffsetSeconds() && ((networkConnectionInfo = this.networkConnectionInfo) != null ? networkConnectionInfo.equals(logEvent.getNetworkConnectionInfo()) : logEvent.getNetworkConnectionInfo() == null)) {
                     return true;
                 }
             }

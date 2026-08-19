@@ -205,9 +205,13 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.A
         try {
             JSONArray jSONArray = new JSONArray();
             Collections.sort(this.zah, zag);
-            Iterator it = this.zah.iterator();
-            while (it.hasNext()) {
-                jSONArray.put(((Scope) it.next()).getScopeUri());
+            ArrayList arrayList = this.zah;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                jSONArray.put(((Scope) obj).getScopeUri());
             }
             jSONObject.put("scopes", jSONArray);
             Account account = this.zai;

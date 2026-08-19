@@ -5,7 +5,7 @@ import com.google.android.datatransport.runtime.scheduling.persistence.EventStor
 import java.io.Closeable;
 
 /* loaded from: classes.dex */
-abstract class TransportRuntimeComponent implements Closeable {
+abstract class TransportRuntimeComponent implements Closeable, AutoCloseable {
 
     interface Builder {
         TransportRuntimeComponent build();

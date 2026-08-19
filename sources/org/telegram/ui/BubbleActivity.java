@@ -116,7 +116,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         PasscodeView passcodeView = new PasscodeView(this);
         this.passcodeView = passcodeView;
         this.drawerLayoutContainer.addView(passcodeView, LayoutHelper.createFrame(-1, -1.0f));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.closeOtherAppActivities, this);
         this.actionBarLayout.removeAllFragments();
         handleIntent(getIntent(), false, bundle != null, false, UserConfig.selectedAccount, 0);
         instance = this;
@@ -140,21 +140,25 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         this.passcodeView.setDelegate(new PasscodeView.PasscodeViewDelegate() { // from class: org.telegram.ui.BubbleActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.PasscodeView.PasscodeViewDelegate
             public final void didAcceptedPassword(PasscodeView passcodeView) {
-                BubbleActivity.this.lambda$showPasscodeActivity$0(passcodeView);
+                BubbleActivity.$r8$lambda$fM-9tj6eZMwp4Xqa9KuqzjzSaD4(BubbleActivity.this, passcodeView);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPasscodeActivity$0(PasscodeView passcodeView) {
+    public static /* synthetic */ void $r8$lambda$fM-9tj6eZMwp4Xqa9KuqzjzSaD4(BubbleActivity bubbleActivity, PasscodeView passcodeView) {
+        BubbleActivity bubbleActivity2;
+        bubbleActivity.getClass();
         SharedConfig.isWaitingForPasscodeEnter = false;
-        Intent intent = this.passcodeSaveIntent;
+        Intent intent = bubbleActivity.passcodeSaveIntent;
         if (intent != null) {
-            handleIntent(intent, this.passcodeSaveIntentIsNew, this.passcodeSaveIntentIsRestore, true, this.passcodeSaveIntentAccount, this.passcodeSaveIntentState);
-            this.passcodeSaveIntent = null;
+            bubbleActivity2 = bubbleActivity;
+            bubbleActivity2.handleIntent(intent, bubbleActivity.passcodeSaveIntentIsNew, bubbleActivity.passcodeSaveIntentIsRestore, true, bubbleActivity.passcodeSaveIntentAccount, bubbleActivity.passcodeSaveIntentState);
+            bubbleActivity2.passcodeSaveIntent = null;
+        } else {
+            bubbleActivity2 = bubbleActivity;
         }
-        this.actionBarLayout.showLastFragment();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, passcodeView);
+        bubbleActivity2.actionBarLayout.showLastFragment();
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.passcodeDismissed, passcodeView);
     }
 
     private boolean handleIntent(Intent intent, boolean z, boolean z2, boolean z3, int i, int i2) {
@@ -196,7 +200,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
             finish();
             return false;
         }
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, Long.valueOf(this.dialogId));
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.closeChats, Long.valueOf(this.dialogId));
         this.actionBarLayout.removeAllFragments();
         this.actionBarLayout.addFragmentToStack(chatActivity);
         AccountInstance.getInstance(this.currentAccount).getNotificationsController().setOpenedInBubble(this.dialogId, true);

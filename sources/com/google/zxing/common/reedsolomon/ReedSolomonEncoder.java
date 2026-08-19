@@ -3,7 +3,7 @@ package com.google.zxing.common.reedsolomon;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ReedSolomonEncoder {
     private final List cachedGenerators;
     private final GenericGF field;

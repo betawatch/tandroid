@@ -79,7 +79,7 @@ public abstract class Ints extends IntsMethodsForWeb {
 
     public static List asList(int... iArr) {
         if (iArr.length == 0) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         return new IntArrayAsList(iArr);
     }
@@ -152,7 +152,7 @@ public abstract class Ints extends IntsMethodsForWeb {
         public List subList(int i, int i2) {
             Preconditions.checkPositionIndexes(i, i2, size());
             if (i == i2) {
-                return Collections.emptyList();
+                return Collections.EMPTY_LIST;
             }
             int[] iArr = this.array;
             int i3 = this.start;

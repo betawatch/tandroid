@@ -21,8 +21,7 @@ public class BlurredBackgroundProviderBuilder implements BlurredBackgroundProvid
         int getColor(Theme.ResourcesProvider resourcesProvider, boolean z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$create$0(int i, int i2, Theme.ResourcesProvider resourcesProvider, boolean z) {
+    public static /* synthetic */ int $r8$lambda$L6TaFC4EiCuKVKYV83zwJJCpq8s(int i, int i2, Theme.ResourcesProvider resourcesProvider, boolean z) {
         return z ? i : i2;
     }
 
@@ -142,9 +141,7 @@ public class BlurredBackgroundProviderBuilder implements BlurredBackgroundProvid
         return new ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider, boolean z) {
-                int lambda$create$0;
-                lambda$create$0 = BlurredBackgroundProviderBuilder.lambda$create$0(i2, i, resourcesProvider, z);
-                return lambda$create$0;
+                return BlurredBackgroundProviderBuilder.$r8$lambda$L6TaFC4EiCuKVKYV83zwJJCpq8s(i2, i, resourcesProvider, z);
             }
         };
     }

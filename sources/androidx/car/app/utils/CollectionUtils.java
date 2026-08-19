@@ -8,10 +8,10 @@ import java.util.List;
 /* loaded from: classes.dex */
 public abstract class CollectionUtils {
     public static List emptyIfNull(List list) {
-        return list != null ? list : Collections.emptyList();
+        return list != null ? list : Collections.EMPTY_LIST;
     }
 
     public static List unmodifiableCopy(List list) {
-        return list == null ? Collections.emptyList() : DesugarCollections.unmodifiableList(new ArrayList(list));
+        return list == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(new ArrayList(list));
     }
 }

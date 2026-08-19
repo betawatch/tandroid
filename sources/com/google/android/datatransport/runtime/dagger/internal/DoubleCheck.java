@@ -14,19 +14,22 @@ public final class DoubleCheck implements Provider {
 
     @Override // javax.inject.Provider
     public Object get() {
-        Object obj = this.instance;
-        Object obj2 = UNINITIALIZED;
-        if (obj == obj2) {
-            synchronized (this) {
-                try {
-                    obj = this.instance;
-                    if (obj == obj2) {
-                        obj = this.provider.get();
-                        this.instance = reentrantCheck(this.instance, obj);
-                        this.provider = null;
-                    }
-                } finally {
+        Object obj;
+        Object obj2 = this.instance;
+        Object obj3 = UNINITIALIZED;
+        if (obj2 != obj3) {
+            return obj2;
+        }
+        synchronized (this) {
+            try {
+                obj = this.instance;
+                if (obj == obj3) {
+                    obj = this.provider.get();
+                    this.instance = reentrantCheck(this.instance, obj);
+                    this.provider = null;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return obj;

@@ -32,15 +32,12 @@ class TopicsSubscriber {
         return Tasks.call(scheduledExecutorService, new Callable() { // from class: com.google.firebase.messaging.TopicsSubscriber$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                TopicsSubscriber lambda$createInstance$0;
-                lambda$createInstance$0 = TopicsSubscriber.lambda$createInstance$0(context, scheduledExecutorService, firebaseMessaging, metadata, gmsRpc);
-                return lambda$createInstance$0;
+                return TopicsSubscriber.$r8$lambda$cQm16Wsc8osz2g8HYy5wwc3xjQc(context, scheduledExecutorService, firebaseMessaging, metadata, gmsRpc);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ TopicsSubscriber lambda$createInstance$0(Context context, ScheduledExecutorService scheduledExecutorService, FirebaseMessaging firebaseMessaging, Metadata metadata, GmsRpc gmsRpc) {
+    public static /* synthetic */ TopicsSubscriber $r8$lambda$cQm16Wsc8osz2g8HYy5wwc3xjQc(Context context, ScheduledExecutorService scheduledExecutorService, FirebaseMessaging firebaseMessaging, Metadata metadata, GmsRpc gmsRpc) {
         return new TopicsSubscriber(firebaseMessaging, metadata, TopicsStore.getInstance(context, scheduledExecutorService), gmsRpc, context, scheduledExecutorService);
     }
 
@@ -87,7 +84,7 @@ class TopicsSubscriber {
     
         android.util.Log.d("FirebaseMessaging", "topic sync succeeded");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x001a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x001b, code lost:
     
         return true;
      */
@@ -201,8 +198,7 @@ class TopicsSubscriber {
     private static void awaitTask(Task task) {
         try {
             Tasks.await(task, 30L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e = e;
+        } catch (InterruptedException | TimeoutException e) {
             throw new IOException("SERVICE_NOT_AVAILABLE", e);
         } catch (ExecutionException e2) {
             Throwable cause = e2.getCause();
@@ -213,9 +209,6 @@ class TopicsSubscriber {
                 throw ((RuntimeException) cause);
             }
             throw new IOException(e2);
-        } catch (TimeoutException e3) {
-            e = e3;
-            throw new IOException("SERVICE_NOT_AVAILABLE", e);
         }
     }
 
@@ -228,6 +221,9 @@ class TopicsSubscriber {
     }
 
     static boolean isDebugLogEnabled() {
-        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            return true;
+        }
+        return Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3);
     }
 }

@@ -33,8 +33,9 @@ public final class zzay {
     }
 
     public final zzaq zzc(String str, boolean z) {
+        Boolean valueOf = Boolean.valueOf(z);
         final Class<Boolean> cls = Boolean.class;
-        return new zzaq(this.zza, str, Boolean.valueOf(z), new zzak(false, false, false, this.zzc, false, this.zzb, new zzax() { // from class: com.google.android.gms.internal.fido.zzar
+        return new zzaq(this.zza, str, valueOf, new zzak(false, false, false, this.zzc, false, this.zzb, new zzax() { // from class: com.google.android.gms.internal.fido.zzar
         }, new zzax(cls) { // from class: com.google.android.gms.internal.fido.zzas
         }), true);
     }

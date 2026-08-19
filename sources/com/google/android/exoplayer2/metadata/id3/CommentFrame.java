@@ -39,11 +39,13 @@ public final class CommentFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || CommentFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && CommentFrame.class == obj.getClass()) {
+            CommentFrame commentFrame = (CommentFrame) obj;
+            if (Util.areEqual(this.description, commentFrame.description) && Util.areEqual(this.language, commentFrame.language) && Util.areEqual(this.text, commentFrame.text)) {
+                return true;
+            }
         }
-        CommentFrame commentFrame = (CommentFrame) obj;
-        return Util.areEqual(this.description, commentFrame.description) && Util.areEqual(this.language, commentFrame.language) && Util.areEqual(this.text, commentFrame.text);
+        return false;
     }
 
     public int hashCode() {

@@ -89,7 +89,7 @@ public class BlurredBackgroundDrawableViewFactory {
             viewPositionWatcher.subscribe(view, viewGroup, new ViewPositionWatcher.OnChangedListener() { // from class: org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.chat.ViewPositionWatcher.OnChangedListener
                 public final void onPositionChanged(View view2, RectF rectF) {
-                    BlurredBackgroundDrawableViewFactory.lambda$create$0(BlurredBackgroundDrawable.this, view, view2, rectF);
+                    BlurredBackgroundDrawableViewFactory.$r8$lambda$KlkDkPNqm1NlPxDBLpOPdS98yZM(BlurredBackgroundDrawable.this, view, view2, rectF);
                 }
             }, z);
         }
@@ -100,8 +100,7 @@ public class BlurredBackgroundDrawableViewFactory {
         return createDrawable;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$create$0(BlurredBackgroundDrawable blurredBackgroundDrawable, View view, View view2, RectF rectF) {
+    public static /* synthetic */ void $r8$lambda$KlkDkPNqm1NlPxDBLpOPdS98yZM(BlurredBackgroundDrawable blurredBackgroundDrawable, View view, View view2, RectF rectF) {
         blurredBackgroundDrawable.setSourceOffset(rectF.left, rectF.top);
         view.invalidate();
     }

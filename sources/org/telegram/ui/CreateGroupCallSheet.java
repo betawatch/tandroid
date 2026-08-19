@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -81,7 +80,7 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CreateGroupCallSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateGroupCallSheet.this.lambda$new$0(view);
+                CreateGroupCallSheet.this.dismiss();
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -123,7 +122,7 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i2, float f, float f2) {
-                CreateGroupCallSheet.this.lambda$new$1(view, i2, f, f2);
+                CreateGroupCallSheet.$r8$lambda$RPDELsloRMVUj4uqysif36utwQE(CreateGroupCallSheet.this, view, i2, f, f2);
             }
         });
         FrameLayout frameLayout3 = new FrameLayout(context);
@@ -144,7 +143,7 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CreateGroupCallSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateGroupCallSheet.this.lambda$new$2(view);
+                CreateGroupCallSheet.this.createCall(false);
             }
         });
         ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, this.resourcesProvider);
@@ -158,7 +157,7 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CreateGroupCallSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateGroupCallSheet.this.lambda$new$3(view);
+                CreateGroupCallSheet.this.createCall(true);
             }
         });
         this.containerView.addView(frameLayout3, LayoutHelper.createFrame(-1, -2, 87));
@@ -167,17 +166,11 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         recyclerListView.setPadding(i2, 0, i2, AndroidUtilities.dp(76.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view, int i, float f, float f2) {
+    public static /* synthetic */ void $r8$lambda$RPDELsloRMVUj4uqysif36utwQE(CreateGroupCallSheet createGroupCallSheet, View view, int i, float f, float f2) {
         UItem item;
         Object obj;
         long j;
-        if (this.creatingCall || (item = this.adapter.getItem(i - 1)) == null || (obj = item.object) == null) {
+        if (createGroupCallSheet.creatingCall || (item = createGroupCallSheet.adapter.getItem(i - 1)) == null || (obj = item.object) == null) {
             return;
         }
         if (obj instanceof TLRPC.User) {
@@ -187,27 +180,18 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         } else {
             j = ((TLRPC.Chat) obj).id;
         }
-        if (this.selectedParticipants.contains(Long.valueOf(j))) {
-            this.selectedParticipants.remove(Long.valueOf(j));
+        if (createGroupCallSheet.selectedParticipants.contains(Long.valueOf(j))) {
+            createGroupCallSheet.selectedParticipants.remove(Long.valueOf(j));
         } else {
-            this.selectedParticipants.add(Long.valueOf(j));
+            createGroupCallSheet.selectedParticipants.add(Long.valueOf(j));
         }
         if (view instanceof SelectorUserCell) {
-            ((SelectorUserCell) view).setChecked(this.selectedParticipants.contains(Long.valueOf(j)), true);
+            ((SelectorUserCell) view).setChecked(createGroupCallSheet.selectedParticipants.contains(Long.valueOf(j)), true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        createCall(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        createCall(true);
-    }
-
-    private void createCall(final boolean z) {
+    public void createCall(final boolean z) {
         if (this.creatingCall) {
             return;
         }
@@ -221,62 +205,66 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.ui.CreateGroupCallSheet$$ExternalSyntheticLambda5
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CreateGroupCallSheet.this.lambda$createCall$6(buttonWithCounterView, z, hashSet, tLObject, tL_error);
+                CreateGroupCallSheet.$r8$lambda$FRgssdNW2wE0u9TjRaTjkBKM9m4(CreateGroupCallSheet.this, buttonWithCounterView, z, hashSet, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createCall$6(final ButtonWithCounterView buttonWithCounterView, final boolean z, final HashSet hashSet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$FRgssdNW2wE0u9TjRaTjkBKM9m4(final CreateGroupCallSheet createGroupCallSheet, final ButtonWithCounterView buttonWithCounterView, final boolean z, final HashSet hashSet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        createGroupCallSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CreateGroupCallSheet$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                CreateGroupCallSheet.this.lambda$createCall$5(tLObject, buttonWithCounterView, z, hashSet, tL_error);
+                CreateGroupCallSheet.$r8$lambda$hQUoUkfWqIjp8walj3BgEOvnu7o(CreateGroupCallSheet.this, tLObject, buttonWithCounterView, z, hashSet, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createCall$5(TLObject tLObject, ButtonWithCounterView buttonWithCounterView, boolean z, HashSet hashSet, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$hQUoUkfWqIjp8walj3BgEOvnu7o(final CreateGroupCallSheet createGroupCallSheet, TLObject tLObject, ButtonWithCounterView buttonWithCounterView, boolean z, HashSet hashSet, TLRPC.TL_error tL_error) {
+        createGroupCallSheet.getClass();
         if (tLObject instanceof TLRPC.Updates) {
             final TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-            MessagesController.getInstance(this.currentAccount).putUsers(updates.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(updates.chats, false);
-            Iterator it = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCall.class).iterator();
+            MessagesController.getInstance(createGroupCallSheet.currentAccount).putUsers(updates.users, false);
+            MessagesController.getInstance(createGroupCallSheet.currentAccount).putChats(updates.chats, false);
+            ArrayList findUpdates = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCall.class);
+            int size = findUpdates.size();
             TLRPC.GroupCall groupCall = null;
-            while (it.hasNext()) {
-                groupCall = ((TL_update.TL_updateGroupCall) it.next()).call;
+            int i = 0;
+            while (i < size) {
+                Object obj = findUpdates.get(i);
+                i++;
+                groupCall = ((TL_update.TL_updateGroupCall) obj).call;
             }
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.CreateGroupCallSheet$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CreateGroupCallSheet.this.lambda$createCall$4(updates);
+                    MessagesController.getInstance(CreateGroupCallSheet.this.currentAccount).processUpdates(updates, false);
                 }
             });
             if (groupCall == null || LaunchActivity.instance == null) {
-                this.creatingCall = false;
+                createGroupCallSheet.creatingCall = false;
                 buttonWithCounterView.setLoading(false);
                 return;
             }
             TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
             tL_inputGroupCall.id = groupCall.id;
             tL_inputGroupCall.access_hash = groupCall.access_hash;
-            lambda$new$0();
-            VoIPHelper.joinConference(LaunchActivity.instance, this.currentAccount, tL_inputGroupCall, z, groupCall, hashSet);
+            createGroupCallSheet.dismiss();
+            VoIPHelper.joinConference(LaunchActivity.instance, createGroupCallSheet.currentAccount, tL_inputGroupCall, z, groupCall, hashSet);
             return;
         }
         if (!(tLObject instanceof TL_phone.groupCall)) {
             if (tL_error != null) {
-                BulletinFactory.of(this.topBulletinContainer, this.resourcesProvider).showForError(tL_error);
+                BulletinFactory.of(createGroupCallSheet.topBulletinContainer, createGroupCallSheet.resourcesProvider).showForError(tL_error);
                 return;
             }
             return;
         }
         TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-        MessagesController.getInstance(this.currentAccount).putUsers(groupcall.users, false);
-        MessagesController.getInstance(this.currentAccount).putChats(groupcall.chats, false);
+        MessagesController.getInstance(createGroupCallSheet.currentAccount).putUsers(groupcall.users, false);
+        MessagesController.getInstance(createGroupCallSheet.currentAccount).putChats(groupcall.chats, false);
         if (LaunchActivity.instance == null) {
-            this.creatingCall = false;
+            createGroupCallSheet.creatingCall = false;
             buttonWithCounterView.setLoading(false);
             return;
         }
@@ -284,13 +272,8 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         TLRPC.GroupCall groupCall2 = groupcall.call;
         tL_inputGroupCall2.id = groupCall2.id;
         tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-        lambda$new$0();
-        VoIPHelper.joinConference(LaunchActivity.instance, this.currentAccount, tL_inputGroupCall2, z, groupcall.call, hashSet);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createCall$4(TLRPC.Updates updates) {
-        MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
+        createGroupCallSheet.dismiss();
+        VoIPHelper.joinConference(LaunchActivity.instance, createGroupCallSheet.currentAccount, tL_inputGroupCall2, z, groupcall.call, hashSet);
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -321,7 +304,7 @@ public class CreateGroupCallSheet extends BottomSheetWithRecyclerListView {
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.GroupCallCreateAddMembers)));
         for (int i = 0; i < this.participants.size(); i++) {
             Long l = (Long) this.participants.get(i);
-            l.longValue();
+            l.getClass();
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(l);
             if (user == null) {
                 return;

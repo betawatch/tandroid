@@ -1,8 +1,8 @@
 package j$.time.temporal;
 
 /* loaded from: classes2.dex */
-abstract /* synthetic */ class b {
-    static final /* synthetic */ int[] a;
+public abstract /* synthetic */ class b {
+    public static final /* synthetic */ int[] a;
 
     static {
         int[] iArr = new int[h.values().length];

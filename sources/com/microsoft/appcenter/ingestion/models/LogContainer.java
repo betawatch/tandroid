@@ -18,12 +18,17 @@ public class LogContainer {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            List list = this.logs;
+            List list2 = ((LogContainer) obj).logs;
+            if (list != null) {
+                return list.equals(list2);
+            }
+            if (list2 == null) {
+                return true;
+            }
         }
-        List list = this.logs;
-        List list2 = ((LogContainer) obj).logs;
-        return list != null ? list.equals(list2) : list2 == null;
+        return false;
     }
 
     public int hashCode() {

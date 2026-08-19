@@ -46,7 +46,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BotVerifySheet {
     public static void openVerify(final int i, final long j, final TL_bots.botVerifierSettings botverifiersettings) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
@@ -67,9 +67,7 @@ public abstract class BotVerifySheet {
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
-                boolean lambda$openVerify$1;
-                lambda$openVerify$1 = BotVerifySheet.lambda$openVerify$1(DialogsActivity.this, i, j, botverifiersettings, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
-                return lambda$openVerify$1;
+                return BotVerifySheet.$r8$lambda$x5Yrw2bULKJdRpOmKd7iEVSZhKY(DialogsActivity.this, i, j, botverifiersettings, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -80,8 +78,7 @@ public abstract class BotVerifySheet {
         safeLastFragment.presentFragment(dialogsActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$openVerify$1(final DialogsActivity dialogsActivity, final int i, long j, TL_bots.botVerifierSettings botverifiersettings, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, final TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$x5Yrw2bULKJdRpOmKd7iEVSZhKY(final DialogsActivity dialogsActivity, final int i, long j, TL_bots.botVerifierSettings botverifiersettings, DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, final TopicsFragment topicsFragment) {
         if (arrayList.isEmpty()) {
             return false;
         }
@@ -89,15 +86,14 @@ public abstract class BotVerifySheet {
         openSheet(dialogsActivity.getContext(), i, j, j2, botverifiersettings, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BotVerifySheet.lambda$openVerify$0(TopicsFragment.this, dialogsActivity, j2, i, (Boolean) obj);
+                BotVerifySheet.$r8$lambda$luL9K-TGpW2Y5hY9SWCy3mBdECk(TopicsFragment.this, dialogsActivity, j2, i, (Boolean) obj);
             }
         });
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ void lambda$openVerify$0(TopicsFragment topicsFragment, DialogsActivity dialogsActivity, long j, int i, Boolean bool) {
+    public static /* synthetic */ void $r8$lambda$luL9K-TGpW2Y5hY9SWCy3mBdECk(TopicsFragment topicsFragment, DialogsActivity dialogsActivity, long j, int i, Boolean bool) {
         String str;
         TLRPC.Chat chat;
         if (topicsFragment != null) {
@@ -133,7 +129,6 @@ public abstract class BotVerifySheet {
         String str;
         TLRPC.Chat chat2;
         TLRPC.User user;
-        int i2;
         if (context == null) {
             return;
         }
@@ -188,8 +183,8 @@ public abstract class BotVerifySheet {
         frameLayout.addView(simpleTextView, LayoutHelper.createFrame(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-2, -2, 1, 16, 0, 16, 0));
         TextView textView = new TextView(context);
-        int i3 = Theme.key_windowBackgroundWhiteBlackText;
-        textView.setTextColor(Theme.getColor(i3));
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i2));
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
         if (UserObject.isBot(user)) {
@@ -204,19 +199,19 @@ public abstract class BotVerifySheet {
         textView.setTypeface(AndroidUtilities.bold());
         linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 24.0f, 21.0f, 24.0f, 8.33f));
         TextView textView2 = new TextView(context);
-        textView2.setTextColor(Theme.getColor(i3));
+        textView2.setTextColor(Theme.getColor(i2));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         NotificationCenter.listenEmojiLoading(textView2);
         textView2.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotVerifyText, str)), textView2.getPaint().getFontMetricsInt(), false));
         linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 24.0f, 0.0f, 24.0f, 22.0f));
-        final int i4 = MessagesController.getInstance(i).botVerificationDescriptionLengthLimit;
+        final int i3 = MessagesController.getInstance(i).botVerificationDescriptionLengthLimit;
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         final OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
         outlineTextContainerView.setForceForceUseCenter(true);
         outlineTextContainerView.setText(LocaleController.getString(R.string.BotVerifyDescription));
         outlineTextContainerView.setLeftPadding(AndroidUtilities.dp(2.0f));
-        editTextBoldCursor.setTextColor(Theme.getColor(i3));
+        editTextBoldCursor.setTextColor(Theme.getColor(i2));
         editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
         editTextBoldCursor.setBackground(null);
@@ -231,11 +226,14 @@ public abstract class BotVerifySheet {
         editTextBoldCursor.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                BotVerifySheet.lambda$openSheet$2(OutlineTextContainerView.this, editTextBoldCursor, view, z);
+                OutlineTextContainerView outlineTextContainerView2 = OutlineTextContainerView.this;
+                EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
+                outlineTextContainerView2.animateSelection(z, !TextUtils.isEmpty(editTextBoldCursor2.getText()));
             }
         });
         outlineTextContainerView.attachEditText(editTextBoldCursor);
         outlineTextContainerView.addView(editTextBoldCursor, LayoutHelper.createFrame(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
+        int i4 = -1;
         linearLayout.addView(outlineTextContainerView, LayoutHelper.createLinear(-1, -2));
         editTextBoldCursor.addTextChangedListener(new EditTextSuggestionsFix());
         editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.bots.BotVerifySheet.1
@@ -254,7 +252,7 @@ public abstract class BotVerifySheet {
                 CharSequence text = EditTextBoldCursor.this.getText();
                 if (!this.ignoreEditText) {
                     int length = text.length();
-                    int i5 = i4;
+                    int i5 = i3;
                     if (length > i5) {
                         this.ignoreEditText = true;
                         EditTextBoldCursor editTextBoldCursor2 = EditTextBoldCursor.this;
@@ -284,21 +282,20 @@ public abstract class BotVerifySheet {
             textView3.setTextSize(1, 12.0f);
             textView3.setText(LocaleController.getString(j2 >= 0 ? R.string.BotVerifyDescriptionInfo : R.string.BotVerifyDescriptionInfoChat));
             textView3.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(27.0f));
-            i2 = -1;
+            i4 = -1;
             linearLayout.addView(textView3, LayoutHelper.createFrame(-1, -2.0f));
         } else {
-            i2 = -1;
             linearLayout.addView(new View(context), LayoutHelper.createFrame(-1, 12.0f));
         }
         final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, null);
         buttonWithCounterView.setText(textView.getText(), false);
-        linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(i2, 48));
+        linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(i4, 48));
         builder.setCustomView(linearLayout);
         final BottomSheet create = builder.create();
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotVerifySheet.lambda$openSheet$5(ButtonWithCounterView.this, botverifiersettings, editTextBoldCursor, i4, outlineTextContainerView, i, j, j2, create, callback, view);
+                BotVerifySheet.$r8$lambda$5aKZVRDWxSyiakwwXmxo6orSDOA(ButtonWithCounterView.this, botverifiersettings, editTextBoldCursor, i3, outlineTextContainerView, i, j, j2, create, callback, view);
             }
         });
         create.smoothKeyboardAnimationEnabled = true;
@@ -306,13 +303,7 @@ public abstract class BotVerifySheet {
         create.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openSheet$2(OutlineTextContainerView outlineTextContainerView, EditTextBoldCursor editTextBoldCursor, View view, boolean z) {
-        outlineTextContainerView.animateSelection(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openSheet$5(final ButtonWithCounterView buttonWithCounterView, TL_bots.botVerifierSettings botverifiersettings, EditTextBoldCursor editTextBoldCursor, int i, OutlineTextContainerView outlineTextContainerView, int i2, long j, long j2, final BottomSheet bottomSheet, final Utilities.Callback callback, View view) {
+    public static /* synthetic */ void $r8$lambda$5aKZVRDWxSyiakwwXmxo6orSDOA(final ButtonWithCounterView buttonWithCounterView, TL_bots.botVerifierSettings botverifiersettings, EditTextBoldCursor editTextBoldCursor, int i, OutlineTextContainerView outlineTextContainerView, int i2, long j, long j2, final BottomSheet bottomSheet, final Utilities.Callback callback, View view) {
         if (buttonWithCounterView.isLoading()) {
             return;
         }
@@ -338,26 +329,20 @@ public abstract class BotVerifySheet {
         ConnectionsManager.getInstance(i2).sendRequest(setcustomverification, new RequestDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BotVerifySheet.lambda$openSheet$4(ButtonWithCounterView.this, bottomSheet, callback, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        BotVerifySheet.$r8$lambda$CqNQ0xOAXduerhTwwAKKDewTzMc(ButtonWithCounterView.this, tLObject, r3, r4);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openSheet$4(final ButtonWithCounterView buttonWithCounterView, final BottomSheet bottomSheet, final Utilities.Callback callback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                BotVerifySheet.lambda$openSheet$3(ButtonWithCounterView.this, tLObject, bottomSheet, callback);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openSheet$3(ButtonWithCounterView buttonWithCounterView, TLObject tLObject, BottomSheet bottomSheet, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$CqNQ0xOAXduerhTwwAKKDewTzMc(ButtonWithCounterView buttonWithCounterView, TLObject tLObject, BottomSheet bottomSheet, Utilities.Callback callback) {
         buttonWithCounterView.setLoading(false);
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
             callback.run(Boolean.FALSE);
         }
     }
@@ -408,13 +393,12 @@ public abstract class BotVerifySheet {
         new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.BotRemoveVerificationTitle)).setMessage(LocaleController.getString(j2 >= 0 ? R.string.BotRemoveVerificationText : R.string.BotRemoveVerificationChatText)).setView(frameLayout).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                BotVerifySheet.lambda$openRemoveVerify$8(zArr, i, j, j2, callback, alertDialog, i2);
+                BotVerifySheet.$r8$lambda$p8rYKYSGCmQGfb_lmklrZFNbtxQ(zArr, i, j, j2, callback, alertDialog, i2);
             }
         }).makeRed(-1).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRemoveVerify$8(final boolean[] zArr, int i, long j, long j2, final Utilities.Callback callback, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void $r8$lambda$p8rYKYSGCmQGfb_lmklrZFNbtxQ(final boolean[] zArr, int i, long j, long j2, final Utilities.Callback callback, AlertDialog alertDialog, int i2) {
         if (zArr[0]) {
             return;
         }
@@ -427,23 +411,17 @@ public abstract class BotVerifySheet {
         ConnectionsManager.getInstance(i).sendRequest(setcustomverification, new RequestDelegate() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BotVerifySheet.lambda$openRemoveVerify$7(zArr, callback, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        BotVerifySheet.$r8$lambda$mwSmAbZqB-325NgxstpKnTL1mhs(r1, tLObject, r3);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRemoveVerify$7(final boolean[] zArr, final Utilities.Callback callback, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotVerifySheet$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                BotVerifySheet.lambda$openRemoveVerify$6(zArr, tLObject, callback);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRemoveVerify$6(boolean[] zArr, TLObject tLObject, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$mwSmAbZqB-325NgxstpKnTL1mhs(boolean[] zArr, TLObject tLObject, Utilities.Callback callback) {
         zArr[0] = false;
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             callback.run(Boolean.TRUE);

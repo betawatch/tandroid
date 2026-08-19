@@ -84,47 +84,46 @@ public final class SpringForce {
     }
 
     DynamicAnimation.MassState updateValues(double d, double d2, long j) {
+        double pow;
         double cos;
-        double d3;
         init();
-        double d4 = j / 1000.0d;
-        double d5 = d - this.mFinalPosition;
-        double d6 = this.mDampingRatio;
-        if (d6 > 1.0d) {
-            double d7 = this.mGammaMinus;
-            double d8 = this.mGammaPlus;
-            double d9 = d5 - (((d7 * d5) - d2) / (d7 - d8));
-            double d10 = ((d5 * d7) - d2) / (d7 - d8);
-            d3 = (Math.pow(2.718281828459045d, d7 * d4) * d9) + (Math.pow(2.718281828459045d, this.mGammaPlus * d4) * d10);
-            double d11 = this.mGammaMinus;
-            double pow = d9 * d11 * Math.pow(2.718281828459045d, d11 * d4);
-            double d12 = this.mGammaPlus;
-            cos = pow + (d10 * d12 * Math.pow(2.718281828459045d, d12 * d4));
-        } else if (d6 == 1.0d) {
-            double d13 = this.mNaturalFreq;
-            double d14 = d2 + (d13 * d5);
-            double d15 = d5 + (d14 * d4);
-            d3 = Math.pow(2.718281828459045d, (-d13) * d4) * d15;
-            double pow2 = d15 * Math.pow(2.718281828459045d, (-this.mNaturalFreq) * d4);
-            double d16 = this.mNaturalFreq;
-            cos = (d14 * Math.pow(2.718281828459045d, (-d16) * d4)) + (pow2 * (-d16));
+        double d3 = j / 1000.0d;
+        double d4 = d - this.mFinalPosition;
+        double d5 = this.mDampingRatio;
+        if (d5 > 1.0d) {
+            double d6 = this.mGammaMinus;
+            double d7 = this.mGammaPlus;
+            double d8 = d4 - (((d6 * d4) - d2) / (d6 - d7));
+            double d9 = ((d4 * d6) - d2) / (d6 - d7);
+            pow = (Math.pow(2.718281828459045d, d6 * d3) * d8) + (Math.pow(2.718281828459045d, this.mGammaPlus * d3) * d9);
+            double d10 = this.mGammaMinus;
+            double pow2 = d8 * d10 * Math.pow(2.718281828459045d, d10 * d3);
+            double d11 = this.mGammaPlus;
+            cos = pow2 + (d9 * d11 * Math.pow(2.718281828459045d, d11 * d3));
+        } else if (d5 == 1.0d) {
+            double d12 = this.mNaturalFreq;
+            double d13 = d2 + (d12 * d4);
+            double d14 = d4 + (d13 * d3);
+            pow = Math.pow(2.718281828459045d, (-d12) * d3) * d14;
+            double pow3 = d14 * Math.pow(2.718281828459045d, (-this.mNaturalFreq) * d3);
+            double d15 = this.mNaturalFreq;
+            cos = (d13 * Math.pow(2.718281828459045d, (-d15) * d3)) + (pow3 * (-d15));
         } else {
-            double d17 = 1.0d / this.mDampedFreq;
-            double d18 = this.mNaturalFreq;
-            double d19 = d17 * ((d6 * d18 * d5) + d2);
-            double pow3 = Math.pow(2.718281828459045d, (-d6) * d18 * d4) * ((Math.cos(this.mDampedFreq * d4) * d5) + (Math.sin(this.mDampedFreq * d4) * d19));
-            double d20 = this.mNaturalFreq;
-            double d21 = this.mDampingRatio;
-            double d22 = (-d20) * pow3 * d21;
-            double pow4 = Math.pow(2.718281828459045d, (-d21) * d20 * d4);
+            double d16 = 1.0d / this.mDampedFreq;
+            double d17 = this.mNaturalFreq;
+            double d18 = d16 * ((d5 * d17 * d4) + d2);
+            pow = Math.pow(2.718281828459045d, (-d5) * d17 * d3) * ((Math.cos(this.mDampedFreq * d3) * d4) + (Math.sin(this.mDampedFreq * d3) * d18));
+            double d19 = this.mNaturalFreq;
+            double d20 = this.mDampingRatio;
+            double d21 = (-d19) * pow * d20;
+            double pow4 = Math.pow(2.718281828459045d, (-d20) * d19 * d3);
+            double d22 = this.mDampedFreq;
+            double sin = (-d22) * d4 * Math.sin(d22 * d3);
             double d23 = this.mDampedFreq;
-            double sin = (-d23) * d5 * Math.sin(d23 * d4);
-            double d24 = this.mDampedFreq;
-            cos = d22 + (pow4 * (sin + (d19 * d24 * Math.cos(d24 * d4))));
-            d3 = pow3;
+            cos = d21 + (pow4 * (sin + (d18 * d23 * Math.cos(d23 * d3))));
         }
         DynamicAnimation.MassState massState = this.mMassState;
-        massState.mValue = (float) (d3 + this.mFinalPosition);
+        massState.mValue = (float) (pow + this.mFinalPosition);
         massState.mVelocity = (float) cos;
         return massState;
     }

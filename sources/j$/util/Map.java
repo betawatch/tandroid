@@ -36,7 +36,7 @@ public interface Map<K, V> {
             if (map instanceof Map) {
                 ((Map) map).forEach(biConsumer);
             } else if (map instanceof ConcurrentMap) {
-                j$.util.concurrent.u.a((ConcurrentMap) map, biConsumer);
+                j$.com.android.tools.r8.a.h((ConcurrentMap) map, biConsumer);
             } else {
                 -CC.$default$forEach(map, biConsumer);
             }
@@ -52,10 +52,16 @@ public interface Map<K, V> {
             }
             if (map instanceof ConcurrentMap) {
                 Object obj3 = ((ConcurrentMap) map).get(obj);
-                return obj3 != null ? obj3 : obj2;
+                if (obj3 != null) {
+                    return obj3;
+                }
+            } else {
+                Object obj4 = map.get(obj);
+                if (obj4 != null || map.containsKey(obj)) {
+                    return obj4;
+                }
             }
-            Object obj4 = map.get(obj);
-            return (obj4 != null || map.containsKey(obj)) ? obj4 : obj2;
+            return obj2;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -204,9 +210,9 @@ public interface Map<K, V> {
             }
             if (obj2 == null) {
                 map.remove(obj);
-            } else {
-                map.put(obj, obj2);
+                return obj2;
             }
+            map.put(obj, obj2);
             return obj2;
         }
     }

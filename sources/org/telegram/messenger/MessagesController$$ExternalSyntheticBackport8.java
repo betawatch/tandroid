@@ -11,7 +11,7 @@ public abstract /* synthetic */ class MessagesController$$ExternalSyntheticBackp
             throw new NumberFormatException("illegal radix: ".concat(String.valueOf(i3)));
         }
         long j = i3;
-        long m = MessagesController$$ExternalSyntheticBackport13.m(-1L, j);
+        long m = MessagesController$$ExternalSyntheticBackport9.m(-1L, j);
         int i5 = (charSequence.charAt(i) != '+' || i4 <= 1) ? i : i + 1;
         long j2 = 0;
         long j3 = 0;
@@ -20,7 +20,7 @@ public abstract /* synthetic */ class MessagesController$$ExternalSyntheticBackp
             if (digit == -1) {
                 throw new NumberFormatException(charSequence.toString());
             }
-            if (j3 < j2 || j3 > m || (j3 == m && digit > ((int) MessagesController$$ExternalSyntheticBackport14.m(-1L, j)))) {
+            if (j3 < j2 || j3 > m || (j3 == m && digit > ((int) MessagesController$$ExternalSyntheticBackport10.m(-1L, j)))) {
                 throw new NumberFormatException("Too large for unsigned long: ".concat(charSequence.toString()));
             }
             j3 = (j3 * j) + digit;

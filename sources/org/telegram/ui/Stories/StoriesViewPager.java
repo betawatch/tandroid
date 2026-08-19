@@ -20,7 +20,7 @@ import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoriesViewPager;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StoriesViewPager extends ViewPager {
     int currentAccount;
     public int currentState;
@@ -81,12 +81,15 @@ public abstract class StoriesViewPager extends ViewPager {
 
             @Override // androidx.viewpager.widget.PagerAdapter
             public Object instantiateItem(ViewGroup viewGroup, int i2) {
+                2 r4;
                 PeerStoriesView peerStoriesView;
                 PageLayout pageLayout = StoriesViewPager.this.new PageLayout(context);
                 if (!this.cachedViews.isEmpty()) {
                     peerStoriesView = (PeerStoriesView) this.cachedViews.remove(0);
                     peerStoriesView.reset();
+                    r4 = this;
                 } else {
+                    r4 = this;
                     peerStoriesView = new HwPeerStoriesView(context, storyViewer, StoriesViewPager.this.resources, resourcesProvider) { // from class: org.telegram.ui.Stories.StoriesViewPager.2.1
                         @Override // org.telegram.ui.Stories.PeerStoriesView
                         public boolean isSelectedPeer() {
@@ -138,7 +141,7 @@ public abstract class StoriesViewPager extends ViewPager {
         setPageTransformer(false, new ViewPager.PageTransformer() { // from class: org.telegram.ui.Stories.StoriesViewPager$$ExternalSyntheticLambda0
             @Override // androidx.viewpager.widget.ViewPager.PageTransformer
             public final void transformPage(View view, float f) {
-                StoriesViewPager.this.lambda$new$1(view, f);
+                StoriesViewPager.$r8$lambda$fz22C2XjwxT_G95OHZuTTOQPrEg(StoriesViewPager.this, view, f);
             }
         });
         setOffscreenPageLimit(0);
@@ -152,7 +155,7 @@ public abstract class StoriesViewPager extends ViewPager {
                 r3 = r2.this$0;
                 r3.delegate.setHideEnterViewProgress(1.0f - r3.progress);
              */
-            /* JADX WARN: Code restructure failed: missing block: B:13:?, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:13:0x0050, code lost:
             
                 return;
              */
@@ -162,20 +165,20 @@ public abstract class StoriesViewPager extends ViewPager {
              */
             /* JADX WARN: Code restructure failed: missing block: B:24:0x0075, code lost:
             
-                if (((java.lang.Long) r5.dialogs.get(r5.toPosition)).longValue() == r3) goto L29;
+                if (((java.lang.Long) r5.dialogs.get(r5.toPosition)).longValue() == r3) goto L30;
              */
             /* JADX WARN: Code restructure failed: missing block: B:25:0x007e, code lost:
             
                 r3 = r2.this$0;
                 r3.delegate.setHideEnterViewProgress(r3.progress);
              */
-            /* JADX WARN: Code restructure failed: missing block: B:26:?, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:26:0x0087, code lost:
             
                 return;
              */
             /* JADX WARN: Code restructure failed: missing block: B:28:0x007c, code lost:
             
-                if (r5.daysDialogId == r3) goto L29;
+                if (r5.daysDialogId == r3) goto L30;
              */
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             /*
@@ -242,22 +245,22 @@ public abstract class StoriesViewPager extends ViewPager {
         setOverScrollMode(2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view, float f) {
+    public static /* synthetic */ void $r8$lambda$fz22C2XjwxT_G95OHZuTTOQPrEg(StoriesViewPager storiesViewPager, View view, float f) {
+        storiesViewPager.getClass();
         final PageLayout pageLayout = (PageLayout) view;
         if (Math.abs(f) >= 1.0f) {
             pageLayout.setVisible(false);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoriesViewPager$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoriesViewPager.lambda$new$0(StoriesViewPager.PageLayout.this);
+                    StoriesViewPager.$r8$lambda$9CHsGpUu_NGtik9WFwY0kDWgpxw(StoriesViewPager.PageLayout.this);
                 }
             }, 16L);
             return;
         }
         if (!pageLayout.isVisible) {
             pageLayout.setVisible(true);
-            if (this.days != null) {
+            if (storiesViewPager.days != null) {
                 pageLayout.peerStoryView.setDay(pageLayout.dialogId, pageLayout.day, -1);
             } else {
                 pageLayout.peerStoryView.setDialogId(pageLayout.dialogId, -1);
@@ -270,8 +273,7 @@ public abstract class StoriesViewPager extends ViewPager {
         view.setRotationY(f * 90.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(PageLayout pageLayout) {
+    public static /* synthetic */ void $r8$lambda$9CHsGpUu_NGtik9WFwY0kDWgpxw(PageLayout pageLayout) {
         ArrayList arrayList = pageLayout.day;
         if (arrayList != null) {
             pageLayout.peerStoryView.day = arrayList;

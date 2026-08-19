@@ -435,12 +435,14 @@ public class PollContentDrawable extends Drawable implements DownloadController.
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
+        float f;
         Drawable drawable;
         Rect bounds = getBounds();
         if (this.alpha == 0 || bounds.isEmpty()) {
             return;
         }
         checkFileTexts(false);
+        int i = 2;
         if (this.isFile || this.isMusic) {
             int dp = bounds.left + (this.isExplanation ? 0 : AndroidUtilities.dp(8.0f));
             int dp2 = bounds.top + (this.isExplanation ? 0 : AndroidUtilities.dp(3.0f));
@@ -451,13 +453,16 @@ public class PollContentDrawable extends Drawable implements DownloadController.
             }
             if (this.isMusic) {
                 float floatValue = this.animatorIsPlaying.getFloatValue();
-                if (this.authorInfoText != null && floatValue < 1.0f) {
+                if (this.authorInfoText == null || floatValue >= 1.0f) {
+                    f = 5.0f;
+                } else {
                     canvas.save();
-                    float f = 1.0f - floatValue;
-                    int i = dp2 + dp3;
-                    canvas.scale(f, f, AndroidUtilities.dp(56.0f) + dp, i + AndroidUtilities.dp(35.0f));
-                    this.authorInfoText.setAlpha((int) (f * 255.0f));
-                    this.authorInfoText.draw(canvas, AndroidUtilities.dp(56.0f) + dp, i + AndroidUtilities.dp(35.0f));
+                    float f2 = 1.0f - floatValue;
+                    int i2 = dp2 + dp3;
+                    f = 5.0f;
+                    canvas.scale(f2, f2, AndroidUtilities.dp(56.0f) + dp, i2 + AndroidUtilities.dp(35.0f));
+                    this.authorInfoText.setAlpha((int) (f2 * 255.0f));
+                    this.authorInfoText.draw(canvas, AndroidUtilities.dp(56.0f) + dp, i2 + AndroidUtilities.dp(35.0f));
                     canvas.restore();
                 }
                 if (floatValue > 0.0f) {
@@ -472,6 +477,8 @@ public class PollContentDrawable extends Drawable implements DownloadController.
                     this.seekBar.draw(canvas);
                     canvas.restore();
                 }
+            } else {
+                f = 5.0f;
             }
             Text text2 = this.fileInfoText;
             if (text2 != null) {
@@ -480,9 +487,9 @@ public class PollContentDrawable extends Drawable implements DownloadController.
             RadialProgress2 radialProgress2 = this.radialProgress;
             int dp6 = AndroidUtilities.dp(2.0f) + dp;
             this.fileButtonX = dp6;
-            int dp7 = AndroidUtilities.dp(5.0f) + dp2;
+            int dp7 = AndroidUtilities.dp(f) + dp2;
             this.fileButtonY = dp7;
-            radialProgress2.setProgressRect(dp6, dp7, dp + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(44.0f), dp2 + AndroidUtilities.dp(5.0f) + AndroidUtilities.dp(44.0f));
+            radialProgress2.setProgressRect(dp6, dp7, dp + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(44.0f), dp2 + AndroidUtilities.dp(f) + AndroidUtilities.dp(44.0f));
         } else {
             this.imageReceiver.setAlpha(this.alpha / 255.0f);
             this.imageReceiver.setImageCoords(bounds);
@@ -525,7 +532,10 @@ public class PollContentDrawable extends Drawable implements DownloadController.
                 }
             } else if (this.isMusic) {
                 FileState fileState2 = this.fileState;
-                setIconMini((fileState2 == null || !fileState2.isExists()) ? 2 : 4, true);
+                if (fileState2 != null && fileState2.isExists()) {
+                    i = 4;
+                }
+                setIconMini(i, true);
             } else {
                 setIcon(getDefaultIcon(), true);
             }

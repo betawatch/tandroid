@@ -106,7 +106,10 @@ public abstract class SearchActionVerificationClientService extends IntentServic
     }
 
     private boolean isPackageSafe(String str) {
-        return isPackageInstalled(str) && (isDebugMode() || SearchActionVerificationClientUtil.isPackageGoogleSigned(this, str));
+        if (isPackageInstalled(str)) {
+            return isDebugMode() || SearchActionVerificationClientUtil.isPackageGoogleSigned(this, str);
+        }
+        return false;
     }
 
     private boolean installedServicesConnected() {

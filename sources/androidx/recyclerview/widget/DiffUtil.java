@@ -49,7 +49,11 @@ public abstract class DiffUtil {
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
             Range range = (Range) arrayList2.remove(arrayList2.size() - 1);
-            Snake diffPartial = diffPartial(callback, range.oldListStart, range.oldListEnd, range.newListStart, range.newListEnd, iArr, iArr2, abs);
+            int[] iArr3 = iArr2;
+            int[] iArr4 = iArr;
+            Callback callback2 = callback;
+            Snake diffPartial = diffPartial(callback2, range.oldListStart, range.oldListEnd, range.newListStart, range.newListEnd, iArr4, iArr3, abs);
+            iArr = iArr4;
             if (diffPartial != null) {
                 if (diffPartial.size > 0) {
                     arrayList.add(diffPartial);
@@ -92,146 +96,130 @@ public abstract class DiffUtil {
             } else {
                 arrayList3.add(range);
             }
+            callback = callback2;
+            iArr2 = iArr3;
         }
+        Callback callback3 = callback;
         Collections.sort(arrayList, SNAKE_COMPARATOR);
-        return new DiffResult(callback, arrayList, iArr, iArr2, z);
+        return new DiffResult(callback3, arrayList, iArr, iArr2, z);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0042, code lost:
     
-        if (r24[r13 - 1] < r24[r13 + r5]) goto L20;
+        if (r1[r13 - 1] < r1[r13 + r5]) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00bc, code lost:
     
-        if (r25[r12 - 1] < r25[r12 + 1]) goto L50;
+        if (r23[r13 - 1] < r23[r13 + 1]) goto L50;
      */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00de A[LOOP:4: B:54:0x00ca->B:58:0x00de, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00e9 A[EDGE_INSN: B:59:0x00e9->B:60:0x00e9 BREAK  A[LOOP:4: B:54:0x00ca->B:58:0x00de], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0065 A[LOOP:2: B:17:0x0055->B:21:0x0065, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006e A[EDGE_INSN: B:22:0x006e->B:23:0x006e BREAK  A[LOOP:2: B:17:0x0055->B:21:0x0065], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private static Snake diffPartial(Callback callback, int i, int i2, int i3, int i4, int[] iArr, int[] iArr2, int i5) {
         int i6;
-        int i7;
         boolean z;
+        int i7;
         int i8;
-        int i9;
-        int i10;
         boolean z2;
-        int i11;
-        int i12 = i2 - i;
-        int i13 = i4 - i3;
-        int i14 = 1;
-        if (i12 < 1 || i13 < 1) {
+        int i9;
+        int[] iArr3 = iArr;
+        int i10 = i2 - i;
+        int i11 = i4 - i3;
+        int i12 = 1;
+        if (i10 < 1 || i11 < 1) {
             return null;
         }
-        int i15 = i12 - i13;
-        int i16 = ((i12 + i13) + 1) / 2;
-        int i17 = (i5 - i16) - 1;
-        int i18 = i5 + i16 + 1;
-        Arrays.fill(iArr, i17, i18, 0);
-        Arrays.fill(iArr2, i17 + i15, i18 + i15, i12);
-        boolean z3 = i15 % 2 != 0;
-        int i19 = 0;
-        while (i19 <= i16) {
-            int i20 = -i19;
-            int i21 = i20;
-            while (i21 <= i19) {
-                if (i21 != i20) {
-                    if (i21 != i19) {
-                        int i22 = i5 + i21;
+        int i13 = i10 - i11;
+        int i14 = ((i10 + i11) + 1) / 2;
+        int i15 = (i5 - i14) - 1;
+        int i16 = i5 + i14 + 1;
+        Arrays.fill(iArr3, i15, i16, 0);
+        Arrays.fill(iArr2, i15 + i13, i16 + i13, i10);
+        boolean z3 = i13 % 2 != 0;
+        int i17 = 0;
+        while (i17 <= i14) {
+            int i18 = -i17;
+            int i19 = i18;
+            while (i19 <= i17) {
+                if (i19 != i18) {
+                    if (i19 != i17) {
+                        int i20 = i5 + i19;
                     }
-                    i10 = iArr[(i5 + i21) - i14] + i14;
+                    i8 = iArr3[(i5 + i19) - i12] + i12;
                     z2 = true;
-                    for (i11 = i10 - i21; i10 < i12 && i11 < i13 && callback.areItemsTheSame(i + i10, i3 + i11); i11++) {
-                        i10++;
+                    for (i9 = i8 - i19; i8 < i10 && i9 < i11; i9++) {
+                        if (callback.areItemsTheSame(i + i8, i3 + i9)) {
+                            break;
+                        }
+                        i8++;
                     }
-                    int i23 = i5 + i21;
-                    iArr[i23] = i10;
-                    if (!z3 && i21 >= (i15 - i19) + 1 && i21 <= (i15 + i19) - 1 && i10 >= iArr2[i23]) {
+                    int i21 = i5 + i19;
+                    iArr3[i21] = i8;
+                    if (!z3 && i19 >= (i13 - i17) + 1 && i19 <= (i13 + i17) - 1 && i8 >= iArr2[i21]) {
                         Snake snake = new Snake();
-                        int i24 = iArr2[i23];
-                        snake.x = i24;
-                        snake.y = i24 - i21;
-                        snake.size = iArr[i23] - i24;
+                        int i22 = iArr2[i21];
+                        snake.x = i22;
+                        snake.y = i22 - i19;
+                        snake.size = iArr3[i21] - i22;
                         snake.removal = z2;
                         snake.reverse = false;
                         return snake;
                     }
-                    i21 += 2;
-                    i14 = 1;
+                    i19 += 2;
+                    i12 = 1;
                 }
-                i10 = iArr[i5 + i21 + i14];
+                i8 = iArr3[i5 + i19 + i12];
                 z2 = false;
-                while (i10 < i12) {
-                    i10++;
+                while (i8 < i10) {
+                    if (callback.areItemsTheSame(i + i8, i3 + i9)) {
+                    }
                 }
-                int i232 = i5 + i21;
-                iArr[i232] = i10;
+                int i212 = i5 + i19;
+                iArr3[i212] = i8;
                 if (!z3) {
                 }
-                i21 += 2;
-                i14 = 1;
+                i19 += 2;
+                i12 = 1;
             }
-            int i25 = i20;
-            while (i25 <= i19) {
-                int i26 = i25 + i15;
-                if (i26 != i19 + i15) {
-                    if (i26 != i20 + i15) {
-                        int i27 = i5 + i26;
-                        i6 = 1;
-                    } else {
-                        i6 = 1;
+            for (int i23 = i18; i23 <= i17; i23 += 2) {
+                int i24 = i23 + i13;
+                if (i24 != i17 + i13) {
+                    if (i24 != i18 + i13) {
+                        int i25 = i5 + i24;
                     }
-                    i7 = iArr2[(i5 + i26) + i6] - i6;
+                    i6 = iArr2[(i5 + i24) + 1] - 1;
                     z = true;
-                    i8 = i7 - i26;
-                    while (i7 > 0 && i8 > 0) {
-                        i9 = i12;
-                        if (callback.areItemsTheSame((i + i7) - 1, (i3 + i8) - 1)) {
-                            break;
-                        }
-                        i7--;
-                        i8--;
-                        i12 = i9;
+                    for (i7 = i6 - i24; i6 > 0 && i7 > 0 && callback.areItemsTheSame((i + i6) - 1, (i3 + i7) - 1); i7--) {
+                        i6--;
                     }
-                    i9 = i12;
-                    int i28 = i5 + i26;
-                    iArr2[i28] = i7;
-                    if (z3 && i26 >= i20 && i26 <= i19 && iArr[i28] >= i7) {
+                    int i26 = i5 + i24;
+                    iArr2[i26] = i6;
+                    if (z3 && i24 >= i18 && i24 <= i17 && iArr[i26] >= i6) {
                         Snake snake2 = new Snake();
-                        int i29 = iArr2[i28];
-                        snake2.x = i29;
-                        snake2.y = i29 - i26;
-                        snake2.size = iArr[i28] - i29;
+                        int i27 = iArr2[i26];
+                        snake2.x = i27;
+                        snake2.y = i27 - i24;
+                        snake2.size = iArr[i26] - i27;
                         snake2.removal = z;
                         snake2.reverse = true;
                         return snake2;
                     }
-                    i25 += 2;
-                    i12 = i9;
-                } else {
-                    i6 = 1;
                 }
-                i7 = iArr2[(i5 + i26) - i6];
+                i6 = iArr2[(i5 + i24) - 1];
                 z = false;
-                i8 = i7 - i26;
-                while (i7 > 0) {
-                    i9 = i12;
-                    if (callback.areItemsTheSame((i + i7) - 1, (i3 + i8) - 1)) {
-                    }
+                while (i6 > 0) {
+                    i6--;
                 }
-                i9 = i12;
-                int i282 = i5 + i26;
-                iArr2[i282] = i7;
+                int i262 = i5 + i24;
+                iArr2[i262] = i6;
                 if (z3) {
                 }
-                i25 += 2;
-                i12 = i9;
             }
-            i19++;
-            i12 = i12;
-            i14 = 1;
+            i17++;
+            iArr3 = iArr;
+            i12 = 1;
         }
         throw new IllegalStateException("DiffUtil hit an unexpected case while trying to calculate the optimal path. Please make sure your data is not changing during the diff calculation.");
     }
@@ -397,6 +385,7 @@ public abstract class DiffUtil {
 
         public void dispatchUpdatesTo(ListUpdateCallback listUpdateCallback) {
             BatchingListUpdateCallback batchingListUpdateCallback;
+            DiffResult diffResult;
             if (listUpdateCallback instanceof BatchingListUpdateCallback) {
                 batchingListUpdateCallback = (BatchingListUpdateCallback) listUpdateCallback;
             } else {
@@ -414,13 +403,16 @@ public abstract class DiffUtil {
                     dispatchRemovals(arrayList, batchingListUpdateCallback, i4, i - i4, i4);
                 }
                 if (i5 < i2) {
-                    dispatchAdditions(arrayList, batchingListUpdateCallback, i4, i2 - i5, i5);
+                    diffResult = this;
+                    diffResult.dispatchAdditions(arrayList, batchingListUpdateCallback, i4, i2 - i5, i5);
+                } else {
+                    diffResult = this;
                 }
                 for (int i6 = i3 - 1; i6 >= 0; i6--) {
-                    int[] iArr = this.mOldItemStatuses;
+                    int[] iArr = diffResult.mOldItemStatuses;
                     int i7 = snake.x + i6;
                     if ((iArr[i7] & 31) == 2) {
-                        batchingListUpdateCallback.onChanged(i7, 1, this.mCallback.getChangePayload(i7, snake.y + i6));
+                        batchingListUpdateCallback.onChanged(i7, 1, diffResult.mCallback.getChangePayload(i7, snake.y + i6));
                     }
                 }
                 i = snake.x;

@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.hardware.display.DisplayManager;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
-import android.opengl.EGLContext;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -60,7 +59,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     private final boolean deviceNeedsNoPostProcessWorkaround;
     private long droppedFrameAccumulationStartTimeMs;
     private int droppedFrames;
-    public EGLContext eglContext;
     private final VideoRendererEventListener.EventDispatcher eventDispatcher;
     private VideoFrameMetadataListener frameMetadataListener;
     private final VideoFrameReleaseHelper frameReleaseHelper;
@@ -91,17 +89,16 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         return j < -500000;
     }
 
-    public MediaCodecVideoRenderer(Context context, EGLContext eGLContext, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, long j, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, int i) {
-        this(context, eGLContext, factory, mediaCodecSelector, j, z, handler, videoRendererEventListener, i, 30.0f);
+    public MediaCodecVideoRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, long j, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, int i) {
+        this(context, factory, mediaCodecSelector, j, z, handler, videoRendererEventListener, i, 30.0f);
     }
 
-    public MediaCodecVideoRenderer(Context context, EGLContext eGLContext, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, long j, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, int i, float f) {
+    public MediaCodecVideoRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, long j, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, int i, float f) {
         super(2, factory, mediaCodecSelector, z, f);
         this.allowedJoiningTimeMs = j;
         this.maxDroppedFramesToNotify = i;
         Context applicationContext = context.getApplicationContext();
         this.context = applicationContext;
-        this.eglContext = eGLContext;
         this.frameReleaseHelper = new VideoFrameReleaseHelper(applicationContext);
         this.eventDispatcher = new VideoRendererEventListener.EventDispatcher(handler, videoRendererEventListener);
         this.deviceNeedsNoPostProcessWorkaround = deviceNeedsNoPostProcessWorkaround();
@@ -199,18 +196,16 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             int[] supportedHdrTypes;
             DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
             Display display = displayManager != null ? displayManager.getDisplay(0) : null;
-            if (display == null) {
-                return false;
-            }
-            isHdr = display.isHdr();
-            if (!isHdr) {
-                return false;
-            }
-            hdrCapabilities = display.getHdrCapabilities();
-            supportedHdrTypes = hdrCapabilities.getSupportedHdrTypes();
-            for (int i : supportedHdrTypes) {
-                if (i == 1) {
-                    return true;
+            if (display != null) {
+                isHdr = display.isHdr();
+                if (isHdr) {
+                    hdrCapabilities = display.getHdrCapabilities();
+                    supportedHdrTypes = hdrCapabilities.getSupportedHdrTypes();
+                    for (int i : supportedHdrTypes) {
+                        if (i == 1) {
+                            return true;
+                        }
+                    }
                 }
             }
             return false;
@@ -357,7 +352,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             } else {
                 MediaCodecInfo codecInfo = getCodecInfo();
                 if (codecInfo != null && shouldUsePlaceholderSurface(codecInfo)) {
-                    placeholderSurface = PlaceholderSurface.newInstanceV17(this.context, codecInfo.secure, this.eglContext);
+                    placeholderSurface = PlaceholderSurface.newInstanceV17(this.context, codecInfo.secure);
                     this.placeholderSurface = placeholderSurface;
                 }
             }
@@ -412,9 +407,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
-    protected MediaCodecAdapter.Configuration getMediaCodecConfiguration(MediaCodecInfo mediaCodecInfo, Format format, MediaCrypto mediaCrypto, float f, EGLContext eGLContext) {
+    protected MediaCodecAdapter.Configuration getMediaCodecConfiguration(MediaCodecInfo mediaCodecInfo, Format format, MediaCrypto mediaCrypto, float f) {
         PlaceholderSurface placeholderSurface = this.placeholderSurface;
-        if (placeholderSurface != null && (placeholderSurface.secure != mediaCodecInfo.secure || placeholderSurface.parentContext != eGLContext)) {
+        if (placeholderSurface != null && placeholderSurface.secure != mediaCodecInfo.secure) {
             releasePlaceholderSurface();
         }
         String str = mediaCodecInfo.codecMimeType;
@@ -426,7 +421,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
                 throw new IllegalStateException();
             }
             if (this.placeholderSurface == null) {
-                this.placeholderSurface = PlaceholderSurface.newInstanceV17(this.context, mediaCodecInfo.secure, eGLContext);
+                this.placeholderSurface = PlaceholderSurface.newInstanceV17(this.context, mediaCodecInfo.secure);
             }
             this.surface = this.placeholderSurface;
         }
@@ -482,7 +477,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             Pair codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format);
             str = (codecProfileAndLevel == null || !((intValue = ((Integer) codecProfileAndLevel.first).intValue()) == 512 || intValue == 1 || intValue == 2)) ? "video/hevc" : MediaController.VIDEO_MIME_TYPE;
         }
-        str.hashCode();
+        str.getClass();
         switch (str.hashCode()) {
             case -1664118616:
                 if (str.equals("video/3gpp")) {
@@ -677,8 +672,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
     protected boolean processOutputBuffer(long j, long j2, MediaCodecAdapter mediaCodecAdapter, ByteBuffer byteBuffer, int i, int i2, int i3, long j3, boolean z, boolean z2, Format format) {
-        long j4;
-        boolean z3;
+        MediaCodecVideoRenderer mediaCodecVideoRenderer;
         Assertions.checkNotNull(mediaCodecAdapter);
         if (this.initialPositionUs == -9223372036854775807L) {
             this.initialPositionUs = j;
@@ -688,81 +682,77 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             this.lastBufferPresentationTimeUs = j3;
         }
         long outputStreamOffsetUs = getOutputStreamOffsetUs();
-        long j5 = j3 - outputStreamOffsetUs;
+        long j4 = j3 - outputStreamOffsetUs;
         if (z && !z2) {
-            skipOutputBuffer(mediaCodecAdapter, i, j5);
+            skipOutputBuffer(mediaCodecAdapter, i, j4);
             return true;
         }
         double playbackSpeed = getPlaybackSpeed();
-        boolean z4 = getState() == 2;
+        boolean z3 = getState() == 2;
         long elapsedRealtime = SystemClock.elapsedRealtime() * 1000;
-        long j6 = (long) ((j3 - j) / playbackSpeed);
-        if (z4) {
-            j6 -= elapsedRealtime - j2;
+        long j5 = (long) ((j3 - j) / playbackSpeed);
+        if (z3) {
+            j5 -= elapsedRealtime - j2;
         }
         if (this.surface == this.placeholderSurface) {
-            if (!isBufferLate(j6)) {
+            if (!isBufferLate(j5)) {
                 return false;
             }
-            skipOutputBuffer(mediaCodecAdapter, i, j5);
-            updateVideoFrameProcessingOffsetCounters(j6);
+            skipOutputBuffer(mediaCodecAdapter, i, j4);
+            updateVideoFrameProcessingOffsetCounters(j5);
             return true;
         }
-        long j7 = elapsedRealtime - this.lastRenderRealtimeUs;
-        if (this.renderedFirstFrameAfterEnable ? this.renderedFirstFrameAfterReset : !(z4 || this.mayRenderFirstFrameAfterEnableIfNotStarted)) {
-            j4 = j7;
-            z3 = false;
-        } else {
-            j4 = j7;
-            z3 = true;
-        }
-        if (this.joiningDeadlineMs == -9223372036854775807L && j >= outputStreamOffsetUs && (z3 || (z4 && shouldForceRenderOutputBuffer(j6, j4)))) {
+        long j6 = elapsedRealtime - this.lastRenderRealtimeUs;
+        boolean z4 = this.renderedFirstFrameAfterEnable ? !this.renderedFirstFrameAfterReset : z3 || this.mayRenderFirstFrameAfterEnableIfNotStarted;
+        if (this.joiningDeadlineMs == -9223372036854775807L && j >= outputStreamOffsetUs && (z4 || (z3 && shouldForceRenderOutputBuffer(j5, j6)))) {
             long nanoTime = System.nanoTime();
-            notifyFrameMetadataListener(j5, nanoTime, format);
+            notifyFrameMetadataListener(j4, nanoTime, format);
             if (Util.SDK_INT >= 21) {
-                renderOutputBufferV21(mediaCodecAdapter, i, j5, nanoTime);
+                renderOutputBufferV21(mediaCodecAdapter, i, j4, nanoTime);
+                mediaCodecVideoRenderer = this;
             } else {
-                renderOutputBuffer(mediaCodecAdapter, i, j5);
+                mediaCodecVideoRenderer = this;
+                mediaCodecVideoRenderer.renderOutputBuffer(mediaCodecAdapter, i, j4);
             }
-            updateVideoFrameProcessingOffsetCounters(j6);
+            mediaCodecVideoRenderer.updateVideoFrameProcessingOffsetCounters(j5);
             return true;
         }
-        if (z4 && j != this.initialPositionUs) {
+        if (z3 && j != this.initialPositionUs) {
             long nanoTime2 = System.nanoTime();
-            long adjustReleaseTime = this.frameReleaseHelper.adjustReleaseTime((j6 * 1000) + nanoTime2);
-            long j8 = (adjustReleaseTime - nanoTime2) / 1000;
+            long adjustReleaseTime = this.frameReleaseHelper.adjustReleaseTime((j5 * 1000) + nanoTime2);
+            long j7 = (adjustReleaseTime - nanoTime2) / 1000;
             boolean z5 = this.joiningDeadlineMs != -9223372036854775807L;
-            if (shouldDropBuffersToKeyframe(j8, j2, z2) && maybeDropBuffersToKeyframe(j, z5)) {
+            if (shouldDropBuffersToKeyframe(j7, j2, z2) && maybeDropBuffersToKeyframe(j, z5)) {
                 return false;
             }
-            if (shouldDropOutputBuffer(j8, j2, z2)) {
+            if (shouldDropOutputBuffer(j7, j2, z2)) {
                 if (z5) {
-                    skipOutputBuffer(mediaCodecAdapter, i, j5);
+                    skipOutputBuffer(mediaCodecAdapter, i, j4);
                 } else {
-                    dropOutputBuffer(mediaCodecAdapter, i, j5);
+                    dropOutputBuffer(mediaCodecAdapter, i, j4);
                 }
-                updateVideoFrameProcessingOffsetCounters(j8);
+                updateVideoFrameProcessingOffsetCounters(j7);
                 return true;
             }
             if (Util.SDK_INT >= 21) {
-                if (j8 < 50000) {
-                    notifyFrameMetadataListener(j5, adjustReleaseTime, format);
-                    renderOutputBufferV21(mediaCodecAdapter, i, j5, adjustReleaseTime);
-                    updateVideoFrameProcessingOffsetCounters(j8);
+                if (j7 < 50000) {
+                    notifyFrameMetadataListener(j4, adjustReleaseTime, format);
+                    renderOutputBufferV21(mediaCodecAdapter, i, j4, adjustReleaseTime);
+                    updateVideoFrameProcessingOffsetCounters(j7);
                     return true;
                 }
-            } else if (j8 < 30000) {
-                if (j8 > 11000) {
+            } else if (j7 < 30000) {
+                if (j7 > 11000) {
                     try {
-                        Thread.sleep((j8 - 10000) / 1000);
+                        Thread.sleep((j7 - 10000) / 1000);
                     } catch (InterruptedException unused) {
                         Thread.currentThread().interrupt();
                         return false;
                     }
                 }
-                notifyFrameMetadataListener(j5, adjustReleaseTime, format);
-                renderOutputBuffer(mediaCodecAdapter, i, j5);
-                updateVideoFrameProcessingOffsetCounters(j8);
+                notifyFrameMetadataListener(j4, adjustReleaseTime, format);
+                renderOutputBuffer(mediaCodecAdapter, i, j4);
+                updateVideoFrameProcessingOffsetCounters(j7);
                 return true;
             }
         }
@@ -892,7 +882,10 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     }
 
     private boolean shouldUsePlaceholderSurface(MediaCodecInfo mediaCodecInfo) {
-        return Util.SDK_INT >= 23 && !this.tunneling && !codecNeedsSetOutputSurfaceWorkaround(mediaCodecInfo.name) && (!mediaCodecInfo.secure || PlaceholderSurface.isSecureSupported(this.context));
+        if (Util.SDK_INT < 23 || this.tunneling || codecNeedsSetOutputSurfaceWorkaround(mediaCodecInfo.name)) {
+            return false;
+        }
+        return !mediaCodecInfo.secure || PlaceholderSurface.isSecureSupported(this.context);
     }
 
     private void releasePlaceholderSurface() {
@@ -1173,7 +1166,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         int i = Util.SDK_INT;
         if (i <= 28) {
             String str2 = Util.DEVICE;
-            str2.hashCode();
+            str2.getClass();
             switch (str2.hashCode()) {
                 case -1339091551:
                     if (str2.equals("dangal")) {
@@ -1243,7 +1236,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             return true;
         }
         str = Util.MODEL;
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "AFTJMST12":
             case "AFTKMST12":
@@ -1258,7 +1251,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             default:
                 if (i <= 26) {
                     String str3 = Util.DEVICE;
-                    str3.hashCode();
+                    str3.getClass();
                     switch (str3.hashCode()) {
                         case -2144781245:
                             if (str3.equals("GIONEE_SWW1609")) {

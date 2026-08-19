@@ -30,10 +30,7 @@ public class BottomSheetTabDialog extends Dialog {
 
     public static BottomSheetTabsOverlay.Sheet checkSheet(BottomSheetTabsOverlay.Sheet sheet) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
-        if (safeLastFragment == null) {
-            return sheet;
-        }
-        if (AndroidUtilities.isTablet() || sheet.hadDialog() || AndroidUtilities.hasDialogOnTop(safeLastFragment)) {
+        if (safeLastFragment != null && (AndroidUtilities.isTablet() || sheet.hadDialog() || AndroidUtilities.hasDialogOnTop(safeLastFragment))) {
             BottomSheetTabDialog bottomSheetTabDialog = new BottomSheetTabDialog(sheet);
             if (sheet.setDialog(bottomSheetTabDialog)) {
                 bottomSheetTabDialog.windowView.putView();
@@ -101,15 +98,12 @@ public class BottomSheetTabDialog extends Dialog {
         this.windowView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnApplyWindowInsetsListener
             public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets lambda$onCreate$0;
-                lambda$onCreate$0 = BottomSheetTabDialog.lambda$onCreate$0(view, windowInsets);
-                return lambda$onCreate$0;
+                return BottomSheetTabDialog.$r8$lambda$mi9mEbznhj0FGRXpR2lBBTI87Mo(view, windowInsets);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsets lambda$onCreate$0(View view, WindowInsets windowInsets) {
+    public static /* synthetic */ WindowInsets $r8$lambda$mi9mEbznhj0FGRXpR2lBBTI87Mo(View view, WindowInsets windowInsets) {
         WindowInsets windowInsets2;
         view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
         if (Build.VERSION.SDK_INT >= 30) {

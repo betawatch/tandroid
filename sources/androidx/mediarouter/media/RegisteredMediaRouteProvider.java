@@ -18,7 +18,6 @@ import androidx.mediarouter.media.MediaRouteProvider;
 import androidx.mediarouter.media.MediaRouter;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -279,9 +278,13 @@ final class RegisteredMediaRouteProvider extends MediaRouteProvider implements S
     }
 
     private ControllerConnection findControllerById(int i) {
-        Iterator it = this.mControllerConnections.iterator();
-        while (it.hasNext()) {
-            ControllerConnection controllerConnection = (ControllerConnection) it.next();
+        ArrayList arrayList = this.mControllerConnections;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            ControllerConnection controllerConnection = (ControllerConnection) obj;
             if (controllerConnection.getControllerId() == i) {
                 return controllerConnection;
             }
@@ -652,6 +655,7 @@ final class RegisteredMediaRouteProvider extends MediaRouteProvider implements S
         }
 
         public boolean onDynamicRouteDescriptorsChanged(int i, Bundle bundle) {
+            int i2 = 0;
             if (this.mServiceVersion == 0) {
                 return false;
             }
@@ -659,9 +663,11 @@ final class RegisteredMediaRouteProvider extends MediaRouteProvider implements S
             MediaRouteDescriptor fromBundle = bundle2 != null ? MediaRouteDescriptor.fromBundle(bundle2) : null;
             ArrayList parcelableArrayList = bundle.getParcelableArrayList("dynamicRoutes");
             ArrayList arrayList = new ArrayList();
-            Iterator it = parcelableArrayList.iterator();
-            while (it.hasNext()) {
-                arrayList.add(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor.fromBundle((Bundle) it.next()));
+            int size = parcelableArrayList.size();
+            while (i2 < size) {
+                Object obj = parcelableArrayList.get(i2);
+                i2++;
+                arrayList.add(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor.fromBundle((Bundle) obj));
             }
             RegisteredMediaRouteProvider.this.onDynamicRouteDescriptorChanged(this, i, fromBundle, arrayList);
             return true;

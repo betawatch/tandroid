@@ -142,16 +142,19 @@ public abstract class ForwardingListener implements View.OnTouchListener, View.O
         DropDownListView dropDownListView;
         View view = this.mSrc;
         ShowableListMenu popup = getPopup();
-        if (popup == null || !popup.isShowing() || (dropDownListView = (DropDownListView) popup.getListView()) == null || !dropDownListView.isShown()) {
-            return false;
+        if (popup != null && popup.isShowing() && (dropDownListView = (DropDownListView) popup.getListView()) != null && dropDownListView.isShown()) {
+            MotionEvent obtainNoHistory = MotionEvent.obtainNoHistory(motionEvent);
+            toGlobalMotionEvent(view, obtainNoHistory);
+            toLocalMotionEvent(dropDownListView, obtainNoHistory);
+            boolean onForwardedEvent = dropDownListView.onForwardedEvent(obtainNoHistory, this.mActivePointerId);
+            obtainNoHistory.recycle();
+            int actionMasked = motionEvent.getActionMasked();
+            boolean z = (actionMasked == 1 || actionMasked == 3) ? false : true;
+            if (onForwardedEvent && z) {
+                return true;
+            }
         }
-        MotionEvent obtainNoHistory = MotionEvent.obtainNoHistory(motionEvent);
-        toGlobalMotionEvent(view, obtainNoHistory);
-        toLocalMotionEvent(dropDownListView, obtainNoHistory);
-        boolean onForwardedEvent = dropDownListView.onForwardedEvent(obtainNoHistory, this.mActivePointerId);
-        obtainNoHistory.recycle();
-        int actionMasked = motionEvent.getActionMasked();
-        return onForwardedEvent && (actionMasked != 1 && actionMasked != 3);
+        return false;
     }
 
     private static boolean pointInView(View view, float f, float f2, float f3) {

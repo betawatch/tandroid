@@ -5,7 +5,7 @@ import com.google.android.gms.internal.mlkit_language_id_common.zzf;
 import com.google.android.gms.internal.mlkit_language_id_common.zzg;
 import java.util.Arrays;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     private final String zza;
     private final float zzb;

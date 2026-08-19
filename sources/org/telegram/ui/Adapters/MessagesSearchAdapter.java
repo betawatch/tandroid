@@ -62,7 +62,7 @@ public class MessagesSearchAdapter extends RecyclerListView.SelectionAdapter imp
     private Runnable loadStories = new Runnable() { // from class: org.telegram.ui.Adapters.MessagesSearchAdapter$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            MessagesSearchAdapter.this.lambda$new$0();
+            MessagesSearchAdapter.$r8$lambda$G4xvCFC6MFtETBGY0SBKqEa1Itk(MessagesSearchAdapter.this);
         }
     };
 
@@ -74,9 +74,8 @@ public class MessagesSearchAdapter extends RecyclerListView.SelectionAdapter imp
         this.isSavedMessages = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        StoriesController.SearchStoriesList searchStoriesList = this.storiesList;
+    public static /* synthetic */ void $r8$lambda$G4xvCFC6MFtETBGY0SBKqEa1Itk(MessagesSearchAdapter messagesSearchAdapter) {
+        StoriesController.SearchStoriesList searchStoriesList = messagesSearchAdapter.storiesList;
         if (searchStoriesList != null) {
             searchStoriesList.load(true, 3);
         }
@@ -234,8 +233,8 @@ public class MessagesSearchAdapter extends RecyclerListView.SelectionAdapter imp
                     z = false;
                 }
                 i2 = i3;
-                dialogId = savedDialogId;
                 z = false;
+                dialogId = savedDialogId;
             } else {
                 if (messageObject.isOutOwner() || ChatObject.isMonoForum(this.currentAccount, dialogId)) {
                     dialogId = messageObject.getFromChatId();

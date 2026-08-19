@@ -65,7 +65,7 @@ public abstract class SeekBarAccessibilityDelegate extends View.AccessibilityDel
                 Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.SeekBarAccessibilityDelegate$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SeekBarAccessibilityDelegate.this.lambda$postAccessibilityEventRunnable$0(view);
+                        SeekBarAccessibilityDelegate.this.sendAccessibilityEvent(view, 4);
                     }
                 };
                 map.put(view, runnable2);
@@ -76,11 +76,6 @@ public abstract class SeekBarAccessibilityDelegate extends View.AccessibilityDel
             }
             view.postDelayed(runnable, 400L);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$postAccessibilityEventRunnable$0(View view) {
-        sendAccessibilityEvent(view, 4);
     }
 
     @Override // android.view.View.AccessibilityDelegate

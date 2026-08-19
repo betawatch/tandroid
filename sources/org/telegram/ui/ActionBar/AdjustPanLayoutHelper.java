@@ -88,7 +88,7 @@ public abstract class AdjustPanLayoutHelper {
             this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.AdjustPanLayoutHelper$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    AdjustPanLayoutHelper.this.lambda$animateHeight$0(valueAnimator);
+                    AdjustPanLayoutHelper.$r8$lambda$zTRNXEnZ4vnXnlkNIOtBKmRm3K0(AdjustPanLayoutHelper.this, valueAnimator);
                 }
             });
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AdjustPanLayoutHelper.3
@@ -114,12 +114,11 @@ public abstract class AdjustPanLayoutHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateHeight$0(ValueAnimator valueAnimator) {
-        if (this.usingInsetAnimator) {
+    public static /* synthetic */ void $r8$lambda$zTRNXEnZ4vnXnlkNIOtBKmRm3K0(AdjustPanLayoutHelper adjustPanLayoutHelper, ValueAnimator valueAnimator) {
+        if (adjustPanLayoutHelper.usingInsetAnimator) {
             return;
         }
-        updateTransition(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        adjustPanLayoutHelper.updateTransition(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */

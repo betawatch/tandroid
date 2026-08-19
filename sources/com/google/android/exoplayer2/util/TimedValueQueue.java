@@ -35,7 +35,10 @@ public final class TimedValueQueue {
     }
 
     public synchronized Object pollFirst() {
-        return this.size == 0 ? null : popFirst();
+        if (this.size == 0) {
+            return null;
+        }
+        return popFirst();
     }
 
     public synchronized Object pollFloor(long j) {

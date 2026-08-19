@@ -85,7 +85,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
     ValueAnimator.AnimatorUpdateListener animatorToCameraMiniUpdater = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$$ExternalSyntheticLambda0
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-            VoIPPiPView.this.lambda$new$0(valueAnimator);
+            VoIPPiPView.$r8$lambda$0u_rs1T8dMurX4F1z-w22xgwMSo(VoIPPiPView.this, valueAnimator);
         }
     };
     float[] point = new float[2];
@@ -166,10 +166,10 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
         IPipSourceDelegate.-CC.$default$pipRenderForeground(this, canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ValueAnimator valueAnimator) {
-        this.progressToCameraMini = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.floatingView.invalidate();
+    public static /* synthetic */ void $r8$lambda$0u_rs1T8dMurX4F1z-w22xgwMSo(VoIPPiPView voIPPiPView, ValueAnimator valueAnimator) {
+        voIPPiPView.getClass();
+        voIPPiPView.progressToCameraMini = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        voIPPiPView.floatingView.invalidate();
     }
 
     public static void show(Activity activity, int i, int i2, int i3, int i4) {
@@ -354,13 +354,13 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
             this.closeIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    VoIPPiPView.lambda$new$1(view2);
+                    VoIPPiPView.$r8$lambda$7q1t5oZ8DhKBVav098VJkBjQryM(view2);
                 }
             });
             this.enlargeIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    VoIPPiPView.this.lambda$new$2(context, view2);
+                    VoIPPiPView.$r8$lambda$QH8lxO-VhcP8AYGt9T40rIextRU(VoIPPiPView.this, context, view2);
                 }
             });
         }
@@ -371,8 +371,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
         updateViewState();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$7q1t5oZ8DhKBVav098VJkBjQryM(View view) {
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
             sharedInstance.hangUp();
@@ -381,11 +380,11 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$QH8lxO-VhcP8AYGt9T40rIextRU(VoIPPiPView voIPPiPView, Context context, View view) {
+        voIPPiPView.getClass();
         boolean z = context instanceof LaunchActivity;
         if (z && !ApplicationLoader.mainInterfacePaused) {
-            VoIPFragment.show((Activity) context, this.currentAccount);
+            VoIPFragment.show((Activity) context, voIPPiPView.currentAccount);
         } else if (z) {
             Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
             intent.setAction("voip");
@@ -851,7 +850,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VoIPPiPView.FloatingView.this.lambda$expand$1(scaleX, voIPPiPView4);
+                        VoIPPiPView.FloatingView.$r8$lambda$AONg6xsoMcVxXw2xqkI5UroTv58(VoIPPiPView.FloatingView.this, scaleX, voIPPiPView4);
                     }
                 }, 64L);
                 return;
@@ -873,7 +872,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIPPiPView.FloatingView.lambda$expand$2(scaleX2, valueAnimator);
+                    VoIPPiPView.FloatingView.$r8$lambda$IozzDMM2-wo9rwKfitkKti6NbPU(scaleX2, valueAnimator);
                 }
             });
             ofFloat.setDuration(300L).setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -882,8 +881,8 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
             VoIPPiPView.this.expandAnimator = ofFloat;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$expand$1(final float f, final VoIPPiPView voIPPiPView) {
+        public static /* synthetic */ void $r8$lambda$AONg6xsoMcVxXw2xqkI5UroTv58(FloatingView floatingView, final float f, final VoIPPiPView voIPPiPView) {
+            floatingView.getClass();
             if (VoIPPiPView.expandedInstance == null) {
                 return;
             }
@@ -893,14 +892,14 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
             } catch (Throwable th) {
                 FileLog.e(th);
             }
-            animate().cancel();
-            showUi(true);
+            floatingView.animate().cancel();
+            floatingView.showUi(true);
             final float f2 = 1.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIPPiPView.FloatingView.lambda$expand$0(f, f2, voIPPiPView, valueAnimator);
+                    VoIPPiPView.FloatingView.$r8$lambda$nn-UQfHzfHnDL_MoShkmrtDfByk(f, f2, voIPPiPView, valueAnimator);
                 }
             });
             ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.VoIPPiPView.FloatingView.2
@@ -915,8 +914,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
             VoIPPiPView.this.expandAnimator = ofFloat;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$expand$0(float f, float f2, VoIPPiPView voIPPiPView, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$nn-UQfHzfHnDL_MoShkmrtDfByk(float f, float f2, VoIPPiPView voIPPiPView, ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             float f3 = (f * (1.0f - floatValue)) + (f2 * floatValue);
             voIPPiPView.floatingView.setScaleX(f3);
@@ -926,8 +924,7 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
             voIPPiPView.floatingView.invalidateOutline();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$expand$2(float f, ValueAnimator valueAnimator) {
+        public static /* synthetic */ void $r8$lambda$IozzDMM2-wo9rwKfitkKti6NbPU(float f, ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             float f2 = (1.0f - floatValue) + (f * floatValue);
             if (VoIPPiPView.expandedInstance != null) {
@@ -959,13 +956,13 @@ public class VoIPPiPView implements VoIPService.StateListener, IPipSourceDelegat
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VoIPPiPView.FloatingView.3.this.lambda$onAnimationEnd$0(z);
+                        VoIPPiPView.FloatingView.3.$r8$lambda$Wz6uVYI9tN51oSEAUiVAnAezzb8(VoIPPiPView.FloatingView.3.this, z);
                     }
                 }, 64L);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onAnimationEnd$0(boolean z) {
+            public static /* synthetic */ void $r8$lambda$Wz6uVYI9tN51oSEAUiVAnAezzb8(3 r2, boolean z) {
+                r2.getClass();
                 if (VoIPPiPView.instance == null || VoIPPiPView.expandedInstance == null) {
                     return;
                 }

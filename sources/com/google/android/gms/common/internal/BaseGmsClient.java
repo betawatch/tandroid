@@ -128,7 +128,8 @@ public abstract class BaseGmsClient {
                 }
                 baseGmsClient.zzp(i2, iInterface);
                 return true;
-            } finally {
+            } catch (Throwable th) {
+                throw th;
             }
         }
     }

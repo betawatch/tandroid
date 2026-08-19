@@ -45,7 +45,7 @@ public class LinkCell extends FrameLayout {
         this.linkContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.cells.LinkCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LinkCell.this.lambda$new$0(view);
+                AndroidUtilities.addToClipboard(LinkCell.this.link);
             }
         });
         ImageView imageView = new ImageView(getContext());
@@ -58,19 +58,9 @@ public class LinkCell extends FrameLayout {
         this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.cells.LinkCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LinkCell.this.lambda$new$1(view);
+                AndroidUtilities.addToClipboard(LinkCell.this.link);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        AndroidUtilities.addToClipboard(this.link);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        AndroidUtilities.addToClipboard(this.link);
     }
 
     public void setSlug(String str) {

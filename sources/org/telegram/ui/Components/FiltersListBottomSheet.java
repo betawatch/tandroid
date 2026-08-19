@@ -86,7 +86,7 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && FiltersListBottomSheet.this.scrollOffsetY != 0 && motionEvent.getY() < FiltersListBottomSheet.this.scrollOffsetY) {
-                    FiltersListBottomSheet.this.lambda$new$0();
+                    FiltersListBottomSheet.this.dismiss();
                     return true;
                 }
                 return super.onInterceptTouchEvent(motionEvent);
@@ -246,7 +246,7 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.FiltersListBottomSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view2, int i3) {
-                FiltersListBottomSheet.this.lambda$new$0(view2, i3);
+                FiltersListBottomSheet.$r8$lambda$yPiFoLCkBJevHKL-zC2xHtH7O-g(FiltersListBottomSheet.this, view2, i3);
             }
         });
         this.containerView.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
@@ -267,10 +267,9 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i) {
-        this.delegate.didSelectFilter(this.adapter.getItem(i), view instanceof BottomSheet.BottomSheetCell ? ((BottomSheet.BottomSheetCell) view).isChecked() : false);
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$yPiFoLCkBJevHKL-zC2xHtH7O-g(FiltersListBottomSheet filtersListBottomSheet, View view, int i) {
+        filtersListBottomSheet.delegate.didSelectFilter(filtersListBottomSheet.adapter.getItem(i), view instanceof BottomSheet.BottomSheetCell ? ((BottomSheet.BottomSheetCell) view).isChecked() : false);
+        filtersListBottomSheet.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -345,9 +344,8 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
     }
 
@@ -357,14 +355,13 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
             AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.FiltersListBottomSheet$$ExternalSyntheticLambda1
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    FiltersListBottomSheet.lambda$didReceivedNotification$1((View) obj);
+                    FiltersListBottomSheet.$r8$lambda$uGKg_SdI2ieBTD7mZxsNnyzCORc((View) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$1(View view) {
+    public static /* synthetic */ void $r8$lambda$uGKg_SdI2ieBTD7mZxsNnyzCORc(View view) {
         if (view instanceof BottomSheet.BottomSheetCell) {
             ((BottomSheet.BottomSheetCell) view).getTextView().invalidate();
         } else {
@@ -415,7 +412,8 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
         return arrayList2;
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
         private Context context;
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter

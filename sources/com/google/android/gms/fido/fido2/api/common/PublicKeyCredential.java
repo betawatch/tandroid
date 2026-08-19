@@ -183,7 +183,9 @@ public class PublicKeyCredential extends AbstractSafeParcelable {
             AuthenticationExtensionsClientOutputs authenticationExtensionsClientOutputs = this.zzg;
             if (authenticationExtensionsClientOutputs != null) {
                 jSONObject2.put("clientExtensionResults", authenticationExtensionsClientOutputs.zza());
-            } else if (z) {
+                return jSONObject2;
+            }
+            if (z) {
                 jSONObject2.put("clientExtensionResults", new JSONObject());
             }
             return jSONObject2;

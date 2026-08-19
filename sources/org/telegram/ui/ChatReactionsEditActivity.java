@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
@@ -118,7 +117,7 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
             this.enableReactionsCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatReactionsEditActivity.this.lambda$createView$0(view);
+                    ChatReactionsEditActivity.this.setCheckedEnableReactionCell(r1.enableReactionsCell.isChecked() ? 2 : 1, true);
                 }
             });
             linearLayout.addView(this.enableReactionsCell, LayoutHelper.createLinear(-1, -2));
@@ -148,19 +147,19 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
         this.allReactions.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatReactionsEditActivity.this.lambda$createView$2(view);
+                ChatReactionsEditActivity.$r8$lambda$HmJkzoUHdA3_XGwj6lyV3nP51a8(ChatReactionsEditActivity.this, view);
             }
         });
         this.someReactions.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatReactionsEditActivity.this.lambda$createView$4(view);
+                ChatReactionsEditActivity.$r8$lambda$BQBjVZd855Zrd-ewemEcL6dcKOk(ChatReactionsEditActivity.this, view);
             }
         });
         this.disableReactions.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatReactionsEditActivity.this.lambda$createView$6(view);
+                ChatReactionsEditActivity.$r8$lambda$vccgXBG7GjL8eQkld3V82Km80mk(ChatReactionsEditActivity.this, view);
             }
         });
         int i = Theme.key_windowBackgroundWhite;
@@ -264,7 +263,7 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                ChatReactionsEditActivity.this.lambda$createView$7(view, i3);
+                ChatReactionsEditActivity.$r8$lambda$4sZG0I1XLisVJM77fyeF_q7tCfE(ChatReactionsEditActivity.this, view, i3);
             }
         });
         linearLayout.addView(this.listView, LayoutHelper.createLinear(-1, 0, 1.0f));
@@ -276,82 +275,62 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
         return this.contentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view) {
-        setCheckedEnableReactionCell(this.enableReactionsCell.isChecked() ? 2 : 1, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1() {
-        setCheckedEnableReactionCell(0, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(View view) {
+    public static /* synthetic */ void $r8$lambda$HmJkzoUHdA3_XGwj6lyV3nP51a8(final ChatReactionsEditActivity chatReactionsEditActivity, View view) {
+        chatReactionsEditActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                ChatReactionsEditActivity.this.lambda$createView$1();
+                ChatReactionsEditActivity.this.setCheckedEnableReactionCell(0, true);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3() {
-        setCheckedEnableReactionCell(1, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(View view) {
+    public static /* synthetic */ void $r8$lambda$BQBjVZd855Zrd-ewemEcL6dcKOk(final ChatReactionsEditActivity chatReactionsEditActivity, View view) {
+        chatReactionsEditActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                ChatReactionsEditActivity.this.lambda$createView$3();
+                ChatReactionsEditActivity.this.setCheckedEnableReactionCell(1, true);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5() {
-        setCheckedEnableReactionCell(2, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(View view) {
+    public static /* synthetic */ void $r8$lambda$vccgXBG7GjL8eQkld3V82Km80mk(final ChatReactionsEditActivity chatReactionsEditActivity, View view) {
+        chatReactionsEditActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatReactionsEditActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                ChatReactionsEditActivity.this.lambda$createView$5();
+                ChatReactionsEditActivity.this.setCheckedEnableReactionCell(2, true);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$7(View view, int i) {
-        boolean z = this.isChannel;
+    public static /* synthetic */ void $r8$lambda$4sZG0I1XLisVJM77fyeF_q7tCfE(ChatReactionsEditActivity chatReactionsEditActivity, View view, int i) {
+        boolean z = chatReactionsEditActivity.isChannel;
         if (i <= (z ? 1 : 2)) {
             return;
         }
         AvailableReactionCell availableReactionCell = (AvailableReactionCell) view;
-        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) this.availableReactions.get(i - (z ? 2 : 3));
-        boolean contains = this.chatReactions.contains(tL_availableReaction.reaction);
+        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) chatReactionsEditActivity.availableReactions.get(i - (z ? 2 : 3));
+        boolean contains = chatReactionsEditActivity.chatReactions.contains(tL_availableReaction.reaction);
         boolean z2 = !contains;
         if (!contains) {
-            this.chatReactions.add(tL_availableReaction.reaction);
+            chatReactionsEditActivity.chatReactions.add(tL_availableReaction.reaction);
         } else {
-            this.chatReactions.remove(tL_availableReaction.reaction);
-            if (this.chatReactions.isEmpty()) {
-                RecyclerView.Adapter adapter = this.listAdapter;
+            chatReactionsEditActivity.chatReactions.remove(tL_availableReaction.reaction);
+            if (chatReactionsEditActivity.chatReactions.isEmpty()) {
+                RecyclerView.Adapter adapter = chatReactionsEditActivity.listAdapter;
                 if (adapter != null) {
-                    adapter.notifyItemRangeRemoved(this.isChannel ? 1 : 2, this.availableReactions.size() + 1);
+                    adapter.notifyItemRangeRemoved(chatReactionsEditActivity.isChannel ? 1 : 2, chatReactionsEditActivity.availableReactions.size() + 1);
                 }
-                setCheckedEnableReactionCell(2, true);
+                chatReactionsEditActivity.setCheckedEnableReactionCell(2, true);
             }
         }
         availableReactionCell.setChecked(z2, true);
     }
 
-    private void setCheckedEnableReactionCell(int i, boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setCheckedEnableReactionCell(int i, boolean z) {
         RecyclerView.Adapter adapter;
         if (this.selectedType == i) {
             return;
@@ -376,9 +355,13 @@ public class ChatReactionsEditActivity extends BaseFragment implements Notificat
         if (i == 1) {
             if (z) {
                 this.chatReactions.clear();
-                Iterator it = this.availableReactions.iterator();
-                while (it.hasNext()) {
-                    TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) it.next();
+                ArrayList arrayList = this.availableReactions;
+                int size = arrayList.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj = arrayList.get(i3);
+                    i3++;
+                    TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) obj;
                     if (tL_availableReaction.reaction.equals("👍") || tL_availableReaction.reaction.equals("👎")) {
                         this.chatReactions.add(tL_availableReaction.reaction);
                     }

@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
@@ -142,10 +141,12 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateBioInfo() {
+        boolean z;
         UniversalRecyclerView universalRecyclerView;
         int i = this.bioInfoHash;
         EditTextCell editTextCell = this.bioEdit;
         if (editTextCell == null || TextUtils.isEmpty(editTextCell.getText())) {
+            z = true;
             this.bioInfo = LocaleController.getString(R.string.EditProfileBioInfo2);
             this.bioInfoHash = Objects.hash(0);
         } else {
@@ -153,30 +154,29 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             if (privacyRules == null) {
                 this.bioInfo = LocaleController.getString(R.string.Loading);
                 this.bioInfoHash = Objects.hash(1);
+                z = true;
             } else {
                 int i2 = -1;
                 char c = 65535;
                 int i3 = 0;
                 int i4 = 0;
-                boolean z = false;
+                boolean z2 = false;
                 for (int i5 = 0; i5 < privacyRules.size(); i5++) {
                     TLRPC.PrivacyRule privacyRule = privacyRules.get(i5);
                     if (privacyRule instanceof TLRPC.TL_privacyValueAllowChatParticipants) {
                         TLRPC.TL_privacyValueAllowChatParticipants tL_privacyValueAllowChatParticipants = (TLRPC.TL_privacyValueAllowChatParticipants) privacyRule;
                         int size = tL_privacyValueAllowChatParticipants.chats.size();
                         for (int i6 = 0; i6 < size; i6++) {
-                            TLRPC.Chat chat = getMessagesController().getChat(tL_privacyValueAllowChatParticipants.chats.get(i6));
-                            if (chat != null) {
-                                i4 += Math.max(0, chat.participants_count - 1);
+                            if (getMessagesController().getChat(tL_privacyValueAllowChatParticipants.chats.get(i6)) != null) {
+                                i4 += Math.max(0, r5.participants_count - 1);
                             }
                         }
                     } else if (privacyRule instanceof TLRPC.TL_privacyValueDisallowChatParticipants) {
                         TLRPC.TL_privacyValueDisallowChatParticipants tL_privacyValueDisallowChatParticipants = (TLRPC.TL_privacyValueDisallowChatParticipants) privacyRule;
                         int size2 = tL_privacyValueDisallowChatParticipants.chats.size();
                         for (int i7 = 0; i7 < size2; i7++) {
-                            TLRPC.Chat chat2 = getMessagesController().getChat(tL_privacyValueDisallowChatParticipants.chats.get(i7));
-                            if (chat2 != null) {
-                                i3 += Math.max(0, chat2.participants_count - 1);
+                            if (getMessagesController().getChat(tL_privacyValueDisallowChatParticipants.chats.get(i7)) != null) {
+                                i3 += Math.max(0, r14.participants_count - 1);
                             }
                         }
                     } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowUsers) {
@@ -184,16 +184,16 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
                     } else if (privacyRule instanceof TLRPC.TL_privacyValueDisallowUsers) {
                         i3 += ((TLRPC.TL_privacyValueDisallowUsers) privacyRule).users.size();
                     } else {
-                        boolean z2 = privacyRule instanceof TLRPC.TL_privacyValueAllowAll;
-                        if (!z2) {
-                            boolean z3 = privacyRule instanceof TLRPC.TL_privacyValueDisallowAll;
-                            if (!z3 || z) {
+                        boolean z3 = privacyRule instanceof TLRPC.TL_privacyValueAllowAll;
+                        if (!z3) {
+                            boolean z4 = privacyRule instanceof TLRPC.TL_privacyValueDisallowAll;
+                            if (!z4 || z2) {
                                 if (privacyRule instanceof TLRPC.TL_privacyValueAllowContacts) {
                                     c = 2;
-                                    z = true;
+                                    z2 = true;
                                 } else if (c == 65535) {
-                                    if (!z2) {
-                                        if (!z3 || z) {
+                                    if (!z3) {
+                                        if (!z4 || z2) {
                                             c = 2;
                                         }
                                     }
@@ -237,13 +237,14 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
                 } else {
                     this.bioInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.EditProfileBioInfoNobodyExcept, Integer.valueOf(i4)), new UserInfoActivity$$ExternalSyntheticLambda0(this)), true);
                 }
+                z = true;
                 this.bioInfoHash = Objects.hash(Integer.valueOf(i2 + 10), Integer.valueOf(i4), Integer.valueOf(i3));
             }
         }
         if (i == this.bioInfoHash || (universalRecyclerView = this.listView) == null) {
             return;
         }
-        universalRecyclerView.adapter.update(true);
+        universalRecyclerView.adapter.update(z);
     }
 
     @Override // org.telegram.ui.Components.UniversalFragment, org.telegram.ui.ActionBar.BaseFragment
@@ -324,15 +325,12 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         Collections.sort(this.accountNumbers, new Comparator() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda8
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$updateAccounts$0;
-                lambda$updateAccounts$0 = UserInfoActivity.lambda$updateAccounts$0((Integer) obj, (Integer) obj2);
-                return lambda$updateAccounts$0;
+                return UserInfoActivity.$r8$lambda$KOVUqJtbyR3NKG4ztFlfsPzpfV8((Integer) obj, (Integer) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateAccounts$0(Integer num, Integer num2) {
+    public static /* synthetic */ int $r8$lambda$KOVUqJtbyR3NKG4ztFlfsPzpfV8(Integer num, Integer num2) {
         long j = UserConfig.getInstance(num.intValue()).loginTime;
         long j2 = UserConfig.getInstance(num2.intValue()).loginTime;
         if (j > j2) {
@@ -401,7 +399,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             this.birthdayInfo = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new Runnable() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UserInfoActivity.this.lambda$fillItems$1();
+                    UserInfoActivity.$r8$lambda$hU_0XcqhZJLG35wcI2H_UeTXAhQ(UserInfoActivity.this);
                 }
             }), true);
         }
@@ -425,9 +423,13 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         ArrayList arrayList2 = this.bots;
         if (arrayList2 != null && !arrayList2.isEmpty()) {
             StringBuilder sb = new StringBuilder();
-            Iterator it = this.bots.iterator();
-            while (it.hasNext()) {
-                TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(((TL_account.TL_connectedBot) it.next()).bot_id));
+            ArrayList arrayList3 = this.bots;
+            int size = arrayList3.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList3.get(i2);
+                i2++;
+                TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(((TL_account.TL_connectedBot) obj).bot_id));
                 if (user != null) {
                     if (sb.length() > 0) {
                         sb.append(", ");
@@ -451,15 +453,15 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             if (!z) {
                 arrayList.add(UItem.asHeader(LocaleController.getString(R.string.SettingsAccounts)));
             }
-            for (int i2 = 0; i2 < this.accountNumbers.size(); i2++) {
-                arrayList.add(SettingsActivity.AccountCell.Factory.of(i2, ((Integer) this.accountNumbers.get(i2)).intValue()));
+            for (int i3 = 0; i3 < this.accountNumbers.size(); i3++) {
+                arrayList.add(SettingsActivity.AccountCell.Factory.of(i3, ((Integer) this.accountNumbers.get(i3)).intValue()));
             }
             if (!UserConfig.hasPremiumOnAccounts()) {
                 int max = Math.max(0, UserConfig.getMaxAccountCount() - UserConfig.getActivatedAccountsCount());
                 arrayList.add(UItem.asShadow(TextUtils.concat(max > 0 ? LocaleController.formatPluralStringComma("AddAccountInfo1", max) + " " : "", AndroidUtilities.replaceSingleTag(LocaleController.formatPluralStringComma("AddAccountInfo2", UserConfig.getMaxAccountCount()), new Runnable() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        UserInfoActivity.this.lambda$fillItems$2();
+                        UserInfoActivity.$r8$lambda$9P1XM2yCyvo0QJql6vBhPH-EXpY(UserInfoActivity.this);
                     }
                 }))));
             } else {
@@ -471,14 +473,14 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         arrayList.add(UItem.asShadow(-4, null));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$1() {
-        presentFragment(new PrivacyControlActivity(11));
+    public static /* synthetic */ void $r8$lambda$hU_0XcqhZJLG35wcI2H_UeTXAhQ(UserInfoActivity userInfoActivity) {
+        userInfoActivity.getClass();
+        userInfoActivity.presentFragment(new PrivacyControlActivity(11));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$2() {
-        presentFragment(new PremiumPreviewFragment("add_account"));
+    public static /* synthetic */ void $r8$lambda$9P1XM2yCyvo0QJql6vBhPH-EXpY(UserInfoActivity userInfoActivity) {
+        userInfoActivity.getClass();
+        userInfoActivity.presentFragment(new PremiumPreviewFragment("add_account"));
     }
 
     public static String birthdayString(TL_account.TL_birthday tL_birthday) {
@@ -539,7 +541,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             showDialog(AlertsCreator.createBirthdayPickerDialog(getContext(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), this.birthday, new Utilities.Callback() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    UserInfoActivity.this.lambda$onClick$3((TL_account.TL_birthday) obj);
+                    UserInfoActivity.$r8$lambda$mQma3YiO4SAWIsGveWO2VALJ634(UserInfoActivity.this, (TL_account.TL_birthday) obj);
                 }
             }, null, false, this.birthday != null, getResourceProvider()).create());
             return;
@@ -559,7 +561,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             presentFragment(new ChooseChannelFragment(adminedChannelsFetcher, chat == null ? 0L : chat.id, new Utilities.Callback() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda3
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    UserInfoActivity.this.lambda$onClick$4((TLRPC.Chat) obj);
+                    UserInfoActivity.$r8$lambda$NhC7tST26Cs49xVm9z27qpbWX6Q(UserInfoActivity.this, (TLRPC.Chat) obj);
                 }
             }));
             return;
@@ -585,27 +587,25 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$3(TL_account.TL_birthday tL_birthday) {
-        this.birthday = tL_birthday;
-        UniversalRecyclerView universalRecyclerView = this.listView;
+    public static /* synthetic */ void $r8$lambda$mQma3YiO4SAWIsGveWO2VALJ634(UserInfoActivity userInfoActivity, TL_account.TL_birthday tL_birthday) {
+        userInfoActivity.birthday = tL_birthday;
+        UniversalRecyclerView universalRecyclerView = userInfoActivity.listView;
         if (universalRecyclerView != null) {
             universalRecyclerView.adapter.update(true);
         }
-        checkDone(true);
+        userInfoActivity.checkDone(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$4(TLRPC.Chat chat) {
-        if (this.channel == chat) {
+    public static /* synthetic */ void $r8$lambda$NhC7tST26Cs49xVm9z27qpbWX6Q(UserInfoActivity userInfoActivity, TLRPC.Chat chat) {
+        if (userInfoActivity.channel == chat) {
             return;
         }
-        this.channel = chat;
+        userInfoActivity.channel = chat;
         if (chat != null) {
-            BulletinFactory.of(this).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.EditProfileChannelSet)).show();
+            BulletinFactory.of(userInfoActivity).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.EditProfileChannelSet)).show();
         }
-        checkDone(true);
-        UniversalRecyclerView universalRecyclerView = this.listView;
+        userInfoActivity.checkDone(true);
+        UniversalRecyclerView universalRecyclerView = userInfoActivity.listView;
         if (universalRecyclerView != null) {
             universalRecyclerView.adapter.update(true);
         }
@@ -655,7 +655,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         this.channels.subscribe(new Runnable() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                UserInfoActivity.this.lambda$onResume$5();
+                UserInfoActivity.$r8$lambda$ZIe1F0dVcwxXawWYO_63bcPb0Bw(UserInfoActivity.this);
             }
         });
         this.channels.fetch();
@@ -666,9 +666,8 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onResume$5() {
-        UniversalRecyclerView universalRecyclerView = this.listView;
+    public static /* synthetic */ void $r8$lambda$ZIe1F0dVcwxXawWYO_63bcPb0Bw(UserInfoActivity userInfoActivity) {
+        UniversalRecyclerView universalRecyclerView = userInfoActivity.listView;
         if (universalRecyclerView != null) {
             universalRecyclerView.adapter.update(true);
         }
@@ -728,30 +727,27 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         if (str == null) {
             str = "";
         }
-        if (TextUtils.equals(str, this.firstNameEdit.getText().toString())) {
-            String str2 = this.currentLastName;
-            if (str2 == null) {
-                str2 = "";
-            }
-            if (TextUtils.equals(str2, this.lastNameEdit.getText().toString())) {
-                String str3 = this.currentBio;
-                if (TextUtils.equals(str3 != null ? str3 : "", this.bioEdit.getText().toString()) && birthdaysEqual(this.currentBirthday, this.birthday)) {
-                    long j = this.currentChannel;
-                    TLRPC.Chat chat = this.channel;
-                    if (j == (chat != null ? chat.id : 0L)) {
-                        return false;
-                    }
-                }
-            }
+        if (!TextUtils.equals(str, this.firstNameEdit.getText().toString())) {
+            return true;
         }
-        return true;
+        String str2 = this.currentLastName;
+        if (str2 == null) {
+            str2 = "";
+        }
+        if (!TextUtils.equals(str2, this.lastNameEdit.getText().toString())) {
+            return true;
+        }
+        String str3 = this.currentBio;
+        if (!TextUtils.equals(str3 != null ? str3 : "", this.bioEdit.getText().toString()) || !birthdaysEqual(this.currentBirthday, this.birthday)) {
+            return true;
+        }
+        long j = this.currentChannel;
+        TLRPC.Chat chat = this.channel;
+        return j != (chat != null ? chat.id : 0L);
     }
 
     public static boolean birthdaysEqual(TL_account.TL_birthday tL_birthday, TL_account.TL_birthday tL_birthday2) {
-        if ((tL_birthday == null) != (tL_birthday2 != null)) {
-            return tL_birthday == null || (tL_birthday.day == tL_birthday2.day && tL_birthday.month == tL_birthday2.month && tL_birthday.year == tL_birthday2.year);
-        }
-        return false;
+        return (tL_birthday == null) != (tL_birthday2 != null) && (tL_birthday == null || (tL_birthday.day == tL_birthday2.day && tL_birthday.month == tL_birthday2.month && tL_birthday.year == tL_birthday2.year));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -772,144 +768,140 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void processDone(boolean z) {
-        if (this.doneButtonDrawable.getProgress() > 0.0f) {
-            return;
-        }
-        if (z && TextUtils.isEmpty(this.firstNameEdit.getText())) {
-            BotWebViewVibrationEffect.APP_ERROR.vibrate();
-            EditTextCell editTextCell = this.firstNameEdit;
-            int i = -this.shiftDp;
-            this.shiftDp = i;
-            AndroidUtilities.shakeViewSpring(editTextCell, i);
-            return;
-        }
-        this.doneButtonDrawable.animateToProgress(1.0f);
-        TLRPC.User currentUser = getUserConfig().getCurrentUser();
-        final TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
-        if (currentUser == null || userFull == null) {
-            return;
-        }
-        final ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(this.firstNameEdit.getText()) && (!TextUtils.equals(this.currentFirstName, this.firstNameEdit.getText().toString()) || !TextUtils.equals(this.currentLastName, this.lastNameEdit.getText().toString()) || !TextUtils.equals(this.currentBio, this.bioEdit.getText().toString()))) {
-            TL_account.updateProfile updateprofile = new TL_account.updateProfile();
-            updateprofile.flags |= 1;
-            String charSequence = this.firstNameEdit.getText().toString();
-            currentUser.first_name = charSequence;
-            updateprofile.first_name = charSequence;
-            updateprofile.flags |= 2;
-            String charSequence2 = this.lastNameEdit.getText().toString();
-            currentUser.last_name = charSequence2;
-            updateprofile.last_name = charSequence2;
-            updateprofile.flags |= 4;
-            String charSequence3 = this.bioEdit.getText().toString();
-            userFull.about = charSequence3;
-            updateprofile.about = charSequence3;
-            userFull.flags = TextUtils.isEmpty(charSequence3) ? userFull.flags & (-3) : userFull.flags | 2;
-            arrayList.add(updateprofile);
-        }
-        final TL_account.TL_birthday tL_birthday = userFull.birthday;
-        if (!birthdaysEqual(this.currentBirthday, this.birthday)) {
-            TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
-            TL_account.TL_birthday tL_birthday2 = this.birthday;
-            if (tL_birthday2 != null) {
-                userFull.flags2 |= 32;
-                userFull.birthday = tL_birthday2;
-                updatebirthday.flags |= 1;
-                updatebirthday.birthday = tL_birthday2;
-            } else {
-                userFull.flags2 &= -33;
-                userFull.birthday = null;
+        if (this.doneButtonDrawable.getProgress() <= 0.0f) {
+            if (z && TextUtils.isEmpty(this.firstNameEdit.getText())) {
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                EditTextCell editTextCell = this.firstNameEdit;
+                int i = -this.shiftDp;
+                this.shiftDp = i;
+                AndroidUtilities.shakeViewSpring(editTextCell, i);
+                return;
             }
-            arrayList.add(updatebirthday);
-            getMessagesController().invalidateContentSettings();
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumPromoUpdated, new Object[0]);
-        }
-        long j = this.currentChannel;
-        TLRPC.Chat chat = this.channel;
-        if (j != (chat != null ? chat.id : 0L)) {
-            TL_account.updatePersonalChannel updatepersonalchannel = new TL_account.updatePersonalChannel();
-            updatepersonalchannel.channel = MessagesController.getInputChannel(this.channel);
-            TLRPC.Chat chat2 = this.channel;
-            if (chat2 != null) {
-                userFull.flags |= 64;
-                long j2 = userFull.personal_channel_id;
-                long j3 = chat2.id;
-                if (j2 != j3) {
-                    userFull.personal_channel_message = 0;
+            this.doneButtonDrawable.animateToProgress(1.0f);
+            TLRPC.User currentUser = getUserConfig().getCurrentUser();
+            final TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+            if (currentUser != null && userFull != null) {
+                final ArrayList arrayList = new ArrayList();
+                if (!TextUtils.isEmpty(this.firstNameEdit.getText()) && (!TextUtils.equals(this.currentFirstName, this.firstNameEdit.getText().toString()) || !TextUtils.equals(this.currentLastName, this.lastNameEdit.getText().toString()) || !TextUtils.equals(this.currentBio, this.bioEdit.getText().toString()))) {
+                    TL_account.updateProfile updateprofile = new TL_account.updateProfile();
+                    updateprofile.flags |= 1;
+                    String charSequence = this.firstNameEdit.getText().toString();
+                    currentUser.first_name = charSequence;
+                    updateprofile.first_name = charSequence;
+                    updateprofile.flags |= 2;
+                    String charSequence2 = this.lastNameEdit.getText().toString();
+                    currentUser.last_name = charSequence2;
+                    updateprofile.last_name = charSequence2;
+                    updateprofile.flags |= 4;
+                    String charSequence3 = this.bioEdit.getText().toString();
+                    userFull.about = charSequence3;
+                    updateprofile.about = charSequence3;
+                    userFull.flags = TextUtils.isEmpty(charSequence3) ? userFull.flags & (-3) : userFull.flags | 2;
+                    arrayList.add(updateprofile);
                 }
-                userFull.personal_channel_id = j3;
-            } else {
-                userFull.flags &= -65;
-                userFull.personal_channel_message = 0;
-                userFull.personal_channel_id = 0L;
+                final TL_account.TL_birthday tL_birthday = userFull.birthday;
+                if (!birthdaysEqual(this.currentBirthday, this.birthday)) {
+                    TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
+                    TL_account.TL_birthday tL_birthday2 = this.birthday;
+                    if (tL_birthday2 != null) {
+                        userFull.flags2 |= 32;
+                        userFull.birthday = tL_birthday2;
+                        updatebirthday.flags |= 1;
+                        updatebirthday.birthday = tL_birthday2;
+                    } else {
+                        userFull.flags2 &= -33;
+                        userFull.birthday = null;
+                    }
+                    arrayList.add(updatebirthday);
+                    getMessagesController().invalidateContentSettings();
+                    NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.premiumPromoUpdated, new Object[0]);
+                }
+                long j = this.currentChannel;
+                TLRPC.Chat chat = this.channel;
+                if (j != (chat != null ? chat.id : 0L)) {
+                    TL_account.updatePersonalChannel updatepersonalchannel = new TL_account.updatePersonalChannel();
+                    updatepersonalchannel.channel = MessagesController.getInputChannel(this.channel);
+                    TLRPC.Chat chat2 = this.channel;
+                    if (chat2 != null) {
+                        userFull.flags |= 64;
+                        long j2 = userFull.personal_channel_id;
+                        long j3 = chat2.id;
+                        if (j2 != j3) {
+                            userFull.personal_channel_message = 0;
+                        }
+                        userFull.personal_channel_id = j3;
+                    } else {
+                        userFull.flags &= -65;
+                        userFull.personal_channel_message = 0;
+                        userFull.personal_channel_id = 0L;
+                    }
+                    arrayList.add(updatepersonalchannel);
+                }
+                if (arrayList.isEmpty()) {
+                    finishFragment();
+                    return;
+                }
+                final int[] iArr = {0};
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    final TLObject tLObject = (TLObject) arrayList.get(i2);
+                    getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda2
+                        @Override // org.telegram.tgnet.RequestDelegate
+                        public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                            UserInfoActivity.$r8$lambda$BCIXoNo125aMC94TTe1J7GJkqAM(UserInfoActivity.this, tLObject, tL_birthday, userFull, iArr, arrayList, tLObject2, tL_error);
+                        }
+                    }, 1024);
+                }
+                getMessagesStorage().updateUserInfo(userFull, false);
+                getUserConfig().saveConfig(true);
+                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.mainUserInfoChanged, new Object[0]);
+                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
             }
-            arrayList.add(updatepersonalchannel);
         }
-        if (arrayList.isEmpty()) {
-            finishFragment();
-            return;
-        }
-        final int[] iArr = {0};
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            final TLObject tLObject = (TLObject) arrayList.get(i2);
-            getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda2
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                    UserInfoActivity.this.lambda$processDone$7(tLObject, tL_birthday, userFull, iArr, arrayList, tLObject2, tL_error);
-                }
-            }, 1024);
-        }
-        getMessagesStorage().updateUserInfo(userFull, false);
-        getUserConfig().saveConfig(true);
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$7(final TLObject tLObject, final TL_account.TL_birthday tL_birthday, final TLRPC.UserFull userFull, final int[] iArr, final ArrayList arrayList, final TLObject tLObject2, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$BCIXoNo125aMC94TTe1J7GJkqAM(final UserInfoActivity userInfoActivity, final TLObject tLObject, final TL_account.TL_birthday tL_birthday, final TLRPC.UserFull userFull, final int[] iArr, final ArrayList arrayList, final TLObject tLObject2, final TLRPC.TL_error tL_error) {
+        userInfoActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                UserInfoActivity.this.lambda$processDone$6(tL_error, tLObject, tL_birthday, userFull, tLObject2, iArr, arrayList);
+                UserInfoActivity.$r8$lambda$rHXwQoEG3nOcuUnU20yCJ6V2pVs(UserInfoActivity.this, tL_error, tLObject, tL_birthday, userFull, tLObject2, iArr, arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$6(TLRPC.TL_error tL_error, TLObject tLObject, TL_account.TL_birthday tL_birthday, TLRPC.UserFull userFull, TLObject tLObject2, int[] iArr, ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$rHXwQoEG3nOcuUnU20yCJ6V2pVs(UserInfoActivity userInfoActivity, TLRPC.TL_error tL_error, TLObject tLObject, TL_account.TL_birthday tL_birthday, TLRPC.UserFull userFull, TLObject tLObject2, int[] iArr, ArrayList arrayList) {
         String str;
-        if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            boolean z = tLObject instanceof TL_account.updateBirthday;
-            if (z && (str = tL_error.text) != null && str.startsWith("FLOOD_WAIT_")) {
-                if (getContext() != null) {
-                    showDialog(new AlertDialog.Builder(getContext(), this.resourceProvider).setTitle(LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle)).setMessage(LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage)).setPositiveButton(LocaleController.getString(R.string.OK), null).create());
-                }
-            } else {
-                BulletinFactory.showError(tL_error);
+        if (tL_error == null) {
+            userInfoActivity.getClass();
+            if (tLObject2 instanceof TLRPC.TL_boolFalse) {
+                userInfoActivity.doneButtonDrawable.animateToProgress(0.0f);
+                BulletinFactory.of(userInfoActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+                return;
             }
-            if (z) {
-                if (tL_birthday != null) {
-                    userFull.flags |= 32;
-                } else {
-                    userFull.flags &= -33;
-                }
-                userFull.birthday = tL_birthday;
-                getMessagesStorage().updateUserInfo(userFull, false);
+            userInfoActivity.wasSaved = true;
+            int i = iArr[0] + 1;
+            iArr[0] = i;
+            if (i == arrayList.size()) {
+                userInfoActivity.finishFragment();
                 return;
             }
             return;
         }
-        if (tLObject2 instanceof TLRPC.TL_boolFalse) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
-            return;
+        userInfoActivity.doneButtonDrawable.animateToProgress(0.0f);
+        boolean z = tLObject instanceof TL_account.updateBirthday;
+        if (!z || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
+            BulletinFactory.showError(tL_error);
+        } else if (userInfoActivity.getContext() != null) {
+            userInfoActivity.showDialog(new AlertDialog.Builder(userInfoActivity.getContext(), userInfoActivity.resourceProvider).setTitle(LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle)).setMessage(LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage)).setPositiveButton(LocaleController.getString(R.string.OK), null).create());
         }
-        this.wasSaved = true;
-        int i = iArr[0] + 1;
-        iArr[0] = i;
-        if (i == arrayList.size()) {
-            finishFragment();
+        if (z) {
+            if (tL_birthday != null) {
+                userFull.flags |= 32;
+            } else {
+                userFull.flags &= -33;
+            }
+            userFull.birthday = tL_birthday;
+            userInfoActivity.getMessagesStorage().updateUserInfo(userFull, false);
         }
     }
 
@@ -940,35 +932,39 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getAdminedPublicChannels, new RequestDelegate() { // from class: org.telegram.ui.UserInfoActivity$AdminedChannelsFetcher$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    UserInfoActivity.AdminedChannelsFetcher.this.lambda$fetch$1(tLObject, tL_error);
+                    UserInfoActivity.AdminedChannelsFetcher.$r8$lambda$3rILY7YQmsg_g5DzVPsEoekM-Hg(UserInfoActivity.AdminedChannelsFetcher.this, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fetch$1(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$3rILY7YQmsg_g5DzVPsEoekM-Hg(final AdminedChannelsFetcher adminedChannelsFetcher, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            adminedChannelsFetcher.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.UserInfoActivity$AdminedChannelsFetcher$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UserInfoActivity.AdminedChannelsFetcher.this.lambda$fetch$0(tLObject);
+                    UserInfoActivity.AdminedChannelsFetcher.$r8$lambda$0JO00QyvrUlqcckzgBcSSYFLWBE(UserInfoActivity.AdminedChannelsFetcher.this, tLObject);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fetch$0(TLObject tLObject) {
+        public static /* synthetic */ void $r8$lambda$0JO00QyvrUlqcckzgBcSSYFLWBE(AdminedChannelsFetcher adminedChannelsFetcher, TLObject tLObject) {
+            adminedChannelsFetcher.getClass();
             if (tLObject instanceof TLRPC.messages_Chats) {
-                this.chats.clear();
-                this.chats.addAll(((TLRPC.messages_Chats) tLObject).chats);
+                adminedChannelsFetcher.chats.clear();
+                adminedChannelsFetcher.chats.addAll(((TLRPC.messages_Chats) tLObject).chats);
             }
-            MessagesController.getInstance(this.currentAccount).putChats(this.chats, false);
-            this.loading = false;
-            this.loaded = true;
-            Iterator it = this.callbacks.iterator();
-            while (it.hasNext()) {
-                ((Runnable) it.next()).run();
+            int i = 0;
+            MessagesController.getInstance(adminedChannelsFetcher.currentAccount).putChats(adminedChannelsFetcher.chats, false);
+            adminedChannelsFetcher.loading = false;
+            adminedChannelsFetcher.loaded = true;
+            ArrayList arrayList = adminedChannelsFetcher.callbacks;
+            int size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((Runnable) obj).run();
             }
-            this.callbacks.clear();
+            adminedChannelsFetcher.callbacks.clear();
         }
 
         public void subscribe(Runnable runnable) {
@@ -1099,14 +1095,13 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             adminedChannelsFetcher.subscribe(new Runnable() { // from class: org.telegram.ui.UserInfoActivity$ChooseChannelFragment$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UserInfoActivity.ChooseChannelFragment.this.lambda$new$0();
+                    UserInfoActivity.ChooseChannelFragment.$r8$lambda$jdrg1RRMtDS9gSPdE6x81lk-Tu4(UserInfoActivity.ChooseChannelFragment.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            UniversalRecyclerView universalRecyclerView = this.listView;
+        public static /* synthetic */ void $r8$lambda$jdrg1RRMtDS9gSPdE6x81lk-Tu4(ChooseChannelFragment chooseChannelFragment) {
+            UniversalRecyclerView universalRecyclerView = chooseChannelFragment.listView;
             if (universalRecyclerView != null) {
                 universalRecyclerView.adapter.update(true);
             }
@@ -1162,12 +1157,16 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             if (TextUtils.isEmpty(this.query)) {
                 arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EditProfileChannelSelect)));
             }
-            Iterator it = this.channels.chats.iterator();
+            ArrayList arrayList2 = this.channels.chats;
+            int size = arrayList2.size();
             int i = 0;
-            while (it.hasNext()) {
-                TLRPC.Chat chat = (TLRPC.Chat) it.next();
+            int i2 = 0;
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
                 if (chat != null && !ChatObject.isMegagroup(chat)) {
-                    i++;
+                    i2++;
                     if (!TextUtils.isEmpty(this.query)) {
                         String lowerCase = this.query.toLowerCase();
                         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
@@ -1183,13 +1182,13 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
                     arrayList.add(UItem.asFilterChat(true, -chat.id).setChecked(this.selectedChannel == chat.id));
                 }
             }
-            if (TextUtils.isEmpty(this.query) && i == 0) {
+            if (TextUtils.isEmpty(this.query) && i2 == 0) {
                 arrayList.add(UItem.asButton(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew)).accent());
             }
             arrayList.add(UItem.asShadow(null));
             ActionBarMenuItem actionBarMenuItem = this.searchItem;
             if (actionBarMenuItem != null) {
-                actionBarMenuItem.setVisibility(i <= 5 ? 8 : 0);
+                actionBarMenuItem.setVisibility(i2 <= 5 ? 8 : 0);
             }
         }
 
@@ -1201,16 +1200,15 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
                 this.channels.subscribe(new Runnable() { // from class: org.telegram.ui.UserInfoActivity$ChooseChannelFragment$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        UserInfoActivity.ChooseChannelFragment.this.lambda$onResume$1();
+                        UserInfoActivity.ChooseChannelFragment.$r8$lambda$fYCRaEXAa-thwO5f8eSBb_-Ah7U(UserInfoActivity.ChooseChannelFragment.this);
                     }
                 });
                 this.invalidateAfterPause = false;
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onResume$1() {
-            UniversalRecyclerView universalRecyclerView = this.listView;
+        public static /* synthetic */ void $r8$lambda$fYCRaEXAa-thwO5f8eSBb_-Ah7U(ChooseChannelFragment chooseChannelFragment) {
+            UniversalRecyclerView universalRecyclerView = chooseChannelFragment.listView;
             if (universalRecyclerView != null) {
                 universalRecyclerView.adapter.update(true);
             }

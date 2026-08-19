@@ -8,7 +8,6 @@ import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: classes.dex */
@@ -64,9 +63,12 @@ public final class zak implements Handler.Callback {
             try {
                 ArrayList arrayList = new ArrayList(this.zad);
                 int i = this.zaf.get();
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener = (GoogleApiClient.OnConnectionFailedListener) it.next();
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener = (GoogleApiClient.OnConnectionFailedListener) obj;
                     if (this.zae && this.zaf.get() == i) {
                         if (this.zad.contains(onConnectionFailedListener)) {
                             onConnectionFailedListener.onConnectionFailed(connectionResult);
@@ -89,9 +91,12 @@ public final class zak implements Handler.Callback {
                 Preconditions.checkState(this.zaa.isEmpty());
                 ArrayList arrayList = new ArrayList(this.zac);
                 int i = this.zaf.get();
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    GoogleApiClient.ConnectionCallbacks connectionCallbacks = (GoogleApiClient.ConnectionCallbacks) it.next();
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    GoogleApiClient.ConnectionCallbacks connectionCallbacks = (GoogleApiClient.ConnectionCallbacks) obj;
                     if (!this.zae || !this.zab.isConnected() || this.zaf.get() != i) {
                         break;
                     } else if (!this.zaa.contains(connectionCallbacks)) {
@@ -114,9 +119,12 @@ public final class zak implements Handler.Callback {
                 this.zag = true;
                 ArrayList arrayList = new ArrayList(this.zac);
                 int i2 = this.zaf.get();
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    GoogleApiClient.ConnectionCallbacks connectionCallbacks = (GoogleApiClient.ConnectionCallbacks) it.next();
+                int size = arrayList.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj = arrayList.get(i3);
+                    i3++;
+                    GoogleApiClient.ConnectionCallbacks connectionCallbacks = (GoogleApiClient.ConnectionCallbacks) obj;
                     if (!this.zae || this.zaf.get() != i2) {
                         break;
                     } else if (this.zac.contains(connectionCallbacks)) {

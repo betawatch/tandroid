@@ -10,20 +10,23 @@ public class zzio {
     private static volatile zzio zzc;
     private static volatile zzio zzd;
     private static final zzio zze = new zzio(true);
-    private final Map zzf = Collections.emptyMap();
+    private final Map zzf = Collections.EMPTY_MAP;
 
     public static zzio zzb() {
-        zzio zzioVar = zzc;
-        if (zzioVar == null) {
-            synchronized (zzio.class) {
-                try {
-                    zzioVar = zzc;
-                    if (zzioVar == null) {
-                        zzioVar = zze;
-                        zzc = zzioVar;
-                    }
-                } finally {
+        zzio zzioVar;
+        zzio zzioVar2 = zzc;
+        if (zzioVar2 != null) {
+            return zzioVar2;
+        }
+        synchronized (zzio.class) {
+            try {
+                zzioVar = zzc;
+                if (zzioVar == null) {
+                    zzioVar = zze;
+                    zzc = zzioVar;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return zzioVar;

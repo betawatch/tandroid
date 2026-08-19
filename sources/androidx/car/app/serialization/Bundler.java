@@ -237,28 +237,45 @@ public abstract class Bundler {
         bundle.putInt("tag_class_type", 0);
         if (obj instanceof Boolean) {
             bundle.putBoolean("tag_value", ((Boolean) obj).booleanValue());
-        } else if (obj instanceof Byte) {
-            bundle.putByte("tag_value", ((Byte) obj).byteValue());
-        } else if (obj instanceof Character) {
-            bundle.putChar("tag_value", ((Character) obj).charValue());
-        } else if (obj instanceof Short) {
-            bundle.putShort("tag_value", ((Short) obj).shortValue());
-        } else if (obj instanceof Integer) {
-            bundle.putInt("tag_value", ((Integer) obj).intValue());
-        } else if (obj instanceof Long) {
-            bundle.putLong("tag_value", ((Long) obj).longValue());
-        } else if (obj instanceof Double) {
-            bundle.putDouble("tag_value", ((Double) obj).doubleValue());
-        } else if (obj instanceof Float) {
-            bundle.putFloat("tag_value", ((Float) obj).floatValue());
-        } else if (obj instanceof String) {
-            bundle.putString("tag_value", (String) obj);
-        } else if (obj instanceof Parcelable) {
-            bundle.putParcelable("tag_value", (Parcelable) obj);
-        } else {
-            throw new TracedBundlerException("Unsupported primitive type: " + obj.getClass().getName(), trace);
+            return bundle;
         }
-        return bundle;
+        if (obj instanceof Byte) {
+            bundle.putByte("tag_value", ((Byte) obj).byteValue());
+            return bundle;
+        }
+        if (obj instanceof Character) {
+            bundle.putChar("tag_value", ((Character) obj).charValue());
+            return bundle;
+        }
+        if (obj instanceof Short) {
+            bundle.putShort("tag_value", ((Short) obj).shortValue());
+            return bundle;
+        }
+        if (obj instanceof Integer) {
+            bundle.putInt("tag_value", ((Integer) obj).intValue());
+            return bundle;
+        }
+        if (obj instanceof Long) {
+            bundle.putLong("tag_value", ((Long) obj).longValue());
+            return bundle;
+        }
+        if (obj instanceof Double) {
+            bundle.putDouble("tag_value", ((Double) obj).doubleValue());
+            return bundle;
+        }
+        if (obj instanceof Float) {
+            bundle.putFloat("tag_value", ((Float) obj).floatValue());
+            return bundle;
+        }
+        if (obj instanceof String) {
+            bundle.putString("tag_value", (String) obj);
+            return bundle;
+        }
+        if (obj instanceof Parcelable) {
+            bundle.putParcelable("tag_value", (Parcelable) obj);
+            return bundle;
+        }
+        throw new TracedBundlerException("Unsupported primitive type: " + obj.getClass().getName(), trace);
     }
 
     private static Bundle serializeIInterface(IInterface iInterface) {
@@ -422,9 +439,12 @@ public abstract class Bundler {
             throw new TracedBundlerException("Bundle is missing the map", trace);
         }
         HashMap hashMap = new HashMap();
-        Iterator it = parcelableArrayList.iterator();
-        while (it.hasNext()) {
-            Bundle bundle2 = (Bundle) ((Parcelable) it.next());
+        int size = parcelableArrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = parcelableArrayList.get(i);
+            i++;
+            Bundle bundle2 = (Bundle) ((Parcelable) obj);
             Bundle bundle3 = bundle2.getBundle("tag_1");
             Bundle bundle4 = bundle2.getBundle("tag_2");
             if (bundle3 == null) {
@@ -448,9 +468,12 @@ public abstract class Bundler {
         if (parcelableArrayList == null) {
             throw new TracedBundlerException("Bundle is missing the collection", trace);
         }
-        Iterator it = parcelableArrayList.iterator();
-        while (it.hasNext()) {
-            collection.add(fromBundle((Bundle) ((Parcelable) it.next()), trace));
+        int size = parcelableArrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = parcelableArrayList.get(i);
+            i++;
+            collection.add(fromBundle((Bundle) ((Parcelable) obj), trace));
         }
         return collection;
     }

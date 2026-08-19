@@ -361,9 +361,13 @@ public final class MediaRouter {
                 throw new IllegalArgumentException("category must not be null");
             }
             MediaRouter.checkCallingThread();
-            Iterator it = this.mControlFilters.iterator();
-            while (it.hasNext()) {
-                if (((IntentFilter) it.next()).hasCategory(str)) {
+            ArrayList arrayList = this.mControlFilters;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                if (((IntentFilter) obj).hasCategory(str)) {
                     return true;
                 }
             }
@@ -535,17 +539,19 @@ public final class MediaRouter {
             if (list == list2) {
                 return true;
             }
-            if (list == null || list2 == null) {
-                return false;
-            }
-            ListIterator listIterator = list.listIterator();
-            ListIterator listIterator2 = list2.listIterator();
-            while (listIterator.hasNext() && listIterator2.hasNext()) {
-                if (!isSameControlFilter((IntentFilter) listIterator.next(), (IntentFilter) listIterator2.next())) {
-                    return false;
+            if (list != null && list2 != null) {
+                ListIterator listIterator = list.listIterator();
+                ListIterator listIterator2 = list2.listIterator();
+                while (listIterator.hasNext() && listIterator2.hasNext()) {
+                    if (!isSameControlFilter((IntentFilter) listIterator.next(), (IntentFilter) listIterator2.next())) {
+                        return false;
+                    }
+                }
+                if (!listIterator.hasNext() && !listIterator2.hasNext()) {
+                    return true;
                 }
             }
-            return (listIterator.hasNext() || listIterator2.hasNext()) ? false : true;
+            return false;
         }
 
         private boolean isSameControlFilter(IntentFilter intentFilter, IntentFilter intentFilter2) {

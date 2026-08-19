@@ -62,38 +62,44 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.Components.BottomSheetWithRecyclerListView, org.telegram.ui.Components.CreateRtmpStreamBottomSheet] */
     public CreateRtmpStreamBottomSheet(final Context context, final int i, final TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, final Utilities.Callback callback, final Theme.ResourcesProvider resourcesProvider) {
-        super(context, null, false, false, false, resourcesProvider);
         int i2;
-        this.story = true;
-        this.topPadding = 0.126f;
-        this.joinCallDelegate = null;
-        this.hasFewPeers = false;
+        final ?? bottomSheetWithRecyclerListView = new BottomSheetWithRecyclerListView(context, null, false, false, false, resourcesProvider);
+        bottomSheetWithRecyclerListView.story = true;
+        bottomSheetWithRecyclerListView.topPadding = 0.126f;
+        bottomSheetWithRecyclerListView.joinCallDelegate = null;
+        bottomSheetWithRecyclerListView.hasFewPeers = false;
         long peerDialogId = DialogObject.getPeerDialogId(getgroupcallstreamrtmpurl.peer);
-        this.hasRevokeButton = callback != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i).getChat(Long.valueOf(-peerDialogId))));
+        bottomSheetWithRecyclerListView.hasRevokeButton = callback != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i).getChat(Long.valueOf(-peerDialogId))));
+        CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet = bottomSheetWithRecyclerListView;
         if (callback != null) {
-            this.hasButton = true;
+            bottomSheetWithRecyclerListView.hasButton = true;
             final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
             buttonWithCounterView.setText(LocaleController.getString(R.string.LiveStoryRTMPEnable), false);
-            this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (this.hasRevokeButton ? 52 : 0) + 12));
+            bottomSheetWithRecyclerListView.containerView.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (bottomSheetWithRecyclerListView.hasRevokeButton ? 52 : 0) + 12));
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CreateRtmpStreamBottomSheet.this.lambda$new$2(callback, buttonWithCounterView, view);
+                    CreateRtmpStreamBottomSheet.$r8$lambda$INw1K4jcWgLxJcawycOXi22md7A(CreateRtmpStreamBottomSheet.this, callback, buttonWithCounterView, view);
                 }
             });
-            if (this.hasRevokeButton) {
+            boolean z = bottomSheetWithRecyclerListView.hasRevokeButton;
+            createRtmpStreamBottomSheet = bottomSheetWithRecyclerListView;
+            if (z) {
                 final ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, false, resourcesProvider);
                 buttonWithCounterView2.setColor(Theme.getColor(Theme.key_fill_RedNormal));
                 buttonWithCounterView2.text.setTypeface(AndroidUtilities.bold());
                 buttonWithCounterView2.setText(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false);
+                CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet2 = this;
                 buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda14
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        CreateRtmpStreamBottomSheet.this.lambda$new$6(context, resourcesProvider, buttonWithCounterView2, getgroupcallstreamrtmpurl, i, view);
+                        CreateRtmpStreamBottomSheet.$r8$lambda$Sl93Rxj6AnrfAZ8cmV4mXMUb2mw(CreateRtmpStreamBottomSheet.this, context, resourcesProvider, buttonWithCounterView2, getgroupcallstreamrtmpurl, i, view);
                     }
                 });
-                this.containerView.addView(buttonWithCounterView2, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
+                createRtmpStreamBottomSheet2.containerView.addView(buttonWithCounterView2, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
+                createRtmpStreamBottomSheet = createRtmpStreamBottomSheet2;
             }
         }
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
@@ -101,30 +107,30 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         defaultItemAnimator.setDelayAnimations(false);
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         defaultItemAnimator.setDurations(350L);
-        this.recyclerListView.setItemAnimator(defaultItemAnimator);
-        RecyclerListView recyclerListView = this.recyclerListView;
-        int i3 = this.backgroundPaddingLeft;
-        if (this.hasButton) {
-            i2 = AndroidUtilities.dp(this.hasRevokeButton ? 124.0f : 72.0f);
+        createRtmpStreamBottomSheet.recyclerListView.setItemAnimator(defaultItemAnimator);
+        RecyclerListView recyclerListView = createRtmpStreamBottomSheet.recyclerListView;
+        int i3 = createRtmpStreamBottomSheet.backgroundPaddingLeft;
+        if (createRtmpStreamBottomSheet.hasButton) {
+            i2 = AndroidUtilities.dp(createRtmpStreamBottomSheet.hasRevokeButton ? 124.0f : 72.0f);
         } else {
             i2 = 0;
         }
         recyclerListView.setPadding(i3, 0, i3, i2);
-        fixNavigationBar();
-        updateTitle();
-        this.rtmpUrl = groupcallstreamrtmpurl.url;
-        this.rtmpKey = groupcallstreamrtmpurl.key;
-        this.rtmpKeySpoiled = new SpannableStringBuilder(this.rtmpKey);
+        createRtmpStreamBottomSheet.fixNavigationBar();
+        createRtmpStreamBottomSheet.updateTitle();
+        createRtmpStreamBottomSheet.rtmpUrl = groupcallstreamrtmpurl.url;
+        createRtmpStreamBottomSheet.rtmpKey = groupcallstreamrtmpurl.key;
+        createRtmpStreamBottomSheet.rtmpKeySpoiled = new SpannableStringBuilder(createRtmpStreamBottomSheet.rtmpKey);
         TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
         textStyleRun.flags |= 256;
         textStyleRun.start = 0;
-        textStyleRun.end = this.rtmpKeySpoiled.length();
-        this.rtmpKeySpoiled.setSpan(new TextStyleSpan(textStyleRun), 0, this.rtmpKeySpoiled.length(), 0);
-        this.adapter.update(false);
+        textStyleRun.end = createRtmpStreamBottomSheet.rtmpKeySpoiled.length();
+        createRtmpStreamBottomSheet.rtmpKeySpoiled.setSpan(new TextStyleSpan(textStyleRun), 0, createRtmpStreamBottomSheet.rtmpKeySpoiled.length(), 0);
+        createRtmpStreamBottomSheet.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Utilities.Callback callback, final ButtonWithCounterView buttonWithCounterView, View view) {
+    public static /* synthetic */ void $r8$lambda$INw1K4jcWgLxJcawycOXi22md7A(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, Utilities.Callback callback, final ButtonWithCounterView buttonWithCounterView, View view) {
+        createRtmpStreamBottomSheet.getClass();
         callback.run(new Browser.Progress(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
@@ -133,29 +139,29 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         }, new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                CreateRtmpStreamBottomSheet.this.lambda$new$1(buttonWithCounterView);
+                CreateRtmpStreamBottomSheet.$r8$lambda$JlrPQx2p8J__9sp7Kn54F2BW_IA(CreateRtmpStreamBottomSheet.this, buttonWithCounterView);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(ButtonWithCounterView buttonWithCounterView) {
+    public static /* synthetic */ void $r8$lambda$JlrPQx2p8J__9sp7Kn54F2BW_IA(CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, ButtonWithCounterView buttonWithCounterView) {
+        createRtmpStreamBottomSheet.getClass();
         buttonWithCounterView.setLoading(false);
-        lambda$new$0();
+        createRtmpStreamBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(Context context, Theme.ResourcesProvider resourcesProvider, final ButtonWithCounterView buttonWithCounterView, final TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, final int i, View view) {
+    public static /* synthetic */ void $r8$lambda$Sl93Rxj6AnrfAZ8cmV4mXMUb2mw(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, Context context, Theme.ResourcesProvider resourcesProvider, final ButtonWithCounterView buttonWithCounterView, final TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, final int i, View view) {
+        createRtmpStreamBottomSheet.getClass();
         new AlertDialog.Builder(context, resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$5(buttonWithCounterView, getgroupcallstreamrtmpurl, i, alertDialog, i2);
+                CreateRtmpStreamBottomSheet.$r8$lambda$CgXtk0rFCYP6j0B9yOcfgs4_Auo(CreateRtmpStreamBottomSheet.this, buttonWithCounterView, getgroupcallstreamrtmpurl, i, alertDialog, i2);
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(final ButtonWithCounterView buttonWithCounterView, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, int i, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void $r8$lambda$CgXtk0rFCYP6j0B9yOcfgs4_Auo(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, final ButtonWithCounterView buttonWithCounterView, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, int i, AlertDialog alertDialog, int i2) {
+        createRtmpStreamBottomSheet.getClass();
         if (buttonWithCounterView.isLoading()) {
             return;
         }
@@ -164,30 +170,30 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         ConnectionsManager.getInstance(i).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$4(buttonWithCounterView, tLObject, tL_error);
+                CreateRtmpStreamBottomSheet.$r8$lambda$yd5M6XeOdCe2CBHlu_FxS1qUOtQ(CreateRtmpStreamBottomSheet.this, buttonWithCounterView, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(final ButtonWithCounterView buttonWithCounterView, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$yd5M6XeOdCe2CBHlu_FxS1qUOtQ(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, final ButtonWithCounterView buttonWithCounterView, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        createRtmpStreamBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                CreateRtmpStreamBottomSheet.this.lambda$new$3(buttonWithCounterView, tLObject);
+                CreateRtmpStreamBottomSheet.$r8$lambda$X7nwlmCC58cOd-Nf6d8l5Os7rYA(CreateRtmpStreamBottomSheet.this, buttonWithCounterView, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(ButtonWithCounterView buttonWithCounterView, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$X7nwlmCC58cOd-Nf6d8l5Os7rYA(CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, ButtonWithCounterView buttonWithCounterView, TLObject tLObject) {
+        createRtmpStreamBottomSheet.getClass();
         buttonWithCounterView.setLoading(false);
         if (tLObject instanceof TL_phone.groupCallStreamRtmpUrl) {
             TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
-            this.rtmpUrl = groupcallstreamrtmpurl.url;
-            this.rtmpKey = groupcallstreamrtmpurl.key;
-            this.rtmpKeySpoiled = new SpannableStringBuilder(this.rtmpKey);
-            this.adapter.update(true);
+            createRtmpStreamBottomSheet.rtmpUrl = groupcallstreamrtmpurl.url;
+            createRtmpStreamBottomSheet.rtmpKey = groupcallstreamrtmpurl.key;
+            createRtmpStreamBottomSheet.rtmpKeySpoiled = new SpannableStringBuilder(createRtmpStreamBottomSheet.rtmpKey);
+            createRtmpStreamBottomSheet.adapter.update(true);
         }
     }
 
@@ -213,7 +219,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$7(peer, view);
+                CreateRtmpStreamBottomSheet.$r8$lambda$W5jeVHkpG1qCUM44vNJFodWUWpo(CreateRtmpStreamBottomSheet.this, peer, view);
             }
         });
         if (isCreator) {
@@ -224,7 +230,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CreateRtmpStreamBottomSheet.this.lambda$new$11(context, buttonWithCounterView, j, view);
+                    new AlertDialog.Builder(context, r0.resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda10
+                        @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                        public final void onClick(AlertDialog alertDialog, int i) {
+                            CreateRtmpStreamBottomSheet.$r8$lambda$W8JYa7WOMP1qslzUbTlfrWBnVng(CreateRtmpStreamBottomSheet.this, r2, r3, alertDialog, i);
+                        }
+                    }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
                 }
             });
             this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
@@ -246,92 +257,81 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda8
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$13(tLObject, tL_error);
+                CreateRtmpStreamBottomSheet.$r8$lambda$dg3tloRoDZUMyIb6hW1zWIhO2bA(CreateRtmpStreamBottomSheet.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(TLRPC.Peer peer, View view) {
-        this.selectAfterDismiss = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(peer));
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$W5jeVHkpG1qCUM44vNJFodWUWpo(CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, TLRPC.Peer peer, View view) {
+        createRtmpStreamBottomSheet.selectAfterDismiss = MessagesController.getInstance(createRtmpStreamBottomSheet.currentAccount).getInputPeer(MessageObject.getPeerId(peer));
+        createRtmpStreamBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$11(Context context, final ButtonWithCounterView buttonWithCounterView, final long j, View view) {
-        new AlertDialog.Builder(context, this.resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda10
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$10(buttonWithCounterView, j, alertDialog, i);
-            }
-        }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$10(final ButtonWithCounterView buttonWithCounterView, long j, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$W8JYa7WOMP1qslzUbTlfrWBnVng(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, final ButtonWithCounterView buttonWithCounterView, long j, AlertDialog alertDialog, int i) {
+        createRtmpStreamBottomSheet.getClass();
         if (buttonWithCounterView.isLoading()) {
             return;
         }
         buttonWithCounterView.setLoading(true);
         TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-        getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
+        getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(createRtmpStreamBottomSheet.currentAccount).getInputPeer(j);
         getgroupcallstreamrtmpurl.revoke = true;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda11
+        ConnectionsManager.getInstance(createRtmpStreamBottomSheet.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda11
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$9(buttonWithCounterView, tLObject, tL_error);
+                CreateRtmpStreamBottomSheet.$r8$lambda$Yl-MNIcVCub9KY5ci2FOs46ahHs(CreateRtmpStreamBottomSheet.this, buttonWithCounterView, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(final ButtonWithCounterView buttonWithCounterView, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Yl-MNIcVCub9KY5ci2FOs46ahHs(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, final ButtonWithCounterView buttonWithCounterView, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        createRtmpStreamBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                CreateRtmpStreamBottomSheet.this.lambda$new$8(buttonWithCounterView, tLObject);
+                CreateRtmpStreamBottomSheet.$r8$lambda$5BeFYzfNcVolLAnHlhxjSYj51WM(CreateRtmpStreamBottomSheet.this, buttonWithCounterView, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(ButtonWithCounterView buttonWithCounterView, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$5BeFYzfNcVolLAnHlhxjSYj51WM(CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, ButtonWithCounterView buttonWithCounterView, TLObject tLObject) {
+        createRtmpStreamBottomSheet.getClass();
         buttonWithCounterView.setLoading(false);
         if (tLObject == null || !(tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
             return;
         }
         TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
-        this.rtmpUrl = groupcallstreamrtmpurl.url;
-        this.rtmpKey = groupcallstreamrtmpurl.key;
-        this.rtmpKeySpoiled = new SpannableStringBuilder(this.rtmpKey);
-        this.adapter.update(true);
+        createRtmpStreamBottomSheet.rtmpUrl = groupcallstreamrtmpurl.url;
+        createRtmpStreamBottomSheet.rtmpKey = groupcallstreamrtmpurl.key;
+        createRtmpStreamBottomSheet.rtmpKeySpoiled = new SpannableStringBuilder(createRtmpStreamBottomSheet.rtmpKey);
+        createRtmpStreamBottomSheet.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$13(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$dg3tloRoDZUMyIb6hW1zWIhO2bA(final CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        createRtmpStreamBottomSheet.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                CreateRtmpStreamBottomSheet.this.lambda$new$12(tLObject);
+                CreateRtmpStreamBottomSheet.$r8$lambda$BylSXsrpWi-1cZInI-pBsqmr4Z0(CreateRtmpStreamBottomSheet.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$12(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$BylSXsrpWi-1cZInI-pBsqmr4Z0(CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet, TLObject tLObject) {
+        createRtmpStreamBottomSheet.getClass();
         if (tLObject == null || !(tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
             return;
         }
         TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
-        this.rtmpUrl = groupcallstreamrtmpurl.url;
-        this.rtmpKey = groupcallstreamrtmpurl.key;
-        this.rtmpKeySpoiled = new SpannableStringBuilder(this.rtmpKey);
+        createRtmpStreamBottomSheet.rtmpUrl = groupcallstreamrtmpurl.url;
+        createRtmpStreamBottomSheet.rtmpKey = groupcallstreamrtmpurl.key;
+        createRtmpStreamBottomSheet.rtmpKeySpoiled = new SpannableStringBuilder(createRtmpStreamBottomSheet.rtmpKey);
         TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
         textStyleRun.flags |= 256;
         textStyleRun.start = 0;
-        textStyleRun.end = this.rtmpKeySpoiled.length();
-        this.rtmpKeySpoiled.setSpan(new TextStyleSpan(textStyleRun), 0, this.rtmpKeySpoiled.length(), 0);
-        this.adapter.update(false);
+        textStyleRun.end = createRtmpStreamBottomSheet.rtmpKeySpoiled.length();
+        createRtmpStreamBottomSheet.rtmpKeySpoiled.setSpan(new TextStyleSpan(textStyleRun), 0, createRtmpStreamBottomSheet.rtmpKeySpoiled.length(), 0);
+        createRtmpStreamBottomSheet.adapter.update(false);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -419,15 +419,15 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
             textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$TextDetailCellFactory$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CreateRtmpStreamBottomSheet.TextDetailCellFactory.this.lambda$createView$0(context, textDetailCell, view);
+                    CreateRtmpStreamBottomSheet.TextDetailCellFactory.$r8$lambda$kJtNA81dr8ChSozeZgHipw_SSA8(CreateRtmpStreamBottomSheet.TextDetailCellFactory.this, context, textDetailCell, view);
                 }
             });
             return textDetailCell;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$0(Context context, TextDetailCell textDetailCell, View view) {
-            copyRtmpValue(context, textDetailCell.textView.getText().toString());
+        public static /* synthetic */ void $r8$lambda$kJtNA81dr8ChSozeZgHipw_SSA8(TextDetailCellFactory textDetailCellFactory, Context context, TextDetailCell textDetailCell, View view) {
+            textDetailCellFactory.getClass();
+            textDetailCellFactory.copyRtmpValue(context, textDetailCell.textView.getText().toString());
         }
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory

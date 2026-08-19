@@ -13,9 +13,9 @@ public class Base64 {
     }
 
     public static class Encoder {
-        private static final char[] a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
-        private static final char[] b = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_'};
-        static final Encoder c = new Encoder();
+        public static final char[] a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+        public static final char[] b = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_'};
+        public static final Encoder c = new Encoder();
 
         public String encodeToString(byte[] bArr) {
             int length = ((bArr.length + 2) / 3) * 4;
@@ -76,9 +76,9 @@ public class Base64 {
     }
 
     public static class Decoder {
-        private static final int[] a;
-        private static final int[] b;
-        static final Decoder c;
+        public static final int[] a;
+        public static final int[] b;
+        public static final Decoder c;
 
         static {
             int[] iArr = new int[256];
@@ -98,13 +98,13 @@ public class Base64 {
             c = new Decoder();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:50:0x00b4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:32:0x00b8, code lost:
         
-            if (r0[r4] == 61) goto L40;
+            if (r0[r3] == 61) goto L42;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:52:0x00bb, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:34:0x00bf, code lost:
         
-            if (r10 != 18) goto L53;
+            if (r10 != 18) goto L55;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -154,7 +154,7 @@ public class Base64 {
                         if ((i10 | i11 | i12 | i14) < 0) {
                             break;
                         }
-                        int i15 = i14 | (i10 << 18) | (i11 << 12) | (i12 << 6);
+                        int i15 = (i10 << 18) | (i11 << 12) | (i12 << 6) | i14;
                         bArr[i7] = (byte) (i15 >> 16);
                         int i16 = i7 + 2;
                         bArr[i7 + 1] = (byte) (i15 >> 8);
@@ -169,6 +169,7 @@ public class Base64 {
                 int i17 = i5 + 1;
                 int i18 = iArr[bytes[i5] & 255];
                 if (i18 >= 0) {
+                    i4 = 18;
                     int i19 = (i18 << i6) | i8;
                     i6 -= 6;
                     if (i6 < 0) {
@@ -183,7 +184,6 @@ public class Base64 {
                         i8 = i19;
                     }
                     i5 = i17;
-                    i4 = 18;
                 } else {
                     if (i18 != -2) {
                         throw new IllegalArgumentException("Illegal base64 character " + Integer.toString(bytes[i5], 16));

@@ -35,8 +35,7 @@ public class TermsOfServiceView extends FrameLayout {
         void onAcceptTerms(int i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$accept$7(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Q5jR4CwkF0yQ7i6obseNrYk41DM(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
     public TermsOfServiceView(Context context) {
@@ -90,7 +89,7 @@ public class TermsOfServiceView extends FrameLayout {
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                TermsOfServiceView.this.lambda$new$4(view2);
+                TermsOfServiceView.$r8$lambda$pFMJkWTyV9l8O1_AxhehM9bEXqk(TermsOfServiceView.this, view2);
             }
         });
         TextView textView4 = new TextView(context);
@@ -105,7 +104,7 @@ public class TermsOfServiceView extends FrameLayout {
         textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                TermsOfServiceView.this.lambda$new$6(view2);
+                TermsOfServiceView.$r8$lambda$iVlWSzx6rq5DGS9L-9RvCs2hHvQ(TermsOfServiceView.this, view2);
             }
         });
         View view2 = new View(context);
@@ -116,14 +115,14 @@ public class TermsOfServiceView extends FrameLayout {
         addView(view2, layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
+    public static /* synthetic */ void $r8$lambda$pFMJkWTyV9l8O1_AxhehM9bEXqk(final TermsOfServiceView termsOfServiceView, View view) {
+        termsOfServiceView.getClass();
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle(LocaleController.getString(R.string.TermsOfService));
         builder.setPositiveButton(LocaleController.getString(R.string.DeclineDeactivate), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                TermsOfServiceView.this.lambda$new$3(alertDialog, i);
+                TermsOfServiceView.$r8$lambda$Bx6-yIotGYJOs92_e2RlzTbzLNw(TermsOfServiceView.this, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Back), null);
@@ -131,55 +130,54 @@ public class TermsOfServiceView extends FrameLayout {
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(AlertDialog alertDialog, int i) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+    public static /* synthetic */ void $r8$lambda$Bx6-yIotGYJOs92_e2RlzTbzLNw(final TermsOfServiceView termsOfServiceView, AlertDialog alertDialog, int i) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(termsOfServiceView.getContext());
         builder.setMessage(LocaleController.getString(R.string.TosDeclineDeleteAccount));
         builder.setTitle(LocaleController.getString(R.string.AppName));
         builder.setPositiveButton(LocaleController.getString(R.string.Deactivate), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog2, int i2) {
-                TermsOfServiceView.this.lambda$new$2(alertDialog2, i2);
+                TermsOfServiceView.$r8$lambda$XS2WdDe8-LJLKd9qO3q1b8vuIag(TermsOfServiceView.this, alertDialog2, i2);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(AlertDialog alertDialog, int i) {
-        final AlertDialog alertDialog2 = new AlertDialog(getContext(), 3);
+    public static /* synthetic */ void $r8$lambda$XS2WdDe8-LJLKd9qO3q1b8vuIag(final TermsOfServiceView termsOfServiceView, AlertDialog alertDialog, int i) {
+        termsOfServiceView.getClass();
+        final AlertDialog alertDialog2 = new AlertDialog(termsOfServiceView.getContext(), 3);
         alertDialog2.setCanCancel(false);
         TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
         deleteaccount.reason = "Decline ToS update";
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteaccount, new RequestDelegate() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda6
+        ConnectionsManager.getInstance(termsOfServiceView.currentAccount).sendRequest(deleteaccount, new RequestDelegate() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                TermsOfServiceView.this.lambda$new$1(alertDialog2, tLObject, tL_error);
+                TermsOfServiceView.$r8$lambda$YvZnBp54sEFqeExaG8-lYLREsOw(TermsOfServiceView.this, alertDialog2, tLObject, tL_error);
             }
         });
         alertDialog2.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(final AlertDialog alertDialog, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$YvZnBp54sEFqeExaG8-lYLREsOw(final TermsOfServiceView termsOfServiceView, final AlertDialog alertDialog, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        termsOfServiceView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                TermsOfServiceView.this.lambda$new$0(alertDialog, tLObject, tL_error);
+                TermsOfServiceView.$r8$lambda$iq-CDrmJ-os2obDULFWL9W8xYFE(TermsOfServiceView.this, alertDialog, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(AlertDialog alertDialog, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$iq-CDrmJ-os2obDULFWL9W8xYFE(TermsOfServiceView termsOfServiceView, AlertDialog alertDialog, TLObject tLObject, TLRPC.TL_error tL_error) {
+        termsOfServiceView.getClass();
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
             FileLog.e(e);
         }
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            MessagesController.getInstance(this.currentAccount).performLogout(0);
+            MessagesController.getInstance(termsOfServiceView.currentAccount).performLogout(0);
             return;
         }
         if (tL_error == null || tL_error.code != -1000) {
@@ -187,7 +185,7 @@ public class TermsOfServiceView extends FrameLayout {
             if (tL_error != null) {
                 string = string + "\n" + tL_error.text;
             }
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            AlertDialog.Builder builder = new AlertDialog.Builder(termsOfServiceView.getContext());
             builder.setTitle(LocaleController.getString(R.string.AppName));
             builder.setMessage(string);
             builder.setPositiveButton(LocaleController.getString(R.string.OK), null);
@@ -195,38 +193,33 @@ public class TermsOfServiceView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(View view) {
-        if (this.currentTos.min_age_confirm != 0) {
+    public static /* synthetic */ void $r8$lambda$iVlWSzx6rq5DGS9L-9RvCs2hHvQ(final TermsOfServiceView termsOfServiceView, View view) {
+        if (termsOfServiceView.currentTos.min_age_confirm != 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
             builder.setTitle(LocaleController.getString(R.string.TosAgeTitle));
             builder.setPositiveButton(LocaleController.getString(R.string.Agree), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda2
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    TermsOfServiceView.this.lambda$new$5(alertDialog, i);
+                    TermsOfServiceView.this.accept();
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            builder.setMessage(LocaleController.formatString("TosAgeText", R.string.TosAgeText, LocaleController.formatPluralString("Years", this.currentTos.min_age_confirm, new Object[0])));
+            builder.setMessage(LocaleController.formatString("TosAgeText", R.string.TosAgeText, LocaleController.formatPluralString("Years", termsOfServiceView.currentTos.min_age_confirm, new Object[0])));
             builder.show();
             return;
         }
-        accept();
+        termsOfServiceView.accept();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(AlertDialog alertDialog, int i) {
-        accept();
-    }
-
-    private void accept() {
+    public void accept() {
         this.delegate.onAcceptTerms(this.currentAccount);
         TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
         tL_help_acceptTermsOfService.id = this.currentTos.id;
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_help_acceptTermsOfService, new RequestDelegate() { // from class: org.telegram.ui.Components.TermsOfServiceView$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                TermsOfServiceView.lambda$accept$7(tLObject, tL_error);
+                TermsOfServiceView.$r8$lambda$Q5jR4CwkF0yQ7i6obseNrYk41DM(tLObject, tL_error);
             }
         });
     }

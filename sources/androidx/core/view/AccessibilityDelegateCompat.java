@@ -186,6 +186,6 @@ public class AccessibilityDelegateCompat {
 
     static List getActionList(View view) {
         List list = (List) view.getTag(R$id.tag_accessibility_actions);
-        return list == null ? Collections.emptyList() : list;
+        return list == null ? Collections.EMPTY_LIST : list;
     }
 }

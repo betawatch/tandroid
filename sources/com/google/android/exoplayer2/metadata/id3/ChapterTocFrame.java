@@ -50,11 +50,13 @@ public final class ChapterTocFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || ChapterTocFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && ChapterTocFrame.class == obj.getClass()) {
+            ChapterTocFrame chapterTocFrame = (ChapterTocFrame) obj;
+            if (this.isRoot == chapterTocFrame.isRoot && this.isOrdered == chapterTocFrame.isOrdered && Util.areEqual(this.elementId, chapterTocFrame.elementId) && Arrays.equals(this.children, chapterTocFrame.children) && Arrays.equals(this.subFrames, chapterTocFrame.subFrames)) {
+                return true;
+            }
         }
-        ChapterTocFrame chapterTocFrame = (ChapterTocFrame) obj;
-        return this.isRoot == chapterTocFrame.isRoot && this.isOrdered == chapterTocFrame.isOrdered && Util.areEqual(this.elementId, chapterTocFrame.elementId) && Arrays.equals(this.children, chapterTocFrame.children) && Arrays.equals(this.subFrames, chapterTocFrame.subFrames);
+        return false;
     }
 
     public int hashCode() {

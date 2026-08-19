@@ -114,40 +114,40 @@ public class EnableTopicsActivity extends BaseFragment {
             arrayList.add(TopicsLayoutSwitcher.Factory.asSwitcher(2, new View.OnClickListener() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EnableTopicsActivity.this.lambda$fillItems$0(view);
+                    EnableTopicsActivity.$r8$lambda$mdJriEF8eB8wObjBRrNmHOnLFoo(EnableTopicsActivity.this, view);
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EnableTopicsActivity.this.lambda$fillItems$1(view);
+                    EnableTopicsActivity.$r8$lambda$I5DlRwtpTkSSHH7lzef2cYixhSw(EnableTopicsActivity.this, view);
                 }
             }).setChecked(this.isTabs));
             arrayList.add(UItem.asShadow(LocaleController.getString(R.string.TopicsLayoutInfo)));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$0(View view) {
+    public static /* synthetic */ void $r8$lambda$mdJriEF8eB8wObjBRrNmHOnLFoo(EnableTopicsActivity enableTopicsActivity, View view) {
+        enableTopicsActivity.getClass();
         TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view.getParent();
-        this.isTabs = true;
+        enableTopicsActivity.isTabs = true;
         topicsLayoutSwitcher.setChecked(true, true);
-        Utilities.Callback2 callback2 = this.onForumChanged;
+        Utilities.Callback2 callback2 = enableTopicsActivity.onForumChanged;
         if (callback2 != null) {
-            callback2.run(Boolean.valueOf(this.forum), Boolean.valueOf(this.isTabs));
+            callback2.run(Boolean.valueOf(enableTopicsActivity.forum), Boolean.valueOf(enableTopicsActivity.isTabs));
         }
-        topicsLayoutChanged();
+        enableTopicsActivity.topicsLayoutChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$1(View view) {
+    public static /* synthetic */ void $r8$lambda$I5DlRwtpTkSSHH7lzef2cYixhSw(EnableTopicsActivity enableTopicsActivity, View view) {
+        enableTopicsActivity.getClass();
         TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view.getParent();
-        this.isTabs = false;
+        enableTopicsActivity.isTabs = false;
         topicsLayoutSwitcher.setChecked(false, true);
-        Utilities.Callback2 callback2 = this.onForumChanged;
+        Utilities.Callback2 callback2 = enableTopicsActivity.onForumChanged;
         if (callback2 != null) {
-            callback2.run(Boolean.valueOf(this.forum), Boolean.valueOf(this.isTabs));
+            callback2.run(Boolean.valueOf(enableTopicsActivity.forum), Boolean.valueOf(enableTopicsActivity.isTabs));
         }
-        topicsLayoutChanged();
+        enableTopicsActivity.topicsLayoutChanged();
     }
 
     private void topicsLayoutChanged() {
@@ -158,7 +158,7 @@ public class EnableTopicsActivity extends BaseFragment {
             if (baseFragment instanceof DialogsActivity) {
                 RightSlidingDialogContainer rightSlidingDialogContainer = ((DialogsActivity) baseFragment).rightSlidingDialogContainer;
                 if (rightSlidingDialogContainer.hasFragment()) {
-                    rightSlidingDialogContainer.lambda$presentFragment$1();
+                    rightSlidingDialogContainer.finishPreview();
                 }
             }
         }
@@ -282,7 +282,7 @@ public class EnableTopicsActivity extends BaseFragment {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.EnableTopicsActivity$TopicsLayoutSwitcher$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        EnableTopicsActivity.TopicsLayoutSwitcher.this.lambda$setChecked$0(valueAnimator2);
+                        EnableTopicsActivity.TopicsLayoutSwitcher.$r8$lambda$sq-KtdnSmyIjj0uJ9DPW4ShSUNo(EnableTopicsActivity.TopicsLayoutSwitcher.this, valueAnimator2);
                     }
                 });
                 this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.EnableTopicsActivity.TopicsLayoutSwitcher.1
@@ -334,19 +334,19 @@ public class EnableTopicsActivity extends BaseFragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setChecked$0(ValueAnimator valueAnimator) {
-            this.tabsAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            BackupImageView backupImageView = this.leftImageView;
+        public static /* synthetic */ void $r8$lambda$sq-KtdnSmyIjj0uJ9DPW4ShSUNo(TopicsLayoutSwitcher topicsLayoutSwitcher, ValueAnimator valueAnimator) {
+            topicsLayoutSwitcher.getClass();
+            topicsLayoutSwitcher.tabsAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            BackupImageView backupImageView = topicsLayoutSwitcher.leftImageView;
             int i = Theme.key_windowBackgroundWhiteGrayText5;
-            int color = Theme.getColor(i, this.resourcesProvider);
+            int color = Theme.getColor(i, topicsLayoutSwitcher.resourcesProvider);
             int i2 = Theme.key_featuredStickers_addButton;
-            int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i2, this.resourcesProvider), this.tabsAlpha);
+            int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i2, topicsLayoutSwitcher.resourcesProvider), topicsLayoutSwitcher.tabsAlpha);
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
             backupImageView.setColorFilter(new PorterDuffColorFilter(blendARGB, mode));
-            this.leftImageView.invalidate();
-            this.rightImageView.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i, this.resourcesProvider), Theme.getColor(i2, this.resourcesProvider), 1.0f - this.tabsAlpha), mode));
-            this.rightImageView.invalidate();
+            topicsLayoutSwitcher.leftImageView.invalidate();
+            topicsLayoutSwitcher.rightImageView.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i, topicsLayoutSwitcher.resourcesProvider), Theme.getColor(i2, topicsLayoutSwitcher.resourcesProvider), 1.0f - topicsLayoutSwitcher.tabsAlpha), mode));
+            topicsLayoutSwitcher.rightImageView.invalidate();
         }
 
         public static final class Factory extends UItem.UItemFactory {

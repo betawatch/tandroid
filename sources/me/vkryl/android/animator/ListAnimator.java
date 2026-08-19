@@ -264,9 +264,13 @@ public final class ListAnimator implements Iterable {
 
     public void applyAnimation(float f) {
         boolean applyAnimation = this.metadata.applyAnimation(f);
-        Iterator it = this.entries.iterator();
-        while (it.hasNext()) {
-            applyAnimation = ((Entry) it.next()).applyAnimation(f) || applyAnimation;
+        ArrayList arrayList = this.entries;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            applyAnimation = ((Entry) obj).applyAnimation(f) || applyAnimation;
         }
         if (applyAnimation) {
             this.callback.onItemsChanged(this);
@@ -312,21 +316,29 @@ public final class ListAnimator implements Iterable {
     private int indexOfItem(Object obj) {
         int i = 0;
         if (obj == null) {
-            Iterator it = this.entries.iterator();
-            while (it.hasNext()) {
-                if (((Entry) it.next()).item == null) {
-                    return i;
-                }
+            ArrayList arrayList = this.entries;
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i < size) {
+                Object obj2 = arrayList.get(i);
                 i++;
+                if (((Entry) obj2).item == null) {
+                    return i2;
+                }
+                i2++;
             }
             return -1;
         }
-        Iterator it2 = this.entries.iterator();
-        while (it2.hasNext()) {
-            if (obj.equals(((Entry) it2.next()).item)) {
-                return i;
-            }
+        ArrayList arrayList2 = this.entries;
+        int size2 = arrayList2.size();
+        int i3 = 0;
+        while (i < size2) {
+            Object obj3 = arrayList2.get(i);
             i++;
+            if (obj.equals(((Entry) obj3).item)) {
+                return i3;
+            }
+            i3++;
         }
         return -1;
     }
@@ -344,6 +356,7 @@ public final class ListAnimator implements Iterable {
     }
 
     private void onApplyListChanges() {
+        int i = 0;
         if (this.foundListChanges) {
             this.foundListChanges = false;
             FactorAnimator factorAnimator = this.animator;
@@ -354,9 +367,12 @@ public final class ListAnimator implements Iterable {
             return;
         }
         if (this.animator == null) {
-            Iterator it = this.entries.iterator();
-            while (it.hasNext()) {
-                Entry entry = (Entry) it.next();
+            ArrayList arrayList = this.entries;
+            int size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                Entry entry = (Entry) obj;
                 entry.visibility.setFrom(entry.visibility.get());
                 entry.position.setFrom(entry.position.get());
             }
@@ -364,32 +380,39 @@ public final class ListAnimator implements Iterable {
     }
 
     public void measureImpl(boolean z) {
-        Iterator it = this.actualList.iterator();
+        ArrayList arrayList;
+        ArrayList arrayList2 = this.actualList;
+        int size = arrayList2.size();
         int i = 0;
         int i2 = 0;
         int i3 = 0;
         int i4 = 0;
-        while (it.hasNext()) {
-            Entry entry = (Entry) it.next();
-            Object obj = entry.item;
-            if (obj instanceof Measurable) {
-                Measurable measurable = (Measurable) obj;
+        int i5 = 0;
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            Entry entry = (Entry) obj;
+            Object obj2 = entry.item;
+            if (obj2 instanceof Measurable) {
+                Measurable measurable = (Measurable) obj2;
                 boolean z2 = entry.index == 0;
                 boolean z3 = entry.index + 1 == this.actualList.size();
                 int spacingStart = measurable.getSpacingStart(z2);
                 int spacingEnd = measurable.getSpacingEnd(z3);
                 int width = measurable.getWidth();
                 int height = measurable.getHeight();
-                int i5 = spacingStart + width + spacingEnd + i2;
-                int i6 = spacingStart + height + spacingEnd + i;
+                int i6 = spacingStart + width + spacingEnd + i3;
+                int i7 = spacingStart + height + spacingEnd + i2;
                 if (!z || entry.getVisibility() <= 0.0f) {
-                    entry.measuredPositionRect.set(i2, i, i5, i6);
+                    arrayList = arrayList2;
+                    entry.measuredPositionRect.set(i3, i2, i6, i7);
                     entry.measuredSpacingStart.set(spacingStart);
                 } else {
-                    float f = i2;
-                    float f2 = i;
-                    float f3 = i5;
-                    float f4 = i6;
+                    float f = i3;
+                    float f2 = i2;
+                    float f3 = i6;
+                    arrayList = arrayList2;
+                    float f4 = i7;
                     if (entry.measuredPositionRect.differs(f, f2, f3, f4)) {
                         onBeforeListChanged();
                         entry.measuredPositionRect.setTo(f, f2, f3, f4);
@@ -400,30 +423,39 @@ public final class ListAnimator implements Iterable {
                         entry.measuredSpacingStart.setTo(f5);
                     }
                 }
-                i3 = Math.max(i3, width);
-                i4 = Math.max(i4, height);
-                i2 = i5;
-                i = i6;
+                i4 = Math.max(i4, width);
+                i5 = Math.max(i5, height);
+                i3 = i6;
+                i2 = i7;
+                arrayList2 = arrayList;
             }
         }
         if (z) {
-            Iterator it2 = this.entries.iterator();
+            ArrayList arrayList3 = this.entries;
+            int size2 = arrayList3.size();
+            int i8 = 0;
             while (true) {
-                if (!it2.hasNext()) {
+                if (i8 >= size2) {
                     break;
                 }
-                Object obj2 = ((Entry) it2.next()).item;
-                if ((obj2 instanceof Animatable) && ((Animatable) obj2).hasChanges()) {
+                Object obj3 = arrayList3.get(i8);
+                i8++;
+                Object obj4 = ((Entry) obj3).item;
+                if ((obj4 instanceof Animatable) && ((Animatable) obj4).hasChanges()) {
                     onBeforeListChanged();
                     break;
                 }
             }
         }
-        Iterator it3 = this.entries.iterator();
-        while (it3.hasNext()) {
-            Object obj3 = ((Entry) it3.next()).item;
-            if (obj3 instanceof Animatable) {
-                Animatable animatable = (Animatable) obj3;
+        ArrayList arrayList4 = this.entries;
+        int size3 = arrayList4.size();
+        int i9 = 0;
+        while (i9 < size3) {
+            Object obj5 = arrayList4.get(i9);
+            i9++;
+            Object obj6 = ((Entry) obj5).item;
+            if (obj6 instanceof Animatable) {
+                Animatable animatable = (Animatable) obj6;
                 if (z) {
                     if (animatable.hasChanges()) {
                         animatable.prepareChanges();
@@ -434,22 +466,22 @@ public final class ListAnimator implements Iterable {
             }
         }
         if (z) {
-            float f6 = i2;
+            float f6 = i3;
             if (this.metadata.totalWidth.differs(f6)) {
                 onBeforeListChanged();
                 this.metadata.totalWidth.setTo(f6);
             }
-            float f7 = i;
+            float f7 = i2;
             if (this.metadata.totalHeight.differs(f7)) {
                 onBeforeListChanged();
                 this.metadata.totalHeight.setTo(f7);
             }
-            float f8 = i3;
+            float f8 = i4;
             if (this.metadata.maxItemWidth.differs(f8)) {
                 onBeforeListChanged();
                 this.metadata.maxItemWidth.setTo(f8);
             }
-            float f9 = i4;
+            float f9 = i5;
             if (this.metadata.maxItemHeight.differs(f9)) {
                 onBeforeListChanged();
                 this.metadata.maxItemHeight.setTo(f9);
@@ -461,10 +493,10 @@ public final class ListAnimator implements Iterable {
             }
             return;
         }
-        this.metadata.totalWidth.set(i2);
-        this.metadata.totalHeight.set(i);
-        this.metadata.maxItemWidth.set(i3);
-        this.metadata.maxItemHeight.set(i4);
+        this.metadata.totalWidth.set(i3);
+        this.metadata.totalHeight.set(i2);
+        this.metadata.maxItemWidth.set(i4);
+        this.metadata.maxItemHeight.set(i5);
         this.metadata.metadataCallback.onForceApplyChanges(this);
     }
 
@@ -590,22 +622,29 @@ public final class ListAnimator implements Iterable {
             z2 = z4;
         } else {
             if (!this.foundListChanges) {
-                Iterator it2 = this.entries.iterator();
+                ArrayList arrayList2 = this.entries;
+                int size3 = arrayList2.size();
+                int i4 = 0;
                 while (true) {
-                    if (it2.hasNext()) {
-                        if (((Entry) it2.next()).visibility.differs(0.0f)) {
-                            onBeforeListChanged();
-                            break;
-                        }
-                    } else {
+                    if (i4 >= size3) {
+                        break;
+                    }
+                    Object obj2 = arrayList2.get(i4);
+                    i4++;
+                    if (((Entry) obj2).visibility.differs(0.0f)) {
+                        onBeforeListChanged();
                         break;
                     }
                 }
             }
             if (this.foundListChanges) {
-                Iterator it3 = this.entries.iterator();
-                while (it3.hasNext()) {
-                    Entry entry4 = (Entry) it3.next();
+                ArrayList arrayList3 = this.entries;
+                int size4 = arrayList3.size();
+                int i5 = 0;
+                while (i5 < size4) {
+                    Object obj3 = arrayList3.get(i5);
+                    i5++;
+                    Entry entry4 = (Entry) obj3;
                     if (entry4.visibility.differs(0.0f)) {
                         onBeforeListChanged();
                         entry4.onPrepareRemove();

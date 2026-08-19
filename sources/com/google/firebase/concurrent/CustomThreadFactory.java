@@ -26,17 +26,16 @@ class CustomThreadFactory implements ThreadFactory {
         Thread newThread = DEFAULT.newThread(new Runnable() { // from class: com.google.firebase.concurrent.CustomThreadFactory$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CustomThreadFactory.this.lambda$newThread$0(runnable);
+                CustomThreadFactory.$r8$lambda$XB8AY3Hcio74byWuTzgVEC3Hiek(CustomThreadFactory.this, runnable);
             }
         });
         newThread.setName(String.format(Locale.ROOT, "%s Thread #%d", this.namePrefix, Long.valueOf(this.threadCount.getAndIncrement())));
         return newThread;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$newThread$0(Runnable runnable) {
-        Process.setThreadPriority(this.priority);
-        StrictMode.ThreadPolicy threadPolicy = this.policy;
+    public static /* synthetic */ void $r8$lambda$XB8AY3Hcio74byWuTzgVEC3Hiek(CustomThreadFactory customThreadFactory, Runnable runnable) {
+        Process.setThreadPriority(customThreadFactory.priority);
+        StrictMode.ThreadPolicy threadPolicy = customThreadFactory.policy;
         if (threadPolicy != null) {
             StrictMode.setThreadPolicy(threadPolicy);
         }

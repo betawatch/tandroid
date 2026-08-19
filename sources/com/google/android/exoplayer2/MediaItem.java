@@ -63,7 +63,7 @@ public final class MediaItem implements Bundleable {
         public Builder() {
             this.clippingConfiguration = new ClippingConfiguration.Builder();
             this.drmConfiguration = new DrmConfiguration.Builder();
-            this.streamKeys = Collections.emptyList();
+            this.streamKeys = Collections.EMPTY_LIST;
             this.subtitleConfigurations = ImmutableList.of();
             this.liveConfiguration = new LiveConfiguration.Builder();
             this.requestMetadata = RequestMetadata.EMPTY;
@@ -313,9 +313,7 @@ public final class MediaItem implements Bundleable {
         public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$LiveConfiguration$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.Bundleable.Creator
             public final Bundleable fromBundle(Bundle bundle) {
-                MediaItem.LiveConfiguration lambda$static$0;
-                lambda$static$0 = MediaItem.LiveConfiguration.lambda$static$0(bundle);
-                return lambda$static$0;
+                return MediaItem.LiveConfiguration.$r8$lambda$SLcz1FXubVQ03pQY35SwlBIwYYM(bundle);
             }
         };
 
@@ -438,8 +436,7 @@ public final class MediaItem implements Bundleable {
             return bundle;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ LiveConfiguration lambda$static$0(Bundle bundle) {
+        public static /* synthetic */ LiveConfiguration $r8$lambda$SLcz1FXubVQ03pQY35SwlBIwYYM(Bundle bundle) {
             String str = FIELD_TARGET_OFFSET_MS;
             LiveConfiguration liveConfiguration = UNSET;
             return new LiveConfiguration(bundle.getLong(str, liveConfiguration.targetOffsetMs), bundle.getLong(FIELD_MIN_OFFSET_MS, liveConfiguration.minOffsetMs), bundle.getLong(FIELD_MAX_OFFSET_MS, liveConfiguration.maxOffsetMs), bundle.getFloat(FIELD_MIN_PLAYBACK_SPEED, liveConfiguration.minPlaybackSpeed), bundle.getFloat(FIELD_MAX_PLAYBACK_SPEED, liveConfiguration.maxPlaybackSpeed));
@@ -539,9 +536,7 @@ public final class MediaItem implements Bundleable {
         public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$ClippingConfiguration$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.Bundleable.Creator
             public final Bundleable fromBundle(Bundle bundle) {
-                MediaItem.ClippingProperties lambda$static$0;
-                lambda$static$0 = MediaItem.ClippingConfiguration.lambda$static$0(bundle);
-                return lambda$static$0;
+                return MediaItem.ClippingConfiguration.$r8$lambda$aJWhmzO8-cRmnRmTwTOr0EZQejY(bundle);
             }
         };
 
@@ -657,8 +652,7 @@ public final class MediaItem implements Bundleable {
             return bundle;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ ClippingProperties lambda$static$0(Bundle bundle) {
+        public static /* synthetic */ ClippingProperties $r8$lambda$aJWhmzO8-cRmnRmTwTOr0EZQejY(Bundle bundle) {
             Builder builder = new Builder();
             String str = FIELD_START_POSITION_MS;
             ClippingConfiguration clippingConfiguration = UNSET;
@@ -685,9 +679,9 @@ public final class MediaItem implements Bundleable {
         public static final Bundleable.Creator CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$RequestMetadata$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.Bundleable.Creator
             public final Bundleable fromBundle(Bundle bundle) {
-                MediaItem.RequestMetadata lambda$static$0;
-                lambda$static$0 = MediaItem.RequestMetadata.lambda$static$0(bundle);
-                return lambda$static$0;
+                MediaItem.RequestMetadata build;
+                build = new MediaItem.RequestMetadata.Builder().setMediaUri((Uri) bundle.getParcelable(MediaItem.RequestMetadata.FIELD_MEDIA_URI)).setSearchQuery(bundle.getString(MediaItem.RequestMetadata.FIELD_SEARCH_QUERY)).setExtras(bundle.getBundle(MediaItem.RequestMetadata.FIELD_EXTRAS)).build();
+                return build;
             }
         };
 
@@ -756,11 +750,6 @@ public final class MediaItem implements Bundleable {
                 bundle.putBundle(FIELD_EXTRAS, bundle2);
             }
             return bundle;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ RequestMetadata lambda$static$0(Bundle bundle) {
-            return new Builder().setMediaUri((Uri) bundle.getParcelable(FIELD_MEDIA_URI)).setSearchQuery(bundle.getString(FIELD_SEARCH_QUERY)).setExtras(bundle.getBundle(FIELD_EXTRAS)).build();
         }
     }
 

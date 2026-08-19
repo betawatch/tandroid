@@ -90,20 +90,26 @@ public class ID3v2FrameBody {
     }
 
     public String readZeroTerminatedString(int i, ID3v2Encoding iD3v2Encoding) {
+        ID3v2Encoding iD3v2Encoding2;
         int min = Math.min(i, (int) getRemainingLength());
         byte[] bytes = ((Buffer) textBuffer.get()).bytes(min);
         int i2 = 0;
-        for (int i3 = 0; i3 < min; i3++) {
+        int i3 = 0;
+        while (i2 < min) {
             byte readByte = this.data.readByte();
-            bytes[i3] = readByte;
-            if (readByte != 0 || (iD3v2Encoding == ID3v2Encoding.UTF_16 && i2 == 0 && i3 % 2 != 0)) {
-                i2 = 0;
+            bytes[i2] = readByte;
+            if (readByte != 0 || (iD3v2Encoding == ID3v2Encoding.UTF_16 && i3 == 0 && i2 % 2 != 0)) {
+                iD3v2Encoding2 = iD3v2Encoding;
+                i3 = 0;
             } else {
-                i2++;
-                if (i2 == iD3v2Encoding.getZeroBytes()) {
-                    return extractString(bytes, 0, (i3 + 1) - iD3v2Encoding.getZeroBytes(), iD3v2Encoding, false);
+                i3++;
+                if (i3 == iD3v2Encoding.getZeroBytes()) {
+                    return extractString(bytes, 0, (i2 + 1) - iD3v2Encoding.getZeroBytes(), iD3v2Encoding, false);
                 }
+                iD3v2Encoding2 = iD3v2Encoding;
             }
+            i2++;
+            iD3v2Encoding = iD3v2Encoding2;
         }
         throw new ID3v2Exception("Could not read zero-termiated string");
     }

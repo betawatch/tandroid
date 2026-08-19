@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
+import org.telegram.messenger.ChatMessageSharedResources;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageReceiver;
@@ -83,7 +84,6 @@ import org.telegram.ui.Components.blur3.utils.Blur3Utils;
 import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
 import org.telegram.ui.PollCreateActivity;
-import org.telegram.ui.TodoItemMenu;
 
 /* loaded from: classes4.dex */
 public class TodoItemMenu extends Dialog {
@@ -148,13 +148,17 @@ public class TodoItemMenu extends Dialog {
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.TodoItemMenu.1
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
-                if (TodoItemMenu.this.openProgress > 0.0f && TodoItemMenu.this.blurBitmapPaint != null) {
+                Canvas canvas2;
+                if (TodoItemMenu.this.openProgress <= 0.0f || TodoItemMenu.this.blurBitmapPaint == null) {
+                    canvas2 = canvas;
+                } else {
                     TodoItemMenu.this.blurMatrix.reset();
                     float width = getWidth() / TodoItemMenu.this.blurBitmap.getWidth();
                     TodoItemMenu.this.blurMatrix.postScale(width, width);
                     TodoItemMenu.this.blurBitmapShader.setLocalMatrix(TodoItemMenu.this.blurMatrix);
                     TodoItemMenu.this.blurBitmapPaint.setAlpha((int) (TodoItemMenu.this.openProgress * 255.0f));
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), TodoItemMenu.this.blurBitmapPaint);
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), TodoItemMenu.this.blurBitmapPaint);
                 }
                 if (TodoItemMenu.this.setCellInvisible && TodoItemMenu.this.cell != null) {
                     TodoItemMenu.this.cell.setVisibility(4);
@@ -165,7 +169,7 @@ public class TodoItemMenu extends Dialog {
                     TodoItemMenu.this.cell.invalidate();
                     TodoItemMenu.this.setTaskInvisible = false;
                 }
-                super.dispatchDraw(canvas);
+                super.dispatchDraw(canvas2);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -193,7 +197,7 @@ public class TodoItemMenu extends Dialog {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TodoItemMenu.this.lambda$new$0(view);
+                TodoItemMenu.this.dismiss();
             }
         });
         BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
@@ -282,11 +286,6 @@ public class TodoItemMenu extends Dialog {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        dismiss();
-    }
-
     class 4 extends ViewPagerFixed.Adapter {
         final /* synthetic */ Context val$context;
 
@@ -309,15 +308,10 @@ public class TodoItemMenu extends Dialog {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu$4$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TodoItemMenu.4.this.lambda$createView$0(view);
+                    TodoItemMenu.this.dismiss(true);
                 }
             });
             return frameLayout;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$0(View view) {
-            TodoItemMenu.this.dismiss(true);
         }
     }
 
@@ -348,10 +342,11 @@ public class TodoItemMenu extends Dialog {
     }
 
     public void setCell(final ChatActivity chatActivity, ChatMessageCell chatMessageCell, final int i) {
-        int i2;
+        final int i2;
         final TLRPC.TodoItem todoItem;
         this.cell = chatMessageCell;
         this.taskId = i;
+        TLRPC.TodoCompletion todoCompletion = null;
         MessageObject messageObject = chatMessageCell != null ? chatMessageCell.getMessageObject() : null;
         this.messageObject = messageObject;
         this.isOut = messageObject != null && messageObject.isOutOwner();
@@ -366,8 +361,8 @@ public class TodoItemMenu extends Dialog {
             final int width = this.cell.getWidth();
             final int height = this.cell.getHeight();
             this.heightdiff = height - this.cell.getHeight();
-            i2 = 51;
-            ChatMessageCell chatMessageCell2 = new ChatMessageCell(getContext(), UserConfig.selectedAccount, false, null, this.cell.getResourcesProvider()) { // from class: org.telegram.ui.TodoItemMenu.7
+            ChatMessageSharedResources chatMessageSharedResources = null;
+            ChatMessageCell chatMessageCell2 = new ChatMessageCell(getContext(), UserConfig.selectedAccount, false, chatMessageSharedResources, this.cell.getResourcesProvider()) { // from class: org.telegram.ui.TodoItemMenu.7
                 private final Path clipPath = new Path();
                 private final Paint shadowPaint = new Paint(1);
 
@@ -405,6 +400,7 @@ public class TodoItemMenu extends Dialog {
                     super.drawOverlays(canvas);
                 }
             };
+            i2 = i;
             this.myTaskCell = chatMessageCell2;
             this.cell.copyParamsTo(chatMessageCell2);
             this.myTaskCell.copySpoilerEffect2AttachIndexFrom(this.cell);
@@ -900,7 +896,7 @@ public class TodoItemMenu extends Dialog {
             ChatMessageCell chatMessageCell4 = this.cell;
             chatMessageCell3.setMessageObject(messageObject2, currentMessagesGroup, chatMessageCell4.pinnedBottom, chatMessageCell4.pinnedTop, chatMessageCell4.firstInChat);
             this.containerView.addView(this.myTaskCell, new FrameLayout.LayoutParams(this.cell.getWidth(), height, 51));
-            ChatMessageCell chatMessageCell5 = new ChatMessageCell(getContext(), UserConfig.selectedAccount, false, null, this.cell.getResourcesProvider()) { // from class: org.telegram.ui.TodoItemMenu.9
+            ChatMessageCell chatMessageCell5 = new ChatMessageCell(getContext(), UserConfig.selectedAccount, false, chatMessageSharedResources, this.cell.getResourcesProvider()) { // from class: org.telegram.ui.TodoItemMenu.9
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
                 public void setPressed(boolean z) {
                 }
@@ -1411,13 +1407,12 @@ public class TodoItemMenu extends Dialog {
             chatMessageCell6.setMessageObject(messageObject3, currentMessagesGroup2, chatMessageCell7.pinnedBottom, chatMessageCell7.pinnedTop, chatMessageCell7.firstInChat);
             this.containerView.addView(this.myCell, new FrameLayout.LayoutParams(this.cell.getWidth(), height, 51));
         } else {
-            i2 = 51;
+            i2 = i;
         }
         this.viewPager.bringToFront();
         this.menuContainer.bringToFront();
         this.tabsView.bringToFront();
         this.viewPager.onTabAnimationUpdate(false);
-        TLRPC.TodoCompletion todoCompletion = null;
         ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, this.resourcesProvider, (View) null);
         final TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) MessageObject.getMedia(this.messageObject);
         final int i3 = 0;
@@ -1427,7 +1422,7 @@ public class TodoItemMenu extends Dialog {
                 todoItem = null;
                 break;
             } else {
-                if (tL_messageMediaToDo.todo.list.get(i3).id == i) {
+                if (tL_messageMediaToDo.todo.list.get(i3).id == i2) {
                     todoItem = tL_messageMediaToDo.todo.list.get(i3);
                     break;
                 }
@@ -1439,7 +1434,7 @@ public class TodoItemMenu extends Dialog {
             if (i4 >= tL_messageMediaToDo.completions.size()) {
                 break;
             }
-            if (tL_messageMediaToDo.completions.get(i4).id == i) {
+            if (tL_messageMediaToDo.completions.get(i4).id == i2) {
                 todoCompletion = tL_messageMediaToDo.completions.get(i4);
                 break;
             }
@@ -1452,14 +1447,14 @@ public class TodoItemMenu extends Dialog {
                 makeOptions.add(R.drawable.msg_cancel, LocaleController.getString(R.string.TodoUncheck), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TodoItemMenu.this.lambda$setCell$1(chatActivity, i);
+                        TodoItemMenu.$r8$lambda$x2dXIcF-bJ6q81GGwaVgcWB1pus(TodoItemMenu.this, chatActivity, i2);
                     }
                 });
             } else {
                 makeOptions.add(R.drawable.msg_select, LocaleController.getString(R.string.TodoCheck), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TodoItemMenu.this.lambda$setCell$2(chatActivity, i);
+                        TodoItemMenu.$r8$lambda$_BDSPrsIm2lW6cZfgvfu9lsgOA0(TodoItemMenu.this, chatActivity, i2);
                     }
                 });
             }
@@ -1469,7 +1464,7 @@ public class TodoItemMenu extends Dialog {
                 makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.TodoItemQuote), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TodoItemMenu.this.lambda$setCell$3(chatActivity, todoItem);
+                        TodoItemMenu.$r8$lambda$1UKPfrp3dsg3iG2vFP17zSbFhfE(TodoItemMenu.this, chatActivity, todoItem);
                     }
                 });
             }
@@ -1492,14 +1487,14 @@ public class TodoItemMenu extends Dialog {
                 makeOptions.add(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TodoItemMenu.this.lambda$setCell$4(sb2);
+                        TodoItemMenu.$r8$lambda$sjGzczDEVkkqaj1IikhBW9a4Y1k(TodoItemMenu.this, sb2);
                     }
                 });
             }
             makeOptions.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TodoItemMenu.this.lambda$setCell$5(todoItem);
+                    TodoItemMenu.$r8$lambda$lwkw1jBO-0rk5uvXe8Fuuaiky_8(TodoItemMenu.this, todoItem);
                 }
             });
         }
@@ -1507,14 +1502,14 @@ public class TodoItemMenu extends Dialog {
             makeOptions.add(R.drawable.msg_edit, LocaleController.getString(R.string.TodoEditItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TodoItemMenu.this.lambda$setCell$7(chatActivity, i3);
+                    TodoItemMenu.$r8$lambda$vLeqk7a0KdFq6QzGf0Bnvx2yrK0(TodoItemMenu.this, chatActivity, i3);
                 }
             });
             if (tL_messageMediaToDo.todo.list.size() > 1) {
                 makeOptions.add(R.drawable.msg_delete, LocaleController.getString(R.string.TodoDeleteItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TodoItemMenu.this.lambda$setCell$8(tL_messageMediaToDo, i, chatActivity);
+                        TodoItemMenu.$r8$lambda$lKXgtHACrpmTDTij8A_rpatTjm8(TodoItemMenu.this, tL_messageMediaToDo, i2, chatActivity);
                     }
                 });
             }
@@ -1526,78 +1521,77 @@ public class TodoItemMenu extends Dialog {
         this.taskOptionsView = layout;
         layout.setPivotX(0.0f);
         this.taskOptionsView.setPivotY(0.0f);
-        this.menuContainer.addView(this.taskOptionsView, LayoutHelper.createFrame(-2, -2, i2));
+        this.menuContainer.addView(this.taskOptionsView, LayoutHelper.createFrame(-2, -2, 51));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$1(ChatActivity chatActivity, int i) {
+    public static /* synthetic */ void $r8$lambda$x2dXIcF-bJ6q81GGwaVgcWB1pus(TodoItemMenu todoItemMenu, ChatActivity chatActivity, int i) {
+        todoItemMenu.getClass();
         if (chatActivity.isInScheduleMode()) {
-            Toast.makeText(getContext(), LocaleController.getString(R.string.MessageScheduledTodo), 1).show();
+            Toast.makeText(todoItemMenu.getContext(), LocaleController.getString(R.string.MessageScheduledTodo), 1).show();
         } else {
-            ChatMessageCell chatMessageCell = this.myTaskCell;
+            ChatMessageCell chatMessageCell = todoItemMenu.myTaskCell;
             chatMessageCell.toggleTodoCheck(chatMessageCell.getTodoIndex(i), false);
         }
-        dismiss(true);
+        todoItemMenu.dismiss(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$2(ChatActivity chatActivity, int i) {
+    public static /* synthetic */ void $r8$lambda$_BDSPrsIm2lW6cZfgvfu9lsgOA0(TodoItemMenu todoItemMenu, ChatActivity chatActivity, int i) {
+        todoItemMenu.getClass();
         if (chatActivity.isInScheduleMode()) {
-            Toast.makeText(getContext(), LocaleController.getString(R.string.MessageScheduledTodo), 1).show();
+            Toast.makeText(todoItemMenu.getContext(), LocaleController.getString(R.string.MessageScheduledTodo), 1).show();
         } else {
-            ChatMessageCell chatMessageCell = this.myTaskCell;
+            ChatMessageCell chatMessageCell = todoItemMenu.myTaskCell;
             chatMessageCell.toggleTodoCheck(chatMessageCell.getTodoIndex(i), false);
         }
-        dismiss(true);
+        todoItemMenu.dismiss(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$3(ChatActivity chatActivity, TLRPC.TodoItem todoItem) {
-        MessageObject messageObject = this.messageObject;
+    public static /* synthetic */ void $r8$lambda$1UKPfrp3dsg3iG2vFP17zSbFhfE(TodoItemMenu todoItemMenu, ChatActivity chatActivity, TLRPC.TodoItem todoItem) {
+        MessageObject messageObject = todoItemMenu.messageObject;
         chatActivity.showFieldPanelForReplyQuote(messageObject, ChatActivity.ReplyQuote.from(messageObject, todoItem.id));
-        dismiss(false);
+        todoItemMenu.dismiss(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$4(String str) {
+    public static /* synthetic */ void $r8$lambda$sjGzczDEVkkqaj1IikhBW9a4Y1k(TodoItemMenu todoItemMenu, String str) {
+        todoItemMenu.getClass();
         AndroidUtilities.addToClipboard(str);
-        dismiss(true);
+        todoItemMenu.dismiss(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$5(TLRPC.TodoItem todoItem) {
+    public static /* synthetic */ void $r8$lambda$lwkw1jBO-0rk5uvXe8Fuuaiky_8(TodoItemMenu todoItemMenu, TLRPC.TodoItem todoItem) {
+        todoItemMenu.getClass();
         AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(todoItem.title, false));
-        dismiss(true);
+        todoItemMenu.dismiss(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$7(final ChatActivity chatActivity, int i) {
+    public static /* synthetic */ void $r8$lambda$vLeqk7a0KdFq6QzGf0Bnvx2yrK0(final TodoItemMenu todoItemMenu, final ChatActivity chatActivity, int i) {
+        todoItemMenu.getClass();
         PollCreateActivity pollCreateActivity = new PollCreateActivity(chatActivity, true, Boolean.FALSE);
-        pollCreateActivity.setEditing(MessageObject.getMedia(this.messageObject), false, i);
+        pollCreateActivity.setEditing(MessageObject.getMedia(todoItemMenu.messageObject), false, i);
         pollCreateActivity.setDelegate(new PollCreateActivity.PollCreateActivityDelegate() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.PollCreateActivity.PollCreateActivityDelegate
             public final void sendPoll(TLRPC.MessageMedia messageMedia, ArrayList arrayList, boolean z, int i2) {
-                TodoItemMenu.this.lambda$setCell$6(chatActivity, messageMedia, arrayList, z, i2);
+                TodoItemMenu.$r8$lambda$HPWE9j3FnBxgA-R5PiSTMRlaw5E(TodoItemMenu.this, chatActivity, messageMedia, arrayList, z, i2);
             }
         });
         chatActivity.presentFragment(pollCreateActivity);
-        dismiss(false);
+        todoItemMenu.dismiss(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$6(ChatActivity chatActivity, TLRPC.MessageMedia messageMedia, ArrayList arrayList, boolean z, int i) {
+    public static /* synthetic */ void $r8$lambda$HPWE9j3FnBxgA-R5PiSTMRlaw5E(TodoItemMenu todoItemMenu, ChatActivity chatActivity, TLRPC.MessageMedia messageMedia, ArrayList arrayList, boolean z, int i) {
+        todoItemMenu.getClass();
         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-            TLRPC.MessageMedia messageMedia2 = this.messageObject.messageOwner.media;
+            TLRPC.MessageMedia messageMedia2 = todoItemMenu.messageObject.messageOwner.media;
             if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
                 ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
             }
         }
-        this.messageObject.messageOwner.media = messageMedia;
-        chatActivity.getSendMessagesHelper().editMessage(this.messageObject, null, null, null, null, null, null, false, false, null);
+        todoItemMenu.messageObject.messageOwner.media = messageMedia;
+        chatActivity.getSendMessagesHelper().editMessage(todoItemMenu.messageObject, null, null, null, null, null, null, false, false, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$8(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, int i, ChatActivity chatActivity) {
+    public static /* synthetic */ void $r8$lambda$lKXgtHACrpmTDTij8A_rpatTjm8(TodoItemMenu todoItemMenu, TLRPC.TL_messageMediaToDo tL_messageMediaToDo, int i, ChatActivity chatActivity) {
+        todoItemMenu.getClass();
         int i2 = 0;
         while (i2 < tL_messageMediaToDo.todo.list.size()) {
             if (tL_messageMediaToDo.todo.list.get(i2).id == i) {
@@ -1617,72 +1611,74 @@ public class TodoItemMenu extends Dialog {
             }
             i3++;
         }
-        this.messageObject.messageOwner.media = tL_messageMediaToDo;
-        chatActivity.getSendMessagesHelper().editMessage(this.messageObject, null, null, null, null, null, null, false, false, null);
+        todoItemMenu.messageObject.messageOwner.media = tL_messageMediaToDo;
+        chatActivity.getSendMessagesHelper().editMessage(todoItemMenu.messageObject, null, null, null, null, null, null, false, false, null);
         chatActivity.updateVisibleRows();
-        dismiss(false);
+        todoItemMenu.dismiss(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:144:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0383 A[LOOP:0: B:152:0x0381->B:153:0x0383, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x03f3  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0409  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0333  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x036f A[LOOP:0: B:152:0x036d->B:153:0x036f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x03df  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x03f5  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0324  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void setupMessageOptions(final ChatActivity chatActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, final Utilities.Callback callback) {
         TLRPC.ChatFull chatFull;
         boolean z;
-        MessageObject messageObject;
-        boolean z2;
-        int i;
+        ItemOptions itemOptions;
+        final TodoItemMenu todoItemMenu;
         int size;
-        int i2;
+        int i;
         View view;
         TLRPC.User user;
         TLRPC.UserFull userFull;
         TLRPC.ChatFull chatFull2;
         TLRPC.ChatFull chatFull3;
-        MessageObject messageObject2 = this.messageObject;
+        final MessageObject messageObject = this.messageObject;
         List<TLRPC.TL_availableReaction> enabledReactionsList = chatActivity.getMediaDataController().getEnabledReactionsList();
-        boolean z3 = (chatActivity.isSecretChat() || chatActivity.isInScheduleMode() || chatActivity.currentUser != null || !messageObject2.hasReactions() || (ChatObject.isChannel(chatActivity.currentChat) && !chatActivity.currentChat.megagroup) || ChatObject.isMonoForum(chatActivity.currentChat) || enabledReactionsList.isEmpty() || !messageObject2.messageOwner.reactions.can_see_list || messageObject2.isSecretMedia()) ? false : true;
-        boolean z4 = !messageObject2.isForwardedChannelPost() ? messageObject2.isSecretMedia() || chatActivity.getChatMode() == 5 || chatActivity.isSecretChat() || chatActivity.isInScheduleMode() || !messageObject2.isReactionsAvailable() || ((((chatFull = chatActivity.chatInfo) == null || ((chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone) && !chatFull.paid_reactions_available)) && ((chatFull != null || ChatObject.isChannel(chatActivity.currentChat)) && chatActivity.currentUser == null && !ChatObject.isMonoForum(chatActivity.currentChat))) || enabledReactionsList.isEmpty()) : (chatFull3 = chatActivity.getMessagesController().getChatFull(-messageObject2.getFromChatId())) != null && (chatActivity.isSecretChat() || chatActivity.getChatMode() == 5 || chatActivity.isInScheduleMode() || !messageObject2.isReactionsAvailable() || (((chatFull3.available_reactions instanceof TLRPC.TL_chatReactionsNone) && !chatFull3.paid_reactions_available) || enabledReactionsList.isEmpty()));
-        boolean z5 = (z3 || chatActivity.isInScheduleMode() || chatActivity.currentChat == null || !messageObject2.isOutOwner() || !messageObject2.isSent() || messageObject2.isEditing() || messageObject2.isSending() || messageObject2.isSendError() || messageObject2.isContentUnread() || messageObject2.isUnread() || ConnectionsManager.getInstance(chatActivity.getCurrentAccount()).getCurrentTime() - messageObject2.messageOwner.date >= chatActivity.getMessagesController().chatReadMarkExpirePeriod || (!ChatObject.isMegagroup(chatActivity.currentChat) && ChatObject.isChannel(chatActivity.currentChat)) || (chatFull2 = chatActivity.chatInfo) == null || chatFull2.participants_count > chatActivity.getMessagesController().chatReadMarkSizeThreshold || (messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest) || chatActivity.getChatMode() == 3 || !messageObject2.canSetReaction() || ChatObject.isMonoForum(chatActivity.currentChat)) ? false : true;
-        if (chatActivity.currentChat != null && !messageObject2.isOut() && ChatObject.isMonoForum(chatActivity.currentChat) && ChatObject.canManageMonoForum(chatActivity.getCurrentAccount(), chatActivity.currentChat)) {
+        boolean z2 = (chatActivity.isSecretChat() || chatActivity.isInScheduleMode() || chatActivity.currentUser != null || !messageObject.hasReactions() || (ChatObject.isChannel(chatActivity.currentChat) && !chatActivity.currentChat.megagroup) || ChatObject.isMonoForum(chatActivity.currentChat) || enabledReactionsList.isEmpty() || !messageObject.messageOwner.reactions.can_see_list || messageObject.isSecretMedia()) ? false : true;
+        boolean z3 = !messageObject.isForwardedChannelPost() ? messageObject.isSecretMedia() || chatActivity.getChatMode() == 5 || chatActivity.isSecretChat() || chatActivity.isInScheduleMode() || !messageObject.isReactionsAvailable() || ((((chatFull = chatActivity.chatInfo) == null || ((chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone) && !chatFull.paid_reactions_available)) && ((chatFull != null || ChatObject.isChannel(chatActivity.currentChat)) && chatActivity.currentUser == null && !ChatObject.isMonoForum(chatActivity.currentChat))) || enabledReactionsList.isEmpty()) : (chatFull3 = chatActivity.getMessagesController().getChatFull(-messageObject.getFromChatId())) != null && (chatActivity.isSecretChat() || chatActivity.getChatMode() == 5 || chatActivity.isInScheduleMode() || !messageObject.isReactionsAvailable() || (((chatFull3.available_reactions instanceof TLRPC.TL_chatReactionsNone) && !chatFull3.paid_reactions_available) || enabledReactionsList.isEmpty()));
+        boolean z4 = (z2 || chatActivity.isInScheduleMode() || chatActivity.currentChat == null || !messageObject.isOutOwner() || !messageObject.isSent() || messageObject.isEditing() || messageObject.isSending() || messageObject.isSendError() || messageObject.isContentUnread() || messageObject.isUnread() || ConnectionsManager.getInstance(chatActivity.getCurrentAccount()).getCurrentTime() - messageObject.messageOwner.date >= chatActivity.getMessagesController().chatReadMarkExpirePeriod || (!ChatObject.isMegagroup(chatActivity.currentChat) && ChatObject.isChannel(chatActivity.currentChat)) || (chatFull2 = chatActivity.chatInfo) == null || chatFull2.participants_count > chatActivity.getMessagesController().chatReadMarkSizeThreshold || (messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest) || chatActivity.getChatMode() == 3 || !messageObject.canSetReaction() || ChatObject.isMonoForum(chatActivity.currentChat)) ? false : true;
+        if (chatActivity.currentChat != null && !messageObject.isOut() && ChatObject.isMonoForum(chatActivity.currentChat) && ChatObject.canManageMonoForum(chatActivity.getCurrentAccount(), chatActivity.currentChat)) {
             long j = chatActivity.currentChat.linked_monoforum_id;
-            messageObject2.getFromChatId();
+            messageObject.getFromChatId();
         }
-        if (!z3 && chatActivity.currentChat == null && chatActivity.currentEncryptedChat == null && (user = chatActivity.currentUser) != null && !UserObject.isUserSelf(user) && !UserObject.isReplyUser(chatActivity.currentUser) && !UserObject.isAnonymous(chatActivity.currentUser)) {
+        if (!z2 && chatActivity.currentChat == null && chatActivity.currentEncryptedChat == null && (user = chatActivity.currentUser) != null && !UserObject.isUserSelf(user) && !UserObject.isReplyUser(chatActivity.currentUser) && !UserObject.isAnonymous(chatActivity.currentUser)) {
             TLRPC.User user2 = chatActivity.currentUser;
-            if (!user2.bot && !UserObject.isService(user2.id) && (((userFull = chatActivity.userInfo) == null || !userFull.read_dates_private) && !chatActivity.isInScheduleMode() && messageObject2.isOutOwner() && messageObject2.isSent() && !messageObject2.isEditing() && !messageObject2.isSending() && !messageObject2.isSendError() && !messageObject2.isContentUnread() && !messageObject2.isUnread() && chatActivity.getConnectionsManager().getCurrentTime() - messageObject2.messageOwner.date < chatActivity.getMessagesController().pmReadDateExpirePeriod && !(messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
+            if (!user2.bot && !UserObject.isService(user2.id) && (((userFull = chatActivity.userInfo) == null || !userFull.read_dates_private) && !chatActivity.isInScheduleMode() && messageObject.isOutOwner() && messageObject.isSent() && !messageObject.isEditing() && !messageObject.isSending() && !messageObject.isSendError() && !messageObject.isContentUnread() && !messageObject.isUnread() && chatActivity.getConnectionsManager().getCurrentTime() - messageObject.messageOwner.date < chatActivity.getMessagesController().pmReadDateExpirePeriod && !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
                 z = true;
                 TLRPC.User user3 = chatActivity.currentUser;
-                boolean z6 = ((user3 == null && (UserObject.isReplyUser(user3) || UserObject.isAnonymous(chatActivity.currentUser))) || chatActivity.isInScheduleMode() || !messageObject2.isEdited() || (messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest)) ? false : true;
-                final ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, chatActivity.getResourceProvider(), (View) null, !z3 || z5);
-                if (z5) {
-                    messageObject = messageObject2;
-                    z2 = z4;
-                    i = -2;
+                boolean z5 = ((user3 == null && (UserObject.isReplyUser(user3) || UserObject.isAnonymous(chatActivity.currentUser))) || chatActivity.isInScheduleMode() || !messageObject.isEdited() || (messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest)) ? false : true;
+                final ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, chatActivity.getResourceProvider(), (View) null, !z2 || z4);
+                if (z4) {
+                    itemOptions = makeOptions;
+                    todoItemMenu = this;
                     if (z) {
-                        makeOptions.addView(new MessagePrivateSeenView(getContext(), 0, messageObject, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda0
+                        itemOptions.addView(new MessagePrivateSeenView(todoItemMenu.getContext(), 0, messageObject, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                TodoItemMenu.this.lambda$setupMessageOptions$9();
+                                TodoItemMenu.this.dismiss(false);
                             }
-                        }, this.resourcesProvider), LayoutHelper.createLinear(-1, 36));
-                        makeOptions.addGap();
-                    } else if (z6) {
-                        makeOptions.addView(new MessagePrivateSeenView(getContext(), 1, messageObject, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda1
+                        }, todoItemMenu.resourcesProvider), LayoutHelper.createLinear(-1, 36));
+                        itemOptions.addGap();
+                    } else if (z5) {
+                        MessagePrivateSeenView messagePrivateSeenView = new MessagePrivateSeenView(todoItemMenu.getContext(), 1, messageObject, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                TodoItemMenu.this.lambda$setupMessageOptions$10();
+                                TodoItemMenu.this.dismiss(false);
                             }
-                        }, this.resourcesProvider), LayoutHelper.createLinear(-1, 36));
-                        makeOptions.addGap();
+                        }, todoItemMenu.resourcesProvider);
+                        messageObject = messageObject;
+                        itemOptions.addView(messagePrivateSeenView, LayoutHelper.createLinear(-1, 36));
+                        itemOptions.addGap();
+                    } else {
+                        messageObject = messageObject;
                     }
                 } else {
-                    final MessageSeenView messageSeenView = new MessageSeenView(getContext(), chatActivity.getCurrentAccount(), messageObject2, chatActivity.currentChat);
+                    final MessageSeenView messageSeenView = new MessageSeenView(getContext(), chatActivity.getCurrentAccount(), messageObject, chatActivity.currentChat);
                     FrameLayout frameLayout = new FrameLayout(getContext());
                     frameLayout.addView(messageSeenView, LayoutHelper.createFrame(-1, 36.0f));
                     final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
@@ -1705,10 +1701,7 @@ public class TodoItemMenu extends Dialog {
                             makeOptions.closeSwipeback();
                         }
                     });
-                    z2 = z4;
-                    messageObject = messageObject2;
-                    i = -2;
-                    messageSeenView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu.12
+                    View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu.12
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view2) {
                             if (messageSeenView.users.isEmpty()) {
@@ -1740,31 +1733,34 @@ public class TodoItemMenu extends Dialog {
                             createListView.getAdapter().notifyDataSetChanged();
                             makeOptions.openSwipeback(makeSwipeback);
                         }
-                    });
+                    };
+                    itemOptions = makeOptions;
+                    todoItemMenu = this;
+                    messageSeenView.setOnClickListener(onClickListener);
                     linearLayout.addView(createListView, LayoutHelper.createLinear(-1, -2));
                     makeSwipeback.addView(linearLayout);
-                    makeOptions.addView(frameLayout);
-                    makeOptions.addGap();
+                    itemOptions.addView(frameLayout);
+                    itemOptions.addGap();
                 }
                 size = arrayList.size();
-                for (i2 = 0; i2 < size; i2++) {
-                    final int intValue = ((Integer) arrayList3.get(i2)).intValue();
-                    makeOptions.add(((Integer) arrayList.get(i2)).intValue(), (CharSequence) arrayList2.get(i2), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda2
+                for (i = 0; i < size; i++) {
+                    final int intValue = ((Integer) arrayList3.get(i)).intValue();
+                    itemOptions.add(((Integer) arrayList.get(i)).intValue(), (CharSequence) arrayList2.get(i), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            TodoItemMenu.this.lambda$setupMessageOptions$11(callback, intValue);
+                            TodoItemMenu.$r8$lambda$z3oF1L2Idj6wwgldmqi5AqvKKio(TodoItemMenu.this, callback, intValue);
                         }
                     });
                 }
-                makeOptions.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
-                makeOptions.setBlurBackground(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
-                makeOptions.setupSelectors();
-                ViewGroup layout = makeOptions.getLayout();
-                this.messageOptionsView = layout;
+                itemOptions.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, todoItemMenu.resourcesProvider), 0.06f));
+                itemOptions.setBlurBackground(todoItemMenu.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(todoItemMenu.resourcesProvider), false);
+                itemOptions.setupSelectors();
+                ViewGroup layout = itemOptions.getLayout();
+                todoItemMenu.messageOptionsView = layout;
                 layout.setPivotX(0.0f);
-                this.messageOptionsView.setPivotY(0.0f);
-                this.menuContainer.addView(this.messageOptionsView, LayoutHelper.createFrame(i, i, 51));
-                view = this.messageOptionsView;
+                todoItemMenu.messageOptionsView.setPivotY(0.0f);
+                todoItemMenu.menuContainer.addView(todoItemMenu.messageOptionsView, LayoutHelper.createFrame(-2, -2, 51));
+                view = todoItemMenu.messageOptionsView;
                 if (view instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
                     ((ActionBarPopupWindow.ActionBarPopupWindowLayout) view).setOnSizeChangedListener(new ActionBarPopupWindow.onSizeChangedListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda3
                         @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.onSizeChangedListener
@@ -1772,21 +1768,18 @@ public class TodoItemMenu extends Dialog {
                             TodoItemMenu.this.updateTranslation();
                         }
                     });
-                    this.messageOptionsView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda4
+                    todoItemMenu.messageOptionsView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda4
                         @Override // android.view.View.OnTouchListener
                         public final boolean onTouch(View view2, MotionEvent motionEvent) {
-                            boolean lambda$setupMessageOptions$12;
-                            lambda$setupMessageOptions$12 = TodoItemMenu.this.lambda$setupMessageOptions$12(view2, motionEvent);
-                            return lambda$setupMessageOptions$12;
+                            return TodoItemMenu.$r8$lambda$N4nfsD9xVTi5AyipClf4qkEZlyA(TodoItemMenu.this, view2, motionEvent);
                         }
                     });
                 }
-                if (z2) {
-                    final ReactionsContainerLayout reactionsContainerLayout = new ReactionsContainerLayout((chatActivity.getUserConfig().getClientUserId() > chatActivity.getDialogId() ? 1 : (chatActivity.getUserConfig().getClientUserId() == chatActivity.getDialogId() ? 0 : -1)) == 0 ? 3 : 0, chatActivity, getContext(), chatActivity.getCurrentAccount(), this.resourcesProvider);
+                if (z3) {
+                    final ReactionsContainerLayout reactionsContainerLayout = new ReactionsContainerLayout((chatActivity.getUserConfig().getClientUserId() > chatActivity.getDialogId() ? 1 : (chatActivity.getUserConfig().getClientUserId() == chatActivity.getDialogId() ? 0 : -1)) == 0 ? 3 : 0, chatActivity, todoItemMenu.getContext(), chatActivity.getCurrentAccount(), todoItemMenu.resourcesProvider);
                     reactionsContainerLayout.forceAttachToParent = true;
                     float f = 22;
                     reactionsContainerLayout.setPadding(AndroidUtilities.dp(4.0f) + (LocaleController.isRTL ? 0 : 24), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + (LocaleController.isRTL ? 24 : 0), AndroidUtilities.dp(f));
-                    final MessageObject messageObject3 = messageObject;
                     reactionsContainerLayout.setDelegate(new ReactionsContainerLayout.ReactionsContainerDelegate() { // from class: org.telegram.ui.TodoItemMenu.13
                         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
                         public /* synthetic */ boolean allowLongPress() {
@@ -1799,8 +1792,8 @@ public class TodoItemMenu extends Dialog {
                         }
 
                         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                        public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f2, float f3, float f4, int i3, boolean z7) {
-                            ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawRoundRect(this, canvas, rectF, f2, f3, f4, i3, z7);
+                        public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f2, float f3, float f4, int i2, boolean z6) {
+                            ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawRoundRect(this, canvas, rectF, f2, f3, f4, i2, z6);
                         }
 
                         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
@@ -1814,20 +1807,20 @@ public class TodoItemMenu extends Dialog {
                         }
 
                         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                        public void onReactionClicked(View view2, ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z7, boolean z8) {
+                        public void onReactionClicked(View view2, ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z6, boolean z7) {
                             float f2;
                             float f3;
-                            int i3;
+                            int i2;
                             float f4;
-                            BaseCell findMessageCell = chatActivity.findMessageCell(messageObject3.getId(), true);
+                            BaseCell findMessageCell = chatActivity.findMessageCell(messageObject.getId(), true);
                             if (findMessageCell instanceof ChatMessageCell) {
                                 ChatMessageCell chatMessageCell = (ChatMessageCell) findMessageCell;
                                 ReactionsLayoutInBubble.ReactionButton reactionButton = chatMessageCell.reactionsLayoutInBubble.getReactionButton(visibleReaction);
                                 if (reactionButton != null) {
-                                    f2 = r1.x + reactionButton.x + (reactionButton.width / 2.0f);
+                                    f2 = r0.x + reactionButton.x + (reactionButton.width / 2.0f);
                                     f3 = chatMessageCell.reactionsLayoutInBubble.y + reactionButton.y;
-                                    i3 = reactionButton.height;
-                                    f4 = f3 + (i3 / 2.0f);
+                                    i2 = reactionButton.height;
+                                    f4 = f3 + (i2 / 2.0f);
                                 }
                                 f2 = 0.0f;
                                 f4 = 0.0f;
@@ -1836,87 +1829,76 @@ public class TodoItemMenu extends Dialog {
                                     ChatActionCell chatActionCell = (ChatActionCell) findMessageCell;
                                     ReactionsLayoutInBubble.ReactionButton reactionButton2 = chatActionCell.reactionsLayoutInBubble.getReactionButton(visibleReaction);
                                     if (reactionButton2 != null) {
-                                        f2 = r1.x + reactionButton2.x + (reactionButton2.width / 2.0f);
+                                        f2 = r0.x + reactionButton2.x + (reactionButton2.width / 2.0f);
                                         f3 = chatActionCell.reactionsLayoutInBubble.y + reactionButton2.y;
-                                        i3 = reactionButton2.height;
-                                        f4 = f3 + (i3 / 2.0f);
+                                        i2 = reactionButton2.height;
+                                        f4 = f3 + (i2 / 2.0f);
                                     }
                                 }
                                 f2 = 0.0f;
                                 f4 = 0.0f;
                             }
-                            chatActivity.selectReaction(findMessageCell, messageObject3, reactionsContainerLayout, view2, f2, f4, visibleReaction, false, (visibleReaction == null || !visibleReaction.isStar) ? z7 : true, z8, false);
+                            chatActivity.selectReaction(findMessageCell, messageObject, reactionsContainerLayout, view2, f2, f4, visibleReaction, false, (visibleReaction == null || !visibleReaction.isStar) ? z6 : true, z7, false);
                             TodoItemMenu.this.dismiss(false);
                         }
                     });
-                    FrameLayout frameLayout3 = this.menuContainer;
-                    this.reactionsView = reactionsContainerLayout;
-                    frameLayout3.addView(reactionsContainerLayout, LayoutHelper.createFrame(i, (int) ((reactionsContainerLayout.getTopOffset() / AndroidUtilities.density) + 52.0f + f), 51));
-                    reactionsContainerLayout.setMessage(messageObject3, chatActivity.chatInfo, true);
-                    this.reactionsView.setTransitionProgress(1.0f);
+                    FrameLayout frameLayout3 = todoItemMenu.menuContainer;
+                    todoItemMenu.reactionsView = reactionsContainerLayout;
+                    frameLayout3.addView(reactionsContainerLayout, LayoutHelper.createFrame(-2, (int) ((reactionsContainerLayout.getTopOffset() / AndroidUtilities.density) + 52.0f + f), 51));
+                    reactionsContainerLayout.setMessage(messageObject, chatActivity.chatInfo, true);
+                    todoItemMenu.reactionsView.setTransitionProgress(1.0f);
                 }
-                updateTranslation();
+                todoItemMenu.updateTranslation();
             }
         }
         z = false;
         TLRPC.User user32 = chatActivity.currentUser;
         if (user32 == null) {
         }
-        final ItemOptions makeOptions2 = ItemOptions.makeOptions(this.containerView, chatActivity.getResourceProvider(), (View) null, !z3 || z5);
-        if (z5) {
+        final ItemOptions makeOptions2 = ItemOptions.makeOptions(this.containerView, chatActivity.getResourceProvider(), (View) null, !z2 || z4);
+        if (z4) {
         }
         size = arrayList.size();
-        while (i2 < size) {
+        while (i < size) {
         }
-        makeOptions2.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
-        makeOptions2.setBlurBackground(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
-        makeOptions2.setupSelectors();
-        ViewGroup layout2 = makeOptions2.getLayout();
-        this.messageOptionsView = layout2;
+        itemOptions.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, todoItemMenu.resourcesProvider), 0.06f));
+        itemOptions.setBlurBackground(todoItemMenu.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(todoItemMenu.resourcesProvider), false);
+        itemOptions.setupSelectors();
+        ViewGroup layout2 = itemOptions.getLayout();
+        todoItemMenu.messageOptionsView = layout2;
         layout2.setPivotX(0.0f);
-        this.messageOptionsView.setPivotY(0.0f);
-        this.menuContainer.addView(this.messageOptionsView, LayoutHelper.createFrame(i, i, 51));
-        view = this.messageOptionsView;
+        todoItemMenu.messageOptionsView.setPivotY(0.0f);
+        todoItemMenu.menuContainer.addView(todoItemMenu.messageOptionsView, LayoutHelper.createFrame(-2, -2, 51));
+        view = todoItemMenu.messageOptionsView;
         if (view instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
         }
-        if (z2) {
+        if (z3) {
         }
-        updateTranslation();
+        todoItemMenu.updateTranslation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$9() {
-        dismiss(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$10() {
-        dismiss(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$11(Utilities.Callback callback, int i) {
+    public static /* synthetic */ void $r8$lambda$z3oF1L2Idj6wwgldmqi5AqvKKio(TodoItemMenu todoItemMenu, Utilities.Callback callback, int i) {
+        todoItemMenu.getClass();
         callback.run(Integer.valueOf(i));
         boolean z = true;
         if (i != 1 && i != 13) {
             z = false;
         }
-        dismiss(z);
+        todoItemMenu.dismiss(z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setupMessageOptions$12(View view, MotionEvent motionEvent) {
-        if (this.messageOptionsView == null || motionEvent.getAction() != 0) {
+    public static /* synthetic */ boolean $r8$lambda$N4nfsD9xVTi5AyipClf4qkEZlyA(TodoItemMenu todoItemMenu, View view, MotionEvent motionEvent) {
+        if (todoItemMenu.messageOptionsView == null || motionEvent.getAction() != 0) {
             return false;
         }
-        Drawable backgroundDrawable = ((ActionBarPopupWindow.ActionBarPopupWindowLayout) this.messageOptionsView).getBackgroundDrawable();
+        Drawable backgroundDrawable = ((ActionBarPopupWindow.ActionBarPopupWindowLayout) todoItemMenu.messageOptionsView).getBackgroundDrawable();
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(backgroundDrawable.getBounds());
-        rectF.offset(this.messageOptionsView.getX(), this.messageOptionsView.getY());
+        rectF.offset(todoItemMenu.messageOptionsView.getX(), todoItemMenu.messageOptionsView.getY());
         if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
             return false;
         }
-        dismiss(true);
+        todoItemMenu.dismiss(true);
         return true;
     }
 
@@ -2068,31 +2050,31 @@ public class TodoItemMenu extends Dialog {
         ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                TodoItemMenu.this.lambda$prepareBlur$13(view, (Bitmap) obj, (Bitmap) obj2);
+                TodoItemMenu.$r8$lambda$pIwQRs4pjN-AYQkvJj4KnT5OX34(TodoItemMenu.this, view, (Bitmap) obj, (Bitmap) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$13(View view, Bitmap bitmap, Bitmap bitmap2) {
+    public static /* synthetic */ void $r8$lambda$pIwQRs4pjN-AYQkvJj4KnT5OX34(TodoItemMenu todoItemMenu, View view, Bitmap bitmap, Bitmap bitmap2) {
         if (view != null) {
+            todoItemMenu.getClass();
             view.setVisibility(0);
         }
-        this.blurBitmap = bitmap;
+        todoItemMenu.blurBitmap = bitmap;
         Paint paint = new Paint(1);
-        this.blurBitmapPaint = paint;
-        Bitmap bitmap3 = this.blurBitmap;
+        todoItemMenu.blurBitmapPaint = paint;
+        Bitmap bitmap3 = todoItemMenu.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);
-        this.blurBitmapShader = bitmapShader;
+        todoItemMenu.blurBitmapShader = bitmapShader;
         paint.setShader(bitmapShader);
         ColorMatrix colorMatrix = new ColorMatrix();
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? 0.05f : 0.25f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.02f : -0.04f);
-        this.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        this.blurMatrix = new Matrix();
-        this.iBlur3SourceBitmap.setBitmap(bitmap2);
-        checkBitmapMatrix();
+        todoItemMenu.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        todoItemMenu.blurMatrix = new Matrix();
+        todoItemMenu.iBlur3SourceBitmap.setBitmap(bitmap2);
+        todoItemMenu.checkBitmapMatrix();
     }
 
     @Override // android.app.Dialog
@@ -2143,40 +2125,35 @@ public class TodoItemMenu extends Dialog {
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                TodoItemMenu.this.lambda$dismiss$15(z2);
+                TodoItemMenu.$r8$lambda$VezU42SDJ12onFkkxOkeSfSvxfc(TodoItemMenu.this, z2);
             }
         });
         this.windowView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$14() {
-        super.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$15(boolean z) {
+    public static /* synthetic */ void $r8$lambda$VezU42SDJ12onFkkxOkeSfSvxfc(final TodoItemMenu todoItemMenu, boolean z) {
+        todoItemMenu.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                TodoItemMenu.this.lambda$dismiss$14();
+                super/*android.app.Dialog*/.dismiss();
             }
         });
-        ChatMessageCell chatMessageCell = this.cell;
+        ChatMessageCell chatMessageCell = todoItemMenu.cell;
         if (chatMessageCell != null) {
             chatMessageCell.setVisibility(0);
             if (!z) {
-                ChatMessageCell chatMessageCell2 = this.cell;
-                chatMessageCell2.syncTodoCheck(chatMessageCell2.getTodoIndex(this.taskId), this.myTaskCell);
+                ChatMessageCell chatMessageCell2 = todoItemMenu.cell;
+                chatMessageCell2.syncTodoCheck(chatMessageCell2.getTodoIndex(todoItemMenu.taskId), todoItemMenu.myTaskCell);
             }
-            ChatMessageCell chatMessageCell3 = this.cell;
+            ChatMessageCell chatMessageCell3 = todoItemMenu.cell;
             chatMessageCell3.doNotDrawTaskId = -1;
             chatMessageCell3.invalidate();
         }
-        Runnable runnable = this.dismissListener;
+        Runnable runnable = todoItemMenu.dismissListener;
         if (runnable != null) {
             AndroidUtilities.runOnUIThread(runnable);
-            this.dismissListener = null;
+            todoItemMenu.dismissListener = null;
         }
     }
 
@@ -2199,7 +2176,7 @@ public class TodoItemMenu extends Dialog {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda14
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                TodoItemMenu.this.lambda$animateOpenTo$16(valueAnimator3);
+                TodoItemMenu.$r8$lambda$pS9I1e_kIJgrv3TCN08ZUk9oSKg(TodoItemMenu.this, valueAnimator3);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.TodoItemMenu.14
@@ -2226,7 +2203,7 @@ public class TodoItemMenu extends Dialog {
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda15
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                TodoItemMenu.this.lambda$animateOpenTo$17(valueAnimator4);
+                TodoItemMenu.$r8$lambda$WxtvQyzJR_IC7DFT1NapvNOxsfw(TodoItemMenu.this, valueAnimator4);
             }
         });
         this.open2Animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.TodoItemMenu.15
@@ -2240,16 +2217,16 @@ public class TodoItemMenu extends Dialog {
         this.open2Animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$16(ValueAnimator valueAnimator) {
-        this.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.windowView.invalidate();
-        this.containerView.invalidate();
-        updateTranslation();
+    public static /* synthetic */ void $r8$lambda$pS9I1e_kIJgrv3TCN08ZUk9oSKg(TodoItemMenu todoItemMenu, ValueAnimator valueAnimator) {
+        todoItemMenu.getClass();
+        todoItemMenu.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        todoItemMenu.windowView.invalidate();
+        todoItemMenu.containerView.invalidate();
+        todoItemMenu.updateTranslation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$17(ValueAnimator valueAnimator) {
-        this.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+    public static /* synthetic */ void $r8$lambda$WxtvQyzJR_IC7DFT1NapvNOxsfw(TodoItemMenu todoItemMenu, ValueAnimator valueAnimator) {
+        todoItemMenu.getClass();
+        todoItemMenu.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
     }
 }

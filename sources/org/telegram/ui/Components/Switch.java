@@ -195,8 +195,11 @@ public class Switch extends View {
 
     @Override // android.view.View
     protected boolean verifyDrawable(Drawable drawable) {
-        RippleDrawable rippleDrawable;
-        return super.verifyDrawable(drawable) || ((rippleDrawable = this.rippleDrawable) != null && drawable == rippleDrawable);
+        if (super.verifyDrawable(drawable)) {
+            return true;
+        }
+        RippleDrawable rippleDrawable = this.rippleDrawable;
+        return rippleDrawable != null && drawable == rippleDrawable;
     }
 
     public void setColors(int i, int i2, int i3, int i4) {
@@ -341,136 +344,129 @@ public class Switch extends View {
         invalidate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x0208, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x0219, code lost:
     
-        r4 = 0.0f;
+        r2 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x0203, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0214, code lost:
     
-        if (r1 == 0) goto L74;
+        if (r4 == 0) goto L77;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00c0, code lost:
     
-        if (r12 == 0) goto L24;
+        if (r12 == 0) goto L27;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x00b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x00c7, code lost:
     
         r13 = 1.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ca, code lost:
     
         r13 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00c5, code lost:
     
-        if (r12 == 0) goto L23;
+        if (r12 == 0) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x01fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x020e, code lost:
     
-        if (r1 == 0) goto L75;
+        if (r4 == 0) goto L78;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0205, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0216, code lost:
     
-        r4 = 1.0f;
+        r2 = 1.0f;
      */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0406  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x040f  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x03ec  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void onDraw(Canvas canvas) {
-        Canvas canvas2;
         float f;
-        int i;
         float f2;
-        int i2;
+        float f3;
+        int i;
         RippleDrawable rippleDrawable;
         Drawable drawable;
-        Canvas canvas3 = canvas;
         if (getVisibility() != 0) {
             return;
         }
         int dp = AndroidUtilities.dp(31.0f);
         AndroidUtilities.dp(20.0f);
-        int i3 = 2;
+        int i2 = 2;
         int measuredWidth = (getMeasuredWidth() - dp) / 2;
         float measuredHeight = (getMeasuredHeight() - AndroidUtilities.dpf2(14.0f)) / 2.0f;
         int dp2 = AndroidUtilities.dp(7.0f) + measuredWidth + ((int) (AndroidUtilities.dp(17.0f) * this.progress));
         int measuredHeight2 = getMeasuredHeight() / 2;
+        int i3 = 0;
         int i4 = 0;
-        int i5 = 0;
-        while (i5 < i3) {
-            if (i5 == 1 && this.overrideColorProgress == 0) {
-                i2 = i5;
+        while (i4 < i2) {
+            if (i4 == 1 && this.overrideColorProgress == 0) {
+                i = dp;
             } else {
-                Canvas canvas4 = i5 == 0 ? canvas3 : this.overlayCanvas[i4];
-                if (i5 == 1) {
-                    this.overlayBitmap[i4].eraseColor(i4);
+                Canvas canvas2 = i4 == 0 ? canvas : this.overlayCanvas[i3];
+                if (i4 == 1) {
+                    this.overlayBitmap[i3].eraseColor(i3);
+                    f2 = 7.0f;
                     this.paint.setColor(-16777216);
                     this.overlayMaskCanvas.drawRect(0.0f, 0.0f, this.overlayMaskBitmap.getWidth(), this.overlayMaskBitmap.getHeight(), this.paint);
                     this.overlayMaskCanvas.drawCircle(this.overlayCx - getX(), this.overlayCy - getY(), this.overlayRad, this.overlayEraserPaint);
+                } else {
+                    f2 = 7.0f;
                 }
-                int i6 = this.overrideColorProgress;
-                if (i6 != 1) {
-                    if (i6 != i3) {
-                        f2 = this.progress;
+                int i5 = this.overrideColorProgress;
+                if (i5 != 1) {
+                    if (i5 != i2) {
+                        f3 = this.progress;
                     }
                 }
                 int processColor = processColor(Theme.getColor(this.trackColorKey, this.resourcesProvider));
                 int processColor2 = processColor(Theme.getColor(this.trackCheckedColorKey, this.resourcesProvider));
-                if (i5 == 0 && (drawable = this.iconDrawable) != null) {
+                if (i4 == 0 && (drawable = this.iconDrawable) != null) {
                     if (this.lastIconColor != (this.isChecked ? processColor2 : processColor)) {
-                        int i7 = this.isChecked ? processColor2 : processColor;
-                        this.lastIconColor = i7;
-                        drawable.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.MULTIPLY));
+                        int i6 = this.isChecked ? processColor2 : processColor;
+                        this.lastIconColor = i6;
+                        drawable.setColorFilter(new PorterDuffColorFilter(i6, PorterDuff.Mode.MULTIPLY));
                     }
                 }
                 int red = Color.red(processColor);
                 int red2 = Color.red(processColor2);
                 int green = Color.green(processColor);
                 int green2 = Color.green(processColor2);
+                i = dp;
                 int blue = Color.blue(processColor);
                 int blue2 = Color.blue(processColor2);
-                int i8 = i5;
-                int alpha = (((int) (blue + ((blue2 - blue) * f2))) & NotificationCenter.didReceiveSmsCode) | ((((int) (red + ((red2 - red) * f2))) & NotificationCenter.didReceiveSmsCode) << 16) | ((((int) (Color.alpha(processColor) + ((Color.alpha(processColor2) - r6) * f2))) & NotificationCenter.didReceiveSmsCode) << 24) | ((((int) (green + ((green2 - green) * f2))) & NotificationCenter.didReceiveSmsCode) << 8);
+                int alpha = (((int) (blue + ((blue2 - blue) * f3))) & NotificationCenter.didReceiveSmsCode) | ((((int) (red + ((red2 - red) * f3))) & NotificationCenter.didReceiveSmsCode) << 16) | ((((int) (Color.alpha(processColor) + ((Color.alpha(processColor2) - r7) * f3))) & NotificationCenter.didReceiveSmsCode) << 24) | ((((int) (green + ((green2 - green) * f3))) & NotificationCenter.didReceiveSmsCode) << 8);
                 this.paint.setColor(alpha);
                 this.paint2.setColor(alpha);
-                this.rectF.set(measuredWidth, measuredHeight, measuredWidth + dp, AndroidUtilities.dpf2(14.0f) + measuredHeight);
-                canvas4.drawRoundRect(this.rectF, AndroidUtilities.dpf2(7.0f), AndroidUtilities.dpf2(7.0f), this.paint);
-                canvas4.drawCircle(dp2, measuredHeight2, AndroidUtilities.dpf2(10.0f), this.paint);
-                if (i8 != 0 || (rippleDrawable = this.rippleDrawable) == null) {
-                    i2 = i8;
-                    if (i2 == 1) {
-                        canvas4.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
-                    }
-                } else {
+                this.rectF.set(measuredWidth, measuredHeight, measuredWidth + i, AndroidUtilities.dpf2(14.0f) + measuredHeight);
+                canvas2.drawRoundRect(this.rectF, AndroidUtilities.dpf2(f2), AndroidUtilities.dpf2(f2), this.paint);
+                canvas2.drawCircle(dp2, measuredHeight2, AndroidUtilities.dpf2(10.0f), this.paint);
+                if (i4 == 0 && (rippleDrawable = this.rippleDrawable) != null) {
                     rippleDrawable.setBounds(dp2 - AndroidUtilities.dp(18.0f), measuredHeight2 - AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f) + dp2, AndroidUtilities.dp(18.0f) + measuredHeight2);
-                    this.rippleDrawable.draw(canvas4);
-                    i2 = i8;
+                    this.rippleDrawable.draw(canvas2);
+                } else if (i4 == 1) {
+                    canvas2.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
                 }
             }
-            i5 = i2 + 1;
-            canvas3 = canvas;
-            i3 = 2;
-            i4 = 0;
+            i4++;
+            dp = i;
+            i2 = 2;
+            i3 = 0;
         }
         if (this.overrideColorProgress != 0) {
-            canvas2 = canvas;
-            canvas2.drawBitmap(this.overlayBitmap[0], 0.0f, 0.0f, (Paint) null);
-        } else {
-            canvas2 = canvas;
+            canvas.drawBitmap(this.overlayBitmap[0], 0.0f, 0.0f, (Paint) null);
         }
-        int i9 = 0;
-        while (i9 < 2) {
-            if (i9 != 1 || this.overrideColorProgress != 0) {
-                Canvas canvas5 = i9 == 0 ? canvas2 : this.overlayCanvas[1];
-                if (i9 == 1) {
+        int i7 = 0;
+        while (i7 < 2) {
+            if (i7 != 1 || this.overrideColorProgress != 0) {
+                Canvas canvas3 = i7 == 0 ? canvas : this.overlayCanvas[1];
+                if (i7 == 1) {
                     this.overlayBitmap[1].eraseColor(0);
                 }
-                int i10 = this.overrideColorProgress;
-                if (i10 != 1) {
-                    if (i10 != 2) {
+                int i8 = this.overrideColorProgress;
+                if (i8 != 1) {
+                    if (i8 != 2) {
                         f = this.progress;
                     }
                 }
@@ -482,76 +478,67 @@ public class Switch extends View {
                 int green4 = Color.green(processColor3);
                 int blue3 = Color.blue(color);
                 int blue4 = Color.blue(processColor3);
-                this.paint.setColor(((((int) (Color.alpha(color) + ((Color.alpha(processColor3) - r6) * f))) & NotificationCenter.didReceiveSmsCode) << 24) | ((((int) (red3 + ((red4 - red3) * f))) & NotificationCenter.didReceiveSmsCode) << 16) | ((((int) (green3 + ((green4 - green3) * f))) & NotificationCenter.didReceiveSmsCode) << 8) | (((int) (blue3 + ((blue4 - blue3) * f))) & NotificationCenter.didReceiveSmsCode));
-                float f3 = dp2;
-                float f4 = measuredHeight2;
-                canvas5.drawCircle(f3, f4, AndroidUtilities.dp(8.0f), this.paint);
-                if (i9 == 0) {
+                this.paint.setColor(((((int) (Color.alpha(color) + ((Color.alpha(processColor3) - r5) * f))) & NotificationCenter.didReceiveSmsCode) << 24) | ((((int) (red3 + ((red4 - red3) * f))) & NotificationCenter.didReceiveSmsCode) << 16) | ((((int) (green3 + ((green4 - green3) * f))) & NotificationCenter.didReceiveSmsCode) << 8) | (((int) (blue3 + ((blue4 - blue3) * f))) & NotificationCenter.didReceiveSmsCode));
+                float f4 = dp2;
+                float f5 = measuredHeight2;
+                canvas3.drawCircle(f4, f5, AndroidUtilities.dp(8.0f), this.paint);
+                if (i7 == 0) {
                     if (this.iconDrawable != null) {
                         float floatValue = this.animatorIconVisibility.getFloatValue();
                         if (floatValue > 0.0f) {
                             boolean z = floatValue < 1.0f;
                             if (z) {
                                 canvas.save();
-                                canvas2.scale(floatValue, floatValue, f3, f4);
+                                canvas.scale(floatValue, floatValue, f4, f5);
                             }
                             Drawable drawable2 = this.iconDrawable;
                             drawable2.setBounds(dp2 - (drawable2.getIntrinsicWidth() / 2), measuredHeight2 - (this.iconDrawable.getIntrinsicHeight() / 2), (this.iconDrawable.getIntrinsicWidth() / 2) + dp2, (this.iconDrawable.getIntrinsicHeight() / 2) + measuredHeight2);
-                            this.iconDrawable.draw(canvas5);
+                            this.iconDrawable.draw(canvas3);
                             if (z) {
                                 canvas.restore();
                             }
                         }
                     } else {
-                        int i11 = this.drawIconType;
-                        if (i11 == 1) {
-                            dp2 = (int) (f3 - (AndroidUtilities.dp(10.8f) - (AndroidUtilities.dp(1.3f) * this.progress)));
-                            measuredHeight2 = (int) (f4 - (AndroidUtilities.dp(8.5f) - (AndroidUtilities.dp(0.5f) * this.progress)));
+                        int i9 = this.drawIconType;
+                        if (i9 == 1) {
+                            dp2 = (int) (f4 - (AndroidUtilities.dp(10.8f) - (AndroidUtilities.dp(1.3f) * this.progress)));
+                            measuredHeight2 = (int) (f5 - (AndroidUtilities.dp(8.5f) - (AndroidUtilities.dp(0.5f) * this.progress)));
                             int dpf2 = ((int) AndroidUtilities.dpf2(4.6f)) + dp2;
                             int dpf22 = (int) (AndroidUtilities.dpf2(9.5f) + measuredHeight2);
                             int dp3 = AndroidUtilities.dp(2.0f) + dpf2;
                             int dp4 = AndroidUtilities.dp(2.0f) + dpf22;
                             int dpf23 = ((int) AndroidUtilities.dpf2(7.5f)) + dp2;
                             int dpf24 = ((int) AndroidUtilities.dpf2(5.4f)) + measuredHeight2;
-                            int dp5 = dpf23 + AndroidUtilities.dp(7.0f);
-                            int dp6 = dpf24 + AndroidUtilities.dp(7.0f);
-                            float f5 = dpf23;
-                            float f6 = dpf2 - dpf23;
-                            float f7 = this.progress;
-                            Canvas canvas6 = canvas5;
-                            canvas6.drawLine((int) (f5 + (f6 * f7)), (int) (dpf24 + ((dpf22 - dpf24) * f7)), (int) (dp5 + ((dp3 - dp5) * f7)), (int) (dp6 + ((dp4 - dp6) * f7)), this.paint2);
-                            canvas6.drawLine(((int) AndroidUtilities.dpf2(7.5f)) + dp2, ((int) AndroidUtilities.dpf2(12.5f)) + measuredHeight2, AndroidUtilities.dp(7.0f) + r2, r4 - AndroidUtilities.dp(7.0f), this.paint2);
-                            i = 1;
-                            if (i9 != i) {
-                                canvas5.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
-                            }
+                            int dp5 = AndroidUtilities.dp(7.0f) + dpf23;
+                            int dp6 = AndroidUtilities.dp(7.0f) + dpf24;
+                            float f6 = dpf23;
+                            float f7 = dpf2 - dpf23;
+                            float f8 = this.progress;
+                            canvas3.drawLine((int) (f6 + (f7 * f8)), (int) (dpf24 + ((dpf22 - dpf24) * f8)), (int) (dp5 + ((dp3 - dp5) * f8)), (int) (dp6 + ((dp4 - dp6) * f8)), this.paint2);
+                            canvas3.drawLine(((int) AndroidUtilities.dpf2(7.5f)) + dp2, ((int) AndroidUtilities.dpf2(12.5f)) + measuredHeight2, AndroidUtilities.dp(7.0f) + r2, r5 - AndroidUtilities.dp(7.0f), this.paint2);
                         } else {
-                            if (i11 == 2 || this.iconAnimator != null) {
+                            if (i9 == 2 || this.iconAnimator != null) {
                                 this.paint2.setAlpha((int) ((1.0f - this.iconProgress) * 255.0f));
-                                Canvas canvas7 = canvas5;
-                                canvas7.drawLine(f3, f4, f3, measuredHeight2 - AndroidUtilities.dp(5.0f), this.paint2);
-                                canvas5.save();
-                                canvas5.rotate(this.iconProgress * (-90.0f), f3, f4);
-                                canvas7.drawLine(f3, f4, AndroidUtilities.dp(4.0f) + dp2, f4, this.paint2);
-                                canvas5.restore();
-                                i = 1;
-                                if (i9 != i) {
-                                }
+                                canvas3.drawLine(f4, f5, f4, measuredHeight2 - AndroidUtilities.dp(5.0f), this.paint2);
+                                canvas3.save();
+                                canvas3.rotate(this.iconProgress * (-90.0f), f4, f5);
+                                canvas3.drawLine(f4, f5, AndroidUtilities.dp(4.0f) + dp2, f5, this.paint2);
+                                canvas3.restore();
                             }
-                            i = 1;
-                            if (i9 != i) {
+                            if (i7 == 1) {
+                                canvas3.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
+                                i7++;
                             }
                         }
                     }
                 }
-                i = 1;
-                if (i9 != i) {
+                if (i7 == 1) {
                 }
             }
-            i9++;
+            i7++;
         }
         if (this.overrideColorProgress != 0) {
-            canvas2.drawBitmap(this.overlayBitmap[1], 0.0f, 0.0f, (Paint) null);
+            canvas.drawBitmap(this.overlayBitmap[1], 0.0f, 0.0f, (Paint) null);
         }
     }
 

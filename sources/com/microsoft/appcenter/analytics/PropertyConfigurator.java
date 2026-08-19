@@ -104,14 +104,12 @@ public class PropertyConfigurator extends AbstractChannelListener {
     }
 
     private boolean shouldOverridePartAProperties(Log log) {
-        if (log instanceof CommonSchemaLog) {
-            Object tag = log.getTag();
-            AnalyticsTransmissionTarget analyticsTransmissionTarget = this.mTransmissionTarget;
-            if (tag == analyticsTransmissionTarget && analyticsTransmissionTarget.isEnabled()) {
-                return true;
-            }
+        if (!(log instanceof CommonSchemaLog)) {
+            return false;
         }
-        return false;
+        Object tag = log.getTag();
+        AnalyticsTransmissionTarget analyticsTransmissionTarget = this.mTransmissionTarget;
+        return tag == analyticsTransmissionTarget && analyticsTransmissionTarget.isEnabled();
     }
 
     private String getAppName() {

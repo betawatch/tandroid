@@ -38,11 +38,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thre
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Thread)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Thread) {
+            CrashlyticsReport.Session.Event.Application.Execution.Thread thread = (CrashlyticsReport.Session.Event.Application.Execution.Thread) obj;
+            if (this.name.equals(thread.getName()) && this.importance == thread.getImportance() && this.frames.equals(thread.getFrames())) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Event.Application.Execution.Thread thread = (CrashlyticsReport.Session.Event.Application.Execution.Thread) obj;
-        return this.name.equals(thread.getName()) && this.importance == thread.getImportance() && this.frames.equals(thread.getFrames());
+        return false;
     }
 
     public int hashCode() {

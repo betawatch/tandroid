@@ -36,7 +36,7 @@ import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityPendingRequestCell extends FrameLayout implements Theme.Colorable {
     private final ButtonWithCounterView addButton;
     public final BackupImageView avatarView;
@@ -64,8 +64,7 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         void onClickGroupOwner(long j);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$set$4() {
+    public static /* synthetic */ void $r8$lambda$-iKAnBjVDjZkfG3zWlAG-UhGTF0() {
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -127,7 +126,7 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         backupImageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityPendingRequestCell.this.lambda$new$0(view);
+                CommunityPendingRequestCell.$r8$lambda$gK9q3Qn_P46I_fBulH85Nd9pSCs(CommunityPendingRequestCell.this, view);
             }
         });
         addView(backupImageView2, LayoutHelper.createFrame(16, 16.0f, 51, 75.0f, 35.0f, 0.0f, 0.0f));
@@ -139,7 +138,7 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityPendingRequestCell.this.lambda$new$1(view);
+                CommunityPendingRequestCell.$r8$lambda$4B07SMGKAy9Ni44ywcyJOnZwox8(CommunityPendingRequestCell.this, view);
             }
         });
         linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2, 20.0f, 0.0f, 0.0f, 1.33f));
@@ -171,7 +170,7 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityPendingRequestCell.this.lambda$new$2(view);
+                CommunityPendingRequestCell.$r8$lambda$lcOxsW5NAQvrDANF7A-eSQcNj7g(CommunityPendingRequestCell.this, view);
             }
         });
         linearLayout2.addView(buttonWithCounterView, LayoutHelper.createLinear(-2, 30, 0.0f, 16, 0, 0, 4, 0));
@@ -184,7 +183,7 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityPendingRequestCell.this.lambda$new$3(view);
+                CommunityPendingRequestCell.$r8$lambda$3YrE6nLsEz1kpJGlMYqd-v3H21k(CommunityPendingRequestCell.this, view);
             }
         });
         linearLayout2.addView(buttonWithCounterView2, LayoutHelper.createLinear(-2, 30, 0.0f, 16, 4, 0, 0, 0));
@@ -193,35 +192,31 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         updateColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        ClickDelegate clickDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$gK9q3Qn_P46I_fBulH85Nd9pSCs(CommunityPendingRequestCell communityPendingRequestCell, View view) {
+        ClickDelegate clickDelegate = communityPendingRequestCell.delegate;
         if (clickDelegate != null) {
-            clickDelegate.onClickGroupOwner(this.userDialogId);
+            clickDelegate.onClickGroupOwner(communityPendingRequestCell.userDialogId);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        ClickDelegate clickDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$4B07SMGKAy9Ni44ywcyJOnZwox8(CommunityPendingRequestCell communityPendingRequestCell, View view) {
+        ClickDelegate clickDelegate = communityPendingRequestCell.delegate;
         if (clickDelegate != null) {
-            clickDelegate.onClickGroupOwner(this.userDialogId);
+            clickDelegate.onClickGroupOwner(communityPendingRequestCell.userDialogId);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        ClickDelegate clickDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$lcOxsW5NAQvrDANF7A-eSQcNj7g(CommunityPendingRequestCell communityPendingRequestCell, View view) {
+        ClickDelegate clickDelegate = communityPendingRequestCell.delegate;
         if (clickDelegate != null) {
-            clickDelegate.onClickDecline(this.groupDialogId);
+            clickDelegate.onClickDecline(communityPendingRequestCell.groupDialogId);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        ClickDelegate clickDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$3YrE6nLsEz1kpJGlMYqd-v3H21k(CommunityPendingRequestCell communityPendingRequestCell, View view) {
+        ClickDelegate clickDelegate = communityPendingRequestCell.delegate;
         if (clickDelegate != null) {
-            clickDelegate.onClickApprove(this.groupDialogId);
+            clickDelegate.onClickApprove(communityPendingRequestCell.groupDialogId);
         }
     }
 
@@ -254,10 +249,14 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.dp(76.0f), getHeight() - 1, getMeasuredWidth(), getHeight() - 1, Theme.dividerPaint);
+            canvas2 = canvas;
+            canvas2.drawLine(AndroidUtilities.dp(76.0f), getHeight() - 1, getMeasuredWidth(), getHeight() - 1, Theme.dividerPaint);
+        } else {
+            canvas2 = canvas;
         }
-        super.dispatchDraw(canvas);
+        super.dispatchDraw(canvas2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -280,7 +279,7 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
         textView.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(i, DialogObject.getShortName(user)), Theme.getColor(Theme.key_telegram_color_text), new Runnable() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityPendingRequestCell.lambda$set$4();
+                CommunityPendingRequestCell.$r8$lambda$-iKAnBjVDjZkfG3zWlAG-UhGTF0();
             }
         }));
         if (user2 != null) {

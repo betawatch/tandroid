@@ -88,11 +88,13 @@ final class AutoValue_StaticSessionData_DeviceData extends StaticSessionData.Dev
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof StaticSessionData.DeviceData)) {
-            return false;
+        if (obj instanceof StaticSessionData.DeviceData) {
+            StaticSessionData.DeviceData deviceData = (StaticSessionData.DeviceData) obj;
+            if (this.arch == deviceData.arch() && this.model.equals(deviceData.model()) && this.availableProcessors == deviceData.availableProcessors() && this.totalRam == deviceData.totalRam() && this.diskSpace == deviceData.diskSpace() && this.isEmulator == deviceData.isEmulator() && this.state == deviceData.state() && this.manufacturer.equals(deviceData.manufacturer()) && this.modelClass.equals(deviceData.modelClass())) {
+                return true;
+            }
         }
-        StaticSessionData.DeviceData deviceData = (StaticSessionData.DeviceData) obj;
-        return this.arch == deviceData.arch() && this.model.equals(deviceData.model()) && this.availableProcessors == deviceData.availableProcessors() && this.totalRam == deviceData.totalRam() && this.diskSpace == deviceData.diskSpace() && this.isEmulator == deviceData.isEmulator() && this.state == deviceData.state() && this.manufacturer.equals(deviceData.manufacturer()) && this.modelClass.equals(deviceData.modelClass());
+        return false;
     }
 
     public int hashCode() {

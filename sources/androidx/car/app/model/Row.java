@@ -122,9 +122,10 @@ public final class Row implements Item {
 
     private Row() {
         this.mTitle = null;
-        this.mTexts = Collections.emptyList();
+        List list = Collections.EMPTY_LIST;
+        this.mTexts = list;
         this.mImage = null;
-        this.mActions = Collections.emptyList();
+        this.mActions = list;
         this.mNumericDecoration = -1;
         this.mToggle = null;
         this.mOnClickDelegate = null;

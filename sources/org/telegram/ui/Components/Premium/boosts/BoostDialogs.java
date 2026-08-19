@@ -50,45 +50,35 @@ import org.telegram.ui.LaunchActivity;
 
 /* loaded from: classes5.dex */
 public abstract class BoostDialogs {
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkReduceQuantity$13(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$0sIZWlBOtXE0iTn0WiE10O0Ug48(AlertDialog alertDialog, int i) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkReduceUsers$11(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$2wdGK5T_WlSND73cS7_d6VR4A4o(AlertDialog alertDialog, int i) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAbout$14(AlertDialog alertDialog, int i) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAboutEnd$15(AlertDialog alertDialog, int i) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAboutEnd$17(AlertDialog alertDialog, int i) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAboutEnd$18(AlertDialog alertDialog, int i) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBulletinAbout$27(TLRPC.TL_error tL_error) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$showDatePicker$3(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$4xLmZwpdQSywMRE5P__abi8Bd2g(View view, MotionEvent motionEvent) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showMoreBoostsNeeded$29(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$EbtP9d6Znf2Ul5_6kmSvZfkI9wI(AlertDialog alertDialog, int i) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showPrivateChannelAlert$20(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$NWq1N7kPvi2Rz29fp29hJH62YP0(AlertDialog alertDialog, int i) {
+    }
+
+    public static /* synthetic */ void $r8$lambda$NpchwS3EGotSPguWejniRKo1gMw(TLRPC.TL_error tL_error) {
+    }
+
+    public static /* synthetic */ void $r8$lambda$X4dQhplwJym1ddLdysLPmpadu6Q(AlertDialog alertDialog, int i) {
+    }
+
+    public static /* synthetic */ void $r8$lambda$c72RtgTgpwcfzG0p6mcFzlj_Q04(AlertDialog alertDialog, int i) {
+    }
+
+    public static /* synthetic */ void $r8$lambda$cZ5xH0mvxDzwAIYwsdC6X8hbsjA(AlertDialog alertDialog, int i) {
+    }
+
+    public static /* synthetic */ void $r8$lambda$dtW27XoeU9880emapboAQgyrSUg(AlertDialog alertDialog, int i) {
     }
 
     public static long getThreeDaysAfterToday() {
@@ -122,8 +112,7 @@ public abstract class BoostDialogs {
         showToastError(frameLayout.getContext(), tL_error);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBulletin$1(BulletinFactory bulletinFactory, boolean z, final TLRPC.Chat chat, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$7DNp19UP3N1YlcuhgNvNug5jSww(BulletinFactory bulletinFactory, boolean z, final TLRPC.Chat chat, Theme.ResourcesProvider resourcesProvider) {
         String string;
         String string2;
         int i = R.raw.star_premium_2;
@@ -140,7 +129,7 @@ public abstract class BoostDialogs {
         bulletinFactory.createSimpleBulletin(i, string, AndroidUtilities.replaceSingleTag(string2, Theme.key_undo_cancelColor, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BoostDialogs.lambda$showBulletin$0(TLRPC.Chat.this);
+                BoostDialogs.$r8$lambda$go7JRZCOKY9jSvHOkD6-dtEM5VU(TLRPC.Chat.this);
             }
         }, resourcesProvider)).setDuration(5000).show();
     }
@@ -149,13 +138,12 @@ public abstract class BoostDialogs {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BoostDialogs.lambda$showBulletin$1(BulletinFactory.this, z, chat, resourcesProvider);
+                BoostDialogs.$r8$lambda$7DNp19UP3N1YlcuhgNvNug5jSww(BulletinFactory.this, z, chat, resourcesProvider);
             }
         }, 300L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBulletin$0(TLRPC.Chat chat) {
+    public static /* synthetic */ void $r8$lambda$go7JRZCOKY9jSvHOkD6-dtEM5VU(TLRPC.Chat chat) {
         if (chat != null) {
             BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
             bottomSheetParams.transitionFromLeft = true;
@@ -175,13 +163,12 @@ public abstract class BoostDialogs {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
-                BoostDialogs.lambda$showGiftLinkForwardedBulletin$2(replaceTags);
+                BoostDialogs.$r8$lambda$Wlhhib8TJhPesjG7DAW42-R6DoM(replaceTags);
             }
         }, 450L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showGiftLinkForwardedBulletin$2(CharSequence charSequence) {
+    public static /* synthetic */ void $r8$lambda$Wlhhib8TJhPesjG7DAW42-R6DoM(CharSequence charSequence) {
         BulletinFactory global = BulletinFactory.global();
         if (global != null) {
             global.createSimpleBulletinWithIconSize(R.raw.forward, charSequence, 30).show();
@@ -301,9 +288,7 @@ public abstract class BoostDialogs {
         textView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda18
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$showDatePicker$3;
-                lambda$showDatePicker$3 = BoostDialogs.lambda$showDatePicker$3(view, motionEvent);
-                return lambda$showDatePicker$3;
+                return BoostDialogs.$r8$lambda$4xLmZwpdQSywMRE5P__abi8Bd2g(view, motionEvent);
             }
         });
         LinearLayout linearLayout2 = new LinearLayout(context);
@@ -336,15 +321,13 @@ public abstract class BoostDialogs {
         numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i5) {
-                String lambda$showDatePicker$4;
-                lambda$showDatePicker$4 = BoostDialogs.lambda$showDatePicker$4(currentTimeMillis, calendar, i, i5);
-                return lambda$showDatePicker$4;
+                return BoostDialogs.$r8$lambda$YSGskBisETYvgyCen4zeXNwfwe4(currentTimeMillis, calendar, i, i5);
             }
         });
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda20
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
             public final void onValueChange(NumberPicker numberPicker4, int i5, int i6) {
-                BoostDialogs.lambda$showDatePicker$5(linearLayout, numberPicker2, numberPicker3, i3, i4, numberPicker, numberPicker4, i5, i6);
+                BoostDialogs.$r8$lambda$EDb9agqos9CqHv0V8p9nBs0cols(linearLayout, numberPicker2, numberPicker3, i3, i4, numberPicker, numberPicker4, i5, i6);
             }
         };
         numberPicker.setOnValueChangedListener(onValueChangeListener);
@@ -366,9 +349,9 @@ public abstract class BoostDialogs {
         numberPicker3.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda22
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i5) {
-                String lambda$showDatePicker$7;
-                lambda$showDatePicker$7 = BoostDialogs.lambda$showDatePicker$7(i5);
-                return lambda$showDatePicker$7;
+                String format;
+                format = String.format("%02d", Integer.valueOf(i5 * 5));
+                return format;
             }
         });
         linearLayout2.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.locationPermissionGranted, 0.3f));
@@ -398,7 +381,7 @@ public abstract class BoostDialogs {
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BoostDialogs.lambda$showDatePicker$8(calendar, numberPicker, numberPicker2, numberPicker3, scheduleDatePickerDelegate, builder, view);
+                BoostDialogs.$r8$lambda$yD9c29e5n89zb_oHpompqfR8Vvc(calendar, numberPicker, numberPicker2, numberPicker3, scheduleDatePickerDelegate, builder, view);
             }
         });
         builder.setCustomView(linearLayout);
@@ -408,8 +391,7 @@ public abstract class BoostDialogs {
         AndroidUtilities.setLightStatusBar(show, ColorUtils.calculateLuminance(scheduleDatePickerColors.backgroundColor) > 0.699999988079071d);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$showDatePicker$4(long j, Calendar calendar, int i, int i2) {
+    public static /* synthetic */ String $r8$lambda$YSGskBisETYvgyCen4zeXNwfwe4(long j, Calendar calendar, int i, int i2) {
         if (i2 == 0) {
             return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
         }
@@ -421,8 +403,7 @@ public abstract class BoostDialogs {
         return LocaleController.getInstance().getFormatterScheduleYear().format(j2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showDatePicker$5(LinearLayout linearLayout, NumberPicker numberPicker, NumberPicker numberPicker2, int i, int i2, NumberPicker numberPicker3, NumberPicker numberPicker4, int i3, int i4) {
+    public static /* synthetic */ void $r8$lambda$EDb9agqos9CqHv0V8p9nBs0cols(LinearLayout linearLayout, NumberPicker numberPicker, NumberPicker numberPicker2, int i, int i2, NumberPicker numberPicker3, NumberPicker numberPicker4, int i3, int i4) {
         try {
             linearLayout.performHapticFeedback(3, 2);
         } catch (Exception unused) {
@@ -473,13 +454,7 @@ public abstract class BoostDialogs {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$showDatePicker$7(int i) {
-        return String.format("%02d", Integer.valueOf(i * 5));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showDatePicker$8(Calendar calendar, NumberPicker numberPicker, NumberPicker numberPicker2, NumberPicker numberPicker3, AlertsCreator.ScheduleDatePickerDelegate scheduleDatePickerDelegate, BottomSheet.Builder builder, View view) {
+    public static /* synthetic */ void $r8$lambda$yD9c29e5n89zb_oHpompqfR8Vvc(Calendar calendar, NumberPicker numberPicker, NumberPicker numberPicker2, NumberPicker numberPicker3, AlertsCreator.ScheduleDatePickerDelegate scheduleDatePickerDelegate, BottomSheet.Builder builder, View view) {
         calendar.setTimeInMillis(System.currentTimeMillis() + (numberPicker.getValue() * 86400000));
         calendar.set(11, numberPicker2.getValue());
         calendar.set(12, numberPicker3.getValue() * 5);
@@ -536,7 +511,7 @@ public abstract class BoostDialogs {
         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda26
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                BoostDialogs.lambda$checkReduceUsers$11(alertDialog, i2);
+                BoostDialogs.$r8$lambda$0sIZWlBOtXE0iTn0WiE10O0Ug48(alertDialog, i2);
             }
         });
         builder.show();
@@ -547,7 +522,7 @@ public abstract class BoostDialogs {
         if (tL_premiumGiftCodeOption.store_product != null) {
             return false;
         }
-        ArrayList<TLRPC.TL_premiumGiftCodeOption> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) it.next();
@@ -556,29 +531,34 @@ public abstract class BoostDialogs {
             }
         }
         final TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption3 = (TLRPC.TL_premiumGiftCodeOption) arrayList.get(0);
-        for (TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption4 : arrayList) {
-            int i = tL_premiumGiftCodeOption.users;
-            int i2 = tL_premiumGiftCodeOption4.users;
-            if (i > i2 && i2 > tL_premiumGiftCodeOption3.users) {
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption4 = (TLRPC.TL_premiumGiftCodeOption) obj;
+            int i2 = tL_premiumGiftCodeOption.users;
+            int i3 = tL_premiumGiftCodeOption4.users;
+            if (i2 > i3 && i3 > tL_premiumGiftCodeOption3.users) {
                 tL_premiumGiftCodeOption3 = tL_premiumGiftCodeOption4;
             }
         }
         String formatPluralString = LocaleController.formatPluralString("GiftMonths", tL_premiumGiftCodeOption3.months, new Object[0]);
-        int i3 = tL_premiumGiftCodeOption.users;
-        int i4 = tL_premiumGiftCodeOption3.users;
+        int i4 = tL_premiumGiftCodeOption.users;
+        int i5 = tL_premiumGiftCodeOption3.users;
         AlertDialog.Builder builder = new AlertDialog.Builder(context, resourcesProvider);
         builder.setTitle(LocaleController.getString("BoostingReduceQuantity", R.string.BoostingReduceQuantity));
-        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReduceQuantityTextPlural", i3, formatPluralString, Integer.valueOf(i4))));
+        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReduceQuantityTextPlural", i4, formatPluralString, Integer.valueOf(i5))));
         builder.setPositiveButton(LocaleController.getString("Reduce", R.string.Reduce), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda30
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i5) {
+            public final void onClick(AlertDialog alertDialog, int i6) {
                 Utilities.Callback.this.run(tL_premiumGiftCodeOption3);
             }
         });
         builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda31
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i5) {
-                BoostDialogs.lambda$checkReduceQuantity$13(alertDialog, i5);
+            public final void onClick(AlertDialog alertDialog, int i6) {
+                BoostDialogs.$r8$lambda$2wdGK5T_WlSND73cS7_d6VR4A4o(alertDialog, i6);
             }
         });
         builder.show();
@@ -586,7 +566,8 @@ public abstract class BoostDialogs {
     }
 
     public static void showAbout(boolean z, String str, long j, TLRPC.TL_payments_giveawayInfo tL_payments_giveawayInfo, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, Context context, Theme.ResourcesProvider resourcesProvider) {
-        int i = tL_messageMediaGiveaway.quantity;
+        int i;
+        int i2 = tL_messageMediaGiveaway.quantity;
         String formatPluralString = LocaleController.formatPluralString("BoldMonths", tL_messageMediaGiveaway.months, new Object[0]);
         String format = LocaleController.getInstance().getFormatterGiveawayMonthDay().format(new Date(tL_messageMediaGiveaway.until_date * 1000));
         String format2 = LocaleController.getInstance().getFormatterDay().format(new Date(tL_payments_giveawayInfo.start_date * 1000));
@@ -597,8 +578,10 @@ public abstract class BoostDialogs {
         builder.setTitle(LocaleController.getString("BoostingGiveAwayAbout", R.string.BoostingGiveAwayAbout));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (z3) {
+            i = i2;
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z ? "BoostingStarsGiveawayHowItWorksText" : "BoostingStarsGiveawayHowItWorksTextGroup", (int) tL_messageMediaGiveaway.stars, str)));
         } else {
+            i = i2;
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString(z ? "BoostingGiveawayHowItWorksText" : "BoostingGiveawayHowItWorksTextGroup", i, str, Integer.valueOf(i), formatPluralString)));
         }
         spannableStringBuilder.append((CharSequence) "\n\n");
@@ -641,8 +624,8 @@ public abstract class BoostDialogs {
         builder.setMessage(spannableStringBuilder);
         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i2) {
-                BoostDialogs.lambda$showAbout$14(alertDialog, i2);
+            public final void onClick(AlertDialog alertDialog, int i3) {
+                BoostDialogs.$r8$lambda$dtW27XoeU9880emapboAQgyrSUg(alertDialog, i3);
             }
         });
         applyDialogStyle(builder.show(), false);
@@ -668,14 +651,12 @@ public abstract class BoostDialogs {
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z ? "BoostingStarsGiveawayHowItWorksTextEnd" : "BoostingStarsGiveawayHowItWorksTextEndGroup", (int) tL_messageMediaGiveaway.stars, str)));
             i = i2;
         } else {
-            String str2 = z ? "BoostingGiveawayHowItWorksTextEnd" : "BoostingGiveawayHowItWorksTextEndGroup";
-            Object[] objArr = {str, Integer.valueOf(i2), formatPluralString};
             i = i2;
-            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString(str2, i, objArr)));
+            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString(z ? "BoostingGiveawayHowItWorksTextEnd" : "BoostingGiveawayHowItWorksTextEndGroup", i, str, Integer.valueOf(i2), formatPluralString)));
         }
         spannableStringBuilder.append((CharSequence) "\n\n");
-        String str3 = tL_messageMediaGiveaway.prize_description;
-        if (str3 != null && !str3.isEmpty()) {
+        String str2 = tL_messageMediaGiveaway.prize_description;
+        if (str2 != null && !str2.isEmpty()) {
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayHowItWorksIncludeText", i, str, tL_messageMediaGiveaway.prize_description)));
             spannableStringBuilder.append((CharSequence) "\n\n");
         }
@@ -711,7 +692,7 @@ public abstract class BoostDialogs {
             builder.setPositiveButton(LocaleController.getString("Close", R.string.Close), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda14
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i5) {
-                    BoostDialogs.lambda$showAboutEnd$15(alertDialog, i5);
+                    BoostDialogs.$r8$lambda$NWq1N7kPvi2Rz29fp29hJH62YP0(alertDialog, i5);
                 }
             });
             applyDialogStyle(builder.show(), true);
@@ -724,14 +705,14 @@ public abstract class BoostDialogs {
                 builder.setPositiveButton(LocaleController.getString("BoostingGiveawayViewPrize", R.string.BoostingGiveawayViewPrize), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda15
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i5) {
-                        BoostDialogs.lambda$showAboutEnd$16(TLRPC.TL_payments_giveawayInfoResults.this, alertDialog, i5);
+                        BoostDialogs.$r8$lambda$e8nUNEQOAbk1f3QlMZPiBpsxQzo(TLRPC.TL_payments_giveawayInfoResults.this, alertDialog, i5);
                     }
                 });
             }
             builder.setNegativeButton(LocaleController.getString("Close", R.string.Close), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda16
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i5) {
-                    BoostDialogs.lambda$showAboutEnd$17(alertDialog, i5);
+                    BoostDialogs.$r8$lambda$X4dQhplwJym1ddLdysLPmpadu6Q(alertDialog, i5);
                 }
             });
         } else {
@@ -739,7 +720,7 @@ public abstract class BoostDialogs {
             builder.setPositiveButton(LocaleController.getString("Close", R.string.Close), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda17
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i5) {
-                    BoostDialogs.lambda$showAboutEnd$18(alertDialog, i5);
+                    BoostDialogs.$r8$lambda$EbtP9d6Znf2Ul5_6kmSvZfkI9wI(alertDialog, i5);
                 }
             });
         }
@@ -755,8 +736,7 @@ public abstract class BoostDialogs {
         applyDialogStyle(builder.show(), false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAboutEnd$16(TLRPC.TL_payments_giveawayInfoResults tL_payments_giveawayInfoResults, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$e8nUNEQOAbk1f3QlMZPiBpsxQzo(TLRPC.TL_payments_giveawayInfoResults tL_payments_giveawayInfoResults, AlertDialog alertDialog, int i) {
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         if (lastFragment == null) {
             return;
@@ -782,32 +762,30 @@ public abstract class BoostDialogs {
         builder.setPositiveButton(LocaleController.getString("Add", R.string.Add), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda27
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BoostDialogs.lambda$showPrivateChannelAlert$19(atomicBoolean, runnable2, alertDialog, i);
+                BoostDialogs.$r8$lambda$XQXY-3GnmQJl_ETJARL_GGHa3zQ(atomicBoolean, runnable2, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda28
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BoostDialogs.lambda$showPrivateChannelAlert$20(alertDialog, i);
+                BoostDialogs.$r8$lambda$c72RtgTgpwcfzG0p6mcFzlj_Q04(alertDialog, i);
             }
         });
         builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda29
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                BoostDialogs.lambda$showPrivateChannelAlert$21(atomicBoolean, runnable, dialogInterface);
+                BoostDialogs.$r8$lambda$hQzqBx4sRzdZK3tycFZNmRhRFFM(atomicBoolean, runnable, dialogInterface);
             }
         });
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showPrivateChannelAlert$19(AtomicBoolean atomicBoolean, Runnable runnable, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$XQXY-3GnmQJl_ETJARL_GGHa3zQ(AtomicBoolean atomicBoolean, Runnable runnable, AlertDialog alertDialog, int i) {
         atomicBoolean.set(true);
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showPrivateChannelAlert$21(AtomicBoolean atomicBoolean, Runnable runnable, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$hQzqBx4sRzdZK3tycFZNmRhRFFM(AtomicBoolean atomicBoolean, Runnable runnable, DialogInterface dialogInterface) {
         if (atomicBoolean.get()) {
             return;
         }
@@ -815,7 +793,7 @@ public abstract class BoostDialogs {
     }
 
     public static void openGiveAwayStatusDialog(MessageObject messageObject, final Browser.Progress progress, final Context context, final Theme.ResourcesProvider resourcesProvider) {
-        final TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
+        TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
         progress.init();
         progress.onCancel(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda6
@@ -827,36 +805,35 @@ public abstract class BoostDialogs {
         TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
             TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageMedia;
-            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = new TLRPC.TL_messageMediaGiveaway();
-            tL_messageMediaGiveaway2.prize_description = tL_messageMediaGiveawayResults.prize_description;
-            tL_messageMediaGiveaway2.months = tL_messageMediaGiveawayResults.months;
-            tL_messageMediaGiveaway2.quantity = tL_messageMediaGiveawayResults.winners_count + tL_messageMediaGiveawayResults.unclaimed_count;
-            tL_messageMediaGiveaway2.only_new_subscribers = tL_messageMediaGiveawayResults.only_new_subscribers;
-            tL_messageMediaGiveaway2.until_date = tL_messageMediaGiveawayResults.until_date;
-            tL_messageMediaGiveaway2.stars = tL_messageMediaGiveawayResults.stars;
-            tL_messageMediaGiveaway2.flags = tL_messageMediaGiveawayResults.flags;
-            tL_messageMediaGiveaway = tL_messageMediaGiveaway2;
+            tL_messageMediaGiveaway = new TLRPC.TL_messageMediaGiveaway();
+            tL_messageMediaGiveaway.prize_description = tL_messageMediaGiveawayResults.prize_description;
+            tL_messageMediaGiveaway.months = tL_messageMediaGiveawayResults.months;
+            tL_messageMediaGiveaway.quantity = tL_messageMediaGiveawayResults.winners_count + tL_messageMediaGiveawayResults.unclaimed_count;
+            tL_messageMediaGiveaway.only_new_subscribers = tL_messageMediaGiveawayResults.only_new_subscribers;
+            tL_messageMediaGiveaway.until_date = tL_messageMediaGiveawayResults.until_date;
+            tL_messageMediaGiveaway.stars = tL_messageMediaGiveawayResults.stars;
+            tL_messageMediaGiveaway.flags = tL_messageMediaGiveawayResults.flags;
         } else {
             tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia;
         }
+        final TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
         final String giveawayCreatorName = getGiveawayCreatorName(messageObject);
         final boolean isChannel = isChannel(messageObject);
-        final long j = 1000 * messageObject.messageOwner.date;
+        final long j = messageObject.messageOwner.date * 1000;
         BoostRepository.getGiveawayInfo(messageObject, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BoostDialogs.lambda$openGiveAwayStatusDialog$23(atomicBoolean, progress, isChannel, giveawayCreatorName, j, tL_messageMediaGiveaway, context, resourcesProvider, (TLRPC.payments_GiveawayInfo) obj);
+                BoostDialogs.$r8$lambda$VPq37rbydrsIqgb9Iss9McjMFtk(atomicBoolean, progress, isChannel, giveawayCreatorName, j, tL_messageMediaGiveaway2, context, resourcesProvider, (TLRPC.payments_GiveawayInfo) obj);
             }
         }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BoostDialogs.lambda$openGiveAwayStatusDialog$24(atomicBoolean, progress, (TLRPC.TL_error) obj);
+                BoostDialogs.$r8$lambda$uiKy_Sm31gbPIi8Kcd7_Wd7f12Y(atomicBoolean, progress, (TLRPC.TL_error) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openGiveAwayStatusDialog$23(AtomicBoolean atomicBoolean, Browser.Progress progress, boolean z, String str, long j, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, Context context, Theme.ResourcesProvider resourcesProvider, TLRPC.payments_GiveawayInfo payments_giveawayinfo) {
+    public static /* synthetic */ void $r8$lambda$VPq37rbydrsIqgb9Iss9McjMFtk(AtomicBoolean atomicBoolean, Browser.Progress progress, boolean z, String str, long j, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, Context context, Theme.ResourcesProvider resourcesProvider, TLRPC.payments_GiveawayInfo payments_giveawayinfo) {
         if (atomicBoolean.get()) {
             return;
         }
@@ -868,8 +845,7 @@ public abstract class BoostDialogs {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openGiveAwayStatusDialog$24(AtomicBoolean atomicBoolean, Browser.Progress progress, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$uiKy_Sm31gbPIi8Kcd7_Wd7f12Y(AtomicBoolean atomicBoolean, Browser.Progress progress, TLRPC.TL_error tL_error) {
         if (atomicBoolean.get()) {
             return;
         }
@@ -903,18 +879,17 @@ public abstract class BoostDialogs {
         BoostRepository.getGiveawayInfo(messageObject, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BoostDialogs.lambda$showBulletinAbout$26(MessageObject.this, (TLRPC.payments_GiveawayInfo) obj);
+                BoostDialogs.$r8$lambda$g-pY5WECZOxGjtBvgYQyOdQKExk(MessageObject.this, (TLRPC.payments_GiveawayInfo) obj);
             }
         }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BoostDialogs.lambda$showBulletinAbout$27((TLRPC.TL_error) obj);
+                BoostDialogs.$r8$lambda$NpchwS3EGotSPguWejniRKo1gMw((TLRPC.TL_error) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBulletinAbout$26(MessageObject messageObject, final TLRPC.payments_GiveawayInfo payments_giveawayinfo) {
+    public static /* synthetic */ void $r8$lambda$g-pY5WECZOxGjtBvgYQyOdQKExk(MessageObject messageObject, final TLRPC.payments_GiveawayInfo payments_giveawayinfo) {
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
@@ -958,14 +933,13 @@ public abstract class BoostDialogs {
         lottieLayout.setButton(new Bulletin.UndoButton(lastFragment.getParentActivity(), true, lastFragment.getResourceProvider()).setText(LocaleController.getString(R.string.LearnMore)).setUndoAction(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                BoostDialogs.lambda$showBulletinAbout$25(TLRPC.payments_GiveawayInfo.this, isChannel, giveawayCreatorName, j, tL_messageMediaGiveaway2, lastFragment);
+                BoostDialogs.$r8$lambda$jfoikiIAXhVcYEZJhjU0Mp9LFow(TLRPC.payments_GiveawayInfo.this, isChannel, giveawayCreatorName, j, tL_messageMediaGiveaway2, lastFragment);
             }
         }));
         Bulletin.make(lastFragment, lottieLayout, 2750).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showBulletinAbout$25(TLRPC.payments_GiveawayInfo payments_giveawayinfo, boolean z, String str, long j, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$jfoikiIAXhVcYEZJhjU0Mp9LFow(TLRPC.payments_GiveawayInfo payments_giveawayinfo, boolean z, String str, long j, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, BaseFragment baseFragment) {
         if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
             showAbout(z, str, j, (TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo, tL_messageMediaGiveaway, baseFragment.getParentActivity(), baseFragment.getResourceProvider());
         } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
@@ -985,21 +959,20 @@ public abstract class BoostDialogs {
         builder.setNegativeButton(LocaleController.getString("GiftPremium", R.string.GiftPremium), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BoostDialogs.lambda$showMoreBoostsNeeded$28(BottomSheet.this, alertDialog, i);
+                BoostDialogs.$r8$lambda$741Yww92LdJcczmNRaaQhvdXYic(BottomSheet.this, alertDialog, i);
             }
         });
         builder.setPositiveButton(LocaleController.getString("Close", R.string.Close), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda13
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BoostDialogs.lambda$showMoreBoostsNeeded$29(alertDialog, i);
+                BoostDialogs.$r8$lambda$cZ5xH0mvxDzwAIYwsdC6X8hbsjA(alertDialog, i);
             }
         });
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showMoreBoostsNeeded$28(BottomSheet bottomSheet, AlertDialog alertDialog, int i) {
-        bottomSheet.lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$741Yww92LdJcczmNRaaQhvdXYic(BottomSheet bottomSheet, AlertDialog alertDialog, int i) {
+        bottomSheet.dismiss();
         UserSelectorBottomSheet.open();
     }
 

@@ -85,7 +85,7 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
         FilterGLThread filterGLThread = new FilterGLThread(surfaceTexture, new FilterGLThread.FilterGLThreadVideoDelegate() { // from class: org.telegram.ui.Components.VideoEditTextureView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.FilterGLThread.FilterGLThreadVideoDelegate
             public final void onVideoSurfaceCreated(SurfaceTexture surfaceTexture2) {
-                VideoEditTextureView.this.lambda$onSurfaceTextureAvailable$0(surfaceTexture2);
+                VideoEditTextureView.$r8$lambda$BhnN7EJALNn6A9-MZ8fiS5SmBAE(VideoEditTextureView.this, surfaceTexture2);
             }
         }, this.hdrInfo, this.uiBlurManager, i, i2);
         this.eglThread = filterGLThread;
@@ -102,12 +102,11 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSurfaceTextureAvailable$0(SurfaceTexture surfaceTexture) {
-        if (this.currentVideoPlayer == null) {
+    public static /* synthetic */ void $r8$lambda$BhnN7EJALNn6A9-MZ8fiS5SmBAE(VideoEditTextureView videoEditTextureView, SurfaceTexture surfaceTexture) {
+        if (videoEditTextureView.currentVideoPlayer == null) {
             return;
         }
-        this.currentVideoPlayer.setSurface(new Surface(surfaceTexture));
+        videoEditTextureView.currentVideoPlayer.setSurface(new Surface(surfaceTexture));
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener
@@ -119,15 +118,14 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
             this.eglThread.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.VideoEditTextureView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoEditTextureView.this.lambda$onSurfaceTextureSizeChanged$1();
+                    VideoEditTextureView.$r8$lambda$WRTXNYcFezAsyS4VcgtyMr3i6hI(VideoEditTextureView.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSurfaceTextureSizeChanged$1() {
-        FilterGLThread filterGLThread = this.eglThread;
+    public static /* synthetic */ void $r8$lambda$WRTXNYcFezAsyS4VcgtyMr3i6hI(VideoEditTextureView videoEditTextureView) {
+        FilterGLThread filterGLThread = videoEditTextureView.eglThread;
         if (filterGLThread != null) {
             filterGLThread.requestRender(false, true, false);
         }
@@ -163,13 +161,11 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
     public boolean containsPoint(float f, float f2) {
         RectOld rectOld = this.viewRect;
         float f3 = rectOld.x;
-        if (f >= f3 && f <= f3 + rectOld.width) {
-            float f4 = rectOld.y;
-            if (f2 >= f4 && f2 <= f4 + rectOld.height) {
-                return true;
-            }
+        if (f < f3 || f > f3 + rectOld.width) {
+            return false;
         }
-        return false;
+        float f4 = rectOld.y;
+        return f2 >= f4 && f2 <= f4 + rectOld.height;
     }
 
     public Bitmap getUiBlurBitmap() {

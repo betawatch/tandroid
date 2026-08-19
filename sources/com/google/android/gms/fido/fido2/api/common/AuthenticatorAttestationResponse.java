@@ -98,12 +98,11 @@ public class AuthenticatorAttestationResponse extends AuthenticatorResponse {
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0201 A[Catch: JSONException -> 0x001c, TRY_LEAVE, TryCatch #5 {JSONException -> 0x001c, blocks: (B:3:0x0005, B:5:0x000e, B:6:0x001f, B:8:0x0023, B:9:0x0030, B:10:0x0036, B:12:0x003b, B:14:0x0049, B:16:0x0056, B:17:0x004f, B:20:0x0058, B:22:0x0061, B:24:0x0069, B:26:0x007b, B:27:0x0083, B:29:0x0087, B:31:0x0099, B:33:0x00b7, B:34:0x00cf, B:39:0x00f5, B:45:0x01ed, B:47:0x0201, B:50:0x0115, B:52:0x0127, B:57:0x013b, B:60:0x015d, B:62:0x0173, B:64:0x0179, B:65:0x0198, B:66:0x019d, B:67:0x019e, B:68:0x01a3, B:73:0x01ae, B:75:0x01be, B:77:0x01cc, B:78:0x01e1, B:79:0x01e6, B:80:0x01e7, B:81:0x01ec, B:82:0x020b, B:83:0x0210, B:86:0x0211, B:87:0x0218, B:88:0x0219, B:89:0x021e, B:93:0x0222, B:94:0x0229, B:96:0x022c, B:97:0x0233, B:99:0x0234, B:100:0x023b, B:101:0x023e, B:102:0x0245, B:104:0x0246, B:105:0x024d, B:109:0x0251, B:110:0x0258), top: B:2:0x0005, inners: #3, #4, #6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0200 A[Catch: JSONException -> 0x001c, TRY_LEAVE, TryCatch #5 {JSONException -> 0x001c, blocks: (B:3:0x0005, B:5:0x000e, B:6:0x001f, B:8:0x0023, B:9:0x0030, B:10:0x0036, B:12:0x003b, B:14:0x0049, B:16:0x0056, B:17:0x004f, B:20:0x0058, B:22:0x0061, B:24:0x0069, B:26:0x007b, B:27:0x0083, B:29:0x0087, B:31:0x0099, B:33:0x00b7, B:34:0x00cf, B:39:0x00f5, B:44:0x01ec, B:46:0x0200, B:49:0x0112, B:51:0x0126, B:56:0x013a, B:59:0x015c, B:61:0x0172, B:63:0x0178, B:64:0x0197, B:65:0x019c, B:66:0x019d, B:67:0x01a2, B:72:0x01ad, B:74:0x01bd, B:76:0x01cb, B:77:0x01e0, B:78:0x01e5, B:79:0x01e6, B:80:0x01eb, B:81:0x020a, B:82:0x020f, B:85:0x0210, B:86:0x0217, B:87:0x0218, B:88:0x021d, B:92:0x0221, B:93:0x0228, B:95:0x022b, B:96:0x0232, B:98:0x0233, B:99:0x023a, B:100:0x023d, B:101:0x0244, B:103:0x0245, B:104:0x024c, B:108:0x0250, B:109:0x0257), top: B:2:0x0005, inners: #4, #6, #7 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final JSONObject zza() {
-        byte[] zza;
         try {
             JSONObject jSONObject = new JSONObject();
             if (this.zzb != null) {
@@ -153,15 +152,15 @@ public class AuthenticatorAttestationResponse extends AuthenticatorResponse {
                             try {
                                 long zzc2 = zzhpVar2.zzf().zzc();
                                 long zzc3 = zzhpVar3.zzf().zzc();
+                                byte[] bArr = null;
                                 if (zzc3 != 1) {
                                     if (zzc3 == 2) {
                                         zzc3 = 2;
                                     }
-                                    zza = null;
                                     jSONObject.put("authenticatorData", Base64Utils.encodeUrlSafeNoPadding(zzc.zzm()));
                                     jSONObject.put("publicKeyAlgorithm", zzc2);
-                                    if (zza != null) {
-                                        jSONObject.put("publicKey", Base64Utils.encodeUrlSafeNoPadding(zza));
+                                    if (bArr != null) {
+                                        jSONObject.put("publicKey", Base64Utils.encodeUrlSafeNoPadding(bArr));
                                     }
                                     return jSONObject;
                                 }
@@ -181,24 +180,21 @@ public class AuthenticatorAttestationResponse extends AuthenticatorResponse {
                                     if (zzc5.zzd() != 32 || zzc6.zzd() != 32) {
                                         throw new IllegalArgumentException("COSE coordinates are the wrong size");
                                     }
-                                    zza = zzgj.zza(Base64.decode("MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE", 0), zzc5.zzm(), zzc6.zzm());
-                                } else {
-                                    if (zzc3 == 1 && zzc4 == 6) {
-                                        zzhp zzhpVar7 = (zzhp) zzh.zzc().get(zzhp.zzg(-2L));
-                                        if (zzhpVar7 == null) {
-                                            throw new IllegalArgumentException("COSE key missing required fields");
-                                        }
-                                        zzgx zzc7 = zzhpVar7.zze().zzc();
-                                        if (zzc7.zzd() != 32) {
-                                            throw new IllegalArgumentException("COSE coordinates are the wrong size");
-                                        }
-                                        zza = zzgj.zza(Base64.decode("MCowBQYDK2VwAyEA", 0), zzc7.zzm());
+                                    bArr = zzgj.zza(Base64.decode("MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE", 0), zzc5.zzm(), zzc6.zzm());
+                                } else if (zzc3 == 1 && zzc4 == 6) {
+                                    zzhp zzhpVar7 = (zzhp) zzh.zzc().get(zzhp.zzg(-2L));
+                                    if (zzhpVar7 == null) {
+                                        throw new IllegalArgumentException("COSE key missing required fields");
                                     }
-                                    zza = null;
+                                    zzgx zzc7 = zzhpVar7.zze().zzc();
+                                    if (zzc7.zzd() != 32) {
+                                        throw new IllegalArgumentException("COSE coordinates are the wrong size");
+                                    }
+                                    bArr = zzgj.zza(Base64.decode("MCowBQYDK2VwAyEA", 0), zzc7.zzm());
                                 }
                                 jSONObject.put("authenticatorData", Base64Utils.encodeUrlSafeNoPadding(zzc.zzm()));
                                 jSONObject.put("publicKeyAlgorithm", zzc2);
-                                if (zza != null) {
+                                if (bArr != null) {
                                 }
                                 return jSONObject;
                             } catch (zzho e) {

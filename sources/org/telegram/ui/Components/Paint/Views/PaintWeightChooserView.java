@@ -153,10 +153,11 @@ public class PaintWeightChooserView extends View {
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         boolean onTouchEvent = this.gestureDetector.onTouchEvent(motionEvent);
-        if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            this.isTouchInProgress = false;
-            invalidate();
+        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
+            return onTouchEvent;
         }
+        this.isTouchInProgress = false;
+        invalidate();
         return onTouchEvent;
     }
 
@@ -176,9 +177,9 @@ public class PaintWeightChooserView extends View {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x01d9  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0223  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0217  */
     /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0086  */
     @Override // android.view.View
@@ -244,7 +245,7 @@ public class PaintWeightChooserView extends View {
                         float f8 = dp2 * 1.5f;
                         drawCircleWithShadow(canvas, dp5, MathUtils.clamp(height2, rectF3.top + f6, rectF3.bottom - Math.min(f8, f6)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f8, f6), f6, f7), this.showProgress), false);
                         if (this.drawCenter && this.showProgress != 0.0f && this.showPreview && this.renderView != null) {
-                            drawCircleWithShadow(canvas, getWidth() / 2.0f, getHeight() / 2.0f, this.renderView.brushWeightForSize(f) * this.renderView.getCurrentBrush().getScale() * this.renderView.getCurrentBrush().getPreviewScale(), true);
+                            drawCircleWithShadow(canvas, getWidth() / 2.0f, getHeight() / 2.0f, this.renderView.getCurrentBrush().getPreviewScale() * this.renderView.brushWeightForSize(f) * this.renderView.getCurrentBrush().getScale(), true);
                         }
                         if (this.hideProgress != 0.0f) {
                             canvas.restore();
@@ -295,7 +296,7 @@ public class PaintWeightChooserView extends View {
                 float f82 = dp22 * 1.5f;
                 drawCircleWithShadow(canvas, dp52, MathUtils.clamp(height22, rectF32.top + f62, rectF32.bottom - Math.min(f82, f62)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f82, f62), f62, f72), this.showProgress), false);
                 if (this.drawCenter) {
-                    drawCircleWithShadow(canvas, getWidth() / 2.0f, getHeight() / 2.0f, this.renderView.brushWeightForSize(f) * this.renderView.getCurrentBrush().getScale() * this.renderView.getCurrentBrush().getPreviewScale(), true);
+                    drawCircleWithShadow(canvas, getWidth() / 2.0f, getHeight() / 2.0f, this.renderView.getCurrentBrush().getPreviewScale() * this.renderView.brushWeightForSize(f) * this.renderView.getCurrentBrush().getScale(), true);
                 }
                 if (this.hideProgress != 0.0f) {
                 }

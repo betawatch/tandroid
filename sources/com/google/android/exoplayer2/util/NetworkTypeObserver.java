@@ -55,14 +55,9 @@ public final class NetworkTypeObserver {
         this.mainHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.util.NetworkTypeObserver$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                NetworkTypeObserver.this.lambda$register$0(listener);
+                listener.onNetworkTypeChanged(NetworkTypeObserver.this.getNetworkType());
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$register$0(Listener listener) {
-        listener.onNetworkTypeChanged(getNetworkType());
     }
 
     public int getNetworkType() {

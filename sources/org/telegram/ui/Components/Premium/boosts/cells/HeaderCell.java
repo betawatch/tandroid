@@ -109,9 +109,7 @@ public class HeaderCell extends FrameLayout {
         drawable.getPaint = new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
-                Paint lambda$new$0;
-                lambda$new$0 = HeaderCell.this.lambda$new$0((Integer) obj);
-                return lambda$new$0;
+                return HeaderCell.$r8$lambda$WPcGChIXs94YZvbIdiyKzxTLPwQ(HeaderCell.this, (Integer) obj);
             }
         };
         starParticlesView.drawable.init();
@@ -141,9 +139,8 @@ public class HeaderCell extends FrameLayout {
         setWillNotDraw(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Paint lambda$new$0(Integer num) {
-        return this.paints[num.intValue() % this.paints.length];
+    public static /* synthetic */ Paint $r8$lambda$WPcGChIXs94YZvbIdiyKzxTLPwQ(HeaderCell headerCell, Integer num) {
+        return headerCell.paints[num.intValue() % headerCell.paints.length];
     }
 
     public void setBoostViaGifsText(TLRPC.Chat chat) {
@@ -209,27 +206,26 @@ public class HeaderCell extends FrameLayout {
             valueAnimator.cancel();
         }
         final float f = this.iconTextureView.mRenderer.golden;
-        float f2 = z ? 1.0f : 0.0f;
+        final float f2 = z ? 1.0f : 0.0f;
         this.goldenAnimator = ValueAnimator.ofFloat(0.0f, 1.0f);
         final float[] fArr = {0.0f};
         this.iconTextureView.cancelIdleAnimation();
         this.iconTextureView.cancelAnimatons();
         this.iconTextureView.startBackAnimation();
-        final float f3 = f2;
         this.goldenAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                HeaderCell.this.lambda$setStars$2(fArr, f, f3, z, valueAnimator2);
+                HeaderCell.$r8$lambda$yxHak-WKcnYuCIiACk6m96TS_Sc(HeaderCell.this, fArr, f, f2, z, valueAnimator2);
             }
         });
         this.goldenAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell.4
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 float[] fArr2 = fArr;
-                float f4 = 1.0f - fArr2[0];
+                float f3 = 1.0f - fArr2[0];
                 fArr2[0] = 1.0f;
-                HeaderCell.this.iconTextureView.mRenderer.golden = AndroidUtilities.lerp(f, f3, 1.0f);
-                HeaderCell.this.iconTextureView.mRenderer.angleX3 += f4 * 360.0f * (z ? 1 : -1);
+                HeaderCell.this.iconTextureView.mRenderer.golden = AndroidUtilities.lerp(f, f2, 1.0f);
+                HeaderCell.this.iconTextureView.mRenderer.angleX3 += f3 * 360.0f * (z ? 1 : -1);
                 HeaderCell.this.iconTextureView.mRenderer.updateColors();
                 HeaderCell headerCell = HeaderCell.this;
                 headerCell.updatePaints(headerCell.iconTextureView.mRenderer.golden);
@@ -241,16 +237,16 @@ public class HeaderCell extends FrameLayout {
         this.goldenAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStars$2(float[] fArr, float f, float f2, boolean z, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$yxHak-WKcnYuCIiACk6m96TS_Sc(HeaderCell headerCell, float[] fArr, float f, float f2, boolean z, ValueAnimator valueAnimator) {
+        headerCell.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         float f3 = floatValue - fArr[0];
         fArr[0] = floatValue;
-        this.iconTextureView.mRenderer.golden = AndroidUtilities.lerp(f, f2, floatValue);
-        GLIconRenderer gLIconRenderer = this.iconTextureView.mRenderer;
+        headerCell.iconTextureView.mRenderer.golden = AndroidUtilities.lerp(f, f2, floatValue);
+        GLIconRenderer gLIconRenderer = headerCell.iconTextureView.mRenderer;
         gLIconRenderer.angleX3 += f3 * 360.0f * (z ? 1 : -1);
         gLIconRenderer.updateColors();
-        updatePaints(this.iconTextureView.mRenderer.golden);
+        headerCell.updatePaints(headerCell.iconTextureView.mRenderer.golden);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

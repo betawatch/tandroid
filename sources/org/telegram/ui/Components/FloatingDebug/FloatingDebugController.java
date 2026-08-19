@@ -49,7 +49,7 @@ public abstract class FloatingDebugController {
             floatingDebugView.dismiss(new Runnable() { // from class: org.telegram.ui.Components.FloatingDebug.FloatingDebugController$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FloatingDebugController.lambda$setActive$0(LaunchActivity.this);
+                    FloatingDebugController.$r8$lambda$vjnbHU-wRPIFZGxpn6HtKtrH0fU(LaunchActivity.this);
                 }
             });
         }
@@ -59,8 +59,7 @@ public abstract class FloatingDebugController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setActive$0(LaunchActivity launchActivity) {
+    public static /* synthetic */ void $r8$lambda$vjnbHU-wRPIFZGxpn6HtKtrH0fU(LaunchActivity launchActivity) {
         launchActivity.getMainContainerFrameLayout().removeView(debugView);
         debugView = null;
     }

@@ -25,7 +25,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class QRScanner {
     private Bitmap cacheBitmap;
     private CameraView cameraView;
@@ -36,7 +36,7 @@ public class QRScanner {
     private final Runnable process = new Runnable() { // from class: org.telegram.ui.Stories.recorder.QRScanner$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            QRScanner.this.lambda$new$3();
+            QRScanner.$r8$lambda$1_Vg2vmx2y4lzqjH_K8pBklWzv8(QRScanner.this);
         }
     };
     private final String prefix = MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix;
@@ -46,15 +46,14 @@ public class QRScanner {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.QRScanner$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                QRScanner.this.lambda$new$0(context);
+                QRScanner.$r8$lambda$MIkoa-3N5R7Md9nU4Klkrz42HSY(QRScanner.this, context);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Context context) {
-        this.detector.set(new BarcodeDetector.Builder(context).setBarcodeFormats(256).build());
-        attach(this.cameraView);
+    public static /* synthetic */ void $r8$lambda$MIkoa-3N5R7Md9nU4Klkrz42HSY(QRScanner qRScanner, Context context) {
+        qRScanner.detector.set(new BarcodeDetector.Builder(context).setBarcodeFormats(256).build());
+        qRScanner.attach(qRScanner.cameraView);
     }
 
     public Detected getDetected() {
@@ -86,7 +85,7 @@ public class QRScanner {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.QRScanner$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        QRScanner.this.lambda$setPaused$1();
+                        QRScanner.this.listener.run(null);
                     }
                 });
                 return;
@@ -97,17 +96,11 @@ public class QRScanner {
         Utilities.globalQueue.postRunnable(this.process, getTimeout());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPaused$1() {
-        this.listener.run(null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        if (this.detector.get() == null || this.cameraView == null || this.paused.get()) {
+    public static /* synthetic */ void $r8$lambda$1_Vg2vmx2y4lzqjH_K8pBklWzv8(final QRScanner qRScanner) {
+        if (qRScanner.detector.get() == null || qRScanner.cameraView == null || qRScanner.paused.get()) {
             return;
         }
-        TextureView textureView = this.cameraView.getTextureView();
+        TextureView textureView = qRScanner.cameraView.getTextureView();
         if (textureView != null) {
             int width = textureView.getWidth();
             int height = textureView.getHeight();
@@ -120,33 +113,28 @@ public class QRScanner {
             }
             int max = Math.max(1, width);
             int max2 = Math.max(1, height);
-            Bitmap bitmap = this.cacheBitmap;
-            if (bitmap == null || max != bitmap.getWidth() || max2 != this.cacheBitmap.getHeight()) {
-                this.cacheBitmap = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
+            Bitmap bitmap = qRScanner.cacheBitmap;
+            if (bitmap == null || max != bitmap.getWidth() || max2 != qRScanner.cacheBitmap.getHeight()) {
+                qRScanner.cacheBitmap = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
             }
-            textureView.getBitmap(this.cacheBitmap);
-            final Detected detect = detect(this.cacheBitmap);
-            Detected detected = this.lastDetected;
+            textureView.getBitmap(qRScanner.cacheBitmap);
+            final Detected detect = qRScanner.detect(qRScanner.cacheBitmap);
+            Detected detected = qRScanner.lastDetected;
             if ((detected != null) != (detect != null) || (detect != null && detected != null && !detect.equals(detected))) {
-                this.lastDetected = detect;
+                qRScanner.lastDetected = detect;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.QRScanner$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        QRScanner.this.lambda$new$2(detect);
+                        QRScanner.this.listener.run(detect);
                     }
                 });
             }
         }
-        if (this.paused.get()) {
+        if (qRScanner.paused.get()) {
             return;
         }
-        Utilities.globalQueue.cancelRunnable(this.process);
-        Utilities.globalQueue.postRunnable(this.process, getTimeout());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Detected detected) {
-        this.listener.run(detected);
+        Utilities.globalQueue.cancelRunnable(qRScanner.process);
+        Utilities.globalQueue.postRunnable(qRScanner.process, qRScanner.getTimeout());
     }
 
     private Detected detect(Bitmap bitmap) {
@@ -303,20 +291,22 @@ public class QRScanner {
                     PointF pointF = pointFArr[i2];
                     PointF pointF2 = pointFArr[i];
                     PointF pointF3 = pointFArr[i4];
-                    int i5 = min;
-                    float width2 = rectF.left + ((this.animatedQPX[i2].set(pointF.x - detected2.cx) + f2) * rectF.width());
+                    float f4 = f;
+                    float f5 = f2;
+                    float width2 = rectF.left + ((this.animatedQPX[i2].set(pointF.x - detected2.cx) + f5) * rectF.width());
                     float height2 = rectF.top + ((this.animatedQPY[i2].set(pointF.y - this.qrResult.cy) + f3) * rectF.height());
-                    float width3 = rectF.left + ((this.animatedQPX[i].set(pointF2.x - this.qrResult.cx) + f2) * rectF.width());
+                    float width3 = rectF.left + ((this.animatedQPX[i].set(pointF2.x - this.qrResult.cx) + f5) * rectF.width());
                     float height3 = rectF.top + ((this.animatedQPY[i].set(pointF2.y - this.qrResult.cy) + f3) * rectF.height());
-                    float width4 = rectF.left + ((this.animatedQPX[i4].set(pointF3.x - this.qrResult.cx) + f2) * rectF.width());
+                    float width4 = rectF.left + ((this.animatedQPX[i4].set(pointF3.x - this.qrResult.cx) + f5) * rectF.width());
                     float height4 = (rectF.top + ((this.animatedQPY[i4].set(pointF3.y - this.qrResult.cy) + f3) * rectF.height())) - height3;
                     this.qrPath.moveTo(((width2 - width3) * 0.18f) + width3, ((height2 - height3) * 0.18f) + height3);
                     this.qrPath.lineTo(width3, height3);
                     this.qrPath.lineTo(width3 + ((width4 - width3) * 0.18f), height3 + (height4 * 0.18f));
-                    min = i5;
                     i = i3;
+                    f = f4;
+                    f2 = f5;
                 }
-                this.qrPaint.setAlpha((int) (f * 255.0f));
+                this.qrPaint.setAlpha((int) (255.0f * f));
                 canvas.drawPath(this.qrPath, this.qrPaint);
             }
             canvas.restore();

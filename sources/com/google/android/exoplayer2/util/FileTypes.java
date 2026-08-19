@@ -11,16 +11,17 @@ public abstract class FileTypes {
         return inferFileTypeFromMimeType((list == null || list.isEmpty()) ? null : (String) list.get(0));
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static int inferFileTypeFromMimeType(String str) {
+        int i;
         char c;
         if (str == null) {
             return -1;
         }
         String normalizeMimeType = MimeTypes.normalizeMimeType(str);
-        normalizeMimeType.hashCode();
+        normalizeMimeType.getClass();
         switch (normalizeMimeType.hashCode()) {
             case -2123537834:
+                i = 15;
                 if (normalizeMimeType.equals("audio/eac3-joc")) {
                     c = 0;
                     break;
@@ -28,6 +29,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1662384011:
+                i = 15;
                 if (normalizeMimeType.equals("video/mp2p")) {
                     c = 1;
                     break;
@@ -35,6 +37,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1662384007:
+                i = 15;
                 if (normalizeMimeType.equals("video/mp2t")) {
                     c = 2;
                     break;
@@ -42,6 +45,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1662095187:
+                i = 15;
                 if (normalizeMimeType.equals("video/webm")) {
                     c = 3;
                     break;
@@ -49,6 +53,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1606874997:
+                i = 15;
                 if (normalizeMimeType.equals("audio/amr-wb")) {
                     c = 4;
                     break;
@@ -56,6 +61,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1487394660:
+                i = 15;
                 if (normalizeMimeType.equals("image/jpeg")) {
                     c = 5;
                     break;
@@ -63,6 +69,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1248337486:
+                i = 15;
                 if (normalizeMimeType.equals("application/mp4")) {
                     c = 6;
                     break;
@@ -70,6 +77,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1079884372:
+                i = 15;
                 if (normalizeMimeType.equals("video/x-msvideo")) {
                     c = 7;
                     break;
@@ -77,6 +85,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -1004728940:
+                i = 15;
                 if (normalizeMimeType.equals("text/vtt")) {
                     c = '\b';
                     break;
@@ -84,6 +93,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -387023398:
+                i = 15;
                 if (normalizeMimeType.equals("audio/x-matroska")) {
                     c = '\t';
                     break;
@@ -91,6 +101,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case -43467528:
+                i = 15;
                 if (normalizeMimeType.equals("application/webm")) {
                     c = '\n';
                     break;
@@ -98,6 +109,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 13915911:
+                i = 15;
                 if (normalizeMimeType.equals("video/x-flv")) {
                     c = 11;
                     break;
@@ -105,6 +117,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 187078296:
+                i = 15;
                 if (normalizeMimeType.equals("audio/ac3")) {
                     c = '\f';
                     break;
@@ -112,6 +125,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 187078297:
+                i = 15;
                 if (normalizeMimeType.equals("audio/ac4")) {
                     c = '\r';
                     break;
@@ -119,6 +133,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 187078669:
+                i = 15;
                 if (normalizeMimeType.equals("audio/amr")) {
                     c = 14;
                     break;
@@ -126,6 +141,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 187090232:
+                i = 15;
                 if (normalizeMimeType.equals("audio/mp4")) {
                     c = 15;
                     break;
@@ -133,6 +149,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 187091926:
+                i = 15;
                 if (normalizeMimeType.equals("audio/ogg")) {
                     c = 16;
                     break;
@@ -140,6 +157,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 187099443:
+                i = 15;
                 if (normalizeMimeType.equals("audio/wav")) {
                     c = 17;
                     break;
@@ -147,6 +165,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1331848029:
+                i = 15;
                 if (normalizeMimeType.equals("video/mp4")) {
                     c = 18;
                     break;
@@ -154,6 +173,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1503095341:
+                i = 15;
                 if (normalizeMimeType.equals("audio/3gpp")) {
                     c = 19;
                     break;
@@ -161,6 +181,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1504578661:
+                i = 15;
                 if (normalizeMimeType.equals("audio/eac3")) {
                     c = 20;
                     break;
@@ -168,6 +189,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1504619009:
+                i = 15;
                 if (normalizeMimeType.equals("audio/flac")) {
                     c = 21;
                     break;
@@ -175,6 +197,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1504824762:
+                i = 15;
                 if (normalizeMimeType.equals("audio/midi")) {
                     c = 22;
                     break;
@@ -182,6 +205,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1504831518:
+                i = 15;
                 if (normalizeMimeType.equals("audio/mpeg")) {
                     c = 23;
                     break;
@@ -189,6 +213,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 1505118770:
+                i = 15;
                 if (normalizeMimeType.equals("audio/webm")) {
                     c = 24;
                     break;
@@ -196,6 +221,7 @@ public abstract class FileTypes {
                 c = 65535;
                 break;
             case 2039520277:
+                i = 15;
                 if (normalizeMimeType.equals("video/x-matroska")) {
                     c = 25;
                     break;
@@ -204,6 +230,7 @@ public abstract class FileTypes {
                 break;
             default:
                 c = 65535;
+                i = 15;
                 break;
         }
         switch (c) {

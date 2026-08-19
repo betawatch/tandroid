@@ -60,11 +60,13 @@ final class AutoValue_EventInternal extends EventInternal {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof EventInternal)) {
-            return false;
+        if (obj instanceof EventInternal) {
+            EventInternal eventInternal = (EventInternal) obj;
+            if (this.transportName.equals(eventInternal.getTransportName()) && ((num = this.code) != null ? num.equals(eventInternal.getCode()) : eventInternal.getCode() == null) && this.encodedPayload.equals(eventInternal.getEncodedPayload()) && this.eventMillis == eventInternal.getEventMillis() && this.uptimeMillis == eventInternal.getUptimeMillis() && this.autoMetadata.equals(eventInternal.getAutoMetadata())) {
+                return true;
+            }
         }
-        EventInternal eventInternal = (EventInternal) obj;
-        return this.transportName.equals(eventInternal.getTransportName()) && ((num = this.code) != null ? num.equals(eventInternal.getCode()) : eventInternal.getCode() == null) && this.encodedPayload.equals(eventInternal.getEncodedPayload()) && this.eventMillis == eventInternal.getEventMillis() && this.uptimeMillis == eventInternal.getUptimeMillis() && this.autoMetadata.equals(eventInternal.getAutoMetadata());
+        return false;
     }
 
     public int hashCode() {

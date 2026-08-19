@@ -10,7 +10,6 @@ import androidx.core.util.Consumer;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
 import kotlin.Unit;
@@ -151,7 +150,7 @@ public final class OnBackPressedDispatcher {
         boolean z = this.hasEnabledCallbacks;
         ArrayDeque arrayDeque = this.onBackPressedCallbacks;
         boolean z2 = false;
-        if (!(arrayDeque instanceof Collection) || !arrayDeque.isEmpty()) {
+        if (!OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(arrayDeque) || !arrayDeque.isEmpty()) {
             Iterator<E> it = arrayDeque.iterator();
             while (true) {
                 if (!it.hasNext()) {

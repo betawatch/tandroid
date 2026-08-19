@@ -1,18 +1,24 @@
 package com.google.android.gms.internal.play_billing;
 
+import androidx.core.provider.FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
-final class zzfa extends zzex implements zzew {
+final class zzfa extends zzex implements zzew, AutoCloseable {
     final ScheduledExecutorService zza;
 
     zzfa(ScheduledExecutorService scheduledExecutorService) {
         super(scheduledExecutorService);
         scheduledExecutorService.getClass();
         this.zza = scheduledExecutorService;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzec, java.lang.AutoCloseable
+    public /* synthetic */ void close() {
+        FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1.m(this);
     }
 
     @Override // java.util.concurrent.ScheduledExecutorService

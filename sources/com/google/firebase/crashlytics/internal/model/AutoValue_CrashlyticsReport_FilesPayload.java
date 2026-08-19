@@ -28,20 +28,13 @@ final class AutoValue_CrashlyticsReport_FilesPayload extends CrashlyticsReport.F
     }
 
     public boolean equals(Object obj) {
+        String str;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.FilesPayload)) {
-            return false;
-        }
-        CrashlyticsReport.FilesPayload filesPayload = (CrashlyticsReport.FilesPayload) obj;
-        if (this.files.equals(filesPayload.getFiles())) {
-            String str = this.orgId;
-            if (str == null) {
-                if (filesPayload.getOrgId() == null) {
-                    return true;
-                }
-            } else if (str.equals(filesPayload.getOrgId())) {
+        if (obj instanceof CrashlyticsReport.FilesPayload) {
+            CrashlyticsReport.FilesPayload filesPayload = (CrashlyticsReport.FilesPayload) obj;
+            if (this.files.equals(filesPayload.getFiles()) && ((str = this.orgId) != null ? str.equals(filesPayload.getOrgId()) : filesPayload.getOrgId() == null)) {
                 return true;
             }
         }

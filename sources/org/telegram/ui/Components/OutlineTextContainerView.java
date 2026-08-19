@@ -46,7 +46,7 @@ public class OutlineTextContainerView extends FrameLayout {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.OutlineTextContainerView$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            OutlineTextContainerView.lambda$static$1((OutlineTextContainerView) obj, f);
+            OutlineTextContainerView.$r8$lambda$ER1AkNFDFBwjSJrbPmabWBoFiuY((OutlineTextContainerView) obj, f);
         }
     }).setMultiplier(100.0f);
     private static final SimpleFloatPropertyCompat TITLE_PROGRESS_PROPERTY = new SimpleFloatPropertyCompat("titleProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.OutlineTextContainerView$$ExternalSyntheticLambda2
@@ -59,7 +59,7 @@ public class OutlineTextContainerView extends FrameLayout {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.OutlineTextContainerView$$ExternalSyntheticLambda3
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            OutlineTextContainerView.lambda$static$3((OutlineTextContainerView) obj, f);
+            OutlineTextContainerView.$r8$lambda$LQNdMi674Af6TQJwnGs3DtH2tfU((OutlineTextContainerView) obj, f);
         }
     }).setMultiplier(100.0f);
     private static final SimpleFloatPropertyCompat ERROR_PROGRESS_PROPERTY = new SimpleFloatPropertyCompat("errorProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.OutlineTextContainerView$$ExternalSyntheticLambda4
@@ -72,12 +72,11 @@ public class OutlineTextContainerView extends FrameLayout {
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.OutlineTextContainerView$$ExternalSyntheticLambda5
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            OutlineTextContainerView.lambda$static$5((OutlineTextContainerView) obj, f);
+            OutlineTextContainerView.$r8$lambda$_HDnhwxl2Y-egjHeIRPL_ae39j8((OutlineTextContainerView) obj, f);
         }
     }).setMultiplier(100.0f);
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$1(OutlineTextContainerView outlineTextContainerView, float f) {
+    public static /* synthetic */ void $r8$lambda$ER1AkNFDFBwjSJrbPmabWBoFiuY(OutlineTextContainerView outlineTextContainerView, float f) {
         outlineTextContainerView.selectionProgress = f;
         if (!outlineTextContainerView.forceUseCenter || outlineTextContainerView.forceForceUseCenter) {
             outlineTextContainerView.outlinePaint.setStrokeWidth(AndroidUtilities.lerp(outlineTextContainerView.strokeWidthRegular, outlineTextContainerView.strokeWidthSelected, f));
@@ -86,8 +85,7 @@ public class OutlineTextContainerView extends FrameLayout {
         outlineTextContainerView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$3(OutlineTextContainerView outlineTextContainerView, float f) {
+    public static /* synthetic */ void $r8$lambda$LQNdMi674Af6TQJwnGs3DtH2tfU(OutlineTextContainerView outlineTextContainerView, float f) {
         outlineTextContainerView.titleProgress = f;
         if (!outlineTextContainerView.forceUseCenter || outlineTextContainerView.forceForceUseCenter) {
             outlineTextContainerView.updateColor();
@@ -95,8 +93,7 @@ public class OutlineTextContainerView extends FrameLayout {
         outlineTextContainerView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$5(OutlineTextContainerView outlineTextContainerView, float f) {
+    public static /* synthetic */ void $r8$lambda$_HDnhwxl2Y-egjHeIRPL_ae39j8(OutlineTextContainerView outlineTextContainerView, float f) {
         outlineTextContainerView.errorProgress = f;
         outlineTextContainerView.updateColor();
     }
@@ -243,7 +240,7 @@ public class OutlineTextContainerView extends FrameLayout {
         float paddingLeft = getPaddingLeft() + AndroidUtilities.dp(10.0f);
         float paddingTop2 = getPaddingTop() + strokeWidth;
         float f4 = paddingLeft + (measureText / 2.0f);
-        canvas.drawLine(f4 + ((((paddingLeft + measureText) + AndroidUtilities.dp(10.0f)) - f4) * (z ? this.titleProgress : 1.0f)), paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.dp(6.0f), paddingTop2, this.outlinePaint);
+        canvas.drawLine(((((paddingLeft + measureText) + AndroidUtilities.dp(10.0f)) - f4) * (z ? this.titleProgress : 1.0f)) + f4, paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.dp(6.0f), paddingTop2, this.outlinePaint);
         float dp = f4 + AndroidUtilities.dp(4.0f);
         canvas.drawLine(paddingLeft, paddingTop2, dp + ((paddingLeft - dp) * (z ? this.titleProgress : 1.0f)), paddingTop2, this.outlinePaint);
         canvas.save();

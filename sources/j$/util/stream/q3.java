@@ -2,26 +2,43 @@ package j$.util.stream;
 
 import j$.util.Spliterator;
 import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class q3 extends t3 implements j$.util.W {
+public final class q3 extends r3 implements j$.util.Z, LongConsumer {
+    public long f;
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    }
+
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.T.a(this, consumer);
+        j$.com.android.tools.r8.a.k(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.T.f(this, consumer);
+        return j$.com.android.tools.r8.a.B(this, consumer);
     }
 
-    @Override // j$.util.stream.v3
-    protected final Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4) {
-        return new q3((j$.util.W) spliterator, j, j2, j3, j4);
+    @Override // j$.util.stream.u3
+    public final Spliterator c(Spliterator spliterator) {
+        return new q3((j$.util.Z) spliterator, this);
     }
 
-    @Override // j$.util.stream.t3
-    protected final Object b() {
-        return new B0(1);
+    @Override // j$.util.stream.r3
+    public final void e(Object obj) {
+        ((LongConsumer) obj).accept(this.f);
+    }
+
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        this.f = j;
+    }
+
+    @Override // j$.util.stream.r3
+    public final Y2 f(int i) {
+        return new X2(i);
     }
 }

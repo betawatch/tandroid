@@ -76,9 +76,9 @@ public class UpdateLayoutWrapper extends ViewGroup {
         int color = Theme.getColor(Theme.key_featuredStickers_addButton);
         int compositeColors = ColorUtils.compositeColors(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), navigationBarThirdButtonsFactor), color);
         this.paint.setColor(color);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - r0, this.paint);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - r1, this.paint);
         this.paint.setColor(compositeColors);
-        canvas.drawRect(0.0f, getMeasuredHeight() - r0, getMeasuredWidth(), getMeasuredHeight(), this.paint);
+        canvas.drawRect(0.0f, getMeasuredHeight() - r1, getMeasuredWidth(), getMeasuredHeight(), this.paint);
         super.dispatchDraw(canvas);
     }
 }

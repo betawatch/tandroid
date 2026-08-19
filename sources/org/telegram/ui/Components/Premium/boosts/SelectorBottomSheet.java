@@ -130,7 +130,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         selectorHeaderCell.setOnCloseClickListener(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                SelectorBottomSheet.this.lambda$new$0();
+                SelectorBottomSheet.this.dismiss();
             }
         });
         selectorHeaderCell.setText(getTitle());
@@ -172,7 +172,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SelectorBottomSheet.this.lambda$new$0(view);
+                SelectorBottomSheet.this.save(false);
             }
         });
         selectorBtnCell.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 87));
@@ -204,7 +204,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i6, float f, float f2) {
-                SelectorBottomSheet.this.lambda$new$5(view, i6, f, f2);
+                SelectorBottomSheet.$r8$lambda$q9-tZrG2dHginL-I047fMFqvlto(SelectorBottomSheet.this, view, i6, f, f2);
             }
         });
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
@@ -227,49 +227,44 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         loadData(3, true, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        save(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view, int i, float f, float f2) {
+    public static /* synthetic */ void $r8$lambda$q9-tZrG2dHginL-I047fMFqvlto(final SelectorBottomSheet selectorBottomSheet, View view, int i, float f, float f2) {
+        selectorBottomSheet.getClass();
         if (view instanceof TextCell) {
-            this.allSelectedObjects.clear();
-            save(true);
+            selectorBottomSheet.allSelectedObjects.clear();
+            selectorBottomSheet.save(true);
         } else if (view instanceof SelectorUserCell) {
             SelectorUserCell selectorUserCell = (SelectorUserCell) view;
             TLRPC.User user = selectorUserCell.getUser();
             TLRPC.Chat chat = selectorUserCell.getChat();
             final long j = user != null ? user.id : -chat.id;
-            if (this.selectedIds.contains(Long.valueOf(j))) {
-                this.selectedIds.remove(Long.valueOf(j));
+            if (selectorBottomSheet.selectedIds.contains(Long.valueOf(j))) {
+                selectorBottomSheet.selectedIds.remove(Long.valueOf(j));
             } else {
-                this.selectedIds.add(Long.valueOf(j));
-                HashMap hashMap = this.allSelectedObjects;
+                selectorBottomSheet.selectedIds.add(Long.valueOf(j));
+                HashMap hashMap = selectorBottomSheet.allSelectedObjects;
                 Long valueOf = Long.valueOf(j);
                 if (user == null) {
                     user = chat;
                 }
                 hashMap.put(valueOf, user);
             }
-            if ((this.selectedIds.size() == 11 && this.type == 1) || (this.selectedIds.size() == BoostRepository.giveawayAddPeersMax() + 1 && this.type == 2)) {
-                this.selectedIds.remove(Long.valueOf(j));
-                showMaximumUsersToast();
+            if ((selectorBottomSheet.selectedIds.size() == 11 && selectorBottomSheet.type == 1) || (selectorBottomSheet.selectedIds.size() == BoostRepository.giveawayAddPeersMax() + 1 && selectorBottomSheet.type == 2)) {
+                selectorBottomSheet.selectedIds.remove(Long.valueOf(j));
+                selectorBottomSheet.showMaximumUsersToast();
                 return;
             }
-            this.searchField.updateSpans(true, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda10
+            selectorBottomSheet.searchField.updateSpans(true, selectorBottomSheet.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectorBottomSheet.this.lambda$new$1();
+                    SelectorBottomSheet.this.updateList(true, false);
                 }
             }, null);
-            updateList(true, false);
-            if (chat != null && !ChatObject.isPublic(chat) && this.selectedIds.contains(Long.valueOf(j))) {
-                BoostDialogs.showPrivateChannelAlert(chat, getBaseFragment().getContext(), this.resourcesProvider, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda11
+            selectorBottomSheet.updateList(true, false);
+            if (chat != null && !ChatObject.isPublic(chat) && selectorBottomSheet.selectedIds.contains(Long.valueOf(j))) {
+                BoostDialogs.showPrivateChannelAlert(chat, selectorBottomSheet.getBaseFragment().getContext(), selectorBottomSheet.resourcesProvider, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SelectorBottomSheet.this.lambda$new$3(j);
+                        SelectorBottomSheet.$r8$lambda$DVj2HuRKVzr5GDJ9vmx6O8XUVS8(SelectorBottomSheet.this, j);
                     }
                 }, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda12
                     @Override // java.lang.Runnable
@@ -278,63 +273,47 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
                     }
                 });
             } else if (chat != null) {
-                clearSearchAfterSelectChannel();
+                selectorBottomSheet.clearSearchAfterSelectChannel();
             }
         }
         if (view instanceof SelectorCountryCell) {
             long hashCode = ((SelectorCountryCell) view).getCountry().default_name.hashCode();
-            if (this.selectedIds.contains(Long.valueOf(hashCode))) {
-                this.selectedIds.remove(Long.valueOf(hashCode));
+            if (selectorBottomSheet.selectedIds.contains(Long.valueOf(hashCode))) {
+                selectorBottomSheet.selectedIds.remove(Long.valueOf(hashCode));
             } else {
-                this.selectedIds.add(Long.valueOf(hashCode));
+                selectorBottomSheet.selectedIds.add(Long.valueOf(hashCode));
             }
-            if (this.selectedIds.size() == BoostRepository.giveawayCountriesMax() + 1 && this.type == 3) {
-                this.selectedIds.remove(Long.valueOf(hashCode));
-                showMaximumUsersToast();
+            if (selectorBottomSheet.selectedIds.size() == BoostRepository.giveawayCountriesMax() + 1 && selectorBottomSheet.type == 3) {
+                selectorBottomSheet.selectedIds.remove(Long.valueOf(hashCode));
+                selectorBottomSheet.showMaximumUsersToast();
                 return;
             }
-            this.searchField.updateSpans(true, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda13
+            selectorBottomSheet.searchField.updateSpans(true, selectorBottomSheet.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectorBottomSheet.this.lambda$new$4();
+                    SelectorBottomSheet.this.updateList(true, false);
                 }
-            }, this.countriesList);
-            if (isSearching()) {
-                this.query = null;
-                this.searchField.setText("");
-                updateList(false, false);
-                updateList(true, true);
+            }, selectorBottomSheet.countriesList);
+            if (selectorBottomSheet.isSearching()) {
+                selectorBottomSheet.query = null;
+                selectorBottomSheet.searchField.setText("");
+                selectorBottomSheet.updateList(false, false);
+                selectorBottomSheet.updateList(true, true);
                 return;
             }
-            updateList(true, false);
+            selectorBottomSheet.updateList(true, false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(long j) {
-        this.selectedIds.remove(Long.valueOf(j));
-        this.searchField.updateSpans(true, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda15
+    public static /* synthetic */ void $r8$lambda$DVj2HuRKVzr5GDJ9vmx6O8XUVS8(final SelectorBottomSheet selectorBottomSheet, long j) {
+        selectorBottomSheet.selectedIds.remove(Long.valueOf(j));
+        selectorBottomSheet.searchField.updateSpans(true, selectorBottomSheet.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                SelectorBottomSheet.this.lambda$new$2();
+                SelectorBottomSheet.this.updateList(true, false);
             }
         }, null);
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4() {
-        updateList(true, false);
+        selectorBottomSheet.updateList(true, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -350,7 +329,8 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    private void save(boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void save(boolean z) {
         if (this.selectedIds.size() != 0 || z) {
             int i = this.type;
             if (i == 1) {
@@ -414,26 +394,24 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         this.recyclerListView.scrollToPosition(0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$6(List list) {
-        if (isSearching()) {
-            this.peers.clear();
-            this.peers.addAll(list);
-            updateList(true, true);
-            scrollToTop(true);
+    public static /* synthetic */ void $r8$lambda$HPKLsZahMvfzimmFmXHvb6bMb5U(SelectorBottomSheet selectorBottomSheet, List list) {
+        if (selectorBottomSheet.isSearching()) {
+            selectorBottomSheet.peers.clear();
+            selectorBottomSheet.peers.addAll(list);
+            selectorBottomSheet.updateList(true, true);
+            selectorBottomSheet.scrollToTop(true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$7(boolean z, List list) {
+    public static /* synthetic */ void $r8$lambda$AMXyX0bpR1GQ88ZmjUd2n4zHP6s(SelectorBottomSheet selectorBottomSheet, boolean z, List list) {
         if (z) {
-            this.users.addAll(list);
+            selectorBottomSheet.users.addAll(list);
         }
-        if (this.type == 1) {
-            this.peers.clear();
-            this.peers.addAll(list);
-            updateList(true, true);
-            scrollToTop(true);
+        if (selectorBottomSheet.type == 1) {
+            selectorBottomSheet.peers.clear();
+            selectorBottomSheet.peers.addAll(list);
+            selectorBottomSheet.updateList(true, true);
+            selectorBottomSheet.scrollToTop(true);
         }
     }
 
@@ -443,14 +421,14 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
             BoostRepository.loadChatParticipants(this.currentChat.id, 0, str, 0, 50, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda9
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    SelectorBottomSheet.this.lambda$loadData$7(z, (List) obj);
+                    SelectorBottomSheet.$r8$lambda$AMXyX0bpR1GQ88ZmjUd2n4zHP6s(SelectorBottomSheet.this, z, (List) obj);
                 }
             });
         } else if (i == 2) {
             BoostRepository.searchChats(this.currentChat.id, 0, str, 50, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda8
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    SelectorBottomSheet.this.lambda$loadData$6((List) obj);
+                    SelectorBottomSheet.$r8$lambda$HPKLsZahMvfzimmFmXHvb6bMb5U(SelectorBottomSheet.this, (List) obj);
                 }
             });
         } else {
@@ -460,21 +438,20 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
             BoostRepository.loadCountries(new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda7
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    SelectorBottomSheet.this.lambda$loadData$9(z, (Pair) obj);
+                    SelectorBottomSheet.$r8$lambda$FNF3LzV7cp2NghAtn4qJGZ8PdAo(SelectorBottomSheet.this, z, (Pair) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$9(boolean z, Pair pair) {
+    public static /* synthetic */ void $r8$lambda$FNF3LzV7cp2NghAtn4qJGZ8PdAo(final SelectorBottomSheet selectorBottomSheet, boolean z, Pair pair) {
         if (z) {
-            this.countriesMap.putAll((Map) pair.first);
-            this.countriesLetters.addAll((Collection) pair.second);
-            Map.-EL.forEach(this.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda16
+            selectorBottomSheet.countriesMap.putAll((Map) pair.first);
+            selectorBottomSheet.countriesLetters.addAll((Collection) pair.second);
+            Map.-EL.forEach(selectorBottomSheet.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda16
                 @Override // java.util.function.BiConsumer
                 public final void accept(Object obj, Object obj2) {
-                    SelectorBottomSheet.this.lambda$loadData$8((String) obj, (List) obj2);
+                    SelectorBottomSheet.this.countriesList.addAll((List) obj2);
                 }
 
                 public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
@@ -482,15 +459,10 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
                 }
             });
         }
-        if (this.type == 3) {
-            updateList(true, true);
-            scrollToTop(true);
+        if (selectorBottomSheet.type == 3) {
+            selectorBottomSheet.updateList(true, true);
+            selectorBottomSheet.scrollToTop(true);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$8(String str, List list) {
-        this.countriesList.addAll(list);
     }
 
     public boolean hasChanges() {
@@ -500,32 +472,25 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         BoostDialogs.showUnsavedChanges(this.type, getContext(), this.resourcesProvider, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SelectorBottomSheet.this.lambda$hasChanges$10();
+                SelectorBottomSheet.this.save(true);
             }
         }, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SelectorBottomSheet.this.lambda$hasChanges$11();
+                SelectorBottomSheet.$r8$lambda$rOPx9CNYNi2wciVKm_Y6d_-mEr4(SelectorBottomSheet.this);
             }
         });
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hasChanges$10() {
-        save(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hasChanges$11() {
-        this.selectedIds.clear();
-        this.openedIds.clear();
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$rOPx9CNYNi2wciVKm_Y6d_-mEr4(SelectorBottomSheet selectorBottomSheet) {
+        selectorBottomSheet.selectedIds.clear();
+        selectorBottomSheet.openedIds.clear();
+        selectorBottomSheet.dismiss();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         Runnable runnable = this.onCloseClick;
         if (runnable != null) {
             runnable.run();
@@ -589,7 +554,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         this.searchField.updateSpans(false, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                SelectorBottomSheet.this.lambda$prepare$12();
+                SelectorBottomSheet.this.updateList(true, false);
             }
         }, this.countriesList);
         updateSection();
@@ -597,11 +562,6 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         this.headerView.setText(getTitle());
         updateActionButton(false);
         scrollToTop(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepare$12() {
-        updateList(true, false);
     }
 
     private void updateSection() {
@@ -638,7 +598,8 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    private void updateList(boolean z, boolean z2) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateList(boolean z, boolean z2) {
         updateItems(z, z2);
         updateCheckboxes(z);
         updateActionButton(z);
@@ -736,7 +697,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
             this.sectionCell.setRightText(LocaleController.getString(R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SelectorBottomSheet.this.lambda$updateSectionCell$13(view);
+                    SelectorBottomSheet.$r8$lambda$pGDc838R9EjAnw2iVu5MbJScHog(SelectorBottomSheet.this, view);
                 }
             });
         } else if (z) {
@@ -746,11 +707,10 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSectionCell$13(View view) {
-        this.selectedIds.clear();
-        this.searchField.spansContainer.removeAllSpans(true);
-        updateList(true, false);
+    public static /* synthetic */ void $r8$lambda$pGDc838R9EjAnw2iVu5MbJScHog(SelectorBottomSheet selectorBottomSheet, View view) {
+        selectorBottomSheet.selectedIds.clear();
+        selectorBottomSheet.searchField.spansContainer.removeAllSpans(true);
+        selectorBottomSheet.updateList(true, false);
     }
 
     private boolean isSearching() {
@@ -786,9 +746,13 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         } else {
             i = 0;
         }
-        Iterator it = this.peers.iterator();
-        while (it.hasNext()) {
-            TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) it.next();
+        ArrayList arrayList2 = this.peers;
+        int size = arrayList2.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList2.get(i2);
+            i2++;
+            TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
             i += AndroidUtilities.dp(56.0f);
             this.items.add(SelectorAdapter.Item.asPeer(inputPeer, this.selectedIds.contains(Long.valueOf(DialogObject.getPeerDialogId(inputPeer)))));
         }

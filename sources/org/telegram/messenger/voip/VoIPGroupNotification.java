@@ -166,7 +166,12 @@ public class VoIPGroupNotification {
                     ConnectionsManager.getInstance(i).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPGroupNotification$$ExternalSyntheticLambda10
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            VoIPGroupNotification.lambda$request$1(i, j, j2, i2, z, context, str, tLObject, tL_error);
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPGroupNotification$$ExternalSyntheticLambda8
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    VoIPGroupNotification.$r8$lambda$GeUrYuer4Jev4M0zkXmaQaIUu6M(TLObject.this, r2, r3, r5, r7, r8, r9, r10);
+                                }
+                            });
                         }
                     });
                 }
@@ -174,18 +179,7 @@ public class VoIPGroupNotification {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$request$1(final int i, final long j, final long j2, final int i2, final boolean z, final Context context, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPGroupNotification$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                VoIPGroupNotification.lambda$request$0(TLObject.this, i, j, j2, i2, z, context, str);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$request$0(TLObject tLObject, int i, long j, long j2, int i2, boolean z, Context context, String str) {
+    public static /* synthetic */ void $r8$lambda$GeUrYuer4Jev4M0zkXmaQaIUu6M(TLObject tLObject, int i, long j, long j2, int i2, boolean z, Context context, String str) {
         if (tLObject instanceof TL_phone.groupCall) {
             TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
             MessagesController.getInstance(i).putUsers(groupcall.users, false);
@@ -201,14 +195,15 @@ public class VoIPGroupNotification {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x028d  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x02a0  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x02cd  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0290  */
-    /* JADX WARN: Type inference failed for: r8v12 */
-    /* JADX WARN: Type inference failed for: r8v7 */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0289  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0296  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x02c9  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0148  */
+    /* JADX WARN: Type inference failed for: r15v4 */
+    /* JADX WARN: Type inference failed for: r15v7 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -216,10 +211,10 @@ public class VoIPGroupNotification {
         NotificationChannel notificationChannel;
         NotificationChannel notificationChannel2;
         NotificationChannel notificationChannel3;
-        Class cls;
         boolean z;
+        Intent intent;
         int i3;
-        NotificationManager notificationManager;
+        Notification.Builder builder;
         int i4;
         int i5;
         String formatName;
@@ -236,32 +231,34 @@ public class VoIPGroupNotification {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        NotificationManager notificationManager2 = (NotificationManager) context.getSystemService("notification");
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         Intent putExtra = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip").putExtra("group_call_invite_msg_id", i2).putExtra("currentAccount", i);
         Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(LocaleController.getString(R.string.VoipGroupInCallBranding)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, putExtra, 301989888));
         SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
         int i6 = globalNotificationsSettings.getInt("calls_notification_channel", 0);
-        notificationChannel = notificationManager2.getNotificationChannel("incoming_calls2" + i6);
+        notificationChannel = notificationManager.getNotificationChannel("incoming_calls2" + i6);
         if (notificationChannel != null) {
             id2 = notificationChannel.getId();
-            notificationManager2.deleteNotificationChannel(id2);
+            notificationManager.deleteNotificationChannel(id2);
         }
-        notificationChannel2 = notificationManager2.getNotificationChannel("incoming_calls3" + i6);
+        notificationChannel2 = notificationManager.getNotificationChannel("incoming_calls3" + i6);
         if (notificationChannel2 != null) {
             id = notificationChannel2.getId();
-            notificationManager2.deleteNotificationChannel(id);
+            notificationManager.deleteNotificationChannel(id);
         }
-        notificationChannel3 = notificationManager2.getNotificationChannel("incoming_calls4" + i6);
+        notificationChannel3 = notificationManager.getNotificationChannel("incoming_calls4" + i6);
         if (notificationChannel3 != null) {
             importance = notificationChannel3.getImportance();
-            cls = LaunchActivity.class;
             if (importance >= 4) {
                 sound = notificationChannel3.getSound();
                 if (sound == null) {
                     z = false;
                     if (z) {
+                        intent = putExtra;
+                    } else {
                         AudioAttributes build2 = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
                         SearchActionVerificationClientService$$ExternalSyntheticApiModelOutline2.m();
+                        intent = putExtra;
                         NotificationChannel m = zzo$$ExternalSyntheticApiModelOutline2.m("incoming_calls4" + i6, LocaleController.getString(R.string.IncomingCallsSystemSetting), 4);
                         try {
                             m.setSound(null, build2);
@@ -273,34 +270,34 @@ public class VoIPGroupNotification {
                         m.enableLights(false);
                         m.setBypassDnd(true);
                         try {
-                            notificationManager2.createNotificationChannel(m);
+                            notificationManager.createNotificationChannel(m);
                         } catch (Exception e2) {
                             FileLog.e(e2);
                         }
                     }
                     contentIntent.setChannelId("incoming_calls4" + i6);
-                    Intent intent = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-                    intent.setAction(context.getPackageName() + ".DECLINE_CALL");
-                    intent.putExtra("call_id", j);
-                    intent.putExtra("group_call_invite_msg_id", i2);
-                    intent.putExtra("currentAccount", i);
-                    String string = LocaleController.getString(R.string.VoipDeclineCall);
-                    i3 = Build.VERSION.SDK_INT;
-                    if (i3 >= 24 || i3 >= 31) {
-                        notificationManager = notificationManager2;
-                        i4 = 0;
-                    } else {
-                        SpannableString spannableString = new SpannableString(string);
-                        notificationManager = notificationManager2;
-                        i4 = 0;
-                        spannableString.setSpan(new ForegroundColorSpan(-769226), 0, spannableString.length(), 0);
-                    }
-                    PendingIntent broadcast = PendingIntent.getBroadcast(context, i4, intent, 301989888);
                     Intent intent2 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-                    intent2.setAction(context.getPackageName() + ".ANSWER_CALL");
+                    intent2.setAction(context.getPackageName() + ".DECLINE_CALL");
                     intent2.putExtra("call_id", j);
                     intent2.putExtra("group_call_invite_msg_id", i2);
                     intent2.putExtra("currentAccount", i);
+                    String string = LocaleController.getString(R.string.VoipDeclineCall);
+                    i3 = Build.VERSION.SDK_INT;
+                    if (i3 >= 24 || i3 >= 31) {
+                        builder = contentIntent;
+                        i4 = 0;
+                    } else {
+                        SpannableString spannableString = new SpannableString(string);
+                        builder = contentIntent;
+                        i4 = 0;
+                        spannableString.setSpan(new ForegroundColorSpan(-769226), 0, spannableString.length(), 0);
+                    }
+                    PendingIntent broadcast = PendingIntent.getBroadcast(context, i4, intent2, 301989888);
+                    Intent intent3 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+                    intent3.setAction(context.getPackageName() + ".ANSWER_CALL");
+                    intent3.putExtra("call_id", j);
+                    intent3.putExtra("group_call_invite_msg_id", i2);
+                    intent3.putExtra("currentAccount", i);
                     String string2 = LocaleController.getString(R.string.VoipAnswerCall);
                     if (i3 >= 24 || i3 >= 31) {
                         i5 = 0;
@@ -309,18 +306,19 @@ public class VoIPGroupNotification {
                         i5 = 0;
                         spannableString2.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString2.length(), 0);
                     }
-                    PendingIntent activity = PendingIntent.getActivity(context, i5, new Intent(context, (Class<?>) cls).setAction("voip_answer").putExtra("group_call_invite_msg_id", i2).putExtra("currentAccount", i), 301989888);
-                    contentIntent.setPriority(2);
-                    contentIntent.setShowWhen(i5);
-                    contentIntent.setColor(-13851168);
-                    contentIntent.setVibrate(new long[i5]);
-                    contentIntent.setCategory("call");
-                    contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i5, putExtra, 33554432), true);
-                    Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
-                    intent3.setAction(context.getPackageName() + ".HIDE_CALL");
-                    intent3.putExtra("group_call_invite_msg_id", i2);
-                    intent3.putExtra("currentAccount", i);
-                    contentIntent.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent3, 167772160));
+                    PendingIntent activity = PendingIntent.getActivity(context, i5, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer").putExtra("group_call_invite_msg_id", i2).putExtra("currentAccount", i), 301989888);
+                    Notification.Builder builder2 = builder;
+                    builder2.setPriority(2);
+                    builder2.setShowWhen(i5);
+                    builder2.setColor(-13851168);
+                    builder2.setVibrate(new long[i5]);
+                    builder2.setCategory("call");
+                    builder2.setFullScreenIntent(PendingIntent.getActivity(context, i5, intent, 33554432), true);
+                    Intent intent4 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
+                    intent4.setAction(context.getPackageName() + ".HIDE_CALL");
+                    intent4.putExtra("group_call_invite_msg_id", i2);
+                    intent4.putExtra("currentAccount", i);
+                    builder2.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent4, 167772160));
                     TLObject userOrChat = MessagesController.getInstance(i).getUserOrChat(j2);
                     Bitmap roundAvatarBitmap = VoIPService.getRoundAvatarBitmap(context, i, userOrChat);
                     formatName = TextUtils.isEmpty(str) ? str : ContactsController.formatName(userOrChat);
@@ -333,9 +331,9 @@ public class VoIPGroupNotification {
                         icon = name.setIcon(createWithAdaptiveBitmap);
                         build = icon.build();
                         forIncomingCall = Notification.CallStyle.forIncomingCall(build, broadcast, activity);
-                        contentIntent.setStyle(forIncomingCall);
+                        builder2.setStyle(forIncomingCall);
                     }
-                    notificationManager.notify(203, contentIntent.build());
+                    notificationManager.notify(203, builder2.build());
                     VoIPPreNotificationService.startRinging(context, i, j2);
                     runnable = missRunnable;
                     if (runnable != null) {
@@ -354,49 +352,48 @@ public class VoIPGroupNotification {
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("User messed up the notification channel; deleting it and creating a proper one");
             }
-            notificationManager2.deleteNotificationChannel("incoming_calls4" + i6);
+            notificationManager.deleteNotificationChannel("incoming_calls4" + i6);
             i6++;
             globalNotificationsSettings.edit().putInt("calls_notification_channel", i6).commit();
-        } else {
-            cls = LaunchActivity.class;
         }
         z = true;
         if (z) {
         }
         contentIntent.setChannelId("incoming_calls4" + i6);
-        Intent intent4 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-        intent4.setAction(context.getPackageName() + ".DECLINE_CALL");
-        intent4.putExtra("call_id", j);
-        intent4.putExtra("group_call_invite_msg_id", i2);
-        intent4.putExtra("currentAccount", i);
+        Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+        intent22.setAction(context.getPackageName() + ".DECLINE_CALL");
+        intent22.putExtra("call_id", j);
+        intent22.putExtra("group_call_invite_msg_id", i2);
+        intent22.putExtra("currentAccount", i);
         String string3 = LocaleController.getString(R.string.VoipDeclineCall);
         i3 = Build.VERSION.SDK_INT;
         if (i3 >= 24) {
         }
-        notificationManager = notificationManager2;
+        builder = contentIntent;
         i4 = 0;
-        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, i4, intent4, 301989888);
-        Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-        intent22.setAction(context.getPackageName() + ".ANSWER_CALL");
-        intent22.putExtra("call_id", j);
-        intent22.putExtra("group_call_invite_msg_id", i2);
-        intent22.putExtra("currentAccount", i);
+        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, i4, intent22, 301989888);
+        Intent intent32 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+        intent32.setAction(context.getPackageName() + ".ANSWER_CALL");
+        intent32.putExtra("call_id", j);
+        intent32.putExtra("group_call_invite_msg_id", i2);
+        intent32.putExtra("currentAccount", i);
         String string22 = LocaleController.getString(R.string.VoipAnswerCall);
         if (i3 >= 24) {
         }
         i5 = 0;
-        PendingIntent activity2 = PendingIntent.getActivity(context, i5, new Intent(context, (Class<?>) cls).setAction("voip_answer").putExtra("group_call_invite_msg_id", i2).putExtra("currentAccount", i), 301989888);
-        contentIntent.setPriority(2);
-        contentIntent.setShowWhen(i5);
-        contentIntent.setColor(-13851168);
-        contentIntent.setVibrate(new long[i5]);
-        contentIntent.setCategory("call");
-        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i5, putExtra, 33554432), true);
-        Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
-        intent32.setAction(context.getPackageName() + ".HIDE_CALL");
-        intent32.putExtra("group_call_invite_msg_id", i2);
-        intent32.putExtra("currentAccount", i);
-        contentIntent.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent32, 167772160));
+        PendingIntent activity2 = PendingIntent.getActivity(context, i5, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer").putExtra("group_call_invite_msg_id", i2).putExtra("currentAccount", i), 301989888);
+        Notification.Builder builder22 = builder;
+        builder22.setPriority(2);
+        builder22.setShowWhen(i5);
+        builder22.setColor(-13851168);
+        builder22.setVibrate(new long[i5]);
+        builder22.setCategory("call");
+        builder22.setFullScreenIntent(PendingIntent.getActivity(context, i5, intent, 33554432), true);
+        Intent intent42 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
+        intent42.setAction(context.getPackageName() + ".HIDE_CALL");
+        intent42.putExtra("group_call_invite_msg_id", i2);
+        intent42.putExtra("currentAccount", i);
+        builder22.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent42, 167772160));
         TLObject userOrChat2 = MessagesController.getInstance(i).getUserOrChat(j2);
         Bitmap roundAvatarBitmap2 = VoIPService.getRoundAvatarBitmap(context, i, userOrChat2);
         if (TextUtils.isEmpty(str)) {
@@ -405,7 +402,7 @@ public class VoIPGroupNotification {
         }
         if (i3 >= 31) {
         }
-        notificationManager.notify(203, contentIntent.build());
+        notificationManager.notify(203, builder22.build());
         VoIPPreNotificationService.startRinging(context, i, j2);
         runnable = missRunnable;
         if (runnable != null) {
@@ -475,7 +472,7 @@ public class VoIPGroupNotification {
         ConnectionsManager.getInstance(i).sendRequest(declineconferencecallinvite, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPGroupNotification$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                VoIPGroupNotification.lambda$decline$3(i, tLObject, tL_error);
+                VoIPGroupNotification.$r8$lambda$6xjOsDUB65Zk6_tWg6lepZcnZis(i, tLObject, tL_error);
             }
         });
         if (VoIPFragment.getInstance() != null) {
@@ -483,8 +480,7 @@ public class VoIPGroupNotification {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$decline$3(int i, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$6xjOsDUB65Zk6_tWg6lepZcnZis(int i, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.Updates) {
             MessagesController.getInstance(i).processUpdates((TLRPC.Updates) tLObject, false);
         }

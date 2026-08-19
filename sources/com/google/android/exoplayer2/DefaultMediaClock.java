@@ -124,6 +124,12 @@ final class DefaultMediaClock implements MediaClock {
 
     private boolean shouldUseStandaloneClock(boolean z) {
         Renderer renderer = this.rendererClockSource;
-        return renderer == null || renderer.isEnded() || (!this.rendererClockSource.isReady() && (z || this.rendererClockSource.hasReadStreamToEnd()));
+        if (renderer == null || renderer.isEnded()) {
+            return true;
+        }
+        if (this.rendererClockSource.isReady()) {
+            return false;
+        }
+        return z || this.rendererClockSource.hasReadStreamToEnd();
     }
 }

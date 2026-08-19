@@ -24,7 +24,7 @@ public class ScaleBox extends Box {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public ScaleBox(Box box, float f) {
-        this(box, r4, r4);
+        this(box, r2, r2);
         double d = f;
     }
 

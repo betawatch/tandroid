@@ -58,11 +58,19 @@ public class Card {
             return false;
         }
         String replaceAll = this.number.trim().replaceAll("\\s+|-", "");
-        if (StripeTextUtils.isBlank(replaceAll) || !StripeTextUtils.isWholePositiveNumber(replaceAll) || !isValidLuhnNumber(replaceAll)) {
-            return false;
+        if (!StripeTextUtils.isBlank(replaceAll) && StripeTextUtils.isWholePositiveNumber(replaceAll) && isValidLuhnNumber(replaceAll)) {
+            String brand = getBrand();
+            if ("American Express".equals(brand)) {
+                return replaceAll.length() == 15;
+            }
+            if ("Diners Club".equals(brand)) {
+                return replaceAll.length() == 14;
+            }
+            if (replaceAll.length() == 16) {
+                return true;
+            }
         }
-        String brand = getBrand();
-        return "American Express".equals(brand) ? replaceAll.length() == 15 : "Diners Club".equals(brand) ? replaceAll.length() == 14 : replaceAll.length() == 16;
+        return false;
     }
 
     public boolean validateExpiryDate() {

@@ -93,16 +93,11 @@ public class EditTextCell extends FrameLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideKeyboardOnEnter$0() {
-        AndroidUtilities.hideKeyboard(this.editText);
-    }
-
     public void hideKeyboardOnEnter() {
         whenHitEnter(new Runnable() { // from class: org.telegram.ui.Cells.EditTextCell$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextCell.this.lambda$hideKeyboardOnEnter$0();
+                AndroidUtilities.hideKeyboard(EditTextCell.this.editText);
             }
         });
     }

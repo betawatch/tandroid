@@ -33,34 +33,37 @@ public abstract class VolumeProviderCompat {
     }
 
     public Object getVolumeProvider() {
-        if (this.mVolumeProviderFwk == null) {
-            if (Build.VERSION.SDK_INT >= 30) {
-                this.mVolumeProviderFwk = new VolumeProvider(this.mControlType, this.mMaxVolume, this.mCurrentVolume, this.mControlId) { // from class: androidx.media.VolumeProviderCompat.1
-                    @Override // android.media.VolumeProvider
-                    public void onSetVolumeTo(int i) {
-                        VolumeProviderCompat.this.onSetVolumeTo(i);
-                    }
+        VolumeProviderCompat volumeProviderCompat;
+        if (this.mVolumeProviderFwk != null) {
+            volumeProviderCompat = this;
+        } else if (Build.VERSION.SDK_INT >= 30) {
+            volumeProviderCompat = this;
+            volumeProviderCompat.mVolumeProviderFwk = new VolumeProvider(this.mControlType, this.mMaxVolume, this.mCurrentVolume, this.mControlId) { // from class: androidx.media.VolumeProviderCompat.1
+                @Override // android.media.VolumeProvider
+                public void onSetVolumeTo(int i) {
+                    VolumeProviderCompat.this.onSetVolumeTo(i);
+                }
 
-                    @Override // android.media.VolumeProvider
-                    public void onAdjustVolume(int i) {
-                        VolumeProviderCompat.this.onAdjustVolume(i);
-                    }
-                };
-            } else {
-                this.mVolumeProviderFwk = new VolumeProvider(this.mControlType, this.mMaxVolume, this.mCurrentVolume) { // from class: androidx.media.VolumeProviderCompat.2
-                    @Override // android.media.VolumeProvider
-                    public void onSetVolumeTo(int i) {
-                        VolumeProviderCompat.this.onSetVolumeTo(i);
-                    }
+                @Override // android.media.VolumeProvider
+                public void onAdjustVolume(int i) {
+                    VolumeProviderCompat.this.onAdjustVolume(i);
+                }
+            };
+        } else {
+            volumeProviderCompat = this;
+            volumeProviderCompat.mVolumeProviderFwk = new VolumeProvider(volumeProviderCompat.mControlType, volumeProviderCompat.mMaxVolume, volumeProviderCompat.mCurrentVolume) { // from class: androidx.media.VolumeProviderCompat.2
+                @Override // android.media.VolumeProvider
+                public void onSetVolumeTo(int i) {
+                    VolumeProviderCompat.this.onSetVolumeTo(i);
+                }
 
-                    @Override // android.media.VolumeProvider
-                    public void onAdjustVolume(int i) {
-                        VolumeProviderCompat.this.onAdjustVolume(i);
-                    }
-                };
-            }
+                @Override // android.media.VolumeProvider
+                public void onAdjustVolume(int i) {
+                    VolumeProviderCompat.this.onAdjustVolume(i);
+                }
+            };
         }
-        return this.mVolumeProviderFwk;
+        return volumeProviderCompat.mVolumeProviderFwk;
     }
 
     private static class Api21Impl {

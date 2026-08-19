@@ -72,17 +72,36 @@ final class MessageSetSchema implements Schema {
     }
 
     private void mergeFromHelper(UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
+        UnknownFieldSchema unknownFieldSchema2;
         Object builderFromMessage = unknownFieldSchema.getBuilderFromMessage(obj);
         FieldSet mutableExtensions = extensionSchema.getMutableExtensions(obj);
-        do {
+        while (reader.getFieldNumber() != Integer.MAX_VALUE) {
             try {
-                if (reader.getFieldNumber() == Integer.MAX_VALUE) {
-                    return;
+                unknownFieldSchema2 = unknownFieldSchema;
+                ExtensionSchema extensionSchema2 = extensionSchema;
+                Reader reader2 = reader;
+                ExtensionRegistryLite extensionRegistryLite2 = extensionRegistryLite;
+                try {
+                    if (!parseMessageSetItemOrUnknownField(reader2, extensionRegistryLite2, extensionSchema2, mutableExtensions, unknownFieldSchema2, builderFromMessage)) {
+                        unknownFieldSchema2.setBuilderToMessage(obj, builderFromMessage);
+                        return;
+                    }
+                    reader = reader2;
+                    extensionRegistryLite = extensionRegistryLite2;
+                    extensionSchema = extensionSchema2;
+                    unknownFieldSchema = unknownFieldSchema2;
+                } catch (Throwable th) {
+                    th = th;
+                    Throwable th2 = th;
+                    unknownFieldSchema2.setBuilderToMessage(obj, builderFromMessage);
+                    throw th2;
                 }
-            } finally {
-                unknownFieldSchema.setBuilderToMessage(obj, builderFromMessage);
+            } catch (Throwable th3) {
+                th = th3;
+                unknownFieldSchema2 = unknownFieldSchema;
             }
-        } while (parseMessageSetItemOrUnknownField(reader, extensionRegistryLite, extensionSchema, mutableExtensions, unknownFieldSchema, builderFromMessage));
+        }
+        unknownFieldSchema.setBuilderToMessage(obj, builderFromMessage);
     }
 
     @Override // androidx.datastore.preferences.protobuf.Schema

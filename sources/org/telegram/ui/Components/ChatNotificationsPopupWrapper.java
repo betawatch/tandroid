@@ -108,7 +108,7 @@ public class ChatNotificationsPopupWrapper {
         addItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$1(callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$hdU0es5DaVL4qd0zTA5VJOOqTlk(ChatNotificationsPopupWrapper.this, callback, view);
             }
         });
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = this.windowLayout;
@@ -119,7 +119,7 @@ public class ChatNotificationsPopupWrapper {
         addItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$2(callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$BCifHbT070kKx60ZM0FZEguxiUk(ChatNotificationsPopupWrapper.this, callback, view);
             }
         });
         ActionBarMenuSubItem addItem4 = ActionBarMenuItem.addItem(this.windowLayout, i2, LocaleController.getString(i3), false, resourcesProvider);
@@ -127,19 +127,19 @@ public class ChatNotificationsPopupWrapper {
         addItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$3(callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$IUt87eeObtHRh9nlOj8Lm3A_-hQ(ChatNotificationsPopupWrapper.this, callback, view);
             }
         });
         ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$6(context, resourcesProvider, i, callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$PEbOpDurCCRYUl-xQxtL_WRuezo(ChatNotificationsPopupWrapper.this, context, resourcesProvider, i, callback, view);
             }
         });
         ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$7(callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$ybt8tZUW07bes1IVqFi8k5NWQ3U(ChatNotificationsPopupWrapper.this, callback, view);
             }
         });
         ActionBarMenuSubItem addItem5 = ActionBarMenuItem.addItem(this.windowLayout, 0, "", false, resourcesProvider);
@@ -147,7 +147,7 @@ public class ChatNotificationsPopupWrapper {
         addItem5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$9(callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$TeJuG4RmFiN6mblwxCj699X3MFI(ChatNotificationsPopupWrapper.this, callback, view);
             }
         });
         FrameLayout frameLayout = new FrameLayout(context);
@@ -167,52 +167,42 @@ public class ChatNotificationsPopupWrapper {
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatNotificationsPopupWrapper.this.lambda$new$10(callback, view);
+                ChatNotificationsPopupWrapper.$r8$lambda$U4PfluN4GyVVrcQPg3HKYf3ZkvA(ChatNotificationsPopupWrapper.this, callback, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$hdU0es5DaVL4qd0zTA5VJOOqTlk(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, Callback callback, View view) {
+        chatNotificationsPopupWrapper.dismiss();
         callback.toggleSound();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Callback callback, View view) {
-        dismiss();
-        callback.muteFor(this.muteForLastSelected1Time);
+    public static /* synthetic */ void $r8$lambda$BCifHbT070kKx60ZM0FZEguxiUk(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, Callback callback, View view) {
+        chatNotificationsPopupWrapper.dismiss();
+        callback.muteFor(chatNotificationsPopupWrapper.muteForLastSelected1Time);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(Callback callback, View view) {
-        dismiss();
-        callback.muteFor(this.muteForLastSelected2Time);
+    public static /* synthetic */ void $r8$lambda$IUt87eeObtHRh9nlOj8Lm3A_-hQ(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, Callback callback, View view) {
+        chatNotificationsPopupWrapper.dismiss();
+        callback.muteFor(chatNotificationsPopupWrapper.muteForLastSelected2Time);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(Context context, Theme.ResourcesProvider resourcesProvider, final int i, final Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$PEbOpDurCCRYUl-xQxtL_WRuezo(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, Context context, Theme.ResourcesProvider resourcesProvider, final int i, final Callback callback, View view) {
+        chatNotificationsPopupWrapper.dismiss();
         AlertsCreator.createMuteForPickerDialog(context, resourcesProvider, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public final void didSelectDate(boolean z, int i2, int i3) {
-                ChatNotificationsPopupWrapper.lambda$new$5(i, callback, z, i2, i3);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda11
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChatNotificationsPopupWrapper.$r8$lambda$jhiS2GRG2Zdjm9uB5Jr-zKUjxx0(i2, r2, r3);
+                    }
+                }, 16L);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$5(final int i, final Callback callback, boolean z, final int i2, int i3) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatNotificationsPopupWrapper.lambda$new$4(i2, i, callback);
-            }
-        }, 16L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(int i, int i2, Callback callback) {
+    public static /* synthetic */ void $r8$lambda$jhiS2GRG2Zdjm9uB5Jr-zKUjxx0(int i, int i2, Callback callback) {
         if (i != 0) {
             SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i2);
             notificationsSettings.edit().putInt("last_selected_mute_until_time", i).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
@@ -220,15 +210,13 @@ public class ChatNotificationsPopupWrapper {
         callback.muteFor(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$ybt8tZUW07bes1IVqFi8k5NWQ3U(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, Callback callback, View view) {
+        chatNotificationsPopupWrapper.dismiss();
         callback.showCustomize();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(final Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$TeJuG4RmFiN6mblwxCj699X3MFI(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, final Callback callback, View view) {
+        chatNotificationsPopupWrapper.dismiss();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
@@ -237,12 +225,12 @@ public class ChatNotificationsPopupWrapper {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$10(Callback callback, View view) {
+    public static /* synthetic */ void $r8$lambda$U4PfluN4GyVVrcQPg3HKYf3ZkvA(ChatNotificationsPopupWrapper chatNotificationsPopupWrapper, Callback callback, View view) {
         if (callback != null) {
+            chatNotificationsPopupWrapper.getClass();
             callback.openExceptions();
         }
-        dismiss();
+        chatNotificationsPopupWrapper.dismiss();
     }
 
     private void dismiss() {
@@ -255,8 +243,7 @@ public class ChatNotificationsPopupWrapper {
         this.lastDismissTime = System.currentTimeMillis();
     }
 
-    /* renamed from: update, reason: merged with bridge method [inline-methods] */
-    public void lambda$update$11(final long j, final long j2, final HashSet hashSet) {
+    public void update(final long j, final long j2, final HashSet hashSet) {
         int i;
         int i2;
         int i3;
@@ -264,7 +251,7 @@ public class ChatNotificationsPopupWrapper {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatNotificationsPopupWrapper.this.lambda$update$11(j, j2, hashSet);
+                    ChatNotificationsPopupWrapper.this.update(j, j2, hashSet);
                 }
             });
             return;
@@ -393,7 +380,7 @@ public class ChatNotificationsPopupWrapper {
         final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda12
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$12(ItemOptions.this, currentAccount, j, j2, baseFragment, resourceProvider, (Integer) obj);
+                ChatNotificationsPopupWrapper.$r8$lambda$aS3nDMDQw8wnJZR5VS7dQrqJSc8(ItemOptions.this, currentAccount, j, j2, baseFragment, resourceProvider, (Integer) obj);
             }
         };
         final ItemOptions makeSwipeback = itemOptions.makeSwipeback();
@@ -401,40 +388,49 @@ public class ChatNotificationsPopupWrapper {
         makeSwipeback.add(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$13(ItemOptions.this, currentAccount, j, j2, makeSwipeback, baseFragment, resourceProvider);
+                ChatNotificationsPopupWrapper.$r8$lambda$31RerRr0yK3qaJutUXuPZrSTK8M(ItemOptions.this, currentAccount, j, j2, makeSwipeback, baseFragment, resourceProvider);
             }
         });
         final ActionBarMenuSubItem last = makeSwipeback.getLast();
         makeSwipeback.add(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$16(ItemOptions.this, resourceProvider, currentAccount, callback);
+                AlertsCreator.createMuteForPickerDialog(ItemOptions.this.getContext(), resourceProvider, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda18
+                    @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                    public final void didSelectDate(boolean z, int i, int i2) {
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda19
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                ChatNotificationsPopupWrapper.$r8$lambda$2E5Qdzb2TlshZLi5DNrM-yDRQJs(i, r2, r3);
+                            }
+                        }, 16L);
+                    }
+                });
             }
         });
         makeSwipeback.add(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$17(ItemOptions.this, j, j2, baseFragment, resourceProvider);
+                ChatNotificationsPopupWrapper.$r8$lambda$_WHFIA39ymnz5txwO8Ws6ecXwFk(ItemOptions.this, j, j2, baseFragment, resourceProvider);
             }
         });
         makeSwipeback.add(0, "", new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$18(ItemOptions.this, currentAccount, j, j2, baseFragment, resourceProvider);
+                ChatNotificationsPopupWrapper.$r8$lambda$99jwGva_EFC_FHEqFr4J7466z3Y(ItemOptions.this, currentAccount, j, j2, baseFragment, resourceProvider);
             }
         });
         final ActionBarMenuSubItem last2 = makeSwipeback.getLast();
         new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$19(currentAccount, j, j2, last2, last);
+                ChatNotificationsPopupWrapper.$r8$lambda$jslqYv3H4CQpj7lso-lTF0FqDk4(currentAccount, j, j2, last2, last);
             }
         }.run();
         return makeSwipeback;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$12(ItemOptions itemOptions, int i, long j, long j2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider, Integer num) {
+    public static /* synthetic */ void $r8$lambda$aS3nDMDQw8wnJZR5VS7dQrqJSc8(ItemOptions itemOptions, int i, long j, long j2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider, Integer num) {
         itemOptions.dismiss();
         if (num.intValue() == 0) {
             if (MessagesController.getInstance(i).isDialogMuted(j, j2)) {
@@ -452,8 +448,7 @@ public class ChatNotificationsPopupWrapper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$13(ItemOptions itemOptions, int i, long j, long j2, ItemOptions itemOptions2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$31RerRr0yK3qaJutUXuPZrSTK8M(ItemOptions itemOptions, int i, long j, long j2, ItemOptions itemOptions2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
         itemOptions.dismiss();
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i);
         boolean z = notificationsSettings.getBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(j, j2), true);
@@ -465,28 +460,7 @@ public class ChatNotificationsPopupWrapper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$16(ItemOptions itemOptions, Theme.ResourcesProvider resourcesProvider, final int i, final Utilities.Callback callback) {
-        AlertsCreator.createMuteForPickerDialog(itemOptions.getContext(), resourcesProvider, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda18
-            @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-            public final void didSelectDate(boolean z, int i2, int i3) {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$15(i, callback, z, i2, i3);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$15(final int i, final Utilities.Callback callback, boolean z, final int i2, int i3) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda19
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatNotificationsPopupWrapper.lambda$addAsItemOptions$14(i2, i, callback);
-            }
-        }, 16L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$14(int i, int i2, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$2E5Qdzb2TlshZLi5DNrM-yDRQJs(int i, int i2, Utilities.Callback callback) {
         if (i != 0) {
             SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i2);
             notificationsSettings.edit().putInt("last_selected_mute_until_time", i).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
@@ -494,8 +468,7 @@ public class ChatNotificationsPopupWrapper {
         callback.run(Integer.valueOf(i));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$17(ItemOptions itemOptions, long j, long j2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$_WHFIA39ymnz5txwO8Ws6ecXwFk(ItemOptions itemOptions, long j, long j2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
         itemOptions.dismiss();
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", j);
@@ -503,8 +476,7 @@ public class ChatNotificationsPopupWrapper {
         baseFragment.presentFragment(new ProfileNotificationsActivity(bundle, resourcesProvider));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$18(ItemOptions itemOptions, int i, long j, long j2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$99jwGva_EFC_FHEqFr4J7466z3Y(ItemOptions itemOptions, int i, long j, long j2, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
         itemOptions.dismiss();
         boolean isDialogMuted = MessagesController.getInstance(i).isDialogMuted(j, j2);
         NotificationsController.getInstance(i).muteDialog(j, j2, !isDialogMuted);
@@ -513,8 +485,7 @@ public class ChatNotificationsPopupWrapper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAsItemOptions$19(int i, long j, long j2, ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2) {
+    public static /* synthetic */ void $r8$lambda$jslqYv3H4CQpj7lso-lTF0FqDk4(int i, long j, long j2, ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2) {
         int i2;
         if (MessagesController.getInstance(i).isDialogMuted(j, j2)) {
             actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute);

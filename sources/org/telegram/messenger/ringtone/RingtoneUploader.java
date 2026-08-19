@@ -46,31 +46,31 @@ public class RingtoneUploader implements NotificationCenter.NotificationCenterDe
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(uploadringtone, new RequestDelegate() { // from class: org.telegram.messenger.ringtone.RingtoneUploader$$ExternalSyntheticLambda0
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        RingtoneUploader.this.lambda$didReceivedNotification$1(tLObject, tL_error);
+                        RingtoneUploader.$r8$lambda$jbOppAXzptJ-_jvu9jIeUDTVp9Q(RingtoneUploader.this, tLObject, tL_error);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$1(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$jbOppAXzptJ-_jvu9jIeUDTVp9Q(final RingtoneUploader ringtoneUploader, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        ringtoneUploader.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ringtone.RingtoneUploader$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                RingtoneUploader.this.lambda$didReceivedNotification$0(tLObject, tL_error);
+                RingtoneUploader.$r8$lambda$SeRFJ9-lbeJZGK6JbUejxBryK_s(RingtoneUploader.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$0(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$SeRFJ9-lbeJZGK6JbUejxBryK_s(RingtoneUploader ringtoneUploader, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
-            onComplete((TLRPC.Document) tLObject);
+            ringtoneUploader.getClass();
+            ringtoneUploader.onComplete((TLRPC.Document) tLObject);
         } else {
-            error(tL_error);
+            ringtoneUploader.error(tL_error);
         }
-        unsubscribe();
+        ringtoneUploader.unsubscribe();
     }
 
     private void subscribe() {
@@ -101,20 +101,20 @@ public class RingtoneUploader implements NotificationCenter.NotificationCenterDe
             NotificationCenter.getInstance(this.currentAccount).doOnIdle(new Runnable() { // from class: org.telegram.messenger.ringtone.RingtoneUploader$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RingtoneUploader.this.lambda$error$2(tL_error);
+                    RingtoneUploader.$r8$lambda$KGu6YqtdvxlF9yXjggKm_1ETfBc(RingtoneUploader.this, tL_error);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$error$2(TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$KGu6YqtdvxlF9yXjggKm_1ETfBc(RingtoneUploader ringtoneUploader, TLRPC.TL_error tL_error) {
+        ringtoneUploader.getClass();
         if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 4, LocaleController.formatString("TooLongError", R.string.TooLongError, new Object[0]), LocaleController.formatString("ErrorRingtoneDurationTooLong", R.string.ErrorRingtoneDurationTooLong, Integer.valueOf(MessagesController.getInstance(this.currentAccount).ringtoneDurationMax)));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 4, LocaleController.formatString("TooLongError", R.string.TooLongError, new Object[0]), LocaleController.formatString("ErrorRingtoneDurationTooLong", R.string.ErrorRingtoneDurationTooLong, Integer.valueOf(MessagesController.getInstance(ringtoneUploader.currentAccount).ringtoneDurationMax)));
         } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 4, LocaleController.formatString("TooLargeError", R.string.TooLargeError, new Object[0]), LocaleController.formatString("ErrorRingtoneSizeTooBig", R.string.ErrorRingtoneSizeTooBig, Integer.valueOf(MessagesController.getInstance(this.currentAccount).ringtoneSizeMax / 1024)));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 4, LocaleController.formatString("TooLargeError", R.string.TooLargeError, new Object[0]), LocaleController.formatString("ErrorRingtoneSizeTooBig", R.string.ErrorRingtoneSizeTooBig, Integer.valueOf(MessagesController.getInstance(ringtoneUploader.currentAccount).ringtoneSizeMax / 1024)));
         } else {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 4, LocaleController.formatString("InvalidFormatError", R.string.InvalidFormatError, new Object[0]), LocaleController.getString(R.string.ErrorRingtoneInvalidFormat));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 4, LocaleController.formatString("InvalidFormatError", R.string.InvalidFormatError, new Object[0]), LocaleController.getString(R.string.ErrorRingtoneInvalidFormat));
         }
     }
 }

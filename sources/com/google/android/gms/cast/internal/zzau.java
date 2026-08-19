@@ -39,17 +39,6 @@ public final class zzau {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x002a, code lost:
-    
-        r12 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0049, code lost:
-    
-        throw r12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private final void zzg(int i, Object obj, String str) {
         this.zzb.d(str, new Object[0]);
         Object obj2 = zza;
@@ -67,6 +56,8 @@ public final class zzau {
                         this.zzf = null;
                     }
                 }
+            } catch (Throwable th) {
+                throw th;
             } finally {
             }
         }

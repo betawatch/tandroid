@@ -16,7 +16,7 @@ public final class MediaRouteProviderDescriptor {
 
     MediaRouteProviderDescriptor(List list, boolean z) {
         if (list.isEmpty()) {
-            this.mRoutes = Collections.emptyList();
+            this.mRoutes = Collections.EMPTY_LIST;
         } else {
             this.mRoutes = DesugarCollections.unmodifiableList(new ArrayList(list));
         }

@@ -40,7 +40,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LivePlayerView extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     private final TextureView blurRenderer;
     private int currentAccount;
@@ -494,7 +494,9 @@ public class LivePlayerView extends FrameLayout implements RendererCommon.Render
         this.emptyView.animate().alpha(this.isEmptyViewVisible ? 1.0f : 0.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.LivePlayerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                LivePlayerView.this.lambda$setIsEmpty$0(z);
+                LivePlayerView livePlayerView = LivePlayerView.this;
+                boolean z2 = z;
+                livePlayerView.emptyView.setVisibility(r1 ? 0 : 8);
             }
         }).start();
         this.emptyView.buttonView.setVisibility((!z || runnable == null) ? 8 : 0);
@@ -504,11 +506,6 @@ public class LivePlayerView extends FrameLayout implements RendererCommon.Render
                 runnable.run();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setIsEmpty$0(boolean z) {
-        this.emptyView.setVisibility(z ? 0 : 8);
     }
 
     public void setTextureVisible(boolean z, boolean z2) {
@@ -531,8 +528,7 @@ public class LivePlayerView extends FrameLayout implements RendererCommon.Render
         public final LinearLayout layout;
         public final TextView textView;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$new$0(View view) {
+        public static /* synthetic */ void $r8$lambda$hSJLXY4uSxrNh54uM-zLml8e9oY(View view) {
         }
 
         public EmptyView(Context context) {
@@ -558,7 +554,7 @@ public class LivePlayerView extends FrameLayout implements RendererCommon.Render
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.LivePlayerView$EmptyView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LivePlayerView.EmptyView.lambda$new$0(view);
+                    LivePlayerView.EmptyView.$r8$lambda$hSJLXY4uSxrNh54uM-zLml8e9oY(view);
                 }
             });
             setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));

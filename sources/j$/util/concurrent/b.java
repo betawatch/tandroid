@@ -8,9 +8,9 @@ import java.util.Iterator;
 import java.util.Set;
 
 /* loaded from: classes2.dex */
-abstract class b implements Collection, Serializable {
+public abstract class b implements Collection, Serializable {
     private static final long serialVersionUID = 7249069246763182397L;
-    final ConcurrentHashMap a;
+    public final ConcurrentHashMap a;
 
     @Override // java.util.Collection
     public abstract boolean contains(Object obj);
@@ -20,6 +20,25 @@ abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public abstract boolean remove(Object obj);
+
+    public b(ConcurrentHashMap concurrentHashMap) {
+        this.a = concurrentHashMap;
+    }
+
+    @Override // java.util.Collection
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // java.util.Collection
+    public final int size() {
+        return this.a.size();
+    }
+
+    @Override // java.util.Collection
+    public final boolean isEmpty() {
+        return this.a.isEmpty();
+    }
 
     @Override // java.util.Collection
     public final Object[] toArray() {
@@ -84,25 +103,6 @@ abstract class b implements Collection, Serializable {
         return objArr2;
     }
 
-    b(ConcurrentHashMap concurrentHashMap) {
-        this.a = concurrentHashMap;
-    }
-
-    @Override // java.util.Collection
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // java.util.Collection
-    public final int size() {
-        return this.a.size();
-    }
-
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
-    }
-
     public final String toString() {
         StringBuilder sb = new StringBuilder("[");
         Iterator it = iterator();
@@ -152,11 +152,11 @@ abstract class b implements Collection, Serializable {
                     z = true;
                 }
             }
-        } else {
-            Iterator it2 = collection.iterator();
-            while (it2.hasNext()) {
-                z |= remove(it2.next());
-            }
+            return z;
+        }
+        Iterator it2 = collection.iterator();
+        while (it2.hasNext()) {
+            z |= remove(it2.next());
         }
         return z;
     }

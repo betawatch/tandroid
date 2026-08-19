@@ -156,7 +156,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(this.currentAccount).getClientUserId(), null, LocaleController.getString(R.string.GiftMessageSendNow), false);
         starGiftUniqueActionView.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         starGiftUniqueActionView.setLayoutBackground(Theme.createServiceDrawable(AndroidUtilities.dp(18.0f), starGiftUniqueActionView, this.containerView, getThemedPaint("paintChatActionBackground")));
-        sizeNotifierFrameLayout.addView(starGiftUniqueActionView, LayoutHelper.createFrame(-2, -2, 17));
+        sizeNotifierFrameLayout.addView(starGiftUniqueActionView, LayoutHelper.createFrame(-2, -2, 48));
         ChatInputViewsContainer chatInputViewsContainer = new ChatInputViewsContainer(context);
         this.chatInputViewsContainer = chatInputViewsContainer;
         chatInputViewsContainer.setClipChildren(false);
@@ -357,10 +357,6 @@ public class GiftMessageBottomSheet extends BottomSheet {
             }
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
-            public void onTextSpansChanged(CharSequence charSequence) {
-            }
-
-            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public /* synthetic */ void onTrendingStickersShowed(boolean z) {
                 ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$onTrendingStickersShowed(this, z);
             }
@@ -404,6 +400,15 @@ public class GiftMessageBottomSheet extends BottomSheet {
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public void onTextChanged(CharSequence charSequence, boolean z, boolean z2) {
+                onTextChangedInternal(charSequence);
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public void onTextSpansChanged(CharSequence charSequence) {
+                onTextChangedInternal(charSequence);
+            }
+
+            private void onTextChangedInternal(CharSequence charSequence) {
                 int i2;
                 GiftMessageBottomSheet.this.starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(((BottomSheet) GiftMessageBottomSheet.this).currentAccount).getClientUserId(), GiftMessageBottomSheet.this.commentView.getTextWithEntities(), LocaleController.getString(R.string.GiftMessageSendNow), true);
                 GiftMessageBottomSheet.this.codepointCount = Character.codePointCount(charSequence, 0, charSequence.length());
@@ -477,7 +482,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         this.writeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftMessageBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GiftMessageBottomSheet.this.lambda$new$0(view);
+                GiftMessageBottomSheet.$r8$lambda$jGk-gkXzyTDy0qpT49IJ5Lz1rgI(GiftMessageBottomSheet.this, view);
             }
         });
         TextView textView = new TextView(context);
@@ -509,7 +514,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         starGiftUniqueActionView.getLayout().setOnButtonClickListener(new Runnable() { // from class: org.telegram.ui.Gifts.GiftMessageBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                GiftMessageBottomSheet.this.lambda$new$1();
+                GiftMessageBottomSheet.this.writeButton.performClick();
             }
         });
         checkBox2.setDrawBackgroundAsArc(10);
@@ -518,7 +523,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftMessageBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GiftMessageBottomSheet.this.lambda$new$2(view);
+                GiftMessageBottomSheet.$r8$lambda$PaLNyegxiTR8lRxE1cvQFuym6oQ(GiftMessageBottomSheet.this, view);
             }
         });
         this.containerView.addView(frameLayout, LayoutHelper.createFrame(-2, 32, 81));
@@ -530,7 +535,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftMessageBottomSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GiftMessageBottomSheet.this.lambda$new$3(view);
+                GiftMessageBottomSheet.this.dismiss();
             }
         });
         this.containerView.addView(imageView, LayoutHelper.createFrame(56, 56, 53));
@@ -546,33 +551,21 @@ public class GiftMessageBottomSheet extends BottomSheet {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        if (this.captionLimit - this.codepointCount < 0) {
-            AndroidUtilities.shakeView(this.captionLimitView);
+    public static /* synthetic */ void $r8$lambda$jGk-gkXzyTDy0qpT49IJ5Lz1rgI(GiftMessageBottomSheet giftMessageBottomSheet, View view) {
+        if (giftMessageBottomSheet.captionLimit - giftMessageBottomSheet.codepointCount < 0) {
+            AndroidUtilities.shakeView(giftMessageBottomSheet.captionLimitView);
             return;
         }
-        Callback callback = this.mCallback;
+        Callback callback = giftMessageBottomSheet.mCallback;
         if (callback != null) {
-            callback.performSend(this.commentView.getTextWithEntities(), this.hideMyName);
+            callback.performSend(giftMessageBottomSheet.commentView.getTextWithEntities(), giftMessageBottomSheet.hideMyName);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        this.writeButton.performClick();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        boolean z = this.hideMyName;
-        this.hideMyName = !z;
-        this.publicCheckboxView.setChecked(z, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$PaLNyegxiTR8lRxE1cvQFuym6oQ(GiftMessageBottomSheet giftMessageBottomSheet, View view) {
+        boolean z = giftMessageBottomSheet.hideMyName;
+        giftMessageBottomSheet.hideMyName = !z;
+        giftMessageBottomSheet.publicCheckboxView.setChecked(z, true);
     }
 
     protected Paint getThemedPaint(String str) {
@@ -641,13 +634,12 @@ public class GiftMessageBottomSheet extends BottomSheet {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void onBackPressed() {
         ChatActivityEnterView chatActivityEnterView = this.commentView;
         if (chatActivityEnterView != null && chatActivityEnterView.isPopupShowing()) {
             this.commentView.hidePopup(true);
         } else {
-            super.lambda$openCrafting$8();
+            super.onBackPressed();
         }
     }
 
@@ -673,7 +665,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         int i = this.windowInsetsStateHolder.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()).top;
         float dp = AndroidUtilities.dp(36.0f) + i;
         float animatedMaxBottomInset = this.windowInsetsStateHolder.getAnimatedMaxBottomInset() + AndroidUtilities.dp(9.0f) + this.chatInputViewsContainer.getInputBubbleHeight();
-        this.starGiftUniqueActionView.setTranslationY((dp - (AndroidUtilities.dp(46.0f) + animatedMaxBottomInset)) / 2.0f);
+        this.starGiftUniqueActionView.setTranslationY(Math.min(((this.containerView.getHeight() - this.starGiftUniqueActionView.getHeight()) / 2.0f) + ((dp - (AndroidUtilities.dp(46.0f) + animatedMaxBottomInset)) / 2.0f), ((((this.containerView.getHeight() - animatedMaxBottomInset) - AndroidUtilities.dp(14.0f)) - this.publicCheckboxButton.getHeight()) - AndroidUtilities.dp(10.0f)) - this.starGiftUniqueActionView.getHeight()));
         this.starGiftUniqueActionView.invalidate();
         this.previewInChatHeader.setTranslationY(this.starGiftUniqueActionView.getY() - AndroidUtilities.dp(33.0f));
         this.previewInChatHeader.invalidate();

@@ -255,20 +255,21 @@ public abstract class zzbn extends zzba {
 
         @Override // com.google.android.gms.internal.clearcut.zzbn
         public final void zzg(String str) {
+            int zza;
             int i = this.position;
             try {
                 int zzt = zzbn.zzt(str.length() * 3);
                 int zzt2 = zzbn.zzt(str.length());
-                if (zzt2 != zzt) {
+                if (zzt2 == zzt) {
+                    int i2 = i + zzt2;
+                    this.position = i2;
+                    zza = zzff.zza(str, this.buffer, i2, zzag());
+                    this.position = i;
+                    zzo((zza - i) - zzt2);
+                } else {
                     zzo(zzff.zza(str));
-                    this.position = zzff.zza(str, this.buffer, this.position, zzag());
-                    return;
+                    zza = zzff.zza(str, this.buffer, this.position, zzag());
                 }
-                int i2 = i + zzt2;
-                this.position = i2;
-                int zza = zzff.zza(str, this.buffer, i2, zzag());
-                this.position = i;
-                zzo((zza - i) - zzt2);
                 this.position = zza;
             } catch (zzfi e) {
                 this.position = i;

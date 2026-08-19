@@ -73,8 +73,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
     VideoPlayerHolderBase videoPlayerBase;
     boolean visible;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$stopVideoPlayer$2() {
+    public static /* synthetic */ void $r8$lambda$oqqJ5kFEZuqEQjRzuFj19R2Iil8() {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -253,7 +252,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                         cellFlickerDrawable.progress = 3.5f;
                         cellFlickerDrawable.frameInside = true;
                         this.cellFlickerDrawable = cellFlickerDrawable.getDrawableInterface(this, this.svgIcon);
-                        combinedDrawable = new CombinedDrawable(this.roundedBitmapDrawable, this.cellFlickerDrawable) { // from class: org.telegram.ui.Components.Premium.VideoScreenPreview.2
+                        CombinedDrawable combinedDrawable2 = new CombinedDrawable(this.roundedBitmapDrawable, this.cellFlickerDrawable) { // from class: org.telegram.ui.Components.Premium.VideoScreenPreview.2
                             @Override // android.graphics.drawable.Drawable
                             public void setBounds(int i3, int i4, int i5, int i6) {
                                 VideoScreenPreview videoScreenPreview = VideoScreenPreview.this;
@@ -264,7 +263,8 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                                 }
                             }
                         };
-                        combinedDrawable.setFullsize(true);
+                        combinedDrawable2.setFullsize(true);
+                        combinedDrawable = combinedDrawable2;
                     }
                 }
                 this.attachFileName = FileLoader.getAttachFileName(document);
@@ -274,28 +274,26 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                 Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Premium.VideoScreenPreview$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VideoScreenPreview.this.lambda$setVideo$1(document);
+                        VideoScreenPreview.$r8$lambda$qoBGRdLZ21d1kUjhyHUJymySrX8(VideoScreenPreview.this, document);
                     }
                 });
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVideo$1(TLRPC.Document document) {
-        final File pathToAttach = FileLoader.getInstance(this.currentAccount).getPathToAttach(document);
+    public static /* synthetic */ void $r8$lambda$qoBGRdLZ21d1kUjhyHUJymySrX8(final VideoScreenPreview videoScreenPreview, TLRPC.Document document) {
+        final File pathToAttach = FileLoader.getInstance(videoScreenPreview.currentAccount).getPathToAttach(document);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.VideoScreenPreview$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                VideoScreenPreview.this.lambda$setVideo$0(pathToAttach);
+                VideoScreenPreview.$r8$lambda$uhPOCGoEW4sKRGT2owd-MDb-lTA(VideoScreenPreview.this, pathToAttach);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVideo$0(File file) {
-        this.file = file;
-        checkVideo();
+    public static /* synthetic */ void $r8$lambda$uhPOCGoEW4sKRGT2owd-MDb-lTA(VideoScreenPreview videoScreenPreview, File file) {
+        videoScreenPreview.file = file;
+        videoScreenPreview.checkVideo();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -662,7 +660,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             this.videoPlayerBase.release(new Runnable() { // from class: org.telegram.ui.Components.Premium.VideoScreenPreview$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoScreenPreview.lambda$stopVideoPlayer$2();
+                    VideoScreenPreview.$r8$lambda$oqqJ5kFEZuqEQjRzuFj19R2Iil8();
                 }
             });
             this.videoPlayerBase = null;

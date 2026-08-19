@@ -66,14 +66,14 @@ public class CarAppPermissionActivity extends ComponentActivity {
             registerForActivityResult(new ActivityResultContracts$RequestMultiplePermissions(), new ActivityResultCallback() { // from class: androidx.car.app.CarAppPermissionActivity$$ExternalSyntheticLambda0
                 @Override // androidx.activity.result.ActivityResultCallback
                 public final void onActivityResult(Object obj) {
-                    CarAppPermissionActivity.this.lambda$requestPermissions$0(asInterface, (Map) obj);
+                    CarAppPermissionActivity.$r8$lambda$k1ognOoCW2FmgYy8_myqLBJYZBA(CarAppPermissionActivity.this, asInterface, (Map) obj);
                 }
             }).launch(stringArray);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestPermissions$0(IOnRequestPermissionsListener iOnRequestPermissionsListener, Map map) {
+    public static /* synthetic */ void $r8$lambda$k1ognOoCW2FmgYy8_myqLBJYZBA(CarAppPermissionActivity carAppPermissionActivity, IOnRequestPermissionsListener iOnRequestPermissionsListener, Map map) {
+        carAppPermissionActivity.getClass();
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         for (Map.Entry entry : map.entrySet()) {
@@ -89,6 +89,6 @@ public class CarAppPermissionActivity extends ComponentActivity {
         } catch (RemoteException e) {
             Log.e("CarApp", "CarAppService dead when accepting/rejecting permissions", e);
         }
-        finish();
+        carAppPermissionActivity.finish();
     }
 }

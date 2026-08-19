@@ -194,12 +194,10 @@ public class SharedConfig {
     public @interface PerformanceClass {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$0() {
+    public static /* synthetic */ void $r8$lambda$AgzM-nIFjDK3Boj0GV34UBf8Qd8(AlertDialog alertDialog, int i) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$1(AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$c1nolnMM8hkF5gEowxjTAWjtK-M() {
     }
 
     public static boolean loopStickers() {
@@ -213,13 +211,12 @@ public class SharedConfig {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                SharedConfig.lambda$checkSdCard$2();
+                SharedConfig.$r8$lambda$5WZZbls8uHKhzrNqXgCrVdV5Lyk();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$2() {
+    public static /* synthetic */ void $r8$lambda$5WZZbls8uHKhzrNqXgCrVdV5Lyk() {
         BaseFragment lastFragment;
         if (readOnlyStorageDirAlertShowed || (lastFragment = LaunchActivity.getLastFragment()) == null || lastFragment.getParentActivity() == null) {
             return;
@@ -229,7 +226,7 @@ public class SharedConfig {
         ImageLoader.getInstance().checkMediaPaths(new Runnable() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                SharedConfig.lambda$checkSdCard$0();
+                SharedConfig.$r8$lambda$c1nolnMM8hkF5gEowxjTAWjtK-M();
             }
         });
         readOnlyStorageDirAlertShowed = true;
@@ -239,7 +236,7 @@ public class SharedConfig {
         builder.setPositiveButton(LocaleController.getString(R.string.DoNotUseSDCard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                SharedConfig.lambda$checkSdCard$1(alertDialog, i);
+                SharedConfig.$r8$lambda$AgzM-nIFjDK3Boj0GV34UBf8Qd8(alertDialog, i);
             }
         });
         AlertDialog create = builder.create();
@@ -517,13 +514,13 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x02b3 A[Catch: all -> 0x00f6, TryCatch #0 {all -> 0x00f6, Exception -> 0x0167, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ef, B:12:0x00f9, B:14:0x0101, B:16:0x0105, B:17:0x0112, B:19:0x0121, B:20:0x012c, B:22:0x0138, B:24:0x0140, B:26:0x0152, B:27:0x0169, B:57:0x016d, B:60:0x017f, B:62:0x018c, B:64:0x0192, B:65:0x0194, B:67:0x0198, B:69:0x019e, B:71:0x01a4, B:73:0x01a8, B:77:0x0186, B:29:0x01b6, B:31:0x021e, B:34:0x022a, B:36:0x024f, B:39:0x025a, B:41:0x02b3, B:42:0x02b5, B:45:0x0489, B:48:0x0497, B:49:0x0500, B:53:0x047e, B:82:0x01b3, B:83:0x0128, B:84:0x0502), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x047d  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0494  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0496  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x047e A[Catch: all -> 0x00f6, TryCatch #0 {all -> 0x00f6, Exception -> 0x0167, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ef, B:12:0x00f9, B:14:0x0101, B:16:0x0105, B:17:0x0112, B:19:0x0121, B:20:0x012c, B:22:0x0138, B:24:0x0140, B:26:0x0152, B:27:0x0169, B:57:0x016d, B:60:0x017f, B:62:0x018c, B:64:0x0192, B:65:0x0194, B:67:0x0198, B:69:0x019e, B:71:0x01a4, B:73:0x01a8, B:77:0x0186, B:29:0x01b6, B:31:0x021e, B:34:0x022a, B:36:0x024f, B:39:0x025a, B:41:0x02b3, B:42:0x02b5, B:45:0x0489, B:48:0x0497, B:49:0x0500, B:53:0x047e, B:82:0x01b3, B:83:0x0128, B:84:0x0502), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x018c A[Catch: all -> 0x00f6, Exception -> 0x0167, Merged into TryCatch #0 {all -> 0x00f6, Exception -> 0x0167, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ef, B:12:0x00f9, B:14:0x0101, B:16:0x0105, B:17:0x0112, B:19:0x0121, B:20:0x012c, B:22:0x0138, B:24:0x0140, B:26:0x0152, B:27:0x0169, B:57:0x016d, B:60:0x017f, B:62:0x018c, B:64:0x0192, B:65:0x0194, B:67:0x0198, B:69:0x019e, B:71:0x01a4, B:73:0x01a8, B:77:0x0186, B:29:0x01b6, B:31:0x021e, B:34:0x022a, B:36:0x024f, B:39:0x025a, B:41:0x02b3, B:42:0x02b5, B:45:0x0489, B:48:0x0497, B:49:0x0500, B:53:0x047e, B:82:0x01b3, B:83:0x0128, B:84:0x0502), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0192 A[Catch: all -> 0x00f6, Exception -> 0x0167, Merged into TryCatch #0 {all -> 0x00f6, Exception -> 0x0167, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ef, B:12:0x00f9, B:14:0x0101, B:16:0x0105, B:17:0x0112, B:19:0x0121, B:20:0x012c, B:22:0x0138, B:24:0x0140, B:26:0x0152, B:27:0x0169, B:57:0x016d, B:60:0x017f, B:62:0x018c, B:64:0x0192, B:65:0x0194, B:67:0x0198, B:69:0x019e, B:71:0x01a4, B:73:0x01a8, B:77:0x0186, B:29:0x01b6, B:31:0x021e, B:34:0x022a, B:36:0x024f, B:39:0x025a, B:41:0x02b3, B:42:0x02b5, B:45:0x0489, B:48:0x0497, B:49:0x0500, B:53:0x047e, B:82:0x01b3, B:83:0x0128, B:84:0x0502), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02a5 A[Catch: all -> 0x00ee, TryCatch #3 {all -> 0x00ee, Exception -> 0x015e, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e7, B:12:0x00f1, B:14:0x00f9, B:16:0x00fd, B:17:0x010a, B:19:0x0118, B:20:0x0123, B:22:0x012f, B:24:0x0137, B:26:0x0149, B:27:0x0160, B:57:0x0164, B:60:0x0176, B:62:0x0183, B:64:0x0189, B:65:0x018b, B:67:0x018f, B:69:0x0195, B:71:0x019b, B:73:0x019f, B:77:0x017d, B:29:0x01ad, B:31:0x0211, B:34:0x021c, B:36:0x0241, B:39:0x024c, B:41:0x02a5, B:42:0x02a7, B:45:0x0471, B:48:0x047f, B:49:0x04e3, B:53:0x0466, B:82:0x01aa, B:83:0x011f, B:84:0x04e5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0465  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x047c  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x047e  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0466 A[Catch: all -> 0x00ee, TryCatch #3 {all -> 0x00ee, Exception -> 0x015e, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e7, B:12:0x00f1, B:14:0x00f9, B:16:0x00fd, B:17:0x010a, B:19:0x0118, B:20:0x0123, B:22:0x012f, B:24:0x0137, B:26:0x0149, B:27:0x0160, B:57:0x0164, B:60:0x0176, B:62:0x0183, B:64:0x0189, B:65:0x018b, B:67:0x018f, B:69:0x0195, B:71:0x019b, B:73:0x019f, B:77:0x017d, B:29:0x01ad, B:31:0x0211, B:34:0x021c, B:36:0x0241, B:39:0x024c, B:41:0x02a5, B:42:0x02a7, B:45:0x0471, B:48:0x047f, B:49:0x04e3, B:53:0x0466, B:82:0x01aa, B:83:0x011f, B:84:0x04e5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0183 A[Catch: all -> 0x00ee, Exception -> 0x015e, Merged into TryCatch #3 {all -> 0x00ee, Exception -> 0x015e, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e7, B:12:0x00f1, B:14:0x00f9, B:16:0x00fd, B:17:0x010a, B:19:0x0118, B:20:0x0123, B:22:0x012f, B:24:0x0137, B:26:0x0149, B:27:0x0160, B:57:0x0164, B:60:0x0176, B:62:0x0183, B:64:0x0189, B:65:0x018b, B:67:0x018f, B:69:0x0195, B:71:0x019b, B:73:0x019f, B:77:0x017d, B:29:0x01ad, B:31:0x0211, B:34:0x021c, B:36:0x0241, B:39:0x024c, B:41:0x02a5, B:42:0x02a7, B:45:0x0471, B:48:0x047f, B:49:0x04e3, B:53:0x0466, B:82:0x01aa, B:83:0x011f, B:84:0x04e5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0189 A[Catch: all -> 0x00ee, Exception -> 0x015e, Merged into TryCatch #3 {all -> 0x00ee, Exception -> 0x015e, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e7, B:12:0x00f1, B:14:0x00f9, B:16:0x00fd, B:17:0x010a, B:19:0x0118, B:20:0x0123, B:22:0x012f, B:24:0x0137, B:26:0x0149, B:27:0x0160, B:57:0x0164, B:60:0x0176, B:62:0x0183, B:64:0x0189, B:65:0x018b, B:67:0x018f, B:69:0x0195, B:71:0x019b, B:73:0x019f, B:77:0x017d, B:29:0x01ad, B:31:0x0211, B:34:0x021c, B:36:0x0241, B:39:0x024c, B:41:0x02a5, B:42:0x02a7, B:45:0x0471, B:48:0x047f, B:49:0x04e3, B:53:0x0466, B:82:0x01aa, B:83:0x011f, B:84:0x04e5), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1002,6 +999,7 @@ public class SharedConfig {
                     System.arraycopy(passcodeSalt, 0, bArr, bytes.length + 16, 16);
                     passcodeHash = Utilities.bytesToHex(Utilities.computeSHA256(bArr, 0, length));
                     saveConfig();
+                    return equals;
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -1201,14 +1199,13 @@ public class SharedConfig {
             Utilities.cacheClearQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SharedConfig.lambda$checkLogsToDelete$3(currentTimeMillis);
+                    SharedConfig.$r8$lambda$6gZCUSeINXv3Os6LV1HVwzdvmRA(currentTimeMillis);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkLogsToDelete$3(int i) {
+    public static /* synthetic */ void $r8$lambda$6gZCUSeINXv3Os6LV1HVwzdvmRA(int i) {
         File logsDir;
         long j = i - 864000;
         try {
@@ -1347,7 +1344,7 @@ public class SharedConfig {
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("useThreeLinesLayout", useThreeLinesLayout);
         edit.apply();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, Boolean.TRUE);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.dialogsNeedReload, Boolean.TRUE);
     }
 
     public static void toggleArchiveHidden() {
@@ -1411,7 +1408,10 @@ public class SharedConfig {
     }
 
     public static boolean enabledRaiseTo(boolean z) {
-        return raiseToListen && (!z || raiseToSpeak);
+        if (raiseToListen) {
+            return !z || raiseToSpeak;
+        }
+        return false;
     }
 
     public static void toggleBrowserAdaptableColors() {
@@ -1590,9 +1590,7 @@ public class SharedConfig {
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda3
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$saveProxyList$4;
-                lambda$saveProxyList$4 = SharedConfig.lambda$saveProxyList$4((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
-                return lambda$saveProxyList$4;
+                return SharedConfig.$r8$lambda$3gtbUfC6wnjRm8-ZleoIGK_ytoQ((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
             }
         });
         SerializedData serializedData = new SerializedData();
@@ -1631,8 +1629,7 @@ public class SharedConfig {
         serializedData.cleanup();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$saveProxyList$4(ProxyInfo proxyInfo, ProxyInfo proxyInfo2) {
+    public static /* synthetic */ int $r8$lambda$3gtbUfC6wnjRm8-ZleoIGK_ytoQ(ProxyInfo proxyInfo, ProxyInfo proxyInfo2) {
         ProxyInfo proxyInfo3 = currentProxy;
         long j = proxyInfo3 == proxyInfo ? -200000L : 0L;
         if (!proxyInfo.available) {
@@ -1689,13 +1686,12 @@ public class SharedConfig {
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                SharedConfig.lambda$checkSaveToGalleryFiles$5();
+                SharedConfig.$r8$lambda$2cAEOLzBgITOqEbt49ggm07xe_c();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSaveToGalleryFiles$5() {
+    public static /* synthetic */ void $r8$lambda$2cAEOLzBgITOqEbt49ggm07xe_c() {
         try {
             File file = new File(Environment.getExternalStorageDirectory(), "Telegram");
             File file2 = new File(file, "Telegram Images");

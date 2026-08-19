@@ -577,15 +577,17 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
     private boolean hasVoiceSearch() {
         Intent intent;
         SearchableInfo searchableInfo = this.mSearchable;
-        if (searchableInfo == null || !searchableInfo.getVoiceSearchEnabled()) {
-            return false;
+        if (searchableInfo != null && searchableInfo.getVoiceSearchEnabled()) {
+            if (this.mSearchable.getVoiceSearchLaunchWebSearch()) {
+                intent = this.mVoiceWebSearchIntent;
+            } else {
+                intent = this.mSearchable.getVoiceSearchLaunchRecognizer() ? this.mVoiceAppSearchIntent : null;
+            }
+            if (intent != null && getContext().getPackageManager().resolveActivity(intent, 65536) != null) {
+                return true;
+            }
         }
-        if (this.mSearchable.getVoiceSearchLaunchWebSearch()) {
-            intent = this.mVoiceWebSearchIntent;
-        } else {
-            intent = this.mSearchable.getVoiceSearchLaunchRecognizer() ? this.mVoiceAppSearchIntent : null;
-        }
-        return (intent == null || getContext().getPackageManager().resolveActivity(intent, 65536) == null) ? false : true;
+        return false;
     }
 
     private boolean isSubmitAreaEnabled() {

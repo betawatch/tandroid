@@ -15,12 +15,12 @@ final class zzf implements DynamiteModule.VersionPolicy {
         selectionResult.remoteVersion = zzb;
         if (zzb != 0) {
             selectionResult.selection = 1;
-        } else {
-            int zza = iVersions.zza(context, str);
-            selectionResult.localVersion = zza;
-            if (zza != 0) {
-                selectionResult.selection = -1;
-            }
+            return selectionResult;
+        }
+        int zza = iVersions.zza(context, str);
+        selectionResult.localVersion = zza;
+        if (zza != 0) {
+            selectionResult.selection = -1;
         }
         return selectionResult;
     }

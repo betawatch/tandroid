@@ -254,34 +254,47 @@ public class CodeHighlighting {
             Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CodeHighlighting.lambda$highlightEditable$1(spannableString2, str, spannableString, callback);
+                    CodeHighlighting.$r8$lambda$GnQc0UFV-OreAy2pkYwEC22lbb4(spannableString2, str, spannableString, callback);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlightEditable$1(String str, String str2, final SpannableString spannableString, final Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$GnQc0UFV-OreAy2pkYwEC22lbb4(String str, String str2, SpannableString spannableString, final Utilities.Callback callback) {
+        final SpannableString spannableString2;
+        HashMap<String, TokenPattern[]> hashMap;
         if (compiledPatterns == null) {
             parse();
         }
         final ArrayList arrayList = new ArrayList();
         try {
-            HashMap<String, TokenPattern[]> hashMap = compiledPatterns;
-            colorize(spannableString, 0, spannableString.length(), tokenize(str, hashMap == null ? null : hashMap.get(str2), 0).toArray(), -1, arrayList);
+            hashMap = compiledPatterns;
+            spannableString2 = spannableString;
         } catch (Exception e) {
+            e = e;
+            spannableString2 = spannableString;
+        }
+        try {
+            colorize(spannableString2, 0, spannableString.length(), tokenize(str, hashMap == null ? null : hashMap.get(str2), 0).toArray(), -1, arrayList);
+        } catch (Exception e2) {
+            e = e2;
             FileLog.e(e);
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    CodeHighlighting.$r8$lambda$uJk7sehDZe0ZSZDsLPpJs_l6bMw(arrayList, spannableString2, callback);
+                }
+            });
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CodeHighlighting.lambda$highlightEditable$0(arrayList, spannableString, callback);
+                CodeHighlighting.$r8$lambda$uJk7sehDZe0ZSZDsLPpJs_l6bMw(arrayList, spannableString2, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlightEditable$0(ArrayList arrayList, SpannableString spannableString, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$uJk7sehDZe0ZSZDsLPpJs_l6bMw(ArrayList arrayList, SpannableString spannableString, Utilities.Callback callback) {
         for (int i = 0; i < arrayList.size(); i++) {
             CachedToSpan cachedToSpan = (CachedToSpan) arrayList.get(i);
             spannableString.setSpan(new ColorSpan(cachedToSpan.group), cachedToSpan.start, cachedToSpan.end, 33);
@@ -296,13 +309,12 @@ public class CodeHighlighting {
         Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                CodeHighlighting.lambda$prepare$2();
+                CodeHighlighting.$r8$lambda$yc7DAs30Il1LjoB2owuVZpqSbS0();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepare$2() {
+    public static /* synthetic */ void $r8$lambda$yc7DAs30Il1LjoB2owuVZpqSbS0() {
         if (compiledPatterns == null) {
             parse();
         }
@@ -323,13 +335,12 @@ public class CodeHighlighting {
         Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                CodeHighlighting.lambda$highlight$5(spannable, i, i2, str);
+                CodeHighlighting.$r8$lambda$jQO9jOIHZCkw36qQVzRg3-QK6o8(spannable, i, i2, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlight$5(final Spannable spannable, int i, int i2, String str) {
+    public static /* synthetic */ void $r8$lambda$jQO9jOIHZCkw36qQVzRg3-QK6o8(final Spannable spannable, int i, int i2, String str) {
         if (compiledPatterns == null) {
             parse();
         }
@@ -360,7 +371,7 @@ public class CodeHighlighting {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CodeHighlighting.lambda$highlight$3(spannable);
+                    CodeHighlighting.$r8$lambda$FUf8UFflQpy8dsJzr9b6qK27Hmk(spannable);
                 }
             });
             return;
@@ -368,57 +379,73 @@ public class CodeHighlighting {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                CodeHighlighting.lambda$highlight$4(arrayList, spannable);
+                CodeHighlighting.$r8$lambda$plxG-IoXIX1WFe9rdhmpCX8CFw4(arrayList, spannable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlight$3(Spannable spannable) {
+    public static /* synthetic */ void $r8$lambda$FUf8UFflQpy8dsJzr9b6qK27Hmk(Spannable spannable) {
         ((LockedSpannableString) spannable).unlock();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.emojiLoaded, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.emojiLoaded, new Object[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlight$4(ArrayList arrayList, Spannable spannable) {
+    public static /* synthetic */ void $r8$lambda$plxG-IoXIX1WFe9rdhmpCX8CFw4(ArrayList arrayList, Spannable spannable) {
         long currentTimeMillis = System.currentTimeMillis();
         for (int i = 0; i < arrayList.size(); i++) {
             CachedToSpan cachedToSpan = (CachedToSpan) arrayList.get(i);
             spannable.setSpan(new ColorSpan(cachedToSpan.group), cachedToSpan.start, cachedToSpan.end, 33);
         }
         FileLog.d("[CodeHighlighter] applying " + arrayList.size() + " colorize spans took " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.emojiLoaded, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.emojiLoaded, new Object[0]);
     }
 
     private static void colorize(Spannable spannable, int i, int i2, StringToken[] stringTokenArr, int i3, ArrayList<CachedToSpan> arrayList) {
-        int length;
+        Spannable spannable2;
+        ArrayList<CachedToSpan> arrayList2;
         if (stringTokenArr == null) {
             return;
         }
-        for (int i4 = 0; i4 < stringTokenArr.length && i < i2; i4++) {
+        int i4 = 0;
+        int i5 = i;
+        while (i4 < stringTokenArr.length && i5 < i2) {
             StringToken stringToken = stringTokenArr[i4];
             if (stringToken != null) {
                 if (stringToken.string != null) {
-                    int i5 = stringToken.group;
+                    int i6 = stringToken.group;
                     if (i3 != -1) {
-                        i5 = i3;
+                        i6 = i3;
                     }
-                    if (i5 == -1) {
-                        length = stringToken.length();
-                        i += length;
+                    if (i6 == -1) {
+                        i5 += stringToken.length();
                     } else {
-                        arrayList.add(new CachedToSpan(i5, i, stringToken.length() + i));
+                        arrayList.add(new CachedToSpan(i6, i5, stringToken.length() + i5));
                     }
                 } else if (stringToken.inside != null) {
-                    colorize(spannable, i, i + stringToken.length(), stringToken.inside.toArray(), stringToken.group, arrayList);
+                    spannable2 = spannable;
+                    arrayList2 = arrayList;
+                    colorize(spannable2, i5, i5 + stringToken.length(), stringToken.inside.toArray(), stringToken.group, arrayList2);
+                    i5 += stringToken.length();
+                    i4++;
+                    spannable = spannable2;
+                    arrayList = arrayList2;
                 }
-                length = stringToken.length();
-                i += length;
+                spannable2 = spannable;
+                arrayList2 = arrayList;
+                i5 += stringToken.length();
+                i4++;
+                spannable = spannable2;
+                arrayList = arrayList2;
             }
+            spannable2 = spannable;
+            arrayList2 = arrayList;
+            i4++;
+            spannable = spannable2;
+            arrayList = arrayList2;
         }
     }
 
-    private static class CachedToSpan {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class CachedToSpan {
         public int end;
         public int group;
         public int start;
@@ -464,154 +491,166 @@ public class CodeHighlighting {
         return arrayList != null ? (TokenPattern[]) arrayList.toArray(new TokenPattern[0]) : tokenPatternArr;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x010e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private static void matchGrammar(String str, LinkedList linkedList, TokenPattern[] tokenPatternArr, Node node, int i, RematchOptions rematchOptions, TokenPattern tokenPattern, int i2) {
-        TokenPattern tokenPattern2;
         int i3;
-        int i4;
         Match matchPattern;
+        int i4;
+        String substring;
+        String substring2;
+        int length;
+        TokenPattern[] tokenPatternArr2;
         int i5;
         StringToken stringToken;
         int i6;
         String str2 = str;
-        TokenPattern[] tokenPatternArr2 = tokenPatternArr;
-        if (tokenPatternArr2 == null || i2 > 20) {
+        LinkedList linkedList2 = linkedList;
+        TokenPattern[] tokenPatternArr3 = tokenPatternArr;
+        if (tokenPatternArr3 == null || i2 > 20) {
             return;
         }
-        int length = tokenPatternArr2.length;
+        int length2 = tokenPatternArr3.length;
         int i7 = 0;
-        while (i7 < length) {
-            TokenPattern tokenPattern3 = tokenPatternArr2[i7];
-            if (tokenPattern3 == tokenPattern) {
+        while (i7 < length2) {
+            TokenPattern tokenPattern2 = tokenPatternArr3[i7];
+            if (tokenPattern2 == tokenPattern) {
                 return;
             }
-            if (rematchOptions != null && rematchOptions.cause == tokenPattern3) {
+            if (rematchOptions != null && rematchOptions.cause == tokenPattern2) {
                 return;
             }
             Node node2 = node.next;
             int i8 = i;
-            while (node2 != linkedList.tail) {
+            while (node2 != linkedList2.tail) {
                 if (rematchOptions != null && i8 >= rematchOptions.reach) {
                     return;
                 }
-                if (linkedList.length > str.length()) {
+                if (linkedList2.length > str2.length()) {
                     FileLog.e("[CodeHighlighter] Something went terribly wrong, ABORT, ABORT!");
                     return;
                 }
                 StringToken stringToken2 = node2.value;
                 String str3 = stringToken2.string;
                 if (str3 != null && !stringToken2.token) {
-                    if (tokenPattern3.greedy) {
-                        matchPattern = matchPattern(tokenPattern3, i8, str2);
-                        if (matchPattern == null || matchPattern.index >= str.length()) {
-                            break;
-                        }
-                        int i9 = matchPattern.index;
-                        int i10 = matchPattern.length + i9;
-                        int length2 = node2.value.length();
-                        while (true) {
-                            i8 += length2;
-                            if (i9 < i8) {
-                                break;
+                    if (tokenPattern2.greedy) {
+                        matchPattern = matchPattern(tokenPattern2, i8, str2);
+                        if (matchPattern != null && matchPattern.index < str2.length()) {
+                            int i9 = matchPattern.index;
+                            int i10 = matchPattern.length + i9;
+                            int length3 = node2.value.length();
+                            while (true) {
+                                i8 += length3;
+                                if (i9 < i8) {
+                                    break;
+                                }
+                                node2 = node2.next;
+                                length3 = node2.value.length();
                             }
-                            node2 = node2.next;
-                            length2 = node2.value.length();
-                        }
-                        i8 -= node2.value.length();
-                        StringToken stringToken3 = node2.value;
-                        if (stringToken3.string == null || stringToken3.token) {
-                            tokenPattern2 = tokenPattern3;
-                            i3 = length;
-                            node2 = node2;
-                            i8 += node2.value.length();
-                            node2 = node2.next;
-                            str2 = str;
-                            tokenPattern3 = tokenPattern2;
-                            length = i3;
-                        } else {
-                            Node node3 = node2;
-                            int i11 = i8;
-                            int i12 = 1;
-                            while (node3 != linkedList.tail && (i11 < i10 || !node3.value.token)) {
-                                i12++;
-                                i11 += node3.value.length();
-                                node3 = node3.next;
+                            i8 -= node2.value.length();
+                            StringToken stringToken3 = node2.value;
+                            if (stringToken3.string != null && !stringToken3.token) {
+                                int i11 = i8;
+                                int i12 = 1;
+                                for (Node node3 = node2; node3 != linkedList2.tail && (i11 < i10 || !node3.value.token); node3 = node3.next) {
+                                    i12++;
+                                    i11 += node3.value.length();
+                                }
+                                str3 = str2.substring(i8, i11);
+                                matchPattern.index -= i8;
+                                i4 = i12 - 1;
+                                i3 = 0;
+                                int i13 = matchPattern.index;
+                                substring = str3.substring(i3, i13);
+                                substring2 = str3.substring(i13 + matchPattern.length);
+                                length = str3.length() + i8;
+                                if (rematchOptions != null && length > rematchOptions.reach) {
+                                    rematchOptions.reach = length;
+                                }
+                                Node node4 = node2.prev;
+                                if (substring.length() > 0) {
+                                    node4 = linkedList2.addAfter(node4, new StringToken(substring));
+                                    i8 += substring.length();
+                                }
+                                linkedList2.removeRange(node4, i4);
+                                tokenPatternArr2 = tokenPattern2.insideTokenPatterns;
+                                if (tokenPatternArr2 == null) {
+                                    i5 = i8;
+                                    stringToken = new StringToken(tokenPattern2.group, tokenize(matchPattern.string, tokenPatternArr2, tokenPattern2, i2 + 1), matchPattern.length);
+                                } else {
+                                    i5 = i8;
+                                    String str4 = tokenPattern2.insideLanguage;
+                                    if (str4 != null) {
+                                        stringToken = new StringToken(tokenPattern2.group, tokenize(matchPattern.string, compiledPatterns.get(str4), tokenPattern2, i2 + 1), matchPattern.length);
+                                    } else {
+                                        stringToken = new StringToken(tokenPattern2.group, matchPattern.string);
+                                    }
+                                }
+                                Node addAfter = linkedList2.addAfter(node4, stringToken);
+                                if (substring2.length() > 0) {
+                                    linkedList2.addAfter(addAfter, new StringToken(substring2));
+                                }
+                                if (i4 > 1) {
+                                    RematchOptions rematchOptions2 = new RematchOptions();
+                                    rematchOptions2.cause = tokenPattern2;
+                                    rematchOptions2.reach = length;
+                                    matchGrammar(str, linkedList2, tokenPatternArr, addAfter.prev, i5, rematchOptions2, tokenPattern, i2 + 1);
+                                    if (rematchOptions != null && (i6 = rematchOptions2.reach) > rematchOptions.reach) {
+                                        rematchOptions.reach = i6;
+                                    }
+                                }
+                                node2 = addAfter;
+                                i8 = i5;
                             }
-                            str3 = str2.substring(i8, i11);
-                            matchPattern.index -= i8;
-                            i5 = i12 - 1;
-                            node2 = node3;
-                            i4 = 0;
                         }
+                        i7++;
+                        str2 = str;
+                        linkedList2 = linkedList;
+                        tokenPatternArr3 = tokenPatternArr;
                     } else {
-                        i4 = 0;
-                        matchPattern = matchPattern(tokenPattern3, 0, str3);
+                        i3 = 0;
+                        matchPattern = matchPattern(tokenPattern2, 0, str3);
                         if (matchPattern != null) {
-                            i5 = 1;
+                            i4 = 1;
+                            int i132 = matchPattern.index;
+                            substring = str3.substring(i3, i132);
+                            substring2 = str3.substring(i132 + matchPattern.length);
+                            length = str3.length() + i8;
+                            if (rematchOptions != null) {
+                                rematchOptions.reach = length;
+                            }
+                            Node node42 = node2.prev;
+                            if (substring.length() > 0) {
+                            }
+                            linkedList2.removeRange(node42, i4);
+                            tokenPatternArr2 = tokenPattern2.insideTokenPatterns;
+                            if (tokenPatternArr2 == null) {
+                            }
+                            Node addAfter2 = linkedList2.addAfter(node42, stringToken);
+                            if (substring2.length() > 0) {
+                            }
+                            if (i4 > 1) {
+                            }
+                            node2 = addAfter2;
+                            i8 = i5;
                         }
                     }
-                    int i13 = matchPattern.index;
-                    String substring = str3.substring(i4, i13);
-                    String substring2 = str3.substring(i13 + matchPattern.length);
-                    int length3 = str3.length() + i8;
-                    if (rematchOptions != null && length3 > rematchOptions.reach) {
-                        rematchOptions.reach = length3;
-                    }
-                    Node node4 = node2.prev;
-                    if (substring.length() > 0) {
-                        node4 = linkedList.addAfter(node4, new StringToken(substring));
-                        i8 += substring.length();
-                    }
-                    int i14 = i8;
-                    linkedList.removeRange(node4, i5);
-                    TokenPattern[] tokenPatternArr3 = tokenPattern3.insideTokenPatterns;
-                    if (tokenPatternArr3 != null) {
-                        i3 = length;
-                        stringToken = new StringToken(tokenPattern3.group, tokenize(matchPattern.string, tokenPatternArr3, tokenPattern3, i2 + 1), matchPattern.length);
-                    } else {
-                        i3 = length;
-                        String str4 = tokenPattern3.insideLanguage;
-                        if (str4 != null) {
-                            stringToken = new StringToken(tokenPattern3.group, tokenize(matchPattern.string, compiledPatterns.get(str4), tokenPattern3, i2 + 1), matchPattern.length);
-                        } else {
-                            stringToken = new StringToken(tokenPattern3.group, matchPattern.string);
-                        }
-                    }
-                    Node addAfter = linkedList.addAfter(node4, stringToken);
-                    if (substring2.length() > 0) {
-                        linkedList.addAfter(addAfter, new StringToken(substring2));
-                    }
-                    if (i5 > 1) {
-                        RematchOptions rematchOptions2 = new RematchOptions();
-                        rematchOptions2.cause = tokenPattern3;
-                        rematchOptions2.reach = length3;
-                        tokenPattern2 = tokenPattern3;
-                        matchGrammar(str, linkedList, tokenPatternArr, addAfter.prev, i14, rematchOptions2, tokenPattern, i2 + 1);
-                        if (rematchOptions != null && (i6 = rematchOptions2.reach) > rematchOptions.reach) {
-                            rematchOptions.reach = i6;
-                        }
-                    } else {
-                        tokenPattern2 = tokenPattern3;
-                    }
-                    node2 = addAfter;
-                    i8 = i14;
-                    i8 += node2.value.length();
-                    node2 = node2.next;
-                    str2 = str;
-                    tokenPattern3 = tokenPattern2;
-                    length = i3;
                 }
-                tokenPattern2 = tokenPattern3;
-                i3 = length;
                 i8 += node2.value.length();
                 node2 = node2.next;
                 str2 = str;
-                tokenPattern3 = tokenPattern2;
-                length = i3;
+                linkedList2 = linkedList;
             }
             i7++;
             str2 = str;
-            tokenPatternArr2 = tokenPatternArr;
-            length = length;
+            linkedList2 = linkedList;
+            tokenPatternArr3 = tokenPatternArr;
         }
     }
 
@@ -656,7 +695,8 @@ public class CodeHighlighting {
         }
     }
 
-    private static class LinkedList {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class LinkedList {
         public Node head;
         public int length = 0;
         public Node tail;
@@ -714,7 +754,8 @@ public class CodeHighlighting {
         }
     }
 
-    private static class StringToken {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class StringToken {
         final int group;
         final LinkedList inside;
         final int insideLength;
@@ -755,10 +796,10 @@ public class CodeHighlighting {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x016d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0175 A[Catch: Exception -> 0x0171, TryCatch #10 {Exception -> 0x0171, blocks: (B:101:0x016d, B:90:0x0175, B:92:0x017a), top: B:100:0x016d }] */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x017a A[Catch: Exception -> 0x0171, TRY_LEAVE, TryCatch #10 {Exception -> 0x0171, blocks: (B:101:0x016d, B:90:0x0175, B:92:0x017a), top: B:100:0x016d }] */
-    /* JADX WARN: Removed duplicated region for block: B:99:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0172 A[Catch: Exception -> 0x016e, TryCatch #1 {Exception -> 0x016e, blocks: (B:99:0x016a, B:88:0x0172, B:90:0x0177), top: B:98:0x016a }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0177 A[Catch: Exception -> 0x016e, TRY_LEAVE, TryCatch #1 {Exception -> 0x016e, blocks: (B:99:0x016a, B:88:0x0172, B:90:0x0177), top: B:98:0x016a }] */
+    /* JADX WARN: Removed duplicated region for block: B:97:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x016a A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -768,161 +809,158 @@ public class CodeHighlighting {
         BufferedInputStream bufferedInputStream;
         BufferedInputStream bufferedInputStream2;
         GZIPInputStream gZIPInputStream2;
-        long currentTimeMillis;
         BufferedInputStream bufferedInputStream3;
-        BufferedInputStream bufferedInputStream4;
         1 r1 = null;
         r1 = null;
         r1 = null;
         GZIPInputStream gZIPInputStream3 = null;
         try {
             try {
-                currentTimeMillis = System.currentTimeMillis();
+                long currentTimeMillis = System.currentTimeMillis();
                 inputStream = ApplicationLoader.applicationContext.getAssets().open("codelng.gzip");
-            } catch (Exception e) {
-                FileLog.e(e);
-                return;
-            }
-        } catch (Exception e2) {
-            e = e2;
-            inputStream = null;
-            bufferedInputStream = null;
-        } catch (Throwable th) {
-            th = th;
-            gZIPInputStream = null;
-            inputStream = null;
-        }
-        try {
-            gZIPInputStream2 = new GZIPInputStream(inputStream, 65536);
-            try {
-                bufferedInputStream4 = new BufferedInputStream(gZIPInputStream2, 65536);
-            } catch (Exception e3) {
-                e = e3;
-                bufferedInputStream3 = null;
-            } catch (Throwable th2) {
-                th = th2;
-                bufferedInputStream2 = null;
-            }
-            try {
-                StreamReader streamReader = new StreamReader(bufferedInputStream4);
-                HashMap hashMap = new HashMap();
-                int readUint8 = streamReader.readUint8();
-                for (int i = 0; i < readUint8; i++) {
-                    int readUint82 = streamReader.readUint8();
-                    int readUint83 = streamReader.readUint8();
-                    String[] strArr = new String[readUint83];
-                    for (int i2 = 0; i2 < readUint83; i2++) {
-                        strArr[i2] = streamReader.readString();
-                    }
-                    hashMap.put(Integer.valueOf(readUint82), strArr);
-                }
-                int readUint16 = streamReader.readUint16();
-                ParsedPattern[] parsedPatternArr = new ParsedPattern[readUint16];
-                for (int i3 = 0; i3 < readUint16; i3++) {
-                    parsedPatternArr[i3] = new ParsedPattern();
-                    int readUint84 = streamReader.readUint8();
-                    ParsedPattern parsedPattern = parsedPatternArr[i3];
-                    parsedPattern.multiline = (readUint84 & 1) != 0;
-                    parsedPattern.caseInsensitive = (readUint84 & 2) != 0;
-                    parsedPattern.pattern = streamReader.readString();
-                }
-                if (compiledPatterns == null) {
-                    compiledPatterns = new HashMap<>();
-                }
-                if (languages == null) {
-                    languages = new HashSet<>();
-                }
-                int i4 = 0;
-                while (i4 < readUint8) {
-                    int readUint85 = streamReader.readUint8();
-                    TokenPattern[] readTokens = readTokens(streamReader, parsedPatternArr, hashMap);
-                    String[] strArr2 = (String[]) hashMap.get(Integer.valueOf(readUint85));
-                    int length = strArr2.length;
-                    int i5 = 0;
-                    while (i5 < length) {
-                        compiledPatterns.put(strArr2[i5], readTokens);
-                        i5++;
-                        streamReader = streamReader;
-                    }
-                    StreamReader streamReader2 = streamReader;
-                    if (strArr2.length > 0 && !"plain".equals(strArr2[0]) && !strArr2[0].endsWith("like") && !strArr2[0].startsWith("markup")) {
-                        languages.add(strArr2[0]);
-                    }
-                    i4++;
-                    streamReader = streamReader2;
-                }
-                FileLog.d("[CodeHighlighter] Successfully read " + readUint8 + " languages, " + readUint16 + " patterns in " + (System.currentTimeMillis() - currentTimeMillis) + "ms from codelng.gzip");
-                gZIPInputStream2.close();
-                bufferedInputStream4.close();
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-            } catch (Exception e4) {
-                e = e4;
-                bufferedInputStream3 = bufferedInputStream4;
-                gZIPInputStream3 = gZIPInputStream2;
-                bufferedInputStream = bufferedInputStream3;
                 try {
-                    FileLog.e(e);
-                    if (gZIPInputStream3 != null) {
-                        gZIPInputStream3.close();
+                    gZIPInputStream2 = new GZIPInputStream(inputStream, 65536);
+                    try {
+                        BufferedInputStream bufferedInputStream4 = new BufferedInputStream(gZIPInputStream2, 65536);
+                        try {
+                            StreamReader streamReader = new StreamReader(bufferedInputStream4);
+                            HashMap hashMap = new HashMap();
+                            int readUint8 = streamReader.readUint8();
+                            for (int i = 0; i < readUint8; i++) {
+                                int readUint82 = streamReader.readUint8();
+                                int readUint83 = streamReader.readUint8();
+                                String[] strArr = new String[readUint83];
+                                for (int i2 = 0; i2 < readUint83; i2++) {
+                                    strArr[i2] = streamReader.readString();
+                                }
+                                hashMap.put(Integer.valueOf(readUint82), strArr);
+                            }
+                            int readUint16 = streamReader.readUint16();
+                            ParsedPattern[] parsedPatternArr = new ParsedPattern[readUint16];
+                            for (int i3 = 0; i3 < readUint16; i3++) {
+                                parsedPatternArr[i3] = new ParsedPattern();
+                                int readUint84 = streamReader.readUint8();
+                                ParsedPattern parsedPattern = parsedPatternArr[i3];
+                                parsedPattern.multiline = (readUint84 & 1) != 0;
+                                parsedPattern.caseInsensitive = (readUint84 & 2) != 0;
+                                parsedPattern.pattern = streamReader.readString();
+                            }
+                            if (compiledPatterns == null) {
+                                compiledPatterns = new HashMap<>();
+                            }
+                            if (languages == null) {
+                                languages = new HashSet<>();
+                            }
+                            int i4 = 0;
+                            while (i4 < readUint8) {
+                                int readUint85 = streamReader.readUint8();
+                                TokenPattern[] readTokens = readTokens(streamReader, parsedPatternArr, hashMap);
+                                String[] strArr2 = (String[]) hashMap.get(Integer.valueOf(readUint85));
+                                int length = strArr2.length;
+                                int i5 = 0;
+                                while (i5 < length) {
+                                    compiledPatterns.put(strArr2[i5], readTokens);
+                                    i5++;
+                                    streamReader = streamReader;
+                                }
+                                StreamReader streamReader2 = streamReader;
+                                if (strArr2.length > 0 && !"plain".equals(strArr2[0]) && !strArr2[0].endsWith("like") && !strArr2[0].startsWith("markup")) {
+                                    languages.add(strArr2[0]);
+                                }
+                                i4++;
+                                streamReader = streamReader2;
+                            }
+                            FileLog.d("[CodeHighlighter] Successfully read " + readUint8 + " languages, " + readUint16 + " patterns in " + (System.currentTimeMillis() - currentTimeMillis) + "ms from codelng.gzip");
+                            gZIPInputStream2.close();
+                            bufferedInputStream4.close();
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                        } catch (Exception e) {
+                            e = e;
+                            bufferedInputStream3 = bufferedInputStream4;
+                            gZIPInputStream3 = gZIPInputStream2;
+                            bufferedInputStream = bufferedInputStream3;
+                            try {
+                                FileLog.e(e);
+                                if (gZIPInputStream3 != null) {
+                                    gZIPInputStream3.close();
+                                }
+                                if (bufferedInputStream != null) {
+                                    bufferedInputStream.close();
+                                }
+                                if (inputStream != null) {
+                                    inputStream.close();
+                                }
+                            } catch (Throwable th) {
+                                th = th;
+                                gZIPInputStream = gZIPInputStream3;
+                                r1 = bufferedInputStream;
+                                bufferedInputStream2 = r1;
+                                gZIPInputStream2 = gZIPInputStream;
+                                Throwable th2 = th;
+                                if (gZIPInputStream2 != null) {
+                                    try {
+                                        gZIPInputStream2.close();
+                                    } catch (Exception e2) {
+                                        FileLog.e(e2);
+                                        throw th2;
+                                    }
+                                }
+                                if (bufferedInputStream2 != null) {
+                                    bufferedInputStream2.close();
+                                }
+                                if (inputStream != null) {
+                                    inputStream.close();
+                                    throw th2;
+                                }
+                                throw th2;
+                            }
+                        } catch (Throwable th3) {
+                            th = th3;
+                            bufferedInputStream2 = bufferedInputStream4;
+                            Throwable th22 = th;
+                            if (gZIPInputStream2 != null) {
+                            }
+                            if (bufferedInputStream2 != null) {
+                            }
+                            if (inputStream != null) {
+                            }
+                        }
+                    } catch (Exception e3) {
+                        e = e3;
+                        bufferedInputStream3 = null;
+                    } catch (Throwable th4) {
+                        th = th4;
+                        bufferedInputStream2 = null;
                     }
-                    if (bufferedInputStream != null) {
-                        bufferedInputStream.close();
-                    }
-                    if (inputStream != null) {
-                        inputStream.close();
-                    }
-                } catch (Throwable th3) {
-                    th = th3;
-                    gZIPInputStream = gZIPInputStream3;
-                    r1 = bufferedInputStream;
+                } catch (Exception e4) {
+                    e = e4;
+                    bufferedInputStream = null;
+                } catch (Throwable th5) {
+                    th = th5;
+                    gZIPInputStream = null;
                     bufferedInputStream2 = r1;
                     gZIPInputStream2 = gZIPInputStream;
-                    Throwable th4 = th;
+                    Throwable th222 = th;
                     if (gZIPInputStream2 != null) {
-                        try {
-                            gZIPInputStream2.close();
-                        } catch (Exception e5) {
-                            FileLog.e(e5);
-                            throw th4;
-                        }
                     }
                     if (bufferedInputStream2 != null) {
-                        bufferedInputStream2.close();
                     }
                     if (inputStream != null) {
-                        inputStream.close();
-                        throw th4;
                     }
-                    throw th4;
                 }
-            } catch (Throwable th5) {
-                th = th5;
-                bufferedInputStream2 = bufferedInputStream4;
-                Throwable th42 = th;
-                if (gZIPInputStream2 != null) {
-                }
-                if (bufferedInputStream2 != null) {
-                }
-                if (inputStream != null) {
-                }
+            } catch (Exception e5) {
+                FileLog.e(e5);
             }
         } catch (Exception e6) {
             e = e6;
+            inputStream = null;
             bufferedInputStream = null;
         } catch (Throwable th6) {
             th = th6;
             gZIPInputStream = null;
-            bufferedInputStream2 = r1;
-            gZIPInputStream2 = gZIPInputStream;
-            Throwable th422 = th;
-            if (gZIPInputStream2 != null) {
-            }
-            if (bufferedInputStream2 != null) {
-            }
-            if (inputStream != null) {
-            }
+            inputStream = null;
         }
     }
 
@@ -1006,7 +1044,8 @@ public class CodeHighlighting {
         }
     }
 
-    private static class TokenPattern {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class TokenPattern {
         public boolean greedy;
         public int group;
         public String insideLanguage;

@@ -1,5 +1,7 @@
 package com.google.android.gms.internal.cast;
 
+import java.util.Arrays;
+
 /* loaded from: classes.dex */
 final class zzgc extends zzft {
     static final zzft zza = new zzgc(null, new Object[0], 0);
@@ -13,22 +15,197 @@ final class zzgc extends zzft {
         this.zzd = i;
     }
 
-    /*  JADX ERROR: Types fix failed
-        jadx.core.utils.exceptions.JadxRuntimeException: Several immutable types in one variable: [short[], byte[]], vars: [r5v3 ??, r5v10 ??, r5v6 short[], r5v11 byte[]]
-        	at jadx.core.dex.visitors.InitCodeVariables.setCodeVarType(InitCodeVariables.java:107)
-        	at jadx.core.dex.visitors.InitCodeVariables.setCodeVar(InitCodeVariables.java:83)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVar(InitCodeVariables.java:74)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVars(InitCodeVariables.java:48)
-        	at jadx.core.dex.visitors.InitCodeVariables.rerun(InitCodeVariables.java:36)
-        	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.tryInsertAdditionalMove(FixTypesVisitor.java:553)
-        	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:91)
-        */
-    static com.google.android.gms.internal.cast.zzgc zzh(int r17, java.lang.Object[] r18, com.google.android.gms.internal.cast.zzfs r19) {
-        /*
-            Method dump skipped, instructions count: 432
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.cast.zzgc.zzh(int, java.lang.Object[], com.google.android.gms.internal.cast.zzfs):com.google.android.gms.internal.cast.zzgc");
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0198  */
+    /* JADX WARN: Type inference failed for: r3v6 */
+    /* JADX WARN: Type inference failed for: r3v7, types: [java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r5v8, types: [java.lang.Object[]] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    static zzgc zzh(int i, Object[] objArr, zzfs zzfsVar) {
+        char c;
+        char c2;
+        short[] sArr;
+        byte[] bArr;
+        boolean z;
+        int i2 = i;
+        Object[] objArr2 = objArr;
+        if (i2 == 0) {
+            return (zzgc) zza;
+        }
+        Object obj = null;
+        int i3 = 1;
+        if (i2 == 1) {
+            Object obj2 = objArr2[0];
+            obj2.getClass();
+            Object obj3 = objArr2[1];
+            obj3.getClass();
+            zzfh.zza(obj2, obj3);
+            return new zzgc(null, objArr2, 1);
+        }
+        zzez.zzb(i2, objArr2.length >> 1, "index");
+        int zzh = zzfu.zzh(i2);
+        if (i2 == 1) {
+            Object obj4 = objArr2[0];
+            obj4.getClass();
+            Object obj5 = objArr2[1];
+            obj5.getClass();
+            zzfh.zza(obj4, obj5);
+            i2 = 1;
+            c = 0;
+        } else {
+            int i4 = zzh - 1;
+            if (zzh <= 128) {
+                byte[] bArr2 = new byte[zzh];
+                Arrays.fill(bArr2, (byte) -1);
+                int i5 = 0;
+                for (int i6 = 0; i6 < i2; i6++) {
+                    int i7 = i5 + i5;
+                    int i8 = i6 + i6;
+                    Object obj6 = objArr2[i8];
+                    obj6.getClass();
+                    Object obj7 = objArr2[i8 ^ 1];
+                    obj7.getClass();
+                    zzfh.zza(obj6, obj7);
+                    int zza2 = zzfj.zza(obj6.hashCode());
+                    while (true) {
+                        int i9 = zza2 & i4;
+                        int i10 = bArr2[i9] & 255;
+                        if (i10 == 255) {
+                            bArr2[i9] = (byte) i7;
+                            if (i5 < i6) {
+                                objArr2[i7] = obj6;
+                                objArr2[i7 ^ 1] = obj7;
+                            }
+                            i5++;
+                        } else {
+                            if (obj6.equals(objArr2[i10])) {
+                                int i11 = i10 ^ 1;
+                                Object obj8 = objArr2[i11];
+                                obj8.getClass();
+                                zzfr zzfrVar = new zzfr(obj6, obj7, obj8);
+                                objArr2[i11] = obj7;
+                                obj = zzfrVar;
+                                break;
+                            }
+                            zza2 = i9 + 1;
+                        }
+                    }
+                }
+                c = 0;
+                bArr = bArr2;
+                if (i5 != i2) {
+                    sArr = new Object[]{bArr2, Integer.valueOf(i5), obj};
+                    obj = sArr;
+                }
+                obj = bArr;
+            } else {
+                c = 0;
+                if (zzh > 32768) {
+                    int[] iArr = new int[zzh];
+                    Arrays.fill(iArr, -1);
+                    int i12 = 0;
+                    int i13 = 0;
+                    while (i12 < i2) {
+                        int i14 = i13 + i13;
+                        int i15 = i12 + i12;
+                        Object obj9 = objArr2[i15];
+                        obj9.getClass();
+                        Object obj10 = objArr2[i15 ^ i3];
+                        obj10.getClass();
+                        zzfh.zza(obj9, obj10);
+                        int zza3 = zzfj.zza(obj9.hashCode());
+                        while (true) {
+                            int i16 = zza3 & i4;
+                            int i17 = iArr[i16];
+                            if (i17 == -1) {
+                                iArr[i16] = i14;
+                                if (i13 < i12) {
+                                    objArr2[i14] = obj9;
+                                    objArr2[i14 ^ 1] = obj10;
+                                }
+                                i13++;
+                            } else {
+                                if (obj9.equals(objArr2[i17])) {
+                                    int i18 = i17 ^ 1;
+                                    Object obj11 = objArr2[i18];
+                                    obj11.getClass();
+                                    zzfr zzfrVar2 = new zzfr(obj9, obj10, obj11);
+                                    objArr2[i18] = obj10;
+                                    obj = zzfrVar2;
+                                    break;
+                                }
+                                zza3 = i16 + 1;
+                            }
+                        }
+                        i12++;
+                        i3 = 1;
+                    }
+                    c2 = 1;
+                    obj = i13 == i2 ? iArr : new Object[]{iArr, Integer.valueOf(i13), obj};
+                    z = obj instanceof Object[];
+                    Object obj12 = obj;
+                    if (z) {
+                        Object[] objArr3 = (Object[]) obj;
+                        zzfsVar.zzc = (zzfr) objArr3[2];
+                        Object obj13 = objArr3[c];
+                        int intValue = ((Integer) objArr3[c2]).intValue();
+                        objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
+                        obj12 = obj13;
+                        i2 = intValue;
+                    }
+                    return new zzgc(obj12, objArr2, i2);
+                }
+                sArr = new short[zzh];
+                Arrays.fill(sArr, (short) -1);
+                int i19 = 0;
+                for (int i20 = 0; i20 < i2; i20++) {
+                    int i21 = i19 + i19;
+                    int i22 = i20 + i20;
+                    Object obj14 = objArr2[i22];
+                    obj14.getClass();
+                    Object obj15 = objArr2[i22 ^ 1];
+                    obj15.getClass();
+                    zzfh.zza(obj14, obj15);
+                    int zza4 = zzfj.zza(obj14.hashCode());
+                    while (true) {
+                        int i23 = zza4 & i4;
+                        char c3 = (char) sArr[i23];
+                        if (c3 == 65535) {
+                            sArr[i23] = (short) i21;
+                            if (i19 < i20) {
+                                objArr2[i21] = obj14;
+                                objArr2[i21 ^ 1] = obj15;
+                            }
+                            i19++;
+                        } else {
+                            if (obj14.equals(objArr2[c3])) {
+                                int i24 = c3 ^ 1;
+                                Object obj16 = objArr2[i24];
+                                obj16.getClass();
+                                zzfr zzfrVar3 = new zzfr(obj14, obj15, obj16);
+                                objArr2[i24] = obj15;
+                                obj = zzfrVar3;
+                                break;
+                            }
+                            zza4 = i23 + 1;
+                        }
+                    }
+                }
+                if (i19 != i2) {
+                    bArr = new Object[]{sArr, Integer.valueOf(i19), obj};
+                    obj = bArr;
+                }
+                obj = sArr;
+            }
+        }
+        c2 = 1;
+        z = obj instanceof Object[];
+        Object obj122 = obj;
+        if (z) {
+        }
+        return new zzgc(obj122, objArr2, i2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */

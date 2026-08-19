@@ -43,11 +43,13 @@ public final class GeobFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || GeobFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && GeobFrame.class == obj.getClass()) {
+            GeobFrame geobFrame = (GeobFrame) obj;
+            if (Util.areEqual(this.mimeType, geobFrame.mimeType) && Util.areEqual(this.filename, geobFrame.filename) && Util.areEqual(this.description, geobFrame.description) && Arrays.equals(this.data, geobFrame.data)) {
+                return true;
+            }
         }
-        GeobFrame geobFrame = (GeobFrame) obj;
-        return Util.areEqual(this.mimeType, geobFrame.mimeType) && Util.areEqual(this.filename, geobFrame.filename) && Util.areEqual(this.description, geobFrame.description) && Arrays.equals(this.data, geobFrame.data);
+        return false;
     }
 
     public int hashCode() {

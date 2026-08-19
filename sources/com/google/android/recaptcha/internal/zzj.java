@@ -36,7 +36,14 @@ final class zzj extends SuspendLambda implements Function2 {
         return ((zzj) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0031, code lost:
+    
+        if (r10 != r0) goto L10;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -49,21 +56,18 @@ final class zzj extends SuspendLambda implements Function2 {
             long j = this.zzf;
             this.zza = zzgrVar;
             this.zzb = 1;
-            zzhg zzhgVar = new zzhg(new zzb(zzgVar, str, j, null));
-            if (zzhgVar == coroutine_suspended) {
-                return coroutine_suspended;
-            }
-            obj = zzhgVar;
+            obj = new zzhg(new zzb(zzgVar, str, j, null));
         } else {
             if (i != 1) {
                 ResultKt.throwOnFailure(obj);
+                return obj;
             }
             zzgrVar = (zzgr) this.zza;
             ResultKt.throwOnFailure(obj);
         }
         this.zza = null;
         this.zzb = 2;
-        obj = ((zzhg) obj).zza(zzgrVar.zza(), this);
-        return obj == coroutine_suspended ? coroutine_suspended : obj;
+        Object zza = ((zzhg) obj).zza(zzgrVar.zza(), this);
+        return zza == coroutine_suspended ? coroutine_suspended : zza;
     }
 }

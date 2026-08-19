@@ -17,10 +17,11 @@ abstract class ErrorParser {
             stripeError.message = StripeJsonUtils.optString(jSONObject, "message");
             stripeError.param = StripeJsonUtils.optString(jSONObject, "param");
             stripeError.type = StripeJsonUtils.optString(jSONObject, TeXSymbolParser.TYPE_ATTR);
+            return stripeError;
         } catch (JSONException unused) {
             stripeError.message = "An improperly formatted error response was found.";
+            return stripeError;
         }
-        return stripeError;
     }
 
     static class StripeError {

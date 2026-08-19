@@ -45,7 +45,7 @@ public final class CarValue<T> {
 
     public List<CarZone> getCarZones() {
         if (this.mStatus == 2) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         return this.mCarZones;
     }
@@ -87,6 +87,6 @@ public final class CarValue<T> {
         this.mValue = null;
         this.mTimestampMillis = 0L;
         this.mStatus = 0;
-        this.mCarZones = Collections.emptyList();
+        this.mCarZones = Collections.EMPTY_LIST;
     }
 }

@@ -1,73 +1,95 @@
 package j$.util.stream;
 
-import java.util.concurrent.CountedCompleter;
+import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-class x1 extends CountedCompleter {
-    protected final I0 a;
-    protected final int b;
-    public final /* synthetic */ int c;
-    private final Object d;
+public final class x1 extends q1 {
+    public final /* synthetic */ int h;
 
-    public x1(I0 i0, Object obj, int i) {
-        this.c = i;
-        this.a = i0;
-        this.b = 0;
-        this.d = obj;
+    public /* synthetic */ x1(int i) {
+        this.h = i;
     }
 
-    x1(x1 x1Var, I0 i0, int i, byte b) {
-        super(x1Var);
-        this.a = i0;
-        this.b = i;
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        x1 x1Var = this;
-        while (x1Var.a.q() != 0) {
-            x1Var.setPendingCount(x1Var.a.q() - 1);
-            int i = 0;
-            int i2 = 0;
-            while (i < x1Var.a.q() - 1) {
-                x1 a = x1Var.a(i, x1Var.b + i2);
-                i2 = (int) (i2 + a.a.count());
-                a.fork();
-                i++;
-            }
-            x1Var = x1Var.a(i, x1Var.b + i2);
-        }
-        switch (x1Var.c) {
+    @Override // j$.util.stream.q1
+    public final L1 Y() {
+        switch (this.h) {
             case 0:
-                ((H0) x1Var.a).r(x1Var.b, x1Var.d);
-                break;
+                return new P1();
+            case 1:
+                return new N1();
+            case 2:
+                return new Q1();
             default:
-                x1Var.a.i((Object[]) x1Var.d, x1Var.b);
-                break;
+                return new O1();
         }
-        x1Var.propagateCompletion();
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public x1(x1 x1Var, I0 i0, int i) {
-        this(x1Var, i0, i, (byte) 0);
-        this.c = 1;
-        this.d = (Object[]) x1Var.d;
-    }
-
-    final x1 a(int i, int i2) {
-        switch (this.c) {
+    @Override // j$.util.stream.q1, j$.util.stream.y3
+    public final Object b(a aVar, Spliterator spliterator) {
+        switch (this.h) {
             case 0:
-                return new x1(this, ((H0) this.a).b(i), i2);
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 2:
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
             default:
-                return new x1(this, this.a.b(i), i2);
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
         }
+        return (Long) super.b(aVar, spliterator);
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public x1(x1 x1Var, H0 h0, int i) {
-        this(x1Var, h0, i, (byte) 0);
-        this.c = 0;
-        this.d = x1Var.d;
+    @Override // j$.util.stream.q1, j$.util.stream.y3
+    public final Object c(a aVar, Spliterator spliterator) {
+        switch (this.h) {
+            case 0:
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            case 2:
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!S2.SIZED.q(aVar.f)) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return (Long) super.c(aVar, spliterator);
+    }
+
+    @Override // j$.util.stream.q1, j$.util.stream.y3
+    public final int d() {
+        switch (this.h) {
+        }
+        return S2.r;
     }
 }

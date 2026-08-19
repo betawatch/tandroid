@@ -303,7 +303,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                     chatThemeItem.chatTheme.loadWallpaperThumb(this.lastThemeIndex, new ResultCallback() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda2
                         @Override // org.telegram.tgnet.ResultCallback
                         public final void onComplete(Object obj) {
-                            ThemeSmallPreviewView.this.lambda$setItem$0(themeId, chatThemeItem, i3, (Pair) obj);
+                            ThemeSmallPreviewView.$r8$lambda$vSh5icc-_yi6kENgHrLhVI5wlN8(ThemeSmallPreviewView.this, themeId, chatThemeItem, i3, (Pair) obj);
                         }
 
                         @Override // org.telegram.tgnet.ResultCallback
@@ -330,7 +330,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                         imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda3
                             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                             public final void didSetImage(ImageReceiver imageReceiver2, boolean z4, boolean z5, boolean z6) {
-                                ThemeSmallPreviewView.this.lambda$setItem$1(chatThemeItem, wallPaper2, imageReceiver2, z4, z5, z6);
+                                ThemeSmallPreviewView.$r8$lambda$_gYWD85VGIDBIztO6yixKe7vkv0(ThemeSmallPreviewView.this, chatThemeItem, wallPaper2, imageReceiver2, z4, z5, z6);
                             }
 
                             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -354,7 +354,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                     ChatThemeController.chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ThemeSmallPreviewView.this.lambda$setItem$3(chatThemeItem, i4);
+                            ThemeSmallPreviewView.$r8$lambda$JlSkzJSpeivPZ_8okKtQpmTlJ2s(ThemeSmallPreviewView.this, chatThemeItem, i4);
                         }
                     });
                 }
@@ -378,23 +378,23 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setItem$0(long j, ChatThemeBottomSheet.ChatThemeItem chatThemeItem, int i, Pair pair) {
+    public static /* synthetic */ void $r8$lambda$vSh5icc-_yi6kENgHrLhVI5wlN8(ThemeSmallPreviewView themeSmallPreviewView, long j, ChatThemeBottomSheet.ChatThemeItem chatThemeItem, int i, Pair pair) {
+        themeSmallPreviewView.getClass();
         if (pair == null || ((Long) pair.first).longValue() != j) {
             return;
         }
         Drawable drawable = chatThemeItem.previewDrawable;
         if (drawable instanceof MotionBackgroundDrawable) {
             MotionBackgroundDrawable motionBackgroundDrawable = (MotionBackgroundDrawable) drawable;
-            motionBackgroundDrawable.setPatternBitmap(i >= 0 ? 100 : -100, prescaleBitmap((Bitmap) pair.second), true);
-            motionBackgroundDrawable.setPatternColorFilter(this.patternColor);
+            motionBackgroundDrawable.setPatternBitmap(i >= 0 ? 100 : -100, themeSmallPreviewView.prescaleBitmap((Bitmap) pair.second), true);
+            motionBackgroundDrawable.setPatternColorFilter(themeSmallPreviewView.patternColor);
         }
-        invalidate();
+        themeSmallPreviewView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setItem$1(ChatThemeBottomSheet.ChatThemeItem chatThemeItem, TLRPC.WallPaper wallPaper, ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+    public static /* synthetic */ void $r8$lambda$_gYWD85VGIDBIztO6yixKe7vkv0(ThemeSmallPreviewView themeSmallPreviewView, ChatThemeBottomSheet.ChatThemeItem chatThemeItem, TLRPC.WallPaper wallPaper, ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
         Bitmap bitmap;
+        themeSmallPreviewView.getClass();
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
         if (!z || bitmapSafe == null || (bitmap = bitmapSafe.bitmap) == null) {
             return;
@@ -403,31 +403,31 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         if (drawable instanceof MotionBackgroundDrawable) {
             MotionBackgroundDrawable motionBackgroundDrawable = (MotionBackgroundDrawable) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            motionBackgroundDrawable.setPatternBitmap((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, prescaleBitmap(bitmap), true);
-            motionBackgroundDrawable.setPatternColorFilter(this.patternColor);
-            invalidate();
+            motionBackgroundDrawable.setPatternBitmap((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, themeSmallPreviewView.prescaleBitmap(bitmap), true);
+            motionBackgroundDrawable.setPatternColorFilter(themeSmallPreviewView.patternColor);
+            themeSmallPreviewView.invalidate();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setItem$3(final ChatThemeBottomSheet.ChatThemeItem chatThemeItem, final int i) {
+    public static /* synthetic */ void $r8$lambda$JlSkzJSpeivPZ_8okKtQpmTlJ2s(final ThemeSmallPreviewView themeSmallPreviewView, final ChatThemeBottomSheet.ChatThemeItem chatThemeItem, final int i) {
+        themeSmallPreviewView.getClass();
         final Bitmap bitmap = SvgHelper.getBitmap(R.raw.default_pattern, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(140.0f), -16777216, AndroidUtilities.density);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                ThemeSmallPreviewView.this.lambda$setItem$2(chatThemeItem, i, bitmap);
+                ThemeSmallPreviewView.$r8$lambda$RNCB9WFhZBO6HJ5Rzc2puKH5PV0(ThemeSmallPreviewView.this, chatThemeItem, i, bitmap);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setItem$2(ChatThemeBottomSheet.ChatThemeItem chatThemeItem, int i, Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$RNCB9WFhZBO6HJ5Rzc2puKH5PV0(ThemeSmallPreviewView themeSmallPreviewView, ChatThemeBottomSheet.ChatThemeItem chatThemeItem, int i, Bitmap bitmap) {
+        themeSmallPreviewView.getClass();
         Drawable drawable = chatThemeItem.previewDrawable;
         if (drawable instanceof MotionBackgroundDrawable) {
             MotionBackgroundDrawable motionBackgroundDrawable = (MotionBackgroundDrawable) drawable;
-            motionBackgroundDrawable.setPatternBitmap(i, prescaleBitmap(bitmap), true);
-            motionBackgroundDrawable.setPatternColorFilter(this.patternColor);
-            invalidate();
+            motionBackgroundDrawable.setPatternBitmap(i, themeSmallPreviewView.prescaleBitmap(bitmap), true);
+            motionBackgroundDrawable.setPatternColorFilter(themeSmallPreviewView.patternColor);
+            themeSmallPreviewView.invalidate();
         }
     }
 
@@ -453,7 +453,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                    ThemeSmallPreviewView.this.lambda$setSelected$4(valueAnimator3);
+                    ThemeSmallPreviewView.$r8$lambda$E638TTGL7Vro8ZVt1LJ0k0q-IHA(ThemeSmallPreviewView.this, valueAnimator3);
                 }
             });
             this.strokeAlphaAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView.1
@@ -470,10 +470,10 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         this.isSelected = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSelected$4(ValueAnimator valueAnimator) {
-        this.selectionProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$E638TTGL7Vro8ZVt1LJ0k0q-IHA(ThemeSmallPreviewView themeSmallPreviewView, ValueAnimator valueAnimator) {
+        themeSmallPreviewView.getClass();
+        themeSmallPreviewView.selectionProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        themeSmallPreviewView.invalidate();
     }
 
     private Bitmap prescaleBitmap(Bitmap bitmap) {
@@ -564,28 +564,30 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
             int i6 = wallPaperSettings.background_color;
             int i7 = wallPaperSettings.second_background_color;
             int i8 = wallPaperSettings.third_background_color;
-            i4 = wallPaperSettings.fourth_background_color;
-            i5 = i6;
-            i2 = i7;
-            i3 = i8;
+            i5 = wallPaperSettings.fourth_background_color;
+            i3 = i7;
+            i4 = i8;
+            i2 = i6;
         } else {
             i2 = 0;
             i3 = 0;
             i4 = 0;
             i5 = 0;
         }
-        if (i2 != 0) {
-            motionBackgroundDrawable = new MotionBackgroundDrawable(i5, i2, i3, i4, true);
+        if (i3 != 0) {
+            motionBackgroundDrawable = new MotionBackgroundDrawable(i2, i3, i4, i5, true);
             this.patternColor = motionBackgroundDrawable.getPatternColor();
         } else {
-            motionBackgroundDrawable = new MotionBackgroundDrawable(i5, i5, i5, i5, true);
+            MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable(i2, i2, i2, i2, true);
             this.patternColor = -16777216;
+            motionBackgroundDrawable = motionBackgroundDrawable2;
         }
         this.chatThemeItem.previewDrawable = motionBackgroundDrawable;
         return motionBackgroundDrawable;
     }
 
     private Drawable getPreviewDrawable(EmojiThemes.ThemeItem themeItem) {
+        MotionBackgroundDrawable motionBackgroundDrawable;
         Drawable drawable = null;
         drawable = null;
         if (this.chatThemeItem == null) {
@@ -598,37 +600,40 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         int i5 = themeItem.patternBgRotation;
         if (themeItem.themeInfo.getAccent(false) != null) {
             if (i2 != 0) {
-                MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable(i, i2, i3, i4, i5, true);
+                motionBackgroundDrawable = new MotionBackgroundDrawable(i, i2, i3, i4, i5, true);
                 this.patternColor = motionBackgroundDrawable.getPatternColor();
-                drawable = motionBackgroundDrawable;
             } else {
-                MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable(i, i, i, i, i5, true);
+                motionBackgroundDrawable = new MotionBackgroundDrawable(i, i, i, i, i5, true);
                 this.patternColor = -16777216;
-                drawable = motionBackgroundDrawable2;
             }
         } else if (i != 0 && i2 != 0) {
-            drawable = new MotionBackgroundDrawable(i, i2, i3, i4, i5, true);
-        } else if (i != 0) {
-            drawable = new ColorDrawable(i);
+            motionBackgroundDrawable = new MotionBackgroundDrawable(i, i2, i3, i4, i5, true);
         } else {
-            Theme.ThemeInfo themeInfo = themeItem.themeInfo;
-            if (themeInfo != null && (themeInfo.previewWallpaperOffset > 0 || themeInfo.pathToWallpaper != null)) {
-                float dp = AndroidUtilities.dp(112.0f);
-                float dp2 = AndroidUtilities.dp(134.0f);
-                Theme.ThemeInfo themeInfo2 = themeItem.themeInfo;
-                Bitmap scaledBitmap = AndroidUtilities.getScaledBitmap(dp, dp2, themeInfo2.pathToWallpaper, themeInfo2.pathToFile, themeInfo2.previewWallpaperOffset);
-                if (scaledBitmap != null) {
-                    BitmapDrawable bitmapDrawable = new BitmapDrawable(scaledBitmap);
-                    bitmapDrawable.setFilterBitmap(true);
-                    drawable = bitmapDrawable;
-                }
+            if (i != 0) {
+                drawable = new ColorDrawable(i);
             } else {
-                EmojiThemes emojiThemes = this.chatThemeItem.chatTheme;
-                if (emojiThemes == null || !emojiThemes.isAnyStub()) {
-                    drawable = new MotionBackgroundDrawable(-2368069, -9722489, -2762611, -7817084, true);
+                Theme.ThemeInfo themeInfo = themeItem.themeInfo;
+                if (themeInfo != null && (themeInfo.previewWallpaperOffset > 0 || themeInfo.pathToWallpaper != null)) {
+                    float dp = AndroidUtilities.dp(112.0f);
+                    float dp2 = AndroidUtilities.dp(134.0f);
+                    Theme.ThemeInfo themeInfo2 = themeItem.themeInfo;
+                    Bitmap scaledBitmap = AndroidUtilities.getScaledBitmap(dp, dp2, themeInfo2.pathToWallpaper, themeInfo2.pathToFile, themeInfo2.previewWallpaperOffset);
+                    if (scaledBitmap != null) {
+                        BitmapDrawable bitmapDrawable = new BitmapDrawable(scaledBitmap);
+                        bitmapDrawable.setFilterBitmap(true);
+                        drawable = bitmapDrawable;
+                    }
+                } else {
+                    EmojiThemes emojiThemes = this.chatThemeItem.chatTheme;
+                    if (emojiThemes == null || !emojiThemes.isAnyStub()) {
+                        motionBackgroundDrawable = new MotionBackgroundDrawable(-2368069, -9722489, -2762611, -7817084, true);
+                    }
                 }
             }
+            this.chatThemeItem.previewDrawable = drawable;
+            return drawable;
         }
+        drawable = motionBackgroundDrawable;
         this.chatThemeItem.previewDrawable = drawable;
         return drawable;
     }
@@ -676,7 +681,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ThemeSmallPreviewView.this.lambda$playEmojiAnimation$5();
+                    ThemeSmallPreviewView.$r8$lambda$bzhtE97c5yB72ofLU7N6IPBF4vw(ThemeSmallPreviewView.this);
                 }
             };
             this.animationCancelRunnable = runnable;
@@ -684,10 +689,9 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$playEmojiAnimation$5() {
-        this.animationCancelRunnable = null;
-        this.backupImageView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(CubicBezierInterpolator.DEFAULT).start();
+    public static /* synthetic */ void $r8$lambda$bzhtE97c5yB72ofLU7N6IPBF4vw(ThemeSmallPreviewView themeSmallPreviewView) {
+        themeSmallPreviewView.animationCancelRunnable = null;
+        themeSmallPreviewView.backupImageView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(CubicBezierInterpolator.DEFAULT).start();
     }
 
     public void cancelAnimation() {
@@ -758,6 +762,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
 
         public void draw(Canvas canvas, float f) {
             int i;
+            float f2;
             ThemeSmallPreviewView themeSmallPreviewView = ThemeSmallPreviewView.this;
             if (themeSmallPreviewView.isSelected || themeSmallPreviewView.strokeAlphaAnimator != null) {
                 ChatThemeBottomSheet.ChatThemeItem chatThemeItem = ThemeSmallPreviewView.this.chatThemeItem;
@@ -791,9 +796,11 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                         }
                         Paint paint = ThemeSmallPreviewView.this.currentType == 3 ? this.inBubblePaint : this.outBubblePaintSecond;
                         if (ThemeSmallPreviewView.this.currentType == 0 || ThemeSmallPreviewView.this.currentType == 3) {
+                            f2 = 8.0f;
                             canvas.drawRoundRect(ThemeSmallPreviewView.this.rectF, ThemeSmallPreviewView.this.rectF.height() * 0.5f, ThemeSmallPreviewView.this.rectF.height() * 0.5f, paint);
                         } else {
                             ThemeSmallPreviewView themeSmallPreviewView2 = ThemeSmallPreviewView.this;
+                            f2 = 8.0f;
                             themeSmallPreviewView2.messageDrawableOut.setBounds((int) themeSmallPreviewView2.rectF.left, ((int) ThemeSmallPreviewView.this.rectF.top) - AndroidUtilities.dp(2.0f), ((int) ThemeSmallPreviewView.this.rectF.right) + AndroidUtilities.dp(4.0f), ((int) ThemeSmallPreviewView.this.rectF.bottom) + AndroidUtilities.dp(2.0f));
                             ThemeSmallPreviewView themeSmallPreviewView3 = ThemeSmallPreviewView.this;
                             themeSmallPreviewView3.messageDrawableOut.setRoundRadius((int) (themeSmallPreviewView3.rectF.height() * 0.5f));
@@ -812,7 +819,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                                 float centerY = ThemeSmallPreviewView.this.rectF.centerY();
                                 float height = ThemeSmallPreviewView.this.rectF.left + (ThemeSmallPreviewView.this.rectF.height() / 2.0f);
                                 float height2 = ThemeSmallPreviewView.this.rectF.right - (ThemeSmallPreviewView.this.rectF.height() / 2.0f);
-                                ThemeSmallPreviewView.this.rectF.set(height - AndroidUtilities.dp(8.0f), centerY - AndroidUtilities.dp(8.0f), height + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f) + centerY);
+                                ThemeSmallPreviewView.this.rectF.set(height - AndroidUtilities.dp(f2), centerY - AndroidUtilities.dp(f2), height + AndroidUtilities.dp(f2), AndroidUtilities.dp(f2) + centerY);
                                 ThemeSmallPreviewView.this.avatarImageReceiver.setImageCoords(ThemeSmallPreviewView.this.rectF);
                                 ThemeSmallPreviewView.this.avatarImageReceiver.draw(canvas);
                                 if (this.rotateDrawable == null) {
@@ -820,7 +827,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                                 }
                                 int i3 = (int) height2;
                                 int i4 = (int) centerY;
-                                this.rotateDrawable.setBounds(i3 - AndroidUtilities.dp(8.0f), i4 - AndroidUtilities.dp(8.0f), i3 + AndroidUtilities.dp(8.0f), i4 + AndroidUtilities.dp(8.0f));
+                                this.rotateDrawable.setBounds(i3 - AndroidUtilities.dp(f2), i4 - AndroidUtilities.dp(f2), i3 + AndroidUtilities.dp(f2), i4 + AndroidUtilities.dp(f2));
                                 this.rotateDrawable.draw(canvas);
                                 return;
                             }

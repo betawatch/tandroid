@@ -56,7 +56,7 @@ import org.telegram.ui.web.BotWebViewContainer;
 import org.telegram.ui.web.MHTML;
 import org.telegram.ui.web.WebInstantView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebInstantView {
     public static final HashMap instants = new HashMap();
     private static HashMap loadingPhotos;
@@ -65,8 +65,7 @@ public class WebInstantView {
     public String url;
     public TLRPC.WebPage webpage;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getHTML$6(String str) {
+    public static /* synthetic */ void $r8$lambda$Us0B0feOaqe1AirXDilnz7RNinI(String str) {
     }
 
     public static Runnable generate(WebView webView, boolean z, final Utilities.Callback callback) {
@@ -85,19 +84,18 @@ public class WebInstantView {
         webInstantView.getHTML(webView, z, new Utilities.Callback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                WebInstantView.lambda$generate$1(Timer.Task.this, zArr, create, webInstantView, callback, (InputStream) obj);
+                WebInstantView.$r8$lambda$YlCjfT0mhFdTUR2hES1ATvDObGA(Timer.Task.this, zArr, create, webInstantView, callback, (InputStream) obj);
             }
         });
         return new Runnable() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                WebInstantView.lambda$generate$2(zArr);
+                WebInstantView.$r8$lambda$5OKLd3KNjqeekGH8Do5VRgOXNAo(zArr);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$generate$1(Timer.Task task, final boolean[] zArr, final Timer timer, final WebInstantView webInstantView, final Utilities.Callback callback, InputStream inputStream) {
+    public static /* synthetic */ void $r8$lambda$YlCjfT0mhFdTUR2hES1ATvDObGA(Timer.Task task, final boolean[] zArr, final Timer timer, final WebInstantView webInstantView, final Utilities.Callback callback, InputStream inputStream) {
         Timer.done(task);
         if (zArr[0]) {
             return;
@@ -106,13 +104,12 @@ public class WebInstantView {
         webInstantView.readHTML(webInstantView.url, inputStream, new Utilities.Callback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                WebInstantView.lambda$generate$0(Timer.Task.this, zArr, timer, webInstantView, callback, (JSONObject) obj);
+                WebInstantView.$r8$lambda$Yh_rHIiOF3DpDgaZCNIA7rZXO0Q(Timer.Task.this, zArr, timer, webInstantView, callback, (JSONObject) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$generate$0(Timer.Task task, boolean[] zArr, Timer timer, WebInstantView webInstantView, Utilities.Callback callback, JSONObject jSONObject) {
+    public static /* synthetic */ void $r8$lambda$Yh_rHIiOF3DpDgaZCNIA7rZXO0Q(Timer.Task task, boolean[] zArr, Timer timer, WebInstantView webInstantView, Utilities.Callback callback, JSONObject jSONObject) {
         Timer.done(task);
         if (zArr[0]) {
             return;
@@ -133,8 +130,7 @@ public class WebInstantView {
         Timer.finish(timer);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$generate$2(boolean[] zArr) {
+    public static /* synthetic */ void $r8$lambda$5OKLd3KNjqeekGH8Do5VRgOXNAo(boolean[] zArr) {
         zArr[0] = true;
     }
 
@@ -151,11 +147,14 @@ public class WebInstantView {
         if (webPage == null || (page = webPage.cached_page) == null || (arrayList = page.photos) == null) {
             return;
         }
-        Iterator<TLRPC.Photo> it2 = arrayList.iterator();
-        while (it2.hasNext()) {
-            TLRPC.Photo next = it2.next();
-            if (next instanceof WebPhoto) {
-                WebPhoto webPhoto = (WebPhoto) next;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            TLRPC.Photo photo = arrayList.get(i);
+            i++;
+            TLRPC.Photo photo2 = photo;
+            if (photo2 instanceof WebPhoto) {
+                WebPhoto webPhoto = (WebPhoto) photo2;
                 HashMap hashMap = loadingPhotos;
                 if (hashMap != null) {
                     hashMap.remove(webPhoto.url);
@@ -254,7 +253,7 @@ public class WebInstantView {
             new HttpGetBitmapTask(new Utilities.Callback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    WebInstantView.this.lambda$loadPhotoInternal$4(webPhoto, (Bitmap) obj);
+                    WebInstantView.$r8$lambda$hFjnVezg1x57UM9BcT-jIWS8dlo(WebInstantView.this, webPhoto, (Bitmap) obj);
                 }
             }).execute(webPhoto.url);
         } catch (Exception e) {
@@ -262,31 +261,32 @@ public class WebInstantView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadPhotoInternal$4(final WebPhoto webPhoto, final Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$hFjnVezg1x57UM9BcT-jIWS8dlo(final WebInstantView webInstantView, final WebPhoto webPhoto, final Bitmap bitmap) {
+        webInstantView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                WebInstantView.this.lambda$loadPhotoInternal$3(webPhoto, bitmap);
+                WebInstantView.$r8$lambda$qkSjPlFAa_0-jByXyiA-FVISRM8(WebInstantView.this, webPhoto, bitmap);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadPhotoInternal$3(WebPhoto webPhoto, Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$qkSjPlFAa_0-jByXyiA-FVISRM8(WebInstantView webInstantView, WebPhoto webPhoto, Bitmap bitmap) {
         Object obj;
+        webInstantView.getClass();
         if (loadingPhotos == null) {
             return;
         }
+        int i = 0;
         boolean z = (webPhoto.w <= 0 || webPhoto.h <= 0) && bitmap != null;
         if (bitmap != null) {
-            this.loadedPhotos.put(webPhoto.url, bitmap);
+            webInstantView.loadedPhotos.put(webPhoto.url, bitmap);
             if (z) {
-                int i = webPhoto.w;
-                if (i == 0 && webPhoto.h == 0) {
+                int i2 = webPhoto.w;
+                if (i2 == 0 && webPhoto.h == 0) {
                     webPhoto.w = bitmap.getWidth();
                     webPhoto.h = bitmap.getHeight();
-                } else if (i == 0) {
+                } else if (i2 == 0) {
                     webPhoto.w = (int) ((bitmap.getWidth() / bitmap.getHeight()) * webPhoto.h);
                 } else if (webPhoto.h == 0) {
                     webPhoto.h = (int) ((bitmap.getHeight() / bitmap.getWidth()) * webPhoto.w);
@@ -302,9 +302,11 @@ public class WebInstantView {
         if (arrayList == null) {
             return;
         }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            Pair pair = (Pair) it.next();
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj2 = arrayList.get(i);
+            i++;
+            Pair pair = (Pair) obj2;
             ((ImageReceiver) pair.first).setImageBitmap(bitmap);
             if (z && (obj = pair.second) != null) {
                 ((Runnable) obj).run();
@@ -356,7 +358,7 @@ public class WebInstantView {
                 webView.evaluateJavascript("document.documentElement.outerHTML", new ValueCallback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda2
                     @Override // android.webkit.ValueCallback
                     public final void onReceiveValue(Object obj) {
-                        WebInstantView.lambda$getHTML$5(Utilities.Callback.this, (String) obj);
+                        WebInstantView.$r8$lambda$5eCdyRlTVedsQRAWARfZXK7zwEo(Utilities.Callback.this, (String) obj);
                     }
                 });
                 return;
@@ -366,14 +368,13 @@ public class WebInstantView {
             webView.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "true"), new ValueCallback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda3
                 @Override // android.webkit.ValueCallback
                 public final void onReceiveValue(Object obj) {
-                    WebInstantView.this.lambda$getHTML$8(webView, file, callback, (String) obj);
+                    WebInstantView.$r8$lambda$rxqU5ebZZyE1bg0cAK4TZetOirc(WebInstantView.this, webView, file, callback, (String) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getHTML$5(Utilities.Callback callback, String str) {
+    public static /* synthetic */ void $r8$lambda$5eCdyRlTVedsQRAWARfZXK7zwEo(Utilities.Callback callback, String str) {
         try {
             JsonReader jsonReader = new JsonReader(new StringReader(str));
             jsonReader.setLenient(true);
@@ -386,29 +387,29 @@ public class WebInstantView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getHTML$8(final WebView webView, final File file, final Utilities.Callback callback, String str) {
+    public static /* synthetic */ void $r8$lambda$rxqU5ebZZyE1bg0cAK4TZetOirc(final WebInstantView webInstantView, final WebView webView, final File file, final Utilities.Callback callback, String str) {
+        webInstantView.getClass();
         webView.saveWebArchive(file.getAbsolutePath(), false, new ValueCallback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda6
             @Override // android.webkit.ValueCallback
             public final void onReceiveValue(Object obj) {
-                WebInstantView.this.lambda$getHTML$7(webView, file, callback, (String) obj);
+                WebInstantView.$r8$lambda$rCpmgwitTm1Voxiaw8LbPxhdPQA(WebInstantView.this, webView, file, callback, (String) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getHTML$7(WebView webView, File file, Utilities.Callback callback, String str) {
+    public static /* synthetic */ void $r8$lambda$rCpmgwitTm1Voxiaw8LbPxhdPQA(WebInstantView webInstantView, WebView webView, File file, Utilities.Callback callback, String str) {
+        webInstantView.getClass();
         webView.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new ValueCallback() { // from class: org.telegram.ui.web.WebInstantView$$ExternalSyntheticLambda8
             @Override // android.webkit.ValueCallback
             public final void onReceiveValue(Object obj) {
-                WebInstantView.lambda$getHTML$6((String) obj);
+                WebInstantView.$r8$lambda$Us0B0feOaqe1AirXDilnz7RNinI((String) obj);
             }
         });
         try {
             MHTML mhtml = new MHTML(file);
-            this.mhtml = mhtml;
+            webInstantView.mhtml = mhtml;
             if (!mhtml.entries.isEmpty()) {
-                callback.run(((MHTML.Entry) this.mhtml.entries.get(0)).getInputStream());
+                callback.run(((MHTML.Entry) webInstantView.mhtml.entries.get(0)).getInputStream());
                 return;
             }
         } catch (Exception e) {
@@ -552,13 +553,12 @@ public class WebInstantView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebInstantView$4$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WebInstantView.4.lambda$done$0(zArr, webView, frameLayout, str, callback);
+                    WebInstantView.4.$r8$lambda$K36wTf6YNhOLbQXYDc9HGQ7ErYU(zArr, webView, frameLayout, str, callback);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$done$0(boolean[] zArr, WebView webView, FrameLayout frameLayout, String str, Utilities.Callback callback) {
+        public static /* synthetic */ void $r8$lambda$K36wTf6YNhOLbQXYDc9HGQ7ErYU(boolean[] zArr, WebView webView, FrameLayout frameLayout, String str, Utilities.Callback callback) {
             JSONObject jSONObject;
             if (zArr[0]) {
                 return;
@@ -624,11 +624,12 @@ public class WebInstantView {
         tL_page.web = true;
         tL_page.url = str;
         tL_page.blocks.addAll(parsePageBlocks(str, optJSONArray, tL_page));
-        if (tL_page.blocks.isEmpty() || !(tL_page.blocks.get(0) instanceof TL_iv.pageBlockHeader)) {
-            TL_iv.pageBlockTitle pageblocktitle = new TL_iv.pageBlockTitle();
-            pageblocktitle.text = trim(parseRichText(optString));
-            tL_page.blocks.add(0, pageblocktitle);
+        if (!tL_page.blocks.isEmpty() && (tL_page.blocks.get(0) instanceof TL_iv.pageBlockHeader)) {
+            return tL_page;
         }
+        TL_iv.pageBlockTitle pageblocktitle = new TL_iv.pageBlockTitle();
+        pageblocktitle.text = trim(parseRichText(optString));
+        tL_page.blocks.add(0, pageblocktitle);
         return tL_page;
     }
 
@@ -646,7 +647,7 @@ public class WebInstantView {
                 jSONObject = (JSONObject) obj;
                 String optString = jSONObject.optString("tag");
                 optJSONArray = jSONObject.optJSONArray("content");
-                optString.hashCode();
+                optString.getClass();
                 switch (optString) {
                     case "figure":
                     case "picture":
@@ -764,17 +765,16 @@ public class WebInstantView {
     }
 
     public static TL_iv.RichText applyAnchor(TL_iv.RichText richText, JSONObject jSONObject) {
-        if (jSONObject == null) {
-            return richText;
+        if (jSONObject != null) {
+            String optString = jSONObject.optString("id");
+            if (!TextUtils.isEmpty(optString)) {
+                TL_iv.textAnchor textanchor = new TL_iv.textAnchor();
+                textanchor.text = richText;
+                textanchor.name = optString;
+                return textanchor;
+            }
         }
-        String optString = jSONObject.optString("id");
-        if (TextUtils.isEmpty(optString)) {
-            return richText;
-        }
-        TL_iv.textAnchor textanchor = new TL_iv.textAnchor();
-        textanchor.text = richText;
-        textanchor.name = optString;
-        return textanchor;
+        return richText;
     }
 
     public TL_iv.pageBlockPhoto parseFigure(JSONObject jSONObject, TL_iv.TL_page tL_page) {
@@ -969,7 +969,7 @@ public class WebInstantView {
             } else {
                 jSONObject = (JSONObject) obj;
                 String optString = jSONObject.optString("tag");
-                optString.hashCode();
+                optString.getClass();
                 switch (optString) {
                     case "strong":
                     case "b":
@@ -1073,9 +1073,13 @@ public class WebInstantView {
         TL_iv.RichText richText2 = richText.text;
         if (richText2 != null) {
             addLastSpace(richText2);
-        } else if (!richText.texts.isEmpty()) {
+            return richText;
+        }
+        if (!richText.texts.isEmpty()) {
             addLastSpace(richText.texts.get(r0.size() - 1));
-        } else if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null && !str.endsWith(" ")) {
+            return richText;
+        }
+        if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null && !str.endsWith(" ")) {
             textplain.text += ' ';
         }
         return richText;
@@ -1088,9 +1092,13 @@ public class WebInstantView {
         TL_iv.RichText richText2 = richText.text;
         if (richText2 != null) {
             addNewLine(richText2);
-        } else if (!richText.texts.isEmpty()) {
+            return richText;
+        }
+        if (!richText.texts.isEmpty()) {
             addNewLine(richText.texts.get(r0.size() - 1));
-        } else if (richText instanceof TL_iv.textPlain) {
+            return richText;
+        }
+        if (richText instanceof TL_iv.textPlain) {
             StringBuilder sb = new StringBuilder();
             TL_iv.textPlain textplain = (TL_iv.textPlain) richText;
             sb.append(textplain.text);
@@ -1109,9 +1117,13 @@ public class WebInstantView {
         TL_iv.RichText richText2 = richText.text;
         if (richText2 != null) {
             trimStart(richText2);
-        } else if (!richText.texts.isEmpty()) {
+            return richText;
+        }
+        if (!richText.texts.isEmpty()) {
             trimStart(richText.texts.get(0));
-        } else if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
+            return richText;
+        }
+        if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
             textplain.text = str.replaceAll("^\\s+", "");
         }
         return richText;
@@ -1126,13 +1138,19 @@ public class WebInstantView {
         TL_iv.RichText richText2 = richText.text;
         if (richText2 != null) {
             trim(richText2);
-        } else if (richText.texts.size() == 1) {
+            return richText;
+        }
+        if (richText.texts.size() == 1) {
             trim(richText.texts.get(0));
-        } else if (!richText.texts.isEmpty()) {
+            return richText;
+        }
+        if (!richText.texts.isEmpty()) {
             trimStart(richText.texts.get(0));
             ArrayList<TL_iv.RichText> arrayList = richText.texts;
             trimEnd(arrayList.get(arrayList.size() - 1));
-        } else if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
+            return richText;
+        }
+        if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
             textplain.text = str.trim();
         }
         return richText;
@@ -1147,9 +1165,13 @@ public class WebInstantView {
         TL_iv.RichText richText2 = richText.text;
         if (richText2 != null) {
             trimEnd(richText2);
-        } else if (!richText.texts.isEmpty()) {
+            return richText;
+        }
+        if (!richText.texts.isEmpty()) {
             trimEnd(richText.texts.get(r0.size() - 1));
-        } else if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
+            return richText;
+        }
+        if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
             textplain.text = str.replaceAll("\\s+$", "");
         }
         return richText;
@@ -1341,21 +1363,20 @@ public class WebInstantView {
             this.cancelLocal = WebInstantView.generate(myWebView, false, new Utilities.Callback() { // from class: org.telegram.ui.web.WebInstantView$Loader$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    WebInstantView.Loader.this.lambda$retryLocal$0((WebInstantView) obj);
+                    WebInstantView.Loader.$r8$lambda$SpjkLf17hiKuprBBXrnClaVvkto(WebInstantView.Loader.this, (WebInstantView) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$retryLocal$0(WebInstantView webInstantView) {
-            this.cancelLocal = null;
-            this.gotLocal = true;
-            TLRPC.WebPage webPage = this.localPage;
+        public static /* synthetic */ void $r8$lambda$SpjkLf17hiKuprBBXrnClaVvkto(Loader loader, WebInstantView webInstantView) {
+            loader.cancelLocal = null;
+            loader.gotLocal = true;
+            TLRPC.WebPage webPage = loader.localPage;
             if (webPage != null) {
                 WebInstantView.recycle(webPage);
             }
-            this.localPage = webInstantView.webpage;
-            notifyUpdate();
+            loader.localPage = webInstantView.webpage;
+            loader.notifyUpdate();
         }
 
         public void start(BotWebViewContainer.MyWebView myWebView) {
@@ -1369,7 +1390,7 @@ public class WebInstantView {
             this.cancelLocal = WebInstantView.generate(myWebView, false, new Utilities.Callback() { // from class: org.telegram.ui.web.WebInstantView$Loader$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    WebInstantView.Loader.this.lambda$start$1((WebInstantView) obj);
+                    WebInstantView.Loader.$r8$lambda$f16EGOwjFGaMeyNom7WZRrSDF7A(WebInstantView.Loader.this, (WebInstantView) obj);
                 }
             });
             TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
@@ -1378,59 +1399,57 @@ public class WebInstantView {
             this.reqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getWebPage, new RequestDelegate() { // from class: org.telegram.ui.web.WebInstantView$Loader$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    WebInstantView.Loader.this.lambda$start$3(tLObject, tL_error);
+                    WebInstantView.Loader.$r8$lambda$RYaDXqpoh-U2_yiNxwr4F-7AfdU(WebInstantView.Loader.this, tLObject, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$start$1(WebInstantView webInstantView) {
-            this.cancelLocal = null;
-            this.gotLocal = true;
-            TLRPC.WebPage webPage = this.localPage;
+        public static /* synthetic */ void $r8$lambda$f16EGOwjFGaMeyNom7WZRrSDF7A(Loader loader, WebInstantView webInstantView) {
+            loader.cancelLocal = null;
+            loader.gotLocal = true;
+            TLRPC.WebPage webPage = loader.localPage;
             if (webPage != null) {
                 WebInstantView.recycle(webPage);
             }
-            this.localPage = webInstantView.webpage;
-            notifyUpdate();
+            loader.localPage = webInstantView.webpage;
+            loader.notifyUpdate();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$start$3(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$RYaDXqpoh-U2_yiNxwr4F-7AfdU(final Loader loader, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            loader.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebInstantView$Loader$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WebInstantView.Loader.this.lambda$start$2(tLObject);
+                    WebInstantView.Loader.$r8$lambda$gPWPPB1bsXS4Je2i5aNmTWBgkCs(WebInstantView.Loader.this, tLObject);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$start$2(TLObject tLObject) {
+        public static /* synthetic */ void $r8$lambda$gPWPPB1bsXS4Je2i5aNmTWBgkCs(Loader loader, TLObject tLObject) {
             Runnable runnable;
-            this.gotRemote = true;
+            loader.gotRemote = true;
             if (tLObject instanceof TLRPC.TL_messages_webPage) {
                 TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
-                MessagesController.getInstance(this.currentAccount).putUsers(tL_messages_webPage.users, false);
-                MessagesController.getInstance(this.currentAccount).putChats(tL_messages_webPage.chats, false);
-                this.remotePage = tL_messages_webPage.webpage;
+                MessagesController.getInstance(loader.currentAccount).putUsers(tL_messages_webPage.users, false);
+                MessagesController.getInstance(loader.currentAccount).putChats(tL_messages_webPage.chats, false);
+                loader.remotePage = tL_messages_webPage.webpage;
             } else {
                 if (tLObject instanceof TLRPC.TL_webPage) {
                     TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject;
                     if (tL_webPage.cached_page instanceof TL_iv.TL_page) {
-                        this.remotePage = tL_webPage;
+                        loader.remotePage = tL_webPage;
                     }
                 }
-                this.remotePage = null;
+                loader.remotePage = null;
             }
-            TLRPC.WebPage webPage = this.remotePage;
+            TLRPC.WebPage webPage = loader.remotePage;
             if (webPage != null && webPage.cached_page == null) {
-                this.remotePage = null;
+                loader.remotePage = null;
             }
-            if (!SharedConfig.onlyLocalInstantView && this.remotePage != null && (runnable = this.cancelLocal) != null) {
+            if (!SharedConfig.onlyLocalInstantView && loader.remotePage != null && (runnable = loader.cancelLocal) != null) {
                 runnable.run();
             }
-            notifyUpdate();
+            loader.notifyUpdate();
         }
 
         public boolean isDone() {
@@ -1477,20 +1496,19 @@ public class WebInstantView {
             return new Runnable() { // from class: org.telegram.ui.web.WebInstantView$Loader$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WebInstantView.Loader.this.lambda$listen$4(runnable);
+                    WebInstantView.Loader.this.listeners.remove(runnable);
                 }
             };
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$listen$4(Runnable runnable) {
-            this.listeners.remove(runnable);
-        }
-
         private void notifyUpdate() {
-            Iterator it = this.listeners.iterator();
-            while (it.hasNext()) {
-                ((Runnable) it.next()).run();
+            ArrayList arrayList = this.listeners;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((Runnable) obj).run();
             }
         }
     }

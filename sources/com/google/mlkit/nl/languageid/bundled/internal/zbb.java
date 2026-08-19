@@ -5,7 +5,7 @@ import com.google.mlkit.nl.languageid.LanguageIdentificationOptions;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierCreatorDelegate;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierDelegate;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class zbb implements LanguageIdentifierCreatorDelegate {
     @Override // com.google.mlkit.nl.languageid.internal.LanguageIdentifierCreatorDelegate
     public final LanguageIdentifierDelegate create(Context context, LanguageIdentificationOptions languageIdentificationOptions) {

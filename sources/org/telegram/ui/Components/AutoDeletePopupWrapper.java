@@ -58,25 +58,25 @@ public class AutoDeletePopupWrapper {
         ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_autodelete_1d, LocaleController.getString(R.string.AutoDelete1Day), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AutoDeletePopupWrapper.this.lambda$new$1(callback, view);
+                AutoDeletePopupWrapper.$r8$lambda$pvXNgr2nlHQ6ZurMIDcNrurzPVg(AutoDeletePopupWrapper.this, callback, view);
             }
         });
         ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_autodelete_1w, LocaleController.getString(R.string.AutoDelete7Days), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AutoDeletePopupWrapper.this.lambda$new$2(callback, view);
+                AutoDeletePopupWrapper.$r8$lambda$XPIrhIBafBkpGCDmSHyEjunyD3w(AutoDeletePopupWrapper.this, callback, view);
             }
         });
         ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_autodelete_1m, LocaleController.getString(R.string.AutoDelete1Month), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AutoDeletePopupWrapper.this.lambda$new$3(callback, view);
+                AutoDeletePopupWrapper.$r8$lambda$drjgVSRSxW0zNEfcJpZgdT4fC0E(AutoDeletePopupWrapper.this, callback, view);
             }
         });
         ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_customize, i == 1 ? LocaleController.getString(R.string.AutoDeleteCustom2) : LocaleController.getString(R.string.AutoDeleteCustom), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AutoDeletePopupWrapper.this.lambda$new$5(context, i, resourcesProvider, callback, view);
+                AutoDeletePopupWrapper.$r8$lambda$azFNuKRn9wCUF09yTCrT3UsIzU8(AutoDeletePopupWrapper.this, context, i, resourcesProvider, callback, view);
             }
         });
         ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(this.windowLayout, R.drawable.msg_disable, LocaleController.getString(R.string.AutoDeleteDisable), false, resourcesProvider);
@@ -84,7 +84,7 @@ public class AutoDeletePopupWrapper {
         addItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AutoDeletePopupWrapper.this.lambda$new$6(callback, view);
+                AutoDeletePopupWrapper.$r8$lambda$PZEPY9oFJXFRFrkoPMSMPDIyNmE(AutoDeletePopupWrapper.this, callback, view);
             }
         });
         if (i != 1) {
@@ -113,43 +113,33 @@ public class AutoDeletePopupWrapper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$pvXNgr2nlHQ6ZurMIDcNrurzPVg(AutoDeletePopupWrapper autoDeletePopupWrapper, Callback callback, View view) {
+        autoDeletePopupWrapper.dismiss();
         callback.setAutoDeleteHistory(86400, 70);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$XPIrhIBafBkpGCDmSHyEjunyD3w(AutoDeletePopupWrapper autoDeletePopupWrapper, Callback callback, View view) {
+        autoDeletePopupWrapper.dismiss();
         callback.setAutoDeleteHistory(604800, 70);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$drjgVSRSxW0zNEfcJpZgdT4fC0E(AutoDeletePopupWrapper autoDeletePopupWrapper, Callback callback, View view) {
+        autoDeletePopupWrapper.dismiss();
         callback.setAutoDeleteHistory(2678400, 70);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(Context context, int i, Theme.ResourcesProvider resourcesProvider, final Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$azFNuKRn9wCUF09yTCrT3UsIzU8(AutoDeletePopupWrapper autoDeletePopupWrapper, Context context, int i, Theme.ResourcesProvider resourcesProvider, final Callback callback, View view) {
+        autoDeletePopupWrapper.dismiss();
         AlertsCreator.createAutoDeleteDatePickerDialog(context, i, resourcesProvider, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public final void didSelectDate(boolean z, int i2, int i3) {
-                AutoDeletePopupWrapper.lambda$new$4(AutoDeletePopupWrapper.Callback.this, z, i2, i3);
+                AutoDeletePopupWrapper.Callback.this.setAutoDeleteHistory(i2 * 60, r2 == 0 ? 71 : 70);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(Callback callback, boolean z, int i, int i2) {
-        callback.setAutoDeleteHistory(i * 60, i == 0 ? 71 : 70);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(Callback callback, View view) {
-        dismiss();
+    public static /* synthetic */ void $r8$lambda$PZEPY9oFJXFRFrkoPMSMPDIyNmE(AutoDeletePopupWrapper autoDeletePopupWrapper, Callback callback, View view) {
+        autoDeletePopupWrapper.dismiss();
         callback.setAutoDeleteHistory(0, 71);
     }
 
@@ -158,13 +148,12 @@ public class AutoDeletePopupWrapper {
         this.lastDismissTime = System.currentTimeMillis();
     }
 
-    /* renamed from: updateItems, reason: merged with bridge method [inline-methods] */
-    public void lambda$updateItems$7(final int i) {
+    public void updateItems(final int i) {
         if (System.currentTimeMillis() - this.lastDismissTime < 200) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AutoDeletePopupWrapper.this.lambda$updateItems$7(i);
+                    AutoDeletePopupWrapper.this.updateItems(i);
                 }
             });
         } else if (i == 0) {
@@ -184,14 +173,9 @@ public class AutoDeletePopupWrapper {
         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceSingleLink(LocaleController.getString(R.string.AutoDeletePopupDescription2), i, new Runnable() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AutoDeletePopupWrapper.this.lambda$allowExtendedHint$8();
+                AutoDeletePopupWrapper.this.callback.showGlobalAutoDeleteScreen();
             }
         }));
         this.textView.setText(spannableStringBuilder);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$allowExtendedHint$8() {
-        this.callback.showGlobalAutoDeleteScreen();
     }
 }

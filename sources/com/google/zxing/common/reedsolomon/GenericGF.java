@@ -2,7 +2,7 @@ package com.google.zxing.common.reedsolomon;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class GenericGF {
     public static final GenericGF AZTEC_DATA_6;
     public static final GenericGF AZTEC_DATA_8;

@@ -1,9 +1,9 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-final class o {
-    int a;
-    int b;
-    l[] c;
-    o d;
+public final class o {
+    public int a;
+    public int b;
+    public l[] c;
+    public o d;
 }

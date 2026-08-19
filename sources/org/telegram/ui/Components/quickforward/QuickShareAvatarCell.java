@@ -273,7 +273,7 @@ class QuickShareAvatarCell implements ValueAnimator.AnimatorUpdateListener {
                 }
                 int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp((QuickShareSelectorDrawable.Sizes.TEXT_PADDING_INTERNAL * 2) + (QuickShareSelectorDrawable.Sizes.TEXT_PADDING_EXTERNAL * 2));
                 TextPaint textPaint = new TextPaint(themedPaint);
-                this.textLayout = new StaticLayout(TextUtils.ellipsize(str2, textPaint, dp, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r6, 0, r6.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                this.textLayout = new StaticLayout(TextUtils.ellipsize(str2, textPaint, dp, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r4, 0, r4.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 return;
             }
             str = user != null ? ContactsController.formatName(user.first_name, user.last_name) : "";

@@ -18,34 +18,36 @@ public abstract class zzaa {
     }
 
     private static boolean zzf(Context context) {
+        boolean isUserUnlocked;
         Object systemService;
         boolean z = zzdd;
-        if (!z) {
-            UserManager userManager = zzdc;
-            if (userManager == null) {
-                synchronized (zzaa.class) {
-                    try {
-                        userManager = zzdc;
-                        if (userManager == null) {
-                            systemService = context.getSystemService((Class<Object>) UserManager.class);
-                            UserManager userManager2 = (UserManager) systemService;
-                            zzdc = userManager2;
-                            if (userManager2 == null) {
-                                zzdd = true;
-                                return true;
-                            }
-                            userManager = userManager2;
+        if (z) {
+            return z;
+        }
+        UserManager userManager = zzdc;
+        if (userManager == null) {
+            synchronized (zzaa.class) {
+                try {
+                    userManager = zzdc;
+                    if (userManager == null) {
+                        systemService = context.getSystemService((Class<Object>) UserManager.class);
+                        UserManager userManager2 = (UserManager) systemService;
+                        zzdc = userManager2;
+                        if (userManager2 == null) {
+                            zzdd = true;
+                            return true;
                         }
-                    } finally {
+                        userManager = userManager2;
                     }
+                } finally {
                 }
             }
-            z = userManager.isUserUnlocked();
-            zzdd = z;
-            if (z) {
-                zzdc = null;
-            }
         }
-        return z;
+        isUserUnlocked = userManager.isUserUnlocked();
+        zzdd = isUserUnlocked;
+        if (isUserUnlocked) {
+            zzdc = null;
+        }
+        return isUserUnlocked;
     }
 }

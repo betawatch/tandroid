@@ -12,6 +12,7 @@ import androidx.core.app.NotificationCompat;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.CommonNotificationBuilder;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -39,12 +40,18 @@ class DisplayNotification {
         }
         int myPid = Process.myPid();
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) this.context.getSystemService("activity")).getRunningAppProcesses();
-        if (runningAppProcesses == null) {
-            return false;
-        }
-        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
-            if (runningAppProcessInfo.pid == myPid) {
-                return runningAppProcessInfo.importance == 100;
+        if (runningAppProcesses != null) {
+            Iterator<ActivityManager.RunningAppProcessInfo> it = runningAppProcesses.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                ActivityManager.RunningAppProcessInfo next = it.next();
+                if (next.pid == myPid) {
+                    if (next.importance == 100) {
+                        return true;
+                    }
+                }
             }
         }
         return false;

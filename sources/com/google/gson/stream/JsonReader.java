@@ -11,7 +11,7 @@ import java.io.Reader;
 import java.util.Arrays;
 
 /* loaded from: classes.dex */
-public class JsonReader implements Closeable {
+public class JsonReader implements Closeable, AutoCloseable {
     private final Reader in;
     private int[] pathIndices;
     private String[] pathNames;
@@ -331,78 +331,78 @@ public class JsonReader implements Closeable {
         return i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0095, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0094, code lost:
     
-        if (r9 != 2) goto L68;
+        if (r9 != 2) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0097, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0096, code lost:
     
-        if (r10 == false) goto L68;
+        if (r10 == false) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x009d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x009c, code lost:
     
-        if (r11 != Long.MIN_VALUE) goto L60;
+        if (r11 != Long.MIN_VALUE) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x009f, code lost:
-    
-        if (r13 == false) goto L68;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x00a5, code lost:
-    
-        if (r11 != 0) goto L63;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x00a7, code lost:
-    
-        if (r13 != false) goto L68;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x009e, code lost:
     
         if (r13 == false) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x00a2, code lost:
+    
+        if (r11 != 0) goto L60;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x00a4, code lost:
+    
+        if (r13 != false) goto L65;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x00a6, code lost:
+    
+        if (r13 == false) goto L62;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00a9, code lost:
     
         r11 = -r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x00aa, code lost:
     
-        r18.peekedLong = r11;
-        r18.pos += r8;
-        r18.peeked = 15;
+        r19.peekedLong = r11;
+        r19.pos += r8;
+        r19.peeked = 15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x00b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x00b5, code lost:
     
         return 15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00b6, code lost:
     
-        if (r9 == 2) goto L76;
+        if (r9 == 2) goto L72;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00b9, code lost:
     
-        if (r9 == 4) goto L76;
+        if (r9 == 4) goto L72;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00bc, code lost:
     
-        if (r9 != 7) goto L74;
+        if (r9 != 7) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00bf, code lost:
     
-        return 0;
+        return r18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x00c0, code lost:
     
-        r18.peekedNumberLength = r8;
-        r18.peeked = 16;
+        r19.peekedNumberLength = r8;
+        r19.peeked = 16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x00ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00c6, code lost:
     
         return 16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0093, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0092, code lost:
     
-        if (isLiteral(r14) != false) goto L78;
+        if (isLiteral(r14) != false) goto L74;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x00cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x00c7, code lost:
     
         return 0;
      */
@@ -410,58 +410,45 @@ public class JsonReader implements Closeable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private int peekNumber() {
+        int i;
         char[] cArr = this.buffer;
-        int i = this.pos;
-        int i2 = this.limit;
-        int i3 = 0;
+        int i2 = this.pos;
+        int i3 = this.limit;
         int i4 = 0;
+        int i5 = 0;
         char c = 0;
         boolean z = true;
         long j = 0;
         boolean z2 = false;
         while (true) {
-            if (i + i4 == i2) {
-                if (i4 == cArr.length) {
-                    return i3;
+            if (i2 + i5 == i3) {
+                if (i5 == cArr.length) {
+                    return i4;
                 }
-                if (!fillBuffer(i4 + 1)) {
+                if (!fillBuffer(i5 + 1)) {
+                    i = 0;
                     break;
                 }
-                i = this.pos;
-                i2 = this.limit;
+                i2 = this.pos;
+                i3 = this.limit;
             }
-            char c2 = cArr[i + i4];
+            char c2 = cArr[i2 + i5];
+            i = 0;
             if (c2 != '+') {
                 if (c2 == 'E' || c2 == 'e') {
-                    i3 = 0;
                     if (c != 2 && c != 4) {
                         return 0;
                     }
                     c = 5;
-                } else if (c2 == '-') {
-                    i3 = 0;
-                    if (c == 0) {
-                        c = 1;
-                        z2 = true;
-                    } else if (c != 5) {
-                        return 0;
-                    }
-                } else if (c2 == '.') {
-                    i3 = 0;
-                    if (c != 2) {
-                        return 0;
-                    }
-                    c = 3;
-                } else {
-                    if (c2 < '0' || c2 > '9') {
-                        break;
-                    }
-                    if (c == 1 || c == 0) {
-                        j = -(c2 - '0');
-                        i3 = 0;
-                        c = 2;
-                    } else {
-                        if (c == 2) {
+                } else if (c2 != '-') {
+                    if (c2 != '.') {
+                        if (c2 < '0' || c2 > '9') {
+                            break;
+                        }
+                        if (c == 1 || c == 0) {
+                            j = -(c2 - '0');
+                            c = 2;
+                        } else if (c == 2) {
                             if (j == 0) {
                                 return 0;
                             }
@@ -469,24 +456,30 @@ public class JsonReader implements Closeable {
                             z &= j > -922337203685477580L || (j == -922337203685477580L && j2 < j);
                             j = j2;
                         } else if (c == 3) {
-                            i3 = 0;
                             c = 4;
                         } else if (c == 5 || c == 6) {
-                            i3 = 0;
                             c = 7;
                         }
-                        i3 = 0;
+                    } else {
+                        if (c != 2) {
+                            return 0;
+                        }
+                        c = 3;
                     }
-                }
-                i4++;
-            } else {
-                i3 = 0;
-                if (c != 5) {
+                } else if (c == 0) {
+                    c = 1;
+                    z2 = true;
+                } else if (c != 5) {
                     return 0;
                 }
+                i5++;
+                i4 = 0;
+            } else if (c != 5) {
+                return 0;
             }
             c = 6;
-            i4++;
+            i5++;
+            i4 = 0;
         }
     }
 
@@ -1093,6 +1086,7 @@ public class JsonReader implements Closeable {
     }
 
     private int nextNonWhitespace(boolean z) {
+        char c;
         char[] cArr = this.buffer;
         int i = this.pos;
         int i2 = this.limit;
@@ -1109,7 +1103,7 @@ public class JsonReader implements Closeable {
                 i2 = this.limit;
             }
             int i3 = i + 1;
-            char c = cArr[i];
+            c = cArr[i];
             if (c == '\n') {
                 this.lineNumber++;
                 this.lineStart = i3;
@@ -1121,7 +1115,7 @@ public class JsonReader implements Closeable {
                         boolean fillBuffer = fillBuffer(2);
                         this.pos++;
                         if (!fillBuffer) {
-                            return c;
+                            break;
                         }
                     }
                     checkLenient();
@@ -1136,7 +1130,7 @@ public class JsonReader implements Closeable {
                         i2 = this.limit;
                     } else {
                         if (c2 != '/') {
-                            return c;
+                            break;
                         }
                         this.pos = i4 + 1;
                         skipToEndOfLine();
@@ -1156,6 +1150,7 @@ public class JsonReader implements Closeable {
             }
             i = i3;
         }
+        return c;
     }
 
     private void checkLenient() {

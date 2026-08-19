@@ -131,7 +131,7 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FeedRemoteViewsFactory$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FeedRemoteViewsFactory.this.lambda$onDataSetChanged$0();
+                FeedRemoteViewsFactory.$r8$lambda$xDSQDzYXaikYM_m7VQOCMfhrlVE(FeedRemoteViewsFactory.this);
             }
         });
         try {
@@ -141,13 +141,12 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onDataSetChanged$0() {
-        this.accountInstance.getNotificationCenter().addObserver(this, NotificationCenter.messagesDidLoad);
-        if (this.classGuid == 0) {
-            this.classGuid = ConnectionsManager.generateClassGuid();
+    public static /* synthetic */ void $r8$lambda$xDSQDzYXaikYM_m7VQOCMfhrlVE(FeedRemoteViewsFactory feedRemoteViewsFactory) {
+        feedRemoteViewsFactory.accountInstance.getNotificationCenter().addObserver(feedRemoteViewsFactory, NotificationCenter.messagesDidLoad);
+        if (feedRemoteViewsFactory.classGuid == 0) {
+            feedRemoteViewsFactory.classGuid = ConnectionsManager.generateClassGuid();
         }
-        this.accountInstance.getMessagesController().loadMessages(this.dialogId, 0L, false, 20, 0, 0, true, 0, this.classGuid, 0, 0, 0, 0L, 0, 1, false);
+        feedRemoteViewsFactory.accountInstance.getMessagesController().loadMessages(feedRemoteViewsFactory.dialogId, 0L, false, 20, 0, 0, true, 0, feedRemoteViewsFactory.classGuid, 0, 0, 0, 0L, 0, 1, false);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

@@ -1,25 +1,47 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
 import java.util.Arrays;
-import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-final class F2 extends Z {
-    @Override // j$.util.stream.b
-    public final m2 Q(int i, m2 m2Var) {
-        Objects.requireNonNull(m2Var);
-        return a3.SORTED.o(i) ? m2Var : a3.SIZED.o(i) ? new K2(m2Var) : new C2(m2Var);
+public final class F2 extends t2 {
+    public Object[] d;
+    public int e;
+
+    @Override // j$.util.stream.b2, j$.util.stream.f2
+    public final void y(long j) {
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
+        }
+        this.d = new Object[(int) j];
     }
 
-    @Override // j$.util.stream.b
-    public final I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        if (a3.SORTED.o(bVar.J())) {
-            return bVar.B(spliterator, false, intFunction);
+    @Override // j$.util.stream.b2, j$.util.stream.f2
+    public final void x() {
+        int i = 0;
+        Arrays.sort(this.d, 0, this.e, this.b);
+        long j = this.e;
+        f2 f2Var = this.a;
+        f2Var.y(j);
+        if (!this.c) {
+            while (i < this.e) {
+                f2Var.accept((f2) this.d[i]);
+                i++;
+            }
+        } else {
+            while (i < this.e && !f2Var.C()) {
+                f2Var.accept((f2) this.d[i]);
+                i++;
+            }
         }
-        int[] iArr = (int[]) ((E0) bVar.B(spliterator, true, intFunction)).d();
-        Arrays.sort(iArr);
-        return new e1(iArr);
+        f2Var.x();
+        this.d = null;
+    }
+
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        Object[] objArr = this.d;
+        int i = this.e;
+        this.e = i + 1;
+        objArr[i] = obj;
     }
 }

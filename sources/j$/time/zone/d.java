@@ -7,7 +7,7 @@ public final class d {
     public static final d STANDARD;
     public static final d UTC;
     public static final d WALL;
-    private static final /* synthetic */ d[] a;
+    public static final /* synthetic */ d[] a;
 
     public static d valueOf(String str) {
         return (d) Enum.valueOf(d.class, str);

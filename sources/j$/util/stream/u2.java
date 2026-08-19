@@ -1,76 +1,58 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.IntFunction;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class u2 extends z {
-    final /* synthetic */ long m;
-    final /* synthetic */ long n;
+public final class u2 extends q2 {
+    public I2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    u2(A a, int i, long j, long j2) {
-        super(a, i, 0);
-        this.m = j;
-        this.n = j2;
-    }
-
-    @Override // j$.util.stream.b
-    final Spliterator O(b bVar, Spliterator spliterator) {
-        long j;
-        long j2;
-        long F = bVar.F(spliterator);
-        long j3 = this.n;
-        if (F > 0 && spliterator.hasCharacteristics(16384)) {
-            j$.util.W w = (j$.util.W) bVar.W(spliterator);
-            long j4 = this.m;
-            return new q3(w, j4, w0.B(j4, j3));
+    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.I2, j$.util.stream.O2] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.O2] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.O2] */
+    @Override // j$.util.stream.Y1, j$.util.stream.f2
+    public final void y(long j) {
+        ?? r0;
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (a3.ORDERED.o(bVar.J())) {
-            return ((I0) new w2(this, bVar, spliterator, new b0(15), this.m, this.n).invoke()).spliterator();
-        }
-        j$.util.W w2 = (j$.util.W) bVar.W(spliterator);
-        long j5 = this.m;
-        if (j5 <= F) {
-            long j6 = F - j5;
-            if (j3 >= 0) {
-                j6 = Math.min(j3, j6);
-            }
-            j = j6;
-            j2 = 0;
+        if (j <= 0) {
+            r0 = new O2();
         } else {
-            j = j3;
-            j2 = j5;
+            r0 = new I2((int) j);
         }
-        return new w3(w2, j2, j);
+        this.c = r0;
     }
 
-    @Override // j$.util.stream.b
-    final I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        long j;
-        long j2;
-        long F = bVar.F(spliterator);
-        if (F > 0 && spliterator.hasCharacteristics(16384)) {
-            return w0.F(bVar, w0.C(bVar.I(), spliterator, this.m, this.n), true);
-        }
-        if (!a3.ORDERED.o(bVar.J())) {
-            j$.util.W w = (j$.util.W) bVar.W(spliterator);
-            long j3 = this.m;
-            long j4 = this.n;
-            if (j3 <= F) {
-                j = j4 >= 0 ? Math.min(j4, F - j3) : F - j3;
-                j2 = 0;
-            } else {
-                j = j4;
-                j2 = j3;
+    @Override // j$.util.stream.Y1, j$.util.stream.f2
+    public final void x() {
+        double[] dArr = (double[]) this.c.d();
+        Arrays.sort(dArr);
+        long length = dArr.length;
+        f2 f2Var = this.a;
+        f2Var.y(length);
+        int i = 0;
+        if (!this.b) {
+            int length2 = dArr.length;
+            while (i < length2) {
+                f2Var.accept(dArr[i]);
+                i++;
             }
-            return w0.F(this, new w3(w, j2, j), true);
+        } else {
+            int length3 = dArr.length;
+            while (i < length3) {
+                double d = dArr[i];
+                if (f2Var.C()) {
+                    break;
+                }
+                f2Var.accept(d);
+                i++;
+            }
         }
-        return (I0) new w2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
+        f2Var.x();
     }
 
-    @Override // j$.util.stream.b
-    final m2 Q(int i, m2 m2Var) {
-        return new t2(this, m2Var);
+    @Override // j$.util.stream.c2, j$.util.stream.f2
+    public final void accept(double d) {
+        this.c.accept(d);
     }
 }

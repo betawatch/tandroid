@@ -37,14 +37,12 @@ final class zzax extends SuspendLambda implements Function2 {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            zzaw zzawVar = new zzaw((zzhk) this.zzc, this.zzb, null);
-            this.zza = 1;
-            obj = CoroutineScopeKt.coroutineScope(zzawVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
+        if (i != 0) {
+            return obj;
         }
-        return obj;
+        zzaw zzawVar = new zzaw((zzhk) this.zzc, this.zzb, null);
+        this.zza = 1;
+        Object coroutineScope = CoroutineScopeKt.coroutineScope(zzawVar, this);
+        return coroutineScope == coroutine_suspended ? coroutine_suspended : coroutineScope;
     }
 }

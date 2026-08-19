@@ -58,14 +58,13 @@ public class BusinessLinksEmptyView extends LinearLayout {
         this.linkView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Business.BusinessLinksEmptyView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BusinessLinksEmptyView.lambda$new$0(TL_account.TL_businessChatLink.this, baseFragment, view);
+                BusinessLinksEmptyView.$r8$lambda$pzWkOivmibCKpFrm3b5_o8bc3JQ(TL_account.TL_businessChatLink.this, baseFragment, view);
             }
         });
         addView(this.linkView, LayoutHelper.createLinear(-2, -2, 49, 17, 0, 17, 17));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(TL_account.TL_businessChatLink tL_businessChatLink, BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$pzWkOivmibCKpFrm3b5_o8bc3JQ(TL_account.TL_businessChatLink tL_businessChatLink, BaseFragment baseFragment, View view) {
         AndroidUtilities.addToClipboard(tL_businessChatLink.link);
         BulletinFactory.of(baseFragment).createCopyLinkBulletin().show();
     }

@@ -2,7 +2,6 @@ package com.google.android.recaptcha.internal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import kotlin.Result;
 import kotlin.ResultKt;
@@ -66,10 +65,15 @@ final class zzaf extends SuspendLambda implements Function2 {
                     arrayList3.add(obj2);
                 }
             }
-            Iterator it = arrayList3.iterator();
-            while (it.hasNext()) {
-                launch$default = BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new zzae(this.zzd, (zzar) it.next(), str, arrayList, null), 3, null);
+            int size = arrayList3.size();
+            int i2 = 0;
+            while (i2 < size) {
+                int i3 = i2 + 1;
+                launch$default = BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new zzae(this.zzd, (zzar) arrayList3.get(i2), str, arrayList, null), 3, null);
                 arrayList2.add(launch$default);
+                arrayList = arrayList;
+                i2 = i3;
+                str = str;
             }
             Job[] jobArr = (Job[]) arrayList2.toArray(new Job[0]);
             Job[] jobArr2 = (Job[]) Arrays.copyOf(jobArr, jobArr.length);

@@ -33,17 +33,17 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
             if (Double.isNaN(this.zzc)) {
                 this.zzc = d;
                 this.zzd = d;
-            } else {
-                double d2 = this.zzc;
-                double d3 = this.zzd;
-                if (d2 > d3 ? !(d2 <= d || d <= d3) : !(d2 <= d && d <= d3)) {
-                    Parcelable.Creator<LatLngBounds> creator = LatLngBounds.CREATOR;
-                    if (((d2 - d) + 360.0d) % 360.0d < ((d - d3) + 360.0d) % 360.0d) {
-                        this.zzc = d;
-                    } else {
-                        this.zzd = d;
-                    }
+                return this;
+            }
+            double d2 = this.zzc;
+            double d3 = this.zzd;
+            if (d2 > d3 ? !(d2 <= d || d <= d3) : !(d2 <= d && d <= d3)) {
+                Parcelable.Creator<LatLngBounds> creator = LatLngBounds.CREATOR;
+                if (((d2 - d) + 360.0d) % 360.0d < ((d - d3) + 360.0d) % 360.0d) {
+                    this.zzc = d;
+                    return this;
                 }
+                this.zzd = d;
             }
             return this;
         }

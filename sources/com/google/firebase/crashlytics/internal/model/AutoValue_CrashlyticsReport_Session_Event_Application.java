@@ -71,11 +71,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application extends Crashl
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Application)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Event.Application) {
+            CrashlyticsReport.Session.Event.Application application = (CrashlyticsReport.Session.Event.Application) obj;
+            if (this.execution.equals(application.getExecution()) && ((list = this.customAttributes) != null ? list.equals(application.getCustomAttributes()) : application.getCustomAttributes() == null) && ((list2 = this.internalKeys) != null ? list2.equals(application.getInternalKeys()) : application.getInternalKeys() == null) && ((bool = this.background) != null ? bool.equals(application.getBackground()) : application.getBackground() == null) && ((processDetails = this.currentProcessDetails) != null ? processDetails.equals(application.getCurrentProcessDetails()) : application.getCurrentProcessDetails() == null) && ((list3 = this.appProcessDetails) != null ? list3.equals(application.getAppProcessDetails()) : application.getAppProcessDetails() == null) && this.uiOrientation == application.getUiOrientation()) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Event.Application application = (CrashlyticsReport.Session.Event.Application) obj;
-        return this.execution.equals(application.getExecution()) && ((list = this.customAttributes) != null ? list.equals(application.getCustomAttributes()) : application.getCustomAttributes() == null) && ((list2 = this.internalKeys) != null ? list2.equals(application.getInternalKeys()) : application.getInternalKeys() == null) && ((bool = this.background) != null ? bool.equals(application.getBackground()) : application.getBackground() == null) && ((processDetails = this.currentProcessDetails) != null ? processDetails.equals(application.getCurrentProcessDetails()) : application.getCurrentProcessDetails() == null) && ((list3 = this.appProcessDetails) != null ? list3.equals(application.getAppProcessDetails()) : application.getAppProcessDetails() == null) && this.uiOrientation == application.getUiOrientation();
+        return false;
     }
 
     public int hashCode() {

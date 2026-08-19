@@ -4,7 +4,6 @@ import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
@@ -39,23 +38,17 @@ public class ChannelBoostsController {
         this.connectionsManager.sendRequest(tL_premium_getBoostsStatus, new RequestDelegate() { // from class: org.telegram.messenger.ChannelBoostsController$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ChannelBoostsController.lambda$getBoostsStats$1(Consumer.this, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChannelBoostsController$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChannelBoostsController.$r8$lambda$4kR6chzkmjvJRhfUBkGHu8w7IOM(TLObject.this, r2, tL_error);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getBoostsStats$1(final Consumer consumer, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChannelBoostsController$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChannelBoostsController.lambda$getBoostsStats$0(TLObject.this, consumer, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getBoostsStats$0(TLObject tLObject, Consumer consumer, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$4kR6chzkmjvJRhfUBkGHu8w7IOM(TLObject tLObject, Consumer consumer, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
             consumer.accept((TL_stories.TL_premium_boostsStatus) tLObject);
             return;
@@ -91,25 +84,23 @@ public class ChannelBoostsController {
         BoostRepository.getMyBoosts(new Utilities.Callback() { // from class: org.telegram.messenger.ChannelBoostsController$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ChannelBoostsController.lambda$userCanBoostChannel$2(ChannelBoostsController.CanApplyBoost.this, tL_premium_boostsStatus, consumer, (TL_stories.TL_premium_myBoosts) obj);
+                ChannelBoostsController.$r8$lambda$QUjpU3-jxTyAfx8X-RNTCZyEH0Y(ChannelBoostsController.CanApplyBoost.this, tL_premium_boostsStatus, consumer, (TL_stories.TL_premium_myBoosts) obj);
             }
         }, new Utilities.Callback() { // from class: org.telegram.messenger.ChannelBoostsController$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ChannelBoostsController.lambda$userCanBoostChannel$3(ChannelBoostsController.CanApplyBoost.this, consumer, (TLRPC.TL_error) obj);
+                ChannelBoostsController.$r8$lambda$oW_gfsAhJrrtLw4E3Qd76I9WHRs(ChannelBoostsController.CanApplyBoost.this, consumer, (TLRPC.TL_error) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$userCanBoostChannel$2(CanApplyBoost canApplyBoost, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, Consumer consumer, TL_stories.TL_premium_myBoosts tL_premium_myBoosts) {
+    public static /* synthetic */ void $r8$lambda$QUjpU3-jxTyAfx8X-RNTCZyEH0Y(CanApplyBoost canApplyBoost, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, Consumer consumer, TL_stories.TL_premium_myBoosts tL_premium_myBoosts) {
         canApplyBoost.isMaxLvl = tL_premium_boostsStatus.next_level_boosts <= 0;
         canApplyBoost.setMyBoosts(tL_premium_myBoosts);
         consumer.accept(canApplyBoost);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$userCanBoostChannel$3(CanApplyBoost canApplyBoost, Consumer consumer, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$oW_gfsAhJrrtLw4E3Qd76I9WHRs(CanApplyBoost canApplyBoost, Consumer consumer, TLRPC.TL_error tL_error) {
         if (tL_error.text.startsWith("FLOOD_WAIT")) {
             canApplyBoost.floodWait = Utilities.parseInt((CharSequence) tL_error.text).intValue();
         } else if (tL_error.text.startsWith("BOOSTS_EMPTY")) {
@@ -167,47 +158,59 @@ public class ChannelBoostsController {
             if (tL_premium_myBoosts.my_boosts.isEmpty()) {
                 this.empty = true;
             }
-            Iterator<TL_stories.TL_myBoost> it = tL_premium_myBoosts.my_boosts.iterator();
-            while (it.hasNext()) {
-                if (this.currentDialogId == DialogObject.getPeerDialogId(it.next().peer)) {
+            ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                TL_stories.TL_myBoost tL_myBoost = arrayList.get(i);
+                i++;
+                if (this.currentDialogId == DialogObject.getPeerDialogId(tL_myBoost.peer)) {
                     this.boostCount++;
                 }
             }
             if (this.boostCount > 0) {
                 this.alreadyActive = true;
             }
-            Iterator<TL_stories.TL_myBoost> it2 = tL_premium_myBoosts.my_boosts.iterator();
+            ArrayList<TL_stories.TL_myBoost> arrayList2 = tL_premium_myBoosts.my_boosts;
+            int size2 = arrayList2.size();
+            int i2 = 0;
             while (true) {
-                if (!it2.hasNext()) {
+                if (i2 >= size2) {
                     break;
                 }
-                TL_stories.TL_myBoost next = it2.next();
-                if (next.peer == null) {
-                    this.slot = next.slot;
+                TL_stories.TL_myBoost tL_myBoost2 = arrayList2.get(i2);
+                i2++;
+                TL_stories.TL_myBoost tL_myBoost3 = tL_myBoost2;
+                if (tL_myBoost3.peer == null) {
+                    this.slot = tL_myBoost3.slot;
                     break;
                 }
             }
             if (this.slot == 0) {
-                ArrayList arrayList = new ArrayList();
-                Iterator<TL_stories.TL_myBoost> it3 = tL_premium_myBoosts.my_boosts.iterator();
-                while (it3.hasNext()) {
-                    TL_stories.TL_myBoost next2 = it3.next();
-                    TLRPC.Peer peer = next2.peer;
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList<TL_stories.TL_myBoost> arrayList4 = tL_premium_myBoosts.my_boosts;
+                int size3 = arrayList4.size();
+                int i3 = 0;
+                while (i3 < size3) {
+                    TL_stories.TL_myBoost tL_myBoost4 = arrayList4.get(i3);
+                    i3++;
+                    TL_stories.TL_myBoost tL_myBoost5 = tL_myBoost4;
+                    TLRPC.Peer peer = tL_myBoost5.peer;
                     if (peer != null && DialogObject.getPeerDialogId(peer) != (-this.currentChat.id)) {
-                        arrayList.add(next2);
+                        arrayList3.add(tL_myBoost5);
                     }
                 }
-                if (arrayList.size() == 1 && ((TL_stories.TL_myBoost) arrayList.get(0)).cooldown_until_date == 0) {
-                    TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) arrayList.get(0);
-                    this.replaceDialogId = DialogObject.getPeerDialogId(tL_myBoost.peer);
-                    this.slot = tL_myBoost.slot;
+                if (arrayList3.size() == 1 && ((TL_stories.TL_myBoost) arrayList3.get(0)).cooldown_until_date == 0) {
+                    TL_stories.TL_myBoost tL_myBoost6 = (TL_stories.TL_myBoost) arrayList3.get(0);
+                    this.replaceDialogId = DialogObject.getPeerDialogId(tL_myBoost6.peer);
+                    this.slot = tL_myBoost6.slot;
                     this.canApply = true;
-                } else if (arrayList.size() >= 1) {
+                } else if (arrayList3.size() >= 1) {
                     this.needSelector = true;
                     if (!BoostRepository.isMultiBoostsAvailable()) {
-                        TL_stories.TL_myBoost tL_myBoost2 = (TL_stories.TL_myBoost) arrayList.get(0);
-                        this.replaceDialogId = DialogObject.getPeerDialogId(tL_myBoost2.peer);
-                        this.slot = tL_myBoost2.slot;
+                        TL_stories.TL_myBoost tL_myBoost7 = (TL_stories.TL_myBoost) arrayList3.get(0);
+                        this.replaceDialogId = DialogObject.getPeerDialogId(tL_myBoost7.peer);
+                        this.slot = tL_myBoost7.slot;
                     }
                     this.canApply = true;
                 } else {

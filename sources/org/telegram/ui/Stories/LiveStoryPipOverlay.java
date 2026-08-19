@@ -57,7 +57,7 @@ import org.telegram.ui.Stories.LiveStoryPipOverlay;
 import org.telegram.ui.Stories.StoryViewer;
 import org.telegram.ui.Stories.recorder.LivePlayerView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LiveStoryPipOverlay implements NotificationCenter.NotificationCenterDelegate, IPipSourceDelegate {
     private static final FloatPropertyCompat PIP_X_PROPERTY = new SimpleFloatPropertyCompat("pipX", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda0
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter
@@ -69,7 +69,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            LiveStoryPipOverlay.lambda$static$1((LiveStoryPipOverlay) obj, f);
+            LiveStoryPipOverlay.$r8$lambda$BeLbMy9PT9RMFco8Tcgj4xFCxUo((LiveStoryPipOverlay) obj, f);
         }
     });
     private static final FloatPropertyCompat PIP_Y_PROPERTY = new SimpleFloatPropertyCompat("pipY", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda2
@@ -82,7 +82,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda3
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            LiveStoryPipOverlay.lambda$static$3((LiveStoryPipOverlay) obj, f);
+            LiveStoryPipOverlay.$r8$lambda$RtxvIMOP4pyBZ-hC7EFpjUQ_GaU((LiveStoryPipOverlay) obj, f);
         }
     });
     private static LiveStoryPipOverlay instance = new LiveStoryPipOverlay();
@@ -124,7 +124,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
     private Runnable dismissControlsCallback = new Runnable() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda5
         @Override // java.lang.Runnable
         public final void run() {
-            LiveStoryPipOverlay.this.lambda$new$4();
+            LiveStoryPipOverlay.$r8$lambda$7CEACTYbmJ1Tx5mUSnFusgeid4I(LiveStoryPipOverlay.this);
         }
     };
 
@@ -143,27 +143,24 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
         IPipSourceDelegate.-CC.$default$pipRenderForeground(this, canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$1(LiveStoryPipOverlay liveStoryPipOverlay, float f) {
+    public static /* synthetic */ void $r8$lambda$BeLbMy9PT9RMFco8Tcgj4xFCxUo(LiveStoryPipOverlay liveStoryPipOverlay, float f) {
         WindowManager.LayoutParams layoutParams = liveStoryPipOverlay.windowLayoutParams;
         liveStoryPipOverlay.pipX = f;
         layoutParams.x = (int) f;
         AndroidUtilities.updateViewLayout(liveStoryPipOverlay.windowManager, liveStoryPipOverlay.contentView, layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$3(LiveStoryPipOverlay liveStoryPipOverlay, float f) {
+    public static /* synthetic */ void $r8$lambda$RtxvIMOP4pyBZ-hC7EFpjUQ_GaU(LiveStoryPipOverlay liveStoryPipOverlay, float f) {
         WindowManager.LayoutParams layoutParams = liveStoryPipOverlay.windowLayoutParams;
         liveStoryPipOverlay.pipY = f;
         layoutParams.y = (int) f;
         AndroidUtilities.updateViewLayout(liveStoryPipOverlay.windowManager, liveStoryPipOverlay.contentView, layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4() {
-        this.isShowingControls = false;
-        toggleControls(false);
-        this.postedDismissControls = false;
+    public static /* synthetic */ void $r8$lambda$7CEACTYbmJ1Tx5mUSnFusgeid4I(LiveStoryPipOverlay liveStoryPipOverlay) {
+        liveStoryPipOverlay.isShowingControls = false;
+        liveStoryPipOverlay.toggleControls(false);
+        liveStoryPipOverlay.postedDismissControls = false;
     }
 
     public static boolean isVisible() {
@@ -224,7 +221,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
         this.scaleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                LiveStoryPipOverlay.this.lambda$toggleControls$5(valueAnimator);
+                LiveStoryPipOverlay.$r8$lambda$m6IITDeULl1sXDvAcngCBB3mQ5w(LiveStoryPipOverlay.this, valueAnimator);
             }
         });
         this.scaleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay.1
@@ -236,9 +233,9 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
         this.scaleAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$toggleControls$5(ValueAnimator valueAnimator) {
-        this.controlsView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public static /* synthetic */ void $r8$lambda$m6IITDeULl1sXDvAcngCBB3mQ5w(LiveStoryPipOverlay liveStoryPipOverlay, ValueAnimator valueAnimator) {
+        liveStoryPipOverlay.getClass();
+        liveStoryPipOverlay.controlsView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     public static void dismiss() {
@@ -255,7 +252,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LiveStoryPipOverlay.lambda$dismissInternal$6();
+                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
                 }
             }, 100L);
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.liveStoryUpdated);
@@ -293,11 +290,6 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
                 this.pipSource = null;
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dismissInternal$6() {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
     }
 
     public static void show(Activity activity, LivePlayer livePlayer) {
@@ -545,7 +537,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                LiveStoryPipOverlay.lambda$showInternal$8(LivePlayer.this, context, view3);
+                LiveStoryPipOverlay.$r8$lambda$PBVFdkmNe5S17gwEYRqgBe9i65k(LivePlayer.this, context, view3);
             }
         });
         this.controlsView.addView(imageView2, LayoutHelper.createFrame(38, f, 5, 0.0f, f2, 48, 0.0f));
@@ -585,7 +577,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
         });
         animatorSet.start();
         bindTextureView();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
         PipSource pipSource = this.pipSource;
         if (pipSource != null) {
             pipSource.destroy();
@@ -610,7 +602,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LiveStoryPipOverlay.3.this.lambda$onScale$0();
+                    LiveStoryPipOverlay.3.$r8$lambda$eBtSak_pLET229Wy8m7oVg5LkHs(LiveStoryPipOverlay.3.this);
                 }
             });
             ((SpringAnimation) LiveStoryPipOverlay.this.pipXSpring.setStartValue(LiveStoryPipOverlay.this.pipX)).getSpring().setFinalPosition(scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - LiveStoryPipOverlay.this.pipWidth) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f));
@@ -625,8 +617,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onScale$0() {
+        public static /* synthetic */ void $r8$lambda$eBtSak_pLET229Wy8m7oVg5LkHs(3 r1) {
             LiveStoryPipOverlay.this.contentFrameLayout.invalidate();
             if (LiveStoryPipOverlay.this.contentFrameLayout.isInLayout()) {
                 return;
@@ -694,8 +685,7 @@ public class LiveStoryPipOverlay implements NotificationCenter.NotificationCente
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showInternal$8(LivePlayer livePlayer, Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$PBVFdkmNe5S17gwEYRqgBe9i65k(LivePlayer livePlayer, Context context, View view) {
         if (livePlayer == null) {
             return;
         }

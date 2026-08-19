@@ -52,15 +52,14 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
         BoostRepository.loadParticipantsCount(new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.SelectorAdapter$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                SelectorAdapter.this.lambda$new$0((HashMap) obj);
+                SelectorAdapter.$r8$lambda$VzVkPN3bcBO2oOPTLiF2NWVHLYM(SelectorAdapter.this, (HashMap) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(HashMap hashMap) {
-        this.chatsParticipantsCount.clear();
-        this.chatsParticipantsCount.putAll(hashMap);
+    public static /* synthetic */ void $r8$lambda$VzVkPN3bcBO2oOPTLiF2NWVHLYM(SelectorAdapter selectorAdapter, HashMap hashMap) {
+        selectorAdapter.chatsParticipantsCount.clear();
+        selectorAdapter.chatsParticipantsCount.putAll(hashMap);
     }
 
     public void setNeedChecks2(boolean z) {
@@ -78,14 +77,13 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
             AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.SelectorAdapter$$ExternalSyntheticLambda1
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    SelectorAdapter.lambda$setCallButtonsVisible$1(z, (View) obj);
+                    SelectorAdapter.$r8$lambda$58NzZRn9DiMiIrXLBhDM019LGyw(z, (View) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setCallButtonsVisible$1(boolean z, View view) {
+    public static /* synthetic */ void $r8$lambda$58NzZRn9DiMiIrXLBhDM019LGyw(boolean z, View view) {
         if (view instanceof SelectorUserCell) {
             ((SelectorUserCell) view).setCallButtonsVisible(z, true);
         }
@@ -123,34 +121,34 @@ public class SelectorAdapter extends AdapterWithDiffUtils {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view;
+        View selectorUserCell;
         if (i == -1) {
-            view = new View(this.context);
+            selectorUserCell = new View(this.context);
         } else if (i == 3) {
-            view = new SelectorUserCell(this.context, this.needChecks, this.needChecks2, this.resourcesProvider, this.isGreenSelector);
+            selectorUserCell = new SelectorUserCell(this.context, this.needChecks, this.needChecks2, this.resourcesProvider, this.isGreenSelector);
         } else if (i == 5) {
             StickerEmptyView stickerEmptyView = new StickerEmptyView(this.context, null, 1, this.resourcesProvider);
             stickerEmptyView.title.setText(LocaleController.getString(R.string.NoResult));
             stickerEmptyView.subtitle.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
             stickerEmptyView.linearLayout.setTranslationY(AndroidUtilities.dp(24.0f));
-            view = stickerEmptyView;
+            selectorUserCell = stickerEmptyView;
         } else if (i == 7) {
-            view = new SelectorLetterCell(this.context, this.resourcesProvider);
+            selectorUserCell = new SelectorLetterCell(this.context, this.resourcesProvider);
         } else if (i == 6) {
-            view = new SelectorCountryCell(this.context, this.resourcesProvider);
+            selectorUserCell = new SelectorCountryCell(this.context, this.resourcesProvider);
         } else if (i == 8) {
-            view = new GraySectionCell(this.context, this.resourcesProvider);
+            selectorUserCell = new GraySectionCell(this.context, this.resourcesProvider);
         } else if (i == 9) {
             TextCell textCell = new TextCell(this.context, this.resourcesProvider);
             textCell.leftPadding = 16;
             textCell.imageLeft = 19;
-            view = textCell;
+            selectorUserCell = textCell;
         } else if (i == 10) {
-            view = new FrameLayout(this.context);
+            selectorUserCell = new FrameLayout(this.context);
         } else {
-            view = new View(this.context);
+            selectorUserCell = new View(this.context);
         }
-        return new RecyclerListView.Holder(view);
+        return new RecyclerListView.Holder(selectorUserCell);
     }
 
     public int getParticipantsCount(TLRPC.Chat chat) {

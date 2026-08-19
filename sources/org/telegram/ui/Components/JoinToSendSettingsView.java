@@ -67,7 +67,7 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
         this.joinToSendCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                JoinToSendSettingsView.this.lambda$new$2(view);
+                JoinToSendSettingsView.$r8$lambda$VPAiLMmv_kxcdG9v40W5ulz8RR0(JoinToSendSettingsView.this, view);
             }
         });
         addView(this.joinToSendCell);
@@ -83,7 +83,7 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
         this.joinRequestCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                JoinToSendSettingsView.this.lambda$new$5(view);
+                JoinToSendSettingsView.$r8$lambda$Zv9kTF8BQ25g9j-XYExBg9gjMgo(JoinToSendSettingsView.this, view);
             }
         });
         addView(this.joinRequestCell);
@@ -101,58 +101,55 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
         updateToggleValue(this.toggleValue);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        final boolean z = this.isJoinToSend;
+    public static /* synthetic */ void $r8$lambda$VPAiLMmv_kxcdG9v40W5ulz8RR0(final JoinToSendSettingsView joinToSendSettingsView, View view) {
+        final boolean z = joinToSendSettingsView.isJoinToSend;
         boolean z2 = !z;
-        final boolean z3 = this.isJoinRequest;
-        if (onJoinToSendToggle(z2, new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda5
+        final boolean z3 = joinToSendSettingsView.isJoinRequest;
+        if (joinToSendSettingsView.onJoinToSendToggle(z2, new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                JoinToSendSettingsView.this.lambda$new$1(z3, z);
+                JoinToSendSettingsView.$r8$lambda$4m0bHDGDGLCBLnk7E23dEqmmFPA(JoinToSendSettingsView.this, z3, z);
             }
         })) {
-            lambda$new$3(false);
-            setJoinToSend(z2);
+            joinToSendSettingsView.setJoinRequest(false);
+            joinToSendSettingsView.setJoinToSend(z2);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(final boolean z, final boolean z2) {
+    public static /* synthetic */ void $r8$lambda$4m0bHDGDGLCBLnk7E23dEqmmFPA(final JoinToSendSettingsView joinToSendSettingsView, final boolean z, final boolean z2) {
+        joinToSendSettingsView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                JoinToSendSettingsView.this.lambda$new$0(z, z2);
+                JoinToSendSettingsView.$r8$lambda$-u1-sh2swYYhznA-4BFT3aXspsE(JoinToSendSettingsView.this, z, z2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(boolean z, boolean z2) {
-        lambda$new$3(z);
-        setJoinToSend(z2);
+    public static /* synthetic */ void $r8$lambda$-u1-sh2swYYhznA-4BFT3aXspsE(JoinToSendSettingsView joinToSendSettingsView, boolean z, boolean z2) {
+        joinToSendSettingsView.setJoinRequest(z);
+        joinToSendSettingsView.setJoinToSend(z2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view) {
-        final boolean z = this.isJoinRequest;
+    public static /* synthetic */ void $r8$lambda$Zv9kTF8BQ25g9j-XYExBg9gjMgo(final JoinToSendSettingsView joinToSendSettingsView, View view) {
+        final boolean z = joinToSendSettingsView.isJoinRequest;
         boolean z2 = !z;
-        if (onJoinRequestToggle(z2, new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda4
+        if (joinToSendSettingsView.onJoinRequestToggle(z2, new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                JoinToSendSettingsView.this.lambda$new$4(z);
+                JoinToSendSettingsView.$r8$lambda$ts-jpCh2Mcmji2-Sj9_iG5wFYFo(JoinToSendSettingsView.this, z);
             }
         })) {
-            lambda$new$3(z2);
+            joinToSendSettingsView.setJoinRequest(z2);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(final boolean z) {
+    public static /* synthetic */ void $r8$lambda$ts-jpCh2Mcmji2-Sj9_iG5wFYFo(final JoinToSendSettingsView joinToSendSettingsView, final boolean z) {
+        joinToSendSettingsView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                JoinToSendSettingsView.this.lambda$new$3(z);
+                JoinToSendSettingsView.this.setJoinRequest(z);
             }
         });
     }
@@ -219,7 +216,7 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
             textInfoPrivacyCell.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(i2, str), Theme.getColor(Theme.key_telegram_color_text), new Runnable() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    JoinToSendSettingsView.lambda$setFullInfo$6(TLRPC.ChatFull.this, baseFragment);
+                    JoinToSendSettingsView.$r8$lambda$K7zS6IWafYo4tK0ZJFKivwV3BSU(TLRPC.ChatFull.this, baseFragment);
                 }
             }));
             return;
@@ -235,15 +232,13 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
         textInfoPrivacyCell2.setText(LocaleController.getString(i));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setFullInfo$6(TLRPC.ChatFull chatFull, BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$K7zS6IWafYo4tK0ZJFKivwV3BSU(TLRPC.ChatFull chatFull, BaseFragment baseFragment) {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", chatFull.guard_bot_id);
         baseFragment.presentFragment(new ProfileActivity(bundle));
     }
 
-    /* renamed from: setJoinRequest, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$3(boolean z) {
+    public void setJoinRequest(boolean z) {
         this.isJoinRequest = z;
         this.joinRequestCell.setChecked(z);
     }
@@ -264,7 +259,7 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
         this.toggleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.JoinToSendSettingsView$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                JoinToSendSettingsView.this.lambda$setJoinToSend$7(valueAnimator2);
+                JoinToSendSettingsView.$r8$lambda$UO92od15dzti-r2dSRmQqQurnfo(JoinToSendSettingsView.this, valueAnimator2);
             }
         });
         this.toggleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.JoinToSendSettingsView.1
@@ -281,11 +276,11 @@ public abstract class JoinToSendSettingsView extends LinearLayout {
         this.toggleAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setJoinToSend$7(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$UO92od15dzti-r2dSRmQqQurnfo(JoinToSendSettingsView joinToSendSettingsView, ValueAnimator valueAnimator) {
+        joinToSendSettingsView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.toggleValue = floatValue;
-        updateToggleValue(floatValue);
+        joinToSendSettingsView.toggleValue = floatValue;
+        joinToSendSettingsView.updateToggleValue(floatValue);
     }
 
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View

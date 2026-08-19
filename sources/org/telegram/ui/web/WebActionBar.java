@@ -49,7 +49,7 @@ import org.telegram.ui.GradientClip;
 import org.telegram.ui.web.WebActionBar;
 import org.telegram.ui.web.WebInstantView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class WebActionBar extends FrameLayout {
     private ValueAnimator addressAnimator;
     public int addressBackgroundColor;
@@ -161,7 +161,7 @@ public abstract class WebActionBar extends FrameLayout {
         this.longPressRunnable = new Runnable() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                WebActionBar.this.lambda$new$11();
+                WebActionBar.$r8$lambda$9ZMBVSSnV0qdTn-Zp4VsZXM3ae8(WebActionBar.this);
             }
         };
         this.longClicked = false;
@@ -240,7 +240,7 @@ public abstract class WebActionBar extends FrameLayout {
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WebActionBar.this.lambda$new$4(view);
+                WebActionBar.$r8$lambda$m5y5XC4njl1cz10J7i9Vjec6C7w(WebActionBar.this, view);
             }
         });
         Drawable createSelectorDrawable3 = Theme.createSelectorDrawable(1090519039);
@@ -276,9 +276,7 @@ public abstract class WebActionBar extends FrameLayout {
         editTextBoldCursor.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda4
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean lambda$new$5;
-                lambda$new$5 = WebActionBar.this.lambda$new$5(textView, i2, keyEvent);
-                return lambda$new$5;
+                return WebActionBar.$r8$lambda$uVCq8vaAeb94nsYFjcArsEOpH1g(WebActionBar.this, textView, i2, keyEvent);
             }
         });
         editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.web.WebActionBar.5
@@ -323,9 +321,7 @@ public abstract class WebActionBar extends FrameLayout {
         editTextBoldCursor2.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda5
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean lambda$new$6;
-                lambda$new$6 = WebActionBar.this.lambda$new$6(textView, i2, keyEvent);
-                return lambda$new$6;
+                return WebActionBar.$r8$lambda$0dMGs8Uj8YyJXH6zeUFugk66cTs(WebActionBar.this, textView, i2, keyEvent);
             }
         });
         frameLayout2.addView(editTextBoldCursor2, LayoutHelper.createFrame(-1, -1.0f, 119, 48.0f, 0.0f, 12.0f, 0.0f));
@@ -341,7 +337,7 @@ public abstract class WebActionBar extends FrameLayout {
         imageView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WebActionBar.this.lambda$new$7(view);
+                WebActionBar.this.searchEditText.setText("");
             }
         });
         addView(imageView4, LayoutHelper.createFrame(54, 56, 85));
@@ -358,45 +354,42 @@ public abstract class WebActionBar extends FrameLayout {
         setMenuColors(Theme.getColor(i2, resourcesProvider));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
-        if (getParent() instanceof ViewGroup) {
+    public static /* synthetic */ void $r8$lambda$m5y5XC4njl1cz10J7i9Vjec6C7w(final WebActionBar webActionBar, View view) {
+        if (webActionBar.getParent() instanceof ViewGroup) {
             Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda9
                 @Override // org.telegram.messenger.Utilities.CallbackReturn
                 public final Object run(Object obj) {
-                    Runnable lambda$new$1;
-                    lambda$new$1 = WebActionBar.this.lambda$new$1((Integer) obj);
-                    return lambda$new$1;
+                    return WebActionBar.$r8$lambda$JBJreulGZY_Yh0VHBMwDddTFJCw(WebActionBar.this, (Integer) obj);
                 }
             };
-            ItemOptions makeOptions = ItemOptions.makeOptions((ViewGroup) getParent(), this.menuButton);
+            ItemOptions makeOptions = ItemOptions.makeOptions((ViewGroup) webActionBar.getParent(), webActionBar.menuButton);
             makeOptions.setDimAlpha(0);
-            makeOptions.setColors(this.menuTextColor, this.menuIconColor);
+            makeOptions.setColors(webActionBar.menuTextColor, webActionBar.menuIconColor);
             makeOptions.translate(0.0f, -AndroidUtilities.dp(52.0f));
             makeOptions.setMinWidth(NotificationCenter.dialogPhotosUpdate);
-            makeOptions.setSelectorColor(Theme.blendOver(this.menuBackgroundColor, Theme.multAlpha(this.menuTextColor, 0.1f)));
-            if (AndroidUtilities.computePerceivedBrightness(this.menuBackgroundColor) > 0.721f) {
+            makeOptions.setSelectorColor(Theme.blendOver(webActionBar.menuBackgroundColor, Theme.multAlpha(webActionBar.menuTextColor, 0.1f)));
+            if (AndroidUtilities.computePerceivedBrightness(webActionBar.menuBackgroundColor) > 0.721f) {
                 makeOptions.setBackgroundColor(-1);
                 makeOptions.setGapBackgroundColor(-986896);
             } else {
                 makeOptions.setBackgroundColor(-14737633);
                 makeOptions.setGapBackgroundColor(-15592942);
             }
-            int i = this.menuType;
+            int i = webActionBar.menuType;
             if (i == 0) {
                 makeOptions.add(R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp), (Runnable) callbackReturn.run(3));
                 makeOptions.add(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) callbackReturn.run(1));
-                makeOptions.addIf(!this.isLocal, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), (Runnable) callbackReturn.run(2));
+                makeOptions.addIf(!webActionBar.isLocal, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), (Runnable) callbackReturn.run(2));
                 makeOptions.add(R.drawable.msg_settings_old, LocaleController.getString(R.string.Settings), (Runnable) callbackReturn.run(4));
             } else if (i == 1) {
-                if (!this.isTonsite) {
+                if (!webActionBar.isTonsite) {
                     makeOptions.add(R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp), (Runnable) callbackReturn.run(3));
                     makeOptions.addGap();
                 }
-                if (this.hasForward) {
+                if (webActionBar.hasForward) {
                     makeOptions.add(R.drawable.msg_arrow_forward, LocaleController.getString(R.string.WebForward), (Runnable) callbackReturn.run(9));
                 }
-                final WebInstantView.Loader instantViewLoader = getInstantViewLoader();
+                final WebInstantView.Loader instantViewLoader = webActionBar.getInstantViewLoader();
                 if (instantViewLoader != null && (!instantViewLoader.isDone() || instantViewLoader.getWebPage() != null)) {
                     makeOptions.add(R.drawable.menu_instant_view, LocaleController.getString(R.string.OpenLocalInstantView), (Runnable) callbackReturn.run(10));
                     final ActionBarMenuSubItem last = makeOptions.getLast();
@@ -405,7 +398,7 @@ public abstract class WebActionBar extends FrameLayout {
                     makeOptions.setOnDismiss(instantViewLoader.listen(new Runnable() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda10
                         @Override // java.lang.Runnable
                         public final void run() {
-                            WebActionBar.lambda$new$2(ActionBarMenuSubItem.this, instantViewLoader);
+                            WebActionBar.$r8$lambda$-zKzXttVJ6e13AUVkJ7gntuI9R8(ActionBarMenuSubItem.this, instantViewLoader);
                         }
                     }));
                 }
@@ -423,67 +416,52 @@ public abstract class WebActionBar extends FrameLayout {
             makeOptions.setOnDismiss(new Runnable() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WebActionBar.this.lambda$new$3();
+                    WebActionBar.this.isMenuShown = false;
                 }
             });
             makeOptions.show();
-            this.isMenuShown = true;
+            webActionBar.isMenuShown = true;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Integer num) {
-        this.menuListener.run(num);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Runnable lambda$new$1(final Integer num) {
+    public static /* synthetic */ Runnable $r8$lambda$JBJreulGZY_Yh0VHBMwDddTFJCw(final WebActionBar webActionBar, final Integer num) {
+        webActionBar.getClass();
         return new Runnable() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                WebActionBar.this.lambda$new$0(num);
+                WebActionBar.this.menuListener.run(num);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$2(ActionBarMenuSubItem actionBarMenuSubItem, WebInstantView.Loader loader) {
+    public static /* synthetic */ void $r8$lambda$-zKzXttVJ6e13AUVkJ7gntuI9R8(ActionBarMenuSubItem actionBarMenuSubItem, WebInstantView.Loader loader) {
         actionBarMenuSubItem.setEnabled(loader.getWebPage() != null);
         actionBarMenuSubItem.animate().alpha(actionBarMenuSubItem.isEnabled() ? 1.0f : 0.5f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        this.isMenuShown = false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$5(TextView textView, int i, KeyEvent keyEvent) {
+    public static /* synthetic */ boolean $r8$lambda$uVCq8vaAeb94nsYFjcArsEOpH1g(WebActionBar webActionBar, TextView textView, int i, KeyEvent keyEvent) {
+        webActionBar.getClass();
         if (keyEvent == null) {
             return false;
         }
         if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
             return false;
         }
-        AndroidUtilities.hideKeyboard(this.searchEditText);
+        AndroidUtilities.hideKeyboard(webActionBar.searchEditText);
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$6(TextView textView, int i, KeyEvent keyEvent) {
-        if (i == 2) {
-            Utilities.Callback callback = this.urlCallback;
-            if (callback != null) {
-                callback.run(this.addressEditText.getText().toString());
-            }
-            showAddress(false, true);
+    public static /* synthetic */ boolean $r8$lambda$0dMGs8Uj8YyJXH6zeUFugk66cTs(WebActionBar webActionBar, TextView textView, int i, KeyEvent keyEvent) {
+        if (i != 2) {
+            webActionBar.getClass();
+            return false;
         }
+        Utilities.Callback callback = webActionBar.urlCallback;
+        if (callback != null) {
+            callback.run(webActionBar.addressEditText.getText().toString());
+        }
+        webActionBar.showAddress(false, true);
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(View view) {
-        this.searchEditText.setText("");
     }
 
     public void occupyStatusBar(boolean z) {
@@ -682,7 +660,7 @@ public abstract class WebActionBar extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                WebActionBar.this.lambda$setColors$8(i, f2, f3, valueAnimator2);
+                WebActionBar.$r8$lambda$WByNF-thCusmydDaujgGSYZiADw(WebActionBar.this, i, f2, f3, valueAnimator2);
             }
         });
         this.colorAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.7
@@ -694,10 +672,10 @@ public abstract class WebActionBar extends FrameLayout {
         this.colorAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setColors$8(int i, float f, float f2, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$WByNF-thCusmydDaujgGSYZiADw(WebActionBar webActionBar, int i, float f, float f2, ValueAnimator valueAnimator) {
+        webActionBar.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        setColors(ColorUtils.blendARGB(this.fromBackgroundColor, i, floatValue), AndroidUtilities.lerp(f, f2, floatValue), false);
+        webActionBar.setColors(ColorUtils.blendARGB(webActionBar.fromBackgroundColor, i, floatValue), AndroidUtilities.lerp(f, f2, floatValue), false);
     }
 
     public int getBackgroundColor() {
@@ -917,7 +895,7 @@ public abstract class WebActionBar extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    WebActionBar.this.lambda$showSearch$9(valueAnimator2);
+                    WebActionBar.$r8$lambda$pS-o3FG_nRnjI6gxW-NO_CKgLMc(WebActionBar.this, valueAnimator2);
                 }
             });
             this.searchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.8
@@ -975,12 +953,12 @@ public abstract class WebActionBar extends FrameLayout {
         AndroidUtilities.updateViewShow(imageView, z3, true, z2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showSearch$9(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$pS-o3FG_nRnjI6gxW-NO_CKgLMc(WebActionBar webActionBar, ValueAnimator valueAnimator) {
+        webActionBar.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.searchingProgress = floatValue;
-        this.searchEditText.setAlpha(floatValue);
-        invalidate();
+        webActionBar.searchingProgress = floatValue;
+        webActionBar.searchEditText.setAlpha(floatValue);
+        webActionBar.invalidate();
     }
 
     public void setBackButton(boolean z) {
@@ -1044,7 +1022,7 @@ public abstract class WebActionBar extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.web.WebActionBar$$ExternalSyntheticLambda7
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    WebActionBar.this.lambda$showAddress$10(valueAnimator2);
+                    WebActionBar.$r8$lambda$LHGz88t7wFeW1WLsnjl3Lo-w6Zo(WebActionBar.this, valueAnimator2);
                 }
             });
             this.addressAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.9
@@ -1098,15 +1076,15 @@ public abstract class WebActionBar extends FrameLayout {
         }, this.addressing ? 100L : 0L);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAddress$10(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$LHGz88t7wFeW1WLsnjl3Lo-w6Zo(WebActionBar webActionBar, ValueAnimator valueAnimator) {
+        webActionBar.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.addressingProgress = floatValue;
-        onAddressingProgress(floatValue);
-        this.addressEditText.setAlpha(this.addressingProgress);
-        this.menuButton.setTranslationX(AndroidUtilities.dp(56.0f) * this.addressingProgress);
-        this.forwardButton.setTranslationX(AndroidUtilities.dp(112.0f) * this.addressingProgress);
-        invalidate();
+        webActionBar.addressingProgress = floatValue;
+        webActionBar.onAddressingProgress(floatValue);
+        webActionBar.addressEditText.setAlpha(webActionBar.addressingProgress);
+        webActionBar.menuButton.setTranslationX(AndroidUtilities.dp(56.0f) * webActionBar.addressingProgress);
+        webActionBar.forwardButton.setTranslationX(AndroidUtilities.dp(112.0f) * webActionBar.addressingProgress);
+        webActionBar.invalidate();
     }
 
     protected void onAddressingProgress(float f) {
@@ -1119,14 +1097,13 @@ public abstract class WebActionBar extends FrameLayout {
         return this.addressing;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$11() {
-        this.longClicked = true;
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(true);
+    public static /* synthetic */ void $r8$lambda$9ZMBVSSnV0qdTn-Zp4VsZXM3ae8(WebActionBar webActionBar) {
+        webActionBar.longClicked = true;
+        if (webActionBar.getParent() != null) {
+            webActionBar.getParent().requestDisallowInterceptTouchEvent(true);
         }
         try {
-            performHapticFeedback(0, 1);
+            webActionBar.performHapticFeedback(0, 1);
         } catch (Exception unused) {
         }
     }

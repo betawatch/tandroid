@@ -3,14 +3,14 @@ package j$.time.temporal;
 import j$.time.LocalDate;
 
 /* loaded from: classes2.dex */
-public interface Temporal extends m {
-    Temporal d(long j, p pVar);
+public interface Temporal extends l {
+    Temporal e(long j, o oVar);
 
-    Temporal e(long j, s sVar);
+    Temporal f(long j, q qVar);
 
-    long f(Temporal temporal, s sVar);
+    long g(Temporal temporal, q qVar);
 
-    Temporal k(long j, ChronoUnit chronoUnit);
+    Temporal l(long j, ChronoUnit chronoUnit);
 
-    Temporal n(LocalDate localDate);
+    Temporal p(LocalDate localDate);
 }

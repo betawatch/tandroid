@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class KeyboardNotifier {
     private boolean awaitingKeyboard;
     public boolean ignoring;
@@ -32,7 +32,7 @@ public class KeyboardNotifier {
         View.OnLayoutChangeListener onLayoutChangeListener = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Stories.recorder.KeyboardNotifier$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                KeyboardNotifier.this.lambda$new$0(view2, i, i2, i3, i4, i5, i6, i7, i8);
+                KeyboardNotifier.this.update();
             }
         };
         this.onLayoutChangeListener = onLayoutChangeListener;
@@ -76,11 +76,6 @@ public class KeyboardNotifier {
     public KeyboardNotifier useMinusNavbar() {
         this.mMinusNavBar = true;
         return this;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        update();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

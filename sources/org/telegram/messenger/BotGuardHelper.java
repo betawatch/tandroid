@@ -15,8 +15,7 @@ public class BotGuardHelper extends BaseController {
     private static volatile BotGuardHelper[] Instance = new BotGuardHelper[4];
     private final LongSparseLongArray queryIdToBotId;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openGuardBotWebApp$1() {
+    public static /* synthetic */ void $r8$lambda$lHMHGpv_N9TnvvMs9VvUn2h0FRM() {
     }
 
     private BotGuardHelper(int i) {
@@ -42,12 +41,12 @@ public class BotGuardHelper extends BaseController {
                 AlertsCreator.createBotLaunchAlert(lastFragment, user, new Runnable() { // from class: org.telegram.messenger.BotGuardHelper$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotGuardHelper.this.lambda$openGuardBotWebApp$0(j, j2, j3);
+                        BotGuardHelper.$r8$lambda$wgDcm1TRRx_3Xs38abuMILlGu6E(BotGuardHelper.this, j, j2, j3);
                     }
                 }, new Runnable() { // from class: org.telegram.messenger.BotGuardHelper$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotGuardHelper.lambda$openGuardBotWebApp$1();
+                        BotGuardHelper.$r8$lambda$lHMHGpv_N9TnvvMs9VvUn2h0FRM();
                     }
                 });
                 return;
@@ -65,21 +64,20 @@ public class BotGuardHelper extends BaseController {
         botWebViewSheet.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openGuardBotWebApp$0(long j, long j2, long j3) {
-        openGuardBotWebApp(j, j2, j3, true);
-        SharedPrefsHelper.setWebViewConfirmShown(this.currentAccount, j2, true);
+    public static /* synthetic */ void $r8$lambda$wgDcm1TRRx_3Xs38abuMILlGu6E(BotGuardHelper botGuardHelper, long j, long j2, long j3) {
+        botGuardHelper.openGuardBotWebApp(j, j2, j3, true);
+        SharedPrefsHelper.setWebViewConfirmShown(botGuardHelper.currentAccount, j2, true);
     }
 
     public void closeGuardBotWebApp(long j, long j2, TLRPC.JoinChatBotResult joinChatBotResult) {
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j, this.queryIdToBotId.get(j2, 0L), j2, joinChatBotResult));
+        getNotificationCenter().postNotificationName(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j, this.queryIdToBotId.get(j2, 0L), j2, joinChatBotResult));
         HashSet hashSet = BotWebViewSheet.activeSheets;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
                 BotWebViewSheet botWebViewSheet = (BotWebViewSheet) it.next();
                 if (botWebViewSheet.isGuardBotTab(j, j2)) {
-                    botWebViewSheet.lambda$openOptions$42();
+                    botWebViewSheet.dismiss();
                     return;
                 }
             }
@@ -101,19 +99,22 @@ public class BotGuardHelper extends BaseController {
     }
 
     public static BotGuardHelper getInstance(int i) {
-        BotGuardHelper botGuardHelper = Instance[i];
-        if (botGuardHelper == null) {
-            synchronized (BotForumHelper.class) {
-                try {
-                    botGuardHelper = Instance[i];
-                    if (botGuardHelper == null) {
-                        BotGuardHelper[] botGuardHelperArr = Instance;
-                        BotGuardHelper botGuardHelper2 = new BotGuardHelper(i);
-                        botGuardHelperArr[i] = botGuardHelper2;
-                        botGuardHelper = botGuardHelper2;
-                    }
-                } finally {
+        BotGuardHelper botGuardHelper;
+        BotGuardHelper botGuardHelper2 = Instance[i];
+        if (botGuardHelper2 != null) {
+            return botGuardHelper2;
+        }
+        synchronized (BotForumHelper.class) {
+            try {
+                botGuardHelper = Instance[i];
+                if (botGuardHelper == null) {
+                    BotGuardHelper[] botGuardHelperArr = Instance;
+                    BotGuardHelper botGuardHelper3 = new BotGuardHelper(i);
+                    botGuardHelperArr[i] = botGuardHelper3;
+                    botGuardHelper = botGuardHelper3;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return botGuardHelper;

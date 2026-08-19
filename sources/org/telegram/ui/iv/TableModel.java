@@ -115,10 +115,8 @@ public class TableModel {
         }
         this.colCount = i11;
         this.grid = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, Math.max(i3, 1), Math.max(this.colCount, 1));
-        int[] iArr4 = {Math.max(this.rowCount, 1), Math.max(this.colCount, 1)};
-        Class cls2 = Integer.TYPE;
-        this.anchorR = (int[][]) Array.newInstance((Class<?>) cls2, iArr4);
-        this.anchorC = (int[][]) Array.newInstance((Class<?>) cls2, Math.max(this.rowCount, 1), Math.max(this.colCount, 1));
+        this.anchorR = (int[][]) Array.newInstance((Class<?>) cls, Math.max(this.rowCount, 1), Math.max(this.colCount, 1));
+        this.anchorC = (int[][]) Array.newInstance((Class<?>) cls, Math.max(this.rowCount, 1), Math.max(this.colCount, 1));
         for (int i17 = 0; i17 < this.rowCount; i17++) {
             for (int i18 = 0; i18 < this.colCount; i18++) {
                 TL_iv.pageTableCell[][] pagetablecellArr2 = this.grid;
@@ -264,13 +262,17 @@ public class TableModel {
             arrayList.add(newEmptyCell());
             this.block.rows.add(pagetablerow);
         } else {
-            Iterator<TL_iv.pageTableRow> it = this.block.rows.iterator();
-            while (it.hasNext()) {
-                TL_iv.pageTableRow next = it.next();
-                if (next.cells == null) {
-                    next.cells = new ArrayList<>();
+            ArrayList<TL_iv.pageTableRow> arrayList2 = this.block.rows;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                TL_iv.pageTableRow pagetablerow2 = arrayList2.get(i);
+                i++;
+                TL_iv.pageTableRow pagetablerow3 = pagetablerow2;
+                if (pagetablerow3.cells == null) {
+                    pagetablerow3.cells = new ArrayList<>();
                 }
-                next.cells.add(newEmptyCell());
+                pagetablerow3.cells.add(newEmptyCell());
             }
         }
         rebuildFromBlock();
@@ -290,25 +292,29 @@ public class TableModel {
         }
         IdentityHashMap identityHashMap = new IdentityHashMap();
         boolean[] zArr = new boolean[this.colCount];
-        Iterator it = this.anchorsRowMajor.iterator();
-        while (it.hasNext()) {
-            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it.next();
+        ArrayList arrayList = this.anchorsRowMajor;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
             int anchorRowOf = anchorRowOf(pagetablecell);
             int anchorColOf = anchorColOf(pagetablecell);
             int spanRow = spanRow(pagetablecell);
             int spanCol = spanCol(pagetablecell);
-            int i3 = anchorRowOf >= i2 ? anchorRowOf + 1 : anchorRowOf;
+            int i4 = anchorRowOf >= i2 ? anchorRowOf + 1 : anchorRowOf;
             if (anchorRowOf < i2 && anchorRowOf + spanRow > i2) {
                 spanRow++;
-                for (int i4 = anchorColOf; i4 < anchorColOf + spanCol && i4 < this.colCount; i4++) {
-                    zArr[i4] = true;
+                for (int i5 = anchorColOf; i5 < anchorColOf + spanCol && i5 < this.colCount; i5++) {
+                    zArr[i5] = true;
                 }
             }
-            identityHashMap.put(pagetablecell, new int[]{i3, anchorColOf, spanRow, spanCol});
+            identityHashMap.put(pagetablecell, new int[]{i4, anchorColOf, spanRow, spanCol});
         }
-        for (int i5 = 0; i5 < this.colCount; i5++) {
-            if (!zArr[i5]) {
-                identityHashMap.put(newEmptyCell(), new int[]{i2, i5, 1, 1});
+        for (int i6 = 0; i6 < this.colCount; i6++) {
+            if (!zArr[i6]) {
+                identityHashMap.put(newEmptyCell(), new int[]{i2, i6, 1, 1});
             }
         }
         rewriteBlockRows(identityHashMap, this.rowCount + 1);
@@ -331,31 +337,35 @@ public class TableModel {
         }
         IdentityHashMap identityHashMap = new IdentityHashMap();
         boolean[] zArr = new boolean[this.rowCount];
-        Iterator it = this.anchorsRowMajor.iterator();
-        while (it.hasNext()) {
-            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it.next();
+        ArrayList arrayList = this.anchorsRowMajor;
+        int size = arrayList.size();
+        int i4 = 0;
+        while (i4 < size) {
+            Object obj = arrayList.get(i4);
+            i4++;
+            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
             int anchorRowOf = anchorRowOf(pagetablecell);
             int anchorColOf = anchorColOf(pagetablecell);
             int spanRow = spanRow(pagetablecell);
             int spanCol = spanCol(pagetablecell);
-            int i4 = anchorColOf >= i2 ? anchorColOf + 1 : anchorColOf;
+            int i5 = anchorColOf >= i2 ? anchorColOf + 1 : anchorColOf;
             if (anchorColOf < i2 && anchorColOf + spanCol > i2) {
                 spanCol++;
-                for (int i5 = anchorRowOf; i5 < anchorRowOf + spanRow && i5 < this.rowCount; i5++) {
-                    zArr[i5] = true;
+                for (int i6 = anchorRowOf; i6 < anchorRowOf + spanRow && i6 < this.rowCount; i6++) {
+                    zArr[i6] = true;
                 }
             }
-            identityHashMap.put(pagetablecell, new int[]{anchorRowOf, i4, spanRow, spanCol});
+            identityHashMap.put(pagetablecell, new int[]{anchorRowOf, i5, spanRow, spanCol});
         }
         while (true) {
-            int i6 = this.rowCount;
-            if (i3 < i6) {
+            int i7 = this.rowCount;
+            if (i3 < i7) {
                 if (!zArr[i3]) {
                     identityHashMap.put(newEmptyCell(), new int[]{i3, i2, 1, 1});
                 }
                 i3++;
             } else {
-                rewriteBlockRows(identityHashMap, i6);
+                rewriteBlockRows(identityHashMap, i7);
                 rebuildFromBlock();
                 return true;
             }
@@ -400,14 +410,15 @@ public class TableModel {
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.iv.TableModel$$ExternalSyntheticLambda2
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$mergeCells$0;
-                lambda$mergeCells$0 = TableModel.this.lambda$mergeCells$0((TL_iv.pageTableCell) obj, (TL_iv.pageTableCell) obj2);
-                return lambda$mergeCells$0;
+                return TableModel.$r8$lambda$nsghQ5EW-w1RgC-wnb60vfEJKF0(TableModel.this, (TL_iv.pageTableCell) obj, (TL_iv.pageTableCell) obj2);
             }
         });
-        Iterator it2 = arrayList.iterator();
-        while (it2.hasNext()) {
-            String readPlainText = readPlainText((TL_iv.pageTableCell) it2.next());
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            String readPlainText = readPlainText((TL_iv.pageTableCell) obj);
             if (!readPlainText.isEmpty()) {
                 if (sb.length() > 0) {
                     sb.append("\n");
@@ -416,20 +427,20 @@ public class TableModel {
             }
         }
         TL_iv.pageTableCell pagetablecell2 = this.grid[i3][i4];
-        int i7 = (i - i4) + 1;
-        int i8 = (i2 - i3) + 1;
-        if (i7 <= 1) {
-            i7 = 0;
+        int i8 = (i - i4) + 1;
+        int i9 = (i2 - i3) + 1;
+        if (i8 <= 1) {
+            i8 = 0;
         }
-        pagetablecell2.colspan = i7;
-        int i9 = i8 > 1 ? i8 : 0;
-        pagetablecell2.rowspan = i9;
-        pagetablecell2.flags = i7 > 0 ? 2 | pagetablecell2.flags : pagetablecell2.flags & (-3);
-        pagetablecell2.flags = i9 > 0 ? pagetablecell2.flags | 4 : pagetablecell2.flags & (-5);
+        pagetablecell2.colspan = i8;
+        int i10 = i9 > 1 ? i9 : 0;
+        pagetablecell2.rowspan = i10;
+        pagetablecell2.flags = i8 > 0 ? 2 | pagetablecell2.flags : pagetablecell2.flags & (-3);
+        pagetablecell2.flags = i10 > 0 ? pagetablecell2.flags | 4 : pagetablecell2.flags & (-5);
         applyPlainText(pagetablecell2, sb.toString());
-        Iterator it3 = hashSet.iterator();
-        while (it3.hasNext()) {
-            TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) it3.next();
+        Iterator it2 = hashSet.iterator();
+        while (it2.hasNext()) {
+            TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) it2.next();
             if (pagetablecell3 != pagetablecell2 && (anchorRowOf = anchorRowOf(pagetablecell3)) >= 0 && anchorRowOf < this.block.rows.size()) {
                 this.block.rows.get(anchorRowOf).cells.remove(pagetablecell3);
             }
@@ -438,17 +449,17 @@ public class TableModel {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$mergeCells$0(TL_iv.pageTableCell pagetablecell, TL_iv.pageTableCell pagetablecell2) {
-        int anchorRowOf = anchorRowOf(pagetablecell);
-        int anchorRowOf2 = anchorRowOf(pagetablecell2);
+    public static /* synthetic */ int $r8$lambda$nsghQ5EW-w1RgC-wnb60vfEJKF0(TableModel tableModel, TL_iv.pageTableCell pagetablecell, TL_iv.pageTableCell pagetablecell2) {
+        int anchorRowOf = tableModel.anchorRowOf(pagetablecell);
+        int anchorRowOf2 = tableModel.anchorRowOf(pagetablecell2);
         if (anchorRowOf != anchorRowOf2) {
             return Integer.compare(anchorRowOf, anchorRowOf2);
         }
-        return Integer.compare(anchorColOf(pagetablecell), anchorColOf(pagetablecell2));
+        return Integer.compare(tableModel.anchorColOf(pagetablecell), tableModel.anchorColOf(pagetablecell2));
     }
 
     public boolean unmergeCell(TL_iv.pageTableCell pagetablecell) {
+        int i = 1;
         if (pagetablecell == null) {
             return false;
         }
@@ -465,47 +476,53 @@ public class TableModel {
         pagetablecell.rowspan = 0;
         pagetablecell.colspan = 0;
         pagetablecell.flags &= -7;
-        for (int i = anchorRowOf; i < anchorRowOf + spanRow && i < this.rowCount; i++) {
-            TL_iv.pageTableRow pagetablerow = this.block.rows.get(i);
+        int i2 = anchorRowOf;
+        while (i2 < anchorRowOf + spanRow && i2 < this.rowCount) {
+            TL_iv.pageTableRow pagetablerow = this.block.rows.get(i2);
             ArrayList arrayList = new ArrayList();
-            Iterator<TL_iv.pageTableCell> it = pagetablerow.cells.iterator();
-            while (it.hasNext()) {
-                TL_iv.pageTableCell next = it.next();
-                arrayList.add(new Object[]{next, Integer.valueOf(anchorColOf(next))});
+            ArrayList<TL_iv.pageTableCell> arrayList2 = pagetablerow.cells;
+            int size = arrayList2.size();
+            int i3 = 0;
+            while (i3 < size) {
+                TL_iv.pageTableCell pagetablecell2 = arrayList2.get(i3);
+                i3 += i;
+                TL_iv.pageTableCell pagetablecell3 = pagetablecell2;
+                arrayList.add(new Object[]{pagetablecell3, Integer.valueOf(anchorColOf(pagetablecell3))});
+                i = 1;
             }
-            for (int i2 = anchorColOf; i2 < anchorColOf + spanCol; i2++) {
-                if (i != anchorRowOf || i2 != anchorColOf) {
-                    TL_iv.pageTableCell pagetablecell2 = new TL_iv.pageTableCell();
-                    pagetablecell2.header = pagetablecell.header;
-                    pagetablecell2.align_center = pagetablecell.align_center;
-                    pagetablecell2.align_right = pagetablecell.align_right;
-                    pagetablecell2.valign_middle = pagetablecell.valign_middle;
-                    pagetablecell2.valign_bottom = pagetablecell.valign_bottom;
-                    applyPlainText(pagetablecell2, "");
-                    arrayList.add(new Object[]{pagetablecell2, Integer.valueOf(i2)});
+            for (int i4 = anchorColOf; i4 < anchorColOf + spanCol; i4++) {
+                if (i2 != anchorRowOf || i4 != anchorColOf) {
+                    TL_iv.pageTableCell pagetablecell4 = new TL_iv.pageTableCell();
+                    pagetablecell4.header = pagetablecell.header;
+                    pagetablecell4.align_center = pagetablecell.align_center;
+                    pagetablecell4.align_right = pagetablecell.align_right;
+                    pagetablecell4.valign_middle = pagetablecell.valign_middle;
+                    pagetablecell4.valign_bottom = pagetablecell.valign_bottom;
+                    applyPlainText(pagetablecell4, "");
+                    arrayList.add(new Object[]{pagetablecell4, Integer.valueOf(i4)});
                 }
             }
             Collections.sort(arrayList, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.iv.TableModel$$ExternalSyntheticLambda0
                 @Override // java.util.function.ToIntFunction
                 public final int applyAsInt(Object obj) {
-                    int lambda$unmergeCell$1;
-                    lambda$unmergeCell$1 = TableModel.lambda$unmergeCell$1((Object[]) obj);
-                    return lambda$unmergeCell$1;
+                    int intValue;
+                    intValue = ((Integer) ((Object[]) obj)[1]).intValue();
+                    return intValue;
                 }
             }));
             pagetablerow.cells.clear();
-            Iterator it2 = arrayList.iterator();
-            while (it2.hasNext()) {
-                pagetablerow.cells.add((TL_iv.pageTableCell) ((Object[]) it2.next())[0]);
+            int size2 = arrayList.size();
+            int i5 = 0;
+            while (i5 < size2) {
+                Object obj = arrayList.get(i5);
+                i5++;
+                pagetablerow.cells.add((TL_iv.pageTableCell) ((Object[]) obj)[0]);
             }
+            i2++;
+            i = 1;
         }
         rebuildFromBlock();
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$unmergeCell$1(Object[] objArr) {
-        return ((Integer) objArr[1]).intValue();
     }
 
     public boolean deleteRows(Set set) {
@@ -534,26 +551,32 @@ public class TableModel {
             return true;
         }
         IdentityHashMap identityHashMap = new IdentityHashMap();
-        Iterator it2 = this.anchorsRowMajor.iterator();
-        while (it2.hasNext()) {
-            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it2.next();
+        ArrayList arrayList = this.anchorsRowMajor;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
             int anchorRowOf = anchorRowOf(pagetablecell);
             int anchorColOf = anchorColOf(pagetablecell);
             int spanRow = spanRow(pagetablecell);
             int spanCol = spanCol(pagetablecell);
-            int i3 = -1;
-            int i4 = 0;
-            for (int i5 = anchorRowOf; i5 < anchorRowOf + spanRow && i5 < this.rowCount; i5++) {
-                if (!zArr[i5]) {
-                    if (i3 < 0) {
-                        i3 = i5;
+            int i4 = -1;
+            boolean[] zArr2 = zArr;
+            int i5 = 0;
+            for (int i6 = anchorRowOf; i6 < anchorRowOf + spanRow && i6 < this.rowCount; i6++) {
+                if (!zArr2[i6]) {
+                    if (i4 < 0) {
+                        i4 = i6;
                     }
-                    i4++;
+                    i5++;
                 }
             }
-            if (i3 >= 0) {
-                identityHashMap.put(pagetablecell, new int[]{iArr[i3], anchorColOf, i4, spanCol});
+            if (i4 >= 0) {
+                identityHashMap.put(pagetablecell, new int[]{iArr[i4], anchorColOf, i5, spanCol});
             }
+            zArr = zArr2;
         }
         rewriteBlockRows(identityHashMap, i);
         rebuildFromBlock();
@@ -586,25 +609,29 @@ public class TableModel {
             return true;
         }
         IdentityHashMap identityHashMap = new IdentityHashMap();
-        Iterator it2 = this.anchorsRowMajor.iterator();
-        while (it2.hasNext()) {
-            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it2.next();
+        ArrayList arrayList = this.anchorsRowMajor;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
             int anchorRowOf = anchorRowOf(pagetablecell);
             int anchorColOf = anchorColOf(pagetablecell);
             int spanRow = spanRow(pagetablecell);
             int spanCol = spanCol(pagetablecell);
-            int i3 = -1;
-            int i4 = 0;
-            for (int i5 = anchorColOf; i5 < anchorColOf + spanCol && i5 < this.colCount; i5++) {
-                if (!zArr[i5]) {
-                    if (i3 < 0) {
-                        i3 = i5;
+            int i4 = -1;
+            int i5 = 0;
+            for (int i6 = anchorColOf; i6 < anchorColOf + spanCol && i6 < this.colCount; i6++) {
+                if (!zArr[i6]) {
+                    if (i4 < 0) {
+                        i4 = i6;
                     }
-                    i4++;
+                    i5++;
                 }
             }
-            if (i3 >= 0) {
-                identityHashMap.put(pagetablecell, new int[]{anchorRowOf, iArr[i3], spanRow, i4});
+            if (i4 >= 0) {
+                identityHashMap.put(pagetablecell, new int[]{anchorRowOf, iArr[i4], spanRow, i5});
             }
         }
         rewriteBlockRows(identityHashMap, this.rowCount);
@@ -626,35 +653,35 @@ public class TableModel {
             Collections.sort(arrayList, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.iv.TableModel$$ExternalSyntheticLambda1
                 @Override // java.util.function.ToIntFunction
                 public final int applyAsInt(Object obj) {
-                    int lambda$rewriteBlockRows$2;
-                    lambda$rewriteBlockRows$2 = TableModel.lambda$rewriteBlockRows$2(identityHashMap, (TL_iv.pageTableCell) obj);
-                    return lambda$rewriteBlockRows$2;
+                    return TableModel.$r8$lambda$hUWEgK6NjEiBDVZGfV8M3mrrKHg(identityHashMap, (TL_iv.pageTableCell) obj);
                 }
             }));
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it.next();
+            int size = arrayList.size();
+            int i3 = 0;
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
                 int[] iArr = (int[]) identityHashMap.get(pagetablecell);
-                int i3 = iArr[2];
-                if (i3 <= 1) {
-                    i3 = 0;
-                }
-                pagetablecell.rowspan = i3;
-                int i4 = iArr[3];
+                int i4 = iArr[2];
                 if (i4 <= 1) {
                     i4 = 0;
                 }
-                pagetablecell.colspan = i4;
-                pagetablecell.flags = i3 != 0 ? pagetablecell.flags | 4 : pagetablecell.flags & (-5);
-                pagetablecell.flags = i4 != 0 ? pagetablecell.flags | 2 : pagetablecell.flags & (-3);
+                pagetablecell.rowspan = i4;
+                int i5 = iArr[3];
+                if (i5 <= 1) {
+                    i5 = 0;
+                }
+                pagetablecell.colspan = i5;
+                pagetablecell.flags = i4 != 0 ? pagetablecell.flags | 4 : pagetablecell.flags & (-5);
+                pagetablecell.flags = i5 != 0 ? pagetablecell.flags | 2 : pagetablecell.flags & (-3);
                 pagetablerow.cells.add(pagetablecell);
             }
             this.block.rows.add(pagetablerow);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$rewriteBlockRows$2(IdentityHashMap identityHashMap, TL_iv.pageTableCell pagetablecell) {
+    public static /* synthetic */ int $r8$lambda$hUWEgK6NjEiBDVZGfV8M3mrrKHg(IdentityHashMap identityHashMap, TL_iv.pageTableCell pagetablecell) {
         return ((int[]) identityHashMap.get(pagetablecell))[1];
     }
 

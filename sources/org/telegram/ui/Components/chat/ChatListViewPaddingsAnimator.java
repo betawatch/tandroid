@@ -36,7 +36,7 @@ public class ChatListViewPaddingsAnimator {
                 AndroidUtilities.doOnLayout(this.recyclerView, new Runnable() { // from class: org.telegram.ui.Components.chat.ChatListViewPaddingsAnimator$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatListViewPaddingsAnimator.this.lambda$setPaddings$0(i4);
+                        ChatListViewPaddingsAnimator.$r8$lambda$fxkL-3v-1ztfbD0K8IG-hfI5mu4(ChatListViewPaddingsAnimator.this, i4);
                     }
                 });
             }
@@ -45,10 +45,10 @@ public class ChatListViewPaddingsAnimator {
         recyclerView.setPadding(recyclerView.getPaddingLeft(), i, this.recyclerView.getPaddingRight(), i3);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPaddings$0(int i) {
+    public static /* synthetic */ void $r8$lambda$fxkL-3v-1ztfbD0K8IG-hfI5mu4(ChatListViewPaddingsAnimator chatListViewPaddingsAnimator, int i) {
+        chatListViewPaddingsAnimator.getClass();
         try {
-            this.recyclerView.scrollBy(0, i);
+            chatListViewPaddingsAnimator.recyclerView.scrollBy(0, i);
         } catch (Throwable th) {
             FileLog.e(th);
         }

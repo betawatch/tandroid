@@ -10,7 +10,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-final class s extends b implements Collection {
+public final class s extends b implements Collection {
     private static final long serialVersionUID = 2249069246763182397L;
 
     @Override // java.util.Collection, j$.util.Collection
@@ -105,7 +105,6 @@ final class s extends b implements Collection {
     @Override // java.util.Collection, j$.util.Collection
     public final boolean removeIf(Predicate predicate) {
         ConcurrentHashMap concurrentHashMap = this.a;
-        concurrentHashMap.getClass();
         predicate.getClass();
         l[] lVarArr = concurrentHashMap.a;
         boolean z = false;
@@ -148,7 +147,7 @@ final class s extends b implements Collection {
             if (a == null) {
                 return;
             } else {
-                consumer.p(a.c);
+                consumer.s(a.c);
             }
         }
     }

@@ -80,22 +80,25 @@ public final class DefaultExtractorInput implements ExtractorInput {
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
     public int peek(byte[] bArr, int i, int i2) {
+        DefaultExtractorInput defaultExtractorInput;
         int min;
         ensureSpaceForPeek(i2);
         int i3 = this.peekBufferLength;
         int i4 = this.peekBufferPosition;
         int i5 = i3 - i4;
         if (i5 == 0) {
-            min = readFromUpstream(this.peekBuffer, i4, i2, 0, true);
+            defaultExtractorInput = this;
+            min = defaultExtractorInput.readFromUpstream(this.peekBuffer, i4, i2, 0, true);
             if (min == -1) {
                 return -1;
             }
-            this.peekBufferLength += min;
+            defaultExtractorInput.peekBufferLength += min;
         } else {
+            defaultExtractorInput = this;
             min = Math.min(i2, i5);
         }
-        System.arraycopy(this.peekBuffer, this.peekBufferPosition, bArr, i, min);
-        this.peekBufferPosition += min;
+        System.arraycopy(defaultExtractorInput.peekBuffer, defaultExtractorInput.peekBufferPosition, bArr, i, min);
+        defaultExtractorInput.peekBufferPosition += min;
         return min;
     }
 
@@ -118,11 +121,15 @@ public final class DefaultExtractorInput implements ExtractorInput {
         ensureSpaceForPeek(i);
         int i2 = this.peekBufferLength - this.peekBufferPosition;
         while (i2 < i) {
-            i2 = readFromUpstream(this.peekBuffer, this.peekBufferPosition, i, i2, z);
+            int i3 = i;
+            boolean z2 = z;
+            i2 = readFromUpstream(this.peekBuffer, this.peekBufferPosition, i3, i2, z2);
             if (i2 == -1) {
                 return false;
             }
             this.peekBufferLength = this.peekBufferPosition + i2;
+            i = i3;
+            z = z2;
         }
         this.peekBufferPosition += i;
         return true;

@@ -75,29 +75,34 @@ public class AppExtension implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            AppExtension appExtension = (AppExtension) obj;
+            String str = this.id;
+            if (str == null ? appExtension.id != null : !str.equals(appExtension.id)) {
+                return false;
+            }
+            String str2 = this.ver;
+            if (str2 == null ? appExtension.ver != null : !str2.equals(appExtension.ver)) {
+                return false;
+            }
+            String str3 = this.name;
+            if (str3 == null ? appExtension.name != null : !str3.equals(appExtension.name)) {
+                return false;
+            }
+            String str4 = this.locale;
+            if (str4 == null ? appExtension.locale != null : !str4.equals(appExtension.locale)) {
+                return false;
+            }
+            String str5 = this.userId;
+            String str6 = appExtension.userId;
+            if (str5 != null) {
+                return str5.equals(str6);
+            }
+            if (str6 == null) {
+                return true;
+            }
         }
-        AppExtension appExtension = (AppExtension) obj;
-        String str = this.id;
-        if (str == null ? appExtension.id != null : !str.equals(appExtension.id)) {
-            return false;
-        }
-        String str2 = this.ver;
-        if (str2 == null ? appExtension.ver != null : !str2.equals(appExtension.ver)) {
-            return false;
-        }
-        String str3 = this.name;
-        if (str3 == null ? appExtension.name != null : !str3.equals(appExtension.name)) {
-            return false;
-        }
-        String str4 = this.locale;
-        if (str4 == null ? appExtension.locale != null : !str4.equals(appExtension.locale)) {
-            return false;
-        }
-        String str5 = this.userId;
-        String str6 = appExtension.userId;
-        return str5 != null ? str5.equals(str6) : str6 == null;
+        return false;
     }
 
     public int hashCode() {

@@ -25,15 +25,13 @@ public abstract class NavigationManager {
             RemoteUtils.dispatchCallFromHost(this.val$lifecycle, iOnDoneCallback, "onStopNavigation", new RemoteUtils.HostCall() { // from class: androidx.car.app.navigation.NavigationManager$1$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onStopNavigation$0;
-                    lambda$onStopNavigation$0 = NavigationManager.1.this.lambda$onStopNavigation$0();
-                    return lambda$onStopNavigation$0;
+                    return NavigationManager.1.$r8$lambda$GO2OrYvvWaXZTH1XkmNcVUSxmKU(NavigationManager.1.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onStopNavigation$0() {
+        public static /* synthetic */ Object $r8$lambda$GO2OrYvvWaXZTH1XkmNcVUSxmKU(1 r0) {
+            r0.getClass();
             throw null;
         }
     }

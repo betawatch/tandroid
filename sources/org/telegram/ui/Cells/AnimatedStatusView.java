@@ -6,7 +6,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -87,13 +86,16 @@ public class AnimatedStatusView extends View {
 
     private void detach() {
         if (!this.animations.isEmpty()) {
-            Iterator it = this.animations.iterator();
-            while (it.hasNext()) {
-                Object next = it.next();
-                if (next instanceof ImageReceiver) {
-                    ((ImageReceiver) next).onDetachedFromWindow();
-                } else if (next instanceof AnimatedEmojiEffect) {
-                    ((AnimatedEmojiEffect) next).removeView(this);
+            ArrayList arrayList = this.animations;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                if (obj instanceof ImageReceiver) {
+                    ((ImageReceiver) obj).onDetachedFromWindow();
+                } else if (obj instanceof AnimatedEmojiEffect) {
+                    ((AnimatedEmojiEffect) obj).removeView(this);
                 }
             }
         }

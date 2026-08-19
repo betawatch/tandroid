@@ -148,10 +148,9 @@ public final class ResourceManagerInternal {
             Drawable wrap = DrawableCompat.wrap(drawable);
             DrawableCompat.setTintList(wrap, tintList);
             PorterDuff.Mode tintMode = getTintMode(i);
-            if (tintMode == null) {
-                return wrap;
+            if (tintMode != null) {
+                DrawableCompat.setTintMode(wrap, tintMode);
             }
-            DrawableCompat.setTintMode(wrap, tintMode);
             return wrap;
         }
         ResourceManagerHooks resourceManagerHooks = this.mHooks;

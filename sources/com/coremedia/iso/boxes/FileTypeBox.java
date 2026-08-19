@@ -41,7 +41,7 @@ public class FileTypeBox extends AbstractBox {
 
     public FileTypeBox(String str, long j, List list) {
         super("ftyp");
-        Collections.emptyList();
+        List list2 = Collections.EMPTY_LIST;
         this.majorBrand = str;
         this.minorVersion = j;
         this.compatibleBrands = list;

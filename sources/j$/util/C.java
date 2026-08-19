@@ -1,72 +1,34 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import j$.util.stream.f2;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class C {
-    private static final C c = new C();
-    private final boolean a;
-    private final int b;
+public final /* synthetic */ class C implements DoubleConsumer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Consumer b;
 
-    private C() {
-        this.a = false;
-        this.b = 0;
+    public /* synthetic */ C(Consumer consumer, int i) {
+        this.a = i;
+        this.b = consumer;
     }
 
-    public static C a() {
-        return c;
-    }
-
-    private C(int i) {
-        this.a = true;
-        this.b = i;
-    }
-
-    public static C d(int i) {
-        return new C(i);
-    }
-
-    public final int b() {
-        if (!this.a) {
-            throw new NoSuchElementException("No value present");
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        switch (this.a) {
+            case 0:
+                this.b.accept(Double.valueOf(d));
+                break;
+            default:
+                ((f2) this.b).accept(d);
+                break;
         }
-        return this.b;
     }
 
-    public final boolean c() {
-        return this.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        switch (this.a) {
         }
-        if (!(obj instanceof C)) {
-            return false;
-        }
-        C c2 = (C) obj;
-        boolean z = this.a;
-        if (z && c2.a) {
-            if (this.b == c2.b) {
-                return true;
-            }
-        } else if (z == c2.a) {
-            return true;
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        if (this.a) {
-            return this.b;
-        }
-        return 0;
-    }
-
-    public final String toString() {
-        if (this.a) {
-            return "OptionalInt[" + this.b + "]";
-        }
-        return "OptionalInt.empty";
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 }

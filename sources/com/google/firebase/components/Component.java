@@ -16,13 +16,11 @@ public final class Component {
     private final Set publishedEvents;
     private final int type;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$intoSet$3(Object obj, ComponentContainer componentContainer) {
+    public static /* synthetic */ Object $r8$lambda$1XnijlikLlzJWfIqLOXy2V5iuHw(Object obj, ComponentContainer componentContainer) {
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Object lambda$of$1(Object obj, ComponentContainer componentContainer) {
+    public static /* synthetic */ Object $r8$lambda$OZ0j4a0bDeW_qgAe4WJTrUMuxVw(Object obj, ComponentContainer componentContainer) {
         return obj;
     }
 
@@ -96,9 +94,7 @@ public final class Component {
         return builder(cls, clsArr).factory(new ComponentFactory() { // from class: com.google.firebase.components.Component$$ExternalSyntheticLambda1
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                Object lambda$of$1;
-                lambda$of$1 = Component.lambda$of$1(obj, componentContainer);
-                return lambda$of$1;
+                return Component.$r8$lambda$1XnijlikLlzJWfIqLOXy2V5iuHw(obj, componentContainer);
             }
         }).build();
     }
@@ -111,9 +107,7 @@ public final class Component {
         return intoSetBuilder(cls).factory(new ComponentFactory() { // from class: com.google.firebase.components.Component$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                Object lambda$intoSet$3;
-                lambda$intoSet$3 = Component.lambda$intoSet$3(obj, componentContainer);
-                return lambda$intoSet$3;
+                return Component.$r8$lambda$OZ0j4a0bDeW_qgAe4WJTrUMuxVw(obj, componentContainer);
             }
         }).build();
     }

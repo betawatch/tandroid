@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.util.Assertions;
 import java.io.InputStream;
 
 /* loaded from: classes.dex */
-public final class DataSourceInputStream extends InputStream {
+public final class DataSourceInputStream extends InputStream implements AutoCloseable {
     private final DataSource dataSource;
     private final DataSpec dataSpec;
     private long totalBytesRead;

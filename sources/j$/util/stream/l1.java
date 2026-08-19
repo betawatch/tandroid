@@ -1,53 +1,34 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.ArrayDeque;
-import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class l1 extends m1 {
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        I0 a;
-        if (!c()) {
-            return false;
-        }
-        boolean tryAdvance = this.d.tryAdvance(consumer);
-        if (!tryAdvance) {
-            if (this.c == null && (a = m1.a(this.e)) != null) {
-                Spliterator spliterator = a.spliterator();
-                this.d = spliterator;
-                return spliterator.tryAdvance(consumer);
-            }
-            this.a = null;
-        }
-        return tryAdvance;
+public final class l1 extends m1 {
+    public final Object[] h;
+
+    public l1(Spliterator spliterator, a aVar, Object[] objArr) {
+        super(spliterator, aVar, objArr.length);
+        this.h = objArr;
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        if (this.a == null) {
-            return;
+    public l1(l1 l1Var, Spliterator spliterator, long j, long j2) {
+        super(l1Var, spliterator, j, j2, l1Var.h.length);
+        this.h = l1Var.h;
+    }
+
+    @Override // j$.util.stream.m1
+    public final m1 b(Spliterator spliterator, long j, long j2) {
+        return new l1(this, spliterator, j, j2);
+    }
+
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        int i = this.f;
+        if (i >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
-        if (this.d == null) {
-            Spliterator spliterator = this.c;
-            if (spliterator == null) {
-                ArrayDeque b = b();
-                while (true) {
-                    I0 a = m1.a(b);
-                    if (a != null) {
-                        a.forEach(consumer);
-                    } else {
-                        this.a = null;
-                        return;
-                    }
-                }
-            } else {
-                spliterator.forEachRemaining(consumer);
-            }
-        } else {
-            while (tryAdvance(consumer)) {
-            }
-        }
+        Object[] objArr = this.h;
+        this.f = i + 1;
+        objArr[i] = obj;
     }
 }

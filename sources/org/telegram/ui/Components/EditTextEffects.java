@@ -65,38 +65,32 @@ public abstract class EditTextEffects extends EditText {
     public boolean wrapCanvasToFixClipping;
     private NoClipCanvas wrappedCanvas;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        this.postedSpoilerTimeout = false;
-        this.isSpoilersRevealed = false;
-        invalidateSpoilers();
-        if (this.spoilers.isEmpty()) {
+    public static /* synthetic */ void $r8$lambda$PG0FT9UlxiO_xY401FvQP5zT-GE(final EditTextEffects editTextEffects) {
+        editTextEffects.postedSpoilerTimeout = false;
+        editTextEffects.isSpoilersRevealed = false;
+        editTextEffects.invalidateSpoilers();
+        if (editTextEffects.spoilers.isEmpty()) {
             return;
         }
-        this.spoilers.get(0).setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda5
+        editTextEffects.spoilers.get(0).setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextEffects.this.lambda$new$1();
+                EditTextEffects.$r8$lambda$Mr8g986c7ulKaH_j9cCjCLu1E2U(EditTextEffects.this);
             }
         });
-        float sqrt = (float) Math.sqrt(Math.pow(getWidth(), 2.0d) + Math.pow(getHeight(), 2.0d));
-        Iterator<SpoilerEffect> it = this.spoilers.iterator();
+        float sqrt = (float) Math.sqrt(Math.pow(editTextEffects.getWidth(), 2.0d) + Math.pow(editTextEffects.getHeight(), 2.0d));
+        Iterator<SpoilerEffect> it = editTextEffects.spoilers.iterator();
         while (it.hasNext()) {
-            it.next().startRipple(this.lastRippleX, this.lastRippleY, sqrt, true);
+            it.next().startRipple(editTextEffects.lastRippleX, editTextEffects.lastRippleY, sqrt, true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        setSpoilersRevealed(false, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        post(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda6
+    public static /* synthetic */ void $r8$lambda$Mr8g986c7ulKaH_j9cCjCLu1E2U(final EditTextEffects editTextEffects) {
+        editTextEffects.getClass();
+        editTextEffects.post(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextEffects.this.lambda$new$0();
+                EditTextEffects.this.setSpoilersRevealed(false, true);
             }
         });
     }
@@ -113,7 +107,7 @@ public abstract class EditTextEffects extends EditText {
         this.spoilerTimeout = new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextEffects.this.lambda$new$2();
+                EditTextEffects.$r8$lambda$PG0FT9UlxiO_xY401FvQP5zT-GE(EditTextEffects.this);
             }
         };
         this.rect = new Rect();
@@ -141,7 +135,7 @@ public abstract class EditTextEffects extends EditText {
         spoilerEffect.setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextEffects.this.lambda$onSpoilerClicked$4();
+                EditTextEffects.$r8$lambda$RVffId4-i68zranUuatcfhjq0MA(EditTextEffects.this);
             }
         });
         float sqrt = (float) Math.sqrt(Math.pow(getWidth(), 2.0d) + Math.pow(getHeight(), 2.0d));
@@ -151,20 +145,19 @@ public abstract class EditTextEffects extends EditText {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSpoilerClicked$4() {
-        post(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda2
+    public static /* synthetic */ void $r8$lambda$RVffId4-i68zranUuatcfhjq0MA(final EditTextEffects editTextEffects) {
+        editTextEffects.getClass();
+        editTextEffects.post(new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextEffects.this.lambda$onSpoilerClicked$3();
+                EditTextEffects.$r8$lambda$amFFLFztaEX-Op2BCKkjMAClDxo(EditTextEffects.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSpoilerClicked$3() {
-        invalidateSpoilers();
-        checkSpoilerTimeout();
+    public static /* synthetic */ void $r8$lambda$amFFLFztaEX-Op2BCKkjMAClDxo(EditTextEffects editTextEffects) {
+        editTextEffects.invalidateSpoilers();
+        editTextEffects.checkSpoilerTimeout();
     }
 
     @Override // android.widget.TextView
@@ -307,11 +300,6 @@ public abstract class EditTextEffects extends EditText {
         this.shouldRevealSpoilersByTouch = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dispatchTouchEvent$5() {
-        invalidateQuotes(true);
-    }
-
     @Override // android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z;
@@ -319,7 +307,7 @@ public abstract class EditTextEffects extends EditText {
         if (QuoteSpan.onTouch(motionEvent, getPaddingTop() - getScrollY(), this.quoteBlocks, new Runnable() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextEffects.this.lambda$dispatchTouchEvent$5();
+                EditTextEffects.this.invalidateQuotes(true);
             }
         })) {
             return true;
@@ -376,6 +364,7 @@ public abstract class EditTextEffects extends EditText {
 
     @Override // android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
+        Canvas canvas2 = canvas;
         canvas.save();
         if (this.clipToPadding && getScrollY() != 0) {
             canvas.clipRect(-AndroidUtilities.dp(3.0f), (getScrollY() - super.getExtendedPaddingTop()) - this.offsetY, getMeasuredWidth(), ((getMeasuredHeight() + getScrollY()) + super.getExtendedPaddingBottom()) - this.offsetY);
@@ -392,7 +381,9 @@ public abstract class EditTextEffects extends EditText {
         }
         invalidateQuotes(false);
         for (int i = 0; i < this.quoteBlocks.size(); i++) {
-            this.quoteBlocks.get(i).draw(canvas, 0.0f, getWidth(), this.quoteColor, 1.0f, getPaint());
+            Canvas canvas3 = canvas2;
+            this.quoteBlocks.get(i).draw(canvas3, 0.0f, getWidth(), this.quoteColor, 1.0f, getPaint());
+            canvas2 = canvas3;
         }
         updateAnimatedEmoji(false);
         if (this.wrapCanvasToFixClipping) {
@@ -400,7 +391,7 @@ public abstract class EditTextEffects extends EditText {
                 this.wrappedCanvas = new NoClipCanvas();
             }
             NoClipCanvas noClipCanvas = this.wrappedCanvas;
-            noClipCanvas.canvas = canvas;
+            noClipCanvas.canvas = canvas2;
             super.onDraw(noClipCanvas);
         } else {
             super.onDraw(canvas);
@@ -408,7 +399,7 @@ public abstract class EditTextEffects extends EditText {
         if (this.drawAnimatedEmojiDrawables && this.animatedEmojiDrawables != null) {
             canvas.save();
             canvas.translate(getPaddingLeft(), 0.0f);
-            AnimatedEmojiSpan.drawAnimatedEmojis(canvas, getLayout(), this.animatedEmojiDrawables, 0.0f, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.animatedEmojiColorFilter);
+            AnimatedEmojiSpan.drawAnimatedEmojis(canvas2, getLayout(), this.animatedEmojiDrawables, 0.0f, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.animatedEmojiColorFilter);
             canvas.restore();
         }
         canvas.restore();
@@ -427,7 +418,7 @@ public abstract class EditTextEffects extends EditText {
                     this.wrappedCanvas = new NoClipCanvas();
                 }
                 NoClipCanvas noClipCanvas2 = this.wrappedCanvas;
-                noClipCanvas2.canvas = canvas;
+                noClipCanvas2.canvas = canvas2;
                 super.onDraw(noClipCanvas2);
             } else {
                 super.onDraw(canvas);

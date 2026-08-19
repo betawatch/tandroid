@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
@@ -333,7 +332,7 @@ public class LinkManager {
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda2
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LinkManager.this.lambda$handleSettings$0(filtersSetupActivity);
+                                filtersSetupActivity.createFolder(LinkManager.this.getParentLayout());
                             }
                         }, 300L);
                     }
@@ -368,7 +367,7 @@ public class LinkManager {
                     setRequestId(getConnectionsManager().sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda3
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LinkManager.this.lambda$handleSettings$2(tLObject, tL_error);
+                            LinkManager.$r8$lambda$FTjISxid4ZMyM2vnubeewnhkhfM(LinkManager.this, tLObject, tL_error);
                         }
                     }, 10));
                 } else {
@@ -505,7 +504,12 @@ public class LinkManager {
                                     profileActivity.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda4
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            LinkManager.lambda$handleSettings$4(ProfileActivity.this);
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda13
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    LinkManager.$r8$lambda$LH95z6iiSbgUKZuFzNPo8_CwFi0(ProfileActivity.this);
+                                                }
+                                            }, 200L);
                                         }
                                     });
                                 }
@@ -513,7 +517,12 @@ public class LinkManager {
                                     profileActivity.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda5
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            LinkManager.lambda$handleSettings$6(ProfileActivity.this);
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda15
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    LinkManager.$r8$lambda$paHps_jeHUwNd7Rbor9CdgvlPiQ(ProfileActivity.this);
+                                                }
+                                            }, 200L);
                                         }
                                     });
                                 }
@@ -540,7 +549,7 @@ public class LinkManager {
                                 notificationsSettingsActivity.loadExceptions(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda6
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        LinkManager.this.lambda$handleSettings$7(notificationsSettingsActivity, i3, str3);
+                                        LinkManager.$r8$lambda$Jc7BiNOWixcRUcVcKIDmxiGhYAg(LinkManager.this, notificationsSettingsActivity, i3, str3);
                                     }
                                 });
                             } else {
@@ -616,7 +625,7 @@ public class LinkManager {
                                     Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda7
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            LinkManager.this.lambda$handleSettings$8(str3);
+                                            LinkManager.$r8$lambda$KI_W5AvBpDAU0Drn11mFdJ7eR8k(LinkManager.this, str3);
                                         }
                                     };
                                     BaseFragment determineOpenFragment = PasscodeActivity.determineOpenFragment();
@@ -633,7 +642,7 @@ public class LinkManager {
                                     setRequestId(getConnectionsManager().sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda8
                                         @Override // org.telegram.tgnet.RequestDelegate
                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                            LinkManager.this.lambda$handleSettings$11(str3, tLObject, tL_error);
+                                            LinkManager.$r8$lambda$IQ_Z2YYGa7BhMA-bvIr_OYGr524(LinkManager.this, str3, tLObject, tL_error);
                                         }
                                     }, 10));
                                 } else if (!TextUtils.isEmpty(str3) && "passkey".equalsIgnoreCase(str2) && Build.VERSION.SDK_INT >= 28) {
@@ -641,7 +650,7 @@ public class LinkManager {
                                     setRequestId(getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda9
                                         @Override // org.telegram.messenger.Utilities.Callback2
                                         public final void run(Object obj, Object obj2) {
-                                            LinkManager.this.lambda$handleSettings$12(str3, (TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);
+                                            LinkManager.$r8$lambda$USK0WmlmeY2frZnNUReW0nKtUdc(LinkManager.this, str3, (TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);
                                         }
                                     }));
                                 } else if (!TextUtils.isEmpty(str3) && "auto-delete".equalsIgnoreCase(str2) && getUserConfig().getGlobalTTl() >= 0) {
@@ -1104,26 +1113,20 @@ public class LinkManager {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$0(FiltersSetupActivity filtersSetupActivity) {
-        filtersSetupActivity.createFolder(getParentLayout());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$2(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$FTjISxid4ZMyM2vnubeewnhkhfM(final LinkManager linkManager, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        linkManager.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                LinkManager.this.lambda$handleSettings$1(tLObject);
+                LinkManager.$r8$lambda$kmI2ZTgjPFiBHXKBUYAnd90DMpg(LinkManager.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$1(TLObject tLObject) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$kmI2ZTgjPFiBHXKBUYAnd90DMpg(LinkManager linkManager, TLObject tLObject) {
+        linkManager.done();
         if (tLObject != null) {
-            this.activity.lambda$handleIntent$19((TL_account.Password) tLObject);
+            linkManager.activity.openEmailSettings((TL_account.Password) tLObject);
         }
     }
 
@@ -1143,7 +1146,7 @@ public class LinkManager {
                     getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate() { // from class: org.telegram.ui.LinkManager$1$$ExternalSyntheticLambda0
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            LinkManager.1.this.lambda$onCallUsersSelected$1(user, z, tLObject, tL_error);
+                            LinkManager.1.$r8$lambda$HL2XXrJILYHwBH-GhWwGPaBAuZE(LinkManager.1.this, user, z, tLObject, tL_error);
                         }
                     });
                     return;
@@ -1155,58 +1158,62 @@ public class LinkManager {
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.ui.LinkManager$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        LinkManager.1.this.lambda$onCallUsersSelected$3(z, hashSet, tLObject, tL_error);
+                        LinkManager.1.$r8$lambda$Emw0vwyuSJZj2hQUVlklpr2MMGM(LinkManager.1.this, z, hashSet, tLObject, tL_error);
                     }
                 });
             }
             finishFragment();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCallUsersSelected$1(final TLRPC.User user, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$HL2XXrJILYHwBH-GhWwGPaBAuZE(final 1 r0, final TLRPC.User user, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            r0.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$1$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LinkManager.1.this.lambda$onCallUsersSelected$0(tLObject, user, z);
+                    LinkManager.1.$r8$lambda$JlkCN8OTFM89ACCmyBG_73v7igg(LinkManager.1.this, tLObject, user, z);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCallUsersSelected$0(TLObject tLObject, TLRPC.User user, boolean z) {
+        public static /* synthetic */ void $r8$lambda$JlkCN8OTFM89ACCmyBG_73v7igg(1 r8, TLObject tLObject, TLRPC.User user, boolean z) {
             TLRPC.UserFull userFull;
+            r8.getClass();
             if (tLObject instanceof TLRPC.TL_users_userFull) {
                 TLRPC.TL_users_userFull tL_users_userFull = (TLRPC.TL_users_userFull) tLObject;
-                getMessagesController().putUsers(tL_users_userFull.users, false);
-                getMessagesController().putChats(tL_users_userFull.chats, false);
+                r8.getMessagesController().putUsers(tL_users_userFull.users, false);
+                r8.getMessagesController().putChats(tL_users_userFull.chats, false);
                 userFull = tL_users_userFull.full_user;
             } else {
                 userFull = null;
             }
             TLRPC.UserFull userFull2 = userFull;
-            VoIPHelper.startCall(user, z, userFull2 != null && userFull2.video_calls_available, getParentActivity(), userFull2, getAccountInstance());
+            VoIPHelper.startCall(user, z, userFull2 != null && userFull2.video_calls_available, r8.getParentActivity(), userFull2, r8.getAccountInstance());
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCallUsersSelected$3(final boolean z, final HashSet hashSet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$Emw0vwyuSJZj2hQUVlklpr2MMGM(final 1 r6, final boolean z, final HashSet hashSet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+            r6.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$1$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LinkManager.1.this.lambda$onCallUsersSelected$2(tLObject, z, hashSet, tL_error);
+                    LinkManager.1.$r8$lambda$HXl8PLciMA6n3wwTS-5T3bi4tZo(LinkManager.1.this, tLObject, z, hashSet, tL_error);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCallUsersSelected$2(TLObject tLObject, boolean z, HashSet hashSet, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void $r8$lambda$HXl8PLciMA6n3wwTS-5T3bi4tZo(1 r16, TLObject tLObject, boolean z, HashSet hashSet, TLRPC.TL_error tL_error) {
+            r16.getClass();
+            int i = 0;
             if (tLObject instanceof TLRPC.Updates) {
                 TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                MessagesController.getInstance(this.currentAccount).putUsers(updates.users, false);
-                MessagesController.getInstance(this.currentAccount).putChats(updates.chats, false);
-                Iterator it = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCall.class).iterator();
+                MessagesController.getInstance(r16.currentAccount).putUsers(updates.users, false);
+                MessagesController.getInstance(r16.currentAccount).putChats(updates.chats, false);
+                ArrayList findUpdatesAndRemove = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCall.class);
+                int size = findUpdatesAndRemove.size();
                 TLRPC.GroupCall groupCall = null;
-                while (it.hasNext()) {
-                    groupCall = ((TL_update.TL_updateGroupCall) it.next()).call;
+                while (i < size) {
+                    Object obj = findUpdatesAndRemove.get(i);
+                    i++;
+                    groupCall = ((TL_update.TL_updateGroupCall) obj).call;
                 }
                 if (LaunchActivity.instance == null || groupCall == null) {
                     return;
@@ -1214,7 +1221,7 @@ public class LinkManager {
                 TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
                 tL_inputGroupCall.id = groupCall.id;
                 tL_inputGroupCall.access_hash = groupCall.access_hash;
-                VoIPHelper.joinConference(LaunchActivity.instance, this.currentAccount, tL_inputGroupCall, z, groupCall, hashSet);
+                VoIPHelper.joinConference(LaunchActivity.instance, r16.currentAccount, tL_inputGroupCall, z, groupCall, hashSet);
                 return;
             }
             if (!(tLObject instanceof TL_phone.groupCall)) {
@@ -1225,8 +1232,8 @@ public class LinkManager {
                 return;
             }
             TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-            MessagesController.getInstance(this.currentAccount).putUsers(groupcall.users, false);
-            MessagesController.getInstance(this.currentAccount).putChats(groupcall.chats, false);
+            MessagesController.getInstance(r16.currentAccount).putUsers(groupcall.users, false);
+            MessagesController.getInstance(r16.currentAccount).putChats(groupcall.chats, false);
             if (LaunchActivity.instance == null) {
                 return;
             }
@@ -1234,22 +1241,11 @@ public class LinkManager {
             TLRPC.GroupCall groupCall2 = groupcall.call;
             tL_inputGroupCall2.id = groupCall2.id;
             tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-            VoIPHelper.joinConference(LaunchActivity.instance, this.currentAccount, tL_inputGroupCall2, z, groupCall2, hashSet);
+            VoIPHelper.joinConference(LaunchActivity.instance, r16.currentAccount, tL_inputGroupCall2, z, groupCall2, hashSet);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleSettings$4(final ProfileActivity profileActivity) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda13
-            @Override // java.lang.Runnable
-            public final void run() {
-                LinkManager.lambda$handleSettings$3(ProfileActivity.this);
-            }
-        }, 200L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleSettings$3(ProfileActivity profileActivity) {
+    public static /* synthetic */ void $r8$lambda$LH95z6iiSbgUKZuFzNPo8_CwFi0(ProfileActivity profileActivity) {
         SharedMediaLayout sharedMediaLayout = profileActivity.sharedMediaLayout;
         if (sharedMediaLayout != null) {
             sharedMediaLayout.scrollToPage(14);
@@ -1257,18 +1253,7 @@ public class LinkManager {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleSettings$6(final ProfileActivity profileActivity) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda15
-            @Override // java.lang.Runnable
-            public final void run() {
-                LinkManager.lambda$handleSettings$5(ProfileActivity.this);
-            }
-        }, 200L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleSettings$5(ProfileActivity profileActivity) {
+    public static /* synthetic */ void $r8$lambda$paHps_jeHUwNd7Rbor9CdgvlPiQ(ProfileActivity profileActivity) {
         SharedMediaLayout sharedMediaLayout = profileActivity.sharedMediaLayout;
         if (sharedMediaLayout != null) {
             sharedMediaLayout.scrollToPage(14);
@@ -1276,133 +1261,130 @@ public class LinkManager {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$7(NotificationsSettingsActivity notificationsSettingsActivity, int i, String str) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$Jc7BiNOWixcRUcVcKIDmxiGhYAg(LinkManager linkManager, NotificationsSettingsActivity notificationsSettingsActivity, int i, String str) {
+        linkManager.done();
         NotificationsCustomSettingsActivity makeNotificationsCustomSettingsActivity = notificationsSettingsActivity.makeNotificationsCustomSettingsActivity(i);
         makeNotificationsCustomSettingsActivity.expanded = true;
         makeNotificationsCustomSettingsActivity.updateRows(false);
-        presentFragment(makeNotificationsCustomSettingsActivity);
+        linkManager.presentFragment(makeNotificationsCustomSettingsActivity);
         if ("show".equalsIgnoreCase(str)) {
-            scrollTo("showRow");
+            linkManager.scrollTo("showRow");
         }
         if ("new".equalsIgnoreCase(str)) {
-            scrollTo("newRow");
+            linkManager.scrollTo("newRow");
         }
         if ("important".equalsIgnoreCase(str)) {
-            scrollTo("importantRow");
+            linkManager.scrollTo("importantRow");
         }
         if ("messages".equalsIgnoreCase(str)) {
-            scrollTo("messagesRow");
+            linkManager.scrollTo("messagesRow");
         }
         if ("stories".equalsIgnoreCase(str)) {
-            scrollTo("storiesRow");
+            linkManager.scrollTo("storiesRow");
         }
         if ("preview".equalsIgnoreCase(str)) {
-            scrollTo("previewRow");
+            linkManager.scrollTo("previewRow");
         }
         if ("show-sender".equalsIgnoreCase(str)) {
-            scrollTo("showSenderRow");
+            linkManager.scrollTo("showSenderRow");
         }
         if ("sound".equalsIgnoreCase(str)) {
-            scrollTo("soundRow");
+            linkManager.scrollTo("soundRow");
         }
         if ("add-exception".equalsIgnoreCase(str)) {
-            scrollTo("addExceptionRow");
+            linkManager.scrollTo("addExceptionRow");
         }
         if ("delete-exceptions".equalsIgnoreCase(str)) {
-            scrollTo("deleteExceptionsRow");
+            linkManager.scrollTo("deleteExceptionsRow");
         }
         if ("light-color".equalsIgnoreCase(str)) {
-            scrollTo("lightColorRow");
+            linkManager.scrollTo("lightColorRow");
         }
         if ("vibrate".equalsIgnoreCase(str)) {
-            scrollTo("vibrateRow");
+            linkManager.scrollTo("vibrateRow");
         }
         if ("popup".equalsIgnoreCase(str)) {
-            scrollTo("popupRow");
+            linkManager.scrollTo("popupRow");
         }
         if ("priority".equalsIgnoreCase(str)) {
-            scrollTo("priorityRow");
+            linkManager.scrollTo("priorityRow");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$8(String str) {
+    public static /* synthetic */ void $r8$lambda$KI_W5AvBpDAU0Drn11mFdJ7eR8k(LinkManager linkManager, String str) {
+        linkManager.getClass();
         if ("disable".equalsIgnoreCase(str)) {
-            scrollTo("disablePasscodeRow");
+            linkManager.scrollTo("disablePasscodeRow");
         }
         if ("change".equalsIgnoreCase(str)) {
-            scrollTo("changePasscodeRow");
+            linkManager.scrollTo("changePasscodeRow");
         }
         if ("auto-lock".equalsIgnoreCase(str)) {
-            scrollTo("autoLockRow");
+            linkManager.scrollTo("autoLockRow");
         }
         if ("fingerprint".equalsIgnoreCase(str)) {
-            scrollTo("fingerprintRow");
+            linkManager.scrollTo("fingerprintRow");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$11(final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$IQ_Z2YYGa7BhMA-bvIr_OYGr524(final LinkManager linkManager, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        linkManager.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                LinkManager.this.lambda$handleSettings$10(tLObject, str);
+                LinkManager.$r8$lambda$zFjc9RBlr8jZac_yFHGk21FZeV0(LinkManager.this, tLObject, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$10(TLObject tLObject, final String str) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$zFjc9RBlr8jZac_yFHGk21FZeV0(final LinkManager linkManager, TLObject tLObject, final String str) {
+        linkManager.done();
         if (tLObject == null) {
             return;
         }
         TL_account.Password password = (TL_account.Password) tLObject;
         if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, false)) {
-            AlertsCreator.showUpdateAppAlert(this.activity, LocaleController.getString(R.string.UpdateAppAlert), true);
+            AlertsCreator.showUpdateAppAlert(linkManager.activity, LocaleController.getString(R.string.UpdateAppAlert), true);
         }
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
-                LinkManager.this.lambda$handleSettings$9(str);
+                LinkManager.$r8$lambda$hzRVS3j2oLc6-YP6Ai4UdLpLw2s(LinkManager.this, str);
             }
         };
         if (password.has_password) {
             TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
             twoStepVerificationActivity.setPassword(password);
-            presentFragment(twoStepVerificationActivity);
+            linkManager.presentFragment(twoStepVerificationActivity);
             runnable.run();
             return;
         }
         TwoStepVerificationSetupActivity twoStepVerificationSetupActivity = new TwoStepVerificationSetupActivity(TextUtils.isEmpty(password.email_unconfirmed_pattern) ? 6 : 5, password);
         twoStepVerificationSetupActivity.setOnOpenedSettings(runnable);
-        presentFragment(twoStepVerificationSetupActivity);
+        linkManager.presentFragment(twoStepVerificationSetupActivity);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$9(String str) {
+    public static /* synthetic */ void $r8$lambda$hzRVS3j2oLc6-YP6Ai4UdLpLw2s(LinkManager linkManager, String str) {
+        linkManager.getClass();
         if ("disable".equalsIgnoreCase(str)) {
-            scrollTo("turnPasswordOffRow");
+            linkManager.scrollTo("turnPasswordOffRow");
         }
         if ("change".equalsIgnoreCase(str)) {
-            scrollTo("changePasswordRow");
+            linkManager.scrollTo("changePasswordRow");
         }
         if ("change-email".equalsIgnoreCase(str)) {
-            scrollTo("emailRow");
+            linkManager.scrollTo("emailRow");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleSettings$12(String str, TL_account.Passkeys passkeys, TLRPC.TL_error tL_error) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$USK0WmlmeY2frZnNUReW0nKtUdc(LinkManager linkManager, String str, TL_account.Passkeys passkeys, TLRPC.TL_error tL_error) {
+        linkManager.done();
         if (passkeys == null) {
             return;
         }
-        presentFragment(new PasskeysActivity(passkeys.passkeys));
+        linkManager.presentFragment(new PasskeysActivity(passkeys.passkeys));
         if ("create".equalsIgnoreCase(str)) {
-            scrollTo("addPasskeyRow");
+            linkManager.scrollTo("addPasskeyRow");
         }
     }
 
@@ -1418,84 +1400,82 @@ public class LinkManager {
         setRequestId(getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LinkManager.this.lambda$handleInvoiceSlug$17(tL_inputInvoiceSlug, str, tLObject, tL_error);
+                LinkManager.$r8$lambda$yB86LXrUQcAq2ueYKff7Ht76ewI(LinkManager.this, tL_inputInvoiceSlug, str, tLObject, tL_error);
             }
         }));
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleInvoiceSlug$17(final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$yB86LXrUQcAq2ueYKff7Ht76ewI(final LinkManager linkManager, final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        linkManager.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                LinkManager.this.lambda$handleInvoiceSlug$16(tL_error, tLObject, tL_inputInvoiceSlug, str);
+                LinkManager.$r8$lambda$q1bC5o24mucYv0tXZ1GLOM-5QjU(LinkManager.this, tL_error, tLObject, tL_inputInvoiceSlug, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleInvoiceSlug$16(TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, String str) {
+    public static /* synthetic */ void $r8$lambda$q1bC5o24mucYv0tXZ1GLOM-5QjU(final LinkManager linkManager, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, String str) {
         PaymentFormActivity paymentFormActivity;
         if (tL_error != null) {
+            linkManager.getClass();
             if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error.text)) {
-                getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.PaymentInvoiceSubscriptionLinkAlreadyPaid)).show();
+                linkManager.getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.PaymentInvoiceSubscriptionLinkAlreadyPaid)).show();
             } else {
-                getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.PaymentInvoiceLinkInvalid)).show();
+                linkManager.getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.PaymentInvoiceLinkInvalid)).show();
             }
-        } else if (!this.activity.isFinishing()) {
+        } else if (!linkManager.activity.isFinishing()) {
             if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-                LaunchActivity launchActivity = this.activity;
+                LaunchActivity launchActivity = linkManager.activity;
                 final Runnable runnable = launchActivity.navigateToPremiumGiftCallback;
                 launchActivity.navigateToPremiumGiftCallback = null;
-                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda22
+                StarsController.getInstance(linkManager.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda22
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LinkManager.this.lambda$handleInvoiceSlug$13();
+                        LinkManager.this.done();
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda23
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        LinkManager.lambda$handleInvoiceSlug$14(runnable, (String) obj);
+                        LinkManager.$r8$lambda$URxiwuOJG0fM2eKyA9oQo6oOclQ(runnable, (String) obj);
                     }
                 });
                 return;
             }
             if (tLObject instanceof TLRPC.PaymentForm) {
                 TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
-                MessagesController.getInstance(this.currentAccount).putUsers(paymentForm.users, false);
-                paymentFormActivity = new PaymentFormActivity(paymentForm, str, getLastFragment());
+                MessagesController.getInstance(linkManager.currentAccount).putUsers(paymentForm.users, false);
+                paymentFormActivity = new PaymentFormActivity(paymentForm, str, linkManager.getLastFragment());
             } else {
                 paymentFormActivity = tLObject instanceof TLRPC.PaymentReceipt ? new PaymentFormActivity((TLRPC.PaymentReceipt) tLObject) : null;
             }
             if (paymentFormActivity != null) {
-                LaunchActivity launchActivity2 = this.activity;
+                LaunchActivity launchActivity2 = linkManager.activity;
                 final Runnable runnable2 = launchActivity2.navigateToPremiumGiftCallback;
                 if (runnable2 != null) {
                     launchActivity2.navigateToPremiumGiftCallback = null;
                     paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda24
                         @Override // org.telegram.ui.PaymentFormActivity.PaymentFormCallback
                         public final void onInvoiceStatusChanged(PaymentFormActivity.InvoiceStatus invoiceStatus) {
-                            LinkManager.lambda$handleInvoiceSlug$15(runnable2, invoiceStatus);
+                            LinkManager.$r8$lambda$5p5ZPZn3KDU8oha1jokY1ltg1Eo(runnable2, invoiceStatus);
                         }
                     });
                 }
-                presentFragment(paymentFormActivity);
+                linkManager.presentFragment(paymentFormActivity);
             }
         }
-        lambda$handleInvoiceSlug$13();
+        linkManager.done();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleInvoiceSlug$14(Runnable runnable, String str) {
+    public static /* synthetic */ void $r8$lambda$URxiwuOJG0fM2eKyA9oQo6oOclQ(Runnable runnable, String str) {
         if (runnable == null || !"paid".equals(str)) {
             return;
         }
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handleInvoiceSlug$15(Runnable runnable, PaymentFormActivity.InvoiceStatus invoiceStatus) {
+    public static /* synthetic */ void $r8$lambda$5p5ZPZn3KDU8oha1jokY1ltg1Eo(Runnable runnable, PaymentFormActivity.InvoiceStatus invoiceStatus) {
         if (invoiceStatus == PaymentFormActivity.InvoiceStatus.PAID) {
             runnable.run();
         }
@@ -1515,25 +1495,24 @@ public class LinkManager {
         getConnectionsManager().sendRequestTyped(tL_messages_requestUrlAuth, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda10
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                LinkManager.this.lambda$handleOAuth$18(tL_messages_requestUrlAuth, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
+                LinkManager.$r8$lambda$0OGqaoTZwVb4VG3NP2kGnejvvLA(LinkManager.this, tL_messages_requestUrlAuth, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
             }
         });
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleOAuth$18(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$0OGqaoTZwVb4VG3NP2kGnejvvLA(LinkManager linkManager, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
+        linkManager.done();
         if (tL_error != null) {
             if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain)).show();
+                linkManager.getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain)).show();
                 return;
             } else {
-                getBulletinFactory().showForError(tL_error);
+                linkManager.getBulletinFactory().showForError(tL_error);
                 return;
             }
         }
-        OAuthSheet.handle(this.isExternalIntent, this.currentAccount, tL_messages_requestUrlAuth, urlAuthResult);
+        OAuthSheet.handle(linkManager.isExternalIntent, linkManager.currentAccount, tL_messages_requestUrlAuth, urlAuthResult);
     }
 
     private boolean handleNewBot(String str, String str2, String str3) {
@@ -1554,39 +1533,38 @@ public class LinkManager {
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LinkManager.this.lambda$handleNewBot$20(safeLastFragment, userArr, tL_requestPeerTypeCreateBot);
+                    LinkManager.$r8$lambda$I3F9JBO-vhHnAnrtQk9jLIx5OJM(LinkManager.this, safeLastFragment, userArr, tL_requestPeerTypeCreateBot);
                 }
             };
             MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str, new Consumer() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda12
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    LinkManager.this.lambda$handleNewBot$21(userArr, runnable, (Long) obj);
+                    LinkManager.$r8$lambda$xSLKfM3fA0oKlIz8PdAFgt17Szc(LinkManager.this, userArr, runnable, (Long) obj);
                 }
             });
         }
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleNewBot$20(BaseFragment baseFragment, final TLRPC.User[] userArr, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot) {
-        CreateBotAlert.show(baseFragment.getContext(), this.currentAccount, userArr[0], tL_requestPeerTypeCreateBot, true, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda18
+    public static /* synthetic */ void $r8$lambda$I3F9JBO-vhHnAnrtQk9jLIx5OJM(final LinkManager linkManager, BaseFragment baseFragment, final TLRPC.User[] userArr, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot) {
+        linkManager.getClass();
+        CreateBotAlert.show(baseFragment.getContext(), linkManager.currentAccount, userArr[0], tL_requestPeerTypeCreateBot, true, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda18
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                LinkManager.this.lambda$handleNewBot$19(userArr, (TLRPC.User) obj);
+                LinkManager.$r8$lambda$7TXSyGNbxU5se5jRBCF_U7IHzEw(LinkManager.this, userArr, (TLRPC.User) obj);
             }
-        }, baseFragment.getResourceProvider(), getBulletinFactory(), false);
+        }, baseFragment.getResourceProvider(), linkManager.getBulletinFactory(), false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleNewBot$19(TLRPC.User[] userArr, TLRPC.User user) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$7TXSyGNbxU5se5jRBCF_U7IHzEw(LinkManager linkManager, TLRPC.User[] userArr, TLRPC.User user) {
+        linkManager.done();
         if (user == null) {
             return;
         }
         long j = userArr[0].id;
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", user.id);
-        presentFragment(new 3(bundle, user, userArr, j));
+        linkManager.presentFragment(linkManager.new 3(bundle, user, userArr, j));
     }
 
     class 3 extends ChatActivity {
@@ -1618,24 +1596,29 @@ public class LinkManager {
             of.createSimpleBulletin(i, formatString, AndroidUtilities.replaceSingleTag(formatString2, new Runnable() { // from class: org.telegram.ui.LinkManager$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LinkManager.3.this.lambda$onBecomeFullyVisible$0(j);
+                    LinkManager.3.$r8$lambda$4Xfi51IC5nkwO_aRmvJmFiJOPrY(LinkManager.3.this, j);
                 }
             })).show();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBecomeFullyVisible$0(long j) {
-            presentFragment(ChatActivity.of(j));
+        public static /* synthetic */ void $r8$lambda$4Xfi51IC5nkwO_aRmvJmFiJOPrY(3 r0, long j) {
+            r0.getClass();
+            r0.presentFragment(ChatActivity.of(j));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleNewBot$21(TLRPC.User[] userArr, Runnable runnable, Long l) {
-        TLRPC.User user = l == null ? null : MessagesController.getInstance(this.currentAccount).getUser(l);
+    public static /* synthetic */ void $r8$lambda$xSLKfM3fA0oKlIz8PdAFgt17Szc(LinkManager linkManager, TLRPC.User[] userArr, Runnable runnable, Long l) {
+        TLRPC.User user;
+        if (l == null) {
+            linkManager.getClass();
+            user = null;
+        } else {
+            user = MessagesController.getInstance(linkManager.currentAccount).getUser(l);
+        }
         userArr[0] = user;
         if (user == null) {
-            lambda$handleInvoiceSlug$13();
-            getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.NoUsernameFound)).show();
+            linkManager.done();
+            linkManager.getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.NoUsernameFound)).show();
         } else {
             runnable.run();
         }
@@ -1653,29 +1636,28 @@ public class LinkManager {
         ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettone, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                LinkManager.this.lambda$handleAiStyle$22((TL_aicompose.Tones) obj, (TLRPC.TL_error) obj2);
+                LinkManager.$r8$lambda$swZ_QT24wHgr_jmlkXH9ntoARYY(LinkManager.this, (TL_aicompose.Tones) obj, (TLRPC.TL_error) obj2);
             }
         });
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleAiStyle$22(TL_aicompose.Tones tones, TLRPC.TL_error tL_error) {
-        lambda$handleInvoiceSlug$13();
+    public static /* synthetic */ void $r8$lambda$swZ_QT24wHgr_jmlkXH9ntoARYY(LinkManager linkManager, TL_aicompose.Tones tones, TLRPC.TL_error tL_error) {
+        linkManager.done();
         if (!(tones instanceof TL_aicompose.TL_tones)) {
             if (tL_error != null) {
                 if ("AICOMPOSE_TONE_SLUG_INVALID".equalsIgnoreCase(tL_error.text)) {
-                    getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.AIEditorStyleNotFound)).show();
+                    linkManager.getBulletinFactory().createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.AIEditorStyleNotFound)).show();
                     return;
                 } else {
-                    getBulletinFactory().showForError(tL_error);
+                    linkManager.getBulletinFactory().showForError(tL_error);
                     return;
                 }
             }
             return;
         }
         TL_aicompose.TL_tones tL_tones = (TL_aicompose.TL_tones) tones;
-        MessagesController.getInstance(this.currentAccount).putUsers(tL_tones.users, false);
+        MessagesController.getInstance(linkManager.currentAccount).putUsers(tL_tones.users, false);
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null || tL_tones.tones.isEmpty()) {
             return;
@@ -1740,7 +1722,7 @@ public class LinkManager {
             this.progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda16
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
-                    LinkManager.this.lambda$init$23(dialogInterface);
+                    LinkManager.this.cancel();
                 }
             });
             this.progressDialog.showDelayed(300L);
@@ -1757,11 +1739,6 @@ public class LinkManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$23(DialogInterface dialogInterface) {
-        cancel();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void cancel() {
         if (this.currentRequestId >= 0) {
             getConnectionsManager().cancelRequest(this.currentRequestId, true);
@@ -1770,8 +1747,7 @@ public class LinkManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: done, reason: merged with bridge method [inline-methods] */
-    public void lambda$handleInvoiceSlug$13() {
+    public void done() {
         if (this.done) {
             return;
         }

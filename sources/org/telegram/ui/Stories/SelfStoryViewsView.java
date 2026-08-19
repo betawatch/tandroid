@@ -33,7 +33,7 @@ import org.telegram.ui.Stories.SelfStoryViewsView;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SelfStoryViewsView extends FrameLayout {
     public float bottomPadding;
     private int currentState;
@@ -192,7 +192,7 @@ public class SelfStoryViewsView extends FrameLayout {
             SelfStoryViewsPage selfStoryViewsPage = new SelfStoryViewsPage(this.val$storyViewer, this.val$context, SelfStoryViewsView.this.sharedFilterState, new Consumer() { // from class: org.telegram.ui.Stories.SelfStoryViewsView$4$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    SelfStoryViewsView.4.this.lambda$instantiateItem$0((SelfStoryViewsPage) obj);
+                    SelfStoryViewsView.4.$r8$lambda$rI5OhLHjsORBJxvM7zSURaPfBhg(SelfStoryViewsView.4.this, (SelfStoryViewsPage) obj);
                 }
             }) { // from class: org.telegram.ui.Stories.SelfStoryViewsView.4.1
                 @Override // org.telegram.ui.Stories.SelfStoryViewsPage
@@ -216,8 +216,7 @@ public class SelfStoryViewsView extends FrameLayout {
             return selfStoryViewsPage;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$instantiateItem$0(SelfStoryViewsPage selfStoryViewsPage) {
+        public static /* synthetic */ void $r8$lambda$rI5OhLHjsORBJxvM7zSURaPfBhg(4 r2, SelfStoryViewsPage selfStoryViewsPage) {
             for (int i = 0; i < SelfStoryViewsView.this.itemViews.size(); i++) {
                 if (selfStoryViewsPage != SelfStoryViewsView.this.itemViews.get(i)) {
                     ((SelfStoryViewsPage) SelfStoryViewsView.this.itemViews.get(i)).updateSharedState();
@@ -248,7 +247,7 @@ public class SelfStoryViewsView extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.SelfStoryViewsView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SelfStoryViewsView.this.lambda$setKeyboardHeight$0(valueAnimator);
+                    SelfStoryViewsView.$r8$lambda$QgG0ic4GB2HmpBjBY667gawqToc(SelfStoryViewsView.this, valueAnimator);
                 }
             });
             ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
@@ -262,10 +261,10 @@ public class SelfStoryViewsView extends FrameLayout {
         currentPage.onKeyboardShown();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setKeyboardHeight$0(ValueAnimator valueAnimator) {
-        this.progressToKeyboard = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateTranslation();
+    public static /* synthetic */ void $r8$lambda$QgG0ic4GB2HmpBjBY667gawqToc(SelfStoryViewsView selfStoryViewsView, ValueAnimator valueAnimator) {
+        selfStoryViewsView.getClass();
+        selfStoryViewsView.progressToKeyboard = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        selfStoryViewsView.updateTranslation();
     }
 
     @Override // android.widget.FrameLayout, android.view.View

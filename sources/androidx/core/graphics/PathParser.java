@@ -83,7 +83,7 @@ public abstract class PathParser {
         while (i < str.length()) {
             char charAt = str.charAt(i);
             if (((charAt - 'A') * (charAt - 'Z') <= 0 || (charAt - 'a') * (charAt - 'z') <= 0) && charAt != 'e' && charAt != 'E') {
-                return i;
+                break;
             }
             i++;
         }
@@ -234,14 +234,19 @@ public abstract class PathParser {
             float f6;
             float f7;
             float f8;
-            char c3 = c2;
-            float f9 = fArr[0];
-            float f10 = fArr[1];
-            float f11 = fArr[2];
-            float f12 = fArr[3];
-            float f13 = fArr[4];
-            float f14 = fArr[5];
-            switch (c3) {
+            float f9;
+            float f10;
+            float f11;
+            float f12;
+            float f13;
+            Path path2 = path;
+            float f14 = fArr[0];
+            float f15 = fArr[1];
+            float f16 = fArr[2];
+            float f17 = fArr[3];
+            float f18 = fArr[4];
+            float f19 = fArr[5];
+            switch (c2) {
                 case 'A':
                 case 'a':
                     i = 7;
@@ -273,221 +278,231 @@ public abstract class PathParser {
                     break;
                 case 'Z':
                 case 'z':
-                    path.close();
-                    path.moveTo(f13, f14);
-                    f9 = f13;
-                    f11 = f9;
-                    f10 = f14;
-                    f12 = f10;
+                    path2.close();
+                    path2.moveTo(f18, f19);
+                    f14 = f18;
+                    f16 = f14;
+                    f15 = f19;
+                    f17 = f15;
                     i = 2;
                     break;
             }
-            float f15 = f9;
-            float f16 = f10;
-            float f17 = f13;
-            float f18 = f14;
+            float f20 = f14;
+            float f21 = f15;
+            float f22 = f18;
+            float f23 = f19;
             int i3 = 0;
-            char c4 = c;
+            char c3 = c;
             while (i3 < fArr2.length) {
-                if (c3 != 'A') {
-                    if (c3 == 'C') {
-                        i2 = i3;
-                        int i4 = i2 + 2;
-                        int i5 = i2 + 3;
-                        int i6 = i2 + 4;
-                        int i7 = i2 + 5;
-                        path.cubicTo(fArr2[i2], fArr2[i2 + 1], fArr2[i4], fArr2[i5], fArr2[i6], fArr2[i7]);
-                        f15 = fArr2[i6];
-                        float f19 = fArr2[i7];
-                        float f20 = fArr2[i4];
-                        float f21 = fArr2[i5];
-                        f16 = f19;
-                        f12 = f21;
-                        f11 = f20;
-                    } else if (c3 == 'H') {
-                        i2 = i3;
-                        path.lineTo(fArr2[i2], f16);
-                        f15 = fArr2[i2];
-                    } else if (c3 == 'Q') {
-                        i2 = i3;
-                        int i8 = i2 + 1;
-                        int i9 = i2 + 2;
-                        int i10 = i2 + 3;
-                        path.quadTo(fArr2[i2], fArr2[i8], fArr2[i9], fArr2[i10]);
-                        float f22 = fArr2[i2];
-                        float f23 = fArr2[i8];
-                        f15 = fArr2[i9];
-                        f16 = fArr2[i10];
-                        f11 = f22;
-                        f12 = f23;
-                    } else if (c3 == 'V') {
-                        i2 = i3;
-                        path.lineTo(f15, fArr2[i2]);
-                        f16 = fArr2[i2];
-                    } else if (c3 != 'a') {
-                        if (c3 != 'c') {
-                            if (c3 == 'h') {
-                                path.rLineTo(fArr2[i3], 0.0f);
-                                f15 += fArr2[i3];
-                            } else if (c3 != 'q') {
-                                if (c3 == 'v') {
-                                    path.rLineTo(0.0f, fArr2[i3]);
-                                    f4 = fArr2[i3];
-                                } else if (c3 == 'L') {
-                                    int i11 = i3 + 1;
-                                    path.lineTo(fArr2[i3], fArr2[i11]);
-                                    f15 = fArr2[i3];
-                                    f16 = fArr2[i11];
-                                } else if (c3 == 'M') {
-                                    f15 = fArr2[i3];
-                                    f16 = fArr2[i3 + 1];
-                                    if (i3 > 0) {
-                                        path.lineTo(f15, f16);
+                if (c2 == 'A') {
+                    i2 = i3;
+                    int i4 = i2 + 5;
+                    int i5 = i2 + 6;
+                    drawArc(path, f20, f21, fArr2[i4], fArr2[i5], fArr2[i2], fArr2[i2 + 1], fArr2[i2 + 2], fArr2[i2 + 3] != 0.0f, fArr2[i2 + 4] != 0.0f);
+                    f16 = fArr2[i4];
+                    f20 = f16;
+                    f17 = fArr2[i5];
+                    f21 = f17;
+                } else if (c2 == 'C') {
+                    i2 = i3;
+                    int i6 = i2 + 2;
+                    int i7 = i2 + 3;
+                    int i8 = i2 + 4;
+                    int i9 = i2 + 5;
+                    path2.cubicTo(fArr2[i2], fArr2[i2 + 1], fArr2[i6], fArr2[i7], fArr2[i8], fArr2[i9]);
+                    float f24 = fArr2[i8];
+                    float f25 = fArr2[i9];
+                    float f26 = fArr2[i6];
+                    float f27 = fArr2[i7];
+                    f20 = f24;
+                    f21 = f25;
+                    f17 = f27;
+                    f16 = f26;
+                } else if (c2 != 'H') {
+                    if (c2 != 'Q') {
+                        if (c2 == 'V') {
+                            i2 = i3;
+                            path2.lineTo(f20, fArr2[i2]);
+                            f3 = fArr2[i2];
+                        } else if (c2 != 'a') {
+                            if (c2 == 'c') {
+                                int i10 = i3 + 2;
+                                int i11 = i3 + 3;
+                                int i12 = i3 + 4;
+                                int i13 = i3 + 5;
+                                path2.rCubicTo(fArr2[i3], fArr2[i3 + 1], fArr2[i10], fArr2[i11], fArr2[i12], fArr2[i13]);
+                                float f28 = fArr2[i10] + f20;
+                                float f29 = fArr2[i11] + f21;
+                                f20 += fArr2[i12];
+                                f21 += fArr2[i13];
+                                f16 = f28;
+                                f17 = f29;
+                            } else if (c2 != 'h') {
+                                if (c2 != 'q') {
+                                    if (c2 != 'v') {
+                                        if (c2 != 'L') {
+                                            if (c2 == 'M') {
+                                                f8 = fArr2[i3];
+                                                f9 = fArr2[i3 + 1];
+                                                if (i3 > 0) {
+                                                    path2.lineTo(f8, f9);
+                                                } else {
+                                                    path2.moveTo(f8, f9);
+                                                    f20 = f8;
+                                                    f22 = f20;
+                                                    f21 = f9;
+                                                }
+                                            } else if (c2 == 'S') {
+                                                if (c3 == 'c' || c3 == 's' || c3 == 'C' || c3 == 'S') {
+                                                    f20 = (f20 * 2.0f) - f16;
+                                                    f21 = (f21 * 2.0f) - f17;
+                                                }
+                                                float f30 = f20;
+                                                float f31 = f21;
+                                                int i14 = i3 + 1;
+                                                int i15 = i3 + 2;
+                                                int i16 = i3 + 3;
+                                                path2.cubicTo(f30, f31, fArr2[i3], fArr2[i14], fArr2[i15], fArr2[i16]);
+                                                f = fArr2[i3];
+                                                f2 = fArr2[i14];
+                                                f20 = fArr2[i15];
+                                                f21 = fArr2[i16];
+                                                i2 = i3;
+                                            } else if (c2 == 'T') {
+                                                if (c3 == 'q' || c3 == 't' || c3 == 'Q' || c3 == 'T') {
+                                                    f20 = (f20 * 2.0f) - f16;
+                                                    f21 = (f21 * 2.0f) - f17;
+                                                }
+                                                int i17 = i3 + 1;
+                                                path2.quadTo(f20, f21, fArr2[i3], fArr2[i17]);
+                                                float f32 = fArr2[i3];
+                                                f3 = fArr2[i17];
+                                                f16 = f20;
+                                                f17 = f21;
+                                                i2 = i3;
+                                                f20 = f32;
+                                            } else if (c2 == 'l') {
+                                                int i18 = i3 + 1;
+                                                path2.rLineTo(fArr2[i3], fArr2[i18]);
+                                                f20 += fArr2[i3];
+                                                f7 = fArr2[i18];
+                                            } else if (c2 == 'm') {
+                                                float f33 = fArr2[i3];
+                                                f20 += f33;
+                                                float f34 = fArr2[i3 + 1];
+                                                f21 += f34;
+                                                if (i3 > 0) {
+                                                    path2.rLineTo(f33, f34);
+                                                } else {
+                                                    path2.rMoveTo(f33, f34);
+                                                    f22 = f20;
+                                                }
+                                            } else if (c2 == 's') {
+                                                if (c3 == 'c' || c3 == 's' || c3 == 'C' || c3 == 'S') {
+                                                    f10 = f21 - f17;
+                                                    f11 = f20 - f16;
+                                                } else {
+                                                    f11 = 0.0f;
+                                                    f10 = 0.0f;
+                                                }
+                                                int i19 = i3 + 1;
+                                                int i20 = i3 + 2;
+                                                int i21 = i3 + 3;
+                                                path2.rCubicTo(f11, f10, fArr2[i3], fArr2[i19], fArr2[i20], fArr2[i21]);
+                                                f4 = fArr2[i3] + f20;
+                                                f5 = fArr2[i19] + f21;
+                                                f20 += fArr2[i20];
+                                                f6 = fArr2[i21];
+                                            } else if (c2 == 't') {
+                                                if (c3 == 'q' || c3 == 't' || c3 == 'Q' || c3 == 'T') {
+                                                    f12 = f20 - f16;
+                                                    f13 = f21 - f17;
+                                                } else {
+                                                    f13 = 0.0f;
+                                                    f12 = 0.0f;
+                                                }
+                                                int i22 = i3 + 1;
+                                                path2.rQuadTo(f12, f13, fArr2[i3], fArr2[i22]);
+                                                float f35 = f12 + f20;
+                                                float f36 = f13 + f21;
+                                                f20 += fArr2[i3];
+                                                f21 += fArr2[i22];
+                                                f17 = f36;
+                                                f16 = f35;
+                                            }
+                                            f23 = f21;
+                                        } else {
+                                            int i23 = i3 + 1;
+                                            path2.lineTo(fArr2[i3], fArr2[i23]);
+                                            f8 = fArr2[i3];
+                                            f9 = fArr2[i23];
+                                        }
+                                        f20 = f8;
+                                        f21 = f9;
                                     } else {
-                                        path.moveTo(f15, f16);
-                                        i2 = i3;
-                                        f18 = f16;
-                                        f17 = f15;
+                                        path2.rLineTo(0.0f, fArr2[i3]);
+                                        f7 = fArr2[i3];
                                     }
-                                } else if (c3 == 'S') {
-                                    if (c4 == 'c' || c4 == 's' || c4 == 'C' || c4 == 'S') {
-                                        f15 = (f15 * 2.0f) - f11;
-                                        f16 = (f16 * 2.0f) - f12;
-                                    }
-                                    float f24 = f16;
-                                    float f25 = f15;
-                                    int i12 = i3 + 1;
-                                    int i13 = i3 + 2;
-                                    int i14 = i3 + 3;
-                                    path.cubicTo(f25, f24, fArr2[i3], fArr2[i12], fArr2[i13], fArr2[i14]);
-                                    f = fArr2[i3];
-                                    f2 = fArr2[i12];
-                                    f15 = fArr2[i13];
-                                    f16 = fArr2[i14];
-                                    f11 = f;
-                                    f12 = f2;
-                                } else if (c3 == 'T') {
-                                    if (c4 == 'q' || c4 == 't' || c4 == 'Q' || c4 == 'T') {
-                                        f15 = (f15 * 2.0f) - f11;
-                                        f16 = (f16 * 2.0f) - f12;
-                                    }
-                                    int i15 = i3 + 1;
-                                    path.quadTo(f15, f16, fArr2[i3], fArr2[i15]);
-                                    i2 = i3;
-                                    f12 = f16;
-                                    f11 = f15;
-                                    f15 = fArr2[i3];
-                                    f16 = fArr2[i15];
-                                } else if (c3 == 'l') {
-                                    int i16 = i3 + 1;
-                                    path.rLineTo(fArr2[i3], fArr2[i16]);
-                                    f15 += fArr2[i3];
-                                    f4 = fArr2[i16];
-                                } else if (c3 == 'm') {
-                                    float f26 = fArr2[i3];
-                                    f15 += f26;
-                                    float f27 = fArr2[i3 + 1];
-                                    f16 += f27;
-                                    if (i3 > 0) {
-                                        path.rLineTo(f26, f27);
-                                    } else {
-                                        path.rMoveTo(f26, f27);
-                                        i2 = i3;
-                                        f18 = f16;
-                                        f17 = f15;
-                                    }
-                                } else if (c3 == 's') {
-                                    if (c4 == 'c' || c4 == 's' || c4 == 'C' || c4 == 'S') {
-                                        float f28 = f15 - f11;
-                                        f5 = f16 - f12;
-                                        f6 = f28;
-                                    } else {
-                                        f6 = 0.0f;
-                                        f5 = 0.0f;
-                                    }
-                                    int i17 = i3 + 1;
-                                    int i18 = i3 + 2;
-                                    int i19 = i3 + 3;
-                                    path.rCubicTo(f6, f5, fArr2[i3], fArr2[i17], fArr2[i18], fArr2[i19]);
-                                    f = fArr2[i3] + f15;
-                                    f2 = fArr2[i17] + f16;
-                                    f15 += fArr2[i18];
-                                    f3 = fArr2[i19];
-                                } else if (c3 == 't') {
-                                    if (c4 == 'q' || c4 == 't' || c4 == 'Q' || c4 == 'T') {
-                                        f7 = f15 - f11;
-                                        f8 = f16 - f12;
-                                    } else {
-                                        f8 = 0.0f;
-                                        f7 = 0.0f;
-                                    }
-                                    int i20 = i3 + 1;
-                                    path.rQuadTo(f7, f8, fArr2[i3], fArr2[i20]);
-                                    float f29 = f7 + f15;
-                                    float f30 = f8 + f16;
-                                    f15 += fArr2[i3];
-                                    f16 += fArr2[i20];
-                                    f12 = f30;
-                                    f11 = f29;
+                                    f21 += f7;
+                                } else {
+                                    int i24 = i3 + 1;
+                                    int i25 = i3 + 2;
+                                    int i26 = i3 + 3;
+                                    path2.rQuadTo(fArr2[i3], fArr2[i24], fArr2[i25], fArr2[i26]);
+                                    f4 = fArr2[i3] + f20;
+                                    f5 = fArr2[i24] + f21;
+                                    f20 += fArr2[i25];
+                                    f6 = fArr2[i26];
                                 }
-                                f16 += f4;
+                                f21 += f6;
+                                f16 = f4;
+                                f17 = f5;
                             } else {
-                                int i21 = i3 + 1;
-                                int i22 = i3 + 2;
-                                int i23 = i3 + 3;
-                                path.rQuadTo(fArr2[i3], fArr2[i21], fArr2[i22], fArr2[i23]);
-                                f = fArr2[i3] + f15;
-                                f2 = fArr2[i21] + f16;
-                                f15 += fArr2[i22];
-                                f3 = fArr2[i23];
+                                path2.rLineTo(fArr2[i3], 0.0f);
+                                f20 += fArr2[i3];
                             }
                             i2 = i3;
                         } else {
-                            int i24 = i3 + 2;
-                            int i25 = i3 + 3;
-                            int i26 = i3 + 4;
                             int i27 = i3 + 5;
-                            path.rCubicTo(fArr2[i3], fArr2[i3 + 1], fArr2[i24], fArr2[i25], fArr2[i26], fArr2[i27]);
-                            f = fArr2[i24] + f15;
-                            f2 = fArr2[i25] + f16;
-                            f15 += fArr2[i26];
-                            f3 = fArr2[i27];
+                            int i28 = i3 + 6;
+                            float f37 = f21;
+                            i2 = i3;
+                            float f38 = f20;
+                            drawArc(path, f38, f37, fArr2[i27] + f20, fArr2[i28] + f21, fArr2[i3], fArr2[i3 + 1], fArr2[i3 + 2], fArr2[i3 + 3] != 0.0f, fArr2[i3 + 4] != 0.0f);
+                            f20 = f38 + fArr2[i27];
+                            f21 = f37 + fArr2[i28];
+                            f16 = f20;
+                            f17 = f21;
                         }
-                        f16 += f3;
-                        f11 = f;
-                        f12 = f2;
-                        i2 = i3;
+                        f21 = f3;
                     } else {
-                        int i28 = i3 + 5;
-                        int i29 = i3 + 6;
                         i2 = i3;
-                        drawArc(path, f15, f16, fArr2[i28] + f15, fArr2[i29] + f16, fArr2[i3], fArr2[i3 + 1], fArr2[i3 + 2], fArr2[i3 + 3] != 0.0f, fArr2[i3 + 4] != 0.0f);
-                        f15 += fArr2[i28];
-                        f16 += fArr2[i29];
+                        int i29 = i2 + 1;
+                        int i30 = i2 + 2;
+                        int i31 = i2 + 3;
+                        path2.quadTo(fArr2[i2], fArr2[i29], fArr2[i30], fArr2[i31]);
+                        f = fArr2[i2];
+                        f2 = fArr2[i29];
+                        f20 = fArr2[i30];
+                        f21 = fArr2[i31];
                     }
-                    i3 = i2 + i;
-                    c4 = c2;
-                    c3 = c4;
+                    f16 = f;
+                    f17 = f2;
                 } else {
                     i2 = i3;
-                    int i30 = i2 + 5;
-                    int i31 = i2 + 6;
-                    drawArc(path, f15, f16, fArr2[i30], fArr2[i31], fArr2[i2], fArr2[i2 + 1], fArr2[i2 + 2], fArr2[i2 + 3] != 0.0f, fArr2[i2 + 4] != 0.0f);
-                    f15 = fArr2[i30];
-                    f16 = fArr2[i31];
+                    path2.lineTo(fArr2[i2], f21);
+                    f20 = fArr2[i2];
                 }
-                f12 = f16;
-                f11 = f15;
                 i3 = i2 + i;
-                c4 = c2;
-                c3 = c4;
+                path2 = path;
+                c3 = c2;
             }
-            fArr[0] = f15;
-            fArr[1] = f16;
-            fArr[2] = f11;
-            fArr[3] = f12;
-            fArr[4] = f17;
-            fArr[5] = f18;
+            fArr[0] = f20;
+            fArr[1] = f21;
+            fArr[2] = f16;
+            fArr[3] = f17;
+            fArr[4] = f22;
+            fArr[5] = f23;
         }
 
         private static void drawArc(Path path, float f, float f2, float f3, float f4, float f5, float f6, float f7, boolean z, boolean z2) {
@@ -497,50 +512,48 @@ public abstract class PathParser {
             double cos = Math.cos(radians);
             double sin = Math.sin(radians);
             double d3 = f;
-            double d4 = d3 * cos;
-            double d5 = f2;
-            double d6 = f5;
-            double d7 = (d4 + (d5 * sin)) / d6;
-            double d8 = ((-f) * sin) + (d5 * cos);
-            double d9 = f6;
-            double d10 = d8 / d9;
-            double d11 = f4;
-            double d12 = ((f3 * cos) + (d11 * sin)) / d6;
-            double d13 = (((-f3) * sin) + (d11 * cos)) / d9;
-            double d14 = d7 - d12;
-            double d15 = d10 - d13;
-            double d16 = (d7 + d12) / 2.0d;
-            double d17 = (d10 + d13) / 2.0d;
-            double d18 = (d14 * d14) + (d15 * d15);
-            if (d18 == 0.0d) {
+            double d4 = f2;
+            double d5 = f5;
+            double d6 = ((d3 * cos) + (d4 * sin)) / d5;
+            double d7 = f6;
+            double d8 = (((-f) * sin) + (d4 * cos)) / d7;
+            double d9 = f4;
+            double d10 = ((f3 * cos) + (d9 * sin)) / d5;
+            double d11 = (((-f3) * sin) + (d9 * cos)) / d7;
+            double d12 = d6 - d10;
+            double d13 = d8 - d11;
+            double d14 = (d6 + d10) / 2.0d;
+            double d15 = (d8 + d11) / 2.0d;
+            double d16 = (d12 * d12) + (d13 * d13);
+            if (d16 == 0.0d) {
                 Log.w("PathParser", " Points are coincident");
                 return;
             }
-            double d19 = (1.0d / d18) - 0.25d;
-            if (d19 < 0.0d) {
-                Log.w("PathParser", "Points are too far apart " + d18);
-                float sqrt = (float) (Math.sqrt(d18) / 1.99999d);
-                drawArc(path, f, f2, f3, f4, f5 * sqrt, f6 * sqrt, f7, z, z2);
+            double d17 = (1.0d / d16) - 0.25d;
+            if (d17 < 0.0d) {
+                Log.w("PathParser", "Points are too far apart " + d16);
+                float sqrt = (float) (Math.sqrt(d16) / 1.99999d);
+                drawArc(path, f, f2, f3, f4, f5 * sqrt, sqrt * f6, f7, z, z2);
                 return;
             }
-            double sqrt2 = Math.sqrt(d19);
-            double d20 = d14 * sqrt2;
-            double d21 = sqrt2 * d15;
+            double sqrt2 = Math.sqrt(d17);
+            double d18 = d12 * sqrt2;
+            double d19 = sqrt2 * d13;
             if (z == z2) {
-                d = d16 - d21;
-                d2 = d17 + d20;
+                d = d14 - d19;
+                d2 = d15 + d18;
             } else {
-                d = d16 + d21;
-                d2 = d17 - d20;
+                d = d14 + d19;
+                d2 = d15 - d18;
             }
-            double atan2 = Math.atan2(d10 - d2, d7 - d);
-            double atan22 = Math.atan2(d13 - d2, d12 - d) - atan2;
+            double atan2 = Math.atan2(d8 - d2, d6 - d);
+            double atan22 = Math.atan2(d11 - d2, d10 - d) - atan2;
             if (z2 != (atan22 >= 0.0d)) {
                 atan22 = atan22 > 0.0d ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
             }
-            double d22 = d * d6;
-            double d23 = d2 * d9;
-            arcToBezier(path, (d22 * cos) - (d23 * sin), (d22 * sin) + (d23 * cos), d6, d9, d3, d5, radians, atan2, atan22);
+            double d20 = d * d5;
+            double d21 = d2 * d7;
+            arcToBezier(path, (d20 * cos) - (d21 * sin), (d20 * sin) + (d21 * cos), d5, d7, d3, d4, radians, atan2, atan22);
         }
 
         private static void arcToBezier(Path path, double d, double d2, double d3, double d4, double d5, double d6, double d7, double d8, double d9) {
@@ -569,7 +582,8 @@ public abstract class PathParser {
                 double sin3 = Math.sin(d24);
                 double cos3 = Math.cos(d24);
                 double d25 = (d + ((d10 * cos) * cos3)) - (d13 * sin3);
-                double d26 = d2 + (d10 * sin * cos3) + (d16 * sin3);
+                int i2 = i;
+                double d26 = d2 + (d3 * sin * cos3) + (d16 * sin3);
                 double d27 = (d12 * sin3) - (d13 * cos3);
                 double d28 = (sin3 * d15) + (cos3 * d16);
                 double d29 = d24 - d19;
@@ -578,18 +592,18 @@ public abstract class PathParser {
                 double d30 = d22 + (d21 * sin4);
                 path.rLineTo(0.0f, 0.0f);
                 path.cubicTo((float) d30, (float) (d23 + (d20 * sin4)), (float) (d25 - (sin4 * d27)), (float) (d26 - (sin4 * d28)), (float) d25, (float) d26);
-                i++;
-                d18 = d18;
                 sin = sin;
+                d18 = d18;
                 d22 = d25;
                 d15 = d15;
-                cos = cos;
                 d19 = d24;
                 d20 = d28;
-                d21 = d27;
-                ceil = ceil;
-                d23 = d26;
+                cos = cos;
                 d10 = d3;
+                d23 = d26;
+                i = i2 + 1;
+                ceil = ceil;
+                d21 = d27;
             }
         }
     }

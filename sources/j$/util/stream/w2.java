@@ -1,137 +1,58 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
-import java.util.function.IntFunction;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class w2 extends c {
-    private final b j;
-    private final IntFunction k;
-    private final long l;
-    private final long m;
-    private long n;
-    private volatile boolean o;
+public final class w2 extends s2 {
+    public M2 c;
 
-    @Override // j$.util.stream.c
-    protected final void h() {
-        this.i = true;
-        if (this.o) {
-            f(w0.L(this.j.H()));
+    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.M2, j$.util.stream.O2] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.O2] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.O2] */
+    @Override // j$.util.stream.a2, j$.util.stream.f2
+    public final void y(long j) {
+        ?? r0;
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00e9, code lost:
-    
-        if (r2 >= r0) goto L51;
-     */
-    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        w2 w2Var;
-        I0 L;
-        e eVar = this.d;
-        if (!(eVar == null)) {
-            this.n = ((w2) eVar).n + ((w2) this.e).n;
-            if (this.i) {
-                this.n = 0L;
-                L = w0.L(this.j.H());
-            } else {
-                L = this.n == 0 ? w0.L(this.j.H()) : ((w2) this.d).n == 0 ? (I0) ((w2) this.e).c() : w0.I(this.j.H(), (I0) ((w2) this.d).c(), (I0) ((w2) this.e).c());
-            }
-            I0 i0 = L;
-            if (d()) {
-                i0 = i0.h(this.l, this.m >= 0 ? Math.min(i0.count(), this.l + this.m) : this.n, this.k);
-            }
-            f(i0);
-            this.o = true;
-        }
-        if (this.m >= 0 && !d()) {
-            long j = this.l + this.m;
-            long k = this.o ? this.n : k(j);
-            if (k < j) {
-                w2 w2Var2 = (w2) ((e) getCompleter());
-                w2 w2Var3 = this;
-                while (true) {
-                    if (w2Var2 != null) {
-                        if (w2Var3 == w2Var2.e && (w2Var = (w2) w2Var2.d) != null) {
-                            k += w2Var.k(j);
-                            if (k >= j) {
-                                break;
-                            }
-                        }
-                        w2Var3 = w2Var2;
-                        w2Var2 = (w2) ((e) w2Var2.getCompleter());
-                    }
-                }
-            }
-            i();
-        }
-        super.onCompletion(countedCompleter);
-    }
-
-    w2(b bVar, b bVar2, Spliterator spliterator, IntFunction intFunction, long j, long j2) {
-        super(bVar2, spliterator);
-        this.j = bVar;
-        this.k = intFunction;
-        this.l = j;
-        this.m = j2;
-    }
-
-    w2(w2 w2Var, Spliterator spliterator) {
-        super(w2Var, spliterator);
-        this.j = w2Var.j;
-        this.k = w2Var.k;
-        this.l = w2Var.l;
-        this.m = w2Var.m;
-    }
-
-    @Override // j$.util.stream.e
-    protected final e e(Spliterator spliterator) {
-        return new w2(this, spliterator);
-    }
-
-    @Override // j$.util.stream.c
-    protected final Object j() {
-        return w0.L(this.j.H());
-    }
-
-    @Override // j$.util.stream.e
-    protected final Object a() {
-        if (d()) {
-            A0 M = this.j.M(a3.SIZED.r(this.j.c) ? this.j.F(this.b) : -1L, this.k);
-            m2 Q = this.j.Q(this.a.J(), M);
-            b bVar = this.a;
-            bVar.A(this.b, bVar.V(Q));
-            return M.a();
-        }
-        A0 M2 = this.j.M(-1L, this.k);
-        if (this.l == 0) {
-            m2 Q2 = this.j.Q(this.a.J(), M2);
-            b bVar2 = this.a;
-            bVar2.A(this.b, bVar2.V(Q2));
+        if (j <= 0) {
+            r0 = new O2();
         } else {
-            this.a.U(this.b, M2);
+            r0 = new M2((int) j);
         }
-        I0 a = M2.a();
-        this.n = a.count();
-        this.o = true;
-        this.b = null;
-        return a;
+        this.c = r0;
     }
 
-    private long k(long j) {
-        if (this.o) {
-            return this.n;
+    @Override // j$.util.stream.a2, j$.util.stream.f2
+    public final void x() {
+        long[] jArr = (long[]) this.c.d();
+        Arrays.sort(jArr);
+        long length = jArr.length;
+        f2 f2Var = this.a;
+        f2Var.y(length);
+        int i = 0;
+        if (!this.b) {
+            int length2 = jArr.length;
+            while (i < length2) {
+                f2Var.accept(jArr[i]);
+                i++;
+            }
+        } else {
+            int length3 = jArr.length;
+            while (i < length3) {
+                long j = jArr[i];
+                if (f2Var.C()) {
+                    break;
+                }
+                f2Var.accept(j);
+                i++;
+            }
         }
-        w2 w2Var = (w2) this.d;
-        w2 w2Var2 = (w2) this.e;
-        if (w2Var == null || w2Var2 == null) {
-            return this.n;
-        }
-        long k = w2Var.k(j);
-        return k >= j ? k : k + w2Var2.k(j);
+        f2Var.x();
+    }
+
+    @Override // j$.util.stream.e2, j$.util.stream.f2
+    public final void accept(long j) {
+        this.c.accept(j);
     }
 }

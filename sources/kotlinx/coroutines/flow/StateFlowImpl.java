@@ -93,11 +93,15 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
         return Unit.INSTANCE;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00d5, code lost:
+    
+        if (r6.awaitPending(r0) == r1) goto L47;
+     */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0099 A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0099, B:19:0x009e, B:21:0x00bf, B:23:0x00c5, B:27:0x00a4, B:30:0x00ab, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
     /* JADX WARN: Removed duplicated region for block: B:19:0x009e A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0099, B:19:0x009e, B:21:0x00bf, B:23:0x00c5, B:27:0x00a4, B:30:0x00ab, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00c5 A[Catch: all -> 0x0042, TRY_LEAVE, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0099, B:19:0x009e, B:21:0x00bf, B:23:0x00c5, B:27:0x00a4, B:30:0x00ab, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00bd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00bd  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00be  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x00aa  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x0075  */
@@ -195,9 +199,6 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
                             stateFlowImpl$collect$1.L$3 = job;
                             stateFlowImpl$collect$1.L$4 = obj;
                             stateFlowImpl$collect$1.label = 3;
-                            if (stateFlowSlot.awaitPending(stateFlowImpl$collect$1) == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
                         }
                         obj2 = _state$volatile$FU.get(stateFlowImpl);
                         if (job != null) {

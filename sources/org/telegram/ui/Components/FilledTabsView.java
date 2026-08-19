@@ -89,11 +89,10 @@ public class FilledTabsView extends View {
         while (true) {
             Text[] textArr2 = this.tabs;
             if (i2 < textArr2.length) {
-                int i3 = i2;
                 textArr2[i2].draw(canvas, dp4, height / 2.0f, -1, 1.0f);
-                this.bounds[i3].set(dp4 - AndroidUtilities.dp(14.0f), dp2, this.tabs[i3].getWidth() + dp4 + AndroidUtilities.dp(14.0f), dp3);
-                dp4 += this.tabs[i3].getWidth() + AndroidUtilities.dp(24.0f);
-                i2 = i3 + 1;
+                this.bounds[i2].set(dp4 - AndroidUtilities.dp(14.0f), dp2, this.tabs[i2].getWidth() + dp4 + AndroidUtilities.dp(14.0f), dp3);
+                dp4 += this.tabs[i2].getWidth() + AndroidUtilities.dp(24.0f);
+                i2++;
             } else {
                 AndroidUtilities.dp(2.0f);
                 int clamp = Utilities.clamp((int) Math.floor(this.selectedTabIndex), this.tabs.length - 1, 0);

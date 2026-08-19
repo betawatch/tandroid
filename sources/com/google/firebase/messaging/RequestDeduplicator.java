@@ -34,19 +34,16 @@ class RequestDeduplicator {
         Task continueWithTask = getTokenRequest.start().continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.messaging.RequestDeduplicator$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                Task lambda$getOrStartGetTokenRequest$0;
-                lambda$getOrStartGetTokenRequest$0 = RequestDeduplicator.this.lambda$getOrStartGetTokenRequest$0(str, task2);
-                return lambda$getOrStartGetTokenRequest$0;
+                return RequestDeduplicator.$r8$lambda$7vbEhMqRR2Cih64GBiItUUcAhYE(RequestDeduplicator.this, str, task2);
             }
         });
         this.getTokenRequests.put(str, continueWithTask);
         return continueWithTask;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Task lambda$getOrStartGetTokenRequest$0(String str, Task task) {
-        synchronized (this) {
-            this.getTokenRequests.remove(str);
+    public static /* synthetic */ Task $r8$lambda$7vbEhMqRR2Cih64GBiItUUcAhYE(RequestDeduplicator requestDeduplicator, String str, Task task) {
+        synchronized (requestDeduplicator) {
+            requestDeduplicator.getTokenRequests.remove(str);
         }
         return task;
     }

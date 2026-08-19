@@ -28,11 +28,6 @@ final class StreamVolumeManager {
         void onStreamVolumeChanged(int i, boolean z);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$200(StreamVolumeManager streamVolumeManager) {
-        streamVolumeManager.updateVolumeAndNotifyIfChanged();
-    }
-
     public StreamVolumeManager(Context context, Handler handler, Listener listener) {
         Context applicationContext = context.getApplicationContext();
         this.applicationContext = applicationContext;
@@ -128,7 +123,7 @@ final class StreamVolumeManager {
             handler.post(new Runnable() { // from class: com.google.android.exoplayer2.StreamVolumeManager$VolumeChangeReceiver$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StreamVolumeManager.access$200(StreamVolumeManager.this);
+                    StreamVolumeManager.this.updateVolumeAndNotifyIfChanged();
                 }
             });
         }

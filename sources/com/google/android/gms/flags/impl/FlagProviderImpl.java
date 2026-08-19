@@ -62,16 +62,15 @@ public class FlagProviderImpl extends com.google.android.gms.flags.zzd {
 
     @Override // com.google.android.gms.flags.zze
     public String getStringFlagValue(String str, String str2, int i) {
-        if (!this.zza) {
-            return str2;
+        if (this.zza) {
+            try {
+                return (String) com.google.android.gms.internal.flags.zzd.zza(new zzd(this.zzb, str, str2));
+            } catch (Exception e) {
+                String valueOf = String.valueOf(e.getMessage());
+                Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
+            }
         }
-        try {
-            return (String) com.google.android.gms.internal.flags.zzd.zza(new zzd(this.zzb, str, str2));
-        } catch (Exception e) {
-            String valueOf = String.valueOf(e.getMessage());
-            Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
-            return str2;
-        }
+        return str2;
     }
 
     @Override // com.google.android.gms.flags.zze

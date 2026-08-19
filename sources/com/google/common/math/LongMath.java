@@ -56,6 +56,7 @@ public abstract class LongMath {
         }
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static long divide(long j, long j2, RoundingMode roundingMode) {
         Preconditions.checkNotNull(roundingMode);
         long j3 = j / j2;
@@ -74,14 +75,14 @@ public abstract class LongMath {
                 if (i >= 0) {
                     return j3;
                 }
-                break;
+                return j3 + i;
             case 4:
-                break;
+                return j3 + i;
             case 5:
                 if (i <= 0) {
                     return j3;
                 }
-                break;
+                return j3 + i;
             case 6:
             case 7:
             case 8:
@@ -94,10 +95,9 @@ public abstract class LongMath {
                 } else if (abs2 <= 0) {
                     return j3;
                 }
-                break;
+                return j3 + i;
             default:
                 throw new AssertionError();
         }
-        return j3 + i;
     }
 }

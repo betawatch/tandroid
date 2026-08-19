@@ -133,14 +133,12 @@ public class PostSuggestionsEditActivity extends BaseFragment {
             this.slideView.set((int) Utilities.clamp(this.suggestionsStarsCount, 10000L, 0L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{0, 10, 50, 100, NotificationCenter.dialogPhotosUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
-                    CharSequence lambda$fillItems$0;
-                    lambda$fillItems$0 = PostSuggestionsEditActivity.lambda$fillItems$0((Integer) obj, (Integer) obj2);
-                    return lambda$fillItems$0;
+                    return PostSuggestionsEditActivity.$r8$lambda$efkxi1fRkv5jAWLPL4Zu0G3oRFk((Integer) obj, (Integer) obj2);
                 }
             }), new Utilities.Callback() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    PostSuggestionsEditActivity.this.lambda$fillItems$1((Integer) obj);
+                    PostSuggestionsEditActivity.$r8$lambda$xGdKM8Zw2IaW5qkTTtzHvNhXYso(PostSuggestionsEditActivity.this, (Integer) obj);
                 }
             });
             arrayList.add(UItem.asCustom(3, this.slideView));
@@ -155,27 +153,26 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ CharSequence lambda$fillItems$0(Integer num, Integer num2) {
+    public static /* synthetic */ CharSequence $r8$lambda$efkxi1fRkv5jAWLPL4Zu0G3oRFk(Integer num, Integer num2) {
         if (num.intValue() == 0) {
             return StarsIntroActivity.replaceStarsWithPlain(LocaleController.formatPluralStringComma("Stars", num2.intValue()), 0.66f);
         }
         return LocaleController.formatNumber(num2.intValue(), ',');
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$1(Integer num) {
-        this.suggestionsStarsCount = num.intValue();
-        View findViewByItemId = this.listView.findViewByItemId(4);
+    public static /* synthetic */ void $r8$lambda$xGdKM8Zw2IaW5qkTTtzHvNhXYso(PostSuggestionsEditActivity postSuggestionsEditActivity, Integer num) {
+        postSuggestionsEditActivity.getClass();
+        postSuggestionsEditActivity.suggestionsStarsCount = num.intValue();
+        View findViewByItemId = postSuggestionsEditActivity.listView.findViewByItemId(4);
         if (findViewByItemId instanceof TextInfoPrivacyCell) {
             TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) findViewByItemId;
-            if (textInfoPrivacyCell.getFixedSize() <= 0 && this.suggestionsStarsCount > 0) {
-                textInfoPrivacyCell.setText(getIncomeInfo());
-                checkDone(true);
+            if (textInfoPrivacyCell.getFixedSize() <= 0 && postSuggestionsEditActivity.suggestionsStarsCount > 0) {
+                textInfoPrivacyCell.setText(postSuggestionsEditActivity.getIncomeInfo());
+                postSuggestionsEditActivity.checkDone(true);
             }
         }
-        this.listView.adapter.update(true);
-        checkDone(true);
+        postSuggestionsEditActivity.listView.adapter.update(true);
+        postSuggestionsEditActivity.checkDone(true);
     }
 
     private CharSequence getIncomeInfo() {
@@ -229,7 +226,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         getConnectionsManager().sendRequest(updatepaidmessagesprice, new RequestDelegate() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PostSuggestionsEditActivity.this.lambda$processDone$3(updatepaidmessagesprice, tLObject, tL_error);
+                PostSuggestionsEditActivity.$r8$lambda$lUFaW6YiZeGWs3DX9ktYdyhCmgI(PostSuggestionsEditActivity.this, updatepaidmessagesprice, tLObject, tL_error);
             }
         });
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(this.currentChatId));
@@ -260,34 +257,34 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$3(final TL_stars.updatePaidMessagesPrice updatepaidmessagesprice, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$lUFaW6YiZeGWs3DX9ktYdyhCmgI(final PostSuggestionsEditActivity postSuggestionsEditActivity, final TL_stars.updatePaidMessagesPrice updatepaidmessagesprice, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        postSuggestionsEditActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                PostSuggestionsEditActivity.this.lambda$processDone$2(tL_error, tLObject, updatepaidmessagesprice);
+                PostSuggestionsEditActivity.$r8$lambda$ovwa6PDNpCWlcNiBU1zev29-OLA(PostSuggestionsEditActivity.this, tL_error, tLObject, updatepaidmessagesprice);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$2(TLRPC.TL_error tL_error, TLObject tLObject, TL_stars.updatePaidMessagesPrice updatepaidmessagesprice) {
+    public static /* synthetic */ void $r8$lambda$ovwa6PDNpCWlcNiBU1zev29-OLA(PostSuggestionsEditActivity postSuggestionsEditActivity, TLRPC.TL_error tL_error, TLObject tLObject, TL_stars.updatePaidMessagesPrice updatepaidmessagesprice) {
         if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
+            postSuggestionsEditActivity.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
             return;
         }
+        postSuggestionsEditActivity.getClass();
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        getMessagesController().putChats(updates.chats, false);
-        getMessagesController().processUpdates(updates, false);
-        if (this.isFinished || this.finishing) {
+        postSuggestionsEditActivity.getMessagesController().putChats(updates.chats, false);
+        postSuggestionsEditActivity.getMessagesController().processUpdates(updates, false);
+        if (postSuggestionsEditActivity.isFinished || postSuggestionsEditActivity.finishing) {
             return;
         }
-        MessagesStorage.LongCallback longCallback = this.starsCallback;
+        MessagesStorage.LongCallback longCallback = postSuggestionsEditActivity.starsCallback;
         if (longCallback != null) {
             longCallback.run(updatepaidmessagesprice.suggestions_allowed ? updatepaidmessagesprice.send_paid_messages_stars : -1L);
         }
-        finishFragment();
+        postSuggestionsEditActivity.finishFragment();
     }
 
     private boolean hasChanges() {
@@ -324,27 +321,17 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                PostSuggestionsEditActivity.this.lambda$onBackPressed$4(alertDialog, i);
+                PostSuggestionsEditActivity.this.processDone();
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Discard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                PostSuggestionsEditActivity.this.lambda$onBackPressed$5(alertDialog, i);
+                PostSuggestionsEditActivity.this.finishFragment();
             }
         });
         showDialog(builder.create());
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$5(AlertDialog alertDialog, int i) {
-        finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

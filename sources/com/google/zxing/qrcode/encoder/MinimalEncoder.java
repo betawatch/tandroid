@@ -290,33 +290,38 @@ final class MinimalEncoder {
         ResultList(Version version, Edge edge) {
             int i;
             int i2;
-            int i3 = 0;
-            boolean z = false;
+            int i3;
+            Edge edge2 = edge;
+            int i4 = 0;
+            int i5 = 0;
             while (true) {
-                i = 1;
-                if (edge == null) {
+                if (edge2 == null) {
                     break;
                 }
-                int i4 = i3 + edge.characterLength;
-                Edge edge2 = edge.previous;
-                boolean z2 = (edge.mode == Mode.BYTE && edge2 == null && edge.charsetEncoderIndex != 0) || !(edge2 == null || edge.charsetEncoderIndex == edge2.charsetEncoderIndex);
-                z = z2 ? true : z;
-                if (edge2 == null || edge2.mode != edge.mode || z2) {
-                    this.list.add(0, new ResultNode(edge.mode, edge.fromPosition, edge.charsetEncoderIndex, i4));
-                    i4 = 0;
+                int i6 = i4 + edge2.characterLength;
+                Edge edge3 = edge2.previous;
+                boolean z = (edge2.mode == Mode.BYTE && edge3 == null && edge2.charsetEncoderIndex != 0) || !(edge3 == null || edge2.charsetEncoderIndex == edge3.charsetEncoderIndex);
+                i = z ? 1 : i5;
+                if (edge3 == null || edge3.mode != edge2.mode || z) {
+                    this.list.add(0, new ResultNode(edge2.mode, edge2.fromPosition, edge2.charsetEncoderIndex, i6));
+                    i3 = 0;
+                } else {
+                    i3 = i6;
                 }
-                if (z2) {
-                    this.list.add(0, new ResultNode(Mode.ECI, edge.fromPosition, edge.charsetEncoderIndex, 0));
+                if (z) {
+                    this.list.add(0, new ResultNode(Mode.ECI, edge2.fromPosition, edge2.charsetEncoderIndex, 0));
                 }
-                edge = edge2;
-                i3 = i4;
+                i5 = i;
+                edge2 = edge3;
+                i4 = i3;
             }
             if (MinimalEncoder.this.isGS1) {
                 ResultNode resultNode = (ResultNode) this.list.get(0);
                 if (resultNode != null) {
                     Mode mode = resultNode.mode;
+                    int i7 = i5;
                     Mode mode2 = Mode.ECI;
-                    if (mode != mode2 && z) {
+                    if (mode != mode2 && i7 != 0) {
                         this.list.add(0, new ResultNode(mode2, 0, 0, 0));
                     }
                 }
@@ -396,37 +401,33 @@ final class MinimalEncoder {
             /* JADX INFO: Access modifiers changed from: private */
             public int getSize(Version version) {
                 int i;
-                int i2;
                 int characterCountBits = this.mode.getCharacterCountBits(version);
-                int i3 = characterCountBits + 4;
-                int i4 = 1.$SwitchMap$com$google$zxing$qrcode$decoder$Mode[this.mode.ordinal()];
-                if (i4 != 1) {
-                    int i5 = 0;
-                    if (i4 == 2) {
-                        int i6 = this.characterLength;
-                        i2 = i3 + ((i6 / 2) * 11);
-                        if (i6 % 2 == 1) {
-                            i5 = 6;
-                        }
-                    } else if (i4 == 3) {
-                        int i7 = this.characterLength;
-                        i2 = i3 + ((i7 / 3) * 10);
-                        int i8 = i7 % 3;
-                        if (i8 == 1) {
-                            i5 = 4;
-                        } else if (i8 == 2) {
-                            i5 = 7;
-                        }
-                    } else {
-                        if (i4 != 4) {
-                            return i4 != 5 ? i3 : characterCountBits + 12;
-                        }
-                        i = getCharacterCountIndicator() * 8;
+                int i2 = characterCountBits + 4;
+                int i3 = 1.$SwitchMap$com$google$zxing$qrcode$decoder$Mode[this.mode.ordinal()];
+                if (i3 != 1) {
+                    if (i3 == 2) {
+                        int i4 = this.characterLength;
+                        return i2 + ((i4 / 2) * 11) + (i4 % 2 == 1 ? 6 : 0);
                     }
-                    return i2 + i5;
+                    if (i3 == 3) {
+                        int i5 = this.characterLength;
+                        int i6 = i2 + ((i5 / 3) * 10);
+                        int i7 = i5 % 3;
+                        if (i7 == 1) {
+                            r3 = 4;
+                        } else if (i7 == 2) {
+                            r3 = 7;
+                        }
+                        return i6 + r3;
+                    }
+                    if (i3 != 4) {
+                        return i3 != 5 ? i2 : characterCountBits + 12;
+                    }
+                    i = getCharacterCountIndicator() * 8;
+                } else {
+                    i = this.characterLength * 13;
                 }
-                i = this.characterLength * 13;
-                return i3 + i;
+                return i2 + i;
             }
 
             private int getCharacterCountIndicator() {

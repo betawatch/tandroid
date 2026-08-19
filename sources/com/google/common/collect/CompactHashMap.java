@@ -113,8 +113,6 @@ class CompactHashMap extends AbstractMap implements Serializable {
 
     @Override // java.util.AbstractMap, java.util.Map
     public Object put(Object obj, Object obj2) {
-        int resizeTable;
-        int i;
         if (needsAllocArrays()) {
             allocArrays();
         }
@@ -125,49 +123,50 @@ class CompactHashMap extends AbstractMap implements Serializable {
         int[] requireEntries = requireEntries();
         Object[] requireKeys = requireKeys();
         Object[] requireValues = requireValues();
-        int i2 = this.size;
-        int i3 = i2 + 1;
+        int i = this.size;
+        int i2 = i + 1;
         int smearedHash = Hashing.smearedHash(obj);
         int hashTableMask = hashTableMask();
-        int i4 = smearedHash & hashTableMask;
-        int tableGet = CompactHashing.tableGet(requireTable(), i4);
+        int i3 = smearedHash & hashTableMask;
+        int tableGet = CompactHashing.tableGet(requireTable(), i3);
         if (tableGet != 0) {
             int hashPrefix = CompactHashing.getHashPrefix(smearedHash, hashTableMask);
-            int i5 = 0;
+            int i4 = 0;
             while (true) {
-                int i6 = tableGet - 1;
-                int i7 = requireEntries[i6];
-                if (CompactHashing.getHashPrefix(i7, hashTableMask) == hashPrefix && Objects.equal(obj, requireKeys[i6])) {
-                    Object obj3 = requireValues[i6];
-                    requireValues[i6] = obj2;
-                    accessEntry(i6);
+                int i5 = tableGet - 1;
+                int i6 = requireEntries[i5];
+                if (CompactHashing.getHashPrefix(i6, hashTableMask) == hashPrefix && Objects.equal(obj, requireKeys[i5])) {
+                    Object obj3 = requireValues[i5];
+                    requireValues[i5] = obj2;
+                    accessEntry(i5);
                     return obj3;
                 }
-                int next = CompactHashing.getNext(i7, hashTableMask);
-                i5++;
+                int next = CompactHashing.getNext(i6, hashTableMask);
+                i4++;
                 if (next != 0) {
+                    obj = obj;
+                    obj2 = obj2;
                     tableGet = next;
                 } else {
-                    if (i5 >= 9) {
+                    if (i4 >= 9) {
                         return convertToHashFloodingResistantImplementation().put(obj, obj2);
                     }
-                    if (i3 > hashTableMask) {
-                        resizeTable = resizeTable(hashTableMask, CompactHashing.newCapacity(hashTableMask), smearedHash, i2);
+                    if (i2 > hashTableMask) {
+                        hashTableMask = resizeTable(hashTableMask, CompactHashing.newCapacity(hashTableMask), smearedHash, i);
                     } else {
-                        requireEntries[i6] = CompactHashing.maskCombine(i7, i3, hashTableMask);
+                        requireEntries[i5] = CompactHashing.maskCombine(i6, i2, hashTableMask);
                     }
                 }
             }
-        } else if (i3 > hashTableMask) {
-            resizeTable = resizeTable(hashTableMask, CompactHashing.newCapacity(hashTableMask), smearedHash, i2);
-            i = resizeTable;
+        } else if (i2 > hashTableMask) {
+            hashTableMask = resizeTable(hashTableMask, CompactHashing.newCapacity(hashTableMask), smearedHash, i);
         } else {
-            CompactHashing.tableSet(requireTable(), i4, i3);
-            i = hashTableMask;
+            CompactHashing.tableSet(requireTable(), i3, i2);
         }
-        resizeMeMaybe(i3);
-        insertEntry(i2, obj, obj2, smearedHash, i);
-        this.size = i3;
+        int i7 = hashTableMask;
+        resizeMeMaybe(i2);
+        insertEntry(i, obj, obj2, smearedHash, i7);
+        this.size = i2;
         incrementModCount();
         return null;
     }
@@ -500,16 +499,20 @@ class CompactHashMap extends AbstractMap implements Serializable {
             if (delegateOrNull != null) {
                 return delegateOrNull.entrySet().contains(obj);
             }
-            if (!(obj instanceof Map.Entry)) {
-                return false;
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                int indexOf = CompactHashMap.this.indexOf(entry.getKey());
+                if (indexOf != -1 && Objects.equal(CompactHashMap.this.value(indexOf), entry.getValue())) {
+                    return true;
+                }
             }
-            Map.Entry entry = (Map.Entry) obj;
-            int indexOf = CompactHashMap.this.indexOf(entry.getKey());
-            return indexOf != -1 && Objects.equal(CompactHashMap.this.value(indexOf), entry.getValue());
+            return false;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public boolean remove(Object obj) {
+            int hashTableMask;
+            int remove;
             Map delegateOrNull = CompactHashMap.this.delegateOrNull();
             if (delegateOrNull != null) {
                 return delegateOrNull.entrySet().remove(obj);
@@ -518,12 +521,7 @@ class CompactHashMap extends AbstractMap implements Serializable {
                 return false;
             }
             Map.Entry entry = (Map.Entry) obj;
-            if (CompactHashMap.this.needsAllocArrays()) {
-                return false;
-            }
-            int hashTableMask = CompactHashMap.this.hashTableMask();
-            int remove = CompactHashing.remove(entry.getKey(), entry.getValue(), hashTableMask, CompactHashMap.this.requireTable(), CompactHashMap.this.requireEntries(), CompactHashMap.this.requireKeys(), CompactHashMap.this.requireValues());
-            if (remove == -1) {
+            if (CompactHashMap.this.needsAllocArrays() || (remove = CompactHashing.remove(entry.getKey(), entry.getValue(), (hashTableMask = CompactHashMap.this.hashTableMask()), CompactHashMap.this.requireTable(), CompactHashMap.this.requireEntries(), CompactHashMap.this.requireKeys(), CompactHashMap.this.requireValues())) == -1) {
                 return false;
             }
             CompactHashMap.this.moveLastEntry(remove, hashTableMask);

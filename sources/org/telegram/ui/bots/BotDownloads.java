@@ -58,7 +58,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bots.BotDownloads;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BotDownloads {
     public final long botId;
     public final Context context;
@@ -104,9 +104,13 @@ public class BotDownloads {
     }
 
     public FileDownload getCached(String str) {
-        Iterator it = this.files.iterator();
-        while (it.hasNext()) {
-            FileDownload fileDownload = (FileDownload) it.next();
+        ArrayList arrayList = this.files;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            FileDownload fileDownload = (FileDownload) obj;
             if (TextUtils.equals(fileDownload.url, str) && fileDownload.done) {
                 return fileDownload;
             }
@@ -136,9 +140,13 @@ public class BotDownloads {
     }
 
     public boolean isDownloading() {
-        Iterator it = this.files.iterator();
-        while (it.hasNext()) {
-            if (((FileDownload) it.next()).isDownloading()) {
+        ArrayList arrayList = this.files;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            if (((FileDownload) obj).isDownloading()) {
                 return true;
             }
         }
@@ -168,12 +176,16 @@ public class BotDownloads {
     }
 
     public void save() {
+        int i = 0;
         SharedPreferences.Editor edit = this.context.getSharedPreferences("botdownloads_" + this.currentAccount, 0).edit();
         edit.clear();
         HashSet hashSet = new HashSet();
-        Iterator it = this.files.iterator();
-        while (it.hasNext()) {
-            hashSet.add(((FileDownload) it.next()).toJSON().toString());
+        ArrayList arrayList = this.files;
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            hashSet.add(((FileDownload) obj).toJSON().toString());
         }
         edit.putStringSet("" + this.botId, hashSet);
         edit.apply();
@@ -181,7 +193,7 @@ public class BotDownloads {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void postNotify() {
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botDownloadsUpdate, new Object[0]);
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.botDownloadsUpdate, new Object[0]);
     }
 
     public class FileDownload {
@@ -245,14 +257,15 @@ public class BotDownloads {
                 jSONObject.put("path", file == null ? null : file.getAbsolutePath());
                 jSONObject.put("done", this.done);
                 jSONObject.put("mime", this.mime);
+                return jSONObject;
             } catch (Exception e) {
                 FileLog.e(e);
+                return jSONObject;
             }
-            return jSONObject;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b1, code lost:
         
             if (0 == 0) goto L33;
          */
@@ -438,7 +451,7 @@ public class BotDownloads {
         getMimeAndSize(str, new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotDownloads$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                BotDownloads.lambda$showAlert$0(AnimatedTextView.this, (String) obj, (Long) obj2);
+                BotDownloads.$r8$lambda$Hqq6I3GomsJ5IjmnhzIfOGWibtc(AnimatedTextView.this, (String) obj, (Long) obj2);
             }
         });
         animatedTextView.setTextColor(Theme.getColor(i));
@@ -449,28 +462,27 @@ public class BotDownloads {
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotDownloads$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                BotDownloads.lambda$showAlert$1(zArr, callback, alertDialog, i2);
+                BotDownloads.$r8$lambda$SvY6Nau02KUegIqZhFcTpXoUtaQ(zArr, callback, alertDialog, i2);
             }
         });
         builder.setPositiveButton(LocaleController.getString(R.string.BotDownloadFileDownload), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotDownloads$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                BotDownloads.lambda$showAlert$2(zArr, callback, alertDialog, i2);
+                BotDownloads.$r8$lambda$0V5vVA5p02uOzaqNbeUDV-Eoiqw(zArr, callback, alertDialog, i2);
             }
         });
         AlertDialog create = builder.create();
         create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.BotDownloads$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                BotDownloads.lambda$showAlert$3(zArr, callback, dialogInterface);
+                BotDownloads.$r8$lambda$OQh7ybzxESYhklG32SuXfFcyUBY(zArr, callback, dialogInterface);
             }
         });
         create.show();
         return create;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAlert$0(AnimatedTextView animatedTextView, String str, Long l) {
+    public static /* synthetic */ void $r8$lambda$Hqq6I3GomsJ5IjmnhzIfOGWibtc(AnimatedTextView animatedTextView, String str, Long l) {
         StringBuilder sb = new StringBuilder();
         if (l.longValue() > 0) {
             sb.append("~");
@@ -489,8 +501,7 @@ public class BotDownloads {
         animatedTextView.setText(sb);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAlert$1(boolean[] zArr, Utilities.Callback callback, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$SvY6Nau02KUegIqZhFcTpXoUtaQ(boolean[] zArr, Utilities.Callback callback, AlertDialog alertDialog, int i) {
         if (zArr[0]) {
             return;
         }
@@ -498,8 +509,7 @@ public class BotDownloads {
         zArr[0] = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAlert$2(boolean[] zArr, Utilities.Callback callback, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$0V5vVA5p02uOzaqNbeUDV-Eoiqw(boolean[] zArr, Utilities.Callback callback, AlertDialog alertDialog, int i) {
         if (zArr[0]) {
             return;
         }
@@ -507,8 +517,7 @@ public class BotDownloads {
         zArr[0] = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showAlert$3(boolean[] zArr, Utilities.Callback callback, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$OQh7ybzxESYhklG32SuXfFcyUBY(boolean[] zArr, Utilities.Callback callback, DialogInterface dialogInterface) {
         if (zArr[0]) {
             return;
         }
@@ -708,7 +717,7 @@ public class BotDownloads {
                 Bulletin.UndoButton undoAction = new Bulletin.UndoButton(getContext(), true, this.resourcesProvider).setText(LocaleController.getString(R.string.BotFileDownloadCancel)).setUndoAction(new Runnable() { // from class: org.telegram.ui.bots.BotDownloads$DownloadBulletin$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotDownloads.DownloadBulletin.this.lambda$setButton$0();
+                        BotDownloads.DownloadBulletin.$r8$lambda$64rnEAyYJPUBjhVIPF4b0eiCgHE(BotDownloads.DownloadBulletin.this);
                     }
                 });
                 if (getBulletin() != null) {
@@ -721,7 +730,7 @@ public class BotDownloads {
                 Bulletin.UndoButton undoAction2 = new Bulletin.UndoButton(getContext(), true, this.resourcesProvider).setText(LocaleController.getString(R.string.BotFileDownloadOpen)).setUndoAction(new Runnable() { // from class: org.telegram.ui.bots.BotDownloads$DownloadBulletin$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotDownloads.DownloadBulletin.this.lambda$setButton$1();
+                        BotDownloads.DownloadBulletin.$r8$lambda$Kfwamuy1Zso0VXiVoUsH0oAvFt4(BotDownloads.DownloadBulletin.this);
                     }
                 });
                 if (getBulletin() != null) {
@@ -731,26 +740,24 @@ public class BotDownloads {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setButton$0() {
-            Bulletin bulletin = getBulletin();
+        public static /* synthetic */ void $r8$lambda$64rnEAyYJPUBjhVIPF4b0eiCgHE(DownloadBulletin downloadBulletin) {
+            Bulletin bulletin = downloadBulletin.getBulletin();
             if (bulletin != null) {
                 bulletin.setDuration(2750);
                 bulletin.setCanHide(true);
             }
-            FileDownload fileDownload = this.file;
+            FileDownload fileDownload = downloadBulletin.file;
             if (fileDownload != null) {
                 fileDownload.cancel();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setButton$1() {
-            Bulletin bulletin = getBulletin();
+        public static /* synthetic */ void $r8$lambda$Kfwamuy1Zso0VXiVoUsH0oAvFt4(DownloadBulletin downloadBulletin) {
+            Bulletin bulletin = downloadBulletin.getBulletin();
             if (bulletin != null) {
                 bulletin.hide();
             }
-            FileDownload fileDownload = this.file;
+            FileDownload fileDownload = downloadBulletin.file;
             if (fileDownload != null) {
                 fileDownload.open();
             }
@@ -870,30 +877,35 @@ public class BotDownloads {
 
             @Override // android.graphics.drawable.Drawable
             public void draw(Canvas canvas) {
+                float f;
+                float f2;
+                Canvas canvas2 = canvas;
                 Rect bounds = getBounds();
                 int centerX = bounds.centerX();
                 int centerY = bounds.centerY();
-                float f = this.animatedDone.set(this.done);
-                if (f < 1.0f) {
-                    float f2 = 1.0f - f;
-                    float f3 = (f2 * 0.4f) + 0.6f;
-                    canvas.save();
-                    float f4 = centerX;
-                    float f5 = centerY;
-                    canvas.scale(f3, f3, f4, f5);
+                float f3 = this.animatedDone.set(this.done);
+                if (f3 < 1.0f) {
+                    float f4 = 1.0f - f3;
+                    float f5 = (f4 * 0.4f) + 0.6f;
+                    canvas2.save();
+                    float f6 = centerX;
+                    float f7 = centerY;
+                    canvas2.scale(f5, f5, f6, f7);
                     Drawable drawable = this.doc;
+                    f = 255.0f;
                     drawable.setBounds(centerX - (drawable.getIntrinsicWidth() / 2), centerY - (this.doc.getIntrinsicHeight() / 2), (this.doc.getIntrinsicWidth() / 2) + centerX, (this.doc.getIntrinsicHeight() / 2) + centerY);
-                    this.doc.setAlpha((int) (f2 * 255.0f));
-                    this.doc.draw(canvas);
+                    this.doc.setAlpha((int) (f4 * 255.0f));
+                    this.doc.draw(canvas2);
                     float dp = AndroidUtilities.dp(14.0f);
-                    this.strokePaint.setColor(Theme.multAlpha(-1, 0.2f * f2));
-                    canvas.drawCircle(f4, f5, dp, this.strokePaint);
-                    float f6 = f2 * 1.0f;
-                    this.strokePaint.setColor(Theme.multAlpha(-1, f6));
-                    this.rect.set(f4 - dp, f5 - dp, f4 + dp, f5 + dp);
-                    float f7 = this.animatedHasPercent.set(this.hasPercent);
-                    this.strokePaint.setColor(Theme.multAlpha(-1, f2 * 0.15f * (1.0f - f7)));
-                    canvas.drawArc(this.rect, (-(((((System.currentTimeMillis() - this.start) % 600) / 600.0f) - 1.0f) * 360.0f)) - 90.0f, -90.0f, false, this.strokePaint);
+                    this.strokePaint.setColor(Theme.multAlpha(-1, 0.2f * f4));
+                    canvas2.drawCircle(f6, f7, dp, this.strokePaint);
+                    float f8 = f4 * 1.0f;
+                    this.strokePaint.setColor(Theme.multAlpha(-1, f8));
+                    f2 = 0.6f;
+                    this.rect.set(f6 - dp, f7 - dp, f6 + dp, f7 + dp);
+                    float f9 = this.animatedHasPercent.set(this.hasPercent);
+                    this.strokePaint.setColor(Theme.multAlpha(-1, f4 * 0.15f * (1.0f - f9)));
+                    canvas2.drawArc(this.rect, (-(((((System.currentTimeMillis() - this.start) % 600) / 600.0f) - 1.0f) * 360.0f)) - 90.0f, -90.0f, false, this.strokePaint);
                     float currentTimeMillis = ((System.currentTimeMillis() - this.start) * 0.45f) % 5400.0f;
                     float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
                     for (int i = 0; i < 4; i++) {
@@ -901,25 +913,29 @@ public class BotDownloads {
                         fastOutSlowInInterpolator.getInterpolation((currentTimeMillis - (i * 1350)) / 667.0f);
                         max += fastOutSlowInInterpolator.getInterpolation((currentTimeMillis - (r5 + 667)) / 667.0f) * 250.0f;
                     }
-                    this.strokePaint.setColor(Theme.multAlpha(-1, f6));
-                    canvas.drawArc(this.rect, (-90.0f) - max, Math.max(0.02f, this.animatedProgress.set(this.progress)) * (-360.0f) * f7, false, this.strokePaint);
+                    this.strokePaint.setColor(Theme.multAlpha(-1, f8));
+                    canvas2 = canvas;
+                    canvas2.drawArc(this.rect, (-90.0f) - max, Math.max(0.02f, this.animatedProgress.set(this.progress)) * (-360.0f) * f9, false, this.strokePaint);
                     invalidateSelf();
-                    canvas.restore();
+                    canvas2.restore();
+                } else {
+                    f = 255.0f;
+                    f2 = 0.6f;
                 }
-                if (f > 0.0f) {
-                    float f8 = (f * 0.4f) + 0.6f;
+                if (f3 > 0.0f) {
+                    float f10 = (0.4f * f3) + f2;
                     if (this.cancelled) {
-                        canvas.save();
-                        canvas.scale(f8, f8, centerX, centerY);
+                        canvas2.save();
+                        canvas2.scale(f10, f10, centerX, centerY);
                     }
                     RLottieDrawable rLottieDrawable = this.doneDrawable;
                     if (rLottieDrawable != null) {
                         rLottieDrawable.setBounds(centerX - (rLottieDrawable.getIntrinsicWidth() / 2), centerY - (this.doneDrawable.getIntrinsicHeight() / 2), centerX + (this.doneDrawable.getIntrinsicWidth() / 2), centerY + (this.doneDrawable.getIntrinsicHeight() / 2));
-                        this.doneDrawable.setAlpha((int) (f * 255.0f));
-                        this.doneDrawable.draw(canvas);
+                        this.doneDrawable.setAlpha((int) (f3 * f));
+                        this.doneDrawable.draw(canvas2);
                     }
                     if (this.cancelled) {
-                        canvas.restore();
+                        canvas2.restore();
                     }
                 }
             }

@@ -44,11 +44,13 @@ final class AutoValue_CrashlyticsReport_Session_OperatingSystem extends Crashlyt
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.OperatingSystem)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.OperatingSystem) {
+            CrashlyticsReport.Session.OperatingSystem operatingSystem = (CrashlyticsReport.Session.OperatingSystem) obj;
+            if (this.platform == operatingSystem.getPlatform() && this.version.equals(operatingSystem.getVersion()) && this.buildVersion.equals(operatingSystem.getBuildVersion()) && this.jailbroken == operatingSystem.isJailbroken()) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.OperatingSystem operatingSystem = (CrashlyticsReport.Session.OperatingSystem) obj;
-        return this.platform == operatingSystem.getPlatform() && this.version.equals(operatingSystem.getVersion()) && this.buildVersion.equals(operatingSystem.getBuildVersion()) && this.jailbroken == operatingSystem.isJailbroken();
+        return false;
     }
 
     public int hashCode() {

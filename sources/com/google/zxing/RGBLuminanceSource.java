@@ -2,7 +2,7 @@ package com.google.zxing;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class RGBLuminanceSource extends GrayscaleLuminanceSource {
     public RGBLuminanceSource(int i, int i2, int[] iArr) {
         super(i, i2, toGrayscale(i, i2, iArr));

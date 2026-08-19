@@ -16,16 +16,7 @@ public abstract class DataChunk extends Chunk {
 
     public DataChunk(DataSource dataSource, DataSpec dataSpec, int i, Format format, int i2, Object obj, byte[] bArr) {
         super(dataSource, dataSpec, i, format, i2, obj, -9223372036854775807L, -9223372036854775807L);
-        DataChunk dataChunk;
-        byte[] bArr2;
-        if (bArr == null) {
-            bArr2 = Util.EMPTY_BYTE_ARRAY;
-            dataChunk = this;
-        } else {
-            dataChunk = this;
-            bArr2 = bArr;
-        }
-        dataChunk.data = bArr2;
+        this.data = bArr == null ? Util.EMPTY_BYTE_ARRAY : bArr;
     }
 
     public byte[] getDataHolder() {

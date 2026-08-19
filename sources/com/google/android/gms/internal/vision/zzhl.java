@@ -149,7 +149,7 @@ abstract class zzhl {
             throw zzjk.zza();
         }
         Object zza = zzlcVar.zza();
-        int i6 = i4 + i5;
+        int i6 = i5 + i4;
         zzlcVar.zza(zza, bArr, i5, i6, zzhnVar);
         zzlcVar.zzc(zza);
         zzhnVar.zzc = zza;
@@ -253,15 +253,12 @@ abstract class zzhl {
                 break;
             }
             int zza2 = zza(bArr, i2, zzhnVar);
-            int i8 = zzhnVar.zza;
-            i7 = i8;
-            if (i8 == i6) {
+            i7 = zzhnVar.zza;
+            if (i7 == i6) {
                 i2 = zza2;
                 break;
             }
-            int zza3 = zza(i7, bArr, zza2, i3, zzb2, zzhnVar);
-            i7 = i8;
-            i2 = zza3;
+            i2 = zza(i7, bArr, zza2, i3, zzb2, zzhnVar);
         }
         if (i2 > i3 || i7 != i6) {
             throw zzjk.zzg();

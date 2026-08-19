@@ -49,9 +49,9 @@ final class DelimitedRangesSequence implements Sequence {
                 this.nextSearchIndex = coerceIn;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:9:0x0021, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:9:0x0020, code lost:
             
-                if (r0 < r4) goto L9;
+                if (r0 < r4) goto L10;
              */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.

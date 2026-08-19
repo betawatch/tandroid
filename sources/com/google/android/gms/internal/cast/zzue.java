@@ -130,7 +130,7 @@ public final class zzue extends zzsi implements RandomAccess, zzuf {
 
     private zzue(boolean z) {
         super(false);
-        this.zzc = Collections.emptyList();
+        this.zzc = Collections.EMPTY_LIST;
     }
 
     @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractCollection, java.util.Collection, java.util.List

@@ -19,14 +19,13 @@ public class FileLoaderPriorityQueue {
     Runnable checkOperationsRunnable = new Runnable() { // from class: org.telegram.messenger.FileLoaderPriorityQueue$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            FileLoaderPriorityQueue.this.lambda$new$0();
+            FileLoaderPriorityQueue.$r8$lambda$CqAM6dapKe9aCYZCS4iNuptLnQg(FileLoaderPriorityQueue.this);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        checkLoadingOperationInternal();
-        this.checkOperationsScheduled = false;
+    public static /* synthetic */ void $r8$lambda$CqAM6dapKe9aCYZCS4iNuptLnQg(FileLoaderPriorityQueue fileLoaderPriorityQueue) {
+        fileLoaderPriorityQueue.checkLoadingOperationInternal();
+        fileLoaderPriorityQueue.checkOperationsScheduled = false;
     }
 
     FileLoaderPriorityQueue(int i, String str, int i2, DispatchQueue dispatchQueue) {

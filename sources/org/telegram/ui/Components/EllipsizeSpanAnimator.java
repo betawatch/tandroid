@@ -77,7 +77,7 @@ public class EllipsizeSpanAnimator {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.EllipsizeSpanAnimator$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                EllipsizeSpanAnimator.this.lambda$createEllipsizeAnimator$0(textAlphaSpan, valueAnimator);
+                EllipsizeSpanAnimator.$r8$lambda$iHwWtVX_42rEiWcqkESIxAFi-js(EllipsizeSpanAnimator.this, textAlphaSpan, valueAnimator);
             }
         });
         ofInt.setDuration(i4);
@@ -86,12 +86,12 @@ public class EllipsizeSpanAnimator {
         return ofInt;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createEllipsizeAnimator$0(TextAlphaSpan textAlphaSpan, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$iHwWtVX_42rEiWcqkESIxAFi-js(EllipsizeSpanAnimator ellipsizeSpanAnimator, TextAlphaSpan textAlphaSpan, ValueAnimator valueAnimator) {
+        ellipsizeSpanAnimator.getClass();
         textAlphaSpan.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
-        for (int i = 0; i < this.ellipsizedViews.size(); i++) {
+        for (int i = 0; i < ellipsizeSpanAnimator.ellipsizedViews.size(); i++) {
             if (!HwEmojis.isHwEnabled()) {
-                ((View) this.ellipsizedViews.get(i)).invalidate();
+                ((View) ellipsizeSpanAnimator.ellipsizedViews.get(i)).invalidate();
             }
         }
     }

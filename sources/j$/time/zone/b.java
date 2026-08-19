@@ -1,39 +1,35 @@
 package j$.time.zone;
 
-import j$.time.Duration;
 import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /* loaded from: classes2.dex */
 public final class b implements Comparable, Serializable {
     private static final long serialVersionUID = -6946044323557704546L;
-    private final long a;
-    private final LocalDateTime b;
-    private final ZoneOffset c;
-    private final ZoneOffset d;
+    public final long a;
+    public final LocalDateTime b;
+    public final ZoneOffset c;
+    public final ZoneOffset d;
 
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
         return Long.compare(this.a, ((b) obj).a);
     }
 
-    b(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+    public b(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
         localDateTime.getClass();
-        this.a = j$.time.chrono.h.n(localDateTime, zoneOffset);
+        this.a = j$.com.android.tools.r8.a.w(localDateTime, zoneOffset);
         this.b = localDateTime;
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
 
-    b(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+    public b(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
         this.a = j;
-        this.b = LocalDateTime.P(j, 0, zoneOffset);
+        this.b = LocalDateTime.K(j, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
@@ -46,62 +42,30 @@ public final class b implements Comparable, Serializable {
         return new a((byte) 2, this);
     }
 
-    final void writeExternal(ObjectOutput objectOutput) {
-        a.c(this.a, objectOutput);
-        a.d(this.c, objectOutput);
-        a.d(this.d, objectOutput);
-    }
-
-    public final long F() {
-        return this.a;
-    }
-
-    public final LocalDateTime l() {
-        return this.b;
-    }
-
-    public final ZoneOffset r() {
-        return this.c;
-    }
-
-    public final ZoneOffset o() {
-        return this.d;
-    }
-
-    public final LocalDateTime k() {
-        return this.b.R(this.d.getTotalSeconds() - this.c.getTotalSeconds());
-    }
-
-    public final Duration n() {
-        return Duration.l(this.d.getTotalSeconds() - this.c.getTotalSeconds());
-    }
-
-    public final boolean x() {
+    public final boolean l() {
         return this.d.getTotalSeconds() > this.c.getTotalSeconds();
-    }
-
-    final List v() {
-        return x() ? Collections.emptyList() : j$.com.android.tools.r8.a.h(new Object[]{this.c, this.d});
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof b)) {
-            return false;
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            if (this.a == bVar.a && this.c.equals(bVar.c) && this.d.equals(bVar.d)) {
+                return true;
+            }
         }
-        b bVar = (b) obj;
-        return this.a == bVar.a && this.c.equals(bVar.c) && this.d.equals(bVar.d);
+        return false;
     }
 
     public final int hashCode() {
-        return (this.b.hashCode() ^ this.c.hashCode()) ^ Integer.rotateLeft(this.d.hashCode(), 16);
+        return (this.b.hashCode() ^ this.c.b) ^ Integer.rotateLeft(this.d.b, 16);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("Transition[");
-        sb.append(x() ? "Gap" : "Overlap");
+        sb.append(l() ? "Gap" : "Overlap");
         sb.append(" at ");
         sb.append(this.b);
         sb.append(this.c);

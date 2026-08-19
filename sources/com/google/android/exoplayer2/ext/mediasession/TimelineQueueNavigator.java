@@ -64,7 +64,7 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         if (z2) {
             j |= 16;
         }
-        return z ? j | 32 : j;
+        return z ? 32 | j : j;
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
@@ -112,7 +112,7 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
     private void publishFloatingQueueWindow(Player player) {
         Timeline currentTimeline = player.getCurrentTimeline();
         if (currentTimeline.isEmpty()) {
-            this.mediaSession.setQueue(Collections.emptyList());
+            this.mediaSession.setQueue(Collections.EMPTY_LIST);
             this.activeQueueItemId = -1L;
             return;
         }

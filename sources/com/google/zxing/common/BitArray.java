@@ -2,7 +2,7 @@ package com.google.zxing.common;
 
 import java.util.Arrays;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BitArray implements Cloneable {
     private static final int[] EMPTY_BITS = new int[0];
     private int[] bits;

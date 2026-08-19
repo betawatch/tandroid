@@ -142,9 +142,12 @@ final class FragmentManagerViewModel extends ViewModel {
             if (z) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.addAll(fragmentManagerViewModel.mChildNonConfigs.keySet());
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    fragmentManagerViewModel.clearNonConfigState((String) it.next(), true);
+                int size = arrayList.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    fragmentManagerViewModel.clearNonConfigState((String) obj, true);
                 }
             }
             fragmentManagerViewModel.onCleared();
@@ -161,11 +164,13 @@ final class FragmentManagerViewModel extends ViewModel {
         if (this == obj) {
             return true;
         }
-        if (obj == null || FragmentManagerViewModel.class != obj.getClass()) {
-            return false;
+        if (obj != null && FragmentManagerViewModel.class == obj.getClass()) {
+            FragmentManagerViewModel fragmentManagerViewModel = (FragmentManagerViewModel) obj;
+            if (this.mRetainedFragments.equals(fragmentManagerViewModel.mRetainedFragments) && this.mChildNonConfigs.equals(fragmentManagerViewModel.mChildNonConfigs) && this.mViewModelStores.equals(fragmentManagerViewModel.mViewModelStores)) {
+                return true;
+            }
         }
-        FragmentManagerViewModel fragmentManagerViewModel = (FragmentManagerViewModel) obj;
-        return this.mRetainedFragments.equals(fragmentManagerViewModel.mRetainedFragments) && this.mChildNonConfigs.equals(fragmentManagerViewModel.mChildNonConfigs) && this.mViewModelStores.equals(fragmentManagerViewModel.mViewModelStores);
+        return false;
     }
 
     public int hashCode() {

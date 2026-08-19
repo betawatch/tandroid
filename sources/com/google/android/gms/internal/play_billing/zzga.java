@@ -123,12 +123,14 @@ abstract class zzga {
                 break;
             }
             int zzh2 = zzh(bArr, i2, zzfzVar);
-            i8 = zzfzVar.zza;
-            if (i8 == i6) {
+            int i9 = zzfzVar.zza;
+            if (i9 == i6) {
+                i8 = i9;
                 i2 = zzh2;
                 break;
             }
-            i2 = zzg(i8, bArr, zzh2, i3, zzf, zzfzVar);
+            i2 = zzg(i9, bArr, zzh2, i3, zzf, zzfzVar);
+            i8 = i9;
         }
         zzfzVar.zze--;
         if (i2 > i3 || i8 != i6) {
@@ -226,11 +228,10 @@ abstract class zzga {
     }
 
     static int zzl(Object obj, zzix zzixVar, byte[] bArr, int i, int i2, int i3, zzfz zzfzVar) {
-        zzip zzipVar = (zzip) zzixVar;
         int i4 = zzfzVar.zze + 1;
         zzfzVar.zze = i4;
         zzo(i4);
-        int zzc = zzipVar.zzc(obj, bArr, i, i2, i3, zzfzVar);
+        int zzc = ((zzip) zzixVar).zzc(obj, bArr, i, i2, i3, zzfzVar);
         zzfzVar.zze--;
         zzfzVar.zzc = obj;
         return zzc;
@@ -250,7 +251,7 @@ abstract class zzga {
         int i6 = zzfzVar.zze + 1;
         zzfzVar.zze = i6;
         zzo(i6);
-        int i7 = i4 + i5;
+        int i7 = i5 + i4;
         zzixVar.zzh(obj, bArr, i5, i7, zzfzVar);
         zzfzVar.zze--;
         zzfzVar.zzc = obj;

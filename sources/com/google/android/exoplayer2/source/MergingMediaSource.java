@@ -146,8 +146,7 @@ public final class MergingMediaSource extends CompositeMediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.exoplayer2.source.CompositeMediaSource
-    /* renamed from: onChildSourceInfoRefreshed, reason: merged with bridge method [inline-methods] */
-    public void lambda$prepareChildSource$0(Integer num, MediaSource mediaSource, Timeline timeline) {
+    public void onChildSourceInfoRefreshed(Integer num, MediaSource mediaSource, Timeline timeline) {
         if (this.mergeError != null) {
             return;
         }

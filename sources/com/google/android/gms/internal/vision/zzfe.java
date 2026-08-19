@@ -26,15 +26,14 @@ public abstract class zzfe {
         try {
             return (Integer) Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
         } catch (Exception e) {
-            PrintStream printStream = System.err;
-            printStream.println("Failed to retrieve value from android.os.Build$VERSION.SDK_INT due to the following exception.");
-            e.printStackTrace(printStream);
+            System.err.println("Failed to retrieve value from android.os.Build$VERSION.SDK_INT due to the following exception.");
+            e.printStackTrace(System.err);
             return null;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0063  */
     static {
         Integer num;
         zzfd zzaVar;
@@ -55,7 +54,7 @@ public abstract class zzfe {
                 sb.append(name);
                 sb.append("will be used. The error is: ");
                 printStream.println(sb.toString());
-                th.printStackTrace(printStream);
+                th.printStackTrace(System.err);
                 zzaVar = new zza();
                 zza = zzaVar;
                 zzb = num == null ? 1 : num.intValue();

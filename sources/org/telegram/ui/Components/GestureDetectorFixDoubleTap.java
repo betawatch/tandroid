@@ -7,6 +7,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 
@@ -96,7 +97,7 @@ public class GestureDetectorFixDoubleTap {
                 this.mHandler = new GestureHandler();
             }
             this.mListener = onGestureListener;
-            if (onGestureListener instanceof GestureDetector.OnDoubleTapListener) {
+            if (OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(onGestureListener)) {
                 setOnDoubleTapListener(onGestureListener);
             }
             init(context);
@@ -133,8 +134,8 @@ public class GestureDetectorFixDoubleTap {
             this.mLongpressDuration = j;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:116:0x020c  */
-        /* JADX WARN: Removed duplicated region for block: B:119:0x0223  */
+        /* JADX WARN: Removed duplicated region for block: B:113:0x0205  */
+        /* JADX WARN: Removed duplicated region for block: B:116:0x021c  */
         @Override // org.telegram.ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -145,14 +146,15 @@ public class GestureDetectorFixDoubleTap {
             MotionEvent motionEvent3;
             boolean onFling;
             GestureDetector.OnDoubleTapListener onDoubleTapListener;
+            boolean z2;
             int action = motionEvent.getAction();
             if (this.mVelocityTracker == null) {
                 this.mVelocityTracker = VelocityTracker.obtain();
             }
             this.mVelocityTracker.addMovement(motionEvent);
             int i = action & NotificationCenter.didReceiveSmsCode;
-            boolean z2 = i == 6;
-            int actionIndex = z2 ? motionEvent.getActionIndex() : -1;
+            boolean z3 = i == 6;
+            int actionIndex = z3 ? motionEvent.getActionIndex() : -1;
             int pointerCount = motionEvent.getPointerCount();
             float f = 0.0f;
             float f2 = 0.0f;
@@ -162,7 +164,7 @@ public class GestureDetectorFixDoubleTap {
                     f += motionEvent.getY(i2);
                 }
             }
-            float f3 = z2 ? pointerCount - 1 : pointerCount;
+            float f3 = z3 ? pointerCount - 1 : pointerCount;
             float f4 = f2 / f3;
             float f5 = f / f3;
             if (i == 0) {
@@ -194,7 +196,7 @@ public class GestureDetectorFixDoubleTap {
                             this.mHandler.sendEmptyMessageAtTime(2, this.mCurrentDownEvent.getDownTime() + TAP_TIMEOUT + this.mLongpressDuration);
                         }
                         this.mHandler.sendEmptyMessageAtTime(1, this.mCurrentDownEvent.getDownTime() + TAP_TIMEOUT);
-                        return z | this.mListener.onDown(motionEvent);
+                        return this.mListener.onDown(motionEvent) | z;
                     }
                     this.mHandler.sendEmptyMessageDelayed(3, 220L);
                 }
@@ -215,80 +217,9 @@ public class GestureDetectorFixDoubleTap {
                 if (this.mIsLongpressEnabled) {
                 }
                 this.mHandler.sendEmptyMessageAtTime(1, this.mCurrentDownEvent.getDownTime() + TAP_TIMEOUT);
-                return z | this.mListener.onDown(motionEvent);
+                return this.mListener.onDown(motionEvent) | z;
             }
-            if (i != 1) {
-                if (i != 2) {
-                    if (i == 3) {
-                        cancel();
-                        return false;
-                    }
-                    if (i == 5) {
-                        this.mLastFocusX = f4;
-                        this.mDownFocusX = f4;
-                        this.mLastFocusY = f5;
-                        this.mDownFocusY = f5;
-                        cancelTaps();
-                        return false;
-                    }
-                    if (i != 6) {
-                        return false;
-                    }
-                    this.mLastFocusX = f4;
-                    this.mDownFocusX = f4;
-                    this.mLastFocusY = f5;
-                    this.mDownFocusY = f5;
-                    this.mVelocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.mMaximumFlingVelocity);
-                    int actionIndex2 = motionEvent.getActionIndex();
-                    int pointerId = motionEvent.getPointerId(actionIndex2);
-                    float xVelocity = this.mVelocityTracker.getXVelocity(pointerId);
-                    float yVelocity = this.mVelocityTracker.getYVelocity(pointerId);
-                    for (int i3 = 0; i3 < pointerCount; i3++) {
-                        if (i3 != actionIndex2) {
-                            int pointerId2 = motionEvent.getPointerId(i3);
-                            if ((this.mVelocityTracker.getXVelocity(pointerId2) * xVelocity) + (this.mVelocityTracker.getYVelocity(pointerId2) * yVelocity) < 0.0f) {
-                                this.mVelocityTracker.clear();
-                                return false;
-                            }
-                        }
-                    }
-                    return false;
-                }
-                if (this.mInLongPress) {
-                    return false;
-                }
-                float f6 = this.mLastFocusX - f4;
-                float f7 = this.mLastFocusY - f5;
-                if (this.mIsDoubleTapping) {
-                    return this.mDoubleTapListener.onDoubleTapEvent(motionEvent);
-                }
-                if (!this.mAlwaysInTapRegion) {
-                    if (Math.abs(f6) < 1.0f && Math.abs(f7) < 1.0f) {
-                        return false;
-                    }
-                    boolean onScroll = this.mListener.onScroll(this.mCurrentDownEvent, motionEvent, f6, f7);
-                    this.mLastFocusX = f4;
-                    this.mLastFocusY = f5;
-                    return onScroll;
-                }
-                int i4 = (int) (f4 - this.mDownFocusX);
-                int i5 = (int) (f5 - this.mDownFocusY);
-                int i6 = (i4 * i4) + (i5 * i5);
-                if (i6 > this.mTouchSlopSquare) {
-                    onFling = this.mListener.onScroll(this.mCurrentDownEvent, motionEvent, f6, f7);
-                    this.mLastFocusX = f4;
-                    this.mLastFocusY = f5;
-                    this.mAlwaysInTapRegion = false;
-                    this.mHandler.removeMessages(3);
-                    this.mHandler.removeMessages(1);
-                    this.mHandler.removeMessages(2);
-                } else {
-                    onFling = false;
-                }
-                if (i6 > this.mTouchSlopSquare) {
-                    this.mAlwaysInBiggerTapRegion = false;
-                }
-            } else {
+            if (i == 1) {
                 this.mStillDown = false;
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 if (this.mIsDoubleTapping) {
@@ -305,12 +236,12 @@ public class GestureDetectorFixDoubleTap {
                         onFling = onSingleTapUp;
                     } else {
                         VelocityTracker velocityTracker = this.mVelocityTracker;
-                        int pointerId3 = motionEvent.getPointerId(0);
+                        int pointerId = motionEvent.getPointerId(0);
                         velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.mMaximumFlingVelocity);
-                        float yVelocity2 = velocityTracker.getYVelocity(pointerId3);
-                        float xVelocity2 = velocityTracker.getXVelocity(pointerId3);
-                        if (Math.abs(yVelocity2) > this.mMinimumFlingVelocity || Math.abs(xVelocity2) > this.mMinimumFlingVelocity) {
-                            onFling = this.mListener.onFling(this.mCurrentDownEvent, motionEvent, xVelocity2, yVelocity2);
+                        float yVelocity = velocityTracker.getYVelocity(pointerId);
+                        float xVelocity = velocityTracker.getXVelocity(pointerId);
+                        if (Math.abs(yVelocity) > this.mMinimumFlingVelocity || Math.abs(xVelocity) > this.mMinimumFlingVelocity) {
+                            onFling = this.mListener.onFling(this.mCurrentDownEvent, motionEvent, xVelocity, yVelocity);
                         }
                     }
                     onFling = false;
@@ -329,8 +260,75 @@ public class GestureDetectorFixDoubleTap {
                 this.mDeferConfirmSingleTap = false;
                 this.mHandler.removeMessages(1);
                 this.mHandler.removeMessages(2);
+                return onFling;
             }
-            return onFling;
+            if (i != 2) {
+                if (i == 3) {
+                    cancel();
+                    return false;
+                }
+                if (i == 5) {
+                    this.mLastFocusX = f4;
+                    this.mDownFocusX = f4;
+                    this.mLastFocusY = f5;
+                    this.mDownFocusY = f5;
+                    cancelTaps();
+                    return false;
+                }
+                if (i == 6) {
+                    this.mLastFocusX = f4;
+                    this.mDownFocusX = f4;
+                    this.mLastFocusY = f5;
+                    this.mDownFocusY = f5;
+                    this.mVelocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.mMaximumFlingVelocity);
+                    int actionIndex2 = motionEvent.getActionIndex();
+                    int pointerId2 = motionEvent.getPointerId(actionIndex2);
+                    float xVelocity2 = this.mVelocityTracker.getXVelocity(pointerId2);
+                    float yVelocity2 = this.mVelocityTracker.getYVelocity(pointerId2);
+                    for (int i3 = 0; i3 < pointerCount; i3++) {
+                        if (i3 != actionIndex2) {
+                            int pointerId3 = motionEvent.getPointerId(i3);
+                            if ((this.mVelocityTracker.getXVelocity(pointerId3) * xVelocity2) + (this.mVelocityTracker.getYVelocity(pointerId3) * yVelocity2) < 0.0f) {
+                                this.mVelocityTracker.clear();
+                                return false;
+                            }
+                        }
+                    }
+                }
+            } else if (!this.mInLongPress) {
+                float f6 = this.mLastFocusX - f4;
+                float f7 = this.mLastFocusY - f5;
+                if (this.mIsDoubleTapping) {
+                    return this.mDoubleTapListener.onDoubleTapEvent(motionEvent);
+                }
+                if (this.mAlwaysInTapRegion) {
+                    int i4 = (int) (f4 - this.mDownFocusX);
+                    int i5 = (int) (f5 - this.mDownFocusY);
+                    int i6 = (i4 * i4) + (i5 * i5);
+                    if (i6 > this.mTouchSlopSquare) {
+                        z2 = this.mListener.onScroll(this.mCurrentDownEvent, motionEvent, f6, f7);
+                        this.mLastFocusX = f4;
+                        this.mLastFocusY = f5;
+                        this.mAlwaysInTapRegion = false;
+                        this.mHandler.removeMessages(3);
+                        this.mHandler.removeMessages(1);
+                        this.mHandler.removeMessages(2);
+                    } else {
+                        z2 = false;
+                    }
+                    if (i6 > this.mTouchSlopSquare) {
+                        this.mAlwaysInBiggerTapRegion = false;
+                    }
+                    return z2;
+                }
+                if (Math.abs(f6) >= 1.0f || Math.abs(f7) >= 1.0f) {
+                    boolean onScroll = this.mListener.onScroll(this.mCurrentDownEvent, motionEvent, f6, f7);
+                    this.mLastFocusX = f4;
+                    this.mLastFocusY = f5;
+                    return onScroll;
+                }
+            }
+            return false;
         }
 
         private void cancel() {

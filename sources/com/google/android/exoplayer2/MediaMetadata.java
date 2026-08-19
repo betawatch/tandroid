@@ -282,10 +282,11 @@ public final class MediaMetadata implements Bundleable {
         }
 
         public Builder maybeSetArtworkData(byte[] bArr, int i) {
-            if (this.artworkData == null || Util.areEqual(Integer.valueOf(i), 3) || !Util.areEqual(this.artworkDataType, 3)) {
-                this.artworkData = (byte[]) bArr.clone();
-                this.artworkDataType = Integer.valueOf(i);
+            if (this.artworkData != null && !Util.areEqual(Integer.valueOf(i), 3) && Util.areEqual(this.artworkDataType, 3)) {
+                return this;
             }
+            this.artworkData = (byte[]) bArr.clone();
+            this.artworkDataType = Integer.valueOf(i);
             return this;
         }
 
@@ -417,140 +418,139 @@ public final class MediaMetadata implements Bundleable {
         }
 
         public Builder populate(MediaMetadata mediaMetadata) {
-            if (mediaMetadata == null) {
-                return this;
-            }
-            CharSequence charSequence = mediaMetadata.title;
-            if (charSequence != null) {
-                setTitle(charSequence);
-            }
-            CharSequence charSequence2 = mediaMetadata.artist;
-            if (charSequence2 != null) {
-                setArtist(charSequence2);
-            }
-            CharSequence charSequence3 = mediaMetadata.albumTitle;
-            if (charSequence3 != null) {
-                setAlbumTitle(charSequence3);
-            }
-            CharSequence charSequence4 = mediaMetadata.albumArtist;
-            if (charSequence4 != null) {
-                setAlbumArtist(charSequence4);
-            }
-            CharSequence charSequence5 = mediaMetadata.displayTitle;
-            if (charSequence5 != null) {
-                setDisplayTitle(charSequence5);
-            }
-            CharSequence charSequence6 = mediaMetadata.subtitle;
-            if (charSequence6 != null) {
-                setSubtitle(charSequence6);
-            }
-            CharSequence charSequence7 = mediaMetadata.description;
-            if (charSequence7 != null) {
-                setDescription(charSequence7);
-            }
-            Rating rating = mediaMetadata.userRating;
-            if (rating != null) {
-                setUserRating(rating);
-            }
-            Rating rating2 = mediaMetadata.overallRating;
-            if (rating2 != null) {
-                setOverallRating(rating2);
-            }
-            byte[] bArr = mediaMetadata.artworkData;
-            if (bArr != null) {
-                setArtworkData(bArr, mediaMetadata.artworkDataType);
-            }
-            Uri uri = mediaMetadata.artworkUri;
-            if (uri != null) {
-                setArtworkUri(uri);
-            }
-            Integer num = mediaMetadata.trackNumber;
-            if (num != null) {
-                setTrackNumber(num);
-            }
-            Integer num2 = mediaMetadata.totalTrackCount;
-            if (num2 != null) {
-                setTotalTrackCount(num2);
-            }
-            Integer num3 = mediaMetadata.folderType;
-            if (num3 != null) {
-                setFolderType(num3);
-            }
-            Boolean bool = mediaMetadata.isBrowsable;
-            if (bool != null) {
-                setIsBrowsable(bool);
-            }
-            Boolean bool2 = mediaMetadata.isPlayable;
-            if (bool2 != null) {
-                setIsPlayable(bool2);
-            }
-            Integer num4 = mediaMetadata.year;
-            if (num4 != null) {
-                setRecordingYear(num4);
-            }
-            Integer num5 = mediaMetadata.recordingYear;
-            if (num5 != null) {
-                setRecordingYear(num5);
-            }
-            Integer num6 = mediaMetadata.recordingMonth;
-            if (num6 != null) {
-                setRecordingMonth(num6);
-            }
-            Integer num7 = mediaMetadata.recordingDay;
-            if (num7 != null) {
-                setRecordingDay(num7);
-            }
-            Integer num8 = mediaMetadata.releaseYear;
-            if (num8 != null) {
-                setReleaseYear(num8);
-            }
-            Integer num9 = mediaMetadata.releaseMonth;
-            if (num9 != null) {
-                setReleaseMonth(num9);
-            }
-            Integer num10 = mediaMetadata.releaseDay;
-            if (num10 != null) {
-                setReleaseDay(num10);
-            }
-            CharSequence charSequence8 = mediaMetadata.writer;
-            if (charSequence8 != null) {
-                setWriter(charSequence8);
-            }
-            CharSequence charSequence9 = mediaMetadata.composer;
-            if (charSequence9 != null) {
-                setComposer(charSequence9);
-            }
-            CharSequence charSequence10 = mediaMetadata.conductor;
-            if (charSequence10 != null) {
-                setConductor(charSequence10);
-            }
-            Integer num11 = mediaMetadata.discNumber;
-            if (num11 != null) {
-                setDiscNumber(num11);
-            }
-            Integer num12 = mediaMetadata.totalDiscCount;
-            if (num12 != null) {
-                setTotalDiscCount(num12);
-            }
-            CharSequence charSequence11 = mediaMetadata.genre;
-            if (charSequence11 != null) {
-                setGenre(charSequence11);
-            }
-            CharSequence charSequence12 = mediaMetadata.compilation;
-            if (charSequence12 != null) {
-                setCompilation(charSequence12);
-            }
-            CharSequence charSequence13 = mediaMetadata.station;
-            if (charSequence13 != null) {
-                setStation(charSequence13);
-            }
-            Integer num13 = mediaMetadata.mediaType;
-            if (num13 != null) {
-                setMediaType(num13);
-            }
-            Bundle bundle = mediaMetadata.extras;
-            if (bundle != null) {
-                setExtras(bundle);
+            if (mediaMetadata != null) {
+                CharSequence charSequence = mediaMetadata.title;
+                if (charSequence != null) {
+                    setTitle(charSequence);
+                }
+                CharSequence charSequence2 = mediaMetadata.artist;
+                if (charSequence2 != null) {
+                    setArtist(charSequence2);
+                }
+                CharSequence charSequence3 = mediaMetadata.albumTitle;
+                if (charSequence3 != null) {
+                    setAlbumTitle(charSequence3);
+                }
+                CharSequence charSequence4 = mediaMetadata.albumArtist;
+                if (charSequence4 != null) {
+                    setAlbumArtist(charSequence4);
+                }
+                CharSequence charSequence5 = mediaMetadata.displayTitle;
+                if (charSequence5 != null) {
+                    setDisplayTitle(charSequence5);
+                }
+                CharSequence charSequence6 = mediaMetadata.subtitle;
+                if (charSequence6 != null) {
+                    setSubtitle(charSequence6);
+                }
+                CharSequence charSequence7 = mediaMetadata.description;
+                if (charSequence7 != null) {
+                    setDescription(charSequence7);
+                }
+                Rating rating = mediaMetadata.userRating;
+                if (rating != null) {
+                    setUserRating(rating);
+                }
+                Rating rating2 = mediaMetadata.overallRating;
+                if (rating2 != null) {
+                    setOverallRating(rating2);
+                }
+                byte[] bArr = mediaMetadata.artworkData;
+                if (bArr != null) {
+                    setArtworkData(bArr, mediaMetadata.artworkDataType);
+                }
+                Uri uri = mediaMetadata.artworkUri;
+                if (uri != null) {
+                    setArtworkUri(uri);
+                }
+                Integer num = mediaMetadata.trackNumber;
+                if (num != null) {
+                    setTrackNumber(num);
+                }
+                Integer num2 = mediaMetadata.totalTrackCount;
+                if (num2 != null) {
+                    setTotalTrackCount(num2);
+                }
+                Integer num3 = mediaMetadata.folderType;
+                if (num3 != null) {
+                    setFolderType(num3);
+                }
+                Boolean bool = mediaMetadata.isBrowsable;
+                if (bool != null) {
+                    setIsBrowsable(bool);
+                }
+                Boolean bool2 = mediaMetadata.isPlayable;
+                if (bool2 != null) {
+                    setIsPlayable(bool2);
+                }
+                Integer num4 = mediaMetadata.year;
+                if (num4 != null) {
+                    setRecordingYear(num4);
+                }
+                Integer num5 = mediaMetadata.recordingYear;
+                if (num5 != null) {
+                    setRecordingYear(num5);
+                }
+                Integer num6 = mediaMetadata.recordingMonth;
+                if (num6 != null) {
+                    setRecordingMonth(num6);
+                }
+                Integer num7 = mediaMetadata.recordingDay;
+                if (num7 != null) {
+                    setRecordingDay(num7);
+                }
+                Integer num8 = mediaMetadata.releaseYear;
+                if (num8 != null) {
+                    setReleaseYear(num8);
+                }
+                Integer num9 = mediaMetadata.releaseMonth;
+                if (num9 != null) {
+                    setReleaseMonth(num9);
+                }
+                Integer num10 = mediaMetadata.releaseDay;
+                if (num10 != null) {
+                    setReleaseDay(num10);
+                }
+                CharSequence charSequence8 = mediaMetadata.writer;
+                if (charSequence8 != null) {
+                    setWriter(charSequence8);
+                }
+                CharSequence charSequence9 = mediaMetadata.composer;
+                if (charSequence9 != null) {
+                    setComposer(charSequence9);
+                }
+                CharSequence charSequence10 = mediaMetadata.conductor;
+                if (charSequence10 != null) {
+                    setConductor(charSequence10);
+                }
+                Integer num11 = mediaMetadata.discNumber;
+                if (num11 != null) {
+                    setDiscNumber(num11);
+                }
+                Integer num12 = mediaMetadata.totalDiscCount;
+                if (num12 != null) {
+                    setTotalDiscCount(num12);
+                }
+                CharSequence charSequence11 = mediaMetadata.genre;
+                if (charSequence11 != null) {
+                    setGenre(charSequence11);
+                }
+                CharSequence charSequence12 = mediaMetadata.compilation;
+                if (charSequence12 != null) {
+                    setCompilation(charSequence12);
+                }
+                CharSequence charSequence13 = mediaMetadata.station;
+                if (charSequence13 != null) {
+                    setStation(charSequence13);
+                }
+                Integer num13 = mediaMetadata.mediaType;
+                if (num13 != null) {
+                    setMediaType(num13);
+                }
+                Bundle bundle = mediaMetadata.extras;
+                if (bundle != null) {
+                    setExtras(bundle);
+                }
             }
             return this;
         }
@@ -621,11 +621,13 @@ public final class MediaMetadata implements Bundleable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || MediaMetadata.class != obj.getClass()) {
-            return false;
+        if (obj != null && MediaMetadata.class == obj.getClass()) {
+            MediaMetadata mediaMetadata = (MediaMetadata) obj;
+            if (Util.areEqual(this.title, mediaMetadata.title) && Util.areEqual(this.artist, mediaMetadata.artist) && Util.areEqual(this.albumTitle, mediaMetadata.albumTitle) && Util.areEqual(this.albumArtist, mediaMetadata.albumArtist) && Util.areEqual(this.displayTitle, mediaMetadata.displayTitle) && Util.areEqual(this.subtitle, mediaMetadata.subtitle) && Util.areEqual(this.description, mediaMetadata.description) && Util.areEqual(this.userRating, mediaMetadata.userRating) && Util.areEqual(this.overallRating, mediaMetadata.overallRating) && Arrays.equals(this.artworkData, mediaMetadata.artworkData) && Util.areEqual(this.artworkDataType, mediaMetadata.artworkDataType) && Util.areEqual(this.artworkUri, mediaMetadata.artworkUri) && Util.areEqual(this.trackNumber, mediaMetadata.trackNumber) && Util.areEqual(this.totalTrackCount, mediaMetadata.totalTrackCount) && Util.areEqual(this.folderType, mediaMetadata.folderType) && Util.areEqual(this.isBrowsable, mediaMetadata.isBrowsable) && Util.areEqual(this.isPlayable, mediaMetadata.isPlayable) && Util.areEqual(this.recordingYear, mediaMetadata.recordingYear) && Util.areEqual(this.recordingMonth, mediaMetadata.recordingMonth) && Util.areEqual(this.recordingDay, mediaMetadata.recordingDay) && Util.areEqual(this.releaseYear, mediaMetadata.releaseYear) && Util.areEqual(this.releaseMonth, mediaMetadata.releaseMonth) && Util.areEqual(this.releaseDay, mediaMetadata.releaseDay) && Util.areEqual(this.writer, mediaMetadata.writer) && Util.areEqual(this.composer, mediaMetadata.composer) && Util.areEqual(this.conductor, mediaMetadata.conductor) && Util.areEqual(this.discNumber, mediaMetadata.discNumber) && Util.areEqual(this.totalDiscCount, mediaMetadata.totalDiscCount) && Util.areEqual(this.genre, mediaMetadata.genre) && Util.areEqual(this.compilation, mediaMetadata.compilation) && Util.areEqual(this.station, mediaMetadata.station) && Util.areEqual(this.mediaType, mediaMetadata.mediaType)) {
+                return true;
+            }
         }
-        MediaMetadata mediaMetadata = (MediaMetadata) obj;
-        return Util.areEqual(this.title, mediaMetadata.title) && Util.areEqual(this.artist, mediaMetadata.artist) && Util.areEqual(this.albumTitle, mediaMetadata.albumTitle) && Util.areEqual(this.albumArtist, mediaMetadata.albumArtist) && Util.areEqual(this.displayTitle, mediaMetadata.displayTitle) && Util.areEqual(this.subtitle, mediaMetadata.subtitle) && Util.areEqual(this.description, mediaMetadata.description) && Util.areEqual(this.userRating, mediaMetadata.userRating) && Util.areEqual(this.overallRating, mediaMetadata.overallRating) && Arrays.equals(this.artworkData, mediaMetadata.artworkData) && Util.areEqual(this.artworkDataType, mediaMetadata.artworkDataType) && Util.areEqual(this.artworkUri, mediaMetadata.artworkUri) && Util.areEqual(this.trackNumber, mediaMetadata.trackNumber) && Util.areEqual(this.totalTrackCount, mediaMetadata.totalTrackCount) && Util.areEqual(this.folderType, mediaMetadata.folderType) && Util.areEqual(this.isBrowsable, mediaMetadata.isBrowsable) && Util.areEqual(this.isPlayable, mediaMetadata.isPlayable) && Util.areEqual(this.recordingYear, mediaMetadata.recordingYear) && Util.areEqual(this.recordingMonth, mediaMetadata.recordingMonth) && Util.areEqual(this.recordingDay, mediaMetadata.recordingDay) && Util.areEqual(this.releaseYear, mediaMetadata.releaseYear) && Util.areEqual(this.releaseMonth, mediaMetadata.releaseMonth) && Util.areEqual(this.releaseDay, mediaMetadata.releaseDay) && Util.areEqual(this.writer, mediaMetadata.writer) && Util.areEqual(this.composer, mediaMetadata.composer) && Util.areEqual(this.conductor, mediaMetadata.conductor) && Util.areEqual(this.discNumber, mediaMetadata.discNumber) && Util.areEqual(this.totalDiscCount, mediaMetadata.totalDiscCount) && Util.areEqual(this.genre, mediaMetadata.genre) && Util.areEqual(this.compilation, mediaMetadata.compilation) && Util.areEqual(this.station, mediaMetadata.station) && Util.areEqual(this.mediaType, mediaMetadata.mediaType);
+        return false;
     }
 
     public int hashCode() {

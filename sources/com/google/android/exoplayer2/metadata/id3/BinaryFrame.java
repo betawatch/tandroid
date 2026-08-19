@@ -34,11 +34,13 @@ public final class BinaryFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || BinaryFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && BinaryFrame.class == obj.getClass()) {
+            BinaryFrame binaryFrame = (BinaryFrame) obj;
+            if (this.id.equals(binaryFrame.id) && Arrays.equals(this.data, binaryFrame.data)) {
+                return true;
+            }
         }
-        BinaryFrame binaryFrame = (BinaryFrame) obj;
-        return this.id.equals(binaryFrame.id) && Arrays.equals(this.data, binaryFrame.data);
+        return false;
     }
 
     public int hashCode() {

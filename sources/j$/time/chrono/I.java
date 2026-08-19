@@ -1,210 +1,63 @@
 package j$.time.chrono;
 
-import j$.time.LocalDate;
-import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import j$.util.Objects;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
 
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-public final class I extends d {
-    private static final long serialVersionUID = -8722293800195731463L;
-    private final transient LocalDate a;
+public final class I implements l {
+    public static final I BE;
+    public static final I BEFORE_BE;
+    public static final /* synthetic */ I[] a;
 
-    I(LocalDate localDate) {
-        Objects.requireNonNull(localDate, "isoDate");
-        this.a = localDate;
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ boolean h(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.r(this, oVar);
     }
 
-    @Override // j$.time.chrono.b
-    public final l a() {
-        return G.d;
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ int o(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.m(this, (j$.time.temporal.a) oVar);
     }
 
-    @Override // j$.time.chrono.d, j$.time.chrono.b
-    public final int hashCode() {
-        G.d.getClass();
-        return this.a.hashCode() ^ 146118545;
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ Object r(j$.time.format.a aVar) {
+        return j$.com.android.tools.r8.a.v(this, aVar);
     }
 
-    @Override // j$.time.chrono.d
-    public final m H() {
-        return N() >= 1 ? J.BE : J.BEFORE_BE;
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ long u(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.o(this, oVar);
     }
 
-    @Override // j$.time.chrono.d, j$.time.temporal.m
-    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
-        if (!(pVar instanceof j$.time.temporal.a)) {
-            return pVar.r(this);
-        }
-        if (!h.h(this, pVar)) {
-            throw new j$.time.temporal.t(j$.time.d.a("Unsupported field: ", pVar));
-        }
-        j$.time.temporal.a aVar = (j$.time.temporal.a) pVar;
-        int i = H.a[aVar.ordinal()];
-        if (i == 1 || i == 2 || i == 3) {
-            return this.a.o(pVar);
-        }
-        if (i != 4) {
-            return G.d.A(aVar);
-        }
-        j$.time.temporal.u k = j$.time.temporal.a.YEAR.k();
-        return j$.time.temporal.u.j(1L, N() <= 0 ? (-(k.e() + 543)) + 1 : 543 + k.d());
+    public static I valueOf(String str) {
+        return (I) Enum.valueOf(I.class, str);
+    }
+
+    public static I[] values() {
+        return (I[]) a.clone();
+    }
+
+    static {
+        I i = new I("BEFORE_BE", 0);
+        BEFORE_BE = i;
+        I i2 = new I("BE", 1);
+        BE = i2;
+        a = new I[]{i, i2};
+    }
+
+    @Override // j$.time.chrono.l
+    public final int getValue() {
+        return ordinal();
+    }
+
+    @Override // j$.time.temporal.l
+    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+        return j$.time.temporal.p.d(this, oVar);
     }
 
     @Override // j$.time.temporal.m
-    public final long r(j$.time.temporal.p pVar) {
-        if (pVar instanceof j$.time.temporal.a) {
-            int i = H.a[((j$.time.temporal.a) pVar).ordinal()];
-            if (i == 4) {
-                int N = N();
-                if (N < 1) {
-                    N = 1 - N;
-                }
-                return N;
-            }
-            LocalDate localDate = this.a;
-            if (i == 5) {
-                return ((N() * 12) + localDate.M()) - 1;
-            }
-            if (i == 6) {
-                return N();
-            }
-            if (i != 7) {
-                return localDate.r(pVar);
-            }
-            return N() < 1 ? 0 : 1;
-        }
-        return pVar.l(this);
-    }
-
-    private int N() {
-        return this.a.getYear() + 543;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0024, code lost:
-    
-        if (r2 != 7) goto L20;
-     */
-    @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    /* renamed from: O, reason: merged with bridge method [inline-methods] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final I d(long j, j$.time.temporal.p pVar) {
-        if (pVar instanceof j$.time.temporal.a) {
-            j$.time.temporal.a aVar = (j$.time.temporal.a) pVar;
-            if (r(aVar) == j) {
-                return this;
-            }
-            int[] iArr = H.a;
-            int i = iArr[aVar.ordinal()];
-            LocalDate localDate = this.a;
-            if (i != 4) {
-                if (i == 5) {
-                    G.d.A(aVar).b(j, aVar);
-                    return P(localDate.V(j - (((N() * 12) + localDate.M()) - 1)));
-                }
-                if (i != 6) {
-                }
-            }
-            int a = G.d.A(aVar).a(j, aVar);
-            int i2 = iArr[aVar.ordinal()];
-            if (i2 == 4) {
-                if (N() < 1) {
-                    a = 1 - a;
-                }
-                return P(localDate.b0(a - 543));
-            }
-            if (i2 == 6) {
-                return P(localDate.b0(a - 543));
-            }
-            if (i2 == 7) {
-                return P(localDate.b0((-542) - N()));
-            }
-            return P(localDate.d(j, pVar));
-        }
-        return (I) super.d(j, pVar);
-    }
-
-    @Override // j$.time.chrono.d
-    /* renamed from: M */
-    public final b n(j$.time.temporal.n nVar) {
-        return (I) super.n(nVar);
-    }
-
-    @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal n(LocalDate localDate) {
-        return (I) super.n(localDate);
-    }
-
-    @Override // j$.time.chrono.d
-    final b L(long j) {
-        return P(this.a.W(j));
-    }
-
-    @Override // j$.time.chrono.d
-    final b K(long j) {
-        return P(this.a.V(j));
-    }
-
-    @Override // j$.time.chrono.d
-    final b J(long j) {
-        return P(this.a.plusDays(j));
-    }
-
-    @Override // j$.time.chrono.d, j$.time.chrono.b, j$.time.temporal.Temporal
-    public final b e(long j, j$.time.temporal.s sVar) {
-        return (I) super.e(j, sVar);
-    }
-
-    @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal e(long j, j$.time.temporal.s sVar) {
-        return (I) super.e(j, sVar);
-    }
-
-    @Override // j$.time.chrono.d, j$.time.chrono.b
-    /* renamed from: C */
-    public final b k(long j, j$.time.temporal.s sVar) {
-        return (I) super.k(j, sVar);
-    }
-
-    @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal k(long j, ChronoUnit chronoUnit) {
-        return (I) super.k(j, chronoUnit);
-    }
-
-    private I P(LocalDate localDate) {
-        return localDate.equals(this.a) ? this : new I(localDate);
-    }
-
-    @Override // j$.time.chrono.d, j$.time.chrono.b
-    public final long s() {
-        return this.a.s();
-    }
-
-    @Override // j$.time.chrono.d
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof I) {
-            return this.a.equals(((I) obj).a);
-        }
-        return false;
-    }
-
-    private void readObject(ObjectInputStream objectInputStream) {
-        throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    private Object writeReplace() {
-        return new E((byte) 8, this);
-    }
-
-    @Override // j$.time.chrono.d, j$.time.chrono.b
-    public final ChronoLocalDateTime t(j$.time.i iVar) {
-        return f.H(this, iVar);
+    public final Temporal x(Temporal temporal) {
+        return temporal.e(getValue(), j$.time.temporal.a.ERA);
     }
 }

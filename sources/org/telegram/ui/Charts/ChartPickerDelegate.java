@@ -97,15 +97,15 @@ public class ChartPickerDelegate {
             this.a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ChartPickerDelegate.CapturesData.this.lambda$captured$0(valueAnimator);
+                    ChartPickerDelegate.CapturesData.$r8$lambda$ZuHDYXCvGVg7TzhQ-LVI13QGLMA(ChartPickerDelegate.CapturesData.this, valueAnimator);
                 }
             });
             this.a.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$captured$0(ValueAnimator valueAnimator) {
-            this.aValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        public static /* synthetic */ void $r8$lambda$ZuHDYXCvGVg7TzhQ-LVI13QGLMA(CapturesData capturesData, ValueAnimator valueAnimator) {
+            capturesData.getClass();
+            capturesData.aValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             ChartPickerDelegate.this.view.invalidate();
         }
 
@@ -335,7 +335,7 @@ public class ChartPickerDelegate {
                     this.moveToAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            ChartPickerDelegate.this.lambda$uncapture$0(f5, f2, f4, f, valueAnimator);
+                            ChartPickerDelegate.$r8$lambda$KnscNgyyAhOKbTTO8_q3PZioF8I(ChartPickerDelegate.this, f5, f2, f4, f, valueAnimator);
                         }
                     });
                     this.moveToAnimator.setInterpolator(BaseChartView.INTERPOLATOR);
@@ -364,12 +364,12 @@ public class ChartPickerDelegate {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$uncapture$0(float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$KnscNgyyAhOKbTTO8_q3PZioF8I(ChartPickerDelegate chartPickerDelegate, float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+        chartPickerDelegate.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.pickerStart = f + ((f2 - f) * floatValue);
-        this.pickerEnd = f3 + ((f4 - f3) * floatValue);
-        this.view.onPickerJumpTo(f2, f4, false);
+        chartPickerDelegate.pickerStart = f + ((f2 - f) * floatValue);
+        chartPickerDelegate.pickerEnd = f3 + ((f4 - f3) * floatValue);
+        chartPickerDelegate.view.onPickerJumpTo(f2, f4, false);
     }
 
     public void uncapture() {

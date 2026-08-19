@@ -114,68 +114,80 @@ final class zztw implements zzug {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x007f  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0084 A[EDGE_INSN: B:24:0x0084->B:25:0x0084 BREAK  A[LOOP:1: B:10:0x0049->B:18:0x0049], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x008b A[EDGE_INSN: B:24:0x008b->B:25:0x008b BREAK  A[LOOP:1: B:10:0x004f->B:18:0x004f], SYNTHETIC] */
     @Override // com.google.android.recaptcha.internal.zzug
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void zzi(Object obj, byte[] bArr, int i, int i2, zzqb zzqbVar) {
+        int i3;
         zzsn zzsnVar = (zzsn) obj;
         zzuw zzuwVar = zzsnVar.zzc;
         if (zzuwVar == zzuw.zzc()) {
             zzuwVar = zzuw.zzf();
             zzsnVar.zzc = zzuwVar;
         }
+        zzuw zzuwVar2 = zzuwVar;
         ((zzsk) obj).zzi();
         zzsm zzsmVar = null;
         while (i < i2) {
             int zzi = zzqc.zzi(bArr, i, zzqbVar);
-            int i3 = zzqbVar.zza;
-            if (i3 == 11) {
-                int i4 = 0;
+            int i4 = zzqbVar.zza;
+            if (i4 == 11) {
+                byte[] bArr2 = bArr;
+                int i5 = i2;
+                zzqb zzqbVar2 = zzqbVar;
+                int i6 = 0;
                 zzqm zzqmVar = null;
-                while (zzi < i2) {
-                    zzi = zzqc.zzi(bArr, zzi, zzqbVar);
-                    int i5 = zzqbVar.zza;
-                    int i6 = i5 >>> 3;
-                    int i7 = i5 & 7;
-                    if (i6 != 2) {
-                        if (i6 == 3) {
+                while (true) {
+                    if (zzi >= i5) {
+                        i3 = zzi;
+                        break;
+                    }
+                    i3 = zzqc.zzi(bArr2, zzi, zzqbVar2);
+                    int i7 = zzqbVar2.zza;
+                    int i8 = i7 >>> 3;
+                    int i9 = i7 & 7;
+                    if (i8 != 2) {
+                        if (i8 == 3) {
                             if (zzsmVar != null) {
-                                int i8 = zzuc.zza;
+                                int i10 = zzuc.zza;
                                 throw null;
                             }
-                            if (i7 == 2) {
-                                zzi = zzqc.zza(bArr, zzi, zzqbVar);
-                                zzqmVar = (zzqm) zzqbVar.zzc;
+                            if (i9 == 2) {
+                                zzi = zzqc.zza(bArr2, i3, zzqbVar2);
+                                zzqmVar = (zzqm) zzqbVar2.zzc;
                             }
                         }
-                        if (i5 != 12) {
+                        if (i7 != 12) {
                             break;
                         } else {
-                            zzi = zzqc.zzo(i5, bArr, zzi, i2, zzqbVar);
+                            zzi = zzqc.zzo(i7, bArr2, i3, i5, zzqbVar2);
                         }
-                    } else if (i7 == 0) {
-                        zzi = zzqc.zzi(bArr, zzi, zzqbVar);
-                        i4 = zzqbVar.zza;
-                        zzsmVar = zzqbVar.zzd.zza(this.zza, i4);
-                    } else if (i5 != 12) {
+                    } else if (i9 == 0) {
+                        zzi = zzqc.zzi(bArr2, i3, zzqbVar2);
+                        i6 = zzqbVar2.zza;
+                        zzsmVar = zzqbVar2.zzd.zza(this.zza, i6);
+                    } else if (i7 != 12) {
                     }
                 }
                 if (zzqmVar != null) {
-                    zzuwVar.zzj((i4 << 3) | 2, zzqmVar);
+                    zzuwVar2.zzj((i6 << 3) | 2, zzqmVar);
                 }
-                i = zzi;
-            } else if ((i3 & 7) == 2) {
-                zzsmVar = zzqbVar.zzd.zza(this.zza, i3 >>> 3);
+                i = i3;
+                bArr = bArr2;
+                i2 = i5;
+                zzqbVar = zzqbVar2;
+            } else if ((i4 & 7) == 2) {
+                zzsmVar = zzqbVar.zzd.zza(this.zza, i4 >>> 3);
                 if (zzsmVar != null) {
-                    int i9 = zzuc.zza;
+                    int i11 = zzuc.zza;
                     throw null;
                 }
-                i = zzqc.zzh(i3, bArr, zzi, i2, zzuwVar, zzqbVar);
+                i = zzqc.zzh(i4, bArr, zzi, i2, zzuwVar2, zzqbVar);
             } else {
-                i = zzqc.zzo(i3, bArr, zzi, i2, zzqbVar);
+                i = zzqc.zzo(i4, bArr, zzi, i2, zzqbVar);
             }
         }
         if (i != i2) {

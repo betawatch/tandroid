@@ -143,19 +143,23 @@ public class SecretVoicePlayer extends Dialog {
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.SecretVoicePlayer.1
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
-                if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.blurBitmapPaint != null) {
+                Canvas canvas2;
+                if (SecretVoicePlayer.this.openProgress <= 0.0f || SecretVoicePlayer.this.blurBitmapPaint == null) {
+                    canvas2 = canvas;
+                } else {
                     SecretVoicePlayer.this.blurMatrix.reset();
                     float width = getWidth() / SecretVoicePlayer.this.blurBitmap.getWidth();
                     SecretVoicePlayer.this.blurMatrix.postScale(width, width);
                     SecretVoicePlayer.this.blurBitmapShader.setLocalMatrix(SecretVoicePlayer.this.blurMatrix);
                     SecretVoicePlayer.this.blurBitmapPaint.setAlpha((int) (SecretVoicePlayer.this.openProgress * 255.0f));
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), SecretVoicePlayer.this.blurBitmapPaint);
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), SecretVoicePlayer.this.blurBitmapPaint);
                 }
                 if (SecretVoicePlayer.this.setCellInvisible && SecretVoicePlayer.this.cell != null) {
                     SecretVoicePlayer.this.cell.setVisibility(4);
                     SecretVoicePlayer.this.setCellInvisible = false;
                 }
-                super.dispatchDraw(canvas);
+                super.dispatchDraw(canvas2);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -177,7 +181,7 @@ public class SecretVoicePlayer extends Dialog {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SecretVoicePlayer.this.lambda$new$0(view);
+                SecretVoicePlayer.$r8$lambda$LeF4wIGXatYvPasvs-ipyHHniC8(SecretVoicePlayer.this, view);
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.SecretVoicePlayer.2
@@ -214,9 +218,7 @@ public class SecretVoicePlayer extends Dialog {
         ViewCompat.setOnApplyWindowInsetsListener(this.windowView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda2
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                WindowInsetsCompat lambda$new$1;
-                lambda$new$1 = SecretVoicePlayer.this.lambda$new$1(view, windowInsetsCompat);
-                return lambda$new$1;
+                return SecretVoicePlayer.$r8$lambda$t2vFV0Ft9twosv66n5FYiIaR3CE(SecretVoicePlayer.this, view, windowInsetsCompat);
             }
         });
         if (SharedConfig.raiseToListen) {
@@ -224,19 +226,18 @@ public class SecretVoicePlayer extends Dialog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        if (this.closeAction == null) {
-            dismiss();
+    public static /* synthetic */ void $r8$lambda$LeF4wIGXatYvPasvs-ipyHHniC8(SecretVoicePlayer secretVoicePlayer, View view) {
+        if (secretVoicePlayer.closeAction == null) {
+            secretVoicePlayer.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ WindowInsetsCompat lambda$new$1(View view, WindowInsetsCompat windowInsetsCompat) {
+    public static /* synthetic */ WindowInsetsCompat $r8$lambda$t2vFV0Ft9twosv66n5FYiIaR3CE(SecretVoicePlayer secretVoicePlayer, View view, WindowInsetsCompat windowInsetsCompat) {
+        secretVoicePlayer.getClass();
         Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
-        this.insets = defaultWindowInsets;
-        this.containerView.setPadding(defaultWindowInsets.left, defaultWindowInsets.top, defaultWindowInsets.right, defaultWindowInsets.bottom);
-        this.windowView.requestLayout();
+        secretVoicePlayer.insets = defaultWindowInsets;
+        secretVoicePlayer.containerView.setPadding(defaultWindowInsets.left, defaultWindowInsets.top, defaultWindowInsets.right, defaultWindowInsets.bottom);
+        secretVoicePlayer.windowView.requestLayout();
         return WindowInsetsCompat.CONSUMED;
     }
 
@@ -247,29 +248,29 @@ public class SecretVoicePlayer extends Dialog {
         AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                SecretVoicePlayer.this.lambda$prepareBlur$2(view, (Bitmap) obj);
+                SecretVoicePlayer.$r8$lambda$RsyRmTAcJKWZBeOcrZYnY-y5pas(SecretVoicePlayer.this, view, (Bitmap) obj);
             }
         }, 14.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$2(View view, Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$RsyRmTAcJKWZBeOcrZYnY-y5pas(SecretVoicePlayer secretVoicePlayer, View view, Bitmap bitmap) {
         if (view != null) {
+            secretVoicePlayer.getClass();
             view.setVisibility(0);
         }
-        this.blurBitmap = bitmap;
+        secretVoicePlayer.blurBitmap = bitmap;
         Paint paint = new Paint(1);
-        this.blurBitmapPaint = paint;
-        Bitmap bitmap2 = this.blurBitmap;
+        secretVoicePlayer.blurBitmapPaint = paint;
+        Bitmap bitmap2 = secretVoicePlayer.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap2, tileMode, tileMode);
-        this.blurBitmapShader = bitmapShader;
+        secretVoicePlayer.blurBitmapShader = bitmapShader;
         paint.setShader(bitmapShader);
         ColorMatrix colorMatrix = new ColorMatrix();
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? 0.05f : 0.25f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.02f : -0.04f);
-        this.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        this.blurMatrix = new Matrix();
+        secretVoicePlayer.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        secretVoicePlayer.blurMatrix = new Matrix();
     }
 
     @Override // android.app.Dialog
@@ -413,6 +414,7 @@ public class SecretVoicePlayer extends Dialog {
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
                 protected void onDraw(Canvas canvas) {
+                    Canvas canvas2;
                     if (SecretVoicePlayer.this.isRound) {
                         if (!this.setRect) {
                             this.fromRect.set(getPhotoImage().getImageX(), getPhotoImage().getImageY(), getPhotoImage().getImageX2(), getPhotoImage().getImageY2());
@@ -429,14 +431,19 @@ public class SecretVoicePlayer extends Dialog {
                         AndroidUtilities.lerp(this.fromRect, this.toRect, SecretVoicePlayer.this.openProgress, SecretVoicePlayer.this.rect);
                         setImageCoords(SecretVoicePlayer.this.rect.left, SecretVoicePlayer.this.rect.top, SecretVoicePlayer.this.rect.width(), SecretVoicePlayer.this.rect.height());
                         getPhotoImage().setRoundRadius((int) SecretVoicePlayer.this.rect.width());
-                        if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
+                        if (SecretVoicePlayer.this.openProgress <= 0.0f || !SecretVoicePlayer.this.renderedFirstFrame) {
+                            canvas2 = canvas;
+                        } else {
+                            canvas2 = canvas;
+                            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
                         }
                         this.radialProgressAlpha = 1.0f - SecretVoicePlayer.this.openProgress;
+                    } else {
+                        canvas2 = canvas;
                     }
-                    super.onDraw(canvas);
+                    super.onDraw(canvas2);
                     if (SecretVoicePlayer.this.isRound && SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                        canvas.restore();
+                        canvas2.restore();
                     }
                 }
 
@@ -1197,7 +1204,7 @@ public class SecretVoicePlayer extends Dialog {
         this.closeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SecretVoicePlayer.this.lambda$setCell$3(view2);
+                SecretVoicePlayer.this.dismiss();
             }
         });
         this.containerView.addView(this.closeButton, LayoutHelper.createFrame(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 18.0f));
@@ -1260,21 +1267,15 @@ public class SecretVoicePlayer extends Dialog {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SecretVoicePlayer$5$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SecretVoicePlayer.5.this.lambda$onRenderedFirstFrame$0();
+                    SecretVoicePlayer.5.$r8$lambda$pqKvCZgs-T-oISh77meG8KWXRdc(SecretVoicePlayer.5.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onRenderedFirstFrame$0() {
+        public static /* synthetic */ void $r8$lambda$pqKvCZgs-T-oISh77meG8KWXRdc(5 r2) {
             SecretVoicePlayer.this.renderedFirstFrame = true;
             SecretVoicePlayer.this.myCell.invalidate();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$3(View view) {
-        dismiss();
     }
 
     @Override // android.app.Dialog
@@ -1335,12 +1336,12 @@ public class SecretVoicePlayer extends Dialog {
             AlertDialog create = new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(this.isRound ? R.string.VideoOnceCloseTitle : R.string.VoiceOnceCloseTitle)).setMessage(LocaleController.getString(this.isRound ? R.string.VideoOnceCloseMessage : R.string.VoiceOnceCloseMessage)).setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda6
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog2, int i) {
-                    SecretVoicePlayer.this.lambda$onBackPressed$4(alertDialog2, i);
+                    SecretVoicePlayer.$r8$lambda$ztEMBOpEXkVr11YSJszXsUcWo8E(SecretVoicePlayer.this, alertDialog2, i);
                 }
             }).setNegativeButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog2, int i) {
-                    SecretVoicePlayer.this.lambda$onBackPressed$5(alertDialog2, i);
+                    SecretVoicePlayer.$r8$lambda$l1puDsHIvlT0hcExnAVKlRXV-ic(SecretVoicePlayer.this, alertDialog2, i);
                 }
             }).create();
             this.backDialog = create;
@@ -1355,22 +1356,20 @@ public class SecretVoicePlayer extends Dialog {
         super.onBackPressed();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        AlertDialog alertDialog2 = this.backDialog;
+    public static /* synthetic */ void $r8$lambda$ztEMBOpEXkVr11YSJszXsUcWo8E(SecretVoicePlayer secretVoicePlayer, AlertDialog alertDialog, int i) {
+        AlertDialog alertDialog2 = secretVoicePlayer.backDialog;
         if (alertDialog2 != null) {
             alertDialog2.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$5(AlertDialog alertDialog, int i) {
-        AlertDialog alertDialog2 = this.backDialog;
+    public static /* synthetic */ void $r8$lambda$l1puDsHIvlT0hcExnAVKlRXV-ic(SecretVoicePlayer secretVoicePlayer, AlertDialog alertDialog, int i) {
+        AlertDialog alertDialog2 = secretVoicePlayer.backDialog;
         if (alertDialog2 != null) {
             alertDialog2.dismiss();
-            this.backDialog = null;
+            secretVoicePlayer.backDialog = null;
         }
-        dismiss();
+        secretVoicePlayer.dismiss();
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
@@ -1404,7 +1403,7 @@ public class SecretVoicePlayer extends Dialog {
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                SecretVoicePlayer.this.lambda$dismiss$7();
+                SecretVoicePlayer.$r8$lambda$Gr-EIy_oOLoY8yBhY2AG0Np6xpI(SecretVoicePlayer.this);
             }
         });
         this.windowView.invalidate();
@@ -1422,7 +1421,7 @@ public class SecretVoicePlayer extends Dialog {
             this.thanosEffect.animate(this.myCell, 1.5f, new Runnable() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SecretVoicePlayer.this.lambda$dismiss$8();
+                    super/*android.app.Dialog*/.dismiss();
                 }
             });
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
@@ -1435,32 +1434,21 @@ public class SecretVoicePlayer extends Dialog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$7() {
-        if (this.thanosEffect == null) {
+    public static /* synthetic */ void $r8$lambda$Gr-EIy_oOLoY8yBhY2AG0Np6xpI(final SecretVoicePlayer secretVoicePlayer) {
+        if (secretVoicePlayer.thanosEffect == null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SecretVoicePlayer.this.lambda$dismiss$6();
+                    super/*android.app.Dialog*/.dismiss();
                 }
             });
-            ChatMessageCell chatMessageCell = this.cell;
+            ChatMessageCell chatMessageCell = secretVoicePlayer.cell;
             if (chatMessageCell != null) {
                 chatMessageCell.setVisibility(0);
-                this.cell.invalidate();
+                secretVoicePlayer.cell.invalidate();
             }
         }
         MediaController.getInstance().tryResumePausedAudio();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$6() {
-        super.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$8() {
-        super.dismiss();
     }
 
     private void animateOpenTo(final boolean z, final Runnable runnable) {
@@ -1478,7 +1466,7 @@ public class SecretVoicePlayer extends Dialog {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                SecretVoicePlayer.this.lambda$animateOpenTo$9(z, valueAnimator3);
+                SecretVoicePlayer.$r8$lambda$gNtiSWXegUFfj1GneDKy3QcECoc(SecretVoicePlayer.this, z, valueAnimator3);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.SecretVoicePlayer.7
@@ -1514,7 +1502,7 @@ public class SecretVoicePlayer extends Dialog {
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.SecretVoicePlayer$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                SecretVoicePlayer.this.lambda$animateOpenTo$10(valueAnimator4);
+                SecretVoicePlayer.$r8$lambda$qN-EYvQh4pCHZyDIEAhrI7UsV8o(SecretVoicePlayer.this, valueAnimator4);
             }
         });
         this.open2Animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.SecretVoicePlayer.8
@@ -1531,31 +1519,31 @@ public class SecretVoicePlayer extends Dialog {
         this.open2Animator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$9(boolean z, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$gNtiSWXegUFfj1GneDKy3QcECoc(SecretVoicePlayer secretVoicePlayer, boolean z, ValueAnimator valueAnimator) {
         ChatMessageCell chatMessageCell;
-        this.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.windowView.invalidate();
-        this.containerView.invalidate();
-        if (this.isRound) {
-            this.myCell.invalidate();
+        secretVoicePlayer.getClass();
+        secretVoicePlayer.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        secretVoicePlayer.windowView.invalidate();
+        secretVoicePlayer.containerView.invalidate();
+        if (secretVoicePlayer.isRound) {
+            secretVoicePlayer.myCell.invalidate();
         }
-        updateTranslation();
-        TextView textView = this.closeButton;
+        secretVoicePlayer.updateTranslation();
+        TextView textView = secretVoicePlayer.closeButton;
         if (textView != null) {
-            textView.setAlpha(this.openProgress);
+            textView.setAlpha(secretVoicePlayer.openProgress);
         }
-        if (this.isRound || (chatMessageCell = this.myCell) == null || chatMessageCell.getSeekBarWaveform() == null) {
+        if (secretVoicePlayer.isRound || (chatMessageCell = secretVoicePlayer.myCell) == null || chatMessageCell.getSeekBarWaveform() == null) {
             return;
         }
-        this.myCell.getSeekBarWaveform().setExplosionRate((z ? CubicBezierInterpolator.EASE_OUT : CubicBezierInterpolator.EASE_IN).getInterpolation(Utilities.clamp(this.openProgress * 1.25f, 1.0f, 0.0f)));
+        secretVoicePlayer.myCell.getSeekBarWaveform().setExplosionRate((z ? CubicBezierInterpolator.EASE_OUT : CubicBezierInterpolator.EASE_IN).getInterpolation(Utilities.clamp(secretVoicePlayer.openProgress * 1.25f, 1.0f, 0.0f)));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$10(ValueAnimator valueAnimator) {
-        this.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (this.isRound) {
-            this.myCell.invalidate();
+    public static /* synthetic */ void $r8$lambda$qN-EYvQh4pCHZyDIEAhrI7UsV8o(SecretVoicePlayer secretVoicePlayer, ValueAnimator valueAnimator) {
+        secretVoicePlayer.getClass();
+        secretVoicePlayer.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        if (secretVoicePlayer.isRound) {
+            secretVoicePlayer.myCell.invalidate();
         }
     }
 }

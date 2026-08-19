@@ -74,7 +74,7 @@ public class ConversationItem implements Item {
             public void onTextReply(String str) {
             }
         });
-        this.mActions = Collections.emptyList();
+        this.mActions = Collections.EMPTY_LIST;
     }
 
     public String getId() {

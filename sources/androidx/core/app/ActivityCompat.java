@@ -86,14 +86,13 @@ public abstract class ActivityCompat extends ContextCompat {
             new Handler(activity.getMainLooper()).post(new Runnable() { // from class: androidx.core.app.ActivityCompat$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ActivityCompat.lambda$recreate$0(activity);
+                    ActivityCompat.$r8$lambda$PEvuXAyy2Ld2s8FnpyspwjlByy4(activity);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$recreate$0(Activity activity) {
+    public static /* synthetic */ void $r8$lambda$PEvuXAyy2Ld2s8FnpyspwjlByy4(Activity activity) {
         if (activity.isFinishing() || ActivityRecreator.recreate(activity)) {
             return;
         }

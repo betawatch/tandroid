@@ -1,21 +1,27 @@
 package j$.util;
 
-import java.util.RandomAccess;
-
 /* loaded from: classes2.dex */
-final class j extends h implements RandomAccess {
-    private static final long serialVersionUID = 1530674583602358482L;
+public final class j extends f implements java.util.Set, Set {
+    private static final long serialVersionUID = 487447009682186044L;
 
-    @Override // j$.util.h, java.util.List
-    public final java.util.List subList(int i, int i2) {
-        j jVar;
-        synchronized (this.b) {
-            jVar = new j(this.c.subList(i, i2), this.b);
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        boolean equals;
+        if (this == obj) {
+            return true;
         }
-        return jVar;
+        synchronized (this.b) {
+            equals = this.a.equals(obj);
+        }
+        return equals;
     }
 
-    private Object writeReplace() {
-        return new h(this.c);
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        int hashCode;
+        synchronized (this.b) {
+            hashCode = this.a.hashCode();
+        }
+        return hashCode;
     }
 }

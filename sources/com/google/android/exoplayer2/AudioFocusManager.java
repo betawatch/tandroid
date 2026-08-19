@@ -4,7 +4,6 @@ import android.content.Context;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.os.Handler;
-import com.google.android.exoplayer2.AudioFocusManager;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
@@ -237,17 +236,12 @@ final class AudioFocusManager {
             this.eventHandler = handler;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAudioFocusChange$0(int i) {
-            AudioFocusManager.this.handlePlatformAudioFocusChange(i);
-        }
-
         @Override // android.media.AudioManager.OnAudioFocusChangeListener
         public void onAudioFocusChange(final int i) {
             this.eventHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.AudioFocusManager$AudioFocusListener$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioFocusManager.AudioFocusListener.this.lambda$onAudioFocusChange$0(i);
+                    AudioFocusManager.this.handlePlatformAudioFocusChange(i);
                 }
             });
         }

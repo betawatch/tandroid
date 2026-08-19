@@ -1,81 +1,32 @@
 package j$.util.stream;
 
-import j$.util.Spliterators;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.function.Consumer;
-import java.util.function.LongConsumer;
-import org.telegram.messenger.NotificationCenter;
-
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-class T2 extends V2 implements LongConsumer {
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+public final class T2 {
+    public static final T2 DOUBLE_VALUE;
+    public static final T2 INT_VALUE;
+    public static final T2 LONG_VALUE;
+    public static final T2 REFERENCE;
+    public static final /* synthetic */ T2[] a;
+
+    public static T2 valueOf(String str) {
+        return (T2) Enum.valueOf(T2.class, str);
     }
 
-    @Override // j$.util.stream.V2
-    protected final void s(Object obj, int i, int i2, Object obj2) {
-        long[] jArr = (long[]) obj;
-        LongConsumer longConsumer = (LongConsumer) obj2;
-        while (i < i2) {
-            longConsumer.accept(jArr[i]);
-            i++;
-        }
+    public static T2[] values() {
+        return (T2[]) a.clone();
     }
 
-    @Override // j$.util.stream.V2
-    protected final int t(Object obj) {
-        return ((long[]) obj).length;
-    }
-
-    @Override // java.lang.Iterable, j$.lang.a
-    public final void forEach(Consumer consumer) {
-        if (consumer instanceof LongConsumer) {
-            e((LongConsumer) consumer);
-        } else {
-            if (J3.a) {
-                J3.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
-                throw null;
-            }
-            j$.util.T.c((S2) spliterator(), consumer);
-        }
-    }
-
-    @Override // j$.util.stream.V2
-    protected final Object[] w() {
-        return new long[8][];
-    }
-
-    @Override // j$.util.stream.V2
-    public final Object c(int i) {
-        return new long[i];
-    }
-
-    @Override // java.util.function.LongConsumer
-    public void accept(long j) {
-        x();
-        long[] jArr = (long[]) this.e;
-        int i = this.b;
-        this.b = i + 1;
-        jArr[i] = j;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return Spliterators.h(spliterator());
-    }
-
-    @Override // j$.util.stream.V2, java.lang.Iterable
-    /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public j$.util.c0 spliterator() {
-        return new S2(this, 0, this.c, 0, this.b);
-    }
-
-    public final String toString() {
-        long[] jArr = (long[]) d();
-        if (jArr.length < 200) {
-            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(jArr));
-        }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, NotificationCenter.dialogPhotosUpdate)));
+    static {
+        T2 t2 = new T2("REFERENCE", 0);
+        REFERENCE = t2;
+        T2 t22 = new T2("INT_VALUE", 1);
+        INT_VALUE = t22;
+        T2 t23 = new T2("LONG_VALUE", 2);
+        LONG_VALUE = t23;
+        T2 t24 = new T2("DOUBLE_VALUE", 3);
+        DOUBLE_VALUE = t24;
+        a = new T2[]{t2, t22, t23, t24};
     }
 }

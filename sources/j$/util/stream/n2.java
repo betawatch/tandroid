@@ -1,43 +1,76 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
-final class n2 extends i2 {
-    long b;
-    long c;
-    final /* synthetic */ o2 d;
+public final class n2 extends w {
+    public final /* synthetic */ long m;
+    public final /* synthetic */ long n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    n2(o2 o2Var, m2 m2Var) {
-        super(m2Var);
-        this.d = o2Var;
-        this.b = o2Var.m;
-        long j = o2Var.n;
-        this.c = j < 0 ? Long.MAX_VALUE : j;
+    public n2(x xVar, int i, long j, long j2) {
+        super(xVar, i, 0);
+        this.m = j;
+        this.n = j2;
     }
 
-    @Override // j$.util.stream.i2, j$.util.stream.m2
-    public final void l(long j) {
-        this.a.l(w0.A(j, this.d.m, this.c));
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void p(Object obj) {
-        long j = this.b;
-        if (j == 0) {
-            long j2 = this.c;
-            if (j2 > 0) {
-                this.c = j2 - 1;
-                this.a.p((m2) obj);
-                return;
-            }
-            return;
+    @Override // j$.util.stream.a
+    public final Spliterator K(a aVar, Spliterator spliterator) {
+        long F = aVar.F(spliterator);
+        long j = this.n;
+        if (F > 0 && spliterator.hasCharacteristics(16384)) {
+            j$.util.T t = (j$.util.T) aVar.S(spliterator);
+            long j2 = this.m;
+            return new i3(t, j2, q1.A(j2, j));
         }
-        this.b = j - 1;
+        if (S2.ORDERED.q(aVar.f)) {
+            return ((B0) new p2(this, aVar, spliterator, new Y(23), this.m, this.n).invoke()).spliterator();
+        }
+        j$.util.T t2 = (j$.util.T) aVar.S(spliterator);
+        long j3 = this.m;
+        if (j3 <= F) {
+            long j4 = F - j3;
+            if (j >= 0) {
+                j4 = Math.min(j, j4);
+            }
+            j = j4;
+            j3 = 0;
+        }
+        return new o3(t2, j3, j);
     }
 
-    @Override // j$.util.stream.i2, j$.util.stream.m2
-    public final boolean n() {
-        return this.c == 0 || this.a.n();
+    @Override // j$.util.stream.a
+    public final B0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+        long j;
+        long j2;
+        long F = aVar.F(spliterator);
+        if (F > 0 && spliterator.hasCharacteristics(16384)) {
+            a aVar2 = aVar;
+            while (aVar2.e > 0) {
+                aVar2 = aVar2.b;
+            }
+            return q1.C(aVar, q1.y(aVar2.H(), spliterator, this.m, this.n), true);
+        }
+        if (!S2.ORDERED.q(aVar.f)) {
+            j$.util.T t = (j$.util.T) aVar.S(spliterator);
+            long j3 = this.m;
+            long j4 = this.n;
+            if (j3 <= F) {
+                long j5 = F - j3;
+                j = j4 >= 0 ? Math.min(j4, j5) : j5;
+                j2 = 0;
+            } else {
+                j = j4;
+                j2 = j3;
+            }
+            return q1.C(this, new o3(t, j2, j), true);
+        }
+        return (B0) new p2(this, aVar, spliterator, intFunction, this.m, this.n).invoke();
+    }
+
+    @Override // j$.util.stream.a
+    public final f2 M(int i, f2 f2Var) {
+        return new m2(this, f2Var);
     }
 }

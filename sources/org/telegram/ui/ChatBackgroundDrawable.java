@@ -104,7 +104,7 @@ public class ChatBackgroundDrawable extends Drawable {
             EmojiThemes.loadWallpaperImage(UserConfig.selectedAccount, wallPaper.id, wallPaper, new Utilities.Callback() { // from class: org.telegram.ui.ChatBackgroundDrawable$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ChatBackgroundDrawable.this.lambda$new$0(wallPaper, (WallpaperBitmapHolder) obj);
+                    ChatBackgroundDrawable.$r8$lambda$ysiVoAAkqhWDzjalJkkptHUVtm4(ChatBackgroundDrawable.this, wallPaper, (WallpaperBitmapHolder) obj);
                 }
             });
             return;
@@ -133,10 +133,9 @@ public class ChatBackgroundDrawable extends Drawable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLRPC.WallPaper wallPaper, WallpaperBitmapHolder wallpaperBitmapHolder) {
-        this.motionBackgroundDrawable.setPatternBitmap(wallPaper.settings.intensity, wallpaperBitmapHolder.bitmap);
-        View view = this.parent;
+    public static /* synthetic */ void $r8$lambda$ysiVoAAkqhWDzjalJkkptHUVtm4(ChatBackgroundDrawable chatBackgroundDrawable, TLRPC.WallPaper wallPaper, WallpaperBitmapHolder wallpaperBitmapHolder) {
+        chatBackgroundDrawable.motionBackgroundDrawable.setPatternBitmap(wallPaper.settings.intensity, wallpaperBitmapHolder.bitmap);
+        View view = chatBackgroundDrawable.parent;
         if (view != null) {
             view.invalidate();
         }

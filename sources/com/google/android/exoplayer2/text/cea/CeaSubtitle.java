@@ -31,6 +31,6 @@ final class CeaSubtitle implements Subtitle {
 
     @Override // com.google.android.exoplayer2.text.Subtitle
     public List getCues(long j) {
-        return j >= 0 ? this.cues : Collections.emptyList();
+        return j >= 0 ? this.cues : Collections.EMPTY_LIST;
     }
 }

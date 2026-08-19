@@ -1,5 +1,5 @@
 package ru.noties.jlatexmath.awt;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public interface Graphics {
 }

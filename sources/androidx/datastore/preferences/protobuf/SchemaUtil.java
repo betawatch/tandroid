@@ -408,19 +408,7 @@ abstract class SchemaUtil {
             return 0;
         }
         int computeTagSize = CodedOutputStream.computeTagSize(i) * size;
-        if (list instanceof LazyStringList) {
-            LazyStringList lazyStringList = (LazyStringList) list;
-            while (i2 < size) {
-                Object raw = lazyStringList.getRaw(i2);
-                if (raw instanceof ByteString) {
-                    computeStringSizeNoTag2 = CodedOutputStream.computeBytesSizeNoTag((ByteString) raw);
-                } else {
-                    computeStringSizeNoTag2 = CodedOutputStream.computeStringSizeNoTag((String) raw);
-                }
-                computeTagSize += computeStringSizeNoTag2;
-                i2++;
-            }
-        } else {
+        if (!(list instanceof LazyStringList)) {
             while (i2 < size) {
                 Object obj = list.get(i2);
                 if (obj instanceof ByteString) {
@@ -431,6 +419,18 @@ abstract class SchemaUtil {
                 computeTagSize += computeStringSizeNoTag;
                 i2++;
             }
+            return computeTagSize;
+        }
+        LazyStringList lazyStringList = (LazyStringList) list;
+        while (i2 < size) {
+            Object raw = lazyStringList.getRaw(i2);
+            if (raw instanceof ByteString) {
+                computeStringSizeNoTag2 = CodedOutputStream.computeBytesSizeNoTag((ByteString) raw);
+            } else {
+                computeStringSizeNoTag2 = CodedOutputStream.computeStringSizeNoTag((String) raw);
+            }
+            computeTagSize += computeStringSizeNoTag2;
+            i2++;
         }
         return computeTagSize;
     }
@@ -516,7 +516,10 @@ abstract class SchemaUtil {
     }
 
     static boolean safeEquals(Object obj, Object obj2) {
-        return obj == obj2 || (obj != null && obj.equals(obj2));
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
+        }
+        return true;
     }
 
     static void mergeMap(MapFieldSchema mapFieldSchema, Object obj, Object obj2, long j) {
@@ -557,14 +560,14 @@ abstract class SchemaUtil {
             if (i2 != size) {
                 list.subList(i2, size).clear();
             }
-        } else {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                int intValue2 = ((Integer) it.next()).intValue();
-                if (!enumVerifier.isInRange(intValue2)) {
-                    obj = storeUnknownEnum(i, intValue2, obj, unknownFieldSchema);
-                    it.remove();
-                }
+            return obj;
+        }
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            int intValue2 = ((Integer) it.next()).intValue();
+            if (!enumVerifier.isInRange(intValue2)) {
+                obj = storeUnknownEnum(i, intValue2, obj, unknownFieldSchema);
+                it.remove();
             }
         }
         return obj;

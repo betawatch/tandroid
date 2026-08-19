@@ -1,138 +1,63 @@
 package j$.util;
 
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.stream.Stream;
-import java.io.Serializable;
-import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 /* loaded from: classes2.dex */
-class m implements java.util.Collection, Serializable, Collection {
-    private static final long serialVersionUID = 1820017752578914078L;
-    final java.util.Collection a;
+public final class m implements ListIterator, w {
+    public final ListIterator a;
 
-    @Override // java.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        return Stream.Wrapper.convert(parallelStream());
+    public m(n nVar, int i) {
+        this.a = nVar.b.listIterator(i);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext();
     }
 
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(stream());
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final Object next() {
+        return this.a.next();
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
     }
 
-    m(java.util.Collection collection) {
-        collection.getClass();
-        this.a = collection;
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        return this.a.previous();
     }
 
-    @Override // java.util.Collection
-    public final int size() {
-        return this.a.size();
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
     }
 
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
     }
 
-    @Override // java.util.Collection
-    public boolean contains(Object obj) {
-        return this.a.contains(obj);
-    }
-
-    @Override // java.util.Collection
-    public Object[] toArray() {
-        return this.a.toArray();
-    }
-
-    @Override // java.util.Collection
-    public Object[] toArray(Object[] objArr) {
-        return this.a.toArray(objArr);
-    }
-
-    public final String toString() {
-        return this.a.toString();
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public Iterator iterator() {
-        return new l(this);
-    }
-
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final void remove() {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Collection
-    public final boolean remove(Object obj) {
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Collection
-    public boolean containsAll(java.util.Collection collection) {
-        return this.a.containsAll(collection);
-    }
-
-    @Override // java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection
-    public final boolean retainAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
-    public void forEach(Consumer consumer) {
-        Collection.-EL.a(this.a, consumer);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final boolean removeIf(Predicate predicate) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public Spliterator spliterator() {
-        return Collection.-EL.c(this.a);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public j$.util.stream.Stream stream() {
-        return Collection.-EL.stream(this.a);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public j$.util.stream.Stream parallelStream() {
-        return Collection.-EL.b(this.a);
+    @Override // java.util.Iterator, j$.util.w
+    public final void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.M(this.a, consumer);
     }
 }

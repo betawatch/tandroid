@@ -118,16 +118,16 @@ public final class ClientSettings {
 
     public ClientSettings(Account account, Set set, Map map, int i, View view, String str, String str2, SignInOptions signInOptions, boolean z) {
         this.zaa = account;
-        Set emptySet = set == null ? Collections.emptySet() : DesugarCollections.unmodifiableSet(set);
-        this.zab = emptySet;
-        map = map == null ? Collections.emptyMap() : map;
+        Set unmodifiableSet = set == null ? Collections.EMPTY_SET : DesugarCollections.unmodifiableSet(set);
+        this.zab = unmodifiableSet;
+        map = map == null ? Collections.EMPTY_MAP : map;
         this.zad = map;
         this.zaf = view;
         this.zae = i;
         this.zag = str;
         this.zah = str2;
         this.zai = signInOptions == null ? SignInOptions.zaa : signInOptions;
-        HashSet hashSet = new HashSet(emptySet);
+        HashSet hashSet = new HashSet(unmodifiableSet);
         Iterator it = map.values().iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());

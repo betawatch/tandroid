@@ -248,7 +248,7 @@ class BotButton {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.BotButton$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        BotButton.this.lambda$setPressed$0(valueAnimator2);
+                        BotButton.$r8$lambda$cveLHbhNfBQ3Ml3CjE2mKOssbCo(BotButton.this, valueAnimator2);
                     }
                 });
                 this.pressAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.BotButton.1
@@ -265,10 +265,10 @@ class BotButton {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPressed$0(ValueAnimator valueAnimator) {
-        this.pressT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.invalidateRunnable.run();
+    public static /* synthetic */ void $r8$lambda$cveLHbhNfBQ3Ml3CjE2mKOssbCo(BotButton botButton, ValueAnimator valueAnimator) {
+        botButton.getClass();
+        botButton.pressT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        botButton.invalidateRunnable.run();
     }
 
     public boolean hasPositionFlag(int i) {

@@ -113,14 +113,9 @@ public class PasskeysActivity extends BaseFragment {
         arrayList.add(UItem.asShadow(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                PasskeysActivity.this.lambda$fillItems$0();
+                PasskeysActivity.showLearnSheet(r0.getContext(), r0.currentAccount, PasskeysActivity.this.resourceProvider, r5.passkeys.size() + 1 <= r5.getMessagesController().config.passkeysAccountPasskeysMax.get());
             }
         }), true)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$0() {
-        showLearnSheet(getContext(), this.currentAccount, this.resourceProvider, this.passkeys.size() + 1 <= getMessagesController().config.passkeysAccountPasskeysMax.get());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -150,49 +145,43 @@ public class PasskeysActivity extends BaseFragment {
         ItemOptions.makeOptions(this, passkeyCell).add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                PasskeysActivity.this.lambda$openMenu$3(passkey, str, i);
+                new AlertDialog.Builder(r0.getContext()).setTitle(LocaleController.getString(R.string.PasskeyDeleteTitle)).setMessage(LocaleController.getString(R.string.PasskeyDeleteText)).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda11
+                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                    public final void onClick(AlertDialog alertDialog, int i2) {
+                        PasskeysActivity.$r8$lambda$7UMQfIVbRMETXpyVfo42MQUtCEc(PasskeysActivity.this, r2, r3, r4, alertDialog, i2);
+                    }
+                }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
             }
         }).setScrimViewBackground(this.listView.getClipBackground(passkeyCell)).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMenu$3(final TL_account.Passkey passkey, final String str, final int i) {
-        new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.PasskeyDeleteTitle)).setMessage(LocaleController.getString(R.string.PasskeyDeleteText)).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda11
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i2) {
-                PasskeysActivity.this.lambda$openMenu$2(passkey, str, i, alertDialog, i2);
-            }
-        }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).makeRed(-1).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMenu$2(final TL_account.Passkey passkey, String str, final int i, AlertDialog alertDialog, int i2) {
-        this.passkeys.remove(passkey);
-        this.listView.adapter.update(true);
+    public static /* synthetic */ void $r8$lambda$7UMQfIVbRMETXpyVfo42MQUtCEc(final PasskeysActivity passkeysActivity, final TL_account.Passkey passkey, String str, final int i, AlertDialog alertDialog, int i2) {
+        passkeysActivity.passkeys.remove(passkey);
+        passkeysActivity.listView.adapter.update(true);
         TL_account.deletePasskey deletepasskey = new TL_account.deletePasskey();
         deletepasskey.id = str;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(deletepasskey, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda12
+        ConnectionsManager.getInstance(passkeysActivity.currentAccount).sendRequestTyped(deletepasskey, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda12
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                PasskeysActivity.this.lambda$openMenu$1(i, passkey, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                PasskeysActivity.$r8$lambda$xK1B8-Km6VAS6_KQOOZZ6bpX61I(PasskeysActivity.this, i, passkey, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openMenu$1(int i, TL_account.Passkey passkey, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$xK1B8-Km6VAS6_KQOOZZ6bpX61I(PasskeysActivity passkeysActivity, int i, TL_account.Passkey passkey, TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+        passkeysActivity.getClass();
         if (bool instanceof TLRPC.TL_boolFalse) {
-            BulletinFactory.of(this).showForError("FALSE");
-            ArrayList arrayList = this.passkeys;
+            BulletinFactory.of(passkeysActivity).showForError("FALSE");
+            ArrayList arrayList = passkeysActivity.passkeys;
             arrayList.add(Utilities.clamp(i, arrayList.size(), 0), passkey);
-            this.listView.adapter.update(true);
+            passkeysActivity.listView.adapter.update(true);
             return;
         }
         if (tL_error != null) {
-            BulletinFactory.of(this).showForError(tL_error);
-            ArrayList arrayList2 = this.passkeys;
+            BulletinFactory.of(passkeysActivity).showForError(tL_error);
+            ArrayList arrayList2 = passkeysActivity.passkeys;
             arrayList2.add(Utilities.clamp(i, arrayList2.size(), 0), passkey);
-            this.listView.adapter.update(true);
+            passkeysActivity.listView.adapter.update(true);
         }
     }
 
@@ -202,7 +191,7 @@ public class PasskeysActivity extends BaseFragment {
             PasskeysController.create(getContext(), this.currentAccount, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    PasskeysActivity.this.lambda$onItemClick$4((TL_account.Passkey) obj, (String) obj2);
+                    PasskeysActivity.$r8$lambda$1PvOwjpdZiyPZDHYkIEvyy_upo0(PasskeysActivity.this, (TL_account.Passkey) obj, (String) obj2);
                 }
             });
         } else if (uItem.object != null) {
@@ -210,12 +199,12 @@ public class PasskeysActivity extends BaseFragment {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onItemClick$4(TL_account.Passkey passkey, String str) {
+    public static /* synthetic */ void $r8$lambda$1PvOwjpdZiyPZDHYkIEvyy_upo0(PasskeysActivity passkeysActivity, TL_account.Passkey passkey, String str) {
+        passkeysActivity.getClass();
         if (str == null) {
             if (passkey != null) {
-                MessagesController.getInstance(this.currentAccount).removeSuggestion(0L, "SETUP_PASSKEY");
-                added(passkey);
+                MessagesController.getInstance(passkeysActivity.currentAccount).removeSuggestion(0L, "SETUP_PASSKEY");
+                passkeysActivity.added(passkey);
                 return;
             }
             return;
@@ -224,9 +213,9 @@ public class PasskeysActivity extends BaseFragment {
             return;
         }
         if ("EMPTY".equalsIgnoreCase(str)) {
-            new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.PasskeyNoOptionsTitle)).setMessage(LocaleController.getString(R.string.PasskeyNoOptionsText)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
+            new AlertDialog.Builder(passkeysActivity.getContext()).setTitle(LocaleController.getString(R.string.PasskeyNoOptionsTitle)).setMessage(LocaleController.getString(R.string.PasskeyNoOptionsText)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
         } else {
-            BulletinFactory.of(this).showForError(str, true);
+            BulletinFactory.of(passkeysActivity).showForError(str, true);
         }
     }
 
@@ -398,7 +387,7 @@ public class PasskeysActivity extends BaseFragment {
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PasskeysActivity.lambda$showLearnSheet$9(ButtonWithCounterView.this, context, i, create, view);
+                PasskeysActivity.$r8$lambda$Co5KfSIWVwqLp-ajjmCJiQjZ_j8(ButtonWithCounterView.this, context, i, create, view);
             }
         });
         if (z) {
@@ -408,8 +397,7 @@ public class PasskeysActivity extends BaseFragment {
         create.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showLearnSheet$9(final ButtonWithCounterView buttonWithCounterView, final Context context, final int i, final BottomSheet bottomSheet, View view) {
+    public static /* synthetic */ void $r8$lambda$Co5KfSIWVwqLp-ajjmCJiQjZ_j8(final ButtonWithCounterView buttonWithCounterView, final Context context, final int i, final BottomSheet bottomSheet, View view) {
         if (buttonWithCounterView.isLoading()) {
             return;
         }
@@ -417,13 +405,12 @@ public class PasskeysActivity extends BaseFragment {
         PasskeysController.create(context, i, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                PasskeysActivity.lambda$showLearnSheet$8(ButtonWithCounterView.this, context, bottomSheet, i, (TL_account.Passkey) obj, (String) obj2);
+                PasskeysActivity.$r8$lambda$B0BS15o7WTBwGAVJlk0xcRFuUzM(ButtonWithCounterView.this, context, bottomSheet, i, (TL_account.Passkey) obj, (String) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showLearnSheet$8(ButtonWithCounterView buttonWithCounterView, Context context, final BottomSheet bottomSheet, int i, final TL_account.Passkey passkey, final String str) {
+    public static /* synthetic */ void $r8$lambda$B0BS15o7WTBwGAVJlk0xcRFuUzM(ButtonWithCounterView buttonWithCounterView, Context context, final BottomSheet bottomSheet, int i, final TL_account.Passkey passkey, final String str) {
         buttonWithCounterView.setLoading(false);
         if ("CANCELLED".equalsIgnoreCase(str)) {
             return;
@@ -432,7 +419,7 @@ public class PasskeysActivity extends BaseFragment {
             new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.PasskeyNoOptionsTitle)).setMessage(LocaleController.getString(R.string.PasskeyNoOptionsText)).setPositiveButton(LocaleController.getString(R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    BottomSheet.this.lambda$new$0();
+                    BottomSheet.this.dismiss();
                 }
             }).show();
             return;
@@ -448,12 +435,12 @@ public class PasskeysActivity extends BaseFragment {
         if (passkey != null) {
             MessagesController.getInstance(i).removeSuggestion(0L, "SETUP_PASSKEY");
             if (safeLastFragment instanceof PasskeysActivity) {
-                bottomSheet.lambda$new$0();
+                bottomSheet.dismiss();
                 ((PasskeysActivity) safeLastFragment).added(passkey);
                 return;
             }
             if (safeLastFragment instanceof PrivacySettingsActivity) {
-                bottomSheet.lambda$new$0();
+                bottomSheet.dismiss();
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) safeLastFragment;
                 ArrayList arrayList = privacySettingsActivity.currentPasskeys;
                 if (arrayList == null) {
@@ -467,14 +454,13 @@ public class PasskeysActivity extends BaseFragment {
             ConnectionsManager.getInstance(i).sendRequestTyped(new TL_account.getPasskeys(), new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    PasskeysActivity.lambda$showLearnSheet$7(BottomSheet.this, passkey, str, (TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);
+                    PasskeysActivity.$r8$lambda$jbZDA2WwAQqH8mQRACHmp7eg8Tw(BottomSheet.this, passkey, str, (TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showLearnSheet$7(BottomSheet bottomSheet, final TL_account.Passkey passkey, String str, TL_account.Passkeys passkeys, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$jbZDA2WwAQqH8mQRACHmp7eg8Tw(BottomSheet bottomSheet, final TL_account.Passkey passkey, String str, TL_account.Passkeys passkeys, TLRPC.TL_error tL_error) {
         if (passkeys == null) {
             if (tL_error != null) {
                 BulletinFactory.of(bottomSheet.topBulletinContainer, bottomSheet.getResourcesProvider()).showForError(str);
@@ -482,7 +468,7 @@ public class PasskeysActivity extends BaseFragment {
             }
             return;
         }
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
         int i = 0;
         while (i < passkeys.passkeys.size()) {
             if (TextUtils.equals(passkeys.passkeys.get(i).id, passkey.id)) {

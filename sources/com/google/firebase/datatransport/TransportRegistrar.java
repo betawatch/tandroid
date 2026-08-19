@@ -22,15 +22,12 @@ public class TransportRegistrar implements ComponentRegistrar {
         return Arrays.asList(Component.builder(TransportFactory.class).name(LIBRARY_NAME).add(Dependency.required(Context.class)).factory(new ComponentFactory() { // from class: com.google.firebase.datatransport.TransportRegistrar$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                TransportFactory lambda$getComponents$0;
-                lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(componentContainer);
-                return lambda$getComponents$0;
+                return TransportRegistrar.$r8$lambda$QkqDNTnBQvxCK9qVVo8puvSQXG0(componentContainer);
             }
         }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "18.1.8"));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ TransportFactory lambda$getComponents$0(ComponentContainer componentContainer) {
+    public static /* synthetic */ TransportFactory $r8$lambda$QkqDNTnBQvxCK9qVVo8puvSQXG0(ComponentContainer componentContainer) {
         TransportRuntime.initialize((Context) componentContainer.get(Context.class));
         return TransportRuntime.getInstance().newFactory(CCTDestination.LEGACY_INSTANCE);
     }

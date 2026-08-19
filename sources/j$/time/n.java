@@ -1,19 +1,41 @@
 package j$.time;
 
+import j$.time.temporal.ChronoUnit;
+
 /* loaded from: classes2.dex */
-abstract /* synthetic */ class n {
-    static final /* synthetic */ int[] a;
+public abstract /* synthetic */ class n {
+    public static final /* synthetic */ int[] a;
 
     static {
-        int[] iArr = new int[j$.time.temporal.a.values().length];
+        int[] iArr = new int[ChronoUnit.values().length];
         a = iArr;
         try {
-            iArr[j$.time.temporal.a.INSTANT_SECONDS.ordinal()] = 1;
+            iArr[ChronoUnit.NANOS.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            a[j$.time.temporal.a.OFFSET_SECONDS.ordinal()] = 2;
+            a[ChronoUnit.MICROS.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[ChronoUnit.MILLIS.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[ChronoUnit.SECONDS.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[ChronoUnit.MINUTES.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[ChronoUnit.HOURS.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            a[ChronoUnit.HALF_DAYS.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
         }
     }
 }

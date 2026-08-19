@@ -13,6 +13,7 @@ import android.opengl.GLUtils;
 import android.os.Looper;
 import android.view.MotionEvent;
 import android.view.TextureView;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import java.util.concurrent.CountDownLatch;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
@@ -82,7 +83,7 @@ public class RenderView extends TextureView {
         this.shapeInput = new ShapeInput(this, new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RenderView.this.lambda$new$0();
+                RenderView.$r8$lambda$wzXQDLrcF6-BiMx654uDxkc67J0(RenderView.this);
             }
         });
         this.painting.setDelegate(new Painting.PaintingDelegate() { // from class: org.telegram.ui.Components.Paint.RenderView.2
@@ -127,7 +128,7 @@ public class RenderView extends TextureView {
             RenderView.this.post(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.1.this.lambda$onSurfaceTextureAvailable$0();
+                    RenderView.1.$r8$lambda$LJbNVf5C620Y-HTq_OTymRHeg6M(RenderView.1.this);
                 }
             });
             if (RenderView.this.painting.isPaused()) {
@@ -135,8 +136,7 @@ public class RenderView extends TextureView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSurfaceTextureAvailable$0() {
+        public static /* synthetic */ void $r8$lambda$LJbNVf5C620Y-HTq_OTymRHeg6M(1 r1) {
             if (RenderView.this.internal != null) {
                 RenderView.this.internal.requestRender();
             }
@@ -153,13 +153,12 @@ public class RenderView extends TextureView {
             RenderView.this.internal.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.1.this.lambda$onSurfaceTextureSizeChanged$1();
+                    RenderView.1.$r8$lambda$LcdpUUSgReGVSyRjKfud-WRcaf4(RenderView.1.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSurfaceTextureSizeChanged$1() {
+        public static /* synthetic */ void $r8$lambda$LcdpUUSgReGVSyRjKfud-WRcaf4(1 r1) {
             if (RenderView.this.internal != null) {
                 RenderView.this.internal.requestRender();
             }
@@ -171,23 +170,21 @@ public class RenderView extends TextureView {
                 RenderView.this.painting.onPause(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RenderView.1.this.lambda$onSurfaceTextureDestroyed$2();
+                        RenderView.1.$r8$lambda$gtC29xJL3fU37c_25qOt1qQJaAg(RenderView.1.this);
                     }
                 });
             }
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onSurfaceTextureDestroyed$2() {
+        public static /* synthetic */ void $r8$lambda$gtC29xJL3fU37c_25qOt1qQJaAg(1 r1) {
             RenderView.this.internal.shutdown();
             RenderView.this.internal = null;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        RenderViewDelegate renderViewDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$wzXQDLrcF6-BiMx654uDxkc67J0(RenderView renderView) {
+        RenderViewDelegate renderViewDelegate = renderView.delegate;
         if (renderViewDelegate != null) {
             renderViewDelegate.invalidateInputView();
         }
@@ -346,30 +343,24 @@ public class RenderView extends TextureView {
             performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.this.lambda$shutdown$1();
+                    RenderView.$r8$lambda$KkJBdjWtg7kPr0OgL33b-0Y8D4k(RenderView.this);
                 }
             });
         }
         setVisibility(8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$shutdown$1() {
-        this.painting.cleanResources(this.transformedBitmap);
-        this.internal.shutdown();
-        this.internal = null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clearAll$2() {
-        this.painting.setBrush(this.brush);
+    public static /* synthetic */ void $r8$lambda$KkJBdjWtg7kPr0OgL33b-0Y8D4k(RenderView renderView) {
+        renderView.painting.cleanResources(renderView.transformedBitmap);
+        renderView.internal.shutdown();
+        renderView.internal = null;
     }
 
     public void clearAll() {
         this.input.clear(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RenderView.this.lambda$clearAll$2();
+                r0.painting.setBrush(RenderView.this.brush);
             }
         });
     }
@@ -396,7 +387,7 @@ public class RenderView extends TextureView {
             this.safeRequestRender = new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.CanvasInternal.this.lambda$new$0();
+                    RenderView.CanvasInternal.$r8$lambda$FA6VVbRbZBwch6GqyevhJ1GmFmo(RenderView.CanvasInternal.this);
                 }
             };
             this.blurManager = blurManager;
@@ -459,7 +450,7 @@ public class RenderView extends TextureView {
                     this.blurManager.attach(this.safeRequestRender);
                 }
                 SurfaceTexture surfaceTexture = this.surfaceTexture;
-                if (surfaceTexture instanceof SurfaceTexture) {
+                if (OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(surfaceTexture)) {
                     EGLSurface eglCreateWindowSurface = this.egl10.eglCreateWindowSurface(this.eglDisplay, eGLConfig, surfaceTexture, null);
                     this.eglSurface = eglCreateWindowSurface;
                     if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
@@ -551,7 +542,7 @@ public class RenderView extends TextureView {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            RenderView.CanvasInternal.1.this.lambda$run$0();
+                            RenderView.this.delegate.onFirstDraw();
                         }
                     });
                 }
@@ -559,11 +550,6 @@ public class RenderView extends TextureView {
                     return;
                 }
                 CanvasInternal.this.ready = true;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$run$0() {
-                RenderView.this.delegate.onFirstDraw();
             }
         }
 
@@ -576,15 +562,14 @@ public class RenderView extends TextureView {
             postRunnable(this.drawRunnable);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            Runnable runnable = this.scheduledRunnable;
+        public static /* synthetic */ void $r8$lambda$FA6VVbRbZBwch6GqyevhJ1GmFmo(CanvasInternal canvasInternal) {
+            Runnable runnable = canvasInternal.scheduledRunnable;
             if (runnable != null) {
-                cancelRunnable(runnable);
-                this.scheduledRunnable = null;
+                canvasInternal.cancelRunnable(runnable);
+                canvasInternal.scheduledRunnable = null;
             }
-            cancelRunnable(this.drawRunnable);
-            postRunnable(this.drawRunnable);
+            canvasInternal.cancelRunnable(canvasInternal.drawRunnable);
+            canvasInternal.postRunnable(canvasInternal.drawRunnable);
         }
 
         public void scheduleRedraw() {
@@ -596,17 +581,16 @@ public class RenderView extends TextureView {
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.CanvasInternal.this.lambda$scheduleRedraw$1();
+                    RenderView.CanvasInternal.$r8$lambda$7qG-9Fc64ltnMpamgc-BHkAv5BY(RenderView.CanvasInternal.this);
                 }
             };
             this.scheduledRunnable = runnable2;
             postRunnable(runnable2, 1L);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$scheduleRedraw$1() {
-            this.scheduledRunnable = null;
-            this.drawRunnable.run();
+        public static /* synthetic */ void $r8$lambda$7qG-9Fc64ltnMpamgc-BHkAv5BY(CanvasInternal canvasInternal) {
+            canvasInternal.scheduledRunnable = null;
+            canvasInternal.drawRunnable.run();
         }
 
         public void finish() {
@@ -642,14 +626,13 @@ public class RenderView extends TextureView {
             postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.CanvasInternal.this.lambda$shutdown$2();
+                    RenderView.CanvasInternal.$r8$lambda$YdRdX0FzJIp8vgnGWrhnn4rxP7U(RenderView.CanvasInternal.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$shutdown$2() {
-            finish();
+        public static /* synthetic */ void $r8$lambda$YdRdX0FzJIp8vgnGWrhnn4rxP7U(CanvasInternal canvasInternal) {
+            canvasInternal.finish();
             Looper myLooper = Looper.myLooper();
             if (myLooper != null) {
                 myLooper.quit();
@@ -663,21 +646,26 @@ public class RenderView extends TextureView {
             final CountDownLatch countDownLatch = new CountDownLatch(1);
             final Bitmap[] bitmapArr = new Bitmap[1];
             try {
+            } catch (Exception e) {
+                e = e;
+            }
+            try {
                 postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RenderView.CanvasInternal.this.lambda$getTexture$3(z, z2, bitmapArr, countDownLatch);
+                        RenderView.CanvasInternal.$r8$lambda$ozHTjMukf70F7u0T6IwQMnKraWU(RenderView.CanvasInternal.this, z, z2, bitmapArr, countDownLatch);
                     }
                 });
                 countDownLatch.await();
-            } catch (Exception e) {
+            } catch (Exception e2) {
+                e = e2;
                 FileLog.e(e);
+                return bitmapArr[0];
             }
             return bitmapArr[0];
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$getTexture$3(boolean z, boolean z2, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
+        public static /* synthetic */ void $r8$lambda$ozHTjMukf70F7u0T6IwQMnKraWU(CanvasInternal canvasInternal, boolean z, boolean z2, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
             Painting.PaintingData paintingData = RenderView.this.painting.getPaintingData(new RectF(0.0f, 0.0f, RenderView.this.painting.getSize().width, RenderView.this.painting.getSize().height), false, z, z2);
             if (paintingData != null) {
                 bitmapArr[0] = paintingData.bitmap;
@@ -705,18 +693,17 @@ public class RenderView extends TextureView {
         canvasInternal.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RenderView.this.lambda$performInContext$3(runnable);
+                RenderView.$r8$lambda$YwcIaCgxCuATp_Onb-IlHgEm7Zo(RenderView.this, runnable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performInContext$3(Runnable runnable) {
-        CanvasInternal canvasInternal = this.internal;
+    public static /* synthetic */ void $r8$lambda$YwcIaCgxCuATp_Onb-IlHgEm7Zo(RenderView renderView, Runnable runnable) {
+        CanvasInternal canvasInternal = renderView.internal;
         if (canvasInternal == null || !canvasInternal.initialized) {
             return;
         }
-        this.internal.setCurrentContext();
+        renderView.internal.setCurrentContext();
         runnable.run();
     }
 }

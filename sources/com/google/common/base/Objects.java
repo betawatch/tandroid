@@ -5,7 +5,10 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public abstract class Objects extends ExtraObjectsMethodsForWeb {
     public static boolean equal(Object obj, Object obj2) {
-        return obj == obj2 || (obj != null && obj.equals(obj2));
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
+        }
+        return true;
     }
 
     public static int hashCode(Object... objArr) {

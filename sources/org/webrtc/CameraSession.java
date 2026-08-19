@@ -6,7 +6,7 @@ import android.view.WindowManager;
 import org.telegram.messenger.NotificationCenter;
 import org.webrtc.VideoFrame;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 interface CameraSession {
 
     public interface CreateSessionCallback {

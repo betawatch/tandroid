@@ -106,14 +106,13 @@ public class EmojiCompatInitializer implements Initializer {
             createBackgroundPriorityExecutor.execute(new Runnable() { // from class: androidx.emoji2.text.EmojiCompatInitializer$BackgroundDefaultLoader$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiCompatInitializer.BackgroundDefaultLoader.this.lambda$load$0(metadataRepoLoaderCallback, createBackgroundPriorityExecutor);
+                    EmojiCompatInitializer.BackgroundDefaultLoader.this.doLoad(metadataRepoLoaderCallback, createBackgroundPriorityExecutor);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: doLoad, reason: merged with bridge method [inline-methods] */
-        public void lambda$load$0(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback, final ThreadPoolExecutor threadPoolExecutor) {
+        public void doLoad(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback, final ThreadPoolExecutor threadPoolExecutor) {
             try {
                 FontRequestEmojiCompatConfig create = DefaultEmojiCompatConfig.create(this.mContext);
                 if (create == null) {

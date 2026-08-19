@@ -187,13 +187,12 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         return this.messageTextView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        if (isShowing()) {
+    public static /* synthetic */ void $r8$lambda$h8sPHjylDgoiCKjfuRpnhzuOz3Q(AlertDialog alertDialog) {
+        if (alertDialog.isShowing()) {
             return;
         }
         try {
-            show();
+            alertDialog.show();
         } catch (Exception unused) {
         }
     }
@@ -290,7 +289,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.showRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                AlertDialog.this.lambda$new$0();
+                AlertDialog.$r8$lambda$h8sPHjylDgoiCKjfuRpnhzuOz3Q(AlertDialog.this);
             }
         };
         this.itemViews = new ArrayList();
@@ -378,7 +377,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             return super.onInterceptTouchEvent(motionEvent);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:100:0x035b  */
+        /* JADX WARN: Removed duplicated region for block: B:100:0x035a  */
         @Override // android.widget.LinearLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -509,14 +508,13 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$AlertDialogView$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AlertDialog.AlertDialogView.this.lambda$onMeasure$0();
+                        AlertDialog.AlertDialogView.$r8$lambda$NtNNi2Yc6sucXdQMvtFeLNBUijU(AlertDialog.AlertDialogView.this);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onMeasure$0() {
+        public static /* synthetic */ void $r8$lambda$NtNNi2Yc6sucXdQMvtFeLNBUijU(AlertDialogView alertDialogView) {
             int dp;
             AlertDialog.this.lastScreenWidth = AndroidUtilities.displaySize.x;
             int dp2 = AndroidUtilities.displaySize.x - AndroidUtilities.dp(56.0f);
@@ -552,7 +550,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     AlertDialog.this.onScrollChangedListener = new ViewTreeObserver.OnScrollChangedListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$AlertDialogView$$ExternalSyntheticLambda0
                         @Override // android.view.ViewTreeObserver.OnScrollChangedListener
                         public final void onScrollChanged() {
-                            AlertDialog.AlertDialogView.this.lambda$onLayout$1();
+                            AlertDialog.AlertDialogView.$r8$lambda$oQYLZN14-vydiliTDSL1RTe-qes(AlertDialog.AlertDialogView.this);
                         }
                     };
                     AlertDialog.this.contentScrollView.getViewTreeObserver().addOnScrollChangedListener(AlertDialog.this.onScrollChangedListener);
@@ -569,8 +567,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             AlertDialog.this.blurShader.setLocalMatrix(AlertDialog.this.blurMatrix);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLayout$1() {
+        public static /* synthetic */ void $r8$lambda$oQYLZN14-vydiliTDSL1RTe-qes(AlertDialogView alertDialogView) {
             AlertDialog alertDialog = AlertDialog.this;
             boolean z = false;
             alertDialog.runShadowAnimation(0, alertDialog.titleTextView != null && AlertDialog.this.contentScrollView.getScrollY() > AlertDialog.this.scrollContainer.getTop());
@@ -657,8 +654,20 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x0203  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:335:0x0226  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     protected View inflateContent(boolean z) {
+        char c;
+        float f;
+        float f2;
+        float f3;
         int dp;
+        int i;
         AlertDialogView alertDialogView = new AlertDialogView(getContext());
         this.containerView = alertDialogView;
         alertDialogView.setOrientation(1);
@@ -669,12 +678,18 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 this.containerView.setWillNotDraw(false);
             }
             this.drawBackground = false;
+            c = 5;
+            f = 8.0f;
         } else if (this.notDrawBackgroundOnTopView) {
             Rect rect = new Rect();
             this.shadowDrawable.getPadding(rect);
+            c = 5;
+            f = 8.0f;
             this.containerView.setPadding(rect.left, rect.top, rect.right, rect.bottom);
             this.drawBackground = true;
         } else {
+            c = 5;
+            f = 8.0f;
             this.containerView.setBackground(null);
             this.containerView.setPadding(0, 0, 0, 0);
             this.containerView.setBackground(this.shadowDrawable);
@@ -690,7 +705,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        AlertDialog.this.lambda$inflateContent$1(view2);
+                        AlertDialog.this.dismiss();
                     }
                 });
             }
@@ -701,7 +716,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 this.starsBalanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        AlertDialog.this.lambda$inflateContent$2(view2);
+                        new StarsIntroActivity.StarsOptionsSheet(r0.getContext(), AlertDialog.this.resourcesProvider).show();
                     }
                 });
             }
@@ -748,65 +763,74 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     attachableDrawable.setParent(this.topImageView);
                 }
             } else {
-                int i = this.topResId;
-                if (i != 0) {
-                    rLottieImageView.setImageResource(i);
+                int i2 = this.topResId;
+                if (i2 != 0) {
+                    rLottieImageView.setImageResource(i2);
                 } else {
                     rLottieImageView.setAutoRepeat(this.topAnimationAutoRepeat);
                     RLottieImageView rLottieImageView2 = this.topImageView;
-                    int i2 = this.topAnimationId;
-                    int i3 = this.topAnimationSize;
-                    rLottieImageView2.setAnimation(i2, i3, i3);
+                    int i3 = this.topAnimationId;
+                    int i4 = this.topAnimationSize;
+                    rLottieImageView2.setAnimation(i3, i4, i4);
                     if (this.topAnimationLayerColors != null) {
                         RLottieDrawable animatedDrawable = this.topImageView.getAnimatedDrawable();
                         for (Map.Entry entry : this.topAnimationLayerColors.entrySet()) {
                             animatedDrawable.setLayerColor((String) entry.getKey(), ((Integer) entry.getValue()).intValue());
                         }
                     }
+                    f2 = 16.0f;
                     this.topImageView.playAnimation();
+                    this.topImageView.setScaleType(ImageView.ScaleType.CENTER);
+                    if (!this.topAnimationIsNew) {
+                        final GradientDrawable gradientDrawable = new GradientDrawable();
+                        gradientDrawable.setColor(this.topBackgroundColor);
+                        gradientDrawable.setCornerRadius(AndroidUtilities.dp(128.0f));
+                        this.topImageView.setBackground(new Drawable() { // from class: org.telegram.ui.ActionBar.AlertDialog.2
+                            int size;
+
+                            {
+                                this.size = AlertDialog.this.topAnimationSize + AndroidUtilities.dp(52.0f);
+                            }
+
+                            @Override // android.graphics.drawable.Drawable
+                            public void draw(Canvas canvas) {
+                                gradientDrawable.setBounds((int) ((AlertDialog.this.topImageView.getWidth() - this.size) / 2.0f), (int) ((AlertDialog.this.topImageView.getHeight() - this.size) / 2.0f), (int) ((AlertDialog.this.topImageView.getWidth() + this.size) / 2.0f), (int) ((AlertDialog.this.topImageView.getHeight() + this.size) / 2.0f));
+                                gradientDrawable.draw(canvas);
+                            }
+
+                            @Override // android.graphics.drawable.Drawable
+                            public void setAlpha(int i5) {
+                                gradientDrawable.setAlpha(i5);
+                            }
+
+                            @Override // android.graphics.drawable.Drawable
+                            public void setColorFilter(ColorFilter colorFilter) {
+                                gradientDrawable.setColorFilter(colorFilter);
+                            }
+
+                            @Override // android.graphics.drawable.Drawable
+                            public int getOpacity() {
+                                return gradientDrawable.getOpacity();
+                            }
+                        });
+                        this.topHeight = 92;
+                    } else {
+                        this.topImageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), 0, this.topBackgroundColor));
+                    }
+                    if (!this.topAnimationIsNew) {
+                        this.topImageView.setTranslationY(AndroidUtilities.dp(f2));
+                    } else {
+                        this.topImageView.setTranslationY(0.0f);
+                    }
+                    this.topImageView.setPadding(0, 0, 0, 0);
+                    this.containerView.addView(this.topImageView, LayoutHelper.createLinear(-1, this.topHeight, 51, 0, 0, 0, 0));
                 }
             }
+            f2 = 16.0f;
             this.topImageView.setScaleType(ImageView.ScaleType.CENTER);
-            if (this.topAnimationIsNew) {
-                final GradientDrawable gradientDrawable = new GradientDrawable();
-                gradientDrawable.setColor(this.topBackgroundColor);
-                gradientDrawable.setCornerRadius(AndroidUtilities.dp(128.0f));
-                this.topImageView.setBackground(new Drawable() { // from class: org.telegram.ui.ActionBar.AlertDialog.2
-                    int size;
-
-                    {
-                        this.size = AlertDialog.this.topAnimationSize + AndroidUtilities.dp(52.0f);
-                    }
-
-                    @Override // android.graphics.drawable.Drawable
-                    public void draw(Canvas canvas) {
-                        gradientDrawable.setBounds((int) ((AlertDialog.this.topImageView.getWidth() - this.size) / 2.0f), (int) ((AlertDialog.this.topImageView.getHeight() - this.size) / 2.0f), (int) ((AlertDialog.this.topImageView.getWidth() + this.size) / 2.0f), (int) ((AlertDialog.this.topImageView.getHeight() + this.size) / 2.0f));
-                        gradientDrawable.draw(canvas);
-                    }
-
-                    @Override // android.graphics.drawable.Drawable
-                    public void setAlpha(int i4) {
-                        gradientDrawable.setAlpha(i4);
-                    }
-
-                    @Override // android.graphics.drawable.Drawable
-                    public void setColorFilter(ColorFilter colorFilter) {
-                        gradientDrawable.setColorFilter(colorFilter);
-                    }
-
-                    @Override // android.graphics.drawable.Drawable
-                    public int getOpacity() {
-                        return gradientDrawable.getOpacity();
-                    }
-                });
-                this.topHeight = 92;
-            } else {
-                this.topImageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), 0, this.topBackgroundColor));
+            if (!this.topAnimationIsNew) {
             }
-            if (this.topAnimationIsNew) {
-                this.topImageView.setTranslationY(AndroidUtilities.dp(16.0f));
-            } else {
-                this.topImageView.setTranslationY(0.0f);
+            if (!this.topAnimationIsNew) {
             }
             this.topImageView.setPadding(0, 0, 0, 0);
             this.containerView.addView(this.topImageView, LayoutHelper.createLinear(-1, this.topHeight, 51, 0, 0, 0, 0));
@@ -897,8 +921,8 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             this.messageTextView.setEnabled(false);
         }
         this.messageTextView.setGravity((this.topAnimationIsNew ? 1 : LocaleController.isRTL ? 5 : 3) | 48);
-        int i4 = this.progressViewStyle;
-        if (i4 == 2) {
+        int i5 = this.progressViewStyle;
+        if (i5 == 2) {
             this.containerView.addView(this.messageTextView, LayoutHelper.createLinear(-2, -2, (LocaleController.isRTL ? 5 : 3) | 48, 24, this.title == null ? 19 : 0, 24, 20));
             LineProgressView lineProgressView = new LineProgressView(getContext());
             this.lineProgressView = lineProgressView;
@@ -914,7 +938,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             this.lineProgressViewPercent.setTextSize(1, 14.0f);
             this.containerView.addView(this.lineProgressViewPercent, LayoutHelper.createLinear(-2, -2, (LocaleController.isRTL ? 5 : 3) | 48, 23, 4, 23, 24));
             updateLineProgressTextView();
-        } else if (i4 == 3) {
+        } else if (i5 == 3) {
             setCanceledOnTouchOutside(false);
             setCancelable(false);
             this.progressViewContainer = new FrameLayout(getContext());
@@ -945,28 +969,28 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             this.messageTextView.setVisibility(8);
         }
         if (this.items != null) {
-            int i5 = 0;
+            int i6 = 0;
             while (true) {
                 CharSequence[] charSequenceArr = this.items;
-                if (i5 >= charSequenceArr.length) {
+                if (i6 >= charSequenceArr.length) {
                     break;
                 }
-                if (charSequenceArr[i5] != null) {
+                if (charSequenceArr[i6] != null) {
                     AlertDialogCell alertDialogCell = new AlertDialogCell(getContext(), this.resourcesProvider);
-                    CharSequence charSequence = this.items[i5];
+                    CharSequence charSequence = this.items[i6];
                     int[] iArr = this.itemIcons;
-                    alertDialogCell.setTextAndIcon(charSequence, iArr != null ? iArr[i5] : 0);
-                    alertDialogCell.setTag(Integer.valueOf(i5));
+                    alertDialogCell.setTextAndIcon(charSequence, iArr != null ? iArr[i6] : 0);
+                    alertDialogCell.setTag(Integer.valueOf(i6));
                     this.itemViews.add(alertDialogCell);
                     this.scrollContainer.addView(alertDialogCell, LayoutHelper.createLinear(-1, 50));
                     alertDialogCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda6
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view5) {
-                            AlertDialog.this.lambda$inflateContent$3(view5);
+                            AlertDialog.$r8$lambda$WVYQ-WMlM7ABxmekBKqP6lSkYDc(AlertDialog.this, view5);
                         }
                     });
                 }
-                i5++;
+                i6++;
             }
         }
         View view5 = this.customView;
@@ -977,34 +1001,42 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             this.scrollContainer.addView(this.customView, LayoutHelper.createLinear(-1, this.customViewHeight));
         }
         if (z2) {
-            if (!this.verticalButtons) {
+            if (this.verticalButtons) {
+                f3 = 12.0f;
+            } else {
                 TextPaint textPaint = new TextPaint();
                 textPaint.setTextSize(AndroidUtilities.dp(16.0f));
                 textPaint.setTypeface(AndroidUtilities.bold());
                 CharSequence charSequence2 = this.positiveButtonText;
-                int measureText = charSequence2 != null ? (int) (0 + textPaint.measureText(charSequence2, 0, charSequence2.length()) + AndroidUtilities.dp(24.0f)) : 0;
+                if (charSequence2 != null) {
+                    f3 = 12.0f;
+                    i = (int) (0 + textPaint.measureText(charSequence2, 0, charSequence2.length()) + AndroidUtilities.dp(24.0f));
+                } else {
+                    f3 = 12.0f;
+                    i = 0;
+                }
                 if (this.negativeButtonText != null) {
-                    if (measureText > 0) {
-                        measureText += AndroidUtilities.dp(8.0f);
+                    if (i > 0) {
+                        i += AndroidUtilities.dp(f);
                     }
                     CharSequence charSequence3 = this.negativeButtonText;
-                    measureText = (int) (measureText + textPaint.measureText(charSequence3, 0, charSequence3.length()) + AndroidUtilities.dp(24.0f));
+                    i = (int) (i + textPaint.measureText(charSequence3, 0, charSequence3.length()) + AndroidUtilities.dp(24.0f));
                 }
                 if (this.negative2ButtonText != null) {
-                    if (measureText > 0) {
-                        measureText += AndroidUtilities.dp(8.0f);
+                    if (i > 0) {
+                        i += AndroidUtilities.dp(f);
                     }
                     CharSequence charSequence4 = this.negative2ButtonText;
-                    measureText = (int) (measureText + textPaint.measureText(charSequence4, 0, charSequence4.length()) + AndroidUtilities.dp(24.0f));
+                    i = (int) (i + textPaint.measureText(charSequence4, 0, charSequence4.length()) + AndroidUtilities.dp(24.0f));
                 }
                 if (this.neutralButtonText != null) {
-                    if (measureText > 0) {
-                        measureText += AndroidUtilities.dp(8.0f);
+                    if (i > 0) {
+                        i += AndroidUtilities.dp(f);
                     }
                     CharSequence charSequence5 = this.neutralButtonText;
-                    measureText = (int) (measureText + textPaint.measureText(charSequence5, 0, charSequence5.length()) + AndroidUtilities.dp(24.0f));
+                    i = (int) (i + textPaint.measureText(charSequence5, 0, charSequence5.length()) + AndroidUtilities.dp(24.0f));
                 }
-                if (measureText > AndroidUtilities.displaySize.x - AndroidUtilities.dp(64.0f)) {
+                if (i > AndroidUtilities.displaySize.x - AndroidUtilities.dp(64.0f)) {
                     if (this.twoRowsButtonsWhenNeeded && this.positiveButtonText != null && this.negativeButtonText != null && this.negative2ButtonText != null && this.neutralButtonText != null) {
                         this.buttonsInTwoRows = true;
                     } else {
@@ -1019,38 +1051,38 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             } else {
                 this.buttonsLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.ActionBar.AlertDialog.4
                     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-                    protected void onLayout(boolean z4, int i6, int i7, int i8, int i9) {
-                        int i10;
+                    protected void onLayout(boolean z4, int i7, int i8, int i9, int i10) {
                         int i11;
+                        int i12;
                         int right;
                         int left;
                         int measuredWidth;
                         int childCount = getChildCount();
-                        int i12 = i8 - i6;
-                        int i13 = -1;
+                        int i13 = i9 - i7;
+                        int i14 = -1;
                         if (AlertDialog.this.buttonsInTwoRows) {
                             View findViewWithTag = findViewWithTag(-3);
                             View findViewWithTag2 = findViewWithTag(-4);
                             View findViewWithTag3 = findViewWithTag(-2);
                             View findViewWithTag4 = findViewWithTag(-1);
                             int paddingLeft = getPaddingLeft();
-                            int paddingRight = i12 - getPaddingRight();
+                            int paddingRight = i13 - getPaddingRight();
                             int max = Math.max(0, ((paddingRight - paddingLeft) - AndroidUtilities.dp(8.0f)) / 2);
                             boolean z5 = LocaleController.isRTL;
-                            int i14 = z5 ? paddingRight - max : paddingLeft;
+                            int i15 = z5 ? paddingRight - max : paddingLeft;
                             if (!z5) {
                                 paddingLeft = paddingRight - max;
                             }
                             int paddingTop = getPaddingTop();
                             int dp2 = AndroidUtilities.dp(44.0f) + paddingTop;
                             if (findViewWithTag != null) {
-                                findViewWithTag.layout(i14, paddingTop, i14 + max, AndroidUtilities.dp(40.0f) + paddingTop);
+                                findViewWithTag.layout(i15, paddingTop, i15 + max, AndroidUtilities.dp(40.0f) + paddingTop);
                             }
                             if (findViewWithTag2 != null) {
                                 findViewWithTag2.layout(paddingLeft, paddingTop, paddingLeft + max, AndroidUtilities.dp(40.0f) + paddingTop);
                             }
                             if (findViewWithTag3 != null) {
-                                findViewWithTag3.layout(i14, dp2, i14 + max, AndroidUtilities.dp(40.0f) + dp2);
+                                findViewWithTag3.layout(i15, dp2, i15 + max, AndroidUtilities.dp(40.0f) + dp2);
                             }
                             if (findViewWithTag4 != null) {
                                 findViewWithTag4.layout(paddingLeft, dp2, max + paddingLeft, AndroidUtilities.dp(40.0f) + dp2);
@@ -1059,16 +1091,16 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                             return;
                         }
                         View view6 = null;
-                        int i15 = 0;
-                        while (i15 < childCount) {
-                            View childAt = getChildAt(i15);
+                        int i16 = 0;
+                        while (i16 < childCount) {
+                            View childAt = getChildAt(i16);
                             Integer num = (Integer) childAt.getTag();
                             if (num != null) {
-                                if (num.intValue() == i13) {
+                                if (num.intValue() == i14) {
                                     if (LocaleController.isRTL) {
                                         childAt.layout(getPaddingLeft(), getPaddingTop(), getPaddingLeft() + childAt.getMeasuredWidth(), getPaddingTop() + childAt.getMeasuredHeight());
                                     } else {
-                                        childAt.layout((i12 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i12 - getPaddingRight(), getPaddingTop() + childAt.getMeasuredHeight());
+                                        childAt.layout((i13 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i13 - getPaddingRight(), getPaddingTop() + childAt.getMeasuredHeight());
                                     }
                                     view6 = childAt;
                                 } else if (num.intValue() == -2) {
@@ -1079,7 +1111,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                                         }
                                         childAt.layout(paddingLeft2, getPaddingTop(), childAt.getMeasuredWidth() + paddingLeft2, getPaddingTop() + childAt.getMeasuredHeight());
                                     } else {
-                                        int paddingRight2 = (i12 - getPaddingRight()) - childAt.getMeasuredWidth();
+                                        int paddingRight2 = (i13 - getPaddingRight()) - childAt.getMeasuredWidth();
                                         if (view6 != null) {
                                             paddingRight2 -= view6.getMeasuredWidth() + AndroidUtilities.dp(8.0f);
                                         }
@@ -1089,14 +1121,14 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                                     View findViewWithTag5 = findViewWithTag(-3);
                                     if (LocaleController.isRTL) {
                                         if (findViewWithTag5 == null) {
-                                            left = i12 - getPaddingRight();
+                                            left = i13 - getPaddingRight();
                                             measuredWidth = childAt.getMeasuredWidth();
                                         } else {
                                             left = findViewWithTag5.getLeft() - AndroidUtilities.dp(8.0f);
                                             measuredWidth = childAt.getMeasuredWidth();
                                         }
-                                        int i16 = left - measuredWidth;
-                                        childAt.layout(i16, getPaddingTop(), childAt.getMeasuredWidth() + i16, getPaddingTop() + childAt.getMeasuredHeight());
+                                        int i17 = left - measuredWidth;
+                                        childAt.layout(i17, getPaddingTop(), childAt.getMeasuredWidth() + i17, getPaddingTop() + childAt.getMeasuredHeight());
                                     } else {
                                         if (findViewWithTag5 == null) {
                                             right = getPaddingLeft();
@@ -1107,7 +1139,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                                     }
                                 } else if (num.intValue() == -3) {
                                     if (LocaleController.isRTL) {
-                                        childAt.layout((i12 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i12 - getPaddingRight(), getPaddingTop() + childAt.getMeasuredHeight());
+                                        childAt.layout((i13 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i13 - getPaddingRight(), getPaddingTop() + childAt.getMeasuredHeight());
                                     } else {
                                         childAt.layout(getPaddingLeft(), getPaddingTop(), getPaddingLeft() + childAt.getMeasuredWidth(), getPaddingTop() + childAt.getMeasuredHeight());
                                     }
@@ -1116,54 +1148,54 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                                 int measuredWidth2 = childAt.getMeasuredWidth();
                                 int measuredHeight = childAt.getMeasuredHeight();
                                 if (view6 != null) {
-                                    i10 = view6.getLeft() + ((view6.getMeasuredWidth() - measuredWidth2) / 2);
-                                    i11 = view6.getTop() + ((view6.getMeasuredHeight() - measuredHeight) / 2);
+                                    i11 = view6.getLeft() + ((view6.getMeasuredWidth() - measuredWidth2) / 2);
+                                    i12 = view6.getTop() + ((view6.getMeasuredHeight() - measuredHeight) / 2);
                                 } else {
-                                    i10 = 0;
                                     i11 = 0;
+                                    i12 = 0;
                                 }
-                                childAt.layout(i10, i11, measuredWidth2 + i10, measuredHeight + i11);
+                                childAt.layout(i11, i12, measuredWidth2 + i11, measuredHeight + i12);
                             }
-                            i15++;
-                            i13 = -1;
+                            i16++;
+                            i14 = -1;
                         }
                     }
 
                     @Override // android.widget.FrameLayout, android.view.View
-                    protected void onMeasure(int i6, int i7) {
-                        super.onMeasure(i6, i7);
+                    protected void onMeasure(int i7, int i8) {
+                        super.onMeasure(i7, i8);
                         int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
                         int childCount = getChildCount();
-                        int i8 = 0;
+                        int i9 = 0;
                         if (AlertDialog.this.buttonsInTwoRows) {
                             int max = Math.max(0, (measuredWidth - AndroidUtilities.dp(8.0f)) / 2);
-                            while (i8 < childCount) {
-                                View childAt = getChildAt(i8);
+                            while (i9 < childCount) {
+                                View childAt = getChildAt(i9);
                                 if (childAt.getTag() != null) {
                                     childAt.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
                                 }
-                                i8++;
+                                i9++;
                             }
                             return;
                         }
-                        int i9 = 0;
-                        while (i8 < childCount) {
-                            View childAt2 = getChildAt(i8);
+                        int i10 = 0;
+                        while (i9 < childCount) {
+                            View childAt2 = getChildAt(i9);
                             if ((childAt2 instanceof TextView) && childAt2.getTag() != null) {
-                                i9 += childAt2.getMeasuredWidth();
+                                i10 += childAt2.getMeasuredWidth();
                             }
-                            i8++;
+                            i9++;
                         }
-                        if (i9 > measuredWidth) {
+                        if (i10 > measuredWidth) {
                             View findViewWithTag = findViewWithTag(-2);
                             View findViewWithTag2 = findViewWithTag(-4);
                             View findViewWithTag3 = findViewWithTag(-3);
                             if (findViewWithTag != null && findViewWithTag3 != null) {
                                 if (findViewWithTag.getMeasuredWidth() < findViewWithTag3.getMeasuredWidth()) {
-                                    findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i9 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
+                                    findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i10 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
                                     return;
                                 } else {
-                                    findViewWithTag.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredWidth() - (i9 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredHeight(), TLObject.FLAG_30));
+                                    findViewWithTag.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredWidth() - (i10 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredHeight(), TLObject.FLAG_30));
                                     return;
                                 }
                             }
@@ -1171,9 +1203,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                                 return;
                             }
                             if (findViewWithTag2.getMeasuredWidth() < findViewWithTag3.getMeasuredWidth()) {
-                                findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i9 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
+                                findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i10 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
                             } else {
-                                findViewWithTag2.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredWidth() - (i9 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredHeight(), TLObject.FLAG_30));
+                                findViewWithTag2.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredWidth() - (i10 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredHeight(), TLObject.FLAG_30));
                             }
                         }
                     }
@@ -1183,11 +1215,11 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 this.buttonsLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
                 this.buttonsLayout.setTranslationY(-AndroidUtilities.dp(6.0f));
             } else {
-                this.buttonsLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+                this.buttonsLayout.setPadding(AndroidUtilities.dp(f), AndroidUtilities.dp(f), AndroidUtilities.dp(f), AndroidUtilities.dp(f));
             }
             this.containerView.addView(this.buttonsLayout, LayoutHelper.createLinear(-1, this.buttonsInTwoRows ? 96 : 52));
             if (this.topAnimationIsNew) {
-                this.buttonsLayout.setTranslationY(-AndroidUtilities.dp(8.0f));
+                this.buttonsLayout.setTranslationY(-AndroidUtilities.dp(f));
             }
             if (this.positiveButtonText != null) {
                 final TextViewWithLoading textViewWithLoading = new TextViewWithLoading(getContext()) { // from class: org.telegram.ui.ActionBar.AlertDialog.5
@@ -1198,9 +1230,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     }
 
                     @Override // org.telegram.ui.ActionBar.TextViewWithLoading, android.widget.TextView
-                    public void setTextColor(int i6) {
-                        super.setTextColor(i6);
-                        setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i6));
+                    public void setTextColor(int i7) {
+                        super.setTextColor(i7);
+                        setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i7));
                     }
                 };
                 textViewWithLoading.setMinWidth(AndroidUtilities.dp(64.0f));
@@ -1211,7 +1243,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading.setTypeface(AndroidUtilities.bold());
                 textViewWithLoading.setText(this.positiveButtonText);
                 textViewWithLoading.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), getThemedColor(this.dialogButtonColorKey)));
-                textViewWithLoading.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                textViewWithLoading.setPadding(AndroidUtilities.dp(f3), 0, AndroidUtilities.dp(f3), 0);
                 if (this.verticalButtons) {
                     this.buttonsLayout.addView(textViewWithLoading, LayoutHelper.createLinear(-1, 40, 7));
                 } else {
@@ -1220,7 +1252,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
-                        AlertDialog.this.lambda$inflateContent$4(textViewWithLoading, view6);
+                        AlertDialog.$r8$lambda$MXta1oMDTzNyG08H-SfDBgZ2dNo(AlertDialog.this, textViewWithLoading, view6);
                     }
                 });
             }
@@ -1233,9 +1265,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     }
 
                     @Override // org.telegram.ui.ActionBar.TextViewWithLoading, android.widget.TextView
-                    public void setTextColor(int i6) {
-                        super.setTextColor(i6);
-                        setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i6));
+                    public void setTextColor(int i7) {
+                        super.setTextColor(i7);
+                        setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i7));
                     }
                 };
                 textViewWithLoading2.setMinWidth(AndroidUtilities.dp(64.0f));
@@ -1248,7 +1280,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading2.setSingleLine(true);
                 textViewWithLoading2.setText(this.negativeButtonText.toString());
                 textViewWithLoading2.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), getThemedColor(this.dialogButtonColorKey)));
-                textViewWithLoading2.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                textViewWithLoading2.setPadding(AndroidUtilities.dp(f3), 0, AndroidUtilities.dp(f3), 0);
                 if (this.verticalButtons) {
                     this.buttonsLayout.addView(textViewWithLoading2, 0, LayoutHelper.createLinear(-1, 40, 7));
                 } else {
@@ -1257,7 +1289,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
-                        AlertDialog.this.lambda$inflateContent$5(textViewWithLoading2, view6);
+                        AlertDialog.$r8$lambda$6mEBdgfYbHCdhFTWsgfgiSwk6ys(AlertDialog.this, textViewWithLoading2, view6);
                     }
                 });
             }
@@ -1270,9 +1302,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     }
 
                     @Override // org.telegram.ui.ActionBar.TextViewWithLoading, android.widget.TextView
-                    public void setTextColor(int i6) {
-                        super.setTextColor(i6);
-                        setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i6));
+                    public void setTextColor(int i7) {
+                        super.setTextColor(i7);
+                        setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i7));
                     }
                 };
                 textViewWithLoading3.setMinWidth(AndroidUtilities.dp(64.0f));
@@ -1285,7 +1317,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading3.setSingleLine(true);
                 textViewWithLoading3.setText(this.neutralButtonText.toString());
                 textViewWithLoading3.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), getThemedColor(this.dialogButtonColorKey)));
-                textViewWithLoading3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                textViewWithLoading3.setPadding(AndroidUtilities.dp(f3), 0, AndroidUtilities.dp(f3), 0);
                 if (this.verticalButtons) {
                     this.buttonsLayout.addView(textViewWithLoading3, 1, LayoutHelper.createLinear(-1, 40, 7));
                 } else {
@@ -1294,7 +1326,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda9
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
-                        AlertDialog.this.lambda$inflateContent$6(textViewWithLoading3, view6);
+                        AlertDialog.$r8$lambda$Ah8gMoIAeLY--YHalA89i6n1_nE(AlertDialog.this, textViewWithLoading3, view6);
                     }
                 });
             }
@@ -1307,9 +1339,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     }
 
                     @Override // org.telegram.ui.ActionBar.TextViewWithLoading, android.widget.TextView
-                    public void setTextColor(int i6) {
-                        super.setTextColor(i6);
-                        setBackgroundDrawable(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i6));
+                    public void setTextColor(int i7) {
+                        super.setTextColor(i7);
+                        setBackgroundDrawable(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), i7));
                     }
                 };
                 textViewWithLoading4.setMinWidth(AndroidUtilities.dp(64.0f));
@@ -1322,7 +1354,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading4.setSingleLine(true);
                 textViewWithLoading4.setText(this.negative2ButtonText.toString());
                 textViewWithLoading4.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(20.0f), getThemedColor(this.dialogButtonColorKey)));
-                textViewWithLoading4.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                textViewWithLoading4.setPadding(AndroidUtilities.dp(f3), 0, AndroidUtilities.dp(f3), 0);
                 if (this.verticalButtons) {
                     this.buttonsLayout.addView(textViewWithLoading4, 0, LayoutHelper.createLinear(-1, 40, 7));
                 } else {
@@ -1331,15 +1363,17 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 textViewWithLoading4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda10
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
-                        AlertDialog.this.lambda$inflateContent$7(textViewWithLoading4, view6);
+                        AlertDialog.$r8$lambda$RjbgrOgj3a0QBanv-PE8EX_IaDs(AlertDialog.this, textViewWithLoading4, view6);
                     }
                 });
             }
             if (this.verticalButtons) {
-                for (int i6 = 1; i6 < this.buttonsLayout.getChildCount(); i6++) {
-                    ((ViewGroup.MarginLayoutParams) this.buttonsLayout.getChildAt(i6).getLayoutParams()).topMargin = AndroidUtilities.dp(6.0f);
+                for (int i7 = 1; i7 < this.buttonsLayout.getChildCount(); i7++) {
+                    ((ViewGroup.MarginLayoutParams) this.buttonsLayout.getChildAt(i7).getLayoutParams()).topMargin = AndroidUtilities.dp(6.0f);
                 }
             }
+        } else {
+            f3 = 12.0f;
         }
         Window window = getWindow();
         WindowManager.LayoutParams layoutParams3 = new WindowManager.LayoutParams();
@@ -1358,9 +1392,9 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 layoutParams3.dimAmount = 0.0f;
                 layoutParams3.flags ^= 2;
             }
-            int i7 = AndroidUtilities.displaySize.x;
-            this.lastScreenWidth = i7;
-            int dp2 = (i7 - AndroidUtilities.dp(48.0f)) - (this.additioanalHorizontalPadding * 2);
+            int i8 = AndroidUtilities.displaySize.x;
+            this.lastScreenWidth = i8;
+            int dp2 = (i8 - AndroidUtilities.dp(48.0f)) - (this.additioanalHorizontalPadding * 2);
             if (AndroidUtilities.isTablet()) {
                 if (AndroidUtilities.isSmallTablet()) {
                     dp = AndroidUtilities.dp(446.0f);
@@ -1389,8 +1423,17 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 if (this.progressViewStyle == 0) {
                     this.blurredNativeBackground = true;
                     window.setBackgroundBlurRadius(50);
-                    float dp3 = AndroidUtilities.dp(12.0f);
-                    ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(new float[]{dp3, dp3, dp3, dp3, dp3, dp3, dp3, dp3}, null, null));
+                    float dp3 = AndroidUtilities.dp(f3);
+                    float[] fArr = new float[8];
+                    fArr[0] = dp3;
+                    fArr[1] = dp3;
+                    fArr[2] = dp3;
+                    fArr[3] = dp3;
+                    fArr[4] = dp3;
+                    fArr[c] = dp3;
+                    fArr[6] = dp3;
+                    fArr[7] = dp3;
+                    ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(fArr, null, null));
                     shapeDrawable.getPaint().setColor(ColorUtils.setAlphaComponent(this.backgroundColor, (int) (this.blurAlpha * 255.0f)));
                     window.setBackgroundDrawable(shapeDrawable);
                     if (this.blurBehind) {
@@ -1402,7 +1445,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda4
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        AlertDialog.this.lambda$inflateContent$8((Bitmap) obj);
+                        AlertDialog.$r8$lambda$nZDdnXJLc0jr-Q3c3A863LSGuvk(AlertDialog.this, (Bitmap) obj);
                     }
                 }, 8.0f);
             }
@@ -1411,103 +1454,92 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         return view;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$1(View view) {
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$2(View view) {
-        new StarsIntroActivity.StarsOptionsSheet(getContext(), this.resourcesProvider).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$3(View view) {
-        DialogInterface.OnClickListener onClickListener = this.onClickListener;
+    public static /* synthetic */ void $r8$lambda$WVYQ-WMlM7ABxmekBKqP6lSkYDc(AlertDialog alertDialog, View view) {
+        DialogInterface.OnClickListener onClickListener = alertDialog.onClickListener;
         if (onClickListener != null) {
-            onClickListener.onClick(this, ((Integer) view.getTag()).intValue());
+            onClickListener.onClick(alertDialog, ((Integer) view.getTag()).intValue());
         }
-        dismiss();
+        alertDialog.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$4(TextViewWithLoading textViewWithLoading, View view) {
+    public static /* synthetic */ void $r8$lambda$MXta1oMDTzNyG08H-SfDBgZ2dNo(AlertDialog alertDialog, TextViewWithLoading textViewWithLoading, View view) {
+        alertDialog.getClass();
         if (textViewWithLoading.isLoading()) {
             return;
         }
-        OnButtonClickListener onButtonClickListener = this.positiveButtonListener;
+        OnButtonClickListener onButtonClickListener = alertDialog.positiveButtonListener;
         if (onButtonClickListener != null) {
-            onButtonClickListener.onClick(this, -1);
+            onButtonClickListener.onClick(alertDialog, -1);
         }
-        if (this.dismissDialogByButtons) {
-            dismiss();
+        if (alertDialog.dismissDialogByButtons) {
+            alertDialog.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$5(TextViewWithLoading textViewWithLoading, View view) {
+    public static /* synthetic */ void $r8$lambda$6mEBdgfYbHCdhFTWsgfgiSwk6ys(AlertDialog alertDialog, TextViewWithLoading textViewWithLoading, View view) {
+        alertDialog.getClass();
         if (textViewWithLoading.isLoading()) {
             return;
         }
-        OnButtonClickListener onButtonClickListener = this.negativeButtonListener;
+        OnButtonClickListener onButtonClickListener = alertDialog.negativeButtonListener;
         if (onButtonClickListener != null) {
-            onButtonClickListener.onClick(this, -2);
+            onButtonClickListener.onClick(alertDialog, -2);
         }
-        if (this.dismissDialogByButtons) {
-            cancel();
+        if (alertDialog.dismissDialogByButtons) {
+            alertDialog.cancel();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$6(TextViewWithLoading textViewWithLoading, View view) {
+    public static /* synthetic */ void $r8$lambda$Ah8gMoIAeLY--YHalA89i6n1_nE(AlertDialog alertDialog, TextViewWithLoading textViewWithLoading, View view) {
+        alertDialog.getClass();
         if (textViewWithLoading.isLoading()) {
             return;
         }
-        OnButtonClickListener onButtonClickListener = this.neutralButtonListener;
+        OnButtonClickListener onButtonClickListener = alertDialog.neutralButtonListener;
         if (onButtonClickListener != null) {
-            onButtonClickListener.onClick(this, -2);
+            onButtonClickListener.onClick(alertDialog, -2);
         }
-        if (this.dismissDialogByButtons) {
-            dismiss();
+        if (alertDialog.dismissDialogByButtons) {
+            alertDialog.dismiss();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$7(TextViewWithLoading textViewWithLoading, View view) {
+    public static /* synthetic */ void $r8$lambda$RjbgrOgj3a0QBanv-PE8EX_IaDs(AlertDialog alertDialog, TextViewWithLoading textViewWithLoading, View view) {
+        alertDialog.getClass();
         if (textViewWithLoading.isLoading()) {
             return;
         }
-        OnButtonClickListener onButtonClickListener = this.negative2ButtonListener;
+        OnButtonClickListener onButtonClickListener = alertDialog.negative2ButtonListener;
         if (onButtonClickListener != null) {
-            onButtonClickListener.onClick(this, -2);
+            onButtonClickListener.onClick(alertDialog, -2);
         }
-        if (this.dismissDialogByButtons) {
-            cancel();
+        if (alertDialog.dismissDialogByButtons) {
+            alertDialog.cancel();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$inflateContent$8(Bitmap bitmap) {
+    public static /* synthetic */ void $r8$lambda$nZDdnXJLc0jr-Q3c3A863LSGuvk(AlertDialog alertDialog, Bitmap bitmap) {
         if (bitmap == null) {
+            alertDialog.getClass();
             return;
         }
-        if (this.blurPaint == null) {
-            this.blurPaint = new Paint(1);
+        if (alertDialog.blurPaint == null) {
+            alertDialog.blurPaint = new Paint(1);
         }
-        this.blurBitmap = bitmap;
-        Bitmap bitmap2 = this.blurBitmap;
+        alertDialog.blurBitmap = bitmap;
+        Bitmap bitmap2 = alertDialog.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap2, tileMode, tileMode);
-        this.blurShader = bitmapShader;
-        this.blurPaint.setShader(bitmapShader);
+        alertDialog.blurShader = bitmapShader;
+        alertDialog.blurPaint.setShader(bitmapShader);
         Matrix matrix = new Matrix();
-        this.blurMatrix = matrix;
+        alertDialog.blurMatrix = matrix;
         matrix.postScale(8.0f, 8.0f);
-        Matrix matrix2 = this.blurMatrix;
-        int[] iArr = this.containerViewLocation;
+        Matrix matrix2 = alertDialog.blurMatrix;
+        int[] iArr = alertDialog.containerViewLocation;
         matrix2.postTranslate(-iArr[0], -iArr[1]);
-        this.blurShader.setLocalMatrix(this.blurMatrix);
-        this.containerView.invalidate();
+        alertDialog.blurShader.setLocalMatrix(alertDialog.blurMatrix);
+        alertDialog.containerView.invalidate();
     }
 
     public Browser.Progress makeButtonLoading(int i) {
@@ -1522,30 +1554,29 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         return new Browser.Progress(new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                AlertDialog.lambda$makeButtonLoading$9(button);
+                AlertDialog.$r8$lambda$B4fp4rFk_mbEv-WTBZXG5SwPoB0(button);
             }
         }, new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                AlertDialog.this.lambda$makeButtonLoading$10(button, z);
+                AlertDialog.$r8$lambda$QYG6eHoCC4QS5-lmdjXDM96Zf40(AlertDialog.this, button, z);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$makeButtonLoading$9(View view) {
+    public static /* synthetic */ void $r8$lambda$B4fp4rFk_mbEv-WTBZXG5SwPoB0(View view) {
         if (view instanceof TextViewWithLoading) {
             ((TextViewWithLoading) view).setLoading(true, true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeButtonLoading$10(View view, boolean z) {
+    public static /* synthetic */ void $r8$lambda$QYG6eHoCC4QS5-lmdjXDM96Zf40(AlertDialog alertDialog, View view, boolean z) {
+        alertDialog.getClass();
         if (view instanceof TextViewWithLoading) {
             ((TextViewWithLoading) view).setLoading(false, true);
         }
         if (z) {
-            dismiss();
+            alertDialog.dismiss();
         }
     }
 
@@ -1628,13 +1659,13 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             builder.setNegativeButton(LocaleController.getString(R.string.Stop), new OnButtonClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda12
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    AlertDialog.this.lambda$showCancelAlert$11(alertDialog, i);
+                    AlertDialog.$r8$lambda$_E-7pt5tNL0mmrtb5rtksHAkdG4(AlertDialog.this, alertDialog, i);
                 }
             });
             builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda13
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    AlertDialog.this.lambda$showCancelAlert$12(dialogInterface);
+                    AlertDialog.this.cancelDialog = null;
                 }
             });
             try {
@@ -1644,18 +1675,12 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showCancelAlert$11(AlertDialog alertDialog, int i) {
-        DialogInterface.OnCancelListener onCancelListener = this.onCancelListener;
+    public static /* synthetic */ void $r8$lambda$_E-7pt5tNL0mmrtb5rtksHAkdG4(AlertDialog alertDialog, AlertDialog alertDialog2, int i) {
+        DialogInterface.OnCancelListener onCancelListener = alertDialog.onCancelListener;
         if (onCancelListener != null) {
-            onCancelListener.onCancel(this);
+            onCancelListener.onCancel(alertDialog);
         }
-        dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showCancelAlert$12(DialogInterface dialogInterface) {
-        this.cancelDialog = null;
+        alertDialog.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

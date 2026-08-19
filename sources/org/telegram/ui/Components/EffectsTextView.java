@@ -96,7 +96,7 @@ public class EffectsTextView extends SpoilersTextView {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EffectsTextView$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EffectsTextView.this.lambda$onTouchEvent$0(linkSpanDrawable, hit);
+                        EffectsTextView.$r8$lambda$Zq6iuDs0cx2GuoUClykYZZ-1CBs(EffectsTextView.this, linkSpanDrawable, hit);
                     }
                 }, ViewConfiguration.getLongPressTimeout());
                 return true;
@@ -124,15 +124,14 @@ public class EffectsTextView extends SpoilersTextView {
         return this.pressedLink != null || super.onTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$0(LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
-        LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress = this.onLongPressListener;
-        if (onLinkPress == null || this.pressedLink != linkSpanDrawable) {
+    public static /* synthetic */ void $r8$lambda$Zq6iuDs0cx2GuoUClykYZZ-1CBs(EffectsTextView effectsTextView, LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
+        LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress = effectsTextView.onLongPressListener;
+        if (onLinkPress == null || effectsTextView.pressedLink != linkSpanDrawable) {
             return;
         }
         onLinkPress.run(clickableSpan);
-        this.pressedLink = null;
-        this.links.clear();
+        effectsTextView.pressedLink = null;
+        effectsTextView.links.clear();
     }
 
     @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View

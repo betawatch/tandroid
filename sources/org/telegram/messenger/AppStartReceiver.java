@@ -14,13 +14,12 @@ public class AppStartReceiver extends BroadcastReceiver {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AppStartReceiver$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AppStartReceiver.lambda$onReceive$0();
+                AppStartReceiver.$r8$lambda$7gvKcWEaIWxxezhCcVhOtGEPMng();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onReceive$0() {
+    public static /* synthetic */ void $r8$lambda$7gvKcWEaIWxxezhCcVhOtGEPMng() {
         SharedConfig.loadConfig();
         if (SharedConfig.passcodeHash.length() > 0) {
             SharedConfig.appLocked = true;

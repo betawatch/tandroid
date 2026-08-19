@@ -76,43 +76,42 @@ public class PhotoEditToolCell extends FrameLayout {
         this.seekBar.setDelegate(new PhotoEditorSeekBar.PhotoEditorSeekBarDelegate() { // from class: org.telegram.ui.Cells.PhotoEditToolCell$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.PhotoEditorSeekBar.PhotoEditorSeekBarDelegate
             public final void onProgressChanged(int i, int i2) {
-                PhotoEditToolCell.this.lambda$setSeekBarDelegate$0(photoEditorSeekBarDelegate, i, i2);
+                PhotoEditToolCell.$r8$lambda$sha01_7rL-qEIc9Zi9O8gUGzaes(PhotoEditToolCell.this, photoEditorSeekBarDelegate, i, i2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSeekBarDelegate$0(PhotoEditorSeekBar.PhotoEditorSeekBarDelegate photoEditorSeekBarDelegate, int i, int i2) {
+    public static /* synthetic */ void $r8$lambda$sha01_7rL-qEIc9Zi9O8gUGzaes(PhotoEditToolCell photoEditToolCell, PhotoEditorSeekBar.PhotoEditorSeekBarDelegate photoEditorSeekBarDelegate, int i, int i2) {
+        photoEditToolCell.getClass();
         photoEditorSeekBarDelegate.onProgressChanged(i, i2);
         if (i2 > 0) {
-            this.valueTextView.setText("+" + i2);
+            photoEditToolCell.valueTextView.setText("+" + i2);
         } else {
-            this.valueTextView.setText("" + i2);
+            photoEditToolCell.valueTextView.setText("" + i2);
         }
-        if (this.valueTextView.getTag() == null) {
-            AnimatorSet animatorSet = this.valueAnimation;
+        if (photoEditToolCell.valueTextView.getTag() == null) {
+            AnimatorSet animatorSet = photoEditToolCell.valueAnimation;
             if (animatorSet != null) {
                 animatorSet.cancel();
             }
-            this.valueTextView.setTag(1);
+            photoEditToolCell.valueTextView.setTag(1);
             AnimatorSet animatorSet2 = new AnimatorSet();
-            this.valueAnimation = animatorSet2;
-            TextView textView = this.valueTextView;
+            photoEditToolCell.valueAnimation = animatorSet2;
             Property property = View.ALPHA;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.nameTextView, (Property<TextView, Float>) property, 0.0f));
-            this.valueAnimation.setDuration(250L);
-            this.valueAnimation.setInterpolator(new DecelerateInterpolator());
-            this.valueAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.PhotoEditToolCell.2
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(photoEditToolCell.valueTextView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(photoEditToolCell.nameTextView, (Property<TextView, Float>) property, 0.0f));
+            photoEditToolCell.valueAnimation.setDuration(250L);
+            photoEditToolCell.valueAnimation.setInterpolator(new DecelerateInterpolator());
+            photoEditToolCell.valueAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.PhotoEditToolCell.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     AndroidUtilities.runOnUIThread(PhotoEditToolCell.this.hideValueRunnable, 1000L);
                 }
             });
-            this.valueAnimation.start();
+            photoEditToolCell.valueAnimation.start();
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(this.hideValueRunnable);
-        AndroidUtilities.runOnUIThread(this.hideValueRunnable, 1000L);
+        AndroidUtilities.cancelRunOnUIThread(photoEditToolCell.hideValueRunnable);
+        AndroidUtilities.runOnUIThread(photoEditToolCell.hideValueRunnable, 1000L);
     }
 
     @Override // android.view.View

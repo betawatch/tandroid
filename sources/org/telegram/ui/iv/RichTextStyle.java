@@ -6,7 +6,6 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.SharedConfig;
@@ -25,7 +24,7 @@ import org.telegram.ui.Components.URLSpanReplacement;
 public abstract class RichTextStyle {
     private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 4, 256, 16384, 32768, 65536};
 
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x008b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x008a, code lost:
     
         r3 = r3 + 1;
      */
@@ -62,10 +61,12 @@ public abstract class RichTextStyle {
         }
         int i2 = 0;
         while (i2 < charSequence.length()) {
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                Object next = it.next();
-                if (spanned.getSpanStart(next) > i2 || spanned.getSpanEnd(next) <= i2) {
+            int size = arrayList.size();
+            int i3 = 0;
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                if (spanned.getSpanStart(obj) > i2 || spanned.getSpanEnd(obj) <= i2) {
                 }
             }
             return 0;
@@ -97,9 +98,13 @@ public abstract class RichTextStyle {
             return;
         }
         if (richText instanceof TL_iv.textConcat) {
-            Iterator<TL_iv.RichText> it = ((TL_iv.textConcat) richText).texts.iterator();
-            while (it.hasNext()) {
-                append(spannableStringBuilder, it.next(), i, pageBlock, z);
+            ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i2 < size) {
+                TL_iv.RichText richText2 = arrayList.get(i2);
+                i2++;
+                append(spannableStringBuilder, richText2, i, pageBlock, z);
             }
             return;
         }
@@ -267,9 +272,13 @@ public abstract class RichTextStyle {
         }
         if (richText instanceof TL_iv.textConcat) {
             StringBuilder sb = new StringBuilder();
-            Iterator<TL_iv.RichText> it = ((TL_iv.textConcat) richText).texts.iterator();
-            while (it.hasNext()) {
-                sb.append(plainOf(it.next()));
+            ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                TL_iv.RichText richText2 = arrayList.get(i);
+                i++;
+                sb.append(plainOf(richText2));
             }
             return sb.toString();
         }
@@ -296,9 +305,13 @@ public abstract class RichTextStyle {
             return str2 == null || str2.isEmpty();
         }
         if (richText instanceof TL_iv.textConcat) {
-            Iterator<TL_iv.RichText> it = ((TL_iv.textConcat) richText).texts.iterator();
-            while (it.hasNext()) {
-                if (!isEmpty(it.next())) {
+            ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                TL_iv.RichText richText2 = arrayList.get(i);
+                i++;
+                if (!isEmpty(richText2)) {
                     return false;
                 }
             }
@@ -651,7 +664,7 @@ public abstract class RichTextStyle {
         
             if (r7.date != r8.date) goto L29;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:21:?, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0040, code lost:
         
             return true;
          */

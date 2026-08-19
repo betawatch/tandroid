@@ -52,18 +52,17 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution exte
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Application.Execution)) {
-            return false;
-        }
-        CrashlyticsReport.Session.Event.Application.Execution execution = (CrashlyticsReport.Session.Event.Application.Execution) obj;
-        List list = this.threads;
-        if (list != null ? list.equals(execution.getThreads()) : execution.getThreads() == null) {
-            CrashlyticsReport.Session.Event.Application.Execution.Exception exception = this.exception;
-            if (exception != null ? exception.equals(execution.getException()) : execution.getException() == null) {
-                CrashlyticsReport.ApplicationExitInfo applicationExitInfo = this.appExitInfo;
-                if (applicationExitInfo != null ? applicationExitInfo.equals(execution.getAppExitInfo()) : execution.getAppExitInfo() == null) {
-                    if (this.signal.equals(execution.getSignal()) && this.binaries.equals(execution.getBinaries())) {
-                        return true;
+        if (obj instanceof CrashlyticsReport.Session.Event.Application.Execution) {
+            CrashlyticsReport.Session.Event.Application.Execution execution = (CrashlyticsReport.Session.Event.Application.Execution) obj;
+            List list = this.threads;
+            if (list != null ? list.equals(execution.getThreads()) : execution.getThreads() == null) {
+                CrashlyticsReport.Session.Event.Application.Execution.Exception exception = this.exception;
+                if (exception != null ? exception.equals(execution.getException()) : execution.getException() == null) {
+                    CrashlyticsReport.ApplicationExitInfo applicationExitInfo = this.appExitInfo;
+                    if (applicationExitInfo != null ? applicationExitInfo.equals(execution.getAppExitInfo()) : execution.getAppExitInfo() == null) {
+                        if (this.signal.equals(execution.getSignal()) && this.binaries.equals(execution.getBinaries())) {
+                            return true;
+                        }
                     }
                 }
             }

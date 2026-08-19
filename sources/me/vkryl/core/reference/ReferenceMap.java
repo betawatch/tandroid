@@ -30,7 +30,7 @@ public class ReferenceMap {
             this.fullnessListenerHelper = new ReferenceList.FullnessListener(fullnessListener) { // from class: me.vkryl.core.reference.ReferenceMap$$ExternalSyntheticLambda0
                 @Override // me.vkryl.core.reference.ReferenceList.FullnessListener
                 public final void onFullnessStateChanged(ReferenceList referenceList, boolean z3) {
-                    ReferenceMap.this.lambda$new$0(null, referenceList, z3);
+                    ReferenceMap.$r8$lambda$1Z7GUuA1JJHKJg5Y894SRunCXbQ(ReferenceMap.this, null, referenceList, z3);
                 }
             };
         } else {
@@ -38,21 +38,21 @@ public class ReferenceMap {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(FullnessListener fullnessListener, ReferenceList referenceList, boolean z) {
+    public static /* synthetic */ void $r8$lambda$1Z7GUuA1JJHKJg5Y894SRunCXbQ(ReferenceMap referenceMap, FullnessListener fullnessListener, ReferenceList referenceList, boolean z) {
+        referenceMap.getClass();
         synchronized (fullnessListener) {
             try {
                 if (z) {
-                    int i = this.fullnessCounter;
-                    this.fullnessCounter = i + 1;
+                    int i = referenceMap.fullnessCounter;
+                    referenceMap.fullnessCounter = i + 1;
                     if (i == 0) {
-                        fullnessListener.onFullnessStateChanged(this, true);
+                        fullnessListener.onFullnessStateChanged(referenceMap, true);
                     }
                 } else {
-                    int i2 = this.fullnessCounter - 1;
-                    this.fullnessCounter = i2;
+                    int i2 = referenceMap.fullnessCounter - 1;
+                    referenceMap.fullnessCounter = i2;
                     if (i2 == 0) {
-                        fullnessListener.onFullnessStateChanged(this, false);
+                        fullnessListener.onFullnessStateChanged(referenceMap, false);
                     }
                 }
             } catch (Throwable th) {

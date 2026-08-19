@@ -43,7 +43,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.PermissionRequest;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BotLocation {
     private static final HashMap instances = new HashMap();
     public final long botId;
@@ -95,21 +95,21 @@ public class BotLocation {
                 builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda3
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotLocation.lambda$setGranted$0(activity, alertDialog, i);
+                        BotLocation.$r8$lambda$8Xj70piI7CK4FZg3bmehdrwtO2k(activity, alertDialog, i);
                     }
                 });
             } else {
                 builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda4
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotLocation.this.lambda$setGranted$2(runnable, alertDialog, i);
+                        BotLocation.$r8$lambda$xW3cdApB4WxZutddt_BLoC-7ADU(BotLocation.this, runnable, alertDialog, i);
                     }
                 });
             }
             builder.setNegativeButton(LocaleController.getString(R.string.BotLocationPermissionDecline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    BotLocation.this.lambda$setGranted$3(runnable, alertDialog, i);
+                    BotLocation.$r8$lambda$wR4ZnsLyWlK0zsOB-zQJ7tCxYKg(BotLocation.this, runnable, alertDialog, i);
                 }
             });
             builder.show();
@@ -126,8 +126,7 @@ public class BotLocation {
         save();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setGranted$0(Activity activity, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$8Xj70piI7CK4FZg3bmehdrwtO2k(Activity activity, AlertDialog alertDialog, int i) {
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
@@ -137,38 +136,37 @@ public class BotLocation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setGranted$2(final Runnable runnable, AlertDialog alertDialog, int i) {
-        if (!appHasPermission()) {
+    public static /* synthetic */ void $r8$lambda$xW3cdApB4WxZutddt_BLoC-7ADU(final BotLocation botLocation, final Runnable runnable, AlertDialog alertDialog, int i) {
+        if (!botLocation.appHasPermission()) {
             PermissionRequest.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BotLocation.this.lambda$setGranted$1(runnable, (int[]) obj);
+                    BotLocation.$r8$lambda$efYrp1OxLO4ejzk5W_UfIccrpK8(BotLocation.this, runnable, (int[]) obj);
                 }
             });
             return;
         }
-        this.requested = true;
-        this.granted = true;
-        save();
-        Iterator it = this.listeners.iterator();
+        botLocation.requested = true;
+        botLocation.granted = true;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setGranted$1(Runnable runnable, int[] iArr) {
+    public static /* synthetic */ void $r8$lambda$efYrp1OxLO4ejzk5W_UfIccrpK8(BotLocation botLocation, Runnable runnable, int[] iArr) {
+        botLocation.getClass();
         boolean z = false;
         for (int i : iArr) {
             if (i == 0) {
                 z = true;
             }
         }
-        this.requested = z;
-        this.granted = z;
-        save();
-        Iterator it = this.listeners.iterator();
+        botLocation.requested = z;
+        botLocation.granted = z;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
@@ -177,12 +175,11 @@ public class BotLocation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setGranted$3(Runnable runnable, AlertDialog alertDialog, int i) {
-        this.requested = true;
-        this.granted = false;
-        save();
-        Iterator it = this.listeners.iterator();
+    public static /* synthetic */ void $r8$lambda$wR4ZnsLyWlK0zsOB-zQJ7tCxYKg(BotLocation botLocation, Runnable runnable, AlertDialog alertDialog, int i) {
+        botLocation.requested = true;
+        botLocation.granted = false;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
@@ -239,18 +236,18 @@ public class BotLocation {
         int checkSelfPermission;
         int checkSelfPermission2;
         Activity activity = getActivity();
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (activity != null) {
-                checkSelfPermission = activity.checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION");
-                if (checkSelfPermission != 0) {
-                    checkSelfPermission2 = activity.checkSelfPermission("android.permission.ACCESS_FINE_LOCATION");
-                    if (checkSelfPermission2 == 0) {
-                    }
-                }
-            }
+        if (Build.VERSION.SDK_INT < 23) {
+            return true;
+        }
+        if (activity == null) {
             return false;
         }
-        return true;
+        checkSelfPermission = activity.checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION");
+        if (checkSelfPermission == 0) {
+            return true;
+        }
+        checkSelfPermission2 = activity.checkSelfPermission("android.permission.ACCESS_FINE_LOCATION");
+        return checkSelfPermission2 == 0;
     }
 
     private boolean needToOpenSettings() {
@@ -261,13 +258,11 @@ public class BotLocation {
             return false;
         }
         shouldShowRequestPermissionRationale = activity.shouldShowRequestPermissionRationale("android.permission.ACCESS_COARSE_LOCATION");
-        if (shouldShowRequestPermissionRationale) {
-            shouldShowRequestPermissionRationale2 = activity.shouldShowRequestPermissionRationale("android.permission.ACCESS_FINE_LOCATION");
-            if (shouldShowRequestPermissionRationale2) {
-                return false;
-            }
+        if (!shouldShowRequestPermissionRationale) {
+            return true;
         }
-        return true;
+        shouldShowRequestPermissionRationale2 = activity.shouldShowRequestPermissionRationale("android.permission.ACCESS_FINE_LOCATION");
+        return !shouldShowRequestPermissionRationale2;
     }
 
     public void request(final Utilities.Callback2 callback2) {
@@ -299,34 +294,33 @@ public class BotLocation {
             builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda8
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    BotLocation.lambda$request$4(activity, zArr, callback2, alertDialog, i);
+                    BotLocation.$r8$lambda$NrUSfLmt5mpXY0LtaVefOUiGIzk(activity, zArr, callback2, alertDialog, i);
                 }
             });
         } else {
             builder.setPositiveButton(LocaleController.getString(R.string.BotLocationPermissionAllow), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda9
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    BotLocation.this.lambda$request$6(zArr, callback2, alertDialog, i);
+                    BotLocation.$r8$lambda$dPKSAzIc5cAAoA-4U3kWQAcxDF4(BotLocation.this, zArr, callback2, alertDialog, i);
                 }
             });
         }
         builder.setNegativeButton(LocaleController.getString(R.string.BotLocationPermissionDecline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BotLocation.this.lambda$request$7(zArr, callback2, alertDialog, i);
+                BotLocation.$r8$lambda$yd5-wcj5HHxuYpqhG8PFHvmFjeI(BotLocation.this, zArr, callback2, alertDialog, i);
             }
         });
         builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda11
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                BotLocation.this.lambda$request$8(zArr, callback2, dialogInterface);
+                BotLocation.$r8$lambda$86tC1-8Cxj1Ix_h60feMuwSKkCw(BotLocation.this, zArr, callback2, dialogInterface);
             }
         });
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$request$4(Activity activity, boolean[] zArr, Utilities.Callback2 callback2, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$NrUSfLmt5mpXY0LtaVefOUiGIzk(Activity activity, boolean[] zArr, Utilities.Callback2 callback2, AlertDialog alertDialog, int i) {
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
@@ -341,22 +335,22 @@ public class BotLocation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$6(boolean[] zArr, final Utilities.Callback2 callback2, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$dPKSAzIc5cAAoA-4U3kWQAcxDF4(final BotLocation botLocation, boolean[] zArr, final Utilities.Callback2 callback2, AlertDialog alertDialog, int i) {
+        botLocation.getClass();
         zArr[0] = true;
-        if (!appHasPermission()) {
+        if (!botLocation.appHasPermission()) {
             PermissionRequest.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda12
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BotLocation.this.lambda$request$5(callback2, (int[]) obj);
+                    BotLocation.$r8$lambda$OSXabPKY6hS60qVVoINgOdUYRvM(BotLocation.this, callback2, (int[]) obj);
                 }
             });
             return;
         }
-        this.requested = true;
-        this.granted = true;
-        save();
-        Iterator it = this.listeners.iterator();
+        botLocation.requested = true;
+        botLocation.granted = true;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
@@ -366,18 +360,18 @@ public class BotLocation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$5(Utilities.Callback2 callback2, int[] iArr) {
+    public static /* synthetic */ void $r8$lambda$OSXabPKY6hS60qVVoINgOdUYRvM(BotLocation botLocation, Utilities.Callback2 callback2, int[] iArr) {
+        botLocation.getClass();
         boolean z = false;
         for (int i : iArr) {
             if (i == 0) {
                 z = true;
             }
         }
-        this.requested = true;
-        this.granted = true;
-        save();
-        Iterator it = this.listeners.iterator();
+        botLocation.requested = true;
+        botLocation.granted = true;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
@@ -386,16 +380,16 @@ public class BotLocation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$7(boolean[] zArr, Utilities.Callback2 callback2, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$yd5-wcj5HHxuYpqhG8PFHvmFjeI(BotLocation botLocation, boolean[] zArr, Utilities.Callback2 callback2, AlertDialog alertDialog, int i) {
+        botLocation.getClass();
         if (zArr[0]) {
             return;
         }
         zArr[0] = true;
-        this.requested = true;
-        this.granted = false;
-        save();
-        Iterator it = this.listeners.iterator();
+        botLocation.requested = true;
+        botLocation.granted = false;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
@@ -404,15 +398,15 @@ public class BotLocation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$8(boolean[] zArr, Utilities.Callback2 callback2, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$86tC1-8Cxj1Ix_h60feMuwSKkCw(BotLocation botLocation, boolean[] zArr, Utilities.Callback2 callback2, DialogInterface dialogInterface) {
+        botLocation.getClass();
         if (zArr[0]) {
             return;
         }
-        this.requested = true;
-        this.granted = false;
-        save();
-        Iterator it = this.listeners.iterator();
+        botLocation.requested = true;
+        botLocation.granted = false;
+        botLocation.save();
+        Iterator it = botLocation.listeners.iterator();
         while (it.hasNext()) {
             ((Runnable) it.next()).run();
         }
@@ -430,6 +424,7 @@ public class BotLocation {
                 jSONObject.put("access_requested", this.requested);
                 if (this.requested) {
                     jSONObject.put("access_granted", this.granted && appHasPermission());
+                    return jSONObject;
                 }
             }
         } catch (Exception e) {
@@ -495,7 +490,7 @@ public class BotLocation {
                 builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotLocation$$ExternalSyntheticLambda7
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        BotLocation.lambda$requestObject$9(context, alertDialog, i);
+                        context.startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
                     }
                 });
                 builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -505,14 +500,6 @@ public class BotLocation {
             }
         }
         callback.run(locationObject(null));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$requestObject$9(Context context, AlertDialog alertDialog, int i) {
-        try {
-            context.startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
-        } catch (Exception unused) {
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -555,9 +542,9 @@ public class BotLocation {
         if (i >= 26) {
             speedAccuracyMetersPerSecond = location.getSpeedAccuracyMetersPerSecond();
             jSONObject.put("speed_accuracy", speedAccuracyMetersPerSecond);
-        } else {
-            jSONObject.put("speed_accuracy", (Object) null);
+            return jSONObject;
         }
+        jSONObject.put("speed_accuracy", (Object) null);
         return jSONObject;
     }
 

@@ -81,7 +81,7 @@ import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoryCaptionView;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoryCaptionView extends NestedScrollView implements ItemOptions.ScrimView {
     private Method abortAnimatedScrollMethod;
     private float backgroundAlpha;
@@ -166,7 +166,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Stories.StoryCaptionView$$ExternalSyntheticLambda1
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
             public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                StoryCaptionView.this.lambda$new$0(dynamicAnimation, f, f2);
+                StoryCaptionView.$r8$lambda$Ks6bIe_oG9qj8DaNtncMVarfqWA(StoryCaptionView.this, dynamicAnimation, f, f2);
             }
         });
         springAnimation.getSpring().setDampingRatio(1.0f);
@@ -188,10 +188,9 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(DynamicAnimation dynamicAnimation, float f, float f2) {
-        this.overScrollY = f;
-        this.velocityY = f2;
+    public static /* synthetic */ void $r8$lambda$Ks6bIe_oG9qj8DaNtncMVarfqWA(StoryCaptionView storyCaptionView, DynamicAnimation dynamicAnimation, float f, float f2) {
+        storyCaptionView.overScrollY = f;
+        storyCaptionView.velocityY = f2;
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
@@ -471,7 +470,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryCaptionView$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    StoryCaptionView.this.lambda$expand$1(scrollY, f, f2, valueAnimator);
+                    StoryCaptionView.$r8$lambda$dyqUxoSVXEf1n0VolORrv-k10-U(StoryCaptionView.this, scrollY, f, f2, valueAnimator);
                 }
             });
             ofFloat.setDuration(250L);
@@ -480,12 +479,12 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$expand$1(float f, float f2, float f3, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$dyqUxoSVXEf1n0VolORrv-k10-U(StoryCaptionView storyCaptionView, float f, float f2, float f3, ValueAnimator valueAnimator) {
+        storyCaptionView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        setScrollY((int) AndroidUtilities.lerp(f, Math.min((getMeasuredHeight() - this.blackoutBottomOffset) - AndroidUtilities.dp(64.0f), this.captionContainer.getBottom() - getMeasuredHeight()), floatValue));
-        this.captionTextview.progressToExpand = AndroidUtilities.lerp(f2, f3, floatValue);
-        this.captionTextview.invalidate();
+        storyCaptionView.setScrollY((int) AndroidUtilities.lerp(f, Math.min((storyCaptionView.getMeasuredHeight() - storyCaptionView.blackoutBottomOffset) - AndroidUtilities.dp(64.0f), storyCaptionView.captionContainer.getBottom() - storyCaptionView.getMeasuredHeight()), floatValue));
+        storyCaptionView.captionTextview.progressToExpand = AndroidUtilities.lerp(f2, f3, floatValue);
+        storyCaptionView.captionTextview.invalidate();
     }
 
     public void collapse() {
@@ -499,7 +498,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryCaptionView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    StoryCaptionView.this.lambda$collapse$2(scrollY, f2, f, f3, valueAnimator);
+                    StoryCaptionView.$r8$lambda$rTTbcwa35cculuC5M0tnmVU04x0(StoryCaptionView.this, scrollY, f2, f, f3, valueAnimator);
                 }
             });
             ofFloat.setDuration(250L);
@@ -508,12 +507,12 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$collapse$2(float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$rTTbcwa35cculuC5M0tnmVU04x0(StoryCaptionView storyCaptionView, float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+        storyCaptionView.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        setScrollY((int) AndroidUtilities.lerp(f, f2, floatValue));
-        this.captionTextview.progressToExpand = AndroidUtilities.lerp(f3, f4, floatValue);
-        this.captionTextview.invalidate();
+        storyCaptionView.setScrollY((int) AndroidUtilities.lerp(f, f2, floatValue));
+        storyCaptionView.captionTextview.progressToExpand = AndroidUtilities.lerp(f3, f4, floatValue);
+        storyCaptionView.captionTextview.invalidate();
     }
 
     public void disableDraw(boolean z) {
@@ -628,26 +627,25 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             MessagesController.getInstance(this.currentAccount).getStoriesController().resolveStoryLink(this.peerId.longValue(), this.storyId.intValue(), new Consumer() { // from class: org.telegram.ui.Stories.StoryCaptionView$Panel$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    StoryCaptionView.Panel.this.lambda$load$0((TL_stories.StoryItem) obj);
+                    StoryCaptionView.Panel.$r8$lambda$_bB6QtAd1HZh5dmRw6Jrm_YCiuo(StoryCaptionView.Panel.this, (TL_stories.StoryItem) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$load$0(TL_stories.StoryItem storyItem) {
+        public static /* synthetic */ void $r8$lambda$_bB6QtAd1HZh5dmRw6Jrm_YCiuo(Panel panel, TL_stories.StoryItem storyItem) {
             String str;
-            this.loaded = true;
+            panel.loaded = true;
             if (storyItem == null || (str = storyItem.caption) == null) {
                 return;
             }
-            this.updateText = true;
-            this.text = str;
-            this.small = TextUtils.isEmpty(str);
-            View view = this.view;
+            panel.updateText = true;
+            panel.text = str;
+            panel.small = TextUtils.isEmpty(str);
+            View view = panel.view;
             if (view != null) {
                 view.invalidate();
             }
-            Runnable runnable = this.whenLoaded;
+            Runnable runnable = panel.whenLoaded;
             if (runnable != null) {
                 runnable.run();
             }
@@ -668,21 +666,23 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             panel.music = document;
             if (TextUtils.isEmpty(str)) {
                 panel.title = new SpannableStringBuilder(musicSpan()).append((CharSequence) " ").append((CharSequence) str2);
-            } else if (TextUtils.isEmpty(str2)) {
-                panel.title = new SpannableStringBuilder(musicSpan()).append((CharSequence) " ").append((CharSequence) str);
-            } else {
-                SpannableStringBuilder append = new SpannableStringBuilder(musicSpan()).append((CharSequence) " ").append((CharSequence) str2);
-                panel.title = append;
-                int length = append.length();
-                ((SpannableStringBuilder) panel.title).append((CharSequence) " ・ ");
-                ((SpannableStringBuilder) panel.title).setSpan(new CharacterStyle() { // from class: org.telegram.ui.Stories.StoryCaptionView.Panel.1
-                    @Override // android.text.style.CharacterStyle
-                    public void updateDrawState(TextPaint textPaint) {
-                        textPaint.setAlpha((int) (textPaint.getAlpha() * 0.66f));
-                    }
-                }, length, panel.title.length(), 33);
-                ((SpannableStringBuilder) panel.title).append((CharSequence) str);
+                return panel;
             }
+            if (TextUtils.isEmpty(str2)) {
+                panel.title = new SpannableStringBuilder(musicSpan()).append((CharSequence) " ").append((CharSequence) str);
+                return panel;
+            }
+            SpannableStringBuilder append = new SpannableStringBuilder(musicSpan()).append((CharSequence) " ").append((CharSequence) str2);
+            panel.title = append;
+            int length = append.length();
+            ((SpannableStringBuilder) panel.title).append((CharSequence) " ・ ");
+            ((SpannableStringBuilder) panel.title).setSpan(new CharacterStyle() { // from class: org.telegram.ui.Stories.StoryCaptionView.Panel.1
+                @Override // android.text.style.CharacterStyle
+                public void updateDrawState(TextPaint textPaint) {
+                    textPaint.setAlpha((int) (textPaint.getAlpha() * 0.66f));
+                }
+            }, length, panel.title.length(), 33);
+            ((SpannableStringBuilder) panel.title).append((CharSequence) str);
             return panel;
         }
 
@@ -808,7 +808,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r6v0, types: [java.lang.CharSequence] */
+        /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.CharSequence] */
         public void draw(Canvas canvas, float f) {
             if (this.titleLayout == null) {
                 CharSequence charSequence = this.title;
@@ -819,8 +819,8 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 this.titleLayout = new Text(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
             }
             if (this.textLayout == null || this.updateText) {
-                ?? r6 = this.text;
-                this.textLayout = new Text(r6 != 0 ? r6 : "", 14.0f);
+                ?? r7 = this.text;
+                this.textLayout = new Text(r7 != 0 ? r7 : "", 14.0f);
             }
             float f2 = this.animatedSmall.set(this.small);
             this.backgroundPaint.setColor(TLObject.FLAG_30);
@@ -950,7 +950,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 this.clickDetector = new SpoilersClickDetector(StoryCaptionTextView.this, arrayList, new SpoilersClickDetector.OnSpoilerClickedListener() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.Components.spoilers.SpoilersClickDetector.OnSpoilerClickedListener
                     public final void onSpoilerClicked(SpoilerEffect spoilerEffect, float f, float f2) {
-                        StoryCaptionView.StoryCaptionTextView.TextState.this.lambda$new$2(spoilerEffect, f, f2);
+                        StoryCaptionView.StoryCaptionTextView.TextState.$r8$lambda$PHafEDmJqSyElN4XcBMCufaaOX0(StoryCaptionView.StoryCaptionTextView.TextState.this, spoilerEffect, f, f2);
                     }
                 });
                 LoadingDrawable loadingDrawable = new LoadingDrawable();
@@ -961,37 +961,26 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 loadingDrawable.setCallback(StoryCaptionTextView.this);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$2(SpoilerEffect spoilerEffect, float f, float f2) {
+            public static /* synthetic */ void $r8$lambda$PHafEDmJqSyElN4XcBMCufaaOX0(final TextState textState, SpoilerEffect spoilerEffect, float f, float f2) {
                 if (StoryCaptionTextView.this.isSpoilersRevealed) {
                     return;
                 }
                 spoilerEffect.setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StoryCaptionView.StoryCaptionTextView.TextState.this.lambda$new$1();
+                        StoryCaptionView.StoryCaptionTextView.this.post(new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda6
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                StoryCaptionView.StoryCaptionTextView.this.isSpoilersRevealed = true;
+                            }
+                        });
                     }
                 });
                 float sqrt = (float) Math.sqrt(Math.pow(StoryCaptionTextView.this.getWidth(), 2.0d) + Math.pow(StoryCaptionTextView.this.getHeight(), 2.0d));
-                Iterator it = this.spoilers.iterator();
+                Iterator it = textState.spoilers.iterator();
                 while (it.hasNext()) {
                     ((SpoilerEffect) it.next()).startRipple(f, f2, sqrt);
                 }
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$1() {
-                StoryCaptionTextView.this.post(new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        StoryCaptionView.StoryCaptionTextView.TextState.this.lambda$new$0();
-                    }
-                });
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$0() {
-                StoryCaptionTextView.this.isSpoilersRevealed = true;
             }
 
             public void setup(CharSequence charSequence, Panel panel, Panel panel2) {
@@ -1002,7 +991,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                     panel.listen(StoryCaptionTextView.this, new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryCaptionView.StoryCaptionTextView.TextState.this.lambda$setup$3();
+                            StoryCaptionView.StoryCaptionTextView.TextState.$r8$lambda$sDzncH1g_gmTshtGC0V-pzm5Jao(StoryCaptionView.StoryCaptionTextView.TextState.this);
                         }
                     });
                 }
@@ -1011,7 +1000,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                     panel3.listen(StoryCaptionTextView.this, new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda3
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryCaptionView.StoryCaptionTextView.TextState.this.lambda$setup$4();
+                            StoryCaptionView.StoryCaptionTextView.TextState.$r8$lambda$VLtx8o50g45noxdLqBmL2NsOYSs(StoryCaptionView.StoryCaptionTextView.TextState.this);
                         }
                     });
                 }
@@ -1020,8 +1009,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 storyCaptionTextView.requestLayout();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$setup$3() {
+            public static /* synthetic */ void $r8$lambda$sDzncH1g_gmTshtGC0V-pzm5Jao(TextState textState) {
                 StoryCaptionTextView storyCaptionTextView = StoryCaptionTextView.this;
                 storyCaptionTextView.sizeCached = 0;
                 storyCaptionTextView.requestLayout();
@@ -1029,8 +1017,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 StoryCaptionView.this.requestLayout();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$setup$4() {
+            public static /* synthetic */ void $r8$lambda$VLtx8o50g45noxdLqBmL2NsOYSs(TextState textState) {
                 StoryCaptionTextView storyCaptionTextView = StoryCaptionTextView.this;
                 storyCaptionTextView.sizeCached = 0;
                 storyCaptionTextView.requestLayout();
@@ -1157,6 +1144,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             }
 
             public void draw(Canvas canvas, float f) {
+                Canvas canvas2;
                 float f2 = this.translateT.set(this.translating);
                 if (f <= 0.0f) {
                     return;
@@ -1164,14 +1152,16 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 float lerp = AndroidUtilities.lerp(f, 0.7f * f, f2);
                 if (lerp >= 1.0f) {
                     drawInternal(canvas, f2);
+                    canvas2 = canvas;
                 } else {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, StoryCaptionView.this.getWidth(), StoryCaptionView.this.getHeight(), (int) (lerp * 255.0f), 31);
-                    drawInternal(canvas, f2);
-                    canvas.restore();
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, StoryCaptionView.this.getWidth(), StoryCaptionView.this.getHeight(), (int) (lerp * 255.0f), 31);
+                    drawInternal(canvas2, f2);
+                    canvas2.restore();
                 }
                 if (f2 > 0.0f || this.translating) {
                     this.loadingDrawable.setAlpha((int) (f2 * 255.0f * lerp));
-                    this.loadingDrawable.draw(canvas);
+                    this.loadingDrawable.draw(canvas2);
                     StoryCaptionTextView.this.invalidate();
                 }
             }
@@ -1277,7 +1267,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                                 float f3 = lineInfo.finalX;
                                 if (f2 == f3) {
                                     if (StoryCaptionTextView.this.progressToExpand != 0.0f) {
-                                        canvas.translate(r1.horizontalPadding + f3, r1.verticalPadding + i + lineInfo.finalY);
+                                        canvas.translate(r2.horizontalPadding + f3, r2.verticalPadding + i + lineInfo.finalY);
                                         canvas.saveLayerAlpha(0.0f, 0.0f, lineInfo.staticLayout.getWidth(), lineInfo.staticLayout.getHeight(), (int) (StoryCaptionTextView.this.progressToExpand * 255.0f), 31);
                                         drawLayout(lineInfo.staticLayout, canvas, this.spoilers);
                                         if (z) {
@@ -1340,7 +1330,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             }
 
             /* JADX WARN: Removed duplicated region for block: B:72:0x01b8  */
-            /* JADX WARN: Removed duplicated region for block: B:73:? A[RETURN, SYNTHETIC] */
+            /* JADX WARN: Removed duplicated region for block: B:74:0x01c0 A[RETURN] */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -1399,7 +1389,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                                         StoryCaptionTextView.this.postDelayed(new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda1
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                StoryCaptionView.StoryCaptionTextView.TextState.this.lambda$touch$5(linkSpanDrawable2);
+                                                StoryCaptionView.StoryCaptionTextView.TextState.$r8$lambda$DgGSnsk7A1WtNSWzGD643C1oPm4(StoryCaptionView.StoryCaptionTextView.TextState.this, linkSpanDrawable2);
                                             }
                                         }, ViewConfiguration.getLongPressTimeout());
                                         z2 = true;
@@ -1437,13 +1427,13 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                             }
                             this.pressedLink = null;
                             this.pressedEmoji = null;
-                        } else {
-                            if (motionEvent.getAction() == 3) {
-                                return false;
-                            }
-                            StoryCaptionTextView.this.clearPressedLinks();
-                            this.pressedEmoji = null;
+                            return true;
                         }
+                        if (motionEvent.getAction() == 3) {
+                            return false;
+                        }
+                        StoryCaptionTextView.this.clearPressedLinks();
+                        this.pressedEmoji = null;
                         return true;
                     }
                 }
@@ -1454,14 +1444,13 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$touch$5(LinkSpanDrawable linkSpanDrawable) {
-                LinkSpanDrawable linkSpanDrawable2 = this.pressedLink;
+            public static /* synthetic */ void $r8$lambda$DgGSnsk7A1WtNSWzGD643C1oPm4(TextState textState, LinkSpanDrawable linkSpanDrawable) {
+                LinkSpanDrawable linkSpanDrawable2 = textState.pressedLink;
                 if (linkSpanDrawable == linkSpanDrawable2 && linkSpanDrawable2 != null && (linkSpanDrawable2.getSpan() instanceof URLSpan)) {
                     StoryCaptionView storyCaptionView = StoryCaptionView.this;
-                    URLSpan uRLSpan = (URLSpan) this.pressedLink.getSpan();
+                    URLSpan uRLSpan = (URLSpan) textState.pressedLink.getSpan();
                     StoryCaptionTextView storyCaptionTextView = StoryCaptionTextView.this;
-                    final LinkSpanDrawable.LinkCollector linkCollector = this.links;
+                    final LinkSpanDrawable.LinkCollector linkCollector = textState.links;
                     Objects.requireNonNull(linkCollector);
                     storyCaptionView.onLinkLongPress(uRLSpan, storyCaptionTextView, new Runnable() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable
@@ -1469,7 +1458,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                             LinkSpanDrawable.LinkCollector.this.clear();
                         }
                     });
-                    this.pressedLink = null;
+                    textState.pressedLink = null;
                 }
             }
 
@@ -1610,7 +1599,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    StoryCaptionView.StoryCaptionTextView.this.lambda$animateUpdate$0(valueAnimator2);
+                    StoryCaptionView.StoryCaptionTextView.$r8$lambda$jHRPhq9GuxO-aOgO6rHZUHgXBEg(StoryCaptionView.StoryCaptionTextView.this, valueAnimator2);
                 }
             });
             this.updateAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.StoryCaptionView.StoryCaptionTextView.1
@@ -1629,11 +1618,11 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
             this.updateAnimator.start();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$animateUpdate$0(ValueAnimator valueAnimator) {
-            this.updateT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            invalidate();
-            requestLayout();
+        public static /* synthetic */ void $r8$lambda$jHRPhq9GuxO-aOgO6rHZUHgXBEg(StoryCaptionTextView storyCaptionTextView, ValueAnimator valueAnimator) {
+            storyCaptionTextView.getClass();
+            storyCaptionTextView.updateT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            storyCaptionTextView.invalidate();
+            storyCaptionTextView.requestLayout();
             StoryCaptionView.this.requestLayout();
         }
 
@@ -1660,15 +1649,18 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
 
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
+            Canvas canvas2;
             if (this.showMore != null) {
                 canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReceiveSmsCode, 31);
+                canvas2 = canvas;
             } else {
-                canvas.save();
+                canvas2 = canvas;
+                canvas2.save();
             }
-            this.state[0].draw(canvas, 1.0f - this.updateT);
+            this.state[0].draw(canvas2, 1.0f - this.updateT);
             TextState textState = this.state[1];
             if (textState != null) {
-                textState.draw(canvas, this.updateT);
+                textState.draw(canvas2, this.updateT);
             }
             if (this.showMore != null) {
                 float scrollY = this.showMoreY + StoryCaptionView.this.getScrollY();
@@ -1676,17 +1668,17 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
                 this.xRefGradinetPaint.setAlpha(clamp);
                 this.xRefPaint.setAlpha(clamp);
                 this.showMorePaint.setAlpha(clamp);
-                canvas.save();
-                canvas.translate(this.showMoreX - AndroidUtilities.dp(32.0f), scrollY);
-                canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(32.0f), this.showMore.getHeight() + this.verticalPadding, this.xRefGradinetPaint);
-                canvas.restore();
-                canvas.drawRect(this.showMoreX - AndroidUtilities.dp(16.0f), scrollY, getMeasuredWidth(), this.showMore.getHeight() + scrollY + this.verticalPadding, this.xRefPaint);
-                canvas.save();
-                canvas.translate(this.showMoreX, scrollY);
-                this.showMore.draw(canvas);
-                canvas.restore();
+                canvas2.save();
+                canvas2.translate(this.showMoreX - AndroidUtilities.dp(32.0f), scrollY);
+                canvas2.drawRect(0.0f, 0.0f, AndroidUtilities.dp(32.0f), this.showMore.getHeight() + this.verticalPadding, this.xRefGradinetPaint);
+                canvas2.restore();
+                canvas2.drawRect(this.showMoreX - AndroidUtilities.dp(16.0f), scrollY, getMeasuredWidth(), this.showMore.getHeight() + scrollY + this.verticalPadding, this.xRefPaint);
+                canvas2.save();
+                canvas2.translate(this.showMoreX, scrollY);
+                this.showMore.draw(canvas2);
+                canvas2.restore();
             }
-            canvas.restore();
+            canvas2.restore();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1726,14 +1718,13 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         @Override // android.view.View
         public boolean onTouchEvent(MotionEvent motionEvent) {
             TextState[] textStateArr;
-            if (StoryCaptionView.this.disableTouches || (textStateArr = this.state) == null) {
-                return false;
+            if (!StoryCaptionView.this.disableTouches && (textStateArr = this.state) != null) {
+                TextState textState = textStateArr[0];
+                if (textState.fullLayout != null) {
+                    return textState.touch(motionEvent) || super.onTouchEvent(motionEvent);
+                }
             }
-            TextState textState = textStateArr[0];
-            if (textState.fullLayout == null) {
-                return false;
-            }
-            return textState.touch(motionEvent) || super.onTouchEvent(motionEvent);
+            return false;
         }
 
         @Override // android.view.View

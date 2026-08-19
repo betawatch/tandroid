@@ -128,11 +128,13 @@ public final class DrmInitData implements Comparator, Parcelable {
         if (this == obj) {
             return true;
         }
-        if (obj == null || DrmInitData.class != obj.getClass()) {
-            return false;
+        if (obj != null && DrmInitData.class == obj.getClass()) {
+            DrmInitData drmInitData = (DrmInitData) obj;
+            if (Util.areEqual(this.schemeType, drmInitData.schemeType) && Arrays.equals(this.schemeDatas, drmInitData.schemeDatas)) {
+                return true;
+            }
         }
-        DrmInitData drmInitData = (DrmInitData) obj;
-        return Util.areEqual(this.schemeType, drmInitData.schemeType) && Arrays.equals(this.schemeDatas, drmInitData.schemeDatas);
+        return false;
     }
 
     @Override // java.util.Comparator

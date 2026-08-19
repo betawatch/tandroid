@@ -64,11 +64,13 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
         if (this == obj) {
             return true;
         }
-        if (obj == null || MdtaMetadataEntry.class != obj.getClass()) {
-            return false;
+        if (obj != null && MdtaMetadataEntry.class == obj.getClass()) {
+            MdtaMetadataEntry mdtaMetadataEntry = (MdtaMetadataEntry) obj;
+            if (this.key.equals(mdtaMetadataEntry.key) && Arrays.equals(this.value, mdtaMetadataEntry.value) && this.localeIndicator == mdtaMetadataEntry.localeIndicator && this.typeIndicator == mdtaMetadataEntry.typeIndicator) {
+                return true;
+            }
         }
-        MdtaMetadataEntry mdtaMetadataEntry = (MdtaMetadataEntry) obj;
-        return this.key.equals(mdtaMetadataEntry.key) && Arrays.equals(this.value, mdtaMetadataEntry.value) && this.localeIndicator == mdtaMetadataEntry.localeIndicator && this.typeIndicator == mdtaMetadataEntry.typeIndicator;
+        return false;
     }
 
     public int hashCode() {

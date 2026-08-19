@@ -21,12 +21,12 @@ final class zzgz extends zzhb {
         this.zze = 0;
         int i3 = this.zzc + this.zzd;
         this.zzc = i3;
-        if (i3 > 0) {
-            this.zzd = i3;
-            this.zzc = 0;
-        } else {
+        if (i3 <= 0) {
             this.zzd = 0;
+            return i2;
         }
+        this.zzd = i3;
+        this.zzc = 0;
         return i2;
     }
 }

@@ -148,7 +148,7 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
     }
 
     private static byte[] getExtraData(String str, List<byte[]> list) {
-        str.hashCode();
+        str.getClass();
         switch (str) {
             case "audio/vorbis":
                 return getVorbisExtraData(list);

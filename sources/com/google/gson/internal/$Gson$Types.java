@@ -204,15 +204,15 @@ public abstract class $Gson$Types {
         return resolve(type, cls, type2, new HashMap());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x00df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x00dc, code lost:
     
-        if (r0 == null) goto L63;
+        if (r0 == null) goto L61;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x00e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x00de, code lost:
     
         r12.put(r0, r11);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x00e4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x00e1, code lost:
     
         return r11;
      */
@@ -220,7 +220,7 @@ public abstract class $Gson$Types {
     /* JADX WARN: Type inference failed for: r11v0, types: [java.lang.reflect.Type] */
     /* JADX WARN: Type inference failed for: r11v1, types: [java.lang.reflect.Type] */
     /* JADX WARN: Type inference failed for: r11v10, types: [java.lang.Object, java.lang.reflect.Type] */
-    /* JADX WARN: Type inference failed for: r11v13, types: [java.lang.reflect.Type] */
+    /* JADX WARN: Type inference failed for: r11v11, types: [java.lang.reflect.Type] */
     /* JADX WARN: Type inference failed for: r11v2, types: [java.lang.reflect.WildcardType] */
     /* JADX WARN: Type inference failed for: r11v3, types: [java.lang.reflect.WildcardType] */
     /* JADX WARN: Type inference failed for: r11v4, types: [java.lang.reflect.WildcardType] */
@@ -239,10 +239,11 @@ public abstract class $Gson$Types {
             if (type2 instanceof TypeVariable) {
                 TypeVariable typeVariable2 = type2;
                 Type type3 = (Type) map.get(typeVariable2);
+                Class cls2 = Void.TYPE;
                 if (type3 != null) {
-                    return type3 == Void.TYPE ? type2 : type3;
+                    return type3 == cls2 ? type2 : type3;
                 }
-                map.put(typeVariable2, Void.TYPE);
+                map.put(typeVariable2, cls2);
                 if (typeVariable == null) {
                     typeVariable = typeVariable2;
                 }
@@ -252,12 +253,12 @@ public abstract class $Gson$Types {
                 }
             } else {
                 if (type2 instanceof Class) {
-                    Class cls2 = type2;
-                    if (cls2.isArray()) {
-                        Class<?> componentType = cls2.getComponentType();
+                    Class cls3 = type2;
+                    if (cls3.isArray()) {
+                        Class<?> componentType = cls3.getComponentType();
                         Type resolve = resolve(type, cls, componentType, map);
                         if (equal(componentType, resolve)) {
-                            type2 = cls2;
+                            type2 = cls3;
                         } else {
                             newParameterizedTypeWithOwner = arrayOf(resolve);
                             type2 = newParameterizedTypeWithOwner;
@@ -317,14 +318,13 @@ public abstract class $Gson$Types {
 
     private static Type resolveTypeVariable(Type type, Class cls, TypeVariable typeVariable) {
         Class declaringClassOf = declaringClassOf(typeVariable);
-        if (declaringClassOf == null) {
-            return typeVariable;
+        if (declaringClassOf != null) {
+            Type genericSupertype = getGenericSupertype(type, cls, declaringClassOf);
+            if (genericSupertype instanceof ParameterizedType) {
+                return ((ParameterizedType) genericSupertype).getActualTypeArguments()[indexOf(declaringClassOf.getTypeParameters(), typeVariable)];
+            }
         }
-        Type genericSupertype = getGenericSupertype(type, cls, declaringClassOf);
-        if (!(genericSupertype instanceof ParameterizedType)) {
-            return typeVariable;
-        }
-        return ((ParameterizedType) genericSupertype).getActualTypeArguments()[indexOf(declaringClassOf.getTypeParameters(), typeVariable)];
+        return typeVariable;
     }
 
     private static int indexOf(Object[] objArr, Object obj) {
@@ -350,11 +350,13 @@ public abstract class $Gson$Types {
     }
 
     public static boolean requiresOwnerType(Type type) {
-        if (!(type instanceof Class)) {
-            return false;
+        if (type instanceof Class) {
+            Class cls = (Class) type;
+            if (!Modifier.isStatic(cls.getModifiers()) && cls.getDeclaringClass() != null) {
+                return true;
+            }
         }
-        Class cls = (Class) type;
-        return (Modifier.isStatic(cls.getModifiers()) || cls.getDeclaringClass() == null) ? false : true;
+        return false;
     }
 
     private static final class ParameterizedTypeImpl implements ParameterizedType, Serializable {

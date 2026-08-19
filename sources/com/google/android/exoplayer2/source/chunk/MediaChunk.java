@@ -20,7 +20,7 @@ public abstract class MediaChunk extends Chunk {
     public long getNextChunkIndex() {
         long j = this.chunkIndex;
         if (j != -1) {
-            return 1 + j;
+            return j + 1;
         }
         return -1L;
     }

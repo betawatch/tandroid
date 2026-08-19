@@ -64,7 +64,7 @@ public class ChooseSpeedLayout {
         this.slider.setOnValueChange(new Utilities.Callback2() { // from class: org.telegram.ui.ChooseSpeedLayout$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                ChooseSpeedLayout.lambda$new$1(ChooseSpeedLayout.Callback.this, (Float) obj, (Boolean) obj2);
+                ChooseSpeedLayout.Callback.this.onSpeedSelected((((Float) obj).floatValue() * 2.3f) + 0.2f, ((Boolean) obj2).booleanValue(), false);
             }
         });
         this.speedSwipeBackLayout.addView((View) this.slider, LayoutHelper.createLinear(-1, 44));
@@ -134,11 +134,6 @@ public class ChooseSpeedLayout {
         });
         addItem6.setSelectorColor(268435455);
         this.speedItems[4] = addItem6;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(Callback callback, Float f, Boolean bool) {
-        callback.onSpeedSelected((f.floatValue() * 2.3f) + 0.2f, bool.booleanValue(), false);
     }
 
     public void update(float f, boolean z) {

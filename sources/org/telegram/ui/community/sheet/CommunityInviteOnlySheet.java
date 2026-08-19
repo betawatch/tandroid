@@ -24,7 +24,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommunityInviteOnlySheet extends BottomSheetWithRecyclerListView {
     private UniversalAdapter adapter;
     private ButtonWithCounterView cancelButton;
@@ -53,7 +53,7 @@ public class CommunityInviteOnlySheet extends BottomSheetWithRecyclerListView {
         this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.sheet.CommunityInviteOnlySheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityInviteOnlySheet.this.lambda$new$0(view);
+                CommunityInviteOnlySheet.this.dismiss();
             }
         });
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
@@ -69,7 +69,7 @@ public class CommunityInviteOnlySheet extends BottomSheetWithRecyclerListView {
         this.messageButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.sheet.CommunityInviteOnlySheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommunityInviteOnlySheet.this.lambda$new$1(runnable, view);
+                CommunityInviteOnlySheet.$r8$lambda$8e6LLKoxETxXoDL0Di9DpO5wsLg(CommunityInviteOnlySheet.this, runnable, view);
             }
         });
         CommunityPendingInviteOnlyCell communityPendingInviteOnlyCell = new CommunityPendingInviteOnlyCell(context);
@@ -96,15 +96,10 @@ public class CommunityInviteOnlySheet extends BottomSheetWithRecyclerListView {
         this.adapter.update(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$8e6LLKoxETxXoDL0Di9DpO5wsLg(CommunityInviteOnlySheet communityInviteOnlySheet, Runnable runnable, View view) {
+        communityInviteOnlySheet.getClass();
         runnable.run();
-        lambda$new$0();
+        communityInviteOnlySheet.dismiss();
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView

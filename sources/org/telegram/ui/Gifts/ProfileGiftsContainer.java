@@ -172,7 +172,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     AndroidUtilities.doOnLayout(page.listView, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileGiftsContainer.lambda$setPaddingTop$0(ProfileGiftsContainer.Page.this, paddingTop2);
+                            ProfileGiftsContainer.Page.this.listView.scrollBy(0, paddingTop2);
                         }
                     });
                 }
@@ -180,11 +180,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             updateTabsY();
             updateButton();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setPaddingTop$0(Page page, int i) {
-        page.listView.scrollBy(0, i);
     }
 
     public static class Page extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -506,7 +501,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 this.emptyView1Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda20
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ProfileGiftsContainer.Page.this.lambda$updateEmptyView$0(view);
+                        ProfileGiftsContainer.Page.$r8$lambda$r-7U-Cm0UBKiqRUvT2lVOdhhAc0(ProfileGiftsContainer.Page.this, view);
                     }
                 });
                 this.emptyView1Button.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f));
@@ -546,7 +541,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             this.emptyView2Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileGiftsContainer.Page.this.lambda$updateEmptyView$1(view);
+                    ProfileGiftsContainer.Page.this.parent.addGifts();
                 }
             });
             addView(this.emptyView2, LayoutHelper.createFrame(-1, -1.0f, 119, 0.0f, -12.0f, 0.0f, 0.0f));
@@ -557,17 +552,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateEmptyView$0(View view) {
-            StarsController.GiftsList giftsList = this.list;
+        public static /* synthetic */ void $r8$lambda$r-7U-Cm0UBKiqRUvT2lVOdhhAc0(Page page, View view) {
+            StarsController.GiftsList giftsList = page.list;
             if (giftsList != null) {
                 giftsList.resetFilters();
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateEmptyView$1(View view) {
-            this.parent.addGifts();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -605,16 +594,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileGiftsContainer.Page.lambda$setReordering$2(BaseFragment.this);
+                            ((ProfileActivity) BaseFragment.this).scrollToSharedMedia(true);
                         }
                     });
                 }
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setReordering$2(BaseFragment baseFragment) {
-            ((ProfileActivity) baseFragment).scrollToSharedMedia(true);
         }
 
         public void resetReordering() {
@@ -676,11 +660,15 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             final int max = Math.max(1, (giftsList3 == null || (i2 = giftsList3.totalCount) == 0) ? 3 : Math.min(3, i2));
             StarsController.GiftsList giftsList4 = this.list;
             if (giftsList4 != null) {
-                Iterator it = giftsList4.gifts.iterator();
+                ArrayList arrayList2 = giftsList4.gifts;
+                int size = arrayList2.size();
+                int i3 = 0;
                 loop0: while (true) {
                     i = 3;
-                    while (it.hasNext()) {
-                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) it.next();
+                    while (i3 < size) {
+                        Object obj = arrayList2.get(i3);
+                        i3++;
+                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                         arrayList.add(GiftSheet.GiftCell.Factory.asStarGift(0, savedStarGift, true, false, this.isCollection).setReordering(this.reordering && (this.list != this.parent.list || savedStarGift.pinned_to_top)));
                         i--;
                         if (i == 0) {
@@ -690,13 +678,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
                 StarsController.GiftsList giftsList5 = this.list;
                 if (giftsList5.loading || !giftsList5.endReached) {
-                    int i3 = 0;
+                    int i4 = 0;
                     while (true) {
-                        if (i3 >= (i <= 0 ? 3 : i)) {
+                        if (i4 >= (i <= 0 ? 3 : i)) {
                             break;
                         }
-                        i3++;
-                        arrayList.add(UItem.asFlicker(i3, 34).setSpanCount(1));
+                        i4++;
+                        arrayList.add(UItem.asFlicker(i4, 34).setSpanCount(1));
                     }
                 }
             }
@@ -716,7 +704,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda22
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$fillItems$3(max);
+                        ProfileGiftsContainer.Page.$r8$lambda$Z7amVsYW_UG8VPYOeJYnupeOwHw(ProfileGiftsContainer.Page.this, max);
                     }
                 });
             }
@@ -734,9 +722,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$fillItems$3(int i) {
-            UniversalRecyclerView universalRecyclerView = this.listView;
+        public static /* synthetic */ void $r8$lambda$Z7amVsYW_UG8VPYOeJYnupeOwHw(Page page, int i) {
+            UniversalRecyclerView universalRecyclerView = page.listView;
             if (universalRecyclerView != null) {
                 universalRecyclerView.setSpanCount(i);
             }
@@ -774,30 +761,24 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider).setOnGiftUpdatedListener(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemClick$4();
+                        ProfileGiftsContainer.Page.this.update(false);
                     }
                 }).setOnBoughtGift(new StarGiftSheet.BoughtGiftCallback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda5
                     @Override // org.telegram.ui.Stars.StarGiftSheet.BoughtGiftCallback
                     public final void onBoughtGift(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z3) {
-                        ProfileGiftsContainer.Page.this.lambda$onItemClick$5(savedStarGift, tL_starGiftUnique, j, z3);
+                        ProfileGiftsContainer.Page.$r8$lambda$yqZwdVAm3lL53bxx4s379M06_NY(ProfileGiftsContainer.Page.this, savedStarGift, tL_starGiftUnique, j, z3);
                     }
                 }).set(savedStarGift, this.list).show();
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$4() {
-            update(false);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$5(TL_stars.SavedStarGift savedStarGift, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z) {
-            this.list.gifts.remove(savedStarGift);
-            update(true);
-            if (j == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                BulletinFactory.of(this.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftTitle), LocaleController.formatString(R.string.BoughtResoldGiftText, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','))).hideAfterBottomSheet(false).show();
+        public static /* synthetic */ void $r8$lambda$yqZwdVAm3lL53bxx4s379M06_NY(Page page, TL_stars.SavedStarGift savedStarGift, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z) {
+            page.list.gifts.remove(savedStarGift);
+            page.update(true);
+            if (j == UserConfig.getInstance(page.currentAccount).getClientUserId()) {
+                BulletinFactory.of(page.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftTitle), LocaleController.formatString(R.string.BoughtResoldGiftText, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','))).hideAfterBottomSheet(false).show();
             } else {
-                BulletinFactory.of(this.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, j))).hideAfterBottomSheet(false).show();
+                BulletinFactory.of(page.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(page.currentAccount, j))).hideAfterBottomSheet(false).show();
             }
             LaunchActivity launchActivity = LaunchActivity.instance;
             if (launchActivity != null) {
@@ -809,6 +790,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             boolean z;
             boolean z2;
             final String str;
+            float f3;
             int i2 = 0;
             if (this.list == null || !(view instanceof GiftSheet.GiftCell)) {
                 return false;
@@ -844,32 +826,37 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 scrollView.addView(linearLayout);
                 linearLayout.setOrientation(1);
                 makeSwipeback.addView(scrollView, LayoutHelper.createLinear(-1, -2));
-                float f3 = 0.12f;
                 if (this.parent.collections.getCollections().size() + 1 < MessagesController.getInstance(this.currentAccount).config.stargiftsCollectionsLimit.get()) {
                     ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), false, false, this.resourcesProvider);
                     actionBarMenuSubItem.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
                     int i3 = Theme.key_actionBarDefaultSubmenuItem;
+                    f3 = 18.0f;
                     actionBarMenuSubItem.setColors(Theme.getColor(i3, this.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
                     actionBarMenuSubItem.setSelectorColor(Theme.multAlpha(Theme.getColor(i3, this.resourcesProvider), 0.12f));
                     actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.Gift2NewCollection), R.drawable.menu_folder_add);
                     actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda11
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            ProfileGiftsContainer.Page.this.lambda$onItemLongPress$9(makeOptions, savedStarGift, view2);
+                            ProfileGiftsContainer.Page.$r8$lambda$gsNSXepkzRMHwxJ28XR3xVrTcuM(ProfileGiftsContainer.Page.this, makeOptions, savedStarGift, view2);
                         }
                     });
                     linearLayout.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
+                } else {
+                    f3 = 18.0f;
                 }
-                Iterator it = this.parent.collections.getCollections().iterator();
-                while (it.hasNext()) {
-                    final TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) it.next();
+                ArrayList collections = this.parent.collections.getCollections();
+                int size = collections.size();
+                int i4 = 0;
+                while (i4 < size) {
+                    int i5 = i4 + 1;
+                    final TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) collections.get(i4);
                     final boolean contains = this.parent.collections.getListById(tL_starGiftCollection.collection_id).contains(savedStarGift);
                     ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(getContext(), 2, false, false, this.resourcesProvider);
                     actionBarMenuSubItem2.setChecked(contains);
-                    actionBarMenuSubItem2.setPadding(AndroidUtilities.dp(18.0f), i2, AndroidUtilities.dp(18.0f), i2);
-                    int i4 = Theme.key_actionBarDefaultSubmenuItem;
-                    actionBarMenuSubItem2.setColors(Theme.getColor(i4, this.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
-                    actionBarMenuSubItem2.setSelectorColor(Theme.multAlpha(Theme.getColor(i4, this.resourcesProvider), f3));
+                    actionBarMenuSubItem2.setPadding(AndroidUtilities.dp(f3), i2, AndroidUtilities.dp(f3), i2);
+                    int i6 = Theme.key_actionBarDefaultSubmenuItem;
+                    actionBarMenuSubItem2.setColors(Theme.getColor(i6, this.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
+                    actionBarMenuSubItem2.setSelectorColor(Theme.multAlpha(Theme.getColor(i6, this.resourcesProvider), 0.12f));
                     if (tL_starGiftCollection.icon != null) {
                         AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, tL_starGiftCollection.icon) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.6
                             @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
@@ -890,12 +877,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda12
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            ProfileGiftsContainer.Page.this.lambda$onItemLongPress$10(contains, tL_starGiftCollection, savedStarGift, makeOptions, view2);
+                            ProfileGiftsContainer.Page.$r8$lambda$IrBRExhSkIiff6P_cKay1kcH2lE(ProfileGiftsContainer.Page.this, contains, tL_starGiftCollection, savedStarGift, makeOptions, view2);
                         }
                     });
                     linearLayout.addView(actionBarMenuSubItem2, LayoutHelper.createLinear(-1, -2));
-                    it = it;
-                    f3 = 0.12f;
+                    i4 = i5;
                     i2 = 0;
                 }
                 makeOptions.add(R.drawable.msg_addfolder, LocaleController.getString(R.string.Gift2AddToCollection), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda13
@@ -912,20 +898,20 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     makeOptions.add(z3 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z3 ? R.string.Gift2Unpin : R.string.Gift2Pin), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda14
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileGiftsContainer.Page.this.lambda$onItemLongPress$13(savedStarGift, giftCell, view);
+                            ProfileGiftsContainer.Page.$r8$lambda$NmMafLmZUQ_uhp7q9xhzhRGfNys(ProfileGiftsContainer.Page.this, savedStarGift, giftCell, view);
                         }
                     });
                     makeOptions.addIf(savedStarGift.pinned_to_top, R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda15
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileGiftsContainer.Page.this.lambda$onItemLongPress$14();
+                            ProfileGiftsContainer.Page.this.setReordering(true);
                         }
                     });
                 } else if (this.parent.canReorder() && this.isCollection) {
                     makeOptions.add(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda16
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileGiftsContainer.Page.this.lambda$onItemLongPress$15();
+                            ProfileGiftsContainer.Page.this.setReordering(true);
                         }
                     });
                 }
@@ -941,27 +927,27 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     makeOptions.add(isWorn ? R.drawable.menu_takeoff : R.drawable.menu_wear, LocaleController.getString(isWorn ? R.string.Gift2Unwear : R.string.Gift2Wear), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda17
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ProfileGiftsContainer.Page.this.lambda$onItemLongPress$16(savedStarGift);
+                            ProfileGiftsContainer.Page.$r8$lambda$22Zu72yvascISDCaFcGuXSK9-Co(ProfileGiftsContainer.Page.this, savedStarGift);
                         }
                     });
                 }
                 makeOptions.addIf(str != null, R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemLongPress$17(str);
+                        ProfileGiftsContainer.Page.$r8$lambda$Q9jx5wy94RN0WjaZIWVsi3GGGrY(ProfileGiftsContainer.Page.this, str);
                     }
                 });
                 makeOptions.addIf(str != null, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda19
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemLongPress$18(savedStarGift);
+                        ProfileGiftsContainer.Page.$r8$lambda$BjZEj-QRhu0EVIM2b9dGbCKJIcI(ProfileGiftsContainer.Page.this, savedStarGift);
                     }
                 });
             } else if (this.parent.canReorder() && this.isCollection) {
                 makeOptions.add(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemLongPress$19();
+                        ProfileGiftsContainer.Page.this.setReordering(true);
                     }
                 });
             }
@@ -970,7 +956,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 makeOptions.add(z4 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z4 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemLongPress$20(savedStarGift, giftCell);
+                        ProfileGiftsContainer.Page.$r8$lambda$Cl4M4ma-wd6yFaa2_xBdqB_GKI8(ProfileGiftsContainer.Page.this, savedStarGift, giftCell);
                     }
                 });
             }
@@ -979,28 +965,31 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 makeOptions.addIf(DialogObject.getPeerDialogId(((TL_stars.TL_starGiftUnique) starGift2).owner_id) == UserConfig.getInstance(this.currentAccount).getClientUserId(), R.drawable.menu_transfer, LocaleController.getString(R.string.Gift2TransferOption), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemLongPress$21(savedStarGift);
+                        ProfileGiftsContainer.Page.$r8$lambda$CehAtahLdAkMlaP--_9tgjrzAew(ProfileGiftsContainer.Page.this, savedStarGift);
                     }
                 });
             }
             if (this.parent.collections.isMine() && this.isCollection) {
-                z2 = true;
-                z = false;
-                makeOptions.add(R.drawable.msg_removefolder, (CharSequence) LocaleController.getString(R.string.Gift2RemoveFromCollection), true, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda10
+                int i7 = R.drawable.msg_removefolder;
+                String string = LocaleController.getString(R.string.Gift2RemoveFromCollection);
+                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.Page.this.lambda$onItemLongPress$22(savedStarGift, makeOptions);
+                        ProfileGiftsContainer.Page.$r8$lambda$Rq9AYj9DSvTbJ41LS_QJsaeHnQA(ProfileGiftsContainer.Page.this, savedStarGift, makeOptions);
                     }
-                }).makeMultiline(false).cutTextInFancyHalf();
+                };
+                z = true;
+                z2 = false;
+                makeOptions.add(i7, (CharSequence) string, true, runnable).makeMultiline(false).cutTextInFancyHalf();
             } else {
-                z = false;
-                z2 = true;
+                z = true;
+                z2 = false;
             }
             if (makeOptions.getItemsCount() <= 0) {
-                return z;
+                return z2;
             }
             makeOptions.setGravity(5);
-            makeOptions.setBlur(z2);
+            makeOptions.setBlur(z);
             makeOptions.allowMoveScrim();
             Point point = AndroidUtilities.displaySize;
             int min = Math.min(point.x, point.y);
@@ -1012,106 +1001,87 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$9(ItemOptions itemOptions, final TL_stars.SavedStarGift savedStarGift, View view) {
+        public static /* synthetic */ void $r8$lambda$gsNSXepkzRMHwxJ28XR3xVrTcuM(final Page page, ItemOptions itemOptions, final TL_stars.SavedStarGift savedStarGift, View view) {
+            page.getClass();
             itemOptions.dismiss();
-            this.parent.openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda24
+            page.parent.openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda24
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ProfileGiftsContainer.Page.this.lambda$onItemLongPress$8(savedStarGift, (String) obj);
+                    r0.parent.collections.createCollection((String) obj, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda26
+                        @Override // org.telegram.messenger.Utilities.Callback
+                        public final void run(Object obj2) {
+                            ProfileGiftsContainer.Page.$r8$lambda$LVzc1fU4JWmf4dww4iE92nc8t0U(ProfileGiftsContainer.Page.this, r2, (TL_stars.TL_starGiftCollection) obj2);
+                        }
+                    });
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$8(final TL_stars.SavedStarGift savedStarGift, String str) {
-            this.parent.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda26
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    ProfileGiftsContainer.Page.this.lambda$onItemLongPress$7(savedStarGift, (TL_stars.TL_starGiftCollection) obj);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$7(TL_stars.SavedStarGift savedStarGift, TL_stars.TL_starGiftCollection tL_starGiftCollection) {
-            this.parent.collections.addGift(tL_starGiftCollection.collection_id, savedStarGift, true);
-            this.parent.fillTabs(true);
-            ViewPagerFixed.TabsView tabsView = this.parent.tabsView;
+        public static /* synthetic */ void $r8$lambda$LVzc1fU4JWmf4dww4iE92nc8t0U(Page page, TL_stars.SavedStarGift savedStarGift, TL_stars.TL_starGiftCollection tL_starGiftCollection) {
+            page.parent.collections.addGift(tL_starGiftCollection.collection_id, savedStarGift, true);
+            page.parent.fillTabs(true);
+            ViewPagerFixed.TabsView tabsView = page.parent.tabsView;
             int i = tL_starGiftCollection.collection_id;
-            tabsView.scrollToTab(i, this.parent.collections.indexOf(i) + 1);
-            if (this.parent.fragment instanceof ProfileActivity) {
-                ((ProfileActivity) this.parent.fragment).scrollToSharedMedia(true);
+            tabsView.scrollToTab(i, page.parent.collections.indexOf(i) + 1);
+            if (page.parent.fragment instanceof ProfileActivity) {
+                ((ProfileActivity) page.parent.fragment).scrollToSharedMedia(true);
             }
-            this.parent.updateTabsShown(true);
-            BulletinFactory.of(this.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, StarGiftSheet.getGiftName(savedStarGift.gift), tL_starGiftCollection.title))).show();
+            page.parent.updateTabsShown(true);
+            BulletinFactory.of(page.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, StarGiftSheet.getGiftName(savedStarGift.gift), tL_starGiftCollection.title))).show();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$10(boolean z, TL_stars.TL_starGiftCollection tL_starGiftCollection, TL_stars.SavedStarGift savedStarGift, ItemOptions itemOptions, View view) {
+        public static /* synthetic */ void $r8$lambda$IrBRExhSkIiff6P_cKay1kcH2lE(Page page, boolean z, TL_stars.TL_starGiftCollection tL_starGiftCollection, TL_stars.SavedStarGift savedStarGift, ItemOptions itemOptions, View view) {
             if (!z) {
-                this.parent.collections.addGift(tL_starGiftCollection.collection_id, savedStarGift, true);
-                BulletinFactory.of(this.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, StarGiftSheet.getGiftName(savedStarGift.gift), tL_starGiftCollection.title))).show();
+                page.parent.collections.addGift(tL_starGiftCollection.collection_id, savedStarGift, true);
+                BulletinFactory.of(page.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, StarGiftSheet.getGiftName(savedStarGift.gift), tL_starGiftCollection.title))).show();
             } else {
-                this.parent.collections.removeGift(tL_starGiftCollection.collection_id, savedStarGift);
-                BulletinFactory.of(this.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, StarGiftSheet.getGiftName(savedStarGift.gift), tL_starGiftCollection.title))).show();
+                page.parent.collections.removeGift(tL_starGiftCollection.collection_id, savedStarGift);
+                BulletinFactory.of(page.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, StarGiftSheet.getGiftName(savedStarGift.gift), tL_starGiftCollection.title))).show();
             }
             itemOptions.dismiss();
-            this.parent.updateTabsShown(true);
+            page.parent.updateTabsShown(true);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$13(TL_stars.SavedStarGift savedStarGift, GiftSheet.GiftCell giftCell, final View view) {
+        public static /* synthetic */ void $r8$lambda$NmMafLmZUQ_uhp7q9xhzhRGfNys(final Page page, TL_stars.SavedStarGift savedStarGift, GiftSheet.GiftCell giftCell, final View view) {
+            page.getClass();
             if (savedStarGift.unsaved) {
                 savedStarGift.unsaved = false;
                 giftCell.setStarsGift(savedStarGift, true, false);
                 TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                savestargift.stargift = this.list.getInput(savedStarGift);
+                savestargift.stargift = page.list.getInput(savedStarGift);
                 savestargift.unsave = savedStarGift.unsaved;
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(savestargift, null, 64);
+                ConnectionsManager.getInstance(page.currentAccount).sendRequest(savestargift, null, 64);
             }
             boolean z = savedStarGift.pinned_to_top;
             final boolean z2 = !z;
-            if (this.list.togglePinned(savedStarGift, z2, false)) {
-                new UnpinSheet(getContext(), this.parent.dialogId, savedStarGift, this.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda25
+            if (page.list.togglePinned(savedStarGift, z2, false)) {
+                new UnpinSheet(page.getContext(), page.parent.dialogId, savedStarGift, page.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda25
                     @Override // org.telegram.messenger.Utilities.Callback0Return
                     public final Object run() {
-                        BulletinFactory lambda$onItemLongPress$12;
-                        lambda$onItemLongPress$12 = ProfileGiftsContainer.Page.this.lambda$onItemLongPress$12(view, z2);
-                        return lambda$onItemLongPress$12;
+                        return ProfileGiftsContainer.Page.$r8$lambda$E5J4QxWroAcuP-vxCjutkkaJKVY(ProfileGiftsContainer.Page.this, view, z2);
                     }
                 }).show();
                 return;
             }
             if (!z) {
-                BulletinFactory.of(this.parent.fragment).createSimpleBulletin(R.raw.ic_pin, LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle)).show();
+                BulletinFactory.of(page.parent.fragment).createSimpleBulletin(R.raw.ic_pin, LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle)).show();
             } else {
-                BulletinFactory.of(this.parent.fragment).createSimpleBulletin(R.raw.ic_unpin, LocaleController.getString(R.string.Gift2Unpinned)).show();
+                BulletinFactory.of(page.parent.fragment).createSimpleBulletin(R.raw.ic_unpin, LocaleController.getString(R.string.Gift2Unpinned)).show();
             }
             ((GiftSheet.GiftCell) view).setPinned(z2, true);
-            this.listView.scrollToPosition(0);
+            page.listView.scrollToPosition(0);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ BulletinFactory lambda$onItemLongPress$12(View view, boolean z) {
+        public static /* synthetic */ BulletinFactory $r8$lambda$E5J4QxWroAcuP-vxCjutkkaJKVY(Page page, View view, boolean z) {
+            page.getClass();
             ((GiftSheet.GiftCell) view).setPinned(z, true);
-            this.listView.scrollToPosition(0);
-            return BulletinFactory.of(this.parent.fragment);
+            page.listView.scrollToPosition(0);
+            return BulletinFactory.of(page.parent.fragment);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$14() {
-            setReordering(true);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$15() {
-            setReordering(true);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$16(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.7
+        public static /* synthetic */ void $r8$lambda$22Zu72yvascISDCaFcGuXSK9-Co(Page page, TL_stars.SavedStarGift savedStarGift) {
+            page.getClass();
+            new StarGiftSheet(page.getContext(), page.currentAccount, page.parent.dialogId, page.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.7
                 @Override // org.telegram.ui.Stars.StarGiftSheet, org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1119,15 +1089,15 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }.set(savedStarGift, (StarsController.IGiftsList) null).toggleWear(false);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$17(String str) {
+        public static /* synthetic */ void $r8$lambda$Q9jx5wy94RN0WjaZIWVsi3GGGrY(Page page, String str) {
+            page.getClass();
             AndroidUtilities.addToClipboard(str);
-            BulletinFactory.of(this.parent.fragment).createCopyLinkBulletin(false).show();
+            BulletinFactory.of(page.parent.fragment).createCopyLinkBulletin(false).show();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$18(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.8
+        public static /* synthetic */ void $r8$lambda$BjZEj-QRhu0EVIM2b9dGbCKJIcI(Page page, TL_stars.SavedStarGift savedStarGift) {
+            page.getClass();
+            new StarGiftSheet(page.getContext(), page.currentAccount, page.parent.dialogId, page.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.8
                 @Override // org.telegram.ui.Stars.StarGiftSheet, org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1135,29 +1105,23 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }.set(savedStarGift, (StarsController.IGiftsList) null).onSharePressed(null);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$19() {
-            setReordering(true);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$20(TL_stars.SavedStarGift savedStarGift, GiftSheet.GiftCell giftCell) {
-            if (!this.isCollection && savedStarGift.pinned_to_top && !savedStarGift.unsaved) {
+        public static /* synthetic */ void $r8$lambda$Cl4M4ma-wd6yFaa2_xBdqB_GKI8(Page page, TL_stars.SavedStarGift savedStarGift, GiftSheet.GiftCell giftCell) {
+            if (!page.isCollection && savedStarGift.pinned_to_top && !savedStarGift.unsaved) {
                 giftCell.setPinned(false, true);
-                this.list.togglePinned(savedStarGift, false, false);
+                page.list.togglePinned(savedStarGift, false, false);
             }
             savedStarGift.unsaved = !savedStarGift.unsaved;
-            giftCell.setStarsGift(savedStarGift, true, this.isCollection);
-            this.parent.collections.updateGiftsUnsaved(savedStarGift, savedStarGift.unsaved);
+            giftCell.setStarsGift(savedStarGift, true, page.isCollection);
+            page.parent.collections.updateGiftsUnsaved(savedStarGift, savedStarGift.unsaved);
             TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-            savestargift.stargift = this.list.getInput(savedStarGift);
+            savestargift.stargift = page.list.getInput(savedStarGift);
             savestargift.unsave = savedStarGift.unsaved;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(savestargift, null);
+            ConnectionsManager.getInstance(page.currentAccount).sendRequest(savestargift, null);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$21(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.9
+        public static /* synthetic */ void $r8$lambda$CehAtahLdAkMlaP--_9tgjrzAew(Page page, TL_stars.SavedStarGift savedStarGift) {
+            page.getClass();
+            new StarGiftSheet(page.getContext(), page.currentAccount, page.parent.dialogId, page.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.9
                 @Override // org.telegram.ui.Stars.StarGiftSheet, org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1165,14 +1129,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }.set(savedStarGift, (StarsController.IGiftsList) null).openTransfer();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemLongPress$22(TL_stars.SavedStarGift savedStarGift, ItemOptions itemOptions) {
-            this.parent.collections.removeGift(this.list.collectionId, savedStarGift);
+        public static /* synthetic */ void $r8$lambda$Rq9AYj9DSvTbJ41LS_QJsaeHnQA(Page page, TL_stars.SavedStarGift savedStarGift, ItemOptions itemOptions) {
+            page.parent.collections.removeGift(page.list.collectionId, savedStarGift);
             itemOptions.dismiss();
-            this.parent.updateTabsShown(true);
-            TL_stars.TL_starGiftCollection findById = this.parent.collections.findById(this.list.collectionId);
+            page.parent.updateTabsShown(true);
+            TL_stars.TL_starGiftCollection findById = page.parent.collections.findById(page.list.collectionId);
             if (findById != null) {
-                BulletinFactory.of(this.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, StarGiftSheet.getGiftName(savedStarGift.gift), findById.title))).show();
+                BulletinFactory.of(page.parent.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, StarGiftSheet.getGiftName(savedStarGift.gift), findById.title))).show();
             }
         }
 
@@ -1195,9 +1158,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         return z ? this.viewPager.getCurrentPosition() >= this.collections.getCollections().size() : this.viewPager.getCurrentPosition() <= 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0304  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0311  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0307  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02f7  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0304  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x02fa  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1209,7 +1172,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.sendCollectionsOrder = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ProfileGiftsContainer.this.lambda$new$12();
+                ProfileGiftsContainer.this.collections.sendOrder();
             }
         };
         this.animatorBottomButtonVisibility = new BoolAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda4
@@ -1220,7 +1183,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
             @Override // me.vkryl.android.animator.FactorAnimator.Target
             public final void onFactorChanged(int i3, float f, float f2, FactorAnimator factorAnimator) {
-                ProfileGiftsContainer.this.lambda$new$14(i3, f, f2, factorAnimator);
+                ProfileGiftsContainer.this.updateButton();
             }
         }, CubicBezierInterpolator.EASE_OUT_QUINT, 380L, true);
         this.visibleHeight = AndroidUtilities.displaySize.y;
@@ -1366,9 +1329,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
             public void applyReorder(ArrayList arrayList) {
                 ArrayList arrayList2 = new ArrayList();
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    Integer num = (Integer) it.next();
+                int size = arrayList.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj = arrayList.get(i3);
+                    i3++;
+                    Integer num = (Integer) obj;
                     int intValue = num.intValue();
                     if (intValue != -1 && intValue != -2) {
                         arrayList2.add(num);
@@ -1377,7 +1343,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 ProfileGiftsContainer.this.collections.reorder(arrayList2);
                 Page currentPage = ProfileGiftsContainer.this.getCurrentPage();
                 if (currentPage != null) {
-                    int indexOf = !currentPage.isCollection ? 0 : ProfileGiftsContainer.this.collections.indexOf(currentPage.list.collectionId) + 1;
+                    int indexOf = currentPage.isCollection ? ProfileGiftsContainer.this.collections.indexOf(currentPage.list.collectionId) + 1 : 0;
                     ProfileGiftsContainer.this.tabsView.selectTab(indexOf, indexOf, 0.0f);
                 }
                 AndroidUtilities.cancelRunOnUIThread(ProfileGiftsContainer.this.sendCollectionsOrder);
@@ -1394,17 +1360,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                Boolean lambda$new$1;
-                lambda$new$1 = ProfileGiftsContainer.this.lambda$new$1((Integer) obj, (Integer) obj2);
-                return lambda$new$1;
+                return ProfileGiftsContainer.$r8$lambda$nqMuvew_6VlglUV0Nu-5O9lHCPo(ProfileGiftsContainer.this, (Integer) obj, (Integer) obj2);
             }
         });
         createTabsView.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                Boolean lambda$new$7;
-                lambda$new$7 = ProfileGiftsContainer.this.lambda$new$7(i, baseFragment, context, resourcesProvider, (Integer) obj, (View) obj2);
-                return lambda$new$7;
+                return ProfileGiftsContainer.$r8$lambda$iNCuUGGvJ_hcvtZVhlYkighZiNw(ProfileGiftsContainer.this, i, baseFragment, context, resourcesProvider, (Integer) obj, (View) obj2);
             }
         });
         addView(createTabsView, LayoutHelper.createFrame(-1, 42, 48));
@@ -1450,7 +1412,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProfileGiftsContainer.this.lambda$new$10(baseFragment, i, view);
+                ProfileGiftsContainer.$r8$lambda$knJkllwhqy7jjL3FgBDFE0n1qwE(ProfileGiftsContainer.this, baseFragment, i, view);
             }
         });
         Boolean bool = profileGiftsList.chat_notifications_enabled;
@@ -1483,7 +1445,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ProfileGiftsContainer.this.lambda$new$11(z, i, view);
+                        ProfileGiftsContainer.$r8$lambda$5u9VbnJFYji5-X9X63yk70xCBNk(ProfileGiftsContainer.this, z, i, view);
                     }
                 });
                 buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
@@ -1516,7 +1478,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProfileGiftsContainer.this.lambda$new$11(z, i, view);
+                ProfileGiftsContainer.$r8$lambda$5u9VbnJFYji5-X9X63yk70xCBNk(ProfileGiftsContainer.this, z, i, view);
             }
         });
         buttonWithCounterView2.setVisibility(!canSwitchNotify() ? 8 : 0);
@@ -1527,44 +1489,40 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         updateTabsShown(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$new$1(Integer num, Integer num2) {
-        resetReordering();
+    public static /* synthetic */ Boolean $r8$lambda$nqMuvew_6VlglUV0Nu-5O9lHCPo(ProfileGiftsContainer profileGiftsContainer, Integer num, Integer num2) {
+        profileGiftsContainer.resetReordering();
         if (num.intValue() == -1) {
-            createCollection();
+            profileGiftsContainer.createCollection();
             return Boolean.TRUE;
         }
         return Boolean.FALSE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$new$7(final int i, final BaseFragment baseFragment, final Context context, final Theme.ResourcesProvider resourcesProvider, Integer num, View view) {
+    public static /* synthetic */ Boolean $r8$lambda$iNCuUGGvJ_hcvtZVhlYkighZiNw(final ProfileGiftsContainer profileGiftsContainer, final int i, final BaseFragment baseFragment, final Context context, final Theme.ResourcesProvider resourcesProvider, Integer num, View view) {
         final TL_stars.TL_starGiftCollection tL_starGiftCollection;
-        int i2;
-        if (num.intValue() == -1 || num.intValue() == -2 || num.intValue() == 0 || this.reorderingCollections) {
+        profileGiftsContainer.getClass();
+        final int i2 = -1;
+        if (num.intValue() == -1 || num.intValue() == -2 || num.intValue() == 0 || profileGiftsContainer.reorderingCollections) {
             return Boolean.FALSE;
         }
         int i3 = 0;
         while (true) {
-            if (i3 >= this.collections.getCollections().size()) {
+            if (i3 >= profileGiftsContainer.collections.getCollections().size()) {
                 tL_starGiftCollection = null;
-                i2 = -1;
                 break;
             }
-            if (((TL_stars.TL_starGiftCollection) this.collections.getCollections().get(i3)).collection_id == num.intValue()) {
+            if (((TL_stars.TL_starGiftCollection) profileGiftsContainer.collections.getCollections().get(i3)).collection_id == num.intValue()) {
+                tL_starGiftCollection = (TL_stars.TL_starGiftCollection) profileGiftsContainer.collections.getCollections().get(i3);
                 i2 = i3;
-                tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.collections.getCollections().get(i3);
                 break;
             }
             i3++;
         }
-        final String publicUsername = DialogObject.getPublicUsername(MessagesController.getInstance(i).getUserOrChat(this.dialogId));
-        boolean isMine = this.collections.isMine();
+        final String publicUsername = DialogObject.getPublicUsername(MessagesController.getInstance(i).getUserOrChat(profileGiftsContainer.dialogId));
+        boolean isMine = profileGiftsContainer.collections.isMine();
         if (TextUtils.isEmpty(publicUsername) && !isMine) {
             return Boolean.FALSE;
         }
-        final TL_stars.TL_starGiftCollection tL_starGiftCollection2 = tL_starGiftCollection;
-        final int i4 = i2;
         ItemOptions addIf = ItemOptions.makeOptions(baseFragment, view).setScrimViewBackground(new Drawable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.3
             private final Drawable bg;
             private final Rect bgBounds = new Rect();
@@ -1591,8 +1549,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
 
             @Override // android.graphics.drawable.Drawable
-            public void setAlpha(int i5) {
-                this.bg.setAlpha(i5);
+            public void setAlpha(int i4) {
+                this.bg.setAlpha(i4);
             }
         }).addIf(isMine, R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
@@ -1602,31 +1560,31 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }).addIf(!TextUtils.isEmpty(publicUsername), R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                ProfileGiftsContainer.this.lambda$new$2(i, publicUsername, tL_starGiftCollection2, context, resourcesProvider, baseFragment);
+                ProfileGiftsContainer.$r8$lambda$ItGKC0q6jYyNj8CmF3DK6YWucmM(ProfileGiftsContainer.this, i, publicUsername, tL_starGiftCollection, context, resourcesProvider, baseFragment);
             }
         }).addIf(isMine, R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                ProfileGiftsContainer.this.lambda$new$4(tL_starGiftCollection);
+                ProfileGiftsContainer.$r8$lambda$pbVQKPliF9W73NVDudVT3BJDA4U(ProfileGiftsContainer.this, tL_starGiftCollection);
             }
         }).addIf(isMine, R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                ProfileGiftsContainer.this.lambda$new$5();
+                ProfileGiftsContainer.this.setReorderingCollections(true);
             }
         }).addIf(isMine, R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Gift2CollectionsDelete), true, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                ProfileGiftsContainer.this.lambda$new$6(i4, tL_starGiftCollection);
+                ProfileGiftsContainer.$r8$lambda$Io6EIMLsRSpnqPtoHV2mKImOUKo(ProfileGiftsContainer.this, i2, tL_starGiftCollection);
             }
         });
-        this.currentMenu = addIf;
+        profileGiftsContainer.currentMenu = addIf;
         addIf.show();
         return Boolean.TRUE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(int i, String str, TL_stars.TL_starGiftCollection tL_starGiftCollection, Context context, Theme.ResourcesProvider resourcesProvider, final BaseFragment baseFragment) {
+    public static /* synthetic */ void $r8$lambda$ItGKC0q6jYyNj8CmF3DK6YWucmM(ProfileGiftsContainer profileGiftsContainer, int i, String str, TL_stars.TL_starGiftCollection tL_starGiftCollection, Context context, Theme.ResourcesProvider resourcesProvider, final BaseFragment baseFragment) {
+        profileGiftsContainer.getClass();
         String str2 = MessagesController.getInstance(i).linkPrefix + "/" + str + "/c/" + tL_starGiftCollection.collection_id;
         new ShareAlert(context, null, str2, false, str2, false, resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.4
             @Override // org.telegram.ui.Components.ShareAlert
@@ -1654,87 +1612,79 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(final TL_stars.TL_starGiftCollection tL_starGiftCollection) {
-        openEnterNameAlert(tL_starGiftCollection.title, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda23
+    public static /* synthetic */ void $r8$lambda$pbVQKPliF9W73NVDudVT3BJDA4U(final ProfileGiftsContainer profileGiftsContainer, final TL_stars.TL_starGiftCollection tL_starGiftCollection) {
+        profileGiftsContainer.getClass();
+        profileGiftsContainer.openEnterNameAlert(tL_starGiftCollection.title, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda23
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ProfileGiftsContainer.this.lambda$new$3(tL_starGiftCollection, (String) obj);
+                ProfileGiftsContainer.$r8$lambda$ln7RHkli-EqD8aJkdyIHSL50q5Y(ProfileGiftsContainer.this, tL_starGiftCollection, (String) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(TL_stars.TL_starGiftCollection tL_starGiftCollection, String str) {
-        this.collections.rename(tL_starGiftCollection.collection_id, str);
+    public static /* synthetic */ void $r8$lambda$ln7RHkli-EqD8aJkdyIHSL50q5Y(ProfileGiftsContainer profileGiftsContainer, TL_stars.TL_starGiftCollection tL_starGiftCollection, String str) {
+        profileGiftsContainer.collections.rename(tL_starGiftCollection.collection_id, str);
         tL_starGiftCollection.title = str;
-        fillTabs(true);
+        profileGiftsContainer.fillTabs(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5() {
-        setReorderingCollections(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(int i, TL_stars.TL_starGiftCollection tL_starGiftCollection) {
-        if (i != -1) {
-            this.collections.removeCollection(tL_starGiftCollection.collection_id);
-            fillTabs(true);
-            ViewPagerFixed.TabsView tabsView = this.tabsView;
-            if (i < this.collections.getCollections().size()) {
-                i++;
-            }
-            tabsView.scrollToTab(-1, i);
-            updateTabsShown(true);
+    public static /* synthetic */ void $r8$lambda$Io6EIMLsRSpnqPtoHV2mKImOUKo(ProfileGiftsContainer profileGiftsContainer, int i, TL_stars.TL_starGiftCollection tL_starGiftCollection) {
+        if (i == -1) {
+            profileGiftsContainer.getClass();
+            return;
         }
+        profileGiftsContainer.collections.removeCollection(tL_starGiftCollection.collection_id);
+        profileGiftsContainer.fillTabs(true);
+        ViewPagerFixed.TabsView tabsView = profileGiftsContainer.tabsView;
+        if (i < profileGiftsContainer.collections.getCollections().size()) {
+            i++;
+        }
+        tabsView.scrollToTab(-1, i);
+        profileGiftsContainer.updateTabsShown(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$10(final BaseFragment baseFragment, int i, View view) {
-        this.checkbox.setChecked(!r7.isChecked(), true);
-        boolean isChecked = this.checkbox.isChecked();
+    public static /* synthetic */ void $r8$lambda$knJkllwhqy7jjL3FgBDFE0n1qwE(final ProfileGiftsContainer profileGiftsContainer, final BaseFragment baseFragment, int i, View view) {
+        profileGiftsContainer.checkbox.setChecked(!r7.isChecked(), true);
+        boolean isChecked = profileGiftsContainer.checkbox.isChecked();
         BulletinFactory.of(baseFragment).createSimpleBulletinDetail(isChecked ? R.raw.silent_unmute : R.raw.silent_mute, LocaleController.getString(isChecked ? R.string.Gift2ChannelNotifyChecked : R.string.Gift2ChannelNotifyNotChecked)).show();
-        this.list.chat_notifications_enabled = Boolean.valueOf(isChecked);
-        if (this.checkboxRequestId >= 0) {
-            ConnectionsManager.getInstance(i).cancelRequest(this.checkboxRequestId, true);
-            this.checkboxRequestId = -1;
+        profileGiftsContainer.list.chat_notifications_enabled = Boolean.valueOf(isChecked);
+        if (profileGiftsContainer.checkboxRequestId >= 0) {
+            ConnectionsManager.getInstance(i).cancelRequest(profileGiftsContainer.checkboxRequestId, true);
+            profileGiftsContainer.checkboxRequestId = -1;
         }
         TL_stars.toggleChatStarGiftNotifications togglechatstargiftnotifications = new TL_stars.toggleChatStarGiftNotifications();
-        togglechatstargiftnotifications.peer = MessagesController.getInstance(i).getInputPeer(this.dialogId);
+        togglechatstargiftnotifications.peer = MessagesController.getInstance(i).getInputPeer(profileGiftsContainer.dialogId);
         togglechatstargiftnotifications.enabled = isChecked;
         ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ProfileGiftsContainer.this.lambda$new$9(baseFragment, tLObject, tL_error);
+                ProfileGiftsContainer.$r8$lambda$z8BNUWEdK7MuTk_xgGllt0lhCyA(ProfileGiftsContainer.this, baseFragment, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(final BaseFragment baseFragment, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$z8BNUWEdK7MuTk_xgGllt0lhCyA(final ProfileGiftsContainer profileGiftsContainer, final BaseFragment baseFragment, TLObject tLObject, final TLRPC.TL_error tL_error) {
+        profileGiftsContainer.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                ProfileGiftsContainer.this.lambda$new$8(tL_error, baseFragment);
+                ProfileGiftsContainer.$r8$lambda$RLwQZlri75BAIVuT550QNAMFLlE(ProfileGiftsContainer.this, tL_error, baseFragment);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(TLRPC.TL_error tL_error, BaseFragment baseFragment) {
-        this.checkboxRequestId = -1;
+    public static /* synthetic */ void $r8$lambda$RLwQZlri75BAIVuT550QNAMFLlE(ProfileGiftsContainer profileGiftsContainer, TLRPC.TL_error tL_error, BaseFragment baseFragment) {
+        profileGiftsContainer.checkboxRequestId = -1;
         if (tL_error != null) {
             BulletinFactory.of(baseFragment).showForError(tL_error);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$11(boolean z, int i, View view) {
-        if (this.collections.isMine() && this.viewPager.getCurrentPosition() != 0) {
-            addGifts();
+    public static /* synthetic */ void $r8$lambda$5u9VbnJFYji5-X9X63yk70xCBNk(ProfileGiftsContainer profileGiftsContainer, boolean z, int i, View view) {
+        if (profileGiftsContainer.collections.isMine() && profileGiftsContainer.viewPager.getCurrentPosition() != 0) {
+            profileGiftsContainer.addGifts();
         } else if (z) {
-            new GiftSheet(getContext(), i, this.dialogId, null, null).setBirthday(BirthdayController.getInstance(i).isToday(this.dialogId)).show();
+            new GiftSheet(profileGiftsContainer.getContext(), i, profileGiftsContainer.dialogId, null, null).setBirthday(BirthdayController.getInstance(i).isToday(profileGiftsContainer.dialogId)).show();
         } else {
             UserSelectorBottomSheet.open(2, 0L, BirthdayController.getInstance(i).getState());
         }
@@ -1846,11 +1796,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.tabsView.scrollToTab(tL_starGiftCollection.collection_id, i + 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$12() {
-        this.collections.sendOrder();
-    }
-
     public void setReorderingCollections(boolean z) {
         if (this.reorderingCollections == z) {
             return;
@@ -1865,7 +1810,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.lambda$setReorderingCollections$13(BaseFragment.this);
+                        ((ProfileActivity) BaseFragment.this).scrollToSharedMedia(true);
                     }
                 });
             }
@@ -1875,11 +1820,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
         AndroidUtilities.cancelRunOnUIThread(this.sendCollectionsOrder);
         AndroidUtilities.runOnUIThread(this.sendCollectionsOrder);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setReorderingCollections$13(BaseFragment baseFragment) {
-        ((ProfileActivity) baseFragment).scrollToSharedMedia(true);
     }
 
     public void resetReordering() {
@@ -1904,11 +1844,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             return true;
         }
         return listByIndex.gifts.isEmpty();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$14(int i, float f, float f2, FactorAnimator factorAnimator) {
-        updateButton();
     }
 
     public void updateButton() {
@@ -2237,12 +2172,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, this.currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$UnpinSheet$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    ProfileGiftsContainer.UnpinSheet.this.lambda$new$0(profileGiftsList, (ArrayList) obj, (UniversalAdapter) obj2);
+                    ProfileGiftsContainer.UnpinSheet.$r8$lambda$H2kIg_bpVwz0vNtLLQ9jICs4F9g(ProfileGiftsContainer.UnpinSheet.this, profileGiftsList, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
             }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$UnpinSheet$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    ProfileGiftsContainer.UnpinSheet.this.lambda$new$1(buttonWithCounterView, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
+                    ProfileGiftsContainer.UnpinSheet.$r8$lambda$LhIG8GHn3VvY_40ORQaJjKX6EAs(ProfileGiftsContainer.UnpinSheet.this, buttonWithCounterView, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
                 }
             }, null, resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.UnpinSheet.1
                 @Override // org.telegram.ui.Components.RecyclerListView
@@ -2260,47 +2195,51 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$UnpinSheet$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileGiftsContainer.UnpinSheet.this.lambda$new$2(profileGiftsList, savedStarGift, callback0Return, view);
+                    ProfileGiftsContainer.UnpinSheet.$r8$lambda$6pIFgVTl_FsF9f0TO8OvnwRE7lc(ProfileGiftsContainer.UnpinSheet.this, profileGiftsList, savedStarGift, callback0Return, view);
                 }
             });
             setCustomView(linearLayout);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(StarsController.GiftsList giftsList, ArrayList arrayList, UniversalAdapter universalAdapter) {
-            Iterator it = giftsList.gifts.iterator();
-            while (it.hasNext()) {
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) it.next();
+        public static /* synthetic */ void $r8$lambda$H2kIg_bpVwz0vNtLLQ9jICs4F9g(UnpinSheet unpinSheet, StarsController.GiftsList giftsList, ArrayList arrayList, UniversalAdapter universalAdapter) {
+            unpinSheet.getClass();
+            ArrayList arrayList2 = giftsList.gifts;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift.pinned_to_top) {
-                    arrayList.add(PeerColorActivity.GiftCell.Factory.asGiftCell(savedStarGift).setChecked(this.selectedGift == savedStarGift.gift.id).setSpanCount(1));
+                    arrayList.add(PeerColorActivity.GiftCell.Factory.asGiftCell(savedStarGift).setChecked(unpinSheet.selectedGift == savedStarGift.gift.id).setSpanCount(1));
                 }
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(ButtonWithCounterView buttonWithCounterView, UItem uItem, View view, Integer num, Float f, Float f2) {
+        public static /* synthetic */ void $r8$lambda$LhIG8GHn3VvY_40ORQaJjKX6EAs(UnpinSheet unpinSheet, ButtonWithCounterView buttonWithCounterView, UItem uItem, View view, Integer num, Float f, Float f2) {
+            unpinSheet.getClass();
             long j = ((TL_stars.SavedStarGift) uItem.object).gift.id;
-            if (this.selectedGift == j) {
-                this.selectedGift = 0L;
+            if (unpinSheet.selectedGift == j) {
+                unpinSheet.selectedGift = 0L;
             } else {
-                this.selectedGift = j;
+                unpinSheet.selectedGift = j;
             }
-            buttonWithCounterView.setEnabled(this.selectedGift != 0);
+            buttonWithCounterView.setEnabled(unpinSheet.selectedGift != 0);
             if (view.getParent() instanceof ViewGroup) {
                 ViewGroup viewGroup = (ViewGroup) view.getParent();
                 for (int i = 0; i < viewGroup.getChildCount(); i++) {
                     View childAt = viewGroup.getChildAt(i);
                     if (childAt instanceof PeerColorActivity.GiftCell) {
                         PeerColorActivity.GiftCell giftCell = (PeerColorActivity.GiftCell) childAt;
-                        giftCell.setSelected(this.selectedGift == giftCell.getGiftId(), true);
+                        giftCell.setSelected(unpinSheet.selectedGift == giftCell.getGiftId(), true);
                     }
                 }
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(StarsController.GiftsList giftsList, TL_stars.SavedStarGift savedStarGift, Utilities.Callback0Return callback0Return, View view) {
+        public static /* synthetic */ void $r8$lambda$6pIFgVTl_FsF9f0TO8OvnwRE7lc(UnpinSheet unpinSheet, StarsController.GiftsList giftsList, TL_stars.SavedStarGift savedStarGift, Utilities.Callback0Return callback0Return, View view) {
             TL_stars.SavedStarGift savedStarGift2;
+            unpinSheet.getClass();
             ArrayList pinned = giftsList.getPinned();
             int i = 0;
             while (true) {
@@ -2309,7 +2248,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     savedStarGift2 = null;
                     break;
                 } else {
-                    if (((TL_stars.SavedStarGift) pinned.get(i)).gift.id == this.selectedGift) {
+                    if (((TL_stars.SavedStarGift) pinned.get(i)).gift.id == unpinSheet.selectedGift) {
                         savedStarGift2 = (TL_stars.SavedStarGift) pinned.get(i);
                         break;
                     }
@@ -2323,7 +2262,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             pinned.set(i, savedStarGift);
             savedStarGift.pinned_to_top = true;
             giftsList.setPinned(pinned);
-            lambda$new$0();
+            unpinSheet.dismiss();
             ((BulletinFactory) callback0Return.run()).createSimpleBulletin(R.raw.ic_pin, LocaleController.formatString(R.string.Gift2ReplacedPinTitle, StarGiftSheet.getGiftName(savedStarGift.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, StarGiftSheet.getGiftName(savedStarGift2.gift))).show();
         }
     }
@@ -2454,7 +2393,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         builder.setPositiveButton(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                ProfileGiftsContainer.lambda$openEnterNameAlert$15(EditTextCaption.this, callback, alertDialog, i);
+                ProfileGiftsContainer.$r8$lambda$HGXLJ2bQdDYNtuoDGUnONnEuUXI(EditTextCaption.this, callback, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda20
@@ -2472,13 +2411,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         alertDialogArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda21
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                ProfileGiftsContainer.this.lambda$openEnterNameAlert$17(editTextCaption, findActivity, dialogInterface);
+                ProfileGiftsContainer.$r8$lambda$KpN26ErhhEMNb2M5wC34bqmpPN0(ProfileGiftsContainer.this, editTextCaption, findActivity, dialogInterface);
             }
         });
         alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda22
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
-                ProfileGiftsContainer.lambda$openEnterNameAlert$18(EditTextCaption.this, dialogInterface);
+                ProfileGiftsContainer.$r8$lambda$Y_hy7wx-b_R6l3jq-f9bz9a6WDA(EditTextCaption.this, dialogInterface);
             }
         });
         alertDialogArr[0].show();
@@ -2487,8 +2426,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         editTextCaption.setSelection(editTextCaption.getText().length());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openEnterNameAlert$15(EditTextCaption editTextCaption, Utilities.Callback callback, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void $r8$lambda$HGXLJ2bQdDYNtuoDGUnONnEuUXI(EditTextCaption editTextCaption, Utilities.Callback callback, AlertDialog alertDialog, int i) {
         String obj = editTextCaption.getText().toString();
         if (obj.length() <= 0 || obj.length() > 12) {
             AndroidUtilities.shakeView(editTextCaption);
@@ -2498,14 +2436,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openEnterNameAlert$17(EditTextCaption editTextCaption, Activity activity, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$KpN26ErhhEMNb2M5wC34bqmpPN0(ProfileGiftsContainer profileGiftsContainer, EditTextCaption editTextCaption, Activity activity, DialogInterface dialogInterface) {
+        profileGiftsContainer.getClass();
         AndroidUtilities.hideKeyboard(editTextCaption);
-        AndroidUtilities.requestAdjustResize(activity, this.fragment.getClassGuid());
+        AndroidUtilities.requestAdjustResize(activity, profileGiftsContainer.fragment.getClassGuid());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openEnterNameAlert$18(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$Y_hy7wx-b_R6l3jq-f9bz9a6WDA(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
         editTextCaption.requestFocus();
         AndroidUtilities.showKeyboard(editTextCaption);
     }
@@ -2514,32 +2451,26 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ProfileGiftsContainer.this.lambda$createCollection$20((String) obj);
+                r0.collections.createCollection((String) obj, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda25
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj2) {
+                        ProfileGiftsContainer.$r8$lambda$K-N1YaDbg7zlBj3GSgHPGTi-m04(ProfileGiftsContainer.this, (TL_stars.TL_starGiftCollection) obj2);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createCollection$20(String str) {
-        this.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda25
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ProfileGiftsContainer.this.lambda$createCollection$19((TL_stars.TL_starGiftCollection) obj);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createCollection$19(TL_stars.TL_starGiftCollection tL_starGiftCollection) {
-        fillTabs(true);
-        ViewPagerFixed.TabsView tabsView = this.tabsView;
+    public static /* synthetic */ void $r8$lambda$K-N1YaDbg7zlBj3GSgHPGTi-m04(ProfileGiftsContainer profileGiftsContainer, TL_stars.TL_starGiftCollection tL_starGiftCollection) {
+        profileGiftsContainer.fillTabs(true);
+        ViewPagerFixed.TabsView tabsView = profileGiftsContainer.tabsView;
         int i = tL_starGiftCollection.collection_id;
-        tabsView.scrollToTab(i, this.collections.indexOf(i) + 1);
-        BaseFragment baseFragment = this.fragment;
+        tabsView.scrollToTab(i, profileGiftsContainer.collections.indexOf(i) + 1);
+        BaseFragment baseFragment = profileGiftsContainer.fragment;
         if (baseFragment instanceof ProfileActivity) {
             ((ProfileActivity) baseFragment).scrollToSharedMedia(true);
         }
-        updateTabsShown(true);
+        profileGiftsContainer.updateTabsShown(true);
     }
 
     public void addGifts() {
@@ -2552,28 +2483,27 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         new SelectGiftsBottomSheet(this.fragment, this.dialogId, i, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda18
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ProfileGiftsContainer.this.lambda$addGifts$21(i, currentPage, (ArrayList) obj);
+                ProfileGiftsContainer.$r8$lambda$Ue3HPN3KWn-vCgt7PGnou2FpIfc(ProfileGiftsContainer.this, i, currentPage, (ArrayList) obj);
             }
         }).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addGifts$21(int i, Page page, ArrayList arrayList) {
-        this.collections.addGifts(i, arrayList, true);
+    public static /* synthetic */ void $r8$lambda$Ue3HPN3KWn-vCgt7PGnou2FpIfc(ProfileGiftsContainer profileGiftsContainer, int i, Page page, ArrayList arrayList) {
+        profileGiftsContainer.collections.addGifts(i, arrayList, true);
         page.update(true);
-        fillTabs(true);
-        updateTabsShown(true);
-        TL_stars.TL_starGiftCollection findById = this.collections.findById(i);
+        profileGiftsContainer.fillTabs(true);
+        profileGiftsContainer.updateTabsShown(true);
+        TL_stars.TL_starGiftCollection findById = profileGiftsContainer.collections.findById(i);
         if (findById != null) {
             if (arrayList.size() > 1) {
-                Bulletin createSimpleMultiBulletin = BulletinFactory.of(this.fragment).createSimpleMultiBulletin(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), findById.title)));
+                Bulletin createSimpleMultiBulletin = BulletinFactory.of(profileGiftsContainer.fragment).createSimpleMultiBulletin(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), findById.title)));
                 createSimpleMultiBulletin.hideAfterBottomSheet = false;
                 createSimpleMultiBulletin.show();
                 return;
             }
             if (arrayList.size() == 1) {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                Bulletin createSimpleMultiBulletin2 = BulletinFactory.of(this.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, StarGiftSheet.getGiftName(savedStarGift.gift), findById.title)));
+                Bulletin createSimpleMultiBulletin2 = BulletinFactory.of(profileGiftsContainer.fragment).createSimpleMultiBulletin(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, StarGiftSheet.getGiftName(savedStarGift.gift), findById.title)));
                 createSimpleMultiBulletin2.hideAfterBottomSheet = false;
                 createSimpleMultiBulletin2.show();
             }
@@ -2618,7 +2548,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    ProfileGiftsContainer.SelectGiftsBottomSheet.this.lambda$new$0(callback, view2);
+                    ProfileGiftsContainer.SelectGiftsBottomSheet.$r8$lambda$Dl2KMO6KZDYN-JexOVjsPeoWN38(ProfileGiftsContainer.SelectGiftsBottomSheet.this, callback, view2);
                 }
             });
             frameLayout.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
@@ -2642,7 +2572,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$$ExternalSyntheticLambda2
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view2, int i3) {
-                    ProfileGiftsContainer.SelectGiftsBottomSheet.this.lambda$new$1(view2, i3);
+                    ProfileGiftsContainer.SelectGiftsBottomSheet.$r8$lambda$6kek0Y656Ab2fw4vKC0lusCPj1k(ProfileGiftsContainer.SelectGiftsBottomSheet.this, view2, i3);
                 }
             });
             this.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.SelectGiftsBottomSheet.3
@@ -2674,13 +2604,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
-                boolean canUserDoAction;
-                ActionBarMenuSubItem actionBarMenuSubItem;
-                ActionBarMenuSubItem actionBarMenuSubItem2;
-                final Runnable runnable;
+                final boolean canUserDoAction;
+                final ActionBarMenuSubItem actionBarMenuSubItem;
+                final ActionBarMenuSubItem actionBarMenuSubItem2;
                 if (i != 1) {
                     if (i == -1) {
-                        SelectGiftsBottomSheet.this.lambda$new$0();
+                        SelectGiftsBottomSheet.this.dismiss();
                         return;
                     }
                     return;
@@ -2711,46 +2640,39 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     addChecked5.setText(LocaleController.getString(R.string.Gift2FilterDisplayed));
                     ActionBarMenuSubItem addChecked6 = itemOptions.addChecked();
                     addChecked6.setText(LocaleController.getString(R.string.Gift2FilterHidden));
-                    actionBarMenuSubItem2 = addChecked5;
-                    actionBarMenuSubItem = addChecked6;
+                    actionBarMenuSubItem2 = addChecked6;
+                    actionBarMenuSubItem = addChecked5;
                 } else {
                     actionBarMenuSubItem = null;
                     actionBarMenuSubItem2 = null;
                 }
-                final ActionBarMenuSubItem actionBarMenuSubItem3 = actionBarMenuSubItem;
-                final ActionBarMenuSubItem actionBarMenuSubItem4 = actionBarMenuSubItem2;
-                final boolean z = canUserDoAction;
-                Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda0
+                final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$0(add, addChecked, addChecked2, addChecked3, addChecked4, z, actionBarMenuSubItem4, actionBarMenuSubItem3);
+                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.$r8$lambda$IcdlJC7TVfsKOHnB6Be7V6jgB84(ProfileGiftsContainer.SelectGiftsBottomSheet.1.this, add, addChecked, addChecked2, addChecked3, addChecked4, canUserDoAction, actionBarMenuSubItem, actionBarMenuSubItem2);
                     }
                 };
-                runnable2.run();
+                runnable.run();
                 if (add != null) {
-                    runnable = runnable2;
                     add.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$1(runnable, view);
+                            ProfileGiftsContainer.SelectGiftsBottomSheet.1.$r8$lambda$XRhR24oKa1QANegvfiMTd7fTHmo(ProfileGiftsContainer.SelectGiftsBottomSheet.1.this, runnable, view);
                         }
                     });
-                } else {
-                    runnable = runnable2;
                 }
                 ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked, SelectGiftsBottomSheet.this.list, runnable, 1);
                 ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked2, SelectGiftsBottomSheet.this.list, runnable, 2);
                 ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked3, SelectGiftsBottomSheet.this.list, runnable, 4);
                 ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked4, SelectGiftsBottomSheet.this.list, runnable, 8);
                 if (canUserDoAction) {
-                    ProfileGiftsContainer.setGiftFilterOptionsClickListeners(actionBarMenuSubItem4, SelectGiftsBottomSheet.this.list, runnable, 256);
-                    ProfileGiftsContainer.setGiftFilterOptionsClickListeners(actionBarMenuSubItem3, SelectGiftsBottomSheet.this.list, runnable, 512);
+                    ProfileGiftsContainer.setGiftFilterOptionsClickListeners(actionBarMenuSubItem, SelectGiftsBottomSheet.this.list, runnable, 256);
+                    ProfileGiftsContainer.setGiftFilterOptionsClickListeners(actionBarMenuSubItem2, SelectGiftsBottomSheet.this.list, runnable, 512);
                 }
                 itemOptions.setOnTopOfScrim().setDismissWithButtons(false).setDimAlpha(0).show();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$0(ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, ActionBarMenuSubItem actionBarMenuSubItem3, ActionBarMenuSubItem actionBarMenuSubItem4, ActionBarMenuSubItem actionBarMenuSubItem5, boolean z, ActionBarMenuSubItem actionBarMenuSubItem6, ActionBarMenuSubItem actionBarMenuSubItem7) {
+            public static /* synthetic */ void $r8$lambda$IcdlJC7TVfsKOHnB6Be7V6jgB84(1 r2, ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, ActionBarMenuSubItem actionBarMenuSubItem3, ActionBarMenuSubItem actionBarMenuSubItem4, ActionBarMenuSubItem actionBarMenuSubItem5, boolean z, ActionBarMenuSubItem actionBarMenuSubItem6, ActionBarMenuSubItem actionBarMenuSubItem7) {
                 if (actionBarMenuSubItem != null) {
                     actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(SelectGiftsBottomSheet.this.list.sort_by_date ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), SelectGiftsBottomSheet.this.list.sort_by_date ? R.drawable.menu_sort_value : R.drawable.menu_sort_date);
                 }
@@ -2764,33 +2686,35 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$1(Runnable runnable, View view) {
+            public static /* synthetic */ void $r8$lambda$XRhR24oKa1QANegvfiMTd7fTHmo(1 r2, Runnable runnable, View view) {
                 SelectGiftsBottomSheet.this.list.sort_by_date = !SelectGiftsBottomSheet.this.list.sort_by_date;
                 runnable.run();
                 SelectGiftsBottomSheet.this.list.invalidate(true);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(Utilities.Callback callback, View view) {
+        public static /* synthetic */ void $r8$lambda$Dl2KMO6KZDYN-JexOVjsPeoWN38(SelectGiftsBottomSheet selectGiftsBottomSheet, Utilities.Callback callback, View view) {
             TL_stars.SavedStarGift savedStarGift;
-            if (this.selectedGiftIds.isEmpty()) {
+            if (selectGiftsBottomSheet.selectedGiftIds.isEmpty()) {
                 return;
             }
             ArrayList arrayList = new ArrayList();
-            Iterator it = this.selectedGiftIds.iterator();
+            Iterator it = selectGiftsBottomSheet.selectedGiftIds.iterator();
             while (it.hasNext()) {
                 long longValue = ((Long) it.next()).longValue();
-                Iterator it2 = this.list.gifts.iterator();
+                ArrayList arrayList2 = selectGiftsBottomSheet.list.gifts;
+                int size = arrayList2.size();
+                int i = 0;
                 while (true) {
-                    if (!it2.hasNext()) {
+                    if (i >= size) {
                         savedStarGift = null;
                         break;
                     }
-                    savedStarGift = (TL_stars.SavedStarGift) it2.next();
-                    int i = savedStarGift.msg_id;
-                    if ((i != 0 && i == longValue) || savedStarGift.saved_id == longValue) {
+                    Object obj = arrayList2.get(i);
+                    i++;
+                    savedStarGift = (TL_stars.SavedStarGift) obj;
+                    int i2 = savedStarGift.msg_id;
+                    if ((i2 != 0 && i2 == longValue) || savedStarGift.saved_id == longValue) {
                         break;
                     }
                 }
@@ -2799,13 +2723,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
             }
             callback.run(arrayList);
-            lambda$new$0();
+            selectGiftsBottomSheet.dismiss();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$6kek0Y656Ab2fw4vKC0lusCPj1k(SelectGiftsBottomSheet selectGiftsBottomSheet, View view, int i) {
             UItem item;
-            UniversalAdapter universalAdapter = this.adapter;
+            UniversalAdapter universalAdapter = selectGiftsBottomSheet.adapter;
             if (universalAdapter == null || (item = universalAdapter.getItem(i - 1)) == null) {
                 return;
             }
@@ -2814,15 +2737,15 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 int i2 = savedStarGift.msg_id;
                 long j = i2 == 0 ? savedStarGift.saved_id : i2;
-                if (this.selectedGiftIds.contains(Long.valueOf(j))) {
-                    this.selectedGiftIds.remove(Long.valueOf(j));
+                if (selectGiftsBottomSheet.selectedGiftIds.contains(Long.valueOf(j))) {
+                    selectGiftsBottomSheet.selectedGiftIds.remove(Long.valueOf(j));
                     ((GiftSheet.GiftCell) view).setChecked(false, true);
                 } else {
-                    this.selectedGiftIds.add(Long.valueOf(j));
+                    selectGiftsBottomSheet.selectedGiftIds.add(Long.valueOf(j));
                     ((GiftSheet.GiftCell) view).setChecked(true, true);
                 }
-                this.button.setEnabled(this.selectedGiftIds.size() > 0);
-                this.button.setCount(this.selectedGiftIds.size(), true);
+                selectGiftsBottomSheet.button.setEnabled(selectGiftsBottomSheet.selectedGiftIds.size() > 0);
+                selectGiftsBottomSheet.button.setCount(selectGiftsBottomSheet.selectedGiftIds.size(), true);
             }
         }
 
@@ -2852,10 +2775,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
 
         @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-        /* renamed from: dismiss */
-        public void lambda$new$0() {
+        public void dismiss() {
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-            super.lambda$new$0();
+            super.dismiss();
         }
 
         @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -2879,7 +2801,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         /* JADX INFO: Access modifiers changed from: private */
         public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
             int i;
-            int i2;
             if (this.list == null) {
                 return;
             }
@@ -2896,20 +2817,21 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 arrayList.add(UItem.asFlicker(8, 34).setSpanCount(1));
                 arrayList.add(UItem.asFlicker(9, 34).setSpanCount(1));
             } else {
-                Iterator it = this.list.gifts.iterator();
+                ArrayList arrayList2 = this.list.gifts;
+                int size = arrayList2.size();
+                int i2 = 0;
+                int i3 = 0;
                 loop0: while (true) {
                     i = 3;
-                    while (true) {
-                        i2 = 0;
-                        if (!it.hasNext()) {
-                            break loop0;
-                        }
-                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) it.next();
+                    while (i3 < size) {
+                        Object obj = arrayList2.get(i3);
+                        i3++;
+                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                         if (!savedStarGift.collection_id.contains(Integer.valueOf(this.collectionId))) {
                             UItem asStarGift = GiftSheet.GiftCell.Factory.asStarGift(0, savedStarGift, true, true, false);
                             HashSet hashSet = this.selectedGiftIds;
-                            int i3 = savedStarGift.msg_id;
-                            arrayList.add(asStarGift.setChecked(hashSet.contains(Long.valueOf(i3 == 0 ? savedStarGift.saved_id : i3))).setSpanCount(1));
+                            int i4 = savedStarGift.msg_id;
+                            arrayList.add(asStarGift.setChecked(hashSet.contains(Long.valueOf(i4 == 0 ? savedStarGift.saved_id : i4))).setSpanCount(1));
                             i--;
                             if (i == 0) {
                                 break;
@@ -2936,27 +2858,23 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ProfileGiftsContainer.lambda$setGiftFilterOptionsClickListeners$22(StarsController.GiftsList.this, i, runnable, view2);
+                ProfileGiftsContainer.$r8$lambda$tYVcLJaoSuZkHNIzrEi_rPUek2E(StarsController.GiftsList.this, i, runnable, view2);
             }
         });
         view.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view2) {
-                boolean lambda$setGiftFilterOptionsClickListeners$23;
-                lambda$setGiftFilterOptionsClickListeners$23 = ProfileGiftsContainer.lambda$setGiftFilterOptionsClickListeners$23(StarsController.GiftsList.this, i, runnable, view2);
-                return lambda$setGiftFilterOptionsClickListeners$23;
+                return ProfileGiftsContainer.$r8$lambda$bEzDNpga9c41IzwYlyeh3jZ7Fbo(StarsController.GiftsList.this, i, runnable, view2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setGiftFilterOptionsClickListeners$22(StarsController.GiftsList giftsList, int i, Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$tYVcLJaoSuZkHNIzrEi_rPUek2E(StarsController.GiftsList giftsList, int i, Runnable runnable, View view) {
         giftsList.toggleTypeIncludeFlag(i);
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$setGiftFilterOptionsClickListeners$23(StarsController.GiftsList giftsList, int i, Runnable runnable, View view) {
+    public static /* synthetic */ boolean $r8$lambda$bEzDNpga9c41IzwYlyeh3jZ7Fbo(StarsController.GiftsList giftsList, int i, Runnable runnable, View view) {
         giftsList.forceTypeIncludeFlag(i, true);
         runnable.run();
         return true;
@@ -2967,7 +2885,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.iBlur3Capture = new IBlur3Capture() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
             public final void capture(Canvas canvas, RectF rectF) {
-                ProfileGiftsContainer.this.lambda$initBlurCapture$24(canvas, rectF);
+                ProfileGiftsContainer.$r8$lambda$mXcSTQyN3FqX_PyRQqOzA-u7dhY(ProfileGiftsContainer.this, canvas, rectF);
             }
 
             @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
@@ -2977,14 +2895,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$initBlurCapture$24(Canvas canvas, RectF rectF) {
-        for (View view : this.viewPager.getViewPages()) {
+    public static /* synthetic */ void $r8$lambda$mXcSTQyN3FqX_PyRQqOzA-u7dhY(ProfileGiftsContainer profileGiftsContainer, Canvas canvas, RectF rectF) {
+        for (View view : profileGiftsContainer.viewPager.getViewPages()) {
             if (view instanceof Page) {
                 Page page = (Page) view;
                 if (page.iBlur3Capture == null) {
                     UniversalRecyclerView universalRecyclerView = page.listView;
-                    ViewGroup viewGroup = this.iBlur3CaptureParent;
+                    ViewGroup viewGroup = profileGiftsContainer.iBlur3CaptureParent;
                     UniversalRecyclerView universalRecyclerView2 = page.listView;
                     Objects.requireNonNull(universalRecyclerView2);
                     page.iBlur3Capture = new ViewGroupPartRenderer(universalRecyclerView, viewGroup, new CallLogActivity$$ExternalSyntheticLambda6(universalRecyclerView2));

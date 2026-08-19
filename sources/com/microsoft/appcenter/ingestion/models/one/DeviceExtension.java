@@ -31,12 +31,17 @@ public class DeviceExtension implements Model {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            String str = this.localId;
+            String str2 = ((DeviceExtension) obj).localId;
+            if (str != null) {
+                return str.equals(str2);
+            }
+            if (str2 == null) {
+                return true;
+            }
         }
-        String str = this.localId;
-        String str2 = ((DeviceExtension) obj).localId;
-        return str != null ? str.equals(str2) : str2 == null;
+        return false;
     }
 
     public int hashCode() {

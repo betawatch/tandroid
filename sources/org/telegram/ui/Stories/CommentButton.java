@@ -25,7 +25,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.blur3.StrokeDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CommentButton extends FrameLayout {
     private final ImageView arrowImage;
     private final Paint backgroundPaint;
@@ -135,7 +135,7 @@ public class CommentButton extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.CommentButton$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                CommentButton.this.lambda$animateBounce$0(valueAnimator2);
+                CommentButton.$r8$lambda$E3MYkw7yCyLQmWOeU3hHuTqY2ZI(CommentButton.this, valueAnimator2);
             }
         });
         this.countAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.CommentButton.1
@@ -150,9 +150,9 @@ public class CommentButton extends FrameLayout {
         this.countAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateBounce$0(ValueAnimator valueAnimator) {
-        this.countScale = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$E3MYkw7yCyLQmWOeU3hHuTqY2ZI(CommentButton commentButton, ValueAnimator valueAnimator) {
+        commentButton.getClass();
+        commentButton.countScale = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+        commentButton.invalidate();
     }
 }

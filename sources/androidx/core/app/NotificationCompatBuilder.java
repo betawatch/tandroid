@@ -45,6 +45,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             this.mBuilder = new Notification.Builder(builder.mContext);
         }
         Notification notification = builder.mNotification;
+        int i3 = 0;
         this.mBuilder.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, builder.mTickerView).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(builder.mContentTitle).setContentText(builder.mContentText).setContentInfo(builder.mContentInfo).setContentIntent(builder.mContentIntent).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(builder.mFullScreenIntent, (notification.flags & 128) != 0).setNumber(builder.mNumber).setProgress(builder.mProgressMax, builder.mProgress, builder.mProgressIndeterminate);
         if (i2 < 23) {
             Notification.Builder builder2 = this.mBuilder;
@@ -56,15 +57,19 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             Api23Impl.setLargeIcon(builder3, iconCompat2 == null ? null : iconCompat2.toIcon(context));
         }
         this.mBuilder.setSubText(builder.mSubText).setUsesChronometer(builder.mUseChronometer).setPriority(builder.mPriority);
-        Iterator it = builder.mActions.iterator();
-        while (it.hasNext()) {
-            addAction((NotificationCompat.Action) it.next());
+        ArrayList arrayList = builder.mActions;
+        int size = arrayList.size();
+        int i4 = 0;
+        while (i4 < size) {
+            Object obj2 = arrayList.get(i4);
+            i4++;
+            addAction((NotificationCompat.Action) obj2);
         }
         Bundle bundle = builder.mExtras;
         if (bundle != null) {
             this.mExtras.putAll(bundle);
         }
-        int i3 = Build.VERSION.SDK_INT;
+        int i5 = Build.VERSION.SDK_INT;
         this.mContentView = builder.mContentView;
         this.mBigContentView = builder.mBigContentView;
         this.mBuilder.setShowWhen(builder.mShowWhen);
@@ -78,15 +83,15 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         Api21Impl.setVisibility(this.mBuilder, builder.mVisibility);
         Api21Impl.setPublicVersion(this.mBuilder, builder.mPublicVersion);
         Api21Impl.setSound(this.mBuilder, notification.sound, notification.audioAttributes);
-        if (i3 < 28) {
+        if (i5 < 28) {
             list = combineLists(getPeople(builder.mPersonList), builder.mPeople);
         } else {
             list = builder.mPeople;
         }
         if (list != null && !list.isEmpty()) {
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                Api21Impl.addPerson(this.mBuilder, (String) it2.next());
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                Api21Impl.addPerson(this.mBuilder, (String) it.next());
             }
         }
         this.mHeadsUpContentView = builder.mHeadsUpContentView;
@@ -95,19 +100,19 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             bundle2 = bundle2 == null ? new Bundle() : bundle2;
             Bundle bundle3 = new Bundle(bundle2);
             Bundle bundle4 = new Bundle();
-            for (int i4 = 0; i4 < builder.mInvisibleActions.size(); i4++) {
-                bundle4.putBundle(Integer.toString(i4), NotificationCompatJellybean.getBundleForAction((NotificationCompat.Action) builder.mInvisibleActions.get(i4)));
+            for (int i6 = 0; i6 < builder.mInvisibleActions.size(); i6++) {
+                bundle4.putBundle(Integer.toString(i6), NotificationCompatJellybean.getBundleForAction((NotificationCompat.Action) builder.mInvisibleActions.get(i6)));
             }
             bundle2.putBundle("invisible_actions", bundle4);
             bundle3.putBundle("invisible_actions", bundle4);
             builder.getExtras().putBundle("android.car.EXTENSIONS", bundle2);
             this.mExtras.putBundle("android.car.EXTENSIONS", bundle3);
         }
-        int i5 = Build.VERSION.SDK_INT;
-        if (i5 >= 23 && (obj = builder.mSmallIcon) != null) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 23 && (obj = builder.mSmallIcon) != null) {
             Api23Impl.setSmallIcon(this.mBuilder, obj);
         }
-        if (i5 >= 24) {
+        if (i7 >= 24) {
             this.mBuilder.setExtras(builder.mExtras);
             Api24Impl.setRemoteInputHistory(this.mBuilder, builder.mRemoteInputHistory);
             RemoteViews remoteViews = builder.mContentView;
@@ -123,7 +128,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 Api24Impl.setCustomHeadsUpContentView(this.mBuilder, remoteViews3);
             }
         }
-        if (i5 >= 26) {
+        if (i7 >= 26) {
             Api26Impl.setBadgeIconType(this.mBuilder, builder.mBadgeIcon);
             Api26Impl.setSettingsText(this.mBuilder, builder.mSettingsText);
             Api26Impl.setShortcutId(this.mBuilder, builder.mShortcutId);
@@ -136,14 +141,17 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 this.mBuilder.setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);
             }
         }
-        if (i5 >= 28) {
-            Iterator it3 = builder.mPersonList.iterator();
-            while (it3.hasNext()) {
-                Api28Impl.addPerson(this.mBuilder, ((Person) it3.next()).toAndroidPerson());
+        if (i7 >= 28) {
+            ArrayList arrayList2 = builder.mPersonList;
+            int size2 = arrayList2.size();
+            while (i3 < size2) {
+                Object obj3 = arrayList2.get(i3);
+                i3++;
+                Api28Impl.addPerson(this.mBuilder, ((Person) obj3).toAndroidPerson());
             }
         }
-        int i6 = Build.VERSION.SDK_INT;
-        if (i6 >= 29) {
+        int i8 = Build.VERSION.SDK_INT;
+        if (i8 >= 29) {
             Api29Impl.setAllowSystemGeneratedContextualActions(this.mBuilder, builder.mAllowSystemGeneratedContextualActions);
             Api29Impl.setBubbleMetadata(this.mBuilder, NotificationCompat.BubbleMetadata.toPlatform(builder.mBubbleMetadata));
             LocusIdCompat locusIdCompat = builder.mLocusId;
@@ -151,7 +159,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 Api29Impl.setLocusId(this.mBuilder, locusIdCompat.toLocusId());
             }
         }
-        if (i6 >= 31 && (i = builder.mFgsDeferBehavior) != 0) {
+        if (i8 >= 31 && (i = builder.mFgsDeferBehavior) != 0) {
             Api31Impl.setForegroundServiceBehavior(this.mBuilder, i);
         }
         if (builder.mSilent) {
@@ -162,10 +170,10 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             }
             this.mBuilder.setVibrate(null);
             this.mBuilder.setSound(null);
-            int i7 = notification.defaults & (-4);
-            notification.defaults = i7;
-            this.mBuilder.setDefaults(i7);
-            if (i6 >= 26) {
+            int i9 = notification.defaults & (-4);
+            notification.defaults = i9;
+            this.mBuilder.setDefaults(i9);
+            if (i8 >= 26) {
                 if (TextUtils.isEmpty(this.mBuilderCompat.mGroupKey)) {
                     Api20Impl.setGroup(this.mBuilder, "silent");
                 }

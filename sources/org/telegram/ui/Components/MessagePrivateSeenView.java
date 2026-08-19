@@ -159,74 +159,68 @@ public class MessagePrivateSeenView extends FrameLayout {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getOutboxReadDate, new RequestDelegate() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                MessagePrivateSeenView.this.lambda$request$2(tLObject, tL_error);
+                MessagePrivateSeenView.$r8$lambda$oLIwLc7C7ddHwdykxy5BQI4fe6s(MessagePrivateSeenView.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$2(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$oLIwLc7C7ddHwdykxy5BQI4fe6s(final MessagePrivateSeenView messagePrivateSeenView, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        messagePrivateSeenView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                MessagePrivateSeenView.this.lambda$request$1(tL_error, tLObject);
+                MessagePrivateSeenView.$r8$lambda$vi8mOgQT9rxFcW7zbYQxpfmDnzY(MessagePrivateSeenView.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$1(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$vi8mOgQT9rxFcW7zbYQxpfmDnzY(final MessagePrivateSeenView messagePrivateSeenView, TLRPC.TL_error tL_error, TLObject tLObject) {
+        messagePrivateSeenView.getClass();
         if (tL_error != null) {
             if ("USER_PRIVACY_RESTRICTED".equals(tL_error.text)) {
-                this.valueTextView.setText(LocaleController.getString(R.string.PmReadUnknown));
-                this.premiumTextView.setVisibility(8);
+                messagePrivateSeenView.valueTextView.setText(LocaleController.getString(R.string.PmReadUnknown));
+                messagePrivateSeenView.premiumTextView.setVisibility(8);
             } else if ("YOUR_PRIVACY_RESTRICTED".equals(tL_error.text)) {
-                this.isPremiumLocked = true;
-                this.valueTextView.setText(LocaleController.getString(R.string.PmRead));
-                this.premiumTextView.setText(LocaleController.getString(R.string.PmReadShowWhen));
+                messagePrivateSeenView.isPremiumLocked = true;
+                messagePrivateSeenView.valueTextView.setText(LocaleController.getString(R.string.PmRead));
+                messagePrivateSeenView.premiumTextView.setText(LocaleController.getString(R.string.PmReadShowWhen));
             } else {
-                this.valueTextView.setText(LocaleController.getString("UnknownError"));
-                this.premiumTextView.setVisibility(8);
-                BulletinFactory.of(Bulletin.BulletinWindow.make(getContext()), this.resourcesProvider).showForError(tL_error);
+                messagePrivateSeenView.valueTextView.setText(LocaleController.getString("UnknownError"));
+                messagePrivateSeenView.premiumTextView.setVisibility(8);
+                BulletinFactory.of(Bulletin.BulletinWindow.make(messagePrivateSeenView.getContext()), messagePrivateSeenView.resourcesProvider).showForError(tL_error);
             }
         } else if (tLObject instanceof TLRPC.TL_outboxReadDate) {
-            this.valueTextView.setText(LocaleController.formatPmSeenDate(((TLRPC.TL_outboxReadDate) tLObject).date));
-            this.premiumTextView.setVisibility(8);
+            messagePrivateSeenView.valueTextView.setText(LocaleController.formatPmSeenDate(((TLRPC.TL_outboxReadDate) tLObject).date));
+            messagePrivateSeenView.premiumTextView.setVisibility(8);
         }
-        ViewPropertyAnimator alpha = this.valueLayout.animate().alpha(1.0f);
+        ViewPropertyAnimator alpha = messagePrivateSeenView.valueLayout.animate().alpha(1.0f);
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         alpha.setInterpolator(cubicBezierInterpolator).setDuration(320L).start();
-        this.loadingView.animate().alpha(0.0f).setInterpolator(cubicBezierInterpolator).setDuration(320L).start();
-        if (this.isPremiumLocked) {
-            setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), 6, 0));
-            setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda8
+        messagePrivateSeenView.loadingView.animate().alpha(0.0f).setInterpolator(cubicBezierInterpolator).setDuration(320L).start();
+        if (messagePrivateSeenView.isPremiumLocked) {
+            messagePrivateSeenView.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, messagePrivateSeenView.resourcesProvider), 6, 0));
+            messagePrivateSeenView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MessagePrivateSeenView.this.lambda$request$0(view);
+                    MessagePrivateSeenView.showSheet(r0.getContext(), r0.currentAccount, r0.dialogId, false, r0.dismiss, new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda9
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            MessagePrivateSeenView.this.request();
+                        }
+                    }, MessagePrivateSeenView.this.resourcesProvider);
                 }
             });
         } else {
-            setBackground(null);
-            setOnClickListener(null);
+            messagePrivateSeenView.setBackground(null);
+            messagePrivateSeenView.setOnClickListener(null);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$0(View view) {
-        showSheet(getContext(), this.currentAccount, this.dialogId, false, this.dismiss, new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                MessagePrivateSeenView.this.request();
-            }
-        }, this.resourcesProvider);
     }
 
     public static void showSheet(final Context context, final int i, long j, final boolean z, final Runnable runnable, final Runnable runnable2, final Theme.ResourcesProvider resourcesProvider) {
         String str;
         int i2;
-        final BottomSheet bottomSheet;
-        final BottomSheet bottomSheet2 = new BottomSheet(context, false, resourcesProvider);
-        bottomSheet2.fixNavigationBar(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
+        final BottomSheet bottomSheet = new BottomSheet(context, false, resourcesProvider);
+        bottomSheet.fixNavigationBar(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
         boolean premiumFeaturesBlocked = MessagesController.getInstance(i).premiumFeaturesBlocked();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -269,12 +263,10 @@ public class MessagePrivateSeenView extends FrameLayout {
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessagePrivateSeenView.lambda$showSheet$7(ButtonWithCounterView.this, z, i, bottomSheet2, runnable2, context, resourcesProvider, view);
+                MessagePrivateSeenView.$r8$lambda$1onCj4pvO6L8Hb9bbMPAmbQK-A4(ButtonWithCounterView.this, z, i, bottomSheet, runnable2, context, resourcesProvider, view);
             }
         });
-        if (premiumFeaturesBlocked) {
-            bottomSheet = bottomSheet2;
-        } else {
+        if (!premiumFeaturesBlocked) {
             SimpleTextView simpleTextView = new SimpleTextView(context) { // from class: org.telegram.ui.Components.MessagePrivateSeenView.1
                 private final Paint paint = new Paint(1);
 
@@ -309,11 +301,10 @@ public class MessagePrivateSeenView extends FrameLayout {
             textView4.setText(AndroidUtilities.replaceTags(LocaleController.formatString(z ? R.string.PremiumLastSeenText2 : R.string.PremiumReadText2, str2)));
             linearLayout.addView(textView4, LayoutHelper.createLinear(-1, -2, 1, 32, 9, 32, 19));
             PremiumButtonView premiumButtonView = new PremiumButtonView(context, true, resourcesProvider);
-            bottomSheet = bottomSheet2;
             premiumButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MessagePrivateSeenView.lambda$showSheet$8(z, bottomSheet, runnable, view);
+                    MessagePrivateSeenView.$r8$lambda$6VkjybRO9MqmC2d3jzpplZhufnY(z, bottomSheet, runnable, view);
                 }
             });
             premiumButtonView.setOverlayText(LocaleController.getString(z ? R.string.PremiumLastSeenButton2 : R.string.PremiumReadButton2), false, false);
@@ -323,8 +314,7 @@ public class MessagePrivateSeenView extends FrameLayout {
         bottomSheet.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showSheet$7(final ButtonWithCounterView buttonWithCounterView, boolean z, int i, final BottomSheet bottomSheet, final Runnable runnable, final Context context, final Theme.ResourcesProvider resourcesProvider, View view) {
+    public static /* synthetic */ void $r8$lambda$1onCj4pvO6L8Hb9bbMPAmbQK-A4(final ButtonWithCounterView buttonWithCounterView, boolean z, int i, final BottomSheet bottomSheet, final Runnable runnable, final Context context, final Theme.ResourcesProvider resourcesProvider, View view) {
         buttonWithCounterView.setLoading(true);
         if (z) {
             TL_account.setPrivacy setprivacy = new TL_account.setPrivacy();
@@ -333,7 +323,12 @@ public class MessagePrivateSeenView extends FrameLayout {
             ConnectionsManager.getInstance(i).sendRequest(setprivacy, new RequestDelegate() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda4
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    MessagePrivateSeenView.lambda$showSheet$4(ButtonWithCounterView.this, bottomSheet, runnable, tLObject, tL_error);
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda7
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            MessagePrivateSeenView.$r8$lambda$guwLb45BisSIq2eY_xOdk0X5n-Y(TLRPC.TL_error.this, r2, r3, r4);
+                        }
+                    });
                 }
             });
             return;
@@ -348,65 +343,47 @@ public class MessagePrivateSeenView extends FrameLayout {
         ConnectionsManager.getInstance(i).sendRequest(setglobalprivacysettings, new RequestDelegate() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda5
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                MessagePrivateSeenView.lambda$showSheet$6(context, resourcesProvider, buttonWithCounterView, bottomSheet, runnable, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        MessagePrivateSeenView.$r8$lambda$mFKiuqa7A-9qEAjUuAbSEUUzIag(TLRPC.TL_error.this, r2, r3, r4, r5, r6);
+                    }
+                });
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showSheet$4(final ButtonWithCounterView buttonWithCounterView, final BottomSheet bottomSheet, final Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                MessagePrivateSeenView.lambda$showSheet$3(TLRPC.TL_error.this, buttonWithCounterView, bottomSheet, runnable);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showSheet$3(TLRPC.TL_error tL_error, ButtonWithCounterView buttonWithCounterView, BottomSheet bottomSheet, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$guwLb45BisSIq2eY_xOdk0X5n-Y(TLRPC.TL_error tL_error, ButtonWithCounterView buttonWithCounterView, BottomSheet bottomSheet, Runnable runnable) {
         if (tL_error != null) {
             BulletinFactory.global().showForError(tL_error);
             return;
         }
         buttonWithCounterView.setLoading(false);
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
         BulletinFactory.global().createSimpleBulletin(R.raw.chats_infotip, LocaleController.getString(R.string.PremiumLastSeenSet)).show();
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showSheet$6(final Context context, final Theme.ResourcesProvider resourcesProvider, final ButtonWithCounterView buttonWithCounterView, final BottomSheet bottomSheet, final Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                MessagePrivateSeenView.lambda$showSheet$5(TLRPC.TL_error.this, context, resourcesProvider, buttonWithCounterView, bottomSheet, runnable);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showSheet$5(TLRPC.TL_error tL_error, Context context, Theme.ResourcesProvider resourcesProvider, ButtonWithCounterView buttonWithCounterView, BottomSheet bottomSheet, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$mFKiuqa7A-9qEAjUuAbSEUUzIag(TLRPC.TL_error tL_error, Context context, Theme.ResourcesProvider resourcesProvider, ButtonWithCounterView buttonWithCounterView, BottomSheet bottomSheet, Runnable runnable) {
         if (tL_error != null) {
             BulletinFactory.of(Bulletin.BulletinWindow.make(context), resourcesProvider).showForError(tL_error);
             return;
         }
         buttonWithCounterView.setLoading(false);
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
         BulletinFactory.of(Bulletin.BulletinWindow.make(context), resourcesProvider).createSimpleBulletin(R.raw.chats_infotip, LocaleController.getString(R.string.PremiumReadSet)).show();
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showSheet$8(boolean z, BottomSheet bottomSheet, Runnable runnable, View view) {
+    public static /* synthetic */ void $r8$lambda$6VkjybRO9MqmC2d3jzpplZhufnY(boolean z, BottomSheet bottomSheet, Runnable runnable, View view) {
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         if (lastFragment != null) {
             lastFragment.presentFragment(new PremiumPreviewFragment(z ? "lastseen" : "readtime"));
-            bottomSheet.lambda$new$0();
+            bottomSheet.dismiss();
             if (runnable != null) {
                 runnable.run();
             }

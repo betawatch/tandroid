@@ -14,7 +14,7 @@ public class PostRunnableHolder {
         Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.PostRunnableHolder$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PostRunnableHolder.this.lambda$post$0(runnable);
+                PostRunnableHolder.$r8$lambda$lDJ-5QuX-ANnbRC3hW4n6peU24c(PostRunnableHolder.this, runnable);
             }
         };
         this.wrappedRunnable.put(runnable, runnable2);
@@ -25,10 +25,10 @@ public class PostRunnableHolder {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$post$0(Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$lDJ-5QuX-ANnbRC3hW4n6peU24c(PostRunnableHolder postRunnableHolder, Runnable runnable) {
+        postRunnableHolder.getClass();
         runnable.run();
-        this.wrappedRunnable.remove(runnable);
+        postRunnableHolder.wrappedRunnable.remove(runnable);
     }
 
     public void cancel(Runnable runnable) {

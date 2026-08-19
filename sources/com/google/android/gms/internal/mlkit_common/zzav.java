@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.mlkit_common;
 
+import androidx.core.provider.FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -8,13 +9,18 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
-public abstract class zzav extends zzx implements ExecutorService {
+public abstract class zzav extends zzx implements ExecutorService, AutoCloseable {
     protected zzav() {
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final boolean awaitTermination(long j, TimeUnit timeUnit) {
         return zzb().awaitTermination(j, timeUnit);
+    }
+
+    @Override // java.lang.AutoCloseable
+    public /* synthetic */ void close() {
+        FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1.m(this);
     }
 
     @Override // java.util.concurrent.ExecutorService

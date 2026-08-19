@@ -3,7 +3,7 @@ package org.webrtc;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
     private boolean isCapturerRunning;
@@ -112,7 +112,7 @@ public class VideoSource extends MediaSource {
                     videoProcessor.setSink(new VideoSink() { // from class: org.webrtc.VideoSource$$ExternalSyntheticLambda1
                         @Override // org.webrtc.VideoSink
                         public final void onFrame(VideoFrame videoFrame) {
-                            VideoSource.this.lambda$setVideoProcessor$1(videoFrame);
+                            VideoSource.$r8$lambda$alSLwIDfjL1u6pBZwqqvarucaB4(VideoSource.this, videoFrame);
                         }
 
                         @Override // org.webrtc.VideoSink
@@ -130,17 +130,12 @@ public class VideoSource extends MediaSource {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVideoProcessor$0(VideoFrame videoFrame) {
-        this.nativeAndroidVideoTrackSource.onFrameCaptured(videoFrame);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVideoProcessor$1(final VideoFrame videoFrame) {
-        runWithReference(new Runnable() { // from class: org.webrtc.VideoSource$$ExternalSyntheticLambda0
+    public static /* synthetic */ void $r8$lambda$alSLwIDfjL1u6pBZwqqvarucaB4(final VideoSource videoSource, final VideoFrame videoFrame) {
+        videoSource.getClass();
+        videoSource.runWithReference(new Runnable() { // from class: org.webrtc.VideoSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                VideoSource.this.lambda$setVideoProcessor$0(videoFrame);
+                VideoSource.this.nativeAndroidVideoTrackSource.onFrameCaptured(videoFrame);
             }
         });
     }

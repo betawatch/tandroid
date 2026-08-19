@@ -57,27 +57,26 @@ final class zzui {
     }
 
     static int zza(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzso) {
-            zzso zzsoVar = (zzso) list;
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(zzsoVar.zze(i2));
-                i2++;
+        if (!(list instanceof zzso)) {
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Integer) list.get(i)).intValue());
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(((Integer) list.get(i2)).intValue());
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzso zzsoVar = (zzso) list;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzsoVar.zze(i));
+            i++;
+        }
+        return i3;
     }
 
     static int zzb(int i, List list, boolean z) {
@@ -105,51 +104,49 @@ final class zzui {
     }
 
     static int zzf(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzso) {
-            zzso zzsoVar = (zzso) list;
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(zzsoVar.zze(i2));
-                i2++;
+        if (!(list instanceof zzso)) {
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Integer) list.get(i)).intValue());
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(((Integer) list.get(i2)).intValue());
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzso zzsoVar = (zzso) list;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzsoVar.zze(i));
+            i++;
+        }
+        return i3;
     }
 
     static int zzg(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzth) {
-            zzth zzthVar = (zzth) list;
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(zzthVar.zze(i2));
-                i2++;
+        if (!(list instanceof zzth)) {
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Long) list.get(i)).longValue());
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(((Long) list.get(i2)).longValue());
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzth zzthVar = (zzth) list;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzthVar.zze(i));
+            i++;
+        }
+        return i3;
     }
 
     static int zzh(int i, Object obj, zzug zzugVar) {
@@ -163,103 +160,99 @@ final class zzui {
     }
 
     static int zzi(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzso) {
-            zzso zzsoVar = (zzso) list;
-            i = 0;
-            while (i2 < size) {
-                int zze = zzsoVar.zze(i2);
-                i += zzqv.zzA((zze >> 31) ^ (zze + zze));
-                i2++;
+        if (!(list instanceof zzso)) {
+            int i2 = 0;
+            while (i < size) {
+                int intValue = ((Integer) list.get(i)).intValue();
+                i2 += zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                int intValue = ((Integer) list.get(i2)).intValue();
-                i += zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzso zzsoVar = (zzso) list;
+        int i3 = 0;
+        while (i < size) {
+            int zze = zzsoVar.zze(i);
+            i3 += zzqv.zzA((zze >> 31) ^ (zze + zze));
+            i++;
+        }
+        return i3;
     }
 
     static int zzj(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzth) {
-            zzth zzthVar = (zzth) list;
-            i = 0;
-            while (i2 < size) {
-                long zze = zzthVar.zze(i2);
-                i += zzqv.zzB((zze >> 63) ^ (zze + zze));
-                i2++;
+        if (!(list instanceof zzth)) {
+            int i2 = 0;
+            while (i < size) {
+                long longValue = ((Long) list.get(i)).longValue();
+                i2 += zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                long longValue = ((Long) list.get(i2)).longValue();
-                i += zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzth zzthVar = (zzth) list;
+        int i3 = 0;
+        while (i < size) {
+            long zze = zzthVar.zze(i);
+            i3 += zzqv.zzB((zze >> 63) ^ (zze + zze));
+            i++;
+        }
+        return i3;
     }
 
     static int zzk(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzso) {
-            zzso zzsoVar = (zzso) list;
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzA(zzsoVar.zze(i2));
-                i2++;
+        if (!(list instanceof zzso)) {
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzA(((Integer) list.get(i)).intValue());
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzA(((Integer) list.get(i2)).intValue());
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzso zzsoVar = (zzso) list;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzA(zzsoVar.zze(i));
+            i++;
+        }
+        return i3;
     }
 
     static int zzl(List list) {
-        int i;
         int size = list.size();
-        int i2 = 0;
+        int i = 0;
         if (size == 0) {
             return 0;
         }
-        if (list instanceof zzth) {
-            zzth zzthVar = (zzth) list;
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(zzthVar.zze(i2));
-                i2++;
+        if (!(list instanceof zzth)) {
+            int i2 = 0;
+            while (i < size) {
+                i2 += zzqv.zzB(((Long) list.get(i)).longValue());
+                i++;
             }
-        } else {
-            i = 0;
-            while (i2 < size) {
-                i += zzqv.zzB(((Long) list.get(i2)).longValue());
-                i2++;
-            }
+            return i2;
         }
-        return i;
+        zzth zzthVar = (zzth) list;
+        int i3 = 0;
+        while (i < size) {
+            i3 += zzqv.zzB(zzthVar.zze(i));
+            i++;
+        }
+        return i3;
     }
 
     public static zzuv zzm() {
@@ -270,34 +263,33 @@ final class zzui {
         if (zzsrVar == null) {
             return obj2;
         }
-        if (list instanceof RandomAccess) {
-            int size = list.size();
-            int i2 = 0;
-            for (int i3 = 0; i3 < size; i3++) {
-                Integer num = (Integer) list.get(i3);
-                int intValue = num.intValue();
-                if (zzsrVar.zza(intValue)) {
-                    if (i3 != i2) {
-                        list.set(i2, num);
-                    }
-                    i2++;
-                } else {
-                    obj2 = zzo(obj, i, intValue, obj2, zzuvVar);
-                }
-            }
-            if (i2 != size) {
-                list.subList(i2, size).clear();
-                return obj2;
-            }
-        } else {
+        if (!(list instanceof RandomAccess)) {
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                int intValue2 = ((Integer) it.next()).intValue();
-                if (!zzsrVar.zza(intValue2)) {
-                    obj2 = zzo(obj, i, intValue2, obj2, zzuvVar);
+                int intValue = ((Integer) it.next()).intValue();
+                if (!zzsrVar.zza(intValue)) {
+                    obj2 = zzo(obj, i, intValue, obj2, zzuvVar);
                     it.remove();
                 }
             }
+            return obj2;
+        }
+        int size = list.size();
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            Integer num = (Integer) list.get(i3);
+            int intValue2 = num.intValue();
+            if (zzsrVar.zza(intValue2)) {
+                if (i3 != i2) {
+                    list.set(i2, num);
+                }
+                i2++;
+            } else {
+                obj2 = zzo(obj, i, intValue2, obj2, zzuvVar);
+            }
+        }
+        if (i2 != size) {
+            list.subList(i2, size).clear();
         }
         return obj2;
     }

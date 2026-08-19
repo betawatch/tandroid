@@ -486,23 +486,24 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
             this.avatarWavesDrawable.setAmplitude(d);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:10:0x0035  */
-        /* JADX WARN: Removed duplicated region for block: B:15:0x006c  */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0038  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x006f  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void updateState(boolean z) {
             final int color;
             final int color2;
+            int color3;
             GroupCallStatusIcon groupCallStatusIcon = this.statusIcon;
             if (groupCallStatusIcon == null) {
                 return;
             }
             groupCallStatusIcon.updateIcon(z);
             if (this.statusIcon.isMutedByMe()) {
-                color = Theme.getColor(Theme.key_voipgroup_mutedByAdminIcon);
+                color3 = Theme.getColor(Theme.key_voipgroup_mutedByAdminIcon);
             } else if (this.statusIcon.isSpeaking()) {
-                color = Theme.getColor(Theme.key_voipgroup_speakingText);
+                color3 = Theme.getColor(Theme.key_voipgroup_speakingText);
             } else {
                 color = Theme.getColor(Theme.key_voipgroup_nameText);
                 color2 = Theme.getColor(Theme.key_voipgroup_listeningText);
@@ -525,12 +526,10 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 final int i2 = this.lastWavesColor;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.colorAnimator = ofFloat;
-                final int i3 = color;
-                final int i4 = color2;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.GroupCallFullscreenAdapter$GroupCallUserCell$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        GroupCallFullscreenAdapter.GroupCallUserCell.this.lambda$updateState$0(i, i3, i2, i4, valueAnimator2);
+                        GroupCallFullscreenAdapter.GroupCallUserCell.$r8$lambda$t3iQGSiWgoIn6oeEeKA0SWuKcHI(GroupCallFullscreenAdapter.GroupCallUserCell.this, i, color, i2, color2, valueAnimator2);
                     }
                 });
                 this.colorAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.GroupCallFullscreenAdapter.GroupCallUserCell.2
@@ -551,20 +550,21 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 this.colorAnimator.start();
                 return;
             }
+            color = color3;
             color2 = color;
             if (z) {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateState$0(int i, int i2, int i3, int i4, ValueAnimator valueAnimator) {
-            this.lastColor = ColorUtils.blendARGB(i, i2, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-            this.lastWavesColor = ColorUtils.blendARGB(i3, i4, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-            this.muteButton.setColorFilter(new PorterDuffColorFilter(this.lastColor, PorterDuff.Mode.MULTIPLY));
-            this.textPaint.setColor(this.lastColor);
-            this.selectionPaint.setColor(this.lastWavesColor);
-            this.avatarWavesDrawable.setColor(ColorUtils.setAlphaComponent(this.lastWavesColor, 38));
-            invalidate();
+        public static /* synthetic */ void $r8$lambda$t3iQGSiWgoIn6oeEeKA0SWuKcHI(GroupCallUserCell groupCallUserCell, int i, int i2, int i3, int i4, ValueAnimator valueAnimator) {
+            groupCallUserCell.getClass();
+            groupCallUserCell.lastColor = ColorUtils.blendARGB(i, i2, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+            groupCallUserCell.lastWavesColor = ColorUtils.blendARGB(i3, i4, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+            groupCallUserCell.muteButton.setColorFilter(new PorterDuffColorFilter(groupCallUserCell.lastColor, PorterDuff.Mode.MULTIPLY));
+            groupCallUserCell.textPaint.setColor(groupCallUserCell.lastColor);
+            groupCallUserCell.selectionPaint.setColor(groupCallUserCell.lastWavesColor);
+            groupCallUserCell.avatarWavesDrawable.setColor(ColorUtils.setAlphaComponent(groupCallUserCell.lastWavesColor, 38));
+            groupCallUserCell.invalidate();
         }
 
         @Override // android.view.View

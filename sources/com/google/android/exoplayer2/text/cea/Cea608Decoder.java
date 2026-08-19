@@ -171,7 +171,7 @@ public final class Cea608Decoder extends CeaDecoder {
         if (!shouldClearStuckCaptions() || (availableOutputBuffer = getAvailableOutputBuffer()) == null) {
             return null;
         }
-        this.cues = Collections.emptyList();
+        this.cues = Collections.EMPTY_LIST;
         this.lastCueUpdateUs = -9223372036854775807L;
         availableOutputBuffer.setContent(getPositionUs(), createSubtitle(), Long.MAX_VALUE);
         return availableOutputBuffer;
@@ -345,9 +345,8 @@ public final class Cea608Decoder extends CeaDecoder {
                         if (b != 33) {
                             switch (b) {
                                 case 44:
-                                    this.cues = Collections.emptyList();
-                                    int i2 = this.captionMode;
-                                    if (i2 == 1 || i2 == 3) {
+                                    this.cues = Collections.EMPTY_LIST;
+                                    if (i == 1 || i == 3) {
                                         resetCueBuilders();
                                         break;
                                     }
@@ -415,7 +414,7 @@ public final class Cea608Decoder extends CeaDecoder {
         }
         resetCueBuilders();
         if (i2 == 3 || i == 1 || i == 0) {
-            this.cues = Collections.emptyList();
+            this.cues = Collections.EMPTY_LIST;
         }
     }
 
@@ -449,6 +448,7 @@ public final class Cea608Decoder extends CeaDecoder {
                                 this.isInCaptionService = false;
                                 break;
                         }
+                        return;
                 }
             }
             this.isInCaptionService = true;

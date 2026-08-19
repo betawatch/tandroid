@@ -20,7 +20,7 @@ import org.telegram.messenger.MediaDataController;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
     private static final String TAG = "Camera2Enumerator";
@@ -164,7 +164,7 @@ public class Camera2Enumerator implements CameraEnumerator {
 
     private static List<Size> convertSizes(android.util.Size[] sizeArr) {
         if (sizeArr == null || sizeArr.length == 0) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         ArrayList arrayList = new ArrayList(sizeArr.length);
         for (android.util.Size size : sizeArr) {

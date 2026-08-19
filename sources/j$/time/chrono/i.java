@@ -1,8 +1,8 @@
 package j$.time.chrono;
 
 /* loaded from: classes2.dex */
-abstract /* synthetic */ class i {
-    static final /* synthetic */ int[] a;
+public abstract /* synthetic */ class i {
+    public static final /* synthetic */ int[] a;
 
     static {
         int[] iArr = new int[j$.time.temporal.a.values().length];

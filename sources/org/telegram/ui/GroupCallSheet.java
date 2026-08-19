@@ -54,18 +54,23 @@ public abstract class GroupCallSheet {
         show(context, i, j, tL_inputGroupCallSlug, progress);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x002e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x002d, code lost:
     
-        if (r16.id == r0.id) goto L23;
+        if (r13.id == r0.id) goto L13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0043, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0044, code lost:
     
-        if (android.text.TextUtils.equals(r0.slug, r16.slug) != false) goto L23;
+        if (android.text.TextUtils.equals(r0.slug, r13.slug) != false) goto L13;
      */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:24:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x006e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void show(final Context context, final int i, final long j, final TLRPC.InputGroupCall inputGroupCall, final Browser.Progress progress) {
+    public static void show(Context context, final int i, final long j, final TLRPC.InputGroupCall inputGroupCall, final Browser.Progress progress) {
+        final Context context2;
         AlertDialog alertDialog;
         ConferenceCall conferenceCall;
         if (VoIPService.getSharedInstance() != null && (conferenceCall = VoIPService.getSharedInstance().conference) != null) {
@@ -76,6 +81,7 @@ public abstract class GroupCallSheet {
                     if (inputGroupCall2 instanceof TLRPC.TL_inputGroupCall) {
                     }
                 }
+                context2 = context;
                 LaunchActivity launchActivity = LaunchActivity.instance;
                 if (launchActivity != null) {
                     GroupCallActivity.create(launchActivity, AccountInstance.getInstance(VoIPService.getSharedInstance().getAccount()), null, null, false, null);
@@ -86,46 +92,62 @@ public abstract class GroupCallSheet {
                 if (inputGroupCall3 instanceof TLRPC.TL_inputGroupCallSlug) {
                 }
             }
-        }
-        if (progress == null) {
-            alertDialog = new AlertDialog(context, 3);
-            alertDialog.showDelayed(300L);
-        } else {
-            alertDialog = null;
-        }
-        final AlertDialog alertDialog2 = alertDialog;
-        TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
-        getgroupcall.call = inputGroupCall;
-        getgroupcall.limit = 10;
-        final int sendRequest = ConnectionsManager.getInstance(i).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda0
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                GroupCallSheet.lambda$show$1(AlertDialog.this, progress, i, context, j, inputGroupCall, tLObject, tL_error);
+            if (progress != null) {
+                alertDialog = new AlertDialog(context2, 3);
+                alertDialog.showDelayed(300L);
+            } else {
+                alertDialog = null;
             }
-        });
-        if (progress != null) {
-            progress.onCancel(new Runnable() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    GroupCallSheet.lambda$show$2(i, sendRequest);
+            final AlertDialog alertDialog2 = alertDialog;
+            TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
+            getgroupcall.call = inputGroupCall;
+            getgroupcall.limit = 10;
+            final int sendRequest = ConnectionsManager.getInstance(i).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda2
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            GroupCallSheet.$r8$lambda$Akf10XNgC6J0t1JRJKCuBgnc3cI(AlertDialog.this, r2, tLObject, r4, r5, r6, r8, tL_error);
+                        }
+                    });
                 }
             });
-            progress.init();
+            if (progress == null) {
+                progress.onCancel(new Runnable() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ConnectionsManager.getInstance(i).cancelRequest(sendRequest, true);
+                    }
+                });
+                progress.init();
+                return;
+            }
+            return;
+        }
+        context2 = context;
+        if (progress != null) {
+        }
+        final AlertDialog alertDialog22 = alertDialog;
+        TL_phone.getGroupCall getgroupcall2 = new TL_phone.getGroupCall();
+        getgroupcall2.call = inputGroupCall;
+        getgroupcall2.limit = 10;
+        final int sendRequest2 = ConnectionsManager.getInstance(i).sendRequest(getgroupcall2, new RequestDelegate() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda0
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        GroupCallSheet.$r8$lambda$Akf10XNgC6J0t1JRJKCuBgnc3cI(AlertDialog.this, r2, tLObject, r4, r5, r6, r8, tL_error);
+                    }
+                });
+            }
+        });
+        if (progress == null) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$1(final AlertDialog alertDialog, final Browser.Progress progress, final int i, final Context context, final long j, final TLRPC.InputGroupCall inputGroupCall, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                GroupCallSheet.lambda$show$0(AlertDialog.this, progress, tLObject, i, context, j, inputGroupCall, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$0(AlertDialog alertDialog, Browser.Progress progress, TLObject tLObject, int i, Context context, long j, TLRPC.InputGroupCall inputGroupCall, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Akf10XNgC6J0t1JRJKCuBgnc3cI(AlertDialog alertDialog, Browser.Progress progress, TLObject tLObject, int i, Context context, long j, TLRPC.InputGroupCall inputGroupCall, TLRPC.TL_error tL_error) {
         BaseFragment safeLastFragment;
         ConferenceCall conferenceCall;
         TLRPC.GroupCall groupCall;
@@ -161,12 +183,8 @@ public abstract class GroupCallSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$2(int i, int i2) {
-        ConnectionsManager.getInstance(i).cancelRequest(i2, true);
-    }
-
     public static void show(final Context context, final int i, final long j, final TLRPC.InputGroupCall inputGroupCall, TLRPC.GroupCall groupCall, ArrayList arrayList) {
+        float f;
         DarkThemeResourceProvider darkThemeResourceProvider = new DarkThemeResourceProvider();
         BottomSheet.Builder builder = new BottomSheet.Builder(context, false, darkThemeResourceProvider);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -190,9 +208,9 @@ public abstract class GroupCallSheet {
 
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                Long lambda$show$3;
-                lambda$show$3 = GroupCallSheet.lambda$show$3((TLRPC.GroupCallParticipant) obj);
-                return lambda$show$3;
+                Long valueOf;
+                valueOf = Long.valueOf(DialogObject.getPeerDialogId(((TLRPC.GroupCallParticipant) obj).peer));
+                return valueOf;
             }
 
             public /* synthetic */ Function compose(Function function) {
@@ -213,9 +231,7 @@ public abstract class GroupCallSheet {
 
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean lambda$show$4;
-                lambda$show$4 = GroupCallSheet.lambda$show$4(i, j, (Long) obj);
-                return lambda$show$4;
+                return GroupCallSheet.$r8$lambda$0wXRjKk4tiXvqp2xchk3q6Rg_NQ(i, j, (Long) obj);
             }
         }).collect(Collectors.toList());
         boolean isEmpty = list.isEmpty();
@@ -224,7 +240,9 @@ public abstract class GroupCallSheet {
         makeLinkTextView2.setGravity(17);
         makeLinkTextView2.setMaxWidth(HintView2.cutInFancyHalf(makeLinkTextView2.getText(), makeLinkTextView2.getPaint()));
         linearLayout.addView(makeLinkTextView2, LayoutHelper.createLinear(-1, -2, 1, 2, 0, 2, 23));
-        if (!isEmpty) {
+        if (isEmpty) {
+            f = 8.0f;
+        } else {
             View view = new View(context);
             view.setBackgroundColor(-14012362);
             linearLayout.addView(view, LayoutHelper.createLinear(-1, 0.66f, 7, 0, 0, 0, 0));
@@ -236,6 +254,7 @@ public abstract class GroupCallSheet {
             for (int i3 = 0; i3 < min; i3++) {
                 avatarsImageView.setObject(i3, i, MessagesController.getInstance(i).getUser((Long) list.get(i3)));
             }
+            f = 8.0f;
             avatarsImageView.commitTransition(false);
             linearLayout.addView(avatarsImageView, LayoutHelper.createLinear(-1, 58, 2.0f, 11.0f, 5.0f, 0.0f));
             LinkSpanDrawable.LinksTextView makeLinkTextView3 = TextHelper.makeLinkTextView(context, 14.0f, Theme.key_windowBackgroundWhiteBlackText, false, darkThemeResourceProvider);
@@ -251,7 +270,7 @@ public abstract class GroupCallSheet {
             linearLayout.addView(makeLinkTextView3, LayoutHelper.createLinear(-1, -2, 1, 2, 0, 2, 25));
         }
         LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
+        linearLayout2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(f));
         linearLayout2.setClipToPadding(false);
         linearLayout2.setOrientation(0);
         linearLayout2.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, darkThemeResourceProvider), 20, 20));
@@ -271,7 +290,7 @@ public abstract class GroupCallSheet {
         linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                GroupCallSheet.lambda$show$5(CheckBox2.this, view2);
+                GroupCallSheet.$r8$lambda$uOXxZGwZT0bVQWHGSuPdRe3GfLE(CheckBox2.this, view2);
             }
         });
         ButtonWithCounterView round = new ButtonWithCounterView(context, darkThemeResourceProvider).setRound();
@@ -282,32 +301,24 @@ public abstract class GroupCallSheet {
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                GroupCallSheet.lambda$show$6(BottomSheet.this, context, checkBox2, i, inputGroupCall, view2);
+                GroupCallSheet.$r8$lambda$plmRm_-ZCfuxi0WM15hUydZwDTE(BottomSheet.this, context, checkBox2, i, inputGroupCall, view2);
             }
         });
         create.fixNavigationBar();
         create.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Long lambda$show$3(TLRPC.GroupCallParticipant groupCallParticipant) {
-        return Long.valueOf(DialogObject.getPeerDialogId(groupCallParticipant.peer));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$show$4(int i, long j, Long l) {
+    public static /* synthetic */ boolean $r8$lambda$0wXRjKk4tiXvqp2xchk3q6Rg_NQ(int i, long j, Long l) {
         return (l.longValue() == UserConfig.getInstance(i).getClientUserId() || l.longValue() == j) ? false : true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$5(CheckBox2 checkBox2, View view) {
+    public static /* synthetic */ void $r8$lambda$uOXxZGwZT0bVQWHGSuPdRe3GfLE(CheckBox2 checkBox2, View view) {
         checkBox2.setChecked(!checkBox2.isChecked(), true);
         MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", checkBox2.isChecked()).apply();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$6(BottomSheet bottomSheet, Context context, CheckBox2 checkBox2, int i, TLRPC.InputGroupCall inputGroupCall, View view) {
-        bottomSheet.lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$plmRm_-ZCfuxi0WM15hUydZwDTE(BottomSheet bottomSheet, Context context, CheckBox2 checkBox2, int i, TLRPC.InputGroupCall inputGroupCall, View view) {
+        bottomSheet.dismiss();
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity == null) {
             return;

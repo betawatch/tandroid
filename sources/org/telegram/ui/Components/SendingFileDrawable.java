@@ -88,23 +88,28 @@ public class SendingFileDrawable extends StatusDrawable {
         if (paint == null) {
             paint = Theme.chat_statusRecordPaint;
         }
-        for (int i = 0; i < 3; i++) {
+        Paint paint2 = paint;
+        int i = 0;
+        while (i < 3) {
             if (i == 0) {
-                paint.setAlpha((int) (this.progress * 255.0f));
+                paint2.setAlpha((int) (this.progress * 255.0f));
             } else if (i == 2) {
-                paint.setAlpha((int) ((1.0f - this.progress) * 255.0f));
+                paint2.setAlpha((int) ((1.0f - this.progress) * 255.0f));
             } else {
-                paint.setAlpha(NotificationCenter.didReceiveSmsCode);
+                paint2.setAlpha(NotificationCenter.didReceiveSmsCode);
             }
             float dp = (AndroidUtilities.dp(5.0f) * i) + (AndroidUtilities.dp(5.0f) * this.progress);
             float f = 8.0f;
-            canvas.drawLine(dp, AndroidUtilities.dp(this.isChat ? 3.0f : 4.0f), dp + AndroidUtilities.dp(4.0f), AndroidUtilities.dp(this.isChat ? 7.0f : 8.0f), paint);
+            Canvas canvas2 = canvas;
+            canvas2.drawLine(dp, AndroidUtilities.dp(this.isChat ? 3.0f : 4.0f), dp + AndroidUtilities.dp(4.0f), AndroidUtilities.dp(this.isChat ? 7.0f : 8.0f), paint2);
             float dp2 = AndroidUtilities.dp(this.isChat ? 11.0f : 12.0f);
             float dp3 = dp + AndroidUtilities.dp(4.0f);
             if (this.isChat) {
                 f = 7.0f;
             }
-            canvas.drawLine(dp, dp2, dp3, AndroidUtilities.dp(f), paint);
+            canvas2.drawLine(dp, dp2, dp3, AndroidUtilities.dp(f), paint2);
+            i++;
+            canvas = canvas2;
         }
         if (this.started) {
             update();

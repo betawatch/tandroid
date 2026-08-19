@@ -115,6 +115,7 @@ public class WallpaperCheckBoxView extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         float f;
+        Canvas canvas2 = canvas;
         this.rect.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         Theme.applyServiceShaderMatrixForView(this, this.parentView, this.resourcesProvider);
         canvas.drawRoundRect(this.rect, getMeasuredHeight() / 2, getMeasuredHeight() / 2, getThemedPaint("paintChatActionBackground"));
@@ -146,15 +147,15 @@ public class WallpaperCheckBoxView extends View {
             this.rect.set(dp, dp, AndroidUtilities.dp(18.0f) - dp, AndroidUtilities.dp(18.0f) - dp);
             this.drawBitmap.eraseColor(0);
             this.backgroundPaint.setColor(Theme.getColor(i, this.resourcesProvider));
-            Canvas canvas2 = this.drawCanvas;
+            Canvas canvas3 = this.drawCanvas;
             RectF rectF = this.rect;
-            canvas2.drawRoundRect(rectF, rectF.width() / 2.0f, this.rect.height() / 2.0f, this.backgroundPaint);
+            canvas3.drawRoundRect(rectF, rectF.width() / 2.0f, this.rect.height() / 2.0f, this.backgroundPaint);
             if (f3 != 1.0f) {
                 float min = Math.min(AndroidUtilities.dp(7.0f), (AndroidUtilities.dp(7.0f) * f3) + dp);
                 this.rect.set(AndroidUtilities.dp(2.0f) + min, AndroidUtilities.dp(2.0f) + min, AndroidUtilities.dp(16.0f) - min, AndroidUtilities.dp(16.0f) - min);
-                Canvas canvas3 = this.drawCanvas;
+                Canvas canvas4 = this.drawCanvas;
                 RectF rectF2 = this.rect;
-                canvas3.drawRoundRect(rectF2, rectF2.width() / 2.0f, this.rect.height() / 2.0f, this.eraserPaint);
+                canvas4.drawRoundRect(rectF2, rectF2.width() / 2.0f, this.rect.height() / 2.0f, this.eraserPaint);
             }
             if (this.progress > 0.5f) {
                 float f4 = 1.0f - f;
@@ -168,8 +169,9 @@ public class WallpaperCheckBoxView extends View {
             if (iArr[3] != 0) {
                 while (i2 < 4) {
                     this.backgroundPaint.setColor(this.colors[i2]);
-                    canvas.drawArc(this.rect, (i2 * 90) - 90, 90.0f, true, this.backgroundPaint);
+                    canvas2.drawArc(this.rect, (i2 * 90) - 90, 90.0f, true, this.backgroundPaint);
                     i2++;
+                    canvas2 = canvas;
                 }
             } else if (iArr[2] != 0) {
                 while (i2 < 3) {

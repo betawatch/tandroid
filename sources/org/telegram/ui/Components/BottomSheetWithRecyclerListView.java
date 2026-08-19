@@ -220,11 +220,13 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 }
 
                 private void onMeasureInternal(int i, int i2) {
+                    int i3;
                     EditTextEmoji editTextEmoji;
                     int size = View.MeasureSpec.getSize(i);
                     int size2 = View.MeasureSpec.getSize(i2);
                     setMeasuredDimension(size, size2);
                     EditTextEmoji editTextEmoji2 = BottomSheetWithRecyclerListView.this.editTextEmoji;
+                    int i4 = 0;
                     if (editTextEmoji2 != null && !editTextEmoji2.isWaitingForKeyboardOpen() && AndroidUtilities.dp(20.0f) >= 0 && !BottomSheetWithRecyclerListView.this.editTextEmoji.isPopupShowing() && !BottomSheetWithRecyclerListView.this.editTextEmoji.isAnimatePopupClosing()) {
                         this.ignoreLayout = true;
                         BottomSheetWithRecyclerListView.this.editTextEmoji.hideEmojiView();
@@ -237,9 +239,10 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                             i2 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
                         }
                     }
+                    int i5 = i2;
                     int childCount = getChildCount();
-                    for (int i3 = 0; i3 < childCount; i3++) {
-                        View childAt = getChildAt(i3);
+                    while (i4 < childCount) {
+                        View childAt = getChildAt(i4);
                         if (childAt != null && childAt.getVisibility() != 8) {
                             EditTextEmoji editTextEmoji3 = BottomSheetWithRecyclerListView.this.editTextEmoji;
                             if (editTextEmoji3 != null && editTextEmoji3.isPopupView(childAt)) {
@@ -253,9 +256,15 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                                     childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
                                 }
                             } else {
-                                measureChildWithMargins(childAt, i, 0, i2, 0);
+                                i3 = i;
+                                measureChildWithMargins(childAt, i3, 0, i5, 0);
+                                i4++;
+                                i = i3;
                             }
                         }
+                        i3 = i;
+                        i4++;
+                        i = i3;
                     }
                 }
 
@@ -783,8 +792,9 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.ActionBar.BottomSheet
-    protected void onContainerViewTranslation() {
+    public void onContainerViewTranslation() {
         onSheetTop(this.lastTop);
         checkBackDrawableInsets();
     }

@@ -22,7 +22,7 @@ public class Trigger implements Runnable {
         Runnable runnable = new Runnable() { // from class: org.telegram.messenger.pip.utils.Trigger$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                Trigger.this.lambda$new$0(callback);
+                Trigger.$r8$lambda$wb6urHkQ6RJrakQiFLm9bhLhPPg(Trigger.this, callback);
             }
         };
         this.timeoutRunnable = runnable;
@@ -31,9 +31,8 @@ public class Trigger implements Runnable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Callback callback) {
-        if (this.triggered.compareAndSet(false, true)) {
+    public static /* synthetic */ void $r8$lambda$wb6urHkQ6RJrakQiFLm9bhLhPPg(Trigger trigger, Callback callback) {
+        if (trigger.triggered.compareAndSet(false, true)) {
             callback.run(true);
         }
     }
@@ -52,15 +51,10 @@ public class Trigger implements Runnable {
                 this.handler.post(new Runnable() { // from class: org.telegram.messenger.pip.utils.Trigger$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        Trigger.this.lambda$run$1();
+                        Trigger.this.action.run(false);
                     }
                 });
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$run$1() {
-        this.action.run(false);
     }
 }

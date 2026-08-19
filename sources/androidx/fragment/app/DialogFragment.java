@@ -232,18 +232,21 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
                 String str = "getting layout inflater for DialogFragment " + this;
                 if (!this.mShowsDialog) {
                     Log.d("FragmentManager", "mShowsDialog = false: " + str);
-                } else {
-                    Log.d("FragmentManager", "mCreatingDialog = true: " + str);
+                    return onGetLayoutInflater;
                 }
+                Log.d("FragmentManager", "mCreatingDialog = true: " + str);
             }
-            return onGetLayoutInflater;
+        } else {
+            prepareDialog(bundle);
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.d("FragmentManager", "get layout inflater for DialogFragment " + this + " from dialog context");
+            }
+            Dialog dialog = this.mDialog;
+            if (dialog != null) {
+                return onGetLayoutInflater.cloneInContext(dialog.getContext());
+            }
         }
-        prepareDialog(bundle);
-        if (FragmentManager.isLoggingEnabled(2)) {
-            Log.d("FragmentManager", "get layout inflater for DialogFragment " + this + " from dialog context");
-        }
-        Dialog dialog = this.mDialog;
-        return dialog != null ? onGetLayoutInflater.cloneInContext(dialog.getContext()) : onGetLayoutInflater;
+        return onGetLayoutInflater;
     }
 
     public void setupDialog(Dialog dialog, int i) {

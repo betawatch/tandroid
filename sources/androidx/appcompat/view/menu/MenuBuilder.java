@@ -606,29 +606,33 @@ public class MenuBuilder implements SupportMenu {
         ActionProvider supportActionProvider = menuItemImpl.getSupportActionProvider();
         boolean z = supportActionProvider != null && supportActionProvider.hasSubMenu();
         if (menuItemImpl.hasCollapsibleActionView()) {
-            invoke |= menuItemImpl.expandActionView();
-            if (invoke) {
+            boolean expandActionView = menuItemImpl.expandActionView() | invoke;
+            if (expandActionView) {
                 close(true);
             }
-        } else if (menuItemImpl.hasSubMenu() || z) {
-            if ((i & 4) == 0) {
-                close(false);
-            }
-            if (!menuItemImpl.hasSubMenu()) {
-                menuItemImpl.setSubMenu(new SubMenuBuilder(getContext(), this, menuItemImpl));
-            }
-            SubMenuBuilder subMenuBuilder = (SubMenuBuilder) menuItemImpl.getSubMenu();
-            if (z) {
-                supportActionProvider.onPrepareSubMenu(subMenuBuilder);
-            }
-            invoke |= dispatchSubMenuSelected(subMenuBuilder, menuPresenter);
-            if (!invoke) {
+            return expandActionView;
+        }
+        if (!menuItemImpl.hasSubMenu() && !z) {
+            if ((i & 1) == 0) {
                 close(true);
             }
-        } else if ((i & 1) == 0) {
+            return invoke;
+        }
+        if ((i & 4) == 0) {
+            close(false);
+        }
+        if (!menuItemImpl.hasSubMenu()) {
+            menuItemImpl.setSubMenu(new SubMenuBuilder(getContext(), this, menuItemImpl));
+        }
+        SubMenuBuilder subMenuBuilder = (SubMenuBuilder) menuItemImpl.getSubMenu();
+        if (z) {
+            supportActionProvider.onPrepareSubMenu(subMenuBuilder);
+        }
+        boolean dispatchSubMenuSelected = dispatchSubMenuSelected(subMenuBuilder, menuPresenter) | invoke;
+        if (!dispatchSubMenuSelected) {
             close(true);
         }
-        return invoke;
+        return dispatchSubMenuSelected;
     }
 
     public final void close(boolean z) {

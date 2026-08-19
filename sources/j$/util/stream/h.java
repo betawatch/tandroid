@@ -7,44 +7,37 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h implements Collector {
-    public final /* synthetic */ java.util.stream.Collector a;
+public final /* synthetic */ class h implements java.util.stream.Collector {
+    public final /* synthetic */ Collector a;
 
-    private /* synthetic */ h(java.util.stream.Collector collector) {
+    public /* synthetic */ h(Collector collector) {
         this.a = collector;
     }
 
-    public static /* synthetic */ Collector a(java.util.stream.Collector collector) {
-        if (collector == null) {
-            return null;
-        }
-        return collector instanceof i ? ((i) collector).a : new h(collector);
-    }
-
-    @Override // j$.util.stream.Collector
+    @Override // java.util.stream.Collector
     public final /* synthetic */ BiConsumer accumulator() {
         return this.a.accumulator();
     }
 
-    @Override // j$.util.stream.Collector
+    @Override // java.util.stream.Collector
     public final /* synthetic */ Set characteristics() {
-        return X2.a(this.a.characteristics());
+        return Q2.a(this.a.characteristics());
     }
 
-    @Override // j$.util.stream.Collector
+    @Override // java.util.stream.Collector
     public final /* synthetic */ BinaryOperator combiner() {
         return this.a.combiner();
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.stream.Collector collector = this.a;
+        Collector collector = this.a;
         if (obj instanceof h) {
             obj = ((h) obj).a;
         }
         return collector.equals(obj);
     }
 
-    @Override // j$.util.stream.Collector
+    @Override // java.util.stream.Collector
     public final /* synthetic */ Function finisher() {
         return this.a.finisher();
     }
@@ -53,7 +46,7 @@ public final /* synthetic */ class h implements Collector {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.stream.Collector
+    @Override // java.util.stream.Collector
     public final /* synthetic */ Supplier supplier() {
         return this.a.supplier();
     }

@@ -50,7 +50,10 @@ final class EmojiTextWatcher implements TextWatcher {
     }
 
     private boolean shouldSkipForDisabledOrNotConfigured() {
-        return (this.mEnabled && (this.mExpectInitializedEmojiCompat || EmojiCompat.isConfigured())) ? false : true;
+        if (this.mEnabled) {
+            return (this.mExpectInitializedEmojiCompat || EmojiCompat.isConfigured()) ? false : true;
+        }
+        return true;
     }
 
     private EmojiCompat.InitCallback getInitCallback() {

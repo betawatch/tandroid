@@ -37,22 +37,15 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 /* loaded from: classes4.dex */
 public abstract class FragmentUsernameBottomSheet {
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v2, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r11v13, types: [android.view.View, android.view.ViewGroup] */
-    /* JADX WARN: Type inference failed for: r8v0, types: [org.telegram.ui.ActionBar.BottomSheet] */
     public static void open(final Context context, final int i, String str, TLObject tLObject, final TL_fragment.TL_collectibleInfo tL_collectibleInfo, final Theme.ResourcesProvider resourcesProvider) {
         String str2;
         String str3;
-        Object obj;
         String formatString;
-        String str4;
         String formatString2;
         final String format;
-        String str5;
-        final ?? bottomSheet = new BottomSheet(context, false, resourcesProvider);
+        final BottomSheet bottomSheet = new BottomSheet(context, false, resourcesProvider);
         bottomSheet.fixNavigationBar(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
-        ?? linearLayout = new LinearLayout(context);
+        LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -71,6 +64,7 @@ public abstract class FragmentUsernameBottomSheet {
             rLottieImageView.setTranslationY(AndroidUtilities.dp(2.0f));
         }
         frameLayout.addView(rLottieImageView, LayoutHelper.createLinear(-1, -1, 17));
+        String str4 = "";
         if (tLObject instanceof TLRPC.User) {
             str2 = UserObject.getUserName((TLRPC.User) tLObject);
         } else {
@@ -79,30 +73,24 @@ public abstract class FragmentUsernameBottomSheet {
         String formatCurrency = BillingController.getInstance().formatCurrency(tL_collectibleInfo.amount, tL_collectibleInfo.currency);
         String formatCurrency2 = BillingController.getInstance().formatCurrency(tL_collectibleInfo.crypto_amount, tL_collectibleInfo.crypto_currency);
         if (i == 0) {
-            str3 = str2;
             formatString = LocaleController.formatString(R.string.FragmentUsernameTitle, "@" + str);
             int i3 = R.string.FragmentUsernameMessage;
-            obj = linearLayout;
+            str3 = str2;
             String formatShortDateTime = LocaleController.formatShortDateTime((long) tL_collectibleInfo.purchase_date);
-            if (TextUtils.isEmpty(formatCurrency)) {
-                str5 = "";
-            } else {
-                str5 = "(" + formatCurrency + ")";
+            if (!TextUtils.isEmpty(formatCurrency)) {
+                str4 = "(" + formatCurrency + ")";
             }
-            formatString2 = LocaleController.formatString(i3, formatShortDateTime, formatCurrency2, str5);
+            formatString2 = LocaleController.formatString(i3, formatShortDateTime, formatCurrency2, str4);
             format = MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/" + str;
         } else {
             str3 = str2;
-            obj = linearLayout;
             if (i != 1) {
                 return;
             }
             formatString = LocaleController.formatString(R.string.FragmentPhoneTitle, PhoneFormat.getInstance().format("+" + str));
             int i4 = R.string.FragmentPhoneMessage;
             String formatShortDateTime2 = LocaleController.formatShortDateTime((long) tL_collectibleInfo.purchase_date);
-            if (TextUtils.isEmpty(formatCurrency)) {
-                str4 = "";
-            } else {
+            if (!TextUtils.isEmpty(formatCurrency)) {
                 str4 = "(" + formatCurrency + ")";
             }
             formatString2 = LocaleController.formatString(i4, formatShortDateTime2, formatCurrency2, str4);
@@ -111,7 +99,7 @@ public abstract class FragmentUsernameBottomSheet {
         final Runnable runnable = format != null ? new Runnable() { // from class: org.telegram.ui.FragmentUsernameBottomSheet$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FragmentUsernameBottomSheet.lambda$open$0(format, i, bottomSheet, resourcesProvider);
+                FragmentUsernameBottomSheet.$r8$lambda$S7L-Cnu5wH87poy8I9lr8lGS5EI(format, i, bottomSheet, resourcesProvider);
             }
         } : null;
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(formatString, runnable);
@@ -128,8 +116,7 @@ public abstract class FragmentUsernameBottomSheet {
         linksTextView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText2, resourcesProvider));
         linksTextView.setTextSize(1, 16.0f);
         linksTextView.setText(replaceSingleTag);
-        ?? r11 = obj;
-        r11.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 1, 42, 0, 42, 0));
+        linearLayout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 1, 42, 0, 42, 0));
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), Theme.getColor(Theme.key_groupcreate_spanBackground, resourcesProvider)));
         BackupImageView backupImageView = new BackupImageView(context);
@@ -144,39 +131,38 @@ public abstract class FragmentUsernameBottomSheet {
         textView.setSingleLine();
         textView.setText(Emoji.replaceEmoji(str3, textView.getPaint().getFontMetricsInt(), false));
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 19, 37.0f, 0.0f, 10.0f, 0.0f));
-        r11.addView(frameLayout2, LayoutHelper.createLinear(-2, 28, 1, 42, 10, 42, 18));
+        linearLayout.addView(frameLayout2, LayoutHelper.createLinear(-2, 28, 1, 42, 10, 42, 18));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
         textView2.setTextColor(Theme.getColor(i5, resourcesProvider));
         textView2.setTextSize(1, 14.0f);
         textView2.setText(replaceCharSequence);
-        r11.addView(textView2, LayoutHelper.createLinear(-1, -2, 1, 32, 0, 32, 19));
+        linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 1, 32, 0, 32, 19));
         ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
         round.setText(LocaleController.getString(R.string.FragmentUsernameOpen), false);
         round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FragmentUsernameBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FragmentUsernameBottomSheet.lambda$open$1(context, tL_collectibleInfo, view);
+                Browser.openUrl(context, tL_collectibleInfo.url);
             }
         });
-        r11.addView(round, LayoutHelper.createLinear(-1, 48, 6.0f, 0.0f, 6.0f, 0.0f));
+        linearLayout.addView(round, LayoutHelper.createLinear(-1, 48, 6.0f, 0.0f, 6.0f, 0.0f));
         if (runnable != null) {
             ButtonWithCounterView neutral = new ButtonWithCounterView(context, resourcesProvider).setRound().setNeutral();
             neutral.setText(LocaleController.getString(i == 0 ? R.string.FragmentUsernameCopy : R.string.FragmentPhoneCopy), false);
             neutral.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FragmentUsernameBottomSheet$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FragmentUsernameBottomSheet.lambda$open$2(runnable, bottomSheet, view);
+                    FragmentUsernameBottomSheet.$r8$lambda$djU1LRUXrKOTL5H3dgsGNzwLXMk(runnable, bottomSheet, view);
                 }
             });
-            r11.addView(neutral, LayoutHelper.createLinear(-1, 48, 6.0f, 6.0f, 6.0f, 0.0f));
+            linearLayout.addView(neutral, LayoutHelper.createLinear(-1, 48, 6.0f, 6.0f, 6.0f, 0.0f));
         }
-        bottomSheet.setCustomView(r11);
+        bottomSheet.setCustomView(linearLayout);
         bottomSheet.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$open$0(String str, int i, BottomSheet bottomSheet, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$S7L-Cnu5wH87poy8I9lr8lGS5EI(String str, int i, BottomSheet bottomSheet, Theme.ResourcesProvider resourcesProvider) {
         AndroidUtilities.addToClipboard(str);
         if (i == 1) {
             BulletinFactory.of(bottomSheet.getContainer(), resourcesProvider).createCopyBulletin(LocaleController.getString(R.string.PhoneCopied)).show();
@@ -185,14 +171,8 @@ public abstract class FragmentUsernameBottomSheet {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$open$1(Context context, TL_fragment.TL_collectibleInfo tL_collectibleInfo, View view) {
-        Browser.openUrl(context, tL_collectibleInfo.url);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$open$2(Runnable runnable, BottomSheet bottomSheet, View view) {
+    public static /* synthetic */ void $r8$lambda$djU1LRUXrKOTL5H3dgsGNzwLXMk(Runnable runnable, BottomSheet bottomSheet, View view) {
         runnable.run();
-        bottomSheet.lambda$new$0();
+        bottomSheet.dismiss();
     }
 }

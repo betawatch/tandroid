@@ -52,7 +52,6 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -301,10 +300,11 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
     public static Fragment instantiate(Context context, String str, Bundle bundle) {
         try {
             Fragment fragment = (Fragment) FragmentFactory.loadFragmentClass(context.getClassLoader(), str).getConstructor(null).newInstance(null);
-            if (bundle != null) {
-                bundle.setClassLoader(fragment.getClass().getClassLoader());
-                fragment.setArguments(bundle);
+            if (bundle == null) {
+                return fragment;
             }
+            bundle.setClassLoader(fragment.getClass().getClassLoader());
+            fragment.setArguments(bundle);
             return fragment;
         } catch (IllegalAccessException e) {
             throw new InstantiationException("Unable to instantiate fragment " + str + ": make sure class name exists, is public, and has an empty constructor that is public", e);
@@ -476,13 +476,19 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
     }
 
     public final boolean isHidden() {
-        FragmentManager fragmentManager;
-        return this.mHidden || ((fragmentManager = this.mFragmentManager) != null && fragmentManager.isParentHidden(this.mParentFragment));
+        if (this.mHidden) {
+            return true;
+        }
+        FragmentManager fragmentManager = this.mFragmentManager;
+        return fragmentManager != null && fragmentManager.isParentHidden(this.mParentFragment);
     }
 
     public final boolean isMenuVisible() {
-        FragmentManager fragmentManager;
-        return this.mMenuVisible && ((fragmentManager = this.mFragmentManager) == null || fragmentManager.isParentMenuVisible(this.mParentFragment));
+        if (!this.mMenuVisible) {
+            return false;
+        }
+        FragmentManager fragmentManager = this.mFragmentManager;
+        return fragmentManager == null || fragmentManager.isParentMenuVisible(this.mParentFragment);
     }
 
     public void startActivityForResult(Intent intent, int i) {
@@ -928,9 +934,13 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
     }
 
     void performAttach() {
-        Iterator it = this.mOnPreAttachedListeners.iterator();
-        while (it.hasNext()) {
-            ((OnPreAttachedListener) it.next()).onPreAttached();
+        ArrayList arrayList = this.mOnPreAttachedListeners;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((OnPreAttachedListener) obj).onPreAttached();
         }
         this.mOnPreAttachedListeners.clear();
         this.mChildFragmentManager.attachController(this.mHost, createFragmentContainer(), this);
@@ -972,7 +982,7 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
         this.mViewLifecycleOwner = new FragmentViewLifecycleOwner(this, getViewModelStore(), new Runnable() { // from class: androidx.fragment.app.Fragment$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Fragment.this.lambda$performCreateView$0();
+                Fragment.$r8$lambda$fb2iz_9i-0AeQEy2DZBRxlwOv0g(Fragment.this);
             }
         });
         View onCreateView = onCreateView(layoutInflater, viewGroup, bundle);
@@ -994,10 +1004,9 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
         this.mViewLifecycleOwner = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performCreateView$0() {
-        this.mViewLifecycleOwner.performRestore(this.mSavedViewRegistryState);
-        this.mSavedViewRegistryState = null;
+    public static /* synthetic */ void $r8$lambda$fb2iz_9i-0AeQEy2DZBRxlwOv0g(Fragment fragment) {
+        fragment.mViewLifecycleOwner.performRestore(fragment.mSavedViewRegistryState);
+        fragment.mSavedViewRegistryState = null;
     }
 
     void performViewCreated() {
@@ -1104,7 +1113,7 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
             onCreateOptionsMenu(menu, menuInflater);
             z = true;
         }
-        return z | this.mChildFragmentManager.dispatchCreateOptionsMenu(menu, menuInflater);
+        return this.mChildFragmentManager.dispatchCreateOptionsMenu(menu, menuInflater) | z;
     }
 
     boolean performPrepareOptionsMenu(Menu menu) {
@@ -1116,7 +1125,7 @@ public abstract class Fragment implements ComponentCallbacks, View.OnCreateConte
             onPrepareOptionsMenu(menu);
             z = true;
         }
-        return z | this.mChildFragmentManager.dispatchPrepareOptionsMenu(menu);
+        return this.mChildFragmentManager.dispatchPrepareOptionsMenu(menu) | z;
     }
 
     boolean performOptionsItemSelected(MenuItem menuItem) {

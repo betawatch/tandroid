@@ -57,7 +57,7 @@ public class QuoteHighlight extends Path {
         this.t = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.ui.Components.QuoteHighlight$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                QuoteHighlight.lambda$new$0(ChatMessageCell.this);
+                QuoteHighlight.$r8$lambda$4waOk2vMbE18qeSW6UP2-HXYHDU(ChatMessageCell.this);
             }
         }, 350L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
         this.id = i;
@@ -71,8 +71,7 @@ public class QuoteHighlight extends Path {
         paint.setPathEffect(new CornerPathEffect(dp));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(ChatMessageCell chatMessageCell) {
+    public static /* synthetic */ void $r8$lambda$4waOk2vMbE18qeSW6UP2-HXYHDU(ChatMessageCell chatMessageCell) {
         if (chatMessageCell != null) {
             chatMessageCell.invalidate();
         }
@@ -91,7 +90,7 @@ public class QuoteHighlight extends Path {
         this.t = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.ui.Components.QuoteHighlight$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                QuoteHighlight.lambda$new$1(ChatMessageCell.this);
+                QuoteHighlight.$r8$lambda$FrmBRmhxAimyxX4zFmww8ORlVME(ChatMessageCell.this);
             }
         }, 350L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
         this.id = i;
@@ -105,8 +104,7 @@ public class QuoteHighlight extends Path {
         paint.setPathEffect(new CornerPathEffect(dp));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(ChatMessageCell chatMessageCell) {
+    public static /* synthetic */ void $r8$lambda$FrmBRmhxAimyxX4zFmww8ORlVME(ChatMessageCell chatMessageCell) {
         if (chatMessageCell != null) {
             chatMessageCell.invalidate();
         }
@@ -126,7 +124,7 @@ public class QuoteHighlight extends Path {
         this.t = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.ui.Components.QuoteHighlight$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                QuoteHighlight.lambda$new$2(view, viewParent);
+                QuoteHighlight.$r8$lambda$ndzqcitrdwbkbHWU4Usl4NiPxIo(view, viewParent);
             }
         }, 350L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
         this.id = i;
@@ -176,9 +174,8 @@ public class QuoteHighlight extends Path {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ void lambda$new$2(View view, ViewParent viewParent) {
+    public static /* synthetic */ void $r8$lambda$ndzqcitrdwbkbHWU4Usl4NiPxIo(View view, ViewParent viewParent) {
         if (view != null) {
             view.invalidate();
         }

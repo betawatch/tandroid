@@ -15,12 +15,12 @@ import java.util.Map;
 import java.util.TimeZone;
 
 /* loaded from: classes2.dex */
-final class o extends n {
-    private static final ConcurrentHashMap d = new ConcurrentHashMap();
-    private final TextStyle c;
+public final class o extends n {
+    public static final ConcurrentHashMap d = new ConcurrentHashMap();
+    public final TextStyle c;
 
-    o(TextStyle textStyle) {
-        super(j$.time.temporal.l.j(), "ZoneText(" + textStyle + ")");
+    public o(TextStyle textStyle) {
+        super(j$.time.temporal.p.e, "ZoneText(" + textStyle + ")");
         new HashMap();
         new HashMap();
         this.c = (TextStyle) Objects.requireNonNull(textStyle, "textStyle");
@@ -32,55 +32,56 @@ final class o extends n {
     /* JADX WARN: Type inference failed for: r0v3 */
     /* JADX WARN: Type inference failed for: r0v9 */
     @Override // j$.time.format.n, j$.time.format.f
-    public final boolean k(r rVar, StringBuilder sb) {
+    public final boolean l(r rVar, StringBuilder sb) {
         ?? r0;
         String[] strArr;
-        ZoneId zoneId = (ZoneId) rVar.f(j$.time.temporal.l.k());
+        ZoneId zoneId = (ZoneId) rVar.b(j$.time.temporal.p.a);
         if (zoneId == null) {
             return false;
         }
         String id = zoneId.getId();
         if (!(zoneId instanceof ZoneOffset)) {
-            j$.time.temporal.m d2 = rVar.d();
+            j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
+            j$.time.temporal.l lVar = rVar.a;
             String str = null;
             Map map = null;
-            if (d2.g(j$.time.temporal.a.INSTANT_SECONDS)) {
-                r0 = zoneId.getRules().g(Instant.H(d2));
+            if (lVar.h(aVar)) {
+                r0 = zoneId.getRules().g(Instant.H(lVar));
             } else {
-                j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-                if (d2.g(aVar)) {
-                    j$.time.temporal.a aVar2 = j$.time.temporal.a.NANO_OF_DAY;
-                    if (d2.g(aVar2)) {
-                        LocalDateTime O = LocalDateTime.O(LocalDate.T(d2.r(aVar)), j$.time.i.O(d2.r(aVar2)));
-                        if (zoneId.getRules().e(O) == null) {
-                            r0 = zoneId.getRules().g(Instant.K(ZonedDateTime.I(O, zoneId, null).F(), r0.b().L()));
+                j$.time.temporal.a aVar2 = j$.time.temporal.a.EPOCH_DAY;
+                if (lVar.h(aVar2)) {
+                    j$.time.temporal.a aVar3 = j$.time.temporal.a.NANO_OF_DAY;
+                    if (lVar.h(aVar3)) {
+                        LocalDateTime J = LocalDateTime.J(LocalDate.R(lVar.u(aVar2)), j$.time.h.K(lVar.u(aVar3)));
+                        if (zoneId.getRules().e(J) == null) {
+                            r0 = zoneId.getRules().g(Instant.I(ZonedDateTime.H(J, zoneId, null).G(), r0.c().d));
                         }
                     }
                 }
                 r0 = 2;
             }
-            Locale c = rVar.c();
+            Locale locale = rVar.b.b;
             TextStyle textStyle = TextStyle.NARROW;
             TextStyle textStyle2 = this.c;
             if (textStyle2 != textStyle) {
                 ConcurrentHashMap concurrentHashMap = d;
                 SoftReference softReference = (SoftReference) concurrentHashMap.get(id);
-                if (softReference == null || (map = (Map) softReference.get()) == null || (strArr = (String[]) map.get(c)) == null) {
+                if (softReference == null || (map = (Map) softReference.get()) == null || (strArr = (String[]) map.get(locale)) == null) {
                     TimeZone timeZone = TimeZone.getTimeZone(id);
-                    String[] strArr2 = {id, timeZone.getDisplayName(false, 1, c), timeZone.getDisplayName(false, 0, c), timeZone.getDisplayName(true, 1, c), timeZone.getDisplayName(true, 0, c), id, id};
+                    String[] strArr2 = {id, timeZone.getDisplayName(false, 1, locale), timeZone.getDisplayName(false, 0, locale), timeZone.getDisplayName(true, 1, locale), timeZone.getDisplayName(true, 0, locale), id, id};
                     if (map == null) {
                         map = new ConcurrentHashMap();
                     }
-                    map.put(c, strArr2);
+                    map.put(locale, strArr2);
                     concurrentHashMap.put(id, new SoftReference(map));
                     strArr = strArr2;
                 }
                 if (r0 == 0) {
-                    str = strArr[textStyle2.k() + 1];
+                    str = strArr[textStyle2.a + 1];
                 } else if (r0 == 1) {
-                    str = strArr[textStyle2.k() + 3];
+                    str = strArr[textStyle2.a + 3];
                 } else {
-                    str = strArr[textStyle2.k() + 5];
+                    str = strArr[textStyle2.a + 5];
                 }
             }
             if (str != null) {

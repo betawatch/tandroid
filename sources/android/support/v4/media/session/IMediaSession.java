@@ -483,13 +483,11 @@ public interface IMediaSession extends IInterface {
                     obtain.writeStrongBinder(iMediaControllerCallback != null ? iMediaControllerCallback.asBinder() : null);
                     if (!this.mRemote.transact(3, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
                         Stub.getDefaultImpl().registerCallbackListener(iMediaControllerCallback);
-                        obtain2.recycle();
-                        obtain.recycle();
                     } else {
                         obtain2.readException();
-                        obtain2.recycle();
-                        obtain.recycle();
                     }
+                    obtain2.recycle();
+                    obtain.recycle();
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -506,13 +504,11 @@ public interface IMediaSession extends IInterface {
                     obtain.writeStrongBinder(iMediaControllerCallback != null ? iMediaControllerCallback.asBinder() : null);
                     if (!this.mRemote.transact(4, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
                         Stub.getDefaultImpl().unregisterCallbackListener(iMediaControllerCallback);
-                        obtain2.recycle();
-                        obtain.recycle();
                     } else {
                         obtain2.readException();
-                        obtain2.recycle();
-                        obtain.recycle();
                     }
+                    obtain2.recycle();
+                    obtain.recycle();
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -522,15 +518,18 @@ public interface IMediaSession extends IInterface {
 
             @Override // android.support.v4.media.session.IMediaSession
             public PendingIntent getLaunchPendingIntent() {
+                PendingIntent pendingIntent;
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
                     if (!this.mRemote.transact(8, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getLaunchPendingIntent();
+                        pendingIntent = Stub.getDefaultImpl().getLaunchPendingIntent();
+                    } else {
+                        obtain2.readException();
+                        pendingIntent = obtain2.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(obtain2) : null;
                     }
-                    obtain2.readException();
-                    return obtain2.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(obtain2) : null;
+                    return pendingIntent;
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -539,15 +538,18 @@ public interface IMediaSession extends IInterface {
 
             @Override // android.support.v4.media.session.IMediaSession
             public MediaMetadataCompat getMetadata() {
+                MediaMetadataCompat createFromParcel;
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
                     if (!this.mRemote.transact(27, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getMetadata();
+                        createFromParcel = Stub.getDefaultImpl().getMetadata();
+                    } else {
+                        obtain2.readException();
+                        createFromParcel = obtain2.readInt() != 0 ? MediaMetadataCompat.CREATOR.createFromParcel(obtain2) : null;
                     }
-                    obtain2.readException();
-                    return obtain2.readInt() != 0 ? MediaMetadataCompat.CREATOR.createFromParcel(obtain2) : null;
+                    return createFromParcel;
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -556,15 +558,18 @@ public interface IMediaSession extends IInterface {
 
             @Override // android.support.v4.media.session.IMediaSession
             public PlaybackStateCompat getPlaybackState() {
+                PlaybackStateCompat createFromParcel;
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
                     if (!this.mRemote.transact(28, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getPlaybackState();
+                        createFromParcel = Stub.getDefaultImpl().getPlaybackState();
+                    } else {
+                        obtain2.readException();
+                        createFromParcel = obtain2.readInt() != 0 ? PlaybackStateCompat.CREATOR.createFromParcel(obtain2) : null;
                     }
-                    obtain2.readException();
-                    return obtain2.readInt() != 0 ? PlaybackStateCompat.CREATOR.createFromParcel(obtain2) : null;
+                    return createFromParcel;
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -573,15 +578,18 @@ public interface IMediaSession extends IInterface {
 
             @Override // android.support.v4.media.session.IMediaSession
             public List getQueue() {
+                List createTypedArrayList;
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
                     if (!this.mRemote.transact(29, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getQueue();
+                        createTypedArrayList = Stub.getDefaultImpl().getQueue();
+                    } else {
+                        obtain2.readException();
+                        createTypedArrayList = obtain2.createTypedArrayList(MediaSessionCompat.QueueItem.CREATOR);
                     }
-                    obtain2.readException();
-                    return obtain2.createTypedArrayList(MediaSessionCompat.QueueItem.CREATOR);
+                    return createTypedArrayList;
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();

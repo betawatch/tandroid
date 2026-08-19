@@ -219,7 +219,7 @@ public abstract class AvatarConstructorPreviewCell extends FrameLayout {
             this.nextImage.setAlpha(interpolation);
             this.nextImage.setScaleX(interpolation);
             this.nextImage.setScaleY(interpolation);
-            this.nextImage.setPivotY(r0.getMeasuredHeight());
+            this.nextImage.setPivotY(r1.getMeasuredHeight());
             if (this.progressToNext > 1.0f) {
                 this.progressToNext = 1.0f;
                 this.currentBackgroundDrawable = this.nextBackgroundDrawable;

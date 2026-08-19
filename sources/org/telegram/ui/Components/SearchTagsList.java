@@ -157,7 +157,7 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SearchTagsList.this.lambda$createPremiumLayout$0(view);
+                SearchTagsList.$r8$lambda$AHASRBN4Kvqnp4CDHTQ0EtWjGQM(SearchTagsList.this, view);
             }
         });
         this.premiumLayout.setOrientation(0);
@@ -230,9 +230,9 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         addView(this.premiumLayout, LayoutHelper.createFrame(-2, -1.0f, 19, 5.0f, 0.0f, 5.0f, 0.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createPremiumLayout$0(View view) {
-        new PremiumFeatureBottomSheet(this.fragment, 24, true).show();
+    public static /* synthetic */ void $r8$lambda$AHASRBN4Kvqnp4CDHTQ0EtWjGQM(SearchTagsList searchTagsList, View view) {
+        searchTagsList.getClass();
+        new PremiumFeatureBottomSheet(searchTagsList.fragment, 24, true).show();
     }
 
     public SearchTagsList(Context context, final BaseFragment baseFragment, final int i, long j, final Theme.ResourcesProvider resourcesProvider) {
@@ -273,15 +273,13 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                SearchTagsList.this.lambda$new$2(i, baseFragment, view, i2);
+                SearchTagsList.$r8$lambda$-tu8GnLCrzWmRY9LIh-7t4g7afY(SearchTagsList.this, i, baseFragment, view, i2);
             }
         });
         recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
-                boolean lambda$new$4;
-                lambda$new$4 = SearchTagsList.this.lambda$new$4(i, baseFragment, resourcesProvider, view, i2);
-                return lambda$new$4;
+                return SearchTagsList.$r8$lambda$bGblWiYTzL-dUxNnt5F-ZNLEem0(SearchTagsList.this, i, baseFragment, resourcesProvider, view, i2);
             }
         });
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchTagsList.3
@@ -323,54 +321,59 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         updateTags(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(int i, BaseFragment baseFragment, View view, int i2) {
-        if (i2 < 0 || i2 >= this.items.size()) {
+    public static /* synthetic */ void $r8$lambda$-tu8GnLCrzWmRY9LIh-7t4g7afY(SearchTagsList searchTagsList, int i, BaseFragment baseFragment, View view, int i2) {
+        if (i2 < 0) {
+            searchTagsList.getClass();
+            return;
+        }
+        if (i2 >= searchTagsList.items.size()) {
             return;
         }
         if (!UserConfig.getInstance(i).isPremium()) {
             new PremiumFeatureBottomSheet(baseFragment, 24, true).show();
             return;
         }
-        long hash = ((Item) this.items.get(i2)).hash();
-        if (setFilter(this.chosen == hash ? null : ((Item) this.items.get(i2)).reaction)) {
+        long hash = ((Item) searchTagsList.items.get(i2)).hash();
+        if (searchTagsList.setFilter(searchTagsList.chosen == hash ? null : ((Item) searchTagsList.items.get(i2)).reaction)) {
             int i3 = 0;
-            while (i3 < this.listView.getChildCount()) {
-                if (this.listView.getChildAt(i3) == view) {
+            while (i3 < searchTagsList.listView.getChildCount()) {
+                if (searchTagsList.listView.getChildAt(i3) == view) {
                     if (i3 <= 1) {
-                        this.listView.smoothScrollBy(-AndroidUtilities.dp(i3 == 0 ? 90.0f : 50.0f), 0);
-                    } else if (i3 >= this.listView.getChildCount() - 2) {
-                        RecyclerListView recyclerListView = this.listView;
+                        searchTagsList.listView.smoothScrollBy(-AndroidUtilities.dp(i3 == 0 ? 90.0f : 50.0f), 0);
+                    } else if (i3 >= searchTagsList.listView.getChildCount() - 2) {
+                        RecyclerListView recyclerListView = searchTagsList.listView;
                         recyclerListView.smoothScrollBy(AndroidUtilities.dp(i3 == recyclerListView.getChildCount() - 1 ? 80.0f : 50.0f), 0);
                     }
                 }
                 i3++;
             }
-            this.listView.forAllChild(new Consumer() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda4
+            searchTagsList.listView.forAllChild(new Consumer() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda4
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj) {
-                    SearchTagsList.lambda$new$1((View) obj);
+                    SearchTagsList.$r8$lambda$AIrlCZo9e97YPO_9DFpSvQUCLLw((View) obj);
                 }
             });
-            if (this.chosen == hash) {
-                this.chosen = 0L;
+            if (searchTagsList.chosen == hash) {
+                searchTagsList.chosen = 0L;
             } else {
-                this.chosen = hash;
+                searchTagsList.chosen = hash;
                 ((TagButton) view).setChosen(true, true);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$AIrlCZo9e97YPO_9DFpSvQUCLLw(View view) {
         if (view instanceof TagButton) {
             ((TagButton) view).setChosen(false, true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$4(final int i, BaseFragment baseFragment, final Theme.ResourcesProvider resourcesProvider, View view, int i2) {
-        if (i2 < 0 || i2 >= this.items.size() || !UserConfig.getInstance(i).isPremium()) {
+    public static /* synthetic */ boolean $r8$lambda$bGblWiYTzL-dUxNnt5F-ZNLEem0(final SearchTagsList searchTagsList, final int i, BaseFragment baseFragment, final Theme.ResourcesProvider resourcesProvider, View view, int i2) {
+        if (i2 < 0) {
+            searchTagsList.getClass();
+            return false;
+        }
+        if (i2 >= searchTagsList.items.size() || !UserConfig.getInstance(i).isPremium()) {
             return false;
         }
         if (!UserConfig.getInstance(i).isPremium()) {
@@ -381,19 +384,15 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         if (reactionButton != null) {
             reactionButton.startAnimation();
         }
-        final Item item = (Item) this.items.get(i2);
+        final Item item = (Item) searchTagsList.items.get(i2);
         ItemOptions.makeOptions(baseFragment, view).setGravity(3).add(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(item.name) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new Runnable() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                SearchTagsList.this.lambda$new$3(i, item, resourcesProvider);
+                SearchTagsList searchTagsList2 = SearchTagsList.this;
+                SearchTagsList.openRenameTagAlert(searchTagsList2.getContext(), i, item.reaction.toTLReaction(), resourcesProvider, false);
             }
         }).show();
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(int i, Item item, Theme.ResourcesProvider resourcesProvider) {
-        openRenameTagAlert(getContext(), i, item.reaction.toTLReaction(), resourcesProvider, false);
     }
 
     @Override // android.view.ViewGroup
@@ -425,30 +424,22 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v14, types: [android.app.Dialog] */
-    /* JADX WARN: Type inference failed for: r0v15, types: [org.telegram.ui.ActionBar.AlertDialog] */
-    /* JADX WARN: Type inference failed for: r0v16, types: [org.telegram.ui.ActionBar.AlertDialog] */
-    /* JADX WARN: Type inference failed for: r14v0, types: [org.telegram.ui.ActionBar.AlertDialog[]] */
-    /* JADX WARN: Type inference failed for: r15v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
-    /* JADX WARN: Type inference failed for: r1v14 */
-    /* JADX WARN: Type inference failed for: r1v15, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r1v20 */
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     public static void openRenameTagAlert(Context context, final int i, final TLRPC.Reaction reaction, final Theme.ResourcesProvider resourcesProvider, boolean z) {
         Object builder;
-        ?? r1;
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         Activity findActivity = AndroidUtilities.findActivity(context);
         final View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
         boolean z2 = lastFragment != null && (lastFragment.getFragmentView() instanceof SizeNotifierFrameLayout) && ((SizeNotifierFrameLayout) lastFragment.getFragmentView()).measureKeyboardHeight() > AndroidUtilities.dp(20.0f) && !z;
-        final ?? r14 = new AlertDialog[1];
+        final AlertDialog[] alertDialogArr = new AlertDialog[1];
         if (z2) {
             builder = new AlertDialogDecor.Builder(context, resourcesProvider);
         } else {
             builder = new AlertDialog.Builder(context, resourcesProvider);
         }
-        ?? r15 = builder;
+        ?? r12 = builder;
         String savedTagName = MessagesController.getInstance(i).getSavedTagName(reaction);
-        r15.setTitle(new SpannableStringBuilder(ReactionsLayoutInBubble.VisibleReaction.fromTL(reaction).toCharSequence(20)).append((CharSequence) "  ").append((CharSequence) LocaleController.getString(TextUtils.isEmpty(savedTagName) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag)));
+        r12.setTitle(new SpannableStringBuilder(ReactionsLayoutInBubble.VisibleReaction.fromTL(reaction).toCharSequence(20)).append((CharSequence) "  ").append((CharSequence) LocaleController.getString(TextUtils.isEmpty(savedTagName) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag)));
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.Components.SearchTagsList.4
             AnimatedTextView.AnimatedTextDrawable limit;
             AnimatedColor limitColor = new AnimatedColor(this);
@@ -496,7 +487,6 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
                 super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
             }
         };
-        final View view = currentFocus;
         editTextBoldCursor.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.SearchTagsList.5
             @Override // android.widget.TextView.OnEditorActionListener
             public boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
@@ -509,16 +499,16 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
                     return true;
                 }
                 MessagesController.getInstance(i).renameSavedReactionTag(ReactionsLayoutInBubble.VisibleReaction.fromTL(reaction), obj);
-                AlertDialog alertDialog = r14[0];
+                AlertDialog alertDialog = alertDialogArr[0];
                 if (alertDialog != null) {
                     alertDialog.dismiss();
                 }
-                if (r14[0] == SearchTagsList.currentDialog) {
+                if (alertDialogArr[0] == SearchTagsList.currentDialog) {
                     AlertDialog unused = SearchTagsList.currentDialog = null;
                 }
-                View view2 = view;
-                if (view2 != null) {
-                    view2.requestFocus();
+                View view = currentFocus;
+                if (view != null) {
+                    view.requestFocus();
                 }
                 return true;
             }
@@ -548,62 +538,59 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         textView.setText(LocaleController.getString(R.string.SavedTagLabelTagText));
         linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 24.0f, 5.0f, 24.0f, 12.0f));
         linearLayout.addView(editTextBoldCursor, LayoutHelper.createLinear(-1, -2, 24.0f, 0.0f, 24.0f, 10.0f));
-        r15.setView(linearLayout);
-        r15.setWidth(AndroidUtilities.dp(292.0f));
-        r15.setPositiveButton(LocaleController.getString(R.string.Save), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda8
+        r12.setView(linearLayout);
+        r12.setWidth(AndroidUtilities.dp(292.0f));
+        r12.setPositiveButton(LocaleController.getString(R.string.Save), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i3) {
-                SearchTagsList.lambda$openRenameTagAlert$5(EditTextBoldCursor.this, i, reaction, alertDialog, i3);
+                SearchTagsList.$r8$lambda$4wvGjXhRjmG_WOflWr5b0apO6zw(EditTextBoldCursor.this, i, reaction, alertDialog, i3);
             }
         });
-        r15.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda9
+        r12.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda9
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i3) {
                 alertDialog.dismiss();
             }
         });
         if (z2) {
-            AlertDialog create = r15.create();
+            AlertDialog create = r12.create();
             currentDialog = create;
-            r14[0] = create;
+            alertDialogArr[0] = create;
             create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda10
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    SearchTagsList.lambda$openRenameTagAlert$7(currentFocus, dialogInterface);
+                    SearchTagsList.$r8$lambda$QWtQVpfjJxod0CvJz-meboPJIgY(currentFocus, dialogInterface);
                 }
             });
             currentDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda11
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    SearchTagsList.lambda$openRenameTagAlert$8(EditTextBoldCursor.this, dialogInterface);
+                    SearchTagsList.$r8$lambda$dh0TSP2Zj2uu1ZZr7I2uWapo21Q(EditTextBoldCursor.this, dialogInterface);
                 }
             });
             currentDialog.showDelayed(250L);
-            r1 = 0;
         } else {
-            AlertDialog create2 = r15.create();
-            r1 = 0;
-            r14[0] = create2;
+            AlertDialog create2 = r12.create();
+            alertDialogArr[0] = create2;
             create2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda12
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     AndroidUtilities.hideKeyboard(EditTextBoldCursor.this);
                 }
             });
-            r14[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda13
+            alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda13
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    SearchTagsList.lambda$openRenameTagAlert$10(EditTextBoldCursor.this, dialogInterface);
+                    SearchTagsList.$r8$lambda$ZVIFMK5YKMHE9zPrITMm8IiF_vQ(EditTextBoldCursor.this, dialogInterface);
                 }
             });
-            r14[0].show();
+            alertDialogArr[0].show();
         }
-        r14[r1].setDismissDialogByButtons(r1);
+        alertDialogArr[0].setDismissDialogByButtons(false);
         editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameTagAlert$5(EditTextBoldCursor editTextBoldCursor, int i, TLRPC.Reaction reaction, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void $r8$lambda$4wvGjXhRjmG_WOflWr5b0apO6zw(EditTextBoldCursor editTextBoldCursor, int i, TLRPC.Reaction reaction, AlertDialog alertDialog, int i2) {
         String obj = editTextBoldCursor.getText().toString();
         if (obj.length() > 12) {
             AndroidUtilities.shakeView(editTextBoldCursor);
@@ -613,20 +600,17 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameTagAlert$7(View view, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$QWtQVpfjJxod0CvJz-meboPJIgY(View view, DialogInterface dialogInterface) {
         currentDialog = null;
         view.requestFocus();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameTagAlert$8(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$dh0TSP2Zj2uu1ZZr7I2uWapo21Q(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openRenameTagAlert$10(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$ZVIFMK5YKMHE9zPrITMm8IiF_vQ(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
@@ -639,14 +623,13 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         this.listView.forAllChild(new Consumer() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda0
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
-                SearchTagsList.lambda$clear$11((View) obj);
+                SearchTagsList.$r8$lambda$bnK_fL57Bm_UKP-5v67jy7uz8dA((View) obj);
             }
         });
         this.chosen = 0L;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$clear$11(View view) {
+    public static /* synthetic */ void $r8$lambda$bnK_fL57Bm_UKP-5v67jy7uz8dA(View view) {
         if (view instanceof TagButton) {
             ((TagButton) view).setChosen(false, true);
         }
@@ -757,7 +740,7 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
                 linearLayout.animate().alpha(0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SearchTagsList.this.lambda$updateTags$12();
+                        SearchTagsList.this.premiumLayout.setVisibility(8);
                     }
                 }).start();
             } else {
@@ -765,11 +748,6 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
                 this.premiumLayout.setVisibility(0);
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateTags$12() {
-        this.premiumLayout.setVisibility(8);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -804,7 +782,7 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SearchTagsList$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                SearchTagsList.this.lambda$show$13(valueAnimator2);
+                SearchTagsList.$r8$lambda$lSbkny4cl0XPuBjsHmeR_OdjIfA(SearchTagsList.this, valueAnimator2);
             }
         });
         this.actionBarTagsAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -827,12 +805,12 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         this.actionBarTagsAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$13(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$lSbkny4cl0XPuBjsHmeR_OdjIfA(SearchTagsList searchTagsList, ValueAnimator valueAnimator) {
+        searchTagsList.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.actionBarTagsT = floatValue;
-        setShown(floatValue);
-        onShownUpdate(false);
+        searchTagsList.actionBarTagsT = floatValue;
+        searchTagsList.setShown(floatValue);
+        searchTagsList.onShownUpdate(false);
     }
 
     public boolean shown() {
@@ -884,7 +862,8 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         }
     }
 
-    private class TagButton extends View {
+    /* JADX INFO: Access modifiers changed from: private */
+    class TagButton extends View {
         private boolean attached;
         private BlurredBackgroundDrawable blurredDrawable;
         private boolean chosen;
@@ -908,12 +887,14 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
         }
 
         public void set(Item item) {
+            TagButton tagButton;
             ReactionsLayoutInBubble.VisibleReaction visibleReaction = this.lastReaction;
             boolean z = visibleReaction == null || !visibleReaction.equals(item.reaction);
             if (z) {
                 TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
                 tL_reactionCount.reaction = item.reaction.toTLReaction();
                 tL_reactionCount.count = item.count;
+                tagButton = this;
                 ReactionsLayoutInBubble.ReactionButton reactionButton = new ReactionsLayoutInBubble.ReactionButton(null, SearchTagsList.this.currentAccount, this, tL_reactionCount, false, true, SearchTagsList.this.resourcesProvider) { // from class: org.telegram.ui.Components.SearchTagsList.TagButton.1
                     @Override // org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble.ReactionButton
                     protected boolean drawTextWithCounter() {
@@ -944,22 +925,23 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
                         return this.count > 0 || this.hasName || this.counterDrawable.countChangeProgress != 1.0f;
                     }
                 };
-                this.reactionButton = reactionButton;
+                tagButton.reactionButton = reactionButton;
                 reactionButton.counterDrawable.setSize(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(100.0f));
-                ReactionsLayoutInBubble.ReactionButton reactionButton2 = this.reactionButton;
+                ReactionsLayoutInBubble.ReactionButton reactionButton2 = tagButton.reactionButton;
                 reactionButton2.drawBgOnlyIfChosen = true;
                 reactionButton2.isTag = true;
             } else {
-                this.reactionButton.count = item.count;
+                tagButton = this;
+                tagButton.reactionButton.count = item.count;
             }
-            this.lastReaction = item.reaction;
+            tagButton.lastReaction = item.reaction;
             if (!z) {
-                ReactionsLayoutInBubble.ReactionButton reactionButton3 = this.reactionButton;
+                ReactionsLayoutInBubble.ReactionButton reactionButton3 = tagButton.reactionButton;
                 reactionButton3.animateFromWidth = reactionButton3.width;
             }
-            this.reactionButton.width = AndroidUtilities.dp(44.33f);
-            this.reactionButton.hasName = true ^ TextUtils.isEmpty(item.name);
-            ReactionsLayoutInBubble.ReactionButton reactionButton4 = this.reactionButton;
+            tagButton.reactionButton.width = AndroidUtilities.dp(44.33f);
+            tagButton.reactionButton.hasName = true ^ TextUtils.isEmpty(item.name);
+            ReactionsLayoutInBubble.ReactionButton reactionButton4 = tagButton.reactionButton;
             if (reactionButton4.hasName) {
                 AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = reactionButton4.textDrawable;
                 animatedTextDrawable.setText(Emoji.replaceEmoji(item.name, animatedTextDrawable.getPaint().getFontMetricsInt(), false), !z);
@@ -969,20 +951,20 @@ public abstract class SearchTagsList extends FrameLayout implements Notification
                     animatedTextDrawable2.setText("", !z);
                 }
             }
-            this.reactionButton.countText = Integer.toString(item.count);
-            this.reactionButton.counterDrawable.setCount(item.count, !z);
-            ReactionsLayoutInBubble.ReactionButton reactionButton5 = this.reactionButton;
+            tagButton.reactionButton.countText = Integer.toString(item.count);
+            tagButton.reactionButton.counterDrawable.setCount(item.count, !z);
+            ReactionsLayoutInBubble.ReactionButton reactionButton5 = tagButton.reactionButton;
             if (reactionButton5.counterDrawable != null && (reactionButton5.count > 0 || reactionButton5.hasName)) {
-                reactionButton5.width = (int) (reactionButton5.width + r1.getCurrentWidth() + AndroidUtilities.dp(this.reactionButton.hasName ? 4.0f : 0.0f) + this.reactionButton.textDrawable.getAnimateToWidth());
+                reactionButton5.width = (int) (reactionButton5.width + r1.getCurrentWidth() + AndroidUtilities.dp(tagButton.reactionButton.hasName ? 4.0f : 0.0f) + tagButton.reactionButton.textDrawable.getAnimateToWidth());
             }
             if (z) {
-                ReactionsLayoutInBubble.ReactionButton reactionButton6 = this.reactionButton;
+                ReactionsLayoutInBubble.ReactionButton reactionButton6 = tagButton.reactionButton;
                 reactionButton6.animateFromWidth = reactionButton6.width;
             }
-            this.reactionButton.height = AndroidUtilities.dp(28.0f);
-            ReactionsLayoutInBubble.ReactionButton reactionButton7 = this.reactionButton;
-            reactionButton7.choosen = this.chosen;
-            if (this.attached) {
+            tagButton.reactionButton.height = AndroidUtilities.dp(28.0f);
+            ReactionsLayoutInBubble.ReactionButton reactionButton7 = tagButton.reactionButton;
+            reactionButton7.choosen = tagButton.chosen;
+            if (tagButton.attached) {
                 reactionButton7.attach();
             }
             if (z) {

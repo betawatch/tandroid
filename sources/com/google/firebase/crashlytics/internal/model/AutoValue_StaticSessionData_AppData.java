@@ -74,11 +74,13 @@ final class AutoValue_StaticSessionData_AppData extends StaticSessionData.AppDat
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof StaticSessionData.AppData)) {
-            return false;
+        if (obj instanceof StaticSessionData.AppData) {
+            StaticSessionData.AppData appData = (StaticSessionData.AppData) obj;
+            if (this.appIdentifier.equals(appData.appIdentifier()) && this.versionCode.equals(appData.versionCode()) && this.versionName.equals(appData.versionName()) && this.installUuid.equals(appData.installUuid()) && this.deliveryMechanism == appData.deliveryMechanism() && this.developmentPlatformProvider.equals(appData.developmentPlatformProvider())) {
+                return true;
+            }
         }
-        StaticSessionData.AppData appData = (StaticSessionData.AppData) obj;
-        return this.appIdentifier.equals(appData.appIdentifier()) && this.versionCode.equals(appData.versionCode()) && this.versionName.equals(appData.versionName()) && this.installUuid.equals(appData.installUuid()) && this.deliveryMechanism == appData.deliveryMechanism() && this.developmentPlatformProvider.equals(appData.developmentPlatformProvider());
+        return false;
     }
 
     public int hashCode() {

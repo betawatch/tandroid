@@ -64,16 +64,16 @@ public class AddReactionsSpan extends ReplacementSpan {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.AddReactionsSpan$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AddReactionsSpan.this.lambda$show$0(view, valueAnimator);
+                AddReactionsSpan.$r8$lambda$0OeviAZXrV0dLH3lplfC2qgV6fs(AddReactionsSpan.this, view, valueAnimator);
             }
         });
         ofInt.setDuration(200L);
         ofInt.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$0(View view, ValueAnimator valueAnimator) {
-        this.alpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+    public static /* synthetic */ void $r8$lambda$0OeviAZXrV0dLH3lplfC2qgV6fs(AddReactionsSpan addReactionsSpan, View view, ValueAnimator valueAnimator) {
+        addReactionsSpan.getClass();
+        addReactionsSpan.alpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
         view.invalidate();
     }
 
@@ -82,7 +82,7 @@ public class AddReactionsSpan extends ReplacementSpan {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.AddReactionsSpan$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AddReactionsSpan.this.lambda$hide$1(view, valueAnimator);
+                AddReactionsSpan.$r8$lambda$aIE8q3Sgf-DMxNMOnVXv54JQ85U(AddReactionsSpan.this, view, valueAnimator);
             }
         });
         ofInt.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Reactions.AddReactionsSpan.1
@@ -95,9 +95,9 @@ public class AddReactionsSpan extends ReplacementSpan {
         ofInt.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hide$1(View view, ValueAnimator valueAnimator) {
-        this.alpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+    public static /* synthetic */ void $r8$lambda$aIE8q3Sgf-DMxNMOnVXv54JQ85U(AddReactionsSpan addReactionsSpan, View view, ValueAnimator valueAnimator) {
+        addReactionsSpan.getClass();
+        addReactionsSpan.alpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
         view.invalidate();
     }
 }

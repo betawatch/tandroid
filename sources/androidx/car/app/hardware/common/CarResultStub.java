@@ -64,16 +64,13 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         RemoteUtils.dispatchCallFromHost(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new RemoteUtils.HostCall() { // from class: androidx.car.app.hardware.common.CarResultStub$$ExternalSyntheticLambda1
             @Override // androidx.car.app.utils.RemoteUtils.HostCall
             public final Object dispatch() {
-                Object lambda$onCarHardwareResult$0;
-                lambda$onCarHardwareResult$0 = CarResultStub.this.lambda$onCarHardwareResult$0(z, bundleable);
-                return lambda$onCarHardwareResult$0;
+                return CarResultStub.$r8$lambda$pqrm3pBqWmiTYzPQnBV2xWWZWww(CarResultStub.this, z, bundleable);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z, Bundleable bundleable) {
-        notifyResults(z, bundleable);
+    public static /* synthetic */ Object $r8$lambda$pqrm3pBqWmiTYzPQnBV2xWWZWww(CarResultStub carResultStub, boolean z, Bundleable bundleable) {
+        carResultStub.notifyResults(z, bundleable);
         return null;
     }
 
@@ -83,7 +80,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
             entry.getValue().execute(new Runnable() { // from class: androidx.car.app.hardware.common.CarResultStub$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CarResultStub.lambda$notifyResults$1(entry, convertAndRecast);
+                    CarResultStub.$r8$lambda$vYNy658eO7HEYi1xIs0Tfw1Qm5E(entry, convertAndRecast);
                 }
             });
         }
@@ -92,8 +89,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$notifyResults$1(Map.Entry entry, Object obj) {
+    public static /* synthetic */ void $r8$lambda$vYNy658eO7HEYi1xIs0Tfw1Qm5E(Map.Entry entry, Object obj) {
         WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
         throw null;
     }

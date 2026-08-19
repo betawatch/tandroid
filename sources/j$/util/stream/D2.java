@@ -3,56 +3,45 @@ package j$.util.stream;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class D2 extends z2 {
-    private T2 c;
+public final class D2 extends r2 {
+    public int[] c;
+    public int d;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.T2, j$.util.stream.V2] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.V2] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.V2] */
-    @Override // j$.util.stream.h2, j$.util.stream.m2
-    public final void l(long j) {
-        ?? r0;
+    @Override // j$.util.stream.Z1, j$.util.stream.f2
+    public final void y(long j) {
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (j <= 0) {
-            r0 = new V2();
-        } else {
-            r0 = new T2((int) j);
-        }
-        this.c = r0;
+        this.c = new int[(int) j];
     }
 
-    @Override // j$.util.stream.h2, j$.util.stream.m2
-    public final void k() {
-        long[] jArr = (long[]) this.c.d();
-        Arrays.sort(jArr);
-        long length = jArr.length;
-        m2 m2Var = this.a;
-        m2Var.l(length);
+    @Override // j$.util.stream.Z1, j$.util.stream.f2
+    public final void x() {
         int i = 0;
+        Arrays.sort(this.c, 0, this.d);
+        long j = this.d;
+        f2 f2Var = this.a;
+        f2Var.y(j);
         if (!this.b) {
-            int length2 = jArr.length;
-            while (i < length2) {
-                m2Var.accept(jArr[i]);
+            while (i < this.d) {
+                f2Var.accept(this.c[i]);
                 i++;
             }
         } else {
-            int length3 = jArr.length;
-            while (i < length3) {
-                long j = jArr[i];
-                if (m2Var.n()) {
-                    break;
-                }
-                m2Var.accept(j);
+            while (i < this.d && !f2Var.C()) {
+                f2Var.accept(this.c[i]);
                 i++;
             }
         }
-        m2Var.k();
+        f2Var.x();
+        this.c = null;
     }
 
-    @Override // j$.util.stream.l2, j$.util.stream.m2
-    public final void accept(long j) {
-        this.c.accept(j);
+    @Override // j$.util.stream.d2, j$.util.stream.f2
+    public final void accept(int i) {
+        int[] iArr = this.c;
+        int i2 = this.d;
+        this.d = i2 + 1;
+        iArr[i2] = i;
     }
 }

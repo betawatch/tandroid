@@ -23,9 +23,7 @@ public final class FlacExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.flac.FlacExtractor$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
-            Extractor[] lambda$static$0;
-            lambda$static$0 = FlacExtractor.lambda$static$0();
-            return lambda$static$0;
+            return FlacExtractor.$r8$lambda$gkiUd4xrj3_RyGqND7gbTwriJGE();
         }
 
         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
@@ -54,8 +52,7 @@ public final class FlacExtractor implements Extractor {
     public void release() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
+    public static /* synthetic */ Extractor[] $r8$lambda$gkiUd4xrj3_RyGqND7gbTwriJGE() {
         return new Extractor[]{new FlacExtractor()};
     }
 

@@ -191,8 +191,8 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
                 }
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:10:0x0042  */
-            /* JADX WARN: Removed duplicated region for block: B:13:0x0058  */
+            /* JADX WARN: Removed duplicated region for block: B:10:0x0040  */
+            /* JADX WARN: Removed duplicated region for block: B:13:0x0055  */
             @Override // android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -263,7 +263,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PrivateVideoPreviewDialog.this.lambda$new$0(view);
+                PrivateVideoPreviewDialog.$r8$lambda$wCb2kG4aKILEyrJlWyGgyZZFl7U(PrivateVideoPreviewDialog.this, view);
             }
         });
         addView(textView, LayoutHelper.createFrame(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
@@ -294,7 +294,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             this.titles[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PrivateVideoPreviewDialog.this.lambda$new$1(i2, view);
+                    PrivateVideoPreviewDialog.this.viewPager.setCurrentItem(i2, true);
                 }
             });
             i2++;
@@ -332,34 +332,27 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             this.micIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PrivateVideoPreviewDialog.this.lambda$new$2(rLottieDrawable, view);
+                    PrivateVideoPreviewDialog.$r8$lambda$vSh3xy69GTdCmuFG58UNA38BOEM(PrivateVideoPreviewDialog.this, rLottieDrawable, view);
                 }
             });
             addView(this.micIconView, LayoutHelper.createFrame(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        if (this.isDismissed) {
+    public static /* synthetic */ void $r8$lambda$wCb2kG4aKILEyrJlWyGgyZZFl7U(PrivateVideoPreviewDialog privateVideoPreviewDialog, View view) {
+        if (privateVideoPreviewDialog.isDismissed) {
             return;
         }
-        if (this.currentPage == 0 && this.needScreencast) {
-            ((Activity) getContext()).startActivityForResult(((MediaProjectionManager) getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+        if (privateVideoPreviewDialog.currentPage == 0 && privateVideoPreviewDialog.needScreencast) {
+            ((Activity) privateVideoPreviewDialog.getContext()).startActivityForResult(((MediaProjectionManager) privateVideoPreviewDialog.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
         } else {
-            dismiss(false, true);
+            privateVideoPreviewDialog.dismiss(false, true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, View view) {
-        this.viewPager.setCurrentItem(i, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(RLottieDrawable rLottieDrawable, View view) {
-        boolean z = this.micEnabled;
-        this.micEnabled = !z;
+    public static /* synthetic */ void $r8$lambda$vSh3xy69GTdCmuFG58UNA38BOEM(PrivateVideoPreviewDialog privateVideoPreviewDialog, RLottieDrawable rLottieDrawable, View view) {
+        boolean z = privateVideoPreviewDialog.micEnabled;
+        privateVideoPreviewDialog.micEnabled = !z;
         if (!z) {
             rLottieDrawable.setCurrentFrame(36);
             rLottieDrawable.setCustomEndFrame(69);

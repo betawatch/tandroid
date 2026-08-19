@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class StringUtils {
     private static final boolean ASSUME_SHIFT_JIS;
     private static final Charset EUC_JP;
@@ -39,14 +39,16 @@ public abstract class StringUtils {
         ASSUME_SHIFT_JIS = (charset4 != null && charset4.equals(PLATFORM_DEFAULT_ENCODING)) || (charset3 != null && charset3.equals(PLATFORM_DEFAULT_ENCODING));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0117 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x011d  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x00cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static Charset guessCharset(byte[] bArr, Map map) {
-        int i;
+        boolean z;
+        boolean z2;
+        boolean z3;
         byte b;
         byte[] bArr2 = bArr;
         if (map != null) {
@@ -55,17 +57,18 @@ public abstract class StringUtils {
                 return Charset.forName(map.get(decodeHintType).toString());
             }
         }
-        boolean z = true;
-        int i2 = 0;
+        boolean z4 = true;
+        int i = 0;
         if (bArr2.length > 2 && (((b = bArr2[0]) == -2 && bArr2[1] == -1) || (b == -1 && bArr2[1] == -2))) {
             return StandardCharsets.UTF_16;
         }
         int length = bArr2.length;
-        boolean z2 = SHIFT_JIS_CHARSET != null;
-        boolean z3 = bArr2.length > 3 && bArr2[0] == -17 && bArr2[1] == -69 && bArr2[2] == -65;
-        boolean z4 = z2;
+        boolean z5 = SHIFT_JIS_CHARSET != null;
+        boolean z6 = bArr2.length > 3 && bArr2[0] == -17 && bArr2[1] == -69 && bArr2[2] == -65;
+        boolean z7 = z5;
+        int i2 = 0;
+        boolean z8 = true;
         int i3 = 0;
-        boolean z5 = true;
         int i4 = 0;
         int i5 = 0;
         int i6 = 0;
@@ -75,125 +78,134 @@ public abstract class StringUtils {
         int i10 = 0;
         int i11 = 0;
         int i12 = 0;
-        int i13 = 0;
-        while (i4 < length && (z || z4 || z5)) {
-            byte b2 = bArr2[i4];
-            int i14 = b2 & 255;
-            if (z5) {
-                if (i5 <= 0) {
-                    i = length;
+        while (i3 < length && (z4 || z7 || z8)) {
+            byte b2 = bArr2[i3];
+            int i13 = b2 & 255;
+            if (z8) {
+                if (i4 <= 0) {
+                    z = z4;
                     if ((b2 & 128) != 0) {
                         if ((b2 & 64) != 0) {
-                            int i15 = i5 + 1;
+                            int i14 = i4 + 1;
                             if ((b2 & 32) == 0) {
-                                i7++;
+                                i6++;
                             } else {
-                                i15 = i5 + 2;
+                                i14 = i4 + 2;
                                 if ((b2 & 16) == 0) {
-                                    i8++;
+                                    i7++;
                                 } else {
-                                    i5 += 3;
+                                    i4 += 3;
                                     if ((b2 & 8) == 0) {
-                                        i9++;
+                                        i8++;
                                     }
                                 }
                             }
-                            i5 = i15;
+                            i4 = i14;
                         }
                     }
                     if (z) {
-                        if (i14 > 127 && i14 < 160) {
-                            z = false;
-                        } else if (i14 > 159 && (i14 < 192 || i14 == 215 || i14 == 247)) {
-                            i11++;
-                        }
-                    }
-                    if (z4) {
-                        if (i6 > 0) {
-                            if (i14 >= 64 && i14 != 127 && i14 <= 252) {
-                                i6--;
-                            }
-                            z4 = false;
-                        } else {
-                            if (i14 != 128 && i14 != 160 && i14 <= 239) {
-                                if (i14 <= 160 || i14 >= 224) {
-                                    if (i14 > 127) {
-                                        i6++;
+                        if (i13 > 127 && i13 < 160) {
+                            z2 = false;
+                            if (z7) {
+                                z3 = z2;
+                            } else if (i5 > 0) {
+                                z3 = z2;
+                                if (i13 >= 64 && i13 != 127 && i13 <= 252) {
+                                    i5--;
+                                }
+                                z7 = false;
+                            } else {
+                                z3 = z2;
+                                if (i13 != 128 && i13 != 160 && i13 <= 239) {
+                                    if (i13 <= 160 || i13 >= 224) {
+                                        if (i13 > 127) {
+                                            i5++;
+                                            int i15 = i11 + 1;
+                                            if (i15 > i) {
+                                                i = i15;
+                                                i11 = i;
+                                            } else {
+                                                i11 = i15;
+                                            }
+                                        } else {
+                                            i11 = 0;
+                                        }
+                                        i12 = 0;
+                                    } else {
+                                        i2++;
                                         int i16 = i12 + 1;
-                                        if (i16 > i2) {
-                                            i2 = i16;
-                                            i12 = i2;
+                                        if (i16 > i9) {
+                                            i9 = i16;
+                                            i12 = i9;
                                         } else {
                                             i12 = i16;
                                         }
-                                    } else {
-                                        i12 = 0;
+                                        i11 = 0;
                                     }
-                                    i13 = 0;
-                                } else {
-                                    i3++;
-                                    int i17 = i13 + 1;
-                                    if (i17 > i10) {
-                                        i10 = i17;
-                                        i13 = i10;
-                                    } else {
-                                        i13 = i17;
-                                    }
-                                    i12 = 0;
                                 }
+                                z7 = false;
                             }
-                            z4 = false;
+                            i3++;
+                            bArr2 = bArr;
+                            z4 = z3;
+                        } else if (i13 > 159 && (i13 < 192 || i13 == 215 || i13 == 247)) {
+                            i10++;
                         }
                     }
-                    i4++;
+                    z2 = z;
+                    if (z7) {
+                    }
+                    i3++;
                     bArr2 = bArr;
-                    length = i;
+                    z4 = z3;
                 } else if ((b2 & 128) == 0) {
-                    i = length;
+                    z = z4;
                 } else {
-                    i5--;
+                    i4--;
                 }
-                z5 = false;
+                z8 = false;
                 if (z) {
                 }
-                if (z4) {
+                z2 = z;
+                if (z7) {
                 }
-                i4++;
+                i3++;
                 bArr2 = bArr;
-                length = i;
+                z4 = z3;
             }
-            i = length;
+            z = z4;
             if (z) {
             }
-            if (z4) {
+            z2 = z;
+            if (z7) {
             }
-            i4++;
+            i3++;
             bArr2 = bArr;
-            length = i;
+            z4 = z3;
         }
-        int i18 = length;
-        if (z5 && i5 > 0) {
-            z5 = false;
+        boolean z9 = z4;
+        if (z8 && i4 > 0) {
+            z8 = false;
         }
-        if (z4 && i6 > 0) {
-            z4 = false;
+        if (z7 && i5 > 0) {
+            z7 = false;
         }
-        if (z5 && (z3 || i7 + i8 + i9 > 0)) {
+        if (z8 && (z6 || i6 + i7 + i8 > 0)) {
             return StandardCharsets.UTF_8;
         }
-        if (z4 && (ASSUME_SHIFT_JIS || i10 >= 3 || i2 >= 3)) {
+        if (z7 && (ASSUME_SHIFT_JIS || i9 >= 3 || i >= 3)) {
             return SHIFT_JIS_CHARSET;
         }
-        if (z && z4) {
-            return (!(i10 == 2 && i3 == 2) && i11 * 10 < i18) ? StandardCharsets.ISO_8859_1 : SHIFT_JIS_CHARSET;
+        if (z9 && z7) {
+            return (!(i9 == 2 && i2 == 2) && i10 * 10 < length) ? StandardCharsets.ISO_8859_1 : SHIFT_JIS_CHARSET;
         }
-        if (z) {
+        if (z9) {
             return StandardCharsets.ISO_8859_1;
         }
-        if (z4) {
+        if (z7) {
             return SHIFT_JIS_CHARSET;
         }
-        if (z5) {
+        if (z8) {
             return StandardCharsets.UTF_8;
         }
         return PLATFORM_DEFAULT_ENCODING;

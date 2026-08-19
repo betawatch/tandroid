@@ -19,7 +19,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
     private TextureView backgroundRenderer;
@@ -202,15 +202,14 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.webrtc.TextureViewRenderer$TextureEglRenderer$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TextureViewRenderer.TextureEglRenderer.this.lambda$onFirstFrameRendered$0();
+                    TextureViewRenderer.TextureEglRenderer.$r8$lambda$vBkGMSpMpfvaJ6znhck92ar86Wc(TextureViewRenderer.TextureEglRenderer.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onFirstFrameRendered$0() {
-            this.isFirstFrameRendered = true;
-            this.rendererEvents.onFirstFrameRendered();
+        public static /* synthetic */ void $r8$lambda$vBkGMSpMpfvaJ6znhck92ar86Wc(TextureEglRenderer textureEglRenderer) {
+            textureEglRenderer.isFirstFrameRendered = true;
+            textureEglRenderer.rendererEvents.onFirstFrameRendered();
         }
     }
 
@@ -473,15 +472,15 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     
         if (r10 == 0) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0059, code lost:
     
         r6 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0036, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0036, code lost:
     
         if (r10 != (-180)) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0056, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x0056, code lost:
     
         if (r10 != (-180)) goto L43;
      */
@@ -492,6 +491,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     public void onFrameResolutionChanged(final int i, final int i2, int i3) {
         int i4;
         final int i5;
+        Throwable th;
         RendererCommon.RendererEvents rendererEvents = this.rendererEvents;
         if (rendererEvents != null) {
             rendererEvents.onFrameResolutionChanged(i, i2, i3);
@@ -528,33 +528,45 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         final int i9 = i4;
         synchronized (this.eglRenderer.layoutLock) {
             try {
-                Runnable runnable = this.updateScreenRunnable;
-                if (runnable != null) {
-                    AndroidUtilities.cancelRunOnUIThread(runnable);
-                }
-                Runnable runnable2 = new Runnable() { // from class: org.webrtc.TextureViewRenderer$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        TextureViewRenderer.this.lambda$onFrameResolutionChanged$0(i, i2, i9, i5);
+                try {
+                    Runnable runnable = this.updateScreenRunnable;
+                    if (runnable != null) {
+                        try {
+                            AndroidUtilities.cancelRunOnUIThread(runnable);
+                        } catch (Throwable th2) {
+                            th = th2;
+                            throw th;
+                        }
                     }
-                };
-                this.updateScreenRunnable = runnable2;
-                postOrRun(runnable2);
-            } catch (Throwable th) {
+                    Runnable runnable2 = new Runnable() { // from class: org.webrtc.TextureViewRenderer$$ExternalSyntheticLambda0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            TextureViewRenderer.$r8$lambda$wtAV-KtJ0HfkL3QYugafIwOl5W4(TextureViewRenderer.this, i, i2, i9, i5);
+                        }
+                    };
+                    this.updateScreenRunnable = runnable2;
+                    postOrRun(runnable2);
+                } catch (Throwable th3) {
+                    th = th3;
+                    th = th;
+                    throw th;
+                }
+            } catch (Throwable th4) {
+                th = th4;
+                th = th;
                 throw th;
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onFrameResolutionChanged$0(int i, int i2, int i3, int i4) {
-        this.updateScreenRunnable = null;
-        this.videoWidth = i;
-        this.videoHeight = i2;
-        this.rotatedFrameWidth = i3;
-        this.rotatedFrameHeight = i4;
-        updateSurfaceSize();
-        requestLayout();
+    public static /* synthetic */ void $r8$lambda$wtAV-KtJ0HfkL3QYugafIwOl5W4(TextureViewRenderer textureViewRenderer, int i, int i2, int i3, int i4) {
+        textureViewRenderer.updateScreenRunnable = null;
+        textureViewRenderer.videoWidth = i;
+        textureViewRenderer.videoHeight = i2;
+        textureViewRenderer.rotatedFrameWidth = i3;
+        textureViewRenderer.rotatedFrameHeight = i4;
+        textureViewRenderer.updateSurfaceSize();
+        textureViewRenderer.requestLayout();
     }
 
     public void setScreenRotation(int i) {
@@ -609,23 +621,23 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                 Runnable runnable2 = new Runnable() { // from class: org.webrtc.TextureViewRenderer$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TextureViewRenderer.this.lambda$updateVideoSizes$1(i2, i3);
+                        TextureViewRenderer.$r8$lambda$yc_DZEyKpurrK-vjSc8Qvugm5-Q(TextureViewRenderer.this, i2, i3);
                     }
                 };
                 this.updateScreenRunnable = runnable2;
                 postOrRun(runnable2);
-            } finally {
+            } catch (Throwable th) {
+                throw th;
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateVideoSizes$1(int i, int i2) {
-        this.updateScreenRunnable = null;
-        this.rotatedFrameWidth = i;
-        this.rotatedFrameHeight = i2;
-        updateSurfaceSize();
-        requestLayout();
+    public static /* synthetic */ void $r8$lambda$yc_DZEyKpurrK-vjSc8Qvugm5-Q(TextureViewRenderer textureViewRenderer, int i, int i2) {
+        textureViewRenderer.updateScreenRunnable = null;
+        textureViewRenderer.rotatedFrameWidth = i;
+        textureViewRenderer.rotatedFrameHeight = i2;
+        textureViewRenderer.updateSurfaceSize();
+        textureViewRenderer.requestLayout();
     }
 
     public void setRotateTextureWithScreen(boolean z) {

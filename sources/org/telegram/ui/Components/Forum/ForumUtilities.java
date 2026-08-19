@@ -15,7 +15,6 @@ import android.text.style.ImageSpan;
 import android.util.SparseArray;
 import com.google.firebase.sessions.SessionDetails$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
@@ -427,7 +426,7 @@ public abstract class ForumUtilities {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Forum.ForumUtilities$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ForumUtilities.lambda$switchAllFragmentsInStackToForum$0(ChatActivity.this);
+                            ForumUtilities.$r8$lambda$UvVVsxZYltUo-PSD6n9UdoutH7g(ChatActivity.this);
                         }
                     }, 500L);
                 } else {
@@ -444,7 +443,7 @@ public abstract class ForumUtilities {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Forum.ForumUtilities$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ForumUtilities.lambda$switchAllFragmentsInStackToForum$1(TopicsFragment.this);
+                        ForumUtilities.$r8$lambda$4e-qg6ncDIbyd5NC7XptnRU1QEc(TopicsFragment.this);
                     }
                 }, 500L);
             } else {
@@ -453,15 +452,13 @@ public abstract class ForumUtilities {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$switchAllFragmentsInStackToForum$0(ChatActivity chatActivity) {
+    public static /* synthetic */ void $r8$lambda$UvVVsxZYltUo-PSD6n9UdoutH7g(ChatActivity chatActivity) {
         if (chatActivity.getParentLayout() != null) {
             TopicsFragment.prepareToSwitchAnimation(chatActivity);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$switchAllFragmentsInStackToForum$1(TopicsFragment topicsFragment) {
+    public static /* synthetic */ void $r8$lambda$4e-qg6ncDIbyd5NC7XptnRU1QEc(TopicsFragment topicsFragment) {
         if (topicsFragment.getParentLayout() != null) {
             topicsFragment.switchToChat(true);
         }
@@ -473,9 +470,12 @@ public abstract class ForumUtilities {
 
     public static ArrayList monoForumTopicToTopic(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList(arrayList.size());
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            TLRPC.savedDialog saveddialog = (TLRPC.savedDialog) it.next();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            TLRPC.savedDialog saveddialog = (TLRPC.savedDialog) obj;
             if (saveddialog instanceof TLRPC.TL_monoForumDialog) {
                 arrayList2.add(monoForumTopicToTopic((TLRPC.TL_monoForumDialog) saveddialog));
             }

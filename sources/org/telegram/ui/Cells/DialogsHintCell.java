@@ -186,14 +186,13 @@ public class DialogsHintCell extends FrameLayout {
         super.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsHintCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogsHintCell.this.lambda$setOnClickListener$0(onClickListener, view);
+                DialogsHintCell.$r8$lambda$djl6f41F7MaGy1hqIwHSY2q0ukw(DialogsHintCell.this, onClickListener, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOnClickListener$0(View.OnClickListener onClickListener, View view) {
-        if (getAlpha() <= 0.5f || onClickListener == null) {
+    public static /* synthetic */ void $r8$lambda$djl6f41F7MaGy1hqIwHSY2q0ukw(DialogsHintCell dialogsHintCell, View.OnClickListener onClickListener, View view) {
+        if (dialogsHintCell.getAlpha() <= 0.5f || onClickListener == null) {
             return;
         }
         onClickListener.onClick(view);

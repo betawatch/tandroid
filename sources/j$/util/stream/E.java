@@ -1,38 +1,33 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class E implements G3 {
-    final int a;
-    final Object b;
-    final Predicate c;
-    final Supplier d;
+public final class E extends G implements e2 {
+    public static final B c;
+    public static final B d;
 
-    E(boolean z, b3 b3Var, Object obj, Predicate predicate, Supplier supplier) {
-        this.a = (z ? 0 : a3.r) | a3.u;
-        this.b = obj;
-        this.c = predicate;
-        this.d = supplier;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    @Override // j$.util.stream.G3
-    public final int d() {
-        return this.a;
+    @Override // j$.util.stream.G, j$.util.stream.f2
+    public final void accept(long j) {
+        s(Long.valueOf(j));
     }
 
-    @Override // j$.util.stream.G3
-    public final Object b(b bVar, Spliterator spliterator) {
-        H3 h3 = (H3) this.d.get();
-        bVar.U(spliterator, h3);
-        Object obj = h3.get();
-        return obj != null ? obj : this.b;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        if (this.a) {
+            return new j$.util.B(((Long) this.b).longValue());
+        }
+        return null;
     }
 
-    @Override // j$.util.stream.G3
-    public final Object c(b bVar, Spliterator spliterator) {
-        return new K(this, a3.ORDERED.o(bVar.J()), bVar, spliterator).invoke();
+    static {
+        T2 t2 = T2.LONG_VALUE;
+        j$.util.B b = j$.util.B.c;
+        c = new B(true, t2, b, new m(14), new m(15));
+        d = new B(false, t2, b, new m(14), new m(15));
     }
 }

@@ -53,16 +53,13 @@ class ConversationCallbackDelegateImpl implements ConversationCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onMarkAsRead", new RemoteUtils.HostCall() { // from class: androidx.car.app.messaging.model.ConversationCallbackDelegateImpl$ConversationCallbackStub$$ExternalSyntheticLambda1
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onMarkAsRead$0;
-                    lambda$onMarkAsRead$0 = ConversationCallbackDelegateImpl.ConversationCallbackStub.this.lambda$onMarkAsRead$0();
-                    return lambda$onMarkAsRead$0;
+                    return ConversationCallbackDelegateImpl.ConversationCallbackStub.$r8$lambda$N7BVLWGtNGN4ArPkcWjJcGYJ-aI(ConversationCallbackDelegateImpl.ConversationCallbackStub.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onMarkAsRead$0() {
-            this.mConversationCallback.onMarkAsRead();
+        public static /* synthetic */ Object $r8$lambda$N7BVLWGtNGN4ArPkcWjJcGYJ-aI(ConversationCallbackStub conversationCallbackStub) {
+            conversationCallbackStub.mConversationCallback.onMarkAsRead();
             return null;
         }
 
@@ -71,16 +68,13 @@ class ConversationCallbackDelegateImpl implements ConversationCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onReply", new RemoteUtils.HostCall() { // from class: androidx.car.app.messaging.model.ConversationCallbackDelegateImpl$ConversationCallbackStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onTextReply$1;
-                    lambda$onTextReply$1 = ConversationCallbackDelegateImpl.ConversationCallbackStub.this.lambda$onTextReply$1(str);
-                    return lambda$onTextReply$1;
+                    return ConversationCallbackDelegateImpl.ConversationCallbackStub.$r8$lambda$Tbb_9lhfLXFSp06RpTThSQeIzOY(ConversationCallbackDelegateImpl.ConversationCallbackStub.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onTextReply$1(String str) {
-            this.mConversationCallback.onTextReply(str);
+        public static /* synthetic */ Object $r8$lambda$Tbb_9lhfLXFSp06RpTThSQeIzOY(ConversationCallbackStub conversationCallbackStub, String str) {
+            conversationCallbackStub.mConversationCallback.onTextReply(str);
             return null;
         }
     }

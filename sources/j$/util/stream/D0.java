@@ -1,29 +1,40 @@
 package j$.util.stream;
 
-import java.util.function.IntConsumer;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class D0 implements IntConsumer {
-    public final /* synthetic */ int a;
+public abstract class D0 implements B0 {
+    public final B0 a;
+    public final B0 b;
+    public final long c;
 
-    public /* synthetic */ D0(int i) {
-        this.a = i;
+    @Override // j$.util.stream.B0
+    public final int i() {
+        return 2;
     }
 
-    private final void accept$j$$util$stream$Node$OfInt$$ExternalSyntheticLambda0(int i) {
+    public D0(B0 b0, B0 b02) {
+        this.a = b0;
+        this.b = b02;
+        this.c = b02.count() + b0.count();
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfInt$$ExternalSyntheticLambda0(int i) {
-    }
-
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i) {
-        int i2 = this.a;
-    }
-
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        switch (this.a) {
+    @Override // j$.util.stream.B0
+    public final B0 b(int i) {
+        if (i == 0) {
+            return this.a;
         }
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
+        if (i == 1) {
+            return this.b;
+        }
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j$.util.stream.B0
+    public final long count() {
+        return this.c;
+    }
+
+    @Override // j$.util.stream.B0
+    public /* bridge */ /* synthetic */ A0 b(int i) {
+        return (A0) b(i);
     }
 }

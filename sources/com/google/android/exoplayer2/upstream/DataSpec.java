@@ -40,7 +40,7 @@ public final class DataSpec {
 
         public Builder() {
             this.httpMethod = 1;
-            this.httpRequestHeaders = Collections.emptyMap();
+            this.httpRequestHeaders = Collections.EMPTY_MAP;
             this.length = -1L;
         }
 
@@ -126,7 +126,7 @@ public final class DataSpec {
     }
 
     public DataSpec(Uri uri, long j, long j2) {
-        this(uri, 0L, 1, null, Collections.emptyMap(), j, j2, null, 0, null);
+        this(uri, 0L, 1, null, Collections.EMPTY_MAP, j, j2, null, 0, null);
     }
 
     private DataSpec(Uri uri, long j, int i, byte[] bArr, Map map, long j2, long j3, String str, int i2, Object obj) {

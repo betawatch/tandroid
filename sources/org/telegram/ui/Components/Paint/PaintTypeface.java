@@ -44,89 +44,59 @@ public class PaintTypeface {
         PaintTypeface paintTypeface = new PaintTypeface("roboto", "PhotoEditorTypefaceRoboto", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$static$0;
-                lambda$static$0 = PaintTypeface.lambda$static$0();
-                return lambda$static$0;
+                Typeface typeface;
+                typeface = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
+                return typeface;
             }
         }));
         ROBOTO_MEDIUM = paintTypeface;
         PaintTypeface paintTypeface2 = new PaintTypeface("italic", "PhotoEditorTypefaceItalic", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$static$1;
-                lambda$static$1 = PaintTypeface.lambda$static$1();
-                return lambda$static$1;
+                Typeface typeface;
+                typeface = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+                return typeface;
             }
         }));
         ROBOTO_ITALIC = paintTypeface2;
         PaintTypeface paintTypeface3 = new PaintTypeface("serif", "PhotoEditorTypefaceSerif", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$static$2;
-                lambda$static$2 = PaintTypeface.lambda$static$2();
-                return lambda$static$2;
+                Typeface create;
+                create = Typeface.create("serif", 1);
+                return create;
             }
         }));
         ROBOTO_SERIF = paintTypeface3;
         PaintTypeface paintTypeface4 = new PaintTypeface("condensed", "PhotoEditorTypefaceCondensed", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$static$3;
-                lambda$static$3 = PaintTypeface.lambda$static$3();
-                return lambda$static$3;
+                Typeface typeface;
+                typeface = AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
+                return typeface;
             }
         }));
         ROBOTO_CONDENSED = paintTypeface4;
         PaintTypeface paintTypeface5 = new PaintTypeface("mono", "PhotoEditorTypefaceMono", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$static$4;
-                lambda$static$4 = PaintTypeface.lambda$static$4();
-                return lambda$static$4;
+                Typeface typeface;
+                typeface = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
+                return typeface;
             }
         }));
         ROBOTO_MONO = paintTypeface5;
         PaintTypeface paintTypeface6 = new PaintTypeface("mw_bold", "PhotoEditorTypefaceMerriweather", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$static$5;
-                lambda$static$5 = PaintTypeface.lambda$static$5();
-                return lambda$static$5;
+                Typeface typeface;
+                typeface = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+                return typeface;
             }
         }));
         MW_BOLD = paintTypeface6;
         BUILT_IN_FONTS = Arrays.asList(paintTypeface, paintTypeface2, paintTypeface3, paintTypeface4, paintTypeface5, paintTypeface6);
         preferable = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$0() {
-        return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$1() {
-        return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$2() {
-        return Typeface.create("serif", 1);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$3() {
-        return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$4() {
-        return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$5() {
-        return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -167,16 +137,13 @@ public class PaintTypeface {
         this.lazyTypeface = new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$new$6;
-                lambda$new$6 = PaintTypeface.lambda$new$6(font);
-                return lambda$new$6;
+                return PaintTypeface.$r8$lambda$xF8pzPmoceFYrbPwhWPXQbF-yRo(font);
             }
         });
         this.font = font;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$new$6(Font font) {
+    public static /* synthetic */ Typeface $r8$lambda$xF8pzPmoceFYrbPwhWPXQbF-yRo(Font font) {
         File file;
         file = font.getFile();
         return Typeface.createFromFile(file);
@@ -207,13 +174,12 @@ public class PaintTypeface {
         Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                PaintTypeface.lambda$load$8();
+                PaintTypeface.$r8$lambda$ydR0iYIi4oyIZSgzx6sh8DoVZvI();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$load$8() {
+    public static /* synthetic */ void $r8$lambda$ydR0iYIi4oyIZSgzx6sh8DoVZvI() {
         Set availableFonts;
         File file;
         FontData parseFont;
@@ -253,16 +219,15 @@ public class PaintTypeface {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                PaintTypeface.lambda$load$7(arrayList);
+                PaintTypeface.$r8$lambda$uHiyhdBVm0IHOhLb-ZgqUwvUtTU(arrayList);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$load$7(ArrayList arrayList) {
+    public static /* synthetic */ void $r8$lambda$uHiyhdBVm0IHOhLb-ZgqUwvUtTU(ArrayList arrayList) {
         typefaces = arrayList;
         loadingTypefaces = false;
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.customTypefacesLoaded, new Object[0]);
     }
 
     public static List get() {

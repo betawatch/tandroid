@@ -152,21 +152,21 @@ public class CompoundEmoji {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CompoundEmoji$DrawableInfo$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CompoundEmoji.DrawableInfo.this.lambda$load$0();
+                    CompoundEmoji.DrawableInfo.$r8$lambda$wbW9CXuP9w0yW9XkwcIeNNNomWw(CompoundEmoji.DrawableInfo.this);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$load$0() {
-            Bitmap loadBitmap = Emoji.loadBitmap("emoji/compound/" + this.emoji + "_" + this.skin + "_" + this.place + ".png");
+        public static /* synthetic */ void $r8$lambda$wbW9CXuP9w0yW9XkwcIeNNNomWw(DrawableInfo drawableInfo) {
+            drawableInfo.getClass();
+            Bitmap loadBitmap = Emoji.loadBitmap("emoji/compound/" + drawableInfo.emoji + "_" + drawableInfo.skin + "_" + drawableInfo.place + ".png");
             if (loadBitmap != null) {
-                bitmaps.put(this.hash, loadBitmap);
+                bitmaps.put(drawableInfo.hash, loadBitmap);
                 Runnable runnable = Emoji.invalidateUiRunnable;
                 AndroidUtilities.cancelRunOnUIThread(runnable);
                 AndroidUtilities.runOnUIThread(runnable);
             }
-            loading.remove(Integer.valueOf(this.hash));
+            loading.remove(Integer.valueOf(drawableInfo.hash));
         }
 
         public Bitmap getBitmap() {

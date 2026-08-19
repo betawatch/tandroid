@@ -16,24 +16,26 @@ abstract class DecodedBitStreamParser {
     private static final char[] ALPHANUMERIC_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x013b A[LOOP:0: B:2:0x0021->B:23:0x013b, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0100 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0103 A[LOOP:0: B:2:0x001e->B:24:0x0103, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00c8 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     static DecoderResult decode(byte[] bArr, Version version, ErrorCorrectionLevel errorCorrectionLevel, Map map) {
         Mode forBits;
         Mode mode;
-        BitSource bitSource = new BitSource(bArr);
-        StringBuilder sb = new StringBuilder(50);
-        int i = 1;
+        StringBuilder sb;
+        int i;
+        byte[] bArr2 = bArr;
+        BitSource bitSource = new BitSource(bArr2);
+        StringBuilder sb2 = new StringBuilder(50);
         ArrayList arrayList = new ArrayList(1);
+        CharacterSetECI characterSetECI = null;
         boolean z = false;
         boolean z2 = false;
         boolean z3 = false;
         int i2 = -1;
         int i3 = -1;
-        CharacterSetECI characterSetECI = null;
         while (true) {
             try {
                 if (bitSource.available() < 4) {
@@ -41,80 +43,101 @@ abstract class DecodedBitStreamParser {
                 } else {
                     forBits = Mode.forBits(bitSource.readBits(4));
                 }
-                Mode mode2 = forBits;
                 int[] iArr = 1.$SwitchMap$com$google$zxing$qrcode$decoder$Mode;
-                switch (iArr[mode2.ordinal()]) {
+                switch (iArr[forBits.ordinal()]) {
                     case 5:
-                        mode = mode2;
-                        if (mode != Mode.TERMINATOR) {
-                            return new DecoderResult(bArr, sb.toString(), arrayList.isEmpty() ? null : arrayList, errorCorrectionLevel == null ? null : errorCorrectionLevel.toString(), i2, i3, characterSetECI != null ? z2 ? 4 : z3 ? 6 : 2 : z2 ? 3 : z3 ? 5 : 1);
+                        mode = forBits;
+                        if (mode == Mode.TERMINATOR) {
+                            if (characterSetECI != null) {
+                                if (z2) {
+                                    sb = sb2;
+                                    i = 4;
+                                } else if (z3) {
+                                    sb = sb2;
+                                    i = 6;
+                                } else {
+                                    sb = sb2;
+                                    i = 2;
+                                }
+                            } else if (z2) {
+                                sb = sb2;
+                                i = 3;
+                            } else if (z3) {
+                                sb = sb2;
+                                i = 5;
+                            } else {
+                                sb = sb2;
+                                i = 1;
+                            }
+                            String sb3 = sb.toString();
+                            if (arrayList.isEmpty()) {
+                                arrayList = null;
+                            }
+                            return new DecoderResult(bArr2, sb3, arrayList, errorCorrectionLevel == null ? null : errorCorrectionLevel.toString(), i2, i3, i);
                         }
-                        i = 1;
+                        bArr2 = bArr;
                     case 6:
-                        mode = mode2;
+                        mode = forBits;
                         z = true;
                         z2 = true;
-                        if (mode != Mode.TERMINATOR) {
+                        if (mode == Mode.TERMINATOR) {
                         }
                         break;
                     case 7:
-                        mode = mode2;
+                        mode = forBits;
                         z = true;
                         z3 = true;
-                        if (mode != Mode.TERMINATOR) {
+                        if (mode == Mode.TERMINATOR) {
                         }
                         break;
                     case 8:
-                        mode = mode2;
+                        mode = forBits;
                         if (bitSource.available() < 16) {
                             throw FormatException.getFormatInstance();
                         }
-                        int readBits = bitSource.readBits(8);
+                        i2 = bitSource.readBits(8);
                         i3 = bitSource.readBits(8);
-                        i2 = readBits;
-                        if (mode != Mode.TERMINATOR) {
+                        if (mode == Mode.TERMINATOR) {
                         }
                         break;
                     case 9:
-                        mode = mode2;
+                        mode = forBits;
                         characterSetECI = CharacterSetECI.getCharacterSetECIByValue(parseECIValue(bitSource));
                         if (characterSetECI == null) {
                             throw FormatException.getFormatInstance();
                         }
-                        if (mode != Mode.TERMINATOR) {
+                        if (mode == Mode.TERMINATOR) {
                         }
                         break;
                     case 10:
-                        mode = mode2;
-                        int readBits2 = bitSource.readBits(4);
-                        int readBits3 = bitSource.readBits(mode.getCharacterCountBits(version));
-                        if (readBits2 == 1) {
-                            decodeHanziSegment(bitSource, sb, readBits3);
+                        mode = forBits;
+                        int readBits = bitSource.readBits(4);
+                        int readBits2 = bitSource.readBits(mode.getCharacterCountBits(version));
+                        if (readBits == 1) {
+                            decodeHanziSegment(bitSource, sb2, readBits2);
                         }
-                        if (mode != Mode.TERMINATOR) {
+                        if (mode == Mode.TERMINATOR) {
                         }
                         break;
                     default:
-                        int readBits4 = bitSource.readBits(mode2.getCharacterCountBits(version));
-                        int i4 = iArr[mode2.ordinal()];
-                        if (i4 == i) {
-                            mode = mode2;
-                            decodeNumericSegment(bitSource, sb, readBits4);
+                        int readBits3 = bitSource.readBits(forBits.getCharacterCountBits(version));
+                        int i4 = iArr[forBits.ordinal()];
+                        if (i4 == 1) {
+                            mode = forBits;
+                            decodeNumericSegment(bitSource, sb2, readBits3);
                         } else if (i4 == 2) {
-                            mode = mode2;
-                            decodeAlphanumericSegment(bitSource, sb, readBits4, z);
+                            mode = forBits;
+                            decodeAlphanumericSegment(bitSource, sb2, readBits3, z);
                         } else if (i4 == 3) {
-                            mode = mode2;
-                            decodeByteSegment(bitSource, sb, readBits4, characterSetECI, arrayList, map);
+                            mode = forBits;
+                            decodeByteSegment(bitSource, sb2, readBits3, characterSetECI, arrayList, map);
                         } else if (i4 == 4) {
-                            decodeKanjiSegment(bitSource, sb, readBits4);
-                            mode = mode2;
-                            if (mode != Mode.TERMINATOR) {
-                            }
+                            decodeKanjiSegment(bitSource, sb2, readBits3);
+                            mode = forBits;
                         } else {
                             throw FormatException.getFormatInstance();
                         }
-                        if (mode != Mode.TERMINATOR) {
+                        if (mode == Mode.TERMINATOR) {
                         }
                         break;
                 }

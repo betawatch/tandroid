@@ -158,7 +158,7 @@ public class MediaRouteChooserDialog extends AppCompatDialog {
         this.mOkButton.setOnClickListener(new View.OnClickListener() { // from class: androidx.mediarouter.app.MediaRouteChooserDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MediaRouteChooserDialog.this.lambda$onCreate$0(view);
+                MediaRouteChooserDialog.this.dismiss();
             }
         });
         ListView listView = (ListView) findViewById(R$id.mr_chooser_list);
@@ -168,11 +168,6 @@ public class MediaRouteChooserDialog extends AppCompatDialog {
         this.mListView.setEmptyView(findViewById(R.id.empty));
         updateLayout();
         registerBroadcastReceiver();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreate$0(View view) {
-        dismiss();
     }
 
     private void registerBroadcastReceiver() {

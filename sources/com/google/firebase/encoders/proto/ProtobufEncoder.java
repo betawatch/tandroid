@@ -45,15 +45,14 @@ public class ProtobufEncoder {
         private static final ObjectEncoder DEFAULT_FALLBACK_ENCODER = new ObjectEncoder() { // from class: com.google.firebase.encoders.proto.ProtobufEncoder$Builder$$ExternalSyntheticLambda0
             @Override // com.google.firebase.encoders.ObjectEncoder
             public final void encode(Object obj, Object obj2) {
-                ProtobufEncoder.Builder.lambda$static$0(obj, (ObjectEncoderContext) obj2);
+                ProtobufEncoder.Builder.$r8$lambda$HcoNKxmNqN-9duQx_r41_DwbVtE(obj, (ObjectEncoderContext) obj2);
             }
         };
         private final Map objectEncoders = new HashMap();
         private final Map valueEncoders = new HashMap();
         private ObjectEncoder fallbackEncoder = DEFAULT_FALLBACK_ENCODER;
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$static$0(Object obj, ObjectEncoderContext objectEncoderContext) {
+        public static /* synthetic */ void $r8$lambda$HcoNKxmNqN-9duQx_r41_DwbVtE(Object obj, ObjectEncoderContext objectEncoderContext) {
             throw new EncodingException("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
         }
 

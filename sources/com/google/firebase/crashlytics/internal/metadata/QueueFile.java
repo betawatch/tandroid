@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /* loaded from: classes.dex */
-class QueueFile implements Closeable {
+class QueueFile implements Closeable, AutoCloseable {
     private static final Logger LOGGER = Logger.getLogger(QueueFile.class.getName());
     private final byte[] buffer = new byte[16];
     private int elementCount;

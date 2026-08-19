@@ -37,15 +37,14 @@ abstract class ShareTargetXmlParser {
         intent.addCategory("android.intent.category.LAUNCHER");
         intent.setPackage(context.getPackageName());
         List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(intent, 128);
-        if (queryIntentActivities == null) {
-            return arrayList;
-        }
-        Iterator<ResolveInfo> it = queryIntentActivities.iterator();
-        while (it.hasNext()) {
-            ActivityInfo activityInfo = it.next().activityInfo;
-            Bundle bundle = activityInfo.metaData;
-            if (bundle != null && bundle.containsKey("android.app.shortcuts")) {
-                arrayList.addAll(parseShareTargets(context, activityInfo));
+        if (queryIntentActivities != null) {
+            Iterator<ResolveInfo> it = queryIntentActivities.iterator();
+            while (it.hasNext()) {
+                ActivityInfo activityInfo = it.next().activityInfo;
+                Bundle bundle = activityInfo.metaData;
+                if (bundle != null && bundle.containsKey("android.app.shortcuts")) {
+                    arrayList.addAll(parseShareTargets(context, activityInfo));
+                }
             }
         }
         return arrayList;
@@ -89,7 +88,7 @@ abstract class ShareTargetXmlParser {
             if (next != 1) {
                 if (next == 2) {
                     String name = xmlResourceParser.getName();
-                    name.hashCode();
+                    name.getClass();
                     if (name.equals("data")) {
                         arrayList.add(parseTargetData(xmlResourceParser));
                     } else if (name.equals("category")) {

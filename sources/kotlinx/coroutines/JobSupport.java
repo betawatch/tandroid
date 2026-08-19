@@ -339,7 +339,10 @@ public class JobSupport implements Job, ChildJob, ParentJob {
     @Override // kotlinx.coroutines.Job
     public final boolean isCancelled() {
         Object state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core();
-        return (state$kotlinx_coroutines_core instanceof CompletedExceptionally) || ((state$kotlinx_coroutines_core instanceof Finishing) && ((Finishing) state$kotlinx_coroutines_core).isCancelling());
+        if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {
+            return true;
+        }
+        return (state$kotlinx_coroutines_core instanceof Finishing) && ((Finishing) state$kotlinx_coroutines_core).isCancelling();
     }
 
     private final Object finalizeFinishingState(Finishing finishing, Object obj) {
@@ -620,7 +623,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 Empty empty = (Empty) state$kotlinx_coroutines_core;
                 if (empty.isActive()) {
                     if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, state$kotlinx_coroutines_core, makeNode)) {
-                        return makeNode;
+                        break;
                     }
                 } else {
                     promoteEmptyToNodeList(empty);
@@ -661,7 +664,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                             return disposableHandle;
                         }
                         if (addLastAtomic(state$kotlinx_coroutines_core, list, makeNode)) {
-                            return makeNode;
+                            break;
                         }
                     }
                 } else {
@@ -673,6 +676,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 }
             }
         }
+        return makeNode;
     }
 
     private final JobNode makeNode(InternalCompletionHandler internalCompletionHandler, boolean z) {

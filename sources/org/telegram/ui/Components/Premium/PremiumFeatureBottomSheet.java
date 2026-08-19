@@ -45,7 +45,6 @@ import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -195,7 +194,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         this.closeLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PremiumFeatureBottomSheet.this.lambda$new$0(view);
+                PremiumFeatureBottomSheet.this.dismiss();
             }
         });
         frameLayout.addView(this.content, LayoutHelper.createLinear(-1, -2, 1, 0, 16, 0, 0));
@@ -325,13 +324,13 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         premiumButtonView.buttonLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PremiumFeatureBottomSheet.this.lambda$new$1(baseFragment, z2, premiumFeatureData2, view);
+                PremiumFeatureBottomSheet.$r8$lambda$lb2RRNuaz8lzJU4EAh9ucainxhU(PremiumFeatureBottomSheet.this, baseFragment, z2, premiumFeatureData2, view);
             }
         });
         this.premiumButtonView.overlayTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PremiumFeatureBottomSheet.this.lambda$new$2(view);
+                PremiumFeatureBottomSheet.this.dismiss();
             }
         });
         FrameLayout frameLayout3 = new FrameLayout(getContext());
@@ -414,7 +413,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                     float y = motionEvent.getY();
                     PremiumFeatureBottomSheet premiumFeatureBottomSheet = PremiumFeatureBottomSheet.this;
                     if (y < (premiumFeatureBottomSheet.topCurrentOffset - ((BottomSheet) premiumFeatureBottomSheet).backgroundPaddingTop) + AndroidUtilities.dp(2.0f)) {
-                        PremiumFeatureBottomSheet.this.lambda$new$0();
+                        PremiumFeatureBottomSheet.this.dismiss();
                     }
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -423,11 +422,6 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         this.containerView = frameLayout4;
         int i4 = this.backgroundPaddingLeft;
         frameLayout4.setPadding(i4, this.backgroundPaddingTop - 1, i4, 0);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        lambda$new$0();
     }
 
     class 5 implements ViewPager.OnPageChangeListener {
@@ -566,7 +560,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet$5$$ExternalSyntheticLambda0
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        PremiumFeatureBottomSheet.5.this.lambda$checkPage$0();
+                                        PremiumFeatureBottomSheet.this.checkTopOffset();
                                     }
                                 });
                                 return;
@@ -603,15 +597,10 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             if (i2 != premiumFeatureBottomSheet.gradientAlpha) {
             }
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$checkPage$0() {
-            PremiumFeatureBottomSheet.this.checkTopOffset();
-        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(BaseFragment baseFragment, boolean z, PremiumPreviewFragment.PremiumFeatureData premiumFeatureData, View view) {
+    public static /* synthetic */ void $r8$lambda$lb2RRNuaz8lzJU4EAh9ucainxhU(PremiumFeatureBottomSheet premiumFeatureBottomSheet, BaseFragment baseFragment, boolean z, PremiumPreviewFragment.PremiumFeatureData premiumFeatureData, View view) {
+        premiumFeatureBottomSheet.getClass();
         if (baseFragment instanceof ChatActivity) {
             ChatActivity chatActivity = (ChatActivity) baseFragment;
             chatActivity.closeMenu();
@@ -632,7 +621,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             }
             i++;
         }
-        if (z || this.forceAbout) {
+        if (z || premiumFeatureBottomSheet.forceAbout) {
             PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(premiumFeatureData.type));
             if (baseFragment instanceof ThemePreviewActivity) {
                 BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
@@ -648,14 +637,9 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 }
             }
         } else {
-            PremiumPreviewFragment.buyPremium(baseFragment, this.selectedTier, PremiumPreviewFragment.featureTypeToServerString(premiumFeatureData.type));
+            PremiumPreviewFragment.buyPremium(baseFragment, premiumFeatureBottomSheet.selectedTier, PremiumPreviewFragment.featureTypeToServerString(premiumFeatureData.type));
         }
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        lambda$new$0();
+        premiumFeatureBottomSheet.dismiss();
     }
 
     private static Theme.ResourcesProvider getResourceProvider(BaseFragment baseFragment) {
@@ -701,7 +685,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     public void show() {
         super.show();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 16);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 16);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -740,7 +724,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    PremiumFeatureBottomSheet.this.lambda$new$0();
+                    PremiumFeatureBottomSheet.this.dismiss();
                 }
             }
         });
@@ -763,13 +747,12 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
+    public void dismiss() {
+        super.dismiss();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.billingProductDetailsUpdated);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.premiumPromoUpdated);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 16);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 16);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -1043,7 +1026,8 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         return super.onCustomOpenAnimation();
     }
 
-    void checkTopOffset() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void checkTopOffset() {
         View findViewByPosition;
         View findViewByPosition2;
         int i = -1;

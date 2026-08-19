@@ -106,7 +106,7 @@ public class HintDialogCell extends FrameLayout {
             this.checkBox.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: org.telegram.ui.Cells.HintDialogCell$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.Components.CheckBoxBase.ProgressDelegate
                 public final void setProgress(float f) {
-                    HintDialogCell.this.lambda$new$0(f);
+                    HintDialogCell.$r8$lambda$_dlaC65F9xxxqRjlzVRF2iYViwA(HintDialogCell.this, f);
                 }
             });
             addView(this.checkBox, LayoutHelper.createFrame(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
@@ -115,12 +115,11 @@ public class HintDialogCell extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(float f) {
-        float progress = 1.0f - (this.checkBox.getProgress() * 0.143f);
-        this.imageView.setScaleX(progress);
-        this.imageView.setScaleY(progress);
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$_dlaC65F9xxxqRjlzVRF2iYViwA(HintDialogCell hintDialogCell, float f) {
+        float progress = 1.0f - (hintDialogCell.checkBox.getProgress() * 0.143f);
+        hintDialogCell.imageView.setScaleX(progress);
+        hintDialogCell.imageView.setScaleY(progress);
+        hintDialogCell.invalidate();
     }
 
     public void showPremiumBlocked() {
@@ -131,17 +130,13 @@ public class HintDialogCell extends FrameLayout {
         NotificationCenter.getInstance(this.currentAccount).listen(this, NotificationCenter.userIsPremiumBlockedUpadted, new Utilities.Callback() { // from class: org.telegram.ui.Cells.HintDialogCell$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                HintDialogCell.this.lambda$showPremiumBlocked$1((Object[]) obj);
+                HintDialogCell.this.updatePremiumBlocked(true);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPremiumBlocked$1(Object[] objArr) {
-        updatePremiumBlocked(true);
-    }
-
-    private void updatePremiumBlocked(boolean z) {
+    public void updatePremiumBlocked(boolean z) {
         TL_account.RequirementToContact isUserContactBlocked = (!this.showPremiumBlocked || this.currentUser == null) ? null : MessagesController.getInstance(this.currentAccount).isUserContactBlocked(this.currentUser.id);
         if (this.premiumBlocked == DialogObject.isPremiumBlocked(isUserContactBlocked) && this.starsPriceBlocked == DialogObject.getMessagesStarsPrice(isUserContactBlocked)) {
             return;
@@ -240,7 +235,7 @@ public class HintDialogCell extends FrameLayout {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x019f  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0194  */
     @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.

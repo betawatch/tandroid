@@ -1,7 +1,6 @@
 package org.telegram.ui.iv;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AppGlobalConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -125,11 +124,13 @@ public class RichEditorLimits {
         if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
             ArrayList<TL_keyboard.PageButton> arrayList2 = ((TL_iv.pageBlockButtonRow) pageBlock).buttons;
             if (arrayList2 != null) {
-                Iterator<TL_keyboard.PageButton> it = arrayList2.iterator();
-                while (it.hasNext()) {
-                    TL_keyboard.PageButton next = it.next();
-                    if (next != null) {
-                        addText(next.text, i + 1, richEditorLimits);
+                int size = arrayList2.size();
+                while (i3 < size) {
+                    TL_keyboard.PageButton pageButton = arrayList2.get(i3);
+                    i3++;
+                    TL_keyboard.PageButton pageButton2 = pageButton;
+                    if (pageButton2 != null) {
+                        addText(pageButton2.text, i + 1, richEditorLimits);
                     }
                 }
                 return;
@@ -216,11 +217,15 @@ public class RichEditorLimits {
             return 0;
         }
         if (richText instanceof TL_iv.textConcat) {
-            Iterator<TL_iv.RichText> it = ((TL_iv.textConcat) richText).texts.iterator();
-            while (it.hasNext()) {
-                i = Math.max(i, richTextDepth(it.next()));
+            ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i < size) {
+                TL_iv.RichText richText2 = arrayList.get(i);
+                i++;
+                i2 = Math.max(i2, richTextDepth(richText2));
             }
-            return i;
+            return i2;
         }
         return richTextDepth(richText.text) + 1;
     }

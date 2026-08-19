@@ -17,17 +17,12 @@ public class TLParseException extends RuntimeException {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.TLParseException$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TLParseException.lambda$doThrowOrLog$0(TLParseException.this);
+                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.tlSchemeParseException, TLParseException.this);
                 }
             });
         }
         if (z) {
             throw tLParseException;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$doThrowOrLog$0(TLParseException tLParseException) {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.tlSchemeParseException, tLParseException);
     }
 }

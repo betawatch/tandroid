@@ -15,7 +15,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class LocationResult extends AbstractSafeParcelable implements ReflectedParcelable {
     private final List zzb;
-    static final List zza = Collections.emptyList();
+    static final List zza = Collections.EMPTY_LIST;
     public static final Parcelable.Creator<LocationResult> CREATOR = new zzy();
 
     LocationResult(List list) {

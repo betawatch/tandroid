@@ -84,6 +84,6 @@ public final class MessageTemplate implements Template {
         this.mIcon = null;
         this.mHeaderAction = null;
         this.mActionStrip = null;
-        this.mActionList = Collections.emptyList();
+        this.mActionList = Collections.EMPTY_LIST;
     }
 }

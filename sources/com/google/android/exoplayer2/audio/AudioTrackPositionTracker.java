@@ -287,7 +287,10 @@ final class AudioTrackPositionTracker {
     }
 
     private static boolean needsPassthroughWorkarounds(int i) {
-        return Util.SDK_INT < 23 && (i == 5 || i == 6);
+        if (Util.SDK_INT < 23) {
+            return i == 5 || i == 6;
+        }
+        return false;
     }
 
     private long getPlaybackHeadPositionUs() {

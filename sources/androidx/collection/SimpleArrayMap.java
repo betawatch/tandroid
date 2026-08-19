@@ -275,46 +275,46 @@ public class SimpleArrayMap {
         Object obj = objArr[i3 + 1];
         if (i2 <= 1) {
             clear();
-        } else {
-            int i4 = i2 - 1;
-            int[] iArr = this.hashes;
-            if (iArr.length > 8 && i2 < iArr.length / 3) {
-                int i5 = i2 > 8 ? i2 + (i2 >> 1) : 8;
-                int[] copyOf = Arrays.copyOf(iArr, i5);
-                Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, newSize)");
-                this.hashes = copyOf;
-                Object[] copyOf2 = Arrays.copyOf(this.array, i5 << 1);
-                Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(this, newSize)");
-                this.array = copyOf2;
-                if (i2 != this.size) {
-                    throw new ConcurrentModificationException();
-                }
-                if (i > 0) {
-                    ArraysKt.copyInto(iArr, this.hashes, 0, 0, i);
-                    ArraysKt.copyInto(objArr, this.array, 0, 0, i3);
-                }
-                if (i < i4) {
-                    int i6 = i + 1;
-                    ArraysKt.copyInto(iArr, this.hashes, i, i6, i2);
-                    ArraysKt.copyInto(objArr, this.array, i3, i6 << 1, i2 << 1);
-                }
-            } else {
-                if (i < i4) {
-                    int i7 = i + 1;
-                    ArraysKt.copyInto(iArr, iArr, i, i7, i2);
-                    Object[] objArr2 = this.array;
-                    ArraysKt.copyInto(objArr2, objArr2, i3, i7 << 1, i2 << 1);
-                }
-                Object[] objArr3 = this.array;
-                int i8 = i4 << 1;
-                objArr3[i8] = null;
-                objArr3[i8 + 1] = null;
-            }
+            return obj;
+        }
+        int i4 = i2 - 1;
+        int[] iArr = this.hashes;
+        if (iArr.length > 8 && i2 < iArr.length / 3) {
+            int i5 = i2 > 8 ? i2 + (i2 >> 1) : 8;
+            int[] copyOf = Arrays.copyOf(iArr, i5);
+            Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, newSize)");
+            this.hashes = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.array, i5 << 1);
+            Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(this, newSize)");
+            this.array = copyOf2;
             if (i2 != this.size) {
                 throw new ConcurrentModificationException();
             }
-            this.size = i4;
+            if (i > 0) {
+                ArraysKt.copyInto(iArr, this.hashes, 0, 0, i);
+                ArraysKt.copyInto(objArr, this.array, 0, 0, i3);
+            }
+            if (i < i4) {
+                int i6 = i + 1;
+                ArraysKt.copyInto(iArr, this.hashes, i, i6, i2);
+                ArraysKt.copyInto(objArr, this.array, i3, i6 << 1, i2 << 1);
+            }
+        } else {
+            if (i < i4) {
+                int i7 = i + 1;
+                ArraysKt.copyInto(iArr, iArr, i, i7, i2);
+                Object[] objArr2 = this.array;
+                ArraysKt.copyInto(objArr2, objArr2, i3, i7 << 1, i2 << 1);
+            }
+            Object[] objArr3 = this.array;
+            int i8 = i4 << 1;
+            objArr3[i8] = null;
+            objArr3[i8 + 1] = null;
         }
+        if (i2 != this.size) {
+            throw new ConcurrentModificationException();
+        }
+        this.size = i4;
         return obj;
     }
 

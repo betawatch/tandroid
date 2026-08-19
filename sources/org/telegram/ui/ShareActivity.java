@@ -71,7 +71,7 @@ public class ShareActivity extends Activity {
             this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ShareActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    ShareActivity.this.lambda$onCreate$0(dialogInterface);
+                    ShareActivity.$r8$lambda$4KdOU0rHbabAC8AjuUf4d8KX8Hg(ShareActivity.this, dialogInterface);
                 }
             });
             this.visibleDialog.show();
@@ -81,12 +81,11 @@ public class ShareActivity extends Activity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreate$0(DialogInterface dialogInterface) {
-        if (!isFinishing()) {
-            finish();
+    public static /* synthetic */ void $r8$lambda$4KdOU0rHbabAC8AjuUf4d8KX8Hg(ShareActivity shareActivity, DialogInterface dialogInterface) {
+        if (!shareActivity.isFinishing()) {
+            shareActivity.finish();
         }
-        this.visibleDialog = null;
+        shareActivity.visibleDialog = null;
     }
 
     @Override // android.app.Activity

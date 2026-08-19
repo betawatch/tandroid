@@ -21,14 +21,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StoriesIntro extends FrameLayout {
     private int current;
     private final ArrayList items;
@@ -36,20 +35,20 @@ public class StoriesIntro extends FrameLayout {
     private final Runnable startItemAnimationRunnable;
     private ValueAnimator valueAnimator;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        updateCurrentAnimatedItem();
-        startAnimation(true);
+    public static /* synthetic */ void $r8$lambda$zHNuZgY_6XLnOWRdiEUoml_BATE(StoriesIntro storiesIntro) {
+        storiesIntro.updateCurrentAnimatedItem();
+        storiesIntro.startAnimation(true);
     }
 
     public StoriesIntro(Context context, final View view) {
         super(context);
         this.prev = -1;
+        int i = 0;
         this.current = 0;
         this.startItemAnimationRunnable = new Runnable() { // from class: org.telegram.ui.Stories.StoriesIntro$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                StoriesIntro.this.lambda$new$0();
+                StoriesIntro.$r8$lambda$zHNuZgY_6XLnOWRdiEUoml_BATE(StoriesIntro.this);
             }
         };
         ImageView imageView = new ImageView(context);
@@ -81,18 +80,24 @@ public class StoriesIntro extends FrameLayout {
         arrayList.add(new StoriesIntroItemView(context, R.raw.stories_intro_go_back, LocaleController.getString(R.string.StoriesIntroGoBackHeader), LocaleController.getString(R.string.StoriesIntroGoBackSubHeader)));
         arrayList.add(new StoriesIntroItemView(context, R.raw.stories_intro_go_to_next, LocaleController.getString(R.string.StoriesIntroGoToNextAuthorHeader), LocaleController.getString(R.string.StoriesIntroGoToNextAuthorSubHeader)));
         int measuredWidth = view.getMeasuredWidth() - AndroidUtilities.dp(100.0f);
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            int requiredWidth = ((StoriesIntroItemView) it.next()).getRequiredWidth();
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            int requiredWidth = ((StoriesIntroItemView) obj).getRequiredWidth();
             if (requiredWidth > measuredWidth) {
                 measuredWidth = requiredWidth;
             }
         }
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(AndroidUtilities.dp(8.0f) + measuredWidth > view.getMeasuredWidth() ? view.getMeasuredWidth() - AndroidUtilities.dp(8.0f) : measuredWidth, AndroidUtilities.dp(64.0f));
         layoutParams.setMargins(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
-        Iterator it2 = this.items.iterator();
-        while (it2.hasNext()) {
-            linearLayout.addView((StoriesIntroItemView) it2.next(), layoutParams);
+        ArrayList arrayList2 = this.items;
+        int size2 = arrayList2.size();
+        while (i < size2) {
+            Object obj2 = arrayList2.get(i);
+            i++;
+            linearLayout.addView((StoriesIntroItemView) obj2, layoutParams);
         }
         final TextView textView3 = new TextView(context);
         textView3.setTextColor(-1);
@@ -142,20 +147,20 @@ public class StoriesIntro extends FrameLayout {
         this.valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoriesIntro$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StoriesIntro.this.lambda$startAnimation$1(valueAnimator2);
+                StoriesIntro.$r8$lambda$8BgGD-psr7PHLAxyIGPGm2CMe-o(StoriesIntro.this, valueAnimator2);
             }
         });
         this.valueAnimator.start();
         AndroidUtilities.runOnUIThread(this.startItemAnimationRunnable, ((StoriesIntroItemView) this.items.get(this.current)).getLottieAnimationDuration() + 100);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startAnimation$1(ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$8BgGD-psr7PHLAxyIGPGm2CMe-o(StoriesIntro storiesIntro, ValueAnimator valueAnimator) {
+        storiesIntro.getClass();
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        ((StoriesIntroItemView) this.items.get(this.current)).setProgress(floatValue);
-        int i = this.prev;
+        ((StoriesIntroItemView) storiesIntro.items.get(storiesIntro.current)).setProgress(floatValue);
+        int i = storiesIntro.prev;
         if (i != -1) {
-            ((StoriesIntroItemView) this.items.get(i)).setProgress(1.0f - floatValue);
+            ((StoriesIntroItemView) storiesIntro.items.get(i)).setProgress(1.0f - floatValue);
         }
     }
 

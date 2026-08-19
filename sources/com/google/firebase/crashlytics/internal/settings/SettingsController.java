@@ -108,27 +108,27 @@ public class SettingsController implements SettingsProvider {
                         long currentTimeMillis = this.currentTimeProvider.getCurrentTimeMillis();
                         if (!SettingsCacheBehavior.IGNORE_CACHE_EXPIRATION.equals(settingsCacheBehavior) && parseSettingsJson.isExpired(currentTimeMillis)) {
                             Logger.getLogger().v("Cached settings have expired.");
+                            return null;
                         }
                         try {
                             Logger.getLogger().v("Returning cached settings.");
-                            settings = parseSettingsJson;
+                            return parseSettingsJson;
                         } catch (Exception e) {
                             e = e;
                             settings = parseSettingsJson;
                             Logger.getLogger().e("Failed to get cached settings", e);
                             return settings;
                         }
-                    } else {
-                        Logger.getLogger().e("Failed to parse cached settings data.", null);
                     }
-                } else {
-                    Logger.getLogger().d("No cached settings data found.");
+                    Logger.getLogger().e("Failed to parse cached settings data.", null);
+                    return null;
                 }
+                Logger.getLogger().d("No cached settings data found.");
             }
+            return null;
         } catch (Exception e2) {
             e = e2;
         }
-        return settings;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

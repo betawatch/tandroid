@@ -14,7 +14,6 @@ import com.google.mlkit.common.sdkinternal.SharedPrefManager;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -134,10 +133,13 @@ public final class zznp {
                 ArrayList arrayList = new ArrayList(zzbjVar.zzc(obj));
                 Collections.sort(arrayList);
                 zzjl zzjlVar = new zzjl();
-                Iterator it = arrayList.iterator();
+                int size = arrayList.size();
+                int i = 0;
                 long j = 0;
-                while (it.hasNext()) {
-                    j += ((Long) it.next()).longValue();
+                while (i < size) {
+                    Object obj2 = arrayList.get(i);
+                    i++;
+                    j += ((Long) obj2).longValue();
                 }
                 zzjlVar.zza(Long.valueOf(j / arrayList.size()));
                 zzjlVar.zzc(Long.valueOf(zza(arrayList, 100.0d)));
@@ -146,11 +148,11 @@ public final class zznp {
                 zzjlVar.zzb(Long.valueOf(zza(arrayList, 25.0d)));
                 zzjlVar.zze(Long.valueOf(zza(arrayList, 0.0d)));
                 zzjn zzg = zzjlVar.zzg();
-                int size = arrayList.size();
+                int size2 = arrayList.size();
                 zzkg zzkgVar = new zzkg();
                 zzkgVar.zze(zzkd.zzb);
                 zzde zzdeVar = new zzde();
-                zzdeVar.zza(Integer.valueOf(size));
+                zzdeVar.zza(Integer.valueOf(size2));
                 zzdeVar.zzc((zzdh) obj);
                 zzdeVar.zzb(zzg);
                 zzkgVar.zzd(zzdeVar.zze());

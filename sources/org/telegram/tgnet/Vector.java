@@ -2,7 +2,6 @@ package org.telegram.tgnet;
 
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
@@ -82,11 +81,15 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public ArrayList<Integer> toIntArray() {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        Iterator<T> it = this.objects.iterator();
-        while (it.hasNext()) {
-            T next = it.next();
-            if (next instanceof Int) {
-                arrayList.add(Integer.valueOf(((Int) next).value));
+        ArrayList<T> arrayList2 = this.objects;
+        int size = arrayList2.size();
+        int i = 0;
+        while (i < size) {
+            T t = arrayList2.get(i);
+            i++;
+            T t2 = t;
+            if (t2 instanceof Int) {
+                arrayList.add(Integer.valueOf(((Int) t2).value));
             }
         }
         return arrayList;

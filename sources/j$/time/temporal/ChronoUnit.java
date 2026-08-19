@@ -3,7 +3,7 @@ package j$.time.temporal;
 import j$.time.Duration;
 
 /* loaded from: classes2.dex */
-public enum ChronoUnit implements s {
+public enum ChronoUnit implements q {
     NANOS("Nanos"),
     MICROS("Micros"),
     MILLIS("Millis"),
@@ -21,25 +21,25 @@ public enum ChronoUnit implements s {
     ERAS("Eras"),
     FOREVER("Forever");
 
-    private final String a;
+    public final String a;
 
     static {
         Duration duration = Duration.c;
-        Duration.n(Long.MAX_VALUE, 999999999L);
+        Duration.l(j$.com.android.tools.r8.a.O(Long.MAX_VALUE, j$.com.android.tools.r8.a.S(999999999L, 1000000000L)), (int) j$.com.android.tools.r8.a.R(999999999L, 1000000000L));
     }
 
     ChronoUnit(String str) {
         this.a = str;
     }
 
-    @Override // j$.time.temporal.s
-    public final Temporal k(Temporal temporal, long j) {
-        return temporal.e(j, this);
+    @Override // j$.time.temporal.q
+    public final Temporal l(Temporal temporal, long j) {
+        return temporal.f(j, this);
     }
 
-    @Override // j$.time.temporal.s
+    @Override // j$.time.temporal.q
     public long between(Temporal temporal, Temporal temporal2) {
-        return temporal.f(temporal2, this);
+        return temporal.g(temporal2, this);
     }
 
     @Override // java.lang.Enum

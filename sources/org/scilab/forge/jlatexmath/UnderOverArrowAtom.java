@@ -42,13 +42,13 @@ public class UnderOverArrowAtom extends Atom {
             float depth = verticalBox.getDepth() + verticalBox.getHeight();
             verticalBox.setDepth(createBox.getDepth());
             verticalBox.setHeight(depth - createBox.getDepth());
-        } else {
-            verticalBox.add(new HorizontalBox(createBox, create.getWidth(), 2));
-            verticalBox.add(new StrutBox(0.0f, f, 0.0f, 0.0f));
-            verticalBox.add(create);
-            verticalBox.setDepth((verticalBox.getDepth() + verticalBox.getHeight()) - createBox.getHeight());
-            verticalBox.setHeight(createBox.getHeight());
+            return verticalBox;
         }
+        verticalBox.add(new HorizontalBox(createBox, create.getWidth(), 2));
+        verticalBox.add(new StrutBox(0.0f, f, 0.0f, 0.0f));
+        verticalBox.add(create);
+        verticalBox.setDepth((verticalBox.getDepth() + verticalBox.getHeight()) - createBox.getHeight());
+        verticalBox.setHeight(createBox.getHeight());
         return verticalBox;
     }
 }

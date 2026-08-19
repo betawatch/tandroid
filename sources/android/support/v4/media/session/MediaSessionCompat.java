@@ -193,9 +193,13 @@ public class MediaSessionCompat {
 
     public void setActive(boolean z) {
         this.mImpl.setActive(z);
-        Iterator it = this.mActiveListeners.iterator();
-        while (it.hasNext()) {
-            ((OnActiveChangeListener) it.next()).onActiveChanged();
+        ArrayList arrayList = this.mActiveListeners;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((OnActiveChangeListener) obj).onActiveChanged();
         }
     }
 

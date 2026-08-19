@@ -1,206 +1,148 @@
 package j$.util;
 
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.stream.Stream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
+import j$.util.List;
+import java.util.Comparator;
+import java.util.ListIterator;
+import java.util.RandomAccess;
+import java.util.function.UnaryOperator;
 
 /* loaded from: classes2.dex */
-class g implements java.util.Collection, Serializable, Collection {
-    private static final long serialVersionUID = 3053995032091335093L;
-    final java.util.Collection a;
-    final Object b;
+public class g extends f implements java.util.List, List {
+    private static final long serialVersionUID = -7754090372962971524L;
+    public final java.util.List c;
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
+    public g(java.util.List list) {
+        super(list);
+        this.c = list;
     }
 
-    g(java.util.Collection collection) {
-        this.a = (java.util.Collection) Objects.requireNonNull(collection);
-        this.b = this;
+    public g(java.util.List list, Object obj) {
+        super(list, obj);
+        this.c = list;
     }
 
-    g(java.util.Collection collection, Object obj) {
-        this.a = (java.util.Collection) Objects.requireNonNull(collection);
-        this.b = Objects.requireNonNull(obj);
-    }
-
-    @Override // java.util.Collection
-    public final int size() {
-        int size;
-        synchronized (this.b) {
-            size = this.a.size();
+    @Override // java.util.Collection, java.util.List
+    public final boolean equals(Object obj) {
+        boolean equals;
+        if (this == obj) {
+            return true;
         }
-        return size;
-    }
-
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        boolean isEmpty;
         synchronized (this.b) {
-            isEmpty = this.a.isEmpty();
+            equals = this.c.equals(obj);
         }
-        return isEmpty;
+        return equals;
     }
 
-    @Override // java.util.Collection
-    public final boolean contains(Object obj) {
-        boolean contains;
+    @Override // java.util.Collection, java.util.List
+    public final int hashCode() {
+        int hashCode;
         synchronized (this.b) {
-            contains = this.a.contains(obj);
+            hashCode = this.c.hashCode();
         }
-        return contains;
+        return hashCode;
     }
 
-    @Override // java.util.Collection
-    public final Object[] toArray() {
-        Object[] array;
+    @Override // java.util.List
+    public final Object get(int i) {
+        Object obj;
         synchronized (this.b) {
-            array = this.a.toArray();
-        }
-        return array;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        Object[] array;
-        synchronized (this.b) {
-            array = this.a.toArray(objArr);
-        }
-        return array;
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.iterator();
-    }
-
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        boolean add;
-        synchronized (this.b) {
-            add = this.a.add(obj);
-        }
-        return add;
-    }
-
-    @Override // java.util.Collection
-    public final boolean remove(Object obj) {
-        boolean remove;
-        synchronized (this.b) {
-            remove = this.a.remove(obj);
-        }
-        return remove;
-    }
-
-    @Override // java.util.Collection
-    public final boolean containsAll(java.util.Collection collection) {
-        boolean containsAll;
-        synchronized (this.b) {
-            containsAll = this.a.containsAll(collection);
-        }
-        return containsAll;
-    }
-
-    @Override // java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        boolean addAll;
-        synchronized (this.b) {
-            addAll = this.a.addAll(collection);
-        }
-        return addAll;
-    }
-
-    @Override // java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        boolean removeAll;
-        synchronized (this.b) {
-            removeAll = this.a.removeAll(collection);
-        }
-        return removeAll;
-    }
-
-    @Override // java.util.Collection
-    public final boolean retainAll(java.util.Collection collection) {
-        boolean retainAll;
-        synchronized (this.b) {
-            retainAll = this.a.retainAll(collection);
-        }
-        return retainAll;
-    }
-
-    @Override // java.util.Collection
-    public final void clear() {
-        synchronized (this.b) {
-            this.a.clear();
-        }
-    }
-
-    public final String toString() {
-        String obj;
-        synchronized (this.b) {
-            obj = this.a.toString();
+            obj = this.c.get(i);
         }
         return obj;
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
-    public final void forEach(Consumer consumer) {
+    @Override // java.util.List
+    public final Object set(int i, Object obj) {
+        Object obj2;
         synchronized (this.b) {
-            Collection.-EL.a(this.a, consumer);
+            obj2 = this.c.set(i, obj);
+        }
+        return obj2;
+    }
+
+    @Override // java.util.List
+    public final void add(int i, Object obj) {
+        synchronized (this.b) {
+            this.c.add(i, obj);
         }
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final boolean removeIf(Predicate predicate) {
-        boolean removeIf;
+    @Override // java.util.List
+    public final Object remove(int i) {
+        Object remove;
         synchronized (this.b) {
-            removeIf = Collection.-EL.removeIf(this.a, predicate);
+            remove = this.c.remove(i);
         }
-        return removeIf;
+        return remove;
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final Spliterator spliterator() {
-        return Collection.-EL.c(this.a);
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(Collection.-EL.c(this.a));
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final Stream stream() {
-        return Collection.-EL.stream(this.a);
-    }
-
-    @Override // java.util.Collection
-    public final java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(Collection.-EL.stream(this.a));
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final Stream parallelStream() {
-        return Collection.-EL.b(this.a);
-    }
-
-    @Override // java.util.Collection
-    public final java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(Collection.-EL.b(this.a));
-    }
-
-    private void writeObject(ObjectOutputStream objectOutputStream) {
+    @Override // java.util.List
+    public final int indexOf(Object obj) {
+        int indexOf;
         synchronized (this.b) {
-            objectOutputStream.defaultWriteObject();
+            indexOf = this.c.indexOf(obj);
         }
+        return indexOf;
+    }
+
+    @Override // java.util.List
+    public final int lastIndexOf(Object obj) {
+        int lastIndexOf;
+        synchronized (this.b) {
+            lastIndexOf = this.c.lastIndexOf(obj);
+        }
+        return lastIndexOf;
+    }
+
+    @Override // java.util.List
+    public final boolean addAll(int i, java.util.Collection collection) {
+        boolean addAll;
+        synchronized (this.b) {
+            addAll = this.c.addAll(i, collection);
+        }
+        return addAll;
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator() {
+        return this.c.listIterator();
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        return this.c.listIterator(i);
+    }
+
+    @Override // java.util.List
+    public java.util.List subList(int i, int i2) {
+        g gVar;
+        synchronized (this.b) {
+            gVar = new g(this.c.subList(i, i2), this.b);
+        }
+        return gVar;
+    }
+
+    @Override // java.util.List, j$.util.List
+    public final void replaceAll(UnaryOperator unaryOperator) {
+        synchronized (this.b) {
+            java.util.List list = this.c;
+            if (list instanceof List) {
+                ((List) list).replaceAll(unaryOperator);
+            } else {
+                List.-CC.$default$replaceAll(list, unaryOperator);
+            }
+        }
+    }
+
+    @Override // java.util.List, j$.util.List
+    public final void sort(Comparator comparator) {
+        synchronized (this.b) {
+            List.-EL.sort(this.c, comparator);
+        }
+    }
+
+    private Object readResolve() {
+        java.util.List list = this.c;
+        return list instanceof RandomAccess ? new i(list) : this;
     }
 }

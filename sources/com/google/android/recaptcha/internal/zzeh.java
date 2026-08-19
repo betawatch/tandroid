@@ -50,10 +50,10 @@ public final class zzeh {
         return (zzcr) this.zzd.getValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0083 A[Catch: all -> 0x00bd, TryCatch #1 {all -> 0x00bd, blocks: (B:26:0x0078, B:29:0x008f, B:34:0x0083), top: B:25:0x0078 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0081 A[Catch: all -> 0x00b0, TryCatch #0 {all -> 0x00b0, blocks: (B:26:0x0076, B:29:0x008d, B:34:0x0081), top: B:25:0x0076 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x002b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -63,10 +63,10 @@ public final class zzeh {
         Object obj;
         Object coroutine_suspended;
         int i;
-        Mutex mutex;
         String str2;
-        long j2;
         zzdq zzdqVar2;
+        long j2;
+        Mutex mutex;
         Mutex mutex2;
         try {
             if (continuation instanceof zzea) {
@@ -81,17 +81,17 @@ public final class zzeh {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         Mutex mutex3 = this.zzb;
-                        zzeaVar2.zza = str;
+                        str2 = str;
+                        zzeaVar2.zza = str2;
                         zzeaVar2.zzb = null;
-                        zzeaVar2.zzh = zzdqVar;
+                        zzdqVar2 = zzdqVar;
+                        zzeaVar2.zzh = zzdqVar2;
                         zzeaVar2.zzc = mutex3;
-                        zzeaVar2.zzd = j;
+                        j2 = j;
+                        zzeaVar2.zzd = j2;
                         zzeaVar2.zzg = 1;
                         if (mutex3.lock(null, zzeaVar2) != coroutine_suspended) {
                             mutex = mutex3;
-                            str2 = str;
-                            j2 = j;
-                            zzdqVar2 = zzdqVar;
                         }
                         return coroutine_suspended;
                     }
@@ -113,10 +113,11 @@ public final class zzeh {
                     }
                     long j3 = zzeaVar2.zzd;
                     Mutex mutex4 = (Mutex) zzeaVar2.zzc;
-                    zzdqVar2 = zzeaVar2.zzh;
+                    zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
                     ResultKt.throwOnFailure(obj);
                     mutex = mutex4;
+                    zzdqVar2 = zzdqVar3;
                     str2 = str3;
                     j2 = j3;
                     int i3 = !Intrinsics.areEqual(zzdqVar2, zzdq.zza) ? 3 : Intrinsics.areEqual(zzdqVar2, zzdq.zzb) ? 4 : 2;

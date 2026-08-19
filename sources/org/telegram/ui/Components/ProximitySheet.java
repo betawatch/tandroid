@@ -73,8 +73,7 @@ public class ProximitySheet extends FrameLayout {
         boolean run(boolean z, int i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$0(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean $r8$lambda$PRHImrHr_Zeyhb6grvjVFDIYOKc(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -165,9 +164,7 @@ public class ProximitySheet extends FrameLayout {
         textView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$new$0;
-                lambda$new$0 = ProximitySheet.lambda$new$0(view, motionEvent);
-                return lambda$new$0;
+                return ProximitySheet.$r8$lambda$PRHImrHr_Zeyhb6grvjVFDIYOKc(view, motionEvent);
             }
         });
         LinearLayout linearLayout2 = new LinearLayout(context);
@@ -187,9 +184,7 @@ public class ProximitySheet extends FrameLayout {
         this.kmPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i) {
-                String lambda$new$1;
-                lambda$new$1 = ProximitySheet.this.lambda$new$1(i);
-                return lambda$new$1;
+                return ProximitySheet.$r8$lambda$vaBtl43X7-tr72GGTyl6V9hROOs(ProximitySheet.this, i);
             }
         });
         this.kmPicker.setMinValue(0);
@@ -199,7 +194,7 @@ public class ProximitySheet extends FrameLayout {
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
             public final void onValueChange(NumberPicker numberPicker3, int i, int i2) {
-                ProximitySheet.this.lambda$new$2(numberPicker3, i, i2);
+                ProximitySheet.$r8$lambda$wPd-vT0rD-pRyWg9bXdSZ3Fc7t0(ProximitySheet.this, numberPicker3, i, i2);
             }
         };
         this.kmPicker.setOnValueChangedListener(onValueChangeListener);
@@ -211,9 +206,7 @@ public class ProximitySheet extends FrameLayout {
         this.mPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i) {
-                String lambda$new$3;
-                lambda$new$3 = ProximitySheet.this.lambda$new$3(i);
-                return lambda$new$3;
+                return ProximitySheet.$r8$lambda$LqzUzoXN6c_ZgxM8jXFtWxgM2Gg(ProximitySheet.this, i);
             }
         });
         this.mPicker.setOnValueChangedListener(onValueChangeListener);
@@ -231,7 +224,7 @@ public class ProximitySheet extends FrameLayout {
         this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProximitySheet.this.lambda$new$4(onradiuspickerchange2, view);
+                ProximitySheet.$r8$lambda$aCDHWzHyaYWDzxi4c_wlDoelEjU(ProximitySheet.this, onradiuspickerchange2, view);
             }
         });
         this.infoTextView.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
@@ -245,23 +238,21 @@ public class ProximitySheet extends FrameLayout {
         this.containerView.addView(this.customView, LayoutHelper.createFrame(-1, -2, 51));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$new$1(int i) {
-        return this.useImperialSystem ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i));
+    public static /* synthetic */ String $r8$lambda$vaBtl43X7-tr72GGTyl6V9hROOs(ProximitySheet proximitySheet, int i) {
+        return proximitySheet.useImperialSystem ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(NumberPicker numberPicker, int i, int i2) {
+    public static /* synthetic */ void $r8$lambda$wPd-vT0rD-pRyWg9bXdSZ3Fc7t0(ProximitySheet proximitySheet, NumberPicker numberPicker, int i, int i2) {
+        proximitySheet.getClass();
         try {
-            performHapticFeedback(3, 2);
+            proximitySheet.performHapticFeedback(3, 2);
         } catch (Exception unused) {
         }
-        updateText(true, true);
+        proximitySheet.updateText(true, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$new$3(int i) {
-        if (this.useImperialSystem) {
+    public static /* synthetic */ String $r8$lambda$LqzUzoXN6c_ZgxM8jXFtWxgM2Gg(ProximitySheet proximitySheet, int i) {
+        if (proximitySheet.useImperialSystem) {
             if (i == 1) {
                 return LocaleController.formatString("FootsShort", R.string.FootsShort, 250);
             }
@@ -279,10 +270,9 @@ public class ProximitySheet extends FrameLayout {
         return LocaleController.formatString("MetersShort", R.string.MetersShort, Integer.valueOf(i * 100));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(onRadiusPickerChange onradiuspickerchange, View view) {
-        if (this.buttonTextView.getTag() == null && onradiuspickerchange.run(true, (int) Math.max(1.0f, getValue()))) {
-            dismiss();
+    public static /* synthetic */ void $r8$lambda$aCDHWzHyaYWDzxi4c_wlDoelEjU(ProximitySheet proximitySheet, onRadiusPickerChange onradiuspickerchange, View view) {
+        if (proximitySheet.buttonTextView.getTag() == null && onradiuspickerchange.run(true, (int) Math.max(1.0f, proximitySheet.getValue()))) {
+            proximitySheet.dismiss();
         }
     }
 
@@ -375,10 +365,10 @@ public class ProximitySheet extends FrameLayout {
                 if (ProximitySheet.this.currentAnimation != null && ProximitySheet.this.currentAnimation.equals(animator)) {
                     ProximitySheet.this.currentAnimation = null;
                 }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
             }
         });
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentAnimation.start();
     }
 
@@ -592,7 +582,7 @@ public class ProximitySheet extends FrameLayout {
                         ProximitySheet.this.setLayerType(0, null);
                     }
                 }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -604,7 +594,7 @@ public class ProximitySheet extends FrameLayout {
                 ProximitySheet.this.currentSheetAnimationType = 0;
             }
         });
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
     }
 
@@ -635,7 +625,7 @@ public class ProximitySheet extends FrameLayout {
         }
         this.currentSheetAnimation.setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.currentSheetAnimation.addListener(new 6());
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
     }
 
@@ -651,15 +641,15 @@ public class ProximitySheet extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ProximitySheet$6$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProximitySheet.6.this.lambda$onAnimationEnd$0();
+                        ProximitySheet.6.$r8$lambda$j8w1UjXHqA9fq-vMaTIeip71P_s(ProximitySheet.6.this);
                     }
                 });
             }
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onAnimationEnd$0() {
+        public static /* synthetic */ void $r8$lambda$j8w1UjXHqA9fq-vMaTIeip71P_s(6 r0) {
+            r0.getClass();
             try {
                 ProximitySheet.this.dismissInternal();
             } catch (Exception e) {

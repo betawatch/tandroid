@@ -5,13 +5,14 @@ import android.os.Messenger;
 /* loaded from: classes.dex */
 abstract class MediaRouteProviderProtocol {
     public static boolean isValidRemoteMessenger(Messenger messenger) {
-        if (messenger == null) {
-            return false;
+        if (messenger != null) {
+            try {
+                if (messenger.getBinder() != null) {
+                    return true;
+                }
+            } catch (NullPointerException unused) {
+            }
         }
-        try {
-            return messenger.getBinder() != null;
-        } catch (NullPointerException unused) {
-            return false;
-        }
+        return false;
     }
 }

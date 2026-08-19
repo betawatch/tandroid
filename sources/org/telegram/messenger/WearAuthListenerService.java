@@ -28,14 +28,13 @@ public class WearAuthListenerService extends WearableListenerService {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.WearAuthListenerService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WearAuthListenerService.lambda$onMessageReceived$0(path, sourceNodeId, data);
+                WearAuthListenerService.$r8$lambda$ZoaD8uzVx54e8-TEk1oIZnY6L8g(path, sourceNodeId, data);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onMessageReceived$0(String str, String str2, byte[] bArr) {
-        str.hashCode();
+    public static /* synthetic */ void $r8$lambda$ZoaD8uzVx54e8-TEk1oIZnY6L8g(String str, String str2, byte[] bArr) {
+        str.getClass();
         if (str.equals(PATH_OFFER)) {
             FileLog.d("wear-auth: offer from " + str2 + " (" + bArr.length + " bytes)");
             WearAuthSheet.onOfferReceived(bArr, str2);

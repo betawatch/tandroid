@@ -25,7 +25,7 @@ public final class FieldDescriptor {
     }
 
     public static FieldDescriptor of(String str) {
-        return new FieldDescriptor(str, Collections.emptyMap());
+        return new FieldDescriptor(str, Collections.EMPTY_MAP);
     }
 
     public static Builder builder(String str) {
@@ -71,7 +71,7 @@ public final class FieldDescriptor {
             Map unmodifiableMap;
             String str = this.name;
             if (this.properties == null) {
-                unmodifiableMap = Collections.emptyMap();
+                unmodifiableMap = Collections.EMPTY_MAP;
             } else {
                 unmodifiableMap = DesugarCollections.unmodifiableMap(new HashMap(this.properties));
             }

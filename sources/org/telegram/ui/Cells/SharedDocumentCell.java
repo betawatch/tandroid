@@ -399,24 +399,16 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
     }
 
     public void setDocument(MessageObject messageObject, boolean z) {
-        boolean z2;
-        boolean z3;
         String str;
         String str2;
         String str3;
         MessageObject messageObject2 = this.message;
-        if (messageObject2 == null || messageObject == null || messageObject2.getId() == messageObject.getId()) {
-            z2 = z;
-            z3 = false;
-        } else {
-            z2 = z;
-            z3 = true;
-        }
-        this.needDivider = z2;
+        boolean z2 = (messageObject2 == null || messageObject == null || messageObject2.getId() == messageObject.getId()) ? false : true;
+        this.needDivider = z;
         this.message = messageObject;
         this.loaded = false;
         this.loading = false;
-        if (!z3) {
+        if (!z2) {
             this.downloadedSize = 0L;
         }
         TLRPC.Document document = messageObject.getDocument();
@@ -501,7 +493,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         }
         setWillNotDraw(!this.needDivider);
         this.progressView.setProgress(0.0f, false);
-        updateFileExistIcon(z3);
+        updateFileExistIcon(z2);
     }
 
     private void updateDateView() {

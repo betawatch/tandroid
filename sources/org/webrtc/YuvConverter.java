@@ -8,7 +8,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.ThreadUtils;
 import org.webrtc.VideoFrame;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class YuvConverter {
     private static final String FRAGMENT_SHADER = "uniform vec2 xUnit;\nuniform vec4 coeffs;\n\nvoid main() {\n  gl_FragColor.r = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 1.5 * xUnit).rgb);\n  gl_FragColor.g = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 0.5 * xUnit).rgb);\n  gl_FragColor.b = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 0.5 * xUnit).rgb);\n  gl_FragColor.a = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 1.5 * xUnit).rgb);\n}\n";
     private final GlGenericDrawer drawer;
@@ -76,112 +76,126 @@ public class YuvConverter {
     }
 
     public VideoFrame.I420Buffer convert(VideoFrame.TextureBuffer textureBuffer) {
-        ByteBuffer byteBuffer;
         int i;
+        int i2;
+        final ByteBuffer byteBuffer;
+        int i3;
         this.threadChecker.checkIsOnValidThread();
         VideoFrame.TextureBuffer textureBuffer2 = (VideoFrame.TextureBuffer) this.videoFrameDrawer.prepareBufferForViewportSize(textureBuffer, textureBuffer.getWidth(), textureBuffer.getHeight());
         int width = textureBuffer2.getWidth();
         int height = textureBuffer2.getHeight();
-        int i2 = ((width + 7) / 8) * 8;
-        int i3 = (height + 1) / 2;
-        int i4 = height + i3;
-        ByteBuffer nativeAllocateByteBuffer = JniCommon.nativeAllocateByteBuffer(i2 * i4);
-        int i5 = i2 / 4;
+        int i4 = ((width + 7) / 8) * 8;
+        int i5 = (height + 1) / 2;
+        int i6 = height + i5;
+        ByteBuffer nativeAllocateByteBuffer = JniCommon.nativeAllocateByteBuffer(i4 * i6);
+        int i7 = i4 / 4;
         Matrix matrix = new Matrix();
         matrix.preTranslate(0.5f, 0.5f);
         matrix.preScale(1.0f, -1.0f);
         matrix.preTranslate(-0.5f, -0.5f);
         try {
-            this.i420TextureFrameBuffer.setSize(i5, i4);
+            this.i420TextureFrameBuffer.setSize(i7, i6);
             GLES20.glBindFramebuffer(36160, this.i420TextureFrameBuffer.getFrameBufferId());
             GlUtil.checkNoGLES2Error("glBindFramebuffer");
             this.shaderCallbacks.setPlaneY();
-            byteBuffer = nativeAllocateByteBuffer;
-        } catch (Exception e) {
-            e = e;
-            byteBuffer = nativeAllocateByteBuffer;
-        }
-        try {
-            VideoFrameDrawer.drawTexture(this.drawer, textureBuffer2, matrix, width, height, width, height, 0, 0, i5, height, false);
-            this.shaderCallbacks.setPlaneU();
-            VideoFrameDrawer.drawTexture(this.drawer, textureBuffer2, matrix, width, height, width, height, 0, height, i5 / 2, i3, false);
-            this.shaderCallbacks.setPlaneV();
-            VideoFrameDrawer.drawTexture(this.drawer, textureBuffer2, matrix, width, height, width, height, i5 / 2, height, i5 / 2, i3, false);
-            GLES20.glReadPixels(0, 0, this.i420TextureFrameBuffer.getWidth(), this.i420TextureFrameBuffer.getHeight(), 6408, 5121, byteBuffer);
-            GlUtil.checkNoGLES2Error("YuvConverter.convert");
-            i = 0;
+            i = i4;
+            i3 = 0;
             try {
-                GLES20.glBindFramebuffer(36160, 0);
+                VideoFrameDrawer.drawTexture(this.drawer, textureBuffer2, matrix, width, height, width, height, 0, 0, i7, height, false);
+                this.shaderCallbacks.setPlaneU();
+                try {
+                    VideoFrameDrawer.drawTexture(this.drawer, textureBuffer2, matrix, width, height, width, height, 0, height, i7 / 2, i5, false);
+                    this.shaderCallbacks.setPlaneV();
+                    VideoFrameDrawer.drawTexture(this.drawer, textureBuffer2, matrix, width, height, width, height, i7 / 2, height, i7 / 2, i5, false);
+                    i2 = i5;
+                } catch (Exception e) {
+                    e = e;
+                    i2 = i5;
+                }
             } catch (Exception e2) {
                 e = e2;
-                FileLog.e(e);
-                int i6 = i2 * height;
-                int i7 = i2 / 2;
-                int i8 = i6 + i7;
-                final ByteBuffer byteBuffer2 = byteBuffer;
-                byteBuffer2.position(i);
-                byteBuffer2.limit(i6);
-                ByteBuffer slice = byteBuffer2.slice();
-                byteBuffer2.position(i6);
-                int i9 = ((i3 - 1) * i2) + i7;
-                byteBuffer2.limit(i6 + i9);
-                ByteBuffer slice2 = byteBuffer2.slice();
-                byteBuffer2.position(i8);
-                byteBuffer2.limit(i8 + i9);
-                ByteBuffer slice3 = byteBuffer2.slice();
-                textureBuffer2.release();
-                return JavaI420Buffer.wrap(width, height, slice, i2, slice2, i2, slice3, i2, new Runnable() { // from class: org.webrtc.YuvConverter$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        JniCommon.nativeFreeByteBuffer(byteBuffer2);
-                    }
-                });
+                i2 = i5;
             }
         } catch (Exception e3) {
             e = e3;
-            i = 0;
+            i = i4;
+            i2 = i5;
+            byteBuffer = nativeAllocateByteBuffer;
+            i3 = 0;
+        }
+        try {
+            byteBuffer = nativeAllocateByteBuffer;
+        } catch (Exception e4) {
+            e = e4;
+            byteBuffer = nativeAllocateByteBuffer;
             FileLog.e(e);
-            int i62 = i2 * height;
-            int i72 = i2 / 2;
-            int i82 = i62 + i72;
-            final ByteBuffer byteBuffer22 = byteBuffer;
-            byteBuffer22.position(i);
-            byteBuffer22.limit(i62);
-            ByteBuffer slice4 = byteBuffer22.slice();
-            byteBuffer22.position(i62);
-            int i92 = ((i3 - 1) * i2) + i72;
-            byteBuffer22.limit(i62 + i92);
-            ByteBuffer slice22 = byteBuffer22.slice();
-            byteBuffer22.position(i82);
-            byteBuffer22.limit(i82 + i92);
-            ByteBuffer slice32 = byteBuffer22.slice();
+            int i8 = i * height;
+            int i9 = i / 2;
+            int i10 = i8 + i9;
+            byteBuffer.position(i3);
+            byteBuffer.limit(i8);
+            ByteBuffer slice = byteBuffer.slice();
+            byteBuffer.position(i8);
+            int i11 = (i * (i2 - 1)) + i9;
+            byteBuffer.limit(i8 + i11);
+            ByteBuffer slice2 = byteBuffer.slice();
+            byteBuffer.position(i10);
+            byteBuffer.limit(i10 + i11);
+            ByteBuffer slice3 = byteBuffer.slice();
             textureBuffer2.release();
-            return JavaI420Buffer.wrap(width, height, slice4, i2, slice22, i2, slice32, i2, new Runnable() { // from class: org.webrtc.YuvConverter$$ExternalSyntheticLambda0
+            return JavaI420Buffer.wrap(width, height, slice, i, slice2, i, slice3, i, new Runnable() { // from class: org.webrtc.YuvConverter$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    JniCommon.nativeFreeByteBuffer(byteBuffer22);
+                    JniCommon.nativeFreeByteBuffer(byteBuffer);
                 }
             });
         }
-        int i622 = i2 * height;
-        int i722 = i2 / 2;
-        int i822 = i622 + i722;
-        final ByteBuffer byteBuffer222 = byteBuffer;
-        byteBuffer222.position(i);
-        byteBuffer222.limit(i622);
-        ByteBuffer slice42 = byteBuffer222.slice();
-        byteBuffer222.position(i622);
-        int i922 = ((i3 - 1) * i2) + i722;
-        byteBuffer222.limit(i622 + i922);
-        ByteBuffer slice222 = byteBuffer222.slice();
-        byteBuffer222.position(i822);
-        byteBuffer222.limit(i822 + i922);
-        ByteBuffer slice322 = byteBuffer222.slice();
+        try {
+            GLES20.glReadPixels(0, 0, this.i420TextureFrameBuffer.getWidth(), this.i420TextureFrameBuffer.getHeight(), 6408, 5121, byteBuffer);
+            GlUtil.checkNoGLES2Error("YuvConverter.convert");
+            GLES20.glBindFramebuffer(36160, 0);
+        } catch (Exception e5) {
+            e = e5;
+            FileLog.e(e);
+            int i82 = i * height;
+            int i92 = i / 2;
+            int i102 = i82 + i92;
+            byteBuffer.position(i3);
+            byteBuffer.limit(i82);
+            ByteBuffer slice4 = byteBuffer.slice();
+            byteBuffer.position(i82);
+            int i112 = (i * (i2 - 1)) + i92;
+            byteBuffer.limit(i82 + i112);
+            ByteBuffer slice22 = byteBuffer.slice();
+            byteBuffer.position(i102);
+            byteBuffer.limit(i102 + i112);
+            ByteBuffer slice32 = byteBuffer.slice();
+            textureBuffer2.release();
+            return JavaI420Buffer.wrap(width, height, slice4, i, slice22, i, slice32, i, new Runnable() { // from class: org.webrtc.YuvConverter$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    JniCommon.nativeFreeByteBuffer(byteBuffer);
+                }
+            });
+        }
+        int i822 = i * height;
+        int i922 = i / 2;
+        int i1022 = i822 + i922;
+        byteBuffer.position(i3);
+        byteBuffer.limit(i822);
+        ByteBuffer slice42 = byteBuffer.slice();
+        byteBuffer.position(i822);
+        int i1122 = (i * (i2 - 1)) + i922;
+        byteBuffer.limit(i822 + i1122);
+        ByteBuffer slice222 = byteBuffer.slice();
+        byteBuffer.position(i1022);
+        byteBuffer.limit(i1022 + i1122);
+        ByteBuffer slice322 = byteBuffer.slice();
         textureBuffer2.release();
-        return JavaI420Buffer.wrap(width, height, slice42, i2, slice222, i2, slice322, i2, new Runnable() { // from class: org.webrtc.YuvConverter$$ExternalSyntheticLambda0
+        return JavaI420Buffer.wrap(width, height, slice42, i, slice222, i, slice322, i, new Runnable() { // from class: org.webrtc.YuvConverter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                JniCommon.nativeFreeByteBuffer(byteBuffer222);
+                JniCommon.nativeFreeByteBuffer(byteBuffer);
             }
         });
     }

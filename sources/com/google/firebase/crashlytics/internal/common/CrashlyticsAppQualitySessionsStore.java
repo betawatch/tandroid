@@ -15,32 +15,22 @@ class CrashlyticsAppQualitySessionsStore {
     private static final FilenameFilter AQS_SESSION_ID_FILE_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsAppQualitySessionsStore$$ExternalSyntheticLambda0
         @Override // java.io.FilenameFilter
         public final boolean accept(File file, String str) {
-            boolean lambda$static$0;
-            lambda$static$0 = CrashlyticsAppQualitySessionsStore.lambda$static$0(file, str);
-            return lambda$static$0;
+            boolean startsWith;
+            startsWith = str.startsWith("aqs.");
+            return startsWith;
         }
     };
     private static final Comparator FILE_RECENCY_COMPARATOR = new Comparator() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsAppQualitySessionsStore$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int lambda$static$1;
-            lambda$static$1 = CrashlyticsAppQualitySessionsStore.lambda$static$1((File) obj, (File) obj2);
-            return lambda$static$1;
+            int compare;
+            compare = Long.compare(((File) obj2).lastModified(), ((File) obj).lastModified());
+            return compare;
         }
     };
     private final FileStore fileStore;
     private String sessionId = null;
     private String appQualitySessionId = null;
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$0(File file, String str) {
-        return str.startsWith("aqs.");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$1(File file, File file2) {
-        return Long.compare(file2.lastModified(), file.lastModified());
-    }
 
     CrashlyticsAppQualitySessionsStore(FileStore fileStore) {
         this.fileStore = fileStore;

@@ -64,14 +64,13 @@ public class UndoStore {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.UndoStore$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                UndoStore.this.lambda$notifyOfHistoryChanges$0();
+                UndoStore.$r8$lambda$d8iZ78NI4v8eiJkT3CVRbq0iDt8(UndoStore.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$notifyOfHistoryChanges$0() {
-        UndoStoreDelegate undoStoreDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$d8iZ78NI4v8eiJkT3CVRbq0iDt8(UndoStore undoStore) {
+        UndoStoreDelegate undoStoreDelegate = undoStore.delegate;
         if (undoStoreDelegate != null) {
             undoStoreDelegate.historyChanged();
         }

@@ -27,6 +27,7 @@ public final class zzra extends zzsk implements zztt {
 
     @Override // com.google.android.recaptcha.internal.zzsn
     protected final Object zzh(int i, Object obj, Object obj2) {
+        zzua zzuaVar;
         int i2 = i - 1;
         if (i2 == 0) {
             return Byte.valueOf(this.zzl);
@@ -48,17 +49,19 @@ public final class zzra extends zzsk implements zztt {
             this.zzl = obj == null ? (byte) 0 : (byte) 1;
             return null;
         }
-        zzua zzuaVar = zze;
-        if (zzuaVar == null) {
-            synchronized (zzra.class) {
-                try {
-                    zzuaVar = zze;
-                    if (zzuaVar == null) {
-                        zzuaVar = new zzsi(zzd);
-                        zze = zzuaVar;
-                    }
-                } finally {
+        zzua zzuaVar2 = zze;
+        if (zzuaVar2 != null) {
+            return zzuaVar2;
+        }
+        synchronized (zzra.class) {
+            try {
+                zzuaVar = zze;
+                if (zzuaVar == null) {
+                    zzuaVar = new zzsi(zzd);
+                    zze = zzuaVar;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return zzuaVar;

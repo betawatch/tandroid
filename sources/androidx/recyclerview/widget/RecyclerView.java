@@ -802,14 +802,14 @@ public abstract class RecyclerView extends ViewGroup {
         SavedState savedState2 = this.mPendingSavedState;
         if (savedState2 != null) {
             savedState.copyFrom(savedState2);
-        } else {
-            LayoutManager layoutManager = this.mLayout;
-            if (layoutManager != null) {
-                savedState.mLayoutState = layoutManager.onSaveInstanceState();
-            } else {
-                savedState.mLayoutState = null;
-            }
+            return savedState;
         }
+        LayoutManager layoutManager = this.mLayout;
+        if (layoutManager != null) {
+            savedState.mLayoutState = layoutManager.onSaveInstanceState();
+            return savedState;
+        }
+        savedState.mLayoutState = null;
         return savedState;
     }
 
@@ -950,6 +950,7 @@ public abstract class RecyclerView extends ViewGroup {
         if (childDrawingOrderCallback == this.mChildDrawingOrderCallback) {
             return;
         }
+        this.mChildDrawingOrderCallback = childDrawingOrderCallback;
         setChildrenDrawingOrderEnabled(childDrawingOrderCallback != null);
     }
 
@@ -1103,10 +1104,10 @@ public abstract class RecyclerView extends ViewGroup {
             int[] iArr2 = this.mReusableIntPair;
             int i7 = iArr2[0];
             int i8 = iArr2[1];
-            i3 = i8;
-            i4 = i7;
             i5 = i - i7;
             i6 = i2 - i8;
+            i4 = i8;
+            i3 = i7;
         } else {
             i3 = 0;
             i4 = 0;
@@ -1119,7 +1120,7 @@ public abstract class RecyclerView extends ViewGroup {
         int[] iArr3 = this.mReusableIntPair;
         iArr3[0] = 0;
         iArr3[1] = 0;
-        dispatchNestedScroll(i4, i3, i5, i6, this.mScrollOffset, 0, iArr3);
+        dispatchNestedScroll(i3, i4, i5, i6, this.mScrollOffset, 0, iArr3);
         int[] iArr4 = this.mReusableIntPair;
         int i9 = i5 - iArr4[0];
         int i10 = i6 - iArr4[1];
@@ -1144,13 +1145,13 @@ public abstract class RecyclerView extends ViewGroup {
             }
             considerReleasingGlowsOnScroll(i, i2);
         }
-        if (i4 != 0 || i3 != 0) {
-            dispatchOnScrolled(i4, i3);
+        if (i3 != 0 || i4 != 0) {
+            dispatchOnScrolled(i3, i4);
         }
         if (!awakenScrollBars()) {
             invalidate();
         }
-        return (i4 == 0 && i3 == 0) ? false : true;
+        return (i3 == 0 && i4 == 0) ? false : true;
     }
 
     @Override // android.view.View
@@ -1982,13 +1983,14 @@ public abstract class RecyclerView extends ViewGroup {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x011f  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean onTouchEvent(MotionEvent motionEvent) {
+        RecyclerView recyclerView;
         boolean z;
         if (this.mLayoutSuppressed || this.mIgnoreMotionEventTillDown) {
             return false;
@@ -2017,13 +2019,14 @@ public abstract class RecyclerView extends ViewGroup {
         int[] iArr2 = this.mNestedOffsets;
         obtain.offsetLocation(iArr2[0], iArr2[1]);
         if (actionMasked == 0) {
-            this.mScrollPointerId = motionEvent.getPointerId(0);
+            recyclerView = this;
+            recyclerView.mScrollPointerId = motionEvent.getPointerId(0);
             int x = (int) (motionEvent.getX() + 0.5f);
-            this.mLastTouchX = x;
-            this.mInitialTouchX = x;
+            recyclerView.mLastTouchX = x;
+            recyclerView.mInitialTouchX = x;
             int y = (int) (motionEvent.getY() + 0.5f);
-            this.mLastTouchY = y;
-            this.mInitialTouchY = y;
+            recyclerView.mLastTouchY = y;
+            recyclerView.mInitialTouchY = y;
             int i = canScrollHorizontally;
             if (canScrollVertically) {
                 i = (canScrollHorizontally ? 1 : 0) | 2;
@@ -2042,41 +2045,58 @@ public abstract class RecyclerView extends ViewGroup {
                 obtain.recycle();
                 return true;
             }
-            if (actionMasked == 2) {
+            if (actionMasked != 2) {
+                if (actionMasked == 3) {
+                    cancelScroll();
+                } else if (actionMasked == 5) {
+                    this.mScrollPointerId = motionEvent.getPointerId(actionIndex);
+                    int x2 = (int) (motionEvent.getX(actionIndex) + 0.5f);
+                    this.mLastTouchX = x2;
+                    this.mInitialTouchX = x2;
+                    int y2 = (int) (motionEvent.getY(actionIndex) + 0.5f);
+                    this.mLastTouchY = y2;
+                    this.mInitialTouchY = y2;
+                } else if (actionMasked == 6) {
+                    onPointerUp(motionEvent);
+                }
+                recyclerView = this;
+            } else {
                 int findPointerIndex = motionEvent.findPointerIndex(this.mScrollPointerId);
                 if (findPointerIndex < 0) {
                     Log.e("RecyclerView", "Error processing scroll; pointer index for id " + this.mScrollPointerId + " not found. Did any MotionEvents get skipped?");
                     return false;
                 }
-                int x2 = (int) (motionEvent.getX(findPointerIndex) + 0.5f);
-                int y2 = (int) (motionEvent.getY(findPointerIndex) + 0.5f);
-                int i2 = this.mLastTouchX - x2;
-                int i3 = this.mLastTouchY - y2;
+                int x3 = (int) (motionEvent.getX(findPointerIndex) + 0.5f);
+                int y3 = (int) (motionEvent.getY(findPointerIndex) + 0.5f);
+                int i2 = this.mLastTouchX - x3;
+                int i3 = this.mLastTouchY - y3;
                 int[] iArr3 = this.mReusableIntPair;
                 iArr3[0] = 0;
                 iArr3[1] = 0;
-                if (dispatchNestedPreScroll(i2, i3, iArr3, this.mScrollOffset, 0)) {
-                    int[] iArr4 = this.mReusableIntPair;
+                boolean dispatchNestedPreScroll = dispatchNestedPreScroll(i2, i3, iArr3, this.mScrollOffset, 0);
+                recyclerView = this;
+                if (dispatchNestedPreScroll) {
+                    int[] iArr4 = recyclerView.mReusableIntPair;
                     i2 -= iArr4[0];
                     i3 -= iArr4[1];
-                    int[] iArr5 = this.mScrollOffset;
+                    int[] iArr5 = recyclerView.mScrollOffset;
                     obtain.offsetLocation(iArr5[0], iArr5[1]);
-                    int[] iArr6 = this.mNestedOffsets;
+                    int[] iArr6 = recyclerView.mNestedOffsets;
                     int i4 = iArr6[0];
-                    int[] iArr7 = this.mScrollOffset;
+                    int[] iArr7 = recyclerView.mScrollOffset;
                     iArr6[0] = i4 + iArr7[0];
                     iArr6[1] = iArr6[1] + iArr7[1];
                 }
-                if (this.mScrollState != 1) {
+                if (recyclerView.mScrollState != 1) {
                     if (canScrollHorizontally != 0) {
                         int abs = Math.abs(i2);
-                        int i5 = this.mTouchSlop;
+                        int i5 = recyclerView.mTouchSlop;
                         if (abs > i5) {
                             i2 = i2 > 0 ? i2 - i5 : i2 + i5;
                             z = true;
                             if (canScrollVertically) {
                                 int abs2 = Math.abs(i3);
-                                int i6 = this.mTouchSlop;
+                                int i6 = recyclerView.mTouchSlop;
                                 if (abs2 > i6) {
                                     i3 = i3 > 0 ? i3 - i6 : i3 + i6;
                                     z = true;
@@ -2093,33 +2113,21 @@ public abstract class RecyclerView extends ViewGroup {
                     if (z) {
                     }
                 }
-                if (this.mScrollState == 1) {
-                    int[] iArr8 = this.mScrollOffset;
-                    this.mLastTouchX = x2 - iArr8[0];
-                    this.mLastTouchY = y2 - iArr8[1];
+                if (recyclerView.mScrollState == 1) {
+                    int[] iArr8 = recyclerView.mScrollOffset;
+                    recyclerView.mLastTouchX = x3 - iArr8[0];
+                    recyclerView.mLastTouchY = y3 - iArr8[1];
                     if (scrollByInternal(canScrollHorizontally != 0 ? i2 : 0, canScrollVertically ? i3 : 0, obtain)) {
                         getParent().requestDisallowInterceptTouchEvent(true);
                     }
-                    GapWorker gapWorker = this.mGapWorker;
+                    GapWorker gapWorker = recyclerView.mGapWorker;
                     if (gapWorker != null && (i2 != 0 || i3 != 0)) {
                         gapWorker.postFromTraversal(this, i2, i3);
                     }
                 }
-            } else if (actionMasked == 3) {
-                cancelScroll();
-            } else if (actionMasked == 5) {
-                this.mScrollPointerId = motionEvent.getPointerId(actionIndex);
-                int x3 = (int) (motionEvent.getX(actionIndex) + 0.5f);
-                this.mLastTouchX = x3;
-                this.mInitialTouchX = x3;
-                int y3 = (int) (motionEvent.getY(actionIndex) + 0.5f);
-                this.mLastTouchY = y3;
-                this.mInitialTouchY = y3;
-            } else if (actionMasked == 6) {
-                onPointerUp(motionEvent);
             }
         }
-        this.mVelocityTracker.addMovement(obtain);
+        recyclerView.mVelocityTracker.addMovement(obtain);
         obtain.recycle();
         return true;
     }
@@ -2605,6 +2613,8 @@ public abstract class RecyclerView extends ViewGroup {
     }
 
     private void dispatchLayoutStep3() {
+        RecyclerView recyclerView;
+        RecyclerView recyclerView2;
         this.mState.assertLayoutStep(4);
         startInterceptRequestLayout();
         onEnterLayoutOrScroll();
@@ -2630,7 +2640,20 @@ public abstract class RecyclerView extends ViewGroup {
                                 if (popFromPreLayout == null) {
                                     handleMissingPreInfoForChangeError(changedHolderKey, childViewHolderInt, fromOldChangeHolders);
                                 } else {
-                                    animateChange(fromOldChangeHolders, childViewHolderInt, popFromPreLayout, popFromPostLayout, isDisappearing, isDisappearing2);
+                                    recyclerView = this;
+                                    try {
+                                        recyclerView.animateChange(fromOldChangeHolders, childViewHolderInt, popFromPreLayout, popFromPostLayout, isDisappearing, isDisappearing2);
+                                    } catch (Exception e) {
+                                        e = e;
+                                        StringBuilder sb = new StringBuilder();
+                                        for (int childCount2 = recyclerView.mChildHelper.getChildCount() - 1; childCount2 >= 0; childCount2--) {
+                                            ViewHolder childViewHolderInt2 = getChildViewHolderInt(recyclerView.mChildHelper.getChildAt(childCount2));
+                                            if (childViewHolderInt2 != null && !childViewHolderInt2.shouldIgnore()) {
+                                                sb.append("Holder at" + childCount2 + " " + childViewHolderInt2 + "\n");
+                                            }
+                                        }
+                                        throw new RuntimeException(sb.toString(), e);
+                                    }
                                 }
                             }
                         } else {
@@ -2638,41 +2661,38 @@ public abstract class RecyclerView extends ViewGroup {
                         }
                     }
                 }
-                this.mViewInfoStore.process(this.mViewInfoProcessCallback);
-            } catch (Exception e) {
-                StringBuilder sb = new StringBuilder();
-                for (int childCount2 = this.mChildHelper.getChildCount() - 1; childCount2 >= 0; childCount2--) {
-                    ViewHolder childViewHolderInt2 = getChildViewHolderInt(this.mChildHelper.getChildAt(childCount2));
-                    if (childViewHolderInt2 != null && !childViewHolderInt2.shouldIgnore()) {
-                        sb.append("Holder at" + childCount2 + " " + childViewHolderInt2 + "\n");
-                    }
-                }
-                throw new RuntimeException(sb.toString(), e);
+                recyclerView2 = this;
+                recyclerView2.mViewInfoStore.process(recyclerView2.mViewInfoProcessCallback);
+            } catch (Exception e2) {
+                e = e2;
+                recyclerView = this;
             }
+        } else {
+            recyclerView2 = this;
         }
-        this.mLayout.removeAndRecycleScrapInt(this.mRecycler);
-        State state2 = this.mState;
+        recyclerView2.mLayout.removeAndRecycleScrapInt(recyclerView2.mRecycler);
+        State state2 = recyclerView2.mState;
         state2.mPreviousLayoutItemCount = state2.mItemCount;
-        this.mDataSetHasChangedAfterLayout = false;
-        this.mDispatchItemsChangedEvent = false;
+        recyclerView2.mDataSetHasChangedAfterLayout = false;
+        recyclerView2.mDispatchItemsChangedEvent = false;
         state2.mRunSimpleAnimations = false;
         state2.mRunPredictiveAnimations = false;
-        this.mLayout.mRequestedSimpleAnimations = false;
-        ArrayList arrayList = this.mRecycler.mChangedScrap;
+        recyclerView2.mLayout.mRequestedSimpleAnimations = false;
+        ArrayList arrayList = recyclerView2.mRecycler.mChangedScrap;
         if (arrayList != null) {
             arrayList.clear();
         }
-        LayoutManager layoutManager = this.mLayout;
+        LayoutManager layoutManager = recyclerView2.mLayout;
         if (layoutManager.mPrefetchMaxObservedInInitialPrefetch) {
             layoutManager.mPrefetchMaxCountObserved = 0;
             layoutManager.mPrefetchMaxObservedInInitialPrefetch = false;
-            this.mRecycler.updateViewCacheSize();
+            recyclerView2.mRecycler.updateViewCacheSize();
         }
-        this.mLayout.onLayoutCompleted(this.mState);
+        recyclerView2.mLayout.onLayoutCompleted(recyclerView2.mState);
         onExitLayoutOrScroll();
         stopInterceptRequestLayout(false);
-        this.mViewInfoStore.clear();
-        int[] iArr = this.mMinMaxLayoutPositions;
+        recyclerView2.mViewInfoStore.clear();
+        int[] iArr = recyclerView2.mMinMaxLayoutPositions;
         if (didChildRangeChange(iArr[0], iArr[1])) {
             dispatchOnScrolled(0, 0);
         }
@@ -3079,7 +3099,7 @@ public abstract class RecyclerView extends ViewGroup {
         return getChildViewHolderInt(view);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0016, code lost:
     
         return r3;
      */
@@ -3370,10 +3390,10 @@ public abstract class RecyclerView extends ViewGroup {
                     recyclerView3.scrollStep(i3, i4, iArr3);
                     RecyclerView recyclerView4 = RecyclerView.this;
                     int[] iArr4 = recyclerView4.mReusableIntPair;
-                    i2 = iArr4[0];
-                    i = iArr4[1];
-                    i3 -= i2;
-                    i4 -= i;
+                    int i5 = iArr4[0];
+                    int i6 = iArr4[1];
+                    i3 -= i5;
+                    i4 -= i6;
                     SmoothScroller smoothScroller = recyclerView4.mLayout.mSmoothScroller;
                     if (smoothScroller != null && !smoothScroller.isPendingInitialRun() && smoothScroller.isRunning()) {
                         int itemCount = RecyclerView.this.mState.getItemCount();
@@ -3381,15 +3401,19 @@ public abstract class RecyclerView extends ViewGroup {
                             smoothScroller.stop();
                         } else if (smoothScroller.getTargetPosition() >= itemCount) {
                             smoothScroller.setTargetPosition(itemCount - 1);
-                            smoothScroller.onAnimation(i2, i);
+                            smoothScroller.onAnimation(i5, i6);
                         } else {
-                            smoothScroller.onAnimation(i2, i);
+                            smoothScroller.onAnimation(i5, i6);
                         }
                     }
+                    i2 = i6;
+                    i = i5;
                 } else {
                     i = 0;
                     i2 = 0;
                 }
+                int i7 = i3;
+                int i8 = i4;
                 if (!RecyclerView.this.mItemDecorations.isEmpty()) {
                     RecyclerView.this.invalidate();
                 }
@@ -3397,29 +3421,29 @@ public abstract class RecyclerView extends ViewGroup {
                 int[] iArr5 = recyclerView5.mReusableIntPair;
                 iArr5[0] = 0;
                 iArr5[1] = 0;
-                recyclerView5.dispatchNestedScroll(i2, i, i3, i4, null, 1, iArr5);
+                recyclerView5.dispatchNestedScroll(i, i2, i7, i8, null, 1, iArr5);
                 RecyclerView recyclerView6 = RecyclerView.this;
                 int[] iArr6 = recyclerView6.mReusableIntPair;
-                int i5 = i3 - iArr6[0];
-                int i6 = i4 - iArr6[1];
-                if (i2 != 0 || i != 0) {
-                    recyclerView6.dispatchOnScrolled(i2, i);
+                int i9 = i7 - iArr6[0];
+                int i10 = i8 - iArr6[1];
+                if (i != 0 || i2 != 0) {
+                    recyclerView6.dispatchOnScrolled(i, i2);
                 }
                 if (!RecyclerView.this.awakenScrollBars()) {
                     RecyclerView.this.invalidate();
                 }
-                boolean z = overScroller.isFinished() || (((overScroller.getCurrX() == overScroller.getFinalX()) || i5 != 0) && ((overScroller.getCurrY() == overScroller.getFinalY()) || i6 != 0));
+                boolean z = overScroller.isFinished() || (((overScroller.getCurrX() == overScroller.getFinalX()) || i9 != 0) && ((overScroller.getCurrY() == overScroller.getFinalY()) || i10 != 0));
                 SmoothScroller smoothScroller2 = RecyclerView.this.mLayout.mSmoothScroller;
                 if ((smoothScroller2 == null || !smoothScroller2.isPendingInitialRun()) && z) {
                     if (RecyclerView.this.getOverScrollMode() != 2) {
                         int currVelocity = (int) overScroller.getCurrVelocity();
-                        int i7 = i5 < 0 ? -currVelocity : i5 > 0 ? currVelocity : 0;
-                        if (i6 < 0) {
+                        int i11 = i9 < 0 ? -currVelocity : i9 > 0 ? currVelocity : 0;
+                        if (i10 < 0) {
                             currVelocity = -currVelocity;
-                        } else if (i6 <= 0) {
+                        } else if (i10 <= 0) {
                             currVelocity = 0;
                         }
-                        RecyclerView.this.absorbGlows(i7, currVelocity);
+                        RecyclerView.this.absorbGlows(i11, currVelocity);
                     }
                     if (RecyclerView.ALLOW_THREAD_GAP_WORK) {
                         RecyclerView.this.mPrefetchRegistry.clearPrefetchPositions();
@@ -3429,7 +3453,7 @@ public abstract class RecyclerView extends ViewGroup {
                     RecyclerView recyclerView7 = RecyclerView.this;
                     GapWorker gapWorker = recyclerView7.mGapWorker;
                     if (gapWorker != null) {
-                        gapWorker.postFromTraversal(recyclerView7, i2, i);
+                        gapWorker.postFromTraversal(recyclerView7, i, i2);
                     }
                 }
             }
@@ -3852,13 +3876,10 @@ public abstract class RecyclerView extends ViewGroup {
         /* JADX WARN: Removed duplicated region for block: B:15:0x0039  */
         /* JADX WARN: Removed duplicated region for block: B:24:0x005e  */
         /* JADX WARN: Removed duplicated region for block: B:26:0x0061  */
-        /* JADX WARN: Removed duplicated region for block: B:57:0x0133  */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x0150  */
-        /* JADX WARN: Removed duplicated region for block: B:66:0x0173  */
-        /* JADX WARN: Removed duplicated region for block: B:72:0x01ac  */
-        /* JADX WARN: Removed duplicated region for block: B:75:0x01d6 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:79:0x01ba  */
-        /* JADX WARN: Removed duplicated region for block: B:85:0x0182  */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x014c  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x01a3  */
+        /* JADX WARN: Removed duplicated region for block: B:77:0x01cd A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:81:0x01b1  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -3921,62 +3942,44 @@ public abstract class RecyclerView extends ViewGroup {
                                 return null;
                             }
                             RecyclerView recyclerView = RecyclerView.this;
-                            ViewHolder createViewHolder = recyclerView.mAdapter.createViewHolder(recyclerView, itemViewType);
-                            if (RecyclerView.ALLOW_THREAD_GAP_WORK && (findNestedRecyclerView = RecyclerView.findNestedRecyclerView(createViewHolder.itemView)) != null) {
-                                createViewHolder.mNestedRecyclerView = new WeakReference(findNestedRecyclerView);
+                            viewHolder = recyclerView.mAdapter.createViewHolder(recyclerView, itemViewType);
+                            if (RecyclerView.ALLOW_THREAD_GAP_WORK && (findNestedRecyclerView = RecyclerView.findNestedRecyclerView(viewHolder.itemView)) != null) {
+                                viewHolder.mNestedRecyclerView = new WeakReference(findNestedRecyclerView);
                             }
                             this.mRecyclerPool.factorInCreateTime(itemViewType, RecyclerView.this.getNanoTime() - nanoTime);
-                            viewHolder2 = createViewHolder;
-                            z3 = z2;
-                            if (z3 && !RecyclerView.this.mState.isPreLayout() && viewHolder2.hasAnyOfTheFlags(8192)) {
-                                viewHolder2.setFlags(0, 8192);
-                                if (RecyclerView.this.mState.mRunSimpleAnimations) {
-                                    int buildAdapterChangeFlagsForAnimations = ItemAnimator.buildAdapterChangeFlagsForAnimations(viewHolder2) | 4096;
-                                    RecyclerView recyclerView2 = RecyclerView.this;
-                                    RecyclerView.this.recordAnimationInfoIfBouncedHiddenView(viewHolder2, recyclerView2.mItemAnimator.recordPreLayoutInformation(recyclerView2.mState, viewHolder2, buildAdapterChangeFlagsForAnimations, viewHolder2.getUnmodifiedPayloads()));
-                                }
-                            }
-                            if (!RecyclerView.this.mState.isPreLayout() && viewHolder2.isBound()) {
-                                viewHolder2.mPreLayoutPosition = i;
-                            } else if (viewHolder2.isBound() || viewHolder2.needsUpdate() || viewHolder2.isInvalid()) {
-                                tryBindViewHolderByDeadline = tryBindViewHolderByDeadline(viewHolder2, RecyclerView.this.mAdapterHelper.findPositionOffset(i), i, j);
-                                layoutParams = viewHolder2.itemView.getLayoutParams();
-                                if (layoutParams != null) {
-                                    layoutParams2 = (LayoutParams) RecyclerView.this.generateDefaultLayoutParams();
-                                    viewHolder2.itemView.setLayoutParams(layoutParams2);
-                                } else if (!RecyclerView.this.checkLayoutParams(layoutParams)) {
-                                    layoutParams2 = (LayoutParams) RecyclerView.this.generateLayoutParams(layoutParams);
-                                    viewHolder2.itemView.setLayoutParams(layoutParams2);
-                                } else {
-                                    layoutParams2 = (LayoutParams) layoutParams;
-                                }
-                                layoutParams2.mViewHolder = viewHolder2;
-                                layoutParams2.mPendingInvalidate = !z3 && tryBindViewHolderByDeadline;
-                                return viewHolder2;
-                            }
-                            tryBindViewHolderByDeadline = false;
-                            layoutParams = viewHolder2.itemView.getLayoutParams();
-                            if (layoutParams != null) {
-                            }
-                            layoutParams2.mViewHolder = viewHolder2;
-                            layoutParams2.mPendingInvalidate = !z3 && tryBindViewHolderByDeadline;
-                            return viewHolder2;
                         }
                     }
                     viewHolder2 = viewHolder;
                     z3 = z2;
-                    if (z3) {
+                    if (z3 && !RecyclerView.this.mState.isPreLayout() && viewHolder2.hasAnyOfTheFlags(8192)) {
                         viewHolder2.setFlags(0, 8192);
                         if (RecyclerView.this.mState.mRunSimpleAnimations) {
+                            int buildAdapterChangeFlagsForAnimations = ItemAnimator.buildAdapterChangeFlagsForAnimations(viewHolder2) | 4096;
+                            RecyclerView recyclerView2 = RecyclerView.this;
+                            RecyclerView.this.recordAnimationInfoIfBouncedHiddenView(viewHolder2, recyclerView2.mItemAnimator.recordPreLayoutInformation(recyclerView2.mState, viewHolder2, buildAdapterChangeFlagsForAnimations, viewHolder2.getUnmodifiedPayloads()));
                         }
                     }
-                    if (!RecyclerView.this.mState.isPreLayout()) {
+                    if (!RecyclerView.this.mState.isPreLayout() && viewHolder2.isBound()) {
+                        viewHolder2.mPreLayoutPosition = i;
+                    } else if (viewHolder2.isBound() || viewHolder2.needsUpdate() || viewHolder2.isInvalid()) {
+                        tryBindViewHolderByDeadline = tryBindViewHolderByDeadline(viewHolder2, RecyclerView.this.mAdapterHelper.findPositionOffset(i), i, j);
+                        layoutParams = viewHolder2.itemView.getLayoutParams();
+                        if (layoutParams == null) {
+                            layoutParams2 = (LayoutParams) RecyclerView.this.generateDefaultLayoutParams();
+                            viewHolder2.itemView.setLayoutParams(layoutParams2);
+                        } else if (!RecyclerView.this.checkLayoutParams(layoutParams)) {
+                            layoutParams2 = (LayoutParams) RecyclerView.this.generateLayoutParams(layoutParams);
+                            viewHolder2.itemView.setLayoutParams(layoutParams2);
+                        } else {
+                            layoutParams2 = (LayoutParams) layoutParams;
+                        }
+                        layoutParams2.mViewHolder = viewHolder2;
+                        layoutParams2.mPendingInvalidate = !z3 && tryBindViewHolderByDeadline;
+                        return viewHolder2;
                     }
-                    if (viewHolder2.isBound()) {
-                    }
-                    tryBindViewHolderByDeadline = tryBindViewHolderByDeadline(viewHolder2, RecyclerView.this.mAdapterHelper.findPositionOffset(i), i, j);
+                    tryBindViewHolderByDeadline = false;
                     layoutParams = viewHolder2.itemView.getLayoutParams();
-                    if (layoutParams != null) {
+                    if (layoutParams == null) {
                     }
                     layoutParams2.mViewHolder = viewHolder2;
                     layoutParams2.mPendingInvalidate = !z3 && tryBindViewHolderByDeadline;
@@ -3995,6 +3998,9 @@ public abstract class RecyclerView extends ViewGroup {
             viewHolder2 = viewHolder;
             z3 = z2;
             if (z3) {
+                viewHolder2.setFlags(0, 8192);
+                if (RecyclerView.this.mState.mRunSimpleAnimations) {
+                }
             }
             if (!RecyclerView.this.mState.isPreLayout()) {
             }
@@ -4002,7 +4008,7 @@ public abstract class RecyclerView extends ViewGroup {
             }
             tryBindViewHolderByDeadline = tryBindViewHolderByDeadline(viewHolder2, RecyclerView.this.mAdapterHelper.findPositionOffset(i), i, j);
             layoutParams = viewHolder2.itemView.getLayoutParams();
-            if (layoutParams != null) {
+            if (layoutParams == null) {
             }
             layoutParams2.mViewHolder = viewHolder2;
             layoutParams2.mPendingInvalidate = !z3 && tryBindViewHolderByDeadline;
@@ -5696,7 +5702,7 @@ public abstract class RecyclerView extends ViewGroup {
     }
 
     public static abstract class ViewHolder {
-        private static final List FULLUPDATE_PAYLOADS = Collections.emptyList();
+        private static final List FULLUPDATE_PAYLOADS = Collections.EMPTY_LIST;
         public final View itemView;
         int mFlags;
         WeakReference mNestedRecyclerView;
@@ -6735,12 +6741,14 @@ public abstract class RecyclerView extends ViewGroup {
             if (viewHolder.isInvalid()) {
                 return 4;
             }
-            if ((i & 4) != 0) {
-                return i2;
+            if ((i & 4) == 0) {
+                int oldPosition = viewHolder.getOldPosition();
+                int adapterPosition = viewHolder.getAdapterPosition();
+                if (oldPosition != -1 && adapterPosition != -1 && oldPosition != adapterPosition) {
+                    return i2 | 2048;
+                }
             }
-            int oldPosition = viewHolder.getOldPosition();
-            int adapterPosition = viewHolder.getAdapterPosition();
-            return (oldPosition == -1 || adapterPosition == -1 || oldPosition == adapterPosition) ? i2 : i2 | 2048;
+            return i2;
         }
 
         public final void dispatchAnimationFinished(ViewHolder viewHolder) {
@@ -6756,9 +6764,9 @@ public abstract class RecyclerView extends ViewGroup {
             if (itemAnimatorFinishedListener != null) {
                 if (!isRunning) {
                     itemAnimatorFinishedListener.onAnimationsFinished();
-                } else {
-                    this.mFinishedListeners.add(itemAnimatorFinishedListener);
+                    return isRunning;
                 }
+                this.mFinishedListeners.add(itemAnimatorFinishedListener);
             }
             return isRunning;
         }

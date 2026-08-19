@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
     private static Loggable loggable;

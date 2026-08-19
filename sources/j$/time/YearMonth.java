@@ -1,10 +1,10 @@
 package j$.time;
 
+import j$.time.format.w;
 import j$.time.format.x;
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
 import j$.util.Objects;
-import java.io.DataOutput;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -12,11 +12,11 @@ import java.util.Locale;
 import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
-public final class YearMonth implements Temporal, j$.time.temporal.n, Comparable<YearMonth>, Serializable {
+public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable<YearMonth>, Serializable {
     public static final /* synthetic */ int c = 0;
     private static final long serialVersionUID = 4183400860270640070L;
-    private final int a;
-    private final int b;
+    public final int a;
+    public final int b;
 
     @Override // java.lang.Comparable
     public final int compareTo(YearMonth yearMonth) {
@@ -27,95 +27,95 @@ public final class YearMonth implements Temporal, j$.time.temporal.n, Comparable
 
     static {
         j$.time.format.p pVar = new j$.time.format.p();
-        pVar.m(j$.time.temporal.a.YEAR, 4, 10, x.EXCEEDS_PAD);
-        pVar.e('-');
-        pVar.l(j$.time.temporal.a.MONTH_OF_YEAR, 2);
-        pVar.w(Locale.getDefault());
+        pVar.h(j$.time.temporal.a.YEAR, 4, 10, x.EXCEEDS_PAD);
+        pVar.c('-');
+        pVar.g(j$.time.temporal.a.MONTH_OF_YEAR, 2);
+        pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
     public static YearMonth of(int i, int i2) {
-        j$.time.temporal.a.YEAR.G(i);
-        j$.time.temporal.a.MONTH_OF_YEAR.G(i2);
+        j$.time.temporal.a.YEAR.x(i);
+        j$.time.temporal.a.MONTH_OF_YEAR.x(i2);
         return new YearMonth(i, i2);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final long f(Temporal temporal, j$.time.temporal.s sVar) {
+    public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         YearMonth of;
         if (temporal instanceof YearMonth) {
             of = (YearMonth) temporal;
         } else {
             Objects.requireNonNull(temporal, "temporal");
             try {
-                if (!j$.time.chrono.s.d.equals(j$.time.chrono.h.q(temporal))) {
+                if (!j$.time.chrono.r.c.equals(j$.com.android.tools.r8.a.N(temporal))) {
                     temporal = LocalDate.I(temporal);
                 }
-                of = of(temporal.l(j$.time.temporal.a.YEAR), temporal.l(j$.time.temporal.a.MONTH_OF_YEAR));
-            } catch (c e) {
-                throw new c("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+                of = of(temporal.o(j$.time.temporal.a.YEAR), temporal.o(j$.time.temporal.a.MONTH_OF_YEAR));
+            } catch (b e) {
+                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
             }
         }
-        if (sVar instanceof ChronoUnit) {
-            long G = of.G() - G();
-            switch (t.b[((ChronoUnit) sVar).ordinal()]) {
+        if (qVar instanceof ChronoUnit) {
+            long E = of.E() - E();
+            switch (s.b[((ChronoUnit) qVar).ordinal()]) {
                 case 1:
-                    return G;
+                    return E;
                 case 2:
-                    return G / 12;
+                    return E / 12;
                 case 3:
-                    return G / 120;
+                    return E / 120;
                 case 4:
-                    return G / 1200;
+                    return E / 1200;
                 case 5:
-                    return G / 12000;
+                    return E / 12000;
                 case 6:
                     j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                    return of.r(aVar) - r(aVar);
+                    return of.u(aVar) - u(aVar);
                 default:
-                    throw new j$.time.temporal.t("Unsupported unit: " + sVar);
+                    throw new j$.time.temporal.r("Unsupported unit: " + qVar);
             }
         }
-        return sVar.between(this, of);
+        return qVar.between(this, of);
     }
 
-    private YearMonth(int i, int i2) {
+    public YearMonth(int i, int i2) {
         this.a = i;
         this.b = i2;
     }
 
-    private YearMonth K(int i, int i2) {
+    public final YearMonth K(int i, int i2) {
         return (this.a == i && this.b == i2) ? this : new YearMonth(i, i2);
     }
 
-    @Override // j$.time.temporal.m
-    public final boolean g(j$.time.temporal.p pVar) {
-        return pVar instanceof j$.time.temporal.a ? pVar == j$.time.temporal.a.YEAR || pVar == j$.time.temporal.a.MONTH_OF_YEAR || pVar == j$.time.temporal.a.PROLEPTIC_MONTH || pVar == j$.time.temporal.a.YEAR_OF_ERA || pVar == j$.time.temporal.a.ERA : pVar != null && pVar.n(this);
+    @Override // j$.time.temporal.l
+    public final boolean h(j$.time.temporal.o oVar) {
+        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.YEAR || oVar == j$.time.temporal.a.MONTH_OF_YEAR || oVar == j$.time.temporal.a.PROLEPTIC_MONTH || oVar == j$.time.temporal.a.YEAR_OF_ERA || oVar == j$.time.temporal.a.ERA : oVar != null && oVar.p(this);
     }
 
-    @Override // j$.time.temporal.m
-    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
-        if (pVar == j$.time.temporal.a.YEAR_OF_ERA) {
-            return j$.time.temporal.u.j(1L, this.a <= 0 ? 1000000000L : 999999999L);
+    @Override // j$.time.temporal.l
+    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+        if (oVar == j$.time.temporal.a.YEAR_OF_ERA) {
+            return j$.time.temporal.s.e(1L, this.a <= 0 ? 1000000000L : 999999999L);
         }
-        return j$.time.temporal.l.d(this, pVar);
+        return j$.time.temporal.p.d(this, oVar);
     }
 
-    @Override // j$.time.temporal.m
-    public final int l(j$.time.temporal.p pVar) {
-        return o(pVar).a(r(pVar), pVar);
+    @Override // j$.time.temporal.l
+    public final int o(j$.time.temporal.o oVar) {
+        return q(oVar).a(u(oVar), oVar);
     }
 
-    @Override // j$.time.temporal.m
-    public final long r(j$.time.temporal.p pVar) {
-        if (!(pVar instanceof j$.time.temporal.a)) {
-            return pVar.l(this);
+    @Override // j$.time.temporal.l
+    public final long u(j$.time.temporal.o oVar) {
+        if (!(oVar instanceof j$.time.temporal.a)) {
+            return oVar.o(this);
         }
-        int i = t.a[((j$.time.temporal.a) pVar).ordinal()];
+        int i = s.a[((j$.time.temporal.a) oVar).ordinal()];
         if (i == 1) {
             return this.b;
         }
         if (i == 2) {
-            return G();
+            return E();
         }
         int i2 = this.a;
         if (i == 3) {
@@ -130,44 +130,44 @@ public final class YearMonth implements Temporal, j$.time.temporal.n, Comparable
         if (i == 5) {
             return i2 < 1 ? 0 : 1;
         }
-        throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
+        throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
     }
 
-    private long G() {
+    public final long E() {
         return ((this.a * 12) + this.b) - 1;
     }
 
     public int lengthOfMonth() {
-        k J = k.J(this.b);
-        j$.time.chrono.s sVar = j$.time.chrono.s.d;
+        j J = j.J(this.b);
+        j$.time.chrono.r rVar = j$.time.chrono.r.c;
         long j = this.a;
-        sVar.getClass();
-        return J.H(j$.time.chrono.s.n(j));
+        rVar.getClass();
+        return J.H(j$.time.chrono.r.o(j));
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal n(LocalDate localDate) {
+    public final Temporal p(LocalDate localDate) {
         localDate.getClass();
-        return (YearMonth) j$.time.chrono.h.a(localDate, this);
+        return (YearMonth) j$.com.android.tools.r8.a.a(localDate, this);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: L, reason: merged with bridge method [inline-methods] */
-    public final YearMonth d(long j, j$.time.temporal.p pVar) {
-        if (!(pVar instanceof j$.time.temporal.a)) {
-            return (YearMonth) pVar.o(this, j);
+    public final YearMonth e(long j, j$.time.temporal.o oVar) {
+        if (!(oVar instanceof j$.time.temporal.a)) {
+            return (YearMonth) oVar.q(this, j);
         }
-        j$.time.temporal.a aVar = (j$.time.temporal.a) pVar;
-        aVar.G(j);
-        int i = t.a[aVar.ordinal()];
+        j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
+        aVar.x(j);
+        int i = s.a[aVar.ordinal()];
         int i2 = this.a;
         if (i == 1) {
             int i3 = (int) j;
-            j$.time.temporal.a.MONTH_OF_YEAR.G(i3);
+            j$.time.temporal.a.MONTH_OF_YEAR.x(i3);
             return K(i2, i3);
         }
         if (i == 2) {
-            return I(j - G());
+            return I(j - E());
         }
         int i4 = this.b;
         if (i == 3) {
@@ -175,52 +175,56 @@ public final class YearMonth implements Temporal, j$.time.temporal.n, Comparable
                 j = 1 - j;
             }
             int i5 = (int) j;
-            j$.time.temporal.a.YEAR.G(i5);
+            j$.time.temporal.a.YEAR.x(i5);
             return K(i5, i4);
         }
         if (i == 4) {
             int i6 = (int) j;
-            j$.time.temporal.a.YEAR.G(i6);
+            j$.time.temporal.a.YEAR.x(i6);
             return K(i6, i4);
         }
         if (i != 5) {
-            throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
+            throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
-        if (r(j$.time.temporal.a.ERA) == j) {
+        if (u(j$.time.temporal.a.ERA) == j) {
             return this;
         }
         int i7 = 1 - i2;
-        j$.time.temporal.a.YEAR.G(i7);
+        j$.time.temporal.a.YEAR.x(i7);
         return K(i7, i4);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final YearMonth e(long j, j$.time.temporal.s sVar) {
-        if (!(sVar instanceof ChronoUnit)) {
-            return (YearMonth) sVar.k(this, j);
+    public final YearMonth f(long j, j$.time.temporal.q qVar) {
+        if (!(qVar instanceof ChronoUnit)) {
+            return (YearMonth) qVar.l(this, j);
         }
-        switch (t.b[((ChronoUnit) sVar).ordinal()]) {
+        switch (s.b[((ChronoUnit) qVar).ordinal()]) {
             case 1:
                 return I(j);
             case 2:
                 return J(j);
             case 3:
-                return J(j$.com.android.tools.r8.a.l(j, 10));
+                return J(j$.com.android.tools.r8.a.T(j, 10));
             case 4:
-                return J(j$.com.android.tools.r8.a.l(j, 100));
+                return J(j$.com.android.tools.r8.a.T(j, 100));
             case 5:
-                return J(j$.com.android.tools.r8.a.l(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return J(j$.com.android.tools.r8.a.T(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
             case 6:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return d(j$.com.android.tools.r8.a.f(r(aVar), j), aVar);
+                return e(j$.com.android.tools.r8.a.O(u(aVar), j), aVar);
             default:
-                throw new j$.time.temporal.t("Unsupported unit: " + sVar);
+                throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
     }
 
     public final YearMonth J(long j) {
-        return j == 0 ? this : K(j$.time.temporal.a.YEAR.x(this.a + j), this.b);
+        if (j == 0) {
+            return this;
+        }
+        j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
+        return K(aVar.b.a(this.a + j, aVar), this.b);
     }
 
     public final YearMonth I(long j) {
@@ -228,43 +232,46 @@ public final class YearMonth implements Temporal, j$.time.temporal.n, Comparable
             return this;
         }
         long j2 = (this.a * 12) + (this.b - 1) + j;
+        j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
         long j3 = 12;
-        return K(j$.time.temporal.a.YEAR.x(j$.com.android.tools.r8.a.k(j2, j3)), ((int) j$.com.android.tools.r8.a.j(j2, j3)) + 1);
+        return K(aVar.b.a(j$.com.android.tools.r8.a.S(j2, j3), aVar), ((int) j$.com.android.tools.r8.a.R(j2, j3)) + 1);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal k(long j, ChronoUnit chronoUnit) {
-        return j == Long.MIN_VALUE ? e(Long.MAX_VALUE, chronoUnit).e(1L, chronoUnit) : e(-j, chronoUnit);
+    public final Temporal l(long j, ChronoUnit chronoUnit) {
+        return j == Long.MIN_VALUE ? f(Long.MAX_VALUE, chronoUnit).f(1L, chronoUnit) : f(-j, chronoUnit);
+    }
+
+    @Override // j$.time.temporal.l
+    public final Object r(j$.time.format.a aVar) {
+        if (aVar == j$.time.temporal.p.b) {
+            return j$.time.chrono.r.c;
+        }
+        if (aVar == j$.time.temporal.p.c) {
+            return ChronoUnit.MONTHS;
+        }
+        return j$.time.temporal.p.c(this, aVar);
     }
 
     @Override // j$.time.temporal.m
-    public final Object v(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.l.e()) {
-            return j$.time.chrono.s.d;
-        }
-        if (rVar == j$.time.temporal.l.i()) {
-            return ChronoUnit.MONTHS;
-        }
-        return j$.time.temporal.l.c(this, rVar);
-    }
-
-    @Override // j$.time.temporal.n
     public final Temporal x(Temporal temporal) {
-        if (!((j$.time.chrono.a) j$.time.chrono.h.q(temporal)).equals(j$.time.chrono.s.d)) {
-            throw new c("Adjustment only supported on ISO date-time");
+        if (!j$.com.android.tools.r8.a.N(temporal).equals(j$.time.chrono.r.c)) {
+            throw new b("Adjustment only supported on ISO date-time");
         }
-        return temporal.d(G(), j$.time.temporal.a.PROLEPTIC_MONTH);
+        return temporal.e(E(), j$.time.temporal.a.PROLEPTIC_MONTH);
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof YearMonth)) {
-            return false;
+        if (obj instanceof YearMonth) {
+            YearMonth yearMonth = (YearMonth) obj;
+            if (this.a == yearMonth.a && this.b == yearMonth.b) {
+                return true;
+            }
         }
-        YearMonth yearMonth = (YearMonth) obj;
-        return this.a == yearMonth.a && this.b == yearMonth.b;
+        return false;
     }
 
     public final int hashCode() {
@@ -291,15 +298,10 @@ public final class YearMonth implements Temporal, j$.time.temporal.n, Comparable
     }
 
     private Object writeReplace() {
-        return new q((byte) 12, this);
+        return new p((byte) 12, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
-    }
-
-    final void M(DataOutput dataOutput) {
-        dataOutput.writeInt(this.a);
-        dataOutput.writeByte(this.b);
     }
 }

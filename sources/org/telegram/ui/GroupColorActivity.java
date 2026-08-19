@@ -25,7 +25,6 @@ import org.telegram.ui.ChannelColorActivity;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
 import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.GroupColorActivity;
 
 /* loaded from: classes4.dex */
 public class GroupColorActivity extends ChannelColorActivity {
@@ -205,14 +204,9 @@ public class GroupColorActivity extends ChannelColorActivity {
             GroupColorActivity.this.profilePreview.infoLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupColorActivity$1$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GroupColorActivity.1.this.lambda$onGlobalLayout$0(view);
+                    GroupColorActivity.this.openBoostDialog(19);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onGlobalLayout$0(View view) {
-            GroupColorActivity.this.openBoostDialog(19);
         }
     }
 
@@ -286,8 +280,9 @@ public class GroupColorActivity extends ChannelColorActivity {
         this.listView.setSections(true);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.ChannelColorActivity
-    protected void openBoostDialog(final int i) {
+    public void openBoostDialog(final int i) {
         if (this.boostsStatus == null || this.isLoading) {
             return;
         }
@@ -313,9 +308,8 @@ public class GroupColorActivity extends ChannelColorActivity {
             }
 
             @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-            /* renamed from: dismiss */
-            public void lambda$new$0() {
-                super.lambda$new$0();
+            public void dismiss() {
+                super.dismiss();
                 GroupColorActivity.this.isLoading = false;
             }
         };

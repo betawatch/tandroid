@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ViewsForPeerStoriesRequester {
     private static long lastRequestTime;
     final int currentAccount;
@@ -20,7 +20,7 @@ public class ViewsForPeerStoriesRequester {
     final Runnable scheduleRequestRunnable = new Runnable() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            ViewsForPeerStoriesRequester.this.lambda$new$0();
+            ViewsForPeerStoriesRequester.this.step();
         }
     };
     final StoriesController storiesController;
@@ -37,7 +37,7 @@ public class ViewsForPeerStoriesRequester {
         }
         if (z) {
             this.isRunning = true;
-            lambda$new$0();
+            step();
         } else {
             this.isRunning = false;
             AndroidUtilities.cancelRunOnUIThread(this.scheduleRequestRunnable);
@@ -73,8 +73,7 @@ public class ViewsForPeerStoriesRequester {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: step, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$0() {
+    public void step() {
         if (this.isRunning) {
             long currentTimeMillis = 10000 - (System.currentTimeMillis() - lastRequestTime);
             if (currentTimeMillis > 0) {
@@ -103,39 +102,39 @@ public class ViewsForPeerStoriesRequester {
         this.currentReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesViews, new RequestDelegate() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ViewsForPeerStoriesRequester.this.lambda$requestInternal$2(tL_stories_getStoriesViews, tLObject, tL_error);
+                ViewsForPeerStoriesRequester.$r8$lambda$Ro741gksRp0n0clrr1WHUZUJ-ks(ViewsForPeerStoriesRequester.this, tL_stories_getStoriesViews, tLObject, tL_error);
             }
         });
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestInternal$2(final TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Ro741gksRp0n0clrr1WHUZUJ-ks(final ViewsForPeerStoriesRequester viewsForPeerStoriesRequester, final TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        viewsForPeerStoriesRequester.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.ViewsForPeerStoriesRequester$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ViewsForPeerStoriesRequester.this.lambda$requestInternal$1(tLObject, tL_stories_getStoriesViews);
+                ViewsForPeerStoriesRequester.$r8$lambda$pAKFcCkvvUSiop6Z4BGxXKgrD7o(ViewsForPeerStoriesRequester.this, tLObject, tL_stories_getStoriesViews);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestInternal$1(TLObject tLObject, TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews) {
+    public static /* synthetic */ void $r8$lambda$pAKFcCkvvUSiop6Z4BGxXKgrD7o(ViewsForPeerStoriesRequester viewsForPeerStoriesRequester, TLObject tLObject, TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews) {
+        viewsForPeerStoriesRequester.getClass();
         lastRequestTime = System.currentTimeMillis();
         if (tLObject != null) {
             TL_stories.TL_stories_storyViews tL_stories_storyViews = (TL_stories.TL_stories_storyViews) tLObject;
-            MessagesController.getInstance(this.currentAccount).putUsers(tL_stories_storyViews.users, false);
-            if (!updateStories(tL_stories_getStoriesViews.id, tL_stories_storyViews)) {
-                this.currentReqId = 0;
-                this.isRunning = false;
+            MessagesController.getInstance(viewsForPeerStoriesRequester.currentAccount).putUsers(tL_stories_storyViews.users, false);
+            if (!viewsForPeerStoriesRequester.updateStories(tL_stories_getStoriesViews.id, tL_stories_storyViews)) {
+                viewsForPeerStoriesRequester.currentReqId = 0;
+                viewsForPeerStoriesRequester.isRunning = false;
                 return;
             }
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+            NotificationCenter.getInstance(viewsForPeerStoriesRequester.currentAccount).postNotificationName(NotificationCenter.storiesUpdated, new Object[0]);
         }
-        this.currentReqId = 0;
-        if (this.isRunning) {
-            AndroidUtilities.cancelRunOnUIThread(this.scheduleRequestRunnable);
-            AndroidUtilities.runOnUIThread(this.scheduleRequestRunnable, 10000L);
+        viewsForPeerStoriesRequester.currentReqId = 0;
+        if (viewsForPeerStoriesRequester.isRunning) {
+            AndroidUtilities.cancelRunOnUIThread(viewsForPeerStoriesRequester.scheduleRequestRunnable);
+            AndroidUtilities.runOnUIThread(viewsForPeerStoriesRequester.scheduleRequestRunnable, 10000L);
         }
     }
 }

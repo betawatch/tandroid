@@ -63,15 +63,14 @@ public class EditCoverButton extends View {
         this.imageReceiver.onDetachedFromWindow();
     }
 
-    /* renamed from: setImage, reason: merged with bridge method [inline-methods] */
-    public void lambda$setImage$0(Bitmap bitmap) {
+    public void setImage(Bitmap bitmap) {
         this.imageReceiver.setImageBitmap(bitmap);
         invalidate();
     }
 
     public void setImage(TLRPC.Photo photo, Object obj) {
         if (photo == null) {
-            lambda$setImage$0((Bitmap) null);
+            setImage((Bitmap) null);
             return;
         }
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(48.0f), false, null, true);
@@ -80,19 +79,19 @@ public class EditCoverButton extends View {
 
     public void setImage(final String str) {
         if (str == null) {
-            lambda$setImage$0((Bitmap) null);
+            setImage((Bitmap) null);
         } else {
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.EditCoverButton$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EditCoverButton.this.lambda$setImage$1(str);
+                    EditCoverButton.$r8$lambda$pysu0SFoxHhWHjB2ZrE7IuiCJ28(EditCoverButton.this, str);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setImage$1(String str) {
+    public static /* synthetic */ void $r8$lambda$pysu0SFoxHhWHjB2ZrE7IuiCJ28(final EditCoverButton editCoverButton, String str) {
+        editCoverButton.getClass();
         final Bitmap decodeFile = BitmapFactory.decodeFile(str);
         Canvas canvas = new Canvas(Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888));
         Paint paint = new Paint(3);
@@ -103,7 +102,7 @@ public class EditCoverButton extends View {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EditCoverButton$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EditCoverButton.this.lambda$setImage$0(decodeFile);
+                EditCoverButton.this.setImage(decodeFile);
             }
         });
     }

@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 
 /* loaded from: classes.dex */
 public abstract class WorkSourceUtil {
-    private static final int zza = Process.myUid();
+    private static final int zza;
     private static final Method zzb;
     private static final Method zzc;
     private static final Method zzd;
@@ -24,8 +24,8 @@ public abstract class WorkSourceUtil {
     private static final Method zzi;
     private static Boolean zzj;
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x009b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0077 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0093 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0071 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         Method method;
         Method method2;
@@ -35,14 +35,16 @@ public abstract class WorkSourceUtil {
         Method method6;
         Method method7;
         Method method8;
+        Class<?> cls = Integer.TYPE;
+        zza = Process.myUid();
         try {
-            method = WorkSource.class.getMethod("add", Integer.TYPE);
+            method = WorkSource.class.getMethod("add", cls);
         } catch (Exception unused) {
             method = null;
         }
         zzb = method;
         try {
-            method2 = WorkSource.class.getMethod("add", Integer.TYPE, String.class);
+            method2 = WorkSource.class.getMethod("add", cls, String.class);
         } catch (Exception unused2) {
             method2 = null;
         }
@@ -54,13 +56,13 @@ public abstract class WorkSourceUtil {
         }
         zzd = method3;
         try {
-            method4 = WorkSource.class.getMethod("get", Integer.TYPE);
+            method4 = WorkSource.class.getMethod("get", cls);
         } catch (Exception unused4) {
             method4 = null;
         }
         zze = method4;
         try {
-            method5 = WorkSource.class.getMethod("getName", Integer.TYPE);
+            method5 = WorkSource.class.getMethod("getName", cls);
         } catch (Exception unused5) {
             method5 = null;
         }
@@ -74,7 +76,7 @@ public abstract class WorkSourceUtil {
             zzg = method6;
             if (PlatformVersion.isAtLeastP()) {
                 try {
-                    method7 = Class.forName("android.os.WorkSource$WorkChain").getMethod("addNode", Integer.TYPE, String.class);
+                    method7 = Class.forName("android.os.WorkSource$WorkChain").getMethod("addNode", cls, String.class);
                 } catch (Exception e2) {
                     Log.w("WorkSourceUtil", "Missing WorkChain class", e2);
                 }

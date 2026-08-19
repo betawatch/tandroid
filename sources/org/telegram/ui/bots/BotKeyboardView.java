@@ -31,7 +31,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.inset.InAppKeyboardInsetView;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BotKeyboardView extends LinearLayout implements InAppKeyboardInsetView, ReplaceAnimator.Callback {
     private final ReplaceAnimator animator;
     private TLRPC.TL_replyKeyboardMarkup botButtons;
@@ -179,7 +179,7 @@ public abstract class BotKeyboardView extends LinearLayout implements InAppKeybo
                     button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotKeyboardView$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            BotKeyboardView.this.lambda$setButtons$0(view);
+                            BotKeyboardView.this.delegate.didPressedButton((TL_keyboard.KeyboardButton) view.getTag());
                         }
                     });
                     ScaleStateListAnimator.apply(button, 0.02f, 1.5f);
@@ -194,11 +194,6 @@ public abstract class BotKeyboardView extends LinearLayout implements InAppKeybo
             return;
         }
         this.animator.clear(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setButtons$0(View view) {
-        this.delegate.didPressedButton((TL_keyboard.KeyboardButton) view.getTag());
     }
 
     private class Button extends FrameLayout {

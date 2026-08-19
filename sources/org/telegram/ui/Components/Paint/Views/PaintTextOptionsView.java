@@ -59,9 +59,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
     static {
         int i = 40;
         int i2 = 2;
-        int i3 = 20;
-        int i4 = 0;
-        ALIGN_PAIRS = Arrays.asList(new AlignFramePair(0, 1, 20, 0), new AlignFramePair(0, i2, 20, i), new AlignFramePair(1, i4, 0, i3), new AlignFramePair(1, i2, 60, i), new AlignFramePair(2, i4, 40, i3), new AlignFramePair(2, 1, 40, 60));
+        ALIGN_PAIRS = Arrays.asList(new AlignFramePair(0, 1, 20, 0), new AlignFramePair(0, 2, 20, 40), new AlignFramePair(1, 0, 0, 20), new AlignFramePair(1, i2, 60, i), new AlignFramePair(i2, 0, i, 20), new AlignFramePair(2, 1, 40, 60));
     }
 
     public PaintTextOptionsView(Context context) {
@@ -73,7 +71,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PaintTextOptionsView.this.lambda$new$0(view2);
+                PaintTextOptionsView.this.delegate.onColorPickerSelected();
             }
         });
         addView(this.colorClickableView, LayoutHelper.createFrame(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
@@ -90,7 +88,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         this.alignView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PaintTextOptionsView.this.lambda$new$1(view2);
+                r0.setAlignment((PaintTextOptionsView.this.currentAlign + 1) % 3, true);
             }
         });
         this.alignView.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
@@ -102,7 +100,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         this.outlineView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PaintTextOptionsView.this.lambda$new$2(view2);
+                PaintTextOptionsView.this.delegate.onTextOutlineSelected(view2);
             }
         });
         addView(this.outlineView, LayoutHelper.createFrame(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
@@ -114,7 +112,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         this.plusView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PaintTextOptionsView.this.lambda$new$3(view2);
+                PaintTextOptionsView.this.delegate.onNewTextSelected();
             }
         });
         this.plusView.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
@@ -125,35 +123,10 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         this.typefaceCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PaintTextOptionsView.this.lambda$new$4(view2);
+                PaintTextOptionsView.this.delegate.onTypefaceButtonClicked();
             }
         });
         addView(this.typefaceCell, LayoutHelper.createLinear(-2, -2, 0.0f, 21));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.delegate.onColorPickerSelected();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        setAlignment((this.currentAlign + 1) % 3, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        this.delegate.onTextOutlineSelected(view);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(View view) {
-        this.delegate.onNewTextSelected();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(View view) {
-        this.delegate.onTypefaceButtonClicked();
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

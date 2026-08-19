@@ -1,75 +1,89 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import java.util.Comparator;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class i0 implements L, IntConsumer, y {
-    boolean a = false;
-    int b;
-    final /* synthetic */ Z c;
+public final class i0 implements Spliterator {
+    public final Object[] a;
+    public int b;
+    public final int c;
+    public final int d;
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.com.android.tools.r8.a.n(this);
     }
 
-    @Override // j$.util.Q
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
-        while (hasNext()) {
-            intConsumer.accept(nextInt());
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.com.android.tools.r8.a.p(this, i);
+    }
+
+    public i0(Object[] objArr, int i, int i2, int i3) {
+        this.a = objArr;
+        this.b = i;
+        this.c = i2;
+        this.d = i3 | 16448;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
+            return null;
         }
+        this.b = i2;
+        return new i0(this.a, i, i2, this.d);
     }
 
-    @Override // java.util.Iterator
-    public final Integer next() {
-        if (w0.a) {
-            w0.a(i0.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
-            throw null;
-        }
-        return Integer.valueOf(nextInt());
-    }
-
-    @Override // j$.util.L, java.util.Iterator, j$.util.y
+    @Override // j$.util.Spliterator
     public final void forEachRemaining(Consumer consumer) {
-        if (consumer instanceof IntConsumer) {
-            forEachRemaining((IntConsumer) consumer);
+        int i;
+        consumer.getClass();
+        Object[] objArr = this.a;
+        int length = objArr.length;
+        int i2 = this.c;
+        if (length < i2 || (i = this.b) < 0) {
             return;
         }
-        Objects.requireNonNull(consumer);
-        if (w0.a) {
-            w0.a(i0.class, "{0} calling PrimitiveIterator.OfInt.forEachRemainingInt(action::accept)");
-            throw null;
+        this.b = i2;
+        if (i < i2) {
+            do {
+                consumer.s(objArr[i]);
+                i++;
+            } while (i < i2);
         }
-        Objects.requireNonNull(consumer);
-        forEachRemaining((IntConsumer) new I(consumer));
     }
 
-    i0(Z z) {
-        this.c = z;
-    }
-
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i) {
-        this.a = true;
-        this.b = i;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance((IntConsumer) this);
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        consumer.getClass();
+        int i = this.b;
+        if (i < 0 || i >= this.c) {
+            return false;
         }
-        return this.a;
+        this.b = i + 1;
+        consumer.s(this.a[i]);
+        return true;
     }
 
-    @Override // j$.util.L
-    public final int nextInt() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.c - this.b;
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.d;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        if (j$.com.android.tools.r8.a.p(this, 4)) {
+            return null;
         }
-        this.a = false;
-        return this.b;
+        throw new IllegalStateException();
     }
 }

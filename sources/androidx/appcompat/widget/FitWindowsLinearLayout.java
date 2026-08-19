@@ -9,11 +9,12 @@ import android.widget.LinearLayout;
 public class FitWindowsLinearLayout extends LinearLayout {
     private FitWindowsViewGroup$OnFitSystemWindowsListener mListener;
 
-    public void setOnFitSystemWindowsListener(FitWindowsViewGroup$OnFitSystemWindowsListener fitWindowsViewGroup$OnFitSystemWindowsListener) {
-    }
-
     public FitWindowsLinearLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
+    }
+
+    public void setOnFitSystemWindowsListener(FitWindowsViewGroup$OnFitSystemWindowsListener fitWindowsViewGroup$OnFitSystemWindowsListener) {
+        this.mListener = fitWindowsViewGroup$OnFitSystemWindowsListener;
     }
 
     @Override // android.view.View

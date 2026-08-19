@@ -22,16 +22,16 @@ public abstract class AnimatedLinearLayout extends LinearLayout {
     private static final Comparator comparator = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.AnimatedLinearLayout$$ExternalSyntheticLambda1
         @Override // java.util.function.ToIntFunction
         public final int applyAsInt(Object obj) {
-            int access$100;
-            access$100 = AnimatedLinearLayout.Holder.access$100((AnimatedLinearLayout.Holder) obj);
-            return access$100;
+            int i;
+            i = ((AnimatedLinearLayout.Holder) obj).priority;
+            return i;
         }
     }), new ToIntFunction() { // from class: org.telegram.ui.Components.AnimatedLinearLayout$$ExternalSyntheticLambda2
         @Override // java.util.function.ToIntFunction
         public final int applyAsInt(Object obj) {
-            int access$400;
-            access$400 = AnimatedLinearLayout.Holder.access$400((AnimatedLinearLayout.Holder) obj);
-            return access$400;
+            int i;
+            i = ((AnimatedLinearLayout.Holder) obj).order;
+            return i;
         }
     });
     private final ListAnimator.Callback callback;
@@ -47,10 +47,9 @@ public abstract class AnimatedLinearLayout extends LinearLayout {
     protected void onItemsChanged() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ListAnimator listAnimator) {
-        checkViewsVisibility();
-        onItemsChanged();
+    public static /* synthetic */ void $r8$lambda$xxBQTnlvUtZFrR6r87BAjvhWYBQ(AnimatedLinearLayout animatedLinearLayout, ListAnimator listAnimator) {
+        animatedLinearLayout.checkViewsVisibility();
+        animatedLinearLayout.onItemsChanged();
     }
 
     public AnimatedLinearLayout(Context context) {
@@ -80,7 +79,7 @@ public abstract class AnimatedLinearLayout extends LinearLayout {
 
             @Override // me.vkryl.android.animator.ListAnimator.Callback
             public final void onItemsChanged(ListAnimator listAnimator) {
-                AnimatedLinearLayout.this.lambda$new$0(listAnimator);
+                AnimatedLinearLayout.$r8$lambda$xxBQTnlvUtZFrR6r87BAjvhWYBQ(AnimatedLinearLayout.this, listAnimator);
             }
 
             @Override // me.vkryl.android.animator.ListAnimator.MetadataCallback
@@ -186,9 +185,13 @@ public abstract class AnimatedLinearLayout extends LinearLayout {
         }
         Collections.sort(this.visibleHolders, comparator);
         this.listAnimator.reset(this.visibleHolders, !this.skipNextAnimation);
-        Iterator it = this.visibleHolders.iterator();
-        while (it.hasNext()) {
-            ((Holder) it.next()).hasInAnimator = true;
+        ArrayList arrayList = this.visibleHolders;
+        int size = arrayList.size();
+        int i6 = 0;
+        while (i6 < size) {
+            Object obj = arrayList.get(i6);
+            i6++;
+            ((Holder) obj).hasInAnimator = true;
         }
         this.skipNextAnimation = false;
         checkViewsVisibility();
@@ -269,16 +272,6 @@ public abstract class AnimatedLinearLayout extends LinearLayout {
         @Override // me.vkryl.android.animator.ListAnimator.Measurable
         public /* synthetic */ int getSpacingStart(boolean z) {
             return ListAnimator.Measurable.-CC.$default$getSpacingStart(this, z);
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ int access$100(Holder holder) {
-            return holder.priority;
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ int access$400(Holder holder) {
-            return holder.order;
         }
 
         public Holder(View view) {

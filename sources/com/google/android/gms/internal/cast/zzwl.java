@@ -17,7 +17,9 @@ final class zzwl extends zzwk {
         while (i4 < i3) {
             int i5 = i4 + 1;
             byte b = bArr[i4];
-            if (b < 0) {
+            if (b >= 0) {
+                i4 = i5;
+            } else {
                 if (b < -32) {
                     if (i5 >= i3) {
                         return b;
@@ -50,14 +52,17 @@ final class zzwl extends zzwk {
                 }
                 int i8 = i4 + 2;
                 byte b3 = bArr[i5];
-                if (b3 <= -65 && ((b != -32 || b3 >= -96) && (b != -19 || b3 < -96))) {
-                    i4 += 3;
-                    if (bArr[i8] > -65) {
-                    }
+                if (b3 > -65 || (b == -32 && b3 < -96)) {
+                    return -1;
                 }
-                return -1;
+                if (b == -19 && b3 >= -96) {
+                    return -1;
+                }
+                i4 += 3;
+                if (bArr[i8] > -65) {
+                    return -1;
+                }
             }
-            i4 = i5;
         }
         return 0;
     }

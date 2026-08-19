@@ -32,7 +32,10 @@ public final class JsonObject extends JsonElement {
     }
 
     public boolean equals(Object obj) {
-        return obj == this || ((obj instanceof JsonObject) && ((JsonObject) obj).members.equals(this.members));
+        if (obj != this) {
+            return (obj instanceof JsonObject) && ((JsonObject) obj).members.equals(this.members);
+        }
+        return true;
     }
 
     public int hashCode() {

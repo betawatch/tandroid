@@ -152,14 +152,14 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: com.google.android.exoplayer2.mediacodec.SynchronousMediaCodecAdapter$$ExternalSyntheticLambda0
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                SynchronousMediaCodecAdapter.this.lambda$setOnFrameRenderedListener$0(onFrameRenderedListener, mediaCodec, j, j2);
+                SynchronousMediaCodecAdapter.$r8$lambda$A8t5YfgUQE4K8BaABTtCM7xlv60(SynchronousMediaCodecAdapter.this, onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOnFrameRenderedListener$0(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
-        onFrameRenderedListener.onFrameRendered(this, j, j2);
+    public static /* synthetic */ void $r8$lambda$A8t5YfgUQE4K8BaABTtCM7xlv60(SynchronousMediaCodecAdapter synchronousMediaCodecAdapter, MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+        synchronousMediaCodecAdapter.getClass();
+        onFrameRenderedListener.onFrameRendered(synchronousMediaCodecAdapter, j, j2);
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter

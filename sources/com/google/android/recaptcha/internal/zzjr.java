@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import java.util.ArrayList;
 
 /* loaded from: classes.dex */
@@ -16,7 +17,7 @@ public final class zzjr implements zzjt {
             throw new zzdm(4, 3, null);
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
-        if (true != (zza2 instanceof Object)) {
+        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza2)) {
             zza2 = null;
         }
         if (zza2 == null) {

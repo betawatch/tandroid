@@ -96,7 +96,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         this.collapseMoveButton = new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CaptionPhotoViewer.this.lambda$new$5();
+                CaptionPhotoViewer.$r8$lambda$7tvACeO8We2NFs09tXdWuw7fu6s(CaptionPhotoViewer.this);
             }
         };
         this.applyCaption = runnable;
@@ -168,61 +168,58 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         this.aiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaptionPhotoViewer.this.lambda$new$2(view);
+                CaptionPhotoViewer.$r8$lambda$lvCr3OU7SGv7V8U-YHoNyXCA8S0(CaptionPhotoViewer.this, view);
             }
         });
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaptionPhotoViewer.this.lambda$new$4(frameLayout, view);
+                CaptionPhotoViewer.$r8$lambda$GEl9WnoK5INWyzYSeKgjq_sE13g(CaptionPhotoViewer.this, frameLayout, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
+    public static /* synthetic */ void $r8$lambda$lvCr3OU7SGv7V8U-YHoNyXCA8S0(final CaptionPhotoViewer captionPhotoViewer, View view) {
+        captionPhotoViewer.getClass();
         MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
-        new AIEditorAlert(getContext(), new DarkThemeResourceProvider()).setText(this.editText.getText()).setOnUse(new Utilities.Callback() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda7
+        new AIEditorAlert(captionPhotoViewer.getContext(), new DarkThemeResourceProvider()).setText(captionPhotoViewer.editText.getText()).setOnUse(new Utilities.Callback() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                CaptionPhotoViewer.this.lambda$new$0((CharSequence) obj);
+                CaptionPhotoViewer.$r8$lambda$duzMCqUquEXRcGBfz-ZkMn2KHHw(CaptionPhotoViewer.this, (CharSequence) obj);
             }
         }).setOnSend(0L, true, new Utilities.Callback4() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback4
             public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-                CaptionPhotoViewer.this.lambda$new$1((CharSequence) obj, (Integer) obj2, (Integer) obj3, (Boolean) obj4);
+                CaptionPhotoViewer.$r8$lambda$EEMxvrnTh6O00DaBh_JKDpdEZ7o(CaptionPhotoViewer.this, (CharSequence) obj, (Integer) obj2, (Integer) obj3, (Boolean) obj4);
             }
         }).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(CharSequence charSequence) {
-        this.editText.setText(charSequence);
-        this.editText.setSelection(charSequence.length(), charSequence.length());
+    public static /* synthetic */ void $r8$lambda$duzMCqUquEXRcGBfz-ZkMn2KHHw(CaptionPhotoViewer captionPhotoViewer, CharSequence charSequence) {
+        captionPhotoViewer.editText.setText(charSequence);
+        captionPhotoViewer.editText.setSelection(charSequence.length(), charSequence.length());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(CharSequence charSequence, Integer num, Integer num2, Boolean bool) {
-        this.editText.setText(charSequence);
-        done();
+    public static /* synthetic */ void $r8$lambda$EEMxvrnTh6O00DaBh_JKDpdEZ7o(CaptionPhotoViewer captionPhotoViewer, CharSequence charSequence, Integer num, Integer num2, Boolean bool) {
+        captionPhotoViewer.editText.setText(charSequence);
+        captionPhotoViewer.done();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(FrameLayout frameLayout, View view) {
+    public static /* synthetic */ void $r8$lambda$GEl9WnoK5INWyzYSeKgjq_sE13g(final CaptionPhotoViewer captionPhotoViewer, FrameLayout frameLayout, View view) {
         String formatPluralString;
-        ItemOptions itemOptions = this.timerPopup;
+        ItemOptions itemOptions = captionPhotoViewer.timerPopup;
         if (itemOptions != null && itemOptions.isShown()) {
-            this.timerPopup.dismiss();
-            this.timerPopup = null;
+            captionPhotoViewer.timerPopup.dismiss();
+            captionPhotoViewer.timerPopup = null;
             return;
         }
-        this.hint.hide();
-        ItemOptions makeOptions = ItemOptions.makeOptions(frameLayout, new DarkThemeResourceProvider(), this.timerButton);
-        this.timerPopup = makeOptions;
+        captionPhotoViewer.hint.hide();
+        ItemOptions makeOptions = ItemOptions.makeOptions(frameLayout, new DarkThemeResourceProvider(), captionPhotoViewer.timerButton);
+        captionPhotoViewer.timerPopup = makeOptions;
         makeOptions.setDimAlpha(0);
-        this.timerPopup.addText(LocaleController.getString(R.string.TimerPeriodHint), 13, AndroidUtilities.dp(200.0f));
-        this.timerPopup.addGap();
-        for (final int i : this.values) {
+        captionPhotoViewer.timerPopup.addText(LocaleController.getString(R.string.TimerPeriodHint), 13, AndroidUtilities.dp(200.0f));
+        captionPhotoViewer.timerPopup.addGap();
+        for (final int i : captionPhotoViewer.values) {
             if (i == 0) {
                 formatPluralString = LocaleController.getString(R.string.TimerPeriodDoNotDelete);
             } else if (i == Integer.MAX_VALUE) {
@@ -230,17 +227,17 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             } else {
                 formatPluralString = LocaleController.formatPluralString("Seconds", i, new Object[0]);
             }
-            this.timerPopup.add(0, formatPluralString, new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda9
+            captionPhotoViewer.timerPopup.add(0, formatPluralString, new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionPhotoViewer.this.lambda$new$3(i);
+                    CaptionPhotoViewer.this.changeTimer(i);
                 }
             });
-            if (this.timer == i) {
-                this.timerPopup.putCheck();
+            if (captionPhotoViewer.timer == i) {
+                captionPhotoViewer.timerPopup.putCheck();
             }
         }
-        this.timerPopup.show();
+        captionPhotoViewer.timerPopup.show();
     }
 
     @Override // org.telegram.ui.Stories.recorder.CaptionContainerView
@@ -270,11 +267,10 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5() {
-        if (this.moveButtonExpanded) {
-            this.moveButtonExpanded = false;
-            invalidate();
+    public static /* synthetic */ void $r8$lambda$7tvACeO8We2NFs09tXdWuw7fu6s(CaptionPhotoViewer captionPhotoViewer) {
+        if (captionPhotoViewer.moveButtonExpanded) {
+            captionPhotoViewer.moveButtonExpanded = false;
+            captionPhotoViewer.invalidate();
         }
     }
 
@@ -351,7 +347,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             this.addPhotoButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(-8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionPhotoViewer.this.lambda$setAddPhotoVisible$6(z);
+                    CaptionPhotoViewer.$r8$lambda$IN9r1TmC2UUyFns8xPbj_1CWCps(CaptionPhotoViewer.this, z);
                 }
             }).start();
         } else {
@@ -368,12 +364,12 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         this.editText.setLayoutParams(marginLayoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setAddPhotoVisible$6(boolean z) {
+    public static /* synthetic */ void $r8$lambda$IN9r1TmC2UUyFns8xPbj_1CWCps(CaptionPhotoViewer captionPhotoViewer, boolean z) {
         if (z) {
-            return;
+            captionPhotoViewer.getClass();
+        } else {
+            captionPhotoViewer.timerButton.setVisibility(8);
         }
-        this.timerButton.setVisibility(8);
     }
 
     @Override // org.telegram.ui.Stories.recorder.CaptionContainerView
@@ -390,8 +386,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.Stories.recorder.CaptionContainerView
-    /* renamed from: onTextChange */
-    public void lambda$new$1() {
+    public void onTextChange() {
         Runnable runnable = this.applyCaption;
         if (runnable != null) {
             runnable.run();
@@ -407,7 +402,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             this.timerButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionPhotoViewer.this.lambda$setTimerVisible$7(z);
+                    CaptionPhotoViewer.$r8$lambda$urkB2IxFGOTvJHjki-ChnjNPiq4(CaptionPhotoViewer.this, z);
                 }
             }).start();
         } else {
@@ -423,12 +418,12 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         this.editText.setLayoutParams(marginLayoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setTimerVisible$7(boolean z) {
+    public static /* synthetic */ void $r8$lambda$urkB2IxFGOTvJHjki-ChnjNPiq4(CaptionPhotoViewer captionPhotoViewer, boolean z) {
         if (z) {
-            return;
+            captionPhotoViewer.getClass();
+        } else {
+            captionPhotoViewer.timerButton.setVisibility(8);
         }
-        this.timerButton.setVisibility(8);
     }
 
     public boolean hasTimer() {
@@ -445,8 +440,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: changeTimer, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$3(int i) {
+    public void changeTimer(int i) {
         CharSequence replaceTags;
         if (this.timer == i) {
             return;
@@ -606,7 +600,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         this.aiButton.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.6f).scaleY(z ? 1.0f : 0.6f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                CaptionPhotoViewer.this.lambda$showAiButton$8(z);
+                CaptionPhotoViewer.$r8$lambda$ezVo2wPMVjn64G-4J3AEOYseNMg(CaptionPhotoViewer.this, z);
             }
         }).start();
         if (z) {
@@ -629,7 +623,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
                 this.aiHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CaptionPhotoViewer.this.lambda$showAiButton$9(hintView22);
+                        CaptionPhotoViewer.this.removeView(hintView22);
                     }
                 });
                 this.aiHint.setDuration(4000L);
@@ -646,16 +640,11 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAiButton$8(boolean z) {
+    public static /* synthetic */ void $r8$lambda$ezVo2wPMVjn64G-4J3AEOYseNMg(CaptionPhotoViewer captionPhotoViewer, boolean z) {
         if (z) {
-            return;
+            captionPhotoViewer.getClass();
+        } else {
+            captionPhotoViewer.aiButton.setVisibility(8);
         }
-        this.aiButton.setVisibility(8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAiButton$9(HintView2 hintView2) {
-        removeView(hintView2);
     }
 }

@@ -1,36 +1,39 @@
 package j$.util.stream;
 
-import java.util.function.IntConsumer;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class V1 extends Y1 implements k2 {
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void p(Object obj) {
-        m((Integer) obj);
+public final class V1 extends X1 {
+    @Override // j$.util.stream.X1, j$.util.stream.Stream
+    public final void forEach(Consumer consumer) {
+        if (!this.a.k) {
+            O().forEachRemaining(consumer);
+        } else {
+            super.forEach(consumer);
+        }
     }
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
+    @Override // j$.util.stream.X1, j$.util.stream.Stream
+    public final void forEachOrdered(Consumer consumer) {
+        if (!this.a.k) {
+            O().forEachRemaining(consumer);
+        } else {
+            super.forEachOrdered(consumer);
+        }
     }
 
-    @Override // j$.util.stream.k2
-    public final /* synthetic */ void m(Integer num) {
-        w0.g(this, num);
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        return !S2.ORDERED.q(this.f) ? this : new U1(this, S2.r, 1);
     }
 
-    @Override // j$.util.stream.T1, java.util.function.Supplier
-    public final Object get() {
-        return Long.valueOf(this.b);
+    @Override // j$.util.stream.a
+    public final boolean L() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // j$.util.stream.S1
-    public final void g(S1 s1) {
-        this.b += ((Y1) s1).b;
-    }
-
-    @Override // j$.util.stream.Y1, j$.util.stream.m2
-    public final void accept(int i) {
-        this.b++;
+    @Override // j$.util.stream.a
+    public final f2 M(int i, f2 f2Var) {
+        throw new UnsupportedOperationException();
     }
 }

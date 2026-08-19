@@ -63,12 +63,15 @@ public enum FieldNamingPolicy implements FieldNamingStrategy {
 
     static String upperCaseFirstLetter(String str) {
         int length = str.length();
-        for (int i = 0; i < length; i++) {
+        int i = 0;
+        while (true) {
+            if (i >= length) {
+                break;
+            }
             char charAt = str.charAt(i);
-            if (Character.isLetter(charAt)) {
-                if (Character.isUpperCase(charAt)) {
-                    return str;
-                }
+            if (!Character.isLetter(charAt)) {
+                i++;
+            } else if (!Character.isUpperCase(charAt)) {
                 char upperCase = Character.toUpperCase(charAt);
                 if (i == 0) {
                     return upperCase + str.substring(1);

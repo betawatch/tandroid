@@ -11,7 +11,7 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 public class HlsMultivariantPlaylist extends HlsPlaylist {
-    public static final HlsMultivariantPlaylist EMPTY = new HlsMultivariantPlaylist("", Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), null, Collections.emptyList(), false, Collections.emptyMap(), Collections.emptyList());
+    public static final HlsMultivariantPlaylist EMPTY;
     public final List audios;
     public final List closedCaptions;
     public final List mediaPlaylistUrls;
@@ -22,6 +22,11 @@ public class HlsMultivariantPlaylist extends HlsPlaylist {
     public final Map variableDefinitions;
     public final List variants;
     public final List videos;
+
+    static {
+        List list = Collections.EMPTY_LIST;
+        EMPTY = new HlsMultivariantPlaylist("", list, list, list, list, list, list, null, list, false, Collections.EMPTY_MAP, list);
+    }
 
     public static final class Variant {
         public final String audioGroupId;
@@ -79,11 +84,17 @@ public class HlsMultivariantPlaylist extends HlsPlaylist {
 
     @Override // com.google.android.exoplayer2.offline.FilterableManifest
     public HlsMultivariantPlaylist copy(List list) {
-        return new HlsMultivariantPlaylist(this.baseUri, this.tags, copyStreams(this.variants, 0, list), Collections.emptyList(), copyStreams(this.audios, 1, list), copyStreams(this.subtitles, 2, list), Collections.emptyList(), this.muxedAudioFormat, this.muxedCaptionFormats, this.hasIndependentSegments, this.variableDefinitions, this.sessionKeyDrmInitData);
+        String str = this.baseUri;
+        List list2 = this.tags;
+        List copyStreams = copyStreams(this.variants, 0, list);
+        List list3 = Collections.EMPTY_LIST;
+        return new HlsMultivariantPlaylist(str, list2, copyStreams, list3, copyStreams(this.audios, 1, list), copyStreams(this.subtitles, 2, list), list3, this.muxedAudioFormat, this.muxedCaptionFormats, this.hasIndependentSegments, this.variableDefinitions, this.sessionKeyDrmInitData);
     }
 
     public static HlsMultivariantPlaylist createSingleVariantMultivariantPlaylist(String str) {
-        return new HlsMultivariantPlaylist("", Collections.emptyList(), Collections.singletonList(Variant.createMediaPlaylistVariantUrl(Uri.parse(str))), Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), null, null, false, Collections.emptyMap(), Collections.emptyList());
+        List singletonList = Collections.singletonList(Variant.createMediaPlaylistVariantUrl(Uri.parse(str)));
+        List list = Collections.EMPTY_LIST;
+        return new HlsMultivariantPlaylist("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
     }
 
     private static List getMediaPlaylistUrls(List list, List list2, List list3, List list4, List list5) {

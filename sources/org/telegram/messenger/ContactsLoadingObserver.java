@@ -14,7 +14,7 @@ public final class ContactsLoadingObserver {
     private final NotificationCenter.NotificationCenterDelegate observer = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.ContactsLoadingObserver$$ExternalSyntheticLambda0
         @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
         public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-            ContactsLoadingObserver.this.lambda$new$0(i, i2, objArr);
+            ContactsLoadingObserver.$r8$lambda$U2XpPtohMROBuh2rWH3LHh87PCE(ContactsLoadingObserver.this, i, i2, objArr);
         }
     };
     private final Runnable releaseRunnable;
@@ -28,10 +28,10 @@ public final class ContactsLoadingObserver {
         new ContactsLoadingObserver(callback).start(j);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i, int i2, Object[] objArr) {
+    public static /* synthetic */ void $r8$lambda$U2XpPtohMROBuh2rWH3LHh87PCE(ContactsLoadingObserver contactsLoadingObserver, int i, int i2, Object[] objArr) {
+        contactsLoadingObserver.getClass();
         if (i == NotificationCenter.contactsDidLoad) {
-            onContactsLoadingStateUpdated(i2, false);
+            contactsLoadingObserver.onContactsLoadingStateUpdated(i2, false);
         }
     }
 
@@ -42,17 +42,12 @@ public final class ContactsLoadingObserver {
         this.releaseRunnable = new Runnable() { // from class: org.telegram.messenger.ContactsLoadingObserver$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ContactsLoadingObserver.this.lambda$new$1();
+                r0.onContactsLoadingStateUpdated(ContactsLoadingObserver.this.currentAccount, true);
             }
         };
         this.contactsController = ContactsController.getInstance(i);
         this.notificationCenter = NotificationCenter.getInstance(i);
         this.handler = new Handler(Looper.myLooper());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        onContactsLoadingStateUpdated(this.currentAccount, true);
     }
 
     public void start(long j) {
@@ -78,7 +73,8 @@ public final class ContactsLoadingObserver {
         this.released = true;
     }
 
-    private boolean onContactsLoadingStateUpdated(int i, boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean onContactsLoadingStateUpdated(int i, boolean z) {
         if (this.released) {
             return false;
         }

@@ -1,16 +1,8 @@
 package j$.util.stream;
 
-import java.util.EnumMap;
-
 /* loaded from: classes2.dex */
-final class Y2 {
-    final EnumMap a;
+public abstract class Y2 extends a3 {
+    public int b;
 
-    Y2(EnumMap enumMap) {
-        this.a = enumMap;
-    }
-
-    final void a(Z2 z2) {
-        this.a.put((EnumMap) z2, (Z2) 1);
-    }
+    public abstract void b(Object obj, long j);
 }

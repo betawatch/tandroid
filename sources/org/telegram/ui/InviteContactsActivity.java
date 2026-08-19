@@ -124,7 +124,8 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
     }
 
-    private class SpansContainer extends ViewGroup {
+    /* JADX INFO: Access modifiers changed from: private */
+    class SpansContainer extends ViewGroup {
         private View addingSpan;
         private boolean animationStarted;
         private final ArrayList animators;
@@ -137,9 +138,14 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             this.animators = new ArrayList();
         }
 
+        /* JADX WARN: Removed duplicated region for block: B:32:0x00d5  */
         @Override // android.view.View
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         protected void onMeasure(int i, int i2) {
             int min;
+            char c;
             int childCount = getChildCount();
             int size = View.MeasureSpec.getSize(i);
             int dp = size - AndroidUtilities.dp(26.0f);
@@ -166,24 +172,36 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                         if (childAt == view) {
                             childAt.setTranslationX(AndroidUtilities.dp(5.0f) + i5);
                             childAt.setTranslationY(dp3);
-                        } else if (view != null) {
-                            float f = dp4;
-                            if (childAt.getTranslationX() != f) {
-                                this.animators.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, f));
-                            }
-                            float f2 = dp2;
-                            if (childAt.getTranslationY() != f2) {
-                                this.animators.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, f2));
-                            }
-                            i3 = Math.max(i3, dp2);
                         } else {
-                            childAt.setTranslationX(dp4);
-                            childAt.setTranslationY(dp2);
-                            i3 = Math.max(i3, dp2);
+                            if (view != null) {
+                                float f = dp4;
+                                if (childAt.getTranslationX() != f) {
+                                    c = 0;
+                                    this.animators.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, f));
+                                } else {
+                                    c = 0;
+                                }
+                                float f2 = dp2;
+                                if (childAt.getTranslationY() != f2) {
+                                    ArrayList arrayList = this.animators;
+                                    Property property = View.TRANSLATION_Y;
+                                    float[] fArr = new float[1];
+                                    fArr[c] = f2;
+                                    arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, fArr));
+                                }
+                                i3 = Math.max(i3, dp2);
+                            } else {
+                                childAt.setTranslationX(dp4);
+                                childAt.setTranslationY(dp2);
+                                i3 = Math.max(i3, dp2);
+                            }
+                            if (childAt != this.removingSpan) {
+                                i4 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
+                            }
+                            i5 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
                         }
                     }
                     if (childAt != this.removingSpan) {
-                        i4 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
                     }
                     i5 += childAt.getMeasuredWidth() + AndroidUtilities.dp(9.0f);
                 }
@@ -194,13 +212,13 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 Point point = AndroidUtilities.displaySize;
                 min = (Math.min(point.x, point.y) - AndroidUtilities.dp(158.0f)) / 3;
             }
-            boolean z = (i3 > 0 ? i3 + AndroidUtilities.dp(34.0f) : 0) > InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f);
+            boolean z = (i3 > 0 ? AndroidUtilities.dp(34.0f) + i3 : 0) > InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f);
             if (dp - i4 < min && !z) {
                 dp2 += AndroidUtilities.dp(34.0f);
                 i3 = Math.max(i3, dp2);
                 i4 = 0;
             }
-            boolean z2 = (i3 > 0 ? i3 + AndroidUtilities.dp(34.0f) : 0) > InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f);
+            boolean z2 = (i3 > 0 ? AndroidUtilities.dp(34.0f) + i3 : 0) > InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f);
             if (!this.animationStarted) {
                 int dp5 = dp3 + AndroidUtilities.dp(28.0f);
                 InviteContactsActivity.this.fieldY = dp2;
@@ -213,7 +231,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     this.containerHeight = dp5;
                 }
             }
-            InviteContactsActivity.this.animatorSelectorContainerHeight.animateTo(z2 ? InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f) : Math.max(AndroidUtilities.dp(37.0f), Math.min(i3 > 0 ? i3 + AndroidUtilities.dp(31.0f) : 0, InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f))));
+            InviteContactsActivity.this.animatorSelectorContainerHeight.animateTo(z2 ? InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f) : Math.max(AndroidUtilities.dp(37.0f), Math.min(i3 > 0 ? AndroidUtilities.dp(31.0f) + i3 : 0, InviteContactsActivity.this.maxSize - AndroidUtilities.dp(12.0f))));
             if (InviteContactsActivity.this.searchField != null) {
                 InviteContactsActivity.this.searchField.setSpansBounds(Math.max(0, childCount - (this.removingSpan == null ? 0 : 1)), Math.max(0, i3 - AndroidUtilities.dp(6.0f)), i4, z2);
             }
@@ -378,7 +396,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 if (Build.VERSION.SDK_INT >= 31 && InviteContactsActivity.this.scrollableViewNoiseSuppressor != null) {
-                    InviteContactsActivity.this.lambda$createView$2();
+                    InviteContactsActivity.this.blur3_InvalidateBlur();
                     int measuredWidth = getMeasuredWidth();
                     int measuredHeight = getMeasuredHeight();
                     if (InviteContactsActivity.this.iBlur3SourceGlassFrosted != null && !InviteContactsActivity.this.iBlur3SourceGlassFrosted.inRecording() && (InviteContactsActivity.this.iBlur3SourceGlassFrosted.needUpdateDisplayList(measuredWidth, measuredHeight) || InviteContactsActivity.this.iBlur3Invalidated)) {
@@ -472,7 +490,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
-                InviteContactsActivity.this.lambda$createView$0(view, i2);
+                InviteContactsActivity.$r8$lambda$-utGCP4ZGu_1zP3r2NUqXP1hqe8(InviteContactsActivity.this, view, i2);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.InviteContactsActivity.4
@@ -487,7 +505,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     return;
                 }
                 InviteContactsActivity.this.scrollableViewNoiseSuppressor.onScrolled(i2, i3);
-                InviteContactsActivity.this.lambda$createView$2();
+                InviteContactsActivity.this.blur3_InvalidateBlur();
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -508,7 +526,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InviteContactsActivity.this.lambda$createView$1(view);
+                InviteContactsActivity.$r8$lambda$8IQgDY8q_lmIwaXjncjYKmThU-8(InviteContactsActivity.this, view);
             }
         });
         this.actionBar.setBackgroundColor(getThemedColor(i));
@@ -518,7 +536,12 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.listView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                InviteContactsActivity.this.lambda$createView$3();
+                r0.listView.postOnAnimation(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda5
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        InviteContactsActivity.this.blur3_InvalidateBlur();
+                    }
+                });
             }
         });
         checkUi_emptyViewVisible();
@@ -532,17 +555,18 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$-utGCP4ZGu_1zP3r2NUqXP1hqe8(InviteContactsActivity inviteContactsActivity, View view, int i) {
         InviteUserCell inviteUserCell;
         ContactsController.Contact contact;
-        if (i == 0 && !this.searching) {
+        if (i != 0) {
+            inviteContactsActivity.getClass();
+        } else if (!inviteContactsActivity.searching) {
             try {
                 Intent intent = new Intent("android.intent.action.SEND");
                 intent.setType("text/plain");
-                String inviteText = ContactsController.getInstance(this.currentAccount).getInviteText(0);
+                String inviteText = ContactsController.getInstance(inviteContactsActivity.currentAccount).getInviteText(0);
                 intent.putExtra("android.intent.extra.TEXT", inviteText);
-                getParentActivity().startActivityForResult(Intent.createChooser(intent, inviteText), 500);
+                inviteContactsActivity.getParentActivity().startActivityForResult(Intent.createChooser(intent, inviteText), 500);
                 return;
             } catch (Exception e) {
                 FileLog.e(e);
@@ -550,54 +574,44 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             }
         }
         if ((view instanceof InviteUserCell) && (contact = (inviteUserCell = (InviteUserCell) view).getContact()) != null) {
-            GroupCreateSpan groupCreateSpan = (GroupCreateSpan) this.selectedContacts.get(contact.key);
+            GroupCreateSpan groupCreateSpan = (GroupCreateSpan) inviteContactsActivity.selectedContacts.get(contact.key);
             if (groupCreateSpan != null) {
-                this.spansContainer.removeSpan(groupCreateSpan);
+                inviteContactsActivity.spansContainer.removeSpan(groupCreateSpan);
             } else {
-                GroupCreateSpan groupCreateSpan2 = new GroupCreateSpan(getContext(), null, contact, true, this.resourceProvider);
-                this.spansContainer.addSpan(groupCreateSpan2);
-                groupCreateSpan2.setOnClickListener(this);
+                GroupCreateSpan groupCreateSpan2 = new GroupCreateSpan(inviteContactsActivity.getContext(), null, contact, true, inviteContactsActivity.resourceProvider);
+                inviteContactsActivity.spansContainer.addSpan(groupCreateSpan2);
+                groupCreateSpan2.setOnClickListener(inviteContactsActivity);
             }
-            updateHint();
-            if (this.searching || this.searchWas) {
+            inviteContactsActivity.updateHint();
+            if (inviteContactsActivity.searching || inviteContactsActivity.searchWas) {
                 return;
             }
             inviteUserCell.setChecked(groupCreateSpan == null, true);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(View view) {
+    public static /* synthetic */ void $r8$lambda$8IQgDY8q_lmIwaXjncjYKmThU-8(InviteContactsActivity inviteContactsActivity, View view) {
+        inviteContactsActivity.getClass();
         try {
             StringBuilder sb = new StringBuilder();
             int i = 0;
-            for (int i2 = 0; i2 < this.allSpans.size(); i2++) {
-                ContactsController.Contact contact = ((GroupCreateSpan) this.allSpans.get(i2)).getContact();
+            for (int i2 = 0; i2 < inviteContactsActivity.allSpans.size(); i2++) {
+                ContactsController.Contact contact = ((GroupCreateSpan) inviteContactsActivity.allSpans.get(i2)).getContact();
                 if (sb.length() != 0) {
                     sb.append(';');
                 }
                 sb.append(contact.phones.get(0));
-                if (i2 == 0 && this.allSpans.size() == 1) {
+                if (i2 == 0 && inviteContactsActivity.allSpans.size() == 1) {
                     i = contact.imported;
                 }
             }
             Intent intent = new Intent("android.intent.action.SENDTO", Uri.parse("smsto:" + sb.toString()));
-            intent.putExtra("sms_body", ContactsController.getInstance(this.currentAccount).getInviteText(i));
-            getParentActivity().startActivityForResult(intent, 500);
+            intent.putExtra("sms_body", ContactsController.getInstance(inviteContactsActivity.currentAccount).getInviteText(i));
+            inviteContactsActivity.getParentActivity().startActivityForResult(intent, 500);
         } catch (Exception e) {
             FileLog.e(e);
         }
-        finishFragment();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3() {
-        this.listView.postOnAnimation(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                InviteContactsActivity.this.lambda$createView$2();
-            }
-        });
+        inviteContactsActivity.finishFragment();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -651,9 +665,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$fetchContacts$4;
-                lambda$fetchContacts$4 = InviteContactsActivity.lambda$fetchContacts$4((ContactsController.Contact) obj, (ContactsController.Contact) obj2);
-                return lambda$fetchContacts$4;
+                return InviteContactsActivity.$r8$lambda$Hq3CwfD8ExYcuUXnPHqgZKkzKSo((ContactsController.Contact) obj, (ContactsController.Contact) obj2);
             }
         });
         StickerEmptyView stickerEmptyView = this.emptyView;
@@ -666,8 +678,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$fetchContacts$4(ContactsController.Contact contact, ContactsController.Contact contact2) {
+    public static /* synthetic */ int $r8$lambda$Hq3CwfD8ExYcuUXnPHqgZKkzKSo(ContactsController.Contact contact, ContactsController.Contact contact2) {
         int i = contact.imported;
         int i2 = contact2.imported;
         if (i > i2) {
@@ -815,14 +826,9 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             InviteContactsActivity.this.scrollView.post(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$SearchField$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InviteContactsActivity.SearchField.this.lambda$setSpansBounds$0(f);
+                    InviteContactsActivity.this.scrollView.smoothScrollTo(0, (int) f);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSpansBounds$0(float f) {
-            InviteContactsActivity.this.scrollView.smoothScrollTo(0, (int) f);
         }
 
         @Override // android.widget.FrameLayout, android.view.View
@@ -956,32 +962,32 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.1.this.lambda$run$1(str);
+                        InviteContactsActivity.InviteAdapter.1.$r8$lambda$VKg6QsYfGuwTzPX8OHjjgq-VF6c(InviteContactsActivity.InviteAdapter.1.this, str);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$run$1(final String str) {
+            public static /* synthetic */ void $r8$lambda$VKg6QsYfGuwTzPX8OHjjgq-VF6c(final 1 r2, final String str) {
+                r2.getClass();
                 Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.1.this.lambda$run$0(str);
+                        InviteContactsActivity.InviteAdapter.1.$r8$lambda$XRE_T9UOkYnPbe1AQxd95pI-Gv4(InviteContactsActivity.InviteAdapter.1.this, str);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            /* JADX WARN: Code restructure failed: missing block: B:32:0x00c6, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:32:0x00c9, code lost:
             
                 if (r11.contains(" " + r14) != false) goto L35;
              */
-            /* JADX WARN: Removed duplicated region for block: B:34:0x00da A[LOOP:1: B:23:0x008a->B:34:0x00da, LOOP_END] */
-            /* JADX WARN: Removed duplicated region for block: B:35:0x00cb A[SYNTHETIC] */
+            /* JADX WARN: Removed duplicated region for block: B:34:0x00dd A[LOOP:1: B:23:0x008d->B:34:0x00dd, LOOP_END] */
+            /* JADX WARN: Removed duplicated region for block: B:35:0x00ce A[SYNTHETIC] */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            public /* synthetic */ void lambda$run$0(String str) {
+            public static /* synthetic */ void $r8$lambda$XRE_T9UOkYnPbe1AQxd95pI-Gv4(1 r16, String str) {
+                r16.getClass();
                 String lowerCase = str.trim().toLowerCase();
                 if (lowerCase.isEmpty()) {
                     InviteAdapter.this.updateSearchResults(new ArrayList(), new ArrayList());
@@ -1040,17 +1046,16 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InviteContactsActivity.InviteAdapter.this.lambda$updateSearchResults$0(arrayList, arrayList2);
+                    InviteContactsActivity.InviteAdapter.$r8$lambda$0SX9W3NcJ7ZcghwYXwk1dHQQoZk(InviteContactsActivity.InviteAdapter.this, arrayList, arrayList2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateSearchResults$0(ArrayList arrayList, ArrayList arrayList2) {
-            if (this.searching) {
-                this.searchResult = arrayList;
-                this.searchResultNames = arrayList2;
-                notifyDataSetChanged();
+        public static /* synthetic */ void $r8$lambda$0SX9W3NcJ7ZcghwYXwk1dHQQoZk(InviteAdapter inviteAdapter, ArrayList arrayList, ArrayList arrayList2) {
+            if (inviteAdapter.searching) {
+                inviteAdapter.searchResult = arrayList;
+                inviteAdapter.searchResultNames = arrayList2;
+                inviteAdapter.notifyDataSetChanged();
                 InviteContactsActivity.this.emptyView.showProgress(false);
             }
         }
@@ -1077,7 +1082,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                InviteContactsActivity.this.lambda$getThemeDescriptions$5();
+                InviteContactsActivity.$r8$lambda$pboujY4wzHxrpB6TVVz18b3X0eM(InviteContactsActivity.this);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -1121,13 +1126,12 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$5() {
-        RecyclerListView recyclerListView = this.listView;
+    public static /* synthetic */ void $r8$lambda$pboujY4wzHxrpB6TVVz18b3X0eM(InviteContactsActivity inviteContactsActivity) {
+        RecyclerListView recyclerListView = inviteContactsActivity.listView;
         if (recyclerListView != null) {
             int childCount = recyclerListView.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                View childAt = this.listView.getChildAt(i);
+                View childAt = inviteContactsActivity.listView.getChildAt(i);
                 if (childAt instanceof InviteUserCell) {
                     ((InviteUserCell) childAt).update(0);
                 }
@@ -1187,8 +1191,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: blur3_InvalidateBlur, reason: merged with bridge method [inline-methods] */
-    public void lambda$createView$2() {
+    public void blur3_InvalidateBlur() {
         if (Build.VERSION.SDK_INT < 31 || this.scrollableViewNoiseSuppressor == null) {
             return;
         }

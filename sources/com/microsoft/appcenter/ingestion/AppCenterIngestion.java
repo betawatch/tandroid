@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 /* loaded from: classes3.dex */
-public class AppCenterIngestion implements Ingestion {
+public class AppCenterIngestion implements Ingestion, AutoCloseable {
     private final HttpClient mHttpClient;
     private final LogSerializer mLogSerializer;
     private String mLogUrl = "https://in.appcenter.ms";

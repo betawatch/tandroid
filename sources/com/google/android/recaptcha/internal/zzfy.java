@@ -40,15 +40,13 @@ final class zzfy extends SuspendLambda implements Function1 {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            zzhk zzhkVar = this.zzb;
-            zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, null);
-            this.zza = 1;
-            obj = zzhj.zze(zzhkVar, 41, zzfxVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
+        if (i != 0) {
+            return obj;
         }
-        return obj;
+        zzhk zzhkVar = this.zzb;
+        zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, null);
+        this.zza = 1;
+        Object zze = zzhj.zze(zzhkVar, 41, zzfxVar, this);
+        return zze == coroutine_suspended ? coroutine_suspended : zze;
     }
 }

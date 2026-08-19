@@ -58,7 +58,7 @@ public final class zaaw implements zabf {
     /* JADX INFO: Access modifiers changed from: private */
     public final void zaA() {
         this.zam = false;
-        this.zaa.zag.zad = Collections.emptySet();
+        this.zaa.zag.zad = Collections.EMPTY_SET;
         for (Api.AnyClientKey anyClientKey : this.zaj) {
             if (!this.zaa.zab.containsKey(anyClientKey)) {
                 zabi zabiVar = this.zaa;
@@ -184,7 +184,7 @@ public final class zaaw implements zabf {
     static /* bridge */ /* synthetic */ Set zao(zaaw zaawVar) {
         ClientSettings clientSettings = zaawVar.zar;
         if (clientSettings == null) {
-            return Collections.emptySet();
+            return Collections.EMPTY_SET;
         }
         HashSet hashSet = new HashSet(clientSettings.getRequiredScopes());
         Map zad = zaawVar.zar.zad();

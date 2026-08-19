@@ -7,7 +7,7 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public interface Graphics2D extends Graphics {
     void draw(Line2D.Float r1);
 

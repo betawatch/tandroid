@@ -67,20 +67,13 @@ final class AutoValue_LogRequest extends LogRequest {
         Integer num;
         String str;
         List list;
+        QosTier qosTier;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof LogRequest)) {
-            return false;
-        }
-        LogRequest logRequest = (LogRequest) obj;
-        if (this.requestTimeMs == logRequest.getRequestTimeMs() && this.requestUptimeMs == logRequest.getRequestUptimeMs() && ((clientInfo = this.clientInfo) != null ? clientInfo.equals(logRequest.getClientInfo()) : logRequest.getClientInfo() == null) && ((num = this.logSource) != null ? num.equals(logRequest.getLogSource()) : logRequest.getLogSource() == null) && ((str = this.logSourceName) != null ? str.equals(logRequest.getLogSourceName()) : logRequest.getLogSourceName() == null) && ((list = this.logEvents) != null ? list.equals(logRequest.getLogEvents()) : logRequest.getLogEvents() == null)) {
-            QosTier qosTier = this.qosTier;
-            if (qosTier == null) {
-                if (logRequest.getQosTier() == null) {
-                    return true;
-                }
-            } else if (qosTier.equals(logRequest.getQosTier())) {
+        if (obj instanceof LogRequest) {
+            LogRequest logRequest = (LogRequest) obj;
+            if (this.requestTimeMs == logRequest.getRequestTimeMs() && this.requestUptimeMs == logRequest.getRequestUptimeMs() && ((clientInfo = this.clientInfo) != null ? clientInfo.equals(logRequest.getClientInfo()) : logRequest.getClientInfo() == null) && ((num = this.logSource) != null ? num.equals(logRequest.getLogSource()) : logRequest.getLogSource() == null) && ((str = this.logSourceName) != null ? str.equals(logRequest.getLogSourceName()) : logRequest.getLogSourceName() == null) && ((list = this.logEvents) != null ? list.equals(logRequest.getLogEvents()) : logRequest.getLogEvents() == null) && ((qosTier = this.qosTier) != null ? qosTier.equals(logRequest.getQosTier()) : logRequest.getQosTier() == null)) {
                 return true;
             }
         }
@@ -90,7 +83,7 @@ final class AutoValue_LogRequest extends LogRequest {
     public int hashCode() {
         long j = this.requestTimeMs;
         long j2 = this.requestUptimeMs;
-        int i = (((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003;
+        int i = (((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003;
         ClientInfo clientInfo = this.clientInfo;
         int hashCode = (i ^ (clientInfo == null ? 0 : clientInfo.hashCode())) * 1000003;
         Integer num = this.logSource;

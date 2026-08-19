@@ -100,43 +100,41 @@ public class SpoilersTextView extends TextView implements TextSelectionHelper.Si
         this.clickDetector = new SpoilersClickDetector(this, this.spoilers, new SpoilersClickDetector.OnSpoilerClickedListener() { // from class: org.telegram.ui.Components.spoilers.SpoilersTextView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.spoilers.SpoilersClickDetector.OnSpoilerClickedListener
             public final void onSpoilerClicked(SpoilerEffect spoilerEffect, float f, float f2) {
-                SpoilersTextView.this.lambda$new$2(z, spoilerEffect, f, f2);
+                SpoilersTextView.$r8$lambda$72CtBnIzp_PVVNlwN_tlhPC9zjM(SpoilersTextView.this, z, spoilerEffect, f, f2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(boolean z, SpoilerEffect spoilerEffect, float f, float f2) {
-        if (this.isSpoilersRevealed || !z) {
+    public static /* synthetic */ void $r8$lambda$72CtBnIzp_PVVNlwN_tlhPC9zjM(final SpoilersTextView spoilersTextView, boolean z, SpoilerEffect spoilerEffect, float f, float f2) {
+        if (spoilersTextView.isSpoilersRevealed || !z) {
             return;
         }
         spoilerEffect.setOnRippleEndCallback(new Runnable() { // from class: org.telegram.ui.Components.spoilers.SpoilersTextView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                SpoilersTextView.this.lambda$new$1();
+                SpoilersTextView.$r8$lambda$CdeZ2FFq2oJpD16Kbv_Kk7Oo5v8(SpoilersTextView.this);
             }
         });
-        float sqrt = (float) Math.sqrt(Math.pow(getWidth(), 2.0d) + Math.pow(getHeight(), 2.0d));
-        Iterator it = this.spoilers.iterator();
+        float sqrt = (float) Math.sqrt(Math.pow(spoilersTextView.getWidth(), 2.0d) + Math.pow(spoilersTextView.getHeight(), 2.0d));
+        Iterator it = spoilersTextView.spoilers.iterator();
         while (it.hasNext()) {
             ((SpoilerEffect) it.next()).startRipple(f, f2, sqrt);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        post(new Runnable() { // from class: org.telegram.ui.Components.spoilers.SpoilersTextView$$ExternalSyntheticLambda3
+    public static /* synthetic */ void $r8$lambda$CdeZ2FFq2oJpD16Kbv_Kk7Oo5v8(final SpoilersTextView spoilersTextView) {
+        spoilersTextView.getClass();
+        spoilersTextView.post(new Runnable() { // from class: org.telegram.ui.Components.spoilers.SpoilersTextView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                SpoilersTextView.this.lambda$new$0();
+                SpoilersTextView.$r8$lambda$eSUj1oM8nCmrR4AeTELm6d34Aqg(SpoilersTextView.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.isSpoilersRevealed = true;
-        invalidateSpoilers();
+    public static /* synthetic */ void $r8$lambda$eSUj1oM8nCmrR4AeTELm6d34Aqg(SpoilersTextView spoilersTextView) {
+        spoilersTextView.isSpoilersRevealed = true;
+        spoilersTextView.invalidateSpoilers();
     }
 
     public void setLoading(CharacterStyle characterStyle) {
@@ -184,7 +182,7 @@ public class SpoilersTextView extends TextView implements TextSelectionHelper.Si
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.spoilers.SpoilersTextView$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SpoilersTextView.this.lambda$dispatchTouchEvent$3(linkSpanDrawable, hit);
+                        SpoilersTextView.$r8$lambda$NPeLUXgd-xoyt4INz4etcRGmgxA(SpoilersTextView.this, linkSpanDrawable, hit);
                     }
                 }, ViewConfiguration.getLongPressTimeout());
                 return true;
@@ -218,15 +216,14 @@ public class SpoilersTextView extends TextView implements TextSelectionHelper.Si
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dispatchTouchEvent$3(LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
-        LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress = this.onLongPressListener;
-        if (onLinkPress == null || this.pressedLink != linkSpanDrawable) {
+    public static /* synthetic */ void $r8$lambda$NPeLUXgd-xoyt4INz4etcRGmgxA(SpoilersTextView spoilersTextView, LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
+        LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress = spoilersTextView.onLongPressListener;
+        if (onLinkPress == null || spoilersTextView.pressedLink != linkSpanDrawable) {
             return;
         }
         onLinkPress.run(clickableSpan);
-        this.pressedLink = null;
-        this.links.clear();
+        spoilersTextView.pressedLink = null;
+        spoilersTextView.links.clear();
     }
 
     @Override // android.widget.TextView

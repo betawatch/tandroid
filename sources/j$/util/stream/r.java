@@ -1,66 +1,28 @@
 package j$.util.stream;
 
-import java.util.function.DoubleConsumer;
-import java.util.function.DoubleFunction;
-import java.util.function.DoublePredicate;
-import java.util.function.DoubleToIntFunction;
-import java.util.function.DoubleToLongFunction;
-import java.util.function.DoubleUnaryOperator;
-
 /* loaded from: classes2.dex */
-final class r extends f2 {
-    public final /* synthetic */ int b;
-    final /* synthetic */ b c;
+public final class r extends W {
+    public final /* synthetic */ int m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r(b bVar, m2 m2Var, int i) {
-        super(m2Var);
-        this.b = i;
-        this.c = bVar;
+    public /* synthetic */ r(a aVar, int i, int i2) {
+        super(aVar, i, 1);
+        this.m = i2;
     }
 
-    @Override // j$.util.stream.f2, j$.util.stream.m2
-    public void l(long j) {
-        switch (this.b) {
-            case 4:
-                this.a.l(-1L);
-                break;
-            default:
-                super.l(j);
-                break;
-        }
-    }
-
-    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        switch (this.b) {
+    @Override // j$.util.stream.a
+    public final f2 M(int i, f2 f2Var) {
+        switch (this.m) {
             case 0:
-                this.a.accept((m2) ((DoubleFunction) ((s) this.c).n).apply(d));
-                return;
+                return new o(this, f2Var, 2);
             case 1:
-                ((t) this.c).getClass();
-                DoubleUnaryOperator doubleUnaryOperator = null;
-                doubleUnaryOperator.applyAsDouble(d);
-                throw null;
+                return new Q(this, f2Var, 2);
             case 2:
-                ((u) this.c).getClass();
-                DoubleToIntFunction doubleToIntFunction = null;
-                doubleToIntFunction.applyAsInt(d);
-                throw null;
+                return f2Var;
             case 3:
-                ((v) this.c).getClass();
-                DoubleToLongFunction doubleToLongFunction = null;
-                doubleToLongFunction.applyAsLong(d);
-                throw null;
-            case 4:
-                ((t) this.c).getClass();
-                DoublePredicate doublePredicate = null;
-                doublePredicate.test(d);
-                throw null;
+                return new Q(this, f2Var, 5);
             default:
-                ((DoubleConsumer) ((x) this.c).n).accept(d);
-                this.a.accept(d);
-                return;
+                return new Z(this, f2Var, 2);
         }
     }
 }

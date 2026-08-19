@@ -19,7 +19,7 @@ public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__Collec
 
     public static List listOf(Object... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
-        return elements.length > 0 ? ArraysKt.asList(elements) : CollectionsKt.emptyList();
+        return elements.length > 0 ? ArraysKt___ArraysJvmKt.asList(elements) : emptyList();
     }
 
     public static List mutableListOf(Object... elements) {
@@ -29,7 +29,7 @@ public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__Collec
 
     public static List listOfNotNull(Object... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
-        return ArraysKt.filterNotNull(elements);
+        return ArraysKt___ArraysKt.filterNotNull(elements);
     }
 
     public static int getLastIndex(List list) {
@@ -41,9 +41,9 @@ public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__Collec
         Intrinsics.checkNotNullParameter(list, "<this>");
         int size = list.size();
         if (size != 0) {
-            return size != 1 ? list : CollectionsKt.listOf(list.get(0));
+            return size != 1 ? list : CollectionsKt__CollectionsJVMKt.listOf(list.get(0));
         }
-        return CollectionsKt.emptyList();
+        return emptyList();
     }
 
     public static void throwIndexOverflow() {

@@ -44,83 +44,82 @@ public abstract class CastSync {
             return;
         }
         try {
-            if (getContext() == null || (sharedInstance = CastContext.getSharedInstance(getContext())) == null) {
-                return;
+            if (getContext() != null && (sharedInstance = CastContext.getSharedInstance(getContext())) != null) {
+                sharedInstance.getSessionManager().addSessionManagerListener(new SessionManagerListener() { // from class: org.telegram.ui.CastSync.1
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionResumeFailed(CastSession castSession, int i2) {
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionResumed(CastSession castSession, boolean z) {
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionResuming(CastSession castSession, String str) {
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionStartFailed(CastSession castSession, int i2) {
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionStarting(CastSession castSession) {
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionSuspended(CastSession castSession, int i2) {
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionEnded(CastSession castSession, int i2) {
+                        CastSync.doSyncVolume(false);
+                        CastSync.syncInterface();
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionEnding(CastSession castSession) {
+                        CastSync.doSyncVolume(false);
+                        CastSync.syncInterface();
+                    }
+
+                    @Override // com.google.android.gms.cast.framework.SessionManagerListener
+                    public void onSessionStarted(CastSession castSession, String str) {
+                        RemoteMediaClient remoteMediaClient;
+                        long currentPosition;
+                        if (castSession == null || (remoteMediaClient = castSession.getRemoteMediaClient()) == null) {
+                            return;
+                        }
+                        AtomicInteger atomicInteger = CastSync.pending;
+                        if (atomicInteger != null) {
+                            atomicInteger.set(0);
+                        }
+                        remoteMediaClient.registerCallback(new RemoteMediaClient.Callback() { // from class: org.telegram.ui.CastSync.1.1
+                            @Override // com.google.android.gms.cast.framework.media.RemoteMediaClient.Callback
+                            public void onStatusUpdated() {
+                                FileLog.d("onStatusUpdated");
+                                CastSync.syncInterface();
+                            }
+
+                            @Override // com.google.android.gms.cast.framework.media.RemoteMediaClient.Callback
+                            public void onMediaError(MediaError mediaError) {
+                                FileLog.e("Chromecast Media Error: " + mediaError);
+                            }
+                        });
+                        remoteMediaClient.queueSetRepeatMode(2, null);
+                        int i2 = i;
+                        if (i2 == 0) {
+                            currentPosition = PhotoViewer.getInstance().getCurrentPosition();
+                        } else {
+                            currentPosition = i2 == 1 ? MediaController.getInstance().getCurrentPosition() : -1L;
+                        }
+                        if (currentPosition >= 0) {
+                            CastSync.seekTo(currentPosition);
+                        }
+                        CastSync.doSyncVolume(true);
+                    }
+                }, CastSession.class);
+                listened = true;
             }
-            sharedInstance.getSessionManager().addSessionManagerListener(new SessionManagerListener() { // from class: org.telegram.ui.CastSync.1
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionResumeFailed(CastSession castSession, int i2) {
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionResumed(CastSession castSession, boolean z) {
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionResuming(CastSession castSession, String str) {
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionStartFailed(CastSession castSession, int i2) {
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionStarting(CastSession castSession) {
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionSuspended(CastSession castSession, int i2) {
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionEnded(CastSession castSession, int i2) {
-                    CastSync.doSyncVolume(false);
-                    CastSync.syncInterface();
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionEnding(CastSession castSession) {
-                    CastSync.doSyncVolume(false);
-                    CastSync.syncInterface();
-                }
-
-                @Override // com.google.android.gms.cast.framework.SessionManagerListener
-                public void onSessionStarted(CastSession castSession, String str) {
-                    RemoteMediaClient remoteMediaClient;
-                    long currentPosition;
-                    if (castSession == null || (remoteMediaClient = castSession.getRemoteMediaClient()) == null) {
-                        return;
-                    }
-                    AtomicInteger atomicInteger = CastSync.pending;
-                    if (atomicInteger != null) {
-                        atomicInteger.set(0);
-                    }
-                    remoteMediaClient.registerCallback(new RemoteMediaClient.Callback() { // from class: org.telegram.ui.CastSync.1.1
-                        @Override // com.google.android.gms.cast.framework.media.RemoteMediaClient.Callback
-                        public void onStatusUpdated() {
-                            FileLog.d("onStatusUpdated");
-                            CastSync.syncInterface();
-                        }
-
-                        @Override // com.google.android.gms.cast.framework.media.RemoteMediaClient.Callback
-                        public void onMediaError(MediaError mediaError) {
-                            FileLog.e("Chromecast Media Error: " + mediaError);
-                        }
-                    });
-                    remoteMediaClient.queueSetRepeatMode(2, null);
-                    int i2 = i;
-                    if (i2 == 0) {
-                        currentPosition = PhotoViewer.getInstance().getCurrentPosition();
-                    } else {
-                        currentPosition = i2 == 1 ? MediaController.getInstance().getCurrentPosition() : -1L;
-                    }
-                    if (currentPosition >= 0) {
-                        CastSync.seekTo(currentPosition);
-                    }
-                    CastSync.doSyncVolume(true);
-                }
-            }, CastSession.class);
-            listened = true;
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -148,15 +147,15 @@ public abstract class CastSync {
         }
         try {
             CastContext sharedInstance = CastContext.getSharedInstance(getContext());
-            if (sharedInstance == null || (currentCastSession = sharedInstance.getSessionManager().getCurrentCastSession()) == null) {
-                return false;
-            }
-            if (!currentCastSession.isConnecting()) {
-                if (!currentCastSession.isConnected()) {
-                    return false;
+            if (sharedInstance != null && (currentCastSession = sharedInstance.getSessionManager().getCurrentCastSession()) != null) {
+                if (currentCastSession.isConnecting()) {
+                    return true;
+                }
+                if (currentCastSession.isConnected()) {
+                    return true;
                 }
             }
-            return true;
+            return false;
         } catch (Exception e) {
             FileLog.e(e);
             return false;
@@ -199,14 +198,9 @@ public abstract class CastSync {
         client.seek(new MediaSeekOptions.Builder().setPosition(j).build()).addStatusListener(new PendingResult.StatusListener() { // from class: org.telegram.ui.CastSync$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.common.api.PendingResult.StatusListener
             public final void onComplete(Status status) {
-                CastSync.lambda$seekTo$0(status);
+                CastSync.pending.decrementAndGet();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$seekTo$0(Status status) {
-        pending.decrementAndGet();
     }
 
     public static void syncPosition(long j) {
@@ -231,14 +225,9 @@ public abstract class CastSync {
         client.setStreamVolume(f).addStatusListener(new PendingResult.StatusListener() { // from class: org.telegram.ui.CastSync$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.common.api.PendingResult.StatusListener
             public final void onComplete(Status status) {
-                CastSync.lambda$setVolume$1(status);
+                CastSync.pending.decrementAndGet();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setVolume$1(Status status) {
-        pending.decrementAndGet();
     }
 
     public static float getVolume() {
@@ -274,27 +263,17 @@ public abstract class CastSync {
             client.play().addStatusListener(new PendingResult.StatusListener() { // from class: org.telegram.ui.CastSync$$ExternalSyntheticLambda0
                 @Override // com.google.android.gms.common.api.PendingResult.StatusListener
                 public final void onComplete(Status status) {
-                    CastSync.lambda$setPlaying$2(status);
+                    CastSync.pending.decrementAndGet();
                 }
             });
         } else {
             client.pause().addStatusListener(new PendingResult.StatusListener() { // from class: org.telegram.ui.CastSync$$ExternalSyntheticLambda1
                 @Override // com.google.android.gms.common.api.PendingResult.StatusListener
                 public final void onComplete(Status status) {
-                    CastSync.lambda$setPlaying$3(status);
+                    CastSync.pending.decrementAndGet();
                 }
             });
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setPlaying$2(Status status) {
-        pending.decrementAndGet();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setPlaying$3(Status status) {
-        pending.decrementAndGet();
     }
 
     public static void setSpeed(float f) {
@@ -309,14 +288,9 @@ public abstract class CastSync {
         client.setPlaybackRate(f).addStatusListener(new PendingResult.StatusListener() { // from class: org.telegram.ui.CastSync$$ExternalSyntheticLambda4
             @Override // com.google.android.gms.common.api.PendingResult.StatusListener
             public final void onComplete(Status status) {
-                CastSync.lambda$setSpeed$4(status);
+                CastSync.pending.decrementAndGet();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setSpeed$4(Status status) {
-        pending.decrementAndGet();
     }
 
     public static boolean isUpdatePending() {

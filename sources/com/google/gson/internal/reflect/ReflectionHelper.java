@@ -96,7 +96,10 @@ public abstract class ReflectionHelper {
     }
 
     public static boolean isAnonymousOrNonStaticLocal(Class cls) {
-        return !isStatic(cls) && (cls.isAnonymousClass() || cls.isLocalClass());
+        if (isStatic(cls)) {
+            return false;
+        }
+        return cls.isAnonymousClass() || cls.isLocalClass();
     }
 
     public static String tryMakeAccessible(Constructor constructor) {

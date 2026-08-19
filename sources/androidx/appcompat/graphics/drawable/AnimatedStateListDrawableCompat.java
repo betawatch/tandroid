@@ -78,9 +78,9 @@ public class AnimatedStateListDrawableCompat extends StateListDrawableCompat imp
         if (transition != null && (visible || z2)) {
             if (z) {
                 transition.start();
-            } else {
-                jumpToCurrentState();
+                return visible;
             }
+            jumpToCurrentState();
         }
         return visible;
     }
@@ -103,7 +103,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawableCompat imp
         int indexOfKeyframe = this.mState.indexOfKeyframe(iArr);
         boolean z = indexOfKeyframe != getCurrentIndex() && (selectTransition(indexOfKeyframe) || selectDrawable(indexOfKeyframe));
         Drawable current = getCurrent();
-        return current != null ? z | current.setState(iArr) : z;
+        return current != null ? current.setState(iArr) | z : z;
     }
 
     private boolean selectTransition(int i) {

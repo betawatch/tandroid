@@ -56,7 +56,7 @@ public final class Api {
 
     public static abstract class BaseClientBuilder {
         public List getImpliedScopes(Object obj) {
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
 
         public int getPriority() {

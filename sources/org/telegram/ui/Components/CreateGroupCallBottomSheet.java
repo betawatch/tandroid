@@ -25,7 +25,6 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.GroupCreateUserCell;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.CreateGroupCallBottomSheet;
 import org.telegram.ui.Components.JoinCallAlert;
 import org.telegram.ui.Components.RecyclerListView;
 
@@ -116,13 +115,13 @@ public class CreateGroupCallBottomSheet extends BottomSheetWithRecyclerListView 
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateGroupCallBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateGroupCallBottomSheet.this.lambda$new$0(view);
+                CreateGroupCallBottomSheet.$r8$lambda$CYAEiO_2cpVXuO37hNPmhrHj-Wo(CreateGroupCallBottomSheet.this, view);
             }
         });
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateGroupCallBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateGroupCallBottomSheet.this.lambda$new$1(view);
+                CreateGroupCallBottomSheet.$r8$lambda$eHvArFx-BCULSOIdXzQEcgjei4E(CreateGroupCallBottomSheet.this, view);
             }
         });
         RecyclerListView recyclerListView = this.recyclerListView;
@@ -131,37 +130,35 @@ public class CreateGroupCallBottomSheet extends BottomSheetWithRecyclerListView 
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.CreateGroupCallBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                CreateGroupCallBottomSheet.this.lambda$new$2(view, i3);
+                CreateGroupCallBottomSheet.$r8$lambda$AqPyUcpcBSvQZbXifhcrSL4Jmws(CreateGroupCallBottomSheet.this, view, i3);
             }
         });
         fixNavigationBar();
         updateTitle();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.selectAfterDismiss = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(this.selectedPeer));
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$CYAEiO_2cpVXuO37hNPmhrHj-Wo(CreateGroupCallBottomSheet createGroupCallBottomSheet, View view) {
+        createGroupCallBottomSheet.selectAfterDismiss = MessagesController.getInstance(createGroupCallBottomSheet.currentAccount).getInputPeer(MessageObject.getPeerId(createGroupCallBottomSheet.selectedPeer));
+        createGroupCallBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        this.selectAfterDismiss = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(this.selectedPeer));
-        this.isScheduleSelected = true;
-        lambda$new$0();
+    public static /* synthetic */ void $r8$lambda$eHvArFx-BCULSOIdXzQEcgjei4E(CreateGroupCallBottomSheet createGroupCallBottomSheet, View view) {
+        createGroupCallBottomSheet.selectAfterDismiss = MessagesController.getInstance(createGroupCallBottomSheet.currentAccount).getInputPeer(MessageObject.getPeerId(createGroupCallBottomSheet.selectedPeer));
+        createGroupCallBottomSheet.isScheduleSelected = true;
+        createGroupCallBottomSheet.dismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$AqPyUcpcBSvQZbXifhcrSL4Jmws(CreateGroupCallBottomSheet createGroupCallBottomSheet, View view, int i) {
         if (i <= 3) {
+            createGroupCallBottomSheet.getClass();
             return;
         }
-        this.selectedPeer = (TLRPC.Peer) this.chats.get(i - 4);
+        createGroupCallBottomSheet.selectedPeer = (TLRPC.Peer) createGroupCallBottomSheet.chats.get(i - 4);
         if (view instanceof GroupCreateUserCell) {
             ((GroupCreateUserCell) view).setChecked(true, true);
         }
-        for (int i2 = 0; i2 < this.recyclerListView.getChildCount(); i2++) {
-            View childAt = this.recyclerListView.getChildAt(i2);
+        for (int i2 = 0; i2 < createGroupCallBottomSheet.recyclerListView.getChildCount(); i2++) {
+            View childAt = createGroupCallBottomSheet.recyclerListView.getChildAt(i2);
             if (childAt != view && (childAt instanceof GroupCreateUserCell)) {
                 ((GroupCreateUserCell) childAt).setChecked(false, true);
             }
@@ -260,15 +257,10 @@ public class CreateGroupCallBottomSheet extends BottomSheetWithRecyclerListView 
                 ((TextInfoPrivacyCell) viewHolder.itemView).setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.VoipChatStreamWithAnotherApp), Theme.key_windowBackgroundWhiteBlueHeader, 0, new Runnable() { // from class: org.telegram.ui.Components.CreateGroupCallBottomSheet$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CreateGroupCallBottomSheet.2.this.lambda$onBindViewHolder$0();
+                        CreateRtmpStreamBottomSheet.show(CreateGroupCallBottomSheet.this.selectedPeer, CreateGroupCallBottomSheet.this.fragment, CreateGroupCallBottomSheet.this.dialogId, CreateGroupCallBottomSheet.this.chats.size() > 1, CreateGroupCallBottomSheet.this.joinCallDelegate);
                     }
                 }), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0() {
-            CreateRtmpStreamBottomSheet.show(CreateGroupCallBottomSheet.this.selectedPeer, CreateGroupCallBottomSheet.this.fragment, CreateGroupCallBottomSheet.this.dialogId, CreateGroupCallBottomSheet.this.chats.size() > 1, CreateGroupCallBottomSheet.this.joinCallDelegate);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter

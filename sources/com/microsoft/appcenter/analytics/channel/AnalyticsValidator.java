@@ -13,7 +13,6 @@ import com.microsoft.appcenter.ingestion.models.properties.StringTypedProperty;
 import com.microsoft.appcenter.ingestion.models.properties.TypedProperty;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
@@ -58,17 +57,12 @@ public class AnalyticsValidator extends AbstractChannelListener {
             return null;
         }
         HashMap hashMap = new HashMap();
-        Iterator it = map.entrySet().iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                break;
-            }
-            Map.Entry entry = (Map.Entry) it.next();
+        for (Map.Entry entry : map.entrySet()) {
             String str3 = (String) entry.getKey();
             String str4 = (String) entry.getValue();
             if (hashMap.size() >= 20) {
                 AppCenterLog.warn("AppCenterAnalytics", String.format("%s '%s' : properties cannot contain more than %s items. Skipping other properties.", str2, str, 20));
-                break;
+                return hashMap;
             }
             if (str3 == null || str3.isEmpty()) {
                 AppCenterLog.warn("AppCenterAnalytics", String.format("%s '%s' : a property key cannot be null or empty. Property will be skipped.", str2, str));

@@ -115,17 +115,26 @@ final class zzm extends BroadcastReceiver {
     }
 
     public final synchronized void zzb(Context context, IntentFilter intentFilter, String str) {
+        zzm zzmVar;
         try {
-            if (this.zzb) {
-                return;
+            try {
+                if (this.zzb) {
+                    return;
+                }
+                if (Build.VERSION.SDK_INT >= 33) {
+                    zzmVar = this;
+                    context.registerReceiver(zzmVar, intentFilter, "com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST", null, true != this.zzc ? 4 : 2);
+                } else {
+                    zzmVar = this;
+                    context.registerReceiver(this, intentFilter, "com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST", null);
+                }
+                zzmVar.zzb = true;
+            } catch (Throwable th) {
+                th = th;
+                throw th;
             }
-            if (Build.VERSION.SDK_INT >= 33) {
-                context.registerReceiver(this, intentFilter, "com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST", null, true != this.zzc ? 4 : 2);
-            } else {
-                context.registerReceiver(this, intentFilter, "com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST", null);
-            }
-            this.zzb = true;
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
+            th = th2;
             throw th;
         }
     }

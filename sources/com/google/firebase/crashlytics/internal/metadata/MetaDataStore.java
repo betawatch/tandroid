@@ -159,7 +159,7 @@ class MetaDataStore {
                             Logger.getLogger().w("Error deserializing user metadata.", e);
                             safeDeleteCorruptFile(internalKeysFileForSession);
                             CommonUtils.closeOrLog(fileInputStream, "Failed to close user metadata file.");
-                            return Collections.emptyMap();
+                            return Collections.EMPTY_MAP;
                         }
                     } catch (Throwable th) {
                         th = th;
@@ -178,7 +178,7 @@ class MetaDataStore {
             }
         }
         safeDeleteCorruptFile(internalKeysFileForSession);
-        return Collections.emptyMap();
+        return Collections.EMPTY_MAP;
     }
 
     public List readRolloutsState(String str) {
@@ -186,7 +186,7 @@ class MetaDataStore {
         File rolloutsStateForSession = getRolloutsStateForSession(str);
         if (!rolloutsStateForSession.exists() || rolloutsStateForSession.length() == 0) {
             safeDeleteCorruptFile(rolloutsStateForSession);
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         }
         FileInputStream fileInputStream2 = null;
         try {
@@ -209,7 +209,7 @@ class MetaDataStore {
             Logger.getLogger().w("Error deserializing rollouts state.", e);
             safeDeleteCorruptFile(rolloutsStateForSession);
             CommonUtils.closeOrLog(fileInputStream2, "Failed to close rollouts state file.");
-            return Collections.emptyList();
+            return Collections.EMPTY_LIST;
         } catch (Throwable th2) {
             th = th2;
             fileInputStream2 = fileInputStream;

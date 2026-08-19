@@ -324,19 +324,19 @@ public class Track {
 
     public void prepare() {
         int i;
+        long j;
+        long j2 = 0;
         this.duration = 0L;
         ArrayList arrayList = new ArrayList(this.samplePresentationTimes);
         Collections.sort(this.samplePresentationTimes, new Comparator() { // from class: org.telegram.messenger.video.Track$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$prepare$0;
-                lambda$prepare$0 = Track.lambda$prepare$0((Track.SamplePresentationTime) obj, (Track.SamplePresentationTime) obj2);
-                return lambda$prepare$0;
+                return Track.$r8$lambda$PAG47EftV8dtSArRwd94kkDFa4U((Track.SamplePresentationTime) obj, (Track.SamplePresentationTime) obj2);
             }
         });
         this.sampleDurations = new long[this.samplePresentationTimes.size()];
-        long j = Long.MAX_VALUE;
-        long j2 = 0;
+        long j3 = Long.MAX_VALUE;
+        long j4 = 0;
         int i2 = 0;
         boolean z = false;
         while (true) {
@@ -344,40 +344,42 @@ public class Track {
                 break;
             }
             SamplePresentationTime samplePresentationTime = this.samplePresentationTimes.get(i2);
-            long j3 = samplePresentationTime.presentationTime - j2;
-            j2 = samplePresentationTime.presentationTime;
-            this.sampleDurations[samplePresentationTime.index] = j3;
-            int i3 = i2;
+            long j5 = samplePresentationTime.presentationTime - j4;
+            j4 = samplePresentationTime.presentationTime;
+            this.sampleDurations[samplePresentationTime.index] = j5;
             if (samplePresentationTime.index != 0) {
-                this.duration += j3;
+                j = j2;
+                this.duration += j5;
+            } else {
+                j = j2;
             }
-            if (j3 > 0 && j3 < 2147483647L) {
-                j = Math.min(j, j3);
+            if (j5 > j && j5 < 2147483647L) {
+                j3 = Math.min(j3, j5);
             }
-            if (samplePresentationTime.index != i3) {
+            if (samplePresentationTime.index != i2) {
                 z = true;
             }
-            i2 = i3 + 1;
+            i2++;
+            j2 = j;
         }
         long[] jArr = this.sampleDurations;
         if (jArr.length > 0) {
-            jArr[0] = j;
-            this.duration += j;
+            jArr[0] = j3;
+            this.duration += j3;
         }
         for (i = 1; i < arrayList.size(); i++) {
             ((SamplePresentationTime) arrayList.get(i)).dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).dt;
         }
         if (z) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
-            for (int i4 = 0; i4 < this.samplePresentationTimes.size(); i4++) {
-                SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i4);
+            for (int i3 = 0; i3 < this.samplePresentationTimes.size(); i3++) {
+                SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i3);
                 this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.dt);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$prepare$0(SamplePresentationTime samplePresentationTime, SamplePresentationTime samplePresentationTime2) {
+    public static /* synthetic */ int $r8$lambda$PAG47EftV8dtSArRwd94kkDFa4U(SamplePresentationTime samplePresentationTime, SamplePresentationTime samplePresentationTime2) {
         if (samplePresentationTime.presentationTime > samplePresentationTime2.presentationTime) {
             return 1;
         }

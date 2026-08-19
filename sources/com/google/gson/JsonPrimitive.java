@@ -145,10 +145,7 @@ public final class JsonPrimitive extends JsonElement {
                 }
                 double asDouble = getAsDouble();
                 double asDouble2 = jsonPrimitive.getAsDouble();
-                if (asDouble != asDouble2) {
-                    return Double.isNaN(asDouble) && Double.isNaN(asDouble2);
-                }
-                return true;
+                return asDouble == asDouble2 || (Double.isNaN(asDouble) && Double.isNaN(asDouble2));
             }
         }
         return obj2.equals(jsonPrimitive.value);

@@ -1,6 +1,6 @@
 package org.telegram.ui.community;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum CommunityChatType {
     YouAreIn,
     YouCanView,

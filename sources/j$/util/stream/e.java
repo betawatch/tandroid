@@ -1,110 +1,75 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
-import java.util.concurrent.ForkJoinPool;
+import j$.util.stream.IntStream;
+import j$.util.stream.Stream;
+import java.util.Iterator;
+import java.util.stream.DoubleStream;
 
 /* loaded from: classes2.dex */
-abstract class e extends CountedCompleter {
-    private static final int g = ForkJoinPool.getCommonPoolParallelism() << 2;
-    protected final b a;
-    protected Spliterator b;
-    protected long c;
-    protected e d;
-    protected e e;
-    private Object f;
+public final /* synthetic */ class e implements BaseStream, AutoCloseable {
+    public final /* synthetic */ java.util.stream.BaseStream a;
 
-    protected abstract Object a();
-
-    protected abstract e e(Spliterator spliterator);
-
-    protected e(b bVar, Spliterator spliterator) {
-        super(null);
-        this.a = bVar;
-        this.b = spliterator;
-        this.c = 0L;
+    public /* synthetic */ e(java.util.stream.BaseStream baseStream) {
+        this.a = baseStream;
     }
 
-    protected e(e eVar, Spliterator spliterator) {
-        super(eVar);
-        this.b = spliterator;
-        this.a = eVar.a;
-        this.c = eVar.c;
-    }
-
-    public static int b() {
-        return g;
-    }
-
-    public static long g(long j) {
-        long j2 = j / g;
-        if (j2 > 0) {
-            return j2;
+    public static /* synthetic */ BaseStream j(java.util.stream.BaseStream baseStream) {
+        if (baseStream == null) {
+            return null;
         }
-        return 1L;
+        return baseStream instanceof f ? ((f) baseStream).a : baseStream instanceof DoubleStream ? y.j((DoubleStream) baseStream) : baseStream instanceof java.util.stream.IntStream ? IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) baseStream) : baseStream instanceof java.util.stream.LongStream ? g0.j((java.util.stream.LongStream) baseStream) : baseStream instanceof java.util.stream.Stream ? Stream.VivifiedWrapper.convert((java.util.stream.Stream) baseStream) : new e(baseStream);
     }
 
-    @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
-    public Object getRawResult() {
-        return this.f;
+    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        this.a.close();
     }
 
-    @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
-    protected final void setRawResult(Object obj) {
-        if (obj != null) {
-            throw new IllegalStateException();
+    public final /* synthetic */ boolean equals(Object obj) {
+        java.util.stream.BaseStream baseStream = this.a;
+        if (obj instanceof e) {
+            obj = ((e) obj).a;
         }
+        return baseStream.equals(obj);
     }
 
-    protected Object c() {
-        return this.f;
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 
-    protected void f(Object obj) {
-        this.f = obj;
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ boolean isParallel() {
+        return this.a.isParallel();
     }
 
-    protected final boolean d() {
-        return ((e) getCompleter()) == null;
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ Iterator iterator() {
+        return this.a.iterator();
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.b;
-        long estimateSize = spliterator.estimateSize();
-        long j = this.c;
-        if (j == 0) {
-            j = g(estimateSize);
-            this.c = j;
-        }
-        boolean z = false;
-        e eVar = this;
-        while (estimateSize > j && (trySplit = spliterator.trySplit()) != null) {
-            e e = eVar.e(trySplit);
-            eVar.d = e;
-            e e2 = eVar.e(spliterator);
-            eVar.e = e2;
-            eVar.setPendingCount(1);
-            if (z) {
-                spliterator = trySplit;
-                eVar = e;
-                e = e2;
-            } else {
-                eVar = e2;
-            }
-            z = !z;
-            e.fork();
-            estimateSize = spliterator.estimateSize();
-        }
-        eVar.f(eVar.a());
-        eVar.tryComplete();
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ BaseStream onClose(Runnable runnable) {
+        return j(this.a.onClose(runnable));
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public void onCompletion(CountedCompleter countedCompleter) {
-        this.b = null;
-        this.e = null;
-        this.d = null;
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ BaseStream parallel() {
+        return j(this.a.parallel());
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ BaseStream sequential() {
+        return j(this.a.sequential());
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ Spliterator spliterator() {
+        return j$.util.d0.a(this.a.spliterator());
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final /* synthetic */ BaseStream unordered() {
+        return j(this.a.unordered());
     }
 }

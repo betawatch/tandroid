@@ -165,16 +165,14 @@ class GmsRpc {
         return task.continueWith(new CredentialManager$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                String lambda$extractResponseWhenComplete$0;
-                lambda$extractResponseWhenComplete$0 = GmsRpc.this.lambda$extractResponseWhenComplete$0(task2);
-                return lambda$extractResponseWhenComplete$0;
+                return GmsRpc.$r8$lambda$2BiID9R3pQ-goZ0D5C67gHAjWVU(GmsRpc.this, task2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$extractResponseWhenComplete$0(Task task) {
-        return handleResponse((Bundle) task.getResult(IOException.class));
+    public static /* synthetic */ String $r8$lambda$2BiID9R3pQ-goZ0D5C67gHAjWVU(GmsRpc gmsRpc, Task task) {
+        gmsRpc.getClass();
+        return gmsRpc.handleResponse((Bundle) task.getResult(IOException.class));
     }
 
     static boolean isErrorMessageForRetryableError(String str) {

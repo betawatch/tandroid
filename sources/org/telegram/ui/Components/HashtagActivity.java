@@ -282,8 +282,9 @@ public class HashtagActivity extends BaseFragment implements NotificationCenter.
             protected void onSearchStateChanged(boolean z) {
             }
 
+            /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.ui.Components.SharedMediaLayout
-            protected void onTabProgress(float f) {
+            public void onTabProgress(float f) {
             }
 
             @Override // org.telegram.ui.Components.SharedMediaLayout
@@ -340,7 +341,7 @@ public class HashtagActivity extends BaseFragment implements NotificationCenter.
         this.storiesView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.HashtagActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                HashtagActivity.this.lambda$createView$0(view2);
+                HashtagActivity.$r8$lambda$IY1wmhXvyQbc4zldrYMRdtrBB_E(HashtagActivity.this, view2);
             }
         });
         updateStoriesVisible(this.storiesView.set(this.storiesList), false);
@@ -350,10 +351,9 @@ public class HashtagActivity extends BaseFragment implements NotificationCenter.
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$0(View view) {
-        transit(!this.storiesVisible, true);
-        this.storiesView.transition(this.storiesVisible);
+    public static /* synthetic */ void $r8$lambda$IY1wmhXvyQbc4zldrYMRdtrBB_E(HashtagActivity hashtagActivity, View view) {
+        hashtagActivity.transit(!hashtagActivity.storiesVisible, true);
+        hashtagActivity.storiesView.transition(hashtagActivity.storiesVisible);
     }
 
     private void updateStoriesVisible(final boolean z, boolean z2) {
@@ -373,7 +373,7 @@ public class HashtagActivity extends BaseFragment implements NotificationCenter.
         ViewPropertyAnimator duration = this.storiesView.animate().translationY(z ? 0.0f : -AndroidUtilities.dp(48.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.HashtagActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                HashtagActivity.this.lambda$updateStoriesVisible$1(z);
+                HashtagActivity.$r8$lambda$GLQPBFBN7q_i4Pt0IeAmxM4mCuQ(HashtagActivity.this, z);
             }
         }).setDuration(320L);
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
@@ -401,12 +401,12 @@ public class HashtagActivity extends BaseFragment implements NotificationCenter.
         this.contentViewAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateStoriesVisible$1(boolean z) {
+    public static /* synthetic */ void $r8$lambda$GLQPBFBN7q_i4Pt0IeAmxM4mCuQ(HashtagActivity hashtagActivity, boolean z) {
         if (z) {
-            return;
+            hashtagActivity.getClass();
+        } else {
+            hashtagActivity.storiesView.setVisibility(8);
         }
-        this.storiesView.setVisibility(8);
     }
 
     private void transit(final boolean z, boolean z2) {

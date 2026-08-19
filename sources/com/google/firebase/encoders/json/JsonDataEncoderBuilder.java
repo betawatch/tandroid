@@ -24,7 +24,7 @@ public final class JsonDataEncoderBuilder implements EncoderConfig {
     private static final ObjectEncoder DEFAULT_FALLBACK_ENCODER = new ObjectEncoder() { // from class: com.google.firebase.encoders.json.JsonDataEncoderBuilder$$ExternalSyntheticLambda0
         @Override // com.google.firebase.encoders.ObjectEncoder
         public final void encode(Object obj, Object obj2) {
-            JsonDataEncoderBuilder.lambda$static$0(obj, (ObjectEncoderContext) obj2);
+            JsonDataEncoderBuilder.$r8$lambda$bnoichjKU0v4bRcIU8iyVmXGe3M(obj, (ObjectEncoderContext) obj2);
         }
     };
     private static final ValueEncoder STRING_ENCODER = new ValueEncoder() { // from class: com.google.firebase.encoders.json.JsonDataEncoderBuilder$$ExternalSyntheticLambda1
@@ -36,7 +36,7 @@ public final class JsonDataEncoderBuilder implements EncoderConfig {
     private static final ValueEncoder BOOLEAN_ENCODER = new ValueEncoder() { // from class: com.google.firebase.encoders.json.JsonDataEncoderBuilder$$ExternalSyntheticLambda2
         @Override // com.google.firebase.encoders.ValueEncoder
         public final void encode(Object obj, Object obj2) {
-            JsonDataEncoderBuilder.lambda$static$2((Boolean) obj, (ValueEncoderContext) obj2);
+            ((ValueEncoderContext) obj2).add(((Boolean) obj).booleanValue());
         }
     };
     private static final TimestampEncoder TIMESTAMP_ENCODER = new TimestampEncoder();
@@ -45,8 +45,7 @@ public final class JsonDataEncoderBuilder implements EncoderConfig {
     private ObjectEncoder fallbackEncoder = DEFAULT_FALLBACK_ENCODER;
     private boolean ignoreNullValues = false;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$0(Object obj, ObjectEncoderContext objectEncoderContext) {
+    public static /* synthetic */ void $r8$lambda$bnoichjKU0v4bRcIU8iyVmXGe3M(Object obj, ObjectEncoderContext objectEncoderContext) {
         throw new EncodingException("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
     }
 
@@ -66,11 +65,6 @@ public final class JsonDataEncoderBuilder implements EncoderConfig {
         public void encode(Date date, ValueEncoderContext valueEncoderContext) {
             valueEncoderContext.add(rfc339.format(date));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$2(Boolean bool, ValueEncoderContext valueEncoderContext) {
-        valueEncoderContext.add(bool.booleanValue());
     }
 
     public JsonDataEncoderBuilder() {

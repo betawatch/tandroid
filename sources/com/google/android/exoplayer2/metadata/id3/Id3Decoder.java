@@ -22,9 +22,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
     public static final FramePredicate NO_FRAMES_PREDICATE = new FramePredicate() { // from class: com.google.android.exoplayer2.metadata.id3.Id3Decoder$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.metadata.id3.Id3Decoder.FramePredicate
         public final boolean evaluate(int i, int i2, int i3, int i4, int i5) {
-            boolean lambda$static$0;
-            lambda$static$0 = Id3Decoder.lambda$static$0(i, i2, i3, i4, i5);
-            return lambda$static$0;
+            return Id3Decoder.$r8$lambda$qybkd67L1bf5IrQRNgWj3sxvPfg(i, i2, i3, i4, i5);
         }
     };
     private final FramePredicate framePredicate;
@@ -33,13 +31,12 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
         boolean evaluate(int i, int i2, int i3, int i4, int i5);
     }
 
-    private static int delimiterLength(int i) {
-        return (i == 0 || i == 3) ? 1 : 2;
+    public static /* synthetic */ boolean $r8$lambda$qybkd67L1bf5IrQRNgWj3sxvPfg(int i, int i2, int i3, int i4, int i5) {
+        return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$0(int i, int i2, int i3, int i4, int i5) {
-        return false;
+    private static int delimiterLength(int i) {
+        return (i == 0 || i == 3) ? 1 : 2;
     }
 
     public Id3Decoder() {
@@ -206,157 +203,231 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x018d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x018b, code lost:
     
-        if (r13 == 67) goto L131;
+        if (r4 == 67) goto L131;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0202 A[Catch: all -> 0x01e3, TRY_LEAVE, TryCatch #1 {all -> 0x01e3, blocks: (B:61:0x0202, B:128:0x01de, B:135:0x01f3, B:136:0x01f8), top: B:52:0x010c }] */
+    /* JADX WARN: Type inference failed for: r1v15 */
+    /* JADX WARN: Type inference failed for: r1v16, types: [com.google.android.exoplayer2.util.ParsableByteArray] */
+    /* JADX WARN: Type inference failed for: r1v17 */
+    /* JADX WARN: Type inference failed for: r1v19 */
+    /* JADX WARN: Type inference failed for: r1v27 */
+    /* JADX WARN: Type inference failed for: r1v28 */
+    /* JADX WARN: Type inference failed for: r1v29 */
+    /* JADX WARN: Type inference failed for: r1v5 */
+    /* JADX WARN: Type inference failed for: r1v6, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v9 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private static Id3Frame decodeFrame(int i, ParsableByteArray parsableByteArray, boolean z, int i2, FramePredicate framePredicate) {
         int readUnsignedInt24;
-        String str;
+        ?? r1;
         int i3;
         int i4;
+        int i5;
         boolean z2;
         boolean z3;
         boolean z4;
         boolean z5;
-        boolean z6;
+        ParsableByteArray parsableByteArray2;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        ParsableByteArray parsableByteArray3;
         Id3Frame decodeBinaryFrame;
+        int i10 = i;
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
         int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
         int readUnsignedByte3 = parsableByteArray.readUnsignedByte();
-        int readUnsignedByte4 = i >= 3 ? parsableByteArray.readUnsignedByte() : 0;
-        if (i == 4) {
+        boolean z6 = false;
+        int readUnsignedByte4 = i10 >= 3 ? parsableByteArray.readUnsignedByte() : 0;
+        if (i10 == 4) {
             readUnsignedInt24 = parsableByteArray.readUnsignedIntToInt();
             if (!z) {
                 readUnsignedInt24 = (((readUnsignedInt24 >> 24) & NotificationCenter.didReceiveSmsCode) << 21) | (readUnsignedInt24 & NotificationCenter.didReceiveSmsCode) | (((readUnsignedInt24 >> 8) & NotificationCenter.didReceiveSmsCode) << 7) | (((readUnsignedInt24 >> 16) & NotificationCenter.didReceiveSmsCode) << 14);
             }
-        } else if (i == 3) {
+        } else if (i10 == 3) {
             readUnsignedInt24 = parsableByteArray.readUnsignedIntToInt();
         } else {
             readUnsignedInt24 = parsableByteArray.readUnsignedInt24();
         }
-        int i5 = readUnsignedInt24;
-        int readUnsignedShort = i >= 3 ? parsableByteArray.readUnsignedShort() : 0;
-        if (readUnsignedByte == 0 && readUnsignedByte2 == 0 && readUnsignedByte3 == 0 && readUnsignedByte4 == 0 && i5 == 0 && readUnsignedShort == 0) {
+        int i11 = readUnsignedInt24;
+        int readUnsignedShort = i10 >= 3 ? parsableByteArray.readUnsignedShort() : 0;
+        if (readUnsignedByte == 0 && readUnsignedByte2 == 0 && readUnsignedByte3 == 0 && readUnsignedByte4 == 0 && i11 == 0 && readUnsignedShort == 0) {
             parsableByteArray.setPosition(parsableByteArray.limit());
             return null;
         }
-        int position = parsableByteArray.getPosition() + i5;
+        int position = parsableByteArray.getPosition() + i11;
         if (position > parsableByteArray.limit()) {
             Log.w("Id3Decoder", "Frame size exceeds remaining tag data");
             parsableByteArray.setPosition(parsableByteArray.limit());
             return null;
         }
         if (framePredicate != null) {
-            str = "Id3Decoder";
-            i3 = position;
-            i4 = readUnsignedShort;
-            if (!framePredicate.evaluate(i, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4)) {
-                parsableByteArray.setPosition(i3);
+            boolean evaluate = framePredicate.evaluate(i10, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4);
+            i10 = i10;
+            r1 = readUnsignedByte2;
+            i3 = readUnsignedByte;
+            i4 = readUnsignedByte3;
+            i5 = readUnsignedByte4;
+            if (!evaluate) {
+                parsableByteArray.setPosition(position);
                 return null;
             }
         } else {
-            str = "Id3Decoder";
-            i3 = position;
-            i4 = readUnsignedShort;
+            r1 = readUnsignedByte2;
+            i3 = readUnsignedByte;
+            i4 = readUnsignedByte3;
+            i5 = readUnsignedByte4;
         }
-        if (i == 3) {
-            int i6 = i4;
-            z6 = (i6 & 128) != 0;
-            z4 = (i6 & 64) != 0;
+        if (i10 == 3) {
+            z6 = (readUnsignedShort & 128) != 0;
+            z4 = (readUnsignedShort & 64) != 0;
             z5 = false;
-            z2 = (i6 & 32) != 0;
+            z2 = (readUnsignedShort & 32) != 0;
             z3 = z6;
+        } else if (i10 == 4) {
+            z2 = (readUnsignedShort & 64) != 0;
+            boolean z7 = (readUnsignedShort & 8) != 0;
+            z4 = (readUnsignedShort & 4) != 0;
+            z5 = (readUnsignedShort & 2) != 0;
+            z6 = z7;
+            z3 = (readUnsignedShort & 1) != 0;
         } else {
-            int i7 = i4;
-            if (i == 4) {
-                z2 = (i7 & 64) != 0;
-                z3 = (i7 & 8) != 0;
-                z4 = (i7 & 4) != 0;
-                z5 = (i7 & 2) != 0;
-                if ((i7 & 1) != 0) {
-                    z6 = true;
-                }
-            } else {
-                z2 = false;
-                z3 = false;
-                z4 = false;
-                z5 = false;
-            }
-            z6 = false;
+            z2 = false;
+            z3 = false;
+            z4 = false;
+            z5 = false;
         }
-        if (z3 || z4) {
-            Log.w(str, "Skipping unsupported compressed or encrypted frame");
-            parsableByteArray.setPosition(i3);
+        if (z6 || z4) {
+            Log.w("Id3Decoder", "Skipping unsupported compressed or encrypted frame");
+            parsableByteArray.setPosition(position);
             return null;
         }
         if (z2) {
-            i5--;
+            i11--;
             parsableByteArray.skipBytes(1);
         }
-        if (z6) {
-            i5 -= 4;
+        if (z3) {
+            i11 -= 4;
             parsableByteArray.skipBytes(4);
         }
         if (z5) {
-            i5 = removeUnsynchronization(parsableByteArray, i5);
+            i11 = removeUnsynchronization(parsableByteArray, i11);
         }
         try {
-            if (readUnsignedByte == 84 && readUnsignedByte2 == 88 && readUnsignedByte3 == 88 && (i == 2 || readUnsignedByte4 == 88)) {
-                decodeBinaryFrame = decodeTxxxFrame(parsableByteArray, i5);
-            } else if (readUnsignedByte == 84) {
-                decodeBinaryFrame = decodeTextInformationFrame(parsableByteArray, i5, getFrameId(i, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4));
-            } else if (readUnsignedByte == 87 && readUnsignedByte2 == 88 && readUnsignedByte3 == 88 && (i == 2 || readUnsignedByte4 == 88)) {
-                decodeBinaryFrame = decodeWxxxFrame(parsableByteArray, i5);
-            } else if (readUnsignedByte == 87) {
-                decodeBinaryFrame = decodeUrlLinkFrame(parsableByteArray, i5, getFrameId(i, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4));
-            } else if (readUnsignedByte == 80 && readUnsignedByte2 == 82 && readUnsignedByte3 == 73 && readUnsignedByte4 == 86) {
-                decodeBinaryFrame = decodePrivFrame(parsableByteArray, i5);
-            } else if (readUnsignedByte == 71 && readUnsignedByte2 == 69 && readUnsignedByte3 == 79 && (readUnsignedByte4 == 66 || i == 2)) {
-                decodeBinaryFrame = decodeGeobFrame(parsableByteArray, i5);
-            } else if (i == 2) {
-                if (readUnsignedByte == 80 && readUnsignedByte2 == 73 && readUnsignedByte3 == 67) {
-                    decodeBinaryFrame = decodeApicFrame(parsableByteArray, i5, i);
-                }
-                if (readUnsignedByte != 67 && readUnsignedByte2 == 79 && readUnsignedByte3 == 77 && (readUnsignedByte4 == 77 || i == 2)) {
-                    decodeBinaryFrame = decodeCommentFrame(parsableByteArray, i5);
-                } else if (readUnsignedByte != 67 && readUnsignedByte2 == 72 && readUnsignedByte3 == 65 && readUnsignedByte4 == 80) {
-                    decodeBinaryFrame = decodeChapterFrame(parsableByteArray, i5, i, z, i2, framePredicate);
-                } else if (readUnsignedByte != 67 && readUnsignedByte2 == 84 && readUnsignedByte3 == 79 && readUnsignedByte4 == 67) {
-                    decodeBinaryFrame = decodeChapterTOCFrame(parsableByteArray, i5, i, z, i2, framePredicate);
-                } else if (readUnsignedByte != 77 && readUnsignedByte2 == 76 && readUnsignedByte3 == 76 && readUnsignedByte4 == 84) {
-                    decodeBinaryFrame = decodeMlltFrame(parsableByteArray, i5);
+            try {
+                if (i3 == 84 && r1 == 88 && i4 == 88 && (i10 == 2 || i5 == 88)) {
+                    decodeBinaryFrame = decodeTxxxFrame(parsableByteArray, i11);
+                } else if (i3 == 84) {
+                    decodeBinaryFrame = decodeTextInformationFrame(parsableByteArray, i11, getFrameId(i10, i3, r1, i4, i5));
+                } else if (i3 == 87 && r1 == 88 && i4 == 88 && (i10 == 2 || i5 == 88)) {
+                    decodeBinaryFrame = decodeWxxxFrame(parsableByteArray, i11);
+                } else if (i3 == 87) {
+                    decodeBinaryFrame = decodeUrlLinkFrame(parsableByteArray, i11, getFrameId(i10, i3, r1, i4, i5));
+                } else if (i3 == 80 && r1 == 82 && i4 == 73 && i5 == 86) {
+                    decodeBinaryFrame = decodePrivFrame(parsableByteArray, i11);
+                } else if (i3 == 71 && r1 == 69 && i4 == 79 && (i5 == 66 || i10 == 2)) {
+                    decodeBinaryFrame = decodeGeobFrame(parsableByteArray, i11);
                 } else {
-                    decodeBinaryFrame = decodeBinaryFrame(parsableByteArray, i5, getFrameId(i, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4));
-                }
-            } else {
-                if (readUnsignedByte == 65) {
-                    if (readUnsignedByte2 == 80) {
-                        if (readUnsignedByte3 == 73) {
+                    if (i10 != 2) {
+                        if (i3 == 65) {
+                            if (r1 == 80) {
+                                if (i4 == 73) {
+                                }
+                            }
                         }
+                        if (i3 != 67) {
+                        }
+                        if (i3 != 67) {
+                        }
+                        i6 = r1;
+                        i7 = i4;
+                        i8 = i11;
+                        i9 = i5;
+                        if (i3 != 67) {
+                        }
+                        i10 = i;
+                        parsableByteArray3 = parsableByteArray;
+                        if (i3 != 77) {
+                        }
+                        decodeBinaryFrame = decodeBinaryFrame(parsableByteArray3, i8, getFrameId(i10, i3, i6, i7, i9));
+                        r1 = parsableByteArray3;
+                        if (decodeBinaryFrame == null) {
+                        }
+                        r1.setPosition(position);
+                        return decodeBinaryFrame;
+                    }
+                    if (i3 == 80 && r1 == 73 && i4 == 67) {
+                        decodeBinaryFrame = decodeApicFrame(parsableByteArray, i11, i10);
+                    }
+                    if (i3 != 67 && r1 == 79 && i4 == 77 && (i5 == 77 || i10 == 2)) {
+                        decodeBinaryFrame = decodeCommentFrame(parsableByteArray, i11);
+                    } else {
+                        if (i3 != 67 && r1 == 72 && i4 == 65 && i5 == 80) {
+                            i6 = r1;
+                            i7 = i4;
+                            i8 = i11;
+                            i9 = i5;
+                            try {
+                                decodeBinaryFrame = decodeChapterFrame(parsableByteArray, i8, i10, z, i2, framePredicate);
+                                i10 = i;
+                                r1 = parsableByteArray;
+                            } catch (Throwable th) {
+                                th = th;
+                                parsableByteArray2 = parsableByteArray;
+                                parsableByteArray2.setPosition(position);
+                                throw th;
+                            }
+                        } else {
+                            i6 = r1;
+                            i7 = i4;
+                            i8 = i11;
+                            i9 = i5;
+                            if (i3 != 67 && i6 == 84 && i7 == 79 && i9 == 67) {
+                                i10 = i;
+                                ParsableByteArray parsableByteArray4 = parsableByteArray;
+                                decodeBinaryFrame = decodeChapterTOCFrame(parsableByteArray4, i8, i10, z, i2, framePredicate);
+                                r1 = parsableByteArray4;
+                            } else {
+                                i10 = i;
+                                parsableByteArray3 = parsableByteArray;
+                                if (i3 != 77 && i6 == 76 && i7 == 76 && i9 == 84) {
+                                    decodeBinaryFrame = decodeMlltFrame(parsableByteArray3, i8);
+                                    r1 = parsableByteArray3;
+                                } else {
+                                    decodeBinaryFrame = decodeBinaryFrame(parsableByteArray3, i8, getFrameId(i10, i3, i6, i7, i9));
+                                    r1 = parsableByteArray3;
+                                }
+                            }
+                        }
+                        if (decodeBinaryFrame == null) {
+                            Log.w("Id3Decoder", "Failed to decode frame: id=" + getFrameId(i10, i3, i6, i7, i9) + ", frameSize=" + i8);
+                        }
+                        r1.setPosition(position);
+                        return decodeBinaryFrame;
                     }
                 }
-                if (readUnsignedByte != 67) {
+                i6 = r1;
+                i7 = i4;
+                r1 = parsableByteArray;
+                i8 = i11;
+                i9 = i5;
+                if (decodeBinaryFrame == null) {
                 }
-                if (readUnsignedByte != 67) {
-                }
-                if (readUnsignedByte != 67) {
-                }
-                if (readUnsignedByte != 77) {
-                }
-                decodeBinaryFrame = decodeBinaryFrame(parsableByteArray, i5, getFrameId(i, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4));
+                r1.setPosition(position);
+                return decodeBinaryFrame;
+            } catch (Throwable th2) {
+                th = th2;
+                parsableByteArray2 = r1;
             }
-            if (decodeBinaryFrame == null) {
-                Log.w(str, "Failed to decode frame: id=" + getFrameId(i, readUnsignedByte, readUnsignedByte2, readUnsignedByte3, readUnsignedByte4) + ", frameSize=" + i5);
-            }
-            parsableByteArray.setPosition(i3);
-            return decodeBinaryFrame;
-        } catch (Throwable th) {
-            parsableByteArray.setPosition(i3);
-            throw th;
+        } catch (Throwable th3) {
+            th = th3;
+            parsableByteArray2 = parsableByteArray;
         }
     }
 
@@ -496,9 +567,11 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
         int readInt = parsableByteArray.readInt();
         int readInt2 = parsableByteArray.readInt();
         long readUnsignedInt = parsableByteArray.readUnsignedInt();
-        long j = readUnsignedInt == 4294967295L ? -1L : readUnsignedInt;
+        if (readUnsignedInt == 4294967295L) {
+            readUnsignedInt = -1;
+        }
         long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
-        long j2 = readUnsignedInt2 == 4294967295L ? -1L : readUnsignedInt2;
+        long j = readUnsignedInt2 == 4294967295L ? -1L : readUnsignedInt2;
         ArrayList arrayList = new ArrayList();
         int i4 = position + i;
         while (parsableByteArray.getPosition() < i4) {
@@ -507,7 +580,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
                 arrayList.add(decodeFrame);
             }
         }
-        return new ChapterFrame(str, readInt, readInt2, j, j2, (Id3Frame[]) arrayList.toArray(new Id3Frame[0]));
+        return new ChapterFrame(str, readInt, readInt2, readUnsignedInt, j, (Id3Frame[]) arrayList.toArray(new Id3Frame[0]));
     }
 
     private static ChapterTocFrame decodeChapterTOCFrame(ParsableByteArray parsableByteArray, int i, int i2, boolean z, int i3, FramePredicate framePredicate) {

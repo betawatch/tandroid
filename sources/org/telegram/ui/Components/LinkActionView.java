@@ -172,33 +172,33 @@ public class LinkActionView extends LinearLayout {
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LinkActionView.this.lambda$new$0(bottomSheet, baseFragment, view);
+                LinkActionView.$r8$lambda$GdmrPsYezW0N6pTedfsmWFk-zr0(LinkActionView.this, bottomSheet, baseFragment, view);
             }
         });
         if (z) {
             avatarsContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LinkActionView.this.lambda$new$1(view);
+                    LinkActionView.this.delegate.showUsersForPermanentLink();
                 }
             });
         }
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LinkActionView.this.lambda$new$2(baseFragment, view);
+                LinkActionView.$r8$lambda$QcdWEyXT6wW81m7iLwyJM-rSpoQ(LinkActionView.this, baseFragment, view);
             }
         });
         textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LinkActionView.this.lambda$new$4(baseFragment, view);
+                LinkActionView.$r8$lambda$FIacZ6b5V67OY1Ry1m2ejWgFtMQ(LinkActionView.this, baseFragment, view);
             }
         });
         this.optionsView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LinkActionView.this.lambda$new$9(context, bottomSheet, baseFragment, view);
+                LinkActionView.$r8$lambda$xG0rso7ETJjnaZq_8FznJod7t4U(LinkActionView.this, context, bottomSheet, baseFragment, view);
             }
         });
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView.5
@@ -210,13 +210,13 @@ public class LinkActionView extends LinearLayout {
         updateColors();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(BottomSheet bottomSheet, BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$GdmrPsYezW0N6pTedfsmWFk-zr0(LinkActionView linkActionView, BottomSheet bottomSheet, BaseFragment baseFragment, View view) {
+        linkActionView.getClass();
         try {
-            if (this.link == null) {
+            if (linkActionView.link == null) {
                 return;
             }
-            ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.link));
+            ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", linkActionView.link));
             if (bottomSheet != null && bottomSheet.getContainer() != null) {
                 BulletinFactory.createCopyLinkBulletin(bottomSheet.getContainer()).show();
             } else {
@@ -227,20 +227,16 @@ public class LinkActionView extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
-        this.delegate.showUsersForPermanentLink();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$QcdWEyXT6wW81m7iLwyJM-rSpoQ(LinkActionView linkActionView, BaseFragment baseFragment, View view) {
+        linkActionView.getClass();
         try {
-            if (this.link == null) {
+            if (linkActionView.link == null) {
                 return;
             }
-            Context context = getContext();
-            String str = this.link;
-            baseFragment.showDialog(new ShareAlert(context, null, str, false, str, false, baseFragment.getResourceProvider()) { // from class: org.telegram.ui.Components.LinkActionView.1
+            Context context = linkActionView.getContext();
+            String str = linkActionView.link;
+            ArrayList arrayList = null;
+            baseFragment.showDialog(new ShareAlert(context, arrayList, str, false, str, false, baseFragment.getResourceProvider()) { // from class: org.telegram.ui.Components.LinkActionView.1
                 @Override // org.telegram.ui.Components.ShareAlert
                 protected void onSend(LongSparseArray longSparseArray, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
                     String formatString;
@@ -264,44 +260,42 @@ public class LinkActionView extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$FIacZ6b5V67OY1Ry1m2ejWgFtMQ(final LinkActionView linkActionView, BaseFragment baseFragment, View view) {
+        linkActionView.getClass();
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
         builder.setTitle(LocaleController.getString(R.string.DeleteLink));
         builder.setMessage(LocaleController.getString(R.string.DeleteLinkHelp));
         builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                LinkActionView.this.lambda$new$3(alertDialog, i);
+                LinkActionView.$r8$lambda$2PGU0DD8nA2SRE5EKtmANisjvwg(LinkActionView.this, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
         baseFragment.showDialog(builder.create());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(AlertDialog alertDialog, int i) {
-        Delegate delegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$2PGU0DD8nA2SRE5EKtmANisjvwg(LinkActionView linkActionView, AlertDialog alertDialog, int i) {
+        Delegate delegate = linkActionView.delegate;
         if (delegate != null) {
             delegate.removeLink();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(Context context, BottomSheet bottomSheet, BaseFragment baseFragment, View view) {
+    public static /* synthetic */ void $r8$lambda$xG0rso7ETJjnaZq_8FznJod7t4U(final LinkActionView linkActionView, Context context, BottomSheet bottomSheet, BaseFragment baseFragment, View view) {
         final FrameLayout container;
-        if (this.actionBarPopupWindow != null) {
+        if (linkActionView.actionBarPopupWindow != null) {
             return;
         }
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context);
-        if (!this.permanent && this.canEdit) {
+        if (!linkActionView.permanent && linkActionView.canEdit) {
             ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(context, true, false);
             actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.Edit), R.drawable.msg_edit);
             actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem, LayoutHelper.createLinear(-1, 48));
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    LinkActionView.this.lambda$new$5(view2);
+                    LinkActionView.$r8$lambda$MgnzTSxmmx9sc9_0VMNbeY-UsX4(LinkActionView.this, view2);
                 }
             });
         }
@@ -311,10 +305,10 @@ public class LinkActionView extends LinearLayout {
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                LinkActionView.this.lambda$new$6(view2);
+                LinkActionView.this.showQrCode();
             }
         });
-        if (!this.hideRevokeOption) {
+        if (!linkActionView.hideRevokeOption) {
             ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(context, false, true);
             actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.RevokeLink), R.drawable.msg_delete);
             int i = Theme.key_text_RedRegular;
@@ -322,7 +316,7 @@ public class LinkActionView extends LinearLayout {
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    LinkActionView.this.lambda$new$7(view2);
+                    LinkActionView.$r8$lambda$Obm-1F2FlYs9ohLUyDmyxFJP3-4(LinkActionView.this, view2);
                 }
             });
             actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem3, LayoutHelper.createLinear(-1, 48));
@@ -333,14 +327,14 @@ public class LinkActionView extends LinearLayout {
             container = bottomSheet.getContainer();
         }
         if (container != null) {
-            getPointOnScreen(this.frameLayout, container, this.point);
-            float f = this.point[1];
+            linkActionView.getPointOnScreen(linkActionView.frameLayout, container, linkActionView.point);
+            float f = linkActionView.point[1];
             final View view2 = new View(context) { // from class: org.telegram.ui.Components.LinkActionView.2
                 @Override // android.view.View
                 protected void onDraw(Canvas canvas) {
                     canvas.drawColor(855638016);
-                    LinkActionView linkActionView = LinkActionView.this;
-                    linkActionView.getPointOnScreen(linkActionView.frameLayout, container, LinkActionView.this.point);
+                    LinkActionView linkActionView2 = LinkActionView.this;
+                    linkActionView2.getPointOnScreen(linkActionView2.frameLayout, container, LinkActionView.this.point);
                     canvas.save();
                     float y = ((View) LinkActionView.this.frameLayout.getParent()).getY() + LinkActionView.this.frameLayout.getY();
                     if (y < 1.0f) {
@@ -365,7 +359,7 @@ public class LinkActionView extends LinearLayout {
             view2.animate().alpha(1.0f).setDuration(150L);
             actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(container.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(container.getMeasuredHeight(), 0));
             ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
-            this.actionBarPopupWindow = actionBarPopupWindow;
+            linkActionView.actionBarPopupWindow = actionBarPopupWindow;
             actionBarPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.LinkActionView.4
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public void onDismiss() {
@@ -383,53 +377,46 @@ public class LinkActionView extends LinearLayout {
                     });
                 }
             });
-            this.actionBarPopupWindow.setOutsideTouchable(true);
-            this.actionBarPopupWindow.setFocusable(true);
-            this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
-            this.actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-            this.actionBarPopupWindow.setInputMethodMode(2);
-            this.actionBarPopupWindow.setSoftInputMode(0);
+            linkActionView.actionBarPopupWindow.setOutsideTouchable(true);
+            linkActionView.actionBarPopupWindow.setFocusable(true);
+            linkActionView.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
+            linkActionView.actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
+            linkActionView.actionBarPopupWindow.setInputMethodMode(2);
+            linkActionView.actionBarPopupWindow.setSoftInputMode(0);
             actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda9
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
                 public final void onDispatchKeyEvent(KeyEvent keyEvent) {
-                    LinkActionView.this.lambda$new$8(keyEvent);
+                    LinkActionView.$r8$lambda$rGVCiWZg2I48E4S4Yu6TvUMISgI(LinkActionView.this, keyEvent);
                 }
             });
             if (AndroidUtilities.isTablet()) {
                 f += container.getPaddingTop();
                 f2 = 0.0f - container.getPaddingLeft();
             }
-            this.actionBarPopupWindow.showAtLocation(container, 0, (int) (((container.getMeasuredWidth() - actionBarPopupWindowLayout.getMeasuredWidth()) - AndroidUtilities.dp(16.0f)) + container.getX() + f2), (int) (f + this.frameLayout.getMeasuredHeight() + container.getY()));
+            linkActionView.actionBarPopupWindow.showAtLocation(container, 0, (int) (((container.getMeasuredWidth() - actionBarPopupWindowLayout.getMeasuredWidth()) - AndroidUtilities.dp(16.0f)) + container.getX() + f2), (int) (f + linkActionView.frameLayout.getMeasuredHeight() + container.getY()));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(View view) {
-        ActionBarPopupWindow actionBarPopupWindow = this.actionBarPopupWindow;
+    public static /* synthetic */ void $r8$lambda$MgnzTSxmmx9sc9_0VMNbeY-UsX4(LinkActionView linkActionView, View view) {
+        ActionBarPopupWindow actionBarPopupWindow = linkActionView.actionBarPopupWindow;
         if (actionBarPopupWindow != null) {
             actionBarPopupWindow.dismiss();
         }
-        this.delegate.editLink();
+        linkActionView.delegate.editLink();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(View view) {
-        showQrCode();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(View view) {
-        ActionBarPopupWindow actionBarPopupWindow = this.actionBarPopupWindow;
+    public static /* synthetic */ void $r8$lambda$Obm-1F2FlYs9ohLUyDmyxFJP3-4(LinkActionView linkActionView, View view) {
+        ActionBarPopupWindow actionBarPopupWindow = linkActionView.actionBarPopupWindow;
         if (actionBarPopupWindow != null) {
             actionBarPopupWindow.dismiss();
         }
-        revokeLink();
+        linkActionView.revokeLink();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && this.actionBarPopupWindow.isShowing()) {
-            this.actionBarPopupWindow.dismiss(true);
+    public static /* synthetic */ void $r8$lambda$rGVCiWZg2I48E4S4Yu6TvUMISgI(LinkActionView linkActionView, KeyEvent keyEvent) {
+        linkActionView.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && linkActionView.actionBarPopupWindow.isShowing()) {
+            linkActionView.actionBarPopupWindow.dismiss(true);
         }
     }
 
@@ -469,24 +456,21 @@ public class LinkActionView extends LinearLayout {
         this.qrText = str;
     }
 
-    private void showQrCode() {
-        String str;
-        String str2 = this.link;
-        boolean z = str2 != null && str2.endsWith("?direct");
+    /* JADX INFO: Access modifiers changed from: private */
+    public void showQrCode() {
+        String str = this.link;
+        boolean z = str != null && str.endsWith("?direct");
         Context context = getContext();
         String string = LocaleController.getString(R.string.InviteByQRCode);
-        String str3 = this.link;
-        String str4 = this.qrText;
-        if (str4 == null) {
-            str = LocaleController.getString(this.isChannel ? z ? R.string.QRCodeLinkHelpChannelDirect : R.string.QRCodeLinkHelpChannel : R.string.QRCodeLinkHelpGroup);
-        } else {
-            str = str4;
+        String str2 = this.link;
+        String str3 = this.qrText;
+        if (str3 == null) {
+            str3 = LocaleController.getString(this.isChannel ? z ? R.string.QRCodeLinkHelpChannelDirect : R.string.QRCodeLinkHelpChannel : R.string.QRCodeLinkHelpGroup);
         }
-        QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(context, string, str3, str, false) { // from class: org.telegram.ui.Components.LinkActionView.6
+        QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(context, string, str2, str3, false) { // from class: org.telegram.ui.Components.LinkActionView.6
             @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-            /* renamed from: dismiss */
-            public void lambda$new$0() {
-                super.lambda$new$0();
+            public void dismiss() {
+                super.dismiss();
                 LinkActionView.this.qrCodeBottomSheet = null;
             }
         };
@@ -604,7 +588,7 @@ public class LinkActionView extends LinearLayout {
         builder.setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                LinkActionView.this.lambda$revokeLink$10(alertDialog, i);
+                LinkActionView.$r8$lambda$KOeAVDwGNNv8dmN2ueuX1hU9ea8(LinkActionView.this, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -615,9 +599,8 @@ public class LinkActionView extends LinearLayout {
         builder.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$revokeLink$10(AlertDialog alertDialog, int i) {
-        Delegate delegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$KOeAVDwGNNv8dmN2ueuX1hU9ea8(LinkActionView linkActionView, AlertDialog alertDialog, int i) {
+        Delegate delegate = linkActionView.delegate;
         if (delegate != null) {
             delegate.revokeLink();
         }
@@ -682,25 +665,24 @@ public class LinkActionView extends LinearLayout {
         ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_getChatInviteImporters, new RequestDelegate() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda5
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LinkActionView.this.lambda$loadUsers$12(tL_chatInviteExported, tLObject, tL_error);
+                LinkActionView.$r8$lambda$U38hC-AYWHlYmwzUK47QeZI11xI(LinkActionView.this, tL_chatInviteExported, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$12(final TLRPC.TL_chatInviteExported tL_chatInviteExported, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$U38hC-AYWHlYmwzUK47QeZI11xI(final LinkActionView linkActionView, final TLRPC.TL_chatInviteExported tL_chatInviteExported, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        linkActionView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                LinkActionView.this.lambda$loadUsers$11(tL_chatInviteExported, tL_error, tLObject);
+                LinkActionView.$r8$lambda$fLN7fLrdpFcHrHRygYIdaUZBvQI(LinkActionView.this, tL_chatInviteExported, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadUsers$11(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject) {
-        this.loadingImporters = false;
-        this.loadedInviteLink = tL_chatInviteExported.link;
+    public static /* synthetic */ void $r8$lambda$fLN7fLrdpFcHrHRygYIdaUZBvQI(LinkActionView linkActionView, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject) {
+        linkActionView.loadingImporters = false;
+        linkActionView.loadedInviteLink = tL_chatInviteExported.link;
         if (tL_error == null) {
             TLRPC.TL_messages_chatInviteImporters tL_messages_chatInviteImporters = (TLRPC.TL_messages_chatInviteImporters) tLObject;
             if (tL_chatInviteExported.importers == null) {
@@ -710,7 +692,7 @@ public class LinkActionView extends LinearLayout {
             for (int i = 0; i < tL_messages_chatInviteImporters.users.size(); i++) {
                 tL_chatInviteExported.importers.addAll(tL_messages_chatInviteImporters.users);
             }
-            setUsers(tL_chatInviteExported.usage, tL_chatInviteExported.importers, true);
+            linkActionView.setUsers(tL_chatInviteExported.usage, tL_chatInviteExported.importers, true);
         }
     }
 

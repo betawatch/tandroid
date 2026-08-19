@@ -36,14 +36,17 @@ public final class zzcq implements zzbt {
             File[] listFiles = this.zza.getCacheDir().listFiles();
             if (listFiles != null) {
                 ArrayList arrayList = new ArrayList();
+                int i = 0;
                 for (File file : listFiles) {
                     if (StringsKt.startsWith$default(file.getName(), this.zzb, false, 2, null)) {
                         arrayList.add(file);
                     }
                 }
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    ((File) it.next()).delete();
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    ((File) obj).delete();
                 }
             }
         } catch (Exception unused) {
@@ -68,9 +71,10 @@ public final class zzcq implements zzbt {
 
     @Override // com.google.android.recaptcha.internal.zzbt
     public final boolean zzd(String str) {
+        File file;
         try {
             File[] listFiles = this.zza.getCacheDir().listFiles();
-            File file = null;
+            file = null;
             if (listFiles != null) {
                 int length = listFiles.length;
                 int i = 0;
@@ -86,9 +90,8 @@ public final class zzcq implements zzbt {
                     i++;
                 }
             }
-            return file != null;
         } catch (Exception unused) {
-            return false;
         }
+        return file != null;
     }
 }

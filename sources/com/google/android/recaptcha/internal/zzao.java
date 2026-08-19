@@ -34,7 +34,22 @@ final class zzao extends SuspendLambda implements Function2 {
         return ((zzao) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003b, code lost:
+    
+        if (r8 != r0) goto L13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0049, code lost:
+    
+        if (r8 != r0) goto L18;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
@@ -43,9 +58,6 @@ final class zzao extends SuspendLambda implements Function2 {
             zzar zzarVar = this.zzb;
             this.zza = 2;
             obj = zzarVar.zzg(e, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
         }
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -55,9 +67,6 @@ final class zzao extends SuspendLambda implements Function2 {
             zzan zzanVar = new zzan(zzarVar2, this.zzc, null);
             this.zza = 1;
             obj = new zzhf(37, zzanVar, Boxing.boxInt(zza)).zza(zzhkVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
         } else {
             if (i != 1) {
                 ResultKt.throwOnFailure(obj);

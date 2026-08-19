@@ -79,17 +79,20 @@ public class EmojiCompat {
     }
 
     public static EmojiCompat init(Config config) {
-        EmojiCompat emojiCompat = sInstance;
-        if (emojiCompat == null) {
-            synchronized (INSTANCE_LOCK) {
-                try {
-                    emojiCompat = sInstance;
-                    if (emojiCompat == null) {
-                        emojiCompat = new EmojiCompat(config);
-                        sInstance = emojiCompat;
-                    }
-                } finally {
+        EmojiCompat emojiCompat;
+        EmojiCompat emojiCompat2 = sInstance;
+        if (emojiCompat2 != null) {
+            return emojiCompat2;
+        }
+        synchronized (INSTANCE_LOCK) {
+            try {
+                emojiCompat = sInstance;
+                if (emojiCompat == null) {
+                    emojiCompat = new EmojiCompat(config);
+                    sInstance = emojiCompat;
                 }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return emojiCompat;

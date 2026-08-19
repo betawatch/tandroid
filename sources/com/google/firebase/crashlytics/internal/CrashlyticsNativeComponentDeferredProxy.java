@@ -18,15 +18,15 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
         deferred.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.internal.CrashlyticsNativeComponentDeferredProxy$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Deferred.DeferredHandler
             public final void handle(Provider provider) {
-                CrashlyticsNativeComponentDeferredProxy.this.lambda$new$0(provider);
+                CrashlyticsNativeComponentDeferredProxy.$r8$lambda$aFyqACfbzgBCqUDIOJCUOrXTRjw(CrashlyticsNativeComponentDeferredProxy.this, provider);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Provider provider) {
+    public static /* synthetic */ void $r8$lambda$aFyqACfbzgBCqUDIOJCUOrXTRjw(CrashlyticsNativeComponentDeferredProxy crashlyticsNativeComponentDeferredProxy, Provider provider) {
+        crashlyticsNativeComponentDeferredProxy.getClass();
         Logger.getLogger().d("Crashlytics native component now available.");
-        this.availableNativeComponent.set((CrashlyticsNativeComponent) provider.get());
+        crashlyticsNativeComponentDeferredProxy.availableNativeComponent.set((CrashlyticsNativeComponent) provider.get());
     }
 
     @Override // com.google.firebase.crashlytics.internal.CrashlyticsNativeComponent
@@ -47,14 +47,9 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
         this.deferredNativeComponent.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.internal.CrashlyticsNativeComponentDeferredProxy$$ExternalSyntheticLambda1
             @Override // com.google.firebase.inject.Deferred.DeferredHandler
             public final void handle(Provider provider) {
-                CrashlyticsNativeComponentDeferredProxy.lambda$prepareNativeSession$1(str, str2, j, staticSessionData, provider);
+                ((CrashlyticsNativeComponent) provider.get()).prepareNativeSession(str, str2, j, staticSessionData);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareNativeSession$1(String str, String str2, long j, StaticSessionData staticSessionData, Provider provider) {
-        ((CrashlyticsNativeComponent) provider.get()).prepareNativeSession(str, str2, j, staticSessionData);
     }
 
     @Override // com.google.firebase.crashlytics.internal.CrashlyticsNativeComponent

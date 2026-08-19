@@ -90,7 +90,7 @@ public final class SignInTemplate implements Template {
         this.mInstructions = null;
         this.mAdditionalText = null;
         this.mActionStrip = null;
-        this.mActionList = Collections.emptyList();
+        this.mActionList = Collections.EMPTY_LIST;
         this.mSignInMethod = null;
     }
 }

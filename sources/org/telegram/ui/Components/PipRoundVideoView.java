@@ -136,7 +136,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
                         if (MediaController.getInstance().isMessagePaused()) {
                             MediaController.getInstance().playMessage(playingMessageObject);
                         } else {
-                            MediaController.getInstance().lambda$startAudioAgain$7(playingMessageObject);
+                            MediaController.getInstance().pauseMessage(playingMessageObject);
                         }
                     }
                     this.dragging = false;
@@ -370,16 +370,18 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x017b  */
-    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0183  */
+    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void animateToBoundsMaybe() {
+        float f;
         ArrayList arrayList;
         boolean z;
         int i;
+        float f2;
         int sideCoord = getSideCoord(true, 0, 0.0f, this.videoWidth);
         int sideCoord2 = getSideCoord(true, 1, 0.0f, this.videoWidth);
         int sideCoord3 = getSideCoord(false, 0, 0.0f, this.videoHeight);
@@ -387,6 +389,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         SharedPreferences.Editor edit = this.preferences.edit();
         int dp = AndroidUtilities.dp(20.0f);
         if (Math.abs(sideCoord - this.windowLayoutParams.x) <= dp || ((i = this.windowLayoutParams.x) < 0 && i > (-this.videoWidth) / 4)) {
+            f = 0.0f;
             ArrayList arrayList2 = new ArrayList();
             edit.putInt("sidex", 0);
             if (this.windowView.getAlpha() != 1.0f) {
@@ -398,7 +401,9 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             if (Math.abs(sideCoord2 - i) > dp) {
                 int i2 = this.windowLayoutParams.x;
                 int i3 = AndroidUtilities.displaySize.x;
+                f = 0.0f;
                 int i4 = this.videoWidth;
+                f2 = 1.0f;
                 if (i2 <= i3 - i4 || i2 >= i3 - ((i4 / 4) * 3)) {
                     if (this.windowView.getAlpha() != 1.0f) {
                         arrayList = new ArrayList();
@@ -435,7 +440,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
                             animatorSet.setInterpolator(this.decelerateInterpolator);
                             animatorSet.setDuration(150L);
                             if (z) {
-                                arrayList.add(ObjectAnimator.ofFloat(this.windowView, (Property<FrameLayout, Float>) View.ALPHA, 0.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(this.windowView, (Property<FrameLayout, Float>) View.ALPHA, f));
                                 animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.PipRoundVideoView.7
                                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                     public void onAnimationEnd(Animator animator) {
@@ -456,11 +461,14 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
                     edit.putInt("sidex", 2);
                     arrayList = null;
                 }
+            } else {
+                f = 0.0f;
+                f2 = 1.0f;
             }
             arrayList = new ArrayList();
             edit.putInt("sidex", 1);
-            if (this.windowView.getAlpha() != 1.0f) {
-                arrayList.add(ObjectAnimator.ofFloat(this.windowView, (Property<FrameLayout, Float>) View.ALPHA, 1.0f));
+            if (this.windowView.getAlpha() != f2) {
+                arrayList.add(ObjectAnimator.ofFloat(this.windowView, (Property<FrameLayout, Float>) View.ALPHA, f2));
             }
             arrayList.add(ObjectAnimator.ofInt(this, "x", sideCoord2));
         }

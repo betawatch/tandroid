@@ -43,14 +43,13 @@ public class ChatMessageUnsupportedCell extends View implements Theme.Colorable 
         unsupportedBlockDrawable.setOnClickListener(new Runnable() { // from class: org.telegram.ui.Cells.ChatMessageUnsupportedCell$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ChatMessageUnsupportedCell.this.lambda$new$0();
+                ChatMessageUnsupportedCell.$r8$lambda$9kWNZCd7_y2vHz1m5G2sNSX0N74(ChatMessageUnsupportedCell.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        ChatMessageCell.ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
+    public static /* synthetic */ void $r8$lambda$9kWNZCd7_y2vHz1m5G2sNSX0N74(ChatMessageUnsupportedCell chatMessageUnsupportedCell) {
+        ChatMessageCell.ChatMessageCellDelegate chatMessageCellDelegate = chatMessageUnsupportedCell.delegate;
         if (chatMessageCellDelegate != null) {
             chatMessageCellDelegate.didPressAppUpdateButton();
         }

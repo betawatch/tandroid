@@ -66,10 +66,11 @@ public final class Trip {
     }
 
     private Trip() {
-        this.mDestinations = Collections.emptyList();
-        this.mSteps = Collections.emptyList();
-        this.mDestinationTravelEstimates = Collections.emptyList();
-        this.mStepTravelEstimates = Collections.emptyList();
+        List list = Collections.EMPTY_LIST;
+        this.mDestinations = list;
+        this.mSteps = list;
+        this.mDestinationTravelEstimates = list;
+        this.mStepTravelEstimates = list;
         this.mCurrentRoad = null;
         this.mIsLoading = false;
     }

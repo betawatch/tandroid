@@ -65,23 +65,13 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         return (TrackGroupArray) Assertions.checkNotNull(this.trackGroups);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v3 */
-    /* JADX WARN: Type inference failed for: r15v4 */
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public long selectTracks(ExoTrackSelection[] exoTrackSelectionArr, boolean[] zArr, SampleStream[] sampleStreamArr, boolean[] zArr2, long j) {
-        SampleStream sampleStream;
         int[] iArr = new int[exoTrackSelectionArr.length];
         int[] iArr2 = new int[exoTrackSelectionArr.length];
-        int i = 0;
-        while (true) {
-            sampleStream = null;
-            if (i >= exoTrackSelectionArr.length) {
-                break;
-            }
-            SampleStream sampleStream2 = sampleStreamArr[i];
-            Integer num = sampleStream2 != null ? (Integer) this.streamPeriodIndices.get(sampleStream2) : null;
+        for (int i = 0; i < exoTrackSelectionArr.length; i++) {
+            SampleStream sampleStream = sampleStreamArr[i];
+            Integer num = sampleStream == null ? null : (Integer) this.streamPeriodIndices.get(sampleStream);
             iArr[i] = num == null ? -1 : num.intValue();
             ExoTrackSelection exoTrackSelection = exoTrackSelectionArr[i];
             if (exoTrackSelection != null) {
@@ -90,7 +80,6 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             } else {
                 iArr2[i] = -1;
             }
-            i++;
         }
         this.streamPeriodIndices.clear();
         int length = exoTrackSelectionArr.length;
@@ -100,21 +89,18 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         ArrayList arrayList = new ArrayList(this.periods.length);
         long j2 = j;
         int i2 = 0;
-        ExoTrackSelection[] exoTrackSelectionArr3 = exoTrackSelectionArr2;
         while (i2 < this.periods.length) {
             for (int i3 = 0; i3 < exoTrackSelectionArr.length; i3++) {
-                sampleStreamArr3[i3] = iArr[i3] == i2 ? sampleStreamArr[i3] : sampleStream;
+                sampleStreamArr3[i3] = iArr[i3] == i2 ? sampleStreamArr[i3] : null;
                 if (iArr2[i3] == i2) {
                     ExoTrackSelection exoTrackSelection2 = (ExoTrackSelection) Assertions.checkNotNull(exoTrackSelectionArr[i3]);
-                    exoTrackSelectionArr3[i3] = new ForwardingTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull((TrackGroup) this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
+                    exoTrackSelectionArr2[i3] = new ForwardingTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull((TrackGroup) this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
                 } else {
-                    exoTrackSelectionArr3[i3] = sampleStream;
+                    exoTrackSelectionArr2[i3] = null;
                 }
             }
             int i4 = i2;
-            ArrayList arrayList2 = arrayList;
-            ExoTrackSelection[] exoTrackSelectionArr4 = exoTrackSelectionArr3;
-            long selectTracks = this.periods[i2].selectTracks(exoTrackSelectionArr3, zArr, sampleStreamArr3, zArr2, j2);
+            long selectTracks = this.periods[i2].selectTracks(exoTrackSelectionArr2, zArr, sampleStreamArr3, zArr2, j2);
             if (i4 == 0) {
                 j2 = selectTracks;
             } else if (selectTracks != j2) {
@@ -123,21 +109,18 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             boolean z = false;
             for (int i5 = 0; i5 < exoTrackSelectionArr.length; i5++) {
                 if (iArr2[i5] == i4) {
-                    SampleStream sampleStream3 = (SampleStream) Assertions.checkNotNull(sampleStreamArr3[i5]);
+                    SampleStream sampleStream2 = (SampleStream) Assertions.checkNotNull(sampleStreamArr3[i5]);
                     sampleStreamArr2[i5] = sampleStreamArr3[i5];
-                    this.streamPeriodIndices.put(sampleStream3, Integer.valueOf(i4));
+                    this.streamPeriodIndices.put(sampleStream2, Integer.valueOf(i4));
                     z = true;
                 } else if (iArr[i5] == i4) {
                     Assertions.checkState(sampleStreamArr3[i5] == null);
                 }
             }
             if (z) {
-                arrayList2.add(this.periods[i4]);
+                arrayList.add(this.periods[i4]);
             }
             i2 = i4 + 1;
-            arrayList = arrayList2;
-            exoTrackSelectionArr3 = exoTrackSelectionArr4;
-            sampleStream = null;
         }
         System.arraycopy(sampleStreamArr2, 0, sampleStreamArr, 0, length);
         MediaPeriod[] mediaPeriodArr = (MediaPeriod[]) arrayList.toArray(new MediaPeriod[0]);
@@ -342,7 +325,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             if (readDiscontinuity == -9223372036854775807L) {
                 return -9223372036854775807L;
             }
-            return this.timeOffsetUs + readDiscontinuity;
+            return readDiscontinuity + this.timeOffsetUs;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod
@@ -361,7 +344,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             if (bufferedPositionUs == Long.MIN_VALUE) {
                 return Long.MIN_VALUE;
             }
-            return this.timeOffsetUs + bufferedPositionUs;
+            return bufferedPositionUs + this.timeOffsetUs;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
@@ -370,7 +353,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             if (nextLoadPositionUs == Long.MIN_VALUE) {
                 return Long.MIN_VALUE;
             }
-            return this.timeOffsetUs + nextLoadPositionUs;
+            return nextLoadPositionUs + this.timeOffsetUs;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader

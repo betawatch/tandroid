@@ -51,6 +51,6 @@ public final class ActionStrip {
     }
 
     private ActionStrip() {
-        this.mActions = Collections.emptyList();
+        this.mActions = Collections.EMPTY_LIST;
     }
 }

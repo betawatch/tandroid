@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory;
 import android.text.TextUtils;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.Iterator;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -139,7 +139,7 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichMediaUploader.this.lambda$start$1();
+                    RichMediaUploader.$r8$lambda$T8Lrh-8Hjipdhzh1PC4hx0Hh2yU(RichMediaUploader.this);
                 }
             });
         } else if (this.isAudio) {
@@ -149,48 +149,44 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichMediaUploader.this.lambda$start$3();
+                    RichMediaUploader.$r8$lambda$dAsOLEeRI1es0HLb2W9C14Qmlfs(RichMediaUploader.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$start$1() {
-        this.documentThumbPath = generateDocumentThumb();
+    public static /* synthetic */ void $r8$lambda$T8Lrh-8Hjipdhzh1PC4hx0Hh2yU(final RichMediaUploader richMediaUploader) {
+        richMediaUploader.documentThumbPath = richMediaUploader.generateDocumentThumb();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                RichMediaUploader.this.lambda$start$0();
+                RichMediaUploader.$r8$lambda$ThZZTnhsAbALa7PseucvmzJis7o(RichMediaUploader.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$start$0() {
-        if (this.cancelled || this.finished) {
+    public static /* synthetic */ void $r8$lambda$ThZZTnhsAbALa7PseucvmzJis7o(RichMediaUploader richMediaUploader) {
+        if (richMediaUploader.cancelled || richMediaUploader.finished) {
             return;
         }
-        beginUpload(this.path);
+        richMediaUploader.beginUpload(richMediaUploader.path);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$start$3() {
-        final String ensureJpegPath = ensureJpegPath(this.path);
+    public static /* synthetic */ void $r8$lambda$dAsOLEeRI1es0HLb2W9C14Qmlfs(final RichMediaUploader richMediaUploader) {
+        final String ensureJpegPath = richMediaUploader.ensureJpegPath(richMediaUploader.path);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RichMediaUploader.this.lambda$start$2(ensureJpegPath);
+                RichMediaUploader.$r8$lambda$_FOlRap55R3-1m5jZJEDTmXEPZU(RichMediaUploader.this, ensureJpegPath);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$start$2(String str) {
-        if (this.cancelled || this.finished) {
+    public static /* synthetic */ void $r8$lambda$_FOlRap55R3-1m5jZJEDTmXEPZU(RichMediaUploader richMediaUploader, String str) {
+        if (richMediaUploader.cancelled || richMediaUploader.finished) {
             return;
         }
-        beginUpload(str);
+        richMediaUploader.beginUpload(str);
     }
 
     private void beginUpload(String str) {
@@ -214,43 +210,44 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
     }
 
     private String ensureJpegPath(String str) {
+        boolean z;
+        Bitmap loadBitmap;
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeFile(str, options);
             String str2 = options.outMimeType;
-            boolean z = str2 != null && (str2.equalsIgnoreCase("image/jpeg") || str2.equalsIgnoreCase("image/jpg"));
+            z = str2 != null && (str2.equalsIgnoreCase("image/jpeg") || str2.equalsIgnoreCase("image/jpg"));
             float photoSize = AndroidUtilities.getPhotoSize();
-            Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, photoSize, photoSize, true);
+            loadBitmap = ImageLoader.loadBitmap(str, null, photoSize, photoSize, true);
             if (loadBitmap == null) {
                 loadBitmap = ImageLoader.loadBitmap(str, null, 800.0f, 800.0f, true);
             }
-            if (loadBitmap == null) {
-                return str;
-            }
-            File file = new File(FileLoader.getDirectory(4), "rich_jpeg_" + Math.abs(str.hashCode()) + ".jpg");
-            try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file);
-                try {
-                    boolean compress = loadBitmap.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
-                    fileOutputStream.close();
-                    if (compress && file.length() > 0) {
-                        if (z) {
-                            long length = new File(str).length();
-                            if (length > 0 && file.length() >= length) {
-                                return str;
-                            }
-                        }
-                        return file.getAbsolutePath();
-                    }
-                    return str;
-                } finally {
-                }
-            } finally {
-                loadBitmap.recycle();
-            }
         } catch (Throwable unused) {
+        }
+        if (loadBitmap == null) {
             return str;
+        }
+        File file = new File(FileLoader.getDirectory(4), "rich_jpeg_" + Math.abs(str.hashCode()) + ".jpg");
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            try {
+                boolean compress = loadBitmap.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
+                fileOutputStream.close();
+                if (compress && file.length() > 0) {
+                    if (z) {
+                        long length = new File(str).length();
+                        if (length > 0 && file.length() >= length) {
+                            return str;
+                        }
+                    }
+                    return file.getAbsolutePath();
+                }
+                return str;
+            } finally {
+            }
+        } finally {
+            loadBitmap.recycle();
         }
     }
 
@@ -373,11 +370,15 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
             TLRPC.Document document2 = this.audioDocument;
             if (document2 != null) {
                 if (z) {
-                    Iterator<TLRPC.DocumentAttribute> it = document2.attributes.iterator();
-                    while (it.hasNext()) {
-                        TLRPC.DocumentAttribute next = it.next();
-                        if (next instanceof TLRPC.TL_documentAttributeFilename) {
-                            tL_inputMediaUploadedDocument2.attributes.add(next);
+                    ArrayList<TLRPC.DocumentAttribute> arrayList = document2.attributes;
+                    int size = arrayList.size();
+                    int i = 0;
+                    while (i < size) {
+                        TLRPC.DocumentAttribute documentAttribute = arrayList.get(i);
+                        i++;
+                        TLRPC.DocumentAttribute documentAttribute2 = documentAttribute;
+                        if (documentAttribute2 instanceof TLRPC.TL_documentAttributeFilename) {
+                            tL_inputMediaUploadedDocument2.attributes.add(documentAttribute2);
                         }
                     }
                 } else {
@@ -400,47 +401,46 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
         this.requestToken = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                RichMediaUploader.this.lambda$sendUploadMediaRequest$5(tLObject, tL_error);
+                RichMediaUploader.$r8$lambda$JQO2YzXMTcFusbYRf7PBB4tIXCc(RichMediaUploader.this, tLObject, tL_error);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendUploadMediaRequest$5(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$JQO2YzXMTcFusbYRf7PBB4tIXCc(final RichMediaUploader richMediaUploader, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        richMediaUploader.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RichMediaUploader.this.lambda$sendUploadMediaRequest$4(tLObject);
+                RichMediaUploader.$r8$lambda$lN7smHeata8hQi0KrtqS8eucxKc(RichMediaUploader.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendUploadMediaRequest$4(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$lN7smHeata8hQi0KrtqS8eucxKc(RichMediaUploader richMediaUploader, TLObject tLObject) {
         TLRPC.Document document;
         TLRPC.Photo photo;
-        if (this.cancelled) {
+        if (richMediaUploader.cancelled) {
             return;
         }
-        this.requestToken = 0;
-        if (this.isVideo || this.isAudio || this.isDocument) {
+        richMediaUploader.requestToken = 0;
+        if (richMediaUploader.isVideo || richMediaUploader.isAudio || richMediaUploader.isDocument) {
             if ((tLObject instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) tLObject).document) != null) {
-                if (this.isDocument) {
-                    finishWithDocument(document);
+                if (richMediaUploader.isDocument) {
+                    richMediaUploader.finishWithDocument(document);
                     return;
-                } else if (this.isAudio) {
-                    finishWithAudio(document);
+                } else if (richMediaUploader.isAudio) {
+                    richMediaUploader.finishWithAudio(document);
                     return;
                 } else {
-                    finishWithVideo(document);
+                    richMediaUploader.finishWithVideo(document);
                     return;
                 }
             }
         } else if ((tLObject instanceof TLRPC.TL_messageMediaPhoto) && (photo = ((TLRPC.TL_messageMediaPhoto) tLObject).photo) != null) {
-            finishWithPhoto(photo);
+            richMediaUploader.finishWithPhoto(photo);
             return;
         }
-        finishWithError();
+        richMediaUploader.finishWithError();
     }
 
     private void finishWithPhoto(TLRPC.Photo photo) {
@@ -511,10 +511,14 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
                 }
                 if (bitmap != null) {
                     try {
-                        Iterator<TLRPC.DocumentAttribute> it = this.audioDocument.attributes.iterator();
+                        ArrayList<TLRPC.DocumentAttribute> arrayList = this.audioDocument.attributes;
+                        int size = arrayList.size();
+                        int i = 0;
                         while (true) {
-                            if (it.hasNext()) {
-                                if (it.next() instanceof TLRPC.TL_documentAttributeImageSize) {
+                            if (i < size) {
+                                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i);
+                                i++;
+                                if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
                                     break;
                                 }
                             } else {

@@ -83,7 +83,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
     private final Runnable onContinueLoadingRequestedRunnable = new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
         public final void run() {
-            ProgressiveMediaPeriod.this.lambda$new$0();
+            ProgressiveMediaPeriod.$r8$lambda$ahkU4IiNnM317z6WGGOhU6K743E(ProgressiveMediaPeriod.this);
         }
     };
     private final Handler handler = Util.createHandlerForCurrentLooper();
@@ -115,12 +115,11 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
         this.progressiveMediaExtractor = progressiveMediaExtractor;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        if (this.released) {
+    public static /* synthetic */ void $r8$lambda$ahkU4IiNnM317z6WGGOhU6K743E(ProgressiveMediaPeriod progressiveMediaPeriod) {
+        if (progressiveMediaPeriod.released) {
             return;
         }
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        ((MediaPeriod.Callback) Assertions.checkNotNull(progressiveMediaPeriod.callback)).onContinueLoadingRequested(progressiveMediaPeriod);
     }
 
     public void release() {
@@ -325,21 +324,20 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
             this.pendingResetPositionUs = j;
             return j;
         }
-        if (this.dataType != 7 && seekInsideBufferUs(zArr, j)) {
-            return j;
-        }
-        this.pendingDeferredRetry = false;
-        this.pendingResetPositionUs = j;
-        this.loadingFinished = false;
-        if (this.loader.isLoading()) {
-            SampleQueue[] sampleQueueArr = this.sampleQueues;
-            int length = sampleQueueArr.length;
-            while (i < length) {
-                sampleQueueArr[i].discardToEnd();
-                i++;
+        if (this.dataType == 7 || !seekInsideBufferUs(zArr, j)) {
+            this.pendingDeferredRetry = false;
+            this.pendingResetPositionUs = j;
+            this.loadingFinished = false;
+            if (this.loader.isLoading()) {
+                SampleQueue[] sampleQueueArr = this.sampleQueues;
+                int length = sampleQueueArr.length;
+                while (i < length) {
+                    sampleQueueArr[i].discardToEnd();
+                    i++;
+                }
+                this.loader.cancelLoading();
+                return j;
             }
-            this.loader.cancelLoading();
-        } else {
             this.loader.clearFatalError();
             SampleQueue[] sampleQueueArr2 = this.sampleQueues;
             int length2 = sampleQueueArr2.length;
@@ -472,25 +470,28 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
 
     @Override // com.google.android.exoplayer2.upstream.Loader.Callback
     public Loader.LoadErrorAction onLoadError(ExtractingLoadable extractingLoadable, long j, long j2, IOException iOException, int i) {
+        ExtractingLoadable extractingLoadable2;
         Loader.LoadErrorAction loadErrorAction;
         StatsDataSource statsDataSource = extractingLoadable.dataSource;
         LoadEventInfo loadEventInfo = new LoadEventInfo(extractingLoadable.loadTaskId, extractingLoadable.dataSpec, statsDataSource.getLastOpenedUri(), statsDataSource.getLastResponseHeaders(), j, j2, statsDataSource.getBytesRead());
         long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(1, -1, null, 0, null, Util.usToMs(extractingLoadable.seekTimeUs), Util.usToMs(this.durationUs)), iOException, i));
         if (retryDelayMsFor == -9223372036854775807L) {
             loadErrorAction = Loader.DONT_RETRY_FATAL;
+            extractingLoadable2 = extractingLoadable;
         } else {
             int extractedSamplesCount = getExtractedSamplesCount();
             boolean z = extractedSamplesCount > this.extractedSamplesCountAtStartOfLoad;
-            if (configureRetry(extractingLoadable, extractedSamplesCount)) {
+            extractingLoadable2 = extractingLoadable;
+            if (configureRetry(extractingLoadable2, extractedSamplesCount)) {
                 loadErrorAction = Loader.createRetryAction(z, retryDelayMsFor);
             } else {
                 loadErrorAction = Loader.DONT_RETRY;
             }
         }
         boolean isRetry = loadErrorAction.isRetry();
-        this.mediaSourceEventDispatcher.loadError(loadEventInfo, 1, -1, null, 0, null, extractingLoadable.seekTimeUs, this.durationUs, iOException, !isRetry);
+        this.mediaSourceEventDispatcher.loadError(loadEventInfo, 1, -1, null, 0, null, extractingLoadable2.seekTimeUs, this.durationUs, iOException, !isRetry);
         if (!isRetry) {
-            this.loadErrorHandlingPolicy.onLoadTaskConcluded(extractingLoadable.loadTaskId);
+            this.loadErrorHandlingPolicy.onLoadTaskConcluded(extractingLoadable2.loadTaskId);
         }
         return loadErrorAction;
     }
@@ -511,7 +512,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
         this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.lambda$seekMap$1(seekMap);
+                ProgressiveMediaPeriod.this.setSeekMap(seekMap);
             }
         });
     }
@@ -526,16 +527,11 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLengthKnown$2() {
-        this.isLengthKnown = true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void onLengthKnown() {
         this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.lambda$onLengthKnown$2();
+                ProgressiveMediaPeriod.this.isLengthKnown = true;
             }
         });
     }
@@ -560,8 +556,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setSeekMap, reason: merged with bridge method [inline-methods] */
-    public void lambda$seekMap$1(SeekMap seekMap) {
+    public void setSeekMap(SeekMap seekMap) {
         this.seekMap = this.icyHeaders == null ? seekMap : new SeekMap.Unseekable(-9223372036854775807L);
         this.durationUs = seekMap.getDurationUs();
         boolean z = !this.isLengthKnown && seekMap.getDurationUs() == -9223372036854775807L;
@@ -775,31 +770,27 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
                         this.icyTrackOutput = icyTrack;
                         icyTrack.format(ProgressiveMediaPeriod.ICY_FORMAT);
                     }
-                    long j3 = j;
                     this.progressiveMediaExtractor.init(dataReader, this.uri, this.dataSource.getResponseHeaders(), j, j2, this.extractorOutput);
                     if (ProgressiveMediaPeriod.this.icyHeaders != null) {
                         this.progressiveMediaExtractor.disableSeekingOnMp3Streams();
                     }
                     if (this.pendingExtractorSeek) {
-                        this.progressiveMediaExtractor.seek(j3, this.seekTimeUs);
+                        this.progressiveMediaExtractor.seek(j, this.seekTimeUs);
                         this.pendingExtractorSeek = false;
                     }
-                    while (true) {
-                        long j4 = j3;
-                        while (i == 0 && !this.loadCanceled) {
-                            try {
-                                this.loadCondition.block();
-                                i = this.progressiveMediaExtractor.read(this.positionHolder);
-                                j3 = this.progressiveMediaExtractor.getCurrentInputPosition();
-                                if (j3 > ProgressiveMediaPeriod.this.continueLoadingCheckIntervalBytes + j4) {
-                                    break;
-                                }
-                            } catch (InterruptedException unused) {
-                                throw new InterruptedIOException();
+                    while (i == 0 && !this.loadCanceled) {
+                        try {
+                            this.loadCondition.block();
+                            i = this.progressiveMediaExtractor.read(this.positionHolder);
+                            long currentInputPosition = this.progressiveMediaExtractor.getCurrentInputPosition();
+                            if (currentInputPosition > ProgressiveMediaPeriod.this.continueLoadingCheckIntervalBytes + j) {
+                                this.loadCondition.close();
+                                ProgressiveMediaPeriod.this.handler.post(ProgressiveMediaPeriod.this.onContinueLoadingRequestedRunnable);
+                                j = currentInputPosition;
                             }
+                        } catch (InterruptedException unused) {
+                            throw new InterruptedIOException();
                         }
-                        this.loadCondition.close();
-                        ProgressiveMediaPeriod.this.handler.post(ProgressiveMediaPeriod.this.onContinueLoadingRequestedRunnable);
                     }
                     if (i == 1) {
                         i = 0;
@@ -874,11 +865,13 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
             if (this == obj) {
                 return true;
             }
-            if (obj == null || TrackId.class != obj.getClass()) {
-                return false;
+            if (obj != null && TrackId.class == obj.getClass()) {
+                TrackId trackId = (TrackId) obj;
+                if (this.id == trackId.id && this.isIcyTrack == trackId.isIcyTrack) {
+                    return true;
+                }
             }
-            TrackId trackId = (TrackId) obj;
-            return this.id == trackId.id && this.isIcyTrack == trackId.isIcyTrack;
+            return false;
         }
 
         public int hashCode() {

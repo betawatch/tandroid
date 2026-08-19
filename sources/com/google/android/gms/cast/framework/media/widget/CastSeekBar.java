@@ -103,6 +103,11 @@ public class CastSeekBar extends View {
 
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
+        CastSeekBar castSeekBar;
+        Canvas canvas2;
+        int i;
+        int i2;
+        int i3;
         int save = canvas.save();
         canvas.translate(getPaddingLeft(), getPaddingTop());
         int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
@@ -112,66 +117,82 @@ public class CastSeekBar extends View {
         canvas.translate(0.0f, measuredHeight / 2);
         zze zzeVar = this.zza;
         if (zzeVar.zzf) {
-            int i = zzeVar.zzd;
-            if (i > 0) {
-                zzg(canvas, 0, i, zzeVar.zzb, measuredWidth, this.zzo);
+            int i4 = zzeVar.zzd;
+            if (i4 > 0) {
+                castSeekBar = this;
+                canvas2 = canvas;
+                castSeekBar.zzg(canvas2, 0, i4, zzeVar.zzb, measuredWidth, this.zzo);
+            } else {
+                castSeekBar = this;
+                canvas2 = canvas;
             }
-            zze zzeVar2 = this.zza;
-            int i2 = zzeVar2.zzd;
-            if (progress > i2) {
-                zzg(canvas, i2, progress, zzeVar2.zzb, measuredWidth, this.zzm);
+            zze zzeVar2 = castSeekBar.zza;
+            int i5 = zzeVar2.zzd;
+            if (progress > i5) {
+                castSeekBar.zzg(canvas2, i5, progress, zzeVar2.zzb, measuredWidth, castSeekBar.zzm);
+                i3 = progress;
+            } else {
+                i3 = progress;
             }
-            zze zzeVar3 = this.zza;
-            int i3 = zzeVar3.zze;
-            if (i3 > progress) {
-                zzg(canvas, progress, i3, zzeVar3.zzb, measuredWidth, this.zzn);
+            zze zzeVar3 = castSeekBar.zza;
+            int i6 = zzeVar3.zze;
+            if (i6 > i3) {
+                castSeekBar.zzg(canvas2, i3, i6, zzeVar3.zzb, measuredWidth, castSeekBar.zzn);
             }
-            zze zzeVar4 = this.zza;
-            int i4 = zzeVar4.zzb;
-            int i5 = zzeVar4.zze;
-            if (i4 > i5) {
-                zzg(canvas, i5, i4, i4, measuredWidth, this.zzo);
+            zze zzeVar4 = castSeekBar.zza;
+            int i7 = zzeVar4.zzb;
+            int i8 = zzeVar4.zze;
+            if (i7 > i8) {
+                castSeekBar.zzg(canvas2, i8, i7, i7, measuredWidth, castSeekBar.zzo);
             }
         } else {
+            castSeekBar = this;
+            canvas2 = canvas;
             int max = Math.max(zzeVar.zzc, 0);
             if (max > 0) {
-                zzg(canvas, 0, max, this.zza.zzb, measuredWidth, this.zzo);
+                i = max;
+                castSeekBar.zzg(canvas2, 0, i, castSeekBar.zza.zzb, measuredWidth, castSeekBar.zzo);
+            } else {
+                i = max;
             }
-            if (progress > max) {
-                zzg(canvas, max, progress, this.zza.zzb, measuredWidth, this.zzm);
+            if (progress > i) {
+                castSeekBar.zzg(canvas2, i, progress, castSeekBar.zza.zzb, measuredWidth, castSeekBar.zzm);
+                i2 = progress;
+            } else {
+                i2 = progress;
             }
-            int i6 = this.zza.zzb;
-            if (i6 > progress) {
-                zzg(canvas, progress, i6, i6, measuredWidth, this.zzo);
+            int i9 = castSeekBar.zza.zzb;
+            if (i9 > i2) {
+                castSeekBar.zzg(canvas2, i2, i9, i9, measuredWidth, castSeekBar.zzo);
             }
         }
-        canvas.restoreToCount(save2);
-        List list = this.zzc;
+        canvas2.restoreToCount(save2);
+        List list = castSeekBar.zzc;
         if (list != null && !list.isEmpty()) {
-            this.zzl.setColor(this.zzp);
+            castSeekBar.zzl.setColor(castSeekBar.zzp);
             getMeasuredWidth();
             getPaddingLeft();
             getPaddingRight();
             int measuredHeight2 = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
-            int save3 = canvas.save();
-            canvas.translate(0.0f, measuredHeight2 / 2);
+            int save3 = canvas2.save();
+            canvas2.translate(0.0f, measuredHeight2 / 2);
             Iterator it = list.iterator();
             while (it.hasNext()) {
                 WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             }
-            canvas.restoreToCount(save3);
+            canvas2.restoreToCount(save3);
         }
-        if (isEnabled() && this.zza.zzf) {
-            this.zzl.setColor(this.zzm);
+        if (isEnabled() && castSeekBar.zza.zzf) {
+            castSeekBar.zzl.setColor(castSeekBar.zzm);
             int measuredWidth2 = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
             int measuredHeight3 = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
             double progress2 = getProgress();
-            double d = this.zza.zzb;
-            int save4 = canvas.save();
-            canvas.drawCircle((int) ((progress2 / d) * measuredWidth2), measuredHeight3 / 2.0f, this.zzj, this.zzl);
-            canvas.restoreToCount(save4);
+            double d = castSeekBar.zza.zzb;
+            int save4 = canvas2.save();
+            canvas2.drawCircle((int) ((progress2 / d) * measuredWidth2), measuredHeight3 / 2.0f, castSeekBar.zzj, castSeekBar.zzl);
+            canvas2.restoreToCount(save4);
         }
-        canvas.restoreToCount(save);
+        canvas2.restoreToCount(save);
     }
 
     @Override // android.view.View

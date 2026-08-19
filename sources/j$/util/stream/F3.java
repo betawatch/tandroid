@@ -1,31 +1,27 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-final class F3 implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ Runnable b;
+import java.util.function.IntPredicate;
 
-    F3(Runnable runnable, Runnable runnable2) {
-        this.a = runnable;
-        this.b = runnable2;
+/* loaded from: classes2.dex */
+public final class F3 extends Z1 implements P3 {
+    public final /* synthetic */ G3 b;
+
+    @Override // j$.util.stream.P3
+    public final long m() {
+        return 0L;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Runnable runnable = this.b;
-        try {
-            this.a.run();
-            runnable.run();
-        } catch (Throwable th) {
-            try {
-                runnable.run();
-            } catch (Throwable th2) {
-                try {
-                    th.addSuppressed(th2);
-                } catch (Throwable unused) {
-                }
-            }
-            throw th;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public F3(G3 g3, f2 f2Var, boolean z) {
+        super(f2Var);
+        this.b = g3;
+    }
+
+    @Override // j$.util.stream.d2, j$.util.stream.f2
+    public final void accept(int i) {
+        this.b.getClass();
+        IntPredicate intPredicate = null;
+        intPredicate.test(i);
+        throw null;
     }
 }

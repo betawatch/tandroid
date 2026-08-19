@@ -57,15 +57,13 @@ public class SearchCallbackDelegateImpl implements SearchCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onSearchTextChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.SearchCallbackDelegateImpl$SearchCallbackStub$$ExternalSyntheticLambda1
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onSearchTextChanged$0;
-                    lambda$onSearchTextChanged$0 = SearchCallbackDelegateImpl.SearchCallbackStub.this.lambda$onSearchTextChanged$0(str);
-                    return lambda$onSearchTextChanged$0;
+                    return SearchCallbackDelegateImpl.SearchCallbackStub.$r8$lambda$RqmlWNPg55YHdmSVQQAEDPV549Q(SearchCallbackDelegateImpl.SearchCallbackStub.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSearchTextChanged$0(String str) {
+        public static /* synthetic */ Object $r8$lambda$RqmlWNPg55YHdmSVQQAEDPV549Q(SearchCallbackStub searchCallbackStub, String str) {
+            searchCallbackStub.getClass();
             throw null;
         }
 
@@ -74,15 +72,13 @@ public class SearchCallbackDelegateImpl implements SearchCallbackDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onSearchSubmitted", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.SearchCallbackDelegateImpl$SearchCallbackStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onSearchSubmitted$1;
-                    lambda$onSearchSubmitted$1 = SearchCallbackDelegateImpl.SearchCallbackStub.this.lambda$onSearchSubmitted$1(str);
-                    return lambda$onSearchSubmitted$1;
+                    return SearchCallbackDelegateImpl.SearchCallbackStub.$r8$lambda$dx39ga_t255O8OhkV41BCLGktgU(SearchCallbackDelegateImpl.SearchCallbackStub.this, str);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSearchSubmitted$1(String str) {
+        public static /* synthetic */ Object $r8$lambda$dx39ga_t255O8OhkV41BCLGktgU(SearchCallbackStub searchCallbackStub, String str) {
+            searchCallbackStub.getClass();
             throw null;
         }
     }

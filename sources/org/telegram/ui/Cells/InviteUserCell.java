@@ -81,14 +81,9 @@ public class InviteUserCell extends FrameLayout {
         progressButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.InviteUserCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InviteUserCell.this.lambda$new$0(view);
+                InviteUserCell.this.performClick();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        performClick();
     }
 
     public void setUser(ContactsController.Contact contact, CharSequence charSequence) {

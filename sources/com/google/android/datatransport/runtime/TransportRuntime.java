@@ -35,7 +35,8 @@ public class TransportRuntime implements TransportInternal {
                     if (instance == null) {
                         instance = DaggerTransportRuntimeComponent.builder().setApplicationContext(context).build();
                     }
-                } finally {
+                } catch (Throwable th) {
+                    throw th;
                 }
             }
         }

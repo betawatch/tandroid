@@ -52,7 +52,7 @@ public class BackupImageView extends View {
         this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.BackupImageView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
             public final void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-                BackupImageView.this.lambda$new$0(imageReceiver, z, z2, z3);
+                BackupImageView.$r8$lambda$SSpwY9JIva09_zn1IctmCr81d6o(BackupImageView.this, imageReceiver, z, z2, z3);
             }
 
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -67,12 +67,12 @@ public class BackupImageView extends View {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+    public static /* synthetic */ void $r8$lambda$SSpwY9JIva09_zn1IctmCr81d6o(BackupImageView backupImageView, ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        backupImageView.getClass();
         if (!z || z2) {
             return;
         }
-        checkCreateBlurredImage();
+        backupImageView.checkCreateBlurredImage();
     }
 
     protected ImageReceiver createImageReciever() {
@@ -171,16 +171,7 @@ public class BackupImageView extends View {
     }
 
     public void setImageMedia(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Bitmap bitmap, int i, int i2, Object obj) {
-        BackupImageView backupImageView;
-        BitmapDrawable bitmapDrawable;
-        if (bitmap != null) {
-            backupImageView = this;
-            bitmapDrawable = new BitmapDrawable((Resources) null, bitmap);
-        } else {
-            backupImageView = this;
-            bitmapDrawable = null;
-        }
-        backupImageView.imageReceiver.setImage(imageLocation, str, imageLocation2, str2, null, null, bitmapDrawable, i, null, obj, i2);
+        this.imageReceiver.setImage(imageLocation, str, imageLocation2, str2, null, null, bitmap != null ? new BitmapDrawable((Resources) null, bitmap) : null, i, null, obj, i2);
         onNewImageSet();
     }
 
@@ -197,16 +188,7 @@ public class BackupImageView extends View {
     }
 
     public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, Bitmap bitmap, String str3, int i, Object obj) {
-        BackupImageView backupImageView;
-        Drawable drawable2;
-        if (bitmap != null) {
-            backupImageView = this;
-            drawable2 = new BitmapDrawable((Resources) null, bitmap);
-        } else {
-            backupImageView = this;
-            drawable2 = drawable;
-        }
-        backupImageView.imageReceiver.setImage(imageLocation, str, imageLocation2, str2, drawable2, i, str3, obj, 0);
+        this.imageReceiver.setImage(imageLocation, str, imageLocation2, str2, bitmap != null ? new BitmapDrawable((Resources) null, bitmap) : drawable, i, str3, obj, 0);
         onNewImageSet();
     }
 

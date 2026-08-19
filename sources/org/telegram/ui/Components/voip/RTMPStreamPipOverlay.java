@@ -74,7 +74,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            RTMPStreamPipOverlay.lambda$static$1((RTMPStreamPipOverlay) obj, f);
+            RTMPStreamPipOverlay.$r8$lambda$SCkwudA6M2DrlnqBYPkdXPJuITY((RTMPStreamPipOverlay) obj, f);
         }
     });
     private static final FloatPropertyCompat PIP_Y_PROPERTY = new SimpleFloatPropertyCompat("pipY", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda2
@@ -87,7 +87,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda3
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            RTMPStreamPipOverlay.lambda$static$3((RTMPStreamPipOverlay) obj, f);
+            RTMPStreamPipOverlay.$r8$lambda$_Tk57sOrJpPZZ-CDoVxB9cVvUIA((RTMPStreamPipOverlay) obj, f);
         }
     });
     private static RTMPStreamPipOverlay instance = new RTMPStreamPipOverlay();
@@ -131,7 +131,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
     private Runnable dismissControlsCallback = new Runnable() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda5
         @Override // java.lang.Runnable
         public final void run() {
-            RTMPStreamPipOverlay.this.lambda$new$4();
+            RTMPStreamPipOverlay.$r8$lambda$5hWfXb7hfmxXoOt6eBAH-hLIawU(RTMPStreamPipOverlay.this);
         }
     };
 
@@ -150,27 +150,24 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         IPipSourceDelegate.-CC.$default$pipRenderForeground(this, canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$1(RTMPStreamPipOverlay rTMPStreamPipOverlay, float f) {
+    public static /* synthetic */ void $r8$lambda$SCkwudA6M2DrlnqBYPkdXPJuITY(RTMPStreamPipOverlay rTMPStreamPipOverlay, float f) {
         WindowManager.LayoutParams layoutParams = rTMPStreamPipOverlay.windowLayoutParams;
         rTMPStreamPipOverlay.pipX = f;
         layoutParams.x = (int) f;
         AndroidUtilities.updateViewLayout(rTMPStreamPipOverlay.windowManager, rTMPStreamPipOverlay.contentView, layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$3(RTMPStreamPipOverlay rTMPStreamPipOverlay, float f) {
+    public static /* synthetic */ void $r8$lambda$_Tk57sOrJpPZZ-CDoVxB9cVvUIA(RTMPStreamPipOverlay rTMPStreamPipOverlay, float f) {
         WindowManager.LayoutParams layoutParams = rTMPStreamPipOverlay.windowLayoutParams;
         rTMPStreamPipOverlay.pipY = f;
         layoutParams.y = (int) f;
         AndroidUtilities.updateViewLayout(rTMPStreamPipOverlay.windowManager, rTMPStreamPipOverlay.contentView, layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4() {
-        this.isShowingControls = false;
-        toggleControls(false);
-        this.postedDismissControls = false;
+    public static /* synthetic */ void $r8$lambda$5hWfXb7hfmxXoOt6eBAH-hLIawU(RTMPStreamPipOverlay rTMPStreamPipOverlay) {
+        rTMPStreamPipOverlay.isShowingControls = false;
+        rTMPStreamPipOverlay.toggleControls(false);
+        rTMPStreamPipOverlay.postedDismissControls = false;
     }
 
     public static boolean isVisible() {
@@ -226,7 +223,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         this.scaleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda8
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                RTMPStreamPipOverlay.this.lambda$toggleControls$5(valueAnimator);
+                RTMPStreamPipOverlay.$r8$lambda$S4FhBYX9MsfALb2OCkaS7mqIXGA(RTMPStreamPipOverlay.this, valueAnimator);
             }
         });
         this.scaleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.1
@@ -238,9 +235,9 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         this.scaleAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$toggleControls$5(ValueAnimator valueAnimator) {
-        this.controlsView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public static /* synthetic */ void $r8$lambda$S4FhBYX9MsfALb2OCkaS7mqIXGA(RTMPStreamPipOverlay rTMPStreamPipOverlay, ValueAnimator valueAnimator) {
+        rTMPStreamPipOverlay.getClass();
+        rTMPStreamPipOverlay.controlsView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     public static void dismiss() {
@@ -253,7 +250,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RTMPStreamPipOverlay.lambda$dismissInternal$6();
+                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
                 }
             }, 100L);
             this.accountInstance.getNotificationCenter().removeObserver(this, NotificationCenter.groupCallUpdated);
@@ -292,15 +289,12 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dismissInternal$6() {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-    }
-
     public static void show(Activity activity) {
         instance.showInternal(activity);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v7, types: [android.content.Context] */
     private void showInternal(Activity activity) {
         if (VoIPService.getSharedInstance() == null || VoIPService.getSharedInstance().groupCall == null || this.isVisible) {
             return;
@@ -317,16 +311,16 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         this.isShowingControls = false;
         this.pipXSpring = new SpringAnimation(this, PIP_X_PROPERTY).setSpring(new SpringForce().setDampingRatio(0.75f).setStiffness(650.0f));
         this.pipYSpring = new SpringAnimation(this, PIP_Y_PROPERTY).setSpring(new SpringForce().setDampingRatio(0.75f).setStiffness(650.0f));
-        final Context context = activity != null ? activity : ApplicationLoader.applicationContext;
-        final int scaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-        ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(context, new 3());
+        final Activity activity2 = activity != null ? activity : ApplicationLoader.applicationContext;
+        final int scaledTouchSlop = ViewConfiguration.get(activity2).getScaledTouchSlop();
+        ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(activity2, new 3());
         this.scaleGestureDetector = scaleGestureDetector;
         int i = Build.VERSION.SDK_INT;
         scaleGestureDetector.setQuickScaleEnabled(false);
         if (i >= 23) {
             this.scaleGestureDetector.setStylusScaleEnabled(false);
         }
-        this.gestureDetector = new GestureDetectorCompat(context, new GestureDetector.SimpleOnGestureListener() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.4
+        this.gestureDetector = new GestureDetectorCompat(activity2, new GestureDetector.SimpleOnGestureListener() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.4
             private float startPipX;
             private float startPipY;
 
@@ -392,7 +386,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
                 return true;
             }
         });
-        this.contentFrameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.5
+        this.contentFrameLayout = new FrameLayout(activity2) { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.5
             private Path path = new Path();
 
             @Override // android.view.ViewGroup, android.view.View
@@ -451,7 +445,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
                 this.path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
             }
         };
-        ViewGroup viewGroup = new ViewGroup(context) { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.6
+        ViewGroup viewGroup = new ViewGroup(activity2) { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.6
             @Override // android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
                 if (RTMPStreamPipOverlay.this.contentFrameLayout.getParent() == this) {
@@ -485,10 +479,10 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         });
         this.contentFrameLayout.setClipToOutline(true);
         this.contentFrameLayout.setBackgroundColor(Theme.getColor(Theme.key_voipgroup_actionBar));
-        BackupImageView backupImageView = new BackupImageView(context);
+        BackupImageView backupImageView = new BackupImageView(activity2);
         this.avatarImageView = backupImageView;
         this.contentFrameLayout.addView(backupImageView, LayoutHelper.createFrame(-1, -1.0f));
-        VoIPTextureView voIPTextureView = new VoIPTextureView(context, false, false, false, false);
+        VoIPTextureView voIPTextureView = new VoIPTextureView(activity2, false, false, false, false);
         this.textureView = voIPTextureView;
         voIPTextureView.setAlpha(0.0f);
         this.textureView.renderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FILL);
@@ -497,7 +491,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         voIPTextureView2.renderer.setRotateTextureWithScreen(true);
         this.textureView.renderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new 8());
         this.contentFrameLayout.addView(this.textureView, LayoutHelper.createFrame(-1, -1.0f));
-        View view = new View(context) { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.9
+        View view = new View(activity2) { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay.9
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
                 if (getAlpha() == 0.0f) {
@@ -517,17 +511,17 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         };
         this.flickerView = view;
         this.contentFrameLayout.addView(view, LayoutHelper.createFrame(-1, -1.0f));
-        FrameLayout frameLayout = new FrameLayout(context);
+        FrameLayout frameLayout = new FrameLayout(activity2);
         this.controlsView = frameLayout;
         frameLayout.setAlpha(0.0f);
-        View view2 = new View(context);
+        View view2 = new View(activity2);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColors(new int[]{1140850688, 0});
         gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
         view2.setBackground(gradientDrawable);
         this.controlsView.addView(view2, LayoutHelper.createFrame(-1, -1.0f));
         int dp = AndroidUtilities.dp(8.0f);
-        ImageView imageView = new ImageView(context);
+        ImageView imageView = new ImageView(activity2);
         imageView.setImageResource(R.drawable.pip_video_close);
         int i2 = Theme.key_voipgroup_actionBarItems;
         imageView.setColorFilter(Theme.getColor(i2));
@@ -543,7 +537,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         float f = 38;
         float f2 = 4;
         this.controlsView.addView(imageView, LayoutHelper.createFrame(38, f, 5, 0.0f, f2, f2, 0.0f));
-        ImageView imageView2 = new ImageView(context);
+        ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_expand);
         imageView2.setColorFilter(Theme.getColor(i2));
         imageView2.setBackground(Theme.createSelectorDrawable(Theme.getColor(i3)));
@@ -551,13 +545,13 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                RTMPStreamPipOverlay.lambda$showInternal$8(context, view3);
+                RTMPStreamPipOverlay.$r8$lambda$3rL7lGcqh4hmab5qShhnR2-74jU(activity2, view3);
             }
         });
         this.controlsView.addView(imageView2, LayoutHelper.createFrame(38, f, 5, 0.0f, f2, 48, 0.0f));
         this.contentFrameLayout.addView(this.controlsView, LayoutHelper.createFrame(-1, -1.0f));
-        this.windowManager = (WindowManager) context.getSystemService("window");
-        WindowManager.LayoutParams createWindowLayoutParams = PipUtils.createWindowLayoutParams(context, false);
+        this.windowManager = (WindowManager) activity2.getSystemService("window");
+        WindowManager.LayoutParams createWindowLayoutParams = PipUtils.createWindowLayoutParams(activity2, false);
         this.windowLayoutParams = createWindowLayoutParams;
         int i4 = this.pipWidth;
         createWindowLayoutParams.width = i4;
@@ -591,7 +585,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         });
         animatorSet.start();
         bindTextureView();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
         PipSource pipSource = this.pipSource;
         if (pipSource != null) {
             pipSource.destroy();
@@ -616,7 +610,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RTMPStreamPipOverlay.3.this.lambda$onScale$0();
+                    RTMPStreamPipOverlay.3.$r8$lambda$F8PCOTp4wZhD9jX4K2MS-coPeUY(RTMPStreamPipOverlay.3.this);
                 }
             });
             ((SpringAnimation) RTMPStreamPipOverlay.this.pipXSpring.setStartValue(RTMPStreamPipOverlay.this.pipX)).getSpring().setFinalPosition(scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - RTMPStreamPipOverlay.this.pipWidth) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f));
@@ -631,8 +625,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onScale$0() {
+        public static /* synthetic */ void $r8$lambda$F8PCOTp4wZhD9jX4K2MS-coPeUY(3 r1) {
             RTMPStreamPipOverlay.this.contentFrameLayout.invalidate();
             if (RTMPStreamPipOverlay.this.contentFrameLayout.isInLayout()) {
                 return;
@@ -714,14 +707,9 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$8$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RTMPStreamPipOverlay.8.this.lambda$onFirstFrameRendered$0();
+                    RTMPStreamPipOverlay.this.bindTextureView();
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onFirstFrameRendered$0() {
-            RTMPStreamPipOverlay.this.bindTextureView();
         }
 
         @Override // org.webrtc.RendererCommon.RendererEvents
@@ -734,13 +722,12 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.RTMPStreamPipOverlay$8$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RTMPStreamPipOverlay.8.this.lambda$onFrameResolutionChanged$1(i, i2);
+                    RTMPStreamPipOverlay.8.$r8$lambda$qKtX04EN3wby1G8XylIMoA-AemY(RTMPStreamPipOverlay.8.this, i, i2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onFrameResolutionChanged$1(int i, int i2) {
+        public static /* synthetic */ void $r8$lambda$qKtX04EN3wby1G8XylIMoA-AemY(8 r1, int i, int i2) {
             if (RTMPStreamPipOverlay.this.pipSource != null) {
                 RTMPStreamPipOverlay.this.pipSource.setContentRatio(i, i2);
             }
@@ -748,8 +735,7 @@ public class RTMPStreamPipOverlay implements NotificationCenter.NotificationCent
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showInternal$8(Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$3rL7lGcqh4hmab5qShhnR2-74jU(Context context, View view) {
         if (VoIPService.getSharedInstance() != null) {
             Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_chat");
             action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());

@@ -65,7 +65,7 @@ public abstract class CustomReactionEditText extends EditTextCaption {
         setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Components.Reactions.CustomReactionEditText$$ExternalSyntheticLambda0
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                CustomReactionEditText.this.lambda$new$0(view, z);
+                CustomReactionEditText.$r8$lambda$4SFGA_l-2jkfOeF1MjYJK1KjlQM(CustomReactionEditText.this, view, z);
             }
         });
         setTextIsSelectable(true);
@@ -73,18 +73,17 @@ public abstract class CustomReactionEditText extends EditTextCaption {
         setFocusableInTouchMode(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, boolean z) {
+    public static /* synthetic */ void $r8$lambda$4SFGA_l-2jkfOeF1MjYJK1KjlQM(CustomReactionEditText customReactionEditText, View view, boolean z) {
         if (z) {
-            removeReactionsSpan(true);
-            Runnable runnable = this.onFocused;
+            customReactionEditText.removeReactionsSpan(true);
+            Runnable runnable = customReactionEditText.onFocused;
             if (runnable != null) {
                 runnable.run();
                 return;
             }
             return;
         }
-        addReactionsSpan();
+        customReactionEditText.addReactionsSpan();
     }
 
     @Override // org.telegram.ui.Components.EditTextEffects, android.view.View
@@ -133,7 +132,7 @@ public abstract class CustomReactionEditText extends EditTextCaption {
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomReactionEditText$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CustomReactionEditText.this.lambda$removeReactionsSpan$1(addReactionsSpan);
+                    CustomReactionEditText.$r8$lambda$ChVxSDasvJ0-LQlf1VdZZq1bzww(CustomReactionEditText.this, addReactionsSpan);
                 }
             };
             if (z) {
@@ -145,11 +144,10 @@ public abstract class CustomReactionEditText extends EditTextCaption {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeReactionsSpan$1(AddReactionsSpan addReactionsSpan) {
-        getText().delete(getText().getSpanStart(addReactionsSpan), getText().getSpanEnd(addReactionsSpan));
-        setCursorVisible(true);
-        setLongClickable(true);
+    public static /* synthetic */ void $r8$lambda$ChVxSDasvJ0-LQlf1VdZZq1bzww(CustomReactionEditText customReactionEditText, AddReactionsSpan addReactionsSpan) {
+        customReactionEditText.getText().delete(customReactionEditText.getText().getSpanStart(addReactionsSpan), customReactionEditText.getText().getSpanEnd(addReactionsSpan));
+        customReactionEditText.setCursorVisible(true);
+        customReactionEditText.setLongClickable(true);
     }
 
     public int getEditTextSelectionEnd() {

@@ -171,17 +171,16 @@ public abstract class BottomPagerTabs extends View {
         int width = ((getWidth() - getPaddingLeft()) - getPaddingRight()) / this.tabs.length;
         int min = Math.min(AndroidUtilities.dp(64.0f), width);
         float f = this.scrollingT.set(this.scrolling);
-        float f2 = 9.0f;
-        float f3 = 2.0f;
-        float f4 = 0.0f;
+        float f2 = 2.0f;
+        float f3 = 0.0f;
         if (f > 0.0f) {
             this.selectPaint.setColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), (int) (((Math.abs((Math.floor(this.progress) + 0.5d) - this.progress) * 1.2000000476837158d) + 0.4000000059604645d) * 18.0d * f)));
-            float f5 = width;
-            float f6 = f5 / 2.0f;
-            float paddingLeft = getPaddingLeft() + AndroidUtilities.lerp((((float) Math.floor(this.progress)) * f5) + f6, (f5 * ((float) Math.ceil(this.progress))) + f6, this.progress - ((int) r13));
+            float f4 = width;
+            float f5 = f4 / 2.0f;
+            float paddingLeft = getPaddingLeft() + AndroidUtilities.lerp((((float) Math.floor(this.progress)) * f4) + f5, (f4 * ((float) Math.ceil(this.progress))) + f5, this.progress - ((int) r13));
             RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = min / 2.0f;
-            rectF.set(paddingLeft - f7, AndroidUtilities.dp(9.0f), paddingLeft + f7, AndroidUtilities.dp(41.0f));
+            float f6 = min / 2.0f;
+            rectF.set(paddingLeft - f6, AndroidUtilities.dp(9.0f), paddingLeft + f6, AndroidUtilities.dp(41.0f));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.selectPaint);
         }
         int i = 0;
@@ -191,17 +190,17 @@ public abstract class BottomPagerTabs extends View {
                 return;
             }
             Tab tab = tabArr[i];
-            tab.clickRect.set(getPaddingLeft() + (i * width), f4, r13 + width, getHeight());
+            tab.clickRect.set(getPaddingLeft() + (i * width), f3, r13 + width, getHeight());
             float min2 = 1.0f - Math.min(1.0f, Math.abs(this.progress - i));
             int color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText6, this.resourcesProvider);
             int i2 = Theme.key_windowBackgroundWhiteBlackText;
             tab.setColor(ColorUtils.blendARGB(color, Theme.getColor(i2, this.resourcesProvider), min2));
             Rect rect = AndroidUtilities.rectTmp2;
-            float f8 = min / f3;
-            rect.set((int) (tab.clickRect.centerX() - f8), AndroidUtilities.dp(f2), (int) (tab.clickRect.centerX() + f8), AndroidUtilities.dp(41.0f));
-            float f9 = tab.nonscrollingT.set(min2 > 0.6f);
+            float f7 = min / f2;
+            rect.set((int) (tab.clickRect.centerX() - f7), AndroidUtilities.dp(9.0f), (int) (tab.clickRect.centerX() + f7), AndroidUtilities.dp(41.0f));
+            float f8 = tab.nonscrollingT.set(min2 > 0.6f);
             if (f < 1.0f) {
-                this.selectPaint.setColor(ColorUtils.setAlphaComponent(Theme.getColor(i2, this.resourcesProvider), (int) (f9 * 18.0f * (1.0f - f))));
+                this.selectPaint.setColor(ColorUtils.setAlphaComponent(Theme.getColor(i2, this.resourcesProvider), (int) (f8 * 18.0f * (1.0f - f))));
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(rect);
                 canvas.drawRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.selectPaint);
@@ -217,9 +216,8 @@ public abstract class BottomPagerTabs extends View {
             tab.layout.draw(canvas);
             canvas.restore();
             i++;
-            f2 = 9.0f;
-            f3 = 2.0f;
-            f4 = 0.0f;
+            f2 = 2.0f;
+            f3 = 0.0f;
         }
     }
 

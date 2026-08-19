@@ -10,7 +10,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final List<String> H264_HW_EXCEPTION_MODELS = Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
     private static final int PERIODIC_KEY_FRAME_INTERVAL_S = 3600;
@@ -171,7 +171,13 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
 
     private boolean isHardwareSupportedInCurrentSdkVp8(MediaCodecInfo mediaCodecInfo) {
         String name = mediaCodecInfo.getName();
-        return name.startsWith("OMX.qcom.") || (name.startsWith("OMX.Exynos.") && Build.VERSION.SDK_INT >= 23) || (name.startsWith("OMX.Intel.") && this.enableIntelVp8Encoder);
+        if (name.startsWith("OMX.qcom.")) {
+            return true;
+        }
+        if (!name.startsWith("OMX.Exynos.") || Build.VERSION.SDK_INT < 23) {
+            return name.startsWith("OMX.Intel.") && this.enableIntelVp8Encoder;
+        }
+        return true;
     }
 
     private boolean isHardwareSupportedInCurrentSdkVp9(MediaCodecInfo mediaCodecInfo) {

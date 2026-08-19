@@ -5,7 +5,6 @@ import android.os.Build;
 import android.widget.EdgeEffect;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.ui.Components.EdgeEffectTrackerFactory;
 
 /* loaded from: classes5.dex */
@@ -44,9 +43,13 @@ public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFacto
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onEdgeEffectVisibilityChange(int i, boolean z) {
-        Iterator it = this.listeners.iterator();
-        while (it.hasNext()) {
-            ((OnEdgeEffectListener) it.next()).onEdgeEffectVisibilityChange(i, z);
+        ArrayList arrayList = this.listeners;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            ((OnEdgeEffectListener) obj).onEdgeEffectVisibilityChange(i, z);
         }
     }
 
@@ -73,15 +76,14 @@ public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFacto
 
         public boolean isVisible() {
             float distance;
-            if (!isFinished()) {
-                if (Build.VERSION.SDK_INT >= 31) {
-                    distance = getDistance();
-                    if (distance != 0.0f) {
-                    }
-                }
+            if (isFinished()) {
+                return false;
+            }
+            if (Build.VERSION.SDK_INT < 31) {
                 return true;
             }
-            return false;
+            distance = getDistance();
+            return distance != 0.0f;
         }
 
         /* JADX INFO: Access modifiers changed from: private */

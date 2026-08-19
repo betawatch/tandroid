@@ -517,21 +517,21 @@ public final class BulletinFactory {
     }
 
     public Bulletin createUsersBulletin(List list, CharSequence charSequence, CharSequence charSequence2, UndoObject undoObject) {
+        float f;
         int i;
         Bulletin.UsersLayout usersLayout = new Bulletin.UsersLayout(getContext(), charSequence2 != null, this.resourcesProvider);
         if (list != null) {
-            int i2 = 0;
             i = 0;
-            for (int i3 = 3; i2 < list.size() && i < i3; i3 = 3) {
+            for (int i2 = 0; i2 < list.size() && i < 3; i2++) {
                 TLObject tLObject = (TLObject) list.get(i2);
                 if (tLObject != null) {
-                    int i4 = i + 1;
-                    usersLayout.avatarsImageView.setCount(i4);
+                    int i3 = i + 1;
+                    usersLayout.avatarsImageView.setCount(i3);
                     usersLayout.avatarsImageView.setObject(i, UserConfig.selectedAccount, tLObject);
-                    i = i4;
+                    i = i3;
                 }
-                i2++;
             }
+            f = 4.0f;
             if (list.size() == 1) {
                 usersLayout.avatarsImageView.setTranslationX(AndroidUtilities.dp(4.0f));
                 usersLayout.avatarsImageView.setScaleX(1.2f);
@@ -541,6 +541,7 @@ public final class BulletinFactory {
                 usersLayout.avatarsImageView.setScaleY(1.0f);
             }
         } else {
+            f = 4.0f;
             i = 0;
         }
         usersLayout.avatarsImageView.commitTransition(false);
@@ -554,7 +555,7 @@ public final class BulletinFactory {
             if (usersLayout.linearLayout.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
                 int dp = AndroidUtilities.dp(70 - ((3 - i) * 12));
                 if (i == 1) {
-                    dp += AndroidUtilities.dp(4.0f);
+                    dp += AndroidUtilities.dp(f);
                 }
                 if (LocaleController.isRTL) {
                     ((ViewGroup.MarginLayoutParams) usersLayout.linearLayout.getLayoutParams()).rightMargin = dp;
@@ -570,7 +571,7 @@ public final class BulletinFactory {
                 int dp2 = AndroidUtilities.dp(70 - ((3 - i) * 12));
                 if (i == 1) {
                     usersLayout.textView.setTranslationY(-AndroidUtilities.dp(1.0f));
-                    dp2 += AndroidUtilities.dp(4.0f);
+                    dp2 += AndroidUtilities.dp(f);
                 }
                 if (LocaleController.isRTL) {
                     ((ViewGroup.MarginLayoutParams) usersLayout.textView.getLayoutParams()).rightMargin = dp2;
@@ -783,7 +784,7 @@ public final class BulletinFactory {
             MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(inputStickerSet, null, false, new Utilities.Callback() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BulletinFactory.lambda$createContainsEmojiBulletin$2(i, createEmojiLoadingBulletin, currentTimeMillis, (TLRPC.TL_messages_stickerSet) obj);
+                    BulletinFactory.$r8$lambda$yygjfMhXwGKIBOss6ktGnM1K6ow(i, createEmojiLoadingBulletin, currentTimeMillis, (TLRPC.TL_messages_stickerSet) obj);
                 }
             });
             return createEmojiLoadingBulletin;
@@ -796,8 +797,7 @@ public final class BulletinFactory {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createContainsEmojiBulletin$2(int i, final Bulletin bulletin, long j, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+    public static /* synthetic */ void $r8$lambda$yygjfMhXwGKIBOss6ktGnM1K6ow(int i, final Bulletin bulletin, long j, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         final CharSequence string;
         TLRPC.StickerSet stickerSet;
         if (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) {
@@ -847,7 +847,7 @@ public final class BulletinFactory {
         lottieLayout.textView.setText(AndroidUtilities.replaceSingleTag(fileType.getText(i), new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BulletinFactory.lambda$createDownloadBulletin$4();
+                BulletinFactory.$r8$lambda$8J3OiIFslIyIXkHdLTVDv63vF-s();
             }
         }));
         if (fileType.icon.paddingBottom != 0) {
@@ -856,8 +856,7 @@ public final class BulletinFactory {
         return create(lottieLayout, 1500);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createDownloadBulletin$4() {
+    public static /* synthetic */ void $r8$lambda$8J3OiIFslIyIXkHdLTVDv63vF-s() {
         LaunchActivity launchActivity = LaunchActivity.instance;
         if (launchActivity == null || launchActivity.isFinishing()) {
             return;
@@ -1257,35 +1256,20 @@ public final class BulletinFactory {
 
     public static Bulletin createForwardedBulletin(Context context, final BaseFragment baseFragment, FrameLayout frameLayout, int i, final long j, int i2, int i3, int i4, int i5, boolean z, Runnable runnable, final Runnable runnable2) {
         final Bulletin.LottieLayout lottieLayout;
-        Context context2;
-        int i6;
-        int i7;
-        Theme.ResourcesProvider resourcesProvider;
         SpannableStringBuilder replaceTags;
         Bulletin make;
-        int i8;
+        int i6;
         if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() && baseFragment != null && i <= 1 && j == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && !z) {
             lottieLayout = new Bulletin.LottieLayoutWithReactions(baseFragment, i2);
         } else {
-            if (baseFragment != null) {
-                resourcesProvider = baseFragment.getResourceProvider();
-                context2 = context;
-                i6 = i3;
-                i7 = i4;
-            } else {
-                context2 = context;
-                i6 = i3;
-                i7 = i4;
-                resourcesProvider = null;
-            }
-            lottieLayout = new Bulletin.LottieLayout(context2, resourcesProvider, i6, i7);
+            lottieLayout = new Bulletin.LottieLayout(context, baseFragment != null ? baseFragment.getResourceProvider() : null, i3, i4);
         }
         boolean z2 = (runnable2 == null && runnable == null) ? false : true;
         final boolean[] zArr = {false};
         final Runnable runnable3 = runnable2 != null ? new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                BulletinFactory.lambda$createForwardedBulletin$6(zArr, runnable2);
+                BulletinFactory.$r8$lambda$cmdwCWTjWScaKVp1N2mPSyjQJGc(zArr, runnable2);
             }
         } : null;
         if (i > 1) {
@@ -1311,49 +1295,49 @@ public final class BulletinFactory {
             Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BulletinFactory.lambda$createForwardedBulletin$7(runnable3, baseFragment, j);
+                    BulletinFactory.$r8$lambda$rGqRMmPy33W71zUl4SsdlueKl8w(runnable3, baseFragment, j);
                 }
             };
             if (DialogObject.isChatDialog(j)) {
                 TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-j));
                 if (i2 > 1) {
-                    i8 = 0;
+                    i6 = 0;
                     if (baseFragment != null) {
                         replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title), -1, 2, runnable4);
                     } else {
                         replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title));
-                        i8 = 0;
+                        i6 = 0;
                     }
                 } else if (baseFragment != null) {
-                    i8 = 0;
+                    i6 = 0;
                     replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title), -1, 2, runnable4);
                 } else {
-                    i8 = 0;
+                    i6 = 0;
                     replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title));
                 }
-                lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[i8]);
+                lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[i6]);
             } else {
                 TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j));
                 if (i2 <= 1) {
-                    int i9 = z2 ? R.string.FwdMessageToUserShort : R.string.FwdMessageToUser;
+                    int i7 = z2 ? R.string.FwdMessageToUserShort : R.string.FwdMessageToUser;
                     if (baseFragment != null) {
-                        i8 = 0;
-                        replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i9, UserObject.getFirstName(user)), -1, 2, runnable4);
+                        i6 = 0;
+                        replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i7, UserObject.getFirstName(user)), -1, 2, runnable4);
                     } else {
-                        replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i9, UserObject.getFirstName(user)));
-                        i8 = 0;
+                        replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i7, UserObject.getFirstName(user)));
+                        i6 = 0;
                     }
                 } else {
-                    int i10 = z2 ? R.string.FwdMessagesToUserShort : R.string.FwdMessagesToUser;
+                    int i8 = z2 ? R.string.FwdMessagesToUserShort : R.string.FwdMessagesToUser;
                     if (baseFragment != null) {
-                        i8 = 0;
-                        replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i10, UserObject.getFirstName(user)), -1, 2, runnable4);
+                        i6 = 0;
+                        replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i8, UserObject.getFirstName(user)), -1, 2, runnable4);
                     } else {
-                        i8 = 0;
-                        replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i10, UserObject.getFirstName(user)));
+                        i6 = 0;
+                        replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i8, UserObject.getFirstName(user)));
                     }
                 }
-                lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[i8]);
+                lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[i6]);
             }
         }
         lottieLayout.textView.setText(replaceTags);
@@ -1382,8 +1366,7 @@ public final class BulletinFactory {
         return make;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createForwardedBulletin$6(boolean[] zArr, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$cmdwCWTjWScaKVp1N2mPSyjQJGc(boolean[] zArr, Runnable runnable) {
         if (zArr[0]) {
             return;
         }
@@ -1391,8 +1374,7 @@ public final class BulletinFactory {
         runnable.run();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createForwardedBulletin$7(Runnable runnable, BaseFragment baseFragment, long j) {
+    public static /* synthetic */ void $r8$lambda$rGqRMmPy33W71zUl4SsdlueKl8w(Runnable runnable, BaseFragment baseFragment, long j) {
         if (runnable != null) {
             runnable.run();
         }

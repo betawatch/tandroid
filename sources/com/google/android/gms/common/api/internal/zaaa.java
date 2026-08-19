@@ -41,6 +41,7 @@ final class zaaa implements zaca {
     private boolean zal = false;
     private int zan = 0;
 
+    /* JADX WARN: Multi-variable type inference failed */
     private zaaa(Context context, zabe zabeVar, Lock lock, Looper looper, GoogleApiAvailabilityLight googleApiAvailabilityLight, Map map, Map map2, ClientSettings clientSettings, Api.AbstractClientBuilder abstractClientBuilder, Api.Client client, ArrayList arrayList, ArrayList arrayList2, Map map3, Map map4) {
         this.zaa = context;
         this.zab = zabeVar;
@@ -48,7 +49,7 @@ final class zaaa implements zaca {
         this.zac = looper;
         this.zah = client;
         this.zad = new zabi(context, zabeVar, lock, looper, googleApiAvailabilityLight, map2, null, map4, null, arrayList2, new zax(this, null));
-        this.zae = new zabi(context, zabeVar, lock, looper, googleApiAvailabilityLight, map, clientSettings, map3, abstractClientBuilder, arrayList, new zaz(this, null));
+        this.zae = new zabi(context, zabeVar, lock, looper, googleApiAvailabilityLight, map, clientSettings, map3, abstractClientBuilder, arrayList, new zaz(this, 0 == true ? 1 : 0));
         ArrayMap arrayMap = new ArrayMap();
         Iterator it = map2.keySet().iterator();
         while (it.hasNext()) {

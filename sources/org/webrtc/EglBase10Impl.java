@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
     private static final String TAG = "EglBase10Impl";
@@ -105,27 +105,24 @@ class EglBase10Impl implements EglBase10 {
             throw new IllegalStateException("Input must be either a SurfaceHolder or SurfaceTexture");
         }
         checkIsNotReleased();
+        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
         if (z) {
-            EGLSurface eGLSurface = this.eglBackgroundSurface;
-            EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
-            if (eGLSurface != eGLSurface2) {
+            if (this.eglBackgroundSurface != eGLSurface) {
                 throw new RuntimeException("Already has an EGLSurface");
             }
             EGLSurface eglCreateWindowSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
             this.eglBackgroundSurface = eglCreateWindowSurface;
-            if (eglCreateWindowSurface != eGLSurface2) {
+            if (eglCreateWindowSurface != eGLSurface) {
                 return;
             }
             throw new RuntimeException("Failed to create window surface: 0x" + Integer.toHexString(this.egl.eglGetError()));
         }
-        EGLSurface eGLSurface3 = this.eglSurface;
-        EGLSurface eGLSurface4 = EGL10.EGL_NO_SURFACE;
-        if (eGLSurface3 != eGLSurface4) {
+        if (this.eglSurface != eGLSurface) {
             throw new RuntimeException("Already has an EGLSurface");
         }
         EGLSurface eglCreateWindowSurface2 = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
         this.eglSurface = eglCreateWindowSurface2;
-        if (eglCreateWindowSurface2 != eGLSurface4) {
+        if (eglCreateWindowSurface2 != eGLSurface) {
             return;
         }
         throw new RuntimeException("Failed to create window surface: 0x" + Integer.toHexString(this.egl.eglGetError()));
@@ -178,21 +175,20 @@ class EglBase10Impl implements EglBase10 {
 
     @Override // org.webrtc.EglBase
     public void releaseSurface(boolean z) {
+        EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
         if (z) {
-            EGLSurface eGLSurface = this.eglBackgroundSurface;
-            EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
-            if (eGLSurface != eGLSurface2) {
-                this.egl.eglDestroySurface(this.eglDisplay, eGLSurface);
-                this.eglBackgroundSurface = eGLSurface2;
+            EGLSurface eGLSurface2 = this.eglBackgroundSurface;
+            if (eGLSurface2 != eGLSurface) {
+                this.egl.eglDestroySurface(this.eglDisplay, eGLSurface2);
+                this.eglBackgroundSurface = eGLSurface;
                 return;
             }
             return;
         }
         EGLSurface eGLSurface3 = this.eglSurface;
-        EGLSurface eGLSurface4 = EGL10.EGL_NO_SURFACE;
-        if (eGLSurface3 != eGLSurface4) {
+        if (eGLSurface3 != eGLSurface) {
             this.egl.eglDestroySurface(this.eglDisplay, eGLSurface3);
-            this.eglSurface = eGLSurface4;
+            this.eglSurface = eGLSurface;
         }
     }
 

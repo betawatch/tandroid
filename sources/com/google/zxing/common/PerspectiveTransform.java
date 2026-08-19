@@ -1,6 +1,6 @@
 package com.google.zxing.common;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class PerspectiveTransform {
     private final float a11;
     private final float a12;
@@ -62,7 +62,7 @@ public final class PerspectiveTransform {
         float f15 = (f11 * f14) - (f12 * f13);
         float f16 = ((f14 * f9) - (f12 * f10)) / f15;
         float f17 = ((f11 * f10) - (f9 * f13)) / f15;
-        return new PerspectiveTransform((f16 * f3) + (f3 - f), (f17 * f7) + (f7 - f), f, (f4 - f2) + (f16 * f4), (f8 - f2) + (f17 * f8), f2, f16, f17, 1.0f);
+        return new PerspectiveTransform((f3 - f) + (f16 * f3), (f7 - f) + (f17 * f7), f, (f4 - f2) + (f16 * f4), (f8 - f2) + (f17 * f8), f2, f16, f17, 1.0f);
     }
 
     public static PerspectiveTransform quadrilateralToSquare(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8) {
@@ -104,14 +104,16 @@ public final class PerspectiveTransform {
         float f15 = (f * f12) + (f3 * f13) + (f5 * f14);
         float f16 = this.a12;
         float f17 = this.a22;
-        float f18 = this.a32;
-        float f19 = (f16 * f2) + (f17 * f4) + (f18 * f6);
-        float f20 = (f16 * f8) + (f17 * f9) + (f18 * f10);
-        float f21 = (f18 * f14) + (f16 * f12) + (f17 * f13);
-        float f22 = this.a13;
-        float f23 = this.a23;
-        float f24 = (f2 * f22) + (f4 * f23);
-        float f25 = this.a33;
-        return new PerspectiveTransform(f7, f11, f15, f19, f20, f21, (f6 * f25) + f24, (f8 * f22) + (f9 * f23) + (f10 * f25), (f22 * f12) + (f23 * f13) + (f25 * f14));
+        float f18 = (f16 * f2) + (f17 * f4);
+        float f19 = this.a32;
+        float f20 = f18 + (f19 * f6);
+        float f21 = (f16 * f8) + (f17 * f9) + (f19 * f10);
+        float f22 = (f16 * f12) + (f17 * f13) + (f19 * f14);
+        float f23 = this.a13;
+        float f24 = f2 * f23;
+        float f25 = this.a23;
+        float f26 = f24 + (f4 * f25);
+        float f27 = this.a33;
+        return new PerspectiveTransform(f7, f11, f15, f20, f21, f22, f26 + (f6 * f27), (f23 * f8) + (f9 * f25) + (f10 * f27), (f23 * f12) + (f25 * f13) + (f27 * f14));
     }
 }

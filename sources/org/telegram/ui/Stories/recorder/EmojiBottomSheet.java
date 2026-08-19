@@ -38,6 +38,7 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -120,7 +121,7 @@ import org.telegram.ui.Stories.recorder.Weather;
 import org.telegram.ui.WrappedResourceProvider;
 import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     public static int savedPosition = 1;
     private int categoryIndex;
@@ -139,8 +140,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
     private boolean wasKeyboardVisible;
     public final TLRPC.Document widgets;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openPremium$0(DialogInterface dialogInterface) {
+    public static /* synthetic */ void $r8$lambda$ygUdWrss1ezr8ItKKGxYiZAH86Y(DialogInterface dialogInterface) {
     }
 
     public boolean canClickWidget(Integer num) {
@@ -153,11 +153,6 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
 
     protected boolean checkAudioPermission(Runnable runnable) {
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$5800(EmojiBottomSheet emojiBottomSheet, int i) {
-        emojiBottomSheet.lambda$onWidgetClick$1(i);
     }
 
     static /* synthetic */ float access$7516(EmojiBottomSheet emojiBottomSheet, float f) {
@@ -442,15 +437,13 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             final RecyclerListView.OnItemClickListener onItemClickListener = new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
-                    EmojiBottomSheet.GifPage.this.lambda$new$0(view, i);
+                    EmojiBottomSheet.GifPage.$r8$lambda$EiHEoX8l_a81pGOAKZ1jhx9fVt0(EmojiBottomSheet.GifPage.this, view, i);
                 }
             };
             this.listView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    boolean lambda$new$1;
-                    lambda$new$1 = EmojiBottomSheet.GifPage.this.lambda$new$1(onItemClickListener, view, motionEvent);
-                    return lambda$new$1;
+                    return EmojiBottomSheet.GifPage.$r8$lambda$nj4GDYcriiy1oNY2WmBG8t5xPaE(EmojiBottomSheet.GifPage.this, onItemClickListener, view, motionEvent);
                 }
             });
             this.listView.setOnItemClickListener(onItemClickListener);
@@ -476,18 +469,17 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             searchField.setOnSearchQuery(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    EmojiBottomSheet.GifPage.this.lambda$new$2((String) obj, (Integer) obj2);
+                    EmojiBottomSheet.GifPage.$r8$lambda$FpKaNwoOC6eDY0rsIFvimC0Ak4o(EmojiBottomSheet.GifPage.this, (String) obj, (Integer) obj2);
                 }
             });
             this.searchField.checkCategoriesView(2, false);
             addView(this.searchField, LayoutHelper.createFrame(-1, -2, 48));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$EiHEoX8l_a81pGOAKZ1jhx9fVt0(GifPage gifPage, View view, int i) {
             TLRPC.Document document;
             TLRPC.BotInlineResult botInlineResult;
-            Object item = this.adapter.getItem(i);
+            Object item = gifPage.adapter.getItem(i);
             if (item instanceof TLRPC.BotInlineResult) {
                 botInlineResult = (TLRPC.BotInlineResult) item;
                 document = botInlineResult.document;
@@ -501,19 +493,18 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             if (EmojiBottomSheet.this.onDocumentSelected != null) {
                 EmojiBottomSheet.this.onDocumentSelected.run(botInlineResult, document, Boolean.TRUE);
             }
-            EmojiBottomSheet.this.lambda$new$0();
+            EmojiBottomSheet.this.dismiss();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$new$1(RecyclerListView.OnItemClickListener onItemClickListener, View view, MotionEvent motionEvent) {
-            return ContentPreviewViewer.getInstance().onTouch(motionEvent, this.listView, 0, onItemClickListener, this.previewDelegate, ((BottomSheet) EmojiBottomSheet.this).resourcesProvider);
+        public static /* synthetic */ boolean $r8$lambda$nj4GDYcriiy1oNY2WmBG8t5xPaE(GifPage gifPage, RecyclerListView.OnItemClickListener onItemClickListener, View view, MotionEvent motionEvent) {
+            gifPage.getClass();
+            return ContentPreviewViewer.getInstance().onTouch(motionEvent, gifPage.listView, 0, onItemClickListener, gifPage.previewDelegate, ((BottomSheet) EmojiBottomSheet.this).resourcesProvider);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(String str, Integer num) {
+        public static /* synthetic */ void $r8$lambda$FpKaNwoOC6eDY0rsIFvimC0Ak4o(GifPage gifPage, String str, Integer num) {
             EmojiBottomSheet.this.query = str;
             EmojiBottomSheet.this.categoryIndex = num.intValue();
-            this.adapter.updateItems(str);
+            gifPage.adapter.updateItems(str);
         }
 
         @Override // org.telegram.ui.Stories.recorder.EmojiBottomSheet.IPage
@@ -740,7 +731,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                     this.currentReqId = ConnectionsManager.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda0
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            EmojiBottomSheet.GifPage.GifAdapter.this.lambda$request$1(tLObject, tL_error);
+                            EmojiBottomSheet.GifPage.GifAdapter.$r8$lambda$0JKZ_8oTJRYfTlvYnFzj7nsVMJ0(EmojiBottomSheet.GifPage.GifAdapter.this, tLObject, tL_error);
                         }
                     });
                     return;
@@ -763,94 +754,92 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 MessagesStorage.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).getBotCache(str3, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        EmojiBottomSheet.GifPage.GifAdapter.this.lambda$request$5(isEmpty, tL_messages_getInlineBotResults, str3, tLObject, tL_error);
+                        EmojiBottomSheet.GifPage.GifAdapter.$r8$lambda$VukLOPmj_uqfP8WNDKe3dvMFuG8(EmojiBottomSheet.GifPage.GifAdapter.this, isEmpty, tL_messages_getInlineBotResults, str3, tLObject, tL_error);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$request$1(final TLObject tLObject, TLRPC.TL_error tL_error) {
+            public static /* synthetic */ void $r8$lambda$0JKZ_8oTJRYfTlvYnFzj7nsVMJ0(final GifAdapter gifAdapter, final TLObject tLObject, TLRPC.TL_error tL_error) {
+                gifAdapter.getClass();
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiBottomSheet.GifPage.GifAdapter.this.lambda$request$0(tLObject);
+                        EmojiBottomSheet.GifPage.GifAdapter.$r8$lambda$KUR0lJRfA37GllSnE_scJr5UFj8(EmojiBottomSheet.GifPage.GifAdapter.this, tLObject);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$request$0(TLObject tLObject) {
+            public static /* synthetic */ void $r8$lambda$KUR0lJRfA37GllSnE_scJr5UFj8(GifAdapter gifAdapter, TLObject tLObject) {
+                gifAdapter.getClass();
                 if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                     MessagesController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
                     MessagesController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
                     MessagesStorage.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                 }
-                this.requestedBot = true;
-                request();
+                gifAdapter.requestedBot = true;
+                gifAdapter.request();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$request$5(final boolean z, final TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            public static /* synthetic */ void $r8$lambda$VukLOPmj_uqfP8WNDKe3dvMFuG8(final GifAdapter gifAdapter, final boolean z, final TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+                gifAdapter.getClass();
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiBottomSheet.GifPage.GifAdapter.this.lambda$request$4(tLObject, z, tL_messages_getInlineBotResults, str);
+                        EmojiBottomSheet.GifPage.GifAdapter.$r8$lambda$9df0V7NCebisXxUikqrHD443PO8(EmojiBottomSheet.GifPage.GifAdapter.this, tLObject, z, tL_messages_getInlineBotResults, str);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$request$4(TLObject tLObject, final boolean z, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, final String str) {
-                if (this.requesting) {
+            public static /* synthetic */ void $r8$lambda$9df0V7NCebisXxUikqrHD443PO8(final GifAdapter gifAdapter, TLObject tLObject, final boolean z, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, final String str) {
+                if (gifAdapter.requesting) {
                     if (!(tLObject instanceof TLRPC.messages_BotResults)) {
-                        this.currentReqId = ConnectionsManager.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda5
+                        gifAdapter.currentReqId = ConnectionsManager.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda5
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                EmojiBottomSheet.GifPage.GifAdapter.this.lambda$request$3(str, z, tLObject2, tL_error);
+                                EmojiBottomSheet.GifPage.GifAdapter.$r8$lambda$_DxMkV_TBdB4K_IdIgYzRV8iwOg(EmojiBottomSheet.GifPage.GifAdapter.this, str, z, tLObject2, tL_error);
                             }
                         });
                         return;
                     }
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    this.offset = messages_botresults.next_offset;
+                    gifAdapter.offset = messages_botresults.next_offset;
                     if (z) {
                         GifPage.this.gifs.clear();
                     }
                     GifPage.this.gifs.size();
                     GifPage.this.gifs.addAll(messages_botresults.results);
-                    notifyDataSetChanged();
+                    gifAdapter.notifyDataSetChanged();
                     GifPage.this.searchField.showProgress(false);
-                    this.requesting = false;
+                    gifAdapter.requesting = false;
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$request$3(final String str, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            public static /* synthetic */ void $r8$lambda$_DxMkV_TBdB4K_IdIgYzRV8iwOg(final GifAdapter gifAdapter, final String str, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
+                gifAdapter.getClass();
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$GifPage$GifAdapter$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiBottomSheet.GifPage.GifAdapter.this.lambda$request$2(tLObject, str, z);
+                        EmojiBottomSheet.GifPage.GifAdapter.$r8$lambda$m70fc89SL-sHwkMGQ5YmeSPWcXs(EmojiBottomSheet.GifPage.GifAdapter.this, tLObject, str, z);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$request$2(TLObject tLObject, String str, boolean z) {
-                if (this.requesting) {
+            public static /* synthetic */ void $r8$lambda$m70fc89SL-sHwkMGQ5YmeSPWcXs(GifAdapter gifAdapter, TLObject tLObject, String str, boolean z) {
+                if (gifAdapter.requesting) {
                     if (tLObject instanceof TLRPC.messages_BotResults) {
                         TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
                         MessagesStorage.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).saveBotCache(str, messages_botresults);
-                        this.offset = messages_botresults.next_offset;
+                        gifAdapter.offset = messages_botresults.next_offset;
                         if (z) {
                             GifPage.this.gifs.clear();
                         }
                         GifPage.this.gifs.size();
                         GifPage.this.gifs.addAll(messages_botresults.results);
-                        notifyDataSetChanged();
+                        gifAdapter.notifyDataSetChanged();
                     }
                     GifPage.this.searchField.showProgress(false);
-                    this.requesting = false;
+                    gifAdapter.requesting = false;
                 }
             }
         }
@@ -976,7 +965,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
-                    EmojiBottomSheet.Page.this.lambda$new$0(view, i);
+                    EmojiBottomSheet.Page.$r8$lambda$1ZYXmQRpbitkz3Ll5e5hov8D9rI(EmojiBottomSheet.Page.this, view, i);
                 }
             });
             this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet.Page.2
@@ -1051,13 +1040,14 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             searchField.setOnSearchQuery(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    EmojiBottomSheet.Page.this.lambda$new$1((String) obj, (Integer) obj2);
+                    EmojiBottomSheet.Page.$r8$lambda$dbRZKjPHeEUPUt4E16zuLwaXIZ8(EmojiBottomSheet.Page.this, (String) obj, (Integer) obj2);
                 }
             });
             addView(this.searchField, LayoutHelper.createFrame(-1, -2, 48));
             EmojiTabsStrip emojiTabsStrip = new EmojiTabsStrip(context, ((BottomSheet) EmojiBottomSheet.this).resourcesProvider, false, false, false, true, 0, null) { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet.Page.3
+                /* JADX INFO: Access modifiers changed from: protected */
                 @Override // org.telegram.ui.Components.EmojiTabsStrip
-                protected boolean onTabClick(int i) {
+                public boolean onTabClick(int i) {
                     int i2;
                     int i3 = 0;
                     if (this.scrollingAnimation) {
@@ -1099,41 +1089,44 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             addView(emojiTabsStrip, LayoutHelper.createFrame(-1, 36.0f));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view, int i) {
+        public static /* synthetic */ void $r8$lambda$1ZYXmQRpbitkz3Ll5e5hov8D9rI(Page page, View view, int i) {
             AnimatedEmojiDrawable animatedEmojiDrawable;
-            if (i >= 0 && this.layoutManager.getItemViewType(view) != 4) {
-                TLRPC.Document document = i >= this.adapter.documents.size() ? null : (TLRPC.Document) this.adapter.documents.get(i);
-                EmojiBottomSheet emojiBottomSheet = EmojiBottomSheet.this;
-                if (document == emojiBottomSheet.plus) {
-                    if (emojiBottomSheet.onPlusSelected != null) {
-                        EmojiBottomSheet.this.onPlusSelected.run();
-                    }
-                    EmojiBottomSheet.this.lambda$new$0();
-                    return;
-                }
-                long longValue = i >= this.adapter.documentIds.size() ? 0L : ((Long) this.adapter.documentIds.get(i)).longValue();
-                if (document == null && (view instanceof EmojiListView.EmojiImageView) && (animatedEmojiDrawable = ((EmojiListView.EmojiImageView) view).drawable) != null) {
-                    document = animatedEmojiDrawable.getDocument();
-                }
-                if (document == null && longValue != 0) {
-                    document = AnimatedEmojiDrawable.findDocument(((BottomSheet) EmojiBottomSheet.this).currentAccount, longValue);
-                }
-                if (document == null) {
-                    return;
-                }
-                if (EmojiBottomSheet.this.onDocumentSelected != null) {
-                    EmojiBottomSheet.this.onDocumentSelected.run(this.adapter.setByDocumentId.get(Long.valueOf(document.id)), document, Boolean.FALSE);
-                }
-                EmojiBottomSheet.this.lambda$new$0();
+            if (i < 0) {
+                page.getClass();
+                return;
             }
+            if (page.layoutManager.getItemViewType(view) == 4) {
+                return;
+            }
+            TLRPC.Document document = i >= page.adapter.documents.size() ? null : (TLRPC.Document) page.adapter.documents.get(i);
+            EmojiBottomSheet emojiBottomSheet = EmojiBottomSheet.this;
+            if (document == emojiBottomSheet.plus) {
+                if (emojiBottomSheet.onPlusSelected != null) {
+                    EmojiBottomSheet.this.onPlusSelected.run();
+                }
+                EmojiBottomSheet.this.dismiss();
+                return;
+            }
+            long longValue = i >= page.adapter.documentIds.size() ? 0L : ((Long) page.adapter.documentIds.get(i)).longValue();
+            if (document == null && (view instanceof EmojiListView.EmojiImageView) && (animatedEmojiDrawable = ((EmojiListView.EmojiImageView) view).drawable) != null) {
+                document = animatedEmojiDrawable.getDocument();
+            }
+            if (document == null && longValue != 0) {
+                document = AnimatedEmojiDrawable.findDocument(((BottomSheet) EmojiBottomSheet.this).currentAccount, longValue);
+            }
+            if (document == null) {
+                return;
+            }
+            if (EmojiBottomSheet.this.onDocumentSelected != null) {
+                EmojiBottomSheet.this.onDocumentSelected.run(page.adapter.setByDocumentId.get(Long.valueOf(document.id)), document, Boolean.FALSE);
+            }
+            EmojiBottomSheet.this.dismiss();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(String str, Integer num) {
+        public static /* synthetic */ void $r8$lambda$dbRZKjPHeEUPUt4E16zuLwaXIZ8(Page page, String str, Integer num) {
             EmojiBottomSheet.this.query = str;
             EmojiBottomSheet.this.categoryIndex = num.intValue();
-            this.adapter.updateItems(str);
+            page.adapter.updateItems(str);
         }
 
         @Override // org.telegram.ui.Stories.recorder.EmojiBottomSheet.IPage
@@ -1253,7 +1246,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             private final Runnable searchRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiBottomSheet.Page.Adapter.this.lambda$new$3();
+                    EmojiBottomSheet.Page.Adapter.$r8$lambda$TS0i4JBSpAq0oNcc2BzP7AiF29Q(EmojiBottomSheet.Page.Adapter.this);
                 }
             };
 
@@ -1270,19 +1263,24 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            /* JADX WARN: Removed duplicated region for block: B:72:0x02b9  */
-            /* JADX WARN: Removed duplicated region for block: B:92:0x0347 A[SYNTHETIC] */
+            /* JADX WARN: Removed duplicated region for block: B:73:0x02c0  */
+            /* JADX WARN: Removed duplicated region for block: B:93:0x034c A[SYNTHETIC] */
+            /* JADX WARN: Type inference failed for: r14v11, types: [boolean, int] */
+            /* JADX WARN: Type inference failed for: r14v12 */
+            /* JADX WARN: Type inference failed for: r14v13 */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public void updateItems(String str) {
                 TLRPC.TL_messages_stickerSet stickerSet;
+                boolean z;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
                 ArrayList<Emoji.EmojiSpanRange> parseEmojis;
+                ?? r14;
                 int i;
                 String str2;
                 this.query = str;
-                boolean z = false;
+                boolean z2 = false;
                 if (str != null) {
                     Page.this.searchField.showProgress(true);
                     Page.this.tabsStrip.showSelected(false);
@@ -1374,41 +1372,43 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                         while (i4 < featuredEmojiSets.size()) {
                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i4);
                             if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                                tL_messages_stickerSet = MediaDataController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), z);
+                                tL_messages_stickerSet = MediaDataController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), z2);
                                 if (tL_messages_stickerSet == null) {
                                     i4++;
-                                    z = false;
-                                }
-                                if (tL_messages_stickerSet.set == null) {
-                                    while (true) {
-                                        if (i < this.packs.size()) {
-                                            TLRPC.StickerSet stickerSet2 = ((EmojiView.EmojiPack) this.packs.get(i)).set;
-                                            i = (stickerSet2 == null || stickerSet2.id != tL_messages_stickerSet.set.id) ? i + 1 : 0;
-                                        } else {
-                                            this.stickerSets.add(tL_messages_stickerSet);
-                                            this.allStickerSets.add(tL_messages_stickerSet);
-                                            this.positionToSection.put(this.itemsCount, i2);
-                                            i2++;
-                                            this.documents.add(null);
-                                            this.itemsCount++;
-                                            this.documents.addAll(tL_messages_stickerSet.documents);
-                                            this.itemsCount += tL_messages_stickerSet.documents.size();
-                                            for (int i5 = 0; i5 < tL_messages_stickerSet.documents.size(); i5++) {
-                                                this.setByDocumentId.put(Long.valueOf(tL_messages_stickerSet.documents.get(i5).id), tL_messages_stickerSet);
+                                    z2 = false;
+                                } else {
+                                    r14 = 1;
+                                    if (tL_messages_stickerSet.set == null) {
+                                        while (true) {
+                                            if (i < this.packs.size()) {
+                                                TLRPC.StickerSet stickerSet2 = ((EmojiView.EmojiPack) this.packs.get(i)).set;
+                                                i = (stickerSet2 == null || stickerSet2.id != tL_messages_stickerSet.set.id) ? i + 1 : 0;
+                                            } else {
+                                                this.stickerSets.add(tL_messages_stickerSet);
+                                                this.allStickerSets.add(tL_messages_stickerSet);
+                                                this.positionToSection.put(this.itemsCount, i2);
+                                                i2++;
+                                                this.documents.add(null);
+                                                this.itemsCount += r14;
+                                                this.documents.addAll(tL_messages_stickerSet.documents);
+                                                this.itemsCount += tL_messages_stickerSet.documents.size();
+                                                for (int i5 = 0; i5 < tL_messages_stickerSet.documents.size(); i5++) {
+                                                    this.setByDocumentId.put(Long.valueOf(tL_messages_stickerSet.documents.get(i5).id), tL_messages_stickerSet);
+                                                }
+                                                EmojiView.EmojiPack emojiPack2 = new EmojiView.EmojiPack();
+                                                emojiPack2.documents = tL_messages_stickerSet.documents;
+                                                emojiPack2.set = tL_messages_stickerSet.set;
+                                                emojiPack2.installed = false;
+                                                emojiPack2.featured = r14;
+                                                emojiPack2.expanded = r14;
+                                                emojiPack2.free = r14;
+                                                this.packs.add(emojiPack2);
                                             }
-                                            EmojiView.EmojiPack emojiPack2 = new EmojiView.EmojiPack();
-                                            emojiPack2.documents = tL_messages_stickerSet.documents;
-                                            emojiPack2.set = tL_messages_stickerSet.set;
-                                            emojiPack2.installed = false;
-                                            emojiPack2.featured = true;
-                                            emojiPack2.expanded = true;
-                                            emojiPack2.free = true;
-                                            this.packs.add(emojiPack2);
                                         }
                                     }
+                                    i4++;
+                                    z2 = false;
                                 }
-                                i4++;
-                                z = false;
                             } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet4 = new TLRPC.TL_messages_stickerSet();
                                 TLRPC.StickerSet stickerSet3 = stickerSetCovered.set;
@@ -1432,6 +1432,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                                             }
                                         }
                                     }
+                                    z = true;
                                     tL_messages_stickerSet4.packs = new ArrayList<>();
                                     for (Map.Entry entry : hashMap.entrySet()) {
                                         TLRPC.TL_stickerPack tL_stickerPack = new TLRPC.TL_stickerPack();
@@ -1440,29 +1441,32 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                                         tL_messages_stickerSet4.packs.add(tL_stickerPack);
                                     }
                                     this.packsBySet.put(Long.valueOf(tL_messages_stickerSet4.set.id), tL_messages_stickerSet4.packs);
+                                } else {
+                                    z = true;
                                 }
                                 tL_messages_stickerSet = tL_messages_stickerSet4;
+                                r14 = z;
                                 if (tL_messages_stickerSet.set == null) {
                                 }
                                 i4++;
-                                z = false;
+                                z2 = false;
                             } else {
                                 i4++;
-                                z = false;
+                                z2 = false;
                             }
                         }
                     }
-                    boolean z2 = false;
+                    boolean z3 = false;
                     for (int i8 = 0; i8 < this.allStickerSets.size(); i8++) {
                         try {
-                            z2 = ((TLRPC.TL_messages_stickerSet) this.allStickerSets.get(i8)).set.title.toLowerCase().contains("staticemoji");
+                            z3 = ((TLRPC.TL_messages_stickerSet) this.allStickerSets.get(i8)).set.title.toLowerCase().contains("staticemoji");
                         } catch (Exception unused) {
                         }
-                        if (z2) {
+                        if (z3) {
                             break;
                         }
                     }
-                    if (!z2 && (stickerSet = mediaDataController.getStickerSet((TLRPC.InputStickerSet) this.staticEmojiInput, false)) != null) {
+                    if (!z3 && (stickerSet = mediaDataController.getStickerSet((TLRPC.InputStickerSet) this.staticEmojiInput, false)) != null) {
                         this.allStickerSets.add(stickerSet);
                     }
                 }
@@ -1493,96 +1497,93 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 notifyDataSetChanged();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$3() {
+            public static /* synthetic */ void $r8$lambda$TS0i4JBSpAq0oNcc2BzP7AiF29Q(final Adapter adapter) {
                 final MediaDataController mediaDataController = MediaDataController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount);
-                final String str = this.query;
+                final String str = adapter.query;
                 if ("premium".equalsIgnoreCase(str)) {
                     ArrayList<TLRPC.Document> recentStickers = mediaDataController.getRecentStickers(7);
-                    this.itemsCount = 0;
-                    this.documents.clear();
-                    this.documentIds.clear();
-                    this.positionToSection.clear();
-                    this.stickerSets.clear();
-                    this.itemsCount++;
-                    this.documents.add(null);
-                    this.documentIds.add(0L);
-                    this.documents.addAll(recentStickers);
-                    this.itemsCount += recentStickers.size();
-                    this.activeQuery = this.query;
-                    notifyDataSetChanged();
+                    adapter.itemsCount = 0;
+                    adapter.documents.clear();
+                    adapter.documentIds.clear();
+                    adapter.positionToSection.clear();
+                    adapter.stickerSets.clear();
+                    adapter.itemsCount++;
+                    adapter.documents.add(null);
+                    adapter.documentIds.add(0L);
+                    adapter.documents.addAll(recentStickers);
+                    adapter.itemsCount += recentStickers.size();
+                    adapter.activeQuery = adapter.query;
+                    adapter.notifyDataSetChanged();
                     Page.this.listView.scrollToPosition(0, 0);
                     Page.this.searchField.showProgress(false);
                     Page.this.tabsStrip.showSelected(false);
                     return;
                 }
-                if (Page.this.currentType == 1 && Emoji.fullyConsistsOfEmojis(this.query)) {
+                if (Page.this.currentType == 1 && Emoji.fullyConsistsOfEmojis(adapter.query)) {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
-                    tL_messages_getStickers.emoticon = this.query;
+                    tL_messages_getStickers.emoticon = adapter.query;
                     tL_messages_getStickers.hash = 0L;
                     ConnectionsManager.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).sendRequest(tL_messages_getStickers, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda2
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            EmojiBottomSheet.Page.Adapter.this.lambda$new$1(str, tLObject, tL_error);
+                            EmojiBottomSheet.Page.Adapter.$r8$lambda$QKkdsEhFddj8PexysvooTs4lcBI(EmojiBottomSheet.Page.Adapter.this, str, tLObject, tL_error);
                         }
                     });
                     return;
                 }
                 String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-                String[] strArr = this.lastLang;
+                String[] strArr = adapter.lastLang;
                 if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
                     MediaDataController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).fetchNewEmojiKeywords(currentKeyboardLanguage);
                 }
-                this.lastLang = currentKeyboardLanguage;
-                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, this.query, false, new MediaDataController.KeywordResultCallback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda3
+                adapter.lastLang = currentKeyboardLanguage;
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, adapter.query, false, new MediaDataController.KeywordResultCallback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda3
                     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
                     public final void run(ArrayList arrayList, String str2) {
-                        EmojiBottomSheet.Page.Adapter.this.lambda$new$2(str, mediaDataController, arrayList, str2);
+                        EmojiBottomSheet.Page.Adapter.$r8$lambda$jiaHJzsw3THTTCXfmN9EkUeT-uc(EmojiBottomSheet.Page.Adapter.this, str, mediaDataController, arrayList, str2);
                     }
                 }, null, false, false, false, true, 50, false);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$1(final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+            public static /* synthetic */ void $r8$lambda$QKkdsEhFddj8PexysvooTs4lcBI(final Adapter adapter, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+                adapter.getClass();
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiBottomSheet.Page.Adapter.this.lambda$new$0(str, tLObject);
+                        EmojiBottomSheet.Page.Adapter.$r8$lambda$tYVeutM0zYMOKkPrDtRiMoOcZHA(EmojiBottomSheet.Page.Adapter.this, str, tLObject);
                     }
                 });
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$0(String str, TLObject tLObject) {
-                if (TextUtils.equals(str, this.query)) {
-                    this.itemsCount = 0;
-                    this.documents.clear();
-                    this.documentIds.clear();
-                    this.positionToSection.clear();
-                    this.stickerSets.clear();
-                    this.itemsCount++;
-                    this.documents.add(null);
-                    this.documentIds.add(0L);
+            public static /* synthetic */ void $r8$lambda$tYVeutM0zYMOKkPrDtRiMoOcZHA(Adapter adapter, String str, TLObject tLObject) {
+                if (TextUtils.equals(str, adapter.query)) {
+                    adapter.itemsCount = 0;
+                    adapter.documents.clear();
+                    adapter.documentIds.clear();
+                    adapter.positionToSection.clear();
+                    adapter.stickerSets.clear();
+                    adapter.itemsCount++;
+                    adapter.documents.add(null);
+                    adapter.documentIds.add(0L);
                     if (tLObject instanceof TLRPC.TL_messages_stickers) {
                         TLRPC.TL_messages_stickers tL_messages_stickers = (TLRPC.TL_messages_stickers) tLObject;
-                        this.documents.addAll(tL_messages_stickers.stickers);
-                        this.itemsCount += tL_messages_stickers.stickers.size();
+                        adapter.documents.addAll(tL_messages_stickers.stickers);
+                        adapter.itemsCount += tL_messages_stickers.stickers.size();
                     }
-                    this.activeQuery = this.query;
-                    notifyDataSetChanged();
+                    adapter.activeQuery = adapter.query;
+                    adapter.notifyDataSetChanged();
                     Page.this.listView.scrollToPosition(0, 0);
                     Page.this.searchField.showProgress(false);
                     Page.this.tabsStrip.showSelected(false);
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$new$2(String str, MediaDataController mediaDataController, ArrayList arrayList, String str2) {
+            public static /* synthetic */ void $r8$lambda$jiaHJzsw3THTTCXfmN9EkUeT-uc(Adapter adapter, String str, MediaDataController mediaDataController, ArrayList arrayList, String str2) {
                 ArrayList<TLRPC.Document> arrayList2;
                 ArrayList<TLRPC.Document> arrayList3;
                 ArrayList arrayList4;
-                if (TextUtils.equals(str, this.query)) {
-                    ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(this.query);
+                if (TextUtils.equals(str, adapter.query)) {
+                    ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(adapter.query);
                     for (int i = 0; i < parseEmojis.size(); i++) {
                         try {
                             MediaDataController.KeywordResult keywordResult = new MediaDataController.KeywordResult();
@@ -1591,28 +1592,28 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                         } catch (Exception unused) {
                         }
                     }
-                    this.itemsCount = 0;
-                    this.documents.clear();
-                    this.documentIds.clear();
-                    this.positionToSection.clear();
-                    this.stickerSets.clear();
-                    this.itemsCount++;
-                    this.documents.add(null);
-                    this.documentIds.add(0L);
+                    adapter.itemsCount = 0;
+                    adapter.documents.clear();
+                    adapter.documentIds.clear();
+                    adapter.positionToSection.clear();
+                    adapter.stickerSets.clear();
+                    adapter.itemsCount++;
+                    adapter.documents.add(null);
+                    adapter.documentIds.add(0L);
                     if (Page.this.currentType == 0) {
-                        this.searchDocumentIds.clear();
+                        adapter.searchDocumentIds.clear();
                         for (int i2 = 0; i2 < arrayList.size(); i2++) {
                             MediaDataController.KeywordResult keywordResult2 = (MediaDataController.KeywordResult) arrayList.get(i2);
                             String str3 = keywordResult2.emoji;
-                            if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) this.allEmojis.get(keywordResult2.emoji)) != null) {
-                                this.searchDocumentIds.addAll(arrayList4);
+                            if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) adapter.allEmojis.get(keywordResult2.emoji)) != null) {
+                                adapter.searchDocumentIds.addAll(arrayList4);
                             }
                         }
-                        this.documentIds.addAll(this.searchDocumentIds);
-                        for (int i3 = 0; i3 < this.searchDocumentIds.size(); i3++) {
-                            this.documents.add(null);
+                        adapter.documentIds.addAll(adapter.searchDocumentIds);
+                        for (int i3 = 0; i3 < adapter.searchDocumentIds.size(); i3++) {
+                            adapter.documents.add(null);
                         }
-                        this.itemsCount += this.searchDocumentIds.size();
+                        adapter.itemsCount += adapter.searchDocumentIds.size();
                     } else {
                         HashMap<String, ArrayList<TLRPC.Document>> allStickers = mediaDataController.getAllStickers();
                         for (int i4 = 0; i4 < arrayList.size(); i4++) {
@@ -1621,9 +1622,9 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                             if (str4 != null && !str4.startsWith("animated_") && (arrayList3 = allStickers.get(keywordResult3.emoji)) != null && !arrayList3.isEmpty()) {
                                 for (int i5 = 0; i5 < arrayList3.size(); i5++) {
                                     TLRPC.Document document = arrayList3.get(i5);
-                                    if (document != null && !this.documents.contains(document)) {
-                                        this.documents.add(document);
-                                        this.itemsCount++;
+                                    if (document != null && !adapter.documents.contains(document)) {
+                                        adapter.documents.add(document);
+                                        adapter.itemsCount++;
                                     }
                                 }
                             }
@@ -1647,42 +1648,42 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                                     for (int i8 = 0; i8 < arrayList2.size(); i8++) {
                                         String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i8), null);
                                         if (findAnimatedEmojiEmoticon != null && findAnimatedEmojiEmoticon.contains(keywordResult4.emoji)) {
-                                            this.documents.add(arrayList2.get(i8));
-                                            this.itemsCount++;
+                                            adapter.documents.add(arrayList2.get(i8));
+                                            adapter.itemsCount++;
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    String translitSafe = AndroidUtilities.translitSafe((this.query + "").toLowerCase());
-                    for (int i9 = 0; i9 < this.allStickerSets.size(); i9++) {
-                        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.allStickerSets.get(i9);
+                    String translitSafe = AndroidUtilities.translitSafe((adapter.query + "").toLowerCase());
+                    for (int i9 = 0; i9 < adapter.allStickerSets.size(); i9++) {
+                        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) adapter.allStickerSets.get(i9);
                         if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                             String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
                             if (!translitSafe2.startsWith(translitSafe)) {
                                 if (!translitSafe2.contains(" " + translitSafe)) {
                                 }
                             }
-                            int size = this.stickerSets.size();
-                            this.stickerSets.add(tL_messages_stickerSet);
-                            this.positionToSection.put(this.itemsCount, size);
-                            this.documents.add(null);
-                            this.itemsCount++;
-                            this.documents.addAll(tL_messages_stickerSet.documents);
-                            this.itemsCount += tL_messages_stickerSet.documents.size();
+                            int size = adapter.stickerSets.size();
+                            adapter.stickerSets.add(tL_messages_stickerSet);
+                            adapter.positionToSection.put(adapter.itemsCount, size);
+                            adapter.documents.add(null);
+                            adapter.itemsCount++;
+                            adapter.documents.addAll(tL_messages_stickerSet.documents);
+                            adapter.itemsCount += tL_messages_stickerSet.documents.size();
                         }
                     }
-                    boolean z = this.documentIds.size() <= 1 && this.documents.size() <= 1;
-                    this.includeNotFound = z;
+                    boolean z = adapter.documentIds.size() <= 1 && adapter.documents.size() <= 1;
+                    adapter.includeNotFound = z;
                     if (z) {
-                        this.itemsCount++;
+                        adapter.itemsCount++;
                     }
                     if (!z) {
-                        this.searchId++;
+                        adapter.searchId++;
                     }
-                    this.activeQuery = this.query;
-                    notifyDataSetChanged();
+                    adapter.activeQuery = adapter.query;
+                    adapter.notifyDataSetChanged();
                     Page.this.listView.scrollToPosition(0, 0);
                     Page.this.searchField.showProgress(false);
                     Page.this.tabsStrip.showSelected(false);
@@ -1707,7 +1708,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                         storyWidgetsCell.setOnButtonClickListener(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                EmojiBottomSheet.access$5800(EmojiBottomSheet.this, ((Integer) obj).intValue());
+                                EmojiBottomSheet.this.onWidgetClick(((Integer) obj).intValue());
                             }
                         });
                         view = storyWidgetsCell;
@@ -1866,17 +1867,14 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         premiumFeatureBottomSheet.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                EmojiBottomSheet.lambda$openPremium$0(dialogInterface);
+                EmojiBottomSheet.$r8$lambda$ygUdWrss1ezr8ItKKGxYiZAH86Y(dialogInterface);
             }
         });
         premiumFeatureBottomSheet.show();
     }
 
     public boolean hasWidgets() {
-        if (this.onWidgetSelected != null) {
-            return canShowWidget(0) || canShowWidget(1) || canShowWidget(2) || canShowWidget(3) || canShowWidget(4);
-        }
-        return false;
+        return this.onWidgetSelected != null && (canShowWidget(0) || canShowWidget(1) || canShowWidget(2) || canShowWidget(3) || canShowWidget(4));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -1894,16 +1892,15 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onWidgetClick, reason: merged with bridge method [inline-methods] */
-    public void lambda$onWidgetClick$1(final int i) {
+    public void onWidgetClick(final int i) {
         if (canClickWidget(Integer.valueOf(i))) {
             if ((i != 1 || checkAudioPermission(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiBottomSheet.this.lambda$onWidgetClick$1(i);
+                    EmojiBottomSheet.this.onWidgetClick(i);
                 }
             })) && ((Boolean) this.onWidgetSelected.run(Integer.valueOf(i))).booleanValue()) {
-                lambda$new$0();
+                dismiss();
             }
         }
     }
@@ -1969,7 +1966,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         new KeyboardNotifier(this.containerView, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                EmojiBottomSheet.this.lambda$new$2((Integer) obj);
+                EmojiBottomSheet.$r8$lambda$DxReTywZV78ahdXGwd7ISdgAuBg(EmojiBottomSheet.this, (Integer) obj);
             }
         });
         if (!z) {
@@ -1978,7 +1975,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             tabsView.setOnTypeSelected(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    EmojiBottomSheet.this.lambda$new$3((Integer) obj);
+                    EmojiBottomSheet.$r8$lambda$q5Lnl067V_0f2xJCMiuZqeVPArI(EmojiBottomSheet.this, (Integer) obj);
                 }
             });
             this.tabsView.setType(viewPagerFixed.currentPosition);
@@ -1998,30 +1995,28 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         MediaDataController.getInstance(this.currentAccount).loadRecents(7, false, true, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Integer num) {
-        boolean z = this.wasKeyboardVisible;
-        boolean z2 = this.keyboardVisible;
+    public static /* synthetic */ void $r8$lambda$DxReTywZV78ahdXGwd7ISdgAuBg(EmojiBottomSheet emojiBottomSheet, Integer num) {
+        boolean z = emojiBottomSheet.wasKeyboardVisible;
+        boolean z2 = emojiBottomSheet.keyboardVisible;
         if (z != z2) {
-            this.wasKeyboardVisible = z2;
-            this.container.clearAnimation();
+            emojiBottomSheet.wasKeyboardVisible = z2;
+            emojiBottomSheet.container.clearAnimation();
             float f = 0.0f;
-            if (this.keyboardVisible) {
+            if (emojiBottomSheet.keyboardVisible) {
                 int i = AndroidUtilities.displaySize.y;
-                int i2 = this.keyboardHeight;
-                f = Math.min(0.0f, Math.max(((i - i2) * 0.3f) - this.top, (-i2) / 3.0f));
+                int i2 = emojiBottomSheet.keyboardHeight;
+                f = Math.min(0.0f, Math.max(((i - i2) * 0.3f) - emojiBottomSheet.top, (-i2) / 3.0f));
             }
-            this.container.animate().translationY(f).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
+            emojiBottomSheet.container.animate().translationY(f).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(Integer num) {
-        if (this.viewPager.isManualScrolling() || this.viewPager.getCurrentPosition() == num.intValue()) {
+    public static /* synthetic */ void $r8$lambda$q5Lnl067V_0f2xJCMiuZqeVPArI(EmojiBottomSheet emojiBottomSheet, Integer num) {
+        if (emojiBottomSheet.viewPager.isManualScrolling() || emojiBottomSheet.viewPager.getCurrentPosition() == num.intValue()) {
             return;
         }
-        this.viewPager.scrollToPosition(num.intValue());
-        this.tabsView.setType(num.intValue());
+        emojiBottomSheet.viewPager.scrollToPosition(num.intValue());
+        emojiBottomSheet.tabsView.setType(num.intValue());
     }
 
     public void closeKeyboard() {
@@ -2041,12 +2036,11 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
+    public void dismiss() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.stickersDidLoad);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.groupStickersDidLoad);
         closeKeyboard();
-        super.lambda$new$0();
+        super.dismiss();
         FileLog.disableGson(false);
     }
 
@@ -2193,7 +2187,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         @Override // android.view.ViewGroup, android.view.View
         public boolean dispatchTouchEvent(MotionEvent motionEvent) {
             if (motionEvent.getAction() == 0 && motionEvent.getY() < EmojiBottomSheet.this.top) {
-                EmojiBottomSheet.this.lambda$new$0();
+                EmojiBottomSheet.this.dismiss();
                 return true;
             }
             return super.dispatchTouchEvent(motionEvent);
@@ -2238,7 +2232,8 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         return this.viewPager.getTranslationY() >= ((float) ((int) this.maxPadding));
     }
 
-    private static class EmojiListView extends RecyclerListView {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class EmojiListView extends RecyclerListView {
         private float bottomBound;
         public boolean emoji;
         private boolean invalidated;
@@ -2358,7 +2353,6 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             }
 
             public void setSticker(TLRPC.Document document) {
-                String str;
                 this.emoji = false;
                 if (document != null) {
                     long j = this.documentId;
@@ -2378,14 +2372,12 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                     }
                     this.imageReceiver.setParentView(!this.emoji ? this : this.listView);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-                    String str2 = "80_80";
+                    String str = "80_80";
                     if ("video/webm".equals(document.mime_type)) {
-                        str2 = "80_80_g";
+                        str = "80_80_g";
                     }
-                    if (LiteMode.isEnabled(1)) {
-                        str = str2;
-                    } else {
-                        str = str2 + "_firstframe";
+                    if (!LiteMode.isEnabled(1)) {
+                        str = str + "_firstframe";
                     }
                     this.imageReceiver.setImage(ImageLocation.getForDocument(document), str, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "80_80", null, 0L, null, document, 0);
                     return;
@@ -2537,7 +2529,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
         protected void dispatchDraw(android.graphics.Canvas r13) {
             /*
-                Method dump skipped, instructions count: 588
+                Method dump skipped, instructions count: 591
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.Stories.recorder.EmojiBottomSheet.EmojiListView.dispatchDraw(android.graphics.Canvas):void");
@@ -2685,7 +2677,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                             }
                             if (EmojiListView.this.whiteFilter != null) {
                                 AnimatedEmojiDrawable animatedEmojiDrawable2 = emojiImageView.drawable;
-                                if (animatedEmojiDrawable2 instanceof AnimatedEmojiDrawable) {
+                                if (OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(animatedEmojiDrawable2)) {
                                     animatedEmojiDrawable2.setColorFilter(EmojiListView.this.whiteFilter);
                                 }
                             }
@@ -2837,14 +2829,14 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EmojiBottomSheet.SearchField.this.lambda$new$0(view);
+                    EmojiBottomSheet.SearchField.this.clear();
                 }
             });
             frameLayout.addView(imageView2, LayoutHelper.createFrame(36, 36, 53));
             imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EmojiBottomSheet.SearchField.this.lambda$new$1(view);
+                    EmojiBottomSheet.SearchField.$r8$lambda$PrP5e9fZ9JbL5Pzs05Mh6s_FPnw(EmojiBottomSheet.SearchField.this, view);
                 }
             });
         }
@@ -2891,14 +2883,13 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                     SearchField.this.clear.animate().scaleX(SearchField.this.clearVisible ? 1.0f : 0.7f).scaleY(SearchField.this.clearVisible ? 1.0f : 0.7f).alpha(SearchField.this.clearVisible ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$3$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            EmojiBottomSheet.SearchField.3.this.lambda$afterTextChanged$0();
+                            EmojiBottomSheet.SearchField.3.$r8$lambda$HVu_4fiP-12sQRbtRdV9-r4Ixis(EmojiBottomSheet.SearchField.3.this);
                         }
                     }).setInterpolator(cubicBezierInterpolator).setDuration(320L).setStartDelay(SearchField.this.clearVisible ? 240L : 0L).start();
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$afterTextChanged$0() {
+            public static /* synthetic */ void $r8$lambda$HVu_4fiP-12sQRbtRdV9-r4Ixis(3 r1) {
                 if (SearchField.this.clearVisible) {
                     return;
                 }
@@ -2906,24 +2897,18 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(View view) {
-            clear();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1(View view) {
-            if (this.searchImageDrawable.getIconState() == 1) {
-                clear();
-                StickerCategoriesListView stickerCategoriesListView = this.categoriesListView;
+        public static /* synthetic */ void $r8$lambda$PrP5e9fZ9JbL5Pzs05Mh6s_FPnw(SearchField searchField, View view) {
+            if (searchField.searchImageDrawable.getIconState() == 1) {
+                searchField.clear();
+                StickerCategoriesListView stickerCategoriesListView = searchField.categoriesListView;
                 if (stickerCategoriesListView != null) {
                     stickerCategoriesListView.scrollToStart();
                     return;
                 }
                 return;
             }
-            if (this.searchImageDrawable.getIconState() == 0) {
-                this.editText.requestFocus();
+            if (searchField.searchImageDrawable.getIconState() == 0) {
+                searchField.editText.requestFocus();
             }
         }
 
@@ -2980,13 +2965,13 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 this.categoriesListView.setOnScrollIntoOccupiedWidth(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiBottomSheet.SearchField.this.lambda$checkCategoriesView$2((Integer) obj);
+                        EmojiBottomSheet.SearchField.$r8$lambda$P2-IBWlJOiWkQI9v6VG3H5_PMmc(EmojiBottomSheet.SearchField.this, (Integer) obj);
                     }
                 });
                 this.categoriesListView.setOnCategoryClick(new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$$ExternalSyntheticLambda3
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiBottomSheet.SearchField.this.lambda$checkCategoriesView$3((StickerCategoriesListView.EmojiCategory) obj);
+                        EmojiBottomSheet.SearchField.$r8$lambda$_qvkqGr6wosZQquC82nVBugLbqw(EmojiBottomSheet.SearchField.this, (StickerCategoriesListView.EmojiCategory) obj);
                     }
                 });
                 FrameLayout frameLayout = this.box;
@@ -2994,25 +2979,23 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$checkCategoriesView$2(Integer num) {
-            this.editText.animate().cancel();
-            this.editText.setTranslationX(-Math.max(0, num.intValue()));
-            updateButton();
+        public static /* synthetic */ void $r8$lambda$P2-IBWlJOiWkQI9v6VG3H5_PMmc(SearchField searchField, Integer num) {
+            searchField.editText.animate().cancel();
+            searchField.editText.setTranslationX(-Math.max(0, num.intValue()));
+            searchField.updateButton();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$checkCategoriesView$3(StickerCategoriesListView.EmojiCategory emojiCategory) {
-            StickerCategoriesListView stickerCategoriesListView = this.categoriesListView;
+        public static /* synthetic */ void $r8$lambda$_qvkqGr6wosZQquC82nVBugLbqw(SearchField searchField, StickerCategoriesListView.EmojiCategory emojiCategory) {
+            StickerCategoriesListView stickerCategoriesListView = searchField.categoriesListView;
             if (stickerCategoriesListView == null) {
                 return;
             }
             if (stickerCategoriesListView.getSelectedCategory() == emojiCategory) {
-                this.categoriesListView.selectCategory((StickerCategoriesListView.EmojiCategory) null);
-                search(null, -1);
+                searchField.categoriesListView.selectCategory((StickerCategoriesListView.EmojiCategory) null);
+                searchField.search(null, -1);
             } else {
-                this.categoriesListView.selectCategory(emojiCategory);
-                search(emojiCategory.emojis, this.categoriesListView.getCategoryIndex());
+                searchField.categoriesListView.selectCategory(emojiCategory);
+                searchField.search(emojiCategory.emojis, searchField.categoriesListView.getCategoryIndex());
             }
         }
 
@@ -3068,7 +3051,8 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         }
     }
 
-    private static class TabsView extends View {
+    /* JADX INFO: Access modifiers changed from: private */
+    static class TabsView extends View {
         private StaticLayout emojiLayout;
         private float emojiLayoutLeft;
         private float emojiLayoutWidth;
@@ -3292,7 +3276,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                         Weather.fetch(false, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$StoryWidgetsCell$$ExternalSyntheticLambda0
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                EmojiBottomSheet.StoryWidgetsCell.this.lambda$new$0(buttonArr, (Weather.State) obj);
+                                EmojiBottomSheet.StoryWidgetsCell.$r8$lambda$zJDOyGzYFYu1dQhx2ZNgG-Xjy5Y(EmojiBottomSheet.StoryWidgetsCell.this, buttonArr, (Weather.State) obj);
                             }
                         });
                         charSequence = spannableStringBuilder;
@@ -3312,16 +3296,16 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(Button[] buttonArr, Weather.State state) {
+        public static /* synthetic */ void $r8$lambda$zJDOyGzYFYu1dQhx2ZNgG-Xjy5Y(StoryWidgetsCell storyWidgetsCell, Button[] buttonArr, Weather.State state) {
+            storyWidgetsCell.getClass();
             Button button = buttonArr[0];
             StringBuilder sb = new StringBuilder();
             sb.append(state == null ? "🌤" : state.getEmoji());
             sb.append(" ");
             sb.append(state == null ? Weather.isDefaultCelsius() ? "24°C" : "72°F" : state.getTemperature());
-            button.setText(Emoji.replaceEmoji(sb.toString(), this.textPaint.getFontMetricsInt(), false));
-            invalidate();
-            requestLayout();
+            button.setText(Emoji.replaceEmoji(sb.toString(), storyWidgetsCell.textPaint.getFontMetricsInt(), false));
+            storyWidgetsCell.invalidate();
+            storyWidgetsCell.requestLayout();
         }
 
         private abstract class BaseWidget {
@@ -3471,9 +3455,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 Collections.sort(this.visibleReactions, new Comparator() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$StoryWidgetsCell$ReactionWidget$$ExternalSyntheticLambda0
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$new$0;
-                        lambda$new$0 = EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.lambda$new$0((ReactionsLayoutInBubble.VisibleReaction) obj, (ReactionsLayoutInBubble.VisibleReaction) obj2);
-                        return lambda$new$0;
+                        return EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.$r8$lambda$M0r5PWt2OPKJuCVT6lv-8Fy7TH8((ReactionsLayoutInBubble.VisibleReaction) obj, (ReactionsLayoutInBubble.VisibleReaction) obj2);
                     }
                 });
                 if (!this.visibleReactions.isEmpty()) {
@@ -3482,8 +3464,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 this.progressToNext.set(1.0f, true);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ int lambda$new$0(ReactionsLayoutInBubble.VisibleReaction visibleReaction, ReactionsLayoutInBubble.VisibleReaction visibleReaction2) {
+            public static /* synthetic */ int $r8$lambda$M0r5PWt2OPKJuCVT6lv-8Fy7TH8(ReactionsLayoutInBubble.VisibleReaction visibleReaction, ReactionsLayoutInBubble.VisibleReaction visibleReaction2) {
                 String str = visibleReaction.emojicon;
                 int i = 0;
                 int i2 = (str == null || !str.equals("❤")) ? 0 : -1;
@@ -3557,13 +3538,12 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$StoryWidgetsCell$ReactionWidget$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.1.this.lambda$run$0();
+                            EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.1.$r8$lambda$gIPXHtWXvt5Z-aZvGbBqUUd9mtM(EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.1.this);
                         }
                     });
                 }
 
-                /* JADX INFO: Access modifiers changed from: private */
-                public /* synthetic */ void lambda$run$0() {
+                public static /* synthetic */ void $r8$lambda$gIPXHtWXvt5Z-aZvGbBqUUd9mtM(1 r3) {
                     if (ReactionWidget.this.visibleReactions.isEmpty()) {
                         return;
                     }

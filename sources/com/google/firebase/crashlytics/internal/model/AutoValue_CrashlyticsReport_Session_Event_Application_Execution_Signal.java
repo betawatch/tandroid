@@ -37,11 +37,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Sign
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Signal)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Signal) {
+            CrashlyticsReport.Session.Event.Application.Execution.Signal signal = (CrashlyticsReport.Session.Event.Application.Execution.Signal) obj;
+            if (this.name.equals(signal.getName()) && this.code.equals(signal.getCode()) && this.address == signal.getAddress()) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Event.Application.Execution.Signal signal = (CrashlyticsReport.Session.Event.Application.Execution.Signal) obj;
-        return this.name.equals(signal.getName()) && this.code.equals(signal.getCode()) && this.address == signal.getAddress();
+        return false;
     }
 
     public int hashCode() {

@@ -26,33 +26,25 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         arrayList.add(LibraryVersionComponent.fromContext("android-target-sdk", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda1
             @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
             public final String extract(Object obj) {
-                String lambda$getComponents$0;
-                lambda$getComponents$0 = FirebaseCommonRegistrar.lambda$getComponents$0((Context) obj);
-                return lambda$getComponents$0;
+                return FirebaseCommonRegistrar.$r8$lambda$JRfXgWruDOlX8_YsmPkDH9kjxAM((Context) obj);
             }
         }));
         arrayList.add(LibraryVersionComponent.fromContext("android-min-sdk", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda2
             @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
             public final String extract(Object obj) {
-                String lambda$getComponents$1;
-                lambda$getComponents$1 = FirebaseCommonRegistrar.lambda$getComponents$1((Context) obj);
-                return lambda$getComponents$1;
+                return FirebaseCommonRegistrar.$r8$lambda$6KbLzjDGzlo31N3xe2HtYAtvoWM((Context) obj);
             }
         }));
         arrayList.add(LibraryVersionComponent.fromContext("android-platform", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda3
             @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
             public final String extract(Object obj) {
-                String lambda$getComponents$2;
-                lambda$getComponents$2 = FirebaseCommonRegistrar.lambda$getComponents$2((Context) obj);
-                return lambda$getComponents$2;
+                return FirebaseCommonRegistrar.$r8$lambda$i32xAjD3ZPnT8CWh_N09uYXbvXY((Context) obj);
             }
         }));
         arrayList.add(LibraryVersionComponent.fromContext("android-installer", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda4
             @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
             public final String extract(Object obj) {
-                String lambda$getComponents$3;
-                lambda$getComponents$3 = FirebaseCommonRegistrar.lambda$getComponents$3((Context) obj);
-                return lambda$getComponents$3;
+                return FirebaseCommonRegistrar.$r8$lambda$4HU-LsSJXjiWd9yqSIuIvr69gmw((Context) obj);
             }
         }));
         String detectVersion = KotlinDetector.detectVersion();
@@ -62,8 +54,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$getComponents$0(Context context) {
+    public static /* synthetic */ String $r8$lambda$JRfXgWruDOlX8_YsmPkDH9kjxAM(Context context) {
         ApplicationInfo applicationInfo = context.getApplicationInfo();
         if (applicationInfo != null) {
             return String.valueOf(applicationInfo.targetSdkVersion);
@@ -71,8 +62,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         return "";
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$getComponents$1(Context context) {
+    public static /* synthetic */ String $r8$lambda$6KbLzjDGzlo31N3xe2HtYAtvoWM(Context context) {
         int i;
         ApplicationInfo applicationInfo = context.getApplicationInfo();
         if (applicationInfo != null && Build.VERSION.SDK_INT >= 24) {
@@ -82,8 +72,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         return "";
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$getComponents$2(Context context) {
+    public static /* synthetic */ String $r8$lambda$i32xAjD3ZPnT8CWh_N09uYXbvXY(Context context) {
         int i = Build.VERSION.SDK_INT;
         if (context.getPackageManager().hasSystemFeature("android.hardware.type.television")) {
             return "tv";
@@ -100,8 +89,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         return "";
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$getComponents$3(Context context) {
+    public static /* synthetic */ String $r8$lambda$4HU-LsSJXjiWd9yqSIuIvr69gmw(Context context) {
         String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
         return installerPackageName != null ? safeValue(installerPackageName) : "";
     }

@@ -79,7 +79,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CaptionContainerView extends FrameLayout {
     public ImageView applyButton;
     private Drawable applyButtonCheck;
@@ -226,8 +226,7 @@ public abstract class CaptionContainerView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* renamed from: onTextChange, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$1() {
+    public void onTextChange() {
     }
 
     protected abstract void onUpdateShowKeyboard(float f);
@@ -257,14 +256,14 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.textChangeRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CaptionContainerView.this.lambda$new$1();
+                CaptionContainerView.this.onTextChange();
             }
         };
         this.bounce = new ButtonBounce(this, 1.0f, 3.0f);
         this.updateShowKeyboard = new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                CaptionContainerView.this.lambda$new$2();
+                r0.updateShowKeyboard(CaptionContainerView.this.toKeyboardShow, true);
             }
         };
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
@@ -367,9 +366,9 @@ public abstract class CaptionContainerView extends FrameLayout {
                 }
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:7:0x002c, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:7:0x0032, code lost:
             
-                r0 = getRootWindowInsets();
+                r1 = getRootWindowInsets();
              */
             @Override // org.telegram.ui.Components.EditTextEmoji
             /*
@@ -527,7 +526,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.applyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaptionContainerView.this.lambda$new$0(view);
+                CaptionContainerView.this.done();
             }
         });
         addView(this.applyButton, LayoutHelper.createFrame(44, 44.0f, (isAtTop() ? 48 : 80) | 5, 8.0f, 8.0f, 8.0f, 8.0f));
@@ -574,7 +573,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             }
             if (CaptionContainerView.this.mentionContainer.getAdapter() != null) {
                 CaptionContainerView.this.mentionContainer.getAdapter().setUserOrChat(MessagesController.getInstance(CaptionContainerView.this.currentAccount).getUser(Long.valueOf(CaptionContainerView.this.dialogId)), MessagesController.getInstance(CaptionContainerView.this.currentAccount).getChat(Long.valueOf(-CaptionContainerView.this.dialogId)));
-                CaptionContainerView.this.mentionContainer.getAdapter().lambda$searchUsernameOrHashtag$8(charSequence, CaptionContainerView.this.editText.getEditText().getSelectionStart(), null, false, false);
+                CaptionContainerView.this.mentionContainer.getAdapter().searchUsernameOrHashtag(charSequence, CaptionContainerView.this.editText.getEditText().getSelectionStart(), null, false, false);
             }
         }
 
@@ -610,20 +609,10 @@ public abstract class CaptionContainerView extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$4$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionContainerView.4.this.lambda$afterTextChanged$0();
+                    CaptionContainerView.this.waitingForScrollYChange = false;
                 }
             });
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$afterTextChanged$0() {
-            CaptionContainerView.this.waitingForScrollYChange = false;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        done();
     }
 
     public void setDialogId(long j) {
@@ -634,7 +623,8 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
     }
 
-    protected void done() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void done() {
         closeKeyboard();
         AndroidUtilities.cancelRunOnUIThread(this.textChangeRunnable);
         this.textChangeRunnable.run();
@@ -883,16 +873,12 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        updateShowKeyboard(this.toKeyboardShow, true);
-    }
-
     protected void updateEditTextLeft() {
         this.editText.getEditText().setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(-26.0f) + getEditTextLeft(), AndroidUtilities.dp(2.0f), this.keyboardT));
     }
 
-    private void updateShowKeyboard(final boolean z, boolean z2) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateShowKeyboard(final boolean z, boolean z2) {
         if (this.keyboardShown == z) {
             return;
         }
@@ -922,7 +908,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda5
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    CaptionContainerView.this.lambda$updateShowKeyboard$3(valueAnimator2);
+                    CaptionContainerView.$r8$lambda$COvKjtoO1oTZZYcVT8CGOK_z6hI(CaptionContainerView.this, valueAnimator2);
                 }
             });
             if (!z) {
@@ -1002,21 +988,21 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.blurBitmap = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateShowKeyboard$3(ValueAnimator valueAnimator) {
-        this.keyboardT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.editText.getEditText().setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(-26.0f) + getEditTextLeft(), AndroidUtilities.dp(2.0f), this.keyboardT));
-        this.limitTextContainer.setTranslationX(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), AndroidUtilities.dp(2.0f), this.keyboardT));
-        this.limitTextContainer.setTranslationY(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), 0, this.keyboardT));
-        this.editText.getEmojiButton().setAlpha(this.keyboardT);
-        this.applyButton.setAlpha((float) Math.pow(this.keyboardT, 16.0d));
-        onUpdateShowKeyboard(this.keyboardT);
-        MentionsContainerView mentionsContainerView = this.mentionContainer;
+    public static /* synthetic */ void $r8$lambda$COvKjtoO1oTZZYcVT8CGOK_z6hI(CaptionContainerView captionContainerView, ValueAnimator valueAnimator) {
+        captionContainerView.getClass();
+        captionContainerView.keyboardT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        captionContainerView.editText.getEditText().setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(-26.0f) + captionContainerView.getEditTextLeft(), AndroidUtilities.dp(2.0f), captionContainerView.keyboardT));
+        captionContainerView.limitTextContainer.setTranslationX(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), AndroidUtilities.dp(2.0f), captionContainerView.keyboardT));
+        captionContainerView.limitTextContainer.setTranslationY(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), 0, captionContainerView.keyboardT));
+        captionContainerView.editText.getEmojiButton().setAlpha(captionContainerView.keyboardT);
+        captionContainerView.applyButton.setAlpha((float) Math.pow(captionContainerView.keyboardT, 16.0d));
+        captionContainerView.onUpdateShowKeyboard(captionContainerView.keyboardT);
+        MentionsContainerView mentionsContainerView = captionContainerView.mentionContainer;
         if (mentionsContainerView != null) {
-            mentionsContainerView.setAlpha((float) Math.pow(this.keyboardT, 4.0d));
+            mentionsContainerView.setAlpha((float) Math.pow(captionContainerView.keyboardT, 4.0d));
         }
-        this.editText.getEditText().invalidate();
-        invalidate();
+        captionContainerView.editText.getEditText().invalidate();
+        captionContainerView.invalidate();
     }
 
     public int getCodePointCount() {
@@ -1078,6 +1064,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         float f2;
         float f3;
         int min;
+        Canvas canvas2 = canvas;
         if (!this.hasReply || this.replyBackgroundBlur == null || this.replyTextBlur == null) {
             return;
         }
@@ -1096,16 +1083,18 @@ public abstract class CaptionContainerView extends FrameLayout {
             f = this.bounds.top;
             f2 = 1.0f;
         }
+        float f5 = f;
         Paint paint = this.replyBackgroundBlur.getPaint(f2);
         Paint paint2 = this.replyTextBlur.getPaint(f2);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(this.bounds.left + AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + f, this.bounds.right - AndroidUtilities.dp(10.0f), AndroidUtilities.dp(52.0f) + f);
+        rectF.set(this.bounds.left + AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + f5, this.bounds.right - AndroidUtilities.dp(10.0f), AndroidUtilities.dp(52.0f) + f5);
         if (paint != null) {
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), paint);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), paint);
         }
         if (paint2 != null) {
             RectF rectF2 = this.bounds;
             canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.didReceiveSmsCode, 31);
+            canvas2 = canvas;
         }
         Path path = this.replyClipPath;
         if (path == null) {
@@ -1118,10 +1107,10 @@ public abstract class CaptionContainerView extends FrameLayout {
         RectF rectF3 = this.bounds;
         Path.Direction direction = Path.Direction.CW;
         path2.addRoundRect(rectF3, lerp, lerp, direction);
-        canvas.clipPath(this.replyClipPath);
+        canvas2.clipPath(this.replyClipPath);
         Text text = this.replyTitle;
         if (text != null) {
-            text.ellipsize((int) (this.bounds.width() - AndroidUtilities.dp(40.0f))).draw(canvas, AndroidUtilities.dp(20.0f) + this.bounds.left, f + AndroidUtilities.dp(22.0f), -1, 1.0f);
+            text.ellipsize((int) (this.bounds.width() - AndroidUtilities.dp(40.0f))).draw(canvas2, this.bounds.left + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(22.0f) + f5, -1, 1.0f);
         }
         Path path3 = this.replyLinePath;
         if (path3 == null) {
@@ -1142,8 +1131,8 @@ public abstract class CaptionContainerView extends FrameLayout {
         } else {
             path3.rewind();
         }
-        float f5 = rectF.left;
-        rectF.set(f5, rectF.top, AndroidUtilities.dp(3.0f) + f5, rectF.bottom);
+        float f6 = rectF.left;
+        rectF.set(f6, rectF.top, AndroidUtilities.dp(3.0f) + f6, rectF.bottom);
         this.replyLinePath.addRoundRect(rectF, this.replyLinePathRadii, direction);
         if (this.replyLinePaint == null) {
             Paint paint3 = new Paint();
@@ -1151,22 +1140,22 @@ public abstract class CaptionContainerView extends FrameLayout {
             paint3.setColor(-1);
         }
         this.replyLinePaint.setAlpha((int) (f2 * 255.0f));
-        canvas.drawPath(this.replyLinePath, this.replyLinePaint);
+        canvas2.drawPath(this.replyLinePath, this.replyLinePaint);
         if (paint2 != null) {
-            canvas.save();
-            canvas.drawRect(this.bounds, paint2);
-            canvas.restore();
-            canvas.restore();
+            canvas2.save();
+            canvas2.drawRect(this.bounds, paint2);
+            canvas2.restore();
+            canvas2.restore();
         }
         Text text2 = this.replyText;
         if (text2 != null) {
-            text2.ellipsize((int) (this.bounds.width() - AndroidUtilities.dp(40.0f))).draw(canvas, AndroidUtilities.dp(20.0f) + this.bounds.left, f + AndroidUtilities.dp(40.0f), -1, 1.0f);
+            text2.ellipsize((int) (this.bounds.width() - AndroidUtilities.dp(40.0f))).draw(canvas2, this.bounds.left + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(40.0f) + f5, -1, 1.0f);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x023d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x022d, code lost:
     
-        if ((r0 <= 0.0f) != (r1 <= 0.0f)) goto L68;
+        if ((r1 <= 0.0f) != (r3 <= 0.0f)) goto L68;
      */
     @Override // android.view.ViewGroup, android.view.View
     /*
@@ -1174,8 +1163,6 @@ public abstract class CaptionContainerView extends FrameLayout {
     */
     protected void dispatchDraw(Canvas canvas) {
         int min;
-        float f;
-        int i;
         float dp;
         if (this.ignoreDraw) {
             return;
@@ -1191,13 +1178,13 @@ public abstract class CaptionContainerView extends FrameLayout {
         if (!this.collapsed && this.hasReply) {
             min += AndroidUtilities.dp(50.0f);
         }
-        float f2 = min;
-        int i2 = (int) this.heightAnimated.set(f2);
-        if (i2 != this.lastHeight) {
-            onEditHeightChange(i2);
+        float f = min;
+        int i = (int) this.heightAnimated.set(f);
+        if (i != this.lastHeight) {
+            onEditHeightChange(i);
             Utilities.Callback callback = this.onHeightUpdate;
             if (callback != null) {
-                callback.run(Integer.valueOf(i2));
+                callback.run(Integer.valueOf(i));
             }
             this.lastHeight = min;
         }
@@ -1211,19 +1198,19 @@ public abstract class CaptionContainerView extends FrameLayout {
                 this.lastHeightTranslation = lerp;
                 editText.setTranslationY(lerp);
             }
-            float f3 = dp2;
-            float f4 = dp3;
-            this.bounds.set(f3, f4, getWidth() - dp2, dp3 + i2);
-            this.clickBounds.set(f3, f4, getWidth() - dp2, r3 + AndroidUtilities.dp(24.0f));
+            float f2 = dp2;
+            float f3 = dp3;
+            this.bounds.set(f2, f3, getWidth() - dp2, dp3 + i);
+            this.clickBounds.set(f2, f3, getWidth() - dp2, r5 + AndroidUtilities.dp(24.0f));
         } else {
-            float lerp2 = (AndroidUtilities.lerp(AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(-1.0f), this.keyboardT) + f2) - i2;
+            float lerp2 = (AndroidUtilities.lerp(AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(-1.0f), this.keyboardT) + f) - i;
             if (Math.abs(this.lastHeightTranslation - lerp2) >= 1.0f && !this.collapsed) {
                 EditTextCaption editText2 = this.editText.getEditText();
                 this.lastHeightTranslation = lerp2;
                 editText2.setTranslationY(lerp2);
             }
-            this.bounds.set(dp2, (getHeight() - dp3) - i2, getWidth() - dp2, getHeight() - dp3);
-            this.clickBounds.set(0.0f, (getHeight() - i2) - AndroidUtilities.dp(24.0f), getWidth(), getHeight());
+            this.bounds.set(dp2, (getHeight() - dp3) - i, getWidth() - dp2, getHeight() - dp3);
+            this.clickBounds.set(0.0f, (getHeight() - i) - AndroidUtilities.dp(24.0f), getWidth(), getHeight());
         }
         canvas.save();
         float scale = this.bounce.getScale(0.018f);
@@ -1240,50 +1227,44 @@ public abstract class CaptionContainerView extends FrameLayout {
             rect.inset(-AndroidUtilities.lerp(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(5.0f), this.keyboardT), -AndroidUtilities.dp(5.0f));
             this.backgroundForCaptionField.setBounds(rect);
             this.backgroundForCaptionField.draw(canvas);
-            f = lerp3;
-            i = 1;
         } else if (customBlur()) {
-            i = 1;
-            f = lerp3;
             drawBlur(this.backgroundBlur, canvas, this.bounds, lerp3, false, 0.0f, 0.0f, true, 1.0f);
             this.backgroundPaint.setAlpha(AndroidUtilities.lerp(38, 64, this.keyboardT));
-            canvas.drawRoundRect(this.bounds, f, f, this.backgroundPaint);
+            canvas.drawRoundRect(this.bounds, lerp3, lerp3, this.backgroundPaint);
         } else {
-            f = lerp3;
-            i = 1;
             Paint[] paints = this.backgroundBlur.getPaints(1.0f, 0.0f, 0.0f);
             if (paints == null || paints[1] == null) {
                 this.backgroundPaint.setAlpha(128);
-                canvas.drawRoundRect(this.bounds, f, f, this.backgroundPaint);
+                canvas.drawRoundRect(this.bounds, lerp3, lerp3, this.backgroundPaint);
             } else {
                 Paint paint = paints[0];
                 if (paint != null) {
-                    canvas.drawRoundRect(this.bounds, f, f, paint);
+                    canvas.drawRoundRect(this.bounds, lerp3, lerp3, paint);
                 }
                 Paint paint2 = paints[1];
                 if (paint2 != null) {
-                    canvas.drawRoundRect(this.bounds, f, f, paint2);
+                    canvas.drawRoundRect(this.bounds, lerp3, lerp3, paint2);
                 }
                 this.backgroundPaint.setAlpha(51);
-                canvas.drawRoundRect(this.bounds, f, f, this.backgroundPaint);
+                canvas.drawRoundRect(this.bounds, lerp3, lerp3, this.backgroundPaint);
             }
         }
-        float f5 = this.collapsedT.get();
-        float f6 = this.collapsedT.set(this.collapsed);
-        if (Math.abs(f5 - f6) <= 0.001f) {
+        float f4 = this.collapsedT.get();
+        float f5 = this.collapsedT.set(this.collapsed);
+        if (Math.abs(f4 - f5) <= 0.001f) {
         }
         invalidateDrawOver2();
-        if (f6 > 0.0f) {
+        if (f5 > 0.0f) {
             canvas.saveLayerAlpha(this.bounds, NotificationCenter.didReceiveSmsCode, 31);
         }
         drawReply(canvas);
         super.dispatchDraw(canvas);
-        if (f6 > 0.0f) {
-            int i3 = this.collapsedFromX;
-            if (i3 == Integer.MAX_VALUE) {
+        if (f5 > 0.0f) {
+            int i2 = this.collapsedFromX;
+            if (i2 == Integer.MAX_VALUE) {
                 dp = this.bounds.right - AndroidUtilities.dp(20.0f);
             } else {
-                dp = i3 == Integer.MIN_VALUE ? this.bounds.left + AndroidUtilities.dp(20.0f) : i3;
+                dp = i2 == Integer.MIN_VALUE ? this.bounds.left + AndroidUtilities.dp(20.0f) : i2;
             }
             float dp4 = this.bounds.bottom - AndroidUtilities.dp(20.0f);
             RectF rectF2 = this.bounds;
@@ -1293,9 +1274,9 @@ public abstract class CaptionContainerView extends FrameLayout {
             RectF rectF4 = this.bounds;
             float distance2 = MathUtils.distance(rectF4.right, rectF4.top, dp, dp4);
             RectF rectF5 = this.bounds;
-            float max2 = Math.max(max, Math.max(distance2, MathUtils.distance(rectF5.right, rectF5.bottom, dp, dp4))) * f6;
+            float max2 = Math.max(max, Math.max(distance2, MathUtils.distance(rectF5.right, rectF5.bottom, dp, dp4))) * f5;
             if (this.collapsePaint == null) {
-                Paint paint3 = new Paint(i);
+                Paint paint3 = new Paint(1);
                 this.collapsePaint = paint3;
                 PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
                 paint3.setXfermode(new PorterDuffXfermode(mode));
@@ -1304,7 +1285,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 this.collapseGradient = radialGradient;
                 this.collapsePaint.setShader(radialGradient);
                 this.collapseGradientMatrix = new Matrix();
-                Paint paint4 = new Paint(i);
+                Paint paint4 = new Paint(1);
                 this.collapseOutPaint = paint4;
                 paint4.setXfermode(new PorterDuffXfermode(mode));
                 RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 32.0f, new int[]{0, 0, -1}, new float[]{0.0f, 0.5f, 1.0f}, tileMode);
@@ -1316,7 +1297,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             this.collapseGradientMatrix.preScale(Math.max(1.0f, max2) / 16.0f, Math.max(1.0f, max2) / 16.0f);
             this.collapseGradient.setLocalMatrix(this.collapseGradientMatrix);
             canvas.save();
-            canvas.drawRoundRect(this.bounds, f, f, this.collapsePaint);
+            canvas.drawRoundRect(this.bounds, lerp3, lerp3, this.collapsePaint);
             canvas.restore();
             canvas.restore();
             canvas.saveLayerAlpha(this.bounds, NotificationCenter.didReceiveSmsCode, 31);
@@ -1326,21 +1307,21 @@ public abstract class CaptionContainerView extends FrameLayout {
             this.collapseGradientMatrix.preScale(Math.max(1.0f, max2) / 16.0f, Math.max(1.0f, max2) / 16.0f);
             this.collapseOutGradient.setLocalMatrix(this.collapseGradientMatrix);
             canvas.save();
-            canvas.drawRoundRect(this.bounds, f, f, this.collapseOutPaint);
+            canvas.drawRoundRect(this.bounds, lerp3, lerp3, this.collapseOutPaint);
             canvas.restore();
             canvas.restore();
             if (!drawOver2FromParent()) {
-                drawOver2(canvas, this.bounds, f6);
+                drawOver2(canvas, this.bounds, f5);
             }
         }
         canvas.restore();
         if (this.factoryForMentions == null) {
             this.clipPath.rewind();
-            this.clipPath.addRoundRect(this.bounds, f, f, Path.Direction.CW);
+            this.clipPath.addRoundRect(this.bounds, lerp3, lerp3, Path.Direction.CW);
             canvas.save();
             canvas.clipPath(this.clipPath);
             StrokeDrawable strokeDrawable = this.strokeDrawable;
-            strokeDrawable.radius = f;
+            strokeDrawable.radius = lerp3;
             RectF rectF6 = this.bounds;
             strokeDrawable.setBounds((int) rectF6.left, (int) rectF6.top, (int) rectF6.right, (int) rectF6.bottom);
             this.strokeDrawable.draw(canvas);
@@ -1372,7 +1353,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             canvas.translate(-this.editText.getEditText().hintLayoutX, 0.0f);
             canvas.saveLayerAlpha(0.0f, 0.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             this.rectF.set(0.0f, 1.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight() - 1);
-            drawBlur(this.captionBlur, canvas, this.rectF, 0.0f, true, (-this.editText.getX()) - r8.getPaddingLeft(), ((-this.editText.getY()) - r8.getPaddingTop()) - r8.getExtendedPaddingTop(), true, 1.0f);
+            drawBlur(this.captionBlur, canvas, this.rectF, 0.0f, true, (-this.editText.getX()) - r9.getPaddingLeft(), ((-this.editText.getY()) - r9.getPaddingTop()) - r9.getExtendedPaddingTop(), true, 1.0f);
             canvas.save();
             this.hintTextBitmapPaint.setAlpha(NotificationCenter.didStartedCall);
             canvas.drawBitmap(this.hintTextBitmap, 0.0f, 0.0f, this.hintTextBitmapPaint);
@@ -1433,7 +1414,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             RectF rectF = this.bounds;
             float f = rectF.left;
             float f2 = rectF.top;
-            canvas.drawRect(f, f2, rectF.right, f2 + AndroidUtilities.dp(10.0f), this.fadePaint);
+            canvas.drawRect(f, f2, rectF.right, AndroidUtilities.dp(10.0f) + f2, this.fadePaint);
             this.matrix.reset();
             this.matrix.postRotate(180.0f);
             this.matrix.postTranslate(0.0f, this.bounds.bottom);
@@ -1709,9 +1690,13 @@ public abstract class CaptionContainerView extends FrameLayout {
             float f6 = (1.0f / f5) * 180.0f;
             float f7 = (1.5f / f5) * 180.0f;
             float f8 = f7;
-            for (int i = 0; i < this.dashes; i++) {
-                canvas.drawArc(AndroidUtilities.rectTmp, f8 + 270.0f, f6, false, this.strokePaint);
-                f8 += f6 + f7;
+            int i = 0;
+            while (i < this.dashes) {
+                float f9 = f6;
+                canvas.drawArc(AndroidUtilities.rectTmp, f8 + 270.0f, f9, false, this.strokePaint);
+                f8 += f9 + f7;
+                i++;
+                f6 = f9;
             }
             canvas.save();
             canvas.translate(this.textOffsetX + 0.0f, this.textOffsetY);

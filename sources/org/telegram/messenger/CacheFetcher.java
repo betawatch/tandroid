@@ -3,7 +3,6 @@ package org.telegram.messenger;
 import android.util.Pair;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import org.telegram.messenger.Utilities;
 
 /* loaded from: classes3.dex */
@@ -62,7 +61,7 @@ public abstract class CacheFetcher<Args, R> {
             getLocal(i, args, new Utilities.Callback2() { // from class: org.telegram.messenger.CacheFetcher$$ExternalSyntheticLambda3
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    CacheFetcher.this.lambda$fetch$1(pair, args, i, (Long) obj, obj2);
+                    CacheFetcher.$r8$lambda$vKB003R5Kta8BpKYwF16lmDbD4c(CacheFetcher.this, pair, args, i, (Long) obj, obj2);
                 }
             });
         } else if (callback != null) {
@@ -70,42 +69,47 @@ public abstract class CacheFetcher<Args, R> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$fetch$1(final Pair pair, final Object obj, final int i, Long l, final Object obj2) {
-        if (shouldRequest(pair)) {
-            if (obj2 != 0 && emitLocal(obj)) {
-                cacheResult(pair, obj2);
-                callCallbacks(pair, obj2, false);
+    public static /* synthetic */ void $r8$lambda$vKB003R5Kta8BpKYwF16lmDbD4c(final CacheFetcher cacheFetcher, final Pair pair, final Object obj, final int i, Long l, final Object obj2) {
+        if (cacheFetcher.shouldRequest(pair)) {
+            if (obj2 != null && cacheFetcher.emitLocal(obj)) {
+                cacheFetcher.cacheResult(pair, obj2);
+                cacheFetcher.callCallbacks(pair, obj2, false);
             }
-            getRemote(i, obj, l.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.CacheFetcher$$ExternalSyntheticLambda1
+            cacheFetcher.getRemote(i, obj, l.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.CacheFetcher$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback4
                 public final void run(Object obj3, Object obj4, Object obj5, Object obj6) {
-                    CacheFetcher.this.lambda$fetch$0(pair, obj2, i, obj, (Boolean) obj3, obj4, (Long) obj5, (Boolean) obj6);
+                    CacheFetcher.$r8$lambda$igJR4yzJOQFxj1rf2x-X47xcXuQ(CacheFetcher.this, pair, obj2, i, obj, (Boolean) obj3, obj4, (Long) obj5, (Boolean) obj6);
                 }
             });
             return;
         }
-        cacheResult(pair, obj2);
-        callCallbacks(pair, obj2, true);
+        cacheFetcher.cacheResult(pair, obj2);
+        cacheFetcher.callCallbacks(pair, obj2, true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$fetch$0(Pair pair, Object obj, int i, Object obj2, Boolean bool, Object obj3, Long l, Boolean bool2) {
+    public static /* synthetic */ void $r8$lambda$igJR4yzJOQFxj1rf2x-X47xcXuQ(CacheFetcher cacheFetcher, Pair pair, Object obj, int i, Object obj2, Boolean bool, Object obj3, Long l, Boolean bool2) {
+        CacheFetcher cacheFetcher2;
+        R r;
+        cacheFetcher.getClass();
         if (bool2.booleanValue()) {
-            saveLastRequested(pair);
+            cacheFetcher.saveLastRequested(pair);
         }
         if (bool.booleanValue()) {
-            cacheResult(pair, obj);
-            callCallbacks(pair, obj, true);
-        } else {
-            if (obj3 != 0) {
-                setLocal(i, obj2, obj3, l.longValue());
-                cacheResult(pair, obj3);
-            }
-            callCallbacks(pair, obj3, true);
+            cacheFetcher.cacheResult(pair, obj);
+            cacheFetcher.callCallbacks(pair, obj, true);
+            return;
         }
+        if (obj3 != 0) {
+            cacheFetcher2 = cacheFetcher;
+            r = obj3;
+            cacheFetcher2.setLocal(i, obj2, r, l.longValue());
+            cacheFetcher2.cacheResult(pair, r);
+        } else {
+            cacheFetcher2 = cacheFetcher;
+            r = obj3;
+        }
+        cacheFetcher2.callCallbacks(pair, r, true);
     }
 
     private R getCachedResult(Pair<Integer, Args> pair) {
@@ -169,22 +173,20 @@ public abstract class CacheFetcher<Args, R> {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CacheFetcher$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                CacheFetcher.this.lambda$saveCallback$2(pair, callback);
+                CacheFetcher.$r8$lambda$YYG6dtJSqtyEXKjDlAhxnX0vONg(CacheFetcher.this, pair, callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$saveCallback$2(Pair pair, Utilities.Callback callback) {
-        if (this.loadingCallbacks == null) {
-            this.loadingCallbacks = new HashMap<>();
+    public static /* synthetic */ void $r8$lambda$YYG6dtJSqtyEXKjDlAhxnX0vONg(CacheFetcher cacheFetcher, Pair pair, Utilities.Callback callback) {
+        if (cacheFetcher.loadingCallbacks == null) {
+            cacheFetcher.loadingCallbacks = new HashMap<>();
         }
-        ArrayList<Utilities.Callback<R>> arrayList = this.loadingCallbacks.get(pair);
+        ArrayList<Utilities.Callback<R>> arrayList = cacheFetcher.loadingCallbacks.get(pair);
         if (arrayList == null) {
-            HashMap<Pair<Integer, Args>, ArrayList<Utilities.Callback<R>>> hashMap = this.loadingCallbacks;
-            ArrayList<Utilities.Callback<R>> arrayList2 = new ArrayList<>();
-            hashMap.put(pair, arrayList2);
-            arrayList = arrayList2;
+            HashMap<Pair<Integer, Args>, ArrayList<Utilities.Callback<R>>> hashMap = cacheFetcher.loadingCallbacks;
+            arrayList = new ArrayList<>();
+            hashMap.put(pair, arrayList);
         }
         arrayList.add(callback);
     }
@@ -193,27 +195,29 @@ public abstract class CacheFetcher<Args, R> {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CacheFetcher$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CacheFetcher.this.lambda$callCallbacks$3(pair, r, z);
+                CacheFetcher.$r8$lambda$pneNqVUnFb75PaQjLCFyQ7yTNYw(CacheFetcher.this, pair, r, z);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$callCallbacks$3(Pair pair, Object obj, boolean z) {
+    public static /* synthetic */ void $r8$lambda$pneNqVUnFb75PaQjLCFyQ7yTNYw(CacheFetcher cacheFetcher, Pair pair, Object obj, boolean z) {
         ArrayList<Utilities.Callback<R>> arrayList;
-        HashMap<Pair<Integer, Args>, ArrayList<Utilities.Callback<R>>> hashMap = this.loadingCallbacks;
+        HashMap<Pair<Integer, Args>, ArrayList<Utilities.Callback<R>>> hashMap = cacheFetcher.loadingCallbacks;
         if (hashMap == null || (arrayList = hashMap.get(pair)) == null) {
             return;
         }
-        Iterator<Utilities.Callback<R>> it = arrayList.iterator();
-        while (it.hasNext()) {
-            it.next().run(obj);
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Utilities.Callback<R> callback = arrayList.get(i);
+            i++;
+            callback.run(obj);
         }
         if (z) {
             arrayList.clear();
         }
         if (z) {
-            this.loadingCallbacks.remove(pair);
+            cacheFetcher.loadingCallbacks.remove(pair);
         }
     }
 }

@@ -71,7 +71,7 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
         rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BlockingUpdateView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BlockingUpdateView.this.lambda$new$0(view);
+                BlockingUpdateView.$r8$lambda$U_RZEnwRXjYgV4ORBzuGeBRkEHo(BlockingUpdateView.this, view);
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -135,7 +135,7 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
         this.acceptButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BlockingUpdateView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BlockingUpdateView.this.lambda$new$1(context, view);
+                BlockingUpdateView.$r8$lambda$nf7Rrnr1SEoVB8wl8TfUfgP5m94(BlockingUpdateView.this, context, view);
             }
         });
         TextView textView3 = new TextView(context);
@@ -149,10 +149,11 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i4, int i5, int i6, int i7) {
                 super.onLayout(z, i4, i5, i6, i7);
+                int i8 = i6 - i4;
                 int dp = AndroidUtilities.dp(36.0f);
-                int i8 = ((i6 - i4) - dp) / 2;
-                int i9 = ((i7 - i5) - dp) / 2;
-                BlockingUpdateView.this.radialProgress.setProgressRect(i8, i9, i8 + dp, dp + i9);
+                int i9 = (i8 - dp) / 2;
+                int i10 = ((i7 - i5) - dp) / 2;
+                BlockingUpdateView.this.radialProgress.setProgressRect(i9, i10, i9 + dp, dp + i10);
             }
 
             @Override // android.view.View
@@ -173,32 +174,31 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
         this.acceptButton.addView(this.radialProgressView, LayoutHelper.createFrame(36, 36, 17));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        int i = this.pressCount + 1;
-        this.pressCount = i;
+    public static /* synthetic */ void $r8$lambda$U_RZEnwRXjYgV4ORBzuGeBRkEHo(BlockingUpdateView blockingUpdateView, View view) {
+        int i = blockingUpdateView.pressCount + 1;
+        blockingUpdateView.pressCount = i;
         if (i >= 10) {
-            setVisibility(8);
+            blockingUpdateView.setVisibility(8);
             SharedConfig.pendingAppUpdate = null;
             SharedConfig.saveConfig();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Context context, View view) {
+    public static /* synthetic */ void $r8$lambda$nf7Rrnr1SEoVB8wl8TfUfgP5m94(BlockingUpdateView blockingUpdateView, Context context, View view) {
+        blockingUpdateView.getClass();
         if (ApplicationLoader.isStandaloneBuild() || BuildVars.DEBUG_VERSION) {
-            if (ApplicationLoader.applicationLoaderInstance.checkApkInstallPermissions(getContext())) {
-                TLRPC.TL_help_appUpdate tL_help_appUpdate = this.appUpdate;
+            if (ApplicationLoader.applicationLoaderInstance.checkApkInstallPermissions(blockingUpdateView.getContext())) {
+                TLRPC.TL_help_appUpdate tL_help_appUpdate = blockingUpdateView.appUpdate;
                 if (tL_help_appUpdate.document instanceof TLRPC.TL_document) {
-                    if (ApplicationLoader.applicationLoaderInstance.openApkInstall((Activity) getContext(), this.appUpdate.document)) {
+                    if (ApplicationLoader.applicationLoaderInstance.openApkInstall((Activity) blockingUpdateView.getContext(), blockingUpdateView.appUpdate.document)) {
                         return;
                     }
-                    FileLoader.getInstance(this.accountNum).loadFile(this.appUpdate.document, "update", 3, 1);
-                    showProgress(true);
+                    FileLoader.getInstance(blockingUpdateView.accountNum).loadFile(blockingUpdateView.appUpdate.document, "update", 3, 1);
+                    blockingUpdateView.showProgress(true);
                     return;
                 }
                 if (tL_help_appUpdate.url != null) {
-                    Browser.openUrl(getContext(), this.appUpdate.url);
+                    Browser.openUrl(blockingUpdateView.getContext(), blockingUpdateView.appUpdate.url);
                     return;
                 }
                 return;
@@ -259,32 +259,17 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
             animatorSet.cancel();
         }
         this.progressAnimation = new AnimatorSet();
+        Property property = View.ALPHA;
+        Property property2 = View.SCALE_Y;
+        Property property3 = View.SCALE_X;
         if (z) {
             this.radialProgressView.setVisibility(0);
             this.acceptButton.setEnabled(false);
-            AnimatorSet animatorSet2 = this.progressAnimation;
-            TextView textView = this.acceptTextView;
-            Property property = View.SCALE_X;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.1f);
-            TextView textView2 = this.acceptTextView;
-            Property property2 = View.SCALE_Y;
-            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.1f);
-            TextView textView3 = this.acceptTextView;
-            Property property3 = View.ALPHA;
-            animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property3, 1.0f));
+            this.progressAnimation.playTogether(ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property3, 1.0f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property, 1.0f));
         } else {
             this.acceptTextView.setVisibility(0);
             this.acceptButton.setEnabled(true);
-            AnimatorSet animatorSet3 = this.progressAnimation;
-            FrameLayout frameLayout = this.radialProgressView;
-            Property property4 = View.SCALE_X;
-            ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property4, 0.1f);
-            FrameLayout frameLayout2 = this.radialProgressView;
-            Property property5 = View.SCALE_Y;
-            ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property5, 0.1f);
-            FrameLayout frameLayout3 = this.radialProgressView;
-            Property property6 = View.ALPHA;
-            animatorSet3.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(frameLayout3, (Property<FrameLayout, Float>) property6, 0.0f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property4, 1.0f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property5, 1.0f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property6, 1.0f));
+            this.progressAnimation.playTogether(ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property3, 0.1f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property2, 0.1f), ObjectAnimator.ofFloat(this.radialProgressView, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.acceptTextView, (Property<TextView, Float>) property, 1.0f));
         }
         this.progressAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.BlockingUpdateView.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -345,28 +330,28 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
             ConnectionsManager.getInstance(this.accountNum).sendRequest(tL_help_getAppUpdate, new RequestDelegate() { // from class: org.telegram.ui.Components.BlockingUpdateView$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    BlockingUpdateView.this.lambda$show$3(tLObject, tL_error);
+                    BlockingUpdateView.$r8$lambda$Tf63wIwJLQECXnytaYLfB3-IrDQ(BlockingUpdateView.this, tLObject, tL_error);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$3(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$Tf63wIwJLQECXnytaYLfB3-IrDQ(final BlockingUpdateView blockingUpdateView, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        blockingUpdateView.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BlockingUpdateView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BlockingUpdateView.this.lambda$show$2(tLObject);
+                BlockingUpdateView.$r8$lambda$OSKv_cAGgg7g5Okm2EiCmEC1NiM(BlockingUpdateView.this, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$2(TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$OSKv_cAGgg7g5Okm2EiCmEC1NiM(BlockingUpdateView blockingUpdateView, TLObject tLObject) {
+        blockingUpdateView.getClass();
         if (!(tLObject instanceof TLRPC.TL_help_appUpdate) || ((TLRPC.TL_help_appUpdate) tLObject).can_not_skip) {
             return;
         }
-        setVisibility(8);
+        blockingUpdateView.setVisibility(8);
         SharedConfig.pendingAppUpdate = null;
         SharedConfig.saveConfig();
     }

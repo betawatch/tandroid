@@ -41,41 +41,39 @@ final class zzey extends SuspendLambda implements Function2 {
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            zzfp zzfpVar = this.zzb;
-            str = zzfpVar.zza;
-            zzs = zzfpVar.zzs();
-            String packageName = zzs.getPackageName();
-            String zza = this.zzc.zza().zza();
-            zzci zze = zzfp.zze(zzfpVar);
-            zzda zzh = zzfp.zzh(zzfpVar);
-            zzs2 = zzfpVar.zzs();
-            int i2 = Build.VERSION.SDK_INT;
-            String zza2 = zze.zza();
-            zzzc zzf = zzzd.zzf();
-            zzf.zzw(str);
-            zzf.zzt(packageName);
-            zzf.zzx(zzh.zzd(zzs2));
-            zzf.zzu("18.7.1");
-            zzf.zzv(zza);
-            zzf.zzs(String.valueOf(i2));
-            zzf.zzr(zza2);
-            zzf.zzf(zzh.zzb(zzs2));
-            zzf.zzq(zzh.zzc(zzs2));
-            zzf.zze(zzh.zza(zzs2));
-            zzzd zzzdVar = (zzzd) zzf.zzk();
-            zzzd zza3 = zzfp.zzb(zzfpVar).zza();
-            zzzc zzzcVar = (zzzc) zzzdVar.zzr();
-            zzzcVar.zzh(zza3);
-            zzzd zzzdVar2 = (zzzd) zzzcVar.zzk();
-            zzht zzi = zzfp.zzi(zzfpVar);
-            String zzb = zzfp.zzg(zzfpVar).zzb();
-            this.zza = 1;
-            obj = zzi.zzc(zzb, zzzdVar2, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
-            }
+        if (i != 0) {
+            return obj;
         }
-        return obj;
+        zzfp zzfpVar = this.zzb;
+        str = zzfpVar.zza;
+        zzs = zzfpVar.zzs();
+        String packageName = zzs.getPackageName();
+        String zza = this.zzc.zza().zza();
+        zzci zze = zzfp.zze(zzfpVar);
+        zzda zzh = zzfp.zzh(zzfpVar);
+        zzs2 = zzfpVar.zzs();
+        int i2 = Build.VERSION.SDK_INT;
+        String zza2 = zze.zza();
+        zzzc zzf = zzzd.zzf();
+        zzf.zzw(str);
+        zzf.zzt(packageName);
+        zzf.zzx(zzh.zzd(zzs2));
+        zzf.zzu("18.7.1");
+        zzf.zzv(zza);
+        zzf.zzs(String.valueOf(i2));
+        zzf.zzr(zza2);
+        zzf.zzf(zzh.zzb(zzs2));
+        zzf.zzq(zzh.zzc(zzs2));
+        zzf.zze(zzh.zza(zzs2));
+        zzzd zzzdVar = (zzzd) zzf.zzk();
+        zzzd zza3 = zzfp.zzb(zzfpVar).zza();
+        zzzc zzzcVar = (zzzc) zzzdVar.zzr();
+        zzzcVar.zzh(zza3);
+        zzzd zzzdVar2 = (zzzd) zzzcVar.zzk();
+        zzht zzi = zzfp.zzi(zzfpVar);
+        String zzb = zzfp.zzg(zzfpVar).zzb();
+        this.zza = 1;
+        Object zzc = zzi.zzc(zzb, zzzdVar2, this);
+        return zzc == coroutine_suspended ? coroutine_suspended : zzc;
     }
 }

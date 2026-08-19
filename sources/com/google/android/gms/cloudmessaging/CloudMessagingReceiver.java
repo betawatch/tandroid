@@ -44,10 +44,11 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
         int onMessageReceive = onMessageReceive(context, cloudMessage);
         try {
             Tasks.await(zzc, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
+            return onMessageReceive;
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e.toString()));
+            return onMessageReceive;
         }
-        return onMessageReceive;
     }
 
     private final int zzc(Context context, Intent intent) {

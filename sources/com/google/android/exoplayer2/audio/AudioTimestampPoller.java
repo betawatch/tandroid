@@ -40,23 +40,34 @@ final class AudioTimestampPoller {
                         }
                     } else if (maybeUpdateTimestamp) {
                         reset();
+                        return maybeUpdateTimestamp;
                     }
                 } else if (!maybeUpdateTimestamp) {
                     reset();
+                    return maybeUpdateTimestamp;
                 }
-            } else if (!maybeUpdateTimestamp) {
-                reset();
-            } else if (this.audioTimestamp.getTimestampPositionFrames() > this.initialTimestampPositionFrames) {
-                updateState(2);
+            } else {
+                if (!maybeUpdateTimestamp) {
+                    reset();
+                    return maybeUpdateTimestamp;
+                }
+                if (this.audioTimestamp.getTimestampPositionFrames() > this.initialTimestampPositionFrames) {
+                    updateState(2);
+                    return maybeUpdateTimestamp;
+                }
             }
-        } else if (maybeUpdateTimestamp) {
-            if (this.audioTimestamp.getTimestampSystemTimeUs() < this.initializeSystemTimeUs) {
-                return false;
+        } else {
+            if (maybeUpdateTimestamp) {
+                if (this.audioTimestamp.getTimestampSystemTimeUs() < this.initializeSystemTimeUs) {
+                    return false;
+                }
+                this.initialTimestampPositionFrames = this.audioTimestamp.getTimestampPositionFrames();
+                updateState(1);
+                return maybeUpdateTimestamp;
             }
-            this.initialTimestampPositionFrames = this.audioTimestamp.getTimestampPositionFrames();
-            updateState(1);
-        } else if (j - this.initializeSystemTimeUs > 500000) {
-            updateState(3);
+            if (j - this.initializeSystemTimeUs > 500000) {
+                updateState(3);
+            }
         }
         return maybeUpdateTimestamp;
     }

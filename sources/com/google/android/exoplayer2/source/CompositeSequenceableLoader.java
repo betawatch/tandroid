@@ -52,7 +52,7 @@ public class CompositeSequenceableLoader implements SequenceableLoader {
         do {
             long nextLoadPositionUs = getNextLoadPositionUs();
             if (nextLoadPositionUs == Long.MIN_VALUE) {
-                break;
+                return z2;
             }
             z = false;
             for (SequenceableLoader sequenceableLoader : this.loaders) {

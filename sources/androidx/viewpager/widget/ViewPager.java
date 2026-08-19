@@ -534,9 +534,9 @@ public class ViewPager extends ViewGroup {
         itemInfo.widthFactor = this.mAdapter.getPageWidth(i);
         if (i2 < 0 || i2 >= this.mItems.size()) {
             this.mItems.add(itemInfo);
-        } else {
-            this.mItems.add(i2, itemInfo);
+            return itemInfo;
         }
+        this.mItems.add(i2, itemInfo);
         return itemInfo;
     }
 
@@ -597,11 +597,11 @@ public class ViewPager extends ViewGroup {
         populate(this.mCurItem);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0060, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0061, code lost:
     
         if (r9 == r10) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0067, code lost:
     
         r8 = null;
      */
@@ -1479,7 +1479,10 @@ public class ViewPager extends ViewGroup {
     }
 
     private boolean isGutterDrag(float f, float f2) {
-        return (f < ((float) this.mGutterSize) && f2 > 0.0f) || (f > ((float) (getWidth() - this.mGutterSize)) && f2 < 0.0f);
+        if (f >= this.mGutterSize || f2 <= 0.0f) {
+            return f > ((float) (getWidth() - this.mGutterSize)) && f2 < 0.0f;
+        }
+        return true;
     }
 
     private void enableLayers(boolean z) {
@@ -1738,7 +1741,7 @@ public class ViewPager extends ViewGroup {
             f = itemInfo3.offset;
             float f4 = itemInfo3.widthFactor + f + f2;
             if (!z && scrollX < f) {
-                return itemInfo;
+                break;
             }
             if (scrollX < f4 || i3 == this.mItems.size() - 1) {
                 return itemInfo3;
@@ -1746,10 +1749,10 @@ public class ViewPager extends ViewGroup {
             int i4 = itemInfo3.position;
             float f5 = itemInfo3.widthFactor;
             i3++;
-            z = false;
             i2 = i4;
             f3 = f5;
             itemInfo = itemInfo3;
+            z = false;
         }
         return itemInfo;
     }
@@ -1806,51 +1809,51 @@ public class ViewPager extends ViewGroup {
     protected void onDraw(Canvas canvas) {
         int i;
         float f;
-        float f2;
+        int i2;
         super.onDraw(canvas);
         if (this.mPageMargin <= 0 || this.mMarginDrawable == null || this.mItems.size() <= 0 || this.mAdapter == null) {
             return;
         }
         int scrollX = getScrollX();
         float width = getWidth();
-        float f3 = this.mPageMargin / width;
-        int i2 = 0;
+        float f2 = this.mPageMargin / width;
+        int i3 = 0;
         ItemInfo itemInfo = (ItemInfo) this.mItems.get(0);
-        float f4 = itemInfo.offset;
+        float f3 = itemInfo.offset;
         int size = this.mItems.size();
-        int i3 = itemInfo.position;
-        int i4 = ((ItemInfo) this.mItems.get(size - 1)).position;
-        while (i3 < i4) {
+        int i4 = itemInfo.position;
+        int i5 = ((ItemInfo) this.mItems.get(size - 1)).position;
+        while (i4 < i5) {
             while (true) {
                 i = itemInfo.position;
-                if (i3 <= i || i2 >= size) {
+                if (i4 <= i || i3 >= size) {
                     break;
                 }
-                i2++;
-                itemInfo = (ItemInfo) this.mItems.get(i2);
+                i3++;
+                itemInfo = (ItemInfo) this.mItems.get(i3);
             }
-            if (i3 == i) {
-                float f5 = itemInfo.offset;
-                float f6 = itemInfo.widthFactor;
-                f = (f5 + f6) * width;
-                f4 = f5 + f6 + f3;
+            if (i4 == i) {
+                float f4 = itemInfo.offset;
+                float f5 = itemInfo.widthFactor;
+                f = (f4 + f5) * width;
+                f3 = f4 + f5 + f2;
             } else {
-                float pageWidth = this.mAdapter.getPageWidth(i3);
-                f = (f4 + pageWidth) * width;
-                f4 += pageWidth + f3;
+                float pageWidth = this.mAdapter.getPageWidth(i4);
+                f = (f3 + pageWidth) * width;
+                f3 += pageWidth + f2;
             }
             if (this.mPageMargin + f > scrollX) {
-                f2 = f3;
+                i2 = scrollX;
                 this.mMarginDrawable.setBounds(Math.round(f), this.mTopPageBounds, Math.round(this.mPageMargin + f), this.mBottomPageBounds);
                 this.mMarginDrawable.draw(canvas);
             } else {
-                f2 = f3;
+                i2 = scrollX;
             }
-            if (f > scrollX + r2) {
+            if (f > i2 + r2) {
                 return;
             }
-            i3++;
-            f3 = f2;
+            i4++;
+            scrollX = i2;
         }
     }
 
@@ -1960,28 +1963,30 @@ public class ViewPager extends ViewGroup {
     }
 
     public boolean executeKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getAction() == 0) {
-            int keyCode = keyEvent.getKeyCode();
-            if (keyCode == 21) {
-                if (keyEvent.hasModifiers(2)) {
-                    return pageLeft();
-                }
-                return arrowScroll(17);
+        if (keyEvent.getAction() != 0) {
+            return false;
+        }
+        int keyCode = keyEvent.getKeyCode();
+        if (keyCode == 21) {
+            if (keyEvent.hasModifiers(2)) {
+                return pageLeft();
             }
-            if (keyCode == 22) {
-                if (keyEvent.hasModifiers(2)) {
-                    return pageRight();
-                }
-                return arrowScroll(66);
+            return arrowScroll(17);
+        }
+        if (keyCode == 22) {
+            if (keyEvent.hasModifiers(2)) {
+                return pageRight();
             }
-            if (keyCode == 61) {
-                if (keyEvent.hasNoModifiers()) {
-                    return arrowScroll(2);
-                }
-                if (keyEvent.hasModifiers(1)) {
-                    return arrowScroll(1);
-                }
-            }
+            return arrowScroll(66);
+        }
+        if (keyCode != 61) {
+            return false;
+        }
+        if (keyEvent.hasNoModifiers()) {
+            return arrowScroll(2);
+        }
+        if (keyEvent.hasModifiers(1)) {
+            return arrowScroll(1);
         }
         return false;
     }

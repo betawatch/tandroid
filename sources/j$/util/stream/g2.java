@@ -1,60 +1,43 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
-
 /* loaded from: classes2.dex */
-public abstract class g2 implements k2 {
-    protected final m2 a;
+public final class g2 extends b2 {
+    public long b;
+    public long c;
+    public final /* synthetic */ h2 d;
 
-    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
-    public final /* synthetic */ void accept(double d) {
-        w0.a();
-        throw null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g2(h2 h2Var, f2 f2Var) {
+        super(f2Var);
+        this.d = h2Var;
+        this.b = h2Var.m;
+        long j = h2Var.n;
+        this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.m2
-    public final /* synthetic */ void accept(long j) {
-        w0.l();
-        throw null;
+    @Override // j$.util.stream.b2, j$.util.stream.f2
+    public final void y(long j) {
+        this.a.y(q1.x(j, this.d.m, this.c));
     }
 
     @Override // java.util.function.Consumer
-    public final /* bridge */ /* synthetic */ void accept(Object obj) {
-        m((Integer) obj);
+    /* renamed from: accept */
+    public final void s(Object obj) {
+        long j = this.b;
+        if (j == 0) {
+            long j2 = this.c;
+            if (j2 > 0) {
+                this.c = j2 - 1;
+                this.a.s((f2) obj);
+                return;
+            }
+            return;
+        }
+        this.b = j - 1;
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
-    }
-
-    @Override // j$.util.stream.k2
-    public final /* synthetic */ void m(Integer num) {
-        w0.g(this, num);
-    }
-
-    public g2(m2 m2Var) {
-        this.a = (m2) Objects.requireNonNull(m2Var);
-    }
-
-    @Override // j$.util.stream.m2
-    public void l(long j) {
-        this.a.l(j);
-    }
-
-    @Override // j$.util.stream.m2
-    public void k() {
-        this.a.k();
-    }
-
-    @Override // j$.util.stream.m2
-    public boolean n() {
-        return this.a.n();
+    @Override // j$.util.stream.b2, j$.util.stream.f2
+    public final boolean C() {
+        return this.c == 0 || this.a.C();
     }
 }

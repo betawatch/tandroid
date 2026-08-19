@@ -1,11 +1,11 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-abstract class a extends p {
-    final ConcurrentHashMap i;
-    l j;
+public abstract class a extends p {
+    public final ConcurrentHashMap i;
+    public l j;
 
-    a(l[] lVarArr, int i, int i2, ConcurrentHashMap concurrentHashMap) {
+    public a(l[] lVarArr, int i, int i2, ConcurrentHashMap concurrentHashMap) {
         super(lVarArr, i, 0, i2);
         this.i = concurrentHashMap;
         a();

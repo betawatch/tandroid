@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
+import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -122,7 +123,7 @@ public class UniversalRecyclerView extends RecyclerListView {
 
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public final void onItemClick(View view, int i5, float f, float f2) {
-                    UniversalRecyclerView.this.lambda$new$0(callback5, view, i5, f, f2);
+                    UniversalRecyclerView.$r8$lambda$HwQsKjqfgq0fW-aQ2U15BPbk-4E(UniversalRecyclerView.this, callback5, view, i5, f, f2);
                 }
             });
         }
@@ -130,9 +131,7 @@ public class UniversalRecyclerView extends RecyclerListView {
             setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public final boolean onItemClick(View view, int i5, float f, float f2) {
-                    boolean lambda$new$1;
-                    lambda$new$1 = UniversalRecyclerView.this.lambda$new$1(callback5Return, view, i5, f, f2);
-                    return lambda$new$1;
+                    return UniversalRecyclerView.$r8$lambda$JUUl8vCG0K15oU0YYo2pTFhfxTg(UniversalRecyclerView.this, callback5Return, view, i5, f, f2);
                 }
 
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
@@ -188,18 +187,16 @@ public class UniversalRecyclerView extends RecyclerListView {
         setItemAnimator(defaultItemAnimator);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Utilities.Callback5 callback5, View view, int i, float f, float f2) {
-        UItem item = this.adapter.getItem(i);
+    public static /* synthetic */ void $r8$lambda$HwQsKjqfgq0fW-aQ2U15BPbk-4E(UniversalRecyclerView universalRecyclerView, Utilities.Callback5 callback5, View view, int i, float f, float f2) {
+        UItem item = universalRecyclerView.adapter.getItem(i);
         if (item == null) {
             return;
         }
         callback5.run(item, view, Integer.valueOf(i), Float.valueOf(f), Float.valueOf(f2));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$1(Utilities.Callback5Return callback5Return, View view, int i, float f, float f2) {
-        UItem item = this.adapter.getItem(i);
+    public static /* synthetic */ boolean $r8$lambda$JUUl8vCG0K15oU0YYo2pTFhfxTg(UniversalRecyclerView universalRecyclerView, Utilities.Callback5Return callback5Return, View view, int i, float f, float f2) {
+        UItem item = universalRecyclerView.adapter.getItem(i);
         if (item == null) {
             return false;
         }
@@ -224,7 +221,7 @@ public class UniversalRecyclerView extends RecyclerListView {
             ((ExtendedGridLayoutManager) linearLayoutManager).setSpanCount(i);
             return;
         }
-        if (!(linearLayoutManager instanceof LinearLayoutManager) || i == -1) {
+        if (!OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(linearLayoutManager) || i == -1) {
             return;
         }
         final ExtendedGridLayoutManager extendedGridLayoutManager = new ExtendedGridLayoutManager(getContext(), i) { // from class: org.telegram.ui.Components.UniversalRecyclerView.6
@@ -287,14 +284,9 @@ public class UniversalRecyclerView extends RecyclerListView {
         AndroidUtilities.forEachViews((RecyclerView) this, new Consumer() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda3
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
-                UniversalRecyclerView.this.lambda$allowReorder$2((View) obj);
+                r0.adapter.updateReorder(r0.getChildViewHolder((View) obj), UniversalRecyclerView.this.reorderingAllowed);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$allowReorder$2(View view) {
-        this.adapter.updateReorder(getChildViewHolder(view), this.reorderingAllowed);
     }
 
     @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
@@ -462,9 +454,7 @@ public class UniversalRecyclerView extends RecyclerListView {
         super.setSections(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
-                Boolean lambda$setSections$3;
-                lambda$setSections$3 = UniversalRecyclerView.this.lambda$setSections$3((View) obj);
-                return lambda$setSections$3;
+                return UniversalRecyclerView.$r8$lambda$MUTL4oZPr3V0PMa1ItCXaNod57M(UniversalRecyclerView.this, (View) obj);
             }
         }, new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.CallbackReturn
@@ -474,18 +464,13 @@ public class UniversalRecyclerView extends RecyclerListView {
         }, i, f, new Utilities.Callback5() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback5
             public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                UniversalRecyclerView.this.lambda$setSections$4((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+                super/*org.telegram.ui.Components.RecyclerListView*/.drawBackgroundRect((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
         }, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$setSections$3(View view) {
-        return view.getParent() != this ? Boolean.FALSE : Boolean.valueOf(!UniversalAdapter.isShadow(getChildViewHolder(view).getItemViewType()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSections$4(Canvas canvas, RectF rectF, float f, float f2, float f3) {
-        super.drawBackgroundRect(canvas, rectF, f, f2, f3);
+    public static /* synthetic */ Boolean $r8$lambda$MUTL4oZPr3V0PMa1ItCXaNod57M(UniversalRecyclerView universalRecyclerView, View view) {
+        universalRecyclerView.getClass();
+        return view.getParent() != universalRecyclerView ? Boolean.FALSE : Boolean.valueOf(!UniversalAdapter.isShadow(universalRecyclerView.getChildViewHolder(view).getItemViewType()));
     }
 }

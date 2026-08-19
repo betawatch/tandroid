@@ -20,11 +20,12 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
 
     @Override // androidx.core.os.LocaleListInterface
     public Locale get(int i) {
-        if (i >= 0) {
-            Locale[] localeArr = this.mList;
-            if (i < localeArr.length) {
-                return localeArr[i];
-            }
+        if (i < 0) {
+            return null;
+        }
+        Locale[] localeArr = this.mList;
+        if (i < localeArr.length) {
+            return localeArr[i];
         }
         return null;
     }

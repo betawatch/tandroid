@@ -47,18 +47,19 @@ public final class MotionPhotoDescription {
             } else {
                 j2 = j3 - containerItem.length;
             }
-            long j8 = j3;
-            j3 = j2;
-            if (!equals || j3 == j8) {
+            long j8 = j2;
+            long j9 = j3;
+            j3 = j8;
+            if (!equals || j3 == j9) {
                 z = equals;
             } else {
-                j7 = j8 - j3;
+                j7 = j9 - j3;
                 j6 = j3;
                 z = false;
             }
             if (size == 0) {
                 j4 = j3;
-                j5 = j8;
+                j5 = j9;
             }
         }
         if (j6 == -1 || j7 == -1 || j4 == -1 || j5 == -1) {

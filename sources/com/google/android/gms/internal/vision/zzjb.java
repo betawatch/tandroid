@@ -190,14 +190,15 @@ public abstract class zzjb extends zzhf {
                 throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
-        if (zzjbVar == null) {
-            zzjbVar = (zzjb) ((zzjb) zzma.zza(cls)).zza(zzg.zzf, (Object) null, (Object) null);
-            if (zzjbVar == null) {
-                throw new IllegalStateException();
-            }
-            zzd.put(cls, zzjbVar);
+        if (zzjbVar != null) {
+            return zzjbVar;
         }
-        return zzjbVar;
+        zzjb zzjbVar2 = (zzjb) ((zzjb) zzma.zza(cls)).zza(zzg.zzf, (Object) null, (Object) null);
+        if (zzjbVar2 == null) {
+            throw new IllegalStateException();
+        }
+        zzd.put(cls, zzjbVar2);
+        return zzjbVar2;
     }
 
     protected static void zza(Class cls, zzjb zzjbVar) {

@@ -90,13 +90,12 @@ public final class ListenerSet {
         this.queuedEvents.add(new Runnable() { // from class: com.google.android.exoplayer2.util.ListenerSet$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ListenerSet.lambda$queueEvent$0(copyOnWriteArraySet, i, event);
+                ListenerSet.$r8$lambda$AHn9s3qXpdWTkpx2n1DyAlVZ5wI(copyOnWriteArraySet, i, event);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$queueEvent$0(CopyOnWriteArraySet copyOnWriteArraySet, int i, Event event) {
+    public static /* synthetic */ void $r8$lambda$AHn9s3qXpdWTkpx2n1DyAlVZ5wI(CopyOnWriteArraySet copyOnWriteArraySet, int i, Event event) {
         Iterator it = copyOnWriteArraySet.iterator();
         while (it.hasNext()) {
             ((ListenerHolder) it.next()).invoke(i, event);
@@ -158,7 +157,8 @@ public final class ListenerSet {
         }
     }
 
-    private static final class ListenerHolder {
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class ListenerHolder {
         private FlagSet.Builder flagsBuilder = new FlagSet.Builder();
         public final Object listener;
         private boolean needsIterationFinishedEvent;

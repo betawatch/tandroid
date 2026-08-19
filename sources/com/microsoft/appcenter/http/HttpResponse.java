@@ -30,11 +30,13 @@ public class HttpResponse {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+        if (obj != null && getClass() == obj.getClass()) {
+            HttpResponse httpResponse = (HttpResponse) obj;
+            if (this.statusCode == httpResponse.statusCode && this.payload.equals(httpResponse.payload) && this.headers.equals(httpResponse.headers)) {
+                return true;
+            }
         }
-        HttpResponse httpResponse = (HttpResponse) obj;
-        return this.statusCode == httpResponse.statusCode && this.payload.equals(httpResponse.payload) && this.headers.equals(httpResponse.headers);
+        return false;
     }
 
     public int hashCode() {

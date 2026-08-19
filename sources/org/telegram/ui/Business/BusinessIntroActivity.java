@@ -109,16 +109,15 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
             this.greetingsView.setNextSticker(MediaDataController.getInstance(this.currentAccount).getGreetingsSticker(), new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BusinessIntroActivity.this.lambda$updateRandomSticker$0();
+                    BusinessIntroActivity.$r8$lambda$PbARWy0eIoa8MmB0N1zQfcVqoSc(BusinessIntroActivity.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRandomSticker$0() {
-        AndroidUtilities.cancelRunOnUIThread(this.updateRandomStickerRunnable);
-        AndroidUtilities.runOnUIThread(this.updateRandomStickerRunnable, 5000L);
+    public static /* synthetic */ void $r8$lambda$PbARWy0eIoa8MmB0N1zQfcVqoSc(BusinessIntroActivity businessIntroActivity) {
+        AndroidUtilities.cancelRunOnUIThread(businessIntroActivity.updateRandomStickerRunnable);
+        AndroidUtilities.runOnUIThread(businessIntroActivity.updateRandomStickerRunnable, 5000L);
     }
 
     @Override // org.telegram.ui.Components.UniversalFragment
@@ -284,23 +283,23 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         new KeyboardNotifier(this.fragmentView, new Utilities.Callback() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                BusinessIntroActivity.this.lambda$createView$1((Integer) obj);
+                BusinessIntroActivity.$r8$lambda$oceY_pMzncPnCVtICOzUUsN2CSo(BusinessIntroActivity.this, (Integer) obj);
             }
         });
         return this.fragmentView;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(Integer num) {
+    public static /* synthetic */ void $r8$lambda$oceY_pMzncPnCVtICOzUUsN2CSo(BusinessIntroActivity businessIntroActivity, Integer num) {
+        businessIntroActivity.getClass();
         boolean z = num.intValue() > AndroidUtilities.dp(20.0f);
-        if (this.keyboardVisible == z) {
+        if (businessIntroActivity.keyboardVisible == z) {
             return;
         }
-        this.keyboardVisible = z;
+        businessIntroActivity.keyboardVisible = z;
         if (z) {
             return;
         }
-        this.listView.smoothScrollToPosition(0);
+        businessIntroActivity.listView.smoothScrollToPosition(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -409,9 +408,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
             emojiBottomSheet.whenDocumentSelected(new Utilities.Callback3Return() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback3Return
                 public final Object run(Object obj, Object obj2, Object obj3) {
-                    Boolean lambda$onClick$2;
-                    lambda$onClick$2 = BusinessIntroActivity.this.lambda$onClick$2(view, obj, (TLRPC.Document) obj2, (Boolean) obj3);
-                    return lambda$onClick$2;
+                    return BusinessIntroActivity.$r8$lambda$bFjW-5sE_ZIngwHbbmJA-dGFzbA(BusinessIntroActivity.this, view, obj, (TLRPC.Document) obj2, (Boolean) obj3);
                 }
             });
             emojiBottomSheet.whenPlusSelected(new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda5
@@ -440,15 +437,14 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$onClick$2(View view, Object obj, TLRPC.Document document, Boolean bool) {
-        this.stickerRandom = false;
-        AndroidUtilities.cancelRunOnUIThread(this.updateRandomStickerRunnable);
-        ChatGreetingsView chatGreetingsView = this.greetingsView;
-        this.sticker = document;
+    public static /* synthetic */ Boolean $r8$lambda$bFjW-5sE_ZIngwHbbmJA-dGFzbA(BusinessIntroActivity businessIntroActivity, View view, Object obj, TLRPC.Document document, Boolean bool) {
+        businessIntroActivity.stickerRandom = false;
+        AndroidUtilities.cancelRunOnUIThread(businessIntroActivity.updateRandomStickerRunnable);
+        ChatGreetingsView chatGreetingsView = businessIntroActivity.greetingsView;
+        businessIntroActivity.sticker = document;
         chatGreetingsView.setSticker(document);
         ((TextCell) view).setValueSticker(document);
-        checkDone(true, false);
+        businessIntroActivity.checkDone(true, false);
         return Boolean.TRUE;
     }
 
@@ -459,15 +455,17 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         if (str == null) {
             str = "";
         }
-        if (TextUtils.equals(charSequence, str)) {
-            String charSequence2 = this.messageEdit.getText().toString();
-            String str2 = this.currentMessage;
-            if (TextUtils.equals(charSequence2, str2 != null ? str2 : "")) {
-                boolean z = this.stickerRandom;
-                if (((z || (document = this.sticker) == null) ? 0L : document.id) == this.currentSticker && (z || this.inputSticker == null)) {
-                    return false;
-                }
-            }
+        if (!TextUtils.equals(charSequence, str)) {
+            return true;
+        }
+        String charSequence2 = this.messageEdit.getText().toString();
+        String str2 = this.currentMessage;
+        if (!TextUtils.equals(charSequence2, str2 != null ? str2 : "")) {
+            return true;
+        }
+        boolean z = this.stickerRandom;
+        if (((z || (document = this.sticker) == null) ? 0L : document.id) == this.currentSticker) {
+            return (z || this.inputSticker == null) ? false : true;
         }
         return true;
     }
@@ -539,35 +537,37 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         getConnectionsManager().sendRequest(updatebusinessintro, new RequestDelegate() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BusinessIntroActivity.this.lambda$processDone$4(tLObject, tL_error);
+                BusinessIntroActivity.$r8$lambda$vwouftzYVBIlVfqbZuUV7PUPODo(BusinessIntroActivity.this, tLObject, tL_error);
             }
         });
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$4(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$vwouftzYVBIlVfqbZuUV7PUPODo(final BusinessIntroActivity businessIntroActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        businessIntroActivity.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                BusinessIntroActivity.this.lambda$processDone$3(tL_error, tLObject);
+                BusinessIntroActivity.$r8$lambda$IJseFU17Pg78EA8NqjhDvfk6D1o(BusinessIntroActivity.this, tL_error, tLObject);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$3(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$IJseFU17Pg78EA8NqjhDvfk6D1o(BusinessIntroActivity businessIntroActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
+            businessIntroActivity.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.showError(tL_error);
-        } else if (tLObject instanceof TLRPC.TL_boolFalse) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
+            return;
+        }
+        businessIntroActivity.getClass();
+        if (tLObject instanceof TLRPC.TL_boolFalse) {
+            businessIntroActivity.doneButtonDrawable.animateToProgress(0.0f);
+            BulletinFactory.of(businessIntroActivity).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         } else {
-            if (this.inputSticker != null) {
-                getMessagesController().loadFullUser(getUserConfig().getCurrentUser(), 0, true);
+            if (businessIntroActivity.inputSticker != null) {
+                businessIntroActivity.getMessagesController().loadFullUser(businessIntroActivity.getUserConfig().getCurrentUser(), 0, true);
             }
-            finishFragment();
+            businessIntroActivity.finishFragment();
         }
     }
 
@@ -585,27 +585,17 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BusinessIntroActivity.this.lambda$onBackPressed$5(alertDialog, i);
+                BusinessIntroActivity.this.processDone();
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessIntroActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                BusinessIntroActivity.this.lambda$onBackPressed$6(alertDialog, i);
+                BusinessIntroActivity.this.finishFragment();
             }
         });
         showDialog(builder.create());
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$5(AlertDialog alertDialog, int i) {
-        processDone();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBackPressed$6(AlertDialog alertDialog, int i) {
-        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -710,7 +700,7 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
     /* JADX INFO: Access modifiers changed from: private */
     public void setCustomSticker(String str, TLRPC.InputDocument inputDocument) {
         UniversalAdapter universalAdapter;
-        this.chatAttachAlert.lambda$new$0();
+        this.chatAttachAlert.dismiss();
         this.inputStickerPath = str;
         this.inputSticker = inputDocument;
         this.stickerRandom = false;

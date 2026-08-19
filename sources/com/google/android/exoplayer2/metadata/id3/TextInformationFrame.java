@@ -44,7 +44,7 @@ public final class TextInformationFrame extends Id3Frame {
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame, com.google.android.exoplayer2.metadata.Metadata.Entry
     public void populateMediaMetadata(MediaMetadata.Builder builder) {
         String str = this.id;
-        str.hashCode();
+        str.getClass();
         char c = 65535;
         switch (str.hashCode()) {
             case 82815:
@@ -259,11 +259,13 @@ public final class TextInformationFrame extends Id3Frame {
         if (this == obj) {
             return true;
         }
-        if (obj == null || TextInformationFrame.class != obj.getClass()) {
-            return false;
+        if (obj != null && TextInformationFrame.class == obj.getClass()) {
+            TextInformationFrame textInformationFrame = (TextInformationFrame) obj;
+            if (Util.areEqual(this.id, textInformationFrame.id) && Util.areEqual(this.description, textInformationFrame.description) && this.values.equals(textInformationFrame.values)) {
+                return true;
+            }
         }
-        TextInformationFrame textInformationFrame = (TextInformationFrame) obj;
-        return Util.areEqual(this.id, textInformationFrame.id) && Util.areEqual(this.description, textInformationFrame.description) && this.values.equals(textInformationFrame.values);
+        return false;
     }
 
     public int hashCode() {
@@ -291,10 +293,14 @@ public final class TextInformationFrame extends Id3Frame {
                 arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
                 arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
                 arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(8, 10))));
-            } else if (str.length() >= 7) {
+                return arrayList;
+            }
+            if (str.length() >= 7) {
                 arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
                 arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
-            } else if (str.length() >= 4) {
+                return arrayList;
+            }
+            if (str.length() >= 4) {
                 arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
             }
             return arrayList;

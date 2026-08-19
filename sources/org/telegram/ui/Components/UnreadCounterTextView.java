@@ -90,17 +90,17 @@ public class UnreadCounterTextView extends View {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.UnreadCounterTextView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                UnreadCounterTextView.this.lambda$setText$0(valueAnimator2);
+                UnreadCounterTextView.$r8$lambda$0PgUyTg62xsDBqWmLIFjviNbzEg(UnreadCounterTextView.this, valueAnimator2);
             }
         });
         this.replaceAnimator.setDuration(150L);
         this.replaceAnimator.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setText$0(ValueAnimator valueAnimator) {
-        this.replaceProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
+    public static /* synthetic */ void $r8$lambda$0PgUyTg62xsDBqWmLIFjviNbzEg(UnreadCounterTextView unreadCounterTextView, ValueAnimator valueAnimator) {
+        unreadCounterTextView.getClass();
+        unreadCounterTextView.replaceProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        unreadCounterTextView.invalidate();
     }
 
     public void setText(CharSequence charSequence) {

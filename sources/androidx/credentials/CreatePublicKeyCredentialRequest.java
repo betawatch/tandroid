@@ -47,7 +47,7 @@ public final class CreatePublicKeyCredentialRequest extends CreateCredentialRequ
     }
 
     public /* synthetic */ CreatePublicKeyCredentialRequest(String str, byte[] bArr, boolean z, String str2, boolean z2, boolean z3, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, (i & 2) != 0 ? null : bArr, (i & 4) != 0 ? false : z, (i & 8) == 0 ? str2 : null, (i & 16) != 0 ? false : z2, (i & 32) == 0 ? z3 : false);
+        this(str, (i & 2) != 0 ? null : bArr, (i & 4) != 0 ? false : z, (i & 8) != 0 ? null : str2, (i & 16) != 0 ? false : z2, (i & 32) != 0 ? false : z3);
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

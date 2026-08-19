@@ -3,20 +3,20 @@ package j$.time.format;
 import java.util.Locale;
 
 /* loaded from: classes2.dex */
-final class b extends u {
-    final /* synthetic */ t e;
+public final class b extends u {
+    public final /* synthetic */ t d;
 
-    b(t tVar) {
-        this.e = tVar;
+    public b(t tVar) {
+        this.d = tVar;
     }
 
     @Override // j$.time.format.u
-    public final String c(j$.time.chrono.l lVar, j$.time.temporal.a aVar, long j, TextStyle textStyle, Locale locale) {
-        return this.e.a(j, textStyle);
+    public final String a(j$.time.chrono.k kVar, j$.time.temporal.a aVar, long j, TextStyle textStyle, Locale locale) {
+        return this.d.a(j, textStyle);
     }
 
     @Override // j$.time.format.u
-    public final String d(j$.time.temporal.a aVar, long j, TextStyle textStyle, Locale locale) {
-        return this.e.a(j, textStyle);
+    public final String b(j$.time.temporal.a aVar, long j, TextStyle textStyle, Locale locale) {
+        return this.d.a(j, textStyle);
     }
 }

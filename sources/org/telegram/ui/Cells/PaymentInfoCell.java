@@ -69,15 +69,18 @@ public class PaymentInfoCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int i3;
+        int i4;
         if (this.imageView.getVisibility() != 8) {
-            i3 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_30);
+            i4 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_30);
+            i3 = i;
         } else {
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-            measureChildWithMargins(this.detailTextView, i, 0, i2, 0);
+            i3 = i;
+            measureChildWithMargins(this.detailTextView, i3, 0, i2, 0);
             ((FrameLayout.LayoutParams) this.detailExTextView.getLayoutParams()).topMargin = AndroidUtilities.dp(33.0f) + this.detailTextView.getMeasuredHeight() + AndroidUtilities.dp(3.0f);
-            i3 = makeMeasureSpec;
+            i4 = makeMeasureSpec;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i3);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i4);
     }
 
     public void setInfo(String str, String str2, TLRPC.WebDocument webDocument, String str3, Object obj) {

@@ -1,67 +1,59 @@
 package j$.util.stream;
 
-import j$.util.Collection;
+import j$.util.Objects;
 import j$.util.Spliterator;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-final class M0 implements I0 {
-    private final Collection a;
-
-    @Override // j$.util.stream.I0
-    public final /* synthetic */ I0 h(long j, long j2, IntFunction intFunction) {
-        return w0.w(this, j, j2, intFunction);
-    }
-
-    @Override // j$.util.stream.I0
-    public final /* synthetic */ int q() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.I0
-    public final I0 b(int i) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    M0(Collection collection) {
-        this.a = collection;
-    }
-
-    @Override // j$.util.stream.I0
+public final class M0 extends D0 {
+    @Override // j$.util.stream.B0
     public final Spliterator spliterator() {
-        return Collection.-EL.stream(this.a).spliterator();
+        return new d1(this);
     }
 
-    @Override // j$.util.stream.I0
-    public final void i(Object[] objArr, int i) {
-        Iterator it = this.a.iterator();
-        while (it.hasNext()) {
-            objArr[i] = it.next();
-            i++;
+    @Override // j$.util.stream.B0
+    public final void g(Object[] objArr, int i) {
+        Objects.requireNonNull(objArr);
+        B0 b0 = this.a;
+        b0.g(objArr, i);
+        this.b.g(objArr, i + ((int) b0.count()));
+    }
+
+    @Override // j$.util.stream.B0
+    public final Object[] h(IntFunction intFunction) {
+        long j = this.c;
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
+        Object[] objArr = (Object[]) intFunction.apply((int) j);
+        g(objArr, 0);
+        return objArr;
     }
 
-    @Override // j$.util.stream.I0
-    public final Object[] o(IntFunction intFunction) {
-        java.util.Collection collection = this.a;
-        return collection.toArray((Object[]) intFunction.apply(collection.size()));
-    }
-
-    @Override // j$.util.stream.I0
-    public final long count() {
-        return this.a.size();
-    }
-
-    @Override // j$.util.stream.I0
+    @Override // j$.util.stream.B0
     public final void forEach(Consumer consumer) {
-        Collection.-EL.a(this.a, consumer);
+        this.a.forEach(consumer);
+        this.b.forEach(consumer);
+    }
+
+    @Override // j$.util.stream.B0
+    public final B0 f(long j, long j2, IntFunction intFunction) {
+        if (j == 0 && j2 == this.c) {
+            return this;
+        }
+        long count = this.a.count();
+        if (j >= count) {
+            return this.b.f(j - count, j2 - count, intFunction);
+        }
+        if (j2 > count) {
+            return q1.F(T2.REFERENCE, this.a.f(j, count, intFunction), this.b.f(0L, j2 - count, intFunction));
+        }
+        return this.a.f(j, j2, intFunction);
     }
 
     public final String toString() {
-        java.util.Collection collection = this.a;
-        return String.format("CollectionNode[%d][%s]", Integer.valueOf(collection.size()), collection);
+        long j = this.c;
+        return j < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(j));
     }
 }

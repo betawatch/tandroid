@@ -29,7 +29,6 @@ import j$.util.Comparator$-CC;
 import j$.util.List;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.function.ToDoubleFunction;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
@@ -114,33 +113,28 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
     private final StarGiftSheet.TopView topView;
     private final ViewGroupPartRenderer viewGroupPartRenderer;
 
-    private enum Mode {
+    /* JADX INFO: Access modifiers changed from: private */
+    enum Mode {
         RANDOM,
         SELECTED
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
+    public static /* synthetic */ void $r8$lambda$4FW-GrWE3omtJROED_SUH0J-jw8(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(View view) {
+    public static /* synthetic */ void $r8$lambda$6dDAB4oCjfBKUgjWLOcaEjDuSkE(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$2(View view) {
+    public static /* synthetic */ void $r8$lambda$KA5_ktOev1iK_ZrKmafS83L4Id0(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$3(View view) {
+    public static /* synthetic */ void $r8$lambda$KnSj2HOwjZNsG6702N0SOUDyuqk(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(View view) {
+    public static /* synthetic */ void $r8$lambda$XzRzPJ0E1kCKde_hMMjhveM1TV8(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$5(View view) {
+    public static /* synthetic */ void $r8$lambda$yxN4xk9JINfkJndZctv0O4QuA2I(View view) {
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -323,37 +317,37 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                StarGiftPreviewSheet.this.lambda$openCrafting$8();
+                StarGiftPreviewSheet.this.onBackPressed();
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.lambda$new$0(view);
+                StarGiftPreviewSheet.$r8$lambda$6dDAB4oCjfBKUgjWLOcaEjDuSkE(view);
             }
         }, null, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.lambda$new$1(view);
+                StarGiftPreviewSheet.$r8$lambda$KnSj2HOwjZNsG6702N0SOUDyuqk(view);
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.lambda$new$2(view);
+                StarGiftPreviewSheet.$r8$lambda$yxN4xk9JINfkJndZctv0O4QuA2I(view);
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.lambda$new$3(view);
+                StarGiftPreviewSheet.$r8$lambda$XzRzPJ0E1kCKde_hMMjhveM1TV8(view);
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.lambda$new$4(view);
+                StarGiftPreviewSheet.$r8$lambda$4FW-GrWE3omtJROED_SUH0J-jw8(view);
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.lambda$new$5(view);
+                StarGiftPreviewSheet.$r8$lambda$KA5_ktOev1iK_ZrKmafS83L4Id0(view);
             }
         }) { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet.4
             final float[] hsv = new float[3];
@@ -441,7 +435,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.this.lambda$new$6(view);
+                StarGiftPreviewSheet.this.dismiss();
             }
         });
         ScaleStateListAnimator.apply(imageView);
@@ -454,7 +448,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StarGiftPreviewSheet.this.lambda$new$7(arrayList, view);
+                StarGiftPreviewSheet.$r8$lambda$2kH6_qyfMTIz4Tva5xalY7-8F6A(StarGiftPreviewSheet.this, arrayList, view);
             }
         });
         ScaleStateListAnimator.apply(imageView2);
@@ -482,7 +476,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         this.tabsSelectorView = new TabsSelectorView(context, resourcesProvider, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                StarGiftPreviewSheet.this.lambda$new$8((Integer) obj);
+                StarGiftPreviewSheet.$r8$lambda$gqE2otbWzJmsUuOEC-WCvtKXdSU(StarGiftPreviewSheet.this, (Integer) obj);
             }
         });
         final int i4 = 0;
@@ -501,7 +495,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                 this.buttons[i4].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        StarGiftPreviewSheet.this.lambda$new$9(i4, view);
+                        StarGiftPreviewSheet.this.tabsSelectorView.selectTab(i4);
                     }
                 });
                 this.buttons[i4].setBackground(Theme.createRadSelectorDrawable(0, 285212671, 10, 10));
@@ -535,35 +529,23 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(View view) {
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(ArrayList arrayList, View view) {
-        Mode mode = this.mode;
+    public static /* synthetic */ void $r8$lambda$2kH6_qyfMTIz4Tva5xalY7-8F6A(StarGiftPreviewSheet starGiftPreviewSheet, ArrayList arrayList, View view) {
+        Mode mode = starGiftPreviewSheet.mode;
         Mode mode2 = Mode.SELECTED;
         if (mode == mode2) {
-            this.topView.setPreviewingAttributes(arrayList);
-            setMode(Mode.RANDOM);
+            starGiftPreviewSheet.topView.setPreviewingAttributes(arrayList);
+            starGiftPreviewSheet.setMode(Mode.RANDOM);
         } else if (mode == Mode.RANDOM) {
-            Attributes attributes = new Attributes(this.topView.getUpgradeBackdropAttribute(), this.topView.getUpgradePatternAttribute(), this.topView.getUpgradeImageViewAttribute());
-            this.selectedAttributes = attributes;
-            this.topView.setPreviewAttributes(attributes);
-            setMode(mode2);
+            Attributes attributes = new Attributes(starGiftPreviewSheet.topView.getUpgradeBackdropAttribute(), starGiftPreviewSheet.topView.getUpgradePatternAttribute(), starGiftPreviewSheet.topView.getUpgradeImageViewAttribute());
+            starGiftPreviewSheet.selectedAttributes = attributes;
+            starGiftPreviewSheet.topView.setPreviewAttributes(attributes);
+            starGiftPreviewSheet.setMode(mode2);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(Integer num) {
-        this.itemAnimator.endAnimations();
-        this.adapter.update(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(int i, View view) {
-        this.tabsSelectorView.selectTab(i);
+    public static /* synthetic */ void $r8$lambda$gqE2otbWzJmsUuOEC-WCvtKXdSU(StarGiftPreviewSheet starGiftPreviewSheet, Integer num) {
+        starGiftPreviewSheet.itemAnimator.endAnimations();
+        starGiftPreviewSheet.adapter.update(true);
     }
 
     class 5 extends UniversalAdapter {
@@ -582,14 +564,13 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                 giftAttributeCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$5$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        StarGiftPreviewSheet.5.this.lambda$onBindViewHolder$0(attributes, view2);
+                        StarGiftPreviewSheet.5.$r8$lambda$R23LOsVTadFg7msTyVqP7t7_r10(StarGiftPreviewSheet.5.this, attributes, view2);
                     }
                 });
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(Attributes attributes, View view) {
+        public static /* synthetic */ void $r8$lambda$R23LOsVTadFg7msTyVqP7t7_r10(5 r4, Attributes attributes, View view) {
             if (StarGiftPreviewSheet.this.mode == Mode.RANDOM) {
                 StarGiftPreviewSheet starGiftPreviewSheet = StarGiftPreviewSheet.this;
                 starGiftPreviewSheet.selectedAttributes = new Attributes(starGiftPreviewSheet.topView.getUpgradeBackdropAttribute(), StarGiftPreviewSheet.this.topView.getUpgradePatternAttribute(), StarGiftPreviewSheet.this.topView.getUpgradeImageViewAttribute());
@@ -604,14 +585,14 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        5 r10 = new 5(this.recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda15
+        5 r0 = new 5(this.recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda15
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 StarGiftPreviewSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
             }
         }, this.resourcesProvider);
-        this.adapter = r10;
-        r10.setApplyBackground(false);
+        this.adapter = r0;
+        r0.setApplyBackground(false);
         return this.adapter;
     }
 
@@ -661,7 +642,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
             this.gradientTop.animate().alpha(z2 ? 1.0f : 0.0f).setDuration(200L).withEndAction(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StarGiftPreviewSheet.this.lambda$updateTranslationHeader$10(z2);
+                    StarGiftPreviewSheet.$r8$lambda$woo__-beTC8g7j3CXnwM35BwJGg(StarGiftPreviewSheet.this, z2);
                 }
             }).start();
         }
@@ -670,12 +651,12 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         this.headerView.setTranslationY(f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateTranslationHeader$10(boolean z) {
+    public static /* synthetic */ void $r8$lambda$woo__-beTC8g7j3CXnwM35BwJGg(StarGiftPreviewSheet starGiftPreviewSheet, boolean z) {
         if (z) {
-            return;
+            starGiftPreviewSheet.getClass();
+        } else {
+            starGiftPreviewSheet.gradientTop.setVisibility(8);
         }
-        this.gradientTop.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -701,35 +682,49 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         this.rPatterns.reset();
         this.rModels.reset();
         int selectedTab = this.tabsSelectorView.getSelectedTab();
+        int i = 0;
         if (selectedTab == 0) {
             arrayList.add(UItem.asCenterShadow(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(this.crafting ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", this.models.size()))));
-            Iterator it = this.models.iterator();
-            while (it.hasNext()) {
-                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) it.next())));
+            ArrayList arrayList2 = this.models;
+            int size = arrayList2.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList2.get(i2);
+                i2++;
+                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) obj)));
             }
             if (this.simpleModels.isEmpty()) {
                 return;
             }
             arrayList.add(UItem.asCenterShadow(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(this.crafting ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", this.models.size()))));
-            Iterator it2 = this.simpleModels.iterator();
-            while (it2.hasNext()) {
-                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) it2.next())));
+            ArrayList arrayList3 = this.simpleModels;
+            int size2 = arrayList3.size();
+            while (i < size2) {
+                Object obj2 = arrayList3.get(i);
+                i++;
+                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) obj2)));
             }
             return;
         }
         if (selectedTab == 1) {
             arrayList.add(UItem.asCenterShadow(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountBackdrops", this.backdrops.size()))));
-            Iterator it3 = this.backdrops.iterator();
-            while (it3.hasNext()) {
-                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) it3.next(), (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) this.rModels.next())));
+            ArrayList arrayList4 = this.backdrops;
+            int size3 = arrayList4.size();
+            while (i < size3) {
+                Object obj3 = arrayList4.get(i);
+                i++;
+                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) obj3, (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) this.rModels.next())));
             }
             return;
         }
         if (selectedTab == 2) {
             arrayList.add(UItem.asCenterShadow(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountSymbols", this.patterns.size()))));
-            Iterator it4 = this.patterns.iterator();
-            while (it4.hasNext()) {
-                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) it4.next(), (TL_stars.starGiftAttributeModel) this.rModels.next())));
+            ArrayList arrayList5 = this.patterns;
+            int size4 = arrayList5.size();
+            while (i < size4) {
+                Object obj4 = arrayList5.get(i);
+                i++;
+                arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) obj4, (TL_stars.starGiftAttributeModel) this.rModels.next())));
             }
         }
     }
@@ -1081,7 +1076,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                     this.tabs[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$0(i2, view);
+                            StarGiftPreviewSheet.TabsSelectorView.this.selectTab(i2);
                         }
                     });
                     i2++;
@@ -1090,11 +1085,6 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                     return;
                 }
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0(int i, View view) {
-            selectTab(i);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1171,7 +1161,15 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         int selectedTab = this.tabsSelectorView.getSelectedTab();
         Attributes attributes2 = this.selectedAttributes;
         if (attributes2 != null) {
-            return selectedTab == 1 ? attributes.backdrop == attributes2.backdrop : selectedTab == 2 ? attributes.pattern == attributes2.pattern : selectedTab == 0 && attributes.model == attributes2.model;
+            if (selectedTab == 1) {
+                return attributes.backdrop == attributes2.backdrop;
+            }
+            if (selectedTab == 2) {
+                return attributes.pattern == attributes2.pattern;
+            }
+            if (selectedTab == 0 && attributes.model == attributes2.model) {
+                return true;
+            }
         }
         return false;
     }

@@ -46,15 +46,13 @@ public class PanModeDelegateImpl implements PanModeDelegate {
             RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onPanModeChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.navigation.model.PanModeDelegateImpl$PanModeListenerStub$$ExternalSyntheticLambda0
                 @Override // androidx.car.app.utils.RemoteUtils.HostCall
                 public final Object dispatch() {
-                    Object lambda$onPanModeChanged$0;
-                    lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z);
-                    return lambda$onPanModeChanged$0;
+                    return PanModeDelegateImpl.PanModeListenerStub.$r8$lambda$Cc5fbnjHwTbzO2_Zd3zE93Unv3c(PanModeDelegateImpl.PanModeListenerStub.this, z);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onPanModeChanged$0(boolean z) {
+        public static /* synthetic */ Object $r8$lambda$Cc5fbnjHwTbzO2_Zd3zE93Unv3c(PanModeListenerStub panModeListenerStub, boolean z) {
+            panModeListenerStub.getClass();
             throw null;
         }
     }

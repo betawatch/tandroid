@@ -34,7 +34,7 @@ abstract class ListFieldSchema {
     }
 
     private static final class ListFieldSchemaFull extends ListFieldSchema {
-        private static final Class UNMODIFIABLE_LIST_CLASS = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
+        private static final Class UNMODIFIABLE_LIST_CLASS = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
         private ListFieldSchemaFull() {
             super();
@@ -68,9 +68,7 @@ abstract class ListFieldSchema {
             UnsafeUtil.putObject(obj, j, unmodifiableList);
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         private static List mutableListAt(Object obj, long j, int i) {
-            LazyStringArrayList lazyStringArrayList;
             List arrayList;
             List list = getList(obj, j);
             if (list.isEmpty()) {
@@ -88,25 +86,23 @@ abstract class ListFieldSchema {
                 ArrayList arrayList2 = new ArrayList(list.size() + i);
                 arrayList2.addAll(list);
                 UnsafeUtil.putObject(obj, j, arrayList2);
-                lazyStringArrayList = arrayList2;
-            } else if (list instanceof UnmodifiableLazyStringList) {
-                LazyStringArrayList lazyStringArrayList2 = new LazyStringArrayList(list.size() + i);
-                lazyStringArrayList2.addAll((UnmodifiableLazyStringList) list);
-                UnsafeUtil.putObject(obj, j, lazyStringArrayList2);
-                lazyStringArrayList = lazyStringArrayList2;
-            } else {
-                if (!(list instanceof PrimitiveNonBoxingCollection) || !(list instanceof Internal.ProtobufList)) {
-                    return list;
-                }
-                Internal.ProtobufList protobufList = (Internal.ProtobufList) list;
-                if (protobufList.isModifiable()) {
-                    return list;
-                }
-                Internal.ProtobufList mutableCopyWithCapacity = protobufList.mutableCopyWithCapacity(list.size() + i);
-                UnsafeUtil.putObject(obj, j, mutableCopyWithCapacity);
-                return mutableCopyWithCapacity;
+                return arrayList2;
             }
-            return lazyStringArrayList;
+            if (list instanceof UnmodifiableLazyStringList) {
+                LazyStringArrayList lazyStringArrayList = new LazyStringArrayList(list.size() + i);
+                lazyStringArrayList.addAll((UnmodifiableLazyStringList) list);
+                UnsafeUtil.putObject(obj, j, lazyStringArrayList);
+                return lazyStringArrayList;
+            }
+            if ((list instanceof PrimitiveNonBoxingCollection) && (list instanceof Internal.ProtobufList)) {
+                Internal.ProtobufList protobufList = (Internal.ProtobufList) list;
+                if (!protobufList.isModifiable()) {
+                    Internal.ProtobufList mutableCopyWithCapacity = protobufList.mutableCopyWithCapacity(list.size() + i);
+                    UnsafeUtil.putObject(obj, j, mutableCopyWithCapacity);
+                    return mutableCopyWithCapacity;
+                }
+            }
+            return list;
         }
 
         @Override // androidx.datastore.preferences.protobuf.ListFieldSchema

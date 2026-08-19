@@ -50,7 +50,7 @@ public class BillingFlowParams {
                 Iterable$-EL.forEach(this.zzc, new Consumer() { // from class: com.android.billingclient.api.zzce
                     @Override // java.util.function.Consumer
                     /* renamed from: accept */
-                    public final void p(Object obj) {
+                    public final void s(Object obj) {
                         if (((BillingFlowParams.ProductDetailsParams) obj) == null) {
                             throw new IllegalArgumentException("ProductDetailsParams cannot be null.");
                         }

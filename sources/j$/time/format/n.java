@@ -3,18 +3,18 @@ package j$.time.format;
 import j$.time.ZoneId;
 
 /* loaded from: classes2.dex */
-class n implements f {
-    private final j$.time.temporal.r a;
-    private final String b;
+public class n implements f {
+    public final a a;
+    public final String b;
 
-    n(j$.time.temporal.r rVar, String str) {
-        this.a = rVar;
+    public n(a aVar, String str) {
+        this.a = aVar;
         this.b = str;
     }
 
     @Override // j$.time.format.f
-    public boolean k(r rVar, StringBuilder sb) {
-        ZoneId zoneId = (ZoneId) rVar.f(this.a);
+    public boolean l(r rVar, StringBuilder sb) {
+        ZoneId zoneId = (ZoneId) rVar.b(this.a);
         if (zoneId == null) {
             return false;
         }

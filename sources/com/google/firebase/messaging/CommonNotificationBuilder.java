@@ -97,8 +97,8 @@ public abstract class CommonNotificationBuilder {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v2, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v5 */
     /* JADX WARN: Type inference failed for: r0v6 */
-    /* JADX WARN: Type inference failed for: r0v7 */
     private static int getConsolidatedDefaults(NotificationParams notificationParams) {
         boolean z = notificationParams.getBoolean("gcm.n.default_sound");
         ?? r0 = z;

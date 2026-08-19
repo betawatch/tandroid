@@ -52,11 +52,13 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thre
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame)) {
-            return false;
+        if (obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame) {
+            CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame frame = (CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame) obj;
+            if (this.pc == frame.getPc() && this.symbol.equals(frame.getSymbol()) && ((str = this.file) != null ? str.equals(frame.getFile()) : frame.getFile() == null) && this.offset == frame.getOffset() && this.importance == frame.getImportance()) {
+                return true;
+            }
         }
-        CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame frame = (CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame) obj;
-        return this.pc == frame.getPc() && this.symbol.equals(frame.getSymbol()) && ((str = this.file) != null ? str.equals(frame.getFile()) : frame.getFile() == null) && this.offset == frame.getOffset() && this.importance == frame.getImportance();
+        return false;
     }
 
     public int hashCode() {
@@ -65,7 +67,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thre
         String str = this.file;
         int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
         long j2 = this.offset;
-        return this.importance ^ ((hashCode2 ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
+        return this.importance ^ ((hashCode2 ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003);
     }
 
     static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.Builder {

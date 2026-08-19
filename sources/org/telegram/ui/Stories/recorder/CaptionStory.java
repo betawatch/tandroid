@@ -39,7 +39,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CaptionStory extends CaptionContainerView {
     public static final int[] periods = {21600, 43200, 86400, 172800};
     private float amplitude;
@@ -182,7 +182,7 @@ public abstract class CaptionStory extends CaptionContainerView {
         this.doneCancel = new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                CaptionStory.this.lambda$new$6();
+                CaptionStory.$r8$lambda$ZQQiq2wriGdYjrifWYOIZbzemwg(CaptionStory.this);
             }
         };
         ImageView imageView = new ImageView(context);
@@ -198,7 +198,7 @@ public abstract class CaptionStory extends CaptionContainerView {
         this.roundButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaptionStory.this.lambda$new$0(view);
+                CaptionStory.this.showRemoveRoundAlert();
             }
         });
         ImageView imageView3 = new ImageView(context);
@@ -214,46 +214,40 @@ public abstract class CaptionStory extends CaptionContainerView {
         this.periodButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaptionStory.this.lambda$new$5(frameLayout, resourcesProvider, view);
+                CaptionStory.$r8$lambda$UYhTY-ZP4Oy50LGKcbD6TMMOgyk(CaptionStory.this, frameLayout, resourcesProvider, view);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        showRemoveRoundAlert();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(FrameLayout frameLayout, Theme.ResourcesProvider resourcesProvider, View view) {
+    public static /* synthetic */ void $r8$lambda$UYhTY-ZP4Oy50LGKcbD6TMMOgyk(final CaptionStory captionStory, FrameLayout frameLayout, Theme.ResourcesProvider resourcesProvider, View view) {
         String formatPluralString;
-        ItemOptions itemOptions = this.periodPopup;
+        ItemOptions itemOptions = captionStory.periodPopup;
         if (itemOptions != null && itemOptions.isShown()) {
             return;
         }
         final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                CaptionStory.this.lambda$new$1((Integer) obj);
+                CaptionStory.$r8$lambda$119pXMvCvwN_OXVvER4dSgNrmEA(CaptionStory.this, (Integer) obj);
             }
         };
-        boolean isPremium = UserConfig.getInstance(this.currentAccount).isPremium();
+        boolean isPremium = UserConfig.getInstance(captionStory.currentAccount).isPremium();
         final Utilities.Callback callback2 = isPremium ? null : new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                CaptionStory.this.lambda$new$2((Integer) obj);
+                CaptionStory.$r8$lambda$icbVRCdRYHVsghO1BhlbUoEjUsE(CaptionStory.this, (Integer) obj);
             }
         };
-        ItemOptions makeOptions = ItemOptions.makeOptions(frameLayout, resourcesProvider, this.periodButton);
-        this.periodPopup = makeOptions;
+        ItemOptions makeOptions = ItemOptions.makeOptions(frameLayout, resourcesProvider, captionStory.periodButton);
+        captionStory.periodPopup = makeOptions;
         makeOptions.addText(LocaleController.getString("StoryPeriodHint"), 13, AndroidUtilities.dp(200.0f));
-        this.periodPopup.addGap();
+        captionStory.periodPopup.addGap();
         int i = 0;
         while (true) {
             int[] iArr = periods;
             if (i < iArr.length) {
                 final int i2 = iArr[i];
-                ItemOptions itemOptions2 = this.periodPopup;
+                ItemOptions itemOptions2 = captionStory.periodPopup;
                 if (i2 == Integer.MAX_VALUE) {
                     formatPluralString = LocaleController.getString("StoryPeriodKeep");
                 } else {
@@ -262,50 +256,39 @@ public abstract class CaptionStory extends CaptionContainerView {
                 itemOptions2.add(0, formatPluralString, Theme.key_actionBarDefaultSubmenuItem, new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CaptionStory.lambda$new$3(Utilities.Callback.this, i2);
+                        Utilities.Callback.this.run(Integer.valueOf(i2));
                     }
                 }).putPremiumLock((isPremium || i2 == 86400 || i2 == Integer.MAX_VALUE) ? null : new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CaptionStory.lambda$new$4(Utilities.Callback.this, i2);
+                        Utilities.Callback.this.run(Integer.valueOf(i2));
                     }
                 });
-                if (this.periodIndex == i) {
-                    this.periodPopup.putCheck();
+                if (captionStory.periodIndex == i) {
+                    captionStory.periodPopup.putCheck();
                 }
                 i++;
             } else {
-                this.periodPopup.setDimAlpha(0).show();
+                captionStory.periodPopup.setDimAlpha(0).show();
                 return;
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Integer num) {
-        setPeriod(num.intValue());
-        Utilities.Callback callback = this.onPeriodUpdate;
+    public static /* synthetic */ void $r8$lambda$119pXMvCvwN_OXVvER4dSgNrmEA(CaptionStory captionStory, Integer num) {
+        captionStory.getClass();
+        captionStory.setPeriod(num.intValue());
+        Utilities.Callback callback = captionStory.onPeriodUpdate;
         if (callback != null) {
             callback.run(num);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Integer num) {
-        Utilities.Callback callback = this.onPremiumHintShow;
+    public static /* synthetic */ void $r8$lambda$icbVRCdRYHVsghO1BhlbUoEjUsE(CaptionStory captionStory, Integer num) {
+        Utilities.Callback callback = captionStory.onPremiumHintShow;
         if (callback != null) {
             callback.run(num);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$3(Utilities.Callback callback, int i) {
-        callback.run(Integer.valueOf(i));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(Utilities.Callback callback, int i) {
-        callback.run(Integer.valueOf(i));
     }
 
     private void checkFlipButton() {
@@ -323,14 +306,17 @@ public abstract class CaptionStory extends CaptionContainerView {
 
     @Override // org.telegram.ui.Stories.recorder.CaptionContainerView
     public void drawOver(Canvas canvas, RectF rectF) {
-        Paint paint;
         float f;
-        Paint paint2;
+        Paint paint;
         float f2;
         float f3;
+        float f4;
+        float f5;
+        Canvas canvas2;
+        Canvas canvas3 = canvas;
         if (this.currentRecorder != null) {
-            float f4 = this.cancelT.set(this.cancelling);
-            float f5 = this.lockT.set(this.locked);
+            float f6 = this.cancelT.set(this.cancelling);
+            float f7 = this.lockT.set(this.locked);
             if (this.startTime <= 0) {
                 this.startTime = System.currentTimeMillis();
             }
@@ -338,21 +324,26 @@ public abstract class CaptionStory extends CaptionContainerView {
             float dp = rectF.left + AndroidUtilities.dp(21.0f);
             float dp2 = rectF.bottom - AndroidUtilities.dp(20.0f);
             this.recordPaint.setBounds((int) (dp - AndroidUtilities.dp(12.0f)), (int) (dp2 - AndroidUtilities.dp(12.0f)), (int) (dp + AndroidUtilities.dp(12.0f)), (int) (dp2 + AndroidUtilities.dp(12.0f)));
-            this.recordPaint.draw(canvas);
-            this.timerTextDrawable.setBounds((int) ((rectF.left + AndroidUtilities.dp(33.3f)) - (AndroidUtilities.dp(10.0f) * f4)), (int) ((rectF.bottom - AndroidUtilities.dp(20.0f)) - AndroidUtilities.dp(9.0f)), (int) (rectF.left + AndroidUtilities.dp(133.3f)), (int) ((rectF.bottom - AndroidUtilities.dp(20.0f)) + AndroidUtilities.dp(9.0f)));
+            this.recordPaint.draw(canvas3);
+            this.timerTextDrawable.setBounds((int) ((rectF.left + AndroidUtilities.dp(33.3f)) - (AndroidUtilities.dp(10.0f) * f6)), (int) ((rectF.bottom - AndroidUtilities.dp(20.0f)) - AndroidUtilities.dp(9.0f)), (int) (rectF.left + AndroidUtilities.dp(133.3f)), (int) ((rectF.bottom - AndroidUtilities.dp(20.0f)) + AndroidUtilities.dp(9.0f)));
             this.timerTextDrawable.setText(this.currentRecorder.sinceRecordingText());
-            this.timerTextDrawable.setAlpha((int) ((1.0f - f4) * 255.0f));
-            this.timerTextDrawable.draw(canvas);
-            float f6 = 1.0f - f5;
-            float f7 = (1.0f - this.slideProgress) * f6;
-            Paint paint3 = this.captionBlur.getPaint(1.0f);
-            if (paint3 != null) {
-                paint = paint3;
-                f = f7;
+            this.timerTextDrawable.setAlpha((int) ((1.0f - f6) * 255.0f));
+            this.timerTextDrawable.draw(canvas3);
+            float f8 = 1.0f - f7;
+            float f9 = (1.0f - this.slideProgress) * f8;
+            Paint paint2 = this.captionBlur.getPaint(1.0f);
+            if (paint2 != null) {
+                f = f9;
+                paint = paint2;
+                f2 = 12.0f;
+                f3 = 2.0f;
                 canvas.saveLayerAlpha(rectF.left, rectF.top, rectF.right, rectF.bottom, NotificationCenter.didReceiveSmsCode, 31);
+                canvas3 = canvas;
             } else {
-                paint = paint3;
-                f = f7;
+                f = f9;
+                paint = paint2;
+                f2 = 12.0f;
+                f3 = 2.0f;
             }
             if (f > 0.0f) {
                 if (this.slideToCancelText == null) {
@@ -364,42 +355,43 @@ public abstract class CaptionStory extends CaptionContainerView {
                     path.moveTo(AndroidUtilities.dp(3.83f), 0.0f);
                     this.slideToCancelArrowPath.lineTo(0.0f, AndroidUtilities.dp(5.0f));
                     this.slideToCancelArrowPath.lineTo(AndroidUtilities.dp(3.83f), AndroidUtilities.dp(10.0f));
-                    Paint paint4 = new Paint(1);
-                    this.slideToCancelArrowPaint = paint4;
-                    paint4.setStyle(Paint.Style.STROKE);
+                    Paint paint3 = new Paint(1);
+                    this.slideToCancelArrowPaint = paint3;
+                    paint3.setStyle(Paint.Style.STROKE);
                     this.slideToCancelArrowPaint.setStrokeCap(Paint.Cap.ROUND);
                     this.slideToCancelArrowPaint.setStrokeJoin(Paint.Join.ROUND);
                 }
                 this.slideToCancelArrowPaint.setStrokeWidth(AndroidUtilities.dp(1.33f));
                 this.slideToCancelText.ellipsize((int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - this.timerTextDrawable.getCurrentWidth()));
-                float centerX = ((rectF.centerX() - ((AndroidUtilities.dp(11.33f) + this.slideToCancelText.getWidth()) / 2.0f)) - ((rectF.width() / 6.0f) * AndroidUtilities.lerp(this.slideProgress, 1.0f, f5))) - ((sin * AndroidUtilities.dp(6.0f)) * (1.0f - this.slideProgress));
-                paint2 = paint;
-                int multAlpha = Theme.multAlpha(paint2 != null ? -1 : -2130706433, f);
-                canvas.save();
-                canvas.translate(centerX, rectF.centerY() - AndroidUtilities.dp(5.0f));
+                float centerX = ((rectF.centerX() - ((AndroidUtilities.dp(11.33f) + this.slideToCancelText.getWidth()) / f3)) - ((rectF.width() / 6.0f) * AndroidUtilities.lerp(this.slideProgress, 1.0f, f7))) - ((sin * AndroidUtilities.dp(6.0f)) * (1.0f - this.slideProgress));
+                int multAlpha = Theme.multAlpha(paint != null ? -1 : -2130706433, f);
+                canvas3.save();
+                canvas3.translate(centerX, rectF.centerY() - AndroidUtilities.dp(5.0f));
                 this.slideToCancelArrowPaint.setColor(multAlpha);
-                canvas.drawPath(this.slideToCancelArrowPath, this.slideToCancelArrowPaint);
-                canvas.restore();
-                f2 = 0.0f;
-                f3 = 15.0f;
-                this.slideToCancelText.draw(canvas, centerX + AndroidUtilities.dp(11.33f), rectF.centerY(), multAlpha, 1.0f);
+                canvas3.drawPath(this.slideToCancelArrowPath, this.slideToCancelArrowPaint);
+                canvas3.restore();
+                f4 = 15.0f;
+                f5 = 0.0f;
+                this.slideToCancelText.draw(canvas3, centerX + AndroidUtilities.dp(11.33f), rectF.centerY(), multAlpha, 1.0f);
             } else {
-                paint2 = paint;
-                f2 = 0.0f;
-                f3 = 15.0f;
+                f4 = 15.0f;
+                f5 = 0.0f;
             }
-            if (f5 > f2) {
+            if (f7 > f5) {
                 if (this.cancelText == null) {
-                    this.cancelText = new Text(LocaleController.getString(R.string.CancelRound), f3, AndroidUtilities.bold());
+                    this.cancelText = new Text(LocaleController.getString(R.string.CancelRound), f4, AndroidUtilities.bold());
                 }
                 this.cancelText.ellipsize((int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - this.timerTextDrawable.getCurrentWidth()));
-                float centerX2 = (rectF.centerX() - (this.cancelText.getWidth() / 2.0f)) + ((rectF.width() / 4.0f) * f6);
-                this.cancelText.draw(canvas, centerX2, rectF.centerY(), Theme.multAlpha(paint2 != null ? -1 : -2130706433, f5), 1.0f);
-                this.cancelBounds.set(centerX2 - AndroidUtilities.dp(12.0f), rectF.top, centerX2 + this.cancelText.getWidth() + AndroidUtilities.dp(12.0f), rectF.bottom);
+                float centerX2 = (rectF.centerX() - (this.cancelText.getWidth() / f3)) + ((rectF.width() / 4.0f) * f8);
+                canvas2 = canvas;
+                this.cancelText.draw(canvas2, centerX2, rectF.centerY(), Theme.multAlpha(paint != null ? -1 : -2130706433, f7), 1.0f);
+                this.cancelBounds.set(centerX2 - AndroidUtilities.dp(f2), rectF.top, centerX2 + this.cancelText.getWidth() + AndroidUtilities.dp(f2), rectF.bottom);
+            } else {
+                canvas2 = canvas;
             }
-            if (paint2 != null) {
-                canvas.drawRect(rectF, paint2);
-                canvas.restore();
+            if (paint != null) {
+                canvas2.drawRect(rectF, paint);
+                canvas2.restore();
             }
             invalidate();
         }
@@ -678,11 +670,10 @@ public abstract class CaptionStory extends CaptionContainerView {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6() {
-        setCollapsed(false, TLObject.FLAG_31);
-        this.roundButton.setVisibility(0);
-        this.periodButton.setVisibility(0);
+    public static /* synthetic */ void $r8$lambda$ZQQiq2wriGdYjrifWYOIZbzemwg(CaptionStory captionStory) {
+        captionStory.setCollapsed(false, TLObject.FLAG_31);
+        captionStory.roundButton.setVisibility(0);
+        captionStory.periodButton.setVisibility(0);
     }
 
     private boolean roundButtonTouchEvent(MotionEvent motionEvent) {
@@ -804,16 +795,11 @@ public abstract class CaptionStory extends CaptionContainerView {
         if (this.hasRoundVideo && (textView = (TextView) new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(R.string.StoryRemoveRoundTitle)).setMessage(LocaleController.getString(R.string.StoryRemoveRoundMessage)).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                CaptionStory.this.lambda$showRemoveRoundAlert$7(alertDialog, i);
+                CaptionStory.this.removeRound();
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show().getButton(-1)) != null) {
             textView.setTextColor(Theme.getColor(Theme.key_text_RedBold, this.resourcesProvider));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showRemoveRoundAlert$7(AlertDialog alertDialog, int i) {
-        removeRound();
     }
 
     @Override // org.telegram.ui.Stories.recorder.CaptionContainerView, android.view.ViewGroup, android.view.View

@@ -8,6 +8,6 @@ import java.util.Collections;
 public abstract class AbstractLogFactory implements LogFactory {
     @Override // com.microsoft.appcenter.ingestion.models.json.LogFactory
     public Collection toCommonSchemaLogs(Log log) {
-        return Collections.emptyList();
+        return Collections.EMPTY_LIST;
     }
 }

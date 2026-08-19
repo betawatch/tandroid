@@ -16,14 +16,16 @@ final class zzky {
     public final zzlc zza(Class cls) {
         zzjf.zza((Object) cls, "messageType");
         zzlc zzlcVar = (zzlc) this.zzc.get(cls);
-        if (zzlcVar != null) {
-            return zzlcVar;
+        if (zzlcVar == null) {
+            zzlcVar = this.zzb.zza(cls);
+            zzjf.zza((Object) cls, "messageType");
+            zzjf.zza((Object) zzlcVar, "schema");
+            zzlc zzlcVar2 = (zzlc) this.zzc.putIfAbsent(cls, zzlcVar);
+            if (zzlcVar2 != null) {
+                return zzlcVar2;
+            }
         }
-        zzlc zza2 = this.zzb.zza(cls);
-        zzjf.zza((Object) cls, "messageType");
-        zzjf.zza((Object) zza2, "schema");
-        zzlc zzlcVar2 = (zzlc) this.zzc.putIfAbsent(cls, zza2);
-        return zzlcVar2 != null ? zzlcVar2 : zza2;
+        return zzlcVar;
     }
 
     public final zzlc zza(Object obj) {

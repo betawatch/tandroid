@@ -16,7 +16,7 @@ public final class SendException extends Exception {
             return 0;
         }
         String lowerCase = str.toLowerCase(Locale.US);
-        lowerCase.hashCode();
+        lowerCase.getClass();
         switch (lowerCase) {
         }
         return 0;
