@@ -1,95 +1,34 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
-import java.util.concurrent.CountedCompleter;
-import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public abstract class m1 extends CountedCompleter implements f2 {
-    public final Spliterator a;
-    public final a b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public int f;
-    public int g;
+public final class m1 extends n1 {
+    public final Object[] h;
 
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ boolean C() {
-        return false;
+    public m1(Spliterator spliterator, a aVar, Object[] objArr) {
+        super(spliterator, aVar, objArr.length);
+        this.h = objArr;
     }
 
-    public /* synthetic */ void accept(double d) {
-        q1.a();
-        throw null;
+    public m1(m1 m1Var, Spliterator spliterator, long j, long j2) {
+        super(m1Var, spliterator, j, j2, m1Var.h.length);
+        this.h = m1Var.h;
     }
 
-    public /* synthetic */ void accept(int i) {
-        q1.k();
-        throw null;
+    @Override // j$.util.stream.n1
+    public final n1 b(Spliterator spliterator, long j, long j2) {
+        return new m1(this, spliterator, j, j2);
     }
 
-    public /* synthetic */ void accept(long j) {
-        q1.l();
-        throw null;
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public abstract m1 b(Spliterator spliterator, long j, long j2);
-
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ void x() {
-    }
-
-    public m1(Spliterator spliterator, a aVar, int i) {
-        this.a = spliterator;
-        this.b = aVar;
-        this.c = d.e(spliterator.estimateSize());
-        this.d = 0L;
-        this.e = i;
-    }
-
-    public m1(m1 m1Var, Spliterator spliterator, long j, long j2, int i) {
-        super(m1Var);
-        this.a = spliterator;
-        this.b = m1Var.b;
-        this.c = m1Var.c;
-        this.d = j;
-        this.e = j2;
-        if (j < 0 || j2 < 0 || (j + j2) - 1 >= i) {
-            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j), Long.valueOf(j), Long.valueOf(j2), Integer.valueOf(i)));
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        int i = this.f;
+        if (i >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.a;
-        m1 m1Var = this;
-        while (spliterator.estimateSize() > m1Var.c && (trySplit = spliterator.trySplit()) != null) {
-            m1Var.setPendingCount(1);
-            long estimateSize = trySplit.estimateSize();
-            m1 m1Var2 = m1Var;
-            m1Var2.b(trySplit, m1Var.d, estimateSize).fork();
-            m1Var = m1Var2.b(spliterator, m1Var2.d + estimateSize, m1Var2.e - estimateSize);
-        }
-        m1 m1Var3 = m1Var;
-        m1Var3.b.Q(spliterator, m1Var3);
-        m1Var3.propagateCompletion();
-    }
-
-    @Override // j$.util.stream.f2
-    public final void y(long j) {
-        long j2 = this.e;
-        if (j > j2) {
-            throw new IllegalStateException("size passed to Sink.begin exceeds array length");
-        }
-        int i = (int) this.d;
-        this.f = i;
-        this.g = i + ((int) j2);
+        Object[] objArr = this.h;
+        this.f = i + 1;
+        objArr[i] = obj;
     }
 }

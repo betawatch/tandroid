@@ -2,21 +2,14 @@ package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
 final class zzg {
-    static final zzg zza;
-    static final zzg zzb;
-    final Throwable zzc;
+    final Throwable zza;
 
     static {
-        if (zzq.zza) {
-            zzb = null;
-            zza = null;
-        } else {
-            zzb = new zzg(false, null);
-            zza = new zzg(true, null);
-        }
+        new zzg(new zzf("Failure occurred while trying to finish a future."));
     }
 
-    zzg(boolean z, Throwable th) {
-        this.zzc = th;
+    zzg(Throwable th) {
+        boolean z = zzo.zza;
+        this.zza = th;
     }
 }

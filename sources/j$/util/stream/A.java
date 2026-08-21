@@ -1,85 +1,273 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.stream.IntStream;
+import j$.util.stream.Stream;
+import java.util.DoubleSummaryStatistics;
+import java.util.Iterator;
+import java.util.OptionalDouble;
+import java.util.Spliterator;
 import java.util.function.BiConsumer;
 import java.util.function.DoubleBinaryOperator;
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleFunction;
+import java.util.function.DoublePredicate;
+import java.util.function.DoubleToIntFunction;
+import java.util.function.DoubleToLongFunction;
+import java.util.function.DoubleUnaryOperator;
 import java.util.function.ObjDoubleConsumer;
 import java.util.function.Supplier;
+import java.util.stream.DoubleStream;
 
 /* loaded from: classes2.dex */
-public interface A extends BaseStream {
-    A a();
+public final /* synthetic */ class A implements DoubleStream {
+    public final /* synthetic */ B a;
 
-    j$.util.z average();
+    public /* synthetic */ A(B b) {
+        this.a = b;
+    }
 
-    A b();
+    public static /* synthetic */ DoubleStream j(B b) {
+        if (b == null) {
+            return null;
+        }
+        return b instanceof z ? ((z) b).a : new A(b);
+    }
 
-    Stream boxed();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ boolean allMatch(DoublePredicate doublePredicate) {
+        return this.a.h();
+    }
 
-    A c();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ boolean anyMatch(DoublePredicate doublePredicate) {
+        return this.a.o();
+    }
 
-    Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ OptionalDouble average() {
+        return j$.com.android.tools.r8.a.J(this.a.average());
+    }
 
-    long count();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ java.util.stream.Stream boxed() {
+        return Stream.Wrapper.convert(this.a.boxed());
+    }
 
-    A d(j$.time.t tVar);
+    @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        this.a.close();
+    }
 
-    A distinct();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer) {
+        return this.a.collect(supplier, objDoubleConsumer, biConsumer);
+    }
 
-    A e();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ long count() {
+        return this.a.count();
+    }
 
-    j$.util.z findAny();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream distinct() {
+        return j(this.a.distinct());
+    }
 
-    j$.util.z findFirst();
+    public final /* synthetic */ DoubleStream dropWhile(DoublePredicate doublePredicate) {
+        return j(this.a.c());
+    }
 
-    void forEach(DoubleConsumer doubleConsumer);
+    public final /* synthetic */ boolean equals(Object obj) {
+        B b = this.a;
+        if (obj instanceof A) {
+            obj = ((A) obj).a;
+        }
+        return b.equals(obj);
+    }
 
-    void forEachOrdered(DoubleConsumer doubleConsumer);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream filter(DoublePredicate doublePredicate) {
+        return j(this.a.b());
+    }
 
-    boolean h();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ OptionalDouble findAny() {
+        return j$.com.android.tools.r8.a.J(this.a.findAny());
+    }
 
-    LongStream i();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ OptionalDouble findFirst() {
+        return j$.com.android.tools.r8.a.J(this.a.findFirst());
+    }
 
-    @Override // j$.util.stream.BaseStream
-    j$.util.F iterator();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ void forEach(DoubleConsumer doubleConsumer) {
+        this.a.forEach(doubleConsumer);
+    }
 
-    A limit(long j);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ void forEachOrdered(DoubleConsumer doubleConsumer) {
+        this.a.forEachOrdered(doubleConsumer);
+    }
 
-    Stream mapToObj(DoubleFunction doubleFunction);
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
+    }
 
-    j$.util.z max();
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ boolean isParallel() {
+        return this.a.isParallel();
+    }
 
-    j$.util.z min();
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ Iterator<Double> iterator() {
+        return this.a.iterator();
+    }
 
-    boolean o();
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ Iterator<Double> iterator() {
+        j$.util.F it = this.a.iterator();
+        if (it == null) {
+            return null;
+        }
+        return it instanceof j$.util.D ? ((j$.util.D) it).a : new j$.util.E(it);
+    }
 
-    @Override // j$.util.stream.BaseStream
-    A parallel();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream limit(long j) {
+        return j(this.a.limit(j));
+    }
 
-    A peek(DoubleConsumer doubleConsumer);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream map(DoubleUnaryOperator doubleUnaryOperator) {
+        return j(this.a.e());
+    }
 
-    double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ java.util.stream.IntStream mapToInt(DoubleToIntFunction doubleToIntFunction) {
+        return IntStream.Wrapper.convert(this.a.s());
+    }
 
-    j$.util.z reduce(DoubleBinaryOperator doubleBinaryOperator);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ java.util.stream.LongStream mapToLong(DoubleToLongFunction doubleToLongFunction) {
+        return i0.j(this.a.i());
+    }
 
-    IntStream s();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ java.util.stream.Stream mapToObj(DoubleFunction doubleFunction) {
+        return Stream.Wrapper.convert(this.a.mapToObj(doubleFunction));
+    }
 
-    @Override // j$.util.stream.BaseStream
-    A sequential();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ OptionalDouble max() {
+        return j$.com.android.tools.r8.a.J(this.a.max());
+    }
 
-    A skip(long j);
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ OptionalDouble min() {
+        return j$.com.android.tools.r8.a.J(this.a.min());
+    }
 
-    A sorted();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ boolean noneMatch(DoublePredicate doublePredicate) {
+        return this.a.y();
+    }
 
-    @Override // j$.util.stream.BaseStream
-    j$.util.T spliterator();
+    /* JADX WARN: Type inference failed for: r2v2, types: [java.util.stream.BaseStream, java.util.stream.DoubleStream] */
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ DoubleStream onClose(Runnable runnable) {
+        return f.j(this.a.onClose(runnable));
+    }
 
-    double sum();
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.DoubleStream] */
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ DoubleStream parallel() {
+        return f.j(this.a.parallel());
+    }
 
-    j$.util.u summaryStatistics();
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ DoubleStream parallel() {
+        return j(this.a.parallel());
+    }
 
-    double[] toArray();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream peek(DoubleConsumer doubleConsumer) {
+        return j(this.a.peek(doubleConsumer));
+    }
 
-    boolean y();
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ double reduce(double d, DoubleBinaryOperator doubleBinaryOperator) {
+        return this.a.reduce(d, doubleBinaryOperator);
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ OptionalDouble reduce(DoubleBinaryOperator doubleBinaryOperator) {
+        return j$.com.android.tools.r8.a.J(this.a.reduce(doubleBinaryOperator));
+    }
+
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.DoubleStream] */
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ DoubleStream sequential() {
+        return f.j(this.a.sequential());
+    }
+
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ DoubleStream sequential() {
+        return j(this.a.sequential());
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream skip(long j) {
+        return j(this.a.skip(j));
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ DoubleStream sorted() {
+        return j(this.a.sorted());
+    }
+
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ Spliterator<Double> spliterator() {
+        return j$.util.S.a(this.a.spliterator());
+    }
+
+    @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
+    public final /* synthetic */ Spliterator<Double> spliterator() {
+        return Spliterator.Wrapper.convert(this.a.spliterator());
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ double sum() {
+        return this.a.sum();
+    }
+
+    public final /* synthetic */ DoubleStream takeWhile(DoublePredicate doublePredicate) {
+        return j(this.a.a());
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final /* synthetic */ double[] toArray() {
+        return this.a.toArray();
+    }
+
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.DoubleStream] */
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ DoubleStream unordered() {
+        return f.j(this.a.unordered());
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final DoubleSummaryStatistics summaryStatistics() {
+        this.a.summaryStatistics();
+        throw new Error("Java 8+ API desugaring (library desugaring) cannot convert to java.util.DoubleSummaryStatistics");
+    }
+
+    @Override // java.util.stream.DoubleStream
+    public final DoubleStream flatMap(DoubleFunction doubleFunction) {
+        B b = this.a;
+        j$.time.t tVar = new j$.time.t(6);
+        tVar.b = doubleFunction;
+        return j(b.d(tVar));
+    }
 }

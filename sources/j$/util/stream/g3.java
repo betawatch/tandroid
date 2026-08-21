@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class g3 implements e2 {
+public final /* synthetic */ class g3 implements f2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ LongConsumer b;
 
@@ -26,45 +26,45 @@ public final /* synthetic */ class g3 implements e2 {
     private final /* synthetic */ void e() {
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ boolean C() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(double d) {
         switch (this.a) {
             case 0:
-                q1.a();
+                r1.a();
                 throw null;
             default:
-                q1.a();
+                r1.a();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(int i) {
         switch (this.a) {
             case 0:
-                q1.k();
+                r1.k();
                 throw null;
             default:
-                q1.k();
+                r1.k();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.e2, j$.util.stream.f2
+    @Override // j$.util.stream.f2, j$.util.stream.g2
     public final void accept(long j) {
         switch (this.a) {
             case 0:
                 this.b.accept(j);
                 break;
             default:
-                ((M2) this.b).accept(j);
+                ((N2) this.b).accept(j);
                 break;
         }
     }
@@ -94,24 +94,24 @@ public final /* synthetic */ class g3 implements e2 {
         return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.f2
     public final /* synthetic */ void s(Long l) {
         switch (this.a) {
             case 0:
-                q1.i(this, l);
+                r1.i(this, l);
                 break;
             default:
-                q1.i(this, l);
+                r1.i(this, l);
                 break;
         }
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void x() {
         int i = this.a;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void y(long j) {
         int i = this.a;
     }

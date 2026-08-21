@@ -1,7 +1,15 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.concurrent.ScheduledExecutorService;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 
 /* loaded from: classes.dex */
-public interface zzew extends ScheduledExecutorService, zzev {
+final class zzew extends zzev {
+    zzew() {
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzev
+    final void zza(Object obj) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+        throw null;
+    }
 }

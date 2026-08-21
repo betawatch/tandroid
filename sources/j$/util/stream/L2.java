@@ -1,41 +1,83 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
+import j$.util.Objects;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.function.Consumer;
-import java.util.function.LongConsumer;
+import java.util.function.IntConsumer;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
-public final class L2 extends N2 implements j$.util.Z {
-    public final /* synthetic */ M2 g;
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.k(this, consumer);
+public class L2 extends P2 implements IntConsumer {
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.B(this, consumer);
+    @Override // j$.util.stream.P2
+    public final void k(Object obj, int i, int i2, Object obj2) {
+        int[] iArr = (int[]) obj;
+        IntConsumer intConsumer = (IntConsumer) obj2;
+        while (i < i2) {
+            intConsumer.accept(iArr[i]);
+            i++;
+        }
     }
 
-    @Override // j$.util.stream.N2
-    public final void a(int i, Object obj, Object obj2) {
-        ((LongConsumer) obj2).accept(((long[]) obj)[i]);
+    @Override // j$.util.stream.P2
+    public final int l(Object obj) {
+        return ((int[]) obj).length;
     }
 
-    @Override // j$.util.stream.N2
-    public final j$.util.c0 b(Object obj, int i, int i2) {
-        return DesugarArrays.c((long[]) obj, i, i2 + i);
+    @Override // java.lang.Iterable
+    public final void forEach(Consumer consumer) {
+        if (consumer instanceof IntConsumer) {
+            e((IntConsumer) consumer);
+        } else {
+            if (A3.a) {
+                A3.a(getClass(), "{0} calling SpinedBuffer.OfInt.forEach(Consumer)");
+                throw null;
+            }
+            j$.com.android.tools.r8.a.j((K2) spliterator(), consumer);
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public L2(M2 m2, int i, int i2, int i3, int i4) {
-        super(m2, i, i2, i3, i4);
-        this.g = m2;
+    @Override // j$.util.stream.P2
+    public final Object[] q() {
+        return new int[8][];
     }
 
-    @Override // j$.util.stream.N2
-    public final j$.util.c0 c(int i, int i2, int i3, int i4) {
-        return new L2(this.g, i, i2, i3, i4);
+    @Override // j$.util.stream.P2
+    public final Object c(int i) {
+        return new int[i];
+    }
+
+    @Override // java.util.function.IntConsumer
+    public void accept(int i) {
+        r();
+        int[] iArr = (int[]) this.e;
+        int i2 = this.b;
+        this.b = i2 + 1;
+        iArr[i2] = i;
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        j$.util.W spliterator = spliterator();
+        Objects.requireNonNull(spliterator);
+        return new j$.util.f0(spliterator);
+    }
+
+    @Override // j$.util.stream.P2, java.lang.Iterable
+    /* renamed from: t, reason: merged with bridge method [inline-methods] */
+    public j$.util.W spliterator() {
+        return new K2(this, 0, this.c, 0, this.b);
+    }
+
+    public final String toString() {
+        int[] iArr = (int[]) d();
+        if (iArr.length < 200) {
+            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(iArr));
+        }
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, NotificationCenter.dialogPhotosUpdate)));
     }
 }

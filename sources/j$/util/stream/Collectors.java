@@ -1,6 +1,5 @@
 package j$.util.stream;
 
-import j$.util.stream.Collector;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -15,31 +14,31 @@ public final class Collectors {
     public static final Set c;
 
     static {
-        Collector.Characteristics characteristics = Collector.Characteristics.CONCURRENT;
-        Collector.Characteristics characteristics2 = Collector.Characteristics.UNORDERED;
-        Collector.Characteristics characteristics3 = Collector.Characteristics.IDENTITY_FINISH;
-        Collections.unmodifiableSet(EnumSet.of(characteristics, characteristics2, characteristics3));
-        Collections.unmodifiableSet(EnumSet.of(characteristics, characteristics2));
-        a = Collections.unmodifiableSet(EnumSet.of(characteristics3));
-        b = Collections.unmodifiableSet(EnumSet.of(characteristics2, characteristics3));
+        g gVar = g.CONCURRENT;
+        g gVar2 = g.UNORDERED;
+        g gVar3 = g.IDENTITY_FINISH;
+        Collections.unmodifiableSet(EnumSet.of(gVar, gVar2, gVar3));
+        Collections.unmodifiableSet(EnumSet.of(gVar, gVar2));
+        a = Collections.unmodifiableSet(EnumSet.of(gVar3));
+        b = Collections.unmodifiableSet(EnumSet.of(gVar2, gVar3));
         c = Collections.EMPTY_SET;
-        Collections.unmodifiableSet(EnumSet.of(characteristics2));
+        Collections.unmodifiableSet(EnumSet.of(gVar2));
     }
 
     public static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(Supplier<C> supplier) {
-        return new i(supplier, new j$.time.format.a(10), new j$.time.format.a(11), a);
+        return new j(supplier, new j$.time.format.a(10), new j$.time.format.a(11), a);
     }
 
     public static <T> Collector<T, ?, List<T>> toList() {
-        return new i(new j$.time.format.a(12), new j$.time.format.a(13), new j$.time.format.a(18), a);
+        return new j(new j$.time.format.a(12), new j$.time.format.a(13), new j$.time.format.a(18), a);
     }
 
     public static <T> Collector<T, ?, Set<T>> toSet() {
-        return new i(new j$.time.format.a(15), new j$.time.format.a(16), new j$.time.format.a(23), b);
+        return new j(new j$.time.format.a(15), new j$.time.format.a(16), new j$.time.format.a(23), b);
     }
 
     public static Collector<CharSequence, ?, String> joining(CharSequence charSequence) {
-        return new i(new j$.time.t(5, charSequence), new j$.time.format.a(20), new j$.time.format.a(21), new j$.time.format.a(22), c);
+        return new j(new j$.time.t(5, charSequence), new j$.time.format.a(20), new j$.time.format.a(21), new j$.time.format.a(22), c);
     }
 
     public static void a(double[] dArr, double d) {

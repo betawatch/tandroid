@@ -1,8 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
-import android.os.IInterface;
+import android.os.SystemClock;
 
 /* loaded from: classes.dex */
-public interface zzax extends IInterface {
-    void zza(int i);
+final class zzax extends zzbl {
+    zzax() {
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzbl
+    public final long zza() {
+        return SystemClock.elapsedRealtimeNanos();
+    }
 }

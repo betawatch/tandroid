@@ -1,145 +1,472 @@
 package com.google.android.gms.internal.play_billing;
 
-import j$.lang.Iterable$-CC;
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.Spliterators;
-import j$.util.stream.Stream;
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
+import j$.util.Objects;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 /* loaded from: classes.dex */
-public abstract class zzcj extends AbstractCollection implements Serializable, Collection {
-    private static final Object[] zzac = new Object[0];
+public abstract class zzcj extends zzck {
 
-    zzcj() {
+    final class zza {
+        static final zza zza;
+        static final zza zzb;
+        final boolean zzc;
+        final Throwable zzd;
+
+        static {
+            if (zzck.zzc) {
+                zzb = null;
+                zza = null;
+            } else {
+                zzb = new zza(false, null);
+                zza = new zza(true, null);
+            }
+        }
+
+        zza(boolean z, Throwable th) {
+            this.zzc = z;
+            this.zzd = th;
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    final class zzb implements Runnable {
+        final zzcj zza;
+        final zzcz zzb;
+
+        zzb(zzcj zzcjVar, zzcz zzczVar) {
+            this.zza = zzcjVar;
+            this.zzb = zzczVar;
+        }
+
+        @Override // java.lang.Runnable
+        public final void run() {
+            if (this.zza.valueField != this) {
+                return;
+            }
+            if (zzck.zzq(this.zza, this, zzcj.zzr(this.zzb))) {
+                zzcj.zzu(this.zza, false);
+            }
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
+    final class zzc {
+        static final zzc zza = new zzc(new Throwable("Failure occurred while trying to finish a future.") { // from class: com.google.android.gms.internal.play_billing.zzcj.zzc.1
+            {
+                super("Failure occurred while trying to finish a future.");
+            }
+
+            @Override // java.lang.Throwable
+            public final Throwable fillInStackTrace() {
+                return this;
+            }
+        });
+        static final zzc zzb = new zzc(new Throwable("Failure.exception is unexpectedly null.") { // from class: com.google.android.gms.internal.play_billing.zzcj.zzc.2
+            {
+                super("Failure.exception is unexpectedly null.");
+            }
+
+            @Override // java.lang.Throwable
+            public final Throwable fillInStackTrace() {
+                return this;
+            }
+        });
+        final Throwable zzc;
+
+        zzc(Throwable th) {
+            th.getClass();
+            this.zzc = th;
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
+    final class zzd {
+        static final zzd zza = new zzd();
+        zzd next;
+        final Runnable zzb;
+        final Executor zzc;
+
+        zzd() {
+            this.zzb = null;
+            this.zzc = null;
+        }
+
+        zzd(Runnable runnable, Executor executor) {
+            this.zzb = runnable;
+            this.zzc = executor;
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public abstract boolean contains(Object obj);
-
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
-    public /* synthetic */ void forEach(Consumer consumer) {
-        Iterable$-CC.$default$forEach(this, consumer);
+    interface zze extends zzcz {
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ Stream parallelStream() {
-        return Collection.-CC.$default$parallelStream(this);
+    protected zzcj() {
     }
 
-    @Override // java.util.Collection
-    public /* synthetic */ java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(parallelStream());
+    static Object zzc(Object obj) {
+        if (obj instanceof zza) {
+            Throwable th = ((zza) obj).zzd;
+            CancellationException cancellationException = new CancellationException("Task was cancelled.");
+            cancellationException.initCause(th);
+            throw cancellationException;
+        }
+        if (!(obj instanceof zzc)) {
+            if (obj == zzck.zza) {
+                return null;
+            }
+            return obj;
+        }
+        Throwable th2 = ((zzc) obj).zzc;
+        if (th2 != null) {
+            throw new ExecutionException(th2);
+        }
+        zzck.zzb.zza().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "getDoneValue", "Failure.exception is unexpectedly null.");
+        throw new ExecutionException(zzc.zzb.zzc);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
+    static boolean zzh(Object obj) {
+        return !(obj instanceof zzb);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    public static Object zzr(zzcz zzczVar) {
+        Throwable zze2;
+        if (zzczVar instanceof zze) {
+            Object obj = ((zzcj) zzczVar).valueField;
+            if (obj instanceof zza) {
+                zza zzaVar = (zza) obj;
+                if (zzaVar.zzc) {
+                    Throwable th = zzaVar.zzd;
+                    obj = th != null ? new zza(false, th) : zza.zzb;
+                }
+            }
+            Objects.requireNonNull(obj);
+            return obj;
+        }
+        if ((zzczVar instanceof zzdf) && (zze2 = ((zzdf) zzczVar).zze()) != null) {
+            return new zzc(zze2);
+        }
+        boolean isCancelled = zzczVar.isCancelled();
+        if ((!zzck.zzc) && isCancelled) {
+            zza zzaVar2 = zza.zzb;
+            Objects.requireNonNull(zzaVar2);
+            return zzaVar2;
+        }
+        try {
+            Object zzs = zzs(zzczVar);
+            if (!isCancelled) {
+                return zzs == null ? zzck.zza : zzs;
+            }
+            return new zza(false, new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: " + String.valueOf(zzczVar)));
+        } catch (Error | Exception e) {
+            return new zzc(e);
+        } catch (CancellationException e2) {
+            return !isCancelled ? new zzc(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(zzczVar)), e2)) : new zza(false, e2);
+        } catch (ExecutionException e3) {
+            return isCancelled ? new zza(false, new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(zzczVar)), e3)) : new zzc(e3.getCause());
+        }
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ boolean removeIf(Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, predicate);
+    private static Object zzs(Future future) {
+        Object obj;
+        boolean z = false;
+        while (true) {
+            try {
+                obj = future.get();
+                break;
+            } catch (InterruptedException unused) {
+                z = true;
+            } catch (Throwable th) {
+                if (z) {
+                    Thread.currentThread().interrupt();
+                }
+                throw th;
+            }
+        }
+        if (z) {
+            Thread.currentThread().interrupt();
+        }
+        return obj;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
+    private final void zzt(StringBuilder sb) {
+        try {
+            Object zzs = zzs(this);
+            sb.append("SUCCESS, result=[");
+            if (zzs == null) {
+                sb.append("null");
+            } else if (zzs == this) {
+                sb.append("this future");
+            } else {
+                sb.append(zzs.getClass().getName());
+                sb.append("@");
+                sb.append(Integer.toHexString(System.identityHashCode(zzs)));
+            }
+            sb.append("]");
+        } catch (CancellationException unused) {
+            sb.append("CANCELLED");
+        } catch (ExecutionException e) {
+            sb.append("FAILURE, cause=[");
+            sb.append(e.getCause());
+            sb.append("]");
+        } catch (Exception e2) {
+            sb.append("UNKNOWN, cause=[");
+            sb.append(e2.getClass());
+            sb.append(" thrown from get()]");
+        }
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final Spliterator spliterator() {
-        return Spliterators.spliterator(this, 1296);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void zzu(zzcj zzcjVar, boolean z) {
+        zzd zzdVar;
+        zzd zzdVar2 = null;
+        while (true) {
+            zzcjVar.zzo();
+            zzcjVar.zzg();
+            zzd zzdVar3 = zzdVar2;
+            zzd zzk = zzcjVar.zzk(zzd.zza);
+            zzd zzdVar4 = zzdVar3;
+            while (zzk != null) {
+                zzd zzdVar5 = zzk.next;
+                zzk.next = zzdVar4;
+                zzdVar4 = zzk;
+                zzk = zzdVar5;
+            }
+            while (zzdVar4 != null) {
+                Runnable runnable = zzdVar4.zzb;
+                zzdVar = zzdVar4.next;
+                Objects.requireNonNull(runnable);
+                Runnable runnable2 = runnable;
+                if (runnable2 instanceof zzb) {
+                    zzb zzbVar = (zzb) runnable2;
+                    zzcjVar = zzbVar.zza;
+                    if (zzcjVar.valueField == zzbVar && zzck.zzq(zzcjVar, zzbVar, zzr(zzbVar.zzb))) {
+                        break;
+                    }
+                } else {
+                    Executor executor = zzdVar4.zzc;
+                    Objects.requireNonNull(executor);
+                    zzv(runnable2, executor);
+                }
+                zzdVar4 = zzdVar;
+            }
+            return;
+            zzdVar2 = zzdVar;
+        }
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
-    public /* synthetic */ java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
+    private static void zzv(Runnable runnable, Executor executor) {
+        try {
+            executor.execute(runnable);
+        } catch (Exception e) {
+            zzck.zzb.zza().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", "RuntimeException while executing runnable " + String.valueOf(runnable) + " with executor " + String.valueOf(executor), (Throwable) e);
+        }
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ Stream stream() {
-        return Collection.-CC.$default$stream(this);
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z) {
+        zza zzaVar;
+        Object obj = this.valueField;
+        if (!(obj instanceof zzb) && !(obj == null)) {
+            return false;
+        }
+        if (zzck.zzc) {
+            zzaVar = new zza(z, new CancellationException("Future.cancel() was called."));
+        } else {
+            zzaVar = z ? zza.zza : zza.zzb;
+            Objects.requireNonNull(zzaVar);
+        }
+        boolean z2 = false;
+        zzcj zzcjVar = this;
+        while (true) {
+            if (zzck.zzq(zzcjVar, obj, zzaVar)) {
+                zzu(zzcjVar, z);
+                if (!(obj instanceof zzb)) {
+                    break;
+                }
+                zzcz zzczVar = ((zzb) obj).zzb;
+                if (!(zzczVar instanceof zze)) {
+                    zzczVar.cancel(z);
+                    break;
+                }
+                zzcjVar = (zzcj) zzczVar;
+                obj = zzcjVar.valueField;
+                if (!(obj == null) && !(obj instanceof zzb)) {
+                    return true;
+                }
+                z2 = true;
+            } else {
+                obj = zzcjVar.valueField;
+                if (zzh(obj)) {
+                    return z2;
+                }
+            }
+        }
+        return true;
     }
 
-    @Override // java.util.Collection
-    public /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(stream());
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return zzl();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(zzac);
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.valueField instanceof zza;
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        Object obj = this.valueField;
+        return (obj != null) & zzh(obj);
     }
 
-    abstract int zza(Object[] objArr, int i);
-
-    int zzb() {
-        throw new UnsupportedOperationException();
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x009f, code lost:
+    
+        if (r3.isEmpty() != false) goto L27;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String toString() {
+        String concat;
+        StringBuilder sb = new StringBuilder();
+        if (getClass().getName().startsWith("com.google.common.util.concurrent.")) {
+            sb.append(getClass().getSimpleName());
+        } else {
+            sb.append(getClass().getName());
+        }
+        sb.append('@');
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append("[status=");
+        if (this.valueField instanceof zza) {
+            sb.append("CANCELLED");
+        } else if (isDone()) {
+            zzt(sb);
+        } else {
+            int length = sb.length();
+            sb.append("PENDING");
+            Object obj = this.valueField;
+            if (obj instanceof zzb) {
+                sb.append(", setFuture=[");
+                zzcz zzczVar = ((zzb) obj).zzb;
+                try {
+                    if (zzczVar == this) {
+                        sb.append("this future");
+                    } else {
+                        sb.append(zzczVar);
+                    }
+                } catch (Throwable th) {
+                    zzda.zza(th);
+                    sb.append("Exception thrown from implementation: ");
+                    sb.append(th.getClass());
+                }
+                sb.append("]");
+            } else {
+                try {
+                    concat = zzd();
+                    if (concat != null) {
+                    }
+                    concat = null;
+                } catch (Throwable th2) {
+                    zzda.zza(th2);
+                    concat = "Exception thrown from implementation: ".concat(String.valueOf(th2.getClass()));
+                }
+                if (concat != null) {
+                    sb.append(", info=[");
+                    sb.append(concat);
+                    sb.append("]");
+                }
+            }
+            if (isDone()) {
+                sb.delete(length, sb.length());
+                zzt(sb);
+            }
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
-    int zzc() {
-        throw new UnsupportedOperationException();
+    @Override // com.google.android.gms.internal.play_billing.zzcz
+    public final void zzb(Runnable runnable, Executor executor) {
+        zzd zzdVar;
+        zzbg.zzc(executor, "Executor was null.");
+        if (!isDone() && (zzdVar = this.listenersField) != zzd.zza) {
+            zzd zzdVar2 = new zzd(runnable, executor);
+            do {
+                zzdVar2.next = zzdVar;
+                if (zzp(zzdVar, zzdVar2)) {
+                    return;
+                } else {
+                    zzdVar = this.listenersField;
+                }
+            } while (zzdVar != zzd.zza);
+        }
+        zzv(runnable, executor);
     }
 
-    public abstract zzco zzd();
+    protected abstract String zzd();
 
-    abstract boolean zzf();
-
-    Object[] zzg() {
+    @Override // com.google.android.gms.internal.play_billing.zzdf
+    protected final Throwable zze() {
+        if (!(this instanceof zze)) {
+            return null;
+        }
+        Object obj = this.valueField;
+        if (obj instanceof zzc) {
+            return ((zzc) obj).zzc;
+        }
         return null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        int length = objArr.length;
-        if (length < size) {
-            Object[] zzg = zzg();
-            if (zzg != null) {
-                return Arrays.copyOfRange(zzg, zzc(), zzb(), objArr.getClass());
-            }
-            if (length != 0) {
-                objArr = Arrays.copyOf(objArr, 0);
-            }
-            objArr = Arrays.copyOf(objArr, size);
-        } else if (length > size) {
-            objArr[size] = null;
+    protected abstract void zzg();
+
+    protected final boolean zzi(Throwable th) {
+        if (!zzck.zzq(this, null, new zzc(th))) {
+            return false;
         }
-        zza(objArr, 0);
-        return objArr;
+        zzu(this, false);
+        return true;
+    }
+
+    protected final boolean zzj(zzcz zzczVar) {
+        zzc zzcVar;
+        Object obj = this.valueField;
+        if (obj == null) {
+            if (zzczVar.isDone()) {
+                if (!zzck.zzq(this, null, zzr(zzczVar))) {
+                    return false;
+                }
+                zzu(this, false);
+                return true;
+            }
+            zzb zzbVar = new zzb(this, zzczVar);
+            if (zzck.zzq(this, null, zzbVar)) {
+                try {
+                    zzczVar.zzb(zzbVar, zzcp.zza);
+                } catch (Throwable th) {
+                    try {
+                        zzcVar = new zzc(th);
+                    } catch (Error | Exception unused) {
+                        zzcVar = zzc.zza;
+                    }
+                    zzck.zzq(this, zzbVar, zzcVar);
+                }
+                return true;
+            }
+            obj = this.valueField;
+        }
+        if (obj instanceof zza) {
+            zzczVar.cancel(((zza) obj).zzc);
+        }
+        return false;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return zzm(j, timeUnit);
     }
 }

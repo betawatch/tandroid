@@ -128,6 +128,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
     private boolean blurredAnimationInProgress;
     private FrameLayout blurredView;
     private View[] buttons;
+    private boolean castAvailable;
     private ActionBarMenuSubItem castItem;
     private CastMediaRouteButton castItemButton;
     private CoverContainer coverContainer;
@@ -197,14 +198,14 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
     private ButtonWithCounterView unsaveFromProfileButton;
     private boolean wasLight;
 
-    public static /* synthetic */ boolean $r8$lambda$6QTicm63cMsuZYocl1sfDSEJeVo(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ void $r8$lambda$IXzzw3VQCTwcJSmKUBp5h8XdP5o() {
+    }
+
+    public static /* synthetic */ boolean $r8$lambda$LAkpbeoX34Rrjo3x0KAS1ztLLys(View view, MotionEvent motionEvent) {
         return true;
     }
 
-    public static /* synthetic */ void $r8$lambda$V9gZKd_m2LXAFe7N_RoMgFw_e3U() {
-    }
-
-    public static /* synthetic */ void $r8$lambda$ltYCnOpDl1ezTPTx0kaKP4sWjOM() {
+    public static /* synthetic */ void $r8$lambda$TiCrh53jB2WHfFA_w4P9RkF8HoM() {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -233,7 +234,6 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
     public AudioPlayerAlert(final Context context, final Theme.ResourcesProvider resourcesProvider) {
         super(context, true, resourcesProvider);
         boolean z;
-        boolean z2;
         ActionBarMenu actionBarMenu;
         TLRPC.User user;
         this.speedItems = new ActionBarMenuSubItem[6];
@@ -312,6 +312,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return Float.valueOf(AudioPlayerAlert.this.actionBarSlide);
             }
         };
+        this.doNotOverlayNavigationBar = true;
         fixNavigationBar();
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
         if (playingMessageObject != null) {
@@ -391,8 +392,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z3, int i, int i2, int i3, int i4) {
-                super.onLayout(z3, i, i2, i3, i4);
+            protected void onLayout(boolean z2, int i, int i2, int i3, int i4) {
+                super.onLayout(z2, i, i2, i3, i4);
                 AudioPlayerAlert.this.updateLayout();
                 AudioPlayerAlert.this.updateEmptyViewPosition();
             }
@@ -436,6 +437,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
                 float f;
+                float f2;
                 if (AudioPlayerAlert.this.playlist.size() <= 1) {
                     ((BottomSheet) AudioPlayerAlert.this).shadowDrawable.setBounds(0, (getMeasuredHeight() - AudioPlayerAlert.this.playerLayout.getMeasuredHeight()) - ((BottomSheet) AudioPlayerAlert.this).backgroundPaddingTop, getMeasuredWidth(), getMeasuredHeight());
                     ((BottomSheet) AudioPlayerAlert.this).shadowDrawable.draw(canvas);
@@ -457,16 +459,17 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 int measuredHeight = getMeasuredHeight() + AndroidUtilities.dp(15.0f) + ((BottomSheet) AudioPlayerAlert.this).backgroundPaddingTop;
                 if (AudioPlayerAlert.this.isProfilePlaylist || ((BottomSheet) AudioPlayerAlert.this).backgroundPaddingTop + translationY >= ActionBar.getCurrentActionBarHeight()) {
                     f = 1.0f;
+                    f2 = 0.0f;
                 } else {
                     float dp3 = dp + AndroidUtilities.dp(4.0f);
-                    float min = Math.min(1.0f, ((ActionBar.getCurrentActionBarHeight() - translationY) - ((BottomSheet) AudioPlayerAlert.this).backgroundPaddingTop) / dp3);
-                    int currentActionBarHeight = (int) ((ActionBar.getCurrentActionBarHeight() - dp3) * min);
+                    f2 = Math.min(1.0f, ((ActionBar.getCurrentActionBarHeight() - translationY) - ((BottomSheet) AudioPlayerAlert.this).backgroundPaddingTop) / dp3);
+                    int currentActionBarHeight = (int) ((ActionBar.getCurrentActionBarHeight() - dp3) * f2);
                     translationY -= currentActionBarHeight;
                     dp2 -= currentActionBarHeight;
                     measuredHeight += currentActionBarHeight;
-                    f = 1.0f - min;
+                    f = 1.0f - f2;
                 }
-                int i = AndroidUtilities.statusBarHeight;
+                int i = (int) (AndroidUtilities.statusBarHeight * (1.0f - f2));
                 int i2 = dp2 + i;
                 ((BottomSheet) AudioPlayerAlert.this).shadowDrawable.setBounds(0, translationY + i, getMeasuredWidth(), measuredHeight);
                 ((BottomSheet) AudioPlayerAlert.this).shadowDrawable.draw(canvas);
@@ -565,9 +568,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         this.actionBar.setTitleColor(getThemedColor(i2));
         this.actionBar.setSubtitleColor(getThemedColor(Theme.key_player_actionBarSubtitle));
         this.actionBar.setOccupyStatusBar(true);
-        ActionBar actionBar3 = this.actionBar;
-        actionBar3.menuOccupyBack = true;
-        ActionBarMenu createMenu = actionBar3.createMenu();
+        ActionBarMenu createMenu = this.actionBar.createMenu();
         createMenu.setLayoutParams(LayoutHelper.createFrame(-1, -1, 119));
         View view = new View(context);
         this.actionBarBackground = view;
@@ -594,8 +595,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         view3.setBackgroundColor(getThemedColor(Theme.key_dialogShadowLine));
         this.playerLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.AudioPlayerAlert.5
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z3, int i3, int i4, int i5, int i6) {
-                super.onLayout(z3, i3, i4, i5, i6);
+            protected void onLayout(boolean z2, int i3, int i4, int i5, int i6) {
+                super.onLayout(z2, i3, i4, i5, i6);
                 if (AudioPlayerAlert.this.playbackSpeedButton == null || AudioPlayerAlert.this.durationTextView == null) {
                     return;
                 }
@@ -671,8 +672,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
-            public void onSeekBarDrag(boolean z3, float f) {
-                if (z3) {
+            public void onSeekBarDrag(boolean z2, float f) {
+                if (z2) {
                     MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f);
                 }
                 MessageObject playingMessageObject2 = MediaController.getInstance().getPlayingMessageObject();
@@ -683,8 +684,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
-            public void onSeekBarPressed(boolean z3) {
-                AudioPlayerAlert.this.draggingSeekBar = z3;
+            public void onSeekBarPressed(boolean z2) {
+                AudioPlayerAlert.this.draggingSeekBar = z2;
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
@@ -777,7 +778,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         updatePlaybackButton(false);
         FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.Components.AudioPlayerAlert.11
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z3, int i4, int i5, int i6, int i7) {
+            protected void onLayout(boolean z2, int i4, int i5, int i6, int i7) {
                 int dp = ((i6 - i4) - AndroidUtilities.dp(248.0f)) / 4;
                 for (int i8 = 0; i8 < 5; i8++) {
                     int dp2 = AndroidUtilities.dp((i8 * 48) + 4) + (dp * i8);
@@ -821,11 +822,11 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         int themedColor = getThemedColor(i5);
         float scaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         View[] viewArr2 = this.buttons;
-        12 r10 = new 12(context, scaledTouchSlop);
-        this.prevButton = r10;
-        viewArr2[1] = r10;
+        12 r02 = new 12(context, scaledTouchSlop);
+        this.prevButton = r02;
+        viewArr2[1] = r02;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        r10.setScaleType(scaleType);
+        r02.setScaleType(scaleType);
         RLottieImageView rLottieImageView = this.prevButton;
         int i6 = R.raw.player_prev;
         rLottieImageView.setAnimation(i6, 20, 20);
@@ -855,10 +856,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
         });
         View[] viewArr4 = this.buttons;
-        13 r5 = new 13(context, scaledTouchSlop);
-        this.nextButton = r5;
-        viewArr4[3] = r5;
-        r5.setScaleType(scaleType);
+        13 r2 = new 13(context, scaledTouchSlop);
+        this.nextButton = r2;
+        viewArr4[3] = r2;
+        r2.setScaleType(scaleType);
         this.nextButton.setAnimation(i6, 20, 20);
         this.nextButton.setLayerColor("Triangle 3", themedColor);
         this.nextButton.setLayerColor("Triangle 4", themedColor);
@@ -875,18 +876,18 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         this.optionsIcon = chooseQualityLayout$QualityIcon;
         actionBarMenuItem5.setIcon(chooseQualityLayout$QualityIcon);
         this.optionsButton.setLongClickEnabled(false);
-        this.optionsButton.setShowSubmenuByMove(false);
-        this.optionsButton.setSubMenuOpenSide(2);
         this.optionsButton.setAdditionalYOffset(-AndroidUtilities.dp(197.0f));
         this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i4), 1, AndroidUtilities.dp(18.0f)));
+        this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda19
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view4) {
+                AudioPlayerAlert.this.showMenuOptions(view4);
+            }
+        });
         frameLayout2.addView(this.optionsButton, LayoutHelper.createFrame(48, 48, 51));
-        this.optionsButton.addSubItem(1, R.drawable.msg_forward, LocaleController.getString(R.string.Forward));
-        this.optionsButton.addSubItem(2, R.drawable.msg_shareout, LocaleController.getString(R.string.ShareFile));
-        this.optionsButton.addSubItem(5, R.drawable.msg_download, LocaleController.getString(R.string.SaveToMusic));
-        this.optionsButton.addSubItem(4, R.drawable.msg_message, LocaleController.getString(R.string.ShowInChat));
         CastMediaRouteButton castMediaRouteButton = new CastMediaRouteButton(context) { // from class: org.telegram.ui.Components.AudioPlayerAlert.14
             @Override // org.telegram.ui.Components.CastMediaRouteButton
-            public void stateUpdated(boolean z3) {
+            public void stateUpdated(boolean z2) {
                 AudioPlayerAlert.this.updateColors();
                 if (AudioPlayerAlert.this.optionsIcon != null) {
                     AudioPlayerAlert.this.optionsIcon.setCasting(CastSync.isActive(), true);
@@ -894,36 +895,22 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
         };
         this.castItemButton = castMediaRouteButton;
+        this.castAvailable = true;
         try {
             castMediaRouteButton.setRouteSelector(CastContext.getSharedInstance(context).getMergedSelector());
-            z = true;
         } catch (Exception e) {
             FileLog.e(e);
-            z = false;
+            this.castAvailable = false;
         }
         this.castItemButton.setVisibility(4);
-        if (z) {
-            ActionBarMenuSubItem addSubItem = this.optionsButton.addSubItem(6, R.drawable.menu_video_chromecast, LocaleController.getString(R.string.VideoPlayerChromecast));
-            this.castItem = addSubItem;
-            addSubItem.addView(this.castItemButton, 0, LayoutHelper.createFrame(-1, -1.0f));
-            updateColors();
-        }
         ChooseQualityLayout$QualityIcon chooseQualityLayout$QualityIcon2 = this.optionsIcon;
         if (chooseQualityLayout$QualityIcon2 != null) {
-            z2 = true;
+            z = true;
             chooseQualityLayout$QualityIcon2.setCasting(CastSync.isActive(), true);
         } else {
-            z2 = true;
+            z = true;
         }
-        this.optionsButton.addSubItem(7, R.drawable.msg_delete, LocaleController.getString(R.string.ProfilePlaylistRemoveFromProfile));
-        this.optionsButton.setSubItemShown(7, false);
-        this.optionsButton.setShowedFromBottom(z2);
-        this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda19
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                AudioPlayerAlert.this.optionsButton.toggleSubMenu();
-            }
-        });
+        this.optionsButton.setShowedFromBottom(z);
         this.optionsButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda20
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i7) {
@@ -940,7 +927,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda7
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view4, MotionEvent motionEvent) {
-                return AudioPlayerAlert.$r8$lambda$6QTicm63cMsuZYocl1sfDSEJeVo(view4, motionEvent);
+                return AudioPlayerAlert.$r8$lambda$LAkpbeoX34Rrjo3x0KAS1ztLLys(view4, motionEvent);
             }
         });
         ImageView imageView3 = new ImageView(context);
@@ -969,8 +956,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             boolean ignoreLayout;
 
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z3, int i8, int i9, int i10, int i11) {
-                super.onLayout(z3, i8, i9, i10, i11);
+            protected void onLayout(boolean z2, int i8, int i9, int i10, int i11) {
+                super.onLayout(z2, i8, i9, i10, i11);
                 if (AudioPlayerAlert.this.searchOpenPosition == -1 || AudioPlayerAlert.this.actionBar.isSearchFieldVisible()) {
                     if (AudioPlayerAlert.this.scrollToSong) {
                         AudioPlayerAlert.this.scrollToSong = false;
@@ -1020,13 +1007,13 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view4, int i8) {
-                AudioPlayerAlert.$r8$lambda$yeNk8Hkb-7S42SN0wbWaPcfywto(view4, i8);
+                AudioPlayerAlert.$r8$lambda$k5j5mYpbTAWIiNU8DJEUejpHLwA(view4, i8);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda9
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view4, int i8) {
-                return AudioPlayerAlert.$r8$lambda$mkeIrnaZlsrkvLyUciF1YKnc5xI(AudioPlayerAlert.this, view4, i8);
+                return AudioPlayerAlert.$r8$lambda$4OzyJLsu1ns8RdRboE9Tz90C4AA(AudioPlayerAlert.this, view4, i8);
             }
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert.16
@@ -1077,7 +1064,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         this.saveToProfileButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
-                AudioPlayerAlert.$r8$lambda$8rxl3h2KgKUlOUTwJ9rYQ6-xhgk(AudioPlayerAlert.this, resourcesProvider, view4);
+                AudioPlayerAlert.$r8$lambda$ebrzioALUJF5Mq6xZZG4N5swV1c(AudioPlayerAlert.this, resourcesProvider, view4);
             }
         });
         this.playerLayout.addView(this.saveToProfileButton, LayoutHelper.createFrame(-1, 42.0f, 87, 12.0f, 12.0f, 12.0f, 12.0f));
@@ -1087,14 +1074,15 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         this.unsaveFromProfileButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
-                AudioPlayerAlert.$r8$lambda$nyQqmhXerizS4PTlfCmr_5lddz8(AudioPlayerAlert.this, resourcesProvider, view4);
+                AudioPlayerAlert.$r8$lambda$c-KEsJd_2bla72zDhYdo_cLDeG8(AudioPlayerAlert.this, resourcesProvider, view4);
             }
         });
         this.playerLayout.addView(this.unsaveFromProfileButton, LayoutHelper.createFrame(-1, 42.0f, 87, 12.0f, 12.0f, 12.0f, 12.0f));
         MessagesController.SavedMusicList savedMusicList = MediaController.getInstance().currentSavedMusicList;
         this.savedMusicList = savedMusicList;
-        boolean z3 = savedMusicList != null;
-        this.isProfilePlaylist = z3;
+        boolean z2 = savedMusicList != null;
+        this.isProfilePlaylist = z2;
+        this.actionBar.menuOccupyBack = z2;
         this.padWithItem = isMyList();
         this.playlist = MediaController.getInstance().getPlaylist();
         if (isMyList()) {
@@ -1150,7 +1138,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         searchField.setTextColor(getThemedColor(i9));
         searchField.setHintTextColor(getThemedColor(Theme.key_player_time));
         searchField.setCursorColor(getThemedColor(i9));
-        if (z3) {
+        if (z2) {
             this.listView.setSections();
             setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray, resourcesProvider));
             this.actionBar.setAlpha(1.0f);
@@ -1688,13 +1676,13 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$yeNk8Hkb-7S42SN0wbWaPcfywto(View view, int i) {
+    public static /* synthetic */ void $r8$lambda$k5j5mYpbTAWIiNU8DJEUejpHLwA(View view, int i) {
         if (view instanceof AudioPlayerCell) {
             ((AudioPlayerCell) view).didPressedButton();
         }
     }
 
-    public static /* synthetic */ boolean $r8$lambda$mkeIrnaZlsrkvLyUciF1YKnc5xI(AudioPlayerAlert audioPlayerAlert, View view, int i) {
+    public static /* synthetic */ boolean $r8$lambda$4OzyJLsu1ns8RdRboE9Tz90C4AA(AudioPlayerAlert audioPlayerAlert, View view, int i) {
         audioPlayerAlert.getClass();
         if (!(view instanceof AudioPlayerCell) || audioPlayerAlert.isMyList()) {
             return false;
@@ -1704,32 +1692,32 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         return true;
     }
 
-    public static /* synthetic */ void $r8$lambda$8rxl3h2KgKUlOUTwJ9rYQ6-xhgk(AudioPlayerAlert audioPlayerAlert, Theme.ResourcesProvider resourcesProvider, View view) {
+    public static /* synthetic */ void $r8$lambda$ebrzioALUJF5Mq6xZZG4N5swV1c(AudioPlayerAlert audioPlayerAlert, Theme.ResourcesProvider resourcesProvider, View view) {
         audioPlayerAlert.getClass();
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
         if (playingMessageObject == null || audioPlayerAlert.parentActivity == null) {
             return;
         }
-        audioPlayerAlert.saveToProfile(playingMessageObject, true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda24
+        audioPlayerAlert.saveToProfile(playingMessageObject, true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
-                AudioPlayerAlert.$r8$lambda$ltYCnOpDl1ezTPTx0kaKP4sWjOM();
+                AudioPlayerAlert.$r8$lambda$TiCrh53jB2WHfFA_w4P9RkF8HoM();
             }
         }, false);
         audioPlayerAlert.setVisibleInProfile(true);
         BulletinFactory.of((FrameLayout) audioPlayerAlert.containerView, resourcesProvider).createSimpleBulletin(R.raw.saved_messages, LocaleController.getString(R.string.AudioSaveToMyProfileSaved)).show();
     }
 
-    public static /* synthetic */ void $r8$lambda$nyQqmhXerizS4PTlfCmr_5lddz8(AudioPlayerAlert audioPlayerAlert, Theme.ResourcesProvider resourcesProvider, View view) {
+    public static /* synthetic */ void $r8$lambda$c-KEsJd_2bla72zDhYdo_cLDeG8(AudioPlayerAlert audioPlayerAlert, Theme.ResourcesProvider resourcesProvider, View view) {
         audioPlayerAlert.getClass();
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
         if (playingMessageObject == null || audioPlayerAlert.parentActivity == null) {
             return;
         }
-        audioPlayerAlert.saveToProfile(playingMessageObject, false, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda21
+        audioPlayerAlert.saveToProfile(playingMessageObject, false, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
-                AudioPlayerAlert.$r8$lambda$V9gZKd_m2LXAFe7N_RoMgFw_e3U();
+                AudioPlayerAlert.$r8$lambda$IXzzw3VQCTwcJSmKUBp5h8XdP5o();
             }
         }, false);
         audioPlayerAlert.setVisibleInProfile(false);
@@ -1968,19 +1956,19 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 this.castItemButton.performClick();
                 return;
             } else if (i == 7) {
-                saveToProfile(playingMessageObject, false, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda22
+                saveToProfile(playingMessageObject, false, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda21
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioPlayerAlert.$r8$lambda$42EJXRsBdV7VVq5Cwpdwl0rsozc(AudioPlayerAlert.this, playingMessageObject);
+                        AudioPlayerAlert.$r8$lambda$-ihrW_HndzYxr8KTlmYevfreK3Q(AudioPlayerAlert.this, playingMessageObject);
                     }
                 }, false);
                 return;
             } else {
                 if (i == 8) {
-                    new SelectAudioAlert(getContext(), true, null, new Utilities.Callback() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda23
+                    new SelectAudioAlert(getContext(), true, null, new Utilities.Callback() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda22
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            AudioPlayerAlert.$r8$lambda$yIFWqss-tNddulOzx8-4O0voJ0Q(AudioPlayerAlert.this, (MessageObject) obj);
+                            AudioPlayerAlert.$r8$lambda$OexwjFXZi0VHMm1Jz45IX0ubWlo(AudioPlayerAlert.this, (MessageObject) obj);
                         }
                     }, null).withoutSavedMusic().show();
                     return;
@@ -2013,7 +2001,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         dismiss();
     }
 
-    public static /* synthetic */ void $r8$lambda$42EJXRsBdV7VVq5Cwpdwl0rsozc(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$-ihrW_HndzYxr8KTlmYevfreK3Q(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject) {
         MessagesController.SavedMusicList savedMusicList = audioPlayerAlert.savedMusicList;
         if (savedMusicList != null) {
             savedMusicList.remove(messageObject);
@@ -2026,7 +2014,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$yIFWqss-tNddulOzx8-4O0voJ0Q(final AudioPlayerAlert audioPlayerAlert, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$OexwjFXZi0VHMm1Jz45IX0ubWlo(final AudioPlayerAlert audioPlayerAlert, MessageObject messageObject) {
         final TLRPC.Document document;
         if (messageObject == null) {
             audioPlayerAlert.getClass();
@@ -2040,10 +2028,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             alertDialog.showDelayed(180L);
             File file = new File(messageObject.messageOwner.attachPath);
             if (file.exists()) {
-                FileLoader.getInstance(audioPlayerAlert.currentAccount).uploadFile(file.getAbsolutePath(), new Utilities.Callback() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda37
+                FileLoader.getInstance(audioPlayerAlert.currentAccount).uploadFile(file.getAbsolutePath(), new Utilities.Callback() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda46
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        AudioPlayerAlert.$r8$lambda$-hulpRpKlWOUCvdLLTlqrj6iTaw(AudioPlayerAlert.this, alertDialog, document, (TLRPC.InputFile) obj);
+                        AudioPlayerAlert.$r8$lambda$vaIo0fEnAfDGRrQZ7RUUznQfCgg(AudioPlayerAlert.this, alertDialog, document, (TLRPC.InputFile) obj);
                     }
                 });
                 return;
@@ -2066,7 +2054,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_account_saveMusic, null);
     }
 
-    public static /* synthetic */ void $r8$lambda$-hulpRpKlWOUCvdLLTlqrj6iTaw(final AudioPlayerAlert audioPlayerAlert, final AlertDialog alertDialog, TLRPC.Document document, TLRPC.InputFile inputFile) {
+    public static /* synthetic */ void $r8$lambda$vaIo0fEnAfDGRrQZ7RUUznQfCgg(final AudioPlayerAlert audioPlayerAlert, final AlertDialog alertDialog, TLRPC.Document document, TLRPC.InputFile inputFile) {
         audioPlayerAlert.getClass();
         if (inputFile == null) {
             alertDialog.dismiss();
@@ -2079,25 +2067,25 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         tL_inputMediaUploadedDocument.file = inputFile;
         tL_inputMediaUploadedDocument.mime_type = document.mime_type;
         tL_inputMediaUploadedDocument.attributes.addAll(document.attributes);
-        ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda47
+        ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda48
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                AudioPlayerAlert.$r8$lambda$OU88v9_dXk6DuYR6xiuY0BEWPu4(AudioPlayerAlert.this, alertDialog, tLObject, tL_error);
+                AudioPlayerAlert.$r8$lambda$57_oR9KtZ3pbkLqQu9qk8cNVUcE(AudioPlayerAlert.this, alertDialog, tLObject, tL_error);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$OU88v9_dXk6DuYR6xiuY0BEWPu4(final AudioPlayerAlert audioPlayerAlert, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$57_oR9KtZ3pbkLqQu9qk8cNVUcE(final AudioPlayerAlert audioPlayerAlert, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
         audioPlayerAlert.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda50
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda54
             @Override // java.lang.Runnable
             public final void run() {
-                AudioPlayerAlert.$r8$lambda$6wTK6PJF7kGIzHaCfGls_pz6X9c(AudioPlayerAlert.this, alertDialog, tLObject);
+                AudioPlayerAlert.$r8$lambda$6Ebi5kFqsieKsaNttJNcKw6KiGs(AudioPlayerAlert.this, alertDialog, tLObject);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$6wTK6PJF7kGIzHaCfGls_pz6X9c(AudioPlayerAlert audioPlayerAlert, AlertDialog alertDialog, TLObject tLObject) {
+    public static /* synthetic */ void $r8$lambda$6Ebi5kFqsieKsaNttJNcKw6KiGs(AudioPlayerAlert audioPlayerAlert, AlertDialog alertDialog, TLObject tLObject) {
         audioPlayerAlert.getClass();
         alertDialog.dismiss();
         if (tLObject instanceof TLRPC.TL_messageMediaDocument) {
@@ -2594,8 +2582,6 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             this.optionsButton.showSubItem(5);
             this.optionsButton.setAdditionalYOffset(-AndroidUtilities.dp(197.0f));
         }
-        this.optionsButton.setSubItemShown(4, playingMessageObject.getId() > 0);
-        this.optionsButton.setSubItemShown(7, isMyList());
         checkIfMusicDownloaded(playingMessageObject);
         boolean z4 = !z2;
         updateProgress(playingMessageObject, z4);
@@ -3043,7 +3029,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                AudioPlayerAlert.$r8$lambda$8ixzLk8E6qoCkwBnp16OofkllgE(AudioPlayerAlert.this);
+                AudioPlayerAlert.$r8$lambda$QPQl3a3PblV-v13zp1tgdBvgpjE(AudioPlayerAlert.this);
             }
 
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -3139,7 +3125,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         return arrayList;
     }
 
-    public static /* synthetic */ void $r8$lambda$8ixzLk8E6qoCkwBnp16OofkllgE(AudioPlayerAlert audioPlayerAlert) {
+    public static /* synthetic */ void $r8$lambda$QPQl3a3PblV-v13zp1tgdBvgpjE(AudioPlayerAlert audioPlayerAlert) {
         audioPlayerAlert.searchItem.getSearchField().setCursorColor(audioPlayerAlert.getThemedColor(Theme.key_player_actionBarTitle));
         ActionBarMenuItem actionBarMenuItem = audioPlayerAlert.repeatButton;
         actionBarMenuItem.setIconColor(audioPlayerAlert.getThemedColor(((Integer) actionBarMenuItem.getTag()).intValue()));
@@ -3178,19 +3164,19 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (bArr == null) {
             tL_inputDocument.file_reference = new byte[0];
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_account_saveMusic, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda40
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_account_saveMusic, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda45
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                AudioPlayerAlert.$r8$lambda$zVBMm8EpUH9DWfQYk6f0RU2vvTc(AudioPlayerAlert.this, z2, messageObject, z, runnable, j, document, tLObject, tL_error);
+                AudioPlayerAlert.$r8$lambda$YP2IGciLMZZTocbtWJmwTE5WMMI(AudioPlayerAlert.this, z2, messageObject, z, runnable, j, document, tLObject, tL_error);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$zVBMm8EpUH9DWfQYk6f0RU2vvTc(final AudioPlayerAlert audioPlayerAlert, boolean z, MessageObject messageObject, final boolean z2, final Runnable runnable, final long j, final TLRPC.Document document, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$YP2IGciLMZZTocbtWJmwTE5WMMI(final AudioPlayerAlert audioPlayerAlert, boolean z, MessageObject messageObject, final boolean z2, final Runnable runnable, final long j, final TLRPC.Document document, TLObject tLObject, final TLRPC.TL_error tL_error) {
         audioPlayerAlert.getClass();
         if (tL_error != null && FileRefController.isFileRefError(tL_error.text)) {
             if (z || messageObject.getId() < 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda44
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda51
                     @Override // java.lang.Runnable
                     public final void run() {
                         BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).showForError(tL_error);
@@ -3202,10 +3188,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 final int id = messageObject.getId();
                 TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
                 tL_messages_getMessages.id.add(Integer.valueOf(id));
-                ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda42
+                ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda49
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                        AudioPlayerAlert.$r8$lambda$V2Iq7ZO7VCX40M4p-xI8tTMInGU(AudioPlayerAlert.this, id, z2, runnable, tLObject2, tL_error2);
+                        AudioPlayerAlert.$r8$lambda$CUL-DwcTymQJIm2IyuwFtSTw76A(AudioPlayerAlert.this, id, z2, runnable, tLObject2, tL_error2);
                     }
                 });
                 return;
@@ -3214,36 +3200,36 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
             tL_channels_getMessages.channel = MessagesController.getInstance(audioPlayerAlert.currentAccount).getInputChannel(-messageObject.getDialogId());
             tL_channels_getMessages.id.add(Integer.valueOf(id2));
-            ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda43
+            ConnectionsManager.getInstance(audioPlayerAlert.currentAccount).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda50
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                    AudioPlayerAlert.$r8$lambda$_TD0tPUCGP3n2SDeWa7xdeMmT0k(AudioPlayerAlert.this, id2, z2, runnable, tLObject2, tL_error2);
+                    AudioPlayerAlert.$r8$lambda$bUtQKFrxVYkptC0XXTOblwd-IUI(AudioPlayerAlert.this, id2, z2, runnable, tLObject2, tL_error2);
                 }
             });
             return;
         }
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda45
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda52
                 @Override // java.lang.Runnable
                 public final void run() {
                     BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).showForError(tL_error);
                 }
             });
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda46
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda53
             @Override // java.lang.Runnable
             public final void run() {
-                AudioPlayerAlert.$r8$lambda$g8_BrbnB9OKoVFqbKvNYSMKOwbo(AudioPlayerAlert.this, j, z2, document, runnable);
+                AudioPlayerAlert.$r8$lambda$b3BHvRpUmihUuqVEWQyeXKQwNM4(AudioPlayerAlert.this, j, z2, document, runnable);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$V2Iq7ZO7VCX40M4p-xI8tTMInGU(final AudioPlayerAlert audioPlayerAlert, int i, boolean z, Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$CUL-DwcTymQJIm2IyuwFtSTw76A(final AudioPlayerAlert audioPlayerAlert, int i, boolean z, Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
         TLRPC.Message message;
         audioPlayerAlert.getClass();
         if (!(tLObject instanceof TLRPC.messages_Messages)) {
             if (tL_error != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda49
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda58
                     @Override // java.lang.Runnable
                     public final void run() {
                         BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).showForError(tL_error);
@@ -3270,7 +3256,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (message != null) {
             audioPlayerAlert.saveToProfile(new MessageObject(audioPlayerAlert.currentAccount, message, false, true), z, runnable, true);
         } else {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda48
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda57
                 @Override // java.lang.Runnable
                 public final void run() {
                     BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, "CLIENT_MESSAGE_NOT_FOUND")).show();
@@ -3279,12 +3265,12 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$_TD0tPUCGP3n2SDeWa7xdeMmT0k(final AudioPlayerAlert audioPlayerAlert, int i, boolean z, Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$bUtQKFrxVYkptC0XXTOblwd-IUI(final AudioPlayerAlert audioPlayerAlert, int i, boolean z, Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
         TLRPC.Message message;
         audioPlayerAlert.getClass();
         if (!(tLObject instanceof TLRPC.messages_Messages)) {
             if (tL_error != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda52
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda56
                     @Override // java.lang.Runnable
                     public final void run() {
                         BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).showForError(tL_error);
@@ -3311,7 +3297,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (message != null) {
             audioPlayerAlert.saveToProfile(new MessageObject(audioPlayerAlert.currentAccount, message, false, true), z, runnable, true);
         } else {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda51
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda55
                 @Override // java.lang.Runnable
                 public final void run() {
                     BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, "CLIENT_MESSAGE_NOT_FOUND")).show();
@@ -3320,7 +3306,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$g8_BrbnB9OKoVFqbKvNYSMKOwbo(AudioPlayerAlert audioPlayerAlert, long j, boolean z, TLRPC.Document document, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$b3BHvRpUmihUuqVEWQyeXKQwNM4(AudioPlayerAlert audioPlayerAlert, long j, boolean z, TLRPC.Document document, Runnable runnable) {
         MessagesController.getInstance(audioPlayerAlert.currentAccount).getSavedMusicIds().update(j, z);
         long clientUserId = UserConfig.getInstance(audioPlayerAlert.currentAccount).getClientUserId();
         TLRPC.UserFull userFull = MessagesController.getInstance(audioPlayerAlert.currentAccount).getUserFull(clientUserId);
@@ -3344,143 +3330,209 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void showOptions(AudioPlayerCell audioPlayerCell, final MessageObject messageObject) {
-        final ItemOptions makeOptions = ItemOptions.makeOptions((ViewGroup) this.container, this.resourcesProvider, (View) audioPlayerCell, true);
-        if (isMyList()) {
-            makeOptions.addIf(!this.noforwards, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda25
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$ug3VKZhvCwpuRbWNrKvXfTg8PPM(AudioPlayerAlert.this, makeOptions, messageObject);
-                }
-            });
-            makeOptions.addIf(!this.noforwards, R.drawable.msg_shareout, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$yFVwfG1IQtRvpBI8qxC5LN0g7BE(AudioPlayerAlert.this, makeOptions, messageObject);
-                }
-            });
-            makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda28
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$Y_6w4-RtSYdqbLUcHogEUBtVcmM(AudioPlayerAlert.this, messageObject, makeOptions);
-                }
-            });
-        } else {
-            MessagesController.SavedMusicIds savedMusicIds = MessagesController.getInstance(this.currentAccount).getSavedMusicIds();
-            TLRPC.Document document = messageObject.getDocument();
-            long j = document != null ? document.id : 0L;
-            final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda333(makeOptions));
-            makeSwipeback.addGap();
-            makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda29
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$5UpPlGr2raE2wBbM3yFqcPLpVGI(AudioPlayerAlert.this, messageObject, makeOptions);
-                }
-            });
-            makeSwipeback.add(R.drawable.msg_saved, LocaleController.getString(R.string.AudioSaveToSavedMessages), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda30
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$ee663kU6swAAct16UoDR-oTnvXY(AudioPlayerAlert.this, messageObject, makeOptions);
-                }
-            });
-            makeSwipeback.add(R.drawable.menu_download_round, LocaleController.getString(R.string.AudioSaveToMusicFolder), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda31
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$OxWhkXo0GLeIWBXSKPNwXem8g-c(AudioPlayerAlert.this, messageObject, makeOptions);
-                }
-            });
-            makeSwipeback.addGap();
-            makeSwipeback.addText(LocaleController.getString(R.string.AudioSaveToInfo), 12, AndroidUtilities.dp(200.0f));
+    public void showMenuOptions(View view) {
+        MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+        if (playingMessageObject == null) {
+            return;
+        }
+        final ItemOptions makeOptions = ItemOptions.makeOptions((ViewGroup) this.container, this.resourcesProvider, view, true);
+        final ItemOptions buildSaveOptions = buildSaveOptions(makeOptions, playingMessageObject);
+        if (!isMyList()) {
             makeOptions.addIf(!this.noforwards, R.drawable.msg_stories_save, LocaleController.getString(R.string.AudioSaveTo), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda32
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ItemOptions.this.openSwipeback(makeSwipeback);
+                    ItemOptions.this.openSwipeback(buildSaveOptions);
                 }
             });
             if (!this.noforwards && makeOptions.getLast() != null) {
                 makeOptions.getLast().setRightIcon(R.drawable.msg_arrowright);
             }
             makeOptions.addGap();
-            makeOptions.addIf(!this.noforwards, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda33
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$0sFviusKfFd9wAaHYSHGmhJRADU(AudioPlayerAlert.this, makeOptions, messageObject);
-                }
-            });
-            makeOptions.addIf(!this.noforwards, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda34
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$SiXLEddZxoCKAf-h23OmvEz5dDw(AudioPlayerAlert.this, makeOptions, messageObject);
-                }
-            });
-            makeOptions.addIf(messageObject.getId() > 0, R.drawable.msg_view_file, LocaleController.getString(R.string.ShowInChat), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda26
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AudioPlayerAlert.$r8$lambda$xcNqPQbM2FQVpiqL-m8fwu6E1CQ(AudioPlayerAlert.this, messageObject);
-                }
-            });
         }
-        makeOptions.setGravity(LocaleController.isRTL ? 3 : 5);
+        makeOptions.addIf(!this.noforwards, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda33
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$ClFL_47sEVfl0EHNFV8bE3SXZYE(AudioPlayerAlert.this, makeOptions);
+            }
+        });
+        makeOptions.addIf(!this.noforwards, R.drawable.msg_shareout, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda34
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$eZz0aF0Fqm6KaJCuntOLFmyu5RI(AudioPlayerAlert.this, makeOptions);
+            }
+        });
+        makeOptions.addIf(playingMessageObject.getId() > 0, R.drawable.msg_message, LocaleController.getString(R.string.ShowInChat), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda35
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$XTSzIRyAuIo-DXheGdJ-EmvTt0Y(AudioPlayerAlert.this, makeOptions);
+            }
+        });
+        if (this.castAvailable) {
+            ActionBarMenuSubItem add = makeOptions.add();
+            this.castItem = add;
+            add.setTextAndIcon(LocaleController.getString(R.string.VideoPlayerChromecast), R.drawable.menu_video_chromecast);
+            this.castItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda36
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    AudioPlayerAlert.$r8$lambda$-lx9DIm-9GeYrs9IZgn-_1qtQWg(AudioPlayerAlert.this, makeOptions, view2);
+                }
+            });
+            AndroidUtilities.removeFromParent(this.castItemButton);
+            this.castItem.addView(this.castItemButton, 0, LayoutHelper.createFrame(-1, -1.0f));
+            updateColors();
+        }
+        makeOptions.addIf(isMyList(), R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.ProfilePlaylistRemoveFromProfile), true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda37
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$1DZIjAfHVmWvg6BH7n-xokK-DRo(AudioPlayerAlert.this, makeOptions);
+            }
+        });
+        makeOptions.setTranslationY(AndroidUtilities.dp(64.0f));
         makeOptions.show();
     }
 
-    public static /* synthetic */ void $r8$lambda$ug3VKZhvCwpuRbWNrKvXfTg8PPM(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$ClFL_47sEVfl0EHNFV8bE3SXZYE(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions) {
         audioPlayerAlert.getClass();
         itemOptions.dismiss();
-        audioPlayerAlert.forward(messageObject);
+        audioPlayerAlert.onSubItemClick(1);
     }
 
-    public static /* synthetic */ void $r8$lambda$yFVwfG1IQtRvpBI8qxC5LN0g7BE(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$eZz0aF0Fqm6KaJCuntOLFmyu5RI(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions) {
         audioPlayerAlert.getClass();
         itemOptions.dismiss();
-        audioPlayerAlert.share(messageObject);
+        audioPlayerAlert.onSubItemClick(2);
     }
 
-    public static /* synthetic */ void $r8$lambda$Y_6w4-RtSYdqbLUcHogEUBtVcmM(final AudioPlayerAlert audioPlayerAlert, final MessageObject messageObject, final ItemOptions itemOptions) {
+    public static /* synthetic */ void $r8$lambda$XTSzIRyAuIo-DXheGdJ-EmvTt0Y(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions) {
         audioPlayerAlert.getClass();
-        audioPlayerAlert.saveToProfile(messageObject, false, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda39
+        itemOptions.dismiss();
+        audioPlayerAlert.onSubItemClick(4);
+    }
+
+    public static /* synthetic */ void $r8$lambda$-lx9DIm-9GeYrs9IZgn-_1qtQWg(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions, View view) {
+        audioPlayerAlert.getClass();
+        itemOptions.dismiss();
+        audioPlayerAlert.onSubItemClick(7);
+    }
+
+    public static /* synthetic */ void $r8$lambda$1DZIjAfHVmWvg6BH7n-xokK-DRo(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions) {
+        audioPlayerAlert.getClass();
+        itemOptions.dismiss();
+        audioPlayerAlert.onSubItemClick(7);
+    }
+
+    private ItemOptions buildSaveOptions(final ItemOptions itemOptions, final MessageObject messageObject) {
+        MessagesController.SavedMusicIds savedMusicIds = MessagesController.getInstance(this.currentAccount).getSavedMusicIds();
+        TLRPC.Document document = messageObject.getDocument();
+        long j = document != null ? document.id : 0L;
+        ItemOptions makeSwipeback = itemOptions.makeSwipeback();
+        makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda333(itemOptions));
+        makeSwipeback.addGap();
+        makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda40
             @Override // java.lang.Runnable
             public final void run() {
-                AudioPlayerAlert.$r8$lambda$OyY5ndQRyLak2zWPfwl_cR_lJ0w(AudioPlayerAlert.this, messageObject, itemOptions);
+                AudioPlayerAlert.$r8$lambda$sRxnEkHFR14-Kl-9DiFqCOjxs1o(AudioPlayerAlert.this, messageObject, itemOptions);
+            }
+        });
+        makeSwipeback.add(R.drawable.msg_saved, LocaleController.getString(R.string.AudioSaveToSavedMessages), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda41
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$wJrmGViKU6qJsKJp4QHm_l6_y-g(AudioPlayerAlert.this, messageObject, itemOptions);
+            }
+        });
+        makeSwipeback.add(R.drawable.menu_download_round, LocaleController.getString(R.string.AudioSaveToMusicFolder), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda42
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$3NNxg2S4iuYWql5f4MyH3dn_Ovc(AudioPlayerAlert.this, messageObject, itemOptions);
+            }
+        });
+        makeSwipeback.addGap();
+        makeSwipeback.addText(LocaleController.getString(R.string.AudioSaveToInfo), 12, AndroidUtilities.dp(200.0f));
+        return makeSwipeback;
+    }
+
+    public static /* synthetic */ void $r8$lambda$sRxnEkHFR14-Kl-9DiFqCOjxs1o(final AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, final ItemOptions itemOptions) {
+        audioPlayerAlert.getClass();
+        audioPlayerAlert.saveToProfile(messageObject, true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda47
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$AcwTT8qXV6eHrnkz0bvZ-M-TDbY(AudioPlayerAlert.this, itemOptions);
             }
         }, false);
     }
 
-    public static /* synthetic */ void $r8$lambda$OyY5ndQRyLak2zWPfwl_cR_lJ0w(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, ItemOptions itemOptions) {
-        audioPlayerAlert.savedMusicList.remove(messageObject);
-        audioPlayerAlert.playlist.remove(messageObject);
-        audioPlayerAlert.listAdapter.notifyDataSetChanged();
-        itemOptions.dismiss();
-        audioPlayerAlert.setVisibleInProfile(false);
-        BulletinFactory.of((FrameLayout) audioPlayerAlert.containerView, audioPlayerAlert.resourcesProvider).createSimpleBulletin(R.raw.ic_delete, LocaleController.getString(R.string.AudioSaveToMyProfileUnsaved)).show();
-    }
-
-    public static /* synthetic */ void $r8$lambda$5UpPlGr2raE2wBbM3yFqcPLpVGI(final AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, final ItemOptions itemOptions) {
-        audioPlayerAlert.getClass();
-        audioPlayerAlert.saveToProfile(messageObject, true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda41
-            @Override // java.lang.Runnable
-            public final void run() {
-                AudioPlayerAlert.$r8$lambda$paPfS2E5JuLpjIYUxORDIrCstCc(AudioPlayerAlert.this, itemOptions);
-            }
-        }, false);
-    }
-
-    public static /* synthetic */ void $r8$lambda$paPfS2E5JuLpjIYUxORDIrCstCc(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions) {
+    public static /* synthetic */ void $r8$lambda$AcwTT8qXV6eHrnkz0bvZ-M-TDbY(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions) {
         audioPlayerAlert.setVisibleInProfile(true);
         BulletinFactory.of((FrameLayout) audioPlayerAlert.containerView, audioPlayerAlert.resourcesProvider).createSimpleBulletin(R.raw.saved_messages, LocaleController.getString(R.string.AudioSaveToMyProfileSaved)).show();
         itemOptions.dismiss();
     }
 
-    public static /* synthetic */ void $r8$lambda$ee663kU6swAAct16UoDR-oTnvXY(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, ItemOptions itemOptions) {
+    public static /* synthetic */ void $r8$lambda$wJrmGViKU6qJsKJp4QHm_l6_y-g(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, ItemOptions itemOptions) {
         audioPlayerAlert.forward(messageObject, UserConfig.getInstance(audioPlayerAlert.currentAccount).getClientUserId());
         itemOptions.dismiss();
         BulletinFactory.of((FrameLayout) audioPlayerAlert.containerView, audioPlayerAlert.resourcesProvider).createSimpleBulletin(R.raw.saved_messages, LocaleController.getString(R.string.AudioSaveToSavedMessagesSaved)).show();
     }
 
-    public static /* synthetic */ void $r8$lambda$OxWhkXo0GLeIWBXSKPNwXem8g-c(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, ItemOptions itemOptions) {
+    public static /* synthetic */ void $r8$lambda$3NNxg2S4iuYWql5f4MyH3dn_Ovc(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, ItemOptions itemOptions) {
         audioPlayerAlert.saveToMusic(messageObject);
         itemOptions.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void showOptions(AudioPlayerCell audioPlayerCell, final MessageObject messageObject) {
+        final ItemOptions makeOptions = ItemOptions.makeOptions((ViewGroup) this.container, this.resourcesProvider, (View) audioPlayerCell, true);
+        if (isMyList()) {
+            makeOptions.addIf(!this.noforwards, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda24
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioPlayerAlert.$r8$lambda$0sFviusKfFd9wAaHYSHGmhJRADU(AudioPlayerAlert.this, makeOptions, messageObject);
+                }
+            });
+            makeOptions.addIf(!this.noforwards, R.drawable.msg_shareout, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda25
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioPlayerAlert.$r8$lambda$SiXLEddZxoCKAf-h23OmvEz5dDw(AudioPlayerAlert.this, makeOptions, messageObject);
+                }
+            });
+            makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda26
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioPlayerAlert.$r8$lambda$_1Q0dKoWPms0P0MfzdyLXZOFZ1E(AudioPlayerAlert.this, messageObject, makeOptions);
+                }
+            });
+        } else {
+            final ItemOptions buildSaveOptions = buildSaveOptions(makeOptions, messageObject);
+            makeOptions.addIf(!this.noforwards, R.drawable.msg_stories_save, LocaleController.getString(R.string.AudioSaveTo), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ItemOptions.this.openSwipeback(buildSaveOptions);
+                }
+            });
+            if (!this.noforwards && makeOptions.getLast() != null) {
+                makeOptions.getLast().setRightIcon(R.drawable.msg_arrowright);
+            }
+            makeOptions.addGap();
+            makeOptions.addIf(!this.noforwards, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda28
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioPlayerAlert.$r8$lambda$QgcnqQ6ggZyJRnJWAeCmOalA32c(AudioPlayerAlert.this, makeOptions, messageObject);
+                }
+            });
+            makeOptions.addIf(!this.noforwards, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda29
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioPlayerAlert.$r8$lambda$x2gh0lSG_UNR3YN9XW1diG0baQg(AudioPlayerAlert.this, makeOptions, messageObject);
+                }
+            });
+            makeOptions.addIf(messageObject.getId() > 0, R.drawable.msg_view_file, LocaleController.getString(R.string.ShowInChat), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda30
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioPlayerAlert.$r8$lambda$91_uD5nHR42c-xCdUs0qrefMTZE(AudioPlayerAlert.this, messageObject);
+                }
+            });
+        }
+        makeOptions.setGravity(LocaleController.isRTL ? 3 : 5);
+        makeOptions.show();
     }
 
     public static /* synthetic */ void $r8$lambda$0sFviusKfFd9wAaHYSHGmhJRADU(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions, MessageObject messageObject) {
@@ -3495,7 +3547,38 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         audioPlayerAlert.share(messageObject);
     }
 
-    public static /* synthetic */ void $r8$lambda$xcNqPQbM2FQVpiqL-m8fwu6E1CQ(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$_1Q0dKoWPms0P0MfzdyLXZOFZ1E(final AudioPlayerAlert audioPlayerAlert, final MessageObject messageObject, final ItemOptions itemOptions) {
+        audioPlayerAlert.getClass();
+        audioPlayerAlert.saveToProfile(messageObject, false, new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda39
+            @Override // java.lang.Runnable
+            public final void run() {
+                AudioPlayerAlert.$r8$lambda$SdstRAtgFsyYdA0kvHKEsnBUY4k(AudioPlayerAlert.this, messageObject, itemOptions);
+            }
+        }, false);
+    }
+
+    public static /* synthetic */ void $r8$lambda$SdstRAtgFsyYdA0kvHKEsnBUY4k(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject, ItemOptions itemOptions) {
+        audioPlayerAlert.savedMusicList.remove(messageObject);
+        audioPlayerAlert.playlist.remove(messageObject);
+        audioPlayerAlert.listAdapter.notifyDataSetChanged();
+        itemOptions.dismiss();
+        audioPlayerAlert.setVisibleInProfile(false);
+        BulletinFactory.of((FrameLayout) audioPlayerAlert.containerView, audioPlayerAlert.resourcesProvider).createSimpleBulletin(R.raw.ic_delete, LocaleController.getString(R.string.AudioSaveToMyProfileUnsaved)).show();
+    }
+
+    public static /* synthetic */ void $r8$lambda$QgcnqQ6ggZyJRnJWAeCmOalA32c(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions, MessageObject messageObject) {
+        audioPlayerAlert.getClass();
+        itemOptions.dismiss();
+        audioPlayerAlert.forward(messageObject);
+    }
+
+    public static /* synthetic */ void $r8$lambda$x2gh0lSG_UNR3YN9XW1diG0baQg(AudioPlayerAlert audioPlayerAlert, ItemOptions itemOptions, MessageObject messageObject) {
+        audioPlayerAlert.getClass();
+        itemOptions.dismiss();
+        audioPlayerAlert.share(messageObject);
+    }
+
+    public static /* synthetic */ void $r8$lambda$91_uD5nHR42c-xCdUs0qrefMTZE(AudioPlayerAlert audioPlayerAlert, MessageObject messageObject) {
         audioPlayerAlert.getClass();
         int i = UserConfig.selectedAccount;
         int i2 = audioPlayerAlert.currentAccount;
@@ -3572,7 +3655,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (str2 == null || str2.length() == 0) {
             str2 = FileLoader.getInstance(this.currentAccount).getPathToMessage(messageObject.messageOwner).toString();
         }
-        MediaController.saveFile(str2, this.parentActivity, 3, str, messageObject.getDocument() != null ? messageObject.getDocument().mime_type : "", new Utilities.Callback() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda38
+        MediaController.saveFile(str2, this.parentActivity, 3, str, messageObject.getDocument() != null ? messageObject.getDocument().mime_type : "", new Utilities.Callback() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda44
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 BulletinFactory.of((FrameLayout) r0.containerView, AudioPlayerAlert.this.resourcesProvider).createDownloadBulletin(BulletinFactory.FileType.AUDIO).show();
@@ -3695,7 +3778,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             arrayList = arrayList2;
             tL_document = null;
         }
-        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda35
+        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda38
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public /* synthetic */ boolean canSelectStories() {
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
@@ -3703,7 +3786,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList3, CharSequence charSequence, boolean z, boolean z2, int i3, int i4, TopicsFragment topicsFragment) {
-                return AudioPlayerAlert.$r8$lambda$YPsHndpoPTMGFzWJemDVUtSXinU(AudioPlayerAlert.this, arrayList, tL_document, messageObject, dialogsActivity2, arrayList3, charSequence, z, z2, i3, i4, topicsFragment);
+                return AudioPlayerAlert.$r8$lambda$O4lmwF3Cdr-9abHg3UvhaG6R1YI(AudioPlayerAlert.this, arrayList, tL_document, messageObject, dialogsActivity2, arrayList3, charSequence, z, z2, i3, i4, topicsFragment);
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -3716,7 +3799,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ boolean $r8$lambda$YPsHndpoPTMGFzWJemDVUtSXinU(AudioPlayerAlert audioPlayerAlert, ArrayList arrayList, TLRPC.TL_document tL_document, MessageObject messageObject, DialogsActivity dialogsActivity, ArrayList arrayList2, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public static /* synthetic */ boolean $r8$lambda$O4lmwF3Cdr-9abHg3UvhaG6R1YI(AudioPlayerAlert audioPlayerAlert, ArrayList arrayList, TLRPC.TL_document tL_document, MessageObject messageObject, DialogsActivity dialogsActivity, ArrayList arrayList2, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
         String formatPluralStringComma;
         long j;
         int i3;
@@ -4199,16 +4282,16 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             ofInt.setDuration(200L);
         }
         this.rightPaddingAnimator.setInterpolator(new DecelerateInterpolator());
-        this.rightPaddingAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda36
+        this.rightPaddingAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda43
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                AudioPlayerAlert.$r8$lambda$4vHZzv8KCFKEJQJLfimt2uRAa6Q(AudioPlayerAlert.this, valueAnimator2);
+                AudioPlayerAlert.$r8$lambda$miqere8t5vdkBg_kgJp5VHgIPQo(AudioPlayerAlert.this, valueAnimator2);
             }
         });
         this.rightPaddingAnimator.start();
     }
 
-    public static /* synthetic */ void $r8$lambda$4vHZzv8KCFKEJQJLfimt2uRAa6Q(AudioPlayerAlert audioPlayerAlert, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void $r8$lambda$miqere8t5vdkBg_kgJp5VHgIPQo(AudioPlayerAlert audioPlayerAlert, ValueAnimator valueAnimator) {
         audioPlayerAlert.titleTextView.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
         audioPlayerAlert.authorTextView.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
     }

@@ -1,21 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.Iterator;
+
 /* loaded from: classes.dex */
-final class zzby extends zzca {
-    final int zza;
-
-    zzby(int i) {
-        super(null);
-        this.zza = i;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzca
-    public final int zza() {
-        return this.zza;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzca
-    public final zzca zzb(Comparable comparable, Comparable comparable2) {
-        return this;
+public abstract class zzby {
+    public static Object zza(Iterable iterable, Object obj) {
+        Iterator it = iterable.iterator();
+        if (it.hasNext()) {
+            return it.next();
+        }
+        return null;
     }
 }

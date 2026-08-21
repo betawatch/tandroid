@@ -1,43 +1,66 @@
 package j$.util.stream;
 
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.DoublePredicate;
+import java.util.function.DoubleToIntFunction;
+import java.util.function.DoubleToLongFunction;
+import java.util.function.DoubleUnaryOperator;
 
 /* loaded from: classes2.dex */
-public final class p extends W1 {
-    public final /* synthetic */ int m;
-    public final /* synthetic */ Object n;
+public final class p extends Z1 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(a aVar, int i, Object obj, int i2) {
-        super(aVar, i, 1);
-        this.m = i2;
-        this.n = obj;
+    public /* synthetic */ p(a aVar, g2 g2Var, int i) {
+        super(g2Var);
+        this.b = i;
+        this.c = aVar;
     }
 
-    @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
-        switch (this.m) {
-            case 0:
-                return new o(this, f2Var, 0);
-            case 1:
-                return new Q(this, f2Var, 0);
-            case 2:
-                return new Z(this, f2Var, 0);
-            case 3:
-                return new k(this, f2Var, 1);
+    @Override // j$.util.stream.Z1, j$.util.stream.g2
+    public void y(long j) {
+        switch (this.b) {
             case 4:
-                return new k(this, f2Var, 2);
-            case 5:
-                return new k(this, f2Var, 3);
+                this.a.y(-1L);
+                break;
             default:
-                return new j(this, f2Var);
+                super.y(j);
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(X1 x1, Consumer consumer) {
-        super(x1, 0, 1);
-        this.m = 3;
-        this.n = consumer;
+    @Override // j$.util.stream.d2, j$.util.stream.g2
+    public final void accept(double d) {
+        switch (this.b) {
+            case 0:
+                this.a.accept((g2) ((DoubleFunction) ((q) this.c).n).apply(d));
+                return;
+            case 1:
+                ((r) this.c).getClass();
+                DoubleUnaryOperator doubleUnaryOperator = null;
+                doubleUnaryOperator.applyAsDouble(d);
+                throw null;
+            case 2:
+                ((s) this.c).getClass();
+                DoubleToIntFunction doubleToIntFunction = null;
+                doubleToIntFunction.applyAsInt(d);
+                throw null;
+            case 3:
+                ((t) this.c).getClass();
+                DoubleToLongFunction doubleToLongFunction = null;
+                doubleToLongFunction.applyAsLong(d);
+                throw null;
+            case 4:
+                ((r) this.c).getClass();
+                DoublePredicate doublePredicate = null;
+                doublePredicate.test(d);
+                throw null;
+            default:
+                ((DoubleConsumer) ((v) this.c).n).accept(d);
+                this.a.accept(d);
+                return;
+        }
     }
 }

@@ -1,142 +1,47 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
-import j$.util.Objects;
-import j$.util.Spliterator;
-import java.util.Comparator;
-import java.util.function.Consumer;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-public final class G2 implements Spliterator {
-    public int a;
-    public final int b;
-    public int c;
-    public final int d;
-    public Object[] e;
-    public final /* synthetic */ P2 f;
+public final class G2 extends u2 {
+    public Object[] d;
+    public int e;
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return 16464;
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
-    }
-
-    public G2(P2 p2, int i, int i2, int i3, int i4) {
-        this.f = p2;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        Object[][] objArr = p2.f;
-        this.e = objArr == null ? p2.e : objArr[i];
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        int i = this.a;
-        int i2 = this.d;
-        int i3 = this.b;
-        if (i == i3) {
-            return i2 - this.c;
+    @Override // j$.util.stream.c2, j$.util.stream.g2
+    public final void y(long j) {
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        long[] jArr = this.f.d;
-        return ((jArr[i3] + i2) - jArr[i]) - this.c;
+        this.d = new Object[(int) j];
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        Objects.requireNonNull(consumer);
-        int i = this.a;
-        int i2 = this.b;
-        if (i >= i2 && (i != i2 || this.c >= this.d)) {
-            return false;
-        }
-        Object[] objArr = this.e;
-        int i3 = this.c;
-        this.c = i3 + 1;
-        consumer.s(objArr[i3]);
-        if (this.c == this.e.length) {
-            this.c = 0;
-            int i4 = this.a + 1;
-            this.a = i4;
-            Object[][] objArr2 = this.f.f;
-            if (objArr2 != null && i4 <= i2) {
-                this.e = objArr2[i4];
-            }
-        }
-        return true;
-    }
-
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        P2 p2;
-        Objects.requireNonNull(consumer);
-        int i = this.a;
-        int i2 = this.d;
-        int i3 = this.b;
-        if (i < i3 || (i == i3 && this.c < i2)) {
-            int i4 = this.c;
-            while (true) {
-                p2 = this.f;
-                if (i >= i3) {
-                    break;
-                }
-                Object[] objArr = p2.f[i];
-                while (i4 < objArr.length) {
-                    consumer.s(objArr[i4]);
-                    i4++;
-                }
+    @Override // j$.util.stream.c2, j$.util.stream.g2
+    public final void x() {
+        int i = 0;
+        Arrays.sort(this.d, 0, this.e, this.b);
+        long j = this.e;
+        g2 g2Var = this.a;
+        g2Var.y(j);
+        if (!this.c) {
+            while (i < this.e) {
+                g2Var.accept((g2) this.d[i]);
                 i++;
-                i4 = 0;
             }
-            Object[] objArr2 = this.a == i3 ? this.e : p2.f[i3];
-            while (i4 < i2) {
-                consumer.s(objArr2[i4]);
-                i4++;
+        } else {
+            while (i < this.e && !g2Var.C()) {
+                g2Var.accept((g2) this.d[i]);
+                i++;
             }
-            this.a = i3;
-            this.c = i2;
         }
+        g2Var.x();
+        this.d = null;
     }
 
-    @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        int i = this.a;
-        int i2 = this.b;
-        if (i < i2) {
-            int i3 = i2 - 1;
-            int i4 = this.c;
-            P2 p2 = this.f;
-            G2 g2 = new G2(p2, i, i3, i4, p2.f[i3].length);
-            this.a = i2;
-            this.c = 0;
-            this.e = p2.f[i2];
-            return g2;
-        }
-        if (i != i2) {
-            return null;
-        }
-        int i5 = this.c;
-        int i6 = (this.d - i5) / 2;
-        if (i6 == 0) {
-            return null;
-        }
-        j$.util.i0 a = DesugarArrays.a(this.e, i5, i5 + i6);
-        this.c += i6;
-        return a;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        Object[] objArr = this.d;
+        int i = this.e;
+        this.e = i + 1;
+        objArr[i] = obj;
     }
 }

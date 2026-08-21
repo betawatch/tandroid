@@ -1,15 +1,15 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public final class C3 extends b2 implements P3 {
+public final class C3 extends c2 implements P3 {
     public long b;
     public boolean c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ D3 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C3(D3 d3, f2 f2Var, boolean z) {
-        super(f2Var);
+    public C3(D3 d3, g2 g2Var, boolean z) {
+        super(g2Var);
         this.e = d3;
         this.d = z;
     }
@@ -28,7 +28,7 @@ public final class C3 extends b2 implements P3 {
                     this.b++;
                 }
                 if (!z2 || z) {
-                    this.a.accept((f2) obj);
+                    this.a.accept((g2) obj);
                 }
                 return;
             }
@@ -40,7 +40,7 @@ public final class C3 extends b2 implements P3 {
         }
         if (z2) {
         }
-        this.a.accept((f2) obj);
+        this.a.accept((g2) obj);
     }
 
     @Override // j$.util.stream.P3

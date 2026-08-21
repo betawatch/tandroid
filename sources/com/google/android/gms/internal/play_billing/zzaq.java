@@ -1,51 +1,30 @@
 package com.google.android.gms.internal.play_billing;
 
+import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
 /* loaded from: classes.dex */
-public abstract class zzaq implements IInterface {
-    private final IBinder zza;
-    private final String zzb;
-
-    protected zzaq(IBinder iBinder, String str) {
-        this.zza = iBinder;
-        this.zzb = str;
+public abstract class zzaq extends Binder implements IInterface {
+    protected zzaq(String str) {
+        attachInterface(this, str);
     }
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.zza;
+        return this;
     }
 
-    protected final Parcel zzu() {
-        Parcel obtain = Parcel.obtain();
-        obtain.writeInterfaceToken(this.zzb);
-        return obtain;
-    }
-
-    protected final Parcel zzv(int i, Parcel parcel) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            try {
-                this.zza.transact(i, parcel, obtain, 0);
-                obtain.readException();
-                return obtain;
-            } catch (RuntimeException e) {
-                obtain.recycle();
-                throw e;
-            }
-        } finally {
-            parcel.recycle();
+    @Override // android.os.Binder
+    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i, parcel, parcel2, i2)) {
+            return true;
         }
+        return zzb(i, parcel, parcel2, i2);
     }
 
-    protected final void zzx(int i, Parcel parcel) {
-        try {
-            this.zza.transact(i, parcel, null, 1);
-        } finally {
-            parcel.recycle();
-        }
-    }
+    protected abstract boolean zzb(int i, Parcel parcel, Parcel parcel2, int i2);
 }

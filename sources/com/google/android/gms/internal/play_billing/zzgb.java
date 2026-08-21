@@ -1,7 +1,17 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.RandomAccess;
-
 /* loaded from: classes.dex */
-abstract class zzgb extends zzfx implements RandomAccess, zzho, zzit {
+final class zzgb implements zzgj {
+    zzgb() {
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzgj
+    public final zzgi zzb(Class cls) {
+        throw new IllegalStateException("This should never be called.");
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzgj
+    public final boolean zzc(Class cls) {
+        return false;
+    }
 }

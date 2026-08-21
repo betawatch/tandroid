@@ -1,47 +1,53 @@
 package j$.util.stream;
 
-import java.util.Arrays;
+import j$.util.Collection;
+import j$.util.List;
+import j$.util.Objects;
+import java.util.ArrayList;
 
 /* loaded from: classes2.dex */
-public final class C2 extends q2 {
-    public double[] c;
-    public int d;
+public final class C2 extends u2 {
+    public ArrayList d;
 
-    @Override // j$.util.stream.Y1, j$.util.stream.f2
+    @Override // j$.util.stream.c2, j$.util.stream.g2
     public final void y(long j) {
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.c = new double[(int) j];
+        this.d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
     }
 
-    @Override // j$.util.stream.Y1, j$.util.stream.f2
+    @Override // j$.util.stream.c2, j$.util.stream.g2
     public final void x() {
-        int i = 0;
-        Arrays.sort(this.c, 0, this.d);
-        long j = this.d;
-        f2 f2Var = this.a;
-        f2Var.y(j);
-        if (!this.b) {
-            while (i < this.d) {
-                f2Var.accept(this.c[i]);
-                i++;
-            }
+        List.-EL.sort(this.d, this.b);
+        long size = this.d.size();
+        g2 g2Var = this.a;
+        g2Var.y(size);
+        if (!this.c) {
+            ArrayList arrayList = this.d;
+            Objects.requireNonNull(g2Var);
+            Collection.-EL.a(arrayList, new j$.time.t(9, g2Var));
         } else {
-            while (i < this.d && !f2Var.C()) {
-                f2Var.accept(this.c[i]);
+            ArrayList arrayList2 = this.d;
+            int size2 = arrayList2.size();
+            int i = 0;
+            while (i < size2) {
+                Object obj = arrayList2.get(i);
                 i++;
+                if (g2Var.C()) {
+                    break;
+                } else {
+                    g2Var.s((g2) obj);
+                }
             }
         }
-        f2Var.x();
-        this.c = null;
+        g2Var.x();
+        this.d = null;
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.f2
-    public final void accept(double d) {
-        double[] dArr = this.c;
-        int i = this.d;
-        this.d = i + 1;
-        dArr[i] = d;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void s(Object obj) {
+        this.d.add(obj);
     }
 }

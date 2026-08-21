@@ -1,41 +1,39 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public abstract class W1 extends X1 {
-    public final /* synthetic */ int l;
+import java.util.function.Consumer;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ W1(a aVar, int i, int i2) {
-        super(aVar, i);
-        this.l = i2;
+/* loaded from: classes2.dex */
+public final class W1 extends Y1 {
+    @Override // j$.util.stream.Y1, j$.util.stream.Stream
+    public final void forEach(Consumer consumer) {
+        if (!this.a.k) {
+            O().forEachRemaining(consumer);
+        } else {
+            super.forEach(consumer);
+        }
     }
 
-    @Override // j$.util.stream.a
-    public final boolean L() {
-        switch (this.l) {
-            case 0:
-                return true;
-            default:
-                return false;
+    @Override // j$.util.stream.Y1, j$.util.stream.Stream
+    public final void forEachOrdered(Consumer consumer) {
+        if (!this.a.k) {
+            O().forEachRemaining(consumer);
+        } else {
+            super.forEachOrdered(consumer);
         }
     }
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream unordered() {
-        switch (this.l) {
-            case 0:
-                if (!S2.ORDERED.q(this.f)) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!S2.ORDERED.q(this.f)) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return new U1(this, S2.r, 1);
+        return !S2.ORDERED.q(this.f) ? this : new V1(this, S2.r, 1);
+    }
+
+    @Override // j$.util.stream.a
+    public final boolean L() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.stream.a
+    public final g2 M(int i, g2 g2Var) {
+        throw new UnsupportedOperationException();
     }
 }

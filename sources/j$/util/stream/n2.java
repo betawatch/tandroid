@@ -1,76 +1,42 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.IntFunction;
-
 /* loaded from: classes2.dex */
-public final class n2 extends w {
-    public final /* synthetic */ long m;
-    public final /* synthetic */ long n;
+public final class n2 extends Z1 {
+    public long b;
+    public long c;
+    public final /* synthetic */ o2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(x xVar, int i, long j, long j2) {
-        super(xVar, i, 0);
-        this.m = j;
-        this.n = j2;
+    public n2(o2 o2Var, g2 g2Var) {
+        super(g2Var);
+        this.d = o2Var;
+        this.b = o2Var.m;
+        long j = o2Var.n;
+        this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.a
-    public final Spliterator K(a aVar, Spliterator spliterator) {
-        long F = aVar.F(spliterator);
-        long j = this.n;
-        if (F > 0 && spliterator.hasCharacteristics(16384)) {
-            j$.util.T t = (j$.util.T) aVar.S(spliterator);
-            long j2 = this.m;
-            return new i3(t, j2, q1.A(j2, j));
-        }
-        if (S2.ORDERED.q(aVar.f)) {
-            return ((B0) new p2(this, aVar, spliterator, new Y(23), this.m, this.n).invoke()).spliterator();
-        }
-        j$.util.T t2 = (j$.util.T) aVar.S(spliterator);
-        long j3 = this.m;
-        if (j3 <= F) {
-            long j4 = F - j3;
-            if (j >= 0) {
-                j4 = Math.min(j, j4);
-            }
-            j = j4;
-            j3 = 0;
-        }
-        return new o3(t2, j3, j);
+    @Override // j$.util.stream.Z1, j$.util.stream.g2
+    public final void y(long j) {
+        this.a.y(r1.x(j, this.d.m, this.c));
     }
 
-    @Override // j$.util.stream.a
-    public final B0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
-        long j;
-        long j2;
-        long F = aVar.F(spliterator);
-        if (F > 0 && spliterator.hasCharacteristics(16384)) {
-            a aVar2 = aVar;
-            while (aVar2.e > 0) {
-                aVar2 = aVar2.b;
+    @Override // j$.util.stream.d2, j$.util.stream.g2
+    public final void accept(double d) {
+        long j = this.b;
+        if (j == 0) {
+            long j2 = this.c;
+            if (j2 > 0) {
+                this.c = j2 - 1;
+                this.a.accept(d);
+                return;
             }
-            return q1.C(aVar, q1.y(aVar2.H(), spliterator, this.m, this.n), true);
+            return;
         }
-        if (!S2.ORDERED.q(aVar.f)) {
-            j$.util.T t = (j$.util.T) aVar.S(spliterator);
-            long j3 = this.m;
-            long j4 = this.n;
-            if (j3 <= F) {
-                long j5 = F - j3;
-                j = j4 >= 0 ? Math.min(j4, j5) : j5;
-                j2 = 0;
-            } else {
-                j = j4;
-                j2 = j3;
-            }
-            return q1.C(this, new o3(t, j2, j), true);
-        }
-        return (B0) new p2(this, aVar, spliterator, intFunction, this.m, this.n).invoke();
+        this.b = j - 1;
     }
 
-    @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
-        return new m2(this, f2Var);
+    @Override // j$.util.stream.Z1, j$.util.stream.g2
+    public final boolean C() {
+        return this.c == 0 || this.a.C();
     }
 }

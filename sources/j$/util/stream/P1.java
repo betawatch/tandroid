@@ -1,36 +1,36 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final class P1 extends R1 implements e2 {
+public final class P1 extends S1 implements e2 {
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void A(Integer num) {
+        r1.g(this, num);
+    }
+
     @Override // java.util.function.Consumer
     /* renamed from: accept */
     public final /* bridge */ /* synthetic */ void s(Object obj) {
-        s((Long) obj);
+        A((Integer) obj);
     }
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void s(Long l) {
-        q1.i(this, l);
-    }
-
-    @Override // j$.util.stream.M1, java.util.function.Supplier
+    @Override // j$.util.stream.N1, java.util.function.Supplier
     public final Object get() {
         return Long.valueOf(this.b);
     }
 
-    @Override // j$.util.stream.L1
-    public final void n(L1 l1) {
-        this.b += ((R1) l1).b;
+    @Override // j$.util.stream.M1
+    public final void n(M1 m1) {
+        this.b += ((S1) m1).b;
     }
 
-    @Override // j$.util.stream.R1, j$.util.stream.f2
-    public final void accept(long j) {
+    @Override // j$.util.stream.S1, j$.util.stream.g2
+    public final void accept(int i) {
         this.b++;
     }
 }

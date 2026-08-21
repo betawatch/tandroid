@@ -1,31 +1,75 @@
 package j$.util.stream;
 
-import java.util.function.BinaryOperator;
-import java.util.function.DoubleBinaryOperator;
-import java.util.function.IntBinaryOperator;
-import java.util.function.LongBinaryOperator;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
+import java.util.function.ObjLongConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class t1 extends q1 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object i;
+public final class t1 extends N1 implements M1, f2 {
+    public final /* synthetic */ Supplier b;
+    public final /* synthetic */ ObjLongConsumer c;
+    public final /* synthetic */ o d;
 
-    public /* synthetic */ t1(T2 t2, Object obj, int i) {
-        this.h = i;
-        this.i = obj;
+    @Override // j$.util.stream.g2
+    public final /* synthetic */ boolean C() {
+        return false;
     }
 
-    @Override // j$.util.stream.q1
-    public final L1 Y() {
-        switch (this.h) {
-            case 0:
-                return new K1((LongBinaryOperator) this.i);
-            case 1:
-                return new w1((DoubleBinaryOperator) this.i);
-            case 2:
-                return new B1((BinaryOperator) this.i);
-            default:
-                return new H1((IntBinaryOperator) this.i);
-        }
+    @Override // j$.util.stream.g2
+    public final /* synthetic */ void accept(double d) {
+        r1.a();
+        throw null;
+    }
+
+    @Override // j$.util.stream.g2
+    public final /* synthetic */ void accept(int i) {
+        r1.k();
+        throw null;
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        s((Long) obj);
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void s(Long l) {
+        r1.i(this, l);
+    }
+
+    @Override // j$.util.stream.g2
+    public final /* synthetic */ void x() {
+    }
+
+    @Override // j$.util.stream.M1
+    public final void n(M1 m1) {
+        this.a = this.d.apply(this.a, ((t1) m1).a);
+    }
+
+    @Override // j$.util.stream.g2
+    public final void y(long j) {
+        this.a = this.b.get();
+    }
+
+    @Override // j$.util.stream.g2
+    public final void accept(long j) {
+        this.c.accept(this.a, j);
+    }
+
+    public t1(Supplier supplier, ObjLongConsumer objLongConsumer, o oVar) {
+        this.b = supplier;
+        this.c = objLongConsumer;
+        this.d = oVar;
     }
 }

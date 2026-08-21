@@ -1,37 +1,66 @@
 package j$.util.stream;
 
 import java.util.function.IntConsumer;
+import java.util.function.IntFunction;
+import java.util.function.IntPredicate;
+import java.util.function.IntToDoubleFunction;
+import java.util.function.IntToLongFunction;
+import java.util.function.IntUnaryOperator;
 
 /* loaded from: classes2.dex */
-public final class S extends W {
-    public final /* synthetic */ int m;
-    public final /* synthetic */ Object n;
+public final class S extends a2 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ S(a aVar, int i, Object obj, int i2) {
-        super(aVar, i, 1);
-        this.m = i2;
-        this.n = obj;
+    public /* synthetic */ S(a aVar, g2 g2Var, int i) {
+        super(g2Var);
+        this.b = i;
+        this.c = aVar;
     }
 
-    @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
-        switch (this.m) {
-            case 0:
-                return new Q(this, f2Var, 1);
-            case 1:
-                return new U(this, f2Var);
-            case 2:
-                return new k(this, f2Var, 4);
+    @Override // j$.util.stream.a2, j$.util.stream.g2
+    public void y(long j) {
+        switch (this.b) {
+            case 5:
+                this.a.y(-1L);
+                break;
             default:
-                return new T1(this, f2Var);
+                super.y(j);
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public S(X x, IntConsumer intConsumer) {
-        super(x, 0, 1);
-        this.m = 0;
-        this.n = intConsumer;
+    @Override // j$.util.stream.e2, j$.util.stream.g2
+    public final void accept(int i) {
+        switch (this.b) {
+            case 0:
+                this.a.accept((g2) ((IntFunction) ((q) this.c).n).apply(i));
+                return;
+            case 1:
+                ((IntConsumer) ((T) this.c).n).accept(i);
+                this.a.accept(i);
+                return;
+            case 2:
+                ((s) this.c).getClass();
+                IntUnaryOperator intUnaryOperator = null;
+                intUnaryOperator.applyAsInt(i);
+                throw null;
+            case 3:
+                ((t) this.c).getClass();
+                IntToLongFunction intToLongFunction = null;
+                intToLongFunction.applyAsLong(i);
+                throw null;
+            case 4:
+                ((r) this.c).getClass();
+                IntToDoubleFunction intToDoubleFunction = null;
+                intToDoubleFunction.applyAsDouble(i);
+                throw null;
+            default:
+                ((s) this.c).getClass();
+                IntPredicate intPredicate = null;
+                intPredicate.test(i);
+                throw null;
+        }
     }
 }

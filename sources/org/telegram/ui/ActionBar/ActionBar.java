@@ -1570,7 +1570,7 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
             SimpleTextView simpleTextView3 = actionBar.titleTextView[0];
             if ((simpleTextView3 != null && simpleTextView3.getVisibility() != 8) || ((simpleTextView = actionBar.subtitleTextView) != null && simpleTextView.getVisibility() != 8)) {
                 ActionBarMenu actionBarMenu3 = actionBar.menu;
-                int measuredWidth = (((size - (actionBarMenu3 != null ? actionBarMenu3.getMeasuredWidth() : 0)) - AndroidUtilities.dp(16.0f)) - dp) - actionBar.titleRightMargin;
+                int max = Math.max((((size - (actionBarMenu3 != null ? actionBarMenu3.getMeasuredWidth() : 0)) - AndroidUtilities.dp(16.0f)) - dp) - actionBar.titleRightMargin, 0);
                 boolean z = actionBar.fromBottom;
                 int i5 = 20;
                 if (((z && i4 == 0) || (!z && i4 == i3)) && actionBar.overlayTitleAnimation && actionBar.titleAnimationRunning) {
@@ -1621,7 +1621,7 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
                 }
                 SimpleTextView simpleTextView12 = actionBar.titleTextView[i4];
                 if (simpleTextView12 != null && simpleTextView12.getVisibility() != 8) {
-                    actionBar.titleTextView[i4].measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f) + actionBar.titleTextView[i4].getPaddingTop() + actionBar.titleTextView[i4].getPaddingBottom(), TLObject.FLAG_31));
+                    actionBar.titleTextView[i4].measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f) + actionBar.titleTextView[i4].getPaddingTop() + actionBar.titleTextView[i4].getPaddingBottom(), TLObject.FLAG_31));
                     if (actionBar.centerScale) {
                         CharSequence text = actionBar.titleTextView[i4].getText();
                         SimpleTextView simpleTextView13 = actionBar.titleTextView[i4];
@@ -1634,15 +1634,15 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
                 }
                 SimpleTextView simpleTextView14 = actionBar.subtitleTextView;
                 if (simpleTextView14 != null && simpleTextView14.getVisibility() != 8) {
-                    actionBar.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
+                    actionBar.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
                 }
                 ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = actionBar.additionalSubTitleOverlayContainer;
                 if (actionBarAnimatedSubtitleOverlayContainer != null) {
-                    actionBarAnimatedSubtitleOverlayContainer.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                    actionBarAnimatedSubtitleOverlayContainer.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                 }
                 SimpleTextView simpleTextView15 = actionBar.additionalSubtitleTextView;
                 if (simpleTextView15 != null && simpleTextView15.getVisibility() != 8) {
-                    actionBar.additionalSubtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
+                    actionBar.additionalSubtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
                 }
             }
             i4++;

@@ -7,7 +7,7 @@ public final class QueryPurchasesParams {
     public static class Builder {
         private String zza;
 
-        /* synthetic */ Builder(zzdb zzdbVar) {
+        /* synthetic */ Builder(zzda zzdaVar) {
         }
 
         public QueryPurchasesParams build() {
@@ -23,7 +23,7 @@ public final class QueryPurchasesParams {
         }
     }
 
-    /* synthetic */ QueryPurchasesParams(Builder builder, zzdb zzdbVar) {
+    /* synthetic */ QueryPurchasesParams(Builder builder, zzda zzdaVar) {
         this.zza = builder.zza;
     }
 

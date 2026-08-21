@@ -6,12 +6,12 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public final class QueryProductDetailsParams {
-    private final com.google.android.gms.internal.play_billing.zzco zza;
+    private final com.google.android.gms.internal.play_billing.zzbt zza;
 
     public static class Builder {
-        private com.google.android.gms.internal.play_billing.zzco zza;
+        private com.google.android.gms.internal.play_billing.zzbt zza;
 
-        /* synthetic */ Builder(zzcz zzczVar) {
+        /* synthetic */ Builder(zzcy zzcyVar) {
         }
 
         public QueryProductDetailsParams build() {
@@ -36,7 +36,7 @@ public final class QueryProductDetailsParams {
             if (hashSet.size() > 1) {
                 throw new IllegalArgumentException("All products should be of the same product type.");
             }
-            this.zza = com.google.android.gms.internal.play_billing.zzco.zzk(list);
+            this.zza = com.google.android.gms.internal.play_billing.zzbt.zzj(list);
             return this;
         }
     }
@@ -49,7 +49,7 @@ public final class QueryProductDetailsParams {
             private String zza;
             private String zzb;
 
-            /* synthetic */ Builder(zzcz zzczVar) {
+            /* synthetic */ Builder(zzcy zzcyVar) {
             }
 
             public Product build() {
@@ -76,7 +76,7 @@ public final class QueryProductDetailsParams {
             }
         }
 
-        /* synthetic */ Product(Builder builder, zzcz zzczVar) {
+        /* synthetic */ Product(Builder builder, zzcy zzcyVar) {
             this.zza = builder.zza;
             this.zzb = builder.zzb;
         }
@@ -94,7 +94,7 @@ public final class QueryProductDetailsParams {
         }
     }
 
-    /* synthetic */ QueryProductDetailsParams(Builder builder, zzcz zzczVar) {
+    /* synthetic */ QueryProductDetailsParams(Builder builder, zzcy zzcyVar) {
         this.zza = builder.zza;
     }
 
@@ -102,7 +102,7 @@ public final class QueryProductDetailsParams {
         return new Builder(null);
     }
 
-    public final com.google.android.gms.internal.play_billing.zzco zza() {
+    public final com.google.android.gms.internal.play_billing.zzbt zza() {
         return this.zza;
     }
 

@@ -1,24 +1,19 @@
 package com.google.android.gms.internal.play_billing;
 
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ListIterator;
 
 /* loaded from: classes.dex */
-public abstract class zzci {
-    zzci() {
+public abstract class zzci extends zzch implements ListIterator {
+    protected zzci() {
     }
 
-    static int zzc(int i, int i2) {
-        if (i2 < 0) {
-            throw new IllegalArgumentException("cannot store more than MAX_VALUE elements");
-        }
-        if (i2 <= i) {
-            return i;
-        }
-        int i3 = i + (i >> 1) + 1;
-        if (i3 < i2) {
-            int highestOneBit = Integer.highestOneBit(i2 - 1);
-            i3 = highestOneBit + highestOneBit;
-        }
-        return i3 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i3;
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

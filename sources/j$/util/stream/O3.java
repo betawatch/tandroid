@@ -2,5 +2,5 @@ package j$.util.stream;
 
 /* loaded from: classes2.dex */
 public interface O3 {
-    P3 j(t0 t0Var, boolean z);
+    P3 j(u0 u0Var, boolean z);
 }

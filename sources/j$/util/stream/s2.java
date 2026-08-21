@@ -4,7 +4,7 @@ package j$.util.stream;
 public abstract class s2 extends a2 {
     public boolean b;
 
-    @Override // j$.util.stream.a2, j$.util.stream.f2
+    @Override // j$.util.stream.a2, j$.util.stream.g2
     public final boolean C() {
         this.b = true;
         return false;

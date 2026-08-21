@@ -1,46 +1,63 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
 /* loaded from: classes.dex */
-final class zzl extends zzf {
-    final AtomicReferenceFieldUpdater zza;
-    final AtomicReferenceFieldUpdater zzb;
-    final AtomicReferenceFieldUpdater zzc;
-    final AtomicReferenceFieldUpdater zzd;
-    final AtomicReferenceFieldUpdater zze;
-
-    zzl(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
+final class zzl extends zzd {
+    zzl() {
         super(null);
-        this.zza = atomicReferenceFieldUpdater;
-        this.zzb = atomicReferenceFieldUpdater2;
-        this.zzc = atomicReferenceFieldUpdater3;
-        this.zzd = atomicReferenceFieldUpdater4;
-        this.zze = atomicReferenceFieldUpdater5;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzf
-    final void zza(zzo zzoVar, zzo zzoVar2) {
-        this.zzb.lazySet(zzoVar, zzoVar2);
+    @Override // com.google.android.gms.internal.play_billing.zzd
+    final void zza(zzm zzmVar, zzm zzmVar2) {
+        zzmVar.zzc = zzmVar2;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzf
-    final void zzb(zzo zzoVar, Thread thread) {
-        this.zza.lazySet(zzoVar, thread);
+    @Override // com.google.android.gms.internal.play_billing.zzd
+    final void zzb(zzm zzmVar, Thread thread) {
+        zzmVar.zzb = thread;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzf
-    final boolean zzc(zzq zzqVar, zzj zzjVar, zzj zzjVar2) {
-        return zzk.zza(this.zzd, zzqVar, zzjVar, zzjVar2);
+    @Override // com.google.android.gms.internal.play_billing.zzd
+    final boolean zzc(zzo zzoVar, zzh zzhVar, zzh zzhVar2) {
+        synchronized (zzoVar) {
+            try {
+                if (zzoVar.zzd != zzhVar) {
+                    return false;
+                }
+                zzoVar.zzd = zzhVar2;
+                return true;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzf
-    final boolean zzd(zzq zzqVar, Object obj, Object obj2) {
-        return zzk.zza(this.zze, zzqVar, obj, obj2);
+    @Override // com.google.android.gms.internal.play_billing.zzd
+    final boolean zzd(zzo zzoVar, Object obj, Object obj2) {
+        synchronized (zzoVar) {
+            try {
+                if (zzoVar.zzc != obj) {
+                    return false;
+                }
+                zzoVar.zzc = obj2;
+                return true;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzf
-    final boolean zze(zzq zzqVar, zzo zzoVar, zzo zzoVar2) {
-        return zzk.zza(this.zzc, zzqVar, zzoVar, zzoVar2);
+    @Override // com.google.android.gms.internal.play_billing.zzd
+    final boolean zze(zzo zzoVar, zzm zzmVar, zzm zzmVar2) {
+        synchronized (zzoVar) {
+            try {
+                if (zzoVar.zze != zzmVar) {
+                    return false;
+                }
+                zzoVar.zze = zzmVar2;
+                return true;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 }

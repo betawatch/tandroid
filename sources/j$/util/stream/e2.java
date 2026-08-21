@@ -1,11 +1,11 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public interface e2 extends f2, LongConsumer {
-    @Override // j$.util.stream.f2
-    void accept(long j);
+public interface e2 extends g2, IntConsumer {
+    void A(Integer num);
 
-    void s(Long l);
+    @Override // j$.util.stream.g2
+    void accept(int i);
 }

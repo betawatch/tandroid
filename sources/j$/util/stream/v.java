@@ -1,57 +1,37 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
 public final class v extends x {
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final A sequential() {
-        this.a.k = false;
-        return this;
+    public final /* synthetic */ int m;
+    public final /* synthetic */ Object n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v(a aVar, int i, Object obj, int i2) {
+        super(aVar, i, 1);
+        this.m = i2;
+        this.n = obj;
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final A parallel() {
-        this.a.k = true;
-        return this;
-    }
-
-    @Override // j$.util.stream.x, j$.util.stream.A
-    public final void forEach(DoubleConsumer doubleConsumer) {
-        if (this.a.k) {
-            super.forEach(doubleConsumer);
-        } else {
-            x.T(O()).forEachRemaining(doubleConsumer);
-        }
-    }
-
-    @Override // j$.util.stream.x, j$.util.stream.A
-    public final void forEachOrdered(DoubleConsumer doubleConsumer) {
-        if (this.a.k) {
-            super.forEachOrdered(doubleConsumer);
-        } else {
-            x.T(O()).forEachRemaining(doubleConsumer);
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !S2.ORDERED.q(this.f) ? this : new q(this, S2.r, 1);
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v(y yVar, DoubleConsumer doubleConsumer) {
+        super(yVar, 0, 1);
+        this.m = 1;
+        this.n = doubleConsumer;
     }
 
     @Override // j$.util.stream.a
-    public final boolean L() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
-        throw new UnsupportedOperationException();
+    public final g2 M(int i, g2 g2Var) {
+        switch (this.m) {
+            case 0:
+                return new u(this, g2Var);
+            case 1:
+                return new p(this, g2Var, 5);
+            case 2:
+                return new l(this, g2Var, 6);
+            default:
+                return new U1(this, g2Var);
+        }
     }
 }

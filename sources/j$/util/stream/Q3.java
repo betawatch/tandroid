@@ -28,7 +28,7 @@ public final class Q3 extends d {
             long j2 = q32.k;
             Q3 q33 = (Q3) this.e;
             this.k = j2 + q33.k;
-            B0 F = q32.k == 0 ? (B0) q33.f : q33.k == 0 ? (B0) q32.f : q1.F(this.h.H(), (B0) ((Q3) this.d).f, (B0) ((Q3) this.e).f);
+            C0 F = q32.k == 0 ? (C0) q33.f : q33.k == 0 ? (C0) q32.f : r1.F(this.h.H(), (C0) ((Q3) this.d).f, (C0) ((Q3) this.e).f);
             if (b() && this.j) {
                 F = F.f(this.l, F.count(), this.i);
             }
@@ -67,20 +67,20 @@ public final class Q3 extends d {
             int i2 = s2.e;
             if ((i & i2) == i2) {
                 j = aVar.F(this.b);
-                t0 I = this.a.I(j, this.i);
+                u0 I = this.a.I(j, this.i);
                 P3 j2 = ((O3) this.h).j(I, (this.j || b) ? false : true);
                 this.a.Q(this.b, j2);
-                B0 a = I.a();
+                C0 a = I.a();
                 this.k = a.count();
                 this.l = j2.m();
                 return a;
             }
         }
         j = -1;
-        t0 I2 = this.a.I(j, this.i);
+        u0 I2 = this.a.I(j, this.i);
         P3 j22 = ((O3) this.h).j(I2, (this.j || b) ? false : true);
         this.a.Q(this.b, j22);
-        B0 a2 = I2.a();
+        C0 a2 = I2.a();
         this.k = a2.count();
         this.l = j22.m();
         return a2;

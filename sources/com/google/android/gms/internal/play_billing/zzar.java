@@ -1,30 +1,34 @@
 package com.google.android.gms.internal.play_billing;
 
-import android.os.Binder;
-import android.os.IBinder;
-import android.os.IInterface;
+import android.os.BadParcelableException;
 import android.os.Parcel;
+import android.os.Parcelable;
 
 /* loaded from: classes.dex */
-public abstract class zzar extends Binder implements IInterface {
-    protected zzar(String str) {
-        attachInterface(this, str);
+public abstract class zzar {
+    public static final /* synthetic */ int $r8$clinit = 0;
+
+    static {
+        zzar.class.getClassLoader();
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
-    }
-
-    @Override // android.os.Binder
-    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-        if (i <= 16777215) {
-            parcel.enforceInterface(getInterfaceDescriptor());
-        } else if (super.onTransact(i, parcel, parcel2, i2)) {
-            return true;
+    public static Parcelable zza(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
         }
-        return zzb(i, parcel, parcel2, i2);
+        return (Parcelable) creator.createFromParcel(parcel);
     }
 
-    protected abstract boolean zzb(int i, Parcel parcel, Parcel parcel2, int i2);
+    public static void zzb(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail <= 0) {
+            return;
+        }
+        throw new BadParcelableException("Parcel data not fully consumed, unread size: " + dataAvail);
+    }
+
+    public static void zzc(Parcel parcel, Parcelable parcelable) {
+        parcel.writeInt(1);
+        parcelable.writeToParcel(parcel, 0);
+    }
 }

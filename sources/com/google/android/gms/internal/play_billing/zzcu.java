@@ -1,14 +1,20 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 /* loaded from: classes.dex */
-public final class zzcu extends zzch {
-    public zzcu() {
-        super(4);
+public abstract class zzcu extends zzcw {
+    public static zzcz zza(Object obj) {
+        return new zzcx(obj);
     }
 
-    public final zzcu zzd(Object obj) {
-        obj.getClass();
-        super.zza(obj);
-        return this;
+    public static zzcz zzb(zzcz zzczVar, long j, TimeUnit timeUnit, ScheduledExecutorService scheduledExecutorService) {
+        return zzczVar.isDone() ? zzczVar : zzde.zzs(zzczVar, 28500L, timeUnit, scheduledExecutorService);
+    }
+
+    public static void zzc(zzcz zzczVar, zzcs zzcsVar, Executor executor) {
+        zzczVar.zzb(new zzct(zzczVar, zzcsVar), executor);
     }
 }

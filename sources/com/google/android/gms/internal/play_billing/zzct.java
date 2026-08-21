@@ -1,34 +1,60 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.io.Serializable;
-import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /* loaded from: classes.dex */
-public final class zzct extends zzbi implements Serializable {
-    private static final zzct zza;
-    private static final zzct zzb;
-    private final transient zzco zzc;
+final class zzct implements Runnable {
+    final Future zza;
+    final zzcs zzb;
 
-    static {
-        int i = zzco.$r8$clinit;
-        zza = new zzct(zzdk.zza);
-        zzb = new zzct(zzco.zzm(zzdh.zza()));
+    zzct(Future future, zzcs zzcsVar) {
+        this.zza = future;
+        this.zzb = zzcsVar;
     }
 
-    zzct(zzco zzcoVar) {
-        this.zzc = zzcoVar;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object obj;
+        Throwable zza;
+        boolean z = false;
+        Future future = this.zza;
+        if ((future instanceof zzdf) && (zza = zzdg.zza((zzdf) future)) != null) {
+            this.zzb.zza(zza);
+            return;
+        }
+        try {
+            if (!future.isDone()) {
+                throw new IllegalStateException(zzbj.zza("Future was expected to be done: %s", future));
+            }
+            while (true) {
+                try {
+                    obj = future.get();
+                    break;
+                } catch (InterruptedException unused) {
+                    z = true;
+                } catch (Throwable th) {
+                    if (z) {
+                        Thread.currentThread().interrupt();
+                    }
+                    throw th;
+                }
+            }
+            if (z) {
+                Thread.currentThread().interrupt();
+            }
+            this.zzb.zzb(obj);
+        } catch (ExecutionException e) {
+            this.zzb.zza(e.getCause());
+        } catch (Throwable th2) {
+            this.zzb.zza(th2);
+        }
     }
 
-    static zzct zza() {
-        return zzb;
-    }
-
-    public static zzct zzb() {
-        return zza;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzdj
-    public final /* bridge */ /* synthetic */ Set zzc() {
-        return this.zzc.isEmpty() ? zzdq.zza : new zzdr(this.zzc, zzdg.zza);
+    public final String toString() {
+        zzbc zza = zzbe.zza(this);
+        zza.zza(this.zzb);
+        return zza.toString();
     }
 }

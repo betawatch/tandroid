@@ -134,7 +134,7 @@ public final class s extends b implements Collection {
         return new j(lVarArr, length, 0, length, j < 0 ? 0L : j, 1);
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public final void forEach(Consumer consumer) {
         consumer.getClass();
         l[] lVarArr = this.a.a;

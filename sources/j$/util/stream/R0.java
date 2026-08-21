@@ -6,45 +6,45 @@ import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-public final class R0 extends U0 implements x0 {
-    @Override // j$.util.stream.U0, j$.util.stream.B0
-    public final /* synthetic */ B0 f(long j, long j2, IntFunction intFunction) {
-        return q1.u(this, j, j2);
+public final class R0 extends V0 implements w0 {
+    @Override // j$.util.stream.V0, j$.util.stream.C0
+    public final /* synthetic */ C0 f(long j, long j2, IntFunction intFunction) {
+        return r1.t(this, j, j2);
     }
 
-    @Override // j$.util.stream.B0
+    @Override // j$.util.stream.C0
     public final /* synthetic */ void forEach(Consumer consumer) {
-        q1.r(this, consumer);
+        r1.q(this, consumer);
     }
 
-    @Override // j$.util.stream.U0, j$.util.stream.B0
-    public final /* bridge */ /* synthetic */ B0 b(int i) {
+    @Override // j$.util.stream.V0, j$.util.stream.C0
+    public final /* bridge */ /* synthetic */ C0 b(int i) {
         b(i);
         throw null;
     }
 
-    @Override // j$.util.stream.U0, j$.util.stream.B0
-    public final A0 b(int i) {
+    @Override // j$.util.stream.V0, j$.util.stream.C0
+    public final B0 b(int i) {
         throw new IndexOutOfBoundsException();
     }
 
-    @Override // j$.util.stream.B0
+    @Override // j$.util.stream.C0
     public final /* synthetic */ void g(Object[] objArr, int i) {
-        q1.o(this, (Integer[]) objArr, i);
+        r1.n(this, (Double[]) objArr, i);
     }
 
-    @Override // j$.util.stream.A0
+    @Override // j$.util.stream.B0
     public final /* bridge */ /* synthetic */ Object d() {
-        return q1.e;
+        return r1.g;
     }
 
-    @Override // j$.util.stream.B0
+    @Override // j$.util.stream.C0
     public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return Spliterators.b;
+        return Spliterators.d;
     }
 
-    @Override // j$.util.stream.B0
+    @Override // j$.util.stream.C0
     public final /* bridge */ /* synthetic */ j$.util.c0 spliterator() {
-        return Spliterators.b;
+        return Spliterators.d;
     }
 }

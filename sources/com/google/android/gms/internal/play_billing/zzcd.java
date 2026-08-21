@@ -1,39 +1,39 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.Iterator;
+
 /* loaded from: classes.dex */
-final class zzcd extends zzce {
-    private static final zzcd zzb = new zzcd();
+final class zzcd extends zzbx {
+    private final transient zzbw zza;
+    private final transient zzbt zzb;
 
-    private zzcd() {
-        super("");
+    zzcd(zzbw zzbwVar, zzbt zzbtVar) {
+        this.zza = zzbwVar;
+        this.zzb = zzbtVar;
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        return zza((zzce) obj);
+    @Override // com.google.android.gms.internal.play_billing.zzbq, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.zza.get(obj) != null;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    public final int hashCode() {
-        return System.identityHashCode(this);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.zzb.listIterator(0);
     }
 
-    public final String toString() {
-        return "-∞";
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.zza.size();
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    public final int zza(zzce zzceVar) {
-        return zzceVar == this ? 0 : -1;
+    @Override // com.google.android.gms.internal.play_billing.zzbq
+    final int zza(Object[] objArr, int i) {
+        return this.zzb.zza(objArr, 0);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    final void zzc(StringBuilder sb) {
-        sb.append("(-∞");
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    final void zzd(StringBuilder sb) {
-        throw new AssertionError();
+    @Override // com.google.android.gms.internal.play_billing.zzbx, com.google.android.gms.internal.play_billing.zzbq
+    public final zzbt zzd() {
+        return this.zzb;
     }
 }

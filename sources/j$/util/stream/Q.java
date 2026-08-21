@@ -1,66 +1,68 @@
 package j$.util.stream;
 
-import java.util.function.IntConsumer;
-import java.util.function.IntFunction;
-import java.util.function.IntPredicate;
-import java.util.function.IntToDoubleFunction;
-import java.util.function.IntToLongFunction;
-import java.util.function.IntUnaryOperator;
+import j$.util.Spliterator;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-public final class Q extends Z1 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ a c;
+public final class Q extends CountedCompleter {
+    public Spliterator a;
+    public final g2 b;
+    public final a c;
+    public long d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ Q(a aVar, f2 f2Var, int i) {
-        super(f2Var);
-        this.b = i;
+    public Q(a aVar, Spliterator spliterator, g2 g2Var) {
+        super(null);
+        this.b = g2Var;
         this.c = aVar;
+        this.a = spliterator;
+        this.d = 0L;
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.f2
-    public void y(long j) {
-        switch (this.b) {
-            case 5:
-                this.a.y(-1L);
-                break;
-            default:
-                super.y(j);
-                break;
-        }
+    public Q(Q q, Spliterator spliterator) {
+        super(q);
+        this.a = spliterator;
+        this.b = q.b;
+        this.d = q.d;
+        this.c = q.c;
     }
 
-    @Override // j$.util.stream.d2, j$.util.stream.f2
-    public final void accept(int i) {
-        switch (this.b) {
-            case 0:
-                this.a.accept((f2) ((IntFunction) ((p) this.c).n).apply(i));
-                return;
-            case 1:
-                ((IntConsumer) ((S) this.c).n).accept(i);
-                this.a.accept(i);
-                return;
-            case 2:
-                ((r) this.c).getClass();
-                IntUnaryOperator intUnaryOperator = null;
-                intUnaryOperator.applyAsInt(i);
-                throw null;
-            case 3:
-                ((s) this.c).getClass();
-                IntToLongFunction intToLongFunction = null;
-                intToLongFunction.applyAsLong(i);
-                throw null;
-            case 4:
-                ((q) this.c).getClass();
-                IntToDoubleFunction intToDoubleFunction = null;
-                intToDoubleFunction.applyAsDouble(i);
-                throw null;
-            default:
-                ((r) this.c).getClass();
-                IntPredicate intPredicate = null;
-                intPredicate.test(i);
-                throw null;
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.a;
+        long estimateSize = spliterator.estimateSize();
+        long j = this.d;
+        if (j == 0) {
+            j = d.e(estimateSize);
+            this.d = j;
         }
+        boolean q = S2.SHORT_CIRCUIT.q(this.c.f);
+        g2 g2Var = this.b;
+        boolean z = false;
+        Q q2 = this;
+        while (true) {
+            if (q && g2Var.C()) {
+                break;
+            }
+            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
+                break;
+            }
+            Q q3 = new Q(q2, trySplit);
+            q2.addToPendingCount(1);
+            if (z) {
+                spliterator = trySplit;
+            } else {
+                Q q4 = q2;
+                q2 = q3;
+                q3 = q4;
+            }
+            z = !z;
+            q2.fork();
+            q2 = q3;
+            estimateSize = spliterator.estimateSize();
+        }
+        q2.c.z(spliterator, g2Var);
+        q2.a = null;
+        q2.propagateCompletion();
     }
 }

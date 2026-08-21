@@ -1,22 +1,39 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-interface zzix {
-    int zza(Object obj);
+final class zzix implements zzfl {
+    static final zzfl zza = new zzix();
 
-    int zzb(Object obj);
+    private zzix() {
+    }
 
-    Object zze();
-
-    void zzf(Object obj);
-
-    void zzg(Object obj, Object obj2);
-
-    void zzh(Object obj, byte[] bArr, int i, int i2, zzfz zzfzVar);
-
-    void zzi(Object obj, zzjw zzjwVar);
-
-    boolean zzj(Object obj, Object obj2);
-
-    boolean zzk(Object obj);
+    @Override // com.google.android.gms.internal.play_billing.zzfl
+    public final boolean zza(int i) {
+        switch (i) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                return true;
+            case 14:
+            case 15:
+            case 16:
+            default:
+                return false;
+        }
+    }
 }

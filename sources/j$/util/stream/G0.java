@@ -1,30 +1,67 @@
 package j$.util.stream;
 
+import j$.util.Collection;
 import j$.util.Spliterator;
-import java.util.function.BinaryOperator;
-import java.util.function.LongFunction;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-public final class G0 extends H0 {
-    public final /* synthetic */ int k;
+public final class G0 implements C0 {
+    public final Collection a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ G0(a aVar, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator, int i) {
-        super(aVar, spliterator, longFunction, binaryOperator);
-        this.k = i;
+    @Override // j$.util.stream.C0
+    public final /* synthetic */ C0 f(long j, long j2, IntFunction intFunction) {
+        return r1.w(this, j, j2, intFunction);
     }
 
-    @Override // j$.util.stream.H0, j$.util.stream.d
-    public final d c(Spliterator spliterator) {
-        switch (this.k) {
-        }
-        return new H0(this, spliterator);
+    @Override // j$.util.stream.C0
+    public final /* synthetic */ int i() {
+        return 0;
     }
 
-    @Override // j$.util.stream.H0, j$.util.stream.d
-    public final /* bridge */ /* synthetic */ Object a() {
-        switch (this.k) {
+    @Override // j$.util.stream.C0
+    public final C0 b(int i) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    public G0(Collection collection) {
+        this.a = collection;
+    }
+
+    @Override // j$.util.stream.C0
+    public final Spliterator spliterator() {
+        return Collection.-EL.stream(this.a).spliterator();
+    }
+
+    @Override // j$.util.stream.C0
+    public final void g(Object[] objArr, int i) {
+        Iterator it = this.a.iterator();
+        while (it.hasNext()) {
+            objArr[i] = it.next();
+            i++;
         }
-        return a();
+    }
+
+    @Override // j$.util.stream.C0
+    public final Object[] h(IntFunction intFunction) {
+        java.util.Collection collection = this.a;
+        return collection.toArray((Object[]) intFunction.apply(collection.size()));
+    }
+
+    @Override // j$.util.stream.C0
+    public final long count() {
+        return this.a.size();
+    }
+
+    @Override // j$.util.stream.C0
+    public final void forEach(Consumer consumer) {
+        Collection.-EL.a(this.a, consumer);
+    }
+
+    public final String toString() {
+        java.util.Collection collection = this.a;
+        return String.format("CollectionNode[%d][%s]", Integer.valueOf(collection.size()), collection);
     }
 }

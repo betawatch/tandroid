@@ -7,8 +7,8 @@ import com.google.android.datatransport.Transformer;
 import com.google.android.datatransport.Transport;
 import com.google.android.datatransport.cct.CCTDestination;
 import com.google.android.datatransport.runtime.TransportRuntime;
-import com.google.android.gms.internal.play_billing.zze;
-import com.google.android.gms.internal.play_billing.zzlk;
+import com.google.android.gms.internal.play_billing.zzc;
+import com.google.android.gms.internal.play_billing.zzji;
 
 /* loaded from: classes.dex */
 final class zzcn {
@@ -18,10 +18,10 @@ final class zzcn {
     zzcn(Context context) {
         try {
             TransportRuntime.initialize(context);
-            this.zzb = TransportRuntime.getInstance().newFactory(CCTDestination.INSTANCE).getTransport("PLAY_BILLING_LIBRARY", zzlk.class, Encoding.of("proto"), new Transformer() { // from class: com.android.billingclient.api.zzcm
+            this.zzb = TransportRuntime.getInstance().newFactory(CCTDestination.INSTANCE).getTransport("PLAY_BILLING_LIBRARY", zzji.class, Encoding.of("proto"), new Transformer() { // from class: com.android.billingclient.api.zzcm
                 @Override // com.google.android.datatransport.Transformer
                 public final Object apply(Object obj) {
-                    return ((zzlk) obj).zzh();
+                    return ((zzji) obj).zzM();
                 }
             });
         } catch (Throwable unused) {
@@ -29,15 +29,15 @@ final class zzcn {
         }
     }
 
-    public final void zza(zzlk zzlkVar) {
+    public final void zza(zzji zzjiVar) {
         if (this.zza) {
-            zze.zzl("BillingLogger", "Skipping logging since initialization failed.");
+            zzc.zzn("BillingLogger", "Skipping logging since initialization failed.");
             return;
         }
         try {
-            this.zzb.send(Event.ofData(zzlkVar));
+            this.zzb.send(Event.ofData(zzjiVar));
         } catch (Throwable unused) {
-            zze.zzl("BillingLogger", "logging failed.");
+            zzc.zzn("BillingLogger", "logging failed.");
         }
     }
 }

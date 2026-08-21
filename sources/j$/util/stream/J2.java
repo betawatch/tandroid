@@ -1,41 +1,83 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
+import j$.util.Objects;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.DoubleConsumer;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
-public final class J2 extends N2 implements j$.util.W {
-    public final /* synthetic */ K2 g;
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.j(this, consumer);
+public class J2 extends P2 implements DoubleConsumer {
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.A(this, consumer);
+    @Override // j$.util.stream.P2
+    public final void k(Object obj, int i, int i2, Object obj2) {
+        double[] dArr = (double[]) obj;
+        DoubleConsumer doubleConsumer = (DoubleConsumer) obj2;
+        while (i < i2) {
+            doubleConsumer.accept(dArr[i]);
+            i++;
+        }
     }
 
-    @Override // j$.util.stream.N2
-    public final void a(int i, Object obj, Object obj2) {
-        ((IntConsumer) obj2).accept(((int[]) obj)[i]);
+    @Override // j$.util.stream.P2
+    public final int l(Object obj) {
+        return ((double[]) obj).length;
     }
 
-    @Override // j$.util.stream.N2
-    public final j$.util.c0 b(Object obj, int i, int i2) {
-        return DesugarArrays.b((int[]) obj, i, i2 + i);
+    @Override // java.lang.Iterable
+    public final void forEach(Consumer consumer) {
+        if (consumer instanceof DoubleConsumer) {
+            e((DoubleConsumer) consumer);
+        } else {
+            if (A3.a) {
+                A3.a(getClass(), "{0} calling SpinedBuffer.OfDouble.forEach(Consumer)");
+                throw null;
+            }
+            j$.com.android.tools.r8.a.i((I2) spliterator(), consumer);
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public J2(K2 k2, int i, int i2, int i3, int i4) {
-        super(k2, i, i2, i3, i4);
-        this.g = k2;
+    @Override // j$.util.stream.P2
+    public final Object[] q() {
+        return new double[8][];
     }
 
-    @Override // j$.util.stream.N2
-    public final j$.util.c0 c(int i, int i2, int i3, int i4) {
-        return new J2(this.g, i, i2, i3, i4);
+    @Override // j$.util.stream.P2
+    public final Object c(int i) {
+        return new double[i];
+    }
+
+    @Override // java.util.function.DoubleConsumer
+    public void accept(double d) {
+        r();
+        double[] dArr = (double[]) this.e;
+        int i = this.b;
+        this.b = i + 1;
+        dArr[i] = d;
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        j$.util.T spliterator = spliterator();
+        Objects.requireNonNull(spliterator);
+        return new j$.util.h0(spliterator);
+    }
+
+    @Override // j$.util.stream.P2, java.lang.Iterable
+    /* renamed from: t, reason: merged with bridge method [inline-methods] */
+    public j$.util.T spliterator() {
+        return new I2(this, 0, this.c, 0, this.b);
+    }
+
+    public final String toString() {
+        double[] dArr = (double[]) d();
+        if (dArr.length < 200) {
+            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(dArr));
+        }
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(dArr, NotificationCenter.dialogPhotosUpdate)));
     }
 }

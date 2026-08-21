@@ -1,39 +1,151 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+
 /* loaded from: classes.dex */
-final class zzgf extends zzgi {
-    private final int zzc;
+public final class zzgf extends LinkedHashMap {
+    private static final zzgf zza;
+    private boolean zzb;
 
-    zzgf(byte[] bArr, int i, int i2) {
-        super(bArr);
-        zzgk.zzh(0, i2, bArr.length);
-        this.zzc = i2;
+    static {
+        zzgf zzgfVar = new zzgf();
+        zza = zzgfVar;
+        zzgfVar.zzb = false;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzgi, com.google.android.gms.internal.play_billing.zzgk
-    final byte zzb(int i) {
-        return ((zzgi) this).zza[i];
+    private zzgf() {
+        this.zzb = true;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzgi
-    protected final int zzc() {
-        return 0;
+    public static zzgf zza() {
+        return zza;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzgi, com.google.android.gms.internal.play_billing.zzgk
-    public final int zzd() {
-        return this.zzc;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzgi, com.google.android.gms.internal.play_billing.zzgk
-    public final byte zza(int i) {
-        int i2 = this.zzc;
-        if (((i2 - (i + 1)) | i) >= 0) {
-            return ((zzgi) this).zza[i];
+    private static int zzf(Object obj) {
+        if (!(obj instanceof byte[])) {
+            if (obj instanceof zzfk) {
+                throw new UnsupportedOperationException();
+            }
+            return obj.hashCode();
         }
-        if (i < 0) {
-            throw new ArrayIndexOutOfBoundsException("Index < 0: " + i);
+        byte[] bArr = (byte[]) obj;
+        byte[] bArr2 = zzfo.zzb;
+        int length = bArr.length;
+        int zzb = zzfo.zzb(length, bArr, 0, length);
+        if (zzb == 0) {
+            return 1;
         }
-        throw new ArrayIndexOutOfBoundsException("Index > length: " + i + ", " + i2);
+        return zzb;
+    }
+
+    private final void zzg() {
+        if (!this.zzb) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        zzg();
+        super.clear();
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof Map)) {
+            return false;
+        }
+        Map map = (Map) obj;
+        if (this == map) {
+            return true;
+        }
+        if (size() != map.size()) {
+            return false;
+        }
+        Iterator it = entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            if (!map.containsKey(entry.getKey())) {
+                return false;
+            }
+            Object value = entry.getValue();
+            Object obj2 = map.get(entry.getKey());
+            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        Iterator it = entrySet().iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            i += zzf(entry.getValue()) ^ zzf(entry.getKey());
+        }
+        return i;
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        zzg();
+        byte[] bArr = zzfo.zzb;
+        obj.getClass();
+        obj2.getClass();
+        return super.put(obj, obj2);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void putAll(Map map) {
+        zzg();
+        for (Object obj : map.keySet()) {
+            byte[] bArr = zzfo.zzb;
+            obj.getClass();
+            map.get(obj).getClass();
+        }
+        super.putAll(map);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        zzg();
+        return super.remove(obj);
+    }
+
+    public final zzgf zzb() {
+        return isEmpty() ? new zzgf() : new zzgf(this);
+    }
+
+    public final void zzc() {
+        this.zzb = false;
+    }
+
+    public final void zzd(zzgf zzgfVar) {
+        zzg();
+        if (zzgfVar.isEmpty()) {
+            return;
+        }
+        putAll(zzgfVar);
+    }
+
+    public final boolean zze() {
+        return this.zzb;
+    }
+
+    private zzgf(Map map) {
+        super(map);
+        this.zzb = true;
     }
 }

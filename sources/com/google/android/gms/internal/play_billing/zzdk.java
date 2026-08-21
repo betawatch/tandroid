@@ -1,54 +1,51 @@
 package com.google.android.gms.internal.play_billing;
 
-import j$.util.Objects;
-
 /* loaded from: classes.dex */
-final class zzdk extends zzco {
-    static final zzco zza = new zzdk(new Object[0], 0);
-    final transient Object[] zzb;
-    private final transient int zzc;
+public final class zzdk extends zzfi implements zzgm {
+    private static final zzdk zzb;
+    private zzfn zzd = zzfi.zzr();
 
-    zzdk(Object[] objArr, int i) {
-        this.zzb = objArr;
-        this.zzc = i;
+    static {
+        zzdk zzdkVar = new zzdk();
+        zzb = zzdkVar;
+        zzfi.zzw(zzdk.class, zzdkVar);
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        zzbe.zza(i, this.zzc, "index");
-        Object obj = this.zzb[i];
-        Objects.requireNonNull(obj);
-        return obj;
+    private zzdk() {
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.zzc;
+    public static zzdj zza() {
+        return (zzdj) zzb.zzl();
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzco, com.google.android.gms.internal.play_billing.zzcj
-    final int zza(Object[] objArr, int i) {
-        System.arraycopy(this.zzb, 0, objArr, 0, this.zzc);
-        return this.zzc;
+    static /* synthetic */ void zzd(zzdk zzdkVar, Iterable iterable) {
+        zzfn zzfnVar = zzdkVar.zzd;
+        if (!zzfnVar.zzc()) {
+            int size = zzfnVar.size();
+            zzdkVar.zzd = zzfnVar.zzd(size + size);
+        }
+        zzds.zzg(iterable, zzdkVar.zzd);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzcj
-    final int zzb() {
-        return this.zzc;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzcj
-    final int zzc() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzcj
-    final boolean zzf() {
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzcj
-    final Object[] zzg() {
-        return this.zzb;
+    @Override // com.google.android.gms.internal.play_billing.zzfi
+    protected final Object zzb(int i, Object obj, Object obj2) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return zzfi.zzt(zzb, "\u0004\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzd", zzdi.class});
+        }
+        if (i2 == 3) {
+            return new zzdk();
+        }
+        zzdl zzdlVar = null;
+        if (i2 == 4) {
+            return new zzdj(zzdlVar);
+        }
+        if (i2 == 5) {
+            return zzb;
+        }
+        throw null;
     }
 }

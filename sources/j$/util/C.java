@@ -1,6 +1,6 @@
 package j$.util;
 
-import j$.util.stream.f2;
+import j$.util.stream.g2;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class C implements DoubleConsumer {
                 this.b.accept(Double.valueOf(d));
                 break;
             default:
-                ((f2) this.b).accept(d);
+                ((g2) this.b).accept(d);
                 break;
         }
     }

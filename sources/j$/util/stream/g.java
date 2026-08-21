@@ -1,53 +1,29 @@
 package j$.util.stream;
 
-import java.util.Set;
-import java.util.function.BiConsumer;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class g implements Collector {
-    public final /* synthetic */ java.util.stream.Collector a;
+public final class g {
+    public static final g CONCURRENT;
+    public static final g IDENTITY_FINISH;
+    public static final g UNORDERED;
+    public static final /* synthetic */ g[] a;
 
-    public /* synthetic */ g(java.util.stream.Collector collector) {
-        this.a = collector;
+    public static g valueOf(String str) {
+        return (g) Enum.valueOf(g.class, str);
     }
 
-    @Override // j$.util.stream.Collector
-    public final /* synthetic */ BiConsumer accumulator() {
-        return this.a.accumulator();
+    public static g[] values() {
+        return (g[]) a.clone();
     }
 
-    @Override // j$.util.stream.Collector
-    public final /* synthetic */ Set characteristics() {
-        return Q2.a(this.a.characteristics());
-    }
-
-    @Override // j$.util.stream.Collector
-    public final /* synthetic */ BinaryOperator combiner() {
-        return this.a.combiner();
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        java.util.stream.Collector collector = this.a;
-        if (obj instanceof g) {
-            obj = ((g) obj).a;
-        }
-        return collector.equals(obj);
-    }
-
-    @Override // j$.util.stream.Collector
-    public final /* synthetic */ Function finisher() {
-        return this.a.finisher();
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // j$.util.stream.Collector
-    public final /* synthetic */ Supplier supplier() {
-        return this.a.supplier();
+    static {
+        g gVar = new g("CONCURRENT", 0);
+        CONCURRENT = gVar;
+        g gVar2 = new g("UNORDERED", 1);
+        UNORDERED = gVar2;
+        g gVar3 = new g("IDENTITY_FINISH", 2);
+        IDENTITY_FINISH = gVar3;
+        a = new g[]{gVar, gVar2, gVar3};
     }
 }

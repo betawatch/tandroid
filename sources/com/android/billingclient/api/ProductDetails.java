@@ -37,7 +37,69 @@ public final class ProductDetails {
         private final String zzc;
         private final String zzd;
         private final String zze;
-        private final zzcs zzf;
+        private final String zzf;
+        private final List zzg;
+        private final Long zzh;
+        private final DiscountDisplayInfo zzi;
+        private final ValidTimeWindow zzj;
+        private final LimitedQuantityInfo zzk;
+        private final String zzl;
+        private final RentalDetails zzm;
+        private final zzcs zzn;
+
+        public static final class DiscountDisplayInfo {
+            private final Integer zza;
+            private final DiscountAmount zzb;
+
+            public static final class DiscountAmount {
+                private final String zza;
+                private final long zzb;
+                private final String zzc;
+
+                DiscountAmount(JSONObject jSONObject) {
+                    this.zza = jSONObject.optString("formattedDiscountAmount");
+                    this.zzb = jSONObject.optLong("discountAmountMicros");
+                    this.zzc = jSONObject.optString("discountAmountCurrencyCode");
+                }
+            }
+
+            DiscountDisplayInfo(JSONObject jSONObject) {
+                this.zza = jSONObject.has("percentageDiscount") ? Integer.valueOf(jSONObject.optInt("percentageDiscount")) : null;
+                JSONObject optJSONObject = jSONObject.optJSONObject("discountAmount");
+                this.zzb = optJSONObject != null ? new DiscountAmount(optJSONObject) : null;
+            }
+        }
+
+        public static final class LimitedQuantityInfo {
+            private final int zza;
+            private final int zzb;
+
+            LimitedQuantityInfo(JSONObject jSONObject) {
+                this.zza = jSONObject.getInt("maximumQuantity");
+                this.zzb = jSONObject.getInt("remainingQuantity");
+            }
+        }
+
+        public static final class RentalDetails {
+            private final String rentalExpirationPeriod;
+            private final String rentalPeriod;
+
+            RentalDetails(JSONObject jSONObject) {
+                this.rentalPeriod = jSONObject.getString("rentalPeriod");
+                String optString = jSONObject.optString("rentalExpirationPeriod");
+                this.rentalExpirationPeriod = true == optString.isEmpty() ? null : optString;
+            }
+        }
+
+        public static final class ValidTimeWindow {
+            private final Long zza;
+            private final Long zzb;
+
+            ValidTimeWindow(JSONObject jSONObject) {
+                this.zza = jSONObject.has("startTimeMillis") ? Long.valueOf(jSONObject.optLong("startTimeMillis")) : null;
+                this.zzb = jSONObject.has("endTimeMillis") ? Long.valueOf(jSONObject.optLong("endTimeMillis")) : null;
+            }
+        }
 
         OneTimePurchaseOfferDetails(JSONObject jSONObject) {
             this.zza = jSONObject.optString("formattedPrice");
@@ -45,51 +107,48 @@ public final class ProductDetails {
             this.zzc = jSONObject.optString("priceCurrencyCode");
             String optString = jSONObject.optString("offerIdToken");
             this.zzd = true == optString.isEmpty() ? null : optString;
-            jSONObject.optString("offerId").getClass();
-            jSONObject.optString("purchaseOptionId").getClass();
+            String optString2 = jSONObject.optString("offerId");
+            this.zze = true == optString2.isEmpty() ? null : optString2;
+            String optString3 = jSONObject.optString("purchaseOptionId");
+            this.zzf = true == optString3.isEmpty() ? null : optString3;
             jSONObject.optInt("offerType");
             JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
-            ArrayList arrayList = new ArrayList();
+            this.zzg = new ArrayList();
             if (optJSONArray != null) {
                 for (int i = 0; i < optJSONArray.length(); i++) {
-                    arrayList.add(optJSONArray.getString(i));
+                    this.zzg.add(optJSONArray.getString(i));
                 }
             }
-            com.google.android.gms.internal.play_billing.zzco.zzk(arrayList);
-            if (jSONObject.has("fullPriceMicros")) {
-                jSONObject.optLong("fullPriceMicros");
-            }
+            this.zzh = jSONObject.has("fullPriceMicros") ? Long.valueOf(jSONObject.optLong("fullPriceMicros")) : null;
             JSONObject optJSONObject = jSONObject.optJSONObject("discountDisplayInfo");
-            if (optJSONObject != null) {
-                optJSONObject.getInt("percentageDiscount");
-            }
+            this.zzi = optJSONObject == null ? null : new DiscountDisplayInfo(optJSONObject);
             JSONObject optJSONObject2 = jSONObject.optJSONObject("validTimeWindow");
-            if (optJSONObject2 != null) {
-                optJSONObject2.getLong("startTimeMillis");
-                optJSONObject2.getLong("endTimeMillis");
-            }
+            this.zzj = optJSONObject2 == null ? null : new ValidTimeWindow(optJSONObject2);
             JSONObject optJSONObject3 = jSONObject.optJSONObject("limitedQuantityInfo");
-            if (optJSONObject3 != null) {
-                optJSONObject3.getInt("maximumQuantity");
-                optJSONObject3.getInt("remainingQuantity");
-            }
-            this.zze = jSONObject.optString("serializedDocid");
+            this.zzk = optJSONObject3 == null ? null : new LimitedQuantityInfo(optJSONObject3);
+            this.zzl = jSONObject.optString("serializedDocid");
             JSONObject optJSONObject4 = jSONObject.optJSONObject("preorderDetails");
             if (optJSONObject4 != null) {
                 optJSONObject4.getLong("preorderReleaseTimeMillis");
                 optJSONObject4.getLong("preorderPresaleEndTimeMillis");
             }
             JSONObject optJSONObject5 = jSONObject.optJSONObject("rentalDetails");
-            if (optJSONObject5 != null) {
-                optJSONObject5.getString("rentalPeriod");
-                optJSONObject5.optString("rentalExpirationPeriod").getClass();
-            }
+            this.zzm = optJSONObject5 == null ? null : new RentalDetails(optJSONObject5);
             JSONObject optJSONObject6 = jSONObject.optJSONObject("autoPayDetails");
-            this.zzf = optJSONObject6 != null ? new zzcs(optJSONObject6) : null;
+            this.zzn = optJSONObject6 != null ? new zzcs(optJSONObject6) : null;
+            JSONArray optJSONArray2 = jSONObject.optJSONArray("pricingPhases");
+            if (optJSONArray2 == null) {
+                return;
+            }
+            new PricingPhases(optJSONArray2);
         }
 
         public String getFormattedPrice() {
             return this.zza;
+        }
+
+        public String getOfferToken() {
+            return this.zzd;
         }
 
         public long getPriceAmountMicros() {
@@ -101,15 +160,11 @@ public final class ProductDetails {
         }
 
         public final zzcs zza() {
-            return this.zzf;
+            return this.zzn;
         }
 
-        public final String zzb() {
-            return this.zzd;
-        }
-
-        final String zzc() {
-            return this.zze;
+        final String zzb() {
+            return this.zzl;
         }
     }
 
@@ -279,7 +334,11 @@ public final class ProductDetails {
         if (list == null || list.isEmpty()) {
             return null;
         }
-        return (OneTimePurchaseOfferDetails) this.zzk.get(0);
+        return (OneTimePurchaseOfferDetails) list.get(0);
+    }
+
+    public List getOneTimePurchaseOfferDetailsList() {
+        return this.zzk;
     }
 
     public String getProductId() {

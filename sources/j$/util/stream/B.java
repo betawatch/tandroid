@@ -1,38 +1,85 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.Predicate;
+import java.util.function.BiConsumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.ObjDoubleConsumer;
 import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class B implements y3 {
-    public final int a;
-    public final Object b;
-    public final Predicate c;
-    public final Supplier d;
+public interface B extends BaseStream {
+    B a();
 
-    public B(boolean z, T2 t2, Object obj, Predicate predicate, Supplier supplier) {
-        this.a = (z ? 0 : S2.r) | S2.u;
-        this.b = obj;
-        this.c = predicate;
-        this.d = supplier;
-    }
+    j$.util.z average();
 
-    @Override // j$.util.stream.y3
-    public final int d() {
-        return this.a;
-    }
+    B b();
 
-    @Override // j$.util.stream.y3
-    public final Object b(a aVar, Spliterator spliterator) {
-        z3 z3Var = (z3) this.d.get();
-        aVar.Q(spliterator, z3Var);
-        Object obj = z3Var.get();
-        return obj != null ? obj : this.b;
-    }
+    Stream boxed();
 
-    @Override // j$.util.stream.y3
-    public final Object c(a aVar, Spliterator spliterator) {
-        return new H(this, S2.ORDERED.q(aVar.f), aVar, spliterator).invoke();
-    }
+    B c();
+
+    Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer);
+
+    long count();
+
+    B d(j$.time.t tVar);
+
+    B distinct();
+
+    B e();
+
+    j$.util.z findAny();
+
+    j$.util.z findFirst();
+
+    void forEach(DoubleConsumer doubleConsumer);
+
+    void forEachOrdered(DoubleConsumer doubleConsumer);
+
+    boolean h();
+
+    LongStream i();
+
+    @Override // j$.util.stream.BaseStream
+    j$.util.F iterator();
+
+    B limit(long j);
+
+    Stream mapToObj(DoubleFunction doubleFunction);
+
+    j$.util.z max();
+
+    j$.util.z min();
+
+    boolean o();
+
+    @Override // j$.util.stream.BaseStream
+    B parallel();
+
+    B peek(DoubleConsumer doubleConsumer);
+
+    double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
+
+    j$.util.z reduce(DoubleBinaryOperator doubleBinaryOperator);
+
+    IntStream s();
+
+    @Override // j$.util.stream.BaseStream
+    B sequential();
+
+    B skip(long j);
+
+    B sorted();
+
+    @Override // j$.util.stream.BaseStream
+    j$.util.T spliterator();
+
+    double sum();
+
+    j$.util.u summaryStatistics();
+
+    double[] toArray();
+
+    boolean y();
 }

@@ -1,55 +1,23 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
+import j$.util.Optional;
 
 /* loaded from: classes2.dex */
-public abstract class G implements z3 {
-    public boolean a;
-    public Object b;
+public final class G extends H {
+    public static final C c;
+    public static final C d;
 
-    @Override // j$.util.stream.f2
-    public /* synthetic */ void accept(double d) {
-        q1.a();
-        throw null;
-    }
-
-    @Override // j$.util.stream.f2
-    public /* synthetic */ void accept(int i) {
-        q1.k();
-        throw null;
-    }
-
-    @Override // j$.util.stream.f2
-    public /* synthetic */ void accept(long j) {
-        q1.l();
-        throw null;
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ void x() {
-    }
-
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ void y(long j) {
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void s(Object obj) {
+    @Override // java.util.function.Supplier
+    public final Object get() {
         if (this.a) {
-            return;
+            return Optional.of(this.b);
         }
-        this.a = true;
-        this.b = obj;
+        return null;
     }
 
-    @Override // j$.util.stream.f2
-    public final boolean C() {
-        return this.a;
+    static {
+        T2 t2 = T2.REFERENCE;
+        c = new C(true, t2, Optional.empty(), new n(16), new n(17));
+        d = new C(false, t2, Optional.empty(), new n(16), new n(17));
     }
 }

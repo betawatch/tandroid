@@ -37,7 +37,7 @@ public abstract class zzab extends AbstractCollection implements Serializable, C
     @Override // java.util.AbstractCollection, java.util.Collection
     public abstract boolean contains(Object obj);
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$-CC.$default$forEach(this, consumer);
     }

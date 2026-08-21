@@ -1,53 +1,55 @@
 package com.google.android.gms.internal.play_billing;
 
-import sun.misc.Unsafe;
-
 /* loaded from: classes.dex */
-final class zzjo extends zzjp {
-    zzjo(Unsafe unsafe) {
-        super(unsafe);
+public final class zzjo extends zzfi implements zzgm {
+    private static final zzjo zzb;
+    private int zzd;
+    private zzig zze;
+    private long zzf;
+
+    static {
+        zzjo zzjoVar = new zzjo();
+        zzb = zzjoVar;
+        zzfi.zzw(zzjo.class, zzjoVar);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final double zza(Object obj, long j) {
-        return Double.longBitsToDouble(this.zza.getLong(obj, j));
+    private zzjo() {
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final float zzb(Object obj, long j) {
-        return Float.intBitsToFloat(this.zza.getInt(obj, j));
+    static /* synthetic */ void zzA(zzjo zzjoVar, zzig zzigVar) {
+        zzigVar.getClass();
+        zzjoVar.zze = zzigVar;
+        zzjoVar.zzd |= 1;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final void zzc(Object obj, long j, boolean z) {
-        if (zzjq.zzb) {
-            zzjq.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
-        } else {
-            zzjq.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
+    static /* synthetic */ void zzB(zzjo zzjoVar, long j) {
+        zzjoVar.zzd |= 2;
+        zzjoVar.zzf = j;
+    }
+
+    public static zzjm zzc() {
+        return (zzjm) zzb.zzl();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzfi
+    protected final Object zzb(int i, Object obj, Object obj2) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final void zzd(Object obj, long j, byte b) {
-        if (zzjq.zzb) {
-            zzjq.zzD(obj, j, b);
-        } else {
-            zzjq.zzE(obj, j, b);
+        if (i2 == 2) {
+            return zzfi.zzt(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဂ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final void zze(Object obj, long j, double d) {
-        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final void zzf(Object obj, long j, float f) {
-        this.zza.putInt(obj, j, Float.floatToIntBits(f));
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzjp
-    public final boolean zzg(Object obj, long j) {
-        return zzjq.zzb ? zzjq.zzt(obj, j) : zzjq.zzu(obj, j);
+        if (i2 == 3) {
+            return new zzjo();
+        }
+        zzjn zzjnVar = null;
+        if (i2 == 4) {
+            return new zzjm(zzjnVar);
+        }
+        if (i2 == 5) {
+            return zzb;
+        }
+        throw null;
     }
 }

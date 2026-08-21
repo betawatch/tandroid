@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c3 implements c2 {
+public final /* synthetic */ class c3 implements d2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ DoubleConsumer b;
 
@@ -26,57 +26,57 @@ public final /* synthetic */ class c3 implements c2 {
     private final /* synthetic */ void e() {
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ boolean C() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // j$.util.stream.c2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void E(Double d) {
         switch (this.a) {
             case 0:
-                q1.e(this, d);
+                r1.e(this, d);
                 break;
             default:
-                q1.e(this, d);
+                r1.e(this, d);
                 break;
         }
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.f2
+    @Override // j$.util.stream.d2, j$.util.stream.g2
     public final void accept(double d) {
         switch (this.a) {
             case 0:
                 this.b.accept(d);
                 break;
             default:
-                ((I2) this.b).accept(d);
+                ((J2) this.b).accept(d);
                 break;
         }
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(int i) {
         switch (this.a) {
             case 0:
-                q1.k();
+                r1.k();
                 throw null;
             default:
-                q1.k();
+                r1.k();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(long j) {
         switch (this.a) {
             case 0:
-                q1.l();
+                r1.l();
                 throw null;
             default:
-                q1.l();
+                r1.l();
                 throw null;
         }
     }
@@ -106,12 +106,12 @@ public final /* synthetic */ class c3 implements c2 {
         return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void x() {
         int i = this.a;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void y(long j) {
         int i = this.a;
     }

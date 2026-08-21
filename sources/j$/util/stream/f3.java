@@ -24,10 +24,10 @@ public final class f3 extends U2 implements j$.util.W {
 
     @Override // j$.util.stream.U2
     public final void d() {
-        K2 k2 = new K2();
-        this.h = k2;
-        Objects.requireNonNull(k2);
-        this.e = this.b.R(new e3(k2, 1));
+        L2 l2 = new L2();
+        this.h = l2;
+        Objects.requireNonNull(l2);
+        this.e = this.b.R(new e3(l2, 1));
         this.f = new j$.time.t(13, this);
     }
 
@@ -52,13 +52,13 @@ public final class f3 extends U2 implements j$.util.W {
         Objects.requireNonNull(intConsumer);
         boolean a = a();
         if (a) {
-            K2 k2 = (K2) this.h;
+            L2 l2 = (L2) this.h;
             long j = this.g;
-            int o = k2.o(j);
-            if (k2.c == 0 && o == 0) {
-                i = ((int[]) k2.e)[(int) j];
+            int o = l2.o(j);
+            if (l2.c == 0 && o == 0) {
+                i = ((int[]) l2.e)[(int) j];
             } else {
-                i = ((int[][]) k2.f)[o][(int) (j - k2.d[o])];
+                i = ((int[][]) l2.f)[o][(int) (j - l2.d[o])];
             }
             intConsumer.accept(i);
         }

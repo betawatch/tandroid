@@ -42,7 +42,7 @@ public abstract class ao extends AbstractCollection implements Serializable, Col
 
     abstract Object[] e();
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$-CC.$default$forEach(this, consumer);
     }

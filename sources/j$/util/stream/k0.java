@@ -1,31 +1,29 @@
 package j$.util.stream;
 
-import java.util.function.IntConsumer;
-import java.util.function.IntPredicate;
+import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-public final class k0 extends n0 implements d2 {
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void A(Integer num) {
-        q1.g(this, num);
+public final class k0 extends o0 {
+    public final /* synthetic */ p0 c;
+    public final /* synthetic */ Predicate d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k0(p0 p0Var, Predicate predicate) {
+        super(p0Var);
+        this.c = p0Var;
+        this.d = predicate;
     }
 
     @Override // java.util.function.Consumer
-    public final /* bridge */ /* synthetic */ void accept(Object obj) {
-        A((Integer) obj);
-    }
-
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
-    }
-
-    @Override // j$.util.stream.n0, j$.util.stream.f2
-    public final void accept(int i) {
+    public final void accept(Object obj) {
         if (this.a) {
             return;
         }
-        IntPredicate intPredicate = null;
-        intPredicate.test(i);
-        throw null;
+        boolean test = this.d.test(obj);
+        p0 p0Var = this.c;
+        if (test == p0Var.a) {
+            this.a = true;
+            this.b = p0Var.b;
+        }
     }
 }

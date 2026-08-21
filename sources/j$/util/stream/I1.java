@@ -2,35 +2,34 @@ package j$.util.stream;
 
 import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
+import java.util.function.IntBinaryOperator;
 import java.util.function.IntConsumer;
-import java.util.function.ObjIntConsumer;
-import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class I1 extends M1 implements L1, d2 {
-    public final /* synthetic */ Supplier b;
-    public final /* synthetic */ ObjIntConsumer c;
-    public final /* synthetic */ n d;
+public final class I1 implements M1, e2 {
+    public boolean a;
+    public int b;
+    public final /* synthetic */ IntBinaryOperator c;
 
-    @Override // j$.util.stream.d2
+    @Override // j$.util.stream.e2
     public final /* synthetic */ void A(Integer num) {
-        q1.g(this, num);
+        r1.g(this, num);
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(double d) {
-        q1.a();
+        r1.a();
         throw null;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(long j) {
-        q1.l();
+        r1.l();
         throw null;
     }
 
@@ -48,28 +47,41 @@ public final class I1 extends M1 implements L1, d2 {
         return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void x() {
     }
 
-    @Override // j$.util.stream.L1
-    public final void n(L1 l1) {
-        this.a = this.d.apply(this.a, ((I1) l1).a);
+    public I1(IntBinaryOperator intBinaryOperator) {
+        this.c = intBinaryOperator;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.M1
+    public final void n(M1 m1) {
+        I1 i1 = (I1) m1;
+        if (i1.a) {
+            return;
+        }
+        accept(i1.b);
+    }
+
+    @Override // j$.util.stream.g2
     public final void y(long j) {
-        this.a = this.b.get();
+        this.a = true;
+        this.b = 0;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final void accept(int i) {
-        this.c.accept(this.a, i);
+        if (this.a) {
+            this.a = false;
+            this.b = i;
+        } else {
+            this.b = this.c.applyAsInt(this.b, i);
+        }
     }
 
-    public I1(Supplier supplier, ObjIntConsumer objIntConsumer, n nVar) {
-        this.b = supplier;
-        this.c = objIntConsumer;
-        this.d = nVar;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return this.a ? j$.util.A.c : new j$.util.A(this.b);
     }
 }

@@ -11,7 +11,6 @@ import androidx.core.util.Consumer;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.ProductDetails;
-import com.android.billingclient.api.ProductDetailsResponseListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
 import j$.util.Comparator$-CC;
 import j$.util.Comparator$-EL;
@@ -430,15 +429,15 @@ public class StarsController {
         for (int i = 0; i < arrayList.size(); i++) {
             arrayList2.add(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(((TL_stars.TL_starsTopupOption) arrayList.get(i)).store_product).build());
         }
-        BillingController.getInstance().queryProductDetails(arrayList2, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda83
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(arrayList2, new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda83
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                StarsController.$r8$lambda$w3jBTeH02jGEJ4ohTYgkH7wtkUU(StarsController.this, arrayList, billingResult, list);
+                StarsController.$r8$lambda$aQBbLDlxm68EHY-JOylDwiuZWnc(StarsController.this, arrayList, billingResult, list);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$w3jBTeH02jGEJ4ohTYgkH7wtkUU(final StarsController starsController, final ArrayList arrayList, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$aQBbLDlxm68EHY-JOylDwiuZWnc(final StarsController starsController, final ArrayList arrayList, final BillingResult billingResult, final List list) {
         starsController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda90
             @Override // java.lang.Runnable
@@ -561,15 +560,15 @@ public class StarsController {
         for (int i = 0; i < arrayList.size(); i++) {
             arrayList2.add(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(((TL_stars.TL_starsGiftOption) arrayList.get(i)).store_product).build());
         }
-        BillingController.getInstance().queryProductDetails(arrayList2, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda91
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(arrayList2, new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda91
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                StarsController.$r8$lambda$yEd-1V-7_3rbDrgkOKE-bzrjriM(StarsController.this, arrayList, billingResult, list);
+                StarsController.$r8$lambda$oYKWwxdPXz_VU7-9ULkKrCY2CoY(StarsController.this, arrayList, billingResult, list);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$yEd-1V-7_3rbDrgkOKE-bzrjriM(final StarsController starsController, final ArrayList arrayList, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$oYKWwxdPXz_VU7-9ULkKrCY2CoY(final StarsController starsController, final ArrayList arrayList, final BillingResult billingResult, final List list) {
         starsController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda127
             @Override // java.lang.Runnable
@@ -692,15 +691,15 @@ public class StarsController {
         for (int i = 0; i < arrayList.size(); i++) {
             arrayList2.add(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(((TL_stars.TL_starsGiveawayOption) arrayList.get(i)).store_product).build());
         }
-        BillingController.getInstance().queryProductDetails(arrayList2, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda122
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(arrayList2, new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda122
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                StarsController.$r8$lambda$fAkLQbO5Aqt9MxR9Nu4eZawjuw8(StarsController.this, arrayList, billingResult, list);
+                StarsController.$r8$lambda$AN3SoZ-PVLKKLVvX4-h4MoI67qE(StarsController.this, arrayList, billingResult, list);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$fAkLQbO5Aqt9MxR9Nu4eZawjuw8(final StarsController starsController, final ArrayList arrayList, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$AN3SoZ-PVLKKLVvX4-h4MoI67qE(final StarsController starsController, final ArrayList arrayList, final BillingResult billingResult, final List list) {
         starsController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda135
             @Override // java.lang.Runnable
@@ -1069,8 +1068,8 @@ public class StarsController {
         tL_inputStorePaymentStarsTopup2.amount = tL_starsTopupOption.amount;
         QueryProductDetailsParams.Product build = QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_starsTopupOption.store_product).build();
         FileLog.d("StarsController.buy starts queryProductDetails");
-        BillingController.getInstance().queryProductDetails(Arrays.asList(build), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda72
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(Arrays.asList(build), new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda72
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda79
                     @Override // java.lang.Runnable
@@ -1257,10 +1256,10 @@ public class StarsController {
         tL_inputStorePaymentStarsGift2.currency = tL_starsGiftOption.currency;
         tL_inputStorePaymentStarsGift2.amount = tL_starsGiftOption.amount;
         tL_inputStorePaymentStarsGift2.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
-        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_starsGiftOption.store_product).build()), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda105
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_starsGiftOption.store_product).build()), new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda105
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                StarsController.$r8$lambda$Gbvf9DH0oJ5VsAnCO-7T-SsH5P4(StarsController.this, callback2, tL_inputStorePaymentStarsGift2, tL_starsGiftOption, activity, billingResult, list);
+                StarsController.$r8$lambda$rUfOOF0ayxBt89EjAUQcYfCsfIU(StarsController.this, callback2, tL_inputStorePaymentStarsGift2, tL_starsGiftOption, activity, billingResult, list);
             }
         });
     }
@@ -1333,7 +1332,7 @@ public class StarsController {
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$Gbvf9DH0oJ5VsAnCO-7T-SsH5P4(final StarsController starsController, final Utilities.Callback2 callback2, final TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift, final TL_stars.TL_starsGiftOption tL_starsGiftOption, final Activity activity, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$rUfOOF0ayxBt89EjAUQcYfCsfIU(final StarsController starsController, final Utilities.Callback2 callback2, final TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift, final TL_stars.TL_starsGiftOption tL_starsGiftOption, final Activity activity, final BillingResult billingResult, final List list) {
         starsController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda131
             @Override // java.lang.Runnable
@@ -1488,10 +1487,10 @@ public class StarsController {
             });
             return;
         }
-        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_starsGiveawayOption.store_product).build()), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda86
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_starsGiveawayOption.store_product).build()), new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda86
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list3) {
-                StarsController.$r8$lambda$CF66qXDDwdTTuqetn0vk8E4mPJA(StarsController.this, callback2, tL_inputStorePaymentStarsGiveaway, activity, billingResult, list3);
+                StarsController.$r8$lambda$z-Mx6ZT729rZf200ZLOgAnJ-Z6E(StarsController.this, callback2, tL_inputStorePaymentStarsGiveaway, activity, billingResult, list3);
             }
         });
     }
@@ -1564,7 +1563,7 @@ public class StarsController {
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$CF66qXDDwdTTuqetn0vk8E4mPJA(final StarsController starsController, final Utilities.Callback2 callback2, final TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway, final Activity activity, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$z-Mx6ZT729rZf200ZLOgAnJ-Z6E(final StarsController starsController, final Utilities.Callback2 callback2, final TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway, final Activity activity, final BillingResult billingResult, final List list) {
         starsController.getClass();
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda109
             @Override // java.lang.Runnable

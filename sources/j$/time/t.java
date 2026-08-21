@@ -6,19 +6,19 @@ import j$.util.function.Function$-CC;
 import j$.util.function.Predicate$-CC;
 import j$.util.r0;
 import j$.util.stream.A;
+import j$.util.stream.B;
 import j$.util.stream.Collectors;
 import j$.util.stream.IntStream;
 import j$.util.stream.LongStream;
 import j$.util.stream.R2;
 import j$.util.stream.Stream;
 import j$.util.stream.d3;
-import j$.util.stream.f2;
 import j$.util.stream.f3;
-import j$.util.stream.g0;
+import j$.util.stream.g2;
 import j$.util.stream.h0;
 import j$.util.stream.h3;
+import j$.util.stream.i0;
 import j$.util.stream.w3;
-import j$.util.stream.y;
 import j$.util.stream.z;
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -115,17 +115,17 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
         if (apply instanceof java.util.stream.IntStream) {
             return IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) apply);
         }
-        if (apply instanceof A) {
-            return z.j((A) apply);
+        if (apply instanceof B) {
+            return A.j((B) apply);
         }
         if (apply instanceof DoubleStream) {
-            return y.j((DoubleStream) apply);
+            return z.j((DoubleStream) apply);
         }
         if (apply instanceof LongStream) {
-            return h0.j((LongStream) apply);
+            return i0.j((LongStream) apply);
         }
         if (apply instanceof java.util.stream.LongStream) {
-            return g0.j((java.util.stream.LongStream) apply);
+            return h0.j((java.util.stream.LongStream) apply);
         }
         j$.util.e.a("java.util.stream.*Stream", apply.getClass());
         throw null;
@@ -137,11 +137,11 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
         if (apply == null) {
             return null;
         }
-        if (apply instanceof A) {
-            return z.j((A) apply);
+        if (apply instanceof B) {
+            return A.j((B) apply);
         }
         if (apply instanceof DoubleStream) {
-            return y.j((DoubleStream) apply);
+            return z.j((DoubleStream) apply);
         }
         j$.util.e.a("java.util.stream.DoubleStream", apply.getClass());
         throw null;
@@ -154,10 +154,10 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
             return null;
         }
         if (apply instanceof LongStream) {
-            return h0.j((LongStream) apply);
+            return i0.j((LongStream) apply);
         }
         if (apply instanceof java.util.stream.LongStream) {
-            return g0.j((java.util.stream.LongStream) apply);
+            return h0.j((java.util.stream.LongStream) apply);
         }
         j$.util.e.a("java.util.stream.LongStream", apply.getClass());
         throw null;
@@ -218,7 +218,7 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
                 ((Consumer) this.b).accept(new j$.util.o((Map.Entry) obj));
                 break;
             case 9:
-                ((f2) this.b).accept((f2) obj);
+                ((g2) this.b).accept((g2) obj);
                 break;
             default:
                 ((ArrayList) this.b).add(obj);

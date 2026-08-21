@@ -1,31 +1,34 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.io.Serializable;
+import j$.util.Objects;
 
 /* loaded from: classes.dex */
-abstract class zzce implements Comparable, Serializable {
-    final Comparable zza = "";
+final class zzce extends zzbt {
+    private final transient Object[] zza;
+    private final transient int zzb;
+    private final transient int zzc;
 
-    zzce(Comparable comparable) {
+    zzce(Object[] objArr, int i, int i2) {
+        this.zza = objArr;
+        this.zzb = i;
+        this.zzc = i2;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof zzce) {
-            try {
-                if (zza((zzce) obj) == 0) {
-                    return true;
-                }
-            } catch (ClassCastException unused) {
-            }
-        }
-        return false;
+    @Override // java.util.List
+    public final Object get(int i) {
+        zzbg.zza(i, this.zzc, "index");
+        Object obj = this.zza[i + i + this.zzb];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    public abstract int hashCode();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.zzc;
+    }
 
-    public abstract int zza(zzce zzceVar);
-
-    abstract void zzc(StringBuilder sb);
-
-    abstract void zzd(StringBuilder sb);
+    @Override // com.google.android.gms.internal.play_billing.zzbq
+    final boolean zzf() {
+        return true;
+    }
 }

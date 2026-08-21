@@ -1,41 +1,17 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-enum zzd {
-    zza(-999),
-    zzb(-3),
-    zzc(-2),
-    zzd(-1),
-    zze(0),
-    zzf(1),
-    zzg(2),
-    zzh(3),
-    zzi(4),
-    zzj(5),
-    zzk(6),
-    zzl(7),
-    zzm(8),
-    zzn(11),
-    zzo(12);
-
-    private static final zzcr zzp;
-    private final int zzr;
-
-    static {
-        zzcq zzcqVar = new zzcq();
-        for (zzd zzdVar : values()) {
-            zzcqVar.zza(Integer.valueOf(zzdVar.zzr), zzdVar);
-        }
-        zzp = zzcqVar.zzb();
+abstract class zzd {
+    /* synthetic */ zzd(zzn zznVar) {
     }
 
-    zzd(int i) {
-        this.zzr = i;
-    }
+    abstract void zza(zzm zzmVar, zzm zzmVar2);
 
-    static zzd zza(int i) {
-        zzcr zzcrVar = zzp;
-        Integer valueOf = Integer.valueOf(i);
-        return !zzcrVar.containsKey(valueOf) ? zza : (zzd) zzcrVar.get(valueOf);
-    }
+    abstract void zzb(zzm zzmVar, Thread thread);
+
+    abstract boolean zzc(zzo zzoVar, zzh zzhVar, zzh zzhVar2);
+
+    abstract boolean zzd(zzo zzoVar, Object obj, Object obj2);
+
+    abstract boolean zze(zzo zzoVar, zzm zzmVar, zzm zzmVar2);
 }

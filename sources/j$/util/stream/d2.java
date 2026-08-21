@@ -1,11 +1,11 @@
 package j$.util.stream;
 
-import java.util.function.IntConsumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public interface d2 extends f2, IntConsumer {
-    void A(Integer num);
+public interface d2 extends g2, DoubleConsumer {
+    void E(Double d);
 
-    @Override // j$.util.stream.f2
-    void accept(int i);
+    @Override // j$.util.stream.g2
+    void accept(double d);
 }

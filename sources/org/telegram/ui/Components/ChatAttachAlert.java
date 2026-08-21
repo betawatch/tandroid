@@ -4042,7 +4042,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 } else {
                     if (chatAttachAlert.locationLayout == null) {
                         AttachAlertLayout[] attachAlertLayoutArr = chatAttachAlert.layouts;
-                        ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(chatAttachAlert, chatAttachAlert.getContext(), resourcesProvider, true ^ chatAttachAlert.isPollAttach);
+                        ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(chatAttachAlert, chatAttachAlert.getContext(), resourcesProvider, (chatAttachAlert.isPollAttach || chatAttachAlert.restrictEphemeralMessageTypes) ? false : true);
                         chatAttachAlert.locationLayout = chatAttachAlertLocationLayout;
                         attachAlertLayoutArr[5] = chatAttachAlertLocationLayout;
                         ChatAttachAlertLocationLayout.LocationActivityDelegate locationActivityDelegate = chatAttachAlert.locationActivityDelegate;
@@ -5794,7 +5794,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if (i == 6 && AndroidUtilities.isMapsInstalled(this.baseFragment)) {
             if (this.locationLayout == null) {
                 AttachAlertLayout[] attachAlertLayoutArr = this.layouts;
-                ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(this, getContext(), this.resourcesProvider, true ^ this.isPollAttach);
+                ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(this, getContext(), this.resourcesProvider, (this.isPollAttach || this.restrictEphemeralMessageTypes) ? false : true);
                 this.locationLayout = chatAttachAlertLocationLayout;
                 attachAlertLayoutArr[5] = chatAttachAlertLocationLayout;
                 ChatAttachAlertLocationLayout.LocationActivityDelegate locationActivityDelegate = this.locationActivityDelegate;
@@ -7596,18 +7596,18 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.emojiViewDelegate = emojiViewDelegate;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x00e5  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x00af  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x010f  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0119  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0148  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x020b  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0216  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x020d  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x021b  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0280  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x01d3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7678,7 +7678,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (!this.isStoryLocationPicker || this.isBizLocationPicker || this.isLocationPicker) {
                 if (this.locationLayout == null) {
                     AttachAlertLayout[] attachAlertLayoutArr = this.layouts;
-                    ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(this, getContext(), this.resourcesProvider, (this.isPollAttach || this.isLocationPicker) ? false : true);
+                    ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(this, getContext(), this.resourcesProvider, (this.isPollAttach || this.isLocationPicker || this.restrictEphemeralMessageTypes) ? false : true);
                     this.locationLayout = chatAttachAlertLocationLayout;
                     attachAlertLayoutArr[5] = chatAttachAlertLocationLayout;
                     ChatAttachAlertLocationLayout.LocationActivityDelegate locationActivityDelegate = this.locationActivityDelegate;

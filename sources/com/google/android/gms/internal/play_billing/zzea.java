@@ -1,16 +1,33 @@
 package com.google.android.gms.internal.play_billing;
 
-import com.google.android.gms.internal.cast.zzrj$$ExternalSyntheticBackportWithForwarding0;
-import sun.misc.Unsafe;
+import j$.util.Objects;
+import java.util.NoSuchElementException;
 
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class zzea {
-    public static /* synthetic */ boolean zza(Unsafe unsafe, Object obj, long j, Object obj2, Object obj3) {
-        while (!zzrj$$ExternalSyntheticBackportWithForwarding0.m(unsafe, obj, j, obj2, obj3)) {
-            if (unsafe.getObject(obj, j) != obj2) {
-                return false;
-            }
+final class zzea extends zzeb {
+    final /* synthetic */ zzei zza;
+    private int zzb;
+    private final int zzc;
+
+    zzea(zzei zzeiVar) {
+        Objects.requireNonNull(zzeiVar);
+        this.zza = zzeiVar;
+        this.zzb = 0;
+        this.zzc = zzeiVar.zzd();
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.zzb < this.zzc;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzed
+    public final byte zza() {
+        int i = this.zzb;
+        if (i >= this.zzc) {
+            throw new NoSuchElementException();
         }
-        return true;
+        this.zzb = i + 1;
+        return this.zza.zzb(i);
     }
 }

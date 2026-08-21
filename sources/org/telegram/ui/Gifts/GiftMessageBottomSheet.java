@@ -51,6 +51,7 @@ import org.telegram.ui.Stories.recorder.PreviewView;
 
 /* loaded from: classes5.dex */
 public class GiftMessageBottomSheet extends BottomSheet {
+    private final Drawable backgroundDrawable;
     private final int captionLimit;
     private final AnimatedTextView captionLimitView;
     private final FrameLayout chatInputBubbleContainer;
@@ -134,6 +135,11 @@ public class GiftMessageBottomSheet extends BottomSheet {
             }
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
+            protected Drawable getNewDrawable() {
+                return GiftMessageBottomSheet.this.backgroundDrawable != null ? GiftMessageBottomSheet.this.backgroundDrawable : super.getNewDrawable();
+            }
+
+            @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
             public void onUpdateBackgroundDrawable(Drawable drawable) {
                 super.onUpdateBackgroundDrawable(drawable);
                 if (drawable instanceof MotionBackgroundDrawable) {
@@ -150,7 +156,9 @@ public class GiftMessageBottomSheet extends BottomSheet {
         WindowAnimatedInsetsProvider windowAnimatedInsetsProvider = new WindowAnimatedInsetsProvider(this.container);
         this.rootAnimatedInsetsListener = windowAnimatedInsetsProvider;
         windowInsetsStateHolder.setupAnimatedInsetsProvider(windowAnimatedInsetsProvider, this.containerView);
-        sizeNotifierFrameLayout.setBackgroundImage(PreviewView.getBackgroundDrawable((Drawable) null, this.currentAccount, j, Theme.isCurrentThemeDark()), false);
+        Drawable backgroundDrawable = PreviewView.getBackgroundDrawable((Drawable) null, this.currentAccount, j, Theme.isCurrentThemeDark());
+        this.backgroundDrawable = backgroundDrawable;
+        sizeNotifierFrameLayout.setBackgroundImage(backgroundDrawable, false);
         StarGiftUniqueActionView starGiftUniqueActionView = new StarGiftUniqueActionView(context, this.currentAccount, resourcesProvider);
         this.starGiftUniqueActionView = starGiftUniqueActionView;
         starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(this.currentAccount).getClientUserId(), null, LocaleController.getString(R.string.GiftMessageSendNow), false);

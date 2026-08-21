@@ -13,10 +13,10 @@ public final class w3 extends U2 {
 
     @Override // j$.util.stream.U2
     public final void d() {
-        P2 p2 = new P2();
-        this.h = p2;
-        Objects.requireNonNull(p2);
-        this.e = this.b.R(new v3(p2, 0));
+        Q2 q2 = new Q2();
+        this.h = q2;
+        Objects.requireNonNull(q2);
+        this.e = this.b.R(new v3(q2, 0));
         this.f = new j$.time.t(15, this);
     }
 
@@ -28,23 +28,23 @@ public final class w3 extends U2 {
         if (!a) {
             return a;
         }
-        P2 p2 = (P2) this.h;
+        Q2 q2 = (Q2) this.h;
         long j = this.g;
-        if (p2.c != 0) {
-            if (j >= p2.count()) {
+        if (q2.c != 0) {
+            if (j >= q2.count()) {
                 throw new IndexOutOfBoundsException(Long.toString(j));
             }
-            for (int i = 0; i <= p2.c; i++) {
-                long j2 = p2.d[i];
-                Object[] objArr = p2.f[i];
+            for (int i = 0; i <= q2.c; i++) {
+                long j2 = q2.d[i];
+                Object[] objArr = q2.f[i];
                 if (j < objArr.length + j2) {
                     obj = objArr[(int) (j - j2)];
                 }
             }
             throw new IndexOutOfBoundsException(Long.toString(j));
         }
-        if (j < p2.b) {
-            obj = p2.e[(int) j];
+        if (j < q2.b) {
+            obj = q2.e[(int) j];
         } else {
             throw new IndexOutOfBoundsException(Long.toString(j));
         }

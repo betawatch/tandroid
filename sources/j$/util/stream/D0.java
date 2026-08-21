@@ -1,40 +1,27 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public abstract class D0 implements B0 {
-    public final B0 a;
-    public final B0 b;
-    public final long c;
+public abstract /* synthetic */ class D0 {
+    public static final /* synthetic */ int[] a;
 
-    @Override // j$.util.stream.B0
-    public final int i() {
-        return 2;
-    }
-
-    public D0(B0 b0, B0 b02) {
-        this.a = b0;
-        this.b = b02;
-        this.c = b02.count() + b0.count();
-    }
-
-    @Override // j$.util.stream.B0
-    public final B0 b(int i) {
-        if (i == 0) {
-            return this.a;
+    static {
+        int[] iArr = new int[T2.values().length];
+        a = iArr;
+        try {
+            iArr[T2.REFERENCE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        if (i == 1) {
-            return this.b;
+        try {
+            a[T2.INT_VALUE.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.B0
-    public final long count() {
-        return this.c;
-    }
-
-    @Override // j$.util.stream.B0
-    public /* bridge */ /* synthetic */ A0 b(int i) {
-        return (A0) b(i);
+        try {
+            a[T2.LONG_VALUE.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[T2.DOUBLE_VALUE.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
     }
 }

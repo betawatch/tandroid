@@ -1,57 +1,41 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
-abstract class zzbh extends zzdx {
-    private final int zza;
-    private int zzb;
+abstract /* synthetic */ class zzbh {
+    static final /* synthetic */ int[] zza;
 
-    protected zzbh(int i, int i2) {
-        zzbe.zzb(i2, i, "index");
-        this.zza = i;
-        this.zzb = i2;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.zzb < this.zza;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.zzb > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    static {
+        int[] iArr = new int[TimeUnit.values().length];
+        zza = iArr;
+        try {
+            iArr[TimeUnit.NANOSECONDS.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        int i = this.zzb;
-        this.zzb = i + 1;
-        return zza(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.zzb;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+        try {
+            zza[TimeUnit.MICROSECONDS.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-        int i = this.zzb - 1;
-        this.zzb = i;
-        return zza(i);
+        try {
+            zza[TimeUnit.MILLISECONDS.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            zza[TimeUnit.SECONDS.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            zza[TimeUnit.MINUTES.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            zza[TimeUnit.HOURS.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            zza[TimeUnit.DAYS.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
     }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.zzb - 1;
-    }
-
-    protected abstract Object zza(int i);
 }

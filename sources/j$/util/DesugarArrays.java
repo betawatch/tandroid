@@ -4,7 +4,7 @@ import j$.util.stream.IntStream;
 import j$.util.stream.LongStream;
 import j$.util.stream.S2;
 import j$.util.stream.Stream;
-import j$.util.stream.q1;
+import j$.util.stream.r1;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class DesugarArrays {
@@ -24,16 +24,16 @@ public final /* synthetic */ class DesugarArrays {
     }
 
     public static <T> Stream<T> stream(T[] tArr) {
-        return q1.Z(a(tArr, 0, tArr.length), false);
+        return r1.a0(a(tArr, 0, tArr.length), false);
     }
 
     public static IntStream stream(int[] iArr) {
         o0 b = b(iArr, 0, iArr.length);
-        return new j$.util.stream.V(b, S2.p(b), false);
+        return new j$.util.stream.W(b, S2.p(b), false);
     }
 
     public static LongStream stream(long[] jArr) {
         q0 c = c(jArr, 0, jArr.length);
-        return new j$.util.stream.d0(c, S2.p(c), false);
+        return new j$.util.stream.e0(c, S2.p(c), false);
     }
 }

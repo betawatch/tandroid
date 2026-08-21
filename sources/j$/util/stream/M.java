@@ -1,15 +1,30 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final class M extends N {
-    public final Consumer b;
+public final class M extends O implements f2 {
+    public final LongConsumer b;
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void s(Object obj) {
+        s((Long) obj);
+    }
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    }
 
     @Override // java.util.function.Supplier
     public final /* bridge */ /* synthetic */ Object get() {
         return null;
+    }
+
+    @Override // j$.util.stream.f2
+    public final /* synthetic */ void s(Long l) {
+        r1.i(this, l);
     }
 
     @Override // j$.util.stream.y3
@@ -24,13 +39,13 @@ public final class M extends N {
         return null;
     }
 
-    public M(Consumer consumer, boolean z) {
+    public M(LongConsumer longConsumer, boolean z) {
         super(z);
-        this.b = consumer;
+        this.b = longConsumer;
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        this.b.accept(obj);
+    @Override // j$.util.stream.O, j$.util.stream.g2
+    public final void accept(long j) {
+        this.b.accept(j);
     }
 }

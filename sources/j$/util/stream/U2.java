@@ -11,7 +11,7 @@ public abstract class U2 implements Spliterator {
     public final a b;
     public Supplier c;
     public Spliterator d;
-    public f2 e;
+    public g2 e;
     public BooleanSupplier f;
     public long g;
     public c h;

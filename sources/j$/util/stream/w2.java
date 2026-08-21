@@ -4,55 +4,55 @@ import java.util.Arrays;
 
 /* loaded from: classes2.dex */
 public final class w2 extends s2 {
-    public M2 c;
+    public L2 c;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.M2, j$.util.stream.O2] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.O2] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.O2] */
-    @Override // j$.util.stream.a2, j$.util.stream.f2
+    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.L2, j$.util.stream.P2] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.P2] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.P2] */
+    @Override // j$.util.stream.a2, j$.util.stream.g2
     public final void y(long j) {
         ?? r0;
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
         if (j <= 0) {
-            r0 = new O2();
+            r0 = new P2();
         } else {
-            r0 = new M2((int) j);
+            r0 = new L2((int) j);
         }
         this.c = r0;
     }
 
-    @Override // j$.util.stream.a2, j$.util.stream.f2
+    @Override // j$.util.stream.a2, j$.util.stream.g2
     public final void x() {
-        long[] jArr = (long[]) this.c.d();
-        Arrays.sort(jArr);
-        long length = jArr.length;
-        f2 f2Var = this.a;
-        f2Var.y(length);
+        int[] iArr = (int[]) this.c.d();
+        Arrays.sort(iArr);
+        long length = iArr.length;
+        g2 g2Var = this.a;
+        g2Var.y(length);
         int i = 0;
         if (!this.b) {
-            int length2 = jArr.length;
+            int length2 = iArr.length;
             while (i < length2) {
-                f2Var.accept(jArr[i]);
+                g2Var.accept(iArr[i]);
                 i++;
             }
         } else {
-            int length3 = jArr.length;
+            int length3 = iArr.length;
             while (i < length3) {
-                long j = jArr[i];
-                if (f2Var.C()) {
+                int i2 = iArr[i];
+                if (g2Var.C()) {
                     break;
                 }
-                f2Var.accept(j);
+                g2Var.accept(i2);
                 i++;
             }
         }
-        f2Var.x();
+        g2Var.x();
     }
 
-    @Override // j$.util.stream.e2, j$.util.stream.f2
-    public final void accept(long j) {
-        this.c.accept(j);
+    @Override // j$.util.stream.e2, j$.util.stream.g2
+    public final void accept(int i) {
+        this.c.accept(i);
     }
 }

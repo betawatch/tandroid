@@ -1,6 +1,6 @@
 package j$.util;
 
-import j$.util.stream.f2;
+import j$.util.stream.g2;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class G implements IntConsumer {
                 this.b.accept(Integer.valueOf(i));
                 break;
             default:
-                ((f2) this.b).accept(i);
+                ((g2) this.b).accept(i);
                 break;
         }
     }

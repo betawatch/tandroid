@@ -1,59 +1,30 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import java.util.function.DoubleConsumer;
-
 /* loaded from: classes2.dex */
-public final class t extends Y1 {
-    public boolean b;
-    public final j$.util.C c;
-    public final /* synthetic */ u d;
+public final class t extends f0 {
+    public final /* synthetic */ int m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t(u uVar, f2 f2Var) {
-        super(f2Var);
-        this.d = uVar;
-        f2 f2Var2 = this.a;
-        Objects.requireNonNull(f2Var2);
-        this.c = new j$.util.C(f2Var2, 1);
+    public /* synthetic */ t(a aVar, int i, int i2) {
+        super(aVar, i, 1);
+        this.m = i2;
     }
 
-    @Override // j$.util.stream.Y1, j$.util.stream.f2
-    public final void y(long j) {
-        this.a.y(-1L);
-    }
-
-    @Override // j$.util.stream.c2, j$.util.stream.f2
-    public final void accept(double d) {
-        A a = (A) ((j$.time.t) this.d.n).apply(d);
-        if (a != null) {
-            try {
-                boolean z = this.b;
-                j$.util.C c = this.c;
-                if (!z) {
-                    a.sequential().forEach(c);
-                } else {
-                    j$.util.T spliterator = a.sequential().spliterator();
-                    while (!this.a.C() && spliterator.tryAdvance((DoubleConsumer) c)) {
-                    }
-                }
-            } catch (Throwable th) {
-                try {
-                    a.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
-                }
-                throw th;
-            }
+    @Override // j$.util.stream.a
+    public final g2 M(int i, g2 g2Var) {
+        switch (this.m) {
+            case 0:
+                return new p(this, g2Var, 3);
+            case 1:
+                return new U(0, g2Var);
+            case 2:
+                return new S(this, g2Var, 3);
+            case 3:
+                return new a0(this, g2Var, 1);
+            case 4:
+                return g2Var;
+            default:
+                return new a0(this, g2Var, 4);
         }
-        if (a != null) {
-            a.close();
-        }
-    }
-
-    @Override // j$.util.stream.Y1, j$.util.stream.f2
-    public final boolean C() {
-        this.b = true;
-        return this.a.C();
     }
 }

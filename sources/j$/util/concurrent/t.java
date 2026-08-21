@@ -7,10 +7,10 @@ import j$.util.function.Consumer$-CC;
 import j$.util.stream.S2;
 import j$.util.stream.T2;
 import j$.util.stream.b3;
-import j$.util.stream.j0;
-import j$.util.stream.n0;
+import j$.util.stream.k0;
 import j$.util.stream.o0;
 import j$.util.stream.p0;
+import j$.util.stream.q0;
 import j$.util.stream.y3;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -83,12 +83,12 @@ public final /* synthetic */ class t implements BiConsumer, BiFunction, Consumer
 
     @Override // java.util.function.Supplier
     public Object get() {
-        return new j0((o0) this.b, (Predicate) this.c);
+        return new k0((p0) this.b, (Predicate) this.c);
     }
 
-    public t(T2 t2, o0 o0Var, Supplier supplier) {
+    public t(T2 t2, p0 p0Var, Supplier supplier) {
         this.a = 6;
-        this.b = o0Var;
+        this.b = p0Var;
         this.c = supplier;
     }
 
@@ -99,15 +99,15 @@ public final /* synthetic */ class t implements BiConsumer, BiFunction, Consumer
 
     @Override // j$.util.stream.y3
     public Object b(j$.util.stream.a aVar, Spliterator spliterator) {
-        n0 n0Var = (n0) ((Supplier) this.c).get();
-        aVar.Q(spliterator, n0Var);
-        return Boolean.valueOf(n0Var.b);
+        o0 o0Var = (o0) ((Supplier) this.c).get();
+        aVar.Q(spliterator, o0Var);
+        return Boolean.valueOf(o0Var.b);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j$.util.stream.y3
     public Object c(j$.util.stream.a aVar, Spliterator spliterator) {
-        return (Boolean) new p0(this, aVar, spliterator).invoke();
+        return (Boolean) new q0(this, aVar, spliterator).invoke();
     }
 
     @Override // java.util.function.Consumer

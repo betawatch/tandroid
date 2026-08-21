@@ -22,6 +22,6 @@ public final class i3 extends l3 implements j$.util.T {
 
     @Override // j$.util.stream.l3
     public final Object b() {
-        return new u0(1);
+        return new v0(1);
     }
 }

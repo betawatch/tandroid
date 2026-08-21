@@ -38,7 +38,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.ProductDetails;
-import com.android.billingclient.api.ProductDetailsResponseListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
 import j$.util.Collection;
 import j$.util.function.Predicate$-CC;
@@ -1038,10 +1037,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 }
             } else if (!arrayList.isEmpty()) {
                 System.currentTimeMillis();
-                BillingController.getInstance().queryProductDetails(arrayList, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda6
-                    @Override // com.android.billingclient.api.ProductDetailsResponseListener
+                BillingController.getInstance().queryProductDetails(arrayList, new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda6
+                    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
                     public final void onProductDetailsResponse(BillingResult billingResult, List list2) {
-                        GiftSheet.$r8$lambda$fEKigUHZTFHaEjb_tJh_rV_-U7Q(GiftSheet.this, billingResult, list2);
+                        GiftSheet.$r8$lambda$2DUk7xpNvdByZNBiN5aq7EF6AO0(GiftSheet.this, billingResult, list2);
                     }
                 });
             }
@@ -1056,7 +1055,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$fEKigUHZTFHaEjb_tJh_rV_-U7Q(final GiftSheet giftSheet, BillingResult billingResult, List list) {
+    public static /* synthetic */ void $r8$lambda$2DUk7xpNvdByZNBiN5aq7EF6AO0(final GiftSheet giftSheet, BillingResult billingResult, List list) {
         int i;
         giftSheet.getClass();
         Iterator it = list.iterator();

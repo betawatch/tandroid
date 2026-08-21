@@ -1,7 +1,7 @@
 package j$.util;
 
 import j$.util.stream.Stream;
-import j$.util.stream.q1;
+import j$.util.stream.r1;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.RandomAccess;
@@ -10,8 +10,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-public interface Collection<E> extends j$.lang.a {
-    @Override // j$.util.Collection, j$.lang.a
+public interface Collection<E> {
     void forEach(Consumer<? super E> consumer);
 
     Stream<E> parallelStream();
@@ -86,11 +85,11 @@ public interface Collection<E> extends j$.lang.a {
         }
 
         public static Stream $default$stream(java.util.Collection collection) {
-            return q1.Z(-EL.c(collection), false);
+            return r1.a0(-EL.c(collection), false);
         }
 
         public static Stream $default$parallelStream(java.util.Collection collection) {
-            return q1.Z(-EL.c(collection), true);
+            return r1.a0(-EL.c(collection), true);
         }
     }
 }

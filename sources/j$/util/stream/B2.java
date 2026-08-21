@@ -1,53 +1,49 @@
 package j$.util.stream;
 
-import j$.util.Collection;
-import j$.util.List;
 import j$.util.Objects;
-import java.util.ArrayList;
+import j$.util.Spliterator;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-public final class B2 extends t2 {
-    public ArrayList d;
+public final class B2 extends X1 {
+    public final boolean m;
+    public final Comparator n;
 
-    @Override // j$.util.stream.b2, j$.util.stream.f2
-    public final void y(long j) {
-        if (j >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
+    public B2(Y1 y1) {
+        super(y1, S2.q | S2.o, 0);
+        this.m = true;
+        this.n = j$.util.d.INSTANCE;
     }
 
-    @Override // j$.util.stream.b2, j$.util.stream.f2
-    public final void x() {
-        List.-EL.sort(this.d, this.b);
-        long size = this.d.size();
-        f2 f2Var = this.a;
-        f2Var.y(size);
-        if (!this.c) {
-            ArrayList arrayList = this.d;
-            Objects.requireNonNull(f2Var);
-            Collection.-EL.a(arrayList, new j$.time.t(9, f2Var));
-        } else {
-            ArrayList arrayList2 = this.d;
-            int size2 = arrayList2.size();
-            int i = 0;
-            while (i < size2) {
-                Object obj = arrayList2.get(i);
-                i++;
-                if (f2Var.C()) {
-                    break;
-                } else {
-                    f2Var.s((f2) obj);
-                }
-            }
-        }
-        f2Var.x();
-        this.d = null;
+    public B2(Y1 y1, Comparator comparator) {
+        super(y1, S2.q | S2.p, 0);
+        this.m = false;
+        this.n = (Comparator) Objects.requireNonNull(comparator);
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void s(Object obj) {
-        this.d.add(obj);
+    @Override // j$.util.stream.a
+    public final g2 M(int i, g2 g2Var) {
+        Objects.requireNonNull(g2Var);
+        if (S2.SORTED.q(i) && this.m) {
+            return g2Var;
+        }
+        boolean q = S2.SIZED.q(i);
+        Comparator comparator = this.n;
+        if (q) {
+            return new G2(g2Var, comparator);
+        }
+        return new C2(g2Var, comparator);
+    }
+
+    @Override // j$.util.stream.a
+    public final C0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+        if (S2.SORTED.q(aVar.f) && this.m) {
+            return aVar.B(spliterator, false, intFunction);
+        }
+        Object[] h = aVar.B(spliterator, true, intFunction).h(intFunction);
+        Arrays.sort(h, this.n);
+        return new F0(h);
     }
 }

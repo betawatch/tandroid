@@ -152,7 +152,7 @@ public class f implements java.util.Collection, Serializable, Collection {
         return obj;
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public final void forEach(Consumer consumer) {
         synchronized (this.b) {
             Collection.-EL.a(this.a, consumer);

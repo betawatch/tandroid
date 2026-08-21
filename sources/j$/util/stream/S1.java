@@ -1,43 +1,42 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final class S1 extends d {
-    public final q1 h;
+public abstract class S1 extends N1 implements M1 {
+    public long b;
 
-    @Override // j$.util.stream.d, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        d dVar = this.d;
-        if (dVar != null) {
-            L1 l1 = (L1) ((S1) dVar).f;
-            l1.n((L1) ((S1) this.e).f);
-            this.f = l1;
-        }
-        super.onCompletion(countedCompleter);
+    @Override // j$.util.stream.g2
+    public final /* synthetic */ boolean C() {
+        return false;
     }
 
-    public S1(q1 q1Var, a aVar, Spliterator spliterator) {
-        super(aVar, spliterator);
-        this.h = q1Var;
+    public /* synthetic */ void accept(double d) {
+        r1.a();
+        throw null;
     }
 
-    public S1(S1 s1, Spliterator spliterator) {
-        super(s1, spliterator);
-        this.h = s1.h;
+    public /* synthetic */ void accept(int i) {
+        r1.k();
+        throw null;
     }
 
-    @Override // j$.util.stream.d
-    public final d c(Spliterator spliterator) {
-        return new S1(this, spliterator);
+    public /* synthetic */ void accept(long j) {
+        r1.l();
+        throw null;
     }
 
-    @Override // j$.util.stream.d
-    public final Object a() {
-        a aVar = this.a;
-        L1 Y = this.h.Y();
-        aVar.Q(this.b, Y);
-        return Y;
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.stream.g2
+    public final /* synthetic */ void x() {
+    }
+
+    @Override // j$.util.stream.g2
+    public final void y(long j) {
+        this.b = 0L;
     }
 }

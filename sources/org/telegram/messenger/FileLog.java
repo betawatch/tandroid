@@ -3,8 +3,6 @@ package org.telegram.messenger;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.os.Debug;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
@@ -28,7 +26,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
@@ -49,6 +46,7 @@ public class FileLog {
     private static HashSet<String> privateFields = null;
     private static final String tag = "tmessages";
     private boolean initied;
+    private boolean initiing;
     private OutputStreamWriter streamWriter = null;
     private FastDateFormat dateFormat = null;
     private FastDateFormat fileDateFormat = null;
@@ -71,6 +69,9 @@ public class FileLog {
                 if (fileLog == null) {
                     fileLog = new FileLog();
                     Instance = fileLog;
+                    if (BuildVars.LOGS_ENABLED) {
+                        fileLog.init();
+                    }
                 }
             } catch (Throwable th) {
                 throw th;
@@ -79,10 +80,7 @@ public class FileLog {
         return fileLog;
     }
 
-    public FileLog() {
-        if (BuildVars.LOGS_ENABLED) {
-            init();
-        }
+    private FileLog() {
     }
 
     public static void dumpResponseAndRequest(final int i, TLObject tLObject, TLObject tLObject2, final TLRPC.TL_error tL_error, final long j, final long j2, final int i2) {
@@ -102,7 +100,7 @@ public class FileLog {
                 }
                 final String str3 = str2;
                 final long currentTimeMillis = System.currentTimeMillis();
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.$r8$lambda$TbpBHKbdIrkiw9Ph1QNW-6DiAvI(j, j2, i2, i, currentTimeMillis, str, str3, tL_error);
@@ -296,11 +294,12 @@ public class FileLog {
         }
     }
 
-    public void init() {
+    private void init() {
         File logsDir;
         if (this.initied) {
             return;
         }
+        this.initiing = true;
         Locale locale = Locale.US;
         this.dateFormat = FastDateFormat.getInstance("dd_MM_yyyy_HH_mm_ss.SSS", locale);
         FastDateFormat fastDateFormat = FastDateFormat.getInstance("dd_MM_yyyy_HH_mm_ss", locale);
@@ -329,14 +328,6 @@ public class FileLog {
             this.tlStreamWriter.flush();
         } catch (Exception e2) {
             e2.printStackTrace();
-        }
-        if (BuildVars.DEBUG_VERSION) {
-            new ANRDetector(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FileLog.this.dumpANR();
-                }
-            });
         }
         this.initied = true;
     }
@@ -384,7 +375,7 @@ public class FileLog {
             ensureInitied();
             Log.e(tag, str, th);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda4
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.$r8$lambda$0ztTDayoCBQbqNUyey4KiVh2OWE(str, th);
@@ -458,7 +449,7 @@ public class FileLog {
             ensureInitied();
             th.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda5
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.$r8$lambda$dl4NO88LqoO42afmmxifdeuAxfg(th);
@@ -504,8 +495,7 @@ public class FileLog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void dumpANR() {
+    public static void dumpANR() {
         StringBuilder sb = new StringBuilder();
         Iterator<Map.Entry<Thread, StackTraceElement[]>> it = Thread.getAllStackTraces().entrySet().iterator();
         while (true) {
@@ -524,7 +514,7 @@ public class FileLog {
                 sb.append("\n\n");
             } else {
                 e("ANR thread dump\n" + sb.toString());
-                dumpMemory(false);
+                getInstance().dumpMemory(false);
                 return;
             }
         }
@@ -541,7 +531,7 @@ public class FileLog {
             ensureInitied();
             th.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda6
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.$r8$lambda$Cka7Jn8J8_XF-nXWLJvFPiIg4A4(th);
@@ -587,7 +577,7 @@ public class FileLog {
             ensureInitied();
             Log.d(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda8
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLog$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.$r8$lambda$bY-Z1YvZDkuzSWHS46PDhtH0hTE(str);
@@ -650,41 +640,6 @@ public class FileLog {
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
-        }
-    }
-
-    public class ANRDetector {
-        private final long TIMEOUT_MS = 5000;
-        private final Handler mainHandler = new Handler(Looper.getMainLooper());
-        private boolean isUIThreadResponsive = true;
-
-        public ANRDetector(final Runnable runnable) {
-            new Thread(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FileLog.ANRDetector.$r8$lambda$_-BnewbbfzQ78PVhPUWgvar4WoM(FileLog.ANRDetector.this, runnable);
-                }
-            }).start();
-        }
-
-        public static /* synthetic */ void $r8$lambda$_-BnewbbfzQ78PVhPUWgvar4WoM(final ANRDetector aNRDetector, Runnable runnable) {
-            while (true) {
-                aNRDetector.isUIThreadResponsive = false;
-                aNRDetector.mainHandler.post(new Runnable() { // from class: org.telegram.messenger.FileLog$ANRDetector$$ExternalSyntheticLambda1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        FileLog.ANRDetector.this.isUIThreadResponsive = true;
-                    }
-                });
-                try {
-                    Thread.sleep(5000L);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                if (!aNRDetector.isUIThreadResponsive) {
-                    runnable.run();
-                }
-            }
         }
     }
 }

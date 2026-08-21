@@ -1,105 +1,153 @@
 package j$.util.stream;
 
-import j$.util.DesugarArrays;
 import j$.util.Spliterator;
-import java.util.Arrays;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.LongConsumer;
+import java.util.ArrayDeque;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-public class f1 implements z0 {
-    public final long[] a;
+public abstract class f1 implements Spliterator {
+    public C0 a;
     public int b;
+    public Spliterator c;
+    public Spliterator d;
+    public ArrayDeque e;
 
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ B0 f(long j, long j2, IntFunction intFunction) {
-        return q1.v(this, j, j2);
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 64;
     }
 
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        q1.s(this, consumer);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.com.android.tools.r8.a.n(this);
     }
 
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ Object[] h(IntFunction intFunction) {
-        return q1.m(this, intFunction);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ int i() {
-        return 0;
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 
-    @Override // j$.util.stream.B0
-    public final /* bridge */ /* synthetic */ B0 b(int i) {
-        b(i);
-        throw null;
+    public f1(C0 c0) {
+        this.a = c0;
     }
 
-    @Override // j$.util.stream.A0, j$.util.stream.B0
-    public final A0 b(int i) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ void g(Object[] objArr, int i) {
-        q1.p(this, (Long[]) objArr, i);
-    }
-
-    @Override // j$.util.stream.A0
-    public final void e(Object obj) {
-        LongConsumer longConsumer = (LongConsumer) obj;
-        for (int i = 0; i < this.b; i++) {
-            longConsumer.accept(this.a[i]);
+    public final ArrayDeque b() {
+        ArrayDeque arrayDeque = new ArrayDeque(8);
+        int i = this.a.i();
+        while (true) {
+            i--;
+            if (i < this.b) {
+                return arrayDeque;
+            }
+            arrayDeque.addFirst(this.a.b(i));
         }
     }
 
-    @Override // j$.util.stream.A0
-    public final void j(int i, Object obj) {
-        int i2 = this.b;
-        System.arraycopy(this.a, 0, (long[]) obj, i, i2);
-    }
-
-    public f1(long j) {
-        if (j >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
+    public static C0 a(ArrayDeque arrayDeque) {
+        while (true) {
+            C0 c0 = (C0) arrayDeque.pollFirst();
+            if (c0 == null) {
+                return null;
+            }
+            if (c0.i() != 0) {
+                for (int i = c0.i() - 1; i >= 0; i--) {
+                    arrayDeque.addFirst(c0.b(i));
+                }
+            } else if (c0.count() > 0) {
+                return c0;
+            }
         }
-        this.a = new long[(int) j];
-        this.b = 0;
     }
 
-    public f1(long[] jArr) {
-        this.a = jArr;
-        this.b = jArr.length;
+    public final boolean c() {
+        if (this.a == null) {
+            return false;
+        }
+        if (this.d != null) {
+            return true;
+        }
+        Spliterator spliterator = this.c;
+        if (spliterator == null) {
+            ArrayDeque b = b();
+            this.e = b;
+            C0 a = a(b);
+            if (a != null) {
+                this.d = a.spliterator();
+                return true;
+            }
+            this.a = null;
+            return false;
+        }
+        this.d = spliterator;
+        return true;
     }
 
-    @Override // j$.util.stream.B0
-    public final Spliterator spliterator() {
-        return DesugarArrays.c(this.a, 0, this.b);
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        C0 c0 = this.a;
+        if (c0 == null || this.d != null) {
+            return null;
+        }
+        Spliterator spliterator = this.c;
+        if (spliterator != null) {
+            return spliterator.trySplit();
+        }
+        if (this.b < c0.i() - 1) {
+            C0 c02 = this.a;
+            int i = this.b;
+            this.b = i + 1;
+            return c02.b(i).spliterator();
+        }
+        C0 b = this.a.b(this.b);
+        this.a = b;
+        if (b.i() == 0) {
+            Spliterator spliterator2 = this.a.spliterator();
+            this.c = spliterator2;
+            return spliterator2.trySplit();
+        }
+        C0 c03 = this.a;
+        this.b = 1;
+        return c03.b(0).spliterator();
     }
 
-    @Override // j$.util.stream.A0, j$.util.stream.B0
-    public final j$.util.c0 spliterator() {
-        return DesugarArrays.c(this.a, 0, this.b);
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        long j = 0;
+        if (this.a == null) {
+            return 0L;
+        }
+        Spliterator spliterator = this.c;
+        if (spliterator != null) {
+            return spliterator.estimateSize();
+        }
+        for (int i = this.b; i < this.a.i(); i++) {
+            j += this.a.b(i).count();
+        }
+        return j;
     }
 
-    @Override // j$.util.stream.A0
-    public final Object d() {
-        long[] jArr = this.a;
-        int length = jArr.length;
-        int i = this.b;
-        return length == i ? jArr : Arrays.copyOf(jArr, i);
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
+        return (j$.util.c0) trySplit();
     }
 
-    @Override // j$.util.stream.B0
-    public final long count() {
-        return this.b;
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
     }
 
-    public String toString() {
-        long[] jArr = this.a;
-        return String.format("LongArrayNode[%d][%s]", Integer.valueOf(jArr.length - this.b), Arrays.toString(jArr));
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
+    }
+
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.T trySplit() {
+        return (j$.util.T) trySplit();
     }
 }

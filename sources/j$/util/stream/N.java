@@ -1,62 +1,36 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public abstract class N implements y3, z3 {
-    public final boolean a;
+public final class N extends O {
+    public final Consumer b;
 
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ boolean C() {
-        return false;
-    }
-
-    public /* synthetic */ void accept(double d) {
-        q1.a();
-        throw null;
-    }
-
-    public /* synthetic */ void accept(int i) {
-        q1.k();
-        throw null;
-    }
-
-    public /* synthetic */ void accept(long j) {
-        q1.l();
-        throw null;
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ void x() {
-    }
-
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ void y(long j) {
-    }
-
-    public N(boolean z) {
-        this.a = z;
+    @Override // java.util.function.Supplier
+    public final /* bridge */ /* synthetic */ Object get() {
+        return null;
     }
 
     @Override // j$.util.stream.y3
-    public final int d() {
-        if (this.a) {
-            return 0;
-        }
-        return S2.r;
+    public final Object b(a aVar, Spliterator spliterator) {
+        aVar.Q(spliterator, this);
+        return null;
     }
 
-    public final void e(a aVar, Spliterator spliterator) {
-        if (this.a) {
-            new O(aVar, spliterator, this).invoke();
-        } else {
-            new P(aVar, spliterator, aVar.R(this)).invoke();
-        }
+    @Override // j$.util.stream.y3
+    public final /* bridge */ /* synthetic */ Object c(a aVar, Spliterator spliterator) {
+        e(aVar, spliterator);
+        return null;
+    }
+
+    public N(Consumer consumer, boolean z) {
+        super(z);
+        this.b = consumer;
+    }
+
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        this.b.accept(obj);
     }
 }

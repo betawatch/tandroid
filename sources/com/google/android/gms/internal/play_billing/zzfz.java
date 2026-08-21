@@ -1,15 +1,15 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-final class zzfz {
-    public int zza;
-    public long zzb;
-    public Object zzc;
-    public final zzgw zzd;
-    public int zze;
+abstract class zzfz {
+    private static final zzfy zza;
 
-    zzfz(zzgw zzgwVar) {
-        zzgwVar.getClass();
-        this.zzd = zzgwVar;
+    static {
+        int i = zzgs.$r8$clinit;
+        zza = new zzfy();
+    }
+
+    static zzfy zza() {
+        return zza;
     }
 }

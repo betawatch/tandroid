@@ -6958,6 +6958,10 @@ public class AndroidUtilities {
         }
     }
 
+    public static String getHelloWorld() {
+        return "Hello World!";
+    }
+
     public static String getBuildVersionInfo() {
         String str;
         try {

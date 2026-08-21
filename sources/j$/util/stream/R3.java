@@ -17,7 +17,7 @@ public final class R3 extends b {
     public final void f() {
         this.i = true;
         if (this.l && this.o) {
-            d(q1.H(this.j.H()));
+            d(r1.H(this.j.H()));
         }
     }
 
@@ -29,13 +29,13 @@ public final class R3 extends b {
             this.n = ((R3) dVar).n | ((R3) this.e).n;
             if (this.l && this.i) {
                 this.m = 0L;
-                F = q1.H(this.j.H());
+                F = r1.H(this.j.H());
             } else {
                 if (this.l) {
                     R3 r3 = (R3) this.d;
                     if (r3.n) {
                         this.m = r3.m;
-                        F = (B0) r3.i();
+                        F = (C0) r3.i();
                     }
                 }
                 R3 r32 = (R3) this.d;
@@ -43,11 +43,11 @@ public final class R3 extends b {
                 R3 r33 = (R3) this.e;
                 this.m = j + r33.m;
                 if (r32.m == 0) {
-                    F = (B0) r33.i();
+                    F = (C0) r33.i();
                 } else if (r33.m == 0) {
-                    F = (B0) r32.i();
+                    F = (C0) r32.i();
                 } else {
-                    F = q1.F(this.j.H(), (B0) ((R3) this.d).i(), (B0) ((R3) this.e).i());
+                    F = r1.F(this.j.H(), (C0) ((R3) this.d).i(), (C0) ((R3) this.e).i());
                 }
             }
             d(F);
@@ -77,20 +77,20 @@ public final class R3 extends b {
 
     @Override // j$.util.stream.b
     public final Object h() {
-        return q1.H(this.j.H());
+        return r1.H(this.j.H());
     }
 
     @Override // j$.util.stream.d
     public final Object a() {
-        t0 I = this.a.I(-1L, this.k);
-        f2 M = this.j.M(this.a.f, I);
+        u0 I = this.a.I(-1L, this.k);
+        g2 M = this.j.M(this.a.f, I);
         a aVar = this.a;
         boolean A = aVar.A(this.b, aVar.R(M));
         this.n = A;
         if (A) {
             g();
         }
-        B0 a = I.a();
+        C0 a = I.a();
         this.m = a.count();
         return a;
     }

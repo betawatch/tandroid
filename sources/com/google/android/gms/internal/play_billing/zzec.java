@@ -1,40 +1,39 @@
 package com.google.android.gms.internal.play_billing;
 
-import androidx.core.provider.FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1;
-import java.util.concurrent.AbstractExecutorService;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
-import java.util.concurrent.RunnableFuture;
-
 /* loaded from: classes.dex */
-public abstract class zzec extends AbstractExecutorService implements zzev, AutoCloseable {
-    @Override // java.lang.AutoCloseable
-    public /* synthetic */ void close() {
-        FontProvider$ContentQueryWrapperApi24Impl$$ExternalSyntheticAutoCloseableForwarder1.m(this);
+final class zzec extends zzeg {
+    private final int zzc;
+
+    zzec(byte[] bArr, int i, int i2) {
+        super(bArr);
+        zzei.zzh(0, i2, bArr.length);
+        this.zzc = i2;
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService
-    protected final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
-        return zzfh.zzr(runnable, obj);
+    @Override // com.google.android.gms.internal.play_billing.zzeg, com.google.android.gms.internal.play_billing.zzei
+    final byte zzb(int i) {
+        return ((zzeg) this).zza[i];
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Runnable runnable) {
-        return (zzeu) super.submit(runnable);
+    @Override // com.google.android.gms.internal.play_billing.zzeg
+    protected final int zzc() {
+        return 0;
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService
-    protected final RunnableFuture newTaskFor(Callable callable) {
-        return new zzfh(callable);
+    @Override // com.google.android.gms.internal.play_billing.zzeg, com.google.android.gms.internal.play_billing.zzei
+    public final int zzd() {
+        return this.zzc;
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
-        return (zzeu) super.submit(runnable, obj);
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Callable callable) {
-        return (zzeu) super.submit(callable);
+    @Override // com.google.android.gms.internal.play_billing.zzeg, com.google.android.gms.internal.play_billing.zzei
+    public final byte zza(int i) {
+        int i2 = this.zzc;
+        if (((i2 - (i + 1)) | i) >= 0) {
+            return ((zzeg) this).zza[i];
+        }
+        if (i < 0) {
+            throw new ArrayIndexOutOfBoundsException("Index < 0: " + i);
+        }
+        throw new ArrayIndexOutOfBoundsException("Index > length: " + i + ", " + i2);
     }
 }

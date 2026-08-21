@@ -4,44 +4,44 @@ import java.util.Arrays;
 
 /* loaded from: classes2.dex */
 public final class F2 extends t2 {
-    public Object[] d;
-    public int e;
+    public long[] c;
+    public int d;
 
-    @Override // j$.util.stream.b2, j$.util.stream.f2
+    @Override // j$.util.stream.b2, j$.util.stream.g2
     public final void y(long j) {
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.d = new Object[(int) j];
+        this.c = new long[(int) j];
     }
 
-    @Override // j$.util.stream.b2, j$.util.stream.f2
+    @Override // j$.util.stream.b2, j$.util.stream.g2
     public final void x() {
         int i = 0;
-        Arrays.sort(this.d, 0, this.e, this.b);
-        long j = this.e;
-        f2 f2Var = this.a;
-        f2Var.y(j);
-        if (!this.c) {
-            while (i < this.e) {
-                f2Var.accept((f2) this.d[i]);
+        Arrays.sort(this.c, 0, this.d);
+        long j = this.d;
+        g2 g2Var = this.a;
+        g2Var.y(j);
+        if (!this.b) {
+            while (i < this.d) {
+                g2Var.accept(this.c[i]);
                 i++;
             }
         } else {
-            while (i < this.e && !f2Var.C()) {
-                f2Var.accept((f2) this.d[i]);
+            while (i < this.d && !g2Var.C()) {
+                g2Var.accept(this.c[i]);
                 i++;
             }
         }
-        f2Var.x();
-        this.d = null;
+        g2Var.x();
+        this.c = null;
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        Object[] objArr = this.d;
-        int i = this.e;
-        this.e = i + 1;
-        objArr[i] = obj;
+    @Override // j$.util.stream.f2, j$.util.stream.g2
+    public final void accept(long j) {
+        long[] jArr = this.c;
+        int i = this.d;
+        this.d = i + 1;
+        jArr[i] = j;
     }
 }

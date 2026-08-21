@@ -1,31 +1,40 @@
 package com.android.billingclient.api;
 
-import com.google.android.gms.internal.play_billing.zzjz;
-import com.google.android.gms.internal.play_billing.zzkd;
-import com.google.android.gms.internal.play_billing.zzkl;
-import com.google.android.gms.internal.play_billing.zzkn;
-import com.google.android.gms.internal.play_billing.zzlq;
-import com.google.android.gms.internal.play_billing.zzlu;
+import com.google.android.gms.internal.play_billing.zzbw;
+import com.google.android.gms.internal.play_billing.zzhx;
+import com.google.android.gms.internal.play_billing.zzib;
+import com.google.android.gms.internal.play_billing.zzij;
+import com.google.android.gms.internal.play_billing.zzil;
+import com.google.android.gms.internal.play_billing.zzjo;
+import com.google.android.gms.internal.play_billing.zzjs;
 
 /* loaded from: classes.dex */
 interface zzch {
     public static final /* synthetic */ int $r8$clinit = 0;
 
     static {
-        com.google.android.gms.internal.play_billing.zzcr.zzc("com.android.vending.billing.PURCHASES_UPDATED", zzkn.zzb, "com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED", zzkn.zzc, "com.android.vending.billing.ALTERNATIVE_BILLING", zzkn.zzd);
+        zzbw.zzc("com.android.vending.billing.PURCHASES_UPDATED", zzil.zzb, "com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED", zzil.zzc, "com.android.vending.billing.ALTERNATIVE_BILLING", zzil.zzd);
     }
 
-    void zza(zzjz zzjzVar);
+    void zza(zzhx zzhxVar);
 
-    void zzb(zzjz zzjzVar, int i);
+    void zzb(zzhx zzhxVar, int i);
 
-    void zzc(zzkd zzkdVar);
+    void zzc(zzhx zzhxVar, int i, long j);
 
-    void zzd(zzkd zzkdVar, int i);
+    void zzd(zzhx zzhxVar, long j, boolean z);
 
-    void zze(zzkl zzklVar);
+    void zze(zzhx zzhxVar, int i, long j, boolean z);
 
-    void zzf(zzlq zzlqVar);
+    void zzf(zzib zzibVar);
 
-    void zzg(zzlu zzluVar);
+    void zzg(zzib zzibVar, int i);
+
+    void zzh(zzib zzibVar, long j, boolean z);
+
+    void zzi(zzij zzijVar);
+
+    void zzj(zzjo zzjoVar);
+
+    void zzk(zzjs zzjsVar);
 }

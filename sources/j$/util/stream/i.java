@@ -7,49 +7,47 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class i implements Collector {
-    public final Supplier a;
-    public final BiConsumer b;
-    public final BinaryOperator c;
-    public final Function d;
-    public final Set e;
+public final /* synthetic */ class i implements java.util.stream.Collector {
+    public final /* synthetic */ Collector a;
 
-    public i(Supplier supplier, BiConsumer biConsumer, BinaryOperator binaryOperator, Function function, Set set) {
-        this.a = supplier;
-        this.b = biConsumer;
-        this.c = binaryOperator;
-        this.d = function;
-        this.e = set;
+    public /* synthetic */ i(Collector collector) {
+        this.a = collector;
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public i(Supplier supplier, BiConsumer biConsumer, BinaryOperator binaryOperator, Set set) {
-        this(supplier, biConsumer, binaryOperator, new j$.time.format.a(19), set);
-        Set set2 = Collectors.a;
+    @Override // java.util.stream.Collector
+    public final /* synthetic */ BiConsumer accumulator() {
+        return this.a.accumulator();
     }
 
-    @Override // j$.util.stream.Collector
-    public final BiConsumer accumulator() {
-        return this.b;
+    @Override // java.util.stream.Collector
+    public final /* synthetic */ Set characteristics() {
+        return r1.N(this.a.characteristics());
     }
 
-    @Override // j$.util.stream.Collector
-    public final Supplier supplier() {
-        return this.a;
+    @Override // java.util.stream.Collector
+    public final /* synthetic */ BinaryOperator combiner() {
+        return this.a.combiner();
     }
 
-    @Override // j$.util.stream.Collector
-    public final BinaryOperator combiner() {
-        return this.c;
+    public final /* synthetic */ boolean equals(Object obj) {
+        Collector collector = this.a;
+        if (obj instanceof i) {
+            obj = ((i) obj).a;
+        }
+        return collector.equals(obj);
     }
 
-    @Override // j$.util.stream.Collector
-    public final Function finisher() {
-        return this.d;
+    @Override // java.util.stream.Collector
+    public final /* synthetic */ Function finisher() {
+        return this.a.finisher();
     }
 
-    @Override // j$.util.stream.Collector
-    public final Set characteristics() {
-        return this.e;
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
+    }
+
+    @Override // java.util.stream.Collector
+    public final /* synthetic */ Supplier supplier() {
+        return this.a.supplier();
     }
 }

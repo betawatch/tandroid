@@ -1,19 +1,70 @@
 package com.google.android.gms.internal.play_billing;
 
-/* loaded from: classes.dex */
-final class zzt extends zzq {
-    final /* synthetic */ zzu zzg;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
 
-    zzt(zzu zzuVar) {
-        this.zzg = zzuVar;
+/* loaded from: classes.dex */
+final class zzt implements zzcz {
+    final WeakReference zza;
+    private final zzo zzb = new zzs(this);
+
+    zzt(zzp zzpVar) {
+        this.zza = new WeakReference(zzpVar);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzq
-    protected final String zza() {
-        zzr zzrVar = (zzr) this.zzg.zza.get();
-        if (zzrVar == null) {
-            return "Completer object has been garbage collected, future will fail soon";
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z) {
+        zzp zzpVar = (zzp) this.zza.get();
+        boolean cancel = this.zzb.cancel(z);
+        if (!cancel || zzpVar == null) {
+            return cancel;
         }
-        return "tag=[" + String.valueOf(zzrVar.zza) + "]";
+        zzpVar.zza();
+        return true;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.zzb.get();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.zzb.zzc instanceof zze;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.zzb.isDone();
+    }
+
+    public final String toString() {
+        return this.zzb.toString();
+    }
+
+    final boolean zza(Object obj) {
+        return this.zzb.zzd(obj);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcz
+    public final void zzb(Runnable runnable, Executor executor) {
+        this.zzb.zzb(runnable, executor);
+    }
+
+    final boolean zzc(Throwable th) {
+        zzg zzgVar = new zzg(th);
+        zzd zzdVar = zzo.zzb;
+        zzo zzoVar = this.zzb;
+        if (!zzdVar.zzd(zzoVar, null, zzgVar)) {
+            return false;
+        }
+        zzo.zzc(zzoVar);
+        return true;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return this.zzb.get(j, timeUnit);
     }
 }

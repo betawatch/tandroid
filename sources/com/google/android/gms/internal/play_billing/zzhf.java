@@ -1,30 +1,55 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-final class zzhf implements zzik {
-    private static final zzhf zza = new zzhf();
-
-    private zzhf() {
-    }
-
-    public static zzhf zza() {
-        return zza;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzik
-    public final zzij zzb(Class cls) {
-        if (!zzhk.class.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+abstract class zzhf {
+    static String zza(zzei zzeiVar) {
+        StringBuilder sb = new StringBuilder(zzeiVar.zzd());
+        for (int i = 0; i < zzeiVar.zzd(); i++) {
+            byte zza = zzeiVar.zza(i);
+            if (zza == 34) {
+                sb.append("\\\"");
+            } else if (zza == 39) {
+                sb.append("\\'");
+            } else if (zza != 92) {
+                switch (zza) {
+                    case 7:
+                        sb.append("\\a");
+                        break;
+                    case 8:
+                        sb.append("\\b");
+                        break;
+                    case 9:
+                        sb.append("\\t");
+                        break;
+                    case 10:
+                        sb.append("\\n");
+                        break;
+                    case 11:
+                        sb.append("\\v");
+                        break;
+                    case 12:
+                        sb.append("\\f");
+                        break;
+                    case 13:
+                        sb.append("\\r");
+                        break;
+                    default:
+                        if (zza < 32 || zza > 126) {
+                            sb.append('\\');
+                            sb.append((char) (((zza >>> 6) & 3) + 48));
+                            sb.append((char) (((zza >>> 3) & 7) + 48));
+                            sb.append((char) ((zza & 7) + 48));
+                            break;
+                        } else {
+                            sb.append((char) zza);
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                sb.append("\\\\");
+            }
         }
-        try {
-            return (zzij) zzhk.zzo(cls.asSubclass(zzhk.class)).zzd(3, null, null);
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzik
-    public final boolean zzc(Class cls) {
-        return zzhk.class.isAssignableFrom(cls);
+        return sb.toString();
     }
 }

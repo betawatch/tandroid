@@ -22,6 +22,6 @@ public final class k3 extends l3 implements j$.util.Z {
 
     @Override // j$.util.stream.l3
     public final Object b() {
-        return new y0(1);
+        return new z0(1);
     }
 }

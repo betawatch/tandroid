@@ -6,25 +6,25 @@ import java.util.function.LongBinaryOperator;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final class K1 implements L1, e2 {
-    public boolean a;
-    public long b;
+public final class K1 implements M1, f2 {
+    public long a;
+    public final /* synthetic */ long b;
     public final /* synthetic */ LongBinaryOperator c;
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(double d) {
-        q1.a();
+        r1.a();
         throw null;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(int i) {
-        q1.k();
+        r1.k();
         throw null;
     }
 
@@ -42,46 +42,37 @@ public final class K1 implements L1, e2 {
         return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.f2
     public final /* synthetic */ void s(Long l) {
-        q1.i(this, l);
+        r1.i(this, l);
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void x() {
     }
 
-    public K1(LongBinaryOperator longBinaryOperator) {
+    public K1(long j, LongBinaryOperator longBinaryOperator) {
+        this.b = j;
         this.c = longBinaryOperator;
     }
 
-    @Override // j$.util.stream.L1
-    public final void n(L1 l1) {
-        K1 k1 = (K1) l1;
-        if (k1.a) {
-            return;
-        }
-        accept(k1.b);
+    @Override // j$.util.stream.M1
+    public final void n(M1 m1) {
+        accept(((K1) m1).a);
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final void y(long j) {
-        this.a = true;
-        this.b = 0L;
+        this.a = this.b;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final void accept(long j) {
-        if (this.a) {
-            this.a = false;
-            this.b = j;
-        } else {
-            this.b = this.c.applyAsLong(this.b, j);
-        }
+        this.a = this.c.applyAsLong(this.a, j);
     }
 
     @Override // java.util.function.Supplier
     public final Object get() {
-        return this.a ? j$.util.B.c : new j$.util.B(this.b);
+        return Long.valueOf(this.a);
     }
 }

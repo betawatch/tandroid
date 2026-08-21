@@ -156,7 +156,7 @@ public final class e extends b implements Set, j$.util.Set {
         return new f(lVarArr, length, 0, length, j >= 0 ? j : 0L, concurrentHashMap);
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public final void forEach(Consumer consumer) {
         consumer.getClass();
         l[] lVarArr = this.a.a;

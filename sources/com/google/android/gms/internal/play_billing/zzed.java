@@ -1,18 +1,8 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.concurrent.Executor;
+import java.util.Iterator;
 
 /* loaded from: classes.dex */
-enum zzed implements Executor {
-    zza;
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        runnable.run();
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return "MoreExecutors.directExecutor()";
-    }
+public interface zzed extends Iterator {
+    byte zza();
 }

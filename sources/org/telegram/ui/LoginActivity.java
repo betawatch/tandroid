@@ -77,7 +77,6 @@ import androidx.dynamicanimation.animation.DynamicAnimation;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.ProductDetails;
-import com.android.billingclient.api.ProductDetailsResponseListener;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesResponseListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
@@ -13115,15 +13114,15 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             ArrayList arrayList = new ArrayList();
             arrayList.add(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(str).build());
             FileLog.d("LoginBilling querying \"" + str + "\" product");
-            BillingController.getInstance().queryProductDetails(arrayList, new ProductDetailsResponseListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda10
-                @Override // com.android.billingclient.api.ProductDetailsResponseListener
+            BillingController.getInstance().queryProductDetails(arrayList, new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda10
+                @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
                 public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                    LoginActivity.LoginPayView.$r8$lambda$Y4OvV-EWfQ-3HGJyHRyKfNhkfzg(LoginActivity.LoginPayView.this, str, str2, str3, i, billingResult, list);
+                    LoginActivity.LoginPayView.$r8$lambda$CSxhLttvqzdZPWFjDvFBLs-OnnA(LoginActivity.LoginPayView.this, str, str2, str3, i, billingResult, list);
                 }
             });
         }
 
-        public static /* synthetic */ void $r8$lambda$Y4OvV-EWfQ-3HGJyHRyKfNhkfzg(final LoginPayView loginPayView, final String str, final String str2, final String str3, final int i, final BillingResult billingResult, final List list) {
+        public static /* synthetic */ void $r8$lambda$CSxhLttvqzdZPWFjDvFBLs-OnnA(final LoginPayView loginPayView, final String str, final String str2, final String str3, final int i, final BillingResult billingResult, final List list) {
             loginPayView.getClass();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable

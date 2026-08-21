@@ -1,29 +1,26 @@
 package j$.util.stream;
 
-import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class j0 extends n0 {
-    public final /* synthetic */ o0 c;
-    public final /* synthetic */ Predicate d;
+public final /* synthetic */ class j0 implements Supplier {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(o0 o0Var, Predicate predicate) {
-        super(o0Var);
-        this.c = o0Var;
-        this.d = predicate;
+    public /* synthetic */ j0(p0 p0Var, int i) {
+        this.a = i;
+        this.b = p0Var;
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        if (this.a) {
-            return;
-        }
-        boolean test = this.d.test(obj);
-        o0 o0Var = this.c;
-        if (test == o0Var.a) {
-            this.a = true;
-            this.b = o0Var.b;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return new m0(this.b);
+            case 1:
+                return new l0(this.b);
+            default:
+                return new n0(this.b);
         }
     }
 }

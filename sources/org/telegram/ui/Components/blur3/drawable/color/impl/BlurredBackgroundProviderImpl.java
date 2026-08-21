@@ -72,11 +72,16 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                int multAlpha;
-                multAlpha = Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground), r1 ? 0.85f : 0.825f);
-                return multAlpha;
+                return BlurredBackgroundProviderImpl.$r8$lambda$_MNZOQxDhKpxyt8Pz4xciFU2jeM(resourcesProvider2, z);
             }
         }).setStrokeColorTop(1157627903, 0).setStrokeColorBottom(587202559, 0).setShadowColor(939524096, 0).setShadowLayer(AndroidUtilities.dpf2(3.5f), 0.0f, 0.0f).setStrokeWidth(AndroidUtilities.dpf2(0.6666667f), AndroidUtilities.dpf2(0.6666667f)).build();
+    }
+
+    public static /* synthetic */ int $r8$lambda$_MNZOQxDhKpxyt8Pz4xciFU2jeM(Theme.ResourcesProvider resourcesProvider, boolean z) {
+        if (LiteMode.isEnabled(256)) {
+            return Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground), z ? 0.85f : 0.825f);
+        }
+        return Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground);
     }
 
     public static BlurredBackgroundProvider scrimMenuBackground(Theme.ResourcesProvider resourcesProvider) {

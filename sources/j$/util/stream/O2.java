@@ -1,167 +1,183 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.Arrays;
+import j$.util.Objects;
+import java.util.Comparator;
+import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class O2 extends c implements Iterable, j$.lang.a {
+public abstract class O2 implements j$.util.c0 {
+    public int a;
+    public final int b;
+    public int c;
+    public final int d;
     public Object e;
-    public Object[] f;
+    public final /* synthetic */ P2 f;
 
-    public abstract Object c(int i);
+    public abstract void a(int i, Object obj, Object obj2);
 
-    public abstract void k(Object obj, int i, int i2, Object obj2);
+    public abstract j$.util.c0 b(Object obj, int i, int i2);
 
-    public abstract int l(Object obj);
+    public abstract j$.util.c0 c(int i, int i2, int i3, int i4);
 
-    public abstract Object[] q();
-
-    public abstract Spliterator spliterator();
-
-    @Override // java.lang.Iterable
-    public final /* synthetic */ java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 16464;
     }
 
-    public O2(int i) {
-        super(i);
-        this.e = c(1 << this.a);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.com.android.tools.r8.a.n(this);
     }
 
-    public O2() {
-        this.e = c(16);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.com.android.tools.r8.a.p(this, i);
     }
 
-    public final void p(long j) {
-        long l;
-        int i = this.c;
-        if (i == 0) {
-            l = l(this.e);
-        } else {
-            l = l(this.f[i]) + this.d[i];
-        }
-        if (j > l) {
-            if (this.f == null) {
-                Object[] q = q();
-                this.f = q;
-                this.d = new long[8];
-                q[0] = this.e;
-            }
-            int i2 = this.c + 1;
-            while (j > l) {
-                Object[] objArr = this.f;
-                if (i2 >= objArr.length) {
-                    int length = objArr.length * 2;
-                    this.f = Arrays.copyOf(objArr, length);
-                    this.d = Arrays.copyOf(this.d, length);
-                }
-                int i3 = this.a;
-                if (i2 != 0 && i2 != 1) {
-                    i3 = Math.min((i3 + i2) - 1, 30);
-                }
-                int i4 = 1 << i3;
-                this.f[i2] = c(i4);
-                long[] jArr = this.d;
-                jArr[i2] = jArr[i2 - 1] + l(this.f[r6]);
-                l += i4;
-                i2++;
-            }
-        }
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 
-    public final int o(long j) {
-        if (this.c == 0) {
-            if (j < this.b) {
-                return 0;
-            }
-            throw new IndexOutOfBoundsException(Long.toString(j));
-        }
-        if (j >= count()) {
-            throw new IndexOutOfBoundsException(Long.toString(j));
-        }
-        for (int i = 0; i <= this.c; i++) {
-            if (j < this.d[i] + l(this.f[i])) {
-                return i;
-            }
-        }
-        throw new IndexOutOfBoundsException(Long.toString(j));
+    public O2(P2 p2, int i, int i2, int i3, int i4) {
+        this.f = p2;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        Object[] objArr = p2.f;
+        this.e = objArr == null ? p2.e : objArr[i];
     }
 
-    public void j(int i, Object obj) {
-        long j = i;
-        long count = count() + j;
-        if (count > l(obj) || count < j) {
-            throw new IndexOutOfBoundsException("does not fit");
-        }
-        if (this.c == 0) {
-            System.arraycopy(this.e, 0, obj, i, this.b);
-            return;
-        }
-        for (int i2 = 0; i2 < this.c; i2++) {
-            Object obj2 = this.f[i2];
-            System.arraycopy(obj2, 0, obj, i, l(obj2));
-            i += l(this.f[i2]);
-        }
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        int i = this.a;
+        int i2 = this.d;
         int i3 = this.b;
-        if (i3 > 0) {
-            System.arraycopy(this.e, 0, obj, i, i3);
+        if (i == i3) {
+            return i2 - this.c;
         }
+        long[] jArr = this.f.d;
+        return ((jArr[i3] + i2) - jArr[i]) - this.c;
     }
 
-    public Object d() {
-        long count = count();
-        if (count >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
+    @Override // j$.util.c0
+    public final boolean tryAdvance(Object obj) {
+        Objects.requireNonNull(obj);
+        int i = this.a;
+        int i2 = this.b;
+        if (i >= i2 && (i != i2 || this.c >= this.d)) {
+            return false;
         }
-        Object c = c((int) count);
-        j(0, c);
-        return c;
-    }
-
-    public final void r() {
-        long l;
-        if (this.b == l(this.e)) {
-            if (this.f == null) {
-                Object[] q = q();
-                this.f = q;
-                this.d = new long[8];
-                q[0] = this.e;
+        Object obj2 = this.e;
+        int i3 = this.c;
+        this.c = i3 + 1;
+        a(i3, obj2, obj);
+        int i4 = this.c;
+        Object obj3 = this.e;
+        P2 p2 = this.f;
+        if (i4 == p2.l(obj3)) {
+            this.c = 0;
+            int i5 = this.a + 1;
+            this.a = i5;
+            Object[] objArr = p2.f;
+            if (objArr != null && i5 <= i2) {
+                this.e = objArr[i5];
             }
-            int i = this.c;
-            int i2 = i + 1;
-            Object[] objArr = this.f;
-            if (i2 >= objArr.length || objArr[i2] == null) {
-                if (i == 0) {
-                    l = l(this.e);
-                } else {
-                    l = l(objArr[i]) + this.d[i];
+        }
+        return true;
+    }
+
+    @Override // j$.util.c0
+    public final void forEachRemaining(Object obj) {
+        P2 p2;
+        Objects.requireNonNull(obj);
+        int i = this.a;
+        int i2 = this.d;
+        int i3 = this.b;
+        if (i < i3 || (i == i3 && this.c < i2)) {
+            int i4 = this.c;
+            while (true) {
+                p2 = this.f;
+                if (i >= i3) {
+                    break;
                 }
-                p(l + 1);
+                Object obj2 = p2.f[i];
+                p2.k(obj2, i4, p2.l(obj2), obj);
+                i++;
+                i4 = 0;
             }
-            this.b = 0;
-            int i3 = this.c + 1;
-            this.c = i3;
-            this.e = this.f[i3];
+            p2.k(this.a == i3 ? this.e : p2.f[i3], i4, i2, obj);
+            this.a = i3;
+            this.c = i2;
         }
     }
 
-    @Override // j$.util.stream.c
-    public final void clear() {
-        Object[] objArr = this.f;
-        if (objArr != null) {
-            this.e = objArr[0];
-            this.f = null;
-            this.d = null;
+    @Override // j$.util.Spliterator
+    public final j$.util.c0 trySplit() {
+        int i = this.a;
+        int i2 = this.b;
+        if (i < i2) {
+            int i3 = i2 - 1;
+            int i4 = this.c;
+            P2 p2 = this.f;
+            j$.util.c0 c = c(i, i3, i4, p2.l(p2.f[i3]));
+            this.a = i2;
+            this.c = 0;
+            this.e = p2.f[i2];
+            return c;
         }
-        this.b = 0;
-        this.c = 0;
+        if (i != i2) {
+            return null;
+        }
+        int i5 = this.c;
+        int i6 = (this.d - i5) / 2;
+        if (i6 == 0) {
+            return null;
+        }
+        j$.util.c0 b = b(this.e, i5, i6);
+        this.c += i6;
+        return b;
     }
 
-    public void e(Object obj) {
-        for (int i = 0; i < this.c; i++) {
-            Object obj2 = this.f[i];
-            k(obj2, 0, l(obj2), obj);
-        }
-        k(this.e, 0, this.b, obj);
+    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
+        forEachRemaining((Object) intConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
+        return tryAdvance((Object) intConsumer);
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        forEachRemaining((Object) longConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
+        return tryAdvance((Object) longConsumer);
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        forEachRemaining((Object) doubleConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        return tryAdvance((Object) doubleConsumer);
+    }
+
+    @Override // j$.util.c0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.T trySplit() {
+        return (j$.util.T) trySplit();
     }
 }

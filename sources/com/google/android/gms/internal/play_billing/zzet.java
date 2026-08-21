@@ -1,34 +1,24 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.logging.Logger;
-
 /* loaded from: classes.dex */
 final class zzet {
-    private final zzbg zza = new zzbg();
-    private final String zzb;
-    private volatile Logger zzc;
+    private final Object zza;
+    private final int zzb;
 
-    zzet(Class cls) {
-        this.zzb = cls.getName();
+    zzet(Object obj, int i) {
+        this.zza = obj;
+        this.zzb = i;
     }
 
-    final Logger zza() {
-        Logger logger = this.zzc;
-        if (logger != null) {
-            return logger;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof zzet)) {
+            return false;
         }
-        synchronized (this.zza) {
-            try {
-                Logger logger2 = this.zzc;
-                if (logger2 != null) {
-                    return logger2;
-                }
-                Logger logger3 = Logger.getLogger(this.zzb);
-                this.zzc = logger3;
-                return logger3;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+        zzet zzetVar = (zzet) obj;
+        return this.zza == zzetVar.zza && this.zzb == zzetVar.zzb;
+    }
+
+    public final int hashCode() {
+        return (System.identityHashCode(this.zza) * 65535) + this.zzb;
     }
 }

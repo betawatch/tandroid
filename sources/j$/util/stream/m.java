@@ -1,196 +1,67 @@
 package j$.util.stream;
 
-import j$.util.Optional;
-import j$.util.function.BiConsumer$-CC;
-import j$.util.function.Predicate$-CC;
-import java.util.function.BiConsumer;
-import java.util.function.DoubleBinaryOperator;
-import java.util.function.DoubleFunction;
-import java.util.function.IntBinaryOperator;
+import j$.util.Objects;
+import j$.util.Spliterator;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.IntFunction;
-import java.util.function.ObjDoubleConsumer;
-import java.util.function.ObjIntConsumer;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.function.ToDoubleFunction;
-import java.util.function.ToIntFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m implements ObjDoubleConsumer, BiConsumer, DoubleFunction, ToDoubleFunction, IntFunction, DoubleBinaryOperator, Supplier, Predicate, ToIntFunction, IntBinaryOperator, ObjIntConsumer {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ m(int i) {
-        this.a = i;
+public final class m extends X1 {
+    public static G0 T(a aVar, Spliterator spliterator) {
+        j$.time.format.a aVar2 = new j$.time.format.a(24);
+        j$.time.format.a aVar3 = new j$.time.format.a(25);
+        j$.time.format.a aVar4 = new j$.time.format.a(26);
+        Objects.requireNonNull(aVar2);
+        Objects.requireNonNull(aVar3);
+        Objects.requireNonNull(aVar4);
+        return new G0((Collection) new w1(T2.REFERENCE, aVar4, aVar3, aVar2, 3).c(aVar, spliterator));
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        switch (this.a) {
+    @Override // j$.util.stream.a
+    public final C0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+        if (S2.DISTINCT.q(aVar.f)) {
+            return aVar.B(spliterator, false, intFunction);
         }
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-        switch (this.a) {
-            case 1:
-                break;
-            case 3:
-                break;
-            case 24:
-                break;
+        if (S2.ORDERED.q(aVar.f)) {
+            return T(aVar, spliterator);
         }
-        return BiConsumer$-CC.$default$andThen(this, biConsumer);
-    }
-
-    @Override // java.util.function.DoubleFunction
-    public Object apply(double d) {
-        return Double.valueOf(d);
-    }
-
-    @Override // java.util.function.DoubleBinaryOperator
-    public double applyAsDouble(double d, double d2) {
-        return Math.max(d, d2);
-    }
-
-    @Override // java.util.function.IntBinaryOperator
-    public int applyAsInt(int i, int i2) {
-        switch (this.a) {
-            case 22:
-                return Math.min(i, i2);
-            case 25:
-                return i + i2;
-            default:
-                return Math.max(i, i2);
+        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        j$.util.concurrent.t tVar = new j$.util.concurrent.t(4, atomicBoolean, concurrentHashMap);
+        Objects.requireNonNull(tVar);
+        new N(tVar, false).e(aVar, spliterator);
+        Collection keySet = concurrentHashMap.keySet();
+        if (atomicBoolean.get()) {
+            HashSet hashSet = new HashSet(keySet);
+            hashSet.add(null);
+            keySet = hashSet;
         }
+        return new G0(keySet);
     }
 
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
+    @Override // j$.util.stream.a
+    public final Spliterator K(a aVar, Spliterator spliterator) {
+        if (S2.DISTINCT.q(aVar.f)) {
+            return aVar.S(spliterator);
         }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        switch (this.a) {
+        if (S2.ORDERED.q(aVar.f)) {
+            return T(aVar, spliterator).spliterator();
         }
-        return Predicate$-CC.$default$or(this, predicate);
+        return new b3(aVar.S(spliterator), new ConcurrentHashMap());
     }
 
-    @Override // java.util.function.Predicate
-    public boolean test(Object obj) {
-        switch (this.a) {
-            case 10:
-                return ((j$.util.z) obj).a;
-            case 11:
-            case 13:
-            default:
-                return ((Optional) obj).isPresent();
-            case 12:
-                return ((j$.util.A) obj).a;
-            case 14:
-                return ((j$.util.B) obj).a;
+    @Override // j$.util.stream.a
+    public final g2 M(int i, g2 g2Var) {
+        Objects.requireNonNull(g2Var);
+        if (S2.DISTINCT.q(i)) {
+            return g2Var;
         }
-    }
-
-    @Override // java.util.function.ToDoubleFunction
-    public double applyAsDouble(Object obj) {
-        return ((Double) obj).doubleValue();
-    }
-
-    @Override // java.util.function.ObjDoubleConsumer
-    public void accept(Object obj, double d) {
-        switch (this.a) {
-            case 0:
-                double[] dArr = (double[]) obj;
-                dArr[2] = dArr[2] + 1.0d;
-                Collectors.a(dArr, d);
-                dArr[3] = dArr[3] + d;
-                break;
-            case 1:
-            default:
-                double[] dArr2 = (double[]) obj;
-                Collectors.a(dArr2, d);
-                dArr2[2] = dArr2[2] + d;
-                break;
-            case 2:
-                ((j$.util.u) obj).accept(d);
-                break;
+        if (S2.SORTED.q(i)) {
+            return new k(g2Var);
         }
-    }
-
-    @Override // java.util.function.ToIntFunction
-    public int applyAsInt(Object obj) {
-        return ((Integer) obj).intValue();
-    }
-
-    @Override // java.util.function.Supplier
-    public Object get() {
-        switch (this.a) {
-            case 8:
-                return new double[3];
-            case 11:
-                return new C();
-            case 13:
-                return new D();
-            case 15:
-                return new E();
-            case 17:
-                return new F();
-            default:
-                return new long[2];
-        }
-    }
-
-    @Override // java.util.function.ObjIntConsumer
-    public void accept(Object obj, int i) {
-        switch (this.a) {
-            case 23:
-                ((j$.util.v) obj).accept(i);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + i;
-                break;
-        }
-    }
-
-    @Override // java.util.function.BiConsumer
-    public void accept(Object obj, Object obj2) {
-        switch (this.a) {
-            case 1:
-                double[] dArr = (double[]) obj;
-                double[] dArr2 = (double[]) obj2;
-                Collectors.a(dArr, dArr2[0]);
-                Collectors.a(dArr, dArr2[1]);
-                dArr[2] = dArr[2] + dArr2[2];
-                dArr[3] = dArr[3] + dArr2[3];
-                break;
-            case 3:
-                ((j$.util.u) obj).b((j$.util.u) obj2);
-                break;
-            case 24:
-                ((j$.util.v) obj).b((j$.util.v) obj2);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                long[] jArr2 = (long[]) obj2;
-                jArr[0] = jArr[0] + jArr2[0];
-                jArr[1] = jArr[1] + jArr2[1];
-                break;
-        }
-    }
-
-    @Override // java.util.function.IntFunction
-    public Object apply(int i) {
-        switch (this.a) {
-            case 6:
-                return new Double[i];
-            case 18:
-                return new Object[i];
-            case 19:
-                return new Integer[i];
-            default:
-                return Integer.valueOf(i);
-        }
+        return new l(g2Var);
     }
 }

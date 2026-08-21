@@ -1,7 +1,7 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public final class s extends e0 {
+public final class s extends X {
     public final /* synthetic */ int m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -11,20 +11,18 @@ public final class s extends e0 {
     }
 
     @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
+    public final g2 M(int i, g2 g2Var) {
         switch (this.m) {
             case 0:
-                return new o(this, f2Var, 3);
+                return new p(this, g2Var, 2);
             case 1:
-                return new T(0, f2Var);
+                return new S(this, g2Var, 2);
             case 2:
-                return new Q(this, f2Var, 3);
+                return g2Var;
             case 3:
-                return new Z(this, f2Var, 1);
-            case 4:
-                return f2Var;
+                return new S(this, g2Var, 5);
             default:
-                return new Z(this, f2Var, 4);
+                return new a0(this, g2Var, 2);
         }
     }
 }

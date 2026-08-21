@@ -1,54 +1,71 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ServiceConfigurationError;
+import java.util.ServiceLoader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /* loaded from: classes.dex */
-final class zzfc implements Runnable {
-    zzff zza;
-
-    zzfc(zzff zzffVar) {
-        this.zza = zzffVar;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:3:0x0006, code lost:
-    
-        r1 = r0.zzc;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        zzeu zzeuVar;
-        ScheduledFuture scheduledFuture;
-        zzff zzffVar = this.zza;
-        if (zzffVar == null || zzeuVar == null) {
-            return;
-        }
-        this.zza = null;
-        if (zzeuVar.isDone()) {
-            zzffVar.zzp(zzeuVar);
-            return;
+public abstract class zzfc {
+    static zzeu zzb(Class cls) {
+        String str;
+        ClassLoader classLoader = zzfc.class.getClassLoader();
+        if (cls.equals(zzeu.class)) {
+            str = "com.google.protobuf.BlazeGeneratedExtensionRegistryLiteLoader";
+        } else {
+            if (!cls.getPackage().equals(zzfc.class.getPackage())) {
+                throw new IllegalArgumentException(cls.getName());
+            }
+            str = String.format("%s.BlazeGenerated%sLoader", cls.getPackage().getName(), cls.getSimpleName());
         }
         try {
-            scheduledFuture = zzffVar.zzd;
-            zzffVar.zzd = null;
-            String str = "Timed out";
-            if (scheduledFuture != null) {
+            try {
                 try {
-                    long abs = Math.abs(scheduledFuture.getDelay(TimeUnit.MILLISECONDS));
-                    if (abs > 10) {
-                        str = "Timed out (timeout delayed by " + abs + " ms after scheduled time)";
+                    try {
+                        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                        throw null;
+                    } catch (InstantiationException e) {
+                        throw new IllegalStateException(e);
                     }
-                } catch (Throwable th) {
-                    zzffVar.zzo(new zzfd(str, null));
-                    throw th;
+                } catch (IllegalAccessException e2) {
+                    throw new IllegalStateException(e2);
+                }
+            } catch (NoSuchMethodException e3) {
+                throw new IllegalStateException(e3);
+            } catch (InvocationTargetException e4) {
+                throw new IllegalStateException(e4);
+            }
+        } catch (ClassNotFoundException unused) {
+            Iterator it = ServiceLoader.load(zzfc.class, classLoader).iterator();
+            ArrayList arrayList = new ArrayList();
+            while (it.hasNext()) {
+                try {
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                    throw null;
+                } catch (ServiceConfigurationError e5) {
+                    Logger.getLogger(zzep.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(cls.getSimpleName()), (Throwable) e5);
                 }
             }
-            zzffVar.zzo(new zzfd(str + ": " + zzeuVar.toString(), null));
-        } finally {
-            zzeuVar.cancel(true);
+            if (arrayList.size() == 1) {
+                return (zzeu) arrayList.get(0);
+            }
+            if (arrayList.size() == 0) {
+                return null;
+            }
+            try {
+                return (zzeu) cls.getMethod("combine", Collection.class).invoke(null, arrayList);
+            } catch (IllegalAccessException e6) {
+                throw new IllegalStateException(e6);
+            } catch (NoSuchMethodException e7) {
+                throw new IllegalStateException(e7);
+            } catch (InvocationTargetException e8) {
+                throw new IllegalStateException(e8);
+            }
         }
     }
 }

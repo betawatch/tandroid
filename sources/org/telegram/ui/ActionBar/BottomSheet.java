@@ -62,6 +62,7 @@ import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.LaunchActivity;
 
@@ -98,6 +99,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     private boolean disableScroll;
     private Runnable dismissRunnable;
     private boolean dismissed;
+    public boolean doNotOverlayNavigationBar;
     public boolean drawDoubleNavigationBar;
     public boolean drawNavigationBar;
     private boolean focusable;
@@ -841,8 +843,12 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                         View childAt = getChildAt(i8);
                         if (childAt.getVisibility() != 8) {
                             BottomSheet bottomSheet15 = BottomSheet.this;
-                            if (childAt != bottomSheet15.containerView && !bottomSheet15.onCustomMeasure(childAt, i7, i6)) {
-                                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), 0);
+                            if (childAt != bottomSheet15.containerView) {
+                                if (childAt instanceof ItemOptions.DimView) {
+                                    measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), 0);
+                                } else if (!bottomSheet15.onCustomMeasure(childAt, i7, i6)) {
+                                    measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), 0);
+                                }
                             }
                         }
                     }
@@ -1095,107 +1101,101 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             super.requestDisallowInterceptTouchEvent(z);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:32:0x010e  */
-        /* JADX WARN: Removed duplicated region for block: B:44:0x013e  */
-        /* JADX WARN: Removed duplicated region for block: B:55:0x0193  */
-        /* JADX WARN: Removed duplicated region for block: B:60:0x01d6  */
-        /* JADX WARN: Removed duplicated region for block: B:67:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x010c  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x0225  */
         @Override // android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         protected void dispatchDraw(Canvas canvas) {
             BottomSheet bottomSheet;
-            BottomSheet bottomSheet2;
-            BottomSheet bottomSheet3;
-            BottomSheet bottomSheet4;
-            BottomSheet bottomSheet5 = BottomSheet.this;
-            if (bottomSheet5.containerView != null && this.internalPaddingBottom > 0) {
-                this.internalBackgroundPaint.setColor(bottomSheet5.internalBackgroundColor);
+            BottomSheet bottomSheet2 = BottomSheet.this;
+            if (bottomSheet2.containerView != null && this.internalPaddingBottom > 0) {
+                this.internalBackgroundPaint.setColor(bottomSheet2.internalBackgroundColor);
                 canvas.drawRect(0.0f, ((getMeasuredHeight() - this.internalPaddingBottom) + BottomSheet.this.containerView.getTranslationY()) - 1.0f, getMeasuredWidth(), getMeasuredHeight() + BottomSheet.this.containerView.getTranslationY(), this.internalBackgroundPaint);
             }
             int i = Build.VERSION.SDK_INT;
             if (i >= 26) {
-                BottomSheet bottomSheet6 = BottomSheet.this;
-                int i2 = bottomSheet6.navBarColorKey;
+                BottomSheet bottomSheet3 = BottomSheet.this;
+                int i2 = bottomSheet3.navBarColorKey;
                 if (i2 >= 0) {
-                    this.backgroundPaint.setColor(bottomSheet6.getThemedColor(i2));
+                    this.backgroundPaint.setColor(bottomSheet3.getThemedColor(i2));
                 } else {
-                    this.backgroundPaint.setColor(bottomSheet6.navBarColor);
+                    this.backgroundPaint.setColor(bottomSheet3.navBarColor);
                 }
             } else {
                 this.backgroundPaint.setColor(-16777216);
             }
-            BottomSheet bottomSheet7 = BottomSheet.this;
-            if (bottomSheet7.drawDoubleNavigationBar && !bottomSheet7.shouldOverlayCameraViewOverNavBar()) {
+            BottomSheet bottomSheet4 = BottomSheet.this;
+            if (bottomSheet4.drawDoubleNavigationBar && !bottomSheet4.shouldOverlayCameraViewOverNavBar()) {
                 drawNavigationBar(canvas, 1.0f);
             }
             if (this.backgroundPaint.getAlpha() < 255) {
-                BottomSheet bottomSheet8 = BottomSheet.this;
-                if (bottomSheet8.drawNavigationBar) {
+                BottomSheet bottomSheet5 = BottomSheet.this;
+                if (bottomSheet5.drawNavigationBar) {
                     float f = 0.0f;
-                    if (bottomSheet8.scrollNavBar || (i >= 29 && bottomSheet8.getAdditionalMandatoryOffsets() > 0)) {
+                    if (bottomSheet5.scrollNavBar || (i >= 29 && bottomSheet5.getAdditionalMandatoryOffsets() > 0)) {
                         f = Math.max(0.0f, BottomSheet.this.getBottomInset() - (BottomSheet.this.containerView.getMeasuredHeight() - BottomSheet.this.containerView.getTranslationY()));
                     }
-                    BottomSheet bottomSheet9 = BottomSheet.this;
-                    int bottomInset = bottomSheet9.drawNavigationBar ? bottomSheet9.getBottomInset() : 0;
+                    BottomSheet bottomSheet6 = BottomSheet.this;
+                    int bottomInset = bottomSheet6.drawNavigationBar ? bottomSheet6.getBottomInset() : 0;
                     canvas.save();
                     canvas.clipRect(BottomSheet.this.containerView.getLeft() + BottomSheet.this.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f) - BottomSheet.this.currentPanTranslationY, BottomSheet.this.containerView.getRight() - BottomSheet.this.backgroundPaddingLeft, f + getMeasuredHeight(), Region.Op.DIFFERENCE);
                     super.dispatchDraw(canvas);
                     canvas.restore();
-                    if (!BottomSheet.this.shouldOverlayCameraViewOverNavBar()) {
-                        BottomSheet bottomSheet10 = BottomSheet.this;
-                        drawNavigationBar(canvas, bottomSheet10.drawDoubleNavigationBar ? bottomSheet10.navigationBarAlpha * 0.7f : 1.0f);
-                    }
                     bottomSheet = BottomSheet.this;
-                    if (bottomSheet.drawNavigationBar && bottomSheet.rightInset != 0 && BottomSheet.this.rightInset > BottomSheet.this.leftInset) {
-                        bottomSheet4 = BottomSheet.this;
-                        if (bottomSheet4.fullWidth) {
+                    if (!bottomSheet.doNotOverlayNavigationBar) {
+                        if ((getMeasuredHeight() - BottomSheet.this.containerView.getY()) - BottomSheet.this.containerView.getMeasuredHeight() > AndroidUtilities.dp(48.0f)) {
+                            Paint paint = this.backgroundPaint;
+                            BottomSheet bottomSheet7 = BottomSheet.this;
+                            int i3 = bottomSheet7.behindKeyboardColorKey;
+                            paint.setColor(i3 >= 0 ? bottomSheet7.getThemedColor(i3) : bottomSheet7.behindKeyboardColor);
+                            int left = BottomSheet.this.containerView.getLeft();
+                            canvas.drawRect(left + r1.backgroundPaddingLeft, BottomSheet.this.containerView.getMeasuredHeight() + BottomSheet.this.containerView.getY(), BottomSheet.this.containerView.getRight() - BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight(), this.backgroundPaint);
+                            return;
+                        }
+                        return;
+                    }
+                    if (!bottomSheet.shouldOverlayCameraViewOverNavBar()) {
+                        BottomSheet bottomSheet8 = BottomSheet.this;
+                        drawNavigationBar(canvas, bottomSheet8.drawDoubleNavigationBar ? bottomSheet8.navigationBarAlpha * 0.7f : 1.0f);
+                    }
+                    BottomSheet bottomSheet9 = BottomSheet.this;
+                    if (bottomSheet9.drawNavigationBar && bottomSheet9.rightInset != 0 && BottomSheet.this.rightInset > BottomSheet.this.leftInset) {
+                        BottomSheet bottomSheet10 = BottomSheet.this;
+                        if (bottomSheet10.fullWidth) {
                             Point point = AndroidUtilities.displaySize;
                             if (point.x > point.y) {
-                                int right = bottomSheet4.containerView.getRight();
+                                int right = bottomSheet10.containerView.getRight();
                                 canvas.drawRect(right - r2.backgroundPaddingLeft, BottomSheet.this.containerView.getTranslationY(), BottomSheet.this.containerView.getRight() + BottomSheet.this.rightInset, getMeasuredHeight(), this.backgroundPaint);
                             }
                         }
                     }
-                    bottomSheet2 = BottomSheet.this;
-                    if (bottomSheet2.drawNavigationBar && bottomSheet2.leftInset != 0 && BottomSheet.this.leftInset > BottomSheet.this.rightInset) {
-                        bottomSheet3 = BottomSheet.this;
-                        if (bottomSheet3.fullWidth) {
+                    BottomSheet bottomSheet11 = BottomSheet.this;
+                    if (bottomSheet11.drawNavigationBar && bottomSheet11.leftInset != 0 && BottomSheet.this.leftInset > BottomSheet.this.rightInset) {
+                        BottomSheet bottomSheet12 = BottomSheet.this;
+                        if (bottomSheet12.fullWidth) {
                             Point point2 = AndroidUtilities.displaySize;
                             if (point2.x > point2.y) {
-                                canvas.drawRect(0.0f, bottomSheet3.containerView.getTranslationY(), BottomSheet.this.containerView.getLeft() + BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight(), this.backgroundPaint);
+                                canvas.drawRect(0.0f, bottomSheet12.containerView.getTranslationY(), BottomSheet.this.containerView.getLeft() + BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight(), this.backgroundPaint);
                             }
                         }
                     }
-                    if (BottomSheet.this.containerView.getY() + BottomSheet.this.containerView.getMeasuredHeight() >= getMeasuredHeight()) {
-                        Paint paint = this.backgroundPaint;
-                        BottomSheet bottomSheet11 = BottomSheet.this;
-                        int i3 = bottomSheet11.behindKeyboardColorKey;
-                        paint.setColor(i3 >= 0 ? bottomSheet11.getThemedColor(i3) : bottomSheet11.behindKeyboardColor);
-                        int left = BottomSheet.this.containerView.getLeft();
-                        canvas.drawRect(left + r1.backgroundPaddingLeft, BottomSheet.this.containerView.getMeasuredHeight() + BottomSheet.this.containerView.getY(), BottomSheet.this.containerView.getRight() - BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight(), this.backgroundPaint);
+                    if (BottomSheet.this.containerView.getY() + BottomSheet.this.containerView.getMeasuredHeight() < getMeasuredHeight()) {
+                        Paint paint2 = this.backgroundPaint;
+                        BottomSheet bottomSheet13 = BottomSheet.this;
+                        int i4 = bottomSheet13.behindKeyboardColorKey;
+                        paint2.setColor(i4 >= 0 ? bottomSheet13.getThemedColor(i4) : bottomSheet13.behindKeyboardColor);
+                        int left2 = BottomSheet.this.containerView.getLeft();
+                        canvas.drawRect(left2 + r1.backgroundPaddingLeft, BottomSheet.this.containerView.getMeasuredHeight() + BottomSheet.this.containerView.getY(), BottomSheet.this.containerView.getRight() - BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight(), this.backgroundPaint);
                         return;
                     }
                     return;
                 }
             }
             super.dispatchDraw(canvas);
-            if (!BottomSheet.this.shouldOverlayCameraViewOverNavBar()) {
-            }
             bottomSheet = BottomSheet.this;
-            if (bottomSheet.drawNavigationBar) {
-                bottomSheet4 = BottomSheet.this;
-                if (bottomSheet4.fullWidth) {
-                }
-            }
-            bottomSheet2 = BottomSheet.this;
-            if (bottomSheet2.drawNavigationBar) {
-                bottomSheet3 = BottomSheet.this;
-                if (bottomSheet3.fullWidth) {
-                }
-            }
-            if (BottomSheet.this.containerView.getY() + BottomSheet.this.containerView.getMeasuredHeight() >= getMeasuredHeight()) {
+            if (!bottomSheet.doNotOverlayNavigationBar) {
             }
         }
 

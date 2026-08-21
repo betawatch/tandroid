@@ -7,7 +7,6 @@ import androidx.core.util.Consumer;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.ProductDetails;
-import com.android.billingclient.api.ProductDetailsResponseListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
 import j$.util.Objects;
 import java.text.Collator;
@@ -238,15 +237,15 @@ public abstract class BoostRepository {
             tL_inputStorePaymentPremiumGiftCode.flags |= 2;
             tL_inputStorePaymentPremiumGiftCode.message = tL_textWithEntities;
         }
-        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_premiumGiftCodeOption.store_product).build()), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda14
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_premiumGiftCodeOption.store_product).build()), new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda14
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list2) {
-                BoostRepository.$r8$lambda$mYSDz_ltJBzqsKE5_IeTomNxvh8(TLRPC.TL_inputStorePaymentPremiumGiftCode.this, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, baseFragment, billingResult, list2);
+                BoostRepository.$r8$lambda$P9bJSmysFud1RqKZaihE1st3qxQ(TLRPC.TL_inputStorePaymentPremiumGiftCode.this, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, baseFragment, billingResult, list2);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$mYSDz_ltJBzqsKE5_IeTomNxvh8(final TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, ConnectionsManager connectionsManager, final Utilities.Callback callback, final Utilities.Callback callback2, final BaseFragment baseFragment, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$P9bJSmysFud1RqKZaihE1st3qxQ(final TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, ConnectionsManager connectionsManager, final Utilities.Callback callback, final Utilities.Callback callback2, final BaseFragment baseFragment, final BillingResult billingResult, final List list) {
         tL_inputStorePaymentPremiumGiftCode.currency = ((ProductDetails) list.get(0)).getOneTimePurchaseOfferDetails().getPriceCurrencyCode();
         tL_inputStorePaymentPremiumGiftCode.amount = (long) ((r0.getPriceAmountMicros() / Math.pow(10.0d, 6.0d)) * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)));
         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
@@ -522,15 +521,15 @@ public abstract class BoostRepository {
         while (it2.hasNext()) {
             tL_inputStorePaymentPremiumGiveaway.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) it2.next())).iso2);
         }
-        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_premiumGiftCodeOption.store_product).build()), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda19
-            @Override // com.android.billingclient.api.ProductDetailsResponseListener
+        BillingController.getInstance().queryProductDetails(Arrays.asList(QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_premiumGiftCodeOption.store_product).build()), new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda19
+            @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
             public final void onProductDetailsResponse(BillingResult billingResult, List list3) {
-                BoostRepository.$r8$lambda$3JllB8xkLNaulTHhFyBUSMZgAnw(TLRPC.TL_inputStorePaymentPremiumGiveaway.this, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, baseFragment, billingResult, list3);
+                BoostRepository.$r8$lambda$cCxOkE5YR6ccEJFuv6ReRxQ8V5o(TLRPC.TL_inputStorePaymentPremiumGiveaway.this, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, baseFragment, billingResult, list3);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$3JllB8xkLNaulTHhFyBUSMZgAnw(final TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, ConnectionsManager connectionsManager, final Utilities.Callback callback, final Utilities.Callback callback2, final BaseFragment baseFragment, final BillingResult billingResult, final List list) {
+    public static /* synthetic */ void $r8$lambda$cCxOkE5YR6ccEJFuv6ReRxQ8V5o(final TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, ConnectionsManager connectionsManager, final Utilities.Callback callback, final Utilities.Callback callback2, final BaseFragment baseFragment, final BillingResult billingResult, final List list) {
         tL_inputStorePaymentPremiumGiveaway.currency = ((ProductDetails) list.get(0)).getOneTimePurchaseOfferDetails().getPriceCurrencyCode();
         tL_inputStorePaymentPremiumGiveaway.amount = (long) ((r0.getPriceAmountMicros() / Math.pow(10.0d, 6.0d)) * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)));
         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
@@ -817,10 +816,10 @@ public abstract class BoostRepository {
                     }
                 });
             } else {
-                BillingController.getInstance().queryProductDetails(arrayList2, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda10
-                    @Override // com.android.billingclient.api.ProductDetailsResponseListener
+                BillingController.getInstance().queryProductDetails(arrayList2, new BillingController.ProductDetailsResponseListenerLegacy() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda10
+                    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
                     public final void onProductDetailsResponse(BillingResult billingResult, List list) {
-                        BoostRepository.$r8$lambda$fMZCR2KPhMM0Iu5D1hwtbi-38d8(arrayList, chat, i, callback, billingResult, list);
+                        BoostRepository.$r8$lambda$dvQtAQnEVi0_YaDGkdHmWyjCbOE(arrayList, chat, i, callback, billingResult, list);
                     }
                 });
             }
@@ -834,7 +833,7 @@ public abstract class BoostRepository {
         callback.run(list);
     }
 
-    public static /* synthetic */ void $r8$lambda$fMZCR2KPhMM0Iu5D1hwtbi-38d8(final List list, final TLRPC.Chat chat, final int i, final Utilities.Callback callback, BillingResult billingResult, List list2) {
+    public static /* synthetic */ void $r8$lambda$dvQtAQnEVi0_YaDGkdHmWyjCbOE(final List list, final TLRPC.Chat chat, final int i, final Utilities.Callback callback, BillingResult billingResult, List list2) {
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             ProductDetails productDetails = (ProductDetails) it.next();

@@ -20,15 +20,16 @@ public class Purchase {
 
     private final ArrayList zza() {
         ArrayList arrayList = new ArrayList();
-        if (this.zzc.has("productIds")) {
-            JSONArray optJSONArray = this.zzc.optJSONArray("productIds");
+        JSONObject jSONObject = this.zzc;
+        if (jSONObject.has("productIds")) {
+            JSONArray optJSONArray = jSONObject.optJSONArray("productIds");
             if (optJSONArray != null) {
                 for (int i = 0; i < optJSONArray.length(); i++) {
                     arrayList.add(optJSONArray.optString(i));
                 }
             }
-        } else if (this.zzc.has("productId")) {
-            arrayList.add(this.zzc.optString("productId"));
+        } else if (jSONObject.has("productId")) {
+            arrayList.add(jSONObject.optString("productId"));
         }
         return arrayList;
     }

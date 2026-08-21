@@ -1,31 +1,50 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.Set;
+
 /* loaded from: classes.dex */
-final class zzbx extends zzca {
+public abstract class zzbx extends zzbq implements Set, j$.util.Set {
+    private transient zzbt zza;
+
     zzbx() {
-        super(null);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzca
-    public final int zza() {
-        return 0;
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this || obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzca
-    public final zzca zzb(Comparable comparable, Comparable comparable2) {
-        zzca zzcaVar;
-        zzca zzcaVar2;
-        zzca zzcaVar3;
-        int compareTo = comparable.compareTo(comparable2);
-        if (compareTo < 0) {
-            zzcaVar3 = zzca.zzb;
-            return zzcaVar3;
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return zzcg.zza(this);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzbq
+    public zzbt zzd() {
+        zzbt zzbtVar = this.zza;
+        if (zzbtVar != null) {
+            return zzbtVar;
         }
-        if (compareTo > 0) {
-            zzcaVar2 = zzca.zzc;
-            return zzcaVar2;
-        }
-        zzcaVar = zzca.zza;
-        return zzcaVar;
+        zzbt zzh = zzh();
+        this.zza = zzh;
+        return zzh;
+    }
+
+    zzbt zzh() {
+        Object[] array = toArray();
+        int i = zzbt.$r8$clinit;
+        return zzbt.zzi(array, array.length);
     }
 }

@@ -34,7 +34,7 @@ public abstract class zbf extends AbstractCollection implements Serializable, Co
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$-CC.$default$forEach(this, consumer);
     }

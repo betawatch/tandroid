@@ -24,10 +24,10 @@ public final class h3 extends U2 implements j$.util.Z {
 
     @Override // j$.util.stream.U2
     public final void d() {
-        M2 m2 = new M2();
-        this.h = m2;
-        Objects.requireNonNull(m2);
-        this.e = this.b.R(new g3(m2, 1));
+        N2 n2 = new N2();
+        this.h = n2;
+        Objects.requireNonNull(n2);
+        this.e = this.b.R(new g3(n2, 1));
         this.f = new j$.time.t(14, this);
     }
 
@@ -52,13 +52,13 @@ public final class h3 extends U2 implements j$.util.Z {
         Objects.requireNonNull(longConsumer);
         boolean a = a();
         if (a) {
-            M2 m2 = (M2) this.h;
+            N2 n2 = (N2) this.h;
             long j2 = this.g;
-            int o = m2.o(j2);
-            if (m2.c == 0 && o == 0) {
-                j = ((long[]) m2.e)[(int) j2];
+            int o = n2.o(j2);
+            if (n2.c == 0 && o == 0) {
+                j = ((long[]) n2.e)[(int) j2];
             } else {
-                j = ((long[][]) m2.f)[o][(int) (j2 - m2.d[o])];
+                j = ((long[][]) n2.f)[o][(int) (j2 - n2.d[o])];
             }
             longConsumer.accept(j);
         }

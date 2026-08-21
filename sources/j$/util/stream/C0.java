@@ -1,27 +1,24 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public abstract /* synthetic */ class C0 {
-    public static final /* synthetic */ int[] a;
+import j$.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
-    static {
-        int[] iArr = new int[T2.values().length];
-        a = iArr;
-        try {
-            iArr[T2.REFERENCE.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            a[T2.INT_VALUE.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[T2.LONG_VALUE.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[T2.DOUBLE_VALUE.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-    }
+/* loaded from: classes2.dex */
+public interface C0 {
+    C0 b(int i);
+
+    long count();
+
+    C0 f(long j, long j2, IntFunction intFunction);
+
+    void forEach(Consumer consumer);
+
+    void g(Object[] objArr, int i);
+
+    Object[] h(IntFunction intFunction);
+
+    int i();
+
+    Spliterator spliterator();
 }

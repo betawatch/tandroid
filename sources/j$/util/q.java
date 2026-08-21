@@ -2,7 +2,7 @@ package j$.util;
 
 import j$.util.Collection;
 import j$.util.stream.Stream;
-import j$.util.stream.q1;
+import j$.util.stream.r1;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 public final class q extends t {
     private static final long serialVersionUID = 7854390611657943733L;
 
-    @Override // j$.util.l, java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // j$.util.l, java.lang.Iterable, j$.util.Collection
     public final void forEach(Consumer consumer) {
         Objects.requireNonNull(consumer);
         Collection.-EL.a(this.a, new j$.time.t(1, consumer));
@@ -25,12 +25,12 @@ public final class q extends t {
 
     @Override // j$.util.l, java.util.Collection, j$.util.Collection
     public final Stream stream() {
-        return q1.Z(spliterator(), false);
+        return r1.a0(spliterator(), false);
     }
 
     @Override // j$.util.l, java.util.Collection, j$.util.Collection
     public final Stream parallelStream() {
-        return q1.Z(spliterator(), true);
+        return r1.a0(spliterator(), true);
     }
 
     @Override // j$.util.l, java.util.Collection, java.lang.Iterable

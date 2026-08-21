@@ -1,30 +1,30 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.NoSuchElementException;
-
 /* loaded from: classes.dex */
-final class zzgd extends zzge {
-    final /* synthetic */ zzgk zza;
-    private int zzb = 0;
-    private final int zzc;
+final class zzgd implements zzgw {
+    private static final zzgj zza = new zzgb();
+    private final zzgj zzb;
 
-    zzgd(zzgk zzgkVar) {
-        this.zza = zzgkVar;
-        this.zzc = zzgkVar.zzd();
+    public zzgd() {
+        zzfd zza2 = zzfd.zza();
+        int i = zzgs.$r8$clinit;
+        zzgc zzgcVar = new zzgc(zza2, zza);
+        byte[] bArr = zzfo.zzb;
+        this.zzb = zzgcVar;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zzb < this.zzc;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzgg
-    public final byte zza() {
-        int i = this.zzb;
-        if (i >= this.zzc) {
-            throw new NoSuchElementException();
+    @Override // com.google.android.gms.internal.play_billing.zzgw
+    public final zzgv zza(Class cls) {
+        int i = zzgx.$r8$clinit;
+        if (!zzfi.class.isAssignableFrom(cls)) {
+            int i2 = zzgs.$r8$clinit;
         }
-        this.zzb = i + 1;
-        return this.zza.zzb(i);
+        zzgi zzb = this.zzb.zzb(cls);
+        if (zzb.zzb()) {
+            int i3 = zzgs.$r8$clinit;
+            return zzgp.zzc(zzgx.zzm(), zzex.zza(), zzb.zza());
+        }
+        int i4 = zzgs.$r8$clinit;
+        return zzgo.zzl(cls, zzb, zzgr.zza(), zzfz.zza(), zzgx.zzm(), zzb.zzc() + (-1) != 1 ? zzex.zza() : null, zzgh.zza());
     }
 }

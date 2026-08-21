@@ -1,37 +1,59 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class u extends w {
-    public final /* synthetic */ int m;
-    public final /* synthetic */ Object n;
+public final class u extends Z1 {
+    public boolean b;
+    public final j$.util.C c;
+    public final /* synthetic */ v d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u(a aVar, int i, Object obj, int i2) {
-        super(aVar, i, 1);
-        this.m = i2;
-        this.n = obj;
+    public u(v vVar, g2 g2Var) {
+        super(g2Var);
+        this.d = vVar;
+        g2 g2Var2 = this.a;
+        Objects.requireNonNull(g2Var2);
+        this.c = new j$.util.C(g2Var2, 1);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(x xVar, DoubleConsumer doubleConsumer) {
-        super(xVar, 0, 1);
-        this.m = 1;
-        this.n = doubleConsumer;
+    @Override // j$.util.stream.Z1, j$.util.stream.g2
+    public final void y(long j) {
+        this.a.y(-1L);
     }
 
-    @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
-        switch (this.m) {
-            case 0:
-                return new t(this, f2Var);
-            case 1:
-                return new o(this, f2Var, 5);
-            case 2:
-                return new k(this, f2Var, 6);
-            default:
-                return new T1(this, f2Var);
+    @Override // j$.util.stream.d2, j$.util.stream.g2
+    public final void accept(double d) {
+        B b = (B) ((j$.time.t) this.d.n).apply(d);
+        if (b != null) {
+            try {
+                boolean z = this.b;
+                j$.util.C c = this.c;
+                if (!z) {
+                    b.sequential().forEach(c);
+                } else {
+                    j$.util.T spliterator = b.sequential().spliterator();
+                    while (!this.a.C() && spliterator.tryAdvance((DoubleConsumer) c)) {
+                    }
+                }
+            } catch (Throwable th) {
+                try {
+                    b.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
+            }
         }
+        if (b != null) {
+            b.close();
+        }
+    }
+
+    @Override // j$.util.stream.Z1, j$.util.stream.g2
+    public final boolean C() {
+        this.b = true;
+        return this.a.C();
     }
 }

@@ -19,17 +19,17 @@ public abstract class a implements BaseStream, AutoCloseable {
     public Runnable j;
     public boolean k;
 
-    public abstract B0 E(a aVar, Spliterator spliterator, boolean z, IntFunction intFunction);
+    public abstract C0 E(a aVar, Spliterator spliterator, boolean z, IntFunction intFunction);
 
-    public abstract boolean G(Spliterator spliterator, f2 f2Var);
+    public abstract boolean G(Spliterator spliterator, g2 g2Var);
 
     public abstract T2 H();
 
-    public abstract t0 I(long j, IntFunction intFunction);
+    public abstract u0 I(long j, IntFunction intFunction);
 
     public abstract boolean L();
 
-    public abstract f2 M(int i, f2 f2Var);
+    public abstract g2 M(int i, g2 g2Var);
 
     public abstract Spliterator P(a aVar, Supplier supplier, boolean z);
 
@@ -72,7 +72,7 @@ public abstract class a implements BaseStream, AutoCloseable {
         return y3Var.b(this, N(y3Var.d()));
     }
 
-    public final B0 D(IntFunction intFunction) {
+    public final C0 D(IntFunction intFunction) {
         a aVar;
         if (this.h) {
             throw new IllegalStateException("stream has already been operated upon or closed");
@@ -159,11 +159,11 @@ public abstract class a implements BaseStream, AutoCloseable {
         return P(this, new j$.time.t(3, this), aVar.k);
     }
 
-    public final B0 B(Spliterator spliterator, boolean z, IntFunction intFunction) {
+    public final C0 B(Spliterator spliterator, boolean z, IntFunction intFunction) {
         if (this.a.k) {
             return E(this, spliterator, z, intFunction);
         }
-        t0 I = I(F(spliterator), intFunction);
+        u0 I = I(F(spliterator), intFunction);
         Q(spliterator, I);
         return I.a();
     }
@@ -224,49 +224,49 @@ public abstract class a implements BaseStream, AutoCloseable {
         return -1L;
     }
 
-    public final f2 Q(Spliterator spliterator, f2 f2Var) {
-        z(spliterator, R((f2) Objects.requireNonNull(f2Var)));
-        return f2Var;
+    public final g2 Q(Spliterator spliterator, g2 g2Var) {
+        z(spliterator, R((g2) Objects.requireNonNull(g2Var)));
+        return g2Var;
     }
 
-    public final void z(Spliterator spliterator, f2 f2Var) {
-        Objects.requireNonNull(f2Var);
+    public final void z(Spliterator spliterator, g2 g2Var) {
+        Objects.requireNonNull(g2Var);
         if (!S2.SHORT_CIRCUIT.q(this.f)) {
-            f2Var.y(spliterator.getExactSizeIfKnown());
-            spliterator.forEachRemaining(f2Var);
-            f2Var.x();
+            g2Var.y(spliterator.getExactSizeIfKnown());
+            spliterator.forEachRemaining(g2Var);
+            g2Var.x();
             return;
         }
-        A(spliterator, f2Var);
+        A(spliterator, g2Var);
     }
 
-    public final boolean A(Spliterator spliterator, f2 f2Var) {
+    public final boolean A(Spliterator spliterator, g2 g2Var) {
         a aVar = this;
         while (aVar.e > 0) {
             aVar = aVar.b;
         }
-        f2Var.y(spliterator.getExactSizeIfKnown());
-        boolean G = aVar.G(spliterator, f2Var);
-        f2Var.x();
+        g2Var.y(spliterator.getExactSizeIfKnown());
+        boolean G = aVar.G(spliterator, g2Var);
+        g2Var.x();
         return G;
     }
 
-    public final f2 R(f2 f2Var) {
-        Objects.requireNonNull(f2Var);
+    public final g2 R(g2 g2Var) {
+        Objects.requireNonNull(g2Var);
         a aVar = this;
         while (aVar.e > 0) {
             a aVar2 = aVar.b;
-            f2Var = aVar.M(aVar2.f, f2Var);
+            g2Var = aVar.M(aVar2.f, g2Var);
             aVar = aVar2;
         }
-        return f2Var;
+        return g2Var;
     }
 
     public final Spliterator S(Spliterator spliterator) {
         return this.e == 0 ? spliterator : P(this, new j$.time.t(4, spliterator), this.a.k);
     }
 
-    public B0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
+    public C0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
         throw new UnsupportedOperationException("Parallel evaluation is not supported");
     }
 

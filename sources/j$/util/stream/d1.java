@@ -2,30 +2,32 @@ package j$.util.stream;
 
 import j$.util.Spliterator;
 import java.util.ArrayDeque;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final class d1 extends e1 {
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        B0 a;
+public abstract class d1 extends f1 implements j$.util.c0 {
+    @Override // j$.util.c0
+    public final boolean tryAdvance(Object obj) {
+        B0 b0;
         if (!c()) {
             return false;
         }
-        boolean tryAdvance = this.d.tryAdvance(consumer);
+        boolean tryAdvance = ((j$.util.c0) this.d).tryAdvance(obj);
         if (!tryAdvance) {
-            if (this.c == null && (a = e1.a(this.e)) != null) {
-                Spliterator spliterator = a.spliterator();
+            if (this.c == null && (b0 = (B0) f1.a(this.e)) != null) {
+                j$.util.c0 spliterator = b0.spliterator();
                 this.d = spliterator;
-                return spliterator.tryAdvance(consumer);
+                return spliterator.tryAdvance(obj);
             }
             this.a = null;
         }
         return tryAdvance;
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
+    @Override // j$.util.c0
+    public final void forEachRemaining(Object obj) {
         if (this.a == null) {
             return;
         }
@@ -34,20 +36,44 @@ public final class d1 extends e1 {
             if (spliterator == null) {
                 ArrayDeque b = b();
                 while (true) {
-                    B0 a = e1.a(b);
-                    if (a != null) {
-                        a.forEach(consumer);
+                    B0 b0 = (B0) f1.a(b);
+                    if (b0 != null) {
+                        b0.e(obj);
                     } else {
                         this.a = null;
                         return;
                     }
                 }
             } else {
-                spliterator.forEachRemaining(consumer);
+                ((j$.util.c0) spliterator).forEachRemaining(obj);
             }
         } else {
-            while (tryAdvance(consumer)) {
+            while (tryAdvance(obj)) {
             }
         }
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
+        forEachRemaining((Object) intConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
+        return tryAdvance((Object) intConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        forEachRemaining((Object) longConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
+        return tryAdvance((Object) longConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        forEachRemaining((Object) doubleConsumer);
+    }
+
+    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        return tryAdvance((Object) doubleConsumer);
     }
 }

@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 public interface LongStream extends BaseStream<Long, LongStream> {
     LongStream a();
 
-    A asDoubleStream();
+    B asDoubleStream();
 
     j$.util.z average();
 
@@ -42,7 +42,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
     @Override // j$.util.stream.BaseStream
     j$.util.N iterator();
 
-    A k();
+    B k();
 
     LongStream limit(long j);
 

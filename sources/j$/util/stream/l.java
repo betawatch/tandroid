@@ -1,67 +1,93 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.IntFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-public final class l extends W1 {
-    public static F0 T(a aVar, Spliterator spliterator) {
-        j$.time.format.a aVar2 = new j$.time.format.a(24);
-        j$.time.format.a aVar3 = new j$.time.format.a(25);
-        j$.time.format.a aVar4 = new j$.time.format.a(26);
-        Objects.requireNonNull(aVar2);
-        Objects.requireNonNull(aVar3);
-        Objects.requireNonNull(aVar4);
-        return new F0((Collection) new v1(T2.REFERENCE, aVar4, aVar3, aVar2, 3).c(aVar, spliterator));
+public final class l extends c2 {
+    public final /* synthetic */ int b;
+    public Object c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l(a aVar, g2 g2Var, int i) {
+        super(g2Var);
+        this.b = i;
+        this.c = aVar;
     }
 
-    @Override // j$.util.stream.a
-    public final B0 J(a aVar, Spliterator spliterator, IntFunction intFunction) {
-        if (S2.DISTINCT.q(aVar.f)) {
-            return aVar.B(spliterator, false, intFunction);
-        }
-        if (S2.ORDERED.q(aVar.f)) {
-            return T(aVar, spliterator);
-        }
-        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        j$.util.concurrent.t tVar = new j$.util.concurrent.t(4, atomicBoolean, concurrentHashMap);
-        Objects.requireNonNull(tVar);
-        new M(tVar, false).e(aVar, spliterator);
-        Collection keySet = concurrentHashMap.keySet();
-        if (atomicBoolean.get()) {
-            HashSet hashSet = new HashSet(keySet);
-            hashSet.add(null);
-            keySet = hashSet;
-        }
-        return new F0(keySet);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l(g2 g2Var) {
+        super(g2Var);
+        this.b = 0;
     }
 
-    @Override // j$.util.stream.a
-    public final Spliterator K(a aVar, Spliterator spliterator) {
-        if (S2.DISTINCT.q(aVar.f)) {
-            return aVar.S(spliterator);
+    @Override // j$.util.stream.c2, j$.util.stream.g2
+    public void x() {
+        switch (this.b) {
+            case 0:
+                this.c = null;
+                this.a.x();
+                break;
+            default:
+                super.x();
+                break;
         }
-        if (S2.ORDERED.q(aVar.f)) {
-            return T(aVar, spliterator).spliterator();
-        }
-        return new b3(aVar.S(spliterator), new ConcurrentHashMap());
     }
 
-    @Override // j$.util.stream.a
-    public final f2 M(int i, f2 f2Var) {
-        Objects.requireNonNull(f2Var);
-        if (S2.DISTINCT.q(i)) {
-            return f2Var;
+    @Override // j$.util.stream.c2, j$.util.stream.g2
+    public void y(long j) {
+        switch (this.b) {
+            case 0:
+                this.c = new HashSet();
+                this.a.y(-1L);
+                break;
+            case 1:
+            default:
+                super.y(j);
+                break;
+            case 2:
+                this.a.y(-1L);
+                break;
         }
-        if (S2.SORTED.q(i)) {
-            return new j(f2Var);
+    }
+
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        switch (this.b) {
+            case 0:
+                if (!((HashSet) this.c).contains(obj)) {
+                    ((HashSet) this.c).add(obj);
+                    this.a.accept((g2) obj);
+                    break;
+                }
+                break;
+            case 1:
+                ((Consumer) ((q) this.c).n).accept(obj);
+                this.a.accept((g2) obj);
+                break;
+            case 2:
+                if (((Predicate) ((q) this.c).n).test(obj)) {
+                    this.a.accept((g2) obj);
+                    break;
+                }
+                break;
+            case 3:
+                this.a.accept((g2) ((Function) ((q) this.c).n).apply(obj));
+                break;
+            case 4:
+                this.a.accept(((ToIntFunction) ((T) this.c).n).applyAsInt(obj));
+                break;
+            case 5:
+                this.a.accept(((ToLongFunction) ((d0) this.c).n).applyAsLong(obj));
+                break;
+            default:
+                this.a.accept(((ToDoubleFunction) ((v) this.c).n).applyAsDouble(obj));
+                break;
         }
-        return new k(f2Var);
     }
 }

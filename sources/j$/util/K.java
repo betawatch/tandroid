@@ -1,6 +1,6 @@
 package j$.util;
 
-import j$.util.stream.f2;
+import j$.util.stream.g2;
 import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class K implements LongConsumer {
                 this.b.accept(Long.valueOf(j));
                 break;
             default:
-                ((f2) this.b).accept(j);
+                ((g2) this.b).accept(j);
                 break;
         }
     }

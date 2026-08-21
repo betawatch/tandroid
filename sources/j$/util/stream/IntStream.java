@@ -23,7 +23,7 @@ import java.util.stream.DoubleStream;
 public interface IntStream extends BaseStream<Integer, IntStream> {
     IntStream a();
 
-    A asDoubleStream();
+    B asDoubleStream();
 
     LongStream asLongStream();
 
@@ -43,7 +43,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     IntStream e();
 
-    A f();
+    B f();
 
     j$.util.A findAny();
 
@@ -97,7 +97,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     int[] toArray();
 
-    IntStream x(I i);
+    IntStream x(J j);
 
     public final /* synthetic */ class Wrapper implements java.util.stream.IntStream {
         public /* synthetic */ Wrapper() {
@@ -122,12 +122,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ DoubleStream asDoubleStream() {
-            return z.j(IntStream.this.asDoubleStream());
+            return A.j(IntStream.this.asDoubleStream());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.LongStream asLongStream() {
-            return h0.j(IntStream.this.asLongStream());
+            return i0.j(IntStream.this.asLongStream());
         }
 
         @Override // java.util.stream.IntStream
@@ -232,12 +232,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ DoubleStream mapToDouble(IntToDoubleFunction intToDoubleFunction) {
-            return z.j(IntStream.this.f());
+            return A.j(IntStream.this.f());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.LongStream mapToLong(IntToLongFunction intToLongFunction) {
-            return h0.j(IntStream.this.l());
+            return i0.j(IntStream.this.l());
         }
 
         @Override // java.util.stream.IntStream
@@ -352,9 +352,9 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         @Override // java.util.stream.IntStream
         public final java.util.stream.IntStream flatMap(IntFunction intFunction) {
             IntStream intStream = IntStream.this;
-            I i = new I();
-            i.a = intFunction;
-            return convert(intStream.x(i));
+            J j = new J();
+            j.a = intFunction;
+            return convert(intStream.x(j));
         }
     }
 
@@ -378,13 +378,13 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ A asDoubleStream() {
-            return y.j(this.a.asDoubleStream());
+        public final /* synthetic */ B asDoubleStream() {
+            return z.j(this.a.asDoubleStream());
         }
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ LongStream asLongStream() {
-            return g0.j(this.a.asLongStream());
+            return h0.j(this.a.asLongStream());
         }
 
         @Override // j$.util.stream.IntStream
@@ -441,8 +441,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ A f() {
-            return y.j(this.a.mapToDouble(null));
+        public final /* synthetic */ B f() {
+            return z.j(this.a.mapToDouble(null));
         }
 
         @Override // j$.util.stream.IntStream
@@ -496,7 +496,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ LongStream l() {
-            return g0.j(this.a.mapToLong(null));
+            return h0.j(this.a.mapToLong(null));
         }
 
         @Override // j$.util.stream.IntStream
@@ -612,11 +612,11 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final IntStream x(I i) {
+        public final IntStream x(J j) {
             java.util.stream.IntStream intStream = this.a;
-            I i2 = new I();
-            i2.a = i;
-            return convert(intStream.flatMap(i2));
+            J j2 = new J();
+            j2.a = j;
+            return convert(intStream.flatMap(j2));
         }
     }
 }

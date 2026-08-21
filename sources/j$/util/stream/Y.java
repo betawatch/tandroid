@@ -1,169 +1,270 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer$-CC;
-import j$.util.function.BiFunction$-CC;
-import j$.util.function.Consumer$-CC;
+import j$.util.Objects;
+import j$.util.Spliterator;
 import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
-import java.util.function.Function;
+import java.util.function.IntBinaryOperator;
+import java.util.function.IntConsumer;
 import java.util.function.IntFunction;
-import java.util.function.LongBinaryOperator;
-import java.util.function.LongFunction;
-import java.util.function.ObjLongConsumer;
+import java.util.function.ObjIntConsumer;
 import java.util.function.Supplier;
-import java.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class Y implements ObjLongConsumer, LongBinaryOperator, ToLongFunction, BiConsumer, IntFunction, LongFunction, Supplier, Consumer, BinaryOperator {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ Y(int i) {
-        this.a = i;
+public abstract class Y extends a implements IntStream {
+    @Override // j$.util.stream.IntStream
+    public final j$.util.A findAny() {
+        return (j$.util.A) C(E.d);
     }
 
-    private final void accept$j$$util$stream$Node$$ExternalSyntheticLambda0(Object obj) {
+    @Override // j$.util.stream.IntStream
+    public final j$.util.A findFirst() {
+        return (j$.util.A) C(E.c);
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfRef$$ExternalSyntheticLambda0(Object obj) {
+    @Override // j$.util.stream.IntStream
+    public final IntStream sorted() {
+        return new z2(this, S2.q | S2.o, 0);
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfRef$$ExternalSyntheticLambda1(Object obj) {
+    public void forEach(IntConsumer intConsumer) {
+        Objects.requireNonNull(intConsumer);
+        C(new L(intConsumer, false));
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public void s(Object obj) {
-        int i = this.a;
+    public void forEachOrdered(IntConsumer intConsumer) {
+        Objects.requireNonNull(intConsumer);
+        C(new L(intConsumer, true));
     }
 
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-        switch (this.a) {
+    public static j$.util.W T(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.W) {
+            return (j$.util.W) spliterator;
         }
-        return BiConsumer$-CC.$default$andThen(this, biConsumer);
-    }
-
-    public /* synthetic */ BiFunction andThen(Function function) {
-        switch (this.a) {
+        if (A3.a) {
+            A3.a(a.class, "using IntStream.adapt(Spliterator<Integer> s)");
+            throw null;
         }
-        return BiFunction$-CC.$default$andThen(this, function);
+        throw new UnsupportedOperationException("IntStream.adapt(Spliterator<Integer> s)");
     }
 
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-            case 11:
+    @Override // j$.util.stream.a
+    public final T2 H() {
+        return T2.INT_VALUE;
+    }
+
+    @Override // j$.util.stream.a
+    public final C0 E(a aVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        return r1.D(aVar, spliterator, z);
+    }
+
+    @Override // j$.util.stream.a
+    public final Spliterator P(a aVar, Supplier supplier, boolean z) {
+        return new f3(aVar, supplier, z);
+    }
+
+    @Override // j$.util.stream.a
+    public final boolean G(Spliterator spliterator, g2 g2Var) {
+        IntConsumer g;
+        boolean C;
+        j$.util.W T = T(spliterator);
+        if (g2Var instanceof IntConsumer) {
+            g = (IntConsumer) g2Var;
+        } else {
+            if (A3.a) {
+                A3.a(a.class, "using IntStream.adapt(Sink<Integer> s)");
+                throw null;
+            }
+            Objects.requireNonNull(g2Var);
+            g = new j$.util.G(g2Var, 1);
+        }
+        do {
+            C = g2Var.C();
+            if (C) {
                 break;
-            case 24:
-                break;
+            }
+        } while (T.tryAdvance(g));
+        return C;
+    }
+
+    @Override // j$.util.stream.a
+    public final u0 I(long j, IntFunction intFunction) {
+        return r1.P(j);
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final j$.util.J iterator() {
+        j$.util.W spliterator = spliterator();
+        Objects.requireNonNull(spliterator);
+        return new j$.util.f0(spliterator);
+    }
+
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final j$.util.W spliterator() {
+        return T(super.spliterator());
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final LongStream asLongStream() {
+        return new t(this, 0, 1);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final B asDoubleStream() {
+        return new r(this, 0, 3);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final Stream boxed() {
+        return new q(this, 0, new n(21), 1);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final IntStream e() {
+        Objects.requireNonNull(null);
+        return new s(this, S2.p | S2.n, 1);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final Stream mapToObj(IntFunction intFunction) {
+        Objects.requireNonNull(intFunction);
+        return new q(this, S2.p | S2.n, intFunction, 1);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final LongStream l() {
+        Objects.requireNonNull(null);
+        return new t(this, S2.p | S2.n, 2);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final B f() {
+        Objects.requireNonNull(null);
+        return new r(this, S2.p | S2.n, 4);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final int reduce(int i, IntBinaryOperator intBinaryOperator) {
+        Objects.requireNonNull(intBinaryOperator);
+        return ((Integer) C(new H1(T2.INT_VALUE, intBinaryOperator, i))).intValue();
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final IntStream x(J j) {
+        Objects.requireNonNull(j);
+        return new T(this, S2.p | S2.n | S2.t, j, 1);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final j$.util.A reduce(IntBinaryOperator intBinaryOperator) {
+        Objects.requireNonNull(intBinaryOperator);
+        return (j$.util.A) C(new u1(T2.INT_VALUE, intBinaryOperator, 3));
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final IntStream b() {
+        Objects.requireNonNull(null);
+        return new s(this, S2.t, 3);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final IntStream peek(IntConsumer intConsumer) {
+        Objects.requireNonNull(intConsumer);
+        return new T(this, intConsumer);
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final IntStream limit(long j) {
+        if (j < 0) {
+            throw new IllegalArgumentException(Long.toString(j));
         }
-        return Consumer$-CC.$default$andThen(this, consumer);
+        return r1.U(this, 0L, j);
     }
 
-    @Override // java.util.function.LongFunction
-    public Object apply(long j) {
-        switch (this.a) {
-            case 5:
-                return Long.valueOf(j);
-            case 13:
-                return q1.G(j);
-            case 15:
-                return q1.O(j);
-            default:
-                return q1.P(j);
+    @Override // j$.util.stream.IntStream
+    public final IntStream skip(long j) {
+        if (j >= 0) {
+            return j == 0 ? this : r1.U(this, j, -1L);
         }
+        throw new IllegalArgumentException(Long.toString(j));
     }
 
-    @Override // java.util.function.LongBinaryOperator
-    public long applyAsLong(long j, long j2) {
-        switch (this.a) {
-            case 1:
-                return Math.min(j, j2);
-            case 9:
-                return Math.max(j, j2);
-            default:
-                return j + j2;
-        }
+    @Override // j$.util.stream.IntStream
+    public final IntStream a() {
+        int i = X3.a;
+        Objects.requireNonNull(null);
+        return new z2(this, X3.a, 1);
     }
 
-    @Override // java.util.function.ToLongFunction
-    public long applyAsLong(Object obj) {
-        return ((Long) obj).longValue();
+    @Override // j$.util.stream.IntStream
+    public final IntStream c() {
+        int i = X3.a;
+        Objects.requireNonNull(null);
+        return new G3(this, X3.b, 0);
     }
 
-    @Override // java.util.function.Supplier
-    public Object get() {
-        return new long[2];
+    @Override // j$.util.stream.IntStream
+    public final long count() {
+        return ((Long) C(new y1(3))).longValue();
     }
 
-    @Override // java.util.function.ObjLongConsumer
-    public void accept(Object obj, long j) {
-        switch (this.a) {
-            case 0:
-                ((j$.util.x) obj).accept(j);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + j;
-                break;
-        }
+    @Override // j$.util.stream.IntStream
+    public final IntStream distinct() {
+        return ((Y1) boxed()).distinct().mapToInt(new n(20));
     }
 
-    @Override // java.util.function.BiConsumer
-    public void accept(Object obj, Object obj2) {
-        switch (this.a) {
-            case 3:
-                ((j$.util.x) obj).b((j$.util.x) obj2);
-                break;
-            default:
-                long[] jArr = (long[]) obj;
-                long[] jArr2 = (long[]) obj2;
-                jArr[0] = jArr[0] + jArr2[0];
-                jArr[1] = jArr[1] + jArr2[1];
-                break;
-        }
+    @Override // j$.util.stream.IntStream
+    public final int sum() {
+        return reduce(0, new n(25));
     }
 
-    @Override // java.util.function.IntFunction
-    public Object apply(int i) {
-        switch (this.a) {
-            case 4:
-                return new Long[i];
-            case 12:
-                return new Object[i];
-            case 20:
-                return new Object[i];
-            case 21:
-                return new Integer[i];
-            case 22:
-                return new Long[i];
-            case 23:
-                return new Double[i];
-            case 26:
-                return new Integer[i];
-            case 27:
-                return new Integer[i];
-            case 28:
-                return new Long[i];
-            default:
-                return new Long[i];
-        }
+    @Override // j$.util.stream.IntStream
+    public final j$.util.A min() {
+        return reduce(new n(22));
     }
 
-    @Override // java.util.function.BiFunction
-    public Object apply(Object obj, Object obj2) {
-        switch (this.a) {
-            case 14:
-                return new I0((v0) obj, (v0) obj2);
-            case 15:
-            case 17:
-            default:
-                return new M0((B0) obj, (B0) obj2);
-            case 16:
-                return new J0((x0) obj, (x0) obj2);
-            case 18:
-                return new K0((z0) obj, (z0) obj2);
-        }
+    @Override // j$.util.stream.IntStream
+    public final j$.util.A max() {
+        return reduce(new n(26));
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final j$.util.z average() {
+        long j = ((long[]) collect(new n(27), new n(28), new n(29)))[0];
+        return j > 0 ? new j$.util.z(r0[1] / j) : j$.util.z.c;
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final j$.util.v summaryStatistics() {
+        return (j$.util.v) collect(new j$.time.format.a(14), new n(23), new n(24));
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final Object collect(Supplier supplier, ObjIntConsumer objIntConsumer, BiConsumer biConsumer) {
+        Objects.requireNonNull(biConsumer);
+        o oVar = new o(biConsumer, 1);
+        Objects.requireNonNull(supplier);
+        Objects.requireNonNull(objIntConsumer);
+        Objects.requireNonNull(oVar);
+        return C(new w1(T2.INT_VALUE, oVar, objIntConsumer, supplier, 4));
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final boolean r() {
+        return ((Boolean) C(r1.T(p0.ANY))).booleanValue();
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final boolean t() {
+        return ((Boolean) C(r1.T(p0.ALL))).booleanValue();
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final boolean g() {
+        return ((Boolean) C(r1.T(p0.NONE))).booleanValue();
+    }
+
+    @Override // j$.util.stream.IntStream
+    public final int[] toArray() {
+        return (int[]) r1.L((y0) D(new n(19))).d();
     }
 }

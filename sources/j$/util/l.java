@@ -111,7 +111,7 @@ public class l implements java.util.Collection, Serializable, Collection {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection
     public void forEach(Consumer consumer) {
         Collection.-EL.a(this.a, consumer);
     }

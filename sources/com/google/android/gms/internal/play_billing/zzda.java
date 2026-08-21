@@ -1,13 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.Iterator;
-
 /* loaded from: classes.dex */
-public abstract class zzda {
-    public static Object zza(Iterator it, Object obj) {
-        if (it.hasNext()) {
-            return it.next();
+abstract class zzda {
+    static void zza(Throwable th) {
+        if ((th instanceof Error) && !(th instanceof StackOverflowError)) {
+            throw ((Error) th);
         }
-        return null;
     }
 }

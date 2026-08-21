@@ -24,10 +24,10 @@ public final class d3 extends U2 implements j$.util.T {
 
     @Override // j$.util.stream.U2
     public final void d() {
-        I2 i2 = new I2();
-        this.h = i2;
-        Objects.requireNonNull(i2);
-        this.e = this.b.R(new c3(i2, 1));
+        J2 j2 = new J2();
+        this.h = j2;
+        Objects.requireNonNull(j2);
+        this.e = this.b.R(new c3(j2, 1));
         this.f = new j$.time.t(12, this);
     }
 
@@ -52,13 +52,13 @@ public final class d3 extends U2 implements j$.util.T {
         Objects.requireNonNull(doubleConsumer);
         boolean a = a();
         if (a) {
-            I2 i2 = (I2) this.h;
+            J2 j2 = (J2) this.h;
             long j = this.g;
-            int o = i2.o(j);
-            if (i2.c == 0 && o == 0) {
-                d = ((double[]) i2.e)[(int) j];
+            int o = j2.o(j);
+            if (j2.c == 0 && o == 0) {
+                d = ((double[]) j2.e)[(int) j];
             } else {
-                d = ((double[][]) i2.f)[o][(int) (j - i2.d[o])];
+                d = ((double[][]) j2.f)[o][(int) (j - j2.d[o])];
             }
             doubleConsumer.accept(d);
         }

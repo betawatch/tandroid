@@ -1,39 +1,44 @@
 package com.google.android.gms.internal.play_billing;
 
+import j$.util.Objects;
+import java.util.AbstractMap;
+
 /* loaded from: classes.dex */
-final class zzcb extends zzce {
-    private static final zzcb zzb = new zzcb();
+final class zzcb extends zzbt {
+    final /* synthetic */ zzcc zza;
 
-    private zzcb() {
-        super("");
+    zzcb(zzcc zzccVar) {
+        Objects.requireNonNull(zzccVar);
+        this.zza = zzccVar;
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        return zza((zzce) obj);
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i) {
+        int i2;
+        Object[] objArr;
+        Object[] objArr2;
+        zzcc zzccVar = this.zza;
+        i2 = zzccVar.zzc;
+        zzbg.zza(i, i2, "index");
+        objArr = zzccVar.zzb;
+        int i3 = i + i;
+        Object obj = objArr[i3];
+        Objects.requireNonNull(obj);
+        objArr2 = zzccVar.zzb;
+        Object obj2 = objArr2[i3 + 1];
+        Objects.requireNonNull(obj2);
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    public final int hashCode() {
-        return System.identityHashCode(this);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        int i;
+        i = this.zza.zzc;
+        return i;
     }
 
-    public final String toString() {
-        return "+∞";
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    public final int zza(zzce zzceVar) {
-        return zzceVar == this ? 0 : 1;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    final void zzc(StringBuilder sb) {
-        throw new AssertionError();
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    final void zzd(StringBuilder sb) {
-        sb.append("+∞)");
+    @Override // com.google.android.gms.internal.play_billing.zzbq
+    public final boolean zzf() {
+        return true;
     }
 }

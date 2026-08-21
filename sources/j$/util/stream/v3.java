@@ -4,7 +4,7 @@ import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class v3 implements f2 {
+public final /* synthetic */ class v3 implements g2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Consumer b;
 
@@ -25,45 +25,45 @@ public final /* synthetic */ class v3 implements f2 {
     private final /* synthetic */ void e() {
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ boolean C() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(double d) {
         switch (this.a) {
             case 0:
-                q1.a();
+                r1.a();
                 throw null;
             default:
-                q1.a();
+                r1.a();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(int i) {
         switch (this.a) {
             case 0:
-                q1.k();
+                r1.k();
                 throw null;
             default:
-                q1.k();
+                r1.k();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void accept(long j) {
         switch (this.a) {
             case 0:
-                q1.l();
+                r1.l();
                 throw null;
             default:
-                q1.l();
+                r1.l();
                 throw null;
         }
     }
@@ -73,7 +73,7 @@ public final /* synthetic */ class v3 implements f2 {
     public final void s(Object obj) {
         switch (this.a) {
             case 0:
-                ((P2) this.b).s(obj);
+                ((Q2) this.b).s(obj);
                 break;
             default:
                 this.b.s(obj);
@@ -87,12 +87,12 @@ public final /* synthetic */ class v3 implements f2 {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void x() {
         int i = this.a;
     }
 
-    @Override // j$.util.stream.f2
+    @Override // j$.util.stream.g2
     public final /* synthetic */ void y(long j) {
         int i = this.a;
     }

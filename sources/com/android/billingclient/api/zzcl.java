@@ -1,118 +1,224 @@
 package com.android.billingclient.api;
 
 import android.content.Context;
-import com.google.android.gms.internal.play_billing.zze;
-import com.google.android.gms.internal.play_billing.zzjz;
-import com.google.android.gms.internal.play_billing.zzkd;
-import com.google.android.gms.internal.play_billing.zzkl;
-import com.google.android.gms.internal.play_billing.zzks;
-import com.google.android.gms.internal.play_billing.zzku;
-import com.google.android.gms.internal.play_billing.zzli;
-import com.google.android.gms.internal.play_billing.zzlk;
-import com.google.android.gms.internal.play_billing.zzlq;
-import com.google.android.gms.internal.play_billing.zzlu;
+import com.google.android.gms.internal.play_billing.zzc;
+import com.google.android.gms.internal.play_billing.zzhv;
+import com.google.android.gms.internal.play_billing.zzhx;
+import com.google.android.gms.internal.play_billing.zzhz;
+import com.google.android.gms.internal.play_billing.zzib;
+import com.google.android.gms.internal.play_billing.zzij;
+import com.google.android.gms.internal.play_billing.zziq;
+import com.google.android.gms.internal.play_billing.zzis;
+import com.google.android.gms.internal.play_billing.zzja;
+import com.google.android.gms.internal.play_billing.zzjg;
+import com.google.android.gms.internal.play_billing.zzji;
+import com.google.android.gms.internal.play_billing.zzjo;
+import com.google.android.gms.internal.play_billing.zzjs;
 
 /* loaded from: classes.dex */
 final class zzcl implements zzch {
-    private zzku zzb;
+    private zzis zzb;
     private final zzcn zzc;
 
-    zzcl(Context context, zzku zzkuVar) {
+    zzcl(Context context, zzis zzisVar) {
         this.zzc = new zzcn(context);
-        this.zzb = zzkuVar;
+        this.zzb = zzisVar;
     }
 
-    @Override // com.android.billingclient.api.zzch
-    public final void zza(zzjz zzjzVar) {
-        if (zzjzVar == null) {
+    private final void zzl(zzhx zzhxVar, zzis zzisVar) {
+        if (zzhxVar == null) {
             return;
         }
         try {
-            zzli zzc = zzlk.zzc();
-            zzc.zzo(this.zzb);
-            zzc.zza(zzjzVar);
-            this.zzc.zza((zzlk) zzc.zzf());
+            zzjg zzc = zzji.zzc();
+            zzc.zzn(zzisVar);
+            zzc.zza(zzhxVar);
+            this.zzc.zza((zzji) zzc.zze());
         } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
+            zzc.zzo("BillingLogger", "Unable to log.", th);
         }
     }
 
-    @Override // com.android.billingclient.api.zzch
-    public final void zzb(zzjz zzjzVar, int i) {
-        try {
-            zzks zzksVar = (zzks) this.zzb.zzn();
-            zzksVar.zza(i);
-            this.zzb = (zzku) zzksVar.zzf();
-            zza(zzjzVar);
-        } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
-        }
-    }
-
-    @Override // com.android.billingclient.api.zzch
-    public final void zzc(zzkd zzkdVar) {
-        if (zzkdVar == null) {
+    private final void zzm(zzib zzibVar, zzis zzisVar) {
+        if (zzibVar == null) {
             return;
         }
         try {
-            zzli zzc = zzlk.zzc();
-            zzc.zzo(this.zzb);
-            zzc.zzm(zzkdVar);
-            this.zzc.zza((zzlk) zzc.zzf());
+            zzjg zzc = zzji.zzc();
+            zzc.zzn(zzisVar);
+            zzc.zzl(zzibVar);
+            this.zzc.zza((zzji) zzc.zze());
         } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
+            zzc.zzo("BillingLogger", "Unable to log.", th);
         }
     }
 
     @Override // com.android.billingclient.api.zzch
-    public final void zzd(zzkd zzkdVar, int i) {
+    public final void zza(zzhx zzhxVar) {
         try {
-            zzks zzksVar = (zzks) this.zzb.zzn();
-            zzksVar.zza(i);
-            this.zzb = (zzku) zzksVar.zzf();
-            zzc(zzkdVar);
+            zzl(zzhxVar, this.zzb);
         } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
+            zzc.zzo("BillingLogger", "Unable to log.", th);
         }
     }
 
     @Override // com.android.billingclient.api.zzch
-    public final void zze(zzkl zzklVar) {
+    public final void zzb(zzhx zzhxVar, int i) {
         try {
-            zzli zzc = zzlk.zzc();
-            zzc.zzo(this.zzb);
-            zzc.zzn(zzklVar);
-            this.zzc.zza((zzlk) zzc.zzf());
+            zziq zziqVar = (zziq) this.zzb.zzm();
+            zziqVar.zzm(i);
+            this.zzb = (zzis) zziqVar.zze();
+            zza(zzhxVar);
         } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
+            zzc.zzo("BillingLogger", "Unable to log.", th);
         }
     }
 
     @Override // com.android.billingclient.api.zzch
-    public final void zzf(zzlq zzlqVar) {
+    public final void zzc(zzhx zzhxVar, int i, long j) {
+        try {
+            zziq zziqVar = (zziq) this.zzb.zzm();
+            zziqVar.zzm(i);
+            zzis zzisVar = (zzis) zziqVar.zze();
+            this.zzb = zzisVar;
+            if (j != 0) {
+                zziq zziqVar2 = (zziq) zzisVar.zzm();
+                zziqVar2.zzo(j);
+                zzisVar = (zzis) zziqVar2.zze();
+            }
+            zzl(zzhxVar, zzisVar);
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zzd(zzhx zzhxVar, long j, boolean z) {
+        zzis zzisVar;
+        try {
+            zzhv zzhvVar = (zzhv) zzhxVar.zzm();
+            zzja zzjaVar = (zzja) zzhxVar.zzB().zzm();
+            zzjaVar.zza(z);
+            zzhvVar.zzn(zzjaVar);
+            zzhx zzhxVar2 = (zzhx) zzhvVar.zze();
+            if (j == 0) {
+                zzisVar = this.zzb;
+            } else {
+                zziq zziqVar = (zziq) this.zzb.zzm();
+                zziqVar.zzo(j);
+                zzisVar = (zzis) zziqVar.zze();
+            }
+            zzl(zzhxVar2, zzisVar);
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zze(zzhx zzhxVar, int i, long j, boolean z) {
+        zzis zzisVar;
+        try {
+            zziq zziqVar = (zziq) this.zzb.zzm();
+            zziqVar.zzm(i);
+            this.zzb = (zzis) zziqVar.zze();
+            zzhv zzhvVar = (zzhv) zzhxVar.zzm();
+            zzja zzjaVar = (zzja) zzhxVar.zzB().zzm();
+            zzjaVar.zza(z);
+            zzhvVar.zzn(zzjaVar);
+            zzhx zzhxVar2 = (zzhx) zzhvVar.zze();
+            if (j == 0) {
+                zzisVar = this.zzb;
+            } else {
+                zziq zziqVar2 = (zziq) this.zzb.zzm();
+                zziqVar2.zzo(j);
+                zzisVar = (zzis) zziqVar2.zze();
+            }
+            zzl(zzhxVar2, zzisVar);
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zzf(zzib zzibVar) {
+        try {
+            zzm(zzibVar, this.zzb);
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zzg(zzib zzibVar, int i) {
+        try {
+            zziq zziqVar = (zziq) this.zzb.zzm();
+            zziqVar.zzm(i);
+            this.zzb = (zzis) zziqVar.zze();
+            zzf(zzibVar);
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zzh(zzib zzibVar, long j, boolean z) {
+        zzis zzisVar;
+        try {
+            zzhz zzhzVar = (zzhz) zzibVar.zzm();
+            zzja zzjaVar = (zzja) zzibVar.zzA().zzm();
+            zzjaVar.zza(z);
+            zzhzVar.zzm(zzjaVar);
+            zzib zzibVar2 = (zzib) zzhzVar.zze();
+            if (j == 0) {
+                zzisVar = this.zzb;
+            } else {
+                zziq zziqVar = (zziq) this.zzb.zzm();
+                zziqVar.zzo(j);
+                zzisVar = (zzis) zziqVar.zze();
+            }
+            zzm(zzibVar2, zzisVar);
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zzi(zzij zzijVar) {
+        try {
+            zzjg zzc = zzji.zzc();
+            zzc.zzn(this.zzb);
+            zzc.zzm(zzijVar);
+            this.zzc.zza((zzji) zzc.zze());
+        } catch (Throwable th) {
+            zzc.zzo("BillingLogger", "Unable to log.", th);
+        }
+    }
+
+    @Override // com.android.billingclient.api.zzch
+    public final void zzj(zzjo zzjoVar) {
         try {
             zzcn zzcnVar = this.zzc;
-            zzli zzc = zzlk.zzc();
-            zzc.zzo(this.zzb);
-            zzc.zzp(zzlqVar);
-            zzcnVar.zza((zzlk) zzc.zzf());
+            zzjg zzc = zzji.zzc();
+            zzc.zzn(this.zzb);
+            zzc.zzo(zzjoVar);
+            zzcnVar.zza((zzji) zzc.zze());
         } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
+            zzc.zzo("BillingLogger", "Unable to log.", th);
         }
     }
 
     @Override // com.android.billingclient.api.zzch
-    public final void zzg(zzlu zzluVar) {
-        if (zzluVar == null) {
+    public final void zzk(zzjs zzjsVar) {
+        if (zzjsVar == null) {
             return;
         }
         try {
-            zzli zzc = zzlk.zzc();
-            zzc.zzo(this.zzb);
-            zzc.zzq(zzluVar);
-            this.zzc.zza((zzlk) zzc.zzf());
+            zzjg zzc = zzji.zzc();
+            zzc.zzn(this.zzb);
+            zzc.zzp(zzjsVar);
+            this.zzc.zza((zzji) zzc.zze());
         } catch (Throwable th) {
-            zze.zzm("BillingLogger", "Unable to log.", th);
+            zzc.zzo("BillingLogger", "Unable to log.", th);
         }
     }
 }

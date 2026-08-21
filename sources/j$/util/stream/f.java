@@ -18,7 +18,7 @@ public final /* synthetic */ class f implements java.util.stream.BaseStream {
         if (baseStream == null) {
             return null;
         }
-        return baseStream instanceof e ? ((e) baseStream).a : baseStream instanceof A ? z.j((A) baseStream) : baseStream instanceof IntStream ? IntStream.Wrapper.convert((IntStream) baseStream) : baseStream instanceof LongStream ? h0.j((LongStream) baseStream) : baseStream instanceof Stream ? Stream.Wrapper.convert((Stream) baseStream) : new f(baseStream);
+        return baseStream instanceof e ? ((e) baseStream).a : baseStream instanceof B ? A.j((B) baseStream) : baseStream instanceof IntStream ? IntStream.Wrapper.convert((IntStream) baseStream) : baseStream instanceof LongStream ? i0.j((LongStream) baseStream) : baseStream instanceof Stream ? Stream.Wrapper.convert((Stream) baseStream) : new f(baseStream);
     }
 
     @Override // java.util.stream.BaseStream, java.lang.AutoCloseable

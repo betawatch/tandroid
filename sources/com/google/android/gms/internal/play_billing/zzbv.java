@@ -1,156 +1,52 @@
 package com.google.android.gms.internal.play_billing;
 
-import j$.util.Objects;
-import j$.util.function.BiConsumer$-CC;
-import j$.util.function.BiFunction$-CC;
-import j$.util.function.Function$-CC;
-import j$.util.stream.Collector;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import java.util.Arrays;
+import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
-abstract class zzbv {
-    private static final Collector zza = Collector.-CC.of(new Supplier() { // from class: com.google.android.gms.internal.play_billing.zzbj
-        @Override // java.util.function.Supplier
-        public final Object get() {
-            return new zzck(4);
-        }
-    }, new BiConsumer() { // from class: com.google.android.gms.internal.play_billing.zzbm
-        @Override // java.util.function.BiConsumer
-        public final void accept(Object obj, Object obj2) {
-            ((zzck) obj).zzd(obj2);
-        }
+public final class zzbv {
+    Object[] zza = new Object[8];
+    int zzb = 0;
+    zzbu zzc;
 
-        public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-            return BiConsumer$-CC.$default$andThen(this, biConsumer);
-        }
-    }, new BinaryOperator() { // from class: com.google.android.gms.internal.play_billing.zzbn
-        public /* synthetic */ BiFunction andThen(Function function) {
-            return BiFunction$-CC.$default$andThen(this, function);
-        }
-
-        @Override // java.util.function.BiFunction
-        public final Object apply(Object obj, Object obj2) {
-            zzck zzckVar = (zzck) obj;
-            zzck zzckVar2 = (zzck) obj2;
-            zzckVar.zzb(zzckVar2.zza, zzckVar2.zzb);
-            return zzckVar;
-        }
-    }, new Function() { // from class: com.google.android.gms.internal.play_billing.zzbo
-        public /* synthetic */ Function andThen(Function function) {
-            return Function$-CC.$default$andThen(this, function);
-        }
-
-        @Override // java.util.function.Function
-        public final Object apply(Object obj) {
-            return ((zzck) obj).zze();
-        }
-
-        public /* synthetic */ Function compose(Function function) {
-            return Function$-CC.$default$compose(this, function);
-        }
-    }, new Collector.Characteristics[0]);
-
-    static {
-        Collector.-CC.of(new Supplier() { // from class: com.google.android.gms.internal.play_billing.zzbp
-            @Override // java.util.function.Supplier
-            public final Object get() {
-                return new zzcu();
-            }
-        }, new BiConsumer() { // from class: com.google.android.gms.internal.play_billing.zzbq
-            @Override // java.util.function.BiConsumer
-            public final void accept(Object obj, Object obj2) {
-                ((zzcu) obj).zzd(obj2);
-            }
-
-            public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-                return BiConsumer$-CC.$default$andThen(this, biConsumer);
-            }
-        }, new BinaryOperator() { // from class: com.google.android.gms.internal.play_billing.zzbr
-            public /* synthetic */ BiFunction andThen(Function function) {
-                return BiFunction$-CC.$default$andThen(this, function);
-            }
-
-            @Override // java.util.function.BiFunction
-            public final Object apply(Object obj, Object obj2) {
-                zzcu zzcuVar = (zzcu) obj;
-                zzcu zzcuVar2 = (zzcu) obj2;
-                zzcuVar.zzb(zzcuVar2.zza, zzcuVar2.zzb);
-                return zzcuVar;
-            }
-        }, new Function() { // from class: com.google.android.gms.internal.play_billing.zzbs
-            public /* synthetic */ Function andThen(Function function) {
-                return Function$-CC.$default$andThen(this, function);
-            }
-
-            public /* synthetic */ Function compose(Function function) {
-                return Function$-CC.$default$compose(this, function);
-            }
-
-            @Override // java.util.function.Function
-            public final Object apply(Object obj) {
-                zzcv zzl;
-                zzcu zzcuVar = (zzcu) obj;
-                int i = zzcuVar.zzb;
-                if (i == 0) {
-                    return zzdq.zza;
+    public final zzbv zza(Object obj, Object obj2) {
+        int i = this.zzb + 1;
+        Object[] objArr = this.zza;
+        int length = objArr.length;
+        int i2 = i + i;
+        if (i2 > length) {
+            if (i2 > length) {
+                length = length + (length >> 1) + 1;
+                if (length < i2) {
+                    int highestOneBit = Integer.highestOneBit(i2 - 1);
+                    length = highestOneBit + highestOneBit;
                 }
-                if (i == 1) {
-                    Object obj2 = zzcuVar.zza[0];
-                    Objects.requireNonNull(obj2);
-                    return new zzdt(obj2);
+                if (length < 0) {
+                    length = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 }
-                zzl = zzcv.zzl(i, zzcuVar.zza);
-                zzcuVar.zzb = zzl.size();
-                zzcuVar.zzc = true;
-                return zzl;
             }
-        }, new Collector.Characteristics[0]);
-        Collector.-CC.of(new Supplier() { // from class: com.google.android.gms.internal.play_billing.zzbt
-            @Override // java.util.function.Supplier
-            public final Object get() {
-                return new zzcs();
-            }
-        }, new BiConsumer() { // from class: com.google.android.gms.internal.play_billing.zzbu
-            @Override // java.util.function.BiConsumer
-            public final void accept(Object obj, Object obj2) {
-                ((zzcs) obj).zza((zzdh) obj2);
-            }
-
-            public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-                return BiConsumer$-CC.$default$andThen(this, biConsumer);
-            }
-        }, new BinaryOperator() { // from class: com.google.android.gms.internal.play_billing.zzbk
-            public /* synthetic */ BiFunction andThen(Function function) {
-                return BiFunction$-CC.$default$andThen(this, function);
-            }
-
-            @Override // java.util.function.BiFunction
-            public final Object apply(Object obj, Object obj2) {
-                zzcs zzcsVar = (zzcs) obj;
-                zzcsVar.zzb((zzcs) obj2);
-                return zzcsVar;
-            }
-        }, new Function() { // from class: com.google.android.gms.internal.play_billing.zzbl
-            public /* synthetic */ Function andThen(Function function) {
-                return Function$-CC.$default$andThen(this, function);
-            }
-
-            @Override // java.util.function.Function
-            public final Object apply(Object obj) {
-                return ((zzcs) obj).zzc();
-            }
-
-            public /* synthetic */ Function compose(Function function) {
-                return Function$-CC.$default$compose(this, function);
-            }
-        }, new Collector.Characteristics[0]);
+            this.zza = Arrays.copyOf(objArr, length);
+        }
+        zzbo.zza(obj, obj2);
+        Object[] objArr2 = this.zza;
+        int i3 = this.zzb;
+        int i4 = i3 + i3;
+        objArr2[i4] = obj;
+        objArr2[i4 + 1] = obj2;
+        this.zzb = i3 + 1;
+        return this;
     }
 
-    static Collector zza() {
-        return zza;
+    public final zzbw zzb() {
+        zzbu zzbuVar = this.zzc;
+        if (zzbuVar != null) {
+            throw zzbuVar.zza();
+        }
+        zzcf zzg = zzcf.zzg(this.zzb, this.zza, this);
+        zzbu zzbuVar2 = this.zzc;
+        if (zzbuVar2 == null) {
+            return zzg;
+        }
+        throw zzbuVar2.zza();
     }
 }

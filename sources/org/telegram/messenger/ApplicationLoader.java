@@ -344,7 +344,9 @@ public class ApplicationLoader extends Application {
         } catch (Throwable unused) {
         }
         super.onCreate();
+        String helloWorld = AndroidUtilities.getHelloWorld();
         if (BuildVars.LOGS_ENABLED) {
+            FileLog.d(helloWorld);
             StringBuilder sb = new StringBuilder();
             sb.append("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -383,11 +385,17 @@ public class ApplicationLoader extends Application {
                     }
                 }
             };
+            new ANRDetector(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    FileLog.dumpANR();
+                }
+            });
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda1
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     ApplicationLoader.startPushService();
@@ -432,7 +440,7 @@ public class ApplicationLoader extends Application {
     }
 
     private void initPushServices() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 ApplicationLoader.$r8$lambda$EdRXsD8RsitwzrcDYxwbFEKwcLo();

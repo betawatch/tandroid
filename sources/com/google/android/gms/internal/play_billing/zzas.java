@@ -1,34 +1,22 @@
 package com.google.android.gms.internal.play_billing;
 
-import android.os.BadParcelableException;
+import android.os.IBinder;
 import android.os.Parcel;
-import android.os.Parcelable;
 
 /* loaded from: classes.dex */
-public abstract class zzas {
-    public static final /* synthetic */ int $r8$clinit = 0;
-
-    static {
-        zzas.class.getClassLoader();
+public final class zzas extends zzap implements zzau {
+    zzas(IBinder iBinder) {
+        super(iBinder, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService");
     }
 
-    public static Parcelable zza(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void zzb(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail <= 0) {
-            return;
-        }
-        throw new BadParcelableException("Parcel data not fully consumed, unread size: " + dataAvail);
-    }
-
-    public static void zzc(Parcel parcel, Parcelable parcelable) {
-        parcel.writeInt(1);
-        parcelable.writeToParcel(parcel, 0);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.google.android.gms.internal.play_billing.zzau
+    public final void zza(String str, String str2, zzaw zzawVar) {
+        Parcel zzs = zzs();
+        zzs.writeString(str);
+        zzs.writeString(str2);
+        int i = zzar.$r8$clinit;
+        zzs.writeStrongBinder(zzawVar);
+        zzv(1, zzs);
     }
 }

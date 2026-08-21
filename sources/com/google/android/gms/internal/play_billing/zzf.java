@@ -1,17 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-abstract class zzf {
-    /* synthetic */ zzf(zzp zzpVar) {
+final class zzf extends Throwable {
+    zzf(String str) {
+        super("Failure occurred while trying to finish a future.");
     }
 
-    abstract void zza(zzo zzoVar, zzo zzoVar2);
-
-    abstract void zzb(zzo zzoVar, Thread thread);
-
-    abstract boolean zzc(zzq zzqVar, zzj zzjVar, zzj zzjVar2);
-
-    abstract boolean zzd(zzq zzqVar, Object obj, Object obj2);
-
-    abstract boolean zze(zzq zzqVar, zzo zzoVar, zzo zzoVar2);
+    @Override // java.lang.Throwable
+    public final synchronized Throwable fillInStackTrace() {
+        return this;
+    }
 }

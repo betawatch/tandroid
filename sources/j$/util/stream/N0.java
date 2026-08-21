@@ -2,111 +2,58 @@ package j$.util.stream;
 
 import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.Spliterators;
-import java.util.Arrays;
 import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
 import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-public class N0 implements v0 {
-    public final double[] a;
-    public int b;
-
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ B0 f(long j, long j2, IntFunction intFunction) {
-        return q1.t(this, j, j2);
+public final class N0 extends E0 {
+    @Override // j$.util.stream.C0
+    public final Spliterator spliterator() {
+        return new e1(this);
     }
 
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        q1.q(this, consumer);
+    @Override // j$.util.stream.C0
+    public final void g(Object[] objArr, int i) {
+        Objects.requireNonNull(objArr);
+        C0 c0 = this.a;
+        c0.g(objArr, i);
+        this.b.g(objArr, i + ((int) c0.count()));
     }
 
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ Object[] h(IntFunction intFunction) {
-        return q1.m(this, intFunction);
-    }
-
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ int i() {
-        return 0;
-    }
-
-    @Override // j$.util.stream.B0
-    public final /* bridge */ /* synthetic */ B0 b(int i) {
-        b(i);
-        throw null;
-    }
-
-    @Override // j$.util.stream.A0, j$.util.stream.B0
-    public final A0 b(int i) {
-        throw new IndexOutOfBoundsException();
-    }
-
-    @Override // j$.util.stream.B0
-    public final /* synthetic */ void g(Object[] objArr, int i) {
-        q1.n(this, (Double[]) objArr, i);
-    }
-
-    @Override // j$.util.stream.A0
-    public final void e(Object obj) {
-        DoubleConsumer doubleConsumer = (DoubleConsumer) obj;
-        for (int i = 0; i < this.b; i++) {
-            doubleConsumer.accept(this.a[i]);
-        }
-    }
-
-    @Override // j$.util.stream.A0
-    public final void j(int i, Object obj) {
-        int i2 = this.b;
-        System.arraycopy(this.a, 0, (double[]) obj, i, i2);
-    }
-
-    public N0(long j) {
+    @Override // j$.util.stream.C0
+    public final Object[] h(IntFunction intFunction) {
+        long j = this.c;
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.a = new double[(int) j];
-        this.b = 0;
+        Object[] objArr = (Object[]) intFunction.apply((int) j);
+        g(objArr, 0);
+        return objArr;
     }
 
-    public N0(double[] dArr) {
-        this.a = dArr;
-        this.b = dArr.length;
+    @Override // j$.util.stream.C0
+    public final void forEach(Consumer consumer) {
+        this.a.forEach(consumer);
+        this.b.forEach(consumer);
     }
 
-    @Override // j$.util.stream.B0
-    public final Spliterator spliterator() {
-        int i = this.b;
-        double[] dArr = this.a;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i);
-        return new j$.util.j0(dArr, 0, i, 1040);
+    @Override // j$.util.stream.C0
+    public final C0 f(long j, long j2, IntFunction intFunction) {
+        if (j == 0 && j2 == this.c) {
+            return this;
+        }
+        long count = this.a.count();
+        if (j >= count) {
+            return this.b.f(j - count, j2 - count, intFunction);
+        }
+        if (j2 > count) {
+            return r1.F(T2.REFERENCE, this.a.f(j, count, intFunction), this.b.f(0L, j2 - count, intFunction));
+        }
+        return this.a.f(j, j2, intFunction);
     }
 
-    @Override // j$.util.stream.A0, j$.util.stream.B0
-    public final j$.util.c0 spliterator() {
-        int i = this.b;
-        double[] dArr = this.a;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i);
-        return new j$.util.j0(dArr, 0, i, 1040);
-    }
-
-    @Override // j$.util.stream.A0
-    public final Object d() {
-        double[] dArr = this.a;
-        int length = dArr.length;
-        int i = this.b;
-        return length == i ? dArr : Arrays.copyOf(dArr, i);
-    }
-
-    @Override // j$.util.stream.B0
-    public final long count() {
-        return this.b;
-    }
-
-    public String toString() {
-        double[] dArr = this.a;
-        return String.format("DoubleArrayNode[%d][%s]", Integer.valueOf(dArr.length - this.b), Arrays.toString(dArr));
+    public final String toString() {
+        long j = this.c;
+        return j < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(j));
     }
 }

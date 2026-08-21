@@ -1,10 +1,24 @@
 package com.google.android.gms.internal.play_billing;
 
-/* loaded from: classes.dex */
-final class zzaz {
-    Object zza;
-    zzaz zzb;
+import android.os.SystemClock;
 
-    zzaz() {
+/* loaded from: classes.dex */
+public abstract class zzaz {
+    private static final zzbl zza;
+
+    static {
+        zzbl zzayVar;
+        try {
+            SystemClock.elapsedRealtimeNanos();
+            zzayVar = new zzax();
+        } catch (Throwable unused) {
+            SystemClock.elapsedRealtime();
+            zzayVar = new zzay();
+        }
+        zza = zzayVar;
+    }
+
+    public static zzbl zza() {
+        return zza;
     }
 }

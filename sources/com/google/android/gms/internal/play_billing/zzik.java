@@ -1,8 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-interface zzik {
-    zzij zzb(Class cls);
+final class zzik implements zzfl {
+    static final zzfl zza = new zzik();
 
-    boolean zzc(Class cls);
+    private zzik() {
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzfl
+    public final boolean zza(int i) {
+        return (i != 0 ? i != 1 ? i != 2 ? i != 3 ? null : zzil.zzd : zzil.zzc : zzil.zzb : zzil.zza) != null;
+    }
 }
