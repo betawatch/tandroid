@@ -2858,6 +2858,7 @@ public class RichMessageLayout {
         public int right;
         public final RichMessageLayout root;
         public int row;
+        private final RectF soleButtonHitBounds;
         public final List<SpoilerEffect> spoilers;
         public final AtomicReference<Layout> spoilersPatchedTextLayout;
         public final Stack<SpoilerEffect> spoilersPool;
@@ -2919,6 +2920,7 @@ public class RichMessageLayout {
             this.spoilers = new ArrayList();
             this.spoilersPool = new Stack<>();
             this.spoilersPatchedTextLayout = new AtomicReference<>();
+            this.soleButtonHitBounds = new RectF();
             this.root = richMessageLayout;
             Paint.FontMetricsInt fontMetricsInt = richMessageLayout.textPaint.getFontMetricsInt();
             if (charSequence instanceof Spanned) {
@@ -3340,6 +3342,37 @@ public class RichMessageLayout {
             AnimatedEmojiSpan.drawAnimatedEmojis(canvas, text.layout, text.animatedEmojiStack, 0.0f, text.spoilers, 0.0f, 0.0f, 0.0f, 1.0f);
         }
 
+        private RichButtonSpan getSoleButtonSpan() {
+            if (!(this.layout.getText() instanceof Spanned)) {
+                return null;
+            }
+            Spanned spanned = (Spanned) this.layout.getText();
+            RichButtonSpan[] richButtonSpanArr = (RichButtonSpan[]) spanned.getSpans(0, spanned.length(), RichButtonSpan.class);
+            if (richButtonSpanArr.length != 1) {
+                return null;
+            }
+            int spanStart = spanned.getSpanStart(richButtonSpanArr[0]);
+            int spanEnd = spanned.getSpanEnd(richButtonSpanArr[0]);
+            for (int i = 0; i < spanned.length(); i++) {
+                if ((i < spanStart || i >= spanEnd) && !Character.isWhitespace(spanned.charAt(i))) {
+                    return null;
+                }
+            }
+            return richButtonSpanArr[0];
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void setSoleButtonHitBounds(float f, float f2, float f3, float f4) {
+            this.soleButtonHitBounds.set(f, f2, f3, f4);
+        }
+
+        private boolean buttonContains(RichButtonSpan richButtonSpan, float f, float f2) {
+            if (richButtonSpan.contains(f, f2, AndroidUtilities.dp(8.0f))) {
+                return true;
+            }
+            return richButtonSpan == getSoleButtonSpan() && this.soleButtonHitBounds.contains(f, f2);
+        }
+
         public boolean onTouchEvent(MotionEvent motionEvent) {
             StyleSpan styleSpan;
             boolean z;
@@ -3356,7 +3389,7 @@ public class RichMessageLayout {
                     if (richButtonSpan == null) {
                         return false;
                     }
-                    if (!richButtonSpan.contains(x, y)) {
+                    if (!buttonContains(richButtonSpan, x, y)) {
                         cancelLongPress();
                         this.pressedButtonSpan.setPressed(false);
                         this.pressedButtonSpan = null;
@@ -3451,7 +3484,7 @@ public class RichMessageLayout {
             RichButtonSpan[] buttonSpans = getButtonSpans();
             if (buttonSpans != null) {
                 for (RichButtonSpan richButtonSpan3 : buttonSpans) {
-                    if (richButtonSpan3.contains(x, y)) {
+                    if (buttonContains(richButtonSpan3, x, y)) {
                         if (richButtonSpan3.isDisabled()) {
                             return true;
                         }
@@ -5387,9 +5420,9 @@ public class RichMessageLayout {
                 if (!this.textHandlingTouch && (findCellChildAt = findCellChildAt(motionEvent.getX(), motionEvent.getY())) != null) {
                     this.pressedCellText = (Text) findCellChildAt.textLayout;
                     this.cellDx = findCellChildAt.getTextX() - this.scrollX;
-                    float textY = this.titleHeight + findCellChildAt.getTextY();
-                    this.cellDy = textY;
-                    motionEvent.offsetLocation(-this.cellDx, -textY);
+                    this.cellDy = this.titleHeight + findCellChildAt.getTextY();
+                    this.pressedCellText.setSoleButtonHitBounds(findCellChildAt.x - findCellChildAt.getTextX(), findCellChildAt.y - findCellChildAt.getTextY(), (findCellChildAt.x + findCellChildAt.getMeasuredWidth()) - findCellChildAt.getTextX(), (findCellChildAt.y + findCellChildAt.getMeasuredHeight()) - findCellChildAt.getTextY());
+                    motionEvent.offsetLocation(-this.cellDx, -this.cellDy);
                     this.textHandlingTouch = this.pressedCellText.onTouchEvent(motionEvent);
                     motionEvent.offsetLocation(this.cellDx, this.cellDy);
                 }
@@ -6870,6 +6903,11 @@ public class RichMessageLayout {
 
         public boolean contains(float f, float f2) {
             return this.bounds.contains(f, f2);
+        }
+
+        public boolean contains(float f, float f2, float f3) {
+            RectF rectF = this.bounds;
+            return f >= rectF.left - f3 && f < rectF.right + f3 && f2 >= rectF.top - f3 && f2 < rectF.bottom + f3;
         }
 
         public void setPressed(boolean z) {
