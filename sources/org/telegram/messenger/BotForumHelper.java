@@ -305,11 +305,42 @@ public class BotForumHelper extends BaseController {
 
     public boolean hasBotForumDrafts(long j, int i) {
         LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, i);
-        return longSparseArray != null && longSparseArray.size() > 0;
+        if (longSparseArray != null && longSparseArray.size() > 0) {
+            int size = longSparseArray.size();
+            for (int i2 = 0; i2 < size; i2++) {
+                if (!longSparseArray.valueAt(i2).removed) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void removeAllMarkedAsRemovedMessages(long j, int i) {
+        long j2 = i;
+        long j3 = j;
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j3, j2);
+        if (longSparseArray == null) {
+            return;
+        }
+        int size = longSparseArray.size();
+        int i2 = 0;
+        while (i2 < size) {
+            BotDraftMessage valueAt = longSparseArray.valueAt(i2);
+            if (valueAt.removed) {
+                getNotificationCenter().postNotificationName(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j3, j2, valueAt.localMessageId));
+                this.botTextDraftsByRandomIds.remove(j, j2, valueAt.randomId);
+                i2--;
+                size--;
+            }
+            i2++;
+            j3 = j;
+        }
     }
 
     public MessageObject onBotForumDraftCheckNewMessages(long j, int i, int i2, String str) {
         BotDraftMessage botDraftMessage;
+        removeAllMarkedAsRemovedMessages(j, i);
         long j2 = i;
         LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j2);
         if (longSparseArray == null) {

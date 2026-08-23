@@ -3309,7 +3309,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 return false;
             }
 
-            @Override // android.view.ViewGroup, android.view.View
+            @Override // org.telegram.ui.ActionBar.ActionBar, android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                 if (DialogsActivity.this.fragmentSearchField == null || DialogsActivity.this.fragmentSearchField.getAlpha() <= 0.0f || !DialogsActivity.this.animatorSearchVisible.getValue()) {
                     return super.dispatchTouchEvent(motionEvent);

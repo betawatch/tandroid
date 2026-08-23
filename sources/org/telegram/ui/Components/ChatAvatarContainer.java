@@ -186,9 +186,9 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0387, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x038f, code lost:
     
-        if (r1.isComments == false) goto L95;
+        if (r1.isComments == false) goto L97;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -244,7 +244,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 this.sharedMediaPreloader = new SharedMediaLayout.SharedMediaPreloader(baseFragment);
             }
             ChatActivity chatActivity3 = this.parentFragment;
-            boolean z4 = chatActivity3 != null && (chatActivity3.isThreadChat() || this.parentFragment.getChatMode() == 2 || this.parentFragment.getChatMode() == 5 || this.parentFragment.getChatMode() == 9 || this.parentFragment.getChatMode() == 6);
+            boolean z4 = chatActivity3 != null && ((chatActivity3.isThreadChat() && !this.parentFragment.isReplyChatComment()) || this.parentFragment.getChatMode() == 2 || this.parentFragment.getChatMode() == 5 || this.parentFragment.getChatMode() == 9 || this.parentFragment.getChatMode() == 6);
             this.avatarImageIsHidden = z4;
             if (z4) {
                 this.avatarImageView.setVisibility(8);
@@ -554,7 +554,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
     protected void dispatchDraw(Canvas canvas) {
         canvas.save();
         float scale = this.bounce.getScale(0.02f);
-        canvas.scale(scale, scale, getWidth() / 2.0f, getHeight() - (ActionBar.getCurrentActionBarHeight() / 2.0f));
+        canvas.scale(scale, scale, getPivotX(), getHeight() - (ActionBar.getCurrentActionBarHeight() / 2.0f));
         super.dispatchDraw(canvas);
         canvas.restore();
     }
@@ -2046,7 +2046,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             max = Math.max(max, simpleTextView2.getExactWidthIncludeDrawables());
         }
         if (hasVisibleAvatar()) {
-            dp = AndroidUtilities.dp(68.0f);
+            dp = AndroidUtilities.dp(70.0f);
         } else {
             dp = AndroidUtilities.dp(34.0f);
         }
