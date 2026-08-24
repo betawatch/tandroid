@@ -121,7 +121,7 @@ public class BetaUpdaterController {
             public final void run(Object obj) {
                 BetaUpdaterController.$r8$lambda$zmJCbdiPRh9mZUyBhIkpFLCyoBs(BetaUpdaterController.this, runnable, (String) obj);
             }
-        }).execute(BuildConfig.BETA_URL);
+        }).execute("null");
     }
 
     public static /* synthetic */ void $r8$lambda$zmJCbdiPRh9mZUyBhIkpFLCyoBs(final BetaUpdaterController betaUpdaterController, final Runnable runnable, final String str) {
@@ -250,7 +250,7 @@ public class BetaUpdaterController {
             if (runnable != null) {
             }
         } catch (Exception e3) {
-            FileLog.e("Failed to check for beta update at https://telegram.org/dl/android/apk-public-beta.json received: " + str, e3);
+            FileLog.e("Failed to check for beta update at null received: " + str, e3);
         }
     }
 
