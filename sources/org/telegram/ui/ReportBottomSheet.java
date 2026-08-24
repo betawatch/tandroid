@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -164,7 +165,7 @@ public class ReportBottomSheet extends BottomSheet {
         View view = viewPages[0];
         if (view instanceof Page) {
             ((Page) view).bind(0);
-            this.containerView.post(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda10
+            this.containerView.post(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
                     ((ReportBottomSheet.Page) viewPages[0]).setOption(tL_channels_sponsoredMessageReportResultChooseOption);
@@ -183,7 +184,7 @@ public class ReportBottomSheet extends BottomSheet {
         View view = viewPages[0];
         if (view instanceof Page) {
             ((Page) view).bind(0);
-            this.containerView.post(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda9
+            this.containerView.post(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
                     ((ReportBottomSheet.Page) viewPages[0]).setOption(tL_reportResultChooseOption);
@@ -202,7 +203,7 @@ public class ReportBottomSheet extends BottomSheet {
         View view = viewPages[0];
         if (view instanceof Page) {
             ((Page) view).bind(0);
-            this.containerView.post(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda21
+            this.containerView.post(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
                     ((ReportBottomSheet.Page) viewPages[0]).setOption(tL_reportResultAddComment);
@@ -287,7 +288,7 @@ public class ReportBottomSheet extends BottomSheet {
                 tL_messages_report = tL_messages_report2;
             }
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_report, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda19
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_report, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda14
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ReportBottomSheet.$r8$lambda$vDIHKH-0Hew5-bXV0En73Zz_Px8(ReportBottomSheet.this, charSequence, bArr, str, tLObject, tL_error);
@@ -297,7 +298,7 @@ public class ReportBottomSheet extends BottomSheet {
 
     public static /* synthetic */ void $r8$lambda$vDIHKH-0Hew5-bXV0En73Zz_Px8(final ReportBottomSheet reportBottomSheet, final CharSequence charSequence, final byte[] bArr, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
         reportBottomSheet.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda23
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
                 ReportBottomSheet.$r8$lambda$oOS3LqTJtn-wkC767BUYwIGY680(ReportBottomSheet.this, tLObject, charSequence, tL_error, bArr, str);
@@ -918,10 +919,10 @@ public class ReportBottomSheet extends BottomSheet {
                 tL_reportMessage.message = TextUtils.isEmpty(str) ? "" : str;
                 tL_reportMessage.option = bArr;
                 tL_messages_report = tL_reportMessage;
-                ConnectionsManager.getInstance(i).sendRequest(tL_messages_report, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda1
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        ReportBottomSheet.$r8$lambda$nZhA8-J-66M6mDrgcJS0W8qqVaw(context, resourcesProvider, z, z2, j, arrayList, zArr, callback, bulletinFactory, tLObject, tL_error);
+                ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_report, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda5
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj, Object obj2) {
+                        ReportBottomSheet.$r8$lambda$nRzlwNRI7_41hfGrnqV_4T8NfTI(context, resourcesProvider, z, z2, j, arrayList, zArr, callback, bulletinFactory, (TLRPC.ReportResult) obj, (TLRPC.TL_error) obj2);
                     }
                 });
             }
@@ -933,49 +934,40 @@ public class ReportBottomSheet extends BottomSheet {
             tL_messages_report2 = tL_messages_report3;
         }
         tL_messages_report = tL_messages_report2;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_report, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda1
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ReportBottomSheet.$r8$lambda$nZhA8-J-66M6mDrgcJS0W8qqVaw(context, resourcesProvider, z, z2, j, arrayList, zArr, callback, bulletinFactory, tLObject, tL_error);
+        ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_report, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda5
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ReportBottomSheet.$r8$lambda$nRzlwNRI7_41hfGrnqV_4T8NfTI(context, resourcesProvider, z, z2, j, arrayList, zArr, callback, bulletinFactory, (TLRPC.ReportResult) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$nZhA8-J-66M6mDrgcJS0W8qqVaw(final Context context, final Theme.ResourcesProvider resourcesProvider, final boolean z, final boolean z2, final long j, final ArrayList arrayList, final boolean[] zArr, final Utilities.Callback callback, final BulletinFactory bulletinFactory, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (tLObject != null) {
-            if ((tLObject instanceof TLRPC.TL_reportResultChooseOption) || (tLObject instanceof TLRPC.TL_reportResultAddComment)) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda12
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        ReportBottomSheet.$r8$lambda$k9OdZ8B2PIFw9jw00ekZo1yy8z0(context, resourcesProvider, z, z2, j, arrayList, tLObject, zArr, callback, bulletinFactory);
-                    }
-                });
-            } else if (tLObject instanceof TLRPC.TL_reportResultReported) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda11
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        ReportBottomSheet.$r8$lambda$li9vdl1VFAfDQyvILFv4gJ6Pl2Q(zArr, callback);
-                    }
-                }, 200L);
+    public static /* synthetic */ void $r8$lambda$nRzlwNRI7_41hfGrnqV_4T8NfTI(Context context, Theme.ResourcesProvider resourcesProvider, boolean z, boolean z2, long j, ArrayList arrayList, final boolean[] zArr, final Utilities.Callback callback, BulletinFactory bulletinFactory, TLRPC.ReportResult reportResult, TLRPC.TL_error tL_error) {
+        boolean z3 = reportResult instanceof TLRPC.TL_reportResultChooseOption;
+        if (z3 || (reportResult instanceof TLRPC.TL_reportResultAddComment)) {
+            ReportBottomSheet reportBottomSheet = new ReportBottomSheet(context, resourcesProvider, z, z2, j, arrayList);
+            if (z3) {
+                reportBottomSheet.setReportChooseOption((TLRPC.TL_reportResultChooseOption) reportResult);
+            } else if (reportResult instanceof TLRPC.TL_reportResultAddComment) {
+                reportBottomSheet.setReportChooseOption((TLRPC.TL_reportResultAddComment) reportResult);
             }
+            reportBottomSheet.setListener(new 3(zArr, callback, bulletinFactory));
+            reportBottomSheet.setOnDismissListener(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda10
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ReportBottomSheet.$r8$lambda$ETelEKv7CkBWtzTNzC102Hg34KI(zArr, callback);
+                }
+            });
+            reportBottomSheet.show();
+            return;
         }
-    }
-
-    public static /* synthetic */ void $r8$lambda$k9OdZ8B2PIFw9jw00ekZo1yy8z0(Context context, Theme.ResourcesProvider resourcesProvider, boolean z, boolean z2, long j, ArrayList arrayList, TLObject tLObject, final boolean[] zArr, final Utilities.Callback callback, BulletinFactory bulletinFactory) {
-        ReportBottomSheet reportBottomSheet = new ReportBottomSheet(context, resourcesProvider, z, z2, j, arrayList);
-        if (tLObject instanceof TLRPC.TL_reportResultChooseOption) {
-            reportBottomSheet.setReportChooseOption((TLRPC.TL_reportResultChooseOption) tLObject);
-        } else if (tLObject instanceof TLRPC.TL_reportResultAddComment) {
-            reportBottomSheet.setReportChooseOption((TLRPC.TL_reportResultAddComment) tLObject);
-        }
-        reportBottomSheet.setListener(new 3(zArr, callback, bulletinFactory));
-        reportBottomSheet.setOnDismissListener(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda18
+        boolean z4 = reportResult instanceof TLRPC.TL_reportResultReported;
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                ReportBottomSheet.$r8$lambda$ETelEKv7CkBWtzTNzC102Hg34KI(zArr, callback);
+                ReportBottomSheet.$r8$lambda$GIqWoatFNfFEZD_4-OrXm0RVSIg(zArr, callback);
             }
-        });
-        reportBottomSheet.show();
+        }, 200L);
     }
 
     class 3 implements Listener {
@@ -1038,20 +1030,20 @@ public class ReportBottomSheet extends BottomSheet {
         callback.run(Boolean.FALSE);
     }
 
-    public static /* synthetic */ void $r8$lambda$li9vdl1VFAfDQyvILFv4gJ6Pl2Q(boolean[] zArr, Utilities.Callback callback) {
+    public static /* synthetic */ void $r8$lambda$GIqWoatFNfFEZD_4-OrXm0RVSIg(boolean[] zArr, Utilities.Callback callback) {
         if (!zArr[0] && callback != null) {
             zArr[0] = true;
             callback.run(Boolean.TRUE);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda13
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                ReportBottomSheet.$r8$lambda$qccbcIsr_o1YahgTVc8jwK_xB-c();
+                ReportBottomSheet.$r8$lambda$OSdbB-aCg9lugoxvZep62SoMazY();
             }
         }, 220L);
     }
 
-    public static /* synthetic */ void $r8$lambda$qccbcIsr_o1YahgTVc8jwK_xB-c() {
+    public static /* synthetic */ void $r8$lambda$OSdbB-aCg9lugoxvZep62SoMazY() {
         BulletinFactory of;
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null || (of = BulletinFactory.of(safeLastFragment)) == null) {
@@ -1074,18 +1066,18 @@ public class ReportBottomSheet extends BottomSheet {
         final byte[] bArr = messageObject.sponsoredId;
         tL_messages_reportSponsoredMessage.random_id = bArr;
         tL_messages_reportSponsoredMessage.option = new byte[0];
-        ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda8
+        ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ReportBottomSheet.$r8$lambda$Lm9P7ATXMCvW70ucnC9iVcs3ppo(context, resourcesProvider, dialogId, bArr, chatActivity, messageObject, currentAccount, tLObject, tL_error);
+                ReportBottomSheet.$r8$lambda$cVCd8JcyjbXBr7LbGe5qY3Z8oEU(context, resourcesProvider, dialogId, bArr, chatActivity, messageObject, currentAccount, tLObject, tL_error);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$Lm9P7ATXMCvW70ucnC9iVcs3ppo(final Context context, final Theme.ResourcesProvider resourcesProvider, final long j, final byte[] bArr, final ChatActivity chatActivity, final MessageObject messageObject, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$cVCd8JcyjbXBr7LbGe5qY3Z8oEU(final Context context, final Theme.ResourcesProvider resourcesProvider, final long j, final byte[] bArr, final ChatActivity chatActivity, final MessageObject messageObject, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
             if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda14
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda15
                     @Override // java.lang.Runnable
                     public final void run() {
                         new ReportBottomSheet(r1, r2, j, bArr).setReportChooseOption((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) TLObject.this).setListener(new ReportBottomSheet.4(chatActivity, context, resourcesProvider, messageObject)).show();
@@ -1093,19 +1085,19 @@ public class ReportBottomSheet extends BottomSheet {
                 });
                 return;
             } else if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda15
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda16
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ReportBottomSheet.$r8$lambda$Mxuk_1Vu4dgtBBTOV4Kd1uQCSSA(ChatActivity.this, context, resourcesProvider, messageObject);
+                        ReportBottomSheet.$r8$lambda$sQvvE51m0RJrZHA1-pxtA_hk61A(ChatActivity.this, context, resourcesProvider, messageObject);
                     }
                 }, 200L);
                 return;
             } else {
                 if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda16
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda17
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ReportBottomSheet.$r8$lambda$1K8bRS1AwsKLBzU1me3usTTHEN0(ChatActivity.this, i, messageObject);
+                            ReportBottomSheet.$r8$lambda$Vx4tQF5swlp5mjAxW9SZy7xSmpw(ChatActivity.this, i, messageObject);
                         }
                     }, 200L);
                     return;
@@ -1116,10 +1108,10 @@ public class ReportBottomSheet extends BottomSheet {
         if (tL_error == null || !"AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda17
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
-                ReportBottomSheet.$r8$lambda$zQCeOkSflZrgrux4xzW-1PPnGCY(ChatActivity.this, context, resourcesProvider, messageObject);
+                ReportBottomSheet.$r8$lambda$cOuaTRJJuuTCTNveFEw6k_AysGI(ChatActivity.this, context, resourcesProvider, messageObject);
             }
         }, 200L);
     }
@@ -1186,8 +1178,8 @@ public class ReportBottomSheet extends BottomSheet {
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$Mxuk_1Vu4dgtBBTOV4Kd1uQCSSA(ChatActivity chatActivity, final Context context, Theme.ResourcesProvider resourcesProvider, MessageObject messageObject) {
-        BulletinFactory.of(chatActivity).createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda22
+    public static /* synthetic */ void $r8$lambda$sQvvE51m0RJrZHA1-pxtA_hk61A(ChatActivity chatActivity, final Context context, Theme.ResourcesProvider resourcesProvider, MessageObject messageObject) {
+        BulletinFactory.of(chatActivity).createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
                 Browser.openUrl(context, "https://promote.telegram.org/guidelines");
@@ -1197,14 +1189,14 @@ public class ReportBottomSheet extends BottomSheet {
         chatActivity.removeMessageWithThanos(messageObject);
     }
 
-    public static /* synthetic */ void $r8$lambda$1K8bRS1AwsKLBzU1me3usTTHEN0(ChatActivity chatActivity, int i, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$Vx4tQF5swlp5mjAxW9SZy7xSmpw(ChatActivity chatActivity, int i, MessageObject messageObject) {
         BulletinFactory.of(chatActivity).createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
         MessagesController.getInstance(i).disableAds(false);
         chatActivity.removeFromSponsored(messageObject);
         chatActivity.removeMessageWithThanos(messageObject);
     }
 
-    public static /* synthetic */ void $r8$lambda$zQCeOkSflZrgrux4xzW-1PPnGCY(ChatActivity chatActivity, final Context context, Theme.ResourcesProvider resourcesProvider, MessageObject messageObject) {
+    public static /* synthetic */ void $r8$lambda$cOuaTRJJuuTCTNveFEw6k_AysGI(ChatActivity chatActivity, final Context context, Theme.ResourcesProvider resourcesProvider, MessageObject messageObject) {
         BulletinFactory.of(chatActivity).createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
@@ -1226,15 +1218,15 @@ public class ReportBottomSheet extends BottomSheet {
         ConnectionsManager.getInstance(i).sendRequest(tL_messages_reportSponsoredMessage, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ReportBottomSheet.$r8$lambda$FqqHYsf7PuWoyR3cEHgsyAz2QTw(context, resourcesProvider, j, bArr, runnable2, bulletinFactory, runnable, i, tLObject, tL_error);
+                ReportBottomSheet.$r8$lambda$sk9k1CwXA-o34W_LMyeQhzN2BzA(context, resourcesProvider, j, bArr, runnable2, bulletinFactory, runnable, i, tLObject, tL_error);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$FqqHYsf7PuWoyR3cEHgsyAz2QTw(final Context context, final Theme.ResourcesProvider resourcesProvider, final long j, final byte[] bArr, final Runnable runnable, final BulletinFactory bulletinFactory, final Runnable runnable2, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$sk9k1CwXA-o34W_LMyeQhzN2BzA(final Context context, final Theme.ResourcesProvider resourcesProvider, final long j, final byte[] bArr, final Runnable runnable, final BulletinFactory bulletinFactory, final Runnable runnable2, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
             if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         new ReportBottomSheet(r1, r2, j, bArr).setReportChooseOption((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) TLObject.this).setListener(new ReportBottomSheet.5(runnable, bulletinFactory, context, resourcesProvider, runnable2)).show();
@@ -1242,19 +1234,19 @@ public class ReportBottomSheet extends BottomSheet {
                 });
                 return;
             } else if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda3
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ReportBottomSheet.$r8$lambda$KeAm4zgD_DLzLN_dbqZA5DNe0pU(runnable, bulletinFactory, context, resourcesProvider);
+                        ReportBottomSheet.$r8$lambda$A-Lfgc_nTRpY5Nos12Z3z6rPK9Q(runnable, bulletinFactory, context, resourcesProvider);
                     }
                 }, 200L);
                 return;
             } else {
                 if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda4
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda3
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ReportBottomSheet.$r8$lambda$kAPvFu7v_7hhZ0wAFveAEnpKbuQ(runnable, bulletinFactory, i);
+                            ReportBottomSheet.$r8$lambda$wQuWH8mAKGtm9Fwelk27OlkOrGI(runnable, bulletinFactory, i);
                         }
                     }, 200L);
                     return;
@@ -1265,10 +1257,10 @@ public class ReportBottomSheet extends BottomSheet {
         if (tL_error == null || !"AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                ReportBottomSheet.$r8$lambda$bTHvJhLzcmJEZrs2qBhlG5EJbD4(runnable, bulletinFactory, context, resourcesProvider);
+                ReportBottomSheet.$r8$lambda$ZEABfxfLjnp8iOagj6PEZ6xgh8g(runnable, bulletinFactory, context, resourcesProvider);
             }
         }, 200L);
     }
@@ -1339,11 +1331,11 @@ public class ReportBottomSheet extends BottomSheet {
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$KeAm4zgD_DLzLN_dbqZA5DNe0pU(Runnable runnable, BulletinFactory bulletinFactory, final Context context, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$A-Lfgc_nTRpY5Nos12Z3z6rPK9Q(Runnable runnable, BulletinFactory bulletinFactory, final Context context, Theme.ResourcesProvider resourcesProvider) {
         if (runnable != null) {
             runnable.run();
         }
-        bulletinFactory.createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda7
+        bulletinFactory.createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 Browser.openUrl(context, "https://promote.telegram.org/guidelines");
@@ -1351,7 +1343,7 @@ public class ReportBottomSheet extends BottomSheet {
         }, resourcesProvider)).show();
     }
 
-    public static /* synthetic */ void $r8$lambda$kAPvFu7v_7hhZ0wAFveAEnpKbuQ(Runnable runnable, BulletinFactory bulletinFactory, int i) {
+    public static /* synthetic */ void $r8$lambda$wQuWH8mAKGtm9Fwelk27OlkOrGI(Runnable runnable, BulletinFactory bulletinFactory, int i) {
         if (runnable != null) {
             runnable.run();
         }
@@ -1359,11 +1351,11 @@ public class ReportBottomSheet extends BottomSheet {
         MessagesController.getInstance(i).disableAds(false);
     }
 
-    public static /* synthetic */ void $r8$lambda$bTHvJhLzcmJEZrs2qBhlG5EJbD4(Runnable runnable, BulletinFactory bulletinFactory, final Context context, Theme.ResourcesProvider resourcesProvider) {
+    public static /* synthetic */ void $r8$lambda$ZEABfxfLjnp8iOagj6PEZ6xgh8g(Runnable runnable, BulletinFactory bulletinFactory, final Context context, Theme.ResourcesProvider resourcesProvider) {
         if (runnable != null) {
             runnable.run();
         }
-        bulletinFactory.createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda6
+        bulletinFactory.createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 Browser.openUrl(context, "https://promote.telegram.org/guidelines");
@@ -1383,18 +1375,18 @@ public class ReportBottomSheet extends BottomSheet {
         TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
         tL_messages_reportSponsoredMessage.random_id = bArr;
         tL_messages_reportSponsoredMessage.option = new byte[0];
-        ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda24
+        ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new RequestDelegate() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda23
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ReportBottomSheet.$r8$lambda$TqPdTY5VVxXX2Lp4bJSVd6Sq_J0(context, resourcesProvider, bArr, baseFragment, runnable, currentAccount, tLObject, tL_error);
+                ReportBottomSheet.$r8$lambda$M33PR0JD7PwlA2Pa4KZy6QZ0tv8(context, resourcesProvider, bArr, baseFragment, runnable, currentAccount, tLObject, tL_error);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$TqPdTY5VVxXX2Lp4bJSVd6Sq_J0(final Context context, final Theme.ResourcesProvider resourcesProvider, final byte[] bArr, final BaseFragment baseFragment, final Runnable runnable, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void $r8$lambda$M33PR0JD7PwlA2Pa4KZy6QZ0tv8(final Context context, final Theme.ResourcesProvider resourcesProvider, final byte[] bArr, final BaseFragment baseFragment, final Runnable runnable, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
             if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda25
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda24
                     @Override // java.lang.Runnable
                     public final void run() {
                         new ReportBottomSheet(r1, r2, 0L, bArr).setReportChooseOption((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) TLObject.this).setListener(new ReportBottomSheet.6(baseFragment, context, resourcesProvider, runnable)).show();
@@ -1402,19 +1394,19 @@ public class ReportBottomSheet extends BottomSheet {
                 });
                 return;
             } else if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda26
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda25
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ReportBottomSheet.$r8$lambda$tSiSeU2ldF9U7FjyHNznWxZullw(BaseFragment.this, context, resourcesProvider, runnable);
+                        ReportBottomSheet.$r8$lambda$0aw8SqWr6se4bNPMIbh62CWZg6E(BaseFragment.this, context, resourcesProvider, runnable);
                     }
                 }, 200L);
                 return;
             } else {
                 if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda27
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda26
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ReportBottomSheet.$r8$lambda$eEsRKBS9r6RgYSvL-bsc-W_A598(BaseFragment.this, i, runnable);
+                            ReportBottomSheet.$r8$lambda$oofvxxPPggtX70pnF4kkpw6bKNM(BaseFragment.this, i, runnable);
                         }
                     }, 200L);
                     return;
@@ -1425,10 +1417,10 @@ public class ReportBottomSheet extends BottomSheet {
         if (tL_error == null || !"AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda28
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                ReportBottomSheet.$r8$lambda$x0fgiqYJUAeZ5FQTI3RNnSPRWlU(BaseFragment.this, context, resourcesProvider, runnable);
+                ReportBottomSheet.$r8$lambda$92oRY-a4mCXnLDlDWt2AN7RURpw(BaseFragment.this, context, resourcesProvider, runnable);
             }
         }, 200L);
     }
@@ -1493,7 +1485,7 @@ public class ReportBottomSheet extends BottomSheet {
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$tSiSeU2ldF9U7FjyHNznWxZullw(BaseFragment baseFragment, final Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$0aw8SqWr6se4bNPMIbh62CWZg6E(BaseFragment baseFragment, final Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable) {
         BulletinFactory.of(baseFragment).createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
@@ -1503,14 +1495,14 @@ public class ReportBottomSheet extends BottomSheet {
         AndroidUtilities.runOnUIThread(runnable);
     }
 
-    public static /* synthetic */ void $r8$lambda$eEsRKBS9r6RgYSvL-bsc-W_A598(BaseFragment baseFragment, int i, Runnable runnable) {
+    public static /* synthetic */ void $r8$lambda$oofvxxPPggtX70pnF4kkpw6bKNM(BaseFragment baseFragment, int i, Runnable runnable) {
         BulletinFactory.of(baseFragment).createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
         MessagesController.getInstance(i).disableAds(false);
         AndroidUtilities.runOnUIThread(runnable);
     }
 
-    public static /* synthetic */ void $r8$lambda$x0fgiqYJUAeZ5FQTI3RNnSPRWlU(BaseFragment baseFragment, final Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable) {
-        BulletinFactory.of(baseFragment).createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda30
+    public static /* synthetic */ void $r8$lambda$92oRY-a4mCXnLDlDWt2AN7RURpw(BaseFragment baseFragment, final Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable) {
+        BulletinFactory.of(baseFragment).createAdReportedBulletin(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new Runnable() { // from class: org.telegram.ui.ReportBottomSheet$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 Browser.openUrl(context, "https://promote.telegram.org/guidelines");

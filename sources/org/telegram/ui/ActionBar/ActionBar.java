@@ -2412,7 +2412,7 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
         if (this.glassDrawable == null || this.glassOnlyBack) {
             f = 1.0f;
         } else {
-            int floatValue = (this.hasForcedMenuWidth ? factor > 0 ? dp : 0 : (int) (dp * this.animatorHasMenuItems.getFloatValue())) + factor;
+            int floatValue = ((this.hasForcedMenuWidth || this.hasForcedMenuMinWidth) ? factor > 0 ? dp : 0 : (int) (dp * this.animatorHasMenuItems.getFloatValue())) + factor;
             int i3 = dp + dp2;
             f = 1.0f;
             int lerp = AndroidUtilities.lerp(floatValue, Math.max(floatValue, i3), this.chatAvatarContainer == null ? 0.0f : 1.0f - this.animatorAvatarContainerHasAvatar.getFloatValue());
